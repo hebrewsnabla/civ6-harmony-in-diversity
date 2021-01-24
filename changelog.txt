@@ -1,0 +1,735 @@
+Civilization VI game balancing mod (DL version)
+Based on Civ6, Dec 2020 update (New Frontier Pass)
+
+[Version v0.1.0]
+
+[Gameplay]
+Remove game cost escalation (except purchase plot).
+移除买地消耗外的游戏进度的影响。
+
+fixed cost of districts.
+区域调整为固定价格
+
+All districts that was having variant cost now have fixed cost 60 except
+所有以前浮动价格的区域调整为60锤，水渠80，运河和大坝200。
+aquadect 80
+canal 200
+dam 200.
+
+All projects cost 75 production except
+所有项目调整为75锤，腓尼基迁都200锤，寻欢作乐美第奇宫廷盛会100锤。
+move capital 200 (...)
+court festival 100 (...)
+
+If appliable, finish the project grants 
+如果适用，完成项目给20点对应伟人点（若单一伟人）或10点对应伟人点（若多类伟人）
+20 great person point (with single class)
+10 great person point (with multiple class)
+
+Pilaging gains stay fixed. (base 25)
+劫掠获得固定收益，基础25。
+change the raid & total war policy cards to 100% and 200% bonus on pillage gains.
+更改劫掠卡（军事训练解锁）为100%额外劫掠收益，全面战争为200%额外。
+
+[Yields]
+change terrain & feature yields.
+调整了地块和地貌产出
+change citizen (specialist) yields, add 2 great person point yields for each type of specialist.
+调整了专家产出，增加对应类型的2点伟人点产出。
+
+[GoodyHuts]
+Relic, builder, governor title may only be rewarded after 30, 15, 50 turns. (was 0, 0, 30)
+30t, 15t, 50t 后才有可能从蘑菇中获得遗物、工人、总督头衔。
+favor can be rewarded after 15 turns. (was 30)
+外交点在 15t 后有可能从蘑菇中获得。
+
+[Version v0.1.1]
+
+Resume the free amenity for each city
+恢复每个城市的一点免费宜居度，即前2人口不耗宜居度
+
+Add worker's & military engineer's basic building charges
+增加工人和军事工程师的一次使用次数
+
+Increase the resource harvest & feature remove gains (from base 20 to 40 & to 30).
+增加移除资源和地貌的收益（资源为基础40，地貌为基础30）
+
+Update the bank cost from 290 to 250 (grand bazaar from 220 to 200), update the yield from 5 gold to 8 gold.
+银行价格290锤调整为250锤（奥斯曼ub大巴扎由220锤调整为200锤），产出由5金调整为8金。
+Update the workshop cost from 195 to 175.
+工坊价格由195调整为175锤。
+
+Fix the missing adjustment of Oppidum (Gaul). Adjust the cost of neighborhood and mbanza to cost 150 production.
+修复遗漏的奥皮杜姆（高卢ud）的调整。社区和姆班赞（刚果ud）调整为150锤。
+
+Increase the amenity of the (water) Entertainment Complex and the special ones. 
+增加了（水上）娱乐中心的宜居度为3点，其对应ud给4点。
+
+[Version v0.1.2]
+
+Enable the amenity of arena (as well as tlachtli) being spread to range up to 4 tiles.
+让竞技场（和蹴球场）的宜居度加成辐射4环。
+
+Fix the BUG of great scientist IBN_KHALDUN.
+修复了文艺复兴大科 伊本-赫勒敦 的效果。
+
+Change the district cost of some districts to progression with extra 5 costs each copy, starting from 60 (60, 65, 70, ...),
+for holy site, campus, encampment, commercial hub, entertainment complex, theater, industrial zone, water entertainment complex, and their corresponding unique districts.
+将部分区域锤调整为等差函数，从60锤起，每多建造一个同种区域多5锤（即首个60锤，第二个65锤，第三个70锤，...），包括
+圣地，学院，军营，商业，娱乐，剧院，工业，水上娱乐，和其对应的特色区域。
+
+Introduce a new level of happiness: delighted, from amenity 1 to 2, while 0 amenity stays as content.
+The delighted status gives 3% more non-food yields, and 10% growth rate, and 3 loyalty points each turn.
+The happy & ecstatic status gives 20% & 30% growth rate, and 6 & 9 loyalty points each turn.
+引入了新的一个宜居度等级：愉悦，宜居度为1-2时处于该状态，给非粮食产出+3%，给余粮+10%，每回合3点忠诚度。
+高兴和欣喜若狂增加20%和30%的余量（城市增长速度），每回合6点和9点忠诚度。
+
+[Version v0.1.3]
+Balance update on units（单位平衡调整）：
+
+units		cost 		old_cost	单位
+setter		70 + 30n	80 + 30n	移民
+worker  	45 + 3n		50 + 4n		工人
+scout		25			30			侦察兵
+slinger		30			35			投石手
+babylonian	30			35			主力军团
+warrior		35			40			勇士
+trader		50 + 5n 	40 + scale	商人
+spy			150 + 50n	225 + 75n	间谍
+
+Balance update on buildings (建筑平衡调整)：
+buildings	cost 		old_cost	建筑
+MONUMENT	50			60			纪念碑
+GRANARY		50			65			粮仓
+WATER_MILL	70			80			水磨
+PALGUM		70			80			沟渠
+Give water mill one extra housing, one more production and one less food.
+水磨+1住房，改为+2锤，自身不加粮食。
+
+[Version v0.1.3.1]
+
+disable the v0.1.3 changes. Introduce city policies (seperate mod)
+取消 v0.1.3的改动，引入城市政策（单独mod）
+Change the district cost of some districts to progression with extra 10 costs each copy. (was 5 cost)
+部分区域每多建造一个同种区域多10锤（即首个60锤，第二个70锤，第三个80锤，...）（之前多5锤）
+
+[Version v0.1.4]
+fix the bug where the citizen inside unique district does not provide corresponding great person poinst.
+修复了特色区域内的专家没有给对应伟人点产出的bug。
+
+Give the district itself a citizen slot, and decrease the corresponding great person point yield of the district by one.
+每个区域本体提供一个专家槽，并不再产出伟人点（除了俄罗斯的拉夫拉只减少了一点预言家点数）。
+
+Adjust the specialist yields with new building added. The specialist yields about 2,3,4,6 values when the district, level one building, level two building, level three building have been built. The yield adjust slightly according the district type. The specialist require maintaince fee related to its yield.
+调整了完成建筑对专家产出的影响。在拥有本体、一级、二级、三级建筑的情况下，专家产出大致为2、3、4、6点，不同类型的区域有调整。专家需要维护费，且随其产出增加而增加。
+
+[Version v0.1.4.1]
+Decrease the Trader starting cost to 40 production instead 50 production.
+将商路基础锤减为40锤而不是50锤。
+
+[Version v0.1.4.2]
+Make the unique districts cheaper (starting cost from 60 -> 50, bath & mbanza 80% cheaper than its replacement district).
+让特色区域（ud）更便宜，起始花费调整为50锤（减少10锤），浴场和姆班赞调整为80%的正常需求（浴场80锤，姆班赞120锤）。
+
+Grant one trade route capacity to each commercial hub and harbor district (including the corresponding unique districts).
+港口和商业区增加一条商路名额（包括对应特色区域）。
+
+[Version v0.1.5]
+Change the Work ethic belief back to the orignal one (based on each follower), and change to grant 2% production each follower.
+把职业道德信条改回原版的形式，且每个信徒增加2%的生产力。
+
+[Version v0.1.5.1]
+Change the minimum turns for each game era from 40 turns to 30 turns.
+将每个时代的回合数的下限由40t调整为30t。
+
+fix the bug exist in [Version v0.1.4.2]
+修复了[Version v0.1.4.2]中导致的bug。
+
+[Version v0.1.5.2]
+Decrease the movement lock turns of SCULPTURE PORTRAIT LANDSCAPE RELIGIOUS great works from 10 to 5.
+将雕塑、肖像、风景画、宗教巨作的移动锁定时间由10回合降低为5回合。
+
+Great works yields and tourism increased (2 -> 3 for writings, 3 -> 4 for arts & artifacts, 4 -> 6 for musics).
+巨作的文化和旅游业绩调整，著作3文化3业绩，艺术作品和考古 4文化和4业绩，音乐巨作6文化6业绩。
+
+Encampment district grant the city 20% production boost towards producing units. (Ikanda 30%)
+军营为城市提供20%锤单位加成。（祖鲁ud伊坎达为30%）
+
+[Version v0.1.6]
+Add effects for the following buildings:
+1. Granary add 1 food to wheat, rice, maize, deer and banana resources.
+2. Lighthouse add 1 food to fish, crab, pearl and whale resources.
+3. Barracks (and its replacement) add 1 production to copper and iron resources.
+4. Stable (and its replacement) add 1 production to horses, sheep and cattle resources.
+5. Armory add 1 production to niter, oil resources.
+6. Factory (and its replacement) add 1 production to coal resource.
+7. Watermill add 1 food to farms that adjacent to river.
+Watermill add 1 housing. the benefit change from 1 food and 1 production to 2 production.
+
+为下列建筑增加资源增产效果：
+1. 粮仓给小麦、大米、玉米、鹿和香蕉资源地块加1粮。
+2. 灯塔给鱼、螃蟹、珍珠和鲸鱼资源地块加1粮。
+3. 兵营(和对应ub)给铜和铁资源加1锤。
+4. 马厩(和对应ub)给马羊牛资源加1锤。
+5. 兵工厂给硝石和石油加1锤。
+6. 工厂(和对应ub)为煤资源加1锤。
+7. 水磨为沿河农场+1粮食。
+水磨+1住房，由+1粮+1锤改为+2锤。
+
+The boost of Encampment district only works on land military units now.
+军营的锤单位加速现在只作用于陆地战斗单位了。
+
+Habor and ROYAL_NAVY_DOCKYARD district provides 25% boost when producing the naval units. The speed up of cothon remains at 50%.
+港口和皇家港口锤海军单位加速25%。巨港加速仍为50%。
+
+[Version v0.1.6.1]
+Granary only affects banana and deers now.
+粮仓加粮只作用于鹿和香蕉。
+
+The effect of watermill change back to add 1 food to wheat, rice, maize.
+水磨效果改回小麦 大米 玉米 1粮。
+
+Barracks add 1 production to stones.
+兵营给石头加1锤。
+
+Encampment gives 15% speed up towards land military units instead of 20%. Ikanda stay with 30% speed up.
+军营给陆地军事单位15%加速（原先20%）。伊坎达维持30%不变。
+
+[Version v0.1.6.2]
+Hydroelectrin Dam gives +1 production to plots adjacent to river. Cost change from 440 to 360.
+水电站（堤坝区域建筑）给沿河地块+1锤。造价由440锤减为360锤。
+
+The amenity of Ferris wheel (inside water entertainment district) being spread to range up to 4 tiles. Cost change from 290 to 240.
+让摩天轮（水上乐园建筑）的宜居度加成辐射4环。造价由290锤减为240锤。
+
+Change the amenity of zoo and aquadrium to 2 (can be spread). The Thermal bath cost change from 360 to 300.
+动物园和水族馆的辐射宜居度改为2点。温泉浴场的造价由360锤减为300锤。
+
+[Version v0.1.7]
+[HUGE IMPACT MODIFICATION] Each population consume 3 food instead of 2.
+【重大影响改动】 每个人口消耗3点基础粮食而不是2点。
+
+The terrian replace food when settling cities changed from 2 to 4, production changed from 1 to 2.
+将坐城产粮补正改为4粮，产锤补正改成2锤（即建城地块低于4粮补为4粮，低于2锤补为2锤）。
+
+Granary base cost change to 60 production, base yields changed to 2 food and 1 housing, also make each population consume 0.5 less food. Granary also add food to plots have sheep resource (besides banana and deers).
+粮仓基础花费改为60锤，基础产出改为2粮1住房，每个人口少消耗0.5粮食。 粮仓也给羊 +1粮（包括之前已经囊括的香蕉和鹿）。
+
+Movement base cost change to 50 production.
+纪念碑基础花费改为50锤。
+Stable no more add production to sheep. Barracks no longer add production to stones.
+马厩不再给羊+1锤，兵营不再给石头+1锤。
+
+Adjust the dealing base cost.
+调整了交易的基础花费。
+
+[Version v0.1.7.1]
+Change the unlock of lumber mill on jungles to guilds civic. 
+雨林伐木场解锁的人文调整为公会。
+
+[Version v0.1.7.2]
+Barbarian camp no longer exists on snow & snow hills.
+野蛮人寨子不再出现在雪地和雪地丘陵上。
+
+[Version v0.1.7.3]
+Add 6-tiles regional effect for 2nd and 3rd level building of campus, theater and commercial hubs (just like the industrial zone).
+为学院、剧院、商业的二级和三级建筑添加类似工厂的6环辐射效果。
+
+Multiply the maintainance of buildings and districts by 2.
+建筑和区域维护费变为原来2倍。
+
+[Version v0.1.7.4]
+mine and lumber mill yield change to 1 production initially.
+矿和伐木场初始加锤改为1锤。
+
+[Version v0.1.8]
+Missing description in the changelog:
+1. The lumber mill unlock technology changed to Bronze Working, machinary gives 1 more production.
+
+changelog缺失改动补充:
+1. 伐木场改为铸铜解锁，机械+1锤。
+
+Aqueduct add food to farms that adjacent to fresh water or aqueduct (instead of just rivers).
+水渠改为对相邻淡水或水渠的农田+1粮（而不只是相邻河流的田）。
+
+Construction gives one more food camps.
+建造科技给营地+1粮。
+
+Each quarry improvement can speed up the wonder constrction. Give ancient era wonders 15% speed up, classical wonders 10%, and Medieval and Renaissance 5%.
+每个采石场为本城建造奇观加速。给远古奇观加速15%，古典奇观10%，中世纪和文艺复兴奇观5%。
+
+[Version v0.1.8.1]
+Make open border cheaper to trade with.
+让ai开边价格更便宜。
+
+Construction gives 1 more production to lumber mills that adjacent to river.
+建造让沿河伐木场+1锤。
+
+Extra +1 production for fishing boat improvement.
+渔船额外+1锤。
+
+Granary grant 1 food for cattles. Stable no longer provide 1 more production to cattle.
+粮仓为牛+1粮，马厩不再为牛+1锤。
+
+barracks no longer influence copper, the tech bronze working add 1 production to improved copper.
+铜不再受到兵营加成，改为铸铜为已改良的铜+1锤。
+
+[Version v0.1.8.2]
+The actual effect of Ayutthaya (and Gaul) was 60% (and 30%) when finishing buildings (and units), bug fixed to 10% (and 20%) as described. 修复了阿瑜陀耶和高卢的实际效果，修复前为给建筑锤60%的文化和单位锤30%的文化，修复后为10%和20%。
+
+The high difficulty AI starts with a extra scout, but with less warrior. In diety difficulty, 2 extra warrior are granted after new city being settled (was 4 extra granted directly).
+高难度AI起始拥有一个侦察兵，但拥有更少的勇士。在神难度，将会有额外两个勇士在坐城后被赠送（修改前为额外赠送4个勇士）。
+
+Kumasi & Chinguetti halfen the effect. (2 -> 1 culture & 1 -> 0.5 faith)
+库马西和欣盖提的宗主效果减弱一半（2文化变为1文化，1信仰变为0.5信仰）。
+
+[Version v0.1.8.3]
+Mines provide +1 adjacent yield to industrial zone. (not applied to unique districts). Industrial zone (and corresponding unique districts) provide +1 production to adjacent mines.
+矿山给工业区提供+1相邻加成（ud维持不变），工业及其ud给相邻矿山1锤。
+
+APPRENTICESHIP gives +1 production to quarry.
+学徒给采石场+1锤。
+
+[Version v0.1.8.4]
+Fix the bug about mater mill and improvement.sql file.
+修复了水磨的bug和关于改良的一个mod文件的问题。
+
+[Version v0.1.9]
+Remove the free amenity for each city.
+删除城市的免费宜居。
+
+Every 4 population can support a specialized district. (Was 3)
+每4个人口可支撑一个特色区域。(之前是3个)
+
+District base cost changed from 70 to 80, the increasing cost changed from 10 to 20.
+区域基础价格调整为80锤，每次涨价调整为20锤。
+
+Add Commercial hub (and its replacement) 2 gold adjacency yield to each luxury resource.
+给商业区（包括ud）每个奢侈资源2金相邻加成。
+
+Gives Harbor 2 housing. Remove the trade route of commercial hub and harbor. The market and lighthouse can both grant trade route capacity regardless whether the other one has been built.
+港口提供2住房。删除商业区和港口的商路名额。市场和灯塔现在都可以给一条商路名额，无论另一方是否已在本城建造。
+
+Let the barbarian camp start raid with higher threshold (20 turns after the camp being created).
+让蛮族营地刷新劫掠部队的阈值更高（一般至少在该寨子生成至少20t之后）。
+
+Goldess of the Hunt only applies to camps that have resources.
+狩猎女神只对有资源的营地生效。
+
+Change Improvements Yields.
+改变改良产出：
+
+农田封建加成移动至行政事务（也就是文官）
+矿场：+1锤+1金，货币后有资源矿+2金，学徒后+1产能，每相邻一个工业区+1，工业化后+1产能。
+伐木场：+1锤，建造后沿河+1锤，机械后+1锤，蒸汽动力后不沿河的也+1锤，钢铁后+1锤。
+牧场：+1粮，骑马额外+1锤，马镫+1粮，零件规格化+1锤。
+采石场：+1锤，学徒+1锤，火药+1锤，火箭1锤。
+种植园：+2金，封建+1粮，种植园每相邻一个商业+2金，制图学+2金，科学理论+1粮。
+营地：+1粮，改为可以建造在任何森林（公会解锁雨林营地），建造+1锤，中世纪集市后+1粮+1金，膛线后+1粮。
+渔船：+1锤，造船+1粮，相邻港口的+2金，探索后+2金，制图学后+1粮，殖民主义+1锤。
+
+[Version v0.1.9.1]
+Mine not provide +1 gold, but mine on the hill gives +1 production.
+矿山不再提供+1金，丘陵上的矿山提供+1锤。
+
+Lumber Mill +1 production adjacent to river no longer require Construction. 
+河边伐木场+1锤不再需要建造解锁。
+
+Change the free amenity each city to 2. Change the palace amenity to 1.
+将城市免费宜居度提升到2点，宫殿宜居度变为1.
+
+[Version v0.1.9.2]
+Removed: Currency grant +2 gold to mines that have resources.
+移除：货币后有资源矿+2金
+
+District base cost changed from 80 to 75, the increasing cost changed from 20 to 15.
+区域基础价格调整为75锤，每次涨价调整为15锤。
+
+Granary food changed from 2 to 1. Only the improved banana, deer, sheep and cattle can be applied +1 food by granary.
+粮仓改为+1粮。粮仓对香蕉、鹿、羊、牛的加粮只在资源被改良情况下生效。
+
+Change the free amenity each city to 1.
+将城市免费宜居度改为到1点。
+
+[Version v0.1.9.3]
+Fix the issue that ARTEMIS also apply to camp without resources. But the condition is unable to changed (can adjacent to empty camp).
+修复了阿尔特弥斯神庙从无资源营地获取宜居的问题。但是建造条件无法修复，即可以建造在无资源营地边上。
+
+[Version v0.1.9.4]
+
+Change CELESTIAL_NAVIGATION to ancient tech, adjust the cost of machenary to 390.
+天文导航变为古典科技，机械变为中世纪后排科技。
+
+Modify the boost of Bronze Working to kill 2 barbarian instead of 3.
+将铸铜的尤里卡修改为击杀2个蛮族而不是3个。
+
+[Version v0.2.0]
+艺术馆和考古博物馆文化产出调整为4点。
+
+牧场+1锤，骑马+1粮食。
+学徒为矿山和采石场的+1锤移动到工作坊上。
+马厩为马提供+2锤，兵营为铁提供+2锤。
+
+达芬奇为工坊+3文化改为+2文化。
+
+区域项目造价调整为按游戏进度增长，幅度为40涨至240，宫廷盛会80涨至320，迁都100涨至300。
+项目伟人点为项目造价/5 + 2，多种伟人则为每个 造价/10 + 1。
+
+奢侈和战略资源可收割或被区域覆盖，战略收获产出为40锤，奢侈收获产出为80金。
+
+[Version v0.2.1]
+整合了city roads，研究轮子后，所有境内改良获得道路。之后建造的改良也自动获得道路。
+
+整合MapGenerationFixing，不再需要一同开启该mod。
+
+蛮族科技需求改为60%的文明拥有科技。
+
+[Version v0.2.1.1]
+丘陵矿山+1锤改为靠山矿山+1锤。
+
+轮子尤里卡改为建造一个伐木场。
+批量生成尤里卡改为拥有海军传统市政。
+海军传统鼓舞改为拥有一个四段帆船。
+
+[Version v0.2.1.2]
+采石场每相邻一个工业区或其ud +1锤。
+
+摩艾石像改为只能相邻湖或海建造，产出加成条件不变。
+
+毛利行政部门给未改良的树和雨林+1锤，保护地球改为+1锤。
+巴比伦尤里卡提供的科技值改为99%。
+
+[Version v0.2.1.3]
+将马寨范围改为2环内有马。
+
+兵营（ub）和马厩（ub）为在本城训练的对应单位（同原加经验的类型）提供永久+3力。
+兵营：近战、远程、反骑兵。
+马其顿ub：额外对攻城和伙友骑兵生效。
+马厩：轻骑、重骑、攻城。
+蒙古ub：对攻城不生效但对蒙古uu生效。
+
+[Version v0.2.2]
+粮仓不再给开发的牛羊加粮。
+
+军营地基为开发的石头+1锤。
+兵营为开发的铜和铁+1锤（铸铜为已开发铜+1锤取消）。
+马厩为开发的牛羊+1粮，马+1锤。
+军事学院为铝和铀+1锤。
+港口地基对渔船+1粮食，港口地基改为航海术解锁，天文导航科技值复原。
+剧院古罗马剧场（和ub）提供4环辐射。
+
+改良改动汇总：
+田：封建田加成调整到行政部门。
+矿：矿山靠山+1锤，学徒加成取消，相邻每个工业区+1锤，工坊为本城矿山+1锤。
+采石场：加速奇观建造效果。相邻每个工业区+1锤，工坊为本城采石场+1锤。
+伐木场：伐木场移到铸铜，雨林伐木场公会解锁，起始1锤。沿河伐木场1锤，机械+1锤，蒸汽动力为非沿河伐木场+1锤。
+渔船：渔船初始1锤而不是1粮，港口为本城渔船+1粮，相邻每个港口+2金。
+种植园：相邻每个商业+2金。
+营地：初始1粮，可建造在森林中，公会解锁雨林营地，中世纪集市2金，建造1锤，膛线1粮。
+牧场：马厩+1锤。
+
+[Version v0.2.2.1]
+取消火箭科学给采石场的+1锤。
+中世纪集市的营地2金改为1金，重商主义给营地1金。
+
+工业调整至炼铁解锁。
+水上乐园和摩天轮调整为土木解锁。
+动物园和温泉浴场调整为印刷解锁。
+
+[Version v0.2.2.2]
+允许在地热上修建区域和奇观。
+每个相邻的地热为学院+1瓶，科学理论后变为+2瓶。
+
+五年计划由阶级斗争解锁，经济同盟由选举权解锁，闪电战由极权主义解锁。
+6张普通的区域相邻卡效果都改为提升50%的相邻加成（原先为100%）。
+
+[Version v0.2.3]
+地图相关：为出生地生成调整了土地肥沃程度的计算方式，降低出生在非常贫瘠的地点的概率。
+地图相关：缩减了雪地的范围。
+
+[Version v0.2.3.1]
+更换了老马破土者和给养保障的能力的位置，即右一移民不耗粮食变为基础能力，砍树多50%锤变为右一。
+
+[Version v0.2.3.2]
+6张普通的区域相邻卡效果bug修复。
+
+[Version v0.2.4]
+建筑提供百分比加成
+一级建筑5%，二级建筑10%，三级建筑10%，若发电额外10%。
+举例：学院图书馆5%，大学10%，实验室10%，发电额外10%。
+工业区为加速建筑和奇观，工坊5%，工厂10%，发电厂20%。
+圣地为三级宗教建筑15%。
+
+初步调整建筑造价：实验室、广播中心、证交所、核电站变为500锤，工厂300锤，燃煤360，燃油420。
+
+初步调整科技瓶子需求：各排科技值需求调整由
+		修改前	修改后
+远古1	25		25
+远古2	50		60
+远古3	80		100
+古典1	120		150
+古典2	200		240
+中世纪1	300		360
+中世纪2	390		500
+启蒙1	600		720
+启蒙1	730		900
+工业1	930		1100
+工业2	1070	1270
+现代1	1250	1450
+现代2	1370	1600
+原子能1	1480	1800
+原子能2	1660	2000
+信息1	1850	2200
+信息2	2155	2400
+未来1	2200	2700
+未来2	2500	3000
+未来科技	2600	3500
+
+初步调整市政文化需求：古典1.1倍，中世纪和文艺复兴1.15倍，之后时代1.2倍。
+
+降低自然灾害带来的产出，林火不再提供增产。
+
+礁石+1粮1锤改为1锤。
+
+自然奇观产出调整：
+大致产出：3-4格奇观自身产出5产，2格奇观自身产出6产，1格奇观自身产出8产。
+
+潘塔纳尔 3粮2文化
+白沙漠 1瓶1琴1鸽4金
+乌布苏盆地 1粮1锤3鸽
+巧克力山 2粮2锤1瓶
+
+戈布斯坦 2锤3琴
+撒哈拉之眼 1锤3瓶1鸽，原子能+1锤1瓶。
+
+大堡礁 2粮1锤2瓶2金
+下龙湾 4粮1锤1琴
+死海 3琴3鸽
+玫瑰湖 1粮1锤2金3琴
+多佛白崖 3琴4金
+
+火山口湖 2瓶6鸽
+青春泉 6瓶2鸽
+
+自然奇观buff地块产出调整：
+
+黄金国 5金
+珠峰 2鸽
+米尔福德峡湾 1琴2金
+吕瑟峡湾 1锤
+
+[Version v0.2.4.1]
+修复古罗马剧场未提供5%文化加成的bug。
+
+减少蛮子寨子被攻击降低的猖獗度(-30变为-20)。
+
+[Version v0.2.5]
+【学院】
+靠山加成移动到天文学解锁。
+礁石初始+1，扶壁后+2。
+【工业】
+水渠和浴场初始相邻+1，蒸汽动力后+2。
+矿山初始2个+1，工业化后每个+1。
+采石场初始2个+1，火药后每个+1。
+伐木场初始2个+1，钢铁后每个+1。
+【汉萨】
+水渠和浴场初始相邻+1，蒸汽动力后+2。
+相邻商业初始+1，银行后+2。
+相邻资源初始2个+1，学徒后每个+1。
+
+图书馆增加0.5人头瓶。
+
+农奴制卡改为+30%锤工人，工人多一次。
+水渠和港口涨价为固定90锤（ud不变）。
+
+[Version v0.2.5.1]
+刚果大 文、艺、音、商 伟人点恢复100%加成。
+马里平沙也给国内商路加钱。
+
+[Version v0.2.5.2]
+商路宗教压力增加为起始城每回合2点，城市宗教压力均翻倍（普通2，圣地城4，圣城8）。
+战略资源红卡均改为多2点（文本尚未修改）。
+来自有利交易的绿字改为最多2点。
+
+[Version v0.2.5.3]
+增加黄金作为新的奢侈，地形沙漠、沙丘、冻土、冻土丘陵、平原、平原丘陵，产出4金。
+
+共产调整为2军事槽2通配槽（原先为3军事1通配）。
+
+宜居要求改为2 4 6，愉悦状态的非粮产出buff改为+5%。
+
+[Version v0.2.5.4]
+五年计划、经济同盟、闪电战改为政体专属卡。
+
+共产效果改为15%瓶，传承效果每人口2锤（不需要有总督就职）。
+
+[Version v0.2.5.5]
+五年计划、经济同盟、闪电战改为4级对应政体也可使用。
+
+[Version v0.2.5.6]
+刚果ud改为100锤，3粮5金。
+
+不满带来的红字减少为6%，第三方不满带来的红字减少为3%。
+
+[Version v0.2.6]
+城邦不再刷商路任务，山火在树或雨林长出来后提供1粮。
+
+[Version v0.2.6.1]
+ai卖奢侈价格提升300%（约200左右），与ai的交易贴钱减少，小幅增加ai开改良倾向，降低除战狂文明外的打城邦倾向。
+
+神级ai少一个初始移民，ai加成改为随时代增长，锤子为60+20n，瓶琴金为25+15n，鸽为30+10n，6和7难度每城送1住房，8难度送2住房。
+
+刚果ud为相邻雨林和树林+1粮食。
+玛雅能力改为9环外减产，6环内（含首都）增产。玛雅每城送1住房
+
+[Version v0.2.6.2]
+恢复小额手续费.
+除金法外,重复奢侈不再有价值.
+给城邦自身50点的额外忠诚压力.
+
+[Version v0.2.6.3]
+罗马给市中心建筑+25%.
+佩特拉改为3粮1锤2金.
+
+[Version v0.2.6.4]
+谒见厅调整为无需总督作用2宜居3住房,无debuff.
+
+[Version v0.2.7]
+雄伟的效果调整为工人和移民购买打折-20%，不再解锁信仰购买平民单位，工人+2速，移民+2速。
+
+宗教信条调整，未写明的表示暂未完工：
+追随信条
+1. 神灵启示：增加信仰可购买圣地建筑的效果。
+2. 宗教社区：增加信仰可购买商队的效果，商队打折-20%。
+3. 职业道德：信教城市每人口1锤。
+4. 【新增】 种姓制度：信教人口每人口1粮。
+5. 【新增】 宗教艺术：获得等价圣地相邻产出信仰的文化。
+6. 【新增】 经世致用：信仰可购买商业和工业区内建筑。
+7. 【新增】 未命名信条1：信仰可买工人，打折-10%。可购买外交区建筑。
+8. 【新增】 宗教殖民： 信仰可买移民，打折-10%。可购买政府区建筑。
+创立信条：
+1. 什一税：3信徒2金
+2. 宗教统一：3信徒1鸽
+3. 普世教会：3信徒1琴
+4. 跨文化对话：3信徒1瓶
+5. 教会财产：信教每城6金
+6. 朝圣：信教每城3鸽
+7. 民间宗教团：信教每城3琴
+8. 管理工作：信教每城3瓶
+强化信条
+1. 删除宗教殖民
+2. 信仰守护：调整为+3力。
+3. 十字军：调整为+5力。
+4. 【新增】虔诚商队： 商路的宗教压力翻倍。
+5. 神圣水域： 效果改为军事单位也能吃到，在圣地或相邻格+20回复。
+
+[Version v0.2.8]
+信条调整
+
+追随信条（相较初始版本）
+1. 哺育：增加信教人口每人口0.5粮。
+2. 圣歌：增加信教人口每人口0.5琴。
+3. 神灵启示：增加信仰可购买圣地建筑的效果。
+4. 耶稣会：信教城市每人口0.5瓶，可购买学院区建筑。
+5. 宗教社区：增加信仰可购买商队的效果，商队打折-20%。
+6. 职业道德：信教城市每人口0.5锤，可购买工业区建筑。
+7. 【新增】 宗教艺术：获得等价圣地相邻产出信仰的文化，可购买剧院广场建筑。
+8. 【新增】 经世致用：信教城市每人口1金，信仰可购买商业区建筑。
+9. 【新增】 第三圣殿：信仰可买工人，打折-20%。可购买外交区建筑。
+10. 【新增】 宗教殖民：信仰可买移民，打折-20%。可购买政府区建筑。
+武僧、遗物箱、禅修待加强。
+
+创立信条：
+1. 什一税：1信徒1金
+2. 宗教统一：2信徒1鸽
+3. 普世教会：2信徒1琴
+4. 跨文化对话：2信徒1瓶
+5. 教会财产：信教每城8金
+6. 朝圣：信教每城4鸽
+7. 民间宗教团：信教每城4琴
+8. 管理工作：信教每城4瓶
+
+圣地专家初始提供3点信仰，传教士、使徒、审判、上师、尼杭战士不再涨价。
+
+[Version v0.2.8.1]
+万神
+
+口述传统：种植园2金 （待后续万神统一调整+1琴）
+神使：送1狗，所有狗+1速。
+
+[Version v0.2.8.3]
+补充 工业建筑对建造区域的百分比加成。
+
+[Version v0.2.8.4]
+经文政策卡恢复为圣地相邻加成提升100%。
+
+[Version v0.2.8.5]
+航空港不需要人口支持
+
+[Version v0.2.9]
+文化需求调整：古典1.1倍，中世纪+启蒙 1.2倍，工业+现代 1.3倍，后续时代1.4倍。
+
+电脑和环境保护主义的业绩提升改为50%。
+
+宗主康提发现自然奇观不再送遗物，遗物信仰提升改为100%。
+
+除宗教三级建筑外的建筑文本更新（由 小小雨10101 提供），自然奇观文本描述更新（由 陈又 提供）。
+
+万神调整，见内置文本，由 小小雨10101 提供。
+改动涉及万神：极光之舞、沙漠民俗、神圣道路、大地女神、火之女神、宗教偶像、石圈、节庆女神、神圣之光、宗教移民、天空之神、海洋之神。
+新增万神：极地子民、沙之女神、长生天、天人合一、口述传统（效果已修改）、收获女神（效果已修改）、海洋母亲。
+已删去：愈合之神。
+
+[Version v0.2.9.1]
+万神：河神、丰产仪式、烂地 调整更新。
+
+[Version v0.2.9.2]
+战争之神（效果更新）：每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力25%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。
+
+[Version v0.2.9.3]
+主神纪念碑（效果更新）：有纪念碑的城市文化+10%。可用信仰购买纪念碑，-20%折扣（只能对购买价格打折）。
+
+改良文本更新。
+
+[Version v0.2.9.4]
+修复马其顿伙友骑兵的效果。(Thanks the Hetairoi bug fix mod, id: 9b2971d1-5cb5-4bda-9acf-cde684bd9d1a)
+
+启蒙会万神信条改为创立信条（重译为入会仪式），效果为：利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供50点 [ICON_Gold] 金币（标准速度下）。
+
+[Version v0.3.0]
+（由 小小雨10101 提供）
+圣地三级建筑效果修改（下列均包含本城15%信仰的效果，描述已移至圣地区域内：若圣地包含三级宗教建筑则+15%信仰值。）
+
+大教堂 BUILDING_CATHEDRAL，2鸽1艺术槽，本城的雕塑和宗教画作+3鸽，且业绩翻倍
+谒师所 BUILDING_GURDWARA，2鸽3粮1住房，本城余粮+10%
+礼拜堂 BUILDING_MEETING_HOUSE，2鸽3锤，建造区域、建筑、奇观+10%
+清真 BUILDING_MOSQUE，2鸽，传教和使徒次数+1。（从本城购买的宗教单位在宗教战争辩论中+3力 暂未实装）
+佛塔 BUILDING_PAGODA，2鸽3琴，本城琴+10%
+犹太教堂 BUILDING_SYNAGOGUE，5鸽，本城鸽子+10%
+佛寺 BUILDING_WAT，2鸽3瓶，本城瓶+10%
+窣堵波 BUILDING_STUPA，2鸽2宜居，本城每种开发的奢侈资源1宜居
+拜火神庙 BUILDING_DAR_E_MEHR，2鸽，每时代1，完成送一个传教士
+
+对应文本更新，区域描述的文本更新。
+
+[Version v0.3.0.1]
+（由 利牙菠萝 提供）
+清真寺效果实装，城市守护女神新增：加50%锤防御建筑，城市防御+6，城市远程攻击+3力（实际上会作用两次，即+6力）。
+
+[Version v0.3.1]
+信仰买工人和买移民效果给到小庙和大庙解锁（刚果用ud解锁），第三圣殿和宗教殖民合并为一个信条了（即买工人移民打折-20%，可信仰购买市政广场和外交区建筑）。
+
+为所有需要人口支撑的区域+1住房，港口及ud改为额外+1住房（即维持该修改前的2住房）。
+
+[Version v0.3.1.1]
+宗教单位造价修改。
+传教士 100 + 10n 鸽
+使徒 300 + 20n 鸽
+审判 150 + 10n 鸽
+上师 240 + 20n 鸽
+
+[Version v0.3.1.2]
+城邦文本已更新
+
+新增强化信条：册封圣徒，当您激活一位 [ICON_GreatPerson] 伟人时，其会将您所创立宗教的400点宗教压力传播到6单元格内的城市。
+遗物箱增加效果：神社和寺庙提供的 [ICON_Tourism] 旅游业绩等于其固定产出的 [ICON_Faith] 信仰值。

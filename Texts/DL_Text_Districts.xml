@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="en_US">
+      <Text>A district in your city for religious worship. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>区域从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。没有淡水资源的城市最多获得6个 [ICON_Housing] 住房。相反，已有淡水资源的城市 [ICON_Housing] 住房数量+2；若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。本城所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE] 必须修建在与市中心相邻的单元格中。军事工程师可消耗1次使用次数来完成水渠20%的修建进度。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION" Language="en_US">
+      <Text>A district that provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. If built adjacent to a Geothermal Fissure +1 [ICON_Amenities] Amenity. Prevents [ICON_Food] Food loss during Drought. All farm adjacent to fresh water or Aqueduct +1 [ICON_FOOD] Food. [NEWLINE] Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 20% of an Aqueduct's production.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_BATH_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>促进城市发展的罗马特色区域。取代水渠，建造费用更低。[NEWLINE][NEWLINE]从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。尚未拥有淡水资源的城市最多获得6个 [ICON_Housing] 住房。已有淡水资源的城市则+2 [ICON_Housing] 住房。若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。在任何情况下，浴场都能额外提供+2 [ICON_Housing] 住房和+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。必须修建在与市中心相邻的单元格中。本城所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE] 军事工程师可消耗1次使用次数来完成浴场20%的修建进度。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_BATH_DL_DESCRIPTION" Language="en_US">
+      <Text>A district unique to Rome for city growth. Replaces the Aqueduct district and cheaper to build.[NEWLINE][NEWLINE]It provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. If built adjacent to a Geothermal Fissure +1 [ICON_Amenities] Amenity. In all cases the Bath provides an additional bonus of +2 [ICON_Housing] Housing and +1 [ICON_Amenities] Amenity. Prevents [ICON_Food] Food loss during Drought. Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 20% of a Bath's production.All farm adjacent to fresh water or Aqueduct +1 [ICON_FOOD] Food. [NEWLINE] Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 20% of an Aqueduct's production.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_HARBOR_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中的海军活动区域。同时取消从该单元格上下船的 [ICON_Movement] 移动力消耗。必须修建在和陆地相邻的海岸或湖泊单元格上。无法建造在礁石上。[NEWLINE] +2 [ICON_HOUSING] 住房。为本城的渔船 +1 [ICON_FOOD] 食物。对所有海军单位+25% [ICON_PRODUCTION] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_HARBOR_DL_DESCRIPTION" Language="en_US">
+      <Text>A district for naval activity in your city. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land. Cannot be built on Reef. +2 [ICON_HOUSING] Housing. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_COTHON_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>腓尼基特色城市海军活动区域，取代港口且建造成本更低。必须修建在海岸或与陆地相邻的湖泊地貌上。[NEWLINE][NEWLINE]该城市的海军单位与开拓者的 [ICON_PRODUCTION] 生产力+50%。在该城范围内，所有受损海军单位每回合可恢复100点生命值。[NEWLINE] +2 [ICON_HOUSING] 住房。为本城的渔船 +1 [ICON_FOOD] 食物。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_COTHON_DL_DESCRIPTION" Language="en_US">
+      <Text> A district unique to Phoenicia for naval activity in your city. Replaces the Harbor district and cheaper to build. Must be built on Coast or Lake Terrain adjacent to land.[NEWLINE][NEWLINE]+50% [ICON_PRODUCTION] Production towards naval units and Settlers in this city. All wounded naval units in this city’s borders heal +100 HP each turn.+2 [ICON_HOUSING] Housing. Fishing Boats +1 [ICON_FOOD] Food in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中的英国特色海军活动区域，取代港口且建造成本更低。同时移除该单元格的上船、下船 [ICON_Movement] 移动力减益。必须建在与陆地相邻的海岸或湖泊地形上。[NEWLINE][NEWLINE]造船厂中建造的所有海军单位+1 [ICON_Movement] 移动力。[NEWLINE]修建在外国大陆上时+2 [ICON_Gold] 金币、每回合的忠诚度+4。无法建造在礁石上。[NEWLINE] +2 [ICON_HOUSING] 住房。为本城的渔船 +1 [ICON_FOOD] 食物。对所有海军单位+25% [ICON_PRODUCTION] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_DL_DESCRIPTION" Language="en_US">
+      <Text>A district unique to England for naval activity in your city. Replaces the Harbor district. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land.[NEWLINE][NEWLINE]+1 [ICON_Movement] Movement for all naval units built in Dockyard[NEWLINE]+2 [ICON_Gold] Gold and +4 Loyalty per turn when built on a foreign continent. Cannot be built on Reef.+2 [ICON_HOUSING] Housing. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_IKANDA_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 生产陆地单位+30% [ICON_PRODUCTION] 生产力。为本城的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_IKANDA_DL_DESCRIPTION" Language="en_US">
+      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Units. +1 [ICON_PRODUCTION] Production for [ICON_RESOURCE_STONE] Stone in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您城市里的军事机构区。[NEWLINE] 生产陆地单位+15% [ICON_PRODUCTION] 生产力。为本城的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="en_US">
+      <Text> A district in your city for military facilities.[NEWLINE] +15% [ICON_PRODUCTION] Production towards Land Units. +1 [ICON_PRODUCTION] Production for [ICON_RESOURCE_STONE] Stone in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_MBANZA_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text> 刚果特色区域，只能建在雨林或树林里。代替社区，可更早建造，且建造费用更低。无视魅力值，固定提供+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物和+5 [ICON_Gold] 金币。为相邻的雨林和森林单元格 +1 [ICON_FOOD] 食物。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_MBANZA_DL_DESCRIPTION" Language="en_US">
+      <Text> A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +5 [ICON_Housing] Housing , +3 [ICON_Food] Food, and + 5 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food to all adjacent Forest and Rainforest tiles. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="en_US">
+      <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens.</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>

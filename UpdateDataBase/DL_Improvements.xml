@@ -1,0 +1,117 @@
+<GameInfo>
+	<Types>
+		<Row Type="IMPROVEMENT_ADJUST_WONDER_PRODUCTION" Kind="KIND_MODIFIER"/>
+	</Types>
+	
+	
+	<DynamicModifiers>
+		<Row>
+			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+			<CollectionType>COLLECTION_OWNER_CITY</CollectionType>
+			<EffectType>EFFECT_ADJUST_WONDER_ERA_PRODUCTION</EffectType>
+		</Row>
+	</DynamicModifiers>
+	
+	
+	
+	<Modifiers>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+		</Row>
+		
+		<Row>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+		</Row>
+		
+		<Row>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+		</Row>
+	</Modifiers>
+	
+	
+	<ModifierArguments>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>15</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+			<Name>IsWonder</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+			<Name>StartEra</Name>
+			<Value>ERA_ANCIENT</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+			<Name>EndEra</Name>
+			<Value>ERA_ANCIENT</Value>
+		</Row>
+		
+		<Row>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>10</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+			<Name>IsWonder</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+			<Name>StartEra</Name>
+			<Value>ERA_CLASSICAL</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+			<Name>EndEra</Name>
+			<Value>ERA_CLASSICAL</Value>
+		</Row>
+		
+		<Row>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>5</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+			<Name>IsWonder</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+			<Name>StartEra</Name>
+			<Value>ERA_MEDIEVAL</Value>
+		</Row>
+		<Row>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+			<Name>EndEra</Name>
+			<Value>ERA_RENAISSANCE</Value>
+		</Row>
+	</ModifierArguments>
+	
+	
+	<ImprovementModifiers>
+		<Row>
+			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
+		</Row>
+		
+		<Row>
+			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
+		</Row>
+		
+		<Row>
+			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
+		</Row>
+	</ImprovementModifiers>
+</GameInfo>

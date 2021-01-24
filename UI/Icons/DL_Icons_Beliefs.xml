@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<IconDefinitions>
+		<!--Pantheons-->
+		<Row Name="ICON_BELIEF_THE_PEOPLE_OF_POLAR"			Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="0"/>
+		<Row Name="ICON_BELIEF_GODDESS_OF_THE_DESERT"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="1"/>
+		<Row Name="ICON_BELIEF_TENGRI"						Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="8"/>
+		<Row Name="ICON_BELIEF_ONE_WITH_NATURE"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="27"/>
+		<Row Name="ICON_BELIEF_MESSENGER_OF_THE_GODS"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="16"/>
+		<!-- <Row Name="ICON_BELIEF_SUN_GOD"					Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="8"/> -->
+		<!-- <Row Name="ICON_BELIEF_ORAL_TRADITION"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="14"/> -->
+		<!-- <Row Name="ICON_BELIEF_GODDESS_OF_THE_HARVEST"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="21"/> -->
+		<Row Name="ICON_BELIEF_OCEAN_MOTHER"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="7"/>
+		<!--Follower Beliefs-->
+		<Row Name="ICON_BELIEF_RELIGIOUS_ART"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/>
+		<!-- <Row Name="ICON_BELIEF_CASTE_SYSTEM"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/> -->
+		<Row Name="ICON_BELIEF_PRACTICAL_APPLICATION"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/>
+		<!-- <Row Name="ICON_BELIEF_THE_THIRD_TEMPLE"			Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/> -->
+		<Update><Where Name="ICON_BELIEF_RELIGIOUS_COLONIZATION"/> <Set Index="23"/></Update>
+		<!--Worship Beliefs-->
+		<!--  -->
+		<!--Founder Beliefs-->
+		<Update><Where Name="ICON_BELIEF_INITIATION_RITES"/> <Set Index="24"/></Update>
+		<Row Name="ICON_BELIEF_TO_THE_GLORY_OF_GOD"			Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="22"/>
+		<!--  -->
+		<!--Enhancer Beliefs-->
+		<Row Name="ICON_BELIEF_PIOUS_MERCHANTS"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
+		<Row Name="ICON_BELIEF_CANONIZATION_OF_SAINTS"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
+		<!-- <Row Name=""		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/> -->
+	</IconDefinitions>
+</GameData>

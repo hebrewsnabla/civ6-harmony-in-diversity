@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<!-- Resources-->
+		<Row Tag="LOC_RESOURCE_GOLD_NAME" Language="zh_Hans_CN">
+			<Text>黄金</Text>
+		</Row>
+		<!-- <Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_GOLD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>Gold is a soft, shiny and malleable metal, and it has been prized by men and women throughout history. It is a rare metal, and its rarity greatly adds to its value. Although it has some industrial and medicinal purposes, gold is used primarily as coinage or for decorative purposes, adorning jewelry, cups, utensils and the commodes of the super-rich and powerful. </Text>
+		</Row> -->
+	</LocalizedText>
+</GameData>

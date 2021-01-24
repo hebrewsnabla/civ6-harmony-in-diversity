@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.1">
+  <Properties>
+    <Name>DL Game Balance Mod</Name>
+    <Description>
+DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] City Policies.
+    </Description>
+    <Teaser>Game Balance Mod</Teaser>
+    <Authors>DeepLogic</Authors>
+    <Homepage>https://space.bilibili.com/385456816</Homepage>
+    <SpecialThanks>CEP Group</SpecialThanks>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+  </ActionCriteria>
+  <InGameActions>
+    <ImportFiles id="DL_new_happiness_level_support" criteria="Expansion2">
+      <Properties><LoadOrder>5</LoadOrder></Properties>
+      <File>UI/Replacement/CityPanel.lua</File>
+      <File>UI/Replacement/CityPanelOverview.lua</File>
+    </ImportFiles>
+    <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
+      <Properties><LoadOrder>15800</LoadOrder></Properties>
+      <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
+      <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="GoldResourceDatabase" criteria="Expansion2">
+      <Properties><LoadOrder>15900</LoadOrder></Properties>
+      <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
+    </UpdateDatabase>
+    <UpdateIcons id="GoldResourceIcon" criteria="Expansion2">
+      <Properties><LoadOrder>15901</LoadOrder></Properties>
+      <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
+    </UpdateIcons>
+    <UpdateText id="GoldResourceText" criteria="Expansion2">
+      <Properties><LoadOrder>15902</LoadOrder></Properties>
+      <File>ThirdParty/GoldResource/Gold_Text.xml</File>
+      <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    </UpdateText>
+    <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Maps/AssignStartingPlots.lua</File>
+      <File>Maps/FeatureGenerator.lua</File>
+      <File>Maps/MapUtilities.lua</File>
+      <File>Maps/TerrainGenerator.lua</File>
+    </ImportFiles>
+    <AddGameplayScripts id="Modified_CityRoads" criteria="Expansion2">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
+    </AddGameplayScripts>
+    <UpdateDatabase id="DL_Balance" criteria="Expansion2">
+      <Properties><LoadOrder>16010</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_Adjacency.sql</File>
+      <File>UpdateDataBase/DL_AdjustYields.sql</File>
+      <File>UpdateDataBase/DL_AI.sql</File>
+      <File>UpdateDataBase/DL_Beliefs.sql</File>
+      <File>UpdateDataBase/DL_Belief_Worships.sql</File>
+      <File>UpdateDataBase/DL_Boosts.sql</File>
+      <File>UpdateDataBase/DL_Buildings.sql</File>
+      <File>UpdateDataBase/DL_Civics.sql</File>
+      <File>UpdateDataBase/DL_CityPolicies.sql</File>
+      <File>UpdateDataBase/DL_Civilizations.sql</File>
+      <File>UpdateDataBase/DL_Diplomacy.sql</File>
+      <File>UpdateDataBase/DL_Districts.sql</File>
+      <File>UpdateDataBase/DL_GlobalParameters.sql</File>
+      <File>UpdateDataBase/DL_Goodyhuts.sql</File>
+      <File>UpdateDataBase/DL_Governors.sql</File>
+      <File>UpdateDataBase/DL_GreatPeople.sql</File>
+      <File>UpdateDataBase/DL_GreatWorks.sql</File>
+      <File>UpdateDataBase/DL_Happiness.xml</File>
+      <File>UpdateDataBase/DL_Happiness.sql</File>
+      <File>UpdateDataBase/DL_Improvements.sql</File>
+      <File>UpdateDataBase/DL_Improvements.xml</File>
+      <File>UpdateDataBase/DL_MajorCivs.sql</File>
+      <File>UpdateDataBase/DL_Modifiers.sql</File>
+      <File>UpdateDataBase/DL_Policies.sql</File>
+      <File>UpdateDataBase/DL_Projects.sql</File>
+      <File>UpdateDataBase/DL_RandomEvents.sql</File>
+      <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
+      <File>UpdateDataBase/DL_Resources.sql</File>
+      <File>UpdateDataBase/DL_Technologies.sql</File>
+      <File>UpdateDataBase/DL_Units.sql</File>
+      <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
+      <File>UpdateDataBase/DL_Wonders.sql</File>
+      <!-- Requirements need to update in the end -->
+      <File>UpdateDataBase/DL_Requirements.sql</File>
+      <!-- Temp -->
+      <File>UpdateDataBase/DL_Temp.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="DL_Icons" criteria="Expansion2">
+      <Properties><LoadOrder>16012</LoadOrder></Properties>
+      <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+    </UpdateIcons>
+    <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
+      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <File>Texts/DL_TextTag.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="DL_Text" criteria="Expansion2">
+      <Properties><LoadOrder>16020</LoadOrder></Properties>
+      <File>Texts/DL_Text.xml</File>
+      <File>Texts/DL_Text_Buildings.xml</File>
+      <File>Texts/DL_Text_Districts.xml</File>
+      <File>Texts/DL_Text_Pantheon.xml</File>
+      <File>Texts/DL_Text_Beliefs.xml</File>
+      <File>Texts/DL_Text_Improvements.xml</File>
+      <File>Texts/DL_Text_NaturalWonders.xml</File>
+    </UpdateText>
+  </InGameActions>
+  <Files>
+    <!-- UI replacements and icons -->
+    <File>UI/Replacement/CityPanel.lua</File>
+    <File>UI/Replacement/CityPanelOverview.lua</File>
+    <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+    <!-- Map Generation -->
+    <File>Maps/AssignStartingPlots.lua</File>
+    <File>Maps/FeatureGenerator.lua</File>
+    <File>Maps/MapUtilities.lua</File>
+    <File>Maps/TerrainGenerator.lua</File>
+    <!-- Game Scripts -->
+    <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
+    <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
+    <!-- ThirdParty HetairoiBugFix -->
+    <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
+    <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
+    <!-- ThirdParty Gold Resource -->
+    <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
+    <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
+    <File>ThirdParty/GoldResource/Gold_Text.xml</File>
+    <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- Update database -->
+    <File>UpdateDataBase/DL_Adjacency.sql</File>
+    <File>UpdateDataBase/DL_AdjustYields.sql</File>
+    <File>UpdateDataBase/DL_AI.sql</File>
+    <File>UpdateDataBase/DL_Beliefs.sql</File>
+    <File>UpdateDataBase/DL_Belief_Worships.sql</File>
+    <File>UpdateDataBase/DL_Boosts.sql</File>
+    <File>UpdateDataBase/DL_Buildings.sql</File>
+    <File>UpdateDataBase/DL_Civics.sql</File>
+    <File>UpdateDataBase/DL_CityPolicies.sql</File>
+    <File>UpdateDataBase/DL_Civilizations.sql</File>
+    <File>UpdateDataBase/DL_Diplomacy.sql</File>
+    <File>UpdateDataBase/DL_Districts.sql</File>
+    <File>UpdateDataBase/DL_GlobalParameters.sql</File>
+    <File>UpdateDataBase/DL_Goodyhuts.sql</File>
+    <File>UpdateDataBase/DL_Governors.sql</File>
+    <File>UpdateDataBase/DL_GreatPeople.sql</File>
+    <File>UpdateDataBase/DL_GreatWorks.sql</File>
+    <File>UpdateDataBase/DL_Happiness.xml</File>
+    <File>UpdateDataBase/DL_Happiness.sql</File>
+    <File>UpdateDataBase/DL_Improvements.sql</File>
+    <File>UpdateDataBase/DL_Improvements.xml</File>
+    <File>UpdateDataBase/DL_MajorCivs.sql</File>
+    <File>UpdateDataBase/DL_Modifiers.sql</File>
+    <File>UpdateDataBase/DL_Policies.sql</File>
+    <File>UpdateDataBase/DL_Projects.sql</File>
+    <File>UpdateDataBase/DL_RandomEvents.sql</File>
+    <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
+    <File>UpdateDataBase/DL_Requirements.sql</File>
+    <File>UpdateDataBase/DL_Resources.sql</File>
+    <File>UpdateDataBase/DL_Technologies.sql</File>
+    <File>UpdateDataBase/DL_Temp.sql</File>
+    <File>UpdateDataBase/DL_Units.sql</File>
+    <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
+    <File>UpdateDataBase/DL_Wonders.sql</File>
+    <!-- Texts -->
+    <File>Texts/DL_TextTag.sql</File>
+    <File>Texts/DL_Text.xml</File>
+    <File>Texts/DL_Text_Buildings.xml</File>
+    <File>Texts/DL_Text_Districts.xml</File>
+    <File>Texts/DL_Text_Pantheon.xml</File>
+    <File>Texts/DL_Text_Beliefs.xml</File>
+    <File>Texts/DL_Text_Improvements.xml</File>
+    <File>Texts/DL_Text_NaturalWonders.xml</File>
+  </Files>
+</Mod>
