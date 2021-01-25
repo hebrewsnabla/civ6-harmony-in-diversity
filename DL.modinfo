@@ -89,6 +89,8 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
       <File>UpdateDataBase/DL_Units.sql</File>
       <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
       <File>UpdateDataBase/DL_Wonders.sql</File>
+      <File>UpdateDataBase/DL_StartBias.sql</File>
+      <File>UpdateDataBase/DL_WonderTheming.sql</File>
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
       <!-- Temp -->
@@ -164,11 +166,13 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
     <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
     <File>UpdateDataBase/DL_Requirements.sql</File>
     <File>UpdateDataBase/DL_Resources.sql</File>
-    <File>UpdateDataBase/DL_Technologies.sql</File>
+    <File>UpdateDataBase/DL_StartBias.sql</File>
+   	<File>UpdateDataBase/DL_Technologies.sql</File>
     <File>UpdateDataBase/DL_Temp.sql</File>
     <File>UpdateDataBase/DL_Units.sql</File>
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
+    <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <File>Texts/DL_Text.xml</File>

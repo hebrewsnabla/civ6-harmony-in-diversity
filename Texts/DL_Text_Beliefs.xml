@@ -204,6 +204,31 @@
 		<Replace Tag="LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION" Language="en_US">
 			<Text>When you use a religious unit to convert a city for the first time earn 50 [ICON_Gold] Gold per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="en_US">
+			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. </Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>招募伟人-25% [ICON_faith] 信仰值花费。 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="en_US">
+			<Text>-25% [ICON_faith] faith when you patronage great person. Each time you recruit a great person , add 50 [ICON_FAVOR] Diplomatic Favor.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DESCRIPTION" Language="zh_Hans_CN">
+      		<Text>信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。</Text>
+    	</Replace>
+		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DESCRIPTION" Language="en_US">
+      		<Text>+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder.</Text>
+    	</Replace>
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME" Language="zh_Hans_CN">
+      		<Text>荣神益人</Text>
+    	</Replace>
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME" Language="en_US">
+      		<Text>To the Glory of God</Text>
+    	</Replace>
+
 		<!--  -->
 		<!-- Follower -->
 		<Replace Tag="LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION" Language="zh_Hans_CN">
@@ -237,10 +262,10 @@
 			<Text>[ICON_GreatWork_Relic] Relics have triple yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism. Shrines and Temples provide [ICON_Tourism] Tourism equal to their intrinsic [ICON_Faith] Faith output.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。</Text>
+			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。寺庙提供一条免费的商路容量。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="en_US">
-			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold.</Text>
+			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. Temple provides a trade route capacity.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_ART_NAME" Language="zh_Hans_CN">
 			<Text>宗教艺术</Text>
@@ -353,6 +378,13 @@
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="en_US">
 			<Text>Increases Healing of your all units by +20 in Holy Site districts belonging to cities with your majority religion, or any adjacent tiles.</Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>您的宗教压力不会因为神学战斗失败而减少。减少100%外来宗教压力影响，审判官+1使用次数，购买审判官打折-30%。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="en_US">
+			<Text>Your Religion's pressure never drops due to losses in Theological Combat.-100% outer religion pressure. Inquisitors receive +1 charge. -30% purchase cost for Inquisitors. </Text>
+		</Replace>
+		
 		<!-- Worship -->
 		<Replace Tag="LOC_BELIEF_MOSQUE_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text> 允许建造清真寺（+2 [ICON_Faith] 信仰值；此处创建的传教士和使徒+1传教次数；所有从本城创建的宗教单位在宗教战争中+3力）。</Text>
