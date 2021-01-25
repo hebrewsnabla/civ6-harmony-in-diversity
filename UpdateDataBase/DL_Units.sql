@@ -31,3 +31,14 @@ update Units set BuildCharges = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
 -- update Units set Cost = 30 where UnitType = 'UNIT_BABYLONIAN_SABUM_KIBITTUM';
 -- update Units set Cost = 35 where UnitType = 'UNIT_WARRIOR';
 -- update Units set Cost = 150, CostProgressionParam1 = 50 where UnitType = 'UNIT_SPY';
+
+
+--update the civis requirment of WINGHUSSAR to DIVINE RIGHT
+
+update Units set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where UnitType ='UNIT_POLISH_HUSSAR';
+
+update Units set
+	CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES',
+	CostProgressionParam1 = 25,
+	Cost = 200
+where UnitType = 'UNIT_SPY';
