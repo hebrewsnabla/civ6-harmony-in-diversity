@@ -336,6 +336,18 @@
 		</Replace>
 		<!--  -->
 		<!-- Enhancer -->
+		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_NAME" Language="zh_Hans_CN">
+			<Text>经院哲学</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_NAME" Language="en_US">
+			<Text>Scholasticism</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有宗教单位在神学战斗中+7 [ICON_Religion] 宗教战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_DL_DESCRIPTION" Language="en_US">
+			<Text>All Religious units +7 [ICON_Religion] Religious Strength in theological combat.</Text>
+		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_NAME" Language="zh_Hans_CN">
 			<Text>虔诚商队</Text>
 		</Replace>
@@ -382,7 +394,7 @@
 			<Text>您的宗教压力不会因为神学战斗失败而减少。减少100%外来宗教压力影响，审判官+1使用次数，购买审判官打折-30%。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="en_US">
-			<Text>Your Religion's pressure never drops due to losses in Theological Combat.-100% outer religion pressure. Inquisitors receive +1 charge. -30% purchase cost for Inquisitors. </Text>
+			<Text>Your Religion's pressure never drops due to losses in Theological Combat. -100% outer religion pressure. Inquisitors receive +1 charge. -30% purchase cost for Inquisitors. </Text>
 		</Replace>
 		
 		<!-- Worship -->
