@@ -787,7 +787,7 @@ update ModifierArguments set Value = 20 where ModifierId = 'HOLY_WATERS_HEALING_
 
 -- By 小小雨10101
 -- Reliquaries add tourism for shrine and temple.
--- Sacred path value updated
+-- Sacred places value updated
 --
 
 insert or replace into BeliefModifiers

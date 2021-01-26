@@ -64,3 +64,9 @@ update Districts set Description = 'LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION' wher
 update Districts set Description = 'LOC_DISTRICT_MBANZA_DL_DESCRIPTION' where DistrictType ='DISTRICT_MBANZA';
 update Districts set Description = 'LOC_DISTRICT_AERODROME_DL_DESCRIPTION' where DistrictType ='DISTRICT_AERODROME';
 
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY' where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY' where BuildingType = 'BUILDING_GREAT_LIBRARY';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_HERMITAGE' where BuildingType = 'BUILDING_HERMITAGE';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE' where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_APADANA' where BuildingType = 'BUILDING_APADANA';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_GOV_CULTURE' where BuildingType = 'BUILDING_GOV_CULTURE';
