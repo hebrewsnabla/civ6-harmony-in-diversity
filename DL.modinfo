@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.1">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.2">
   <Properties>
     <Name>DL Game Balance Mod</Name>
     <Description>
-DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] City Policies.
+DL Game Balance Mod. Test version v0.3.2. Please use this mod along with [MOD] City Policies.
     </Description>
     <Teaser>Game Balance Mod</Teaser>
     <Authors>DeepLogic</Authors>
@@ -91,7 +91,6 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
       <File>UpdateDataBase/DL_Wonders.sql</File>
       <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
-    
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
       <!-- Temp -->
