@@ -16,6 +16,18 @@
 		</Replace>
 		
 		</Replace>
+		<Replace Tag="LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION" Language="en_US">
+			<Text>Farm improvements now gain +1 [ICON_Food] Food from every 2 adjacent Farm improvements.</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_FEUDALISM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>种植园改良设施提供的 [ICON_Food] 食物+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_FEUDALISM_DESCRIPTION" Language="en_US">
+			<Text>Plantation improvements receive +1 [ICON_Food] Food.</Text>
+		</Replace>
 		<!-- 政策卡 -->
 		<!-- 黄金时代效果 -->
 		<!-- <Replace Tag="LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE" Language="zh_Hans_CN">
@@ -165,6 +177,13 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_NAVAL_TRADITION" Language="en_US">
 			<Text>Own 1 Quadrireme.</Text>
 		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES" Language="zh_Hans_CN">
+			<Text>经营3条贸易线。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES" Language="en_US">
+			<Text>Maintain 3 Trade Routes.</Text>
+		</Replace>
+
 		<!-- Unit Abilities -->
 		<Replace Tag="LOC_ABILITY_BARRACKS_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在兵营中训练获得的+3战斗力</Text>
@@ -196,6 +215,12 @@
 		<Replace Tag="LOC_ABILITY_MOSQUE_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
 			<Text>+3 combat strength from training in Mosque</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_SCHOLASTICISM_BUFF_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>来自经院哲学信条+7战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SCHOLASTICISM_BUFF_DESCRIPTION" Language="en_US">
+			<Text>+7 combat strength from Scholasticism Belief</Text>
+		</Replace>
 		<!-- preview text -->
 		<Replace Tag="LOC_BARRACKS_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>从兵营中训练获得</Text>
@@ -226,6 +251,12 @@
 		</Replace>
 		<Replace Tag="LOC_MOSQUE_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="en_US">
 			<Text>from training in Mosque</Text>
+		</Replace>
+		<Replace Tag="LOC_SCHOLASTICISM_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>来自经院哲学信条</Text>
+		</Replace>
+		<Replace Tag="LOC_SCHOLASTICISM_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT" Language="en_US">
+			<Text>from Scholasticism Belief</Text>
 		</Replace>
 		<!-- Adjacency -->
 		<Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="zh_Hans_CN">
