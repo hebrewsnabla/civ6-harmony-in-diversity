@@ -8,7 +8,7 @@ update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where 
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
-update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
+-- update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
 
 update Buildings set Description = 'LOC_BUILDING_GRANARY_DESCRIPTION' where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Description = 'LOC_BUILDING_UNIVERSITY_DESCRIPTION' where BuildingType = 'BUILDING_UNIVERSITY';
