@@ -14,11 +14,7 @@
 		<Replace Tag="LOC_DISTRICT_LUXURY_GOLD" Language="en_US">
 			<Text>+{1_num} [ICON_Gold] Gold from the adjacent luxury resource.</Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_THE_WHEEL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。</Text>
-		</Replace>
-		<Replace Tag="LOC_TECH_THE_WHEEL_DESCRIPTION" Language="en_US">
-			<Text>After researching the wheel, all improvements inside territory obtain roads for free. All improvements built afterward also get free roads.</Text>
+		
 		</Replace>
 		<!-- 政策卡 -->
 		<!-- 黄金时代效果 -->

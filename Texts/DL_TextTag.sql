@@ -1,6 +1,14 @@
 -- Insert text tag for new texts.
 
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
+update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
+update Technologies set Description = 'LOC_TECH_REFINING_DESCRIPTION' where TechnologyType ='TECH_REFINING';
+update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
+update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
+update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
+update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
+update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
+update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
 
 update Buildings set Description = 'LOC_BUILDING_GRANARY_DESCRIPTION' where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Description = 'LOC_BUILDING_UNIVERSITY_DESCRIPTION' where BuildingType = 'BUILDING_UNIVERSITY';
@@ -51,3 +59,4 @@ update Districts set Description = 'LOC_DISTRICT_IKANDA_DL_DESCRIPTION' where Di
 update Districts set Description = 'LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION' where DistrictType ='DISTRICT_ENCAMPMENT';
 update Districts set Description = 'LOC_DISTRICT_MBANZA_DL_DESCRIPTION' where DistrictType ='DISTRICT_MBANZA';
 update Districts set Description = 'LOC_DISTRICT_AERODROME_DL_DESCRIPTION' where DistrictType ='DISTRICT_AERODROME';
+

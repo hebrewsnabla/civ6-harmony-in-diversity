@@ -91,6 +91,7 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
       <File>UpdateDataBase/DL_Wonders.sql</File>
       <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
+    
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
       <!-- Temp -->
@@ -113,6 +114,8 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
       <File>Texts/DL_Text_Beliefs.xml</File>
       <File>Texts/DL_Text_Improvements.xml</File>
       <File>Texts/DL_Text_NaturalWonders.xml</File>
+      <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
+      <File>Texts/DL_Text_CivTraits.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -182,5 +185,7 @@ DL Game Balance Mod. Test version v0.3.1. Please use this mod along with [MOD] C
     <File>Texts/DL_Text_Beliefs.xml</File>
     <File>Texts/DL_Text_Improvements.xml</File>
     <File>Texts/DL_Text_NaturalWonders.xml</File>
+    <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
+    <File>Texts/DL_Text_CivTraits.xml</File>
   </Files>
 </Mod>
