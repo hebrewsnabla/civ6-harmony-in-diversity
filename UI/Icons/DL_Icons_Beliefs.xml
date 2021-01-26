@@ -21,9 +21,10 @@
 		<!--  -->
 		<!--Founder Beliefs-->
 		<Update><Where Name="ICON_BELIEF_INITIATION_RITES"/> <Set Index="24"/></Update>
-		<Row Name="ICON_BELIEF_TO_THE_GLORY_OF_GOD"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="22"/>
+		<Row Name="ICON_BELIEF_TO_THE_GLORY_OF_GOD"			Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
 		<!--  -->
 		<!--Enhancer Beliefs-->
+		<Row Name="ICON_BELIEF_SCHOLASTICISM"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_PIOUS_MERCHANTS"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_CANONIZATION_OF_SAINTS"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<!-- <Row Name=""		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/> -->

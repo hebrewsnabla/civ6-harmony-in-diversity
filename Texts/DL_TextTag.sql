@@ -40,6 +40,8 @@ update Beliefs set Description = 'LOC_BELIEF_WAT_DL_DESCRIPTION' where BeliefTyp
 update Beliefs set Description = 'LOC_BELIEF_STUPA_DL_DESCRIPTION' where BeliefType = 'BELIEF_STUPA';
 update Beliefs set Description = 'LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION' where BeliefType = 'BELIEF_DAR_E_MEHR';
 
+update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType = 'CIVIC_CIVIL_SERVICE';
+
 update Improvements set Description = 'LOC_IMPROVEMENT_FARM_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FARM';
 update Improvements set Description = 'LOC_IMPROVEMENT_FISHING_BOATS_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
 update Improvements set Description = 'LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PASTURE';
