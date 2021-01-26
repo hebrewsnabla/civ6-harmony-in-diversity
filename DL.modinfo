@@ -115,6 +115,7 @@ DL Game Balance Mod. Test version v0.3.2. Please use this mod along with [MOD] C
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
+      <File>Texts/DL_Text_Greatworks_Types.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -186,5 +187,6 @@ DL Game Balance Mod. Test version v0.3.2. Please use this mod along with [MOD] C
     <File>Texts/DL_Text_NaturalWonders.xml</File>
     <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
+    <File>Texts/DL_Text_Greatworks_Types.xml</File>
   </Files>
 </Mod>

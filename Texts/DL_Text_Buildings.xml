@@ -280,5 +280,42 @@
     <Replace Tag="LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION" Language="en_US">
       <Text> +1 additional [ICON_FAITH] Faith for each era since constructed or last repaired. Gain a Missionary unit after finishing construction.</Text>
     </Replace>
+    <!-- buliding theming texts -->
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="zh_Hans_CN">
+        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="zh_Hans_CN">
+        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="zh_Hans_CN">
+        <Text> 当展示来自相同时代音乐家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of musicians from same eras.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="zh_Hans_CN">
+        <Text> 当展示来自不同艺术家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different artists.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="zh_Hans_CN">
+        <Text> 当展示来自相同类型的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of same kinds.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="zh_Hans_CN">
+        <Text> 当展示来自相同时代的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects from same eras.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

@@ -60,7 +60,7 @@ where BuildingType ='BUILDING_HERMITAGE';
 --同时代
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType = 0 ,
+	ThemingSameObjectType = 1 ,
 	ThemingSameEras = 1 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100

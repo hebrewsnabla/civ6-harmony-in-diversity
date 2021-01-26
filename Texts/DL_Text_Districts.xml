@@ -60,6 +60,11 @@
     </Replace>
     <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="en_US">
       <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens.</Text>
+  	<Replace Tag="LOC_DISTRICT_DIPLOMATIC_QUARTER_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text> 通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。如建在市中心旁，则+1 [ICON_ENVOY] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。+1 [ICON_SPY] 间谍容量。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_DIPLOMATIC_QUARTER_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. +1 [ICON_ENVOY] Envoy if built next to the city center. Enemy Spies operate at 2 levels below normal targeting this district and adjacent districts. Only 1 can exist in your empire at a time. +1 [ICON_SPY] Spy capacity.</Text>
     </Replace>
   </LocalizedText>
 </GameData>
