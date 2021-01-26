@@ -4,10 +4,12 @@ update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where Tec
 update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 update Technologies set Description = 'LOC_TECH_REFINING_DESCRIPTION' where TechnologyType ='TECH_REFINING';
 update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
+update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
+update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 -- update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
 
 update Buildings set Description = 'LOC_BUILDING_GRANARY_DESCRIPTION' where BuildingType = 'BUILDING_GRANARY';
