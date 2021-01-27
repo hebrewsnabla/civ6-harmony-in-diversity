@@ -56,10 +56,10 @@
       <Text> A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +5 [ICON_Housing] Housing , +3 [ICON_Food] Food, and + 5 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food to all adjacent Forest and Rainforest tiles. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。</Text>
+      <Text>可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。航空港+1空中单位容量。建造空中单位时，+25% [Icon_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="en_US">
-      <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens.</Text>
+      <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens. +1 air unit slot in Aerodrome district. +25% [Icon_Production] Production towards Air Units. </Text>
     </Replace> 
   	<Replace Tag="LOC_DISTRICT_DIPLOMATIC_QUARTER_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text> 通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。如建在市中心旁，则+1 [ICON_ENVOY] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。+1 [ICON_SPY] 间谍容量。</Text>

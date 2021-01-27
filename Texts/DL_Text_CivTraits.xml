@@ -13,10 +13,10 @@
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
       <Text>[ICON_TechBoosted] Eurekas provide 99% of the [ICON_SCIENCE] Science for technologies. -50% [ICON_SCIENCE] Science per turn.</Text>
     </Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="zh_Hans_CN">
       <Text>在淡水和海岸旁定居时仅提供+1 [ICON_HOUSING] 住房，而每座农场提供的 [ICON_HOUSING] 住房和 [ICON_GOLD] 金币额外+1。每有一种奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。</Text>
     </Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="en_US">
       <Text>Settling adjacent to Fresh Water and Coast only provide +1 [ICON_HOUSING] Housing, instead each Farm provides an additional +1 [ICON_HOUSING] Housing and +1 [ICON_GOLD] Gold. +1 [ICON_AMENITIES] Amenity for every Luxury adjacent to the City Center.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_MUTAL_DESCRIPTION" Language="zh_Hans_CN">

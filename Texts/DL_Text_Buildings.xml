@@ -69,10 +69,10 @@
       <Text>+25% combat experience for all land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed). +1 [ICON_Production] Production to all [ICON_Resource_Niter] Niter and [ICON_Resource_Oil] Oil in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MILITARY_ACADEMY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>此城中训练的所有陆地单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE]可直接训练军团和军队。军团和军队的训练费用降低25%。为本城的 [ICON_Resource_Aluminum] 铝、 [ICON_Resource_Uranium] 铀资源+1 [ICON_Production] 生产力。</Text>
+      <Text>此城中训练的所有陆地单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE]可直接训练军团和军队。军团和军队的训练费用降低25%。为本城的 [ICON_Resource_Aluminum] 铝、 [ICON_Resource_Uranium] 铀资源+1 [ICON_Production] 生产力。本城的 [ICON_GREATGENERAL] 大将军点数积累速度+50%，且所有训练的陆地单位+3 [ICON_STRENGTH] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MILITARY_ACADEMY_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>+25% combat experience for all land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE]Allows Corps and Armies to be trained directly. Corps and Army training costs reduced 25%. +1 [ICON_Production] Production to all [ICON_Resource_Aluminum] Aluminum and [ICON_Resource_Uranium] Uranium in this city.</Text>
+      <Text>+25% combat experience for all land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE]Allows Corps and Armies to be trained directly. Corps and Army training costs reduced 25%. +1 [ICON_Production] Production to all [ICON_Resource_Aluminum] Aluminum and [ICON_Resource_Uranium] Uranium in this city.+50% accumulation rate for [ICON_GREAT_GENERAL] Great General Points in this city. +3  [ICON_STRENGTH] Combat Strength for all land units trained in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GOV_TALL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>所有城市+2 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。[NEWLINE]奖励1个 [Icon_Governor] 总督头衔。</Text>
@@ -81,7 +81,7 @@
       <Text>+2 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing in all cities [NEWLINE]Awards +1 [Icon_Governor] Governor Title.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MADRASA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。[NEWLINE] 其科技值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。</Text>
+      <Text>阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。[NEWLINE] 其科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MADRASA_DESCRIPTION" Language="en_US">
       <Text>A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_SCIENCE] Science in this city.</Text>
@@ -93,19 +93,19 @@
       <Text>A building unique to the Māori. +1 [ICON_CULTURE] Culture and [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. After Flight is researched receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Costs no maintenance. Has no Great Work slots.[NEWLINE]Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 4 tiles that do not already have a bonus from this building type. +5% [ICON_CULTURE] Culture in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]其 [ICON_CULTURE] 文化值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。</Text>
+      <Text>可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]其 [ICON_CULTURE] 文化值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION" Language="en_US">
       <Text>Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum.Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_CULTURE] Culture in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MUSEUM_ART_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]其 [ICON_CULTURE] 文化值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。</Text>
+      <Text>可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]其 [ICON_CULTURE] 文化值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MUSEUM_ART_DESCRIPTION" Language="en_US">
       <Text>Holds [ICON_GreatWork_Landscape] Great Works of Art. May not be built in a Theater Square district that already has an Archaeological Museum. Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_CULTURE] Culture in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FILM_STUDIO_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。其 [ICON_CULTURE] 文化值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。通电后额外为本城+10% [ICON_CULTURE] 文化值.</Text>
+      <Text>美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。其 [ICON_CULTURE] 文化值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。通电后额外为本城+10% [ICON_CULTURE] 文化值.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FILM_STUDIO_DESCRIPTION" Language="en_US">
       <Text>A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Modern era. +10% [ICON_CULTURE] Culture in this city. +10% [ICON_CULTURE] culture if the city is fully powered.</Text>
@@ -123,19 +123,19 @@
       <Text>A building unique to Poland. International [ICON_TradeRoute] Trade Routes from this city gain +2 [ICON_Production] Production; domestic [ICON_TradeRoute] Trade Routes gain +4 [ICON_Gold] Gold. +1 [ICON_TradeRoute] Trade Route capacity. +5% [ICON_GOLD] Gold yield in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。其 [ICON_GOLD] 金币加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币产出+10%。</Text>
+      <Text>奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。其 [ICON_GOLD] 金币加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币产出+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION" Language="en_US">
       <Text>A building unique to the Ottomans. Accumulate 1 extra Strategic resource for every different type of Strategic resource this city has improved. Receive 1 [ICON_AMENITIES] Amenity for every Luxury resource this city has improved. +10% [ICON_gold] Gold yield in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_Production] 生产力加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。</Text>
+      <Text>其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type.+1[ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city, +10% [ICON_Production] Production towards wonders, districts and buildings in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。其 [ICON_Production] 生产力加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。</Text>
+      <Text>日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +1 [ICON_Production] Production for each [ICON_RESOURCE_COAL] coal in this city, +10% [ICON_Production] Production towards wonders, districts and buildings in this city.</Text>
@@ -147,13 +147,13 @@
       <Text>Automatically converts any amount of [ICON_RESOURCE_COAL] Coal into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_COAL] Coal [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet]Heavy CO2 into the atmosphere.[NEWLINE]+20% [ICON_Production] Production towards wonders, districts and buildings in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>将任意数额的 [ICON_RESOURCE_OIL] 石油自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_OIL] 石油 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放中量二氧化碳[NEWLINE]其 [ICON_Production] 生产力加成延伸到6单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成）。[NEWLINE]本城建造区域、建筑和奇观+20% [ICON_Production] 生产力。</Text>
+      <Text>将任意数额的 [ICON_RESOURCE_OIL] 石油自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_OIL] 石油 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放中量二氧化碳[NEWLINE]其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成）。[NEWLINE]本城建造区域、建筑和奇观+20% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DESCRIPTION" Language="en_US">
       <Text>Automatically converts any amount of [ICON_RESOURCE_OIL] Oil into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_OIL] Oil [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet]Moderate CO2 into the atmosphere[NEWLINE]Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+20% [ICON_Production] Production towards wonders, districts and buildings in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_POWER_PLANT_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>将任意数额的 [ICON_RESOURCE_URANIUM] 铀自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_URANIUM] 铀 [ICON_PowerRight] 16点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放少量二氧化碳[NEWLINE]建成后发生核事故的概率会随着核电站老化而增加。其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成。）。[NEWLINE]本城建造区域、建筑和奇观+20% [ICON_Production] 生产力。</Text>
+      <Text>将任意数额的 [ICON_RESOURCE_URANIUM] 铀自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_URANIUM] 铀 [ICON_PowerRight] 16点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放少量二氧化碳[NEWLINE]建成后发生核事故的概率会随着核电站老化而增加。其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成。）。[NEWLINE]本城建造区域、建筑和奇观+20% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_POWER_PLANT_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>Automatically converts any amount of [ICON_RESOURCE_URANIUM] Uranium into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_URANIUM] Uranium [ICON_PowerRight] 16 [ICON_Power] Power[NEWLINE][ICON_Bullet]Miniscule CO2 into the atmosphere[NEWLINE]Once built, as a Nuclear Power Plant ages, there is an increased chance for a Nuclear Accident to occur. Its [ICON_Production] Production and [ICON_Science] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+20% [ICON_Production] Production towards wonders, districts and buildings in this city.</Text>
@@ -178,7 +178,7 @@
       <Text>[ICON_Food] Food consumption of each citizen reduce to 2.5. +1 [ICON_Food] Food to each improved [ICON_Resource_Bananas] Banana and [ICON_Resource_Deer] deer. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其[ICON_SCIENCE]科技值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。</Text>
+      <Text>其[ICON_SCIENCE]科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_SCIENCE] Science in this city.</Text>
@@ -190,31 +190,31 @@
       <Text> Each citizen provides 0.5 extra [ICON_SCIENCE] Science. +5% [ICON_SCIENCE] Science in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_RESEARCH_LAB_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_SCIENCE] 科技值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。</Text>
+      <Text>其 [ICON_SCIENCE] 科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_RESEARCH_LAB_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_SCIENCE] Science in this city. +10% [ICON_SCIENCE] Science if the city is fully powered. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_AMPHITHEATER_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_CULTURE] 文化值加成延伸到4单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+5%。</Text>
+      <Text>其 [ICON_CULTURE] 文化值加成延伸到4个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+5%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_AMPHITHEATER_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 4 tiles that do not already have a bonus from this building type. +5% [ICON_CULTURE] Culture in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_CULTURE] 文化值加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。通电后额外为本城+10% [ICON_CULTURE] 文化值.</Text>
+      <Text>其 [ICON_CULTURE] 文化值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。通电后额外为本城+10% [ICON_CULTURE] 文化值.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_CULTURE] Culture in this city. +10% [ICON_CULTURE] Culture if the city is fully powered. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_BANK_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_GOLD] 金币加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币产出+10%。</Text>
+      <Text>其 [ICON_GOLD] 金币加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币产出+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_GOLD] gold bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_gold] Gold in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_GOLD] 金币加成延伸到6单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币+10%。通电后额外为本城+10% [ICON_GOLD] 金币。</Text>
+      <Text>其 [ICON_GOLD] 金币加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币+10%。通电后额外为本城+10% [ICON_GOLD] 金币。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_GOLD] gold bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_gold] gold in this city .+10% [ICON_GOLD] gold if the city is fully powered.</Text>
@@ -316,6 +316,42 @@
     </Replace>
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="en_US">
         <Text> Theming bonus doubling output when displaying objects from same eras.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="zh_Hans_CN">
+        <Text> 此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。 本城的 [ICON_GREATADMIRAL] 海军将领点数积累速度+50%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="en_US">
+        <Text> +25% combat experience for all naval units trained in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced 25%.  +2 [ICON_GOLD] Gold on all Coast tiles for this city.+50% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points in this city. +3  [ICON_STRENGTH] Combat Strength for all navy units trained in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HANGAR_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HANGAR_DESCRIPTION" Language="en_US">
+      <Text>+25% combat experience for air units trained in this city. +2 air unit slot in Aerodrome district.+50% [Icon_Production] Production towards Air Units.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_AIRPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在有机场的9个单元格内的城市产出 [ICON_Tourism] 旅游业绩+50%。不可叠加。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。</Text>
+	</Replace>
+    <Replace Tag="LOC_BUILDING_AIRPORT_DESCRIPTION" Language="en_US">
+      <Text>+50%[ICON_Tourism] Tourism in all cities that within 9 tiles of an Airport. Can not be overlapped. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_FOOD_MARKET_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+30%。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_FOOD_MARKET_DESCRIPTION" Language="en_US">
+      <Text>Can only be built once in a city, even if the city has multiple Neighborhoods.+30% Growth rate in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SHOPPING_MALL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>+4 [ICON_Tourism] 旅游业绩。只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+15%,若电力充足，则 [ICON_gold] 金币产出额外增加15%。其 [ICON_gold] 金币加成延伸到9个单元格内的所有市中心，（前提是其尚未从其他的此建筑获得加成）若电力充足，则其辐射加成也翻倍。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SHOPPING_MALL_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_Tourism] Tourism. Can only be built once in a city, even if the city has multiple Neighborhoods.+15%  [ICON_gold] Gold yield in this city.If the city is fully powered, +15% extra [ICON_gold] Gold yield in this city.Its [ICON_GOLD] gold bonus is extended to all City Centers within 9 tiles that do not already have a bonus from this building type. If the city is fully powered, its bonus doubled,too.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SEWER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>本城的人口增长速度+10%。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SEWER_DESCRIPTION" Language="en_US">
+      <Text>+10% Growth rate in this city.</Text>
     </Replace>
   </LocalizedText>
 </GameData>
