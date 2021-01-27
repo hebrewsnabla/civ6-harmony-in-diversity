@@ -13,11 +13,11 @@
 		<Replace Tag="LOC_TECH_MACHINERY_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Production] Production from the Lumber Mill improvement. </Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_COMPUTERS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>可以额外招募1个间谍。在帝国全境内+50% [ICON_Tourism] 旅游业绩。</Text>
+		<Replace Tag="LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有除  [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。</Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_COMPUTERS_DESCRIPTION" Language="en_US">
-			<Text>Grants the ability to construct an additional Spy. +50% [ICON_Tourism] Tourism across your empire. </Text>
+		<Replace Tag="LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION" Language="en_US">
+			<Text> +50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_STEAM_POWER_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>水运单位+2 [ICON_Movement] 移动力。非沿河的伐木场改良+1 [ICON_Production] 生产力。</Text>

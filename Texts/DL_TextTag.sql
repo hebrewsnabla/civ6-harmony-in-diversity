@@ -6,6 +6,7 @@ update Technologies set Description = 'LOC_TECH_REFINING_DESCRIPTION' where Tech
 update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
+update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';	
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
@@ -21,6 +22,7 @@ update Buildings set Description = 'LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION' w
 update Buildings set Description = 'LOC_BUILDING_BANK_DESCRIPTION' where BuildingType = 'BUILDING_BANK';
 update Buildings set Description = 'LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION' where BuildingType = 'BUILDING_STOCK_EXCHANGE';
 update Buildings set Description = 'LOC_BUILDING_WORKSHOP_DESCRIPTION' where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Description = 'LOC_BUILDING_SEWER_DESCRIPTION' where BuildingType = 'BUILDING_SEWER';	
 
 update Buildings set Description = 'LOC_BUILDING_CATHEDRAL_DL_DESCRIPTION' where BuildingType = 'BUILDING_CATHEDRAL';
 update Buildings set Description = 'LOC_BUILDING_GURDWARA_DL_DESCRIPTION' where BuildingType = 'BUILDING_GURDWARA';
