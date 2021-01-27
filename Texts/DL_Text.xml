@@ -171,6 +171,18 @@
 		</Replace>
 
 		<!-- Unit Abilities -->
+		<Replace Tag="LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在军事学院中训练获得的+3战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
+			<Text>+3 combat strength from training in Military Academy</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SEAPORT_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在码头中训练获得的+3战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SEAPORT_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
+			<Text>+3 combat strength from training in Seaport</Text>
+		</Replace>
 		<Replace Tag="LOC_ABILITY_BARRACKS_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在兵营中训练获得的+3战斗力</Text>
 		</Replace>
@@ -208,6 +220,18 @@
 			<Text>+7 combat strength from Scholasticism Belief</Text>
 		</Replace>
 		<!-- preview text -->
+		<Replace Tag="LOC_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>从军事学院中训练获得</Text>
+		</Replace>
+		<Replace Tag="LOC_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="en_US">
+			<Text>from training in Military Academy</Text>
+		</Replace>
+		<Replace Tag="LOC_SEAPORT_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>从码头中训练获得</Text>
+		</Replace>
+		<Replace Tag="LOC_SEAPORT_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="en_US">
+			<Text>from training in Seaport</Text>
+		</Replace>
 		<Replace Tag="LOC_BARRACKS_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>从兵营中训练获得</Text>
 		</Replace>
