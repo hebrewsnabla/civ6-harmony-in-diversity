@@ -4,7 +4,7 @@
 
 -- update Technologies set Cost = 80, EraType = 'ERA_ANCIENT' where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
 update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
-update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Value';
+-- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
 -- update Technologies set Cost = 4000 where Cost = 2600;
 -- update Technologies set Cost = 3500 where Cost = 2500;
