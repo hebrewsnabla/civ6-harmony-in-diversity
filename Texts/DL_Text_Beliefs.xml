@@ -52,12 +52,6 @@
 		<Replace Tag="LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION" Language="en_US">
 			<Text>+4 [ICON_GreatProphet] Great Prophet point per turn if a city is owns at least one natural wonder tile.</Text>
 		</Replace>
-		<!-- <Replace Tag="LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION" Language="zh_Hans_CN"> -->
-			<!-- <Text>地热裂缝和火山土提供的 [ICON_FAITH] 信仰值+2。每座有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+2大预言家点数。</Text> -->
-		<!-- </Replace> -->
-		<!-- <Replace Tag="LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION" Language="en_US"> -->
-			<!-- <Text>+2 [ICON_FAITH] Faith from Geothermal Fissures and Volcanic Soil. [ADD ON]</Text> -->
-		<!-- </Replace> -->
 		<Replace Tag="LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+2 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
 		</Replace>
@@ -130,12 +124,6 @@
 		<Replace Tag="LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION" Language="en_US">
 			<Text>+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh.</Text>
 		</Replace>
-		<!-- <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>收获女神描述</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION" Language="en_US">
-			<Text>Harvest Description</Text>
-		</Replace> -->
 		<Replace Tag="LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力。</Text>
 		</Replace>
@@ -210,16 +198,10 @@
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="en_US">
 			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. </Text>
 		</Replace>
-		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>招募伟人-25% [ICON_faith] 信仰值花费。 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="en_US">
-			<Text>-25% [ICON_faith] faith when you patronage great person. Each time you recruit a great person , add 50 [ICON_FAVOR] Diplomatic Favor.</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DESCRIPTION" Language="zh_Hans_CN">
+		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION" Language="zh_Hans_CN">
       		<Text>信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。</Text>
     	</Replace>
-		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION" Language="en_US">
       		<Text>+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder.</Text>
     	</Replace>
 		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME" Language="zh_Hans_CN">
@@ -228,7 +210,12 @@
 		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME" Language="en_US">
       		<Text>To the Glory of God</Text>
     	</Replace>
-
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>招募伟人-25% [ICON_faith] 信仰值花费。 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="en_US">
+			<Text>-25% [ICON_faith] faith when you patronage great person. Each time you recruit a great person , add 50 [ICON_FAVOR] Diplomatic Favor.</Text>
+		</Replace>
 		<!--  -->
 		<!-- Follower -->
 		<Replace Tag="LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION" Language="zh_Hans_CN">
@@ -334,10 +321,10 @@
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION" Language="en_US">
 			<Text>Settlers and Buildiers are 20% cheaper to purchase with [ICON_GOLD] Gold, and 20% cheaper to purchase with [ICON_FAITH] Faith when allowed. May purchase Government district and Diplomatic Quarter district buildings with [ICON_Faith] Faith.</Text>
 		</Replace>
-		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DESCRIPTION" Language="zh_Hans_CN">
+		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+2 [ICON_housing] 住房。市中心也获得相同加成。</Text>
 		</Replace>
-		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to mountains.+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to Forests.+2 [ICON_Housing] Housing if the Holy Site is adjacent to river.So as the City Center.</Text>
 		</Replace>
 		<!--  -->
@@ -365,6 +352,18 @@
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_DL_DESCRIPTION" Language="en_US">
 			<Text>+100% Religious pressure from your [ICON_TradeRoute] Trade Routes.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_MESSIAH_NAME" Language="zh_Hans_CN">
+			<Text>弥赛亚</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_MESSIAH_NAME" Language="en_US">
+			<Text>Messiah</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_MESSIAH_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>使徒首次升级时将额外获得1次升级。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_MESSIAH_DL_DESCRIPTION" Language="en_US">
+			<Text>Apostles receive 1 extra promotion when receiving their first promotion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CANONIZATION_OF_SAINTS_NAME" Language="zh_Hans_CN">
 			<Text>册封圣徒</Text>

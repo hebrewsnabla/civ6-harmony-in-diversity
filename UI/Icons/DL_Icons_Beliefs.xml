@@ -27,6 +27,7 @@
 		<Row Name="ICON_BELIEF_SCHOLASTICISM"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_PIOUS_MERCHANTS"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_CANONIZATION_OF_SAINTS"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
+		<Row Name="ICON_BELIEF_MESSIAH"						Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<!-- <Row Name=""		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/> -->
 	</IconDefinitions>
 </GameData>

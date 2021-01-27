@@ -35,8 +35,7 @@ update ModifierArguments set Value = 50 where Name = 'Amount'
 	or ModifierID = 'NATURALPHILOSOPHY_DISTRICTSCIENCE'
 	or ModifierID = 'NAVALINFRASTRUCTURE_HARBORGOLD'
 	-- or ModifierID = 'SCRIPTURE_DISTRICTFAITH'
-	or ModifierID = 'TOWNCHARTERS_DISTRICTGOLD')
-;
+	or ModifierID = 'TOWNCHARTERS_DISTRICTGOLD');
 
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 update Government_SlotCounts set NumSlots = 2 where
@@ -102,3 +101,4 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 
+-- New Policy Cards
