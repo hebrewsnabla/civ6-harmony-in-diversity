@@ -92,28 +92,6 @@ values
 	-- commercial hub: third level
 	('BUILDING_STOCK_EXCHANGE',				'YIELD_GOLD',		4);
 
--- building balance adjustments
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
-update Buildings set Cost = 240 where BuildingType = 'BUILDING_FERRIS_WHEEL';
-
-update Building_YieldChanges set YieldChange = 8
-	where BuildingType = 'BUILDING_BANK' or BuildingType = 'BUILDING_GRAND_BAZAAR';
-
-update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' or BuildingType = 'BUILDING_ZOO';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
-
-update Buildings set Cost = 50 where BuildingType = 'BUILDING_MONUMENT';
-update Buildings set Cost = 60, Housing = 1 where BuildingType = 'BUILDING_GRANARY';
-
-update Building_YieldChanges set YieldChange = 1
-	where BuildingType = 'BUILDING_GRANARY' and YieldType = 'YIELD_FOOD';
-
-update Buildings set Housing = 1 where BuildingType = 'BUILDING_WATER_MILL';
-update Building_YieldChanges set YieldChange = 2
-	where BuildingType = 'BUILDING_WATER_MILL' and YieldType = 'YIELD_PRODUCTION';
-delete from Building_YieldChanges
-	where BuildingType = 'BUILDING_WATER_MILL' and YieldType = 'YIELD_FOOD';
-
 -- Unlock
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = 'TECH_PRINTING', PrereqCivic = NULL where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
@@ -133,16 +111,77 @@ update Buildings set RegionalRange = 6
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_SHOPPING_MALL';
 
--- Art Museum & Artifact Museum
-update Building_YieldChanges set YieldChange = 4
-	where BuildingType = 'BUILDING_MUSEUM_ART' or BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
+update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' or BuildingType = 'BUILDING_ZOO';
+update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_SEWER';
+
+-- building adjustments
+update Buildings set Cost = 50 where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Cost = 60, Housing = 1 where BuildingType = 'BUILDING_GRANARY';
+update Buildings set Housing = 1 where BuildingType = 'BUILDING_WATER_MILL';
+-- 
+update Buildings set Cost = 240 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_FOOD_MARKET';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_HANGAR';
+
+-- District building cost updates
+-- Campus
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_RESEARCH_LAB';
+-- Commercial hub
+update Buildings set Cost = 250 where BuildingType = 'BUILDING_BANK';
+update Buildings set Cost = 200 where BuildingType = 'BUILDING_GRAND_BAZAAR';
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_STOCK_EXCHANGE';
+-- Theater
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_BROADCAST_CENTER';
+-- Industrial Zone
+update Buildings set Cost = 175 where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Cost = 300 where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_POWER_PLANT';
+-- Harbor
+update Buildings set Cost = 250 where BuildingType = 'BUILDING_SHIPYARD';
+update Buildings set Cost = 400 where BuildingType = 'BUILDING_SEAPORT';
+-- Encampment
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_MILITARY_ACADEMY';
+
+delete from Building_YieldChanges where BuildingType = 'BUILDING_WATER_MILL' and YieldType = 'YIELD_FOOD';
+insert or replace into Building_YieldChanges
+	(BuildingType,					YieldType,			YieldChange)
+values
+	('BUILDING_GRANARY',			'YIELD_FOOD',		1),
+	('BUILDING_WATER_MILL',			'YIELD_PRODUCTION',	2),
+	-- 
+	('BUILDING_MARKET',				'YIELD_GOLD',		5),
+	('BUILDING_BANK',				'YIELD_GOLD',		8),
+	('BUILDING_GRAND_BAZAAR',		'YIELD_GOLD',		8),
+	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
+	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
+	('BUILDING_MUSEUM_ART',			'YIELD_CULTURE',	4),
+	('BUILDING_MUSEUM_ARTIFACT',	'YIELD_CULTURE',	4),
+	('BUILDING_BROADCAST_CENTER',	'YIELD_CULTURE',	4),
+	('BUILDING_FILM_STUDIO',		'YIELD_CULTURE',	4),
+	('BUILDING_SEAPORT',			'YIELD_FOOD',		3),
+	('BUILDING_SEAPORT',			'YIELD_GOLD',		6),
+	('BUILDING_HANG',				'YIELD_PRODUCTION',	5),
+	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		5);
+
+insert or replace into Building_YieldChangesBonusWithPower
+	(BuildingType,					YieldType,			YieldChange)
+values
+	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
+	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
+	('BUILDING_BROADCAST_CENTER',	'YIELD_CULTURE',	3),
+	('BUILDING_FILM_STUDIO',		'YIELD_CULTURE',	3),
+	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		5);
 
 -- trade route
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'LIGHTHOUSE_TRADE_ROUTE_CAPACITY';
 
 -- BuildingModifiers
-
 delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_TALL' and ModifierId = 'GOV_TALL_LOYALTY_DEBUFF';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_AMENITY_BUFF';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_HOUSING_BUFF';
@@ -287,26 +326,16 @@ values
 -- EFFECT_ADJUST_ATTACKER_STRENGTH_MODIFIER
 -- EFFECT_ADJUST_DEFENDER_STRENGTH_MODIFIER
 
--- District building cost updates
--- Campus
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_RESEARCH_LAB';
--- Commercial hub
-update Buildings set Cost = 250 where BuildingType = 'BUILDING_BANK';
-update Buildings set Cost = 200 where BuildingType = 'BUILDING_GRAND_BAZAAR';
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_STOCK_EXCHANGE';
--- Theater
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_BROADCAST_CENTER';
--- Industrial Zone
-update Buildings set Cost = 175 where BuildingType = 'BUILDING_WORKSHOP';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_FACTORY';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_COAL_POWER_PLANT';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_POWER_PLANT';
-
 -- percentage boost, 5%, 10%, 10% + 10% (extra 10% with powered), 15% for religous buildings
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
+	('BUILDING_SEWER',						'SEWER_GROWTH_RATE'),
+	-- Neighborhood
+	('BUILDING_FOOD_MARKET',				'FOOD_MARKET_GROWTH_RATE'),
+	('BUILDING_FOOD_MARKET',				'POWERED_FOOD_MARKET_GROWTH_RATE'),
+	('BUILDING_SHOPPING_MALL',				'SHOPPING_MALL_GOLD_PERCENTAGE_BOOST'),
+	('BUILDING_SHOPPING_MALL',				'POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST'),
 	-- Campus
 	('BUILDING_LIBRARY',					'LIBRARY_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_UNIVERSITY',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
@@ -360,6 +389,11 @@ values
 insert or replace into Modifiers
 	(ModifierId,											ModifierType)
 values
+	('SEWER_GROWTH_RATE',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH'),
+	-- Neighborhood
+	('FOOD_MARKET_GROWTH_RATE',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH'),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
+	-- 
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST', 					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
 	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST', 				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
 	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST', 				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
@@ -383,19 +417,29 @@ values
 	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER'), -- 20%
 	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER'); -- 20%
 
+-- powered
 insert or replace into Modifiers
-	(ModifierId, 											ModifierType,									SubjectRequirementSetId)
+	(ModifierId, 											ModifierType,										SubjectRequirementSetId)
 values
-	-- powered
-	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'CITY_IS_POWERED'),
-	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'CITY_IS_POWERED'),
-	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'CITY_IS_POWERED');
+	('POWERED_FOOD_MARKET_GROWTH_RATE',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH',			'CITY_IS_POWERED'),
+	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CITY_IS_POWERED'),
+	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CITY_IS_POWERED'),
+	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CITY_IS_POWERED'),
+	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CITY_IS_POWERED');
 
-
+-- Percentage boost
 insert or replace into ModifierArguments
 	(ModifierId,											Name,			Value)
 values
-	-- Percentage boost
+	('SEWER_GROWTH_RATE',									'Amount',		10),
+	-- Neighborhood
+	('FOOD_MARKET_GROWTH_RATE',								'Amount',		25),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'YieldType',	'YIELD_GOLD'),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		15),
+	-- 
+	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'YieldType',	'YIELD_GOLD'),
+	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		10),
+	-- 
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
 	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
@@ -431,6 +475,9 @@ values
 	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
 	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
 	-- powered
+	('POWERED_FOOD_MARKET_GROWTH_RATE',						'Amount',		25),
+	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'YieldType',	'YIELD_GOLD'),
+	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'Amount',		15),
 	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'YieldType',	'YIELD_SCIENCE'),
 	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'Amount',		10),
 	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'YieldType',	'YIELD_CULTURE'),
@@ -440,82 +487,82 @@ values
 
 -- Maintainance
 update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
--- update Buildings set Maintenance = 0	where BuildingType = 'BUILDING_MONUMENT';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GRANARY';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WATER_MILL';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_PALGUM';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WALLS';
--- update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_CASTLE';
--- update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_STAR_FORT';
--- update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_TSIKHE';
--- update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_SEWER';
+update Buildings set Maintenance = 0	where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GRANARY';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WATER_MILL';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_PALGUM';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WALLS';
+update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_CASTLE';
+update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_STAR_FORT';
+update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_TSIKHE';
+update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_SEWER';
 
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIBRARY';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_UNIVERSITY';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MADRASA';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_RESEARCH_LAB';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARKET';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SUKIENNICE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_BANK';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GRAND_BAZAAR';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_STOCK_EXCHANGE';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIGHTHOUSE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SHIPYARD';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SEAPORT';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BARRACKS';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_STABLE';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ORDU';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ARMORY';
--- update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
--- update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_WORKSHOP';
--- update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_FACTORY';
--- update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_POWER_PLANT';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SHRINE';
--- update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_TEMPLE';
--- update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_STAVE_CHURCH';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CATHEDRAL';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GURDWARA';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MEETING_HOUSE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MOSQUE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_PAGODA';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SYNAGOGUE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_WAT';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_STUPA';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_DAR_E_MEHR';
--- update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_PRASAT';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_AMPHITHEATER';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARAE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ART';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_BROADCAST_CENTER';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FILM_STUDIO';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ARENA';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_TLACHTLI';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ZOO';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_THERMAL_BATH';
--- update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_STADIUM';
--- update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_FERRIS_WHEEL';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_AQUARIUM';
--- update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AQUATICS_CENTER';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_UNIVERSITY';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MADRASA';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_RESEARCH_LAB';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARKET';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SUKIENNICE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_BANK';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GRAND_BAZAAR';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_STOCK_EXCHANGE';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIGHTHOUSE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SHIPYARD';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SEAPORT';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BARRACKS';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_STABLE';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ORDU';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ARMORY';
+update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
+update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_POWER_PLANT';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SHRINE';
+update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CATHEDRAL';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GURDWARA';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MEETING_HOUSE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MOSQUE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_PAGODA';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SYNAGOGUE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_WAT';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_STUPA';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_DAR_E_MEHR';
+update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_AMPHITHEATER';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARAE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ART';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_BROADCAST_CENTER';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FILM_STUDIO';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ARENA';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_TLACHTLI';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ZOO';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_THERMAL_BATH';
+update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_STADIUM';
+update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_AQUARIUM';
+update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AQUATICS_CENTER';
 
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_HANGAR';
--- update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AIRPORT';
--- update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
--- update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_CONSULATE';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CHANCERY';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_FOOD_MARKET';
--- update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SHOPPING_MALL';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_TALL';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_WIDE';
--- update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_CONQUEST';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_CITYSTATES';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_SPIES';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_FAITH';
--- update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_MILITARY';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_CULTURE';
--- update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_SCIENCE';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_HANGAR';
+update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AIRPORT';
+update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
+update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_CONSULATE';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CHANCERY';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_FOOD_MARKET';
+update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SHOPPING_MALL';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_TALL';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_WIDE';
+update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_CONQUEST';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_CITYSTATES';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_SPIES';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_FAITH';
+update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_MILITARY';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_CULTURE';
+update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_SCIENCE';
