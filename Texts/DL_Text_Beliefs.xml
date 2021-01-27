@@ -335,10 +335,10 @@
 			<Text>Settlers and Buildiers are 20% cheaper to purchase with [ICON_GOLD] Gold, and 20% cheaper to purchase with [ICON_FAITH] Faith when allowed. May purchase Government district and Diplomatic Quarter district buildings with [ICON_Faith] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>若圣地相邻山脉，+1 [ICON_amenity] 宜居度；相邻森林，+1 [ICON_amenity] 宜居度；相邻河流，+2 [ICON_housing] 住房。市中心也获得相同加成。</Text>
+			<Text>若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+2 [ICON_housing] 住房。市中心也获得相同加成。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_ZEN_MEDITATION_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_amenity] Amenity if the Holy Site is adjacent to mountains.+1 [ICON_amenity] Amenity if the Holy Site is adjacent to Forests.+2 [ICON_housing] Housing if the Holy Site is adjacent to river.So as the City Center.</Text>
+			<Text>+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to mountains.+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to Forests.+2 [ICON_Housing] Housing if the Holy Site is adjacent to river.So as the City Center.</Text>
 		</Replace>
 		<!--  -->
 		<!-- Enhancer -->
