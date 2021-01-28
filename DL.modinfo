@@ -99,6 +99,7 @@ DL Game Balance Mod. Test version v0.3.2. Please use this mod along with [MOD] C
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16012</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+      <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
@@ -123,6 +124,7 @@ DL Game Balance Mod. Test version v0.3.2. Please use this mod along with [MOD] C
     <File>UI/Replacement/CityPanel.lua</File>
     <File>UI/Replacement/CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+    <File>UI/Icons/DL_Icons_Policies.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
     <File>Maps/FeatureGenerator.lua</File>

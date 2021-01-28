@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<IconDefinitions>
+		<!-- 0: SLOT_ECONOMIC -->
+		<!-- 1: SLOT_MILITARY -->
+		<!-- 2: SLOT_DIPLOMATIC -->
+		<!-- 3: SLOT_WILDCARD -->
+		<Row Name="ICON_POLICY_FINE_ARTS"		Atlas="ICON_ATLAS_POLICIES" Index="0"/>
+		<Row Name="ICON_POLICY_FINE_ARTS_FOW"	Atlas="ICON_ATLAS_POLICIES_FOW" Index="0"/>
+	</IconDefinitions>
+</GameData>

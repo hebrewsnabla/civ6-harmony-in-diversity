@@ -28,15 +28,6 @@ update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILL
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEDISTRICT';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTAL_WAR_PLUNDER_BONUS';
 
--- level-one district yield policies
-update ModifierArguments set Value = 50 where Name = 'Amount'
- 	and (ModifierID = 'AESTHETICS_DISTRICTCULTURE'
-	or ModifierID = 'CRAFTSMEN_DISTRICTPRODUCTION'
-	or ModifierID = 'NATURALPHILOSOPHY_DISTRICTSCIENCE'
-	or ModifierID = 'NAVALINFRASTRUCTURE_HARBORGOLD'
-	-- or ModifierID = 'SCRIPTURE_DISTRICTFAITH'
-	or ModifierID = 'TOWNCHARTERS_DISTRICTGOLD');
-
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 update Government_SlotCounts set NumSlots = 2 where
 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_MILITARY';
@@ -101,4 +92,44 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 
+-- level-one district yield policies
+update ModifierArguments set Value = 50 where Name = 'Amount'
+ 	and (ModifierID = 'AESTHETICS_DISTRICTCULTURE'
+	or ModifierID = 'CRAFTSMEN_DISTRICTPRODUCTION'
+	or ModifierID = 'NATURALPHILOSOPHY_DISTRICTSCIENCE'
+	or ModifierID = 'NAVALINFRASTRUCTURE_HARBORGOLD'
+	-- or ModifierID = 'SCRIPTURE_DISTRICTFAITH'
+	or ModifierID = 'TOWNCHARTERS_DISTRICTGOLD');
+
 -- New Policy Cards
+insert or replace into Types
+	(Type,					Kind)
+values
+	('POLICY_FINE_ARTS',	'KIND_POLICY');
+
+insert or replace into Policies
+	(PolicyType,			Name,							Description,						PrereqCivic,			GovernmentSlotType)
+values
+	('POLICY_FINE_ARTS',	'LOC_POLICY_FINE_ARTS_NAME',	'LOC_POLICY_FINE_ARTS_DESCRIPTION',	'CIVIC_OPERA_BALLET',	'SLOT_ECONOMIC');
+
+update ObsoletePolicies set ObsoletePolicy = 'POLICY_FINE_ARTS' where PolicyType = 'POLICY_AESTHETICS';
+insert or replace into ObsoletePolicies
+	(PolicyType,			ObsoletePolicy)
+values
+	('POLICY_FINE_ARTS',	'POLICY_SPORTS_MEDIA');
+
+insert or replace into PolicyModifiers
+	(PolicyType,			ModifierId)
+values
+	('POLICY_FINE_ARTS',	'FINE_ARTS_DISTRICTCULTURE');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,										SubjectRequirementSetId)
+values
+	('FINE_ARTS_DISTRICTCULTURE',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',	'DISTRICT_IS_THEATER');
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('FINE_ARTS_DISTRICTCULTURE',	'YieldType',	'YIELD_CULTURE'),
+	('FINE_ARTS_DISTRICTCULTURE',	'Amount',		100);
