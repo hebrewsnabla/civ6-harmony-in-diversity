@@ -76,6 +76,25 @@
 		<Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="en_US">
 			<Text>+30% [ICON_Production] Production toward Builders, and newly trained Builders gain 1 extra build actions.</Text>
 		</Replace>
+		<!-- District Buildings -->
+		<Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>来自学院区域建筑的辐射范围增加3个单元格。大学为所在城市中的每个人口提供0.3 [ICON_SCIENCE] 科技值。研究实验室为所在城市中的每个人口提供0.5 [ICON_SCIENCE] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="en_US">
+			<Text>Regional effects from Campus district reach 3 tiles farther. Universty provides 0.3 [ICON_SCIENCE] Science and Research Lab provides 0.5 [ICON_SCIENCE] Science per population for the city.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_MARKET_DESCRIPTION" Language="zh_Hans_CN">
+			 <Text>来自商业中心区域建筑的辐射范围增加3个单元格。银行为所在城市中的每个人口提供0.6 [ICON_GOLD] 金币。证券交易所为所在城市中的每个人口提供1 [ICON_GOLD] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_MARKET_DESCRIPTION" Language="en_US">
+			<Text>Regional effects from Commercial Hub district reach 3 tiles farther. Bank provides 0.6 [ICON_GOLD] Gold and Stock Exchange provides 1 [ICON_GOLD] gold per population for the city.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>来自剧院广场建筑的辐射范围增加3个单元格。艺术博物馆或考古博物馆为所在城市中的每个人口提供0.3 [ICON_CULTURE] 文化值。广播中心为所在城市中的每个人口提供0.5 [ICON_CULTURE] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="en_US">
+			 <Text>Regional effects from Theater district reach 3 tiles farther. Art Museum or Artifact Museum provides 0.3 [ICON_CULTURE] Culture and Broadcast Center provides 0.5 [ICON_CULTURE] Culture per population for the city.</Text>
+		</Replace>
 		<!-- Districts -->
 		<Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>+50%剧院广场区相邻加成。</Text>
@@ -397,25 +416,5 @@
 		<Replace Tag="LOC_DISTRICT_REEF_SCIENCE_LATE" Language="en_US">
 			<Text>+{1_num} [ICON_SCIENCE] Science from each adjacent Reef.</Text>
 		</Replace>
-		<Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="en_US">
-      		<Text>Regional effects from Campus district reach 3 tiles farther. Universty provides 0.3 [ICON_SCIENCE] Science and Research Lab provides 0.5 [ICON_SCIENCE] Science per population for the city.</Text>
- 		</Replace>
- 		<Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="zh_Hans_CN">
-      		<Text>来自学院区域建筑的辐射范围增加3个单元格。大学为所在城市中的每个人口提供0.3 [ICON_SCIENCE] 科技值。研究实验室为所在城市中的每个人口提供0.5 [ICON_SCIENCE] 科技值。</Text>
- 		</Replace>
- 		<Replace Tag="LOC_POLICY_FREE_MARKET_DESCRIPTION" Language="en_US">
-      		<Text>Regional effects from Commercial Hub district reach 3 tiles farther. Bank provides 0.6 [ICON_GOLD] Gold and Stock Exchange provides 1 [ICON_GOLD] gold per population for the city.</Text>
- 		</Replace>
- 		<Replace Tag="LOC_POLICY_FREE_MARKET_DESCRIPTION" Language="zh_Hans_CN">
-     		 <Text>来自商业中心区域建筑的辐射范围增加3个单元格。银行为所在城市中的每个人口提供0.6 [ICON_GOLD] 金币。证券交易所为所在城市中的每个人口提供1 [ICON_GOLD] 金币。</Text>
- 		</Replace>
- 		<Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="en_US">
-     		 <Text>Regional effects from Theater district reach 3 tiles farther. Art Museum or Artifact Museum provides 0.3 [ICON_CULTURE] Culture and Broadcast Center provides 0.5 [ICON_CULTURE] Culture per population for the city.</Text>
- 		</Replace>
- 		<Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="zh_Hans_CN">
-      		<Text>来自剧院广场建筑的辐射范围增加3个单元格。艺术博物馆或考古博物馆为所在城市中的每个人口提供0.3 [ICON_CULTURE] 文化值。广播中心为所在城市中的每个人口提供0.5 [ICON_CULTURE] 文化值。</Text>
- 		</Replace>
 	</LocalizedText>
 </GameData>
-
-<!-- todo: add 4-tiles-spread of amenity of arena. -->
