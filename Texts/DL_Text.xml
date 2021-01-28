@@ -413,7 +413,7 @@
      		 <Text>Regional effects from Theater district reach 3 tiles farther. Art Museum or Artifact Museum provides 0.3 [ICON_CULTURE] Culture and Broadcast Center provides 0.5 [ICON_CULTURE] Culture per population for the city.</Text>
  		</Replace>
  		<Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="zh_Hans_CN">
-      		<Text>来自剧院广场建筑的辐射范围增加3个单元格。艺术博物馆或考古博物馆为所在城市中的每个人口提供0.3 [ICON_CULTURE] 文化值。广播中心为所在城市中的每个人口提供0.5 [ICON_CULTURE] 文化值。</Text>
+      		<Text>来自剧院广场区域建筑的辐射范围增加3个单元格。艺术博物馆或考古博物馆为所在城市中的每个人口提供0.3 [ICON_CULTURE] 文化值。广播中心为所在城市中的每个人口提供0.5 [ICON_CULTURE] 文化值。</Text>
  		</Replace>
 	</LocalizedText>
 </GameData>
