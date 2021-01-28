@@ -31,5 +31,17 @@
     <Replace Tag="LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION" Language="en_US">
       <Text>All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your [ICON_TradeRoute] Trade Routes earn +1 [ICON_Gold] Gold for passing through Trading Posts in your own cities.+25% [ICON_production] Production towads builings in the City Center.</Text>
     </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MAORI_MANA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>游戏初始便解锁“航海术”与“造船术”科技，同时拥有进入海洋单元格的能力。水运单位+2 [ICON_Movement] 移动力。未改良的树林与雨林提供+1 [ICON_PRODUCTION] 生产力。“重商主义”额外提供+1 [ICON_PRODUCTION] 生产力、+“行政部门”额外提供+1 [ICON_PRODUCTION] 生产力、“保护地球”额外+1 [ICON_PRODUCTION] 生产力。渔船提供+1 [ICON_FOOD] 食物，并向相邻单元格投放文化炸弹。无法收获资源；无法获得 [ICON_GreatWriter] 大作家。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MAORI_MANA_DESCRIPTION" Language="en_US">
+      <Text>Begin the game with the Sailing and Shipbuilding technologies unlocked and with the ability to enter Ocean tiles. Embarked units gain +2 [ICON_Movement] Movement. Unimproved Woods and Rainforest are +1 [ICON_PRODUCTION] Production. Additional +1 [ICON_PRODUCTION] Production from Mercantilism ,+1 [ICON_PRODUCTION] Production from Civil Service and +1 [ICON_PRODUCTION] Production from Conservation. Fishing Boats provide +1 [ICON_FOOD] Food and a Culture Bomb to adjacent tiles. Resources cannot be harvested. [ICON_GreatWriter] Great Writers cannot be earned.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>起始城市中的每个沙漠平原单元格为所有[ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明每次进入黄金时代后可获得永久+1 [ICON_TradeRoute] 贸易路线容量。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION" Language="en_US">
+      <Text>All [ICON_TradeRoute] Trade Routes gain +1 [ICON_GOLD] Gold for every flat Desert tile in the origin city. Receive +1 [ICON_TradeRoute] Trade Capacity every time you enter a Golden Age.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
