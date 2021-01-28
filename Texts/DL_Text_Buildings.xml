@@ -129,10 +129,10 @@
       <Text>A building unique to the Ottomans. Accumulate 1 extra Strategic resource for every different type of Strategic resource this city has improved. Receive 1 [ICON_AMENITIES] Amenity for every Luxury resource this city has improved. +10% [ICON_gold] Gold yield in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。本城每个人口获得0.3 [ICON_PRODUCTION] 生产力。</Text>
+      <Text>其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.3 [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type.+1[ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city, +10% [ICON_Production] Production towards wonders, districts and buildings in this city. Each citizen +0.3 [ICON_PRODUCTION] Production in this city.</Text>
+      <Text>Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type.+1[ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city, +10% [ICON_Production] Production towards wonders, districts and buildings in this city. Each [ICON_Citizen] citizen +0.3 [ICON_PRODUCTION] Production in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。本城每个人口获得0.3 [ICON_PRODUCTION] 生产力。</Text>
@@ -172,10 +172,10 @@
     </Replace>
     <!-- New description -->
     <Replace Tag="LOC_BUILDING_GRANARY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>每人口消耗 [ICON_Food] 粮食由3变成2.5。为本城已开发的 [ICON_Resource_Bananas] 香蕉、 [ICON_Resource_Deer] 鹿 +1 [ICON_Food] 食物。</Text>
+      <Text>每 [ICON_Citizen] 人口消耗 [ICON_Food] 粮食由3变成2.5。为本城已开发的 [ICON_Resource_Bananas] 香蕉、 [ICON_Resource_Deer] 鹿 +1 [ICON_Food] 食物。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GRANARY_DESCRIPTION" Language="en_US">
-      <Text>[ICON_Food] Food consumption of each citizen reduce to 2.5. +1 [ICON_Food] Food to each improved [ICON_Resource_Bananas] Banana and [ICON_Resource_Deer] deer. </Text>
+      <Text>[ICON_Food] Food consumption of each [ICON_Citizen] citizen reduce to 2.5. +1 [ICON_Food] Food to each improved [ICON_Resource_Bananas] Banana and [ICON_Resource_Deer] deer. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="zh_Hans_CN">
       <Text>其[ICON_SCIENCE]科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。</Text>
@@ -184,10 +184,10 @@
       <Text>Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_SCIENCE] Science in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>每个人口产出0.5 [ICON_SCIENCE] 科技值，本城产出的 [ICON_SCIENCE] 科技值+5%。</Text>
+      <Text>城市中每位公民 [ICON_Citizen] +0.5 [ICON_SCIENCE] 每回合科技值收入。本城产出的 [ICON_SCIENCE] 科技值+5%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIBRARY_DESCRIPTION" Language="en_US">
-      <Text> Each citizen provides 0.5 extra [ICON_SCIENCE] Science. +5% [ICON_SCIENCE] Science in this city.</Text>
+      <Text>Each [ICON_Citizen] citizen provides +0.5 extra [ICON_SCIENCE] Science. +5% [ICON_SCIENCE] Science in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_RESEARCH_LAB_DESCRIPTION" Language="zh_Hans_CN">
       <Text>其 [ICON_SCIENCE] 科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。</Text>
