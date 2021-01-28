@@ -101,18 +101,116 @@
 		<Replace Tag="LOC_POLICY_NAVAL_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
 			<Text>+50% Harbor district adjacency bonuses.</Text>
 		</Replace>
-		<!-- <Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="zh_Hans_CN">
+		<Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>+50%圣地相邻加成。</Text>
 		</Replace>
 		<Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="en_US">
 			<Text>+50% Holy Site district adjacency bonuses.</Text>
-		</Replace> -->
+		</Replace>
 		<Replace Tag="LOC_POLICY_TOWN_CHARTERS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>+50%商业中心区域相邻加成。</Text>
 		</Replace>
 		<Replace Tag="LOC_POLICY_TOWN_CHARTERS_DESCRIPTION" Language="en_US">
 			<Text>+50% Commercial Hub district adjacency bonuses.</Text>
 		</Replace>
+		<Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%圣地相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
+			<Text>+100% Holy Site district adjacency bonuses.</Text>
+		</Replace>
+		<!-- New cards -->
+		<Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="zh_Hans_CN">
+			<Text>美术创作</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="en_US">
+			<Text>Fine Arts</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FINE_ARTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%剧院广场区相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FINE_ARTS_DESCRIPTION" Language="en_US">
+			<Text>+100% Theater Square district adjacency bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_THOUGHTS_NAME" Language="zh_Hans_CN">
+			<Text>思想自由</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_THOUGHTS_NAME" Language="en_US">
+			<Text>Free Thoughts</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_THOUGHTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%学院区相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_FREE_THOUGHTS_DESCRIPTION" Language="en_US">
+			<Text>+100% Campus district adjacency bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_TREASURE_FLEETS_NAME" Language="zh_Hans_CN">
+			<Text>宝藏船队</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_TREASURE_FLEETS_NAME" Language="en_US">
+			<Text>Treasure Fleets</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_TREASURE_FLEETS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%港口区域相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_TREASURE_FLEETS_DESCRIPTION" Language="en_US">
+			<Text>+100% Harbor district adjacency bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_WORKERS_FACULTIES_NAME" Language="zh_Hans_CN">
+			<Text>工人社区</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_WORKERS_FACULTIES_NAME" Language="en_US">
+			<Text>Worker's Faculties</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_WORKERS_FACULTIES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%工业区相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_WORKERS_FACULTIES_DESCRIPTION" Language="en_US">
+			<Text>+100% Industrial Zone adjacency bonuses.</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_ENTREPRENEURSHIP_NAME" Language="zh_Hans_CN">
+			<Text>创业精神</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_ENTREPRENEURSHIP_NAME" Language="en_US">
+			<Text>Entrepreneurship</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_ENTREPRENEURSHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%商业中心区域相邻加成</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_ENTREPRENEURSHIP_DESCRIPTION" Language="en_US">
+			<Text>+100% Commercial Hub district adjacency bonuses.</Text>
+		</Replace>
+		<!-- History Fail to add -->
+		<!-- <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_FINE_ARTS_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>美术创造是相对民俗和应用艺术而言的，它是一些由专业人员创作并可以被其他人分享的物件或是经验。美术创造这个词最早出现于17世纪的欧洲；五大“高级美术”包括绘画、雕刻、建筑、音乐和诗歌，“次要”美术包括戏剧和舞蹈。今日人们对于电影、摄影、书法、时装、漫画甚至电子游戏能否被算作美术创造依然有很大的分歧。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_FINE_ARTS_HISTORY_PARA_1" Language="en_US">
+			<Text>The Fine Arts, as opposed to folk arts and applied arts, are those pursuits that create aesthetic objects or experiences that can be shared with others. The term "fine art" came into vogue in 17th Century Europe; the five "greater fine arts" consisted of painting, sculpture, architecture, music and poetry, with the "minor" arts including drama and dance. Intense debates rage on whether film, photography, calligraphy, fashion, comics and even videogames are "art," whether fine or not.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_FREE_THOUGHTS_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>“思想自由”观念认为知识应当通过科学和理性的方式来获得，而不是基于传统或宗教信条。理论必须能经受科学和逻辑的验证。相信无法证明的东西是愚蠢的。盲目的信仰在任何地方都是思想自由的头号敌人。思想自由是佛教教义的重要组成部分。在《卡拉玛经》中佛陀曾经说过：“接受观念不能仅仅依据传统……接受观念不能仅仅依据经典……而是要通过亲自了解——然后你才能采纳奉行。”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_FREE_THOUGHTS_HISTORY_PARA_1" Language="en_US">
+			<Text>Free thought is the belief that knowledge should be gained through the application of science and reason, rather than from tradition or religious dogma. Theories should be tested scientifically and logically. If something can't be proven, it's foolish to believe in it. Blind faith is the arch enemy of free thinkers everywhere. Free thinking is an important part of Buddhist tradition. In the "Kalama Sutta," the Buddha states, "Do not accept anything by mere tradition... Do not accept anything because it accords with your scriptures... But when you know for yourselves - then do you live accordingly."</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_TREASURE_FLEETS_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>在历史上的不同时期，如果一个国家试图转移大量财富的话，它通常会派遣一支舰队协同以保证货物安全到达。最出名的无疑是西班牙宝藏船队，这支从1566年到1790年之间每年一度的船队上装载有大量的黄金、白银、笑料、烟草、珍珠和其他西印度群岛的特产，它们将被运送到欧洲港口。法国私掠海盗对哈瓦那的洗劫和英国皇家海盗对落单的盖伦帆船的攻击都使得西班牙政府在运输宝藏的事务上小心备至。虽然当今的海域几乎已经没有海盗的存在，战争时期海权国家还是会派遣海军保证商船的安全。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_TREASURE_FLEETS_HISTORY_PARA_1" Language="en_US">
+			<Text>At various times, nations transporting large amounts of treasure and trade goods have resorted to convoys of transports to improve the chances that the cargo would actually arrive at its destination. The most famous was the annual Spanish treasure fleet that brought gold, silver, spices, tobacco, pearls and other riches from the West Indies to Spanish ports in Europe from 1566 to 1790 AD. The sack of Spanish Havana by French privateers and attacks on lone galleons by English buccaneers moved the Spanish to institute the convoys between the New World and Europe. Although the seas are relatively safe from pirates now, during wartime maritime nations still organize convoys to improve the chances of merchant ships arriving intact.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_WORKERS_FACULTIES_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>根据马克思主义理论，工人阶级将会在苏联由社会主义到共产主义的转变中成为统治阶级，因此工人阶级应该有条件享受当今社会中的全部资源，从房屋到娱乐设施。工人社区中最为显著的当属集体宿舍：二至七个由农村来到快速增长的城市的家庭共住一套公寓，其中每个家庭拥有自己的卧室，但厨房、起居室、洗手间、电话和电视将由这些住户共享。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_WORKERS_FACULTIES_HISTORY_PARA_1" Language="en_US">
+			<Text>The working class, according to Marxist theory, was to be the ruling class in Russia from its transition from socialism to full communism. As such, workers were to enjoy equal access to all the amenities of modern life, from housing to recreational facilities, in a communal society. The most visible of the Workers' Facilities were the communal apartment complexes, where two to seven migrant families from rural areas to the rapidly industrializing cities would occupy an apartment, with each family having a bedroom but all else - kitchen, living room, bathroom, telephone and television - shared among the residents.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_ENTREPRENEURSHIP_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>创业精神的词源是法语的“去做”，它是指一个人为了获得利润而发展、组织和参与一段商业旅程而具备的意志和能力。历史上的创业精神有很多表现方式，从文艺复兴时期意大利的冒险商人到大航海时代政府特许的贸易公司，再到工业时代的那些强盗大亨们。总的来说，为了获取更多利润而不惜冒险一搏是促进人类社会进步的原动力之一。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_ENTREPRENEURSHIP_HISTORY_PARA_1" Language="en_US">
+			<Text>Entrepreneurship, from the French term "to undertake," refers to the capability and willingness by an individual to develop, organize and manage a commercial venture in the hopes of making a profit. In history, entrepreneurship has taken many forms, from the great explorer-merchants of Renaissance Italy to the government-chartered companies of the Age of Discovery to the robber barons of the Industrial Age; regardless of the form, the willingness to risk their own funds to generate greater wealth has driven the evolution of civilization as surely as any other factor.</Text>
+		</Replace> -->
 		<!-- pillaging -->
 		<Replace Tag="LOC_POLICY_RAID_EXPANSION1_ALT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>掠夺和海岸扫荡的收益+100%。</Text>
