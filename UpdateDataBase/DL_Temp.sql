@@ -1,3 +1,44 @@
 -------------------------------------
 --  Temporary update database sql  --
 -------------------------------------
+
+
+
+delete from PolicyModifiers where PolicyType = 'POLICY_RATIONALISM' and ModifierId = 'RATIONALISM_BUILDING_YIELDS_HIGH_ADJACENCY'	;
+delete from PolicyModifiers where PolicyType = 'POLICY_RATIONALISM' and ModifierId = 'RATIONALISM_BUILDING_YIELDS_HIGH_POP'			;
+
+
+
+insert or replace into Types
+	(Type,																Kind)
+values
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS'					,			'KIND_MODIFIER'),
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS_MODIFIER'			,			'KIND_MODIFIER'),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE'			,			'KIND_MODIFIER'),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE_MODIFIER',			'KIND_MODIFIER');
+
+
+insert or replace into PolicyModifiers
+	(PolicyType,														ModifierId)
+values
+('POLICY_RATIONALISM',													'POLICY_RATIONALISM_REGIONAL_RANGE_BONUS'			),
+('POLICY_RATIONALISM',													'POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE'	);
+
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,												SubjectRequirementSetId)
+values
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS'						,		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER'						,	Null					),
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS'						,		'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE'		,	'DISTRICT_IS_CAMPUS'	),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE'				,		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER'						,	Null					),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE_MODIFIER'	,		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION'	,	'BUILDING_IS_UNIVERSITY');
+
+
+insert or replace into ModifierArguments
+	(ModifierId, Name, Value)
+values
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS'					,			'ModifierId'											,		'POLICY_RATIONALISM_REGIONAL_RANGE_BONUS_MODIFIER'			),
+('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS_MODIFIER'			,			'Amount'												,		3															),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE'			,			'ModifierId'											,		'POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE_MODIFIER'	),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE_MODIFIER',			'YieldType'												,		'YIELD_SCIENCE'												),
+('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE_MODIFIER',			'Amount'												,		0.5															);
