@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="4a03cf08-f557-490c-a095-04907f251915" version="v0.7">
+  <Properties>
+    <Name>City Policies</Name>
+    <Description>
+Provide a set of city policies can be switched by projects. Unlocked by specific civics.[NEWLINE]
+提供了一系列可通过项目切换的城市政策，对单独的城市生效。由特定人文解锁。[NEWLINE]
+Currently support: [NEWLINE]
+  1. LABOR [Code of Law]: Each population yields 1.5 Production, but consume extra 1 Food. The city developing speed decreased by 50% and cause -1 amenity. This policy can be disabled by another project.[NEWLINE]
+  2. T.B.D. [NEWLINE]
+当前支持: [NEWLINE]
+  1. 徭役 [法典解锁]：每个人口多1.5生产力，但额外减少1粮食。城市余粮减少50%且-1宜居度。该政策可通过另一个项目关闭。[NEWLINE]
+  2. 敬请期待。[NEWLINE]
+[NEWLINE]
+More city policies are goint to be added.[NEWLINE]
+更多的城市政策将会被添加[NEWLINE].
+    </Description>
+    <Teaser>Provide a set of city policies can be switched by projects.</Teaser>
+    <Authors>DeepLogic</Authors>
+    <SpecialThanks>流浪de蒲公英</SpecialThanks>
+    <Homepage>https://space.bilibili.com/385456816</Homepage>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+  </ActionCriteria>
+  <InGameActions>
+    <UpdateDatabase id="CityPolicies" criteria="Expansion2">
+      <Properties><LoadOrder>14001</LoadOrder></Properties>
+      <File>CityPolicies.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="CityPolicies_Texts" criteria="Expansion2">
+      <Properties><LoadOrder>14002</LoadOrder></Properties>
+      <File>CityPolicies_Texts.xml</File>
+    </UpdateText>
+    <UpdateIcons id="CityPolicies_Icons" criteria="Expansion2">
+      <Properties><LoadOrder>14003</LoadOrder></Properties>
+      <File>CityPolicies_Icons.xml</File>
+    </UpdateIcons>
+  </InGameActions>
+  <Files>
+    <File>CityPolicies.sql</File>
+    <File>CityPolicies_Texts.xml</File>
+    <File>CityPolicies_Icons.xml</File>
+  </Files>
+</Mod>

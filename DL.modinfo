@@ -19,6 +19,18 @@ DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] C
     <Criteria id="Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
+    <Criteria id="CityPolicies_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
+    </Criteria>
+    <Criteria id="Monopolies_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_MONOPOLIES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateText id="DL_FrontEnd_Text">
@@ -37,6 +49,18 @@ DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] C
       <File>UI/Replacement/CityPanel.lua</File>
       <File>UI/Replacement/CityPanelOverview.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15001</LoadOrder></Properties>
+      <File>CityPolicies/CityPolicies.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="CityPolicies_Texts" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15002</LoadOrder></Properties>
+      <File>CityPolicies/CityPolicies_Texts.xml</File>
+    </UpdateText>
+    <UpdateIcons id="CityPolicies_Icons" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15003</LoadOrder></Properties>
+      <File>CityPolicies/CityPolicies_Icons.xml</File>
+    </UpdateIcons>
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
       <Properties><LoadOrder>15800</LoadOrder></Properties>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
@@ -138,6 +162,10 @@ DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] C
     <File>UI/Replacement/CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
+    <!-- City Policies -->
+    <File>CityPolicies/CityPolicies.sql</File>
+    <File>CityPolicies/CityPolicies_Texts.xml</File>
+    <File>CityPolicies/CityPolicies_Icons.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
     <File>Maps/FeatureGenerator.lua</File>
