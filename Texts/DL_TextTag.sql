@@ -57,13 +57,13 @@ update Improvements set Description = 'LOC_IMPROVEMENT_LUMBER_MILL_DL_DESCRIPTIO
 
 update Districts set Description = 'LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION' where DistrictType ='DISTRICT_HOLY_SITE';
 update Districts set Description = 'LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION' where DistrictType ='DISTRICT_AQUEDUCT';
-update Districts set Description = 'LOC_DISTRICT_BATH_DL_DESCRIPTION' where DistrictType ='DISTRICT_BATH';
+-- update Districts set Description = 'LOC_DISTRICT_BATH_DL_DESCRIPTION' where DistrictType ='DISTRICT_BATH';
 update Districts set Description = 'LOC_DISTRICT_HARBOR_DL_DESCRIPTION' where DistrictType ='DISTRICT_HARBOR';
-update Districts set Description = 'LOC_DISTRICT_COTHON_DL_DESCRIPTION' where DistrictType ='DISTRICT_COTHON';
-update Districts set Description = 'LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_DL_DESCRIPTION' where DistrictType ='DISTRICT_ROYAL_NAVY_DOCKYARD';
-update Districts set Description = 'LOC_DISTRICT_IKANDA_DL_DESCRIPTION' where DistrictType ='DISTRICT_IKANDA';
+-- update Districts set Description = 'LOC_DISTRICT_COTHON_DL_DESCRIPTION' where DistrictType ='DISTRICT_COTHON';
+-- update Districts set Description = 'LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_DL_DESCRIPTION' where DistrictType ='DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- update Districts set Description = 'LOC_DISTRICT_IKANDA_DL_DESCRIPTION' where DistrictType ='DISTRICT_IKANDA';
 update Districts set Description = 'LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION' where DistrictType ='DISTRICT_ENCAMPMENT';
-update Districts set Description = 'LOC_DISTRICT_MBANZA_DL_DESCRIPTION' where DistrictType ='DISTRICT_MBANZA';
+-- update Districts set Description = 'LOC_DISTRICT_MBANZA_DL_DESCRIPTION' where DistrictType ='DISTRICT_MBANZA';
 update Districts set Description = 'LOC_DISTRICT_AERODROME_DL_DESCRIPTION' where DistrictType ='DISTRICT_AERODROME';
 
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY' where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';

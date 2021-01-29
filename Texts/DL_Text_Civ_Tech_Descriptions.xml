@@ -73,5 +73,49 @@
 		<Replace Tag="LOC_CIVIC_ENVIRONMENTALISM_DESCRIPTION" Language="en_US">
 			<Text>+50% [ICON_Tourism] Tourism across your empire.</Text>
 		</Replace>
+		<!--  -->
+		<!-- 尤里卡和鼓舞 -->
+		<Replace Tag="LOC_BOOST_TRIGGER_BRONZE_WORKING" Language="zh_Hans_CN">
+			<Text>击杀2个蛮族单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_BRONZE_WORKING" Language="en_US">
+			<Text>Kill 2 Barbarians.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_THE_WHEEL" Language="zh_Hans_CN">
+			<Text>建造1座伐木场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_THE_WHEEL" Language="en_US">
+			<Text>Build a Lumber Mill.</Text>
+		</Replace>
+		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="zh_Hans_CN">
+			<Text>采矿业让您拥有了建造轮轴的能力。接下来是车轮？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="en_US">
+			<Text>Your mining operations have given you the ability to create an axle. Will the wheel follow?</Text>
+		</Replace> -->
+		<Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="zh_Hans_CN">
+			<Text>拥有海军传统市政。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="en_US">
+			<Text>Have the Naval Tradition civic.</Text>
+		</Replace>
+		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION" Language="zh_Hans_CN">
+			<Text>您已经准备好了标准板材的供应，您的海运业很快就能启动。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION" Language="en_US">
+			<Text>Now that you have a ready supply of standardized boards, your shipping industry will soon take off.</Text>
+		</Replace> -->
+		<Replace Tag="LOC_BOOST_TRIGGER_NAVAL_TRADITION" Language="zh_Hans_CN">
+			<Text>拥有1艘四段帆船。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_NAVAL_TRADITION" Language="en_US">
+			<Text>Own 1 Quadrireme.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES" Language="zh_Hans_CN">
+			<Text>经营3条贸易线。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES" Language="en_US">
+			<Text>Maintain 3 Trade Routes.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>

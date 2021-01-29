@@ -31,6 +31,7 @@ local UV_CITIZEN_GROWTH_STATUS		:table	= {};
 		UV_CITIZEN_GROWTH_STATUS[6] = {u=0, v=200};		-- happy
 		UV_CITIZEN_GROWTH_STATUS[7] = {u=0, v=250};		-- ecstatic
 
+
 local UV_HOUSING_GROWTH_STATUS		:table = {};
 		UV_HOUSING_GROWTH_STATUS[0] = {u=0, v=0};		-- halted
 		UV_HOUSING_GROWTH_STATUS[1] = {u=0, v=50};		-- slowed
@@ -602,6 +603,12 @@ function ViewPanelHousing( data:table )
 		kInstance.HousingName:SetText( Locale.Lookup("LOC_HUD_CITY_HOUSING_FROM_STARTING_ERA") );
 		kInstance.HousingYield:SetText( Locale.ToNumber(data.HousingFromStartingEra) );
 	end
+
+	if (data.HousingFromGreatWorks > 0) then
+		kInstance = m_kHousingIM:GetInstance();
+		kInstance.HousingName:SetText( Locale.Lookup("LOC_HUD_CITY_HOUSING_FROM_GREATWORKS") );
+		kInstance.HousingYield:SetText( Locale.ToNumber(data.HousingFromGreatWorks) );
+	end
 end
 
 -- ===========================================================================
@@ -952,6 +959,12 @@ function OnPolicyChanged( ePlayer:number )
 	end
 end
 
+function OnGreatWorkChanged( playerID:number, creatorID:number, cityX:number, cityY:number, buildingID:number, greatWorkIndex:number )
+	if m_pPlayer ~= nil and playerID == m_pPlayer:GetID() then
+		Refresh();
+	end
+end
+
 function Resize()
 	local screenX, screenY:number = UIManager:GetScreenSizeVal();
 	Controls.OverviewSlide:SetSizeY(screenY);
@@ -1063,6 +1076,8 @@ function LateInitialize()
 	Events.GovernmentPolicyChanged.Add( OnPolicyChanged );
 	Events.GovernmentPolicyObsoleted.Add( OnPolicyChanged );
 	Events.LensChanged.Add( OnLensChanged );
+	Events.GreatWorkCreated.Add( OnGreatWorkChanged );
+	Events.GreatWorkMoved.Add( OnGreatWorkChanged );
 
 	-- Populate tabs	
 	AddTab( Controls.HealthButton,		OnSelectHealthTab );

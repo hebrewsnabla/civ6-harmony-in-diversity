@@ -584,6 +584,15 @@ end
 -- ===========================================================================
 --	GAME Event
 -- ===========================================================================
+function OnGreatWorkChanged(destCityOwner:number, destCityID: number, sourceCityOwner:number, sourceCityID:number, iDestGreatWork:number, eSourceBuilding:number)
+	if (Game.GetLocalPlayer() == destCityOwner or Game.GetLocalPlayer() == sourceCityOwner) then
+		Refresh();
+	end;
+end
+
+-- ===========================================================================
+--	GAME Event
+-- ===========================================================================
 function OnToggleOverviewPanel()
 	if Controls.ToggleOverviewPanel:IsChecked() then
 		LuaEvents.CityPanel_ShowOverviewPanel(true);
@@ -1305,6 +1314,8 @@ function Initialize()
 	Events.LocalPlayerChanged.Add(		OnLocalPlayerChanged );
 	Events.PlayerResourceChanged.Add(	OnPlayerResourceChanged );
 	Events.UnitSelectionChanged.Add(	OnUnitSelectionChanged );
+	Events.GreatWorkCreated.Add(		OnGreatWorkChanged);
+	Events.GreatWorkMoved.Add(			OnGreatWorkChanged);
 
 	-- LUA Events
 	LuaEvents.CityPanelOverview_CloseButton.Add(	OnCloseOverviewPanel );

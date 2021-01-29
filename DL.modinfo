@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.5">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.6">
   <Properties>
     <Name>DL Game Balance Mod</Name>
     <Description>
-DL Game Balance Mod. Test version v0.3.5. Please use this mod along with [MOD] City Policies.
+DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] City Policies.
     </Description>
     <Teaser>Game Balance Mod</Teaser>
     <Authors>DeepLogic</Authors>
@@ -20,6 +20,17 @@ DL Game Balance Mod. Test version v0.3.5. Please use this mod along with [MOD] C
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
   </ActionCriteria>
+  <FrontEndActions>
+    <UpdateText id="DL_FrontEnd_Text">
+      <Properties><LoadOrder>16020</LoadOrder></Properties>
+      <File>Texts/DL_Text_Buildings.xml</File>
+      <File>Texts/DL_Text_CityStates.xml</File>
+      <File>Texts/DL_Text_Districts.xml</File>
+      <!-- <File>Texts/DL_Text_Improvements.xml</File> -->
+      <File>Texts/DL_Text_NaturalWonders.xml</File>
+      <File>Texts/DL_Text_CivTraits.xml</File>
+    </UpdateText>
+  </FrontEndActions>
   <InGameActions>
     <ImportFiles id="DL_new_happiness_level_support" criteria="Expansion2">
       <Properties><LoadOrder>5</LoadOrder></Properties>
@@ -108,15 +119,17 @@ DL Game Balance Mod. Test version v0.3.5. Please use this mod along with [MOD] C
     <UpdateText id="DL_Text" criteria="Expansion2">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/DL_Text.xml</File>
-      <File>Texts/DL_Text_Buildings.xml</File>
-      <File>Texts/DL_Text_Districts.xml</File>
-      <File>Texts/DL_Text_Pantheon.xml</File>
       <File>Texts/DL_Text_Beliefs.xml</File>
-      <File>Texts/DL_Text_Improvements.xml</File>
-      <File>Texts/DL_Text_NaturalWonders.xml</File>
+      <File>Texts/DL_Text_Buildings.xml</File>
+      <File>Texts/DL_Text_CityStates.xml</File>
       <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
+      <File>Texts/DL_Text_Districts.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
+      <File>Texts/DL_Text_Improvements.xml</File>
+      <File>Texts/DL_Text_NaturalWonders.xml</File>
+      <File>Texts/DL_Text_Pantheon.xml</File>
+      <File>Texts/DL_Text_Policies.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -180,15 +193,18 @@ DL Game Balance Mod. Test version v0.3.5. Please use this mod along with [MOD] C
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
+    <!--  -->
     <File>Texts/DL_Text.xml</File>
-    <File>Texts/DL_Text_Buildings.xml</File>
-    <File>Texts/DL_Text_Districts.xml</File>
-    <File>Texts/DL_Text_Pantheon.xml</File>
     <File>Texts/DL_Text_Beliefs.xml</File>
-    <File>Texts/DL_Text_Improvements.xml</File>
-    <File>Texts/DL_Text_NaturalWonders.xml</File>
+    <File>Texts/DL_Text_Buildings.xml</File>
+    <File>Texts/DL_Text_CityStates.xml</File>
     <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
+    <File>Texts/DL_Text_Districts.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
+    <File>Texts/DL_Text_Improvements.xml</File>
+    <File>Texts/DL_Text_NaturalWonders.xml</File>
+    <File>Texts/DL_Text_Pantheon.xml</File>
+    <File>Texts/DL_Text_Policies.xml</File>
   </Files>
 </Mod>
