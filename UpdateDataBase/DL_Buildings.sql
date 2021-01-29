@@ -117,6 +117,8 @@ update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' 
 update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_SEWER';
 
 -- building adjustments
+update Buildings set Housing = 1 where BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE'
+	or BuildingType = 'BUILDING_STAR_FORT' or BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Cost = 50 where BuildingType = 'BUILDING_MONUMENT';
 update Buildings set Cost = 60, Housing = 1 where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_WATER_MILL';
