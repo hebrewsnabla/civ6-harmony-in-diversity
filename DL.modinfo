@@ -79,6 +79,14 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
       <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
     </UpdateText>
+    <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>15950</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_Gold.xml</File>
+    </UpdateDatabase>
+    <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>15951</LoadOrder></Properties>
+      <File>UI/Icons/DL_Icons_Gold.xml</File>
+    </UpdateIcons>
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/AssignStartingPlots.lua</File>
@@ -157,6 +165,9 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
     </UpdateText>
   </InGameActions>
   <Files>
+    <!-- Game Mode -->
+    <File>UI/Icons/DL_Icons_Gold.xml</File>
+    <File>UpdateDataBase/DL_Gold.xml</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/CityPanel.lua</File>
     <File>UI/Replacement/CityPanelOverview.lua</File>
