@@ -67,3 +67,34 @@ update Resource_Harvests set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where
 -- 	where Resource_Harvests.ResourceType = Improvement_ValidResources.ResourceType
 -- 	and Improvement_ValidResources.ImprovementType = 'IMPROVEMENT_CAMP';
 
+--add industries and corporation improvement&effect to gold
+--insert or replace into ResourceCorporations
+	--(ResourceType,	ResourceEffect,	ResourceEffectTExt)
+--values
+--('RESOURCE_GOLD','CORPORATION_GOLD_YIELD_BONUS','LOC_CORPORATION_GOLD_YIELD_BONUS_DESCRIPTION');
+
+--insert or replace into ResourceIndustries
+	--(ResourceType,	ResourceEffect,	ResourceEffectTExt)
+--values
+--('RESOURCE_GOLD','INDUSTRY_GOLD_YIELD_BONUS','LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION');
+
+--insert or replace into Improvement_ValidResources
+	--(ImprovementType,	ResourceType,	MustRemoveFeature)
+--values
+--('IMPROVEMENT_CORPORATION','RESOURCE_GOLD',1),
+--('IMPROVEMENT_INDUSTRY','RESOURCE_GOLD',1);
+
+update RequirementArguments set Value = 'RESOURCE_DIAMONDS, RESOURCE_GOLD, RESOURCE_JADE, RESOURCE_SILVER, RESOURCE_TRUFFLES'
+	where Name = 'ResourceType' and RequirementId = 'REQUIREMENT_GOLD_BONUS_RESOURCE';
+
+
+
+
+
+
+
+
+
+
+
+

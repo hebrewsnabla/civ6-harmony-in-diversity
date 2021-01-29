@@ -89,6 +89,7 @@ DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] C
       <File>UpdateDataBase/DL_Happiness.sql</File>
       <File>UpdateDataBase/DL_Improvements.sql</File>
       <File>UpdateDataBase/DL_Improvements.xml</File>
+      <File>UpdateDataBase/DL_Gold.xml</File>
       <File>UpdateDataBase/DL_MajorCivs.sql</File>
       <File>UpdateDataBase/DL_Modifiers.sql</File>
       <File>UpdateDataBase/DL_Policies.sql</File>
@@ -191,6 +192,7 @@ DL Game Balance Mod. Test version v0.3.6. Please use this mod along with [MOD] C
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
+    <File>UpdateDataBase/DL_Gold.xml</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <!--  -->
