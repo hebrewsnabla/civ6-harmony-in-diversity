@@ -29,6 +29,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_THEATER'				--剧院
 	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
+	or DistrictType = 'DISTRICT_PRESERVE'				--保护区
 ;
 
 -- unique districts
@@ -44,6 +45,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_HANSA'					--汉萨（德国）
 	or DistrictType = 'DISTRICT_OPPIDUM'				--奥皮杜姆（高卢）
 	or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL'	--科帕卡瓦纳（巴西）
+	or DistrictType = 'DISTRICT_THANH'					--城池（越南）
 ;
 
 --normal districts
