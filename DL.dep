@@ -136,7 +136,6 @@
 			<LibraryDependencies>
 				<Element text="CityBuildings"/>
 				<Element text="TileBase"/>
-				<Element text="RouteDecalMaterial"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
