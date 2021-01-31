@@ -194,17 +194,35 @@
       <Text>Entrepreneurship, from the French term "to undertake," refers to the capability and willingness by an individual to develop, organize and manage a commercial venture in the hopes of making a profit. In history, entrepreneurship has taken many forms, from the great explorer-merchants of Renaissance Italy to the government-chartered companies of the Age of Discovery to the robber barons of the Industrial Age; regardless of the form, the willingness to risk their own funds to generate greater wealth has driven the evolution of civilization as surely as any other factor.</Text>
     </Replace> -->
     <!-- pillaging -->
-    <Replace Tag="LOC_POLICY_RAID_EXPANSION1_ALT_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_POLICY_RAID_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>掠夺和海岸扫荡的收益+100%。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_RAID_EXPANSION1_ALT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_POLICY_RAID_DL_DESCRIPTION" Language="en_US">
       <Text>Yields gained from pillaging and coastal raids are +100%.</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_TOTAL_WAR_EXPANSION1_ALT_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_POLICY_TOTAL_WAR_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>掠夺、海岸扫荡和掠夺 [ICON_TradeRoute] 贸易路线的收益+200%。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_TOTAL_WAR_EXPANSION1_ALT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_POLICY_TOTAL_WAR_DL_DESCRIPTION" Language="en_US">
       <Text>Yields gained from pillaging, coastal raids, and plundering [ICON_TradeRoute] Trade Routes are +200%.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_EQUESTRIAN_ORDERS_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有改良的 [ICON_RESOURCE_HORSES] 马与 [ICON_RESOURCE_IRON] 铁每回合额外产出2点资源。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_EQUESTRIAN_ORDERS_DL_DESCRIPTION" Language="en_US">
+      <Text>All improved [ICON_RESOURCE_HORSES] Horses and [ICON_RESOURCE_IRON] Iron resources yield 2 additional resource per turn.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DRILL_MANUALS_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有改良的 [ICON_RESOURCE_NITER] 硝石与 [ICON_RESOURCE_COAL] 煤每回合额外产出2点资源。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DRILL_MANUALS_DL_DESCRIPTION" Language="en_US">
+      <Text>All improved [ICON_RESOURCE_NITER] Niter and [ICON_RESOURCE_COAL] Coal resources yield 2 additional resource per turn.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_RESOURCE_MANAGEMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有改良的 [ICON_RESOURCE_ALUMINUM] 铝与 [ICON_RESOURCE_OIL] 石油每回合额外产出2点资源。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_RESOURCE_MANAGEMENT_DL_DESCRIPTION" Language="en_US">
+      <Text>All improved [ICON_RESOURCE_ALUMINUM] Aluminum and [ICON_RESOURCE_OIL] Oil resources yield 2 additional resource per turn.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

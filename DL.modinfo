@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.6.5">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.6.6">
   <Properties>
     <Name>DL Game Balance Mod</Name>
     <Description>
-DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be released soon.
+DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be released soon.
     </Description>
     <Teaser>Game Balance Mod</Teaser>
     <Authors>DeepLogic</Authors>
@@ -37,10 +37,11 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/DL_Text_Buildings.xml</File>
       <File>Texts/DL_Text_CityStates.xml</File>
+      <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
       <!-- <File>Texts/DL_Text_Improvements.xml</File> -->
       <File>Texts/DL_Text_NaturalWonders.xml</File>
-      <File>Texts/DL_Text_CivTraits.xml</File>
+      <File>Texts/DL_Text_Units.xml</File>
     </UpdateText>
   </FrontEndActions>
   <InGameActions>
@@ -81,14 +82,18 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
     </UpdateText>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>15950</LoadOrder></Properties>
-      <File>UpdateDataBase/DL_Gold.xml</File>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     </UpdateDatabase>
     <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>15951</LoadOrder></Properties>
-      <File>UI/Icons/DL_Icons_Gold.xml</File>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     </UpdateIcons>
-    <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
+    <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>15952</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+    </UpdateText>
+    <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>15953</LoadOrder></Properties>
       <File>DL.dep</File>
     </UpdateArt>
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
@@ -166,6 +171,7 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Pantheon.xml</File>
       <File>Texts/DL_Text_Policies.xml</File>
+      <File>Texts/DL_Text_Units.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -173,8 +179,9 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
     <File>DL.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
     <!-- Game Mode -->
-    <File>UI/Icons/DL_Icons_Gold.xml</File>
-    <File>UpdateDataBase/DL_Gold.xml</File>
+    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
+    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
+    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/CityPanel.lua</File>
     <File>UI/Replacement/CityPanelOverview.lua</File>
@@ -252,5 +259,6 @@ DL Game Balance Mod. Test version v0.3.6.5. The stable version is going to be re
     <File>Texts/DL_Text_NaturalWonders.xml</File>
     <File>Texts/DL_Text_Pantheon.xml</File>
     <File>Texts/DL_Text_Policies.xml</File>
+    <File>Texts/DL_Text_Units.xml</File>
   </Files>
 </Mod>
