@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>
+		<Replace Tag="LOC_BELIEF_JNR_CANDI_NAME" Language="zh_Hans_CN">
+			<Text>宗教信条CANDI的中文名字</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_CANDI_NAME" Language="zh_Hans_CN">
+			<Text>建筑CANDI的中文名字</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>宗教信条CANDI的描述</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
+			<Text>Description for Candi Belief</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建筑CANDI的描述</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
+			<Text>Description for Candi Building</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>
