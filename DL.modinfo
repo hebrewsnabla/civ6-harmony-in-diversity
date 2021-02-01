@@ -23,6 +23,9 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
     </Criteria>
+    <Criteria id="KublaiKhanVietnam_Enabled">
+      <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
+    </Criteria>
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -45,6 +48,10 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
     </UpdateText>
   </FrontEndActions>
   <InGameActions>
+    <UpdateIcons id="FixChineseIcon" criteria="KublaiKhanVietnam_Enabled">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>UI/Icons/DL_Icons_Fixing.sql</File>
+    </UpdateIcons>
     <ImportFiles id="DL_new_happiness_level_support" criteria="Expansion2">
       <Properties><LoadOrder>5</LoadOrder></Properties>
       <File>UI/Replacement/CityPanel.lua</File>
@@ -185,6 +192,7 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
     <!-- UI replacements and icons -->
     <File>UI/Replacement/CityPanel.lua</File>
     <File>UI/Replacement/CityPanelOverview.lua</File>
+    <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <!-- City Policies -->
