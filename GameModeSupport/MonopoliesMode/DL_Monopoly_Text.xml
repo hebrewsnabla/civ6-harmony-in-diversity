@@ -2,34 +2,34 @@
 <GameData>
 	<LocalizedText>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_1_NAME" Language="zh_Hans_CN">
-			<Text>黄金产品1</Text>
+			<Text>所罗门王的宝藏</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_1_NAME" Language="en_US">
-			<Text>Gold Production 1</Text>
+			<Text>King Solomon's Treasure</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_2_NAME" Language="zh_Hans_CN">
-			<Text>黄金产品2</Text>
+			<Text>寿山艮岳</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_2_NAME" Language="en_US">
-			<Text>Gold Production 2</Text>
+			<Text>Longevity Hill</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_3_NAME" Language="zh_Hans_CN">
-			<Text>黄金产品3</Text>
+			<Text>皇冠鎏金</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_3_NAME" Language="en_US">
-			<Text>Gold Production 3</Text>
+			<Text>Gilding Crown</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_4_NAME" Language="zh_Hans_CN">
-			<Text>黄金产品4</Text>
+			<Text>欧若拉之黎明</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_4_NAME" Language="en_US">
-			<Text>Gold Production 4</Text>
+			<Text>Dawn of Aurora</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_5_NAME" Language="zh_Hans_CN">
-			<Text>黄金产品5</Text>
+			<Text>廷巴克图来客</Text>
 		</Replace>
 		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD_5_NAME" Language="en_US">
-			<Text>Gold Production 5</Text>
+			<Text>Merchants form Timbuktu</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD_NAME" Language="zh_Hans_CN">
 			<Text>[ICON_RESOURCE_GOLD] 黄金公司：开发新产品</Text>
