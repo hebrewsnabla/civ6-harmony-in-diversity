@@ -128,6 +128,7 @@ update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
 update Buildings set Cost = 360 where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
 update Buildings set Cost = 360 where BuildingType = 'BUILDING_FOOD_MARKET';
 update Buildings set Cost = 360 where BuildingType = 'BUILDING_HANGAR';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_SANCTUARY';
 
 -- District building cost updates
 -- Campus
@@ -140,7 +141,7 @@ update Buildings set Cost = 500 where BuildingType = 'BUILDING_STOCK_EXCHANGE';
 update Buildings set Cost = 500 where BuildingType = 'BUILDING_BROADCAST_CENTER';
 -- Industrial Zone
 update Buildings set Cost = 175 where BuildingType = 'BUILDING_WORKSHOP';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
 update Buildings set Cost = 360 where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Cost = 500 where BuildingType = 'BUILDING_POWER_PLANT';
@@ -620,3 +621,30 @@ update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_QUEENS_BIBLI
 update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_MILITARY';
 update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_CULTURE';
 update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_SCIENCE';
+
+
+---University buff adjacent rainforest and gain science from rainforest
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_MADRASA',		'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
+	('BUILDING_MADRASA',		'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
+	('BUILDING_UNIVERSITY',		'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
+	('BUILDING_UNIVERSITY',		'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE');
+
+insert into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+values
+	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',			'MODIFIER_SINGLE_CITY_FEATURE_ADJACENCY',NULL),
+	('UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'UNIVERSITY_ADJACENCY_FOOD_JUNGLE_REQUIREMENTS');
+
+insert into ModifierArguments
+	(ModifierId,										Name,				Value)
+values
+	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'DistrictType',		'DISTRICT_CAMPUS'),
+	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'FeatureType',		'FEATURE_JUNGLE'),
+	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'YieldType',		'YIELD_SCIENCE'),
+	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'Amount',			1),
+	('UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
+	('UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE',		'Amount',			1);
+

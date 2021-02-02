@@ -117,5 +117,17 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES" Language="en_US">
 			<Text>Maintain 3 Trade Routes.</Text>
 		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_RECORDED_HISTORY" Language="zh_Hans_CN">
+			<Text>建造1个图书馆</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_RECORDED_HISTORY" Language="en_US">
+			<Text>Build 1 Library.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HUMANISM" Language="zh_Hans_CN">
+			<Text>建造2个古罗马剧场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HUMANISM" Language="en_US">
+			<Text>Build 2 Amphitheater.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
