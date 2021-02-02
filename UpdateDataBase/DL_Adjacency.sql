@@ -4,6 +4,8 @@
 
 -- delete from District_Adjacencies where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE';
 
+delete from District_Adjacencies where DistrictType = 'DISTRICT_ACROPOLIS' and YieldChangeId = 'District_Culture_City_Center';
+
 insert or replace into District_Adjacencies
 	(DistrictType,					YieldChangeId)
 values
@@ -11,6 +13,11 @@ values
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
 	('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
 	('DISTRICT_CAMPUS',				'Reef_Science_Late'),
+	('DISTRICT_CAMPUS',				'District_Science_City_Center'),
+	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
+	('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
+	('DISTRICT_THEATER',			'District_Culture_City_Center'),
+	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),
 	-- 
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Minel_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'Mine_Production'),
@@ -115,6 +122,12 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,
 	AdjacentDistrict,			PrereqCivic,	PrereqTech,				ObsoleteCivic,	ObsoleteTech)
 values
+	('District_Science_City_Center',	'LOC_District_Science_City_Center',			'YIELD_SCIENCE',	1,				1,	
+	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
+	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',			'YIELD_GOLD',		1,				1,	
+	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
+	('District_Culture_Double_City_Center',	'LOC_District_Culture_Double_City_Center',	'YIELD_CULTURE',	2,				1,	
+	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
 	('Aqueduct_Production_Late',		'LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE',	'YIELD_PRODUCTION',	2,				1,
 	'DISTRICT_AQUEDUCT',		NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
 	('Bath_Production_Late',			'LOC_DISTRICT_BATH_PRODUCTION_LATE',		'YIELD_PRODUCTION',	2,				1,
@@ -125,3 +138,6 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, PrereqTech, AdjacentResource) values
 	('Resource_Production_Late', 'LOC_DISTRICT_RESOURCE_PRODUCTION', 'YIELD_PRODUCTION', 1, 1, 'TECH_APPRENTICESHIP', 1);
+
+delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
+ 

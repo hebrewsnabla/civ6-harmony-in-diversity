@@ -143,7 +143,24 @@
 		<Replace Tag="LOC_DISTRICT_REEF_SCIENCE_LATE" Language="en_US">
 			<Text>+{1_num} [ICON_SCIENCE] Science from each adjacent Reef.</Text>
 		</Replace>
-
+		<Replace Tag="LOC_District_Culture_Double_City_Center" Language="zh_Hans_CN">
+			<Text>每个相邻的市中心提供 +2[ICON_CULTURE] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Culture_Double_City_Center" Language="en_US">
+			<Text>+ 1[ICON_CULTURE] Culture from each adjacent City Center.</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Science_City_Center" Language="zh_Hans_CN">
+			<Text>每个相邻的市中心提供 +1[ICON_SCIENCE] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Science_City_Center" Language="en_US">
+			<Text>+1[ICON_SCIENCE] Science from each adjacent City Center.</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Gold_City_Center" Language="zh_Hans_CN">
+			<Text>每个相邻的市中心提供 +1[ICON_GOLD] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
+			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
+		</Replace>
 		<!-- Wonders-->
 	    <Replace Tag="LOC_BUILDING_PETRA_DESCRIPTION" Language="zh_Hans_CN">
 	      	<Text>为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。</Text>

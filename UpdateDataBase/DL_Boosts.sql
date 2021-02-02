@@ -1,0 +1,13 @@
+-------------------------------------
+--         Boosts Adjustment       --
+-------------------------------------
+
+update Boosts set NumItems = 2 where TechnologyType = 'TECH_BRONZE_WORKING';
+
+update Boosts set ImprovementType = 'IMPROVEMENT_LUMBER_MILL', RequiresResource = 0 where TechnologyType = 'TECH_THE_WHEEL';
+update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', ImprovementType = NULL, NumItems = 0, BoostingCivicType = 'CIVIC_NAVAL_TRADITION' where TechnologyType = 'TECH_MASS_PRODUCTION';
+update Boosts set BoostClass = 'BOOST_TRIGGER_OWN_X_UNITS_OF_TYPE', NumItems = 1 where CivicType = 'CIVIC_NAVAL_TRADITION';
+
+update Boosts set NumItems = 3 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
+update Boosts set NumItems = 1 ,BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS' , DistrictType = NULL, BuildingType = 'BUILDING_LIBRARY' where CivicType = 'CIVIC_RECORDED_HISTORY';
+update Boosts set NumItems = 2 ,BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS' , Unit1Type = NULL, BuildingType = 'BUILDING_AMPHITHEATER' where CivicType = 'CIVIC_HUMANISM';	
