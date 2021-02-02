@@ -23,6 +23,10 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
     </Criteria>
+    <Criteria id="Worships_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
+    </Criteria>
     <Criteria id="KublaiKhanVietnam_Enabled">
       <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
     </Criteria>
@@ -57,16 +61,29 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
       <File>UI/Replacement/CityPanel.lua</File>
       <File>UI/Replacement/CityPanelOverview.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
+      <Properties><LoadOrder>15501</LoadOrder></Properties>
+      <File>ModSupport/Worships/DL_Removes.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Worships_mod_support" criteria="Worships_Expansion2">
+      <Properties><LoadOrder>15502</LoadOrder></Properties>
+      <File>ModSupport/Worships/DL_Adaptation.sql</File>
+      <File>ModSupport/Worships/DL_Worships.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Worships_mod_support_text" criteria="Worships_Expansion2">
+      <Properties><LoadOrder>15503</LoadOrder></Properties>
+      <File>ModSupport/Worships/DL_Texts.xml</File>
+    </UpdateText>
     <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
-      <Properties><LoadOrder>15001</LoadOrder></Properties>
+      <Properties><LoadOrder>15601</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies.sql</File>
     </UpdateDatabase>
     <UpdateText id="CityPolicies_Texts" criteria="CityPolicies_Conflict_Expansion2">
-      <Properties><LoadOrder>15002</LoadOrder></Properties>
+      <Properties><LoadOrder>15602</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies_Texts.xml</File>
     </UpdateText>
     <UpdateIcons id="CityPolicies_Icons" criteria="CityPolicies_Conflict_Expansion2">
-      <Properties><LoadOrder>15003</LoadOrder></Properties>
+      <Properties><LoadOrder>15603</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies_Icons.xml</File>
     </UpdateIcons>
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
@@ -195,6 +212,11 @@ DL Game Balance Mod. Test version v0.3.6.6. The stable version is going to be re
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
+    <!-- Mod Support -->
+    <File>ModSupport/Worships/DL_Removes.sql</File>
+    <File>ModSupport/Worships/DL_Adaptation.sql</File>
+    <File>ModSupport/Worships/DL_Worships.sql</File>
+    <File>ModSupport/Worships/DL_Texts.xml</File>
     <!-- City Policies -->
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
