@@ -22,18 +22,23 @@ insert into MajorStartingUnits (Unit, Era, Quantity, NotStartTile, OnDistrictCre
 -- 3. Higher improvement pseudo yield to increase the desire for build improvemnts.
 -- 4. Make AI less favor to declare war on city states.
 insert or replace into AiListTypes (ListType) values
+	('DLAdjustBuildings'),
 	('DLAdjustPseudoYields'),
 	('DLFewerWaronCityStates');
 
 insert or replace into AiLists
 	(ListType,					LeaderType,					System)
 values
+	('DLAdjustBuildings',		'TRAIT_LEADER_MAJOR_CIV',	'Buildings'),
 	('DLAdjustPseudoYields',	'TRAIT_LEADER_MAJOR_CIV',	'PseudoYields'),
 	('DLFewerWaronCityStates',	'TRAIT_LEADER_MAJOR_CIV',	'DiplomaticActions');
 
 insert or replace into AiFavoredItems
 	(ListType,					Item,									Favored,	Value)
 values
+	('DLAdjustBuildings',		'BUILDING_WALLS',						1,			0),
+	('DLAdjustBuildings',		'BUILDING_CASTLE',						1,			0),
+	-- ('DLAdjustBuildings',	'BUILDING_STAR_FORT',					1,			0),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_HAPPINESS',				1,			-50),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_RESOURCE_LUXURY',			1,			300),
 	('DLAdjustPseudoYields',	'PSEUDOYIELD_IMPROVEMENT',				1,			10),
