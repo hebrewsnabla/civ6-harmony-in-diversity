@@ -43,3 +43,7 @@ update Units set
 	CostProgressionParam1 = 25,
 	Cost = 200
 where UnitType = 'UNIT_SPY';
+
+update Units set Cost = 90 where UnitType = 'UNIT_HORSEMAN';
+
+update Units set BaseMoves = 1 ,Range = 3 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';

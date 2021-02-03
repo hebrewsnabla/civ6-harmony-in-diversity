@@ -85,5 +85,11 @@
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="en_US">
       <Text>A district unique to Vietnam which replaces the Encampment. +2 [ICON_CULTURE] Culture for each adjacent district. After Flight is researched receive [ICON_TOURISM] Tourism equal to the [ICON_CULTURE] Culture output. This district does not require population, is cheaper to build, cannot be built adjacent to the city center, and is not a specialty district.[NEWLINE]One per city. -1 Appeal to adjacent tiles. +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for [ICON_RESOURCE_STONE] Stone in this city.</Text>
     </Replace>
+    <Replace Tag="LOC_DISTRICT_ACROPOLIS_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN"> 
+		<Text>希腊特色文化遗址区域，替代剧院广场，建造费用更低。建成后奖励1名 [ICON_Envoy] 使者。[NEWLINE][NEWLINE]每个相邻区域+1 [ICON_Culture] 文化值，每个相邻市中心额外+2 [ICON_Culture] 文化值。每个相邻奇观、娱乐设施及水上乐园+2 [ICON_Culture] 文化值。只能建在丘陵上。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_ACROPOLIS_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>A district unique to Greece for cultural sites. Replaces the Theater Square district and cheaper to build. Awards 1 [ICON_Envoy] Envoy when completed.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture bonus for each adjacent district and an additional +2[ICON_Culture] Culture bonus for adjacent City Center. +2 [ICON_Culture] Culture bonus for each adjacent wonder, Entertainment Complex, and Water Park. Can only be built on Hills.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

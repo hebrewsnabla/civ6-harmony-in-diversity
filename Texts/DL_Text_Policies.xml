@@ -13,6 +13,12 @@
     <Replace Tag="LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE" Language="en_US">
       <Text>Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed.</Text>
     </Replace>
+    <Replace Tag="LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE" Language="zh_Hans_CN">
+      <Text>“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+3 [ICON_Culture] 文化值。</Text>
+    </Replace>
+    <Replace Tag="LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE" Language="en_US">
+      <Text>Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +3 [ICON_Culture] Culture for each specialty district </Text>
+    </Replace>
     <!-- Governments-->
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="zh_Hans_CN">
       <Text>拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20%建造速度。 </Text>
@@ -58,8 +64,86 @@
     <Replace Tag="LOC_POLICY_GRAND_OPERA_DESCRIPTION" Language="en_US">
        <Text>Regional effects from Theater district reach 3 tiles farther. Art Museums or Archaeological Museums generate 0.3 [ICON_CULTURE] Culture and Broadcast Centers generate 0.5 [ICON_CULTURE] Culture per [ICON_Citizen] citizen in the city.</Text>
     </Replace>
+    <Replace Tag='LOC_POLICY_MINARET_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>拥有寺庙的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_FAITH] 信仰值。拥有祭祀建筑的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_FAITH] 信仰值。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_MINARET_DESCRIPTION' Language="en_US">
+       <Text> Temples generate 0.3 [ICON_FAITH] Faith and Worship Buildings generate 0.5 [ICON_FAITH] Faith per [ICON_Citizen] citizen in the city.</Text>
+    </Replace>
     <!-- Districts -->
-    <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>+50%圣地相邻加成。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="en_US">
+      <Text>+50% Holy Site district adjacency bonuses.</Text>
+    </Replace>
+        <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>+100%圣地相邻加成。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
+      <Text>+100% Holy Site district adjacency bonuses.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="zh_Hans_CN">
+      <Text>宣礼塔</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="en_US">
+      <Text>Minaret</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="zh_Hans_CN">
+      <Text>原始公社</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="en_US">
+      <Text>Primitive Commune</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="zh_Hans_CN">
+      <Text>萨满</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="en_US">
+      <Text>Shaman</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_BARD_NAME" Language="zh_Hans_CN">
+      <Text>吟游诗人</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_BARD_NAME" Language="en_US">
+      <Text>Bard</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="zh_Hans_CN">
+      <Text>教化</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="en_US">
+      <Text>Civilize</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_FOOD] Food in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_Faith] 信仰。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_Faith] Faith in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_CULTURE] 文化。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_CULTURE] Culture in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_SCIENCE] 科技。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_SCIENCE] Science in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+2 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
+       <Text> +2 [ICON_Gold] Gold in all cities.</Text>
+    </Replace>
+    <!--Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+50%剧院广场区相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="en_US">
@@ -102,7 +186,8 @@
       <Text>+100% Holy Site district adjacency bonuses.</Text>
     </Replace>
     <!-- New cards -->
-    <Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="zh_Hans_CN">
+
+    <!--Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="zh_Hans_CN">
       <Text>美术创作</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="en_US">

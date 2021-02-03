@@ -196,6 +196,7 @@ DL Game Balance Mod. Test version v0.3.7. The stable version is going to be rele
       <File>Texts/DL_Text_Pantheon.xml</File>
       <File>Texts/DL_Text_Policies.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
+      <File>Texts/DL_Text_Wonders.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -290,5 +291,6 @@ DL Game Balance Mod. Test version v0.3.7. The stable version is going to be rele
     <File>Texts/DL_Text_Pantheon.xml</File>
     <File>Texts/DL_Text_Policies.xml</File>
     <File>Texts/DL_Text_Units.xml</File>
+    <File>Texts/DL_Text_Wonders.xml</File>
   </Files>
 </Mod>

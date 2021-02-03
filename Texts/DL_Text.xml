@@ -179,12 +179,5 @@
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
 			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
 		</Replace>
-		<!-- Wonders-->
-	    <Replace Tag="LOC_BUILDING_PETRA_DESCRIPTION" Language="zh_Hans_CN">
-	      	<Text>为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。</Text>
-	    </Replace>
-		<Replace Tag="LOC_BUILDING_PETRA_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Food] Food, +2 [ICON_Gold] Gold, and +1 [ICON_Production] Production on all Desert tiles for this city (non-Floodplains). Must be built on Desert or Floodplains without Hills.</Text>
-		</Replace>
 	</LocalizedText>
 </GameData>
