@@ -3,13 +3,13 @@
 -------------------------------------
 
 -- Oracle gives 3 great person points each.
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATADMIRALPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATENGINEERPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATMERCHANTPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATPROPHETPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATSCIENTISTPOINTS' and Name = 'Amount';
-update ModifierArguments set Value =3 where ModifierId = 'ORACLE_GREATWRITERPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATADMIRALPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATENGINEERPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATMERCHANTPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATPROPHETPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATSCIENTISTPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'ORACLE_GREATWRITERPOINTS' and Name = 'Amount';
 -- ARTEMIS does not affect empty camp.
 insert into RequirementSets (RequirementSetId, RequirementSetType) values
 	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL')

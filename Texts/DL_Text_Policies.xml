@@ -143,7 +143,7 @@
     <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
        <Text> +2 [ICON_Gold] Gold in all cities.</Text>
     </Replace>
-    <!--Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+50%剧院广场区相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="en_US">
@@ -184,10 +184,9 @@
     </Replace>
     <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
       <Text>+100% Holy Site district adjacency bonuses.</Text>
-    </Replace>
+    </Replace> -->
     <!-- New cards -->
-
-    <!--Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="zh_Hans_CN">
       <Text>美术创作</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_FINE_ARTS_NAME" Language="en_US">
@@ -246,7 +245,7 @@
     </Replace>
     <Replace Tag="LOC_POLICY_ENTREPRENEURSHIP_DESCRIPTION" Language="en_US">
       <Text>+100% Commercial Hub district adjacency bonuses.</Text>
-    </Replace>
+    </Replace> -->
     <!-- History Fail to add -->
     <!-- <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_FINE_ARTS_HISTORY_PARA_1" Language="zh_Hans_CN">
       <Text>美术创造是相对民俗和应用艺术而言的，它是一些由专业人员创作并可以被其他人分享的物件或是经验。美术创造这个词最早出现于17世纪的欧洲；五大“高级美术”包括绘画、雕刻、建筑、音乐和诗歌，“次要”美术包括戏剧和舞蹈。今日人们对于电影、摄影、书法、时装、漫画甚至电子游戏能否被算作美术创造依然有很大的分歧。</Text>
