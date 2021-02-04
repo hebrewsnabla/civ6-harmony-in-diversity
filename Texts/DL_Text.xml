@@ -21,11 +21,17 @@
 		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_COMBAT_9_CHAPTER_CONTENT_PARA_2" Language="en_US">
 			<Text>Walls add extra protection to a city or Encampment, making it even more difficult to conquer. This protection is like armor, shielding the city from attacks. Melee units deal only 15% of their normal damage to walls, and ranged units deal only 75% of their normal damage. Only Bombard units deal 100% of their normal damage to walls, making them necessary to capture a fortified city. If the walls are damaged, they stop being as effective and the district's health will start taking a little bit of damage with every attack. Walls can only recover health with a Project found in the city's Production Queue, like repairing district buildings, that becomes available if the district has not taken any damage for 3 consecutive turns. Once a city has walls, it can make ranged attacks against enemy units using a "City Ranged Strength" stat.[NEWLINE][NEWLINE]The City Combat Strength is based on the [ICON_Strength] Combat Strength of the strongest melee unit built by your civilization, minus 10, or by the [ICON_Strength] Combat Strength of a garrisoned military unit.[NEWLINE][NEWLINE]The City Ranged Strength is based on the [ICON_Ranged] Ranged Strength of the strongest ranged unit built by your civilization.[NEWLINE][NEWLINE]The city gets additional bonuses to its City Combat Strength for each non-pillaged district it has, making big cities harder to capture, and from terrain and a few other modifiers sources.</Text>
 		</Replace>
-		<Replace Tag="LOC_ABILITY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
+		<Replace Tag="LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>攻击区域时-10 [ICON_Strength] 战斗力</Text>
 		</Replace>
-		<Replace Tag="LOC_ABILITY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
 			<Text>-10 [ICON_Strength] Combat Strength when attacking Districts</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击区域时-7 [ICON_Strength] 战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
+			<Text>-7 [ICON_Strength] Combat Strength when attacking Districts</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在军事学院中训练获得的+3 [ICON_Strength] 战斗力</Text>
