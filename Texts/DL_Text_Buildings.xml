@@ -367,5 +367,11 @@
     <Replace Tag="LOC_BUILDING_SEWER_DESCRIPTION" Language="en_US">
       <Text>+10% Growth rate in this city.</Text>
     </Replace>
+    <Replace Tag="LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有未改良的海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>+25% combat experience for all naval units trained from this city.Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district.+1 [ICON_Production] Production on all unimproved Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
+    </Replace>       
   </LocalizedText>
 </GameData>
