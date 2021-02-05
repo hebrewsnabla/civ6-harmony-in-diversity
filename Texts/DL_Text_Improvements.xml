@@ -46,11 +46,13 @@
     </Replace>
     <!-- Constructing farms adjacent to other Farms provides bonuses to Housing. -->
     <!--  -->
+    <!-- +1 [ICON_Food] 食物 -->
     <Replace Tag="LOC_IMPROVEMENT_CAMP_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造营地的能力。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物。只能在森林或有效资源上建造。解锁“公会”市政后也可建造在雨林上。[NEWLINE][NEWLINE]如建在奢侈品资源上，城市则能利用该资源。</Text>
+      <Text>解锁建造者建造营地的能力。[NEWLINE][NEWLINE]+2 [ICON_Gold] 金币。只能在森林或有效资源上建造。解锁“公会”市政后也可建造在雨林上。[NEWLINE][NEWLINE]如建在奢侈品资源上，城市则能利用该资源。</Text>
     </Replace>
+    <!-- +1 [ICON_Food] Food -->
     <Replace Tag="LOC_IMPROVEMENT_CAMP_DL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct Camps.[NEWLINE][NEWLINE]+1 [ICON_Food] Food. Can only be built on forest or valid resources. Once Guilds is unlocked it can also be built on Rainforest. [NEWLINE][NEWLINE]If built on Luxury resources, the city will gain use of that resource.</Text>
+      <Text>Unlocks the Builder ability to construct Camps.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. Can only be built on forest or valid resources. Once Guilds is unlocked it can also be built on Rainforest. [NEWLINE][NEWLINE]If built on Luxury resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_LUMBER_MILL_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造伐木场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若沿河，额外+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能建在树林上。解锁“公会”市政后也能建造在雨林上。</Text>

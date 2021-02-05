@@ -11,8 +11,8 @@ insert or replace into District_Adjacencies
 values
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
-	('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
-	('DISTRICT_CAMPUS',				'Reef_Science_Late'),
+	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
+	-- ('DISTRICT_CAMPUS',				'Reef_Science_Late'),
 	('DISTRICT_CAMPUS',				'District_Science_City_Center'),
 	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
 	('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
@@ -29,15 +29,15 @@ values
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'District_Production'),
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Government_Production'),
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Aqueduct_Production'),
-	('DISTRICT_INDUSTRIAL_ZONE',	'Aqueduct_Production_Late'),
+	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Aqueduct_Production_Late'),
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Bath_Production'),
-	('DISTRICT_INDUSTRIAL_ZONE',	'Bath_Production_Late'),
+	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Bath_Production_Late'),
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Dam_Production'),
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Canal_Production');
 	-- 
-	('DISTRICT_HANSA',				'Aqueduct_Production_Late'),
+	-- ('DISTRICT_HANSA',				'Aqueduct_Production_Late'),
 	('DISTRICT_HANSA',				'Bath_Production'),
-	('DISTRICT_HANSA',				'Bath_Production_Late'),
+	-- ('DISTRICT_HANSA',				'Bath_Production_Late'),
 	('DISTRICT_HANSA',				'Commerical_Hub_Production_Late'),
 	('DISTRICT_HANSA',				'Resource_Production_Late');
 
@@ -92,22 +92,22 @@ update Adjacency_YieldChanges set ObsoleteTech = 'TECH_STEEL' where ID = 'Lumber
 -- update Adjacency_YieldChanges set Description = 'LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION' where ID = 'LumberMill_HalfProduction';
 update Adjacency_YieldChanges set PrereqTech = 'TECH_GUNPOWDER' where ID = 'Quarry_Production';
 -- Industry zone : Aqueduct
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Aqueduct_Production';
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Bath_Production';
+-- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Aqueduct_Production';
+-- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Bath_Production';
 update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BANKING' where ID = 'Commerical_Hub_Production';
 update Adjacency_YieldChanges set TilesRequired = 2, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Resource_Production';
 -- Campus : Geothermal & Reef
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_SCIENTIFIC_THEORY' where ID = 'Geothermal_Science';
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BUTTRESS' where ID = 'Reef_Science';
+-- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_SCIENTIFIC_THEORY' where ID = 'Geothermal_Science';
+-- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BUTTRESS' where ID = 'Reef_Science';
 
-insert or replace into Adjacency_YieldChanges
-	(ID,							Description,							YieldType,			YieldChange,	TilesRequired,
-	AdjacentFeature,				PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
-values
-	('Geothermal_Science_Late',		'LOC_DISTRICT_GEOTHERMAL_SCIENCE_LATE',	'YIELD_SCIENCE',	2,				1,
-	'FEATURE_GEOTHERMAL_FISSURE',	NULL,			'TECH_SCIENTIFIC_THEORY',	NULL,			NULL),
-	('Reef_Science_Late',			'LOC_DISTRICT_REEF_SCIENCE_LATE',		'YIELD_SCIENCE',	2,				1,
-	'FEATURE_REEF',					NULL,			'TECH_BUTTRESS',			NULL,			NULL);
+-- insert or replace into Adjacency_YieldChanges
+-- 	(ID,							Description,							YieldType,			YieldChange,	TilesRequired,
+-- 	AdjacentFeature,				PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
+-- values
+-- 	('Geothermal_Science_Late',		'LOC_DISTRICT_GEOTHERMAL_SCIENCE_LATE',	'YIELD_SCIENCE',	2,				1,
+-- 	'FEATURE_GEOTHERMAL_FISSURE',	NULL,			'TECH_SCIENTIFIC_THEORY',	NULL,			NULL),
+-- 	('Reef_Science_Late',			'LOC_DISTRICT_REEF_SCIENCE_LATE',		'YIELD_SCIENCE',	2,				1,
+-- 	'FEATURE_REEF',					NULL,			'TECH_BUTTRESS',			NULL,			NULL);
 
 insert or replace into Adjacency_YieldChanges
 	(ID,						Description,								YieldType,		YieldChange,	TilesRequired,
@@ -128,10 +128,10 @@ values
 	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
 	('District_Culture_Double_City_Center',	'LOC_District_Culture_Double_City_Center',	'YIELD_CULTURE',	2,				1,	
 	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
-	('Aqueduct_Production_Late',		'LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE',	'YIELD_PRODUCTION',	2,				1,
-	'DISTRICT_AQUEDUCT',		NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
-	('Bath_Production_Late',			'LOC_DISTRICT_BATH_PRODUCTION_LATE',		'YIELD_PRODUCTION',	2,				1,
-	'DISTRICT_BATH',			NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
+	-- ('Aqueduct_Production_Late',		'LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE',	'YIELD_PRODUCTION',	2,				1,
+	-- 'DISTRICT_AQUEDUCT',		NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
+	-- ('Bath_Production_Late',			'LOC_DISTRICT_BATH_PRODUCTION_LATE',		'YIELD_PRODUCTION',	2,				1,
+	-- 'DISTRICT_BATH',			NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
 	('Commerical_Hub_Production_Late',	'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',	'YIELD_PRODUCTION',	2,				1,
 	'DISTRICT_COMMERCIAL_HUB',	NULL,			'TECH_BANKING',			NULL,			NULL);
 

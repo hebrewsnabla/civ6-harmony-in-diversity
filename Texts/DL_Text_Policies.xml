@@ -45,6 +45,84 @@
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="en_US">
       <Text>+30% [ICON_Production] Production toward Builders, and newly trained Builders gain 1 extra build actions.</Text>
     </Replace>
+    <!-- diplomatic cards -->
+    <Replace Tag="LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>影响力点数每回合+3，以获得城邦 [ICON_Envoy] 使者。开放所有城邦的边境。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION" Language="en_US">
+      <Text>+3 Influence points per turn toward earning city-state [ICON_Envoy] Envoys. Open Borders with all city-states.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>开放所有城邦的边境，影响力点数每回合+9，通过影响力点数可获得城邦 [ICON_Envoy] 使者。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION" Language="en_US">
+      <Text>Open Borders with all city-states, and +9 Influence points per turn toward earning [ICON_Envoy] Envoys.</Text>
+    </Replace>
+    <!-- new cards -->
+    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="zh_Hans_CN">
+      <Text>宣礼塔</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="en_US">
+      <Text>Minaret</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="zh_Hans_CN">
+      <Text>原始公社</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="en_US">
+      <Text>Primitive Commune</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="zh_Hans_CN">
+      <Text>萨满</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="en_US">
+      <Text>Shaman</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_BARD_NAME" Language="zh_Hans_CN">
+      <!-- <Text>吟游诗人</Text> -->
+      <Text>对城弹琴</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_BARD_NAME" Language="en_US">
+      <!-- <Text>Bard</Text> -->
+      <Text>One More Culture</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="zh_Hans_CN">
+      <!-- <Text>教化</Text> -->
+      <Text>再来一瓶</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="en_US">
+      <!-- <Text>Civilize</Text> -->
+      <Text>One More Science</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_FOOD] Food in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_Faith] 信仰。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_Faith] Faith in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_CULTURE] 文化。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_CULTURE] Culture in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+1 [ICON_SCIENCE] 科技。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="en_US">
+       <Text> +1 [ICON_SCIENCE] Science in all cities.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有城市+2 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
+       <Text> +2 [ICON_Gold] Gold in all cities.</Text>
+    </Replace>
     <!-- District Buildings -->
     <Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>来自学院区域建筑的辐射范围增加3个单元格。拥有大学的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_SCIENCE] 科技值。拥有研究实验室的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_SCIENCE] 科技值。</Text>
@@ -82,66 +160,6 @@
     </Replace>
     <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
       <Text>+100% Holy Site district adjacency bonuses.</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="zh_Hans_CN">
-      <Text>宣礼塔</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_MINARET_NAME" Language="en_US">
-      <Text>Minaret</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="zh_Hans_CN">
-      <Text>原始公社</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="en_US">
-      <Text>Primitive Commune</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="zh_Hans_CN">
-      <Text>萨满</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="en_US">
-      <Text>Shaman</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_BARD_NAME" Language="zh_Hans_CN">
-      <Text>吟游诗人</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_BARD_NAME" Language="en_US">
-      <Text>Bard</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="zh_Hans_CN">
-      <Text>教化</Text>
-    </Replace>
-    <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="en_US">
-      <Text>Civilize</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+1 [ICON_Food] 食物。</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_FOOD] Food in all cities.</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+1 [ICON_Faith] 信仰。</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_Faith] Faith in all cities.</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+1 [ICON_CULTURE] 文化。</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_CULTURE] Culture in all cities.</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+1 [ICON_SCIENCE] 科技。</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_SCIENCE] Science in all cities.</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+2 [ICON_Gold] 金币。</Text>
-    </Replace>
-    <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
-       <Text> +2 [ICON_Gold] Gold in all cities.</Text>
     </Replace>
     <!-- <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+50%剧院广场区相邻加成。</Text>

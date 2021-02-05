@@ -40,7 +40,8 @@ update GlobalParameters set Value = 2 where Name = 'CITY_AMENITIES_FOR_FREE';
 -- update GlobalParameters set Value = 1 where Name = 'CITY_POP_PER_AMENITY';
 
 -- district population require
-update GlobalParameters set Value = 4 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
+-- update GlobalParameters set Value = 4 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
+update GlobalParameters set Value = 3 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
 
 -- Enable districts/wonders placement on GEOTHERMAL_FISSURE.
 insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 

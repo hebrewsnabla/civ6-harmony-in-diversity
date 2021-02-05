@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.7">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.9">
   <Properties>
-    <Name>DL Game Balance Mod</Name>
+    <Name>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity v0.3.9[ENDCOLOR]</Name>
     <Description>
-DL Game Balance Mod. Test version v0.3.8. The stable version is going to be released soon.
+Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development and welcome to try.
     </Description>
-    <Teaser>Game Balance Mod</Teaser>
-    <Authors>DeepLogic</Authors>
+    <Teaser>Civ6 Plus: Harmony in Diversity</Teaser>
+    <Authors>DeepLogic, 小小雨10101, 利牙菠萝, 不如念诗, 陈又, 法拉墨, 流浪de蒲公英, 傲娇的红莉栖</Authors>
     <Homepage>https://space.bilibili.com/385456816</Homepage>
-    <SpecialThanks>CEP Group</SpecialThanks>
+    <SpecialThanks>The CEP Group</SpecialThanks>
     <AffectsSavedGames>1</AffectsSavedGames>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>

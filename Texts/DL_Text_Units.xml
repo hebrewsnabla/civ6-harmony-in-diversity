@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
-    <Replace Tag="LOC_POLICY_TOTAL_WAR_EXPANSION1_ALT_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_UNIT_BUILDER_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>可建造单元格改良设施、移除地貌（如森林或雨林），或收获资源。建造者可使用4次。可通过政策或奇观（如金字塔）增加使用次数。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_TOTAL_WAR_EXPANSION1_ALT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_UNIT_BUILDER_DL_DESCRIPTION" Language="en_US">
       <Text>May create tile improvements, remove features like Woods or Rainforest, or Harvest some resources. Builders can be used 4 times. This can be increased through policies or wonders like the Pyramids.</Text>
     </Replace>
   </LocalizedText>

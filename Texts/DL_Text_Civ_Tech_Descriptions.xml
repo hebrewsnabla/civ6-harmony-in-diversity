@@ -32,11 +32,17 @@
 			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>营地+1 [ICON_FOOD] 食物。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
+		</Replace>
+		<!-- <Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+1 [ICON_PRODUCTION] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Production] Production from  the Camp improvement.</Text>
-		</Replace>
+		</Replace> -->
 		<Replace Tag="LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。</Text>
 		</Replace>

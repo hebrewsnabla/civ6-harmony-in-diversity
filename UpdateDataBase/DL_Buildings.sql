@@ -157,6 +157,9 @@ delete from Building_YieldChanges where BuildingType = 'BUILDING_WATER_MILL' and
 insert or replace into Building_YieldChanges
 	(BuildingType,					YieldType,			YieldChange)
 values
+	-- 
+	('BUILDING_PALACE',				'YIELD_GOLD',		12),
+	-- 
 	('BUILDING_GRANARY',			'YIELD_FOOD',		1),
 	('BUILDING_WATER_MILL',			'YIELD_PRODUCTION',	2),
 	-- 
