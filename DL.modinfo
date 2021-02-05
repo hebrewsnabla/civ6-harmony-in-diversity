@@ -14,6 +14,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
   </Properties>
   <Dependencies>
     <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
   </Dependencies>
   <ActionCriteria>
     <Criteria id="Expansion2">
