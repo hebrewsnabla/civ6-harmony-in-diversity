@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <IconDefinitions>
+    <Row Name="ICON_IMPROVEMENT_DUMMY"                       Atlas="ICON_ATLAS_UNIT_ACTIONS"   Index="1"/>
+    <!-- <Row Name="ICON_IMPROVEMENT_DUMMY"                       Atlas="ICON_ATLAS_UNIT_ACTIONS"   Index="9"/> -->
+  </IconDefinitions>
+</GameData>

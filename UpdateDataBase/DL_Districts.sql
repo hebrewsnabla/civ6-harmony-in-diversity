@@ -196,5 +196,5 @@ values
 update ModifierArguments set Value = 3 where ModifierId = 'MBANZA_FOOD' and Name = 'Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'MBANZA_GOLD' and Name = 'Amount';
 
-update Districts set Maintenance = Maintenance * 2 where InternalOnly = 0;
+-- update Districts set Maintenance = Maintenance * 2 where InternalOnly = 0;
 update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';

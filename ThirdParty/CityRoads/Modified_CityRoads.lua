@@ -37,7 +37,7 @@ function GetRouteTypeForPlayer(player)
 end
 
 function OnResearchCompleted(ePlayer, eTech)
-	print('CityRoads:OnResearchCompleted:', 'Player', ePlayer, 'Tech', eTech);
+	-- print('CityRoads:OnResearchCompleted:', 'Player', ePlayer, 'Tech', eTech);
 	if ePlayer >= 0 and eTech == 10 then
 		-- place roads on the improvements roads after researching TECH_THE_WHEEL
 		local player = Players[ePlayer];

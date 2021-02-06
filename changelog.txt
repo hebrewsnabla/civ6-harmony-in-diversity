@@ -908,3 +908,9 @@ Civ6 Plus: Harmony in Diversity，文明6 Plus：和而不同。
 
 (by 傲娇的红莉栖)
 若干文本更新。
+
+[Version V0.4]
+收纳mod：Farms On Fresh Hills，不再需要一起开启。
+mod功能：灌溉科技允许在相邻淡水或水渠的平原和草原丘陵上修建农田。
+
+区域维护费恢复为1金。

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_TECH_IRRIGATION_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>可清理沼泽，并收获 [ICON_RESOURCE_BANANAS] 香蕉。允许在相邻淡水或水渠的平原和草原丘陵上修建农田。</Text>
+    </Replace>
+    <Replace Tag="LOC_TECH_IRRIGATION_DESCRIPTION" Language="en_US">
+      <Text>Allows clearing of Marsh, and harvesting of [ICON_RESOURCE_BANANAS] Bananas. Allow Builders to build Farms on Plains Hills or Grass Hills adjacent to fresh water or Aqueduct.</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_DUMMY_NAME" Language="zh_Hans_CN">
+      <Text>请忽略该改良</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_DUMMY_NAME" Language="en_US">
+      <Text>Please ignore</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_DUMMY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>请忽略该改良</Text>
+      <!-- <Text>这个改良是用来辅助实现淡水丘陵田的。</Text> -->
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_DUMMY_DESCRIPTION" Language="en_US">
+      <Text>Please ignore</Text>
+      <!-- <Text>This improvement is used for implement farms on fresh hills.</Text> -->
+    </Replace>
+  </LocalizedText>
+</GameData>

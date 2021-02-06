@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.3.9">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.4">
   <Properties>
-    <Name>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity v0.3.9[ENDCOLOR]</Name>
+    <Name>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity v0.4[ENDCOLOR]</Name>
     <Description>
 Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development and welcome to try.
     </Description>
     <Teaser>Civ6 Plus: Harmony in Diversity</Teaser>
-    <Authors>DeepLogic, 小小雨10101, 利牙菠萝, 不如念诗, 陈又, 法拉墨, 流浪de蒲公英, 傲娇的红莉栖</Authors>
+    <Authors>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, 法拉墨, 流浪de蒲公英, 傲娇的红莉栖</Authors>
     <Homepage>https://space.bilibili.com/385456816</Homepage>
     <SpecialThanks>The CEP Group</SpecialThanks>
     <AffectsSavedGames>1</AffectsSavedGames>
@@ -23,6 +23,10 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <Criteria id="CityPolicies_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
+    </Criteria>
+    <Criteria id="FarmOnFreshHills_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
     </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -53,28 +57,60 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     </UpdateText>
   </FrontEndActions>
   <InGameActions>
+    <!-- Fix Icon -->
     <UpdateIcons id="FixChineseIcon" criteria="KublaiKhanVietnam_Enabled">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
+    <!-- Support for new tier of happiness -->
     <ImportFiles id="DL_new_happiness_level_support" criteria="Expansion2">
       <Properties><LoadOrder>5</LoadOrder></Properties>
       <File>UI/Replacement/CityPanel.lua</File>
       <File>UI/Replacement/CityPanelOverview.lua</File>
     </ImportFiles>
+    <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
-      <Properties><LoadOrder>15501</LoadOrder></Properties>
+      <Properties><LoadOrder>15001</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Removes.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Worships_mod_support" criteria="Worships_Expansion2">
-      <Properties><LoadOrder>15502</LoadOrder></Properties>
+      <Properties><LoadOrder>15002</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Adaptation.sql</File>
       <File>ModSupport/Worships/DL_Worships.sql</File>
     </UpdateDatabase>
     <UpdateText id="Worships_mod_support_text" criteria="Worships_Expansion2">
-      <Properties><LoadOrder>15503</LoadOrder></Properties>
+      <Properties><LoadOrder>15003</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Texts.xml</File>
     </UpdateText>
+    <!-- Farm on fresh hills-->
+    <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15501</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
+    </UpdateDatabase>
+    <AddGameplayScripts id="DL_FarmsOnFreshHills_Gameplay" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15502</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
+    </AddGameplayScripts>
+    <ReplaceUIScript id="DL_FarmsOnFreshHills_UnitPanel_XP2" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties>
+        <LoadOrder>15503</LoadOrder>
+        <LuaContext>UnitPanel</LuaContext>
+        <LuaReplace>FarmsOnFreshHills/FarmsOnFreshHills_XP2.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="DL_WorldViewIconsManager_FOFH_import" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15504</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
+    </ImportFiles>
+    <UpdateIcons id="DL_FarmsOnFreshHills_ICON" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15505</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/Icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15506</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/Texts.xml</File>
+    </UpdateText>
+    <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies.sql</File>
@@ -87,24 +123,30 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <Properties><LoadOrder>15603</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies_Icons.xml</File>
     </UpdateIcons>
+    <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
-      <Properties><LoadOrder>15800</LoadOrder></Properties>
+      <Properties><LoadOrder>15700</LoadOrder></Properties>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
     </UpdateDatabase>
     <UpdateDatabase id="GoldResourceDatabase" criteria="Expansion2">
-      <Properties><LoadOrder>15900</LoadOrder></Properties>
+      <Properties><LoadOrder>15800</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
     </UpdateDatabase>
     <UpdateIcons id="GoldResourceIcon" criteria="Expansion2">
-      <Properties><LoadOrder>15901</LoadOrder></Properties>
+      <Properties><LoadOrder>15801</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     </UpdateIcons>
     <UpdateText id="GoldResourceText" criteria="Expansion2">
-      <Properties><LoadOrder>15902</LoadOrder></Properties>
+      <Properties><LoadOrder>15802</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
       <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
     </UpdateText>
+    <AddGameplayScripts id="Modified_CityRoads" criteria="Expansion2">
+      <Properties><LoadOrder>15905</LoadOrder></Properties>
+      <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
+    </AddGameplayScripts>
+    <!-- GameMode Support -->
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>15950</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
@@ -121,6 +163,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <Properties><LoadOrder>15953</LoadOrder></Properties>
       <File>DL.dep</File>
     </UpdateArt>
+    <!-- Map generation -->
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/AssignStartingPlots.lua</File>
@@ -128,10 +171,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <File>Maps/MapUtilities.lua</File>
       <File>Maps/TerrainGenerator.lua</File>
     </ImportFiles>
-    <AddGameplayScripts id="Modified_CityRoads" criteria="Expansion2">
-      <Properties><LoadOrder>16005</LoadOrder></Properties>
-      <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
-    </AddGameplayScripts>
+    <!-- Main -->
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
       <File>UpdateDataBase/DL_Adjacency.sql</File>
@@ -223,6 +263,13 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
     <File>CityPolicies/CityPolicies_Icons.xml</File>
+    <!-- Farms On Fresh Hills -->
+    <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
+    <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
+    <File>FarmsOnFreshHills/FarmsOnFreshHills_XP2.lua</File>
+    <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
+    <File>FarmsOnFreshHills/Icons.xml</File>
+    <File>FarmsOnFreshHills/Texts.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
     <File>Maps/FeatureGenerator.lua</File>
