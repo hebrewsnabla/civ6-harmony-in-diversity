@@ -225,6 +225,7 @@ values
 	('POLICY_SCRIPTURE',			'POLICY_SIMULTANEUM');
 
 delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
+delete from ObsoletePolicies where PolicyType = 'POLICY_RETAINERS';
 delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
 	(PolicyType,					ModifierId)

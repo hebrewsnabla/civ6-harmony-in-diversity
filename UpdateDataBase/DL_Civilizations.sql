@@ -94,3 +94,10 @@ update ModifierArguments set Value = 200 where ModifierId = 'MINOR_CIV_KANDY_BET
 delete from TraitModifiers where TraitType = 'MINOR_CIV_KANDY_TRAIT' and ModifierId = 'MINOR_CIV_KANDY_UNIQUE_INFLUENCE_BETTER_RELIC_BONUS';
 -- Nalanda
 delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
+
+--Egypt
+--泛滥区域上的建筑加1粮
+--建造完奇观以后送工人
+--UI为相邻泛滥田+1粮
+--la商路翻倍
+--to do

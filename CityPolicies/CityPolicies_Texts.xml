@@ -14,16 +14,38 @@
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_NAME" Language="en_US">
 			<Text>LABOR policy</Text>
 		</Replace>
+		<Replace Tag='LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_NAME' Language="zh_Hans_CN">
+			<Text>农业税政策</Text>
+		</Replace>
+		<Replace Tag='LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_NAME' Language="en_US">
+			<Text>Agricultural Tax policy</Text>
+		</Replace><Replace Tag= 'LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_NAME' Language="zh_Hans_CN">
+			<Text>工业税政策</Text>
+		</Replace>
+		<Replace Tag= 'LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_NAME' Language="en_US">
+			<Text>Industrial Tax policy</Text>
+		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_EMPTY_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>无城市政策。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_EMPTY_DESCRIPTION" Language="en_US">
 			<Text>No city policy.</Text>
 		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>正在启用农业税政策，每个农场多2[ICON_GOLD] 金币，但额外减少1[ICON_Food] 粮食。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Agricultural Tax city policy undergoing, each Farm provides extra 2[ICON_GOLD] Gold, but -1[ICON_Food] Food.  This policy can be disabled by a project.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>正在启用工业税政策，每个矿山或采石场多2[ICON_GOLD] 金币，但额外减少1[ICON_PRODUCTION] 生产力。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Industrial Tax city policy undergoing, each Mine or Quarry provides extra 2[ICON_GOLD] Gold, but -1[ICON_PRODUCTION] Production. This policy can be disabled by a project.</Text>
+		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>正在启用徭役政策，每个人口多1.5[ICON_Production] 生产力，但额外减少1[ICON_Food] 粮食。城市余粮减少50%且-1[ICON_Amenities]宜居度。该政策可通过项目关闭。</Text>
 		</Replace>
-		<!-- ，每个人口产出减少0.2[ICON_Science]科技值和0.1[ICON_Culture]文化值 -->
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_DESCRIPTION" Language="en_US">
 			<Text>LABOR city policy undergoing, each population yields 1.5[ICON_Production] Production, but consume extra 1[ICON_Food] Food. The city developing speed decreased by 50% and cause -1[ICON_Amenities] Amenity. This policy can be disabled by a project.</Text>
 		</Replace>
@@ -36,20 +58,54 @@
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_NAME" Language="en_US">
 			<Text>Enable LABOR city policy</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
+			<Text>启用农业税城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_NAME" Language="en_US">
+			<Text>Enable Agricultural Tax city policy</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_NAME" Language="zh_Hans_CN">
+			<Text>启用工业税城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_NAME" Language="en_US">
+			<Text>Enable Industrial Tax city policy</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_SHORT_NAME" Language="zh_Hans_CN">
 			<Text>启用徭役</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_SHORT_NAME" Language="en_US">
 			<Text>Enable LABOR</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
+			<Text>启用农业税</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_AGRICULTURAL_TAX_NAME" Language="en_US">
+			<Text>Enable Agricultural Tax</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>启用工业税</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="en_US">
+			<Text>Enable Industrial Tax</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>启用徭役城市政策，每个人口多1.5[ICON_Production] 生产力，但额外减少1[ICON_Food] 粮食。城市余粮减少50%且-1[ICON_Amenities]宜居度。该政策可通过另一个项目关闭。</Text>
 		</Replace>
-		<!-- ，每个人口产出减少0.2[ICON_Science]科技值和0.1[ICON_Culture]文化值 -->
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_DESCRIPTION" Language="en_US">
 			<Text>Enable LABOR city policy, each population yields 1.5[ICON_Production] Production, but consume extra 1[ICON_Food] Food.  The city developing speed decreased by 50% and cause -1[ICON_Amenities] Amenity. This policy can be disabled by another project.</Text>
 		</Replace>
-		<!-- Citizen yield of science decreased by 0.2 [ICON_Science] and culture decreased by 0.1 [ICON_Culture]. -->
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>启用农业税政策，每个农场多2[ICON_GOLD] 金币，但额外减少1[ICON_Food] 粮食。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Enable Agricultural Tax city policy, each Farm provides extra 2[ICON_GOLD] Gold, but -1[ICON_Food] Food.  This policy can be disabled by a project.</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>启用工业税政策，每个矿山或采石场多2[ICON_GOLD] 金币，但额外减少1[ICON_PRODUCTION] 生产力。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Enable  Industrial Tax city policy, each Mine or Quarry provides extra 2[ICON_GOLD] Gold, but -1[ICON_PRODUCTION] Production. This policy can be disabled by a project.</Text>
+		</Replace>
 		
 		<!-- Disable Labor project-->
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_NAME" Language="zh_Hans_CN">
@@ -58,17 +114,53 @@
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_NAME" Language="en_US">
 			<Text>Disable LABOR city policy</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
+			<Text>停用农业税城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_NAME" Language="en_US">
+			<Text>Disable Agricultural Tax city policy</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_NAME" Language="zh_Hans_CN">
+			<Text>停用工业税城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_NAME" Language="en_US">
+			<Text>Disable Industrial Tax city policy</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_SHORT_NAME" Language="zh_Hans_CN">
 			<Text>停用徭役</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_SHORT_NAME" Language="en_US">
 			<Text>Disable LABOR</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>停用农业税</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_SHORT_NAME" Language="en_US">
+			<Text>Disable Agricultural Tax</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>停用工业税</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="en_US">
+			<Text>Disable Industrial Tax</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>停用徭役城市政策，产出恢复正常。</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_DESCRIPTION" Language="en_US">
 			<Text>Disable LABOR city policy, the yields back to the normal. </Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>停用农业税城市政策，产出恢复正常。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Disable Agricultural Tax city policy, the yields back to the normal. </Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>停用工业税城市政策，产出恢复正常。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="en_US">
+			<Text>Disable Industrial Tax city policy, the yields back to the normal. </Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
