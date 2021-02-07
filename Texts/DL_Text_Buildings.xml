@@ -372,6 +372,102 @@
     </Replace>
     <Replace Tag="LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+25% combat experience for all naval units trained from this city.Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district.+1 [ICON_Production] Production on all unimproved Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
-    </Replace>       
+    </Replace>
+<!--by 陈又，AKA宇宙中横冲直撞 -->
+<!--谒见厅-->
+  <Replace Tag="LOC_BUILDING_GOV_TALL_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>所有城市+1 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房、+15%人口增长速度。
+      [NEWLINE]本城建造奇观和建筑时+15% [ICON_Production] 生产力。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_TALL_DESCRIPTION" Language="en_US">
+    <Text>+1 [ICON_Amenities] Amenity, +2 [ICON_Housing] Housing and +15% Growth rate in all cities. 
+      [NEWLINE]+15% [ICON_Production] Production towards wonders and buildings in this city.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--军阀宝座-->
+  <Replace Tag="LOC_BUILDING_GOV_CONQUEST_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。
+      [NEWLINE]本城建造军事单位时+30% [ICON_Production] 生产力。
+      [NEWLINE]掠夺和海岸扫荡的收益+100%。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_CONQUEST_DESCRIPTION" Language="en_US">
+    <Text>Capturing an enemy City grants 20% bonus [ICON_Production] Production in all Cities for 5 turns.
+      [NEWLINE]+30% [ICON_Production] Production toward all military units in this city.
+      [NEWLINE]Yields gained from pilaging and coastal raids are +100%.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--中书省-->
+  <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_NAME" Language="zh_Hans_CN">
+    <Text>中书省</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_NAME" Language="en_US">
+    <Text>Secretariat</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>与 [ICON_Capital] 首都处于同一大陆的城市+10% [ICON_Food] 食物、 [ICON_Production] 生产力和 [ICON_Gold] 金币。总督所在的城市这些效果翻倍。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_DESCRIPTION" Language="en_US">
+    <Text>All your cities on your original [ICON_Capital] Capital's continent gain +10% [ICON_Food] Food, [ICON_Production] Production and [ICON_Gold] Gold. These bonus doubles with a [ICON_Governor] Governor.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--主教座堂-->
+  <Replace Tag="LOC_BUILDING_GOV_FAITH_NAME" Language="zh_Hans_CN">
+    <Text>主教座堂</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_FAITH_NAME" Language="en_US">
+    <Text>Episcopal Church</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>所有城市获得等同于 [ICON_Faith] 信仰产出20%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
+      [NEWLINE]购买宗教单位的花费减少20%。宗教单位在神学战斗中+5 [ICON_Religion] 战斗力。
+      [NEWLINE]建成建筑时获得等同于建筑花费20%的 [ICON_Faith] 信仰值。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="en_US">
+    <Text>Receive [ICON_Science] Science and [ICON_Culture] Culture equal to 20% of your [ICON_Faith] Faith generation in all cities.
+      [NEWLINE]Religious units are 20% cheaper to purchase. +5 [ICON_Religion] Religious Strength in Theological Combat.
+      [NEWLINE]Gain [ICON_Faith] Faith equal to 20% of the construction cost when finishing buildings.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--情报局-->
+  <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>间谍与间谍容量+1。
+      [NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%。
+      [NEWLINE]所有城市训练间谍时+25% [ICON_Production] 生产力。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="en_US">
+    <Text>+1 Spy and Spy capacity.
+      [NEWLINE]All Spy Operations have a higher chance of success. Spy mission time reduces by 25%.
+      [NEWLINE]+25% [ICON_Production] toward Spies in all Cities.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--皇家学会-->
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>学院建筑提供等同于基础 [ICON_Science] 科技值产出50%的 [ICON_Production] 生产力。
+      [NEWLINE]工业区建筑提供等同于基础 [ICON_Production] 生产力产出25%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="en_US">
+    <Text>Campus Buildings provide [ICON_Production] Production equal to 50% of their intrinsic [ICON_Science] Science output.
+      [NEWLINE]Industrial Zone Buildings provide [ICON_Science] Science and [ICON_Culture] Culture equal to 25% of their intrinsic [ICON_Production] Production output.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
+<!--作战部-->
+  <Replace Tag="LOC_BUILDING_GOV_MILITARY_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>所有军事单位+1 [ICON_Movement]移动力和+3 [ICON_Strength] 战斗力。
+      [NEWLINE]每个单位每回合维护费减少2 [ICON_Gold] 金币。
+      [NEWLINE]升级单位所需的 [ICON_Gold] 金币和资源减少25%。
+      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_MILITARY_DESCRIPTION" Language="en_US">
+    <Text>All military units +1 [ICON_Movement] Movement and +3 [ICON_Strength] Strength.
+      [NEWLINE]Unit maintenance cost reduced by 2 [ICON_Gold] Gold per turn, per unit.
+      [NEWLINE]25% [ICON_Gold] Gold and resource discount on all unit upgrades.
+      [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+  </Replace>
   </LocalizedText>
 </GameData>
