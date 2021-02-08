@@ -90,9 +90,21 @@
 		</Replace>
 		<!-- preview text -->
 		<Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>来自主教座堂</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT" Language="en_US">
+			<Text>from Episcopal Church</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>来自作战部</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT" Language="en_US">
+			<Text>from War Department</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>来自作战部</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT" Language="en_US">
 			<Text>from War Department</Text>
 		</Replace>
 		<Replace Tag="LOC_CAVALRY_WEAKER_ATTACKING_DISTRICT_PREVIEW_TEXT" Language="zh_Hans_CN">
