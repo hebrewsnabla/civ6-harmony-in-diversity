@@ -856,6 +856,10 @@ values
 	('GOV_FAITH_FINISH_BUILDINGS',					'YieldType',					'YIELD_FAITH'),
 	('GOV_FAITH_FINISH_BUILDINGS',					'BuildingProductionPercent',	30),
 	('GOV_FAITH_FINISH_BUILDINGS',					'IncludeWonder',				0);
+insert or replace into ModifierStrings
+	(ModifierId,										Context,	Text)
+values
+	('ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER',		'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT}');
 
 --三级政体建筑
 --删除原效果
@@ -1026,7 +1030,8 @@ values
 insert or replace into ModifierStrings
 	(ModifierId,										Context,	Text)
 values
-	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER',	'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT}');
+	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER',	'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT}'),
+	('ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER',			'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT}');
 
 
 insert or replace into BuildingModifiers
