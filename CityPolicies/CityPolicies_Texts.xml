@@ -14,6 +14,12 @@
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_NAME" Language="en_US">
 			<Text>LABOR policy</Text>
 		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_DACAOGU_NAME" Language="zh_Hans_CN">
+			<Text>打草谷政策</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_DACAOGU_NAME" Language="en_US">
+			<Text>Pillage Preparing policy</Text>
+		</Replace>
 		<Replace Tag='LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_NAME' Language="zh_Hans_CN">
 			<Text>农业税政策</Text>
 		</Replace>
@@ -32,10 +38,16 @@
 			<Text>No city policy.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>正在启用农业税政策，每个农场多2[ICON_GOLD] 金币，但额外减少1[ICON_Food] 粮食。该政策可通过项目关闭。</Text>
+			<Text>正在启用农业税政策，每个农场多2[ICON_GOLD] 金币，但额外减少1 [ICON_Food] 粮食。该政策可通过项目关闭。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_DESCRIPTION" Language="en_US">
 			<Text>Agricultural Tax city policy undergoing, each Farm provides extra 2[ICON_GOLD] Gold, but -1[ICON_Food] Food.  This policy can be disabled by a project.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_DACAOGU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>正在启用打草谷政策，完成项目后本城生产中古及更早时代的轻骑兵，额外获得一个免费的相同类型的单位。且本城生产的该类轻骑兵，自带劫掠只消耗1移动力晋升。只能在2人口及以上的城市进行。若本城有2或者以上人口，则生产该类型的轻骑兵以后，人口数-1。但完成项目后每个人口多消耗1[ICON_FOOd] 食物，且减少100%人口增速，并-1 [ICON_Amenities] 宜居度。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CITY_POLICY_DACAOGU_DESCRIPTION" Language="en_US">
+			<Text>Pillage Preparing city policy undergoing, each time the city trained a Mediveal or eralier era light cavalry unit, received another free unit of this kind.Those light cavalry units gain free promotion that allows them to use 1 movement to pillage . Can only be allowed in city with at least 2 citizens. Each time -1 citizen after training those units. Each citizen comsume extra 1[ICON_FOOD] Food, and -100% Growth Rate and -1 [ICON_Amenities] Amenity. This policy can be disabled by a project.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>正在启用工业税政策，每个矿山或采石场多2[ICON_GOLD] 金币，但额外减少1[ICON_PRODUCTION] 生产力。该政策可通过项目关闭。</Text>
@@ -52,6 +64,12 @@
 		<!-- Citizen yield of science decreased by 0.2 [ICON_Science] and culture decreased by 0.1 [ICON_Culture]. -->
 
 		<!-- Enable Labor project-->
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_DACAOGU_NAME" Language="zh_Hans_CN">
+			<Text>启用打草谷政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_DACAOGU_NAME" Language="en_US">
+			<Text>Enable Pillage Preparing city policy</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_NAME" Language="zh_Hans_CN">
 			<Text>启用徭役城市政策</Text>
 		</Replace>
@@ -76,10 +94,10 @@
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_SHORT_NAME" Language="en_US">
 			<Text>Enable LABOR</Text>
 		</Replace>
-		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
 			<Text>启用农业税</Text>
 		</Replace>
-		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_AGRICULTURAL_TAX_NAME" Language="en_US">
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_NAME" Language="en_US">
 			<Text>Enable Agricultural Tax</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="zh_Hans_CN">
@@ -106,6 +124,12 @@
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="en_US">
 			<Text>Enable  Industrial Tax city policy, each Mine or Quarry provides extra 2[ICON_GOLD] Gold, but -1[ICON_PRODUCTION] Production. This policy can be disabled by a project.</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_DACAOGU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>启用打草谷政策，完成项目后本城生产中古及更早时代的轻骑兵，额外获得一个免费的相同类型的单位。且本城生产的该类轻骑兵，自带劫掠只消耗1移动力晋升。只能在2人口及以上的城市进行。若本城有2或者以上人口，则生产该类型的轻骑兵以后，人口数-1。但完成项目后每个人口多消耗1[ICON_FOOd] 食物，且减少100%人口增速，并-1 [ICON_Amenities] 宜居度。该政策可通过项目关闭。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_DACAOGU_DESCRIPTION" Language="en_US">
+			<Text>Enable  Pillage Preparing city policy, each time the city trained a Mediveal or eralier era light cavalry unit, received another free unit of this kind.Those light cavalry units gain free promotion that allows them to use 1 movement to pillage. Can only be allowed in city with at least 2 citizens. Each time -1 citizen after training those units. Each citizen comsume extra 1[ICON_FOOD] Food, and -100% Growth Rate and -1 [ICON_Amenities] Amenity. This policy can be disabled by a project.</Text>
+		</Replace>
 		
 		<!-- Disable Labor project-->
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_NAME" Language="zh_Hans_CN">
@@ -113,6 +137,12 @@
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_NAME" Language="en_US">
 			<Text>Disable LABOR city policy</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_NAME" Language="zh_Hans_CN">
+			<Text>停用打草谷城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_NAME" Language="en_US">
+			<Text>Disable Pillage Preparing city policy</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_NAME" Language="zh_Hans_CN">
 			<Text>停用农业税城市政策</Text>
@@ -144,6 +174,12 @@
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_SHORT_NAME" Language="en_US">
 			<Text>Disable Industrial Tax</Text>
 		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>停用打草谷</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_SHORT_NAME" Language="en_US">
+			<Text>Disable Pillage Preparing</Text>
+		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>停用徭役城市政策，产出恢复正常。</Text>
 		</Replace>
@@ -161,6 +197,12 @@
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION" Language="en_US">
 			<Text>Disable Industrial Tax city policy, the yields back to the normal. </Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>停用打草谷城市政策，产出恢复正常。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_DESCRIPTION" Language="en_US">
+			<Text>Disable Pillage Preparing city policy, the yields back to the normal. </Text>
 		</Replace>
 	</LocalizedText>
 </GameData>

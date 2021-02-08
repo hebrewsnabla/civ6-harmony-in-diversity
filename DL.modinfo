@@ -169,6 +169,7 @@ DL Game Balance Mod. Test version v0.3.8. The stable version is going to be rele
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
+      <File>UpdateDataBase/DL_TypeTags.sql</File>
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
@@ -275,6 +276,7 @@ DL Game Balance Mod. Test version v0.3.8. The stable version is going to be rele
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
+    <File>UpdateDataBase/DL_TypeTags.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <!--  -->
