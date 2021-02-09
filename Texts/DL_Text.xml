@@ -216,11 +216,5 @@
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
 			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
 		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_EXPEDITION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在本城训练的开拓者和军事单位不减少 [ICON_Citizen] 人口</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_EXPEDITION_DESCRIPTION" Language="en_US">
-			<Text> Settlers and Military Units trained in the city do not consume a [ICON_Citizen] Population.</Text>
-		</Replace>
 	</LocalizedText>
 </GameData>

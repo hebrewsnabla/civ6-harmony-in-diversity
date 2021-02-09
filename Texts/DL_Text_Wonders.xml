@@ -25,5 +25,11 @@
     <Replace Tag="LOC_BUILDING_ORACLE_DESCRIPTION" Language="en_US">
       <Text>Patronage of Great People costs 25% less [ICON_Faith] Faith. Districts in this city provide +3 [ICON_GreatPerson] Great Person points of their type (for example, [ICON_GreatWriter] Great Writer points from the Theater Square district). Must be built on Hills.</Text>
     </Replace>
+    <Replace Tag="LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>此奇观4个单元格内的每个资源营地、牧场和种植园改良设施+1 [ICON_AMENITIES] 宜居度。必须放置在营地改良设施旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION" Language="en_US">
+      <Text>Each resource Camp, Pasture, and Plantation improvement within 4 tiles of this wonder provides +1 [ICON_AMENITIES] Amenity. Must be placed adjacent to a Camp improvement.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

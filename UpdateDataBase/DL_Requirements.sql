@@ -59,6 +59,12 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
 
+--civlization
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'PLAYER_IS_' || CivilizationType, 'CivilizationType'	, CivilizationType from Civilizations;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'PLAYER_IS_' || CivilizationType, 'REQUIREMENT_PLAYER_TYPE_MATCHES' from Civilizations;
+	
 -- Misc
 insert or replace into Requirements
 	(RequirementId,								RequirementType,					Inverse)

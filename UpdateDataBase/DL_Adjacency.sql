@@ -37,6 +37,9 @@ values
 	-- 
 	-- ('DISTRICT_HANSA',				'Aqueduct_Production_Late'),
 	('DISTRICT_HANSA',				'Bath_Production'),
+	('DISTRICT_OPPIDUM',			'Bath_Production'),
+	('DISTRICT_OPPIDUM',			'Aqueduct_Production'),
+	('DISTRICT_OPPIDUM',			'Mine_Production'),
 	-- ('DISTRICT_HANSA',				'Bath_Production_Late'),
 	('DISTRICT_HANSA',				'Commerical_Hub_Production_Late'),
 	('DISTRICT_HANSA',				'Resource_Production_Late');
