@@ -7,8 +7,8 @@ update GlobalParameters set Value = 40 where Name = 'PLOT_BUY_BASE_COST';
 
 -- adjust the population food consumption.
 update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_POPULATION';
-update GlobalParameters set Value = 4 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
-update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
+update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
+update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';

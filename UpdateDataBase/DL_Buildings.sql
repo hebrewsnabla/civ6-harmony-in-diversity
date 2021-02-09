@@ -158,6 +158,8 @@ insert or replace into Building_YieldChanges
 	(BuildingType,					YieldType,			YieldChange)
 values
 	-- 
+	('BUILDING_PALACE',				'YIELD_FOOD',		1),
+	('BUILDING_PALACE',				'YIELD_PRODUCTION',	3),
 	('BUILDING_PALACE',				'YIELD_GOLD',		8),
 	-- 
 	('BUILDING_GRANARY',			'YIELD_FOOD',		1),
