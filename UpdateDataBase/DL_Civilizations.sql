@@ -2,6 +2,9 @@
 --     Civilization Adjustment     --
 -------------------------------------
 
+-- Arab
+update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
+
 -- Babylon
 update ModifierArguments set Value = 59 where ModifierId = 'TRAIT_EUREKA_INCREASE';
 
