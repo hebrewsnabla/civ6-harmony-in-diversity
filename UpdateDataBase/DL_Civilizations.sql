@@ -98,6 +98,10 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_KANDY_TRAIT' and Modifie
 -- Nalanda
 delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
 
+-- Ethiopia
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_CULTURE_HILLS' and Name = 'Amount';
+
 --Egypt
 --泛滥区域上的建筑加1粮
 --建造完奇观以后送工人

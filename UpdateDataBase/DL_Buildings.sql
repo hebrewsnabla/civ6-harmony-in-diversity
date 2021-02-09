@@ -768,13 +768,13 @@ values
 --中书省
 	('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'Delta',			1),
 	('GOV_CITYSTATES_CITY_YIELD',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	('GOV_CITYSTATES_CITY_YIELD',			'Amount',			'10, 10, 10'),
+	('GOV_CITYSTATES_CITY_YIELD',			'Amount',			'8, 8, 8'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	('GOV_CITYSTATES_CITY_YIELD_G',			'Amount',			'10, 10, 10'),
+	('GOV_CITYSTATES_CITY_YIELD_G',			'Amount',			'8, 8, 8'),
 	('GOV_CITYSTATES_CITY_LOSE',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	('GOV_CITYSTATES_CITY_LOSE',			'Amount',			'-10, -10, -10'),
+	('GOV_CITYSTATES_CITY_LOSE',			'Amount',			'-8, -8, -8'),
 	('GOV_CITYSTATES_CITY_LOSE_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	('GOV_CITYSTATES_CITY_LOSE_G',			'Amount',			'-10, -10, -10'),
+	('GOV_CITYSTATES_CITY_LOSE_G',			'Amount',			'-8, -8, -8'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
 	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
@@ -841,9 +841,9 @@ insert or replace into ModifierArguments
 values
 --鸽转瓶琴
 	('GOV_FAITH_INTO_SCIENCE',						'YieldType',					'YIELD_SCIENCE'),
-	('GOV_FAITH_INTO_SCIENCE',						'Amount',						20),
+	('GOV_FAITH_INTO_SCIENCE',						'Amount',						10),
 	('GOV_FAITH_INTO_CULTURE',						'YieldType',					'YIELD_CULTURE'),
-	('GOV_FAITH_INTO_CULTURE',						'Amount',						20),
+	('GOV_FAITH_INTO_CULTURE',						'Amount',						10),
 --宗教单位折扣
 	('GOV_FAITH_MISSIONARY_DISCOUNT',				'UnitType',						'UNIT_MISSIONARY'),
 	('GOV_FAITH_MISSIONARY_DISCOUNT',				'Amount',						20),

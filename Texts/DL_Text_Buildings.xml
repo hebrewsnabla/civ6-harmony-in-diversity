@@ -393,7 +393,7 @@
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_CONQUEST_DESCRIPTION" Language="en_US">
-    <Text>Capturing an enemy City grants 20% bonus [ICON_Production] Production in all Cities for 5 turns.
+    <Text>Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.
       [NEWLINE]+30% [ICON_Production] Production toward all military units in this city.
       [NEWLINE]Yields gained from pilaging and coastal raids are +100%.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
@@ -406,12 +406,12 @@
     <Text>Secretariat</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>与 [ICON_Capital] 首都处于同一大陆的城市+10% [ICON_Food] 食物、 [ICON_Production] 生产力和 [ICON_Gold] 金币。总督所在的城市这些效果翻倍。
+    <Text>与 [ICON_Capital] 首都处于同一大陆的城市+8% [ICON_Food] 食物、 [ICON_Production] 生产力和 [ICON_Gold] 金币。总督所在的城市这些效果翻倍。
       [NEWLINE]额外奖励1个 [ICON_Governor] 总督头衔。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="en_US">
-    <Text>All your cities on your original [ICON_Capital] Capital's continent gain +10% [ICON_Food] Food, [ICON_Production] Production and [ICON_Gold] Gold. These bonus doubles with a [ICON_Governor] Governor.
+    <Text>All your cities on your original [ICON_Capital] Capital's continent gain +8% [ICON_Food] Food, [ICON_Production] Production and [ICON_Gold] Gold. These bonus doubles with a [ICON_Governor] Governor.
       [NEWLINE]Awards Extra +1 [ICON_Governor] Governor Title.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
@@ -423,13 +423,13 @@
     <Text>Episcopal Church</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>所有城市获得等同于 [ICON_Faith] 信仰产出20%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
+    <Text>所有城市获得等同于 [ICON_Faith] 信仰产出10%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
       [NEWLINE]购买宗教单位的花费减少20%。宗教单位在神学战斗中+5 [ICON_Religion] 宗教力量。
       [NEWLINE]建成建筑时获得等同于建筑花费20%的 [ICON_Faith] 信仰值。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="en_US">
-    <Text>Receive [ICON_Science] Science and [ICON_Culture] Culture equal to 20% of your [ICON_Faith] Faith generation in all cities.
+    <Text>Receive [ICON_Science] Science and [ICON_Culture] Culture equal to 10% of your [ICON_Faith] Faith generation in all cities.
       [NEWLINE]Religious units are 20% cheaper to purchase. +5 [ICON_Religion] Religious Combat in Theological Combat.
       [NEWLINE]Gain [ICON_Faith] Faith equal to 20% of the construction cost when finishing buildings.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
