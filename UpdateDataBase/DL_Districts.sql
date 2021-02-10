@@ -80,7 +80,7 @@ update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
 
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
 -- Housing
-update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
+-- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
 update Districts set Housing = Housing + 1 where
 	DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_COTHON' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 

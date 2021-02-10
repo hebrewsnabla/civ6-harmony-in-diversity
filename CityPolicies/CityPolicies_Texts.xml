@@ -23,17 +23,17 @@
 			<Text>LABOR policy</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>正在采用徭役城市政策，城市中每位 [ICON_Citizen] 公民提供1.5 [ICON_Production] 生产力，但额外增加1 [ICON_Food] 粮食消耗。城市余粮减少50%且-1 [ICON_Amenities] 宜居度。该政策可通过项目关闭。</Text>
+			<Text>正在采用徭役城市政策，城市中每位 [ICON_Citizen] 公民提供1.5 [ICON_Production] 生产力，但额外增加1 [ICON_Food] 粮食消耗。城市余粮减少75%且-1 [ICON_Amenities] 宜居度。该政策可通过项目关闭。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_LABOR_DESCRIPTION" Language="en_US">
-			<Text>LABOR city policy undergoing, each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 50% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by a project.</Text>
+			<Text>LABOR city policy undergoing, each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by a project.</Text>
 		</Replace>
 		<!-- Citizen yield of science decreased by 0.2 [ICON_Science] and culture decreased by 0.1 [ICON_Culture]. -->
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>启用徭役城市政策，启用后城市中每位 [ICON_Citizen] 公民提供1.5 [ICON_Production] 生产力，但额外增加1 [ICON_Food] 粮食消耗。城市余粮减少50%且-1 [ICON_Amenities] 宜居度。该政策可通过另一个项目关闭。</Text>
+			<Text>启用徭役城市政策，启用后城市中每位 [ICON_Citizen] 公民提供1.5 [ICON_Production] 生产力，但额外增加1 [ICON_Food] 粮食消耗。城市余粮减少75%且-1 [ICON_Amenities] 宜居度。该政策可通过另一个项目关闭。</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_DESCRIPTION" Language="en_US">
-			<Text>Enable the LABOR city policy, Each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 50% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by another project.</Text>
+			<Text>Enable the LABOR city policy, Each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by another project.</Text>
 		</Replace>
 		<Replace Tag="LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_NAME" Language="zh_Hans_CN">
 			<Text>启用徭役城市政策</Text>

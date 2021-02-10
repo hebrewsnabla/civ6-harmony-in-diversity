@@ -187,7 +187,7 @@ values
 	('CITY_POLICY_LABOR_POP_CULTURE_MODIFIER',								'Amount',		'-0.1'),
 	('CITY_POLICY_LABOR_POP_PROD_MODIFIER',									'YieldType',	'YIELD_PRODUCTION'),
 	('CITY_POLICY_LABOR_POP_PROD_MODIFIER',									'Amount',		'1.5'),
-	('CITY_POLICY_LABOR_CITY_GROWTH_MODIFIER',								'Amount',		'-50'),
+	('CITY_POLICY_LABOR_CITY_GROWTH_MODIFIER',								'Amount',		'-75'),
 	('CITY_POLICY_LABOR_CITY_AMENITIES',									'Amount',		'-1');
 
 -- Projects
