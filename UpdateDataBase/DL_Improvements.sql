@@ -12,7 +12,7 @@ update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUI
 	where ImprovementType = 'IMPROVEMENT_LUMBER_MILL' and FeatureType = 'FEATURE_JUNGLE';
 
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
-	('IMPROVEMENT_CAMP', 'FEATURE_FOREST', NULL, NULL),
+	('IMPROVEMENT_CAMP', 'FEATURE_FOREST', 'TECH_ARCHERY', NULL),
 	('IMPROVEMENT_CAMP', 'FEATURE_JUNGLE', NULL, 'CIVIC_GUILDS')
 ;
 

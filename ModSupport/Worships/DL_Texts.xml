@@ -2,22 +2,22 @@
 <GameData>
 	<LocalizedText>
 		<Replace Tag="LOC_BELIEF_JNR_CANDI_NAME" Language="zh_Hans_CN">
-			<Text>宗教信条CANDI的中文名字</Text>
+			<Text>塔祠</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_NAME" Language="zh_Hans_CN">
-			<Text>建筑CANDI的中文名字</Text>
+			<Text>塔祠</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>宗教信条CANDI的描述</Text>
+			<Text>允许建造塔祠（+2 [ICON_Faith] 信仰值；如果圣地与水域相邻则塔祠+2 [ICON_Faith] 信仰, + 2 [ICON_CULTURE] 文化, +1 [Icon_Amenities] 宜居度）。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
-			<Text>Description for Candi Belief</Text>
+			<Text>Allow constructs Candi(+2 [ICON_Faith] Faith; If Holy Site is adjacent to water tiles, Candi receives +2 [ICON_Faith] Faith, + 2 [ICON_CULTURE] Culture, +1 [Icon_Amenities] Amenity extra bonus.)</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>建筑CANDI的描述</Text>
+			<Text>如果所在的圣地与水域相邻则+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化, +1 [Icon_Amenities] 宜居度</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
-			<Text>Description for Candi Building</Text>
+			<Text>If Holy Site is adjacent to water tiles, Candi receives +2 [ICON_Faith] Faith, + 2 [ICON_CULTURE] Culture, +1 [Icon_Amenities] Amenity extra bonus.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>

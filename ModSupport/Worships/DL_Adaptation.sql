@@ -47,3 +47,30 @@ update Buildings set Description = 'LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION'		wher
 update Buildings set Description = 'LOC_BUILDING_JNR_PERIPTEROS_DL_DESCRIPTION'	where BuildingType = 'BUILDING_JNR_PERIPTEROS';
 update Buildings set Description = 'LOC_BUILDING_JNR_SOBOR_DL_DESCRIPTION'		where BuildingType = 'BUILDING_JNR_SOBOR';
 update Buildings set Description = 'LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION'	where BuildingType = 'BUILDING_JNR_TZACUALLI';
+
+insert or replace into Building_YieldChanges
+	(BuildingType,				YieldType,			YieldChange)
+values
+	('BUILDING_JNR_CANDI',		'YIELD_FAITH',		2),
+	('BUILDING_JNR_DAOGUAN',	'YIELD_FAITH',		2),
+	('BUILDING_JNR_JINJA',		'YIELD_FAITH',		2),
+	('BUILDING_JNR_KHALWAT',	'YIELD_FAITH',		2),
+ 	('BUILDING_JNR_MANDIR',		'YIELD_FAITH',		2),
+ 	('BUILDING_JNR_MBARI',		'YIELD_FAITH',		2),
+ 	('BUILDING_JNR_MBARI',		'YIELD_GOLD',		6),
+ 	('BUILDING_JNR_PERIPTEROS',	'YIELD_FAITH',		2),
+ 	('BUILDING_JNR_SOBOR',		'YIELD_FAITH',		2),
+ 	('BUILDING_JNR_TZACUALLI',	'YIELD_FAITH',		2);
+
+insert or replace into Buildings
+ 	(BuildingType,					Cost,	Maintenance)
+ values
+ 	('BUILDING_JNR_CANDI',			190,	4),		
+	('BUILDING_JNR_DAOGUAN',		190,	4),
+	('BUILDING_JNR_JINJA',			190,	4),
+	('BUILDING_JNR_KHALWAT',		190,	4),
+ 	('BUILDING_JNR_MANDIR',			190,	4),
+ 	('BUILDING_JNR_MBARI',			190,	4),
+ 	('BUILDING_JNR_PERIPTEROS',		190,	4),
+ 	('BUILDING_JNR_SOBOR',			190,	4),
+ 	('BUILDING_JNR_TZACUALLI',		190,	4);

@@ -1076,3 +1076,27 @@ values
 	('GOV_MILITARY_RESOURCE_DISCOUNT',					'Amount',			25),
 --军事单位减维护费
 	('GOV_MILITARY_MOBILISATION',						'Amount',			2);
+
+--shipyard and seaport
+delete from BuildingModifiers where ModifierId = 'SHIPYARD_UNIMPROVED_COAST_PRODUCTION';
+
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_SHIPYARD',				'SHIPYARD_ALL_COAST_PRODUCTION');
+
+insert or replace into Modifiers	
+	(ModifierId,					ModifierType,									SubjectRequirementSetId)
+values
+	('SHIPYARD_ALL_COAST_PRODUCTION','MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD','PLOT_HAS_COAST_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('SHIPYARD_ALL_COAST_PRODUCTION',	'YieldType','YIELD_PRODUCTION'),
+	('SHIPYARD_ALL_COAST_PRODUCTION',	'Amount',	1);
+
+insert or replace into Building_YieldDistrictCopies
+	(BuildingType,OldYieldType,NewYieldType)
+values
+	('BUILDING_SEAPORT','YIELD_GOLD','YIELD_FOOD');

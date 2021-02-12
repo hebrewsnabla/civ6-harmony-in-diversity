@@ -211,6 +211,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
       <File>UpdateDataBase/DL_TypeTags.sql</File>
+      <File>UpdateDataBase/DL_Trade_Route_Post_Connection.sql</File>
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
@@ -325,6 +326,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>UpdateDataBase/DL_Wonders.sql</File>
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <File>UpdateDataBase/DL_TypeTags.sql</File>
+    <File>UpdateDataBase/DL_Trade_Route_Post_Connection.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <!--  -->
