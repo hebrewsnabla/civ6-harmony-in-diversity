@@ -6,7 +6,7 @@
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
 -- Babylon
-update ModifierArguments set Value = 59 where ModifierId = 'TRAIT_EUREKA_INCREASE';
+update ModifierArguments set Value = 55 where ModifierId = 'TRAIT_EUREKA_INCREASE';
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';

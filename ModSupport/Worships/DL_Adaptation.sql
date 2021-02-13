@@ -62,15 +62,6 @@ values
  	('BUILDING_JNR_SOBOR',		'YIELD_FAITH',		2),
  	('BUILDING_JNR_TZACUALLI',	'YIELD_FAITH',		2);
 
-insert or replace into Buildings
- 	(BuildingType,					Cost,	Maintenance)
- values
- 	('BUILDING_JNR_CANDI',			190,	4),		
-	('BUILDING_JNR_DAOGUAN',		190,	4),
-	('BUILDING_JNR_JINJA',			190,	4),
-	('BUILDING_JNR_KHALWAT',		190,	4),
- 	('BUILDING_JNR_MANDIR',			190,	4),
- 	('BUILDING_JNR_MBARI',			190,	4),
- 	('BUILDING_JNR_PERIPTEROS',		190,	4),
- 	('BUILDING_JNR_SOBOR',			190,	4),
- 	('BUILDING_JNR_TZACUALLI',		190,	4);
+update Buildings set Cost = 190, Maintenance = 4 where BuildingType ='BUILDING_JNR_CANDI' or BuildingType = 'BUILDING_JNR_DAOGUAN' 
+	or BuildingType = 'BUILDING_JNR_JINJA' or BuildingType = 'BUILDING_JNR_KHALWAT' or BuildingType = 'BUILDING_JNR_MBARI' or BuildingType = 'BUILDING_JNR_MANDIR'
+	or BuildingType = 'BUILDING_JNR_PERIPTEROS' or BuildingType = 'BUILDING_JNR_SOBOR' or BuildingType = 'BUILDING_JNR_TZACUALLI';

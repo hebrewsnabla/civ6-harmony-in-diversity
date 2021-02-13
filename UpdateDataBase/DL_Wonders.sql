@@ -98,3 +98,8 @@ values
  	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9','GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN'),
  	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9','Amount',					15);
 
+--remove MAHABODHI_DIPLOVP 
+--add ORSZAGHAZ DVP
+delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
+insert or replace into BuildingModifiers (BuildingType,ModifierId) values
+	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP');

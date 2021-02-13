@@ -1100,3 +1100,6 @@ insert or replace into Building_YieldDistrictCopies
 	(BuildingType,OldYieldType,NewYieldType)
 values
 	('BUILDING_SEAPORT','YIELD_GOLD','YIELD_FOOD');
+
+update Building_YieldChanges set YieldChange =10 where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_GOLD';
+delete from Building_YieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';

@@ -19,5 +19,23 @@
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
 			<Text>If Holy Site is adjacent to water tiles, Candi receives +2 [ICON_Faith] Faith, + 2 [ICON_CULTURE] Culture, +1 [Icon_Amenities] Amenity extra bonus.</Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_KHALWAT_NAME" Language="zh_Hans_CN">
+			<Text>隐修地</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_KHALWAT_NAME" Language="zh_Hans_CN">
+			<Text>隐修地</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_KHALWAT_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造隐修地（+2 [ICON_Faith] 信仰值；建成第一个隐修地时解锁人文“保护地球”的鼓舞。有隐修地的城市所有单元格+1魅力，且本城购买自然学家-50%的信仰花费）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_KHALWAT_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Khalwat (+2 [ICON_Faith] Faith; Unlock the boost of Civic 'Conservation' after first Khalwat was built.+1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_KHALWAT_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建成第一个隐修地时解锁人文“保护地球”的鼓舞。有隐修地的城市所有单元格+1魅力，且本城购买自然学家-50%的信仰花费。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_KHALWAT_DL_DESCRIPTION" Language="en_US">
+			<Text>Unlock the boost of Civic 'Conservation' after first Khalwat was built.+1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>

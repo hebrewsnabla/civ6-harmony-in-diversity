@@ -41,8 +41,10 @@ update Government_SlotCounts set NumSlots = 2 where
 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_WILDCARD';
 update Government_SlotCounts set NumSlots = 2 where
 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_MILITARY';
+update Government_SlotCounts set NumSlots = 3 where
+	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_MILITARY';
 update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_WILDCARD';
+	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_ECONOMIC';
 
 update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_MEDINA_QUARTER';
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
