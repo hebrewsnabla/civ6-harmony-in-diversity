@@ -771,13 +771,13 @@ values
 	-- Worship
 
 -- x yield per follower
-update ModifierArguments set Value = 1 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 1 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'PerXItems';
-update ModifierArguments set Value = 2 where ModifierId = 'WORLD_CHURCH_CULTURE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
-update ModifierArguments set Value = 2 where ModifierId = 'CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 2 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 3 where ModifierId = 'WORLD_CHURCH_CULTURE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 3 where ModifierId = 'CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
 -- x yield per city
-update ModifierArguments set Value = 4 where ModifierId = 'PILGRIMAGE_FAITH_CITY_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'CHURCH_PROPERTY_GOLD_CITY_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'PILGRIMAGE_FAITH_CITY_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'CHURCH_PROPERTY_GOLD_CITY_MODIFIER' and Name = 'Amount';
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,												SubjectRequirementSetId)
@@ -806,16 +806,16 @@ values
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'BeliefYieldType',		'BELIEF_YIELD_PER_FOLLOWER'),
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'YieldType',			'YIELD_FAITH'),
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'Amount',				1),
-	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'PerXItems',			2),
+	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'PerXItems',			3),
 	('LAY_MINISTRY_CULTURE_CITY',								'ModifierId',			'LAY_MINISTRY_CULTURE_CITY_MODIFIER'),
 	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'BeliefYieldType',		'BELIEF_YIELD_PER_CITY'),
 	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'YieldType',			'YIELD_CULTURE'),
-	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'Amount',				4),
+	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'Amount',				3),
 	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'PerXItems',			1),
 	('STEWARDSHIP_SCIENCE_CITY',								'ModifierId',			'STEWARDSHIP_SCIENCE_CITY_MODIFIER'),
 	('STEWARDSHIP_SCIENCE_CITY_MODIFIER',						'BeliefYieldType',		'BELIEF_YIELD_PER_CITY'),
 	('STEWARDSHIP_SCIENCE_CITY_MODIFIER',						'YieldType',			'YIELD_SCIENCE'),
-	('STEWARDSHIP_SCIENCE_CITY_MODIFIER',						'Amount',				4),
+	('STEWARDSHIP_SCIENCE_CITY_MODIFIER',						'Amount',				3),
 	('STEWARDSHIP_SCIENCE_CITY_MODIFIER',						'PerXItems',			1),
 	('INITIATION_RITES_GOLD_POPULATION',						'ModifierId',			'INITIATION_RITES_GOLD_POPULATION_MODIFIER'),
 	('INITIATION_RITES_GOLD_POPULATION_MODIFIER',				'YieldType',			'YIELD_GOLD'),
