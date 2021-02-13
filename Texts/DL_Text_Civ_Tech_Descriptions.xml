@@ -25,10 +25,10 @@
 		<Replace Tag="LOC_TECH_STEAM_POWER_DESCRIPTION" Language="en_US">
 			<Text>+2 [ICON_Movement] Movement for embarked units. +1 [ICON_Production] Production if the Lumber Mill improvement is not adjacent to river.</Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_REFINING_DESCRIPTION" Language="zh_Hans_CN">
+		<Replace Tag="LOC_TECH_RIFLING_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+1 [ICON_FOOD] 食物。</Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_REFINING_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_TECH_RIFLING_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
@@ -36,6 +36,12 @@
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ARCHERY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许在树林上建造营地。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ARCHERY_DESCRIPTION" Language="en_US">
+			<Text>Allow to build Camps on Forests.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+1 [ICON_PRODUCTION] 生产力。</Text>

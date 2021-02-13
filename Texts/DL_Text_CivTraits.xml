@@ -10,10 +10,10 @@
     </Replace>
     <!-- Babylon -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>[ICON_TechBoosted] 尤里卡提供科技的99%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。</Text>
+      <Text>[ICON_TechBoosted] 尤里卡提供科技的95%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
-      <Text>[ICON_TechBoosted] Eurekas provide 99% of the [ICON_SCIENCE] Science for technologies. -50% [ICON_SCIENCE] Science per turn.</Text>
+      <Text>[ICON_TechBoosted] Eurekas provide 95% of the [ICON_SCIENCE] Science for technologies. -50% [ICON_SCIENCE] Science per turn.</Text>
     </Replace>
     <!-- Maya -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="zh_Hans_CN">

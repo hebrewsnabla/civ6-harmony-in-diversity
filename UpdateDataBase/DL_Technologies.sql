@@ -125,4 +125,5 @@ values
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'GreatWorkObjectType',		'GREATWORKOBJECT_ARTIFACT'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'ScalingFactor',			150);
 
-
+insert or replace into TechnologyPrereqs (Technology,PrereqTech) values
+	('TECH_APPRENTICESHIP','TECH_IRON_WORKING');
