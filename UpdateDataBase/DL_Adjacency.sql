@@ -9,6 +9,12 @@ delete from District_Adjacencies where DistrictType = 'DISTRICT_ACROPOLIS' and Y
 insert or replace into District_Adjacencies
 	(DistrictType,					YieldChangeId)
 values
+	('DISTRICT_INDUSTRIAL_ZONE',	'Oil_INDUSTRIAL_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'AERODROME_INDUSTRIAL_Production'),
+	('DISTRICT_HANSA',				'Oil_INDUSTRIAL_Production'),
+	('DISTRICT_HANSA',				'AERODROME_INDUSTRIAL_Production'),
+	('DISTRICT_OPPIDUM',			'Oil_INDUSTRIAL_Production'),
+	('DISTRICT_OPPIDUM',			'AERODROME_INDUSTRIAL_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
@@ -65,6 +71,7 @@ update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID =
 insert or replace into Adjacency_YieldChanges
 		(ID, Description, YieldType, YieldChange, TilesRequired, AdjacentRiver,
 		AdjacentDistrict, PrereqCivic, PrereqTech, ObsoleteCivic, ObsoleteTech, AdjacentResourceClass) values
+	('AERODROME_INDUSTRIAL_Production','LOC_DISTRICT_AERODROME_INDUSTRIAL_Production', 'YIELD_PRODUCTION', 2, 1, 0, 'DISTRICT_AERODROME', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Commercial_Luxury_Gold', 'LOC_DISTRICT_LUXURY_GOLD', 'YIELD_GOLD', 2, 1, 0, NULL, NULL, NULL, NULL, NULL, 'RESOURCECLASS_LUXURY'),
 	('Mine_Industrial_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_INDUSTRIAL_ZONE', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Mine_Oppidum_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_OPPIDUM', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
@@ -102,7 +109,7 @@ update Adjacency_YieldChanges set TilesRequired = 2, ObsoleteTech = 'TECH_APPREN
 -- Campus : Geothermal & Reef
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_SCIENTIFIC_THEORY' where ID = 'Geothermal_Science';
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BUTTRESS' where ID = 'Reef_Science';
-
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'SeaResource_Gold';
 -- insert or replace into Adjacency_YieldChanges
 -- 	(ID,							Description,							YieldType,			YieldChange,	TilesRequired,
 -- 	AdjacentFeature,				PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
@@ -116,6 +123,8 @@ insert or replace into Adjacency_YieldChanges
 	(ID,						Description,								YieldType,		YieldChange,	TilesRequired,
 	AdjacentImprovement,		PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
+	('Oil_INDUSTRIAL_Production','LOC_DISTRICT_Oil_INDUSTRIAL_Production',	'YIELD_PRODUCTION',	1,				1,
+	'IMPROVEMENT_OIL_WELL',		NULL,			NULL,			NULL,			NULL),
 	('Quarry_HalfProduction',	'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',	'YIELD_PRODUCTION',	1,				2,
 	'IMPROVEMENT_QUARRY',		NULL,			NULL,			NULL,			'TECH_GUNPOWDER'),
 	('LumberMill_Production',	'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,

@@ -332,10 +332,10 @@
     </Replace>
     <!--late era buliding texts -->
     <Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="zh_Hans_CN">
-        <Text> 此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。 本城的 [ICON_GREATADMIRAL] 海军将领点数积累速度+50%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。</Text>
+        <Text> 此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。额外产出相当于港口相邻加成的 [ICON_FOOD] 食物。 [NEWLINE]本城的 [ICON_GREATADMIRAL] 海军将领点数积累速度+50%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="en_US">
-        <Text> +25% combat experience for all naval units trained in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced 25%.  +2 [ICON_GOLD] Gold on all Coast tiles for this city.+50% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points in this city. +3  [ICON_STRENGTH] Combat Strength for all navy units trained in this city.</Text>
+        <Text> +25% combat experience for all naval units trained in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced 25%.  +2 [ICON_GOLD] Gold on all Coast tiles for this city.Bonus [ICON_FOOD] Food equal to adjacency bonus of the Harbor district.[NEWLINE]+50% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points in this city. +3  [ICON_STRENGTH] Combat Strength for all navy units trained in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_HANGAR_DESCRIPTION" Language="zh_Hans_CN">
       <Text>当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。</Text>
@@ -368,10 +368,10 @@
       <Text>+10% Growth rate in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有未改良的海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。</Text>
+      <Text>此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>+25% combat experience for all naval units trained from this city.Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district.+1 [ICON_Production] Production on all unimproved Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
+      <Text>+25% combat experience for all naval units trained from this city.Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district.+1 [ICON_Production] Production on all Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
     </Replace>
 <!--by 陈又，AKA宇宙中横冲直撞 -->
 <!--谒见厅-->

@@ -31,5 +31,17 @@
     <Replace Tag="LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION" Language="en_US">
       <Text>Each resource Camp, Pasture, and Plantation improvement within 4 tiles of this wonder provides +1 [ICON_AMENITIES] Amenity. Must be placed adjacent to a Camp improvement.</Text>
     </Replace>
+    <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>建成后提供2个使徒。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Grants 2 Apostles when built.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>建成时+2外交胜利点数。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。[NEWLINE][NEWLINE]必须修建在河边。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="en_US">
+      <Text>+2 Diplomatic Victory Points when built.+100% [ICON_Favor] Diplomatic Favor per turn from starting a turn as Suzerain of a City-State.[NEWLINE][NEWLINE]Must be built on a River.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
