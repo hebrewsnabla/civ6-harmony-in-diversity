@@ -36,8 +36,8 @@ delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_F
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
 insert or replace into Improvement_BonusYieldChanges values 
 	-- (id, ImprovementType, YieldType, BonusYieldChange, PrereqTech, PrereqCivic)
-	(234, 'IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1, 'TECH_MACHINERY', NULL),
-	(235, 'IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1, 'TECH_STEAM_POWER', NULL),
+	(234, 'IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1, 'TECH_CONSTRUCTION', NULL),
+	(235, 'IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1, 'TECH_MACHINERY', NULL),
 	-- (236, 'IMPROVEMENT_QUARRY', 'YIELD_PRODUCTION', 1, 'TECH_APPRENTICESHIP', NULL),
 	-- (237, 'IMPROVEMENT_MINE', 'YIELD_PRODUCTION', 1, 'TECH_STEAM_POWER', NULL),
 	-- (238, 'IMPROVEMENT_PASTURE', 'YIELD_FOOD', 1, 'TECH_HORSEBACK_RIDING', NULL),
