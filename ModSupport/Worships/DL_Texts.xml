@@ -119,7 +119,7 @@
 			<Text>允许建造羽蛇神庙（+2 [ICON_Faith] 信仰值；每个羽蛇神庙为尤里卡+1% [ICON_SCIENCE] 科技值，为鼓舞+1% [ICON_CULTURE] 文化值。)</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_TZACUALLI_DL_DESCRIPTION" Language="en_US">
-			<Text>Allow constructs Tzacualli (+2 [ICON_Faith] Faith;Each Tzacualli provides extre 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost.)
+			<Text>Allow constructs Tzacualli (+2 [ICON_Faith] Faith;Each Tzacualli provides extre 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost.)</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>每个羽蛇神庙为尤里卡+1%科技值，为鼓舞+1%文化值。</Text>
