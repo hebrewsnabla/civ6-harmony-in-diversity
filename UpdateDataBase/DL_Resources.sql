@@ -5,7 +5,10 @@
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_COPPER';
-update Resource_Harvests set YieldType =  'YIELD_PRODUCTION' , Amount = 20  where ResourceType = 'RESOURCE_COPPER';
+-- remove some maize. 
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_MAIZE';
+-- 
+update Resource_Harvests set YieldType =  'YIELD_PRODUCTION' , Amount = 40  where ResourceType = 'RESOURCE_COPPER';
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_COPPER' and TerrainType = 'TERRAIN_SNOW_HILLS';
 update Resource_YieldChanges  set YieldType =  'YIELD_PRODUCTION' ,  YieldChange = 1 where ResourceType = 'RESOURCE_COPPER';
 

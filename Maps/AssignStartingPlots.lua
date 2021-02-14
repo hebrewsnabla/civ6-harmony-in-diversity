@@ -436,9 +436,9 @@ function AssignStartingPlots:__DLPreparePlotFertilities()
 		if RingOnePlotYields['YIELD_FOOD'] <= popConsumFood * 3 then
 			totalFertility = totalFertility - popConsumFood * innerRingWeight;
 		end
-		--Shortage of production of inner ring decreases score.
-		if RingOnePlotYields['YIELD_PRODUCTION'] < 4 then
-			totalFertility = totalFertility- (4 - RingOnePlotYields['YIELD_PRODUCTION']) * innerRingWeight; 
+		-- Shortage of production of inner ring decreases score. (filter out the desert floodplain case)
+		if RingOnePlotYields['YIELD_PRODUCTION'] < 3 and RingOnePlotYields['YIELD_FAITH'] < 3 then
+			totalFertility = totalFertility- (3 - RingOnePlotYields['YIELD_PRODUCTION']) * innerRingWeight; 
 		end
 		-- Table starts from index 1.
 		table.insert(self.plotFertilities, totalFertility);
