@@ -133,52 +133,52 @@
 		<!--  -->
 		<!-- Founder -->
 		<Replace Tag="LOC_BELIEF_TITHE_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>该宗教每有1个信徒则+1 [ICON_Gold] 金币。</Text>
+			<Text>该宗教每有3个信徒则+2 [ICON_Gold] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_TITHE_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Gold] Gold for every followers of this Religion.</Text>
+			<Text>+2 [ICON_Gold] Gold for every  three followers of this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_UNITY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>该宗教每有2个信徒则+1 [ICON_Faith] 信仰。</Text>
+			<Text>该宗教每有3个信徒则+1 [ICON_Faith] 信仰。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_UNITY_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Faith] Faith for every 2 followers of this Religion.</Text>
+			<Text>+1 [ICON_Faith] Faith for every 3 followers of this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORLD_CHURCH_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>该宗教每有2个信徒则+1 [ICON_CULTURE] 文化值。</Text>
+			<Text>该宗教每有3个信徒则+1 [ICON_CULTURE] 文化值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORLD_CHURCH_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Culture] Culture for every 2 followers of this Religion.</Text>
+			<Text>+1 [ICON_Culture] Culture for every 3 followers of this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CROSS_CULTURAL_DIALOGUE_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>该宗教每有2个信徒则+1 [ICON_Science] 科技值。</Text>
+			<Text>该宗教每有3个信徒则+1 [ICON_Science] 科技值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CROSS_CULTURAL_DIALOGUE_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Science] Science for every 2 followers of this Religion.</Text>
+			<Text>+1 [ICON_Science] Science for every 3 followers of this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CHURCH_PROPERTY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个信奉该宗教的城市+8 [ICON_Gold] 金币。</Text>
+			<Text>每个信奉该宗教的城市+6 [ICON_Gold] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CHURCH_PROPERTY_DL_DESCRIPTION" Language="en_US">
-			<Text>+8 [ICON_Gold] Gold for each city following this Religion.</Text>
+			<Text>+6 [ICON_Gold] Gold for each city following this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_LAY_MINISTRY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个信奉该宗教的城市+4 [ICON_Culture] 文化。</Text>
+			<Text>每个信奉该宗教的城市+3 [ICON_Culture] 文化。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_LAY_MINISTRY_DL_DESCRIPTION" Language="en_US">
-			<Text>+4 [ICON_Culture] Culture for each city following this Religion.</Text>
+			<Text>+3 [ICON_Culture] Culture for each city following this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个信奉该宗教的城市+4 [ICON_Faith] 信仰。</Text>
+			<Text>每个信奉该宗教的城市+3 [ICON_Faith] 信仰。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION" Language="en_US">
-			<Text>+4 [ICON_Faith] Faith for each city following this Religion.</Text>
+			<Text>+3 [ICON_Faith] Faith for each city following this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个信奉该宗教的城市+4 [ICON_Science] 科技。</Text>
+			<Text>每个信奉该宗教的城市+3 [ICON_Science] 科技。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION" Language="en_US">
-			<Text>+4 [ICON_Science] Science for each city following this Religion.</Text>
+			<Text>+3 [ICON_Science] Science for each city following this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_INITIATION_RITES_NAME" Language="zh_Hans_CN">
 			<Text>入会仪式</Text>

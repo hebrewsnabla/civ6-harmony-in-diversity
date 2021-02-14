@@ -37,5 +37,95 @@
 		<Replace Tag="LOC_BUILDING_JNR_KHALWAT_DL_DESCRIPTION" Language="en_US">
 			<Text>Unlock the boost of Civic 'Conservation' after first Khalwat was built.+1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city.</Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MANDIR_NAME" Language="zh_Hans_CN">
+			<Text>印度神庙</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MANDIR_NAME" Language="zh_Hans_CN">
+			<Text>印度神庙</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MANDIR_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造印度神庙（+2 [ICON_Faith] 信仰值；本城所有特色区域+2 [ICON_FOOD] 食物 +1 [ICON_FAITH] 信仰值。）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MANDIR_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Khalwat (+2 [ICON_Faith] Faith; +2 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith for all Speciality Districts in this city.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MANDIR_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>本城所有特色区域+2 [ICON_FOOD] 食物 +1 [ICON_FAITH] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MANDIR_DL_DESCRIPTION" Language="en_US">
+			<Text>+2 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith for all Speciality Districts in this city.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_JINJA_NAME" Language="zh_Hans_CN">
+			<Text>神道教神社</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_JINJA_NAME" Language="zh_Hans_CN">
+			<Text>神道教神社</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造神道教神社（+2 [ICON_Faith] 信仰值；每个神道教神社为陆地军事单位加2战斗力（最多+10战斗力），所在城市生产出军事单位时获得相当于所花费生产力20%的信仰。）</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith; +2 [Icon_STRENGTH] Combat Strength) for all land units for each Jinja within your territory ( 10 at most). Your civilization gains [ICON_FAITH] Faith equal to 20% of the unit’s cost when a non-civilian is trained in this city.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每个神道教神社为陆地军事单位加2战斗力（最多+10战斗力），所在城市生产出军事单位时获得相当于所花费生产力20%的信仰。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION" Language="en_US">
+			<Text>+2 [Icon_STRENGTH] Combat Strength) for all land units for each Jinja within your territory ( 10 at most). Your civilization gains [ICON_FAITH] Faith equal to 20% of the unit’s cost when a non-civilian is trained in this city.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_DAOGUAN_NAME" Language="zh_Hans_CN">
+			<Text>道观</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_DAOGUAN_NAME" Language="zh_Hans_CN">
+			<Text>道观</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_DAOGUAN_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造道观（+2 [ICON_Faith] 信仰值；每个区域加一对应伟人点，（剧院是大作家、大艺术家和大音乐家）如果区域内已有建筑，每个区域再加一伟人点。）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_DAOGUAN_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Daoguan (+2 [ICON_Faith] Faith; +1 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre).+1 extra Great Person Points if Districts have builidings within.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每个区域加一对应伟人点，（剧院是大作家、大艺术家和大音乐家）如果区域内已有建筑，每个区域再加一伟人点。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION" Language="en_US">
+			<Text>+1 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre).+1 extra Great Person Points if Districts have builidings within.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MBARI_NAME" Language="zh_Hans_CN">
+			<Text>姆巴里</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MBARI_NAME" Language="zh_Hans_CN">
+			<Text>姆巴里</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造姆巴里（+2 [ICON_Faith] 信仰值 +6 [ICON_GOLD] 金币；+1商路容量，本城 [ICON_GOLD] 金币产出+10%.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith +6 [ICON_GOLD] Gold;+1 Trade Route Capacity and +10% [ICON_GOLD] Gold in this city.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1商路容量，本城 [ICON_GOLD] 金币产出+10%.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION" Language="en_US">
+			<Text>+1 Trade Route Capacity and +10% [ICON_GOLD] Gold in this city.</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_TZACUALLI_NAME" Language="zh_Hans_CN">
+			<Text>羽蛇神庙</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_TZACUALLI_NAME" Language="zh_Hans_CN">
+			<Text>羽蛇神庙</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_TZACUALLI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造羽蛇神庙（+2 [ICON_Faith] 信仰值；每个羽蛇神庙为尤里卡+1% [ICON_SCIENCE] 科技值，为鼓舞+1% [ICON_CULTURE] 文化值。)</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_TZACUALLI_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Tzacualli (+2 [ICON_Faith] Faith;Each Tzacualli provides extre 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost.)
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每个羽蛇神庙为尤里卡+1%科技值，为鼓舞+1%文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION" Language="en_US">
+			<Text>Each Tzacualli provides extre 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
