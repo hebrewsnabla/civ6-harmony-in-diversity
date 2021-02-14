@@ -82,7 +82,7 @@ insert or replace into Adjacency_YieldChanges
 	('Quarry_Industrial_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_INDUSTRIAL_ZONE', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Quarry_Oppidum_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_OPPIDUM', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Quarry_Hansa_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_HANSA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Lumber_Mill_River_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 1, NULL, NULL, NULL, NULL, 'TECH_STEAM_POWER', 'NO_RESOURCECLASS'),
+	('Lumber_Mill_River_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 1, NULL, NULL, NULL, NULL, 'TECH_MACHINERY', 'NO_RESOURCECLASS'),
 	('Plantation_Commercial_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_COMMERCIAL_HUB', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Plantation_Suguba_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_SUGUBA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Fishing_Boats_Harbor_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_HARBOR', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
