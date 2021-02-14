@@ -40,6 +40,8 @@ update Government_SlotCounts set NumSlots = 1 where
 update Government_SlotCounts set NumSlots = 2 where
 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_WILDCARD';
 update Government_SlotCounts set NumSlots = 2 where
+	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_WILDCARD';
+update Government_SlotCounts set NumSlots = 2 where
 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_MILITARY';
 update Government_SlotCounts set NumSlots = 3 where
 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_MILITARY';

@@ -11,10 +11,13 @@ insert or replace into District_Adjacencies
 values
 	('DISTRICT_INDUSTRIAL_ZONE',	'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'AERODROME_INDUSTRIAL_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'SEAOil_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'AERODROME_INDUSTRIAL_Production'),
+	('DISTRICT_HANSA',				'SEAOil_INDUSTRIAL_Production'),
 	('DISTRICT_OPPIDUM',			'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_OPPIDUM',			'AERODROME_INDUSTRIAL_Production'),
+	('DISTRICT_OPPIDUM',			'SEAOil_INDUSTRIAL_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
@@ -123,6 +126,8 @@ insert or replace into Adjacency_YieldChanges
 	(ID,						Description,								YieldType,		YieldChange,	TilesRequired,
 	AdjacentImprovement,		PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
+	('SEAOil_INDUSTRIAL_Production','LOC_DISTRICT_SEAOil_INDUSTRIAL_Production',	'YIELD_PRODUCTION',	1,				1,
+	'IMPROVEMENT_OFFSHORE_OIL_RIG',		NULL,			NULL,			NULL,			NULL),
 	('Oil_INDUSTRIAL_Production','LOC_DISTRICT_Oil_INDUSTRIAL_Production',	'YIELD_PRODUCTION',	1,				1,
 	'IMPROVEMENT_OIL_WELL',		NULL,			NULL,			NULL,			NULL),
 	('Quarry_HalfProduction',	'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',	'YIELD_PRODUCTION',	1,				2,
