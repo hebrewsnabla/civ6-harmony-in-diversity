@@ -18,16 +18,19 @@
 		<Row>
 			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
 			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+			<SubjectStackLimit>2</SubjectStackLimit>
 		</Row>
 		
 		<Row>
 			<ModifierId>QUARRY_ADJUST_CLASSICAL_WONDER_PRODUCTION</ModifierId>
 			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+			<SubjectStackLimit>2</SubjectStackLimit>
 		</Row>
 		
 		<Row>
 			<ModifierId>QUARRY_ADJUST_MEDIEVALRENAISSANCE_WONDER_PRODUCTION</ModifierId>
 			<ModifierType>IMPROVEMENT_ADJUST_WONDER_PRODUCTION</ModifierType>
+			<SubjectStackLimit>2</SubjectStackLimit>
 		</Row>
 	</Modifiers>
 	
