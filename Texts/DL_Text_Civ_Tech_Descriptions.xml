@@ -139,7 +139,7 @@
 			<Text>建造2个古罗马剧场。</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_HUMANISM" Language="en_US">
-			<Text>Build 2 Amphitheater.</Text>
+			<Text>Build 2 Amphitheaters.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
