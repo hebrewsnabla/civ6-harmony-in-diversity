@@ -55,6 +55,7 @@ function OnResearchCompleted(ePlayer, eTech)
 						end
 					end
 				end
+				
 			end
 		end
 	end
