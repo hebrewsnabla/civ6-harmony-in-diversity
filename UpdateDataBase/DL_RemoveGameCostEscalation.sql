@@ -61,7 +61,7 @@ update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressi
 	or DistrictType = 'DISTRICT_NEIGHBORHOOD'			--社区
 	or DistrictType = 'DISTRICT_MBANZA'					--姆班赞（刚果）
 	or DistrictType = 'DISTRICT_CANAL'					--运河
-	or DistrictType = 'DISTRICT_DAM'					--大坝
+	or DistrictType = 'DISTRICT_DAM'					--大坝	
 ;
 
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_GOVERNMENT';

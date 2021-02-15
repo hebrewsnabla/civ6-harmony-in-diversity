@@ -6,7 +6,7 @@
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
 -- Babylon
-update ModifierArguments set Value = 55 where ModifierId = 'TRAIT_EUREKA_INCREASE';
+update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_EUREKA_INCREASE';
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
@@ -168,3 +168,10 @@ update ModifierArguments set value = 8 where ModifierId ='TRAIT_INTERNATIONAL_TR
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_GAIN_GOLD' and Name = 'Amount';
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_OFFER_FOOD' and Name = 'Amount';
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
+
+--Gaul can now build all districts near City Center
+delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
+--Vietnam can build districts in all plots
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';

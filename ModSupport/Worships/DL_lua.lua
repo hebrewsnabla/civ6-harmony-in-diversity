@@ -7,7 +7,7 @@ function KhalwatTriggerConservationBoost( playerID,	cityID, buildingID, plotID, 
 		if playerID >= 0 and buildingID == m_Khalwat then 
 			local player = Players[playerID] 
 			if not player:IsBarbarian() then
-				player:GetCulture():TriggerBoost(m_Conservation,0.4)
+				player:GetCulture():TriggerBoost(m_Conservation,1)
 			end
 		end
 	end
