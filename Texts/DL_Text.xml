@@ -14,6 +14,16 @@
 		<Replace Tag="LOC_DISTRICT_LUXURY_GOLD" Language="en_US">
 			<Text>+{1_num} [ICON_Gold] Gold from the adjacent luxury resource.</Text>
 		</Replace>
+		<!-- Food consumption correction, i.e. 2 -> 3 -->
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITIES_12_CHAPTER_CONTENT_PARA_1" Language="en_US">
+			<Text>Your city will grow, or add more [ICON_Citizen] Citizens, with surplus [ICON_Food] Food. Any amount of [ICON_Food] Food over the total consumption of a city's [ICON_Citizen] Citizens, 3 per, is considered surplus, and is added as progress towards a new [ICON_Citizen] Citizen.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITIES_13_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN">
+			<Text>城市里的每位 [ICON_Citizen] 公民（这是“ [ICON_Citizen] 人口”的另一种表达方式）每回合需要3份 [ICON_Food] 食物来避免饥饿。通过派遣其 [ICON_Citizen] 公民“改良”周围土地，城市能获得 [ICON_Food] 食物（以及其他收益）。城市能改良3个距离以内的任意单元格（位于文明境内且没被其他城市改良过）。城市无法改良被奇观占领的单元格。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITIES_13_CHAPTER_CONTENT_PARA_1" Language="en_US">
+			<Text>A city requires 3 [ICON_Food] Food per [ICON_Citizen] Citizen (another term for "[ICON_Citizen] Population") per turn to avoid starvation. A city acquires [ICON_Food] Food (as well as other yields) by assigning its [ICON_Citizen] Citizens to "work" the land around the city. The city can work any tile within 3 spaces of the city that is also within the civilization's borders, provided as well that it is not being worked by another city. Cities cannot work tiles occupied by wonders.</Text>
+		</Replace>
 		<!-- Trans error fix -->
 		<Replace Tag="LOC_PROMOTION_SHELLS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>与区域防御战斗时+10 [ICON_Strength] 战斗力。</Text>

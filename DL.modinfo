@@ -181,9 +181,10 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <File>UpdateDataBase/DL_Belief_Worships.sql</File>
       <File>UpdateDataBase/DL_Boosts.sql</File>
       <File>UpdateDataBase/DL_Buildings.sql</File>
-      <File>UpdateDataBase/DL_Civics.sql</File>
       <File>UpdateDataBase/DL_CityPolicies.sql</File>
+      <File>UpdateDataBase/DL_Civics.sql</File>
       <File>UpdateDataBase/DL_Civilizations.sql</File>
+      <File>UpdateDataBase/DL_Civilopedia.xml</File>
       <File>UpdateDataBase/DL_Diplomacy.sql</File>
       <File>UpdateDataBase/DL_Districts.sql</File>
       <File>UpdateDataBase/DL_GlobalParameters.sql</File>
@@ -231,6 +232,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <File>Texts/DL_Text_Buildings.xml</File>
       <File>Texts/DL_Text_CityStates.xml</File>
       <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
+      <File>Texts/DL_Text_Civilopedia.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
@@ -296,9 +298,10 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>UpdateDataBase/DL_Belief_Worships.sql</File>
     <File>UpdateDataBase/DL_Boosts.sql</File>
     <File>UpdateDataBase/DL_Buildings.sql</File>
-    <File>UpdateDataBase/DL_Civics.sql</File>
     <File>UpdateDataBase/DL_CityPolicies.sql</File>
+    <File>UpdateDataBase/DL_Civics.sql</File>
     <File>UpdateDataBase/DL_Civilizations.sql</File>
+    <File>UpdateDataBase/DL_Civilopedia.xml</File>
     <File>UpdateDataBase/DL_Diplomacy.sql</File>
     <File>UpdateDataBase/DL_Districts.sql</File>
     <File>UpdateDataBase/DL_GlobalParameters.sql</File>
@@ -335,6 +338,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>Texts/DL_Text_Buildings.xml</File>
     <File>Texts/DL_Text_CityStates.xml</File>
     <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
+    <File>Texts/DL_Text_Civilopedia.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
     <File>Texts/DL_Text_Districts.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
