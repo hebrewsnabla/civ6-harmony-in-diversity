@@ -89,11 +89,11 @@ values
 -- 塔祠
 	('CANDI_CULTURE',						'BuildingType',										'BUILDING_JNR_CANDI'),
 	('CANDI_CULTURE',						'YieldType',										'YIELD_CULTURE'),
-	('CANDI_CULTURE',						'Amount',											2),
+	('CANDI_CULTURE',						'Amount',											3),
 	('CANDI_FAITH',							'BuildingType',										'BUILDING_JNR_CANDI'),
 	('CANDI_FAITH',							'YieldType',										'YIELD_FAITH'),
-	('CANDI_FAITH',							'Amount',											2),
-	('CANDI_AMENITY',						'Amount',											1),
+	('CANDI_FAITH',							'Amount',											3),
+	('CANDI_AMENITY',						'Amount',											2),
 -- 神道教神社
 	('JNR_JINJA_COMBAT_STRENGTH',			'Amount',											2),
 	('JNR_JINJA_GRANT_FAITH',				'YieldType',										'YIELD_FAITH'),
@@ -121,7 +121,7 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('MANDIR_SPECIAL_DISTRICT_FOOD',	'YieldType',		'YIELD_FOOD'),	
-	('MANDIR_SPECIAL_DISTRICT_FOOD',	'Amount',			2),
+	('MANDIR_SPECIAL_DISTRICT_FOOD',	'Amount',			3),
 	('MANDIR_SPECIAL_DISTRICT_FAITH',	'YieldType',		'YIELD_FAITH'),
 	('MANDIR_SPECIAL_DISTRICT_FAITH',	'Amount',			1);
 
