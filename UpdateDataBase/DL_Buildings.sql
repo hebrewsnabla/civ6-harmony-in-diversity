@@ -1103,3 +1103,48 @@ values
 
 update Building_YieldChanges set YieldChange =10 where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_GOLD';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
+
+--nianshi
+insert or replace into Types
+	(Type,															Kind)
+values
+	-- Buildings
+	('BUILDING_NILOMETER',											'KIND_BUILDING'),
+	('BUILDING_TRIUMPHAL_ARCH',										'KIND_BUILDING'),
+	('BUILDING_OFFCIAL_RUN_HANDCRAFT',								'KIND_BUILDING'),	
+	('BUILDING_FAIR',												'KIND_BUILDING'),
+	('BUILDING_TOTEMS',												'KIND_BUILDING');
+	
+
+insert or replace into Buildings 
+	(BuildingType, 						Name, 										Cost, 		Description,										
+		PrereqTech,						PrereqCivic,								PrereqDistrict) 
+values
+	('BUILDING_NILOMETER', 				'LOC_BUILDING_NILOMETER_NAME', 				75, 		'LOC_BUILDING_NILOMETER_DESCRIPTION',				
+	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER'),
+	('BUILDING_TRIUMPHAL_ARCH', 		'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		75, 		'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
+	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER'),
+	('BUILDING_OFFCIAL_RUN_HANDCRAFT', 	'LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_NAME', 	60,			'LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_DESCRIPTION',	
+	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER'),
+	('BUILDING_FAIR', 					'LOC_BUILDING_FAIR_NAME', 					60, 		'LOC_BUILDING_FAIR_DESCRIPTION',										
+	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER'),
+	('BUILDING_TOTEMS', 				'LOC_BUILDING_TOTEMS_NAME', 				60, 		'LOC_BUILDING_TOTEMS_DESCRIPTION',		
+	null,								'CIVIC_CODE_OF_LAWS',						'DISTRICT_CITY_CENTER');
+	
+insert or replace into Building_YieldChanges 
+	(BuildingType,													YieldType,					YieldChange)
+values 
+	('BUILDING_NILOMETER',											'YIELD_SCIENCE',			2),
+	('BUILDING_TRIUMPHAL_ARCH',										'YIELD_CULTURE',			2),
+	('BUILDING_OFFCIAL_RUN_HANDCRAFT',								'YIELD_PRODUCTION',			2),	
+	('BUILDING_FAIR',												'YIELD_GOLD',				2),
+	('BUILDING_TOTEMS',												'YIELD_FAITH',				2);
+
+-- insert or replace into BuildingModifiers 
+-- 	(BuildingType,													ModifierId)
+-- values 
+-- 	('BUILDING_NILOMETER',											'YIELD_SCIENCE'),
+-- 	('BUILDING_TRIUMPHAL_ARCH',										'YIELD_CHANGE'),
+-- 	('BUILDING_OFFCIAL_RUN_HANDCRAFT',								'YIELD_CHANGE'),	
+-- 	('BUILDING_FAIR',												'YIELD_CHANGE'),
+-- 	('BUILDING_TOTEMS',												'YIELD_CHANGE');
