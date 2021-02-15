@@ -111,6 +111,18 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="en_US">
 			<Text>Your mining operations have given you the ability to create an axle. Will the wheel follow?</Text>
 		</Replace> -->
+		<Replace Tag="LOC_BOOST_TRIGGER_FOREIGN_TRADE" Language="zh_Hans_CN">
+			<Text>遇见另一个文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_FOREIGN_TRADE" Language="en_US">
+			<Text>Meet another civilization.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_WRITING" Language="zh_Hans_CN">
+			<Text>建造一个纪念碑。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_WRITING" Language="en_US">
+			<Text>Build a Monument.</Text>
+		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="zh_Hans_CN">
 			<Text>拥有海军传统市政。</Text>
 		</Replace>
