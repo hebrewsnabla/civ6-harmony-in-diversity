@@ -54,6 +54,7 @@ update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';
 update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
 -- no trade route quest for city states
 delete from Quests where QuestType = 'QUEST_SEND_TRADE_ROUTE';
+delete from Quests where QuestType = 'QUEST_CONVERT_CAPITAL_TO_RELIGION';
 
 -- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty <> 'DIFFICULTY_EMPEROR';
 -- update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';

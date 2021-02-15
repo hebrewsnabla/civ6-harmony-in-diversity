@@ -1,3 +1,6 @@
+# Sublime Workspace
+*.sublime-workspace
+
 # Compiled Lua sources
 luac.out
 

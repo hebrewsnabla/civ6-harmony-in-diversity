@@ -25,7 +25,18 @@
 
 
 -- Need to assign special effect for 3-rd tier holy site buildings.
-
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_JNR_CANDI',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_DAOGUAN',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_JINJA',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_KHALWAT',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_MANDIR',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_MBARI',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_PERIPTEROS',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_SOBOR',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
+	('BUILDING_JNR_TZACUALLI',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST');
 
 -- Text updates
 update Beliefs set Description = 'LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION' 			where BeliefType = 'BELIEF_JNR_CANDI';
@@ -62,6 +73,13 @@ values
  	('BUILDING_JNR_SOBOR',		'YIELD_FAITH',		2),
  	('BUILDING_JNR_TZACUALLI',	'YIELD_FAITH',		2);
 
-update Buildings set Cost = 190, Maintenance = 4 where BuildingType ='BUILDING_JNR_CANDI' or BuildingType = 'BUILDING_JNR_DAOGUAN' 
-	or BuildingType = 'BUILDING_JNR_JINJA' or BuildingType = 'BUILDING_JNR_KHALWAT' or BuildingType = 'BUILDING_JNR_MBARI' or BuildingType = 'BUILDING_JNR_MANDIR'
-	or BuildingType = 'BUILDING_JNR_PERIPTEROS' or BuildingType = 'BUILDING_JNR_SOBOR' or BuildingType = 'BUILDING_JNR_TZACUALLI';
+update Buildings set Cost = 190, Maintenance = 4
+ where BuildingType = 'BUILDING_JNR_CANDI'
+	or BuildingType = 'BUILDING_JNR_DAOGUAN'
+	or BuildingType = 'BUILDING_JNR_JINJA'
+	or BuildingType = 'BUILDING_JNR_KHALWAT'
+	or BuildingType = 'BUILDING_JNR_MBARI'
+	or BuildingType = 'BUILDING_JNR_MANDIR'
+	or BuildingType = 'BUILDING_JNR_PERIPTEROS'
+	or BuildingType = 'BUILDING_JNR_SOBOR'
+	or BuildingType = 'BUILDING_JNR_TZACUALLI';

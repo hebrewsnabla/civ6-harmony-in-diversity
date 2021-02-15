@@ -8,23 +8,23 @@
 			<Text>After researching the wheel, all improvements inside territory obtain roads for free. All improvements built afterward also get free roads.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_MACHINERY_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>伐木场改良+1 [ICON_PRODUCTION] 生产力。</Text>
+			<Text>非沿河的伐木场改良+1 [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_MACHINERY_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Production] Production from the Lumber Mill improvement. </Text>
+			<Text>+1 [ICON_Production] Production if the Lumber Mill improvement is not adjacent to river.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>所有除  [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。</Text>
+			<Text>所有除 [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION" Language="en_US">
-			<Text> +50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic.</Text>
+			<Text>+50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic.</Text>
 		</Replace>
-		<Replace Tag="LOC_TECH_STEAM_POWER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>水运单位+2 [ICON_Movement] 移动力。非沿河的伐木场改良+1 [ICON_Production] 生产力。</Text>
+		<!-- <Replace Tag="LOC_TECH_STEAM_POWER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>水运单位+2 [ICON_Movement] 移动力。</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_STEAM_POWER_DESCRIPTION" Language="en_US">
-			<Text>+2 [ICON_Movement] Movement for embarked units. +1 [ICON_Production] Production if the Lumber Mill improvement is not adjacent to river.</Text>
-		</Replace>
+			<Text>+2 [ICON_Movement] Movement for embarked units. </Text>
+		</Replace> -->
 		<Replace Tag="LOC_TECH_RIFLING_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+1 [ICON_FOOD] 食物。</Text>
 		</Replace>
@@ -32,10 +32,10 @@
 			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>营地+1 [ICON_FOOD] 食物。</Text>
+			<Text>营地+1 [ICON_FOOD] 食物。伐木场改良+1 [ICON_PRODUCTION] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_FOOD] Food from the Camp improvement.</Text>
+			<Text>+1 [ICON_FOOD] Food from the Camp improvement. +1 [ICON_Production] Production from the Lumber Mill improvement.</Text>
 		</Replace>
 		<Replace Tag="LOC_TECH_ARCHERY_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>允许在树林上建造营地。</Text>
@@ -43,6 +43,12 @@
 		<Replace Tag="LOC_TECH_ARCHERY_DESCRIPTION" Language="en_US">
 			<Text>Allow to build Camps on Forests.</Text>
 		</Replace>
+		<!-- <Replace Tag="LOC_TECH_APPRENTICESHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>不与山脉相邻的矿山改良设施的 [ICON_Production] 生产力+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_APPRENTICESHIP_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_Production] Production to the Mine improvement that not adjacent to Mountains.</Text>
+		</Replace> -->
 		<!-- <Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+1 [ICON_PRODUCTION] 生产力。</Text>
 		</Replace>

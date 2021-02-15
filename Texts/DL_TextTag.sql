@@ -3,7 +3,7 @@
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 update Technologies set Description = 'LOC_TECH_RIFLING_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
-update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
+-- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';

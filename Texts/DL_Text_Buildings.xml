@@ -197,10 +197,10 @@
       <Text>A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district.Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_SCIENCE] Science in this city.+1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>城市中每位公民 [ICON_Citizen] +0.5 [ICON_SCIENCE] 每回合科技值收入。本城产出的 [ICON_SCIENCE] 科技值+5%。</Text>
+      <Text>城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 每回合科技值收入。本城产出的 [ICON_SCIENCE] 科技值+5%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIBRARY_DESCRIPTION" Language="en_US">
-      <Text>Each [ICON_Citizen] citizen provides +0.5 extra [ICON_SCIENCE] Science. +5% [ICON_SCIENCE] Science in this city.</Text>
+      <Text>Each [ICON_Citizen] citizen provides +0.3 extra [ICON_SCIENCE] Science. +5% [ICON_SCIENCE] Science in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_RESEARCH_LAB_DESCRIPTION" Language="zh_Hans_CN">
       <Text>其 [ICON_SCIENCE] 科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+10%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。</Text>

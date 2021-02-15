@@ -38,7 +38,7 @@ insert into Resource_YieldChanges values
 	-- ResourceType, YieldType, YieldChange
 	('RESOURCE_DEER', 'YIELD_FOOD', 1),
 	('RESOURCE_CATTLE', 'YIELD_PRODUCTION', 1),
-	('RESOURCE_SHEEP', 'YIELD_PRODUCTION', -1),
+	-- ('RESOURCE_SHEEP', 'YIELD_PRODUCTION', -1),
 	--
 	('RESOURCE_CITRUS', 'YIELD_GOLD', 1),
 	('RESOURCE_COFFEE', 'YIELD_GOLD', 1),
@@ -61,7 +61,7 @@ insert into Resource_YieldChanges values
 	--
 	('RESOURCE_ALUMINUM', 'YIELD_PRODUCTION', 1);
 
-update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SHEEP' and YieldType = 'YIELD_FOOD';
+-- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SHEEP' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
 update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
