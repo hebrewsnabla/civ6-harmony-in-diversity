@@ -82,6 +82,10 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <Properties><LoadOrder>15003</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Texts.xml</File>
     </UpdateText>
+    <AddGameplayScripts id="Worships_mod_support_lua" criteria="Worships_Expansion2">
+      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <File>ModSupport/Worships/DL_lua.lua</File>
+    </AddGameplayScripts>
     <!-- Farm on fresh hills-->
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15501</LoadOrder></Properties>
@@ -263,6 +267,7 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
     <File>ModSupport/Worships/DL_Texts.xml</File>
+    <File>ModSupport/Worships/DL_lua.lua</File>
     <!-- City Policies -->
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>

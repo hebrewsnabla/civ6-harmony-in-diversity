@@ -7,5 +7,11 @@
     <Replace Tag="LOC_UNIT_BUILDER_DL_DESCRIPTION" Language="en_US">
       <Text>May create tile improvements, remove features like Woods or Rainforest, or Harvest some resources. Builders can be used 4 times. This can be increased through policies or wonders like the Pyramids.</Text>
     </Replace>
+    <Replace Tag="LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>中国中世纪特色单位。 [ICON_Range] 射程为3,但 [ICON_MOVEMENT] 移动力为1的高战斗力远程单位。</Text>
+    </Replace>
+    <Replace Tag="LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION" Language="en_US">
+      <Text>Chinese unique Medieval era unit. Ranged unit with a [ICON_Range] Range of 3 but [ICON_MOVEMENT] Movement of 1 and high combat strength.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
