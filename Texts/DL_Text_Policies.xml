@@ -123,6 +123,48 @@
     <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
        <Text> +2 [ICON_Gold] Gold in all cities.</Text>
     </Replace>
+    <!-- New Cards' Histories -->
+    <!-- POLICY_MINARET -->
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_MINARET_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+      <Text>待定 宣礼塔 第一段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_MINARET_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      <Text>TBD Minaret paragraph 1</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_MINARET_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+      <Text>待定 宣礼塔 第二段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_MINARET_CHAPTER_HISTORY_PARA_2" Language="en_US">
+      <Text>TBD Minaret paragraph 2</Text>
+    </Replace>
+    <!-- POLICY_SHAMAN -->
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_SHAMAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+      <Text>待定 萨满 第一段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_SHAMAN_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      <Text>TBD Shaman paragraph 1</Text>
+    </Replace>
+    <!-- POLICY_PRIMITIVE_COMMUNE -->
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_PRIMITIVE_COMMUNE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+      <Text>待定 原始公社 第一段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_PRIMITIVE_COMMUNE_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      <Text>TBD Primitive commune paragraph 1</Text>
+    </Replace>
+    <!-- POLICY_BARD -->
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_BARD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+      <Text>待定 对城弹琴 第一段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_BARD_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      <Text>TBD One more culture paragraph 1</Text>
+    </Replace>
+    <!-- POLICY_CIVILIZE -->
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_CIVILIZE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+      <Text>待定 再来一瓶 第一段</Text>
+    </Replace>
+    <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_CIVILIZE_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      <Text>TBD One more science paragraph 1</Text>
+    </Replace>
     <!-- District Buildings -->
     <Replace Tag="LOC_POLICY_RATIONALISM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>来自学院区域建筑的辐射范围增加3个单元格。拥有大学的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_SCIENCE] 科技值。拥有研究实验室的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_SCIENCE] 科技值。</Text>
