@@ -10,14 +10,14 @@
     </Replace>
     <!-- Babylon -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>[ICON_TechBoosted] 尤里卡提供科技的90%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。</Text>
+      <Text>[ICON_TechBoosted] 尤里卡提供科技的90%的 [ICON_SCIENCE] 科技值。 每回合的 [ICON_SCIENCE] 科技值-50%。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
       <Text>[ICON_TechBoosted] Eurekas provide 90% of the [ICON_SCIENCE] Science for technologies. -50% [ICON_SCIENCE] Science per turn.</Text>
     </Replace>
     <!-- Maya -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>在淡水和海岸旁定居时仅提供+1 [ICON_HOUSING] 住房，而每座农场提供的 [ICON_HOUSING] 住房和 [ICON_GOLD] 金币额外+1。每有一种奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。</Text>
+      <Text>在淡水和海岸旁定居时仅提供+1 [ICON_HOUSING] 住房，而每座农场提供的 [ICON_HOUSING] 住房和 [ICON_GOLD] 金币额外+1。 每有一种奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="en_US">
       <Text>Settling adjacent to Fresh Water and Coast only provide +1 [ICON_HOUSING] Housing, instead each Farm provides an additional +1 [ICON_HOUSING] Housing and +1 [ICON_GOLD] Gold. +1 [ICON_AMENITIES] Amenity for every Luxury adjacent to the City Center.</Text>
@@ -97,6 +97,13 @@
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION" Language="en_US">
       <Text>Mines provide a minor adjacency bonus for all districts, a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture. Specialty districts do not receive a minor adjacency for being adjacent to another district.</Text>
+    </Replace>
+    <!-- Phoenicia -->
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>游戏开始便激活“写作”科技 [ICON_TechBoosted] 尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 鼓舞。腓尼基建造的海岸城市若与 [ICON_Capital] 首都在同一大陆，则其忠诚度为100%。开拓者上船后，[ICON_Movement] 移动力与视野范围各+2。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION" Language="en_US">
+      <Text>Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Boost. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal. Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

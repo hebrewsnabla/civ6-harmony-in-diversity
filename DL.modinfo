@@ -225,6 +225,11 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
+    <!-- Gameplay-->
+    <AddGameplayScripts id="DL_Gameplay_lua" criteria="Expansion2">
+      <Properties><LoadOrder>16013</LoadOrder></Properties>
+      <File>Gameplay/CivilizationTraits.lua</File>
+    </AddGameplayScripts>
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Texts/DL_TextTag.sql</File>
@@ -256,6 +261,8 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+    <!-- Gameplay -->
+    <File>Gameplay/CivilizationTraits.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/CityPanel.lua</File>
     <File>UI/Replacement/CityPanelOverview.lua</File>
