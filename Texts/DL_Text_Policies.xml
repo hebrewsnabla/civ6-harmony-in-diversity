@@ -197,10 +197,10 @@
     <Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="en_US">
       <Text>+50% Holy Site district adjacency bonuses.</Text>
     </Replace>
-        <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="zh_Hans_CN">
+        <Replace Tag="LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+100%圣地相邻加成。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION" Language="en_US">
       <Text>+100% Holy Site district adjacency bonuses.</Text>
     </Replace>
     <!-- <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">
