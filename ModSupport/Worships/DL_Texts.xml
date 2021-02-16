@@ -145,5 +145,23 @@
 		<Replace Tag="LOC_BUILDING_JNR_PERIPTEROS_DL_DESCRIPTION" Language="en_US">
 			<Text>Each Peripteros awards 1 [ICON_Envoy] Envoy when completed.</Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_SOBOR_NAME" Language="zh_Hans_CN">
+			<Text>东正教堂</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_SOBOR_NAME" Language="zh_Hans_CN">
+			<Text>东正教堂</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_SOBOR_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许建造东正教堂（+2 [ICON_Faith] 信仰值；可放置1个 [ICON_GreatWork_Relic] 遗物。此城市遗物产出的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩增加50%)</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_JNR_SOBOR_DL_DESCRIPTION" Language="en_US">
+			<Text>Allow constructs Sobor (+2 [ICON_Faith] Faith; 1 slot for [ICON_GreatWork_Relic] Relics. [ICON_GreatWork_Relic] Relics in this city have 50% more yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism.)</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_SOBOR_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可放置1个 [ICON_GreatWork_Relic] 遗物。此城市遗物产出的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩增加50%。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_SOBOR_DL_DESCRIPTION" Language="en_US">
+			<Text>1 slot for [ICON_GreatWork_Relic] Relics. [ICON_GreatWork_Relic] Relics in this city have 50% more yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
