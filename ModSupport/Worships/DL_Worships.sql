@@ -264,3 +264,30 @@ values
 	('DAOGUAN_GREATMUSICIANPOINTS',			'Amount',														1),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'GreatPersonClassType',											'GREAT_PERSON_CLASS_ARTIST'),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'Amount',														1);
+
+-- BUILDING_JNR_SOBOR
+insert or replace into Building_GreatWorks
+	(BuildingType,			GreatWorkSlotType,		NumSlots)
+values
+	('BUILDING_JNR_SOBOR',	'GREATWORKSLOT_RELIC',	1);
+
+insert or replace into BuildingModifiers
+	(BuildingType,				ModifierId)
+values
+	('BUILDING_JNR_SOBOR',		'SOBOR_RELIC_FAITH'),
+	('BUILDING_JNR_SOBOR',		'SOBOR_RELIC_TOURISM');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType)	
+values
+	('SOBOR_RELIC_FAITH',		'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD'),
+	('SOBOR_RELIC_TOURISM',		'MODIFIER_SINGLE_CITY_ADJUST_TOURISM');
+
+insert or replace into ModifierArguments
+	(ModifierId,				name,					value)
+values
+	('SOBOR_RELIC_FAITH',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
+	('SOBOR_RELIC_FAITH',		'YieldType',			'YIELD_FAITH'),
+	('SOBOR_RELIC_FAITH',		'ScalingFactor',		150),
+	('SOBOR_RELIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
+	('SOBOR_RELIC_TOURISM',		'ScalingFactor',		150);
