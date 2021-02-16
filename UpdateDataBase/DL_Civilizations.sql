@@ -7,7 +7,7 @@ insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
 -- 贸易路线大使馆
-	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS'),
+	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS');
 -- 贸易站鼓舞/尤里卡
 	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_CIVIC_BOOST'),
 	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_TECH_BOOST');
@@ -16,7 +16,7 @@ values
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
 -- Babylon
-update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_EUREKA_INCREASE';
+update ModifierArguments set Value = 55 where ModifierId = 'TRAIT_EUREKA_INCREASE';
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
