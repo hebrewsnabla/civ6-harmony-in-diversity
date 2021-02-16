@@ -344,3 +344,6 @@ values
 	('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DIGITAL_DEMOCRACY'),
 	('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_CORPORATE_LIBERTARIANISM');
 
+--Democracy discount -25%
+--update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
+

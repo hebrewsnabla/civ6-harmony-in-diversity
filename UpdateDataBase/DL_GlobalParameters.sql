@@ -75,4 +75,5 @@ update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCI
 
 update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackForceType = 'HighDifficultyCavalryAttack';
 
-
+--allow to level 2 for beating barb
+updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
