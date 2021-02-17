@@ -449,13 +449,13 @@
   </Replace>
 <!--皇家学会-->
   <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>学院建筑提供等同于基础 [ICON_Science] 科技值产出50%的 [ICON_Production] 生产力。
-      [NEWLINE]工业区建筑提供等同于基础 [ICON_Production] 生产力产出25%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
+    <Text>学院建筑提供等同于基础 [ICON_Science] 科技值产出的 [ICON_Production] 生产力。
+      [NEWLINE]工业区建筑提供等同于基础 [ICON_Production] 生产力产出的 [ICON_Science] 科技值。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="en_US">
-    <Text>Campus Buildings provide [ICON_Production] Production equal to 50% of their intrinsic [ICON_Science] Science output.
-      [NEWLINE]Industrial Zone Buildings provide [ICON_Science] Science and [ICON_Culture] Culture equal to 25% of their intrinsic [ICON_Production] Production output.
+    <Text>Campus Buildings provide [ICON_Production] Production equal to their intrinsic [ICON_Science] Science output.
+      [NEWLINE]Industrial Zone Buildings provide [ICON_Science] Science equal to their intrinsic [ICON_Production] Production output.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
 <!--作战部-->

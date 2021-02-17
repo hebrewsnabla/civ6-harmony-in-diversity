@@ -2,6 +2,9 @@
 --     Civilization Adjustment     --
 -------------------------------------
 
+-- Eleanor
+update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
+
 -- 所有文明赠送效果
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
