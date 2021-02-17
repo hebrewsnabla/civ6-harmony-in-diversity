@@ -6,6 +6,7 @@
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
+	('TRAIT_LEADER_MAJOR_CIV',				'MACHIAVELLIANISM_OFFENSIVESPYTIME'),
 -- 贸易路线大使馆
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS');
 -- 贸易站鼓舞/尤里卡

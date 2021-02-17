@@ -1103,3 +1103,24 @@ values
 
 update Building_YieldChanges set YieldChange =10 where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_GOLD';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
+
+--Diplomacy Quarter Buildings
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_CHANCERY',					'UNIQUE_LEADER_ADD_VISIBILITY'),
+	--('BUILDING_CONSULATE',					'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
+	('BUILDING_CONSULATE',					'CONSULATE_LEVY_DISCOUNT'),
+	('BUILDING_CONSULATE',					'CONSULATE_LEVY_UNITUPGRADEDISCOUNT');
+
+insert or replace into Modifiers	
+	(ModifierId,							ModifierType)
+values
+	('CONSULATE_LEVY_DISCOUNT',				'MODIFIER_PLAYER_ADJUST_LEVY_DISCOUNT_PERCENT'),
+	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'MODIFIER_PLAYER_ADJUST_LEVIED_UNIT_UPGRADE_DISCOUNT_PERCENT');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('CONSULATE_LEVY_DISCOUNT',				'Percent',			20),
+	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'Amount',			20);

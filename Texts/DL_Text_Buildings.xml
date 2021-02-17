@@ -490,5 +490,17 @@
   <Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
     <Text>+3 [ICON_Strength] Movement from War Department.</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%，升级征集单位所花费的 [ICON_GOLD] 金币和资源减少20%。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="en_US">
+    <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold.It costs 20% less [ICON_GOLD] Gold and resources to upgrade Levied units. </Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。对所有文明+1 [ICON_VisLimited] 外交能见度。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="en_US">
+    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. + 1 [ICON_VisLimited] Visibility to all other Civs.</Text>
+  </Replace>
   </LocalizedText>
 </GameData>

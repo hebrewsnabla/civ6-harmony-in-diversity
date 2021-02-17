@@ -53,7 +53,7 @@
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>市中心相邻每个沙漠单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市市中心坐落在沙漠地块上，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
-    <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="en_US">
       <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Desert tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION" Language="zh_Hans_CN">
