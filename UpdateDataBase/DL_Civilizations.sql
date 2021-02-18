@@ -183,10 +183,12 @@ update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_G
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_OFFER_FOOD' and Name = 'Amount';
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
 
---Gaul can now build all districts near City Center
+-- Gaul can now build all districts near City Center
 delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
---Vietnam can build districts in all plots
+-- Vietnam can build districts in all plots
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
 
+-- Hungary
+update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
