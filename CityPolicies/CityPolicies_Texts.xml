@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<LocalizedText>
+		<!-- City Panel Overview -->
+		<Replace Tag="LOC_HUD_CITY_CITY_POLICIES" Language="zh_Hans_CN">
+			<Text>城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_HUD_CITY_CITY_POLICIES" Language="en_US">
+			<Text>City Policies</Text>
+		</Replace>
+		<Replace Tag="LOC_HUD_CITY_NO_CITY_POLICIES" Language="zh_Hans_CN">
+			<Text>尚未开启城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_HUD_CITY_NO_CITY_POLICIES" Language="en_US">
+			<Text>No City Policies exist.</Text>
+		</Replace>
+
 		<!-- No city policy -->
 		<Replace Tag="LOC_BUILDING_CITY_POLICY_EMPTY_NAME" Language="zh_Hans_CN">
 			<Text>无城市政策</Text>
