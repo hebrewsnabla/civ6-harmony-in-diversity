@@ -103,3 +103,5 @@ values
 delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
 insert or replace into BuildingModifiers (BuildingType,ModifierId) values
 	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP');
+
+
