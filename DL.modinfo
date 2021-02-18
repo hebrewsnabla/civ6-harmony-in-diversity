@@ -208,17 +208,20 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
       <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
       <File>UpdateDataBase/DL_Resources.sql</File>
       <File>UpdateDataBase/DL_Technologies.sql</File>
+      <File>UpdateDataBase/DL_TradeRoute.sql</File>
+      <File>UpdateDataBase/DL_TypeTags.sql</File>
       <File>UpdateDataBase/DL_Units.sql</File>
       <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
       <File>UpdateDataBase/DL_Wonders.sql</File>
       <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
-      <!-- Requirements need to update in the end -->
-      <File>UpdateDataBase/DL_Requirements.sql</File>
-      <File>UpdateDataBase/DL_TypeTags.sql</File>
-      <File>UpdateDataBase/DL_Trade_Route_Post_Connection.sql</File>
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
+      <Properties><LoadOrder>16011</LoadOrder></Properties>
+      <!-- Requirements need to update in the end -->
+      <File>UpdateDataBase/DL_Requirements.sql</File>
     </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16012</LoadOrder></Properties>
@@ -227,11 +230,12 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Gameplay_lua" criteria="Expansion2">
-      <Properties><LoadOrder>16013</LoadOrder></Properties>
+      <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Gameplay/CivilizationTraits.lua</File>
     </AddGameplayScripts>
+    <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
-      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <Properties><LoadOrder>16018</LoadOrder></Properties>
       <File>Texts/DL_TextTag.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Text" criteria="Expansion2">
@@ -336,12 +340,12 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>UpdateDataBase/DL_StartBias.sql</File>
    	<File>UpdateDataBase/DL_Technologies.sql</File>
     <File>UpdateDataBase/DL_Temp.sql</File>
+    <File>UpdateDataBase/DL_TradeRoute.sql</File>
+    <File>UpdateDataBase/DL_TypeTags.sql</File>
     <File>UpdateDataBase/DL_Units.sql</File>
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
-    <File>UpdateDataBase/DL_TypeTags.sql</File>
-    <File>UpdateDataBase/DL_Trade_Route_Post_Connection.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <!--  -->
