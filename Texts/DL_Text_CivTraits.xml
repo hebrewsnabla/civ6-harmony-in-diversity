@@ -109,8 +109,15 @@
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION" Language="zh_Hans_CN">
       <Text>游戏开始便激活“写作”科技 [ICON_TechBoosted] 尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 鼓舞。腓尼基建造的海岸城市若与 [ICON_Capital] 首都在同一大陆，则其忠诚度为100%。开拓者上船后，[ICON_Movement] 移动力与视野范围各+2。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力。</Text>
     </Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION" Language="en_US">
       <Text>Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Boost. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal. Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking.</Text>
+    </Replace>
+    <!-- China -->
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞提升45%的科技和市政，而非35%。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>[ICON_TechBoosted] Eurekas and [ICON_CivicBoosted] Inspirations provide 45% of civics and technologies instead of 35%.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

@@ -288,6 +288,6 @@ insert or replace into ModifierArguments
 values
 	('SOBOR_RELIC_FAITH',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
 	('SOBOR_RELIC_FAITH',		'YieldType',			'YIELD_FAITH'),
-	('SOBOR_RELIC_FAITH',		'ScalingFactor',		150),
+	('SOBOR_RELIC_FAITH',		'ScalingFactor',		200),
 	('SOBOR_RELIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
-	('SOBOR_RELIC_TOURISM',		'ScalingFactor',		150);
+	('SOBOR_RELIC_TOURISM',		'ScalingFactor',		200);
