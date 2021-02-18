@@ -102,6 +102,14 @@
       <Properties><LoadOrder>15004</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_lua.lua</File>
     </AddGameplayScripts>
+    <UpdateDatabase id="Community_Wonder_support" criteria="Expansion2">
+      <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <File>ModSupport/Wonder/Wonder_Community.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Community_Wonder_support_text" criteria="Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <File>ModSupport/Wonder/Wonder_Community_text.xml</File>
+    </UpdateText>
     <!-- Farm on fresh hills-->
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15501</LoadOrder></Properties>
@@ -295,6 +303,8 @@
     <File>ModSupport/Worships/DL_Worships.sql</File>
     <File>ModSupport/Worships/DL_Texts.xml</File>
     <File>ModSupport/Worships/DL_lua.lua</File>
+    <File>ModSupport/Wonder/Wonder_Community.sql</File>
+    <File>ModSupport/Wonder/Wonder_Community_text.xml</File>
     <!-- City Policies -->
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
