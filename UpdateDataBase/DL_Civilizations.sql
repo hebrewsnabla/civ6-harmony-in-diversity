@@ -90,23 +90,6 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'DistrictType', 'DISTRICT_CITY_CENTER'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'Amount', 25);
 
--- Minor Civs, City states
-
--- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
-delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
-update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = 'IMPROVEMENT_MOAI';
-insert into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
-	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
-
--- Kumasi
-update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
--- Chinguetti
-update ModifierArguments set Value = 0.5 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
--- Kandy
-update ModifierArguments set Value = 200 where ModifierId = 'MINOR_CIV_KANDY_BETTER_RELIC_BONUS' and Name = 'ScalingFactor';
-delete from TraitModifiers where TraitType = 'MINOR_CIV_KANDY_TRAIT' and ModifierId = 'MINOR_CIV_KANDY_UNIQUE_INFLUENCE_GRANT_BONUS';
--- Nalanda
-delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
 
 -- Ethiopia
 update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
@@ -185,3 +168,53 @@ delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_AD
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
+
+
+--Persia
+--波斯LA从占领城市驻军+5忠诚变成全部城市驻军+5忠诚
+--长生军变成28远程，33近战 (在DL_Units里面修改)
+--波斯庭院相邻港口+1金，相邻市中心除了1金外额外+1粮
+--波斯UA内商+1琴改为+2琴
+--波斯、马其顿、罗马、刚果、日本、格鲁吉亚、挪威增加铁关联（4级关联，在DL_StartBias里面修改）
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,							YieldType,			YieldChange)
+values
+	('IMPROVEMENT_PAIRIDAEZA',					'YIELD_FOOD',		0);
+
+insert or replace into Improvement_Adjacencies 
+	(ImprovementType,							YieldChangeId)
+values
+	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_CityCenterAdjacency_Food'),
+	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_HarborAdjacency');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,										Description,		YieldType,		YieldChange,	AdjacentDistrict)
+values
+	('Pairidaeza_CityCenterAdjacency_Food',		'Placeholder',		'YIELD_FOOD',	1,				'DISTRICT_CITY_CENTER'),
+	('Pairidaeza_HarborAdjacency',				'Placeholder',		'YIELD_GOLD',	1,				'DISTRICT_HARBOR');
+
+insert or replace into ModifierArguments 
+	(ModifierId, 								Name,				Value) 
+values
+	('TRAIT_SATRAPIES_INTERNAL_TRADE_CULTURE',	'Amount',			2);
+
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
+update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
+
+-- Minor Civs, City states
+
+-- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
+delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
+update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = 'IMPROVEMENT_MOAI';
+insert into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
+	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
+
+-- Kumasi
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
+-- Chinguetti
+update ModifierArguments set Value = 0.5 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
+-- Kandy
+update ModifierArguments set Value = 200 where ModifierId = 'MINOR_CIV_KANDY_BETTER_RELIC_BONUS' and Name = 'ScalingFactor';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_KANDY_TRAIT' and ModifierId = 'MINOR_CIV_KANDY_UNIQUE_INFLUENCE_GRANT_BONUS';
+-- Nalanda
+delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
