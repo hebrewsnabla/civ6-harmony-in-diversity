@@ -49,3 +49,6 @@ update Units set Cost = 55 where UnitType = 'UNIT_GREEK_HOPLITE';
 update Units set Cost = 90 where UnitType = 'UNIT_HORSEMAN';
 
 update Units set BaseMoves = 1, Range = 3 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
+
+update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
+update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';	
