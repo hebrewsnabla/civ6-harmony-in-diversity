@@ -105,3 +105,7 @@ delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW';
 delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW_HILLS';
+
+-- city park and fishery now available to all major civs without Liang
+update Improvements set TraitType = NULL, PrereqCivic = 'CIVIC_OPERA_BALLET' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
+update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';

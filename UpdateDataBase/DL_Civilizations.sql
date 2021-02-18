@@ -2,6 +2,20 @@
 --     Civilization Adjustment     --
 -------------------------------------
 
+-- Eleanor
+update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
+
+-- 所有文明赠送效果
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_LEADER_MAJOR_CIV',				'MACHIAVELLIANISM_OFFENSIVESPYTIME'),
+-- 贸易路线大使馆
+	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS');
+-- 贸易站鼓舞/尤里卡
+	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_CIVIC_BOOST'),
+	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_TECH_BOOST');
+
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
@@ -168,3 +182,10 @@ update ModifierArguments set value = 8 where ModifierId ='TRAIT_INTERNATIONAL_TR
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_GAIN_GOLD' and Name = 'Amount';
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_OFFER_FOOD' and Name = 'Amount';
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
+
+--Gaul can now build all districts near City Center
+delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
+--Vietnam can build districts in all plots
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';

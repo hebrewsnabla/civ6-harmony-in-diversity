@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <!-- ***Concepts tab*** -->
+        <!-- Top-level category (page group) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGEGROUP_DL_NAME" Language="zh_Hans_CN">
+            <Text>和而不同</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGEGROUP_DL_NAME" Language="en_US">
+            <Text>Harmony in Diversity</Text>
+        </Replace>
+        <!-- Sub categories (pages) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_TITLE" Language="zh_Hans_CN">
+            <Text>概述</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_TITLE" Language="en_US">
+            <Text>Introduction</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_TITLE" Language="zh_Hans_CN">
+            <Text>城市/人口维护费</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_TITLE" Language="en_US">
+            <Text>City/Citizen Maintenance Cost</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Language="zh_Hans_CN">
+            <Text>城市政策</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Language="en_US">
+            <Text>City Policies</Text>
+        </Replace>
+        <!-- Introduction content (charpters) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN">
+            <Text>待定 概述内容</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_PARA_1" Language="en_US">
+            <Text>TBD Introduction content</Text>
+        </Replace>
+        <!-- City/Citizen cost content (charpters) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN">
+            <Text>待定 城市/人口维护费内容</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_PARA_1" Language="en_US">
+            <Text>TBD City/Citizen Maintenance Cost content</Text>
+        </Replace>
+        <!-- City policy content (charpters) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_TITLE" Language="zh_Hans_CN">
+            <Text>城市政策第一部分标题</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_TITLE" Language="en_US">
+            <Text>City Policy Section 1 Title</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_PARA_1" Language="zh_Hans_CN">
+            <Text>城市政策第一部分第一段</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_PARA_1" Language="en_US">
+            <Text>City Policy Section 1 Paragraph 1</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_PARA_2" Language="zh_Hans_CN">
+            <Text>城市政策第一部分第二段</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_PARA_2" Language="en_US">
+            <Text>City Policy Section 1 Paragraph 2</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_2_TITLE" Language="zh_Hans_CN">
+            <Text>城市政策第二部分标题</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_2_TITLE" Language="en_US">
+            <Text>City Policy Section 2 Title</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_2_PARA_1" Language="zh_Hans_CN">
+            <Text>城市政策第二部分第一段</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_2_PARA_1" Language="en_US">
+            <Text>City Policy Section 2 Paragraph 1</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_3_TITLE" Language="zh_Hans_CN">
+            <Text>城市政策第三部分标题</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_3_TITLE" Language="en_US">
+            <Text>City Policy Section 3 Title</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_3_PARA_1" Language="zh_Hans_CN">
+            <Text>城市政策第三部分第一段</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_3_PARA_1" Language="en_US">
+            <Text>City Policy Section 3 Paragraph 1</Text>
+        </Replace>
+
+        <!-- ***Governments tab*** -->
+        <!-- Top-level category (page group) -->
+        <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGEGROUP_CITY_POLICIES_NAME" Language="zh_Hans_CN">
+            <Text>城市政策</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGEGROUP_CITY_POLICIES_NAME" Language="en_US">
+            <Text>City Policies</Text>
+        </Replace>
+    </LocalizedText>
+</GameData>

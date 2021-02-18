@@ -270,10 +270,10 @@
       <Text> +10% Growth in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MEETING_HOUSE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 在生产奇观、区域、建筑时本城+10% [ICON_PRODUCTION] 生产力。</Text>
+      <Text> 本城+10% [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MEETING_HOUSE_DL_DESCRIPTION" Language="en_US">
-      <Text> +10% [ICON_PRODUCTION] Production in this city towards Wonders, Districts and Buildings. </Text>
+      <Text> +10% [ICON_PRODUCTION] Production in this city .</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STUPA_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text> 本城每种已开发的奢侈品 +1 [ICON_AMENITIES] 宜居度。</Text>
@@ -449,13 +449,13 @@
   </Replace>
 <!--皇家学会-->
   <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>学院建筑提供等同于基础 [ICON_Science] 科技值产出50%的 [ICON_Production] 生产力。
-      [NEWLINE]工业区建筑提供等同于基础 [ICON_Production] 生产力产出25%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
+    <Text>学院建筑提供等同于基础 [ICON_Science] 科技值产出的 [ICON_Production] 生产力。
+      [NEWLINE]工业区建筑提供等同于基础 [ICON_Production] 生产力产出的 [ICON_Science] 科技值。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="en_US">
-    <Text>Campus Buildings provide [ICON_Production] Production equal to 50% of their intrinsic [ICON_Science] Science output.
-      [NEWLINE]Industrial Zone Buildings provide [ICON_Science] Science and [ICON_Culture] Culture equal to 25% of their intrinsic [ICON_Production] Production output.
+    <Text>Campus Buildings provide [ICON_Production] Production equal to their intrinsic [ICON_Science] Science output.
+      [NEWLINE]Industrial Zone Buildings provide [ICON_Science] Science equal to their intrinsic [ICON_Production] Production output.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
 <!--作战部-->
@@ -489,6 +489,18 @@
   </Replace>
   <Replace Tag="LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
     <Text>+3 [ICON_Strength] Movement from War Department.</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_CONSULATE_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%，升级征集单位所花费的 [ICON_GOLD] 金币和资源减少20%。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_CONSULATE_DESCRIPTION" Language="en_US">
+    <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold.It costs 20% less [ICON_GOLD] Gold and resources to upgrade Levied units. </Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。对所有文明+1 [ICON_VisLimited] 外交能见度。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="en_US">
+    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. + 1 [ICON_VisLimited] Visibility to all other Civs.</Text>
   </Replace>
   </LocalizedText>
 </GameData>

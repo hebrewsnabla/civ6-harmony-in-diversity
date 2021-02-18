@@ -14,10 +14,10 @@
       <Text>Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed.</Text>
     </Replace>
     <Replace Tag="LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE" Language="zh_Hans_CN">
-      <Text>“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+3 [ICON_Culture] 文化值。</Text>
+      <Text>“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。</Text>
     </Replace>
     <Replace Tag="LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE" Language="en_US">
-      <Text>Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +3 [ICON_Culture] Culture for each specialty district </Text>
+      <Text>Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district </Text>
     </Replace>
     <!-- Governments-->
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="zh_Hans_CN">
@@ -197,10 +197,10 @@
     <Replace Tag="LOC_POLICY_SCRIPTURE_DESCRIPTION" Language="en_US">
       <Text>+50% Holy Site district adjacency bonuses.</Text>
     </Replace>
-        <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="zh_Hans_CN">
+        <Replace Tag="LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+100%圣地相邻加成。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_SIMULTANEUM_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION" Language="en_US">
       <Text>+100% Holy Site district adjacency bonuses.</Text>
     </Replace>
     <!-- <Replace Tag="LOC_POLICY_AESTHETICS_DESCRIPTION" Language="zh_Hans_CN">

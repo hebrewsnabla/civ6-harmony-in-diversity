@@ -89,11 +89,11 @@ values
 -- 塔祠
 	('CANDI_CULTURE',						'BuildingType',										'BUILDING_JNR_CANDI'),
 	('CANDI_CULTURE',						'YieldType',										'YIELD_CULTURE'),
-	('CANDI_CULTURE',						'Amount',											2),
+	('CANDI_CULTURE',						'Amount',											3),
 	('CANDI_FAITH',							'BuildingType',										'BUILDING_JNR_CANDI'),
 	('CANDI_FAITH',							'YieldType',										'YIELD_FAITH'),
-	('CANDI_FAITH',							'Amount',											2),
-	('CANDI_AMENITY',						'Amount',											1),
+	('CANDI_FAITH',							'Amount',											3),
+	('CANDI_AMENITY',						'Amount',											2),
 -- 神道教神社
 	('JNR_JINJA_COMBAT_STRENGTH',			'Amount',											2),
 	('JNR_JINJA_GRANT_FAITH',				'YieldType',										'YIELD_FAITH'),
@@ -121,7 +121,7 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('MANDIR_SPECIAL_DISTRICT_FOOD',	'YieldType',		'YIELD_FOOD'),	
-	('MANDIR_SPECIAL_DISTRICT_FOOD',	'Amount',			2),
+	('MANDIR_SPECIAL_DISTRICT_FOOD',	'Amount',			3),
 	('MANDIR_SPECIAL_DISTRICT_FAITH',	'YieldType',		'YIELD_FAITH'),
 	('MANDIR_SPECIAL_DISTRICT_FAITH',	'Amount',			1);
 
@@ -264,3 +264,30 @@ values
 	('DAOGUAN_GREATMUSICIANPOINTS',			'Amount',														1),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'GreatPersonClassType',											'GREAT_PERSON_CLASS_ARTIST'),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'Amount',														1);
+
+-- BUILDING_JNR_SOBOR
+insert or replace into Building_GreatWorks
+	(BuildingType,			GreatWorkSlotType,		NumSlots)
+values
+	('BUILDING_JNR_SOBOR',	'GREATWORKSLOT_RELIC',	1);
+
+insert or replace into BuildingModifiers
+	(BuildingType,				ModifierId)
+values
+	('BUILDING_JNR_SOBOR',		'SOBOR_RELIC_FAITH'),
+	('BUILDING_JNR_SOBOR',		'SOBOR_RELIC_TOURISM');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType)	
+values
+	('SOBOR_RELIC_FAITH',		'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD'),
+	('SOBOR_RELIC_TOURISM',		'MODIFIER_SINGLE_CITY_ADJUST_TOURISM');
+
+insert or replace into ModifierArguments
+	(ModifierId,				name,					value)
+values
+	('SOBOR_RELIC_FAITH',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
+	('SOBOR_RELIC_FAITH',		'YieldType',			'YIELD_FAITH'),
+	('SOBOR_RELIC_FAITH',		'ScalingFactor',		200),
+	('SOBOR_RELIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
+	('SOBOR_RELIC_TOURISM',		'ScalingFactor',		200);
