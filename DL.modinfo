@@ -1,17 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.5">
   <Properties>
-    <Name>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity v0.5[ENDCOLOR]</Name>
-    <Description>
-Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development and welcome to try.
-    </Description>
-    <Teaser>Civ6 Plus: Harmony in Diversity</Teaser>
-    <Authors>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, 法拉墨, 流浪de蒲公英, 傲娇的红莉栖</Authors>
+    <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
+    <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
+    <Teaser>LOC_HARMONY_IN_DIVERSITY_TEASER</Teaser>
+    <Authors>LOC_HARMONY_IN_DIVERSITY_AUTHORS</Authors>
     <Homepage>https://space.bilibili.com/385456816</Homepage>
-    <SpecialThanks>The CEP Group</SpecialThanks>
+    <SpecialThanks>The Civ6ELitePlayers Group</SpecialThanks>
     <AffectsSavedGames>1</AffectsSavedGames>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
+  <LocalizedText>
+    <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR]</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
+      <en_US>Civ6 Plus: Harmony in Diversity v0.5</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.5</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同. 这是一个与迭起兴衰、风云变化等大型DLC比肩的大型游戏性mod，对游戏内容进行了大规模的修缮和平衡。该mod目前正在开发中。</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
+      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk，法拉墨, 流浪de蒲公英, 傲娇的红莉栖</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk，法拉墨, 流浪de蒲公英, 傲娇的红莉栖</zh_Hans_CN>
+    </Text>
+  </LocalizedText>
   <Dependencies>
     <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
     <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
@@ -365,4 +381,5 @@ Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable 
     <File>Texts/DL_Text_Units.xml</File>
     <File>Texts/DL_Text_Wonders.xml</File>
   </Files>
+
 </Mod>
