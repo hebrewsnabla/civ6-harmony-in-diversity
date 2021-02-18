@@ -40,3 +40,18 @@ select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'GreatPersonClas
 insert or replace into ModifierArguments (ModifierId,	Name,	Value)
 select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'Amount', 25 from GreatPersonClasses;
 
+--BUILDING_PORCELAIN_TOWER
+UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
+WHERE BuildingType = 'BUILDING_PORCELAIN_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType='BUILDING_PORCELAIN_TOWER');
+
+--grants a scientist
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select	'BUILDING_PORCELAIN_TOWER', 'PORCELAIN_TOWER_GRANTS_SCIENTIST'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_PORCELAIN_TOWER');
+
+insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
+('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
+
+insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
+('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'Amount',	1),
+('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST');
