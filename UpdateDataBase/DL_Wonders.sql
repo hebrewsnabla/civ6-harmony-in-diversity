@@ -101,5 +101,16 @@ values
 --remove MAHABODHI_DIPLOVP 
 --add ORSZAGHAZ DVP
 delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
-insert or replace into BuildingModifiers (BuildingType,ModifierId) values
-	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP');
+insert or replace into BuildingModifiers (BuildingType, ModifierId) values
+	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP'),
+	('BUILDING_ORSZAGHAZ', 'ORSZAGHAZ_LEVY_UNITUPGRADEDISCOUNT');
+
+insert or replace into Modifiers	
+	(ModifierId,							ModifierType)
+values
+	('ORSZAGHAZ_LEVY_UNITUPGRADEDISCOUNT',	'MODIFIER_PLAYER_ADJUST_LEVIED_UNIT_UPGRADE_DISCOUNT_PERCENT');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('ORSZAGHAZ_LEVY_UNITUPGRADEDISCOUNT',	'Amount',			25);

@@ -78,12 +78,13 @@
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
-    <!-- Support for new tier of happiness -->
-    <ImportFiles id="DL_new_happiness_level_support" criteria="Expansion2">
-      <Properties><LoadOrder>5</LoadOrder></Properties>
-      <File>UI/Replacement/CityPanel.lua</File>
-      <File>UI/Replacement/CityPanelOverview.lua</File>
-    </ImportFiles>
+    <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
+			<Properties>
+        <LoadOrder>15000</LoadOrder>
+				<LuaContext>CityPanelOverview</LuaContext>
+				<LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
+			</Properties>
+		</ReplaceUIScript>
     <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
@@ -100,8 +101,16 @@
     </UpdateText>
     <AddGameplayScripts id="Worships_mod_support_lua" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15004</LoadOrder></Properties>
-      <File>ModSupport/Worships/DL_lua.lua</File>
+      <File>ModSupport/Worships/DL_Gameplay.lua</File>
     </AddGameplayScripts>
+    <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
+      <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <File>ModSupport/Wonders/Wonders_Community.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Community_Wonders_support_text" criteria="Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
+    </UpdateText>
     <!-- Farm on fresh hills-->
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15501</LoadOrder></Properties>
@@ -143,6 +152,17 @@
       <Properties><LoadOrder>15603</LoadOrder></Properties>
       <File>CityPolicies/CityPolicies_Icons.xml</File>
     </UpdateIcons>
+    <AddUserInterfaces id="CityPolicy_CityPanelOverview_Instance" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties>
+        <LoadOrder>15604</LoadOrder>
+        <Context>InGame</Context>
+      </Properties>
+      <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="CityPolicy_CityPanelOverview_Import" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15605</LoadOrder></Properties>
+      <File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    </ImportFiles>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
       <Properties><LoadOrder>15700</LoadOrder></Properties>
@@ -284,8 +304,7 @@
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
     <!-- UI replacements and icons -->
-    <File>UI/Replacement/CityPanel.lua</File>
-    <File>UI/Replacement/CityPanelOverview.lua</File>
+    <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
@@ -294,11 +313,16 @@
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
     <File>ModSupport/Worships/DL_Texts.xml</File>
-    <File>ModSupport/Worships/DL_lua.lua</File>
+    <File>ModSupport/Worships/DL_Gameplay.lua</File>
+    <File>ModSupport/Wonders/Wonders_Community.sql</File>
+    <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <!-- City Policies -->
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
     <File>CityPolicies/CityPolicies_Icons.xml</File>
+		<File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.lua</File>
+    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     <!-- Farms On Fresh Hills -->
     <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
     <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
