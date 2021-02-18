@@ -50,10 +50,26 @@ More city policies are goint to be added.[NEWLINE]
       <Properties><LoadOrder>14003</LoadOrder></Properties>
       <File>CityPolicies_Icons.xml</File>
     </UpdateIcons>
+    <AddUserInterfaces id="CityPolicy_Instances" criteria="Expansion2">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>14004</LoadOrder>
+      </Properties>
+      <File>UI/CityPanelOverview_CityPolicies_Instances.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="CityPolicy_CityPanelOverview" criteria="Expansion2">
+			<Properties>
+        <LoadOrder>14005</LoadOrder>
+				<LuaContext>CityPanelOverview</LuaContext>
+				<LuaReplace>UI/CityPanelOverview_CityPolicies.lua</LuaReplace>
+			</Properties>
+		</ReplaceUIScript>
   </InGameActions>
   <Files>
     <File>CityPolicies.sql</File>
     <File>CityPolicies_Texts.xml</File>
     <File>CityPolicies_Icons.xml</File>
+    <File>UI/CityPanelOverview_CityPolicies_Instances.lua</File>
+    <File>UI/CityPanelOverview_CityPolicies_Instances.xml</File>
   </Files>
 </Mod>
