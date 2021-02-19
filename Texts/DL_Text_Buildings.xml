@@ -405,14 +405,14 @@
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_NAME" Language="en_US">
     <Text>Secretariat</Text>
   </Replace>
+  <!-- [NEWLINE]额外奖励1个 [ICON_Governor] 总督头衔。 -->
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
     <Text>与 [ICON_Capital] 首都处于同一大陆的城市+8% [ICON_Food] 食物、 [ICON_Production] 生产力和 [ICON_Gold] 金币。总督所在的城市这些效果翻倍。
-      [NEWLINE]额外奖励1个 [ICON_Governor] 总督头衔。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
+  <!-- [NEWLINE]Awards Extra +1 [ICON_Governor] Governor Title. -->
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="en_US">
     <Text>All your cities on your original [ICON_Capital] Capital's continent gain +8% [ICON_Food] Food, [ICON_Production] Production and [ICON_Gold] Gold. These bonus doubles with a [ICON_Governor] Governor.
-      [NEWLINE]Awards Extra +1 [ICON_Governor] Governor Title.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
 <!--主教座堂-->

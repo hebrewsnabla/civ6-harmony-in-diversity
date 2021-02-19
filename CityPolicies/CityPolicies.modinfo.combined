@@ -36,6 +36,10 @@ More city policies are goint to be added.[NEWLINE]
     <Criteria id="Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
+    <Criteria id="Expansion2_With_Suk">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>805cc499-c534-4e0a-bdce-32fb3c53ba38</ModInUse>
+    </Criteria>
   </ActionCriteria>
   <InGameActions>
     <UpdateDatabase id="CityPolicies" criteria="Expansion2">
@@ -58,17 +62,26 @@ More city policies are goint to be added.[NEWLINE]
       <File>UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     </AddUserInterfaces>
     <ReplaceUIScript id="CityPolicy_CityPanelOverview" criteria="Expansion2">
-			<Properties>
+      <Properties>
         <LoadOrder>14005</LoadOrder>
-				<LuaContext>CityPanelOverview</LuaContext>
-				<LuaReplace>UI/CityPanelOverview_CityPolicies.lua</LuaReplace>
-			</Properties>
-		</ReplaceUIScript>
+        <LuaContext>CityPanelOverview</LuaContext>
+        <LuaReplace>UI/CityPanelOverview_CityPolicies.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="CityPolicy_CityPanelOverview_Suk" criteria="Expansion2_With_Suk">
+      <Properties>
+        <LoadOrder>14005</LoadOrder>
+        <LuaContext>CityPanelOverview</LuaContext>
+        <LuaReplace>UI/CityPanelOverview_CityPolicies_Suk.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
   </InGameActions>
   <Files>
     <File>CityPolicies.sql</File>
     <File>CityPolicies_Texts.xml</File>
     <File>CityPolicies_Icons.xml</File>
+    <File>UI/CityPanelOverview_CityPolicies.lua</File>
+    <File>UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     <File>UI/CityPanelOverview_CityPolicies_Instances.lua</File>
     <File>UI/CityPanelOverview_CityPolicies_Instances.xml</File>
   </Files>

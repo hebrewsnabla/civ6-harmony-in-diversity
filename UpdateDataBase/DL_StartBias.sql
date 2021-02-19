@@ -106,10 +106,44 @@ update StartBiasResources set
 	Tier = 4	
 where CivilizationType = 'CIVILIZATION_ENGLAND' and ResourceType = 'RESOURCE_IRON';
 
+--start bias for Persia
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_PERSIA' and ResourceType = 'RESOURCE_IRON';
 
+--start bias for Macedon
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_MACEDON' and ResourceType = 'RESOURCE_IRON';
 
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_MACEDON' and ResourceType = 'RESOURCE_HORSES';
 
+--start bias for Rome
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_ROME' and ResourceType = 'RESOURCE_IRON';
 
+--start bias for Kongo
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_KONGO' and ResourceType = 'RESOURCE_IRON';
+
+--start bias for Japan
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_JAPAN' and ResourceType = 'RESOURCE_IRON';
+
+--start bias for Norway
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_NORWAY' and ResourceType = 'RESOURCE_IRON';
+
+--start bias for Georgia
+update StartBiasResources set
+	Tier = 4		
+where CivilizationType = 'CIVILIZATION_GEORGIA' and ResourceType = 'RESOURCE_IRON';
 
 
 

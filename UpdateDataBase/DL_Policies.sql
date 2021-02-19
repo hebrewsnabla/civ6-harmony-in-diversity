@@ -230,6 +230,7 @@ values
 
 delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
 delete from ObsoletePolicies where PolicyType = 'POLICY_RETAINERS';
+delete from ObsoletePolicies where PolicyType = 'POLICY_CARAVANSARIES';
 delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
 	(PolicyType,					ModifierId)

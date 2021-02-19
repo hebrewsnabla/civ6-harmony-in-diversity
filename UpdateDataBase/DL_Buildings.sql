@@ -734,7 +734,7 @@ insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
 --中书省
-	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_EXTRA_GOVERNOR_POINT'),
+	-- ('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_EXTRA_GOVERNOR_POINT'),
 --MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA
 	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD'),
 	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD_G'),
@@ -744,10 +744,10 @@ values
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION');
 
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,															RunOnce)
-values
-	('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',								1);
+-- insert or replace into Modifiers
+-- 	(ModifierId,							ModifierType,															RunOnce)
+-- values
+-- 	('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',								1);
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,															SubjectRequirementSetId)
@@ -766,7 +766,7 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
 --中书省
-	('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'Delta',			1),
+	-- ('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'Delta',			1),
 	('GOV_CITYSTATES_CITY_YIELD',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
 	('GOV_CITYSTATES_CITY_YIELD',			'Amount',			'8, 8, 8'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),

@@ -40,6 +40,11 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
     </Criteria>
+    <Criteria id="CityPolicies_Conflict_Expansion2_With_Suk">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
+      <ModInUse>805cc499-c534-4e0a-bdce-32fb3c53ba38</ModInUse>
+    </Criteria>
     <Criteria id="FarmOnFreshHills_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
@@ -79,12 +84,12 @@
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
-			<Properties>
+      <Properties>
         <LoadOrder>15000</LoadOrder>
-				<LuaContext>CityPanelOverview</LuaContext>
-				<LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
-			</Properties>
-		</ReplaceUIScript>
+        <LuaContext>CityPanelOverview</LuaContext>
+        <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
@@ -162,6 +167,10 @@
     <ImportFiles id="CityPolicy_CityPanelOverview_Import" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    </ImportFiles>
+    <ImportFiles id="CityPolicy_CityPanelOverview_Suk_Import" criteria="CityPolicies_Conflict_Expansion2_With_Suk">
+      <Properties><LoadOrder>15605</LoadOrder></Properties>
+      <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
@@ -268,6 +277,7 @@
     <AddGameplayScripts id="DL_Gameplay_lua" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Gameplay/CivilizationTraits.lua</File>
+      <File>Gameplay/Wonders.lua</File>
     </AddGameplayScripts>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
@@ -303,6 +313,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
+    <File>Gameplay/Wonders.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
@@ -320,7 +331,8 @@
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
     <File>CityPolicies/CityPolicies_Icons.xml</File>
-		<File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    <File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.lua</File>
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     <!-- Farms On Fresh Hills -->
@@ -378,7 +390,7 @@
     <File>UpdateDataBase/DL_Requirements.sql</File>
     <File>UpdateDataBase/DL_Resources.sql</File>
     <File>UpdateDataBase/DL_StartBias.sql</File>
-   	<File>UpdateDataBase/DL_Technologies.sql</File>
+       <File>UpdateDataBase/DL_Technologies.sql</File>
     <File>UpdateDataBase/DL_Temp.sql</File>
     <File>UpdateDataBase/DL_TradeRoute.sql</File>
     <File>UpdateDataBase/DL_TypeTags.sql</File>
