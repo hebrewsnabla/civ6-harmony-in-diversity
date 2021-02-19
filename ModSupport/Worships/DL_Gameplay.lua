@@ -13,3 +13,4 @@ function KhalwatTriggerConservationBoost( playerID,	cityID, buildingID, plotID, 
 	end
 end
 GameEvents.BuildingConstructed.Add(KhalwatTriggerConservationBoost)
+

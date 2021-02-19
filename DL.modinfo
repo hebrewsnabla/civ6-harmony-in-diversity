@@ -277,6 +277,7 @@
     <AddGameplayScripts id="DL_Gameplay_lua" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Gameplay/CivilizationTraits.lua</File>
+      <File>Gameplay/Wonders.lua</File>
     </AddGameplayScripts>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
@@ -312,6 +313,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
+    <File>Gameplay/Wonders.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>

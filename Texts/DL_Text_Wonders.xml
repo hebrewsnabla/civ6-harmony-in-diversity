@@ -98,7 +98,7 @@
       <Text>+20% [ICON_Faith] Faith in this city. Grants 4 Warrior Monks. All Worrior Monks trained in this city receive a free promotion. [NEWLINE][NEWLINE]Must be built adjacent to a Holy Site district with a Temple. Warrior Monks can only be received if player has founded a religion or if there is a majority religion for this player or city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>+1外交政策槽位。+1外交胜利点数。建成时+50%当前积攒的 [ICON_FAITH] 信仰。[NEWLINE][NEWLINE]必须建在靠近山脉的丘陵上。</Text>
+      <Text>+1外交政策槽位。+1外交胜利点数。建成时+50%当前累积的 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]必须建在靠近山脉的丘陵上。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+1 Diplomatic policy slot.  +1 Diplomatic Victory point. Immediately after construction [ICON_FAITH] Faith that has been accumulated increase 50%. [NEWLINE][NEWLINE]Must be built on a Hill adjacent to a Mountain.</Text>
