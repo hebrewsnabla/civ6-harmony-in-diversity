@@ -1148,3 +1148,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 
 [Version v0.5.1.1]
 波斯文本更新
+传教士改为初始60锤（即120鸽）。
+中书省不再额外奖励一个总督头衔。
+
+（by 小雨&陈又）
+布达拉宫：建成后当前积攒的信仰值+50%
