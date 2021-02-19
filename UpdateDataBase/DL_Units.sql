@@ -47,6 +47,8 @@ where UnitType = 'UNIT_SPY';
 update Units set Cost = 50 where UnitType = 'UNIT_SPEARMAN';
 update Units set Cost = 55 where UnitType = 'UNIT_GREEK_HOPLITE';
 update Units set Cost = 90 where UnitType = 'UNIT_HORSEMAN';
+update Units set Combat = 33 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+update Units set RangedCombat = 28 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 update Units set BaseMoves = 1, Range = 3 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 
