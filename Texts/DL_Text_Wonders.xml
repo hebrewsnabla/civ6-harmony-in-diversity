@@ -32,16 +32,76 @@
       <Text>Each resource Camp, Pasture, and Plantation improvement within 4 tiles of this wonder provides +1 [ICON_AMENITIES] Amenity. Must be placed adjacent to a Camp improvement.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>建成后提供2个使徒。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
+      <Text>建成后提供2个使徒。本城购买使徒的 [ICON_FAITH] 信仰花费-15%。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>Grants 2 Apostles when built.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
+      <Text>Grants 2 Apostles when built. -15% [ICON_FAITH] Faith cost when purchasing Apostle in this city.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="zh_Hans_CN">
       <Text>建成时+2外交胜利点数。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少25%。[NEWLINE][NEWLINE]必须修建在河边。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="en_US">
       <Text>+2 Diplomatic Victory Points when built. +100% [ICON_Favor] Diplomatic Favor per turn from starting a turn as Suzerain of a City-State. Costs 25% less [ICON_GOLD] Gold and resources to upgrade Levied units.[NEWLINE][NEWLINE]Must be built on a River.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_STATUE_OF_ZEUS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>提供3名弓箭手、3名枪兵，以及1台破城槌。建成时市中心出现一位大将军。生产抗骑兵单位时+50% [ICON_PRODUCTION] 生产力。必须建在与军营区域（须拥有兵营）相邻的平地上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_STATUE_OF_ZEUS_DESCRIPTION" Language="en_US">
+      <Text>Grants 3 Archers, 3 Spearmen, and a Battering Ram.1 free Great General appears near the city where the wonder was built.+50% [ICON_PRODUCTION] Production towards anti-cavalry units. Must be built on flat land adjacent to an Encampment district with a Barracks.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有远古和古典时代的科技均获得 [ICON_TechBoosted] 尤里卡。建成后每次触发 [ICON_TechBoosted] 尤里卡时，[ICON_TechBoosted] 尤里卡提供的 [ICON_SCIENCE] 科技值+3%（不包括建成时触发的远古古典 [ICON_TechBoosted] 尤里卡）。其他玩家招募 [ICON_GreatScientist] 大科学家时将随机获得1个 [ICON_TechBoosted] 尤里卡。[NEWLINE][NEWLINE]必须建在与学院区域（其中须建有图书馆）相邻的平坦地面上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION" Language="en_US">
+      <Text>Receive boosts to all Ancient and Classical era technologies. [ICON_TechBoosted]Eruka provides extra 3% [ICON_SCIENCE] Science after finishing this wonder(Ancient and Classical Techs excluded).Receive a random tech boost after another player recruits a [ICON_GreatScientist] Great Scientist. [NEWLINE][NEWLINE]Must be built on flat land adjacent to a Campus district with a Library.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有海军单位和海运单位+1 [ICON_Movement] 移动力。建成时市中心出现一位大提督。[NEWLINE][NEWLINE]必须建在海岸上，且必须与陆地和已有灯塔的港口相邻。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Movement] Movement for all naval units. 1 free Great Admiral appears near the city where the wonder was built.[NEWLINE][NEWLINE]Must be built on the Coast, and adjacent to land and a Harbor district with a Lighthouse.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_TradeRoute] 贸易路线容量+1。[NEWLINE][NEWLINE]城市领土中3个单元格以内的每个加成资源将为从此城市发源的 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币。建成时市中心出现一位大商人。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场）和 [ICON_RESOURCE_CATTLE] 牛资源相邻的单元格上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_TradeRoute] Trade Route capacity[NEWLINE][NEWLINE]Your [ICON_TradeRoute] Trade Routes from this city get +2 [ICON_Gold] Gold for every Bonus resource within 3 tiles of the city and in this city's territory.1 free Great Merchant appears near the city where the wonder was built.[NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with a Market and adjacent to [ICON_RESOURCE_CATTLE] Cattle.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_BROADWAY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>为此城+20% [ICON_Culture] 文化值。免费随机提升1个原子能时代的市政。建成时市中心出现一位大音乐家。[NEWLINE][NEWLINE]必须建在邻近剧院广场区域的平地上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_BROADWAY_DESCRIPTION" Language="en_US">
+      <Text>+20% [ICON_Culture] Culture in this city. 1 free random Atomic era civic boost.1 free Great Musician appears near the city where the wonder was built.[NEWLINE][NEWLINE] Must be built on flat land adjacent to a Theater Square district.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>为9个单元格内的所有城市提供+6 [ICON_SCIENCE] 科技值和 +1 [ICON_Faith] 信仰值。全国所有的除沙漠泛滥外的沙漠单元格+1 [ICON_SCIENCE] 科技值。 学院从沙漠和沙漠丘陵单元格获得标准相邻加成。[NEWLINE][NEWLINE]必须修建在沙漠或沙漠丘陵之上，同时必须与学院区域（其中须建有大学）相邻。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="en_US">
+      <Text>Provides +6 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith to all your cities that are within 9 tiles.+1 [ICON_SCIENCE] in all Desert tiles(Desert Floodplains excluded) in your territory. Campus gain standard adjacency bonus from Desert and Desert Hill Tiles.[NEWLINE][NEWLINE]Must be built on Desert or Desert Hills adjacent to a Campus district with a University. </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HAGIA_SOPHIA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>传教士和使徒可以额外传播一次宗教。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供10点 [ICON_FAITH] 信仰值（标准速度下）。[NEWLINE][NEWLINE]您必须已经创立了一个宗教，此外，还必须建在靠近圣地的平原上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HAGIA_SOPHIA_DESCRIPTION" Language="en_US">
+      <Text>Missionaries and Apostles can spread Religion 1 extra time. When you use a religious unit to convert a city for the first time earn 10 [ICON_FAITH] Faith per [ICON_Citizen] Population of that city (on Standard Speed).[NEWLINE][NEWLINE]Must be built on flat land adjacent to a Holy Site district, and you must have founded a Religion.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_BIOSPHERE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有离岸风力发电厂、太阳能农场、风力发电厂、地热发电厂和水电站坝产出的 [ICON_POWER] 电力+400%。此建筑和这些改良设置将提供等同于其 [ICON_POWER] 电力的 [ICON_TOURISM] 旅游业绩。帝国中与雨林和沼泽相邻的单元格+1魅力（而不是-1）。[NEWLINE][NEWLINE]必须建在与“社区”区域相邻的河流旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_BIOSPHERE_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>+400% [ICON_POWER] Power for all Offshore Windfarms, Solar Farms, Wind Farms, Geothermal Plants, and Hydroelectric Dams. This building and these improvements provide [ICON_TOURISM] Tourism equal to their [ICON_POWER] Power. Rainforest and Marsh in your empire now +1 Appeal to adjacent tiles(rather than -1).[NEWLINE][NEWLINE] Must be built along a River adjacent to a Neighborhood district.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_KOTOKU_IN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>此城+20% [ICON_Faith] 信仰值。赠送4名武僧。本城生产的武僧获得额外1级免费晋升。[NEWLINE][NEWLINE]必须建在拥有寺庙的圣地区域旁。获得武僧的前提条件是玩家创立了宗教，或此玩家/城市拥有主流宗教。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_KOTOKU_IN_DESCRIPTION" Language="en_US">
+      <Text>+20% [ICON_Faith] Faith in this city. Grants 4 Warrior Monks. All Worrior Monks trained in this city receive a free promotion. [NEWLINE][NEWLINE]Must be built adjacent to a Holy Site district with a Temple. Warrior Monks can only be received if player has founded a religion or if there is a majority religion for this player or city.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>+1外交政策槽位。+1外交胜利点数。建成时+50%当前积攒的 [ICON_FAITH] 信仰。[NEWLINE][NEWLINE]必须建在靠近山脉的丘陵上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>+1 Diplomatic policy slot.  +1 Diplomatic Victory point. Immediately after construction [ICON_FAITH] Faith that has been accumulated increase 50%. [NEWLINE][NEWLINE]Must be built on a Hill adjacent to a Mountain.</Text>
     </Replace>
   </LocalizedText>
 </GameData>
