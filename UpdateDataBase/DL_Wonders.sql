@@ -210,7 +210,7 @@ values
 	('GREAT_LIBRARY_BOOST_ERUKA',				'MODIFIER_PLAYER_ADJUST_TECHNOLOGY_BOOST');
 
 insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
-	('GREAT_LIBRARY_BOOST_ERUKA',		'Amount',		2);
+	('GREAT_LIBRARY_BOOST_ERUKA',		'Amount',		3);
 
 --BUILDING_MAHABODHI_TEMPLE PURCHASE_UNIT_APOSTLE_DISCOUNT
 insert or replace into BuildingModifiers
