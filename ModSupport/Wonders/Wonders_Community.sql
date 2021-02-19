@@ -55,3 +55,4 @@ insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) v
 insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'Amount',	1),
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST');
+

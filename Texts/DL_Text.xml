@@ -56,6 +56,12 @@
 		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_COMBAT_9_CHAPTER_CONTENT_PARA_2" Language="en_US">
 			<Text>Walls add extra protection to a city or Encampment, making it even more difficult to conquer. This protection is like armor, shielding the city from attacks. Melee units deal only 15% of their normal damage to walls, and ranged units deal only 75% of their normal damage. Only Bombard units deal 100% of their normal damage to walls, making them necessary to capture a fortified city. If the walls are damaged, they stop being as effective and the district's health will start taking a little bit of damage with every attack. Walls can only recover health with a Project found in the city's Production Queue, like repairing district buildings, that becomes available if the district has not taken any damage for 3 consecutive turns. Once a city has walls, it can make ranged attacks against enemy units using a "City Ranged Strength" stat.[NEWLINE][NEWLINE]The City Combat Strength is based on the [ICON_Strength] Combat Strength of the strongest melee unit built by your civilization, minus 10, or by the [ICON_Strength] Combat Strength of a garrisoned military unit.[NEWLINE][NEWLINE]The City Ranged Strength is based on the [ICON_Ranged] Ranged Strength of the strongest ranged unit built by your civilization.[NEWLINE][NEWLINE]The city gets additional bonuses to its City Combat Strength for each non-pillaged district it has, making big cities harder to capture, and from terrain and a few other modifiers sources.</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>高德院训练：免费获得1级晋升</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION" Language="en_US">
+			<Text>1 free promotion from Kotoku In </Text>
+		</Replace>
 		<Replace Tag="LOC_ABILITY_TRAINED_LIGHT_CAVALRY_PILLAGE_LESS_MOVEMENT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>打草谷训练：劫掠只消耗1移动力</Text>
 		</Replace>
@@ -243,6 +249,18 @@
 		</Replace>
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
 			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="zh_Hans_CN">
+			<Text>每个相邻的沙漠单元格提供 +1[ICON_SCIENCE] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="en_US">
+			<Text> +1[ICON_SCIENCE] Science from each  Desert Tile.</Text>
+		</Replace>
+		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="zh_Hans_CN">
+			<Text>每个相邻的沙漠丘陵单元格提供 +1[ICON_SCIENCE] 科技值。</Text>
+		</Replace>
+		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="en_US">
+			<Text> +1[ICON_SCIENCE] Science from each adjacent Desert Hill Tile.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
