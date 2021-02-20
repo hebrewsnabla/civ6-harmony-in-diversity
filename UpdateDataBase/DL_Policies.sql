@@ -173,6 +173,39 @@ values
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'YieldType',												'YIELD_CULTURE'),
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'Amount',													0.5);
 
+-- 民主主义购买区域
+insert or replace into Types
+	(Type,											Kind)
+values
+	('MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE',	'KIND_MODIFIER');
+
+insert or replace into DynamicModifiers
+	(ModifierType,									CollectionType,									EffectType)
+values
+	('MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE',	'COLLECTION_OWNER',								'EFFECT_ADJUST_CITY_CAN_PURCHASE_DISTRICTS');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER',	'MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,								ModifierId)
+values
+	('GOVERNMENT_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
+
+insert or replace into PolicyModifiers
+	(PolicyType,									ModifierId)
+values
+	('POLICY_GOV_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,											Value)
+values
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'ModifierId',									'DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER'),
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER',	'CanPurchase',									1);
+
 -- level-one district yield policies
 --update ModifierArguments set Value = 50 where Name = 'Amount'
  	--and (ModifierID = 'AESTHETICS_DISTRICTCULTURE'
