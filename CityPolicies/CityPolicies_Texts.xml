@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<LocalizedText>
+		<!-- General type name -->
+		<Replace Tag="LOC_CITY_POLICY_NAME" Language="zh_Hans_CN">
+			<Text>城市政策</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_POLICY_NAME" Language="en_US">
+			<Text>City Policy</Text>
+		</Replace>
 		<!-- City Panel Overview -->
 		<Replace Tag="LOC_HUD_CITY_CITY_POLICIES" Language="zh_Hans_CN">
 			<Text>城市政策</Text>

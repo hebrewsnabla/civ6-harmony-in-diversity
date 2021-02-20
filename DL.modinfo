@@ -172,6 +172,9 @@
       <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
+    <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="CityPolicies_Conflict_Expansion2">
+      <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
+    </ImportFiles>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
       <Properties><LoadOrder>15700</LoadOrder></Properties>
@@ -335,6 +338,7 @@
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.lua</File>
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
+    <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
     <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
     <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
