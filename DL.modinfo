@@ -294,6 +294,7 @@
       <File>Texts/DL_Text_Civilopedia.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
+      <File>Texts/DL_Text_Governors.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
       <File>Texts/DL_Text_Improvements.xml</File>
       <File>Texts/DL_Text_NaturalWonders.xml</File>
@@ -409,6 +410,7 @@
     <File>Texts/DL_Text_Civilopedia.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
     <File>Texts/DL_Text_Districts.xml</File>
+    <File>Texts/DL_Text_Governors.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
     <File>Texts/DL_Text_Improvements.xml</File>
     <File>Texts/DL_Text_NaturalWonders.xml</File>
