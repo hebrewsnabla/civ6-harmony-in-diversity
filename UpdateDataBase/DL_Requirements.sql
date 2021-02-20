@@ -438,3 +438,11 @@ values
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',	'REQUIRES_PLAYER_IS_HUMAN'),
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',	'REQUIRES_DIFFICULTY_AT_LEAST_DEITY'),
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',	'REQUIRES_PLAYER_HAS_AT_LEAST_ONE_CITY');
+
+-- PLOT IS IMPROVED
+insert or replace into Requirements (RequirementId,	RequirementType,	Inverse)	values
+	('REQUIRES_PLOT_IS_IMPROVED',	'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',	0);
+insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)	values
+	('PLOT_IS_IMPROVED',	'REQUIRES_PLOT_IS_IMPROVED');
+insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	values
+	('PLOT_IS_IMPROVED',	'REQUIREMENTSET_TEST_ALL');
