@@ -1,0 +1,20 @@
+-- -- 
+-- -- Trade Route doubles
+-- function OnPlayerTurnStarted(playerID)
+-- 	print(playerID)
+-- 	local p = Players[playerID];
+-- 	-- print(p)
+-- 	-- local tManager = Game.GetTradeManager();
+-- 	local pCity = p:GetCities()
+-- 	for _, city in pCity:Members() do
+-- 		print('city', city)
+-- 		for j, k in pairs(city) do
+-- 			print(j, k)
+-- 		end
+-- 		print(city == nil)
+-- 		local trade = city:GetTrade();
+-- 		print('trade', trade)
+-- 	end
+-- end
+
+-- GameEvents.PlayerTurnStarted.Add(OnPlayerTurnStarted)
