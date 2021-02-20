@@ -282,6 +282,7 @@
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Governors.lua</File>
       <File>Gameplay/Wonders.lua</File>
+      <File>Gameplay/Misc.lua</File>
     </AddGameplayScripts>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
@@ -320,6 +321,7 @@
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Governors.lua</File>
     <File>Gameplay/Wonders.lua</File>
+    <File>Gameplay/Misc.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>

@@ -1153,3 +1153,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 
 （by 小雨&陈又）
 布达拉宫：建成后当前积攒的信仰值+50%
+
+[Version v0.5.1.2]
+所有玩家新增：每获得1点时代分，获得10金币。
