@@ -3,6 +3,9 @@
 
 # DS store
 .DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
 
 # Compiled Lua sources
 luac.out
