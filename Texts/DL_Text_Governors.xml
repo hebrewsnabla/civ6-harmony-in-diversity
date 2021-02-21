@@ -11,7 +11,7 @@
 			<Text>城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="en_US">
-			<Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +3 [ICON_Gold] Gold from each improved tile.</Text>
+			<Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +1 [ICON_Gold] Gold from each improved tile.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市中商业中心和港口的相邻加成+150%。</Text>
