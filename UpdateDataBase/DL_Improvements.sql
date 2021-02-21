@@ -108,5 +108,5 @@ delete from Improvement_ValidTerrains where
 
 -- wait until Adjustments for Liang.
 --city park and fishery now available to all major civs without Liang
---update Improvements set TraitType = NULL, PrereqCivic = 'CIVIC_OPERA_BALLET' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
---update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
+-- update Improvements set TraitType = NULL, PrereqCivic = 'CIVIC_OPERA_BALLET' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
+update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
