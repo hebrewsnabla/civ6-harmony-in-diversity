@@ -53,4 +53,7 @@ update Units set RangedCombat = 28 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 update Units set BaseMoves = 1, Range = 3 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
-update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';	
+update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
+
+--guru abilitity free promotion (combat_strength and movement bonus)
+--todo
