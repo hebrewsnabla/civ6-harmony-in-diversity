@@ -253,6 +253,7 @@
       <File>UpdateDataBase/DL_Policies.sql</File>
       <File>UpdateDataBase/DL_Projects.sql</File>
       <File>UpdateDataBase/DL_RandomEvents.sql</File>
+      <File>UpdateDataBase/DL_Relic_Creator.sql</File>
       <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
       <File>UpdateDataBase/DL_Resources.sql</File>
       <File>UpdateDataBase/DL_Technologies.sql</File>
@@ -281,6 +282,7 @@
       <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Governors.lua</File>
+      <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Wonders.lua</File>
       <File>Gameplay/Misc.lua</File>
     </AddGameplayScripts>
@@ -305,6 +307,7 @@
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Pantheon.xml</File>
       <File>Texts/DL_Text_Policies.xml</File>
+      <File>Texts/DL_Text_Relic_Creator.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
       <File>Texts/DL_Text_Wonders.xml</File>
     </UpdateText>
@@ -320,6 +323,7 @@
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Governors.lua</File>
+    <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Wonders.lua</File>
     <File>Gameplay/Misc.lua</File>
     <!-- UI replacements and icons -->
@@ -395,6 +399,7 @@
     <File>UpdateDataBase/DL_Policies.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
+    <File>UpdateDataBase/DL_Relic_Creator.sql</File>
     <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
     <File>UpdateDataBase/DL_Requirements.sql</File>
     <File>UpdateDataBase/DL_Resources.sql</File>
@@ -424,6 +429,7 @@
     <File>Texts/DL_Text_NaturalWonders.xml</File>
     <File>Texts/DL_Text_Pantheon.xml</File>
     <File>Texts/DL_Text_Policies.xml</File>
+    <File>Texts/DL_Text_Relic_Creator.xml</File>
     <File>Texts/DL_Text_Units.xml</File>
     <File>Texts/DL_Text_Wonders.xml</File>
   </Files>
