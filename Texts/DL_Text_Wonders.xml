@@ -32,7 +32,7 @@
       <Text>Each resource Camp, Pasture, and Plantation improvement within 4 tiles of this wonder provides +1 [ICON_AMENITIES] Amenity. Must be placed adjacent to a Camp improvement.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>建成后提供2个使徒。本城购买使徒的 [ICON_FAITH] 信仰花费-15%。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
+      <Text>建成后提供2个使徒。本城购买使徒的 [ICON_FAITH] 信仰花费-10%。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>Grants 2 Apostles when built. -15% [ICON_FAITH] Faith cost when purchasing Apostle in this city.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
