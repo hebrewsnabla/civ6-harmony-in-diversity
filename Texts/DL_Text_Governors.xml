@@ -91,5 +91,35 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
 			<Text>30% [ICON_Production] Production increase to all nuclear armament projects in the city.+50% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="zh_Hans_CN">
+			<Text>巧工记</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="en_US">
+			<Text>Book of Diverse Crafts</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
+			<Text>This city gets +20% [ICON_Production] Production towards wonders.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
+			<Text>督农制</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="en_US">
+			<Text>Quan'Nong</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
+			<Text>+15%  [ICON_Food] Food and  [ICON_Production] Production in the city.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="en_US">
+			<Text>This city receives yields from all nearby district buildings with regional bonuses, not just the first.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
