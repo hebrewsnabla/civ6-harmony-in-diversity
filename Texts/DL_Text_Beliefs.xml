@@ -211,10 +211,10 @@
       		<Text>To the Glory of God</Text>
     	</Replace>
 		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>招募伟人-25% [ICON_faith] 信仰值花费。 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。</Text>
+			<Text>招募伟人-25% [ICON_faith] 信仰值花费。 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。每当一位伟人完全激活或隐退后，有33%的几率获得一个 [ICON_GreatWork_Relic] 遗物。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION" Language="en_US">
-			<Text>-25% [ICON_faith] faith when you patronage great person. Each time you recruit a great person , add 50 [ICON_FAVOR] Diplomatic Favor.</Text>
+			<Text>-25% [ICON_faith] faith when you patronage great person. Each time you recruit a great person , add 50 [ICON_FAVOR] Diplomatic Favor. 33% chance getting a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired.</Text>
 		</Replace>
 		<!--  -->
 		<!-- Follower -->
