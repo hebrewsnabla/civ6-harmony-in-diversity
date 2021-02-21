@@ -91,5 +91,12 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
 			<Text>30% [ICON_Production] Production increase to all nuclear armament projects in the city.+50% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
 		</Replace>
+		<!-- 阿玛尼 -->
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>9个单元格内其他文明的城市每回合将失去2点忠诚度。 向所有已相遇的城邦一次性派遣1个 [ICON_Envoy] 使者。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="en_US">
+			<Text>Other cities within 9 tiles and not owned by you lose 2 Loyalty per turn. Immediately send one [ICON_Envoy] Envoy to all City States that already met. </Text>
+		</Replace>
 	</LocalizedText>
 </GameData>

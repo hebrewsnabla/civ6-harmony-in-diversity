@@ -278,14 +278,29 @@
       <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
-    <AddGameplayScripts id="DL_Gameplay_lua" criteria="Expansion2">
+    <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Governors.lua</File>
-      <File>Gameplay/Religions.lua</File>
-      <File>Gameplay/Wonders.lua</File>
       <File>Gameplay/Misc.lua</File>
+      <File>Gameplay/Religions.lua</File>
+      <File>Gameplay/Temp_Gameplay.lua</File>
+      <File>Gameplay/Wonders.lua</File>
     </AddGameplayScripts>
+    <!-- UI scripts for gameplay -->
+    <AddUserInterfaces id="DL_Scripts_Interface" criteria="Expansion2">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>16016</LoadOrder>
+      </Properties>
+      <File>Gameplay/Governors_Interface.xml</File>
+      <File>Gameplay/Temp_Interface.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="DL_Scripts_Interface_lua" criteria="Expansion2">
+      <Properties><LoadOrder>16017</LoadOrder></Properties>
+      <File>Gameplay/Governors_Interface.lua</File>
+      <File>Gameplay/Temp_Interface.lua</File>
+    </ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16018</LoadOrder></Properties>
@@ -323,9 +338,15 @@
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Governors.lua</File>
-    <File>Gameplay/Religions.lua</File>
-    <File>Gameplay/Wonders.lua</File>
     <File>Gameplay/Misc.lua</File>
+    <File>Gameplay/Religions.lua</File>
+    <File>Gameplay/Temp_Gameplay.lua</File>
+    <File>Gameplay/Wonders.lua</File>
+    <!-- UI scripts -->
+    <File>Gameplay/Governors_Interface.lua</File>
+    <File>Gameplay/Governors_Interface.xml</File>
+    <File>Gameplay/Temp_Interface.lua</File>
+    <File>Gameplay/Temp_Interface.xml</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
