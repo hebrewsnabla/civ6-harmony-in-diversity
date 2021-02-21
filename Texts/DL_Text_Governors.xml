@@ -156,10 +156,10 @@
 		</Replace>
 		<!-- 阿玛尼 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>9个单元格内其他文明的城市每回合将失去2点忠诚度。 向所有已相遇的城邦一次性派遣1个 [ICON_Envoy] 使者。</Text>
+			<Text>9个单元格内其他文明的城市每回合将失去5点忠诚度。 向所有已相遇的城邦一次性派遣1个 [ICON_Envoy] 使者。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="en_US">
-			<Text>Other cities within 9 tiles and not owned by you lose 2 Loyalty per turn. Immediately send one [ICON_Envoy] Envoy to all City States that already met. </Text>
+			<Text>Other cities within 9 tiles and not owned by you lose 5 Loyalty per turn. Immediately send one [ICON_Envoy] Envoy to all City States that already met. </Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
