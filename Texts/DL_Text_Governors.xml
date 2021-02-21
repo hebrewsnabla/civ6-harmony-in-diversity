@@ -116,13 +116,14 @@
 			<Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
-			<Text>+15%  [ICON_Food] Food and  [ICON_Production] Production in the city.</Text>
+			<Text>+15%  [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text>
+			<!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->
+			<Text>此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="en_US">
-			<Text>This city receives yields from all nearby district buildings with regional bonuses, not just the first.</Text>
+			<Text>This city receives yields from all nearby district buildings with regional bonuses, not just from the first building of the same type.</Text>
 		</Replace>
 		<!-- 阿玛尼 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">

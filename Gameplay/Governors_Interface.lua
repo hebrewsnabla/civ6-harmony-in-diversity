@@ -1,3 +1,6 @@
+-- Governors_interface.lua
+-- 
+
 function isMinor(player)
     if player == nil then
         return false
@@ -29,3 +32,25 @@ function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
 end
 
 Events.GovernorPromoted.Add(AmbassadorTributumEnvoy)
+
+function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
+    print(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
+    local player = Players[playerID]
+    local city = CityManager.GetCity(playerID, cityID)
+    local building = GameInfo.Buildings[buildingID]
+    -- print(building.BuildingType)
+    if player ~= nil and city ~= nil and building ~= nil then
+        local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER']
+        local greatEngID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index
+        local amount = building.Cost * 0.1
+        local governor = city:GetAssignedGovernor()
+        if governor ~= nil and promotion ~= nil then
+            -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())
+            if governor:IsEstablished() and governor:HasPromotion(promotion.Hash) then
+                ExposedMembers.DLHD.AddGreatPeoplePoints(playerID, greatEngID, amount)
+            end
+        end
+    end
+end
+
+Events.WonderCompleted.Add(WonderToGreatEngineerPoints)

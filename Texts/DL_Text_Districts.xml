@@ -2,16 +2,16 @@
 <GameData>
   <LocalizedText>
     <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
+      <Text>您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。[NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="en_US">
-      <Text>A district in your city for religious worship. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.</Text>
+      <Text>A district in your city for religious worship. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.[NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张1单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
+      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张1单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。[NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="en_US">
-      <Text>A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]Your city border grows by one tile each time a Great Person is expended in this city. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.</Text>
+      <Text>A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]Your city border grows by one tile each time a Great Person is expended in this city. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.[NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_HANSA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>德国特色工业区域，替代工业区，建造费用更低。[NEWLINE][NEWLINE]可从每个相邻的运河和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的商业中心、水渠区域处获得+1 [ICON_Production] 生产力加成。每2处相邻资源为其提供1点 [ICON_Production] 生产力加成。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。随着科技和市政的发展，其将获得更多的相邻 [ICON_Production] 生产力加成。为相邻单元格-1魅力。</Text>

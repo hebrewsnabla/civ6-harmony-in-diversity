@@ -14,7 +14,6 @@
     <Replace Tag="LOC_BUILDING_TLACHTLI_EXPANSION1_DESCRIPTION" Language="en_US">
       <Text>Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. [ICON_Amenities] Amenity extends to each city center within 4 tiles. This bonus applies once to a city, and multiple copies of this building within 4 tiles of a city center do not provide additional bonuses.</Text>
     </Replace>
-    
     <Replace Tag="LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION" Language="zh_Hans_CN">
       <Text> +2 [ICON_TOURISM]旅游业绩 [NEWLINE][NEWLINE][ICON_Amenities] 宜居度和 [ICON_Culture] 文化值加成延伸到6个单元格中的每个市中心。此加成1座城市仅能应用1次，因此市中心6个单元格以内相同的此建筑不会再额外提供加成。</Text>
     </Replace>
@@ -172,10 +171,10 @@
       <Text>Provides the city +6 [ICON_Power] Power from renewable water sources.+1 [ICON_Production] Production to all tiles that are adjacent to river in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。如此城与海岸或湖边相邻，则+2 [ICON_HOUSING] 住房。+1 [ICON_TradeRoute] 贸易路线容量。为本城的 [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠资源地块+1 [ICON_Production] 生产力.</Text>
+      <Text>此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。如此城与海岸或湖边相邻，则+2 [ICON_HOUSING] 住房。+1 [ICON_TradeRoute] 贸易路线容量。为本城的 [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠资源地块+1 [ICON_Food] 食物.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast tiles for this city. +2 [ICON_HOUSING] Housing if this city is adjacent to coast and lake. +1 [ICON_TradeRoute] Trade Route capacity. +1 [ICON_Production] Production to each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls resource in this city.</Text>
+      <Text>+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast tiles for this city. +2 [ICON_HOUSING] Housing if this city is adjacent to coast and lake. +1 [ICON_TradeRoute] Trade Route capacity. +1 [ICON_Food] Food to each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls resource in this city.</Text>
     </Replace>
     <!-- New description -->
     <Replace Tag="LOC_BUILDING_GRANARY_DESCRIPTION" Language="zh_Hans_CN">
