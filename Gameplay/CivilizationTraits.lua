@@ -16,7 +16,7 @@ function LeaderHasTrait(sLeader, sTrait)
 end
 
 --Phoenicia Trigger Foreign Trade Boost
-function DID0OnPlayerTurnActivated(ePlayer:number, bFirstTimeThisTurn:boolean)
+function DidoOnPlayerTurnActivated(ePlayer:number, bFirstTimeThisTurn:boolean)
 	local pPlayer = Players[ePlayer]
 	local pPlayerConfig = PlayerConfigurations[ePlayer]
 	local sCiv = pPlayerConfig:GetCivilizationTypeName()
@@ -26,4 +26,4 @@ function DID0OnPlayerTurnActivated(ePlayer:number, bFirstTimeThisTurn:boolean)
 	--print(pPlayer,pPlayerConfig,sCiv)
 	pPlayer:GetCulture():TriggerBoost(m_ForeignTrade,0.4)
 end
-Events.PlayerTurnActivated.Add(DID0OnPlayerTurnActivated)
+Events.PlayerTurnActivated.Add(DidoOnPlayerTurnActivated)

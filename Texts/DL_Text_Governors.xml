@@ -37,5 +37,53 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="en_US">
 			<Text>+10% to [ICON_Gold] Gold for each Commercial building and Harbor building in the city.</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市防御+5 [ICON_STRENGTH] 战斗力，您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。就职需要3回合。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="en_US">
+			<Text>Increase City Defence [ICON_STRENGTH] Strength by 5. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. Establishes in 3 turns.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>就职城市无法被围攻。城市领土内的单位防御时可+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="en_US">
+			<Text>City cannot be put under siege. Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. </Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="zh_Hans_CN">
+			<Text>后勤补给</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="en_US">
+			<Text>Logistics Supply</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>生产单位所需战略资源花费减少60%。本城正确改良的战略每回合积累+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="en_US">
+			<Text>Strategic resource costs for units are discounted 60%. Accumulating Strategic resources in the city gain an additional +1 per turn.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。本城生产的军事工程师次数+2，且生产军事工程师时+100% [ICON_PRODUCTION] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="en_US">
+			<Text>City gains an additional [ICON_Ranged] Ranged Strike per turn. Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="zh_Hans_CN">
+			<Text>征兵入伍</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="en_US">
+			<Text>Conscription</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+3 [ICON_STRENGTH] 战斗力和+25%战斗经验值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="en_US">
+			<Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +3 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+50% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
+			<Text>30% [ICON_Production] Production increase to all nuclear armament projects in the city.+50% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
