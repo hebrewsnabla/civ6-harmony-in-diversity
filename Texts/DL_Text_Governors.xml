@@ -11,13 +11,19 @@
 			<Text>城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="en_US">
-			<Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +3 [ICON_Gold] Gold from each improved tile.</Text>
+			<Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +1 [ICON_Gold] Gold from each improved tile.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市中商业中心和港口的相邻加成+150%。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="en_US">
 			<Text>Commercial Hub and Harbor Districts receive +150% adjacency bonuses in the city.</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每个未改良的地貌可向该城市提供+4 [ICON_Gold] 金币。该城市中与未改良地貌相邻的单元格可获得+1魅力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="en_US">
+			<Text>This city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features receive +1 Appeal in this city.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。</Text>
