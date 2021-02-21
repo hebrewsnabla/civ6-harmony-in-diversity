@@ -374,5 +374,11 @@
     <Replace Tag="LOC_POLICY_RESOURCE_MANAGEMENT_DL_DESCRIPTION" Language="en_US">
       <Text>All improved [ICON_RESOURCE_ALUMINUM] Aluminum and [ICON_RESOURCE_OIL] Oil resources yield 2 additional resource per turn.</Text>
     </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="zh_Hans_CN">
+      <Text>建造区域时+15%生产力。购买一个单元格的费用降低20%。</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="en_US">
+      <Text>+15% Production toward Districts. Reduces the cost of purchasing a tile by 20%.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

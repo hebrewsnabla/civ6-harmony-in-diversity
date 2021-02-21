@@ -381,3 +381,9 @@ values
 --Democracy discount -25%
 --update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
 
+delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,					ModifierId)
+values
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');

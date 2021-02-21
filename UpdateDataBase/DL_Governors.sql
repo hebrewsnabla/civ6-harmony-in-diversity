@@ -2,6 +2,11 @@
 --      Governors Adjustments      --
 -------------------------------------
 
+-- Amani
+update ModifierArguments set Value = 5 where ModifierId = 'EMISSARY_IDENTITY_PRESSURE_TO_FOREIGN_CITIES' and Name = 'Amount';
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
 -- Magnus
 -- 调整顺序
 update GovernorPromotions set Level = 1, column = 2, BaseAbility = 0 where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER';
@@ -135,6 +140,8 @@ values
 -- 地产商人
 	('REAL_ESTATE_DEVELOPER_DISTRICT',					'YieldType',										'YIELD_GOLD'),
 	('REAL_ESTATE_DEVELOPER_DISTRICT',					'Amount',											3),
+	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'YieldType',										'YIELD_GOLD'),
+	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'Amount',											1),
 -- 金融中心
 	('REYNA_MARKET',									'ModifierId',										'REYNA_MARKET_PERCENTAGE_BOOST'),
 	('REYNA_BANK',										'ModifierId',										'REYNA_BANK_PERCENTAGE_BOOST'),
