@@ -72,34 +72,5 @@
     <Replace Tag="LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION" Language="en_US">
       <Text>+2 Appeal to adjacent tiles and + 1 [ICON_Culture] Culture. Each ajacent tile +1 [ICON_FOOD] Food，1 [ICON_PRODUCTION] Production，1 [ICON_SCIENCE] Science，1 [ICON_CULTURE] Culture，1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold if the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion. Cannot be adjacent to another City Park.</Text>
     </Replace>
-    <!-- Governor Liang  -->
-    <!-- Added by PineApple -->
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
-      <Text>耕樵渔猎</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
-      <Text>基础设施</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="zh_Hans_CN">
-      <Text>世外天堂</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有专业化区域的相邻产出+150%。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
-    </Replace>
   </LocalizedText>
 </GameData>

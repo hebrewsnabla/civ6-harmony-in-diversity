@@ -101,10 +101,10 @@
 			<Text>Book of Diverse Crafts</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。</Text>
+			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
-			<Text>This city gets +20% [ICON_Production] Production towards wonders.</Text>
+			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
 			<Text>督农制</Text>
@@ -116,7 +116,7 @@
 			<Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
-			<Text>+15%  [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
+			<Text>+15%	[ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->
@@ -124,6 +124,35 @@
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="en_US">
 			<Text>This city receives yields from all nearby district buildings with regional bonuses, not just from the first building of the same type.</Text>
+		</Replace>
+		<!-- Governor Liang	-->
+		<!-- Added by PineApple -->
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
+			<Text>耕樵渔猎</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
+			<Text>基础设施</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="zh_Hans_CN">
+			<Text>世外天堂</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有专业化区域的相邻产出+150%。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
 		</Replace>
 		<!-- 阿玛尼 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
