@@ -446,3 +446,15 @@ insert or replace into RequirementSetRequirements (RequirementSetId,	Requirement
 	('PLOT_IS_IMPROVED',	'REQUIRES_PLOT_IS_IMPROVED');
 insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	values
 	('PLOT_IS_IMPROVED',	'REQUIREMENTSET_TEST_ALL');
+
+-- City Park
+insert or replace into RequirementSets 
+	(RequirementSetId,												RequirementSetType) 
+values
+	('CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION_AND_ADJACENT',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION_AND_ADJACENT',	'ADJACENT_TO_OWNER'),
+	('CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION_AND_ADJACENT',	'REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION');
