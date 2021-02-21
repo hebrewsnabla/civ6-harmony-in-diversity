@@ -1,6 +1,9 @@
 # Sublime Workspace
 *.sublime-workspace
 
+# DS store
+.DS_Store
+
 # Compiled Lua sources
 luac.out
 
