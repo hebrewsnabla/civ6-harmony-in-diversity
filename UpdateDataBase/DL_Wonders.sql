@@ -227,7 +227,7 @@ insert or replace into ModifierArguments
 	(ModifierId,										Name,		Value) 
 values
 	('MAHABODHI_TEMPLE_PURCHASE_UNIT_APOSTLE_DISCOUNT',	'UnitType',	'UNIT_APOSTLE'),
-	('MAHABODHI_TEMPLE_PURCHASE_UNIT_APOSTLE_DISCOUNT',	'Amount',	15);
+	('MAHABODHI_TEMPLE_PURCHASE_UNIT_APOSTLE_DISCOUNT',	'Amount',	10);
 
 --BUILDING_HAGIA_SOPHIA
 insert or replace into BuildingModifiers

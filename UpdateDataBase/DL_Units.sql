@@ -57,3 +57,9 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 
 --guru abilitity free promotion (combat_strength and movement bonus)
 --todo
+
+--millitary engineer receive ability ignore all movement penalty
+--to do
+
+--worrior monk and nihang can have siege_tower and Battering_ram bonus
+--to do
