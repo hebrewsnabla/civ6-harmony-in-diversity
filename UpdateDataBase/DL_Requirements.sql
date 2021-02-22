@@ -128,11 +128,13 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,									RequirementSetType)
 values
+	('PLAYER_HAS_TECH_CELESTIAL_NAVIGATION',			'REQUIREMENTSET_TEST_ALL'),
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
 values
+	('PLAYER_HAS_TECH_CELESTIAL_NAVIGATION',			'REQUIRES_PLAYER_HAS_TECH_CELESTIAL_NAVIGATION'),
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'PLAYER_IS_ATTACKER_REQUIREMENTS'),
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'OPPONENT_IS_DISTRICT');
 

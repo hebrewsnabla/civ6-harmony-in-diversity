@@ -504,32 +504,62 @@
   <Replace Tag="LOC_BUILDING_NILOMETER_NAME" Language="zh_Hans_CN">
     <Text>测量仪</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_NILOMETER_NAME" Language="en_US">
+    <Text>Nilometer</Text>
+  </Replace>
   <Replace Tag="LOC_BUILDING_NILOMETER_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。</Text>
+    <Text>如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_NILOMETER_DESCRIPTION" Language="en_US">
+    <Text>Extra +2 [ICON_Science] Science if the city center is on the flood plains.[NEWLINE][NEWLINE]May not be built in cities that already has a Triumphal Arch.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_NAME" Language="zh_Hans_CN">
     <Text>凯旋门</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。</Text>
+  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_NAME" Language="en_US">
+    <Text>Triumphal Arch</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_NAME" Language="zh_Hans_CN">
+  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="en_US">
+    <Text>Extra +2 [ICON_Culture] Culture if the city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already has a Nilometer.</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME" Language="zh_Hans_CN">
     <Text>工官</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>城市中每个采集资源的矿山为本建筑+2 [ICON_Production] 生产力。</Text>
+  <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME" Language="en_US">
+    <Text>Official Run Handcraft</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果城市拥有采集奢侈或加成资源的矿山，则额外+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有集市或图腾柱的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="en_US">
+    <Text>Extra +2 [ICON_Production] Production if the city owns mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Fair or Totems.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="zh_Hans_CN">
     <Text>集市</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="en_US">
+    <Text>Fair</Text>
+  </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>市中心每与一个奢侈资源相邻，本建筑便+2 [ICON_Gold] 金币。</Text>
+    <Text>如果市中心与至少一个奢侈资源相邻，则额外+4 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有工官或图腾柱的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="en_US">
+    <Text>Extra +4 [ICON_Gold] Gold if the city center adjacent to at least one luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Totems.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_NAME" Language="zh_Hans_CN">
     <Text>图腾柱</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_TOTEMS_NAME" Language="en_US">
+    <Text>Totems</Text>
+  </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心与山脉或森林相邻，则额外+2 [ICON_Faith] 信仰值和+1 [ICON_GreatProphet] 大预言家点数。</Text>
+    <Text>如果市中心与山脉或森林相邻，则+1 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有工官或集市的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="en_US">
+    <Text>+1 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Fair.</Text>
   </Replace>
   </LocalizedText>
 </GameData>

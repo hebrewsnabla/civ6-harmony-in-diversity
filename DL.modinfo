@@ -275,6 +275,7 @@
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16012</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+      <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
@@ -351,6 +352,7 @@
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
+    <File>UI/Icons/DL_Icons_Buildings.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>

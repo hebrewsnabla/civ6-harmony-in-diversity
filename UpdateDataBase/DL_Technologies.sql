@@ -6,13 +6,15 @@
 -- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
 -- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
+-- unit embark
+-- update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_TECH_CELESTIAL_NAVIGATION' where ModifierId = 'TRAIT_EARLY_OCEAN_NAVIGATION';
+
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
 
 insert or replace into TechnologyPrereqs 
 	(Technology,				PrereqTech)
 values
-	-- 
 	-- Future Era
 	('TECH_FUTURE_TECH',			'TECH_OFFWORLD_MISSION'),
 	('TECH_OFFWORLD_MISSION',		'TECH_ADVANCED_AI'),
@@ -31,7 +33,8 @@ values
 	('TECH_PREDICTIVE_SYSTEMS',		'TECH_NANOTECHNOLOGY'),
 	-- 
 	('TECH_THE_WHEEL',				'TECH_ANIMAL_HUSBANDRY'),
-	('TECH_ENGINEERING',			'TECH_MASONRY');
+	('TECH_ENGINEERING',			'TECH_MASONRY'),
+	('TECH_BUTTRESS',				'TECH_CELESTIAL_NAVIGATION');
 
 -- update Technologies set Cost = 4000 where Cost = 2600;
 -- update Technologies set Cost = 3500 where Cost = 2500;
