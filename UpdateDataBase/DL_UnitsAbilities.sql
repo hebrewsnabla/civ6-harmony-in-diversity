@@ -5,6 +5,7 @@
 insert or replace into Types
 	(Type,														Kind)
 values
+	('ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT',			'KIND_ABILITY'),
 	('ABILITY_BISHOP_EXTRA_MOVEMENT',							'KIND_ABILITY'),
 	('ABILITY_BISHOP_TRAINED_UNIT_STRENGTH',					'KIND_ABILITY'),
 	('ABILITY_BISHOP_TRAINED_UNIT_EXP',							'KIND_ABILITY'),
@@ -33,6 +34,7 @@ values
 insert or replace into TypeTags
 	(Type,																Tag)
 values
+	('ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT',					'CLASS_BUILDER'),
 	('ABILITY_BISHOP_EXTRA_MOVEMENT',									'CLASS_WARRIOR_MONK'),
 	('ABILITY_BISHOP_EXTRA_MOVEMENT',									'CLASS_RELIGIOUS_ALL'),
 	('ABILITY_BISHOP_TRAINED_UNIT_EXP',									'CLASS_WARRIOR_MONK'),
@@ -74,6 +76,10 @@ values
 	('ABILITY_SCHOLASTICISM_BUFF',										'CLASS_RELIGIOUS_ALL');
 
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT',
+	'LOC_ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT_NAME',
+ 	'LOC_ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT_DESCRIPTION',
+ 	1),	
 	('ABILITY_BISHOP_EXTRA_MOVEMENT',
 	'LOC_ABILITY_BISHOP_EXTRA_MOVEMENT_NAME',
  	'LOC_ABILITY_BISHOP_EXTRA_MOVEMENT_DESCRIPTION',
@@ -162,6 +168,7 @@ insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inacti
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
 values
+	('ABILITY_GUILDMASTER_TRAINED_BUILDER_MOVEMENT',		'LIANG_EXTRA_MOVEMENT'),
 	('ABILITY_BISHOP_EXTRA_MOVEMENT',						'BISHOP_EXTRA_MOVEMENT'),
 	('ABILITY_BISHOP_TRAINED_UNIT_STRENGTH',				'BISHOP_TRAINED_UNIT_STRENGTH'),
 	('ABILITY_BISHOP_TRAINED_UNIT_EXP',						'BISHOP_TRAINED_UNIT_EXP'),
@@ -193,6 +200,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,							Permanent)
 values
+	('LIANG_EXTRA_MOVEMENT',						'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',		1),
 	('BISHOP_EXTRA_MOVEMENT',						'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',		1),
 	('BISHOP_TRAINED_UNIT_STRENGTH',				'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',		1),
 	('BISHOP_TRAINED_UNIT_EXP',						'MODIFIER_PLAYER_UNIT_ADJUST_UNIT_EXPERIENCE_MODIFIER',1),
@@ -213,6 +221,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
+	('LIANG_EXTRA_MOVEMENT',						'Amount',	1),
 	('ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER',		'Amount',	1),
 	('BISHOP_EXTRA_MOVEMENT',						'Amount',	1),
 	('BISHOP_TRAINED_UNIT_STRENGTH',				'Amount',	5),
@@ -234,7 +243,6 @@ values
 insert or replace into ModifierStrings
 	(ModifierId,										Context,	Text)
 values
-	('BISHOP_EXTRA_MOVEMENT',							'Preview',	'+{1_Amount} {LOC_BISHOP_EXTRA_MOVEMENT_PREVIEW_TEXT}'),
 	('BISHOP_TRAINED_UNIT_STRENGTH',					'Preview',	'+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT}'),
 	('BISHOP_TRAINED_UNIT_EXP',							'Preview',	'+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),
 	('VICTOR_TRAINED_UNIT_EXP',							'Preview',	'+{1_Amount} {LOC_VICTOR_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),

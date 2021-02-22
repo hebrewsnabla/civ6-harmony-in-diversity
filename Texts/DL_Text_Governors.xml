@@ -93,6 +93,7 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
 			<Text>100% [ICON_Production] Production increase to all nuclear armament projects in the city.+50% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
 		</Replace>
+		<!-- 主教 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>此城对相邻城市释放的宗教压力强度加倍。本城训练的宗教单位+1使用次数。</Text>
 		</Replace>
@@ -142,10 +143,10 @@
 			<Text>Apostles and Warrior Monks trained in the city receive 1 extra promotion when receiving their first promotion. Warrior Monks trained in this city receive +5 [ICON_STRENGTH] Combat Strength and +100% Combat Experience permanently.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出。</Text>
+			<Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出。城市可使用 [ICON_FAITH] 信仰值购买区域。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="en_US">
-			<Text>All relic in this city receive +100%  [ICON_TOURISM] Tourism.</Text>
+			<Text>All relic in this city receive +300%  [ICON_TOURISM] Tourism. Allows city to purchase districts with [ICON_FAITH] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="zh_Hans_CN">
 			<Text>普世牧首</Text>
