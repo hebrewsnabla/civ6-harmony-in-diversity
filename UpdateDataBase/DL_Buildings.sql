@@ -1083,7 +1083,7 @@ insert or replace into Types
 	(Type,															Kind)
 values
 	-- Buildings
-	('BUILDING_NILOMETER',											'KIND_BUILDING'),
+	('BUILDING_NILOMETER_HD',										'KIND_BUILDING'),
 	('BUILDING_TRIUMPHAL_ARCH',										'KIND_BUILDING'),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'KIND_BUILDING'),	
 	('BUILDING_FAIR',												'KIND_BUILDING'),
@@ -1093,11 +1093,11 @@ insert or replace into Buildings
 	(BuildingType, 						Name, 										Cost, 		Description,										
 		PrereqTech,						PrereqCivic,								PrereqDistrict) 
 values
-	('BUILDING_NILOMETER', 				'LOC_BUILDING_NILOMETER_NAME', 				75, 		'LOC_BUILDING_NILOMETER_DESCRIPTION',				
+	('BUILDING_NILOMETER_HD', 			'LOC_BUILDING_NILOMETER_HD_NAME', 			75, 		'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
 	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER'),
 	('BUILDING_TRIUMPHAL_ARCH', 		'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		75, 		'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
 	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER'),
-	('BUILDING_OFFICIAL_RUN_HANDCRAFT', 	'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 	60,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
+	('BUILDING_OFFICIAL_RUN_HANDCRAFT', 'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 60,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
 	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER'),
 	('BUILDING_FAIR', 					'LOC_BUILDING_FAIR_NAME', 					60, 		'LOC_BUILDING_FAIR_DESCRIPTION',										
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER'),
@@ -1107,7 +1107,7 @@ values
 insert or replace into Building_YieldChanges 
 	(BuildingType,													YieldType,					YieldChange)
 values 
-	('BUILDING_NILOMETER',											'YIELD_SCIENCE',			2),
+	('BUILDING_NILOMETER_HD',										'YIELD_SCIENCE',			2),
 	('BUILDING_TRIUMPHAL_ARCH',										'YIELD_CULTURE',			3),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'YIELD_PRODUCTION',			2),	
 	('BUILDING_FAIR',												'YIELD_GOLD',				4),
@@ -1116,7 +1116,7 @@ values
 insert or replace into BuildingModifiers 
  	(BuildingType,													ModifierId)
 values 
- 	('BUILDING_NILOMETER',											'NILOMETER_SCIENCE'),
+ 	('BUILDING_NILOMETER_HD',										'NILOMETER_SCIENCE'),
  	('BUILDING_TRIUMPHAL_ARCH',										'TRIUMPHAL_ARCH_CULTURE'),
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'OFFICIAL_RUN_HANDCRAFT_PRODUCTIAN'),	
  	('BUILDING_FAIR',												'FAIR_GOLD'),
@@ -1145,7 +1145,7 @@ VALUES
 insert or replace into ModifierArguments
 	(ModifierId,							Name,												Value)
 values
-	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER'),
+	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER_HD'),
 	('NILOMETER_SCIENCE',					'YieldType',										'YIELD_SCIENCE'),
 	('NILOMETER_SCIENCE',					'Amount',											2),
 	('TRIUMPHAL_ARCH_CULTURE',				'BuildingType',										'BUILDING_TRIUMPHAL_ARCH'),
@@ -1163,8 +1163,8 @@ values
 insert or replace into MutuallyExclusiveBuildings
 	(Building,								MutuallyExclusiveBuilding)
 values
-	('BUILDING_NILOMETER',					'BUILDING_TRIUMPHAL_ARCH'),
-	('BUILDING_TRIUMPHAL_ARCH',				'BUILDING_NILOMETER'),
+	('BUILDING_NILOMETER_HD',				'BUILDING_TRIUMPHAL_ARCH'),
+	('BUILDING_TRIUMPHAL_ARCH',				'BUILDING_NILOMETER_HD'),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',		'BUILDING_FAIR'),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',		'BUILDING_TOTEMS'),	
 	('BUILDING_FAIR',						'BUILDING_OFFICIAL_RUN_HANDCRAFT'),

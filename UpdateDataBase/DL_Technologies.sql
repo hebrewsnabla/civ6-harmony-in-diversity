@@ -6,22 +6,24 @@
 -- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
 -- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
--- unit embark
--- update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_TECH_CELESTIAL_NAVIGATION' where ModifierId = 'TRAIT_EARLY_OCEAN_NAVIGATION';
-
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
 
 insert or replace into TechnologyPrereqs 
 	(Technology,				PrereqTech)
 values
+	--
+	('TECH_THE_WHEEL',				'TECH_ANIMAL_HUSBANDRY'),
+	('TECH_ENGINEERING',			'TECH_MASONRY'),
+	('TECH_BUTTRESS',				'TECH_CELESTIAL_NAVIGATION'),
+	('TECH_APPRENTICESHIP',			'TECH_IRON_WORKING'),
 	-- Future Era
 	('TECH_FUTURE_TECH',			'TECH_OFFWORLD_MISSION'),
 	('TECH_OFFWORLD_MISSION',		'TECH_ADVANCED_AI'),
 	('TECH_OFFWORLD_MISSION',		'TECH_ADVANCED_POWER_CELLS'),
 	('TECH_OFFWORLD_MISSION',		'TECH_CYBERNETICS'),
 	('TECH_OFFWORLD_MISSION',		'TECH_SMART_MATERIALS'),
-
+	-- 
 	('TECH_SEASTEADS',				'TECH_TELECOMMUNICATIONS'),
 	('TECH_ADVANCED_AI',			'TECH_ROBOTICS'),
 	('TECH_ADVANCED_POWER_CELLS',	'TECH_ROBOTICS'),
@@ -30,11 +32,7 @@ values
 	('TECH_SMART_MATERIALS',		'TECH_ROBOTICS'),
 	('TECH_SMART_MATERIALS',		'TECH_NUCLEAR_FUSION'),
 	('TECH_SMART_MATERIALS',		'TECH_NANOTECHNOLOGY'),
-	('TECH_PREDICTIVE_SYSTEMS',		'TECH_NANOTECHNOLOGY'),
-	-- 
-	('TECH_THE_WHEEL',				'TECH_ANIMAL_HUSBANDRY'),
-	('TECH_ENGINEERING',			'TECH_MASONRY'),
-	('TECH_BUTTRESS',				'TECH_CELESTIAL_NAVIGATION');
+	('TECH_PREDICTIVE_SYSTEMS',		'TECH_NANOTECHNOLOGY');
 
 -- update Technologies set Cost = 4000 where Cost = 2600;
 -- update Technologies set Cost = 3500 where Cost = 2500;
@@ -127,6 +125,3 @@ values
 	('TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST',			'ScalingFactor',			150),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'GreatWorkObjectType',		'GREATWORKOBJECT_ARTIFACT'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'ScalingFactor',			150);
-
-insert or replace into TechnologyPrereqs (Technology,PrereqTech) values
-	('TECH_APPRENTICESHIP','TECH_IRON_WORKING');
