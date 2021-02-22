@@ -198,7 +198,7 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('STATUE_OF_ZEUS_GRANTS_GENERAL',	'Amount',	1),
 ('STATUE_OF_ZEUS_GRANTS_GENERAL',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_GENERAL');
 
---Great Library extra eruka boost 2%
+--Great Library extra eruka boost 3%
 insert or replace into BuildingModifiers
 	(BuildingType,						 ModifierId)
 values
