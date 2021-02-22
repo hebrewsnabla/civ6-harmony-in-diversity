@@ -156,16 +156,20 @@
 		</Replace>
 		<!-- 老马 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="zh_Hans_CN">
-			<Text>巧工记</Text>
+			<Text>大兴土木</Text>
+			<!-- <Text>巧工记</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="en_US">
-			<Text>Book of Diverse Crafts</Text>
+			<Text>Ground Breaker</Text>
+			<!-- <Text>Book of Diverse Crafts</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text>
+			<Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
+			<!-- <Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
-			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text>
+			<Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
+			<!-- <Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
 			<Text>督农制</Text>
@@ -189,10 +193,17 @@
 		<!-- Governor Liang	-->
 		<!-- Added by PineApple -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
-			<Text>耕樵渔猎</Text>
+			<Text>乡村规划</Text>
+			<!-- <Text>耕樵渔猎</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="en_US">
 			<Text>Rural Planning</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="zh_Hans_CN">
+			<Text>建筑大师</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="en_US">
+			<Text>Architecture Master</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
 			<Text>基础设施</Text>
@@ -213,10 +224,12 @@
 			<Text>All Builders trained in this city will get +1 build charge and +1 [ICON_Movement] Movement.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text>
+			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text>
+			<!-- <Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="en_US">
-			<Text>+20% [ICON_Production] Production towards constructing districts and buildings in the city.</Text>
+			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text>
+			<!-- <Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city.</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
