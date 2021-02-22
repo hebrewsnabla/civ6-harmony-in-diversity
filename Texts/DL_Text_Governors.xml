@@ -155,6 +155,12 @@
 			<Text>Oecumenical Patriarch</Text>
 		</Replace>
 		<!-- 老马 -->
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市的 [ICON_Food] 增长+30%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+2 [ICON_Food] 食物。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="en_US">
+			<Text>+30% [ICON_Food] Growth in the city. Your [ICON_TradeRoute] Trade Routes ending here provide +2 [ICON_Food] Food to their starting city.</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="zh_Hans_CN">
 			<Text>大兴土木</Text>
 			<!-- <Text>巧工记</Text> -->
@@ -164,11 +170,11 @@
 			<!-- <Text>Book of Diverse Crafts</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
+			<Text>在城市中建造区域和建筑时加速50%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
 			<!-- <Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
-			<Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
+			<Text>+50% construction speed when constructing districts and buildings in the city. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
 			<!-- <Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
@@ -181,7 +187,7 @@
 			<Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
-			<Text>+15%	[ICON_Food] Food and [ICON_Production] Production in the city.</Text>
+			<Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->

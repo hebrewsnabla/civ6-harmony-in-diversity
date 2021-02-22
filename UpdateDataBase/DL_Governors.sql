@@ -45,6 +45,8 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_P
 -- delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS';
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER';
 
+update ModifierArguments set Value = 30 where ModifierId = 'SURPLUS_LOGISTICS_EXTRA_GROWTH' and Name = 'Amount';
+
 -- 新增效果
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,											ModifierId)
@@ -80,8 +82,8 @@ insert or replace into ModifierArguments
 values
 	-- ('MAGNUS_WONDERS_BOOST',										'Amount',													20),
 	('MAGNUS_EXTRA_DISTRICT',										'Amount',													1),
-	('MAGNUS_FASTER_DISTRICT_CONSTRUCTION',							'Amount',													30),
-	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',							'Amount',													30),
+	('MAGNUS_FASTER_DISTRICT_CONSTRUCTION',							'Amount',													50),
+	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',							'Amount',													50),
 	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',							'IsWonder',													0),
 	('MAGNUS_ADJUST_CITY_YIELD',									'YieldType',												'YIELD_FOOD, YIELD_PRODUCTION'),
 	('MAGNUS_ADJUST_CITY_YIELD',									'Amount',													'15,15'),
