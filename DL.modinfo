@@ -304,9 +304,14 @@
       <File>Gameplay/Governors_Interface.lua</File>
       <File>Gameplay/Temp_Interface.lua</File>
     </ImportFiles>
+    <!-- UI -->
+    <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
+      <Properties><LoadOrder>16018</LoadOrder></Properties>
+      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
+    </ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
-      <Properties><LoadOrder>16018</LoadOrder></Properties>
+      <Properties><LoadOrder>16019</LoadOrder></Properties>
       <File>Texts/DL_TextTag.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Text" criteria="Expansion2">
@@ -352,6 +357,8 @@
     <File>Gameplay/Governors_Interface.xml</File>
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
+    <!-- UI Loaders -->
+    <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>

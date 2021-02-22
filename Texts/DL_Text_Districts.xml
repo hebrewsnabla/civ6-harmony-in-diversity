@@ -2,22 +2,32 @@
 <GameData>
   <LocalizedText>
     <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。[NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。</Text>
+      <Text>您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
+      <!-- [NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。 -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION" Language="en_US">
-      <Text>A district in your city for religious worship. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.[NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points.</Text>
+      <Text>A district in your city for religious worship. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.</Text>
+      <!-- [NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张1单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。[NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。</Text>
+      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张1单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
+      <!-- [NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。 -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="en_US">
-      <Text>A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]Your city border grows by one tile each time a Great Person is expended in this city. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.[NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points.</Text>
+      <Text>A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]Your city border grows by one tile each time a Great Person is expended in this city. +15% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles.</Text>
+      <!-- [NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_HANSA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>德国特色工业区域，替代工业区，建造费用更低。[NEWLINE][NEWLINE]可从每个相邻的运河和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的商业中心、水渠区域处获得+1 [ICON_Production] 生产力加成。每2处相邻资源为其提供1点 [ICON_Production] 生产力加成。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。随着科技和市政的发展，其将获得更多的相邻 [ICON_Production] 生产力加成。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_HANSA_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] Production bonus for each adjacent Canal, and Dam districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub, Aqueduct districts. +1 [ICON_Production] Production bonus for every two adjacent resources. +1 [ICON_Production] Production bonus for every two adjacent district tiles. Additional adjacency [ICON_Production] Production bonus as you advance through the Technology and Civics Tree. -1 Appeal to adjacent tiles.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_OPPIDUM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。建成此区域后，即可解锁“学徒”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_OPPIDUM_DESCRIPTION" Language="en_US">
+      <Text>A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. When the first Oppidum is constructed the Apprenticeship technology is unlocked.[NEWLINE][NEWLINE]+2 [ICON_Production] Production adjacency bonus from Quarries and strategic resources.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>区域从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。没有淡水资源的城市最多获得6个 [ICON_Housing] 住房。相反，已有淡水资源的城市 [ICON_Housing] 住房数量+2；若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。本城所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE] 必须修建在与市中心相邻的单元格中。军事工程师可消耗1次使用次数来完成水渠20%的修建进度。但1个城市只允许建造1个。</Text>

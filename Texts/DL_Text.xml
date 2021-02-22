@@ -2,6 +2,9 @@
 <GameData>
 	<LocalizedText>
 		<!-- Misc -->
+		<Replace Tag="LOC_TYPE_TRAIT_CITIZENSLOTS" Language="zh_Hans_CN">
+			<Text>{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}</Text>
+		</Replace>
 		<Replace Tag="LOC_HAPPINESS_DELIGHTED_NAME" Language="zh_Hans_CN">
 			<Text>愉悦</Text>
 		</Replace>
