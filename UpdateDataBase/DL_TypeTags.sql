@@ -21,15 +21,21 @@ select UnitType ,'CLASS_NAVAL' from Units where FormationClass = 'FORMATION_CLAS
 insert or replace into TypeTags(Type,Tag)
 select UnitType ,'CLASS_AIR' from Units where FormationClass = 'FORMATION_CLASS_AIR';
 insert or replace into TypeTags(Type,Tag)
-select UnitType ,'CLASS_MILLITARY' from Units where FormationClass != 'FORMATION_CLASS_CIVILIAN' AND FormationClass != 'FORMATION_CLASS_SUPPORT';
+select UnitType ,'CLASS_MILITARY' from Units where FormationClass != 'FORMATION_CLASS_CIVILIAN' AND FormationClass != 'FORMATION_CLASS_SUPPORT';
 
 insert or replace into Tags
 	(Tag,				Vocabulary)
 values
-	('CLASS_MILLITARY',	'ABILITY_CLASS'),
+	('CLASS_MILITARY_ENGINEER','ABILITY_CLASS'),
+	('CLASS_MILITARY',	'ABILITY_CLASS'),
 	('CLASS_AIR',		'ABILITY_CLASS'),
 	('CLASS_NAVAL',		'ABILITY_CLASS'),
 	('CLASS_LAND_COMBAT','ABILITY_CLASS');
+
+insert or replace into TypeTags
+	(Type,									Tag)
+values
+	('UNIT_MILITARY_ENGINEER', 'CLASS_MILITARY_ENGINEER');
 -------------------------------------------------
 ---
 -- insert or replace into TypeTags
@@ -56,3 +62,11 @@ values
 -- 	(Tag,								Vocabulary)
 -- values
 -- 	('PROMOTION_CLASS_ALL_MILLITARY_UNITS','ABILITY_CLASS');
+
+------------------------------------------------------------------------
+--typetags warrior monks------
+-- insert or replace into TypeTags
+-- 	(Type,									Tag)
+-- values
+-- 	('UNIT_WARRIOR_MONK',				'CLASS_MELEE');
+----------------------------------------------------------------------
