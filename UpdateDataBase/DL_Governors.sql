@@ -250,10 +250,10 @@ values
 	('CONSCRIPTION_GRANTS_UNIT_ABILITY_MODIFIER',	'AbilityType',	'ABILITY_VICTOR_TRAINED_UNIT_STRENGTH');
 
 --level 3 promotion GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT
-update ModifierArguments set value = 100 where ModifierId = 'EDUCATOR_FASTER_MANHATTAN_PROJECT_RESEARCH' and Name = 'Amount';
-update ModifierArguments set value = 100 where ModifierId = 'EDUCATOR_FASTER_OPERATION_IVY_RESEARCH' and Name = 'Amount';	
-update ModifierArguments set value = 100 where ModifierId = 'EDUCATOR_FASTER_NUCLEAR_DEVICE_PRODUCTION' and Name = 'Amount';
-update ModifierArguments set value = 100 where ModifierId = 'EDUCATOR_FASTER_THERMONUCLEAR_DEVICE_PRODUCTION' and Name = 'Amount';	
+update ModifierArguments set Value = 100 where ModifierId = 'EDUCATOR_FASTER_MANHATTAN_PROJECT_RESEARCH' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'EDUCATOR_FASTER_OPERATION_IVY_RESEARCH' and Name = 'Amount';	
+update ModifierArguments set Value = 100 where ModifierId = 'EDUCATOR_FASTER_NUCLEAR_DEVICE_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'EDUCATOR_FASTER_THERMONUCLEAR_DEVICE_PRODUCTION' and Name = 'Amount';	
 
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT',	'EDUCATOR_FASTER_MANHATTAN_PROJECT_RESEARCH'),
@@ -377,7 +377,7 @@ insert or replace into Modifiers
 	(ModifierId,										ModifierType,					Permanent,	SubjectRequirementSetId)
 values
 	('GUILDMASTER_TRAINED_BUILDER_MOVEMENT',			'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	1,	NULL),
-	('GUILDMASTER_TRAINED_BUILDER_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY_GRANCOLOMBIA_MAYA',1,'UNIT_IS_BUILDER');
+	('GUILDMASTER_TRAINED_BUILDER_MOVEMENT_MODIFIER',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',1,'UNIT_IS_BUILDER');
 
 insert or replace into ModifierArguments
  	(ModifierId,								Name,					Value)
@@ -413,7 +413,7 @@ values
 -- 	('ZONING_COMMISSIONER_FASTER_BUILDING_CONSTRUCTION',		'Amount',										30);
 
 --改为加速
-update Modifiers set Value = 30 where ModifierId = 'ZONING_COMMISSIONER_FASTER_DISTRICT_CONSTRUCTION';
+update ModifierArguments set Value = 30 where ModifierId = 'ZONING_COMMISSIONER_FASTER_DISTRICT_CONSTRUCTION';
 insert or replace into Modifiers
 	(ModifierId,												ModifierType)
 values
@@ -508,7 +508,6 @@ values
 	('WATER_WORKS_IMPROVEMENT_TOURISM',							'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_TOURISM'),
 	('WATER_WORKS_NATIONAL_PARK_TOURISM',						'MODIFIER_SINGLE_CITY_ADJUST_NATIONAL_PARK_TOURISM');
 
-
 insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
@@ -561,7 +560,7 @@ values
 	('BISHOP_TRAINED_RELIGIOUS_UNIT_EXTRA_CHARGES',				'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',1,		NULL),
 	('BISHOP_TRAINED_RELIGIOUS_UNIT_EXTRA_CHARGES_MODIFIER',	'MODIFIER_SINGLE_CITY_RELIGIOUS_SPREADS',1,		'UNIT_IS_RELIGOUS_ALL'),
 	('BISHOP_TRAINED_RELIGIOUS_UNIT_EXTRA_MOVEMENT',			'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',1,		NULL),
-	('BISHOP_TRAINED_RELIGIOUS_UNIT_EXTRA_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY_GRANCOLOMBIA_MAYA',1,		'UNIT_IS_RELIGOUS_ALL_AND_MONK'),
+	('BISHOP_TRAINED_RELIGIOUS_UNIT_EXTRA_MOVEMENT_MODIFIER',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',1,		'UNIT_IS_RELIGOUS_ALL_AND_MONK'),
 	('BISHOP_APOSTLE_PURCHASE_DISCOUNT',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',0,NULL),
 	('BISHOP_MISSIONARY_PURCHASE_DISCOUNT',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',0,NULL),
 	('BISHOP_GURU_PURCHASE_DISCOUNT',							'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',0,NULL),
@@ -630,3 +629,11 @@ values
 	('BISHOP_TRAINED_MONK_FASTER_EXP_MODIFIER',				'AbilityType',			'ABILITY_BISHOP_TRAINED_UNIT_EXP'),
 	('BISHOP_RELIC_TOURISM2',								'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
 	('BISHOP_RELIC_TOURISM2',								'ScalingFactor',		400);
+
+--Educator
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_SCULPTURE_TOURISM' and Name = 'ScalingFactor';
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_PORTRAIT_TOURISM' and Name = 'ScalingFactor';
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_LANDSCAPE_TOURISM' and Name = 'ScalingFactor';
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_RELIGIOUS_TOURISM' and Name = 'ScalingFactor';
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_MUSIC_TOURISM' and Name = 'ScalingFactor';
+update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_WRITING_TOURISM' and Name = 'ScalingFactor';	

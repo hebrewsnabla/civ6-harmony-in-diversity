@@ -191,29 +191,56 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
 			<Text>耕樵渔猎</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="en_US">
+			<Text>Rural Planning</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
 			<Text>基础设施</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="en_US">
+			<Text>Infrastructure</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="zh_Hans_CN">
 			<Text>世外天堂</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="en_US">
+			<Text>Paradise</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="en_US">
+			<Text>All Builders trained in this city will get +1 build charge and +1 [ICON_Movement] Movement.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="en_US">
+			<Text>+20% [ICON_Production] Production towards constructing districts and buildings in the city.</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_Production] Production for all improved plots in this city .</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有专业化区域的相邻产出+150%。</Text>
+			<Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+150%。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
+			<Text>This city’s improvements, buildings, and districts cannot be damaged by Environmental Effects. +150% districts adjacency yields in this city</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="en_US">
+			<Text>All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  .</Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="en_US">
+			<Text>Can construct the City Park improvement in this city.+1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold.</Text>
 		</Replace>
 		<!-- 阿玛尼 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
@@ -221,6 +248,13 @@
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="en_US">
 			<Text>Other cities within 9 tiles and not owned by you lose 2 Loyalty per turn. Immediately send one [ICON_Envoy] Envoy to all City States that already met. </Text>
+		</Replace>
+		<!-- 教育家 -->
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="en_US">
+			<Text>+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
