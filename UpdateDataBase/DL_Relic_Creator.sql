@@ -2,8 +2,8 @@
 INSERT INTO Types (Type, Kind) VALUES
 ('BUILDING_RELIC_CREATOR', 'KIND_BUILDING');
 
-INSERT INTO Buildings (BuildingType, Name, Cost, PrereqDistrict, Description, InternalOnly) VALUES
-('BUILDING_RELIC_CREATOR', 'LOC_BUILDING_RELIC_CREATOR_NAME', 1, 'DISTRICT_CITY_CENTER', 'LOC_BUILDING_RELIC_CREATOR_DESCRIPTION', 1);
+INSERT INTO Buildings (BuildingType, Name, Cost, Description, InternalOnly) VALUES
+('BUILDING_RELIC_CREATOR', 'LOC_BUILDING_RELIC_CREATOR_NAME', 1, 'LOC_BUILDING_RELIC_CREATOR_DESCRIPTION', 1);
 
 -- Attach grant relic modifier to Relic Creator building
 INSERT INTO BuildingModifiers (BuildingType, ModifierId) VALUES

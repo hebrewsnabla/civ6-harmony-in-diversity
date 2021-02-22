@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_NAME" Language="zh_Hans_CN">
+      <Text>产出制造机</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_NAME" Language="en_US">
+      <Text>Yield Creator</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>制造一定量的产出</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_DESCRIPTION" Language="en_US">
+      <Text>Create certain amount of yield.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_WORKER_NAME" Language="zh_Hans_CN">
+      <Text>加产出助手</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_WORKER_NAME" Language="en_US">
+      <Text>Worker for Yield Creator</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_WORKER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>建造完成给产出制造机加产出</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_YIELD_CREATOR_WORKER_DESCRIPTION" Language="en_US">
+      <Text>Grant Yield Creator certain amount of yield when established.</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>
