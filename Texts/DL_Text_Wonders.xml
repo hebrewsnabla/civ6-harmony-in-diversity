@@ -50,7 +50,7 @@
       <Text>Grants 3 Archers, 3 Spearmen, and a Battering Ram.1 free Great General appears near the city where the wonder was built.+50% [ICON_PRODUCTION] Production towards anti-cavalry units. Must be built on flat land adjacent to an Encampment district with a Barracks.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>所有远古和古典时代的科技均获得 [ICON_TechBoosted] 尤里卡。建成后每次触发 [ICON_TechBoosted] 尤里卡时，[ICON_TechBoosted] 尤里卡提供的 [ICON_SCIENCE] 科技值+3%（不包括建成时触发的远古古典 [ICON_TechBoosted] 尤里卡）。其他玩家招募 [ICON_GreatScientist] 大科学家时将随机获得1个 [ICON_TechBoosted] 尤里卡。[NEWLINE][NEWLINE]必须建在与学院区域（其中须建有图书馆）相邻的平坦地面上。</Text>
+      <Text>所有远古和古典时代的科技均获得 [ICON_TechBoosted] 尤里卡。建成后，[ICON_TechBoosted] 尤里卡提供的 [ICON_SCIENCE] 科技值+3%（不包括建成时触发的远古古典 [ICON_TechBoosted] 尤里卡）。其他玩家招募 [ICON_GreatScientist] 大科学家时将随机获得1个 [ICON_TechBoosted] 尤里卡。[NEWLINE][NEWLINE]必须建在与学院区域（其中须建有图书馆）相邻的平坦地面上。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION" Language="en_US">
       <Text>Receive boosts to all Ancient and Classical era technologies. [ICON_TechBoosted]Eruka provides extra 3% [ICON_SCIENCE] Science after finishing this wonder(Ancient and Classical Techs excluded).Receive a random tech boost after another player recruits a [ICON_GreatScientist] Great Scientist. [NEWLINE][NEWLINE]Must be built on flat land adjacent to a Campus district with a Library.</Text>

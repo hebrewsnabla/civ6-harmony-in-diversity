@@ -1091,18 +1091,18 @@ values
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 										Cost, 		Description,										
-		PrereqTech,						PrereqCivic,								PrereqDistrict) 
+		PrereqTech,						PrereqCivic,								PrereqDistrict,PurchaseYield) 
 values
 	('BUILDING_NILOMETER_HD', 			'LOC_BUILDING_NILOMETER_HD_NAME', 			75, 		'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
-	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER'),
+	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER','YIELD_GOLD'),
 	('BUILDING_TRIUMPHAL_ARCH', 		'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		75, 		'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
-	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER'),
+	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER','YIELD_GOLD'),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT', 'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 60,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
-	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER'),
+	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER','YIELD_GOLD'),
 	('BUILDING_FAIR', 					'LOC_BUILDING_FAIR_NAME', 					60, 		'LOC_BUILDING_FAIR_DESCRIPTION',										
-	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER'),
+	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER','YIELD_GOLD'),
 	('BUILDING_TOTEMS', 				'LOC_BUILDING_TOTEMS_NAME', 				60, 		'LOC_BUILDING_TOTEMS_DESCRIPTION',		
-	null,								'CIVIC_CODE_OF_LAWS',						'DISTRICT_CITY_CENTER');
+	null,								'CIVIC_CODE_OF_LAWS',						'DISTRICT_CITY_CENTER','YIELD_GOLD');
 	
 insert or replace into Building_YieldChanges 
 	(BuildingType,													YieldType,					YieldChange)
