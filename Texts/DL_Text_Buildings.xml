@@ -501,5 +501,35 @@
   <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="en_US">
     <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. + 1 [ICON_VisLimited] Visibility to all other Civs.</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_NILOMETER_NAME" Language="zh_Hans_CN">
+    <Text>测量仪</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_NILOMETER_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_NAME" Language="zh_Hans_CN">
+    <Text>凯旋门</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_NAME" Language="zh_Hans_CN">
+    <Text>工官</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_OFFCIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>城市中每个采集资源的矿山为本建筑+2 [ICON_Production] 生产力。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="zh_Hans_CN">
+    <Text>集市</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>市中心每与一个奢侈资源相邻，本建筑便+2 [ICON_Gold] 金币。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TOTEMS_NAME" Language="zh_Hans_CN">
+    <Text>图腾柱</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果市中心与山脉或森林相邻，则额外+2 [ICON_Faith] 信仰值和+1 [ICON_GreatProphet] 大预言家点数。</Text>
+  </Replace>
   </LocalizedText>
 </GameData>
