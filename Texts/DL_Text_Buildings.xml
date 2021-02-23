@@ -556,10 +556,10 @@
     <Text>Totems</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心与山脉或森林相邻，则+1 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有工官或集市的城市中。</Text>
+    <Text>如果市中心与山脉或森林相邻，则+2 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有工官或集市的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="en_US">
-    <Text>+1 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Fair.</Text>
+    <Text>+2 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Fair.</Text>
   </Replace>
   </LocalizedText>
 </GameData>

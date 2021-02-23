@@ -1158,7 +1158,7 @@ values
 	('FAIR_GOLD',							'YieldType',										'YIELD_GOLD'),
 	('FAIR_GOLD',							'Amount',											4),
 	('TOTEMS_FAITH',						'GreatPersonClassType',								'GREAT_PERSON_CLASS_PROPHET'),
-	('TOTEMS_FAITH',						'Amount',											1);
+	('TOTEMS_FAITH',						'Amount',											2);
 
 insert or replace into MutuallyExclusiveBuildings
 	(Building,								MutuallyExclusiveBuilding)

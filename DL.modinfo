@@ -72,6 +72,7 @@
       <File>Texts/DL_Text_CityStates.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
+      <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
       <!-- <File>Texts/DL_Text_Improvements.xml</File> -->
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
@@ -226,6 +227,11 @@
     <!-- Main -->
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
+      <!-- Double Great Person need to update in the first -->
+      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Balance" criteria="Expansion2">
+      <Properties><LoadOrder>16010</LoadOrder></Properties>
       <File>UpdateDataBase/DL_Adjacency.sql</File>
       <File>UpdateDataBase/DL_AdjustYields.sql</File>
       <File>UpdateDataBase/DL_AI.sql</File>
@@ -325,6 +331,7 @@
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
       <File>Texts/DL_Text_Governors.xml</File>
+      <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
       <File>Texts/DL_Text_Improvements.xml</File>
       <File>Texts/DL_Text_NaturalWonders.xml</File>
@@ -419,6 +426,7 @@
     <File>UpdateDataBase/DL_Civilopedia.xml</File>
     <File>UpdateDataBase/DL_Diplomacy.sql</File>
     <File>UpdateDataBase/DL_Districts.sql</File>
+    <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
     <File>UpdateDataBase/DL_GlobalParameters.sql</File>
     <File>UpdateDataBase/DL_Goodyhuts.sql</File>
     <File>UpdateDataBase/DL_Governors.sql</File>
@@ -458,6 +466,7 @@
     <File>Texts/DL_Text_CivTraits.xml</File>
     <File>Texts/DL_Text_Districts.xml</File>
     <File>Texts/DL_Text_Governors.xml</File>
+    <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
     <File>Texts/DL_Text_Improvements.xml</File>
     <File>Texts/DL_Text_NaturalWonders.xml</File>
