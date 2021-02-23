@@ -230,11 +230,11 @@
 			<Text>All Builders trained in this city will get +1 build charge and +1 [ICON_Movement] Movement.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text>
+			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力20%的大工程师点数。</Text>
 			<!-- <Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="en_US">
-			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text>
+			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 20% of the cost of the building.</Text>
 			<!-- <Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city.</Text> -->
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">

@@ -3,34 +3,34 @@
 <GameData>
   <LocalizedText>
     <Replace Tag="LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商业家）处获得的 [ICON_GreatPerson] 伟人点数+1。</Text>
+      <Text>从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商业家）处获得的 [ICON_GreatPerson] 伟人点数+2。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION" Language="en_US">
-      <Text>+1 [ICON_GreatPerson] Great Person Points from Holy Sites (Prophet), Campuses (Scientist), Theater Squares  (Writer), Industial Zones (Engineer) and Commercial Hubs (Merchant).</Text>
+      <Text>+2 [ICON_GreatPerson] Great Person Points from Holy Sites (Prophet), Campuses (Scientist), Theater Squares  (Writer), Industial Zones (Engineer) and Commercial Hubs (Merchant).</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+4 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_Faith] Faith from Quarries. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry.</Text>
+      <Text>+2 [ICON_Faith] Faith from Quarries. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>所有奢侈和加成矿 +1 [ICON_CULTURE] 文化和 +1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>所有奢侈和加成矿 +1 [ICON_CULTURE] 文化和 +1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION" Language="en_US">
-      <Text>+1 [ICON_Faith] Faith and +1 [ICON_CULTURE] Culture from Mines over Luxury and Bonus resources. +1 [ICON_GreatProphet] Great Prophet point per turn if a city owns mines over Luxury or Bonus resources.</Text>
+      <Text>+1 [ICON_Faith] Faith and +1 [ICON_CULTURE] Culture from Mines over Luxury and Bonus resources. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns mines over Luxury or Bonus resources.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在惊艳地块上，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在惊艳地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_Faith] Faith from tiles with Breathtaking Appeal. +1 [ICON_Faith] Faith from tiles with Charming Appeal. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Breathtaking tile.</Text>
+      <Text>+2 [ICON_Faith] Faith from tiles with Breathtaking Appeal. +1 [ICON_Faith] Faith from tiles with Charming Appeal. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Breathtaking tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>地热裂缝和火山土单元格提供的 [ICON_FAITH] 信仰值+2。每座拥有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>地热裂缝和火山土单元格提供的 [ICON_FAITH] 信仰值+2。每座拥有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+4 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_FAITH] Faith from Geothermal Fissures and Volcanic Soil. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Geothermal Fissures, Volcanic Soil or Volcano (Volcanic Wonders included) tile.</Text>
+      <Text>+2 [ICON_FAITH] Faith from Geothermal Fissures and Volcanic Soil. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Geothermal Fissures, Volcanic Soil or Volcano (Volcanic Wonders included) tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_NAME" Language="zh_Hans_CN">
       <Text>极地子民</Text>
@@ -39,10 +39,10 @@
       <Text>The People of Polar</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>市中心相邻每个冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Faith]信仰值，如城市市中心坐落在冻土地块上，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>市中心相邻每个冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Faith]信仰值，如城市市中心坐落在冻土地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION" Language="en_US">
-      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Tundra tile. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Tundra tile.</Text>
+      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Tundra tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Tundra tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_NAME" Language="zh_Hans_CN">
       <Text>沙之女神</Text>
@@ -51,10 +51,10 @@
       <Text>Goddess of the Desert</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>市中心相邻每个沙漠单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市市中心坐落在沙漠地块上，则每回合+1 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>市中心相邻每个沙漠单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市市中心坐落在沙漠地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="en_US">
-      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Desert tile.</Text>
+      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Desert tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>边界扩张速度提升15%，城市创建时获得额外4个单元格。</Text>

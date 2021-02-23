@@ -20,10 +20,10 @@
       <Text>+1 [ICON_Food] Food, +2 [ICON_Culture] Culture, +1 [ICON_Production] Production to all Rainforest tiles for this city. Must be built on Rainforest.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORACLE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。该城市区域为它们类型的 [ICON_GreatPerson] 伟人点数+3（比如，来自剧院广场区的 [ICON_GreatWriter] 大作家点数）。必须建在丘陵上。</Text>
+      <Text>伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。该城市区域为它们类型的 [ICON_GreatPerson] 伟人点数+6（比如，来自剧院广场区的 [ICON_GreatWriter] 大作家点数）。必须建在丘陵上。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORACLE_DESCRIPTION" Language="en_US">
-      <Text>Patronage of Great People costs 25% less [ICON_Faith] Faith. Districts in this city provide +3 [ICON_GreatPerson] Great Person points of their type (for example, [ICON_GreatWriter] Great Writer points from the Theater Square district). Must be built on Hills.</Text>
+      <Text>Patronage of Great People costs 25% less [ICON_Faith] Faith. Districts in this city provide +6 [ICON_GreatPerson] Great Person points of their type (for example, [ICON_GreatWriter] Great Writer points from the Theater Square district). Must be built on Hills.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>此奇观4个单元格内的每个资源营地、牧场和种植园改良设施+1 [ICON_AMENITIES] 宜居度。必须放置在营地改良设施旁。</Text>

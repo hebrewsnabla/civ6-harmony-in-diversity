@@ -42,7 +42,7 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
     if player ~= nil and city ~= nil and building ~= nil then
         local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER']
         local greatEngID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index
-        local amount = building.Cost * 0.1
+        local amount = building.Cost * 0.2
         local governor = city:GetAssignedGovernor()
         if governor ~= nil and promotion ~= nil then
             -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())
