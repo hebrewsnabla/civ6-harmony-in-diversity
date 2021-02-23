@@ -16,7 +16,7 @@ end
 function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
     local player = Players[ePlayer]
     local ambassadorID = GameInfo.Governors['GOVERNOR_THE_AMBASSADOR'].Index
-    local tributumID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY'].Index
+    local tributumID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR'].Index
     -- print(ePlayer, ambassadorID, tributumID, 'e', eGovernor, ePromotion)
     if player ~= nil then
         if (ambassadorID == eGovernor) and (tributumID == ePromotion) then
@@ -42,7 +42,7 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
     local building = GameInfo.Buildings[buildingID]
     -- print(building.BuildingType)
     if player ~= nil and city ~= nil and building ~= nil then
-        local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER']
+        local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_ZONING_COMMISSIONER']
         local greatEngID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index
         local amount = building.Cost * 0.2
         local governor = city:GetAssignedGovernor()
