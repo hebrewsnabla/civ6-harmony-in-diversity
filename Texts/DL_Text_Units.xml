@@ -26,7 +26,7 @@
       <Text>Medieval era support unit. Requires an Armory to produce. Can construct Roads, Railroads, Forts, Airstrips, Missile Silos, and Mountain Tunnel improvements. One of their build charges can also be used to complete 20% of a Canal, Dam or Aqueduct district or a Flood Barrier building. Can move with ability that ignore all the terrain and river.</Text>
     </Replace>
     <Replace Tag="LOC_UNIT_WARRIOR_MONK_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>高移动力的古典陆地战斗单位，拥有独特的升级树。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。</Text>
+      <Text>高移动力的陆地战斗单位，拥有独特的升级树。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。</Text>
     </Replace>
     <Replace Tag="LOC_UNIT_WARRIOR_MONK_DESCRIPTION" Language="en_US">
       <Text>Fast-moving land combat unit with a unique promotion tree. Can only be purchased by [ICON_FAITH] Faith in city with a Temple. </Text>

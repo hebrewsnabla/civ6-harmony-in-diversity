@@ -59,6 +59,12 @@
 		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_COMBAT_9_CHAPTER_CONTENT_PARA_2" Language="en_US">
 			<Text>Walls add extra protection to a city or Encampment, making it even more difficult to conquer. This protection is like armor, shielding the city from attacks. Melee units deal only 15% of their normal damage to walls, and ranged units deal only 75% of their normal damage. Only Bombard units deal 100% of their normal damage to walls, making them necessary to capture a fortified city. If the walls are damaged, they stop being as effective and the district's health will start taking a little bit of damage with every attack. Walls can only recover health with a Project found in the city's Production Queue, like repairing district buildings, that becomes available if the district has not taken any damage for 3 consecutive turns. Once a city has walls, it can make ranged attacks against enemy units using a "City Ranged Strength" stat.[NEWLINE][NEWLINE]The City Combat Strength is based on the [ICON_Strength] Combat Strength of the strongest melee unit built by your civilization, minus 10, or by the [ICON_Strength] Combat Strength of a garrisoned military unit.[NEWLINE][NEWLINE]The City Ranged Strength is based on the [ICON_Ranged] Ranged Strength of the strongest ranged unit built by your civilization.[NEWLINE][NEWLINE]The city gets additional bonuses to its City Combat Strength for each non-pillaged district it has, making big cities harder to capture, and from terrain and a few other modifiers sources.</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_AMANI_FERR_PROMOTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阿玛尼训练：免费晋升1级</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_AMANI_FERR_PROMOTION_DESCRIPTION" Language="en_US">
+			<Text>1 free promotion from Amani </Text>
+		</Replace>
 		<Replace Tag="LOC_ABILITY_MILLITARY_ENGINEER_IGNORE_TERRAIN_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>无视地形造成的移动力损益</Text>
 		</Replace>
