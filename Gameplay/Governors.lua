@@ -1,29 +1,29 @@
 -- Governors.lua
 -- 
 
-if ExposedMembers.DLHD == nil then
-    ExposedMembers.DLHD = {}
-end
+-- if ExposedMembers.DLHD == nil then
+--     ExposedMembers.DLHD = {}
+-- end
 
 
-function sendEnvoy(playerID, citystateID)
-    -- Need to make sure the second is citystate
-    local player = Players[playerID]
-    if player ~= nil then
-        player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
-    end
-end
+-- function sendEnvoy(playerID, citystateID)
+--     -- Need to make sure the second is citystate
+--     local player = Players[playerID]
+--     if player ~= nil then
+--         player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
+--     end
+-- end
 
-ExposedMembers.DLHD.sendEnvoy = sendEnvoy
+-- ExposedMembers.DLHD.sendEnvoy = sendEnvoy
 
-function AddGreatPeoplePoints(playerID, gppID, amount)
-    local player = Players[playerID]
-    if player ~= nil then
-        player:GetGreatPeoplePoints():ChangePointsTotal(gppID, amount)
-    end
-end
+-- function AddGreatPeoplePoints(playerID, gppID, amount)
+--     local player = Players[playerID]
+--     if player ~= nil then
+--         player:GetGreatPeoplePoints():ChangePointsTotal(gppID, amount)
+--     end
+-- end
 
-ExposedMembers.DLHD.AddGreatPeoplePoints = AddGreatPeoplePoints
+-- ExposedMembers.DLHD.AddGreatPeoplePoints = AddGreatPeoplePoints
 -- -- 
 -- -- Trade Route doubles
 -- function OnPlayerTurnStarted(playerID)
