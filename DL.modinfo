@@ -319,7 +319,6 @@
       <File>Texts/DL_Text.xml</File>
       <File>Texts/DL_Text_Beliefs.xml</File>
       <File>Texts/DL_Text_Buildings.xml</File>
-      <File>Texts/DL_Text_City_Yield.xml</File>
       <File>Texts/DL_Text_CityStates.xml</File>
       <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
       <File>Texts/DL_Text_Civilopedia.xml</File>
@@ -453,7 +452,6 @@
     <File>Texts/DL_Text.xml</File>
     <File>Texts/DL_Text_Beliefs.xml</File>
     <File>Texts/DL_Text_Buildings.xml</File>
-    <File>Texts/DL_Text_City_Yield.xml</File>
     <File>Texts/DL_Text_CityStates.xml</File>
     <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
     <File>Texts/DL_Text_Civilopedia.xml</File>
