@@ -1,10 +1,10 @@
 -- =======================================================================
 -- Common helper functions to be used by other files.
 -- =======================================================================
+Utils = {};
 
 -- Available numbers in descending order.
 local m_YieldAvailableNums = { 10, 5, 2, 1 };
-
 -- Cache city yield in this format:
 -- {
 --      "123" = {               -- CityID
@@ -17,8 +17,52 @@ local m_YieldAvailableNums = { 10, 5, 2, 1 };
 --
 local m_CachedCityYield = {};
 
+Utils.SendEnvoy = function(playerID, citystateID)
+    -- Need to make sure the second is citystate
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
+    end
+end
+
+Utils.AddGreatPeoplePoints = function(playerID, gppID, amount)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetGreatPeoplePoints():ChangePointsTotal(gppID, amount)
+    end
+end
+
+-- Generic helper function to grant a relic to the given player.
+Utils.GrantRelic = function(playerID)
+    local player = Players[playerID];
+    if player == nil then return end
+
+    local playerCities = player:GetCities()
+
+    if playerCities ~= nil then
+        local capitalCity = playerCities:GetCapitalCity();
+        if capitalCity ~= nil then
+            capitalCity:AttachModifierByID("MODIFIER_RELIC_CREATOR");
+
+            -- Cancel additional notification for the local player (the last RELIC_CREATED notification).
+            local lastRelicCreated = nil;
+            local localPlayerId = Game.GetLocalPlayer();
+            local notificationIds = NotificationManager.GetList(localPlayerId);
+            for _, notificationId in ipairs(notificationIds) do
+                local notification = NotificationManager.Find(localPlayerId, notificationId);
+                if notification ~= nil and notification:GetType() == NotificationTypes.RELIC_CREATED then
+                    lastRelicCreated = notification;
+                end
+            end
+            if lastRelicCreated ~= nil and not lastRelicCreated:IsDismissed() then
+                NotificationManager.Dismiss(localPlayerId, lastRelicCreated:GetID());
+            end
+        end
+    end
+end
+
 -- Change city yield to the given amount.
-function ChangeCityYield(playerID, cityID, yieldAmount, yieldType)
+Utils.ChangeCityYield = function(playerID, cityID, yieldAmount, yieldType)
     local city:table = CityManager.GetCity(playerID, cityID);
 
     if city ~= nil then
@@ -77,3 +121,6 @@ function GetModifierList(yieldAmount, yieldType)
     -- This line shouldn't be executed.
     return {};
 end
+
+ExposedMembers.DLHD = ExposedMembers.DLHD or {};
+ExposedMembers.DLHD.Utils = Utils;

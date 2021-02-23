@@ -1,6 +1,8 @@
 -- Governors_interface.lua
 -- 
 
+Utils = ExposedMembers.DLHD.Utils;
+
 function isMinor(player)
     if player == nil then
         return false
@@ -23,7 +25,7 @@ function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
                 for _, id in pairs(playersMetIDs) do
                     local other_player = Players[id]
                     if isMinor(other_player) then
-                        ExposedMembers.DLHD.sendEnvoy(ePlayer, id)
+                        Utils.SendEnvoy(ePlayer, id)
                     end
                 end
             end
@@ -47,7 +49,7 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
         if governor ~= nil and promotion ~= nil then
             -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())
             if governor:IsEstablished() and governor:HasPromotion(promotion.Hash) then
-                ExposedMembers.DLHD.AddGreatPeoplePoints(playerID, greatEngID, amount)
+                Utils.AddGreatPeoplePoints(playerID, greatEngID, amount)
             end
         end
     end

@@ -330,7 +330,6 @@
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Pantheon.xml</File>
       <File>Texts/DL_Text_Policies.xml</File>
-      <File>Texts/DL_Text_Relic_Creator.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
       <File>Texts/DL_Text_Wonders.xml</File>
     </UpdateText>
@@ -463,7 +462,6 @@
     <File>Texts/DL_Text_NaturalWonders.xml</File>
     <File>Texts/DL_Text_Pantheon.xml</File>
     <File>Texts/DL_Text_Policies.xml</File>
-    <File>Texts/DL_Text_Relic_Creator.xml</File>
     <File>Texts/DL_Text_Units.xml</File>
     <File>Texts/DL_Text_Wonders.xml</File>
   </Files>
