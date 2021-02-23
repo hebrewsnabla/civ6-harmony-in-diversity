@@ -24,6 +24,8 @@ values
 
 -- Policy Cards
 
+-- TODO: Remove or adjust POLICY_MACHIAVELLIANISM，极权主义，间谍加速50%，行动时间-25%。
+
 update ModifierArguments set Value = 100 where ModifierID = 'RAID_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGEDISTRICT';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEIMPROVE';
@@ -63,7 +65,6 @@ update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 
 update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE'; 
-
 
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
