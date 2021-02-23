@@ -92,10 +92,10 @@
       <Text>+400% [ICON_POWER] Power for all Offshore Windfarms, Solar Farms, Wind Farms, Geothermal Plants, and Hydroelectric Dams. This building and these improvements provide [ICON_TOURISM] Tourism equal to their [ICON_POWER] Power. Rainforest and Marsh in your empire now +1 Appeal to adjacent tiles(rather than -1).[NEWLINE][NEWLINE] Must be built along a River adjacent to a Neighborhood district.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_KOTOKU_IN_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>此城+20% [ICON_Faith] 信仰值。赠送4名武僧。本城生产的武僧获得额外1级免费晋升。[NEWLINE][NEWLINE]必须建在拥有寺庙的圣地区域旁。获得武僧的前提条件是玩家创立了宗教，或此玩家/城市拥有主流宗教。</Text>
+      <Text>此城+20% [ICON_Faith] 信仰值。赠送4名有免费晋升的武僧。本城生产的武僧获得额外1级免费晋升。[NEWLINE][NEWLINE]必须建在拥有寺庙的圣地区域旁。获得武僧的前提条件是玩家创立了宗教，或此玩家/城市拥有主流宗教。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_KOTOKU_IN_DESCRIPTION" Language="en_US">
-      <Text>+20% [ICON_Faith] Faith in this city. Grants 4 Warrior Monks. All Worrior Monks trained in this city receive a free promotion. [NEWLINE][NEWLINE]Must be built adjacent to a Holy Site district with a Temple. Warrior Monks can only be received if player has founded a religion or if there is a majority religion for this player or city.</Text>
+      <Text>+20% [ICON_Faith] Faith in this city. Grants 4 Warrior Monks with free promotion. All Worrior Monks trained in this city receive a free promotion. [NEWLINE][NEWLINE]Must be built adjacent to a Holy Site district with a Temple. Warrior Monks can only be received if player has founded a religion or if there is a majority religion for this player or city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>+1外交政策槽位。+1外交胜利点数。建成时+50%当前累积的 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]必须建在靠近山脉的丘陵上。</Text>

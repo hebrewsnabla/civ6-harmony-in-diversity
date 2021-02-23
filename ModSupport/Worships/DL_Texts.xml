@@ -86,10 +86,10 @@
 			<Text>Allow constructs Daoguan (+2 [ICON_Faith] Faith; +1 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre). +1 extra Great Person Points if Districts have builidings within.)</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个区域加一对应伟人点（剧院是大作家、大艺术家和大音乐家），如果区域内已有建筑，每个区域再加一对应伟人点。</Text>
+			<Text>每个区域加2对应伟人点（剧院是大作家、大艺术家和大音乐家），如果区域内已有建筑，每个区域再加2对应伟人点。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre). +1 extra Great Person Points if Districts have builidings within.</Text>
+			<Text>+2 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre). +2 extra Great Person Points if Districts have builidings within.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_MBARI_NAME" Language="zh_Hans_CN">
 			<Text>姆巴里</Text>

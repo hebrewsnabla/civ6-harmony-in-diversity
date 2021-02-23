@@ -24,10 +24,10 @@
       <Text>A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] Production bonus for each adjacent Canal, and Dam districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub, Aqueduct districts. +1 [ICON_Production] Production bonus for every two adjacent resources. +1 [ICON_Production] Production bonus for every two adjacent district tiles. Additional adjacency [ICON_Production] Production bonus as you advance through the Technology and Civics Tree. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_OPPIDUM_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。建成此区域后，即可解锁“学徒”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。</Text>
+      <Text>高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。建成此区域后，即可解锁“学徒”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_OPPIDUM_DESCRIPTION" Language="en_US">
-      <Text>A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. When the first Oppidum is constructed the Apprenticeship technology is unlocked.[NEWLINE][NEWLINE]+2 [ICON_Production] Production adjacency bonus from Quarries and strategic resources.</Text>
+      <Text>A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. When the first Oppidum is constructed the Apprenticeship technology is unlocked.[NEWLINE][NEWLINE]+2 [ICON_Production] Production adjacency bonus from Quarries and strategic resources. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>区域从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。没有淡水资源的城市最多获得6个 [ICON_Housing] 住房。相反，已有淡水资源的城市 [ICON_Housing] 住房数量+2；若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。本城所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE] 必须修建在与市中心相邻的单元格中。军事工程师可消耗1次使用次数来完成水渠20%的修建进度。但1个城市只允许建造1个。</Text>
@@ -60,13 +60,13 @@
       <Text>A district unique to England for naval activity in your city. Replaces the Harbor district. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land.[NEWLINE][NEWLINE]+1 [ICON_Movement] Movement for all naval units built in Dockyard[NEWLINE]+2 [ICON_Gold] Gold and +4 Loyalty per turn when built on a foreign continent. Cannot be built on Reef.+2 [ICON_HOUSING] Housing. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>祖鲁特色区域，替代军营。+2 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 生产陆地军事单位+30% [ICON_PRODUCTION] 生产力。为本城已开发的[ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>祖鲁特色区域，替代军营。+2 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。为本城已开发的[ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="en_US">
       <Text> A district unique to Zulu which replaces the Encampment. Provides +2 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>您城市里的军事机构区。[NEWLINE] 生产陆地军事单位+15% [ICON_PRODUCTION] 生产力。为本城的已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="en_US">
       <Text> A district in your city for military facilities.[NEWLINE] +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
@@ -78,7 +78,7 @@
       <Text> A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +5 [ICON_Housing] Housing , +3 [ICON_Food] Food, and + 5 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food to all adjacent Forest and Rainforest tiles. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。建造空中单位时，+25% [Icon_Production] 生产力。为相邻单元格+1魅力。</Text>
+      <Text>可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。建造空中单位时，+25%建造速度。为相邻单元格+1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_AERODROME_DL_DESCRIPTION" Language="en_US">
       <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens. +25% [Icon_Production] Production towards Air Units. -1 Appeal to adjacent tiles. </Text>
@@ -90,7 +90,7 @@
       <Text>Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. +1 [ICON_ENVOY] Envoy if built next to the city center. Enemy Spies operate at 2 levels below normal targeting this district and adjacent districts. Only 1 can exist in your empire at a time. Grants the ability to construct an additional Spy.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。给相邻单元格-1魅力。生产陆地军事单位+15% [ICON_PRODUCTION] 生产力。为本城已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。</Text>
+      <Text> 越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。给相邻单元格-1魅力。对陆地军事单位+15%建造速度。为本城已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="en_US">
       <Text>A district unique to Vietnam which replaces the Encampment. +2 [ICON_CULTURE] Culture for each adjacent district. After Flight is researched receive [ICON_TOURISM] Tourism equal to the [ICON_CULTURE] Culture output. This district does not require population, is cheaper to build, cannot be built adjacent to the city center, and is not a specialty district.[NEWLINE]One per city. -1 Appeal to adjacent tiles. +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city.</Text>
