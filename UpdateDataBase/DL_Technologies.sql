@@ -34,6 +34,7 @@ values
 	('TECH_SMART_MATERIALS',		'TECH_NANOTECHNOLOGY'),
 	('TECH_PREDICTIVE_SYSTEMS',		'TECH_NANOTECHNOLOGY');
 
+-- v1
 -- update Technologies set Cost = 4000 where Cost = 2600;
 -- update Technologies set Cost = 3500 where Cost = 2500;
 -- update Technologies set Cost = 3000 where Cost = 2200;
@@ -54,37 +55,70 @@ values
 -- update Technologies set Cost = 100 where Cost = 80;
 -- update Technologies set Cost = 60 where Cost = 50;
 
-update Technologies set Cost = 3600 where Cost = 2600;
+-- v2
+-- update Technologies set Cost = 3600 where Cost = 2600;
+-- -- 
+-- update Technologies set Cost = 3300 where Cost = 2500;
+-- update TechnologyRandomCosts set Cost = 3100 where Cost = 2300;
+-- update TechnologyRandomCosts set Cost = 3000 where Cost = 2200;
+-- -- update Technologies set Cost = 2700 where Cost = 2200;
+-- -- 
+-- update Technologies set Cost = 2750 where Cost = 2155;
+-- update Technologies set Cost = 2600 where Cost = 1850;
+-- -- 
+-- update Technologies set Cost = 2250 where Cost = 1660;
+-- update Technologies set Cost = 2100 where Cost = 1480;
+-- -- 
+-- update Technologies set Cost = 1850 where Cost = 1370;
+-- update Technologies set Cost = 1600 where Cost = 1250;
+-- -- 
+-- update Technologies set Cost = 1350 where Cost = 1070;
+-- update Technologies set Cost = 1200 where Cost = 930;
+-- -- 
+-- update Technologies set Cost = 950 where Cost = 730;
+-- update Technologies set Cost = 800 where Cost = 600;
+-- -- 
+-- update Technologies set Cost = 550 where Cost = 390;
+-- update Technologies set Cost = 400 where Cost = 300;
+-- -- 
+-- update Technologies set Cost = 240 where Cost = 200;
+-- update Technologies set Cost = 160 where Cost = 120;
+-- -- Ancient
+-- update Technologies set Cost = 100 where Cost = 80;
+-- update Technologies set Cost = 60 where Cost = 50;
+-- update Technologies set Cost = 25 where Cost = 25;
+
+-- v3
+update Technologies set Cost = 4500 where Cost = 2600;
 -- 
-update Technologies set Cost = 3300 where Cost = 2500;
-update TechnologyRandomCosts set Cost = 3100 where Cost = 2300;
-update TechnologyRandomCosts set Cost = 3000 where Cost = 2200;
+update Technologies set Cost = 4000 where Cost = 2500;
+update TechnologyRandomCosts set Cost = 3700 where Cost = 2300;
+update TechnologyRandomCosts set Cost = 3600 where Cost = 2200;
 -- update Technologies set Cost = 2700 where Cost = 2200;
 -- 
-update Technologies set Cost = 2750 where Cost = 2155;
-update Technologies set Cost = 2600 where Cost = 1850;
+update Technologies set Cost = 3100 where Cost = 2155;
+update Technologies set Cost = 3000 where Cost = 1850;
 -- 
-update Technologies set Cost = 2250 where Cost = 1660;
-update Technologies set Cost = 2100 where Cost = 1480;
+update Technologies set Cost = 2500 where Cost = 1660;
+update Technologies set Cost = 2400 where Cost = 1480;
 -- 
-update Technologies set Cost = 1850 where Cost = 1370;
-update Technologies set Cost = 1600 where Cost = 1250;
+update Technologies set Cost = 1900 where Cost = 1370;
+update Technologies set Cost = 1800 where Cost = 1250;
 -- 
-update Technologies set Cost = 1350 where Cost = 1070;
-update Technologies set Cost = 1200 where Cost = 930;
+update Technologies set Cost = 1400 where Cost = 1070;
+update Technologies set Cost = 1300 where Cost = 930;
 -- 
 update Technologies set Cost = 950 where Cost = 730;
-update Technologies set Cost = 800 where Cost = 600;
+update Technologies set Cost = 850 where Cost = 600;
 -- 
 update Technologies set Cost = 550 where Cost = 390;
-update Technologies set Cost = 400 where Cost = 300;
+update Technologies set Cost = 450 where Cost = 300;
 -- 
-update Technologies set Cost = 240 where Cost = 200;
+update Technologies set Cost = 280 where Cost = 200;
 update Technologies set Cost = 160 where Cost = 120;
 -- Ancient
-update Technologies set Cost = 100 where Cost = 80;
-update Technologies set Cost = 60 where Cost = 50;
--- update Technologies set Cost = 25 where Cost = 25;
+update Technologies set Cost = 80 where Cost = 80;
+update Technologies set Cost = 50 where Cost = 50;
 
 insert or replace into TechnologyModifiers
 	(TechnologyType,							ModifierId)

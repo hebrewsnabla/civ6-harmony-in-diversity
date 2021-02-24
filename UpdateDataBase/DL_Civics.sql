@@ -57,7 +57,7 @@ update Civics set Cost = 420, UITreeRow = 1 where CivicType = 'CIVIC_CIVIL_SERVI
 update Civics set Cost = Cost * 1.1 where EraType = 'ERA_CLASSICAL';
 update Civics set Cost = Cost * 1.2 where EraType = 'ERA_MEDIEVAL' or EraType = 'ERA_RENAISSANCE';
 update Civics set Cost = Cost * 1.3 where EraType = 'ERA_INDUSTRIAL' or EraType = 'ERA_MODERN';
-update Civics set Cost = Cost * 1.3 where EraType = 'ERA_ATOMIC' or EraType = 'ERA_INFORMATION' or EraType = 'ERA_FUTURE';
+update Civics set Cost = Cost * 1.4 where EraType = 'ERA_ATOMIC' or EraType = 'ERA_INFORMATION' or EraType = 'ERA_FUTURE';
 
 update CivicRandomCosts set Cost = Cost * 1.3 where Cost = 3200 or Cost = 3300;
 
