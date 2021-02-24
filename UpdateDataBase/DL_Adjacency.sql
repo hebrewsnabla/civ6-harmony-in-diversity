@@ -67,6 +67,9 @@ values
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Hippodrome_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
@@ -87,6 +90,9 @@ insert or replace into Adjacency_YieldChanges
 	('Lumber_Mill_River_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 1, NULL, NULL, NULL, NULL, 'TECH_MACHINERY', 'NO_RESOURCECLASS'),
 	('Plantation_Commercial_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_COMMERCIAL_HUB', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Plantation_Suguba_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_SUGUBA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
+	('Camp_Entertainment_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_ENTERTAINMENT_COMPLEX', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
+	('Camp_Street_Carnival_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_STREET_CARNIVAL', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
+	('Camp_Hippodrome_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_HIPPODROME', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Fishing_Boats_Harbor_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_HARBOR', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Fishing_Boats_Royal_Navy_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
 	('Fishing_Boats_Cothon_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_COTHON', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS')

@@ -35,13 +35,17 @@ update GlobalParameters set Value = -20 where Name = 'BARBARIAN_BOLDNESS_PER_CAM
 
 -- free amenity
 update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_PALACE';
-update GlobalParameters set Value = 2 where Name = 'CITY_AMENITIES_FOR_FREE';
+update GlobalParameters set Value = 1 where Name = 'CITY_AMENITIES_FOR_FREE';
 -- update GlobalParameters set Value = 1 where Name = 'CITY_AMENITIES_FOR_FREE';
 -- update GlobalParameters set Value = 1 where Name = 'CITY_POP_PER_AMENITY';
 
 -- district population require
 -- update GlobalParameters set Value = 4 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
 update GlobalParameters set Value = 3 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
+-- update the City Growth Formula.
+update GlobalParameters set Value = 18 where Name = 'CITY_GROWTH_THRESHOLD';
+update GlobalParameters set Value = 10 where Name = 'CITY_GROWTH_MULTIPLIER';
+update GlobalParameters set Value = 1.6 where Name = 'CITY_GROWTH_EXPONENT';
 
 -- Enable districts/wonders placement on GEOTHERMAL_FISSURE.
 insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 
