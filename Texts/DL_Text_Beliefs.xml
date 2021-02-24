@@ -142,10 +142,10 @@
 			<Text>Shrines and Temples provide [ICON_Culture] Culture equal to their intrinsic [ICON_Faith] Faith output.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>所有世界奇观+4 [ICON_Faith] 信仰值。可以使用 [ICON_Faith] 信仰值购买圣地区域内的建筑。</Text>
+			<Text>所有世界奇观+4 [ICON_Faith] 信仰值。圣地区域的 [ICON_Faith] 信仰值相邻加成提供额外等量的 [ICON_Faith] 信仰值。完成世界奇观后返还等同于奇观所需产能一半的 [ICON_Faith] 信仰值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION" Language="en_US">
-			<Text>All world wonders provide +4 [ICON_Faith] Faith. May purchase Holy Site district buildings with [ICON_Faith] Faith.</Text>
+			<Text>All world wonders provide +4 [ICON_Faith] Faith. Holy Site provides extra [ICON_Faith] Faith equal to the district adjacency bonus.Each time gain [ICON_Faith] Faith equal t0 50% production cost after Wonder construction.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供0.5 [ICON_Science] 科技值。 可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。</Text>
@@ -295,10 +295,10 @@
 			<Text>Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>战斗单位处于信奉该宗教的外国城市境内时+5 [ICON_Strength] 战斗力。</Text>
+			<Text>战斗单位处于信奉该宗教的外国城市境内时+7 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="en_US">
-			<Text>Combat units gain +5 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion.</Text>
+			<Text>Combat units gain +7 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text>

@@ -51,10 +51,10 @@
       <Text>City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith. Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +25% [ICON_production] Production towards Granary.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>没有特色区域的城市建造区域时+25% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6。城市 [ICON_Ranged] 远程攻击力+3。 为防御建筑+50% [ICON_Production] 生产力。</Text>
+      <Text>没有特色区域的城市建造区域时+50% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6。城市 [ICON_Ranged] 远程攻击力+3。 为防御建筑+50% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION" Language="en_US">
-      <Text>+25% [ICON_Production] Production toward districts in cities without a specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength. +50% [ICON_Production] Production toward defensive buildings.</Text>
+      <Text>+50% [ICON_Production] Production toward districts in cities without a specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength. +50% [ICON_Production] Production toward defensive buildings.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME" Language="zh_Hans_CN">
       <Text>神使</Text>
@@ -63,10 +63,11 @@
       <Text>Messenger of the Gods</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>选择后即可在首都中获得1个有免费升级的侦察单位。 所有侦察类型的单位+1 [ICON_Movement] 移动力。</Text>
+      <Text>选择后即可在首都中获得1个侦察单位，若其初始未拥有免费升级，则获得一次免费升级。所有侦察类型的单位+1 [ICON_Movement] 移动力。</Text>
+      <!-- 且每次侦查单位发现自然奇观时+20大仙点,首发情况下翻倍（标准速度下） -->
     </Replace>
     <Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION" Language="en_US">
-      <Text>When chosen receive a recon unit with free promotion in your capital. +1 [ICON_Movement] Movement for all Recon Units.</Text>
+      <Text>When chosen receive a recon unit with free promotion in your capital. The recon unit starts with a free promotion if it does not have. +1 [ICON_Movement] Movement for all Recon Units.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。</Text>
