@@ -101,10 +101,10 @@
 			<Text>Messenger of the Gods</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>选择后即可在首都中获得1个侦察单位。 所有侦察类型的单位+1 [ICON_Movement] 移动力。</Text>
+			<Text>选择后即可在首都中获得1个侦察单位,若初始未拥有免费升级，则其初始可获得一项免费升级。 所有侦察类型的单位+1 [ICON_Movement] 移动力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION" Language="en_US">
-			<Text>When chosen receive a recon unit in your capital. +2 [ICON_Movement] Movement for all Recon Units.</Text>
+			<Text>When chosen receive a recon unit in your capital. The recon start with a free promotion that do not already start with a free promotion.+1 [ICON_Movement] Movement for all Recon Units.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。</Text>
