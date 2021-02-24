@@ -51,10 +51,10 @@
       <Text>City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith. Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +25% [ICON_production] Production towards Granary.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>没有特色区域的城市建造区域时+25% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6。城市 [ICON_Ranged] 远程攻击力+3。 为防御建筑+50% [ICON_Production] 生产力。</Text>
+      <Text>没有特色区域的城市建造区域时+50% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6。城市 [ICON_Ranged] 远程攻击力+3。 为防御建筑+50% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION" Language="en_US">
-      <Text>+25% [ICON_Production] Production toward districts in cities without a specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength. +50% [ICON_Production] Production toward defensive buildings.</Text>
+      <Text>+50% [ICON_Production] Production toward districts in cities without a specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength. +50% [ICON_Production] Production toward defensive buildings.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME" Language="zh_Hans_CN">
       <Text>神使</Text>

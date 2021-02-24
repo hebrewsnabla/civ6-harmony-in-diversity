@@ -31,3 +31,62 @@ function OnGreatPersonActivated(unitOwner, unitID, greatPersonClassID, greatPers
 end
 
 Events.UnitGreatPersonActivated.Add(OnGreatPersonActivated)
+
+--Pantheon
+
+-- Messenger of the Gods: 
+-- Each time grants 20 great prophet points when recon units discover a natural wonder, double if first discover
+
+-- function Scout_Find_Natural_Wonder( plotx:number, ploty:number, eFeature:number, isFirstToFind:boolean )
+--     print('wonder!')
+--     local pUnitList:table = Units.GetUnitsInPlotLayerID( plotX, plotY, MapLayers.ANY );
+--     if pUnitList ~= nil then
+--         for _,pUnit in ipairs(pUnitList) do
+--         local eUnitID = pUnit:GetID();
+--         local eOwner  = pUnit:GetOwner();
+--         local scoutID = GameInfo.Units['UNIT_SCOUT'].Index
+--         local greatPhoID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index
+--         local religions = player:GetReligion():GetPantheon();
+--         print(eUnitID,eOwner)
+--             for _, religion in ipairs(religions) do
+--                 if (religion.Founder == eOwner) then
+--                     for _, beliefIndex in ipairs(religion.Beliefs) do
+--                         if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_MESSENGER_OF_THE_GODS" then
+--                             if eUnitID == scoutID then
+--                                 Utils.AddGreatPeoplePoints(eOwner, greatPhoID, 20)
+--                                 if isFirstToFind then
+--                                     Utils.AddGreatPeoplePoints(eOwner, greatPhoID, 20)
+--                                 end
+--                             end
+--                         end
+--                     end
+--                 end
+--             end
+--         end
+--     end
+-- end
+-- Events.NaturalWonderRevealed.Add(Scout_Find_Natural_Wonder)
+-- --Follower Belief
+
+-- Devine Inspiration: 
+-- 50% Faith return after Wonder construction 
+
+-- function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown )
+--     local player = Players[playerID]
+--     local city = CityManager.GetCity(playerID, cityID)
+--     local building = GameInfo.Buildings[buildingID]
+--     --print(building.BuildingType)
+--     if player ~= nil and city ~= nil and building ~= nil then
+--         local amount = building.Cost * 0.5
+--         local belief = GameInfo.Beliefs['BELIEF_DIVINE_INSPIRATION'].Index
+--         local CityFollowReligion = city:GetReligion():GetReligionsInCity();
+--         print(CityFollowReligion,belief)
+--         if CityFollowReligion ~= nil then
+--             if CityFollowReligion == belief then
+--                 player:GetReligion():ChangeFaithBalance(amount)
+--             end
+--         end
+--     end
+-- end
+
+-- Events.WonderCompleted.Add(DevineInspirationWonderFaith)

@@ -17,6 +17,30 @@ local m_YieldAvailableNums = { 10, 5, 2, 1 };
 --
 local m_CachedCityYield = {};
 
+Utils.CivilizationHasTrait = function(sCiv, sTrait)
+    for tRow in GameInfo.CivilizationTraits() do
+        if (tRow.CivilizationType == sCiv and tRow.TraitType == sTrait) then
+            return true
+        end
+    end
+    return false
+end
+
+Utils.LeaderHasTrait = function (sLeader, sTrait)
+    for tRow in GameInfo.LeaderTraits() do
+        if (tRow.LeaderType == sLeader and tRow.TraitType == sTrait) then return true end
+    end
+    return false
+end
+
+Utils.ChangeFaithBalance = function(playerID, amount)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetReligion():ChangeFaithBalance(amount)
+    end
+end
+
+
 Utils.SendEnvoy = function(playerID, citystateID)
     -- Need to make sure the second is citystate
     local player = Players[playerID]
