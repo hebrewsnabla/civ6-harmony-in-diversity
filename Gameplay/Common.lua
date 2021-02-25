@@ -17,6 +17,22 @@ local m_YieldAvailableNums = { 10, 5, 2, 1 };
 --
 local m_CachedCityYield = {};
 
+Utils.HasBuildingWithinCountry = function(playerID, cityID )
+    local player = Players[playerID]
+    local Allcity = CityManager.GetCity(playerID, cityID)
+    local building = GameInfo.Buildings['BUILDING_GOV_CONQUEST'].Index
+    if player ~= nil and Allcity ~= nil and building ~= nil then
+        for _, city in pairs(Allcity) do
+            local CityHasBuilding = city:GetBuildings():HasBuilding(building)
+            if CityHasBuilding then
+                return true
+            end
+            return false
+        end
+    end
+end
+
+
 Utils.CivilizationHasTrait = function(sCiv, sTrait)
     for tRow in GameInfo.CivilizationTraits() do
         if (tRow.CivilizationType == sCiv and tRow.TraitType == sTrait) then
@@ -33,10 +49,17 @@ Utils.LeaderHasTrait = function (sLeader, sTrait)
     return false
 end
 
-Utils.ChangeFaithBalance = function(playerID, amount)
-    local player = Players[playerID]
+Utils.ChangeFaithBalance = function(capturerID, amount)
+    local player = Players[capturerID]
     if player ~= nil then
         player:GetReligion():ChangeFaithBalance(amount)
+    end
+end
+
+Utils.ChangeGoldBalance = function(playerID, amount)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetTreasury():ChangeGoldBalance(amount)
     end
 end
 
