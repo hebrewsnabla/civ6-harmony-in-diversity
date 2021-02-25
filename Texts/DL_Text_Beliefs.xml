@@ -259,10 +259,10 @@
 			<Text>Pious Merchants</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。</Text>
+			<Text>来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。所有 [ICON_TradeRoute] 贸易路线+2 [ICON_FAITH] 信仰值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_DL_DESCRIPTION" Language="en_US">
-			<Text>+100% Religious pressure from your [ICON_TradeRoute] Trade Routes.</Text>
+			<Text>+100% Religious pressure from your [ICON_TradeRoute] Trade Routes. All [ICON_TradeRoute] trade route + 2 [ICON_FAITH] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSIAH_NAME" Language="zh_Hans_CN">
 			<Text>弥赛亚</Text>
