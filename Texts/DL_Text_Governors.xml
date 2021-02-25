@@ -82,10 +82,10 @@
 			<Text>Conscription</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+3 [ICON_STRENGTH] 战斗力和+25%战斗经验值。</Text>
+			<Text>此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+2 [ICON_STRENGTH] 战斗力和+25%战斗经验值。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="en_US">
-			<Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +3 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
+			<Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +2 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+50% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
@@ -190,7 +190,7 @@
 			<Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">
-			<Text>总务员</Text>
+			<Text>总务官</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="en_US">
 			<Text>General Services Officer</Text>

@@ -380,5 +380,11 @@
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="en_US">
       <Text>+15% Production toward Districts. Reduces the cost of purchasing a tile by 20%.</Text>
     </Replace>
+    <!-- <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="zh_Hans_CN">
+      <Text>使用 [ICON_Gold] 金币购买时费用-15%。可使用 [ICON_Gold] 金币购买区域</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
+      <Text>15% Discount on Purchases with [ICON_Gold] Gold. May Purchase Districts with [ICON_Gold] Gold.</Text>
+    </Replace> -->
   </LocalizedText>
 </GameData>

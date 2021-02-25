@@ -77,26 +77,48 @@ values
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
 
 insert or replace into Adjacency_YieldChanges
-		(ID, Description, YieldType, YieldChange, TilesRequired, AdjacentRiver,
-		AdjacentDistrict, PrereqCivic, PrereqTech, ObsoleteCivic, ObsoleteTech, AdjacentResourceClass) values
-	('AERODROME_INDUSTRIAL_Production','LOC_DISTRICT_AERODROME_INDUSTRIAL_Production', 'YIELD_PRODUCTION', 2, 1, 0, 'DISTRICT_AERODROME', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Commercial_Luxury_Gold', 'LOC_DISTRICT_LUXURY_GOLD', 'YIELD_GOLD', 2, 1, 0, NULL, NULL, NULL, NULL, NULL, 'RESOURCECLASS_LUXURY'),
-	('Mine_Industrial_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_INDUSTRIAL_ZONE', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Mine_Oppidum_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_OPPIDUM', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Mine_Hansa_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_HANSA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Quarry_Industrial_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_INDUSTRIAL_ZONE', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Quarry_Oppidum_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_OPPIDUM', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Quarry_Hansa_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 0, 'DISTRICT_HANSA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Lumber_Mill_River_Production', 'Placeholder', 'YIELD_PRODUCTION', 1, 1, 1, NULL, NULL, NULL, NULL, 'TECH_MACHINERY', 'NO_RESOURCECLASS'),
-	('Plantation_Commercial_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_COMMERCIAL_HUB', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Plantation_Suguba_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_SUGUBA', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Camp_Entertainment_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_ENTERTAINMENT_COMPLEX', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Camp_Street_Carnival_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_STREET_CARNIVAL', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Camp_Hippodrome_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_HIPPODROME', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Fishing_Boats_Harbor_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_HARBOR', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Fishing_Boats_Royal_Navy_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS'),
-	('Fishing_Boats_Cothon_Gold', 'Placeholder', 'YIELD_GOLD', 2, 1, 0, 'DISTRICT_COTHON', NULL, NULL, NULL, NULL, 'NO_RESOURCECLASS')
-;
+	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
+	AdjacentRiver,	AdjacentDistrict, 		PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
+values
+	('AERODROME_INDUSTRIAL_Production',	'LOC_DISTRICT_AERODROME_INDUSTRIAL_PRODUCTION', 'YIELD_PRODUCTION', 2,				1,
+	0, 				'DISTRICT_AERODROME', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
+	0,				NULL,					NULL,			NULL,		NULL,			NULL,			'RESOURCECLASS_LUXURY');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentRiver,
+	AdjacentDistrict, 				PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
+values
+	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Mine_Oppidum_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_OPPIDUM',				NULL,			NULL,		NULL,			NULL, 			'NO_RESOURCECLASS'),
+	('Mine_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Quarry_Industrial_Production',	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Quarry_Oppidum_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_OPPIDUM',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Quarry_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
+	NULL,							NULL,			NULL,		NULL,			'TECH_MACHINERY',	'NO_RESOURCECLASS'),
+	('Plantation_Commercial_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_COMMERCIAL_HUB',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Plantation_Suguba_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_SUGUBA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Camp_Entertainment_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_ENTERTAINMENT_COMPLEX', NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Camp_Street_Carnival_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_STREET_CARNIVAL',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Camp_Hippodrome_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_HIPPODROME',			NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Fishing_Boats_Harbor_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_HARBOR',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Fishing_Boats_Royal_Navy_Gold', 	'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_ROYAL_NAVY_DOCKYARD',	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Fishing_Boats_Cothon_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_COTHON',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
 
 update Adjacency_YieldChanges set PrereqTech = 'TECH_ASTRONOMY'
  where ID = 'Mountains_Science1'
@@ -115,7 +137,7 @@ update Adjacency_YieldChanges set PrereqTech = 'TECH_GUNPOWDER' where ID = 'Quar
 -- Industry zone : Aqueduct
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Aqueduct_Production';
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Bath_Production';
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BANKING' where ID = 'Commerical_Hub_Production';
+update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Commerical_Hub_Production';
 update Adjacency_YieldChanges set TilesRequired = 2, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Resource_Production';
 -- Campus : Geothermal & Reef
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_SCIENTIFIC_THEORY' where ID = 'Geothermal_Science';
@@ -131,34 +153,34 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'SeaResource_Gold';
 -- 	'FEATURE_REEF',					NULL,			'TECH_BUTTRESS',			NULL,			NULL);
 
 insert or replace into Adjacency_YieldChanges
-	(ID,						Description,								YieldType,		YieldChange,	TilesRequired,
-	AdjacentImprovement,		PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
+	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
+	AdjacentImprovement,			PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
-	('SEAOil_INDUSTRIAL_Production','LOC_DISTRICT_SEAOil_INDUSTRIAL_Production',	'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_OFFSHORE_OIL_RIG',		NULL,			NULL,			NULL,			NULL),
-	('Oil_INDUSTRIAL_Production','LOC_DISTRICT_Oil_INDUSTRIAL_Production',	'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_OIL_WELL',		NULL,			NULL,			NULL,			NULL),
-	('Quarry_HalfProduction',	'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',	'YIELD_PRODUCTION',	1,				2,
-	'IMPROVEMENT_QUARRY',		NULL,			NULL,			NULL,			'TECH_GUNPOWDER'),
-	('LumberMill_Production',	'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_LUMBER_MILL',	NULL,			'TECH_STEEL',	NULL,			NULL);
+	('SEAOil_INDUSTRIAL_Production',	'LOC_DISTRICT_SEAOIL_INDUSTRIAL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,
+	'IMPROVEMENT_OFFSHORE_OIL_RIG',	NULL,			NULL,			NULL,			NULL),
+	('Oil_INDUSTRIAL_Production',		'LOC_DISTRICT_OIL_INDUSTRIAL_PRODUCTION',		'YIELD_PRODUCTION',	1,				1,
+	'IMPROVEMENT_OIL_WELL',			NULL,			NULL,			NULL,			NULL),
+	('Quarry_HalfProduction',			'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,
+	'IMPROVEMENT_QUARRY',			NULL,			NULL,			NULL,			'TECH_GUNPOWDER'),
+	('LumberMill_Production',			'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				1,
+	'IMPROVEMENT_LUMBER_MILL',		NULL,			'TECH_STEEL',	NULL,			NULL);
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,
-	AdjacentDistrict,			PrereqCivic,	PrereqTech,				ObsoleteCivic,	ObsoleteTech)
+	AdjacentDistrict,				PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
-	('District_Science_City_Center',	'LOC_District_Science_City_Center',			'YIELD_SCIENCE',	1,				1,	
-	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
-	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',			'YIELD_GOLD',		1,				1,	
-	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
+	('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
+	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
+	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',				'YIELD_GOLD',		1,				1,	
+	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	('District_Culture_Double_City_Center',	'LOC_District_Culture_Double_City_Center',	'YIELD_CULTURE',	2,				1,	
-	'DISTRICT_CITY_CENTER',		NULL,				NULL,				NULL,			NULL),
+	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	-- ('Aqueduct_Production_Late',		'LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE',	'YIELD_PRODUCTION',	2,				1,
-	-- 'DISTRICT_AQUEDUCT',		NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
+	-- 'DISTRICT_AQUEDUCT',			NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
 	-- ('Bath_Production_Late',			'LOC_DISTRICT_BATH_PRODUCTION_LATE',		'YIELD_PRODUCTION',	2,				1,
-	-- 'DISTRICT_BATH',			NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
-	('Commerical_Hub_Production_Late',	'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',	'YIELD_PRODUCTION',	2,				1,
-	'DISTRICT_COMMERCIAL_HUB',	NULL,			'TECH_BANKING',			NULL,			NULL);
+	-- 'DISTRICT_BATH',				NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
+	('Commerical_Hub_Production_Late',	'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',		'YIELD_PRODUCTION',	2,				1,
+	'DISTRICT_COMMERCIAL_HUB',		NULL,			'TECH_APPRENTICESHIP',	NULL,	NULL);
 
 insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, PrereqTech, AdjacentResource) values

@@ -36,28 +36,66 @@ update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILL
 update ModifierArguments set Value = 200 where ModifierID = 'TOTAL_WAR_PLUNDER_BONUS';
 
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_MILITARY';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_ECONOMIC';
-update Government_SlotCounts set NumSlots = 1 where
-	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_ECONOMIC';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_WILDCARD';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_WILDCARD';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_MILITARY';
-update Government_SlotCounts set NumSlots = 3 where
-	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_MILITARY';
-update Government_SlotCounts set NumSlots = 2 where
-	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_ECONOMIC';
+
+insert or replace into Government_SlotCounts
+	(GovernmentType,					GovernmentSlotType,	NumSlots)
+values
+	('GOVERNMENT_MONARCHY',				'SLOT_MILITARY',	2),
+	('GOVERNMENT_MONARCHY',				'SLOT_ECONOMIC',	2),
+	('GOVERNMENT_MONARCHY',				'SLOT_DIPLOMATIC',	1),
+	('GOVERNMENT_MONARCHY',				'SLOT_WILDCARD',	1),
+	-- 
+	('GOVERNMENT_THEOCRACY',			'SLOT_MILITARY',	2),
+	('GOVERNMENT_THEOCRACY',			'SLOT_ECONOMIC',	1),
+	('GOVERNMENT_THEOCRACY',			'SLOT_DIPLOMATIC',	1),
+	('GOVERNMENT_THEOCRACY',			'SLOT_WILDCARD',	2),
+	-- 
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_MILITARY',	1),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_ECONOMIC',	2),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_DIPLOMATIC',	1),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_WILDCARD',	2),
+	-- 
+	('GOVERNMENT_FASCISM',				'SLOT_MILITARY',	3),
+	('GOVERNMENT_FASCISM',				'SLOT_ECONOMIC',	2),
+	('GOVERNMENT_FASCISM',				'SLOT_DIPLOMATIC',	1),
+	('GOVERNMENT_FASCISM',				'SLOT_WILDCARD',	2),
+	-- 
+	('GOVERNMENT_COMMUNISM',			'SLOT_MILITARY',	2),
+	('GOVERNMENT_COMMUNISM',			'SLOT_ECONOMIC',	3),
+	('GOVERNMENT_COMMUNISM',			'SLOT_DIPLOMATIC',	1),
+	('GOVERNMENT_COMMUNISM',			'SLOT_WILDCARD',	2),
+	-- 
+	('GOVERNMENT_DEMOCRACY',			'SLOT_MILITARY',	1),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_ECONOMIC',	3),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',	2),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',	2);
+
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_MILITARY';
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_ECONOMIC';
+-- update Government_SlotCounts set NumSlots = 1 where
+-- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_DIPLOMATIC';
+-- update Government_SlotCounts set NumSlots = 1 where
+-- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_WILDCARD';
+-- update Government_SlotCounts set NumSlots = 1 where
+-- 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_ECONOMIC';
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_WILDCARD';
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_WILDCARD';
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_MILITARY';
+-- update Government_SlotCounts set NumSlots = 3 where
+-- 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_MILITARY';
+-- update Government_SlotCounts set NumSlots = 2 where
+-- 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_ECONOMIC';
 
 update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_MEDINA_QUARTER';
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
 update Policies set PrereqCivic = 'CIVIC_FEUDALISM' where PolicyType = 'POLICY_CIVIL_PRESTIGE';
 update Policies set PrereqCivic = 'CIVIC_MERCENARIES' where PolicyType = 'POLICY_RETAINERS';
-update Policies set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
+-- update Policies set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
 
 update Policies set PrereqCivic = 'CIVIC_CLASS_STRUGGLE' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
 update Policies set PrereqCivic = 'CIVIC_SUFFRAGE' where PolicyType = 'POLICY_ECONOMIC_UNION';

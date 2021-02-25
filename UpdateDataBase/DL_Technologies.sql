@@ -3,18 +3,70 @@
 -------------------------------------
 
 -- update Technologies set Cost = 80, EraType = 'ERA_ANCIENT' where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
--- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
+-- update Technologies set Cost = 300 where TechnologyType = 'TECH_CASTLES';
+update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
 -- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
 
-insert or replace into TechnologyPrereqs 
-	(Technology,				PrereqTech)
+-- update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_ASTROLOGY';
+-- update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_SAILING';
+update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_THE_WHEEL';
+update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_BRONZE_WORKING';
+update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_MASONRY';
+-- update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
+-- update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_SHIPBUILDING';
+update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_IRON_WORKING';
+update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_ENGINEERING';
+update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_CONSTRUCTION';
+update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_BUTTRESS';
+update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_CASTLES';
+update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_APPRENTICESHIP';
+update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_STIRRUPS';
+update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_MILITARY_ENGINEERING';
+update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MACHINERY';
+update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_MILITARY_TACTICS';
+update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_EDUCATION';
+update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_GUNPOWDER';
+update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_PRINTING';
+update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_SIEGE_TACTICS';
+
+delete from TechnologyPrereqs where Technology = 'TECH_BUTTRESS' and PrereqTech = 'TECH_SHIPBUILDING';
+delete from TechnologyPrereqs where Technology = 'TECH_APPRENTICESHIP' and PrereqTech = 'TECH_HORSEBACK_RIDING';
+delete from TechnologyPrereqs where Technology = 'TECH_APPRENTICESHIP' and PrereqTech = 'TECH_CURRENCY';
+-- delete from TechnologyPrereqs where Technology = 'TECH_MILITARY_TACTICS' and PrereqTech = 'TECH_MATHEMATICS';
+delete from TechnologyPrereqs where Technology = 'TECH_CONSTRUCTION' and PrereqTech = 'TECH_HORSEBACK_RIDING';
+delete from TechnologyPrereqs where Technology = 'TECH_MACHINERY' and PrereqTech = 'TECH_IRON_WORKING';
+delete from TechnologyPrereqs where Technology = 'TECH_MACHINERY' and PrereqTech = 'TECH_ENGINEERING';
+delete from TechnologyPrereqs where Technology = 'TECH_CASTLES' and PrereqTech = 'TECH_CONSTRUCTION';
+delete from TechnologyPrereqs where Technology = 'TECH_MILITARY_ENGINEERING' and PrereqTech = 'TECH_ENGINEERING';
+-- delete from TechnologyPrereqs where Technology = 'TECH_STIRRUPS' and PrereqTech = 'TECH_HORSEBACK_RIDING';
+delete from TechnologyPrereqs where Technology = 'TECH_STIRRUPS' and PrereqTech = 'TECH_APPRENTICESHIP';
+delete from TechnologyPrereqs where Technology = 'TECH_EDUCATION' and PrereqTech = 'TECH_APPRENTICESHIP';
+delete from TechnologyPrereqs where Technology = 'TECH_GUNPOWDER' and PrereqTech = 'TECH_STIRRUPS';
+delete from TechnologyPrereqs where Technology = 'TECH_SIEGE_TACTICS' and PrereqTech = 'TECH_CASTLES';
+delete from TechnologyPrereqs where Technology = 'TECH_MASS_PRODUCTION' and PrereqTech = 'TECH_MILITARY_TACTICS';
+
+insert or replace into TechnologyPrereqs
+	(Technology,					PrereqTech)
 values
+	('TECH_MATHEMATICS',			'TECH_IRRIGATION'),
+	('TECH_MILITARY_TACTICS',		'TECH_CURRENCY'),
+	('TECH_APPRENTICESHIP',			'TECH_ENGINEERING'),
+	('TECH_STIRRUPS',				'TECH_MILITARY_TACTICS'),
+	('TECH_MACHINERY',				'TECH_CONSTRUCTION'),
+	('TECH_MACHINERY',				'TECH_IRON_WORKING'),
+	('TECH_CASTLES',				'TECH_HORSEBACK_RIDING'),
+	-- ('TECH_CASTLES',				'TECH_CURRENCY'),
+	-- ('TECH_MILITARY_TACTICS',		'TECH_ENGINEERING'),
+	-- ('TECH_MILITARY_ENGINEERING',	'TECH_APPRENTICESHIP'),
+	('TECH_CARTOGRAPHY',			'TECH_SHIPBUILDING'),
+	('TECH_SIEGE_TACTICS',			'TECH_MILITARY_ENGINEERING'),
+	('TECH_METAL_CASTING',			'TECH_CASTLES'),
 	--
 	('TECH_THE_WHEEL',				'TECH_ANIMAL_HUSBANDRY'),
-	('TECH_ENGINEERING',			'TECH_MASONRY'),
+	-- ('TECH_ENGINEERING',			'TECH_MASONRY'),
 	('TECH_BUTTRESS',				'TECH_CELESTIAL_NAVIGATION'),
 	('TECH_APPRENTICESHIP',			'TECH_IRON_WORKING'),
 	-- Future Era

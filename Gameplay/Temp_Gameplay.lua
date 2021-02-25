@@ -11,6 +11,7 @@ end
 
 -- Do not change the above ones
 -----------------------------------------------------------------------
+Utils = ExposedMembers.DLHD.Utils
 
 -- Start debug
 -- function EarnMoneyOnConquerCity( capturerID, ownerID, cityID, cityX, cityY )
