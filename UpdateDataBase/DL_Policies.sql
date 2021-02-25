@@ -141,6 +141,10 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and
 
 delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
 
+-- delete MONARCHY_STARFORT_FAVOR
+delete from PolicyModifiers where ModifierId = 'MONARCHY_STARFORT_FAVOR';
+delete from GovernmentModifiers where ModifierId = 'MONARCHY_STARFORT_FAVOR';
+
 -- 陈又
 -- POLICY_RATIONALISM
 delete from PolicyModifiers where PolicyType = 'POLICY_RATIONALISM' and ModifierId = 'RATIONALISM_BUILDING_YIELDS_HIGH_ADJACENCY';

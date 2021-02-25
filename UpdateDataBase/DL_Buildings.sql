@@ -109,8 +109,8 @@ update Buildings set RegionalRange = 6
 	or BuildingType = 'BUILDING_STOCK_EXCHANGE'
 ;
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
-update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
-update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set RegionalRange = 4, Entertainment = 1 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
+update Buildings set RegionalRange = 6, Entertainment = 1 where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_SHOPPING_MALL';
 
 update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' or BuildingType = 'BUILDING_ZOO';
