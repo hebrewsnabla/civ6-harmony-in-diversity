@@ -68,25 +68,5 @@ Events.UnitGreatPersonActivated.Add(OnGreatPersonActivated)
 -- Events.NaturalWonderRevealed.Add(Scout_Find_Natural_Wonder)
 -- --Follower Belief
 
--- Devine Inspiration: 
--- 50% Faith return after Wonder construction 
 
--- function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown )
---     local player = Players[playerID]
---     local city = CityManager.GetCity(playerID, cityID)
---     local building = GameInfo.Buildings[buildingID]
---     --print(building.BuildingType)
---     if player ~= nil and city ~= nil and building ~= nil then
---         local amount = building.Cost * 0.5
---         local belief = GameInfo.Beliefs['BELIEF_DIVINE_INSPIRATION'].Index
---         local CityFollowReligion = city:GetReligion():GetReligionsInCity();
---         print(CityFollowReligion,belief)
---         if CityFollowReligion ~= nil then
---             if CityFollowReligion == belief then
---                 player:GetReligion():ChangeFaithBalance(amount)
---             end
---         end
---     end
--- end
 
--- Events.WonderCompleted.Add(DevineInspirationWonderFaith)
