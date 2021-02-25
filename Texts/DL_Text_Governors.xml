@@ -189,6 +189,18 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
 			<Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">
+			<Text>总务员</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="en_US">
+			<Text>General Services Officer</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>总督“马格努斯”就职的城市中的总务厅可为9个单元格之内的城市提供额外3 [ICON_FOOD] 食物，3 [ICON_PRODUCTION] 生产力，3 [ICON_SCIENCE] 科技值，3 [ICON_CULTURE] 文化值和 3 [ICON_GOLD] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="en_US">
+			<Text>When the Governor Magnus estabilished in city, the General Service Office of the city can provide 3 [ICON_FOOD] Food, 3 [ICON_PRODUCTION] Production, 3 [ICON_SCIENCE] Science, 3 [ICON_CULTURE] Culture and 3 [ICON_GOLD] Gold to the cities within 9 tiles. </Text>
+		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->
 			<Text>此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。</Text>

@@ -40,6 +40,25 @@ Utils.ChangeFaithBalance = function(playerID, amount)
     end
 end
 
+Utils.GetPlotDistance = function(plotIndex, otherPlotIndex)
+    return Map.GetPlotDistance(plotIndex, otherPlotIndex)
+end
+
+Utils.RemoveBuilding = function(playerID, cityID, buildingID)
+    local city = CityManager.GetCity(playerID, cityID)
+    if city ~= nil then
+        local buildings = city:GetBuildings()
+        buildings:RemoveBuilding(buildingID)
+    end
+end
+
+Utils.CreateBuilding = function(playerID, cityID, buildingID)
+    local city = CityManager.GetCity(playerID, cityID)
+    if city ~= nil then
+        local buildingQueue = city:GetBuildQueue()
+        buildingQueue:CreateBuilding(buildingID)
+    end
+end
 
 Utils.SendEnvoy = function(playerID, citystateID)
     -- Need to make sure the second is citystate
