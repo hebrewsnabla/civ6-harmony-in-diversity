@@ -435,15 +435,15 @@
   </Replace>
 <!--情报局-->
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>间谍与间谍容量+1。
+    <Text>获得一个间谍并+1间谍容量。
       [NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%。
-      [NEWLINE]所有城市训练间谍时+25% [ICON_Production] 生产力。
+      [NEWLINE]所有城市训练间谍时+50% [ICON_Production] 生产力。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="en_US">
-    <Text>+1 Spy and Spy capacity.
+    <Text>Receive one Spy and +1 Spy capacity.
       [NEWLINE]All Spy Operations have a higher chance of success. Spy mission time reduces by 25%.
-      [NEWLINE]+25% [ICON_Production] toward Spies in all Cities.
+      [NEWLINE]+50% [ICON_Production] toward Spies in all Cities.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
 <!--皇家学会-->
@@ -560,6 +560,18 @@
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="en_US">
     <Text>+2 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Fair.</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_NAME" Language="zh_Hans_CN">
+    <Text>总务厅</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_NAME" Language="en_US">
+    <Text>General Services Office</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>暂无特效。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION" Language="en_US">
+    <Text>No special Effect yet.</Text>
   </Replace>
   </LocalizedText>
 </GameData>

@@ -1252,3 +1252,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 道观伟人点修复
 
 [Version v0.5.6]
+修复烂地夫人的魅力问题。
+所有文明间谍任务时间-25%效果取消，极权主义减间谍任务时间-25%效果取消，情报局的间谍加速改为50%。
+

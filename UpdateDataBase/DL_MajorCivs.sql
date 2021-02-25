@@ -2,6 +2,17 @@
 -- Major Civilizations Adjustments --
 -------------------------------------
 
+-- 所有文明赠送效果
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	-- ('TRAIT_LEADER_MAJOR_CIV',				'MACHIAVELLIANISM_OFFENSIVESPYTIME'),
+-- 贸易路线大使馆
+	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS');
+-- 贸易站鼓舞/尤里卡
+	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_CIVIC_BOOST'),
+	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_TECH_BOOST');
+
 create table 'PopulationMaintenance'(
 	'Pop' Int NOT NULL,
 	'ImmortalMaintenance' TEXT NOT NULL,

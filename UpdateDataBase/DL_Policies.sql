@@ -24,7 +24,10 @@ values
 
 -- Policy Cards
 
--- TODO: Remove or adjust POLICY_MACHIAVELLIANISM，极权主义，间谍加速50%，行动时间-25%。
+-- Remove effect: 25% less operation time for spy.
+-- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
+-- Remove the Machiavellisnism Policy Card
+delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
 
 update ModifierArguments set Value = 100 where ModifierID = 'RAID_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGEDISTRICT';

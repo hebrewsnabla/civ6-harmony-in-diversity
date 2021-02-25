@@ -5,17 +5,6 @@
 -- Eleanor
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
 
--- 所有文明赠送效果
-insert or replace into TraitModifiers
-	(TraitType,								ModifierId)
-values
-	('TRAIT_LEADER_MAJOR_CIV',				'MACHIAVELLIANISM_OFFENSIVESPYTIME'),
--- 贸易路线大使馆
-	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_ADJUST_PROGRESS_DIFF_TRADE_BONUS');
--- 贸易站鼓舞/尤里卡
-	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_CIVIC_BOOST'),
-	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_TECH_BOOST');
-
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
