@@ -104,6 +104,39 @@ delete from GovernorPromotionModifiers where ModifierId = 'LAND_ACQUISITION_FAST
 delete from GovernorPromotionModifiers where ModifierId = 'FOREIGN_EXCHANGE_GOLD_FROM_FOREIGN_TRADE_PASSING_THROUGH';
 -- 发包人
 delete from GovernorPromotionModifiers where ModifierId = 'CONTRACTOR_ENABLE_DISTRICT_PURCHASE';
+-- 移除再生资源补贴升级
+delete from GovernorPromotions where GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_RENEWABLE_ENERGY';
+
+-- 跨国公司取缔再生资源补贴
+insert or replace into Types
+	(Type, Kind)
+values
+	('GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP', 'KIND_GOVERNOR_PROMOTION');
+-- Every governor promotion requires a modifier. Creating a dummy one.
+insert or replace into Modifiers
+	(ModifierId, ModifierType)
+values
+	('MULTINATIONAL_CORP_DUMMY', 'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL');
+
+insert or replace into GovernorPromotions
+	(GovernorPromotionType, Name, Description, Level, Column, BaseAbility)
+values
+	('GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP', 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME', 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION', 3, 2, 0);
+
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType, ModifierId)
+values
+	('GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP',	'MULTINATIONAL_CORP_DUMMY');
+
+insert or replace into GovernorPromotionSets
+	(GovernorType, GovernorPromotion)
+values
+	('GOVERNOR_THE_MERCHANT', 'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP');
+
+insert or replace into GovernorPromotionPrereqs
+	(GovernorPromotionType, PrereqGovernorPromotion)
+values
+	('GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP', 'GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR');
 
 -- 新增效果
 -- 单城区域产出

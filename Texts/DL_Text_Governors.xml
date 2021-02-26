@@ -44,6 +44,18 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="en_US">
 			<Text>Each Commercial and Harbor building in the city increase city [ICON_Gold] Gold yield output by 10%.</Text>
 		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="zh_Hans_CN">
+			<Text>跨国公司</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="en_US">
+			<Text>Multinational Corporations</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="en_US">
+			<Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city</Text>
+		</Replace>
 		<!-- 维克多 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市防御+5 [ICON_STRENGTH] 战斗力，您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。就职需要3回合。</Text>
