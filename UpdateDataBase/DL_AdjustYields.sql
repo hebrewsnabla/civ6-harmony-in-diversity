@@ -87,7 +87,7 @@ update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_GOB
 -- 2 tiles
 update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_BARRIER_REEF' and YieldType = 'YIELD_FOOD';
 update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_FOOD';
-update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_CLIFFS_DOVER' and YieldType = 'YIELD_GOLD';
+-- update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_CLIFFS_DOVER' and YieldType = 'YIELD_GOLD';
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_DEAD_SEA' and YieldType = 'YIELD_FAITH';
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_DEAD_SEA' and YieldType = 'YIELD_CULTURE';
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_LAKE_RETBA' and YieldType = 'YIELD_CULTURE';

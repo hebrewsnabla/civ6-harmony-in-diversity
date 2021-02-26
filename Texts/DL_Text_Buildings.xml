@@ -532,10 +532,10 @@
     <Text>Official Run Handcraft</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果城市拥有采集奢侈或加成资源的矿山，则额外+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有集市或图腾柱的城市中。</Text>
+    <Text>如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有集市或图腾柱的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Production] Production if the city owns mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Fair or Totems.</Text>
+    <Text>Extra +2 [ICON_Production] Production if the city owns Quarries or mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Fair or Totems.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="zh_Hans_CN">
     <Text>集市</Text>

@@ -100,10 +100,16 @@
 			<Text>Kill 2 Barbarians.</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_THE_WHEEL" Language="zh_Hans_CN">
-			<Text>建造1座伐木场。</Text>
+			<Text>建造1座牧场。</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_THE_WHEEL" Language="en_US">
-			<Text>Build a Lumber Mill.</Text>
+			<Text>Build a Pasture.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HORSEBACK_RIDING" Language="zh_Hans_CN">
+			<Text>建造1座马场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HORSEBACK_RIDING" Language="en_US">
+			<Text>Build a Horses Pasture.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="zh_Hans_CN">
 			<Text>采矿业让您拥有了建造轮轴的能力。接下来是车轮？</Text>
@@ -123,12 +129,12 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_WRITING" Language="en_US">
 			<Text>Build a Monument.</Text>
 		</Replace>
-		<Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="zh_Hans_CN">
+		<!-- <Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="zh_Hans_CN">
 			<Text>拥有海军传统市政。</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_MASS_PRODUCTION" Language="en_US">
 			<Text>Have the Naval Tradition civic.</Text>
-		</Replace>
+		</Replace> -->
 		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION" Language="zh_Hans_CN">
 			<Text>您已经准备好了标准板材的供应，您的海运业很快就能启动。</Text>
 		</Replace>
