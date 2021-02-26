@@ -386,5 +386,41 @@
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
       <Text>15% Discount on Purchases with [ICON_Gold] Gold. May Purchase Districts with [ICON_Gold] Gold.</Text>
     </Replace> -->
+    <Replace Tag="LOC_POLICY_PRESS_GANGS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>生产工业及更早时代的海军单位时+60% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRESS_GANGS_DESCRIPTION" Language="en_US">
+      <Text>60% [ICON_Production] Production toward Industrial era and earlier naval units.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARITIME_INDUSTRIES_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>为远古和古典时代的海军单位+60% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARITIME_INDUSTRIES_DESCRIPTION" Language="en_US">
+      <Text>+60% [ICON_Production] Production toward Ancient and Classical era naval units.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CHIVALRY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>生产工业及更早时代的重型和轻型骑兵单位时+30% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CHIVALRY_DESCRIPTION" Language="en_US">
+      <Text>+30% [ICON_Production] Production toward Industrial era and earlier heavy and light cavalry units.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MANEUVER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>为远古和古典时代的重型和轻型骑兵单位+30% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MANEUVER_DESCRIPTION" Language="en_US">
+      <Text>+30% [ICON_Production] Production toward Ancient and Classical era heavy and light cavalry units.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>生产远古、古典、中世纪和文艺复兴时代的近战、抗骑兵和远程单位时+30% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION" Language="en_US">
+      <Text>+30% [ICON_Production] Production toward Ancient, Classical, Medieval, and Renaissance era melee, anti-cavalry, and ranged units.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_AGOGE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>生产远古和古典时代的近战、抗骑兵和远程单位时+30% [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_AGOGE_DESCRIPTION" Language="en_US">
+      <Text>+30% [ICON_Production] Production toward Ancient and Classical era melee, anti-cavalry, and ranged units.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

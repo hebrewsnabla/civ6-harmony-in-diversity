@@ -22,7 +22,7 @@ values
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'Reef_Science_Late'),
-	('DISTRICT_CAMPUS',				'District_Science_City_Center'),
+	-- ('DISTRICT_CAMPUS',				'District_Science_City_Center'),
 	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
 	('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
@@ -120,13 +120,13 @@ values
 	('Fishing_Boats_Cothon_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_COTHON',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
 
-update Adjacency_YieldChanges set PrereqTech = 'TECH_ASTRONOMY'
- where ID = 'Mountains_Science1'
-	or ID = 'Mountains_Science2'
-	or ID = 'Mountains_Science3'
-	or ID = 'Mountains_Science4'
-	or ID = 'Mountains_Science5'
-;
+-- update Adjacency_YieldChanges set PrereqTech = 'TECH_ASTRONOMY'
+--  where ID = 'Mountains_Science1'
+-- 	or ID = 'Mountains_Science2'
+-- 	or ID = 'Mountains_Science3'
+-- 	or ID = 'Mountains_Science4'
+-- 	or ID = 'Mountains_Science5'
+-- ;
 
 -- Industry zone : Mine : production
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_INDUSTRIALIZATION' where ID = 'Minel_HalfProduction';
@@ -169,8 +169,8 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,
 	AdjacentDistrict,				PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
-	('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
-	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
+	-- ('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
+	-- 'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',				'YIELD_GOLD',		1,				1,	
 	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	('District_Culture_Double_City_Center',	'LOC_District_Culture_Double_City_Center',	'YIELD_CULTURE',	2,				1,	

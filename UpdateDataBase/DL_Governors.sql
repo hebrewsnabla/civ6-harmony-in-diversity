@@ -345,7 +345,7 @@ values
 	-- ('VICTOR_LAND_UNITS_PRODUCTION',			'Amount',				50),
 	-- ('VICTOR_SEA_UNITS_PRODUCTION',				'Domain',				'DOMAIN_SEA'),
 	-- ('VICTOR_SEA_UNITS_PRODUCTION',				'Amount',				50),
-	('VICTOR_ALL_MILITARY_UNITS_PRODUCTION',	'Amount',				50),
+	('VICTOR_ALL_MILITARY_UNITS_PRODUCTION',	'Amount',				30),
 	('VICTOR_GDR_PRODUCTION',					'UnitPromotionClass',	'PROMOTION_CLASS_GIANT_DEATH_ROBOT'),
 	('VICTOR_GDR_PRODUCTION',					'EraType',				'ERA_INFORMATION'),
 	('VICTOR_GDR_PRODUCTION',					'Amount',				50);
@@ -720,6 +720,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'EMISSARY_IDENTITY_PRE
 --level 3 GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER
 insert or replace into Governors_XP2 (GovernorType,AssignToMajor) values
 	('GOVERNOR_THE_AMBASSADOR',1);
+	
+delete from GovernorPromotionModifiers where ModifierId = 'FOREIGN_INVESTOR_COPY_STRATEGICS_FOR_IMPORT';
 insert or replace into GovernorPromotionModifiers 
 	(GovernorPromotionType,								ModifierId) 
 values
@@ -742,7 +744,6 @@ values
 	-- ('GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER',			'MONARCHY_ENVOYS');
 
 delete from GovernorPromotionModifiers where ModifierId = 'LOCAL_INFORMANTS_SPY_DEFENSE_BONUS';
-delete from GovernorPromotionModifiers where ModifierId = 'FOREIGN_INVESTOR_COPY_STRATEGICS_FOR_IMPORT';
 
 insert or replace into Modifiers	
 	(ModifierId,									ModifierType,			SubjectRequirementSetId,Permanent)

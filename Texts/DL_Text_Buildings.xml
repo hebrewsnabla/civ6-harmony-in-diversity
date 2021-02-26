@@ -387,13 +387,13 @@
 <!--军阀宝座-->
   <Replace Tag="LOC_BUILDING_GOV_CONQUEST_DESCRIPTION" Language="zh_Hans_CN">
     <Text>占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。
-      [NEWLINE]本城建造军事单位时+30% [ICON_Production] 生产力。
+      [NEWLINE]本城建造军事单位时+20% [ICON_Production] 生产力。
       [NEWLINE]掠夺和海岸扫荡的收益+100%。
       [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_CONQUEST_DESCRIPTION" Language="en_US">
     <Text>Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.
-      [NEWLINE]+30% [ICON_Production] Production toward all military units in this city.
+      [NEWLINE]+20% [ICON_Production] Production toward all military units in this city.
       [NEWLINE]Yields gained from pilaging and coastal raids are +100%.
       [NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>

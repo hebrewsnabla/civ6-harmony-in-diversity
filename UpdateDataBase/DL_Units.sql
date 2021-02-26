@@ -19,6 +19,13 @@ update Units set Cost = 150, CostProgressionParam1 = 10 where UnitType = 'UNIT_A
 update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_INQUISITOR';
 update Units set Cost = 120, CostProgressionParam1 = 10 where UnitType = 'UNIT_GURU';
 
+update Units set Cost = 25 where UnitType = 'UNIT_SCOUT';
+update Units set Cost = 35 where UnitType = 'UNIT_CREE_OKIHTCITAW';
+update Units set Cost = 120 where UnitType = 'UNIT_SKIRMISHER';
+update Units set Cost = 120 where UnitType = 'UNIT_INCA_WARAKAQ';
+update Units set Cost = 300 where UnitType = 'UNIT_RANGER';
+update Units set Cost = 300 where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
+update Units set Cost = 450 where UnitType = 'UNIT_SPEC_OPS';
 -- add worker's basic building charges
 update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
 update Units set BuildCharges = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';

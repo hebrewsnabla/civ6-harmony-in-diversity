@@ -98,8 +98,8 @@ select	'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType, 'Amount',
 		'LinearScaleFromDefaultHandicap', 0, 4
 from Eras where not EraType = 'ERA_ANCIENT';
 
--- Science Scale: 25 + 15n
-update ModifierArguments set Extra = 5
+-- Science Scale: 35 + 10n
+update ModifierArguments set Extra = 7
 	where ModifierId = 'HIGH_DIFFICULTY_SCIENCE_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_SCIENCE_SCALING_AT_LEAST_' || EraType
@@ -114,11 +114,11 @@ select 'HIGH_DIFFICULTY_SCIENCE_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIE
 from Eras where not EraType = 'ERA_ANCIENT';
 insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
 select	'HIGH_DIFFICULTY_SCIENCE_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 3
+		'LinearScaleFromDefaultHandicap', 0, 2
 from Eras where not EraType = 'ERA_ANCIENT';
 
--- Culture Scale: 25 + 15n
-update ModifierArguments set Extra = 5
+-- Culture Scale: 35 + 10n
+update ModifierArguments set Extra = 7
 	where ModifierId = 'HIGH_DIFFICULTY_CULTURE_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_CULTURE_SCALING_AT_LEAST_' || EraType
@@ -133,7 +133,7 @@ select 'HIGH_DIFFICULTY_CULTURE_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIE
 from Eras where not EraType = 'ERA_ANCIENT';
 insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
 select	'HIGH_DIFFICULTY_CULTURE_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 3
+		'LinearScaleFromDefaultHandicap', 0, 2
 from Eras where not EraType = 'ERA_ANCIENT';
 
 -- Gold Scale: 25 + 15n

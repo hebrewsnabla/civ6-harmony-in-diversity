@@ -51,11 +51,13 @@ update Districts set CitizenSlots = 1
  	or DistrictType = 'DISTRICT_ACROPOLIS';
 
 -- remove the great person points as they are moved to the citizen yield.
-delete from District_GreatPersonPoints where
+update District_GreatPersonPoints set PointsPerTurn = 1 where
 	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- delete from District_GreatPersonPoints where
+-- 	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 -- update District_GreatPersonPoints set PointsPerTurn = 2
 -- 	where DistrictType = 'DISTRICT_LAVRA' and GreatPersonClassType = 'GREAT_PERSON_CLASS_PROPHET';
-update District_GreatPersonPoints set PointsPerTurn = 2
+update District_GreatPersonPoints set PointsPerTurn = 3
 	where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and GreatPersonClassType = 'GREAT_PERSON_CLASS_ADMIRAL';
 
 update District_CitizenYieldChanges set YieldChange = 3 where DistrictType = 'DISTRICT_HOLY_SITE' or DistrictType = 'DISTRICT_LAVRA';

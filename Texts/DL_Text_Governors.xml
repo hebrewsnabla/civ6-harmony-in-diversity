@@ -51,10 +51,10 @@
 			<Text>Multinational Corporations</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍</Text>
+			<Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="en_US">
-			<Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city</Text>
+			<Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city.</Text>
 		</Replace>
 		<!-- 维克多 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="zh_Hans_CN">
@@ -100,10 +100,10 @@
 			<Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +2 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+50% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
+			<Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+30% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
-			<Text>100% [ICON_Production] Production increase to all nuclear armament projects in the city.+50% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
+			<Text>100% [ICON_Production] Production increase to all nuclear armament projects in the city. +30% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
 		</Replace>
 		<!-- 主教 -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
