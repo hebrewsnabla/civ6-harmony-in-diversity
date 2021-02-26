@@ -17,19 +17,18 @@ local m_YieldAvailableNums = { 10, 5, 2, 1 };
 --
 local m_CachedCityYield = {};
 
-Utils.HasBuildingWithinCountry = function(playerID, cityID )
+Utils.HasBuildingWithinCountry = function( playerID, buildingID )
     local player = Players[playerID]
-    local Allcity = CityManager.GetCity(playerID, cityID)
-    local building = GameInfo.Buildings['BUILDING_GOV_CONQUEST'].Index
-    if player ~= nil and Allcity ~= nil and building ~= nil then
-        for _, city in pairs(Allcity) do
-            local CityHasBuilding = city:GetBuildings():HasBuilding(building)
+    local Allcity = player:GetCities()
+    if player ~= nil and Allcity ~= nil then
+        for _, city in Allcity:Members() do
+            local CityHasBuilding = city:GetBuildings():HasBuilding(buildingID)
             if CityHasBuilding then
                 return true
-            end
-            return false
-        end
+            end            
+        end       
     end
+    return false
 end
 
 
