@@ -568,7 +568,7 @@
     <Text>General Services Office</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>拥有总务员头衔的总督“马格努斯”在此城市就职时，总务厅为9个单元格之内的城市（包括该城市）提供额外 3 [ICON_FOOD] 食物，3 [ICON_PRODUCTION] 生产力，3 [ICON_SCIENCE] 科技值，3 [ICON_CULTURE] 文化值和 3 [ICON_GOLD] 金币。</Text>
+    <Text>拥有总务官头衔的总督“马格努斯”在此城市就职时，总务厅为9个单元格之内的城市（包括该城市）提供额外 3 [ICON_FOOD] 食物，3 [ICON_PRODUCTION] 生产力，3 [ICON_SCIENCE] 科技值，3 [ICON_CULTURE] 文化值和 3 [ICON_GOLD] 金币。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION" Language="en_US">
     <Text>When the Governor Magnus with the Promotion "General Services Officer" is estabilished in this city, the General Service Office can provide 3 [ICON_FOOD] Food, 3 [ICON_PRODUCTION] Production, 3 [ICON_SCIENCE] Science, 3 [ICON_CULTURE] Culture and 3 [ICON_GOLD] Gold to the cities within 9 tiles (this city included). </Text>

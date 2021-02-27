@@ -94,7 +94,7 @@ values
 
 -- Unlock
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
-update Buildings set PrereqTech = 'TECH_PRINTING', PrereqCivic = NULL where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 -- Regional Range
 update Buildings set RegionalRange = 6
  where BuildingType = 'BUILDING_UNIVERSITY'
@@ -119,37 +119,37 @@ update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_SEWER';
 -- building adjustments
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE'
 	or BuildingType = 'BUILDING_STAR_FORT' or BuildingType = 'BUILDING_TSIKHE';
-update Buildings set Cost = 45 where BuildingType = 'BUILDING_MONUMENT';
-update Buildings set Cost = 60, Housing = 1 where BuildingType = 'BUILDING_GRANARY';
+-- update Buildings set Cost = 45 where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Housing = 1 where BuildingType = 'BUILDING_GRANARY'; -- Cost = 60
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_WATER_MILL';
 -- 
-update Buildings set Cost = 240 where BuildingType = 'BUILDING_FERRIS_WHEEL';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_FOOD_MARKET';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_HANGAR';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_SANCTUARY';
+-- update Buildings set Cost = 240 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+-- update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_FOOD_MARKET';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_HANGAR';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_SANCTUARY';
 
--- District building cost updates
--- Campus
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_RESEARCH_LAB';
--- Commercial hub
-update Buildings set Cost = 250 where BuildingType = 'BUILDING_BANK';
-update Buildings set Cost = 200 where BuildingType = 'BUILDING_GRAND_BAZAAR';
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_STOCK_EXCHANGE';
--- Theater
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_BROADCAST_CENTER';
--- Industrial Zone
-update Buildings set Cost = 175 where BuildingType = 'BUILDING_WORKSHOP';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_COAL_POWER_PLANT';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
-update Buildings set Cost = 500 where BuildingType = 'BUILDING_POWER_PLANT';
--- Harbor
-update Buildings set Cost = 250 where BuildingType = 'BUILDING_SHIPYARD';
-update Buildings set Cost = 400 where BuildingType = 'BUILDING_SEAPORT';
--- Encampment
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_MILITARY_ACADEMY';
+-- -- District building cost updates
+-- -- Campus
+-- update Buildings set Cost = 500 where BuildingType = 'BUILDING_RESEARCH_LAB';
+-- -- Commercial hub
+-- update Buildings set Cost = 250 where BuildingType = 'BUILDING_BANK';
+-- update Buildings set Cost = 200 where BuildingType = 'BUILDING_GRAND_BAZAAR';
+-- update Buildings set Cost = 500 where BuildingType = 'BUILDING_STOCK_EXCHANGE';
+-- -- Theater
+-- update Buildings set Cost = 500 where BuildingType = 'BUILDING_BROADCAST_CENTER';
+-- -- Industrial Zone
+-- update Buildings set Cost = 175 where BuildingType = 'BUILDING_WORKSHOP';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+-- update Buildings set Cost = 420 where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+-- update Buildings set Cost = 500 where BuildingType = 'BUILDING_POWER_PLANT';
+-- -- Harbor
+-- update Buildings set Cost = 250 where BuildingType = 'BUILDING_SHIPYARD';
+-- update Buildings set Cost = 400 where BuildingType = 'BUILDING_SEAPORT';
+-- -- Encampment
+-- update Buildings set Cost = 360 where BuildingType = 'BUILDING_MILITARY_ACADEMY';
 
 delete from BuildingPrereqs where Building = 'BUILDING_AIRPORT' and PrereqBuilding = 'BUILDING_HANGAR';
 
@@ -547,85 +547,85 @@ values
 
 -- Maintainance
 --update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
-update Buildings set Maintenance = 0	where BuildingType = 'BUILDING_MONUMENT';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GRANARY';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WATER_MILL';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_PALGUM';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_WALLS';
-update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_CASTLE';
-update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_STAR_FORT';
-update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_TSIKHE';
-update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_SEWER';
+update Buildings set Maintenance = 0,	Cost = 45	where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Maintenance = 1,	Cost = 60	where BuildingType = 'BUILDING_GRANARY';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_WATER_MILL';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_PALGUM';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_WALLS';
+update Buildings set Maintenance = 3,	Cost = 220	where BuildingType = 'BUILDING_CASTLE';
+update Buildings set Maintenance = 5,	Cost = 300	where BuildingType = 'BUILDING_STAR_FORT';
+update Buildings set Maintenance = 5,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
+update Buildings set Maintenance = 6,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIBRARY';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_UNIVERSITY';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MADRASA';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_RESEARCH_LAB';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARKET';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SUKIENNICE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_BANK';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GRAND_BAZAAR';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_STOCK_EXCHANGE';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_LIGHTHOUSE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SHIPYARD';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SEAPORT';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BARRACKS';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_STABLE';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ORDU';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ARMORY';
-update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
-update Buildings set Maintenance = 3	where BuildingType = 'BUILDING_WORKSHOP';
-update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_FACTORY';
-update Buildings set Maintenance = 7	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_POWER_PLANT';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_SHRINE';
-update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_TEMPLE';
-update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_STAVE_CHURCH';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CATHEDRAL';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GURDWARA';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MEETING_HOUSE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MOSQUE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_PAGODA';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_SYNAGOGUE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_WAT';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_STUPA';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_DAR_E_MEHR';
-update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_PRASAT';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_AMPHITHEATER';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_MARAE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ART';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_BROADCAST_CENTER';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_FILM_STUDIO';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_ARENA';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_TLACHTLI';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_ZOO';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_THERMAL_BATH';
-update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_STADIUM';
-update Buildings set Maintenance = 5	where BuildingType = 'BUILDING_FERRIS_WHEEL';
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_AQUARIUM';
-update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AQUATICS_CENTER';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
+update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
+update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_MARKET';
+update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_SUKIENNICE';
+update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_BANK';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_GRAND_BAZAAR';
+update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_STOCK_EXCHANGE';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_LIGHTHOUSE';
+update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_SHIPYARD';
+update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_SEAPORT';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BARRACKS';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_STABLE';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_ORDU';
+update Buildings set Maintenance = 4,	Cost = 200	where BuildingType = 'BUILDING_ARMORY';
+update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
+update Buildings set Maintenance = 3,	Cost = 190	where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
+update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
+update Buildings set Maintenance = 1,	Cost = 70	where BuildingType = 'BUILDING_SHRINE';
+update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_CATHEDRAL';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_GURDWARA';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MEETING_HOUSE';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MOSQUE';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_PAGODA';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_SYNAGOGUE';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_WAT';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_STUPA';
+update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_DAR_E_MEHR';
+update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_AMPHITHEATER';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_MARAE';
+update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
+update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
+update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_BROADCAST_CENTER';
+update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FILM_STUDIO';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_ARENA';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_TLACHTLI';
+update Buildings set Maintenance = 4,	Cost = 380	where BuildingType = 'BUILDING_ZOO';
+update Buildings set Maintenance = 4,	Cost = 320	where BuildingType = 'BUILDING_THERMAL_BATH';
+update Buildings set Maintenance = 12,	Cost = 550	where BuildingType = 'BUILDING_STADIUM';
+update Buildings set Maintenance = 5,	Cost = 250	where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Maintenance = 8,	Cost = 380	where BuildingType = 'BUILDING_AQUARIUM';
+update Buildings set Maintenance = 12,	Cost = 550	where BuildingType = 'BUILDING_AQUATICS_CENTER';
 
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_HANGAR';
-update Buildings set Maintenance = 12	where BuildingType = 'BUILDING_AIRPORT';
-update Buildings set Maintenance = 6	where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
-update Buildings set Maintenance = 2	where BuildingType = 'BUILDING_CONSULATE';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_CHANCERY';
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_FOOD_MARKET';
-update Buildings set Maintenance = 10	where BuildingType = 'BUILDING_SHOPPING_MALL';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_TALL';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_WIDE';
-update Buildings set Maintenance = 1	where BuildingType = 'BUILDING_GOV_CONQUEST';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_CITYSTATES';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_SPIES';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_GOV_FAITH';
-update Buildings set Maintenance = 4	where BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE';
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_MILITARY';
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_CULTURE';
-update Buildings set Maintenance = 8	where BuildingType = 'BUILDING_GOV_SCIENCE';
+update Buildings set Maintenance = 8,	Cost = 360	where BuildingType = 'BUILDING_HANGAR';
+update Buildings set Maintenance = 12,	Cost = 480	where BuildingType = 'BUILDING_AIRPORT';
+update Buildings set Maintenance = 6,	Cost = 360	where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
+update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_CONSULATE';
+update Buildings set Maintenance = 4,	Cost = 290	where BuildingType = 'BUILDING_CHANCERY';
+update Buildings set Maintenance = 8,	Cost = 360	where BuildingType = 'BUILDING_FOOD_MARKET';
+update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_SHOPPING_MALL';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_GOV_TALL';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_GOV_WIDE';
+update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_GOV_CONQUEST';
+update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_GOV_CITYSTATES';
+update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_GOV_SPIES';
+update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_GOV_FAITH';
+update Buildings set Maintenance = 4,	Cost = 225	where BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE';
+update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_GOV_MILITARY';
+update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_GOV_CULTURE';
+update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_GOV_SCIENCE';
 
 
 ---University buff adjacent rainforest and gain science from rainforest
