@@ -49,6 +49,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
     </Criteria>
+    <Criteria id="BetterBuilderChargesTracking_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">c6477d9f-6bad-4d24-9e76-49cda4f0a966</ModInUse>
+    </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
@@ -117,7 +121,15 @@
       <Properties><LoadOrder>15006</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     </UpdateText>
-    <!-- Farm on fresh hills-->
+    <!-- Better builder charges tracking -->
+    <ReplaceUIScript id="BuilderChargesUnitFlagManager" criteria="BetterBuilderChargesTracking_Conflict_Expansion2">
+      <Properties>
+        <LoadOrder>666</LoadOrder>
+        <LuaContext>UnitFlagManager</LuaContext>
+        <LuaReplace>BuilderCharges/UnitFlagManager_BuilderCharges.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <!-- Farm on fresh hills -->
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15501</LoadOrder></Properties>
       <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
@@ -378,6 +390,8 @@
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
+    <!-- Builder charges -->
+    <File>BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
     <File>CityPolicies/CityPolicies.sql</File>
     <File>CityPolicies/CityPolicies_Texts.xml</File>
