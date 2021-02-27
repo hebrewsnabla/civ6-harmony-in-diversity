@@ -20,11 +20,11 @@ function ViewPanelBreakdown( data:table )
     -- Duplicate current data for modification.
     local modifiedData = deepcopy(data, {});
 
-    -- Change modifiedData's all CITY_POLICY buildings to be "not built". Can also remove them but harder to do when iterating the table.
+    -- Change modifiedData's all buildings that should be hidden to be "not built". Can also remove them but harder to do when iterating the table.
     for _, district in ipairs(modifiedData.BuildingsAndDistricts) do
         if district.isBuilt and district.Type == "DISTRICT_CITY_CENTER" then
             for _,building in ipairs(district.Buildings) do
-                if building.isBuilt and IsCityPolicy(building) then
+                if building.isBuilt and ShouldHideBuilding(building) then
                     building.isBuilt = false;
                 end
             end
@@ -38,9 +38,11 @@ function ViewPanelBreakdown( data:table )
     LuaEvents.CityPanelOverview_CityPolicies(data);
 end
 
-function IsCityPolicy( building:table )
+function ShouldHideBuilding(building:table)
+    -- Hide internal only buildings and city policy buildings.
     local buildingType:string = building.Type;
-    return buildingType:match "^BUILDING_CITY_POLICY_";    
+    local building = GameInfo.Buildings[buildingType];
+    return building.InternalOnly or buildingType:match "^BUILDING_CITY_POLICY_";
 end
 
 -- Deepcopying table. Taken from http://lua-users.org/wiki/CopyTable.
