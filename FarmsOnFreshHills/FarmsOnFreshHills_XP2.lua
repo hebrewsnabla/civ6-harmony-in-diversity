@@ -58,6 +58,18 @@ function AdjacentToAqueduct(plot)
 	return false;
 end
 
+function HasVisibleResource(plot, player)
+	local resource = plot:GetResourceType();
+	if resource ~= -1 then
+		local playerResources = player:GetResources();
+		-- print(GameInfo.Resources[resource].Hash)
+		if (playerResources:IsResourceVisible(GameInfo.Resources[resource].Hash)) then
+			return true
+		end
+	end
+	return false
+end
+
 function CanPlaceFarmOnFreshHill(plot, player)
 	-- print(plot, player)
 	if plot == nil or player == nil then
@@ -80,7 +92,7 @@ function CanPlaceFarmOnFreshHill(plot, player)
 	if terrainType ~= m_TerrainPlainsHills and terrainType ~= m_TerrainGrassHills then
 		return false;
 	end
-	if plot:GetResourceType() ~= -1 or plot:GetFeatureType() ~= -1 then
+	if HasVisibleResource(plot, player) or plot:GetFeatureType() ~= -1 then
 		return false;
 	end
 	if plot:GetImprovementType() ~= -1 or plot:GetDistrictType() ~= -1 then

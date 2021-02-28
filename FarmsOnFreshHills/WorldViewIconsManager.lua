@@ -626,6 +626,7 @@ end
 
 -- ===========================================================================
 function IgnoreImprovementRecommendation(value)
+	-- print(GameInfo.Improvements[value.ImprovementHash].ImprovementType)
 	if (GameInfo.Improvements[value.ImprovementHash].ImprovementType == 'IMPROVEMENT_DUMMY') then
 		return true;
 	end
