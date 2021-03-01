@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="aa162e00-b301-425f-8666-af258a8f16e8" version="1">
+﻿<Mod id="aa162e00-b301-425f-8666-af258a8f16e8" version="1">
   <Properties>
     <Name>Farms On Fresh Hills</Name>
     <Description>Technology Irrigation enables the builder to build farms on plains and grass hills with fresh water. </Description>
@@ -8,68 +7,31 @@
     <AffectsSavedGames>0</AffectsSavedGames>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
-  <ActionCriteria>
-    <Criteria id="BaseGame">
-      <RuleSetInUse>RULESET_STANDARD</RuleSetInUse>
-    </Criteria>
-    <Criteria id="Expansion1">
-      <RuleSetInUse>RULESET_EXPANSION_1</RuleSetInUse>
-    </Criteria>
-    <Criteria id="Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-    </Criteria>
-  </ActionCriteria>
   <InGameActions>
     <UpdateDatabase id="FarmsOnFreshHills_Database">
-      <Properties><LoadOrder>10001</LoadOrder></Properties>
-      <File>FarmsOnFreshHills_Database.sql</File>
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <AddGameplayScripts id="FarmsOnFreshHills_Gameplay">
-      <Properties><LoadOrder>10002</LoadOrder></Properties>
-      <File>FarmsOnFreshHills_Gameplay.lua</File>
-    </AddGameplayScripts>
-    <ReplaceUIScript id="FarmsOnFreshHills_UnitPanel" criteria="BaseGame">
+    <ReplaceUIScript id="UnitPanel_FarmsOnFreshHills">
       <Properties>
-        <LoadOrder>10003</LoadOrder>
+        <LoadOrder>10000</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>FarmsOnFreshHills_BaseGame.lua</LuaReplace>
+        <LuaReplace>UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ReplaceUIScript id="FarmsOnFreshHills_UnitPanel_XP1" criteria="Expansion1">
-      <Properties>
-        <LoadOrder>10003</LoadOrder>
-        <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>FarmsOnFreshHills_XP1.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <ReplaceUIScript id="FarmsOnFreshHills_UnitPanel_XP2" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>10003</LoadOrder>
-        <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>FarmsOnFreshHills_XP2.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
+    <UpdateText id="FarmsOnFreshHills_Texts">
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>FarmsOnFreshHills_Texts.xml</File>
+    </UpdateText>
     <ImportFiles id="WorldViewIconsManager_FOFH_import">
       <Properties><LoadOrder>10004</LoadOrder></Properties>
       <File>WorldViewIconsManager.lua</File>
     </ImportFiles>
-    <UpdateIcons id="FarmsOnFreshHills_ICON">
-      <Properties><LoadOrder>10005</LoadOrder></Properties>
-      <File>Icons.xml</File>
-    </UpdateIcons>
-    <UpdateText id="FarmsOnFreshHills_Text">
-      <Properties><LoadOrder>10006</LoadOrder></Properties>
-      <File>Texts.xml</File>
-    </UpdateText>
   </InGameActions>
   <Files>
-    <File>FarmsOnFreshHills_Database.sql</File>
-    <File>FarmsOnFreshHills_Gameplay.lua</File>
-    <File>FarmsOnFreshHills_BaseGame.lua</File>
-    <File>FarmsOnFreshHills_XP1.lua</File>
-    <File>FarmsOnFreshHills_XP2.lua</File>
+    <File>FarmsOnFreshHills.sql</File>
+    <File>UnitPanel_FarmsOnFreshHills.lua</File>
+    <File>FarmsOnFreshHills_Texts.xml</File>
     <File>WorldViewIconsManager.lua</File>
-    <File>Icons.xml</File>
-    <File>Texts.xml</File>
   </Files>
 </Mod>

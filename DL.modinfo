@@ -132,30 +132,22 @@
     <!-- Farm on fresh hills -->
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15501</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
+      <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <AddGameplayScripts id="DL_FarmsOnFreshHills_Gameplay" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15502</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
-    </AddGameplayScripts>
     <ReplaceUIScript id="DL_FarmsOnFreshHills_UnitPanel_XP2" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15503</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>FarmsOnFreshHills/FarmsOnFreshHills_XP2.lua</LuaReplace>
+        <LuaReplace>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_WorldViewIconsManager_FOFH_import" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15504</LoadOrder></Properties>
       <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
     </ImportFiles>
-    <UpdateIcons id="DL_FarmsOnFreshHills_ICON" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15505</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/Icons.xml</File>
-    </UpdateIcons>
     <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15506</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/Texts.xml</File>
+      <File>FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     </UpdateText>
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
@@ -402,12 +394,10 @@
     <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
-    <File>FarmsOnFreshHills/FarmsOnFreshHills_Database.sql</File>
-    <File>FarmsOnFreshHills/FarmsOnFreshHills_Gameplay.lua</File>
-    <File>FarmsOnFreshHills/FarmsOnFreshHills_XP2.lua</File>
+    <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
+    <File>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
     <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
-    <File>FarmsOnFreshHills/Icons.xml</File>
-    <File>FarmsOnFreshHills/Texts.xml</File>
+    <File>FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
     <File>Maps/FeatureGenerator.lua</File>
