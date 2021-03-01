@@ -67,6 +67,12 @@
 		<Replace Tag="LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION" Language="en_US">
 			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith; +2 [Icon_STRENGTH] Combat Strength) for all land units for each Jinja within your territory ( 10 at most). Your civilization gains [ICON_FAITH] Faith equal to 20% of the unit’s cost when a non-civilian is trained in this city.</Text>
 		</Replace>
+		<!-- <Replace Tag="LOC_JINJA_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+2 [ICON_Strength] 战斗力来自神道教神社</Text>
+		</Replace>
+		<Replace Tag="LOC_JINJA_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
+			<Text>+2 [ICON_Strength] Combat Strength from Jinja</Text>
+		</Replace> -->
 		<Replace Tag="LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>每个神道教神社为陆地军事单位加2战斗力（最多+10战斗力），所在城市生产出军事单位时获得相当于所花费生产力20%的信仰。</Text>
 		</Replace>

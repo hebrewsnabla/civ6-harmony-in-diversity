@@ -1301,3 +1301,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 修复MOD宗教建筑未正确涨价的bug。
 神灵启示的完成奇观返50%鸽子的bug修复。
 淡水丘陵田：修复无法在不可见资源的丘陵上修建淡水田的问题。
+
+（by 小天）
+合并Better Builder Charges Tracker，在工人图标右侧直观显示其次数。

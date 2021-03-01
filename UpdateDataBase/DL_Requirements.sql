@@ -11,6 +11,10 @@ insert or replace into Requirements (RequirementId, RequirementType) values
 	('REQUIREMENT_UNIT_IS_SETTLER', 'REQUIREMENT_UNIT_TYPE_MATCHES');
 insert or replace into RequirementArguments (RequirementId, Name, Value) values
 	('REQUIREMENT_UNIT_IS_SETTLER', 'UnitType', 'UNIT_SETTLER');
+insert or replace into Requirements (RequirementId, RequirementType) values 
+	('REQUIREMENT_UNIT_IS_LAND_COMBAT', 'REQUIREMENT_UNIT_TAG_MATCHES');
+insert or replace into RequirementArguments (RequirementId, Name, Value) values
+	('REQUIREMENT_UNIT_IS_LAND_COMBAT', 'Tag', 'CLASS_LAND_COMBAT');
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_UNIT_IS_' || UnitType , 'REQUIREMENT_UNIT_TYPE_MATCHES' from Units;
 insert or replace into RequirementArguments (RequirementId, Name, Value) 	
@@ -526,6 +530,7 @@ values
 insert or replace into RequirementSetRequirements 
 	(RequirementSetId,				RequirementId)	
 values
+	('UNIT_IS_LAND_COMBAT',			'REQUIREMENT_UNIT_IS_LAND_COMBAT'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIRES_UNIT_IS_UNIT_MISSIONARY'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIRES_UNIT_IS_UNIT_APOSTLE'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIRES_UNIT_IS_UNIT_INQUISITOR'),
@@ -537,5 +542,6 @@ values
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIRES_UNIT_IS_UNIT_WARRIOR_MONK');
 
 insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	values
+	('UNIT_IS_LAND_COMBAT',			'REQUIREMENTSET_TEST_ALL'),
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIREMENTSET_TEST_ANY');
