@@ -1194,7 +1194,7 @@ insert or replace into Buildings
 	(BuildingType, 						Name, 									Cost, 	Description,										
 	PrereqTech,				PrereqCivic,				PrereqDistrict) 
 values
-	('BUILDING_GENERAL_SERVICE', 		'LOC_BUILDING_GENERAL_SERVICE_NAME', 	300, 	'LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION',				
+	('BUILDING_GENERAL_SERVICE', 		'LOC_BUILDING_GENERAL_SERVICE_NAME', 	250, 	'LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION',				
 	NULL,					'CIVIC_CIVIL_SERVICE',		'DISTRICT_CITY_CENTER');
 
 insert or replace into Building_YieldChanges 
@@ -1207,6 +1207,11 @@ values
 	('BUILDING_GENERAL_SERVICE',		'YIELD_GOLD',			1);
 
 -- If Magnus with promotion general service officier located, cities within 9 tiles can receive regional yield (2 of all yields except faith).
+insert or replace into BuildingPrereqs
+	(Building,						PrereqBuilding)
+values
+	('BUILDING_GENERAL_SERVICE',	'BUILDING_DUMMY_MAGNUS');
+
 insert or replace into BuildingModifiers 
  	(BuildingType,					ModifierId)
 values 

@@ -201,6 +201,14 @@
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
 			<Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
 		</Replace>
+		<Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="zh_Hans_CN">
+			<Text>总务官马格努斯</Text>
+		</Replace>
+		<!-- 拥有总务官头衔的总督马格努斯在9环内的城市就职 -->
+		<Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="en_US">
+			<Text>General Services Officer Magnus</Text>
+		</Replace>
+		<!-- Governor Magnus with General Services Officer Title is established within 9 tiles -->
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">
 			<Text>总务官</Text>
 		</Replace>
