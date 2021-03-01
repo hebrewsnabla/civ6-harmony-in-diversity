@@ -835,7 +835,7 @@ values
 --宗教单位加力
 	('GOV_FAITH_COMBAT_BUFF',						'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
 --建成建筑返还信仰
-	('GOV_FAITH_FINISH_BUILDINGS',					'MODIFIER_SINGLE_CITY_GRANT_YIELD_PER_BUILDING_COST');
+	('GOV_FAITH_FINISH_BUILDINGS',					'MODIFIER_PLAYER_CITIES_GRANT_YIELD_PER_BUILDING_COST');
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,							Value)
