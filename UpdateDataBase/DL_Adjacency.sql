@@ -23,6 +23,8 @@ values
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'Reef_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'District_Science_City_Center'),
+	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_Hansa'),
+	('DISTRICT_SUGUBA',				'District_Gold_Hansa'),
 	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
 	('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
@@ -60,10 +62,10 @@ insert or replace into Improvement_Adjacencies
 values
 	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
 	('IMPROVEMENT_MINE',			'Mine_Oppidum_Production'),
-	('IMPROVEMENT_MINE',			'Mine_Hansa_Production'),
+	-- ('IMPROVEMENT_MINE',			'Mine_Hansa_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Oppidum_Production'),
-	('IMPROVEMENT_QUARRY',			'Quarry_Hansa_Production'),
+	-- ('IMPROVEMENT_QUARRY',			'Quarry_Hansa_Production'),
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
@@ -169,6 +171,8 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,
 	AdjacentDistrict,				PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
+	('District_Gold_Hansa',				'LOC_District_Gold_Hansa',					'YIELD_GOLD',		2,				1,	
+	'DISTRICT_HANSA',				NULL,			NULL,			NULL,			NULL),
 	-- ('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
 	-- 'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',				'YIELD_GOLD',		1,				1,	

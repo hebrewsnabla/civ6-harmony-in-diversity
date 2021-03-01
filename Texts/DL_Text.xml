@@ -11,6 +11,25 @@
 		<Replace Tag="LOC_HAPPINESS_DELIGHTED_NAME" Language="en_US">
 			<Text>Delighted</Text>
 		</Replace>
+		<!-- Diplo visibility -->
+		<Replace Tag="LOC_VIZSOURCE_CHANCERY" Language="zh_Hans_CN">
+			<Text>建造了外交办</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_CHANCERY" Language="en_US">
+			<Text>Built Building Chancery</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_CHANCERY" Language="zh_Hans_CN">
+			<Text>建造外交办</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_CHANCERY" Language="en_US">
+			<Text>Build Building Chancery</Text>
+		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_CHANCERY" Language="zh_Hans_CN">
+			<Text>外交办的官员获悉</Text>
+		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_CHANCERY" Language="en_US">
+			<Text>Your officier from Chancery informed that </Text>
+		</Replace>
 		<Replace Tag="LOC_DISTRICT_LUXURY_GOLD" Language="zh_Hans_CN">
 			<Text>相邻奢侈品资源提供+{1_num} [ICON_GOLD] 金币。</Text>
 		</Replace>
@@ -316,8 +335,14 @@
 		<Replace Tag="LOC_District_Science_City_Center" Language="en_US">
 			<Text>+1[ICON_SCIENCE] Science from each adjacent City Center.</Text>
 		</Replace>
+		<Replace Tag="LOC_District_Gold_Hansa" Language="zh_Hans_CN">
+			<Text>每个相邻的商业同业工会提供 +2 [ICON_GOLD] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Gold_Hansa" Language="en_US">
+			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
+		</Replace>
 		<Replace Tag="LOC_District_Gold_City_Center" Language="zh_Hans_CN">
-			<Text>每个相邻的市中心提供 +1[ICON_GOLD] 金币。</Text>
+			<Text>每个相邻的市中心提供 +1 [ICON_GOLD] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
 			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>

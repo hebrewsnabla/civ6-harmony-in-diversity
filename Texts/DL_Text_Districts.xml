@@ -18,10 +18,10 @@
       <!-- [NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_HANSA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>德国特色工业区域，替代工业区，建造费用更低。[NEWLINE][NEWLINE]可从每个相邻的水渠、运河和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的商业中心处获得+1 [ICON_Production] 生产力加成。每2处相邻资源为其提供1点 [ICON_Production] 生产力加成。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。随着科技和市政的发展，其将获得更多的相邻 [ICON_Production] 生产力加成。为相邻单元格-1魅力。</Text>
+      <Text>德国特色工业区域，替代工业区，建造费用更低。[NEWLINE][NEWLINE]可从每个相邻的水渠、运河和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的商业中心处获得+1 [ICON_Production] 生产力加成。每2处相邻资源为其提供1点 [ICON_Production] 生产力加成。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。随着科技和市政的发展，其将获得更多的相邻 [ICON_Production] 生产力加成。为相邻的资源+1锤，为商业中心提供相邻大加成。给相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_HANSA_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] Production bonus for each adjacent Aqueduct, Canal, and Dam districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub districts. +1 [ICON_Production] Production bonus for every two adjacent resources. +1 [ICON_Production] Production bonus for every two adjacent district tiles. Additional adjacency [ICON_Production] Production bonus as you advance through the Technology and Civics Tree. -1 Appeal to adjacent tiles.</Text>
+      <Text>A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] Production bonus for each adjacent Aqueduct, Canal, and Dam districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub districts. +1 [ICON_Production] Production bonus for every two adjacent resources. +1 [ICON_Production] Production bonus for every two adjacent district tiles. Additional adjacency [ICON_Production] Production bonus as you advance through the Technology and Civics Tree. +1 [Icon_Production] Production to adjacent Resources, provide Major adjacency bonus to Commercial Hub Districts. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_OPPIDUM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。建成此区域后，即可解锁“学徒”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。</Text>
