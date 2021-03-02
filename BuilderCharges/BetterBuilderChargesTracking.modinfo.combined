@@ -33,6 +33,10 @@
         <LuaReplace>UnitFlagManager_BuilderCharges.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
+    <!-- Importing our UnitFlagManager file so that other mods can include it and apply additional logic. -->
+    <ImportFiles id="BuilderChargesUnitFlagManager_Import">
+      <File>UnitFlagManager_BuilderCharges.lua</File>
+    </ImportFiles>
   </InGameActions>
 
   <Files>

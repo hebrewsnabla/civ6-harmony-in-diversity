@@ -17,9 +17,9 @@ end
 -- =================================================================================
 -- Cache base functions
 -- =================================================================================
-local BASE_Subscribe		= Subscribe;
-local BASE_Unsubscribe		= Unsubscribe;
-local BASE_UpdatePromotions	= UnitFlag.UpdatePromotions;
+local BASE_Subscribe        = Subscribe;
+local BASE_Unsubscribe      = Unsubscribe;
+local BASE_UpdatePromotions = UnitFlag.UpdatePromotions;
 
 -- =================================================================================
 -- Overrides
@@ -33,15 +33,18 @@ end
 
 function UnitFlag.UpdatePromotions(self)
     local unit = self:GetUnit();
-    if unit ~= nil and unit:GetUnitType() ~= -1 and GameInfo.Units[unit:GetUnitType()].UnitType == "UNIT_BUILDER" then
-        -- The unit is a builder, try updating it's builder charges.
-        local buildCharges = unit:GetBuildCharges();
-        if buildCharges > 0 then
-            -- Only need to update if has charges.
-            self.m_Instance.UnitNumPromotions:SetText(buildCharges);
-            self.m_Instance.Promotion_Flag:SetHide(false);
+    if unit ~= nil and unit:GetUnitType() ~= -1 then
+        local unitType = GameInfo.Units[unit:GetUnitType()].UnitType;
+        if unitType == "UNIT_BUILDER" or unitType == "UNIT_MILITARY_ENGINEER" then
+            -- The unit is a builder or military engineer, try updating it's builder charges.
+            local buildCharges = unit:GetBuildCharges();
+            if buildCharges > 0 then
+                -- Only need to update if has charges.
+                self.m_Instance.UnitNumPromotions:SetText(buildCharges);
+                self.m_Instance.Promotion_Flag:SetHide(false);
+            end
+            return;
         end
-        return;
     end
     BASE_UpdatePromotions(self);
 end

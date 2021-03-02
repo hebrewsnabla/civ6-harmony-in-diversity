@@ -76,7 +76,7 @@ More city policies are goint to be added.[NEWLINE]
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="Expansion2">
-      <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
+      <File>UI/ToolTipLoader_CityPolicies.lua</File>
     </ImportFiles>
   </InGameActions>
   <Files>
@@ -87,6 +87,6 @@ More city policies are goint to be added.[NEWLINE]
     <File>UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     <File>UI/CityPanelOverview_CityPolicies_Instances.lua</File>
     <File>UI/CityPanelOverview_CityPolicies_Instances.xml</File>
-    <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
+    <File>UI/ToolTipLoader_CityPolicies.lua</File>
   </Files>
 </Mod>

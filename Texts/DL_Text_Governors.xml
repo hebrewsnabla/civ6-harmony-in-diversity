@@ -1,377 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-	<LocalizedText>
-		<!-- 瑞纳 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME" Language="zh_Hans_CN">
-			<Text>地产商人</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME" Language="en_US">
-			<Text>Real Estate Developer</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="en_US">
-			<Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +1 [ICON_Gold] Gold from each improved tile.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中商业中心和港口的相邻加成+150%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="en_US">
-			<Text>Commercial Hub and Harbor Districts receive +150% adjacency bonuses in the city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>每个未改良的地貌可向该城市提供+4 [ICON_Gold] 金币。该城市中与未改良地貌相邻的单元格可获得+1魅力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="en_US">
-			<Text>This city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features receive +1 Appeal in this city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION" Language="en_US">
-			<Text>+4 [ICON_Gold] Gold per turn for each [ICON_Citizen] Citizen in the city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME" Language="zh_Hans_CN">
-			<Text>金融中心</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME" Language="en_US">
-			<Text>Financial Centre</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中每有一座商业中心建筑和港口建筑， [ICON_Gold] 金币产出便+10%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="en_US">
-			<Text>Each Commercial and Harbor building in the city increase city [ICON_Gold] Gold yield output by 10%.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="zh_Hans_CN">
-			<Text>跨国公司</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="en_US">
-			<Text>Multinational Corporations</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="en_US">
-			<Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city.</Text>
-		</Replace>
-		<!-- 维克多 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市防御+5 [ICON_STRENGTH] 战斗力，您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。就职需要3回合。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="en_US">
-			<Text>Increase City Defence [ICON_STRENGTH] Strength by 5. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. Establishes in 3 turns.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>就职城市无法被围攻。城市领土内的单位防御时可+5 [ICON_Strength] 战斗力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="en_US">
-			<Text>City cannot be put under siege. Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. </Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="zh_Hans_CN">
-			<Text>后勤补给</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="en_US">
-			<Text>Logistics Supply</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>生产单位所需战略资源花费减少60%。本城正确改良的战略每回合积累+1。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="en_US">
-			<Text>Strategic resource costs for units are discounted 60%. Accumulating Strategic resources in the city gain an additional +1 per turn.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。本城生产的军事工程师次数+2，且生产军事工程师时+100% [ICON_PRODUCTION] 生产力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="en_US">
-			<Text>City gains an additional [ICON_Ranged] Ranged Strike per turn. Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="zh_Hans_CN">
-			<Text>征兵入伍</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="en_US">
-			<Text>Conscription</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+2 [ICON_STRENGTH] 战斗力和+25%战斗经验值。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="en_US">
-			<Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +2 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+30% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
-			<Text>100% [ICON_Production] Production increase to all nuclear armament projects in the city. +30% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
-		</Replace>
-		<!-- 主教 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城对相邻城市释放的宗教压力强度加倍。本城训练的宗教单位+1使用次数。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="en_US">
-			<Text>Religious pressure to adjacent cities is 100% stronger from this city. All religious units trained in this city receive extra 1 charge.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME" Language="zh_Hans_CN">
-			<Text>赛义德</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME" Language="en_US">
-			<Text>sayyid</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城训练的使徒、传教士、上师、武僧、审判+1  [ICON_MOVEMENT] 移动力。购买以上单位-10% [ICON_FAITH] 信仰花费。</Text>
-		</Replace>		
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="en_US">
-			<Text>Apostle, Missionary, Guru, Inquistor and Warrior Monk trained in this city + 1 [ICON_MOVEMENT] Movement permanently. -10% [ICON_FAITH] Faith cost when purchasing these units.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城遗物+50% [ICON_FAITH] 信仰值产出，+100% [ICON_TOURISM] 旅游业绩产出。本城的 [ICON_FAITH] 信仰值产出+15%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="en_US">
-			<Text>All relic in this city receive +50% [ICON_FAITH] Faith bonus and +100%  [ICON_TOURISM] Tourism. +15% [ICON_FAITH] Faith yield in this city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="zh_Hans_CN">
-			<Text>舍利子</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="en_US">
-			<Text>Sariki</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="zh_Hans_CN">
-			<Text>因信称义</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="en_US">
-			<Text>Justice by faith</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城除圣地外的其他区域的相邻产出等量的 [ICON_FAITH] 信仰值，圣地相邻额外产出等量的 [ICON_TOURISM] 旅游业绩。每个公民产出1 [ICON_FAITH] 信仰。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="en_US">
-			<Text>All districts (except for Holy Site) yield [ICON_FAITH] Faith equal to the adjacency bonus yield. Holy Site yields [ICON_TOURISM] Tourism equal to the faith adjacency bonus. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_PATRON_SAINT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>此城中生产的使徒和武僧首次升级时将额外获得1次升级。本城训练的武僧永久+5 [ICON_STRENGTH] 战斗力和+100% 战斗经验值。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_PATRON_SAINT_DESCRIPTION" Language="en_US">
-			<Text>Apostles and Warrior Monks trained in the city receive 1 extra promotion when receiving their first promotion. Warrior Monks trained in this city receive +5 [ICON_STRENGTH] Combat Strength and +100% Combat Experience permanently.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出。城市可使用 [ICON_FAITH] 信仰值购买区域。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="en_US">
-			<Text>All relic in this city receive +300%  [ICON_TOURISM] Tourism. Allows city to purchase districts with [ICON_FAITH] Faith.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="zh_Hans_CN">
-			<Text>普世牧首</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="en_US">
-			<Text>Oecumenical Patriarch</Text>
-		</Replace>
-		<!-- 老马 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市的 [ICON_Food] 增长+20%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+5 [ICON_Food] 食物。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="en_US">
-			<Text>+20% [ICON_Food] Growth in the city. Your [ICON_TradeRoute] Trade Routes ending here provide +5 [ICON_Food] Food to their starting city.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="zh_Hans_CN">
-			<Text>大兴土木</Text>
-			<!-- <Text>巧工记</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="en_US">
-			<Text>Ground Breaker</Text>
-			<!-- <Text>Book of Diverse Crafts</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>在城市中建造区域和建筑时加速50%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
-			<!-- <Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
-			<Text>+50% construction speed when constructing districts and buildings in the city. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
-			<!-- <Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
-			<Text>督农制</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="en_US">
-			<Text>Quan'Nong</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
-			<Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
-		</Replace>
-		<Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="zh_Hans_CN">
-			<Text>总务官马格努斯</Text>
-		</Replace>
-		<!-- 拥有总务官头衔的总督马格努斯在9环内的城市就职 -->
-		<Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="en_US">
-			<Text>General Services Officer Magnus</Text>
-		</Replace>
-		<!-- Governor Magnus with General Services Officer Title is established within 9 tiles -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">
-			<Text>总务官</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="en_US">
-			<Text>General Services Officer</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>总督“马格努斯”就职的城市中的总务厅可为9个单元格之内的城市提供额外3 [ICON_FOOD] 食物，3 [ICON_PRODUCTION] 生产力，3 [ICON_SCIENCE] 科技值，3 [ICON_CULTURE] 文化值和 3 [ICON_GOLD] 金币。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="en_US">
-			<Text>When the Governor Magnus estabilished in city, the General Service Office of the city can provide 3 [ICON_FOOD] Food, 3 [ICON_PRODUCTION] Production, 3 [ICON_SCIENCE] Science, 3 [ICON_CULTURE] Culture and 3 [ICON_GOLD] Gold to the cities within 9 tiles. </Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
-			<!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->
-			<Text>此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="en_US">
-			<Text>This city receives yields from all nearby district buildings with regional bonuses, not just from the first building of the same type.</Text>
-		</Replace>
-		<!-- Governor Liang	-->
-		<!-- Added by PineApple -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
-			<Text>乡村规划</Text>
-			<!-- <Text>耕樵渔猎</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="en_US">
-			<Text>Rural Planning</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="zh_Hans_CN">
-			<Text>建筑大师</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="en_US">
-			<Text>Architecture Master</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
-			<Text>基础设施</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="en_US">
-			<Text>Infrastructure</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="zh_Hans_CN">
-			<Text>世外天堂</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="en_US">
-			<Text>Paradise</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="en_US">
-			<Text>All Builders trained in this city will get +1 build charge and +1 [ICON_Movement] Movement.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力20%的大工程师点数。</Text>
-			<!-- <Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="en_US">
-			<Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 20% of the cost of the building.</Text>
-			<!-- <Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city.</Text> -->
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Production] Production for all improved plots in this city .</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+150%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
-			<Text>This city’s improvements, buildings, and districts cannot be damaged by Environmental Effects. +150% districts adjacency yields in this city</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="en_US">
-			<Text>All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  .</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="en_US">
-			<Text>Can construct the City Park improvement in this city.+1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold.</Text>
-		</Replace>
-		<!-- 阿玛尼 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>9个单元格内其他文明的城市每回合失去3点忠诚度。 在己方文明城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="en_US">
-			<Text>Other cities within 9 tiles and not owned by you lose 3 Loyalty per turn. If she is estabilshed in a certain city, [ICON_FAITH] Faith can be used to cruit Spy inthat city and the cost is reduced by 25%. Spys trained in this city start with a free promotion that do not already start with a free promotion. </Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION" Language="en_US">
-			<Text>Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME" Language="zh_Hans_CN">
-			<Text>本地线人</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME" Language="en_US">
-			<Text>Local Informants </Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME" Language="zh_Hans_CN">
-			<Text>伪装</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME" Language="en_US">
-			<Text>Disguise</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>就职期间间谍-25%出击行动时间。我方间谍行动时+1等级。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION" Language="en_US">
-			<Text>If Amani is estabilished, Spy operations take 25% less time.All Spy act as +1 level.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>立即给每个已相遇城邦+1 [ICON_Envoy] 使者。每个宗主的城邦提供+1 [ICON_SCIENCE] 科技，+1 [ICON_CULTURE] 文化，+1 [ICON_FAITH] 信仰和+1 [ICON_GOLD] 金币。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="en_US">
-			<Text>Immediately send one [ICON_Envoy] Envoy to all City States that already met. Each City-State suzerain will provide +1 [ICON_SCIENCE], +1 [ICON_CULTURE] Culture, +1 [ICON_FAITH] Faith and +1 [ICON_GOLD] Gold.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。我方间谍出击时+1级，在领土内敌方间谍等级下降1级。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION" Language="en_US">
-			<Text>While established in a city-state, doubles the number of [ICON_Envoy] Envoys you have there. Enemy Spy level reduced by 1 in your lands. Your Spy level is increased by 1 for offensive operations.</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME" Language="zh_Hans_CN">
-			<Text>朝贡</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME" Language="en_US">
-			<Text>Pay Tribute</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME" Language="zh_Hans_CN">
-			<Text>外国投资者</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME" Language="en_US">
-			<Text>Foreign Investor</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币- 20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="en_US">
-			<Text>City State units gain +4 [ICON_Strength] Combat Strength if you are the City State's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as three [ICON_Envoy]envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When suzerain receive double the amount of accumulated strategic and luxury resources.  </Text>
-		</Replace>
-		<Replace Tag="GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
-      		<Text>+4，来自总督晋升</Text>
-    	</Replace>
-    	<Replace Tag="GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
-      		<Text>+4，来自总督晋升</Text>
-    	</Replace>
-    	<Replace Tag="GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
-      		<Text>+4，from Governor's Promotion</Text>
-    	</Replace>
-    	<Replace Tag="GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
-      		<Text>+4，from Governor's Promotion</Text>
-    	</Replace>
-		<!-- 教育家 -->
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。</Text>
-		</Replace>
-		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="en_US">
-			<Text>+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city.</Text>
-		</Replace>
-	</LocalizedText>
+    <LocalizedText>
+        <!-- 瑞纳 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME" Language="zh_Hans_CN">
+            <Text>地产商人</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME" Language="en_US">
+            <Text>Real Estate Developer</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION" Language="en_US">
+            <Text>This city receives +3 [ICON_Gold] Gold from each District, and receives +1 [ICON_Gold] Gold from each improved tile.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中商业中心和港口的相邻加成+150%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION" Language="en_US">
+            <Text>Commercial Hub and Harbor Districts receive +150% adjacency bonuses in the city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>每个未改良的地貌可向该城市提供+4 [ICON_Gold] 金币。该城市中与未改良地貌相邻的单元格可获得+1魅力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION" Language="en_US">
+            <Text>This city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features receive +1 Appeal in this city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION" Language="en_US">
+            <Text>+4 [ICON_Gold] Gold per turn for each [ICON_Citizen] Citizen in the city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME" Language="zh_Hans_CN">
+            <Text>金融中心</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME" Language="en_US">
+            <Text>Financial Centre</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中每有一座商业中心建筑和港口建筑， [ICON_Gold] 金币产出便+10%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="en_US">
+            <Text>Each Commercial and Harbor building in the city increase city [ICON_Gold] Gold yield output by 10%.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="zh_Hans_CN">
+            <Text>跨国公司</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME" Language="en_US">
+            <Text>Multinational Corporations</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="en_US">
+            <Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city.</Text>
+        </Replace>
+        <!-- 维克多 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市防御+5 [ICON_STRENGTH] 战斗力，您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。就职需要3回合。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION" Language="en_US">
+            <Text>Increase City Defence [ICON_STRENGTH] Strength by 5. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. Establishes in 3 turns.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>就职城市无法被围攻。城市领土内的单位防御时可+5 [ICON_Strength] 战斗力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION" Language="en_US">
+            <Text>City cannot be put under siege. Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. </Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="zh_Hans_CN">
+            <Text>后勤补给</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME" Language="en_US">
+            <Text>Logistics Supply</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>生产单位所需战略资源花费减少60%。本城正确改良的战略每回合积累+1。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION" Language="en_US">
+            <Text>Strategic resource costs for units are discounted 60%. Accumulating Strategic resources in the city gain an additional +1 per turn.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。本城生产的军事工程师次数+2，且生产军事工程师时+100% [ICON_PRODUCTION] 生产力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION" Language="en_US">
+            <Text>City gains an additional [ICON_Ranged] Ranged Strike per turn. Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="zh_Hans_CN">
+            <Text>征兵入伍</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME" Language="en_US">
+            <Text>Conscription</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+2 [ICON_STRENGTH] 战斗力和+25%战斗经验值。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION" Language="en_US">
+            <Text>Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +2 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+30% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION" Language="en_US">
+            <Text>100% [ICON_Production] Production increase to all nuclear armament projects in the city. +30% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs).</Text>
+        </Replace>
+        <!-- 主教 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>此城对相邻城市释放的宗教压力强度加倍。本城训练的宗教单位+1使用次数。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="en_US">
+            <Text>Religious pressure to adjacent cities is 100% stronger from this city. All religious units trained in this city receive extra 1 charge.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME" Language="zh_Hans_CN">
+            <Text>赛义德</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME" Language="en_US">
+            <Text>sayyid</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>此城训练的使徒、传教士、上师、武僧、审判+1  [ICON_MOVEMENT] 移动力。购买以上单位-10% [ICON_FAITH] 信仰花费。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="en_US">
+            <Text>Apostle, Missionary, Guru, Inquistor and Warrior Monk trained in this city + 1 [ICON_MOVEMENT] Movement permanently. -10% [ICON_FAITH] Faith cost when purchasing these units.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>本城遗物+50% [ICON_FAITH] 信仰值产出，+100% [ICON_TOURISM] 旅游业绩产出。本城的 [ICON_FAITH] 信仰值产出+15%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="en_US">
+            <Text>All relic in this city receive +50% [ICON_FAITH] Faith bonus and +100%  [ICON_TOURISM] Tourism. +15% [ICON_FAITH] Faith yield in this city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="zh_Hans_CN">
+            <Text>舍利子</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="en_US">
+            <Text>Sariki</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="zh_Hans_CN">
+            <Text>因信称义</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="en_US">
+            <Text>Justice by faith</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>本城除圣地外的其他区域的相邻产出等量的 [ICON_FAITH] 信仰值，圣地相邻额外产出等量的 [ICON_TOURISM] 旅游业绩。每个公民产出1 [ICON_FAITH] 信仰。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="en_US">
+            <Text>All districts (except for Holy Site) yield [ICON_FAITH] Faith equal to the adjacency bonus yield. Holy Site yields [ICON_TOURISM] Tourism equal to the faith adjacency bonus. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_PATRON_SAINT_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>此城中生产的使徒和武僧首次升级时将额外获得1次升级。本城训练的武僧永久+5 [ICON_STRENGTH] 战斗力和+100% 战斗经验值。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_PATRON_SAINT_DESCRIPTION" Language="en_US">
+            <Text>Apostles and Warrior Monks trained in the city receive 1 extra promotion when receiving their first promotion. Warrior Monks trained in this city receive +5 [ICON_STRENGTH] Combat Strength and +100% Combat Experience permanently.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出。城市可使用 [ICON_FAITH] 信仰值购买区域。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="en_US">
+            <Text>All relic in this city receive +300%  [ICON_TOURISM] Tourism. Allows city to purchase districts with [ICON_FAITH] Faith.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="zh_Hans_CN">
+            <Text>普世牧首</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="en_US">
+            <Text>Oecumenical Patriarch</Text>
+        </Replace>
+        <!-- 老马 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市的 [ICON_Food] 增长+20%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+5 [ICON_Food] 食物。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION" Language="en_US">
+            <Text>+20% [ICON_Food] Growth in the city. Your [ICON_TradeRoute] Trade Routes ending here provide +5 [ICON_Food] Food to their starting city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="zh_Hans_CN">
+            <Text>大兴土木</Text>
+            <!-- <Text>巧工记</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME" Language="en_US">
+            <Text>Ground Breaker</Text>
+            <!-- <Text>Book of Diverse Crafts</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>在城市中建造区域和建筑时加速50%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
+            <!-- <Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力10%的大工程师点数。</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION" Language="en_US">
+            <Text>+50% construction speed when constructing districts and buildings in the city. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
+            <!-- <Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 10% of the cost of the building.</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="zh_Hans_CN">
+            <Text>督农制</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME" Language="en_US">
+            <Text>Quan'Nong</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION" Language="en_US">
+            <Text>+15% [ICON_Food] Food and [ICON_Production] Production in the city.</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="zh_Hans_CN">
+            <Text>总务官马格努斯</Text>
+        </Replace>
+        <!-- 拥有总务官头衔的总督马格努斯在9环内的城市就职 -->
+        <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="en_US">
+            <Text>General Services Officer Magnus</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX" Language="zh_Hans_CN">
+        <Text>该建筑需要{1_Building}。</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX" Language="en_US">
+        <Text>This building requires {1_Building}.</Text>
+        </Replace>
+        <!-- Governor Magnus with General Services Officer Title is established within 9 tiles -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">
+            <Text>总务官</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="en_US">
+            <Text>General Services Officer</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>总督“马格努斯”就职的城市中的总务厅可为9个单元格之内的城市提供额外3 [ICON_FOOD] 食物，3 [ICON_PRODUCTION] 生产力，3 [ICON_SCIENCE] 科技值，3 [ICON_CULTURE] 文化值和 3 [ICON_GOLD] 金币。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION" Language="en_US">
+            <Text>When the Governor Magnus estabilished in city, the General Service Office of the city can provide 3 [ICON_FOOD] Food, 3 [ICON_PRODUCTION] Production, 3 [ICON_SCIENCE] Science, 3 [ICON_CULTURE] Culture and 3 [ICON_GOLD] Gold to the cities within 9 tiles. </Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="zh_Hans_CN">
+            <!-- <Text>此城市可从附近所有拥有区域辐射的社区、工业区、商业中心、学院和剧院广场处分别获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值、 [ICON_Culture] 文化值，而不仅是从首个建成的对应类型建筑处获得。</Text> -->
+            <Text>此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION" Language="en_US">
+            <Text>This city receives yields from all nearby district buildings with regional bonuses, not just from the first building of the same type.</Text>
+        </Replace>
+        <!-- Governor Liang	-->
+        <!-- Added by PineApple -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="zh_Hans_CN">
+            <Text>乡村规划</Text>
+            <!-- <Text>耕樵渔猎</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME" Language="en_US">
+            <Text>Rural Planning</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="zh_Hans_CN">
+            <Text>建筑大师</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_NAME" Language="en_US">
+            <Text>Architecture Master</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
+            <Text>基础设施</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_NAME" Language="en_US">
+            <Text>Infrastructure</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="zh_Hans_CN">
+            <Text>世外天堂</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME" Language="en_US">
+            <Text>Paradise</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION" Language="en_US">
+            <Text>All Builders trained in this city will get +1 build charge and +1 [ICON_Movement] Movement.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市在建造奇观时 [ICON_Production] 生产力+20%。此城市建成奇观后获得等同于其生产力20%的大工程师点数。</Text>
+            <!-- <Text>在城市中建造区域和建筑时+30% [ICON_Production] 生产力。</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION" Language="en_US">
+            <Text>This city gets +20% [ICON_Production] Production towards wonders. When Wonders being built in this city, grant Great Engineer Points equal to 20% of the cost of the building.</Text>
+            <!-- <Text>+30% [ICON_Production] Production towards constructing districts and buildings in the city.</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>本城已改良地块+1 [ICON_Production] 生产力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION" Language="en_US">
+            <Text>+1 [ICON_Production] Production for all improved plots in this city .</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+150%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
+            <Text>This city’s improvements, buildings, and districts cannot be damaged by Environmental Effects. +150% districts adjacency yields in this city</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION" Language="en_US">
+            <Text>All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  .</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="en_US">
+            <Text>Can construct the City Park improvement in this city.+1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold.</Text>
+        </Replace>
+        <!-- 阿玛尼 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>9个单元格内其他文明的城市每回合失去3点忠诚度。 在己方文明城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="en_US">
+            <Text>Other cities within 9 tiles and not owned by you lose 3 Loyalty per turn. If she is estabilshed in a certain city, [ICON_FAITH] Faith can be used to cruit Spy inthat city and the cost is reduced by 25%. Spys trained in this city start with a free promotion that do not already start with a free promotion. </Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION" Language="en_US">
+            <Text>Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME" Language="zh_Hans_CN">
+            <Text>本地线人</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME" Language="en_US">
+            <Text>Local Informants </Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME" Language="zh_Hans_CN">
+            <Text>伪装</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME" Language="en_US">
+            <Text>Disguise</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>就职期间间谍-25%出击行动时间。我方间谍行动时+1等级。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION" Language="en_US">
+            <Text>If Amani is estabilished, Spy operations take 25% less time.All Spy act as +1 level.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>立即给每个已相遇城邦+1 [ICON_Envoy] 使者。每个宗主的城邦提供+1 [ICON_SCIENCE] 科技，+1 [ICON_CULTURE] 文化，+1 [ICON_FAITH] 信仰和+1 [ICON_GOLD] 金币。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="en_US">
+            <Text>Immediately send one [ICON_Envoy] Envoy to all City States that already met. Each City-State suzerain will provide +1 [ICON_SCIENCE], +1 [ICON_CULTURE] Culture, +1 [ICON_FAITH] Faith and +1 [ICON_GOLD] Gold.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。我方间谍出击时+1级，在领土内敌方间谍等级下降1级。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION" Language="en_US">
+            <Text>While established in a city-state, doubles the number of [ICON_Envoy] Envoys you have there. Enemy Spy level reduced by 1 in your lands. Your Spy level is increased by 1 for offensive operations.</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME" Language="zh_Hans_CN">
+            <Text>朝贡</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME" Language="en_US">
+            <Text>Pay Tribute</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME" Language="zh_Hans_CN">
+            <Text>外国投资者</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME" Language="en_US">
+            <Text>Foreign Investor</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币- 20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="en_US">
+            <Text>City State units gain +4 [ICON_Strength] Combat Strength if you are the City State's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as three [ICON_Envoy]envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When suzerain receive double the amount of accumulated strategic and luxury resources.  </Text>
+        </Replace>
+        <Replace Tag="GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+              <Text>+4，来自总督晋升</Text>
+        </Replace>
+        <Replace Tag="GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+              <Text>+4，来自总督晋升</Text>
+        </Replace>
+        <Replace Tag="GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
+              <Text>+4，from Governor's Promotion</Text>
+        </Replace>
+        <Replace Tag="GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
+              <Text>+4，from Governor's Promotion</Text>
+        </Replace>
+        <!-- 教育家 -->
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION" Language="en_US">
+            <Text>+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city.</Text>
+        </Replace>
+    </LocalizedText>
 </GameData>
