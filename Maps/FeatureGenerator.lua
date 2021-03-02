@@ -25,7 +25,7 @@ function FeatureGenerator.Create(args)
 	end
 
 	-- Set feature traits.
-	local iJunglePercent = args.iJunglePercent or 40;
+	local iJunglePercent = args.iJunglePercent or 35;
 	local iForestPercent = args.iForestPercent or 18;
 	local iMarshPercent = args.iMarshPercent or 3;
 	local iOasisPercent = args.iOasisPercent or 1;

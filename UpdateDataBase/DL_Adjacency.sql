@@ -140,7 +140,7 @@ update Adjacency_YieldChanges set PrereqTech = 'TECH_GUNPOWDER' where ID = 'Quar
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Aqueduct_Production';
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_STEAM_POWER' where ID = 'Bath_Production';
 update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Commerical_Hub_Production';
-update Adjacency_YieldChanges set TilesRequired = 2, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Resource_Production';
+update Adjacency_YieldChanges set TilesRequired = 1, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Resource_Production';
 -- Campus : Geothermal & Reef
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_SCIENTIFIC_THEORY' where ID = 'Geothermal_Science';
 -- update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_BUTTRESS' where ID = 'Reef_Science';
@@ -188,7 +188,7 @@ values
 
 insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, PrereqTech, AdjacentResource) values
-	('Resource_Production_Late', 'LOC_DISTRICT_RESOURCE_PRODUCTION', 'YIELD_PRODUCTION', 1, 1, 'TECH_APPRENTICESHIP', 1);
+	('Resource_Production_Late', 'LOC_DISTRICT_RESOURCE_PRODUCTION', 'YIELD_PRODUCTION', 2, 1, 'TECH_APPRENTICESHIP', 1);
 
 delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
  

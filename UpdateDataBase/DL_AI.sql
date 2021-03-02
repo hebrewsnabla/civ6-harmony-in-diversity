@@ -49,7 +49,7 @@ values
 	-- ('DLAdjustBuildings',		'BUILDING_UNIVERSITY',					1,			0),
 	-- ('DLAdjustBuildings',		'BUILDING_WORKSHOP',					1,			0),
 	('DLAdjustDistricts',		'DISTRICT_GOVERNMENT',					1,			0),
-	('DLAdjustDistricts',		'DISTRICT_AQUEDUCT',					1,			0),
+	-- ('DLAdjustDistricts',		'DISTRICT_AQUEDUCT',					1,			0),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_HAPPINESS',				1,			-50),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_RESOURCE_LUXURY',			1,			300),
 	('DLAdjustPseudoYields',	'PSEUDOYIELD_IMPROVEMENT',				1,			8),
