@@ -378,6 +378,7 @@
       <File>Texts/DL_Text_Policies.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
       <File>Texts/DL_Text_Wonders.xml</File>
+      <File>Texts/DL_Text_GreatPerson.xml</File>
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
@@ -542,6 +543,7 @@
     <File>Texts/DL_Text_Policies.xml</File>
     <File>Texts/DL_Text_Units.xml</File>
     <File>Texts/DL_Text_Wonders.xml</File>
+    <File>Texts/DL_Text_GreatPerson.xml</File>
   </Files>
 
 </Mod>
