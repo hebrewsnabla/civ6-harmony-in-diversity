@@ -44,6 +44,12 @@
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2" Language="en_US">
       <Text>Your [ICON_TradeRoute] Trade Routes to an Ally or Suzerain's city provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold.</Text>
     </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="zh_Hans_CN">
+      <Text>使用 [ICON_Gold] 金币购买时费用-25%。</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
+      <Text>25% Discount on Purchases with [ICON_Gold] Gold.</Text>
+    </Replace>
     <!-- boost for units -->
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>为生产建造者+30% [ICON_Production] 生产力，新训练的建造者获得一点额外劳动力。</Text>

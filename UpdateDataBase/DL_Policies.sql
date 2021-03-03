@@ -254,6 +254,8 @@ values
 	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'ModifierId',									'DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER'),
 	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER',	'CanPurchase',									1);
 
+update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
+
 -- level-one district yield policies
 --update ModifierArguments set Value = 50 where Name = 'Amount'
  	--and (ModifierID = 'AESTHETICS_DISTRICTCULTURE'
