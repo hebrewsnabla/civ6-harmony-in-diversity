@@ -2,7 +2,9 @@
 --     Technologies Adjustment     --
 -------------------------------------
 
--- update Technologies set Cost = 80, EraType = 'ERA_ANCIENT' where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
+update Technologies set EmbarkAll = 1 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
+-- update Technologies set EmbarkAll = 0 where TechnologyType = 'TECH_SHIPBUILDING';
+
 -- update Technologies set Cost = 300 where TechnologyType = 'TECH_CASTLES';
 -- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
 -- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.5">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.6">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.5</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.5</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.6</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.6</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -65,6 +65,14 @@
       <ConfigurationValueMatches>
         <Group>Game</Group>
         <ConfigurationId>GAMEMODE_MONOPOLIES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="TreeRandomizer_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_TREE_RANDOMIZER</ConfigurationId>
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
@@ -247,23 +255,6 @@
       <Properties><LoadOrder>15905</LoadOrder></Properties>
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
-    <!-- GameMode Support -->
-    <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>15950</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
-    </UpdateDatabase>
-    <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>15951</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
-    </UpdateIcons>
-    <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>15952</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
-    </UpdateText>
-    <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>15953</LoadOrder></Properties>
-      <File>DL.dep</File>
-    </UpdateArt>
     <!-- Map generation -->
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -388,6 +379,29 @@
       <File>Texts/DL_Text_Units.xml</File>
       <File>Texts/DL_Text_Wonders.xml</File>
     </UpdateText>
+    <!-- GameMode Support (at end) -->
+    <!-- Monopolies -->
+    <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
+    </UpdateDatabase>
+    <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16051</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16052</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+    </UpdateText>
+    <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16053</LoadOrder></Properties>
+      <File>DL.dep</File>
+    </UpdateArt>
+    <!-- Random Civics and Techs -->
+    <UpdateDatabase id="TreeRandomizerMode" criteria="TreeRandomizer_Mode_Expansion2">
+      <Properties><LoadOrder>16055</LoadOrder></Properties>
+      <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
+    </UpdateDatabase>
   </InGameActions>
   <Files>
     <!-- Artdef -->
@@ -397,6 +411,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+    <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <!-- Gameplay -->
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>

@@ -2,8 +2,21 @@
 -- Terrain & Feature & Resource yield adjust --
 -----------------------------------------------
 
+-- Lake +1 food
+insert or replace into GameModifiers (ModifierId) values ('LAKE_ADD_FOOD');
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,						SubjectRequirementSetId)
+values
+	('LAKE_ADD_FOOD',	'MODIFIER_GAME_ADJUST_PLOT_YIELD',	'FOODHUEY_PLOT_IS_LAKE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+values
+	('LAKE_ADD_FOOD',	'YieldType',	'YIELD_FOOD'),
+	('LAKE_ADD_FOOD',	'Amount',		1);
+
 -- Terrain yields adjustment
-insert into Terrain_YieldChanges values
+insert or replace into Terrain_YieldChanges values
 	-- TerrainType, YieldType, YieldChange
 	('TERRAIN_DESERT', 'YIELD_FAITH', 1),
 	('TERRAIN_DESERT_HILLS', 'YIELD_FAITH', 1);
@@ -23,7 +36,7 @@ update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_SNO
 update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_COAST' and YieldType = 'YIELD_FOOD';
 
 -- Feature yields adjustment
-insert into Feature_YieldChanges values 
+insert or replace into Feature_YieldChanges values 
 	-- FeatureType, YieldType, YieldChange
 	('FEATURE_FOREST', 'YIELD_FOOD', -1),
 	('FEATURE_JUNGLE', 'YIELD_PRODUCTION', -1);

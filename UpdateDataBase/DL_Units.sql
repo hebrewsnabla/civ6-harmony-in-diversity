@@ -14,7 +14,7 @@ update Units set
  where UnitType = 'UNIT_LAHORE_NIHANG';
 -- TODO increase NIHANG cost by techs.
 
-update Units set Cost = 60, CostProgressionParam1 = 5 where UnitType = 'UNIT_MISSIONARY';
+update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_MISSIONARY';
 update Units set Cost = 150, CostProgressionParam1 = 10 where UnitType = 'UNIT_APOSTLE';
 update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_INQUISITOR';
 update Units set Cost = 120, CostProgressionParam1 = 10 where UnitType = 'UNIT_GURU';

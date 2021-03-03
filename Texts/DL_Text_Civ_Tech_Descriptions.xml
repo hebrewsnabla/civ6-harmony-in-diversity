@@ -37,6 +37,18 @@
 		<Replace Tag="LOC_TECH_CONSTRUCTION_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Production] Production from the Camp improvement. +1 [ICON_Production] Production from the Lumber Mill improvement.</Text>
 		</Replace>
+		<Replace Tag="LOC_TECH_CELESTIAL_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可使商人上船，并收获 [ICON_RESOURCE_FISH] 鱼和 [ICON_RESOURCE_CRABS] 螃蟹。若未掌握造船术，也允许所有陆地单位上船。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CELESTIAL_NAVIGATION_DESCRIPTION" Language="en_US">
+			<Text>Allows Traders to embark, and allows harvesting of [ICON_RESOURCE_FISH] Fish and [ICON_RESOURCE_CRABS] Crabs. If Ship Building is not researched, also allows all land units to embark.</Text>
+		</Replace>
+		<!-- <Replace Tag="LOC_TECH_SHIPBUILDING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>允许所有陆地单位上船。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SHIPBUILDING_DESCRIPTION" Language="en_US">
+			<Text>Allows all land units to embark.</Text>
+		</Replace> -->
 		<Replace Tag="LOC_TECH_ARCHERY_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>允许在树林上建造营地。营地+1 [ICON_gold] 金币。</Text>
 		</Replace>
@@ -106,10 +118,16 @@
 			<Text>Build a Pasture.</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_HORSEBACK_RIDING" Language="zh_Hans_CN">
-			<Text>建造1座马场。</Text>
+			<Text>建造1座改良马的牧场。</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_HORSEBACK_RIDING" Language="en_US">
-			<Text>Build a Horses Pasture.</Text>
+			<Text>Build a Pasture with Horses.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ENGINEERING" Language="zh_Hans_CN">
+			<Text>拥有2个远古城墙。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ENGINEERING" Language="en_US">
+			<Text>Have 2 Ancient Walls.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="zh_Hans_CN">
 			<Text>采矿业让您拥有了建造轮轴的能力。接下来是车轮？</Text>

@@ -90,6 +90,28 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 	select 'CITY_HAS_' || Pop || '_POPULATION', 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION' from PopulationMaintenance;
 
 -- Misc
+
+-- new Terrain class
+insert or replace into TerrainClasses
+	(TerrainClassType,			Name)
+values
+	('TERRAIN_CLASS_FLATTEN',	'LOC_TERRAIN_CLASS_FLATTEN_NAME'),
+	('TERRAIN_CLASS_HILLS',		'LOC_TERRAIN_CLASS_HILLS_NAME');
+
+insert or replace into TerrainClass_Terrains
+	(TerrainClassType,			TerrainType)
+values
+	('TERRAIN_CLASS_FLATTEN',	'TERRAIN_GRASS'),
+	('TERRAIN_CLASS_FLATTEN',	'TERRAIN_PLAINS'),
+	('TERRAIN_CLASS_FLATTEN',	'TERRAIN_DESERT'),
+	('TERRAIN_CLASS_FLATTEN',	'TERRAIN_TUNDRA'),
+	('TERRAIN_CLASS_FLATTEN',	'TERRAIN_SNOW'),
+	('TERRAIN_CLASS_HILLS',		'TERRAIN_GRASS_HILLS'),
+	('TERRAIN_CLASS_HILLS',		'TERRAIN_PLAINS_HILLS'),
+	('TERRAIN_CLASS_HILLS',		'TERRAIN_DESERT_HILLS'),
+	('TERRAIN_CLASS_HILLS',		'TERRAIN_TUNDRA_HILLS'),
+	('TERRAIN_CLASS_HILLS',		'TERRAIN_SNOW_HILLS');
+
 insert or replace into Requirements
 	(RequirementId,									RequirementType,					Inverse)
 values
@@ -98,6 +120,8 @@ values
 insert or replace into Requirements
 	(RequirementId,									RequirementType)
 values
+	('REQUIRES_PLOT_IS_FLATTEN',					'REQUIREMENT_PLOT_TERRAIN_CLASS_MATCHES'),
+	('REQUIRES_PLOT_IS_HILLS',						'REQUIREMENT_PLOT_TERRAIN_CLASS_MATCHES'),
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'),
 	('REQUIRES_AIRPORT_AND_WITHIN_9TILES',			'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'),
 	('REQUIRES_PLOT_WITHIN_EIGHT_CITY_CENTER',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES');
@@ -112,6 +136,8 @@ values
 insert or replace into RequirementArguments
 	(RequirementId,									Name,				Value)
 values
+	('REQUIRES_PLOT_IS_FLATTEN',					'TerrainClass',		'TERRAIN_CLASS_FLATTEN'),
+	('REQUIRES_PLOT_IS_HILLS',						'TerrainClass',		'TERRAIN_CLASS_HILLS'),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'BuildingType',		'BUILDING_FILM_STUDIO'),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'MustBeFunctioning',	1),	
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'BuildingType',		'BUILDING_GENERAL_SERVICE'),

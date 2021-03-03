@@ -508,6 +508,18 @@
   <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="en_US">
     <Text>Extra +2 [ICON_Culture] Culture if the city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already has a Nilometer.</Text>
   </Replace>
+  <Replace Tag="LOC_BUILDING_KAREZ_NAME" Language="zh_Hans_CN">
+    <Text>坎儿井</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_KAREZ_NAME" Language="en_US">
+    <Text>Karez</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_KAREZ_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果市中心位于丘陵之上或靠近山脉则额外+2 [ICON_Food] 食物，且+1 [ICON_Housing] 住房。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_KAREZ_DESCRIPTION" Language="en_US">
+    <Text>Extra +2 [ICON_Food] Food and +1 [ICON_Housing] Housing if the city locates on the Hills or is adjacent to Mountains.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Boot Camp.</Text>
+  </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME" Language="zh_Hans_CN">
     <Text>工官</Text>
   </Replace>
@@ -515,10 +527,22 @@
     <Text>Official Run Handcraft</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有集市或图腾柱的城市中。</Text>
+    <Text>如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外建造区域、建筑和奇观时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Production] Production if the city owns Quarries or mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Fair or Totems.</Text>
+    <Text>Extra +2 [ICON_Production] Production towards Districts, Buildings and Wonders if the city owns Quarries or Mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Boot Camp.</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_PLACEHOLDER_NAME" Language="zh_Hans_CN">
+    <Text>训练营</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_PLACEHOLDER_NAME" Language="en_US">
+    <Text>Boot Camp</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_PLACEHOLDER_DESCRIPTION" Language="zh_Hans_CN">
+    <Text>如果城市拥有采集资源的牧场或营地，或是采集战略资源的改良设施，则建造单位时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或工官的城市中。</Text>
+  </Replace>
+  <Replace Tag="LOC_BUILDING_PLACEHOLDER_DESCRIPTION" Language="en_US">
+    <Text>Extra +2 [ICON_Production] Production towards Units if the city owns Pastures or Camps over resources, or Improvements over strategic resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Official Run Handcraft.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="zh_Hans_CN">
     <Text>集市</Text>
@@ -527,10 +551,10 @@
     <Text>Fair</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心与至少一个奢侈资源相邻，则额外+4 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有工官或图腾柱的城市中。</Text>
+    <Text>如果市中心与至少一个奢侈资源相邻，则额外+4 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有图腾柱的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="en_US">
-    <Text>Extra +4 [ICON_Gold] Gold if the city center adjacent to at least one luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Totems.</Text>
+    <Text>Extra +4 [ICON_Gold] Gold if the city center adjacent to at least one luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already has a Totems.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_NAME" Language="zh_Hans_CN">
     <Text>图腾柱</Text>
@@ -539,10 +563,10 @@
     <Text>Totems</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心与山脉或森林相邻，则+2 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有工官或集市的城市中。</Text>
+    <Text>如果市中心与山脉或森林相邻，则+2 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有集市的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_DESCRIPTION" Language="en_US">
-    <Text>+2 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Fair.</Text>
+    <Text>+2 [ICON_GreatProphet] Great Prophet Points if the city center adjacent to mountains or forests.[NEWLINE][NEWLINE]May not be built in cities that already has a Fair.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GENERAL_SERVICE_NAME" Language="zh_Hans_CN">
     <Text>总务厅</Text>
