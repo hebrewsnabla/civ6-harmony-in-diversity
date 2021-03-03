@@ -8,6 +8,10 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
   <InGameActions>
+    <ImportFiles id="FarmsOnFreshHills_Common_Import">
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>FarmsOnFreshHills_Common.lua</File>
+    </ImportFiles>
     <UpdateDatabase id="FarmsOnFreshHills_Database">
       <Properties><LoadOrder>10000</LoadOrder></Properties>
       <File>FarmsOnFreshHills.sql</File>
@@ -19,19 +23,31 @@
         <LuaReplace>UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <UpdateText id="FarmsOnFreshHills_Texts">
+    <ImportFiles id="UnitPanel_FarmsOnFreshHills_Import">
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>UnitPanel_FarmsOnFreshHills.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="WorldViewIconsManager_FOFH">
+      <Properties>
+        <LoadOrder>10000</LoadOrder>
+        <LuaContext>WorldViewIconsManager</LuaContext>
+        <LuaReplace>WorldViewIconsManager_FOFH.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="WorldViewIconsManager_FOFH_Import">
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>WorldViewIconsManager_FOFH.lua</File>
+    </ImportFiles>
+    <UpdateText id="FarmsOnFreshHills_Text">
       <Properties><LoadOrder>10000</LoadOrder></Properties>
       <File>FarmsOnFreshHills_Texts.xml</File>
     </UpdateText>
-    <ImportFiles id="WorldViewIconsManager_FOFH_import">
-      <Properties><LoadOrder>10004</LoadOrder></Properties>
-      <File>WorldViewIconsManager.lua</File>
-    </ImportFiles>
   </InGameActions>
   <Files>
     <File>FarmsOnFreshHills.sql</File>
+    <File>FarmsOnFreshHills_Common.lua</File>
     <File>UnitPanel_FarmsOnFreshHills.lua</File>
+    <File>WorldViewIconsManager_FOFH.lua</File>
     <File>FarmsOnFreshHills_Texts.xml</File>
-    <File>WorldViewIconsManager.lua</File>
   </Files>
 </Mod>

@@ -159,20 +159,35 @@
       </Properties>
     </ReplaceUIScript>
     <!-- Farm on fresh hills -->
+    <ImportFiles id="DL_FarmsOnFreshHills_Common_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15500</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
+    </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15501</LoadOrder></Properties>
+      <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <ReplaceUIScript id="DL_FarmsOnFreshHills_UnitPanel_XP2" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
-        <LoadOrder>15503</LoadOrder>
+        <LoadOrder>15500</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
         <LuaReplace>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_WorldViewIconsManager_FOFH_import" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15504</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
+    <ImportFiles id="DL_UnitPanel_FarmsOnFreshHills_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15500</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties>
+        <LoadOrder>15500</LoadOrder>
+        <LuaContext>WorldViewIconsManager</LuaContext>
+        <LuaReplace>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="DL_WorldViewIconsManager_FOFH_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15500</LoadOrder></Properties>
+      <File>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     </ImportFiles>
     <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15506</LoadOrder></Properties>
@@ -429,8 +444,9 @@
     <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
     <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
+    <File>FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
     <File>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
-    <File>FarmsOnFreshHills/WorldViewIconsManager.lua</File>
+    <File>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     <File>FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
