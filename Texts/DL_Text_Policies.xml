@@ -21,10 +21,10 @@
     </Replace>
     <!-- Governments-->
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="zh_Hans_CN">
-      <Text>拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20%建造速度。 </Text>
+      <Text>拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20% [ICON_PRODUCTION] 生产力。 </Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="en_US">
-      <Text>Increases the city growth rate by +10%, +10% [ICON_GOLD] Gold, +20% Production toward units for cities with a garrisoned unit.</Text>
+      <Text>Increases the city growth rate by +10%, +10% [ICON_GOLD] Gold, +20% [ICON_PRODUCTION] Production toward units for cities with a garrisoned unit.</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_COMMUNISM_XP1" Language="zh_Hans_CN">
       <Text>城市中每位 [ICON_Citizen] 公民将提供2点 [ICON_Production] 生产力。</Text>

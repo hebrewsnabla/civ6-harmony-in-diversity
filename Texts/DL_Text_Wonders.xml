@@ -74,10 +74,10 @@
       <Text>+20% [ICON_Culture] Culture in this city. 1 free random Atomic era civic boost.1 free Great Musician appears near the city where the wonder was built.[NEWLINE][NEWLINE] Must be built on flat land adjacent to a Theater Square district.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>为9个单元格内的所有城市提供+6 [ICON_SCIENCE] 科技值和 +1 [ICON_Faith] 信仰值。全国所有的除沙漠泛滥外的沙漠单元格+1 [ICON_SCIENCE] 科技值。 学院从沙漠和沙漠丘陵单元格获得标准相邻加成。[NEWLINE][NEWLINE]必须修建在沙漠或沙漠丘陵之上，同时必须与学院区域（其中须建有大学）相邻。</Text>
+      <Text>为9个单元格内的所有城市提供+5 [ICON_SCIENCE] 科技值和 +1 [ICON_Faith] 信仰值。本城所有的除沙漠泛滥外的沙漠单元格+1 [ICON_SCIENCE] 科技值。 学院从沙漠和沙漠丘陵单元格获得标准相邻加成。[NEWLINE][NEWLINE]必须修建在沙漠或沙漠丘陵之上，同时必须与学院区域（其中须建有大学）相邻。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="en_US">
-      <Text>Provides +6 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith to all your cities that are within 9 tiles.+1 [ICON_SCIENCE] in all Desert tiles(Desert Floodplains excluded) in your territory. Campus gain standard adjacency bonus from Desert and Desert Hill Tiles.[NEWLINE][NEWLINE]Must be built on Desert or Desert Hills adjacent to a Campus district with a University. </Text>
+      <Text>Provides +5 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith to all your cities that are within 9 tiles.+1 [ICON_SCIENCE] in all Desert tiles(Desert Floodplains excluded) in this city. Campus gain standard adjacency bonus from Desert and Desert Hill Tiles.[NEWLINE][NEWLINE]Must be built on Desert or Desert Hills adjacent to a Campus district with a University. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_HAGIA_SOPHIA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>传教士和使徒可以额外传播一次宗教。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供10点 [ICON_FAITH] 信仰值（标准速度下）。[NEWLINE][NEWLINE]您必须已经创立了一个宗教，此外，还必须建在靠近圣地的平原上。</Text>
@@ -102,6 +102,24 @@
     </Replace>
     <Replace Tag="LOC_BUILDING_POTALA_PALACE_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+1 Diplomatic policy slot.  +1 Diplomatic Victory point. Immediately after construction [ICON_FAITH] Faith that has been accumulated increase 50%. [NEWLINE][NEWLINE]Must be built on a Hill adjacent to a Mountain.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HANGING_GARDENS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有城市+10% [ICON_FOOD] 食物。必须建在河流旁边。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HANGING_GARDENS_DESCRIPTION" Language="en_US">
+      <Text>+10% [ICON_FOOD] Food in all cities. Must be built next to a River.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_JEBEL_BARKAL_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合奖励6点 [ICON_RESOURCE_IRON] 铁。为9个单元格内的所有城市提供+4 [ICON_Faith] 信仰值。[NEWLINE][NEWLINE]必须建在沙漠（丘陵）地貌上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_JEBEL_BARKAL_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Awards 6 [ICON_RESOURCE_IRON] Iron per turn. Provides +4 [ICON_Faith] Faith to all your cities that are within 9 tiles.[NEWLINE][NEWLINE]Must be built on Desert (Hills) terrain.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_GreatWork_Relic] 遗物和圣城的 [ICON_Tourism] 旅游业绩产值不会被其他研究了“启蒙运动”市政的文明削弱。您文明中“海滨度假区”产出的 [ICON_Tourism] 旅游业绩+100%。伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。[NEWLINE][NEWLINE] 必须建在丘陵上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_Tourism] Tourism output from [ICON_GreatWork_Relic] Relics and Holy Cities is not diminished by other civilizations who have researched The Enlightenment civic. +100% [ICON_Tourism] Tourism from Seaside Resorts across your civilization.Patronage of Great People costs 25% less [ICON_Faith] Faith. [NEWLINE][NEWLINE] Must be built on Hills.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

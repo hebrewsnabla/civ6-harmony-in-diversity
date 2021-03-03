@@ -93,10 +93,10 @@
     </Replace>
     <!-- Vietnam -->
    	<Replace Tag="LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>建在树林、雨林、沼泽地貌上的建筑将获得以下收益：建在树林上提供+1 [ICON_CULTURE] 文化值、建在雨林上提供+1 [ICON_SCIENCE] 科技值、建在沼泽上提供+1 [ICON_PRODUCTION] 生产力。拥有“中世纪集市”市政后即可栽种树林。</Text>
+      <Text>所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“中世纪集市”市政后即可栽种树林。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION" Language="en_US">
-      <Text>Receive the following yields for every building on Woods, Rainforest and Marsh: +1 [ICON_CULTURE] Culture in Woods, +1 [ICON_SCIENCE] Science in Rainforest and +1 [ICON_PRODUCTION] Production in Marsh. Woods can be planted with the Medieval Faires civic.</Text>
+      <Text>All districts do not remove Forest, Rainforest and Marsh. Receive the following yields for every building on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science]  in Marsh. Woods can be planted with the Medieval Faires civic.</Text>
     </Replace>
     <!-- Gaul -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION" Language="zh_Hans_CN">

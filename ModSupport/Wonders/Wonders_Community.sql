@@ -40,6 +40,8 @@ select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'GreatPersonClas
 insert or replace into ModifierArguments (ModifierId,	Name,	Value)
 select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'Amount', 25 from GreatPersonClasses;
 
+update Buildings set AdjacentDistrict = NULL where BuildingType = 'BUILDING_LEANING_TOWER';
+
 --BUILDING_PORCELAIN_TOWER
 UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
 WHERE BuildingType = 'BUILDING_PORCELAIN_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType='BUILDING_PORCELAIN_TOWER');

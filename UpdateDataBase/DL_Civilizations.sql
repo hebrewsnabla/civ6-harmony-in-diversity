@@ -157,10 +157,7 @@ update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_
 
 -- Gaul can now build all districts near City Center
 delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
--- Vietnam can build districts in all plots
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
+
 
 -- Hungary
 update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
@@ -195,6 +192,79 @@ values
 
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
+
+
+-- Vietnam can build districts in all features and do not remove on forest jungle and marsh
+-- rainforest +2 food forest +2 production marsh +2 science
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
+delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
+
+insert or replace into TraitModifiers (TraitType,	ModifierId) 
+	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_JUNGLE_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into TraitModifiers (TraitType,	ModifierId) 
+	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_MARSH_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into TraitModifiers (TraitType,	ModifierId) 
+	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_FOREST_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+
+insert or replace into Modifiers 	(ModifierId, ModifierType)
+	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into Modifiers 	(ModifierId, ModifierType)
+	select 'TRAIT_MARSH_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into Modifiers 	(ModifierId, ModifierType)
+	select 'TRAIT_FOREST_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';	
+
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'DistrictType', DistrictType
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_MARSH_VALID_' || DistrictType, 'DistrictType', DistrictType
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_FOREST_VALID_' || DistrictType, 'DistrictType', DistrictType
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'FeatureType', 'FEATURE_JUNGLE'
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_MARSH_VALID_' || DistrictType, 'FeatureType', 'FEATURE_MARSH'
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
+	select 'TRAIT_FOREST_VALID_' || DistrictType, 'FeatureType', 'FEATURE_FOREST'
+	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'TRAIT_FOREST_BUILDINGS_CULTURE' and Name = 'YieldType';
+update ModifierArguments set Value = 'YIELD_FOOD' where ModifierId = 'TRAIT_JUNGLE_BUILDINGS_SCIENCE' and Name = 'YieldType';
+update ModifierArguments set Value = 'YIELD_SCIENCE' where ModifierId = 'TRAIT_MARSH_BUILDINGS_PRODUCTION' and Name = 'YieldType';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_FOREST_BUILDINGS_CULTURE' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_JUNGLE_BUILDINGS_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_MARSH_BUILDINGS_PRODUCTION' and Name = 'Amount';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Minor Civs, City states
 

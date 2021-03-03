@@ -153,7 +153,7 @@ update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDI
 delete from BuildingModifiers where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and ModifierId !='TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
 
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and YieldType = 'YIELD_SCIENCE';
+update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and YieldType = 'YIELD_SCIENCE';
 
 insert or replace into BuildingModifiers
 	(BuildingType,						 ModifierId)
@@ -167,7 +167,7 @@ insert or replace into Modifiers
 values	
 	('UNIVERSITY_SANKORE_CAMPUS_DESERTADJACENCY',		'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',NULL),
 	('UNIVERSITY_SANKORE_CAMPUS_DESERTHILLADJACENCY',	'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',NULL),
-	('UNIVERSITY_SANKORE_DESERT_SCIENCE',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PETRA_YIELD_MODIFIER_REQUIREMENTS');
+	('UNIVERSITY_SANKORE_DESERT_SCIENCE',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PETRA_YIELD_MODIFIER_REQUIREMENTS');
 
 insert or replace into ModifierArguments 
 	(ModifierId,										Name,					Value) 
@@ -296,3 +296,39 @@ values
 	--('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UnitType',		'UNIT_SPY'),
 	--('KOTOKU_IN_GRANTS_4_EXPMONKS',				'Experience',	-1),
 	--('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UniqueOverride',1);
+
+-- Hanging Garden food buff
+delete from BuildingModifiers where ModifierId = 'HANGING_GARDEN_ADDGROWTH';
+
+insert or replace into BuildingModifiers
+	(BuildingType,						 ModifierId)
+values
+	('BUILDING_HANGING_GARDENS',	'HANGING_GARDEN_ADDFOOD');
+
+insert or replace into Modifiers	
+	(ModifierId,								ModifierType	)
+values
+	('HANGING_GARDEN_ADDFOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER');
+
+insert or replace into ModifierArguments 
+	(ModifierId,								Name,			Value) 
+values
+('HANGING_GARDEN_ADDFOOD','YieldType','YIELD_FOOD'),
+('HANGING_GARDEN_ADDFOOD','Amount',10);
+
+update Buildings set Housing = 1 where BuildingType = 'BUILDING_HANGING_GARDENS';
+
+insert or replace into Building_YieldChanges
+	(BuildingType,  YieldType,	YieldChange)
+values
+('BUILDING_HANGING_GARDENS','YIELD_FOOD', 4);
+
+update Buildings set cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
+
+-- Jebel region 9
+update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+
+-- Cristo redentor faith discount 15%
+insert or replace into BuildingModifiers (BuildingType,	 ModifierId)  values
+	('BUILDING_CRISTO_REDENTOR',	'ORACLE_PATRONAGE_FAITH_DISCOUNT');
+

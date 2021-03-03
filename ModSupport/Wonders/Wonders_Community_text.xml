@@ -5,10 +5,10 @@
 			<Text>“大自然是无情的，不可改变的，它对人类是否能理解它隐藏的原因和行为漠不关心。”—伽利略 </Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_LEANING_TOWER_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>建成时市中心出现一位大工程师。所有城市的伟人点积累速率+25%。</Text>
+			<Text>建成时市中心出现一位大工程师。所有城市的伟人点积累速率+25%。只能建在有港口的城市中，必须建在平坦的草原、平原上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_LEANING_TOWER_DESCRIPTION" Language="en_US">
-			<Text>1 free Great Engineer appears near the city where the wonder was built. +25%  Great People Points accumulation speed in all cities.</Text>
+			<Text>1 free Great Engineer appears near the city where the wonder was built. +25%  Great People Points accumulation speed in all cities. Can only be built flat Grass and Plain lands in city with a Harbor. </Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_LEANING_TOWER_NAME" Language="zh_Hans_CN">
 			<Text>比萨斜塔</Text>

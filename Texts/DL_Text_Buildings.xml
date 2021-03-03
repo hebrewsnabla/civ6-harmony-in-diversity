@@ -78,7 +78,7 @@
       <Text>此城中训练的所有陆地单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE]可直接训练军团和军队。军团和军队的训练费用降低25%。为本城的 [ICON_Resource_Aluminum] 铝、 [ICON_Resource_Uranium] 铀资源+1 [ICON_Production] 生产力。本城的 [ICON_GREATGENERAL] 大将军点数积累速度+50%，且所有训练的陆地单位+3 [ICON_STRENGTH] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MILITARY_ACADEMY_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>+25% combat experience for all land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE]Allows Corps and Armies to be trained directly. Corps and Army training costs reduced 25%. +1 [ICON_Production] Production to all [ICON_Resource_Aluminum] Aluminum and [ICON_Resource_Uranium] Uranium in this city.+50% accumulation rate for [ICON_GREAT_GENERAL] Great General Points in this city. +3  [ICON_STRENGTH] Combat Strength for all land units trained in this city. </Text>
+      <Text>+25% combat experience for all land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE]Allows Corps and Armies to be trained directly. Corps and Army training costs reduced 25%. +1 [ICON_Production] Production to all [ICON_Resource_Aluminum] Aluminum and [ICON_Resource_Uranium] Uranium in this city.+50% accumulation rate for [ICON_GREATGENERAL] Great General Points in this city. +3  [ICON_STRENGTH] Combat Strength for all land units trained in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_GOV_TALL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>所有城市+2 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。[NEWLINE]奖励1个 [Icon_Governor] 总督头衔。</Text>
@@ -222,7 +222,7 @@
     <Replace Tag="LOC_BUILDING_BANK_DESCRIPTION" Language="zh_Hans_CN">
       <Text>其 [ICON_GOLD] 金币加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_GOLD] 金币产出+10%。</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_BUILDING_BANK_DESCRIPTION" Language="en_US">
       <Text>Its [ICON_GOLD] gold bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_gold] Gold in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION" Language="zh_Hans_CN">
