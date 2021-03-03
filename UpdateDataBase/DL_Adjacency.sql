@@ -19,7 +19,9 @@ values
 	('DISTRICT_OPPIDUM',			'AERODROME_INDUSTRIAL_Production'),
 	('DISTRICT_OPPIDUM',			'SEAOil_INDUSTRIAL_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
+	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Canal_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
+	('DISTRICT_SUGUBA',				'Commercial_Canal_Gold'),
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'Reef_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'District_Science_City_Center'),
@@ -84,6 +86,8 @@ insert or replace into Adjacency_YieldChanges
 values
 	('AERODROME_INDUSTRIAL_Production',	'LOC_DISTRICT_AERODROME_INDUSTRIAL_PRODUCTION', 'YIELD_PRODUCTION', 2,				1,
 	0, 				'DISTRICT_AERODROME', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Commercial_Canal_Gold',			'LOC_DISTRICT_CANAL_GOLD', 						'YIELD_GOLD',		2,				1,
+	0, 				'DISTRICT_CANAL', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
 	0,				NULL,					NULL,			NULL,		NULL,			NULL,			'RESOURCECLASS_LUXURY');
 
