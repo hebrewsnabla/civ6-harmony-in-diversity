@@ -4,14 +4,13 @@ Utils = ExposedMembers.DLHD.Utils;
 
 -- To the Glory of God:
 -- 33% chance getting a relic when a GreatPerson is fully consumed.
-function OnGreatPersonActivated(unitOwner, unitID, greatPersonClassID, greatPersonIndividualID)
-    local owner = Players[unitOwner];
-    if owner == nil then return end
+function OnGreatPersonActivated(unitOwner, unitID)
+    local unit = UnitManager.GetUnit(unitOwner, unitID);
 
-    local unit = owner:GetUnits():FindID(unitID);
+    if (unit ~= nil) and (unit:GetGreatPerson() ~= nil) and (unit:GetX() < 0) and (unit:GetY() < 0) then
+        -- The great person unit has used up all the charges or has been removed
+        -- so it has been moved to (-9999, -9999) which is pending deletion.
 
-    if (unit ~= nil) and (unit:GetGreatPerson() ~= nil) and (unit:GetGreatPerson():GetActionCharges() == 0) then
-        -- The great person unit has used up all the charges.
         -- Check if the owner has "To the Glory of God" belief.
         local religions = Game.GetReligion():GetReligions();
         for _, religion in ipairs(religions) do

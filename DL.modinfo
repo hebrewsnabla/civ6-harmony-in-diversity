@@ -327,6 +327,7 @@
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
       <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
       <File>Gameplay/Governors.lua</File>
@@ -414,6 +415,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <!-- Gameplay -->
+    <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>
     <File>Gameplay/Governors.lua</File>

@@ -2,6 +2,7 @@
 -- 
 
 Utils = ExposedMembers.DLHD.Utils;
+CityYield = ExposedMembers.DLHD.CityYield;
 
 function isMinor(player)
     if player == nil then
@@ -201,7 +202,7 @@ function UpdateReynaTradeRoutesYield(playerID)
             -- Need to update city yields no matter the player has trade routes or not, in case the trade routes are cancelled or raided.
             -- Change the city yields.
             for yieldType, amount in pairs(totalYields) do
-                Utils.ChangeCityYield(playerID, currentCity:GetID(), amount, yieldType);
+                CityYield.ChangeYield(playerID, currentCity:GetID(), amount, yieldType, CityYield.TYPE_MULTINATIONAL_CORP);
             end
 
             -- Remember current player's Reyna assigned city.
@@ -211,7 +212,7 @@ function UpdateReynaTradeRoutesYield(playerID)
             -- but she doesn't have effect in that city anymore, either she's not assigned to that city or not established anymore.
             -- i.e. failed the first if check.
             -- Clear the city yield for her previously assigned city.
-            Utils.ClearCityYield(playerID, m_ReynaAssignedCity[playerID]);
+            CityYield.ClearYield(playerID, m_ReynaAssignedCity[playerID], CityYield.TYPE_MULTINATIONAL_CORP);
             -- Clear the assigned city cache to prevent double clearing.
             m_ReynaAssignedCity[playerID] = nil;
         end
