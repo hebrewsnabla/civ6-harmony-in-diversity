@@ -532,16 +532,16 @@
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="en_US">
     <Text>Extra +2 [ICON_Production] Production towards Districts, Buildings and Wonders if the city owns Quarries or Mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Boot Camp.</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_PLACEHOLDER_NAME" Language="zh_Hans_CN">
+  <Replace Tag="LOC_BUILDING_BOOTCAMP_NAME" Language="zh_Hans_CN">
     <Text>训练营</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_PLACEHOLDER_NAME" Language="en_US">
+  <Replace Tag="LOC_BUILDING_BOOTCAMP_NAME" Language="en_US">
     <Text>Boot Camp</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_PLACEHOLDER_DESCRIPTION" Language="zh_Hans_CN">
+  <Replace Tag="LOC_BUILDING_BOOTCAMP_DESCRIPTION" Language="zh_Hans_CN">
     <Text>如果城市拥有采集资源的牧场或营地，或是采集战略资源的改良设施，则建造单位时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或工官的城市中。</Text>
   </Replace>
-  <Replace Tag="LOC_BUILDING_PLACEHOLDER_DESCRIPTION" Language="en_US">
+  <Replace Tag="LOC_BUILDING_BOOTCAMP_DESCRIPTION" Language="en_US">
     <Text>Extra +2 [ICON_Production] Production towards Units if the city owns Pastures or Camps over resources, or Improvements over strategic resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Official Run Handcraft.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_NAME" Language="zh_Hans_CN">
