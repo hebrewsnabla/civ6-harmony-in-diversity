@@ -65,8 +65,8 @@ values
 
 ------------------------------------------------------------------------
 --typetags warrior monks------
--- insert or replace into TypeTags
--- 	(Type,									Tag)
--- values
--- 	('UNIT_WARRIOR_MONK',				'CLASS_MELEE');
+insert or replace into TypeTags
+ 	(Type,									Tag)
+values
+ 	('UNIT_WARRIOR_MONK',				'CLASS_ALL_ERAS');
 ----------------------------------------------------------------------

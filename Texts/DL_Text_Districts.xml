@@ -60,10 +60,10 @@
       <Text>A district unique to England for naval activity in your city. Replaces the Harbor district. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land.[NEWLINE][NEWLINE]+1 [ICON_Movement] Movement for all naval units built in Dockyard[NEWLINE]+2 [ICON_Gold] Gold and +4 Loyalty per turn when built on a foreign continent. Cannot be built on Reef.+2 [ICON_HOUSING] Housing. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>祖鲁特色区域，替代军营。+2 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。为本城已开发的[ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。此城中训练的所有抗骑兵单位+1 [ICON_Movement] 移动力。为本城已开发的[ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="en_US">
-      <Text> A district unique to Zulu which replaces the Encampment. Provides +2 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
+      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
