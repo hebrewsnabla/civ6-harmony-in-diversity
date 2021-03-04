@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <Replace Tag="LOC_GREATPERSON_CHARLES_DARWIN_ACTIVE" Language="zh_Hans_CN">
+            <Text>在标准速度下，从此处或相邻的每个自然奇观单元格获得1000 [ICON_Science] 科技值。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_CHARLES_DARWIN_ACTIVE" Language="en_US">
+            <Text>Gain 1000 [ICON_Science] Science (on Standard speed) for each natural wonder tile here or adjacent.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="en_US">
+            <Text>Gain 400 [ICON_Science] Science (on Standard speed) for each adjacent Mountain tile</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="zh_Hans_CN">
+      		<Text>在标准速度下，所在单元格每相邻一个山脉单元格获得400 [ICON_Science] 科技值。</Text>
+    	</Replace>
+    </LocalizedText>
+</GameData>
