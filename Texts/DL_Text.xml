@@ -210,6 +210,12 @@
 		<Replace Tag="LOC_ABILITY_SCHOLASTICISM_BUFF_DESCRIPTION" Language="en_US">
 			<Text>+7 [ICON_Strength] Combat Strength from Scholasticism Belief</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_IKANDA_ANTI_CAVALRY_MOVEMENT_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在伊坎达中训练获得的+1 [ICON_MOVEMENT] 移动力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_IKANDA_ANTI_CAVALRY_MOVEMENT_BONUS_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_MOVEMENT] Movement from training in Ikanda</Text>
+		</Replace>
 		<!-- preview text -->
 		<Replace Tag="LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>来自莫克夏训练</Text>
