@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <Replace Tag="LOC_CITY_YIELD_FROM_GAMEEFFECTS_TOOLTIP" Language="zh_Hans_CN">
+            <Text>{1_Value : number +#.#;-#.#}来自修正值</Text>
+        </Replace>
+        <Replace Tag="LOC_CITY_YIELD_FROM_GAMEEFFECTS_TOOLTIP" Language="en_US">
+            <Text>{1_Value : number +#.#;-#.#} from Modifiers</Text>
+        </Replace>
+        <!-- Multinational corp -->
+        <Replace Tag="LOC_CITY_YIELD_FROM_MULTINATIONAL_CORP_TOOLTIP" Language="zh_Hans_CN">
+            <Text>{1_Value : number +#.#;-#.#}来自跨国公司</Text>
+        </Replace>
+        <Replace Tag="LOC_CITY_YIELD_FROM_MULTINATIONAL_CORP_TOOLTIP" Language="en_US">
+            <Text>{1_Value : number +#.#;-#.#} from Multinational Corporation</Text>
+        </Replace>
+    </LocalizedText>
+</GameData>

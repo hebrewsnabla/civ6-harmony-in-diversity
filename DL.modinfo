@@ -96,8 +96,9 @@
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
-    <ImportFiles id="DL_CivilopediaPage_Building_Import" criteria="Expansion2">
+    <ImportFiles id="DL_Overwrite_Files_Import" criteria="Expansion2">
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
+      <File>UI/Replacement/CitySupport.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
@@ -365,6 +366,7 @@
       <File>Texts/DL_Text.xml</File>
       <File>Texts/DL_Text_Beliefs.xml</File>
       <File>Texts/DL_Text_Buildings.xml</File>
+      <File>Texts/DL_Text_City_Yield.xml</File>
       <File>Texts/DL_Text_CityStates.xml</File>
       <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
       <File>Texts/DL_Text_Civilopedia.xml</File>
@@ -428,8 +430,9 @@
     <File>Gameplay/Governors_Interface.xml</File>
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
-    <!-- UI Civilopedia -->
+    <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
+    <File>UI/Replacement/CitySupport.lua</File>
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     <!-- UI replacements and icons -->
@@ -531,6 +534,7 @@
     <File>Texts/DL_Text.xml</File>
     <File>Texts/DL_Text_Beliefs.xml</File>
     <File>Texts/DL_Text_Buildings.xml</File>
+    <File>Texts/DL_Text_City_Yield.xml</File>
     <File>Texts/DL_Text_CityStates.xml</File>
     <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
     <File>Texts/DL_Text_Civilopedia.xml</File>
