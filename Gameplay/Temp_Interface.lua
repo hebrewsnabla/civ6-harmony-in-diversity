@@ -7,6 +7,7 @@
 
 -- Do not change the above ones
 -----------------------------------------------------------------------
+Utils = ExposedMembers.DLHD.Utils;
 
 function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown )
     local pPlayerConfig = PlayerConfigurations[playerID]
@@ -28,14 +29,14 @@ function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPe
                 for _, beliefIndex in pairs(religion.Beliefs) do 
                     if  beliefIndex == belief then                      
                         if (religion.Religion == Majority) then
-                            ExposedMembers.DLHD.Utils.ChangeFaithBalance(playerID, amount)
+                            Utils.ChangeFaithBalance(playerID, amount)
                             return  
                         end
-                        if (ExposedMembers.DLHD.Utils.CivilizationHasTrait(sCiv,sDarma)) then
+                        if (Utils.CivilizationHasTrait(sCiv,sDarma)) then
                             for _, rel in ipairs(CityReligions) do
                                 if rel.Religion == religion.Religion then
                                     if rel.Followers >= 1 then
-                                        ExposedMembers.DLHD.Utils.ChangeFaithBalance(playerID, amount)
+                                        Utils.ChangeFaithBalance(playerID, amount)
                                     end
                                 end
                             end
@@ -46,4 +47,26 @@ function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPe
         end
     end
 end
+
 Events.WonderCompleted.Add(DevineInspirationWonderFaith)
+
+
+local m_Walls = GameInfo.Buildings["BUILDING_WALLS"].Index
+local PROP_KEY_HAVE_GRANT_WALL = 'HaveGrantWalls'
+
+function FreeWallForCapital(playerID, cityID, iX, iY)
+    local player = Players[playerID]
+    local city = CityManager.GetCity(playerID, cityID)
+    if player:IsMajor() then
+        print('Capital', city:IsCapital(), 'original capital', city:IsOriginalCapital())
+        local have_granted = player:GetProperty(PROP_KEY_HAVE_GRANT_WALL)
+        if have_granted == nil then
+            if (city:IsOriginalCapital()) then
+                Utils.CreateBuilding(playerID, cityID, m_Walls)
+                Utils.SetPlayerProperty(playerID, PROP_KEY_HAVE_GRANT_WALL, true)
+            end
+        end
+    end
+end
+
+Events.CityAddedToMap.Add(FreeWallForCapital)

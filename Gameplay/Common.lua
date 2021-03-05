@@ -68,6 +68,11 @@ Utils.CreateBuilding = function(playerID, cityID, buildingID)
     end
 end
 
+Utils.SetPlayerProperty = function(playerID, key, value)
+    local player = Players[playerID]
+    player:SetProperty(key, value)
+end
+
 Utils.SendEnvoy = function(playerID, citystateID)
     -- Need to make sure the second is citystate
     local player = Players[playerID]
