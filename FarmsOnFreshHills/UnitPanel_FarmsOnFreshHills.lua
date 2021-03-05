@@ -40,7 +40,7 @@ function BuildActionModHook(instance:table, action:table)
                     if Map.IsPlot(unitPos) then
                         local plot:table = Map.GetPlotByIndex(unitPos);
                         if plot ~= nil then
-                            if ShouldDisableHillFarm(plot, player) then
+                            if action.Disabled == false and ShouldDisableHillFarm(plot, player) then
                                 action.Disabled = true;
                                 action.IsBestImprovement = false;
                                 m_ShouldUpdateBestImprovement = true;
