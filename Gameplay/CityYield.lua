@@ -17,8 +17,10 @@ local PROP_KEY_CITY_YIELD = "CityYield";
 local MAX_YIELD_MODIFIER_VALUE = 50;
 
 -- Source type constants.
-CityYield.TYPE_DEFAULT = "Default";
-CityYield.TYPE_MULTINATIONAL_CORP = "MultinationalCorp";
+CityYield.Type = {
+    DEFAULT = "DEFAULT",
+    MULTINATIONAL_CORP = "MULTINATIONAL_CORP",
+}
 
 -- Clear city's all types of yield to 0.
 CityYield.ClearYield = function(playerID, cityID, sourceType)
@@ -44,7 +46,7 @@ CityYield.GetYield = function(playerID, cityID, yieldType, sourceType)
             cityProps = {};
         end
 
-        sourceType = sourceType or CityYield.TYPE_DEFAULT;
+        sourceType = sourceType or CityYield.Type.DEFAULT;
 
         local yieldName = string.gsub(yieldType, "YIELD_", "");
         local cityYield = cityProps[sourceType];
@@ -69,7 +71,7 @@ CityYield.ChangeYield = function(playerID, cityID, yieldAmount, yieldType, sourc
             cityProps = {};
         end
 
-        sourceType = sourceType or CityYield.TYPE_DEFAULT;
+        sourceType = sourceType or CityYield.Type.DEFAULT;
 
         local yieldName = string.gsub(yieldType, "YIELD_", "");
         local deltaYield = yieldAmount;
