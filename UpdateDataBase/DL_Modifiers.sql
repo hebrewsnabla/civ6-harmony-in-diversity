@@ -81,14 +81,5 @@ values
 	('MODIFIER_SINGLE_CITY_ADJUST_WONDER_PRODUCTION',			'COLLECTION_OWNER',					'EFFECT_ADJUST_WONDER_PRODUCTION'),
 	('MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_BY_CLASS_IN_CAPITAL_WITH_MODIFIER',	'COLLECTION_PLAYER_CAPITAL_CITY',	'EFFECT_GRANT_UNIT_OF_CLASS_AND_APPLY_ABILITY');
 
-insert into Modifiers
-		(ModifierId,                                    ModifierType,                                           SubjectStackLimit)
-values
-	    ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',       1);
-
-insert into ModifierArguments
-    	(ModifierId,                                     Name,                Value)
-values
-        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);
 
 

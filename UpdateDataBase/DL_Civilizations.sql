@@ -191,6 +191,16 @@ insert or replace into ImprovementModifiers
 values
     ('IMPROVEMENT_PAIRIDAEZA',                  'PAIRIDAEZA_AMENITY_MAX_ONE');
 
+insert into Modifiers
+		(ModifierId,                                    ModifierType,                                           SubjectStackLimit)
+values
+	    ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',       1);
+
+insert into ModifierArguments
+    	(ModifierId,                                     Name,                Value)
+values
+        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);
+
 insert or replace into ModifierArguments 
 	(ModifierId, 								Name,				Value) 
 values
