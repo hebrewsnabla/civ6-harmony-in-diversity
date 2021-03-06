@@ -128,22 +128,22 @@
     </Replace>
     <!-- Persia -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>拥有“政治哲学”市政后，[ICON_TradeRoute] 贸易路线容量+1。本国城市之间的路线+2 [ICON_Gold] 金币，+2 [ICON_Culture] 文化值。本国领土中的道路提升一个等级。</Text>
+      <Text>拥有“政治哲学”市政后，[ICON_TradeRoute] 贸易路线容量+1，获得1次 [ICON_Governor] 总督升级。本国城市之间的路线+2 [ICON_Gold] 金币，+2 [ICON_Culture] 文化值。本国领土中的道路提升一个等级。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION" Language="en_US">
-      <Text>+1 [ICON_TradeRoute] Trade Route capacity with Political Philosophy civic. Receive +2 [ICON_Gold] Gold and +2 [ICON_Culture] Culture for routes between your own cities. Roads built in your territory are one level more advanced than usual.</Text>
+      <Text>+1 [ICON_TradeRoute] Trade Route capacity with Political Philosophy civic,gain 1 [ICON_Governor] Governor promotion. Receive +2 [ICON_Gold] Gold and +2 [ICON_Culture] Culture for routes between your own cities. Roads built in your territory are one level more advanced than usual.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PAIRIDAEZA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造波斯庭院（波斯特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [ICON_CULTURE] 文化值并+2 [ICON_GOLD] 金币。+2魅力。每个相邻圣地和剧院广场+1 [ICON_CULTURE] 文化值。每个相邻商业中心、港口和市中心+1 [ICON_GOLD] 金币。相邻市中心+1 [ICON_Food] 食物。解锁更多科技和市政树后可提供更多 [ICON_Culture] 文化值和 [ICON_Tourism] 旅游业绩。无法建在雪地、冻土、雪地丘陵或冻土丘陵上，也无法建在另一座波斯庭院旁。</Text>
+      <Text>解锁建造者建造波斯庭院（波斯特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [ICON_CULTURE] 文化值并+2 [ICON_GOLD] 金币。+2魅力。每个相邻圣地和剧院广场+1 [ICON_CULTURE] 文化值。每个相邻商业中心、港口和市中心+1 [ICON_GOLD] 金币。相邻市中心+1 [ICON_Food] 食物。城市建造首座波斯庭院改良设施可提供+1点 [ICON_AMENITIES] 宜居度。解锁更多科技和市政树后可提供更多 [ICON_Culture] 文化值和 [ICON_Tourism] 旅游业绩。无法建在雪地、冻土、雪地丘陵或冻土丘陵上，也无法建在另一座波斯庭院旁。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PAIRIDAEZA_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct a Pairidaeza, unique to Persia.[NEWLINE][NEWLINE]+1 [ICON_CULTURE] Culture and +2 [ICON_GOLD] Gold. +2 Appeal. +1 [ICON_CULTURE] Culture for each adjacent Holy Site and Theater Square. +1 [ICON_GOLD] Gold for each adjacent Commercial Hub, Harbor and City Center. +1 [ICON_Food] Food when adjacent to City Center. Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Technology and Civics Tree. Cannot be built on Snow, Tundra, Snow Hills, or Tundra Hills or adjacent to another Pairidaeza.</Text>
+      <Text>Unlocks the Builder ability to construct a Pairidaeza, unique to Persia.[NEWLINE][NEWLINE]+1 [ICON_CULTURE] Culture and +2 [ICON_GOLD] Gold. +2 Appeal. +1 [ICON_CULTURE] Culture for each adjacent Holy Site and Theater Square. +1 [ICON_GOLD] Gold for each adjacent Commercial Hub, Harbor and City Center. +1 [ICON_Food] Food when adjacent to City Center. City receive +1 [ICON_AMENITIES] Amenity from their first Priidaeza improment. Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Technology and Civics Tree. Cannot be built on Snow, Tundra, Snow Hills, or Tundra Hills or adjacent to another Pairidaeza.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>对主要文明宣布突袭战争后的10回合内+2 [ICON_Movement] 移动力。拥有驻扎单位的城市每回合的忠诚度+5。宣布突袭战争的 [ICON_STAT_GRIEVANCE] 不满和好战性与正式战争相同。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and warmongering.</Text>
-    </Replace>
+    </Replace> 
   </LocalizedText>
 </GameData>
