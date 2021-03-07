@@ -41,3 +41,6 @@ insert into ModifierArguments
 values
         ('MARY_KATHERINE_DEFENSE',                       'Amount',            1),
         ('MARY_KATHERINE_DEFENSE',                       'Offense',           0);
+
+--瓦特给工厂+3锤
+update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
