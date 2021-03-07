@@ -262,6 +262,10 @@
       <File>Maps/FeatureGenerator.lua</File>
       <File>Maps/MapUtilities.lua</File>
       <File>Maps/TerrainGenerator.lua</File>
+      <!-- Maps -->
+      <File>Maps/Pangaea.lua</File>
+      <File>Maps/Continents.lua</File>
+      <File>Maps/Seven_Seas.lua</File>
     </ImportFiles>
     <!-- Main -->
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
@@ -471,6 +475,10 @@
     <File>Maps/FeatureGenerator.lua</File>
     <File>Maps/MapUtilities.lua</File>
     <File>Maps/TerrainGenerator.lua</File>
+    <!-- Maps -->
+    <File>Maps/Pangaea.lua</File>
+    <File>Maps/Continents.lua</File>
+    <File>Maps/Seven_Seas.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
