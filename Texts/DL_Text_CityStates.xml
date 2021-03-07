@@ -21,16 +21,82 @@
       <Text>Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.5。</Text>
+      <Text>此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.8。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION" Language="en_US">
-      <Text>International and domestic [ICON_TradeRoute] Trade Routes receive +0.5 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion.</Text>
+      <Text>International and domestic [ICON_TradeRoute] Trade Routes receive +0.8 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>当您激活一位 [ICON_GreatPerson] 伟人时，其会将您所创立宗教（或您主流宗教）的400点宗教压力传播到6单元格内的城市。</Text>
+      <Text>每本 [ICON_GreatWork_WRITING] 著作巨作+2 [ICON_Culture] 文化值和+2 [ICON_FAITH] 信仰值。每件 [ICON_GreatWork_Sculpture] 雕塑、 [ICON_GreatWork_Portrait] 肖像、 [ICON_GreatWork_Landscape] 风景和 [ICON_GreatWork_Religious] 宗教艺术巨作+2 [ICON_Culture] 文化值和+2 [ICON_FAITH] 信仰值。每件 [ICON_GreatWork_RELIC] 遗物+3 [ICON_Culture] 文化值。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION" Language="en_US">
-      <Text>When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded (or majority) religion to cities within 6 tiles.</Text>
+      <Text>+2 [ICON_Culture] Culture and +2 [ICON_FAITH] Faith from each [ICON_GreatWork_WRITING] Great Work of Writing, [ICON_GreatWork_Sculpture] Great Work of Sculpture, [ICON_GreatWork_Portrait] Great Work of Portrait, [ICON_GreatWork_Landscape] Great Work of Landscape and [ICON_GreatWork_Religious] Great Work of Religious. +3 [ICON_Culture] Culture from each [ICON_GreatWork_RELIC] Relic.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_BABYLON_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有的 [ICON_GreatWork_WRITING] 著作巨作、[ICON_GreatWork_RELIC] 遗物和 [ICON_GreatWork_Artifact] 文物+3 [ICON_SCIENCE] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_BABYLON_DESCRIPTION" Language="en_US">
+      <Text>+3 [ICON_SCIENCE] Science from each [ICON_GreatWork_WRITING] Great Work of Writing, [ICON_GreatWork_RELIC] Relic and [ICON_GreatWork_Artifact] Artifact.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_FEZ_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>为城市中的每个圣地建筑+2 [ICON_SCIENCE] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_FEZ_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_SCIENCE] Science from each Shrine, Temple and Religious building.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_HATTUSA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合提供2份文明已解锁战略资源。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_HATTUSA_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Provides you with 2 of each Strategic resource per turn that you have revealed.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_NALANDA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的建造者现在可以建造大寺改良设施。[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] 科技值、+1 [Icon_Housing] 住房。每与1座学院或圣地区域相邻，则+1 [ICON_Science] 科技值。研究完“科学理论”之后，每与1座学院相邻则额外+1 [Icon_Science] 科技值。必须建在平坦地貌上，不能与其他大寺相邻。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_NALANDA_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Mahavihara improvements.[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] Science and +1 [Icon_Housing] Housing. +1 [ICON_Science] Science for every adjacent Campus district or Holy Site district. After researching Scientific Theory receive an additional +1 [Icon_Science] Science for every adjacent Campus. Must be built on flat terrain not adjacent to another Mahavihara.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您通往海外城市的 [ICON_TradeRoute] 贸易路线可从目的地的每个奢侈品资源+2 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION" Language="en_US">
+      <Text>Your [ICON_TradeRoute] Trade Routes to foreign cities earn +2 [ICON_Gold] Gold for each Luxury resource at the destination.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_HUNZA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的 [ICON_TradeRoute] 贸易路线每经过5个单元格，其提供的 [ICON_Gold] 金币便+2。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_HUNZA_DESCRIPTION" Language="en_US">
+      <Text>Your [ICON_TradeRoute] Trade Routes generate +2 [ICON_Gold] Gold for every 5 tiles they travel.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>与海岸或湖泊单元格相邻的区域+4 [ICON_Gold] 金币值。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION" Language="en_US">
+      <Text>Your districts on or next to Coast or Lake tiles provide +4 [ICON_Gold] Gold.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>商业中心和港口区域均可为城市提供+1 [ICON_Amenities] 宜居度。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Amenities] Amenity in cities with a Commercial Hub district.+1 [ICON_Amenities] Amenity in cities with a Harbor district.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_SAMARKAND_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的建造者现在能够建造圆顶市集改良设施。[NEWLINE][NEWLINE]+2 [ICON_GOLD] 金币。每与一个奢侈品资源相邻则+1 [ICON_Gold] 金币。起源城市每有一座圆顶市集，对外国际贸易 [ICON_TradeRoute] 路线提供的 [ICON_GOLD] 金币便+2。无法建在另一座圆顶市集旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_SAMARKAND_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Trading Dome improvements.[NEWLINE][NEWLINE]+2 [ICON_GOLD] Gold. +1 [ICON_Gold] Gold for every adjacent Luxury resource. Your outgoing international [ICON_TradeRoute] Trade Routes grant +2 [ICON_GOLD] Gold per Trading Dome at the origin. Cannot be built next to another Trading Dome.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_ARMAGH_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>建造者现在能够建造修道院改良设施。[NEWLINE][NEWLINE]修道院提供+2 [ICON_Faith] 信仰值。此单元格上的友方宗教单位生命值恢复+15（前提是其当前回合未发动攻击）。每1个相邻的区域使其+1 [ICON_FAITH] 信仰值。解锁“王权神授”市政后每1个相邻的区域使其+2 [ICON_FAITH] 信仰值。提供+1 [ICON_HOUSING] 住房。解锁“殖民主义”市政后获得额外1点 [ICON_HOUSING] 住房。无法建在另一座修道院旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_ARMAGH_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Monastery improvements.[NEWLINE][NEWLINE]Monasteries provide +2 [ICON_Faith] Faith. +15 HP healing for friendly religious unit on this tile that has not attacked this turn. +1 [ICON_FAITH] Faith for every adjacent Districts. +2 [ICON_FAITH] Faith for every adjacent Districts once Divine Right is discovered. Provides +1 [ICON_HOUSING] Housing. Receive an additional [ICON_HOUSING] Housing once Colonialism is discovered. Cannot be built next to another Monastery.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_LISBON_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的商人单位对水域单元格的掠夺免疫。不同大陆之间的 [ICON_TradeRoute] 贸易路线将获得以下加成：通往其他文明的贸易路线获得+6 [ICON_Gold] 金币加成；本国城市间的贸易路线获得+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力加成。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_LISBON_DESCRIPTION" Language="en_US">
+      <Text>Your Trader units are immune to being plundered on water tiles. [ICON_TradeRoute] Trade Routes between multiple continents receive bonus +6 [ICON_Gold] Gold for routes to other civilizations, and bonus +1 [ICON_Food] Food and +1 [ICON_Production] Production for routes between your own cities.</Text>
     </Replace>
   </LocalizedText>
 </GameData>
