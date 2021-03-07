@@ -261,7 +261,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 	return terrainTypes; 
 end
 
-function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iContinentBoundaryPlots)
+function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iContinentBoundaryPlots, bNoCoastalMountains)
 
 	local iMountainPercentByDistance:table = {42, 24, 6}; 
 	local iHillPercentByDistance:table = {50, 40, 30};
@@ -350,7 +350,11 @@ function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iC
 						end						
 						-- Mountain?
 						if (TerrainBuilder.GetRandomNumber(100, "Mountain near boundary") < iMountainChance) then
-							TerrainBuilder.SetTerrainType(pPlot, ConvertToMountain(terrainTypes[index]));
+							if bNoCoastalMountains and IsAdjacentToShallowWater(terrainTypes, iX, iY) then
+								print('Disabled Coastal Mountain on Continent Boundary', iX, iY)
+							else
+								TerrainBuilder.SetTerrainType(pPlot, ConvertToMountain(terrainTypes[index]));
+							end
 
 						-- Hills?
 						elseif (TerrainBuilder.GetRandomNumber(100, "Hill near boundary") < iHillPercentByDistance[iPlotsFromBoundary]) then
