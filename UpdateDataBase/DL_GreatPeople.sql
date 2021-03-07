@@ -44,3 +44,15 @@ values
 
 --瓦特给工厂+3锤
 update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_JANAKI_AMMAL
+update ModifierArguments set Value = 800 where ModifierId = 'GREATPERSON_ADJACENT_RAINFOREST_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_MARY_LEAKEY
+update ModifierArguments set Value = 700 where ModifierId = 'GREATPERSON_ARTIFACT_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_MARGARET_MEAD
+update ModifierArguments set Value = 3000 where ModifierId = 'GREAT_PERSON_GRANT_LOTSO_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_ABDUS_SALAM
+update ModifierArguments set Value = 'ERA_FUTURE' where ModifierId = 'GREATPERSON_ALLINFORMATIONTECHBOOSTS' and Name = 'EndEraType';
