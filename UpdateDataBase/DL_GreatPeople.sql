@@ -44,3 +44,20 @@ values
 
 --瓦特给工厂+3锤
 update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
+
+--特斯拉改成全国效果。
+insert into Modifiers
+	    (ModifierId,                      ModifierType,                                                  SubjectRequirementSetId)
+values
+        ('TESLA_REGIONAL_RANGE_BONUS',    'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',       'DISTRICT_IS_INDUSTRIAL_ZONE');
+
+insert into ModifierArguments
+    	(ModifierId,                                     Name,                Value)
+values
+        ('TESLA_REGIONAL_RANGE_BONUS',                  'Amount',             3);
+
+insert or replace into GreatPersonIndividualActionModifiers
+	    (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
+values
+        ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',       'TESLA_REGIONAL_RANGE_BONUS',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE';
