@@ -76,5 +76,23 @@
     <Replace Tag="LOC_IMPROVEMENT_PAIRIDAEZA_DESCRIPTION" Language="en_US">
 			<Text>Unlocks the Builder ability to construct a Pairidaeza, unique to Persia.[NEWLINE][NEWLINE]+1 [ICON_CULTURE] Culture and +2 [ICON_GOLD] Gold. +2 Appeal. +1 [ICON_CULTURE] Culture for each adjacent Holy Site and Theater Square. +1 [ICON_GOLD] Gold for each adjacent Commercial Hub and City Center. City receive +1 [ICON_AMENITIES] Amenity from their first Priidaeza improment.Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Technology and Civics Tree. Cannot be built on Snow, Tundra, Snow Hills, or Tundra Hills or adjacent to another Pairidaeza.</Text>
 		</Replace>
+    <Replace Tag="LOC_IMPROVEMENT_MAHAVIHARA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的建造者现在可以建造大寺改良设施。[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] 科技值、+1 [Icon_Housing] 住房。每与1座学院或圣地区域相邻，则+1 [ICON_Science] 科技值。研究完“科学理论”之后，每与1座学院相邻则额外+1 [Icon_Science] 科技值。必须建在平坦地貌上，不能与其他大寺相邻。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_MAHAVIHARA_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Mahavihara improvements.[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] Science and +1 [Icon_Housing] Housing. +1 [ICON_Science] Science for every adjacent Campus district or Holy Site district. After researching Scientific Theory receive an additional +1 [Icon_Science] Science for every adjacent Campus. Must be built on flat terrain not adjacent to another Mahavihara.</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_TRADING_DOME_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的建造者现在能够建造圆顶市集改良设施。[NEWLINE][NEWLINE]+2 [ICON_GOLD] 金币。每与一个奢侈品资源相邻则+1 [ICON_Gold] 金币。起源城市每有一座圆顶市集，对外国际贸易 [ICON_TradeRoute] 路线提供的 [ICON_GOLD] 金币便+2。无法建在另一座圆顶市集旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_TRADING_DOME_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Trading Dome improvements.[NEWLINE][NEWLINE]+2 [ICON_GOLD] Gold. +1 [ICON_Gold] Gold for every adjacent Luxury resource. Your outgoing international [ICON_TradeRoute] Trade Routes grant +2 [ICON_GOLD] Gold per Trading Dome at the origin. Cannot be built next to another Trading Dome.</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_MONASTERY_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>建造者现在能够建造修道院改良设施。[NEWLINE][NEWLINE]修道院提供+2 [ICON_Faith] 信仰值。此单元格上的友方宗教单位生命值恢复+15（前提是其当前回合未发动攻击）。每1个相邻的区域使其+1 [ICON_FAITH] 信仰值。解锁“王权神授”市政后每1个相邻的区域使其+2 [ICON_FAITH] 信仰值。提供+1 [ICON_HOUSING] 住房。解锁“殖民主义”市政后获得额外1点 [ICON_HOUSING] 住房。无法建在另一座修道院旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_MONASTERY_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Monastery improvements.[NEWLINE][NEWLINE]Monasteries provide +2 [ICON_Faith] Faith. +15 HP healing for friendly religious unit on this tile that has not attacked this turn. +1 [ICON_FAITH] Faith for every adjacent Districts. +2 [ICON_FAITH] Faith for every adjacent Districts once Divine Right is discovered. Provides +1 [ICON_HOUSING] Housing. Receive an additional [ICON_HOUSING] Housing once Colonialism is discovered. Cannot be built next to another Monastery.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
