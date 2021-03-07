@@ -1388,3 +1388,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 
 (by 小天)
 优化瑞纳跨国公司能力的实现。
+
+[Version v0.6.1]
+增加盘古、大分陆地图的陆地面积（海平面，盘古由58下降至43，分大陆由62下降至45）
