@@ -59,17 +59,21 @@
       <Text>Unlocks the Builder ability to construct a Lumber Mill.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +1 [ICON_Production] Production if adjacent to rivers.[NEWLINE][NEWLINE]Can only be built on Woods. Once Guilds is unlocked it can also be built on Rainforest.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_FISHERY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>产出1点 [ICON_Food] 食物，+0.5 [ICON_Housing] 住房。；每与1个海洋资源相邻，则额外+1 [ICON_Food] 食物；“测量师”总督（必须拥有“水产养殖”升级）在城市就职时，+1 [ICON_PRODUCTION] 生产力。必须建在海岸格位上。</Text>
+      <Text>产出1点 [ICON_Food] 食物，+0.5 [ICON_Housing] 住房。每与1个海洋资源相邻，则额外+1 [ICON_Food] 食物；必须建在海岸格位上。</Text>
+      <!-- “测量师”总督（必须拥有“水产养殖”升级）在城市就职时，+1 [ICON_PRODUCTION] 生产力。 -->
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_FISHERY_DESCRIPTION" Language="en_US">
-      <Text>Yields 1 [ICON_Food] Food, +0.5 [ICON_Housing] Housing; +1 additional [ICON_Food] Food for each adjacent sea resource. +1 [ICON_PRODUCTION] Production if in a city with a Surveyor Governor with the Aquaculture promotion. Must be built on a coastal plot.</Text>
+      <Text>Yields 1 [ICON_Food] Food, +0.5 [ICON_Housing] Housing; +1 additional [ICON_Food] Food for each adjacent sea resource. Must be built on a coastal plot.</Text>
+      <!-- +1 [ICON_PRODUCTION] Production if in a city with a Surveyor Governor with the Aquaculture promotion.  -->
     </Replace>
+    <!-- UI of Governors -->
     <Replace Tag="LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION" Language="zh_Hans_CN">
       <Text>相邻单元格+2魅力；产出1点 [ICON_Culture] 文化值。“测量师”总督（必须拥有“公园与休憩”升级）在城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。无法建在另一个市立公园旁。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION" Language="en_US">
       <Text>+2 Appeal to adjacent tiles and + 1 [ICON_Culture] Culture. Each ajacent tile +1 [ICON_FOOD] Food，1 [ICON_PRODUCTION] Production，1 [ICON_SCIENCE] Science，1 [ICON_CULTURE] Culture，1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold if the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion. Cannot be adjacent to another City Park.</Text>
     </Replace>
+    <!-- UI of Civs -->
     <Replace Tag="LOC_IMPROVEMENT_PAIRIDAEZA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造波斯庭院（波斯特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [ICON_CULTURE] 文化值并+2 [ICON_GOLD] 金币。+2魅力。每个相邻圣地和剧院广场+1 [ICON_CULTURE] 文化值。每个相邻商业中心和市中心+1 [ICON_GOLD] 金币。城市建造首座波斯庭院改良设施可提供+1点 [ICON_AMENITIES] 宜居度。解锁更多科技和市政树后可提供更多 [ICON_Culture] 文化值和 [ICON_Tourism] 旅游业绩。无法建在雪地、冻土、雪地丘陵或冻土丘陵上，也无法建在另一座波斯庭院旁。</Text>
     </Replace>
