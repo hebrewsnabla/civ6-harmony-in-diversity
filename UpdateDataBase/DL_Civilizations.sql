@@ -300,6 +300,8 @@ update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = '
 insert into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
 	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
 
+update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
+
 -- Kumasi
 update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 -- Chinguetti
