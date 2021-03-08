@@ -3,19 +3,16 @@
 -------------------------------------
 
 -- TODO: Great prophet grant 1 extra district slot.
-
-update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_SNOWMOUNTAIN_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_TUNDRAMOUNTAIN_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_DESERTMOUNTAIN_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_PLAINSMOUNTAIN_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_GRASSMOUNTAIN_SCIENCE' and Name = 'Amount';
-
-update ModifierArguments set Value = 1000 where ModifierId = 'GREATPERSON_ADJACENT_NATURALWONDER_SCIENCE' and Name = 'Amount';
-
-----Great Engineer
+-------------------------------------------------------------------------------------------------------------------------------------------
+---  Great Engineer
+-------------------------------------------------------------------------------------------------------------------------------------------
 -- bisheng:if printing eruka is boosted grant this tech GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS
 -- chengqiangge: +1 great engineer points for each level wall 
 -- davinci: +1 production for workshop
+-- CHARLES_CORREA: +2 appeal nationwide&ALVAR_AALTO: +1 appeal nationwide
+-- SHAH_JAHAN :tourism from district adjacency nationwide
+-- JOHN_A_ROEBLING: little goldengate + wonder tourism
+-- SHAH_JAHAN: to renissance era
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_PRINTINGTECHBOOST';
 update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_WORKSHOP_CULTURE' and Name = 'Amount';
@@ -36,12 +33,12 @@ values
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_WONDER_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM'),
-	('GREAT_PERSON_INDIVIDUAL_ALVAR_AALTO',				'GREATPERSON_NATIONAL_APPEAL_BIG'),
+	('GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA',			'GREATPERSON_NATIONAL_APPEAL_BIG'),
 	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM'),
-	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM'),
+	('GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN',				'GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM');
 
 insert or replace into Modifiers
 	(ModifierId, 										ModifierType, 								Runonce, Permanent, SubjectRequirementSetId)
@@ -61,7 +58,7 @@ values
 	('GREATPERSON_NATIOANAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_CITIES_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',1,1,NULL),
 	('GREATPERSON_NATIOANAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_CITIES_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',1,1,NULL),
 	('GREATPERSON_NATIOANAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_CITIES_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',1,1,NULL),
-	('GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_CITIES_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',1,1,NULL),
+	('GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_CITIES_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',1,1,NULL);
 insert or replace into ModifierArguments
 	(ModifierId, 													Name,     			Value)
 values
@@ -92,4 +89,48 @@ values
 	('GREATPERSON_NATIOANAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','Amount',				100),
 	('GREATPERSON_NATIOANAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','YieldType',			'YIELD_PRODUCTION'),
 	('GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	'Amount',				50),
-	('GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	'YieldType',			'YIELD_GOLD'),
+	('GREATPERSON_NATIOANAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	'YieldType',			'YIELD_GOLD');
+------------------------------------------------------------------------------------------------------------------------------
+--- Great Scientist
+-------------------------------------------------------------------------------------------------------------------------------
+-- EUCLID +1 district capacity finish mathmatics if boosted
+-- Darwin : +1000 science for each natural wonder tiles
+-- galieo : +400 science for each ajacent mountain tiles
+-- 
+
+update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_SNOWMOUNTAIN_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_TUNDRAMOUNTAIN_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_DESERTMOUNTAIN_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_PLAINSMOUNTAIN_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_GRASSMOUNTAIN_SCIENCE' and Name = 'Amount';
+update ModifierArguments set Value = 1000 where ModifierId = 'GREATPERSON_ADJACENT_NATURALWONDER_SCIENCE' and Name = 'Amount';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MEDIEVALRENAISSANCETECHBOOST';
+update ModifierArguments set Value = 200 where ModifierId = 'GREATPERSON_FAITH' and  Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_UNIVERSITIES_SMALL_SCIENCE';
+
+insert or replace into GreatPersonIndividualActionModifiers 
+	(GreatPersonIndividualType, 						ModifierId)
+values
+	('GREAT_PERSON_INDIVIDUAL_EUCLID',					'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS'),
+	('GREAT_PERSON_INDIVIDUAL_EUCLID',					'GREATPERSON_EXTRA_DISTRICT_CAPACITY'),
+	('GREAT_PERSON_INDIVIDUAL_ABU_AL_QASIM_AL_ZAHRAWI',	'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION'),
+
+insert or replace into Modifiers
+	(ModifierId, 										ModifierType, 								Runonce, Permanent, SubjectRequirementSetId)
+values
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION','MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',			1,1, 	NULL),
+
+insert or replace into ModifierArguments
+	(ModifierId, 													Name,     			Value)
+values
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',			'TechType',			 'TECH_SANITATION'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',			'GrantTechIfBoosted', 1),
+
+insert or replace into GreatWorks
+	(GreatWorkType, GreatWorkObjectType, GreatPersonIndividualType, Name, Audio, Image, Quote, Tourism, Eratype)
+values
+	('GREATWORK_NEWTON',	'GREATWORKOBJECT_WRITING',	'GREAT_PERSON_INDIVIDUAL_ISAAC_NEWTON',	'LOC_GREATWORK_NEWTON_NAME',	NULL,
+		NULL, 'LOC_GREATWORK_NEWTON_QUOTE',	3,	'ERA_RENAISSANCE'),
+
+insert or replace into GreatWorkModifiers (GreatWorkType, ModifierId)
+values ('GREATWORK_NEWTON','PRODUCT_SCIENCE_YIELD_BONUS_TURTLES'),
