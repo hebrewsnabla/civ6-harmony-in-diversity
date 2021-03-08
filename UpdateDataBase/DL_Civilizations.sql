@@ -302,7 +302,7 @@ insert into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) val
 
 update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
 
---Mohenjo Daro
+-- Mohenjo Daro
 insert into TraitModifiers 
     (TraitType,								ModifierId)
 values
@@ -321,7 +321,7 @@ values
 	('MOHENJO_DARO_BOUNAS_HOUSING_MODIFIER',		'Amount',											1);
 
 -- Kumasi
-update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
+-- update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 -- Chinguetti
 update ModifierArguments set Value = 0.8 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
 -- Kandy
