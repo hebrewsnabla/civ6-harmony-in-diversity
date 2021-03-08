@@ -300,6 +300,26 @@ update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = '
 insert into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
 	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
 
+update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
+
+--Mohenjo Daro
+insert into TraitModifiers 
+    (TraitType,								ModifierId)
+values
+	('MINOR_CIV_MOHENJO_DARO_TRAIT',		'MOHENJO_DARO_BOUNAS_HOUSING');
+
+insert into	Modifiers
+	(ModifierId,									ModifierType,										SubjectRequirementSetId)
+values
+	('MOHENJO_DARO_BOUNAS_HOUSING',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_IS_SUZERAIN'),
+	('MOHENJO_DARO_BOUNAS_HOUSING_MODIFIER',		'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',		null);
+
+insert into	ModifierArguments
+	(ModifierId, 									Name,												Value)
+values
+	('MOHENJO_DARO_BOUNAS_HOUSING',					'ModifierId',										'MOHENJO_DARO_BOUNAS_HOUSING_MODIFIER'),
+	('MOHENJO_DARO_BOUNAS_HOUSING_MODIFIER',		'Amount',											1);
+
 -- Kumasi
 update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 -- Chinguetti
