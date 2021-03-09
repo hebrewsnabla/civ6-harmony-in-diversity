@@ -15,10 +15,10 @@
       <Text>Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_KUMASI_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个特色区域+1 [ICON_Culture] 文化值和+1 [ICON_Gold] 金币。</Text>
+      <Text>您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个特色区域+2 [ICON_Culture] 文化值和+1 [ICON_Gold] 金币。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_KUMASI_DESCRIPTION" Language="en_US">
-      <Text>Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city.</Text>
+      <Text>Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION" Language="zh_Hans_CN">
       <Text>此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.8。</Text>

@@ -343,6 +343,10 @@ update ModifierArguments set Value = 'MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS' whe
 --Samarkand
 update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_TRADE_GOLD_MODIFIER' and Name = 'Amount';
 
+--Granada 阿卡萨地堡基础文化改为3，地块魅力加成改为75%
+update Improvements set YieldFromAppealPercent = 75 where ImprovementType ='IMPROVEMENT_ALCAZAR';
+update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPROVEMENT_ALCAZAR';
+
 -- Nalanda
 delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
 update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' and YieldType = 'YIELD_SCIENCE';
