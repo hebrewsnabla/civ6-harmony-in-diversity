@@ -71,6 +71,7 @@ values
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
+	('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Hippodrome_Gold'),
@@ -160,16 +161,18 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'SeaResource_Gold';
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
-	AdjacentImprovement,			PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
+	AdjacentImprovement,			PrereqCivic,	PrereqTech,			ObsoleteCivic,	ObsoleteTech)
 values
+	('Plantation_Adjacent_Gold', 		'Placeholder', 									'YIELD_GOLD',		2,				1,
+	'IMPROVEMENT_PLANTATION',		NULL,			'TECH_MATHEMATICS',	NULL,			NULL),
 	('SEAOil_INDUSTRIAL_Production',	'LOC_DISTRICT_SEAOIL_INDUSTRIAL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_OFFSHORE_OIL_RIG',	NULL,			NULL,			NULL,			NULL),
+	'IMPROVEMENT_OFFSHORE_OIL_RIG',	NULL,			NULL,				NULL,			NULL),
 	('Oil_INDUSTRIAL_Production',		'LOC_DISTRICT_OIL_INDUSTRIAL_PRODUCTION',		'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_OIL_WELL',			NULL,			NULL,			NULL,			NULL),
+	'IMPROVEMENT_OIL_WELL',			NULL,			NULL,				NULL,			NULL),
 	('Quarry_HalfProduction',			'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,
-	'IMPROVEMENT_QUARRY',			NULL,			NULL,			NULL,			'TECH_GUNPOWDER'),
+	'IMPROVEMENT_QUARRY',			NULL,			NULL,				NULL,			'TECH_GUNPOWDER'),
 	('LumberMill_Production',			'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_LUMBER_MILL',		NULL,			'TECH_STEEL',	NULL,			NULL);
+	'IMPROVEMENT_LUMBER_MILL',		NULL,			'TECH_STEEL',		NULL,			NULL);
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,

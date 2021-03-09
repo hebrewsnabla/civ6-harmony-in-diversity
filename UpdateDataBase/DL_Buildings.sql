@@ -551,11 +551,11 @@ update Buildings set Maintenance = 0,	Cost = 45	where BuildingType = 'BUILDING_M
 update Buildings set Maintenance = 1,	Cost = 60	where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_WATER_MILL';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_PALGUM';
-update Buildings set Maintenance = 1,	Cost = 60	where BuildingType = 'BUILDING_WALLS';
-update Buildings set Maintenance = 3,	Cost = 180	where BuildingType = 'BUILDING_CASTLE';
-update Buildings set Maintenance = 5,	Cost = 300	where BuildingType = 'BUILDING_STAR_FORT';
-update Buildings set Maintenance = 5,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
-update Buildings set Maintenance = 6,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
+update Buildings set Maintenance = 0,	Cost = 60	where BuildingType = 'BUILDING_WALLS';
+update Buildings set Maintenance = 1,	Cost = 180	where BuildingType = 'BUILDING_CASTLE';
+update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_STAR_FORT';
+update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
+update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';

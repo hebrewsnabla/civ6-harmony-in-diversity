@@ -20,10 +20,10 @@
       <Text>Unlocks the Builder ability to construct Fishing Boats.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +1 [ICON_Food] Food if the city owns a Harbor. +2 [ICON_Gold] Gold for each adjacent Harbor District.[NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PLANTATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造种植园的能力。[NEWLINE][NEWLINE]+2 [ICON_Gold] 金币。每相邻1个商业中心单元格则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。</Text>
+      <Text>解锁建造者建造种植园的能力。[NEWLINE][NEWLINE]+2 [ICON_Gold] 金币。拥有淡水或相邻水渠的种植园+1 [ICON_Food] 食物。每相邻1个商业中心单元格则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PLANTATION_DL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct Plantations.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. +2 [ICON_Gold] Gold for each adjacent Commercial Hub District. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource.</Text>
+      <Text>Unlocks the Builder ability to construct Plantations.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. Extra +1 [ICON_Food] Food if adjacent to fresh water or Aqueduct District. +2 [ICON_Gold] Gold for each adjacent Commercial Hub District. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则牧场额外+1 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
