@@ -605,3 +605,20 @@ insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	va
 	('UNIT_IS_LAND_COMBAT',			'REQUIREMENTSET_TEST_ALL'),
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIREMENTSET_TEST_ANY');
+
+-- HOME CONTINENT
+insert or replace into Types
+	(Type,												Kind)
+values
+	('THE_HOME_CONTINENT_NEW_REQUIREMENT',				'KIND_REQUIREMENTSET');
+
+
+insert or replace into RequirementSets
+	(RequirementSetId,									RequirementSetType)
+values
+	('THE_HOME_CONTINENT_NEW_REQUIREMENT',				'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,									RequirementId)
+values
+	('THE_HOME_CONTINENT_NEW_REQUIREMENT',				'REQUIRES_PLOT_IS_OWNER_CAPITAL_CONTINENT');
