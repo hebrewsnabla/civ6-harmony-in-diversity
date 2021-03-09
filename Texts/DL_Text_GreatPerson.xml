@@ -25,5 +25,41 @@
         <Replace Tag="LOC_GREATPERSON_JAMES_WATT_ACTIVE" Language="en_US">
 			<Text>Instantly builds a Factory and Workshop in this district. Factories provide +3 [ICON_Production] Production.</Text>
 		</Replace>
+		<Row Tag="LOC_PIERO_DE_BARDI_GOLD">
+            <Text>Gain 300 [ICON_Gold] Gold.</Text>
+        </Row>
+		<Replace Tag="LOC_PIERO_DE_BARDI_GOLD" Language="zh_Hans_CN">
+            <Text>获得300 [ICON_Gold] 金币。</Text>
+        </Replace>
+        <Row Tag="LOC_JAKOB_FUGGER_GOLD">
+            <Text>Gain 400 [ICON_Gold] Gold.</Text>
+        </Row>
+        <Replace Tag="LOC_JAKOB_FUGGER_GOLD" Language="zh_Hans_CN">
+            <Text>获得400 [ICON_Gold] 金币。</Text>
+        </Replace>
+        <Row Tag="LOC_JOHN_JACOB_ASTOR_GOLD">
+            <Text>Gain 600 [ICON_Gold] Gold.</Text>
+        </Row>
+        <Replace Tag="LOC_JOHN_JACOB_ASTOR_GOLD" Language="zh_Hans_CN">
+            <Text>获得600 [ICON_Gold] 金币。</Text>
+        </Replace>
+        <Row Tag="LOC_ZHOU_DAGUAN_TOKENS">
+            <Text>Gain 3 [ICON_Envoy] Envoys.</Text>
+        </Row>
+        <Replace Tag="LOC_ZHOU_DAGUAN_TOKENS" Language="zh_Hans_CN">
+            <Text>获得3 [ICON_Envoy] 使者。</Text>
+        </Replace>
+        <Row Tag="LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS">
+            <Text>This district's regional buildings reach 3 tiles farther.</Text>
+        </Row>
+        <Replace Tag="LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS" Language="zh_Hans_CN">
+            <Text>该区域的地区性建筑延伸3个单元格。</Text>
+        </Replace>
+        <Row Tag="LOC_TESLA_REGIONAL_RANGE_BONUS">
+            <Text>This district's regional buildings reach 3 tiles farther.</Text>
+        </Row>
+        <Replace Tag="LOC_TESLA_REGIONAL_RANGE_BONUS" Language="zh_Hans_CN">
+            <Text>该区域的地区性建筑延伸3个单元格。</Text>
+        </Replace>
     </LocalizedText>
 </GameData>
