@@ -141,7 +141,7 @@ values
 insert or replace into ModifierArguments
     	(ModifierId,                                     Name,          Type,                    Value)
 values
-        ('ZHOU_DAGUAN_TOKENS',                           'Amount',      'ARGTYPE_IDENTITY',      3)
+        ('ZHOU_DAGUAN_TOKENS',                           'Amount',      'ARGTYPE_IDENTITY',      3);
 
 update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_COMMERCIAL_HUB' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividuals set ActionRequiresCityStateTerritory = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';

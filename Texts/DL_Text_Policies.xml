@@ -71,6 +71,12 @@
       <Text>Open Borders with all city-states, and +9 Influence points per turn toward earning [ICON_Envoy] Envoys.</Text>
     </Replace>
     <!-- new cards -->
+    <Replace Tag="LOC_POLICY_GARRISON_RECLAMATION_NAME" Language="zh_Hans_CN">
+      <Text>屯田</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_GARRISON_RECLAMATION_NAME" Language="en_US">
+      <Text>Garrison Reclamation</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_MINARET_NAME" Language="zh_Hans_CN">
       <Text>宣礼塔</Text>
     </Replace>
@@ -104,6 +110,12 @@
     <Replace Tag="LOC_POLICY_CIVILIZE_NAME" Language="en_US">
       <!-- <Text>Civilize</Text> -->
       <Text>One More Science</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>所有拥有军营的城市+4 [ICON_Food] 食物，+2 [ICON_Housing] 住房。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="en_US">
+       <Text> +4 [ICON_FOOD] Food and +2 [ICON_Housing] in all cities having Encampments.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_Food] 食物。</Text>
