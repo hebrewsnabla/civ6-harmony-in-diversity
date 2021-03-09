@@ -23,6 +23,7 @@ insert into RequirementSetRequirements values
 update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS'
 	where ModifierId = 'TEMPLE_ARTEMIS_CAMP_AMENITY';
 
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
 -- Petra
 update ModifierArguments set Value = '3,2,1' where ModifierId = 'PETRA_YIELD_MODIFIER' and Name = 'Amount';
 
@@ -331,4 +332,17 @@ update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARK
 -- Cristo redentor faith discount 15%
 insert or replace into BuildingModifiers (BuildingType,	 ModifierId)  values
 	('BUILDING_CRISTO_REDENTOR',	'ORACLE_PATRONAGE_FAITH_DISCOUNT');
+
+-- colossus grants trade route yield from IMPROVEMENT_FISHING_BOATS each 2 gold
+insert or replace into ImprovementModifiers (ImprovementType,	 ModifierId)  values
+	('IMPROVEMENT_FISHING_BOATS',		'COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD');
+
+insert or replace into Modifiers(ModifierId, ModifierType, SubjectRequirementSetId) values
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD', 'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL', 'CITY_HAS_COLOSSUS');
+
+insert or replace into ModifierArguments 
+	(ModifierId,								Name,			Value) 
+values
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD', 	'YieldType',	'YIELD_GOLD'),
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
 

@@ -167,6 +167,17 @@ values
 -- values
 -- 	('REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'GovernorPromotionType',	'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST');
 
+-- wonder
+insert or replace into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('CITY_HAS_COLOSSUS',											'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('CITY_HAS_COLOSSUS',											'REQUIRES_CITY_HAS_BUILDING_COLOSSUS');
+	
 insert or replace into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values

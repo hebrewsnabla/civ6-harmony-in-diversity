@@ -10,31 +10,31 @@
 --不同作者
 update Building_GreatWorks set 
 	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType =1 ,
-	ThemingSameEras =0 ,
+	ThemingSameObjectType = 1 ,
+	ThemingSameEras = 0 ,
 	ThemingTourismMultiplier = 100 ,
-	ThemingYieldMultiplier =100
-where BuildingType ='BUILDING_GREAT_LIBRARY';
+	ThemingYieldMultiplier = 100
+where BuildingType = 'BUILDING_GREAT_LIBRARY';
 
 --OXFORD_UNIVERSITY
 --不同作者
 update Building_GreatWorks set 
 	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType =1 ,
-	ThemingSameEras =0 ,
+	ThemingSameObjectType = 1 ,
+	ThemingSameEras = 0 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
-where BuildingType ='BUILDING_OXFORD_UNIVERSITY';
+where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
 
 --APADANA
 --同类型
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType =1 ,
-	ThemingSameEras =0 ,
+	ThemingSameObjectType = 1 ,
+	ThemingSameEras = 0 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
-where BuildingType ='BUILDING_APADANA';
+where BuildingType = 'BUILDING_APADANA';
 
 --GOV_CULTURE
 --同时代
@@ -44,17 +44,17 @@ update Building_GreatWorks set
 	ThemingSameEras = 1 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
-where BuildingType ='BUILDING_GOV_CULTURE';
+where BuildingType = 'BUILDING_GOV_CULTURE';
 
 --HERMITAGE
 --不同作者
 update Building_GreatWorks set 
 	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType =0 ,
-	ThemingSameEras =0 ,
+	ThemingSameObjectType = 0 ,
+	ThemingSameEras = 0 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
-where BuildingType ='BUILDING_HERMITAGE';
+where BuildingType = 'BUILDING_HERMITAGE';
 
 --SYDNEY_OPERA_HOUSE
 --同时代
@@ -64,4 +64,4 @@ update Building_GreatWorks set
 	ThemingSameEras = 1 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
-where BuildingType ='BUILDING_SYDNEY_OPERA_HOUSE';
+where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';

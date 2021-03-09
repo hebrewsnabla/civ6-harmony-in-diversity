@@ -1,0 +1,6 @@
+----------------------------------------------------------------------------
+--add modifier string here--
+-- insert or replace into ModifierStrings
+-- 	(ModifierId,						Context, 			Text)
+-- values
+-- 	()
