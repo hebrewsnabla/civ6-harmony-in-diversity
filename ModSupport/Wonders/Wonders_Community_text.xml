@@ -46,6 +46,9 @@
         <Replace Tag="LOC_BUILDING_PORCELAIN_TOWER_DESCRIPTION" Language="zh_Hans_CN">
             <Text>赠送三份 [ICON_RESOURCE_PORCELAIN] 瓷器奢侈，每个提供6点 [ICON_AMENITIES] 宜居度。建成时市中心出现一位大科学家。[NEWLINE]只能建在草原、平原、冻土平地上。</Text>
         </Replace>
+        <Replace Tag="LOC_BUILDING_PORCELAIN_TOWER_DESCRIPTION" Language="en_US">
+            <Text>1 free Great Engineer appears near the city where the wonder was built. Grants three copies of the [ICON_RESOURCE_PORCELAIN] Porcelain Luxury Resource which provide +6 Amenities each. [NEWLINE]Must be built on a flat Grassland, Plains or Tundra tile.</Text>
+        </Replace>
         <Replace Tag="LOC_BUILDING_PORCELAIN_TOWER_QUOTE" Language="zh_Hans_CN">
             <Text>“在平原的中央矗立着一座高高的尖塔或高塔，它的造价和技艺远远超过了中国人的所有其他手艺；中国人用它向世界宣告了他们的艺术家在前世所罕见的独创性。”—约翰内斯·纽霍夫</Text>
         </Replace>
@@ -70,5 +73,186 @@
         <Replace Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_PORCELAIN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
             <Text>欧洲的名字，英文中的瓷器，来自古老的意大利瓷器（cowrie贝壳），因为它与贝壳表面相似。瓷器在一些英语国家也被称为瓷器或精细瓷器，因为它最早出现在从中国进口的产品中。与瓷器相关的特性包括低渗透性和弹性；相当的强度、硬度、韧性、白度、半透明性和共振性；以及高抗化学侵蚀和热冲击性。</Text>
         </Replace>
+		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="en_US">
+			<Text> 1 free Great Writer appears near the city where the wonder was built (if one is available). Provides +6 [ICON_CULTURE] Culture to all your cities that are within 9 tiles.[NEWLINE][NEWLINE] It must be built on Grassland, Plains or Tundra next to a River.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>若能招募大作家，则完成后获得一个免费的大作家。奇观单元格9环内的所有城市，+6 [ICON_culture] 文化值。[NEWLINE][NEWLINE] 必须建在相邻河边的草原、平原或冻土单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_QUOTE" Language="zh_Hans_CN">
+			<Text>“很好，陛下，你能看到球员们得到很好的赏赐吗？你听到了吗，让他们好好利用；因为他们是当时抽象而简短的编年史：在你死后，你最好有一个不好的墓志铭，而不是你活着时他们的不良报告。”[NWELINE]——哈姆雷特第二幕，场景2。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_GLOBE_THEATRE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>环球剧院于公元1599年在伦敦的少女巷由张伯伦勋爵的手下建造，威廉·莎士比亚是这家戏剧公司的股东之一，它融合了许多设计创新。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_GLOBE_THEATRE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>1613年，在制作亨利八世的过程中，炮火点燃了茅草屋顶，地球仪被烧成了一片废墟；1614年，它在同一地点重建，并继续运行，直到1642年被清教徒关闭。尽管其确切尺寸尚未记录在案，但众所周知，环球剧场是一座三层楼高的圆形露天圆形剧场，直径约30米（100英尺），可容纳约300名观众。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_GLOBE_THEATRE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>舞台宽13米（43英尺），深8米（27英尺），高出地面5英尺，允许设置活板门。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_DANTE_NAME" Language="zh_Hans_CN">
+			<Text>但丁·阿利吉耶里</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_JOHN_DONNE_NAME" Language="zh_Hans_CN">
+			<Text>约翰·多恩</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_MOLIERE_NAME" Language="zh_Hans_CN">
+			<Text>莫利埃</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_JOHN_DONNE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>约翰·多恩（1572年1月22日至1631年3月31日）是英国诗人和英国国教的神职人员。他被认为是玄学诗人的杰出代表。他的作品以强烈而感性的风格著称，包括十四行诗、爱情诗、宗教诗、拉丁翻译、警句、挽歌、歌曲、讽刺和布道。他的诗歌以其语言的活力和隐喻的创造性而闻名，尤其是与同时代人相比。唐恩的风格的特点是突然开口和各种悖论，讽刺和错位。这些特点，加上他频繁的戏剧或日常讲话节奏，他紧张的句法和他强硬的口才，都是对伊丽莎白时代传统诗歌流畅性的反应，也是对欧洲巴洛克风格和矫揉造作手法的英语改编。他早期的职业生涯以诗歌为标志，诗歌对英国社会有着丰富的知识，他对这些知识提出了尖锐的批评。唐恩诗歌中的另一个重要主题是真正的宗教观念，这是他花了很多时间思考和理论的东西。他写世俗诗以及情色诗和爱情诗。他以精通形而上学的自负而闻名。尽管多恩受过良好的教育，有着诗意方面的天赋，但他还是在贫穷中生活了好几年，主要依靠富有的朋友。他把教育期间和教育后继承的大部分钱花在了女性化、文学、娱乐和旅游上。1601年，唐恩秘密地与安妮·莫尔结婚，与她育有12个孩子。1615年，他被任命为执事，然后圣公会牧师，虽然他不想接受神圣的命令，只是因为国王下令这样做。1621年，他被任命为伦敦圣保罗大教堂的院长。他还在1601年和1614年担任国会议员。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_DANTE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>杜兰特·迪·阿利吉耶罗·德格利·阿利吉耶里（Durante di Alighiero degli Alighieri）是中世纪晚期的一位意大利诗人，笔名但丁·阿利吉耶里（Dante Alighieri）或简称但丁（c.1265-1321）。他的《神曲》最初被称为《喜剧》，后来被乔瓦尼·博卡乔命名为《神曲》，被广泛认为是中世纪最重要的诗歌和意大利最伟大的文学作品语言。在中世纪晚期，大多数诗歌都是用拉丁文写成的，只有受过最多教育的读者才能读到。然而，但丁在《白话雄辩》一书中为白话在文学中的运用进行了辩护。他甚至会用托斯卡纳方言为《新生活》（1295年）和《神曲》等作品写作；这种高度非正统的选择开创了一个先例，后来的意大利重要作家如彼得拉克和博卡乔都会效仿。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_MOLIERE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>让-巴蒂斯特·波奎林，艺名莫利埃（1622年1月15日受洗；1673年2月17日去世），法国剧作家、演员和诗人，被广泛认为是法语和世界文学中最伟大的作家之一。他现存的作品包括喜剧、闹剧、悲喜剧、芭蕾舞剧等等。他的戏剧被翻译成各种主要的生活语言，在法国歌剧院演出的次数比当今任何其他剧作家都要多。由于他的影响，法语本身常常被称为“莫利埃语”。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_JOHN_DONNE_1_NAME" Language="zh_Hans_CN">
+			<Text>突发事件的祷告</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_JOHN_DONNE_2_NAME" Language="zh_Hans_CN">
+			<Text>歌与十四行诗</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_DANTE_2_NAME" Language="zh_Hans_CN">
+			<Text>帕拉迪索</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_DANTE_1_NAME" Language="zh_Hans_CN">
+			<Text>地狱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_MOLIERE_1_NAME" Language="zh_Hans_CN">
+			<Text>恨世者</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_MOLIERE_2_NAME" Language="zh_Hans_CN">
+			<Text>塔尔图夫</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_JOHN_DONNE_1_QUOTE" Language="zh_Hans_CN">
+			<Text>没有人是一个完整的岛屿；每个人都是大陆的一部分，主要的一部分；任何人的死亡都会削弱我，因为我与人类有关。因此，永远不要派人去知道钟声为谁而鸣，它为你而鸣。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_JOHN_DONNE_2_QUOTE" Language="zh_Hans_CN">
+			<Text>如果不是靠爱活着，如果我们不适合墓葬，听到我们的传说，我们可以靠它死去；如果没有编年史可以证明，我们会在十四行诗中建造漂亮的房间；同样，一个精心制作的骨灰缸会成为最大的灰烬，就像半英亩的坟墓一样，通过这些赞美诗，所有人都会认可我们为爱而被封圣。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_DANTE_2_QUOTE" Language="zh_Hans_CN">
+			<Text>在这里，权力使我丧失了崇高的想象力：但此时，我的欲望和意志像一个平衡的轮子一样，被推动太阳和其他星星的爱转动着。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_DANTE_1_QUOTE" Language="zh_Hans_CN">
+			<Text>当白日的照耀下，夜晚的寒意使小花弯成一团，蜷缩成一团，笔直地在花茎上开放，我也一样，用尽了力气。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_MOLIERE_1_QUOTE" Language="zh_Hans_CN">
+			<Text>如果每个人都穿上正直的衣服，如果每个人都是公正、坦率、善良的，其他美德就几乎没有用处，因为他们的主要目的是让我们耐心地忍受我们同胞的不公正。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_MOLIERE_2_QUOTE" Language="zh_Hans_CN">
+			<Text>那些行为给了谈话空间的人总是最先攻击他们的邻居。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_NAME" Language="zh_Hans_CN">
+			<Text>环球剧院</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_UFFIZI_NAME" Language="zh_Hans_CN">
+			<Text>乌菲兹美术馆</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_UFFIZI_DESCRIPTION" Language="en_US">
+			<Text>1 free Great Artist appears near the city where the wonder was built. +10% [ICON_CULTURE] Culture, +10% [ICON_GOLD] Gold and +50% [ICON_TOURISM] Tourism from non-relic Great Work. [NEWLINE][NEWLINE] It must be built on flat Grassland or Plains next to a City Centre. Requires Bank Building. </Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_UFFIZI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建成时，获得一位免费的大艺术家。 若城市同时有商业中心和剧院广场，则+10% [ICON_CULTURE]文化，+10% [ICON_GOLD] 金币，且该城来自非遗物巨作的 [ICON_TOURISM] 旅游业绩+50%。[NEWLINE][NEWLINE] 必须建在靠近市中心的平地上，且必须是草原或平原单元格。同时该城必须有银行建筑。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_UFFIZI_QUOTE" Language="zh_Hans_CN">
+			<Text>“所有这些事情都给了我最大的满足感和满足感，因为它们不仅是为了上帝的荣誉，也是为了我自己的纪念。”[NWELINE]——科西默·德·美第奇</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>乌菲兹美术馆最初建于公元1560年至1581年，是佛罗伦萨地方官员的办公室（意大利语称为乌菲兹），是世界上最古老、最著名的美术馆之一，收藏了意大利文艺复兴时期最精美的绘画作品。现在这里还收藏着价值连城的古董、雕塑，以及10万多幅绘画和版画。1574年，未完工的顶层被改造成了一个储藏室，存放着统治时期的德美第奇家族积累的艺术珍品。在接下来的几十年里，该建筑的其他部分被翻新为美术馆和储藏区。据瓦萨里说，达芬奇和米开朗基罗等艺术家聚集在乌菲兹“为了美丽，为了工作和娱乐”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_2">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_3">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_BOTTICELLI_NAME" Language="zh_Hans_CN">
+			<Text>桑德罗波提切利</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_RAPHAEL_NAME" Language="zh_Hans_CN">
+			<Text>拉斐尔</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_CARAVAGGIO_NAME" Language="zh_Hans_CN">
+			<Text>卡拉瓦乔</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_RAPHAEL_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>拉斐洛·桑齐奥·达·乌尔比诺（Raffaello Sanzio da Urbino，1483年-1520年4月6日），拉斐尔（Raphael），是文艺复兴时期意大利画家和建筑师。他的作品因其清晰的形式、轻松的构图以及人类宏伟的新柏拉图理想的视觉成就而备受赞赏。他与米开朗基罗和达芬奇一起，形成了那个时期传统的大师三位一体。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_RAPHAEL_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>拉斐尔的工作效率极高，经营着一个异常庞大的作坊，尽管他37岁去世，但仍留下了大量的工作。他的许多作品都在梵蒂冈宫殿中发现，在那里，拉斐尔壁画室是他职业生涯中的中心，也是最大的作品。最著名的作品是梵蒂冈诗节中的雅典学派。在罗马的早年之后，他的大部分作品都是由他的画作作坊完成的，质量有相当大的损失。尽管在罗马以外的地方，他的作品主要是通过他的合作版画而闻名的，但他在有生之年是非常有影响力的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_RAPHAEL_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>拉斐尔死后，他的大对手米开朗基罗的影响更为广泛，直到18世纪和19世纪，拉斐尔更加宁静和谐的品质再次被视为最高典范。他的职业生涯自然分为三个阶段和三种风格，首先由乔治·瓦萨里（Giorgio Vasari）描述：他早年在翁布里亚（Umbria），然后是大约四年（1504-1508年）吸收佛罗伦萨的艺术传统，接着是他在罗马的最后一个忙碌和胜利的十二年，为两位教皇及其亲密伙伴工作。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_BOTTICELLI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>亚历山德罗·迪·马里亚诺·迪·瓦尼·菲利佩皮（约1445年-1510年5月17日），被称为桑德罗·波提切利，是早期文艺复兴时期的意大利画家。他属于洛伦佐·德梅迪奇赞助下的佛罗伦萨学派，不到一百年后，乔治·瓦萨里在《波提切利简历》中将这一运动描述为“黄金时代”。波提切利死后的声誉一直持续到19世纪末；从那时起，他的作品被视为代表早期文艺复兴绘画的线性优雅。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_BOTTICELLI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>除了为数不多的神话题材是他今天最著名的作品外，他还画了广泛的宗教题材和一些肖像画。他和他的工作室以他们的圣母和孩子而闻名，其中许多都是圆色调的。波提切利最著名的作品是《维纳斯的诞生》和《Primavera》，都藏在佛罗伦萨的乌菲兹美术馆。他一生都生活在佛罗伦萨的同一个街区，可能他在其他地方唯一有意义的时间是1474年在比萨和1481-1482年在罗马西斯廷教堂作画的几个月。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_BOTTICELLI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>他的画作中只有一幅是年代久远的，尽管其他的可以从其他记录中不同程度地确定年代，他的风格的发展是非常明显的。在整个15世纪70年代，他都是一位大师，享受着广泛的声誉.而80年代是他最成功的十年，那时他所有的大型神话画都完成了，还有许多他最好的圣母像。到了1490年代，他的风格变得更加个人化，并在某种程度上表现得更加矫揉造作，他可以被看作是朝着与达芬奇（比他小七岁）相反的方向发展，他是新一代画家，随着波提切利在某种程度上回归哥特式风格，创造了文艺复兴时期的高度风格。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_CARAVAGGIO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>米开朗基罗·梅里西·达·卡拉瓦乔（1571年9月28日-1610年7月18日）是一位意大利画家，从1590年代早期到1610年活跃于罗马、那不勒斯、马耳他和西西里岛。他的绘画结合了对人类身体和情感状态的现实观察，以及对灯光的戏剧性运用，这对巴洛克绘画产生了形成性的影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_CARAVAGGIO_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>卡拉瓦乔采用了近距离的物理观察和明暗对比的戏剧性使用，后来被称为tenebrism。他把这种技术作为一种主要的风格元素，使阴影变暗，使物体在明亮的光柱中透彻。卡拉瓦乔生动地表达了关键时刻和场景，往往以暴力斗争、酷刑和死亡为特征。他工作迅速，有活生生的模特，喜欢放弃绘画，直接在画布上工作。他对新巴洛克风格的影响是深远的，这种新巴洛克风格是从矫揉造作中产生的。在彼得·保罗·鲁本斯（Peter Paul Rubens）、朱塞佩·德·里贝拉（Jusepe de Ribera）、吉安·洛伦佐·贝尔尼尼（Gian Lorenzo Bernini）和伦勃朗（Rembrandt）的作品中可以直接或间接地看到这一点，在他影响下的下一代艺术家被称为“卡拉瓦格斯蒂”（Caravagisti）或“卡拉瓦格斯克”（Caravagesques），以及特内布里斯特。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_CWON_CARAVAGGIO_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>卡拉瓦乔在20多岁搬到罗马之前，曾在米兰接受过画家培训。作为一个艺术家，作为一个暴力、敏感和挑衅性的人，他有了一个相当大的名声。一场斗殴导致他因谋杀被判死刑，并迫使他逃到那不勒斯。在那里，他再次确立了自己作为他那一代最杰出的意大利画家之一的地位。他在1607年前往马耳他和西西里岛，并寻求教皇赦免他的判决。1609年，他回到那不勒斯，在那里他卷入了一场暴力冲突；他的脸毁容了，关于他死亡的谣言四处流传。关于他的精神状态的问题源于他古怪古怪的行为。1610年，在从那不勒斯到罗马的途中，他在不确定的情况下去世。报告说他死于发烧，但有人认为他是被谋杀的，或是死于铅中毒。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_RAPHAEL_1_NAME" Language="zh_Hans_CN">
+			<Text>西斯廷圣母</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_RAPHAEL_2_NAME" Language="zh_Hans_CN">
+			<Text>变容</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_RAPHAEL_3_NAME" Language="zh_Hans_CN">
+			<Text>拉多娜·维拉塔</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_BOTTICELLI_1_NAME" Language="zh_Hans_CN">
+			<Text>维纳斯的诞生</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_BOTTICELLI_2_NAME" Language="zh_Hans_CN">
+			<Text>贤士来朝</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_BOTTICELLI_3_NAME" Language="zh_Hans_CN">
+			<Text>普里马维拉</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_CARAVAGGIO_1_NAME" Language="zh_Hans_CN">
+			<Text>以马忤斯的晚餐</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_CARAVAGGIO_2_NAME" Language="zh_Hans_CN">
+			<Text>美杜莎</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_CWON_CARAVAGGIO_3_NAME" Language="zh_Hans_CN">
+			<Text>圣托马斯的怀疑</Text>
+		</Replace>
+		<Row Tag="LOC_BUILDING_NEUSCHWANSTEIN_NAME" Language="zh_Hans_CN">
+			<Text>新天鹅堡</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_NEUSCHWANSTEIN_DESCRIPTION" Language="en_US">
+			<Text>Any City with Medieval or Renaissance Walls yields +4 [ICON_Culture] Culture, +6 [ICON_Gold] Gold, +2 [ICON_Amenities] Amenities. All kinds of wall yield double tourism after civic Conservation is unlocked. It must be built on a Hill adjacent to a Mountain.</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_NEUSCHWANSTEIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>任何有中世纪或文艺复兴城墙的城市+4 [ICON_Culture] 文化, +6 [ICON_Gold] 金币, +2 [ICON_Amenities] 宜居度. 所有城墙在保护地球后获得的 [ICON_TOURISM] 旅游业绩翻倍。必须建在靠山的丘陵上。</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_NEUSCHWANSTEIN_QUOTE" Language="zh_Hans_CN">
+			<Text>“这个地方是最美丽的地方之一，神圣而不可接近，是一个值得纪念的圣殿，献给给世界带来拯救和真正祝福的神圣朋友。”——巴伐利亚国王路德维希二世（King Ludwig II of Bavaria）</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>新天鹅堡是一座19世纪罗马式复兴宫殿，位于德国巴伐利亚州西南部弗森附近的霍恩施旺高村（Hohenschwangau）上方崎岖的山丘上。这座宫殿是巴伐利亚的路德维希二世委托建造的，是为了纪念作曲家理查德·瓦格纳。路德维希用他的个人财产，通过大量的借贷，而不是巴伐利亚的公共资金，为宫殿买单。这座城堡原本是国王的家，直到1886年国王去世。他死后不久就向公众开放了。从那时起，超过6100万人参观了新天鹅堡。每年有130多万人来访，夏季每天多达6000人。</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_2">
+			<Text></Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_3">
+			<Text></Text>
+		</Row>
+
 	</LocalizedText>
 </GameData>

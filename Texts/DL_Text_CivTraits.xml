@@ -145,5 +145,11 @@
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and warmongering.</Text>
     </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>幸福度为快乐的城市额外+5% [ICON_SCIENCE] 科技值、+5% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="en_US">
+      <Text>Happy cities receive an additional +5%  [ICON_SCIENCE] Science and +5%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

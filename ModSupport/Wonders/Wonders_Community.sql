@@ -99,14 +99,14 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 --  neuschwanstein theming bonus from different aurthor
 update Building_GreatWorks set 
 	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType =0 ,
-	ThemingSameEras =0 ,
+	ThemingSameObjectType = 0 ,
+	ThemingSameEras = 0 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
 where BuildingType ='BUILDING_NEUSCHWANSTEIN';
 --------------------------------------------------------------------------------------------------------------------------------
 ------- BUILDING_UFFIZI---------------------------------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN'
+UPDATE Buildings SET ObsoleteEra = 'ERA_MODERN'
 WHERE BuildingType = 'BUILDING_UFFIZI' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_UFFIZI');
 delete from BuildingModifiers where ModifierId = 'UFFIZI_ART_MUSEUM_CULTURE_MODIFIER';
 
@@ -181,6 +181,16 @@ update Building_GreatWorks set
 	ThemingTourismMultiplier = 100,
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_UFFIZI';
+-- uffizi +3 great artist (need to assigin era)
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_BOTTICELLI_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_BOTTICELLI_2';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_BOTTICELLI_3';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_RAPHAEL_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_RAPHAEL_2';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_RAPHAEL_3';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_2';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_3';
 ------------------------------------------------------------------------------------------------------------
 -----BUILDING_NOTRE_DAME------------------------------------------------------------------------------------
 update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_NOTRE_DAME';
@@ -194,5 +204,34 @@ update Building_GreatWorks set
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN'
-WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_UFFIZI');
+UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 9, Entertainment = 0
+WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
+
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+
+delete from BuildingModifiers where ModifierId = 'GLOBE_THEATRE_AMPHITHEATER_AMENITY_MODIFIER';
+-- globe theter +3 great writer (need to assign era)
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_JOHN_DONNE_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_JOHN_DONNE_2';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_MOLIERE_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_MOLIERE_2';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_DANTE_1';
+update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_DANTE_2';
+-------------------------------------------------------------------------------------------------------------
+-------P0K_BUILDING_TEMPLE_POSEIDON--------------------------------------------------------------------------
+UPDATE Buildings SET ObsoleteEra = 'ERA_MEDIEVAL'
+WHERE BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' 
+AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
+
+insert or replace into DistrictModifiers(DistrictType, ModifierId)values
+	('DISTRICT_HARBOR',	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'),
+	('DISTRICT_ROYAL_NAVY_DOCKYARD','P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'),
+	('DISTRICT_COTHON','P0K_TEMPLE_POSEIDON_HARBOR_AMENITY');
+
+insert or replace into Modifiers(ModifierId, ModifierType,	SubjectRequirementSetId) values
+('P0K_TEMPLE_POSEIDON_HARBOR_AMENITY',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY',	'P0K_TEMPLE_POSEIDON_REQUIREMENTS');
+
+insert or replace into ModifierArguments (ModifierId, Name,	Value) values 
+('P0K_TEMPLE_POSEIDON_HARBOR_AMENITY',	'Amount', 1);
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
+------------------------------------------------------------------------------------------------------------------

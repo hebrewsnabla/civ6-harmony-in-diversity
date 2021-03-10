@@ -72,7 +72,9 @@ update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBO
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_HERMITAGE' where BuildingType = 'BUILDING_HERMITAGE';
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE' where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_APADANA' where BuildingType = 'BUILDING_APADANA';
-update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_GOV_CULTURE' where BuildingType = 'BUILDING_GOV_CULTURE';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN' where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_UFFIZI' where BuildingType = 'BUILDING_UFFIZI';
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_NOTRE_DAME' where BuildingType = 'BUILDING_NOTRE_DAME';
 
 update Policies set Description = 'LOC_POLICY_RAID_DL_DESCRIPTION' where PolicyType = 'POLICY_RAID';
 update Policies set Description = 'LOC_POLICY_TOTAL_WAR_DL_DESCRIPTION' where PolicyType = 'POLICY_TOTAL_WAR';

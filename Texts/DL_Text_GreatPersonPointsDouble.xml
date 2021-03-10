@@ -37,12 +37,6 @@
     <Replace Tag="LOC_LEADER_TRAIT_BOLOGNA_DESCRIPTION" Language="en_US">
       <Text>Your districts with a building provide +2 [ICON_GreatPerson] Great Person point of their type ([ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, and [ICON_GreatMusician] Great Musician for Theater Square districts with a building).</Text>
     </Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>幸福度为快乐的城市额外+5% [ICON_SCIENCE] 科技值、+5% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
-    </Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="en_US">
-      <Text>Happy cities receive an additional +5%  [ICON_SCIENCE] Science and +5%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
-    </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION" Language="zh_Hans_CN">
       <Text>瑞典招募伟人时可获得50点 [ICON_Favor] 外交支持（标准速度下）。工厂与大学分别提供瑞典+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。如瑞典在游戏中，进入工业时代后将增添3项特色世界议会竞赛。</Text>
     </Replace>
