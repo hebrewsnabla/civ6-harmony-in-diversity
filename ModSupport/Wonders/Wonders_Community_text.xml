@@ -163,12 +163,12 @@
 		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
 			<Text>乌菲兹美术馆最初建于公元1560年至1581年，是佛罗伦萨地方官员的办公室（意大利语称为乌菲兹），是世界上最古老、最著名的美术馆之一，收藏了意大利文艺复兴时期最精美的绘画作品。现在这里还收藏着价值连城的古董、雕塑，以及10万多幅绘画和版画。1574年，未完工的顶层被改造成了一个储藏室，存放着统治时期的德美第奇家族积累的艺术珍品。在接下来的几十年里，该建筑的其他部分被翻新为美术馆和储藏区。据瓦萨里说，达芬奇和米开朗基罗等艺术家聚集在乌菲兹“为了美丽，为了工作和娱乐”</Text>
 		</Replace>
-		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_2">
+		<!-- <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_2">
 			<Text></Text>
 		</Replace>
 		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_UFFIZI_CHAPTER_HISTORY_PARA_3">
 			<Text></Text>
-		</Replace>
+		</Replace> -->
 		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_CWON_BOTTICELLI_NAME" Language="zh_Hans_CN">
 			<Text>桑德罗波提切利</Text>
 		</Replace>
@@ -247,12 +247,11 @@
 		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
 			<Text>新天鹅堡是一座19世纪罗马式复兴宫殿，位于德国巴伐利亚州西南部弗森附近的霍恩施旺高村（Hohenschwangau）上方崎岖的山丘上。这座宫殿是巴伐利亚的路德维希二世委托建造的，是为了纪念作曲家理查德·瓦格纳。路德维希用他的个人财产，通过大量的借贷，而不是巴伐利亚的公共资金，为宫殿买单。这座城堡原本是国王的家，直到1886年国王去世。他死后不久就向公众开放了。从那时起，超过6100万人参观了新天鹅堡。每年有130多万人来访，夏季每天多达6000人。</Text>
 		</Row>
-		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_2">
+		<!-- <Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_2">
 			<Text></Text>
 		</Row>
 		<Row Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_NEUSCHWANSTEIN_CHAPTER_HISTORY_PARA_3">
 			<Text></Text>
-		</Row>
-
+		</Row> -->
 	</LocalizedText>
 </GameData>

@@ -91,11 +91,14 @@ insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_NEUSCHWANSTEIN', 'NEUSCHWANSTEIN_ADD_HOUSING'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_NEUSCHWANSTEIN');
 
-insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) values
-	('NEUSCHWANSTEIN_ADD_HOUSING',	'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',	'CITY_HAS_MED_OR_REN_WALLS_REQUIREMENTS');
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
+	'NEUSCHWANSTEIN_ADD_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING', 'CITY_HAS_MED_OR_REN_WALLS_REQUIREMENTS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_NEUSCHWANSTEIN');
 
-insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
-	('NEUSCHWANSTEIN_ADD_HOUSING',	'Amount', 1);
+insert or replace into ModifierArguments (ModifierId,	Name,	Value) select
+	'NEUSCHWANSTEIN_ADD_HOUSING',	'Amount', 1
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_NEUSCHWANSTEIN');
+
 --  neuschwanstein theming bonus from different aurthor
 update Building_GreatWorks set 
 	ThemingUniquePerson = 1 ,
@@ -223,15 +226,23 @@ UPDATE Buildings SET ObsoleteEra = 'ERA_MEDIEVAL'
 WHERE BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' 
 AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
 
-insert or replace into DistrictModifiers(DistrictType, ModifierId)values
-	('DISTRICT_HARBOR',	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'),
-	('DISTRICT_ROYAL_NAVY_DOCKYARD','P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'),
-	('DISTRICT_COTHON','P0K_TEMPLE_POSEIDON_HARBOR_AMENITY');
+insert or replace into DistrictModifiers (DistrictType, ModifierId) select
+	'DISTRICT_HARBOR',				'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
+where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
+insert or replace into DistrictModifiers (DistrictType, ModifierId) select
+	'DISTRICT_ROYAL_NAVY_DOCKYARD',	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
+where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
+insert or replace into DistrictModifiers (DistrictType, ModifierId) select
+	'DISTRICT_COTHON',				'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
+where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
 
-insert or replace into Modifiers(ModifierId, ModifierType,	SubjectRequirementSetId) values
-('P0K_TEMPLE_POSEIDON_HARBOR_AMENITY',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY',	'P0K_TEMPLE_POSEIDON_REQUIREMENTS');
+insert or replace into Modifiers(ModifierId, ModifierType,	SubjectRequirementSetId) select
+	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY', 'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT', 'P0K_TEMPLE_POSEIDON_REQUIREMENTS'
+where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
 
-insert or replace into ModifierArguments (ModifierId, Name,	Value) values 
-('P0K_TEMPLE_POSEIDON_HARBOR_AMENITY',	'Amount', 1);
+insert or replace into ModifierArguments (ModifierId, Name,	Value) select 
+	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY', 'Amount', 1
+where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
+
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
 ------------------------------------------------------------------------------------------------------------------
