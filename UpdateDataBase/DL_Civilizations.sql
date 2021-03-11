@@ -298,6 +298,7 @@ insert or replace into RequirementSets (RequirementSetId, RequirementSetType) va
 update ModifierArguments set Value = 12 where ModifierId = 'TSIKHE_FAITH_GOLDEN_AGE' and Name = 'Amount';
 update ModifierArguments set Value = 15 where ModifierId = 'CONSERVATION_TSIKHE_TOURISM_GOLDEN_AGE' and Name = 'Amount';
 
+
 -- Minor Civs, City states
 
 -- Valletta
