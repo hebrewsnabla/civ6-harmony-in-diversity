@@ -216,6 +216,18 @@
 		<Replace Tag="LOC_ABILITY_IKANDA_ANTI_CAVALRY_MOVEMENT_BONUS_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_MOVEMENT] Movement from training in Ikanda</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>十字军：同一单元格内的战斗单位+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION" Language="en_US">
+			<Text>Just War : Combat units gain +5 [ICON_Strength] Combat Strength when plot has religious unit.</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>十字军：+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION" Language="en_US">
+			<Text>Just War : +5 [ICON_Strength] Combat Strength</Text>
+		</Replace>
 		<!-- preview text -->
 		<Replace Tag="LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>来自莫克夏训练</Text>
@@ -303,6 +315,12 @@
 		</Replace>
 		<Replace Tag="LOC_SCHOLASTICISM_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT" Language="en_US">
 			<Text>from Scholasticism Belief</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
+			<Text>来自十字军</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT" Language="en_US">
+			<Text>Combat Strength from Just War</Text>
 		</Replace>
 		<!-- Adjacency -->
 		<Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="zh_Hans_CN">
