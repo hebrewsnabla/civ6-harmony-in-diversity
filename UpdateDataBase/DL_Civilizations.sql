@@ -245,27 +245,6 @@ update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_MARSH_BUILDINGS
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- Minor Civs, City states
 
 -- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.

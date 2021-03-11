@@ -13,8 +13,7 @@ update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUI
 
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
 	('IMPROVEMENT_CAMP', 'FEATURE_FOREST', 'TECH_ARCHERY', NULL),
-	('IMPROVEMENT_CAMP', 'FEATURE_JUNGLE', NULL, 'CIVIC_GUILDS')
-;
+	('IMPROVEMENT_CAMP', 'FEATURE_JUNGLE', NULL, 'CIVIC_GUILDS');
 
 insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) values
 	('IMPROVEMENT_FISHING_BOATS', 'YIELD_FOOD', 0),
@@ -34,6 +33,7 @@ delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_Q
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqTech = 'TECH_PLASTICS';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqCivic = 'CIVIC_COLONIALISM';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
 insert or replace into Improvement_BonusYieldChanges values 
 	-- (id, ImprovementType, YieldType, BonusYieldChange, PrereqTech, PrereqCivic)
 	(234, 'IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1, 'TECH_CONSTRUCTION', NULL),
@@ -50,7 +50,8 @@ insert or replace into Improvement_BonusYieldChanges values
 	-- (243, 'IMPROVEMENT_CAMP', 'YIELD_FOOD', 1, NULL, 'CIVIC_MEDIEVAL_FAIRES'),
 	-- (244, 'IMPROVEMENT_CAMP', 'YIELD_GOLD', 1, NULL, 'CIVIC_MEDIEVAL_FAIRES'),
 	(245, 'IMPROVEMENT_CAMP', 'YIELD_GOLD', 2, NULL, 'CIVIC_MERCANTILISM'),
-	(246, 'IMPROVEMENT_CAMP', 'YIELD_FOOD', 1, 'TECH_RIFLING', NULL)
+	(246, 'IMPROVEMENT_CAMP', 'YIELD_FOOD', 1, 'TECH_RIFLING', NULL),
+	(247, 'IMPROVEMENT_BATEY', 'YIELD_CULTURE', 2, NULL, 'CIVIC_HUMANISM')
 	-- (247, 'IMPROVEMENT_FISHING_BOATS', 'YIELD_FOOD', 1, 'TECH_SHIPBUILDING', NULL),
 	-- (248, 'IMPROVEMENT_FISHING_BOATS', 'YIELD_FOOD', 1, 'TECH_CARTOGRAPHY', NULL),
 	-- (249, 'IMPROVEMENT_FISHING_BOATS', 'YIELD_GOLD', 2, NULL, 'CIVIC_EXPLORATION')
