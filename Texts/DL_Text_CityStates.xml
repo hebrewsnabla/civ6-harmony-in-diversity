@@ -32,5 +32,14 @@
     <Replace Tag="LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION" Language="en_US">
       <Text>When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded (or majority) religion to cities within 6 tiles.</Text>
     </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每个港口内建筑向城市提供3点 [ICON_Power] 电力。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION" Language="zh_Hant_HK">
+    <Text>每個港口建築為城市提供+3 [ICON_Power] 電力。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION">
+    <Text>Cities receive +3 [ICON_Power] Power for every Harbor building.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
