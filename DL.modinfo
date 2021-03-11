@@ -175,74 +175,68 @@
       <Properties>
         <LoadOrder>666</LoadOrder>
         <LuaContext>UnitFlagManager</LuaContext>
-        <LuaReplace>BuilderCharges/UnitFlagManager_BuilderCharges.lua</LuaReplace>
+        <LuaReplace>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <!-- Farm on fresh hills -->
-    <ImportFiles id="DL_FarmsOnFreshHills_Common_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
+      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
+      <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
+      <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
+      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
     <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
+        <LuaReplace>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_UnitPanel_FarmsOnFreshHills_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
         <LuaContext>WorldViewIconsManager</LuaContext>
-        <LuaReplace>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
+        <LuaReplace>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_WorldViewIconsManager_FOFH_Import" criteria="FarmOnFreshHills_Conflict_Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    </ImportFiles>
     <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15506</LoadOrder></Properties>
-      <File>FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     </UpdateText>
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
-      <File>CityPolicies/CityPolicies.sql</File>
+      <File>SubMods/CityPolicies/CityPolicies.sql</File>
     </UpdateDatabase>
     <UpdateText id="CityPolicies_Texts" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15602</LoadOrder></Properties>
-      <File>CityPolicies/CityPolicies_Texts.xml</File>
+      <File>SubMods/CityPolicies/CityPolicies_Texts.xml</File>
     </UpdateText>
     <UpdateIcons id="CityPolicies_Icons" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15603</LoadOrder></Properties>
-      <File>CityPolicies/CityPolicies_Icons.xml</File>
+      <File>SubMods/CityPolicies/CityPolicies_Icons.xml</File>
     </UpdateIcons>
     <AddUserInterfaces id="CityPolicy_CityPanelOverview_Instance" criteria="CityPolicies_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15604</LoadOrder>
         <Context>InGame</Context>
       </Properties>
-      <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
+      <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     </AddUserInterfaces>
     <ImportFiles id="CityPolicy_CityPanelOverview_Import" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
-      <File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+      <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
     </ImportFiles>
     <ImportFiles id="CityPolicy_CityPanelOverview_Suk_Import" criteria="CityPolicies_Conflict_Expansion2_With_Suk">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
-      <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
+      <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
     <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="CityPolicies_Conflict_Expansion2">
-      <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
+      <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     </ImportFiles>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
@@ -471,22 +465,22 @@
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <!-- Builder charges -->
-    <File>BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
+    <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
-    <File>CityPolicies/CityPolicies.sql</File>
-    <File>CityPolicies/CityPolicies_Texts.xml</File>
-    <File>CityPolicies/CityPolicies_Icons.xml</File>
-    <File>CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
-    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
-    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.lua</File>
-    <File>CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
-    <File>CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
+    <File>SubMods/CityPolicies/CityPolicies.sql</File>
+    <File>SubMods/CityPolicies/CityPolicies_Texts.xml</File>
+    <File>SubMods/CityPolicies/CityPolicies_Icons.xml</File>
+    <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
+    <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
+    <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.lua</File>
+    <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
+    <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
-    <File>FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
-    <File>FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    <File>FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
-    <File>FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    <File>FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
+    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
+    <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
+    <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
+    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     <!-- Map Generation -->
     <File>Maps/AssignStartingPlots.lua</File>
     <File>Maps/FeatureGenerator.lua</File>
