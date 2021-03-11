@@ -13,5 +13,98 @@
         <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="zh_Hans_CN">
       		<Text>在标准速度下，所在单元格每相邻一个山脉单元格获得400 [ICON_Science] 科技值。</Text>
     	</Replace>
+        <Replace Tag="LOC_GREATPERSON_ALAN_TURING_ACTIVE" Language="zh_Hans_CN">
+            <Text>为电脑和现代或原子能时代的1个随机科技启动 [ICON_TechBoosted] 尤里卡时刻。若电脑尤里卡已被触发，则完成该科技。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_ALAN_TURING_ACTIVE" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Computers and 1 random technology from the Modern and Aotomic era. If Computers is already triggered, instead completed the tech.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_DMITRI_MENDELEEV_ACTIVE" Language="zh_Hans_CN">
+            <Text>为化学和工业或现代的1个随机科技启动 [ICON_TechBoosted] 尤里卡时刻。若化学尤里卡已被触发，则完成该科技。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_DMITRI_MENDELEEV_ACTIVE" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Chemistry and 1 random technology from the Industrial and Modern era. If Chemistry is already triggered, instead completed the tech.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_EUCLID_ACTIVE" Language="zh_Hans_CN">
+            <Text>为数学和中世纪的1个随机科技启动 [ICON_TechBoosted] 尤里卡时刻。若数学尤里卡已被触发，则完成该科技。该城可无视人口限制，多建造一个区域。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_EUCLID_ACTIVE" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Mathematics and 1 random technology from the Medieval era. If Mathematics is already triggered, instead completed the tech. Let this city build one more district than the population limit allows.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_ISAAC_NEWTON_ACTIVE" Language="zh_Hans_CN">
+            <Text>立即在该区域建造大学和图书馆。大学+3 [ICON_Science] 科技值。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_ISAAC_NEWTON_ACTIVE" Language="en_US">
+            <Text>Instantly builds a University and Library in this district. Universities provide +3 [ICON_Science] Science.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_JAMES_OF_ST_GEORGE_ACTIVE" Language="zh_Hans_CN">
+            <Text>立即在本城建造远古和中世纪城墙。每级城墙每回合+1大工点。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_JAMES_OF_ST_GEORGE_ACTIVE" Language="en_US">
+            <Text>Instantly builds Ancient and Medieval Walls in this city. +1 Great Engineer point per turn to each level of wall.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING" Language="zh_Hans_CN">
+            <Text>为印刷术启动 [ICON_TechBoosted] 尤里卡时刻。若印刷术尤里卡已被触发，则完成该科技。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Printing. If Printing is already triggered, instead completed the tech.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_2MODERNATOMICTECHBOOST" Language="zh_Hans_CN">
+            <Text>为随机的{Amount}个现代或原子能时代{Amount : plural 1?科技; other?科技;}启动 [ICON_TechBoosted] 尤里卡时刻。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_2MODERNATOMICTECHBOOST" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for {Amount} random {Amount : plural 1?technology; other?technologies;} from the Modern or Atomic era.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_PLASTICTECHBOOST" Language="zh_Hans_CN">
+            <Text>为塑料启动 [ICON_TechBoosted] 尤里卡时刻。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_PLASTICTECHBOOST" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Plastic.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING" Language="zh_Hans_CN">
+            <Text>为精炼启动 [ICON_TechBoosted] 尤里卡时刻。若精炼已被触发，则完成该科技。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Refining. If Refining is already triggered, instead completed the tech.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION" Language="zh_Hans_CN">
+            <Text>为卫生设备启动 [ICON_TechBoosted] 尤里卡时刻。若卫生设备已被触发，则完成该科技。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION" Language="en_US">
+            <Text>Triggers the [ICON_TechBoosted] Eureka moment for Sanitation. If Sanitation is already triggered, instead completed the tech.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM" Language="zh_Hans_CN">
+            <Text>激活时当前全国所有已建成的区域提供等于相邻加成的 [ICON_TOURISM] 旅游业绩。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM" Language="en_US">
+            <Text>All districts yield [ICON_TOURISM] Tourism equal to the adjacency bonus.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_APPEAL" Language="zh_Hans_CN">
+            <Text>国境内的所有单元格+1魅力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_APPEAL" Language="en_US">
+            <Text>+1 Appeal to all tiles within your territoty. </Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_SINGLECITY_APPEAL" Language="zh_Hans_CN">
+            <Text>本城+2魅力。本城来自奇观、改良设施和自然公园的业绩+100%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_SINGLECITY_APPEAL" Language="en_US">
+            <Text>+2 Appeal to all tiles in this city.+100% [ICON_TOURISM] Tourism from Wonder, Improvment and National Park in this city.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_APPEAL_BIG" Language="zh_Hans_CN">
+            <Text>国境内的所有单元格+2魅力。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_NATIONAL_APPEAL_BIG" Language="en_US">
+            <Text>+2 Appeal to all tiles within your territoty.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_GPP_BOOST" Language="zh_Hans_CN">
+            <Text>所有城市的伟人点积累速率+25%。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_GPP_BOOST" Language="en_US">
+            <Text>+25% Great Person Points accumulate speed in your country.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_GPP_BOOST" Language="zh_Hans_CN">
+            <Text>为两个中世纪或文艺复兴的随机科技启动 [ICON_TechBoosted] 尤里卡时刻，为中世纪和文艺复兴时期的一个随机市政启动 [ICON_CivicBoosted] 鼓舞时刻。</Text>
+        </Replace>
     </LocalizedText>
 </GameData>

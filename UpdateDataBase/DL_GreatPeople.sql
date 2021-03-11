@@ -16,11 +16,12 @@
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_PRINTINGTECHBOOST';
 -- update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_WORKSHOP_CULTURE' and Name = 'Amount';
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CULTURE_BOMB_TRIGGER_INDUSTRIAL_ZONE';
+-- delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CULTURE_BOMB_TRIGGER_INDUSTRIAL_ZONE';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CITY_APPEAL_SMALL';	
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_KENZO_TANGE';
-update GreatPersonIndividuals set EraType = 'ERA_CLASSICAL' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_KENZO_TANGE'; --DEBUG
 update GreatPersonIndividuals set EraType = 'ERA_RENAISSANCE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA';
+
 insert or replace into GreatPersonIndividualActionModifiers 
 	(GreatPersonIndividualType, 						ModifierId)
 values
@@ -34,12 +35,12 @@ values
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_WONDER_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM'),
-	('GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA',			'GREATPERSON_NATIONAL_APPEAL_BIG');
-	-- ('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM'),
-	-- ('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM'),
-	-- ('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM'),
-	-- ('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM'),
-	-- ('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM');
+	('GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA',			'GREATPERSON_NATIONAL_APPEAL_BIG'),
+	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM'),
+	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM'),
+	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM'),
+	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM'),
+	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',				'GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM');
 
 insert or replace into Modifiers
 	(ModifierId, 										ModifierType, 								Runonce, Permanent, SubjectRequirementSetId)
@@ -89,7 +90,7 @@ values
 	('GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM',	'YieldType',			'YIELD_FAITH'),
 	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','Amount',				100),
 	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','YieldType',			'YIELD_PRODUCTION'),
-	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	     'Amount',				50),
+	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	     'Amount',				100),
 	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	     'YieldType',			'YIELD_GOLD');
 ------------------------------------------------------------------------------------------------------------------------------
 --- Great Scientist
@@ -99,7 +100,12 @@ values
 -- galieo : +400 science for each ajacent mountain tiles
 -- HILDEGARD_OF_BINGEN ： +200 faith when activate
 -- ABU_AL_QASIM_AL_ZAHRAWI : sanitation boost or give full tech
--- issac_newton : natural philosophy 
+-- issac_newton : university +1 sicence
+-- ALFRED_NOBEL：+25%GPP acumulate speed
+-- ALBERT_EINSTEIN: 2 boost
+-- ALAN_TURING: finish computer if boosted; boost +era
+-- DMITRI_MENDELEEV: finish chemistry if boosted; boost +era
+-- JAMES_YOUNG: finish refining if boosted; boost plastic
 
 update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_SNOWMOUNTAIN_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 400 where ModifierId = 'GREATPERSON_ADJACENT_TUNDRAMOUNTAIN_SCIENCE' and Name = 'Amount';
@@ -110,34 +116,77 @@ update ModifierArguments set Value = 1000 where ModifierId = 'GREATPERSON_ADJACE
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MEDIEVALRENAISSANCETECHBOOST';
 update ModifierArguments set Value = 200 where ModifierId = 'GREATPERSON_FAITH' and  Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_UNIVERSITIES_SMALL_SCIENCE';
-
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_MATHTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_EUCLID';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_2INDUSTRIALMODERNTECHBOOSTS';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1INDUSTRIALTECHBOOST';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_COMPUTERSTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ALAN_TURING';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MODERNTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ALAN_TURING';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CHEMISTRYTECHBOOST';
+	
 insert or replace into GreatPersonIndividualActionModifiers 
 	(GreatPersonIndividualType, 						ModifierId)
 values
+	('GREAT_PERSON_INDIVIDUAL_ALBERT_EINSTEIN',			'GREATPERSON_2MODERNATOMICTECHBOOST'),
+	('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',				'GREATPERSON_1MODERNATOMICTECHBOOST'),
+	('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',		'GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS'),
+	('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',				'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTER'),
+	('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',		'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY'),
+	('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',				'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING'),
+	('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',				'GREATPERSON_PLASTICTECHBOOST'),
 	('GREAT_PERSON_INDIVIDUAL_EUCLID',					'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS'),
 	('GREAT_PERSON_INDIVIDUAL_EUCLID',					'GREATPERSON_EXTRA_DISTRICT_CAPACITY'),
 	('GREAT_PERSON_INDIVIDUAL_ABU_AL_QASIM_AL_ZAHRAWI',	'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION');
 
 insert or replace into Modifiers
-	(ModifierId, 										ModifierType, 								Runonce, Permanent, SubjectRequirementSetId)
+	(ModifierId, 	ModifierType, 	Runonce,   Permanent,   SubjectRequirementSetId)
 values
-	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION','MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',			1,1, 	NULL);
+	('GREATPERSON_2MODERNATOMICTECHBOOST',				'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA',1,1, 	NULL),
+	('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',			'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA',1,1, 	NULL),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTER', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1,1, 	NULL),
+	('GREATPERSON_PLASTICTECHBOOST',					'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1,1, 	NULL),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY','MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1,1, 	NULL),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',	'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1,1, 	NULL),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION','MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1,1, 	NULL);
+
+insert or replace into GreatPersonIndividualActionModifiers (GreatPersonIndividualType, ModifierId)
+select 'GREAT_PERSON_INDIVIDUAL_ALFRED_NOBEL', 'GREAT_PERSON_ADD_' || GreatPersonClassType from GreatPersonClasses
+where not (GreatPersonClassType = 'GREAT_PERSON_CLASS_COMANDANTE_GENERAL');
+insert or replace into Modifiers	(ModifierId,ModifierType, Runonce, Permanent)
+select  'GREAT_PERSON_ADD_' || GreatPersonClassType , 'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',1,1 from GreatPersonClasses;
+insert or replace into ModifierArguments (ModifierId,	Name,	Value)
+select  'GREAT_PERSON_ADD_' || GreatPersonClassType ,	'GreatPersonClassType',  GreatPersonClassType from GreatPersonClasses;
+insert or replace into ModifierArguments (ModifierId,	Name,	Value)
+select  'GREAT_PERSON_ADD_' || GreatPersonClassType ,	'Amount', 25 from GreatPersonClasses;
 
 insert or replace into ModifierArguments
-	(ModifierId, 													Name,     			Value)
+	(ModifierId, 												Name,     			Value)
 values
-	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',			'TechType',			 'TECH_SANITATION'),
-	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',			'GrantTechIfBoosted', 1);
+	('GREATPERSON_2MODERNATOMICTECHBOOST',						'Amount',			2),
+	('GREATPERSON_2MODERNATOMICTECHBOOST',						'EndEraType',		'ERA_ATOMIC'),
+	('GREATPERSON_2MODERNATOMICTECHBOOST',						'StartEraType',		'ERA_MODERN'),
+	('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',					'Amount',			1),
+	('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',					'EndEraType',		'ERA_MODERN'),
+	('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',					'StartEraType',		'ERA_INDUSTRIAL'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTER',			'TechType',			'TECH_COMPUTER'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTER',			'GrantTechIfBoosted', 1),
+	('GREATPERSON_PLASTICTECHBOOST',							'TechType',			 'TECH_PLASTIC'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',		'TechType',			 'TECH_CHEMISTRY'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',		'GrantTechIfBoosted', 1),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',			'TechType',			 'TECH_REFINING'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',			'GrantTechIfBoosted', 1),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',		'TechType',			 'TECH_SANITATION'),
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',		'GrantTechIfBoosted', 1);
 
-insert or replace into GreatWorks
-	(GreatWorkType, GreatWorkObjectType, GreatPersonIndividualType, Name, Audio, Image, Quote, Tourism, Eratype)
-values
-	('GREATWORK_NEWTON',	'GREATWORKOBJECT_WRITING',	'GREAT_PERSON_INDIVIDUAL_ISAAC_NEWTON',	'LOC_GREATWORK_NEWTON_NAME',	NULL,
-		NULL, 'LOC_GREATWORK_NEWTON_QUOTE',	3,	'ERA_RENAISSANCE');
 
-insert or replace into GreatWorkModifiers (GreatWorkType, ModifierId)
-values ('GREATWORK_NEWTON','PRODUCT_SCIENCE_YIELD_BONUS_TURTLES');
+-- insert or replace into GreatWorks
+-- 	(GreatWorkType, GreatWorkObjectType, GreatPersonIndividualType, Name, Audio, Image, Quote, Tourism, Eratype)
+-- values
+-- 	('GREATWORK_NEWTON',	'GREATWORKOBJECT_WRITING',	'GREAT_PERSON_INDIVIDUAL_ISAAC_NEWTON',	'LOC_GREATWORK_NEWTON_NAME',	NULL,
+-- 		NULL, 'LOC_GREATWORK_NEWTON_QUOTE',	3,	'ERA_RENAISSANCE');
 
--- todo: check why suonilaoban do not work
+-- insert or replace into GreatWorkModifiers (GreatWorkType, ModifierId)
+-- values ('GREATWORK_NEWTON','PRODUCT_SCIENCE_YIELD_BONUS_TURTLES');
+
 -- todo: add a button for Newton
--- and see if he is 30%sicence boost
+-- and see if he is 30% sicence boost
+
