@@ -70,3 +70,36 @@ function FreeWallForCapital(playerID, cityID, iX, iY)
 end
 
 Events.CityAddedToMap.Add(FreeWallForCapital)
+
+-- -- Temp for great person
+-- local BASE_AddActionButton = AddActionButton
+-- local BASE_OnUnitActionClicked = OnUnitActionClicked
+-- local mGreatPersonActivateHash = GameInfo.Types['UNITCOMMAND_ACTIVATE_GREAT_PERSON'].Hash;
+-- -- =================================================================================
+-- -- Overrides
+-- -- =================================================================================
+-- function OnUnitActionClicked( actionType:number, actionHash:number, currentMode:number )
+--     -- print('OnUnitActionClicked', actionType, actionHash) -- OnUnitActionClicked -1572680103 374670040
+--     if g_isOkayToProcess then
+--         local pSelectedUnit :table = UI.GetHeadSelectedUnit();
+--         if (pSelectedUnit ~= nil) then
+--             if (actionType == UnitCommandTypes.TYPE) then
+--                 if actionHash == mGreatPersonActivateHash then
+--                     -- pSelectedUnit
+--                     UnitManager.RequestCommand( pSelectedUnit, actionHash );
+--                 end
+--             end
+--         end
+--     end
+--     BASE_OnUnitActionClicked(actionType, actionHash, currentMode)
+-- end
+
+-- function AddActionButton( instance:table, action:table )
+--     -- print('AddActionButton', action.IconId)
+--     if action.IconId == 'ICON_UNITOPERATION_MOVE_TO' then
+--         action.Disabled = true
+--         local pSelectedUnit :table= UI.GetHeadSelectedUnit();
+--         print(pSelectedUnit)
+--     end
+--     BASE_AddActionButton(instance, action)
+-- end

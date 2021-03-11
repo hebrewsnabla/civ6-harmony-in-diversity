@@ -23,6 +23,7 @@ insert into RequirementSetRequirements values
 update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS'
 	where ModifierId = 'TEMPLE_ARTEMIS_CAMP_AMENITY';
 
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
 -- Petra
 update ModifierArguments set Value = '3,2,1' where ModifierId = 'PETRA_YIELD_MODIFIER' and Name = 'Amount';
 
@@ -332,3 +333,38 @@ update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARK
 insert or replace into BuildingModifiers (BuildingType,	 ModifierId)  values
 	('BUILDING_CRISTO_REDENTOR',	'ORACLE_PATRONAGE_FAITH_DISCOUNT');
 
+-- colossus grants trade route yield from IMPROVEMENT_FISHING_BOATS each 2 gold
+insert or replace into ImprovementModifiers (ImprovementType,	 ModifierId)  values
+	('IMPROVEMENT_FISHING_BOATS',		'COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD');
+
+insert or replace into Modifiers(ModifierId, ModifierType, SubjectRequirementSetId) values
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD', 'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL', 'CITY_HAS_COLOSSUS');
+
+insert or replace into ModifierArguments 
+	(ModifierId,								Name,			Value) 
+values
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD', 	'YieldType',	'YIELD_GOLD'),
+	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
+
+-- BUILDING_MACHU_PICCHU to guilds 710 add food to mountain districts
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUILDS', Cost = 710 
+	where BuildingType = 'BUILDING_MACHU_PICCHU';
+
+insert or replace into BuildingModifiers (BuildingType,	ModifierId)values
+('BUILDING_MACHU_PICCHU', 'MACHU_PICCHU_DISTRICT_FOOD');
+	
+insert or replace into Modifiers(ModifierId, 	ModifierType, 	SubjectRequirementSetId) values 
+('MACHU_PICCHU_DISTRICT_FOOD', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', 'PLOT_ADJACENT_TO_MOUNTAIN');
+
+insert or replace into ModifierArguments (ModifierId,	Name, Value) values
+('MACHU_PICCHU_DISTRICT_FOOD',	'Amount', 2),
+('MACHU_PICCHU_DISTRICT_FOOD',	'YieldType', 'YIELD_FOOD');
+
+-- huey lake +1 food
+update Buildings set PrereqTech = 'TECH_ENGINEERING', Cost = 400 
+	where BuildingType = 'BUILDING_HUEY_TEOCALLI';
+update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
+
+--liberty to colonialism
+update Buildings set PrereqCivic = 'CIVIC_COLONIALISM'
+	where BuildingType = 'BUILDING_STATUE_LIBERTY';

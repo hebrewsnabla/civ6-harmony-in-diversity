@@ -118,8 +118,81 @@
     <Replace Tag="LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION" Language="zh_Hans_CN">
       <Text>[ICON_GreatWork_Relic] 遗物和圣城的 [ICON_Tourism] 旅游业绩产值不会被其他研究了“启蒙运动”市政的文明削弱。您文明中“海滨度假区”产出的 [ICON_Tourism] 旅游业绩+100%。伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。[NEWLINE][NEWLINE] 必须建在丘陵上。</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION" Language="en_US">
       <Text>[ICON_Tourism] Tourism output from [ICON_GreatWork_Relic] Relics and Holy Cities is not diminished by other civilizations who have researched The Enlightenment civic. +100% [ICON_Tourism] Tourism from Seaside Resorts across your civilization.Patronage of Great People costs 25% less [ICON_Faith] Faith. [NEWLINE][NEWLINE] Must be built on Hills.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在休伊神庙一个单元格以内的每个湖泊单元格为城市+1 [ICON_Amenities] 宜居度。为您帝国内的每个湖泊单元格+2 [ICON_Food] 食物和+1 [ICON_Production] 生产力。必须建在靠近陆地的湖泊单元格上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Amenities] Amenity from entertainment for each Lake tile within one tile of Huey Teocalli. +2 [ICON_Food] Food and +1 [ICON_Production] Production for each Lake tile in your empire. Must be built on a Lake tile adjacent to land.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_MACHU_PICCHU_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>山脉单元格为所有城市的商业中心、剧院广场及工业区提供标准的相邻加成。所有靠山的区域+2 [ICON_FOOD] 食物。[NEWLINE][NEWLINE]必须修建在无火山的山脉单元格中。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_MACHU_PICCHU_DESCRIPTION" Language="en_US">
+      <Text>Mountain tiles provide a standard adjacency bonus to Commercial Hub, Theater Square, and Industrial Zone districts in all cities.+2 [ICON_FOOD] Food to all districts adjacent to Mountain tiles.[NEWLINE][NEWLINE]Must be built on a Mountain tile that does not contain a Volcano.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_COLOSSUS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>+1 [ICON_TradeRoute] 贸易路线容量。获得1个商人单位。 本城拥有的每个渔船为从该城出发的国际商路+2 [ICON_GOLD] 金币[NEWLINE][NEWLINE]必须建在邻近陆地和港口的海岸上。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_COLOSSUS_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_TradeRoute] Trade Route capacity. Grants a Trader unit. Each Fishing Boat owned by this city adds 2 [ICON_GOLD] Gold to international trade route yield from this city. [NEWLINE][NEWLINE]Must be built on the Coast, adjacent to land and a Harbor district.</Text>
+    </Replace>
+    <!-- buliding theming texts -->
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="zh_Hans_CN">
+        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="zh_Hans_CN">
+        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="zh_Hans_CN">
+        <Text> 当展示来自相同时代音乐家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of musicians from same eras.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="zh_Hans_CN">
+        <Text> 当展示来自不同艺术家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different artists.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="zh_Hans_CN">
+        <Text> 当展示来自相同类型的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of same kinds.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="zh_Hans_CN">
+        <Text> 当展示来自相同时代的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects from same eras.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN" Language="zh_Hans_CN">
+        <Text> 当展示来自不同音乐家的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of from different musicians.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_NOTRE_DAME" Language="zh_Hans_CN">
+        <Text> 当展示来自相同时代的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_NOTRE_DAME" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects from same eras.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_UFFIZI" Language="zh_Hans_CN">
+        <Text> 当展示来自相同类型的作品时，主题加成翻倍。 </Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_THEMINGBONUS_UFFIZI" Language="en_US">
+        <Text> Theming bonus doubling output when displaying objects of same kinds.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

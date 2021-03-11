@@ -292,43 +292,7 @@
     <Replace Tag="LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION" Language="en_US">
       <Text> +1 additional [ICON_FAITH] Faith for each era since constructed or last repaired. Gain a Missionary unit after finishing construction.</Text>
     </Replace>
-    <!-- buliding theming texts -->
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="zh_Hans_CN">
-        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="zh_Hans_CN">
-        <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="zh_Hans_CN">
-        <Text> 当展示来自相同时代音乐家的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects of musicians from same eras.</Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="zh_Hans_CN">
-        <Text> 当展示来自不同艺术家的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects of from different artists.</Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="zh_Hans_CN">
-        <Text> 当展示来自相同类型的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects of same kinds.</Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="zh_Hans_CN">
-        <Text> 当展示来自相同时代的作品时，主题加成翻倍。 </Text>
-    </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="en_US">
-        <Text> Theming bonus doubling output when displaying objects from same eras.</Text>
-    </Replace>
+    
     <!--late era buliding texts -->
     <Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="zh_Hans_CN">
         <Text> 此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。额外产出相当于港口相邻加成的 [ICON_FOOD] 食物。 [NEWLINE]本城的 [ICON_GREATADMIRAL] 海军将领点数积累速度+50%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。</Text>

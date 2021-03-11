@@ -338,6 +338,7 @@
       <File>UpdateDataBase/DL_Wonders.sql</File>
       <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
+      <File>UpdateDataBase/DL_ModifierString.sql</File>
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
@@ -558,6 +559,7 @@
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
+    <File>UpdateDataBase/DL_ModifierString.sql</File>
     <!-- Texts -->
     <File>Texts/DL_TextTag.sql</File>
     <!--  -->
