@@ -139,6 +139,12 @@
     <Replace Tag="LOC_BUILDING_COLOSSUS_DESCRIPTION" Language="en_US">
       <Text>+1 [ICON_TradeRoute] Trade Route capacity. Grants a Trader unit. Each Fishing Boat owned by this city adds 2 [ICON_GOLD] Gold to international trade route yield from this city. [NEWLINE][NEWLINE]Must be built on the Coast, adjacent to land and a Harbor district.</Text>
     </Replace>
+    <Replace Tag="LOC_BUILDING_TAJ_MAHAL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。 每次获得时代分提供的 [ICON_GOLD] 金币由10变为50。[NEWLINE][NEWLINE]必须建在河流旁。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_TAJ_MAHAL_DESCRIPTION" Language="en_US">
+      <Text>+1 Era Score from Historic Moment earned after this wonder is complete if that Moment is usually worth 2 or more Era Score. Earn 50 (instead of 10) [ICON_GOLD] Gold each time when Historic Moment is earned.[NEWLINE][NEWLINE] Must be built next to a River.</Text>
+    </Replace>
     <!-- buliding theming texts -->
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="zh_Hans_CN">
         <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>

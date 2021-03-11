@@ -352,12 +352,15 @@ values
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON';
 
-insert or replace into ModifierStrings
-	    (ModifierId,                      Context,                     Text)
-values
-	    ('PIERO_DE_BARDI_GOLD',            'Summary',                   'LOC_PIERO_DE_BARDI_GOLD'),
-	    ('JAKOB_FUGGER_GOLD',            'Summary',                   'LOC_JAKOB_FUGGER_GOLD'),
-	    ('JOHN_JACOB_ASTOR_GOLD',            'Summary',                   'LOC_JOHN_JACOB_ASTOR_GOLD'),
-	    ('ZHOU_DAGUAN_TOKENS',            'Summary',                   'LOC_ZHOU_DAGUAN_TOKENS'),
-	    ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',            'Summary',                   'LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS'),
-	    ('TESLA_REGIONAL_RANGE_BONUS',     'Summary',                    'LOC_TESLA_REGIONAL_RANGE_BONUS');
+-- insert or replace into ModifierStrings
+-- 	    (ModifierId,                      Context,                     Text)
+-- values
+-- 	    ('PIERO_DE_BARDI_GOLD',            'Summary',                   'LOC_PIERO_DE_BARDI_GOLD'),
+-- 	    ('JAKOB_FUGGER_GOLD',            'Summary',                   'LOC_JAKOB_FUGGER_GOLD'),
+-- 	    ('JOHN_JACOB_ASTOR_GOLD',            'Summary',                   'LOC_JOHN_JACOB_ASTOR_GOLD'),
+-- 	    ('ZHOU_DAGUAN_TOKENS',            'Summary',                   'LOC_ZHOU_DAGUAN_TOKENS'),
+-- 	    ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',            'Summary',                   'LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS'),
+-- 	    ('TESLA_REGIONAL_RANGE_BONUS',     'Summary',                    'LOC_TESLA_REGIONAL_RANGE_BONUS');
+
+-- great admiral
+-- GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON grants a settler

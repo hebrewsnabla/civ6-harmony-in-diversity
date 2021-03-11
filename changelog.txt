@@ -1408,3 +1408,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 由小雨 实现了 大工的整体改动
 由Vearmus 实现了 大商的整体改动
 由小雨和lp 共同实现了 大科的整体改动
+
+移除原每城1信仰的卡（萨满）
+新增工业、娱乐、水上乐园辐射+3范围卡：统筹规划（城市化解锁）

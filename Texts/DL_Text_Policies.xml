@@ -89,11 +89,11 @@
     <Replace Tag="LOC_POLICY_PRIMITIVE_COMMUNE_NAME" Language="en_US">
       <Text>Primitive Commune</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="zh_Hans_CN">
-      <Text>萨满</Text>
+    <Replace Tag="LOC_POLICY_OVERALL_PLANNING_NAME" Language="zh_Hans_CN">
+      <Text>统筹规划</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_SHAMAN_NAME" Language="en_US">
-      <Text>Shaman</Text>
+    <Replace Tag="LOC_POLICY_OVERALL_PLANNING_NAME" Language="en_US">
+      <Text>Overall Planning</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_BARD_NAME" Language="zh_Hans_CN">
       <!-- <Text>吟游诗人</Text> -->
@@ -123,11 +123,11 @@
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
        <Text> +1 [ICON_FOOD] Food in all cities.</Text>
     </Replace>
-    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>所有城市+1 [ICON_Faith] 信仰。</Text>
+    <Replace Tag='LOC_POLICY_OVERALL_PLANNING_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>来自工业区、水上乐园和娱乐设施的区域效果范围增加3个单元格。</Text>
     </Replace>
-    <Replace Tag='LOC_POLICY_SHAMAN_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_Faith] Faith in all cities.</Text>
+    <Replace Tag='LOC_POLICY_OVERALL_PLANNING_DESCRIPTION' Language="en_US">
+       <Text>Regional effects from your Industrial Zone, Water Park, and Entertainment Complex districts reach 3 tiles farther.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_CULTURE] 文化。</Text>

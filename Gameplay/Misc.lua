@@ -1,3 +1,5 @@
+Utils = {};
+
 function OnPlayerEraScoreChanged(playerID, amountAwarded)
     local player = Players[playerID]
     if player ~= nil then
@@ -9,3 +11,4 @@ function OnPlayerEraScoreChanged(playerID, amountAwarded)
 end
 
 Events.PlayerEraScoreChanged.Add(OnPlayerEraScoreChanged)
+
