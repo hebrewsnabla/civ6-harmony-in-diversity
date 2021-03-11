@@ -133,5 +133,11 @@
     <Replace Tag="LOC_LEADER_TRAIT_GRANADA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>建造者现在能够建造阿卡萨城堡改良设施。[NEWLINE][NEWLINE]阿卡萨城堡提供+3 [ICON_Culture] 文化值。提供等于单元格魅力75%的 [ICON_SCIENCE] 科技值。占领单位 [ICON_Strength] 防御力+4，并自动获得2回合防御工事。研究“飞行”科技后可提供 [ICON_TOURISM] 旅游业绩。无法建在另一座阿卡萨城堡旁。</Text>
     </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时加速10%生产速度。</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="zh_Hans_CN">
+      <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时增加10%生产速度。</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
