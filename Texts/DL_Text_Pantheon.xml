@@ -130,10 +130,10 @@
       <Text>The People of Polar</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>市中心相邻每个冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市市中心坐落在冻土地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>市中心相邻每个冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市中有冻土或冻土丘陵，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION" Language="en_US">
-      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Tundra tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Tundra tile.</Text>
+      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Tundra tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city has a Tundra or Tundra Hills tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_NAME" Language="zh_Hans_CN">
       <Text>沙之女神</Text>
@@ -142,10 +142,10 @@
       <Text>Goddess of the Desert</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>市中心相邻每个沙漠单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市市中心坐落在沙漠地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>市中心相邻每个沙漠单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市中有沙漠或沙漠丘陵，则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION" Language="en_US">
-      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Desert tile.</Text>
+      <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city has a Desert or Desert Hills tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>边界扩张速度提升15%，城市创建时获得额外4个单元格。生产移民时，+15%建造速度。</Text>

@@ -269,7 +269,7 @@
 			<Text>波塞冬神庙的遗迹坐落在雅典东南70公里的苏尼翁角上。这个地区是一个可以追溯到青铜时代的避难所，但现在的波塞冬神庙建于公元前5世纪——雅典的黄金时代。波塞冬神庙在风格上与雅典的赫菲斯提安神庙非常相似，人们认为它是由同一位建筑师设计的。波塞冬神庙位于爱琴海上方60米处，可以肯定，它是一个醒目的地标，无论是出发还是接近的水手都可以从远处看到。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>为10个单元格以内的所有市中心提供+1 [ICON_Faith] 信仰值和+2 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
+			<Text>为10个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
