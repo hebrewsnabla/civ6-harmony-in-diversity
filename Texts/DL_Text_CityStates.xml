@@ -26,6 +26,32 @@
     <Replace Tag="LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION" Language="en_US">
       <Text>International and domestic [ICON_TradeRoute] Trade Routes receive +0.8 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion.</Text>
     </Replace>
+    <!-- begin text correction -->
+    <Replace Tag="LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中每拥有1个“军营”内建筑，购买陆地战斗或支援单位所需的 [ICON_GOLD] 金币便减少20%，若可用 [ICON_Faith] 信仰购买，则费用也减少20%。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION" Language="en_US">
+      <Text>Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_TARUGA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>对于所有城市，其每拥有一种改良的战略资源，便+5% [ICON_SCIENCE] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_TARUGA_DESCRIPTION" Language="en_US">
+      <Text>+5% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have.</Text>
+    </Replace>
+    <!-- End text coorection -->
+    <Replace Tag="LOC_LEADER_TRAIT_VALLETTA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_Faith] 信仰值可用来购买市中心建筑和军营区的建筑。购买远古、中世纪、文艺复兴城墙（包括堡垒）的费用降低50%，但只能通过 [ICON_Faith] 信仰值购买。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_VALLETTA_DESCRIPTION" Language="en_US">
+      <Text>City Center buildings and Encampment district buildings can be bought with [ICON_Faith] Faith. Purchasing Ancient, Medieval, and Renaissance Walls (including Tsikhe) is 50% cheaper, but they can only be bought with [ICON_Faith] Faith.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_SINGAPORE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Production] 生产力。您通往盟友城市或宗主城邦的[ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_SINGAPORE_DESCRIPTION" Language="en_US">
+      <Text>Your International [ICON_TradeRoute] Trade Routes gain +2 [ICON_Production] Production. Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state gain +4 [ICON_Gold] Gold.</Text>
+    </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每本 [ICON_GreatWork_WRITING] 著作巨作+2 [ICON_Culture] 文化值和+2 [ICON_FAITH] 信仰值。每件 [ICON_GreatWork_Sculpture] 雕塑、 [ICON_GreatWork_Portrait] 肖像、 [ICON_GreatWork_Landscape] 风景和 [ICON_GreatWork_Religious] 宗教艺术巨作+2 [ICON_Culture] 文化值和+2 [ICON_FAITH] 信仰值。每件 [ICON_GreatWork_RELIC] 遗物+3 [ICON_Culture] 文化值。</Text>
     </Replace>
