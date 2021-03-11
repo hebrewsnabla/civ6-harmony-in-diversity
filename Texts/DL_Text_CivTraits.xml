@@ -145,5 +145,12 @@
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and warmongering.</Text>
     </Replace> 
+    <!-- Mapuche -->
+    <Replace Tag="LOC_IMPROVEMENT_CHEMAMULL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造马普切木人（马普切特色改良设施）的能力。[NEWLINE][NEWLINE]提供所在单元格魅力100%的 [ICON_CULTURE] 文化值。研究完“飞行”后可获得更多 [ICON_TOURISM] 旅游业绩。要求单元格至少达到迷人魅力。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_CHEMAMULL_DESCRIPTION" Language="en_US">
+      <Text>Unlocks the Builder ability to construct a Chemamull, unique to Mapuche.[NEWLINE][NEWLINE]Provides [ICON_CULTURE] Culture equal to 100% of the tile's Appeal. Additional [ICON_TOURISM] Tourism after researching Flight. Minimum Appeal of Charming.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
