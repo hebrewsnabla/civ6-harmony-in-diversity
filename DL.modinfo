@@ -96,6 +96,7 @@
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
+    <!-- UI -->
     <ImportFiles id="DL_Overwrite_Files_Import" criteria="Expansion2">
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
@@ -144,6 +145,22 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanel.lua</File>
     </ImportFiles>
+    <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>15000</LoadOrder>
+        <LuaContext>UnitPanel</LuaContext>
+        <LuaReplace>UI/Replacement/DL_UnitPanel.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="DL_UnitPanel_Import" criteria="Expansion2">
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>UI/Replacement/DL_UnitPanel.lua</File>
+    </ImportFiles>
+    <!-- UI -->
+    <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
+    </ImportFiles>
     <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
@@ -182,20 +199,19 @@
     <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-      <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
       <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <!-- <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
         <LuaReplace>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
-    </ReplaceUIScript>
+    </ReplaceUIScript> -->
     <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
@@ -362,11 +378,6 @@
       <File>Gameplay/Governors_Interface.lua</File>
       <File>Gameplay/Temp_Interface.lua</File>
     </ImportFiles>
-    <!-- UI -->
-    <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
-      <Properties><LoadOrder>16018</LoadOrder></Properties>
-      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
-    </ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16019</LoadOrder></Properties>
@@ -449,6 +460,7 @@
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
+    <File>UI/Replacement/DL_UnitPanel.lua</File>
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
@@ -478,7 +490,7 @@
     <!-- Farms On Fresh Hills -->
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File>
+    <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
     <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     <!-- Map Generation -->
