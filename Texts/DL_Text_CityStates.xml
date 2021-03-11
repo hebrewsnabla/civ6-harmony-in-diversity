@@ -140,7 +140,13 @@
     <Text>每個港口建築為城市提供+3 [ICON_Power] 電力。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION">
-    <Text>Cities receive +3 [ICON_Power] Power for every Harbor building.</Text>
+      <Text>Cities receive +3 [ICON_Power] Power for every Harbor building.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时加速10%生产速度。</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="zh_Hans_CN">
+      <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时增加10%生产速度。</Text>
     </Replace>
   </LocalizedText>
 </GameData>
