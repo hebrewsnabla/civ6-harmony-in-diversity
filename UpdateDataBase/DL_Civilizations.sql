@@ -219,7 +219,14 @@ INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 
+
+--Mapuche
+--木人现在可以在魅力迷人及以上的地块建造，且生成相当于魅力值100%的文化产出。
+update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+
 -------------------------------------------------------------------------------------------------------------------------------
+
 -- Vietnam can build districts in all features and do not remove on forest jungle and marsh
 -- rainforest +2 food forest +2 production marsh +2 science
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
