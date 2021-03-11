@@ -219,7 +219,14 @@ INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 
+
+--Mapuche
+--木人现在可以在魅力迷人及以上的地块建造，且生成相当于魅力值100%的文化产出。
+update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+
 -------------------------------------------------------------------------------------------------------------------------------
+
 -- Vietnam can build districts in all features and do not remove on forest jungle and marsh
 -- rainforest +2 food forest +2 production marsh +2 science
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
@@ -585,3 +592,37 @@ values
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',			'ModifierId',											'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'YieldType',											'YIELD_CULTURE'),
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'Amount',												2);
+
+-- Cardiff
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SEAPORT' and Name = 'Amount';
+
+--普雷斯拉夫军营建筑加军事单位锤子
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_BARRACKS_STABLE_IDENTITY_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_ARMORY_IDENTITY_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_MILITARY_ACADEMY_IDENTITY_BONUS';
+	insert into TraitModifiers 
+    (TraitType,                                 	 ModifierId)
+values
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS'),
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS'),
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS');
+insert into Modifiers
+	(ModifierId,													ModifierType,									   			 SubjectRequirementSetId)
+values
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	        			'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS1',	'MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION',	'BUILDING_IS_BARRACKS_STABLE_MILITARITIC_CITY_STATE'),
+	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1',				'MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION', 	'BUILDING_IS_ARMORY'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',	'MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION', 	'BUILDING_IS_MILITARY_ACADEMY');
+insert into ModifierArguments
+	(ModifierId,															Name,				 Value)
+values
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS',     		'ModifierId',		'MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS1'),
+	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS',      				'ModifierId',		'MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS', 			'ModifierId', 		'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10),
+	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1',						'Amount',	     	10),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10);

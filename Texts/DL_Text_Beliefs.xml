@@ -273,10 +273,10 @@
 			<Text>Pious Merchants</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。所有 [ICON_TradeRoute] 贸易路线+2 [ICON_FAITH] 信仰值。</Text>
+			<Text>来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。从信仰此宗教的城市出发的商路+6 [ICON_Gold] 金币，通往信仰此宗教城市的贸易路线+3 [ICON_Faith] 信仰。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_DL_DESCRIPTION" Language="en_US">
-			<Text>+100% Religious pressure from your [ICON_TradeRoute] Trade Routes. All [ICON_TradeRoute] trade route + 2 [ICON_FAITH] Faith.</Text>
+			<Text>+100% Religious pressure from your [ICON_TradeRoute] Trade Routes. All [ICON_TradeRoute] trade routes +6 [ICON_Gold] Gold from cities that believe in this religion. All [ICON_TradeRoute] trade route +3 [ICON_FAITH] Faith to cities that believe in this religion .</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSIAH_NAME" Language="zh_Hans_CN">
 			<Text>弥赛亚</Text>
@@ -309,10 +309,10 @@
 			<Text>Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>战斗单位处于信奉该宗教的外国城市境内时+7 [ICON_Strength] 战斗力。</Text>
+			<Text>信仰此宗教的宗教单位为同一单元格军事单位+5 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="en_US">
-			<Text>Combat units gain +7 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion.</Text>
+			<Text>Combat units gain +5 [ICON_Strength] Combat Strength when plot has a religious unit belonging to this religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text> -->

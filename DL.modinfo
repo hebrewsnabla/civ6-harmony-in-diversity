@@ -292,7 +292,7 @@
       <File>Maps/Seven_Seas.lua</File>
     </ImportFiles>
     <!-- Main -->
-    <UpdateDatabase id="DL_Balance" criteria="Expansion2">
+    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
       <!-- Double Great Person need to update in the first -->
       <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>

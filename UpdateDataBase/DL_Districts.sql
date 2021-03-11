@@ -79,6 +79,10 @@ update Districts set PrereqTech = 'TECH_IRON_WORKING' where
 -- WATER_ENTERTAINMENT_COMPLEX
 update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
 	DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
+	DistrictType = 'DISTRICT_NEIGHBORHOOD';
+update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
+	DistrictType = 'DISTRICT_MBANZA';
 
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
 -- Housing
