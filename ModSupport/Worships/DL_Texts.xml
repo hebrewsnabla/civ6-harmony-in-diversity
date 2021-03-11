@@ -104,16 +104,18 @@
 			<Text>姆巴里</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>允许建造姆巴里（+2 [ICON_Faith] 信仰值 +6 [ICON_GOLD] 金币；+1商路容量，本城 [ICON_GOLD] 金币产出+10%.)</Text>
+			<Text>允许建造姆巴里（+2 [ICON_Faith] 信仰值 +6 [ICON_GOLD] 金币；+1 [ICON_TradeRoute] 贸易路线容量。)</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION" Language="en_US">
-			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith +6 [ICON_GOLD] Gold;+1 Trade Route Capacity and +10% [ICON_GOLD] Gold in this city.)</Text>
+			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith +6 [ICON_GOLD] Gold; +1 [ICON_TradeRoute] Trade Route Capacity.)</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>+1商路容量，本城 [ICON_GOLD] 金币产出+10%.</Text>
+			<Text>+1 [ICON_TradeRoute] 贸易路线容量。</Text>
+			<!-- 本城 [ICON_GOLD] 金币产出+10% -->
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION" Language="en_US">
-			<Text>+1 Trade Route Capacity and +10% [ICON_GOLD] Gold in this city.</Text>
+			<Text>+1 [ICON_TradeRoute] Trade Route Capacity.</Text>
+			<!--  and +10% [ICON_GOLD] Gold in this city -->
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_TZACUALLI_NAME" Language="zh_Hans_CN">
 			<Text>羽蛇神庙</Text>

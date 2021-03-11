@@ -87,18 +87,6 @@
 		<Replace Tag="LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION" Language="en_US">
 			<Text>+3 [ICON_Science] Science for each city following this Religion.</Text>
 		</Replace>
-		<Replace Tag="LOC_BELIEF_INITIATION_RITES_NAME" Language="zh_Hans_CN">
-			<Text>入会仪式</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_INITIATION_RITES_NAME" Language="en_US">
-			<Text>Initiation Rites</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供50点 [ICON_Gold] 金币（标准速度下）。</Text>
-		</Replace>
-		<Replace Tag="LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION" Language="en_US">
-			<Text>When you use a religious unit to convert a city for the first time earn 50 [ICON_Gold] Gold per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
-		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。</Text>
 		</Replace>
@@ -240,6 +228,32 @@
 		</Replace>
 		<!--  -->
 		<!-- Enhancer -->
+		<Replace Tag="LOC_BELIEF_INITIATION_RITES_NAME" Language="zh_Hans_CN">
+			<Text>入会仪式</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_INITIATION_RITES_NAME" Language="en_US">
+			<Text>Initiation Rites</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供50点 [ICON_Gold] 金币（标准速度下）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION" Language="en_US">
+			<Text>When you use a religious unit to convert a city for the first time earn 50 [ICON_Gold] Gold per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
+		</Replace>
+		<!-- 巡回 -->
+		<Replace Tag="LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>宗教传播距离增加30%。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供15点 [ICON_Culture] 文化值（标准速度下）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION" Language="en_US">
+			<Text>Religion spreads to cities 30% further away. When you use a religious unit to convert a city for the first time earn 15 [ICON_Culture] Culture per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
+		</Replace>
+		<!-- 经文 -->
+		<Replace Tag="LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>邻近城市的宗教传播的压力增加25%。一旦研发出印刷术，增加到50%。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供15点 [ICON_Science] 科技值（标准速度下）。</Text>
+		</Replace>
+		<Replace Tag="LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION" Language="en_US">
+			<Text>Religious spread from adjacent city pressure is 25% stronger. Boosted to 50% once Printing is researched. When you use a religious unit to convert a city for the first time earn 15 [ICON_Science] Science per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
+		</Replace>
 		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_NAME" Language="zh_Hans_CN">
 			<Text>经院哲学</Text>
 		</Replace>
@@ -283,10 +297,10 @@
 			<Text>Canonization of Saints</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CANONIZATION_OF_SAINTS_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>当您激活一位 [ICON_GreatPerson] 伟人时，其会将您所创立宗教的400点宗教压力传播到6单元格内的城市。</Text>
+			<Text>当您激活一位 [ICON_GreatPerson] 伟人时，其会将您所创立宗教的400点宗教压力传播到6单元格内的城市。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供25点 [ICON_Faith] 信仰（标准速度下）。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CANONIZATION_OF_SAINTS_DL_DESCRIPTION" Language="en_US">
-			<Text>When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded religion to cities within 6 tiles.</Text>
+			<Text>When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded religion to cities within 6 tiles. When you use a religious unit to convert a city for the first time earn 25 [ICON_Faith] Faith per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>战斗单位处于信奉该宗教的友好城市境内时+3 [ICON_Strength] 战斗力。</Text>
@@ -301,10 +315,12 @@
 			<Text>Combat units gain +7 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text>
+			<!-- <Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text> -->
+			<Text>您境内位于或与海岸湖泊单元格相邻的区域+3 [ICON_Science] 科技值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="en_US">
-			<Text>Increases Healing of your all units by +20 in Holy Site districts belonging to cities with your majority religion, or any adjacent tiles.</Text>
+			<!-- <Text>Increases Healing of your all units by +20 in Holy Site districts belonging to cities with your majority religion, or any adjacent tiles.</Text> -->
+			<Text>Your districts on or next to Coast or Lake tiles provide +3 [ICON_Science] Science.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>您的宗教压力不会因为神学战斗失败而减少。减少100%外来宗教压力影响，审判官+1使用次数，购买审判官打折-30%。</Text>
@@ -312,7 +328,6 @@
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="en_US">
 			<Text>Your Religion's pressure never drops due to losses in Theological Combat. -100% outer religion pressure. Inquisitors receive +1 charge. -30% purchase cost for Inquisitors. </Text>
 		</Replace>
-		
 		<!-- Worship -->
 		<Replace Tag="LOC_BELIEF_MOSQUE_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text> 允许建造清真寺（+2 [ICON_Faith] 信仰值；此处创建的传教士和使徒+1传教次数；所有从本城创建的宗教单位在宗教战争中+3力）。</Text>

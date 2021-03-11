@@ -20,10 +20,11 @@
 		<!--Worship Beliefs-->
 		<!--  -->
 		<!--Founder Beliefs-->
-		<Update><Where Name="ICON_BELIEF_INITIATION_RITES"/> <Set Index="24"/></Update>
 		<Row Name="ICON_BELIEF_TO_THE_GLORY_OF_GOD"			Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
+		<Update><Where Name="ICON_BELIEF_HOLY_WATERS"/> <Set Index="24"/></Update>
 		<!--  -->
 		<!--Enhancer Beliefs-->
+		<Update><Where Name="ICON_BELIEF_INITIATION_RITES"/> <Set Index="25"/></Update>
 		<Row Name="ICON_BELIEF_SCHOLASTICISM"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_PIOUS_MERCHANTS"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
 		<Row Name="ICON_BELIEF_CANONIZATION_OF_SAINTS"		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
