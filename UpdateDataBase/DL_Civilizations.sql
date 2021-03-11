@@ -592,3 +592,8 @@ values
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',			'ModifierId',											'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'YieldType',											'YIELD_CULTURE'),
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'Amount',												2);
+
+-- Cardiff
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SEAPORT' and Name = 'Amount';
