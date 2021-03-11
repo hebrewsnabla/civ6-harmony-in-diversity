@@ -133,20 +133,29 @@
     <Replace Tag="LOC_LEADER_TRAIT_GRANADA_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>建造者现在能够建造阿卡萨城堡改良设施。[NEWLINE][NEWLINE]阿卡萨城堡提供+3 [ICON_Culture] 文化值。提供等于单元格魅力75%的 [ICON_SCIENCE] 科技值。占领单位 [ICON_Strength] 防御力+4，并自动获得2回合防御工事。研究“飞行”科技后可提供 [ICON_TOURISM] 旅游业绩。无法建在另一座阿卡萨城堡旁。</Text>
     </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_GRANADA_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Your Builders can now make Alcázar improvements.[NEWLINE][NEWLINE]Alcázars provide +3 [ICON_Culture] Culture. Provides [ICON_SCIENCE] Science equal to 75% of the tile's Appeal. Occupying unit receives +4 [ICON_Strength] Defense Strength, and automatically gains 2 turns of fortification. Provides [ICON_TOURISM] Tourism after researching Flight. Cannot be built next to another Alcázar.</Text>
+    </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每个港口内建筑向城市提供3点 [ICON_Power] 电力。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION" Language="zh_Hant_HK">
     <Text>每個港口建築為城市提供+3 [ICON_Power] 電力。</Text>
     </Replace>
-    <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION">
+    <Replace Tag="LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION" Language="en_US">
       <Text>Cities receive +3 [ICON_Power] Power for every Harbor building.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="zh_Hans_CN">
       <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时加速10%生产速度。</Text>
     </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="en_US">
+      <Text>You receive 10% production speed of military units in cities for each Encampment district building.</Text>
+    </Replace>
     <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="zh_Hans_CN">
       <Text>城市中建成的每个军营区域建筑可使城市建造军事单位时增加10%生产速度。</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="en_US">
+      <Text>You receive 10% production speed of military units in cities for each Encampment district building.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>除市中心以外，所有位于河流旁的区域提供2 [ICON_CULTURE] 文化值。</Text>
@@ -158,7 +167,7 @@
       <Text>剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION" Language="en_US">
-      <Text>Increase 50% of theater district adjacent bonus，and each ally level with other player provide extra 50% increase of theater district adjacent bonus.</Text>
+      <Text>Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐设施相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。</Text>

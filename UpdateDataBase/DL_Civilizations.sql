@@ -599,7 +599,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POW
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SEAPORT' and Name = 'Amount';
 
---普雷斯拉夫军营建筑加军事单位锤子
+--普雷斯拉夫军营建筑加速军事单位建造
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_BARRACKS_STABLE_IDENTITY_BONUS';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_ARMORY_IDENTITY_BONUS';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_MILITARY_ACADEMY_IDENTITY_BONUS';
@@ -627,3 +627,19 @@ values
 	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10),
 	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1',						'Amount',	     	10),
 	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10);
+
+-- vilnius
+insert or replace into TraitModifiers
+	(TraitType,						    	ModifierId)values
+	('MINOR_CIV_VILNIUS_TRAIT', 	     'MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0'  );
+insert or replace into Modifiers	
+	(ModifierId,												ModifierType,										Permanent,	SubjectRequirementSetId)
+values
+	('MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					0,					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		0,					'DISTRICT_IS_THEATER');	
+insert or replace into ModifierArguments
+	(ModifierId,												Name,						Value)
+values
+	('MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0',		'ModifierId',		'MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0'),
+	('MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0',						'YieldType',		'YIELD_CULTURE'),	
+	('MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0',						'Amount',			50);
