@@ -59,7 +59,8 @@ values
 -- 塔祠
 	('BUILDING_JNR_CANDI',					'CANDI_CULTURE'),
 	('BUILDING_JNR_CANDI',					'CANDI_FAITH'),
-	('BUILDING_JNR_CANDI',					'CANDI_AMENITY'),
+	-- ('BUILDING_JNR_CANDI',					'CANDI_APPEAL'),
+
 -- 神道教神社
 	('BUILDING_JNR_JINJA',					'JNR_JINJA_COMBAT_STRENGTH'),
 	('BUILDING_JNR_JINJA',					'JNR_JINJA_GRANT_FAITH'),
@@ -72,9 +73,10 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
 values
 -- 塔祠
-	('CANDI_CULTURE',						'MODIFIER_BUILDING_YIELD_CHANGE',					'PLOT_IS_OR_ADJACENT_TO_COAST',	Null),
-	('CANDI_FAITH',							'MODIFIER_BUILDING_YIELD_CHANGE',					'PLOT_IS_OR_ADJACENT_TO_COAST',	Null),
-	('CANDI_AMENITY',						'MODIFIER_SINGLE_CITY_ADJUST_ENTERTAINMENT',		'PLOT_IS_OR_ADJACENT_TO_COAST',	Null),
+	('CANDI_CULTURE',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_IS_ADJACENT_TO_COAST',	Null),
+	('CANDI_FAITH',							'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_IS_ADJACENT_TO_COAST',	Null),
+	-- ('CANDI_APPEAL',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',			'PLOT_IS_ADJACENT_TO_COAST',	Null),
+
 -- 神道教神社
 	('JNR_JINJA_COMBAT_STRENGTH',			'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',		'UNIT_IS_LAND_COMBAT',			5),
 	('JNR_JINJA_GRANT_FAITH',				'MODIFIER_SINGLE_CITY_GRANT_YIELD_PER_UNIT_COST',	Null,							Null),
@@ -88,13 +90,11 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,												Value)
 values
 -- 塔祠
-	('CANDI_CULTURE',						'BuildingType',										'BUILDING_JNR_CANDI'),
 	('CANDI_CULTURE',						'YieldType',										'YIELD_CULTURE'),
-	('CANDI_CULTURE',						'Amount',											3),
-	('CANDI_FAITH',							'BuildingType',										'BUILDING_JNR_CANDI'),
+	('CANDI_CULTURE',						'Amount',											2),
 	('CANDI_FAITH',							'YieldType',										'YIELD_FAITH'),
-	('CANDI_FAITH',							'Amount',											3),
-	('CANDI_AMENITY',						'Amount',											2),
+	('CANDI_FAITH',							'Amount',											2),
+	-- ('CANDI_APPEAL',						'Amount',											2),
 -- 神道教神社
 	('JNR_JINJA_COMBAT_STRENGTH',			'Amount',											2),
 	('JNR_JINJA_GRANT_FAITH',				'YieldType',										'YIELD_FAITH'),

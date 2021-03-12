@@ -145,7 +145,7 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanel.lua</File>
     </ImportFiles>
-    <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
+    <ReplaceUIScript id="DL_UnitPanel" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties>
         <LoadOrder>15000</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>

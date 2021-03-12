@@ -316,11 +316,11 @@
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text> -->
-			<Text>您境内位于或与海岸湖泊单元格相邻的区域+3 [ICON_Science] 科技值。</Text>
+			<Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+3 [ICON_Science] 科技值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="en_US">
 			<!-- <Text>Increases Healing of your all units by +20 in Holy Site districts belonging to cities with your majority religion, or any adjacent tiles.</Text> -->
-			<Text>Your districts on or next to Coast or Lake tiles provide +3 [ICON_Science] Science.</Text>
+			<Text>Your districts and wonders on or next to Coast or Lake tiles provide +3 [ICON_Science] Science.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>您的宗教压力不会因为神学战斗失败而减少。减少100%外来宗教压力影响，审判官+1使用次数，购买审判官打折-30%。</Text>
@@ -360,10 +360,10 @@
 			<Text> Allows construction of Gurdwaras (+2 [ICON_Faith] Faith, +3 [ICON_Food] Food, +1 [ICON_Housing] Housing; +10% Growth rate in this city). </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MEETING_HOUSE_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text> 允许建造礼拜堂（+2 [ICON_Faith] 信仰值，+3 [ICON_Production] 生产力；在生产奇观、区域、建筑时本城+10% [ICON_PRODUCTION] 生产力）。</Text>
+			<Text> 允许建造礼拜堂（+2 [ICON_Faith] 信仰值，+3 [ICON_Production] 生产力；本城+10% [ICON_PRODUCTION] 生产力）。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MEETING_HOUSE_DL_DESCRIPTION" Language="en_US">
-			<Text> Allows construction of Meeting Houses (+2 [ICON_Faith] Faith, +3 [ICON_Production] Production; +10% [ICON_PRODUCTION] Production in this city towards Wonders, Districts and Buildings). </Text>
+			<Text> Allows construction of Meeting Houses (+2 [ICON_Faith] Faith, +3 [ICON_Production] Production; +10% [ICON_PRODUCTION] Production in this city). </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_STUPA_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text> 允许建造窣堵波（+2 [ICON_Faith] 信仰值、+2 [ICON_Amenities] 宜居度；本城每种已开发的奢侈品 +1 [ICON_AMENITIES] 宜居度）。</Text>
