@@ -95,10 +95,10 @@
       <Text>Your [ICON_TradeRoute] Trade Routes generate +2 [ICON_Gold] Gold for every 5 tiles they travel.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>与海岸或湖泊单元格相邻的区域+4 [ICON_Gold] 金币值。</Text>
+      <Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+4 [ICON_Gold] 金币。</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION" Language="en_US">
-      <Text>Your districts on or next to Coast or Lake tiles provide +4 [ICON_Gold] Gold.</Text>
+      <Text>Your districts and wonders on or next to Coast or Lake tiles provide +4 [ICON_Gold] Gold.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION" Language="zh_Hans_CN">
       <Text>商业中心和港口区域均可为城市提供+1 [ICON_Amenities] 宜居度。</Text>
@@ -174,6 +174,12 @@
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION" Language="en_US">
       <Text>Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Bonus Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills.</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+2 [ICON_Culture] 文化值。</Text>
+    </Replace>
+    <Replace Tag="LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

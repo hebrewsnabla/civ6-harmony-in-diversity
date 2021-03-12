@@ -221,7 +221,7 @@ values
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'YieldType',												'YIELD_CULTURE'),
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'Amount',													0.5);
 
--- 民主主义购买区域
+-- 民主购买区域
 insert or replace into Types
 	(Type,											Kind)
 values

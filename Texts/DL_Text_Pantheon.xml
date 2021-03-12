@@ -39,16 +39,16 @@
       <Text>Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (Standard Speed). (Gold of War Belief)</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>拥有纪念碑的城市增加10% [ICON_Culture] 文化值。可以使用 [ICON_Faith] 信仰值购买纪念碑，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买纪念碑的费用降低20%。纪念碑的建造速度+25%。</Text>
+      <Text>拥有纪念碑的城市增加10% [ICON_Culture] 文化值。可以使用 [ICON_Faith] 信仰值购买纪念碑，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买纪念碑的费用降低20%。纪念碑的建造速度+50%。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION" Language="en_US">
-      <Text>+10% [ICON_Culture] Culture if city has a Monument. May purchase Monument with [ICON_Faith] Faith. Monument are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +25% [ICON_production] Production towards Monument.</Text>
+      <Text>+10% [ICON_Culture] Culture if city has a Monument. May purchase Monument with [ICON_Faith] Faith. Monument are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Monument.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>拥有粮仓的城市余粮增加15%。可以使用 [ICON_Faith] 信仰值购买粮仓，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买粮仓的费用降低20%。粮仓的建造速度+25%。</Text>
+      <Text>拥有粮仓的城市余粮增加15%。可以使用 [ICON_Faith] 信仰值购买粮仓，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买粮仓的费用降低20%。粮仓的建造速度+50%。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION" Language="en_US">
-      <Text>City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith. Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +25% [ICON_production] Production towards Granary.</Text>
+      <Text>City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith. Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Granary.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>建造防御建筑时加速50%，建造圣地时加速30%。没有专业化区域的城市建造区域+50% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6，城市 [ICON_Ranged] 远程攻击力+3。</Text>
@@ -148,28 +148,28 @@
       <Text>City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each Desert tile. +2 [ICON_GreatProphet] Great Prophet point per turn if a city has a Desert or Desert Hills tile.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>边界扩张速度提升15%，城市创建时获得额外4个单元格。生产移民时，+15%建造速度。</Text>
+      <Text>边界扩张速度提升15%，城市创建时获得额外4个单元格。生产移民时，+15%建造速度。 购买单元格的价格所需的 [ICON_GOLD] 金币-20%。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION" Language="en_US">
-      <Text>Border expansion rate is 15% faster. Extra 4 tiles upon founding cities. +15% [ICON_PRODUCTION] towads Settler.</Text>
+      <Text>Border expansion rate is 15% faster. Extra 4 tiles upon founding cities. +15% [ICON_PRODUCTION] towads Settler. -20% purchase cost when purchasing tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值 。圣地给相邻的冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Culture] 文化值。</Text>
+      <Text>圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值 。圣地给相邻的冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Culture] 文化值。若圣地相邻冻土则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION" Language="en_US">
-      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Tundra tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Culture] Culture to all adjacent Tundra tiles.</Text>
+      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Tundra tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Culture] Culture to all adjacent Tundra tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Tundra tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>圣地区域从每个相邻的沙漠单元格+1 [ICON_Faith] 信仰值。圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。</Text>
+      <Text>圣地区域从每个相邻的沙漠单元格+1 [ICON_Faith] 信仰值。圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。若圣地相邻沙漠则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION" Language="en_US">
-      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Desert tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Faith] Faith to all adjacent Desert tiles.</Text>
+      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Desert tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Faith] Faith to all adjacent Desert tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Desert tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>圣地区域从每个相邻的雨林的单元格+1 [ICON_Faith] 信仰值。圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。</Text>
+      <Text>圣地区域从每个相邻的雨林的单元格+1 [ICON_Faith] 信仰值。圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION" Language="en_US">
-      <Text>Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Rainforest tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent rainforest tiles.</Text>
+      <Text>Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Rainforest tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent Rainforest tiles.+2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Rainforest tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>圣地区域从每个相邻的种植园单元格+2 [ICON_Faith] 信仰值，给相邻的种植园单元格 +1 [ICON_Faith] 信仰值，给本城的种植园 +1 [ICON_Food] 食物。 如城市中有种植园，则每回合+3 [ICON_GreatProphet] 大预言家点数。</Text>
