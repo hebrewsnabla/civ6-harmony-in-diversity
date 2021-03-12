@@ -707,3 +707,18 @@ insert or replace into RequirementSetRequirements
 values
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS',	'REQUIRES_PLOT_ADJACENT_TO_RIVER'),
 	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS',	'REQUIRES_DISTRICT_IS_NOT_CITY_CENTER');
+
+insert or replace into RequirementSets(RequirementSetId,	RequirementSetType)values
+	('HOLYSITE_ADJACENT_TO_JUNGLE_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements(RequirementSetId,		RequirementId)values
+	('HOLYSITE_ADJACENT_TO_JUNGLE_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_JUNGLE'),
+	('HOLYSITE_ADJACENT_TO_JUNGLE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_HOLY_SITE');
+
+insert or replace into Requirements(RequirementId,	RequirementType)values
+	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE','REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE','FeatureType',	'FEATURE_JUNGLE');
