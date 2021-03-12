@@ -35,7 +35,7 @@
       <Text>建成后提供2个使徒。本城购买使徒的 [ICON_FAITH] 信仰花费-10%。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>Grants 2 Apostles when built. -15% [ICON_FAITH] Faith cost when purchasing Apostle in this city.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
+      <Text>Grants 2 Apostles when built. -10% [ICON_FAITH] Faith cost when purchasing Apostle in this city.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="zh_Hans_CN">
       <Text>建成时+2外交胜利点数。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少25%。[NEWLINE][NEWLINE]必须修建在河边。</Text>

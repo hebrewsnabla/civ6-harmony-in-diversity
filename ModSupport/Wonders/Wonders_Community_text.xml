@@ -152,7 +152,7 @@
 			<Text>乌菲兹美术馆</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_UFFIZI_DESCRIPTION" Language="en_US">
-			<Text>1 free Great Artist appears near the city where the wonder was built. +10% [ICON_CULTURE] Culture, +10% [ICON_GOLD] Gold and +50% [ICON_TOURISM] Tourism from non-relic Great Work. [NEWLINE][NEWLINE] It must be built on flat Grassland or Plains next to a City Centre. Requires Bank Building. </Text>
+			<Text>1 free Great Artist appears near the city where the wonder was built. +10% [ICON_CULTURE] Culture, +10% [ICON_GOLD] Gold and +50% [ICON_TOURISM] Tourism from non-relic Great Work if a city has both Commercial Hub and Theater districts. [NEWLINE][NEWLINE] It must be built on flat Grassland or Plains next to a City Centre. Requires Bank Building. </Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_UFFIZI_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>建成时，获得一位免费的大艺术家。 若城市同时有商业中心和剧院广场，则+10% [ICON_CULTURE]文化，+10% [ICON_GOLD] 金币，且该城来自非遗物巨作的 [ICON_TOURISM] 旅游业绩+50%。[NEWLINE][NEWLINE] 必须建在靠近市中心的平地上，且必须是草原或平原单元格。同时该城必须有银行建筑。</Text>
@@ -270,6 +270,9 @@
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>为10个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="en_US">
+			<Text>+2 [ICON_Faith] Faith and +1 [ICON_Amenities] Amenities to this city and all cities within 10 tiles. Must be built along a River.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
