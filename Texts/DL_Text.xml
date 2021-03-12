@@ -228,6 +228,12 @@
 		<Replace Tag="LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION" Language="en_US">
 			<Text>Just War : +5 [ICON_Strength] Combat Strength</Text>
 		</Replace>
+		<Replace Tag="LOC_ABILITY_MONASTIC_ISOLATION_INQUISITOR_CHARGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与世隔绝：审判官+1传教次数。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MONASTIC_ISOLATION_INQUISITOR_CHARGE_DESCRIPTION" Language="en_US">
+			<Text>Isolation Inquisitor : inquisitors can spread Religion 1 extra time</Text>
+		</Replace>
 		<!-- preview text -->
 		<Replace Tag="LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT" Language="zh_Hans_CN">
 			<Text>来自莫克夏训练</Text>
