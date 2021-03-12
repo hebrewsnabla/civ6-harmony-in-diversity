@@ -368,3 +368,15 @@ update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFI
 --liberty to colonialism
 update Buildings set PrereqCivic = 'CIVIC_COLONIALISM'
 	where BuildingType = 'BUILDING_STATUE_LIBERTY';
+
+--Hagia Sophia
+update Modifiers set SubjectRequirementSetId = 'HAGIA_SOPHIA_REQUIREMENTS' where ModifierId = 'HAGIA_SOPHIA_ADJUST_RELIGIOUS_CHARGES';
+
+insert or replace into RequirementSetRequirements 	(RequirementSetId, RequirementId)	
+values
+	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIRES_UNIT_IS_MISSIONARY'),
+	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIRES_UNIT_IS_APOSTLE');
+
+insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
+values
+	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
