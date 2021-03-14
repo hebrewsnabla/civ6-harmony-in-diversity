@@ -154,16 +154,16 @@
       <Text>Border expansion rate is 15% faster. Extra 4 tiles upon founding cities. +15% [ICON_PRODUCTION] towads Settler. -20% purchase cost when purchasing tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值 。圣地给相邻的冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Culture] 文化值。若圣地相邻冻土则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值 。圣地给相邻的冻土单元格+1 [ICON_Food] 食物和+1 [ICON_Culture] 文化值。若圣地位于冻土或冻土丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION" Language="en_US">
-      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Tundra tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Culture] Culture to all adjacent Tundra tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Tundra tiles.</Text>
+      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Tundra tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Culture] Culture to all adjacent Tundra tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Tundra or Tundra Hills tiles. </Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>圣地区域从每个相邻的沙漠单元格+1 [ICON_Faith] 信仰值。圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。若圣地相邻沙漠则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+      <Text>圣地区域从每个相邻的沙漠单元格+1 [ICON_Faith] 信仰值。圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。若圣地位于沙漠或沙漠丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION" Language="en_US">
-      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Desert tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Faith] Faith to all adjacent Desert tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Desert tiles.</Text>
+      <Text>Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Desert tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Faith] Faith to all adjacent Desert tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Desert or Desert Hills tiles.</Text>
     </Replace>
     <Replace Tag="LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>圣地区域从每个相邻的雨林的单元格+1 [ICON_Faith] 信仰值。圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>

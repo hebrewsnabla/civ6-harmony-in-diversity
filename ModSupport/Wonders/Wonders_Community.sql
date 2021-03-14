@@ -244,5 +244,5 @@ insert or replace into ModifierArguments (ModifierId, Name,	Value) select
 	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY', 'Amount', 1
 where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
 
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' and YieldType = 'YIELD_FOOD';
 ------------------------------------------------------------------------------------------------------------------
