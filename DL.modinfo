@@ -196,9 +196,12 @@
       </Properties>
     </ReplaceUIScript>
     <!-- Farm on fresh hills -->
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
+    </ImportFiles>
+    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="FarmOnFreshHills_Conflict_Expansion2">
+      <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
