@@ -1448,3 +1448,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 丰产仪式，对粮仓加速为50%
 
 【mod宗教建筑】 塔祠 改为本城所有沿湖海单元格+2鸽2琴
+
+[v0.6.5.2]
+驻军忠诚卡和总督忠诚卡改为+5忠诚。

@@ -57,7 +57,19 @@
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="en_US">
       <Text>+30% [ICON_Production] Production toward Builders, and newly trained Builders gain 1 extra build actions.</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_LIMITANEI_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>拥有驻军单位的城市每回合的忠诚度+5。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_LIMITANEI_DESCRIPTION" Language="en_US">
+      <Text>+5 Loyalty per turn for cities with a garrisoned unit.</Text>
+    </Replace>
     <!-- diplomatic cards -->
+    <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_Governor] 总督为其所在城市每回合忠诚度+5。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="en_US">
+      <Text>[ICON_Governor] Governors provide +5 Loyalty per turn to their city.</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION" Language="zh_Hans_CN">
       <Text>影响力点数每回合+3，以获得城邦 [ICON_Envoy] 使者。开放所有城邦的边境。</Text>
     </Replace>

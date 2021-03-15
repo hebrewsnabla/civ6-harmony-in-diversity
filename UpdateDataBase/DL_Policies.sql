@@ -24,6 +24,9 @@ values
 
 -- Policy Cards
 
+update ModifierArguments set Value = 5 where ModifierId = 'LIMITANEI_GARRISONIDENTITY' and Name = 'Amount';
+update ModifierArguments set Value = 5 where ModifierId = 'PRAETORIUM_GOVERNORIDENTITY' and Name = 'Amount';
+
 -- Remove effect: 25% less operation time for spy.
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
