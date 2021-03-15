@@ -329,7 +329,13 @@
 			<Text>Combat Strength from Just War</Text>
 		</Replace>
 		<!-- Adjacency -->
-		<Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="zh_Hans_CN">
+		<Replace Tag="LOC_UNIVERSITY_JUNGLE_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值来自相邻的雨林。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIVERSITY_JUNGLE_SCIENCE" Language="en_US">
+			<Text>+{1_num} [ICON_Science] Science from the adjacent {1_Num : plural 2?Jungle; other?Jungles;}.</Text>
+		</Replace>
+		<!-- <Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="zh_Hans_CN">
 			<Text>相邻水渠区域提供+{1_num} [ICON_PRODUCTION] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="en_US">
@@ -340,13 +346,14 @@
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_BATH_PRODUCTION_LATE" Language="en_US">
 			<Text>+{1_num} [ICON_PRODUCTION] Production from the adjacent Bath {1_Num : plural 2?district; other?districts;}.</Text>
-		</Replace>
+		</Replace> -->
 		<Replace Tag="LOC_DISTRICT_QUARRY_HALF_PRODUCTION" Language="zh_Hans_CN">
-			<Text>相邻采石场提供的 [ICON_Production] 生产力+{1_num}。</Text>
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的采石场。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_QUARRY_HALF_PRODUCTION" Language="en_US">
-			<Text>+{1_num} [ICON_Production] Production from the adjacent Quarry.</Text>
+			<Text>+{1_num} [ICON_Production] Production from the adjacent {1_Num : plural 2?Quarry; other?Quarries;}.</Text>
 		</Replace>
+		<!-- 
 		<Replace Tag="LOC_DISTRICT_GEOTHERMAL_SCIENCE_LATE" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_SCIENCE] 科技值来自每个相邻的地热裂缝。</Text>
 		</Replace>
@@ -358,42 +365,42 @@
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_REEF_SCIENCE_LATE" Language="en_US">
 			<Text>+{1_num} [ICON_SCIENCE] Science from each adjacent Reef.</Text>
-		</Replace>
+		</Replace> -->
 		<Replace Tag="LOC_District_Culture_Double_City_Center" Language="zh_Hans_CN">
-			<Text>每个相邻的市中心提供 +2[ICON_CULTURE] 文化值。</Text>
+			<Text>+{1_num} [ICON_CULTURE] 文化值来自相邻的市中心。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Culture_Double_City_Center" Language="en_US">
-			<Text>+ 1[ICON_CULTURE] Culture from each adjacent City Center.</Text>
+			<Text>+{1_num} [ICON_CULTURE] Culture from adjacent City {1_Num : plural 2?Center; other?Centers;}.</Text>
 		</Replace>
-		<Replace Tag="LOC_District_Science_City_Center" Language="zh_Hans_CN">
+		<!-- <Replace Tag="LOC_District_Science_City_Center" Language="zh_Hans_CN">
 			<Text>每个相邻的市中心提供 +1[ICON_SCIENCE] 科技值。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Science_City_Center" Language="en_US">
 			<Text>+1[ICON_SCIENCE] Science from each adjacent City Center.</Text>
-		</Replace>
-		<Replace Tag="LOC_District_Gold_Hansa" Language="zh_Hans_CN">
-			<Text>每个相邻的商业同业工会提供 +2 [ICON_GOLD] 金币。</Text>
-		</Replace>
-		<Replace Tag="LOC_District_Gold_Hansa" Language="en_US">
-			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
-		</Replace>
+		</Replace> -->
 		<Replace Tag="LOC_District_Gold_City_Center" Language="zh_Hans_CN">
-			<Text>每个相邻的市中心提供 +1 [ICON_GOLD] 金币。</Text>
+			<Text>+{1_num} [ICON_Gold] 金币来自相邻的市中心。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
-			<Text> +1[ICON_GOLD] Gold from each adjacent City Center.</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from adjacent City {1_Num : plural 2?Center; other?Centers;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Gold_Hansa" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Gold] 金币来自每个相邻的商业同业工会。</Text>
+		</Replace>
+		<Replace Tag="LOC_District_Gold_Hansa" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] Gold from each adjacent Hansa {1_Num : plural 2?district; other?districts;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="zh_Hans_CN">
-			<Text>每个相邻的沙漠单元格提供 +1[ICON_SCIENCE] 科技值。</Text>
+			<Text>+{1_num} [ICON_Science] 科技值来自相邻的沙漠单元格。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="en_US">
-			<Text> +1[ICON_SCIENCE] Science from each  Desert Tile.</Text>
+			<Text>+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 2?Tile; other?Tiles;}.</Text>
 		</Replace>
 		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="zh_Hans_CN">
-			<Text>每个相邻的沙漠丘陵单元格提供 +1[ICON_SCIENCE] 科技值。</Text>
+			<Text>+{1_num} [ICON_Science] 科技值来自相邻的沙漠单元格。</Text>
 		</Replace>
 		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="en_US">
-			<Text> +1[ICON_SCIENCE] Science from each adjacent Desert Hill Tile.</Text>
+			<Text>+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 2?Tile; other?Tiles;}.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
