@@ -16,10 +16,10 @@
 			<!-- If Holy Site is adjacent to Lake or Coast tiles, Candi receives +3 [ICON_Faith] Faith, + 3 [ICON_CULTURE] Culture, +2 [Icon_Amenities] Amenity extra bonus. -->
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>与湖泊或者海岸单元格相邻的单元格+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化。</Text>
+			<Text>与湖泊或者海岸单元格相邻的陆地单元格+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION" Language="en_US">
-			<Text>+2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the plots in this city that adjacent to Lake or Coast tiles.</Text>
+			<Text>+2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the land plots in this city that adjacent to Lake or Coast tiles.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_KHALWAT_NAME" Language="zh_Hans_CN">
 			<Text>隐修地</Text>

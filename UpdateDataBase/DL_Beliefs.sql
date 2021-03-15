@@ -943,7 +943,7 @@ values
 	('ITINERANT_PREACHERS_CULTURE_POPULATION_MODIFIER',			'YieldType',			'YIELD_CULTURE'),
 	('ITINERANT_PREACHERS_CULTURE_POPULATION_MODIFIER',			'Amount',				15),
 	('SCRIPTURE_SCIENCE_POPULATION',							'ModifierId',			'SCRIPTURE_SCIENCE_POPULATION_MODIFIER'),
-	('SCRIPTURE_SCIENCE_POPULATION_MODIFIER',					'YieldType',			'YIELD_GSCIENCE'),
+	('SCRIPTURE_SCIENCE_POPULATION_MODIFIER',					'YieldType',			'YIELD_SCIENCE'),
 	('SCRIPTURE_SCIENCE_POPULATION_MODIFIER',					'Amount',				15),
 	('CANONIZATION_OF_SAINTS_FAITH_POPULATION',					'ModifierId',			'CANONIZATION_OF_SAINTS_FAITH_POPULATION_MODIFIER'),
 	('CANONIZATION_OF_SAINTS_FAITH_POPULATION_MODIFIER',		'YieldType',			'YIELD_FAITH'),
@@ -954,8 +954,8 @@ values
 -- Enhancer
 -- update ModifierArguments set Value = 25 where ModifierId = 'HOLY_ORDER_MISSIONARY_DISCOUNT_MODIFIER' and Name = 'Amount';
 -- update ModifierArguments set Value = 25 where ModifierId = 'HOLY_ORDER_APOSTLE_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'JUST_WAR_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 3 where ModifierId = 'DEFENDER_OF_FAITH_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 7 where ModifierId = 'JUST_WAR_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 3 where ModifierId = 'DEFENDER_OF_FAITH_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
 
 -- update Modifiers set ModifierType = 'MODIFIER_ALL_UNITS_ADJUST_HEAL_PER_TURN' where ModifierId = 'HOLY_WATERS_HEALING_MODIFIER';
 -- update ModifierArguments set Value = 20 where ModifierId = 'HOLY_WATERS_HEALING_MODIFIER' and Name = 'Amount';
@@ -1000,6 +1000,7 @@ insert or replace into BeliefModifiers
 values
 	('BELIEF_PAPAL_PRIMACY',								'PAPAL_PRIMACY_LEVY_DISCOUNT'),
 	('BELIEF_PAPAL_PRIMACY',								'RELIGIOUS_UNITY_ENVOY_ON_ADOPTION'),
+	('BELIEF_PAPAL_PRIMACY',								'JUST_WAR_COMBAT_BONUS'),
 	('BELIEF_TO_THE_GLORY_OF_GOD',							'TO_THE_GLORY_OF_GOD_GREAT_PRESON_DISCOUNT'),
 	('BELIEF_TO_THE_GLORY_OF_GOD',							'TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR');
 
@@ -1028,6 +1029,7 @@ values
 	('TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR',				'ModifierId',					'TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR_MODIFIER'),
 	('TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR_MODIFIER',		'Amount',						50);
 
+update ModifierArguments set Value = 3 where ModifierId = 'JUST_WAR_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
 
 -- By 利牙菠萝
 insert or replace into BeliefModifiers
