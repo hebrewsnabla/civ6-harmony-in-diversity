@@ -87,8 +87,10 @@ update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
 -- Housing
 -- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
-update Districts set Housing = Housing + 1 where
-	DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_COTHON' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+update Districts set Housing = Housing + 1
+ where DistrictType = 'DISTRICT_HARBOR'
+	or DistrictType = 'DISTRICT_COTHON'
+	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 
 -- Commercial hub & habor trade route -- Removed
 -- habor gives +25% production towards naval units. (cothon still gives 50% production)
