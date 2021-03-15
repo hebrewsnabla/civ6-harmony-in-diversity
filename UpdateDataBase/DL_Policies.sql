@@ -488,3 +488,6 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RANGED_PRODUCTION'
 	or ModifierId = 'PRESSGANGS_RENAISSANCE_NAVAL_RAIDER_PRODUCTION'
 	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RAIDER_PRODUCTION');
+
+update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
+update ModifierArguments set Value = 3 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
