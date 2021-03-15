@@ -57,7 +57,38 @@
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="en_US">
       <Text>+30% [ICON_Production] Production toward Builders, and newly trained Builders gain 1 extra build actions.</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_LIMITANEI_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>拥有驻军单位的城市每回合的忠诚度+5。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_LIMITANEI_DESCRIPTION" Language="en_US">
+      <Text>+5 Loyalty per turn for cities with a garrisoned unit.</Text>
+    </Replace>
+    <!-- Housing -->
+    <Replace Tag="LOC_POLICY_INSULAE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有拥有至少2个专业化区域的城市+2 [ICON_Housing] 住房。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_INSULAE_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Housing] Housing in all cities with at least 2 specialty districts.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION" Language="en_US">
+      <Text>Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MEDINA_QUARTER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有拥有至少3个专业化区域的城市+4 [ICON_Housing] 住房。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MEDINA_QUARTER_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_Housing] Housing in all cities with at least 3 specialty districts.</Text>
+    </Replace>
     <!-- diplomatic cards -->
+    <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>[ICON_Governor] 总督为其所在城市每回合忠诚度+5。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="en_US">
+      <Text>[ICON_Governor] Governors provide +5 Loyalty per turn to their city.</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION" Language="zh_Hans_CN">
       <Text>影响力点数每回合+3，以获得城邦 [ICON_Envoy] 使者。开放所有城邦的边境。</Text>
     </Replace>

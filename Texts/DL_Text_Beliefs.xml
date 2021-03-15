@@ -87,11 +87,17 @@
 		<Replace Tag="LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION" Language="en_US">
 			<Text>+3 [ICON_Science] Science for each city following this Religion.</Text>
 		</Replace>
+		<Replace Tag="LOC_PROMOTION_JUST_WAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+{1_Value}教皇权威</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JUST_WAR_DESCRIPTION" Language="en_US">
+			<Text>+{1_Value} from Papal Primary</Text>
+		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。</Text>
+			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。战斗单位处于信奉该宗教的外国城市境内时+3 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="en_US">
-			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. </Text>
+			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion. </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION" Language="zh_Hans_CN">
       		<Text>信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。</Text>
@@ -303,16 +309,17 @@
 			<Text>When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded religion to cities within 6 tiles. When you use a religious unit to convert a city for the first time earn 25 [ICON_Faith] Faith per [ICON_Citizen] Population of that city (on Standard Speed).</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>战斗单位处于信奉该宗教的友好城市境内时+3 [ICON_Strength] 战斗力。</Text>
+			<Text>战斗单位处于信奉该宗教的友好城市境内时+5 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION" Language="en_US">
-			<Text>Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion.</Text>
+			<Text>Combat units gain +5 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信仰此宗教的宗教单位为同一单元格军事单位+5 [ICON_Strength] 战斗力。</Text>
+			<Text>强化后获得的该宗教的宗教单位为同一单元格军事单位+5 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="en_US">
-			<Text>Combat units gain +5 [ICON_Strength] Combat Strength when plot has a religious unit belonging to this religion.</Text>
+			<Text>The religious units belong to this religion that obtained after this belief being added, can provide +5 [ICON_Strength] Combat Strength to the Combat Units in the same plot.</Text>
+			<!-- Combat units gain +5 [ICON_Strength] Combat Strength when plot has a religious unit belonging to this religion. -->
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text> -->

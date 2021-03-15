@@ -23,6 +23,12 @@ values
 	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT',	'Amount',	2);
 
 -- Policy Cards
+update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'CIVILPRESTIGE_GOVHOUSING' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING' and Name = 'Amount';
+
+update ModifierArguments set Value = 5 where ModifierId = 'LIMITANEI_GARRISONIDENTITY' and Name = 'Amount';
+update ModifierArguments set Value = 5 where ModifierId = 'PRAETORIUM_GOVERNORIDENTITY' and Name = 'Amount';
 
 -- Remove effect: 25% less operation time for spy.
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';

@@ -197,5 +197,5 @@ insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, PrereqTech, AdjacentResource) values
 	('Resource_Production_Late', 'LOC_DISTRICT_RESOURCE_PRODUCTION', 'YIELD_PRODUCTION', 2, 1, 'TECH_APPRENTICESHIP', 1);
 
-delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
+-- delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
  

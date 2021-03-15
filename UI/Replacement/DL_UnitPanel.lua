@@ -15,7 +15,10 @@ for _, file in ipairs(files) do
     end
 end
 
+include("Common");
 include("FarmsOnFreshHills_Common");
+
+Utils = ExposedMembers.DLHD.Utils;
 
 -- =================================================================================
 -- Cache base functions
@@ -61,10 +64,11 @@ function BuildActionModHook(instance:table, action:table)
     BASE_BuildActionModHook(instance, action);
 end
 
--- -- Temp for great person
--- local BASE_AddActionButton = AddActionButton
--- local BASE_OnUnitActionClicked = OnUnitActionClicked
--- local mGreatPersonActivateHash = GameInfo.Types['UNITCOMMAND_ACTIVATE_GREAT_PERSON'].Hash;
+-- local BASE_OnUnitActionClicked = OnUnitActionClicked;
+-- -- local BASE_AddActionButton = AddActionButton;
+-- -- local mGreatPersonActivateHash = GameInfo.Types['UNITCOMMAND_ACTIVATE_GREAT_PERSON'].Hash;
+-- local mUnitoperationRemoveFeatureHash = GameInfo.Types['UNITOPERATION_REMOVE_FEATURE'].Hash;
+-- local mMilitaryEngineer = GameInfo.Units['UNIT_MILITARY_ENGINEER'].Index;
 -- -- =================================================================================
 -- -- Overrides
 -- -- =================================================================================
@@ -74,9 +78,23 @@ end
 --         local pSelectedUnit :table = UI.GetHeadSelectedUnit();
 --         if (pSelectedUnit ~= nil) then
 --             if (actionType == UnitCommandTypes.TYPE) then
---                 if actionHash == mGreatPersonActivateHash then
---                     -- pSelectedUnit
---                     UnitManager.RequestCommand( pSelectedUnit, actionHash );
+--                 -- if actionHash == mGreatPersonActivateHash then
+--                 --     -- pSelectedUnit
+--                 --     UnitManager.RequestCommand( pSelectedUnit, actionHash );
+--                 -- end
+--             else
+--                 if (actionType == UnitOperationTypes.TYPE) then
+--                     if actionHash == mUnitoperationRemoveFeatureHash then
+--                         -- print(pSelectedUnit:GetUnitType());
+--                         if (pSelectedUnit:GetUnitType() == mMilitaryEngineer) then
+--                             print('removing')
+--                             -- TODO: set the moves to zero.
+--                             -- TODO: Remove the Features. (maybe need to refresh)
+--                             -- pSelectedUnit
+--                             -- Utils.SetMovesToZero()
+--                             -- return
+--                         end
+--                     end
 --                 end
 --             end
 --         end
