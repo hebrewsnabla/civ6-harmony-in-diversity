@@ -28,6 +28,12 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Language="en_US">
             <Text>City Policies</Text>
         </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Language="zh_Hans_CN">
+            <Text>总督</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Language="en_US">
+            <Text>Governors</Text>
+        </Replace>
         <!-- Introduction content (charpters) -->
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN">
             <Text>待定 概述内容</Text>
@@ -41,6 +47,115 @@
         </Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_PARA_1" Language="en_US">
             <Text>TBD City/Citizen Maintenance Cost content</Text>
+        </Replace>
+        <!-- Governors introduction (charpters) -->
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_1_TITLE" Language="zh_Hans_CN">
+            <Text>总督改动总述</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_1_TITLE" Language="en_US">
+            <Text>Governors Changes' Introduction</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_1_PARA_1" Language="zh_Hans_CN">
+            <Text>总督改动总述 内容</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_1_PARA_1" Language="en_US">
+            <Text>Governors Changes' Introduction content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_2_TITLE" Language="zh_Hans_CN">
+            <Text>马格努斯</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_2_TITLE" Language="en_US">
+            <Text>Magnus</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_2_PARA_1" Language="zh_Hans_CN">
+            <Text>马格努斯改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_2_PARA_1" Language="en_US">
+            <Text>TBD Magnus Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_3_TITLE" Language="zh_Hans_CN">
+            <Text>梁</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_3_TITLE" Language="en_US">
+            <Text>Liang</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_3_PARA_1" Language="zh_Hans_CN">
+            <Text>梁改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_3_PARA_1" Language="en_US">
+            <Text>TBD Liang Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_4_TITLE" Language="zh_Hans_CN">
+            <Text>阿玛尼</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_4_TITLE" Language="en_US">
+            <Text>Amani</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_4_PARA_1" Language="zh_Hans_CN">
+            <Text>阿玛尼改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_4_PARA_1" Language="en_US">
+            <Text>TBD Amani Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_5_TITLE" Language="zh_Hans_CN">
+            <Text>平伽拉</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_5_TITLE" Language="en_US">
+            <Text>Pingala</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_5_PARA_1" Language="zh_Hans_CN">
+            <Text>平伽拉改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_5_PARA_1" Language="en_US">
+            <Text>TBD Pingala Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_6_TITLE" Language="zh_Hans_CN">
+            <Text>莫克夏</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_6_TITLE" Language="en_US">
+            <Text>Moksha</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_6_PARA_1" Language="zh_Hans_CN">
+            <Text>莫克夏改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_6_PARA_1" Language="en_US">
+            <Text>TBD Moksha Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_7_TITLE" Language="zh_Hans_CN">
+            <Text>瑞娜</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_7_TITLE" Language="en_US">
+            <Text>Reyna</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_7_PARA_1" Language="zh_Hans_CN">
+            <Text>瑞娜改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_7_PARA_1" Language="en_US">
+            <Text>TBD Reyna Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_8_TITLE" Language="zh_Hans_CN">
+            <Text>维克多</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_8_TITLE" Language="en_US">
+            <Text>Victor</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_8_PARA_1" Language="zh_Hans_CN">
+            <Text>维克多改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_8_PARA_1" Language="en_US">
+            <Text>TBD Victor Changes' content</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_9_TITLE" Language="zh_Hans_CN">
+            <Text>易卜拉欣</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_9_TITLE" Language="en_US">
+            <Text>Ibrahim</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_9_PARA_1" Language="zh_Hans_CN">
+            <Text>易卜拉欣改动</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_GOVERNORS_SECTION_9_PARA_1" Language="en_US">
+            <Text>TBD Ibrahim Changes' content</Text>
         </Replace>
         <!-- City policy content (charpters) -->
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CITY_POLICY_SECTION_1_TITLE" Language="zh_Hans_CN">

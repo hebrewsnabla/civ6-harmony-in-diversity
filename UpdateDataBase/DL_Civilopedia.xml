@@ -3,11 +3,21 @@
     <!-- Add general mod introduction under Concepts section. -->
     <CivilopediaPageLayouts>
         <Row PageLayoutId="CityPolicy" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Governors" ScriptTemplate="Simple" />
     </CivilopediaPageLayouts>
     <CivilopediaPageLayoutChapters>
-        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_1" SortIndex="20"/>
-        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_2" SortIndex="30"/>
-        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_3" SortIndex="40"/>
+        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_1" SortIndex="1"/>
+        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_2" SortIndex="2"/>
+        <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_3" SortIndex="3"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_1" SortIndex="1"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_2" SortIndex="2"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_3" SortIndex="3"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_4" SortIndex="4"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_5" SortIndex="5"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_6" SortIndex="6"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_7" SortIndex="7"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_8" SortIndex="8"/>
+        <Row PageLayoutId="Governors" ChapterId="GOVERNORS_SECTION_9" SortIndex="9"/>
     </CivilopediaPageLayoutChapters>
     <CivilopediaPageGroups>
         <Row SectionID="CONCEPTS" PageGroupId="DL" Name="LOC_PEDIA_CONCEPTS_PAGEGROUP_DL_NAME" Tooltip="" VisibleIfEmpty="true" SortIndex="4"/>
@@ -16,6 +26,8 @@
         <Row SectionId="CONCEPTS" PageId="DL_INTRODUCTION" PageGroupId="DL" PageLayoutId="Simple"  Name="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="1"/>
         <Row SectionId="CONCEPTS" PageId="CITY_CITIZEN_COST" PageGroupId="DL" PageLayoutId="Simple"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="2"/>
         <Row SectionId="CONCEPTS" PageId="CITY_POLICY" PageGroupId="DL" PageLayoutId="CityPolicy"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="3"/>
+        <Row SectionId="CONCEPTS" PageId="GOVERNORS" PageGroupId="DL" PageLayoutId="Governors"  Name="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="4"/>
+
     </CivilopediaPages>
     <!-- TODO: Add search terms. e.g. search CITY_POLICY_SECTION_1 title will show CITY_POLICY under search result, clicking it direct to CITY_POLICY page -->
     <!-- <CivilopediaPageSearchTerms>
