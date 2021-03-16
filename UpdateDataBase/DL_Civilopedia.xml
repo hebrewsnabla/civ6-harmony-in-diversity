@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
     <!-- Add general mod introduction under Concepts section. -->
+    <!-- Add Pages=PageLayoutId -->
     <CivilopediaPageLayouts>
         <Row PageLayoutId="CityPolicy" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Civilizations" ScriptTemplate="Simple" />
+        <Row PageLayoutId="City_States" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Districts" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Buildings" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Wonders" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Units" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Unit_Promotions" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Great_People" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Technologies" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Civics" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Governments" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Policies" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Religions" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Terrains_and_Features" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Resources" ScriptTemplate="Simple" />
+        <Row PageLayoutId="Improvements" ScriptTemplate="Simple" />
         <Row PageLayoutId="Governors" ScriptTemplate="Simple" />
     </CivilopediaPageLayouts>
+    <!-- Add Section Title=ChapterId -->
     <CivilopediaPageLayoutChapters>
         <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_1" SortIndex="1"/>
         <Row PageLayoutId="CityPolicy" ChapterId="CITY_POLICY_SECTION_2" SortIndex="2"/>
@@ -26,7 +44,23 @@
         <Row SectionId="CONCEPTS" PageId="DL_INTRODUCTION" PageGroupId="DL" PageLayoutId="Simple"  Name="LOC_PEDIA_CONCEPTS_PAGE_DL_INTRODUCTION_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="1"/>
         <Row SectionId="CONCEPTS" PageId="CITY_CITIZEN_COST" PageGroupId="DL" PageLayoutId="Simple"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="2"/>
         <Row SectionId="CONCEPTS" PageId="CITY_POLICY" PageGroupId="DL" PageLayoutId="CityPolicy"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="3"/>
-        <Row SectionId="CONCEPTS" PageId="GOVERNORS" PageGroupId="DL" PageLayoutId="Governors"  Name="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="4"/>
+        <Row SectionId="CONCEPTS" PageId="DISTRICTS" PageGroupId="DL" PageLayoutId="Districts"  Name="LOC_PEDIA_CONCEPTS_PAGE_DISTRICTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="4"/>
+        <Row SectionId="CONCEPTS" PageId="BUILDINGS" PageGroupId="DL" PageLayoutId="Buildings"  Name="LOC_PEDIA_CONCEPTS_PAGE_BUILDINGS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="5"/>
+        <Row SectionId="CONCEPTS" PageId="CIVILIZATIONS" PageGroupId="DL" PageLayoutId="Civilizations"  Name="LOC_PEDIA_CONCEPTS_PAGE_CIVILIZATIONS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="6"/>
+        <Row SectionId="CONCEPTS" PageId="CITY_STATES" PageGroupId="DL" PageLayoutId="City_States"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_STATES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="7"/>
+        <Row SectionId="CONCEPTS" PageId="WONDERS" PageGroupId="DL" PageLayoutId="Wonders"  Name="LOC_PEDIA_CONCEPTS_PAGE_WONDERS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="8"/>
+        <Row SectionId="CONCEPTS" PageId="UNITS" PageGroupId="DL" PageLayoutId="Units"  Name="LOC_PEDIA_CONCEPTS_PAGE_UNITS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="9"/>
+        <Row SectionId="CONCEPTS" PageId="UNIT_PROMOTIONS" PageGroupId="DL" PageLayoutId="Unit_Promotions"  Name="LOC_PEDIA_CONCEPTS_PAGE_UNIT_PROMOTIONS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="10"/>
+        <Row SectionId="CONCEPTS" PageId="GREAT_PEOPLE" PageGroupId="DL" PageLayoutId="Great_People"  Name="LOC_PEDIA_CONCEPTS_PAGE_GREAT_PEOPLE_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="11"/>
+        <Row SectionId="CONCEPTS" PageId="TECHNOLOGIES" PageGroupId="DL" PageLayoutId="Technologies"  Name="LOC_PEDIA_CONCEPTS_PAGE_TECHNOLOGIES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="12"/>
+        <Row SectionId="CONCEPTS" PageId="CIVICS" PageGroupId="DL" PageLayoutId="Civics"  Name="LOC_PEDIA_CONCEPTS_PAGE_CIVICS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="13"/>
+        <Row SectionId="CONCEPTS" PageId="GOVERNMENTS" PageGroupId="DL" PageLayoutId="Governments"  Name="LOC_PEDIA_CONCEPTS_PAGE_GOVERNMENTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="14"/>
+        <Row SectionId="CONCEPTS" PageId="POLICIES" PageGroupId="DL" PageLayoutId="Policies"  Name="LOC_PEDIA_CONCEPTS_PAGE_POLICIES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="15"/>
+        <Row SectionId="CONCEPTS" PageId="RELIGIONS" PageGroupId="DL" PageLayoutId="Religions"  Name="LOC_PEDIA_CONCEPTS_PAGE_RELIGIONS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="16"/>
+        <Row SectionId="CONCEPTS" PageId="TERRAINS_AND_FEATURES" PageGroupId="DL" PageLayoutId="Terrains_and_Features"  Name="LOC_PEDIA_CONCEPTS_PAGE_TERRAINS_AND_FEATURES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="17"/>
+        <Row SectionId="CONCEPTS" PageId="RESOURCES" PageGroupId="DL" PageLayoutId="Resources"  Name="LOC_PEDIA_CONCEPTS_PAGE_RESOURCES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="18"/>
+        <Row SectionId="CONCEPTS" PageId="IMPROVEMENTS" PageGroupId="DL" PageLayoutId="Improvements"  Name="LOC_PEDIA_CONCEPTS_PAGE_IMPROVEMENTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="19"/>
+        <Row SectionId="CONCEPTS" PageId="GOVERNORS" PageGroupId="DL" PageLayoutId="Governors"  Name="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="20"/>
 
     </CivilopediaPages>
     <!-- TODO: Add search terms. e.g. search CITY_POLICY_SECTION_1 title will show CITY_POLICY under search result, clicking it direct to CITY_POLICY page -->
