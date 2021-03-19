@@ -239,7 +239,7 @@
 			<Text>Any City with Medieval or Renaissance Walls yields +4 [ICON_Culture] Culture, +6 [ICON_Gold] Gold, +2 [ICON_Amenities] Amenities. All kinds of wall yield double tourism after civic Conservation is unlocked. It must be built on a Hill adjacent to a Mountain.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NEUSCHWANSTEIN_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>任何有中世纪和文艺复兴城墙的城市+4 [ICON_Culture] 文化, +6 [ICON_Gold] 金币, +2 [ICON_Amenities] 宜居度。所有城墙在保护地球后获得的 [ICON_TOURISM] 旅游业绩翻倍。必须建在靠山的丘陵上。</Text>
+			<Text>任何有中世纪城墙的城市+4 [ICON_Culture] 文化, +6 [ICON_Gold] 金币, +2 [ICON_Amenities] 宜居度。所有城墙在保护地球后获得的 [ICON_TOURISM] 旅游业绩翻倍。必须建在靠山的丘陵上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NEUSCHWANSTEIN_QUOTE" Language="zh_Hans_CN">
 			<Text>“这个地方是最美丽的地方之一，神圣而不可接近，是一个值得纪念的圣殿，献给给世界带来拯救和真正祝福的神圣朋友。”——巴伐利亚国王路德维希二世（King Ludwig II of Bavaria）</Text>
