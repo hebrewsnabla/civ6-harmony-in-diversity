@@ -2,7 +2,7 @@
 -- Import base file
 -- =================================================================================
 local files = {
-    "CityPanel_Expansion2.lua",
+    -- "CityPanel_Expansion2.lua", -- Suk simple UI doesn't support CityPanel_Expansion2
     "CityPanel_Expansion1.lua",
     "CityPanel.lua",
 }
