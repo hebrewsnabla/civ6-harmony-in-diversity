@@ -151,7 +151,7 @@
         <Replace Tag="LOC_GREATPERSON_GPP_BOOST" Language="en_US">
             <Text>+25% Great Person Points accumulate speed in your country.</Text>
         </Replace>
-        <Replace Tag="LOC_GREATPERSON_GPP_BOOST" Language="zh_Hans_CN">
+        <Replace Tag="LOC_GREATPERSON_OMAR_KHAYYAM_ACTIVE" Language="zh_Hans_CN">
             <Text>为两个中世纪或文艺复兴的随机科技启动 [ICON_TechBoosted] 尤里卡时刻，为中世纪和文艺复兴时期的一个随机市政启动 [ICON_CivicBoosted] 鼓舞时刻。</Text>
         </Replace>
     </LocalizedText>
