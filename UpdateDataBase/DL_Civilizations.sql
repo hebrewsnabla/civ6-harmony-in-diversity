@@ -379,7 +379,8 @@ values
 insert or replace into TraitModifiers
 	(TraitType,						ModifierId)
 values
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
+	-- ('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
+	('TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
 
 insert or replace into Modifiers
 	(ModifierId,			ModifierType)
