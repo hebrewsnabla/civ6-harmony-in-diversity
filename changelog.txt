@@ -1464,7 +1464,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1736440697
 修复塑料和电脑大科未正确触发尤里卡的bug。
 修复显示相邻加成的文本。
 
-[v0.6.6.0]
+[Version v0.6.6]
+修复若干文本问题。
+
 (by 小雨)
 印加文明修改
 

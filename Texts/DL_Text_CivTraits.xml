@@ -170,13 +170,13 @@
       <Text>解锁建造者建造印加特色设施印加梯田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物；每2块印加梯田+1 [ICON_Housing] 住房。每个相邻的山脉单元格+1 [ICON_FOOD] 食物，解锁工程科技时，每个相邻的山脉单元格额外+1 [ICON_FOOD] 食物。每个相邻的水渠区域+2 [ICON_PRODUCTION] 生产力。与淡水资源（非水渠区域）相邻时，+1 [ICON_PRODUCTION] 生产力（无法相互叠加）。随着市政与科技的发展，与其他印加梯田相邻时还可额外获得 [ICON_FOOD] 食物加成。可建在草原丘陵、平原丘陵与沙漠丘陵上。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物，解锁建造科技时，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。</Text>
+      <Text>所有单位无视丘陵地形移动力消耗。公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物，解锁建造科技后，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。</Text>
       </Replace>
     <Replace Tag="LOC_IMPROVEMENT_TERRACE_FARM_DESCRIPTION" Language="en_US">
       <Text>Unlocks the Builder ability to construct a Terrace Farm, unique to the Inca.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. Provides +1 [ICON_Housing] Housing for every two Terrace Farms. +1 [ICON_FOOD] Food for each adjacent Mountain Tile ,+1 [ICON_FOOD] Food after researching Engineeing. Gain +2 [ICON_PRODUCTION] Production for each adjacent Aqueduct district. Receive +1 [ICON_PRODUCTION] Production if adjacent to Fresh Water and not an Aqueduct district. Additional [ICON_FOOD] Food as you advance through the Civics and Technology Tree for adjacency with other Terrace Farms. Can be placed on Grassland Hills, Plains Hills, and Desert Hills.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="en_US">
-      <Text>Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm, +1 [ICON_PRODUCTION] Production after researching Construntion.</Text>
+      <Text>All units move faster on Hills. Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion.</Text>
     </Replace>
   </LocalizedText>
 </GameData>
