@@ -165,5 +165,24 @@
     <Replace Tag="LOC_BUILDING_TSIKHE_DESCRIPTION_XP2" Language="en_US">
       <Text>A building unique to Georgia. Lower [ICON_Production] Production cost and higher outer defenses than Renaissance Walls. Provides +5 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. Provides +4 [ICON_Faith] Faith. When in a Golden Age the [ICON_TOURISM] Tourism and [ICON_FAITH] Faith are +300%.</Text>
     </Replace>
+    <!-- inca -->
+    <Replace Tag="LOC_IMPROVEMENT_TERRACE_FARM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造印加特色设施印加梯田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物；每2块印加梯田+1 [ICON_Housing] 住房。每个相邻的山脉单元格+1 [ICON_FOOD] 食物，解锁工程科技后，每个相邻的山脉单元格额外+1 [ICON_FOOD] 食物。每个相邻的水渠区域+2 [ICON_PRODUCTION] 生产力。与淡水资源（非水渠区域）相邻时，+1 [ICON_PRODUCTION] 生产力（无法相互叠加）。随着市政与科技的发展，与其他印加梯田相邻时还可额外获得 [ICON_FOOD] 食物加成。可建在草原丘陵、平原丘陵与沙漠丘陵上。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物。解锁建造科技后，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。</Text>
+      </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有陆地单位无视丘陵对 [ICON_MOVEMENT] 移动力的减益。起始城市中的每座山脉单元格为国内 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。解锁“对外贸易”市政后可获得印加路网改良设施。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_TERRACE_FARM_DESCRIPTION" Language="en_US">
+      <Text>Unlocks the Builder ability to construct a Terrace Farm, unique to the Inca.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. Provides +1 [ICON_Housing] Housing for every two Terrace Farms. +1 [ICON_FOOD] Food for each adjacent Mountain Tile ,+1 [ICON_FOOD] Food after researching Engineeing. Gain +2 [ICON_PRODUCTION] Production for each adjacent Aqueduct district. Receive +1 [ICON_PRODUCTION] Production if adjacent to Fresh Water and not an Aqueduct district. Additional [ICON_FOOD] Food as you advance through the Civics and Technology Tree for adjacency with other Terrace Farms. Can be placed on Grassland Hills, Plains Hills, and Desert Hills.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="en_US">
+      <Text>Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION" Language="en_US">
+      <Text>All land units ignore [ICON_MOVEMENT] movement penalty from Hills. Domestic [ICON_TradeRoute] Trade Routes gain +1 [ICON_Food] Food for every Mountain tile in the origin city. Gain the Qhapaq Ñan improvement when Foreign Trade civic is discovered.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

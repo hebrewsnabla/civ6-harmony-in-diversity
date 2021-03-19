@@ -148,14 +148,20 @@
     <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="zh_Hans_CN">
       <Text>城市中建成的每个军营区域建筑可使城市生产军事单位时加速10%。</Text>
     </Replace>
-    <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="en_US">
+    <!-- <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="en_US">
       <Text>+ 10% [ICON_PRODUCTION] Production towards Millitary units for each Encampment district building.</Text>
+    </Replace> -->
+    <Replace Tag="LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION" Language="en_US">
+      <Text>You receive 10% production speed of military units in cities for each Encampment district building.</Text>
     </Replace>
     <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="zh_Hans_CN">
       <Text>城市中建成的每个军营区域建筑可使城市生产军事单位时加速10%。</Text>
     </Replace>
-    <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="en_US">
+    <!-- <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="en_US">
       <Text>+ 10% [ICON_PRODUCTION] Production towards Millitary units for each Encampment district building.</Text>
+    </Replace> -->
+    <Replace Tag="LOC_CIVILIZATION_PRESLAV_BONUS_XP1" Language="en_US">
+      <Text>You receive 10% production speed of military units in cities for each Encampment district building.</Text>
     </Replace>
     <Replace Tag="LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>除市中心以外，所有位于河流旁的区域提供2 [ICON_CULTURE] 文化值。</Text>
@@ -178,7 +184,7 @@
     <Replace Tag="LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+2 [ICON_Culture] 文化值。</Text>
     </Replace>
-    <Replace Tag="LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION" Language="en_US">
       <Text>Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture.</Text>
     </Replace>
   </LocalizedText>

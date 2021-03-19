@@ -5,6 +5,7 @@
 insert or replace into Types
 	(Type,														Kind)
 values
+	('ABILITY_INCA_IGNORE_HILLS',								'KIND_ABILITY'),
 	('ABILITY_AMANI_FERR_PROMOTION',							'KIND_ABILITY'),
 	('ABILITY_MILLITARY_ENGINEER_IGNORE_TERRAIN',				'KIND_ABILITY'),
 	('ABILITY_MILLITARY_ENGINEER_IGNORE_RIVER',					'KIND_ABILITY'),
@@ -83,7 +84,18 @@ values
 	('ABILITY_SCHOLASTICISM_BUFF',										'CLASS_RELIGIOUS_ALL'),
 	('ABILITY_IKANDA_ANTI_CAVALRY_MOVEMENT_BONUS',				        'CLASS_ANTI_CAVALRY');
 
+insert or replace into TypeTags	
+	(Type,							Tag)
+values
+ 	('ABILITY_INCA_IGNORE_HILLS',	'CLASS_LANDCIVILIAN'),
+ 	('ABILITY_INCA_IGNORE_HILLS',	'CLASS_LAND_COMBAT');
+
+
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_INCA_IGNORE_HILLS',
+	'LOC_ABILITY_INCA_IGNORE_HILLS_NAME',
+ 	'LOC_ABILITY_INCA_IGNORE_HILLS_DESCRIPTION',
+ 	1),
 	('ABILITY_AMANI_FERR_PROMOTION',
 	'LOC_ABILITY_AMANI_FERR_PROMOTION_NAME',
  	'LOC_ABILITY_AMANI_FERR_PROMOTION_DESCRIPTION',
@@ -192,6 +204,7 @@ insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inacti
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
 values
+	('ABILITY_INCA_IGNORE_HILLS',							'INCA_IGNORE_HILLS'),
 	('ABILITY_AMANI_FERR_PROMOTION',						'HETAIROI_FREE_PROMOTION'),
 	('ABILITY_BYPASS_WALLS_PROMOTION_CLASS',				'BYPASS_WALLS_WARRIOR_MONK'),
 	('ABILITY_ENABLE_WALL_ATTACK_PROMOTION_CLASS',			'ENABLE_WALL_ATTACK_WARRIOR_MONK'),
@@ -230,6 +243,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,							Permanent)
 values
+	('INCA_IGNORE_HILLS',							'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST',1),
 	('BYPASS_WALLS_WARRIOR_MONK',					'MODIFIER_PLAYER_UNIT_ADJUST_BYPASS_WALLS_PROMOTION_CLASS',1),
 	('ENABLE_WALL_ATTACK_WARRIOR_MONK',				'MODIFIER_PLAYER_UNIT_ADJUST_ENABLE_WALL_ATTACK_PROMOTION_CLASS',1),
 	('LIANG_EXTRA_MOVEMENT',						'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',		1),
@@ -253,6 +267,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
+	('INCA_IGNORE_HILLS',							'Ignore',	1),
+	('INCA_IGNORE_HILLS',							'Type',		'HILLS'),
 	('BYPASS_WALLS_WARRIOR_MONK',					'PromotionClass','PROMOTION_CLASS_MONK'),
 	('ENABLE_WALL_ATTACK_WARRIOR_MONK',				'PromotionClass','PROMOTION_CLASS_MONK'),
 	('LIANG_EXTRA_MOVEMENT',						'Amount',	1),
@@ -277,6 +293,7 @@ values
 insert or replace into ModifierStrings
 	(ModifierId,										Context,	Text)
 values
+	('INCA_IGNORE_HILLS',								'Preview',	'{LOC_ABILITY_INCA_IGNORE_HILLS_DESCRIPTION} {LOC_ABILITY_DESCRIPTOR_PREVIEW_TEXT}'),
 	('BISHOP_TRAINED_UNIT_STRENGTH',					'Preview',	'+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT}'),
 	('BISHOP_TRAINED_UNIT_EXP',							'Preview',	'+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),
 	('VICTOR_TRAINED_UNIT_EXP',							'Preview',	'+{1_Amount} {LOC_VICTOR_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),
