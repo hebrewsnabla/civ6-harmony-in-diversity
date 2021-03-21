@@ -45,7 +45,7 @@
         <Row SectionId="CONCEPTS" PageId="CITY_CITIZEN_COST" PageGroupId="DL" PageLayoutId="Simple"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_CITIZEN_COST_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="2"/>
         <Row SectionId="CONCEPTS" PageId="CITY_POLICY" PageGroupId="DL" PageLayoutId="CityPolicy"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_POLICY_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="3"/>
         <Row SectionId="CONCEPTS" PageId="DISTRICTS" PageGroupId="DL" PageLayoutId="Districts"  Name="LOC_PEDIA_CONCEPTS_PAGE_DISTRICTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="4"/>
-        <Row SectionId="CONCEPTS" PageId="BUILDINGS" PageGroupId="DL" PageLayoutId="Buildings"  Name="LOC_PEDIA_CONCEPTS_PAGE_BUILDINGS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="5"/>
+<!--         <Row SectionId="CONCEPTS" PageId="BUILDINGS" PageGroupId="DL" PageLayoutId="Buildings"  Name="LOC_PEDIA_CONCEPTS_PAGE_BUILDINGS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="5"/>
         <Row SectionId="CONCEPTS" PageId="CIVILIZATIONS" PageGroupId="DL" PageLayoutId="Civilizations"  Name="LOC_PEDIA_CONCEPTS_PAGE_CIVILIZATIONS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="6"/>
         <Row SectionId="CONCEPTS" PageId="CITY_STATES" PageGroupId="DL" PageLayoutId="City_States"  Name="LOC_PEDIA_CONCEPTS_PAGE_CITY_STATES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="7"/>
         <Row SectionId="CONCEPTS" PageId="WONDERS" PageGroupId="DL" PageLayoutId="Wonders"  Name="LOC_PEDIA_CONCEPTS_PAGE_WONDERS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="8"/>
@@ -59,7 +59,7 @@
         <Row SectionId="CONCEPTS" PageId="RELIGIONS" PageGroupId="DL" PageLayoutId="Religions"  Name="LOC_PEDIA_CONCEPTS_PAGE_RELIGIONS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="16"/>
         <Row SectionId="CONCEPTS" PageId="TERRAINS_AND_FEATURES" PageGroupId="DL" PageLayoutId="Terrains_and_Features"  Name="LOC_PEDIA_CONCEPTS_PAGE_TERRAINS_AND_FEATURES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="17"/>
         <Row SectionId="CONCEPTS" PageId="RESOURCES" PageGroupId="DL" PageLayoutId="Resources"  Name="LOC_PEDIA_CONCEPTS_PAGE_RESOURCES_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="18"/>
-        <Row SectionId="CONCEPTS" PageId="IMPROVEMENTS" PageGroupId="DL" PageLayoutId="Improvements"  Name="LOC_PEDIA_CONCEPTS_PAGE_IMPROVEMENTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="19"/>
+        <Row SectionId="CONCEPTS" PageId="IMPROVEMENTS" PageGroupId="DL" PageLayoutId="Improvements"  Name="LOC_PEDIA_CONCEPTS_PAGE_IMPROVEMENTS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="19"/> -->
         <Row SectionId="CONCEPTS" PageId="GOVERNORS" PageGroupId="DL" PageLayoutId="Governors"  Name="LOC_PEDIA_CONCEPTS_PAGE_GOVERNORS_CHAPTER_CONTENT_TITLE" Tooltip="" SortIndex="20"/>
 
     </CivilopediaPages>

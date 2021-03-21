@@ -229,6 +229,7 @@
         </Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_DISTRICTS_CHAPTER_DISTRICTS_SECTION_1_PARA_1" Language="en_US">
             <Text>DISTRICTS Changes' Introduction content</Text>
+        </Replace>S
         <!-- ***Governments tab*** -->
         <!-- Top-level category (page group) -->
         <Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGEGROUP_CITY_POLICIES_NAME" Language="zh_Hans_CN">
