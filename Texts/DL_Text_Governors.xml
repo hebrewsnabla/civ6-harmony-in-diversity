@@ -110,10 +110,12 @@
         </Replace>
         <!-- 主教 -->
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>此城对相邻城市释放的宗教压力强度加倍。本城训练的宗教单位+1使用次数。就职需要3回合。</Text>
+            <Text>此城对相邻城市释放的宗教压力强度加倍。每个公民产出1 [ICON_FAITH] 信仰。就职需要3回合。</Text>
+            <!-- <Text>此城对相邻城市释放的宗教压力强度加倍。本城训练的宗教单位+1使用次数。就职需要3回合。</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="en_US">
-            <Text>Religious pressure to adjacent cities is 100% stronger from this city. All religious units trained in this city receive extra 1 charge. Establishes in 3 turns.</Text>
+            <Text>Religious pressure to adjacent cities is 100% stronger from this city. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city. Establishes in 3 turns.</Text>
+            <!-- <Text>Religious pressure to adjacent cities is 100% stronger from this city. All religious units trained in this city receive extra 1 charge. Establishes in 3 turns.</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME" Language="zh_Hans_CN">
             <Text>赛义德</Text>
@@ -122,36 +124,44 @@
             <Text>sayyid</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>此城训练的使徒、传教士、上师、武僧、审判+1  [ICON_MOVEMENT] 移动力。每个公民产出1 [ICON_FAITH] 信仰。</Text>
+            <Text>此城训练的使徒、传教士、上师、审判+1 [ICON_MOVEMENT] 移动力，+1使用次数。此城训练的武僧+1 [ICON_MOVEMENT] 移动力。</Text>
+            <!-- <Text>此城训练的使徒、传教士、上师、武僧、审判+1  [ICON_MOVEMENT] 移动力。每个公民产出1 [ICON_FAITH] 信仰。</Text> -->
             <!-- 购买以上单位-10% [ICON_FAITH] 信仰花费。 -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION" Language="en_US">
-            <Text>Apostle, Missionary, Guru, Inquistor and Warrior Monk trained in this city + 1 [ICON_MOVEMENT] Movement permanently. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city.</Text>
+            <Text>Apostle, Missionary, Guru and Inquistor trained in this city +1 [ICON_MOVEMENT] Movement and +1 charges permanently. Warrior Monk trained in this city +1 [ICON_MOVEMENT] Movement.</Text>
+            <!-- <Text>Apostle, Missionary, Guru, Inquistor and Warrior Monk trained in this city + 1 [ICON_MOVEMENT] Movement permanently. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city.</Text> -->
             <!-- -10% [ICON_FAITH] Faith cost when purchasing these units. -->
         </Replace>
-        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>本城遗物+50% [ICON_FAITH] 信仰值产出，+100% [ICON_TOURISM] 旅游业绩产出。本城的 [ICON_FAITH] 信仰值产出+15%。</Text>
-        </Replace>
-        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="en_US">
-            <Text>All relic in this city receive +50% [ICON_FAITH] Faith bonus and +100%  [ICON_TOURISM] Tourism. +15% [ICON_FAITH] Faith yield in this city.</Text>
-        </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="zh_Hans_CN">
-            <Text>舍利子</Text>
+            <Text>因信称义</Text>
+            <!-- <Text>舍利子</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME" Language="en_US">
-            <Text>Sariki</Text>
+            <Text>Justice by faith</Text>
+            <!-- <Text>Sariki</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>距离就职城市市中心4个单元格内的圣地的相邻加成+100%，并获得等于其相邻加成的[ICON_TOURISM] 旅游业绩产出。</Text>
+            <!-- <Text>本城遗物+50% [ICON_FAITH] 信仰值产出，+100% [ICON_TOURISM] 旅游业绩产出。本城的 [ICON_FAITH] 信仰值产出+15%。</Text> -->
+        </Replace>
+        <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_DESCRIPTION" Language="en_US">
+            <Text>All Holy Sites within 4 tiles from the established city gains +100% adjacency bonuses, and yields [ICON_TOURISM] Tourism equal to the faith adjacency bonus.</Text>
+            <!-- <Text>All relic in this city receive +50% [ICON_FAITH] Faith bonus and +100%  [ICON_TOURISM] Tourism. +15% [ICON_FAITH] Faith yield in this city.</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="zh_Hans_CN">
-            <Text>因信称义</Text>
+            <Text>神圣建筑师</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_NAME" Language="en_US">
-            <Text>Justice by faith</Text>
+            <Text>Divine Architect</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>本城除圣地外的其他区域的相邻产出等量的 [ICON_FAITH] 信仰值，圣地相邻额外产出等量的 [ICON_TOURISM] 旅游业绩。城市可使用 [ICON_FAITH] 信仰值购买区域。</Text>
+            <Text>城市可使用 [ICON_FAITH] 信仰值购买区域、神社和寺庙。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。</Text>
+            <!-- <Text>本城除圣地外的其他区域的相邻产出等量的 [ICON_FAITH] 信仰值，圣地相邻额外产出等量的 [ICON_TOURISM] 旅游业绩。城市可使用 [ICON_FAITH] 信仰值购买区域。</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_CITADEL_OF_GOD_DESCRIPTION" Language="en_US">
-            <Text>All districts (except for Holy Site) yield [ICON_FAITH] Faith equal to the adjacency bonus yield. Holy Site yields [ICON_TOURISM] Tourism equal to the faith adjacency bonus. Allows city to purchase districts with [ICON_FAITH] Faith.</Text>
+            <Text>Allows city to purchase Districts, Shrine and Temple with [ICON_FAITH] Faith. Allow this city build one more district than the [ICON_Citizen] Population limit allows.</Text>
+            <!-- <Text>All districts (except for Holy Site) yield [ICON_FAITH] Faith equal to the adjacency bonus yield. Holy Site yields [ICON_TOURISM] Tourism equal to the faith adjacency bonus. Allows city to purchase districts with [ICON_FAITH] Faith.</Text> -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_PATRON_SAINT_DESCRIPTION" Language="zh_Hans_CN">
             <Text>此城中生产的使徒和武僧首次升级时将额外获得1次升级。本城训练的武僧永久+5 [ICON_STRENGTH] 战斗力和+100% 战斗经验值。</Text>
@@ -160,10 +170,10 @@
             <Text>Apostles and Warrior Monks trained in the city receive 1 extra promotion when receiving their first promotion. Warrior Monks trained in this city receive +5 [ICON_STRENGTH] Combat Strength and +100% Combat Experience permanently.</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出。</Text>
+            <Text>本城遗物+300% [ICON_TOURISM] 旅游业绩产出和+50% [ICON_FAITH] 信仰值产出。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION" Language="en_US">
-            <Text>All relic in this city receive +300%  [ICON_TOURISM] Tourism.</Text>
+            <Text>All relic in this city receive +300% [ICON_TOURISM] Tourism and +50% [ICON_FAITH] Faith bonus.</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME" Language="zh_Hans_CN">
             <Text>普世牧首</Text>

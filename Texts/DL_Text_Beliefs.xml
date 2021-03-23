@@ -323,11 +323,11 @@
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<!-- <Text>你的所有单位在圣地区域（其所属城市须信仰你的主流宗教）或任意相邻单元格中的生命值回复量+20。</Text> -->
-			<Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+3 [ICON_Science] 科技值。</Text>
+			<Text>您境内位于或与海岸湖泊单元格相邻的区域和奇观+2 [ICON_Science] 科技值。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="en_US">
 			<!-- <Text>Increases Healing of your all units by +20 in Holy Site districts belonging to cities with your majority religion, or any adjacent tiles.</Text> -->
-			<Text>Your districts and wonders on or next to Coast or Lake tiles provide +3 [ICON_Science] Science.</Text>
+			<Text>Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Science] Science.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>您的宗教压力不会因为神学战斗失败而减少。强化后信仰此宗教的城市减少100%外来宗教压力影响，购买审判官的费用降低30%，购买的审判官+1使用次数。</Text>
