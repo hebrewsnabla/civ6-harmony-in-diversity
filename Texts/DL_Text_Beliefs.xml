@@ -267,10 +267,10 @@
 			<Text>Scholasticism</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>所有宗教单位在神学战斗中+7 [ICON_Religion] 宗教战斗力。</Text>
+			<Text>强化后从信仰此宗教的城市中新获得的宗教单位在神学战斗中+7 [ICON_Religion] 宗教战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_SCHOLASTICISM_DL_DESCRIPTION" Language="en_US">
-			<Text>All Religious units +7 [ICON_Religion] Religious Strength in theological combat.</Text>
+			<Text>After this belief being added, all Religious units newly obtained from cities with this religion +7 [ICON_Religion] Religious Strength in theological combat.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PIOUS_MERCHANTS_NAME" Language="zh_Hans_CN">
 			<Text>虔诚商队</Text>
@@ -291,10 +291,10 @@
 			<Text>Messiah</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSIAH_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>使徒首次升级时将额外获得1次升级。</Text>
+			<Text>强化后从信仰此宗教的城市中新获得的使徒将额外获得1次升级。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MESSIAH_DL_DESCRIPTION" Language="en_US">
-			<Text>Apostles receive 1 extra promotion when receiving their first promotion.</Text>
+			<Text>After this belief being added, the apostles newly obtained from cities with this religion will receive 1 extra promotion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_CANONIZATION_OF_SAINTS_NAME" Language="zh_Hans_CN">
 			<Text>册封圣徒</Text>
@@ -315,10 +315,10 @@
 			<Text>Combat units gain +5 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>强化后获得的该宗教的宗教单位为同一单元格军事单位+5 [ICON_Strength] 战斗力。</Text>
+			<Text>强化后从信仰此宗教的城市中新获得的宗教单位为同一单元格军事单位+5 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JUST_WAR_DL_DESCRIPTION" Language="en_US">
-			<Text>The religious units belong to this religion that obtained after this belief being added, can provide +5 [ICON_Strength] Combat Strength to the Combat Units in the same plot.</Text>
+			<Text>After this belief being added, the religious units newly obtained from cities with this religion can provide +5 [ICON_Strength] Combat Strength to the Combat Units in the same plot.</Text>
 			<!-- Combat units gain +5 [ICON_Strength] Combat Strength when plot has a religious unit belonging to this religion. -->
 		</Replace>
 		<Replace Tag="LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION" Language="zh_Hans_CN">
@@ -330,11 +330,23 @@
 			<Text>Your districts and wonders on or next to Coast or Lake tiles provide +3 [ICON_Science] Science.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>您的宗教压力不会因为神学战斗失败而减少。减少100%外来宗教压力影响，审判官+1使用次数，购买审判官打折-30%。</Text>
+			<Text>您的宗教压力不会因为神学战斗失败而减少。强化后信仰此宗教的城市减少100%外来宗教压力影响，购买审判官的费用降低30%，购买的审判官+1使用次数。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION" Language="en_US">
-			<Text>Your Religion's pressure never drops due to losses in Theological Combat. -100% outer religion pressure. Inquisitors receive +1 charge. -30% purchase cost for Inquisitors. </Text>
+			<Text>Your Religion's pressure never drops due to losses in Theological Combat. Cities with this religion -100% outer religion pressure and -30% purchase cost for Inquisitors. Inquisitors newly obtained from cities with this religion receive +1 charge.  </Text>
 		</Replace>
+		<Replace Tag="LOC_BELIEF_HOLY_ORDER_DESCRIPTION" Language="zh_Hans_CN">
+      		<Text>信仰此宗教的城市购买传教士和使徒的费用降低30%。</Text>
+    	</Replace>
+    	<Replace Tag="LOC_BELIEF_HOLY_ORDER_DESCRIPTION" Language="en_US">
+      		<Text>Missionaries and Apostles are 30% cheaper to purchase in cities with this religion.</Text>
+      	</Replace>
+      	<Replace Tag="LOC_BELIEF_MISSIONARY_ZEAL_DESCRIPTION" Language="zh_Hans_CN">
+      		<Text>强化后从信仰此宗教的城市中新获得的宗教单位忽略地形和地貌的 [ICON_Movement] 移动力消耗。</Text>
+    	</Replace>
+    	<Replace Tag="LOC_BELIEF_MISSIONARY_ZEAL_DESCRIPTION" Language="en_US">
+      		<Text>Religious units newly obtained from cities with this religion ignore [ICON_Movement] Movement costs of terrain and features.</Text>
+    	</Replace>
 		<!-- Worship -->
 		<Replace Tag="LOC_BELIEF_MOSQUE_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text> 允许建造清真寺（+2 [ICON_Faith] 信仰值；此处创建的传教士和使徒+1传教次数；所有从本城创建的宗教单位在宗教战争中+3力）。</Text>
