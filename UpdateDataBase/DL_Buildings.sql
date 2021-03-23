@@ -1198,9 +1198,15 @@ insert or replace into Types
 	(Type,									Kind)
 values
 	-- Buildings
+	('BUILDING_WALLS_EARLY',				'KIND_BUILDING'),
 	('BUILDING_DUMMY_MAGNUS',				'KIND_BUILDING'),
 	('BUILDING_DUMMY_NO_MAGNUS',			'KIND_BUILDING'),
 	('BUILDING_GENERAL_SERVICE',			'KIND_BUILDING');
+
+insert or replace into Buildings 
+	(BuildingType, 						Name, 									Cost, 	Description,								InternalOnly,	OuterDefenseHitPoints) 
+values
+	('BUILDING_WALLS_EARLY', 			'LOC_BUILDING_WALLS_EARLY_NAME', 		1, 		'LOC_BUILDING_WALLS_EARLY_DESCRIPTION',		1,				50);
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 									Cost, 	Description,								InternalOnly) 

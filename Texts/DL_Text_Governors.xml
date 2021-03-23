@@ -223,11 +223,17 @@
         <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="en_US">
             <Text>General Services Officer Magnus</Text>
         </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_NAME" Language="zh_Hans_CN">
+            <Text>请忽略</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_NAME" Language="en_US">
+            <Text>PlaceHolder</Text>
+        </Replace>
         <Replace Tag="LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX" Language="zh_Hans_CN">
-        <Text>该建筑需要{1_Building}。</Text>
+            <Text>该建筑需要{1_Building}。</Text>
         </Replace>
         <Replace Tag="LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX" Language="en_US">
-        <Text>This building requires {1_Building}.</Text>
+            <Text>This building requires {1_Building}.</Text>
         </Replace>
         <!-- Governor Magnus with General Services Officer Title is established within 9 tiles -->
         <Replace Tag="LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME" Language="zh_Hans_CN">

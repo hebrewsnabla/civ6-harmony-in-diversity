@@ -123,12 +123,12 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_HORSEBACK_RIDING" Language="en_US">
 			<Text>Build a Pasture with Horses.</Text>
 		</Replace>
-		<Replace Tag="LOC_BOOST_TRIGGER_ENGINEERING" Language="zh_Hans_CN">
+		<!-- <Replace Tag="LOC_BOOST_TRIGGER_ENGINEERING" Language="zh_Hans_CN">
 			<Text>拥有2个远古城墙。</Text>
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_ENGINEERING" Language="en_US">
 			<Text>Have 2 Ancient Walls.</Text>
-		</Replace>
+		</Replace> -->
 		<!-- <Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL" Language="zh_Hans_CN">
 			<Text>采矿业让您拥有了建造轮轴的能力。接下来是车轮？</Text>
 		</Replace>

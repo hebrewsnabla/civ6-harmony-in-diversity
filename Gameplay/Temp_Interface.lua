@@ -51,7 +51,8 @@ end
 Events.WonderCompleted.Add(DevineInspirationWonderFaith)
 
 
-local m_Walls = GameInfo.Buildings["BUILDING_WALLS"].Index
+-- local m_Walls = GameInfo.Buildings["BUILDING_WALLS"].Index
+local m_Walls = GameInfo.Buildings["BUILDING_WALLS_EARLY"].Index
 local PROP_KEY_HAVE_GRANT_WALL = 'HaveGrantWalls'
 
 function FreeWallForCapital(playerID, cityID, iX, iY)
