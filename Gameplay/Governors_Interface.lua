@@ -141,6 +141,8 @@ Events.GovernorChanged.Add(OnGovernorChanged)
 
 function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
     --print(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
+    local gameSpeed = GameConfiguration.GetGameSpeedType()
+    local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
     local player = Players[playerID]
     local city = CityManager.GetCity(playerID, cityID)
     local building = GameInfo.Buildings[buildingID]
@@ -148,7 +150,7 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
     if player ~= nil and city ~= nil and building ~= nil then
         local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_ZONING_COMMISSIONER']
         local greatEngID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index
-        local amount = building.Cost * 0.2
+        local amount = building.Cost * 0.2 * iSpeedCostMultiplier
         local governor = city:GetAssignedGovernor()
         if governor ~= nil and promotion ~= nil then
             -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())

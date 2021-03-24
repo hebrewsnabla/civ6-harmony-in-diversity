@@ -39,7 +39,7 @@
             <Text>Financial Centre</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>城市中每有一座商业中心建筑和港口建筑， [ICON_Gold] 金币产出便+10%。</Text>
+            <Text>城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+10%。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION" Language="en_US">
             <Text>Each Commercial and Harbor building in the city increase city [ICON_Gold] Gold yield output by 10%.</Text>
