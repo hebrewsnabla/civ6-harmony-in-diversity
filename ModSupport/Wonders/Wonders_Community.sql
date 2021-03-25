@@ -210,7 +210,9 @@ where BuildingType = 'BUILDING_NOTRE_DAME';
 UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 9, Entertainment = 0
 WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
 
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+insert into Building_ValidTerrains (BuildingType, TerrainType)
+select 'BUILDING_GLOBE_THEATRE', 'TERRAIN_DESERT' where exists (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
 
 delete from BuildingModifiers where ModifierId = 'GLOBE_THEATRE_AMPHITHEATER_AMENITY_MODIFIER';
 -- globe theter +3 great writer (need to assign era)
