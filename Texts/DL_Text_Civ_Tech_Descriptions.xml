@@ -183,5 +183,17 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_HUMANISM" Language="en_US">
 			<Text>Build 2 Amphitheaters.</Text>
 		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS" Language="zh_Hans_CN">
+			<Text>使用枪兵击杀1个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS" Language="en_US">
+			<Text>Kill a unit with a Spearman.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MILITARY_TACTICS" Language="zh_Hans_CN">
+			<Text>拥有防御战术市政。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MILITARY_TACTICS" Language="en_US">
+			<Text>Have the Defensive Tactics civic.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>
