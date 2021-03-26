@@ -87,10 +87,10 @@ update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
 -- Housing
 -- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
-update Districts set Housing = Housing + 1
- where DistrictType = 'DISTRICT_HARBOR'
-	or DistrictType = 'DISTRICT_COTHON'
-	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- update Districts set Housing = Housing + 1
+--  where DistrictType = 'DISTRICT_HARBOR'
+-- 	or DistrictType = 'DISTRICT_COTHON'
+-- 	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 
 -- Commercial hub & habor trade route -- Removed
 -- habor gives +25% production towards naval units. (cothon still gives 50% production)
@@ -102,6 +102,9 @@ values
 	('DISTRICT_HARBOR',					'HARBOR_ADD_FISHING_BOATS_FOOD'),
 	('DISTRICT_COTHON',					'HARBOR_ADD_FISHING_BOATS_FOOD'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HARBOR_ADD_FISHING_BOATS_FOOD'),
+	('DISTRICT_HARBOR',					'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
+	('DISTRICT_COTHON',					'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
+	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
 	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_ADD_STONE_PRODUCTION'),
 	('DISTRICT_IKANDA',					'ENCAMPMENT_ADD_STONE_PRODUCTION'),
 	('DISTRICT_THANH',					'ENCAMPMENT_ADD_STONE_PRODUCTION'),

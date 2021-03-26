@@ -1,17 +1,12 @@
 [h1]Civ6 Plus: Harmony in Diversity[/h1]
-As we all know, the crazy yield of chopping is a long-lasting basic issue of Civ6. This is the first large-scale Gameplay MOD that solves this basic issue and presents you a world with more reasonable civilization developing process.
 
-This is a complete overhaul for the official version Civilization VI by a group of experienced players (with 1000+ hrs playing time). 
+In original Civ6, chopping and plunder scales up with tech/civic tree progress, and brings absurdly high yields. Many players prefer to chop and plunder instead of developing the empire, and they are bored with this. Now we are happy to introduce the “Harmony in Diversity” MOD. A Gameplay MOD that removes the scaling factor, and brings many new changes. Universities and Banks now radiate like the factory. More city-center buildings and city policies allow you to decide the developing path of each city. Reworked Religions and Governors provide you more alternatives to expand your empire. Carefully tweaked world wonders, newly added policy cards, and balanced tile yields...more and more interesting elements await you to explore them in ONE MORE TURN.
 
-This is a large-scale Gameplay Mod, which is comparable to Rise and Fall, Gathering Storm DLCs. This MOD is made by a group of experienced players and targeted for a boosted game experience. You will find brand new features and more reasonable designs here. Try it and you will like it.
-
-[h2]NEWS[/h2]
-We have supported more Wonders in the Community, please checkout the Collection of Supported MODs above.
-
-[url=https://gitee.com/deeplogic/civ6-harmony-in-diversity/tree/master/] [Link]Description in Chinese [/url]
-Gitee Address: https://gitee.com/deeplogic/civ6-harmony-in-diversity
+% As we all know, the crazy yield of chopping is a long-lasting basic issue of Civ6. This is the first large-scale Gameplay MOD that solves this basic issue and presents you a world with more reasonable civilization developing process.
 
 [h2]Introduction[/h2]
+This is a complete overhaul for the official version Civilization VI by a group of experienced players (with 1000+ hrs playing time). Our design concept is illustrated in the title "Harmony in Diversity", which means multiple different aspects can get along .
+
 We have changed many aspects of the Game and made it much more fun.
 The aspects we have overhauled:
 [list]
@@ -28,6 +23,12 @@ The aspects we have overhauled:
 [*] More Adjustments (to be write in detail)
 [/list]
 NOTE: We haven't balanced the Civilizations yet, so there might be some civilizations are too strong or too weak.
+
+[h2]NEWS[/h2]
+We have supported more Wonders in the Community, please checkout the Collection of Supported MODs above.
+
+[url=https://gitee.com/deeplogic/civ6-harmony-in-diversity/tree/master/] [Link]Description in Chinese [/url]
+Gitee Address: https://gitee.com/deeplogic/civ6-harmony-in-diversity
 
 [h2]Content Summary[/h2]
 The Content Summaries of the MOD are already available in Chinese (see the [url=https://docs.qq.com/sheet/DRndpYktSdkZlSlBT] Document [/url])

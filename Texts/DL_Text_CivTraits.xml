@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME" Language="zh_Hans_CN">
+      <Text>东印度公司</Text>
+    </Replace>
     <!-- Eleanor -->
     <Replace Tag="LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION" Language="zh_Hans_CN">
       <Text>埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。</Text>

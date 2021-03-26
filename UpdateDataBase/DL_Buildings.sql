@@ -122,6 +122,7 @@ update Buildings set Housing = 1 where -- BuildingType = 'BUILDING_WALLS' or
 -- update Buildings set Cost = 45 where BuildingType = 'BUILDING_MONUMENT';
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_GRANARY'; -- Cost = 60
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_WATER_MILL';
+update Buildings set Housing = 2 where BuildingType = 'BUILDING_LIGHTHOUSE';
 -- 
 -- update Buildings set Cost = 240 where BuildingType = 'BUILDING_FERRIS_WHEEL';
 -- update Buildings set Cost = 300 where BuildingType = 'BUILDING_THERMAL_BATH';
@@ -198,6 +199,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_TALL' and Modif
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_AMENITY_BUFF';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_HOUSING_BUFF';
 
+delete from BuildingModifiers where BuildingType = 'BUILDING_LIGHTHOUSE' and ModifierId = 'LIGHTHOUSE_COASTAL_CITY_HOUSING';
 delete from BuildingModifiers where BuildingType = 'BUILDING_AIRPORT' and ModifierId = 'AIRPORT_BONUS_AIR_SLOTS';
 update ModifierArguments set Value = 2 where ModifierId = 'HANGAR_BONUS_AIR_SLOTS' and Name = 'Amount';
 
