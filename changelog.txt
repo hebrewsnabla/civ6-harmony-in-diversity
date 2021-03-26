@@ -1516,3 +1516,4 @@ modinfo增加全部dlc的dependency。
 
 [Version v0.6.7.1]
 适配葡萄牙ub。
+修复皇家学会效果给ub重复生效的bug。
