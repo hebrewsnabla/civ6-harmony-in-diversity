@@ -39,12 +39,18 @@
       <Text>Cities within 6 tiles of the [ICON_Capital] Capital gain +10% to all yields. Non capital cities within 9 tiles and outside 6 tiles of the [ICON_Capital] Capital yields remain usual. Other non capital cities receive -15% to all yields. +5 [ICON_Strength] Combat Strength to units within 6 tiles of the [ICON_Capital] Capital.</Text>
     </Replace>
     <!-- Roma -->
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_TRAIT_LEADER_TRAJANS_COLUMN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有城市建立时赠送纪念碑。[NEWLINE]建造市中心建筑时加速25%。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_TRAJANS_COLUMN_DESCRIPTION" Language="en_US">
+      <Text>All cities start with a Monument building. +25% Construction speed towads builings in the City Center.</Text>
+    </Replace>
+    <!-- <Replace Tag="LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION" Language="zh_Hans_CN">
       <Text>所有您创建或攻占的城市一开始便拥有贸易站。如果位于您 [ICON_Capital] 首都的 [ICON_TradeRoute] 贸易路线范围内，城市自动建立一条通至罗马的路。您的 [ICON_TradeRoute] 贸易路线经过您的城市贸易站+1 [ICON_Gold] 金币。建造市中心建筑时+25% [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION" Language="en_US">
-      <Text>All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your [ICON_TradeRoute] Trade Routes earn +1 [ICON_Gold] Gold for passing through Trading Posts in your own cities.+25% [ICON_production] Production towads builings in the City Center.</Text>
-    </Replace>
+      <Text>All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your [ICON_TradeRoute] Trade Routes earn +1 [ICON_Gold] Gold for passing through Trading Posts in your own cities. +25% [ICON_production] Production towads builings in the City Center.</Text>
+    </Replace> -->
     <!-- Maori -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAORI_MANA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>游戏初始便解锁“航海术”与“造船术”科技，同时拥有进入海洋单元格的能力。水运单位+2 [ICON_Movement] 移动力。未改良的树林与雨林提供+1 [ICON_PRODUCTION] 生产力。“重商主义”额外提供+1 [ICON_PRODUCTION] 生产力、+“行政部门”额外提供+1 [ICON_PRODUCTION] 生产力、“保护地球”额外+1 [ICON_PRODUCTION] 生产力。渔船提供+1 [ICON_FOOD] 食物，并向相邻单元格投放文化炸弹。无法获得 [ICON_GreatWriter] 大作家。</Text>

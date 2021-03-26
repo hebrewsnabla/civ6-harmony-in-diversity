@@ -142,11 +142,13 @@
 			<Text>All world wonders provide +4 [ICON_Faith] Faith. Holy Site provides extra [ICON_Faith] Faith equal to the district adjacency bonus.Each time gain [ICON_Faith] Faith equal t0 50% production cost after Wonder construction.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供0.5 [ICON_Science] 科技值。 可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。</Text>
+			<Text>可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。神社和寺庙分别为每个 [ICON_Citizen] 人口提供0.2和0.4 [ICON_Science] 科技值。</Text>
 		</Replace>
+		<!-- 信奉该宗教的城市，每 [ICON_Citizen] 人口提供0.5 [ICON_Science] 科技值。 -->
 		<Replace Tag="LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION" Language="en_US">
-			<Text>Each [ICON_Citizen] citizen yields 0.5 [ICON_Science] Science in cities that follow this Religion. May purchase Campus district buildings with [ICON_Faith] Faith.</Text>
+			<Text> May purchase Campus district buildings with [ICON_Faith] Faith. Shrines and Temples provide 0.2 and 0.4 [ICON_Science] Science respectively for each [ICON_Citizen] citizen in this city.</Text>
 		</Replace>
+		<!-- Each [ICON_Citizen] citizen yields 0.5 [ICON_Science] Science in cities that follow this Religion. -->
 		<Replace Tag="LOC_BELIEF_RELIQUARIES_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>[ICON_GreatWork_Relic] 遗物能产出3倍的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩。神社和寺庙提供的 [ICON_Tourism] 旅游业绩等于其固定产出的 [ICON_Faith] 信仰值。</Text>
 		</Replace>
