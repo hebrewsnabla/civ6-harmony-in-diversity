@@ -43,7 +43,8 @@ update Units set BuildCharges = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
 --update the civis requirment of WINGHUSSAR to DIVINE RIGHT
 
 update Units set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where UnitType ='UNIT_POLISH_HUSSAR';
-update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
+-- update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
+update Units set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where UnitType ='UNIT_INDONESIAN_JONG';
 
 update Units set
 	CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES',

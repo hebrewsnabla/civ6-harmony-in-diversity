@@ -58,10 +58,10 @@
     </Replace>
     <!-- Great Person -->
     <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+2。</Text>
+      <Text>每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="en_US">
-      <Text>+4 [ICON_GreatAdmiral] Great Admiral points per turn. +2 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse.</Text>
+      <Text>+4 [ICON_GreatAdmiral] Great Admiral points per turn. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse.</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场，每回合的 [ICON_GreatMerchant] 大商人点数便+4。</Text>
@@ -133,6 +133,12 @@
     <Replace Tag="LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME" Language="en_US">
       <Text>Maritime Infrastructure</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_SEABORNE_SUPPLY_NAME" Language="zh_Hans_CN">
+      <Text>海上补给线</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SEABORNE_SUPPLY_NAME" Language="en_US">
+      <Text>Seaborne Supply</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_GARRISON_RECLAMATION_NAME" Language="zh_Hans_CN">
       <Text>屯田</Text>
     </Replace>
@@ -180,10 +186,16 @@
       <Text> +5 [ICON_Gold] Gold for cities with a garrisoned unit.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>位于海边或湖边的城市+3 [ICON_Production] 生产力。</Text>
+      <Text>位于海边或湖边的城市+2 [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION' Language="en_US">
-      <Text>+3 [ICON_Production] Production to all cities adjacent to coasts or lakes.</Text>
+      <Text>+2 [ICON_Production] Production to all cities adjacent to coasts or lakes.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>位于海边或湖边的城市+4 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION' Language="en_US">
+      <Text>+4 [ICON_Production] Production to all cities adjacent to coasts or lakes.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有拥有军营的城市+4 [ICON_Food] 食物，+2 [ICON_Housing] 住房。</Text>
