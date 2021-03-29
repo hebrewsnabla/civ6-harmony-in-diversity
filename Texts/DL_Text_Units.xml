@@ -31,5 +31,11 @@
     <Replace Tag="LOC_UNIT_WARRIOR_MONK_DESCRIPTION" Language="en_US">
       <Text>Fast-moving land combat unit with a unique promotion tree. Can only be purchased by [ICON_FAITH] Faith in city with a Temple. </Text>
     </Replace>
+    <Replace Tag="LOC_UNIT_MACEDONIAN_HETAIROI_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>马其顿特色重骑兵单位，替代骑手。与大将军相邻时额外+5 [ICON_Strength] 战斗力。击杀敌方单位时+10大将军点数。初始便拥有1次免费升级。</Text>
+    </Replace>
+    <Replace Tag="LOC_UNIT_MACEDONIAN_HETAIROI_DESCRIPTION" Language="en_US">
+      <Text>Macedonian unique heavy cavalry unit that replaces the Horseman. Additional +5 [ICON_Strength] Combat Strength when adjacent to a Great General. +10 Great General points when killing an enemy unit. Starts with 1 free Promotion.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
