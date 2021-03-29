@@ -103,12 +103,12 @@
     <Replace Tag="LOC_POLICY_MILITARY_ORGANIZATION_DESCRIPTION_XP2" Language="en_US">
       <Text>+4 [ICON_GreatGeneral] Great General points per turn for every Armory and +8 [ICON_GreatGeneral] Great General points per turn for every Military Academy. Great Generals receive +2 Movement.</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每回合+4 [ICON_GreatAdmiral] 海军统帅点数。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="en_US">
       <Text>+4 [ICON_GreatAdmiral] Great Admiral points per turn.</Text>
-    </Replace>
+    </Replace> -->
     <Replace Tag="LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。</Text>
     </Replace>
@@ -127,12 +127,12 @@
     <Replace Tag="LOC_POLICY_STRATEGOS_DESCRIPTION" Language="en_US">
       <Text>+4 [ICON_GreatGeneral] Great General points per turn.</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>每回合+4 [ICON_GreatMerchant] 大商人点数。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="en_US">
       <Text>+4 [ICON_GreatMerchant] Great Merchant points per turn.</Text>
-    </Replace>
+    </Replace> -->
     <Replace Tag="LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2" Language="zh_Hans_CN">
       <Text>每回合的 [ICON_GreatMusician] 大音乐家点数+8。每有一座广播中心，每回合的 [ICON_GreatMusician] 大音乐家点数便+8。</Text>
     </Replace>

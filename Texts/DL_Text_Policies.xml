@@ -56,6 +56,19 @@
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
       <Text>25% Discount on Purchases with [ICON_Gold] Gold.</Text>
     </Replace>
+    <!-- Great Person -->
+    <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+2。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_GreatAdmiral] Great Admiral points per turn. +2 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场，每回合的 [ICON_GreatMerchant] 大商人点数便+4。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_GreatMerchant] Great Merchant points per turn. +4 [ICON_GreatMerchant] Great Merchant points per turn for every Market.</Text>
+    </Replace>
     <!-- boost for units -->
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>为生产建造者+30% [ICON_Production] 生产力，新训练的建造者获得一点额外劳动力。</Text>
@@ -108,6 +121,12 @@
       <Text>Open Borders with all city-states, and +9 Influence points per turn toward earning [ICON_Envoy] Envoys.</Text>
     </Replace>
     <!-- new cards -->
+    <Replace Tag="LOC_POLICY_FREELANCERS_NAME" Language="zh_Hans_CN">
+      <Text>自由佣兵</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_FREELANCERS_NAME" Language="en_US">
+      <Text>Freelancers</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
       <Text>海上设施</Text>
     </Replace>
@@ -154,6 +173,12 @@
       <!-- <Text>Civilize</Text> -->
       <Text>One More Science</Text>
     </Replace>
+    <Replace Tag='LOC_POLICY_FREELANCERS_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>拥有驻军单位的城市+5 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_FREELANCERS_DESCRIPTION' Language="en_US">
+      <Text> +5 [ICON_Gold] Gold for cities with a garrisoned unit.</Text>
+    </Replace>
     <Replace Tag='LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION' Language="zh_Hans_CN">
       <Text>位于海边或湖边的城市+3 [ICON_Production] 生产力。</Text>
     </Replace>
@@ -164,13 +189,13 @@
       <Text>所有拥有军营的城市+4 [ICON_Food] 食物，+2 [ICON_Housing] 住房。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="en_US">
-      <Text> +4 [ICON_FOOD] Food and +2 [ICON_Housing] in all cities having Encampments.</Text>
+      <Text> +4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_Food] 食物。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
-      <Text> +1 [ICON_FOOD] Food in all cities.</Text>
+      <Text> +1 [ICON_Food] Food in all cities.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_OVERALL_PLANNING_DESCRIPTION' Language="zh_Hans_CN">
       <Text>来自工业区、水上乐园和娱乐设施的区域效果范围增加3个单元格。</Text>
