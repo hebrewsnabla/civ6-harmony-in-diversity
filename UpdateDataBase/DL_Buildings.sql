@@ -629,6 +629,8 @@ update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_GOV_CULTURE';
 update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_GOV_SCIENCE';
 
+-- TODO: Markets special effect for resources.
+-- insert or replace into BuildingModifiers
 
 ---University buff adjacent rainforest and gain science from rainforest
 insert or replace into BuildingModifiers

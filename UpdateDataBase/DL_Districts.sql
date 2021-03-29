@@ -73,6 +73,9 @@ update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_WATER_STRE
 -- Unlock
 update Districts set PrereqTech = 'TECH_SAILING' where
 	DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_COTHON' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- Commercial hub
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' where
+	DistrictType = 'DISTRICT_COMMERCIAL_HUB' or DistrictType = 'DISTRICT_SUGUBA';
 -- Industrial Zone
 update Districts set PrereqTech = 'TECH_IRON_WORKING' where
 	DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' or DistrictType = 'DISTRICT_HANSA';
