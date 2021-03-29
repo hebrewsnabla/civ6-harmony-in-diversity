@@ -68,11 +68,11 @@
     </Replace>
     <!-- UI of Governors -->
     <Replace Tag="LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>相邻单元格+2魅力；产出1点 [ICON_Culture] 文化值。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，公园为每个相邻单元格提供+1所有产出。</Text>
+      <Text>产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。</Text>
       <!-- 公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。 -->
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION" Language="en_US">
-      <Text>+2 Appeal to adjacent tiles and + 1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles. </Text>
+      <Text>+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles. </Text>
       <!-- Each ajacent tile +1 [ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Culture, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold -->
     </Replace>
     <!-- UI of Civs -->
