@@ -34,6 +34,16 @@ update ModifierArguments set Value = 5 where ModifierId = 'PRAETORIUM_GOVERNORID
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
 delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
+delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
+delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
+delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
+-- 
+delete from Policies where PolicyType = 'POLICY_NATIVE_CONQUEST';
+delete from Policies where PolicyType = 'POLICY_NATIONAL_IDENTITY';
+delete from Policies where PolicyType = 'POLICY_PROPAGANDA';
+delete from Policies where PolicyType = 'POLICY_NUCLEAR_ESPIONAGE';
+delete from Policies where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
+delete from Policies where PolicyType = 'POLICY_COMMUNICATIONS_OFFICE';
 
 update ModifierArguments set Value = 100 where ModifierID = 'RAID_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGEDISTRICT';

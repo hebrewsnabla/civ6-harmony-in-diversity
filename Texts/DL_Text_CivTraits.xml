@@ -95,10 +95,10 @@
     </Replace>
     <!-- Ethiopia -->
     <Replace Tag="LOC_TRAIT_LEADER_MENELIK_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值10%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。</Text>
+      <Text>获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值15%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_MENELIK_DESCRIPTION" Language="en_US">
-      <Text>Receive [ICON_SCIENCE] Science and [ICON_CULTURE] Culture equal to 10% of your [ICON_FAITH] Faith generation in cities founded on Hills. Units receive +4 [ICON_STRENGTH] Combat Strength on Hills.</Text>
+      <Text>Receive [ICON_SCIENCE] Science and [ICON_CULTURE] Culture equal to 15% of your [ICON_FAITH] Faith generation in cities founded on Hills. Units receive +4 [ICON_STRENGTH] Combat Strength on Hills.</Text>
     </Replace>
     <!-- Vietnam -->
    	<Replace Tag="LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION" Language="zh_Hans_CN">

@@ -24,8 +24,6 @@ values
 	('BUILDING_UNIVERSITY',					'YIELD_GOLD',		-1),
 	('BUILDING_MADRASA',					'YIELD_SCIENCE',	1), -- ub
 	('BUILDING_MADRASA',					'YIELD_GOLD',		-1),
-	('BUILDING_NAVIGATION_SCHOOL',			'YIELD_SCIENCE',	1), -- ub
-	('BUILDING_NAVIGATION_SCHOOL',			'YIELD_GOLD',		-1),
 	-- campus: third level
 	('BUILDING_RESEARCH_LAB',				'YIELD_SCIENCE',	2),
 	('BUILDING_RESEARCH_LAB',				'YIELD_GOLD',		-2),
@@ -101,7 +99,6 @@ update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where Bui
 update Buildings set RegionalRange = 6
  where BuildingType = 'BUILDING_UNIVERSITY'
 	or BuildingType = 'BUILDING_MADRASA'
-	or BuildingType = 'BUILDING_NAVIGATION_SCHOOL'
 	or BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_MUSEUM_ART'
 	or BuildingType = 'BUILDING_MUSEUM_ARTIFACT'
@@ -405,7 +402,6 @@ values
 	('BUILDING_LIBRARY',					'LIBRARY_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_UNIVERSITY',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_MADRASA',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
-	('BUILDING_NAVIGATION_SCHOOL',			'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_RESEARCH_LAB',				'RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_RESEARCH_LAB',				'POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST'),
 	-- Theater
@@ -566,7 +562,6 @@ update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
-update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_NAVIGATION_SCHOOL';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_MARKET';
 update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_SUKIENNICE';
@@ -641,8 +636,6 @@ insert or replace into BuildingModifiers
 values
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
-	('BUILDING_NAVIGATION_SCHOOL',	'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
-	('BUILDING_NAVIGATION_SCHOOL',	'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
 	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
 	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE');
 

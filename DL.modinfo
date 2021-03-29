@@ -43,12 +43,17 @@
     <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="DLC: Ethiopia Pack" />
     <Mod id="9DE86512-DE1A-400D-8C0A-AB46EBBF76B9" title="DLC: GranColombia Maya Pack" />
     <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="DLC: Vietnam and Kublai Khan Pack" />
-    <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" />
+    <!-- <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" /> -->
   </Dependencies>
   <ActionCriteria>
     <Criteria id="Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
+    <!-- DLCs -->
+    <Criteria id="DLC_Portugal">
+      <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
+    </Criteria>
+    <!-- Mods -->
     <Criteria id="CityPolicies_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
@@ -308,8 +313,12 @@
       <File>Maps/Seven_Seas.lua</File>
     </ImportFiles>
     <!-- Main -->
+    <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Portugal.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
-      <Properties><LoadOrder>16010</LoadOrder></Properties>
+      <Properties><LoadOrder>16008</LoadOrder></Properties>
       <!-- Double Great Person need to update in the first -->
       <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
     </UpdateDatabase>
@@ -532,6 +541,8 @@
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- DLC Support -->
+    <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/DL_Adjacency.sql</File>
     <File>UpdateDataBase/DL_AdjustYields.sql</File>
