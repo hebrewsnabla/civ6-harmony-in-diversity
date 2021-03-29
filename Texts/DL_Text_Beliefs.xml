@@ -94,10 +94,10 @@
 			<Text>+{1_Value} from Papal Primary</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。战斗单位处于信奉该宗教的外国城市境内时+3 [ICON_Strength] 战斗力。</Text>
+			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。战斗单位处于信奉该宗教的外国城市境内时+3 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="en_US">
-			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion. </Text>
+			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion. </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION" Language="zh_Hans_CN">
       		<Text>信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。</Text>

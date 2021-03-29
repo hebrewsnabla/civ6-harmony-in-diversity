@@ -315,10 +315,12 @@
             <Text>All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  .</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。</Text>
+            <Text>可在城市中修建特色改良设施“市立公园”。产出2点魅力和1点 [ICON_Culture] 文化值。无法建在另一个市立公园旁。总督梁在此城市就职时，公园为每个相邻单元格提供+1所有产出。</Text>
+            <!-- 总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。 -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="en_US">
-            <Text>Can construct the City Park improvement in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold.</Text>
+            <Text>Can construct the City Park improvement in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. If Liang is estabilished in this city, the City Park provides +1 of all yields to all adjacent tiles.</Text>
+            <!-- If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold. -->
         </Replace>
         <!-- 阿玛尼 -->
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION" Language="zh_Hans_CN">
@@ -376,7 +378,7 @@
             <Text>Foreign Investor</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币- 20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。</Text>
+            <Text>对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION" Language="en_US">
             <Text>City State units gain +4 [ICON_Strength] Combat Strength if you are the City State's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as three [ICON_Envoy]envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When suzerain receive double the amount of accumulated strategic and luxury resources.  </Text>

@@ -404,6 +404,16 @@ values
 	('SIMULTANEUM_DISTRICTFAITH',				'YieldType',	'YIELD_FAITH'),
 	('SIMULTANEUM_DISTRICTFAITH',				'Amount',		100);
 
+-- DeepLogic
+-- 独裁效果调整
+update ModifierArguments set Value = 2 where Name = 'Amount' and (
+	ModifierId = 'AUTOCRACY_CAPITAL'
+ or ModifierId = 'AUTOCRACY_TIER1'
+ or ModifierId = 'AUTOCRACY_TIER2'
+ or ModifierId = 'AUTOCRACY_TIER3'
+ or ModifierId = 'CONSULATE_TIER1'
+ or ModifierId = 'CHANCERY_TIER2');
+
 --By 利牙菠萝 君主制及传承效果调整
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_CASTLE_HOUSING';
