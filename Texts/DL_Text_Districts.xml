@@ -84,11 +84,11 @@
       <Text>A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of number of citizens. +25% [Icon_Production] Production towards Air Units. -1 Appeal to adjacent tiles. </Text>
     </Replace>
   	<Replace Tag="LOC_DISTRICT_DIPLOMATIC_QUARTER_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。可额外招募一名间谍。文明中一次仅限建造一座此区域。</Text>
+      <Text> 您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。</Text>
       <!-- 如建在市中心旁，则+1 [ICON_ENVOY] 使者。 -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_DIPLOMATIC_QUARTER_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. The first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys. Enemy Spies operate at 2 levels below normal targeting this district and adjacent districts. Grants the ability to construct an additional Spy. Only 1 can exist in your empire at a time.</Text>
+      <Text>The first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys. Enemy Spies operate at 2 levels below normal targeting this district and adjacent districts. Grants the ability to construct an additional Spy. Only 1 can exist in your empire at a time.</Text>
       <!-- +1 [ICON_ENVOY] Envoy if built next to the city center. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="zh_Hans_CN">
@@ -126,6 +126,18 @@
     </Replace>
     <Replace Tag="LOC_DISTRICT_HIPPODROME_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>A district unique to Byzantium. Replaces the Entertainment Complex district, provides +4 [ICON_Amenities] Amenities, and is cheaper to build. When the Hippodrome and buildings in this district are constructed, receive a Heavy Cavalry unit. Units granted from this district do not have a resource maintenance cost. Cannot be built in a city with a Water Park.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_COMMERCIAL_HUB_EXPANSION1_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>城市中专注于金融和贸易的区域。本城出发的国内 [ICON_TradeRoute] 贸易路线+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力，国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Culture] 文化值和+1 [ICON_Science] 科技值。本城所有已开发的 [ICON_RESOURCE_CATTLE] 牛、 [ICON_RESOURCE_SHEEP] 羊+1 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_COMMERCIAL_HUB_EXPANSION1_DESCRIPTION" Language="en_US">
+      <Text>A district in your city specializing in finance and trade. +1 [ICON_Food]  Food and +1 [ICON_Production] Production from all domestic [ICON_TradeRoute] Trade Routes. +1 [ICON_Culture] Culture and +1 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes. +1 [ICON_Food] Food to each improved [ICON_RESOURCE_CATTLE] Cattle and [ICON_RESOURCE_SHEEP] Sheep in this city.</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_SUGUBA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>马里特色区域，专精于经济与贸易，取代商业中心。使用 [ICON_GOLD] 金币和 [ICON_FAITH] 信仰值在此城中购买单位、建筑和区域时，费用减少20%。[NEWLINE][NEWLINE]每个相邻圣地获得+2 [ICON_Gold] 金币加成。每个包含河岸的单元格获得+2 [ICON_Gold] 金币加成。每两个相邻区域单元格获得+1 [ICON_Gold] 金币加成。[NEWLINE][NEWLINE]本城出发的国内 [ICON_TradeRoute] 贸易路线+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力，国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Culture] 文化值和+1 [ICON_Science] 科技值。本城所有已开发的 [ICON_RESOURCE_CATTLE] 牛、 [ICON_RESOURCE_SHEEP] 羊+1 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag="LOC_DISTRICT_SUGUBA_DESCRIPTION" Language="en_US">
+      <Text>A district unique to Mali specializing in finance and trade that replaces the Commercial Hub. Units, Buildings, and Districts are 20% cheaper to purchase with [ICON_GOLD] Gold and [ICON_FAITH] Faith in this City.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold bonus for each adjacent Holy Site. +2 [ICON_Gold] Gold bonus from a tile containing a River edge. [NEWLINE][NEWLINE]+1 [ICON_Gold] Gold bonus for every two adjacent district tiles. +1 [ICON_Culture] Culture and +1 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes. +1 [ICON_Food] Food to each improved [ICON_RESOURCE_CATTLE] Cattle and [ICON_RESOURCE_SHEEP] Sheep in this city.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

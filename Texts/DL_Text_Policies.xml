@@ -179,6 +179,36 @@
       <!-- <Text>Civilize</Text> -->
       <Text>One More Science</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_NAME" Language="zh_Hans_CN">
+      <Text>本土贸易</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_NAME" Language="en_US">
+      <Text>Domestic Trade</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_NAME" Language="zh_Hans_CN">
+      <Text>官道</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_NAME" Language="en_US">
+      <Text>Highway</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_NAME" Language="zh_Hans_CN">
+      <Text>丝绸之路</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_NAME" Language="en_US">
+      <Text>Silk Road</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_NAME" Language="zh_Hans_CN">
+      <Text>仓库</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_NAME" Language="en_US">
+      <Text>Warehouse</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_NAME" Language="zh_Hans_CN">
+      <Text>保险柜</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_NAME" Language="en_US">
+      <Text>Safety Box</Text>
+    </Replace>
     <Replace Tag='LOC_POLICY_FREELANCERS_DESCRIPTION' Language="zh_Hans_CN">
       <Text>拥有驻军单位的城市+5 [ICON_Gold] 金币。</Text>
     </Replace>
@@ -232,6 +262,36 @@
     </Replace>
     <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
       <Text> +2 [ICON_Gold] Gold in all cities.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国内 [ICON_TradeRoute] 贸易路线+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Food] Food and +1 [ICON_Production] Production from all domestic [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国内 [ICON_TradeRoute] 贸易路线+2 [ICON_Food] 食物和+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Food] Food and +2 [ICON_Production] Production from all domestic [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Culture] 文化值和+2 [ICON_Science] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Culture] Culture and +2 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>商业区+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Production] Production for commercial hubs.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>商业区+4 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_Production] Production for commercial hubs.</Text>
     </Replace>
     <!-- New Cards' Histories -->
     <!-- POLICY_MINARET -->

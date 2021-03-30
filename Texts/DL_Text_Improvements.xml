@@ -26,13 +26,13 @@
       <Text>Unlocks the Builder ability to construct Plantations.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. Extra +1 [ICON_Food] Food if adjacent to fresh water or Aqueduct District. +2 [ICON_Gold] Gold for each adjacent Commercial Hub District. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则牧场额外+1 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
+      <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则牧场额外+2 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
     </Replace>
     <!-- <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则已开发的 [ICON_RESOURCE_HORSES] 马+1 [ICON_Production] 生产力，已开发的 [ICON_RESOURCE_CATTLE] 牛、[ICON_RESOURCE_SHEEP] 羊资源+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
     </Replace> -->
     <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +1 [ICON_Production] Production if the city owns a Stable.[NEWLINE][NEWLINE]Can only be built on valid resources. If built on Strategic resources, the city will gain use of that resource.</Text>
+      <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +2 [ICON_Production] Production if the city owns a Stable.[NEWLINE][NEWLINE]Can only be built on valid resources. If built on Strategic resources, the city will gain use of that resource.</Text>
     </Replace>
     <!-- <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="en_US">
       <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. +2 [ICON_Production] Production to improved [ICON_RESOURCE_HORSES]  Horse resource and +1 [ICON_Food] Food and +1 [ICON_Production] Production to improved [ICON_RESOURCE_CATTLE] Cattle and [ICON_RESOURCE_SHEEP] Sheep if a city owns a Stable.[NEWLINE][NEWLINE]Can only be built on valid resources.If built on Strategic resources, the city will gain use of that resource.</Text>
