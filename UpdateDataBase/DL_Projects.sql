@@ -4,7 +4,7 @@
 
 -- Projects
 -- update Projects set CostProgressionModel = 'NO_PROGRESSION_MODEL', CostProgressionParam1 = 0
-update Projects set CostProgressionParam1 = 600
+update Projects set CostProgressionParam1 = 1100 # was 600
  where ProjectType = 'PROJECT_CARNIVAL'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'
@@ -42,7 +42,7 @@ update Projects set CostProgressionParam1 = 300, Cost = 100
 
 -- Project Great Points
 -- update Project_GreatPersonPoints set PointProgressionModel = 'NO_PROGRESSION_MODEL', PointProgressionParam1 = 0
-update Project_GreatPersonPoints set PointProgressionParam1 = 500
+update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
  where ProjectType = 'PROJECT_CARNIVAL'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'

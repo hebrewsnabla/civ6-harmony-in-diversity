@@ -110,11 +110,10 @@
       <Text>Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Bonus Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_MEKEWAP_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造棚屋（克里特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [ICON_PRODUCTION] 生产力、+1 [ICON_Housing] 住房。如与奢侈品资源相邻，则+1 [ICON_GOLD] 金币。相邻的每个加成资源可使其+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力、[ICON_GOLD] 金币和 [ICON_HOUSING] 住房。必须建在与加成或奢侈品资源相邻的单元格上。无法建在另一个棚屋旁。</Text>
+      <Text>解锁建造者建造棚屋（克里特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [ICON_PRODUCTION] 生产力、+1 [ICON_Housing] 住房。完成行政部门后额外+1 [ICON_HOUSING] 住房。如与奢侈品资源相邻，则+1 [ICON_GOLD] 金币。相邻的每个加成资源可使其+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力和 [ICON_GOLD] 金币。必须建在与加成或奢侈品资源相邻的单元格上。无法建在另一个棚屋旁。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_MEKEWAP_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct a Mekewap, unique to Cree.[NEWLINE][NEWLINE]Provides +1 [ICON_PRODUCTION] Production and +1 [ICON_Housing] Housing. +1 [ICON_GOLD] Gold if adjacent to a Luxury resource.  For every adjacent Bonus Resource +1 [ICON_FOOD] Food.  Additional [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, , and [ICON_HOUSING] Housing as you advance through the Civics and Technology Tree. Must be placed adjacent to a Bonus or Luxury resource. Cannot be built adjacent to another Mekewap.</Text>
+      <Text>Unlocks the Builder ability to construct a Mekewap, unique to Cree.[NEWLINE][NEWLINE]Provides +1 [ICON_PRODUCTION] Production and +1 [ICON_Housing] Housing. Extra +1 [ICON_Housing] Housing after completing Civil Service. +1 [ICON_GOLD] Gold if adjacent to a Luxury resource. For every adjacent Bonus Resource +1 [ICON_FOOD] Food. Additional [ICON_PRODUCTION] Production, [ICON_GOLD] Gold as you advance through the Civics and Technology Tree. Must be placed adjacent to a Bonus or Luxury resource. Cannot be built adjacent to another Mekewap.</Text>
     </Replace>
-
   </LocalizedText>
 </GameData>
