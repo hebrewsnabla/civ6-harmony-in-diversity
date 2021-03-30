@@ -199,3 +199,9 @@ insert or replace into Adjacency_YieldChanges
 
 -- delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
  
+ -- Cree Mekewap change: Each bonus resource -> +1 Food 
+-- By PineApple 20210330
+
+update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mekewap_SecondBonusAdjacency';
+delete from Adjacency_YieldChanges where ID = 'Mekewap_FirstBonusAdjacency';
+delete from Improvement_Adjacencies where YieldChangeId = 'Mekewap_FirstBonusAdjacency';

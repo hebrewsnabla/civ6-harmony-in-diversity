@@ -47,9 +47,11 @@ update GlobalParameters set Value = 18 where Name = 'CITY_GROWTH_THRESHOLD';
 update GlobalParameters set Value = 10 where Name = 'CITY_GROWTH_MULTIPLIER';
 update GlobalParameters set Value = 1.6 where Name = 'CITY_GROWTH_EXPONENT';
 
--- Enable districts/wonders placement on GEOTHERMAL_FISSURE.
+-- Enable districts/wonders placement on GEOTHERMAL_FISSURE and REEF
 insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 
 	('FEATURE_GEOTHERMAL_FISSURE', 1, 1, 1);
+insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 
+	('FEATURE_REEF', 1, 1, 1);
 
 -- change era minimum turns
 update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';

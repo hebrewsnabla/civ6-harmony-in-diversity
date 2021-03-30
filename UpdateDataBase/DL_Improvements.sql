@@ -13,6 +13,7 @@ update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUI
 
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
 	('IMPROVEMENT_CAMP', 'FEATURE_FOREST', 'TECH_ARCHERY', NULL),
+	('IMPROVEMENT_FISHERY', 'FEATURE_REEF', NULL, NULL),
 	('IMPROVEMENT_CAMP', 'FEATURE_JUNGLE', NULL, 'CIVIC_GUILDS');
 
 insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) values
