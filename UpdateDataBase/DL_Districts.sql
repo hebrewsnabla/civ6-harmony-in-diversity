@@ -60,7 +60,7 @@ update District_GreatPersonPoints set PointsPerTurn = 1 where
 update District_GreatPersonPoints set PointsPerTurn = 3
 	where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and GreatPersonClassType = 'GREAT_PERSON_CLASS_ADMIRAL';
 
-update District_CitizenYieldChanges set YieldChange = 3 where DistrictType = 'DISTRICT_HOLY_SITE' or DistrictType = 'DISTRICT_LAVRA';
+-- update District_CitizenYieldChanges set YieldChange = 3 where DistrictType = 'DISTRICT_HOLY_SITE' or DistrictType = 'DISTRICT_LAVRA';
 
 -- Happiness adjust
 update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX';
@@ -84,7 +84,8 @@ update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
 	DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
 update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
 	DistrictType = 'DISTRICT_NEIGHBORHOOD';
-update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
+-- update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
+update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where
 	DistrictType = 'DISTRICT_MBANZA';
 -- Diplomacy Quarter
 update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_POLITICAL_PHILOSOPHY' where
@@ -112,8 +113,11 @@ values
 	('DISTRICT_COTHON',					'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
 	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_ADD_STONE_PRODUCTION'),
+	('DISTRICT_ENCAMPMENT',				'BARRACKS_ADD_COPPER_PRODUCTION'),
 	('DISTRICT_IKANDA',					'ENCAMPMENT_ADD_STONE_PRODUCTION'),
+	('DISTRICT_IKANDA',					'BARRACKS_ADD_COPPER_PRODUCTION'),
 	('DISTRICT_THANH',					'ENCAMPMENT_ADD_STONE_PRODUCTION'),
+	('DISTRICT_THANH',					'BARRACKS_ADD_COPPER_PRODUCTION'),
 	('DISTRICT_COMMERCIAL_HUB',			'STABLE_ADD_SHEEP_FOOD'),
 	('DISTRICT_COMMERCIAL_HUB',			'STABLE_ADD_CATTLE_FOOD'),
 	('DISTRICT_COMMERCIAL_HUB',			'DOSMESTIC_TRADE_ROUTE_FOOD_BONUS'),

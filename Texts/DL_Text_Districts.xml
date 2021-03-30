@@ -60,16 +60,16 @@
       <Text>A district unique to England for naval activity in your city. Replaces the Harbor district. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land. +2 [ICON_HOUSING] Housing if this city is adjacent to coasts and lakes. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.[NEWLINE][NEWLINE]+1 [ICON_Movement] Movement for all naval units built in Dockyard. +2 [ICON_Gold] Gold and +4 Loyalty per turn when built on a foreign continent.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。此城中训练的所有抗骑兵单位+1 [ICON_Movement] 移动力。为本城已开发的[ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。此城中训练的所有抗骑兵单位+1 [ICON_Movement] 移动力。为本城已开发的[ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="en_US">
-      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
+      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone and [ICON_RESOURCE_COPPER] Copper resource in this city. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="en_US">
-      <Text> A district in your city for military facilities.[NEWLINE] +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city. -1 Appeal to adjacent tiles.</Text>
+      <Text> A district in your city for military facilities.[NEWLINE] +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone and [ICON_RESOURCE_COPPER] Copper resource in this city. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_MBANZA_DESCRIPTION" Language="zh_Hans_CN">
       <Text> 刚果特色区域，只能建在雨林或树林里。代替社区，可更早建造，且建造费用更低。无视魅力值，固定提供+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物和+5 [ICON_Gold] 金币。为相邻的雨林和森林单元格 +1 [ICON_FOOD] 食物。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。</Text>
@@ -92,10 +92,10 @@
       <!-- +1 [ICON_ENVOY] Envoy if built next to the city center. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。给相邻单元格-1魅力。对陆地军事单位+15%建造速度。为本城已开发的 [ICON_RESOURCE_STONE] 石头+1 [ICON_PRODUCTION] 生产力。</Text>
+      <Text> 越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。给相邻单元格-1魅力。对陆地军事单位+15%建造速度。为本城已开发的 [ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_THANH_DESCRIPTION" Language="en_US">
-      <Text>A district unique to Vietnam which replaces the Encampment. +2 [ICON_CULTURE] Culture for each adjacent district. After Flight is researched receive [ICON_TOURISM] Tourism equal to the [ICON_CULTURE] Culture output. This district does not require population, is cheaper to build, cannot be built adjacent to the city center, and is not a specialty district.[NEWLINE]One per city. -1 Appeal to adjacent tiles. +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone in this city.</Text>
+      <Text>A district unique to Vietnam which replaces the Encampment. +2 [ICON_CULTURE] Culture for each adjacent district. After Flight is researched receive [ICON_TOURISM] Tourism equal to the [ICON_CULTURE] Culture output. This district does not require population, is cheaper to build, cannot be built adjacent to the city center, and is not a specialty district.[NEWLINE]One per city. -1 Appeal to adjacent tiles. +15% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone and [ICON_RESOURCE_COPPER] Copper resource in this city.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ACROPOLIS_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN"> 
 		<Text>希腊特色文化遗址区域，替代剧院广场，建造费用更低。建成后奖励1名 [ICON_Envoy] 使者。[NEWLINE][NEWLINE]每个相邻区域+1 [ICON_Culture] 文化值，每个相邻市中心额外+2 [ICON_Culture] 文化值。每个相邻奇观、娱乐设施及水上乐园+2 [ICON_Culture] 文化值。只能建在丘陵上。为相邻单元格+1魅力。</Text>

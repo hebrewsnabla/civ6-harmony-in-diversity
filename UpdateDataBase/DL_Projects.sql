@@ -4,7 +4,7 @@
 
 -- Projects
 -- update Projects set CostProgressionModel = 'NO_PROGRESSION_MODEL', CostProgressionParam1 = 0
-update Projects set CostProgressionParam1 = 1100 # was 600
+update Projects set CostProgressionParam1 = 1100 -- was 600
  where ProjectType = 'PROJECT_CARNIVAL'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'

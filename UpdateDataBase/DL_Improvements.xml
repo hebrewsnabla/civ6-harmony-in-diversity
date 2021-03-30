@@ -39,7 +39,7 @@
 		<Row>
 			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>
 			<Name>Amount</Name>
-			<Value>15</Value>
+			<Value>10</Value>
 		</Row>
 		<Row>
 			<ModifierId>QUARRY_ADJUST_ANCIENT_WONDER_PRODUCTION</ModifierId>

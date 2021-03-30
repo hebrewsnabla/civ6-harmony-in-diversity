@@ -30,6 +30,9 @@ update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIAL
 update ModifierArguments set Value = 5 where ModifierId = 'LIMITANEI_GARRISONIDENTITY' and Name = 'Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'PRAETORIUM_GOVERNORIDENTITY' and Name = 'Amount';
 
+update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE' and Name = 'Amount';
+
 -- Remove effect: 25% less operation time for spy.
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
@@ -124,7 +127,8 @@ update Policies set PrereqCivic = 'CIVIC_GAMES_RECREATION' where PolicyType = 'P
 
 update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
-update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE'; 
+update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE';
+update ModifierArguments set Value = 4 where ModifierId = 'COLLECTIVIZATION_INTERNAL_TRADE_PRODUCTION' and Name = 'Amount';
 
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
@@ -363,7 +367,9 @@ values
 	('POLICY_SCRIPTURE',			'POLICY_SIMULTANEUM'),
 	--
 	('POLICY_DOMESTIC_TRADE',		'POLICY_HIGHWAY'),
+	('POLICY_HIGHWAY',				'POLICY_COLLECTIVIZATION'),
 	('POLICY_TRADE_CONFEDERATION',	'POLICY_SILK_ROAD'),
+	('POLICY_SILK_ROAD',			'POLICY_MARKET_ECONOMY'),
 	('POLICY_WAREHOUSE',			'POLICY_SAFETY_BOX');
 
 delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
@@ -540,10 +546,23 @@ values
 
 delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
 
+-- 商共效果
 insert or replace into GovernmentModifiers
 	(GovernmentType,					ModifierId)
 values
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
 	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
+
+insert or replace into ModifierArguments
+	(ModifierId,						Name,			Value)
+values
+	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
+	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
 
 -- Speed Up Military Cards
 update ModifierArguments set Value = 30 where Name = 'Amount' and

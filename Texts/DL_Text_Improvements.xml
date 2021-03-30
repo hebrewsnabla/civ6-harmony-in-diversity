@@ -8,10 +8,10 @@
       <Text>Unlocks the Builder ability to construct Mines.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +1 [ICON_Production] Production if adjacent to mountaion tiles (obsolete with Apprenticeship Technology). +1 [ICON_Production] Production for each adjacent Industrial Zone District (except Hansa District). Extra +1 [ICON_Production] Production if the city owns a Workshop. -1 Appeal to all adjacent tiles. [NEWLINE][NEWLINE]Can be built on hills or valid resources. If built on Luxury or Strategic resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_QUARRY_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造采石场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。若本城有工作坊，额外+1 [ICON_Production] 生产力。 相邻单元格-1魅力。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。[NEWLINE][NEWLINE]城市若拥有采石场，则建造远古奇观加速15%，建造古典奇观加速10%，建造中古和文艺复兴的奇观加速5%。若该城市还拥有第二个采石场，则该加成加倍。</Text>
+      <Text>解锁建造者建造采石场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。若本城有工作坊，额外+1 [ICON_Production] 生产力。 相邻单元格-1魅力。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。[NEWLINE][NEWLINE]城市若拥有采石场，则建造远古和古典奇观加速10%，建造中古和文艺复兴的奇观加速5%。若该城市还拥有第二个采石场，则该加成加倍。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_QUARRY_DL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct Quarries.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. +1 [ICON_Production] Production for each adjacent Industrial Zone District (except Hansa District). Extra +1 [ICON_Production] Production if a city owns a Workshop. -1 Appeal to all adjacent tiles. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on a Luxury resource, the city will gain use of that resource. [NEWLINE][NEWLINE]For each city owns a Quarry, +15% Production when building ancient Wonders, 10% when building classical Wonders and 5% when building medieval era or renaissance era Wonders. And it doubles when the city owns the second Quarry.</Text>
+      <Text>Unlocks the Builder ability to construct Quarries.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. +1 [ICON_Production] Production for each adjacent Industrial Zone District (except Hansa District). Extra +1 [ICON_Production] Production if a city owns a Workshop. -1 Appeal to all adjacent tiles. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on a Luxury resource, the city will gain use of that resource. [NEWLINE][NEWLINE]For each city owns a Quarry, +10% Production when building ancient and classical Wonders and 5% when building medieval era or renaissance era Wonders. And it doubles when the city owns the second Quarry.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_FISHING_BOATS_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造渔船的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有港口区域，则+1 [ICON_Food] 食物。每相邻1个港口区域则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。</Text>
@@ -26,13 +26,15 @@
       <Text>Unlocks the Builder ability to construct Plantations.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. Extra +1 [ICON_Food] Food if adjacent to fresh water or Aqueduct District. +2 [ICON_Gold] Gold for each adjacent Commercial Hub District. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则牧场额外+2 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
+      <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
+      <!-- 若城市有马厩建筑，则牧场额外+2 [ICON_Production] 生产力.  -->
     </Replace>
     <!-- <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有马厩建筑，则已开发的 [ICON_RESOURCE_HORSES] 马+1 [ICON_Production] 生产力，已开发的 [ICON_RESOURCE_CATTLE] 牛、[ICON_RESOURCE_SHEEP] 羊资源+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力. [NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。</Text>
     </Replace> -->
     <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Extra +2 [ICON_Production] Production if the city owns a Stable.[NEWLINE][NEWLINE]Can only be built on valid resources. If built on Strategic resources, the city will gain use of that resource.</Text>
+      <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Strategic resources, the city will gain use of that resource.</Text>
+      <!-- Extra +2 [ICON_Production] Production if the city owns a Stable. -->
     </Replace>
     <!-- <Replace Tag="LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION" Language="en_US">
       <Text>Unlocks the Builder ability to construct Pastures.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. +2 [ICON_Production] Production to improved [ICON_RESOURCE_HORSES]  Horse resource and +1 [ICON_Food] Food and +1 [ICON_Production] Production to improved [ICON_RESOURCE_CATTLE] Cattle and [ICON_RESOURCE_SHEEP] Sheep if a city owns a Stable.[NEWLINE][NEWLINE]Can only be built on valid resources.If built on Strategic resources, the city will gain use of that resource.</Text>
