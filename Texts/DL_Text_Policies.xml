@@ -44,10 +44,10 @@
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2" Language="en_US">
       <Text>+15% [ICON_Science] Science.</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2" Language="zh_Hans_CN">
       <Text>国内贸易路线提供的 [ICON_Production] 生产力+4、[ICON_Food] 食物+4。</Text>
     </Replace>
-    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2" Language="en_US">
       <Text>+4 [ICON_Production] Production and +4 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes.</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2" Language="zh_Hans_CN">
@@ -309,13 +309,13 @@
       <Text>商业区+2 [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_Production] Production for commercial hubs.</Text>
+      <Text>+2 [ICON_Production] Production for Commercial Hubs.</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="zh_Hans_CN">
       <Text>商业区+4 [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="en_US">
-      <Text>+4 [ICON_Production] Production for commercial hubs.</Text>
+      <Text>+4 [ICON_Production] Production for Commercial Hubs.</Text>
     </Replace>
     <!-- New Cards' Histories -->
     <!-- POLICY_MINARET -->
