@@ -309,13 +309,13 @@
       <Text>商业区+2 [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_Production] Production for commercial hubs.</Text>
+      <Text>+2 [ICON_Production] Production for Commercial Hubs.</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="zh_Hans_CN">
       <Text>商业区+4 [ICON_Production] 生产力。</Text>
     </Replace>
     <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="en_US">
-      <Text>+4 [ICON_Production] Production for commercial hubs.</Text>
+      <Text>+4 [ICON_Production] Production for Commercial Hubs.</Text>
     </Replace>
     <!-- New Cards' Histories -->
     <!-- POLICY_MINARET -->
