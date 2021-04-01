@@ -1109,24 +1109,6 @@ function GetYieldForOriginCity( yieldIndex:number, routeInfo:table, checkCache:b
                 routeYields[i] = total;
             end
 
-            -- Overall modifiers / multipliers
-            -- local yieldMultipliers = {};
-            -- for i=1, yieldCount, 1 do
-            --     yieldMultipliers[i] = 1;
-            --     if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
-            --         local playerTrade = Players[routeInfo.OriginCityPlayer]:GetTrade();
-            --         yieldMultipliers[i] = playerTrade:GetInternationalYieldModifier(i);
-            --     end
-            -- end
-            -- for i=1, yieldCount, 1 do
-            --     local totalBeforeMultiplier = routeYields[i] + pathYields[i] + modifierYields[i];
-            --     local total = totalBeforeMultiplier;
-            --     local multiplier = yieldMultipliers[i];
-            --     if total > 0 and multiplier ~= 1 then
-            --         total = totalBeforeMultiplier * multiplier;
-            --     end
-            --     routeYields[i] = total;
-            -- end
             return routeYields
         else
             -- From route

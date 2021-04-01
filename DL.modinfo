@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.6">
+<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.7">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.6.9</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.6.9</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.7</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -43,7 +43,7 @@
     <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="DLC: Ethiopia Pack" />
     <Mod id="9DE86512-DE1A-400D-8C0A-AB46EBBF76B9" title="DLC: GranColombia Maya Pack" />
     <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="DLC: Vietnam and Kublai Khan Pack" />
-    <!-- <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" /> -->
+    <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" />
   </Dependencies>
   <ActionCriteria>
     <Criteria id="Expansion2">
@@ -66,6 +66,10 @@
     <Criteria id="FarmOnFreshHills_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
+    </Criteria>
+    <Criteria id="BetterTradeScreen_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>8d4fa23a-ef43-440c-8422-2bec11f8f5d7</ModInUse>
     </Criteria>
     <Criteria id="BetterBuilderChargesTracking_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -211,7 +215,7 @@
       <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     </UpdateText>
     <!-- Better Trade Scrren -->
-    <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="Expansion2">
+    <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     </ImportFiles>
