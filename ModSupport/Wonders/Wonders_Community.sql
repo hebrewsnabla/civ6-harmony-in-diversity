@@ -2,6 +2,7 @@
 ------support some Comunity Wonder and update its effect (also unlock civ&tech and cost)------------------------
 --(By xiaoyu)
 ----------------------------------------------------------------------------------------------------------------
+
 --BUILDING_ABU_SIMBEL
 UPDATE Buildings SET  ObsoleteEra = 'ERA_MEDIEVAL'
 WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_ABU_SIMBEL');
@@ -248,3 +249,24 @@ where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILD
 
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' and YieldType = 'YIELD_FOOD';
 ------------------------------------------------------------------------------------------------------------------
+
+-- Cost adjust
+update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';
+update Buildings set Cost = 1160 where BuildingType = 'BUILDING_LEANING_TOWER';
+-- update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_YELLOW_CRANE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_NOTRE_DAME';
+-- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
+-- update Buildings set Cost = 1350 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
+update Buildings set Cost = 240 where BuildingType = 'BUILDING_ABU_SIMBEL';
+-- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
+-- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BURJ_KHALIFA';
+update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
+-- update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
+-- update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
+-- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_EMPIRE_STATES';
+-- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
+-- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';

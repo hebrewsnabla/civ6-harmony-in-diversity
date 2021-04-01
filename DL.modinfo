@@ -333,6 +333,7 @@
       <File>UpdateDataBase/DL_Buildings.sql</File>
       <File>UpdateDataBase/DL_City_Yield.sql</File>
       <File>UpdateDataBase/DL_CityPolicies.sql</File>
+      <File>UpdateDataBase/DL_CityStates.sql</File>
       <File>UpdateDataBase/DL_Civics.sql</File>
       <File>UpdateDataBase/DL_Civilizations.sql</File>
       <File>UpdateDataBase/DL_Civilopedia.xml</File>
@@ -553,6 +554,7 @@
     <File>UpdateDataBase/DL_Buildings.sql</File>
     <File>UpdateDataBase/DL_City_Yield.sql</File>
     <File>UpdateDataBase/DL_CityPolicies.sql</File>
+    <File>UpdateDataBase/DL_CityStates.sql</File>
     <File>UpdateDataBase/DL_Civics.sql</File>
     <File>UpdateDataBase/DL_Civilizations.sql</File>
     <File>UpdateDataBase/DL_Civilopedia.xml</File>

@@ -50,55 +50,6 @@ values
 	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
 	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'Amount',				1);
 
--- hanging garden boost great people born in this city
---insert or replace into BuildingModifiers
- 	--(BuildingType,							ModifierId)
- --values
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST1'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST2'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST3'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST4'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST5'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST6'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST7'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST8'),
- 	--('BUILDING_HANGING_GARDENS',			'HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9');
-
- -- insert or replace into Modifiers
- -- 	(ModifierId,											ModifierType)
- -- values
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST1',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST2',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST3',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST4',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST5',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST6',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST7',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST8',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9',		'MODIFIER_PLAYER_ADJUST_CITY_GREAT_PERSON_POINTS_PERCENT');
-
- -- insert or replace into ModifierArguments
- -- 	(ModifierId,										Name,					Value)
- -- values
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST1','GreatPersonClassType',	'GREAT_PERSON_CLASS_ADMIRAL'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST1','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST2','GreatPersonClassType',	'GREAT_PERSON_CLASS_GENERAL'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST2','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST3','GreatPersonClassType',	'GREAT_PERSON_CLASS_ENGINEER'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST3','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST4','GreatPersonClassType',	'GREAT_PERSON_CLASS_ARTIST'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST4','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST5','GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST5','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST6','GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST6','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST7','GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST7','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST8','GreatPersonClassType',	'GREAT_PERSON_CLASS_WRITER'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST8','Amount',					15),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9','GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN'),
- -- 	('HANGING_GARDENS_SINGLE_CITY_GREATPERSON_BOOST9','Amount',					15);
-
 --remove MAHABODHI_DIPLOVP 
 --add ORSZAGHAZ DVP
 delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
@@ -384,3 +335,58 @@ values
 -- BUILDING_TORRE_DE_BELEM
 -- Temp remove the effect.
 delete from BuildingModifiers where BuildingType = 'BUILDING_TORRE_DE_BELEM' and ModifierId = 'TORREDEBELEM_CHEAPEST_BUILDING';
+
+-- Adjust the Cost.
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_PYRAMIDS';
+update Buildings set Cost = 300 where BuildingType = 'BUILDING_ORACLE';
+update Buildings set Cost = 300 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSUS';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_PETRA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSEUM';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIBRARY';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_MAHABODHI_TEMPLE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_HAGIA_SOPHIA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
+update Buildings set Cost = 1160 where BuildingType = 'BUILDING_POTALA_PALACE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BOLSHOI_THEATRE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
+update Buildings set Cost = 1600 where BuildingType = 'BUILDING_BIG_BEN';
+update Buildings set Cost = 1600 where BuildingType = 'BUILDING_HERMITAGE';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_APADANA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HALICARNASSUS_MAUSOLEUM';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KILWA_KISIWANI';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KOTOKU_IN';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_CASA_DE_CONTRATACION';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ST_BASILS_CATHEDRAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TAJ_MAHAL';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_STATUE_LIBERTY';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MACHU_PICCHU';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ORSZAGHAZ';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_PANAMA_CANAL';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BIOSPHERE';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
