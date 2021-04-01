@@ -14,6 +14,10 @@ update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAI
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL_WONDER';
 
+-- Trade Route duration: minimal > 12 (was 20), do not increase based on Era.
+update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
+update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
+
 -- ranged unit cause 75% damage to walls instead of 50% (but -17 strength still remains)
 update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
 
