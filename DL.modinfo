@@ -205,6 +205,16 @@
       <Properties><LoadOrder>15006</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     </UpdateText>
+    <!-- RadialMeasuringTool -->
+    <UpdateText id="DL_RadialMeasuringTool_Texts" criteria="Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
+    </UpdateText>
+    <!-- Better Trade Scrren -->
+    <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="Expansion2">
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
+    </ImportFiles>
     <!-- Better builder charges tracking -->
     <ReplaceUIScript id="BuilderChargesUnitFlagManager" criteria="BetterBuilderChargesTracking_Conflict_Expansion2">
       <Properties>
@@ -503,6 +513,8 @@
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
+    <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
+    <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <!-- Builder charges -->
     <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
