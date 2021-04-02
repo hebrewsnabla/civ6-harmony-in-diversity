@@ -315,12 +315,13 @@
     <!-- Map generation -->
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
-      <File>Maps/AssignStartingPlots.lua</File>
-      <File>Maps/FeatureGenerator.lua</File>
-      <File>Maps/MapUtilities.lua</File>
-      <File>Maps/MountainsCliffs.lua</File>
-      <File>Maps/TerrainGenerator.lua</File>
+      <File>Maps/Utility/AssignStartingPlots.lua</File>
+      <File>Maps/Utility/FeatureGenerator.lua</File>
+      <File>Maps/Utility/MapUtilities.lua</File>
+      <File>Maps/Utility/MountainsCliffs.lua</File>
+      <File>Maps/Utility/TerrainGenerator.lua</File>
       <!-- Maps -->
+      <File>Maps/Archipelago_XP2.lua</File>
       <File>Maps/Pangaea.lua</File>
       <File>Maps/Lakes.lua</File>
       <File>Maps/Continents.lua</File>
@@ -537,12 +538,13 @@
     <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
     <!-- Map Generation -->
-    <File>Maps/AssignStartingPlots.lua</File>
-    <File>Maps/FeatureGenerator.lua</File>
-    <File>Maps/MapUtilities.lua</File>
-    <File>Maps/MountainsCliffs.lua</File>
-    <File>Maps/TerrainGenerator.lua</File>
+    <File>Maps/Utility/AssignStartingPlots.lua</File>
+    <File>Maps/Utility/FeatureGenerator.lua</File>
+    <File>Maps/Utility/MapUtilities.lua</File>
+    <File>Maps/Utility/MountainsCliffs.lua</File>
+    <File>Maps/Utility/TerrainGenerator.lua</File>
     <!-- Maps -->
+    <File>Maps/Archipelago_XP2.lua</File>
     <File>Maps/Pangaea.lua</File>
     <File>Maps/Lakes.lua</File>
     <File>Maps/Continents.lua</File>
