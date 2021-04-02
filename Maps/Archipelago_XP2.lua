@@ -154,24 +154,53 @@ function GeneratePlotTypes(world_age)
         water_percent_modifier = TerrainBuilder.GetRandomNumber(9, "Random Sea Level - Lua") - 4;
     end
 
-    -- Generate Large Islands   
-    local args = {};    
-    args.iWaterPercent = 75 + water_percent_modifier;
-    args.iRegionWidth = math.ceil(g_iW);
-    args.iRegionHeight = math.ceil(g_iH);
-    args.iRegionWestX = math.floor(0);
-    args.iRegionSouthY = math.floor(0);
-    args.iRegionGrain = 3;
-    args.iRegionHillsGrain = 4;
-    args.iRegionPlotFlags = g_iFlags;
-    args.iRegionFracXExp = 6;
-    args.iRegionFracYExp = 5;
-    plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
-    islands = plotTypes;
+    -- -- Generate Large Islands   
+    -- local args = {};    
+    -- args.iWaterPercent = 75 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 3;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 6;
+    -- args.iRegionFracYExp = 5;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    -- islands = plotTypes;
+
+    -- -- Generate Medium Islands  
+    -- local args = {};    
+    -- args.iWaterPercent = 85 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 4;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 7;
+    -- args.iRegionFracYExp = 6;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    -- islands = plotTypes;
+
+    -- -- Generate Tiny Islands
+    -- local args = {};    
+    -- args.iWaterPercent = 95 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 5;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 7;
+    -- args.iRegionFracYExp = 6;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
 
     -- Generate Medium Islands  
-    local args = {};    
-    args.iWaterPercent = 85 + water_percent_modifier;
+    local args = {};
+    args.iWaterPercent = 70 + water_percent_modifier;
     args.iRegionWidth = math.ceil(g_iW);
     args.iRegionHeight = math.ceil(g_iH);
     args.iRegionWestX = math.floor(0);
@@ -179,14 +208,14 @@ function GeneratePlotTypes(world_age)
     args.iRegionGrain = 4;
     args.iRegionHillsGrain = 4;
     args.iRegionPlotFlags = g_iFlags;
-    args.iRegionFracXExp = 7;
-    args.iRegionFracYExp = 6;
+    args.iRegionFracXExp = 6;
+    args.iRegionFracYExp = 5;
     plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
     islands = plotTypes;
 
-    -- Generate Tiny Islands
-    local args = {};    
-    args.iWaterPercent = 95 + water_percent_modifier;
+    -- Generate Tiny Islands  
+    local args = {};
+    args.iWaterPercent = 85 + water_percent_modifier;
     args.iRegionWidth = math.ceil(g_iW);
     args.iRegionHeight = math.ceil(g_iH);
     args.iRegionWestX = math.floor(0);
@@ -197,6 +226,112 @@ function GeneratePlotTypes(world_age)
     args.iRegionFracXExp = 7;
     args.iRegionFracYExp = 6;
     plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    islands = plotTypes;
+
+    -- Generate Tiny Islands  
+    local args = {};
+    args.iWaterPercent = 95 + water_percent_modifier;
+    args.iRegionWidth = math.ceil(g_iW);
+    args.iRegionHeight = math.ceil(g_iH);
+    args.iRegionWestX = math.floor(0);
+    args.iRegionSouthY = math.floor(0);
+    args.iRegionGrain = 6;
+    args.iRegionHillsGrain = 4;
+    args.iRegionPlotFlags = g_iFlags;
+    args.iRegionFracXExp = 7;
+    args.iRegionFracYExp = 6;
+    plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    islands = plotTypes;
+
+    -- Cut into this by adding some bays and other water cutouts
+    local args = {};
+    args.iWaterPercent = 90 + water_percent_modifier;
+    args.iRegionWidth = math.ceil(g_iW);
+    args.iRegionHeight = math.ceil(g_iH);
+    args.iRegionWestX = math.floor(0);
+    args.iRegionSouthY = math.floor(0);
+    args.iRegionGrain = 6;
+    args.iRegionHillsGrain = 4;
+    args.iRegionPlotFlags = g_iFlags;
+    args.iRegionFracXExp = 7;
+    args.iRegionFracYExp = 6;
+    args.iRiftGrain = -1;
+    plotTypes = GenerateWaterLayer(args, plotTypes);
+
+    -- Generate Tiny Islands
+    -- local args = {};    
+    -- args.iWaterPercent = 80 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 5;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 6;
+    -- args.iRegionFracYExp = 5;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+
+    -- Setup for Tiny Islands (new map) config one.
+    -- local args = {};
+    -- args.iWaterPercent = 65 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 5;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 6;
+    -- args.iRegionFracYExp = 5;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    -- islands = plotTypes;
+
+    -- Setup for Tiny Islands (new map) config two.
+    -- -- Generate Medium Islands  
+    -- local args = {};
+    -- args.iWaterPercent = 65 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 5;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 6;
+    -- args.iRegionFracYExp = 5;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    -- islands = plotTypes;
+
+    -- -- Generate Tiny Islands  
+    -- local args = {};
+    -- args.iWaterPercent = 95 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 6;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 7;
+    -- args.iRegionFracYExp = 6;
+    -- plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+    -- islands = plotTypes;
+
+    -- -- Cut into this by adding some bays and other water cutouts
+    -- local args = {};
+    -- args.iWaterPercent = 90 + water_percent_modifier;
+    -- args.iRegionWidth = math.ceil(g_iW);
+    -- args.iRegionHeight = math.ceil(g_iH);
+    -- args.iRegionWestX = math.floor(0);
+    -- args.iRegionSouthY = math.floor(0);
+    -- args.iRegionGrain = 4;
+    -- args.iRegionHillsGrain = 4;
+    -- args.iRegionPlotFlags = g_iFlags;
+    -- args.iRegionFracXExp = 7;
+    -- args.iRegionFracYExp = 6;
+    -- args.iRiftGrain = -1;
+    -- plotTypes = GenerateWaterLayer(args, plotTypes);
 
 
     -- Land and water are set. Apply hills and mountains.
@@ -207,7 +342,9 @@ function GeneratePlotTypes(world_age)
     args.blendRidge = 5;
     args.blendFract = 5;
     args.world_age = world_age + 0.25;
-    mountainRatio = 6 + world_age * 2;
+    -- mountainRatio = 6 + world_age * 2;
+    mountainRatio = 15 + world_age * 5;
+    print('DL Archipelago, mountainRatio', mountainRatio);
     plotTypes = ApplyTectonics(args, plotTypes);
     plotTypes = AddLonelyMountains(plotTypes, mountainRatio);
 
@@ -315,6 +452,82 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
     end
     --print("Generated Plot Types");
 
+    return plotTypes;
+end
+
+-- copied from Island_Plates.lua
+-------------------------------------------------------------------------------
+function GenerateWaterLayer (args, plotTypes)
+    -- This function is intended to allow adding seas to specific areas of large continents.
+    local args = args or {};
+    
+    -- Handle args or assign defaults.
+    local iWaterPercent = args.iWaterPercent or 55;
+    local iRegionWidth = args.iRegionWidth; -- Mandatory Parameter, no default
+    local iRegionHeight = args.iRegionHeight; -- Mandatory Parameter, no default
+    local iRegionWestX = args.iRegionWestX; -- Mandatory Parameter, no default
+    local iRegionSouthY = args.iRegionSouthY; -- Mandatory Parameter, no default
+    local iRegionGrain = args.iRegionGrain or 1;
+    local iRegionPlotFlags = args.iRegionPlotFlags or g_iFlags;
+    local iRegionFracXExp = args.iRegionFracXExp or 6;
+    local iRegionFracYExp = args.iRegionFracYExp or 5;
+    local iRiftGrain = args.iRiftGrain or -1;
+    local bShift = args.bShift or true;
+
+    -- Init the plot types array for this region's plot data. Redone for each new layer.
+    -- Compare to self.wholeworldPlotTypes, which contains the sum of all layers.
+    plotTypes2 = {};
+    -- Loop through the region's plots
+    for x = 0, iRegionWidth - 1, 1 do
+        for y = 0, iRegionHeight - 1, 1 do
+            local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+            plotTypes2[i] = g_PLOT_TYPE_OCEAN;
+        end
+    end
+
+    -- Init the land/water fractal
+    local regionContinentsFrac;
+    if (iRiftGrain > 0) and (iRiftGrain < 4) then
+        local riftsFrac = Fractal.Create(iRegionWidth, iRegionHeight, iRiftGrain, {}, iRegionFracXExp, iRegionFracYExp);
+        regionContinentsFrac = Fractal.CreateRifts(iRegionWidth, iRegionHeight, iRegionGrain, iRegionPlotFlags, riftsFrac, iRegionFracXExp, iRegionFracYExp);
+    else
+        regionContinentsFrac = Fractal.Create(iRegionWidth, iRegionHeight, iRegionGrain, iRegionPlotFlags, iRegionFracXExp, iRegionFracYExp);   
+    end
+    
+    -- Using the fractal matrices we just created, determine fractal-height values for sea level.
+    local iWaterThreshold = regionContinentsFrac:GetHeight(iWaterPercent);
+
+    -- Loop through the region's plots
+    for x = 0, iRegionWidth - 1, 1 do
+        for y = 0, iRegionHeight - 1, 1 do
+            local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+            local val = regionContinentsFrac:GetHeight(x,y);
+            if val <= iWaterThreshold then
+                --do nothing
+            else
+                plotTypes2[i] = g_PLOT_TYPE_LAND;
+            end
+        end
+    end
+
+    if bShift then -- Shift plots to obtain a more natural shape.
+        ShiftPlotTypes(plotTypes);
+    end
+
+    -- Apply the region's plots to the global plot array.
+    for x = 0, iRegionWidth - 1, 1 do
+        local wholeworldX = x + iRegionWestX;
+        for y = 0, iRegionHeight - 1, 1 do
+            local i = y * iRegionWidth + x + 1;
+            if plotTypes2[i] ~= g_PLOT_TYPE_OCEAN then
+                local wholeworldY = y + iRegionSouthY;
+                local index = wholeworldY * g_iW + wholeworldX + 1
+                plotTypes[index] = g_PLOT_TYPE_OCEAN;
+            end
+        end
+    end
+
+    -- This region is done.
     return plotTypes;
 end
 
