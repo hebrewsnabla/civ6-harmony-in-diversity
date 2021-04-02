@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.7</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.7.1</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -100,6 +100,14 @@
     </Criteria>
   </ActionCriteria>
   <FrontEndActions>
+    <UpdateDatabase id="DL_Settings">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/MapScripts.xml</File>
+    </UpdateDatabase>
+    <UpdateText id="DL_Settings_Text">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/Texts.xml</File>
+    </UpdateText>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/DL_Text_Buildings.xml</File>
@@ -313,6 +321,10 @@
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
     <!-- Map generation -->
+    <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Portugal.sql</File>
+    </UpdateDatabase>
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/Utility/AssignStartingPlots.lua</File>
@@ -326,6 +338,8 @@
       <File>Maps/Lakes.lua</File>
       <File>Maps/Continents.lua</File>
       <File>Maps/Seven_Seas.lua</File>
+      <!-- New Maps -->
+      <File>Maps/Tiny_Islands.lua</File>
     </ImportFiles>
     <!-- Main -->
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
@@ -472,6 +486,9 @@
     </UpdateDatabase>
   </InGameActions>
   <Files>
+    <!-- Configs -->
+    <File>Configs/MapScripts.xml</File>
+    <File>Configs/Texts.xml</File>
     <!-- Artdef -->
     <File>DL.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
@@ -549,6 +566,8 @@
     <File>Maps/Lakes.lua</File>
     <File>Maps/Continents.lua</File>
     <File>Maps/Seven_Seas.lua</File>
+    <!-- New Maps -->
+    <File>Maps/Tiny_Islands.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
