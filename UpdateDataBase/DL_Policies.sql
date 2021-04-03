@@ -37,7 +37,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADERO
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
 delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
-delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
+-- delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
 delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
 -- 
@@ -129,6 +129,7 @@ update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' a
 update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE';
 update ModifierArguments set Value = 4 where ModifierId = 'COLLECTIVIZATION_INTERNAL_TRADE_PRODUCTION' and Name = 'Amount';
+update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_NO_DIPLOMATIC_QUARTER' where ModifierId = 'DIPLOMATICLEAGUE_DUPLICATEFIRSTINFLUENCETOKEN';
 
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)

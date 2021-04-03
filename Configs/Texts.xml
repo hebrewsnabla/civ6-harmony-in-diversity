@@ -2,16 +2,16 @@
 <GameData>
   <LocalizedText>
     <Replace Tag='LOC_MAP_TINY_ISLANDS_NAME' Language="zh_Hans_CN">
-      <Text>米岛</Text>
+      <Text>米粒岛屿</Text>
     </Replace>
     <Replace Tag='LOC_MAP_TINY_ISLANDS_NAME' Language="en_US">
       <Text>Tiny Islands</Text>
     </Replace>
     <Replace Tag='LOC_MAP_TINY_ISLANDS_DESCRIPTION' Language="zh_Hans_CN">
-      <Text>很多如米粒大小的岛屿。</Text>
+      <Text>很多如米粒般大小的岛屿。</Text>
     </Replace>
     <Replace Tag='LOC_MAP_TINY_ISLANDS_DESCRIPTION' Language="en_US">
-      <Text>Many tiny islands like rice.</Text>
+      <Text>Many tiny islands.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

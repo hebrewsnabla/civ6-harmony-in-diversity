@@ -115,6 +115,7 @@ values
 insert or replace into Requirements
 	(RequirementId,									RequirementType,							Inverse)
 values
+	('REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIREMENT_PLAYER_HAS_DISTRICT',			1),
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',	1),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'REQUIREMENT_CITY_HAS_BUILDING',			1);
 
@@ -150,6 +151,7 @@ values
 	-- 
 	('REQUIRES_PLOT_IS_FLATTEN',					'TerrainClass',		'TERRAIN_CLASS_FLATTEN'),
 	('REQUIRES_PLOT_IS_HILLS',						'TerrainClass',		'TERRAIN_CLASS_HILLS'),
+	('REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'DistrictType',		'DISTRICT_DIPLOMATIC_QUARTER'),
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'TerrainType',		'TERRAIN_OCEAN'),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'BuildingType',		'BUILDING_FILM_STUDIO'),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'MustBeFunctioning',	1),	
@@ -436,17 +438,19 @@ values
 	('IS_FARM_NOT_ADJACENT_TO_RIVER',					'REQUIRES_PLOT_NOT_ADJACENT_TO_RIVER'),
 	('IS_FARM_NOT_ADJACENT_TO_RIVER',					'REQUIRES_PLOT_HAS_FARM');
 
--- Golden Age Policies
+-- Policies (include Golden Age)
 insert or replace into RequirementSets
-	(RequirementSetId,				RequirementSetType)
+	(RequirementSetId,						RequirementSetType)
 values
-	('UNIT_IS_GOLDEN_AGE_SETTLER', 'REQUIREMENTSET_TEST_ALL');
+	('PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIREMENTSET_TEST_ALL'),
+	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
-	(RequirementSetId,				RequirementId)
+	(RequirementSetId,						RequirementId)
 values
-	('UNIT_IS_GOLDEN_AGE_SETTLER',	'REQUIREMENT_UNIT_IS_SETTLER'),
-	('UNIT_IS_GOLDEN_AGE_SETTLER',	'REQUIRES_PLAYER_HAS_GOLDEN_AGE');
+	('PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER'),
+	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIREMENT_UNIT_IS_SETTLER'),
+	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIRES_PLAYER_HAS_GOLDEN_AGE');
 
 -- Beliefs
 insert or replace into RequirementSets

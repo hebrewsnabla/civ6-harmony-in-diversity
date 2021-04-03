@@ -120,6 +120,12 @@
       <Text>+4 [ICON_Housing] Housing in all cities with at least 3 specialty districts.</Text>
     </Replace>
     <!-- diplomatic cards -->
+    <Replace Tag="LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>无论是否拥有外交区，您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION" Language="en_US">
+      <Text>Regardless having Diplomatic Quarter or not, the first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys.</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>[ICON_Governor] 总督为其所在城市每回合忠诚度+5。</Text>
     </Replace>
