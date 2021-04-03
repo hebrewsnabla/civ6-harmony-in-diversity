@@ -386,7 +386,7 @@
   <!-- [NEWLINE]额外奖励1个 [ICON_Governor] 总督头衔。 -->
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
     <Text>与 [ICON_Capital] 首都处于同一大陆的城市+4% [ICON_Food] 食物、 [ICON_Production] 生产力和 [ICON_Gold] 金币。总督所在的城市这些效果为三倍。
-      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <!-- [NEWLINE]Awards Extra +1 [ICON_Governor] Governor Title. -->
   <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="en_US">
@@ -401,19 +401,21 @@
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="zh_Hans_CN">
     <Text>所有城市获得等同于 [ICON_Faith] 信仰产出10%的 [ICON_Science] 科技值和 [ICON_Culture] 文化值。
-      [NEWLINE]购买宗教单位的花费减少20%。宗教单位在神学战斗中+5 [ICON_Religion] 宗教力量。
-      [NEWLINE]建成建筑时获得等同于建筑花费20%的 [ICON_Faith] 信仰值。
-      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+[NEWLINE]所有城市购买宗教单位的花费减少20%。宗教单位在神学战斗中+5 [ICON_Religion] 宗教力量。
+[NEWLINE]每座信奉玩家创立的宗教的外国城市+2 [ICON_Science] 科技值和+2 [ICON_Culture] 文化值。
+[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+      <!-- 建成建筑时获得等同于建筑花费20%的 [ICON_Faith] 信仰值。 -->
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_FAITH_DESCRIPTION" Language="en_US">
-    <Text>Receive [ICON_Science] Science and [ICON_Culture] Culture equal to 10% of your [ICON_Faith] Faith generation in all cities.[NEWLINE]Religious units are 20% cheaper to purchase. +5 [ICON_Religion] Religious Combat in Theological Combat.[NEWLINE]Gain [ICON_Faith] Faith equal to 20% of the construction cost when finishing buildings.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+    <Text>Receive [ICON_Science] Science and [ICON_Culture] Culture equal to 10% of your [ICON_Faith] Faith generation in all cities.[NEWLINE]Religious units are 20% cheaper to purchase in all cities. +5 [ICON_Religion] Religious Combat in Theological Combat.[NEWLINE] +2 [ICON_Science] Science and [ICON_Culture] Culture for each foreign city following player's Religion.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+    <!-- Gain [ICON_Faith] Faith equal to 20% of the construction cost when finishing buildings. -->
   </Replace>
 <!--情报局-->
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="zh_Hans_CN">
     <Text>获得一个间谍并+1间谍容量。
-      [NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%。
-      [NEWLINE]所有城市训练间谍时+50% [ICON_Production] 生产力。
-      [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
+[NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%。
+[NEWLINE]所有城市训练间谍时+50% [ICON_Production] 生产力。
+[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="en_US">
     <Text>Receive one Spy and +1 Spy capacity.[NEWLINE]All Spy Operations have a higher chance of success. Spy mission time reduces by 25%.[NEWLINE]+50% [ICON_Production] toward Spies in all Cities.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
