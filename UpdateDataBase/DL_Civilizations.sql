@@ -391,3 +391,7 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
+
+-- Netherland UA
+-- TRAIT_CIVILIZATION_GROTE_RIVIEREN (reuse the id)
+-- insert or replace into 

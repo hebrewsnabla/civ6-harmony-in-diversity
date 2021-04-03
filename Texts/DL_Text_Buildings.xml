@@ -2,6 +2,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
+    <Replace Tag="LOC_BUILDING_WALLS_EARLY_NAME" Language="zh_Hans_CN">
+      <Text>简易远古城墙</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_WALLS_EARLY_NAME" Language="en_US">
+      <Text>Simple Ancient Wall</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_WALLS_EARLY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>只提供50点外部防御的简易城墙，无法建造，只会被赠送在原始首都。</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_WALLS_EARLY_DESCRIPTION" Language="en_US">
+      <Text>The simple wall that provides 50 point outer defense. Only granted in original capital, cannot be built.</Text>
+    </Replace>
     <Replace Tag="LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION" Language="zh_Hans_CN">
       <Text>拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。[ICON_Amenities] 宜居度加成延伸到4个单元格中的每个市中心。此加成1座城市仅能应用1次，因此市中心4个单元格以内相同的此建筑不会再额外提供加成。</Text>
     </Replace>
