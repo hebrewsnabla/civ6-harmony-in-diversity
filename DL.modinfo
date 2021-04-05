@@ -226,6 +226,7 @@
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
+      <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
     <!-- Better builder charges tracking -->
     <ReplaceUIScript id="BuilderChargesUnitFlagManager" criteria="BetterBuilderChargesTracking_Conflict_Expansion2">
@@ -537,6 +538,7 @@
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
+    <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <!-- Builder charges -->
     <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
