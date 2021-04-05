@@ -115,7 +115,7 @@
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
       <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
-      <!-- <File>Texts/DL_Text_Improvements.xml</File> -->
+      <File>Texts/DL_Text_Improvements.xml</File>
       <File>Texts/DL_Text_NaturalWonders.xml</File>
       <File>Texts/DL_Text_Units.xml</File>
     </UpdateText>
