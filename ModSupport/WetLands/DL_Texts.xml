@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_OASIS_FARM_NAME" Language="zh_Hans_CN">
+      <Text>绿洲花园</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>绿洲花园描述</Text>
+      <!-- Unlocks the Builder ability to construct an Oasis Garden.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. +2 [ICON_Gold] Gold for for every 2 adjacent Districts. Additional [ICON_Food] Food, [ICON_Production] Production, [ICON_Gold] Gold, and [ICON_Tourism] Tourism as you advance through the Technology and Civics Tree.[NEWLINE]Prevents [ICON_Food] Food loss during Drought.[NEWLINE]Can only be built on Oases. -->
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_REED_HOME_NAME" Language="zh_Hans_CN">
+      <Text>芦苇屋</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_REED_HOME_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>芦苇屋描述</Text>
+      <!-- Unlocks the Builder ability to construct a Reed Home.[NEWLINE][NEWLINE]+1 [ICON_Food] Food. Additional [ICON_Production] Production as you advance through the Civics Tree. Can only be built on Marsh, Grassland Floodplains, Plains Floodplains, Tundra Floodplains, or on valid resources.[NEWLINE][NEWLINE]Can only be pillaged (never destroyed) by natural disasters. -->
+    </Replace>
+  </LocalizedText>
+</GameData>

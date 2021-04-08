@@ -621,3 +621,9 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 3 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
+
+--集体主义合成砖家可用。
+insert or replace into Policy_GovernmentExclusives_XP2
+	(PolicyType,                    GovernmentType)
+values
+	('POLICY_COLLECTIVIZATION',     'GOVERNMENT_SYNTHETIC_TECHNOCRACY');

@@ -7,12 +7,18 @@
         <Replace Tag="LOC_GREATPERSON_CHARLES_DARWIN_ACTIVE" Language="en_US">
             <Text>Gain 1000 [ICON_Science] Science (on Standard speed) for each natural wonder tile here or adjacent.</Text>
         </Replace>
+        <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="zh_Hans_CN">
+            <Text>在标准速度下，所在单元格每相邻一个山脉单元格获得400 [ICON_Science] 科技值。</Text>
+        </Replace>
         <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="en_US">
             <Text>Gain 400 [ICON_Science] Science (on Standard speed) for each adjacent Mountain tile.</Text>
         </Replace>
-        <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="zh_Hans_CN">
-      		<Text>在标准速度下，所在单元格每相邻一个山脉单元格获得400 [ICON_Science] 科技值。</Text>
-    	</Replace>
+        <Replace Tag="LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE" Language="en_US">
+            <Text>获得3000点 [ICON_SCIENCE] 科技值与 [ICON_CULTURE] 文化值（标准速度下）。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE" Language="en_US">
+            <Text>Grants 3000 [ICON_SCIENCE] Science and [ICON_CULTURE] Culture (on Standard speed).</Text>
+        </Replace>
     	<Replace Tag="LOC_GREATPERSON_DIPLO_VISIBILITY" Language="zh_Hans_CN">
              <Text>所有文明的外交能见度+{Amount} {Amount : plural 1?级; other?级;}。在您的领土内，敌方间谍等级降低1级。</Text>
         </Replace> 
