@@ -130,7 +130,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GRE
 --Vatican City
 delete from TraitModifiers where TraitType = 'MINOR_CIV_VATICAN_CITY_TRAIT' and ModifierId = 'MINOR_CIV_VATICAN_CITY_UNIQUE_INFLUENCE_BONUS';
 --Armagh
-update Adjacency_YieldChanges  set TilesRequired = 1 , ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Monastery_DistrictAdjacency';
+update Adjacency_YieldChanges set TilesRequired = 1 , ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Monastery_DistrictAdjacency';
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values 
@@ -139,6 +139,9 @@ insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, OtherDistrictAdjacent, PrereqCivic)  
 values 
 	('Monastery_DistrictAdjacency_Divine_Right_Late', 'Placeholder', 'YIELD_FAITH', 2, 1, 1, 'CIVIC_DIVINE_RIGHT');
+--Caguana
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or 'Batey_BonusResourceAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or 'Batey_LateBonusResourceAdjacency';
 
 insert into TraitModifiers 
     (TraitType,                                  ModifierId)
