@@ -1100,7 +1100,7 @@ function GetYieldForOriginCity( yieldIndex:number, routeInfo:table, checkCache:b
                 local multiplier = 1;
                 if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
                     local playerTrade = Players[routeInfo.OriginCityPlayer]:GetTrade();
-                    multiplier = playerTrade:GetInternationalYieldModifier(i);
+                    multiplier = playerTrade:GetInternationalYieldModifier(i - 1);
                 end
                 local total = routeYields[i] + pathYields[i] + modifierYields[i];
                 if total > 0 and multiplier ~= 1 then

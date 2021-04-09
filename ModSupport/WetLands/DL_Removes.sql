@@ -9,5 +9,5 @@ delete from Types where Type = 'RESOURCE_JNR_SWAMP';
 delete from Types where Type = 'RESOURCE_JNR_PEAT';
 
 delete from Adjacency_YieldChanges where ID = 'Flood_Farms_MechanizedAdjacency';
-delete from ImprovementType where YieldChangeId = 'Flood_Farms_MechanizedAdjacency';
+delete from Improvement_Adjacencies where YieldChangeId = 'Flood_Farms_MechanizedAdjacency';
 delete from RandomEvent_Yields where FeatureType = 'FEATURE_FLOODPLAINS_TUNDRA';
