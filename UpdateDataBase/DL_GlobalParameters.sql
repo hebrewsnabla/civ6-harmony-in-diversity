@@ -4,6 +4,8 @@
 
 -- adjust purchase plot cost
 update GlobalParameters set Value = 40 where Name = 'PLOT_BUY_BASE_COST';
+-- update GlobalParameters set Value = 4 where Name = 'CITY_MAX_BUY_PLOT_RANGE';
+update GlobalParameters set Value = 8 where Name = 'PLOT_INFLUENCE_MAX_ACQUIRE_DISTANCE';
 
 -- adjust the population food consumption.
 update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_POPULATION';

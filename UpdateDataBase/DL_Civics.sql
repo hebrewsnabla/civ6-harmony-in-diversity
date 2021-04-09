@@ -48,6 +48,8 @@ values
 	('CIVIC_MILITARY_TRAINING',			'CIVIC_POLITICAL_PHILOSOPHY'),
 	-- ('CIVIC_NAVAL_TRADITION',			'CIVIC_GAMES_RECREATION'),
 	('CIVIC_FEUDALISM',					'CIVIC_MILITARY_TRAINING'),
+	-- ('CIVIC_MEDIEVAL_FAIRES',			'CIVIC_DEFENSIVE_TACTICS'),
+	-- ('CIVIC_EXPLORATION',				'CIVIC_NAVAL_TRADITION'),
 	('CIVIC_MEDIEVAL_FAIRES',			'CIVIC_NAVAL_TRADITION'),
 	-- ('CIVIC_MEDIEVAL_FAIRES',			'CIVIC_MERCENARIES'),
 	('CIVIC_GUILDS',					'CIVIC_MERCENARIES'),
@@ -87,6 +89,7 @@ update Civics set UITreeRow = -1, Cost = 175 where CivicType = 'CIVIC_MILITARY_T
 update Civics set UITreeRow = -3 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set UITreeRow = -1, Cost = 300 where CivicType = 'CIVIC_MERCENARIES';
 update Civics set UITreeRow = -3, Cost = 340 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
+-- update Civics set UITreeRow = -2, Cost = 300 where CivicType = 'CIVIC_MEDIEVAL_FAIRES'; -- MAYBE
 
 update Civics set Cost = Cost * 1.1 where EraType = 'ERA_CLASSICAL';
 update Civics set Cost = Cost * 1.2 where EraType = 'ERA_MEDIEVAL' or EraType = 'ERA_RENAISSANCE';

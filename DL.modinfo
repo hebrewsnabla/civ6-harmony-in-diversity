@@ -79,6 +79,14 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
+    <Criteria id="WetLands_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>73b1478a-73bf-4907-8914-b1b5acca388b</ModInUse>
+    </Criteria>
+    <Criteria id="RemovableDistricts_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>7ce74c28-41ba-4453-b3d1-d30ef8013887</ModInUse>
+    </Criteria>
     <Criteria id="KublaiKhanVietnam_Enabled">
       <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
     </Criteria>
@@ -202,13 +210,25 @@
       <File>ModSupport/Worships/DL_Worships.sql</File>
     </UpdateDatabase>
     <UpdateText id="Worships_mod_support_text" criteria="Worships_Expansion2">
-      <Properties><LoadOrder>15003</LoadOrder></Properties>
+      <Properties><LoadOrder>15002</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Texts.xml</File>
     </UpdateText>
     <AddGameplayScripts id="Worships_mod_support_lua" criteria="Worships_Expansion2">
-      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <Properties><LoadOrder>15002</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Gameplay.lua</File>
     </AddGameplayScripts>
+    <UpdateDatabase id="WetLands_mod_support_removes" criteria="WetLands_Expansion2">
+      <Properties><LoadOrder>15003</LoadOrder></Properties>
+      <File>ModSupport/WetLands/DL_Removes.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="WetLands_mod_support" criteria="WetLands_Expansion2">
+      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <File>ModSupport/WetLands/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/WetLands/DL_Texts.xml</File>
+    </UpdateText>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
@@ -228,6 +248,15 @@
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
+    <!-- Removable Districts -->
+    <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
+      <Properties><LoadOrder>10000000</LoadOrder></Properties>
+      <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="RemovableDistricts_mod_support_text" criteria="RemovableDistricts_Expansion2">
+      <Properties><LoadOrder>10000000</LoadOrder></Properties>
+      <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
+    </UpdateText>
     <!-- Better builder charges tracking -->
     <ReplaceUIScript id="BuilderChargesUnitFlagManager" criteria="BetterBuilderChargesTracking_Conflict_Expansion2">
       <Properties>
@@ -321,6 +350,19 @@
       <Properties><LoadOrder>15905</LoadOrder></Properties>
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
+
+    <ImportFiles id="ConciseUICityStates" criteria="Expansion2">
+      <Properties><LoadOrder>15950</LoadOrder></Properties>
+      <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+      <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    </ImportFiles>
+    <UpdateText id="Cui_Text">
+      <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
+    </UpdateText>
     <!-- Map generation -->
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
@@ -534,11 +576,17 @@
     <File>ModSupport/Worships/DL_Worships.sql</File>
     <File>ModSupport/Worships/DL_Texts.xml</File>
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
+    <File>ModSupport/WetLands/DL_Removes.sql</File>
+    <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
+    <File>ModSupport/WetLands/DL_Texts.xml</File>    
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
+    <!-- Removeable Districts -->
+    <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
+    <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
     <!-- Builder charges -->
     <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
@@ -581,6 +629,14 @@
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- ThirdParty Concise UI CityStates -->
+    <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+    <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->

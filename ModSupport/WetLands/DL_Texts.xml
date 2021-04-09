@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_OASIS_FARM_NAME" Language="zh_Hans_CN">
+      <Text>绿洲花园</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造绿洲花园的能力。[NEWLINE][NEWLINE]+2 [ICON_Culture] 文化值。解锁扶壁后+1 [ICON_AMENITIES] 宜居度。[NEWLINE]只可建造在绿洲上。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION" Language="en_US">
+      <Text>Unlocks the Builder ability to construct an Oasis Garden.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture。+1 [ICON_AMENITIES] Amenity when Buttress being researched. [NEWLINE]Can only be built on Oases.</Text>
+      <!-- Unlocks the Builder ability to construct an Oasis Garden.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. +2 [ICON_Gold] Gold for for every 2 adjacent Districts. Additional [ICON_Food] Food, [ICON_Production] Production, [ICON_Gold] Gold, and [ICON_Tourism] Tourism as you advance through the Technology and Civics Tree.[NEWLINE]Prevents [ICON_Food] Food loss during Drought.[NEWLINE]Can only be built on Oases. -->
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_REED_HOME_NAME" Language="zh_Hans_CN">
+      <Text>芦苇屋</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_REED_HOME_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造芦苇屋的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只可建造在沼泽上。只会被自然灾害劫掠不会被摧毁。</Text>
+      <!-- 解锁公会后+1 [ICON_Science] 科技值。解锁科学理论后+1 [ICON_Science] 科技值。 -->
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_JNR_REED_HOME_DESCRIPTION" Language="en_US">
+      <Text>Unlocks the Builder ability to construct a Reed Home.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. [NEWLINE][NEWLINE]Can only be built on Marsh. Can only be pillaged (never destroyed) by natural disasters.</Text>
+      <!-- Unlocks the Builder ability to construct a Reed Home.[NEWLINE][NEWLINE]+1 [ICON_Food] Food. Additional [ICON_Production] Production as you advance through the Civics Tree. Can only be built on Marsh, Grassland Floodplains, Plains Floodplains, Tundra Floodplains, or on valid resources.[NEWLINE][NEWLINE]Can only be pillaged (never destroyed) by natural disasters. -->
+    </Replace>
+    <!-- Techs and Civics -->
+    <Replace Tag="LOC_CIVIC_GUILDS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>允许在雨林上建造伐木场和营地。芦苇屋+1 [ICON_Science] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVIC_GUILDS_DESCRIPTION" Language="en_US">
+      <Text>Lumber Mills and Camps can be built on Rainforest. +1 [ICON_Science] Science from the Reed Home improvement.</Text>
+    </Replace>
+    <Replace Tag="LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>种植园改良设施提供+1 [ICON_Food] 食物。芦苇屋+1 [ICON_Science] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Food] Food from the Plantation improvement. +1 [ICON_Science] Science from the Reed Home improvement.</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>
