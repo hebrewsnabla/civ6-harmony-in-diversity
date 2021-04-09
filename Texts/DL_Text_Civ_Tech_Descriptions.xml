@@ -111,9 +111,6 @@
 			<Text>+50% [ICON_Tourism] Tourism across your empire.</Text>
 		</Replace>
 		<!-- Remove the changes from Wetlands -->
-		<Replace Tag="LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Food] Food from the Plantation improvement.</Text>
-		</Replace>
 		<Replace Tag="LOC_CIVIC_GLOBALIZATION_DESCRIPTION" Language="en_US">
 			<Text>+2 [ICON_Gold] Gold to Plantations.</Text>
 		</Replace>

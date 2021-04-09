@@ -226,7 +226,7 @@
       <File>ModSupport/WetLands/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateText id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
-      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/DL_Texts.xml</File>
     </UpdateText>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">

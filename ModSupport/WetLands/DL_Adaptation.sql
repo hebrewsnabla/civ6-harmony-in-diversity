@@ -2,20 +2,27 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
+-- Oasis Farm
+-- Unlock by Drama and Poetry, change to 0.5 housing
+update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_DRAMA_POETRY', TilesRequired = 2 where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
+-- remove effect: Prevents Drought
+update Improvements_XP2 set PreventsDrought = 0 where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
+
+-- Reed Home
+-- Unlock by Craftsmanship
 update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_CRAFTSMANSHIP' where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
 
 delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME' and FeatureType != 'FEATURE_MARSH';
 
--- Improvement_Adjacencies
--- delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM' and YieldChangeId = 'District_Gold';
+delete from Improvement_YieldChanges where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
+delete from Improvement_YieldChanges where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
+insert or replace into Improvement_YieldChanges
+        (ImprovementType,               YieldType,          YieldChange)
+values  ('IMPROVEMENT_JNR_OASIS_FARM',  'YIELD_CULTURE',    2),
+        ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_PRODUCTION', 1),
+        ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_SCIENCE',    0);
 
--- Improvement_Tourism (TODO remove or not?)
---------------------------------------------------------------
--- INSERT OR IGNORE INTO Improvement_Tourism
---         (ImprovementType,               TourismSource,          PrereqTech)
--- VALUES  ('IMPROVEMENT_JNR_OASIS_FARM',  'TOURISMSOURCE_GOLD',   'TECH_FLIGHT');
-
--- Improvement_BonusYieldChanges (TODO: to be adapted)
+-- Improvement_BonusYieldChanges Removed
 --------------------------------------------------------------
 -- INSERT OR IGNORE INTO Improvement_BonusYieldChanges
 --         (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
@@ -25,3 +32,32 @@ delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_JNR_R
 --         (1304,  'IMPROVEMENT_JNR_FLOOD_FARM',   'YIELD_FOOD',       1,                  NULL,                       'CIVIC_FEUDALISM'),
 --         (1305,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION', 1,                  NULL,                       'CIVIC_MERCANTILISM');
 -- --------------------------------------------------------------
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
+insert or replace into Improvement_BonusYieldChanges
+        (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
+values  (307,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  NULL,                       'CIVIC_GUILDS'),
+        (308,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  'TECH_SCIENTIFIC_THEORY',   NULL);
+
+-- Improvement_Adjacencies
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM' and YieldChangeId = 'District_Gold';
+
+-- Improvement_Tourism
+--------------------------------------------------------------
+-- INSERT OR IGNORE INTO Improvement_Tourism
+--         (ImprovementType,               TourismSource,          PrereqTech)
+-- VALUES  ('IMPROVEMENT_JNR_OASIS_FARM',  'TOURISMSOURCE_GOLD',   'TECH_FLIGHT');
+delete from Improvement_Tourism where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
+
+insert or replace into ImprovementModifiers (ImprovementType, ModifierID) values
+    ('IMPROVEMENT_JNR_OASIS_FARM', 'JNR_OASIS_FARM_AMENITY');
+
+insert or replace into Modifiers
+    (ModifierId,                    ModifierType,                                           SubjectRequirementSetId)
+values
+    ('JNR_OASIS_FARM_AMENITY',      'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_AMENITY',      'PLAYER_HAS_TECH_BUTTRESS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                    Name,            Value)
+values
+    ('JNR_OASIS_FARM_AMENITY',      'Amount',       1);
