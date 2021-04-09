@@ -350,6 +350,19 @@
       <Properties><LoadOrder>15905</LoadOrder></Properties>
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
+
+    <ImportFiles id="ConciseUICityStates" criteria="Expansion2">
+      <Properties><LoadOrder>15950</LoadOrder></Properties>
+      <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+      <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    </ImportFiles>
+    <UpdateText id="Cui_Text">
+      <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
+    </UpdateText>
     <!-- Map generation -->
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
@@ -616,6 +629,14 @@
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- ThirdParty Concise UI CityStates -->
+    <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+    <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->
