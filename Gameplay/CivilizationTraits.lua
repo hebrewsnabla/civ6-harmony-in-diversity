@@ -37,7 +37,7 @@ function PedroGreatPersonFaith(playerID, unitID, greatPersonClassID, greatPerson
 	local sModifierID = 'TRAIT_GREAT_PEOPLE_JUNGLE_FAITH'
 	local PROP_KEY_NUMBER_GREAT_PEOPLE = 'NumberofGreatPeople'
 	if LeaderHasTrait(sLeader, sMagnanimous) then
-		local amount = player:GetProperty(PROP_KEY_NUMBER_GREAT_PEOPLE, value)
+		local amount = player:GetProperty(PROP_KEY_NUMBER_GREAT_PEOPLE)
 		if amount == nil then
 			amount = 0
 		end
