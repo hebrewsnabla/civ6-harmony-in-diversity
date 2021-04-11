@@ -1080,6 +1080,7 @@ end
 
 -- Returns yield for the origin city
 function GetYieldForOriginCity( yieldIndex:number, routeInfo:table, checkCache:boolean )
+	print('xy101')
     if checkCache then
         local key:string = GetRouteKey(routeInfo)
         return Cached_GetYieldForOriginCity(yieldIndex, key)

@@ -98,6 +98,7 @@ values
 	('BUILDING_CONSULATE',					'YIELD_CULTURE',	2),
 	('BUILDING_CONSULATE',					'YIELD_SCIENCE',	2),
 	('BUILDING_CONSULATE',					'YIELD_GOLD',		-2),
+	--GOVERNMENT PLAZA
 	('BUILDING_GOV_TALL',					'YIELD_CULTURE',	1),
 	('BUILDING_GOV_TALL',					'YIELD_SCIENCE',	1),
 	('BUILDING_GOV_TALL',					'YIELD_GOLD',		-1),
@@ -129,6 +130,20 @@ values
 	('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_SCIENCE',	1),
 	('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_GOLD',		-1);
 
+update Buildings set CitizenSlots = 1 
+	where BuildingType = 'BUILDING_GOV_TALL'
+ 	or BuildingType = 'BUILDING_GOV_WIDE'
+	or BuildingType = 'BUILDING_GOV_CONQUEST'
+	or BuildingType = 'BUILDING_GOV_CITYSTATES'
+	or BuildingType = 'BUILDING_GOV_SPIES'
+	or BuildingType = 'BUILDING_GOV_FAITH'
+	or BuildingType = 'BUILDING_GOV_MILITARY'
+	or BuildingType = 'BUILDING_GOV_CULTURE'
+	or BuildingType = 'BUILDING_GOV_SCIENCE'
+	or BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE'
+	or BuildingType = 'BUILDING_CHANCERY'
+	or BuildingType = 'BUILDING_CONSULATE'
+;
 
 -- Unlock
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';

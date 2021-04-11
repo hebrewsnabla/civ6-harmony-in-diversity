@@ -392,6 +392,9 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
--- Netherland UA
--- TRAIT_CIVILIZATION_GROTE_RIVIEREN (reuse the id)
--- insert or replace into 
+-- Brazil 
+-- lumber mill +1 adjacency bonus to IZ
+-- IZ +1 production to adjacent lumber mill
+-- +2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
+-- districts do not remove rainforest
+-- 
