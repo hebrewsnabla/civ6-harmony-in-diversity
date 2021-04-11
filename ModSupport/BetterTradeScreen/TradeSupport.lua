@@ -1217,7 +1217,7 @@ function GetYieldsForOriginCity(routeInfo:table, buildTooltip:boolean, checkCach
             kYieldMultipliers[yieldIndex] = 1;
             if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
                 local pPlayerTrade:table = Players[routeInfo.OriginCityPlayer]:GetTrade();
-                kYieldMultipliers[yieldIndex] = pPlayerTrade:GetInternationalYieldModifier(yieldIndex);
+                kYieldMultipliers[yieldIndex] = pPlayerTrade:GetInternationalYieldModifier(yieldIndex - 1);
             end
         end
 
@@ -1258,7 +1258,7 @@ function GetYieldsForOriginCity(routeInfo:table, buildTooltip:boolean, checkCach
 
                 local totalBeforeMultiplier:number = routeValue + pathValue + modifierValue;
                 local total:number = totalBeforeMultiplier;
-                local multiplier:number = kYieldMultipliers[yieldIndex - 1];
+                local multiplier:number = kYieldMultipliers[yieldIndex];
                 if total > 0 and multiplier ~= 1 then
                     total = totalBeforeMultiplier * multiplier;
                     local valueFromMultiplier:number = total - totalBeforeMultiplier;
@@ -1311,7 +1311,7 @@ function GetYieldsForDestinationCity(routeInfo:table, buildTooltip:boolean, chec
             kYieldMultipliers[yieldIndex] = 1;
             if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
                 local pPlayerTrade:table = Players[routeInfo.DestinationCityPlayer]:GetTrade();
-                kYieldMultipliers[yieldIndex] = pPlayerTrade:GetInternationalYieldModifier(yieldIndex);
+                kYieldMultipliers[yieldIndex] = pPlayerTrade:GetInternationalYieldModifier(yieldIndex - 1);
             end
         end
 
@@ -1352,7 +1352,7 @@ function GetYieldsForDestinationCity(routeInfo:table, buildTooltip:boolean, chec
 
                 local totalBeforeMultiplier:number = routeValue + pathValue + modifierValue;
                 local total:number = totalBeforeMultiplier;
-                local multiplier:number = kYieldMultipliers[yieldIndex - 1];
+                local multiplier:number = kYieldMultipliers[yieldIndex];
                 if total > 0 and multiplier ~= 1 then
                     total = totalBeforeMultiplier * multiplier;
                     local valueFromMultiplier:number = total - totalBeforeMultiplier;
@@ -1403,7 +1403,7 @@ function GetYieldForOriginCity(routeInfo:table, yieldIndex:number, buildTooltip:
         local kYieldMultiplier = 1;
         if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
             local pPlayerTrade:table = Players[routeInfo.OriginCityPlayer]:GetTrade();
-            kYieldMultiplier = pPlayerTrade:GetInternationalYieldModifier(yieldIndex);
+            kYieldMultiplier = pPlayerTrade:GetInternationalYieldModifier(yieldIndex - 1);
         end
 
         -- Build tooltip
@@ -1438,7 +1438,7 @@ function GetYieldForOriginCity(routeInfo:table, yieldIndex:number, buildTooltip:
 
             local totalBeforeMultiplier:number = routeValue + pathValue + modifierValue;
             local total:number = totalBeforeMultiplier;
-            local multiplier:number = kYieldMultipliers[yieldIndex - 1];
+            local multiplier:number = kYieldMultipliers[yieldIndex];
             if total > 0 and multiplier ~= 1 then
                 total = totalBeforeMultiplier * multiplier;
                 local valueFromMultiplier:number = total - totalBeforeMultiplier;
@@ -1486,7 +1486,7 @@ function GetYieldForDestinationCity(routeInfo:table, yieldIndex:number, buildToo
         local kYieldMultiplier = 1;
         if routeInfo.OriginCityPlayer ~= routeInfo.DestinationCityPlayer then
             local pPlayerTrade:table = Players[routeInfo.OriginCityPlayer]:GetTrade();
-            kYieldMultiplier = pPlayerTrade:GetInternationalYieldModifier(yieldIndex);
+            kYieldMultiplier = pPlayerTrade:GetInternationalYieldModifier(yieldIndex - 1);
         end
 
         -- Build tooltip
@@ -1521,7 +1521,7 @@ function GetYieldForDestinationCity(routeInfo:table, yieldIndex:number, buildToo
 
             local totalBeforeMultiplier:number = routeValue + pathValue + modifierValue;
             local total:number = totalBeforeMultiplier;
-            local multiplier:number = kYieldMultipliers[yieldIndex - 1];
+            local multiplier:number = kYieldMultipliers[yieldIndex];
             if total > 0 and multiplier ~= 1 then
                 total = totalBeforeMultiplier * multiplier;
                 local valueFromMultiplier:number = total - totalBeforeMultiplier;
