@@ -392,9 +392,24 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
+
 -- Brazil 
 -- lumber mill +1 adjacency bonus to IZ
 -- IZ +1 production to adjacent lumber mill
 -- +2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
 -- districts do not remove rainforest
 -- 
+
+-- Brazil
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_JUNGLE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'Amount',		1);
+
+
