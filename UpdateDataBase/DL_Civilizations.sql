@@ -392,6 +392,18 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
+-- Brazil
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_JUNGLE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'Amount',		1);
+
 -- Netherland UA
 -- TRAIT_CIVILIZATION_GROTE_RIVIEREN (reuse the id)
 -- insert or replace into 
