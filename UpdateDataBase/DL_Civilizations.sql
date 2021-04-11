@@ -392,7 +392,14 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
--- Brazil
+
+-- Brazil 
+-- lumber mill +1 adjacency bonus to IZ
+-- IZ +1 production to adjacent rainforest
+-- +2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
+-- districts do not remove rainforest
+-- +1 faith in each rainforest tiles after recruit a great person
+
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,							SubjectRequirementSetId)
 values
@@ -404,6 +411,57 @@ values
 	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'YieldType',	'YIELD_FAITH'),
 	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'Amount',		1);
 
--- Netherland UA
--- TRAIT_CIVILIZATION_GROTE_RIVIEREN (reuse the id)
--- insert or replace into 
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+values
+	('TRAIT_CIVILIZATION_AMAZON',	'TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION'),
+	('TRAIT_CIVILIZATION_AMAZON',	'TRAIT_RAINFOREST_PRODUCTION_IZ'),
+	('TRAIT_CIVILIZATION_AMAZON',	'BRAZIL_RAINFOREST_CULTURE');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,						SubjectRequirementSetId)
+values
+	('BRAZIL_RAINFOREST_CULTURE',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS'),
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION','MODIFIER_PLAYER_CITIES_IMPROVEMENT_ADJACENCY',NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('BRAZIL_RAINFOREST_CULTURE',									'YieldType',	'YIELD_CULTURE'),
+	('BRAZIL_RAINFOREST_CULTURE',									'Amount',		2),	
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',								'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',								'Amount',		1),			
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'DistrictType',	'DISTRICT_INDUSTRIAL_ZONE'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'ImprovementType','IMPROVEMENT_LUMBER_MILL'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'Amount',		1),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'Description',	'LOC_DISTRICT_LUMBER_MILL_1_PRODUCTION'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'TilesRequired',1);
+
+insert or replace into ExcludedAdjacencies
+	(TraitType,			YieldChangeId)
+values
+	('TRAIT_CIVILIZATION_AMAZON',	'LumberMill_HalfProduction');
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,TourismSource,PrereqTech,ScalingFactor)
+values
+	('IMPROVEMENT_LUMBER_MILL','TOURISMSOURCE_CULTURE','TECH_FLIGHT',100);
+
+insert or replace into TraitModifiers (TraitType,	ModifierId) 
+	select 'TRAIT_CIVILIZATION_AMAZON', 'TRAIT_JUNGLE_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+
+insert or replace into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_HAS_JUNGLE'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');

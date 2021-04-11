@@ -211,7 +211,7 @@ values
 -- Pantheon
 -- update Modifiers set SubjectRequirementSetId = 'PLOT_EIGHT_INCLUDE_CITY_CENTER' where ModifierId = 'GOD_OF_WAR_FAITH_KILLS_MODIFIER';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOD_OF_WAR_FAITH_KILLS_MODIFIER';
-update ModifierArguments set Value = 1 where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER' and Name = 'Amount';
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,										SubjectRequirementSetId)
