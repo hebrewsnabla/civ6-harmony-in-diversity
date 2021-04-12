@@ -332,10 +332,6 @@ insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)
 values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
 
--- BUILDING_TORRE_DE_BELEM
--- Temp remove the effect.
-delete from BuildingModifiers where BuildingType = 'BUILDING_TORRE_DE_BELEM' and ModifierId = 'TORREDEBELEM_CHEAPEST_BUILDING';
-
 -- Adjust the Cost.
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
 update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
