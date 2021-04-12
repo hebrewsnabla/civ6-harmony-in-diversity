@@ -75,6 +75,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">c6477d9f-6bad-4d24-9e76-49cda4f0a966</ModInUse>
     </Criteria>
+    <Criteria id="ProjectHumankind_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
+    </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
@@ -248,6 +252,11 @@
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="Community_Wonders_support" criteria="ProjectHumankind_Expansion2">
+      <Properties><LoadOrder>15008</LoadOrder></Properties>
+      <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
       <Properties><LoadOrder>10000000</LoadOrder></Properties>
@@ -590,6 +599,7 @@
     <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
+    <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
