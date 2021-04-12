@@ -1183,11 +1183,6 @@ function GetDestinationCityName(routeInfo:table)
     return Locale.Lookup(pCity:GetName()) -- How does lua compare localized text?
 end
 
-<<<<<<< HEAD
--- Returns yield for the origin city
-function GetYieldForOriginCity( yieldIndex:number, routeInfo:table, checkCache:boolean )
-	print('xy101')
-=======
 -- ---------------------------------------------------------------------------
 -- Trade Route Getters (using cache)
 -- ---------------------------------------------------------------------------
@@ -1204,7 +1199,6 @@ function GetYieldsForOriginCity(routeInfo:table, buildTooltip:boolean, checkCach
         checkCache = useCache
     end
 
->>>>>>> origin/dev
     if checkCache then
         local key = GetRouteKey(routeInfo)
         return Cached_GetYieldsForOriginCity(key)

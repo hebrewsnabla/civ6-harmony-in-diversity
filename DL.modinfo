@@ -506,6 +506,10 @@
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
+    <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
@@ -536,6 +540,7 @@
     <File>DL.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
     <!-- Game Mode -->
+    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
