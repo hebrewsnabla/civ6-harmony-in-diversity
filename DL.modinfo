@@ -383,6 +383,7 @@
       <File>Maps/Seven_Seas.lua</File>
       <!-- New Maps -->
       <File>Maps/Tiny_Islands.lua</File>
+      <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
     <!-- Main -->
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
@@ -623,6 +624,7 @@
     <File>Maps/Seven_Seas.lua</File>
     <!-- New Maps -->
     <File>Maps/Tiny_Islands.lua</File>
+    <File>Maps/Tiny_Lakes.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->

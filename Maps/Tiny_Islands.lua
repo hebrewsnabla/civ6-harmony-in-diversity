@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
---  FILE:    Archipelago.lua
+--  FILE:    Tiny_Islands.lua (Forked from Archipelago.lua)
 --  AUTHOR:  
 --  PURPOSE: Base game script - Produces widely varied islands.
 ------------------------------------------------------------------------------
