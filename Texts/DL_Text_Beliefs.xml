@@ -94,10 +94,10 @@
 			<Text>+{1_Value} from Papal Primary</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1 [ICON_Envoy] 使者。战斗单位处于信奉该宗教的外国城市境内时+3 [ICON_Strength] 战斗力。</Text>
+			<Text>将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。战斗单位处于信奉该宗教的外国城市境内时+3 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION" Language="en_US">
-			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion. </Text>
+			<Text>When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Combat units gain +3 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion. </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION" Language="zh_Hans_CN">
       		<Text>信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。</Text>
@@ -156,10 +156,10 @@
 			<Text>[ICON_GreatWork_Relic] Relics have triple yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism. Shrines and Temples provide [ICON_Tourism] Tourism equal to their intrinsic [ICON_Faith] Faith output.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。寺庙提供一条免费的商路容量。</Text>
+			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="en_US">
-			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. Temple provides a trade route capacity.</Text>
+			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_ART_NAME" Language="zh_Hans_CN">
 			<Text>宗教艺术</Text>

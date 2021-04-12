@@ -2,6 +2,7 @@
 -- Import base file
 -- =================================================================================
 local files = {
+    "UnitPanel_ProjectHumankind.lua",
     "UnitPanel_Expansion2.lua",
     "UnitPanel_Expansion1.lua",
     "UnitPanel.lua",

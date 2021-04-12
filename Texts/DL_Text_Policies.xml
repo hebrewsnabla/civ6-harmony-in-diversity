@@ -20,6 +20,12 @@
       <Text>Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district </Text>
     </Replace>
     <!-- Governments-->
+    <Replace Tag="LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA" Language="zh_Hans_CN">
+      <Text>城市中每有一座市政广场建筑、外交区建筑和宫殿，所有产出便+2。</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA" Language="en_US">
+      <Text>+2 to all yields for each Government Plaza building, Diplomatic Quarter building, and palace in a city.</Text>
+    </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="zh_Hans_CN">
       <Text>拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20% [ICON_PRODUCTION] 生产力。 </Text>
     </Replace>
@@ -38,17 +44,48 @@
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2" Language="en_US">
       <Text>+15% [ICON_Science] Science.</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2" Language="zh_Hans_CN">
+      <Text>国内贸易路线提供的 [ICON_Production] 生产力+4、[ICON_Food] 食物+4。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2" Language="en_US">
+      <Text>+4 [ICON_Production] Production and +4 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2" Language="zh_Hans_CN">
       <Text>您通往盟友或宗主国城市的 [ICON_TradeRoute] 贸易路线为双边城市+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.25点。城市可使用 [ICON_Gold] 金币购买区域。</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2" Language="en_US">
       <Text>Your [ICON_TradeRoute] Trade Routes to an Ally or Suzerain's city provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold.</Text>
     </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="zh_Hans_CN">
+      <Text>建造区域时+15%生产力。购买一个单元格的费用降低20%。使用 [ICON_Gold] 金币购买时费用-15%。</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="en_US">
+      <Text>+15% Production toward Districts. Reduces the cost of purchasing a tile by 20%. 15% Discount on Purchases with [ICON_Gold] Gold.</Text>
+    </Replace>
+    <!-- <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="zh_Hans_CN">
+      <Text>使用 [ICON_Gold] 金币购买时费用-15%。可使用 [ICON_Gold] 金币购买区域</Text>
+    </Replace>
+    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
+      <Text>15% Discount on Purchases with [ICON_Gold] Gold. May Purchase Districts with [ICON_Gold] Gold.</Text>
+    </Replace> -->
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="zh_Hans_CN">
       <Text>使用 [ICON_Gold] 金币购买时费用-25%。</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
       <Text>25% Discount on Purchases with [ICON_Gold] Gold.</Text>
+    </Replace>
+    <!-- Great Person -->
+    <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_NAVIGATION_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_GreatAdmiral] Great Admiral points per turn. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场，每回合的 [ICON_GreatMerchant] 大商人点数便+4。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_GreatMerchant] Great Merchant points per turn. +4 [ICON_GreatMerchant] Great Merchant points per turn for every Market.</Text>
     </Replace>
     <!-- boost for units -->
     <Replace Tag="LOC_POLICY_SERFDOM_DESCRIPTION" Language="zh_Hans_CN">
@@ -83,6 +120,12 @@
       <Text>+4 [ICON_Housing] Housing in all cities with at least 3 specialty districts.</Text>
     </Replace>
     <!-- diplomatic cards -->
+    <Replace Tag="LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>无论是否拥有外交区，您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION" Language="en_US">
+      <Text>Regardless having Diplomatic Quarter or not, the first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys.</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_PRAETORIUM_DESCRIPTION" Language="zh_Hans_CN">
       <Text>[ICON_Governor] 总督为其所在城市每回合忠诚度+5。</Text>
     </Replace>
@@ -102,6 +145,24 @@
       <Text>Open Borders with all city-states, and +9 Influence points per turn toward earning [ICON_Envoy] Envoys.</Text>
     </Replace>
     <!-- new cards -->
+    <Replace Tag="LOC_POLICY_FREELANCERS_NAME" Language="zh_Hans_CN">
+      <Text>自由佣兵</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_FREELANCERS_NAME" Language="en_US">
+      <Text>Freelancers</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME" Language="zh_Hans_CN">
+      <Text>海上设施</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME" Language="en_US">
+      <Text>Maritime Infrastructure</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SEABORNE_SUPPLY_NAME" Language="zh_Hans_CN">
+      <Text>海上补给线</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SEABORNE_SUPPLY_NAME" Language="en_US">
+      <Text>Seaborne Supply</Text>
+    </Replace>
     <Replace Tag="LOC_POLICY_GARRISON_RECLAMATION_NAME" Language="zh_Hans_CN">
       <Text>屯田</Text>
     </Replace>
@@ -142,41 +203,125 @@
       <!-- <Text>Civilize</Text> -->
       <Text>One More Science</Text>
     </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_NAME" Language="zh_Hans_CN">
+      <Text>本土贸易</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_NAME" Language="en_US">
+      <Text>Domestic Trade</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_NAME" Language="zh_Hans_CN">
+      <Text>官道</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_NAME" Language="en_US">
+      <Text>Highway</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_NAME" Language="zh_Hans_CN">
+      <Text>丝绸之路</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_NAME" Language="en_US">
+      <Text>Silk Road</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_NAME" Language="zh_Hans_CN">
+      <Text>仓库</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_NAME" Language="en_US">
+      <Text>Warehouse</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_NAME" Language="zh_Hans_CN">
+      <Text>保险柜</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_NAME" Language="en_US">
+      <Text>Safety Box</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_FREELANCERS_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>拥有驻军单位的城市+5 [ICON_Gold] 金币。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_FREELANCERS_DESCRIPTION' Language="en_US">
+      <Text> +5 [ICON_Gold] Gold for cities with a garrisoned unit.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>位于海边或湖边的城市+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION' Language="en_US">
+      <Text>+2 [ICON_Production] Production to all cities adjacent to coasts or lakes.</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>位于海边或湖边的城市+4 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag='LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION' Language="en_US">
+      <Text>+4 [ICON_Production] Production to all cities adjacent to coasts or lakes.</Text>
+    </Replace>
     <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有拥有军营的城市+4 [ICON_Food] 食物，+2 [ICON_Housing] 住房。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION' Language="en_US">
-       <Text> +4 [ICON_FOOD] Food and +2 [ICON_Housing] in all cities having Encampments.</Text>
+      <Text> +4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_Food] 食物。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_FOOD] Food in all cities.</Text>
+      <Text> +1 [ICON_Food] Food in all cities.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_OVERALL_PLANNING_DESCRIPTION' Language="zh_Hans_CN">
       <Text>来自工业区、水上乐园和娱乐设施的区域效果范围增加3个单元格。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_OVERALL_PLANNING_DESCRIPTION' Language="en_US">
-       <Text>Regional effects from your Industrial Zone, Water Park, and Entertainment Complex districts reach 3 tiles farther.</Text>
+      <Text>Regional effects from your Industrial Zone, Water Park, and Entertainment Complex districts reach 3 tiles farther.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_CULTURE] 文化。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_BARD_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_CULTURE] Culture in all cities.</Text>
+      <Text> +1 [ICON_CULTURE] Culture in all cities.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+1 [ICON_SCIENCE] 科技。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_CIVILIZE_DESCRIPTION' Language="en_US">
-       <Text> +1 [ICON_SCIENCE] Science in all cities.</Text>
+      <Text> +1 [ICON_SCIENCE] Science in all cities.</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="zh_Hans_CN">
       <Text>所有城市+2 [ICON_Gold] 金币。</Text>
     </Replace>
     <Replace Tag='LOC_POLICY_CARAVANSARIES_DESCRIPTION' Language="en_US">
-       <Text> +2 [ICON_Gold] Gold in all cities.</Text>
+      <Text> +2 [ICON_Gold] Gold in all cities.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国内 [ICON_TradeRoute] 贸易路线+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION" Language="en_US">
+      <Text>+1 [ICON_Food] Food and +1 [ICON_Production] Production from all domestic [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国内 [ICON_TradeRoute] 贸易路线+2 [ICON_Food] 食物和+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_HIGHWAY_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Food] Food and +2 [ICON_Production] Production from all domestic [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>所有国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Culture] 文化值和+2 [ICON_Science] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SILK_ROAD_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Culture] Culture and +2 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARKET_ECONOMY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>目的地已开发的每个奢侈品资源和战略资源为您的国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Gold] 金币，同时+3 [ICON_Culture] 文化值和+3 [ICON_Science] 科技值。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_MARKET_ECONOMY_DESCRIPTION" Language="en_US">
+      <Text>Your international [ICON_TradeRoute] Trade Routes provide +1 [ICON_Gold] Gold per Luxury and Strategic resource improved at the destination, as well as +3 [ICON_Culture] Culture and +3 [ICON_Science] Science.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>商业区+2 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_WAREHOUSE_DESCRIPTION" Language="en_US">
+      <Text>+2 [ICON_Production] Production for Commercial Hubs.</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>商业区+4 [ICON_Production] 生产力。</Text>
+    </Replace>
+    <Replace Tag="LOC_POLICY_SAFETY_BOX_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_Production] Production for Commercial Hubs.</Text>
     </Replace>
     <!-- New Cards' Histories -->
     <!-- POLICY_MINARET -->
@@ -423,19 +568,6 @@
     <Replace Tag="LOC_POLICY_RESOURCE_MANAGEMENT_DL_DESCRIPTION" Language="en_US">
       <Text>All improved [ICON_RESOURCE_ALUMINUM] Aluminum and [ICON_RESOURCE_OIL] Oil resources yield 2 additional resource per turn.</Text>
     </Replace>
-    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="zh_Hans_CN">
-      <Text>建造区域时+15%生产力。购买一个单元格的费用降低20%。</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1" Language="en_US">
-      <Text>+15% Production toward Districts. Reduces the cost of purchasing a tile by 20%.</Text>
-    </Replace>
-    <!-- <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="zh_Hans_CN">
-      <Text>使用 [ICON_Gold] 金币购买时费用-15%。可使用 [ICON_Gold] 金币购买区域</Text>
-    </Replace>
-    <Replace Tag="LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1" Language="en_US">
-      <Text>15% Discount on Purchases with [ICON_Gold] Gold. May Purchase Districts with [ICON_Gold] Gold.</Text>
-    </Replace> -->
-    <!--  -->
     <!-- TODO use + building speed instead of +XX% production -->
     <Replace Tag="LOC_POLICY_PRESS_GANGS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>为工业及更早时代的海军单位增加60%生产速度。</Text>

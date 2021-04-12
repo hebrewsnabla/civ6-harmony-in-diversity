@@ -4,6 +4,8 @@
 
 -- adjust purchase plot cost
 update GlobalParameters set Value = 40 where Name = 'PLOT_BUY_BASE_COST';
+-- update GlobalParameters set Value = 4 where Name = 'CITY_MAX_BUY_PLOT_RANGE';
+update GlobalParameters set Value = 8 where Name = 'PLOT_INFLUENCE_MAX_ACQUIRE_DISTANCE';
 
 -- adjust the population food consumption.
 update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_POPULATION';
@@ -13,6 +15,10 @@ update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAI
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL_WONDER';
+
+-- Trade Route duration: minimal > 12 (was 20), do not increase based on Era.
+update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
+update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
 -- ranged unit cause 75% damage to walls instead of 50% (but -17 strength still remains)
 update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
@@ -47,9 +53,11 @@ update GlobalParameters set Value = 18 where Name = 'CITY_GROWTH_THRESHOLD';
 update GlobalParameters set Value = 10 where Name = 'CITY_GROWTH_MULTIPLIER';
 update GlobalParameters set Value = 1.6 where Name = 'CITY_GROWTH_EXPONENT';
 
--- Enable districts/wonders placement on GEOTHERMAL_FISSURE.
+-- Enable districts/wonders placement on GEOTHERMAL_FISSURE and REEF
 insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 
 	('FEATURE_GEOTHERMAL_FISSURE', 1, 1, 1);
+insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDistrictPlacement, ValidForReplacement) values 
+	('FEATURE_REEF', 1, 1, 1);
 
 -- change era minimum turns
 update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';

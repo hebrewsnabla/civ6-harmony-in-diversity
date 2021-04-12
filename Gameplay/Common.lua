@@ -34,6 +34,13 @@ Utils.LeaderHasTrait = function (sLeader, sTrait)
     return false
 end
 
+Utils.PlayerAttachModifierByID = function(playerID, sModifierID)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:AttachModifierByID(sModifierID)
+    end
+end
+
 Utils.ChangeFaithBalance = function(capturerID, amount)
     local player = Players[capturerID]
     if player ~= nil then

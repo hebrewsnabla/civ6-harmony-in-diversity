@@ -13,6 +13,7 @@ update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUI
 
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
 	('IMPROVEMENT_CAMP', 'FEATURE_FOREST', 'TECH_ARCHERY', NULL),
+	('IMPROVEMENT_FISHERY', 'FEATURE_REEF', NULL, NULL),
 	('IMPROVEMENT_CAMP', 'FEATURE_JUNGLE', NULL, 'CIVIC_GUILDS');
 
 insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) values
@@ -34,7 +35,8 @@ delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_Q
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqTech = 'TECH_PLASTICS';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqCivic = 'CIVIC_COLONIALISM';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
-delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
+--delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_PASTURE' and PrereqTech = 'TECH_STIRRUPS';
 
 insert or replace into Improvement_BonusYieldChanges
 	(Id,	ImprovementType,			YieldType,		BonusYieldChange,	PrereqTech,				PrereqCivic)
@@ -48,7 +50,9 @@ values
 	(243,	'IMPROVEMENT_CAMP',			'YIELD_PRODUCTION',	1,				'TECH_CONSTRUCTION',	NULL),
 	(245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
 	(246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
-	(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM');
+	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
+	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING',	NULL),
+	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_MEDIEVAL_FAIRES');
 
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
