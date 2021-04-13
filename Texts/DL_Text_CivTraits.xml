@@ -195,10 +195,10 @@
     </Replace>
     <!-- Brazil -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>雨林单元格为学院、商业中心、圣地和剧院广场区域提供+1相邻加成，并为相邻的单元格提供+1魅力（而非通常的-1。）伐木场为相邻工业区提供+1相邻加成。若相邻工业区，雨林单元格 +1 [ICON_PRODUCTION] 生产力。建造在雨林的伐木场 +2 [ICON_CULTURE] 文化。研究科技“飞行”后，将产出等同于 [ICON_CULTURE] 文化产出的 [ICON_TOURISM] 旅游业绩。所有区域不移除雨林。</Text>
+      <Text>雨林单元格为学院、商业中心、圣地和剧院广场区域提供+1相邻加成，并为相邻的单元格提供+1魅力（而非通常的-1。）伐木场为相邻工业区提供+1相邻加成。若相邻工业区，雨林单元格 +1 [ICON_PRODUCTION] 生产力。建造在雨林的伐木场 +2 [ICON_CULTURE] 文化。研究科技“飞行”后，将产出等同于 [ICON_CULTURE] 文化产出的 [ICON_TOURISM] 旅游业绩。所有区域不移除雨林。若市中心相邻雨林，+1 [Icon_Faith] 信仰值。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION" Language="en_US">
-      <Text>Rainforest tiles provide +1 adjacency bonus for Campus, Commercial Hub, Holy Site, and Theater Square districts, and grant +1 Appeal to adjacent tiles, instead of the usual -1. Lumber Mill provides +1 adjacency bonus for Industrial Zone. Rainforest tiles receive +1 [ICON_PRODUCTION] Production if is adjacent to Industrial Zone tiles. +2 [ICON_CULTURE] for all Rainforest Lumber Mill. After researching Flight, Lumer Mill will provide [ICON_TOURISM] Tourism equal to its [ICON_CULTURE] Culture yields. All districts will not remove Rainforest.</Text>
+      <Text>Rainforest tiles provide +1 adjacency bonus for Campus, Commercial Hub, Holy Site, and Theater Square districts, and grant +1 Appeal to adjacent tiles, instead of the usual -1. Lumber Mill provides +1 adjacency bonus for Industrial Zone. Rainforest tiles receive +1 [ICON_PRODUCTION] Production if is adjacent to Industrial Zone tiles. +2 [ICON_CULTURE] for all Rainforest Lumber Mill. After researching Flight, Lumer Mill will provide [ICON_TOURISM] Tourism equal to its [ICON_CULTURE] Culture yields. All districts will not remove Rainforest. +1 [Icon_Faith] Faith if city is adjacent to Rainforest tiles.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_MAGNANIMOUS_DESCRIPTION" Language="en_US">
       <Text>After recruiting or patronizing a [ICON_GreatPerson] Great Person, 20% of its [ICON_GreatPerson] Great Person point cost is refunded. +1 [Icon_Faith] Faith in all Rainforest Tiles across your country for every two [ICON_GreatPerson] Great Person you have recruited.</Text>
