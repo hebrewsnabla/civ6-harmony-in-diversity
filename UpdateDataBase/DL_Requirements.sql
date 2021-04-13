@@ -746,3 +746,40 @@ insert or replace into RequirementArguments
 	(RequirementId,						Name,				Value)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE','FeatureType',	'FEATURE_JUNGLE');
+
+--TOWER_BRIDGE at war with any Major
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLAYER_IS_AT_WAR_WITH_ANY_MAJOR',				'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLAYER_IS_AT_WAR_WITH_ANY_MAJOR',				'REQUIRES_PLAYER_AT_WAR_WITH_ANY_MAJOR');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType,									Inverse)
+values
+	('REQUIRES_PLAYER_AT_WAR_WITH_ANY_MAJOR',		'REQUIREMENT_PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS',	1);
+
+--ITSUKUSHIMA adjacent to volcano
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_VOLCANO');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_PLOT_ADJACENT_VOLCANO',				'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_VOLCANO',	'FeatureType',		'FEATURE_VOLCANO');
