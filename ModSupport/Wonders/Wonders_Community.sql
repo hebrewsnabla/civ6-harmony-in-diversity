@@ -254,9 +254,9 @@ update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILD
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
 update ModifierArguments set Value = 2 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';
-insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChange)
-values 
-	('BUILDING_ITSUKUSHIMA',	'YIELD_CULTURE',	3);
+insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChange) select
+	'BUILDING_ITSUKUSHIMA',	'YIELD_CULTURE',	3
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ITSUKUSHIMA');
 
 --BUILDING_BURJ_KHALIFA
 --delete from BuildingModifiers where BuildingType = 'BUILDING_BURJ_KHALIFA';
@@ -268,11 +268,15 @@ update ModifierArguments set Value = '15' where ModifierId = 'TOWER_BRIDGE_CITY_
 --BUILDING_BRANDENBURG_GATE
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GATE_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GRANT_GENERAL';
-insert or replace into BuildingModifiers (BuildingType,	ModifierId)
-values
-	('BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS'),
-	('BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS'),
-	('BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GARRISON_LOYALTY');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GARRISON_LOYALTY'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
 
 insert or replace into Modifiers 
 	(ModifierId,									ModifierType,											SubjectRequirementSetId) 
@@ -295,15 +299,19 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and Modi
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_TRADE_ROUTE_YIELD_PER_DEST_LUXURY';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_INCREASED_PLANTATION_FAITH';
 delete from BuildingPrereqs where Building = 'BUILDING_BOROBUDUR' and PrereqBuilding = 'BUILDING_TEMPLE';
-insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding)
-values 
-	('UNIT_MISSIONARY',	'BUILDING_BOROBUDUR'),
-	('UNIT_APOSTLE',	'BUILDING_BOROBUDUR');
+insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
+	'UNIT_MISSIONARY',	'BUILDING_BOROBUDUR'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
+	'UNIT_APOSTLE',	'BUILDING_BOROBUDUR'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
 	
-insert or replace into BuildingModifiers (BuildingType,	ModifierId)
-values
-	('BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH'),
-	('BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
 
 insert or replace into Modifiers 
 	(ModifierId,												ModifierType,								SubjectRequirementSetId) 
