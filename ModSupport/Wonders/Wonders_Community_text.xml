@@ -74,10 +74,10 @@
             <Text>瓷器在欧洲的名字，英文中的porcelain，来自古意大利语中的porcellana（玛瑙贝），因为它与贝壳表面相似。porcelain在一些英语国家也被称为china或fine china，因为它最早出现在从中国进口的产品中。瓷器拥有的特性包括低渗透性和弹性；相当的强度、硬度、韧性、白度、半透明性和共振性；以及高抗化学侵蚀和热冲击性。</Text>
         </Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="en_US">
-			<Text> 1 free Great Writer appears near the city where the wonder was built (if one is available). Provides +5 [ICON_CULTURE] Culture to all your cities that are within 9 tiles.[NEWLINE][NEWLINE] It must be built on flat Grassland, Plains, Tundra or Desert next to a River.</Text>
+			<Text> 1 free Great Writer appears near the city where the wonder was built (if one is available). Provides +5 [ICON_CULTURE] Culture to all your cities that are within 6 tiles.[NEWLINE][NEWLINE] It must be built on flat Grassland, Plains, Tundra or Desert next to a River.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>若能招募大作家，则完成后获得一个免费的大作家。奇观9个单元格以内的所有城市，+5 [ICON_culture] 文化值。[NEWLINE][NEWLINE] 必须建在相邻河边的平坦的草原、平原、冻土或沙漠单元格上。</Text>
+			<Text>若能招募大作家，则完成后获得一个免费的大作家。奇观6个单元格以内的所有城市，+5 [ICON_culture] 文化值。[NEWLINE][NEWLINE] 必须建在相邻河边的平坦的草原、平原、冻土或沙漠单元格上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_QUOTE" Language="zh_Hans_CN">
 			<Text>“好先生, 你可否把这班伶人安顿好? 你听著: 我们可要好好的招待他们, 因他们是历史的书记; 我们宁可死後落得个恶名墓碑, 也别在生前坏了他们的口碑。”[NWELINE]——哈姆雷特第二幕，场景2。</Text>
@@ -269,10 +269,10 @@
 			<Text>波塞冬神庙的遗迹坐落在雅典东南70公里的苏尼翁角上。这个地区是一个可以追溯到青铜时代的圣所，但现在的波塞冬神庙建于公元前5世纪——雅典的黄金时代。波塞冬神庙在风格上与雅典的赫菲斯提安神庙非常相似，人们认为它是由同一位建筑师设计的。波塞冬神庙高于于爱琴海海平面60米，可以肯定，它是一个醒目的地标，无论是出发还是接近的水手都可以从远处看到。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>为10个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
+			<Text>为9个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="en_US">
-			<Text>+2 [ICON_Faith] Faith and +1 [ICON_Amenities] Amenities to this city and all cities within 10 tiles. Must be built along a River.</Text>
+			<Text>+2 [ICON_Faith] Faith and +1 [ICON_Amenities] Amenities to this city and all cities within 9 tiles. Must be built along a River.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_THEATER_COAST_CULTURE" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Culture] 文化值来自相邻的海岸{1_Num : plural 1?单元格; other?单元格;}。</Text>

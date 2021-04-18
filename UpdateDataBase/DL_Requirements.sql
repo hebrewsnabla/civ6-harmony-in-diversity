@@ -55,6 +55,11 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_DISTRICT_IS_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES' from Districts;
 
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+	
 -- Buildings
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;

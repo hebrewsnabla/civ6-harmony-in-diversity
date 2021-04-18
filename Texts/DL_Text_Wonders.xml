@@ -74,10 +74,10 @@
       <Text>+20% [ICON_Culture] Culture in this city. 1 free random Atomic era civic boost.1 free Great Musician appears near the city where the wonder was built.[NEWLINE][NEWLINE] Must be built on flat land adjacent to a Theater Square district.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>为9个单元格内的所有城市提供+5 [ICON_SCIENCE] 科技值和 +1 [ICON_Faith] 信仰值。本城所有的除沙漠泛滥外的沙漠单元格+1 [ICON_SCIENCE] 科技值。 学院从沙漠和沙漠丘陵单元格获得标准相邻加成。[NEWLINE][NEWLINE]必须修建在沙漠或沙漠丘陵之上，同时必须与学院区域（其中须建有大学）相邻。</Text>
+      <Text>为6个单元格内的所有城市提供+5 [ICON_SCIENCE] 科技值和 +1 [ICON_Faith] 信仰值。本城所有的除沙漠泛滥外的沙漠单元格+1 [ICON_SCIENCE] 科技值。 学院从沙漠和沙漠丘陵单元格获得标准相邻加成。[NEWLINE][NEWLINE]必须修建在沙漠或沙漠丘陵之上，同时必须与学院区域（其中须建有大学）相邻。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_SANKORE_DESCRIPTION" Language="en_US">
-      <Text>Provides +5 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith to all your cities that are within 9 tiles.+1 [ICON_SCIENCE] in all Desert tiles(Desert Floodplains excluded) in this city. Campus gain standard adjacency bonus from Desert and Desert Hill Tiles.[NEWLINE][NEWLINE]Must be built on Desert or Desert Hills adjacent to a Campus district with a University. </Text>
+      <Text>Provides +5 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith to all your cities that are within 6 tiles.+1 [ICON_SCIENCE] in all Desert tiles(Desert Floodplains excluded) in this city. Campus gain standard adjacency bonus from Desert and Desert Hill Tiles.[NEWLINE][NEWLINE]Must be built on Desert or Desert Hills adjacent to a Campus district with a University. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_HAGIA_SOPHIA_DESCRIPTION" Language="zh_Hans_CN">
       <Text>传教士和使徒可以额外传播一次宗教。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供10点 [ICON_FAITH] 信仰值（标准速度下）。[NEWLINE][NEWLINE]您必须已经创立了一个宗教，此外，还必须建在靠近圣地的平原上。</Text>
@@ -160,12 +160,12 @@
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY" Language="en_US">
         <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="zh_Hans_CN">
         <Text> 当展示来自不同作家的作品时，主题加成翻倍。 </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_GREAT_LIBRARY" Language="en_US">
         <Text> Theming bonus doubling output when displaying objects of from different writers.</Text>
-    </Replace>
+    </Replace> -->
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE" Language="zh_Hans_CN">
         <Text> 当展示来自相同时代音乐家的作品时，主题加成翻倍。 </Text>
     </Replace>
@@ -178,12 +178,12 @@
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_HERMITAGE" Language="en_US">
         <Text> Theming bonus doubling output when displaying objects of from different artists.</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="zh_Hans_CN">
+    <!-- <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="zh_Hans_CN">
         <Text> 当展示来自相同类型的作品时，主题加成翻倍。 </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_APADANA" Language="en_US">
         <Text> Theming bonus doubling output when displaying objects of same kinds.</Text>
-    </Replace>
+    </Replace> -->
     <Replace Tag="LOC_BUILDING_THEMINGBONUS_GOV_CULTURE" Language="zh_Hans_CN">
         <Text> 当展示来自相同时代的作品时，主题加成翻倍。 </Text>
     </Replace>

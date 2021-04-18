@@ -229,6 +229,8 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 
 -- Vietnam can build districts in all features and do not remove on forest jungle and marsh
 -- rainforest +2 food forest +2 production marsh +2 science
+-- district itself included
+
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
 delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
@@ -275,6 +277,36 @@ update ModifierArguments set Value = 'YIELD_SCIENCE' where ModifierId = 'TRAIT_M
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_FOREST_BUILDINGS_CULTURE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_JUNGLE_BUILDINGS_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_MARSH_BUILDINGS_PRODUCTION' and Name = 'Amount';
+
+insert or replace into TraitModifiers 
+	(TraitType,	ModifierId)
+values
+	('TRAIT_CIVILIZATION_VIETNAM','TRAIT_JUNGLE_FOOD'),
+	('TRAIT_CIVILIZATION_VIETNAM','TRAIT_WOODS_PRODUCTION'),
+	('TRAIT_CIVILIZATION_VIETNAM','TRAIT_MARSH_SCIENCE');
+
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,		SubjectRequirementSetId)
+values
+	('TRAIT_JUNGLE_FOOD',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'ZOO_RAINFOREST_REQUIREMENTS'),
+	('TRAIT_WOODS_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_FOREST_REQUIREMENT'),
+	('TRAIT_MARSH_SCIENCE',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'ZOO_MARSH_REQUIREMENTS');
+
+insert or replace into ModifierArguments 	
+	(ModifierId, 					Name, 		Value) 
+values
+	('TRAIT_JUNGLE_FOOD',			'Amount',		2),
+	('TRAIT_JUNGLE_FOOD',			'YieldType',	'YIELD_FOOD'),
+	('TRAIT_WOODS_PRODUCTION',		'Amount',		2),
+	('TRAIT_WOODS_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_MARSH_SCIENCE',			'Amount',		2),
+	('TRAIT_MARSH_SCIENCE',			'YieldType',	'YIELD_SCIENCE');
+
+insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
+	('PLOT_IS_FOREST_REQUIREMENT','PLOT_IS_FOREST_REQUIREMENT');
+insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
+	('PLOT_IS_FOREST_REQUIREMENT','REQUIREMENTSET_TEST_ALL');
+
 --------------------------------------------------------------------------------------------------------------------------
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
@@ -392,13 +424,15 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
+-----------------------------------------------------------------------------------------------------------------
 
 -- Brazil 
 -- lumber mill +1 adjacency bonus to IZ
 -- IZ +1 production to adjacent rainforest
--- +2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
+-- + 2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
 -- districts do not remove rainforest
--- +1 faith in each rainforest tiles after recruit a great person
+-- + 1 faith in each rainforest tiles after recruit a great person
+-- + 1 faith if city is near rainforest999
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,							SubjectRequirementSetId)

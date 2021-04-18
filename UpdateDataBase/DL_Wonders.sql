@@ -104,7 +104,7 @@ update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDI
 --remove all effects and make it more like a larger university
 delete from BuildingModifiers where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and ModifierId !='TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
 
-update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
+update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
 update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and YieldType = 'YIELD_SCIENCE';
 
 insert or replace into BuildingModifiers

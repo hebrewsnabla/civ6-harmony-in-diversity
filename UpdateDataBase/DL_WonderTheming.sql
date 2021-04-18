@@ -8,13 +8,13 @@
 
 --GREAT LIBRARY
 --不同作者
-update Building_GreatWorks set 
-	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType = 1 ,
-	ThemingSameEras = 0 ,
-	ThemingTourismMultiplier = 100 ,
-	ThemingYieldMultiplier = 100
-where BuildingType = 'BUILDING_GREAT_LIBRARY';
+-- update Building_GreatWorks set 
+-- 	ThemingUniquePerson = 1 ,
+-- 	ThemingSameObjectType = 1 ,
+-- 	ThemingSameEras = 0 ,
+-- 	ThemingTourismMultiplier = 100 ,
+-- 	ThemingYieldMultiplier = 100
+-- where BuildingType = 'BUILDING_GREAT_LIBRARY';
 
 --OXFORD_UNIVERSITY
 --不同作者
@@ -28,13 +28,13 @@ where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
 
 --APADANA
 --同类型
-update Building_GreatWorks set 
-	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType = 1 ,
-	ThemingSameEras = 0 ,
-	ThemingTourismMultiplier = 100 ,
-	ThemingYieldMultiplier = 100
-where BuildingType = 'BUILDING_APADANA';
+-- update Building_GreatWorks set 
+-- 	ThemingUniquePerson = 0 ,
+-- 	ThemingSameObjectType = 1 ,
+-- 	ThemingSameEras = 0 ,
+-- 	ThemingTourismMultiplier = 100 ,
+-- 	ThemingYieldMultiplier = 100
+-- where BuildingType = 'BUILDING_APADANA';
 
 --GOV_CULTURE
 --同时代
