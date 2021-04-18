@@ -89,6 +89,17 @@ insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'CITY_HAS_' || Pop || '_POPULATION', 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION' from PopulationMaintenance;
 
+-- Use insert or ignore to support the missing DLC case.
+insert or ignore into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
+
+insert or ignore into RequirementArguments
+	(RequirementId,									Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'FeatureType',		'FEATURE_FOREST');
+
 -- Misc
 
 -- new Terrain class
@@ -119,20 +130,10 @@ values
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',	1),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'REQUIREMENT_CITY_HAS_BUILDING',			1);
 
--- Use insert or ignore to support the missing DLC case.
-insert or ignore into Requirements
-	(RequirementId,									RequirementType)
-values
-	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
-
-insert or ignore into RequirementArguments
-	(RequirementId,									Name,				Value)
-values
-	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'FeatureType',		'FEATURE_FOREST');
-
 insert or replace into Requirements
 	(RequirementId,									RequirementType)
 values
+	('REQUIRES_PLOT_IS_LAKE',						'REQUIREMENT_PLOT_IS_LAKE'),
 	('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_CITY_HAS_1_DESERT',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
 	('REQUIRES_CITY_HAS_1_TUNDRA',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
@@ -185,38 +186,22 @@ values
 -- 	('REQUIRES_CITY_HAS_IMPROVED_SILVER',			'ResourceType',	'RESOURCE_SILVER'),
 -- 	('REQUIRES_CITY_HAS_IMPROVED_GOLD',				'ResourceType',	'RESOURCE_GOLD');
 
--- insert or replace into Requirements
--- 	(RequirementId,																RequirementType)
--- values
--- 	('REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',		'REQUIREMENT_CITY_HAS_SPECIFIC_GOVERNOR_PROMOTION_TYPE');
-
--- insert or replace into RequirementArguments
--- 	(RequirementId,															Name,						Value)
--- values
--- 	('REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'GovernorPromotionType',	'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST');
-
--- wonder
-insert or replace into RequirementSets(RequirementSetId, RequirementSetType)
-values('CITY_HAS_COLOSSUS',			'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements(RequirementSetId,	RequirementId)
-values('CITY_HAS_COLOSSUS',			'REQUIRES_CITY_HAS_BUILDING_COLOSSUS');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,									RequirementId)
-values
-	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIRES_CITY_HAS_COMMERCIAL_HUB'),
-	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIRES_CITY_HAS_THEATER_DISTRICT');
-insert or replace into RequirementSets(RequirementSetId, RequirementSetType)
-values('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIREMENTSET_TEST_ALL');	
 insert or replace into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
+	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL'),
+	('CITY_HAS_COLOSSUS',											'REQUIREMENTSET_TEST_ALL'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIREMENTSET_TEST_ALL'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
+	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIRES_PLOT_IS_LAKE'),
+	('CITY_HAS_COLOSSUS',											'REQUIRES_CITY_HAS_BUILDING_COLOSSUS'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIRES_CITY_HAS_COMMERCIAL_HUB'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIRES_CITY_HAS_THEATER_DISTRICT'),
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIRES_CITY_HAS_BUILDING_DUMMY_MAGNUS');
 

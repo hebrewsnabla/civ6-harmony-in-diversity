@@ -31,26 +31,75 @@
   <Dependencies>
     <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
     <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
-    <Mod id="E3F53C61-371C-440B-96CE-077D318B36C0" title="DLC: Australia Civilization Pack" />
-    <Mod id="02A8BDDE-67EA-4D38-9540-26E685E3156E" title="DLC: Aztec Civilization Pack" />
+    <!-- <Mod id="E3F53C61-371C-440B-96CE-077D318B36C0" title="DLC: Australia Civilization Pack" /> -->
+    <!-- <Mod id="02A8BDDE-67EA-4D38-9540-26E685E3156E" title="DLC: Aztec Civilization Pack" /> -->
     <Mod id="1F367231-A040-4793-BDBB-088816853683" title="DLC: Khmer and Indonesia Civilization Pack" />
-    <Mod id="643EA320-8E1A-4CF1-A01C-00D88DDD131A" title="DLC: Nubia Civilization Pack" />
+    <!-- <Mod id="643EA320-8E1A-4CF1-A01C-00D88DDD131A" title="DLC: Nubia Civilization Pack" /> -->
     <Mod id="E2749E9A-8056-45CD-901B-C368C8E83DEB" title="DLC: Persia and Macedon Civilization Pack" />
     <Mod id="3809975F-263F-40A2-A747-8BFB171D821A" title="DLC: Poland Civilization Pack" />
     <Mod id="2F6E858A-28EF-46B3-BEAC-B985E52E9BC1" title="DLC: Vikings Content" />
-    <Mod id="8424840C-92EF-4426-A9B4-B4E0CB818049" title="DLC: Babylon Civilization Pack" />
+    <!-- <Mod id="8424840C-92EF-4426-A9B4-B4E0CB818049" title="DLC: Babylon Civilization Pack" /> -->
     <Mod id="A1100FC4-70F2-4129-AC27-2A65A685ED08" title="DLC: Byzantium Gaul Pack" />
     <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="DLC: Ethiopia Pack" />
     <Mod id="9DE86512-DE1A-400D-8C0A-AB46EBBF76B9" title="DLC: GranColombia Maya Pack" />
     <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="DLC: Vietnam and Kublai Khan Pack" />
-    <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" />
+    <!-- <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" /> -->
   </Dependencies>
   <ActionCriteria>
     <Criteria id="Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
     <!-- DLCs -->
+    <Criteria id="DLC_Australia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>E3F53C61-371C-440B-96CE-077D318B36C0</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Aztec">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>02A8BDDE-67EA-4D38-9540-26E685E3156E</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Khmer">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1F367231-A040-4793-BDBB-088816853683</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Nubia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>643EA320-8E1A-4CF1-A01C-00D88DDD131A</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Persia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>E2749E9A-8056-45CD-901B-C368C8E83DEB</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Poland">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>3809975F-263F-40A2-A747-8BFB171D821A</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Vikings">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>2F6E858A-28EF-46B3-BEAC-B985E52E9BC1</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Babylon">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>8424840C-92EF-4426-A9B4-B4E0CB818049</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Byzantium">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>A1100FC4-70F2-4129-AC27-2A65A685ED08</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Ethiopia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_GranColombia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>9DE86512-DE1A-400D-8C0A-AB46EBBF76B9</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Vietnam">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
+    </Criteria>
     <Criteria id="DLC_Portugal">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
     </Criteria>
     <!-- Mods -->
@@ -373,10 +422,6 @@
       <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     </UpdateText>
     <!-- Map generation -->
-    <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
-      <Properties><LoadOrder>16005</LoadOrder></Properties>
-      <File>DLCSupport/DL_Portugal.sql</File>
-    </UpdateDatabase>
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/Utility/AssignStartingPlots.lua</File>
@@ -394,11 +439,60 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
-    <!-- Main -->
+    <!-- DLC Support -->
+    <UpdateDatabase id="DL_Australia" criteria="DLC_Australia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Australia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Aztec" criteria="DLC_Aztec">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Aztec.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Khmer" criteria="DLC_Khmer">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Khmer.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Nubia" criteria="DLC_Nubia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Nubia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Persia" criteria="DLC_Persia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Persia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Poland" criteria="DLC_Poland">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Poland.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Vikings" criteria="DLC_Vikings">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Vikings.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Babylon" criteria="DLC_Babylon">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Babylon.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Byzantium" criteria="DLC_Byzantium">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Byzantium.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Ethiopia" criteria="DLC_Ethiopia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Ethiopia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_GranColombia" criteria="DLC_GranColombia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_GranColombia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Vietnam" criteria="DLC_Vietnam">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Vietnam.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
+    <!-- Main -->
     <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
       <Properties><LoadOrder>16008</LoadOrder></Properties>
       <!-- Double Great Person need to update in the first -->
@@ -655,6 +749,18 @@
     <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
     <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     <!-- DLC Support -->
+    <File>DLCSupport/DL_Australia.sql</File>
+    <File>DLCSupport/DL_Aztec.sql</File>
+    <File>DLCSupport/DL_Khmer.sql</File>
+    <File>DLCSupport/DL_Nubia.sql</File>
+    <File>DLCSupport/DL_Persia.sql</File>
+    <File>DLCSupport/DL_Poland.sql</File>
+    <File>DLCSupport/DL_Vikings.sql</File>
+    <File>DLCSupport/DL_Babylon.sql</File>
+    <File>DLCSupport/DL_Byzantium.sql</File>
+    <File>DLCSupport/DL_Ethiopia.sql</File>
+    <File>DLCSupport/DL_GranColombia.sql</File>
+    <File>DLCSupport/DL_Vietnam.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/DL_Adjacency.sql</File>

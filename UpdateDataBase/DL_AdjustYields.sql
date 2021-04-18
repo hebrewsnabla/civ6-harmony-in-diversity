@@ -7,7 +7,7 @@ insert or replace into GameModifiers (ModifierId) values ('LAKE_ADD_FOOD');
 insert or replace into Modifiers
 	(ModifierId,		ModifierType,						SubjectRequirementSetId)
 values
-	('LAKE_ADD_FOOD',	'MODIFIER_GAME_ADJUST_PLOT_YIELD',	'FOODHUEY_PLOT_IS_LAKE_REQUIREMENTS');
+	('LAKE_ADD_FOOD',	'MODIFIER_GAME_ADJUST_PLOT_YIELD',	'DL_PLOT_IS_LAKE_REQUIREMENTS');
 
 insert or replace into ModifierArguments
 	(ModifierId,		Name,			Value)
