@@ -505,6 +505,36 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and (
  or ModifierId = 'CONSULATE_TIER1'
  or ModifierId = 'CHANCERY_TIER2');
 
+insert or replace into PolicyModifiers
+	(PolicyType,	ModifierId)
+values
+	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_GOV'),
+	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_DIP');
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,	ModifierId)
+values
+	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_GOV'),
+	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_DIP');
+	
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+values
+	('AUTOCRACY_GOV','MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE','CITY_HAS_GOV_DISTRICT'),
+	('AUTOCRACY_DIP','MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE','CITY_HAS_DIP_DISTRICT');
+
+insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
+	('CITY_HAS_DIP_DISTRICT',	'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
+	('CITY_HAS_DIP_DISTRICT',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into ModifierArguments
+	(ModifierId, 			Name, 		Value)
+values
+	('AUTOCRACY_GOV',		'Amount',	2),
+	('AUTOCRACY_DIP',		'Amount',	2);
+
+
 --By 利牙菠萝 君主制及传承效果调整
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_CASTLE_HOUSING';
@@ -620,7 +650,7 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RAIDER_PRODUCTION');
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
-update ModifierArguments set Value = 3 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
+update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
 
 --集体主义合成砖家可用。
 insert or replace into Policy_GovernmentExclusives_XP2

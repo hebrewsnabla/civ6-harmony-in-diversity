@@ -197,7 +197,7 @@ update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWO
 update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_3';
 ------------------------------------------------------------------------------------------------------------
 -----BUILDING_NOTRE_DAME------------------------------------------------------------------------------------
-update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_NOTRE_DAME';
+update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
@@ -208,7 +208,7 @@ update Building_GreatWorks set
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 9, Entertainment = 0
+UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0
 WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
 
 update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_GLOBE_THEATRE';
