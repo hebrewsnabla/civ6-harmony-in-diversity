@@ -104,10 +104,10 @@
       <Text>A district unique to Greece for cultural sites. Replaces the Theater Square district and cheaper to build. Awards 1 [ICON_Envoy] Envoy when completed.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture bonus for each adjacent district and an additional +2[ICON_Culture] Culture bonus for adjacent City Center. +2 [ICON_Culture] Culture bonus for each adjacent wonder, Entertainment Complex, and Water Park. Can only be built on Hills. +1 Appeal to adjacent tiles. </Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_PRESERVE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>可基于魅力最高提供3点 [ICON_Housing] 住房。对相邻的中立单元格施放文化炸弹，使相邻单元格+2魅力。</Text>
+      <Text>可基于魅力最高提供3点 [ICON_Housing] 住房。对相邻的中立单元格施放文化炸弹，使相邻单元格+1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_PRESERVE_DESCRIPTION" Language="en_US">
-      <Text>Grants up to 3 [ICON_Housing] Housing based on Appeal. Culture bombs adjacent neutral tiles, and increases their Appeal by 2.</Text>
+      <Text>Grants up to 3 [ICON_Housing] Housing based on Appeal. Culture bombs adjacent neutral tiles, and increases their Appeal by 1.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_WATER_STREET_CARNIVAL_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>巴西特色区域，代替水上乐园，+4 [ICON_Amenities] 宜居度。可解锁“狂欢节”项目，项目启动后即可额外+1 [ICON_Amenities] 宜居度，项目完成后可获得若干 [ICON_GreatPerson] 伟人点数。无法建在拥有“街头狂欢节”的城市中。无法建在礁石上。</Text>

@@ -93,5 +93,5 @@ updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 
 -- The New Global Parameters.
 insert or replace into GlobalParameters (Name, Value) values
-    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 9),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

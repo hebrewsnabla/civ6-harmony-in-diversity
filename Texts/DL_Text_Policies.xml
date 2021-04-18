@@ -24,7 +24,7 @@
       <Text>城市中每有一座市政广场区域及建筑、外交区和其内建筑和宫殿，所有产出便+2。</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA" Language="en_US">
-      <Text>+2 to all yields for each Government Plaza and its buil, Diplomatic Quarter and its building and palace in a city.</Text>
+      <Text>+2 to all yields for each Government Plaza and its building, Diplomatic Quarter and its building and palace in a city.</Text>
     </Replace>
     <Replace Tag="LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1" Language="zh_Hans_CN">
       <Text>拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20% [ICON_PRODUCTION] 生产力。 </Text>
