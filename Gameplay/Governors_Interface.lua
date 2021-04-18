@@ -26,10 +26,9 @@ local m_GovernorMerchantHash = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Hash
 local m_GovernorPromotion_MultinationalCorpID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Index
 local m_GovernorPromotion_MultinationalCorpHash = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Hash
 
-local m_DummyMagnus = GameInfo.Buildings["BUILDING_DUMMY_MAGNUS"].Index
-local m_DummyNoMagnus = GameInfo.Buildings["BUILDING_DUMMY_NO_MAGNUS"].Index
--- TODO: change to global parameters in the dataset.
-local m_EffectDistance = 9
+local m_DummyMagnus = GameInfo.Buildings['BUILDING_DUMMY_MAGNUS'].Index
+local m_DummyNoMagnus = GameInfo.Buildings['BUILDING_DUMMY_NO_MAGNUS'].Index
+local m_EffectDistance = tonumber(GameInfo.GlobalParameters['MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE'].Value)
 
 function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
     local player = Players[ePlayer]

@@ -89,3 +89,9 @@ update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackFo
 
 --allow to level 2 for beating barb
 updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
+
+
+-- The New Global Parameters.
+insert or replace into GlobalParameters (Name, Value) values
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 9),
+    ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);
