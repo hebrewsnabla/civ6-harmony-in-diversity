@@ -103,6 +103,8 @@ update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where
 -- 	DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER';
 
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE';
+
 -- Housing
 -- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
 -- update Districts set Housing = Housing + 1
