@@ -174,10 +174,10 @@
 			<Text>Holy Site district’s [ICON_Faith] Faith adjacency bonus provides [ICON_Culture] Culture as well. May purchase Theater district buildings with [ICON_Faith] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，圣地、神社以及寺庙均可给相邻的单元格 +1 [ICON_Production] 生产力。</Text>
+			<Text>信奉该宗教的城市，圣地和神社给相邻的单元格+1 [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="en_US">
-			<Text>Holy Site,Shrine and Temple provides +1 [ICON_Production] Production to all adjacent tiles in cities that follow this Religion. </Text>
+			<Text>Holy Site District and Shrine in cities that follow this Religion provides +1 [ICON_Production] Production to all adjacent tiles.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BELIEF_CASTE_SYSTEM_NAME" Language="zh_Hans_CN">
 			<Text>种姓制度</Text>
