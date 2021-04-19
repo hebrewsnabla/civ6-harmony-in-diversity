@@ -3,6 +3,13 @@
 -------------------------------------
 
 
+insert or replace into Improvement_Adjacencies
+    (ImprovementType,               YieldChangeId)
+values
+    ('IMPROVEMENT_MINE',            'Mine_Oppidum_Production'),
+    ('IMPROVEMENT_QUARRY',          'Quarry_Oppidum_Production'),
+    ('IMPROVEMENT_CAMP',            'Camp_Hippodrome_Gold');
+
 insert or replace into District_Adjacencies
     (DistrictType,                  YieldChangeId)
 values

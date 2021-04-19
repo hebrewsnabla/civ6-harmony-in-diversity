@@ -61,19 +61,6 @@ values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Origin',		1),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Amount',		1);
 
--- Maya
-update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS'
-	where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_YIELDS';
-update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_CAPITAL_REQUIREMENTS'
-	where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_LOSE_YIELDS';
-
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
-insert or replace into Modifiers (ModifierId, ModifierType) values
-	('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
-insert or replace into ModifierArguments (ModifierId, Name, Value) values
-	('MAYAB_EXTRA_HOUSING', 'Amount', 1);
-
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAJANS_COLUMN_TRAIT', 'TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION');
@@ -161,63 +148,6 @@ delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_AD
 
 -- Hungary
 update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
------------------------------------------------------------------------------------------------------------------------
---Persia
---波斯LA从占领城市驻军+5忠诚变成全部城市驻军+5忠诚
---长生军变成28远程，33近战 (在DL_Units里面修改)
---波斯庭院相邻港口+1金，相邻市中心除了1金外额外+1粮
---波斯UA内商+1琴改为+2琴
---波斯、马其顿、罗马、刚果、日本、格鲁吉亚、挪威增加铁关联（4级关联，在DL_StartBias里面修改）
---城市中建造的首座波斯庭院改良设施可以提供+1点宜居度
-insert or replace into Improvement_YieldChanges
-	(ImprovementType,							YieldType,			YieldChange)
-values
-	('IMPROVEMENT_PAIRIDAEZA',					'YIELD_FOOD',		0);
-
-insert or replace into Improvement_Adjacencies 
-	(ImprovementType,							YieldChangeId)
-values
-	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_CityCenterAdjacency_Food'),
-	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_HarborAdjacency');
-
-insert or replace into Adjacency_YieldChanges
-	(ID,										Description,		YieldType,		YieldChange,	AdjacentDistrict)
-values
-	('Pairidaeza_CityCenterAdjacency_Food',		'Placeholder',		'YIELD_FOOD',	1,				'DISTRICT_CITY_CENTER'),
-	('Pairidaeza_HarborAdjacency',				'Placeholder',		'YIELD_GOLD',	1,				'DISTRICT_HARBOR');
-
-insert or replace into ImprovementModifiers
-	(ImprovementType,                           ModifierId)
-values
-    ('IMPROVEMENT_PAIRIDAEZA',                  'PAIRIDAEZA_AMENITY_MAX_ONE');
-
-insert into Modifiers
-		(ModifierId,                                    ModifierType,                                           SubjectStackLimit)
-values
-	    ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',       1);
-
-insert into ModifierArguments
-    	(ModifierId,                                     Name,                Value)
-values
-        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);
-
-insert or replace into ModifierArguments 
-	(ModifierId, 								Name,				Value) 
-values
-	('TRAIT_SATRAPIES_INTERNAL_TRADE_CULTURE',	'Amount',			2);
-
-INSERT OR REPLACE INTO TraitModifiers (TraitType, ModifierId) VALUES 
-('TRAIT_CIVILIZATION_SATRAPIES', 'PERSIA_GOVERNOR_POINTS');
-
-INSERT OR REPLACE INTO Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) VALUES 
-('PERSIA_GOVERNOR_POINTS', 'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS', 'PLAYER_HAS_POLITICAL_PHILOSOPHY');
-
-INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES 
-('PERSIA_GOVERNOR_POINTS', 'Delta', '1');
-
-
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
-update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 
 -------------------------------------------------------------------------------------------------------------------------------
 --Mapuche

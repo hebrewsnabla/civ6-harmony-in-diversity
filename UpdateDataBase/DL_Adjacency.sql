@@ -55,10 +55,8 @@ insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
 	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
-	('IMPROVEMENT_MINE',			'Mine_Oppidum_Production'),
 	-- ('IMPROVEMENT_MINE',			'Mine_Hansa_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
-	('IMPROVEMENT_QUARRY',			'Quarry_Oppidum_Production'),
 	-- ('IMPROVEMENT_QUARRY',			'Quarry_Hansa_Production'),
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
@@ -66,7 +64,6 @@ values
 	('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
-	('IMPROVEMENT_CAMP',			'Camp_Hippodrome_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
