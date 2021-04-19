@@ -68,9 +68,9 @@ update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
 delete from Quests where QuestType = 'QUEST_SEND_TRADE_ROUTE';
 delete from Quests where QuestType = 'QUEST_CONVERT_CAPITAL_TO_RELIGION';
 
--- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty <> 'DIFFICULTY_EMPEROR';
--- update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';
--- update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_CLASSICAL' and MinDifficulty = 'DIFFICULTY_EMPEROR';
+-- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty != 'DIFFICULTY_EMPEROR';
+update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';
+update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_CLASSICAL' and MinDifficulty = 'DIFFICULTY_EMPEROR';
 
 -- Loyalty pressure
 -- update GlobalParameters set Value = 30 where Name = 'LOYALTY_PER_TURN_FROM_NEARBY_CITIZEN_PRESSURE_MAX_LOYALTY';
@@ -89,3 +89,10 @@ update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackFo
 
 --allow to level 2 for beating barb
 updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
+
+
+-- The New Global Parameters.
+insert or replace into GlobalParameters (Name, Value) values
+    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
+    ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

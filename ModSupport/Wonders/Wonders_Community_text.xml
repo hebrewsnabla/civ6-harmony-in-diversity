@@ -74,10 +74,10 @@
             <Text>瓷器在欧洲的名字，英文中的porcelain，来自古意大利语中的porcellana（玛瑙贝），因为它与贝壳表面相似。porcelain在一些英语国家也被称为china或fine china，因为它最早出现在从中国进口的产品中。瓷器拥有的特性包括低渗透性和弹性；相当的强度、硬度、韧性、白度、半透明性和共振性；以及高抗化学侵蚀和热冲击性。</Text>
         </Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="en_US">
-			<Text> 1 free Great Writer appears near the city where the wonder was built (if one is available). Provides +5 [ICON_CULTURE] Culture to all your cities that are within 9 tiles.[NEWLINE][NEWLINE] It must be built on flat Grassland, Plains, Tundra or Desert next to a River.</Text>
+			<Text> 1 free Great Writer appears near the city where the wonder was built (if one is available). Provides +5 [ICON_CULTURE] Culture to all your cities that are within 6 tiles.[NEWLINE][NEWLINE] It must be built on flat Grassland, Plains, Tundra or Desert next to a River.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>若能招募大作家，则完成后获得一个免费的大作家。奇观9个单元格以内的所有城市，+5 [ICON_culture] 文化值。[NEWLINE][NEWLINE] 必须建在相邻河边的平坦的草原、平原、冻土或沙漠单元格上。</Text>
+			<Text>若能招募大作家，则完成后获得一个免费的大作家。奇观6个单元格以内的所有城市，+5 [ICON_culture] 文化值。[NEWLINE][NEWLINE] 必须建在相邻河边的平坦的草原、平原、冻土或沙漠单元格上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_GLOBE_THEATRE_QUOTE" Language="zh_Hans_CN">
 			<Text>“好先生, 你可否把这班伶人安顿好? 你听著: 我们可要好好的招待他们, 因他们是历史的书记; 我们宁可死後落得个恶名墓碑, 也别在生前坏了他们的口碑。”[NWELINE]——哈姆雷特第二幕，场景2。</Text>
@@ -269,10 +269,133 @@
 			<Text>波塞冬神庙的遗迹坐落在雅典东南70公里的苏尼翁角上。这个地区是一个可以追溯到青铜时代的圣所，但现在的波塞冬神庙建于公元前5世纪——雅典的黄金时代。波塞冬神庙在风格上与雅典的赫菲斯提安神庙非常相似，人们认为它是由同一位建筑师设计的。波塞冬神庙高于于爱琴海海平面60米，可以肯定，它是一个醒目的地标，无论是出发还是接近的水手都可以从远处看到。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>为10个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
+			<Text>为9个单元格以内的所有市中心提供+2 [ICON_Faith] 信仰值和+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在临近河流的单元格中。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_NOTRE_DAME_DESCRIPTION" Language="en_US">
-			<Text>+2 [ICON_Faith] Faith and +1 [ICON_Amenities] Amenities to this city and all cities within 10 tiles. Must be built along a River.</Text>
+			<Text>+2 [ICON_Faith] Faith and +1 [ICON_Amenities] Amenities to this city and all cities within 9 tiles. Must be built along a River.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_THEATER_COAST_CULTURE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Culture] 文化值来自相邻的海岸{1_Num : plural 1?单元格; other?单元格;}。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_THEATER_COAST_CULTURE" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] Culture from the adjacent Coast {1_Num : plural 1?tile; other?tiles;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_HOLY_SITE_COAST_FAITH" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻的海岸{1_Num : plural 1?单元格; other?单元格;}。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_HOLY_SITE_COAST_FAITH" Language="en_US">
+			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Coast {1_Num : plural 1?tile; other?tiles;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_NAME" Language="zh_Hans_CN">
+			<Text>严岛神社</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>圣地从海岸单元格获得大量相邻加成，剧院从海岸单元格获得标准相邻加成。本城所有单元格+1魅力。[NEWLINE][NEWLINE]必须建在相邻圣地的海岸上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_DESCRIPTION" Language="en_US">
+			<Text>Coast and Lake tiles provide major adjacency bonus for Holy Site and standard adjacency bonus for Theater Square. +1 Appeal to all tiles in this city. [NEWLINE][NEWLINE]Must be built on Coast adjacent to a Holy Site District.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_QUOTE" Language="zh_Hans_CN">
+			<Text>"没有任何外在的东西能让你变得更好、更强、更富、更快或更聪明。一切都在体内。一切都存在。不要在自己之外寻求任何东西。" - 宫本武藏</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_ITSUKUSHIMA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>严岛神社是位于严岛（俗称宫岛）的一座神殿，以其 "漂浮 "的鸟居门而闻名。它位于日本广岛县初日市。神社建筑群被联合国教科文组织列为世界文化遗产，日本政府也将一些建筑和财产指定为国宝。严岛神社是日本最受欢迎的旅游景点之一。严岛神社是日本最受欢迎的旅游景点之一，其最著名的是位于神社外围的壮观的大门（鸟居）、神圣的三泉山峰、广阔的森林和美丽的海景。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_ITSUKUSHIMA_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>严岛神社是秋道的主要神社（一宫）。据说，它是在593年由水子时代的仓本伢建立的。但是，现在的神社被普遍认为是1168年担任秋道知事期间为修建神社做出巨大贡献的著名军阀（大名）平清盛所建。另一位著名的赞助人是长州藩主森本成，他在1571年负责重建本殿。但是，值得注意的是，据说由于1555年在那里与苏高房开战，本成在岛上作战，玷污了岛上的场地。这与神道神社所代表的严格的神圣纯洁观念有关。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_ITSUKUSHIMA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>严岛神社供奉的是须佐之男的三个女儿：市岛姬之女、田郡姬之女、田光姬之女。三条神又称 "三条神"，是海洋和风暴的女神。清盛认为这些女神是 "观音的显现"，因此该岛被理解为菩萨的故乡。在日语中，Itsukushima翻译为 "供奉神的岛屿"，其实岛屿本身也被认为是神，所以在岛的外围建有神社。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_ITSUKUSHIMA_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>严岛神社最著名的特征是其50英尺高的朱红色大鸟居门（"大门"），由耐腐朽的樟木建造。在每根主柱的前后各增加一条腿，这表明鸟居反映了与神宫派有关的日本佛教中世纪神秘学派 "两部神道"（Ryōbu Shintō）的风格。只有在涨潮时，鸟居才会漂浮起来。退潮时，只能从岛上步行前往。退潮时，在大门附近采集贝类也很受欢迎。夜晚，岸边的大灯照亮了鸟居。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_NAME" Language="zh_Hans_CN">
+			<Text>伦敦塔桥</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>本大陆城市+15% [ICON_Production] 生产力，外大陆城市+15% [ICON_Production] 金币。陆地单位无需上船便可从桥上跨越。大桥的效果与现代道路相同，并会在桥头两端的陆地单元格中建造现代道路（若未修建）。[NEWLINE][NEWLINE]必须修建在海岸单元格中。大桥必须修建在相隔一个单元格并正对的两个陆地单元格中。大桥左右两侧必须各有至少1个水域单元格。无法建在湖泊中。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_DESCRIPTION" Language="en_US">
+			<Text>+15% [ICON_Production] Production in cities on Capital Continent and +15% [ICON_Gold] Gold in cities not on Capital Continent. Land units can cross without embarking. Works like a modern road and creates roads (if not present) in the land tiles on either ends. [NEWLINE][NEWLINE]It must be built on a Coast tile where it must run straight across the hex between two land tiles directly opposite one another and at least one water tile must be adjacent to each end of the bridge. It cannot be built on a Lake.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_QUOTE" Language="zh_Hans_CN">
+            <Text>"建设的政治家，和成就的战士，只是受权力的本能影响，被爱国之心所感动。那些是感情，那些是形成帝国的方法。" - 本杰明-迪斯雷利</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_TOWER_BRIDGE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+            <Text>塔桥是伦敦的一座组合式基座桥和吊桥，建于1886年至1894年间。该桥横跨泰晤士河，靠近伦敦塔，已成为伦敦的标志性建筑。正因为如此，塔桥有时会与位于上游约0.5英里（0.80公里）的伦敦桥相混淆。塔桥是伦敦五座桥梁之一，现在由伦敦市公司监督的慈善信托机构Bridge House Estates拥有和维护。它是该信托基金的桥梁中唯一没有直接将伦敦市与南华克河岸连接起来的桥梁，因为它的北面登陆点在塔哈姆雷特。</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_TOWER_BRIDGE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+            <Text>该桥由两座桥塔组成，在上层由两条水平走道连接在一起，其设计是为了承受桥塔向陆侧的悬挂部分所施加的水平拉力。悬索段中的垂直分力和两条人行道的垂直反作用力由两座坚固的桥塔承担。基座支点和操作机械分别安装在每座塔的底部。在2010年修复之前，大桥的颜色方案是1977年为女王伊丽莎白二世银禧庆典而涂上的红色、白色和蓝色。后来，它的颜色又恢复为蓝色和白色。</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_TOWER_BRIDGE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+            <Text></Text>
+        </Replace>
+		<Replace Tag="LOC_BUILDING_BRANDENBURG_GATE_NAME" Language="zh_Hans_CN">
+			<Text>勃兰登堡门</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BRANDENBURG_GATE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>当您与任何文明发生战争时，您的城市+15% [ICON_Science] 科技值。当您不与任何文明发生战争时，您的城市+15% [ICON_Production] 生产力。拥有驻军单位的城市每回合的忠诚度+3。[NEWLINE][NEWLINE]要求此城已有军事学院。必须建在相邻市中心的平坦的草原、平原、冻土或沙漠单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BRANDENBURG_GATE_DESCRIPTION" Language="en_US">
+			<Text>Your cities earn +15% [ICON_Science] Science when you are at war with any civilization.Your cities earn +15% [ICON_Production] Production when you are at peace with all civilizations. +3 Loyalty per turn for cities with a garrisoned unit. [NEWLINE][NEWLINE]Requires a Military Academy in the City. Must be built adjacent to a City Center on Flat Grassland, Plains, Desert or Tundra tile.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BRANDENBURG_GATE_QUOTE" Language="zh_Hans_CN">
+            <Text>"苍白的死神同样在穷人的门前和国王的宫殿里跳动。" - 霍勒斯</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BRANDENBURG_GATE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+            <Text>勃兰登堡门是柏林市现存的唯一城门。它是一座美丽的 "凯旋门"，于1788-91年按希腊风格建造，有许多柱子，上面有 "胜利之门"（Quadriga of Victory），一尊由四匹马牵引的战车雕像。它矗立在Unter den Linden大道的尽头。</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BRANDENBURG_GATE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+            <Text>二战后，柏林被分割成由苏联、美国及其盟国控制的部分。苏联人修建了柏林墙，将城市的两个部分分开。勃兰登堡门处于两派之间的某种 "无人区"，从1961-1989年，双方都无法进入。1989年，作为柏林和德国统一的一部分，该门重新开放。</Text>
+        </Replace>
+        <Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BRANDENBURG_GATE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+            <Text>如今，它作为城市和国家统一的骄傲象征，屹立于此，东西方游客数以万计。</Text>
+        </Replace>
+		<Replace Tag="LOC_BUILDING_BOROBUDUR_NAME" Language="zh_Hans_CN">
+			<Text>婆罗浮屠</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BOROBUDUR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>为您帝国内每个相邻火山的单元格+2 [ICON_Faith] 信仰和+2 [ICON_Culture] 文化。建成时获得一个免费的使徒，允许城市购买传教士和使徒。[NEWLINE][NEWLINE]您必须已经创立了一个宗教。必须建在雨林上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BOROBUDUR_DESCRIPTION" Language="en_US">
+			<Text>+2 [ICON_Faith] Faith and +2 [ICON_Culture] Culture for each tile adjacent to volcano in your empire. Grants 1 Apostle when built. Allow cities purchase Missionaries and Apostles. [NEWLINE][NEWLINE]Must have founded a Religion. Must be built on Rainforest.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BOROBUDUR_QUOTE" Language="zh_Hans_CN">
+			<Text>"婆罗浮屠是令人钦佩的雄伟艺术作品。大规模的建筑群在一些地方覆盖着茂盛的植被气候，各部分的美感和精致的执行，整体的对称性和规律性。" - 托马斯-斯坦福-莱佛士爵士</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BOROBUDUR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>婆罗浮屠是一座9世纪的大乘佛教寺庙，位于印度尼西亚中爪哇省的马格朗摄政区，离蒙提兰镇不远。它是世界上最大的佛教寺庙。寺庙由九层平台组成，六层为方形，三层为圆形，顶上有一个中央圆顶。它的装饰有2672块浮雕板和504尊佛像。中央圆顶周围有72尊佛像，每尊佛像都坐在一个有孔的佛塔内。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BOROBUDUR_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>寺庙建于9世纪赛伦德拉王朝统治时期，寺庙设计沿用了爪哇佛教建筑风格，融合了印尼土著的祖先崇拜和佛教的涅槃理念。寺庙展示了古普塔艺术的影响，反映了印度对该地区的影响，但也有足够的土著场景和元素融入其中，使婆罗浮屠具有独特的印尼特色。该纪念碑是主佛的圣地，也是佛教朝圣的地方。朝圣之旅从纪念碑的底部开始，沿着环绕纪念碑的小路，通过象征佛教宇宙论的三个层次登上顶部。Kāmadhātu（欲望的世界），Rupadhatu（形式的世界）和Arupadhatu（无形的世界）。纪念碑引导朝圣者穿过一个广泛的楼梯和走廊系统，墙壁和栏杆上有1460块叙事浮雕。婆罗浮屠是世界上最大、最完整的佛教浮雕组合之一。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BOROBUDUR_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>有证据表明，婆罗浮屠建于9世纪，14世纪爪哇的印度教王国衰落，爪哇人改信伊斯兰教后，婆罗浮屠就被废弃了。1814年，当时爪哇岛的英国统治者托马斯-斯坦福-莱佛士爵士（Thomas Stamford Raffles）从印尼本地人那里得知了婆罗浮屠的位置，从而引发了全世界对它的了解。此后，婆罗浮屠经过多次修复而得以保存。最大规模的修复项目是由印尼政府和联合国教科文组织在1975年至1982年间进行的，随后该古迹被列为联合国教科文组织世界遗产。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BOROBUDUR_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>婆罗浮屠是世界上最大的佛教寺庙，与缅甸的蒲甘和柬埔寨的吴哥窟并列为东南亚最大的考古遗址之一。婆罗浮屠仍然是热门的朝圣之地，印度尼西亚的佛教徒在纪念碑庆祝卫塞节。婆罗浮屠是印度尼西亚游客最多的一个旅游景点。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BAMYAN_NAME" Language="zh_Hans_CN">
+			<Text>巴米扬大佛</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BAMYAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Faith] 信仰，来自国外 [ICON_TradeRoute] 贸易路线为双方城市+1 [ICON_Faith] 信仰。6环内所有的牧场和农田改良+1信仰。建成时获得一个免费的遗物。[NEWLINE][NEWLINE]必须建在靠近山脉的平坦的草原、平原、或沙漠单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BAMYAN_DESCRIPTION" Language="en_US">
+			<Text>International [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith. Foreign [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith to both cities. +1 [ICON_Faith] Faith for all improved Pastures and Farms. Reveice a free [ICON_GreatWork_Relic] relic when built. [NEWLINE][NEWLINE]Must be built adjacent to a Mountain on Flat Grassland, Plains, or Desert tile.</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BAMYAN_QUOTE" Language="zh_Hans_CN">
+			<Text>"王城东北有一座山，山的峭壁上放着一尊石雕佛像，直立着，高140或150英尺。其金色的色泽在四面闪耀，其珍贵的装饰品因其明亮而让人眼花缭乱。" - 玄奘，《西域记》。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BAMYAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>巴米扬大佛是两座6世纪的纪念性佛像，雕刻在阿富汗中部哈扎拉贾特地区巴米扬山谷的悬崖边，位于喀布尔西北230公里（140英里），海拔2 500米（8 200英尺）。这两座雕像分别建于公元507年（较小的）和554年（较大的），代表了犍陀罗艺术的经典混合风格。它们分别高35米和53米（115英尺和174英尺）。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BAMYAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>主体是直接从砂岩悬崖上凿出来的，但细节则是用泥巴与稻草混合，涂上灰泥做模型。这层涂料几乎都在很久之前就被磨掉了，为了加强脸部、手部和袍子的表情，涂上了油漆；大的涂上了胭脂红，小的涂上了多种颜色。雕像手臂的下半部分是用同样的泥草混合制成，支撑在木制的臂架上。脸部的上半部分据说是用大木头面具或石膏制成的。在照片中可以看到的一排孔洞里有木钉，用来稳定外面的灰泥。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_WONDERS_PAGE_BUILDING_BAMYAN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在塔利班政府宣布这些雕像是偶像之后，塔利班根据领导人穆罕默德-奥马尔毛拉的命令，于2001年3月炸毁了这些雕像。随后几周访问美国的一位特使说，摧毁这些神像是为了抗议国际社会在阿富汗遭受饥荒时专门为维护神像提供的援助，而阿富汗外交部长则声称，摧毁这些神像只是为了进行伊斯兰宗教偶像崇拜。</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>

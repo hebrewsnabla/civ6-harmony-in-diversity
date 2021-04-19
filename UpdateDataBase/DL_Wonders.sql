@@ -2,6 +2,12 @@
 --       Wonders Adjustments       --
 -------------------------------------
 
+delete from BuildingModifiers where
+	ModifierId == 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
+	ModifierId == 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
+	ModifierId == 'POTALA_PALACE_DIPLOMATIC_GOVERNMENT_SLOT' or
+	ModifierId == 'FORBIDDEN_CITY_WILDCARD_GOVERNMENT_SLOT';
+
 -- Oracle gives 3 * 2 great person points each.
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATADMIRALPOINTS' and Name = 'Amount';
@@ -104,7 +110,7 @@ update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDI
 --remove all effects and make it more like a larger university
 delete from BuildingModifiers where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and ModifierId !='TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
 
-update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
+update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
 update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and YieldType = 'YIELD_SCIENCE';
 
 insert or replace into BuildingModifiers
@@ -331,10 +337,6 @@ values
 insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
 values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
-
--- BUILDING_TORRE_DE_BELEM
--- Temp remove the effect.
-delete from BuildingModifiers where BuildingType = 'BUILDING_TORRE_DE_BELEM' and ModifierId = 'TORREDEBELEM_CHEAPEST_BUILDING';
 
 -- Adjust the Cost.
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';

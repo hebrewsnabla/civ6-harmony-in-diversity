@@ -174,10 +174,10 @@
 			<Text>Holy Site district’s [ICON_Faith] Faith adjacency bonus provides [ICON_Culture] Culture as well. May purchase Theater district buildings with [ICON_Faith] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供0.3 [ICON_Production] 生产力。信教城市中的每个信徒+1% [ICON_PRODUCTION] 生产力。</Text>
+			<Text>信奉该宗教的城市，圣地和神社给相邻的单元格+1 [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="en_US">
-			<Text>Each [ICON_Citizen] citizen yields 0.3 [ICON_Production] Production in cities that follow this Religion. +1% [ICON_PRODUCTION] Production for each follower in this city.</Text>
+			<Text>Holy Site District and Shrine in cities that follow this Religion provides +1 [ICON_Production] Production to all adjacent tiles.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BELIEF_CASTE_SYSTEM_NAME" Language="zh_Hans_CN">
 			<Text>种姓制度</Text>
@@ -198,10 +198,10 @@
 			<Text>Practical Application</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供1 [ICON_Gold] 金币。 信教城市中的每个信徒+1% [ICON_Gold] 金币产出。</Text>
+			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供1.5 [ICON_Gold] 金币。 信教城市中的每个信徒+2% [ICON_Gold] 金币产出。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION" Language="en_US">
-			<Text>Each [ICON_Citizen] citizen yields 1 [ICON_Gold] Gold in cities that follow this Religion.+1% [ICON_Gold] Gold for each follower in this city.</Text>
+			<Text>Each [ICON_Citizen] citizen yields 1.5 [ICON_Gold] Gold in cities that follow this Religion.+2% [ICON_Gold] Gold for each follower in this city.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BELIEF_THE_THIRD_TEMPLE_NAME" Language="zh_Hans_CN">
 			<Text>第三圣殿</Text>

@@ -103,6 +103,8 @@ update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where
 -- 	DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER';
 
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE';
+
 -- Housing
 -- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
 -- update Districts set Housing = Housing + 1
@@ -172,14 +174,7 @@ values
 	('DISTRICT_THANH',					'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION'),
 	('DISTRICT_IKANDA',					'IKANDA_CITY_MILITARY_UNIT_PRODUCTION'),
 	('DISTRICT_IKANDA',					'IKANDA_CITY_NAVAL_UNIT_PRODUCTION'),
-	('DISTRICT_IKANDA',					'IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS'),
-	-- Diplomatic Quarter
-	('DISTRICT_DIPLOMATIC_QUARTER',		'DIPLOMATIC_QUARTER_DUPLICATE_FIRST_INFLUENCE');
-	--('DISTRICT_DIPLOMATIC_QUARTER',		'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'); -- Moved to tier-1 building.
-
-delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
-delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_DELEGATION_FAVOR';
-delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_EMBASSY_FAVOR';
+	('DISTRICT_IKANDA',					'IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS');
 
 insert into Modifiers
 	(ModifierId,									ModifierType)
@@ -278,4 +273,4 @@ update ModifierArguments set Value = 5 where ModifierId = 'MBANZA_GOLD' and Name
 -- update Districts set Maintenance = Maintenance * 2 where InternalOnly = 0;
 update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
 
-update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
+-- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';

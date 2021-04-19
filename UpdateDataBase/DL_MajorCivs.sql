@@ -28,6 +28,27 @@ values
 -- values
 -- 	('TRAIT_FREE_ANCIENT_WALL_IN_CAPITAL',		'MODIFIER_GRANT_BUILDING_IN_CAPITAL',	0,			0);
 
+-- Use insert or ignore to support the missing DLC case.
+insert or ignore into Modifiers
+	(ModifierId,								ModifierType)
+values
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL'),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL');
+
+insert or ignore into ModifierArguments
+	(ModifierId,								Name,				Value)
+values
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'YieldType',		'YIELD_CULTURE'),
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'RequiredAppeal',	2),
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'YieldChange',		1),
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'DistrictType',		'DISTRICT_THEATER'),
+	('TRAIT_CHARMING_THEATER_DISTRICT',			'Description',		'LOC_DISTRICT_APPEAL_CULTURE'),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'YieldType',		'YIELD_CULTURE'),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'RequiredAppeal',	4),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'YieldChange',		2),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'DistrictType',		'DISTRICT_THEATER'),
+	('TRAIT_BREATHTAKING_THEATER_DISTRICT',		'Description',		'LOC_DISTRICT_APPEAL_CULTURE');
+
 insert or replace into Modifiers
 	(ModifierId,								ModifierType)
 values

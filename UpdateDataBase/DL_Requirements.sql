@@ -55,6 +55,11 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_DISTRICT_IS_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES' from Districts;
 
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+	
 -- Buildings
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
@@ -89,6 +94,18 @@ insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'CITY_HAS_' || Pop || '_POPULATION', 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION' from PopulationMaintenance;
 
+-- Use insert or ignore to support the missing DLC case.
+insert or ignore into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_PLOT_IS_LAKE',						'REQUIREMENT_PLOT_IS_LAKE'),
+	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
+
+insert or ignore into RequirementArguments
+	(RequirementId,									Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'FeatureType',		'FEATURE_FOREST');
+
 -- Misc
 
 -- new Terrain class
@@ -122,7 +139,6 @@ values
 insert or replace into Requirements
 	(RequirementId,									RequirementType)
 values
-	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES'),
 	('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_CITY_HAS_1_DESERT',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
 	('REQUIRES_CITY_HAS_1_TUNDRA',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
@@ -159,7 +175,6 @@ values
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'BuildingType',		'BUILDING_GENERAL_SERVICE'),
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'MinRange',			0),
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'MaxRange',			9),
-	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'FeatureType',		'FEATURE_FOREST'),
 	('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',		'MinDistance',		0),
 	('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',		'MaxDistance',		4),
 	('REQUIRES_AIRPORT_AND_WITHIN_9TILES',			'BuildingType',		'BUILDING_AIRPORT'),
@@ -176,38 +191,22 @@ values
 -- 	('REQUIRES_CITY_HAS_IMPROVED_SILVER',			'ResourceType',	'RESOURCE_SILVER'),
 -- 	('REQUIRES_CITY_HAS_IMPROVED_GOLD',				'ResourceType',	'RESOURCE_GOLD');
 
--- insert or replace into Requirements
--- 	(RequirementId,																RequirementType)
--- values
--- 	('REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',		'REQUIREMENT_CITY_HAS_SPECIFIC_GOVERNOR_PROMOTION_TYPE');
-
--- insert or replace into RequirementArguments
--- 	(RequirementId,															Name,						Value)
--- values
--- 	('REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'GovernorPromotionType',	'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST');
-
--- wonder
-insert or replace into RequirementSets(RequirementSetId, RequirementSetType)
-values('CITY_HAS_COLOSSUS',			'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements(RequirementSetId,	RequirementId)
-values('CITY_HAS_COLOSSUS',			'REQUIRES_CITY_HAS_BUILDING_COLOSSUS');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,									RequirementId)
-values
-	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIRES_CITY_HAS_COMMERCIAL_HUB'),
-	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIRES_CITY_HAS_THEATER_DISTRICT');
-insert or replace into RequirementSets(RequirementSetId, RequirementSetType)
-values('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS','REQUIREMENTSET_TEST_ALL');	
 insert or replace into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
+	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL'),
+	('CITY_HAS_COLOSSUS',											'REQUIREMENTSET_TEST_ALL'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIREMENTSET_TEST_ALL'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
+	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIRES_PLOT_IS_LAKE'),
+	('CITY_HAS_COLOSSUS',											'REQUIRES_CITY_HAS_BUILDING_COLOSSUS'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIRES_CITY_HAS_COMMERCIAL_HUB'),
+	('CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS',				'REQUIRES_CITY_HAS_THEATER_DISTRICT'),
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIRES_CITY_HAS_BUILDING_DUMMY_MAGNUS');
 
@@ -447,12 +446,14 @@ insert or replace into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIREMENTSET_TEST_ALL'),
+	('UNIT_IS_SETTLER',						'REQUIREMENTSET_TEST_ALL'),
 	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 values
 	('PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER'),
+	('UNIT_IS_SETTLER',						'REQUIREMENT_UNIT_IS_SETTLER'),
 	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIREMENT_UNIT_IS_SETTLER'),
 	('UNIT_IS_GOLDEN_AGE_SETTLER',			'REQUIRES_PLAYER_HAS_GOLDEN_AGE');
 
@@ -744,3 +745,40 @@ insert or replace into RequirementArguments
 	(RequirementId,						Name,				Value)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE','FeatureType',	'FEATURE_JUNGLE');
+
+--TOWER_BRIDGE at war with any Major
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLAYER_IS_AT_WAR_WITH_ANY_MAJOR',				'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLAYER_IS_AT_WAR_WITH_ANY_MAJOR',				'REQUIRES_PLAYER_AT_WAR_WITH_ANY_MAJOR');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType,									Inverse)
+values
+	('REQUIRES_PLAYER_AT_WAR_WITH_ANY_MAJOR',		'REQUIREMENT_PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS',	1);
+
+--ITSUKUSHIMA adjacent to volcano
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_VOLCANO');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_PLOT_ADJACENT_VOLCANO',				'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_VOLCANO',	'FeatureType',		'FEATURE_VOLCANO');

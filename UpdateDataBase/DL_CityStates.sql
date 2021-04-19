@@ -283,23 +283,6 @@ values
 	('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',	    'YieldType',     'YIELD_CULTURE'),
 	('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',  	'YieldChange',   3);
 
--- AYUTTHAYA
-delete from ModifierArguments where Value = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING';
-
-insert or replace into Modifiers
-	(ModifierId,										ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				Null),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS');
-
-insert or replace into ModifierArguments
-	(ModifierId,										Name,													Value)
-values
-	('MINOR_CIV_AYUTTHAYA_UNIQUE_INFLUENCE_BONUS',		'ModifierId',											'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',			'ModifierId',											'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'YieldType',											'YIELD_CULTURE'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',	'Amount',												2);
-
 -- Cardiff
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';

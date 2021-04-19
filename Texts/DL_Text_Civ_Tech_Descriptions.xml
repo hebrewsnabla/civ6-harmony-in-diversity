@@ -170,6 +170,12 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION" Language="en_US">
 			<Text>Now that you have a ready supply of standardized boards, your shipping industry will soon take off.</Text>
 		</Replace> -->
+		<Replace Tag="LOC_BOOST_TRIGGER_GAMES_RECREATION" Language="zh_Hans_CN">
+			<Text>建造2座营地。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_GAMES_RECREATION" Language="en_US">
+			<Text>Build two Camps.</Text>
+		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_NAVAL_TRADITION" Language="zh_Hans_CN">
 			<Text>拥有1艘四段帆船。</Text>
 		</Replace>

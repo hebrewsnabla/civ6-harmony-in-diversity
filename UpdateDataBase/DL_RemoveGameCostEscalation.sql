@@ -29,7 +29,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_THEATER'				--剧院
 	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
-	or DistrictType = 'DISTRICT_PRESERVE'				--保护区
+	
 ;
 
 -- unique districts
@@ -45,7 +45,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_HANSA'					--汉萨（德国）
 	or DistrictType = 'DISTRICT_OPPIDUM'				--奥皮杜姆（高卢）
 	or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL'	--科帕卡瓦纳（巴西）
-	or DistrictType = 'DISTRICT_THANH'					--城池（越南）
+	
 ;
 
 --normal districts
@@ -62,6 +62,8 @@ update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressi
 	or DistrictType = 'DISTRICT_MBANZA'					--姆班赞（刚果）
 	or DistrictType = 'DISTRICT_CANAL'					--运河
 	or DistrictType = 'DISTRICT_DAM'					--大坝	
+	or DistrictType = 'DISTRICT_THANH'					--城池（越南）
+	or DistrictType = 'DISTRICT_PRESERVE'				--保护区
 ;
 
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_GOVERNMENT';
@@ -76,9 +78,12 @@ update Districts set Cost = 100 where DistrictType = 'DISTRICT_AERODROME';
 update Districts set Cost = 90 where DistrictType = 'DISTRICT_AQUEDUCT';
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_BATH';
 
+update Districts set Cost = 60 where DistrictType = 'DISTRICT_THANH';
+
 update Districts set Cost = 150 where DistrictType = 'DISTRICT_NEIGHBORHOOD';
 update Districts set Cost = 100 where DistrictType = 'DISTRICT_MBANZA';
 
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_CANAL';
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_DAM';
 
+update Districts set Cost = 90 where DistrictType = 'DISTRICT_PRESERVE';

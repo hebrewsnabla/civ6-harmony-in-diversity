@@ -197,7 +197,7 @@ update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWO
 update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_3';
 ------------------------------------------------------------------------------------------------------------
 -----BUILDING_NOTRE_DAME------------------------------------------------------------------------------------
-update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_NOTRE_DAME';
+update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
@@ -208,7 +208,7 @@ update Building_GreatWorks set
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 9, Entertainment = 0
+UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0
 WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
 
 update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_GLOBE_THEATRE';
@@ -250,23 +250,100 @@ where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILD
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' and YieldType = 'YIELD_FOOD';
 ------------------------------------------------------------------------------------------------------------------
 
+--BUILDING_ITSUKUSHIMA
+update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
+update ModifierArguments set Value = 2 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
+delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';
+insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChange) select
+	'BUILDING_ITSUKUSHIMA',	'YIELD_CULTURE',	3
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ITSUKUSHIMA');
+
+--BUILDING_BURJ_KHALIFA
+--delete from BuildingModifiers where BuildingType = 'BUILDING_BURJ_KHALIFA';
+
+--BUILDING_TOWER_BRIDGE
+update ModifierArguments set Value = '15' where ModifierId = 'TOWER_BRIDGE_CITY_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = '15' where ModifierId = 'TOWER_BRIDGE_CITY_GOLD' and Name = 'Amount';
+
+--BUILDING_BRANDENBURG_GATE
+delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GATE_TRAINED_UNIT_XP_MODIFIER';
+delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GRANT_GENERAL';
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BRANDENBURG_GATE',	'BRANDENBURG_GARRISON_LOYALTY'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE');
+
+insert or replace into Modifiers 
+	(ModifierId,									ModifierType,											SubjectRequirementSetId) 
+values
+	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'PLAYER_IS_AT_WAR_WITH_ANY_MAJOR'),
+	('BRANDENBURG_GARRISON_LOYALTY',				'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN',		'CITY_HAS_GARRISON_UNIT_REQUIERMENT');
+
+insert or replace into ModifierArguments 
+	(ModifierId,								Name,			Value) 
+values
+	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS', 	'YieldType',	'YIELD_PRODUCTION'),
+	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'Amount',		15),
+	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS', 		'YieldType',	'YIELD_SCIENCE'),
+	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'Amount',		15),
+	('BRANDENBURG_GARRISON_LOYALTY',				'Amount',		3);
+
+--BUILDING_BOROBUDUR
+delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_GRANT_GURU';
+delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_TRADE_ROUTE_YIELD_PER_DEST_LUXURY';
+delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_INCREASED_PLANTATION_FAITH';
+delete from BuildingPrereqs where Building = 'BUILDING_BOROBUDUR' and PrereqBuilding = 'BUILDING_TEMPLE';
+insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
+	'UNIT_MISSIONARY',	'BUILDING_BOROBUDUR'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
+	'UNIT_APOSTLE',	'BUILDING_BOROBUDUR'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+	
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
+
+insert or replace into Modifiers 
+	(ModifierId,												ModifierType,								SubjectRequirementSetId) 
+values
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS'),
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS');
+
+insert or replace into ModifierArguments 
+	(ModifierId,												Name,			Value) 
+values
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH', 	'YieldType',	'YIELD_FAITH'),
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',	'Amount',		2),
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE', 'YieldType',	'YIELD_CULTURE'),
+	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'Amount',		2);
+
 -- Cost adjust
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_LEANING_TOWER';
--- update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GLOBE_THEATRE';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_YELLOW_CRANE';
 update Buildings set Cost = 750 where BuildingType = 'BUILDING_NOTRE_DAME';
 -- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
 update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
--- update Buildings set Cost = 1350 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
 update Buildings set Cost = 240 where BuildingType = 'BUILDING_ABU_SIMBEL';
--- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
 -- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BURJ_KHALIFA';
 update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
--- update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
--- update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
 -- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_EMPIRE_STATES';
 -- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
 -- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';

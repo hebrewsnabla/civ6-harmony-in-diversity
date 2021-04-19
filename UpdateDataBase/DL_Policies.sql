@@ -37,7 +37,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADERO
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
 delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
--- delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
+delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
 delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
 -- 
@@ -110,7 +110,10 @@ values
 -- update Government_SlotCounts set NumSlots = 2 where
 -- 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_ECONOMIC';
 
-update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_MEDINA_QUARTER';
+update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_CONSCRIPTION';
+update Policies set PrereqCivic = 'CIVIC_STATE_WORKFORCE' where PolicyType = 'POLICY_INSULAE';
+-- 
+-- update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_MEDINA_QUARTER';
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
 update Policies set PrereqCivic = 'CIVIC_FEUDALISM' where PolicyType = 'POLICY_CIVIL_PRESTIGE';
 update Policies set PrereqCivic = 'CIVIC_MERCENARIES' where PolicyType = 'POLICY_RETAINERS';
@@ -335,15 +338,15 @@ values
 	('POLICY_GARRISON_RECLAMATION',		'LOC_POLICY_GARRISON_RECLAMATION_NAME',		'LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION',		'CIVIC_FEUDALISM',				'SLOT_MILITARY'),
 	('POLICY_PRIMITIVE_COMMUNE',		'LOC_POLICY_PRIMITIVE_COMMUNE_NAME',		'LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION',			'CIVIC_CODE_OF_LAWS',			'SLOT_ECONOMIC'),
 	('POLICY_OVERALL_PLANNING',			'LOC_POLICY_OVERALL_PLANNING_NAME',			'LOC_POLICY_OVERALL_PLANNING_DESCRIPTION',			'CIVIC_URBANIZATION',			'SLOT_ECONOMIC'),												
-	('POLICY_BARD',						'LOC_POLICY_BARD_NAME',						'LOC_POLICY_BARD_DESCRIPTION',						'CIVIC_EARLY_EMPIRE',			'SLOT_DIPLOMATIC'),
-	('POLICY_CIVILIZE',					'LOC_POLICY_CIVILIZE_NAME',					'LOC_POLICY_CIVILIZE_DESCRIPTION',					'CIVIC_STATE_WORKFORCE',		'SLOT_DIPLOMATIC'),
+	('POLICY_BARD',						'LOC_POLICY_BARD_NAME',						'LOC_POLICY_BARD_DESCRIPTION',						'CIVIC_DRAMA_POETRY',			'SLOT_DIPLOMATIC'), -- 'CIVIC_EARLY_EMPIRE'
+	('POLICY_CIVILIZE',					'LOC_POLICY_CIVILIZE_NAME',					'LOC_POLICY_CIVILIZE_DESCRIPTION',					'CIVIC_GAMES_RECREATION',		'SLOT_DIPLOMATIC'), --'CIVIC_STATE_WORKFORCE'
 	-- 
 	('POLICY_MINARET',					'LOC_POLICY_MINARET_NAME',					'LOC_POLICY_MINARET_DESCRIPTION',					'CIVIC_REFORMED_CHURCH',		'SLOT_ECONOMIC'),
 	--
 	('POLICY_DOMESTIC_TRADE',			'LOC_POLICY_DOMESTIC_TRADE_NAME',			'LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION',			'CIVIC_GAMES_RECREATION',		'SLOT_ECONOMIC'),
 	('POLICY_HIGHWAY',					'LOC_POLICY_HIGHWAY_NAME',					'LOC_POLICY_HIGHWAY_DESCRIPTION',					'CIVIC_MEDIEVAL_FAIRES',		'SLOT_ECONOMIC'),
 	('POLICY_SILK_ROAD',				'LOC_POLICY_SILK_ROAD_NAME',				'LOC_POLICY_SILK_ROAD_DESCRIPTION',					'CIVIC_MEDIEVAL_FAIRES',		'SLOT_ECONOMIC'),
-	('POLICY_WAREHOUSE',				'LOC_POLICY_WAREHOUSE_NAME',				'LOC_POLICY_WAREHOUSE_DESCRIPTION',					'CIVIC_GAMES_RECREATION',		'SLOT_ECONOMIC'),
+	('POLICY_WAREHOUSE',				'LOC_POLICY_WAREHOUSE_NAME',				'LOC_POLICY_WAREHOUSE_DESCRIPTION',					'CIVIC_STATE_WORKFORCE',		'SLOT_ECONOMIC'), --'CIVIC_GAMES_RECREATION',
 	('POLICY_SAFETY_BOX',				'LOC_POLICY_SAFETY_BOX_NAME',				'LOC_POLICY_SAFETY_BOX_DESCRIPTION',				'CIVIC_EXPLORATION',			'SLOT_ECONOMIC');
 	--('POLICY_FINE_ARTS',			'LOC_POLICY_FINE_ARTS_NAME',			'LOC_POLICY_FINE_ARTS_DESCRIPTION',				'CIVIC_OPERA_BALLET',		'SLOT_ECONOMIC'),
 	--('POLICY_FREE_THOUGHTS',		'LOC_POLICY_FREE_THOUGHTS_NAME',		'LOC_POLICY_FREE_THOUGHTS_DESCRIPTION',			'CIVIC_THE_ENLIGHTENMENT',	'SLOT_ECONOMIC'),
@@ -505,6 +508,36 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and (
  or ModifierId = 'CONSULATE_TIER1'
  or ModifierId = 'CHANCERY_TIER2');
 
+insert or replace into PolicyModifiers
+	(PolicyType,	ModifierId)
+values
+	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_GOV'),
+	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_DIP');
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,	ModifierId)
+values
+	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_GOV'),
+	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_DIP');
+	
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+values
+	('AUTOCRACY_GOV','MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE','CITY_HAS_GOV_DISTRICT'),
+	('AUTOCRACY_DIP','MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE','CITY_HAS_DIP_DISTRICT');
+
+insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
+	('CITY_HAS_DIP_DISTRICT',	'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
+	('CITY_HAS_DIP_DISTRICT',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into ModifierArguments
+	(ModifierId, 			Name, 		Value)
+values
+	('AUTOCRACY_GOV',		'Amount',	2),
+	('AUTOCRACY_DIP',		'Amount',	2);
+
+
 --By 利牙菠萝 君主制及传承效果调整
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_CASTLE_HOUSING';
@@ -620,7 +653,7 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RAIDER_PRODUCTION');
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
-update ModifierArguments set Value = 3 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
+update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
 
 --集体主义合成砖家可用。
 insert or replace into Policy_GovernmentExclusives_XP2
