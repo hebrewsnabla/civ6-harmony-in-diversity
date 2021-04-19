@@ -225,6 +225,8 @@ values
 	('BUILDING_GRAND_BAZAAR',		'YIELD_GOLD',		8),
 	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
 	('BUILDING_WORKSHOP',			'YIELD_PRODUCTION',	5),
+	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	3),
+	('BUILDING_MADRASA',			'YIELD_SCIENCE',	4),
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
 	('BUILDING_MUSEUM_ART',			'YIELD_CULTURE',	4),
 	('BUILDING_MUSEUM_ARTIFACT',	'YIELD_CULTURE',	4),
@@ -603,8 +605,8 @@ values
 
 -- Maintainance
 --update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
-update Buildings set Maintenance = 0,	Cost = 45	where BuildingType = 'BUILDING_MONUMENT';
-update Buildings set Maintenance = 1,	Cost = 60	where BuildingType = 'BUILDING_GRANARY';
+update Buildings set Maintenance = 0,	Cost = 50	where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Maintenance = 1,	Cost = 65	where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_WATER_MILL';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_PALGUM';
 update Buildings set Maintenance = 0,	Cost = 60	where BuildingType = 'BUILDING_WALLS';
@@ -613,7 +615,7 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
-update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
@@ -637,21 +639,21 @@ update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
-update Buildings set Maintenance = 1,	Cost = 70	where BuildingType = 'BUILDING_SHRINE';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_TEMPLE';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_STAVE_CHURCH';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_CATHEDRAL';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_GURDWARA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MEETING_HOUSE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MOSQUE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_PAGODA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_SYNAGOGUE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_WAT';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_STUPA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_DAR_E_MEHR';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_PRASAT';
-update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_AMPHITHEATER';
-update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_MARAE';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
+update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_CATHEDRAL';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_GURDWARA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MEETING_HOUSE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MOSQUE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_PAGODA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_SYNAGOGUE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_WAT';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_STUPA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_DAR_E_MEHR';
+update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_AMPHITHEATER';
+update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
 update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_BROADCAST_CENTER';
@@ -989,7 +991,7 @@ values
 	('GOV_SCIENCE_LIBRARY_PRODUCTION',				'Amount',			2),
 	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'BuildingType',		'BUILDING_UNIVERSITY'),
 	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'YieldType',		'YIELD_PRODUCTION'),
-	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'Amount',			4),
+	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'Amount',			3),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'BuildingType',		'BUILDING_ALCHEMICAL_SOCIETY'),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'Amount',			4),
@@ -1171,9 +1173,9 @@ insert or replace into Buildings
 	(BuildingType, 						Name, 										Cost, 		Description,										
 		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield) 
 values
-	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			75,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
+	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			65,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
 	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_TRIUMPHAL_ARCH',			'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		75,			'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
+	('BUILDING_TRIUMPHAL_ARCH',			'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		65,			'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
 	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	('BUILDING_KAREZ',					'LOC_BUILDING_KAREZ_NAME',					65,			'LOC_BUILDING_KAREZ_DESCRIPTION',	
 	'TECH_POTTERY',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
@@ -1181,10 +1183,10 @@ values
 	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				65,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
+	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					65,			'LOC_BUILDING_FAIR_DESCRIPTION',
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	-- null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				55,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
+	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				65,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
 	null,								null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD');
 
 insert or replace into Building_GreatPersonPoints
@@ -1200,7 +1202,7 @@ values
 	('BUILDING_KAREZ',												'YIELD_FOOD',				2),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'YIELD_PRODUCTION',			2),
 	('BUILDING_BOOTCAMP',											'YIELD_PRODUCTION',			2),
-	('BUILDING_FAIR',												'YIELD_GOLD',				4),
+	('BUILDING_FAIR',												'YIELD_GOLD',				6),
 	('BUILDING_TOTEMS',												'YIELD_FAITH',				2);
 
 insert or replace into BuildingModifiers 
@@ -1234,20 +1236,20 @@ insert or replace into ModifierArguments
 values
 	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER_HD'),
 	('NILOMETER_SCIENCE',					'YieldType',										'YIELD_SCIENCE'),
-	('NILOMETER_SCIENCE',					'Amount',											2),
+	('NILOMETER_SCIENCE',					'Amount',											1),
 	('TRIUMPHAL_ARCH_CULTURE',				'BuildingType',										'BUILDING_TRIUMPHAL_ARCH'),
 	('TRIUMPHAL_ARCH_CULTURE',				'YieldType',										'YIELD_CULTURE'),
-	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											2),
+	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											1),
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
-	('KAREZ_FOOD',							'Amount',											2),
+	('KAREZ_FOOD',							'Amount',											1),
 	('KAREZ_HOUSING',						'Amount',											1),
-	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											2),
-	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											2),
+	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											1),
+	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											1),
 	('BOOTCAMP_UNIT_PRODUCTION',			'Amount',											2),
 	('FAIR_GOLD',							'BuildingType',										'BUILDING_FAIR'),
 	('FAIR_GOLD',							'YieldType',										'YIELD_GOLD'),
-	('FAIR_GOLD',							'Amount',											4),
+	('FAIR_GOLD',							'Amount',											2),
 	('TOTEMS_FAITH',						'GreatPersonClassType',								'GREAT_PERSON_CLASS_PROPHET'),
 	('TOTEMS_FAITH',						'Amount',											1);
 
@@ -1379,36 +1381,3 @@ values
 	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'Amount',		3);
 
 ----------------------------------------------------------------------------------------------------------------------
-
--- Diplomacy Quarter Buildings
-insert or replace into BuildingModifiers
-	(BuildingType,							ModifierId)
-values
-	('BUILDING_CHANCERY',					'CHANCERY_ADD_VISIBILITY'),
-	--('BUILDING_CONSULATE',					'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
-	--('BUILDING_CONSULATE',					'CONSULATE_LEVY_DISCOUNT'),
-	--('BUILDING_CONSULATE',					'CONSULATE_LEVY_UNITUPGRADEDISCOUNT'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_DELEGATION_FAVOR'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_EMBASSY_FAVOR');
-
-insert or replace into Modifiers	
-	(ModifierId,							ModifierType)
-values
-	('CHANCERY_ADD_VISIBILITY',				'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY'),
-	('CONSULATE_LEVY_DISCOUNT',				'MODIFIER_PLAYER_ADJUST_LEVY_DISCOUNT_PERCENT'),
-	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'MODIFIER_PLAYER_ADJUST_LEVIED_UNIT_UPGRADE_DISCOUNT_PERCENT');
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,				Value)
-values
-	('CHANCERY_ADD_VISIBILITY',				'Amount',			1),
-	('CHANCERY_ADD_VISIBILITY',				'Source',			'SOURCE_CHANCERY'),
-	('CHANCERY_ADD_VISIBILITY',				'SourceType',		'DIPLO_SOURCE_ALL_NAMES'),
-	('CONSULATE_LEVY_DISCOUNT',				'Percent',			20),
-	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'Amount',			20);
-
-insert or replace into DiplomaticVisibilitySources
-	(VisibilitySourceType,	Description,				ActionDescription,					GossipString,					PrereqTech)
-values
-	('SOURCE_CHANCERY',		'LOC_VIZSOURCE_CHANCERY',	'LOC_VIZSOURCE_ACTION_CHANCERY',	'LOC_GOSSIP_SOURCE_CHANCERY',	'TECH_MATHEMATICS');

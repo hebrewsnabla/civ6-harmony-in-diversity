@@ -37,7 +37,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADERO
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
 -- Remove the Machiavellisnism Policy Card
 delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
--- delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
+delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
 delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
 -- 

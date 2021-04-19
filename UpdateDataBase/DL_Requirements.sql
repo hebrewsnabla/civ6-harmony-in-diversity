@@ -98,6 +98,7 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
+	('REQUIRES_PLOT_IS_LAKE',						'REQUIREMENT_PLOT_IS_LAKE'),
 	('REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT',		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
 
 insert or ignore into RequirementArguments
@@ -138,7 +139,6 @@ values
 insert or replace into Requirements
 	(RequirementId,									RequirementType)
 values
-	('REQUIRES_PLOT_IS_LAKE',						'REQUIREMENT_PLOT_IS_LAKE'),
 	('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_CITY_HAS_1_DESERT',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
 	('REQUIRES_CITY_HAS_1_TUNDRA',					'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'),
