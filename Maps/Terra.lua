@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
---	FILE:	 Wetlands.lua
+--	FILE:	 Terra.lua
 --	AUTHOR:  
---	PURPOSE: Base game script - Produces elevated terrain.
+--	PURPOSE: Base game script - Produces a near earth map.
 ------------------------------------------------------------------------------
 --	Copyright (c) 2014 Firaxis Games, Inc. All rights reserved.
 ------------------------------------------------------------------------------
@@ -14,23 +14,29 @@ include "FeatureGenerator"
 include "TerrainGenerator"
 include "NaturalWonderGenerator"
 include "ResourceGenerator"
-include "CoastalLowlands"
 include "AssignStartingPlots"
 
 local g_iW, g_iH;
 local g_iFlags = {};
 local g_continentsFrac = nil;
-local g_riverPlots = {};
-local g_riverStartPlots = {};
-local g_iRiverID = 0;
 local islands = {};
-local g_riverPlots = {};
-local g_riverStartPlots = {};
-local g_iRiverID = 0;
 
+------------------------------------------------------------------------------
+-- The application side will call GetMapScriptInfo directly to request
+-- information about the map script.
+-------------------------------------------------------------------------------
+function ApplyTerrain(plotTypes, terrainTypes)
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		pPlot = Map.GetPlotByIndex(i);
+		if (plotTypes[i] == g_PLOT_TYPE_HILLS) then
+			terrainTypes[i] = terrainTypes[i] + 1;
+		end
+		TerrainBuilder.SetTerrainType(pPlot, terrainTypes[i]);
+	end
+end
 -------------------------------------------------------------------------------
 function GenerateMap()
-	print("Generating Continents and Islands Map");
+	print("Generating Terra Map");
 	local pPlot;
 
 	-- Set globals
@@ -42,37 +48,42 @@ function GenerateMap()
 	end
 	
 	plotTypes = GeneratePlotTypes();
-	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, false, temperature);
-	ApplyBaseTerrain(plotTypes, terrainTypes, g_iW, g_iH);
+	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, true, temperature, true);
 	
-	AreaBuilder.Recalculate();
-	TerrainBuilder.AnalyzeChokepoints();
-	TerrainBuilder.StampContinents();
-	
-	-- Temp
-	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
-	local biggest_area = Areas.FindBiggestArea(false);
-	print("After Adding Hills: ", biggest_area:GetPlotCount());
-	AddTerrainFromContinents(plotTypes, terrainTypes, 5, g_iW, g_iH, iContinentBoundaryPlots);
-	AreaBuilder.Recalculate();
-	
-	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
-	for x = 0, g_iW - 1 do
-		for y = 0, g_iH - 1 do
-			local i = y * g_iW + x; -- C++ Plot indices, starting at 0.
-			g_riverPlots[i] = 0;
+	print("Expanding coasts");
+	for iI = 0, 2 do
+		local shallowWaterPlots = {};
+		for iX = 0, g_iW - 1 do
+			for iY = 0, g_iH - 1 do
+				local index = (iY * g_iW) + iX;
+				if (terrainTypes[index] == g_TERRAIN_TYPE_OCEAN) then
+					-- Chance for each eligible plot to become an expansion is 1 / iExpansionDiceroll.
+					-- Default is two passes at 1/8 chance per eligible plot on each pass.
+					if (IsAdjacentToShallowWater(terrainTypes, iX, iY) and TerrainBuilder.GetRandomNumber(10, "add shallows") == 0) then
+						table.insert(shallowWaterPlots, index);
+					end
+				end
+			end
+		end
+		for i, index in ipairs(shallowWaterPlots) do
+			terrainTypes[index] = g_TERRAIN_TYPE_COAST;
 		end
 	end
+	ApplyTerrain(plotTypes, terrainTypes);
 	
+	-- Temp
+	AreaBuilder.Recalculate();
+	local biggest_area = Areas.FindBiggestArea(false);
+	print("After Adding Hills: ", biggest_area:GetPlotCount());
+
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
 	AddRivers();
 	
 	-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
 	local numLargeLakes = GameInfo.Maps[Map.GetMapSize()].Continents;
 	AddLakes(numLargeLakes);
-	
+
 	AddFeatures();
-	TerrainBuilder.AnalyzeChokepoints();
 	
 	print("Adding cliffs");
 	AddCliffs(plotTypes, terrainTypes);
@@ -82,18 +93,15 @@ function GenerateMap()
 	};
 	local nwGen = NaturalWonderGenerator.Create(args);
 
-	AddFeaturesFromContinents();
-	MarkCoastalLowlands();
+	AreaBuilder.Recalculate();
+	TerrainBuilder.AnalyzeChokepoints();
+	TerrainBuilder.StampContinents();
 	
 --	for i = 0, (g_iW * g_iH) - 1, 1 do
 --		pPlot = Map.GetPlotByIndex(i);
 --		print ("i: plotType, terrainType, featureType: " .. tostring(i) .. ": " .. tostring(plotTypes[i]) .. ", " .. tostring(terrainTypes[i]) .. ", " .. tostring(pPlot:GetFeatureType(i)));
 --	end
-
-	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
-
-	AreaBuilder.Recalculate();
-
+	
 	resourcesConfig = MapConfiguration.GetValue("resources");
 	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
 	local args = {
@@ -101,37 +109,30 @@ function GenerateMap()
 		START_CONFIG = startConfig,
 	};
 	local resGen = ResourceGenerator.Create(args);
+
+	print("Creating start plot database.");
 	
-	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
+	-- START_MIN_Y, START_MAX_Y, START_MIN_X is the percent of the map ignored for major civs' starting positions.
 	local args = {
-		MIN_MAJOR_CIV_FERTILITY = 150,
-		MIN_MINOR_CIV_FERTILITY = 50, 
+		MIN_MAJOR_CIV_FERTILITY = 25,
+		MIN_MINOR_CIV_FERTILITY = 5, 
 		MIN_BARBARIAN_FERTILITY = 1,
 		START_MIN_Y = 15,
 		START_MAX_Y = 15,
 		START_CONFIG = startConfig,
+		START_LARGEST_LANDMASS_ONLY = true,
 	};
 	local start_plot_database = AssignStartingPlots.Create(args)
 
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 end
-
 -------------------------------------------------------------------------------
 function GeneratePlotTypes(world_age)
-	print("Generating Plot Types");
 	local plotTypes = {};
 
 	local sea_level_low = 57;
 	local sea_level_normal = 62;
 	local sea_level_high = 66;
-	print("DL update sea level");
-	sea_level_low = 42
-	sea_level_normal = 47
-	sea_level_high = 52
-	-- sea_level_low = 40
-	-- sea_level_normal = 45
-	-- sea_level_high = 50
-	
 	local world_age_new = 5;
 	local world_age_normal = 3;
 	local world_age_old = 2;
@@ -161,20 +162,9 @@ function GeneratePlotTypes(world_age)
 		water_percent = TerrainBuilder.GetRandomNumber(sea_level_high - sea_level_low, "Random Sea Level - Lua") + sea_level_low  + 1;
 	end
 
-	--	local world_age
-	local world_age = MapConfiguration.GetValue("world_age");
-	if (world_age == 1) then
-		world_age = world_age_new;
-	elseif (world_age == 2) then
-		world_age = world_age_normal;
-	elseif (world_age == 3) then
-		world_age = world_age_old;
-	else
-		world_age = 2 + TerrainBuilder.GetRandomNumber(4, "Random World Age - Lua");
-	end
-
 	-- Set values for hills and mountains according to World Age chosen by user.
 	local adjustment = world_age;
+	local world_age = MapConfiguration.GetValue("world_age");
 	if world_age <= world_age_old  then -- 5 Billion Years
 		adjust_plates = adjust_plates * 0.75;
 	elseif world_age >= world_age_new then -- 3 Billion Years
@@ -187,6 +177,15 @@ function GeneratePlotTypes(world_age)
 	local done = false;
 	local iAttempts = 0;
 	local iWaterThreshold, biggest_area, iNumTotalLandTiles, iNumBiggestAreaTiles, iBiggestID;
+	
+	local iLargeIslandShift = 10;
+	local iMediumIslandShift = 12;
+	local iTinyIslandShift = 14;
+	local iCenterMeridian = math.ceil(g_iW / 2)
+	local iLargeIslandValue = math.floor(g_iW / iLargeIslandShift);
+	local iMediumIslandValue = math.floor(g_iW / iMediumIslandShift);
+	local iTinyIslandValue = math.floor(g_iW / iTinyIslandShift);
+	
 	while done == false do
 		local grain_dice = TerrainBuilder.GetRandomNumber(7, "Continental Grain roll - LUA Continents");
 		if grain_dice < 4 then
@@ -259,7 +258,7 @@ function GeneratePlotTypes(world_age)
 		iNumBiggestAreaTiles = biggest_area:GetPlotCount();
 		
 		-- Now test the biggest landmass to see if it is large enough.
-		if iNumBiggestAreaTiles <= iNumTotalLandTiles * 0.64 then
+		if iNumBiggestAreaTiles >= iNumTotalLandTiles * 0.55 and iNumBiggestAreaTiles < iNumTotalLandTiles * 0.648 then
 			done = true;
 			iBiggestID = biggest_area:GetID();
 		end
@@ -277,13 +276,30 @@ function GeneratePlotTypes(world_age)
 		-- print(".");
 	end
 
-	-- Generate Medium Islands
+	-- Generate West Large Islands	
+	islands = plotTypes;
+	local args = {};
+	args.iWaterPercent = 82 + water_percent_modifier;
+	args.iRegionWidth = math.ceil(g_iW / 2 - iLargeIslandValue * 2);
+	args.iRegionHeight = math.ceil(g_iH);
+	args.iRegionWestX = iLargeIslandValue;
+	args.iRegionSouthY = math.floor(0);
+	args.iRegionGrain = 3;
+	args.iRegionHillsGrain = 4;
+	args.iRegionPlotFlags = g_iFlags;
+	args.iRegionFracXExp = 6;
+	args.iRegionFracYExp = 5;
+	args.adjustment = adjustment;
+	plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+	islands = plotTypes;
+
+	-- Generate West Medium Islands
 	local args = {};	
 	islands = plotTypes;
 	args.iWaterPercent = 87 + water_percent_modifier;
-	args.iRegionWidth = math.ceil(g_iW);
+	args.iRegionWidth = math.ceil(g_iW / 2 - iMediumIslandValue * 2);
 	args.iRegionHeight = math.ceil(g_iH);
-	args.iRegionWestX = math.floor(0);
+	args.iRegionWestX = iMediumIslandValue;
 	args.iRegionSouthY = math.floor(0);
 	args.iRegionGrain = 4;
 	args.iRegionHillsGrain = 4;
@@ -293,6 +309,69 @@ function GeneratePlotTypes(world_age)
 	args.adjustment = world;
     plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
 
+	-- Generate West Tiny Islands
+	islands = plotTypes;
+	local args = {};	
+	args.iWaterPercent = 95 + water_percent_modifier;
+	args.iRegionWidth = math.ceil(g_iW / 2 - iTinyIslandValue * 2);
+	args.iRegionHeight = math.ceil(g_iH);
+	args.iRegionWestX = iTinyIslandValue;
+	args.iRegionSouthY = math.floor(0);
+	args.iRegionGrain = 5;
+	args.iRegionHillsGrain = 4;
+	args.iRegionPlotFlags = g_iFlags;
+	args.iRegionFracXExp = 7;
+	args.iRegionFracYExp = 6;
+    plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+	
+	-- Generate East Large Islands	
+	islands = plotTypes;
+	local args = {};
+	args.iWaterPercent = 82 + water_percent_modifier;
+	args.iRegionWidth = math.ceil(g_iW / 2 - iLargeIslandValue * 2);
+	args.iRegionHeight = math.ceil(g_iH);
+	args.iRegionWestX = math.floor(iCenterMeridian + g_iW / iLargeIslandShift);
+	args.iRegionSouthY = math.floor(0);
+	args.iRegionGrain = 3;
+	args.iRegionHillsGrain = 4;
+	args.iRegionPlotFlags = g_iFlags;
+	args.iRegionFracXExp = 6;
+	args.iRegionFracYExp = 5;
+	args.adjustment = adjustment;
+	plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+	islands = plotTypes;
+
+	-- Generate East Medium Islands
+	local args = {};	
+	islands = plotTypes;
+	args.iWaterPercent = 87 + water_percent_modifier;
+	args.iRegionWidth = math.ceil(g_iW / 2 - iMediumIslandValue * 2);
+	args.iRegionHeight = math.ceil(g_iH);
+	args.iRegionWestX = math.floor(iCenterMeridian + g_iW / iMediumIslandShift);
+	args.iRegionSouthY = math.floor(0);
+	args.iRegionGrain = 4;
+	args.iRegionHillsGrain = 4;
+	args.iRegionPlotFlags = g_iFlags;
+	args.iRegionFracXExp = 7;
+	args.iRegionFracYExp = 6;
+	args.adjustment = world;
+    plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+
+	-- Generate East Tiny Islands
+	islands = plotTypes;
+	local args = {};	
+	args.iWaterPercent = 95 + water_percent_modifier;
+	args.iRegionWidth = math.ceil(g_iW / 2 - iTinyIslandValue * 2);
+	args.iRegionHeight = math.ceil(g_iH);
+	args.iRegionWestX = math.floor(iCenterMeridian + g_iW / iTinyIslandShift);
+	args.iRegionSouthY = math.floor(0);
+	args.iRegionGrain = 5;
+	args.iRegionHillsGrain = 4;
+	args.iRegionPlotFlags = g_iFlags;
+	args.iRegionFracXExp = 7;
+	args.iRegionFracYExp = 6;
+    plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
+
 	-- Land and water are set. Apply hills and mountains.
 	local args = {};
 	args.world_age = world_age + 1;
@@ -300,65 +379,15 @@ function GeneratePlotTypes(world_age)
 	args.iH = g_iH
 	args.iFlags = g_iFlags;
 	args.blendRidge = 10;
-	args.blendFract = 5;
+	args.blendFract = 1;
 	args.extra_mountains = 5;
 	mountainRatio = 8 + world_age * 3;
 	plotTypes = ApplyTectonics(args, plotTypes);
 	plotTypes = AddLonelyMountains(plotTypes, mountainRatio);
 	
-
 	return plotTypes;
 end
-
-function InitFractal(args)
-
-	if(args == nil) then args = {}; end
-
-	local continent_grain = args.continent_grain or 2;
-	local rift_grain = args.rift_grain or -1; -- Default no rifts. Set grain to between 1 and 3 to add rifts. - Bob
-	local invert_heights = args.invert_heights or false;
-	local polar = args.polar or true;
-	local ridge_flags = args.ridge_flags or g_iFlags;
-
-	local fracFlags = {};
-	
-	if(invert_heights) then
-		fracFlags.FRAC_INVERT_HEIGHTS = true;
-	end
-	
-	if(polar) then
-		fracFlags.FRAC_POLAR = true;
-	end
-	
-	if(rift_grain > 0 and rift_grain < 4) then
-		local riftsFrac = Fractal.Create(g_iW, g_iH, rift_grain, {}, 6, 5);
-		g_continentsFrac = Fractal.CreateRifts(g_iW, g_iH, continent_grain, fracFlags, riftsFrac, 6, 5);
-	else
-		g_continentsFrac = Fractal.Create(g_iW, g_iH, continent_grain, fracFlags, 6, 5);	
-	end
-
-	-- Use Brian's tectonics method to weave ridgelines in to the continental fractal.
-	-- Without fractal variation, the tectonics come out too regular.
-	--
-	--[[ "The principle of the RidgeBuilder code is a modified Voronoi diagram. I 
-	added some minor randomness and the slope might be a little tricky. It was 
-	intended as a 'whole world' modifier to the fractal class. You can modify 
-	the number of plates, but that is about it." ]]-- Brian Wade - May 23, 2009
-	--
-	local MapSizeTypes = {};
-	for row in GameInfo.Maps() do
-		MapSizeTypes[row.MapSizeType] = row.PlateValue;
-	end
-	local sizekey = Map.GetMapSize();
-
-	local numPlates = MapSizeTypes[sizekey] or 4
-
-	-- Blend a bit of ridge into the fractal.
-	-- This will do things like roughen the coastlines and build inland seas. - Brian
-
-	g_continentsFrac:BuildRidges(numPlates, {}, 1, 2);
-end
-
+-------------------------------------------------------------------------------
 function GenerateCenterRift(plotTypes)
 	-- Causes a rift to break apart and separate any landmasses overlaying the map center.
 	-- Rift runs south to north ala the Atlantic Ocean.
@@ -696,6 +725,56 @@ function GenerateCenterRift(plotTypes)
 
 end
 
+function InitFractal(args)
+
+	if(args == nil) then args = {}; end
+
+	local continent_grain = args.continent_grain or 2;
+	local rift_grain = args.rift_grain or -1; -- Default no rifts. Set grain to between 1 and 3 to add rifts. - Bob
+	local invert_heights = args.invert_heights or false;
+	local polar = args.polar or true;
+	local ridge_flags = args.ridge_flags or g_iFlags;
+
+	local fracFlags = {};
+	
+	if(invert_heights) then
+		fracFlags.FRAC_INVERT_HEIGHTS = true;
+	end
+	
+	if(polar) then
+		fracFlags.FRAC_POLAR = true;
+	end
+	
+	if(rift_grain > 0 and rift_grain < 4) then
+		local riftsFrac = Fractal.Create(g_iW, g_iH, rift_grain, {}, 6, 5);
+		g_continentsFrac = Fractal.CreateRifts(g_iW, g_iH, continent_grain, fracFlags, riftsFrac, 6, 5);
+	else
+		g_continentsFrac = Fractal.Create(g_iW, g_iH, continent_grain, fracFlags, 6, 5);	
+	end
+
+	-- Use Brian's tectonics method to weave ridgelines in to the continental fractal.
+	-- Without fractal variation, the tectonics come out too regular.
+	--
+	--[[ "The principle of the RidgeBuilder code is a modified Voronoi diagram. I 
+	added some minor randomness and the slope might be a little tricky. It was 
+	intended as a 'whole world' modifier to the fractal class. You can modify 
+	the number of plates, but that is about it." ]]-- Brian Wade - May 23, 2009
+	--
+	local MapSizeTypes = {};
+	for row in GameInfo.Maps() do
+		MapSizeTypes[row.MapSizeType] = row.PlateValue;
+	end
+	local sizekey = Map.GetMapSize();
+
+	local numPlates = MapSizeTypes[sizekey] or 4
+
+	-- Blend a bit of ridge into the fractal.
+	-- This will do things like roughen the coastlines and build inland seas. - Brian
+
+	g_continentsFrac:BuildRidges(numPlates, {}, 1, 2);
+end
+
+
 -------------------------------------------------------------------------------
 function GenerateFractalLayerWithoutHills (args, plotTypes)
 	--[[ This function is intended to be paired with ApplyTectonics. If all the hills and
@@ -716,7 +795,8 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 	local iRegionFracXExp = args.iRegionFracXExp or 6;
 	local iRegionFracYExp = args.iRegionFracYExp or 5;
 	local iRiftGrain = args.iRiftGrain or -1;
-	local bShift = args.bShift or true;
+	local bShift = args.bShift or false;
+	local iBufferAdustment = args.iBufferAdustment or 0;
 	
 	--print("Received Region Data");
 	--print(iRegionWidth, iRegionHeight, iRegionWestX, iRegionSouthY, iRegionGrain);
@@ -743,23 +823,19 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 	local iWaterThreshold = regionContinentsFrac:GetHeight(iWaterPercent);
 
 	-- Loop through the region's plots
+	local iBuffer = math.floor(g_iH/(10 + iBufferAdustment));
 	for x = 0, iRegionWidth - 1, 1 do
 		for y = 0, iRegionHeight - 1, 1 do
 			local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
 			local val = regionContinentsFrac:GetHeight(x,y);
-			if val <= iWaterThreshold or Adjacent(i) == true then
+			local iDistance = Map.GetPlotDistance(x, y, g_xCenter, g_yCenter);
+			if (val <= iWaterThreshold or Adjacent(i) == true or iDistance <= iBuffer) then
 				--do nothing
 			else
 				plotTypes2[i] = g_PLOT_TYPE_LAND;
 			end
 		end
 	end
-
-	if bShift then -- Shift plots to obtain a more natural shape.
-		ShiftPlotTypes(plotTypes);
-	end
-
-	print("Shifted Plots - Width: ", iRegionWidth, "Height: ", iRegionHeight);
 
 	-- Apply the region's plots to the global plot array.
 	for x = 0, iRegionWidth - 1, 1 do
@@ -808,8 +884,8 @@ function Adjacent(index)
 
 	return false;
 end
+-------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------
 function AddFeatures()
 	print("Adding Features");
 
@@ -819,73 +895,10 @@ function AddFeatures()
 		rainfall = 1 + TerrainBuilder.GetRandomNumber(3, "Random Rainfall - Lua");
 	end
 	
-	local args = {rainfall = rainfall, iMarshPercent = 12, iJunglePercent = 24, iForestPercent = 27, iOasisPercent = 2}
+	local args = {rainfall = rainfall}
+	local featuregen = FeatureGenerator.Create(args);
 
-	featuregen = FeatureGenerator.Create(args);
-	featuregen:AddFeatures(true, true);  --second parameter is whether or not rivers start inland);
+	featuregen:AddFeatures();
 end
 
-function AddFeaturesFromContinents()
-	print("Adding Features from Continents");
-
-	featuregen:AddFeaturesFromContinents();
-end
-
-function AddRivers()
-
-	--GlobalParameters.RIVER_SEA_WATER_RANGE_DEFAULT or 
-	local riverSourceRangeDefault = GlobalParameters.RIVER_SOURCE_RANGE_DEFAULT or 4;
-	local seaWaterRangeDefault = 3;
-	local plotsPerRiverEdge = (GlobalParameters.RIVER_PLOTS_PER_EDGE or 12);
-	
-	print("Map Generation - Adding Rivers");
-	
-	local passConditions = {
-		function(plot)
-			return (plot:IsHills() or plot:IsMountain());
-		end,
-		
-		function(plot)
-			return (not plot:IsCoastalLand()) and (TerrainBuilder.GetRandomNumber(8, "MapGenerator AddRivers") == 0);
-		end,
-		
-		function(plot)
-			local area = plot:GetArea();
-			return (plot:IsHills() or plot:IsMountain()) and (area:GetRiverEdgeCount() <	((area:GetPlotCount() / plotsPerRiverEdge) + 1));
-		end,
-		
-		function(plot)
-			local area = plot:GetArea();
-			return (area:GetRiverEdgeCount() < (area:GetPlotCount() / plotsPerRiverEdge) + 1);
-		end
-	}
-	
-	for iPass, passCondition in ipairs(passConditions) do
-					
-		if (iPass <= 2) then
-			riverSourceRange = riverSourceRangeDefault / 2;
-			seaWaterRange = seaWaterRangeDefault / 2;
-		else
-			riverSourceRange = (riverSourceRangeDefault / 4);
-			seaWaterRange = (seaWaterRangeDefault / 4);
-		end
-			
-		local iW, iH = Map.GetGridSize();
-
-		for i = 0, (iW * iH) - 1, 1 do
-			plot = Map.GetPlotByIndex(i);
-			if(not plot:IsWater()) then
-				if(passCondition(plot) and plot:IsNaturalWonder() == false and AdjacentToNaturalWonder(plot) == false) then
-					if (not Map.FindWater(plot, riverSourceRange, true)) then
-						if (not Map.FindWater(plot, seaWaterRange, false)) then
-							local inlandCorner = TerrainBuilder.GetInlandCorner(plot);
-							if(inlandCorner and plot:IsNaturalWonder() == false and AdjacentToNaturalWonder(plot) == false) then
-								DoRiver(inlandCorner);
-							end
-						end
-					end
-				end			
-			end
-		end
-	end		
-end
+-------------------------------------------------------------------------------

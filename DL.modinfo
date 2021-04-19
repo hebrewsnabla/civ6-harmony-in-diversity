@@ -435,6 +435,7 @@
       <File>Maps/Lakes.lua</File>
       <File>Maps/Continents.lua</File>
       <File>Maps/Seven_Seas.lua</File>
+      <File>Maps/Terra.lua</File>
       <File>Maps/Wetlands_XP2.lua</File>
       <!-- New Maps -->
       <File>Maps/Tiny_Islands.lua</File>
@@ -727,6 +728,7 @@
     <File>Maps/Lakes.lua</File>
     <File>Maps/Continents.lua</File>
     <File>Maps/Seven_Seas.lua</File>
+    <File>Maps/Terra.lua</File>
     <File>Maps/Wetlands_XP2.lua</File>
     <!-- New Maps -->
     <File>Maps/Tiny_Islands.lua</File>
