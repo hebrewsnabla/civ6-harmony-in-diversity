@@ -12,6 +12,9 @@ update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_PO
 update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
 update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 
+-- Map
+update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
+
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL_WONDER';
