@@ -153,8 +153,8 @@ insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_ANIMAL_HUSBANDRY',	'TechType',	'TECH_ANIMAL_HUSBANDRY'),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_MINING',			'TechType',	'TECH_MINING');
 
--- Production Scale: 60 + 20n
-update ModifierArguments set Extra = 12
+-- Production Scale: 75 + 15n
+update ModifierArguments set Extra = 15
 	where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType
@@ -169,7 +169,7 @@ select 'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType, 'YieldType', '
 from Eras where not EraType = 'ERA_ANCIENT';
 insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
 select	'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 4
+		'LinearScaleFromDefaultHandicap', 0, 3
 from Eras where not EraType = 'ERA_ANCIENT';
 
 -- Science Scale: 40 + 10n

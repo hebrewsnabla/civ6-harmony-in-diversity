@@ -640,8 +640,8 @@ update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING
 update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_TEMPLE';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_STAVE_CHURCH';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_CATHEDRAL';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_GURDWARA';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MEETING_HOUSE';
@@ -651,7 +651,7 @@ update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_WAT';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_STUPA';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_DAR_E_MEHR';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_PRASAT';
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_AMPHITHEATER';
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
