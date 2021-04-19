@@ -6,7 +6,7 @@
 insert into District_CitizenGreatPersonPoints
     (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
 values
-    ("DISTRICT_THANH",                  "GREAT_PERSON_CLASS_GENERAL",       2),
+    ("DISTRICT_THANH",                  "GREAT_PERSON_CLASS_GENERAL",       2);
 
 insert into DistrictModifiers
     (DistrictType,                      ModifierId)
