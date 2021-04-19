@@ -90,9 +90,6 @@ update AiFavoredItems set Value = 50 where ListType = 'CatherineAltLuxuries';
 
 -- For different Leaders 
 insert or replace into AiListTypes (ListType) values
-	('AmbiorixBuildings'),
-	('AmbiorixDistricts'),
-	('AmbiorixYields'),
 	('BarbarossaBuildings'),
 	('BarbarossaDistricts'),
 	('BarbarossaYields');
@@ -100,9 +97,6 @@ insert or replace into AiListTypes (ListType) values
 insert or replace into AiLists
 	(ListType,					LeaderType,							System)
 values
-	('AmbiorixBuildings',		'TRAIT_LEADER_AMBIORIX',			'Buildings'),
-	('AmbiorixDistricts',		'TRAIT_LEADER_AMBIORIX',			'Districts'),
-	('AmbiorixYields',			'TRAIT_LEADER_AMBIORIX',			'Yields'),
 	('BarbarossaBuildings',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Buildings'),
 	('BarbarossaDistricts',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Districts'),
 	('BarbarossaYields',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Yields');
@@ -110,12 +104,6 @@ values
 insert or replace into AiFavoredItems
 	(ListType,					Item,						Favored,	Value)
 values
-	('AmbiorixBuildings',		'BUILDING_WORKSHOP',		1,			0),
-	('AmbiorixDistricts',		'DISTRICT_OPPIDUM',			1,			0),
-	('GaulFavoredTechs',		'TECH_IRON_WORKING',		1,			0),
-	('AmbiorixYields',			'YIELD_FAITH',				1,			-20),
-	('AmbiorixYields',			'YIELD_FOOD',				1,			10),
-	('AmbiorixYields',			'YIELD_PRODUCTION',			1,			10),
 	('BarbarossaBuildings',		'BUILDING_WORKSHOP',		1,			0),
 	('BarbarossaDistricts',		'DISTRICT_HANSA',			1,			0),
 	('BarbarossaTechs',			'TECH_IRON_WORKING',		1,			0),
