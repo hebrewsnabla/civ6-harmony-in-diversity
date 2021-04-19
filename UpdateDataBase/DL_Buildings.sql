@@ -59,7 +59,6 @@ values
 	('BUILDING_SHRINE',						'YIELD_FAITH',		1),
 	('BUILDING_TEMPLE',						'YIELD_FAITH',		1),
 	('BUILDING_STAVE_CHURCH',				'YIELD_FAITH',		1), --ub（挪威）
-	('BUILDING_PRASAT',						'YIELD_FAITH',		1), --ub (高棉)
 	-- holy site: third level
 	-- increase faith + 1
 	-- harbor
@@ -73,8 +72,6 @@ values
 	-- encampment
 	('BUILDING_BARRACKS',					'YIELD_PRODUCTION', 1),
 	('BUILDING_BARRACKS',					'YIELD_GOLD',		-1),
-	('BUILDING_BASILIKOI_PAIDES',			'YIELD_PRODUCTION', 1), -- ub
-	('BUILDING_BASILIKOI_PAIDES',			'YIELD_GOLD',		-1), -- ub
 	('BUILDING_STABLE',						'YIELD_PRODUCTION', 1),
 	('BUILDING_STABLE',						'YIELD_GOLD',		-1),
 	('BUILDING_ORDU',						'YIELD_PRODUCTION', 1), -- ub
@@ -86,7 +83,6 @@ values
 	('BUILDING_MILITARY_ACADEMY',			'YIELD_GOLD',		-2),
 	-- commercial hub
 	('BUILDING_MARKET',						'YIELD_GOLD',		2),
-	('BUILDING_SUKIENNICE',					'YIELD_GOLD',		2), -- ub
 	('BUILDING_BANK',						'YIELD_GOLD',		2),
 	('BUILDING_GRAND_BAZAAR',				'YIELD_GOLD',		2), -- ub
 	-- commercial hub: third level
@@ -220,7 +216,6 @@ values
 	('BUILDING_WATER_MILL',			'YIELD_PRODUCTION',	2),
 	-- 
 	('BUILDING_MARKET',				'YIELD_GOLD',		5),
-	('BUILDING_SUKIENNICE',			'YIELD_GOLD',		5),
 	('BUILDING_BANK',				'YIELD_GOLD',		8),
 	('BUILDING_GRAND_BAZAAR',		'YIELD_GOLD',		8),
 	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
@@ -264,7 +259,6 @@ values
 	('BUILDING_SHRINE',				'SHRINE_BUILDER_PURCHASE'),
 	('BUILDING_TEMPLE',				'TEMPLE_SETTLER_PURCHASE'),
 	('BUILDING_STAVE_CHURCH',		'TEMPLE_SETTLER_PURCHASE'),
-	('BUILDING_PRASAT',				'TEMPLE_SETTLER_PURCHASE'),
 	-- 
 	('BUILDING_GRANARY',			'GRANARY_POP_FOOD_MODIFIER'),
 	('BUILDING_LIBRARY',			'LIBRARY_POP_SCIENCE_MODIFIER'),
@@ -277,8 +271,6 @@ values
 	('BUILDING_LIGHTHOUSE',			'LIGHTHOUSE_ADD_RESOURCE_FOOD'),
 	-- ('BUILDING_BARRACKS',			'BARRACKS_ADD_COPPER_PRODUCTION'),
 	('BUILDING_BARRACKS',			'BARRACKS_ADD_IRON_PRODUCTION'),
-	-- ('BUILDING_BASILIKOI_PAIDES',	'BARRACKS_ADD_COPPER_PRODUCTION'), --ub
-	('BUILDING_BASILIKOI_PAIDES',	'BARRACKS_ADD_IRON_PRODUCTION'), --ub
 	--('BUILDING_STABLE',				'STABLE_ADD_SHEEP_FOOD'),
 	--('BUILDING_STABLE',				'STABLE_ADD_SHEEP_PRODUCTION'),
 	--('BUILDING_STABLE',				'STABLE_ADD_CATTLE_FOOD'),
@@ -310,8 +302,6 @@ values
 	('BUILDING_BARRACKS',			'BARRACKS_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_MILITARY_ACADEMY',	'MILITARY_ACADEMY_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_SEAPORT',			'SEAPORT_TRAINED_STRENGTH_MODIFIER'),
-	('BUILDING_BASILIKOI_PAIDES',	'BASILIKOI_TRAINED_STRENGTH_MODIFIER'), --ub
-	-- ('BUILDING_BASILIKOI_PAIDES', 'BASILIKOI_PAIDES_INCREASED_MOVEMENT_MODIFIER'),
 	('BUILDING_STABLE',				'STABLE_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_ORDU',				'ORDU_TRAINED_STRENGTH_MODIFIER'); --ub
 
@@ -471,7 +461,6 @@ values
 	('BUILDING_FILM_STUDIO',				'POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST'),
 	-- Commercial hub
 	-- ('BUILDING_MARKET',						'MARKET_GOLD_PERCENTAGE_BOOST'),
-	-- ('BUILDING_SUKIENNICE',					'MARKET_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_BANK',						'BANK_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_GRAND_BAZAAR',				'BANK_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_STOCK_EXCHANGE',				'STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST'),
@@ -480,7 +469,6 @@ values
 	-- ('BUILDING_SHRINE',						'SHRINE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_TEMPLE',						'TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_STAVE_CHURCH',				'TEMPLE_FAITH_PERCENTAGE_BOOST'),
-	('BUILDING_PRASAT',						'TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_CATHEDRAL',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_GURDWARA',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_MEETING_HOUSE',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
@@ -640,8 +628,8 @@ update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING
 update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_TEMPLE';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_STAVE_CHURCH';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_CATHEDRAL';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_GURDWARA';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MEETING_HOUSE';
@@ -651,7 +639,7 @@ update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_WAT';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_STUPA';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_DAR_E_MEHR';
-update Buildings set Maintenance = 2,	Cost = 150	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_PRASAT';
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_AMPHITHEATER';
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
@@ -1222,7 +1210,7 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType,											SubjectRequirementSetId)
 values
 	('NILOMETER_SCIENCE',					'MODIFIER_BUILDING_YIELD_CHANGE',						'PLOT_FLOODPLAINS_REQUIREMENTS'),
- 	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'CITY_HAS_WONDER_REQUIREMENTS'),
+ 	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'DL_CITY_HAS_WONDER_REQUIREMENTS'),
  	('KAREZ_FOOD',							'MODIFIER_BUILDING_YIELD_CHANGE',						'KAREZ_REQUIREMENT'),
  	('KAREZ_HOUSING',						'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING',			'KAREZ_REQUIREMENT'),
  	('HANDCRAFT_BUILDING_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),

@@ -2,6 +2,31 @@
 --           Ethiopia DLC          --
 -------------------------------------
 
+insert or replace into PolicyModifiers
+    (PolicyType,    ModifierId)
+values
+    ('POLICY_GOV_AUTOCRACY',    'AUTOCRACY_DIP');
+
+insert or replace into GovernmentModifiers
+    (GovernmentType,    ModifierId)
+values
+    ('GOVERNMENT_AUTOCRACY',    'AUTOCRACY_DIP');
+
+insert or replace into Modifiers
+    (ModifierId,        ModifierType,   SubjectRequirementSetId)
+values
+    ('AUTOCRACY_DIP',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE', 'CITY_HAS_DIP_DISTRICT');
+
+insert or replace into RequirementSetRequirements(RequirementSetId, RequirementId)values
+    ('CITY_HAS_DIP_DISTRICT',   'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into RequirementSets(RequirementSetId, RequirementSetType)values
+    ('CITY_HAS_DIP_DISTRICT',   'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into ModifierArguments
+    (ModifierId,            Name,       Value)
+values
+    ('AUTOCRACY_DIP',       'Amount',   2);
+
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_DELEGATION_FAVOR';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_EMBASSY_FAVOR';
@@ -19,7 +44,7 @@ insert or replace into BuildingModifiers
 values
     ('BUILDING_CHANCERY',                   'CHANCERY_ADD_VISIBILITY'),
     -- ('BUILDING_CONSULATE',                  'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
-    ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT'),
+    ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT');
     -- ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_UNITUPGRADEDISCOUNT');
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'),
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_DELEGATION_FAVOR'),

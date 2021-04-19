@@ -47,32 +47,32 @@ update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_OAS
 update Feature_YieldChanges set YieldChange = 0 where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD'; -- remove reef extra food.
 
 -- Resource yields adjustment
-insert into Resource_YieldChanges values 
-	-- ResourceType, YieldType, YieldChange
-	('RESOURCE_DEER', 'YIELD_FOOD', 1),
-	('RESOURCE_CATTLE', 'YIELD_PRODUCTION', 1),
-	-- ('RESOURCE_SHEEP', 'YIELD_PRODUCTION', -1),
+insert or replace into Resource_YieldChanges  
+	(ResourceType,			YieldType,			YieldChange)
+values
+	('RESOURCE_DEER',		'YIELD_FOOD',		1),
+	('RESOURCE_CATTLE',		'YIELD_PRODUCTION',	1),
+	-- ('RESOURCE_SHEEP',		'YIELD_PRODUCTION',		-1),
 	--
-	('RESOURCE_CITRUS', 'YIELD_GOLD', 1),
-	('RESOURCE_COFFEE', 'YIELD_GOLD', 1),
-	('RESOURCE_DYES', 'YIELD_GOLD', 1),
-	('RESOURCE_INCENSE', 'YIELD_GOLD', 1),
-	('RESOURCE_JADE', 'YIELD_GOLD', 1),
-	('RESOURCE_MARBLE', 'YIELD_GOLD', 1),
-	('RESOURCE_MERCURY', 'YIELD_GOLD', 1),
-	('RESOURCE_PEARLS', 'YIELD_GOLD', 1),
-	('RESOURCE_SILK', 'YIELD_GOLD', 1),
-	('RESOURCE_SPICES', 'YIELD_GOLD', 1),
-	('RESOURCE_SUGAR', 'YIELD_GOLD', 1),
-	('RESOURCE_TEA', 'YIELD_GOLD', 1),
-	('RESOURCE_TOBACCO', 'YIELD_GOLD', 1),
-	('RESOURCE_AMBER', 'YIELD_GOLD', 1),
-	('RESOURCE_TURTLES', 'YIELD_GOLD', 1),
-	('RESOURCE_HONEY', 'YIELD_GOLD', 1),
+	('RESOURCE_CITRUS',		'YIELD_GOLD',		1),
+	('RESOURCE_COFFEE',		'YIELD_GOLD',		1),
+	('RESOURCE_DYES',		'YIELD_GOLD',		1),
+	('RESOURCE_INCENSE',	'YIELD_GOLD',		1),
+	('RESOURCE_JADE',		'YIELD_GOLD',		1),
+	('RESOURCE_MARBLE',		'YIELD_GOLD',		1),
+	('RESOURCE_MERCURY',	'YIELD_GOLD',		1),
+	('RESOURCE_PEARLS',		'YIELD_GOLD',		1),
+	('RESOURCE_SILK',		'YIELD_GOLD',		1),
+	('RESOURCE_SPICES',		'YIELD_GOLD',		1),
+	('RESOURCE_SUGAR',		'YIELD_GOLD',		1),
+	('RESOURCE_TEA',		'YIELD_GOLD',		1),
+	('RESOURCE_TOBACCO',	'YIELD_GOLD',		1),
+	('RESOURCE_AMBER',		'YIELD_GOLD',		1),
+	('RESOURCE_TURTLES',	'YIELD_GOLD',		1),
 	--
-	('RESOURCE_SILVER', 'YIELD_PRODUCTION', 1),
+	('RESOURCE_SILVER',		'YIELD_PRODUCTION',	1),
 	--
-	('RESOURCE_ALUMINUM', 'YIELD_PRODUCTION', 1);
+	('RESOURCE_ALUMINUM',	'YIELD_PRODUCTION',	1);
 
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SHEEP' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
@@ -125,7 +125,3 @@ update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_P
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
 -- update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
-insert or replace into Feature_AdjacentYields (FeatureType, YieldType, YieldChange) values
-	-- ('FEATURE_TSINGY', 'YIELD_GOLD', 1),
-	('FEATURE_LYSEFJORDEN', 'YIELD_PRODUCTION', 1)
-;

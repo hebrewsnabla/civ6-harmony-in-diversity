@@ -177,9 +177,6 @@ update AiFavoredItems set Value = 50 where ListType = 'CatherineAltLuxuries';
 
 -- For different Leaders 
 insert or replace into AiListTypes (ListType) values
-	('AmbiorixBuildings'),
-	('AmbiorixDistricts'),
-	('AmbiorixYields'),
 	('BarbarossaBuildings'),
 	('BarbarossaDistricts'),
 	('BarbarossaYields');
@@ -187,9 +184,6 @@ insert or replace into AiListTypes (ListType) values
 insert or replace into AiLists
 	(ListType,					LeaderType,							System)
 values
-	('AmbiorixBuildings',		'TRAIT_LEADER_AMBIORIX',			'Buildings'),
-	('AmbiorixDistricts',		'TRAIT_LEADER_AMBIORIX',			'Districts'),
-	('AmbiorixYields',			'TRAIT_LEADER_AMBIORIX',			'Yields'),
 	('BarbarossaBuildings',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Buildings'),
 	('BarbarossaDistricts',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Districts'),
 	('BarbarossaYields',		'TRAIT_LEADER_HOLY_ROMAN_EMPEROR',	'Yields');
@@ -197,12 +191,6 @@ values
 insert or replace into AiFavoredItems
 	(ListType,					Item,						Favored,	Value)
 values
-	('AmbiorixBuildings',		'BUILDING_WORKSHOP',		1,			0),
-	('AmbiorixDistricts',		'DISTRICT_OPPIDUM',			1,			0),
-	('GaulFavoredTechs',		'TECH_IRON_WORKING',		1,			0),
-	('AmbiorixYields',			'YIELD_FAITH',				1,			-20),
-	('AmbiorixYields',			'YIELD_FOOD',				1,			10),
-	('AmbiorixYields',			'YIELD_PRODUCTION',			1,			10),
 	('BarbarossaBuildings',		'BUILDING_WORKSHOP',		1,			0),
 	('BarbarossaDistricts',		'DISTRICT_HANSA',			1,			0),
 	('BarbarossaTechs',			'TECH_IRON_WORKING',		1,			0),
@@ -240,8 +228,8 @@ insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_ANIMAL_HUSBANDRY',	'TechType',	'TECH_ANIMAL_HUSBANDRY'),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_MINING',			'TechType',	'TECH_MINING');
 
--- Production Scale: 60 + 20n
-update ModifierArguments set Extra = 12
+-- Production Scale: 75 + 15n
+update ModifierArguments set Extra = 15
 	where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType
@@ -256,7 +244,7 @@ select 'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType, 'YieldType', '
 from Eras where not EraType = 'ERA_ANCIENT';
 insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
 select	'HIGH_DIFFICULTY_PRODUCTION_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 4
+		'LinearScaleFromDefaultHandicap', 0, 3
 from Eras where not EraType = 'ERA_ANCIENT';
 
 -- Science Scale: 40 + 10n
