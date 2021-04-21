@@ -12,6 +12,9 @@ update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_PO
 update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
 update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 
+-- Map
+update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
+
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL_WONDER';
@@ -94,4 +97,5 @@ updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 -- The New Global Parameters.
 insert or replace into GlobalParameters (Name, Value) values
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 9),
+    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

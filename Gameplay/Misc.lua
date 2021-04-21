@@ -5,7 +5,8 @@ function OnPlayerEraScoreChanged(playerID, amountAwarded)
     if player ~= nil then
         -- print(player)
         if player:IsMajor() then
-            player:GetTreasury():ChangeGoldBalance(amountAwarded * 10)
+            local amount = tonumber(GameInfo.GlobalParameters['GOLD_FOR_EVERY_ERA_SCORE'].Value)
+            player:GetTreasury():ChangeGoldBalance(amountAwarded * amount)
         end
     end
 end

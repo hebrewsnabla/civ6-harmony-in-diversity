@@ -15,9 +15,6 @@ values
 	('DISTRICT_HANSA',				'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'AERODROME_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'SEAOil_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',			'Oil_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',			'AERODROME_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',			'SEAOil_INDUSTRIAL_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Canal_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
@@ -50,11 +47,6 @@ values
 	-- 
 	-- ('DISTRICT_HANSA',				'Aqueduct_Production_Late'),
 	('DISTRICT_HANSA',				'Bath_Production'),
-	('DISTRICT_OPPIDUM',			'Bath_Production'),
-	('DISTRICT_OPPIDUM',			'Aqueduct_Production'),
-	('DISTRICT_OPPIDUM',			'Dam_Production'),
-	('DISTRICT_OPPIDUM',			'Canal_Production'),
-	('DISTRICT_OPPIDUM',			'Mine_Production'),
 	-- ('DISTRICT_HANSA',				'Bath_Production_Late'),
 	('DISTRICT_HANSA',				'Commerical_Hub_Production_Late'), -- TODO: Hansa & Suguba
 	('DISTRICT_HANSA',				'Resource_Production_Late');
@@ -63,10 +55,8 @@ insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
 	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
-	('IMPROVEMENT_MINE',			'Mine_Oppidum_Production'),
 	-- ('IMPROVEMENT_MINE',			'Mine_Hansa_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
-	('IMPROVEMENT_QUARRY',			'Quarry_Oppidum_Production'),
 	-- ('IMPROVEMENT_QUARRY',			'Quarry_Hansa_Production'),
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
@@ -74,7 +64,6 @@ values
 	('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
-	('IMPROVEMENT_CAMP',			'Camp_Hippodrome_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
@@ -98,14 +87,10 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Mine_Oppidum_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
-	'DISTRICT_OPPIDUM',				NULL,			NULL,		NULL,			NULL, 			'NO_RESOURCECLASS'),
 	('Mine_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Quarry_Industrial_Production',	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Quarry_Oppidum_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
-	'DISTRICT_OPPIDUM',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Quarry_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
@@ -118,8 +103,6 @@ values
 	'DISTRICT_ENTERTAINMENT_COMPLEX', NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Camp_Street_Carnival_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_STREET_CARNIVAL',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Camp_Hippodrome_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
-	'DISTRICT_HIPPODROME',			NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Fishing_Boats_Harbor_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_HARBOR',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Fishing_Boats_Royal_Navy_Gold', 	'Placeholder', 'YIELD_GOLD',		2,				1,				0,

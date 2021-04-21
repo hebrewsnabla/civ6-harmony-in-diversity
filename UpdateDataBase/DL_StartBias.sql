@@ -11,8 +11,7 @@ values
 	('CIVILIZATION_CREE',	'RESOURCE_TRUFFLES',	4),				
 	('CIVILIZATION_CREE',	'RESOURCE_IVORY',		4),				
 	('CIVILIZATION_CREE',	'RESOURCE_FURS',		4),				
-	('CIVILIZATION_CREE',	'RESOURCE_DEER',		4),
-	('CIVILIZATION_CREE',	'RESOURCE_HONEY',		4);				
+	('CIVILIZATION_CREE',	'RESOURCE_DEER',		4);
 
 --start bias for Australia
 update StartBiasResources set

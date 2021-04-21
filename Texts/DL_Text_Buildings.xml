@@ -471,16 +471,20 @@
     <Text>+3 [ICON_Strength] Movement from War Department.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_CONSULATE_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。可额外招募一名间谍。</Text>
+    <Text>每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%。</Text>
+    <!-- ，升级征集单位所花费的 [ICON_GOLD] 金币和资源减少20%。</Text> -->
+    <!-- <Text>每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。可额外招募一名间谍。</Text> -->
   </Replace>
   <Replace Tag="LOC_BUILDING_CONSULATE_DESCRIPTION" Language="en_US">
-    <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy.</Text>
+    <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold.</Text>
+    <!-- It costs 20% less [ICON_GOLD] Gold and resources to upgrade Levied units.  -->
+  <!-- <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy.</Text> -->
   </Replace>
   <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="zh_Hans_CN">
     <Text>每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。对所有文明+1 [ICON_VisLimited] 外交能见度。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="en_US">
-    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. + 1 [ICON_VisLimited] Visibility to all other Civs.</Text>
+    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. +1 [ICON_VisLimited] Visibility to all other Civs.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_NILOMETER_HD_NAME" Language="zh_Hans_CN">
     <Text>测量仪</Text>
@@ -489,10 +493,10 @@
     <Text>Nilometer</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_NILOMETER_HD_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。</Text>
+    <Text>如果市中心位于泛滥平原上，则额外+1 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_NILOMETER_HD_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Science] Science if the city center is on the flood plains.[NEWLINE][NEWLINE]May not be built in cities that already has a Triumphal Arch.</Text>
+    <Text>Extra +1 [ICON_Science] Science if the city center is on the flood plains.[NEWLINE][NEWLINE]May not be built in cities that already has a Triumphal Arch.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_NAME" Language="zh_Hans_CN">
     <Text>凯旋门</Text>
@@ -501,10 +505,10 @@
     <Text>Triumphal Arch</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。</Text>
+    <Text>如果城市中拥有至少1个世界奇观，则额外+1 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Culture] Culture if the city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already has a Nilometer.</Text>
+    <Text>Extra +1 [ICON_Culture] Culture if the city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already has a Nilometer.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_KAREZ_NAME" Language="zh_Hans_CN">
     <Text>坎儿井</Text>
@@ -513,10 +517,10 @@
     <Text>Karez</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_KAREZ_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心位于丘陵之上或靠近山脉则额外+2 [ICON_Food] 食物，且+1 [ICON_Housing] 住房。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。</Text>
+    <Text>如果市中心位于丘陵之上或靠近山脉则额外+1 [ICON_Food] 食物，且+1 [ICON_Housing] 住房。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_KAREZ_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Food] Food and +1 [ICON_Housing] Housing if the city locates on the Hills or is adjacent to Mountains.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Boot Camp.</Text>
+    <Text>Extra +1 [ICON_Food] Food and +1 [ICON_Housing] Housing if the city locates on the Hills or is adjacent to Mountains.[NEWLINE][NEWLINE]May not be built in cities that already has a Official Run Handcraft or Boot Camp.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME" Language="zh_Hans_CN">
     <Text>工官</Text>
@@ -525,10 +529,10 @@
     <Text>Official Run Handcraft</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外建造区域、建筑和奇观时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。</Text>
+    <Text>如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外建造区域、建筑和奇观时+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION" Language="en_US">
-    <Text>Extra +2 [ICON_Production] Production towards Districts, Buildings and Wonders if the city owns Quarries or Mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Boot Camp.</Text>
+    <Text>Extra +1 [ICON_Production] Production towards Districts, Buildings and Wonders if the city owns Quarries or Mines over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already has a Karez or Boot Camp.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_BOOTCAMP_NAME" Language="zh_Hans_CN">
     <Text>训练营</Text>
@@ -549,10 +553,10 @@
     <Text>Fair</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>如果市中心与至少一个奢侈资源相邻，则额外+4 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有图腾柱的城市中。</Text>
+    <Text>如果市中心与至少一个奢侈资源相邻，则额外+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有图腾柱的城市中。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_FAIR_DESCRIPTION" Language="en_US">
-    <Text>Extra +4 [ICON_Gold] Gold if the city center adjacent to at least one luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already has a Totems.</Text>
+    <Text>Extra +2 [ICON_Gold] Gold if the city center adjacent to at least one luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already has a Totems.</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_TOTEMS_NAME" Language="zh_Hans_CN">
     <Text>图腾柱</Text>
