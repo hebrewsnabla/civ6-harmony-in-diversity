@@ -102,5 +102,5 @@ update CivicRandomCosts set Cost = Cost * 1.3 where Cost = 3200 or Cost = 3300;
 
 update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOOST_ALL_TOURISM' and Name = 'Amount';
 
-insert or replace into CivicModifiers (CivicType, ModifierId) values
-	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
+-- insert or replace into CivicModifiers (CivicType, ModifierId) values
+-- 	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
