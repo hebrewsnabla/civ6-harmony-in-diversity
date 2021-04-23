@@ -598,6 +598,7 @@ values
 
 update Governors set TransitionStrength = 150 where GovernorType = 'GOVERNOR_THE_CARDINAL';
 
+delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_BISHOP_FAITH_DISTRICT';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_PRESSURE';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_COMBAT';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS';
@@ -605,6 +606,7 @@ delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_GRAND_INQUIS
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_LAYING_ON_OF_HANDS_RELIGIOUS_HEAL';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_LAYING_ON_OF_HANDS_HEAL';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_FAITH_PURCHASE_DISTRICT';
+
 insert or replace into GovernorPromotionModifiers 
 	(GovernorPromotionType,								ModifierId) 
 values

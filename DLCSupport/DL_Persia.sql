@@ -51,6 +51,8 @@ values
     ('Pairidaeza_CityCenterAdjacency_Food',     'Placeholder',      'YIELD_FOOD',   1,              'DISTRICT_CITY_CENTER'),
     ('Pairidaeza_HarborAdjacency',              'Placeholder',      'YIELD_GOLD',   1,              'DISTRICT_HARBOR');
 
+update Improvements set Appeal = 2 where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
+
 insert or replace into ImprovementModifiers
     (ImprovementType,                           ModifierId)
 values

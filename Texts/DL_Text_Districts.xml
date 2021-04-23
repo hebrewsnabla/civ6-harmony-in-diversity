@@ -10,7 +10,7 @@
       <!-- [NEWLINE][NEWLINE]Each Citizens in this district provides 2 Great Prophet Points. -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张1单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
+      <Text>俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张一个单元格。若该区域内含有三级宗教建筑，则本城+15% [ICON_Faith] 信仰值。为相邻单元格+1魅力。</Text>
       <!-- [NEWLINE][NEWLINE]区域内的每个专家获得2点大预言家点数。 -->
     </Replace>
     <Replace Tag="LOC_DISTRICT_LAVRA_DESCRIPTION" Language="en_US">
@@ -60,10 +60,10 @@
       <Text>A district unique to England for naval activity in your city. Replaces the Harbor district. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land. +2 [ICON_HOUSING] Housing if this city is adjacent to coasts and lakes. Fishing Boats +1 [ICON_FOOD] Food in this city. +25% [ICON_PRODUCTION] production towards all naval units.[NEWLINE][NEWLINE]+1 [ICON_Movement] Movement for all naval units built in Dockyard. +2 [ICON_Gold] Gold and +4 Loyalty per turn when built on a foreign continent.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。此城中训练的所有抗骑兵单位+1 [ICON_Movement] 移动力。为本城已开发的[ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
+      <Text>祖鲁特色区域，替代军营。+1 [ICON_Housing] 住房。解锁相应的市政或科技后即可生产军团和军队。伊坎达中的建筑+2 [ICON_GOLD] 金币、+1 [ICON_SCIENCE] 科技值。创建军团和军队的速度更快。[NEWLINE] 对陆地军事单位+30% 建造速度。此城中训练的所有抗骑兵单位+1 [ICON_Movement] 移动力。为本城已开发的[ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_IKANDA_DESCRIPTION" Language="en_US">
-      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone and [ICON_RESOURCE_COPPER] Copper resource in this city. -1 Appeal to adjacent tiles.</Text>
+      <Text> A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be built outright. Buildings in the Ikanda receive +2 [ICON_GOLD] Gold and +1 [ICON_SCIENCE] Science. Faster Corps and Army creation.[NEWLINE] +30% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for improved [ICON_RESOURCE_STONE] Stone and [ICON_RESOURCE_COPPER] Copper resource in this city. -1 Appeal to adjacent tiles.</Text>
     </Replace>
     <Replace Tag="LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION" Language="zh_Hans_CN">
       <Text>您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。</Text>
