@@ -214,5 +214,17 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_MILITARY_TACTICS" Language="en_US">
 			<Text>Have the Defensive Tactics civic.</Text>
 		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_REPLACEABLE_PARTS" Language="zh_Hans_CN">
+			<Text>拥有3个线列步兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_REPLACEABLE_PARTS" Language="en_US">
+			<Text>Own 3 Line Infantries.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SIEGE_TACTICS" Language="zh_Hans_CN">
+			<Text>拥有2个抛石机。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SIEGE_TACTICS" Language="en_US">
+			<Text>Own 2 Trebuchets.</Text>
+		</Replace>
 	</LocalizedText>
 </GameData>

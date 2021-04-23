@@ -80,6 +80,7 @@ update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPR
 delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
 update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' and YieldType = 'YIELD_SCIENCE';
 update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Holy_Site_Faith';
+update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Lavra_Faith';
 --Hattusa
 update Modifiers set SubjectRequirementSetId = 'PLAYER_CAN_SEE_HORSES'   where ModifierId = 'MINOR_CIV_HATTUSA_HORSES_RESOURCE_XP2';
 update Modifiers set SubjectRequirementSetId = 'PLAYER_CAN_SEE_IRON'     where ModifierId = 'MINOR_CIV_HATTUSA_IRON_RESOURCE_XP2';

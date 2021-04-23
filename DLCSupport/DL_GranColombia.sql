@@ -26,6 +26,8 @@ update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_R
     where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_YIELDS';
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_CAPITAL_REQUIREMENTS'
     where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_LOSE_YIELDS';
+update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS' where
+    ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_BUILDER';
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
     ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');

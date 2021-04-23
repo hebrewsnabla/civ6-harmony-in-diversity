@@ -159,6 +159,12 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 
 
 --------------------------------------------------------------------------------------------------------------------------
+-- Georgia
+-- Resume ability (April Update)
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
+update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
+
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
 insert or replace into CivicModifiers (CivicType, ModifierId) values
@@ -200,6 +206,9 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_TundraMountainAdjacency_later'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_SnowMountainAdjacency_later');
 
+-- 1 housing (2 & 2 in official update)
+update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
+
 insert or replace into Adjacency_YieldChanges
 	(ID,	Description,	YieldChange,	YieldType,	AdjacentTerrain,	PrereqTech)
 values
@@ -210,6 +219,7 @@ values
 	('Terrace_SnowMountainAdjacency_later',		'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_SNOW_MOUNTAIN',	'TECH_ENGINEERING');
 
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN' and Name = 'Amount';
+delete from TraitModifiers where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN_LATE';
 
 insert or replace into TraitModifiers
 	(TraitType,						ModifierId)
@@ -274,6 +284,23 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
+
+-----------------------------------------------------------------------------------------------------------------
+-- Russia, Resume the ability
+-- TRAIT_CIVILIZATION_DISTRICT_LAVRA
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_SHRINE_WRITING_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TEMPLE_ARTIST_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TIER3_MUSICIAN_POINTS';
+
+-- Doubles because all GP doulbes.
+insert or replace into District_GreatPersonPoints
+	(DistrictType,		GreatPersonClassType,			PointsPerTurn)
+values
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_WRITER',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_ARTIST',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_MUSICIAN',	2);
+
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_INCREASED_TILES' and Name = 'Amount';
 
 -----------------------------------------------------------------------------------------------------------------
 

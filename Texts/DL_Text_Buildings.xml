@@ -20,11 +20,11 @@
     <Replace Tag="LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION" Language="en_US">
       <Text>Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. [ICON_Amenities] Amenity extends to each city center within 4 tiles. This bonus applies once to a city, and multiple copies of this building within 4 tiles of a city center do not provide additional bonuses.</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_TLACHTLI_EXPANSION1_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。[ICON_Amenities] 宜居度加成延伸到4个单元格中的每个市中心。此加成1座城市仅能应用1次，因此市中心4个单元格以内相同的此建筑不会再额外提供加成。</Text>
+    <Replace Tag="LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>阿兹特克特色建筑。提供1点 [ICON_Amenities] 宜居度、+2 [ICON_Culture] 文化值、+2 [ICON_Faith] 信仰值，并提供1点 [ICON_GreatGeneral] 大将军点数。拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。[ICON_Amenities] 宜居度加成延伸到4个单元格中的每个市中心。此加成1座城市仅能应用1次，因此市中心4个单元格以内相同的此建筑不会再额外提供加成。</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_TLACHTLI_EXPANSION1_DESCRIPTION" Language="en_US">
-      <Text>Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. [ICON_Amenities] Amenity extends to each city center within 4 tiles. This bonus applies once to a city, and multiple copies of this building within 4 tiles of a city center do not provide additional bonuses.</Text>
+    <Replace Tag="LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION" Language="en_US">
+      <Text>A building unique to the Aztecs. Provides 1 [ICON_Amenities] Amenities, +2 [ICON_Culture] Culture, +2 [ICON_Faith] Faith, and a [ICON_GreatGeneral] Great General Point. Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. [ICON_Amenities] Amenity extends to each city center within 4 tiles. This bonus applies once to a city, and multiple copies of this building within 4 tiles of a city center do not provide additional bonuses.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION" Language="zh_Hans_CN">
       <Text> +2 [ICON_TOURISM]旅游业绩 [NEWLINE][NEWLINE][ICON_Amenities] 宜居度和 [ICON_Culture] 文化值加成延伸到6个单元格中的每个市中心。此加成1座城市仅能应用1次，因此市中心6个单元格以内相同的此建筑不会再额外提供加成。</Text>
@@ -45,16 +45,16 @@
       <Text>A building unique to Macedon.+25% combat experience for all melee, ranged land units, and Hetairoi trained in this city. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city.[NEWLINE][NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Stable.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_IRON] Iron in this city. +3 [ICON_Strength] Combat strength for all land combat, ranged and Hetairoi trained in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STABLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 该城市中训练的所有骑兵类单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]不能建造在已有兵营的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马+2 [ICON_Production] 生产力。为在本城训练的轻重骑兵、攻城单位提供永久+3 [ICON_Strength] 战斗力。</Text>
+      <Text> 该城市中训练的所有骑兵类和攻城类单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]不能建造在已有兵营的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马+2 [ICON_Production] 生产力。为在本城训练的轻重骑兵和攻城类单位提供永久+3 [ICON_Strength] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STABLE_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text> +25% combat experience for all cavalry class units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Barracks.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_HORSES] Horses in this city. +3 [ICON_Strength] Combat strength for all light and heavy cavalry units and siege units trained in this city. </Text>
+      <Text> +25% combat experience for all cavalry and siege class units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Barracks.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_HORSES] Horses in this city. +3 [ICON_Strength] Combat strength for all cavalry and siege units trained in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORDU_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text> 蒙古特色建筑。其所在城市中训练的轻重骑兵单位 [ICON_MOVEMENT] 移动力+1。其所在城市中训练的所有骑兵类单位战斗经验值+25%。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]无法建造在已拥有兵营的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源+2 [ICON_Production] 生产力。为在本城训练的轻重骑兵、怯薛歹提供永久+3 [ICON_Strength] 战斗力。</Text>
+      <Text> 蒙古特色建筑。其所在城市中训练的轻重骑兵单位 [ICON_MOVEMENT] 移动力+1。其所在城市中训练的所有骑兵类和攻城类单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]无法建造在已拥有兵营的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_HORSES] 马资源+2 [ICON_Production] 生产力。为在本城训练的轻重骑兵、攻城类单位、怯薛歹提供永久+3 [ICON_Strength] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_ORDU_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>A building unique to Mongolia. Grants an ability that gives +1 [ICON_MOVEMENT] Movement to Heavy and Light Cavalry trained in this city. +25% combat experience for all cavalry class units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Barracks.[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Stable.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_HORSES] Horses. +3 [ICON_Strength] Combat strength for all cavalry units and Keshig trained in this city.</Text>
+      <Text>A building unique to Mongolia. Grants an ability that gives +1 [ICON_MOVEMENT] Movement to Heavy and Light Cavalry trained in this city. +25% combat experience for all cavalry and siege class units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Barracks.[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Stable.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_HORSES] Horses. +3 [ICON_Strength] Combat strength for all cavalry and siege units, and Keshig trained in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_SHRINE_DESCRIPTION" Language="zh_Hans_CN">
       <Text>允许使用 [ICON_Faith] 信仰值购买建造者。允许购买传教士（只能使用 [ICON_Faith] 信仰值进行购买）。</Text>
@@ -126,10 +126,10 @@
     <Replace Tag="LOC_BUILDING_MUSEUM_ART_DESCRIPTION" Language="en_US">
       <Text>Holds [ICON_GreatWork_Landscape] Great Works of Art. May not be built in a Theater Square district that already has an Archaeological Museum. Its [ICON_CULTURE] Culture bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. +10% [ICON_CULTURE] Culture in this city.</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_FILM_STUDIO_DESCRIPTION" Language="zh_Hans_CN">
+    <Replace Tag="LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
       <Text>美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。其 [ICON_CULTURE] 文化值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_CULTURE] 文化值+10%。通电后额外为本城+10% [ICON_CULTURE] 文化值.</Text>
     </Replace>
-    <Replace Tag="LOC_BUILDING_FILM_STUDIO_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Modern era. +10% [ICON_CULTURE] Culture in this city. +10% [ICON_CULTURE] culture if the city is fully powered.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION" Language="zh_Hans_CN">
