@@ -71,10 +71,10 @@
       <Text>Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing, Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks(these units can only be purchased with [ICON_Faith] Faith). +10% [ICON_Faith] Faith in this city. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_PRASAT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>高棉特色建筑，取代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。在此城中购买的传教士拥有能力“殉道者”：此单位在神学战争中死去后将获得一个 [ICON_GreatWork_Relic] 遗物。本城的 [ICON_Faith] 信仰值+10%。</Text>
+      <Text>+6 [ICON_FAITH] 信仰值。高棉特色建筑。替代寺庙。拥有此建筑后才能用 [ICON_Faith] 信仰值购买使徒和审判官。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。研究完“飞行”之后，如城市拥有10点或以上的 [ICON_CITIZEN] 人口，则+10 [ICON_Tourism] 旅游业绩；如城市拥有20点或以上的 [ICON_CITIZEN] 人口，则+20 [ICON_Tourism] 旅游业绩。本城的 [ICON_Faith] 信仰值+10%。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_PRASAT_DESCRIPTION" Language="en_US">
-      <Text>A building unique to Khmer. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing, Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks(these units can only be purchased with [ICON_Faith] Faith). Missionaries purchased in this city receive the Martyr ability which grants a [ICON_GreatWork_Relic] Relic if this Missionary dies in Theological Combat. +10% [ICON_Faith] Faith in this city.</Text>
+      <Text>+6 [ICON_FAITH] Faith. A building unique to Khmer. Replaces the Temple. Required to purchase Apostles and Inquisitors with [ICON_Faith] Faith. +0.5 [ICON_Culture] Culture for every [ICON_CITIZEN] population in this city. Once Flight is researched receive +10 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher and +20 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher. +10% [ICON_Faith] Faith in this city.</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_STAVE_CHURCH_DESCRIPTION" Language="zh_Hans_CN">
       <Text>挪威特色建筑。取代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。圣地区域可从树林获得额外的标准相邻加成。城市中每个海岸资源单元格+1 [ICON_PRODUCTION] 生产力。本城的 [ICON_Faith] 信仰值+10%。</Text>

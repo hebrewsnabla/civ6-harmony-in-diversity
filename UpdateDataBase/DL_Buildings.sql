@@ -1257,7 +1257,7 @@ values
 
 ----------------------------------------------------------------------------------------------------------------------
 
--- GeneralServicesOffice 总务厅, cost 300, unlocked by civil sevices, all yields (except faith) by 1.
+-- GeneralServicesOffice 总务厅, cost 250, unlocked by civil sevices, all yields (except faith) by 1.
 insert or replace into Types
 	(Type,									Kind)
 values

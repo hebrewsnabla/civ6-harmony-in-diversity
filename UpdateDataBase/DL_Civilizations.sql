@@ -37,6 +37,8 @@ update ModifierArguments set Value = 1 where
 	ModifierId = 'TRAIT_MAORI_PRODUCTION_WOODS_CONSERVATION' and Name = 'Amount';
 
 -- Kongo
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_CIVILIZATION_NKISI','TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where
