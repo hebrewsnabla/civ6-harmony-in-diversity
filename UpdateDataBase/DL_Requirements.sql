@@ -792,3 +792,14 @@ insert or replace into RequirementArguments
 	(RequirementId,						Name,				Value)
 values
 	('REQUIRES_PLOT_ADJACENT_VOLCANO',	'FeatureType',		'FEATURE_VOLCANO');
+
+--SULEIMAN GUNPOWDER GOVERNOR POINT
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLAYER_HAS_GUNPOWDER_TECH',					'REQUIRES_PLAYER_HAS_TECH_GUNPOWDER');
+
+insert or replace into RequirementArguments
+	(RequirementId,							Name,					Value)
+values
+	('REQUIRES_PLAYER_HAS_TECH_GUNPOWDER',	'TechnologyType',		'TECH_GUNPOWDER');
