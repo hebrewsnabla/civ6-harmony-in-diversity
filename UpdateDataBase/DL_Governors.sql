@@ -219,8 +219,8 @@ values
 -- 税务员
 update ModifierArguments set Value = 4 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
 -- 港务局长
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
 
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
@@ -514,19 +514,19 @@ insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
 	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'YieldType',									'YIELD_CULTURE'),
-	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'YieldType',									'YIELD_FAITH'),
-	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'YieldType',									'YIELD_SCIENCE'),
-	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'YieldType',									'YIELD_CULTURE'),
-	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'YieldType',									'YIELD_PRODUCTION'),
-	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'YieldType',									'YIELD_GOLD'),
-	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'YieldType',									'YIELD_GOLD'),
-	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'Amount',										150);
+	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'Amount',										100);
 
 -- 市立公园：就职时一环全产出+1，可以修在泛滥平原上。
 delete from ImprovementModifiers where ModifierId = 'CITY_PARK_WATER_AMENITY';
