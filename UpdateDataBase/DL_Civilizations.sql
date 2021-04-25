@@ -381,9 +381,9 @@ insert or replace into ModifierArguments    (ModifierId,    Name,        Value)
 insert or replace into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
-	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
