@@ -281,10 +281,10 @@
 			<Text>+{1_num} [ICON_Culture] Culture from the adjacent Coast {1_Num : plural 1?tile; other?tiles;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_HOLY_SITE_COAST_FAITH" Language="zh_Hans_CN">
-			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻的海岸{1_Num : plural 1?单元格; other?单元格;}。</Text>
+			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻的海岸{1_Num : plural 2?单元格; other?单元格;}。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_HOLY_SITE_COAST_FAITH" Language="en_US">
-			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Coast {1_Num : plural 1?tile; other?tiles;}.</Text>
+			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Coast {1_Num : plural 2?tile; other?tiles;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_ITSUKUSHIMA_NAME" Language="zh_Hans_CN">
 			<Text>严岛神社</Text>
@@ -314,7 +314,7 @@
 			<Text>伦敦塔桥</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>本大陆城市+15% [ICON_Production] 生产力，外大陆城市+15% [ICON_Production] 金币。陆地单位无需上船便可从桥上跨越。大桥的效果与现代道路相同，并会在桥头两端的陆地单元格中建造现代道路（若未修建）。[NEWLINE][NEWLINE]必须修建在海岸单元格中。大桥必须修建在相隔一个单元格并正对的两个陆地单元格中。大桥左右两侧必须各有至少1个水域单元格。无法建在湖泊中。</Text>
+			<Text>本大陆城市+15% [ICON_Production] 生产力，外大陆城市+15% [ICON_Gold] 金币。陆地单位无需上船便可从桥上跨越。大桥的效果与现代道路相同，并会在桥头两端的陆地单元格中建造现代道路（若未修建）。[NEWLINE][NEWLINE]必须修建在海岸单元格中。大桥必须修建在相隔一个单元格并正对的两个陆地单元格中。大桥左右两侧必须各有至少1个水域单元格。无法建在湖泊中。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_TOWER_BRIDGE_DESCRIPTION" Language="en_US">
 			<Text>+15% [ICON_Production] Production in cities on Capital Continent and +15% [ICON_Gold] Gold in cities not on Capital Continent. Land units can cross without embarking. Works like a modern road and creates roads (if not present) in the land tiles on either ends. [NEWLINE][NEWLINE]It must be built on a Coast tile where it must run straight across the hex between two land tiles directly opposite one another and at least one water tile must be adjacent to each end of the bridge. It cannot be built on a Lake.</Text>
@@ -380,10 +380,10 @@
 			<Text>巴米扬大佛</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_BAMYAN_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Faith] 信仰，来自国外 [ICON_TradeRoute] 贸易路线为双方城市+1 [ICON_Faith] 信仰。6环内所有的牧场和农田改良+1信仰。建成时获得一个免费的遗物。[NEWLINE][NEWLINE]必须建在靠近山脉的平坦的草原、平原、或沙漠单元格上。</Text>
+			<Text>国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Faith] 信仰，来自国外 [ICON_TradeRoute] 贸易路线为双方城市+1 [ICON_Faith] 信仰。6环内所有的牧场和农田改良+1 [ICON_Faith] 信仰。建成时获得一个免费的遗物。[NEWLINE][NEWLINE]必须建在靠近山脉的平坦的草原、平原、或沙漠单元格上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_BAMYAN_DESCRIPTION" Language="en_US">
-			<Text>International [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith. Foreign [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith to both cities. +1 [ICON_Faith] Faith for all improved Pastures and Farms. Reveice a free [ICON_GreatWork_Relic] relic when built. [NEWLINE][NEWLINE]Must be built adjacent to a Mountain on Flat Grassland, Plains, or Desert tile.</Text>
+			<Text>International [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith. Foreign [ICON_TradeRoute] Trade Routes provide +1 [ICON_Faith] Faith to both cities. +1 [ICON_Faith] Faith for all improved Pastures and Farms within 6 tiles. Reveice a free [ICON_GreatWork_Relic] relic when built. [NEWLINE][NEWLINE]Must be built adjacent to a Mountain on Flat Grassland, Plains, or Desert tile.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_BAMYAN_QUOTE" Language="zh_Hans_CN">
 			<Text>"王城东北有一座山，山的峭壁上放着一尊石雕佛像，直立着，高140或150英尺。其金色的色泽在四面闪耀，其珍贵的装饰品因其明亮而让人眼花缭乱。" - 玄奘，《西域记》。</Text>
