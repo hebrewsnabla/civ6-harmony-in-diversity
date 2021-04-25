@@ -202,16 +202,16 @@ insert or replace into Adjacency_YieldChanges
 	AdjacentRiver,	AdjacentDistrict, 		PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
 values
 	('Harbor_INDUSTRIAL_Production',	'LOC_DISTRICT_Harbor_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
-	0, 				'DISTRICT_Harbor', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('RoyalDock_INDUSTRIAL_Production',	'LOC_DISTRICT_RoyalDock_INDUSTRIAL_Production', 'YIELD_PRODUCTION', 1,				1,
-	0, 				'DISTRICT_RoyalDock', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Cothon_INDUSTRIAL_Production',	'LOC_DISTRICT_Cothon_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
-	0, 				'DISTRICT_Cothon', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('River_HANSA_Production',			'LOC_DISTRICT_River_HANSA_Production', 			'YIELD_PRODUCTION', 2,				1,
 	1, 				NULL, 					NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Harbor_HANSA_Production',			'LOC_DISTRICT_Harbor_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
-	0, 				'DISTRICT_Harbor', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('RoyalDock_HANSA_Production',		'LOC_DISTRICT_RoyalDock_HANSA_Production',		'YIELD_PRODUCTION', 2,				1,
-	0, 				'DISTRICT_RoyalDock', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Cothon_HANSA_Production',			'LOC_DISTRICT_Cothon_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
-	0, 				'DISTRICT_Cothon', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
+	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
