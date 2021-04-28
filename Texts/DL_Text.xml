@@ -30,6 +30,24 @@
 		<Replace Tag="LOC_GOSSIP_SOURCE_CHANCERY" Language="en_US">
 			<Text>Your officier from Chancery informed that </Text>
 		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>情报局的官员获悉</Text>
+		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_GOV_SPIES" Language="en_US">
+			<Text>Your officier from GOV SPIES informed that </Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>建造了情报局</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_GOV_SPIES" Language="en_US">
+			<Text>Built Building GOV SPIES</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>建造情报局</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_GOV_SPIES" Language="en_US">
+			<Text>Build Building GOV SPIES</Text>
+		</Replace>
 		<Replace Tag="LOC_DISTRICT_LUXURY_GOLD" Language="zh_Hans_CN">
 			<Text>相邻奢侈品资源提供+{1_num} [ICON_GOLD] 金币。</Text>
 		</Replace>

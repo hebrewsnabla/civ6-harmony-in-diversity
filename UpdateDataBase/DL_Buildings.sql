@@ -792,7 +792,9 @@ values
 	--('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_LOSE_G'),
 --情报局
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION');
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION'),
+	('BUILDING_GOV_SPIES',                  'GOV_SPIES_ADD_VISIBILITY');
 
 -- insert or replace into Modifiers
 -- 	(ModifierId,							ModifierType,															RunOnce)
@@ -811,7 +813,10 @@ values
 	--('GOV_CITYSTATES_CITY_LOSE_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA',	'GOV_G_NONHOMECONTINENT_REQUIREMENT'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
-	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null);
+	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null)，
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES'，				NULL),
+	('GOV_SPIES_ADD_VISIBILITY',            'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY'，								NULL);
+
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
@@ -828,7 +833,16 @@ values
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
 	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
-	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50);
+	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50),
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY'),
+	('GOV_SPIES_ADD_VISIBILITY',            'Amount',           1),
+    ('GOV_SPIES_ADD_VISIBILITY',            'Source',           'SOURCE_GOV_SPIES'),
+   	('GOV_SPIES_ADD_VISIBILITY',            'SourceType',       'DIPLO_SOURCE_ALL_NAMES');
+
+insert or replace into DiplomaticVisibilitySources
+    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString)
+values
+    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES');
 
 --主教座堂
 --移除信仰加成

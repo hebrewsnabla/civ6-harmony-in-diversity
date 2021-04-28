@@ -299,7 +299,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and Modi
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_TRADE_ROUTE_YIELD_PER_DEST_LUXURY';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_INCREASED_PLANTATION_FAITH';
 delete from BuildingPrereqs where Building = 'BUILDING_BOROBUDUR' and PrereqBuilding = 'BUILDING_TEMPLE';
---update Buildings set PrereqCivic = 'CIVIC_THEOLOGY' and RequiresReligion = 0 where BuildingType = 'BUILDING_BOROBUDUR';
+update Buildings set PrereqCivic = 'CIVIC_THEOLOGY' where BuildingType = 'BUILDING_BOROBUDUR';
 insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
 	'UNIT_MISSIONARY',	'BUILDING_BOROBUDUR'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');

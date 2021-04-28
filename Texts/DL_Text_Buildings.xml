@@ -430,13 +430,13 @@
   </Replace>
 <!--情报局-->
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>获得一个间谍并+1间谍容量。
-[NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%。
+    <Text>获得一个间谍并+1间谍容量。对所有文明+1 [ICON_VisLimited] 外交能见度。
+[NEWLINE]所有间谍行动的成功率上升。间谍执行任务的时间缩短25%，您的间谍可以选择任何可用升级。
 [NEWLINE]所有城市训练间谍时+50% [ICON_Production] 生产力。
 [NEWLINE]奖励1个 [ICON_Governor] 总督头衔。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_GOV_SPIES_DESCRIPTION" Language="en_US">
-    <Text>Receive one Spy and +1 Spy capacity.[NEWLINE]All Spy Operations have a higher chance of success. Spy mission time reduces by 25%.[NEWLINE]+50% [ICON_Production] toward Spies in all Cities.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
+    <Text>Receive one Spy and +1 Spy capacity. +1 [ICON_VisLimited] Visibility to all other Civs. [NEWLINE]All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. Your Spy units can choose from any possible promotion. [NEWLINE]+50% [ICON_Production] toward Spies in all Cities.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.</Text>
   </Replace>
 <!--皇家学会-->
   <Replace Tag="LOC_BUILDING_GOV_SCIENCE_DESCRIPTION" Language="zh_Hans_CN">
@@ -487,10 +487,10 @@
   <!-- <Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy.</Text> -->
   </Replace>
   <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="zh_Hans_CN">
-    <Text>每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。对所有文明+1 [ICON_VisLimited] 外交能见度。</Text>
+    <Text>每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。</Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_CHANCERY_DESCRIPTION" Language="en_US">
-    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. +1 [ICON_VisLimited] Visibility to all other Civs.</Text>
+    <Text>+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. </Text>
   </Replace>
   <Replace Tag="LOC_BUILDING_NILOMETER_HD_NAME" Language="zh_Hans_CN">
     <Text>测量仪</Text>
