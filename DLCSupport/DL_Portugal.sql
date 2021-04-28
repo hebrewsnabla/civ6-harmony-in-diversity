@@ -8,7 +8,7 @@ values
 	('BUILDING_NAVIGATION_SCHOOL',			'YIELD_SCIENCE',	1), -- ub
 	('BUILDING_NAVIGATION_SCHOOL',			'YIELD_GOLD',		-1);
 
--- update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_NAVIGATION_SCHOOL';
+update Buildings set RegionalRange = 3 where BuildingType = 'BUILDING_NAVIGATION_SCHOOL';
 
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
