@@ -66,11 +66,11 @@ values
     ('CONSULATE_LEVY_DISCOUNT',             'Percent',          20),
     ('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',  'Amount',           20);
 
-insert or replace into DiplomaticVisibilitySources
+/*insert or replace into DiplomaticVisibilitySources
     (VisibilitySourceType,  Description,                ActionDescription,                  GossipString,                   PrereqTech)
 values
     ('SOURCE_CHANCERY',     'LOC_VIZSOURCE_CHANCERY',   'LOC_VIZSOURCE_ACTION_CHANCERY',    'LOC_GOSSIP_SOURCE_CHANCERY',   'TECH_MATHEMATICS');
-
+*/
 
 -- 打草谷
 insert or replace into TypeTags
