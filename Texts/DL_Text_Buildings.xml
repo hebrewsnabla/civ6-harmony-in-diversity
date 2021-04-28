@@ -204,28 +204,22 @@
       <Text>[ICON_Food] Food consumption of each [ICON_Citizen] citizen reduce to 2.5. +1 [ICON_Food] Food to each improved [ICON_Resource_Bananas] Banana and [ICON_Resource_Deer] deer. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
-      <!-- 其[ICON_SCIENCE]科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。 -->
+      <Text>其[ICON_SCIENCE]科技值加成延伸到3个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_UNIVERSITY_DESCRIPTION" Language="en_US">
-      <Text>+5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
-      <!-- Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type.  -->
+      <Text>Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 3 tiles that do not already have a bonus from this building type. +5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MADRASA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
-      <!-- 其[ICON_SCIENCE]科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。 -->
+      <Text>阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。其[ICON_SCIENCE]科技值加成延伸到3个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_MADRASA_DESCRIPTION" Language="en_US">
-      <Text>A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. +5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
-      <!-- Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type. -->
+      <Text>A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 3 tiles that do not already have a bonus from this building type. +5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
-      <!-- 其[ICON_SCIENCE]科技值加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。 -->
+      <Text>葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。其[ICON_SCIENCE]科技值加成延伸到3个单元格内的所有市中心（前提是其尚未从其他的此建筑获得加成）。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。</Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION" Language="en_US">
-      <Text>A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCiENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. +5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
-      <!-- Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from this building type.  -->
+      <Text>A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCiENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. Its [ICON_SCIENCE] Science bonus is extended to all City Centers within 3 tiles that do not already have a bonus from this building type. +5% [ICON_SCIENCE] Science in this city. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. </Text>
     </Replace>
     <Replace Tag="LOC_BUILDING_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
       <Text>城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 每回合科技值收入。</Text>

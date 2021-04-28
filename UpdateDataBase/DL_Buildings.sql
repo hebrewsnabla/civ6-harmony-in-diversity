@@ -145,19 +145,20 @@ update Buildings set CitizenSlots = 1
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 -- Regional Range
+update Buildings set RegionalRange = 3
+where BuildingType = 'BUILDING_UNIVERSITY'
+	or BuildingType = 'BUILDING_MADRASA'
+	or BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set RegionalRange = 6
- -- where BuildingType = 'BUILDING_UNIVERSITY'
-	-- or BuildingType = 'BUILDING_MADRASA'
-	-- or BuildingType = 'BUILDING_RESEARCH_LAB'
- where BuildingType = 'BUILDING_RESEARCH_LAB'
+where BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_MUSEUM_ART'
 	or BuildingType = 'BUILDING_MUSEUM_ARTIFACT'
 	or BuildingType = 'BUILDING_FILM_STUDIO'
 	or BuildingType = 'BUILDING_BROADCAST_CENTER'
 	or BuildingType = 'BUILDING_BANK'
 	or BuildingType = 'BUILDING_GRAND_BAZAAR'
-	or BuildingType = 'BUILDING_STOCK_EXCHANGE'
-;
+	or BuildingType = 'BUILDING_STOCK_EXCHANGE';
+
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
 update Buildings set RegionalRange = 4, Entertainment = 1 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set RegionalRange = 6, Entertainment = 1 where BuildingType = 'BUILDING_FERRIS_WHEEL';
