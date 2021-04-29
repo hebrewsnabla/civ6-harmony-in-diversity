@@ -218,16 +218,28 @@
         </Replace>
         <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="zh_Hans_CN">
             <Text>总务官马格努斯</Text>
+            <!-- 拥有总务官头衔的总督马格努斯在9环内的城市就职 -->
         </Replace>
-        <!-- 拥有总务官头衔的总督马格努斯在9环内的城市就职 -->
         <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_NAME" Language="en_US">
             <Text>General Services Officer Magnus</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>当拥有总务官头衔的马格努斯总督在6环内就职时会自动创建。</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION" Language="en_US">
+            <Text>Created when Governor Magnus with General Services Officer title that estabilished within 6 tiles.</Text>
         </Replace>
         <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_NAME" Language="zh_Hans_CN">
             <Text>请忽略</Text>
         </Replace>
         <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_NAME" Language="en_US">
             <Text>PlaceHolder</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>请忽略</Text>
+        </Replace>
+        <Replace Tag="LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION" Language="en_US">
+            <Text>Please Ignore</Text>
         </Replace>
         <Replace Tag="LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX" Language="zh_Hans_CN">
             <Text>该建筑需要{1_Building}。</Text>

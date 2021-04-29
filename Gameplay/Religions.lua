@@ -18,8 +18,9 @@ function OnGreatPersonActivated(unitOwner, unitID)
                 for _, beliefIndex in ipairs(religion.Beliefs) do
                     if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_TO_THE_GLORY_OF_GOD" then
                         -- The owner has "To the Glory of God" belief, give out a relic by 33% chance.
-                        local rand = math.random(1, 100);
-                        if (rand <= 33) then
+                        -- local rand = math.random(1, 100);
+                        local rand = TerrainBuilder.GetRandomNumber(100, "Random for Relic");
+                        if (rand < 33) then
                             Utils.GrantRelic(unitOwner);
                         end
                     end

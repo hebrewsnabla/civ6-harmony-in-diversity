@@ -156,7 +156,7 @@
 			<Text>莫克夏训练：永久+5 [ICON_Strength] 战斗力</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_BISHOP_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Strength] Combat Strength from Bishop's training</Text>
+			<Text>+5 [ICON_Strength] Combat Strength from Bishop's training</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_VICTOR_TRAINED_UNIT_EXP_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>维克多训练：永久+25% 经验值</Text>
@@ -168,7 +168,7 @@
 			<Text>维克多训练：永久+2 [ICON_Strength] 战斗力</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_VICTOR_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Strength] Combat Strength from Victor's training </Text>
+			<Text>+2 [ICON_Strength] Combat Strength from Victor's training </Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>高德院训练：免费获得1级晋升</Text>
