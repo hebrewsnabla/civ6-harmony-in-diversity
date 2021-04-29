@@ -471,6 +471,11 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
+    <!-- Double Great Person need to update in the first -->
+    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
+      <Properties><LoadOrder>16008</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
+    </UpdateDatabase>
     <!-- DLC Support -->
     <UpdateDatabase id="DL_Australia" criteria="DLC_Australia">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
@@ -525,11 +530,6 @@
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
     <!-- Main -->
-    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
-      <Properties><LoadOrder>16008</LoadOrder></Properties>
-      <!-- Double Great Person need to update in the first -->
-      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
-    </UpdateDatabase>
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
       <File>UpdateDataBase/DL_Adjacency.sql</File>

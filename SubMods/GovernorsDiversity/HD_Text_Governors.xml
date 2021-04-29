@@ -365,13 +365,13 @@
             <Text>就职期间间谍-25%出击行动时间。我方间谍行动时+1等级。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION" Language="en_US">
-            <Text>If Amani is estabilished, Spy operations take 25% less time.All Spy act as +1 level.</Text>
+            <Text>If Amani is estabilished, Spy operations take 25% less time. All Spy act as +1 level.</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="zh_Hans_CN">
             <Text>立即给每个已相遇城邦+1 [ICON_Envoy] 使者。每个宗主的城邦提供+1 [ICON_SCIENCE] 科技，+1 [ICON_CULTURE] 文化，+1 [ICON_FAITH] 信仰和+1 [ICON_GOLD] 金币。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION" Language="en_US">
-            <Text>Immediately send one [ICON_Envoy] Envoy to all City States that already met. Each City-State suzerain will provide +1 [ICON_SCIENCE], +1 [ICON_CULTURE] Culture, +1 [ICON_FAITH] Faith and +1 [ICON_GOLD] Gold.</Text>
+            <Text>Immediately send one [ICON_Envoy] Envoy to all City States that you already met. Each City-State suzerain will provide +1 [ICON_SCIENCE], +1 [ICON_CULTURE] Culture, +1 [ICON_FAITH] Faith and +1 [ICON_GOLD] Gold.</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION" Language="zh_Hans_CN">
             <Text>派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。我方间谍出击时+1级，在领土内敌方间谍等级下降1级。</Text>
