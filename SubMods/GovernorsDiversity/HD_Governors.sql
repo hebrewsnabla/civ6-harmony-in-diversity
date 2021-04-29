@@ -574,6 +574,7 @@ values
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS'),
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS_GRASSLAND'),
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS_PLAINS');
+update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
 
 -- 世外天堂：代替自来水工程，本城所有改良设施和国家公园旅游业绩+200%
 insert or replace into Modifiers
@@ -590,7 +591,6 @@ values
 
 -- fishery now available to all major civs without Liang
 update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
-
 
 --bishop
 --level 0 GOVERNOR_PROMOTION_CARDINAL_BISHOP

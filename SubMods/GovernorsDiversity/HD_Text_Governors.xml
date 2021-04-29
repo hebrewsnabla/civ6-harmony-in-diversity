@@ -51,10 +51,10 @@
             <Text>Multinational Corporations</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。</Text>
+            <Text>当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION" Language="en_US">
-            <Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city.</Text>
+            <Text>Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city when player has complete the Exploration Civic.</Text>
         </Replace>
         <Replace Tag="LOC_CITY_GOLD_FROM_POPULATION" Language="zh_Hans_CN">
             <Text>{Value : number +#.#;-#.#}来自额外税收</Text>
@@ -329,11 +329,11 @@
             <Text>All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  .</Text>
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="zh_Hans_CN">
-            <Text>可在城市中修建特色改良设施“市立公园”。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。</Text>
+            <Text>可在城市中修建特色改良设施“市立公园”（由公会市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。</Text>
             <!-- 总督“梁”在此城市就职时，公园的每个相邻单元格额外产出 1 [ICON_FOOD] 食物，1 [ICON_PRODUCTION] 生产力，1 [ICON_SCIENCE] 科技值，1 [ICON_CULTURE] 文化值，1 [ICON_FAITH] 信仰和 1 [ICON_GOLD] 金币。 -->
         </Replace>
         <Replace Tag="LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION" Language="en_US">
-            <Text>Can construct the City Park improvement in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is estabilished in this city, City Parks provide +1 of all yields to all adjacent tiles.</Text>
+            <Text>Can construct the City Park improvement (unlocked by Guilds Civic) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is estabilished in this city, City Parks provide +1 of all yields to all adjacent tiles.</Text>
             <!-- If liang is estabilished in thic city, all tiles adjacent to city park yield extra 1[ICON_FOOD] Food, 1 [ICON_PRODUCTION] Production, 1 [ICON_SCIENCE] Science, 1 [ICON_CULTURE] Cultutre, 1 [ICON_FAITH] Faith and 1 [ICON_GOLD] Gold. -->
         </Replace>
         <!-- 阿玛尼 -->

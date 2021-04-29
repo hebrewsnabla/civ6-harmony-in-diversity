@@ -99,7 +99,7 @@ updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 
 -- The New Global Parameters.
 insert or replace into GlobalParameters (Name, Value) values
-    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 10),
+    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
     ('GOLD_FOR_EVERY_ERA_SCORE', 5),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

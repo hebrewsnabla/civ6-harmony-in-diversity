@@ -25,6 +25,7 @@ local m_GovernorMerchantID = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Index
 local m_GovernorMerchantHash = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Hash
 local m_GovernorPromotion_MultinationalCorpID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Index
 local m_GovernorPromotion_MultinationalCorpHash = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Hash
+local m_CivicExploration = GameInfo.Civics['CIVIC_EXPLORATION'].Index
 
 local m_DummyMagnus = GameInfo.Buildings['BUILDING_DUMMY_MAGNUS'].Index
 local m_DummyNoMagnus = GameInfo.Buildings['BUILDING_DUMMY_NO_MAGNUS'].Index
@@ -168,10 +169,14 @@ local m_ReynaAssignedCity = {};
 
 function UpdateReynaTradeRoutesYield(playerID)
     local player = Players[playerID];
+    if (player == nil) then
+        return
+    end
     local governors = player:GetGovernors();
     local governor = governors:GetGovernor(m_GovernorMerchantHash);
 
-    if governor then
+    -- Enable when player has Exploration Civic
+    if governor and player:GetCulture():HasCivic(m_CivicExploration) then
         -- Update Reya current city yield if needed.
         local currentCity:table = governor:GetAssignedCity();
         if currentCity and governor:HasPromotion(m_GovernorPromotion_MultinationalCorpHash) and governor:IsEstablished() then
