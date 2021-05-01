@@ -73,7 +73,7 @@ values
  	('BUILDING_JNR_SOBOR',		'YIELD_FAITH',		2),
  	('BUILDING_JNR_TZACUALLI',	'YIELD_FAITH',		2);
 
-update Buildings set Cost = 210, Maintenance = 4
+update Buildings set Cost = 220, Maintenance = 4
  where BuildingType = 'BUILDING_JNR_CANDI'
 	or BuildingType = 'BUILDING_JNR_DAOGUAN'
 	or BuildingType = 'BUILDING_JNR_JINJA'

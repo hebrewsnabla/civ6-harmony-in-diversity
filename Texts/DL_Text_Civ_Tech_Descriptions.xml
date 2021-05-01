@@ -87,10 +87,12 @@
 			<Text>Plantation improvements receive +1 [ICON_Food] Food.</Text>
 		</Replace>
 		<Replace Tag="LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>+1 [ICON_TradeRoute] 贸易路线容量。种植园+2 [ICON_gold] 金币。牧场+1 [ICON_Food] 食物。</Text>
+			<Text>种植园+2 [ICON_gold] 金币。牧场+1 [ICON_Food] 食物。</Text>
+			<!-- +1 [ICON_TradeRoute] 贸易路线容量。 -->
 		</Replace>
 		<Replace Tag="LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_TradeRoute] Trade Route capacity. +2 [ICON_gold] Gold from the Plantation improvement.+1 [ICON_Food] Food from the Pasture.</Text>
+			<Text>+2 [ICON_gold] Gold from the Plantation improvement.+1 [ICON_Food] Food from the Pasture.</Text>
+			<!-- +1 [ICON_TradeRoute] Trade Route capacity.  -->
 		</Replace>
 		<Replace Tag="LOC_CIVIC_MERCANTILISM_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>营地+2 [ICON_gold] 金币。</Text>
@@ -111,9 +113,6 @@
 			<Text>+50% [ICON_Tourism] Tourism across your empire.</Text>
 		</Replace>
 		<!-- Remove the changes from Wetlands -->
-		<Replace Tag="LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Food] Food from the Plantation improvement.</Text>
-		</Replace>
 		<Replace Tag="LOC_CIVIC_GLOBALIZATION_DESCRIPTION" Language="en_US">
 			<Text>+2 [ICON_Gold] Gold to Plantations.</Text>
 		</Replace>
@@ -173,6 +172,12 @@
 		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION" Language="en_US">
 			<Text>Now that you have a ready supply of standardized boards, your shipping industry will soon take off.</Text>
 		</Replace> -->
+		<Replace Tag="LOC_BOOST_TRIGGER_GAMES_RECREATION" Language="zh_Hans_CN">
+			<Text>建造2座营地。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_GAMES_RECREATION" Language="en_US">
+			<Text>Build two Camps.</Text>
+		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_NAVAL_TRADITION" Language="zh_Hans_CN">
 			<Text>拥有1艘四段帆船。</Text>
 		</Replace>
@@ -208,6 +213,18 @@
 		</Replace>
 		<Replace Tag="LOC_BOOST_TRIGGER_MILITARY_TACTICS" Language="en_US">
 			<Text>Have the Defensive Tactics civic.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_REPLACEABLE_PARTS" Language="zh_Hans_CN">
+			<Text>拥有3个线列步兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_REPLACEABLE_PARTS" Language="en_US">
+			<Text>Own 3 Line Infantries.</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SIEGE_TACTICS" Language="zh_Hans_CN">
+			<Text>拥有2个抛石机。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SIEGE_TACTICS" Language="en_US">
+			<Text>Own 2 Trebuchets.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>

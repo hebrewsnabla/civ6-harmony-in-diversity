@@ -35,7 +35,7 @@ delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_Q
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqTech = 'TECH_PLASTICS';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqCivic = 'CIVIC_COLONIALISM';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
-delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
+--delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_PASTURE' and PrereqTech = 'TECH_STIRRUPS';
 
 insert or replace into Improvement_BonusYieldChanges
@@ -50,7 +50,7 @@ values
 	(243,	'IMPROVEMENT_CAMP',			'YIELD_PRODUCTION',	1,				'TECH_CONSTRUCTION',	NULL),
 	(245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
 	(246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
-	(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
+	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
 	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING',	NULL),
 	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_MEDIEVAL_FAIRES');
 
@@ -91,8 +91,3 @@ delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW';
 delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW_HILLS';
-
--- wait until Adjustments for Liang.
---city park and fishery now available to all major civs without Liang
--- update Improvements set TraitType = NULL, PrereqCivic = 'CIVIC_OPERA_BALLET' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
-update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';

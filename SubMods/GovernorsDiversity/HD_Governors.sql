@@ -43,7 +43,7 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_P
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST';
 
 -- update ModifierArguments set Value = 30 where ModifierId = 'SURPLUS_LOGISTICS_EXTRA_GROWTH' and Name = 'Amount';
-update ModifierArguments set Value = 5 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
 
 -- 新增效果
 insert or replace into GovernorPromotionModifiers
@@ -219,8 +219,8 @@ values
 -- 税务员
 update ModifierArguments set Value = 4 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
 -- 港务局长
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
 
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
@@ -514,19 +514,19 @@ insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
 	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'YieldType',									'YIELD_CULTURE'),
-	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY',			'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'YieldType',									'YIELD_FAITH'),
-	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY',			'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'YieldType',									'YIELD_SCIENCE'),
-	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY',				'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'YieldType',									'YIELD_CULTURE'),
-	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_THEATER_ADJACENCY',				'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'YieldType',									'YIELD_PRODUCTION'),
-	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_INDUSTRIAL_ZONE_ADJACENCY',		'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'YieldType',									'YIELD_GOLD'),
-	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'Amount',										150),
+	('REINFORCED_INFRASTRUCTURE_COMMERCIAL_HUB_ADJACENCY',		'Amount',										100),
 	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'YieldType',									'YIELD_GOLD'),
-	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'Amount',										150);
+	('REINFORCED_INFRASTRUCTURE_HARBOR_ADJACENCY',				'Amount',										100);
 
 -- 市立公园：就职时一环全产出+1，可以修在泛滥平原上。
 delete from ImprovementModifiers where ModifierId = 'CITY_PARK_WATER_AMENITY';
@@ -574,6 +574,7 @@ values
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS'),
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS_GRASSLAND'),
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS_PLAINS');
+update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
 
 -- 世外天堂：代替自来水工程，本城所有改良设施和国家公园旅游业绩+200%
 insert or replace into Modifiers
@@ -588,6 +589,9 @@ values
 	('WATER_WORKS_IMPROVEMENT_TOURISM',							'Amount',										200),
 	('WATER_WORKS_NATIONAL_PARK_TOURISM',						'Amount',										200);
 
+-- fishery now available to all major civs without Liang
+update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
+
 --bishop
 --level 0 GOVERNOR_PROMOTION_CARDINAL_BISHOP
 --LEVEL 1-0 GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR
@@ -598,6 +602,7 @@ values
 
 update Governors set TransitionStrength = 150 where GovernorType = 'GOVERNOR_THE_CARDINAL';
 
+delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_BISHOP_FAITH_DISTRICT';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_PRESSURE';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_COMBAT';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS';
@@ -605,6 +610,7 @@ delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_GRAND_INQUIS
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_LAYING_ON_OF_HANDS_RELIGIOUS_HEAL';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_LAYING_ON_OF_HANDS_HEAL';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_FAITH_PURCHASE_DISTRICT';
+
 insert or replace into GovernorPromotionModifiers 
 	(GovernorPromotionType,								ModifierId) 
 values
@@ -726,8 +732,8 @@ values
 	('CARDINAL_FAITH_PURCHASE_HOLYSITE_BUILDINGS',			'DistrictType',			'DISTRICT_HOLY_SITE'),
 	-- ('CARDINAL_FAITH_PURCHASE_SHRINE',						'BuildingType',			'BUILDING_SHRINE'),
 	-- ('CARDINAL_FAITH_PURCHASE_TEMPLE',						'BuildingType',			'BUILDING_TEMPLE'),
-	-- ('CARDINAL_FAITH_PURCHASE_STAVE_CHURCH',				'BuildingType',			'BUILDING_STAVE_CHURCH'),
-	-- ('CARDINAL_FAITH_PURCHASE_PRASAT',						'BuildingType',			'BUILDING_PRASAT'),
+	-- ('CARDINAL_FAITH_PURCHASE_STAVE_CHURCH',				'BuildingType',			'BUILDING_STAVE_CHURCH'), --If enabled, need DLC support
+	-- ('CARDINAL_FAITH_PURCHASE_PRASAT',						'BuildingType',			'BUILDING_PRASAT'), --If enabled, need DLC support
 	('BISHOP_TRAINED_MONK_EXTRA_COMBAT_STRENGTH',			'ModifierId',			'BISHOP_TRAINED_MONK_EXTRA_COMBAT_STRENGTH_MODIFIER'),
 	('BISHOP_TRAINED_MONK_EXTRA_COMBAT_STRENGTH_MODIFIER',	'AbilityType',			'ABILITY_BISHOP_TRAINED_UNIT_STRENGTH'),	
 	('BISHOP_TRAINED_MONK_FASTER_EXP',						'ModifierId',			'BISHOP_TRAINED_MONK_FASTER_EXP_MODIFIER'),

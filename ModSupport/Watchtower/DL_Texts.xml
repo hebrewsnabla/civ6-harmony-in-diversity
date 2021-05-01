@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_IMPROVEMENT_SAILOR_WATCHTOWER_NAME" Language="zh_Hans_CN">
+      <Text>瞭望塔</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_SAILOR_WATCHTOWER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>只能由侦察单位建造。为占领单位提供+2视野。为位于相邻瞭望塔的军营或防御性改良设施上的单位提供+1视野。</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>

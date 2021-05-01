@@ -37,6 +37,8 @@ update ModifierArguments set Value = 1 where
 	ModifierId = 'TRAIT_MAORI_PRODUCTION_WOODS_CONSERVATION' and Name = 'Amount';
 
 -- Kongo
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_CIVILIZATION_NKISI','TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where
@@ -60,19 +62,6 @@ values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'TerrainType',	'TERRAIN_DESERT'),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Origin',		1),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Amount',		1);
-
--- Maya
-update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS'
-	where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_YIELDS';
-update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_CAPITAL_REQUIREMENTS'
-	where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_LOSE_YIELDS';
-
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
-insert or replace into Modifiers (ModifierId, ModifierType) values
-	('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
-insert or replace into ModifierArguments (ModifierId, Name, Value) values
-	('MAYAB_EXTRA_HOUSING', 'Amount', 1);
 
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
@@ -161,63 +150,6 @@ delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_AD
 
 -- Hungary
 update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
------------------------------------------------------------------------------------------------------------------------
---Persia
---波斯LA从占领城市驻军+5忠诚变成全部城市驻军+5忠诚
---长生军变成28远程，33近战 (在DL_Units里面修改)
---波斯庭院相邻港口+1金，相邻市中心除了1金外额外+1粮
---波斯UA内商+1琴改为+2琴
---波斯、马其顿、罗马、刚果、日本、格鲁吉亚、挪威增加铁关联（4级关联，在DL_StartBias里面修改）
---城市中建造的首座波斯庭院改良设施可以提供+1点宜居度
-insert or replace into Improvement_YieldChanges
-	(ImprovementType,							YieldType,			YieldChange)
-values
-	('IMPROVEMENT_PAIRIDAEZA',					'YIELD_FOOD',		0);
-
-insert or replace into Improvement_Adjacencies 
-	(ImprovementType,							YieldChangeId)
-values
-	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_CityCenterAdjacency_Food'),
-	('IMPROVEMENT_PAIRIDAEZA',					'Pairidaeza_HarborAdjacency');
-
-insert or replace into Adjacency_YieldChanges
-	(ID,										Description,		YieldType,		YieldChange,	AdjacentDistrict)
-values
-	('Pairidaeza_CityCenterAdjacency_Food',		'Placeholder',		'YIELD_FOOD',	1,				'DISTRICT_CITY_CENTER'),
-	('Pairidaeza_HarborAdjacency',				'Placeholder',		'YIELD_GOLD',	1,				'DISTRICT_HARBOR');
-
-insert or replace into ImprovementModifiers
-	(ImprovementType,                           ModifierId)
-values
-    ('IMPROVEMENT_PAIRIDAEZA',                  'PAIRIDAEZA_AMENITY_MAX_ONE');
-
-insert into Modifiers
-		(ModifierId,                                    ModifierType,                                           SubjectStackLimit)
-values
-	    ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',       1);
-
-insert into ModifierArguments
-    	(ModifierId,                                     Name,                Value)
-values
-        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);
-
-insert or replace into ModifierArguments 
-	(ModifierId, 								Name,				Value) 
-values
-	('TRAIT_SATRAPIES_INTERNAL_TRADE_CULTURE',	'Amount',			2);
-
-INSERT OR REPLACE INTO TraitModifiers (TraitType, ModifierId) VALUES 
-('TRAIT_CIVILIZATION_SATRAPIES', 'PERSIA_GOVERNOR_POINTS');
-
-INSERT OR REPLACE INTO Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) VALUES 
-('PERSIA_GOVERNOR_POINTS', 'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS', 'PLAYER_HAS_POLITICAL_PHILOSOPHY');
-
-INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES 
-('PERSIA_GOVERNOR_POINTS', 'Delta', '1');
-
-
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
-update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 
 -------------------------------------------------------------------------------------------------------------------------------
 --Mapuche
@@ -225,57 +157,14 @@ update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERME
 update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 
--------------------------------------------------------------------------------------------------------------------------------
 
--- Vietnam can build districts in all features and do not remove on forest jungle and marsh
--- rainforest +2 food forest +2 production marsh +2 science
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_FOREST_ONLY';
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_MARSH_ONLY';
-delete from TraitModifiers where ModifierId = 'TRAIT_DISTRICTS_JUNGLE_ONLY';
-
-insert or replace into TraitModifiers (TraitType,	ModifierId) 
-	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_JUNGLE_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into TraitModifiers (TraitType,	ModifierId) 
-	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_MARSH_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into TraitModifiers (TraitType,	ModifierId) 
-	select 'TRAIT_CIVILIZATION_VIETNAM', 'TRAIT_FOREST_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-
-insert or replace into Modifiers 	(ModifierId, ModifierType)
-	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into Modifiers 	(ModifierId, ModifierType)
-	select 'TRAIT_MARSH_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into Modifiers 	(ModifierId, ModifierType)
-	select 'TRAIT_FOREST_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';	
-
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'DistrictType', DistrictType
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_MARSH_VALID_' || DistrictType, 'DistrictType', DistrictType
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_FOREST_VALID_' || DistrictType, 'DistrictType', DistrictType
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'FeatureType', 'FEATURE_JUNGLE'
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_MARSH_VALID_' || DistrictType, 'FeatureType', 'FEATURE_MARSH'
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-insert or replace into ModifierArguments 	(ModifierId, 	Name,		 Value) 
-	select 'TRAIT_FOREST_VALID_' || DistrictType, 'FeatureType', 'FEATURE_FOREST'
-	from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
-
-update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'TRAIT_FOREST_BUILDINGS_CULTURE' and Name = 'YieldType';
-update ModifierArguments set Value = 'YIELD_FOOD' where ModifierId = 'TRAIT_JUNGLE_BUILDINGS_SCIENCE' and Name = 'YieldType';
-update ModifierArguments set Value = 'YIELD_SCIENCE' where ModifierId = 'TRAIT_MARSH_BUILDINGS_PRODUCTION' and Name = 'YieldType';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_FOREST_BUILDINGS_CULTURE' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_JUNGLE_BUILDINGS_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_MARSH_BUILDINGS_PRODUCTION' and Name = 'Amount';
 --------------------------------------------------------------------------------------------------------------------------
+-- Georgia
+-- Resume ability (April Update)
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
+update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
+
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
 insert or replace into CivicModifiers (CivicType, ModifierId) values
@@ -317,6 +206,9 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_TundraMountainAdjacency_later'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_SnowMountainAdjacency_later');
 
+-- 1 housing (2 & 2 in official update)
+update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
+
 insert or replace into Adjacency_YieldChanges
 	(ID,	Description,	YieldChange,	YieldType,	AdjacentTerrain,	PrereqTech)
 values
@@ -327,6 +219,7 @@ values
 	('Terrace_SnowMountainAdjacency_later',		'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_SNOW_MOUNTAIN',	'TECH_ENGINEERING');
 
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN' and Name = 'Amount';
+delete from TraitModifiers where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN_LATE';
 
 insert or replace into TraitModifiers
 	(TraitType,						ModifierId)
@@ -392,6 +285,118 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
 
--- Netherland UA
--- TRAIT_CIVILIZATION_GROTE_RIVIEREN (reuse the id)
--- insert or replace into 
+-----------------------------------------------------------------------------------------------------------------
+-- Russia, Resume the ability
+-- TRAIT_CIVILIZATION_DISTRICT_LAVRA
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_SHRINE_WRITING_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TEMPLE_ARTIST_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TIER3_MUSICIAN_POINTS';
+
+-- Doubles because all GP doulbes.
+insert or replace into District_GreatPersonPoints
+	(DistrictType,		GreatPersonClassType,			PointsPerTurn)
+values
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_WRITER',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_ARTIST',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_MUSICIAN',	2);
+
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_INCREASED_TILES' and Name = 'Amount';
+
+-----------------------------------------------------------------------------------------------------------------
+
+-- Brazil 
+-- lumber mill +1 adjacency bonus to IZ
+-- IZ +1 production to adjacent rainforest
+-- + 2 culture if lumber mill is built on rainforest +100% tourism = culture if flight is researched
+-- districts do not remove rainforest
+-- + 1 faith in each rainforest tiles after recruit a great person
+-- + 1 faith if city is near rainforest999
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_JUNGLE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('TRAIT_GREAT_PEOPLE_JUNGLE_FAITH',		'Amount',		1);
+
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+values
+	('TRAIT_CIVILIZATION_AMAZON',	'TRAIT_CITYCENTER_ADJACENT_RAINFOREST_FAITH'),
+	('TRAIT_CIVILIZATION_AMAZON',	'TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION'),
+	('TRAIT_CIVILIZATION_AMAZON',	'TRAIT_RAINFOREST_PRODUCTION_IZ'),
+	('TRAIT_CIVILIZATION_AMAZON',	'BRAZIL_RAINFOREST_CULTURE');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,						SubjectRequirementSetId)
+values
+	('TRAIT_CITYCENTER_ADJACENT_RAINFOREST_FAITH','MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE','CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS'),
+	('BRAZIL_RAINFOREST_CULTURE',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS'),
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION','MODIFIER_PLAYER_CITIES_IMPROVEMENT_ADJACENCY',NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('TRAIT_CITYCENTER_ADJACENT_RAINFOREST_FAITH',					'YieldType',	'YIELD_FAITH'),
+	('TRAIT_CITYCENTER_ADJACENT_RAINFOREST_FAITH',					'Amount',		1),	
+	('BRAZIL_RAINFOREST_CULTURE',									'YieldType',	'YIELD_CULTURE'),
+	('BRAZIL_RAINFOREST_CULTURE',									'Amount',		2),	
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',								'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_RAINFOREST_PRODUCTION_IZ',								'Amount',		1),			
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'DistrictType',	'DISTRICT_INDUSTRIAL_ZONE'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'ImprovementType','IMPROVEMENT_LUMBER_MILL'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'Amount',		1),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'Description',	'LOC_DISTRICT_LUMBER_MILL_1_PRODUCTION'),
+	('TRAIT_CIVILIZATION_BRAZIL_INDUSTRAIL_ADJACENCYPRODUCTION',	'TilesRequired',1);
+
+insert or replace into ExcludedAdjacencies
+	(TraitType,			YieldChangeId)
+values
+	('TRAIT_CIVILIZATION_AMAZON',	'LumberMill_HalfProduction');
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,TourismSource,PrereqTech,ScalingFactor)
+values
+	('IMPROVEMENT_LUMBER_MILL','TOURISMSOURCE_CULTURE','TECH_FLIGHT',100);
+
+insert or replace into TraitModifiers (TraitType,	ModifierId) 
+	select 'TRAIT_CIVILIZATION_AMAZON', 'TRAIT_JUNGLE_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+
+insert or replace into Modifiers    (ModifierId, ModifierType)
+    select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS' 
+    from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments    (ModifierId,    Name,        Value) 
+    select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'DistrictType', DistrictType
+    from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+insert or replace into ModifierArguments    (ModifierId,    Name,        Value) 
+    select 'TRAIT_JUNGLE_VALID_' || DistrictType, 'FeatureType', 'FEATURE_JUNGLE'
+    from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
+
+insert or replace into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',				'REQUIRES_PLOT_ADJACENT_TO_JUNGLE'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_HAS_JUNGLE'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');
+
+--Scotland
+--Happy city recives an additional 10% science and 10% production.
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name= 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';

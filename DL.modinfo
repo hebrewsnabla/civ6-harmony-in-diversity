@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.7">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.7.4">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.7.1</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.1</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.7.4</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.4</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -31,26 +31,75 @@
   <Dependencies>
     <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
     <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
-    <Mod id="E3F53C61-371C-440B-96CE-077D318B36C0" title="DLC: Australia Civilization Pack" />
-    <Mod id="02A8BDDE-67EA-4D38-9540-26E685E3156E" title="DLC: Aztec Civilization Pack" />
-    <Mod id="1F367231-A040-4793-BDBB-088816853683" title="DLC: Khmer and Indonesia Civilization Pack" />
-    <Mod id="643EA320-8E1A-4CF1-A01C-00D88DDD131A" title="DLC: Nubia Civilization Pack" />
-    <Mod id="E2749E9A-8056-45CD-901B-C368C8E83DEB" title="DLC: Persia and Macedon Civilization Pack" />
-    <Mod id="3809975F-263F-40A2-A747-8BFB171D821A" title="DLC: Poland Civilization Pack" />
-    <Mod id="2F6E858A-28EF-46B3-BEAC-B985E52E9BC1" title="DLC: Vikings Content" />
-    <Mod id="8424840C-92EF-4426-A9B4-B4E0CB818049" title="DLC: Babylon Civilization Pack" />
-    <Mod id="A1100FC4-70F2-4129-AC27-2A65A685ED08" title="DLC: Byzantium Gaul Pack" />
-    <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="DLC: Ethiopia Pack" />
-    <Mod id="9DE86512-DE1A-400D-8C0A-AB46EBBF76B9" title="DLC: GranColombia Maya Pack" />
-    <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="DLC: Vietnam and Kublai Khan Pack" />
-    <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" />
+    <!-- <Mod id="E3F53C61-371C-440B-96CE-077D318B36C0" title="DLC: Australia Civilization Pack" /> -->
+    <!-- <Mod id="02A8BDDE-67EA-4D38-9540-26E685E3156E" title="DLC: Aztec Civilization Pack" /> -->
+    <!-- <Mod id="1F367231-A040-4793-BDBB-088816853683" title="DLC: Khmer and Indonesia Civilization Pack" /> -->
+    <!-- <Mod id="643EA320-8E1A-4CF1-A01C-00D88DDD131A" title="DLC: Nubia Civilization Pack" /> -->
+    <!-- <Mod id="E2749E9A-8056-45CD-901B-C368C8E83DEB" title="DLC: Persia and Macedon Civilization Pack" /> -->
+    <!-- <Mod id="3809975F-263F-40A2-A747-8BFB171D821A" title="DLC: Poland Civilization Pack" /> -->
+    <!-- <Mod id="2F6E858A-28EF-46B3-BEAC-B985E52E9BC1" title="DLC: Vikings Content" /> -->
+    <!-- <Mod id="8424840C-92EF-4426-A9B4-B4E0CB818049" title="DLC: Babylon Civilization Pack" /> -->
+    <!-- <Mod id="A1100FC4-70F2-4129-AC27-2A65A685ED08" title="DLC: Byzantium Gaul Pack" /> -->
+    <!-- <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="DLC: Ethiopia Pack" /> -->
+    <!-- <Mod id="9DE86512-DE1A-400D-8C0A-AB46EBBF76B9" title="DLC: GranColombia Maya Pack" /> -->
+    <!-- <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="DLC: Vietnam and Kublai Khan Pack" /> -->
+    <!-- <Mod id="FFDF4E79-DEE2-47BB-919B-F5739106627A" title="DLC: Portugal" /> -->
   </Dependencies>
   <ActionCriteria>
     <Criteria id="Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
     <!-- DLCs -->
+    <Criteria id="DLC_Australia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>E3F53C61-371C-440B-96CE-077D318B36C0</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Aztec">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>02A8BDDE-67EA-4D38-9540-26E685E3156E</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Khmer">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1F367231-A040-4793-BDBB-088816853683</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Nubia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>643EA320-8E1A-4CF1-A01C-00D88DDD131A</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Persia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>E2749E9A-8056-45CD-901B-C368C8E83DEB</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Poland">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>3809975F-263F-40A2-A747-8BFB171D821A</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Vikings">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>2F6E858A-28EF-46B3-BEAC-B985E52E9BC1</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Babylon">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>8424840C-92EF-4426-A9B4-B4E0CB818049</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Byzantium">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>A1100FC4-70F2-4129-AC27-2A65A685ED08</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Ethiopia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_GranColombia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>9DE86512-DE1A-400D-8C0A-AB46EBBF76B9</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Vietnam">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
+    </Criteria>
     <Criteria id="DLC_Portugal">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
     </Criteria>
     <!-- Mods -->
@@ -75,9 +124,17 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">c6477d9f-6bad-4d24-9e76-49cda4f0a966</ModInUse>
     </Criteria>
+    <Criteria id="ProjectHumankind_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
+    </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
+    </Criteria>
+    <Criteria id="WatchTower_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
     </Criteria>
     <Criteria id="WetLands_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -226,28 +283,37 @@
       <File>ModSupport/WetLands/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateText id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
-      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/DL_Texts.xml</File>
     </UpdateText>
-    <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
+    <UpdateText id="WatchTower_mod_support_text" criteria="WatchTower_Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <File>ModSupport/Watchtower/DL_Texts.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
     </UpdateDatabase>
     <UpdateText id="Community_Wonders_support_text" criteria="Expansion2">
-      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     </UpdateText>
     <!-- RadialMeasuringTool -->
     <UpdateText id="DL_RadialMeasuringTool_Texts" criteria="Expansion2">
-      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <Properties><LoadOrder>15008</LoadOrder></Properties>
       <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     </UpdateText>
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
-      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <Properties><LoadOrder>15009</LoadOrder></Properties>
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="Community_Wonders_support" criteria="ProjectHumankind_Expansion2">
+      <Properties><LoadOrder>15010</LoadOrder></Properties>
+      <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
       <Properties><LoadOrder>10000000</LoadOrder></Properties>
@@ -325,10 +391,32 @@
       <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
     <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     </ImportFiles>
+    <!-- Governors Diversity -->
+    <AddUserInterfaces id="GovernorsDiversity_lua" criteria="Expansion2">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>15606</LoadOrder>
+      </Properties>
+      <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="GovernorsDiversity_import" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
+    </ImportFiles>
+    <UpdateDatabase id="HD_Governors" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
+      <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
+    </UpdateDatabase>
+    <UpdateText id="HD_Governors_text" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
+    </UpdateText>
     <!-- Third Party -->
-    <UpdateDatabase id="HetairoiBugFix" criteria="Expansion2">
+    <UpdateDatabase id="HetairoiBugFix" criteria="DLC_Persia">
       <Properties><LoadOrder>15700</LoadOrder></Properties>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
@@ -350,11 +438,20 @@
       <Properties><LoadOrder>15905</LoadOrder></Properties>
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
+
+    <ImportFiles id="ConciseUICityStates" criteria="Expansion2">
+      <Properties><LoadOrder>15950</LoadOrder></Properties>
+      <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+      <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+      <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    </ImportFiles>
+    <UpdateText id="Cui_Text">
+      <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+      <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
+    </UpdateText>
     <!-- Map generation -->
-    <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
-      <Properties><LoadOrder>16005</LoadOrder></Properties>
-      <File>DLCSupport/DL_Portugal.sql</File>
-    </UpdateDatabase>
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/Utility/AssignStartingPlots.lua</File>
@@ -368,19 +465,71 @@
       <File>Maps/Lakes.lua</File>
       <File>Maps/Continents.lua</File>
       <File>Maps/Seven_Seas.lua</File>
+      <File>Maps/Terra.lua</File>
+      <File>Maps/Wetlands_XP2.lua</File>
       <!-- New Maps -->
       <File>Maps/Tiny_Islands.lua</File>
+      <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
-    <!-- Main -->
+    <!-- Double Great Person need to update in the first -->
+    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
+      <Properties><LoadOrder>16008</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
+    </UpdateDatabase>
+    <!-- DLC Support -->
+    <UpdateDatabase id="DL_Australia" criteria="DLC_Australia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Australia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Aztec" criteria="DLC_Aztec">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Aztec.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Khmer" criteria="DLC_Khmer">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Khmer.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Nubia" criteria="DLC_Nubia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Nubia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Persia" criteria="DLC_Persia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Persia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Poland" criteria="DLC_Poland">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Poland.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Vikings" criteria="DLC_Vikings">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Vikings.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Babylon" criteria="DLC_Babylon">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Babylon.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Byzantium" criteria="DLC_Byzantium">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Byzantium.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Ethiopia" criteria="DLC_Ethiopia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Ethiopia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_GranColombia" criteria="DLC_GranColombia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_GranColombia.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Vietnam" criteria="DLC_Vietnam">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Vietnam.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
-      <Properties><LoadOrder>16008</LoadOrder></Properties>
-      <!-- Double Great Person need to update in the first -->
-      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
-    </UpdateDatabase>
+    <!-- Main -->
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
       <File>UpdateDataBase/DL_Adjacency.sql</File>
@@ -400,7 +549,7 @@
       <File>UpdateDataBase/DL_Districts.sql</File>
       <File>UpdateDataBase/DL_GlobalParameters.sql</File>
       <File>UpdateDataBase/DL_Goodyhuts.sql</File>
-      <File>UpdateDataBase/DL_Governors.sql</File>
+      <!-- <File>UpdateDataBase/DL_Governors.sql</File> -->
       <File>UpdateDataBase/DL_GreatPeople.sql</File>
       <File>UpdateDataBase/DL_GreatWorks.sql</File>
       <File>UpdateDataBase/DL_Happiness.xml</File>
@@ -444,7 +593,7 @@
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
-      <File>Gameplay/Governors.lua</File>
+      <!-- <File>Gameplay/Governors.lua</File> -->
       <File>Gameplay/Misc.lua</File>
       <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
@@ -456,12 +605,10 @@
         <Context>InGame</Context>
         <LoadOrder>16016</LoadOrder>
       </Properties>
-      <File>Gameplay/Governors_Interface.xml</File>
       <File>Gameplay/Temp_Interface.xml</File>
     </AddUserInterfaces>
     <ImportFiles id="DL_Scripts_Interface_lua" criteria="Expansion2">
       <Properties><LoadOrder>16017</LoadOrder></Properties>
-      <File>Gameplay/Governors_Interface.lua</File>
       <File>Gameplay/Temp_Interface.lua</File>
     </ImportFiles>
     <!-- Texts and Tags -->
@@ -480,7 +627,7 @@
       <File>Texts/DL_Text_Civilopedia.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
-      <File>Texts/DL_Text_Governors.xml</File>
+      <!-- <File>Texts/DL_Text_Governors.xml</File> -->
       <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
       <File>Texts/DL_Text_Improvements.xml</File>
@@ -493,6 +640,10 @@
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
+    <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
@@ -523,6 +674,7 @@
     <File>DL.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
     <!-- Game Mode -->
+    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
@@ -531,14 +683,14 @@
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>
-    <File>Gameplay/Governors.lua</File>
+    <!-- <File>Gameplay/Governors.lua</File> -->
     <File>Gameplay/Misc.lua</File>
     <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
     <File>Gameplay/Wonders.lua</File>
     <!-- UI scripts -->
-    <File>Gameplay/Governors_Interface.lua</File>
-    <File>Gameplay/Governors_Interface.xml</File>
+    <!-- <File>Gameplay/Governors_Interface.lua</File> -->
+    <!-- <File>Gameplay/Governors_Interface.xml</File> -->
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
     <!-- UI Overwrites -->
@@ -566,11 +718,13 @@
     <File>ModSupport/WetLands/DL_Removes.sql</File>
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
     <File>ModSupport/WetLands/DL_Texts.xml</File>    
+    <File>ModSupport/Watchtower/DL_Texts.xml</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
+    <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
@@ -591,6 +745,12 @@
     <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
     <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+    <!-- Governors Diversity -->
+    <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
+    <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
+    <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
+    <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
+    <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
     <File>Maps/Utility/FeatureGenerator.lua</File>
@@ -603,8 +763,11 @@
     <File>Maps/Lakes.lua</File>
     <File>Maps/Continents.lua</File>
     <File>Maps/Seven_Seas.lua</File>
+    <File>Maps/Terra.lua</File>
+    <File>Maps/Wetlands_XP2.lua</File>
     <!-- New Maps -->
     <File>Maps/Tiny_Islands.lua</File>
+    <File>Maps/Tiny_Lakes.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
@@ -616,7 +779,27 @@
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- ThirdParty Concise UI CityStates -->
+    <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
+    <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
+    <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
+    <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     <!-- DLC Support -->
+    <File>DLCSupport/DL_Australia.sql</File>
+    <File>DLCSupport/DL_Aztec.sql</File>
+    <File>DLCSupport/DL_Khmer.sql</File>
+    <File>DLCSupport/DL_Nubia.sql</File>
+    <File>DLCSupport/DL_Persia.sql</File>
+    <File>DLCSupport/DL_Poland.sql</File>
+    <File>DLCSupport/DL_Vikings.sql</File>
+    <File>DLCSupport/DL_Babylon.sql</File>
+    <File>DLCSupport/DL_Byzantium.sql</File>
+    <File>DLCSupport/DL_Ethiopia.sql</File>
+    <File>DLCSupport/DL_GranColombia.sql</File>
+    <File>DLCSupport/DL_Vietnam.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/DL_Adjacency.sql</File>
@@ -637,7 +820,7 @@
     <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
     <File>UpdateDataBase/DL_GlobalParameters.sql</File>
     <File>UpdateDataBase/DL_Goodyhuts.sql</File>
-    <File>UpdateDataBase/DL_Governors.sql</File>
+    <!-- <File>UpdateDataBase/DL_Governors.sql</File> -->
     <File>UpdateDataBase/DL_GreatPeople.sql</File>
     <File>UpdateDataBase/DL_GreatWorks.sql</File>
     <File>UpdateDataBase/DL_Happiness.xml</File>
@@ -675,7 +858,7 @@
     <File>Texts/DL_Text_Civilopedia.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
     <File>Texts/DL_Text_Districts.xml</File>
-    <File>Texts/DL_Text_Governors.xml</File>
+    <!-- <File>Texts/DL_Text_Governors.xml</File> -->
     <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
     <File>Texts/DL_Text_Improvements.xml</File>

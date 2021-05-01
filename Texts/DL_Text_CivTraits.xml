@@ -13,10 +13,10 @@
     </Replace>
     <!-- Kongo -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_NKISI_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>除了通常的 [ICON_Culture] 文化值，还会从每个 [ICON_GreatWork_Relic] 遗物、[ICON_GreatWork_Artifact] 文物以及 [ICON_GreatWork_Sculpture]雕塑艺术巨作中获得+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+4 [ICON_Gold] 金币。获得额外100% [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家和 [ICON_GreatMerchant] 大商人点数。宫殿有5个巨作槽位。</Text>
+      <Text>除了通常的 [ICON_Culture] 文化值，还会从每个 [ICON_GreatWork_Relic] 遗物、[ICON_GreatWork_Artifact] 文物以及 [ICON_GreatWork_Sculpture]雕塑艺术巨作中获得+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+4 [ICON_Gold] 金币和+1 [ICON_FAITH] 信仰值。获得额外100% [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家和 [ICON_GreatMerchant] 大商人点数。宫殿有5个巨作槽位。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_NKISI_DESCRIPTION" Language="en_US">
-      <Text>+2 [ICON_Food] Food, +2 [ICON_Production] Production, and +4 [ICON_Gold] Gold from each [ICON_GreatWork_Relic] Relic, [ICON_GreatWork_Artifact] Artifact, and Sculpture [ICON_GreatWork_Sculpture] Great Work of Art in addition to the usual [ICON_Culture] Culture. Receive 100% more [ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, [ICON_GreatMusician] Great Musician, and [ICON_GreatMerchant] Great Merchant points. Palace has slots for 5 Great Works.</Text>
+      <Text>+2 [ICON_Food] Food, +2 [ICON_Production] Production, +4 [ICON_Gold] Gold and +1 [ICON_FAITH] from each [ICON_GreatWork_Relic] Relic, [ICON_GreatWork_Artifact] Artifact, and Sculpture [ICON_GreatWork_Sculpture] Great Work of Art in addition to the usual [ICON_Culture] Culture. Receive 100% more [ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, [ICON_GreatMusician] Great Musician, and [ICON_GreatMerchant] Great Merchant points. Palace has slots for 5 Great Works.</Text>
     </Replace>
     <!-- Babylon -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION" Language="zh_Hans_CN">
@@ -27,16 +27,16 @@
     </Replace>
     <!-- Maya -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>在淡水和海岸旁定居时仅提供+1 [ICON_HOUSING] 住房，而每座农场提供的 [ICON_HOUSING] 住房和 [ICON_GOLD] 金币额外+1。每有一种奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。</Text>
+      <Text>在淡水和海岸旁定居时仅提供+1 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION" Language="en_US">
-      <Text>Settling adjacent to Fresh Water and Coast only provide +1 [ICON_HOUSING] Housing, instead each Farm provides an additional +1 [ICON_HOUSING] Housing and +1 [ICON_GOLD] Gold. +1 [ICON_AMENITIES] Amenity for every Luxury adjacent to the City Center.</Text>
+      <Text>Settling adjacent to Fresh Water and Coast only provide +1 [ICON_HOUSING] Housing, instead each Farm provides an additional +1 [ICON_HOUSING] Housing, +1 [ICON_Production] Production for every adjacent Observatory, and +1 [ICON_GOLD] Gold. +1 [ICON_AMENITIES] Amenity for every Luxury adjacent to the City Center.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_MUTAL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>[ICON_Capital] 首都6个单元格范围内城市所有产出+10%。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。</Text>
+      <Text>[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_MUTAL_DESCRIPTION" Language="en_US">
-      <Text>Cities within 6 tiles of the [ICON_Capital] Capital gain +10% to all yields. Non capital cities within 9 tiles and outside 6 tiles of the [ICON_Capital] Capital yields remain usual. Other non capital cities receive -15% to all yields. +5 [ICON_Strength] Combat Strength to units within 6 tiles of the [ICON_Capital] Capital.</Text>
+      <Text>Cities within 6 tiles of the [ICON_Capital] Capital gain +10% to all yields, and when founded receive a builder. Non capital cities within 9 tiles and outside 6 tiles of the [ICON_Capital] Capital yields remain usual. Other non capital cities receive -15% to all yields. +5 [ICON_Strength] Combat Strength to units within 6 tiles of the [ICON_Capital] Capital.</Text>
     </Replace>
     <!-- Roma -->
     <Replace Tag="LOC_TRAIT_LEADER_TRAJANS_COLUMN_DESCRIPTION" Language="zh_Hans_CN">
@@ -102,10 +102,10 @@
     </Replace>
     <!-- Vietnam -->
    	<Replace Tag="LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“中世纪集市”市政后即可栽种树林。</Text>
+      <Text>所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“中世纪集市”市政后即可栽种树林。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION" Language="en_US">
-      <Text>All districts do not remove Forest, Rainforest and Marsh. Receive the following yields for every building on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science]  in Marsh. Woods can be planted with the Medieval Faires civic.</Text>
+      <Text>All districts do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science]  in Marsh. Woods can be planted with the Medieval Faires civic.</Text>
     </Replace>
     <!-- Gaul -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION" Language="zh_Hans_CN">
@@ -123,10 +123,16 @@
     </Replace>
     <!-- China -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞提升45%的科技和市政，而非35%。</Text>
+      <Text>[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞提升45%的科技和市政，而非35%。建成奇观时将获得奇观所处时代的一项随机 [ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞（如可用）。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION" Language="en_US">
-      <Text>[ICON_TechBoosted] Eurekas and [ICON_CivicBoosted] Inspirations provide 45% of civics and technologies instead of 35%.</Text>
+      <Text>[ICON_TechBoosted] Eurekas and [ICON_CivicBoosted] Inspirations provide 45% of civics and technologies instead of 35%. When completing a wonder receive a random [ICON_TechBoosted] Eureka and [ICON_CivicBoosted] Inspiration from the era of the wonder, if available.</Text>
+    </Replace>
+    <Replace Tag="LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>中国中世纪特色单位。 [ICON_Movement] 移动力为1但 [ICON_Range] 射程为3的高战斗力远程单位。</Text>
+    </Replace>
+    <Replace Tag="LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION" Language="en_US">
+      <Text>Chinese unique Medieval era unit. Ranged unit with a [ICON_Range] Range of 3 and high combat strength but have [ICON_Movement] Movement of 1 .</Text>
     </Replace>
     <!-- Hungary -->
     <Replace Tag="LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION" Language="zh_Hans_CN">
@@ -154,20 +160,27 @@
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and warmongering.</Text>
     </Replace>
+    <!-- Scotland -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>幸福度为快乐的城市额外+5% [ICON_SCIENCE] 科技值、+5% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
+      <Text>幸福度为快乐的城市额外+10% [ICON_SCIENCE] 科技值、+10% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="en_US">
-      <Text>Happy cities receive an additional +5%  [ICON_SCIENCE] Science and +5%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
-    </Replace> 
+      <Text>Happy cities receive an additional +10%  [ICON_SCIENCE] Science and +10%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
+    </Replace>
     <!-- Mapuche -->
     <Replace Tag="LOC_IMPROVEMENT_CHEMAMULL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造马普切木人（马普切特色改良设施）的能力。[NEWLINE][NEWLINE]提供所在单元格魅力100%的 [ICON_CULTURE] 文化值。研究完“飞行”后可获得更多 [ICON_TOURISM] 旅游业绩。要求单元格至少达到迷人魅力。</Text>
+      <Text>解锁建造者建造马普切木人（马普切特色改良设施）的能力。[NEWLINE][NEWLINE]+1 [Icon_Production] 生产力。提供等同于所在单元格魅力100%的 [ICON_CULTURE] 文化值。研究完“飞行”后可获得额外 [ICON_TOURISM] 旅游业绩。要求单元格至少达到迷人魅力。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_CHEMAMULL_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct a Chemamull, unique to Mapuche.[NEWLINE][NEWLINE]Provides [ICON_CULTURE] Culture equal to 100% of the tile's Appeal. Additional [ICON_TOURISM] Tourism after researching Flight. Minimum Appeal of Charming.</Text>
+      <Text>Unlocks the Builder ability to construct a Chemamull, unique to Mapuche.[NEWLINE][NEWLINE]+1 [Icon_Production] Production. Provides [ICON_CULTURE] Culture equal to 100% of the tile's Appeal. Additional [ICON_TOURISM] Tourism after researching Flight. Minimum Appeal of Charming.</Text>
     </Replace>
     <!-- Georgia -->
+    <Replace Tag="LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>宣布保卫城邦战争后的10回合内+100% [ICON_FAITH] 信仰值。战斗胜利后，获得等同于被击杀单位战斗力100%的 [ICON_FAITH] 信仰值（标准速度下）。如城邦的主流宗教与本方相同，则派遣至其处的每名 [ICON_ENVOY] 使者将视为2名（必须拥有1个主流宗教）。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION" Language="en_US">
+      <Text>+100% [ICON_FAITH] Faith for 10 turns after declaring a Protectorate War. Combat victories provide [ICON_FAITH] Faith equal to 100% of the Combat Strength of the defeated unit (on Standard Speed). Each [ICON_ENVOY] Envoy you send to a city-state of your majority Religion counts as two [ICON_ENVOY] Envoys. (Must have a majority Religion).</Text>
+    </Replace>
     <Replace Tag="LOC_BUILDING_TSIKHE_DESCRIPTION_XP2" Language="zh_Hans_CN">
       <Text>格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。</Text>
     </Replace>
@@ -176,22 +189,61 @@
     </Replace>
     <!-- inca -->
     <Replace Tag="LOC_IMPROVEMENT_TERRACE_FARM_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造印加特色设施印加梯田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物；每2块印加梯田+1 [ICON_Housing] 住房。每个相邻的山脉单元格+1 [ICON_FOOD] 食物，解锁工程科技后，每个相邻的山脉单元格额外+1 [ICON_FOOD] 食物。每个相邻的水渠区域+2 [ICON_PRODUCTION] 生产力。与淡水资源（非水渠区域）相邻时，+1 [ICON_PRODUCTION] 生产力（无法相互叠加）。随着市政与科技的发展，与其他印加梯田相邻时还可额外获得 [ICON_FOOD] 食物加成。可建在草原丘陵、平原丘陵与沙漠丘陵上。</Text>
+      <Text>解锁建造者建造印加特色设施印加梯田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物；每块印加梯田+1 [ICON_Housing] 住房。每个相邻的山脉单元格+1 [ICON_FOOD] 食物，解锁工程科技后，每个相邻的山脉单元格额外+1 [ICON_FOOD] 食物。每个相邻的水渠区域+2 [ICON_PRODUCTION] 生产力。与淡水资源（非水渠区域）相邻时，+1 [ICON_PRODUCTION] 生产力（无法相互叠加）。随着市政与科技的发展，与其他印加梯田相邻时还可额外获得 [ICON_FOOD] 食物加成。可建在草原丘陵、平原丘陵与沙漠丘陵上。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="zh_Hans_CN">
       <Text>公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物。解锁建造科技后，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。</Text>
+      <!-- ，游戏进入工业时代后额外+1 [ICON_PRODUCTION] 生产力 -->
       </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION" Language="zh_Hans_CN">
       <Text>所有陆地单位无视丘陵对 [ICON_MOVEMENT] 移动力的减益。起始城市中的每座山脉单元格为国内 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。解锁“对外贸易”市政后可获得印加路网改良设施。</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_TERRACE_FARM_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct a Terrace Farm, unique to the Inca.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. Provides +1 [ICON_Housing] Housing for every two Terrace Farms. +1 [ICON_FOOD] Food for each adjacent Mountain Tile ,+1 [ICON_FOOD] Food after researching Engineeing. Gain +2 [ICON_PRODUCTION] Production for each adjacent Aqueduct district. Receive +1 [ICON_PRODUCTION] Production if adjacent to Fresh Water and not an Aqueduct district. Additional [ICON_FOOD] Food as you advance through the Civics and Technology Tree for adjacency with other Terrace Farms. Can be placed on Grassland Hills, Plains Hills, and Desert Hills.</Text>
+      <Text>Unlocks the Builder ability to construct a Terrace Farm, unique to the Inca.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food. Provides +1 [ICON_Housing] Housing for every Terrace Farms. +1 [ICON_FOOD] Food for each adjacent Mountain Tile ,+1 [ICON_FOOD] Food after researching Engineeing. Gain +2 [ICON_PRODUCTION] Production for each adjacent Aqueduct district. Receive +1 [ICON_PRODUCTION] Production if adjacent to Fresh Water and not an Aqueduct district. Additional [ICON_FOOD] Food as you advance through the Civics and Technology Tree for adjacency with other Terrace Farms. Can be placed on Grassland Hills, Plains Hills, and Desert Hills.</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION" Language="en_US">
-      <Text>Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion.</Text>
+      <Text>Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production and. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion.</Text>
+      <!--  an additional +1 [Icon_production] Production when the game reaches the Industrial Era -->
     </Replace>
     <Replace Tag="LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION" Language="en_US">
       <Text>All land units ignore [ICON_MOVEMENT] movement penalty from Hills. Domestic [ICON_TradeRoute] Trade Routes gain +1 [ICON_Food] Food for every Mountain tile in the origin city. Gain the Qhapaq Ñan improvement when Foreign Trade civic is discovered.</Text>
+    </Replace>
+    <!-- Brazil -->
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>雨林单元格为学院、商业中心、圣地和剧院广场区域提供+1相邻加成，并为相邻的单元格提供+1魅力（而非通常的-1。）伐木场为相邻工业区提供+1相邻加成。若相邻工业区，雨林单元格 +1 [ICON_PRODUCTION] 生产力。建造在雨林的伐木场 +2 [ICON_CULTURE] 文化。研究科技“飞行”后，将产出等同于 [ICON_CULTURE] 文化产出的 [ICON_TOURISM] 旅游业绩。所有区域不移除雨林。若市中心相邻雨林，+1 [Icon_Faith] 信仰值。</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION" Language="en_US">
+      <Text>Rainforest tiles provide +1 adjacency bonus for Campus, Commercial Hub, Holy Site, and Theater Square districts, and grant +1 Appeal to adjacent tiles, instead of the usual -1. Lumber Mill provides +1 adjacency bonus for Industrial Zone. Rainforest tiles receive +1 [ICON_PRODUCTION] Production if is adjacent to Industrial Zone tiles. +2 [ICON_CULTURE] for all Rainforest Lumber Mill. After researching Flight, Lumer Mill will provide [ICON_TOURISM] Tourism equal to its [ICON_CULTURE] Culture yields. All districts will not remove Rainforest. +1 [Icon_Faith] Faith if city is adjacent to Rainforest tiles.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MAGNANIMOUS_DESCRIPTION" Language="en_US">
+      <Text>After recruiting or patronizing a [ICON_GreatPerson] Great Person, 20% of its [ICON_GreatPerson] Great Person point cost is refunded. +1 [Icon_Faith] Faith in all Rainforest Tiles across your country for every two [ICON_GreatPerson] Great Person you have recruited.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MAGNANIMOUS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>招募或赞助一位 [ICON_GreatPerson] 伟人后，将返还所消耗 [ICON_GreatPerson] 伟人点数的20%。每招募2名伟人，您国境内的所有雨林单元格+1 [Icon_Faith] 信仰值。</Text>
+    </Replace>
+    <!-- Poland -->
+    <Replace Tag="LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION" Language="en_US">
+      <Text>Poland's majority religion becomes the dominant religion in cities that loses a tile to a Polish Culture Bomb. Holy Sites gain standard Faith adjacency bonus instead of minor adjacency bonus. All Relics provide bonus Faith (+2), Culture (+2) and Gold (+4).</Text>
+      <!-- Holy Sites gain major Faith adjacency bonus from adjacent Encampments.  -->
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。圣地从其他区域获得标准相邻加成而不是少量相邻加成。所有遗物均提供加成：+2信仰值、+2文化值、+4金币。</Text>
+    </Replace>
+    <!-- 圣地可从相邻军营获得大量信仰值相邻加成。 -->
+    <!-- 斯基泰 -->
+    <Replace Tag="LOC_IMPROVEMENT_KURGAN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造斯基泰特色坟墩的能力。[NEWLINE][NEWLINE]+1 [ICON_Faith] 信仰值、+3 [ICON_Gold] 金币。每与一座牧场相邻便+1 [ICON_Faith] 信仰值（研究完“马镫”后提升为+2）。研究完“飞行”之后将根据 [ICON_FAITH] 信仰值提供 [ICON_TOURISM] 旅游业绩。不能建在丘陵上。</Text>
+    </Replace>
+    <!-- France -->
+    <Replace Tag="LOC_IMPROVEMENT_CHATEAU_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>解锁建造者建造法国特色建筑法国城堡的能力。[NEWLINE][NEWLINE]+2 [ICON_Culture] 文化值、+1 [ICON_Gold] 金币。+1魅力。每与一座奇观相邻便+1 [ICON_Culture] 文化值（研究“飞行”科技后提升为+2）。如处在包含河岸的单元格上，则+2 [ICON_Gold] 金币。研究完“飞行”之后，将根据 [ICON_CULTURE] 文化值提供 [ICON_TOURISM] 旅游业绩。必须建在加成或奢侈品资源旁。无法建在另一座法国城堡旁。</Text>
+    </Replace>
+    <!-- Nubia -->
+    <Replace Tag="LOC_IMPROVEMENT_PYRAMID_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>随“砌砖”科技解锁的改良设施。可以建造在沙漠、沙丘，沙漠泛滥平原，草原，草原丘陵或平原丘陵上。+2 [ICON_Faith] 信仰值、+1 [ICON_Food] 食物，解锁神学后，+1 [ICON_Food] 食物。可从相邻区域获得额外产出。与市中心相邻则+1 [ICON_Food] 食物。如与提供相邻加成的其他任意区域相邻，则相应产出+1。建造在沙漠或者沙漠丘陵上时，额外+2 [ICON_Faith] 信仰值、+2 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_PYRAMID_DESCRIPTION" Language="zh_Hans">
+      <Text>Improvement that unlocks with Masonry and can be built on Desert, Desert Hills, Desert Floodplains, Plains, Plain Hills, Grass, Grass Hills. +2 [ICON_Faith] Faith and +1 [ICON_Food] Food. +1 [ICON_FOOD] Food after researching Theology. Receives additional yields from adjacent districts. +1 [ICON_Food] Food if adjacent to a city center. For all other districts that award adjacency bonuses: +1 of the appropriate yield if that district is adjacent. If build on Desert, Desert Hills extra +2 [ICON_Faith] Faith and +2 [ICON_Food] Food.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

@@ -4,11 +4,16 @@
 
 -- adjust purchase plot cost
 update GlobalParameters set Value = 40 where Name = 'PLOT_BUY_BASE_COST';
+-- update GlobalParameters set Value = 4 where Name = 'CITY_MAX_BUY_PLOT_RANGE';
+update GlobalParameters set Value = 8 where Name = 'PLOT_INFLUENCE_MAX_ACQUIRE_DISTANCE';
 
 -- adjust the population food consumption.
 update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_POPULATION';
 update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
 update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
+
+-- Map
+update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
 
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';
@@ -59,6 +64,9 @@ insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDis
 
 -- change era minimum turns
 update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';
+update GlobalParameters set Value = 10 where Name = 'THRESHOLD_SHIFT_PER_PAST_GOLDEN_AGE';
+update GlobalParameters set Value = -10 where Name = 'THRESHOLD_SHIFT_PER_PAST_DARK_AGE';
+update GlobalParameters set Value = 2 where Name = 'THRESHOLD_SHIFT_PER_CITY';
 
 -- Slower Barbarian tech.
 update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
@@ -66,9 +74,9 @@ update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
 delete from Quests where QuestType = 'QUEST_SEND_TRADE_ROUTE';
 delete from Quests where QuestType = 'QUEST_CONVERT_CAPITAL_TO_RELIGION';
 
--- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty <> 'DIFFICULTY_EMPEROR';
--- update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';
--- update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_CLASSICAL' and MinDifficulty = 'DIFFICULTY_EMPEROR';
+-- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty != 'DIFFICULTY_EMPEROR';
+update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';
+update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_CLASSICAL' and MinDifficulty = 'DIFFICULTY_EMPEROR';
 
 -- Loyalty pressure
 -- update GlobalParameters set Value = 30 where Name = 'LOYALTY_PER_TURN_FROM_NEARBY_CITIZEN_PRESSURE_MAX_LOYALTY';
@@ -77,13 +85,21 @@ delete from Quests where QuestType = 'QUEST_CONVERT_CAPITAL_TO_RELIGION';
 updaTe GlobalParameters set Value = 50 where Name = 'IDENTITY_PER_TURN_FROM_CITY_STATES';
 
 -- Bug Fix
-update ModifierArguments set Value = 60 where ModifierId = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING' and Name = 'BuildingProductionPercent';
-update ModifierArguments set Value = 24 where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS' and Name = 'BuildingProductionPercent';
+-- update ModifierArguments set Value = 60 where ModifierId = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING' and Name = 'BuildingProductionPercent';
+-- update ModifierArguments set Value = 24 where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS' and Name = 'BuildingProductionPercent';
 
-update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED' and Name = 'UnitProductionPercent';
-update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT' and Name = 'UnitProductionPercent';
+-- update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED' and Name = 'UnitProductionPercent';
+-- update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT' and Name = 'UnitProductionPercent';
 
 update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackForceType = 'HighDifficultyCavalryAttack';
 
 --allow to level 2 for beating barb
 updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
+
+
+-- The New Global Parameters.
+insert or replace into GlobalParameters (Name, Value) values
+    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 20),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
+    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
+    ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

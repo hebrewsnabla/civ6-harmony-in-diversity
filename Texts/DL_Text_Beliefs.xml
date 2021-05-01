@@ -3,16 +3,16 @@
 	<LocalizedText>
 		<!-- Adjacency -->
 		<Replace Tag="LOC_DISTRICT_PLANTATION_FAITH" Language="zh_Hans_CN">
-			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻种植园{1_Num : plural 1?单元格; other?单元格;}。</Text>
+			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻种植园{1_Num : plural 2?单元格; other?单元格;}。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_PLANTATION_FAITH" Language="en_US">
-			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Plantation {1_Num : plural 1?tile; other?tiles;}.</Text>
+			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Plantation {1_Num : plural 2?tile; other?tiles;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_PASTURE_FAITH" Language="zh_Hans_CN">
-			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。</Text>
+			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻牧场{1_Num : plural 2?单元格; other?单元格;}。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_PASTURE_FAITH" Language="en_US">
-			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Pasture {1_Num : plural 1?tile; other?tiles;}.</Text>
+			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Pasture {1_Num : plural 2?tile; other?tiles;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_TUNDRA_FOOD" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Food] 食物来自相邻冻土{1_Num : plural 1?单元格; other?单元格;}。</Text>
@@ -156,10 +156,10 @@
 			<Text>[ICON_GreatWork_Relic] Relics have triple yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism. Shrines and Temples provide [ICON_Tourism] Tourism equal to their intrinsic [ICON_Faith] Faith output.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。寺庙提供一条免费的商路容量。</Text>
+			<Text>国际 [ICON_TradeRoute] 贸易路线为拥有“圣地”的城市+2 [ICON_GOLD] 金币；圣地区域中每有一座建筑，此 [ICON_GOLD] 金币加成便+2。可用 [ICON_Faith] 信仰值购买商人，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买商人的费用降低20%。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION" Language="en_US">
-			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. Temple provides a trade route capacity.</Text>
+			<Text>International [ICON_TradeRoute] Trade Routes provide +2 [ICON_GOLD] Gold to cities with Holy Sites and an additional +2 [ICON_GOLD] Gold for every building in the Holy Site district. May purchase trader units with [ICON_Faith] Faith. Trader are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. </Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_RELIGIOUS_ART_NAME" Language="zh_Hans_CN">
 			<Text>宗教艺术</Text>
@@ -174,10 +174,10 @@
 			<Text>Holy Site district’s [ICON_Faith] Faith adjacency bonus provides [ICON_Culture] Culture as well. May purchase Theater district buildings with [ICON_Faith] Faith.</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供0.3 [ICON_Production] 生产力。信教城市中的每个信徒+1% [ICON_PRODUCTION] 生产力。</Text>
+			<Text>信奉该宗教的城市，圣地和神社给相邻的单元格+1 [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION" Language="en_US">
-			<Text>Each [ICON_Citizen] citizen yields 0.3 [ICON_Production] Production in cities that follow this Religion. +1% [ICON_PRODUCTION] Production for each follower in this city.</Text>
+			<Text>Holy Site District and Shrine in cities that follow this Religion provides +1 [ICON_Production] Production to all adjacent tiles.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BELIEF_CASTE_SYSTEM_NAME" Language="zh_Hans_CN">
 			<Text>种姓制度</Text>
@@ -198,10 +198,10 @@
 			<Text>Practical Application</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供1 [ICON_Gold] 金币。 信教城市中的每个信徒+1% [ICON_Gold] 金币产出。</Text>
+			<Text>信奉该宗教的城市，每 [ICON_Citizen] 人口提供1.5 [ICON_Gold] 金币。 信教城市中的每个信徒+2% [ICON_Gold] 金币产出。</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION" Language="en_US">
-			<Text>Each [ICON_Citizen] citizen yields 1 [ICON_Gold] Gold in cities that follow this Religion.+1% [ICON_Gold] Gold for each follower in this city.</Text>
+			<Text>Each [ICON_Citizen] citizen yields 1.5 [ICON_Gold] Gold in cities that follow this Religion.+2% [ICON_Gold] Gold for each follower in this city.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_BELIEF_THE_THIRD_TEMPLE_NAME" Language="zh_Hans_CN">
 			<Text>第三圣殿</Text>

@@ -13,5 +13,17 @@
     <Replace Tag='LOC_MAP_TINY_ISLANDS_DESCRIPTION' Language="en_US">
       <Text>Many tiny islands.</Text>
     </Replace>
+    <Replace Tag='LOC_MAP_TINY_LAKES_NAME' Language="zh_Hans_CN">
+      <Text>星罗棋布</Text>
+    </Replace>
+    <Replace Tag='LOC_MAP_TINY_LAKES_NAME' Language="en_US">
+      <Text>Tiny Lakes</Text>
+    </Replace>
+    <Replace Tag='LOC_MAP_TINY_LAKES_DESCRIPTION' Language="zh_Hans_CN">
+      <Text>星罗棋布的湖泊。</Text>
+    </Replace>
+    <Replace Tag='LOC_MAP_TINY_LAKES_DESCRIPTION' Language="en_US">
+      <Text>Many tiny lakes.</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

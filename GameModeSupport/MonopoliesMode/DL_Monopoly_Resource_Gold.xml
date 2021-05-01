@@ -41,8 +41,8 @@
     <Row GreatWorkType="GREATWORK_PRODUCT_GOLD_5" ModifierId="PRODUCT_GOLD_YIELD_BONUS_GOLD"/>
   </GreatWorkModifiers>
 	<Improvement_ValidResources>
-    <Row ImprovementType="IMPROVEMENT_INDUSTRY" ResourceType="RESOURCE_GOLD"/>
-    <Row ImprovementType="IMPROVEMENT_CORPORATION" ResourceType="RESOURCE_GOLD"/>
+    <Row ImprovementType="IMPROVEMENT_INDUSTRY" ResourceType="RESOURCE_GOLD" MustRemoveFeature="false"/>
+    <Row ImprovementType="IMPROVEMENT_CORPORATION" ResourceType="RESOURCE_GOLD" MustRemoveFeature="false"/>
 	</Improvement_ValidResources>
 	<ResourceIndustries>
 		<Row ResourceType="RESOURCE_GOLD" ResourceEffect="INDUSTRY_GOLD_YIELD_BONUS" ResourceEffectText="LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION"/>

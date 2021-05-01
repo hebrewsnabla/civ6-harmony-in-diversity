@@ -59,7 +59,6 @@ values
 	('BUILDING_SHRINE',						'YIELD_FAITH',		1),
 	('BUILDING_TEMPLE',						'YIELD_FAITH',		1),
 	('BUILDING_STAVE_CHURCH',				'YIELD_FAITH',		1), --ub（挪威）
-	('BUILDING_PRASAT',						'YIELD_FAITH',		1), --ub (高棉)
 	-- holy site: third level
 	-- increase faith + 1
 	-- harbor
@@ -73,8 +72,6 @@ values
 	-- encampment
 	('BUILDING_BARRACKS',					'YIELD_PRODUCTION', 1),
 	('BUILDING_BARRACKS',					'YIELD_GOLD',		-1),
-	('BUILDING_BASILIKOI_PAIDES',			'YIELD_PRODUCTION', 1), -- ub
-	('BUILDING_BASILIKOI_PAIDES',			'YIELD_GOLD',		-1), -- ub
 	('BUILDING_STABLE',						'YIELD_PRODUCTION', 1),
 	('BUILDING_STABLE',						'YIELD_GOLD',		-1),
 	('BUILDING_ORDU',						'YIELD_PRODUCTION', 1), -- ub
@@ -86,69 +83,86 @@ values
 	('BUILDING_MILITARY_ACADEMY',			'YIELD_GOLD',		-2),
 	-- commercial hub
 	('BUILDING_MARKET',						'YIELD_GOLD',		2),
-	('BUILDING_SUKIENNICE',					'YIELD_GOLD',		2), -- ub
 	('BUILDING_BANK',						'YIELD_GOLD',		2),
 	('BUILDING_GRAND_BAZAAR',				'YIELD_GOLD',		2), -- ub
 	-- commercial hub: third level
-	('BUILDING_STOCK_EXCHANGE',				'YIELD_GOLD',		4),
+	('BUILDING_STOCK_EXCHANGE',				'YIELD_GOLD',		4);
 	-- diplomatic quarter
-	('BUILDING_CHANCERY',					'YIELD_CULTURE',	1),
-	('BUILDING_CHANCERY',					'YIELD_SCIENCE',	1),
-	('BUILDING_CHANCERY',					'YIELD_GOLD',		-1),
-	('BUILDING_CONSULATE',					'YIELD_CULTURE',	2),
-	('BUILDING_CONSULATE',					'YIELD_SCIENCE',	2),
-	('BUILDING_CONSULATE',					'YIELD_GOLD',		-2),
-	('BUILDING_GOV_TALL',					'YIELD_CULTURE',	1),
-	('BUILDING_GOV_TALL',					'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_TALL',					'YIELD_GOLD',		-1),
-	('BUILDING_GOV_WIDE',					'YIELD_CULTURE',	1),
-	('BUILDING_GOV_WIDE',					'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_WIDE',					'YIELD_GOLD',		-1),
-	('BUILDING_GOV_CONQUEST',				'YIELD_CULTURE',	1),
-	('BUILDING_GOV_CONQUEST',				'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_CONQUEST',				'YIELD_GOLD',		-1),
-	('BUILDING_GOV_CITYSTATES',				'YIELD_CULTURE',	1),
-	('BUILDING_GOV_CITYSTATES',				'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_CITYSTATES',				'YIELD_GOLD',		-1),
-	('BUILDING_GOV_SPIES',					'YIELD_CULTURE',	1),
-	('BUILDING_GOV_SPIES',					'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_SPIES',					'YIELD_GOLD',		-1),
-	('BUILDING_GOV_FAITH',					'YIELD_CULTURE',	1),
-	('BUILDING_GOV_FAITH',					'YIELD_SCIENCE',	1),
-	('BUILDING_GOV_FAITH',					'YIELD_GOLD',		-1),
-	('BUILDING_GOV_MILITARY',				'YIELD_CULTURE',	2),
-	('BUILDING_GOV_MILITARY',				'YIELD_SCIENCE',	2),
-	('BUILDING_GOV_MILITARY',				'YIELD_GOLD',		-2),
-	('BUILDING_GOV_CULTURE',				'YIELD_CULTURE',	2),
-	('BUILDING_GOV_CULTURE',				'YIELD_SCIENCE',	2),
-	('BUILDING_GOV_CULTURE',				'YIELD_GOLD',		-2),
-	('BUILDING_GOV_SCIENCE',				'YIELD_CULTURE',	2),
-	('BUILDING_GOV_SCIENCE',				'YIELD_SCIENCE',	2),
-	('BUILDING_GOV_SCIENCE',				'YIELD_GOLD',		-2),
-	('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_CULTURE',	1),
-	('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_SCIENCE',	1),
-	('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_GOLD',		-1);
+	-- ('BUILDING_CHANCERY',					'YIELD_CULTURE',	1),
+	-- ('BUILDING_CHANCERY',					'YIELD_SCIENCE',	1),
+	-- ('BUILDING_CHANCERY',					'YIELD_GOLD',		-1),
+	-- ('BUILDING_CONSULATE',					'YIELD_CULTURE',	2),
+	-- ('BUILDING_CONSULATE',					'YIELD_SCIENCE',	2),
+	-- ('BUILDING_CONSULATE',					'YIELD_GOLD',		-2),
+	-- --GOVERNMENT PLAZA
+	-- ('BUILDING_GOV_TALL',					'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_TALL',					'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_TALL',					'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_WIDE',					'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_WIDE',					'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_WIDE',					'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_CONQUEST',				'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_CONQUEST',				'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_CONQUEST',				'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_SPIES',					'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_SPIES',					'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_SPIES',					'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_FAITH',					'YIELD_CULTURE',	1),
+	-- ('BUILDING_GOV_FAITH',					'YIELD_SCIENCE',	1),
+	-- ('BUILDING_GOV_FAITH',					'YIELD_GOLD',		-1),
+	-- ('BUILDING_GOV_MILITARY',				'YIELD_CULTURE',	2),
+	-- ('BUILDING_GOV_MILITARY',				'YIELD_SCIENCE',	2),
+	-- ('BUILDING_GOV_MILITARY',				'YIELD_GOLD',		-2),
+	-- ('BUILDING_GOV_CULTURE',				'YIELD_CULTURE',	2),
+	-- ('BUILDING_GOV_CULTURE',				'YIELD_SCIENCE',	2),
+	-- ('BUILDING_GOV_CULTURE',				'YIELD_GOLD',		-2),
+	-- ('BUILDING_GOV_SCIENCE',				'YIELD_CULTURE',	2),
+	-- ('BUILDING_GOV_SCIENCE',				'YIELD_SCIENCE',	2),
+	-- ('BUILDING_GOV_SCIENCE',				'YIELD_GOLD',		-2),
+	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_CULTURE',	1),
+	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_SCIENCE',	1),
+	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_GOLD',		-1);
 
+update Buildings set CitizenSlots = 1 
+	where BuildingType = 'BUILDING_GOV_TALL'
+ 	or BuildingType = 'BUILDING_GOV_WIDE'
+	or BuildingType = 'BUILDING_GOV_CONQUEST'
+	or BuildingType = 'BUILDING_GOV_CITYSTATES'
+	or BuildingType = 'BUILDING_GOV_SPIES'
+	or BuildingType = 'BUILDING_GOV_FAITH'
+	or BuildingType = 'BUILDING_GOV_MILITARY'
+	or BuildingType = 'BUILDING_GOV_CULTURE'
+	or BuildingType = 'BUILDING_GOV_SCIENCE'
+	or BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE'
+	or BuildingType = 'BUILDING_CHANCERY'
+	or BuildingType = 'BUILDING_CONSULATE'
+;
 
 -- Unlock
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 -- Regional Range
-update Buildings set RegionalRange = 6
- where BuildingType = 'BUILDING_UNIVERSITY'
+update Buildings set RegionalRange = 3
+where BuildingType = 'BUILDING_UNIVERSITY'
 	or BuildingType = 'BUILDING_MADRASA'
-	or BuildingType = 'BUILDING_RESEARCH_LAB'
+	or BuildingType = 'BUILDING_RESEARCH_LAB';
+update Buildings set RegionalRange = 6
+where BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_MUSEUM_ART'
 	or BuildingType = 'BUILDING_MUSEUM_ARTIFACT'
 	or BuildingType = 'BUILDING_FILM_STUDIO'
 	or BuildingType = 'BUILDING_BROADCAST_CENTER'
 	or BuildingType = 'BUILDING_BANK'
 	or BuildingType = 'BUILDING_GRAND_BAZAAR'
-	or BuildingType = 'BUILDING_STOCK_EXCHANGE'
-;
+	or BuildingType = 'BUILDING_STOCK_EXCHANGE';
+
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
 update Buildings set RegionalRange = 4, Entertainment = 1 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set RegionalRange = 6, Entertainment = 1 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_FOOD_MARKET';
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_SHOPPING_MALL';
 
 update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' or BuildingType = 'BUILDING_ZOO';
@@ -205,11 +219,12 @@ values
 	('BUILDING_WATER_MILL',			'YIELD_PRODUCTION',	2),
 	-- 
 	('BUILDING_MARKET',				'YIELD_GOLD',		5),
-	('BUILDING_SUKIENNICE',			'YIELD_GOLD',		5),
 	('BUILDING_BANK',				'YIELD_GOLD',		8),
 	('BUILDING_GRAND_BAZAAR',		'YIELD_GOLD',		8),
 	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
 	('BUILDING_WORKSHOP',			'YIELD_PRODUCTION',	5),
+	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	4),
+	('BUILDING_MADRASA',			'YIELD_SCIENCE',	5),
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
 	('BUILDING_MUSEUM_ART',			'YIELD_CULTURE',	4),
 	('BUILDING_MUSEUM_ARTIFACT',	'YIELD_CULTURE',	4),
@@ -247,7 +262,6 @@ values
 	('BUILDING_SHRINE',				'SHRINE_BUILDER_PURCHASE'),
 	('BUILDING_TEMPLE',				'TEMPLE_SETTLER_PURCHASE'),
 	('BUILDING_STAVE_CHURCH',		'TEMPLE_SETTLER_PURCHASE'),
-	('BUILDING_PRASAT',				'TEMPLE_SETTLER_PURCHASE'),
 	-- 
 	('BUILDING_GRANARY',			'GRANARY_POP_FOOD_MODIFIER'),
 	('BUILDING_LIBRARY',			'LIBRARY_POP_SCIENCE_MODIFIER'),
@@ -260,8 +274,6 @@ values
 	('BUILDING_LIGHTHOUSE',			'LIGHTHOUSE_ADD_RESOURCE_FOOD'),
 	-- ('BUILDING_BARRACKS',			'BARRACKS_ADD_COPPER_PRODUCTION'),
 	('BUILDING_BARRACKS',			'BARRACKS_ADD_IRON_PRODUCTION'),
-	-- ('BUILDING_BASILIKOI_PAIDES',	'BARRACKS_ADD_COPPER_PRODUCTION'), --ub
-	('BUILDING_BASILIKOI_PAIDES',	'BARRACKS_ADD_IRON_PRODUCTION'), --ub
 	--('BUILDING_STABLE',				'STABLE_ADD_SHEEP_FOOD'),
 	--('BUILDING_STABLE',				'STABLE_ADD_SHEEP_PRODUCTION'),
 	--('BUILDING_STABLE',				'STABLE_ADD_CATTLE_FOOD'),
@@ -293,8 +305,6 @@ values
 	('BUILDING_BARRACKS',			'BARRACKS_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_MILITARY_ACADEMY',	'MILITARY_ACADEMY_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_SEAPORT',			'SEAPORT_TRAINED_STRENGTH_MODIFIER'),
-	('BUILDING_BASILIKOI_PAIDES',	'BASILIKOI_TRAINED_STRENGTH_MODIFIER'), --ub
-	-- ('BUILDING_BASILIKOI_PAIDES', 'BASILIKOI_PAIDES_INCREASED_MOVEMENT_MODIFIER'),
 	('BUILDING_STABLE',				'STABLE_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_ORDU',				'ORDU_TRAINED_STRENGTH_MODIFIER'); --ub
 
@@ -454,7 +464,6 @@ values
 	('BUILDING_FILM_STUDIO',				'POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST'),
 	-- Commercial hub
 	-- ('BUILDING_MARKET',						'MARKET_GOLD_PERCENTAGE_BOOST'),
-	-- ('BUILDING_SUKIENNICE',					'MARKET_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_BANK',						'BANK_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_GRAND_BAZAAR',				'BANK_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_STOCK_EXCHANGE',				'STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST'),
@@ -463,7 +472,6 @@ values
 	-- ('BUILDING_SHRINE',						'SHRINE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_TEMPLE',						'TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_STAVE_CHURCH',				'TEMPLE_FAITH_PERCENTAGE_BOOST'),
-	('BUILDING_PRASAT',						'TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_CATHEDRAL',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_GURDWARA',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_MEETING_HOUSE',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
@@ -534,62 +542,59 @@ insert or replace into ModifierArguments
 values
 	('SEWER_GROWTH_RATE',									'Amount',		10),
 	-- Neighborhood
-	('FOOD_MARKET_GROWTH_RATE',								'Amount',		25),
+	('FOOD_MARKET_GROWTH_RATE',								'Amount',		10),
 	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'YieldType',	'YIELD_GOLD'),
-	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		15),
-	-- 
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'YieldType',	'YIELD_GOLD'),
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		10),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		5),
 	-- 
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
 	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
-	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		10),
+	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
 	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'YieldType',	'YIELD_SCIENCE'),
-	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'Amount',		10),
+	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'Amount',		5),
 	-- 
 	('AMPHITHEATER_CULTURE_PERCENTAGE_BOOST',				'YieldType',	'YIELD_CULTURE'),
 	('AMPHITHEATER_CULTURE_PERCENTAGE_BOOST',				'Amount',		5),
 	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'YieldType',	'YIELD_CULTURE'),
-	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'Amount',		10),
+	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'Amount',		5),
 	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'YieldType',	'YIELD_CULTURE'),
-	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'Amount',		10),
+	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'Amount',		5),
 	-- 
 	('MARKET_GOLD_PERCENTAGE_BOOST',						'YieldType',	'YIELD_GOLD'),
 	('MARKET_GOLD_PERCENTAGE_BOOST',						'Amount',		5),
 	('BANK_GOLD_PERCENTAGE_BOOST',							'YieldType',	'YIELD_GOLD'),
-	('BANK_GOLD_PERCENTAGE_BOOST',							'Amount',		10),
+	('BANK_GOLD_PERCENTAGE_BOOST',							'Amount',		5),
 	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'YieldType',	'YIELD_GOLD'),
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		10),
+	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		5),
 	-- 
 	('SHRINE_FAITH_PERCENTAGE_BOOST',						'YieldType',	'YIELD_FAITH'),
 	('SHRINE_FAITH_PERCENTAGE_BOOST',						'Amount',		5),
 	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'YieldType',	'YIELD_FAITH'),
-	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'Amount',		10),
+	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'Amount',		5),
 	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'YieldType',	'YIELD_FAITH'),
-	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'Amount',		15),
+	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'Amount',		5),
 	-- 
 	('WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
 	('WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
-	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
-	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
-	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
-	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
+	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
+	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
+	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
+	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
 	-- powered
-	('POWERED_FOOD_MARKET_GROWTH_RATE',						'Amount',		25),
+	('POWERED_FOOD_MARKET_GROWTH_RATE',						'Amount',		5),
 	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'YieldType',	'YIELD_GOLD'),
-	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'Amount',		15),
+	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'Amount',		10),
 	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'YieldType',	'YIELD_SCIENCE'),
-	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'Amount',		10),
+	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'Amount',		5),
 	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'YieldType',	'YIELD_CULTURE'),
-	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'Amount',		10),
+	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'Amount',		5),
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'YieldType',	'YIELD_GOLD'),
-	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		10);
+	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		5);
 
 -- Maintainance
 --update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
-update Buildings set Maintenance = 0,	Cost = 45	where BuildingType = 'BUILDING_MONUMENT';
-update Buildings set Maintenance = 1,	Cost = 60	where BuildingType = 'BUILDING_GRANARY';
+update Buildings set Maintenance = 0,	Cost = 50	where BuildingType = 'BUILDING_MONUMENT';
+update Buildings set Maintenance = 1,	Cost = 65	where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_WATER_MILL';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_PALGUM';
 update Buildings set Maintenance = 0,	Cost = 60	where BuildingType = 'BUILDING_WALLS';
@@ -598,8 +603,8 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
-update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
-update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
+update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_MARKET';
@@ -622,21 +627,21 @@ update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
-update Buildings set Maintenance = 1,	Cost = 70	where BuildingType = 'BUILDING_SHRINE';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_TEMPLE';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_STAVE_CHURCH';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_CATHEDRAL';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_GURDWARA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MEETING_HOUSE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_MOSQUE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_PAGODA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_SYNAGOGUE';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_WAT';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_STUPA';
-update Buildings set Maintenance = 4,	Cost = 210	where BuildingType = 'BUILDING_DAR_E_MEHR';
-update Buildings set Maintenance = 2,	Cost = 130	where BuildingType = 'BUILDING_PRASAT';
-update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_AMPHITHEATER';
-update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_MARAE';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_TEMPLE';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_CATHEDRAL';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_GURDWARA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MEETING_HOUSE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_MOSQUE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_PAGODA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_SYNAGOGUE';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_WAT';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_STUPA';
+update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_DAR_E_MEHR';
+update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_PRASAT';
+update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_AMPHITHEATER';
+update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
 update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_BROADCAST_CENTER';
@@ -788,7 +793,9 @@ values
 	--('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_LOSE_G'),
 --情报局
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION');
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION'),
+	('BUILDING_GOV_SPIES',                  'GOV_SPIES_ADD_VISIBILITY');
 
 -- insert or replace into Modifiers
 -- 	(ModifierId,							ModifierType,															RunOnce)
@@ -807,7 +814,10 @@ values
 	--('GOV_CITYSTATES_CITY_LOSE_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA',	'GOV_G_NONHOMECONTINENT_REQUIREMENT'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
-	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null);
+	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null),
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',				NULL),
+	('GOV_SPIES_ADD_VISIBILITY',            'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',									NULL);
+
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
@@ -824,7 +834,16 @@ values
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
 	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
-	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50);
+	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50),
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY'),
+	('GOV_SPIES_ADD_VISIBILITY',            'Amount',           1),
+    ('GOV_SPIES_ADD_VISIBILITY',            'Source',           'SOURCE_GOV_SPIES'),
+   	('GOV_SPIES_ADD_VISIBILITY',            'SourceType',       'DIPLO_SOURCE_ALL_NAMES');
+
+insert or replace into DiplomaticVisibilitySources
+    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString,                  	 PrereqTech)
+values
+    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES',   'TECH_MATHEMATICS');
 
 --主教座堂
 --移除信仰加成
@@ -1156,9 +1175,9 @@ insert or replace into Buildings
 	(BuildingType, 						Name, 										Cost, 		Description,										
 		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield) 
 values
-	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			75,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
+	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			65,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
 	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_TRIUMPHAL_ARCH',			'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		75,			'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
+	('BUILDING_TRIUMPHAL_ARCH',			'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		65,			'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
 	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	('BUILDING_KAREZ',					'LOC_BUILDING_KAREZ_NAME',					65,			'LOC_BUILDING_KAREZ_DESCRIPTION',	
 	'TECH_POTTERY',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
@@ -1166,10 +1185,10 @@ values
 	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				65,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
+	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					65,			'LOC_BUILDING_FAIR_DESCRIPTION',
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	-- null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				55,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
+	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				65,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
 	null,								null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD');
 
 insert or replace into Building_GreatPersonPoints
@@ -1185,7 +1204,7 @@ values
 	('BUILDING_KAREZ',												'YIELD_FOOD',				2),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'YIELD_PRODUCTION',			2),
 	('BUILDING_BOOTCAMP',											'YIELD_PRODUCTION',			2),
-	('BUILDING_FAIR',												'YIELD_GOLD',				4),
+	('BUILDING_FAIR',												'YIELD_GOLD',				6),
 	('BUILDING_TOTEMS',												'YIELD_FAITH',				2);
 
 insert or replace into BuildingModifiers 
@@ -1205,7 +1224,7 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType,											SubjectRequirementSetId)
 values
 	('NILOMETER_SCIENCE',					'MODIFIER_BUILDING_YIELD_CHANGE',						'PLOT_FLOODPLAINS_REQUIREMENTS'),
- 	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'CITY_HAS_WONDER_REQUIREMENTS'),
+ 	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'DL_CITY_HAS_WONDER_REQUIREMENTS'),
  	('KAREZ_FOOD',							'MODIFIER_BUILDING_YIELD_CHANGE',						'KAREZ_REQUIREMENT'),
  	('KAREZ_HOUSING',						'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING',			'KAREZ_REQUIREMENT'),
  	('HANDCRAFT_BUILDING_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
@@ -1219,20 +1238,20 @@ insert or replace into ModifierArguments
 values
 	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER_HD'),
 	('NILOMETER_SCIENCE',					'YieldType',										'YIELD_SCIENCE'),
-	('NILOMETER_SCIENCE',					'Amount',											2),
+	('NILOMETER_SCIENCE',					'Amount',											1),
 	('TRIUMPHAL_ARCH_CULTURE',				'BuildingType',										'BUILDING_TRIUMPHAL_ARCH'),
 	('TRIUMPHAL_ARCH_CULTURE',				'YieldType',										'YIELD_CULTURE'),
-	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											2),
+	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											1),
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
-	('KAREZ_FOOD',							'Amount',											2),
+	('KAREZ_FOOD',							'Amount',											1),
 	('KAREZ_HOUSING',						'Amount',											1),
-	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											2),
-	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											2),
+	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											1),
+	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											1),
 	('BOOTCAMP_UNIT_PRODUCTION',			'Amount',											2),
 	('FAIR_GOLD',							'BuildingType',										'BUILDING_FAIR'),
 	('FAIR_GOLD',							'YieldType',										'YIELD_GOLD'),
-	('FAIR_GOLD',							'Amount',											4),
+	('FAIR_GOLD',							'Amount',											2),
 	('TOTEMS_FAITH',						'GreatPersonClassType',								'GREAT_PERSON_CLASS_PROPHET'),
 	('TOTEMS_FAITH',						'Amount',											1);
 
@@ -1252,7 +1271,7 @@ values
 
 ----------------------------------------------------------------------------------------------------------------------
 
--- GeneralServicesOffice 总务厅, cost 300, unlocked by civil sevices, all yields (except faith) by 1.
+-- GeneralServicesOffice 总务厅, cost 250, unlocked by civil sevices, all yields (except faith) by 1.
 insert or replace into Types
 	(Type,									Kind)
 values
@@ -1277,7 +1296,7 @@ insert or replace into Buildings
 	(BuildingType, 						Name, 									Cost, 	Description,										
 	PrereqTech,				PrereqCivic,				PrereqDistrict) 
 values
-	('BUILDING_GENERAL_SERVICE', 		'LOC_BUILDING_GENERAL_SERVICE_NAME', 	300, 	'LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION',				
+	('BUILDING_GENERAL_SERVICE', 		'LOC_BUILDING_GENERAL_SERVICE_NAME', 	250, 	'LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION',				
 	NULL,					'CIVIC_CIVIL_SERVICE',		'DISTRICT_CITY_CENTER');
 
 insert or replace into Building_YieldChanges 
@@ -1287,6 +1306,7 @@ values
 	('BUILDING_GENERAL_SERVICE',		'YIELD_PRODUCTION',		1),
 	('BUILDING_GENERAL_SERVICE',		'YIELD_SCIENCE',		1),
 	('BUILDING_GENERAL_SERVICE',		'YIELD_CULTURE',		1),
+	('BUILDING_GENERAL_SERVICE',		'YIELD_FAITH',			1),
 	('BUILDING_GENERAL_SERVICE',		'YIELD_GOLD',			1);
 
 -- If Magnus with promotion general service officier located, cities within 9 tiles can receive regional yield (2 of all yields except faith).
@@ -1302,6 +1322,7 @@ values
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_PRODUCTION'),
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_SCIENCE'),
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_CULTURE'),
+ 	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_FAITH'),
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_GOLD');
 
 insert or replace into Modifiers
@@ -1311,6 +1332,7 @@ values
 	('GENERAL_SERVICE_REGIONAL_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MAGNUS_WITHIN_RANGE'),
 	('GENERAL_SERVICE_REGIONAL_SCIENCE',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MAGNUS_WITHIN_RANGE'),
 	('GENERAL_SERVICE_REGIONAL_CULTURE',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MAGNUS_WITHIN_RANGE'),
+	('GENERAL_SERVICE_REGIONAL_FAITH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MAGNUS_WITHIN_RANGE'),
 	('GENERAL_SERVICE_REGIONAL_GOLD',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MAGNUS_WITHIN_RANGE');
 
 -- insert or replace into Modifiers
@@ -1335,6 +1357,7 @@ values
 	('GENERAL_SERVICE_REGIONAL_PRODUCTION_MODIFIER',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	1),
 	('GENERAL_SERVICE_REGIONAL_SCIENCE_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	1),
 	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	1),
+	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	1),
 	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	1);
 
 insert or replace into ModifierArguments
@@ -1352,41 +1375,11 @@ values
 	('GENERAL_SERVICE_REGIONAL_CULTURE',				'ModifierId',	'GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'YieldType',	'YIELD_CULTURE'),
 	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'Amount',		3),
+	('GENERAL_SERVICE_REGIONAL_FAITH',					'ModifierId',	'GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER'),
+	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'YieldType',	'YIELD_FAITH'),
+	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'Amount',		3),
 	('GENERAL_SERVICE_REGIONAL_GOLD',					'ModifierId',	'GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'YieldType',	'YIELD_GOLD'),
 	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'Amount',		3);
 
 ----------------------------------------------------------------------------------------------------------------------
-
--- Diplomacy Quarter Buildings
-insert or replace into BuildingModifiers
-	(BuildingType,							ModifierId)
-values
-	('BUILDING_CHANCERY',					'CHANCERY_ADD_VISIBILITY'),
-	--('BUILDING_CONSULATE',					'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
-	--('BUILDING_CONSULATE',					'CONSULATE_LEVY_DISCOUNT'),
-	--('BUILDING_CONSULATE',					'CONSULATE_LEVY_UNITUPGRADEDISCOUNT'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_DELEGATION_FAVOR'),
-	('BUILDING_CONSULATE',					'DIPLOMATIC_QUARTER_EMBASSY_FAVOR');
-
-insert or replace into Modifiers	
-	(ModifierId,							ModifierType)
-values
-	('CHANCERY_ADD_VISIBILITY',				'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY'),
-	('CONSULATE_LEVY_DISCOUNT',				'MODIFIER_PLAYER_ADJUST_LEVY_DISCOUNT_PERCENT'),
-	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'MODIFIER_PLAYER_ADJUST_LEVIED_UNIT_UPGRADE_DISCOUNT_PERCENT');
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,				Value)
-values
-	('CHANCERY_ADD_VISIBILITY',				'Amount',			1),
-	('CHANCERY_ADD_VISIBILITY',				'Source',			'SOURCE_CHANCERY'),
-	('CHANCERY_ADD_VISIBILITY',				'SourceType',		'DIPLO_SOURCE_ALL_NAMES'),
-	('CONSULATE_LEVY_DISCOUNT',				'Percent',			20),
-	('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',	'Amount',			20);
-
-insert or replace into DiplomaticVisibilitySources
-	(VisibilitySourceType,	Description,				ActionDescription,					GossipString,					PrereqTech)
-values
-	('SOURCE_CHANCERY',		'LOC_VIZSOURCE_CHANCERY',	'LOC_VIZSOURCE_ACTION_CHANCERY',	'LOC_GOSSIP_SOURCE_CHANCERY',	'TECH_MATHEMATICS');
