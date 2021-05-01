@@ -145,21 +145,24 @@ update Buildings set CitizenSlots = 1
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 -- Regional Range
-update Buildings set RegionalRange = 6
- where BuildingType = 'BUILDING_UNIVERSITY'
+update Buildings set RegionalRange = 3
+where BuildingType = 'BUILDING_UNIVERSITY'
 	or BuildingType = 'BUILDING_MADRASA'
-	or BuildingType = 'BUILDING_RESEARCH_LAB'
+	or BuildingType = 'BUILDING_RESEARCH_LAB';
+update Buildings set RegionalRange = 6
+where BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_MUSEUM_ART'
 	or BuildingType = 'BUILDING_MUSEUM_ARTIFACT'
 	or BuildingType = 'BUILDING_FILM_STUDIO'
 	or BuildingType = 'BUILDING_BROADCAST_CENTER'
 	or BuildingType = 'BUILDING_BANK'
 	or BuildingType = 'BUILDING_GRAND_BAZAAR'
-	or BuildingType = 'BUILDING_STOCK_EXCHANGE'
-;
+	or BuildingType = 'BUILDING_STOCK_EXCHANGE';
+
 update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
 update Buildings set RegionalRange = 4, Entertainment = 1 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set RegionalRange = 6, Entertainment = 1 where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_FOOD_MARKET';
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_SHOPPING_MALL';
 
 update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_AQUARIUM' or BuildingType = 'BUILDING_ZOO';
@@ -220,8 +223,8 @@ values
 	('BUILDING_GRAND_BAZAAR',		'YIELD_GOLD',		8),
 	('BUILDING_STOCK_EXCHANGE',		'YIELD_GOLD',		8),
 	('BUILDING_WORKSHOP',			'YIELD_PRODUCTION',	5),
-	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	3),
-	('BUILDING_MADRASA',			'YIELD_SCIENCE',	4),
+	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	4),
+	('BUILDING_MADRASA',			'YIELD_SCIENCE',	5),
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
 	('BUILDING_MUSEUM_ART',			'YIELD_CULTURE',	4),
 	('BUILDING_MUSEUM_ARTIFACT',	'YIELD_CULTURE',	4),
@@ -539,57 +542,54 @@ insert or replace into ModifierArguments
 values
 	('SEWER_GROWTH_RATE',									'Amount',		10),
 	-- Neighborhood
-	('FOOD_MARKET_GROWTH_RATE',								'Amount',		25),
+	('FOOD_MARKET_GROWTH_RATE',								'Amount',		10),
 	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'YieldType',	'YIELD_GOLD'),
-	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		15),
-	-- 
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'YieldType',	'YIELD_GOLD'),
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		10),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		5),
 	-- 
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
 	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
-	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		10),
+	('UNIVERSITY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
 	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'YieldType',	'YIELD_SCIENCE'),
-	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'Amount',		10),
+	('RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',				'Amount',		5),
 	-- 
 	('AMPHITHEATER_CULTURE_PERCENTAGE_BOOST',				'YieldType',	'YIELD_CULTURE'),
 	('AMPHITHEATER_CULTURE_PERCENTAGE_BOOST',				'Amount',		5),
 	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'YieldType',	'YIELD_CULTURE'),
-	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'Amount',		10),
+	('MUSEUM_CULTURE_PERCENTAGE_BOOST',						'Amount',		5),
 	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'YieldType',	'YIELD_CULTURE'),
-	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'Amount',		10),
+	('BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',			'Amount',		5),
 	-- 
 	('MARKET_GOLD_PERCENTAGE_BOOST',						'YieldType',	'YIELD_GOLD'),
 	('MARKET_GOLD_PERCENTAGE_BOOST',						'Amount',		5),
 	('BANK_GOLD_PERCENTAGE_BOOST',							'YieldType',	'YIELD_GOLD'),
-	('BANK_GOLD_PERCENTAGE_BOOST',							'Amount',		10),
+	('BANK_GOLD_PERCENTAGE_BOOST',							'Amount',		5),
 	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'YieldType',	'YIELD_GOLD'),
-	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		10),
+	('STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',				'Amount',		5),
 	-- 
 	('SHRINE_FAITH_PERCENTAGE_BOOST',						'YieldType',	'YIELD_FAITH'),
 	('SHRINE_FAITH_PERCENTAGE_BOOST',						'Amount',		5),
 	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'YieldType',	'YIELD_FAITH'),
-	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'Amount',		10),
+	('TEMPLE_FAITH_PERCENTAGE_BOOST',						'Amount',		5),
 	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'YieldType',	'YIELD_FAITH'),
-	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'Amount',		15),
+	('RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST',			'Amount',		5),
 	-- 
 	('WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
 	('WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
-	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
-	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
-	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
-	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		20),
+	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
+	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
+	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
+	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
 	-- powered
-	('POWERED_FOOD_MARKET_GROWTH_RATE',						'Amount',		25),
+	('POWERED_FOOD_MARKET_GROWTH_RATE',						'Amount',		5),
 	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'YieldType',	'YIELD_GOLD'),
-	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'Amount',		15),
+	('POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',			'Amount',		10),
 	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'YieldType',	'YIELD_SCIENCE'),
-	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'Amount',		10),
+	('POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST',		'Amount',		5),
 	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'YieldType',	'YIELD_CULTURE'),
-	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'Amount',		10),
+	('POWERED_BROADCAST_CENTER_CULTURE_PERCENTAGE_BOOST',	'Amount',		5),
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'YieldType',	'YIELD_GOLD'),
-	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		10);
+	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		5);
 
 -- Maintainance
 --update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
@@ -604,7 +604,7 @@ update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
 update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
-update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
+update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_MARKET';
@@ -793,7 +793,9 @@ values
 	--('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_LOSE_G'),
 --情报局
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION');
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
+	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION'),
+	('BUILDING_GOV_SPIES',                  'GOV_SPIES_ADD_VISIBILITY');
 
 -- insert or replace into Modifiers
 -- 	(ModifierId,							ModifierType,															RunOnce)
@@ -812,7 +814,10 @@ values
 	--('GOV_CITYSTATES_CITY_LOSE_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA',	'GOV_G_NONHOMECONTINENT_REQUIREMENT'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
-	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null);
+	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null),
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',				NULL),
+	('GOV_SPIES_ADD_VISIBILITY',            'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',									NULL);
+
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
@@ -829,7 +834,16 @@ values
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
 	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
-	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50);
+	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50),
+	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY'),
+	('GOV_SPIES_ADD_VISIBILITY',            'Amount',           1),
+    ('GOV_SPIES_ADD_VISIBILITY',            'Source',           'SOURCE_GOV_SPIES'),
+   	('GOV_SPIES_ADD_VISIBILITY',            'SourceType',       'DIPLO_SOURCE_ALL_NAMES');
+
+insert or replace into DiplomaticVisibilitySources
+    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString,                  	 PrereqTech)
+values
+    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES',   'TECH_MATHEMATICS');
 
 --主教座堂
 --移除信仰加成
@@ -979,7 +993,7 @@ values
 	('GOV_SCIENCE_LIBRARY_PRODUCTION',				'Amount',			2),
 	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'BuildingType',		'BUILDING_UNIVERSITY'),
 	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'YieldType',		'YIELD_PRODUCTION'),
-	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'Amount',			3),
+	('GOV_SCIENCE_UNIVERSITY_PRODUCTION',			'Amount',			4),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'BuildingType',		'BUILDING_ALCHEMICAL_SOCIETY'),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
 	-- ('GOV_SCIENCE_ALCHEMICAL_SOCIETY_PRODUCTION',	'Amount',			4),

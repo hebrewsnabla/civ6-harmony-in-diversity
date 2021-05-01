@@ -160,11 +160,12 @@
     <Replace Tag="LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION" Language="en_US">
       <Text>+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and warmongering.</Text>
     </Replace>
+    <!-- Scotland -->
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>幸福度为快乐的城市额外+5% [ICON_SCIENCE] 科技值、+5% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
+      <Text>幸福度为快乐的城市额外+10% [ICON_SCIENCE] 科技值、+10% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。欣喜若狂的城市获得的加成将加倍。</Text>
     </Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION" Language="en_US">
-      <Text>Happy cities receive an additional +5%  [ICON_SCIENCE] Science and +5%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
+      <Text>Happy cities receive an additional +10%  [ICON_SCIENCE] Science and +10%  [ICON_PRODUCTION] Production. Happy cities generate +2  [ICON_GreatScientist] Great Scientist point per Campus and +2 [ICON_GreatEngineer] Great Engineer point per Industrial Zone. Ecstatic cities double all these amounts.</Text>
     </Replace>
     <!-- Mapuche -->
     <Replace Tag="LOC_IMPROVEMENT_CHEMAMULL_DESCRIPTION" Language="zh_Hans_CN">
@@ -236,6 +237,13 @@
     <!-- France -->
     <Replace Tag="LOC_IMPROVEMENT_CHATEAU_DESCRIPTION" Language="zh_Hans_CN">
       <Text>解锁建造者建造法国特色建筑法国城堡的能力。[NEWLINE][NEWLINE]+2 [ICON_Culture] 文化值、+1 [ICON_Gold] 金币。+1魅力。每与一座奇观相邻便+1 [ICON_Culture] 文化值（研究“飞行”科技后提升为+2）。如处在包含河岸的单元格上，则+2 [ICON_Gold] 金币。研究完“飞行”之后，将根据 [ICON_CULTURE] 文化值提供 [ICON_TOURISM] 旅游业绩。必须建在加成或奢侈品资源旁。无法建在另一座法国城堡旁。</Text>
+    </Replace>
+    <!-- Nubia -->
+    <Replace Tag="LOC_IMPROVEMENT_PYRAMID_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>随“砌砖”科技解锁的改良设施。可以建造在沙漠、沙丘，沙漠泛滥平原，草原，草原丘陵或平原丘陵上。+2 [ICON_Faith] 信仰值、+1 [ICON_Food] 食物，解锁神学后，+1 [ICON_Food] 食物。可从相邻区域获得额外产出。与市中心相邻则+1 [ICON_Food] 食物。如与提供相邻加成的其他任意区域相邻，则相应产出+1。建造在沙漠或者沙漠丘陵上时，额外+2 [ICON_Faith] 信仰值、+2 [ICON_Food] 食物。</Text>
+    </Replace>
+    <Replace Tag="LOC_IMPROVEMENT_PYRAMID_DESCRIPTION" Language="zh_Hans">
+      <Text>Improvement that unlocks with Masonry and can be built on Desert, Desert Hills, Desert Floodplains, Plains, Plain Hills, Grass, Grass Hills. +2 [ICON_Faith] Faith and +1 [ICON_Food] Food. +1 [ICON_FOOD] Food after researching Theology. Receives additional yields from adjacent districts. +1 [ICON_Food] Food if adjacent to a city center. For all other districts that award adjacency bonuses: +1 of the appropriate yield if that district is adjacent. If build on Desert, Desert Hills extra +2 [ICON_Faith] Faith and +2 [ICON_Food] Food.</Text>
     </Replace>
   </LocalizedText>
 </GameData>

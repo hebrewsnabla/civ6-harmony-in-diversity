@@ -220,6 +220,16 @@ values
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIRES_CITY_HAS_BUILDING_DUMMY_MAGNUS');
 
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('DISTRICT_IS_SPECIALITY_DISTRICT',		'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+select 
+	'DISTRICT_IS_SPECIALITY_DISTRICT',		'REQUIRES_DISTRICT_IS_' || DistrictType
+from Districts where RequiresPopulation = 1;
+
 -- New city center buildings
 insert or replace into RequirementSets 
 	(RequirementSetId, 						RequirementSetType) 
@@ -792,3 +802,14 @@ insert or replace into RequirementArguments
 	(RequirementId,						Name,				Value)
 values
 	('REQUIRES_PLOT_ADJACENT_VOLCANO',	'FeatureType',		'FEATURE_VOLCANO');
+
+--SULEIMAN GUNPOWDER GOVERNOR POINT
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLAYER_HAS_GUNPOWDER_TECH',					'REQUIRES_PLAYER_HAS_TECH_GUNPOWDER');
+
+insert or replace into RequirementArguments
+	(RequirementId,							Name,					Value)
+values
+	('REQUIRES_PLAYER_HAS_TECH_GUNPOWDER',	'TechnologyType',		'TECH_GUNPOWDER');

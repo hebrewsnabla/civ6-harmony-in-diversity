@@ -25,10 +25,12 @@ local m_GovernorMerchantID = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Index
 local m_GovernorMerchantHash = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Hash
 local m_GovernorPromotion_MultinationalCorpID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Index
 local m_GovernorPromotion_MultinationalCorpHash = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Hash
+local m_CivicExploration = GameInfo.Civics['CIVIC_EXPLORATION'].Index
 
 local m_DummyMagnus = GameInfo.Buildings['BUILDING_DUMMY_MAGNUS'].Index
 local m_DummyNoMagnus = GameInfo.Buildings['BUILDING_DUMMY_NO_MAGNUS'].Index
 local m_EffectDistance = tonumber(GameInfo.GlobalParameters['MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE'].Value)
+local m_LiangWonderGreatEngineerPercentage = tonumber(GameInfo.GlobalParameters['LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE'].Value)
 
 function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
     local player = Players[ePlayer]
@@ -149,7 +151,7 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
     if player ~= nil and city ~= nil and building ~= nil then
         local promotion = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_ZONING_COMMISSIONER']
         local greatEngID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index
-        local amount = building.Cost * 0.2 * iSpeedCostMultiplier
+        local amount = building.Cost * m_LiangWonderGreatEngineerPercentage * 0.01 * iSpeedCostMultiplier
         local governor = city:GetAssignedGovernor()
         if governor ~= nil and promotion ~= nil then
             -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())
@@ -167,10 +169,14 @@ local m_ReynaAssignedCity = {};
 
 function UpdateReynaTradeRoutesYield(playerID)
     local player = Players[playerID];
+    if (player == nil) then
+        return
+    end
     local governors = player:GetGovernors();
     local governor = governors:GetGovernor(m_GovernorMerchantHash);
 
-    if governor then
+    -- Enable when player has Exploration Civic
+    if governor and player:GetCulture():HasCivic(m_CivicExploration) then
         -- Update Reya current city yield if needed.
         local currentCity:table = governor:GetAssignedCity();
         if currentCity and governor:HasPromotion(m_GovernorPromotion_MultinationalCorpHash) and governor:IsEstablished() then

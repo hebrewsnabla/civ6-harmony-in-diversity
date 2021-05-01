@@ -42,7 +42,7 @@ values
 insert or replace into BuildingModifiers
     (BuildingType,                          ModifierId)
 values
-    ('BUILDING_CHANCERY',                   'CHANCERY_ADD_VISIBILITY'),
+    --('BUILDING_CHANCERY',                   'CHANCERY_ADD_VISIBILITY'),
     -- ('BUILDING_CONSULATE',                  'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
     ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT');
     -- ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_UNITUPGRADEDISCOUNT');
@@ -53,24 +53,24 @@ values
 insert or replace into Modifiers    
     (ModifierId,                            ModifierType)
 values
-    ('CHANCERY_ADD_VISIBILITY',             'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY'),
+    --('CHANCERY_ADD_VISIBILITY',             'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY'),
     ('CONSULATE_LEVY_DISCOUNT',             'MODIFIER_PLAYER_ADJUST_LEVY_DISCOUNT_PERCENT'),
     ('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',  'MODIFIER_PLAYER_ADJUST_LEVIED_UNIT_UPGRADE_DISCOUNT_PERCENT');
 
 insert or replace into ModifierArguments
     (ModifierId,                            Name,               Value)
 values
-    ('CHANCERY_ADD_VISIBILITY',             'Amount',           1),
-    ('CHANCERY_ADD_VISIBILITY',             'Source',           'SOURCE_CHANCERY'),
-    ('CHANCERY_ADD_VISIBILITY',             'SourceType',       'DIPLO_SOURCE_ALL_NAMES'),
+    --('CHANCERY_ADD_VISIBILITY',             'Amount',           1),
+    --('CHANCERY_ADD_VISIBILITY',             'Source',           'SOURCE_CHANCERY'),
+   -- ('CHANCERY_ADD_VISIBILITY',             'SourceType',       'DIPLO_SOURCE_ALL_NAMES'),
     ('CONSULATE_LEVY_DISCOUNT',             'Percent',          20),
     ('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',  'Amount',           20);
 
-insert or replace into DiplomaticVisibilitySources
+/*insert or replace into DiplomaticVisibilitySources
     (VisibilitySourceType,  Description,                ActionDescription,                  GossipString,                   PrereqTech)
 values
     ('SOURCE_CHANCERY',     'LOC_VIZSOURCE_CHANCERY',   'LOC_VIZSOURCE_ACTION_CHANCERY',    'LOC_GOSSIP_SOURCE_CHANCERY',   'TECH_MATHEMATICS');
-
+*/
 
 -- 打草谷
 insert or replace into TypeTags

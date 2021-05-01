@@ -55,7 +55,6 @@ where UnitType = 'UNIT_SPY';
 update Units set Cost = 50 where UnitType = 'UNIT_SPEARMAN';
 update Units set Cost = 55 where UnitType = 'UNIT_GREEK_HOPLITE';
 update Units set Cost = 90 where UnitType = 'UNIT_HORSEMAN';
-update Units set Combat = 33 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 update Units set RangedCombat = 28 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 update Units set BaseMoves = 1, Range = 3 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
@@ -69,4 +68,5 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 --worrior monk and nihang can have siege_tower and Battering_ram bonus
 --to do
 --update Units set PrereqCivic = 'CIVIC_THEOLOGY' where UnitType = 'UNIT_WARRIOR_MONK';
-	
+update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
+update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';		

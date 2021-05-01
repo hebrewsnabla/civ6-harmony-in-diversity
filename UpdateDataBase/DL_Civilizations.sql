@@ -381,9 +381,9 @@ insert or replace into ModifierArguments    (ModifierId,    Name,        Value)
 insert or replace into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
-	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
@@ -393,3 +393,10 @@ values
 	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');
+
+--Scotland
+--Happy city recives an additional 10% science and 10% production.
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name= 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9" version="0.7">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.7.4">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.7.3</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.3</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.7.4</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.4</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -131,6 +131,10 @@
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
+    </Criteria>
+    <Criteria id="WatchTower_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
     </Criteria>
     <Criteria id="WetLands_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -282,27 +286,31 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/DL_Texts.xml</File>
     </UpdateText>
-    <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
+    <UpdateText id="WatchTower_mod_support_text" criteria="WatchTower_Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <File>ModSupport/Watchtower/DL_Texts.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
     </UpdateDatabase>
     <UpdateText id="Community_Wonders_support_text" criteria="Expansion2">
-      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     </UpdateText>
     <!-- RadialMeasuringTool -->
     <UpdateText id="DL_RadialMeasuringTool_Texts" criteria="Expansion2">
-      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <Properties><LoadOrder>15008</LoadOrder></Properties>
       <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
     </UpdateText>
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
-      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <Properties><LoadOrder>15009</LoadOrder></Properties>
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
     <UpdateDatabase id="Community_Wonders_support" criteria="ProjectHumankind_Expansion2">
-      <Properties><LoadOrder>15008</LoadOrder></Properties>
+      <Properties><LoadOrder>15010</LoadOrder></Properties>
       <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     </UpdateDatabase>
 
@@ -383,8 +391,30 @@
       <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
     <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="CityPolicies_Conflict_Expansion2">
+      <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     </ImportFiles>
+    <!-- Governors Diversity -->
+    <AddUserInterfaces id="GovernorsDiversity_lua" criteria="Expansion2">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>15606</LoadOrder>
+      </Properties>
+      <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="GovernorsDiversity_import" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
+    </ImportFiles>
+    <UpdateDatabase id="HD_Governors" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
+      <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
+    </UpdateDatabase>
+    <UpdateText id="HD_Governors_text" criteria="Expansion2">
+      <Properties><LoadOrder>15606</LoadOrder></Properties>
+      <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
+    </UpdateText>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="DLC_Persia">
       <Properties><LoadOrder>15700</LoadOrder></Properties>
@@ -441,6 +471,11 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
+    <!-- Double Great Person need to update in the first -->
+    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
+      <Properties><LoadOrder>16008</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
+    </UpdateDatabase>
     <!-- DLC Support -->
     <UpdateDatabase id="DL_Australia" criteria="DLC_Australia">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
@@ -495,11 +530,6 @@
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
     <!-- Main -->
-    <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
-      <Properties><LoadOrder>16008</LoadOrder></Properties>
-      <!-- Double Great Person need to update in the first -->
-      <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
-    </UpdateDatabase>
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
       <File>UpdateDataBase/DL_Adjacency.sql</File>
@@ -519,7 +549,7 @@
       <File>UpdateDataBase/DL_Districts.sql</File>
       <File>UpdateDataBase/DL_GlobalParameters.sql</File>
       <File>UpdateDataBase/DL_Goodyhuts.sql</File>
-      <File>UpdateDataBase/DL_Governors.sql</File>
+      <!-- <File>UpdateDataBase/DL_Governors.sql</File> -->
       <File>UpdateDataBase/DL_GreatPeople.sql</File>
       <File>UpdateDataBase/DL_GreatWorks.sql</File>
       <File>UpdateDataBase/DL_Happiness.xml</File>
@@ -563,7 +593,7 @@
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
-      <File>Gameplay/Governors.lua</File>
+      <!-- <File>Gameplay/Governors.lua</File> -->
       <File>Gameplay/Misc.lua</File>
       <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
@@ -575,12 +605,10 @@
         <Context>InGame</Context>
         <LoadOrder>16016</LoadOrder>
       </Properties>
-      <File>Gameplay/Governors_Interface.xml</File>
       <File>Gameplay/Temp_Interface.xml</File>
     </AddUserInterfaces>
     <ImportFiles id="DL_Scripts_Interface_lua" criteria="Expansion2">
       <Properties><LoadOrder>16017</LoadOrder></Properties>
-      <File>Gameplay/Governors_Interface.lua</File>
       <File>Gameplay/Temp_Interface.lua</File>
     </ImportFiles>
     <!-- Texts and Tags -->
@@ -599,7 +627,7 @@
       <File>Texts/DL_Text_Civilopedia.xml</File>
       <File>Texts/DL_Text_CivTraits.xml</File>
       <File>Texts/DL_Text_Districts.xml</File>
-      <File>Texts/DL_Text_Governors.xml</File>
+      <!-- <File>Texts/DL_Text_Governors.xml</File> -->
       <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
       <File>Texts/DL_Text_Greatworks_Types.xml</File>
       <File>Texts/DL_Text_Improvements.xml</File>
@@ -655,14 +683,14 @@
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>
-    <File>Gameplay/Governors.lua</File>
+    <!-- <File>Gameplay/Governors.lua</File> -->
     <File>Gameplay/Misc.lua</File>
     <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
     <File>Gameplay/Wonders.lua</File>
     <!-- UI scripts -->
-    <File>Gameplay/Governors_Interface.lua</File>
-    <File>Gameplay/Governors_Interface.xml</File>
+    <!-- <File>Gameplay/Governors_Interface.lua</File> -->
+    <!-- <File>Gameplay/Governors_Interface.xml</File> -->
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
     <!-- UI Overwrites -->
@@ -690,6 +718,7 @@
     <File>ModSupport/WetLands/DL_Removes.sql</File>
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
     <File>ModSupport/WetLands/DL_Texts.xml</File>    
+    <File>ModSupport/Watchtower/DL_Texts.xml</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
     <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
@@ -716,6 +745,12 @@
     <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
     <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+    <!-- Governors Diversity -->
+    <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
+    <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
+    <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
+    <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
+    <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
     <File>Maps/Utility/FeatureGenerator.lua</File>
@@ -785,7 +820,7 @@
     <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
     <File>UpdateDataBase/DL_GlobalParameters.sql</File>
     <File>UpdateDataBase/DL_Goodyhuts.sql</File>
-    <File>UpdateDataBase/DL_Governors.sql</File>
+    <!-- <File>UpdateDataBase/DL_Governors.sql</File> -->
     <File>UpdateDataBase/DL_GreatPeople.sql</File>
     <File>UpdateDataBase/DL_GreatWorks.sql</File>
     <File>UpdateDataBase/DL_Happiness.xml</File>
@@ -823,7 +858,7 @@
     <File>Texts/DL_Text_Civilopedia.xml</File>
     <File>Texts/DL_Text_CivTraits.xml</File>
     <File>Texts/DL_Text_Districts.xml</File>
-    <File>Texts/DL_Text_Governors.xml</File>
+    <!-- <File>Texts/DL_Text_Governors.xml</File> -->
     <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
     <File>Texts/DL_Text_Greatworks_Types.xml</File>
     <File>Texts/DL_Text_Improvements.xml</File>
