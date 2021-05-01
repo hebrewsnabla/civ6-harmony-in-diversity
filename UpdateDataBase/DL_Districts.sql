@@ -267,9 +267,3 @@ update ModifierArguments set Value = 5 where ModifierId = 'MBANZA_GOLD' and Name
 update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
 
 -- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
-
--- THANH GA points
-insert or replace into District_GreatPersonPoints
-	(DistrictType,GreatPersonClassType,PointsPerTurn)
-values 
-	('DISTRICT_THANH','GREAT_PERSON_CLASS_GENERAL',1);
