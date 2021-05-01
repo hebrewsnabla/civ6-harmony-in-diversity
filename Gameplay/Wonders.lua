@@ -27,7 +27,7 @@ function TajOnPlayerEraScoreChanged(playerID, amountAwarded)
     if player ~= nil then
         -- print(player)
         if player:IsMajor() and Utils.HasBuildingWithinCountry(playerID, buildingID) then
-            player:GetTreasury():ChangeGoldBalance(amountAwarded * 40)
+            player:GetTreasury():ChangeGoldBalance(amountAwarded * 45)
         end
     end
 end

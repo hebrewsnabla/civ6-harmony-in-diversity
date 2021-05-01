@@ -201,7 +201,7 @@ update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = '
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType = 1 ,
+	ThemingSameObjectType = 0 ,
 	ThemingSameEras = 1 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
