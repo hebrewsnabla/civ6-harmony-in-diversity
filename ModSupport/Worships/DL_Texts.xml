@@ -113,7 +113,7 @@
 			<Text>允许建造姆巴里（+2 [ICON_Faith] 信仰值 +6 [ICON_GOLD] 金币；+1 [ICON_TradeRoute] 贸易路线容量。)</Text>
 		</Replace>
 		<Replace Tag="LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION" Language="en_US">
-			<Text>Allow constructs Jinja (+2 [ICON_Faith] Faith +6 [ICON_GOLD] Gold; +1 [ICON_TradeRoute] Trade Route Capacity.)</Text>
+			<Text>Allow constructs Mbari (+2 [ICON_Faith] Faith +6 [ICON_GOLD] Gold; +1 [ICON_TradeRoute] Trade Route Capacity.)</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>+1 [ICON_TradeRoute] 贸易路线容量。</Text>
