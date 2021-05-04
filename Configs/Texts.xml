@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
+    <!-- Modes -->
+    <Replace Tag="LOC_GAMEMODE_TESTING_NAME" Language="zh_Hans_CN">
+      <Text>测试模式</Text>
+    </Replace>
+    <Replace Tag="LOC_GAMEMODE_TESTING_NAME" Language="en_US">
+      <Text>Testing Mode</Text>
+    </Replace>
+    <Replace Tag="LOC_GAMEMODE_TESTING_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>内部测试专用，请勿开启。用于测试的模式，当前测试模式中调整了ai的坐城等倾向。</Text>
+    </Replace>
+    <Replace Tag="LOC_GAMEMODE_TESTING_DESCRIPTION" Language="en_US">
+      <Text>Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains the AI settling bias adjustments.</Text>
+    </Replace>
+    <!-- Maps -->
     <Replace Tag='LOC_MAP_TINY_ISLANDS_NAME' Language="zh_Hans_CN">
       <Text>米粒岛屿</Text>
     </Replace>

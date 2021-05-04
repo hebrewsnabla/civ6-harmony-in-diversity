@@ -144,8 +144,14 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>7ce74c28-41ba-4453-b3d1-d30ef8013887</ModInUse>
     </Criteria>
-    <Criteria id="KublaiKhanVietnam_Enabled">
-      <ModInUse>A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C</ModInUse>
+    <!-- Game Modes -->
+    <Criteria id="Testing_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_TESTING</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
     </Criteria>
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -168,11 +174,16 @@
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
+      <File>Configs/GameModes.xml</File>
     </UpdateDatabase>
     <UpdateText id="DL_Settings_Text">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/Texts.xml</File>
     </UpdateText>
+    <UpdateIcons id="DL_Settings_Icons">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/Icons.xml</File>
+    </UpdateIcons>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/DL_Text_Buildings.xml</File>
@@ -187,7 +198,7 @@
   </FrontEndActions>
   <InGameActions>
     <!-- Fix Icon -->
-    <UpdateIcons id="FixChineseIcon" criteria="KublaiKhanVietnam_Enabled">
+    <UpdateIcons id="FixChineseIcon" criteria="DLC_Vietnam">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
@@ -665,11 +676,19 @@
       <Properties><LoadOrder>16055</LoadOrder></Properties>
       <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     </UpdateDatabase>
+    <!-- Testing -->
+    <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
+      <Properties><LoadOrder>16100</LoadOrder></Properties>
+      <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+      <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
+    </UpdateDatabase>
   </InGameActions>
   <Files>
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
+    <File>Configs/GameModes.xml</File>
     <File>Configs/Texts.xml</File>
+    <File>Configs/Icons.xml</File>
     <!-- Artdef -->
     <File>DL.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
@@ -679,6 +698,8 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
+    <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+    <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     <!-- Gameplay -->
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
