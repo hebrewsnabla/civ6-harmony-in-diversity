@@ -33,7 +33,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 ;
 
 -- unique districts
-update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 15, Cost = 60 
+update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 12, Cost = 60 
  where DistrictType = 'DISTRICT_LAVRA'					--拉夫拉（俄罗斯）
 	or DistrictType = 'DISTRICT_SEOWON'					--书院（朝鲜）
 	or DistrictType = 'DISTRICT_OBSERVATORY'			--天文台（玛雅）

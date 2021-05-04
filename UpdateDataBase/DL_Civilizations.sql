@@ -37,6 +37,8 @@ update ModifierArguments set Value = 1 where
 	ModifierId = 'TRAIT_MAORI_PRODUCTION_WOODS_CONSERVATION' and Name = 'Amount';
 
 -- Kongo
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_CIVILIZATION_NKISI','TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where
@@ -157,6 +159,12 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 
 
 --------------------------------------------------------------------------------------------------------------------------
+-- Georgia
+-- Resume ability (April Update)
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
+update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
+
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
 insert or replace into CivicModifiers (CivicType, ModifierId) values
@@ -198,6 +206,9 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_TundraMountainAdjacency_later'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_SnowMountainAdjacency_later');
 
+-- 1 housing (2 & 2 in official update)
+update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
+
 insert or replace into Adjacency_YieldChanges
 	(ID,	Description,	YieldChange,	YieldType,	AdjacentTerrain,	PrereqTech)
 values
@@ -208,6 +219,7 @@ values
 	('Terrace_SnowMountainAdjacency_later',		'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_SNOW_MOUNTAIN',	'TECH_ENGINEERING');
 
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN' and Name = 'Amount';
+delete from TraitModifiers where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN_LATE';
 
 insert or replace into TraitModifiers
 	(TraitType,						ModifierId)
@@ -272,6 +284,23 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
+
+-----------------------------------------------------------------------------------------------------------------
+-- Russia, Resume the ability
+-- TRAIT_CIVILIZATION_DISTRICT_LAVRA
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_SHRINE_WRITING_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TEMPLE_ARTIST_POINTS';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_DISTRICT_LAVRA' and ModifierId = 'TRAIT_TIER3_MUSICIAN_POINTS';
+
+-- Doubles because all GP doulbes.
+insert or replace into District_GreatPersonPoints
+	(DistrictType,		GreatPersonClassType,			PointsPerTurn)
+values
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_WRITER',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_ARTIST',	2),
+	('DISTRICT_LAVRA',	'GREAT_PERSON_CLASS_MUSICIAN',	2);
+
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_INCREASED_TILES' and Name = 'Amount';
 
 -----------------------------------------------------------------------------------------------------------------
 
@@ -352,9 +381,9 @@ insert or replace into ModifierArguments    (ModifierId,    Name,        Value)
 insert or replace into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
-	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+	('CITY_ADJACENT_TO_JUNGLE_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
@@ -364,3 +393,10 @@ values
 	('PLOT_ADJACENT_TO_IZ_AND_RAINFOREST_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');
+
+--Scotland
+--Happy city recives an additional 10% science and 10% production.
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name= 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';

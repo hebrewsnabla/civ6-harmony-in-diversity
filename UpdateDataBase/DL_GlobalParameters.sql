@@ -64,6 +64,9 @@ insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDis
 
 -- change era minimum turns
 update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';
+update GlobalParameters set Value = 10 where Name = 'THRESHOLD_SHIFT_PER_PAST_GOLDEN_AGE';
+update GlobalParameters set Value = -10 where Name = 'THRESHOLD_SHIFT_PER_PAST_DARK_AGE';
+update GlobalParameters set Value = 2 where Name = 'THRESHOLD_SHIFT_PER_CITY';
 
 -- Slower Barbarian tech.
 update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
@@ -82,11 +85,11 @@ update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARR
 updaTe GlobalParameters set Value = 50 where Name = 'IDENTITY_PER_TURN_FROM_CITY_STATES';
 
 -- Bug Fix
-update ModifierArguments set Value = 60 where ModifierId = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING' and Name = 'BuildingProductionPercent';
-update ModifierArguments set Value = 24 where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS' and Name = 'BuildingProductionPercent';
+-- update ModifierArguments set Value = 60 where ModifierId = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING' and Name = 'BuildingProductionPercent';
+-- update ModifierArguments set Value = 24 where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS' and Name = 'BuildingProductionPercent';
 
-update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED' and Name = 'UnitProductionPercent';
-update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT' and Name = 'UnitProductionPercent';
+-- update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED' and Name = 'UnitProductionPercent';
+-- update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT' and Name = 'UnitProductionPercent';
 
 update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackForceType = 'HighDifficultyCavalryAttack';
 
@@ -96,6 +99,7 @@ updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 
 -- The New Global Parameters.
 insert or replace into GlobalParameters (Name, Value) values
-    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
+    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
+    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);

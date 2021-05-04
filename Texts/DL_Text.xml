@@ -2,6 +2,14 @@
 <GameData>
 	<LocalizedText>
 		<!-- Misc -->
+		<Replace Tag="LOC_TOOLTIP_REGIONAL_EFFECT_RANGE" Language="zh_Hans_CN">
+			<!-- <Text>辐射范围： {1_num}个单元格以内</Text> -->
+			<Text>辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。</Text>
+		</Replace>
+		<Replace Tag="LOC_TOOLTIP_REGIONAL_EFFECT_RANGE" Language="en_US">
+			<!-- <Text>Regional effects range: within {1_num} tiles</Text> -->
+			<Text>Regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses.</Text>
+		</Replace>
 		<Replace Tag="LOC_TYPE_TRAIT_CITIZENSLOTS" Language="zh_Hans_CN">
 			<Text>{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}</Text>
 		</Replace>
@@ -30,6 +38,24 @@
 		<Replace Tag="LOC_GOSSIP_SOURCE_CHANCERY" Language="en_US">
 			<Text>Your officier from Chancery informed that </Text>
 		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>情报局的官员获悉</Text>
+		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_GOV_SPIES" Language="en_US">
+			<Text>Your officier from GOV SPIES informed that </Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>建造了情报局</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_GOV_SPIES" Language="en_US">
+			<Text>Built Building GOV SPIES</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_GOV_SPIES" Language="zh_Hans_CN">
+			<Text>建造情报局</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_GOV_SPIES" Language="en_US">
+			<Text>Build Building GOV SPIES</Text>
+		</Replace>
 		<Replace Tag="LOC_DISTRICT_LUXURY_GOLD" Language="zh_Hans_CN">
 			<Text>相邻奢侈品资源提供+{1_num} [ICON_GOLD] 金币。</Text>
 		</Replace>
@@ -54,16 +80,16 @@
 			<Text>高卢特色远古时代单位，替代勇士。此单位拥有更高花费。与基础战斗力更高的单位作战时+10 [ICON_Strength] 战斗力。与区域防御战斗时+5 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_CANAL_GOLD" Language="zh_Hans_CN">
-			<Text>相邻运河提供+{2_num} [ICON_Gold] 金币。</Text>
+			<Text>相邻运河提供+{1_num} [ICON_Gold] 金币。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_CANAL_GOLD" Language="en_US">
-			<Text>+{2_num} [ICON_Gold] Gold from the adjacent Canal.</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from the adjacent Canal.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_AERODROME_INDUSTRIAL_PRODUCTION" Language="zh_Hans_CN">
-			<Text>相邻航空港提供+{2_num} [ICON_Production] 生产力。</Text>
+			<Text>相邻航空港提供+{1_num} [ICON_Production] 生产力。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_AERODROME_INDUSTRIAL_PRODUCTION" Language="en_US">
-			<Text>+{2_num} [ICON_Production] Production from the adjacent Aerodrome.</Text>
+			<Text>+{1_num} [ICON_Production] Production from the adjacent Aerodrome.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_OIL_INDUSTRIAL_PRODUCTION" Language="zh_Hans_CN">
 			<Text>相邻油井提供+{1_num} [ICON_Production] 生产力。</Text>
@@ -138,7 +164,7 @@
 			<Text>莫克夏训练：永久+5 [ICON_Strength] 战斗力</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_BISHOP_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Strength] Combat Strength from Bishop's training</Text>
+			<Text>+5 [ICON_Strength] Combat Strength from Bishop's training</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_VICTOR_TRAINED_UNIT_EXP_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>维克多训练：永久+25% 经验值</Text>
@@ -150,7 +176,7 @@
 			<Text>维克多训练：永久+2 [ICON_Strength] 战斗力</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_VICTOR_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Strength] Combat Strength from Victor's training </Text>
+			<Text>+2 [ICON_Strength] Combat Strength from Victor's training </Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>高德院训练：免费获得1级晋升</Text>
@@ -347,7 +373,7 @@
 			<Text>+{1_num} [ICON_Science] 科技值来自相邻的雨林。</Text>
 		</Replace>
 		<Replace Tag="LOC_UNIVERSITY_JUNGLE_SCIENCE" Language="en_US">
-			<Text>+{1_num} [ICON_Science] Science from the adjacent {1_Num : plural 2?Jungle; other?Jungles;}.</Text>
+			<Text>+{1_num} [ICON_Science] Science from the adjacent {1_num : plural 1?Jungle; other?Jungles;}.</Text>
 		</Replace>
 		<!-- <Replace Tag="LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE" Language="zh_Hans_CN">
 			<Text>相邻水渠区域提供+{1_num} [ICON_PRODUCTION] 生产力。</Text>
@@ -365,7 +391,7 @@
 			<Text>+{1_num} [ICON_Production] 生产力来自相邻的采石场。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_QUARRY_HALF_PRODUCTION" Language="en_US">
-			<Text>+{1_num} [ICON_Production] Production from the adjacent {1_Num : plural 2?Quarry; other?Quarries;}.</Text>
+			<Text>+{1_num} [ICON_Production] Production from the adjacent Quarries.</Text>
 		</Replace>
 		<!-- 
 		<Replace Tag="LOC_DISTRICT_GEOTHERMAL_SCIENCE_LATE" Language="zh_Hans_CN">
@@ -396,25 +422,67 @@
 			<Text>+{1_num} [ICON_Gold] 金币来自相邻的市中心。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Gold_City_Center" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from adjacent City {1_Num : plural 2?Center; other?Centers;}.</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from adjacent City {1_Num : plural 1?Center; other?Centers;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Gold_Hansa" Language="zh_Hans_CN">
-			<Text>+{1_num} [ICON_Gold] 金币来自每个相邻的商业同业工会。</Text>
+			<Text>+{1_num} [ICON_Gold] 金币来自相邻的商业同业工会。</Text>
 		</Replace>
 		<Replace Tag="LOC_District_Gold_Hansa" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from each adjacent Hansa {1_Num : plural 2?district; other?districts;}.</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from adjacent Hansa {1_Num : plural 2?district; other?districts;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Science] 科技值来自相邻的沙漠单元格。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_DESERT_SCIENCE" Language="en_US">
-			<Text>+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 2?Tile; other?Tiles;}.</Text>
+			<Text>+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 1?Tile; other?Tiles;}.</Text>
 		</Replace>
 		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="zh_Hans_CN">
-			<Text>+{1_num} [ICON_Science] 科技值来自相邻的沙漠单元格。</Text>
+			<Text>+{1_num} [ICON_Science] 科技值来自相邻的沙漠（丘陵）单元格。</Text>
 		</Replace>
 		<Replace Tag='LOC_DISTRICT_DESERT_HILLS_SCIENCE' Language="en_US">
-			<Text>+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 2?Tile; other?Tiles;}.</Text>
+			<Text>+{1_num} [ICON_Science] Science from adjacent Desert hill {1_Num : plural 1?Tile; other?Tiles;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Harbor_INDUSTRIAL_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的港口。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Harbor_INDUSTRIAL_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent Harbor {1_Num : plural 1?district; other?districts;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_RoyalDock_INDUSTRIAL_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_RoyalDock_INDUSTRIAL_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent RoyalDock {1_Num : plural 1?district; other?districts;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Cothon_INDUSTRIAL_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的U型港。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Cothon_INDUSTRIAL_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 1?district; other?districts;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_River_HANSA_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻河流。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_River_HANSA_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent river.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Harbor_HANSA_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的港口。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Harbor_HANSA_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent Harbor {1_Num : plural 2?district; other?districts;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_RoyalDock_HANSA_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_RoyalDock_HANSA_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent RoyalDock {1_Num : plural 2?district; other?districts;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Cothon_HANSA_Production" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻的U型港。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Cothon_HANSA_Production" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}.</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>

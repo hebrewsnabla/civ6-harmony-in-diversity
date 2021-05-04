@@ -20,7 +20,10 @@ values
     ('DISTRICT_OPPIDUM',            'Aqueduct_Production'),
     ('DISTRICT_OPPIDUM',            'Dam_Production'),
     ('DISTRICT_OPPIDUM',            'Canal_Production'),
-    ('DISTRICT_OPPIDUM',            'Mine_Production');
+    ('DISTRICT_OPPIDUM',            'Mine_Production'),
+    ('DISTRICT_OPPIDUM',	        'Harbor_INDUSTRIAL_Production'),
+	('DISTRICT_OPPIDUM',	        'RoyalDock_INDUSTRIAL_Production'),
+	('DISTRICT_OPPIDUM',	        'Cothon_INDUSTRIAL_Production');
 
 insert or replace into Adjacency_YieldChanges
     (ID,                                Description,    YieldType,          YieldChange,    TilesRequired,  AdjacentRiver,

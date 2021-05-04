@@ -26,6 +26,8 @@ update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_R
     where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_YIELDS';
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_CAPITAL_REQUIREMENTS'
     where ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_LOSE_YIELDS';
+update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS' where
+    ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_BUILDER';
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
     ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
@@ -170,3 +172,50 @@ values
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'GreatWorkObjectType', 'GREATWORKOBJECT_RELIC'),
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'YieldType',     'YIELD_CULTURE'),
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'YieldChange',   3);
+
+--Lahore_Nihang
+insert or replace into BuildingModifiers
+	(BuildingType,						    ModifierId)
+values
+	('BUILDING_BARRACKS',					'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST'),
+	('BUILDING_ARMORY',						'LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST'),
+	('BUILDING_MILITARY_ACADEMY',			'LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST'),
+	('BUILDING_BASILIKOI_PAIDES',			'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,									   			 SubjectRequirementSetId,       SubjectStackLimit)
+values
+	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
+	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
+	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
+	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1);
+
+insert or replace into ModifierArguments
+	(ModifierId,                                    Name,            Value)
+values
+	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'UnitType',     'UNIT_LAHORE_NIHANG'),
+    ('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'Amount',       -50),
+	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
+    ('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'Amount',       -50),
+	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
+    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50),
+    ('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'UnitType',     'UNIT_LAHORE_NIHANG'),
+	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'Amount',       -50);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_BYPASS_WALLS_PROMOTION_CLASS',				'BYPASS_WALLS_LAHORE_NIHANG'),
+	('ABILITY_ENABLE_WALL_ATTACK_PROMOTION_CLASS',			'ENABLE_WALL_ATTACK_LAHORE_NIHANG');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('BYPASS_WALLS_LAHORE_NIHANG',					'MODIFIER_PLAYER_UNIT_ADJUST_BYPASS_WALLS_PROMOTION_CLASS'),
+	('ENABLE_WALL_ATTACK_LAHORE_NIHANG',			'MODIFIER_PLAYER_UNIT_ADJUST_ENABLE_WALL_ATTACK_PROMOTION_CLASS');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,		        Value)
+values
+	('BYPASS_WALLS_LAHORE_NIHANG',					'PromotionClass',   'PROMOTION_CLASS_NIHANG'),
+	('ENABLE_WALL_ATTACK_LAHORE_NIHANG',			'PromotionClass',   'PROMOTION_CLASS_NIHANG');

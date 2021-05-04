@@ -12,9 +12,16 @@ values
 	('DISTRICT_INDUSTRIAL_ZONE',	'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'AERODROME_INDUSTRIAL_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'SEAOil_INDUSTRIAL_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'Harbor_INDUSTRIAL_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'RoyalDock_INDUSTRIAL_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'Cothon_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'Oil_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'AERODROME_INDUSTRIAL_Production'),
 	('DISTRICT_HANSA',				'SEAOil_INDUSTRIAL_Production'),
+	('DISTRICT_HANSA',				'River_HANSA_Production'),
+	('DISTRICT_HANSA',				'Harbor_HANSA_Production'),
+	('DISTRICT_HANSA',				'RoyalDock_HANSA_Production'),
+	('DISTRICT_HANSA',				'Cothon_HANSA_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Canal_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
@@ -80,7 +87,7 @@ values
 	0, 				'DISTRICT_CANAL', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
 	0,				NULL,					NULL,			NULL,		NULL,			NULL,			'RESOURCECLASS_LUXURY');
-
+	
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentRiver,
 	AdjacentDistrict, 				PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
@@ -188,3 +195,23 @@ insert or replace into Adjacency_YieldChanges
 update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mekewap_SecondBonusAdjacency';
 delete from Adjacency_YieldChanges where ID = 'Mekewap_FirstBonusAdjacency';
 delete from Improvement_Adjacencies where YieldChangeId = 'Mekewap_FirstBonusAdjacency';
+
+--industrial zone and hansa adjacent to harbor
+insert or replace into Adjacency_YieldChanges
+	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
+	AdjacentRiver,	AdjacentDistrict, 		PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
+values
+	('Harbor_INDUSTRIAL_Production',	'LOC_DISTRICT_Harbor_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
+	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('RoyalDock_INDUSTRIAL_Production',	'LOC_DISTRICT_RoyalDock_INDUSTRIAL_Production', 'YIELD_PRODUCTION', 1,				1,
+	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Cothon_INDUSTRIAL_Production',	'LOC_DISTRICT_Cothon_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
+	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('River_HANSA_Production',			'LOC_DISTRICT_River_HANSA_Production', 			'YIELD_PRODUCTION', 2,				1,
+	1, 				NULL, 					NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Harbor_HANSA_Production',			'LOC_DISTRICT_Harbor_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
+	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('RoyalDock_HANSA_Production',		'LOC_DISTRICT_RoyalDock_HANSA_Production',		'YIELD_PRODUCTION', 2,				1,
+	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('Cothon_HANSA_Production',			'LOC_DISTRICT_Cothon_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
+	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');

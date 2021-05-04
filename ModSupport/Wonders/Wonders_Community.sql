@@ -201,7 +201,7 @@ update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = '
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType = 1 ,
+	ThemingSameObjectType = 0 ,
 	ThemingSameEras = 1 ,
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
@@ -299,6 +299,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and Modi
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_TRADE_ROUTE_YIELD_PER_DEST_LUXURY';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BOROBUDUR' and ModifierId = 'BOROBUDUR_INCREASED_PLANTATION_FAITH';
 delete from BuildingPrereqs where Building = 'BUILDING_BOROBUDUR' and PrereqBuilding = 'BUILDING_TEMPLE';
+update Buildings set PrereqCivic = 'CIVIC_THEOLOGY' where BuildingType = 'BUILDING_BOROBUDUR';
 insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
 	'UNIT_MISSIONARY',	'BUILDING_BOROBUDUR'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
@@ -307,25 +308,25 @@ insert or replace into Unit_BuildingPrereqs (Unit,	PrereqBuilding) select
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
 	
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH'
+	'BUILDING_BOROBUDUR',	'BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_BOROBUDUR',	'BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE'
+	'BUILDING_BOROBUDUR',	'BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BOROBUDUR');
 
 insert or replace into Modifiers 
-	(ModifierId,												ModifierType,								SubjectRequirementSetId) 
+	(ModifierId,											ModifierType,								SubjectRequirementSetId) 
 values
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS'),
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS');
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS'),
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS');
 
 insert or replace into ModifierArguments 
-	(ModifierId,												Name,			Value) 
+	(ModifierId,											Name,			Value) 
 values
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH', 	'YieldType',	'YIELD_FAITH'),
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',	'Amount',		2),
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE', 'YieldType',	'YIELD_CULTURE'),
-	('BRANDENBURG_GATE_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'Amount',		2);
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_FAITH',		'Amount',		2),
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE', 	'YieldType',	'YIELD_CULTURE'),
+	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'Amount',		2);
 
 -- Cost adjust
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';

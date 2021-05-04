@@ -13,7 +13,7 @@
         <Replace Tag="LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE" Language="en_US">
             <Text>Gain 400 [ICON_Science] Science (on Standard speed) for each adjacent Mountain tile.</Text>
         </Replace>
-        <Replace Tag="LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE" Language="en_US">
+        <Replace Tag="LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE" Language="zh_Hans_CN">
             <Text>获得3000点 [ICON_SCIENCE] 科技值与 [ICON_CULTURE] 文化值（标准速度下）。</Text>
         </Replace>
         <Replace Tag="LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE" Language="en_US">
