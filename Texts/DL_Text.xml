@@ -2,6 +2,14 @@
 <GameData>
 	<LocalizedText>
 		<!-- Misc -->
+		<Replace Tag="LOC_TOOLTIP_REGIONAL_EFFECT_RANGE" Language="zh_Hans_CN">
+			<!-- <Text>辐射范围： {1_num}个单元格以内</Text> -->
+			<Text>辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。</Text>
+		</Replace>
+		<Replace Tag="LOC_TOOLTIP_REGIONAL_EFFECT_RANGE" Language="en_US">
+			<!-- <Text>Regional effects range: within {1_num} tiles</Text> -->
+			<Text>Regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses.</Text>
+		</Replace>
 		<Replace Tag="LOC_TYPE_TRAIT_CITIZENSLOTS" Language="zh_Hans_CN">
 			<Text>{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}</Text>
 		</Replace>

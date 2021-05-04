@@ -18,7 +18,8 @@ update Buildings set Description = 'LOC_BUILDING_GRANARY_DESCRIPTION' where Buil
 update Buildings set Description = 'LOC_BUILDING_UNIVERSITY_DESCRIPTION' where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Description = 'LOC_BUILDING_RESEARCH_LAB_DESCRIPTION' where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set Description = 'LOC_BUILDING_LIBRARY_DESCRIPTION' where BuildingType = 'BUILDING_LIBRARY';
-update Buildings set Description = 'LOC_BUILDING_AMPHITHEATER_DESCRIPTION' where BuildingType = 'BUILDING_AMPHITHEATER';
+-- update Buildings set Description = 'LOC_BUILDING_AMPHITHEATER_DESCRIPTION' where BuildingType = 'BUILDING_AMPHITHEATER';
+update Buildings set Description = NULL where BuildingType = 'BUILDING_AMPHITHEATER';
 update Buildings set Description = 'LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION' where BuildingType = 'BUILDING_BROADCAST_CENTER';
 update Buildings set Description = 'LOC_BUILDING_BANK_DESCRIPTION' where BuildingType = 'BUILDING_BANK';
 update Buildings set Description = 'LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION' where BuildingType = 'BUILDING_STOCK_EXCHANGE';
@@ -34,6 +35,11 @@ update Buildings set Description = 'LOC_BUILDING_WAT_DL_DESCRIPTION' where Build
 update Buildings set Description = 'LOC_BUILDING_STUPA_DL_DESCRIPTION' where BuildingType = 'BUILDING_STUPA';
 update Buildings set Description = 'LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION' where BuildingType = 'BUILDING_DAR_E_MEHR';
 update Buildings set Description = 'LOC_BUILDING_PAGODA_DL_DESCRIPTION' where BuildingType = 'BUILDING_PAGODA';
+
+update Buildings set Description = NULL where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Description = 'LOC_BUILDING_AQUARIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUARIUM';
+update Buildings set Description = 'LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUATICS_CENTER';
+update Buildings set Description = 'LOC_BUILDING_STADIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_STADIUM';
 
 update Beliefs set Description = 'LOC_BELIEF_CATHEDRAL_DL_DESCRIPTION' where BeliefType = 'BELIEF_CATHEDRAL';
 update Beliefs set Description = 'LOC_BELIEF_GURDWARA_DL_DESCRIPTION' where BeliefType = 'BELIEF_GURDWARA';
