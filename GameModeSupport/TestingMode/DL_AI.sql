@@ -22,7 +22,7 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal
 ('StandardSettlePlot', 'Cultural Pressure', 0, 1, NULL, NULL), -- 1
 ('StandardSettlePlot', 'Cultural Pressure', 1, -6, NULL, NULL), -- -6
 ('StandardSettlePlot', 'Foreign Continent', 1, -4, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
-('StandardSettlePlot', 'Nearest Friendly City', 0, -7, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
+('StandardSettlePlot', 'Nearest Friendly City', 0, -8, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
 ('StandardSettlePlot', 'Fresh Water', 0, 20, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
 ('StandardSettlePlot', 'Coastal', 0, 8, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_COAST'), -- 12
 ('StandardSettlePlot', 'Total Yield', 0, 1, 'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_TOTAL_YIELD'), -- 2
@@ -87,7 +87,7 @@ UPDATE PseudoYields SET DefaultValue =  2.0 WHERE PseudoYieldType = 'PSEUDOYIELD
 -- UPDATE PseudoYields SET DefaultValue =  0.8 WHERE PseudoYieldType = 'PSEUDOYIELD_ENVIRONMENT'; --    0.5, AI+ 0.75
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_GOLDENAGE_POINT'; -- 1, R&F
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- 1
-UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    0.5, 13.5 too much
+UPDATE PseudoYields SET DefaultValue = 5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_INFLUENCE'; --     0.5, envoys - Diplo? RS 0.55
 UPDATE PseudoYields SET DefaultValue = 40 WHERE PseudoYieldType = 'PSEUDOYIELD_NUCLEAR_WEAPON'; --  25, AI+ 45
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
