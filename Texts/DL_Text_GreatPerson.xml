@@ -160,5 +160,17 @@
         <Replace Tag="LOC_GREATPERSON_OMAR_KHAYYAM_ACTIVE" Language="zh_Hans_CN">
             <Text>为两个中世纪或文艺复兴的随机科技启动 [ICON_TechBoosted] 尤里卡时刻，为中世纪和文艺复兴时期的一个随机市政启动 [ICON_CivicBoosted] 鼓舞时刻。</Text>
         </Replace>
+        <Replace Tag="LOC_GREATPERSON_DISTRICT_CULTURE_BOMB" Language="zh_Hans_CN">
+            <Text>令该类型的区域获得文化炸弹的效果。若该区域未完成，则立刻完成该区域（宇航中心除外）。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_DISTRICT_CULTURE_BOMB" Language="en_US">
+            <Text>Immediately complete target district (except Spaceport) in the city if the district is not completed. Culture Bomb adjacent tiles when completing such district in any city afterwards.</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT" Language="zh_Hans_CN">
+            <Text>必须位于已完成或者正在建造的区域上（宇航中心除外）。</Text>
+        </Replace>
+        <Replace Tag="LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT" Language="en_US">
+            <Text>Must be on a district that is completed or under construction (except Spaceport).</Text>
+        </Replace>
     </LocalizedText>
 </GameData>
