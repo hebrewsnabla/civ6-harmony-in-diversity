@@ -41,6 +41,23 @@ insert into District_CitizenGreatPersonPoints
 values
     ("DISTRICT_OBSERVATORY",            "GREAT_PERSON_CLASS_SCIENTIST",     2);
 
+--Gran Colombia
+--Hacienda now requires Guilds
+update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_HACIENDA';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_AdvancedHaciendaAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_AdvancedHaciendaAdjacency';   
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_HaciendaAdjacency';
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_HaciendaAdjacency';
+update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Hacienda_PlantationAdjacency';
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Hacienda_MechanizedPlantationAdjacency';
+
+insert or replace into Improvement_ValidTerrains 
+    (ImprovementType,           TerrainType)
+values
+    ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT'),
+    ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT_HILLS'),
+    ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA'),
+    ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA_HILLS');
 
 ---------------------------------------------------------------------------------------------------------------
 -- CityStates
