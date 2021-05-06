@@ -692,6 +692,7 @@
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>16100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+      <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
       <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     </UpdateDatabase>
   </InGameActions>
@@ -711,6 +712,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+    <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     <!-- Gameplay -->
     <File>Gameplay/CityYield.lua</File>
