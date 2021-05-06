@@ -267,3 +267,10 @@ update ModifierArguments set Value = 5 where ModifierId = 'MBANZA_GOLD' and Name
 update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
 
 -- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
+
+-- Culture bombs
+insert or replace into Modifiers (ModifierId, ModifierType, RunOnce, Permanent)
+select 'CULTURE_BOMB_TRIGGER_' || DistrictType , 'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', 1, 1 from Districts;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select 'CULTURE_BOMB_TRIGGER_' || DistrictType, 'DistrictType', DistrictType from Districts;
+

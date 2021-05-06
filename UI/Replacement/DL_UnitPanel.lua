@@ -20,11 +20,15 @@ include("Common");
 include("FarmsOnFreshHills_Common");
 
 Utils = ExposedMembers.DLHD.Utils;
+GreatPersonUtils = ExposedMembers.DLHD.GreatPersonUtils;
 
 -- =================================================================================
 -- Cache base functions
 -- =================================================================================
 local BASE_BuildActionModHook = BuildActionModHook;
+local BASE_LateInitialize = LateInitialize;
+local BASE_OnUnitActionClicked = OnUnitActionClicked;
+local BASE_AddActionButton = AddActionButton;
 
 local m_ShouldUpdateBestImprovement = false;
 
@@ -65,24 +69,22 @@ function BuildActionModHook(instance:table, action:table)
     BASE_BuildActionModHook(instance, action);
 end
 
--- local BASE_OnUnitActionClicked = OnUnitActionClicked;
--- -- local BASE_AddActionButton = AddActionButton;
--- -- local mGreatPersonActivateHash = GameInfo.Types['UNITCOMMAND_ACTIVATE_GREAT_PERSON'].Hash;
+local mGreatPersonActivateHash = GameInfo.Types['UNITCOMMAND_ACTIVATE_GREAT_PERSON'].Hash;
 -- local mUnitoperationRemoveFeatureHash = GameInfo.Types['UNITOPERATION_REMOVE_FEATURE'].Hash;
 -- local mMilitaryEngineer = GameInfo.Units['UNIT_MILITARY_ENGINEER'].Index;
 -- -- =================================================================================
 -- -- Overrides
 -- -- =================================================================================
--- function OnUnitActionClicked( actionType:number, actionHash:number, currentMode:number )
+function OnUnitActionClicked( actionType:number, actionHash:number, currentMode:number )
 --     -- print('OnUnitActionClicked', actionType, actionHash) -- OnUnitActionClicked -1572680103 374670040
---     if g_isOkayToProcess then
---         local pSelectedUnit :table = UI.GetHeadSelectedUnit();
---         if (pSelectedUnit ~= nil) then
---             if (actionType == UnitCommandTypes.TYPE) then
---                 -- if actionHash == mGreatPersonActivateHash then
---                 --     -- pSelectedUnit
---                 --     UnitManager.RequestCommand( pSelectedUnit, actionHash );
---                 -- end
+    if g_isOkayToProcess then
+        local pSelectedUnit :table = UI.GetHeadSelectedUnit();
+        if (pSelectedUnit ~= nil) then
+            if (actionType == UnitCommandTypes.TYPE) then
+                if actionHash == mGreatPersonActivateHash then
+                    local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
+                    GreatPersonUtils.HandleActivation(pSelectedUnit:GetOwner(), pSelectedUnit:GetID(), individual);
+                end
 --             else
 --                 if (actionType == UnitOperationTypes.TYPE) then
 --                     if actionHash == mUnitoperationRemoveFeatureHash then
@@ -97,18 +99,50 @@ end
 --                         end
 --                     end
 --                 end
---             end
---         end
---     end
---     BASE_OnUnitActionClicked(actionType, actionHash, currentMode)
--- end
+            end
+        end
+    end
+    BASE_OnUnitActionClicked(actionType, actionHash, currentMode)
+end
 
--- function AddActionButton( instance:table, action:table )
---     -- print('AddActionButton', action.IconId)
---     if action.IconId == 'ICON_UNITOPERATION_MOVE_TO' then
---         action.Disabled = true
---         local pSelectedUnit :table= UI.GetHeadSelectedUnit();
---         print(pSelectedUnit)
---     end
---     BASE_AddActionButton(instance, action)
--- end
+function AddActionButton(instance:table, action:table)
+    if action.IconId == 'ICON_UNITCOMMAND_ACTIVATE_GREAT_PERSON' then
+        local pSelectedUnit = UI.GetHeadSelectedUnit();
+        local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
+        local rawActivationPlots = GreatPersonUtils.GetActivationPlots(pSelectedUnit:GetOwner(), individual);
+        if rawActivationPlots ~= nil then
+            local validActivation = false;
+            local selectedPlotId = pSelectedUnit:GetPlotId();
+            for _, plotId in ipairs(rawActivationPlots) do
+                if selectedPlotId == plotId then
+                    validActivation = true;
+                    break;
+                end
+            end
+            if not validActivation then
+                -- Not activatable plot.
+                local errorHint = "[NEWLINE][COLOR_Red]" .. Locale.Lookup("LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT") .. "[ENDCOLOR]";
+                if not action.Disabled then
+                    -- Not disabled, append additional newline.
+                    errorHint = "[NEWLINE]" .. errorHint;
+                    action.Disabled = true;
+                end
+                action.helpString = action.helpString .. errorHint;
+            end
+        end
+    end
+    BASE_AddActionButton(instance, action)
+end
+
+function OnGreatPersonActivated(unitOwner, unitID, greatPersonClassID, greatPersonIndividualID)
+    local owner = Players[unitOwner];
+    if owner:IsAI() then
+        -- Only need to handle AI activation since player activation will be handled in OnUnitActionClicked.
+        GreatPersonUtils.HandleActivation(unitOwner, unitID, greatPersonIndividualID);
+    end
+end
+
+function LateInitialize()
+    BASE_LateInitialize();
+    Events.UnitGreatPersonActivated.Add(OnGreatPersonActivated);
+end
