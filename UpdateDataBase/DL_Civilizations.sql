@@ -37,8 +37,23 @@ update ModifierArguments set Value = 1 where
 	ModifierId = 'TRAIT_MAORI_PRODUCTION_WOODS_CONSERVATION' and Name = 'Amount';
 
 -- Kongo
+
+-- Kongo all land units receive ability to move on forest and jungles without movement penalty
 insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_CIVILIZATION_NKISI','TRAIT_DOUBLE_WRITER_POINTS');
+	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_ALL_LAND_UNITS_IGNORE_WOODS');
+
+insert or replace into Modifiers
+	(ModifierId,			ModifierType)
+values
+	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'AbilityType',	'ABILITY_KONGO_IGNORE_WOODS');
+
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where

@@ -118,10 +118,12 @@
       <Text>Unlocks the Builder ability to construct a Mekewap, unique to Cree.[NEWLINE][NEWLINE]Provides +1 [ICON_PRODUCTION] Production and +1 [ICON_Housing] Housing. Extra +1 [ICON_Housing] Housing after completing Civil Service. +1 [ICON_GOLD] Gold if adjacent to a Luxury resource. For every adjacent Bonus Resource +1 [ICON_FOOD] Food. Additional [ICON_PRODUCTION] Production, [ICON_GOLD] Gold as you advance through the Civics and Technology Tree. Must be placed adjacent to a Bonus or Luxury resource. Cannot be built adjacent to another Mekewap.</Text>
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_HACIENDA_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>解锁建造者建造大哥伦比亚特色建筑大庄园的能力。[NEWLINE][NEWLINE]+2 [ICON_GOLD] 金币、+1 [ICON_PRODUCTION] 生产力并+0.5 [Icon_Housing] 住房。每与1座种植园相邻则+1 [ICON_Food] 食物（解锁科技“零件规格化”后，每与1座种植园相邻便能获得+2 [ICON_Food] 食物）。每与2座大庄园相邻，种植园与大庄园便+1 [ICON_Production] 生产力（获得市政“重商主义”后，每与1座大庄园相邻便能获得加成）。只能建造在平原、平原丘陵、草原、草原丘陵、沙漠、沙漠丘陵、冻土和冻土丘陵上。</Text>
+      <Text>解锁建造者建造大哥伦比亚特色建筑大庄园的能力。[NEWLINE][NEWLINE]+2 [ICON_GOLD] 金币、+1 [ICON_PRODUCTION] 生产力并+0.5 [Icon_Housing] 住房。每与1座种植园相邻则+1 [ICON_Food] 食物（解锁科技“零件规格化”后，每与1座种植园相邻便能获得+2 [ICON_Food] 食物）。每与2座大庄园相邻，种植园与大庄园便+1 [ICON_Production] 生产力（获得市政“重商主义”后，每与1座大庄园相邻便能获得加成）。只能建造在平原、平原丘陵、草原和草原丘陵上。</Text>
+      <!-- 、沙漠、沙漠丘陵、冻土和冻土丘陵 -->
     </Replace>
     <Replace Tag="LOC_IMPROVEMENT_HACIENDA_DESCRIPTION" Language="en_US">
-      <Text>Unlocks the Builder ability to construct a Hacienda, unique to Gran Colombia.[NEWLINE][NEWLINE]+2 [ICON_GOLD] Gold, +1 [ICON_PRODUCTION] Production, and +0.5 [Icon_Housing] Housing. +1 [ICON_Food] Food for every adjacent Plantation (increased to +2 [ICON_Food] Food for every Plantation with Replaceable Parts). Plantations and Haciendas receive +1 [ICON_Production] Production for every two adjacent Haciendas (increased to every Hacienda with Mercantilism). Can only be built on Plains, Plains Hills, Grassland, Grassland Hills, Desert, Desert Hills, Tundra, and Tundra Hills.</Text>
+      <Text>Unlocks the Builder ability to construct a Hacienda, unique to Gran Colombia.[NEWLINE][NEWLINE]+2 [ICON_GOLD] Gold, +1 [ICON_PRODUCTION] Production, and +0.5 [Icon_Housing] Housing. +1 [ICON_Food] Food for every adjacent Plantation (increased to +2 [ICON_Food] Food for every Plantation with Replaceable Parts). Plantations and Haciendas receive +1 [ICON_Production] Production for every two adjacent Haciendas (increased to every Hacienda with Mercantilism). Can only be built on Plains, Plains Hills, Grassland and Grassland Hills.</Text>
+      <!--  Desert, Desert Hills, Tundra, and Tundra Hills. -->
     </Replace>
   </LocalizedText>
 </GameData>

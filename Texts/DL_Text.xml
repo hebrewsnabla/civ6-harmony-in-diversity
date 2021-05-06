@@ -124,6 +124,13 @@
 			<Text>Qhapaq Ñan: ignore [ICON_MOVEMENT] movement penalty from Hills. </Text>
 			<!-- Son of Andes -->
 		</Replace>
+		<Replace Tag="LOC_ABILITY_KONGO_IGNORE_WOODS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>精神实体：无视森林和雨林对 [ICON_MOVEMENT] 移动力的减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KONGO_IGNORE_WOODS_DESCRIPTION" Language="en_US">
+			<Text>Nkisi: Ignore [ICON_MOVEMENT] movement penalty from Forest and Jungle. </Text>
+			<!-- Son of Andes -->
+		</Replace>
 		<Replace Tag="LOC_ABILITY_AMANI_FERR_PROMOTION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>阿玛尼训练：免费晋升1级</Text>
 		</Replace>
@@ -191,16 +198,16 @@
 			<Text>Pillage costs 1 movement from Pillage Preparing city policy</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>攻击区域时-10 [ICON_Strength] 战斗力</Text>
-		</Replace>
-		<Replace Tag="LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
-			<Text>-10 [ICON_Strength] Combat Strength when attacking Districts</Text>
-		</Replace>
-		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>攻击区域时-7 [ICON_Strength] 战斗力</Text>
 		</Replace>
-		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
 			<Text>-7 [ICON_Strength] Combat Strength when attacking Districts</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击区域时-5 [ICON_Strength] 战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION" Language="en_US">
+			<Text>-5 [ICON_Strength] Combat Strength when attacking Districts</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>在军事学院中训练获得的+3 [ICON_Strength] 战斗力</Text>

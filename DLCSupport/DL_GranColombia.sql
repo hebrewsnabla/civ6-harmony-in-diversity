@@ -29,12 +29,12 @@ update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS' where
     ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_BUILDER';
 
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-    ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
-insert or replace into Modifiers (ModifierId, ModifierType) values
-    ('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
-insert or replace into ModifierArguments (ModifierId, Name, Value) values
-    ('MAYAB_EXTRA_HOUSING', 'Amount', 1);
+-- insert or replace into TraitModifiers (TraitType, ModifierId) values
+--     ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
+-- insert or replace into Modifiers (ModifierId, ModifierType) values
+--     ('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
+-- insert or replace into ModifierArguments (ModifierId, Name, Value) values
+--     ('MAYAB_EXTRA_HOUSING', 'Amount', 1);
 
 insert into District_CitizenGreatPersonPoints
     (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
@@ -51,13 +51,13 @@ update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID 
 update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Hacienda_PlantationAdjacency';
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Hacienda_MechanizedPlantationAdjacency';
 
-insert or replace into Improvement_ValidTerrains 
-    (ImprovementType,           TerrainType)
-values
-    ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT'),
-    ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT_HILLS'),
-    ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA'),
-    ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA_HILLS');
+-- insert or replace into Improvement_ValidTerrains 
+--     (ImprovementType,           TerrainType)
+-- values
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT_HILLS'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA_HILLS');
 
 ---------------------------------------------------------------------------------------------------------------
 -- CityStates
