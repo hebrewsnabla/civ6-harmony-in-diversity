@@ -354,3 +354,19 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 
 -- great admiral
 -- GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON grants a settler
+
+-- Mimar Sinan.
+insert or replace into Modifiers (ModifierId, ModifierType) values
+("GREATPERSON_CULTURE_BOMB_MIMAR_SINAN", "MODIFIER_DO_NOTHING");
+insert or replace into ModifierStrings (ModifierId, Context, Text) values
+("GREATPERSON_CULTURE_BOMB_MIMAR_SINAN", "Summary", "LOC_GREATPERSON_DISTRICT_CULTURE_BOMB");
+
+update GreatPersonIndividuals set
+ActionCharges = 2,
+ActionRequiresCompletedDistrictType = NULL,
+ActionEffectTileHighlighting = 0
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MIMAR_SINAN';
+
+update GreatPersonIndividualActionModifiers
+set ModifierId = 'GREATPERSON_CULTURE_BOMB_MIMAR_SINAN', AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MIMAR_SINAN';

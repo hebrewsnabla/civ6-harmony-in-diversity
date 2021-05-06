@@ -251,7 +251,18 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanel.lua</File>
     </ImportFiles>
-    <ReplaceUIScript id="DL_UnitPanel" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ReplaceUIScript id="DL_SelectedUnit" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>15000</LoadOrder>
+        <LuaContext>SelectedUnit</LuaContext>
+        <LuaReplace>UI/Replacement/DL_SelectedUnit.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="DL_SelectedUnit_Import" criteria="Expansion2">
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>UI/Replacement/DL_SelectedUnit.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>15000</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
@@ -605,6 +616,7 @@
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
       <!-- <File>Gameplay/Governors.lua</File> -->
+      <File>Gameplay/GreatPersons.lua</File>
       <File>Gameplay/Misc.lua</File>
       <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
@@ -705,6 +717,7 @@
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>
     <!-- <File>Gameplay/Governors.lua</File> -->
+    <File>Gameplay/GreatPersons.lua</File>
     <File>Gameplay/Misc.lua</File>
     <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
@@ -726,6 +739,7 @@
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
+    <File>UI/Replacement/DL_SelectedUnit.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
