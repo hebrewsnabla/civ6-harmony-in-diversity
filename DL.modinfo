@@ -456,6 +456,11 @@
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
       <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
     </UpdateText>
+
+    <AddGameplayScripts id="Modified_ExpandedInitialVision" criteria="Expansion2">
+      <Properties><LoadOrder>15855</LoadOrder></Properties>
+      <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
+    </AddGameplayScripts>
     <AddGameplayScripts id="Modified_CityRoads" criteria="Expansion2">
       <Properties><LoadOrder>15905</LoadOrder></Properties>
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
@@ -816,6 +821,8 @@
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
+    <!-- ThirdParty Expanded Initial Vision -->
+    <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
     <!-- ThirdParty Concise UI CityStates -->
     <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
     <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
