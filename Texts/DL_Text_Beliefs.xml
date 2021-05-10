@@ -32,6 +32,18 @@
 		<Replace Tag="LOC_DISTRICT_TUNDRA_HILLS_FAITH" Language="en_US">
 			<Text>+{1_num} [ICON_Faith] Faith from the adjacent Tundra Hill {1_Num : plural 1?tile; other?tiles;}.</Text>
 		</Replace>
+		<Replace Tag="LOC_DISTRICT_JUNGLE_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力来自相邻雨林{1_Num : plural 1?单元格; other?单元格;}。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JUNGLE_PRODUCTION" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from the adjacent Jungle {1_Num : plural 1?tile; other?tiles;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JUNGLE_CULTURE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Culture] 文化值来自相邻雨林{1_Num : plural 1?单元格; other?单元格;}。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JUNGLE_CULTURE" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] Culture from the adjacent Jungle {1_Num : plural 1?tile; other?tiles;}.</Text>
+		</Replace>
 		<Replace Tag="LOC_DISTRICT_RIVER_FAITH" Language="zh_Hans_CN">
 			<Text>+{1_num} [ICON_Faith] 信仰值来自相邻河流。</Text>
 		</Replace>
