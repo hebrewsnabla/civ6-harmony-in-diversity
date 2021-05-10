@@ -11,7 +11,12 @@ values
 	('CIVILIZATION_CREE',	'RESOURCE_TRUFFLES',	4),				
 	('CIVILIZATION_CREE',	'RESOURCE_IVORY',		4),				
 	('CIVILIZATION_CREE',	'RESOURCE_FURS',		4),				
-	('CIVILIZATION_CREE',	'RESOURCE_DEER',		4);
+	('CIVILIZATION_CREE',	'RESOURCE_DEER',		4),
+	-- 
+	('CIVILIZATION_MALI',	'RESOURCE_GOLD',		3);
+
+----start bias for Mali
+update StartBiasResources set Tier = 3 where CivilizationType = 'CIVILIZATION_MALI';
 
 --start bias for Australia
 update StartBiasResources set
@@ -25,76 +30,6 @@ where CivilizationType = 'CIVILIZATION_AUSTRALIA' and  ResourceType = 'RESOURCE_
 update StartBiasResources set
 	Tier = 4		
 where CivilizationType = 'CIVILIZATION_AUSTRALIA'and ResourceType = 'RESOURCE_HORSES';
-
-----start bias for Mali
-update StartBiasResources set
-	Tier = 4
-where CivilizationType = 'CIVILIZATION_MALI' and ResourceType = 'RESOURCE_COPPER';
-
-update StartBiasResources set
-	Tier = 4		
-where CivilizationType = 'CIVILIZATION_MALI'and ResourceType = 'RESOURCE_DIAMONDS';
-
-update StartBiasResources set
-	Tier = 4
-where CivilizationType = 'CIVILIZATION_MALI'and ResourceType = 'RESOURCE_JADE';
-
-update StartBiasResources set
-	Tier = 4	
-where ResourceType = 'RESOURCE_MERCURY'	and CivilizationType = 'CIVILIZATION_MALI';
-
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_MALI' and ResourceType = 'RESOURCE_SALT';
-
-update StartBiasResources set
-	Tier = 4		
-where CivilizationType = 'CIVILIZATION_MALI' and ResourceType = 'RESOURCE_SILVER';
-
-----start bias for Nubia
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_SILVER';
-
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_SALT';
-
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_NUBIA' and  ResourceType = 'RESOURCE_MERCURY';
-
-update StartBiasResources set
-	Tier = 4
-where CivilizationType = 'CIVILIZATION_NUBIA' and ResourceType = 'RESOURCE_JADE';
-
-update StartBiasResources set
-	Tier = 4
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_COPPER';
-
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_NUBIA' and ResourceType = 'RESOURCE_DIAMONDS';
-
-update StartBiasResources set
-	Tier = 4		
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_IRON';
-
-update StartBiasResources set
-	Tier = 4		
-where CivilizationType = 'CIVILIZATION_NUBIA' and ResourceType = 'RESOURCE_URANIUM';
-
-update StartBiasResources set
-	Tier = 4
-where CivilizationType = 'CIVILIZATION_NUBIA' and ResourceType = 'RESOURCE_COAL';
-
-update StartBiasResources set
-	Tier = 4	
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_NITER';
-
-update StartBiasResources set
-	Tier = 4		
-where CivilizationType = 'CIVILIZATION_NUBIA'and ResourceType = 'RESOURCE_ALUMINUM';
 
 --start bias for England
 update StartBiasResources set

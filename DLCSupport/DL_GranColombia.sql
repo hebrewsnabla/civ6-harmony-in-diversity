@@ -11,7 +11,7 @@ values
 insert or replace into RequirementSetRequirements 
     (RequirementSetId,                      RequirementId) 
 values
-    ('BOOTCAMP_REQUIREMENT',                'REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HONEY'),
+    ('BOOTCAMP_REQUIREMENT',                'HD_REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HONEY'),
     ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
 
 --start bias(camp and pasture resources) for cree
@@ -196,16 +196,20 @@ insert or replace into BuildingModifiers
 values
 	('BUILDING_BARRACKS',					'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST'),
 	('BUILDING_ARMORY',						'LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST'),
-	('BUILDING_MILITARY_ACADEMY',			'LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST'),
-	('BUILDING_BASILIKOI_PAIDES',			'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST');
+	('BUILDING_MILITARY_ACADEMY',			'LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST');
+
+insert or replace into BuildingModifiers
+    (BuildingType,                          ModifierId)
+select
+    'BUILDING_BASILIKOI_PAIDES',           'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BASILIKOI_PAIDES');
 
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,									   			 SubjectRequirementSetId,       SubjectStackLimit)
 values
 	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
 	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
-	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
-	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1);
+	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1);
 
 insert or replace into ModifierArguments
 	(ModifierId,                                    Name,            Value)
@@ -215,9 +219,7 @@ values
 	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
     ('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'Amount',       -50),
 	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
-    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50),
-    ('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'UnitType',     'UNIT_LAHORE_NIHANG'),
-	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'Amount',       -50);
+    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50);
 
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
