@@ -186,14 +186,14 @@
     </UpdateIcons>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
-      <File>Texts/DL_Text_Buildings.xml</File>
-      <File>Texts/DL_Text_CityStates.xml</File>
-      <File>Texts/DL_Text_CivTraits.xml</File>
-      <File>Texts/DL_Text_Districts.xml</File>
-      <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
-      <File>Texts/DL_Text_Improvements.xml</File>
-      <File>Texts/DL_Text_NaturalWonders.xml</File>
-      <File>Texts/DL_Text_Units.xml</File>
+      <File>Texts/HD_Text_Buildings.sql</File>
+      <File>Texts/HD_Text_CityStates.sql</File>
+      <File>Texts/HD_Text_CivTraits.sql</File>
+      <File>Texts/HD_Text_Districts.sql</File>
+      <File>Texts/HD_Text_GreatPersonPointsDouble.sql</File>
+      <File>Texts/HD_Text_Improvements.sql</File>
+      <File>Texts/HD_Text_NaturalWonders.sql</File>
+      <File>Texts/HD_Text_Units.sql</File>
     </UpdateText>
   </FrontEndActions>
   <InGameActions>
@@ -642,29 +642,29 @@
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16019</LoadOrder></Properties>
-      <File>Texts/DL_TextTag.sql</File>
+      <File>Texts/HD_Tags_Text.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Text" criteria="Expansion2">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
-      <File>Texts/DL_Text.xml</File>
-      <File>Texts/DL_Text_Beliefs.xml</File>
-      <File>Texts/DL_Text_Buildings.xml</File>
-      <File>Texts/DL_Text_City_Yield.xml</File>
-      <File>Texts/DL_Text_CityStates.xml</File>
-      <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
-      <File>Texts/DL_Text_Civilopedia.xml</File>
-      <File>Texts/DL_Text_CivTraits.xml</File>
-      <File>Texts/DL_Text_Districts.xml</File>
-      <!-- <File>Texts/DL_Text_Governors.xml</File> -->
-      <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
-      <File>Texts/DL_Text_Greatworks_Types.xml</File>
-      <File>Texts/DL_Text_Improvements.xml</File>
-      <File>Texts/DL_Text_NaturalWonders.xml</File>
-      <File>Texts/DL_Text_Pantheon.xml</File>
-      <File>Texts/DL_Text_Policies.xml</File>
-      <File>Texts/DL_Text_Units.xml</File>
-      <File>Texts/DL_Text_Wonders.xml</File>
-      <File>Texts/DL_Text_GreatPerson.xml</File>
+      <File>Texts/HD_Text.sql</File>
+      <File>Texts/HD_Text_Beliefs.sql</File>
+      <File>Texts/HD_Text_Buildings.sql</File>
+      <File>Texts/HD_Text_City_Yield.sql</File>
+      <File>Texts/HD_Text_CityStates.sql</File>
+      <File>Texts/HD_Text_Civ_Tech_Descriptions.sql</File>
+      <File>Texts/HD_Text_Civilopedia.sql</File>
+      <File>Texts/HD_Text_CivTraits.sql</File>
+      <File>Texts/HD_Text_Districts.sql</File>
+      <!-- <File>Texts/HD_Text_Governors.sql</File> -->
+      <File>Texts/HD_Text_GreatPersonPointsDouble.sql</File>
+      <File>Texts/HD_Text_Greatworks_Types.sql</File>
+      <File>Texts/HD_Text_Improvements.sql</File>
+      <File>Texts/HD_Text_NaturalWonders.sql</File>
+      <File>Texts/HD_Text_Pantheon.sql</File>
+      <File>Texts/HD_Text_Policies.sql</File>
+      <File>Texts/HD_Text_Units.sql</File>
+      <File>Texts/HD_Text_Wonders.sql</File>
+      <File>Texts/HD_Text_GreatPerson.sql</File>
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
@@ -894,27 +894,27 @@
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <File>UpdateDataBase/DL_ModifierString.sql</File>
     <!-- Texts -->
-    <File>Texts/DL_TextTag.sql</File>
+    <File>Texts/HD_Tags_Text.sql</File>
     <!--  -->
-    <File>Texts/DL_Text.xml</File>
-    <File>Texts/DL_Text_Beliefs.xml</File>
-    <File>Texts/DL_Text_Buildings.xml</File>
-    <File>Texts/DL_Text_City_Yield.xml</File>
-    <File>Texts/DL_Text_CityStates.xml</File>
-    <File>Texts/DL_Text_Civ_Tech_Descriptions.xml</File>
-    <File>Texts/DL_Text_Civilopedia.xml</File>
-    <File>Texts/DL_Text_CivTraits.xml</File>
-    <File>Texts/DL_Text_Districts.xml</File>
-    <!-- <File>Texts/DL_Text_Governors.xml</File> -->
-    <File>Texts/DL_Text_GreatPersonPointsDouble.xml</File>
-    <File>Texts/DL_Text_Greatworks_Types.xml</File>
-    <File>Texts/DL_Text_Improvements.xml</File>
-    <File>Texts/DL_Text_NaturalWonders.xml</File>
-    <File>Texts/DL_Text_Pantheon.xml</File>
-    <File>Texts/DL_Text_Policies.xml</File>
-    <File>Texts/DL_Text_Units.xml</File>
-    <File>Texts/DL_Text_Wonders.xml</File>
-    <File>Texts/DL_Text_GreatPerson.xml</File>
+    <File>Texts/HD_Text.sql</File>
+    <File>Texts/HD_Text_Beliefs.sql</File>
+    <File>Texts/HD_Text_Buildings.sql</File>
+    <File>Texts/HD_Text_City_Yield.sql</File>
+    <File>Texts/HD_Text_CityStates.sql</File>
+    <File>Texts/HD_Text_Civ_Tech_Descriptions.sql</File>
+    <File>Texts/HD_Text_Civilopedia.sql</File>
+    <File>Texts/HD_Text_CivTraits.sql</File>
+    <File>Texts/HD_Text_Districts.sql</File>
+    <!-- <File>Texts/HD_Text_Governors.sql</File> -->
+    <File>Texts/HD_Text_GreatPersonPointsDouble.sql</File>
+    <File>Texts/HD_Text_Greatworks_Types.sql</File>
+    <File>Texts/HD_Text_Improvements.sql</File>
+    <File>Texts/HD_Text_NaturalWonders.sql</File>
+    <File>Texts/HD_Text_Pantheon.sql</File>
+    <File>Texts/HD_Text_Policies.sql</File>
+    <File>Texts/HD_Text_Units.sql</File>
+    <File>Texts/HD_Text_Wonders.sql</File>
+    <File>Texts/HD_Text_GreatPerson.sql</File>
   </Files>
 
 </Mod>
