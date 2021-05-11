@@ -13,14 +13,15 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "Each Commercial and Harbor building in the city increase city [ICON_Gold] Gold yield output by 10%."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city when player has complete the Exploration Civic."),
-    -- Vector
+    -- Victor
     ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Increase City Defence [ICON_STRENGTH] Strength by 5. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. Establishes in 3 turns."),
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "City cannot be put under siege. Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. "),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME",                             "Logistics Supply"),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "Strategic resource costs for units are discounted 60%. Accumulating Strategic resources in the city gain an additional +1 per turn."),
     ("LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION",                              "City gains an additional [ICON_Ranged] Ranged Strike per turn. Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city."),
     ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME",                                  "Conscription"),
-    ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +2 [ICON_STRENGTH] Combat Strength and +25% Combat Experience permanently."),
+        -- +2 [ICON_STRENGTH] Combat Strength and 
+    ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "Military units trained in this city start with a free promotion that do not already start with a free promotion. All millitary units trained in this city receive extra +25% Combat Experience permanently."),
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION",           "100% [ICON_Production] Production increase to all nuclear armament projects in the city. +30% [ICON_Production] Production towards all millitary units( 50% more bonus when producing Air units and GDRs)."),
     -- Bishop
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "Religious pressure to adjacent cities is 100% stronger from this city. +1 [ICON_FAITH] Faith per turn for each [ICON_Citizen] Citizen in the city. Establishes in 3 turns."),
@@ -57,7 +58,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Production] Production for all improved plots in this city ."),
     ("LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "This city’s improvements, buildings, and districts cannot be damaged by Environmental Effects. +100% districts adjacency yields in this city"),
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in this city gain 200%  extra [ICON_TOURISM] Tourism  ."),
-    ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement (unlocked by Guilds Civic) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is estabilished in this city, City Parks provide +1 of all yields to all adjacent tiles."),
+    ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement (unlocked by Medieval Faires Civic) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is estabilished in this city, City Parks provide +1 of all yields to all adjacent tiles."),
     -- Amani
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "Other cities within 9 tiles and not owned by you lose 3 Loyalty per turn. If she is estabilshed in a certain city, [ICON_FAITH] Faith can be used to cruit Spy inthat city and the cost is reduced by 25%. Spys trained in this city start with a free promotion that do not already start with a free promotion. "),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital."),
@@ -97,7 +98,8 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "生产单位所需战略资源花费减少60%。本城正确改良的战略每回合积累+1。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION",                              "城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。本城生产的军事工程师次数+2，且生产军事工程师时+100% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME",                                  "征兵入伍"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+2 [ICON_STRENGTH] 战斗力和+25%战斗经验值。"),
+        -- +2 [ICON_STRENGTH] 战斗力和
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。本城训练的所有军事单位获得永久+25%战斗经验值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_ARMS_RACE_PROPONENT_DESCRIPTION",           "在城市中进行核武器项目时+100% [ICON_Production] 生产力。本城生产所有军事单位时+30% [ICON_Production] 生产力，生产空中单位和末日机甲时额外50% [ICON_Production] 生产力。"),
     -- 主教
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "此城对相邻城市释放的宗教压力强度加倍。每个公民产出1 [ICON_FAITH] 信仰。就职需要3回合。"),
@@ -134,7 +136,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”（由公会市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”（由中世纪集市市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"),
     -- 阿玛尼
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "9个单元格内其他文明的城市每回合失去3点忠诚度。 在己方文明城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。"),

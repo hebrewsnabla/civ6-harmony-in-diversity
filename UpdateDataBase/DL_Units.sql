@@ -28,7 +28,17 @@ update Units set Cost = 300 where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
 update Units set Cost = 450 where UnitType = 'UNIT_SPEC_OPS';
 -- add worker's basic building charges
 update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
-update Units set BuildCharges = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+update Units set BuildCharges = 3, BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+
+-- UNIT_MILITARY_ENGINEER
+update Routes_XP2 set BuildWithUnitChargeCost = 0;
+insert or replace into Route_ResourceCosts
+    (RouteType,                 ResourceType,       BuildWithUnitCost)
+values
+    ('ROUTE_ANCIENT_ROAD',      'RESOURCE_HORSES',  1),
+    ('ROUTE_MEDIEVAL_ROAD',     'RESOURCE_HORSES',  1),
+    ('ROUTE_INDUSTRIAL_ROAD',   'RESOURCE_IRON',    1),
+    ('ROUTE_MODERN_ROAD',       'RESOURCE_IRON',    1);
 
 -- balance adjustments
 -- update Units set Cost = 70 where UnitType = 'UNIT_SETTLER';

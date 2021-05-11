@@ -2,18 +2,24 @@
 --      AI Related Adjustments     --
 -------------------------------------
 
--- [Version v0.6.8]
--- 优化ai的坐城倾向。
--- 少量增加ai的出兵和移民倾向。
--- 缩短ai最远攻击目标的距离。
--- TODO: 减小friend city的坐城权重。
-
 update AiOperationDefs set MaxTargetDistInArea = 20 where OperationName = 'Attack Enemy City' or OperationName = 'Attack Walled City';
 update AiOperationDefs set MaxTargetDistInArea = 30 where OperationName = 'Wartime Attack Enemy City' or OperationName = 'Wartime Attack Walled City';
 
 delete from AiListTypes where ListType = 'DLAdjustPseudoYields';
 delete from AiLists where ListType = 'DLAdjustPseudoYields';
 delete from AiFavoredItems where ListType = 'DLAdjustPseudoYields';
+
+insert or replace into AiFavoredItems
+    (ListType,                  Item,                                   Favored,    Value)
+values
+    -- ('DLAdjustDistricts',       'DISTRICT_INDUSTRIAL_ZONE',             1,          0),
+    ('DLAdjustDistricts',       'DISTRICT_AQUEDUCT',                    1,          0);
+
+-- [Real Strategy]
+update AiFavoredItems set Favored = 0, Value = 40 where ListType = 'SettleAllContinents' and Item = 'Foreign Continent'; -- Victoria, down from 120 (!)
+update AiFavoredItems set Favored = 0, Value = 40 where ListType = 'PhilipForeignSettlement' and Item = 'Foreign Continent'; -- Philip II, def. 60
+update AiFavoredItems set Value = 10 where ListType = 'CounterReformerInquisitorPreference' and Item = 'UNIT_INQUISITOR'; -- was 1 -- Philip II
+update AiFavoredItems set Value = 50 where ListType = 'LastVikingKingNavalPreference' and Item = 'PSEUDOYIELD_UNIT_NAVAL_COMBAT'; -- def. 100
 
 --------------------------------------------------------------
 -- Changed based on [MOD] Real Strategy
@@ -96,7 +102,7 @@ UPDATE PseudoYields SET DefaultValue = 0.15 WHERE PseudoYieldType = 'PSEUDOYIELD
 --UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --    1
 
 -- Changed based on Real Strategy
-UPDATE PseudoYields SET DefaultValue = 1.4 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT'; -- 1.0, AI+ 1.4, RS 1.1
+UPDATE PseudoYields SET DefaultValue = 1.4 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT'; -- 1.0, AI+ 1.4, RS 1.1 -- This is land combat units
 -- UPDATE PseudoYields SET DefaultValue =  1.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_NAVAL_COMBAT'; --  1 -- leave for naval strategies
 UPDATE PseudoYields SET DefaultValue = 1.1 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_EXPLORER'; --  1, RS 0.7
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_RELIGIOUS'; -- 1, RS 0.8

@@ -93,7 +93,7 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_CULTURE_HILLS' and Name = 'Amount';
 
 --Egypt
---泛滥区域上的建筑加1粮
+--学院剧院相邻河边大加成
 --建造完奇观以后送工人
 --UI为相邻泛滥田+1粮
 --la商路翻倍
@@ -101,6 +101,8 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
+	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_CAMPUS_RIVER_ADJACENCY'),
+	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_THEATER_DISTRICT_RIVER_ADJACENCY'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FLOODPLAIN_BUILDINGS_FOOD'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD'),
