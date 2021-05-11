@@ -8,7 +8,7 @@ update Units set Cost = round(Cost / 2) where FormationClass != 'FORMATION_CLASS
 update Units set StrategicResource = 'RESOURCE_OIL' where UnitType = 'UNIT_HELICOPTER';
 update Units_XP2 set ResourceMaintenanceType = 'RESOURCE_OIL' where UnitType = 'UNIT_HELICOPTER';
 -- 这句操作是把Units上的单位一次性消耗的资源类型 抄给 维护性消耗写到Units_XP2的表上面.
-update Units_XP2 set ResourceMaintenanceType = (select StrategicResource from Units where UnitType = Units_XP2.UnitType and Units_XP2.ResourceCost > 1);
+update Units_XP2 set ResourceMaintenanceType = (select StrategicResource from Units where UnitType = Units_XP2.UnitType) where ResourceCost > 1;
 
 update Units_XP2 set ResourceMaintenanceAmount = 1 where ResourceCost > 1;
 update Units_XP2 set ResourceCost = 5 where ResourceCost > 0;
