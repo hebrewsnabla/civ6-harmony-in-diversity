@@ -56,8 +56,7 @@ def main():
                 texts[lang] = []
             texts[lang].append((tag, text))
         with open(output_name, 'w', encoding='utf-8') as f:
-            if ENG_TEXT_KEY in texts:
-                write_sql(f, texts[ENG_TEXT_KEY], max_len)
+            write_sql(f, texts[ENG_TEXT_KEY], max_len)
             for lang in texts.keys():
                 if lang != ENG_TEXT_KEY:
                     write_sql(f, texts[lang], max_len, lang)

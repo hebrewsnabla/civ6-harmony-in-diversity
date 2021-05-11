@@ -159,3 +159,11 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_RoyalDock_HANSA_Production",                               "+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的U型港。");
 
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                 Text)
+values
+    ("zh_Hans_CN",  "LOC_RESOURCE_GOLD_NAME",                                            "黄金"),
+    ("zh_Hans_CN",  "LOC_PEDIA_RESOURCES_PAGE_RESOURCE_GOLD_CHAPTER_HISTORY_PARA_1",     "黄金是一种柔软、有光泽和延展性的金属，在历史上一直受到人们的珍视。这是一种稀有金属，它的稀有性大大增加了它的价值。尽管黄金有一些工业和医疗用途，但它主要用作铸币或装饰用途，装饰珠宝、杯子、器皿以及超级富豪和权贵的马桶。 ");
+

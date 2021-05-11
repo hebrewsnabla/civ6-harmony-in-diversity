@@ -178,7 +178,7 @@
     </UpdateDatabase>
     <UpdateText id="DL_Settings_Text">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
-      <File>Configs/Texts.xml</File>
+      <File>Configs/HD_Texts.sql</File>
     </UpdateText>
     <UpdateIcons id="DL_Settings_Icons">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -290,7 +290,7 @@
     </UpdateDatabase>
     <UpdateText id="Worships_mod_support_text" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15002</LoadOrder></Properties>
-      <File>ModSupport/Worships/DL_Texts.xml</File>
+      <File>ModSupport/Worships/HD_Texts.sql</File>
     </UpdateText>
     <AddGameplayScripts id="Worships_mod_support_lua" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15002</LoadOrder></Properties>
@@ -306,11 +306,11 @@
     </UpdateDatabase>
     <UpdateText id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
-      <File>ModSupport/WetLands/DL_Texts.xml</File>
+      <File>ModSupport/WetLands/HD_Texts.sql</File>
     </UpdateText>
     <UpdateText id="WatchTower_mod_support_text" criteria="WatchTower_Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
-      <File>ModSupport/Watchtower/DL_Texts.xml</File>
+      <File>ModSupport/Watchtower/HD_Texts.sql</File>
     </UpdateText>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
       <Properties><LoadOrder>15006</LoadOrder></Properties>
@@ -318,12 +318,12 @@
     </UpdateDatabase>
     <UpdateText id="Community_Wonders_support_text" criteria="Expansion2">
       <Properties><LoadOrder>15007</LoadOrder></Properties>
-      <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
+      <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     </UpdateText>
     <!-- RadialMeasuringTool -->
     <UpdateText id="DL_RadialMeasuringTool_Texts" criteria="Expansion2">
       <Properties><LoadOrder>15008</LoadOrder></Properties>
-      <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
+      <File>ModSupport/RadialMeasuringTool/Texts.sql</File>
     </UpdateText>
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
@@ -382,7 +382,7 @@
     </ReplaceUIScript>
     <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
       <Properties><LoadOrder>15506</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
     </UpdateText>
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
@@ -391,7 +391,7 @@
     </UpdateDatabase>
     <UpdateText id="CityPolicies_Texts" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15602</LoadOrder></Properties>
-      <File>SubMods/CityPolicies/CityPolicies_Texts.xml</File>
+      <File>SubMods/CityPolicies/HD_CityPolicies_Texts.sql</File>
     </UpdateText>
     <UpdateIcons id="CityPolicies_Icons" criteria="CityPolicies_Conflict_Expansion2">
       <Properties><LoadOrder>15603</LoadOrder></Properties>
@@ -435,7 +435,7 @@
     </UpdateDatabase>
     <UpdateText id="HD_Governors_text" criteria="Expansion2">
       <Properties><LoadOrder>15606</LoadOrder></Properties>
-      <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
+      <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     </UpdateText>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="DLC_Persia">
@@ -454,7 +454,6 @@
     <UpdateText id="GoldResourceText" criteria="Expansion2">
       <Properties><LoadOrder>15802</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
-      <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
     </UpdateText>
 
     <AddGameplayScripts id="Modified_ExpandedInitialVision" criteria="Expansion2">
@@ -655,7 +654,6 @@
       <File>Texts/HD_Text_Civilopedia.sql</File>
       <File>Texts/HD_Text_CivTraits.sql</File>
       <File>Texts/HD_Text_Districts.sql</File>
-      <!-- <File>Texts/HD_Text_Governors.sql</File> -->
       <File>Texts/HD_Text_GreatPersonPointsDouble.sql</File>
       <File>Texts/HD_Text_Greatworks_Types.sql</File>
       <File>Texts/HD_Text_Improvements.sql</File>
@@ -682,7 +680,7 @@
     </UpdateIcons>
     <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16052</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+      <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     </UpdateText>
     <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16053</LoadOrder></Properties>
@@ -708,7 +706,7 @@
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>
-    <File>Configs/Texts.xml</File>
+    <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
     <!-- Artdef -->
     <File>DL.dep</File>
@@ -717,7 +715,7 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
-    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Text.xml</File>
+    <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
@@ -758,15 +756,15 @@
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
-    <File>ModSupport/Worships/DL_Texts.xml</File>
+    <File>ModSupport/Worships/HD_Texts.sql</File>
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
     <File>ModSupport/WetLands/DL_Removes.sql</File>
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
-    <File>ModSupport/WetLands/DL_Texts.xml</File>    
-    <File>ModSupport/Watchtower/DL_Texts.xml</File>
+    <File>ModSupport/WetLands/HD_Texts.sql</File>    
+    <File>ModSupport/Watchtower/HD_Texts.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
-    <File>ModSupport/Wonders/Wonders_Community_text.xml</File>
-    <File>ModSupport/RadialMeasuringTool/Texts.xml</File>
+    <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
+    <File>ModSupport/RadialMeasuringTool/Texts.sql</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
@@ -777,7 +775,7 @@
     <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->
     <File>SubMods/CityPolicies/CityPolicies.sql</File>
-    <File>SubMods/CityPolicies/CityPolicies_Texts.xml</File>
+    <File>SubMods/CityPolicies/HD_CityPolicies_Texts.sql</File>
     <File>SubMods/CityPolicies/CityPolicies_Icons.xml</File>
     <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
     <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
@@ -789,13 +787,13 @@
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
     <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
     <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.xml</File>
+    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
     <!-- Governors Diversity -->
     <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
     <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
     <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
     <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
-    <File>SubMods/GovernorsDiversity/HD_Text_Governors.xml</File>
+    <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
     <File>Maps/Utility/FeatureGenerator.lua</File>
@@ -823,7 +821,6 @@
     <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
-    <File>ThirdParty/GoldResource/Gold_Text_CN.xml</File>
     <!-- ThirdParty Expanded Initial Vision -->
     <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
     <!-- ThirdParty Concise UI CityStates -->
@@ -905,7 +902,6 @@
     <File>Texts/HD_Text_Civilopedia.sql</File>
     <File>Texts/HD_Text_CivTraits.sql</File>
     <File>Texts/HD_Text_Districts.sql</File>
-    <!-- <File>Texts/HD_Text_Governors.sql</File> -->
     <File>Texts/HD_Text_GreatPersonPointsDouble.sql</File>
     <File>Texts/HD_Text_Greatworks_Types.sql</File>
     <File>Texts/HD_Text_Improvements.sql</File>
