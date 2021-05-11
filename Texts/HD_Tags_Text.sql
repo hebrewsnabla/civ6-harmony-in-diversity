@@ -1,4 +1,4 @@
--- Insert text tag for new texts.
+-- Insert new text tag for replaced texts.
 
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
@@ -53,14 +53,19 @@ update Beliefs set Description = 'LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION' where Be
 
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType = 'CIVIC_CIVIL_SERVICE';
 
-update Improvements set Description = 'LOC_IMPROVEMENT_FARM_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FARM';
-update Improvements set Description = 'LOC_IMPROVEMENT_FISHING_BOATS_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
-update Improvements set Description = 'LOC_IMPROVEMENT_PASTURE_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PASTURE';
-update Improvements set Description = 'LOC_IMPROVEMENT_CAMP_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_CAMP';
-update Improvements set Description = 'LOC_IMPROVEMENT_MINE_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_MINE';
-update Improvements set Description = 'LOC_IMPROVEMENT_QUARRY_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_QUARRY';
-update Improvements set Description = 'LOC_IMPROVEMENT_PLANTATION_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PLANTATION';
-update Improvements set Description = 'LOC_IMPROVEMENT_LUMBER_MILL_DL_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
+-- Basic Improvements
+update Improvements set Description = 'LOC_IMPROVEMENT_FARM_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FARM';
+update Improvements set Description = 'LOC_IMPROVEMENT_FISHING_BOATS_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
+update Improvements set Description = 'LOC_IMPROVEMENT_PASTURE_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PASTURE';
+update Improvements set Description = 'LOC_IMPROVEMENT_CAMP_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_CAMP';
+update Improvements set Description = 'LOC_IMPROVEMENT_MINE_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_MINE';
+update Improvements set Description = 'LOC_IMPROVEMENT_QUARRY_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_QUARRY';
+update Improvements set Description = 'LOC_IMPROVEMENT_PLANTATION_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PLANTATION';
+update Improvements set Description = 'LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
+update Improvements set Description = 'LOC_IMPROVEMENT_FISHERY_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FISHERY';
+-- UI of Majors
+
+-- UI of Minors
 
 update Districts set Description = 'LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION' where DistrictType ='DISTRICT_HOLY_SITE';
 update Districts set Description = 'LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION' where DistrictType ='DISTRICT_AQUEDUCT';
