@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "Regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
+    ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}-tile regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
     ("LOC_VIZSOURCE_CHANCERY",                                                "Built Building Chancery"),
     ("LOC_VIZSOURCE_ACTION_CHANCERY",                                         "Build Building Chancery"),
@@ -83,7 +83,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}环辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_HAPPINESS_DELIGHTED_NAME",                                          "愉悦"),
     ("zh_Hans_CN",  "LOC_VIZSOURCE_CHANCERY",                                                "建造了外交办"),

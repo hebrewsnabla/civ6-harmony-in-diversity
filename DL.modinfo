@@ -184,6 +184,11 @@
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/Icons.xml</File>
     </UpdateIcons>
+    <UpdateDatabase id="DL_FrontEnd_Tags">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Texts/HD_Tags_Players_Texts.sql</File>
+      <File>Texts/HD_Tags_Texts.sql</File>
+    </UpdateDatabase>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/HD_Text_Buildings.sql</File>
@@ -641,7 +646,8 @@
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16019</LoadOrder></Properties>
-      <File>Texts/HD_Tags_Text.sql</File>
+      <File>Texts/HD_Tags_Players_Texts.sql</File>
+      <File>Texts/HD_Tags_Textss.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Text" criteria="Expansion2">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
@@ -891,7 +897,8 @@
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <File>UpdateDataBase/DL_ModifierString.sql</File>
     <!-- Texts -->
-    <File>Texts/HD_Tags_Text.sql</File>
+    <File>Texts/HD_Tags_Players_Texts.sql</File>
+    <File>Texts/HD_Tags_Texts.sql</File>
     <!--  -->
     <File>Texts/HD_Text.sql</File>
     <File>Texts/HD_Text_Beliefs.sql</File>

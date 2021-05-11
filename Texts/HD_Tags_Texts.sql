@@ -1,5 +1,7 @@
 -- Insert new text tag for replaced texts.
 
+-------------------------------------------------------------------------------- 
+-- Techs and Civics
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 update Technologies set Description = 'LOC_TECH_RIFLING_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
@@ -13,7 +15,10 @@ update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType =
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
+update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType = 'CIVIC_CIVIL_SERVICE';
 
+--------------------------------------------------------------------------------
+-- Buildings
 update Buildings set Description = 'LOC_BUILDING_GRANARY_DESCRIPTION' where BuildingType = 'BUILDING_GRANARY';
 update Buildings set Description = 'LOC_BUILDING_UNIVERSITY_DESCRIPTION' where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Description = 'LOC_BUILDING_RESEARCH_LAB_DESCRIPTION' where BuildingType = 'BUILDING_RESEARCH_LAB';
@@ -51,8 +56,7 @@ update Beliefs set Description = 'LOC_BELIEF_WAT_DL_DESCRIPTION' where BeliefTyp
 update Beliefs set Description = 'LOC_BELIEF_STUPA_DL_DESCRIPTION' where BeliefType = 'BELIEF_STUPA';
 update Beliefs set Description = 'LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION' where BeliefType = 'BELIEF_DAR_E_MEHR';
 
-update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType = 'CIVIC_CIVIL_SERVICE';
-
+--------------------------------------------------------------------------------
 -- Basic Improvements
 update Improvements set Description = 'LOC_IMPROVEMENT_FARM_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FARM';
 update Improvements set Description = 'LOC_IMPROVEMENT_FISHING_BOATS_HD_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
@@ -67,17 +71,33 @@ update Improvements set Description = 'LOC_IMPROVEMENT_FISHERY_HD_DESCRIPTION' w
 
 -- UI of Minors
 
-update Districts set Description = 'LOC_DISTRICT_HOLY_SITE_DL_DESCRIPTION' where DistrictType ='DISTRICT_HOLY_SITE';
-update Districts set Description = 'LOC_DISTRICT_AQUEDUCT_DL_DESCRIPTION' where DistrictType ='DISTRICT_AQUEDUCT';
--- update Districts set Description = 'LOC_DISTRICT_BATH_DL_DESCRIPTION' where DistrictType ='DISTRICT_BATH';
-update Districts set Description = 'LOC_DISTRICT_HARBOR_DL_DESCRIPTION' where DistrictType ='DISTRICT_HARBOR';
--- update Districts set Description = 'LOC_DISTRICT_COTHON_DL_DESCRIPTION' where DistrictType ='DISTRICT_COTHON';
--- update Districts set Description = 'LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_DL_DESCRIPTION' where DistrictType ='DISTRICT_ROYAL_NAVY_DOCKYARD';
--- update Districts set Description = 'LOC_DISTRICT_IKANDA_DL_DESCRIPTION' where DistrictType ='DISTRICT_IKANDA';
-update Districts set Description = 'LOC_DISTRICT_ENCAMPMENT_DL_DESCRIPTION' where DistrictType ='DISTRICT_ENCAMPMENT';
--- update Districts set Description = 'LOC_DISTRICT_MBANZA_DL_DESCRIPTION' where DistrictType ='DISTRICT_MBANZA';
-update Districts set Description = 'LOC_DISTRICT_AERODROME_DL_DESCRIPTION' where DistrictType ='DISTRICT_AERODROME';
+--------------------------------------------------------------------------------
+-- Districts
+update Districts set Description = 'LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HOLY_SITE';
+update Districts set Description = 'LOC_DISTRICT_LAVRA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_LAVRA';
+update Districts set Description = 'LOC_DISTRICT_AQUEDUCT_HD_DESCRIPTION' where DistrictType = 'DISTRICT_AQUEDUCT';
+update Districts set Description = 'LOC_DISTRICT_BATH_HD_DESCRIPTION' where DistrictType = 'DISTRICT_BATH';
+update Districts set Description = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HANSA';
+update Districts set Description = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION' where DistrictType = 'DISTRICT_OPPIDUM';
+update Districts set Description = 'LOC_DISTRICT_HARBOR_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HARBOR';
+update Districts set Description = 'LOC_DISTRICT_COTHON_HD_DESCRIPTION' where DistrictType = 'DISTRICT_COTHON';
+update Districts set Description = 'LOC_DISTRICT_ROYAL_NAVY_DOCKYARD_HD_DESCRIPTION' where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+update Districts set Description = 'LOC_DISTRICT_ENCAMPMENT_HD_DESCRIPTION' where DistrictType = 'DISTRICT_ENCAMPMENT';
+update Districts set Description = 'LOC_DISTRICT_IKANDA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_IKANDA';
+update Districts set Description = 'LOC_DISTRICT_THANH_HD_DESCRIPTION' where DistrictType = 'DISTRICT_THANH';
+update Districts set Description = 'LOC_DISTRICT_MBANZA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_MBANZA';
+update Districts set Description = 'LOC_DISTRICT_AERODROME_HD_DESCRIPTION' where DistrictType = 'DISTRICT_AERODROME';
+update Districts set Description = 'LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION' where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER';
+update Districts set Description = 'LOC_DISTRICT_ACROPOLIS_HD_DESCRIPTION' where DistrictType = 'DISTRICT_ACROPOLIS';
+update Districts set Description = 'LOC_DISTRICT_PRESERVE_HD_DESCRIPTION' where DistrictType = 'DISTRICT_PRESERVE';
+update Districts set Description = 'LOC_DISTRICT_WATER_STREET_CARNIVAL_HD_DESCRIPTION' where DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
+update Districts set Description = 'LOC_DISTRICT_STREET_CARNIVAL_HD_DESCRIPTION' where DistrictType = 'DISTRICT_STREET_CARNIVAL';
+update Districts set Description = 'LOC_DISTRICT_HIPPODROME_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HIPPODROME';
+update Districts set Description = 'LOC_DISTRICT_COMMERCIAL_HUB_HD_DESCRIPTION' where DistrictType = 'DISTRICT_COMMERCIAL_HUB';
+update Districts set Description = 'LOC_DISTRICT_SUGUBA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_SUGUBA';
 
+--------------------------------------------------------------------------------
+-- GreatWorks Theming
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY' where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
 
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_HERMITAGE' where BuildingType = 'BUILDING_HERMITAGE';
@@ -91,6 +111,8 @@ update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBO
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_UFFIZI' where BuildingType = 'BUILDING_UFFIZI';
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_NOTRE_DAME' where BuildingType = 'BUILDING_NOTRE_DAME';
 
+--------------------------------------------------------------------------------
+-- Policies
 update Policies set Description = 'LOC_POLICY_RAID_DL_DESCRIPTION' where PolicyType = 'POLICY_RAID';
 update Policies set Description = 'LOC_POLICY_TOTAL_WAR_DL_DESCRIPTION' where PolicyType = 'POLICY_TOTAL_WAR';
 update Policies set Description = 'LOC_POLICY_EQUESTRIAN_ORDERS_DL_DESCRIPTION' where PolicyType = 'POLICY_EQUESTRIAN_ORDERS';
@@ -100,4 +122,8 @@ update Policies set Description = 'LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION' where 
 
 update Policies set Description = 'LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION' where PolicyType = 'POLICY_NOBEL_PRIZE';
 
+--------------------------------------------------------------------------------
+-- Units
 update Units set Description = 'LOC_UNIT_BUILDER_DL_DESCRIPTION' where UnitType = 'UNIT_BUILDER';
+
+-- Unique Units

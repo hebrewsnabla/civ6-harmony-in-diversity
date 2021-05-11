@@ -20,6 +20,8 @@ values
     ('DISTRICT_THANH',                  'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION'),
     ('DISTRICT_THANH',                  'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION');
 
+update Districts set Appeal = 0 where DistrictType = 'DISTRICT_THANH';
+
 -- preserve food for both international and domestic traderoute yields
 -- insert or replace into District_TradeRouteYields
 --     (DistrictType,              YieldType,          YieldChangeAsDomesticDestination,   YieldChangeAsInternationalDestination)
