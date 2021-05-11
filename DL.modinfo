@@ -187,7 +187,7 @@
     <UpdateDatabase id="DL_FrontEnd_Tags">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Texts/HD_Tags_Players_Texts.sql</File>
-      <File>Texts/HD_Tags_Texts.sql</File>
+      <!-- <File>Texts/HD_Tags_Texts.sql</File> -->
     </UpdateDatabase>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
@@ -646,8 +646,8 @@
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16019</LoadOrder></Properties>
-      <File>Texts/HD_Tags_Players_Texts.sql</File>
-      <File>Texts/HD_Tags_Textss.sql</File>
+      <!-- <File>Texts/HD_Tags_Players_Texts.sql</File> -->
+      <File>Texts/HD_Tags_Texts.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Text" criteria="Expansion2">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
@@ -705,6 +705,7 @@
     </UpdateDatabase>
     <UpdateDatabase id="Testing_upd_late" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
+      <File>GameModeSupport/TestingMode/DL_Military.sql</File>
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     </UpdateDatabase>
   </InGameActions>
@@ -724,6 +725,7 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+    <File>GameModeSupport/TestingMode/DL_Military.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     <!-- Gameplay -->

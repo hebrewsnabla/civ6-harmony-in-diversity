@@ -38,7 +38,7 @@ def write_sql(f, texts, max_len, lang=ENG_TEXT_KEY):
 
 def main():
     for g in glob.glob('*Text*.xml'):
-        file_name = 'HD' + g[2:-4]
+        file_name = g[:-4]
         output_name = file_name + '.sql'
         print('Processing {}'.format(g))
         DOMTree  = parse(g)
