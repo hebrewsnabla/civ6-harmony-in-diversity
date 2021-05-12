@@ -214,73 +214,72 @@
     </ImportFiles>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>CityPanelOverview</LuaContext>
         <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_CityPanelOverview_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>PlotToolTip</LuaContext>
         <LuaReplace>UI/Replacement/DL_PlotToolTip.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_PlotToolTip_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_PlotToolTip.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_ProductionPanel" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>ProductionPanel</LuaContext>
         <LuaReplace>UI/Replacement/DL_ProductionPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_ProductionPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_ProductionPanel.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_CityPanel" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>CityPanel</LuaContext>
         <LuaReplace>UI/Replacement/DL_CityPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_CityPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanel.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_SelectedUnit" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>SelectedUnit</LuaContext>
         <LuaReplace>UI/Replacement/DL_SelectedUnit.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_SelectedUnit_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_SelectedUnit.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
       <Properties>
-        <LoadOrder>15000</LoadOrder>
+        <LoadOrder>150000</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
         <LuaReplace>UI/Replacement/DL_UnitPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ImportFiles id="DL_UnitPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_UnitPanel.lua</File>
     </ImportFiles>
-    <!-- UI -->
     <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
@@ -701,6 +700,7 @@
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>16100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+      <File>GameModeSupport/TestingMode/DL_Techs.sql</File>
       <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Testing_upd_late" criteria="Testing_Mode_Expansion2">
@@ -725,6 +725,7 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
+    <File>GameModeSupport/TestingMode/DL_Techs.sql</File>
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
