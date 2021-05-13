@@ -31,6 +31,13 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType, 'REQUIREMENT_CITY_HAS_RESOURCE_TYPE_IMPROVED' from Resources;
 
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType, 'ResourceType', ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType, 'REQUIREMENT_PLAYER_HAS_RESOURCE_VISIBILITY'
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
 -- Techs
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_HAS_' || TechnologyType, 'TechnologyType', TechnologyType from Technologies;
@@ -599,6 +606,25 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_HIGH_DIFFICULTY' from Eras;
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_' || EraType from Eras;
+
+insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIREMENTSET_TEST_ALL' from Eras;
+
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_AI' from Eras;
+
+insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIREMENTSET_TEST_ALL'
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIRES_PLAYER_IS_AI'
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIRES_DIFFICULTY_AT_LEAST_DEITY'
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- 6 or 8 difficulty.
 insert or replace into RequirementArguments (RequirementId,		Name,		Value) values

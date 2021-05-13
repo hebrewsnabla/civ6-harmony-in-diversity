@@ -43,17 +43,17 @@
 	</GameModeItems>
 	<!-- Mode-based Player Overrides -->
 	<PlayerInfoOverrideQueries>
-		<Row QueryId="TestingModePlayerInfoOverrides"/>
+		<Row QueryId="TechtestModePlayerInfoOverrides"/>
 	</PlayerInfoOverrideQueries>
 	<PlayerItemOverrideQueries>
-		<Row QueryId="TestingModePlayerItemOverrides"/>
+		<Row QueryId="TechtestModePlayerItemOverrides"/>
 	</PlayerItemOverrideQueries>
 	<Queries>
-		<Row QueryId="TestingModePlayerInfoOverrides" SQL="SELECT * FROM GameModePlayerInfoOverrides WHERE GameModeType = 'GAMEMODE_TECHTEST'"/>
-		<Row QueryId="TestingModePlayerItemOverrides" SQL="SELECT * FROM GameModePlayerItemOverrides WHERE GameModeType = 'GAMEMODE_TECHTEST'"/>
+		<Row QueryId="TechtestModePlayerInfoOverrides" SQL="SELECT * FROM GameModePlayerInfoOverrides WHERE GameModeType = 'GAMEMODE_TECHTEST'"/>
+		<Row QueryId="TechtestModePlayerItemOverrides" SQL="SELECT * FROM GameModePlayerItemOverrides WHERE GameModeType = 'GAMEMODE_TECHTEST'"/>
 	</Queries>
 	<QueryCriteria>
-		<Row QueryId="TestingModePlayerInfoOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
-		<Row QueryId="TestingModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
+		<Row QueryId="TechtestModePlayerInfoOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
+		<Row QueryId="TechtestModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
 	</QueryCriteria>
 </GameData>
