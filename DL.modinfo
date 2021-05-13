@@ -12,8 +12,8 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR]</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR]</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.7.6</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.7.6</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
       <en_US>Civ6 Plus: Harmony in Diversity v0.7.6</en_US>
@@ -149,6 +149,14 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_TESTING</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="TechTest_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_TECHTEST</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
@@ -700,13 +708,19 @@
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>16100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_AI.sql</File>
-      <File>GameModeSupport/TestingMode/DL_Techs.sql</File>
       <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Testing_upd_late" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_Military.sql</File>
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
+    </UpdateDatabase>
+    <!-- Tech -->
+    <UpdateDatabase id="TechTest_update" criteria="TechTest_Mode_Expansion2">
+      <Properties><LoadOrder>18200</LoadOrder></Properties>
+      <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/TechMode/DL_Techs.sql</File>
+      <File>GameModeSupport/TechMode/DL_Temp.sql</File>
     </UpdateDatabase>
   </InGameActions>
   <Files>
@@ -725,10 +739,12 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
-    <File>GameModeSupport/TestingMode/DL_Techs.sql</File>
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/TechMode/DL_Techs.sql</File>
+    <File>GameModeSupport/TechMode/DL_Temp.sql</File>
     <!-- Gameplay -->
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
