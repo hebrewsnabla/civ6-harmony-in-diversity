@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-  <IconTextureAtlases>
+  <!-- <IconTextureAtlases>
     <Row Name="ICON_ATLAS_TESTING_GAME_MODES" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="RandomTech"/>
-  </IconTextureAtlases>
+  </IconTextureAtlases> -->
   <IconDefinitions>
     <!-- <Row Name="ICON_GAMEMODE_TESTING" Atlas="ICON_ATLAS_TESTING_GAME_MODES" Index="0"/> -->
     <Row Name="ICON_GAMEMODE_TESTING" Atlas="ICON_ATLAS_TECH" Index="55"/>
+    <Row Name="ICON_GAMEMODE_TECHTEST" Atlas="ICON_ATLAS_TECH" Index="46"/>
   </IconDefinitions>
 </GameData>

@@ -418,3 +418,5 @@ update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAP
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';
 
+-- Spainish
+update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';

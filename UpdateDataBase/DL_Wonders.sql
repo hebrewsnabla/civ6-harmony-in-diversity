@@ -32,6 +32,7 @@ update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_
 
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
 -- Petra
+update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';
 update ModifierArguments set Value = '3,2,1' where ModifierId = 'PETRA_YIELD_MODIFIER' and Name = 'Amount';
 
 -- MEENAKSHI_TEMPLE

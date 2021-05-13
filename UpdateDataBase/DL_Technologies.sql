@@ -215,6 +215,3 @@ values
 	('TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST',			'ScalingFactor',			150),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'GreatWorkObjectType',		'GREATWORKOBJECT_ARTIFACT'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'ScalingFactor',			150);
-
-update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
-update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 

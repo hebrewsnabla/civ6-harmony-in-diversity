@@ -23,6 +23,17 @@ update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL
 update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
 update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
+-- Start from Industrial Era.
+update GlobalParameters set Value = 4 where Name = 'WORLD_CONGRESS_INITIAL_ERA';
+update GlobalParameters set Value = 15 where Name = 'WORLD_CONGRESS_MAX_TIME_BETWEEN_MEETINGS';
+
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DEFENSIVE_PACT_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DENOUNCE_TIME_LIMIT';
+
+update GlobalParameters set Value = 40 where Name = 'LEVY_MILITARY_PERCENT_OF_UNIT_PURCHASE_COST';
+
 -- ranged unit cause 75% damage to walls instead of 50% (but -17 strength still remains)
 update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
 
