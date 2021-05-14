@@ -32,7 +32,7 @@ update Projects set Cost = 40
 	or ProjectType = 'PROJECT_WATER_BREAD_AND_CIRCUSES'
 ;
 
-update Projects set CostProgressionParam1 = 400, Cost = 80 where ProjectType = 'PROJECT_COURT_FESTIVAL';
+update Projects set CostProgressionParam1 = 800, Cost = 80 where ProjectType = 'PROJECT_COURT_FESTIVAL';
 
 -- update Projects set CostProgressionModel = 'NO_PROGRESSION_MODEL', CostProgressionParam1 = 0, Cost = 200
 update Projects set CostProgressionParam1 = 300, Cost = 100

@@ -2,7 +2,8 @@
 --      All Testing Adjustments    --
 -------------------------------------
 
-update Units set Cost = round(Cost / 2) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
+-- update Units set Cost = round(Cost / 2) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
+update Units set Cost = round(Cost * 0.6) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
 -- update Units set Cost = round(Cost * 0.8) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
 
 update Units set StrategicResource = 'RESOURCE_OIL' where UnitType = 'UNIT_HELICOPTER';
@@ -25,7 +26,47 @@ update GlobalParameters set Value = 25 where Name = 'EXPERIENCE_PROMOTE_HEALED';
 update GlobalParameters set Value = 2 where Name = 'PILLAGE_MOVEMENT_COST';
 
 update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
-update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 3;
+
+-- strategic resources
+-- update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 3;
+
+-- one free strategic resource for deity AI.
+insert or replace into TraitModifiers (TraitType,   ModifierId)
+select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
+insert or replace into Modifiers (ModifierId,           ModifierType,   OwnerRequirementSetId)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 1
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
+insert or replace into DistrictModifiers (DistrictType, ModifierId)
+select 'DISTRICT_THANH',                                'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_THANH');
+
+insert or replace into DistrictModifiers
+    (DistrictType,                  ModifierId)
+values
+    ('DISTRICT_ENCAMPMENT',         'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
+    ('DISTRICT_IKANDA',             'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION');
+
+insert or replace into Modifiers
+    (ModifierId,                                            ModifierType)
+values
+    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_ACCUMULATION');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                            Name,       Value)
+values
+    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'Amount',   2);
+
+--------------------------------------------------------------------------------------------------------------------------
 
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
