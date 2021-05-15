@@ -66,7 +66,7 @@ update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_EDUCATION';
 update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MILITARY_ENGINEERING';
 update Technologies set UITreeRow = 3, Cost = 450 where TechnologyType = 'TECH_CASTLES';
-update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY';
+update Technologies set UITreeRow = -3, Cost = 550, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_CARTOGRAPHY';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Technologies set UITreeRow = 1, Cost = 950 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
