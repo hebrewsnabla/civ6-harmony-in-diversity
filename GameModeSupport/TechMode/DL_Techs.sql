@@ -34,6 +34,7 @@ update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCH
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
+-- 调整单位过期科技。
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
@@ -66,7 +67,7 @@ update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_EDUCATION';
 update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MILITARY_ENGINEERING';
 update Technologies set UITreeRow = 3, Cost = 450 where TechnologyType = 'TECH_CASTLES';
-update Technologies set UITreeRow = -3, Cost = 550, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_CARTOGRAPHY';
+update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY'; -- Cost = 550, EraType = 'ERA_MEDIEVAL'
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Technologies set UITreeRow = 1, Cost = 950 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
