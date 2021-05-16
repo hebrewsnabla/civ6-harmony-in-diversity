@@ -128,6 +128,11 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
     </Criteria>
+    <Criteria id="STUU_WE_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0</ModInUse><!-- STUU -->
+      <ModInUse>38a49494-5ec4-46ac-b01b-9629d96950f3</ModInUse><!-- WE -->
+    </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
@@ -183,6 +188,7 @@
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
       <File>Configs/GameModes.xml</File>
+      <File>Configs/HD_Configs.sql</File>
     </UpdateDatabase>
     <UpdateText id="DL_Settings_Text">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -343,11 +349,14 @@
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
-    <UpdateDatabase id="Community_Wonders_support" criteria="ProjectHumankind_Expansion2">
+    <UpdateDatabase id="Community_ProjectHumankind_support" criteria="ProjectHumankind_Expansion2">
       <Properties><LoadOrder>15010</LoadOrder></Properties>
       <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     </UpdateDatabase>
-
+    <UpdateDatabase id="Community_STUU_WE_support" criteria="STUU_WE_Expansion2">
+      <Properties><LoadOrder>15015</LoadOrder></Properties>
+      <File>ModSupport/STUU_WE/STUU_WE.sql</File>
+    </UpdateDatabase>
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
       <Properties><LoadOrder>10000000</LoadOrder></Properties>
@@ -728,6 +737,7 @@
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>
+    <File>Configs/HD_Configs.sql</File>
     <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
     <!-- Artdef -->
@@ -795,6 +805,7 @@
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
+    <File>ModSupport/STUU_WE/STUU_WE.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>

@@ -4,6 +4,12 @@
 
 -- TODO: 单位升级更新，文本更新。
 
+-- Costs
+update Units set Cost = 20 where UnitType = 'UNIT_SCOUT';
+update Units set Cost = 25 where UnitType = 'UNIT_SLINGER';
+update Units set Cost = 30 where UnitType = 'UNIT_WARRIOR';
+update Units set Cost = 110 where UnitType = 'UNIT_MILITARY_ENGINEER';
+
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SWORDSMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWORDSMAN';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MAN_AT_ARMS';
@@ -62,8 +68,6 @@ update Units set Cost = 330, Maintenance = 6, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MOUNTED_RIFLES';
 update Units set Cost = 480, Maintenance = 7, BaseMoves = 5, Range = 0, Combat = 86, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARMORED_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARMORED_INFANTRY';
-update Units set Cost = 720, Maintenance = 8, BaseMoves = 6, Range = 0, Combat = 96, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MECHANIZED_INFANTRY';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MECHANIZED_INFANTRY';
 update Units set Cost = 55, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 30, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_HEAVY_CHARIOT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HEAVY_CHARIOT';
 update Units set Cost = 80, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARMORED_HORSEMAN';
@@ -102,10 +106,6 @@ update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_RANGER';
 update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 1, Combat = 70, RangedCombat = 60, StrategicResource = NULL where UnitType = 'UNIT_MACHINE_GUN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MACHINE_GUN';
-update Units set Cost = 460, Maintenance = 7, BaseMoves = 3, Range = 1, Combat = 80, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_SPEC_OPS';
-update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPEC_OPS';
-update Units set Cost = 690, Maintenance = 8, BaseMoves = 4, Range = 1, Combat = 90, RangedCombat = 80, StrategicResource = NULL where UnitType = 'UNIT_HELICOPTER';
-update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HELICOPTER';
 update Units set Cost = 40, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_BATTERING_RAM';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BATTERING_RAM';
 update Units set Cost = 75, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SIEGE_TOWER';
@@ -134,8 +134,8 @@ update Units set Cost = 200, Maintenance = 4, BaseMoves = 4, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CORVETTE';
 update Units set Cost = 300, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_IRONCLAD';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_IRONCLAD';
-update Units set Cost = 450, Maintenance = 6, BaseMoves = 5, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_DREADNOUGHT';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DREADNOUGHT';
+update Units set Cost = 450, Maintenance = 6, BaseMoves = 5, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_TORPEDO_GUNBOAT';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_TORPEDO_GUNBOAT';
 update Units set Cost = 670, Maintenance = 7, BaseMoves = 5, Range = 0, Combat = 90, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_DESTROYER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DESTROYER';
 update Units set Cost = 1000, Maintenance = 8, BaseMoves = 5, Range = 0, Combat = 100, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_MISSILE_DESTROYER';
@@ -160,26 +160,64 @@ update Units set Cost = 200, Maintenance = 4, BaseMoves = 4, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PRIVATEER';
 update Units set Cost = 300, Maintenance = 5, BaseMoves = 4, Range = 2, Combat = 55, RangedCombat = 65, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_RAIDER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RAIDER';
-update Units set Cost = 450, Maintenance = 6, BaseMoves = 5, Range = 2, Combat = 65, RangedCombat = 75, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_TORPEDO_GUNBOAT';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_TORPEDO_GUNBOAT';
-update Units set Cost = 600, Maintenance = 7, BaseMoves = 5, Range = 2, Combat = 75, RangedCombat = 85, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_SUBMARINE';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUBMARINE';
+update Units set Cost = 450, Maintenance = 6, BaseMoves = 5, Range = 2, Combat = 65, RangedCombat = 75, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_SUBMARINE';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUBMARINE';
+update Units set Cost = 600, Maintenance = 7, BaseMoves = 5, Range = 2, Combat = 75, RangedCombat = 85, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_ATTACK_SUBMARINE';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ATTACK_SUBMARINE';
 update Units set Cost = 900, Maintenance = 8, BaseMoves = 5, Range = 2, Combat = 85, RangedCombat = 95, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
 update Units set Cost = 750, Maintenance = 7, BaseMoves = 4, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_OIL' where UnitType = 'UNIT_AIRCRAFT_CARRIER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_AIRCRAFT_CARRIER';
 update Units set Cost = 1200, Maintenance = 8, BaseMoves = 5, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = 'RESOURCE_URANIUM' where UnitType = 'UNIT_SUPERCARRIER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUPERCARRIER';
+update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
 
-update Units set Cost = 110 where UnitType = 'UNIT_MILITARY_ENGINEER';
+-- Special Cases
+update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON', PromotionClass = 'PROMOTION_CLASS_MELEE' where UnitType = 'UNIT_MECHANIZED_INFANTRY';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MECHANIZED_INFANTRY';
+update Units set Cost = 460, Maintenance = 7, BaseMoves = 4, Range = 0, Combat = 96, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON', PromotionClass = 'PROMOTION_CLASS_LIGHT_CAVALRY', PrereqTech = 'TECH_SYNTHETIC_MATERIALS' where UnitType = 'UNIT_HELICOPTER';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HELICOPTER';
+update Units set Cost = 460, Maintenance = 8, BaseMoves = 3, Range = 1, Combat = 80, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_SPEC_OPS';
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPEC_OPS';
+
+-- WE
+update Units set Cost = 720, Maintenance = 8, BaseMoves = 6, Range = 0, Combat = 96, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON', PromotionClass = 'PROMOTION_CLASS_LIGHT_CAVALRY'
+    where UnitType = 'UNIT_MECHANIZED_INFANTRY' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1
+    where UnitType = 'UNIT_MECHANIZED_INFANTRY' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+update Units set Cost = 460, Maintenance = 7, BaseMoves = 4, Range = 1, Combat = 80, RangedCombat = 70, StrategicResource = NULL, PromotionClass = 'PROMOTION_CLASS_RECON'
+    where UnitType = 'UNIT_HELICOPTER' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0
+    where UnitType = 'UNIT_HELICOPTER' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+update Units set Cost = 690, Maintenance = 8, BaseMoves = 4, Range = 1, Combat = 90, RangedCombat = 80, StrategicResource = NULL, PrereqTech = 'TECH_NANOTECHNOLOGY'
+    where UnitType = 'UNIT_SPEC_OPS' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+
+-- Prereq Tech
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_COMPOSITE_BOWMAN';
+update Units set PrereqTech = 'TECH_COMPUTERS' where UnitType = 'UNIT_ATTACK_SUBMARINE';
+
+-- Promotion Class
 update Units set PromotionClass = 'PROMOTION_CLASS_RECON' where
-    UnitType = 'UNIT_ARQUEBUSIER' or UnitType = 'UNIT_MACHINE_GUN' or UnitType = 'UNIT_HELICOPTER';
+    UnitType = 'UNIT_ARQUEBUSIER' or UnitType = 'UNIT_MACHINE_GUN';
+update Units set PromotionClass = 'PROMOTION_CLASS_RANGED' where UnitType = 'UNIT_SLINGER';
 update Units set PromotionClass = 'PROMOTION_CLASS_ANTI_CAVALRY' where UnitType = 'UNIT_MODERN_AT';
-update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_MELEE' where UnitType = 'UNIT_DREADNOUGHT' or UnitType = 'UNIT_MISSILE_DESTROYER';
+update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_MELEE' where UnitType = 'UNIT_MISSILE_DESTROYER';
 update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_RANGED' where UnitType = 'UNIT_MISSILE_FRIGATE';
-update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_RAIDER' where UnitType = 'UNIT_TORPEDO_GUNBOAT';
+update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_RAIDER' where UnitType = 'UNIT_ATTACK_SUBMARINE';
+
+-- Upgrade
+update UnitUpgrades set UpgradeUnit = 'UNIT_ARCHER' where UpgradeUnit = 'UNIT_SLINGER';
+update UnitUpgrades set UpgradeUnit = 'UNIT_CROSSBOWMAN' where UpgradeUnit = 'UNIT_MAYAN_HULCHE';
+update UnitUpgrades set UpgradeUnit = 'UNIT_MODERN_AT' where UpgradeUnit = 'UNIT_HELICOPTER' and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+
+update UnitUpgrades set UpgradeUnit = 'UNIT_ARQUEBUSIER' where UpgradeUnit = 'UNIT_RANGER' and exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
+insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_ARQUEBUSIER', 'UNIT_RANGER' where exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
+update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where UpgradeUnit = 'UNIT_SPEC_OPS' and exists (select UnitType from Units where UnitType = 'UNIT_MACHINE_GUN');
+insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_MACHINE_GUN', 'UNIT_HELICOPTER' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_HELICOPTER', 'UNIT_SPEC_OPS' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 
 delete from Units where PromotionClass = 'PROMOTION_CLASS_AUTOMATIC_GUN';
 delete from Units where PromotionClass = 'PROMOTION_CLASS_MARINE';
 delete from Units where PromotionClass = 'PROMOTION_CLASS_NAVAL_BOMBARD';
+
+-- Deal with MandatoryObsoleteTech
