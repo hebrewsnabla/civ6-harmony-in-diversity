@@ -34,7 +34,9 @@ update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCH
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
+
 -- 调整单位过期科技。
+update Units set MandatoryObsoleteTech = 'TECH_MILITARY_TACTICS' where MandatoryObsoleteTech = 'TECH_METAL_CASTING';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';

@@ -5,8 +5,8 @@ insert or replace into EnglishText
 values
     ("LOC_GAMEMODE_TESTING_NAME",         "Testing Mode"),
     ("LOC_GAMEMODE_TESTING_DESCRIPTION",  "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains the AI settling bias adjustments."),
-    ("LOC_GAMEMODE_TESTING_NAME",         "Tech Testing Mode"),
-    ("LOC_GAMEMODE_TESTING_DESCRIPTION",  "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains tech tree adjustments."),
+    ("LOC_GAMEMODE_TECHTEST_NAME",        "Tech Testing Mode"),
+    ("LOC_GAMEMODE_TECHTEST_DESCRIPTION", "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains tech tree adjustments."),
     -- Maps
     ("LOC_MAP_TINY_ISLANDS_NAME",         "Tiny Islands"),
     ("LOC_MAP_TINY_ISLANDS_DESCRIPTION",  "Many tiny islands."),
