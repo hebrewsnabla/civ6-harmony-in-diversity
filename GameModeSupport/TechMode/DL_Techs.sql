@@ -9,16 +9,21 @@ update Projects set PrereqTech = 'TECH_ELECTRICITY' where ProjectType = 'PROJECT
 update Projects set PrereqTech = 'TECH_REFINING' where ProjectType = 'PROJECT_CONVERT_REACTOR_TO_OIL';
 
 update Buildings set PrereqTech = 'TECH_STEAM_POWER' where BuildingType = 'BUILDING_SEAPORT';
+update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_REFINING' where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUILDING_WORKSHOP';
 -- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_STAR_FORT';
 -- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_TSIKHE';
 
-update Resources set PrereqTech = 'TECH_SANITATION' where ResourceType = 'RESOURCE_OIL';
+update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
+update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
 
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_CATAPULT';
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_MACEDONIAN_BALLISTA'; -- ST
+update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_AXE_THROWER'; -- WE
+update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_REITER'; -- WE
+update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_STRADIOT'; -- WE
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAN_AT_ARMS';
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GEORGIAN_KHEVSURETI';
@@ -29,6 +34,7 @@ update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCH
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
+-- 调整单位过期科技。
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
@@ -43,7 +49,7 @@ update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_IRRIGATION';
 update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_ARCHERY';
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_WRITING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MASONRY';
-update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_BRONZE_WORKING';
+update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_BRONZE_WORKING'; -- , Cost = 50
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_CURRENCY';
@@ -53,14 +59,15 @@ update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SHIPBUILDING
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_MATHEMATICS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_CONSTRUCTION';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_ENGINEERING';
+update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_BUTTRESS';
 update Technologies set UITreeRow = 2, Cost = 850, EraType = 'ERA_RENAISSANCE' where TechnologyType = 'TECH_MILITARY_TACTICS';
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_APPRENTICESHIP';
-update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_MACHINERY';
+update Technologies set UITreeRow = 1, Cost = 550 where TechnologyType = 'TECH_MACHINERY';
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_EDUCATION';
 update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MILITARY_ENGINEERING';
 update Technologies set UITreeRow = 3, Cost = 450 where TechnologyType = 'TECH_CASTLES';
-update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY';
+update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY'; -- Cost = 550, EraType = 'ERA_MEDIEVAL'
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Technologies set UITreeRow = 1, Cost = 950 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
@@ -78,12 +85,13 @@ update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_STEAM_POWER'
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_SANITATION';
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_ECONOMICS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_RIFLING';
-update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_FLIGHT';
+update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_FLIGHT';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_REPLACEABLE_PARTS';
 update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_STEEL';
 update Technologies set UITreeRow = -1, Cost = 1800 where TechnologyType = 'TECH_ELECTRICITY';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_RADIO';
-update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_CHEMISTRY';
+update Technologies set UITreeRow = 1, Cost = 1800 where TechnologyType = 'TECH_CHEMISTRY';
+update Technologies set UITreeRow = 0, Cost = 1900 where TechnologyType = 'TECH_REFINING';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_COMBUSTION';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ADVANCED_FLIGHT';
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ROCKETRY';
@@ -102,8 +110,6 @@ update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_STEALTH_TECHN
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ROBOTICS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_NANOTECHNOLOGY';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_NUCLEAR_FUSION';
-update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_BUTTRESS';
-update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_REFINING';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SEASTEADS';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ADVANCED_AI';
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ADVANCED_POWER_CELLS';
@@ -141,13 +147,14 @@ values
     ('TECH_APPRENTICESHIP', 'TECH_CURRENCY'),
     ('TECH_APPRENTICESHIP', 'TECH_ENGINEERING'),
     ('TECH_MACHINERY',  'TECH_ENGINEERING'),
+    ('TECH_MACHINERY',  'TECH_METAL_CASTING'),
     ('TECH_BUTTRESS',   'TECH_CELESTIAL_NAVIGATION'),
     ('TECH_BUTTRESS',   'TECH_MATHEMATICS'),
     ('TECH_EDUCATION',  'TECH_MATHEMATICS'),
     ('TECH_EDUCATION',  'TECH_APPRENTICESHIP'),
     ('TECH_STIRRUPS',   'TECH_HORSEBACK_RIDING'),
     ('TECH_MILITARY_ENGINEERING',   'TECH_CASTLES'),
-    ('TECH_MILITARY_ENGINEERING',   'TECH_METAL_CASTING'),
+    -- ('TECH_MILITARY_ENGINEERING',   'TECH_METAL_CASTING'),
     ('TECH_CASTLES',    'TECH_CONSTRUCTION'),
     ('TECH_CASTLES',    'TECH_HORSEBACK_RIDING'),
     --  Renaissance
@@ -164,6 +171,7 @@ values
     ('TECH_SQUARE_RIGGING', 'TECH_CARTOGRAPHY'),
     ('TECH_ASTRONOMY',  'TECH_EDUCATION'),
     ('TECH_MILITARY_TACTICS',   'TECH_METAL_CASTING'),
+    ('TECH_MILITARY_TACTICS',   'TECH_MILITARY_ENGINEERING'),
     ('TECH_SIEGE_TACTICS',  'TECH_GUNPOWDER'),
     --  Industrial
     ('TECH_INDUSTRIALIZATION',  'TECH_PRINTING'),
@@ -187,20 +195,21 @@ values
     ('TECH_REPLACEABLE_PARTS',  'TECH_RIFLING'),
     ('TECH_STEEL',  'TECH_RIFLING'),
     ('TECH_STEEL',  'TECH_MILITARY_SCIENCE'),
-    ('TECH_REFINING',   'TECH_SANITATION'),
+    ('TECH_CHEMISTRY',   'TECH_SANITATION'),
     ('TECH_ELECTRICITY',    'TECH_INDUSTRIALIZATION'),
     ('TECH_ELECTRICITY',    'TECH_SCIENTIFIC_THEORY'),
+    ('TECH_ELECTRICITY',    'TECH_STEAM_POWER'),
     ('TECH_RADIO',  'TECH_FLIGHT'),
     ('TECH_RADIO',  'TECH_ELECTRICITY'),
-    ('TECH_CHEMISTRY',  'TECH_REFINING'),
-    ('TECH_CHEMISTRY',  'TECH_ELECTRICITY'),
-    ('TECH_CHEMISTRY',  'TECH_ECONOMICS'),
-    ('TECH_COMBUSTION', 'TECH_REFINING'),
+    ('TECH_REFINING',  'TECH_CHEMISTRY'),
+    ('TECH_REFINING',  'TECH_ELECTRICITY'),
+    ('TECH_REFINING',  'TECH_ECONOMICS'),
+    ('TECH_COMBUSTION', 'TECH_CHEMISTRY'),
     ('TECH_COMBUSTION', 'TECH_STEEL'),
     --  Atomic
     ('TECH_ADVANCED_FLIGHT',    'TECH_RADIO'),
     ('TECH_ROCKETRY',   'TECH_RADIO'),
-    ('TECH_ROCKETRY',   'TECH_CHEMISTRY'),
+    ('TECH_ROCKETRY',   'TECH_REFINING'),
     ('TECH_ROCKETRY',   'TECH_ELECTRICITY'),
     ('TECH_ADVANCED_BALLISTICS',    'TECH_COMBUSTION'),
     ('TECH_COMBINED_ARMS',  'TECH_STEEL'),

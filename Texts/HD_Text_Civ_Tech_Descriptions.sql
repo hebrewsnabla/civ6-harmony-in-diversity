@@ -52,18 +52,32 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_DESCRIPTION",            "营地+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_DESCRIPTION",                  "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_DESCRIPTION",        "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
+    -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BRONZE_WORKING",              "击杀2个蛮族单位。"),
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BRONZE_WORKING",     ""), -- 和蛮族的战争让你渴望更强大的武器。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_THE_WHEEL",                   "建造1座牧场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_THE_WHEEL",          "被驯养的动物们真是人类的好助手，但如何更有效率地利用他们呢？"), -- 采矿业让您拥有了建造轮轴的能力。接下来是车轮？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HORSEBACK_RIDING",            "建造1座改良马的牧场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HORSEBACK_RIDING",   "马匹现在被驯养在牧场里，是时候学习骑乘它们了。"), -- 动物现在被驯养在牧场里，是时候学习骑乘它们了。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FOREIGN_TRADE",               "遇见另一个文明。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_FOREIGN_TRADE",      "在与另一个文明国家会晤后，您发现这个广阔的世界有很多的贸易机会。"), -- 我们发现了一个新大陆，这个广阔的世界有很多的贸易机会。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_WRITING",                     "建造一个纪念碑。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_WRITING",            "事件已无法用简单的符号表达，我们需要更准确的表达方式。"), -- 在与另一个文明国家会晤后，您意识到了新的交流方式的必要性。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GAMES_RECREATION",            "建造2座营地。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GAMES_RECREATION",   "追捕猎物又何尝不是另一种游戏？"), -- 毫无疑问，您在建筑上的新技术对创建游戏和娱乐场所大有裨益。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NAVAL_TRADITION",             "拥有1艘四段帆船。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_NAVAL_TRADITION",    "新式船只的出现激励您的人民努力让国家成为海上强国。"), -- 您在海上取得的胜利激励您的人民努力让国家成为海上强国。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES",             "经营3条贸易线。"),
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MEDIEVAL_FAIRES",    ""), -- 您领土上的贸易正在蓬勃发展，这将很快促使商品交易会的产生。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RECORDED_HISTORY",            "建造1个图书馆"),
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RECORDED_HISTORY",   ""), -- 您的国民打算把更多卷轴放在您的学院图书馆里，他们开始记录帝国历史了。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HUMANISM",                    "建造2个古罗马剧场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",           ""), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",           "使用枪兵击杀1个单位。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",  "枪兵拥有出色的单兵作战能力，那如果将他们组合起来呢？"), -- 面对入侵威胁，您的国民已准备好了一种新型防御措施。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",           "拥有3个线列步兵。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",               "拥有2个抛石机。");
-
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REPLACEABLE_PARTS",  ""), -- 您的武器制造商已厌倦了手工制作数量如此庞大的步枪。或许建立标准化对此有帮助？
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",               "拥有2个投石机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",      "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"); -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
