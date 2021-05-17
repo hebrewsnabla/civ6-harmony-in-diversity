@@ -181,6 +181,7 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
 update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
@@ -420,3 +421,103 @@ update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECS
 
 -- Spainish
 update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';
+
+--Gilgamesh
+--Sumerian war cart can attack wall 
+insert or replace into TypeTags
+	(Type,									Tag)
+values
+	('UNIT_SUMERIAN_WAR_CART',				'CLASS_WALL_ATTACK'),
+	('ABILITY_ENABLE_WALL_ATTACK',			'CLASS_WALL_ATTACK');
+
+insert or replace into Tags
+	(Tag,					Vocabulary)
+values
+	('CLASS_WALL_ATTACK',	'ABILITY_CLASS');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,						ModifierID)
+values
+	('IMPROVEMENT_ZIGGURAT',				'ZIGGURAT_RIVERADJACENCY_FOOD');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'Amount',		1);
+
+insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID)
+	select 'IMPROVEMENT_ZIGGURAT',	'ZIGGURAT_' || EraType || '_SCIENCE' from Eras where EraType != 'ERA_ANCIENT';
+
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'ZIGGURAT_' || EraType from Eras where EraType != 'ERA_ANCIENT';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE'	from Eras where EraType != 'ERA_ANCIENT';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+values
+	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		2),
+	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		3),
+	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		4),
+	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		5),
+	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		6),
+	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		7),
+	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		8);
+
+--France
+--Chateau
+update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
+update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldType = 'YIELD_GOLD';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
+update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Chateau_WonderLate';
+
+insert or replace into Adjacency_YieldChanges
+	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
+values
+	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
+	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2, 				'RESOURCECLASS_BONUS');
+
+insert or replace into Improvement_Adjacencies 
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
+	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+--CATHERINE DE MEDICI add spy capacity for ui and wonder
+/*insert or replace into TraitModifiers (TraitType,	ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',	'UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER');
+
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,							SubjectRequirementSetId)
+values
+	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',					'MODIFIER_PLAYER_GRANT_SPY',			NULL);
+	
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);
+
+insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID) 
+values 
+	('IMPROVEMENT_CHATEAU',	'CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+values
+	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'DL_CITY_HAS_WONDER_REQUIREMENTS'),
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',		'MODIFIER_PLAYER_GRANT_SPY',			NULL);
+	
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);*/
