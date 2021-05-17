@@ -264,6 +264,7 @@ update Units set PrereqTech = 'TECH_LASERS' where UnitType = 'UNIT_MISSILE_DESTR
 delete from UnitAIInfos where UnitType = 'UNIT_AT_CREW' and AiType = 'UNITTYPE_RANGED';
 delete from UnitAIInfos where UnitType = 'UNIT_MODERN_AT' and AiType = 'UNITTYPE_RANGED';
 delete from UnitAIInfos where UnitType = 'UNIT_ANTI_TANK_GUN' and AiType = 'UNITTYPE_RANGED';
+delete from UnitAIInfos where UnitType = 'UNIT_ATTACK_SUBMARINE' and AiType = 'UNITTYPE_MELEE';
 
 insert or ignore into UnitAIInfos
     (UnitType,              AiType)
@@ -288,9 +289,15 @@ insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_ANTI_TANK_GUN
 
 insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_ARQUEBUSIER', 'UNITTYPE_MELEE'
     where exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
+insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_ARQUEBUSIER', 'UNITAI_EXPLORE'
+    where exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
 insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_MACHINE_GUN', 'UNITTYPE_MELEE'
     where exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
+insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_MACHINE_GUN', 'UNITAI_EXPLORE'
+    where exists (select UnitType from Units where UnitType = 'UNIT_ARQUEBUSIER');
 
+insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_ATTACK_SUBMARINE', 'UNITTYPE_RANGED'
+    where exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
 --------------------------------------------------------------------------------
 -- TypeTags
 -- Errors by WE
@@ -306,6 +313,7 @@ delete from TypeTags where Tag = 'CLASS_AUTOMATIC_GUN';
 delete from TypeTags where Type = 'UNIT_HELICOPTER' and (Tag ='CLASS_ANTI_CAVALRY' or Tag ='CLASS_RANGED');
 delete from TypeTags where Type = 'UNIT_MISSILE_CRUISER' and tag = 'CLASS_NAVAL_BOMBARD';
 delete from TypeTags where Type = 'UNIT_MISSILE_DESTROYER' and tag = 'CLASS_NAVAL_RANGED';
+delete from TypeTags where Type = 'UNIT_ATTACK_SUBMARINE' and tag = 'CLASS_NAVAL_MELEE';
 delete from TypeTags where Type = 'UNIT_ATTACK_SUBMARINE' and tag = 'CLASS_ATTACK_SUBMARINE';
 -- UNIT_MECHANIZED_INFANTRY
 delete from TypeTags where Type = 'UNIT_MECHANIZED_INFANTRY' and Tag ='CLASS_MELEE'
@@ -332,6 +340,8 @@ insert or replace into TypeTags (Type, Tag) select 'UNIT_HELICOPTER', 'CLASS_REC
 insert or replace into TypeTags (Type, Tag) select 'UNIT_MISSILE_DESTROYER', 'CLASS_NAVAL_MELEE'
     where exists (select UnitType from Units where UnitType = 'UNIT_MISSILE_DESTROYER');
 -- UNIT_ATTACK_SUBMARINE
+insert or replace into TypeTags (Type, Tag) select 'UNIT_ATTACK_SUBMARINE', 'CLASS_NAVAL_RANGED'
+    where exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
 insert or replace into TypeTags (Type, Tag) select 'UNIT_ATTACK_SUBMARINE', 'CLASS_NAVAL_RAIDER'
     where exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
 
@@ -370,11 +380,15 @@ delete from PolicyModifiers where ModifierId like '%_FIRE_SUPPORT_PRODUCTION';
 -- Revert WE: warships
 delete from PolicyModifiers where ModifierId like '%_NAVAL_BOMBARD_PRODUCTION';
 delete from PolicyModifiers where ModifierId like '%_MARINE_PRODUCTION';
+delete from BuildingModifiers where ModifierId = 'VENETIAN_ARSENAL_EXTRANAVALBOMBARD' or ModifierId = 'VENETIAN_ARSENAL_EXTRAMARINE';
+delete from TraitModifiers where ModifierId = 'TRAIT_NAVAL_BOMBARD_FAITH';
+
+update ModifierArguments set Value = 'UNIT_BATTLESHIP'
+where ModifierId = 'GREATPERSON_FRANZ_VON_HIPPER_ACTIVE' and Name = 'UnitType';
 
 -- UU
 update UnitUpgrades set UpgradeUnit = 'UNIT_CROSSBOWMAN' where Unit = 'UNIT_MAYAN_HULCHE';
--- UNIT_AMERICAN_AH64_APACHE -> recon
-
+-- ST: UNIT_AMERICAN_AH64_APACHE -> recon
 
 --------------------------------------------------------------------------------
 -- Deal with MandatoryObsoleteTech
