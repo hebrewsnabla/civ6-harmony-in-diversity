@@ -243,6 +243,7 @@ update Units set Cost = 690, Maintenance = 8, BaseMoves = 4, Range = 1, Combat =
 
 -- Promotion Class
 update Units set PromotionClass = 'PROMOTION_CLASS_RANGED' where UnitType = 'UNIT_SLINGER';
+update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_RANGED' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES'; -- TODO: revert.
 update Units set PromotionClass = 'PROMOTION_CLASS_ANTI_CAVALRY' where UnitType = 'UNIT_AT_CREW' or UnitType = 'UNIT_MODERN_AT';
 update Units set PromotionClass = 'PROMOTION_CLASS_NAVAL_RANGED' where UnitType = 'UNIT_MISSILE_CRUISER';
     -- WE units
@@ -363,6 +364,7 @@ insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_ARQUEBUSIER
 update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where UpgradeUnit = 'UNIT_SPEC_OPS' and exists (select UnitType from Units where UnitType = 'UNIT_MACHINE_GUN');
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_MACHINE_GUN', 'UNIT_HELICOPTER' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_HELICOPTER', 'UNIT_SPEC_OPS' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
+-- TODO: attack submarine upgrade.
 
 -- Deletes
 delete from Types where Type = 'UNIT_ANTI_TANK_RIFLE';

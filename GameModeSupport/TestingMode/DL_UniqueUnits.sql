@@ -23,14 +23,14 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 
 -- 埃及
 update Units set Cost = 60, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 25, RangedCombat = 35 where UnitType = 'UNIT_EGYPTIAN_CHARIOT_ARCHER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_EGYPTIAN_CHARIOT_ARCHER', 'UNIT_COMPOSITE_BOWMAN'
-    where exists (select UnitType from Units where PromotionClass = 'UNIT_COMPOSITE_BOWMAN');
+    where exists (select UnitType from Units where UnitType = 'UNIT_COMPOSITE_BOWMAN');
 ------ UNIT_EGYPTIAN_KHOPESH
 -- 中国
 update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 45, RangedCombat = 60, PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_CHINESE_CROUCHING_TIGER', 'UNIT_FIELD_CANNON');
 update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where Unit = 'UNIT_CHINESE_CROUCHING_TIGER';
 update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_GUN' where Unit = 'UNIT_CHINESE_CROUCHING_TIGER'
-    and exists (select UnitType from Units where PromotionClass = 'UNIT_FIELD_GUN');
+    and exists (select UnitType from Units where UnitType = 'UNIT_FIELD_GUN');
 ------ UNIT_CHINESE_SHIGONG
 -- 西班牙
 update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
@@ -53,7 +53,9 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 -- 印度
 update Units set Cost = 100, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 40, RangedCombat = 0 where UnitType = 'UNIT_INDIAN_VARU';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_INDIAN_VARU', 'UNIT_ARMORED_HORSEMAN'
-    where exists (select UnitType from Units where PromotionClass = 'UNIT_ARMORED_HORSEMAN');
+    where exists (select UnitType from Units where UnitType = 'UNIT_ARMORED_HORSEMAN');
+update UnitUpgrades set UpgradeUnit = 'UNIT_REITER' where Unit = 'UNIT_INDIAN_VARU'
+    and exists (select UnitType from Units where UnitType = 'UNIT_REITER');
 ------ UNIT_INDIAN_SEPOY
 -- 英国
 update Units set Cost = 180, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 45, RangedCombat = 55, StrategicResource = NULL where UnitType = 'UNIT_ENGLISH_SEADOG';
@@ -73,7 +75,7 @@ update Units set Cost = 60, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 
 update Units set Cost = 500, Maintenance = 6, BaseMoves = 5, Range = 3, Combat = 80, RangedCombat = 90, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES';
 update UnitReplaces set ReplacesUnitType = 'UNIT_LIGHT_CRUISER' where CivUniqueUnitType = 'UNIT_BRAZILIAN_MINAS_GERAES'
-    and exists (select UnitType from Units where PromotionClass = 'UNIT_LIGHT_CRUISER');
+    and exists (select UnitType from Units where UnitType = 'UNIT_LIGHT_CRUISER');
 ------ UNIT_BRAZILIAN_BANDEIRANTE
 -- 法国
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
@@ -86,7 +88,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 -- 澳大利亚
 update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 78, RangedCombat = 0 where UnitType = 'UNIT_DIGGER';
 update UnitReplaces set ReplacesUnitType = 'UNIT_WW1_INFANTRY' where CivUniqueUnitType = 'UNIT_DIGGER'
-    and exists (select UnitType from Units where PromotionClass = 'UNIT_WW1_INFANTRY');
+    and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_AUSTRALIAN_SASR
 -- 波兰
 update Units set Cost = 330, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 77, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
@@ -102,7 +104,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MACEDONIAN_HETAIROI', 'UNIT_ARMORED_HORSEMAN'
-    where exists (select UnitType from Units where PromotionClass = 'UNIT_ARMORED_HORSEMAN');
+    where exists (select UnitType from Units where UnitType = 'UNIT_ARMORED_HORSEMAN');
 ------ UNIT_MACEDONIAN_BALLISTA
 -- 波斯
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 35, RangedCombat = 28, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_PERSIAN_IMMORTAL';
@@ -128,13 +130,13 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- 马普切
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0 where UnitType = 'UNIT_MAPUCHE_MALON_RAIDER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MAPUCHE_MALON_RAIDER', 'UNIT_STRADIOT'
-    where exists (select UnitType from Units where PromotionClass = 'UNIT_STRADIOT');
+    where exists (select UnitType from Units where UnitType = 'UNIT_STRADIOT');
 ------ UNIT_MAPUCHE_GUERILLA
 -- 朝鲜
 update Units set Cost = 120, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 40, RangedCombat = 60, StrategicResource = NULL where UnitType = 'UNIT_KOREAN_HWACHA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_KOREAN_HWACHA';
 update UnitReplaces set ReplacesUnitType = 'UNIT_CULVERIN' where CivUniqueUnitType = 'UNIT_KOREAN_HWACHA'
-    and exists (select UnitType from Units where PromotionClass = 'UNIT_CULVERIN');
+    and exists (select UnitType from Units where UnitType = 'UNIT_CULVERIN');
 ------ UNIT_KOREAN_TURTLE_SHIP
 -- 高棉
 update Units set Cost = 120, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 40, Bombard = 50, StrategicResource = NULL where UnitType = 'UNIT_KHMER_DOMREY';
