@@ -181,7 +181,7 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
 update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
-delete form TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
@@ -423,7 +423,7 @@ update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECS
 update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';
 
 --Gilgamesh
---Sumerian war cart can attack wall
+--Sumerian war cart can attack wall 
 insert or replace into TypeTags
 	(Type,									Tag)
 values
@@ -454,7 +454,7 @@ values
 insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID)
 	select 'IMPROVEMENT_ZIGGURAT',	'ZIGGURAT_' || EraType || '_SCIENCE' from Eras where EraType != 'ERA_ANCIENT';
 
-insert or replace into Modifiers	(ModifierId,	ModifierType,	OwnerRequirementSetId)
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
 	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'ZIGGURAT_' || EraType from Eras where EraType != 'ERA_ANCIENT';
 
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
@@ -476,11 +476,6 @@ update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 
 update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldType = 'YIELD_GOLD';
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
 update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Chateau_WonderLate';
-insert or replace into Improvement_Adjacencies 
-	(ImprovementType,		YieldChangeId)
-values
-	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
-	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
 
 insert or replace into Adjacency_YieldChanges
 	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
@@ -488,15 +483,21 @@ values
 	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
 	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2, 				'RESOURCECLASS_BONUS');
 
---CATHERINE_DE_MEDICI
-insert or replace into TraitModifiers (TraitType,	TraitType)
+insert or replace into Improvement_Adjacencies 
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
+	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+--CATHERINE DE MEDICI add spy capacity for ui and wonder
+/*insert or replace into TraitModifiers (TraitType,	ModifierId)
 values
 	('FLYING_SQUADRON_TRAIT',	'UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER');
 
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,							SubjectRequirementSetId)
 values
-	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
+	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
 	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',					'MODIFIER_PLAYER_GRANT_SPY',			NULL);
 	
 insert or replace into ModifierArguments
@@ -504,3 +505,19 @@ insert or replace into ModifierArguments
 values
 	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
 	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);
+
+insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID) 
+values 
+	('IMPROVEMENT_CHATEAU',	'CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+values
+	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'DL_CITY_HAS_WONDER_REQUIREMENTS'),
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',		'MODIFIER_PLAYER_GRANT_SPY',			NULL);
+	
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);*/
