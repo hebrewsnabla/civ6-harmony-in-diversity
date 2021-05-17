@@ -2,15 +2,15 @@
 --      All Testing Adjustments    --
 -------------------------------------
 
-update Units set Cost = round(Cost / 2) where FormationClass != 'FORMATION_CLASS_CIVILIAN' and FormationClass != 'FORMATION_CLASS_AIR';
+-- update Units set Cost = round(Cost / 2) where FormationClass != 'FORMATION_CLASS_CIVILIAN' and FormationClass != 'FORMATION_CLASS_AIR';
 -- update Units set Cost = round(Cost * 0.6) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
 -- update Units set Cost = round(Cost * 0.8) where FormationClass != 'FORMATION_CLASS_CIVILIAN';
 
 -- 这句操作是把Units上的单位一次性消耗的资源类型 抄给 维护性消耗写到Units_XP2的表上面.
-update Units_XP2 set ResourceMaintenanceType = (select StrategicResource from Units where UnitType = Units_XP2.UnitType) where ResourceCost > 1;
+-- update Units_XP2 set ResourceMaintenanceType = (select StrategicResource from Units where UnitType = Units_XP2.UnitType) where ResourceCost > 1;
 
-update Units_XP2 set ResourceMaintenanceAmount = 1 where ResourceCost > 1;
-update Units_XP2 set ResourceCost = 5 where ResourceCost > 0;
+-- update Units_XP2 set ResourceMaintenanceAmount = 1 where ResourceCost > 1;
+-- update Units_XP2 set ResourceCost = 5 where ResourceCost > 0;
 
 -- Outer Defense
 update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_WALLS';

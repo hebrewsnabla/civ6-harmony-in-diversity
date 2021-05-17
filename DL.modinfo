@@ -723,6 +723,7 @@
       <Properties><LoadOrder>18100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_Military.sql</File>
       <File>GameModeSupport/TestingMode/DL_Units.sql</File>
+      <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     </UpdateDatabase>
     <!-- Tech -->
@@ -752,6 +753,7 @@
     <File>GameModeSupport/TestingMode/DL_AI.sql</File>
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>
     <File>GameModeSupport/TestingMode/DL_Units.sql</File>
+    <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>

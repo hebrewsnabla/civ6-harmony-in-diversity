@@ -89,4 +89,4 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 --to do
 --update Units set PrereqCivic = 'CIVIC_THEOLOGY' where UnitType = 'UNIT_WARRIOR_MONK';
 update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
-update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';		
+update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';

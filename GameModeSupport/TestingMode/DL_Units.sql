@@ -177,7 +177,7 @@ update Units set Cost = 1080, Maintenance = 8, BaseMoves = 5, Range = 4, Combat 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MISSILE_CRUISER';
 
 -- Naval Raider
-update Units set Cost = 200, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_PRIVATEER';
+update Units set Cost = 180, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_PRIVATEER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PRIVATEER';
 update Units set Cost = 300, Maintenance = 5, BaseMoves = 4, Range = 2, Combat = 55, RangedCombat = 65, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_RAIDER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RAIDER';
@@ -187,10 +187,13 @@ update Units set Cost = 600, Maintenance = 7, BaseMoves = 5, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ATTACK_SUBMARINE';
 update Units set Cost = 900, Maintenance = 8, BaseMoves = 5, Range = 2, Combat = 85, RangedCombat = 95, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
+
+-- Carrier
 update Units set Cost = 750, Maintenance = 7, BaseMoves = 4, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_OIL' where UnitType = 'UNIT_AIRCRAFT_CARRIER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_AIRCRAFT_CARRIER';
 update Units set Cost = 1200, Maintenance = 8, BaseMoves = 5, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = 'RESOURCE_URANIUM' where UnitType = 'UNIT_SUPERCARRIER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUPERCARRIER';
+-- GDR
 update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
 
 --------------------------------------------------------------------------------
@@ -385,10 +388,6 @@ delete from TraitModifiers where ModifierId = 'TRAIT_NAVAL_BOMBARD_FAITH';
 
 update ModifierArguments set Value = 'UNIT_BATTLESHIP'
 where ModifierId = 'GREATPERSON_FRANZ_VON_HIPPER_ACTIVE' and Name = 'UnitType';
-
--- UU
-update UnitUpgrades set UpgradeUnit = 'UNIT_CROSSBOWMAN' where Unit = 'UNIT_MAYAN_HULCHE';
--- ST: UNIT_AMERICAN_AH64_APACHE -> recon
 
 --------------------------------------------------------------------------------
 -- Deal with MandatoryObsoleteTech

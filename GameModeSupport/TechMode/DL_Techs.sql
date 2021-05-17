@@ -23,6 +23,7 @@ update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_CATAPUL
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_MACEDONIAN_BALLISTA'; -- ST
 update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_AXE_THROWER'; -- WE
 update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_REITER'; -- WE
+update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_ARQUEBUSIER'; -- WE
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_STRADIOT'; -- WE
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAN_AT_ARMS';
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
