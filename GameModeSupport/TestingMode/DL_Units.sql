@@ -293,12 +293,21 @@ insert or replace into UnitAIInfos (UnitType, AiType) select 'UNIT_MACHINE_GUN',
 
 --------------------------------------------------------------------------------
 -- TypeTags
+-- Errors by WE
+delete from TypeTags where Type = 'UNIT_ARMORED_INFANTRY' and tag = 'CLASS_MELEE';
+delete from TypeTags where Type = 'UNIT_MOUNTED_RIFLES' and tag = 'CLASS_MELEE';
+delete from TypeTags where Type = 'UNIT_ANTI_TANK_GUN' and tag = 'CLASS_RANGED';
+-- ??? by WE
+delete from TypeTags where Type = 'UNIT_PIKE_AND_SHOT' and tag = 'CLASS_PIKE';
+delete from TypeTags where Type = 'UNIT_MUSKETMAN' and tag = 'CLASS_SHOT';
+
+-- Modifications
 delete from TypeTags where Tag = 'CLASS_AUTOMATIC_GUN';
-delete from TypeTags where Type = 'UNIT_HELICOPTER' and Tag ='CLASS_ANTI_CAVALRY' or Tag ='CLASS_RANGED';
+delete from TypeTags where Type = 'UNIT_HELICOPTER' and (Tag ='CLASS_ANTI_CAVALRY' or Tag ='CLASS_RANGED');
 delete from TypeTags where Type = 'UNIT_MISSILE_CRUISER' and tag = 'CLASS_NAVAL_BOMBARD';
 delete from TypeTags where Type = 'UNIT_MISSILE_DESTROYER' and tag = 'CLASS_NAVAL_RANGED';
+delete from TypeTags where Type = 'UNIT_ATTACK_SUBMARINE' and tag = 'CLASS_ATTACK_SUBMARINE';
 -- UNIT_MECHANIZED_INFANTRY
-delete from TypeTags where Type = 'UNIT_MECHANIZED_INFANTRY' and Tag ='CLASS_LIGHT_CAVALRY';
 delete from TypeTags where Type = 'UNIT_MECHANIZED_INFANTRY' and Tag ='CLASS_MELEE'
     and exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 
@@ -322,6 +331,9 @@ insert or replace into TypeTags (Type, Tag) select 'UNIT_HELICOPTER', 'CLASS_REC
 -- UNIT_MISSILE_DESTROYER
 insert or replace into TypeTags (Type, Tag) select 'UNIT_MISSILE_DESTROYER', 'CLASS_NAVAL_MELEE'
     where exists (select UnitType from Units where UnitType = 'UNIT_MISSILE_DESTROYER');
+-- UNIT_ATTACK_SUBMARINE
+insert or replace into TypeTags (Type, Tag) select 'UNIT_ATTACK_SUBMARINE', 'CLASS_NAVAL_RAIDER'
+    where exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
 
 -- Upgrade
 update UnitUpgrades set UpgradeUnit = 'UNIT_ARCHER' where Unit = 'UNIT_SLINGER';
@@ -339,14 +351,30 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where UpgradeUnit = 'UN
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_MACHINE_GUN', 'UNIT_HELICOPTER' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_HELICOPTER', 'UNIT_SPEC_OPS' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 
-delete from Units where UnitType = 'UNIT_ANTI_TANK_RIFLE';
-delete from Units where UnitType = 'UNIT_MISSILE_FRIGATE';
-delete from Units where PromotionClass = 'PROMOTION_CLASS_AUTOMATIC_GUN';
-delete from Units where PromotionClass = 'PROMOTION_CLASS_MARINE';
-delete from Units where PromotionClass = 'PROMOTION_CLASS_NAVAL_BOMBARD';
+-- Deletes
+delete from Types where Type = 'UNIT_ANTI_TANK_RIFLE';
+delete from Types where Type = 'UNIT_MISSILE_FRIGATE';
+delete from Types where Type in (select UnitType from Units where PromotionClass = 'PROMOTION_CLASS_AUTOMATIC_GUN');
+delete from Types where Type = 'PROMOTION_CLASS_AUTOMATIC_GUN' or Type = 'ABILITY_AUTOMATIC_GUN';
+delete from TypeTags where Tag = 'CLASS_AUTOMATIC_GUN';
+
+delete from Types where Type in (select UnitType from Units where PromotionClass = 'PROMOTION_CLASS_MARINE');
+delete from Types where Type = 'PROMOTION_CLASS_MARINE' or Type = 'ABILITY_MARINE';
+delete from TypeTags where Tag = 'CLASS_MARINE';
+
+delete from Types where Type in (select UnitType from Units where PromotionClass = 'PROMOTION_CLASS_NAVAL_BOMBARD');
+delete from Types where Type = 'PROMOTION_CLASS_NAVAL_BOMBARD' or Type = 'ABILITY_NAVAL_BOMBARD';
+delete from TypeTags where Tag = 'CLASS_NAVAL_BOMBARD';
+
+delete from PolicyModifiers where ModifierId like '%_FIRE_SUPPORT_PRODUCTION';
+-- Revert WE: warships
+delete from PolicyModifiers where ModifierId like '%_NAVAL_BOMBARD_PRODUCTION';
+delete from PolicyModifiers where ModifierId like '%_MARINE_PRODUCTION';
 
 -- UU
 update UnitUpgrades set UpgradeUnit = 'UNIT_CROSSBOWMAN' where Unit = 'UNIT_MAYAN_HULCHE';
+-- UNIT_AMERICAN_AH64_APACHE -> recon
+
 
 --------------------------------------------------------------------------------
 -- Deal with MandatoryObsoleteTech
