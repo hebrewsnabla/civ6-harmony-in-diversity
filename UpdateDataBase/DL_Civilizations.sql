@@ -2,8 +2,49 @@
 --     Civilization Adjustment     --
 -------------------------------------
 
--- Eleanor
+-- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
+--additonal theater project
+insert or replace into Projects 
+	(ProjectType,					Name,										ShortName,										Description,	
+	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+values 
+	('PROJECT_CIRCUSES_AND_BREAD',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION',
+	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_THEATER',	1);
+
+insert or replace into Projects_XP2
+	(ProjectType,					IdentityPerCitizenChange,	UnlocksFromEffect)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	2,							1);
+
+insert or replace into ProjectCompletionModifiers 
+	(ProjectType,					ModifierId)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	'PROJECT_COMPLETION_LOYALTY');
+
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+values
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT')
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS')
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ART_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
+
+insert into Modifiers
+	(ModifierId,					ModifierType,											SubjectRequirementSetId)
+values
+	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE',	    		NULL),
+	('TRAIT_DOUBLE_ART_SLOTS',		'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'	NULL),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING',			NULL);
+
+insert into ModifierArguments
+	(ModifierId,					Name,				 Value)
+values
+	('ELEANOR_ALLOW_PROJECT',     	'ProjectType',		'PROJECT_CIRCUSES_AND_BREAD'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'BuildingType'		'BUILDING_MUSEUM_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'GreatWorkSlotType'	'GREATWORKSLOT_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'Amount'			3),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'BuildingType'		'BUILDING_MUSEUM_ART');
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -490,15 +531,36 @@ values
 	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
 
 --CATHERINE DE MEDICI add spy capacity for ui and wonder
-/*insert or replace into TraitModifiers (TraitType,	ModifierId)
+/*insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_CHATEAU'),
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_WONDER');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_CITY_HAS_CHATEAU',					'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('REQUIRES_CITY_HAS_CHATEAU',		'ImprovementType',	'IMPROVEMENT_CHATEAU');
+	
+insert or replace into TraitModifiers (TraitType,	ModifierId)
 values
 	('FLYING_SQUADRON_TRAIT',	'UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER');
 
 insert or replace into Modifiers
-	(ModifierId,												ModifierType,							SubjectRequirementSetId)
+	(ModifierId,												ModifierType,								SubjectRequirementSetId)
 values
-	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
-	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',					'MODIFIER_PLAYER_GRANT_SPY',			NULL);
+	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
+	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',					'MODIFIER_PLAYER_GRANT_SPY',				NULL);
 	
 insert or replace into ModifierArguments
 	(ModifierId,													Name,			Value)
@@ -521,3 +583,4 @@ insert or replace into ModifierArguments
 values
 	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
 	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);*/
+
