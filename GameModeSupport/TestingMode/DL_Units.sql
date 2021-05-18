@@ -120,9 +120,9 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- Special Cases: UNIT_HELICOPTER
 
 -- Support
-update Units set Cost = 40, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_BATTERING_RAM';
+update Units set Cost = 50, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_BATTERING_RAM';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BATTERING_RAM';
-update Units set Cost = 75, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SIEGE_TOWER';
+update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SIEGE_TOWER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SIEGE_TOWER';
 update Units set Cost = 220, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MEDIC';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MEDIC';
