@@ -462,13 +462,13 @@ insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 values
 	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
-	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		2),
-	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		3),
-	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		4),
-	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		5),
-	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		6),
-	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		7),
-	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		8);
+	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
 
 --France
 --Chateau

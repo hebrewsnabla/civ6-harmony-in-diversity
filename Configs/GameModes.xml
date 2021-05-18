@@ -56,4 +56,32 @@
 		<Row QueryId="TechtestModePlayerInfoOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
 		<Row QueryId="TechtestModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" Operator="Equals" ConfigurationValue="1"/>
 	</QueryCriteria>
+	<!-- AI test -->
+	<Parameters>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_AItest" Name="LOC_GAMEMODE_AITEST_NAME" Description="LOC_GAMEMODE_AITEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+	</Parameters>
+	<ParameterCriteria>
+		<Row ParameterId="GameMode_AItest" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
+	</ParameterCriteria>
+	<ParameterDependencies>
+		<Row ParameterID="GameMode_AItest" ConfigurationGroup="Game" ConfigurationId="WORLD_BUILDER" Operator="NotEquals" ConfigurationValue="1"/>
+	</ParameterDependencies>
+	<GameModeItems>
+		<Row GameModeType="GAMEMODE_AITEST" Name="LOC_GAMEMODE_AITEST_NAME" Description="LOC_GAMEMODE_AITEST_DESCRIPTION" Portrait="GAMEMODE_TREE_RANDOMIZER_NEUTRAL" Background="GAMEMODE_TREE_RANDOMIZER_BACKGROUND" Icon="ICON_GAMEMODE_AITEST" SortIndex="10"/>
+	</GameModeItems>
+	<!-- Mode-based Player Overrides -->
+	<PlayerInfoOverrideQueries>
+		<Row QueryId="AItestModePlayerInfoOverrides"/>
+	</PlayerInfoOverrideQueries>
+	<PlayerItemOverrideQueries>
+		<Row QueryId="AItestModePlayerItemOverrides"/>
+	</PlayerItemOverrideQueries>
+	<Queries>
+		<Row QueryId="AItestModePlayerInfoOverrides" SQL="SELECT * FROM GameModePlayerInfoOverrides WHERE GameModeType = 'GAMEMODE_AITEST'"/>
+		<Row QueryId="AItestModePlayerItemOverrides" SQL="SELECT * FROM GameModePlayerItemOverrides WHERE GameModeType = 'GAMEMODE_AITEST'"/>
+	</Queries>
+	<QueryCriteria>
+		<Row QueryId="AItestModePlayerInfoOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" Operator="Equals" ConfigurationValue="1"/>
+		<Row QueryId="AItestModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" Operator="Equals" ConfigurationValue="1"/>
+	</QueryCriteria>
 </GameData>

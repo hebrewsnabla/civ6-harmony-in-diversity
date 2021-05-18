@@ -5,7 +5,8 @@
   </IconTextureAtlases> -->
   <IconDefinitions>
     <!-- <Row Name="ICON_GAMEMODE_TESTING" Atlas="ICON_ATLAS_TESTING_GAME_MODES" Index="0"/> -->
-    <Row Name="ICON_GAMEMODE_TESTING" Atlas="ICON_ATLAS_TECH" Index="55"/>
+    <Row Name="ICON_GAMEMODE_TESTING" Atlas="ICON_ATLAS_CIVICS" Index="10"/>
     <Row Name="ICON_GAMEMODE_TECHTEST" Atlas="ICON_ATLAS_TECH" Index="46"/>
+    <Row Name="ICON_GAMEMODE_AITEST" Atlas="ICON_ATLAS_TECH" Index="55"/>
   </IconDefinitions>
 </GameData>

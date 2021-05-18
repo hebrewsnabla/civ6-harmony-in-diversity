@@ -9,16 +9,39 @@ delete from AiListTypes where ListType = 'DLAdjustPseudoYields';
 delete from AiLists where ListType = 'DLAdjustPseudoYields';
 delete from AiFavoredItems where ListType = 'DLAdjustPseudoYields';
 
+delete from AiFavoredItems where ListType = 'DLAdjustBuildings' and Item = 'BUILDING_CASTLE';
+
+-- insert or replace into AiFavoredItems (ListType, Item, Favored, Value)
+-- select 'DLAdjustBuildings', BuildingType, 1, 0 from Buildings where TraitType = NULL and 
+-- (PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' or PrereqDistrict = 'DISTRICT_THEATER' or PrereqDistrict = 'DISTRICT_CAMPUS');
+
+-- update AiFavoredItems set Value = 200 where ListType = 'DefaultScoutUse' and Item = 'DEFAULT_LAND_SCOUTS';
+
 insert or replace into AiFavoredItems
     (ListType,                  Item,                                   Favored,    Value)
 values
-    -- ('DLAdjustDistricts',       'DISTRICT_INDUSTRIAL_ZONE',             1,          0),
-    ('DLAdjustDistricts',       'DISTRICT_AQUEDUCT',                    1,          0);
+    -- ('DLAdjustUnitPCBuilds',    '')
+    -- ('DLAdjustBuildings',       'BUILDING_POWER_PLANT',                 1,          0),
+    -- ('DLAdjustBuildings',       'BUILDING_COAL_POWER_PLANT',            1,          0),
+    -- ('DLAdjustBuildings',       'BUILDING_FOSSIL_FUEL_POWER_PLANT',     1,          0),
+    ('DLAdjustCivics',          'CIVIC_CRAFTSMANSHIP',                  1,          0),
+    ('DLAdjustCivics',          'CIVIC_FOREIGN_TRADE',                  1,          0),
+    ('DLAdjustCivics',          'CIVIC_STATE_WORKFORCE',                1,          0),
+    ('DLAdjustCivics',          'CIVIC_EARLY_EMPIRE',                   1,          0),
+    ('DLAdjustCivics',          'CIVIC_POLITICAL_PHILOSOPHY',           1,          0),
+    -- ('DLAdjustCivics',          'CIVIC_MILITARY_TRADITION',             1,          0),
+    -- ('DLAdjustCivics',          'CIVIC_MYSTICISM',                      1,          0),
+    -- 
+    -- ('DLMedievalDistricts',     'DISTRICT_INDUSTRIAL_ZONE',             1,          0),
+    -- ('DLRenaissanceDistricts',  'DISTRICT_INDUSTRIAL_ZONE',             1,          0),
+    -- ('DLRenaissanceDistricts',  'DISTRICT_AQUEDUCT',                    1,          0),
+    -- ('DLMedievalDistricts',     'DISTRICT_CAMPUS',                      1,          0),
+    ('DLMedievalDistricts',     'DISTRICT_AQUEDUCT',                    1,          0);
 
 -- [Real Strategy]
 update AiFavoredItems set Favored = 0, Value = 40 where ListType = 'SettleAllContinents' and Item = 'Foreign Continent'; -- Victoria, down from 120 (!)
 update AiFavoredItems set Favored = 0, Value = 40 where ListType = 'PhilipForeignSettlement' and Item = 'Foreign Continent'; -- Philip II, def. 60
-update AiFavoredItems set Value = 10 where ListType = 'CounterReformerInquisitorPreference' and Item = 'UNIT_INQUISITOR'; -- was 1 -- Philip II
+-- update AiFavoredItems set Value = 10 where ListType = 'CounterReformerInquisitorPreference' and Item = 'UNIT_INQUISITOR'; -- was 1 -- Philip II
 update AiFavoredItems set Value = 50 where ListType = 'LastVikingKingNavalPreference' and Item = 'PSEUDOYIELD_UNIT_NAVAL_COMBAT'; -- def. 100
 
 --------------------------------------------------------------
@@ -38,7 +61,7 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_SCIENCE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_CULTURE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_FAITH',   'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
-('StandardSettlePlot', 'New Resources', 0, 3, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
+('StandardSettlePlot', 'New Resources', 0, 2, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
 ('StandardSettlePlot', 'Resource Class', 0, 2, 'RESOURCECLASS_BONUS',     'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new, RS:2
 ('StandardSettlePlot', 'Resource Class', 0, 2, 'RESOURCECLASS_LUXURY',    'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2
 ('StandardSettlePlot', 'Resource Class', 0, 2, 'RESOURCECLASS_STRATEGIC', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2, RS:4
@@ -59,7 +82,7 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal
 --------------------------------------------------------------
 -- Updates to Settlement recommendations
 UPDATE PlotEvalConditions SET PoorValue =-40, GoodValue =-16 WHERE ConditionType = 'Nearest Friendly City'; -- PoorValue="-50" GoodValue="-20"
-UPDATE PlotEvalConditions SET PoorValue =  0, GoodValue =  3 WHERE ConditionType = 'New Resources'; -- PoorValue="0" GoodValue="4"
+UPDATE PlotEvalConditions SET PoorValue =  0, GoodValue =  2 WHERE ConditionType = 'New Resources'; -- PoorValue="0" GoodValue="4"
 UPDATE PlotEvalConditions SET PoorValue = 12, GoodValue = 18 WHERE ConditionType = 'Inner Ring Yield'; -- PoorValue="18" GoodValue="26", RS:12~18
 UPDATE PlotEvalConditions SET PoorValue = 10, GoodValue = 20 WHERE ConditionType = 'Total Yield'; -- PoorValue="30" GoodValue="50"
 UPDATE PlotEvalConditions SET PoorValue = -1, GoodValue =  8 WHERE ConditionType = 'Coastal'; -- PoorValue="-1" GoodValue="12", RS:-1~8
@@ -97,7 +120,7 @@ UPDATE PseudoYields SET DefaultValue = 5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_INFLUENCE'; --     0.5, envoys - Diplo? RS 0.55
 UPDATE PseudoYields SET DefaultValue = 30 WHERE PseudoYieldType = 'PSEUDOYIELD_NUCLEAR_WEAPON'; --  25, AI+ 45
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
-UPDATE PseudoYields SET DefaultValue = 1.33 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
+UPDATE PseudoYields SET DefaultValue = 1.25 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
 UPDATE PseudoYields SET DefaultValue = 0.15 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --   0.1 -- controls size of the army
 --UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --    1
 

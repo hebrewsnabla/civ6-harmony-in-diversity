@@ -17,21 +17,39 @@ insert into MajorStartingUnits (Unit, Era, Quantity, NotStartTile, OnDistrictCre
 -- DefaultCitySpecialization
 -- ClassicalYields, YIELD_SCIENCE, 150
 
+insert or replace into Strategy_Priorities
+	(StrategyType,						ListType)
+values
+	('STRATEGY_MEDIEVAL_CHANGES',		'DLMedievalDistricts'),
+	('STRATEGY_RENAISSANCE_CHANGES',	'DLRenaissanceDistricts');
+
 -- -- 1. Decrease AI happiness pseudo yield to decrease the value of luxury when buy.
 -- 2. Increase AI luxury pseudo yield to increase the value of luxury when sell.
 -- 3. Higher improvement pseudo yield to increase the desire for build improvemnts.
 -- 4. Make AI less favor to declare war on city states.
 insert or replace into AiListTypes (ListType) values
+	('DLMedievalDistricts'),
+	('DLRenaissanceDistricts'),
 	('DLAdjustBuildings'),
 	('DLAdjustDistricts'),
+	('DLAdjustCivics'),
+	('DLAdjustTechs'),
+	('DLAdjustUnits'),
+	('DLAdjustUnitPCBuilds'),
 	('DLAdjustPseudoYields'),
 	('DLFewerWaronCityStates');
 
 insert or replace into AiLists
 	(ListType,					LeaderType,					System)
 values
+	('DLMedievalDistricts',		NULL,						'Districts'),
+	('DLRenaissanceDistricts',	NULL,						'Districts'),
 	('DLAdjustBuildings',		'TRAIT_LEADER_MAJOR_CIV',	'Buildings'),
 	('DLAdjustDistricts',		'TRAIT_LEADER_MAJOR_CIV',	'Districts'),
+	('DLAdjustCivics',			'TRAIT_LEADER_MAJOR_CIV',	'Civics'),
+	('DLAdjustTechs',			'TRAIT_LEADER_MAJOR_CIV',	'Technologies'),
+	('DLAdjustUnits',			'TRAIT_LEADER_MAJOR_CIV',	'Units'),
+	('DLAdjustUnitPCBuilds',	'TRAIT_LEADER_MAJOR_CIV',	'UnitPromotionClasses'),
 	('DLAdjustPseudoYields',	'TRAIT_LEADER_MAJOR_CIV',	'PseudoYields'),
 	('DLFewerWaronCityStates',	'TRAIT_LEADER_MAJOR_CIV',	'DiplomaticActions');
 
