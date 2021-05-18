@@ -19,7 +19,7 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 
 ------ UNIT_GREEK_PELTAST
 -- 苏美尔
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 30, RangedCombat = 0 where UnitType = 'UNIT_SUMERIAN_WAR_CART';
------- UNIT_SUMERIAN_PHALANX
+------ UNIT_SUMERIAN_PHALANXF
 -- 埃及
 update Units set Cost = 60, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 25, RangedCombat = 35 where UnitType = 'UNIT_EGYPTIAN_CHARIOT_ARCHER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_EGYPTIAN_CHARIOT_ARCHER', 'UNIT_COMPOSITE_BOWMAN'
@@ -62,6 +62,7 @@ update Units set Cost = 180, Maintenance = 4, BaseMoves = 4, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ENGLISH_SEADOG';
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ENGLISH_REDCOAT';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ENGLISH_REDCOAT';
+update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_ENGLISH_REDCOAT' and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_ENGLISH_LONGBOWMAN
 ------ UNIT_ENGLISH_SHIP_OF_THE_LINE
 -- 日本
@@ -80,6 +81,7 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_LIGHT_CRUISER' where CivUniqueU
 -- 法国
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
+update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_FRENCH_GARDE_IMPERIALE' and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_FRENCH_GENDARME
 -- 刚果
 update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_KONGO_SHIELD_BEARER';
@@ -91,7 +93,7 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_WW1_INFANTRY' where CivUniqueUn
     and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_AUSTRALIAN_SASR
 -- 波兰
-update Units set Cost = 330, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 77, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
+update Units set Cost = 270, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 72, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_POLISH_HUSSAR';
 ------ UNIT_POLISH_UHLAN
 -- 阿兹特克
@@ -121,7 +123,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- 苏格兰
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 65, RangedCombat = 55, StrategicResource = NULL where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
--- TODO: add melee to UnitAIInfo
+insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_SCOTTISH_HIGHLANDER', 'UNITTYPE_MELEE');
 ------ UNIT_SCOTTISH_GALLOWGLASS
 -- 蒙古
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 35, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_MONGOLIAN_KESHIG';
@@ -169,7 +171,8 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 -- 印加
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 1, Combat = 41, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_INCA_WARAKAQ';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_INCA_WARAKAQ';
--- TODO: add melee to UnitAIInfo
+-- maybe not add melee to encourage the ranged attack.
+-- insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_INCA_WARAKAQ', 'UNITTYPE_MELEE');
 ------ UNIT_INCA_CHASQUI
 -- 马里
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
@@ -227,3 +230,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- 葡萄牙
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PORTUGUESE_NAU';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PORTUGUESE_NAU';
+
+-- 武僧
+
+-- 拉合尔

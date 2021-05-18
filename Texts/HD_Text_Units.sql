@@ -57,10 +57,12 @@ values
     -- Naval
     ("zh_Hans_CN",  "LOC_UNIT_COG_NAME",                                 "柯克船"),
     ("zh_Hans_CN",  "LOC_UNIT_COG_DESCRIPTION",                          "中世纪海军近战单位。"),
+    ("zh_Hans_CN",  "LOC_UNIT_CARAVEL_DESCRIPTION",                      "文艺复兴快速探索近战海军单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_RAIDER_NAME",                              "商船劫掠者"),
     ("zh_Hans_CN",  "LOC_UNIT_RAIDER_DESCRIPTION",                       "工业时期的海军远程袭击单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_ATTACK_SUBMARINE_DESCRIPTION",             "原子能时代海军远程袭击单位。除非与单位相邻，否则只能被其他海军袭击者发现。能使视线范围中的海军袭击者暴露位置。"),
     -- Land
+    ("zh_Hans_CN",  "LOC_UNIT_ARMORED_HORSEMAN_NAME",                    "重装骑兵"),
     ("zh_Hans_CN",  "LOC_UNIT_RECON_HELICOPTER_NAME",                    "侦察直升机"),
     ("zh_Hans_CN",  "LOC_UNIT_RECON_HELICOPTER_DESCRIPTION",             "原子时代支援单位。为1单元格内的攻城类单位+1 [ICON_Range] 射程、+5 [ICON_Bombard] 炮击攻击力。"),
     ("zh_Hans_CN",  "LOC_UNIT_ARQUEBUSIER_DESCRIPTION",                  "启蒙时代的侦察单位。"),

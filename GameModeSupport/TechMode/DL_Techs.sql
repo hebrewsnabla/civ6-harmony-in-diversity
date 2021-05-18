@@ -18,6 +18,12 @@ update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUI
 
 update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
 update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
+update Improvements set PrereqTech = 'TECH_MILITARY_TACTICS' where ImprovementType = 'IMPROVEMENT_FORT';
+update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
+    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
+update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
+    where TechnologyType = 'TECH_MILITARY_TACTICS';
+update ModifierArguments set Value = 'TECH_METAL_CASTING' where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and Name = 'TechType';
 
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_CATAPULT';
 update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_MACEDONIAN_BALLISTA'; -- ST

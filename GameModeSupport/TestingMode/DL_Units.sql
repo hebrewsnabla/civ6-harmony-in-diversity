@@ -112,7 +112,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 -- Recon
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 1, Combat = 40, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_SKIRMISHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SKIRMISHER';
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 1, Combat = 50, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_ARQUEBUSIER';
+update Units set Cost = 140, Maintenance = 4, BaseMoves = 3, Range = 1, Combat = 50, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_ARQUEBUSIER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARQUEBUSIER';
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 60, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_RANGER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_RANGER';
@@ -364,7 +364,8 @@ insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_ARQUEBUSIER
 update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where UpgradeUnit = 'UNIT_SPEC_OPS' and exists (select UnitType from Units where UnitType = 'UNIT_MACHINE_GUN');
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_MACHINE_GUN', 'UNIT_HELICOPTER' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
 insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_HELICOPTER', 'UNIT_SPEC_OPS' where exists (select UnitType from Units where UnitType = 'UNIT_MODERN_INFANTRY');
--- TODO: attack submarine upgrade.
+update UnitUpgrades set UpgradeUnit = 'UNIT_ATTACK_SUBMARINE' where UpgradeUnit = 'UNIT_NUCLEAR_SUBMARINE' and exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
+insert or replace into UnitUpgrades (Unit, UpgradeUnit) select 'UNIT_ATTACK_SUBMARINE', 'UNIT_NUCLEAR_SUBMARINE' where exists (select UnitType from Units where UnitType = 'UNIT_ATTACK_SUBMARINE');
 
 -- Deletes
 delete from Types where Type = 'UNIT_ANTI_TANK_RIFLE';
