@@ -11,8 +11,8 @@ update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where 
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
 update Technologies set Description = 'LOC_TECH_ARCHERY_DESCRIPTION' where TechnologyType ='TECH_ARCHERY';	
 -- 
-update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
-update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
+--update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
+--update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DL_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_DL_DESCRIPTION' where CivicType ='CIVIC_GUILDS';

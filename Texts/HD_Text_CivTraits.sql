@@ -41,7 +41,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NKISI_DESCRIPTION",                      "所有陆地单位无视森林和雨林对 [ICON_MOVEMENT] 移动力的减益。除了通常的 [ICON_Culture] 文化值，还会从每个 [ICON_GreatWork_Relic] 遗物、[ICON_GreatWork_Artifact] 文物以及 [ICON_GreatWork_Sculpture]雕塑艺术巨作中获得+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+4 [ICON_Gold] 金币和+1 [ICON_FAITH] 信仰值。获得额外100% [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家和 [ICON_GreatMerchant] 大商人点数。宫殿有5个巨作槽位。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                    "[ICON_TechBoosted] 尤里卡提供科技的90%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "在淡水和海岸旁定居时不提供额外 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。"),

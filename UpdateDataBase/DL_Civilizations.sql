@@ -5,6 +5,11 @@
 -- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
 --additonal theater project
+insert or replace into Types
+	(Type,								Kind)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',		'KIND_PROJECT');
+
 insert or replace into Projects 
 	(ProjectType,					Name,										ShortName,										Description,	
 	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
@@ -12,7 +17,7 @@ values
 	('PROJECT_CIRCUSES_AND_BREAD',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION',
 	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_THEATER',	1);
 
-insert or replace into Projects_XP2
+insert or replace into Projects_XP1
 	(ProjectType,					IdentityPerCitizenChange,	UnlocksFromEffect)
 values
 	('PROJECT_CIRCUSES_AND_BREAD',	2,							1);
@@ -24,27 +29,31 @@ values
 
 insert or replace into TraitModifiers (TraitType,	ModifierId)
 values
-	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT')
-	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS')
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ART_SLOTS'),
-	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_SUPPORT_TWO_ARCHAEOLOGISTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'AUTO_THEME_AT_LEAST_6_SLOTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
 
-insert into Modifiers
-	(ModifierId,					ModifierType,											SubjectRequirementSetId)
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
 values
-	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE',	    		NULL),
-	('TRAIT_DOUBLE_ART_SLOTS',		'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'	NULL),
-	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING',			NULL);
+	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS'),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING');
 
-insert into ModifierArguments
-	(ModifierId,					Name,				 Value)
+insert or replace into ModifierArguments
+	(ModifierId,					Name,				 	Value)
 values
-	('ELEANOR_ALLOW_PROJECT',     	'ProjectType',		'PROJECT_CIRCUSES_AND_BREAD'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'BuildingType'		'BUILDING_MUSEUM_ART'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'GreatWorkSlotType'	'GREATWORKSLOT_ART'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'Amount'			3),
-	('TRAIT_AUTO_THEME_ART_MUSEUM',	'BuildingType'		'BUILDING_MUSEUM_ART');
+	('ELEANOR_ALLOW_PROJECT',     	'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'BuildingType',			'BUILDING_MUSEUM_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'Amount',				3),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'Amount',				6),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'IsWonder',				0),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'BuildingType',			'BUILDING_MUSEUM_ART');
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -583,4 +592,3 @@ insert or replace into ModifierArguments
 values
 	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
 	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);*/
-
