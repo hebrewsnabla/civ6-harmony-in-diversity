@@ -44,11 +44,21 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_HAS_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY' from Technologies;
 
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'TechnologyType', TechnologyType from Technologies;
+insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY', 1 from Technologies;
+
 -- Civic
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_HAS_' || CivicType, 'CivicType', CivicType from Civics;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_HAS_' || CivicType, 'REQUIREMENT_PLAYER_HAS_CIVIC' from Civics;
+
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType, 'CivicType', CivicType from Civics;
+insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+	select 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType, 'REQUIREMENT_PLAYER_HAS_CIVIC', 1 from Civics;
 
 -- Districts plots
 insert or replace into RequirementArguments (RequirementId, Name, Value)
@@ -78,6 +88,12 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'EraType', EraType from Eras;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'REQUIREMENT_PLAYER_ERA_AT_LEAST' from Eras;
+
+--Game Eras
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_ERA_IS_' || EraType, 'EraType', EraType from Eras;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_ERA_IS_' || EraType, 'REQUIREMENT_GAME_ERA_IS' from Eras;
 
 -- Features & Natural Wonders
 insert or replace into RequirementArguments (RequirementId, Name, Value)
@@ -195,6 +211,11 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
+	-- Improvements
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIREMENTSET_TEST_ALL'),
+	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIREMENTSET_TEST_ALL'),
+	-- 
 	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL'),
 	('DL_CITY_HAS_WONDER_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL'),
 	('CITY_HAS_COLOSSUS',											'REQUIREMENTSET_TEST_ALL'),
@@ -205,6 +226,14 @@ values
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_PLOT_IS_FRESH_WATER'),
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
+	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
+	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
+	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
+	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'HD_REQUIRES_PLAYER_HAS_NO_TECH_APPRENTICESHIP'),
+	-- 
 	('DL_PLOT_IS_LAKE_REQUIREMENTS',								'REQUIRES_PLOT_IS_LAKE'),
 	('DL_CITY_HAS_WONDER_REQUIREMENTS',								'REQUIRES_CITY_HAS_WONDER'),
 	('CITY_HAS_COLOSSUS',											'REQUIRES_CITY_HAS_BUILDING_COLOSSUS'),
@@ -830,3 +859,32 @@ insert or replace into RequirementArguments
 	(RequirementId,							Name,					Value)
 values
 	('REQUIRES_PLAYER_HAS_TECH_GUNPOWDER',	'TechnologyType',		'TECH_GUNPOWDER');
+
+--Gilgamesh Ziggurat
+insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+	select 'ZIGGURAT_' || EraType,	'REQUIREMENTSET_TEST_ALL'		from Eras where EraType != 'ERA_ANCIENT';
+
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+	select 'ZIGGURAT_' || EraType,	'REQUIRES_PLAYER_IS_' || EraType 	from Eras where EraType != 'ERA_ANCIENT';
+
+--CATHERINE_DE_MEDICI
+/*insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_CHATEAU'),
+	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_WONDER');
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_CITY_HAS_CHATEAU',					'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('REQUIRES_CITY_HAS_CHATEAU',		'ImprovementType',	'IMPROVEMENT_CHATEAU');*/

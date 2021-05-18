@@ -19,6 +19,7 @@ update Units set Cost = 150, CostProgressionParam1 = 10 where UnitType = 'UNIT_A
 update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_INQUISITOR';
 update Units set Cost = 120, CostProgressionParam1 = 10 where UnitType = 'UNIT_GURU';
 
+update Units set Cost = 250 where UnitType = 'UNIT_ARCHAEOLOGIST';
 update Units set Cost = 30 where UnitType = 'UNIT_SCOUT';
 update Units set Cost = 35 where UnitType = 'UNIT_CREE_OKIHTCITAW';
 update Units set Cost = 120 where UnitType = 'UNIT_SKIRMISHER';
@@ -88,4 +89,4 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 --to do
 --update Units set PrereqCivic = 'CIVIC_THEOLOGY' where UnitType = 'UNIT_WARRIOR_MONK';
 update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
-update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';		
+update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';

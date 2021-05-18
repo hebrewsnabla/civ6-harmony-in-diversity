@@ -14,12 +14,14 @@ update Technologies set Description = 'LOC_TECH_ARCHERY_DESCRIPTION' where Techn
 update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
 update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
-update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
-update Civics set Description = 'LOC_CIVIC_GUILDS_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
-update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
+update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DL_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
+update Civics set Description = 'LOC_CIVIC_GUILDS_DL_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
+update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DL_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
-update Civics set Description = NULL where CivicType ='CIVIC_FEUDALISM';
-update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DESCRIPTION' where CivicType = 'CIVIC_CIVIL_SERVICE';
+update Civics set Description = 'LOC_CIVIC_FEUDALISM_DL_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
+update Civics set Description = 'LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
+update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
 
 --------------------------------------------------------------------------------
 -- Buildings
