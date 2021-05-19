@@ -22,6 +22,7 @@ update Civics set Description = 'LOC_CIVIC_FEUDALISM_DL_DESCRIPTION' where Civic
 update Civics set Description = 'LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
 update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
+update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY';
 
 --------------------------------------------------------------------------------
 -- Buildings

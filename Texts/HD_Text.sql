@@ -80,6 +80,7 @@ values
     ("LOC_DISTRICT_Harbor_HANSA_Production",                                  "+{1_num} [ICON_Production] Production from adjacent Harbor {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_RoyalDock_HANSA_Production",                               "+{1_num} [ICON_Production] Production from adjacent RoyalDock {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
+    ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "circuses and bread"),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "circuses and bread"),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +2 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.")
@@ -168,6 +169,7 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_Harbor_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的港口。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_RoyalDock_HANSA_Production",                               "+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的U型港。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+1。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。[NEWLINE][NEWLINE]需要先建成“娱乐设施”区域。"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "马戏与面包"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "马戏与面包"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+2。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。")

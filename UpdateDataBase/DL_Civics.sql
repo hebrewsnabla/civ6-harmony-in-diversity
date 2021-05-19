@@ -104,3 +104,7 @@ update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOO
 
 -- insert or replace into CivicModifiers (CivicType, ModifierId) values
 -- 	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
+
+insert or replace into CivicModifiers (CivicType, ModifierId) 
+values
+	('CIVIC_CULTURAL_HEGEMONY',		'FUTURE_VICTORY_CULTURE_ROCK_BAND_PROMOTIONS');
