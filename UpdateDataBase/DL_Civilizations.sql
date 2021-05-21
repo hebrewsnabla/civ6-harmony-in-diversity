@@ -2,8 +2,58 @@
 --     Civilization Adjustment     --
 -------------------------------------
 
--- Eleanor
+-- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
+--additonal theater project
+insert or replace into Types
+	(Type,								Kind)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',		'KIND_PROJECT');
+
+insert or replace into Projects 
+	(ProjectType,					Name,										ShortName,										Description,	
+	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+values 
+	('PROJECT_CIRCUSES_AND_BREAD',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION',
+	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_THEATER',	1);
+
+insert or replace into Projects_XP1
+	(ProjectType,					IdentityPerCitizenChange,	UnlocksFromEffect)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	2,							1);
+
+insert or replace into ProjectCompletionModifiers 
+	(ProjectType,					ModifierId)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	'PROJECT_COMPLETION_LOYALTY');
+
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+values
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ART_SLOTS'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_SUPPORT_TWO_ARCHAEOLOGISTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'AUTO_THEME_AT_LEAST_6_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
+values
+	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS'),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING');
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,				 	Value)
+values
+	('ELEANOR_ALLOW_PROJECT',     	'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'BuildingType',			'BUILDING_MUSEUM_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
+	('TRAIT_DOUBLE_ART_SLOTS',		'Amount',				3),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'Amount',				6),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'IsWonder',				0),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',	'BuildingType',			'BUILDING_MUSEUM_ART');
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -462,13 +512,13 @@ insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 values
 	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
-	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		2),
-	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		3),
-	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		4),
-	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		5),
-	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		6),
-	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		7),
-	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		8);
+	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
 
 --France
 --Chateau
@@ -488,36 +538,3 @@ insert or replace into Improvement_Adjacencies
 values
 	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
 	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
-
---CATHERINE DE MEDICI add spy capacity for ui and wonder
-/*insert or replace into TraitModifiers (TraitType,	ModifierId)
-values
-	('FLYING_SQUADRON_TRAIT',	'UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER');
-
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,							SubjectRequirementSetId)
-values
-	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'CITY_HAS_CHATEAU_AND_WONDER'),
-	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',					'MODIFIER_PLAYER_GRANT_SPY',			NULL);
-	
-insert or replace into ModifierArguments
-	(ModifierId,													Name,			Value)
-values
-	('UNIQUE_LEADER_ADD_SPY_CAPACITY_FOR_CHATEAU_AND_WONDER',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
-	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);
-
-insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID) 
-values 
-	('IMPROVEMENT_CHATEAU',	'CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY');
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,							SubjectRequirementSetId)
-values
-	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',	'DL_CITY_HAS_WONDER_REQUIREMENTS'),
-	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',		'MODIFIER_PLAYER_GRANT_SPY',			NULL);
-	
-insert or replace into ModifierArguments
-	(ModifierId,													Name,			Value)
-values
-	('CATHERINE_DE_MEDICI_ADD_SPY_CAPACITY',		'ModifierId',	'UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER');
-	('UNIQUE_LEADER_FOR_CHATEAU_AND_WONDER',						'Amount',		1);*/

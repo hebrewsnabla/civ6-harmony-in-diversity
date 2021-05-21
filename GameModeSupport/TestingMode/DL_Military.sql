@@ -24,6 +24,7 @@ update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSU
 update GlobalParameters set Value = 25 where Name = 'EXPERIENCE_PROMOTE_HEALED';
 update GlobalParameters set Value = 2 where Name = 'PILLAGE_MOVEMENT_COST';
 
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_FISHERY';
 update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
 -- strategic resources

@@ -866,25 +866,3 @@ insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
 
 insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
 	select 'ZIGGURAT_' || EraType,	'REQUIRES_PLAYER_IS_' || EraType 	from Eras where EraType != 'ERA_ANCIENT';
-
---CATHERINE_DE_MEDICI
-/*insert or replace into RequirementSets
-	(RequirementSetId,								RequirementSetType)
-values
-	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,								RequirementId)
-values
-	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_CHATEAU'),
-	('CITY_HAS_CHATEAU_AND_WONDER',					'REQUIRES_CITY_HAS_WONDER');
-
-insert or replace into Requirements
-	(RequirementId,									RequirementType)
-values
-	('REQUIRES_CITY_HAS_CHATEAU',					'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES');
-
-insert or replace into RequirementArguments
-	(RequirementId,						Name,				Value)
-values
-	('REQUIRES_CITY_HAS_CHATEAU',		'ImprovementType',	'IMPROVEMENT_CHATEAU');*/

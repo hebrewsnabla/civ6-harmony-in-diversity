@@ -6,6 +6,8 @@ values
     ("LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "When adjacent to an enemy city, units do full damage to the city's Walls."),
     ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}-tile regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
+    ("LOC_TURNS_BEFORE_DESTROY_HD",                                           "Completely destroy after {1_num} turns"),
+    ("LOC_CANNOT_REMOVE_FEATURE_USING_RECONS",                                "Cannot remove features using Recon units"),
     ("LOC_VIZSOURCE_CHANCERY",                                                "Built Building Chancery"),
     ("LOC_VIZSOURCE_ACTION_CHANCERY",                                         "Build Building Chancery"),
     ("LOC_GOSSIP_SOURCE_CHANCERY",                                            "Your officier from Chancery informed that "),
@@ -79,17 +81,24 @@ values
     ("LOC_DISTRICT_River_HANSA_Production",                                   "+{1_num} [ICON_Production] Production from adjacent river."),
     ("LOC_DISTRICT_Harbor_HANSA_Production",                                  "+{1_num} [ICON_Production] Production from adjacent Harbor {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_RoyalDock_HANSA_Production",                               "+{1_num} [ICON_Production] Production from adjacent RoyalDock {1_Num : plural 2?district; other?districts;}."),
-    ("LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}.");
+    ("LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
+    ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "circuses and bread"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "circuses and bread"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +2 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.")
+    ;
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-     ("zh_Hans_CN", "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "靠近敌人城市时，对城市城墙造成全额伤害。"),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "靠近敌人城市时，对城市城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}环辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_HAPPINESS_DELIGHTED_NAME",                                          "愉悦"),
+    ("zh_Hans_CN",  "LOC_TURNS_BEFORE_DESTROY_HD",                                           "将在{1_num}回合后被彻底摧毁"),
+    ("zh_Hans_CN",  "LOC_CANNOT_REMOVE_FEATURE_USING_RECONS",                                "侦察类单位不能移除地貌"),
     ("zh_Hans_CN",  "LOC_VIZSOURCE_CHANCERY",                                                "建造了外交办"),
     ("zh_Hans_CN",  "LOC_VIZSOURCE_ACTION_CHANCERY",                                         "建造外交办"),
     ("zh_Hans_CN",  "LOC_GOSSIP_SOURCE_CHANCERY",                                            "外交办的官员获悉"),
@@ -163,7 +172,12 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_River_HANSA_Production",                                   "+{1_num} [ICON_Production] 生产力来自相邻河流。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_Harbor_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的港口。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_RoyalDock_HANSA_Production",                               "+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的U型港。");
+    ("zh_Hans_CN",  "LOC_DISTRICT_Cothon_HANSA_Production",                                  "+{1_num} [ICON_Production] 生产力来自相邻的U型港。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+1。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。[NEWLINE][NEWLINE]需要先建成“娱乐设施”区域。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "马戏与面包"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "马戏与面包"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+2。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。")
+    ;
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

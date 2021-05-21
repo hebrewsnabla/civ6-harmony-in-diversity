@@ -36,10 +36,11 @@ local m_ShouldUpdateBestImprovement = false;
 -- Overrides
 -- =================================================================================
 function BuildActionModHook(instance:table, action:table)
-    -- Is this the "build improvement" action and the player and unit is valid?
-    if action.userTag == UnitOperationTypes.BUILD_IMPROVEMENT
-        and g_selectedPlayerId ~= nil and g_selectedPlayerId ~= -1
-        and g_UnitId ~= nil and g_UnitId ~= -1 then
+    -- Is the player and unit is valid?
+    if g_selectedPlayerId ~= nil and g_selectedPlayerId ~= -1
+            and g_UnitId ~= nil and g_UnitId ~= -1 then
+        -- Is this the "build improvement" action
+        if action.userTag == UnitOperationTypes.BUILD_IMPROVEMENT then
             if action.IconId == "ICON_IMPROVEMENT_FARM" then
                 local player = Players[g_selectedPlayerId];
                 local unit =  player:GetUnits():FindID(g_UnitId);
@@ -64,8 +65,22 @@ function BuildActionModHook(instance:table, action:table)
                     m_ShouldUpdateBestImprovement = false;
                 end
             end
+        end
+        -- Is this the "remove feature" action
+        if action.userTag == UnitOperationTypes.REMOVE_FEATURE then
+            local player = Players[g_selectedPlayerId];
+            local unit =  player:GetUnits():FindID(g_UnitId);
+            if unit ~= nil then
+                local unitInfo = GameInfo.Units[unit:GetUnitType()]
+                if unitInfo ~= nil then
+                    if unitInfo.PromotionClass == 'PROMOTION_CLASS_RECON' then
+                        action.Disabled = true;
+                        action.helpString = Locale.Lookup("LOC_CANNOT_REMOVE_FEATURE_USING_RECONS");
+                    end
+                end
+            end
+        end
     end
-
     BASE_BuildActionModHook(instance, action);
 end
 
@@ -106,6 +121,32 @@ function OnUnitActionClicked( actionType:number, actionHash:number, currentMode:
 end
 
 function AddActionButton(instance:table, action:table)
+    if action.IconId == 'ICON_UNITOPERATION_HARVEST_RESOURCE' then
+        local pSelectedUnit = UI.GetHeadSelectedUnit();
+        local owner = pSelectedUnit:GetOwner();
+        local player = Players[owner];
+        if pSelectedUnit:GetUnitType() == GameInfo.Units['UNIT_BUILDER'].Index then
+            -- NOTE: GetX and GetY may not work in UI environment.
+            -- local x = pSelectedUnit:GetX()
+            -- local y = pSelectedUnit:GetY()
+            local plotID = pSelectedUnit:GetPlotId();
+            local plot = Map.GetPlotByIndex(plotID);
+            local r = plot:GetResourceType();
+            -- print(r, plot:GetX(), plot:GetY())
+            if r ~= -1 then
+                local resource = GameInfo.Resources[r];
+                if resource ~= nil then
+                    if (resource.ResourceClassType == 'RESOURCECLASS_STRATEGIC') then
+                        if not player:GetResources():IsResourceVisible(r) then
+                            print('hide harvest resource: ', resource.ResourceType);
+                            instance.UnitActionButton:SetHide(true);
+                            return;
+                        end
+                    end
+                end
+            end
+        end
+    end
     if action.IconId == 'ICON_UNITCOMMAND_ACTIVATE_GREAT_PERSON' then
         local pSelectedUnit = UI.GetHeadSelectedUnit();
         local individual = pSelectedUnit:GetGreatPerson():GetIndividual();

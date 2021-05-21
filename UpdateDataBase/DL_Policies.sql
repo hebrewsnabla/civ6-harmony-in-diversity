@@ -47,6 +47,7 @@ delete from Policies where PolicyType = 'POLICY_PROPAGANDA';
 delete from Policies where PolicyType = 'POLICY_NUCLEAR_ESPIONAGE';
 delete from Policies where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
 delete from Policies where PolicyType = 'POLICY_COMMUNICATIONS_OFFICE';
+delete from Policies where PolicyType = 'POLICY_FUTURE_VICTORY_CULTURE';
 
 update ModifierArguments set Value = 100 where ModifierID = 'RAID_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGEDISTRICT';

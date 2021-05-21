@@ -11,8 +11,8 @@ update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where 
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
 update Technologies set Description = 'LOC_TECH_ARCHERY_DESCRIPTION' where TechnologyType ='TECH_ARCHERY';	
 -- 
-update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
-update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
+--update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
+--update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DL_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_DL_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
@@ -22,6 +22,7 @@ update Civics set Description = 'LOC_CIVIC_FEUDALISM_DL_DESCRIPTION' where Civic
 update Civics set Description = 'LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
 update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
+update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY';
 
 --------------------------------------------------------------------------------
 -- Buildings
