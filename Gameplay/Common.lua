@@ -75,6 +75,17 @@ Utils.CreateBuilding = function(playerID, cityID, buildingID)
     end
 end
 
+Utils.SetImprovementType = function(plotID, ImprovementID, OwnerID)
+    local plot = Map.GetPlotByIndex(plotID)
+    ImprovementBuilder.SetImprovementType(plot, ImprovementID, OwnerID)
+end
+
+Utils.SetPlotProperty = function(plotID, key, value)
+    local plot = Map.GetPlotByIndex(plotID)
+    print(plot:GetX(), plot:GetY(), plot)
+    plot:SetProperty(key, value)
+end
+
 Utils.SetPlayerProperty = function(playerID, key, value)
     local player = Players[playerID]
     player:SetProperty(key, value)
