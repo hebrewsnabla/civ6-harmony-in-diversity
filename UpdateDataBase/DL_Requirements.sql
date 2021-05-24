@@ -636,11 +636,11 @@ select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_HIGH_DIFFI
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_' || EraType from Eras;
 
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
-select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIREMENTSET_TEST_ALL' from Eras;
+-- insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+-- select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIREMENTSET_TEST_ALL' from Eras;
 
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
-select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_AI' from Eras;
+-- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+-- select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_AI' from Eras;
 
 insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIREMENTSET_TEST_ALL'
