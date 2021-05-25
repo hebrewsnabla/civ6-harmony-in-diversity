@@ -499,7 +499,7 @@
     </AddGameplayScripts>
 
     <ImportFiles id="ConciseUICityStates" criteria="Expansion2">
-      <Properties><LoadOrder>15950</LoadOrder></Properties>
+      <Properties><LoadOrder>250</LoadOrder></Properties>
       <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
       <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
       <File>ThirdParty/ConciseUICityStates/citystates.lua</File>

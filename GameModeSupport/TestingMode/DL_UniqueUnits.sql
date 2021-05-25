@@ -113,7 +113,7 @@ update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 ------ UNIT_PERSIAN_CATAPHRACT
 -- 努比亚
-update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 17, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_NUBIAN_PITATI';
+update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 17, RangedCombat = 27, StrategicResource = NULL where UnitType = 'UNIT_NUBIAN_PITATI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NUBIAN_PITATI';
 ------ UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT
 -- 祖鲁
