@@ -127,6 +127,8 @@ values
 	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_SCIENCE',	1),
 	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_GOLD',		-1);
 
+delete from Building_CitizenYieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
+
 update Buildings set CitizenSlots = 1 
 	where BuildingType = 'BUILDING_GOV_TALL'
  	or BuildingType = 'BUILDING_GOV_WIDE'

@@ -738,6 +738,10 @@
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
       <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
     </UpdateDatabase>
+    <UpdateText id="Testing_update_text" criteria="Testing_Mode_Expansion2">
+      <Properties><LoadOrder>18101</LoadOrder></Properties>
+      <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
+    </UpdateText>
     <!-- Tech -->
     <UpdateDatabase id="TechTest_update" criteria="TechTest_Mode_Expansion2">
       <Properties><LoadOrder>18200</LoadOrder></Properties>
@@ -779,6 +783,7 @@
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
+    <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
     <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TechMode/DL_Techs.sql</File>
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
