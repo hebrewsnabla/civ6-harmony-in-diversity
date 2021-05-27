@@ -63,12 +63,13 @@ values
 	-- increase faith + 1
 	-- harbor
 	('BUILDING_LIGHTHOUSE',					'YIELD_FOOD',		1),
-	('BUILDING_LIGHTHOUSE',					'YIELD_GOLD',		2),
+	('BUILDING_LIGHTHOUSE',					'YIELD_GOLD',		-1),
 	-- ('BUILDING_SHIPYARD',				'YIELD_FOOD',		1),
-	('BUILDING_SHIPYARD',					'YIELD_GOLD',		2),
+	('BUILDING_SHIPYARD',					'YIELD_PRODUCTION',	1),
+	('BUILDING_SHIPYARD',					'YIELD_GOLD',		-1),
 	-- harbor: third level
-	('BUILDING_SEAPORT',					'YIELD_FOOD',		1),
-	('BUILDING_SEAPORT',					'YIELD_GOLD',		2),
+	--('BUILDING_SEAPORT',					'YIELD_FOOD',		1),
+	('BUILDING_SEAPORT',					'YIELD_GOLD',		3),
 	-- encampment
 	('BUILDING_BARRACKS',					'YIELD_PRODUCTION', 1),
 	('BUILDING_BARRACKS',					'YIELD_GOLD',		-1),

@@ -123,3 +123,26 @@ insert or replace into UnitAbilityModifiers
 values
     ('ABILITY_KILL_GIVE_GREAT_GENERAL_POINTS',              'KILL_GIVE_GREAT_GENERAL_POINTS_MODIFIER'),
     ('ABILITY_KILL_GIVE_GREAT_ADMIRAL_POINTS',              'KILL_GIVE_GREAT_ADMIRAL_POINTS_MODIFIER');
+
+--大英送船不消耗战略
+/*delete from TraitModifiers where TraitType = 'TRAIT_LEADER_PAX_BRITANNICA' and ModifierId = 'TRAIT_ROYAL_NAVY_DOCKYARD_NAVAL_UNIT';
+
+insert or replace into DistrictModifiers 
+    (DistrictType,                      ModifierId) 
+values
+    ('DISTRICT_ROYAL_NAVY_DOCKYARD',    'TRAIT_ROYAL_NAVY_DOCKYARD_NAVAL_UNIT_RESOURCE_FREE');
+
+insert or replace into Modifiers
+	(ModifierId,									        ModifierType,                                           RunOnce,    Permanent)
+values
+    ('TRAIT_ROYAL_NAVY_DOCKYARD_NAVAL_UNIT_RESOURCE_FREE',  'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',  1,          1);
+
+insert or replace into ModifierArguments
+	(ModifierId,									        Name,				Value)
+values
+    ('TRAIT_ROYAL_NAVY_DOCKYARD_NAVAL_UNIT_RESOURCE_FREE',  'ModifierId',       'HIPPODROME_RESOURCE_FREE');*/
+
+insert or replace into ModifierArguments
+	(ModifierId,									        Name,				Value)
+values
+    ('TRAIT_ROYAL_NAVY_DOCKYARD_NAVAL_UNIT',                'ModifierId',       'HIPPODROME_RESOURCE_FREE');

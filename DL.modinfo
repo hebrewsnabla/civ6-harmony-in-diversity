@@ -736,6 +736,7 @@
       <File>GameModeSupport/TestingMode/DL_Units.sql</File>
       <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
+      <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
     </UpdateDatabase>
     <!-- Tech -->
     <UpdateDatabase id="TechTest_update" criteria="TechTest_Mode_Expansion2">
@@ -777,6 +778,7 @@
     <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
     <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TechMode/DL_Techs.sql</File>
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
