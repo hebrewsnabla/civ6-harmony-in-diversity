@@ -22,8 +22,8 @@ insert or replace into Modifiers
 	(ModifierId,									        ModifierType,                                       SubjectRequirementSetId)
 values
     --melee
-	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',        'REQUIREMENT_UNIT_IS_MELEE'),
-    ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',        'REQUIREMENT_UNIT_IS_MELEE'),
+	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',        'UNIT_IS_MELEE_REQUIREMENTS'),
+    ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',        'UNIT_IS_MELEE_REQUIREMENTS'),
     ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'MELEE_FOREST_AND_JUNGLE_REQUIREMENTS')
     ;
 
@@ -109,7 +109,7 @@ values
     ('BATTLE_LINE_COMBAT',                                  'Preview',	'+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --ranged
     ('RANGED_GARRISON_DISTRICT_BONUS',					    'Preview',	'+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',           'Preview',	'+{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
+    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',           'Preview',	'{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                       'Preview',	'+{1_Amount} {LOC_PROMOTION_SNIPER_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('SUPPRESSION_DEFNECE_BONUS',                           'Preview',	'+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',     'Preview',	'+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
@@ -202,7 +202,7 @@ values
     --melee
 	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'Amount',	    7),
     ('BATTLE_LINE_COMBAT',                                          'Amount',	    2),
-    ('GARRISON_LOYALTY_BONUS',                                      'Amount',	    2),
+    ('GARRISON_LOYALTY_BONUS',                                      'Amount',	    5),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',	    7),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',	    10),
     ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',             'Amount',	    10)
