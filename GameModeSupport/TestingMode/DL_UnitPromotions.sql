@@ -8,8 +8,8 @@ insert or replace into TechnologyModifiers
 	(TechnologyType,										ModifierId)
 values
     --melee
-	('TECH_SHIPBUILDING',							        'MELEE_AMPHIBIOUS_UPGRADE')
-    ;
+	('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_RIVERS'),
+    ('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_SHORES');
 
 insert or replace into CivicModifiers
 	(CivicType,										        ModifierId)
@@ -22,7 +22,8 @@ insert or replace into Modifiers
 	(ModifierId,									        ModifierType,                                       SubjectRequirementSetId)
 values
     --melee
-	('MELEE_AMPHIBIOUS_UPGRADE',				            'MODIFIER_PLAYER_UNITS_GRANT_PROMOTION',            NULL),
+	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',        'REQUIREMENT_UNIT_IS_MELEE'),
+    ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',        'REQUIREMENT_UNIT_IS_MELEE'),
     ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'MELEE_FOREST_AND_JUNGLE_REQUIREMENTS')
     ;
 
@@ -30,7 +31,8 @@ insert or replace into ModifierArguments
 	(ModifierId,									        Name,		        Value)
 values
     --melee
-	('MELEE_AMPHIBIOUS_UPGRADE',					        'PromotionType',	'PROMOTION_AMPHIBIOUS'),
+	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'Ignore',           1),
+    ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'Ignore',           1),
     ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'Amount',           3)
     ;
 
@@ -108,7 +110,7 @@ values
     --ranged
     ('RANGED_GARRISON_DISTRICT_BONUS',					    'Preview',	'+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',           'Preview',	'+{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
-    ('SNIPER_BONUS_VS_WOUNDED_UNITS',                       'Preview',	'+{1_Amount} {LOC_PROMOTION_SNIPER_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}',
+    ('SNIPER_BONUS_VS_WOUNDED_UNITS',                       'Preview',	'+{1_Amount} {LOC_PROMOTION_SNIPER_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('SUPPRESSION_DEFNECE_BONUS',                           'Preview',	'+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',     'Preview',	'+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 
@@ -125,14 +127,16 @@ update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VSS_RA
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_INCENDIARIES';
-update UnitPromotions set Level = 2 and Column = 3 where UnitPromotionType = 'PROMOTION_SUPPRESSION';
-update UnitPromotions set Level = 3 and Column = 1 where UnitPromotionType = 'PROMOTION_ARROW_STORM';
+update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_SUPPRESSION';
+update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_ARROW_STORM';
 
 delete from UnitPromotionPrereqs 
+    --melee
 where  UnitPromotion = 'PROMOTION_AMPHIBIOUS' 
     or PrereqUnitPromotion = 'PROMOTION_AMPHIBIOUS'
     or UnitPromotion = 'PROMOTION_ZWEIHANDER' 
-    or PrereqUnitPromotion = 'PROMOTION_ZWEIHANDER',
+    or PrereqUnitPromotion = 'PROMOTION_ZWEIHANDER'
+    --ranged
     or UnitPromotion = 'PROMOTION_ARROW_STORM' 
     or PrereqUnitPromotion = 'PROMOTION_ARROW_STORM'
     or UnitPromotion = 'PROMOTION_INCENDIARIES' 
@@ -153,7 +157,7 @@ values
     ('PROMOTION_SNIPER',        'PROMOTION_VOLLEY'),
     ('PROMOTION_SNIPER',        'PROMOTION_GARRISON'),
     ('PROMOTION_SUPPRESSION',   'PROMOTION_VOLLEY'),
-    ('PROMOTION_SUPPRESSION',   'PROMOTION_GARRISON').
+    ('PROMOTION_SUPPRESSION',   'PROMOTION_GARRISON'),
     ('PROMOTION_ARROW_STORM',   'PROMOTION_SNIPER'),
     ('PROMOTION_EMPLACEMENT',   'PROMOTION_SUPPRESSION'),
     ('PROMOTION_EXPERT_MARKSMAN',   'PROMOTION_ARROW_STORM');
@@ -186,7 +190,7 @@ values
 	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
     ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     --ranged
-    ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_SINGLE_CITY_ADJUST_IDENTITY_PER_TURN',    'PLOT_IS_CITY_CENTER',  NULL),
+    ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
     ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS')
@@ -196,10 +200,10 @@ insert or replace into ModifierArguments
 	(ModifierId,									                Name,		    Value)
 values
     --melee
-	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITES',		            'Amount',	    7),
+	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'Amount',	    7),
     ('BATTLE_LINE_COMBAT',                                          'Amount',	    2),
     ('GARRISON_LOYALTY_BONUS',                                      'Amount',	    2),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',	    7),
-    ('MELEE_DEFNECE_BONUS',                                         'Amount',	    10),
+    ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',	    10),
     ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',             'Amount',	    10)
     ;

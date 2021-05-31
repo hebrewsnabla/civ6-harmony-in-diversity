@@ -538,3 +538,46 @@ insert or replace into Improvement_Adjacencies
 values
 	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
 	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+--India
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectStackLimit)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				1),
+	('STEPWELL_AMENITY_MAX_ONE',            'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',   1);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                     Name,              Value)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
+    ('STEPWELL_AMENITY_MAX_ONE',                  	'Amount',           1);
+
+--Gandhi
+insert or replace into TraitModifiers 
+	(TraitType,					ModifierId)
+values
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDGROWTH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDFAITH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDAMENITY');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,											SubjectRequirementSetId)
+values
+	('PEACE_ADDGROWTH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',			'PLAYER_IS_AT_PEACE'),
+	('PEACE_ADDFAITH',        	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',   	'PLAYER_IS_AT_PEACE'),
+	('PEACE_ADDAMENITY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'PLAYER_IS_AT_PEACE');
+
+insert or replace into ModifierArguments
+    (ModifierId,                Name,           Value)
+values
+	('PEACE_ADDGROWTH',			'Amount',		15),
+	('PEACE_ADDFAITH',        	'YieldType',   	'YIELD_FAITH'),
+	('PEACE_ADDFAITH',        	'Amount',   	15),
+	('PEACE_ADDAMENITY',		'Amount',   	1);
