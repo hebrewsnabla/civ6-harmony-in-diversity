@@ -1,7 +1,7 @@
 -------------------------------------
 --     Civilization Adjustment     --
 -------------------------------------
-
+------------------------------------------------------------------------------------------------------------------------
 -- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
 --additonal theater project
@@ -128,6 +128,7 @@ values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Origin',		1),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Amount',		1);
 
+------------------------------------------------------------------------------------------------------------------
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAJANS_COLUMN_TRAIT', 'TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION');
@@ -141,7 +142,7 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 -- Ethiopia
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_CULTURE_HILLS' and Name = 'Amount';
-
+--------------------------------------------------------------------------------------------------------------------
 --Egypt
 --学院剧院相邻河边大加成
 --建造完奇观以后送工人
@@ -211,10 +212,11 @@ update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_G
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_OFFER_FOOD' and Name = 'Amount';
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
 
+---------------------------------------------------------------------------------------------------------------------------
 -- Gaul can now build all districts near City Center
 delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
 
-
+-----------------------------------------------------------------------------------------------------------------------------
 -- Hungary
 update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
 
@@ -462,6 +464,7 @@ values
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');
 
+--------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
 update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
@@ -469,9 +472,11 @@ update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAP
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';
 
+---------------------------------------------------------------------------------------------------------------------------
 -- Spainish
 update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';
 
+---------------------------------------------------------------------------------------------------------------------------
 --Gilgamesh
 --Sumerian war cart can attack wall 
 insert or replace into TypeTags
@@ -520,6 +525,7 @@ values
 	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
 	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
 
+----------------------------------------------------------------------------------------------------------------------------------
 --France
 --Chateau
 update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
