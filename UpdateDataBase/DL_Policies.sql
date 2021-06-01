@@ -645,6 +645,7 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
+update ModifierArguments set Value = 2 where ModifierId = 'WISSELBANKEN_ALLIANCEPOINTS';	
 
 --四级政体允许使用任意三级政体专属卡
 insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)

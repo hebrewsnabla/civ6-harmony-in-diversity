@@ -87,7 +87,7 @@ values
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] Movement from War Department."),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] Movement from War Department."),
     -- Diplomatic Quarter
-    ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold."),
+    ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold. Alliance Points with all allies increase by an additional 0.5 per turn."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "+3 Influence Points per turn.  When this civilization captures or kills an enemy Spy, receive 50 [ICON_Science] Science for every level of the enemy Spy. "),
     -- Entertainment Complex
     ("LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
@@ -197,7 +197,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] 移动力来自作战部。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] 战斗力来自作战部。"),
     -- 外交区
-    ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%。所有盟友的同盟点数每回合额外增加0.5点。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_Science] 科技值。"),
     -- 娱乐区
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
