@@ -41,6 +41,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "此城市产出的 [ICON_Tourism] 宗教旅游业绩+100%。此城市所有冻土单元格产出的 [ICON_Food] 食物+2、[ICON_Production] 生产力+1、[ICON_Culture] 文化值+1。必须建在市中心旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHICHEN_ITZA_DESCRIPTION",                 "该城市所有雨林单元格+1 [ICON_Food] 食物，+2 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。必须建在雨林。"),
