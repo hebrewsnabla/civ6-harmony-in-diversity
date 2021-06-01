@@ -62,13 +62,16 @@ values
 	-- holy site: third level
 	-- increase faith + 1
 	-- harbor
-	('BUILDING_LIGHTHOUSE',					'YIELD_FOOD',		1),
-	('BUILDING_LIGHTHOUSE',					'YIELD_GOLD',		2),
+	('BUILDING_LIGHTHOUSE',					'YIELD_PRODUCTION', 1),
+	-- ('BUILDING_LIGHTHOUSE',					'YIELD_GOLD',		-1),
 	-- ('BUILDING_SHIPYARD',				'YIELD_FOOD',		1),
-	('BUILDING_SHIPYARD',					'YIELD_GOLD',		2),
+	('BUILDING_SHIPYARD',					'YIELD_FOOD',		1),
+	('BUILDING_SHIPYARD',					'YIELD_PRODUCTION',	1),
+	('BUILDING_SHIPYARD',					'YIELD_GOLD',		-2),
 	-- harbor: third level
-	('BUILDING_SEAPORT',					'YIELD_FOOD',		1),
-	('BUILDING_SEAPORT',					'YIELD_GOLD',		2),
+	('BUILDING_SEAPORT',					'YIELD_FOOD',		0),
+	('BUILDING_SEAPORT',					'YIELD_PRODUCTION',	2),
+	('BUILDING_SEAPORT',					'YIELD_GOLD',		-2),
 	-- encampment
 	('BUILDING_BARRACKS',					'YIELD_PRODUCTION', 1),
 	('BUILDING_BARRACKS',					'YIELD_GOLD',		-1),
@@ -125,6 +128,8 @@ values
 	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_CULTURE',	1),
 	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_SCIENCE',	1),
 	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',		'YIELD_GOLD',		-1);
+
+delete from Building_CitizenYieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
 
 update Buildings set CitizenSlots = 1 
 	where BuildingType = 'BUILDING_GOV_TALL'

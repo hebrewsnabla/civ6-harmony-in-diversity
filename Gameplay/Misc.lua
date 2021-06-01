@@ -14,10 +14,15 @@ end
 Events.PlayerEraScoreChanged.Add(OnPlayerEraScoreChanged)
 
 local m_FortID = GameInfo.Improvements['IMPROVEMENT_FORT'].Index;
-local m_WatchTowerID = GameInfo.Improvements['IMPROVEMENT_SAILOR_WATCHTOWER'].Index;
+local m_WatchTower = GameInfo.Improvements['IMPROVEMENT_SAILOR_WATCHTOWER'];
+local m_WatchTowerID = -1;
+if m_WatchTower ~= nil then
+    m_WatchTowerID = m_WatchTower.Index;
+end
 local PROP_IMPROVEMENT_PILLAGED_TURNS = "ImprovementsPillagedTurns";
 local needTurn = GlobalParameters.TURNS_BEFORE_DESTROY_AFTER_PILLAGE;
 
+-- Countdown for Pillaged Watchtower or Fort.
 GameEvents.OnGameTurnStarted.Add(function (currentTurn)
     local mapsize = GameInfo.Maps[Map.GetMapSize()];
     local iH = mapsize.GridHeight;
@@ -50,3 +55,13 @@ GameEvents.OnGameTurnStarted.Add(function (currentTurn)
         end
     end
 end);
+
+-- BUG
+-- Events.ImprovementAddedToMap.Add(function (iX, iY, improvementID, playerID)
+--     local plot = Map.GetPlotXY(iX, iY);
+--     -- The Wrong plot. 
+--     print(iX, iY, improvementID, playerID);
+--     if improvementID == m_FortID then
+--         plot:SetOwner(playerID);
+--     end
+-- end);

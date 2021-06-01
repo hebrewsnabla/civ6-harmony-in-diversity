@@ -76,7 +76,8 @@ values
     ("LOC_POLICY_CHIVALRY_DESCRIPTION",                                               "+30% [ICON_Production] Production toward Industrial era and earlier heavy and light cavalry units."),
     ("LOC_POLICY_MANEUVER_DESCRIPTION",                                               "+30% [ICON_Production] Production toward Ancient and Classical era heavy and light cavalry units."),
     ("LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION",                                        "+30% [ICON_Production] Production toward Ancient, Classical, Medieval, and Renaissance era melee, anti-cavalry, and ranged units."),
-    ("LOC_POLICY_AGOGE_DESCRIPTION",                                                  "+30% [ICON_Production] Production toward Ancient and Classical era melee, anti-cavalry, and ranged units.");
+    ("LOC_POLICY_AGOGE_DESCRIPTION",                                                  "+30% [ICON_Production] Production toward Ancient and Classical era melee, anti-cavalry, and ranged units."),
+    ("LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state provide +2 [ICON_Food] Food and +2 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional 0.5 per turn.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -156,5 +157,6 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_CHIVALRY_DESCRIPTION",                                               "为工业及更早时代的重型和轻型骑兵单位增加30%生产速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_MANEUVER_DESCRIPTION",                                               "为远古和古典时代的重型和轻型骑兵单位增加30%生产速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION",                                        "为远古、古典、中世纪和文艺复兴时代的近战、抗骑兵和远程单位增加30%生产速度。"),
-    ("zh_Hans_CN",  "LOC_POLICY_AGOGE_DESCRIPTION",                                                  "为远古和古典时代的近战、抗骑兵和远程单位增加30%生产速度。");
+    ("zh_Hans_CN",  "LOC_POLICY_AGOGE_DESCRIPTION",                                                  "为远古和古典时代的近战、抗骑兵和远程单位增加30%生产速度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "您通往盟友城市或旗下城邦的 [ICON_TradeRoute] 贸易路线为双边城市+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.5点。");
 

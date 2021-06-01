@@ -544,3 +544,56 @@ insert or replace into Improvement_Adjacencies
 values
 	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
 	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+--India
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('PLAYER_IS_CIVILIZATION_INDIA',		'PLAYER_IS_CIVILIZATION_INDIA');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('PLAYER_IS_CIVILIZATION_INDIA',		'PLAYER_IS_CIVILIZATION_INDIA');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				'PLAYER_IS_CIVILIZATION_INDIA',	1),
+	('STEPWELL_AMENITY_MAX_ONE',            'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',   NULL,							1);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                     Name,              Value)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
+    ('STEPWELL_AMENITY_MAX_ONE',                  	'Amount',           1);
+
+--Gandhi
+insert or replace into TraitModifiers 
+	(TraitType,					ModifierId)
+values
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDGROWTH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDFAITH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDAMENITY');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,											SubjectRequirementSetId)
+values
+	('PEACE_ADDGROWTH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADDFAITH',        	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',   	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADDAMENITY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                Name,           Value)
+values
+	('PEACE_ADDGROWTH',			'Amount',		15),
+	('PEACE_ADDFAITH',        	'YieldType',   	'YIELD_FAITH'),
+	('PEACE_ADDFAITH',        	'Amount',   	15),
+	('PEACE_ADDAMENITY',		'Amount',   	1);

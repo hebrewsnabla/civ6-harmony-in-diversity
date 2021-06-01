@@ -53,7 +53,7 @@ values
 
 update Improvements set Appeal = 2 where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
 
-insert or replace into ImprovementModifiers
+/*insert or replace into ImprovementModifiers
     (ImprovementType,                           ModifierId)
 values
     ('IMPROVEMENT_PAIRIDAEZA',                  'PAIRIDAEZA_AMENITY_MAX_ONE');
@@ -66,7 +66,7 @@ values
 insert into ModifierArguments
         (ModifierId,                                     Name,                Value)
 values
-        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);
+        ('PAIRIDAEZA_AMENITY_MAX_ONE',                  'Amount',             1);*/
 
 insert or replace into ModifierArguments 
     (ModifierId,                                Name,               Value) 

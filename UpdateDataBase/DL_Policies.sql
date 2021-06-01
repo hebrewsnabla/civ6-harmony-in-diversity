@@ -575,10 +575,10 @@ values
 	('POLICY_MINARET',				'GOVERNMENT_THEOCRACY'),
 	('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_COMMUNISM'),
 	('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DEMOCRACY'),
-	('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_FASCISM'),
-	('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_SYNTHETIC_TECHNOCRACY'),
-	('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DIGITAL_DEMOCRACY'),
-	('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_CORPORATE_LIBERTARIANISM');
+	('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_FASCISM');
+	--('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_SYNTHETIC_TECHNOCRACY'),
+	--('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DIGITAL_DEMOCRACY'),
+	--('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_CORPORATE_LIBERTARIANISM');
 
 --Democracy discount -25%
 --update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
@@ -647,9 +647,12 @@ update ModifierArguments set Value = 60 where Name = 'Amount' and
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';	
+update ModifierArguments set Value = 2 where ModifierId = 'WISSELBANKEN_ALLIANCEPOINTS';	
 
---集体主义合成砖家可用。
-insert or replace into Policy_GovernmentExclusives_XP2
-	(PolicyType,                    GovernmentType)
-values
-	('POLICY_COLLECTIVIZATION',     'GOVERNMENT_SYNTHETIC_TECHNOCRACY');
+--四级政体允许使用任意三级政体专属卡
+insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+select PolicyType,	'GOVERNMENT_SYNTHETIC_TECHNOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+select PolicyType,	'GOVERNMENT_DIGITAL_DEMOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+select PolicyType,	'GOVERNMENT_CORPORATE_LIBERTARIANISM' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
