@@ -107,6 +107,8 @@ update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackFo
 --allow to level 2 for beating barb
 updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 
+--double trade alliance points 
+updaTe GlobalParameters set Value = 2 where Name = 'ALLIANCE_POINTS_FOR_TRADE';
 
 -- The New Global Parameters.
 insert or replace into GlobalParameters
