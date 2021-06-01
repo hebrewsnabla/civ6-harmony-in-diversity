@@ -782,8 +782,9 @@
     <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
-    <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
+    <!-- 暂时不上线兵种改动，调试时请打开 -->
+    <!-- <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File> -->
+    <!-- <File>GameModeSupport/TestingMode/HD_Texts.sql</File> -->
     <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TechMode/DL_Techs.sql</File>
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
