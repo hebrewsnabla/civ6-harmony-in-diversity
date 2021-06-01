@@ -13,4 +13,7 @@
 --     ('IMPROVEMENT_FORT',    'RESOURCE_HORSES',      0),
 --     ('IMPROVEMENT_FORT',    'RESOURCE_OIL',         0);
 
-update Eras_XP1 set GameEraMinimumTurns = 15 where not EraType = 'ERA_FUTURE';
+-- update Eras_XP1 set GameEraMinimumTurns = 15 where not EraType = 'ERA_FUTURE';
+
+-- identity
+
