@@ -110,6 +110,9 @@ updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 --double trade alliance points 
 updaTe GlobalParameters set Value = 2 where Name = 'ALLIANCE_POINTS_FOR_TRADE';
 
+--research agreement time
+update ModifierArguments set Value = 10 where ModifierId = 'ALLIANCE_RESEARCH_AGREEMENT';
+
 -- The New Global Parameters.
 insert or replace into GlobalParameters
     (Name,                                              Value)

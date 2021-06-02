@@ -902,10 +902,10 @@ values
 	-- Worship
 
 -- x yield per follower
-update ModifierArguments set Value = 2 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 3 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'PerXItems';
-update ModifierArguments set Value = 3 where ModifierId = 'WORLD_CHURCH_CULTURE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
-update ModifierArguments set Value = 3 where ModifierId = 'CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 1 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 2 where ModifierId = 'WORLD_CHURCH_CULTURE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
+update ModifierArguments set Value = 2 where ModifierId = 'CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER_MODIFIER' and Name = 'PerXItems';
 -- x yield per city
 update ModifierArguments set Value = 3 where ModifierId = 'PILGRIMAGE_FAITH_CITY_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'CHURCH_PROPERTY_GOLD_CITY_MODIFIER' and Name = 'Amount';
@@ -946,7 +946,7 @@ values
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'BeliefYieldType',		'BELIEF_YIELD_PER_FOLLOWER'),
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'YieldType',			'YIELD_FAITH'),
 	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'Amount',				1),
-	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'PerXItems',			3),
+	('RELIGIOUS_UNITY_FAITH_FOLLOWER_MODIFIER',					'PerXItems',			2),
 	('LAY_MINISTRY_CULTURE_CITY',								'ModifierId',			'LAY_MINISTRY_CULTURE_CITY_MODIFIER'),
 	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'BeliefYieldType',		'BELIEF_YIELD_PER_CITY'),
 	('LAY_MINISTRY_CULTURE_CITY_MODIFIER',						'YieldType',			'YIELD_CULTURE'),

@@ -50,7 +50,7 @@ update Districts set CitizenSlots = 1
  	-- or DistrictType = 'DISTRICT_GOVERNMENT';	
 
 update District_CitizenYieldChanges set YieldChange = 2 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_FOOD';
-update District_CitizenYieldChanges set YieldChange = 0 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
+delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
 
 --make government plaza and diplomatic quarter citizen slot and citizen yield 2culture and 2science
 -- insert or replace into District_CitizenYieldChanges
