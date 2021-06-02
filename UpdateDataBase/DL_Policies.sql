@@ -35,8 +35,10 @@ update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADERO
 
 -- Remove effect: 25% less operation time for spy.
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
--- Remove the Machiavellisnism Policy Card
-delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
+-- Remove the Machiavellisnism Policy Card time reduction and 100% production boost now
+-- delete from Policies where PolicyType = 'POLICY_MACHIAVELLIANISM';
+delete from PolicyModifiers where ModifierID = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
+update ModifierArguments set Value = 100 where ModifierID = 'MACHIAVELLIANISM_SPYPRODUCTION' and Name = 'Amount ';
 delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
 delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';

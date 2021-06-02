@@ -340,6 +340,82 @@ insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)
 values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
 
+--hermitage
+-- update Building_GreatWorks set NumSlots = 3 where GreatWorkSlotType = 'GREATWORKSLOT_ART' and BuildingType = 'BUILDING_HERMITAGE';
+-- insert or replace into Building_GreatWorks (BuildingType, GreatWorkSlotType, NumSlots) values
+-- 	('BUILDING_HERMITAGE','GREATWORKSLOT_ARTIFACT',3);
+
+insert or replace into BuildingModifiers
+	(BuildingType,				ModifierId)
+values
+	('BUILDING_HERMITAGE',		'Auto_Theme_Hermitage'),
+	('BUILDING_HERMITAGE',		'Hermitage_THEATER_BUILDING-BOOST');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,RunOnce,Permanent)
+values
+	('Auto_Theme_Hermitage',				'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING',0,0),
+	('Hermitage_THEATER_BUILDING-BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name, 				Value)
+values
+	('Auto_Theme_Hermitage',				'BuildingType',		'BUILDING_HERMITAGE'),
+	('Hermitage_THEATER_BUILDING-BOOST',	'DistrictType',		'DISTRICT_THEATER'),
+	('Hermitage_THEATER_BUILDING-BOOST',	'Amount',			50);
+
+-- sydney opera house
+
+insert or replace into BuildingModifiers
+	(BuildingType, 					ModifierId)
+values
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_WONDER_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE',	'OPERAHOUSE_ADD_MUSIC_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_WRITING_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_ARTIFACTS_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_RELIC_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_LANDSCAPE_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_RELIGIOUS_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_PORTRAIT_TOURISM'),
+	('BUILDING_SYDNEY_OPERA_HOUSE', 'OPERAHOUSE_ADD_SCULPTURE_TOURISM');
+	
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,							SubjectRequirementSetId)
+values
+	('OPERAHOUSE_ADD_WONDER_TOURISM',  	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_MUSIC_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_WRITING_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_ARTIFACTS_TOURISM','MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_RELIC_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_LANDSCAPE_TOURISM','MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_RELIGIOUS_TOURISM','MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_PORTRAIT_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED'),
+	('OPERAHOUSE_ADD_SCULPTURE_TOURISM','MODIFIER_PLAYER_CITIES_ADJUST_TOURISM','CITY_HAS_GOVERNOR_FOUNDED');
+
+insert or replace into ModifierArguments 
+	(ModifierId,							Name,					Value) 
+values 
+	('OPERAHOUSE_ADD_WONDER_TOURISM',		'BoostsWonders',		1),
+	('OPERAHOUSE_ADD_WONDER_TOURISM',		'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_RELIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
+	('OPERAHOUSE_ADD_RELIC_TOURISM',		'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_ARTIFACTS_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_WRITING'),	
+	('OPERAHOUSE_ADD_ARTIFACTS_TOURISM',	'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_SCULPTURE_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_SCULPTURE'),
+	('OPERAHOUSE_ADD_SCULPTURE_TOURISM',	'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_PORTRAIT_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_PORTRAIT'),
+	('OPERAHOUSE_ADD_PORTRAIT_TOURISM',		'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_ARTIFACTS_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_ARTIFACT'),
+	('OPERAHOUSE_ADD_ARTIFACTS_TOURISM',	'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_RELIGIOUS_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_RELIGIOUS'),
+	('OPERAHOUSE_ADD_RELIGIOUS_TOURISM',	'ScalingFactor',		200),	
+	('OPERAHOUSE_ADD_LANDSCAPE_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
+	('OPERAHOUSE_ADD_LANDSCAPE_TOURISM',	'ScalingFactor',		200),
+	('OPERAHOUSE_ADD_MUSIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_MUSIC'),
+	('OPERAHOUSE_ADD_MUSIC_TOURISM',		'ScalingFactor',		300);
+
+-- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
+-- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
 -- Adjust the Cost.
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
 update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
@@ -369,7 +445,7 @@ update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
 update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';

@@ -46,15 +46,15 @@ update Building_GreatWorks set
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_GOV_CULTURE';
 
---HERMITAGE
---不同作者
-update Building_GreatWorks set 
-	ThemingUniquePerson = 1 ,
-	ThemingSameObjectType = 0 ,
-	ThemingSameEras = 0 ,
-	ThemingTourismMultiplier = 100 ,
-	ThemingYieldMultiplier = 100
-where BuildingType = 'BUILDING_HERMITAGE';
+-- --HERMITAGE
+-- --不同作者
+-- update Building_GreatWorks set 
+-- 	ThemingUniquePerson = 1 ,
+-- 	ThemingSameObjectType = 0 ,
+-- 	ThemingSameEras = 0 ,
+-- 	ThemingTourismMultiplier = 100 ,
+-- 	ThemingYieldMultiplier = 100
+-- where BuildingType = 'BUILDING_HERMITAGE';
 
 --SYDNEY_OPERA_HOUSE
 --同时代
