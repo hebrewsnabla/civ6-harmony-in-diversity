@@ -248,7 +248,7 @@ values
 	('DAOGUAN_ADDGREATWRITERPOINTS',		'GreatPersonClassType',											'GREAT_PERSON_CLASS_WRITER'),
 	('DAOGUAN_ADDGREATWRITERPOINTS',		'Amount',														2),
 	('DAOGUAN_ADDGREATMUSICIANPOINTS',		'GreatPersonClassType',											'GREAT_PERSON_CLASS_MUSICIAN'),
-	('DAOGUAN_GREATMUSICIANPOINTS',			'Amount',														2),
+	('DAOGUAN_ADDGREATMUSICIANPOINTS',		'Amount',														2),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'GreatPersonClassType',											'GREAT_PERSON_CLASS_ARTIST'),
 	('DAOGUAN_ADDGREATARTISTPOINTS',		'Amount',														2);
 
