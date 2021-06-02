@@ -175,7 +175,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ARMORY_EXPANSION2_DESCRIPTION",                "该城市中训练的所有陆地单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。为本城所有的 [ICON_Resource_Niter] 硝石、 [ICON_Resource_Oil] 石油资源+1 [ICON_Production] 生产力。"),
     -- 商业
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION",                "+1 [ICON_TradeRoute] 贸易路线容量。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "波兰特色建筑。从此城开始的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Production] 生产力；国内 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。+1 [ICON_TradeRoute] 贸易路线容量。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "波兰特色建筑。从此城开始的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Production] 生产力；国内 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。+1 [ICON_TradeRoute] 贸易路线容量。本城的奢侈资源+2 [ICON_gold] 金币和+1 [Icon_production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BANK_DESCRIPTION",                             "本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "本城 [ICON_GOLD] 金币+5%。通电后额外为本城+5% [ICON_GOLD] 金币。"),
