@@ -158,7 +158,7 @@ values
     ("zh_Hans_CN",  "LOC_WON_CL_KINKAKU_DESCRIPTION",                                                                "6个单元格内的圣地的 [ICON_Faith] 信仰值相邻加成也提供 [ICON_Production] 生产力，6个单元格内的军营+2 [ICON_Culture] 文化值。必须建在靠近陆地的湖泊单元格。"),
     ("zh_Hans_CN",  "LOC_WON_CL_KINKAKU_QUOTE",                                                                      "我已不再在瞩目的风景和事物中寻找金阁的幻影了。金阁渐渐变成深刻、坚固、实在的物体。它的一根根柱子、花格子窗、屋顶、屋顶尖上的凤凰清晰地浮现在我的眼前，彷彿伸手可及似的。它的纤巧的细部和复杂的全貌相互呼应，只要取出任何一部分，金阁的全貌就会响起来，恍如想起音乐的一小节，整个乐章就会流泻出来。[NEWLINE]——三岛由纪夫"),
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_NAME",                                                                 "帝国大厦"),
-    ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_DESCRIPTION",                                                          "该城市+20% [ICON_GOLD] 金币，并为该城市的每座奇观提供+6 [ICON_GOLD] 金币和+50% [ICON_Tourism] 旅游业绩。必须建在靠近市中心的平原上。"),
+    ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_DESCRIPTION",                                                          "该城市+20% [ICON_GOLD] 金币，该城市的每座奇观+6 [ICON_GOLD] 金币和且奇观的 [ICON_Tourism] 旅游业绩+50%。必须建在靠近市中心的平原上。"),
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_QUOTE",                                                                "当我在纽约，我看到帝国大厦，感到就像它属于我……还是反之亦然？[NEWLINE]——菲伊·雷"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_NAME",                                                                 "加拿大国家电视塔"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_DESCRIPTION",                                                          "为每座拥有博物馆建筑的城市提供广播中心。建成时所有城市获得2 [ICON_Citizen] 人口，所有城市+2 [ICON_Housing] 住房和1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在与本城的娱乐中心相邻的单元格上。"),
