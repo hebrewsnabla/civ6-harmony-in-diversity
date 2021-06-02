@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                     Text)
 values
+    ("LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "Must be built on the Coast, adjacent to land and a Harbor district.+100% [Icon_Tourism] Tourism (extra 100% [Icon_Tourism] Tourism for Music )from all kinds of Great works and Wonders if this city has Governor established and is founded by the player."),
     ("LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "+50% [ICON_PRODUCTION] towards  all Buildings in Theater Square. Aotomatically themed when all slots are filled."),
     ("LOC_BUILDING_PETRA_DESCRIPTION",                        "+3 [ICON_Food] Food, +2 [ICON_Gold] Gold, and +1 [ICON_Production] Production on all Desert tiles for this city (non-Floodplains). Must be built on Desert or Floodplains without Hills."),
     ("LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "+100% [ICON_Tourism] Religious Tourism from this city. +2 [ICON_Food] Food, +1 [ICON_Production] Production, and +1 [ICON_Culture] Culture on all Tundra tiles for this city. Must be built adjacent to a City Center."),
@@ -42,6 +43,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市，城市内的奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "建造剧院建筑时加速50%。当所有槽位填满时自动获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。"),
