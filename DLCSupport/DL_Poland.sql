@@ -69,6 +69,7 @@ delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
 insert or replace into TraitModifiers
     (TraitType,                                     ModifierId)
 values
+    ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_ALLY_COMBAT_STRENGTH'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTEGOLDTOALLY'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTESCIENCETOALLY'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTECULTURETOALLY'),
@@ -85,6 +86,11 @@ values
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTESCIENCEFROMSUZERAIN'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTECULTUREFROMSUZERAIN'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',               'POLAND_TRADEROUTEFAITHFROMSUZERAIN');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                   OwnerRequirementSetId)
+values
+    ('POLAND_ALLY_COMBAT_STRENGTH',         'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH', 'HD_PLAYER_HAS_ALLY_REQUIREMENTS');
 
 insert or replace into Modifiers
     (ModifierId,                            ModifierType)
@@ -109,6 +115,7 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                            Name,           Value)
 values
+    ('POLAND_ALLY_COMBAT_STRENGTH',         'Amount',       4),
     ('POLAND_TRADEROUTEGOLDTOALLY',         'YieldType',    'YIELD_GOLD'),
     ('POLAND_TRADEROUTEGOLDTOALLY',         'Amount',       2),
     ('POLAND_TRADEROUTESCIENCETOALLY',      'YieldType',    'YIELD_SCIENCE'),
@@ -142,6 +149,9 @@ values
     ('POLAND_TRADEROUTEFAITHFROMSUZERAIN',  'YieldType',    'YIELD_FAITH'),
     ('POLAND_TRADEROUTEFAITHFROMSUZERAIN',  'Amount',       2);
 
+insert or replace into ModifierStrings (ModifierId, Context, Text)
+values ('POLAND_ALLY_COMBAT_STRENGTH', 'Preview', 'LOC_POLAND_ALLY_COMBAT_STRENGTH_PREVIEW_TEXT');
+
 --sukinennice
 insert or replace into BuildingModifiers
     (BuildingType,                      ModifierId)
@@ -150,10 +160,10 @@ values
     ('BUILDING_SUKIENNICE',     'SUKINENNICE_LUXUARY_PRODUCTION');      
 
 insert or replace into Modifiers
-    (ModifierId,                    ModifierType,           SubjectRequirementSetId)
+    (ModifierId,                        ModifierType,                                   SubjectRequirementSetId)
 values
-    ('SUKINENNICE_LUXUARY_GOLD',        'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD','PLOT_HAS_LUXURY_REQUIREMENTS'),
-    ('SUKINENNICE_LUXUARY_PRODUCTION',  'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD','PLOT_HAS_LUXURY_REQUIREMENTS');
+    ('SUKINENNICE_LUXUARY_GOLD',        'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',  'HD_PLOT_HAS_LUXURY_REQUIREMENTS'),
+    ('SUKINENNICE_LUXUARY_PRODUCTION',  'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',  'HD_PLOT_HAS_LUXURY_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                        Name,           Value)
@@ -166,10 +176,11 @@ values
 insert or replace into RequirementSetRequirements
     (RequirementSetId,                  RequirementId)
 values
-    ('PLOT_HAS_LUXURY_REQUIREMENTS',    'REQUIRES_PLOT_HAS_LUXURY');
+    ('HD_PLAYER_HAS_ALLY_REQUIREMENTS', 'REQUIRES_PLAYER_IS_ALLY_LEVEL_1'),
+    ('HD_PLOT_HAS_LUXURY_REQUIREMENTS', 'REQUIRES_PLOT_HAS_LUXURY');
 
 insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
-    ('PLOT_HAS_LUXURY_REQUIREMENTS',    'REQUIREMENTSET_TEST_ALL');
-
+    ('HD_PLAYER_HAS_ALLY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL'),
+    ('HD_PLOT_HAS_LUXURY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');

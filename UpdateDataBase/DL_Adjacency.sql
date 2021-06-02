@@ -31,10 +31,16 @@ values
 	-- ('DISTRICT_CAMPUS',				'District_Science_City_Center'),
 	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_Hansa'),
 	('DISTRICT_SUGUBA',				'District_Gold_Hansa'),
-	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
-	('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
+	('DISTRICT_SUGUBA',				'Harbor_Gold'),
+	-- ('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
+	-- ('DISTRICT_SUGUBA',				'District_Gold_City_Center'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
 	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),
+	-- 
+	('DISTRICT_HARBOR',				'HD_Suguba_Gold'),
+	('DISTRICT_HARBOR',				'HD_Commercial_Hub_Gold'),
+	('DISTRICT_COTHON',				'HD_Commercial_Hub_Gold'),
+	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'HD_Commercial_Hub_Gold'),
 	-- 
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Minel_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'Mine_Production'),
@@ -76,6 +82,7 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
 
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
+update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Harbor_City_Gold' or ID = 'RoyalDock_City_Gold';
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
@@ -85,6 +92,10 @@ values
 	0, 				'DISTRICT_AERODROME', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Commercial_Canal_Gold',			'LOC_DISTRICT_CANAL_GOLD', 						'YIELD_GOLD',		2,				1,
 	0, 				'DISTRICT_CANAL', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('HD_Commercial_Hub_Gold',			'LOC_DISTRICT_COMMERCIAL_GOLD', 				'YIELD_GOLD',		2,				1,
+	0, 				'DISTRICT_COMMERCIAL_HUB',	NULL,		NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('HD_Suguba_Gold',					'LOC_DISTRICT_SUGUBA_GOLD', 					'YIELD_GOLD',		2,				1,
+	0, 				'DISTRICT_SUGUBA',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
 	0,				NULL,					NULL,			NULL,		NULL,			NULL,			'RESOURCECLASS_LUXURY');
 	
@@ -168,13 +179,13 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,								YieldType,			YieldChange,	TilesRequired,
 	AdjacentDistrict,				PrereqCivic,	PrereqTech,		ObsoleteCivic,	ObsoleteTech)
 values
-	('District_Gold_Hansa',				'LOC_District_Gold_Hansa',					'YIELD_GOLD',		2,				1,	
+	('District_Gold_Hansa',				'LOC_DISTRICT_GOLD_HANSA',					'YIELD_GOLD',		2,				1,	
 	'DISTRICT_HANSA',				NULL,			NULL,			NULL,			NULL),
 	-- ('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
 	-- 'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
-	('District_Gold_City_Center',		'LOC_District_Gold_City_Center',				'YIELD_GOLD',		1,				1,	
+	('District_Gold_City_Center',		'LOC_DISTRICT_GOLD_CITY_CENTER',				'YIELD_GOLD',		1,				1,	
 	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
-	('District_Culture_Double_City_Center',	'LOC_District_Culture_Double_City_Center',	'YIELD_CULTURE',	2,				1,	
+	('District_Culture_Double_City_Center',	'LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER',	'YIELD_CULTURE',	2,				1,	
 	'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	-- ('Aqueduct_Production_Late',		'LOC_DISTRICT_AQUEDUCT_PRODUCTION_LATE',	'YIELD_PRODUCTION',	2,				1,
 	-- 'DISTRICT_AQUEDUCT',			NULL,			'TECH_STEAM_POWER',		NULL,			NULL),
@@ -201,17 +212,17 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
 	AdjacentRiver,	AdjacentDistrict, 		PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResourceClass)
 values
-	('Harbor_INDUSTRIAL_Production',	'LOC_DISTRICT_Harbor_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
+	('Harbor_INDUSTRIAL_Production',	'LOC_DISTRICT_HARBOR_INDUSTRIAL_PRODUCTION', 	'YIELD_PRODUCTION', 1,				1,
 	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('RoyalDock_INDUSTRIAL_Production',	'LOC_DISTRICT_RoyalDock_INDUSTRIAL_Production', 'YIELD_PRODUCTION', 1,				1,
+	('RoyalDock_INDUSTRIAL_Production',	'LOC_DISTRICT_ROYALDOCK_INDUSTRIAL_PRODUCTION', 'YIELD_PRODUCTION', 1,				1,
 	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Cothon_INDUSTRIAL_Production',	'LOC_DISTRICT_Cothon_INDUSTRIAL_Production', 	'YIELD_PRODUCTION', 1,				1,
+	('Cothon_INDUSTRIAL_Production',	'LOC_DISTRICT_COTHON_INDUSTRIAL_PRODUCTION', 	'YIELD_PRODUCTION', 1,				1,
 	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('River_HANSA_Production',			'LOC_DISTRICT_River_HANSA_Production', 			'YIELD_PRODUCTION', 2,				1,
+	('River_HANSA_Production',			'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 			'YIELD_PRODUCTION', 2,				1,
 	1, 				NULL, 					NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Harbor_HANSA_Production',			'LOC_DISTRICT_Harbor_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
+	('Harbor_HANSA_Production',			'LOC_DISTRICT_HARBOR_HANSA_PRODUCTION',			'YIELD_PRODUCTION', 2,				1,
 	0, 				'DISTRICT_HARBOR', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('RoyalDock_HANSA_Production',		'LOC_DISTRICT_RoyalDock_HANSA_Production',		'YIELD_PRODUCTION', 2,				1,
+	('RoyalDock_HANSA_Production',		'LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION',		'YIELD_PRODUCTION', 2,				1,
 	0, 				'DISTRICT_ROYAL_NAVY_DOCKYARD', NULL,	NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Cothon_HANSA_Production',			'LOC_DISTRICT_Cothon_HANSA_Production',			'YIELD_PRODUCTION', 2,				1,
+	('Cothon_HANSA_Production',			'LOC_DISTRICT_COTHON_HANSA_PRODUCTION',			'YIELD_PRODUCTION', 2,				1,
 	0, 				'DISTRICT_COTHON', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
