@@ -3,6 +3,21 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。");
+
+/*
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                                       Text)
+values
     --melee
     ("LOC_TECH_SHIPBUILDING_DESCRIPTION",                                       "Allows all land units to embark. Unlocks Melee units upgrade: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
     ("LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Unlocks Melee units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
@@ -67,3 +82,4 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程或城市攻击时+10 [ICON_Strength] 战斗力。")
     ;
+*/
