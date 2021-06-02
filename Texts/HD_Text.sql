@@ -95,6 +95,16 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    -- [MOD] Gift it to me
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT",                                         "赠送单位（给当前位置领土的所有者）"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT_DISABLED",                                "赠送单位[NEWLINE] - 需要在其他玩家的领土内[NEWLINE] - 宗教单位、开拓者和考古学家无法赠送给城邦[NEWLINE] - 征兵不能赠送[NEWLINE] - 匈牙利需要将单位与金币一起赠送给宗主的城邦[NEWLINE] - 不能赠送给与你处于战争状态的玩家[NEWLINE] - 已达到每回合赠送单位的上限：{1_MaxGifts}次[NEWLINE] - 单位血量必须超过90％"),
+    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT",                                  "您确定要向其他玩家赠送（{2_GiftCount} / {3_MaxGiftCount}）你的{1_UnitName}吗？"),
+    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT_PAY",                              "您确定要向城邦赠送（{3_GiftCount} / {4_MaxGiftCount}）您的{1_UnitName}和{2_Gold}金币吗？[NEWLINE]（匈牙利需要将黄金与单位一起赠送给宗主的城邦）"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_HEADLINE",                                       "来自{1_LeaderName}的警告"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_CONTENT",                                        "向我们的敌人赠送单位可能会导致外交行动。[NEWLINE]我们已经警告你了"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_HEADLINE",                                          "{1_LeaderName}给了你一个单位！"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",                                           "您收到了{1_UnitName}！"),
+    -- Main
     ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "靠近敌人城市时，对城市城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}环辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}"),

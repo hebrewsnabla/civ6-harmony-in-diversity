@@ -128,10 +128,13 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
     </Criteria>
-    <Criteria id="STUU_WE_Expansion2">
+    <Criteria id="STUU_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0</ModInUse><!-- STUU -->
-      <ModInUse>38a49494-5ec4-46ac-b01b-9629d96950f3</ModInUse><!-- WE -->
+    </Criteria>
+    <Criteria id="STXP_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>01159f41-7ca0-4181-84cf-2f2c912edfdd</ModInUse><!-- STXP -->
     </Criteria>
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -365,9 +368,13 @@
       <Properties><LoadOrder>15010</LoadOrder></Properties>
       <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="Community_STUU_WE_support" criteria="STUU_WE_Expansion2">
+    <UpdateDatabase id="Community_STXP_support" criteria="STXP_Expansion2">
       <Properties><LoadOrder>15015</LoadOrder></Properties>
-      <File>ModSupport/STUU_WE/STUU_WE.sql</File>
+      <File>ModSupport/SteelThunder/STXP.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Community_STUU_support" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>15016</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/STUU.sql</File>
     </UpdateDatabase>
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
@@ -840,7 +847,8 @@
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
-    <File>ModSupport/STUU_WE/STUU_WE.sql</File>
+    <File>ModSupport/SteelThunder/STXP.sql</File>
+    <File>ModSupport/SteelThunder/STUU.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>

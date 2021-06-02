@@ -29,6 +29,8 @@ insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select
 update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 45, RangedCombat = 60, PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_CHINESE_CROUCHING_TIGER', 'UNIT_FIELD_CANNON');
 update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where Unit = 'UNIT_CHINESE_CROUCHING_TIGER';
+update UnitUpgrades set UpgradeUnit = 'UNIT_DLV_MORTAR' where Unit = 'UNIT_CHINESE_CROUCHING_TIGER'
+    and exists (select UnitType from Units where UnitType = 'UNIT_DLV_MORTAR');
 update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_GUN' where Unit = 'UNIT_CHINESE_CROUCHING_TIGER'
     and exists (select UnitType from Units where UnitType = 'UNIT_FIELD_GUN');
 ------ UNIT_CHINESE_SHIGONG
