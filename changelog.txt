@@ -1977,3 +1977,23 @@ ai测试模式增加ai的buff。
 修复越南UD文本问题
 波兰能力更新：详情见游戏内界面
 印尼能力更新：原海岸相邻小加成改为标准加成
+
+[v0.7.8]
+1. Adjust the yields of citizens inside Harbor District (more productions, less gold).
+2. commercial hub and harbor's adjacency yields slight adjust.
+3. Remove the turns lowerbound of the Era (at least 10 turns).
+4. Allow tier-4 governments to use policies that special to tier-3 governments.
+5. BUFF India, Indonesia, Poland.
+6. from [MOD] Worships, Jinja: Forest +2 food, jungle +2 science, marsh +2 culture in this city.
+7. Increase the Ally point sources, reduce the number of turns to reach higher level alliance.
+8. increase yields per follower for 4 Founder Beliefs.
+9. Adjust effect for [Wonder] Hermitage and Sydney Opera House. 
+10. Finish support all popular Wonder MODs.
+
+The new list:
+  A. KINKAKU, unlock by Feudalism. Effect: For Holy Site within 6 tiles, their Faith adjacency bonus provides Production as well. Encampment within 6 tiles yields 2 culture. Must be built in Lake.
+  B. MOTHERLAND CALLS, add extra effect: +10 combat strength when combat in own territory.
+  C. CN TOWER. Effect: Free broadcast tower for each cities have museum. 2 population, 2 housing and 1 amenity to all cities.
+  D. BURJ_KHALIFA, unchanged.
+  F. EMPIRE_STATES, unchanged.
+  G. BUILDING_ARECIBO, unchanged.
