@@ -732,13 +732,17 @@
       <Properties><LoadOrder>16055</LoadOrder></Properties>
       <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     </UpdateDatabase>
-    <!-- Testing -->
-    <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
-      <Properties><LoadOrder>16100</LoadOrder></Properties>
-      <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
+    <!-- AT Test -->
+    <UpdateDatabase id="AITest_update" criteria="AITest_Mode_Expansion2">
+      <Properties><LoadOrder>18000</LoadOrder></Properties>
+      <File>GameModeSupport/TestAIMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/TestAIMode/DL_AI.sql</File>
+      <File>GameModeSupport/TestAIMode/DL_Temp.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="Testing_upd_late" criteria="Testing_Mode_Expansion2">
+    <!-- Military Testing -->
+    <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
+      <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TestingMode/DL_Military.sql</File>
       <File>GameModeSupport/TestingMode/DL_Units.sql</File>
       <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
@@ -764,13 +768,6 @@
       <Properties><LoadOrder>18201</LoadOrder></Properties>
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
-    <!-- AT Test -->
-    <UpdateDatabase id="AITest_update" criteria="AITest_Mode_Expansion2">
-      <Properties><LoadOrder>18300</LoadOrder></Properties>
-      <File>GameModeSupport/TestAIMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/TestAIMode/DL_AI.sql</File>
-      <File>GameModeSupport/TestAIMode/DL_Temp.sql</File>
-    </UpdateDatabase>
   </InGameActions>
   <Files>
     <!-- Configs -->
