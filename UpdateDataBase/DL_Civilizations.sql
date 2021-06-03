@@ -30,30 +30,62 @@ values
 insert or replace into TraitModifiers (TraitType,	ModifierId)
 values
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT'),
-	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS'),
-	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ART_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS_MODIFIER'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_DOUBLE_ART_SLOTS_MODIFIER'),
 	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_SUPPORT_TWO_ARCHAEOLOGISTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'AUTO_THEME_AT_LEAST_6_SLOTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
+
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('ELEANOR_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('ELEANOR_REQUIREMENTS',				'PLAYER_IS_ELEANOR');
+
+insert or replace into Requirements
+	(RequirementId,							RequirementType)
+values
+	('PLAYER_IS_ELEANOR',					'REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('PLAYER_IS_ELEANOR',				'TraitType',		'TRAIT_LEADER_ELEANOR_LOYALTY');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS_MODIFIER',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'ELEANOR_REQUIREMENTS'),
+	('TRAIT_DOUBLE_ART_SLOTS_MODIFIER',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'ELEANOR_REQUIREMENTS');
 
 insert or replace into Modifiers
 	(ModifierId,					ModifierType)
 values
 	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',	'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('DOUBLE_ART_SLOTS',			'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
 	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS'),
 	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING');
 
 insert or replace into ModifierArguments
-	(ModifierId,					Name,				 	Value)
+	(ModifierId,								Name,				 	Value)
 values
-	('ELEANOR_ALLOW_PROJECT',     	'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'BuildingType',			'BUILDING_MUSEUM_ART'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
-	('TRAIT_DOUBLE_ART_SLOTS',		'Amount',				3),
-	('AUTO_THEME_AT_LEAST_6_SLOTS',	'Amount',				6),
-	('AUTO_THEME_AT_LEAST_6_SLOTS',	'IsWonder',				0),
-	('TRAIT_AUTO_THEME_ART_MUSEUM',	'BuildingType',			'BUILDING_MUSEUM_ART');
+	('ELEANOR_ALLOW_PROJECT',     				'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
+	('TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS_MODIFIER',	'ModifierId',			'DOUBLE_ARCHAEOLOGY_SLOTS'),
+	('TRAIT_DOUBLE_ART_SLOTS_MODIFIER',			'ModifierId',			'DOUBLE_ART_SLOTS'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'BuildingType',			'BUILDING_MUSEUM_ARCHAEOLOGY'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'GreatWorkSlotType',	'GREATWORKSLOT_ARCHAEOLOGY'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'Amount',				3),
+	('DOUBLE_ART_SLOTS',						'BuildingType',			'BUILDING_MUSEUM_ART'),
+	('DOUBLE_ART_SLOTS',						'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
+	('DOUBLE_ART_SLOTS',						'Amount',				3),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',				'Amount',				6),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',				'IsWonder',				0),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',				'BuildingType',			'BUILDING_MUSEUM_ART');
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -549,7 +581,7 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
-	('PLAYER_IS_CIVILIZATION_INDIA',		'PLAYER_IS_CIVILIZATION_INDIA');
+	('PLAYER_IS_CIVILIZATION_INDIA',		'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
