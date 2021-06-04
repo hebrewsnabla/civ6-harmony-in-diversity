@@ -36,7 +36,7 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                             "+1 [ICON_Range] 射程。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。");
 
-/*
+
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
@@ -65,7 +65,7 @@ values
     --("LOC_SNIPER_BONUS_VS_WOUNDED_UNITS_HD_PREVIEW_DESCRIPTION",                "from attacking wounded units"),
     --("LOC_SUPPRESSION_DEFNECE_BONUS_HD_PREVIEW_DESCRIPTION",                    "from Suppression"),
     ("LOC_PROMOTION_GARRISON_DESCRIPTION",                                      "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. +5 Loyalty per turn when garrisoning in city centers."),
-    ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "sniper"),
+    ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "Sniper"),
     ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking wounded units."),
     ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +10 [ICON_Strength] Combat Strength when defending against melee, cavalry and anti-cavalry units."),
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
@@ -106,4 +106,3 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程或城市攻击时+10 [ICON_Strength] 战斗力。")
     ;
-*/

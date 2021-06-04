@@ -43,6 +43,13 @@
     <Row Name="ICON_PLUSONE_BRONZE"           Index="38" Atlas="ICON_ATLAS_PROMOTIONS"/>
     <Row Name="ICON_GOLD_BRONZE"              Index="39" Atlas="ICON_ATLAS_PROMOTIONS"/>-->
     <!-- New Icons -->
+
+    <Row Name="ICON_PROMOTION_BATTLE_LINE"                  Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
+    <Row Name="ICON_PROMOTION_LONG_MARCH"                   Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
+    <Row Name="ICON_PROMOTION_SNIPER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="6"/>
+    <Update><Where Name="ICON_PROMOTION_SUPPRESSION"/> <Set Index="13"/></Update>
+    <Update><Where Name="ICON_PROMOTION_ARROW_STORM"/> <Set Index="1"/></Update>
+
     <Row Name="ICON_PROMOTION_RECON_TRAVEL_LIGHT"           Atlas="ICON_ATLAS_PROMOTIONS" Index="23"/>
     <Row Name="ICON_PROMOTION_RECON_RAPID_FIRE"             Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
     <Row Name="ICON_PROMOTION_RECON_ACCURATE"               Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
