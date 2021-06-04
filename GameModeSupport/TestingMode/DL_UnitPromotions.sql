@@ -105,7 +105,7 @@ values
     --melee
 	('MELEE_DISTRICT_COMBAT_BONUS',					        'Preview',	'+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'Preview',	'+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',         'Preview',	'+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',         'Preview',	'+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('BATTLE_LINE_COMBAT',                                  'Preview',	'+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --ranged
     ('RANGED_GARRISON_DISTRICT_BONUS',					    'Preview',	'+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
@@ -117,11 +117,11 @@ values
 --unit upgrade ability 升级线
 --melee
 update ModifierArguments set Value = 5 where ModifierId = 'BATTLECRY_BONUS_VS_MELEE_RANGED' and Name = 'Amount';
-update UnitPromotionModifiers set ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES' where UnitPromotionType = 'PROMOTION_TORTOISE' and ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_COMBAT';
+--update UnitPromotionModifiers set ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES' where UnitPromotionType = 'PROMOTION_TORTOISE' and ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_COMBAT';
 update ModifierArguments set Value = 7 where ModifierId = 'URBAN_WARFARE_BONUS' and Name = 'Amount';
 --ranged
 update ModifierArguments set Value = 5 where ModifierId = 'GARRISON_BONUS_DISTRICTS' and Name = 'Amount';
-update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES' where UnitPromotionType = 'PROMOTION_EMPLACEMENT' and ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_CITIES';
+update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_RANGED' where UnitPromotionType = 'PROMOTION_EMPLACEMENT' and ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_CITIES';
 
 --melee
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
@@ -149,6 +149,8 @@ insert or replace into UnitPromotionPrereqs
 values
     --melee
     ('PROMOTION_BATTLE_LINE',   'PROMOTION_TORTOISE'),
+    ('PROMOTION_BATTLE_LINE',   'PROMOTION_COMMANDO'),
+    ('PROMOTION_COMMANDO',      'PROMOTION_BATTLE_LINE'),
     ('PROMOTION_LONG_MARCH',    'PROMOTION_COMMANDO'),
     ('PROMOTION_LONG_MARCH',    'PROMOTION_BATTLE_LINE'),
     ('PROMOTION_URBAN_WARFARE', 'PROMOTION_BATTLE_LINE'),
@@ -187,23 +189,23 @@ insert or replace into Modifiers
 	(ModifierId,									                ModifierType,                                       OwnerRequirementSetId,  SubjectRequirementSetId)
 values
     --melee
-	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
+	--('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
     ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     --ranged
     ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
-    ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS')
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'TORTOISE_REQUIREMENTS')
     ;
 
 insert or replace into ModifierArguments
 	(ModifierId,									                Name,		    Value)
 values
     --melee
-	('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'Amount',	    7),
-    ('BATTLE_LINE_COMBAT',                                          'Amount',	    2),
+	--('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',		            'Amount',	    7),
+    ('BATTLE_LINE_COMBAT',                                          'Amount',	    10),
     ('GARRISON_LOYALTY_BONUS',                                      'Amount',	    5),
     ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',	    7),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',	    10),
-    ('EMPLACEMENT_DEFENSE_BONUS_VSS_RANGED_AND_CITIES',             'Amount',	    10)
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',	    10)
     ;
