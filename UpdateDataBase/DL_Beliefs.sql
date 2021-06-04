@@ -688,6 +688,10 @@ update ModifierArguments set Value = 50 where ModifierId = 'CITY_PATRON_GODDESS_
 -- Follower
 delete from BeliefModifiers where BeliefType = 'BELIEF_WORK_ETHIC';
 -- delete from BeliefModifiers where BeliefType = 'BELIEF_JESUIT_EDUCATION' and ModifierID = 'JESUIT_EDUCATION_CULTURE_BUILDINGS';
+update ModifierArguments set Value = 6 where ModifierId = 'FEED_THE_WORLD_TEMPLE_FOOD3_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'CHORAL_MUSIC_SHRINE_CULTURE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'CHORAL_MUSIC_TEMPLE_CULTURE_MODIFIER' and Name = 'Amount';
+
 insert or replace into BeliefModifiers
 	(BeliefType,						ModifierID)
 values

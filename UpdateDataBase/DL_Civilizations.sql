@@ -73,8 +73,8 @@ values
 	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE',					NULL),
 	('DOUBLE_ARCHAEOLOGY_SLOTS',	'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS',		NULL),
 	('DOUBLE_ART_SLOTS',			'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS',		NULL),
-	--('DOUBLE_ARCHAEOLOGY_SLOTS1',	'MODIFIER_ALL_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS',		'ELEANOR_REQUIREMENTS'),
-	--('DOUBLE_ART_SLOTS1',			'MODIFIER_ALL_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS',		'ELEANOR_REQUIREMENTS'),
+	--('DOUBLE_ARCHAEOLOGY_SLOTS1',	'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS',		NULL),
+	--('DOUBLE_ART_SLOTS1',			'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS',		NULL),
 	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS',	NULL),
 	('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING',				NULL);
 
@@ -589,6 +589,48 @@ insert or replace into Improvement_Adjacencies
 values
 	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
 	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+--Catherine De Medici
+/*insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLAYER_IS_CATHERINE_AND_CITY_HAS_WONDER',		'REQUIREMENTSET_TEST_ALL'),
+	('PLAYER_IS_CATHERINE',							'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLAYER_IS_CATHERINE_AND_CITY_HAS_WONDER',		'PLAYER_IS_CATHERINE_DE_MEDICI'),
+	('PLAYER_IS_CATHERINE_AND_CITY_HAS_WONDER',		'REQUIRES_CITY_HAS_WONDER'),
+	('PLAYER_IS_CATHERINE',							'PLAYER_IS_CATHERINE_DE_MEDICI');
+
+insert or replace into Requirements
+	(RequirementId,								RequirementType)
+values
+	('PLAYER_IS_CATHERINE_DE_MEDICI',			'REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT');
+
+insert or replace into RequirementArguments
+	(RequirementId,						Name,				Value)
+values
+	('PLAYER_IS_CATHERINE_DE_MEDICI',	'TraitType',		'FLYING_SQUADRON_TRAIT');
+
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_CHATEAU',			'CHATEAU_ADD_SPY');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId,					SubjectStackLimit)
+values
+	('CHATEAU_ADD_SPY',						'MODIFIER_CITY_OWNER_ATTACH_MODIFIER',				'CITY_HAS_WONDER_REQUIREMENTS',				1),
+	('CHATEAU_ADD_SPY_MODIFIER',			'MODIFIER_PLAYER_GRANT_SPY',						'PLAYER_IS_CATHERINE',						NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                     Name,              Value)
+values
+	('CHATEAU_ADD_SPY',								'ModifierId',		'CHATEAU_ADD_SPY_MODIFIER'),
+	('CHATEAU_ADD_SPY_MODIFIER',					'Amount',			1);*/
 -----------------------------------------------------------------------------------------------------------------------------
 --India
 insert or replace into RequirementSets

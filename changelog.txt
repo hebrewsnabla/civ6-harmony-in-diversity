@@ -1997,3 +1997,10 @@ The new list:
   D. BURJ_KHALIFA, unchanged.
   F. EMPIRE_STATES, unchanged.
   G. BUILDING_ARECIBO, unchanged.
+
+(by 傲娇)
+印度ua修复。
+蒸汽动力后解锁海商范围+15格。
+王权神授新增政策卡采邑：每级城墙+2住房。
+公共交通：迷人的社区+3粮+1锤+1住房，惊艳翻倍。
+哺育世界大庙改为+6粮。合唱圣歌小庙+3大庙+6文化。

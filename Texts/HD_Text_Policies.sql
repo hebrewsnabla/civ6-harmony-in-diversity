@@ -39,6 +39,7 @@ values
     ("LOC_POLICY_SILK_ROAD_NAME",                                                     "Silk Road"),
     ("LOC_POLICY_WAREHOUSE_NAME",                                                     "Warehouse"),
     ("LOC_POLICY_SAFETY_BOX_NAME",                                                    "Safety Box"),
+    ("LOC_POLICY_WALL_HOUSING_NAME",                                                  "Feoff"),
     ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "+4 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
@@ -77,7 +78,9 @@ values
     ("LOC_POLICY_MANEUVER_DESCRIPTION",                                               "+30% [ICON_Production] Production toward Ancient and Classical era heavy and light cavalry units."),
     ("LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION",                                        "+30% [ICON_Production] Production toward Ancient, Classical, Medieval, and Renaissance era melee, anti-cavalry, and ranged units."),
     ("LOC_POLICY_AGOGE_DESCRIPTION",                                                  "+30% [ICON_Production] Production toward Ancient and Classical era melee, anti-cavalry, and ranged units."),
-    ("LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state provide +2 [ICON_Food] Food and +2 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional 0.5 per turn.");
+    ("LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state provide +2 [ICON_Food] Food and +2 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional 0.5 per turn."),
+    ("LOC_POLICY_PUBLIC_TRANSPORT_DESCRIPTION_XP2",                                   "Neighborhoods with Charming appeal receive +3 Food [ICON_Food] and +1 Production [ICON_Production], Breathtaking Neighborhoods receive double yields. All Neighborhoods receive +1 [ICON_Gold] Gold."),
+    ("LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "+2 [ICON_Housing] Housing per level of Walls.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -120,6 +123,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_SILK_ROAD_NAME",                                                     "丝绸之路"),
     ("zh_Hans_CN",  "LOC_POLICY_WAREHOUSE_NAME",                                                     "仓库"),
     ("zh_Hans_CN",  "LOC_POLICY_SAFETY_BOX_NAME",                                                    "保险柜"),
+    ("zh_Hans_CN",  "LOC_POLICY_WALL_HOUSING_NAME",                                                  "采邑"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "位于海边或湖边的城市+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "位于海边或湖边的城市+4 [ICON_Production] 生产力。"),
@@ -158,5 +162,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_MANEUVER_DESCRIPTION",                                               "为远古和古典时代的重型和轻型骑兵单位增加30%生产速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_DESCRIPTION",                                        "为远古、古典、中世纪和文艺复兴时代的近战、抗骑兵和远程单位增加30%生产速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_AGOGE_DESCRIPTION",                                                  "为远古和古典时代的近战、抗骑兵和远程单位增加30%生产速度。"),
-    ("zh_Hans_CN",  "LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "您通往盟友城市或旗下城邦的 [ICON_TradeRoute] 贸易路线为双边城市+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.5点。");
+    ("zh_Hans_CN",  "LOC_POLICY_WISSELBANKEN_DESCRIPTION",                                           "您通往盟友城市或旗下城邦的 [ICON_TradeRoute] 贸易路线为双边城市+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.5点。"),
+    ("zh_Hans_CN",  "LOC_POLICY_PUBLIC_TRANSPORT_DESCRIPTION_XP2",                                   "拥有迷人魅力的社区+3 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Housing] 住房，若拥有惊艳魅力则翻倍。所有社区+1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "每个等级的城墙提供+2 [ICON_Housing] 住房。");
 

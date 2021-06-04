@@ -24,8 +24,8 @@ values
     ("LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder."),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "To the Glory of God"),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "-25% [ICON_faith] faith when you patronage great person. Grant a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired with 33% probability."), -- Each time you recruit a great person, add 50 [ICON_FAVOR] Diplomatic Favor. 
-    ("LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "Shrines and Temple provide +3 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing each."),
-    ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "Shrines and Temples provide [ICON_Culture] Culture equal to their intrinsic [ICON_Faith] Faith output."),
+    ("LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "Shrines provide +3 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing. Temples provide +6 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing."),
+    ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "Shrines provide +3 [ICON_CULTURE] Culture. Temples provide +6 [ICON_CULTURE] Culture."),
     ("LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "All world wonders provide +4 [ICON_Faith] Faith. Holy Site provides extra [ICON_Faith] Faith equal to the district adjacency bonus.Each time gain [ICON_Faith] Faith equal t0 50% production cost after Wonder construction."),
     ("LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "May purchase Campus district buildings with [ICON_Faith] Faith. Shrines and Temples provide 0.2 and 0.4 [ICON_Science] Science respectively for each [ICON_Citizen] citizen in this city."),
     ("LOC_BELIEF_RELIQUARIES_DL_DESCRIPTION",                 "[ICON_GreatWork_Relic] Relics have triple yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism. Shrines and Temples provide [ICON_Tourism] Tourism equal to their intrinsic [ICON_Faith] Faith output."),
@@ -91,8 +91,8 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "荣神益人"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "招募伟人-25% [ICON_faith] 信仰值花费。 每当一位伟人完全激活或隐退后，有33%的几率获得一个 [ICON_GreatWork_Relic] 遗物。"), -- 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。
-    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "每座神社和寺庙提供的 [ICON_FOOD] 食物+3，[ICON_HOUSING] 住房+2。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "神社和寺庙提供的 [ICON_Culture] 文化值等于其固定产出的 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "神社提供+3 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。寺庙提供+6 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "神社提供+3 [ICON_CULTURE] 文化值。寺庙提供+6 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "所有世界奇观+4 [ICON_Faith] 信仰值。圣地区域的 [ICON_Faith] 信仰值相邻加成提供额外等量的 [ICON_Faith] 信仰值。完成世界奇观后返还等同于奇观所需产能一半的 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。神社和寺庙分别为每个 [ICON_Citizen] 人口提供0.2和0.4 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIQUARIES_DL_DESCRIPTION",                 "[ICON_GreatWork_Relic] 遗物能产出3倍的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩。神社和寺庙提供的 [ICON_Tourism] 旅游业绩等于其固定产出的 [ICON_Faith] 信仰值。"),
