@@ -749,6 +749,10 @@
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
       <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
     </UpdateDatabase>
+    <UpdateIcons id="Testing_update_icons" criteria="Testing_Mode_Expansion2">
+      <Properties><LoadOrder>18101</LoadOrder></Properties>
+      <File>GameModeSupport/TestingMode/HD_Icons.xml</File>
+    </UpdateIcons>
     <UpdateText id="Testing_update_text" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18101</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
@@ -793,6 +797,7 @@
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
       <!-- 暂时不上线兵种改动，调试时请打开 -->
     <!-- <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File> -->
+    <File>GameModeSupport/TestingMode/HD_Icons.xml</File>
     <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
     <File>GameModeSupport/TestingMode/DL_Military.lua</File>
       <!-- Tech Test Mode -->

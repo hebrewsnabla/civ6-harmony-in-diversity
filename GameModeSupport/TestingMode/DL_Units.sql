@@ -211,3 +211,6 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUPERCARRIER';
 -- GDR
 update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
+
+-- Promotions
+update Units set BaseMoves = BaseMoves - 1 where PromotionClass = 'PROMOTION_CLASS_RECON';

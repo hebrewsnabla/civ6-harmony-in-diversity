@@ -3,6 +3,18 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+    ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
+    ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
+    ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME",                                   "Travel Light"),
+    ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                            "+1 [ICON_Movement] Movement, Ignore Zone of Control"),
+    ("LOC_PROMOTION_SPYGLASS_DESCRIPTION",                                      "+1 sight range, reveal stealth units on the map within sight range."),
+    ("LOC_PROMOTION_GUERRILLA_DESCRIPTION",                                     "Can move after attacking, +5 [ICON_Strength] when attacking."),
+    -- ("LOC_GUERRILLA_ATTACK_BUFF_HD_PREVIEW_TEXT",                               "From Guerrilla when attacking"),
+    ("LOC_PROMOTION_AMBUSH_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength in all situations, only adjacent enemy units can reveal this unit."),
+    ("LOC_PROMOTION_RECON_RAPID_FIRE_NAME",                                     "Rapid Fire"),
+    ("LOC_PROMOTION_RECON_RAPID_FIRE_DESCRIPTION",                              "+1 additional attack per turn if [ICON_Movement] Movement allows."),
+    ("LOC_PROMOTION_RECON_ACCURATE_NAME",                                       "Accurate"),
+    ("LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                                "+1 [ICON_Range] Range."),
     ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.");
 
 --------------------------------------------------------------------------------
@@ -10,6 +22,18 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
+    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力"), -- ，但-1 [ICON_Movement] 移动力
+    ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过森林和丛林。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME",                                "轻装"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                         "+1 [ICON_Movement] 移动力，忽略控制区。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPYGLASS_DESCRIPTION",                                   "+1视野范围，显示视野范围内的隐形单位。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_GUERRILLA_DESCRIPTION",                                  "攻击后可移动，攻击时+5 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_GUERRILLA_ATTACK_BUFF_HD_PREVIEW_TEXT",                            "进攻时，来自游击队"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_AMBUSH_DESCRIPTION",                                     "在所有情况下+5 [ICON_Strength] 战斗力，只有相邻敌军单位才能发现该单位。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_RAPID_FIRE_NAME",                                  "速射"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_RAPID_FIRE_DESCRIPTION",                           "如果 [ICON_Movement] 移动力允许，每回合+1额外攻击。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_ACCURATE_NAME",                                    "精准"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                             "+1 [ICON_Range] 射程。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。");
 
 /*

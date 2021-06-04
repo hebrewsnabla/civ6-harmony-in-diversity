@@ -37,6 +37,7 @@ local m_ShouldUpdateBestImprovement = false;
 -- =================================================================================
 function BuildActionModHook(instance:table, action:table)
     -- Is the player and unit is valid?
+    -- print('DEBUG', action.userTag, action.IconId)
     if g_selectedPlayerId ~= nil and g_selectedPlayerId ~= -1
             and g_UnitId ~= nil and g_UnitId ~= -1 then
         -- Is this the "build improvement" action
@@ -80,6 +81,10 @@ function BuildActionModHook(instance:table, action:table)
                 end
             end
         end
+        -- local plant_forest_hash = GameInfo.UnitOperations.UNITOPERATION_PLANT_FOREST.Hash
+        -- if action.userTag == plant_forest_hash then
+        --     print('!!!')
+        -- end
     end
     BASE_BuildActionModHook(instance, action);
 end
