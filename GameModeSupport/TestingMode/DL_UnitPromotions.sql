@@ -4,19 +4,19 @@
 
 --promotion class ability 通用能力
 --melee
-insert or replace into TechnologyModifiers
-	(TechnologyType,										ModifierId)
-values
-    --melee
-	('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_RIVERS'),
-    ('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_SHORES');
+-- insert or replace into TechnologyModifiers
+-- 	(TechnologyType,										ModifierId)
+-- values
+--     --melee
+-- 	('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_RIVERS'),
+--     ('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_SHORES');
 
-insert or replace into CivicModifiers
-	(CivicType,										        ModifierId)
-values
-    --melee
-	('CIVIC_FEUDALISM',							            'MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS')
-    ;
+-- insert or replace into CivicModifiers
+-- 	(CivicType,										        ModifierId)
+-- values
+--     --melee
+-- 	('CIVIC_FEUDALISM',							            'MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS')
+--     ;
 
 insert or replace into Modifiers
 	(ModifierId,									        ModifierType,                                       SubjectRequirementSetId)

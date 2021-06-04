@@ -43,8 +43,8 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     --melee
-    ("LOC_TECH_SHIPBUILDING_DESCRIPTION",                                       "Allows all land units to embark. Unlocks Melee units upgrade: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
-    ("LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Unlocks Melee units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
+    -- ("LOC_TECH_SHIPBUILDING_DESCRIPTION",                                       "Allows all land units to embark. Unlocks Melee units upgrade: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    -- ("LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Unlocks Melee units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
     --("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_NAME",                       "District Warfare"),
     ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when fighting in a district."),
     ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",          "from District Warfare"),
@@ -78,8 +78,8 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     --melee
-    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_DESCRIPTION",                                    "允许所有陆地单位上船。解锁近战单位升级：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。解锁近战单位升级：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力"),
+    -- ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_DESCRIPTION",                                    "允许所有陆地单位上船。解锁近战单位升级：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    -- ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。解锁近战单位升级：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力"),
     --("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_NAME",                    "区域作战"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",               "在区域上战斗时+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",       "来自区域作战"),
