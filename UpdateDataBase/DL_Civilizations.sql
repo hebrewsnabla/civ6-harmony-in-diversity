@@ -625,3 +625,5 @@ update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST
 update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_INDUSTRIAL_ZONE' and Name = 'TilesRequired';
 update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_THEATER' and Name = 'TilesRequired';
 
+--Cree's Mekewap now provides +1 production adjacent a Luxury.
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
