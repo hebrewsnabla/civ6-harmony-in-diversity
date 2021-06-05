@@ -46,7 +46,7 @@
 
     <Row Name="ICON_PROMOTION_BATTLE_LINE"                  Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
     <Row Name="ICON_PROMOTION_LONG_MARCH"                   Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
-    <Row Name="ICON_PROMOTION_SNIPER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="6"/>
+    <!-- <Row Name="ICON_PROMOTION_SNIPER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="6"/> -->
     <Update><Where Name="ICON_PROMOTION_SUPPRESSION"/> <Set Index="13"/></Update>
     <Update><Where Name="ICON_PROMOTION_ARROW_STORM"/> <Set Index="1"/></Update>
 

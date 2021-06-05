@@ -214,3 +214,4 @@ update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
 
 -- Promotions
 update Units set BaseMoves = BaseMoves - 1 where PromotionClass = 'PROMOTION_CLASS_RECON';
+-- update Units set BaseMoves = BaseMoves + 1 where PromotionClass = 'PROMOTION_CLASS_SIEGE';
