@@ -144,6 +144,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
     </Criteria>
+    <Criteria id="TempleOfHeaven_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>943808b8-5913-4cfc-93a8-0d5d4a0bc4af</ModInUse>
+    </Criteria>
     <Criteria id="WetLands_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>73b1478a-73bf-4907-8914-b1b5acca388b</ModInUse>
@@ -345,6 +349,11 @@
       <Properties><LoadOrder>15005</LoadOrder></Properties>
       <File>ModSupport/Watchtower/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateDatabase id="Wonder_temple_of_heaven_support" criteria="TempleOfHeaven_Expansion2">
+      <!-- After the main part -->
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
       <Properties><LoadOrder>15006</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
@@ -850,6 +859,7 @@
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
     <File>ModSupport/WetLands/HD_Texts.sql</File>    
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
+    <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     <File>ModSupport/RadialMeasuringTool/Texts.sql</File>
