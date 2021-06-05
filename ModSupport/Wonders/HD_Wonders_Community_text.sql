@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                                             Text)
 values
+    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "All Districts(City Center included) and Wonders receive +1 [ICON_Housing] Housing and +2 [icon_food] Food. Doubled if Wat Arun is built in this city."),
+    ("LOC_BUILDING_TEMPLE_OF_HEAVEN_DESCRIPTION",                                                     "+100% All Domestic trade routes yields from Destination Districts.Your Trade Routes to your own cities gain +2 [ICON_Gold] for each specialty Districts at the destination. Governors established in a city provide +3% [icon_food] Food for each Promotion they have earned, including their first one." ),
     ("LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                                           "{1_Amount} Combat Strength from Motherland Calls"),
     ("LOC_BUILDING_LEANING_TOWER_DESCRIPTION",                                                        "1 free Great Engineer appears near the city where the wonder was built. +25%  Great People Points accumulation speed in all cities. Can only be built flat Grass and Plain lands in city with a Harbor. "),
     ("LOC_BUILDING_PORCELAIN_TOWER_DESCRIPTION",                                                      "1 free Great Engineer appears near the city where the wonder was built. Grants three copies of the [ICON_RESOURCE_PORCELAIN] Porcelain Luxury Resource which provide +6 Amenities each. [NEWLINE]Must be built on a flat Grassland, Plains or Tundra tile."),
@@ -28,6 +30,10 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_QUOTE",                                                               "XXx"),
+    ("zh_Hans_CN",  "LOC_PEDIA_WONDERS_PAGE_BUILDING_SUK_WAT_ARUN_CHAPTER_HISTORY_PARA_1",                           "XXx"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "所有城市的沿河区域（包括市中心）和奇观+1 [Icon_Housing] 住房 +2 [Icon_food] 食物。本城该加成翻倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TEMPLE_OF_HEAVEN_DESCRIPTION",                                                     "所有国内商路由区域带来的加成翻倍。目的地的每个特色区域为国内商路+2 [ICON_Gold] 金币。若总督在城市就职，则每个总督晋升提供3%的 [ICON_Food] 食物产出（包括第一个）。"),
     ("zh_Hans_CN",  "LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                                           "{1_Amount}点战斗力来自祖国母亲的召唤"),
     ("zh_Hans_CN",  "LOC_BUILDING_LEANING_TOWER_QUOTE",                                                              "“大自然是无情的，不可改变的，它对人类是否能理解它隐藏的原因和行为漠不关心。”—伽利略 "),
     ("zh_Hans_CN",  "LOC_BUILDING_LEANING_TOWER_DESCRIPTION",                                                        "建成时市中心出现一位大工程师。所有城市的伟人点积累速率+25%。只能建在有港口的城市中，必须建在平坦的草原、平原上。"),
