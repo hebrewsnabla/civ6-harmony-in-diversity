@@ -9,14 +9,18 @@
 -- values
 --     --melee
 -- 	('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_RIVERS'),
---     ('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_SHORES');
+--  ('TECH_SHIPBUILDING',							        'SHIPBUILDING_MELEE_IGNORE_SHORES'),
+--     --anti-cavalry
+--  ('TECH_SANITATION',                                     'SANITATION_ANTI_CAVALRY_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE');
 
 -- insert or replace into CivicModifiers
 -- 	(CivicType,										        ModifierId)
 -- values
 --     --melee
--- 	('CIVIC_FEUDALISM',							            'MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS')
---     ;
+-- 	('CIVIC_FEUDALISM',							            'MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
+--     --anti-cavalry
+--  ('CIVIC_DEFENSIVE_TACTICS',							    'ANTI_CAVALRY_HILLS_COMBAT_BONUS');
+--update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 
 insert or replace into Modifiers
 	(ModifierId,									        ModifierType,                                       SubjectRequirementSetId)
@@ -24,7 +28,10 @@ values
     --melee
 	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',        'UNIT_IS_MELEE_REQUIREMENTS'),
     ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',        'UNIT_IS_MELEE_REQUIREMENTS'),
-    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'MELEE_FOREST_AND_JUNGLE_REQUIREMENTS');
+    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'MELEE_FOREST_AND_JUNGLE_REQUIREMENTS'),
+    --anti-cavalry
+    ('SANITATION_ANTI_CAVALRY_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE',    'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  'UNIT_IS_ANTI_CAV_REQUIREMENTS'),
+    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                     'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'ANTI_CAV_HILLS_REQUIREMENTS');
 
 insert or replace into ModifierArguments
 	(ModifierId,									        Name,		        Value)
@@ -32,7 +39,10 @@ values
     --melee
 	('SHIPBUILDING_MELEE_IGNORE_RIVERS',				    'Ignore',           1),
     ('SHIPBUILDING_MELEE_IGNORE_SHORES',				    'Ignore',           1),
-    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'Amount',           3);
+    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'Amount',           3),
+    --anti-cavalry
+    ('SANITATION_ANTI_CAVALRY_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE',    'Amount',   100),
+    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                     'Amount',           5);
 
 insert or replace into Types
 	(Type,														Kind)
@@ -43,8 +53,10 @@ values
     ('PROMOTION_LONG_MARCH',                                    'KIND_PROMOTION'),
     --ranged
     ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',					'KIND_ABILITY'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'KIND_ABILITY');
+    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'KIND_ABILITY'),
     -- ('PROMOTION_SNIPER',                                        'KIND_PROMOTION');
+    --anti-cavalry
+    ('PROMOTION_LOGISTICS_SUPPLY',                              'KIND_PROMOTION');
 
 insert or replace into TypeTags
 	(Type,														Tag)
@@ -104,7 +116,11 @@ values
     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',           'Preview',	'{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                       'Preview',	'+{1_Amount} {LOC_PROMOTION_SNIPER_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('SUPPRESSION_DEFNECE_BONUS',                           'Preview',	'+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                 'Preview',	'+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                 'Preview',	'+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --anti-cavalry
+    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',					    'Preview',	'+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
+    --('ECHELON_DEFENCE',                                     'Preview',	'+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('THRUST_ATTACK_BONUS',                                 'Preview',	'+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 
 --unit upgrade ability 升级线
 --melee
@@ -116,13 +132,20 @@ update ModifierArguments set Value = 7 where ModifierId = 'URBAN_WARFARE_BONUS' 
 update ModifierArguments set Value = 5 where ModifierId = 'GARRISON_BONUS_DISTRICTS' and Name = 'Amount';
 -- update ModifierArguments set Value = 10 where ModifierId = 'INCENDIARIES_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_RANGED' where UnitPromotionType = 'PROMOTION_EMPLACEMENT' and ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_CITIES';
-
+--anti-cavalry
+--delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_ECHELON' and ModifierId = 'ECHELON_ADDITIONAL_CAVALRY_BONUS';
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' and ModifierId = 'THRUST_BONUS_VS_MELEE';
+update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
 --melee
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_INCENDIARIES';
 update UnitPromotions set Level = 2 , Column = 1 where UnitPromotionType = 'PROMOTION_SUPPRESSION';
 update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_ARROW_STORM';
+--anti-cavalry 
+update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_SCHILTRON';
+update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_REDEPLOY';
+update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_CHOKE_POINTS';
 
 delete from UnitPromotionPrereqs 
     --melee
@@ -136,7 +159,12 @@ where  UnitPromotion = 'PROMOTION_AMPHIBIOUS'
     -- or UnitPromotion = 'PROMOTION_INCENDIARIES' 
     -- or PrereqUnitPromotion = 'PROMOTION_INCENDIARIES'
     or UnitPromotion = 'PROMOTION_SUPPRESSION' 
-    or PrereqUnitPromotion = 'PROMOTION_SUPPRESSION';
+    or PrereqUnitPromotion = 'PROMOTION_SUPPRESSION'
+    --anti-cavalry 
+    or UnitPromotion = 'PROMOTION_SCHILTRON' 
+    or PrereqUnitPromotion = 'PROMOTION_SCHILTRON'
+    or UnitPromotion = 'PROMOTION_REDEPLOY' 
+    or PrereqUnitPromotion = 'PROMOTION_REDEPLOY';
 
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)
@@ -158,16 +186,23 @@ values
     -- ('PROMOTION_ARROW_STORM',   'PROMOTION_SNIPER'),
     ('PROMOTION_ARROW_STORM',   'PROMOTION_SUPPRESSION'),
     -- ('PROMOTION_EMPLACEMENT',   'PROMOTION_SUPPRESSION'),
-    ('PROMOTION_EXPERT_MARKSMAN',   'PROMOTION_ARROW_STORM');
+    ('PROMOTION_EXPERT_MARKSMAN',   'PROMOTION_ARROW_STORM'),
+    --anti-cavalry
+    ('PROMOTION_REDEPLOY',       'PROMOTION_THRUST'),
+    ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_REDEPLOY'),
+    ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_SQUARE'),
+    ('PROMOTION_HOLD_THE_LINE',  'PROMOTION_LOGISTICS_SUPPLY');
 
 insert or replace into UnitPromotions
-    (UnitPromotionType,         Name,                                   Description,                                  Level,    PromotionClass,             Column)
+    (UnitPromotionType,             Name,                                           Description,                                        Level,    PromotionClass,                   Column)
 values
     --melee
-    ('PROMOTION_BATTLE_LINE',   'LOC_PROMOTION_BATTLE_LINE_HD_NAME',    'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',   2,        'PROMOTION_CLASS_MELEE',    3),
-    ('PROMOTION_LONG_MARCH',    'LOC_PROMOTION_LONG_MARCH_HD_NAME',     'LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_MELEE',    1);
+    ('PROMOTION_BATTLE_LINE',       'LOC_PROMOTION_BATTLE_LINE_HD_NAME',            'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',         2,        'PROMOTION_CLASS_MELEE',          3),
+    ('PROMOTION_LONG_MARCH',        'LOC_PROMOTION_LONG_MARCH_HD_NAME',             'LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION',          3,        'PROMOTION_CLASS_MELEE',          1),
     --ranged
-    -- ('PROMOTION_SNIPER',        'LOC_PROMOTION_SNIPER_HD_NAME',         'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',        2,        'PROMOTION_CLASS_RANGED',   1);
+    -- ('PROMOTION_SNIPER',         'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              2,        'PROMOTION_CLASS_RANGED',         1);
+    --anti-cavalry
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   3);
 
 insert or replace into UnitPromotionModifiers
     (UnitPromotionType,         ModifierId)
@@ -178,7 +213,11 @@ values
     --ranged
     ('PROMOTION_GARRISON',      'GARRISON_LOYALTY_BONUS'),
     -- ('PROMOTION_SNIPER',        'SNIPER_BONUS_VS_WOUNDED_UNITS'),
-    ('PROMOTION_SUPPRESSION',   'SUPPRESSION_DEFNECE_BONUS');
+    ('PROMOTION_SUPPRESSION',   'SUPPRESSION_DEFNECE_BONUS'),
+    --anti-cavalry
+    --('PROMOTION_ECHELON',       'ECHELON_DEFENCE'),
+    ('PROMOTION_THRUST',        'THRUST_ATTACK_BONUS'),
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOGISTICS_SUPPLY_HEAL_BONUS');
 
 insert or replace into Modifiers
 	(ModifierId,									                ModifierType,                                       OwnerRequirementSetId,  SubjectRequirementSetId)
@@ -190,7 +229,11 @@ values
     ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
-    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'TORTOISE_REQUIREMENTS');
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'TORTOISE_REQUIREMENTS'),
+     --anti-cavalry
+    ('ECHELON_DEFENCE',                                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
+    ('THRUST_ATTACK_BONUS',                                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'FASCISM_REQUIREMENTS'),
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_PER_TURN',        NULL,                   NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,									                Name,		    Value)
@@ -201,4 +244,9 @@ values
     ('GARRISON_LOYALTY_BONUS',                                      'Amount',	    5),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',	    7),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',	    10),
-    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',	    10);
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',	    10),
+     --anti-cavalry
+    ('ECHELON_DEFENCE',                                             'Amount',	    7),
+    ('THRUST_ATTACK_BONUS',                                         'Amount',	    5),
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',	    10),
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',	        'ALL');

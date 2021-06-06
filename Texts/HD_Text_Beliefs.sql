@@ -63,7 +63,7 @@ values
     ("LOC_BELIEF_MEETING_HOUSE_DL_DESCRIPTION",               "Allows construction of Meeting Houses (+2 [ICON_Faith] Faith, +3 [ICON_Production] Production; +10% [ICON_PRODUCTION] Production in this city). "),
     ("LOC_BELIEF_STUPA_DL_DESCRIPTION",                       "Allows construction of Stupas (+2 [ICON_Faith] Faith, +2 [ICON_Amenities] Amenity; Receive 1 [ICON_AMENITIES] Amenity for every Luxury resource this city has improved)."),
     ("LOC_BELIEF_CATHEDRAL_DL_DESCRIPTION",                   "Allows construction of Cathedrals (+2 [ICON_Faith] Faith, Can holds a [ICON_GreatWork_Landscape] Great Work of Art.[NEWLINE] +100% [ICON_CULTURE] Culture and +100% [ICON_Tourism] Tourism for Great Works of Art in this city."),
-    ("LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION",                  "Allows construction of Dar-e Mehrs (+2 [ICON_Faith] Faith, +1 additional [ICON_FAITH] Faith for each era since constructed or last repaired; Gain a Missionary unit after finishing construction).");
+    ("LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION",                  "Allows construction of Dar-e Mehrs (+2 [ICON_Faith] Faith, +2 additional [ICON_FAITH] Faith for each era since constructed or last repaired; Gain a Missionary unit after finishing construction).");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -130,5 +130,5 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_MEETING_HOUSE_DL_DESCRIPTION",               "允许建造礼拜堂（+2 [ICON_Faith] 信仰值，+3 [ICON_Production] 生产力；本城+10% [ICON_PRODUCTION] 生产力）。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STUPA_DL_DESCRIPTION",                       "允许建造窣堵波（+2 [ICON_Faith] 信仰值、+2 [ICON_Amenities] 宜居度；本城每种已开发的奢侈品 +1 [ICON_AMENITIES] 宜居度）。"),
     ("zh_Hans_CN",  "LOC_BELIEF_CATHEDRAL_DL_DESCRIPTION",                   "允许建造大教堂（+2 [ICON_Faith] 信仰值，可放置1个 [ICON_GreatWork_Landscape] 艺术巨作。[NEWLINE] 本城 [ICON_GreatWork_Landscape] 艺术巨作产出的 [ICON_CULTURE] 文化值和 [ICON_TOURISM] 旅游业绩+100%）。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION",                  "允许建造拜火神庙（+2 [ICON_Faith] 信仰值；建造或上次修复后的每个时代均额外+1 [ICON_FAITH] 信仰值；完成后，获得一个传教士）。 ");
+    ("zh_Hans_CN",  "LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION",                  "允许建造拜火神庙（+2 [ICON_Faith] 信仰值；建造或上次修复后的每个时代均额外+2 [ICON_FAITH] 信仰值；完成后，获得一个传教士）。 ");
 

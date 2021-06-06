@@ -32,6 +32,7 @@ values
 	('BUILDING_DAR_E_MEHR',		'YIELD_FAITH',		2);
 
 update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_STUPA';
+update Building_YieldsPerEra set YieldChange = 2 where BuildingType = 'BUILDING_DAR_E_MEHR';
 
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)

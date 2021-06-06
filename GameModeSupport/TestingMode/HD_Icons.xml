@@ -51,6 +51,9 @@
     <!-- <Row Name="ICON_PROMOTION_SNIPER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="6"/> -->
     <Update><Where Name="ICON_PROMOTION_SUPPRESSION"/> <Set Index="13"/></Update>
     <Update><Where Name="ICON_PROMOTION_ARROW_STORM"/> <Set Index="1"/></Update>
+    <!-- Anti Cavalry -->
+    <Update><Where Name="ICON_PROMOTION_REDEPLOY"/> <Set Index="22"/></Update>
+    <Update><Where Name="ICON_PROMOTION_LOGISTICS_SUPPLY"/> <Set Index="25"/></Update>
 
     <!-- Recon -->
     <Row Name="ICON_PROMOTION_RECON_TRAVEL_LIGHT"           Atlas="ICON_ATLAS_PROMOTIONS" Index="23"/>
@@ -62,7 +65,7 @@
     <Row Name="ICON_PROMOTION_LIGHTC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="11"/>
     <Row Name="ICON_PROMOTION_LIGHTC_MOBILE_WARFARE"        Atlas="ICON_ATLAS_PROMOTIONS" Index="21"/>
     <Update><Where Name="ICON_PROMOTION_PURSUIT"/> <Set Index="9"/></Update>
-
+    
     <!-- Official Icons -->
     <!-- <Row Name="ICON_PROMOTION_RANGER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>
     <Row Name="ICON_PROMOTION_ALPINE"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>

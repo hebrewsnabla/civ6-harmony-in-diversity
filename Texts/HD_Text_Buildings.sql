@@ -55,7 +55,7 @@ values
     ("LOC_BUILDING_MEETING_HOUSE_DL_DESCRIPTION",                 "+10% [ICON_PRODUCTION] Production in this city."),
     ("LOC_BUILDING_STUPA_DL_DESCRIPTION",                         "Receive 1 [ICON_AMENITIES] Amenity for every Luxury resource this city has improved."),
     ("LOC_BUILDING_CATHEDRAL_DL_DESCRIPTION",                     "Can holds a [ICON_GreatWork_Landscape] Great Work of Art.[NEWLINE] +100% [ICON_CULTURE] Culture and +100% [ICON_Tourism] Tourism for Great Works of Art in this city."),
-    ("LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION",                    "+1 additional [ICON_FAITH] Faith for each era since constructed or last repaired. Gain a Missionary unit after finishing construction."),
+    ("LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION",                    "+2 additional [ICON_FAITH] Faith for each era since constructed or last repaired. Gain a Missionary unit after finishing construction."),
     -- Encampment
     ("LOC_BUILDING_BARRACKS_EXPANSION2_DESCRIPTION",              "+25% combat experience for all melee and ranged land units trained in this city.[NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Stable.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_IRON] Iron in this city. +2 [ICON_Strength] Combat strength for all melee, ranged, anti-cavalry units trained in this city."),
     ("LOC_BUILDING_BASILIKOI_PAIDES_EXPANSION2_DESCRIPTION",      "A building unique to Macedon. +25% combat experience for all melee, ranged land units, and Hetairoi trained in this city. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city.[NEWLINE][NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed).[NEWLINE][NEWLINE]May not be built in an Encampment district that already has a Stable.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production to each improved [ICON_RESOURCE_IRON] Iron in this city. +3 [ICON_Strength] Combat strength for all land combat, ranged and Hetairoi trained in this city."),
@@ -166,7 +166,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MEETING_HOUSE_DL_DESCRIPTION",                 "本城+10% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STUPA_DL_DESCRIPTION",                         "本城每种已开发的奢侈品 +1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CATHEDRAL_DL_DESCRIPTION",                     "可放置1个 [ICON_GreatWork_Landscape] 艺术巨作。[NEWLINE] 本城 [ICON_GreatWork_Landscape] 艺术巨作产出的 [ICON_CULTURE] 文化值和 [ICON_TOURISM] 旅游业绩+100%"),
-    ("zh_Hans_CN",  "LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION",                    "建造或上次修复后的每个时代均额外+1 [ICON_FAITH] 信仰值。完成后，获得一个传教士。 "),
+    ("zh_Hans_CN",  "LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION",                    "建造或上次修复后的每个时代均额外+2 [ICON_FAITH] 信仰值。完成后，获得一个传教士。 "),
     -- 军营
     ("zh_Hans_CN",  "LOC_BUILDING_BARRACKS_EXPANSION2_DESCRIPTION",              "该城市中训练的所有近战和远程陆地单位+25%战斗经验值。[NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]无法建造在已有马厩的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_IRON] 铁资源+2 [ICON_Production] 生产力。为在本城训练的近战、远程、反骑兵单位提供永久+2 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BASILIKOI_PAIDES_EXPANSION2_DESCRIPTION",      "马其顿特色建筑。该城中训练的陆地近战、远程单位和伙友骑兵+25%战斗经验值。非平民单位在此城中创建时，获得等同于单位花费25%的 [ICON_SCIENCE] 科技值。[NEWLINE][NEWLINE]战略资源储备+10（标准速度下）。[NEWLINE][NEWLINE]无法建造在已拥有马厩的军营区域中。[NEWLINE][NEWLINE]本城的所有已开发的 [ICON_RESOURCE_IRON] 铁+2 [ICON_Production] 生产力。为在本城训练的近战、远程、反骑兵、攻城、伙友骑兵提供永久+3 [ICON_Strength] 战斗力。"),
