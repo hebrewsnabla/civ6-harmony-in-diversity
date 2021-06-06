@@ -44,17 +44,24 @@
     <Row Name="ICON_GOLD_BRONZE"              Index="39" Atlas="ICON_ATLAS_PROMOTIONS"/>-->
     <!-- New Icons -->
 
+    <!-- Melee -->
     <Row Name="ICON_PROMOTION_BATTLE_LINE"                  Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
     <Row Name="ICON_PROMOTION_LONG_MARCH"                   Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
+    <!-- Ranged -->
     <!-- <Row Name="ICON_PROMOTION_SNIPER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="6"/> -->
     <Update><Where Name="ICON_PROMOTION_SUPPRESSION"/> <Set Index="13"/></Update>
     <Update><Where Name="ICON_PROMOTION_ARROW_STORM"/> <Set Index="1"/></Update>
 
+    <!-- Recon -->
     <Row Name="ICON_PROMOTION_RECON_TRAVEL_LIGHT"           Atlas="ICON_ATLAS_PROMOTIONS" Index="23"/>
     <Row Name="ICON_PROMOTION_RECON_RAPID_FIRE"             Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
     <Row Name="ICON_PROMOTION_RECON_ACCURATE"               Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
     <Update><Where Name="ICON_PROMOTION_SENTRY"/> <Set Index="19"/></Update>
     <Update><Where Name="ICON_PROMOTION_SPYGLASS"/> <Set Index="18"/></Update>
+    <!-- Light Cavalry -->
+    <Row Name="ICON_PROMOTION_LIGHTC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="11"/>
+    <Row Name="ICON_PROMOTION_LIGHTC_MOBILE_WARFARE"        Atlas="ICON_ATLAS_PROMOTIONS" Index="21"/>
+    <Update><Where Name="ICON_PROMOTION_PURSUIT"/> <Set Index="9"/></Update>
 
     <!-- Official Icons -->
     <!-- <Row Name="ICON_PROMOTION_RANGER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>

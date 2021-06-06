@@ -879,6 +879,7 @@ insert or replace into RequirementSetRequirements	(RequirementSetId,	Requirement
 insert or replace into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
+	('PLOT_IS_OPEN_AREA_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL'),
 	('MELEE_FOREST_AND_JUNGLE_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_FOREST_OR_JUNGLE_REQUIREMENTS',					'REQUIREMENTSET_TEST_ANY'),
 	--('DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS',			'REQUIREMENTSET_TEST_ANY'),
@@ -896,6 +897,10 @@ values
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
+	('PLOT_IS_OPEN_AREA_REQUIREMENTS',							'REQUIRES_PLOT_IS_NOT_FOREST'),
+	('PLOT_IS_OPEN_AREA_REQUIREMENTS',							'REQUIRES_PLOT_IS_NOT_JUNGLE'),
+	('PLOT_IS_OPEN_AREA_REQUIREMENTS',							'REQUIRES_PLOT_IS_NOT_MARSH'),
+	('PLOT_IS_OPEN_AREA_REQUIREMENTS',							'REQUIRES_PLOT_IS_FLAT'),
 	('MELEE_FOREST_AND_JUNGLE_REQUIREMENTS',					'REQUIRES_PLOT_HAS_FOREST_OR_JUNGLE'),
 	('MELEE_FOREST_AND_JUNGLE_REQUIREMENTS',					'REQUIREMENT_UNIT_IS_MELEE'),
 	('PLOT_HAS_FOREST_OR_JUNGLE_REQUIREMENTS',					'PLOT_IS_JUNGLE_REQUIREMENT'),
@@ -923,6 +928,13 @@ values
 	('UNIT_IS_MELEE_REQUIREMENTS',								'REQUIREMENT_UNIT_IS_MELEE');
 
 insert or replace into Requirements
+	(RequirementId,									RequirementType,							Inverse)
+values
+	('REQUIRES_PLOT_IS_NOT_FOREST',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1),
+	('REQUIRES_PLOT_IS_NOT_JUNGLE',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1),
+	('REQUIRES_PLOT_IS_NOT_MARSH',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1);
+
+insert or replace into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_PLOT_HAS_FOREST_OR_JUNGLE',			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
@@ -941,6 +953,9 @@ values
 insert or replace into RequirementArguments
 	(RequirementId,							Name,					Value)
 values
+	('REQUIRES_PLOT_IS_NOT_FOREST',			'FeatureType',			'FEATURE_FOREST'),
+	('REQUIRES_PLOT_IS_NOT_JUNGLE',			'FeatureType',			'FEATURE_JUNGLE'),
+	('REQUIRES_PLOT_IS_NOT_MARSH',			'FeatureType',			'FEATURE_MARSH'),
 	('REQUIRES_PLOT_HAS_FOREST_OR_JUNGLE',	'RequirementSetId',		'PLOT_HAS_FOREST_OR_JUNGLE_REQUIREMENTS'),
 	--('REQUIRES_DEFEND_RANGED',				'RequirementSetId',		'TORTOISE_REQUIREMENTS'),
 	--('REQUIRES_DEFEND_CITY_CENTER',			'RequirementSetId',		'EMPLACEMENT_REQUIREMENTS'),

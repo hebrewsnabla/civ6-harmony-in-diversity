@@ -16,6 +16,19 @@ values
     ("LOC_PROMOTION_RECON_RAPID_FIRE_DESCRIPTION",                              "+1 additional attack per turn if [ICON_Movement] Movement allows."),
     ("LOC_PROMOTION_RECON_ACCURATE_NAME",                                       "Accurate"),
     ("LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                                "+1 [ICON_Range] Range."),
+    -- Heavy Cavalry
+    ("LOC_PROMOTION_ROUT_DESCRIPTION",                                          "+5 [ICON_Strength] Combat Strength attacking damaged units."),
+    ("LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when attacking units. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
+    ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when defending. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
+    -- Light Cavalry
+    ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
+    ("LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                         "Shock"),
+    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when 在没有雨林、树林、沼泽地貌的平坦地形作战时."),
+    ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory。"),
+    ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                                "Mobile Warfare"),
+    ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                         "+1 [ICON_Movement] Movement, can move after attacking."),
+    ("LOC_PROMOTION_PURSUIT_DESCRIPTION",                                       "+7 [ICON_Strength] Combat Strength attacking damaged units."),
+    ("LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                               "Formation units all inherit escort's [ICON_Movement] Movement speed and +7 [ICON_Strength] Combat Strength when in a formation."),
     -- Siege
     ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                       "+1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry."),
     ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+7 [ICON_Strength] Combat Strength vs. district defenses."),
@@ -42,6 +55,18 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                             "+1 [ICON_Range] 射程。"),
     -- Heavy Cavalry
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BARDING_DESCRIPTION",                                    "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ROUT_DESCRIPTION",                                       "攻击受伤单位时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                             "攻击单位时+5 [ICON_Strength] 战斗力。若基础战斗力比对方单位更高，则攻击时额外 +5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "防御时+5 [ICON_Strength] 战斗力。若基础战斗力比对方更高，则防御时额外 +5 [ICON_Strength] 战斗力。"),
+    -- Light Cavalry
+    ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                             "掠夺只消耗1点 [ICON_Movement] 移动力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                      "冲击"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                               "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                "在敌方领土内时 +5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                             "运动战"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                      "+1 [ICON_Movement] 移动力，攻击后可移动。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_PURSUIT_DESCRIPTION",                                    "攻击受伤单位时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                            "编队时，所有编队单位将继承护卫队的 [ICON_Movement] 移动力并+7 [ICON_Strength] 战斗力。"),
     -- Siege
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                    "相邻轻重骑兵时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+7 [ICON_Strength] 战斗力，只有相邻敌军单位才能发现该单位。。"),
