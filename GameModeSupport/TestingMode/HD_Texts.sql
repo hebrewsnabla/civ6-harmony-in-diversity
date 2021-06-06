@@ -3,6 +3,30 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+    --melee
+    ("LOC_TECH_SHIPBUILDING_DESCRIPTION",                                       "Allows all land units to embark. Melee and recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Melee units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
+    ("LOC_TECH_SANITATION_DESCRIPTION",                                         "Stepwell improvements receive +1 [ICON_Housing] Housing. Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                                 "Anti-cavalry units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in hill tiles."),
+    ("LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION",                                   "+2 [ICON_gold] Gold from the Camp improvement. Recon units gain the ability: Ignore the Zone of Control.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    --melee
+    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_DESCRIPTION",                                    "允许所有陆地单位上船。近战和侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_SANITATION_DESCRIPTION",                                      "梯井改良设施+1 [ICON_Housing] 住房。抗骑兵单位获得能力：单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                              "抗骑兵单位获得能力：在丘陵上战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。侦察单位获得能力：忽略控制区。");
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                                       Text)
+values
     -- Recon
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
     ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
@@ -79,9 +103,6 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     --melee
-    -- ("LOC_TECH_SHIPBUILDING_DESCRIPTION",                                       "Allows all land units to embark. Unlocks Melee units upgrade: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
-    -- ("LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Unlocks Melee units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
-    --("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_NAME",                       "District Warfare"),
     ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when fighting in a district."),
     ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",          "from District Warfare"),
     ("LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",         "from fighting in Rainforest or Woods tiles"),
@@ -107,8 +128,6 @@ values
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     --anti-cavalry
-    --("LOC_TECH_SANITATION_DESCRIPTION",                                         "Stepwell improvements receive +1 [ICON_Housing] Housing. Unlocks Anti-cavalry units upgrade: Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
-    --("LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                                 "Unlocks Anti-cavalry units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in hill tiles."),
     ("LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION",                 "from fighting in hills tiles"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+10 HP healing."),
@@ -122,9 +141,6 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     --melee
-    -- ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_DESCRIPTION",                                    "允许所有陆地单位上船。解锁近战单位升级：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
-    -- ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。解锁近战单位升级：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
-    --("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_NAME",                    "区域作战"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",               "在区域上战斗时+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",       "来自区域作战"),
     ("zh_Hans_CN",  "LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",      "来自在森林或雨林中战斗"),
@@ -150,8 +166,6 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程攻击时+10 [ICON_Strength] 战斗力。"),
     --anti-cavalry
-    --("zh_Hans_CN",  "LOC_TECH_SANITATION_DESCRIPTION",                                      "梯井改良设施+1 [ICON_Housing] 住房。解锁抗骑兵单位升级：单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
-    --("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                              "解锁抗骑兵单位升级：在丘陵上战斗时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "来自在丘陵上战斗"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "后勤补给"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "+10生命值恢复。"),
