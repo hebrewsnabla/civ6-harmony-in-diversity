@@ -14,9 +14,9 @@
 
 -- Outer Defense
 update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_WALLS';
-update Buildings set OuterDefenseStrength = 2 where
-    BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
-update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;
+-- update Buildings set OuterDefenseStrength = 2 where
+--     BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
+-- update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;
 delete from AiFavoredItems where ListType = 'DLAdjustBuildings' and Item = 'BUILDING_CASTLE';
 
 -- COMBAT_STRENGTH_REDUCTION_INSUFFICIENT_FUEL

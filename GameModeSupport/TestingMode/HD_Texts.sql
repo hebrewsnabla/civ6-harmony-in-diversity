@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+    ("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+10 [ICON_Strength] Combat Strength when defending in Woods, Jungle, Hills, or Marsh."),
     -- Recon
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
     ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
@@ -40,6 +41,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
+    -- Anti
+    ("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽防御时+10 [ICON_Strength] 战斗力。"),
     -- Recon
     ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力"), -- ，但-1 [ICON_Movement] 移动力
     ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过森林和丛林。"),
@@ -69,7 +72,7 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                            "编队时，所有编队单位将继承护卫队的 [ICON_Movement] 移动力并+7 [ICON_Strength] 战斗力。"),
     -- Siege
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                    "相邻轻重骑兵时+1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+7 [ICON_Strength] 战斗力，只有相邻敌军单位才能发现该单位。。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。");
 
