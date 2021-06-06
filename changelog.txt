@@ -1994,7 +1994,7 @@ The new list:
   F. EMPIRE_STATES, unchanged.
   G. BUILDING_ARECIBO, unchanged.
 
-[v0.7.8.1]
+[v0.7.8.5]
 军事测试模式：
 破城槌和攻城塔定价为60和90锤。
 城墙防御恢复为3力，每个区域的防御恢复为2力。
