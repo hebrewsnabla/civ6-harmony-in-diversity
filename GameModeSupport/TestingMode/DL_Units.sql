@@ -2,10 +2,8 @@
 --      All Testing Adjustments    --
 -------------------------------------
 
--- TODO: 单位过期科技
-
 -- Costs
-update Units set Cost = 20 where UnitType = 'UNIT_SCOUT';
+update Units set Cost = 25 where UnitType = 'UNIT_SCOUT';
 update Units set Cost = 25 where UnitType = 'UNIT_SLINGER';
 update Units set Cost = 30 where UnitType = 'UNIT_WARRIOR';
 update Units set Cost = 110 where UnitType = 'UNIT_MILITARY_ENGINEER';

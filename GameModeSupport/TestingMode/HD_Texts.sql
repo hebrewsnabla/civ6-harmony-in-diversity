@@ -47,7 +47,7 @@ values
     -- Light Cavalry
     ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
     ("LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                         "Shock"),
-    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when 在没有雨林、树林、沼泽地貌的平坦地形作战时."),
+    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory。"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                                "Mobile Warfare"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                         "+1 [ICON_Movement] Movement, can move after attacking."),
@@ -80,8 +80,8 @@ values
     -- Heavy Cavalry
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BARDING_DESCRIPTION",                                    "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ROUT_DESCRIPTION",                                       "攻击受伤单位时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                             "攻击单位时+5 [ICON_Strength] 战斗力。若基础战斗力比对方单位更高，则攻击时额外 +5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "防御时+5 [ICON_Strength] 战斗力。若基础战斗力比对方更高，则防御时额外 +5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                             "攻击单位时+5 [ICON_Strength] 战斗力。若基础战斗力不低于对方单位，则攻击时额外 +5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "防御时+5 [ICON_Strength] 战斗力。若基础战斗力不低于对方，则防御时额外 +5 [ICON_Strength] 战斗力。"),
     -- Light Cavalry
     ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                             "掠夺只消耗1点 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                      "冲击"),
@@ -103,17 +103,17 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     --melee
-    ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when fighting in a district."),
-    ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",          "from District Warfare"),
-    ("LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",         "from fighting in Rainforest or Woods tiles"),
+    -- ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when fighting in a district."),
+    -- ("LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",          "from District Warfare"),
+    -- ("LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",         "from fighting in Rainforest or Woods tiles"),
     --("LOC_BATTLE_LINE_COMBAT_HD_PREVIEW_DESCRIPTION",                           "from adjacent melee unit"),
-    ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+5 [ICON_Strength] Combat Strength vs. melee, ranged and anti-cavalry units."),
-    ("LOC_PROMOTION_TORTOISE_DESCRIPTION",                                      "+7 [ICON_Strength] Combat Strength when defending against ranged attacks."),
+    -- ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+5 [ICON_Strength] Combat Strength vs. melee, ranged and anti-cavalry units."),
+    -- ("LOC_PROMOTION_TORTOISE_DESCRIPTION",                                      "+7 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
     ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_PROMOTION_LONG_MARCH_HD_NAME",                                        "Long March"),
     ("LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                                 "Heals at the end of every turn, even after moving or attacking."),
-    ("LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                                 "+7 [ICON_Strength] Combat Strength when fighting in a district."),
+    -- ("LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                                 "+7 [ICON_Strength] Combat Strength when fighting in a district."),
     --ranged
     ("LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION",               "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district."),
     ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",            "-3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles."),
@@ -121,13 +121,16 @@ values
     ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION",    "from targets in Rainforest or Woods tiles"),
     --("LOC_SNIPER_BONUS_VS_WOUNDED_UNITS_HD_PREVIEW_DESCRIPTION",                "from attacking wounded units"),
     --("LOC_SUPPRESSION_DEFNECE_BONUS_HD_PREVIEW_DESCRIPTION",                    "from Suppression"),
-    ("LOC_PROMOTION_GARRISON_DESCRIPTION",                                      "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. +5 Loyalty per turn when garrisoning in city centers."),
-    ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "Sniper"),
-    ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking wounded units."),
+    -- ("LOC_PROMOTION_GARRISON_DESCRIPTION",                                      "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. +5 Loyalty per turn when garrisoning in city centers."),
+    -- ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "Sniper"),
+    -- ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking wounded units."),
     ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +10 [ICON_Strength] Combat Strength when defending melee combat."),
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     --anti-cavalry
+    ("LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                    "+5 [ICON_Strength] Combat Strength against Cavalry units, extra +5 [ICON_Strength] Combat Strength when defending cavalry units."),
+    ("LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength against Cavalry units"),
+    ("LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                    "from defending Cavalry units"),
     ("LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION",                 "from fighting in hills tiles"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+10 HP healing."),
@@ -141,32 +144,35 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     --melee
-    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",               "在区域上战斗时+5 [ICON_Strength] 战斗力"),
-    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",       "来自区域作战"),
-    ("zh_Hans_CN",  "LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",      "来自在森林或雨林中战斗"),
+    -- ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",               "在区域上战斗时+5 [ICON_Strength] 战斗力"),
+    -- ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",       "来自区域作战"),
+    -- ("zh_Hans_CN",  "LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",      "来自在森林或雨林中战斗"),
     --("zh_Hans_CN",  "LOC_BATTLE_LINE_COMBAT_HD_PREVIEW_DESCRIPTION",                      "来自相邻近战单位"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                  "进攻近战、远程和抗骑兵单位时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_TORTOISE_DESCRIPTION",                                   "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                  "进攻近战、远程和抗骑兵单位时+5 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_TORTOISE_DESCRIPTION",                                   "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_NAME",                                     "长途行军"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                              "在每回合结束时（甚至是在移动或攻击后），自动恢复生命值。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                              "在区域上战斗时+7 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                              "在区域上战斗时+7 [ICON_Strength] 战斗力。"),
     --ranged
-    ("zh_Hans_CN",  "LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION",            "占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",         "攻击森林或雨林中的目标时-3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION",            "来自驻军"),
-    ("zh_Hans_CN",  "LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION", "来自目标位于森林或雨林中"),
-    --("zh_Hans_CN",  "LOC_SNIPER_BONUS_VS_WOUNDED_UNITS_HD_PREVIEW_DESCRIPTION",           "来自攻击受伤单位"),
-    --("zh_Hans_CN",  "LOC_SUPPRESSION_DEFNECE_BONUS_HD_PREVIEW_DESCRIPTION",               "来自压制"), 
-    ("zh_Hans_CN",  "LOC_PROMOTION_GARRISON_DESCRIPTION",                                   "占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。驻军时+5忠诚度。"),
+    -- ("zh_Hans_CN",  "LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION",            "占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",         "攻击森林或雨林中的目标时-3 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION",            "来自驻军"),
+    -- ("zh_Hans_CN",  "LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION", "来自目标位于森林或雨林中"),
+    -- ("zh_Hans_CN",  "LOC_SNIPER_BONUS_VS_WOUNDED_UNITS_HD_PREVIEW_DESCRIPTION",             "来自攻击受伤单位"),
+    -- ("zh_Hans_CN",  "LOC_SUPPRESSION_DEFNECE_BONUS_HD_PREVIEW_DESCRIPTION",                 "来自压制"), 
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_GARRISON_DESCRIPTION",                                   "占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。驻军时+5忠诚度。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_SNIPER_HD_NAME",                                         "狙击"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                  "攻击受伤单位时+7 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                "学会区域控制。防御近战攻击时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程攻击时+10 [ICON_Strength] 战斗力。"),
     --anti-cavalry
-    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "来自在丘陵上战斗"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                 "与骑兵单位作战时+5 [ICON_Strength] 战斗力，防御骑兵单位时额外+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                        "与骑兵单位战斗时+5 [ICON_Strength] 战斗力"),
+    ("zh_Hans_CN",  "LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                 "来自防御骑兵单位"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION",              "来自在丘陵上战斗"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "后勤补给"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "+10生命值恢复。"),
     --("zh_Hans_CN",  "LOC_PROMOTION_ECHELON_DESCRIPTION",                                    "防御近战攻击时+7 [ICON_Strength] 战斗力。"),
@@ -185,32 +191,33 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Recon: Faster [ICON_M
     Tag = 'LOC_UNIT_SKIRMISHER_DESCRIPTION' or
     Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Melee: +5 [ICON_Strength] when attacking Districts.' where Language = 'en_US' and (
-    Tag = 'LOC_UNIT_WARRIOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SWORDSMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ROMAN_LEGION_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KONGO_SHIELD_BEARER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_NORWEGIAN_BERSERKER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MUSKETMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION' or
-    Tag = 'LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MECHANIZED_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAN_AT_ARMS_DESCRIPTION' or
-    Tag = 'LOC_UNIT_LINE_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MACEDONIAN_HYPASPIST_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PERSIAN_IMMORTAL_DESCRIPTION' or
-    Tag = 'LOC_UNIT_DIGGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAORI_TOA_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
+-- Melee: ability cancelled.
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Melee: +5 [ICON_Strength] when attacking Districts.' where Language = 'en_US' and (
+--     Tag = 'LOC_UNIT_WARRIOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SWORDSMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROMAN_LEGION_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KONGO_SHIELD_BEARER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_NORWEGIAN_BERSERKER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MUSKETMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MECHANIZED_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAN_AT_ARMS_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_LINE_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MACEDONIAN_HYPASPIST_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_PERSIAN_IMMORTAL_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_DIGGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAORI_TOA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [ICON_Strength] Combat Strength against Light and Heavy Cavalry.' where Language = 'en_US' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +5 [ICON_Strength] Combat Strength against Cavalry units, extra +5 [ICON_Strength] Combat Strength when defending cavalry units.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_SPEARMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_GREEK_HOPLITE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PIKEMAN_DESCRIPTION' or
@@ -220,21 +227,22 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
     Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Ranged: -17 [ICON_Strength] Combat Strength when attacking districts or Naval units. +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. -3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles.' where Language = 'en_US' and (
-    Tag = 'LOC_UNIT_SLINGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BARBARIAN_HORSE_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_EGYPTIAN_CHARIOT_ARCHER_EXPANSION2_DESCRIPTION' or
-    Tag = 'LOC_UNIT_CROSSBOWMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_FIELD_CANNON_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MACHINE_GUN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_NUBIAN_PITATI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
+-- Ranged: ability cancelled.
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Ranged: -17 [ICON_Strength] Combat Strength when attacking districts or Naval units. +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. -3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles.' where Language = 'en_US' and (
+--     Tag = 'LOC_UNIT_SLINGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BARBARIAN_HORSE_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_EGYPTIAN_CHARIOT_ARCHER_EXPANSION2_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_CROSSBOWMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_FIELD_CANNON_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MACHINE_GUN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_NUBIAN_PITATI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
 
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: +1 [ICON_Movement] Movement if starting in flat tiles. -5 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
@@ -265,13 +273,14 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: Pillag
     Tag = 'LOC_UNIT_COLOMBIAN_LLANERO_DESCRIPTION' or
     Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Siege: +1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry.' where Language = 'en_US' and (
-    Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+-- Siege: temporary disable.
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Siege: +1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry.' where Language = 'en_US' and (
+--     Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -284,32 +293,33 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]侦察：在丘陵、
     Tag = 'LOC_UNIT_SKIRMISHER_DESCRIPTION' or
     Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]近战：攻击区域防御时+5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
-    Tag = 'LOC_UNIT_WARRIOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SWORDSMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ROMAN_LEGION_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KONGO_SHIELD_BEARER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_NORWEGIAN_BERSERKER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MUSKETMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION' or
-    Tag = 'LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MECHANIZED_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAN_AT_ARMS_DESCRIPTION' or
-    Tag = 'LOC_UNIT_LINE_INFANTRY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MACEDONIAN_HYPASPIST_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PERSIAN_IMMORTAL_DESCRIPTION' or
-    Tag = 'LOC_UNIT_DIGGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAORI_TOA_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
+-- 近战能力取消。
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]近战：攻击区域防御时+5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+--     Tag = 'LOC_UNIT_WARRIOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SWORDSMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROMAN_LEGION_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KONGO_SHIELD_BEARER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_JAPANESE_SAMURAI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_NORWEGIAN_BERSERKER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MUSKETMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MECHANIZED_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAN_AT_ARMS_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_LINE_INFANTRY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MACEDONIAN_HYPASPIST_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_PERSIAN_IMMORTAL_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_DIGGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAORI_TOA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：与轻重骑兵作战+10 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：与骑兵单位作战时+5 [ICON_Strength] 战斗力，防御骑兵单位时额外+5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_SPEARMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_GREEK_HOPLITE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PIKEMAN_DESCRIPTION' or
@@ -319,21 +329,22 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：与轻重
     Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]远程：攻击区域防御和海军单位时-17 [ICON_Strength] 战斗力。占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。攻击森林或雨林中的目标时-3 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
-    Tag = 'LOC_UNIT_SLINGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BARBARIAN_HORSE_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_EGYPTIAN_CHARIOT_ARCHER_EXPANSION2_DESCRIPTION' or
-    Tag = 'LOC_UNIT_CROSSBOWMAN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_FIELD_CANNON_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MACHINE_GUN_DESCRIPTION' or
-    Tag = 'LOC_UNIT_NUBIAN_PITATI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
-    Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
-    Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
+-- 远程能力取消。
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]远程：攻击区域防御和海军单位时-17 [ICON_Strength] 战斗力。占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。攻击森林或雨林中的目标时-3 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+--     Tag = 'LOC_UNIT_SLINGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BARBARIAN_HORSE_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_EGYPTIAN_CHARIOT_ARCHER_EXPANSION2_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_CROSSBOWMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_FIELD_CANNON_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MACHINE_GUN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_NUBIAN_PITATI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
 
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]重骑兵：如果在平坦地形开始回合，本回合+1 [ICON_Movement] 移动力。攻击区域防御时-5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
@@ -364,10 +375,11 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：劫掠只
     Tag = 'LOC_UNIT_COLOMBIAN_LLANERO_DESCRIPTION' or
     Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻城：若相邻轻重骑兵，则+1 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
-    Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
-    Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
-    Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+-- 攻城能力临时取消
+-- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻城：若相邻轻重骑兵，则+1 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
+--     Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');

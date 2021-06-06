@@ -21,7 +21,11 @@ values
     ("LOC_CIVIC_GUILDS_DL_DESCRIPTION",               "Lumber Mills and Camps can be built on Rainforest."),
     ("LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION",     "+50% [ICON_Tourism] Tourism across your empire."),
     ("LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION",        "+2 [ICON_Gold] Gold to Plantations."),
+    -- Boosts
+    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "Build 3 Lumber Mills."),
+    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "Build 3 Workshops."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",              "Kill 2 Barbarians."),
+    -- TODO Longdesc
     ("LOC_BOOST_TRIGGER_THE_WHEEL",                   "Build a Pasture."),
     ("LOC_BOOST_TRIGGER_HORSEBACK_RIDING",            "Build a Pasture with Horses."),
     ("LOC_BOOST_TRIGGER_FOREIGN_TRADE",               "Meet another civilization."),
@@ -60,6 +64,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION",     "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION",        "种植园+2 [ICON_gold] 金币。"),
     -- Boosts
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "建造3座伐木场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "建造3座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BRONZE_WORKING",              "击杀2个蛮族单位。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BRONZE_WORKING",     ""), -- 和蛮族的战争让你渴望更强大的武器。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_THE_WHEEL",                   "建造1座牧场。"),

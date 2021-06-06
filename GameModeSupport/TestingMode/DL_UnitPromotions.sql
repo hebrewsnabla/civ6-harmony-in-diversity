@@ -57,72 +57,77 @@ insert or replace into Types
     (Type,                                                      Kind)
 values
     --melee
-    ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'KIND_ABILITY'),
+    -- ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'KIND_ABILITY'),
     ('PROMOTION_BATTLE_LINE',                                   'KIND_PROMOTION'),
     ('PROMOTION_LONG_MARCH',                                    'KIND_PROMOTION'),
     --ranged
-    ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'KIND_ABILITY'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'KIND_ABILITY'),
+    -- ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'KIND_ABILITY'),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'KIND_ABILITY'),
     -- ('PROMOTION_SNIPER',                                        'KIND_PROMOTION');
     --anti-cavalry
     ('PROMOTION_LOGISTICS_SUPPLY',                              'KIND_PROMOTION');
 
-insert or replace into TypeTags
-    (Type,                                                      Tag)
-values
-    --melee
-    ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'CLASS_MELEE'),
-    --ranged
-    ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'CLASS_RANGED'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'CLASS_RANGED');
+delete from TypeTags where Type = 'ABILITY_ANTI_SPEAR' and Tag = 'CLASS_MELEE';
+-- insert or replace into TypeTags
+--     (Type,                                                      Tag)
+-- values
+--     --melee
+--     ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'CLASS_MELEE'),
+--     --ranged
+--     ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'CLASS_RANGED'),
+--     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'CLASS_RANGED');
 
-insert or replace into UnitAbilities 
-    (UnitAbilityType,                               Name,      Description,                                                     Inactive) 
-values
-    --melee
-    ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',         NULL,      'LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION',        0),
-    --ranged
-    ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',      NULL,      'LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION',     0),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',   NULL,      'LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION',  0);
+-- insert or replace into UnitAbilities 
+--     (UnitAbilityType,                               Name,      Description,                                                     Inactive) 
+-- values
+--     --melee
+--     ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',         NULL,      'LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION',        0),
+--     --ranged
+--     ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',      NULL,      'LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION',     0),
+--     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',   NULL,      'LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION',  0);
 
 insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
 values
     --melee
-    ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'MELEE_DISTRICT_COMBAT_BONUS'),
+    -- ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'MELEE_DISTRICT_COMBAT_BONUS'),
     --ranged
-    ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'RANGED_GARRISON_DISTRICT_BONUS'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE');
+    -- ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'RANGED_GARRISON_DISTRICT_BONUS'),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE'),
+    ('ABILITY_ANTI_CAVALRY',                                    'ANTI_CAVALRY_COMBAT_BONUS_DEFENDING');
 
 insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                               SubjectRequirementSetId)
 values
     --melee
-    ('MELEE_DISTRICT_COMBAT_BONUS',                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'URBAN_WARFARE_REQUIREMENTS'),
+    -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'URBAN_WARFARE_REQUIREMENTS'),
     --ranged
-    ('RANGED_GARRISON_DISTRICT_BONUS',                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'GARRISON_REQUIREMENTS'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'RANGED_WEAKER_REQUIREMENTS');
+    -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'GARRISON_REQUIREMENTS'),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'RANGED_WEAKER_REQUIREMENTS'),
+    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,            Value)
 values
     --melee
-    ('MELEE_DISTRICT_COMBAT_BONUS',                             'Amount',        5),
+    -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'Amount',        5),
     --ranged
-    ('RANGED_GARRISON_DISTRICT_BONUS',                          'Amount',        5),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Amount',        -3);
+    -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Amount',        5),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Amount',        -3),
+    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'Amount',        5);
 
 insert or replace into ModifierStrings
     (ModifierId,                                                Context,    Text)
 values
     --melee
-    ('MELEE_DISTRICT_COMBAT_BONUS',                             'Preview',    '+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Preview',    '+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'Preview',    '+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Preview',    '+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',             'Preview',    '+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('BATTLE_LINE_COMBAT',                                      'Preview',    '+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --ranged
-    ('RANGED_GARRISON_DISTRICT_BONUS',                          'Preview',    '+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Preview',    '{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
+    -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Preview',    '+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Preview',    '{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
+    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'Preview',    '+{1_Amount} {LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT}'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                           'Preview',    '+{1_Amount} {LOC_PROMOTION_SNIPER_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('SUPPRESSION_DEFNECE_BONUS',                               'Preview',    '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                     'Preview',    '+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
@@ -133,15 +138,16 @@ values
 
 --unit upgrade ability 升级线
 --melee
-update ModifierArguments set Value = 5 where ModifierId = 'BATTLECRY_BONUS_VS_MELEE_RANGED' and Name = 'Amount';
+-- update ModifierArguments set Value = 5 where ModifierId = 'BATTLECRY_BONUS_VS_MELEE_RANGED' and Name = 'Amount';
 --update UnitPromotionModifiers set ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES' where UnitPromotionType = 'PROMOTION_TORTOISE' and ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_COMBAT';
-update ModifierArguments set Value = 7 where ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_COMBAT' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'URBAN_WARFARE_BONUS' and Name = 'Amount';
+-- update ModifierArguments set Value = 7 where ModifierId = 'TORTOISE_DEFENSE_BONUS_VS_RANGED_COMBAT' and Name = 'Amount';
+-- update ModifierArguments set Value = 7 where ModifierId = 'URBAN_WARFARE_BONUS' and Name = 'Amount';
 --ranged
-update ModifierArguments set Value = 5 where ModifierId = 'GARRISON_BONUS_DISTRICTS' and Name = 'Amount';
+-- update ModifierArguments set Value = 5 where ModifierId = 'GARRISON_BONUS_DISTRICTS' and Name = 'Amount';
 -- update ModifierArguments set Value = 10 where ModifierId = 'INCENDIARIES_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_RANGED' where UnitPromotionType = 'PROMOTION_EMPLACEMENT' and ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_CITIES';
 --anti-cavalry
+update ModifierArguments set Value = 5 where ModifierId = 'ANTI_CAVALRY_COMBAT_BONUS' and Name = 'Amount';
 --delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_ECHELON' and ModifierId = 'ECHELON_ADDITIONAL_CAVALRY_BONUS';
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' and ModifierId = 'THRUST_BONUS_VS_MELEE';
 update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
@@ -220,7 +226,7 @@ values
     ('PROMOTION_BATTLE_LINE',       'BATTLE_LINE_COMBAT'),
     ('PROMOTION_LONG_MARCH',        'MAMLUK_HEAL_EVERY_MOVE'),
     --ranged
-    ('PROMOTION_GARRISON',          'GARRISON_LOYALTY_BONUS'),
+    -- ('PROMOTION_GARRISON',          'GARRISON_LOYALTY_BONUS'),
     -- ('PROMOTION_SNIPER',            'SNIPER_BONUS_VS_WOUNDED_UNITS'),
     ('PROMOTION_SUPPRESSION',       'SUPPRESSION_DEFNECE_BONUS'),
     --anti-cavalry
@@ -235,7 +241,7 @@ values
     --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
     ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     --ranged
-    ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
+    -- ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'TORTOISE_REQUIREMENTS'),
@@ -249,8 +255,8 @@ insert or replace into ModifierArguments
 values
     --melee
     --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'Amount',        7),
-    ('BATTLE_LINE_COMBAT',                                          'Amount',        7),
-    ('GARRISON_LOYALTY_BONUS',                                      'Amount',        5),
+    ('BATTLE_LINE_COMBAT',                                          'Amount',        5),
+    -- ('GARRISON_LOYALTY_BONUS',                                      'Amount',        5),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',        7),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',        10),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',        10),
@@ -468,6 +474,7 @@ values
     ('ESCORT_BONUS_IN_FORMATION',                           'Preview',  '+{1_Amount} {LOC_PROMOTION_ESCORT_MOBILITY_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('EXPERT_CREW_BONUS_VS_DISTRICTS',                      'Preview',  '+{1_Amount} {LOC_PROMOTION_EXPERT_CREW_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 
+--------------------------------------------------------------------------------------------------------------
 -- Requirements
 insert or replace into RequirementSets
     (RequirementSetId,                              RequirementSetType)
@@ -478,6 +485,8 @@ values
     ('HD_UNIT_ATTACKING_UNIT_REQUIREMENTS',         'REQUIREMENTSET_TEST_ALL'),
     ('HD_UNIT_ATTACK_WEAKER_UNIT_REQUIREMENTS',     'REQUIREMENTSET_TEST_ALL'),
     ('HD_UNIT_DEFEND_WEAKER_OPPONENT_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL'),
+    -- 
+    ('ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS',   'REQUIREMENTSET_TEST_ALL'),
     -- 
     -- ('HD_SHOCK_REQUIREMENTS',                       'REQUIREMENTSET_TEST_ALL'),
     -- 
@@ -497,6 +506,8 @@ values
     ('HD_UNIT_DEFEND_WEAKER_OPPONENT_REQUIREMENTS', 'REQUIRES_COMBAT_AGAINST_WEAKER_OPPONENT'),
     ('HD_UNIT_DEFEND_WEAKER_OPPONENT_REQUIREMENTS', 'PLAYER_IS_DEFENDER_REQUIREMENTS'),
     -- 
+    ('ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS',   'PLAYER_IS_DEFENDER_REQUIREMENTS'),
+    ('ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS',   'REQUIRES_OPPONENT_IS_CAVALRY'),
     -- ('HD_SHOCK_REQUIREMENTS',                       'REQUIRES_PLOT_IS_FLAT'),
     -- 
     ('HD_NEAR_CAVALRY_REQUIREMENTS',                'REQUIRES_LIGHT_CAVALRY_NEXT_TO_OWNER'),

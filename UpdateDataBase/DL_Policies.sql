@@ -23,6 +23,7 @@ values
 	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT',	'Amount',	2);
 
 -- Policy Cards
+update ModifierArguments set Value = 10 where ModifierId = 'DISCIPLINE_BARBARIANCOMBAT' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'CIVILPRESTIGE_GOVHOUSING' and Name = 'Amount';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING' and Name = 'Amount';
