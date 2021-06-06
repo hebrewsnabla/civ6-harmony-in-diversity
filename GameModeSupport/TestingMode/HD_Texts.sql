@@ -92,7 +92,7 @@ values
     ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+5 [ICON_Strength] Combat Strength vs. melee, ranged and anti-cavalry units."),
     ("LOC_PROMOTION_TORTOISE_DESCRIPTION",                                      "+7 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
-    ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+10 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
+    ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_PROMOTION_LONG_MARCH_HD_NAME",                                        "Long March"),
     ("LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                                 "Heals at the end of every turn, even after moving or attacking."),
     ("LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                                 "+7 [ICON_Strength] Combat Strength when fighting in a district."),
@@ -108,8 +108,16 @@ values
     ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking wounded units."),
     ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +10 [ICON_Strength] Combat Strength when defending melee combat."),
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
-    ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks.")
-    ;
+    ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks."),
+    --anti-cavalry
+    --("LOC_TECH_SANITATION_DESCRIPTION",                                         "Stepwell improvements receive +1 [ICON_Housing] Housing. Unlocks Anti-cavalry units upgrade: Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
+    --("LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                                 "Unlocks Anti-cavalry units upgrade: +3 [ICON_Strength] Combat Strength for units fighting in hill tiles."),
+    ("LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION",                 "from fighting in hills tiles"),
+    ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
+    ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+10 HP healing."),
+    --("LOC_PROMOTION_ECHELON_DESCRIPTION",                                       "+7 [ICON_Strength] Combat Strength when defending melee combat."),
+    ("LOC_PROMOTION_THRUST_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when attacking");
+    --("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+10 [ICON_Strength] Combat Strength when defending in Woods, Jungle, Hills, or Marsh.")
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -118,7 +126,7 @@ insert or replace into LocalizedText
 values
     --melee
     -- ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_DESCRIPTION",                                    "允许所有陆地单位上船。解锁近战单位升级：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
-    -- ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。解锁近战单位升级：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力"),
+    -- ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_DL_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。解锁近战单位升级：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
     --("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_NAME",                    "区域作战"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION",               "在区域上战斗时+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION",       "来自区域作战"),
@@ -143,5 +151,13 @@ values
     -- ("zh_Hans_CN",  "LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                  "攻击受伤单位时+7 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                "学会区域控制。防御近战攻击时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程攻击时+10 [ICON_Strength] 战斗力。")
-    ;
+    ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程攻击时+10 [ICON_Strength] 战斗力。"),
+    --anti-cavalry
+    --("zh_Hans_CN",  "LOC_TECH_SANITATION_DESCRIPTION",                                      "梯井改良设施+1 [ICON_Housing] 住房。解锁抗骑兵单位升级：单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
+    --("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION",                              "解锁抗骑兵单位升级：在丘陵上战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "来自在丘陵上战斗"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "后勤补给"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "+10生命值恢复。"),
+    --("zh_Hans_CN",  "LOC_PROMOTION_ECHELON_DESCRIPTION",                                    "防御近战攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_THRUST_DESCRIPTION",                                     "攻击时+5 [ICON_Strength] 战斗力。");
+    --("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽防御时+10 [ICON_Strength] 战斗力。")

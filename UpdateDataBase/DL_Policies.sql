@@ -44,7 +44,7 @@ delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
 delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
 -- 
 delete from Policies where PolicyType = 'POLICY_NATIVE_CONQUEST';
-delete from Policies where PolicyType = 'POLICY_NATIONAL_IDENTITY';
+--delete from Policies where PolicyType = 'POLICY_NATIONAL_IDENTITY';
 delete from Policies where PolicyType = 'POLICY_PROPAGANDA';
 delete from Policies where PolicyType = 'POLICY_NUCLEAR_ESPIONAGE';
 delete from Policies where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
@@ -56,6 +56,7 @@ update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGED
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEDISTRICT';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTAL_WAR_PLUNDER_BONUS';
+update ModifierArguments set Value = 100 where ModifierID = 'NATIONALIDENTITY_REDUCESTRENGTHREDUCTIONFORDAMAGE';
 
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 
@@ -130,6 +131,7 @@ update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 
 update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'POLICY_PRESS_GANGS';
 update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_NAVIGATION';
 update Policies set PrereqCivic = 'CIVIC_GAMES_RECREATION' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
+update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_RETAINERS';
 
 update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
