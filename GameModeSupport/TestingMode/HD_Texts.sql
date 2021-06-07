@@ -28,7 +28,7 @@ values
     ("LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                             "Ignore the Zone of Control."),
     ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
-    ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving."),
+    ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving (enabled by Military Training Civic)."),
     -- Preview Text
     ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Start attacking on Hills"),
     ("LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                                  "Against units"),
@@ -68,7 +68,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                          "忽略控制区。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                 "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                "劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "可移动后攻击。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "可移动后攻击（拥有军事训练市政后允许）。"),
 -- Preview Text
     ("zh_Hans_CN",  "LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                    "从丘陵上发起攻击"),
     ("zh_Hans_CN",  "LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                               "与单位作战"),
