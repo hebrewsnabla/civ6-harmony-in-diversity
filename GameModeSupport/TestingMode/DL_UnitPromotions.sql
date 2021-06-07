@@ -1,54 +1,199 @@
 -------------------------------------
 --         Unit Promostions        --
 -------------------------------------
+-- Tech and Civic Promotion
+-- 近战，【造船：水陆两栖】，封建主义：雨林树林作战+3力
+-- 远程，战术：在丘陵上时+5远程力   防御战术：驻军5力
+-- 反骑，【卫生设备：受伤不减力】，防御战术：丘陵作战+5力
+-- 侦察，【造船：水陆两栖】，【重商：无视zoc】
+-- 重骑，火药：击杀单位回10血 军事训练：在无雨林、树林、沼泽的平地作战+5力
+-- 轻骑，战术：与单位作战+5力 雇佣兵：【劫掠额外25鸽】
+-- 攻城，膛线：攻城+5力    军事训练：【可移动后攻击】
 
 --promotion class ability 通用能力
---melee
+update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
+update Civics set Description = 'LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION' where CivicType = 'CIVIC_MILITARY_TRAINING';
+update Civics set Description = 'LOC_CIVIC_MERCENARIES_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCENARIES';
+
+update Technologies set Description = 'LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION' where TechnologyType ='TECH_MILITARY_TACTICS';
+update Technologies set Description = 'LOC_TECH_GUNPOWDER_HD_DESCRIPTION' where TechnologyType ='TECH_GUNPOWDER';
+-- update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
+update Technologies set Description = 'LOC_TECH_SANITATION_HD_DESCRIPTION' where TechnologyType ='TECH_SANITATION';
+
+insert or replace into Types
+    (Type,                                                      Kind)
+values
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'KIND_ABILITY'),
+    ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'KIND_ABILITY'),
+    ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'KIND_ABILITY'),
+    ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'KIND_ABILITY'),
+    ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'KIND_ABILITY'),
+    ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'KIND_ABILITY'),
+    ('ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD',         'KIND_ABILITY'),
+    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        'KIND_ABILITY'),
+    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'KIND_ABILITY'),
+    ('ABILITY_RECON_IGNORE_ZOC_HD',                             'KIND_ABILITY'),
+    ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'KIND_ABILITY'),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'KIND_ABILITY'),
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'KIND_ABILITY');
+
 insert or replace into TechnologyModifiers
     (TechnologyType,                                        ModifierId)
 values
-    --melee
-    ('TECH_SHIPBUILDING',                                   'SHIPBUILDING_MELEE_AND_RECON_IGNORE_RIVERS'),
-    ('TECH_SHIPBUILDING',                                   'SHIPBUILDING_MELEE_AND_RECON_IGNORE_SHORES'),
-    --anti-cavalry
-    ('TECH_SANITATION',                                     'SANITATION_ANTIC_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE');
+    ('TECH_SHIPBUILDING',                                   'HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES'),
+    ('TECH_MILITARY_TACTICS',                               'HD_RANGED_HILLS_STRENGTH'),
+    ('TECH_SANITATION',                                     'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
+    ('TECH_GUNPOWDER',                                      'HD_HEAVYC_HEAL_AFTER_KILL'),
+    ('TECH_MILITARY_TACTICS',                               'HD_LIGHTC_AGAINST_UNIT_BONUS'),
+    ('TECH_RIFLING',                                        'HD_SIEGE_ATTACK_DISTRICT_BONUS');
 
 insert or replace into CivicModifiers
     (CivicType,                                             ModifierId)
 values
-    --melee
-    ('CIVIC_FEUDALISM',                                     'MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
-    --anti-cavalry
-    ('CIVIC_DEFENSIVE_TACTICS',                             'ANTI_CAVALRY_HILLS_COMBAT_BONUS'),
-    -- Recon
-    ('CIVIC_MERCANTILISM',                                  'MERCANTILISM_RECON_IGNORE_ZOC');
-
-
-update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
+    ('CIVIC_FEUDALISM',                                     'HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
+    ('CIVIC_DEFENSIVE_TACTICS',                             'HD_RANGED_GARRISON_BONUS'),
+    ('CIVIC_DEFENSIVE_TACTICS',                             'HD_ANTIC_HILLS_DEFEND_BONUS'),
+    ('CIVIC_MERCANTILISM',                                  'HD_RECON_IGNORE_ZOC'),
+    ('CIVIC_MILITARY_TRAINING',                             'HD_HEAVYC_OPEN_AREA_STRENGTH'),
+    ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_EXTRA_FAITH_PLUNDER'),
+    ('CIVIC_MILITARY_TRAINING',                             'HD_SIEGE_ATTACK_AFTER_MOVE');
 
 insert or replace into Modifiers
-    (ModifierId,                                            ModifierType,                                       SubjectRequirementSetId)
+    (ModifierId,                                            ModifierType)
 values
-    --melee
-    ('SHIPBUILDING_MELEE_AND_RECON_IGNORE_RIVERS',          'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_RIVERS',       'UNIT_IS_MELEE_OR_RECON_REQUIREMENTS'),
-    ('SHIPBUILDING_MELEE_AND_RECON_IGNORE_SHORES',          'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_SHORES',       'UNIT_IS_MELEE_OR_RECON_REQUIREMENTS'),
-    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'MELEE_FOREST_AND_JUNGLE_REQUIREMENTS'),
-    --anti-cavalry
-    ('SANITATION_ANTIC_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE',   'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  'UNIT_IS_ANTI_CAV_REQUIREMENTS'),
-    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                     'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     'ANTI_CAV_HILLS_REQUIREMENTS'),
-    ('MERCANTILISM_RECON_IGNORE_ZOC',                       'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_ZOC_HD',       'UNIT_IS_RECON_REQUIREMENTS');
+    ('HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_RANGED_HILLS_STRENGTH',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_HEAVYC_HEAL_AFTER_KILL',                           'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_LIGHTC_AGAINST_UNIT_BONUS',                        'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_SIEGE_ATTACK_DISTRICT_BONUS',                      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+
+    ('HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',             'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_RANGED_GARRISON_BONUS',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_ANTIC_HILLS_DEFEND_BONUS',                         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_RECON_IGNORE_ZOC',                                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_HEAVYC_OPEN_AREA_STRENGTH',                        'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_SIEGE_ATTACK_AFTER_MOVE',                          'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
 
 insert or replace into ModifierArguments
-    (ModifierId,                                                Name,       Value)
+    (ModifierId,                                            Name,           Value)
 values
-    --melee
-    ('SHIPBUILDING_MELEE_AND_RECON_IGNORE_RIVERS',              'Ignore',   1),
-    ('SHIPBUILDING_MELEE_AND_RECON_IGNORE_SHORES',              'Ignore',   1),
-    ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Amount',   3),
-    --anti-cavalry
-    ('SANITATION_ANTIC_IGNORE_STRENGTH_REDUCTION_FOR_DAMAGE',   'Amount',   100),
-    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Amount',   5),
-    ('MERCANTILISM_RECON_IGNORE_ZOC',                           'Ignore',   1);
+    ('HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES',         'AbilityType',  'ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD'),
+    ('HD_RANGED_HILLS_STRENGTH',                            'AbilityType',  'ABILITY_RANGED_HILLS_STRENGTH_HD'),
+    ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'AbilityType',  'ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD'),
+    ('HD_HEAVYC_HEAL_AFTER_KILL',                           'AbilityType',  'ABILITY_HEAVYC_HEAL_AFTER_KILL_HD'),
+    ('HD_LIGHTC_AGAINST_UNIT_BONUS',                        'AbilityType',  'ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD'),
+    ('HD_SIEGE_ATTACK_DISTRICT_BONUS',                      'AbilityType',  'ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD'),
+
+    ('HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',             'AbilityType',  'ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD'),
+    ('HD_RANGED_GARRISON_BONUS',                            'AbilityType',  'ABILITY_RANGED_GARRISON_BONUS_HD'),
+    ('HD_ANTIC_HILLS_DEFEND_BONUS',                         'AbilityType',  'ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD'),
+    ('HD_RECON_IGNORE_ZOC',                                 'AbilityType',  'ABILITY_RECON_IGNORE_ZOC_HD'),
+    ('HD_HEAVYC_OPEN_AREA_STRENGTH',                        'AbilityType',  'ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD'),
+    ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'AbilityType',  'ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD'),
+    ('HD_SIEGE_ATTACK_AFTER_MOVE',                          'AbilityType',  'ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD');
+
+insert or replace into TypeTags
+    (Type,                                                      Tag)
+values
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'CLASS_MELEE'),
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'CLASS_RECON'),
+    ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'CLASS_RANGED'),
+    ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'CLASS_ANTI_CAVALRY'),
+    ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'CLASS_HEAVY_CAVALRY'),
+    ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'CLASS_LIGHT_CAVALRY'),
+    ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'CLASS_SIEGE'),
+    ('ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD',         'CLASS_MELEE'),
+    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        'CLASS_RECON'),
+    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'CLASS_RANGED'),
+    ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_ANTI_CAVALRY'),
+    ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'CLASS_HEAVY_CAVALRY'),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE');
+
+insert or replace into UnitAbilities 
+    (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
+values
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     NULL,   'LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION',     1),
+    ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        NULL,   'LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION',                        1),
+    ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      NULL,   'LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION',      1),
+    ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       NULL,   'LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION',                       1),
+    ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    NULL,   'LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION',                    1),
+    ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  NULL,   'LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION',                  1),
+    ('ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD',         NULL,   'LOC_ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_DESCRIPTION',         1),
+    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        NULL,   'LOC_ABILITY_RANGED_GARRISON_BONUS_HD_DESCRIPTION',                        1),
+    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     NULL,   'LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION',                     1),
+    ('ABILITY_RECON_IGNORE_ZOC_HD',                             NULL,   'LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION',                             1),
+    ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    NULL,   'LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION',                    1),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   NULL,   'LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION',                   1),
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      NULL,   'LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION',                      1);
+
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,                                           ModifierId)
+values
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'HD_IGNORE_RIVERS'),
+    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'HD_IGNORE_SHORES'),
+    ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'HD_ATTACKING_FROM_HILLS_STRENGTH'),
+    ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'HD_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
+    ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'HD_HEAL_AFTER_KILL'),
+    ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'HD_AGAINST_UNIT_BONUS'),
+    ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'HD_ATTACK_DISTRICT_BONUS'),
+    ('ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD',         'HD_FOREST_AND_JUNGLE_COMBAT_BONUS'),
+    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        'HD_GARRISON_BONUS'),
+    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'HD_HILLS_DEFEND_BONUS'),
+    ('ABILITY_RECON_IGNORE_ZOC_HD',                             'HD_IGNORE_ZOC'),
+    ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'HD_OPEN_AREA_STRENGTH'),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER'),
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'HD_ATTACK_AFTER_MOVE');
+
+insert or replace into Modifiers
+    (ModifierId,                                ModifierType,                                                           SubjectRequirementSetId)
+values
+    ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            NULL),
+    ('HD_IGNORE_SHORES',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',                            NULL),
+    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'ATTACKING_FROM_HILLS_REQUIREMENTS'),
+    ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
+    ('HD_HEAL_AFTER_KILL',                      'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_FROM_COMBAT',                         NULL),
+    ('HD_AGAINST_UNIT_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'COMBAT_AGAINST_UNITS_REQUIREMENTS'),
+    ('HD_ATTACK_DISTRICT_BONUS',                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'ATTACKING_DISTRICTS_REQUIREMENTS'),
+    ('HD_FOREST_AND_JUNGLE_COMBAT_BONUS',       'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'PLOT_HAS_FOREST_OR_JUNGLE_REQUIREMENTS'),
+    ('HD_GARRISON_BONUS',                       'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'GARRISON_REQUIREMENTS'),
+    ('HD_HILLS_DEFEND_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'DEFENCE_MELEE_ATTACK_ON_HILLS_REQUIREMENTS'),
+    ('HD_IGNORE_ZOC',                           'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC',                               NULL),
+    ('HD_OPEN_AREA_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'PLOT_IS_OPEN_AREA_REQUIREMENTS'),
+    ('HD_EXTRA_FAITH_PLUNDER',                  'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_DISTRICT_PILLAGE',                NULL),
+    ('HD_EXTRA_FAITH_PLUNDER',                  'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_IMPROVEMENT_PILLAGE',             NULL),
+    ('HD_ATTACK_AFTER_MOVE',                    'MODIFIER_PLAYER_UNIT_ADJUST_MOVE_AND_ATTACK',                          NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,           Value)
+values
+    ('HD_IGNORE_RIVERS',                        'Ignore',      1),
+    ('HD_IGNORE_SHORES',                        'Ignore',      1),
+    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Amount',      5),
+    ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'Amount',      100),
+    ('HD_HEAL_AFTER_KILL',                      'Amount',      10),
+    ('HD_AGAINST_UNIT_BONUS',                   'Amount',      5),
+    ('HD_ATTACK_DISTRICT_BONUS',                'Amount',      5),
+    ('HD_FOREST_AND_JUNGLE_COMBAT_BONUS',       'Amount',      3),
+    ('HD_GARRISON_BONUS',                       'Amount',      5),
+    ('HD_HILLS_DEFEND_BONUS',                   'Amount',      7),
+    ('HD_IGNORE_ZOC',                           'Ignore',      1),
+    ('HD_OPEN_AREA_STRENGTH',                   'Amount',      5),
+    ('HD_EXTRA_FAITH_PLUNDER',                  'Amount',      25),
+    ('HD_ATTACK_AFTER_MOVE',                    'CanAttack',   1);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,    Text)
+values
+    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Preview',  '+{1_Amount} {LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT}'),
+    ('HD_AGAINST_UNIT_BONUS',                   'Preview',  '+{1_Amount} {LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT}'),
+    ('HD_ATTACK_DISTRICT_BONUS',                'Preview',  '+{1_Amount} {LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT}'),
+    ('HD_FOREST_AND_JUNGLE_COMBAT_BONUS',       'Preview',  '+{1_Amount} {LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT}'),
+    ('HD_GARRISON_BONUS',                       'Preview',  '+{1_Amount} {LOC_HD_GARRISON_BONUS_PREVIEW_TEXT}'),
+    ('HD_HILLS_DEFEND_BONUS',                   'Preview',  '+{1_Amount} {LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT}'),
+    ('HD_OPEN_AREA_STRENGTH',                   'Preview',  '+{1_Amount} {LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT}');
 
 ---------------------------------------------------------------------------------------------------------------
 -- Melee, ranged, anti-cavalry                                                                               --
@@ -132,7 +277,7 @@ values
     ('SUPPRESSION_DEFNECE_BONUS',                               'Preview',    '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                     'Preview',    '+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --anti-cavalry
-    ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
+    -- ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
     -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 
@@ -243,10 +388,10 @@ values
     --ranged
     -- ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
-    ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
+    ('SUPPRESSION_DEFNECE_BONUS',                                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK_REQUIREMENTS'),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'TORTOISE_REQUIREMENTS'),
      --anti-cavalry
-    ('ECHELON_DEFENCE',                                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
+    -- ('ECHELON_DEFENCE',                                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
     ('THRUST_ATTACK_BONUS',                                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'FASCISM_REQUIREMENTS'),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_PER_TURN',        NULL,                   NULL);
 
@@ -261,7 +406,7 @@ values
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',        10),
     ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',        10),
      --anti-cavalry
-    ('ECHELON_DEFENCE',                                             'Amount',        7),
+    -- ('ECHELON_DEFENCE',                                             'Amount',        7),
     ('THRUST_ATTACK_BONUS',                                         'Amount',        5),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',        10),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',            'ALL');
@@ -280,9 +425,9 @@ values
     -- heavy
     ('ABILITY_HEAVY_CHARIOT',                                   'CLASS_HEAVY_CAVALRY'),
     -- light
-    ('ABILITY_LIGHT_CAVALRY_HD',                                'CLASS_LIGHT_CAVALRY'),
+    ('ABILITY_LIGHT_CAVALRY_HD',                                'CLASS_LIGHT_CAVALRY');
     -- siege
-    ('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD',                       'CLASS_SIEGE');
+    -- ('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD',                       'CLASS_SIEGE');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                               Name,       Description,                                                     Inactive) 
