@@ -1,16 +1,8 @@
 -------------------------------------
 --         Unit Promostions        --
 -------------------------------------
--- Tech and Civic Promotion
--- 近战，【造船：水陆两栖】，封建主义：雨林树林作战+3力
--- 远程，战术：在丘陵上时+5远程力   防御战术：驻军5力
--- 反骑，【卫生设备：受伤不减力】，防御战术：丘陵作战+5力
--- 侦察，【造船：水陆两栖】，【重商：无视zoc】
--- 重骑，火药：击杀单位回10血 军事训练：在无雨林、树林、沼泽的平地作战+5力
--- 轻骑，战术：与单位作战+5力 雇佣兵：【劫掠额外25鸽】
--- 攻城，膛线：攻城+5力    军事训练：【可移动后攻击】
 
---promotion class ability 通用能力
+-- Tech and Civic Promotion
 update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 update Civics set Description = 'LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION' where CivicType = 'CIVIC_MILITARY_TRAINING';
 update Civics set Description = 'LOC_CIVIC_MERCENARIES_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCENARIES';
@@ -429,12 +421,12 @@ insert or replace into TypeTags
 values
     -- recon
     ('ABILITY_RECON_IGNORE_TERRIAN_COST_HD',                    'CLASS_RECON'),
+    -- siege
+    -- ('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD',                       'CLASS_SIEGE'),
     -- heavy
     ('ABILITY_HEAVY_CHARIOT',                                   'CLASS_HEAVY_CAVALRY'),
     -- light
     ('ABILITY_LIGHT_CAVALRY_HD',                                'CLASS_LIGHT_CAVALRY');
-    -- siege
-    -- ('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD',                       'CLASS_SIEGE');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                               Name,       Description,                                                     Inactive) 
