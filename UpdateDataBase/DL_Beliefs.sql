@@ -1378,8 +1378,8 @@ insert or replace into BeliefModifiers
 	(BeliefType,						ModifierID)
 values
     ('BELIEF_WORK_ETHIC',              'BELIEF_WORK_ETHIC_PRODUCTION_TINY'),
-    ('BELIEF_WORK_ETHIC',              'BELIEF_WORK_ETHIC_PRODUCTION_MEDIUM');
-    -- ('BELIEF_WORK_ETHIC',              'BELIEF_WORK_ETHIC_PRODUCTION_LARGE');
+    ('BELIEF_WORK_ETHIC',              'BELIEF_WORK_ETHIC_PRODUCTION_MEDIUM'),
+    ('BELIEF_WORK_ETHIC',              'BELIEF_WORK_ETHIC_PRODUCTION_LARGE');
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,												SubjectRequirementSetId)
