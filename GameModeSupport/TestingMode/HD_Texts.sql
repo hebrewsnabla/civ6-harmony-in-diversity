@@ -3,26 +3,74 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
-    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. Melee and recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
-    ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                      "Stepwell improvements receive +1 [ICON_Housing] Housing. Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
+    -- Techs
+    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Melee and recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength When start attacking on Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
+    ("LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                       "Quarry improvements receive +1 [ICON_Production] Production. [NEWLINE]Unlocks a [ICON_GOVERNOR] Governor title for Suleiman. [NEWLINE]Heavy Cavalry units gain the ability: +10 [ICON_Damaged] Health after defeating an enemy unit."),
+    ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                         "+1 [ICON_FOOD] Food from the Camp improvement. [NEWLINE]Siege units gain the ability: +5 [ICON_Strength] Combat Strength when attacking Districts."),
+    ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                      "Stepwell improvements receive +1 [ICON_Housing] Housing. [NEWLINE]Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
     -- Civic
-    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. Melee units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
-    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                              "Anti-cavalry units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in hill tiles."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "+2 [ICON_gold] Gold from the Camp improvement. Recon units gain the ability: Ignore the Zone of Control.");
+    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                              "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
+    ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                              "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh. [NEWLINE]Siege units gain the ability: Can attack after moving."),
+    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "+2 [ICON_gold] Gold from the Camp improvement. [NEWLINE]Recon units gain the ability: Ignore the Zone of Control."),
+    -- Abilities
+    ("LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",     "No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength When start attacking on Hills."),
+    ("LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",      "Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
+    ("LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                       "+10 [ICON_Damaged] Health after defeating an enemy unit."),
+    ("LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength against units."),
+    ("LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when attacking Districts."),
+    ("LOC_ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_DESCRIPTION",         "+3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
+    ("LOC_ABILITY_RANGED_GARRISON_BONUS_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district."),
+    ("LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                     "+7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
+    ("LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                             "Ignore the Zone of Control."),
+    ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
+    ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving."),
+    -- Preview Text
+    ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Start attacking on Hills"),
+    ("LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                                  "Against units"),
+    ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Attack districts"),
+    ("LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                      "Fighting in Rainforest or Woods tiles"),
+    ("LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                      "From occupying either an improvement that provides [ICON_Strength] Defense Strength or a district"),
+    ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
+    ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flatten tiles without Woods, Jungle, or Marsh");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
-    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。近战和侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
-    ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。抗骑兵单位获得能力：单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
+    -- Techs
+    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]近战和侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
+    ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                      "营地+1 [ICON_FOOD] 食物。[NEWLINE]攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
     -- Civic
-    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "抗骑兵单位获得能力：在丘陵上战斗时+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。侦察单位获得能力：忽略控制区。"),
-    -- Preview Text
-    ("zh_Hans_CN",  "LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                    "从丘陵攻击"),
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "重骑兵单位获得能力：在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。 [NEWLINE]攻城单位获得能力：可移动后攻击。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。[NEWLINE]侦察单位获得能力：忽略控制区。"),
+    -- Abilities
+    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",  "从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                     "从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",   "不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                    "击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                 "与单位作战时+5[ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",               "攻击区域防御+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_DESCRIPTION",      "在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RANGED_GARRISON_BONUS_HD_DESCRIPTION",                     "占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                  "在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                          "忽略控制区。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                 "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                "劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "可移动后攻击。"),
+-- Preview Text
+    ("zh_Hans_CN",  "LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                    "从丘陵上发起攻击"),
     ("zh_Hans_CN",  "LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                               "与单位作战"),
     ("zh_Hans_CN",  "LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                            "攻击区域"),
     ("zh_Hans_CN",  "LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                   "来自在森林或雨林中战斗"),
@@ -55,7 +103,7 @@ values
     -- Light Cavalry
     ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
     ("LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                         "Shock"),
-    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting flatten tiles without Woods, Jungle, or Marsh."),
+    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory。"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                                "Mobile Warfare"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                         "+1 [ICON_Movement] Movement, can move after attacking."),
