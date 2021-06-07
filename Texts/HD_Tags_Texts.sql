@@ -132,6 +132,18 @@ update Policies set Description = 'LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION' where 
 
 update Policies set Description = 'LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION' where PolicyType = 'POLICY_NOBEL_PRIZE';
 
+-- Military
+update Policies set Description = 'LOC_POLICY_AGOGE_HD_DESCRIPTION' where PolicyType = 'POLICY_AGOGE';
+update Policies set Description = 'LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION' where PolicyType = 'POLICY_FEUDAL_CONTRACT';
+update Policies set Description = 'LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION' where PolicyType = 'POLICY_GRANDE_ARMEE';
+update Policies set Description = 'LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION' where PolicyType = 'POLICY_MILITARY_FIRST';
+
+update Policies set Description = 'LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION' where PolicyType = 'POLICY_MARITIME_INDUSTRIES';
+update Policies set Description = 'LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION' where PolicyType = 'POLICY_PRESS_GANGS';
+update Policies set Description = 'LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION' where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+
+update Policies set Description = 'LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION' where PolicyType = 'POLICY_LIGHTNING_WARFARE';
+
 --------------------------------------------------------------------------------
 -- Units
 update Units set Description = 'LOC_UNIT_BUILDER_DL_DESCRIPTION' where UnitType = 'UNIT_BUILDER';

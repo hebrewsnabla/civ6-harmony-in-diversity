@@ -652,12 +652,16 @@
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
-      <Properties><LoadOrder>16011</LoadOrder></Properties>
+      <Properties><LoadOrder>16014</LoadOrder></Properties>
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_PostProcess.sql</File>
+    </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
-      <Properties><LoadOrder>16012</LoadOrder></Properties>
+      <Properties><LoadOrder>16015</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
@@ -974,6 +978,7 @@
     <File>UpdateDataBase/DL_MajorCivs.sql</File>
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
+    <File>UpdateDataBase/DL_PostProcess.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
     <File>UpdateDataBase/DL_Relic_Creator.sql</File>
