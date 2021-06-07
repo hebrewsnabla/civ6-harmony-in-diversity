@@ -20,7 +20,15 @@ values
     -- Civic
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "抗骑兵单位获得能力：在丘陵上战斗时+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。侦察单位获得能力：忽略控制区。");
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。侦察单位获得能力：忽略控制区。"),
+    -- Preview Text
+    ("zh_Hans_CN",  "LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                    "从丘陵攻击"),
+    ("zh_Hans_CN",  "LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                               "与单位作战"),
+    ("zh_Hans_CN",  "LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                            "攻击区域"),
+    ("zh_Hans_CN",  "LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                   "来自在森林或雨林中战斗"),
+    ("zh_Hans_CN",  "LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                   "来自占领区域或防御性的改良设施"),
+    ("zh_Hans_CN",  "LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                               "来自在丘陵上防御"),
+    ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战");
 
 --------------------------------------------------------------------------------
 -- Language: en_US

@@ -105,9 +105,9 @@ values
     ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'CLASS_SIEGE'),
     ('ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD',         'CLASS_MELEE'),
-    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        'CLASS_RECON'),
-    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'CLASS_RANGED'),
-    ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_ANTI_CAVALRY'),
+    ('ABILITY_RANGED_GARRISON_BONUS_HD',                        'CLASS_RANGED'),
+    ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'CLASS_ANTI_CAVALRY'),
+    ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_RECON'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'CLASS_HEAVY_CAVALRY'),
     ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE');
@@ -144,15 +144,20 @@ values
     ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'HD_HILLS_DEFEND_BONUS'),
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'HD_IGNORE_ZOC'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'HD_OPEN_AREA_STRENGTH'),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER'),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_DISTRICT'),
+    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'HD_ATTACK_AFTER_MOVE');
+
+insert or replace into Modifiers
+    (ModifierId,                                ModifierType,                           OwnerRequirementSetId,                  SubjectRequirementSetId)
+values
+    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH', 'ETHIOPIA_PLOT_IS_HILLS_REQUIREMENTS',  'HD_UNIT_ATTACKING_REQUIREMENTS');
 
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                                                           SubjectRequirementSetId)
 values
     ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            NULL),
     ('HD_IGNORE_SHORES',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',                            NULL),
-    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'ATTACKING_FROM_HILLS_REQUIREMENTS'),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
     ('HD_HEAL_AFTER_KILL',                      'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_FROM_COMBAT',                         NULL),
     ('HD_AGAINST_UNIT_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'COMBAT_AGAINST_UNITS_REQUIREMENTS'),
@@ -162,8 +167,8 @@ values
     ('HD_HILLS_DEFEND_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'DEFENCE_MELEE_ATTACK_ON_HILLS_REQUIREMENTS'),
     ('HD_IGNORE_ZOC',                           'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC',                               NULL),
     ('HD_OPEN_AREA_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'PLOT_IS_OPEN_AREA_REQUIREMENTS'),
-    ('HD_EXTRA_FAITH_PLUNDER',                  'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_DISTRICT_PILLAGE',                NULL),
-    ('HD_EXTRA_FAITH_PLUNDER',                  'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_IMPROVEMENT_PILLAGE',             NULL),
+    ('HD_EXTRA_FAITH_PLUNDER_DISTRICT',         'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_DISTRICT_PILLAGE',                NULL),
+    ('HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT',      'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_IMPROVEMENT_PILLAGE',             NULL),
     ('HD_ATTACK_AFTER_MOVE',                    'MODIFIER_PLAYER_UNIT_ADJUST_MOVE_AND_ATTACK',                          NULL);
 
 insert or replace into ModifierArguments
@@ -181,7 +186,8 @@ values
     ('HD_HILLS_DEFEND_BONUS',                   'Amount',      7),
     ('HD_IGNORE_ZOC',                           'Ignore',      1),
     ('HD_OPEN_AREA_STRENGTH',                   'Amount',      5),
-    ('HD_EXTRA_FAITH_PLUNDER',                  'Amount',      25),
+    ('HD_EXTRA_FAITH_PLUNDER_DISTRICT',         'Amount',      25),
+    ('HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT',      'Amount',      25),
     ('HD_ATTACK_AFTER_MOVE',                    'CanAttack',   1);
 
 insert or replace into ModifierStrings
