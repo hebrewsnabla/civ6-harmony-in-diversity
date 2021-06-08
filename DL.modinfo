@@ -235,6 +235,33 @@
     </UpdateText> -->
   </FrontEndActions>
   <InGameActions>
+    <ImportFiles id="DL_CityCenterBuilding_Assets" criteria="Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+    </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixChineseIcon" criteria="DLC_Vietnam">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -661,14 +688,14 @@
       <File>UpdateDataBase/DL_PostProcess.sql</File>
     </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
-      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <Properties><LoadOrder>16016</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
-      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
@@ -683,7 +710,7 @@
     <AddUserInterfaces id="DL_Scripts_Interface" criteria="Expansion2">
       <Properties>
         <Context>InGame</Context>
-        <LoadOrder>16016</LoadOrder>
+        <LoadOrder>16018</LoadOrder>
       </Properties>
       <File>Gameplay/Temp_Interface.xml</File>
     </AddUserInterfaces>
@@ -1017,6 +1044,30 @@
     <File>Texts/HD_Text_Units.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
+    <!-- Assets -->
+    <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
   </Files>
-
 </Mod>

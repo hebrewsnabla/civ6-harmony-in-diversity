@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+	<IconTextureAtlases>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="32" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsFair_32.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="38" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsFair_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="50" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsFair_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="80" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsFair_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsFair_128.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsFair_256.dds"/>
+	    <!--  -->
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="32" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsKarez_32.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="38" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsKarez_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="50" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsKarez_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="80" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsKarez_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsKarez_128.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsKarez_256.dds"/>
+	    <!--  -->
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="32" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTotem_32.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="38" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTotem_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="50" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTotem_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="80" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTotem_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsTotem_128.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsTotem_256.dds"/>
+	    <!--  -->
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="32" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTriumphalArch_32.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="38" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTriumphalArch_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="50" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTriumphalArch_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="80" IconsPerRow="1" IconsPerColumn="1"  Filename="CityCenterBuildingsTriumphalArch_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsTriumphalArch_128.dds"/>
+	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="CityCenterBuildingsTriumphalArch_256.dds"/>
+    </IconTextureAtlases>
 	<IconDefinitions>
 		<!-- <Row Name="ICON_BUILDING_NILOMETER" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/> -->
 		<!-- <Row Name="ICON_BUILDING_TRIUMPHAL_ARCH" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/> -->
@@ -8,23 +37,31 @@
 		<!-- <Row Name="ICON_BUILDING_TOTEMS" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/> -->
 		
 		<!-- ICON_ATLAS_UNIT_ACTIONS, 22, StepWell -->
-		<Row Name="ICON_BUILDING_OFFICIAL_RUN_HANDCRAFT" Atlas="ICON_ATLAS_BUILDINGS" Index="20"/>
+		<Row Name="ICON_BUILDING_OFFICIAL_RUN_HANDCRAFT" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="3"/>
+		<Row Name="ICON_BUILDING_BOOTCAMP" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="4"/>
+		<Row Name="ICON_BUILDING_FAIR" Atlas="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_FAIR" Index="0"/>
+		<Row Name="ICON_BUILDING_TOTEMS" Atlas="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TOTEM" Index="0"/>
+		<Row Name="ICON_BUILDING_NILOMETER_HD" Atlas="ICON_ATLAS_NUBIA_BUILDINGS" Index="3"/>
+		<Row Name="ICON_BUILDING_TRIUMPHAL_ARCH" Atlas="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_TRIUMPHAL_ARCH" Index="0"/>
+		<Row Name="ICON_BUILDING_KAREZ" Atlas="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_KAREZ" Index="0"/>
+
+<!-- 		<Row Name="ICON_BUILDING_OFFICIAL_RUN_HANDCRAFT" Atlas="ICON_ATLAS_BUILDINGS" Index="20"/>
 		<Row Name="ICON_BUILDING_BOOTCAMP" Atlas="ICON_ATLAS_BUILDINGS" Index="13"/>
 		<Row Name="ICON_BUILDING_FAIR" Atlas="ICON_ATLAS_BUILDINGS" Index="11"/>
 		<Row Name="ICON_BUILDING_TOTEMS" Atlas="ICON_ATLAS_NUBIA_BUILDINGS" Index="0"/>
 		<Row Name="ICON_BUILDING_NILOMETER_HD" Atlas="ICON_ATLAS_NUBIA_BUILDINGS" Index="3"/>
 		<Row Name="ICON_BUILDING_TRIUMPHAL_ARCH" Atlas="ICON_ATLAS_NUBIA_BUILDINGS" Index="1"/>
 		<Row Name="ICON_BUILDING_KAREZ" Atlas="ICON_ATLAS_BABYLON_BUILDINGS" Index="0"/>
-
+ -->
 		<!-- ICON_ATLAS_UNIT_ACTIONS, 22, StepWell -->
-		<Row Name="ICON_BUILDING_OFFICIAL_RUN_HANDCRAFT_FOW" Atlas="ICON_ATLAS_BUILDINGS_FOW" Index="20"/>
+<!-- 		<Row Name="ICON_BUILDING_OFFICIAL_RUN_HANDCRAFT_FOW" Atlas="ICON_ATLAS_BUILDINGS_FOW" Index="20"/>
 		<Row Name="ICON_BUILDING_BOOTCAMP_FOW" Atlas="ICON_ATLAS_BUILDINGS_FOW" Index="13"/>
 		<Row Name="ICON_BUILDING_FAIR_FOW" Atlas="ICON_ATLAS_BUILDINGS_FOW" Index="11"/>
 		<Row Name="ICON_BUILDING_TOTEMS_FOW" Atlas="ICON_ATLAS_NUBIA_BUILDINGS_FOW" Index="0"/>
 		<Row Name="ICON_BUILDING_NILOMETER_HD_FOW" Atlas="ICON_ATLAS_NUBIA_BUILDINGS_FOW" Index="3"/>
 		<Row Name="ICON_BUILDING_TRIUMPHAL_ARCH_FOW" Atlas="ICON_ATLAS_NUBIA_BUILDINGS_FOW" Index="1"/>
 		<Row Name="ICON_BUILDING_KAREZ_FOW" Atlas="ICON_ATLAS_BABYLON_BUILDINGS_FOW" Index="0"/>
-		<!--  -->
+ -->		<!--  -->
 		<Row Name="ICON_BUILDING_GENERAL_SERVICE" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/>
     	<Row Name="ICON_BUILDING_GENERAL_SERVICE_FOW" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS_FOW" Index="0"/>
 		<!--PROJECT-->
