@@ -2057,3 +2057,24 @@ mod奇观：天坛和郑王庙图标已支持。
 [v0.7.9.2]
 商业相邻奢侈改为+1，中世纪集市后恢复为+2。
 为市中心建筑增加图标。
+
+[v0.7.9.2]
+Support two Wonder MODs (fixs their icon issue):
+Suk's Wat Arun: (overwrite effect) +2 Food and +1 Housing for all Districts and Wonders adjacent to River, doubles for the city build this wonder.
+Temple of Heaven: (overwrite effect) ALL Domestic trade routes +100% yields from Destination Districts. Your Trade Routes to your own cities gain +2 [ICON_Gold] for each specialty Districts at the destination. Governors established in a city provide +3% Food for each Promotion they have earned, including their first one.
+
+NOTE: You can ignore the incompatible warning of that two mods.
+
+General updates:
+Steam Power Tech extra effect: increase sea trade route range by 15 tiles.
+Update tens of military policy cards (part of military rework).
+Beliefs update for City patron goddess, Choral music, Feed the World, Daoguan (worships), Dar e mehr (worships).
+Reduce the tourism of relic from 10 back to 8.
+Eruka for Industrialization and Mass production changed.
+Some minor updates for the unique improvements of Indonesia and Cree.
+Reduce the Commercial hub adjacency yield with luxury resources to 1, resume at Medieval Faires civic.
+Add icons for our new city center buildings.
+
+[v0.7.9.3]
+德国la：删除对城邦+7力，新增影响力点数翻倍。
+ua：新增拥有特色区域的城市+2科技2文化。
