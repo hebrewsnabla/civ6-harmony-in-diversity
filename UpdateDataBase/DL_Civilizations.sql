@@ -551,7 +551,7 @@ insert or replace into Adjacency_YieldChanges
 	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
 values
 	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
-	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2, 				'RESOURCECLASS_BONUS');
+	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2,				'RESOURCECLASS_BONUS');
 
 insert or replace into Improvement_Adjacencies 
 	(ImprovementType,		YieldChangeId)
@@ -581,14 +581,15 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
 values
 	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				'PLAYER_IS_CIVILIZATION_INDIA',	1),
-	('STEPWELL_AMENITY_MAX_ONE',            'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',   NULL,							1);
+	('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	NULL,							1);
 
 insert or replace into ModifierArguments
-    (ModifierId,                                     Name,              Value)
+	(ModifierId,									Name,				Value)
 values
 	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
 	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
-    ('STEPWELL_AMENITY_MAX_ONE',                  	'Amount',           1);
+	('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1);
+
 ---------------------------------------------------------------------------------------------------------------------------------
 --Gandhi
 insert or replace into TraitModifiers 
@@ -602,17 +603,46 @@ insert or replace into Modifiers
 	(ModifierId,				ModifierType,											SubjectRequirementSetId)
 values
 	('PEACE_ADDGROWTH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
-	('PEACE_ADDFAITH',        	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',   	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADDFAITH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
 	('PEACE_ADDAMENITY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS');
 
 insert or replace into ModifierArguments
-    (ModifierId,                Name,           Value)
+	(ModifierId,				Name,			Value)
 values
 	('PEACE_ADDGROWTH',			'Amount',		15),
-	('PEACE_ADDFAITH',        	'YieldType',   	'YIELD_FAITH'),
-	('PEACE_ADDFAITH',        	'Amount',   	15),
-	('PEACE_ADDAMENITY',		'Amount',   	1);
+	('PEACE_ADDFAITH',			'YieldType',	'YIELD_FAITH'),
+	('PEACE_ADDFAITH',			'Amount',		15),
+	('PEACE_ADDAMENITY',		'Amount',		1);
 
 -------------------------------------------------------------------------------
 --Cree's Mekewap now provides +1 production adjacent a Luxury.
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
+
+-------------------------------------------------------------------------------
+-- Germany
+-- UA: TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES
+-- LA: TRAIT_LEADER_HOLY_ROMAN_EMPEROR
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_HOLY_ROMAN_EMPEROR' and ModifierId = 'TRAIT_COMBAT_BONUS_CITY_STATES';
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('TRAIT_LEADER_HOLY_ROMAN_EMPEROR',				'HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS'),
+	('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT'),
+	('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,										SubjectRequirementSetId)
+values
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',			NULL),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_1_SPECIALTY_DISTRICT'),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_1_SPECIALTY_DISTRICT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'Amount',		100),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_SCIENCE'),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_CULTURE'),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2);
