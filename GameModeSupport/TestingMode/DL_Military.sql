@@ -14,9 +14,9 @@
 
 -- Outer Defense
 update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_WALLS';
-update Buildings set OuterDefenseStrength = 2 where
-    BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
-update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;
+-- update Buildings set OuterDefenseStrength = 2 where
+--     BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
+-- update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;
 delete from AiFavoredItems where ListType = 'DLAdjustBuildings' and Item = 'BUILDING_CASTLE';
 
 -- COMBAT_STRENGTH_REDUCTION_INSUFFICIENT_FUEL
@@ -123,3 +123,44 @@ insert or replace into UnitAbilityModifiers
 values
     ('ABILITY_KILL_GIVE_GREAT_GENERAL_POINTS',              'KILL_GIVE_GREAT_GENERAL_POINTS_MODIFIER'),
     ('ABILITY_KILL_GIVE_GREAT_ADMIRAL_POINTS',              'KILL_GIVE_GREAT_ADMIRAL_POINTS_MODIFIER');
+
+------------------------------------------------------------------------------------------------------------
+-- update GlobalParameters set Value = 4 where Name = 'GOLD_PURCHASE_MULTIPLIER';
+-- Failed to add purchase debuff for buildings and districts at cities that loyalty is not full, only able to change units (seems enough).
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    -- ('TRAIT_LEADER_MAJOR_CIV',              'DOUBLE_BUILDING_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL'),
+    -- ('TRAIT_LEADER_MAJOR_CIV',              'DOUBLE_DISTRICT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL'),
+    ('TRAIT_LEADER_MAJOR_CIV',              'DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL');
+
+insert or replace into Modifiers
+    (ModifierId,                                                ModifierType,                                                   SubjectRequirementSetId)
+values
+    -- ('DOUBLE_BUILDING_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',     'MODIFIER_PLAYER_CITIES_ADJUST_ALL_BUILDINGS_PURCHASE_COST',    'LOYALTY_NOT_FULL_REQUIREMENTS'),
+    -- ('DOUBLE_DISTRICT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',     'MODIFIER_PLAYER_CITIES_ADJUST_ALL_DISTRICTS_PURCHASE_COST',    'LOYALTY_NOT_FULL_REQUIREMENTS'),
+    ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST',            'LOYALTY_NOT_FULL_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                                Name,               Value)
+values
+    -- ('DOUBLE_BUILDING_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',     'Amount',       -50),
+    -- ('DOUBLE_DISTRICT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',     'Amount',       -50),
+    ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'Amount',           -100),
+    ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'IncludeCivilian',  1),
+    ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'UnitDomain',       'DOMAIN_ALL');
+
+insert or replace into Requirements
+    (RequirementId,                         RequirementType,                        Inverse)
+values
+    ('REQUIRES_CITY_LOYALTY_NOT_FULL',      'REQUIREMENT_CITY_HAS_FULL_LOYALTY',    1);
+
+insert or replace into RequirementSets
+    (RequirementSetId,                      RequirementSetType)
+values
+    ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                      RequirementId)
+values
+    ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIRES_CITY_LOYALTY_NOT_FULL');

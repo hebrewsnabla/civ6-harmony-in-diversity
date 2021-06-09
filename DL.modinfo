@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.7.8">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.7.9">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,12 +12,12 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.7.8</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.7.8</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.7.9</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.7.9</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Civ6 Plus: Harmony in Diversity v0.7.8</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.8</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity v0.7.9</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同 v0.7.9</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development.</en_US>
@@ -235,6 +235,33 @@
     </UpdateText> -->
   </FrontEndActions>
   <InGameActions>
+    <ImportFiles id="DL_CityCenterBuilding_Assets" criteria="Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsFair_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsKarez_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTotem_256.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_32.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_38.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_50.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
+      <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+    </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixChineseIcon" criteria="DLC_Vietnam">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -652,19 +679,23 @@
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
-      <Properties><LoadOrder>16011</LoadOrder></Properties>
+      <Properties><LoadOrder>16014</LoadOrder></Properties>
       <!-- Requirements need to update in the end -->
       <File>UpdateDataBase/DL_Requirements.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_PostProcess.sql</File>
+    </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
-      <Properties><LoadOrder>16012</LoadOrder></Properties>
+      <Properties><LoadOrder>16016</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
-      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
@@ -679,7 +710,7 @@
     <AddUserInterfaces id="DL_Scripts_Interface" criteria="Expansion2">
       <Properties>
         <Context>InGame</Context>
-        <LoadOrder>16016</LoadOrder>
+        <LoadOrder>16018</LoadOrder>
       </Properties>
       <File>Gameplay/Temp_Interface.xml</File>
     </AddUserInterfaces>
@@ -974,6 +1005,7 @@
     <File>UpdateDataBase/DL_MajorCivs.sql</File>
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
+    <File>UpdateDataBase/DL_PostProcess.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
     <File>UpdateDataBase/DL_Relic_Creator.sql</File>
@@ -1012,6 +1044,30 @@
     <File>Texts/HD_Text_Units.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
+    <!-- Assets -->
+    <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsFair_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsKarez_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTotem_256.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_32.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_38.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_50.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
+    <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
   </Files>
-
 </Mod>

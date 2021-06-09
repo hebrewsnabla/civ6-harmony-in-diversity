@@ -91,3 +91,5 @@ delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW';
 delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW_HILLS';
+
+	

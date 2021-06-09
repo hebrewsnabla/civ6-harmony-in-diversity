@@ -23,8 +23,10 @@ values
 	('DISTRICT_HANSA',				'RoyalDock_HANSA_Production'),
 	('DISTRICT_HANSA',				'Cothon_HANSA_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold'),
+	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Luxury_Gold_Late'),
 	('DISTRICT_COMMERCIAL_HUB',		'Commercial_Canal_Gold'),
 	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold'),
+	('DISTRICT_SUGUBA',				'Commercial_Luxury_Gold_Late'),
 	('DISTRICT_SUGUBA',				'Commercial_Canal_Gold'),
 	-- ('DISTRICT_CAMPUS',				'Geothermal_Science_Late'),
 	-- ('DISTRICT_CAMPUS',				'Reef_Science_Late'),
@@ -96,8 +98,10 @@ values
 	0, 				'DISTRICT_COMMERCIAL_HUB',	NULL,		NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('HD_Suguba_Gold',					'LOC_DISTRICT_SUGUBA_GOLD', 					'YIELD_GOLD',		2,				1,
 	0, 				'DISTRICT_SUGUBA',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
-	0,				NULL,					NULL,			NULL,		NULL,			NULL,			'RESOURCECLASS_LUXURY');
+	('Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		1,				1,
+	0,				NULL,					NULL,			NULL,		'CIVIC_MEDIEVAL_FAIRES', NULL,	'RESOURCECLASS_LUXURY'),
+	('Commercial_Luxury_Gold_Late',		'LOC_DISTRICT_LUXURY_GOLD', 					'YIELD_GOLD',		2,				1,
+	0,				NULL,					'CIVIC_MEDIEVAL_FAIRES', NULL, NULL,		NULL,			'RESOURCECLASS_LUXURY');
 	
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentRiver,

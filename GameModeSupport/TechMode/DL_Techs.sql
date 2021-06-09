@@ -74,12 +74,15 @@ update Technologies set UITreeRow = 4 where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_MILITARY_ENGINEERING';
 update Technologies set UITreeRow = 3, Cost = 450 where TechnologyType = 'TECH_CASTLES';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY'; -- Cost = 550, EraType = 'ERA_MEDIEVAL'
-update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
+update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_MASS_PRODUCTION';
+-- update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Technologies set UITreeRow = 1, Cost = 950 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
-update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_PRINTING';
+update Technologies set UITreeRow = 0, Cost = 950 where TechnologyType = 'TECH_PRINTING';
+-- update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_PRINTING';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SQUARE_RIGGING';
-update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ASTRONOMY';
+update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ASTRONOMY';
+-- update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ASTRONOMY';
 update Technologies set UITreeRow = 2, Cost = 450, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_METAL_CASTING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_SIEGE_TACTICS';
 -- Industrial era
@@ -166,16 +169,17 @@ values
     --  Renaissance
     ('TECH_CARTOGRAPHY',    'TECH_SHIPBUILDING'),
     ('TECH_CARTOGRAPHY',    'TECH_BUTTRESS'),
-    ('TECH_MASS_PRODUCTION',    'TECH_BUTTRESS'),
+    -- ('TECH_MASS_PRODUCTION',    'TECH_BUTTRESS'),
     ('TECH_MASS_PRODUCTION',    'TECH_EDUCATION'),
     ('TECH_BANKING',    'TECH_MACHINERY'),
     -- ('TECH_BANKING',    'TECH_METAL_CASTING'),
     ('TECH_GUNPOWDER',  'TECH_MILITARY_ENGINEERING'),
-    ('TECH_PRINTING',   'TECH_EDUCATION'),
+    ('TECH_PRINTING',   'TECH_MASS_PRODUCTION'), --TECH_EDUCATION
     ('TECH_PRINTING',   'TECH_APPRENTICESHIP'),
     ('TECH_PRINTING',   'TECH_MACHINERY'),
     ('TECH_SQUARE_RIGGING', 'TECH_CARTOGRAPHY'),
     ('TECH_ASTRONOMY',  'TECH_EDUCATION'),
+    ('TECH_ASTRONOMY',  'TECH_BUTTRESS'),
     ('TECH_MILITARY_TACTICS',   'TECH_METAL_CASTING'),
     ('TECH_MILITARY_TACTICS',   'TECH_MILITARY_ENGINEERING'),
     ('TECH_SIEGE_TACTICS',  'TECH_GUNPOWDER'),
@@ -183,13 +187,13 @@ values
     ('TECH_INDUSTRIALIZATION',  'TECH_PRINTING'),
     ('TECH_INDUSTRIALIZATION',  'TECH_BANKING'),
     ('TECH_SCIENTIFIC_THEORY',  'TECH_PRINTING'),
-    ('TECH_SCIENTIFIC_THEORY',  'TECH_ASTRONOMY'),
+    ('TECH_SCIENTIFIC_THEORY',  'TECH_MASS_PRODUCTION'), --TECH_ASTRONOMY
     ('TECH_BALLISTICS', 'TECH_STIRRUPS'),
     ('TECH_BALLISTICS', 'TECH_GUNPOWDER'),
     ('TECH_MILITARY_SCIENCE',   'TECH_MILITARY_TACTICS'),
     ('TECH_MILITARY_SCIENCE',   'TECH_SIEGE_TACTICS'),
     ('TECH_STEAM_POWER',    'TECH_SQUARE_RIGGING'),
-    ('TECH_STEAM_POWER',    'TECH_MASS_PRODUCTION'),
+    ('TECH_STEAM_POWER',    'TECH_ASTRONOMY'), --TECH_MASS_PRODUCTION
     ('TECH_STEAM_POWER',    'TECH_SCIENTIFIC_THEORY'),
     ('TECH_SANITATION', 'TECH_BANKING'),
     ('TECH_SANITATION', 'TECH_INDUSTRIALIZATION'),

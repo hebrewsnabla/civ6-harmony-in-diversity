@@ -2,27 +2,30 @@
 
 -------------------------------------------------------------------------------- 
 -- Techs and Civics
-update Technologies set Description = 'LOC_TECH_THE_WHEEL_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
-update Technologies set Description = 'LOC_TECH_MACHINERY_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
-update Technologies set Description = 'LOC_TECH_RIFLING_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
--- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
-update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
-update Technologies set Description = 'LOC_TECH_CONSTRUCTION_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
-update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
-update Technologies set Description = 'LOC_TECH_ARCHERY_DESCRIPTION' where TechnologyType ='TECH_ARCHERY';	
--- 
---update Technologies set Description = null where TechnologyType = 'TECH_STIRRUPS'; 
---update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
+update Technologies set Description = 'LOC_TECH_ARCHERY_HD_DESCRIPTION' where TechnologyType ='TECH_ARCHERY';
+update Technologies set Description = 'LOC_TECH_THE_WHEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
+update Technologies set Description = 'LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION' where TechnologyType ='TECH_CELESTIAL_NAVIGATION';
+update Technologies set Description = 'LOC_TECH_CONSTRUCTION_HD_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
+update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
+update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
+update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
+update Technologies set Description = 'LOC_TECH_STEAM_POWER_HD_DESCRIPTION' where TechnologyType = 'TECH_STEAM_POWER';
+update Technologies set Description = 'LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION' where TechnologyType ='TECH_REPLACEABLE_PARTS';
+update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
 
-update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_DL_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
-update Civics set Description = 'LOC_CIVIC_GUILDS_DL_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
-update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_DL_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
+update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
+-- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
+--update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
+
+update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
+update Civics set Description = 'LOC_CIVIC_GUILDS_HD_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
+update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
-update Civics set Description = 'LOC_CIVIC_FEUDALISM_DL_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
-update Civics set Description = 'LOC_CIVIC_MERCANTILISM_DL_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
-update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_DL_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
-update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_DL_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
-update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY';
+update Civics set Description = 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
+update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
+update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
+update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY'; --temp
 
 --------------------------------------------------------------------------------
 -- Buildings
@@ -128,6 +131,18 @@ update Policies set Description = 'LOC_POLICY_RESOURCE_MANAGEMENT_DL_DESCRIPTION
 update Policies set Description = 'LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION' where PolicyType = 'POLICY_SIMULTANEUM';
 
 update Policies set Description = 'LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION' where PolicyType = 'POLICY_NOBEL_PRIZE';
+
+-- Military
+update Policies set Description = 'LOC_POLICY_AGOGE_HD_DESCRIPTION' where PolicyType = 'POLICY_AGOGE';
+update Policies set Description = 'LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION' where PolicyType = 'POLICY_FEUDAL_CONTRACT';
+update Policies set Description = 'LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION' where PolicyType = 'POLICY_GRANDE_ARMEE';
+update Policies set Description = 'LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION' where PolicyType = 'POLICY_MILITARY_FIRST';
+
+update Policies set Description = 'LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION' where PolicyType = 'POLICY_MARITIME_INDUSTRIES';
+update Policies set Description = 'LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION' where PolicyType = 'POLICY_PRESS_GANGS';
+update Policies set Description = 'LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION' where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+
+update Policies set Description = 'LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION' where PolicyType = 'POLICY_LIGHTNING_WARFARE';
 
 --------------------------------------------------------------------------------
 -- Units

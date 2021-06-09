@@ -23,6 +23,7 @@ values
 	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT',	'Amount',	2);
 
 -- Policy Cards
+update ModifierArguments set Value = 10 where ModifierId = 'DISCIPLINE_BARBARIANCOMBAT' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'CIVILPRESTIGE_GOVHOUSING' and Name = 'Amount';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING' and Name = 'Amount';
@@ -41,10 +42,10 @@ delete from PolicyModifiers where ModifierID = 'MACHIAVELLIANISM_OFFENSIVESPYTIM
 update ModifierArguments set Value = 100 where ModifierID = 'MACHIAVELLIANISM_SPYPRODUCTION' and Name = 'Amount ';
 delete from Policies where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 delete from Policies where PolicyType = 'POLICY_PROFESSIONAL_ARMY';
-delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
+-- delete from Policies where PolicyType = 'POLICY_FORCE_MODERNIZATION';
 -- 
 delete from Policies where PolicyType = 'POLICY_NATIVE_CONQUEST';
-delete from Policies where PolicyType = 'POLICY_NATIONAL_IDENTITY';
+--delete from Policies where PolicyType = 'POLICY_NATIONAL_IDENTITY';
 delete from Policies where PolicyType = 'POLICY_PROPAGANDA';
 delete from Policies where PolicyType = 'POLICY_NUCLEAR_ESPIONAGE';
 delete from Policies where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
@@ -56,6 +57,7 @@ update ModifierArguments set Value = 100 where ModifierID = 'SACK_DOUBLEPILLAGED
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEIMPROVE';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTALWAR_DOUBLEPILLAGEDISTRICT';
 update ModifierArguments set Value = 200 where ModifierID = 'TOTAL_WAR_PLUNDER_BONUS';
+update ModifierArguments set Value = 100 where ModifierID = 'NATIONALIDENTITY_REDUCESTRENGTHREDUCTIONFORDAMAGE';
 
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 
@@ -130,6 +132,7 @@ update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 
 update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'POLICY_PRESS_GANGS';
 update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_NAVIGATION';
 update Policies set PrereqCivic = 'CIVIC_GAMES_RECREATION' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
+update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_RETAINERS';
 
 update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
@@ -618,48 +621,6 @@ values
 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
 
--- Speed Up Military Cards
-update ModifierArguments set Value = 30 where Name = 'Amount' and
-	(  ModifierId = 'MANEUVER_ANCIENT_HEAVY_CAVALRY_PRODUCTION'
-	or ModifierId = 'MANEUVER_CLASSICAL_HEAVY_CAVALRY_PRODUCTION'
-	or ModifierId = 'MANEUVER_ANCIENT_LIGHT_CAVALRY_PRODUCTION'
-	or ModifierId = 'MANEUVER_CLASSICAL_LIGHT_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_MEDIEVAL_HEAVY_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_RENAISSANCE_HEAVY_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_INDUSTRIAL_HEAVY_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_MEDIEVAL_LIGHT_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_RENAISSANCE_LIGHT_CAVALRY_PRODUCTION'
-	or ModifierId = 'CHIVALRY_INDUSTRIAL_LIGHT_CAVALRY_PRODUCTION'
-	-- 
-	or ModifierId = 'AGOGE_ANCIENT_MELEE_PRODUCTION'
-	or ModifierId = 'AGOGE_CLASSICAL_MELEE_PRODUCTION'
-	or ModifierId = 'AGOGE_ANCIENT_ANTI_CAVALRY_PRODUCTION'
-	or ModifierId = 'AGOGE_CLASSICAL_ANTI_CAVALRY_PRODUCTION'
-	or ModifierId = 'AGOGE_ANCIENT_RANGED_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_MEDIEVAL_MELEE_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_RENAISSANCE_MELEE_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_MEDIEVAL_ANTI_CAVALRY_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_RENAISSANCE_ANTI_CAVALRY_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_MEDIEVAL_RANGED_PRODUCTION'
-	or ModifierId = 'FEUDALCONTRACT_RENAISSANCE_RANGED_PRODUCTION');
-
-update ModifierArguments set Value = 60 where Name = 'Amount' and
-	(  ModifierId = 'MARITIMIEINDUSTRIES_ANCIENT_NAVAL_MELEE_PRODUCTION'
-	or ModifierId = 'MARITIMIEINDUSTRIES_CLASSICAL_NAVAL_MELEE_PRODUCTION'
-	or ModifierId = 'MARITIMIEINDUSTRIES_ANCIENT_NAVAL_RANGED_PRODUCTION'
-	or ModifierId = 'MARITIMIEINDUSTRIES_CLASSICAL_NAVAL_RANGED_PRODUCTION'
-	or ModifierId = 'MARITIMIEINDUSTRIES_ANCIENT_NAVAL_RAIDER_PRODUCTION'
-	or ModifierId = 'MARITIMIEINDUSTRIES_CLASSICAL_NAVAL_RAIDER_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_MEDIEVAL_NAVAL_MELEE_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_MEDIEVAL_NAVAL_RANGED_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_MEDIEVAL_NAVAL_RAIDER_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_RENAISSANCE_NAVAL_MELEE_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_MELEE_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_RENAISSANCE_NAVAL_RANGED_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RANGED_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_RENAISSANCE_NAVAL_RAIDER_PRODUCTION'
-	or ModifierId = 'PRESSGANGS_INDUSTRIAL_NAVAL_RAIDER_PRODUCTION');
-
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';		
 
@@ -670,3 +631,137 @@ insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentT
 select PolicyType,	'GOVERNMENT_DIGITAL_DEMOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
 insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
 select PolicyType,	'GOVERNMENT_CORPORATE_LIBERTARIANISM' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+
+delete from PolicyModifiers where PolicyType = 'POLICY_LIGHTNING_WARFARE';
+insert or replace into PolicyModifiers
+	(PolicyType,							ModifierId)
+values
+	('POLICY_LIGHTNING_WARFARE',			'LIGHTNING_WARFARE_CAVALRY_MOVEMENT'),
+	('POLICY_LIGHTNING_WARFARE',			'LIGHTNING_WARFARE_CAVALRY_STRENGTH');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId)
+values
+	('LIGHTNING_WARFARE_CAVALRY_MOVEMENT',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',			'UNIT_IS_CAVALRY_REQUIREMENTS'),
+	('LIGHTNING_WARFARE_CAVALRY_STRENGTH',	'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',		'UNIT_IS_CAVALRY_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,		Value)
+values
+	('LIGHTNING_WARFARE_CAVALRY_MOVEMENT',	'Amount',	1),
+	('LIGHTNING_WARFARE_CAVALRY_STRENGTH',	'Amount',	5);
+
+insert or replace into ModifierStrings
+	(ModifierId,							Context,	Text)
+values
+	('LIGHTNING_WARFARE_CAVALRY_STRENGTH',	'Preview',	'+{1_Amount} {LOC_LIGHTNING_WARFARE_CAVALRY_STRENGTH_PREVIEW_TEXT}');
+-------------------------------------------------------------------------------------------------------------------
+-- Military production cards
+-- land
+-- POLICY_AGOGE, Ancient & classic
+-- POLICY_FEUDAL_CONTRACT, + medival, renaissance
+-- POLICY_GRANDE_ARMEE,	+ industrial, morden
+-- POLICY_MILITARY_FIRST, all
+-- naval
+-- POLICY_MARITIME_INDUSTRIES, Ancient & classic
+-- POLICY_PRESS_GANGS, until industrial
+-- POLICY_INTERNATIONAL_WATERS, all
+
+delete from Policies where PolicyType = 'POLICY_MANEUVER';
+delete from Policies where PolicyType = 'POLICY_CHIVALRY';
+
+delete from PolicyModifiers where
+	PolicyType = 'POLICY_AGOGE' or
+	PolicyType = 'POLICY_FEUDAL_CONTRACT' or
+	PolicyType = 'POLICY_GRANDE_ARMEE' or
+	PolicyType = 'POLICY_MILITARY_FIRST' or
+	PolicyType = 'POLICY_MARITIME_INDUSTRIES' or
+	PolicyType = 'POLICY_PRESS_GANGS' or
+	PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+
+create table 'PolicyUnitProductionValidEras'(
+	'PolicyType' TEXT NOT NULL,
+	'EraType' TEXT NOT NULL,
+	'SpeedUpAmount' INTEGER NOT NULL DEFAULT 0,
+	'SpeedUpPerTier' INTEGER NOT NULL DEFAULT 0,
+	PRIMARY KEY('PolicyType', 'EraType'),
+	FOREIGN KEY('PolicyType') REFERENCES Policies('PolicyType') ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY('EraType') REFERENCES Eras('EraType') ON DELETE CASCADE ON UPDATE CASCADE);
+
+create table 'PolicyUnitProductionValidClasses'(
+	'PolicyType' TEXT NOT NULL,
+	'PromotionClassType' TEXT NOT NULL,
+	'UnitDomain' TEXT,
+	PRIMARY KEY('PolicyType', 'PromotionClassType'),
+	FOREIGN KEY('PolicyType') REFERENCES Policies('PolicyType') ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY('PromotionClassType') REFERENCES UnitPromotionClasses('PromotionClassType') ON DELETE CASCADE ON UPDATE CASCADE);
+
+insert or replace into PolicyUnitProductionValidEras
+	(PolicyType,					EraType 			)
+values
+	('POLICY_AGOGE',				'ERA_ANCIENT' 		),
+	('POLICY_AGOGE',				'ERA_CLASSICAL' 	),
+	('POLICY_FEUDAL_CONTRACT',		'ERA_ANCIENT' 		),
+	('POLICY_FEUDAL_CONTRACT',		'ERA_CLASSICAL' 	),
+	('POLICY_FEUDAL_CONTRACT',		'ERA_MEDIEVAL' 		),
+	('POLICY_FEUDAL_CONTRACT',		'ERA_RENAISSANCE' 	),
+	('POLICY_GRANDE_ARMEE',			'ERA_ANCIENT' 		),
+	('POLICY_GRANDE_ARMEE',			'ERA_CLASSICAL' 	),
+	('POLICY_GRANDE_ARMEE',			'ERA_MEDIEVAL' 		),
+	('POLICY_GRANDE_ARMEE',			'ERA_RENAISSANCE' 	),
+	('POLICY_GRANDE_ARMEE',			'ERA_INDUSTRIAL' 	),
+	('POLICY_GRANDE_ARMEE',			'ERA_MODERN' 		),
+	('POLICY_MILITARY_FIRST',		'ERA_ANCIENT' 		),
+	('POLICY_MILITARY_FIRST',		'ERA_CLASSICAL' 	),
+	('POLICY_MILITARY_FIRST',		'ERA_MEDIEVAL' 		),
+	('POLICY_MILITARY_FIRST',		'ERA_RENAISSANCE' 	),
+	('POLICY_MILITARY_FIRST',		'ERA_INDUSTRIAL' 	),
+	('POLICY_MILITARY_FIRST',		'ERA_MODERN' 		),
+	('POLICY_MILITARY_FIRST',		'ERA_ATOMIC' 		),
+	('POLICY_MILITARY_FIRST',		'ERA_INFORMATION' 	),
+	('POLICY_MARITIME_INDUSTRIES',	'ERA_ANCIENT' 		),
+	('POLICY_MARITIME_INDUSTRIES',	'ERA_CLASSICAL' 	),
+	('POLICY_PRESS_GANGS',			'ERA_ANCIENT' 		),
+	('POLICY_PRESS_GANGS',			'ERA_CLASSICAL' 	),
+	('POLICY_PRESS_GANGS',			'ERA_MEDIEVAL' 		),
+	('POLICY_PRESS_GANGS',			'ERA_RENAISSANCE' 	),
+	('POLICY_PRESS_GANGS',			'ERA_INDUSTRIAL' 	),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_ANCIENT' 		),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_CLASSICAL' 	),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_MEDIEVAL' 		),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_RENAISSANCE' 	),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_INDUSTRIAL' 	),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_MODERN' 		),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_ATOMIC' 		),
+	('POLICY_INTERNATIONAL_WATERS',	'ERA_INFORMATION' 	);
+
+-- Land
+update PolicyUnitProductionValidEras set SpeedUpAmount = 40, SpeedUpPerTier = 15 where
+	PolicyType = 'POLICY_AGOGE' or PolicyType = 'POLICY_FEUDAL_CONTRACT' or PolicyType = 'POLICY_GRANDE_ARMEE' or PolicyType = 'POLICY_MILITARY_FIRST';
+
+-- Sea
+update PolicyUnitProductionValidEras set SpeedUpAmount = 60, SpeedUpPerTier = 15 where
+	PolicyType = 'POLICY_MARITIME_INDUSTRIES' or PolicyType = 'POLICY_PRESS_GANGS' or PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+
+insert or replace into PolicyUnitProductionValidClasses	(PolicyType,	PromotionClassType,	UnitDomain)
+select a.PolicyType, b.PromotionClassType,	'Land' from Policies a CROSS JOIN UnitPromotionClasses b where (
+	a.PolicyType = 'POLICY_AGOGE' or
+	a.PolicyType = 'POLICY_FEUDAL_CONTRACT' or
+	a.PolicyType = 'POLICY_GRANDE_ARMEE' or
+	a.PolicyType = 'POLICY_MILITARY_FIRST' ) and (
+	b.PromotionClassType = 'PROMOTION_CLASS_RECON' or
+	b.PromotionClassType = 'PROMOTION_CLASS_MELEE' or
+	b.PromotionClassType = 'PROMOTION_CLASS_RANGED' or
+	b.PromotionClassType = 'PROMOTION_CLASS_SIEGE' or
+	b.PromotionClassType = 'PROMOTION_CLASS_ANTI_CAVALRY' or
+	b.PromotionClassType = 'PROMOTION_CLASS_LIGHT_CAVALRY' or
+	b.PromotionClassType = 'PROMOTION_CLASS_HEAVY_CAVALRY');
+
+insert or replace into PolicyUnitProductionValidClasses (PolicyType,	PromotionClassType,	UnitDomain)
+select a.PolicyType, b.PromotionClassType,	'Sea' from Policies a CROSS JOIN UnitPromotionClasses b where (
+	a.PolicyType = 'POLICY_MARITIME_INDUSTRIES' or
+	a.PolicyType = 'POLICY_PRESS_GANGS' or
+	a.PolicyType = 'POLICY_INTERNATIONAL_WATERS' ) and (
+	b.PromotionClassType = 'PROMOTION_CLASS_NAVAL_MELEE' or
+	b.PromotionClassType = 'PROMOTION_CLASS_NAVAL_RANGED' or
+	b.PromotionClassType = 'PROMOTION_CLASS_NAVAL_RAIDER');

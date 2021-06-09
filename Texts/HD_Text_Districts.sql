@@ -44,7 +44,7 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_THANH_HD_DESCRIPTION",                             "越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。对陆地军事单位+15%建造速度。为本城已开发的 [ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_ENCAMPMENT_HD_DESCRIPTION",                        "您城市里的军事机构区。[NEWLINE] 对陆地军事单位+15%建造速度。为本城的已开发的 [ICON_RESOURCE_STONE] 石头、 [ICON_RESOURCE_COPPER] 铜+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "刚果特色区域，只能建在雨林或树林里。代替社区，可更早建造，且建造费用更低。无视魅力值，固定提供+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物和+5 [ICON_Gold] 金币。为相邻的雨林和森林单元格 +1 [ICON_FOOD] 食物。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_AERODROME_HD_DESCRIPTION",                         "可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。建造空中单位时，+25%建造速度。为相邻单元格+1魅力。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_AERODROME_HD_DESCRIPTION",                         "可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。建造空中单位时，+25%建造速度。为相邻单元格-1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",                "通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。如建在市中心旁，则+1 [ICON_ENVOY] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。可额外招募一名间谍。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_ACROPOLIS_HD_DESCRIPTION",                         "希腊特色文化遗址区域，替代剧院广场，建造费用更低。建成后奖励1名 [ICON_Envoy] 使者。[NEWLINE][NEWLINE]每个相邻区域+1 [ICON_Culture] 文化值，每个相邻市中心额外+2 [ICON_Culture] 文化值。每个相邻奇观、娱乐设施及水上乐园+2 [ICON_Culture] 文化值。只能建在丘陵上。为相邻单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_PRESERVE_HD_DESCRIPTION",                          "可基于魅力最高提供3点 [ICON_Housing] 住房。对相邻的中立单元格施放文化炸弹，使相邻单元格+1魅力。"),

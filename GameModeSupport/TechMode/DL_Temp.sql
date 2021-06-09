@@ -3,6 +3,7 @@
 -------------------------------------
 
 update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
+update Buildings_XP2 set RequiredPower = 0 where BuildingType = 'BUILDING_FACTORY';
 
 delete from Building_YieldChangesBonusWithPower where BuildingType = 'BUILDING_FACTORY';
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_FACTORY' and YieldType = 'YIELD_PRODUCTION';

@@ -328,11 +328,6 @@ values
 	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
 	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS');
 
-insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
-	('PLAYER_HAS_CONSTRUCTION_REQUIREMENTS','REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION');
-insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
-	('PLAYER_HAS_CONSTRUCTION_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
-
 insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
 values
@@ -619,9 +614,5 @@ values
 	('PEACE_ADDAMENITY',		'Amount',   	1);
 
 -------------------------------------------------------------------------------
---CIVILIZATION_INDONESIA
-update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_HOLY_SITE' and Name = 'TilesRequired';
-update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_CAMPUS' and Name = 'TilesRequired';
-update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_INDUSTRIAL_ZONE' and Name = 'TilesRequired';
-update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_NUSANTARA_COAST_THEATER' and Name = 'TilesRequired';
-
+--Cree's Mekewap now provides +1 production adjacent a Luxury.
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';

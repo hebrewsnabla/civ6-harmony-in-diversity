@@ -3,6 +3,16 @@
 insert or replace into EnglishText
     (Tag,                                                                             Text)
 values
+    ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+40% construction speed toward Ancient and Classical era land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+40% construction speed toward Ancient, Classical, Medieval and Renaissance era land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+40% construction speed toward Modern era and earlier land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "+40% construction speed toward all land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "+60% construction speed toward Ancient and Classical era naval units. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+60% construction speed toward Industrial era and earlier naval units. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+60% construction speed toward all naval units, excluding Carriers. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
+    -- 
+    ("LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "+10 [ICON_Strength] Unit Combat Strength when fighting Barbarians."),
 	("LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",										  "+100% [ICON_Production] Production toward Spies."),
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
@@ -25,6 +35,7 @@ values
     ("LOC_POLICY_PRAETORIUM_DESCRIPTION",                                             "[ICON_Governor] Governors provide +5 Loyalty per turn to their city."),
     ("LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION",                                     "+3 Influence points per turn toward earning city-state [ICON_Envoy] Envoys. Open Borders with all city-states."),
     ("LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION",                                      "Open Borders with all city-states, and +9 Influence points per turn toward earning [ICON_Envoy] Envoys."),
+    ("LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
     ("LOC_POLICY_FREELANCERS_NAME",                                                   "Freelancers"),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME",                                       "Maritime Infrastructure"),
     ("LOC_POLICY_SEABORNE_SUPPLY_NAME",                                               "Seaborne Supply"),
@@ -87,6 +98,16 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "生产远古和古典时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "生产远古、古典、中世纪和文艺复兴时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "生产现代及更早时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "生产所有陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "生产远古和古典时代的海军单位加速+60%，城市每有一级港口建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "生产工业及更早时代的海军单位加速+60%，城市每有一级港口建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+60%，城市每有一级港口建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
+    -- 
+    ("zh_Hans_CN",  "LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "同蛮族战斗时，+10 [ICON_Strength] 单位战斗力。"),
 	("zh_Hans_CN",  "LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "为生产间谍+100% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
@@ -109,6 +130,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PRAETORIUM_DESCRIPTION",                                             "[ICON_Governor] 总督为其所在城市每回合忠诚度+5。"),
     ("zh_Hans_CN",  "LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION",                                     "影响力点数每回合+3，以获得城邦 [ICON_Envoy] 使者。开放所有城邦的边境。"),
     ("zh_Hans_CN",  "LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION",                                      "开放所有城邦的边境，影响力点数每回合+9，通过影响力点数可获得城邦 [ICON_Envoy] 使者。"),
+    ("zh_Hans_CN",  "LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_NAME",                                                   "自由佣兵"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME",                                       "海上设施"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_NAME",                                               "海上补给线"),

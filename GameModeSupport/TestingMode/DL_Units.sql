@@ -2,10 +2,16 @@
 --      All Testing Adjustments    --
 -------------------------------------
 
--- TODO: 单位过期科技
+-- Special:
+-- TODO: set LU as UU for Ottoman, change player information.
+-- delete from UnitReplaces where CivUniqueUnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
+-- insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_OTTOMAN_BARBARY_CORSAIR',    'UNIT_PRIVATEER');
+-- update Units set TraitType = NULL, PrereqCivic = 'CIVIC_NAVAL_TRADITION' where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
+-- update Units set Cost = 120, Maintenance = 3, BaseMoves = 4, Range = 1, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
+-- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
 
 -- Costs
-update Units set Cost = 20 where UnitType = 'UNIT_SCOUT';
+update Units set Cost = 25 where UnitType = 'UNIT_SCOUT';
 update Units set Cost = 25 where UnitType = 'UNIT_SLINGER';
 update Units set Cost = 30 where UnitType = 'UNIT_WARRIOR';
 update Units set Cost = 110 where UnitType = 'UNIT_MILITARY_ENGINEER';
@@ -214,3 +220,4 @@ update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
 
 -- Promotions
 update Units set BaseMoves = BaseMoves - 1 where PromotionClass = 'PROMOTION_CLASS_RECON';
+-- update Units set BaseMoves = BaseMoves + 1 where PromotionClass = 'PROMOTION_CLASS_SIEGE';
