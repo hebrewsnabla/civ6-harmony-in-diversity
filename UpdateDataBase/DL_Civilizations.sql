@@ -132,6 +132,7 @@ update ModifierArguments set Value = 100 where
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_MERCHANT_POINTS' and Name = 'Amount';
 
+------------------------------------------------------------------------------------------------------------------
 -- Mali
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN');
@@ -156,7 +157,7 @@ insert or replace into Modifiers (ModifierId, ModifierType) values
 insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'DistrictType', 'DISTRICT_CITY_CENTER'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'Amount', 25);
-
+---------------------------------------------------------------------------------------------------------------------------
 
 -- Ethiopia
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
@@ -613,6 +614,17 @@ values
 	('PEACE_ADDFAITH',        	'Amount',   	15),
 	('PEACE_ADDAMENITY',		'Amount',   	1);
 
--------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 --Cree's Mekewap now provides +1 production adjacent a Luxury.
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
+
+------------------------------------------------------------------------------------------------
+-- Korea ability updated
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_HWARANG';
+delete from Adjacency_YieldChanges where ID = 'Mine_ScienceSeowonAdjacency';
+delete from Adjacency_YieldChanges where ID = 'Farm_FoodSeowonAdjacency';
+
+insert or replace into TraitModifiers
+	(TraitType, 				ModifierId)
+values
+	('TRAIT_LEADER_HWARANG',	'HWARANG_')

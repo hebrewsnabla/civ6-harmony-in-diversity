@@ -27,7 +27,7 @@ values
 	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
 
 -- increase citizen slot for districts, remove the great person point.
-update Districts set CitizenSlots = 1 
+update Districts set CitizenSlots = 20 
  where DistrictType = 'DISTRICT_CAMPUS'
  	or DistrictType = 'DISTRICT_OBSERVATORY'
  	or DistrictType = 'DISTRICT_SEOWON'
@@ -36,7 +36,7 @@ update Districts set CitizenSlots = 1
  	or DistrictType = 'DISTRICT_ENCAMPMENT'
  	or DistrictType = 'DISTRICT_THANH'
  	or DistrictType = 'DISTRICT_IKANDA'
- 	-- or DistrictType = 'DISTRICT_HARBOR'
+ 	or DistrictType = 'DISTRICT_HARBOR'
  	or DistrictType = 'DISTRICT_COTHON'
  	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD'
  	or DistrictType = 'DISTRICT_HOLY_SITE'
