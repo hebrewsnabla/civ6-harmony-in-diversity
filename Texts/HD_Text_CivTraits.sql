@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
+    ("LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "Each city can build one more district than usual (exceeding the normal limit based on [ICON_Citizen] Population). +2 [ICON_Science] Science and +2 [ICON_Culture] Culture for cities that has Specialty Districts."),
+    ("LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "Additional Military policy slot. Double Influence Points."),
     ("LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "Coast and Lake tiles provide a standard adjacency bonus for Holy Site, Campus, Industrial Zone, and Theater Square districts. +1 [ICON_AMENITIES] Amenity from entertainment to each Entertainment Complex adjacent to a Coast or Lake tile."),
     ("LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "Culture Bomb adjacent tiles when completing an Encampment or Fort inside friendly territory. All Military policy slots in the current government is converted to Wildcard slots. Tiles that adjacent to Encampment gets +1 [ICON_PRODUCTION] Production, Tiles that adjacent to the Fort gets +1 [ICON_PRODUCTION] Production. +20% [ICON_PRODUCTION] Production towards Encampment and its buildings. +4 [ICON_Strength] Combat Strength when Poland has any kind of Alliance."),
     ("LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "Poland's majority religion becomes the dominant religion in cities that loses a tile to a Polish Culture Bomb. Holy Sites gain standard Faith adjacency bonus instead of minor adjacency bonus from other Districts. +2 [ICON_Gold] Gold, +2 [Icon_Culture] Culture , +2 [Icon_Science] Science , +2 [Icon_Faith] Faith to all Trade routes between Poland and its Alls or Suzerain's City States."),
@@ -44,6 +46,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。拥有专业化区域的城市+2 [ICON_Science] 科技值和 +2 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。如与海岸或湖泊单元格相邻，娱乐区提供的 [ICON_AMENITIES] 宜居度+1。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。圣地从其他区域获得标准相邻加成而不是少量相邻加成。所有通往或来自盟友及宗主国城邦的商路+2 [ICON_Gold] 金币, +2 [Icon_Culture]文化, +2 [Icon_Science]科技, +2 [Icon_Faith]信仰值。若拥有任意活跃同盟类型，则单位+4 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "在友好领土内建成军营或堡垒后对相邻单元格施放文化炸弹。当前政体的所有军事政策槽位均转为通配符槽位。相邻军营的单元格+1 [ICON_Production] 生产力，相邻堡垒的单元格+1 [ICON_Production] 生产力。建造军营时+20% [ICON_PRODUCTION]建造速度。"),
