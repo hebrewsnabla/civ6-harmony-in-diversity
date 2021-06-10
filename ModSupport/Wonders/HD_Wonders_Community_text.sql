@@ -167,6 +167,9 @@ values
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_NAME",                                                                 "帝国大厦"),
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_DESCRIPTION",                                                          "该城市+20% [ICON_GOLD] 金币，该城市的每座奇观+6 [ICON_GOLD] 金币和且奇观的 [ICON_Tourism] 旅游业绩+50%。必须建在靠近市中心的平原上。"),
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_QUOTE",                                                                "当我在纽约，我看到帝国大厦，感到就像它属于我……还是反之亦然？[NEWLINE]——菲伊·雷"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_NAME",                                                         "圣彼得大教堂"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_DESCRIPTION",                                                  "每座信奉您的宗教的首都令此城市+5% [ICON_CULTURE] 文化值和+5% [ICON_FAITH] 信仰值。此城市的 [ICON_GreatWork_Religious] 宗教艺术巨作获得+3 [ICON_FAITH] 信仰值，并提供3倍 [ICON_TOURISM] 旅游业绩。必须建在首都旁，且玩家已创立宗教。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_QUOTE",                                                        "“一个人能从圣彼得的圆顶看到罗马每一件显眼的物体……他能看到一幅全景图，丰富多彩，包罗万象，胜于欧洲历史中除此以外的一切。”[NEWLINE]——马克·吐温"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_NAME",                                                                 "加拿大国家电视塔"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_DESCRIPTION",                                                          "为每座拥有博物馆建筑的城市提供广播中心。建成时所有城市获得2 [ICON_Citizen] 人口，所有城市+2 [ICON_Housing] 住房和1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在与本城的娱乐中心相邻的单元格上。"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_QUOTE",                                                                "“没有甚么跑的比光速还快——除了坏消息，它们服从特殊定律。”[NEWLINE]——道格拉斯·亚当斯");
