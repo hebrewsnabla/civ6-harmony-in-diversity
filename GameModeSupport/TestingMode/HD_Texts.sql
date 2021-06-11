@@ -36,7 +36,8 @@ values
     ("LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                      "Fighting in Rainforest or Woods tiles"),
     ("LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                      "From occupying either an improvement that provides [ICON_Strength] Defense Strength or a district"),
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
-    ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flatten tiles without Woods, Jungle, or Marsh");
+    ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flatten tiles without Woods, Jungle, or Marsh"),
+    ("LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                      "From Wolfpack");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -76,7 +77,8 @@ values
     ("zh_Hans_CN",  "LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                   "来自在森林或雨林中战斗"),
     ("zh_Hans_CN",  "LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                   "来自占领区域或防御性的改良设施"),
     ("zh_Hans_CN",  "LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                               "来自在丘陵上防御"),
-    ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战");
+    ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                   "来自狼群战术");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
@@ -133,7 +135,27 @@ values
     ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                       "+1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry."),
     ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+7 [ICON_Strength] Combat Strength vs. district defenses."),
     ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. district defenses."),
-    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.");
+    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title."),
+    --naval melee
+    ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
+    ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                      "+1 additional attack per turn if [ICON_Movement] Movement allows."),
+    ("LOC_PROMOTION_RUTTER_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. naval raider units."),
+    --naval ranged
+    ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+7 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_BULB_BOW_HD_NAME",                                          "Bulb Bow"),
+    ("LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
+    --naval raider
+    ("LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                    "+1 [ICON_Movement] Movement and +1 sight range."),
+    --("LOC_PROMOTION_LOOT_NAME",                                                 ""),
+    ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. Yields gained from plundering [ICON_TradeRoute] Trade Routes are +100%."),
+    ("LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                      "+2 [ICON_Strength] Combat Strength for adjacent naval raiders"),
+    ("LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                   "Boarding Action"),
+    ("LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                            "+10 [ICON_Strength] Combat Strength when attacking naval units."),
+    ("LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                    "Damage Control"),
+    ("LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                             "Heal outside of friendly territory."),
+    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
+    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -187,7 +209,27 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                    "相邻轻重骑兵时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。");
+    ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。"),
+    --naval melee
+    ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                          "冲撞战术"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_DESCRIPTION",                      "如果移动力 [ICON_Movement] 允许，每回合攻击次数+1"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_RUTTER_DESCRIPTION",                                     "与海军袭击者单位战斗时+10 [ICON_Strength] 战斗力。"),
+    --naval ranged
+    ("zh_Hans_CN",  "LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                "攻击区域防御时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                            "攻击区域防御时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BULB_BOW_HD_NAME",                                       "球鼻艏"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                "+1 [ICON_Movement] 移动力。"),
+    --naval raider
+    ("zh_Hans_CN",  "LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                 "+1 [ICON_Movement] 移动力并+1视野范围。"),
+    --("zh_Hans_CN",  "LOC_PROMOTION_LOOT_NAME",                                              "破交作战"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOOT_DESCRIPTION",                                       "海岸扫荡获得的 [ICON_Gold] 金币+100。掠夺 [ICON_TradeRoute] 贸易路线的收益+100%。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                   "为相邻的友方海军袭击者单位+2 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                "跳帮"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                         "进攻海军单位时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                 "损害管制"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                          "可在友军领土之外回复。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                              "自动索敌"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。");
 
 -- Units information updates
 --------------------------------------------------------------------------------
