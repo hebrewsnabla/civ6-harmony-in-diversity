@@ -103,7 +103,9 @@ values
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_RECON'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'CLASS_HEAVY_CAVALRY'),
     ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
-    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE');
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE'),
+    ('ABILITY_SEE_HIDDEN',                                      'CLASS_NAVAL_MELEE'),
+    ('ABILITY_MONGOLIAN_KESHIG',                                'CLASS_NAVAL_MELEE');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
@@ -314,6 +316,7 @@ update ModifierArguments set Value = 5 where ModifierId = 'BOMBARDMENT_BONUS_VS_
 update ModifierArguments set Value = 7 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 --naval raider
 update ModifierArguments set Value = 100 where ModifierId = 'LOOT_GOLD_FROM_COASTAL_RAID' and Name = 'Bonus';
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK' and ModifierId = 'WOLFPACK_ADDITIONAL_ATTACK';
 
 --melee
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
@@ -328,6 +331,8 @@ update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROM
 --naval melee
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_RUTTER';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_CREEPING_ATTACK';
+--naval ranged
+update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES';
 --naval raider
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
 update UnitPromotions set Level = 1 , Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';

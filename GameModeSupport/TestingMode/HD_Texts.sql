@@ -139,7 +139,7 @@ values
     --naval melee
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                      "+1 additional attack per turn if [ICON_Movement] Movement allows."),
-    ("LOC_PROMOTION_RUTTER_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. naval raider units."),
+    ("LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                               "+10 [ICON_Strength] Combat Strength vs. naval raider units."),
     --naval ranged
     ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength vs. district defenses."),
     ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+7 [ICON_Strength] Combat Strength vs. district defenses."),
@@ -212,8 +212,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。"),
     --naval melee
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                          "冲撞战术"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_DESCRIPTION",                      "如果移动力 [ICON_Movement] 允许，每回合攻击次数+1"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_RUTTER_DESCRIPTION",                                     "与海军袭击者单位战斗时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                   "如果移动力 [ICON_Movement] 允许，每回合攻击次数+1"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                            "与海军袭击者单位战斗时+10 [ICON_Strength] 战斗力。"),
     --naval ranged
     ("zh_Hans_CN",  "LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                "攻击区域防御时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                            "攻击区域防御时+7 [ICON_Strength] 战斗力。"),
