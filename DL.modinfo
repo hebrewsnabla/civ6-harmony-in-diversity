@@ -24,8 +24,8 @@
       <zh_Hans_CN>文明6 Plus: 和而不同. 这是一个与迭起兴衰、风云变化等大型DLC比肩的大型游戏性mod，对游戏内容进行了大规模的修缮和平衡。该mod目前正在开发中。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -263,8 +263,8 @@
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
-    <UpdateIcons id="FixChineseIcon" criteria="DLC_Vietnam">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
+    <UpdateIcons id="FixIcons" criteria="Expansion2">
+      <Properties><LoadOrder>2</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Fixing.sql</File>
     </UpdateIcons>
     <!-- UI -->
