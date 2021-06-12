@@ -80,7 +80,7 @@ function getCityCenterPlotIndex(city)
     return Map.GetPlotIndex(x, y)
 end
 
-function OnGovernorChanged(playerID, governorID)
+function UpdateCityHasGovernor(playerID)
     local player = Players[playerID]
     local pCities = player:GetCities()
 
@@ -93,9 +93,21 @@ function OnGovernorChanged(playerID, governorID)
             value = 1
         end
         local plot = Map.GetPlotByIndex(plotID)
-        print(plot, value)
+        -- print(plot, value)
         SetObjectState(plot, g_PropertyKeys_HD.CityFlags.HasAssignedGovernor, value)
     end
 end
 
+function OnGovernorChanged(playerID, governorID)
+    print('OnGovernorChanged')
+    UpdateCityHasGovernor(playerID)
+end
+
+function OnGovernorAssigned(cityOwner, cityID, governorOwner, governorType)
+    print('OnGovernorAssigned')
+    UpdateCityHasGovernor(governorOwner)
+end
+
 Events.GovernorChanged.Add(OnGovernorChanged)
+Events.GovernorAppointed.Add(OnGovernorChanged)
+Events.GovernorAssigned.Add(OnGovernorAssigned)
