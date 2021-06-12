@@ -7,6 +7,8 @@
 
 -- Do not change the above ones
 -----------------------------------------------------------------------
+include "HD_StateUtils"
+
 Utils = ExposedMembers.DLHD.Utils;
 
 function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown )
@@ -70,3 +72,30 @@ function FreeWallForCapital(playerID, cityID, iX, iY)
     end
 end
 Events.CityAddedToMap.Add(FreeWallForCapital)
+
+-- For korea
+function getCityCenterPlotIndex(city)
+    local x = city:GetX()
+    local y = city:GetY()
+    return Map.GetPlotIndex(x, y)
+end
+
+function OnGovernorChanged(playerID, governorID)
+    local player = Players[playerID]
+    local pCities = player:GetCities()
+
+    for _, city in pCities:Members() do
+        local plotID = getCityCenterPlotIndex(city)
+        local value = 0
+        if city:GetAssignedGovernor() == nil then
+            value = 0
+        else
+            value = 1
+        end
+        local plot = Map.GetPlotByIndex(plotID)
+        print(plot, value)
+        SetObjectState(plot, g_PropertyKeys_HD.CityFlags.HasAssignedGovernor, value)
+    end
+end
+
+Events.GovernorChanged.Add(OnGovernorChanged)

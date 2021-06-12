@@ -27,10 +27,10 @@ values
 	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
 
 -- increase citizen slot for districts, remove the great person point.
-update Districts set CitizenSlots = 1
+update Districts set CitizenSlots = 1 
  where DistrictType = 'DISTRICT_CAMPUS'
  	or DistrictType = 'DISTRICT_OBSERVATORY'
- 	or DistrictType = 'DISTRICT_SEOWON'
+ 	-- or DistrictType = 'DISTRICT_SEOWON'
  	or DistrictType = 'DISTRICT_COMMERCIAL_HUB'
  	or DistrictType = 'DISTRICT_SUGUBA'
  	or DistrictType = 'DISTRICT_ENCAMPMENT'
@@ -45,21 +45,27 @@ update Districts set CitizenSlots = 1
  	or DistrictType = 'DISTRICT_HANSA'
  	or DistrictType = 'DISTRICT_OPPIDUM'
  	or DistrictType = 'DISTRICT_THEATER'
- 	or DistrictType = 'DISTRICT_ACROPOLIS';
- 	-- or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
- 	-- or DistrictType = 'DISTRICT_GOVERNMENT';	
+ 	or DistrictType = 'DISTRICT_ACROPOLIS'
+ 	or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
+ 	or DistrictType = 'DISTRICT_GOVERNMENT';
+
+-- increase citizen slot for Neighbourhood
+update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD'
+	or DistrictType = 'DISTRICT_MBANZA';
+update Districts set CitizenSlots = 4 where DistrictType = 'DISTRICT_SEOWON';
 
 update District_CitizenYieldChanges set YieldChange = 2 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_FOOD';
 delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
 
 --make government plaza and diplomatic quarter citizen slot and citizen yield 2culture and 2science
--- insert or replace into District_CitizenYieldChanges
--- 	(DistrictType,			YieldType,			YieldChange)
--- values
--- 	('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	2),
--- 	('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	2),
--- 	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
--- 	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
+insert or replace into District_CitizenYieldChanges
+	(DistrictType,			YieldType,			YieldChange)
+values
+	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1),
+	('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	2),
+	('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	2),
+	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
+	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 
 -- remove the great person points as they are moved to the citizen yield.
 update District_GreatPersonPoints set PointsPerTurn = 1 where

@@ -699,6 +699,7 @@
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
       <File>Gameplay/Common.lua</File>
+      <File>Gameplay/HD_StateUtils.lua</File>
       <!-- <File>Gameplay/Governors.lua</File> -->
       <File>Gameplay/GreatPersons.lua</File>
       <File>Gameplay/Misc.lua</File>
@@ -714,9 +715,10 @@
       </Properties>
       <File>Gameplay/Temp_Interface.xml</File>
     </AddUserInterfaces>
-    <ImportFiles id="DL_Scripts_Interface_lua" criteria="Expansion2">
+    <ImportFiles id="DL_lua_Scripts" criteria="Expansion2">
       <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/Temp_Interface.lua</File>
+      <File>Gameplay/HD_StateUtils.lua</File>
     </ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
@@ -849,9 +851,11 @@
     <File>GameModeSupport/TestAIMode/DL_AI.sql</File>
     <File>GameModeSupport/TestAIMode/DL_Temp.sql</File>
     <!-- Gameplay -->
+    <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
     <File>Gameplay/Common.lua</File>
+    <File>Gameplay/HD_StateUtils.lua</File>
     <!-- <File>Gameplay/Governors.lua</File> -->
     <File>Gameplay/GreatPersons.lua</File>
     <File>Gameplay/Misc.lua</File>
