@@ -197,6 +197,15 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <!-- Options -->
+    <Criteria id="HD_CapturedSettlersAsBuilders_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_CAPTURE_SETTLERS_AS_BUILDERS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateDatabase id="DL_Settings">
@@ -814,17 +823,24 @@
       <Properties><LoadOrder>18201</LoadOrder></Properties>
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Options at last -->
+    <UpdateDatabase id="TechTest_update" criteria="HD_CapturedSettlersAsBuilders_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
+    </UpdateDatabase>
   </InGameActions>
   <Files>
+    <!-- Artdef -->
+    <File>DL.dep</File>
+    <File>ArtDefs/Improvements.artdef</File>
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>
     <File>Configs/HD_Configs.sql</File>
     <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
-    <!-- Artdef -->
-    <File>DL.dep</File>
-    <File>ArtDefs/Improvements.artdef</File>
+    <!-- Options -->
+    <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <!-- Game Mode -->
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
