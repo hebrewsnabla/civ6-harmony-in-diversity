@@ -103,7 +103,9 @@ values
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_RECON'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'CLASS_HEAVY_CAVALRY'),
     ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
-    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE');
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE'),
+    ('ABILITY_SEE_HIDDEN',                                      'CLASS_NAVAL_MELEE'),
+    ('ABILITY_MONGOLIAN_KESHIG',                                'CLASS_NAVAL_MELEE');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
@@ -209,9 +211,18 @@ values
     -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'KIND_ABILITY'),
     -- ('PROMOTION_SNIPER',                                        'KIND_PROMOTION');
     --anti-cavalry
-    ('PROMOTION_LOGISTICS_SUPPLY',                              'KIND_PROMOTION');
+    ('PROMOTION_LOGISTICS_SUPPLY',                              'KIND_PROMOTION'),
+    --naval melee
+    ('PROMOTION_BATTERING_RAM_TACTICS',                         'KIND_PROMOTION'),
+    --naval ranged
+    ('PROMOTION_BULB_BOW',                                      'KIND_PROMOTION'),
+    --naval raider
+    ('PROMOTION_BOARDING_ACTION',                               'KIND_PROMOTION'),
+    ('PROMOTION_DAMAGE_CONTROL',                                'KIND_PROMOTION'),
+    ('PROMOTION_AUTO_SOLICITATION',                             'KIND_PROMOTION');
 
 delete from TypeTags where Type = 'ABILITY_ANTI_SPEAR' and Tag = 'CLASS_MELEE';
+delete from TypeTags where (Type != 'ABILITY_SEE_HIDDEN' and Type != 'UNIT_SCOUT') and Tag = 'CLASS_REVEAL_STEALTH';
 -- insert or replace into TypeTags
 --     (Type,                                                      Tag)
 -- values
@@ -278,7 +289,10 @@ values
     --anti-cavalry
     -- ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
     -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
+    ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --naval raider
+    ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',    '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('WOLFPACK_ADJACENT_BONUS',                                 'Preview',    '+{1_Amount} {LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT}');
 
 --unit upgrade ability 升级线
 --melee
@@ -295,6 +309,15 @@ update ModifierArguments set Value = 5 where ModifierId = 'ANTI_CAVALRY_COMBAT_B
 --delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_ECHELON' and ModifierId = 'ECHELON_ADDITIONAL_CAVALRY_BONUS';
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' and ModifierId = 'THRUST_BONUS_VS_MELEE';
 update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
+--naval melee
+update ModifierArguments set Value = 10 where ModifierId = 'CREEPING_ATTACK_BONUS_VS_RAIDERS' and Name = 'Amount';
+--naval ranged
+update ModifierArguments set Value = 5 where ModifierId = 'BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+update ModifierArguments set Value = 7 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+--naval raider
+update ModifierArguments set Value = 100 where ModifierId = 'LOOT_GOLD_FROM_COASTAL_RAID' and Name = 'Bonus';
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK' and ModifierId = 'WOLFPACK_ADDITIONAL_ATTACK';
+
 --melee
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
@@ -305,6 +328,16 @@ update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROM
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_SCHILTRON';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_REDEPLOY';
 update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_CHOKE_POINTS';
+--naval melee
+update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_RUTTER';
+update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_CREEPING_ATTACK';
+--naval ranged
+update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES';
+--naval raider
+update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
+update UnitPromotions set Level = 1 , Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';
+update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_SILENT_RUNNING';
+update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
 
 delete from UnitPromotionPrereqs 
     --melee
@@ -323,7 +356,28 @@ where  UnitPromotion = 'PROMOTION_AMPHIBIOUS'
     or UnitPromotion = 'PROMOTION_SCHILTRON' 
     or PrereqUnitPromotion = 'PROMOTION_SCHILTRON'
     or UnitPromotion = 'PROMOTION_REDEPLOY' 
-    or PrereqUnitPromotion = 'PROMOTION_REDEPLOY';
+    or PrereqUnitPromotion = 'PROMOTION_REDEPLOY'
+    --naval melee
+    or UnitPromotion = 'PROMOTION_RUTTER' 
+    or PrereqUnitPromotion = 'PROMOTION_RUTTER'
+    or UnitPromotion = 'PROMOTION_CREEPING_ATTACK' 
+    or PrereqUnitPromotion = 'PROMOTION_CREEPING_ATTACK'
+    --naval ranged
+    or UnitPromotion = 'PROMOTION_PROXIMITY_FUSES' 
+    or PrereqUnitPromotion = 'PROMOTION_PROXIMITY_FUSES'
+    --naval raider
+    or PrereqUnitPromotion = 'PROMOTION_LOOT'
+    or PrereqUnitPromotion = 'PROMOTION_BOARDING'
+    or UnitPromotion = 'PROMOTION_SWIFT_KEEL' 
+    or PrereqUnitPromotion = 'PROMOTION_SWIFT_KEEL'
+    or UnitPromotion = 'PROMOTION_HOMING_TORPEDOES' 
+    or PrereqUnitPromotion = 'PROMOTION_HOMING_TORPEDOES'
+    or UnitPromotion = 'PROMOTION_OBSERVATION' 
+    or PrereqUnitPromotion = 'PROMOTION_OBSERVATION'
+    or UnitPromotion = 'PROMOTION_SILENT_RUNNING' 
+    or PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING'
+    or UnitPromotion = 'PROMOTION_WOLFPACK'
+    ;
 
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)
@@ -347,10 +401,29 @@ values
     -- ('PROMOTION_EMPLACEMENT',   'PROMOTION_SUPPRESSION'),
     ('PROMOTION_EXPERT_MARKSMAN',   'PROMOTION_ARROW_STORM'),
     --anti-cavalry
-    ('PROMOTION_REDEPLOY',       'PROMOTION_THRUST'),
+    ('PROMOTION_REDEPLOY',          'PROMOTION_THRUST'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_REDEPLOY'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_SQUARE'),
-    ('PROMOTION_HOLD_THE_LINE',  'PROMOTION_LOGISTICS_SUPPLY');
+    ('PROMOTION_HOLD_THE_LINE',     'PROMOTION_LOGISTICS_SUPPLY'),
+    --naval melee
+    ('PROMOTION_CREEPING_ATTACK',   'PROMOTION_HELMSMAN'),
+    ('PROMOTION_AUXILIARY_SHIPS',   'PROMOTION_CREEPING_ATTACK'),
+    ('PROMOTION_CONVOY',            'PROMOTION_CREEPING_ATTACK'),
+    ('PROMOTION_BATTERING_RAM_TACTICS',     'PROMOTION_AUXILIARY_SHIPS'),
+    ('PROMOTION_BATTERING_RAM_TACTICS',     'PROMOTION_CONVOY'),
+    --naval ranged
+    ('PROMOTION_BULB_BOW',           'PROMOTION_PREPARATORY_FIRE'),
+    ('PROMOTION_BULB_BOW',           'PROMOTION_ROLLING_BARRAGE'),
+    ('PROMOTION_COINCIDENCE_RANGEFINDING',  'PROMOTION_BULB_BOW'),
+    --naval raider
+    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SWIFT_KEEL'),
+    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_SILENT_RUNNING',     'PROMOTION_BOARDING_ACTION'),
+    ('PROMOTION_SILENT_RUNNING',     'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_LOOT',               'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_WOLFPACK',           'PROMOTION_LOOT'),
+    ('PROMOTION_WOLFPACK',           'PROMOTION_AUTO_SOLICITATION');
 
 insert or replace into UnitPromotions
     (UnitPromotionType,             Name,                                           Description,                                        Level,    PromotionClass,                   Column)
@@ -361,7 +434,15 @@ values
     --ranged
     -- ('PROMOTION_SNIPER',         'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              2,        'PROMOTION_CLASS_RANGED',         1);
     --anti-cavalry
-    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   3);
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   3),
+    --naval melee
+    ('PROMOTION_BATTERING_RAM_TACTICS', 'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME',  'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION',  4, 'PROMOTION_CLASS_NAVAL_MELEE',    2),
+    --naval ranged
+    ('PROMOTION_BULB_BOW',          'LOC_PROMOTION_BULB_BOW_HD_NAME',               'LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION',            3,        'PROMOTION_CLASS_NAVAL_RANGED',   3),
+    --naval raider
+    ('PROMOTION_BOARDING_ACTION',   'LOC_PROMOTION_BOARDING_ACTION_HD_NAME',        'LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION',     1,        'PROMOTION_CLASS_NAVAL_RAIDER',   3),
+    ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      2,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
+    ('PROMOTION_AUTO_SOLICITATION', 'LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME',      'LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION',   3,        'PROMOTION_CLASS_NAVAL_RAIDER',   3);
 
 insert or replace into UnitPromotionModifiers
     (UnitPromotionType,             ModifierId)
@@ -376,7 +457,20 @@ values
     --anti-cavalry
     -- ('PROMOTION_ECHELON',           'ECHELON_DEFENCE'),
     ('PROMOTION_THRUST',            'THRUST_ATTACK_BONUS'),
-    ('PROMOTION_LOGISTICS_SUPPLY',  'LOGISTICS_SUPPLY_HEAL_BONUS');
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOGISTICS_SUPPLY_HEAL_BONUS'),
+    --naval melee
+    ('PROMOTION_BATTERING_RAM_TACTICS', 'BREAKTHROUGH_ADDITIONAL_ATTACK'),
+    ('PROMOTION_BATTERING_RAM_TACTICS', 'MOD_MOVE_AFTER_ATTACKING'),
+    --naval ranged
+    ('PROMOTION_BULB_BOW',          'BULB_BOW_BONUS_WATER_MOVEMENT'),
+    --naval raider
+    ('PROMOTION_SWIFT_KEEL',        'OBSERVATION_INCREASED_SIGHT_RANGE'),
+    ('PROMOTION_BOARDING_ACTION',   'BOARDING_ACTION_ATTACK_BONUS'),
+    ('PROMOTION_DAMAGE_CONTROL',    'SUPPLY_FLEET_NEUTRAL_TERRITORY_HEAL'),
+    ('PROMOTION_DAMAGE_CONTROL',    'SUPPLY_FLEET_ENEMY_TERRITORY_HEAL'),
+    ('PROMOTION_LOOT',              'TRADE_ROUTE_PLUNDER_BONUS'),
+    ('PROMOTION_AUTO_SOLICITATION', 'WOLFPACK_ADDITIONAL_ATTACK'),
+    ('PROMOTION_WOLFPACK',          'WOLFPACK_ADJACENT_BONUS');
 
 insert or replace into Modifiers
     (ModifierId,                                                    ModifierType,                                       OwnerRequirementSetId,  SubjectRequirementSetId)
@@ -392,7 +486,13 @@ values
      --anti-cavalry
     -- ('ECHELON_DEFENCE',                                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENCE_MELEE_ATTACK'),
     ('THRUST_ATTACK_BONUS',                                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'FASCISM_REQUIREMENTS'),
-    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_PER_TURN',        NULL,                   NULL);
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_PER_TURN',        NULL,                   NULL),
+    --naval ranged
+    ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',             NULL,                   NULL),
+    --naval raider
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'ATTACK_NAVAL_REQUIREMENTS'),
+    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'MODIFIER_PLAYER_UNIT_ADJUST_PLUNDER_YIELDS',       NULL,                   NULL),
+    ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     NULL,                   'WOLFPACK_ADJACENT_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                    Name,            Value)
@@ -408,7 +508,13 @@ values
     -- ('ECHELON_DEFENCE',                                             'Amount',        7),
     ('THRUST_ATTACK_BONUS',                                         'Amount',        5),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',        10),
-    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',            'ALL');
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',          'ALL'),
+    --naval ranged
+    ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',        1),
+     --naval raider
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',        10),
+    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',        100),
+    ('WOLFPACK_ADJACENT_BONUS',                                     'Amount',        2);
 
 
 ---------------------------------------------------------------------------------------------------------------
