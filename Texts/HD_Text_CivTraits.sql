@@ -3,8 +3,6 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
-    ("LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "Receive + 1 [Icon_Governor] Governor Title each time when Seowon or building inside Seowon District is constructed in [ICON_Capital] Capital."),
-    ("LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "+3 [ICON_Amenities] Amenities, +5 [Icon_Housing] Housing and +20 Loyalty per turn for cities that are capital or have assigned Governor. -2 [ICON_Amenities] Amenities, -20 Loyalty per turn and -50% of all yields for cities that is not capital and not have assigned Governors. +15% [ICON_Production] Production and +15% [ICON_FOOD] Food for Cities have Seowon. +50% [ICON_PRODUCTION] Production towards Districts and Buildings for cities have Library. +100% Districts Adjacency (of corresponding yields) to all Districts for Cities have University. Cities have Research Lab gain +10% of all yields and the citizen yield extra +1 of all yields."),
     ("LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "Each city can build one more district than usual (exceeding the normal limit based on [ICON_Citizen] Population). +2 [ICON_Science] Science and +2 [ICON_Culture] Culture for cities that has Specialty Districts."),
     ("LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "Additional Military policy slot. Double Influence Points."),
     ("LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "Coast and Lake tiles provide a standard adjacency bonus for Holy Site, Campus, Industrial Zone, and Theater Square districts. +1 [ICON_AMENITIES] Amenity from entertainment to each Entertainment Complex adjacent to a Coast or Lake tile."),
@@ -48,8 +46,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "首都每次建造完成书院区域或书院中的建筑时获得一个总督点。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有图书馆的城市建造区域和建筑 +50% [Icon_Production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。拥有专业化区域的城市+2 [ICON_Science] 科技值和 +2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。如与海岸或湖泊单元格相邻，娱乐区提供的 [ICON_AMENITIES] 宜居度+1。"),

@@ -291,7 +291,7 @@ values
     -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',    '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',    '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('WOLFPACK_ADJACENT_BONUS',                                 'Preview',    '+{1_Amount} {LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT}');
 
 --unit upgrade ability 升级线
@@ -337,7 +337,8 @@ update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_PROXI
 update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
 update UnitPromotions set Level = 1 , Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_SILENT_RUNNING';
-update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
+-- update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
+update UnitPromotions set Level = 2 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
 
 delete from UnitPromotionPrereqs 
     --melee
@@ -416,13 +417,20 @@ values
     ('PROMOTION_BULB_BOW',           'PROMOTION_ROLLING_BARRAGE'),
     ('PROMOTION_COINCIDENCE_RANGEFINDING',  'PROMOTION_BULB_BOW'),
     --naval raider
-    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SWIFT_KEEL'),
+    ('PROMOTION_LOOT',               'PROMOTION_SWIFT_KEEL'),
     ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SILENT_RUNNING'),
     ('PROMOTION_SILENT_RUNNING',     'PROMOTION_BOARDING_ACTION'),
-    ('PROMOTION_SILENT_RUNNING',     'PROMOTION_DAMAGE_CONTROL'),
-    ('PROMOTION_LOOT',               'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_LOOT'),
+    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_LOOT'),
     ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_SILENT_RUNNING'),
-    ('PROMOTION_WOLFPACK',           'PROMOTION_LOOT'),
+    ('PROMOTION_WOLFPACK',           'PROMOTION_DAMAGE_CONTROL'),
+    -- ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SWIFT_KEEL'),
+    -- ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SILENT_RUNNING'),
+    -- ('PROMOTION_SILENT_RUNNING',     'PROMOTION_BOARDING_ACTION'),
+    -- ('PROMOTION_SILENT_RUNNING',     'PROMOTION_DAMAGE_CONTROL'),
+    -- ('PROMOTION_LOOT',               'PROMOTION_DAMAGE_CONTROL'),
+    -- ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_SILENT_RUNNING'),
+    -- ('PROMOTION_WOLFPACK',           'PROMOTION_LOOT'),
     ('PROMOTION_WOLFPACK',           'PROMOTION_AUTO_SOLICITATION');
 
 insert or replace into UnitPromotions
@@ -441,7 +449,8 @@ values
     ('PROMOTION_BULB_BOW',          'LOC_PROMOTION_BULB_BOW_HD_NAME',               'LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION',            3,        'PROMOTION_CLASS_NAVAL_RANGED',   3),
     --naval raider
     ('PROMOTION_BOARDING_ACTION',   'LOC_PROMOTION_BOARDING_ACTION_HD_NAME',        'LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION',     1,        'PROMOTION_CLASS_NAVAL_RAIDER',   3),
-    ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      2,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
+    -- ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      2,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
+    ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      3,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
     ('PROMOTION_AUTO_SOLICITATION', 'LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME',      'LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION',   3,        'PROMOTION_CLASS_NAVAL_RAIDER',   3);
 
 insert or replace into UnitPromotionModifiers

@@ -64,6 +64,18 @@
     <Row Name="ICON_PROMOTION_LIGHTC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="11"/>
     <Row Name="ICON_PROMOTION_LIGHTC_MOBILE_WARFARE"        Atlas="ICON_ATLAS_PROMOTIONS" Index="21"/>
     <Update><Where Name="ICON_PROMOTION_PURSUIT"/> <Set Index="9"/></Update>
+    <!-- Naval Melee -->
+    <Row Name="ICON_PROMOTION_BATTERING_RAM_TACTICS"        Atlas="ICON_ATLAS_PROMOTIONS" Index="0"/>
+    <Update><Where Name="ICON_PROMOTION_CREEPING_ATTACK"/> <Set Index="18"/></Update>
+    <!-- Naval ranged -->
+    <Row Name="ICON_PROMOTION_BULB_BOW"                     Atlas="ICON_ATLAS_PROMOTIONS" Index="21"/>
+    <!-- Naval raider -->
+    <Row Name="ICON_PROMOTION_BOARDING_ACTION"              Atlas="ICON_ATLAS_PROMOTIONS" Index="3"/>
+    <Row Name="ICON_PROMOTION_DAMAGE_CONTROL"               Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
+    <Row Name="ICON_PROMOTION_AUTO_SOLICITATION"            Atlas="ICON_ATLAS_PROMOTIONS" Index="1"/>
+    <Update><Where Name="ICON_PROMOTION_SWIFT_KEEL"/> <Set Index="23"/></Update>
+    <Update><Where Name="ICON_PROMOTION_SILENT_RUNNING"/> <Set Index="2"/></Update>
+    <Update><Where Name="ICON_PROMOTION_LOOT"/> <Set Index="31"/></Update>
 
     <!-- Official Icons -->
     <!-- <Row Name="ICON_PROMOTION_RANGER"                       Atlas="ICON_ATLAS_PROMOTIONS" Index="15"/>
