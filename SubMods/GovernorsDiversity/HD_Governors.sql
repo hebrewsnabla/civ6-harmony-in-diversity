@@ -498,7 +498,7 @@ insert or replace into ModifierArguments
 values
 	('ARCHITECTURE_MASTER_WONDERS_BOOST',			'Amount',		20);
 
--- 自来水工程：增加区域相邻额外150%
+-- 自来水工程：增加区域相邻额外100%
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,										SubjectRequirementSetId)
 values

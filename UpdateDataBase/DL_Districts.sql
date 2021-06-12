@@ -27,10 +27,10 @@ values
 	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
 
 -- increase citizen slot for districts, remove the great person point.
-update Districts set CitizenSlots = 20 
+update Districts set CitizenSlots = 1 
  where DistrictType = 'DISTRICT_CAMPUS'
  	or DistrictType = 'DISTRICT_OBSERVATORY'
- 	or DistrictType = 'DISTRICT_SEOWON'
+ 	-- or DistrictType = 'DISTRICT_SEOWON'
  	or DistrictType = 'DISTRICT_COMMERCIAL_HUB'
  	or DistrictType = 'DISTRICT_SUGUBA'
  	or DistrictType = 'DISTRICT_ENCAMPMENT'
@@ -52,6 +52,7 @@ update Districts set CitizenSlots = 20
 -- increase citizen slot for Neighbourhood
 update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD'
 	or DistrictType = 'DISTRICT_MBANZA';
+update Districts set CitizenSlots = 4 where DistrictType = 'DISTRICT_SEOWON';
 
 update District_CitizenYieldChanges set YieldChange = 2 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_FOOD';
 delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
