@@ -2080,6 +2080,8 @@ Add icons for our new city center buildings.
 ua：新增拥有特色区域的城市+2科技2文化。
 
 [v0.8.0]
+原ai测试模式中的对ai的调整上线，对ai的buff部分只上线产能buff，从75+15n改为85+15n。
+
 (by 小雨）
 朝鲜能力更新，详情见游戏内百科
 马里UD新增 允许金币购买区域

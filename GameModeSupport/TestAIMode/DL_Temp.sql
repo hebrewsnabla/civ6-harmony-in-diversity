@@ -3,8 +3,8 @@
 -------------------------------------
 
 -- Production Scale: 85 + 15n
-update ModifierArguments set Extra = 17
-    where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
+-- update ModifierArguments set Extra = 17
+--     where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
 
 -- Science Scale: 40 + 15n
 update ModifierArguments set Extra = 3
