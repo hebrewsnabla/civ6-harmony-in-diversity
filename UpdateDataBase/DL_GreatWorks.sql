@@ -6,7 +6,7 @@ update GlobalParameters set Value = 5 where Name = 'GREATWORK_ART_LOCK_TIME';
 
 update GreatWorks set Tourism = 3 where GreatWorkObjectType = 'GREATWORKOBJECT_WRITING';
 update GreatWorks set Tourism = 6 where GreatWorkObjectType = 'GREATWORKOBJECT_MUSIC';
-update GreatWorks set Tourism = 10 where GreatWorkObjectType = 'GREATWORKOBJECT_RELIC';
+-- update GreatWorks set Tourism = 10 where GreatWorkObjectType = 'GREATWORKOBJECT_RELIC';
 
 update GreatWorks set Tourism = 4 where GreatWorkObjectType = 'GREATWORKOBJECT_ARTIFACT';
 update GreatWorks set Tourism = 4

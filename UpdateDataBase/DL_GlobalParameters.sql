@@ -23,6 +23,18 @@ update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL
 update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
 update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
+-- Start from Industrial Era.
+update GlobalParameters set Value = 4 where Name = 'WORLD_CONGRESS_INITIAL_ERA';
+update GlobalParameters set Value = 15 where Name = 'WORLD_CONGRESS_MAX_TIME_BETWEEN_MEETINGS';
+update GlobalParameters set Value = 15 where Name = 'WORLD_CONGRESS_MIN_TIME_BETWEEN_SPECIAL_SESSIONS';
+
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DEFENSIVE_PACT_TIME_LIMIT';
+update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DENOUNCE_TIME_LIMIT';
+
+update GlobalParameters set Value = 40 where Name = 'LEVY_MILITARY_PERCENT_OF_UNIT_PURCHASE_COST';
+
 -- ranged unit cause 75% damage to walls instead of 50% (but -17 strength still remains)
 update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
 
@@ -63,7 +75,7 @@ insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDis
 	('FEATURE_REEF', 1, 1, 1);
 
 -- change era minimum turns
-update Eras_XP1 set GameEraMinimumTurns = 30 where not EraType = 'ERA_FUTURE';
+update Eras_XP1 set GameEraMinimumTurns = 0 where not EraType = 'ERA_FUTURE';
 update GlobalParameters set Value = 10 where Name = 'THRESHOLD_SHIFT_PER_PAST_GOLDEN_AGE';
 update GlobalParameters set Value = -10 where Name = 'THRESHOLD_SHIFT_PER_PAST_DARK_AGE';
 update GlobalParameters set Value = 2 where Name = 'THRESHOLD_SHIFT_PER_CITY';
@@ -96,10 +108,20 @@ update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackFo
 --allow to level 2 for beating barb
 updaTe GlobalParameters set Value = 3 where Name = 'EXPERIENCE_MAX_BARB_LEVEL';
 
+--double trade alliance points 
+updaTe GlobalParameters set Value = 2 where Name = 'ALLIANCE_POINTS_FOR_TRADE';
+
+--research agreement time
+update ModifierArguments set Value = 10 where ModifierId = 'ALLIANCE_RESEARCH_AGREEMENT';
 
 -- The New Global Parameters.
-insert or replace into GlobalParameters (Name, Value) values
-    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 20),
-    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6),
-    ('GOLD_FOR_EVERY_ERA_SCORE', 5),
-    ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY', 3);
+insert or replace into GlobalParameters
+    (Name,                                              Value)
+values
+    ('EXPANDED_INIT_VISION_RANGE',                      3),
+    ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  6),
+    ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
+    ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
+    ('OCCUPATION_GOLD_PER_POP',                         30),
+    ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY',               3);

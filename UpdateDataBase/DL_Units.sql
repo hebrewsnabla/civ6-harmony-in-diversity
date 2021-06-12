@@ -19,6 +19,7 @@ update Units set Cost = 150, CostProgressionParam1 = 10 where UnitType = 'UNIT_A
 update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_INQUISITOR';
 update Units set Cost = 120, CostProgressionParam1 = 10 where UnitType = 'UNIT_GURU';
 
+update Units set Cost = 250 where UnitType = 'UNIT_ARCHAEOLOGIST';
 update Units set Cost = 30 where UnitType = 'UNIT_SCOUT';
 update Units set Cost = 35 where UnitType = 'UNIT_CREE_OKIHTCITAW';
 update Units set Cost = 120 where UnitType = 'UNIT_SKIRMISHER';
@@ -26,9 +27,28 @@ update Units set Cost = 120 where UnitType = 'UNIT_INCA_WARAKAQ';
 update Units set Cost = 300 where UnitType = 'UNIT_RANGER';
 update Units set Cost = 300 where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
 update Units set Cost = 450 where UnitType = 'UNIT_SPEC_OPS';
+
+update Units set Cost = 180 where UnitType = 'UNIT_SULEIMAN_JANISSARY';
+
 -- add worker's basic building charges
 update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
-update Units set BuildCharges = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+update Units set BuildCharges = 3, BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+
+-- UNIT_MILITARY_ENGINEER
+update Routes_XP2 set BuildWithUnitChargeCost = 0;
+insert or replace into Route_ResourceCosts
+    (RouteType,                 ResourceType,       BuildWithUnitCost)
+values
+    ('ROUTE_ANCIENT_ROAD',      'RESOURCE_HORSES',  1),
+    ('ROUTE_MEDIEVAL_ROAD',     'RESOURCE_HORSES',  1),
+    ('ROUTE_INDUSTRIAL_ROAD',   'RESOURCE_IRON',    1),
+    ('ROUTE_MODERN_ROAD',       'RESOURCE_IRON',    1);
+
+insert or replace into Route_ValidBuildUnits
+    (RouteType,                 UnitType)
+values
+    ('ROUTE_ANCIENT_ROAD',      'UNIT_ROMAN_LEGION'),
+    ('ROUTE_MEDIEVAL_ROAD',     'UNIT_ROMAN_LEGION');
 
 -- balance adjustments
 -- update Units set Cost = 70 where UnitType = 'UNIT_SETTLER';
@@ -69,4 +89,4 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 --to do
 --update Units set PrereqCivic = 'CIVIC_THEOLOGY' where UnitType = 'UNIT_WARRIOR_MONK';
 update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
-update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';		
+update Units set Combat = 67 where UnitType = 'UNIT_POLISH_HUSSAR';

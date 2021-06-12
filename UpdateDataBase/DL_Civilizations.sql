@@ -1,9 +1,78 @@
 -------------------------------------
 --     Civilization Adjustment     --
 -------------------------------------
-
--- Eleanor
+------------------------------------------------------------------------------------------------------------------------
+-- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
+--additonal theater project
+insert or replace into Types
+	(Type,								Kind)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',		'KIND_PROJECT');
+
+insert or replace into Projects 
+	(ProjectType,					Name,										ShortName,										Description,	
+	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+values 
+	('PROJECT_CIRCUSES_AND_BREAD',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION',
+	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_THEATER',	1);
+
+insert or replace into Projects_XP1
+	(ProjectType,					IdentityPerCitizenChange,	UnlocksFromEffect)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	2,							1);
+
+insert or replace into ProjectCompletionModifiers 
+	(ProjectType,					ModifierId)
+values
+	('PROJECT_CIRCUSES_AND_BREAD',	'PROJECT_COMPLETION_LOYALTY');
+
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+values
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'ELEANOR_ALLOW_PROJECT'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ARCHAEOLOGY_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ART_SLOTS'),
+	('TRAIT_LEADER_ELEANOR_LOYALTY',	'AUTO_THEME_AT_LEAST_6_SLOTS');
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ARCHAEOLOGY_SLOTS1'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ART_SLOTS1'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_SUPPORT_TWO_ARCHAEOLOGISTS'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
+values
+	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',	'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('DOUBLE_ART_SLOTS',			'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	--('DOUBLE_ARCHAEOLOGY_SLOTS1',	'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	--('DOUBLE_ART_SLOTS1',			'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS');
+	--('TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING'),
+	--('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING');
+
+insert or replace into ModifierArguments
+	(ModifierId,								Name,				 	Value)
+values
+	('ELEANOR_ALLOW_PROJECT',     				'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
+	--('TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS_MODIFIER',	'ModifierId',			'DOUBLE_ARCHAEOLOGY_SLOTS'),
+	--('TRAIT_DOUBLE_ART_SLOTS_MODIFIER',			'ModifierId',			'DOUBLE_ART_SLOTS'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'GreatWorkSlotType',	'GREATWORKSLOT_ARTIFACT'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS',				'Amount',				3),
+	('DOUBLE_ART_SLOTS',						'BuildingType',			'BUILDING_MUSEUM_ART'),
+	('DOUBLE_ART_SLOTS',						'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
+	('DOUBLE_ART_SLOTS',						'Amount',				3),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',				'Amount',				6),
+	('AUTO_THEME_AT_LEAST_6_SLOTS',				'IsWonder',				0);
+	/*('DOUBLE_ARCHAEOLOGY_SLOTS1',				'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS1',				'GreatWorkSlotType',	'GREATWORKSLOT_ARTIFACT'),
+	('DOUBLE_ARCHAEOLOGY_SLOTS1',				'Amount',				3),
+	('DOUBLE_ART_SLOTS1',						'BuildingType',			'BUILDING_MUSEUM_ART'),
+	('DOUBLE_ART_SLOTS1',						'GreatWorkSlotType',	'GREATWORKSLOT_ART'),
+	('DOUBLE_ART_SLOTS1',						'Amount',				3),
+	('TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM',		'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
+	('TRAIT_AUTO_THEME_ART_MUSEUM',				'BuildingType',			'BUILDING_MUSEUM_ART');*/
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -36,9 +105,25 @@ update ModifierArguments set Value = 1 where
 update ModifierArguments set Value = 1 where
 	ModifierId = 'TRAIT_MAORI_PRODUCTION_WOODS_CONSERVATION' and Name = 'Amount';
 
+-------------------------------------------------------------------------------------------------
 -- Kongo
+
+-- Kongo all land units receive ability to move on forest and jungles without movement penalty
 insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_CIVILIZATION_NKISI','TRAIT_DOUBLE_WRITER_POINTS');
+	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_ALL_LAND_UNITS_IGNORE_WOODS');
+
+insert or replace into Modifiers
+	(ModifierId,			ModifierType)
+values
+	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'AbilityType',	'ABILITY_KONGO_IGNORE_WOODS');
+
+insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where
@@ -48,6 +133,7 @@ update ModifierArguments set Value = 100 where
 update ModifierArguments set Value = 100 where
 	ModifierId = 'TRAIT_DOUBLE_MERCHANT_POINTS' and Name = 'Amount';
 
+------------------------------------------------------------------------------------------------------------------
 -- Mali
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN');
@@ -63,6 +149,13 @@ values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Origin',		1),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Amount',		1);
 
+insert or replace into DistrictModifiers(DistrictType,ModifierId)values
+	('DISTRICT_SUGUBA','SUGUBA_ALLOW_PURCHASE_DISTRICT');
+insert or replace into Modifiers(ModifierID,ModifierType)values
+	('SUGUBA_ALLOW_PURCHASE_DISTRICT','MODIFIER_CITY_ADJUST_CAN_PURCHASE_DISTRICTS');
+insert or replace into ModifierArguments(ModifierID, Name, Value)values
+	('SUGUBA_ALLOW_PURCHASE_DISTRICT','CanPurchase',1);
+------------------------------------------------------------------------------------------------------------------
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAJANS_COLUMN_TRAIT', 'TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION');
@@ -71,14 +164,14 @@ insert or replace into Modifiers (ModifierId, ModifierType) values
 insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'DistrictType', 'DISTRICT_CITY_CENTER'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'Amount', 25);
-
+---------------------------------------------------------------------------------------------------------------------------
 
 -- Ethiopia
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_CULTURE_HILLS' and Name = 'Amount';
-
+--------------------------------------------------------------------------------------------------------------------
 --Egypt
---泛滥区域上的建筑加1粮
+--学院剧院相邻河边大加成
 --建造完奇观以后送工人
 --UI为相邻泛滥田+1粮
 --la商路翻倍
@@ -86,6 +179,8 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
+	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_CAMPUS_RIVER_ADJACENCY'),
+	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_THEATER_DISTRICT_RIVER_ADJACENCY'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FLOODPLAIN_BUILDINGS_FOOD'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD'),
 	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD'),
@@ -144,10 +239,11 @@ update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_G
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_OFFER_FOOD' and Name = 'Amount';
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
 
+---------------------------------------------------------------------------------------------------------------------------
 -- Gaul can now build all districts near City Center
 delete from TraitModifiers where ModifierId ='TRAIT_CIVILIZATION_GAUL_CITY_NO_ADJACENT_DISTRICT';
 
-
+-----------------------------------------------------------------------------------------------------------------------------
 -- Hungary
 update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCOUNT' and Name = 'Amount';
 
@@ -164,6 +260,7 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
 update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5
@@ -238,11 +335,6 @@ values
 	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
 	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
 	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS');
-
-insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
-	('PLAYER_HAS_CONSTRUCTION_REQUIREMENTS','REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION');
-insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
-	('PLAYER_HAS_CONSTRUCTION_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
@@ -394,9 +486,344 @@ values
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_LUMBER_MILL'),
 	('PLOT_HAS_LUMBER_MILL_AND_RAINFOREST_REQUIREMENTS',	'REQUIRES_PLOT_HAS_JUNGLE');
 
+--------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
 update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
 update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name= 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name= 'Amount';
+
+---------------------------------------------------------------------------------------------------------------------------
+-- Spainish
+update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';
+
+---------------------------------------------------------------------------------------------------------------------------
+--Gilgamesh
+--Sumerian war cart can attack wall 
+insert or replace into TypeTags
+	(Type,									Tag)
+values
+	('UNIT_SUMERIAN_WAR_CART',				'CLASS_WALL_ATTACK'),
+	('ABILITY_ENABLE_WALL_ATTACK',			'CLASS_WALL_ATTACK');
+
+insert or replace into Tags
+	(Tag,					Vocabulary)
+values
+	('CLASS_WALL_ATTACK',	'ABILITY_CLASS');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,						ModifierID)
+values
+	('IMPROVEMENT_ZIGGURAT',				'ZIGGURAT_RIVERADJACENCY_FOOD');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'Amount',		1);
+
+insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID)
+	select 'IMPROVEMENT_ZIGGURAT',	'ZIGGURAT_' || EraType || '_SCIENCE' from Eras where EraType != 'ERA_ANCIENT';
+
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'ZIGGURAT_' || EraType from Eras where EraType != 'ERA_ANCIENT';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE'	from Eras where EraType != 'ERA_ANCIENT';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+values
+	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
+
+----------------------------------------------------------------------------------------------------------------------------------
+--France
+--Chateau
+update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
+update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldType = 'YIELD_GOLD';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
+update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Chateau_WonderLate';
+
+insert or replace into Adjacency_YieldChanges
+	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
+values
+	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
+	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2,				'RESOURCECLASS_BONUS');
+
+insert or replace into Improvement_Adjacencies 
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
+	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
+
+-----------------------------------------------------------------------------------------------------------------------------
+--India
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('PLAYER_IS_CIVILIZATION_INDIA',		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('PLAYER_IS_CIVILIZATION_INDIA',		'PLAYER_IS_CIVILIZATION_INDIA');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				'PLAYER_IS_CIVILIZATION_INDIA',	1),
+	('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	NULL,							1);
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
+	('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1);
+
+---------------------------------------------------------------------------------------------------------------------------------
+--Gandhi
+insert or replace into TraitModifiers 
+	(TraitType,					ModifierId)
+values
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDGROWTH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDFAITH'),
+	('TRAIT_LEADER_SATYAGRAHA',	'PEACE_ADDAMENITY');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,											SubjectRequirementSetId)
+values
+	('PEACE_ADDGROWTH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADDFAITH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADDAMENITY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS');
+
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+values
+	('PEACE_ADDGROWTH',			'Amount',		15),
+	('PEACE_ADDFAITH',			'YieldType',	'YIELD_FAITH'),
+	('PEACE_ADDFAITH',			'Amount',		15),
+	('PEACE_ADDAMENITY',		'Amount',		1);
+
+-------------------------------------------------------------------------------------------------
+--Cree's Mekewap now provides +1 production adjacent a Luxury.
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
+
+------------------------------------------------------------------------------------------------
+-- Korea ability updated
+delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOVERNOR_TITLE_MODIFIER';
+delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_SCIENCE_PER_GOVERNOR_TITLE_MODIFIER';	
+delete from Adjacency_YieldChanges where ID = 'Mine_ScienceSeowonAdjacency';
+delete from Adjacency_YieldChanges where ID = 'Farm_FoodSeowonAdjacency';
+
+-- insert or replace into TraitModifiers
+-- 	(TraitType, 				ModifierId)
+-- values
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_LOYALTY'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_LOYALTY_DEBUFF'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_HOUSING'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_AMENITY_DEBUFF'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_AMENITY'),
+-- 	('TRAIT_LEADER_HWARANG',	'SEWON_FOOD'),
+-- 	('TRAIT_LEADER_HWARANG',	'SEWON_PRODUCTION'),
+-- 	('TRAIT_LEADER_HWARANG',	'LIBRARY_DISTRICT_PRODUCTION'),
+-- 	('TRAIT_LEADER_HWARANG',	'LIBRARY_BUILDING_PRODUCTION'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_CAMPUS_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_THEATER_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_COMMEICIAL_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_HARBOR_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_INDUSTRIAL_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'UNIVERSITY_HOLY_SITE_ADJACENCY'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_FOOD'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_PRODUCTION'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_SCIENCE'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_CULTURE'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_GOLD'),
+-- 	('TRAIT_LEADER_HWARANG',	'RESEARCHLAB_POP_FAITH'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_ALLDEBUFF'),
+-- 	('TRAIT_LEADER_HWARANG',	'HWARANG_ALLBUFF'),
+-- 	('TRAIT_CIVILIZATION_THREE_KINGDOMS','CAPITAL_SEWON_TITLE'),
+-- 	('TRAIT_CIVILIZATION_THREE_KINGDOMS','CAPITAL_LIBRARY_TITLE'),
+-- 	('TRAIT_CIVILIZATION_THREE_KINGDOMS','CAPITAL_UNIVERSITY_TITLE'),
+-- 	('TRAIT_CIVILIZATION_THREE_KINGDOMS','CAPITAL_RESERCHLAB_TITLE');
+
+-- insert or replace into Modifiers
+-- 	(ModifierId, ModifierType, SubjectRequirementSetId, RunOnce, Permanent)
+-- values
+-- 	('HWARANG_ALLBUFF',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('HWARANG_ALLDEBUFF',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA','CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',0,0),
+-- 	('HWARANG_LOYALTY',				'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN', 			'CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL',0,0),
+-- 	('HWARANG_LOYALTY_DEBUFF',		'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN', 			'CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',0,0),
+-- 	('HWARANG_HOUSING',				'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',				'CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL',0,0),
+-- 	('HWARANG_AMENITY',				'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',				'CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL',0,0),
+-- 	('HWARANG_AMENITY_DEBUFF',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',				'CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',0,0),
+-- 	('SEWON_FOOD',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'CITY_HAS_DISTRICT_SEOWON',0,0),
+-- 	('SEWON_PRODUCTION',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'CITY_HAS_DISTRICT_SEOWON',0,0),
+-- 	('LIBRARY_DISTRICT_PRODUCTION',	'MODIFIER_CITY_INCREASE_DISTRICT_PRODUCTION_RATE',			'CITY_HAS_BUILDING_LIBRARY',0,0),
+-- 	('LIBRARY_BUILDING_PRODUCTION',	'MODIFIER_SINGLE_CITY_ADJUST_ALLBUILDING_PRODUCTION_MODIFIER','CITY_HAS_BUILDING_LIBRARY',0,0),
+-- 	('UNIVERSITY_CAMPUS_ADJACENCY',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			'UNIVERSITY_AND_CAMPUS_REQUIRMENTS',0,0),
+-- 	('UNIVERSITY_THEATER_ADJACENCY',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'UNIVERSITY_AND_THEATER_REQUIRMENTS',0,0),
+-- 	('UNIVERSITY_COMMEICIAL_ADJACENCY',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'UNIVERSITY_AND_COMMERCIAL_REQUIRMENTS',0,0),
+-- 	('UNIVERSITY_HARBOR_ADJACENCY',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'UNIVERSITY_AND_HARBOR_REQUIRMENTS',0,0),
+-- 	('UNIVERSITY_INDUSTRIAL_ADJACENCY',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'UNIVERSITY_AND_INDUSTRIAL_REQUIRMENTS',0,0),
+-- 	('UNIVERSITY_HOLY_SITE_ADJACENCY',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'UNIVERSITY_AND_HOLYSITE_REQUIRMENTS',0,0),
+-- 	('RESEARCHLAB_POP_FOOD',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('RESEARCHLAB_POP_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('RESEARCHLAB_POP_SCIENCE',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('RESEARCHLAB_POP_CULTURE',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('RESEARCHLAB_POP_GOLD',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('RESEARCHLAB_POP_FAITH',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION','CITY_HAS_BUILDING_RESEARCH_LAB',0,0),
+-- 	('CAPITAL_SEWON_TITLE',				'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',				'PALACE_AND_SEOWON_REQUIREMENTS',1,1),
+-- 	('CAPITAL_LIBRARY_TITLE',			'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',				'PALACE_AND_LIBRARY_REQUIREMENTS',1,1),
+-- 	('CAPITAL_UNIVERSITY_TITLE',		'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',				'PALACE_AND_UNIVERSITY_REQUIREMENTS',1,1),
+-- 	('CAPITAL_RESERCHLAB_TITLE',		'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',				'PALACE_AND_REEARCHLAB_REQUIREMENTS',1,1);
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId, 						Name, 	Value)
+-- values
+-- 	('RESEARCHLAB_POP_FOOD',			'YieldType','YIELD_FOOD'),
+-- 	('RESEARCHLAB_POP_FOOD',			'Amount',1),	
+-- 	('RESEARCHLAB_POP_PRODUCTION',		'YieldType','YIELD_PRODUCTION'),
+-- 	('RESEARCHLAB_POP_PRODUCTION',		'Amount',1),
+-- 	('RESEARCHLAB_POP_SCIENCE',			'YieldType','YIELD_SCIENCE'),
+-- 	('RESEARCHLAB_POP_SCIENCE',			'Amount',1),
+-- 	('RESEARCHLAB_POP_CULTURE',			'YieldType','YIELD_CULTURE'),
+-- 	('RESEARCHLAB_POP_CULTURE',			'Amount',1),
+-- 	('RESEARCHLAB_POP_GOLD',			'YieldType','YIELD_GOLD'),
+-- 	('RESEARCHLAB_POP_GOLD',			'Amount',1),
+-- 	('RESEARCHLAB_POP_FAITH',			'YieldType','YIELD_FAITH'),	
+-- 	('RESEARCHLAB_POP_FAITH',			'Amount',1),
+-- 	('HWARANG_ALLBUFF',					'YieldType','YIELD_PRODUCTION', 'YIELD_FOOD', 'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_GOLD', 'YIELD_FAITH'),
+-- 	('HWARANG_ALLBUFF',					'Amount',	10,10,10,10,10,10),
+-- 	('HWARANG_ALLDEBUFF',				'YieldType','YIELD_PRODUCTION', 'YIELD_FOOD', 'YIELD_SCIENCE', 'YIELD_CULTURE', 'YIELD_GOLD', 'YIELD_FAITH'),
+-- 	('HWARANG_ALLDEBUFF',				'Amount',	-50,-50,-50,-50,-50,-50),
+-- 	('HWARANG_LOYALTY',					'Amount',	20),
+-- 	('HWARANG_LOYALTY_DEBUFF',			'Amount',	-8),
+-- 	('HWARANG_HOUSING',					'Amount',	5),
+-- 	('HWARANG_AMENITY',					'Amount',	3),
+-- 	('HWARANG_AMENITY_DEBUFF',			'Amount',	-2),
+-- 	('SEWON_FOOD',						'YieldType','YIELD_FOOD'),
+-- 	('SEWON_FOOD',						'Amount',	15),
+-- 	('SEWON_PRODUCTION',				'YieldType','YIELD_PRODUCTION'),
+-- 	('SEWON_PRODUCTION',				'Amount',	15),
+-- 	('LIBRARY_DISTRICT_PRODUCTION',		'Amount',	50),
+-- 	('LIBRARY_BUILDING_PRODUCTION',		'IsWonder',	0),
+-- 	('LIBRARY_BUILDING_PRODUCTION',		'Amount',	50),
+-- 	('CAPITAL_SEWON_TITLE',				'Delta',	1),
+-- 	('CAPITAL_LIBRARY_TITLE',			'Delta',	1),
+-- 	('CAPITAL_UNIVERSITY_TITLE',		'Delta',	1),
+-- 	('CAPITAL_RESERCHLAB_TITLE',		'Delta',	1),
+-- 	('UNIVERSITY_CAMPUS_ADJACENCY',		'YieldType','YIELD_SCIENCE'),
+-- 	('UNIVERSITY_CAMPUS_ADJACENCY',		'Amount',100),
+-- 	('UNIVERSITY_THEATER_ADJACENCY',	'YieldType','YIELD_CULTURE'),
+-- 	('UNIVERSITY_THEATER_ADJACENCY',	'Amount',100),
+-- 	('UNIVERSITY_COMMEICIAL_ADJACENCY',	'YieldType','YIELD_GOLD'),
+-- 	('UNIVERSITY_COMMEICIAL_ADJACENCY',	'Amount',100),
+-- 	('UNIVERSITY_HARBOR_ADJACENCY',		'YieldType','YIELD_GOLD'),
+-- 	('UNIVERSITY_HARBOR_ADJACENCY',		'Amount',100),
+-- 	('UNIVERSITY_INDUSTRIAL_ADJACENCY',	'YieldType','YIELD_PRODUCTION'),
+-- 	('UNIVERSITY_INDUSTRIAL_ADJACENCY',	'Amount',100),
+-- 	('UNIVERSITY_HOLY_SITE_ADJACENCY',	'YieldType','YIELD_FAITH'),
+-- 	('UNIVERSITY_HOLY_SITE_ADJACENCY',	'Amount',100);
+
+-- insert or replace into Requirements(RequirementId,RequirementType,Inverse)values
+-- 	('REQUIRES_CITY_NON-CAPITAL',		'REQUIRES_CITY_HAS_BUILDING_PALACE',1),
+-- 	('REQUIRES_CITY_NOT_ASSIGNED_GOVERNOR','REQUIREMENT_CITY_HAS_GOVERNOR',1);
+
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId,						RequirementSetType)
+-- values
+-- 	('CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL','REQUIREMENTSET_TEST_ANY'),
+-- 	('PALACE_AND_SEOWON_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+-- 	('PALACE_AND_LIBRARY_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+-- 	('PALACE_AND_UNIVERSITY_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('PALACE_AND_REEARCHLAB_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',		'REQUIREMENTSET_TEST_ALL'),
+-- 	('CITY_HAS_DISTRICT_SEOWON',			'REQUIREMENTSET_TEST_ALL'),
+-- 	('CITY_HAS_BUILDING_LIBRARY',			'REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_CAMPUS_REQUIRMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_THEATER_REQUIRMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_COMMERCIAL_REQUIRMENTS','REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_HARBOR_REQUIRMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_INDUSTRIAL_REQUIRMENTS','REQUIREMENTSET_TEST_ALL'),
+-- 	('UNIVERSITY_AND_HOLYSITE_REQUIRMENTS',	'REQUIREMENTSET_TEST_ALL'),
+-- 	('CITY_HAS_BUILDING_RESEARCH_LAB',		'REQUIREMENTSET_TEST_ALL');
+
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId,						RequirementId)
+-- values
+-- 	('CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL','REQUIRES_CITY_HAS_BUILDING_PALACE'),
+-- 	('CITY_HAS_ASSIGNED_GOVERNOR_OR_CAPITAL','REQUIRES_CITY_WITH_ASSIGNED_GOVERNOR'),
+-- 	('PALACE_AND_SEOWON_REQUIREMENTS',		'REQUIRES_CITY_HAS_DISTRICT_SEOWON'),
+-- 	('PALACE_AND_SEOWON_REQUIREMENTS',		'REQUIRES_CITY_HAS_BUILDING_PALACE'),
+-- 	('PALACE_AND_LIBRARY_REQUIREMENTS',		'REQUIRES_CITY_HAS_BUILDING_LIBRARY'),
+-- 	('PALACE_AND_LIBRARY_REQUIREMENTS',		'REQUIRES_CITY_HAS_BUILDING_PALACE'),
+-- 	('PALACE_AND_UNIVERSITY_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('PALACE_AND_UNIVERSITY_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_PALACE'),
+-- 	('PALACE_AND_REEARCHLAB_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_RESEARCH_LAB'),
+-- 	('PALACE_AND_REEARCHLAB_REQUIREMENTS',	'REQUIRES_CITY_HAS_BUILDING_PALACE'),
+-- 	('CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',		'REQUIRES_CITY_NOT_ASSIGNED_GOVERNOR'),
+-- 	('CITY_HAS_NOT_ASSIGNED_GOVERNOR_AND_NON-CAPITAL',		'REQUIRES_CITY_NON-CAPITAL'),
+-- 	('CITY_HAS_DISTRICT_SEOWON',			'REQUIRES_CITY_HAS_DISTRICT_SEOWON'),
+-- 	('CITY_HAS_BUILDING_LIBRARY',			'REQUIRES_CITY_HAS_BUILDING_LIBRARY'),
+-- 	('UNIVERSITY_AND_CAMPUS_REQUIRMENTS',	'REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_CAMPUS_REQUIRMENTS',	'REQUIRES_DISTRICT_IS_DISTRICT_CAMPUS'),
+-- 	('UNIVERSITY_AND_THEATER_REQUIRMENTS',	'REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_THEATER_REQUIRMENTS',	'REQUIRES_DISTRICT_IS_DISTRICT_THEATER'),
+-- 	('UNIVERSITY_AND_COMMERCIAL_REQUIRMENTS','REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_COMMERCIAL_REQUIRMENTS','REQUIRES_DISTRICT_IS_DISTRICT_COMMERCIAL_HUB'),
+-- 	('UNIVERSITY_AND_HARBOR_REQUIRMENTS',	'REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_HARBOR_REQUIRMENTS',	'REQUIRES_DISTRICT_IS_DISTRICT_HARBOR'),
+-- 	('UNIVERSITY_AND_INDUSTRIAL_REQUIRMENTS','REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_INDUSTRIAL_REQUIRMENTS','REQUIRES_DISTRICT_IS_DISTRICT_INDUSTRIAL_ZONE'),
+-- 	('UNIVERSITY_AND_HOLYSITE_REQUIRMENTS',	'REQUIRES_CITY_HAS_BUILDING_UNIVERSITY'),
+-- 	('UNIVERSITY_AND_HOLYSITE_REQUIRMENTS',	'REQUIRES_DISTRICT_IS_DISTRICT_HOLY_SITE'),
+-- 	('CITY_HAS_BUILDING_RESEARCH_LAB',		'REQUIRES_CITY_HAS_BUILDING_RESEARCH_LAB');
+
+delete from District_ValidTerrains where DistrictType = 'DISTRICT_SEOWON';
+delete from StartBiasTerrains where DistrictType = 'DISTRICT_SEOWON';
+
+-- Germany
+-- UA: TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES
+-- LA: TRAIT_LEADER_HOLY_ROMAN_EMPEROR
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_HOLY_ROMAN_EMPEROR' and ModifierId = 'TRAIT_COMBAT_BONUS_CITY_STATES';
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('TRAIT_LEADER_HOLY_ROMAN_EMPEROR',				'HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS'),
+	('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT'),
+	('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,										SubjectRequirementSetId)
+values
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',			NULL),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_1_SPECIALTY_DISTRICT'),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_1_SPECIALTY_DISTRICT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
+	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'Amount',		100),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_SCIENCE'),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_CULTURE'),
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2);

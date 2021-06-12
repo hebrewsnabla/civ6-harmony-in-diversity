@@ -983,7 +983,12 @@ function ViewList()
         RELIGIOUS    = {idx = 3, icon = "ICON_ENVOY_BONUS_FAITH",      color = "", num = 0},
         TRADE        = {idx = 4, icon = "ICON_ENVOY_BONUS_GOLD",       color = "", num = 0},
         INDUSTRIAL   = {idx = 5, icon = "ICON_ENVOY_BONUS_PRODUCTION", color = "", num = 0},
-        MILITARISTIC = {idx = 6, icon = "ICON_ENVOY_BONUS_MILITARY",   color = "", num = 0}
+        MILITARISTIC = {idx = 6, icon = "ICON_ENVOY_BONUS_MILITARY",   color = "", num = 0},
+        -- CSE Support
+        -- CSE_AGRICULTURAL   	= {idx = 7, icon = "ICON_ENVOY_BONUS_CSE_AGRICULTURAL",  color = "", num = 0},
+        -- CSE_CONSULAR   		= {idx = 8, icon = "ICON_ENVOY_BONUS_CSE_CONSULAR", 	 color = "", num = 0},
+        -- CSE_ENTERTAINMENT   = {idx = 9, icon = "ICON_ENVOY_BONUS_CSE_ENTERTAINMENT", color = "", num = 0},
+        -- CSE_MARITIME  		= {idx = 10, icon = "ICON_ENVOY_BONUS_CSE_MARITIME", 	 color = "", num = 0}
     };
     -- << CUI
 
@@ -996,8 +1001,11 @@ function ViewList()
             cui_Envoys = cui_Envoys + kCityState.Tokens;
             if kCityState.isBonusSuzerain then
                 cui_Suzerain = cui_Suzerain + 1;
-                cui_SuzerainList[kCityState.Type].color = kCityState.ColorSecondary;
-                cui_SuzerainList[kCityState.Type].num = cui_SuzerainList[kCityState.Type].num + 1;
+                -- print(kCityState.Type, cui_SuzerainList, cui_SuzerainList[kCityState.Type])
+                if cui_SuzerainList[kCityState.Type] ~= nil then
+	                cui_SuzerainList[kCityState.Type].color = kCityState.ColorSecondary;
+	                cui_SuzerainList[kCityState.Type].num = cui_SuzerainList[kCityState.Type].num + 1;
+	            end
             end
             -- << CUI
 			local kInst :table = AddCityStateRow( kCityState );

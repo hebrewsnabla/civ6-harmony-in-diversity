@@ -38,13 +38,18 @@ values
     -- ('DISTRICT_DIPLOMATIC_QUARTER',     'DIPLOMATIC_QUARTER_DUPLICATE_FIRST_INFLUENCE');
     ('DISTRICT_DIPLOMATIC_QUARTER',       'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'); -- Moved to tier-1 building.
 
+update Modifiers set RunOnce = 1, Permanent = 1, SubjectRequirementSetId = NULL where ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
+
 -- Diplomacy Quarter Buildings
 insert or replace into BuildingModifiers
     (BuildingType,                          ModifierId)
 values
     --('BUILDING_CHANCERY',                   'CHANCERY_ADD_VISIBILITY'),
     -- ('BUILDING_CONSULATE',                  'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
-    ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT');
+    ('BUILDING_CONSULATE',                  'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
+    ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT'),
+    ('BUILDING_CHANCERY',                   'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
+    ('BUILDING_CHANCERY',                   'WISSELBANKEN_ALLIANCEPOINTS');
     -- ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_UNITUPGRADEDISCOUNT');
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'),
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_DELEGATION_FAVOR'),

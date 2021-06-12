@@ -328,6 +328,164 @@ values
 	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE', 	'YieldType',	'YIELD_CULTURE'),
 	('BOROBUDUR_PLOT_ADJACENT_TO_VOLCANO_YIELD_CULTURE',	'Amount',		2);
 
+-- BUILDING_MOTHERLAND_CALLS
+update Modifiers set SubjectRequirementSetId = 'JANISSARY_CITY_FOUNDED' where ModifierId = 'MOTHERLANDCALLS_IDENTITY';
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,								SubjectRequirementSetId) 
+values
+	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		NULL),
+	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',		'HD_UNIT_IN_OWNER_TERRITORY_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,			Value) 
+values
+	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'AbilityType',	'ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY'),
+	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'Amount',		10);
+
+insert or replace into ModifierStrings
+	(ModifierId,											Context,		Text) 
+values
+	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'Preview',		'LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT');
+
+-- Ability
+insert or replace into Types
+	(Type,													Kind)
+values
+	('ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY',				'KIND_ABILITY');
+
+insert or replace into TypeTags	
+	(Type,													Tag)
+values
+ 	('ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY',				'CLASS_MILITARY');
+
+insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY',
+	'LOC_ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY_NAME',
+ 	'LOC_ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY_DESCRIPTION',
+ 	1);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,									ModifierId)
+values
+	('ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY',			'OWN_TERRITORY_COMBAT_STRENGTH_BUFF');
+
+-- WON_CL_KINKAKU
+update Buildings set PrereqCivic = 'CIVIC_FEUDALISM', PrereqTech = NULL where BuildingType = 'WON_CL_KINKAKU';
+delete from BuildingModifiers where BuildingType = 'WON_CL_KINKAKU';
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'WON_CL_KINKAKU',	'KINKAKU_RANGE_ENCAMPMENT_CULTURE'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'WON_CL_KINKAKU',	'KINKAKU_RANGE_HOLYSITE_PRODUCTION'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+
+insert or replace into Modifiers 
+	(ModifierId,							ModifierType,														SubjectRequirementSetId) 
+values
+	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',					'KINKAKU_ENCAMPMENT_REQUIREMENT'),
+	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'KINKAKU_HOLY_SITE_REQUIREMENT');
+
+insert or replace into ModifierArguments 
+	(ModifierId,							Name,					Value) 
+values
+	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'YieldType',			'YIELD_CULTURE'),
+	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'Amount',				2),
+	('KINKAKU_RANGE_HOLYSITE_PRODUCTION', 	'YieldTypeToMirror',	'YIELD_FAITH'),
+	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'YieldTypeToGrant',		'YIELD_PRODUCTION');
+
+insert or replace into RequirementSets
+	(RequirementSetId, RequirementSetType)
+values
+	('KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL'),
+	('KINKAKU_HOLY_SITE_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'KINKAKU_PLOT_WITHIN_6_REQ'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIRES_DISTRICT_IS_ENCAMPMENT'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+
+insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'KINKAKU_PLOT_WITHIN_6_REQ'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'REQUIRES_DISTRICT_IS_HOLY_SITE'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+
+-- CL_BUILDING_CN_TOWER
+delete from BuildingModifiers where BuildingType = 'CL_BUILDING_CN_TOWER' and ModifierId != 'CL_GRANT_BROADCAST';
+-- update Buildings set AdjacentDistrict = NULL where BuildingType = 'CL_BUILDING_CN_TOWER';
+
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'CL_BUILDING_CN_TOWER',	'CN_TOWER_ALL_CITY_POP'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'CL_BUILDING_CN_TOWER',	'CN_TOWER_ALL_CITY_HOUSING'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'CL_BUILDING_CN_TOWER',	'CN_TOWER_ALL_CITY_AMENITY'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
+
+insert or replace into Modifiers 
+	(ModifierId,					ModifierType,							RunOnce,	Permanent) 
+values
+	('CN_TOWER_ALL_CITY_POP',		'MODIFIER_PLAYER_CITIES_ADD_POPULATION',	1,		1);
+
+insert or replace into Modifiers 
+	(ModifierId,					ModifierType) 
+values
+	('CN_TOWER_ALL_CITY_HOUSING',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING'),
+	('CN_TOWER_ALL_CITY_AMENITY',	'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY');
+
+insert or replace into ModifierArguments 
+	(ModifierId,					Name,		Value) 
+values
+	('CN_TOWER_ALL_CITY_POP',		'Amount',	2),
+	('CN_TOWER_ALL_CITY_HOUSING',	'Amount',	2),
+	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1);
+
+--BUILDING_SUK_WAT_ARUN
+UPDATE Buildings SET  Cost = 1000, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE'
+WHERE BuildingType = 'BUILDING_SUK_WAT_ARUN' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_SUK_WAT_ARUN');
+
+delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
+
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING_SELF'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD_SELF'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+
+insert or replace into Modifiers 
+	(ModifierId,						ModifierType,											SubjectRequirementSetId) 
+values
+	('WAT_ARUN_DISTRICT_HOUSING',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_HOUSING',				'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),
+	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING',		'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),												
+	('WAT_ARUN_DISTRICT_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),											
+	('WAT_ARUN_DISTRICT_FOOD_SELF',		'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');	
+
+insert or replace into ModifierArguments 
+	(ModifierId,						Name,		Value) 
+values
+	('WAT_ARUN_DISTRICT_HOUSING',		'Amount',		1),			
+	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'Amount',		1),
+	('WAT_ARUN_DISTRICT_FOOD',			'YieldType',	'YIELD_FOOD'),
+	('WAT_ARUN_DISTRICT_FOOD',			'Amount',		2),
+	('WAT_ARUN_DISTRICT_FOOD_SELF',		'YieldType',	'YIELD_FOOD'),
+	('WAT_ARUN_DISTRICT_FOOD_SELF',		'Amount',		2);
+
 -- Cost adjust
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';
@@ -336,15 +494,17 @@ update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GLOBE_THEATRE';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_YELLOW_CRANE';
 update Buildings set Cost = 750 where BuildingType = 'BUILDING_NOTRE_DAME';
--- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
+update Buildings set Cost = 1600 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
 update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
 update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
 update Buildings set Cost = 240 where BuildingType = 'BUILDING_ABU_SIMBEL';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
--- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BURJ_KHALIFA';
+update Buildings set Cost = 1600 where BuildingType = 'BUILDING_BURJ_KHALIFA';
 update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
--- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_EMPIRE_STATES';
--- update Buildings set Cost = 1800 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
--- update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';
+update Buildings set Cost = 1600 where BuildingType = 'WON_CL_EMPIRE_STATES';
+update Buildings set Cost = 1600 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
+update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';
+update Buildings set Cost = 750 where BuildingType = 'WON_CL_KINKAKU';
+update Buildings set Cost = 1800 where BuildingType = 'CL_BUILDING_CN_TOWER';

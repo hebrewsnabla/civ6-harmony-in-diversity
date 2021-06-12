@@ -11,7 +11,7 @@ values
 insert or replace into RequirementSetRequirements 
     (RequirementSetId,                      RequirementId) 
 values
-    ('BOOTCAMP_REQUIREMENT',                'REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HONEY'),
+    ('BOOTCAMP_REQUIREMENT',                'HD_REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HONEY'),
     ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
 
 --start bias(camp and pasture resources) for cree
@@ -29,18 +29,35 @@ update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_10_OR_MORE_TILES_FROM_
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS' where
     ModifierId = 'TRAIT_LEADER_NEARBY_CITIES_GAIN_BUILDER';
 
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-    ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
-insert or replace into Modifiers (ModifierId, ModifierType) values
-    ('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
-insert or replace into ModifierArguments (ModifierId, Name, Value) values
-    ('MAYAB_EXTRA_HOUSING', 'Amount', 1);
+-- insert or replace into TraitModifiers (TraitType, ModifierId) values
+--     ('TRAIT_CIVILIZATION_MAYAB', 'MAYAB_EXTRA_HOUSING');
+-- insert or replace into Modifiers (ModifierId, ModifierType) values
+--     ('MAYAB_EXTRA_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING');
+-- insert or replace into ModifierArguments (ModifierId, Name, Value) values
+--     ('MAYAB_EXTRA_HOUSING', 'Amount', 1);
 
 insert into District_CitizenGreatPersonPoints
     (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
 values
     ("DISTRICT_OBSERVATORY",            "GREAT_PERSON_CLASS_SCIENTIST",     2);
 
+--Gran Colombia
+--Hacienda now requires Guilds
+update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_HACIENDA';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_AdvancedHaciendaAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_AdvancedHaciendaAdjacency';   
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_HaciendaAdjacency';
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_HaciendaAdjacency';
+update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Hacienda_PlantationAdjacency';
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Hacienda_MechanizedPlantationAdjacency';
+
+-- insert or replace into Improvement_ValidTerrains 
+--     (ImprovementType,           TerrainType)
+-- values
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_DESERT_HILLS'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA'),
+--     ('IMPROVEMENT_HACIENDA',    'TERRAIN_TUNDRA_HILLS');
 
 ---------------------------------------------------------------------------------------------------------------
 -- CityStates
@@ -179,16 +196,20 @@ insert or replace into BuildingModifiers
 values
 	('BUILDING_BARRACKS',					'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST'),
 	('BUILDING_ARMORY',						'LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST'),
-	('BUILDING_MILITARY_ACADEMY',			'LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST'),
-	('BUILDING_BASILIKOI_PAIDES',			'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST');
+	('BUILDING_MILITARY_ACADEMY',			'LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST');
+
+insert or replace into BuildingModifiers
+    (BuildingType,                          ModifierId)
+select
+    'BUILDING_BASILIKOI_PAIDES',           'LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BASILIKOI_PAIDES');
 
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,									   			 SubjectRequirementSetId,       SubjectStackLimit)
 values
 	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
 	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
-	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1),
-	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1);
+	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',          NULL,                          1);
 
 insert or replace into ModifierArguments
 	(ModifierId,                                    Name,            Value)
@@ -198,9 +219,7 @@ values
 	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
     ('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'Amount',       -50),
 	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
-    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50),
-    ('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'UnitType',     'UNIT_LAHORE_NIHANG'),
-	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'Amount',       -50);
+    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50);
 
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
