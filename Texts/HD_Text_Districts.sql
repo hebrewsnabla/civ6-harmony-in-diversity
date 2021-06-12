@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
-    ("LOC_DISTRICT_SEOWON_DESCRIPTION",                               "A district unique to Korea. Replaces the Campus. + 4 [Icon_Science] Science."),
+    ("LOC_DISTRICT_SEOWON_DESCRIPTION",                               "A district unique to Korea. Replaces the Campus. +4 [Icon_Science] Science."),
     ("LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION",                         "A district in your city for religious worship. +5% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles."),
     ("LOC_DISTRICT_LAVRA_HD_DESCRIPTION",                             "A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]Your city border grows by one tile each time a Great Person is expended in this city. +5% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles."),
     ("LOC_DISTRICT_HANSA_HD_DESCRIPTION",                             "A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] when adjacent to river. +2 [ICON_Production] Production bonus for each adjacent Harbor, Aqueduct, Canal, and Dam districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub districts and resources (doubles after researching Apprenticeship). +1 [ICON_Production] Production bonus for every two adjacent district tiles. +1 [Icon_Production] Production to adjacent Resources, provide Major adjacency bonus to Commercial Hub Districts. -1 Appeal to adjacent tiles."),
@@ -32,7 +32,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_DESCRIPTION",                               "朝鲜特色区域，代替学院。+ 4 [Icon_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_DESCRIPTION",                               "朝鲜特色区域，代替学院。+4 [Icon_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION",                         "您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+5% [ICON_Faith] 信仰值。为相邻单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_LAVRA_HD_DESCRIPTION",                             "俄罗斯特色宗教活动区域，代替圣地，建造费用更低。[NEWLINE][NEWLINE]此城市每消耗一位伟人，城市边界则扩张一个单元格。若该区域内含有三级宗教建筑，则本城+5% [ICON_Faith] 信仰值。为相邻单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HANSA_HD_DESCRIPTION",                             "德国特色工业区域，替代工业区，建造费用更低。[NEWLINE][NEWLINE]相邻河流时获得+2 [ICON_Production] 生产力加成。可从每个相邻的港口、水渠、运河和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的商业中心和资源处获得+1 [ICON_Production] 生产力加成（研究学徒后变为+2）。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。为相邻的资源+1 [ICON_Production] 生产力，为商业中心提供大量相邻加成。给相邻单元格-1魅力。"),
