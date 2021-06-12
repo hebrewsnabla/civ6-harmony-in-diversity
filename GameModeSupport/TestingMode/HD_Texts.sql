@@ -37,7 +37,7 @@ values
     ("LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                      "From occupying either an improvement that provides [ICON_Strength] Defense Strength or a district"),
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
     ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flatten tiles without Woods, Jungle, or Marsh"),
-    ("LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                      "From Wolfpack");
+    ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -78,7 +78,7 @@ values
     ("zh_Hans_CN",  "LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                   "来自占领区域或防御性的改良设施"),
     ("zh_Hans_CN",  "LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                               "来自在丘陵上防御"),
     ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                   "来自狼群战术");
+    ("zh_Hans_CN",  "LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                          "来自狼群战术");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
@@ -148,7 +148,7 @@ values
     --naval raider
     ("LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                    "+1 [ICON_Movement] Movement and +1 sight range."),
     --("LOC_PROMOTION_LOOT_NAME",                                                 ""),
-    ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. Yields gained from plundering [ICON_TradeRoute] Trade Routes are +100%."),
+    ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. Yields gained from plundering sea [ICON_TradeRoute] Trade Routes are +100%."),
     ("LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                      "+2 [ICON_Strength] Combat Strength for adjacent naval raiders"),
     ("LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                   "Boarding Action"),
     ("LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                            "+10 [ICON_Strength] Combat Strength when attacking naval units."),
@@ -222,7 +222,7 @@ values
     --naval raider
     ("zh_Hans_CN",  "LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                 "+1 [ICON_Movement] 移动力并+1视野范围。"),
     --("zh_Hans_CN",  "LOC_PROMOTION_LOOT_NAME",                                              "破交作战"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_LOOT_DESCRIPTION",                                       "海岸扫荡获得的 [ICON_Gold] 金币+100。掠夺 [ICON_TradeRoute] 贸易路线的收益+100%。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOOT_DESCRIPTION",                                       "海岸扫荡获得的 [ICON_Gold] 金币+100。掠夺海上 [ICON_TradeRoute] 贸易路线的收益+100%。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                   "为相邻的友方海军袭击者单位+2 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                "跳帮"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                         "进攻海军单位时+10 [ICON_Strength] 战斗力。"),

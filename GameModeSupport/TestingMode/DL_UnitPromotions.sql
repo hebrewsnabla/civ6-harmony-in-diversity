@@ -219,27 +219,30 @@ values
     --naval raider
     ('PROMOTION_BOARDING_ACTION',                               'KIND_PROMOTION'),
     ('PROMOTION_DAMAGE_CONTROL',                                'KIND_PROMOTION'),
-    ('PROMOTION_AUTO_SOLICITATION',                             'KIND_PROMOTION');
+    ('PROMOTION_AUTO_SOLICITATION',                             'KIND_PROMOTION'),
+    ('ABILITY_WOLFPACK_ADJACENT_BONUS',                         'KIND_ABILITY');
 
 delete from TypeTags where Type = 'ABILITY_ANTI_SPEAR' and Tag = 'CLASS_MELEE';
 delete from TypeTags where (Type != 'ABILITY_SEE_HIDDEN' and Type != 'UNIT_SCOUT') and Tag = 'CLASS_REVEAL_STEALTH';
--- insert or replace into TypeTags
---     (Type,                                                      Tag)
--- values
+insert or replace into TypeTags
+    (Type,                                                      Tag)
+values
 --     --melee
 --     ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',                     'CLASS_MELEE'),
 --     --ranged
 --     ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'CLASS_RANGED'),
 --     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'CLASS_RANGED');
+    ('ABILITY_WOLFPACK_ADJACENT_BONUS',                         'CLASS_NAVAL_RAIDER');
 
--- insert or replace into UnitAbilities 
---     (UnitAbilityType,                               Name,      Description,                                                     Inactive) 
--- values
+insert or replace into UnitAbilities 
+    (UnitAbilityType,                               Name,      Description,                                                     Inactive) 
+values
 --     --melee
 --     ('ABILITY_MELEE_DISTRICT_COMBAT_BONUS',         NULL,      'LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_DESCRIPTION',        0),
 --     --ranged
 --     ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',      NULL,      'LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION',     0),
 --     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',   NULL,      'LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION',  0);
+    ('ABILITY_WOLFPACK_ADJACENT_BONUS',             NULL,       NULL,                                                           1);
 
 insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
@@ -249,7 +252,8 @@ values
     --ranged
     -- ('ABILITY_RANGED_GARRISON_DISTRICT_BONUS',                  'RANGED_GARRISON_DISTRICT_BONUS'),
     -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE'),
-    ('ABILITY_ANTI_CAVALRY',                                    'ANTI_CAVALRY_COMBAT_BONUS_DEFENDING');
+    ('ABILITY_ANTI_CAVALRY',                                    'ANTI_CAVALRY_COMBAT_BONUS_DEFENDING'),
+    ('ABILITY_WOLFPACK_ADJACENT_BONUS',                         'HD_WOLFPACK_ADJACENT_BONUS');
 
 insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                               SubjectRequirementSetId)
@@ -259,7 +263,8 @@ values
     --ranged
     -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'GARRISON_REQUIREMENTS'),
     -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'RANGED_WEAKER_REQUIREMENTS'),
-    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS');
+    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'ANTI_CAVALRY_DEFEND_OPPONENT_REQUIREMENTS'),
+    ('HD_WOLFPACK_ADJACENT_BONUS',                              'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     NULL);
 
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,            Value)
@@ -269,7 +274,8 @@ values
     --ranged
     -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Amount',        5),
     -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Amount',        -3),
-    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'Amount',        5);
+    ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'Amount',        5),
+    ('HD_WOLFPACK_ADJACENT_BONUS',                              'Amount',        2);
 
 insert or replace into ModifierStrings
     (ModifierId,                                                Context,    Text)
@@ -292,7 +298,7 @@ values
     ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',    '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('WOLFPACK_ADJACENT_BONUS',                                 'Preview',    '+{1_Amount} {LOC_PROMOTION_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT}');
+    ('HD_WOLFPACK_ADJACENT_BONUS',                              'Preview',    '+{1_Amount} {LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT}');
 
 --unit upgrade ability 升级线
 --melee
@@ -500,8 +506,8 @@ values
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',             NULL,                   NULL),
     --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'ATTACK_NAVAL_REQUIREMENTS'),
-    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'MODIFIER_PLAYER_UNIT_ADJUST_PLUNDER_YIELDS',       NULL,                   NULL),
-    ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',     NULL,                   'WOLFPACK_ADJACENT_REQUIREMENTS');
+    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'MODIFIER_PLAYER_UNIT_ADJUST_PLUNDER_YIELDS',       NULL,                   'JUST_WAR_PLOT_UNIT_REQUIREMENTS'),
+    ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',              NULL,                   'WOLFPACK_ADJACENT_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                    Name,            Value)
@@ -523,7 +529,7 @@ values
      --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',        10),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',        100),
-    ('WOLFPACK_ADJACENT_BONUS',                                     'Amount',        2);
+    ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',   'ABILITY_WOLFPACK_ADJACENT_BONUS');
 
 
 ---------------------------------------------------------------------------------------------------------------
