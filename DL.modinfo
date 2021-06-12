@@ -206,6 +206,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="HD_AIGetCopyForMilitaryUnits_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_AI_GET_COPY_FOR_MILITARY_UNITS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateDatabase id="DL_Settings">
@@ -824,9 +832,13 @@
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Options at last -->
-    <UpdateDatabase id="TechTest_update" criteria="HD_CapturedSettlersAsBuilders_XP2">
+    <UpdateDatabase id="CapturedSettlersAsBuilders" criteria="HD_CapturedSettlersAsBuilders_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AIGetCopyForMilitaryUnits" criteria="HD_AIGetCopyForMilitaryUnits_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     </UpdateDatabase>
   </InGameActions>
   <Files>
@@ -841,6 +853,7 @@
     <File>Configs/Icons.xml</File>
     <!-- Options -->
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
+    <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <!-- Game Mode -->
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>

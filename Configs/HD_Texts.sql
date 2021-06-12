@@ -6,6 +6,8 @@ values
     -- Options
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",               "Captured Settlers become Builders"),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",   "Captured Settlers become Builders"),
+    ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS",             "AI Double Military Units"),
+    ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION", "Whenever an AI trained a military unit, it will get a free copy of that.[NEWLINE]ONLY ENABLE WHEN YOU TRY TO CHALLENGE YOURSELF."),
     -- GameModes
     ("LOC_GAMEMODE_TESTING_NAME",                           "Testing Military Mode"),
     ("LOC_GAMEMODE_TESTING_DESCRIPTION",                    "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains the military adjustments."),
@@ -25,8 +27,10 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                    Text)
 values
     -- Options
-    ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",                "抢占的移民变为工人"),
-    ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",    "抢占的移民变为工人"),
+    ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",                "抢占的开拓者变为建造者"),
+    ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",    "抢占的开拓者变为建造者"),
+    ("zh_Hans_CN",  "LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS",              "AI双倍军事单位"),
+    ("zh_Hans_CN",  "LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION",  "每当ai训练一个军事单位，其会免费获得一个同样的单位。[NEWLINE]请谨慎开启。"),
     -- GameModes
     ("zh_Hans_CN",  "LOC_GAMEMODE_TESTING_NAME",                            "测试军事模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_TESTING_DESCRIPTION",                     "内部测试专用，请勿开启。用于测试的模式，当前测试模式中调整了军事。"),
