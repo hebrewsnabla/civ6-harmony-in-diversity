@@ -2,15 +2,16 @@
 -- Language: en_US
 insert or replace into EnglishText
     (Tag,                                                 Text)
-values
+values   
+    ("LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. Harbor and inner Buildings receive +2 [Icon_production] Production."),
     ("LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",             "Your Builders can now make Moai improvements.[NEWLINE][NEWLINE]Moai provide +1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every 2 adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile. +2 [ICON_Culture] Culture if adjacent to a Coast or Lake tile . Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Civics and Technology Tree. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can only be placed adjacent to a Lake or Coast tile."),
     ("LOC_CIVILIZATION_RAPA_NUI_BONUS",                   "Your Builders can now make Moai improvements.[NEWLINE][NEWLINE]Moai provide +1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every 2 adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile. +2 [ICON_Culture] Culture if adjacent to a Coast or Lake tile . Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Civics and Technology Tree. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can only be placed adjacent to a Lake or Coast tile."),
     ("LOC_LEADER_TRAIT_KANDY_DESCRIPTION",                "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
     ("LOC_CIVILIZATION_KANDY_BONUS",                      "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
     ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city."),
     ("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city."),
-    ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.8 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion."),
-    ("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.8 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion."),
+    ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3[Icon_Faith] Faith to all your Trade Routes."),
+    ("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3[Icon_Faith] Faith to all your Trade Routes."),
     ("LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city."),
     ("LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city."),
     ("LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "+5% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have."),
@@ -51,28 +52,29 @@ values
     ("LOC_CIVILIZATION_CARDIFF_BONUS",                    "Cities receive +3 [ICON_Power] Power for every Harbor building."),
     ("LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "You receive 10% production speed of military units in cities for each Encampment district building."),
     ("LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "You receive 10% production speed of military units in cities for each Encampment district building."),
-    ("LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "All districts at the riverside except city center provide 2 [ICON_CULTURE] Culture."),
-    ("LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "All districts at the riverside except city center provide 2 [ICON_CULTURE] Culture."),
+    ("LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "Theater, Holy Site, Commercial Hub and Wonders provide 2 [ICON_CULTURE] Culture if they are located near river."),
+    ("LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "Theater, Holy Site, Commercial Hub and Wonders provide 2 [ICON_CULTURE] Culture if they are located near river."),
     ("LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus."),
     ("LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                "Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus."),
     ("LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION",              "Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Bonus Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills."),
     ("LOC_CIVILIZATION_CAGUANA_BONUS",                    "Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Bonus Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills."),
-    ("LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture."),
-    ("LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture.");
+    ("LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "Your Districts(except City center) and Wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture."),
+    ("LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "Your Districts(except City center) and Wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "渔船+1 [ICON_PRODUCTION] 生产力。若玩家进入工业时代则额外 +1 [ICON_Production] 生产力。港口及每级建筑+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",             "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+1 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。与海岸或湖泊单元格相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。可建在平原、平原丘陵、草原、草原丘陵或火山土之上。只能建在相邻湖泊或近海的单元格上。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_RAPA_NUI_BONUS",                   "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+1 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。与海岸或湖泊单元格相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。可建在平原、平原丘陵、草原、草原丘陵或火山土之上。只能建在相邻湖泊或近海的单元格上。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KANDY_DESCRIPTION",                "从所有 [ICON_GreatWork_Relic] 遗物中获得的 [ICON_Faith] 信仰值+100%。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_KANDY_BONUS",                      "从所有 [ICON_GreatWork_Relic] 遗物中获得的 [ICON_Faith] 信仰值+100%。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个特色区域+2 [ICON_Culture] 文化值和+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_KUMASI_BONUS",                     "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个特色区域+2 [ICON_Culture] 文化值和+1 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.8。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.8。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "城市中每拥有1个“军营”内建筑，购买陆地战斗或支援单位所需的 [ICON_GOLD] 金币便减少20%，若可用 [ICON_Faith] 信仰购买，则费用也减少20%。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "城市中每拥有1个“军营”内建筑，购买陆地战斗或支援单位所需的 [ICON_GOLD] 金币便减少20%，若可用 [ICON_Faith] 信仰购买，则费用也减少20%。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "对于所有城市，其每拥有一种改良的战略资源，便+5% [ICON_SCIENCE] 科技值。"),
@@ -113,14 +115,14 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_CARDIFF_BONUS",                    "每个港口内建筑向城市提供3点 [ICON_Power] 电力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "城市中建成的每个军营区域建筑可使城市生产军事单位时加速10%。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "城市中建成的每个军营区域建筑可使城市生产军事单位时加速10%。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "除市中心以外，所有位于河流旁的区域提供2 [ICON_CULTURE] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "除市中心以外，所有位于河流旁的区域提供2 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "位于河流旁的剧院、圣地、商业中心和奇观提供2 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "位于河流旁的剧院、圣地、商业中心和奇观提供2 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                "剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION",              "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐设施相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_CAGUANA_BONUS",                    "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐设施相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "您境内位于或与海岸湖泊单元格相邻的区域和奇观+2 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "您境内位于或与海岸湖泊单元格相邻的区域和奇观+2 [ICON_Culture] 文化值。");
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+2 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+2 [ICON_Culture] 文化值。");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hant_HK
