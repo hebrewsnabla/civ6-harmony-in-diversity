@@ -40,17 +40,17 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPEARMAN';
 -- update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 32, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_HEAVY_INFANTRY';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HEAVY_INFANTRY';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PIKEMAN';
+update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PIKEMAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PIKEMAN';
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 52, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PIKE_AND_SHOT';
+update Units set Cost = 120, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PIKE_AND_SHOT';
--- update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 62, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GUARDS';
+-- update Units set Cost = 180, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GUARDS';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GUARDS';
-update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 72, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AT_CREW';
+update Units set Cost = 270, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AT_CREW';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AT_CREW';
--- update Units set Cost = 460, Maintenance = 7, BaseMoves = 3, Range = 0, Combat = 82, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ANTI_TANK_GUN';
+-- update Units set Cost = 400, Maintenance = 7, BaseMoves = 3, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ANTI_TANK_GUN';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ANTI_TANK_GUN';
-update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 92, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MODERN_AT';
+update Units set Cost = 600, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 90, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MODERN_AT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MODERN_AT';
 
 -- Ranged

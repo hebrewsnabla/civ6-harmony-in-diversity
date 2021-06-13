@@ -4,8 +4,8 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     -- Techs
-    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Melee and recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
-    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength When start attacking on Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
+    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength When start attacking on Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
     ("LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                       "Quarry improvements receive +1 [ICON_Production] Production. [NEWLINE]Unlocks a [ICON_GOVERNOR] Governor title for Suleiman. [NEWLINE]Heavy Cavalry units gain the ability: +10 [ICON_Damaged] Health after defeating an enemy unit."),
     ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                         "+1 [ICON_FOOD] Food from the Camp improvement. [NEWLINE]Siege units gain the ability: +5 [ICON_Strength] Combat Strength when attacking Districts."),
     ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                      "Stepwell improvements receive +1 [ICON_Housing] Housing. [NEWLINE]Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
@@ -16,9 +16,10 @@ values
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "+2 [ICON_gold] Gold from the Camp improvement. [NEWLINE]Recon units gain the ability: Ignore the Zone of Control."),
     -- Abilities
-    ("LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",     "No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                            "+3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength When start attacking on Hills."),
     ("LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",      "Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
+    ("LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",               "No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
     ("LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                       "+10 [ICON_Damaged] Health after defeating an enemy unit."),
     ("LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength against units."),
     ("LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when attacking Districts."),
@@ -30,6 +31,7 @@ values
     ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving (enabled by Military Training Civic)."),
     -- Preview Text
+    ("LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                                  "Adjacent to friendly melee unit"),
     ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Start attacking on Hills"),
     ("LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                                  "Against units"),
     ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Attack districts"),
@@ -45,8 +47,8 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- Techs
-    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]近战和侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
-    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
     ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                      "营地+1 [ICON_FOOD] 食物。[NEWLINE]攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
@@ -57,9 +59,10 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。[NEWLINE]侦察单位获得能力：忽略控制区。"),
     -- Abilities
-    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",  "从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                         "与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                     "从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",   "不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",            "从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                    "击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                 "与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",               "攻击区域防御+5 [ICON_Strength] 战斗力。"),
@@ -71,6 +74,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                "劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "可移动后攻击（拥有军事训练市政后允许）。"),
 -- Preview Text
+    ("zh_Hans_CN",  "LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                               "相邻友方近战单位"),
     ("zh_Hans_CN",  "LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                    "从丘陵上发起攻击"),
     ("zh_Hans_CN",  "LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                               "与单位作战"),
     ("zh_Hans_CN",  "LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                            "攻击区域"),
@@ -86,8 +90,8 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     -- Melee
-    ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
-    ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
+    -- ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
+    -- ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_PROMOTION_LONG_MARCH_HD_NAME",                                        "Long March"),
     ("LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                                 "Heals at the end of every turn, even after moving or attacking."),
     -- Ranged
@@ -103,7 +107,7 @@ values
     ("LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength against Cavalry units"),
     ("LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                    "from defending Cavalry units"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
-    ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+10 HP healing."),
+    ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+15 HP healing when Fortify."),
     ("LOC_PROMOTION_THRUST_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when attacking"),
     ("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+10 [ICON_Strength] Combat Strength when defending in Woods, Jungle, Hills, or Marsh."),
     -- Recon
@@ -163,8 +167,8 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- Melee
-    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_NAME",                                     "长途行军"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                              "在每回合结束时（甚至是在移动或攻击后），自动恢复生命值。"),
     -- Ranged
@@ -176,7 +180,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                        "与骑兵单位战斗时+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                 "来自防御骑兵单位"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "后勤补给"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "+10生命值恢复。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "驻防时+15生命值恢复。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_THRUST_DESCRIPTION",                                     "攻击时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽防御时+10 [ICON_Strength] 战斗力。"),
     -- Recon
@@ -291,7 +295,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Recon: Faster [ICON_M
 --     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +5 [ICON_Strength] Combat Strength against Cavalry units, extra +5 [ICON_Strength] Combat Strength when defending cavalry units.' where Language = 'en_US' and (
+-- +5 [ICON_Strength] Combat Strength against Cavalry units, extra 
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [ICON_Strength] Combat Strength when defending cavalry units.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_SPEARMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_GREEK_HOPLITE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PIKEMAN_DESCRIPTION' or
@@ -333,7 +338,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: +1 [IC
     Tag = 'LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION' or
     Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: Pillaging costs only 1 [ICON_Movement] Movement point. -7 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
+-- Pillaging costs only 1 [ICON_Movement] Movement point. 
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_BARBARIAN_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_CAVALRY_DESCRIPTION' or
@@ -393,7 +399,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]侦察：在丘陵、
 --     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：与骑兵单位作战时+5 [ICON_Strength] 战斗力，防御骑兵单位时额外+5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+-- 与骑兵单位作战时+5 [ICON_Strength] 战斗力，
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑兵单位时额外+10 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_SPEARMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_GREEK_HOPLITE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PIKEMAN_DESCRIPTION' or
@@ -435,7 +442,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]重骑兵：如果在
     Tag = 'LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION' or
     Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：劫掠只消耗一点 [ICON_Movement] 移动力。攻击区域防御时-7 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+-- 劫掠只消耗一点 [ICON_Movement] 移动力。
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区域防御时-7 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_BARBARIAN_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_CAVALRY_DESCRIPTION' or

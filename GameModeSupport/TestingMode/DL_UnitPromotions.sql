@@ -16,9 +16,10 @@ update Technologies set Description = 'LOC_TECH_SANITATION_HD_DESCRIPTION' where
 insert or replace into Types
     (Type,                                                      Kind)
 values
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'KIND_ABILITY'),
+    ('ABILITY_MELEE_BATTLE_LINE_HD',                            'KIND_ABILITY'),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'KIND_ABILITY'),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'KIND_ABILITY'),
+    ('ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD',               'KIND_ABILITY'),
     ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'KIND_ABILITY'),
     ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'KIND_ABILITY'),
     ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'KIND_ABILITY'),
@@ -33,9 +34,10 @@ values
 insert or replace into TechnologyModifiers
     (TechnologyType,                                        ModifierId)
 values
-    ('TECH_SHIPBUILDING',                                   'HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES'),
+    ('TECH_MILITARY_TACTICS',                               'HD_MELEE_BATTLE_LINE'),
     ('TECH_MILITARY_TACTICS',                               'HD_RANGED_HILLS_STRENGTH'),
     ('TECH_SANITATION',                                     'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
+    ('TECH_SHIPBUILDING',                                   'HD_RECON_IGNORE_RIVERS_AND_SHORES'),
     ('TECH_GUNPOWDER',                                      'HD_HEAVYC_HEAL_AFTER_KILL'),
     ('TECH_MILITARY_TACTICS',                               'HD_LIGHTC_AGAINST_UNIT_BONUS'),
     ('TECH_RIFLING',                                        'HD_SIEGE_ATTACK_DISTRICT_BONUS');
@@ -54,9 +56,10 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType)
 values
-    ('HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_MELEE_BATTLE_LINE',                                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_RANGED_HILLS_STRENGTH',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_RECON_IGNORE_RIVERS_AND_SHORES',                   'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_HEAVYC_HEAL_AFTER_KILL',                           'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_LIGHTC_AGAINST_UNIT_BONUS',                        'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_SIEGE_ATTACK_DISTRICT_BONUS',                      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
@@ -72,9 +75,10 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                            Name,           Value)
 values
-    ('HD_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES',         'AbilityType',  'ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD'),
+    ('HD_MELEE_BATTLE_LINE',                                'AbilityType',  'ABILITY_MELEE_BATTLE_LINE_HD'),
     ('HD_RANGED_HILLS_STRENGTH',                            'AbilityType',  'ABILITY_RANGED_HILLS_STRENGTH_HD'),
     ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'AbilityType',  'ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD'),
+    ('HD_RECON_IGNORE_RIVERS_AND_SHORES',                   'AbilityType',  'ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD'),
     ('HD_HEAVYC_HEAL_AFTER_KILL',                           'AbilityType',  'ABILITY_HEAVYC_HEAL_AFTER_KILL_HD'),
     ('HD_LIGHTC_AGAINST_UNIT_BONUS',                        'AbilityType',  'ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD'),
     ('HD_SIEGE_ATTACK_DISTRICT_BONUS',                      'AbilityType',  'ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD'),
@@ -90,10 +94,10 @@ values
 insert or replace into TypeTags
     (Type,                                                      Tag)
 values
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'CLASS_MELEE'),
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'CLASS_RECON'),
+    ('ABILITY_MELEE_BATTLE_LINE_HD',                            'CLASS_MELEE'),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'CLASS_RANGED'),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'CLASS_ANTI_CAVALRY'),
+    ('ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD',               'CLASS_RECON'),
     ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'CLASS_HEAVY_CAVALRY'),
     ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'CLASS_SIEGE'),
@@ -110,9 +114,10 @@ values
 insert or replace into UnitAbilities 
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
 values
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     NULL,   'LOC_ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION',     1),
+    ('ABILITY_MELEE_BATTLE_LINE_HD',                            NULL,   'LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION',                            1),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        NULL,   'LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION',                        1),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      NULL,   'LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION',      1),
+    ('ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD',               NULL,   'LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION',               1),
     ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       NULL,   'LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION',                       1),
     ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    NULL,   'LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION',                    1),
     ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  NULL,   'LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION',                  1),
@@ -127,10 +132,11 @@ values
 insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
 values
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'HD_IGNORE_RIVERS'),
-    ('ABILITY_MELEE_AND_RECON_IGNORE_RIVERS_AND_SHORES_HD',     'HD_IGNORE_SHORES'),
+    ('ABILITY_MELEE_BATTLE_LINE_HD',                            'HD_BATTLE_LINE_COMBAT'),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'HD_ATTACKING_FROM_HILLS_STRENGTH'),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'HD_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
+    ('ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD',               'HD_IGNORE_RIVERS'),
+    ('ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD',               'HD_IGNORE_SHORES'),
     ('ABILITY_HEAVYC_HEAL_AFTER_KILL_HD',                       'HD_HEAL_AFTER_KILL'),
     ('ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD',                    'HD_AGAINST_UNIT_BONUS'),
     ('ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD',                  'HD_ATTACK_DISTRICT_BONUS'),
@@ -144,16 +150,17 @@ values
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'HD_ATTACK_AFTER_MOVE');
 
 insert or replace into Modifiers
-    (ModifierId,                                ModifierType,                           OwnerRequirementSetId,                  SubjectRequirementSetId)
+    (ModifierId,                                ModifierType,                           OwnerRequirementSetId,                      SubjectRequirementSetId)
 values
-    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH', 'ETHIOPIA_PLOT_IS_HILLS_REQUIREMENTS',  'HD_UNIT_ATTACKING_REQUIREMENTS');
+    ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH', 'BALKAN_CAVALRY_PLOT_IS_HILS_REQUIREMENTS', 'HD_UNIT_ATTACKING_REQUIREMENTS');
 
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                                                           SubjectRequirementSetId)
 values
+    ('HD_BATTLE_LINE_COMBAT',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'BATTLE_LINE_COMBAT_REQUIREMENTS'),
+    ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
     ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            NULL),
     ('HD_IGNORE_SHORES',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',                            NULL),
-    ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
     ('HD_HEAL_AFTER_KILL',                      'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_FROM_COMBAT',                         NULL),
     ('HD_AGAINST_UNIT_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'COMBAT_AGAINST_UNITS_REQUIREMENTS'),
     ('HD_ATTACK_DISTRICT_BONUS',                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'ATTACKING_DISTRICTS_REQUIREMENTS'),
@@ -169,10 +176,11 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                Name,           Value)
 values
-    ('HD_IGNORE_RIVERS',                        'Ignore',      1),
-    ('HD_IGNORE_SHORES',                        'Ignore',      1),
+    ('HD_BATTLE_LINE_COMBAT',                   'Amount',      3),
     ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Amount',      5),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'Amount',      100),
+    ('HD_IGNORE_RIVERS',                        'Ignore',      1),
+    ('HD_IGNORE_SHORES',                        'Ignore',      1),
     ('HD_HEAL_AFTER_KILL',                      'Amount',      10),
     ('HD_AGAINST_UNIT_BONUS',                   'Amount',      5),
     ('HD_ATTACK_DISTRICT_BONUS',                'Amount',      5),
@@ -188,6 +196,7 @@ values
 insert or replace into ModifierStrings
     (ModifierId,                                Context,    Text)
 values
+    ('HD_BATTLE_LINE_COMBAT',                   'Preview',  '+{1_Amount} {LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT}'),
     ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Preview',  '+{1_Amount} {LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT}'),
     ('HD_AGAINST_UNIT_BONUS',                   'Preview',  '+{1_Amount} {LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT}'),
     ('HD_ATTACK_DISTRICT_BONUS',                'Preview',  '+{1_Amount} {LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT}'),
@@ -284,7 +293,7 @@ values
     -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'Preview',    '+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     -- ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Preview',    '+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',             'Preview',    '+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('BATTLE_LINE_COMBAT',                                      'Preview',    '+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    -- ('BATTLE_LINE_COMBAT',                                      'Preview',    '+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --ranged
     -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Preview',    '+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
     -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Preview',    '{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
@@ -311,7 +320,8 @@ values
 -- update ModifierArguments set Value = 10 where ModifierId = 'INCENDIARIES_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 update UnitPromotionModifiers set ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_RANGED' where UnitPromotionType = 'PROMOTION_EMPLACEMENT' and ModifierId = 'EMPLACEMENT_DEFENSE_BONUS_VS_CITIES';
 --anti-cavalry
-update ModifierArguments set Value = 5 where ModifierId = 'ANTI_CAVALRY_COMBAT_BONUS' and Name = 'Amount';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_ANTI_CAVALRY' and ModifierId = 'ANTI_CAVALRY_COMBAT_BONUS';
+-- update ModifierArguments set Value = 5 where ModifierId = 'ANTI_CAVALRY_COMBAT_BONUS' and Name = 'Amount';
 --delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_ECHELON' and ModifierId = 'ECHELON_ADDITIONAL_CAVALRY_BONUS';
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' and ModifierId = 'THRUST_BONUS_VS_MELEE';
 update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
@@ -325,22 +335,27 @@ update ModifierArguments set Value = 100 where ModifierId = 'LOOT_GOLD_FROM_COAS
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK' and ModifierId = 'WOLFPACK_ADDITIONAL_ATTACK';
 
 --melee
-update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
+-- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_INCENDIARIES';
 update UnitPromotions set Level = 2 , Column = 1 where UnitPromotionType = 'PROMOTION_SUPPRESSION';
 update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_ARROW_STORM';
 --anti-cavalry 
-update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_SCHILTRON';
+-- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_SCHILTRON';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SCHILTRON';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_REDEPLOY';
-update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_CHOKE_POINTS';
+-- update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_CHOKE_POINTS';
 --naval melee
-update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_RUTTER';
+-- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_RUTTER';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_RUTTER';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_CREEPING_ATTACK';
 --naval ranged
-update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES';
+-- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES';
 --naval raider
-update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
+-- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
 update UnitPromotions set Level = 1 , Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';
 update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_SILENT_RUNNING';
 -- update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
@@ -390,12 +405,12 @@ insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)
 values
     --melee
-    ('PROMOTION_BATTLE_LINE',   'PROMOTION_TORTOISE'),
-    ('PROMOTION_BATTLE_LINE',   'PROMOTION_COMMANDO'),
-    ('PROMOTION_COMMANDO',      'PROMOTION_BATTLE_LINE'),
+    ('PROMOTION_AMPHIBIOUS',    'PROMOTION_TORTOISE'),
+    ('PROMOTION_AMPHIBIOUS',    'PROMOTION_COMMANDO'),
+    ('PROMOTION_COMMANDO',      'PROMOTION_AMPHIBIOUS'),
     ('PROMOTION_LONG_MARCH',    'PROMOTION_COMMANDO'),
-    ('PROMOTION_LONG_MARCH',    'PROMOTION_BATTLE_LINE'),
-    ('PROMOTION_URBAN_WARFARE', 'PROMOTION_BATTLE_LINE'),
+    ('PROMOTION_LONG_MARCH',    'PROMOTION_AMPHIBIOUS'),
+    ('PROMOTION_URBAN_WARFARE', 'PROMOTION_AMPHIBIOUS'),
     ('PROMOTION_ELITE_GUARD',   'PROMOTION_LONG_MARCH'),
     --ranged
     -- ('PROMOTION_SNIPER',        'PROMOTION_VOLLEY'),
@@ -409,6 +424,7 @@ values
     ('PROMOTION_EXPERT_MARKSMAN',   'PROMOTION_ARROW_STORM'),
     --anti-cavalry
     ('PROMOTION_REDEPLOY',          'PROMOTION_THRUST'),
+    ('PROMOTION_CHOKE_POINTS',      'PROMOTION_REDEPLOY'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_REDEPLOY'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_SQUARE'),
     ('PROMOTION_HOLD_THE_LINE',     'PROMOTION_LOGISTICS_SUPPLY'),
@@ -443,12 +459,12 @@ insert or replace into UnitPromotions
     (UnitPromotionType,             Name,                                           Description,                                        Level,    PromotionClass,                   Column)
 values
     --melee
-    ('PROMOTION_BATTLE_LINE',       'LOC_PROMOTION_BATTLE_LINE_HD_NAME',            'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',         2,        'PROMOTION_CLASS_MELEE',          3),
+    -- ('PROMOTION_BATTLE_LINE',       'LOC_PROMOTION_BATTLE_LINE_HD_NAME',            'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',         2,        'PROMOTION_CLASS_MELEE',          3),
     ('PROMOTION_LONG_MARCH',        'LOC_PROMOTION_LONG_MARCH_HD_NAME',             'LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION',          3,        'PROMOTION_CLASS_MELEE',          1),
     --ranged
     -- ('PROMOTION_SNIPER',         'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              2,        'PROMOTION_CLASS_RANGED',         1);
     --anti-cavalry
-    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   3),
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   1),
     --naval melee
     ('PROMOTION_BATTERING_RAM_TACTICS', 'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME',  'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION',  4, 'PROMOTION_CLASS_NAVAL_MELEE',    2),
     --naval ranged
@@ -463,7 +479,7 @@ insert or replace into UnitPromotionModifiers
     (UnitPromotionType,             ModifierId)
 values
     --melee
-    ('PROMOTION_BATTLE_LINE',       'BATTLE_LINE_COMBAT'),
+    -- ('PROMOTION_BATTLE_LINE',       'BATTLE_LINE_COMBAT'),
     ('PROMOTION_LONG_MARCH',        'MAMLUK_HEAL_EVERY_MOVE'),
     --ranged
     -- ('PROMOTION_GARRISON',          'GARRISON_LOYALTY_BONUS'),
@@ -492,7 +508,7 @@ insert or replace into Modifiers
 values
     --melee
     --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
-    ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BATTLE_LINE_COMBAT_REQUIREMENTS'),
+    -- ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     --ranged
     -- ('GARRISON_LOYALTY_BONUS',                                      'MODIFIER_GARRISON_ADJUST_CITY_LOYALTY',            'PLOT_IS_CITY_CENTER',  'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL,                   'BONUS_VS_WOUNDED_UNITS'),
@@ -514,7 +530,7 @@ insert or replace into ModifierArguments
 values
     --melee
     --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'Amount',        7),
-    ('BATTLE_LINE_COMBAT',                                          'Amount',        5),
+    -- ('BATTLE_LINE_COMBAT',                                          'Amount',        5),
     -- ('GARRISON_LOYALTY_BONUS',                                      'Amount',        5),
     -- ('SNIPER_BONUS_VS_WOUNDED_UNITS',                               'Amount',        7),
     ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',        10),
@@ -540,14 +556,14 @@ delete from TypeTags where Type = 'UNIT_SCOUT' and Tag = 'CLASS_REVEAL_STEALTH';
 insert or replace into TypeTags
     (Type,                                                      Tag)
 values
-    -- recon
-    ('ABILITY_RECON_IGNORE_TERRIAN_COST_HD',                    'CLASS_RECON'),
     -- siege
     -- ('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD',                       'CLASS_SIEGE'),
     -- heavy
     ('ABILITY_HEAVY_CHARIOT',                                   'CLASS_HEAVY_CAVALRY'),
     -- light
-    ('ABILITY_LIGHT_CAVALRY_HD',                                'CLASS_LIGHT_CAVALRY');
+    -- ('ABILITY_LIGHT_CAVALRY_HD',                                'CLASS_LIGHT_CAVALRY'),
+    -- recon
+    ('ABILITY_RECON_IGNORE_TERRIAN_COST_HD',                    'CLASS_RECON');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                               Name,       Description,                                                     Inactive) 
@@ -582,6 +598,7 @@ values
     ('PROMOTION_LIGHTC_SHOCK',                                  'KIND_PROMOTION'),
     ('PROMOTION_LIGHTC_MOBILE_WARFARE',                         'KIND_PROMOTION');
 
+update UnitPromotions set Level = 1 where UnitPromotionType = 'PROMOTION_GUERRILLA';
 update UnitPromotions set Level = 1 where UnitPromotionType = 'PROMOTION_SENTRY';
 update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_SPYGLASS';
 update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AMBUSH';
@@ -593,7 +610,7 @@ insert or replace into UnitPromotions
     (UnitPromotionType,                 Name,                                       Description,                                        Level,  PromotionClass,                     Column)
 values
     -- Recon
-    ('PROMOTION_RECON_TRAVEL_LIGHT',    'LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME',    'LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION',     1,      'PROMOTION_CLASS_RECON',            3),
+    ('PROMOTION_RECON_TRAVEL_LIGHT',    'LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME',    'LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION',     2,      'PROMOTION_CLASS_RECON',            3),
     ('PROMOTION_RECON_RAPID_FIRE',      'LOC_PROMOTION_RECON_RAPID_FIRE_NAME',      'LOC_PROMOTION_RECON_RAPID_FIRE_DESCRIPTION',       4,      'PROMOTION_CLASS_RECON',            1),
     ('PROMOTION_RECON_ACCURATE',        'LOC_PROMOTION_RECON_ACCURATE_NAME',        'LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION',         4,      'PROMOTION_CLASS_RECON',            3),
     -- Light
@@ -602,6 +619,7 @@ values
 
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_CAMOUFLAGE';
 delete from UnitPromotionPrereqs where PrereqUnitPromotion = 'PROMOTION_RANGER' or PrereqUnitPromotion = 'PROMOTION_ALPINE';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_AMBUSH' and PrereqUnitPromotion = 'PROMOTION_GUERRILLA';
 -- Heavy
 update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_ROUT' where UnitPromotion = 'PROMOTION_MARAUDING' and PrereqUnitPromotion = 'PROMOTION_CHARGE';
 update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_MARAUDING' where UnitPromotion = 'PROMOTION_ROUT' and PrereqUnitPromotion = 'PROMOTION_BARDING';
@@ -616,7 +634,8 @@ insert or replace into UnitPromotionPrereqs
     (UnitPromotion,                 PrereqUnitPromotion)
 values
     -- recon
-    ('PROMOTION_GUERRILLA',         'PROMOTION_RECON_TRAVEL_LIGHT'),
+    ('PROMOTION_RECON_TRAVEL_LIGHT', 'PROMOTION_GUERRILLA'),
+    ('PROMOTION_AMBUSH',            'PROMOTION_RECON_TRAVEL_LIGHT'),
     ('PROMOTION_AMBUSH',            'PROMOTION_SPYGLASS'),
     ('PROMOTION_RECON_RAPID_FIRE',  'PROMOTION_AMBUSH'),
     ('PROMOTION_RECON_ACCURATE',    'PROMOTION_AMBUSH');
@@ -713,8 +732,8 @@ values
     -- heavy
     ('ARMOR_PIERCING_ATTACK_BONUS',                         'Amount',       5),
     ('ARMOR_PIERCING_ATTACK_BONUS_HIGHER_STRENGTH',         'Amount',       5),
-    ('REACTIVE_ARMOR_DEFEND_BONUS',                         'Amount',       5),
-    ('REACTIVE_ARMOR_DEFEND_BONUS_HIGHER_STRENGTH',         'Amount',       5),
+    ('REACTIVE_ARMOR_DEFEND_BONUS',                         'Amount',       7),
+    ('REACTIVE_ARMOR_DEFEND_BONUS_HIGHER_STRENGTH',         'Amount',       7),
     -- light
     ('HD_LIGHT_CAVALRY_ADVANCED_PILLAGING',                 'UseAdvancedPillaging', 1),
     ('SHOCK_OPEN_AREA_STRENGTH',                            'Amount',       5),
