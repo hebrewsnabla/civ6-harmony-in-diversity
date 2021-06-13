@@ -99,17 +99,19 @@ values
     ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",            "-3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles."),
     ("LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION",               "from garrison"),
     ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION",    "from targets in Rainforest or Woods tiles"),
-    ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +10 [ICON_Strength] Combat Strength when defending melee combat."),
+    ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "Sniper"),
+    ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+1 [ICON_Range] Range."),
+    ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +5 [ICON_Strength] when attacking damaged unit."), -- +10 [ICON_Strength] Combat Strength when defending melee combat.
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     -- Anti-cavalry
-    ("LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                    "+5 [ICON_Strength] Combat Strength against Cavalry units, extra +5 [ICON_Strength] Combat Strength when defending cavalry units."),
-    ("LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength against Cavalry units"),
+    ("LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                    "+10 [ICON_Strength] Combat Strength when defending cavalry units."), --+5 [ICON_Strength] Combat Strength against Cavalry units, extra 
+    -- ("LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength against Cavalry units"),
     ("LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                    "from defending Cavalry units"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+15 HP healing when Fortify."),
     ("LOC_PROMOTION_THRUST_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when attacking"),
-    ("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+10 [ICON_Strength] Combat Strength when defending in Woods, Jungle, Hills, or Marsh."),
+    ("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+7 [ICON_Strength] Combat Strength in Woods, Jungle, Hills, or Marsh."),
     -- Recon
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
     ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
@@ -123,22 +125,27 @@ values
     ("LOC_PROMOTION_RECON_ACCURATE_NAME",                                       "Accurate"),
     ("LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                                "+1 [ICON_Range] Range."),
     -- Heavy Cavalry
+    ("LOC_PROMOTION_HEAVY_SHOCK_NAME",                                         "Shock"),
+    ("LOC_PROMOTION_HEAVY_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_ROUT_DESCRIPTION",                                          "+5 [ICON_Strength] Combat Strength attacking damaged units."),
     ("LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when attacking units. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when defending. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     -- Light Cavalry
-    ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
+    -- ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
+    ("LOC_PROMOTION_LIGHTC_MILITANT_NAME",                                      "Militant"),
+    ("LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                               "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory."),
     ("LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                         "Shock"),
     ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
-    ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory。"),
+    -- ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory."),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                                "Mobile Warfare"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                         "+1 [ICON_Movement] Movement, can move after attacking."),
     ("LOC_PROMOTION_PURSUIT_DESCRIPTION",                                       "+7 [ICON_Strength] Combat Strength attacking damaged units."),
     ("LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                               "Formation units all inherit escort's [ICON_Movement] Movement speed and +7 [ICON_Strength] Combat Strength when in a formation."),
     -- Siege
     ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                       "+1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry."),
-    ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+7 [ICON_Strength] Combat Strength vs. district defenses."),
-    ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. district defenses."),
+    -- ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
     ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title."),
     --naval melee
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
@@ -172,17 +179,19 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_NAME",                                     "长途行军"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                              "在每回合结束时（甚至是在移动或攻击后），自动恢复生命值。"),
     -- Ranged
-    ("zh_Hans_CN",  "LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                "学会区域控制。防御近战攻击时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SNIPER_HD_NAME",                                         "狙击"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                  "+1 [ICON_Range] 射程。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                "学会区域控制，攻击受伤单位+5 [ICON_Strength] 战斗力。"), -- 防御近战攻击时+10 [ICON_Strength] 战斗力。
     ("zh_Hans_CN",  "LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                "攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                "防御远程攻击时+10 [ICON_Strength] 战斗力。"),
     -- Anti-cavalry
-    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                 "与骑兵单位作战时+5 [ICON_Strength] 战斗力，防御骑兵单位时额外+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                        "与骑兵单位战斗时+5 [ICON_Strength] 战斗力"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                 "防御骑兵单位时+10 [ICON_Strength] 战斗力。"), --与骑兵单位作战时+5 [ICON_Strength] 战斗力，
+    -- ("zh_Hans_CN",  "LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                        "与骑兵单位战斗时+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                 "来自防御骑兵单位"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                               "后勤补给"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "驻防时+15生命值恢复。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_THRUST_DESCRIPTION",                                     "攻击时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽防御时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽时+7 [ICON_Strength] 战斗力。"),
     -- Recon
     ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力"), -- ，但-1 [ICON_Movement] 移动力
     ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过森林和丛林。"),
@@ -197,22 +206,27 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                             "+1 [ICON_Range] 射程。"),
     -- Heavy Cavalry
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BARDING_DESCRIPTION",                                    "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_HEAVYC_SHOCK_NAME",                                      "冲击"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                               "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ROUT_DESCRIPTION",                                       "攻击受伤单位时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                             "攻击单位时+5 [ICON_Strength] 战斗力。若基础战斗力不低于对方单位，则攻击时额外 +5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "防御时+5 [ICON_Strength] 战斗力。若基础战斗力不低于对方，则防御时额外 +5 [ICON_Strength] 战斗力。"),
     -- Light Cavalry
-    ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                             "掠夺只消耗1点 [ICON_Movement] 移动力。"),
+    -- ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                             "掠夺只消耗1点 [ICON_Movement] 移动力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_NAME",                                   "好战"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                            "在敌方领土内时 +5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                      "冲击"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                               "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                "在敌方领土内时 +5 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                "在敌方领土内时 +5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                             "运动战"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                      "+1 [ICON_Movement] 移动力，攻击后可移动。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_PURSUIT_DESCRIPTION",                                    "攻击受伤单位时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                            "编队时，所有编队单位将继承护卫队的 [ICON_Movement] 移动力并+7 [ICON_Strength] 战斗力。"),
     -- Siege
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                    "相邻轻重骑兵时+1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+7 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
+    -- ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。"),
     --naval melee
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                          "冲撞战术"),
@@ -323,8 +337,9 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
 --     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: +1 [ICON_Movement] Movement if starting in flat tiles. -5 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
-    Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
+-- +1 [ICON_Movement] Movement if starting in flat tiles. 
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -5 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
+    -- Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
     Tag = 'LOC_UNIT_HEAVY_CHARIOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_KNIGHT_DESCRIPTION' or
     Tag = 'LOC_UNIT_INDIAN_VARU_DESCRIPTION' or
@@ -427,8 +442,9 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑
 --     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]重骑兵：如果在平坦地形开始回合，本回合+1 [ICON_Movement] 移动力。攻击区域防御时-5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
-    Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
+-- 重骑兵：如果在平坦地形开始回合，本回合+1 [ICON_Movement] 移动力。
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时-5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+    -- Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
     Tag = 'LOC_UNIT_HEAVY_CHARIOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_KNIGHT_DESCRIPTION' or
     Tag = 'LOC_UNIT_INDIAN_VARU_DESCRIPTION' or

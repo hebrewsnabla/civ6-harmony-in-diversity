@@ -46,6 +46,12 @@ insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 1
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
+-- free promotion for deity AI.
+insert or replace into TraitModifiers (TraitType,   ModifierId) values ('TRAIT_LEADER_MAJOR_CIV', 'HD_DEITY_FREE_PROMOTION');
+insert or replace into Modifiers (ModifierId,           ModifierType,   Permanent,  OwnerRequirementSetId)
+values ('HD_DEITY_FREE_PROMOTION',  'MODIFIER_PLAYER_UNITS_ADJUST_GRANT_EXPERIENCE',    1,  'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
+insert or replace into ModifierArguments (ModifierId,   Name,   Value) values ('HD_DEITY_FREE_PROMOTION',  'Amount',   -1);
+
 insert or replace into DistrictModifiers (DistrictType, ModifierId)
 select 'DISTRICT_THANH',                                'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_THANH');
