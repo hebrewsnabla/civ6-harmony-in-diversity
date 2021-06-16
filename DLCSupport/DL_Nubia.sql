@@ -108,3 +108,5 @@ values
     ('TRAIT_BONUS_LUXURY_MINE_GOLD_PERCENTAGE_7',   'Amount',       10),
     ('TRAIT_BONUS_LUXURY_MINE_GOLD_PERCENTAGE_8',   'YieldType',    'YIELD_GOLD'),
     ('TRAIT_BONUS_LUXURY_MINE_GOLD_PERCENTAGE_8',   'Amount',       10);
+
+update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PYRAMID_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
