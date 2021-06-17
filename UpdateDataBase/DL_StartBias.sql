@@ -20,15 +20,15 @@ update StartBiasResources set Tier = 3 where CivilizationType = 'CIVILIZATION_MA
 
 --start bias for Australia
 update StartBiasResources set
-	Tier = 4
+	Tier = 2
 where CivilizationType = 'CIVILIZATION_AUSTRALIA' and ResourceType = 'RESOURCE_SHEEP';
 
 update StartBiasResources set
-	Tier = 4		
+	Tier = 2		
 where CivilizationType = 'CIVILIZATION_AUSTRALIA' and  ResourceType = 'RESOURCE_CATTLE';
 
 update StartBiasResources set
-	Tier = 4		
+	Tier = 2		
 where CivilizationType = 'CIVILIZATION_AUSTRALIA'and ResourceType = 'RESOURCE_HORSES';
 
 --start bias for England
