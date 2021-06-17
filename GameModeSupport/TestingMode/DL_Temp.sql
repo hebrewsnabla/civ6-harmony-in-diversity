@@ -2,6 +2,11 @@
 --     Temp Testing Adjustments    --
 -------------------------------------
 
+insert or replace into DistrictModifiers
+    (DistrictType,                      ModifierId)
+values
+    ('DISTRICT_ROYAL_NAVY_DOCKYARD',    'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION');
+
 -- insert or replace into Improvement_ValidResources
 --     (ImprovementType,       ResourceType,           MustRemoveFeature)
 -- values

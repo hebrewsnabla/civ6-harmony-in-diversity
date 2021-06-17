@@ -17,3 +17,5 @@ values
 
 UPDATE PseudoYields SET DefaultValue = 1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
 UPDATE PseudoYields SET DefaultValue = 0.2 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --   0.1 -- controls size of the army
+
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
