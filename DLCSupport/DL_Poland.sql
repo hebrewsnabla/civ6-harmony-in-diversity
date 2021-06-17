@@ -191,7 +191,7 @@ values
 delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_FAITH_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC';
---LA 圣军及建筑20%加速
+--LA 圣军区域及建筑20%加速
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
 values
@@ -211,34 +211,42 @@ values
     ('POLAND_HOLYSITE_BUILDING_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
     ('POLAND_ENCAPMENT_PRODUCTION',         'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
     ('POLAND_ENCAPMENT_BUILDING_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
-    ('POLAND_GRASS_CULTURE',                'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
-    ('POLAND_GRASS_HILLS_CULTURE',          'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
-    ('POLAND_PLAINS_CULTURE',               'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
-    ('POLAND_PLAINS_HILLS_CULTURE',         'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     'PLAYER_HAS_CIVIC_CIVIL_SERVICE');
+    ('POLAND_GRASS_CULTURE',                'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_GRASS_HILLS_CULTURE',          'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_PLAINS_CULTURE',               'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_PLAINS_HILLS_CULTURE',         'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',       'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER', 'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',      'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',    'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL);
 
 insert or replace into ModifierArguments
     (ModifierId,                                       Name,               Value)
 values
-    ('POLAND_HOLYSITE_PRODUCTION',                     'DistrictType',     'DISTRICT_HOLYSITE'),
+    ('POLAND_HOLYSITE_PRODUCTION',                     'DistrictType',     'DISTRICT_HOLY_SITE'),
     ('POLAND_HOLYSITE_PRODUCTION',                     'Amount',           20),
-    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'DistrictType',     'DISTRICT_HOLYSITE'),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'DistrictType',     'DISTRICT_HOLY_SITE'),
     ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'Amount',           20),
     ('POLAND_ENCAPMENT_PRODUCTION',                    'DistrictType',     'DISTRICT_ENCAMPMENT'),
     ('POLAND_ENCAPMENT_PRODUCTION',                    'Amount',           20),
     ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'DistrictType',     'DISTRICT_ENCAMPMENT'),
     ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'Amount',           20),
-    ('POLAND_GRASS_CULTURE',                           'TerrainType',      'TERRAIN_GRASS'),
-    ('POLAND_GRASS_CULTURE',                           'YieldType',        'YIELD_CULTURE'),
-    ('POLAND_GRASS_CULTURE',                           'Amount',           0.5),
-    ('POLAND_GRASS_HILLS_CULTURE',                     'TerrainType',      'TERRAIN_GRASS_HILLS'),
-    ('POLAND_GRASS_HILLS_CULTURE',                     'YieldType',        'YIELD_CULTURE'),
-    ('POLAND_GRASS_HILLS_CULTURE',                     'Amount',           0.5),
-    ('POLAND_PLAINS_CULTURE',                          'TerrainType',      'TERRAIN_PLAINS'),
-    ('POLAND_PLAINS_CULTURE',                          'YieldType',        'YIELD_CULTURE'),
-    ('POLAND_PLAINS_CULTURE',                          'Amount',           0.5),
-    ('POLAND_PLAINS_HILLS_CULTURE',                    'TerrainType',      'TERRAIN_PLAINS_HILLS'),
-    ('POLAND_PLAINS_HILLS_CULTURE',                    'YieldType',        'YIELD_CULTURE'),
-    ('POLAND_PLAINS_HILLS_CULTURE',                    'Amount',           0.5);
+    ('POLAND_GRASS_CULTURE',                           'ModifierId',       'POLAND_GRASS_CULTURE_MODIFIER'),
+    ('POLAND_GRASS_HILLS_CULTURE',                     'ModifierId',       'POLAND_GRASS_HILLS_CULTURE_MODIFIER'),
+    ('POLAND_PLAINS_CULTURE',                          'ModifierId',       'POLAND_PLAINS_CULTURE_MODIFIER'),
+    ('POLAND_PLAINS_HILLS_CULTURE',                    'ModifierId',       'POLAND_PLAINS_HILLS_CULTURE_MODIFIER'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'TerrainType',      'TERRAIN_GRASS'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'Amount',           0.5),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'TerrainType',      'TERRAIN_GRASS_HILLS'),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'Amount',           0.5),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'TerrainType',      'TERRAIN_PLAINS'),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'Amount',           0.5),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'TerrainType',      'TERRAIN_PLAINS_HILLS'),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'Amount',           0.5);
 
 --ua
 insert or replace into TraitModifiers
@@ -263,13 +271,15 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,              RequirementId)
 values
     ('PLOT_ADJACENT_TO_ENCAPMENT',  'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_ENCAMPMENT'),
-    ('PLOT_ADJACENT_TO_FORT',       'REQUIRES_PLOT_ADJACENT_TO_IMPROVEMENT_FORT');
+    ('PLOT_ADJACENT_TO_FORT',       'REQUIRES_PLOT_ADJACENT_TO_IMPROVEMENT_FORT'),
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
 
 insert or replace into RequirementSets
-    (RequirementSetId,              RequirementSetType)
+    (RequirementSetId,                  RequirementSetType)
 values
-    ('PLOT_ADJACENT_TO_ENCAPMENT',  'REQUIREMENTSET_TEST_ALL'),
-    ('PLOT_ADJACENT_TO_FORT',       'REQUIREMENTSET_TEST_ALL');
+    ('PLOT_ADJACENT_TO_ENCAPMENT',      'REQUIREMENTSET_TEST_ALL'),
+    ('PLOT_ADJACENT_TO_FORT',           'REQUIREMENTSET_TEST_ALL'),
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE',  'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,               Value)
@@ -322,13 +332,7 @@ values
 insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
-    ('HD_DISTRICTS_BUT_NOT_WONDERS',    'REQUIREMENTSET_TEST_ANY'),
-    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE',  'REQUIREMENTSET_TEST_ALL');
+    ('HD_DISTRICTS_BUT_NOT_WONDERS',    'REQUIREMENTSET_TEST_ANY');
 
 insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
 select 'HD_DISTRICTS_BUT_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts;
-
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                  RequirementId)
-values
-    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
