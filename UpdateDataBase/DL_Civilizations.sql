@@ -611,25 +611,31 @@ values
 	
 --ui
 update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION' where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+	
 ---------------------------------------------------------------------------------------------------------------------
 --SCYTHIA
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
+	('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_YIELD_MORE_HORSE'),
 	('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_TECH_ANIMAL_HUSBANDRY'),
 	('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_PASTURE_PRODUCTION');
 
 insert or replace into Modifiers
 	(ModifierId,						ModifierType,							SubjectRequirementSetId)
 values
+	('TRAIT_YIELD_MORE_HORSE',			'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_ACCUMULATION_SPECIFIC_RESOURCE',NULL),
 	('TRAIT_TECH_ANIMAL_HUSBANDRY',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECHNOLOGY',NULL),
 	('TRAIT_PASTURE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_PASTURE_REQUIREMENTS');
 
 insert or replace into ModifierArguments
-	(ModifierId,Name,Value)
+	(ModifierId,					Name,			Value)
 values
-	('TRAIT_TECH_ANIMAL_HUSBANDRY',		
-	('TRAIT_PASTURE_PRODUCTION',
+	('TRAIT_YIELD_MORE_HORSE',		'ResourceType',	'RESOURCE_HORSES'),
+	('TRAIT_YIELD_MORE_HORSE',		'Amount',		3),
+	('TRAIT_TECH_ANIMAL_HUSBANDRY',	'TechType',		'TECH_ANIMAL_HUSBANDRY'	),
+	('TRAIT_PASTURE_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_PASTURE_PRODUCTION',	'Amount',		1);
 ---------------------------------------------------------------------------------------------------------------------------
 -- Spainish
 update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';
