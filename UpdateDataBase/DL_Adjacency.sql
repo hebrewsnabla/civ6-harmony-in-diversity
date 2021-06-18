@@ -205,6 +205,10 @@ insert or replace into Adjacency_YieldChanges
 	(ID, Description, YieldType, YieldChange, TilesRequired, PrereqTech, AdjacentResource) values
 	('Resource_Production_Late', 'LOC_DISTRICT_RESOURCE_PRODUCTION', 'YIELD_PRODUCTION', 2, 1, 'TECH_APPRENTICESHIP', 1);
 
+insert or replace into Adjacency_YieldChanges
+	(ID, Description, YieldType, YieldChange, TilesRequired, OtherDistrictAdjacent, PrereqCivic) values
+	('Golf_District_Culture', 'placeholder', 'YIELD_CULTURE', 1, 1, 1, 'CIVIC_HUMANISM');
+
 -- delete from District_Adjacencies where YieldChangeId = 'Jungle_Science';
  
  -- Cree Mekewap change: Each bonus resource -> +1 Food 

@@ -35,6 +35,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "首都每次建造完成书院区域或书院中的建筑时获得一个总督点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+50% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_DESCRIPTION",                               "朝鲜特色区域，代替学院。+4 [Icon_Science] 科技值。拥有更多的专家槽位。");

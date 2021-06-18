@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                             Text)
 values
+    -- New policies
     ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+40% construction speed toward Ancient and Classical era land military units. +15% for each Encampment District buildings the city has."),
     ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+40% construction speed toward Ancient, Classical, Medieval and Renaissance era land military units. +15% for each Encampment District buildings the city has."),
     ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+40% construction speed toward Modern era and earlier land military units. +15% for each Encampment District buildings the city has."),
@@ -11,20 +12,27 @@ values
     ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+60% construction speed toward Industrial era and earlier naval units. +15% for each Harbor District buildings the city has."),
     ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+60% construction speed toward all naval units, excluding Carriers. +15% for each Harbor District buildings the city has."),
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
-    -- 
-    ("LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "+10 [ICON_Strength] Unit Combat Strength when fighting Barbarians."),
-	("LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",										  "+100% [ICON_Production] Production toward Spies."),
+    -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
+    -- Govs: TODO: swap the inherent and accumulate
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each Government Plaza and its building, Diplomatic Quarter and its building and palace in a city."),
+    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each Government Plaza and its building and palace in a city."),
+        -- Tier 2
     ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +10%, +10% [ICON_GOLD] Gold, +20% [ICON_PRODUCTION] Production toward units for cities with a garrisoned unit."),
+    ("LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "+20% [ICON_GOLD] Gold in all cities with an established [ICON_Governor] Governor. +20% Production toward Districts."),
+    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "Reduces the cost of purchasing a tile by 20%."),
+    ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat. Gains +1 [ICON_Faith] Faith from each follower of the Religion that has established as majority of your civilization."),
+    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_THEOCRACY_XP1",                                "15% Discount on Purchases with [ICON_Faith] Faith. Enable purchase land military units with [ICON_Faith] Faith in cities that has Holy Site."),
+        -- Tier 3
+    ("LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "Your [ICON_TradeRoute] Trade Routes to an Ally or Suzerain's city provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold."),
+    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "25% Discount on Purchases with [ICON_Gold] Gold."),
     ("LOC_GOVT_INHERENT_BONUS_COMMUNISM_XP1",                                         "+2 [ICON_Production] Production per [ICON_Citizen] Citizen in cities."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] Science."),
+    -- Policies
     ("LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "+4 [ICON_Production] Production and +4 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes."),
-    ("LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "Your [ICON_TradeRoute] Trade Routes to an Ally or Suzerain's city provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold."),
-    ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat.Gains all Beliefs of any Religion that has established itself in a majority of his cities."),
-    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "+20% Production toward Districts. Reduces the cost of purchasing a tile by 20%."),
-    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "25% Discount on Purchases with [ICON_Gold] Gold."),
+    ("LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "+10 [ICON_Strength] Unit Combat Strength when fighting Barbarians."),
+    ("LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "+100% [ICON_Production] Production toward Spies."),
     ("LOC_POLICY_NAVIGATION_DESCRIPTION",                                             "+4 [ICON_GreatAdmiral] Great Admiral points per turn. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse."),
     ("LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                                    "+4 [ICON_GreatMerchant] Great Merchant points per turn. +4 [ICON_GreatMerchant] Great Merchant points per turn for every Market."),
     ("LOC_POLICY_SERFDOM_DESCRIPTION",                                                "+30% [ICON_Production] Production toward Builders, and newly trained Builders gain 1 extra build actions."),
@@ -99,7 +107,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "从已成为多数城市信仰的宗教中获得信仰值。每个信教人口+1 [Icon_Faith] 信仰值。神学战争中+5 [ICON_Religion] 宗教战斗力。"),
+    -- 新政策卡
     ("zh_Hans_CN",  "LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "生产远古和古典时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "生产远古、古典、中世纪和文艺复兴时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "生产现代及更早时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
@@ -109,18 +117,26 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+60%，城市每有一级港口建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
     -- 
-    ("zh_Hans_CN",  "LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "同蛮族战斗时，+10 [ICON_Strength] 单位战斗力。"),
-	("zh_Hans_CN",  "LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "为生产间谍+100% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座市政广场区域及建筑、外交区和其内建筑和宫殿，所有产出便+2。"),
+    -- 政体
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场区域或其中的建筑，便+2所有产出。"),
+        -- Tier 2
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20% [ICON_PRODUCTION] 生产力。 "),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "所有 [ICON_Governor] 总督就职城市产出的 [ICON_GOLD] 金币+20%。建造区域时+20%生产力。"),
+    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "购买一个单元格的费用降低20%。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "神学战争中+5 [ICON_Religion] 宗教战斗力。每个人口产出1 [ICON_Faith] 信仰。"), -- 从已成为多数城市信仰的宗教中获得信仰值，每个信仰该宗教的人口+1 [Icon_Faith] 信仰值
+    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_THEOCRACY_XP1",                                "使用 [ICON_Faith] 信仰值购买可享受15%折扣。可使用信仰在拥有圣地的城市购买陆地军事单位。"),
+        -- Tier 3
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "您通往盟友或宗主国城市的 [ICON_TradeRoute] 贸易路线为双边城市+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.25点。城市可使用 [ICON_Gold] 金币购买区域。"),
+    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "使用 [ICON_Gold] 金币购买时费用-25%。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_COMMUNISM_XP1",                                         "城市中每位 [ICON_Citizen] 公民将提供2点 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] 科技值。"),
+    -- 政策卡
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "国内贸易路线提供的 [ICON_Production] 生产力+4、[ICON_Food] 食物+4。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "您通往盟友或宗主国城市的 [ICON_TradeRoute] 贸易路线为双边城市+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.25点。城市可使用 [ICON_Gold] 金币购买区域。"),
-    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "建造区域时+20%生产力。购买一个单元格的费用降低20%。"),
-    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "使用 [ICON_Gold] 金币购买时费用-25%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "同蛮族战斗时，+10 [ICON_Strength] 单位战斗力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "为生产间谍+100% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_NAVIGATION_DESCRIPTION",                                             "每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                                    "每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场，每回合的 [ICON_GreatMerchant] 大商人点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_SERFDOM_DESCRIPTION",                                                "为生产建造者+30% [ICON_Production] 生产力，新训练的建造者获得一点额外劳动力。"),
