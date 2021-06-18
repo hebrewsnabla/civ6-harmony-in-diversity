@@ -200,7 +200,7 @@ values
 	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1',						'Amount',	     	10),
 	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10);
 
--- vilnius
+-- Vilnius
 insert or replace into TraitModifiers
 	(TraitType,						    	ModifierId)values
 	('MINOR_CIV_VILNIUS_TRAIT', 	     'MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0'  );
@@ -216,7 +216,7 @@ values
 	('MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0',						'YieldType',		'YIELD_CULTURE'),	
 	('MINOR_CIV_VILNIUS_ALLIANCE_LEVEL_0',						'Amount',			50);
 
---nanmadol
+--Nan Madol
 update Modifiers set SubjectRequirementSetId = 'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST' where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS';
 
 insert or replace into RequirementSets
@@ -235,7 +235,7 @@ insert or replace into Requirements(RequirementId, RequirementType)values
 insert or replace into RequirementArguments(RequirementId,Name,Value)values
 	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','RequirementSetId','PLOT_IS_OR_ADJACENT_TO_COAST');
 
---auckland
+--Auckland
 delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE';
 delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL';
 -- delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_SHALLOW_WATER_PRODUCTION_BONUS_BASE';
