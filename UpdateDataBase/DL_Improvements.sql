@@ -6,7 +6,7 @@
 
 update Improvements set PrereqTech = 'TECH_BRONZE_WORKING'
 	where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
-
+update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 -- -- change the unlock condition.
 update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUILDS'
 	where ImprovementType = 'IMPROVEMENT_LUMBER_MILL' and FeatureType = 'FEATURE_JUNGLE';
