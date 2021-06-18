@@ -206,7 +206,7 @@ values
     ('HD_OPEN_AREA_STRENGTH',                   'Preview',  '+{1_Amount} {LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT}');
 
 ---------------------------------------------------------------------------------------------------------------
--- Melee, ranged, anti-cavalry                                                                               --
+-- Melee, ranged, anti-cavalry, naval melee, naval ranged, naval raider                                                                               --
 ---------------------------------------------------------------------------------------------------------------
 insert or replace into Types
     (Type,                                                      Kind)
