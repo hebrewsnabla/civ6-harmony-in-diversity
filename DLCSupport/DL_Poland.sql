@@ -184,3 +184,155 @@ insert or replace into RequirementSets
 values
     ('HD_PLAYER_HAS_ALLY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL'),
     ('HD_PLOT_HAS_LUXURY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
+
+/*
+--Poland another plan by zhushou
+-------------------------------------------------------------------------
+delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
+    or ModifierId = 'TRAIT_LITHUANIANUNION_FAITH_RELIC'
+    or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC';
+--LA 圣军区域及建筑20%加速
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_PRODUCTION'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_BUILDING_PRODUCTION'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ENCAPMENT_PRODUCTION'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ENCAPMENT_BUILDING_PRODUCTION'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_GRASS_CULTURE'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_GRASS_HILLS_CULTURE'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_PLAINS_CULTURE'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_PLAINS_HILLS_CULTURE');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                           SubjectRequirementSetId)
+values
+    ('POLAND_HOLYSITE_PRODUCTION',          'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
+    ('POLAND_ENCAPMENT_PRODUCTION',         'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
+    ('POLAND_ENCAPMENT_BUILDING_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
+    ('POLAND_GRASS_CULTURE',                'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_GRASS_HILLS_CULTURE',          'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_PLAINS_CULTURE',               'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_PLAINS_HILLS_CULTURE',         'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',       'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER', 'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',      'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',    'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                       Name,               Value)
+values
+    ('POLAND_HOLYSITE_PRODUCTION',                     'DistrictType',     'DISTRICT_HOLY_SITE'),
+    ('POLAND_HOLYSITE_PRODUCTION',                     'Amount',           20),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'DistrictType',     'DISTRICT_HOLY_SITE'),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'Amount',           20),
+    ('POLAND_ENCAPMENT_PRODUCTION',                    'DistrictType',     'DISTRICT_ENCAMPMENT'),
+    ('POLAND_ENCAPMENT_PRODUCTION',                    'Amount',           20),
+    ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'DistrictType',     'DISTRICT_ENCAMPMENT'),
+    ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'Amount',           20),
+    ('POLAND_GRASS_CULTURE',                           'ModifierId',       'POLAND_GRASS_CULTURE_MODIFIER'),
+    ('POLAND_GRASS_HILLS_CULTURE',                     'ModifierId',       'POLAND_GRASS_HILLS_CULTURE_MODIFIER'),
+    ('POLAND_PLAINS_CULTURE',                          'ModifierId',       'POLAND_PLAINS_CULTURE_MODIFIER'),
+    ('POLAND_PLAINS_HILLS_CULTURE',                    'ModifierId',       'POLAND_PLAINS_HILLS_CULTURE_MODIFIER'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'TerrainType',      'TERRAIN_GRASS'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_GRASS_CULTURE_MODIFIER',                  'Amount',           0.5),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'TerrainType',      'TERRAIN_GRASS_HILLS'),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_GRASS_HILLS_CULTURE_MODIFIER',            'Amount',           0.5),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'TerrainType',      'TERRAIN_PLAINS'),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_PLAINS_CULTURE_MODIFIER',                 'Amount',           0.5),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'TerrainType',      'TERRAIN_PLAINS_HILLS'),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'Amount',           0.5);
+
+--ua
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'ENCAMPMENT_ADJACENT_PRODUCTION'),
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_PRODUCTION'),
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE'),
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'TRAIT_ADJUST_MILITARY_ENGINEER_BUILDCHARGES'),
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_CAVALRY_REDUCTION_DAMAGE');
+
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType,                                                           SubjectRequirementSetId)
+values
+    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_ENCAPMENT'),
+    ('FORT_ADJACENT_PRODUCTION',                        'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_FORT'),
+    ('POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE',  'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',                    NULL),
+    ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                                  NULL),
+    ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  NULL);
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,              RequirementId)
+values
+    ('PLOT_ADJACENT_TO_ENCAPMENT',  'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_ENCAMPMENT'),
+    ('PLOT_ADJACENT_TO_FORT',       'REQUIRES_PLOT_ADJACENT_TO_IMPROVEMENT_FORT'),
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
+
+insert or replace into RequirementSets
+    (RequirementSetId,                  RequirementSetType)
+values
+    ('PLOT_ADJACENT_TO_ENCAPMENT',      'REQUIREMENTSET_TEST_ALL'),
+    ('PLOT_ADJACENT_TO_FORT',           'REQUIREMENTSET_TEST_ALL'),
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE',  'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+values
+    ('TRAIT_REPLACE_MILITARY_SLOT_WITH_WILDCARD',       'ReplacesAll',      1),
+    ('FORT_ADJACENT_PRODUCTION',                        'YieldType',        'YIELD_PRODUCTION'),
+    ('FORT_ADJACENT_PRODUCTION',                        'Amount',           1),
+    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'YieldType',        'YIELD_PRODUCTION'),
+    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'Amount',           1),
+    ('POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE',  'Tag',              'CLASS_MILITARY_ENGINEER'),
+    ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'AbilityType',      'ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE'),
+    ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'Amount',           50);
+
+insert or replace into Types
+	(Type,														Kind)
+values
+	('ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE',					'KIND_ABILITY');
+
+insert or replace into TypeTags
+	(Type,																Tag)
+values
+	('ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE',							'CLASS_LIGHT_CAVALRY'),
+	('ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE',						    'CLASS_HEAVY_CAVALRY');
+
+insert or replace into UnitAbilities (UnitAbilityType, Description, Inactive) values
+	('ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE', 'LOC_ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE_DESCRIPTION',  1);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE',				'POLAND_CAVALRY_HALF_REDUCTION_DAMAGE');
+
+--sukinennice 本城每个区域（不包括奇观）+2金
+insert or replace into BuildingModifiers
+    (BuildingType,                      ModifierId)
+values
+    ('BUILDING_SUKIENNICE',             'SUKINENNICE_DISTRCIT_GOLD');      
+
+insert or replace into Modifiers
+    (ModifierId,                        ModifierType,                                           SubjectRequirementSetId)
+values
+    ('SUKINENNICE_DISTRCIT_GOLD',       'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',   'HD_DISTRICTS_BUT_NOT_WONDERS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                        Name,           Value)
+values
+    ('SUKINENNICE_DISTRCIT_GOLD',       'YieldType',    'YIELD_GOLD'),
+    ('SUKINENNICE_DISTRCIT_GOLD',       'Amount',       2);
+
+insert or replace into RequirementSets
+    (RequirementSetId,                  RequirementSetType)
+values
+    ('HD_DISTRICTS_BUT_NOT_WONDERS',    'REQUIREMENTSET_TEST_ANY');
+
+insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
+select 'HD_DISTRICTS_BUT_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts;

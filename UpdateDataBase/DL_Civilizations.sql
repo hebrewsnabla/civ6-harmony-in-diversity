@@ -612,8 +612,24 @@ values
 --ui
 update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION' where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
 ---------------------------------------------------------------------------------------------------------------------
---Srythia
+--SCYTHIA
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_TECH_ANIMAL_HUSBANDRY'),
+	('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_PASTURE_PRODUCTION');
 
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_TECH_ANIMAL_HUSBANDRY',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECHNOLOGY',NULL),
+	('TRAIT_PASTURE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_PASTURE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,Name,Value)
+values
+	('TRAIT_TECH_ANIMAL_HUSBANDRY',		
+	('TRAIT_PASTURE_PRODUCTION',
 ---------------------------------------------------------------------------------------------------------------------------
 -- Spainish
 update ModifierArguments set Value = 'CIVIC_EXPLORATION' where ModifierId = 'TRAIT_NAVAL_CORPS_EARLY' and Name= 'CivicType';

@@ -39,7 +39,9 @@ values
     ("LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "+1 [ICON_Food] Food from [ICON_Resource_Wheat] Wheats, [ICON_Resource_Rice] Rices and [ICON_Resource_Maize] Maize. +1 [ICON_Gold] Gold from Farms. "),
     ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "+1 [ICON_Food] Food and +1 [ICON_Production] Production from Fishing Boats."),
     ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+1 [ICON_Food] Food from all coast and ocean tiles ."),
-    ("LOC_BELIEF_OCEAN_MOTHER_NAME",                              "Ocean Mother");
+    ("LOC_BELIEF_OCEAN_MOTHER_NAME",                              "Ocean Mother"),
+    ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Accumulating Strategic resources gain an additional +1 per turn."),
+    ("LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "+25% [ICON_Production] Production toward Ancient, Classical and Medieval military units. Strategic resource costs for units are discounted 40%.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -82,5 +84,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物。 所有农场+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。 "),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
-    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲");
+    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "为远古、古典和中世纪军事单位+25% [ICON_Production] 生产力。生产单位所需战略资源花费减少40%。");
 

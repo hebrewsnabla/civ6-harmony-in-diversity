@@ -51,28 +51,10 @@ values
 
 -- Kumasi
 -- update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
--- Chinguetti
-
-update ModifierArguments set Value = 0.3 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
-insert or replace into TraitModifiers(TraitType,ModifierID)values
-	('MINOR_CIV_CHINGUETTI_TRAIT','MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2');
-insert or replace into Modifiers
-	(ModifierId,					ModifierType,				SubjectRequirementSetId)
-values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER','PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD',NULL);
-
-insert or replace into ModifierArguments
-	(ModifierId,		Name,     Value)
-values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','ModifierId',	'MINOR_CIV_CHINGUETTI_FAITH'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'YieldType',	'YIELD_FAITH'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'Amount',		3);
 
 -- Kandy
 update ModifierArguments set Value = 200 where ModifierId = 'MINOR_CIV_KANDY_BETTER_RELIC_BONUS' and Name = 'ScalingFactor';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_KANDY_TRAIT' and ModifierId = 'MINOR_CIV_KANDY_UNIQUE_INFLUENCE_GRANT_BONUS';
-
 
 --City-state by zhushou
 
@@ -171,11 +153,11 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POW
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SEAPORT' and Name = 'Amount';
 
---普雷斯拉夫军营建筑加速军事单位建造
+--普雷斯拉夫军营及军营建筑+2科技
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_BARRACKS_STABLE_IDENTITY_BONUS';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_ARMORY_IDENTITY_BONUS';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_UNIQUE_INFLUENCE_MILITARY_ACADEMY_IDENTITY_BONUS';
-insert into TraitModifiers 
+/*insert into TraitModifiers 
     (TraitType,                                 	 ModifierId)
 values
 	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS'),
@@ -198,9 +180,44 @@ values
 	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS', 			'ModifierId', 		'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1'),
 	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10),
 	('MINOR_CIV_PRESLAV_ARMORY_UNIT_PRODUCTION_BONUS1',						'Amount',	     	10),
-	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10);
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_UNIT_PRODUCTION_BONUS1',			'Amount',	     	10);*/
 
--- Vilnius
+insert into TraitModifiers 
+    (TraitType,                                 	 ModifierId)
+values
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS'),
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS'),
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS'),
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS');
+insert into Modifiers
+	(ModifierId,													ModifierType,									   			 SubjectRequirementSetId)
+values
+	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS',						'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	        			'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS1',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_ENCAMPMENT'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS1',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'BUILDING_IS_BARRACKS_STABLE_MILITARITIC_CITY_STATE'),
+	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 			'BUILDING_IS_ARMORY'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 			'BUILDING_IS_MILITARY_ACADEMY');
+insert into ModifierArguments
+	(ModifierId,													Name,				 Value)
+values
+	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS',     				'ModifierId',		'MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS1'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS',     		'ModifierId',		'MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS1'),
+	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS',      				'ModifierId',		'MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS', 			'ModifierId', 		'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1'),
+	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS1',					'YieldType',	 	'YIELD_SCIENCE'),
+	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS1',					'Amount',	     	2),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS1',			'YieldType',	 	'YIELD_SCIENCE'),
+	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS1',			'Amount',	     	2),
+	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'YieldType',	 	'YIELD_SCIENCE'),
+	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'Amount',	     	2),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'YieldType',	 	'YIELD_SCIENCE'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'Amount',	     	2);
+
+-- vilnius
+
 insert or replace into TraitModifiers
 	(TraitType,						    	ModifierId)values
 	('MINOR_CIV_VILNIUS_TRAIT', 	     'MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0'  );
@@ -233,6 +250,7 @@ values
 insert or replace into Requirements(RequirementId, RequirementType)values
 	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','REQUIREMENT_REQUIREMENTSET_IS_MET');
 insert or replace into RequirementArguments(RequirementId,Name,Value)values
+
 	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','RequirementSetId','PLOT_IS_OR_ADJACENT_TO_COAST');
 
 --Auckland
@@ -295,3 +313,4 @@ insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId
 
 insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
 	('PLOT_HAS_FISHINGBOATS_AND_INDUSTRIAL_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','RequirementSetId','PLOT_IS_OR_ADJACENT_TO_COAST');

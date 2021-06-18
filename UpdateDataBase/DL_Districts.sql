@@ -66,9 +66,9 @@ insert or replace into District_CitizenYieldChanges
 values
 	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1),
 	('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	1),
-	('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1),
-	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
-	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
+	('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1);
+	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
+	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 
 -- remove the great person points as they are moved to the citizen yield.
 update District_GreatPersonPoints set PointsPerTurn = 1 where

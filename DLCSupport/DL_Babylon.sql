@@ -19,6 +19,23 @@ values
     ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',  'YieldType',                                            'YIELD_CULTURE'),
     ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',  'Amount',                                               2);
 
+-- Chinguetti
+update ModifierArguments set Value = 0.3 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
+insert or replace into TraitModifiers(TraitType,ModifierID)values
+	('MINOR_CIV_CHINGUETTI_TRAIT','MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,				SubjectRequirementSetId)
+values
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER','PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_CHINGUETTI_FAITH',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD',NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,		Name,     Value)
+values
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','ModifierId',	'MINOR_CIV_CHINGUETTI_FAITH'),
+	('MINOR_CIV_CHINGUETTI_FAITH',					'YieldType',	'YIELD_FAITH'),
+	('MINOR_CIV_CHINGUETTI_FAITH',					'Amount',		3);
+
 -- Kenzo Tange
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_KENZO_TANGE';
 

@@ -43,6 +43,7 @@ values
 	('DISTRICT_HARBOR',				'HD_Commercial_Hub_Gold'),
 	('DISTRICT_COTHON',				'HD_Commercial_Hub_Gold'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'HD_Commercial_Hub_Gold'),
+	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'District_Gold_Industrial_Zone'),
 	-- 
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Minel_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'Mine_Production'),
@@ -185,6 +186,8 @@ insert or replace into Adjacency_YieldChanges
 values
 	('District_Gold_Hansa',				'LOC_DISTRICT_GOLD_HANSA',					'YIELD_GOLD',		2,				1,	
 	'DISTRICT_HANSA',				NULL,			NULL,			NULL,			NULL),
+	('District_Gold_Industrial_Zone',	'LOC_DISTRICT_GOLD_INDUSTRIAL_ZONE',		'YIELD_GOLD',		2,				1,	
+	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,			NULL,			NULL),
 	-- ('District_Science_City_Center',	'LOC_District_Science_City_Center',				'YIELD_SCIENCE',	1,				1,	
 	-- 'DISTRICT_CITY_CENTER',			NULL,			NULL,			NULL,			NULL),
 	('District_Gold_City_Center',		'LOC_DISTRICT_GOLD_CITY_CENTER',				'YIELD_GOLD',		1,				1,	

@@ -54,6 +54,7 @@ values
     ("LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION",            "Just War : Combat units gain +5 [ICON_Strength] Combat Strength when plot has religious unit."),
     ("LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",                             "Just War : +5 [ICON_Strength] Combat Strength"),
     ("LOC_ABILITY_MONASTIC_ISOLATION_INQUISITOR_CHARGE_DESCRIPTION",          "Isolation Inquisitor : inquisitors can spread Religion 1 extra time"),
+    ("LOC_ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE_DESCRIPTION",               "50% less [ICON_Strength] Combat Strength reduction from being injured"),
     ("LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "from Bishop's training"),
     ("LOC_VICTOR_TRAINED_UNIT_EXP_PREVIEW_TEXT",                              "from Victor's training"),
     ("LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "from Victor's training"),
@@ -77,6 +78,7 @@ values
     ("LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER",                               "+{1_num} [ICON_CULTURE] Culture from adjacent City {1_Num : plural 2?Center; other?Centers;}."),
     ("LOC_DISTRICT_GOLD_CITY_CENTER",                                         "+{1_num} [ICON_Gold] Gold from adjacent City {1_Num : plural 1?Center; other?Centers;}."),
     ("LOC_DISTRICT_GOLD_HANSA",                                               "+{1_num} [ICON_Gold] Gold from adjacent Hansa {1_Num : plural 2?district; other?districts;}."),
+    ("LOC_DISTRICT_GOLD_INDUSTRIAL_ZONE",                                     "+{1_num} [ICON_Gold] Gold from adjacent Industrial Zone {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_COMMERCIAL_GOLD",                                          "+{1_num} [ICON_Gold] Gold from adjacent Commercial Hub {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_SUGUBA_GOLD",                                              "+{1_num} [ICON_Gold] Gold from adjacent Suguba {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_DESERT_SCIENCE",                                           "+{1_num} [ICON_Science] Science from adjacent Desert {1_Num : plural 1?Tile; other?Tiles;}."),
@@ -164,6 +166,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION",            "十字军：同一单元格内的战斗单位+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",                             "十字军：+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_MONASTIC_ISOLATION_INQUISITOR_CHARGE_DESCRIPTION",          "与世隔绝：审判官+1传教次数。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE_DESCRIPTION",               "受伤后的 [ICON_Strength] 战斗力减益减少50%"),
     ("zh_Hans_CN",  "LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自莫克夏训练"),
     ("zh_Hans_CN",  "LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自维克多训练"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "来自主教座堂"),
@@ -186,6 +189,7 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER",                               "+{1_num} [ICON_CULTURE] 文化值来自相邻的市中心。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_GOLD_CITY_CENTER",                                         "+{1_num} [ICON_Gold] 金币来自相邻的市中心。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_GOLD_HANSA",                                               "+{1_num} [ICON_Gold] 金币来自相邻的商业同业工会。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_GOLD_INDUSTRIAL_ZONE",                                     "+{1_num} [ICON_Gold] 金币来自相邻的工业区。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_COMMERCIAL_GOLD",                                          "+{1_num} [ICON_Gold] 金币来自相邻的商业区。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_SUGUBA_GOLD",                                              "+{1_num} [ICON_Gold] 金币来自相邻的曼丁哥市场。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_DESERT_SCIENCE",                                           "+{1_num} [ICON_Science] 科技值来自相邻的沙漠单元格。"),
@@ -202,7 +206,8 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "马戏与面包"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+2。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。"),
     ("zh_Hans_CN",  "LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",                                    "每10回合（标准游戏速度下）解锁1个您盟友已研究或提升，而您尚未研究之科技的 [ICON_TechBoosted] 尤里卡"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_ALLIANCES_1_CHAPTER_CONTENT_PARA_1",            "同盟是两个不同文明间相互协商、在某方面进行合作的一种关系。结为同盟之前双方必须首先宣布友谊，且均已完成市政“行政部门”的研究。[NEWLINE][NEWLINE]同盟类型有数种，提供的益处皆有所不同。与其他玩家处于同盟关系时，每回合将获得同盟点数。获得足够的点数后同盟等级将提升，产生更多益处。与盟友进行贸易可提升获得的同盟点数。同盟等级效果叠加计算，如果处于第3级同盟，则也会获得第1级和第2级效果。[NEWLINE][NEWLINE]每种同盟均会使双方开放边界并共同防御。盟友之间无法宣战。[NEWLINE][NEWLINE]您只能和其他文明结成一种同盟。一旦结成一类同盟，则无法与其他文明再次结成此类同盟，但可与之结成其他类型的同盟。举例而言，您与朝鲜结成研究同盟后便无法再与克里结成研究同盟，但却可以与其建立军事、文化、宗教或经济同盟。注意，游戏中最多只能结缔5个同盟。[NEWLINE]研究同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Science] 科技值。[NEWLINE][ICON_BULLET] 第2级：盟友每10回合共享1个科技提升（标准速度下）。[NEWLINE][ICON_BULLET] 第3级：与盟友研究相同科技、或研究盟友已研究完成的科技时获得 [ICON_Science] 科技值加成；盟友已研究您完成的科技时也可获得科技值加成。[NEWLINE][NEWLINE]文化同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间不会相互施加忠诚度压力；盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_CULTURE] 文化值。[NEWLINE][ICON_BULLET] 第2级：城市与盟友之间存在 [ICON_TradeRoute] 贸易路线时，将根据起源城市中建造的区域获得更多 [ICON_GreatPerson] 伟人点数。[NEWLINE][ICON_BULLET] 第3级：您将获得盟友城市产出的部分 [ICON_Tourism] 旅游业绩和 [ICON_CULTURE] 文化值。[NEWLINE][NEWLINE]军事同盟[NEWLINE][ICON_BULLET] 第1级：与双方盟友均已宣战的文明作战时将获得 [ICON_Strength] 战斗力加成。[NEWLINE][ICON_BULLET] 第2级：盟友之间共享能见度；其中一个盟友处于战争状态时，双方生产军事单位时都将获得 [ICON_Production] 生产力加成。[NEWLINE][ICON_BULLET] 第3级：单位初始便拥有一次奖励升级。[NEWLINE][NEWLINE]宗教同盟[NEWLINE][ICON_BULLET] 第1级：不会对盟友的城市释放宗教压力；盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Faith] 信仰值。[NEWLINE][ICON_BULLET] 第2级：与非盟友创建的其他宗教进行宗教战争时获得 [ICON_Religion] 宗教战斗力加成。[NEWLINE][ICON_BULLET] 第3级：基于信仰盟友宗教的 [ICON_Citizen] 公民数量获得信仰值；在没有盟友宗教信徒的城市中获得奖励宗教压力。[NEWLINE][NEWLINE]经济同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Gold] 黄金。[NEWLINE][ICON_BULLET] 第2级：每个视盟友为宗主国的城邦将提供一点[ICON_ENVOY]使者点数。[NEWLINE][ICON_BULLET] 第3级：盟友之间共享双方获得的全部城邦宗主国加成。")
+    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_ALLIANCES_1_CHAPTER_CONTENT_PARA_1",            "同盟是两个不同文明间相互协商、在某方面进行合作的一种关系。结为同盟之前双方必须首先宣布友谊，且均已完成市政“行政部门”的研究。[NEWLINE][NEWLINE]同盟类型有数种，提供的益处皆有所不同。与其他玩家处于同盟关系时，每回合将获得同盟点数。获得足够的点数后同盟等级将提升，产生更多益处。与盟友进行贸易可提升获得的同盟点数。同盟等级效果叠加计算，如果处于第3级同盟，则也会获得第1级和第2级效果。[NEWLINE][NEWLINE]每种同盟均会使双方开放边界并共同防御。盟友之间无法宣战。[NEWLINE][NEWLINE]您只能和其他文明结成一种同盟。一旦结成一类同盟，则无法与其他文明再次结成此类同盟，但可与之结成其他类型的同盟。举例而言，您与朝鲜结成研究同盟后便无法再与克里结成研究同盟，但却可以与其建立军事、文化、宗教或经济同盟。注意，游戏中最多只能结缔5个同盟。[NEWLINE]研究同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Science] 科技值。[NEWLINE][ICON_BULLET] 第2级：盟友每10回合共享1个科技提升（标准速度下）。[NEWLINE][ICON_BULLET] 第3级：与盟友研究相同科技、或研究盟友已研究完成的科技时获得 [ICON_Science] 科技值加成；盟友已研究您完成的科技时也可获得科技值加成。[NEWLINE][NEWLINE]文化同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间不会相互施加忠诚度压力；盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_CULTURE] 文化值。[NEWLINE][ICON_BULLET] 第2级：城市与盟友之间存在 [ICON_TradeRoute] 贸易路线时，将根据起源城市中建造的区域获得更多 [ICON_GreatPerson] 伟人点数。[NEWLINE][ICON_BULLET] 第3级：您将获得盟友城市产出的部分 [ICON_Tourism] 旅游业绩和 [ICON_CULTURE] 文化值。[NEWLINE][NEWLINE]军事同盟[NEWLINE][ICON_BULLET] 第1级：与双方盟友均已宣战的文明作战时将获得 [ICON_Strength] 战斗力加成。[NEWLINE][ICON_BULLET] 第2级：盟友之间共享能见度；其中一个盟友处于战争状态时，双方生产军事单位时都将获得 [ICON_Production] 生产力加成。[NEWLINE][ICON_BULLET] 第3级：单位初始便拥有一次奖励升级。[NEWLINE][NEWLINE]宗教同盟[NEWLINE][ICON_BULLET] 第1级：不会对盟友的城市释放宗教压力；盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Faith] 信仰值。[NEWLINE][ICON_BULLET] 第2级：与非盟友创建的其他宗教进行宗教战争时获得 [ICON_Religion] 宗教战斗力加成。[NEWLINE][ICON_BULLET] 第3级：基于信仰盟友宗教的 [ICON_Citizen] 公民数量获得信仰值；在没有盟友宗教信徒的城市中获得奖励宗教压力。[NEWLINE][NEWLINE]经济同盟[NEWLINE][ICON_BULLET] 第1级：盟友之间的 [ICON_TradeRoute] 贸易路线可产出更多 [ICON_Gold] 黄金。[NEWLINE][ICON_BULLET] 第2级：每个视盟友为宗主国的城邦将提供一点[ICON_ENVOY]使者点数。[NEWLINE][ICON_BULLET] 第3级：盟友之间共享双方获得的全部城邦宗主国加成。"),
+    ("zh_Hans_CN",  "LOC_CITY_YIELD_FROM_TERRAIN_TOOLTIP",                                   "{Value : number +#.#;-#.#}来自地形")
     ;
 
 --------------------------------------------------------------------------------
