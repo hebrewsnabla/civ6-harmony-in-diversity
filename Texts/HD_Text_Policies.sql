@@ -22,7 +22,8 @@ values
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] Science."),
     ("LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "+4 [ICON_Production] Production and +4 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes."),
     ("LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "Your [ICON_TradeRoute] Trade Routes to an Ally or Suzerain's city provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold."),
-    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "+15% Production toward Districts. Reduces the cost of purchasing a tile by 20%. 15% Discount on Purchases with [ICON_Gold] Gold."),
+    ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat.Gains all Beliefs of any Religion that has established itself in a majority of his cities."),
+    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "+20% Production toward Districts. Reduces the cost of purchasing a tile by 20%."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "25% Discount on Purchases with [ICON_Gold] Gold."),
     ("LOC_POLICY_NAVIGATION_DESCRIPTION",                                             "+4 [ICON_GreatAdmiral] Great Admiral points per turn. +4 [ICON_GreatAdmiral] Great Admiral points per turn for every Lighthouse."),
     ("LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                                    "+4 [ICON_GreatMerchant] Great Merchant points per turn. +4 [ICON_GreatMerchant] Great Merchant points per turn for every Market."),
@@ -98,6 +99,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "从已成为多数城市信仰的宗教中获得信仰值。每个信教人口+1 [Icon_Faith] 信仰值。神学战争中+5 [ICON_Religion] 宗教战斗力。"),
     ("zh_Hans_CN",  "LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "生产远古和古典时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "生产远古、古典、中世纪和文艺复兴时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "生产现代及更早时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
@@ -117,7 +119,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "国内贸易路线提供的 [ICON_Production] 生产力+4、[ICON_Food] 食物+4。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "您通往盟友或宗主国城市的 [ICON_TradeRoute] 贸易路线为双边城市+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.25点。城市可使用 [ICON_Gold] 金币购买区域。"),
-    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "建造区域时+15%生产力。购买一个单元格的费用降低20%。使用 [ICON_Gold] 金币购买时费用-15%。"),
+    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "建造区域时+20%生产力。购买一个单元格的费用降低20%。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_DEMOCRACY_XP1",                                "使用 [ICON_Gold] 金币购买时费用-25%。"),
     ("zh_Hans_CN",  "LOC_POLICY_NAVIGATION_DESCRIPTION",                                             "每回合+4 [ICON_GreatAdmiral] 海军统帅点数。每有一座灯塔，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRAVELING_MERCHANTS_DESCRIPTION",                                    "每回合+4 [ICON_GreatMerchant] 大商人点数。每有一座市场，每回合的 [ICON_GreatMerchant] 大商人点数便+4。"),

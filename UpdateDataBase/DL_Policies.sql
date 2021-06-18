@@ -607,19 +607,29 @@ delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
 insert or replace into GovernmentModifiers
 	(GovernmentType,					ModifierId)
 values
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
+	-- ('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
 	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_DISTRICTS';
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_GOLD_MODIFIER';
+-- insert or replace into Modifiers
+-- 	(ModifierId,							ModifierType)
+-- values
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
 
-insert or replace into Modifiers
-	(ModifierId,							ModifierType)
-values
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,						Name,			Value)
+-- values
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
 
-insert or replace into ModifierArguments
-	(ModifierId,						Name,			Value)
-values
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
+insert or replace into PolicyModifiers(PolicyType,ModifierID)values
+	('POLICY_GOV_MERCHANT_DISTRICTS','MERCHANT_REPUBLIC_DISTRICTS');
+
+--神权
+
+delete from GovernmentModifiers where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
+insert or replace into GovernmentModifiers(GovernmentType,ModifierID)values
+	('GOVERNMENT_THEOCRACY','TRAIT_GAINS_FOUNDER_BELIEF_MAJORITY_RELIGION');
 
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';		
