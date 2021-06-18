@@ -610,8 +610,12 @@ values
 	('TRAIT_PLANT_ENGINEER_POINT_ECSTATIC',			'HappinessType',				'HAPPINESS_ECSTATIC');
 	
 --ui
-update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION' where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
-	
+update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION', Housing = 1 where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+
+insert or replace into Improvement_Adjacencies(ImprovementType,YieldChanegId)
+	select 'IMPROVEMENT_GOLF_COURSE','GOLF_COURSE_' || DistrictType || 'ADJACENCY' from Districts;
+insert or replace into Adjacency_YieldChanges(ID,YieldType,YieldChange,AdjacentDistrict,PrereqCivic)
+	select 'GOLF_COURSE_' || DistrictType || 'ADJACENCY', 'YIELD_CULTURE', 1, DistrictType, 'CIVIC_HUMANISM' from Districts;
 ---------------------------------------------------------------------------------------------------------------------
 --SCYTHIA
 insert or replace into TraitModifiers
