@@ -33,11 +33,11 @@ where CivilizationType = 'CIVILIZATION_AUSTRALIA'and ResourceType = 'RESOURCE_HO
 
 --start bias for England
 update StartBiasResources set
-	Tier = 4		
+	Tier = 3		
 where CivilizationType = 'CIVILIZATION_ENGLAND' and ResourceType = 'RESOURCE_COAL';
 
 update StartBiasResources set
-	Tier = 4	
+	Tier = 2	
 where CivilizationType = 'CIVILIZATION_ENGLAND' and ResourceType = 'RESOURCE_IRON';
 
 --start bias for Persia

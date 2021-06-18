@@ -74,6 +74,69 @@ values
 	('TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM',		'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
 	('TRAIT_AUTO_THEME_ART_MUSEUM',				'BuildingType',			'BUILDING_MUSEUM_ART');*/
 
+-- Victoria
+-- insert or replace into TraitModifiers (TraitType,	ModifierId)
+-- values
+-- 	('TRAIT_LEADER_PAX_BRITANNICA',		'TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER');
+
+-- insert or replace into Modifiers
+-- 	(ModifierId,									ModifierType)
+-- values
+-- 	('TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER',	'MODIFIER_PLAYER_ADJUST_SETTLE_FOREIGN_CONTINENT_UNIT_CLASS');
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,									Name,				 		Value)
+-- values
+-- 	('TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER',	'UnitPromotionClassType',	'PROMOTION_CLASS_SUPPORT');
+
+-- England
+delete from TraitModifiers where 
+	TraitType = 'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION' and ModifierId like 'TRAIT_POWERED_BUILDINGS_MORE_%';
+delete from TraitModifiers where 
+	TraitType = 'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION' and ModifierId like 'TRAIT_ADJUST_MILITARY_ENGINEER_%';
+delete from TraitModifiers where 
+	TraitType = 'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION' and ModifierId like 'TRAIT_ADJUST_%_STOCKPILE_CAP';
+
+insert or replace into TraitModifiers (TraitType,		ModifierId)
+values
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_REVEAL_IRON'),
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_IRON_PRODUCTION'),
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_COAL_PRODUCTION'),
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION'),
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_SHIPYARD_INDISTRIALIZATION');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType)
+values
+	('TRAIT_REVEAL_IRON',								'MODIFIER_PLAYER_GRANT_FREE_RESOURCE_VISIBILITY'),
+	('TRAIT_SHIPYARD_INDISTRIALIZATION',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,												SubjectRequirementSetId)
+values
+	('TRAIT_IRON_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'HAS_IMPROVED_IRON'),
+	('TRAIT_COAL_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'HAS_IMPROVED_COAL'),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',	'DISTRICT_IS_INDUSTRIAL_ZONE');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId,	RunOnce,	Permanent)
+values
+	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_SHIPYARD',			1,		1);
+-- REQUIRES_PLAYER_CAN_SEE_IRON
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('TRAIT_REVEAL_IRON',								'ResourceType',	'RESOURCE_IRON'),
+	('TRAIT_IRON_PRODUCTION',							'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_IRON_PRODUCTION',							'Amount',		1),
+	('TRAIT_COAL_PRODUCTION',							'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_COAL_PRODUCTION',							'Amount',		1),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'Amount',		4),
+	('TRAIT_SHIPYARD_INDISTRIALIZATION',				'ModifierId',	'TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER'),
+	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'TechType',		'TECH_INDUSTRIALIZATION'),
+	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'GrantTechIfBoosted',	1);
+
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
 
