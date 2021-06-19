@@ -13,7 +13,7 @@
 -- update Units_XP2 set ResourceCost = 5 where ResourceCost > 0;
 
 -- Outer Defense
-update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_WALLS';
+update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_WALLS';
 -- update Buildings set OuterDefenseStrength = 2 where
 --     BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
 -- update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;

@@ -262,8 +262,8 @@ where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_
 --delete from BuildingModifiers where BuildingType = 'BUILDING_BURJ_KHALIFA';
 
 --BUILDING_TOWER_BRIDGE
-update ModifierArguments set Value = '15' where ModifierId = 'TOWER_BRIDGE_CITY_PRODUCTION' and Name = 'Amount';
-update ModifierArguments set Value = '15' where ModifierId = 'TOWER_BRIDGE_CITY_GOLD' and Name = 'Amount';
+update ModifierArguments set Value = '10' where ModifierId = 'TOWER_BRIDGE_CITY_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = '10' where ModifierId = 'TOWER_BRIDGE_CITY_GOLD' and Name = 'Amount';
 
 --BUILDING_BRANDENBURG_GATE
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GATE_TRAINED_UNIT_XP_MODIFIER';
@@ -289,9 +289,9 @@ insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value) 
 values
 	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS', 	'YieldType',	'YIELD_PRODUCTION'),
-	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'Amount',		15),
+	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'Amount',		10),
 	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS', 		'YieldType',	'YIELD_SCIENCE'),
-	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'Amount',		15),
+	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'Amount',		10),
 	('BRANDENBURG_GARRISON_LOYALTY',				'Amount',		3);
 
 --BUILDING_BOROBUDUR

@@ -92,4 +92,22 @@ delete from Improvement_ValidTerrains where
 delete from Improvement_ValidTerrains where
 	ImprovementType = 'IMPROVEMENT_BARBARIAN_CAMP' and TerrainType = 'TERRAIN_SNOW_HILLS';
 
-	
+-- Goody
+-- test: sumeria gives heavy cavalry unit instead.
+-- update ModifierArguments set Value = 'IMPROVEMENT_METEOR_GOODY' where ModifierId = 'TRAIT_BARBARIAN_CAMP_GOODY' and Name = 'GoodyHutImprovementType';
+
+insert or replace into Types (Type, Kind) values ('IMPROVEMENT_GOODY_BUILDER', 'KIND_IMPROVEMENT');
+insert or replace into Improvements
+	(ImprovementType,				Name,									Icon,							PlunderType,	RemoveOnEntry,	Goody,	GoodyNotify)
+values
+	('IMPROVEMENT_GOODY_BUILDER',	'LOC_IMPROVEMENT_GOODY_BUILDER_NAME',	'ICON_IMPROVEMENT_GOODY_HUT',	'NO_PLUNDER',	1,				1,		0);
+
+insert or replace into GoodyHuts
+	(GoodyHutType,				ImprovementType,				Weight,	ShowMoment)
+values
+	('DUMMY_GOODY_BUILDIER',	'IMPROVEMENT_GOODY_BUILDER',	100,	0);
+
+insert or replace into GoodyHutSubTypes
+	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
+values
+	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');

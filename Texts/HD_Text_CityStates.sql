@@ -2,7 +2,10 @@
 -- Language: en_US
 insert or replace into EnglishText
     (Tag,                                                 Text)
-values   
+values
+    -- LOC_LEADER_TRAIT_AKKAD_DESCRIPTION
+    ("LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                "Your units receive 50% more experience from battles they initiate."),
+    ("LOC_CIVILIZATION_KABUL_BONUS",                      "Your units receive 50% more experience from battles they initiate."),
     ("LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. +2 [Icon_production] Production from Harbor and each building inside Harbor District."),
     ("LOC_CIVILIZATION_AUCKLAND_BONUS",                   "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. +2 [Icon_production] Production from Harbor and each building inside Harbor District."),
     ("LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",             "Your Builders can now make Moai improvements.[NEWLINE][NEWLINE]Moai provide +1 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every 2 adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile. +2 [ICON_Culture] Culture if adjacent to a Coast or Lake tile . Additional [ICON_Culture] Culture and [ICON_Tourism] Tourism as you advance through the Civics and Technology Tree. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can only be placed adjacent to a Lake or Coast tile."),
@@ -67,6 +70,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                "您的单位由他们发起的战斗中获得额外50%经验值。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_KABUL_BONUS",                      "您的单位由他们发起的战斗中获得额外50%经验值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "渔船+1 [ICON_PRODUCTION] 生产力。若玩家进入工业时代则额外 +1 [ICON_Production] 生产力。港口及每级建筑+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_AUCKLAND_BONUS",                   "渔船+1 [ICON_PRODUCTION] 生产力。若玩家进入工业时代则额外 +1 [ICON_Production] 生产力。港口及每级建筑+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",             "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+1 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。与海岸或湖泊单元格相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。可建在平原、平原丘陵、草原、草原丘陵或火山土之上。只能建在相邻湖泊或近海的单元格上。"),

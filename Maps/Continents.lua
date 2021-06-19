@@ -51,7 +51,7 @@ function GenerateMap()
 	end
 
 	plotTypes = GeneratePlotTypes(world_age);
-	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, false, temperature);
+	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, true, temperature);
 	ApplyBaseTerrain(plotTypes, terrainTypes, g_iW, g_iH);
 
 	AreaBuilder.Recalculate();
@@ -61,7 +61,7 @@ function GenerateMap()
 	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
 	local biggest_area = Areas.FindBiggestArea(false);
 	print("After Adding Hills: ", biggest_area:GetPlotCount());
-	AddTerrainFromContinents(plotTypes, terrainTypes, world_age, g_iW, g_iH, iContinentBoundaryPlots);
+	AddTerrainFromContinents(plotTypes, terrainTypes, world_age, g_iW, g_iH, iContinentBoundaryPlots, true);
 
 	AreaBuilder.Recalculate();
 

@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
+    ("LOC_TRAIT_CIVILIZATION_FACES_OF_PEACE_DESCRIPTION",             "Cannot declare war on City-States or surprise wars. Surprise wars cannot be declared on Canada. For every 100 [ICON_TOURISM] Tourism per turn earn 1 [ICON_Favor] Diplomatic Favor per turn. Receive +100% [ICON_Favor] Diplomatic Favor from successfully completing an Emergency or Scored Competition. When you capture a Barbarian Outpost, receive a builder reward in addition to the usual [ICON_Gold] Gold."),
     ("LOC_TRAIT_LEADER_GRAND_EMBASSY_DESCRIPTION",                    "Can purchase buildings in Holy Site and Industrial Zone with [ICON_FAITH] Faith. -10% [ICON_FAITH] Faith cost when patronizing Great Person."),
     ("LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION",   "+2 [ICON_Food] Food for all Tundra Districts. Extra territory upon founding cities. +1 [ICON_Faith] Faith and +1 [ICON_Production] Production from Tundra. Units do not receive damage from Blizzards. Civilizations that are at war with Russia receive +100% unit damage from Blizzards in Russian territory."),
     ("LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",        "Begin the game with the Animal Husbandry technology unlocked. +1 [Icon_Production] Production for all Patures across the Nation. Improved [ICON_RESOURCE_HORSES] Horses accumulate 3 more resources per turn. Receive a second light cavalry unit or Saka Horse Archer each time you train a light cavalry unit or Saka Horse Archer."),
@@ -54,6 +55,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FACES_OF_PEACE_DESCRIPTION",             "无法对城邦宣战或发动突袭战争。无法对加拿大发动突袭战争。每回合每获得100点 [ICON_TOURISM] 旅游业绩，即可每回合获得1点 [ICON_Favor] 外交支持。成功完成紧急状况或积分竞赛后+100% [ICON_Favor] 外交支持。当您清理一个蛮族哨站时，奖励一个建造者。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_DESCRIPTION",                    "可以用 [ICON_FAITH] 信仰购买圣地和工业区建筑。用 [ICON_FAITH] 信仰值招募伟人时所需的费用-10%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION",   "所有位于冻土单元格的区域+2 [ICON_Food] 食物。建立城市可获得额外领土。冻土提供+1 [ICON_Faith] 信仰值与+1 [ICON_Production] 生产力。与俄罗斯交战的文明单位如处于俄罗斯领土中，遭遇暴风雪时受到的伤害+100%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",        "游戏初始便解锁‘畜牧’科技。牧场+1 [ICON_PRODUCTION] 生产力。开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),

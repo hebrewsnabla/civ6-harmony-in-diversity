@@ -35,7 +35,7 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_GUN' where Unit = 'UNIT_CHINES
     and exists (select UnitType from Units where UnitType = 'UNIT_FIELD_GUN');
 ------ UNIT_CHINESE_SHIGONG
 -- 西班牙
-update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 ------ UNIT_SPANISH_TERCIO
 -- 罗马
@@ -62,7 +62,7 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_REITER' where Unit = 'UNIT_INDIAN_VA
 -- 英国
 update Units set Cost = 180, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 45, RangedCombat = 55, StrategicResource = NULL where UnitType = 'UNIT_ENGLISH_SEADOG';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ENGLISH_SEADOG';
-update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ENGLISH_REDCOAT';
+update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_ENGLISH_REDCOAT';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ENGLISH_REDCOAT';
 update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_ENGLISH_REDCOAT' and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_ENGLISH_LONGBOWMAN
@@ -81,7 +81,7 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_LIGHT_CRUISER' where CivUniqueU
     and exists (select UnitType from Units where UnitType = 'UNIT_LIGHT_CRUISER');
 ------ UNIT_BRAZILIAN_BANDEIRANTE
 -- 法国
-update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
+update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
 update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_FRENCH_GARDE_IMPERIALE' and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_FRENCH_GENDARME
@@ -186,7 +186,7 @@ update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 
 -- 奥斯曼
 update Units set Cost = 155, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
-update Units set Cost = 105, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SULEIMAN_JANISSARY';
+update Units set Cost = 105, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_SULEIMAN_JANISSARY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SULEIMAN_JANISSARY';
 ------ UNIT_OTTOMAN_SIPAHI
 -- 腓尼基

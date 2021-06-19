@@ -251,3 +251,17 @@ insert or replace into Requirements(RequirementId, RequirementType)values
 	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','REQUIREMENT_REQUIREMENTSET_IS_MET');
 insert or replace into RequirementArguments(RequirementId,Name,Value)values
 	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','RequirementSetId','PLOT_IS_OR_ADJACENT_TO_COAST');
+
+-- Kabul
+update ModifierArguments set Value = 50 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
+
+-- 阿卡德改为：可用信仰购买支援单位，且为支援单位+2速。
+-- Akkad
+-- delete from TraitModifiers where TraitType = 'MINOR_CIV_AKKAD_TRAIT';
+-- 	-- MINOR_CIV_AKKAD_UNIQUE_INFLUENCE_BONUS_MELEE
+-- 	-- MINOR_CIV_AKKAD_UNIQUE_INFLUENCE_BONUS_ANTI_CAVALRY
+
+-- insert or replace into TraitModifiers
+-- 	(TraitType,					ModifierId)
+-- values
+-- 	('MINOR_CIV_AKKAD_TRAIT',	);

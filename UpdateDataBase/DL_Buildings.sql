@@ -1294,7 +1294,7 @@ values
 insert or replace into Buildings 
 	(BuildingType, 						Name, 									Cost, 	Description,								InternalOnly,	OuterDefenseHitPoints) 
 values
-	('BUILDING_WALLS_EARLY', 			'LOC_BUILDING_WALLS_EARLY_NAME', 		1, 		'LOC_BUILDING_WALLS_EARLY_DESCRIPTION',		1,				50);
+	('BUILDING_WALLS_EARLY', 			'LOC_BUILDING_WALLS_EARLY_NAME', 		1, 		'LOC_BUILDING_WALLS_EARLY_DESCRIPTION',		1,				25);
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 									Cost, 	Description,								InternalOnly) 

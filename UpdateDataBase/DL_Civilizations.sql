@@ -869,3 +869,21 @@ values
 	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2),
 	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_CULTURE'),
 	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2);
+
+----------------------------------------------------------------------------------------------------------------------
+-- Canada
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_FACES_OF_PEACE',	'TRAIT_BARBARIAN_CAMP_BUILDER_HD');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'MODIFIER_PLAYER_ADJUST_IMPROVEMENT_GOODY_HUT');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,						Value)
+values
+	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'ImprovementType',			'IMPROVEMENT_BARBARIAN_CAMP'),
+	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'GoodyHutImprovementType',	'IMPROVEMENT_GOODY_BUILDER');

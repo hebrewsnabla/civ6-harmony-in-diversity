@@ -217,9 +217,9 @@ values
 	('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'UnitType',     'UNIT_LAHORE_NIHANG'),
     ('LAHORE_NIHANG_BARRACKS_ADD_PURCHASE_COST',	'Amount',       -50),
 	('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
-    ('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'Amount',       -50),
+    ('LAHORE_NIHANG_ARMORY_ADD_PURCHASE_COST',		'Amount',       -100),
 	('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'UnitType',     'UNIT_LAHORE_NIHANG'),
-    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -50);
+    ('LAHORE_NIHANG_ACADEMY_ADD_PURCHASE_COST',		'Amount',       -150);
 
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)

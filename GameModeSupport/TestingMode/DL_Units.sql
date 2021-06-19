@@ -21,14 +21,14 @@ update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWORDSMAN';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MAN_AT_ARMS';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MAN_AT_ARMS';
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MUSKETMAN';
+update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_MUSKETMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MUSKETMAN';
-update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_LINE_INFANTRY';
+update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_LINE_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_LINE_INFANTRY';
--- update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_WW1_INFANTRY';
+-- update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_WW1_INFANTRY';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_WW1_INFANTRY';
 -- Special Cases: UNIT_INFANTRY
-update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_INFANTRY';
+update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_INFANTRY';
 -- update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MODERN_INFANTRY';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MODERN_INFANTRY';

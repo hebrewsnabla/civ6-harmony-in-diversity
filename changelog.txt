@@ -2123,7 +2123,7 @@ AI测试模式（数值测试中，慎重开启）：
 普拉斯拉夫调整为军营地基为本城+2瓶，每个军营建筑为本城+2瓶。
 威尼斯军械库：为本城近海单元格+1锤+1金，每回合提供6点硝石，生产海军单位时赠送一个相同的海军单位，必须建造在靠近工业区的近海单元格上。
 
-[v0.8.3]
+[v0.8.1]
 ai双倍出兵的高级选项下所有战略开发产出+1。
 克里uu改为30锤。
 英国能力调整 详情见游戏内百科。
@@ -2133,9 +2133,39 @@ ai双倍出兵的高级选项下所有战略开发产出+1。
 澳大利亚牧场关联提升至2，与海岸关联同级。
 修复宗教统一、朝圣、神圣之地提供信仰产出的中文文本不显示在左上角的问题。
 堡垒改为军事工程学解锁。
-波兰能力调整 详情见游戏内百科
 （by 小雨）
 苏格兰能力更新 详情见游戏内百科
 斯基泰能力更新 详情见游戏内百科
 俄罗斯能力更新 详情见游戏内百科
 商共和神权政体调整
+
+[v0.8.1]
+1. Add two advanced game options (which will probably make the game more challenging).
+2. Add citizen slot to Diplomatic quarter and Government Plaza, yields culture and science. Buildings inside these districts increase the citizen yield in the district.
+3. Add envoy award to Diplomatic quarter buildings.
+4. CityStates ability update: Aukland, Nan Madol, Ayutthaya, Chinguetti, Preslav.
+5. Civilizations abilities update: Germany, British, Scotland, Russia, Scythia. Minor update on Mali and Nubia.
+6. Update the bonus of Merchant Republic and Theocracy governorments.
+7. Update two pantheon beliefs: god of the forge and god of craftsmen.
+
+[v0.8.1.1]
+圣战移动到王权。
+君主制的传承效果中的驻军时建造单位加速20%改为固定效果。
+
+移除盘古和分大陆的靠山山脉。
+
+加拿大ua新增：清理一个蛮族寨子时送一个工人（到最近城市）。
+
+喀布尔由+100%经验改为+50%经验。
+拉合尔的尼杭战士的价格修改，出军营建筑后价格分别改为基础价格的150%，250%，400%。
+
+兵马俑送单位升级改为送15经验。
+鲁尔山谷新增：每回合提供免费的6点煤资源。
+勃兰登堡门和伦敦塔桥数值从15%调整为10%。
+
+AI测试模式：降低ai对金币的价值判定。
+
+军事测试模式：火枪和线列的一次性资源消耗改为硝石。
+
+(by 傲娇)
+波兰能力调整 详情见游戏内百科

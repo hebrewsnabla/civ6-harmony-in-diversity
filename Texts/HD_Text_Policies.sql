@@ -19,7 +19,8 @@ values
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each Government Plaza and its building, Diplomatic Quarter and its building and palace in a city."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each Government Plaza and its building and palace in a city."),
         -- Tier 2
-    ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +10%, +10% [ICON_GOLD] Gold, +20% [ICON_PRODUCTION] Production toward units for cities with a garrisoned unit."),
+    ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +10%, +10% [ICON_GOLD] Gold for cities with a garrisoned unit."),
+    ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50% Influence Points. +20% [ICON_Production] Production toward units for cities with a garrisoned unit."),
     ("LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "+20% [ICON_GOLD] Gold in all cities with an established [ICON_Governor] Governor. +20% Production toward Districts."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "Reduces the cost of purchasing a tile by 20%."),
     ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat. Gains +1 [ICON_Faith] Faith from each follower of the Religion that has established as majority of your civilization."),
@@ -123,7 +124,8 @@ values
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场区域或其中的建筑，便+2所有产出。"),
         -- Tier 2
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%；城市生产单位时+20% [ICON_PRODUCTION] 生产力。 "),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%。"),
+    ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50%影响力点数。拥有驻军单位的城市生产单位时+20% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "所有 [ICON_Governor] 总督就职城市产出的 [ICON_GOLD] 金币+20%。建造区域时+20%生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "购买一个单元格的费用降低20%。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "神学战争中+5 [ICON_Religion] 宗教战斗力。每个人口产出1 [ICON_Faith] 信仰。"), -- 从已成为多数城市信仰的宗教中获得信仰值，每个信仰该宗教的人口+1 [Icon_Faith] 信仰值

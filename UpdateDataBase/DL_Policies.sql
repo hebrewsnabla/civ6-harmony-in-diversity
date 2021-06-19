@@ -569,7 +569,7 @@ insert or replace into PolicyModifiers
 	(PolicyType,							ModifierId)
 values
 	('POLICY_GOV_MONARCHY',					'MONARCHY_CITYGROWTH_BONUS'),
-	('POLICY_GOV_MONARCHY',					'MONARCHY_UNITPRODUCTION_BONUS'),
+	-- ('POLICY_GOV_MONARCHY',					'MONARCHY_UNITPRODUCTION_BONUS'),
 	('POLICY_GOV_MONARCHY',					'MONARCHY_GOLD_BONUS');
 
 insert or replace into Modifiers
