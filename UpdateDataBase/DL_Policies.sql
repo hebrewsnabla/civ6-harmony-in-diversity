@@ -607,20 +607,46 @@ delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
 insert or replace into GovernmentModifiers
 	(GovernmentType,					ModifierId)
 values
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
+	-- ('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
 	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_DISTRICTS' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_GOLD_MODIFIER' and Name = 'Amount';
+-- insert or replace into Modifiers
+-- 	(ModifierId,							ModifierType)
+-- values
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,						Name,			Value)
+-- values
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
+-- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
+
+insert or replace into PolicyModifiers(PolicyType,	ModifierID)values
+	('POLICY_GOV_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_DISTRICTS');
+
+-- 神权
+-- delete from GovernmentModifiers where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
+-- insert or replace into GovernmentModifiers(GovernmentType,	ModifierID)values
+-- 	('GOVERNMENT_THEOCRACY',	'TRAIT_GAINS_FOUNDER_BELIEF_MAJORITY_RELIGION');
+
+update Modifiers set SubjectRequirementSetId = NULL where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
+update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
+
+insert or replace into GovernmentModifiers(GovernmentType,	ModifierID)values
+	('GOVERNMENT_THEOCRACY',	'THEOCRACY_HOLY_SITE_PURCHASE_MILITARY');
 
 insert or replace into Modifiers
-	(ModifierId,							ModifierType)
+	(ModifierId,								ModifierType,											SubjectRequirementSetId)
 values
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
+	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	'CITY_HAS_HOLY_SITE');
 
 insert or replace into ModifierArguments
-	(ModifierId,						Name,			Value)
+	(ModifierId,								Name,	Value)
 values
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
-	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
+	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'Tag',	'CLASS_LAND_COMBAT');
 
+-- policy housing
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';		
 
