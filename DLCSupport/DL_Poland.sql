@@ -17,6 +17,7 @@ values
 -- values
 --     ('BUILDING_SUKIENNICE',                  'MARKET_GOLD_PERCENTAGE_BOOST');
 
+/*
 -- By Xiaoyu
 ----------------------------------------------------------------------------------
 -- Poland
@@ -184,8 +185,8 @@ insert or replace into RequirementSets
 values
     ('HD_PLAYER_HAS_ALLY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL'),
     ('HD_PLOT_HAS_LUXURY_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
+*/
 
-/*
 --Poland another plan by zhushou
 -------------------------------------------------------------------------
 delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
