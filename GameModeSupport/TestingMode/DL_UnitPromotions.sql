@@ -175,7 +175,7 @@ values
     ('HD_GARRISON_BONUS',                       'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'GARRISON_REQUIREMENTS'),
     ('HD_HILLS_DEFEND_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'DEFENCE_MELEE_ATTACK_ON_HILLS_REQUIREMENTS'),
     ('HD_IGNORE_ZOC',                           'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC',                               NULL),
-    ('HD_OPEN_AREA_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'PLOT_IS_OPEN_AREA_REQUIREMENTS'),
+    ('HD_OPEN_AREA_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'REQUIREMENTS_OPPONENT_IS_WOUNDED'), -- PLOT_IS_OPEN_AREA_REQUIREMENTS
     ('HD_EXTRA_FAITH_PLUNDER_DISTRICT',         'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_DISTRICT_PILLAGE',                NULL),
     ('HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT',      'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_IMPROVEMENT_PILLAGE',             NULL),
     ('HD_ENEMY_MOVEMENT',                       'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',                                 'BERSERKER_PLOT_IS_ENEMY_TERRITORY'),
@@ -212,7 +212,8 @@ values
     ('HD_FOREST_AND_JUNGLE_COMBAT_BONUS',       'Preview',  '+{1_Amount} {LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT}'),
     ('HD_GARRISON_BONUS',                       'Preview',  '+{1_Amount} {LOC_HD_GARRISON_BONUS_PREVIEW_TEXT}'),
     ('HD_HILLS_DEFEND_BONUS',                   'Preview',  '+{1_Amount} {LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT}'),
-    ('HD_OPEN_AREA_STRENGTH',                   'Preview',  '+{1_Amount} {LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT}');
+    -- ('HD_OPEN_AREA_STRENGTH',                   'Preview',  '+{1_Amount} {LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT}'),
+    ('HD_OPEN_AREA_STRENGTH',                   'Preview',  '+{1_Amount} {LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT}');
 
 ---------------------------------------------------------------------------------------------------------------
 -- Melee, ranged, anti-cavalry, naval melee, naval ranged, naval raider                                                                               --
@@ -642,7 +643,7 @@ values
     ('PROMOTION_RECON_RAPID_FIRE',      'LOC_PROMOTION_RECON_RAPID_FIRE_NAME',      'LOC_PROMOTION_RECON_RAPID_FIRE_DESCRIPTION',       4,      'PROMOTION_CLASS_RECON',            1),
     ('PROMOTION_RECON_ACCURATE',        'LOC_PROMOTION_RECON_ACCURATE_NAME',        'LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION',         4,      'PROMOTION_CLASS_RECON',            3),
     -- Heavy
-    -- ('PROMOTION_HEAVYC_SHOCK',          'LOC_PROMOTION_HEAVYC_SHOCK_NAME',          'LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION',           2,      'PROMOTION_CLASS_LIGHT_CAVALRY',    1),
+    ('PROMOTION_HEAVYC_SHOCK',          'LOC_PROMOTION_HEAVYC_SHOCK_NAME',          'LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION',           2,      'PROMOTION_CLASS_HEAVY_CAVALRY',    1),
     -- Light
     ('PROMOTION_LIGHTC_MILITANT',       'LOC_PROMOTION_LIGHTC_MILITANT_NAME',       'LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION',        2,      'PROMOTION_CLASS_LIGHT_CAVALRY',    1),
     ('PROMOTION_LIGHTC_SHOCK',          'LOC_PROMOTION_LIGHTC_SHOCK_NAME',          'LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION',           2,      'PROMOTION_CLASS_LIGHT_CAVALRY',    3),
@@ -656,6 +657,8 @@ update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_ROUT' where UnitPromo
 update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_MARAUDING' where UnitPromotion = 'PROMOTION_ROUT' and PrereqUnitPromotion = 'PROMOTION_BARDING';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_ROUT' where UnitPromotion = 'PROMOTION_ARMOR_PIERCING' and PrereqUnitPromotion = 'PROMOTION_MARAUDING';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_MARAUDING' where UnitPromotion = 'PROMOTION_REACTIVE_ARMOR' and PrereqUnitPromotion = 'PROMOTION_ROUT';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_HEAVYC_SHOCK' where UnitPromotion = 'PROMOTION_ROUT';
+update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_HEAVYC_SHOCK' where PrereqUnitPromotion = 'PROMOTION_ROUT';
 -- Light
 -- update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LIGHTC_SHOCK' where PrereqUnitPromotion = 'PROMOTION_CAPARISON';
 update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE' where UnitPromotion = 'PROMOTION_SPIKING_THE_GUNS';
@@ -673,12 +676,14 @@ values
     ('PROMOTION_AMBUSH',            'PROMOTION_SPYGLASS'),
     ('PROMOTION_RECON_RAPID_FIRE',  'PROMOTION_AMBUSH'),
     ('PROMOTION_RECON_ACCURATE',    'PROMOTION_AMBUSH'),
+    -- Heavy
     -- Light
     ('PROMOTION_LIGHTC_MILITANT',   'PROMOTION_DEPREDATION'),
     ('PROMOTION_LIGHTC_SHOCK',      'PROMOTION_DOUBLE_ENVELOPMENT');
 
 -- Remove unused promotions
 delete from UnitPromotions where UnitPromotionType = 'PROMOTION_RANGER' or UnitPromotionType = 'PROMOTION_ALPINE' or UnitPromotionType = 'PROMOTION_CAMOUFLAGE';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_ROUT';
 delete from UnitPromotions where UnitPromotionType = 'PROMOTION_COURSERS' or UnitPromotionType = 'PROMOTION_CAPARISON' or UnitPromotionType = 'PROMOTION_SPIKING_THE_GUNS';
 
 update ModifierArguments set Value = 5 where ModifierId = 'AMBUSH_INCREASED_COMBAT_STRENGTH' and Name = 'Amount';
@@ -702,6 +707,7 @@ values
     ('PROMOTION_RECON_RAPID_FIRE',      'RAPID_FIRE_ADDITIONAL_ATTACK'),
     ('PROMOTION_RECON_ACCURATE',        'ACCURATE_BONUS_RANGE'),
     -- Heavy Cavalry
+    ('PROMOTION_HEAVYC_SHOCK',          'SHOCK_OPEN_AREA_STRENGTH'),
     ('PROMOTION_ARMOR_PIERCING',        'ARMOR_PIERCING_ATTACK_BONUS'),
     ('PROMOTION_ARMOR_PIERCING',        'ARMOR_PIERCING_ATTACK_BONUS_HIGHER_STRENGTH'),
     ('PROMOTION_REACTIVE_ARMOR',        'REACTIVE_ARMOR_DEFEND_BONUS'),

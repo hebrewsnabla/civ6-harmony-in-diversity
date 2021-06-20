@@ -63,6 +63,8 @@
     <Update><Where Name="ICON_PROMOTION_GUERRILLA"/> <Set Index="3"/></Update>
     <Update><Where Name="ICON_PROMOTION_SENTRY"/> <Set Index="19"/></Update>
     <Update><Where Name="ICON_PROMOTION_SPYGLASS"/> <Set Index="18"/></Update>
+    <!-- Heavy -->
+    <Row Name="ICON_PROMOTION_HEAVYC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
     <!-- Light Cavalry -->
     <Row Name="ICON_PROMOTION_LIGHTC_MILITANT"              Atlas="ICON_ATLAS_PROMOTIONS" Index="31"/>
     <Row Name="ICON_PROMOTION_LIGHTC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
