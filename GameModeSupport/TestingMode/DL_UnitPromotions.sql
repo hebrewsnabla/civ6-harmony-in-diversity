@@ -28,7 +28,8 @@ values
     ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'KIND_ABILITY'),
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'KIND_ABILITY'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'KIND_ABILITY'),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'KIND_ABILITY'),
+    -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'KIND_ABILITY'),
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'KIND_ABILITY'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'KIND_ABILITY');
 
 insert or replace into TechnologyModifiers
@@ -50,7 +51,8 @@ values
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_ANTIC_HILLS_DEFEND_BONUS'),
     ('CIVIC_MERCANTILISM',                                  'HD_RECON_IGNORE_ZOC'),
     ('CIVIC_MILITARY_TRAINING',                             'HD_HEAVYC_OPEN_AREA_STRENGTH'),
-    ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_EXTRA_FAITH_PLUNDER'),
+    -- ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_EXTRA_FAITH_PLUNDER'),
+    ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_ENEMY_MOVEMENT'),
     ('CIVIC_MILITARY_TRAINING',                             'HD_SIEGE_ATTACK_AFTER_MOVE');
 
 insert or replace into Modifiers
@@ -69,7 +71,8 @@ values
     ('HD_ANTIC_HILLS_DEFEND_BONUS',                         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_RECON_IGNORE_ZOC',                                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_HEAVYC_OPEN_AREA_STRENGTH',                        'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
-    ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    -- ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    ('HD_LIGHTC_ENEMY_MOVEMENT',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_SIEGE_ATTACK_AFTER_MOVE',                          'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
 
 insert or replace into ModifierArguments
@@ -88,7 +91,8 @@ values
     ('HD_ANTIC_HILLS_DEFEND_BONUS',                         'AbilityType',  'ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD'),
     ('HD_RECON_IGNORE_ZOC',                                 'AbilityType',  'ABILITY_RECON_IGNORE_ZOC_HD'),
     ('HD_HEAVYC_OPEN_AREA_STRENGTH',                        'AbilityType',  'ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD'),
-    ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'AbilityType',  'ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD'),
+    -- ('HD_LIGHTC_EXTRA_FAITH_PLUNDER',                       'AbilityType',  'ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD'),
+    ('HD_LIGHTC_ENEMY_MOVEMENT',                            'AbilityType',  'ABILITY_LIGHTC_ENEMY_MOVEMENT_HD'),
     ('HD_SIEGE_ATTACK_AFTER_MOVE',                          'AbilityType',  'ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD');
 
 insert or replace into TypeTags
@@ -106,7 +110,8 @@ values
     ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'CLASS_ANTI_CAVALRY'),
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'CLASS_RECON'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'CLASS_HEAVY_CAVALRY'),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
+    -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE'),
     ('ABILITY_SEE_HIDDEN',                                      'CLASS_NAVAL_MELEE'),
     ('ABILITY_MONGOLIAN_KESHIG',                                'CLASS_NAVAL_MELEE');
@@ -126,7 +131,8 @@ values
     ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     NULL,   'LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION',                     1),
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             NULL,   'LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION',                             1),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    NULL,   'LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION',                    1),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   NULL,   'LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION',                   1),
+    -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   NULL,   'LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION',                   1),
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        NULL,   'LOC_ABILITY_LIGHTC_ENEMY_MOVEMENT_HD_DESCRIPTION',                        1),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      NULL,   'LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION',                      1);
 
 insert or replace into UnitAbilityModifiers
@@ -145,8 +151,9 @@ values
     ('ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD',                     'HD_HILLS_DEFEND_BONUS'),
     ('ABILITY_RECON_IGNORE_ZOC_HD',                             'HD_IGNORE_ZOC'),
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'HD_OPEN_AREA_STRENGTH'),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_DISTRICT'),
-    ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT'),
+    -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_DISTRICT'),
+    -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT'),
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'HD_ENEMY_MOVEMENT'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'HD_ATTACK_AFTER_MOVE');
 
 insert or replace into Modifiers
@@ -171,10 +178,11 @@ values
     ('HD_OPEN_AREA_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'PLOT_IS_OPEN_AREA_REQUIREMENTS'),
     ('HD_EXTRA_FAITH_PLUNDER_DISTRICT',         'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_DISTRICT_PILLAGE',                NULL),
     ('HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT',      'MODIFIER_PLAYER_UNIT_ADJUST_FAITH_ON_IMPROVEMENT_PILLAGE',             NULL),
+    ('HD_ENEMY_MOVEMENT',                       'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',                                 'BERSERKER_PLOT_IS_ENEMY_TERRITORY'),
     ('HD_ATTACK_AFTER_MOVE',                    'MODIFIER_PLAYER_UNIT_ADJUST_MOVE_AND_ATTACK',                          NULL);
 
 insert or replace into ModifierArguments
-    (ModifierId,                                Name,           Value)
+    (ModifierId,                                Name,          Value)
 values
     ('HD_BATTLE_LINE_COMBAT',                   'Amount',      3),
     ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Amount',      5),
@@ -191,6 +199,7 @@ values
     ('HD_OPEN_AREA_STRENGTH',                   'Amount',      5),
     ('HD_EXTRA_FAITH_PLUNDER_DISTRICT',         'Amount',      25),
     ('HD_EXTRA_FAITH_PLUNDER_IMPROVEMENT',      'Amount',      25),
+    ('HD_ENEMY_MOVEMENT',                       'Amount',      1),
     ('HD_ATTACK_AFTER_MOVE',                    'CanAttack',   1);
 
 insert or replace into ModifierStrings
@@ -289,24 +298,7 @@ values
 insert or replace into ModifierStrings
     (ModifierId,                                                Context,    Text)
 values
-    --melee
-    -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'Preview',    '+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    -- ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Preview',    '+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',             'Preview',    '+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    -- ('BATTLE_LINE_COMBAT',                                      'Preview',    '+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    --ranged
-    -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Preview',    '+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
-    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Preview',    '{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
     ('ANTI_CAVALRY_COMBAT_BONUS_DEFENDING',                     'Preview',    '+{1_Amount} {LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT}'),
-    ('SUPPRESSION_BONUS_VS_WOUNDED_UNITS',                      'Preview',    '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    -- ('SUPPRESSION_DEFNECE_BONUS',                               'Preview',    '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                     'Preview',    '+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    --anti-cavalry
-    -- ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
-    -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    ('THRUST_ATTACK_BONUS',                                     'Preview',    '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
-    --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',    '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('HD_WOLFPACK_ADJACENT_BONUS',                              'Preview',    '+{1_Amount} {LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT}');
 
 --unit upgrade ability 升级线
@@ -337,7 +329,9 @@ delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK
 
 --melee
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
-delete from UnitPromotions where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_AMPHIBIOUS';
+update UnitPromotions set Level = 2, Column = 3 where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
+-- delete from UnitPromotions where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_INCENDIARIES';
 delete from UnitPromotions where UnitPromotionType = 'PROMOTION_INCENDIARIES';
@@ -408,12 +402,12 @@ insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)
 values
     --melee
-    ('PROMOTION_AMPHIBIOUS',    'PROMOTION_TORTOISE'),
-    ('PROMOTION_AMPHIBIOUS',    'PROMOTION_COMMANDO'),
-    ('PROMOTION_COMMANDO',      'PROMOTION_AMPHIBIOUS'),
+    ('PROMOTION_ZWEIHANDER',    'PROMOTION_TORTOISE'),
+    ('PROMOTION_ZWEIHANDER',    'PROMOTION_COMMANDO'),
+    ('PROMOTION_COMMANDO',      'PROMOTION_ZWEIHANDER'),
     ('PROMOTION_LONG_MARCH',    'PROMOTION_COMMANDO'),
-    ('PROMOTION_LONG_MARCH',    'PROMOTION_AMPHIBIOUS'),
-    ('PROMOTION_URBAN_WARFARE', 'PROMOTION_AMPHIBIOUS'),
+    ('PROMOTION_LONG_MARCH',    'PROMOTION_ZWEIHANDER'),
+    ('PROMOTION_URBAN_WARFARE', 'PROMOTION_ZWEIHANDER'),
     ('PROMOTION_ELITE_GUARD',   'PROMOTION_LONG_MARCH'),
     --ranged
     -- ('PROMOTION_SNIPER',        'PROMOTION_VOLLEY'),
@@ -483,6 +477,7 @@ insert or replace into UnitPromotionModifiers
 values
     --melee
     -- ('PROMOTION_BATTLE_LINE',       'BATTLE_LINE_COMBAT'),
+    ('PROMOTION_ZWEIHANDER',        'ZWEIHANDER_FLANKED_BONUS'),
     ('PROMOTION_LONG_MARCH',        'MAMLUK_HEAL_EVERY_MOVE'),
     --ranged
     -- ('PROMOTION_GARRISON',          'GARRISON_LOYALTY_BONUS'),
@@ -511,7 +506,8 @@ insert or replace into Modifiers
     (ModifierId,                                                    ModifierType,                                           SubjectRequirementSetId)
 values
     --melee
-    --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                  'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
+    -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                  'DEFENSE_BONUS_VS_RANGED_AND_CITIES_REQUIREMENTS'),
+    ('ZWEIHANDER_FLANKED_BONUS',                                    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'HD_UNIT_IS_FLANKED_REQUIREMENTS'),
     -- ('BATTLE_LINE_COMBAT',                                          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                  'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     --ranged
     ('SNIPER_ATTACK_RANGE',                                         'MODIFIER_UNIT_ADJUST_ATTACK_RANGE',                    NULL),
@@ -530,28 +526,50 @@ values
     ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                  'WOLFPACK_ADJACENT_REQUIREMENTS');
 
 insert or replace into ModifierArguments
-    (ModifierId,                                                    Name,            Value)
+    (ModifierId,                                                    Name,           Value)
 values
     --melee
-    --('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'Amount',        7),
+    -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',                    'Amount',        7),
+    ('ZWEIHANDER_FLANKED_BONUS',                                    'Amount',       7),
     -- ('BATTLE_LINE_COMBAT',                                          'Amount',        5),
     -- ('GARRISON_LOYALTY_BONUS',                                      'Amount',        5),
-    ('SNIPER_ATTACK_RANGE',                                         'Amount',        1),
-    ('SUPPRESSION_BONUS_VS_WOUNDED_UNITS',                          'Amount',        5),
+    ('SNIPER_ATTACK_RANGE',                                         'Amount',       1),
+    ('SUPPRESSION_BONUS_VS_WOUNDED_UNITS',                          'Amount',       5),
     -- ('SUPPRESSION_DEFNECE_BONUS',                                   'Amount',        10),
-    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',        10),
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                         'Amount',       10),
      --anti-cavalry
     -- ('ECHELON_DEFENCE',                                             'Amount',        7),
-    ('THRUST_ATTACK_BONUS',                                         'Amount',        5),
-    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',        10),
-    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',          'ALL'),
+    ('THRUST_ATTACK_BONUS',                                         'Amount',       5),
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',       10),
+    ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',         'ALL'),
     --naval ranged
-    ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',        1),
+    ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',       1),
      --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',        10),
-    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',        100),
-    ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',   'ABILITY_WOLFPACK_ADJACENT_BONUS');
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       10),
+    ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',       100),
+    ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',  'ABILITY_WOLFPACK_ADJACENT_BONUS');
 
+insert or replace into ModifierStrings
+    (ModifierId,                                                Context,    Text)
+values
+    --melee
+    -- ('MELEE_DISTRICT_COMBAT_BONUS',                             'Preview',    '+{1_Amount} {LOC_ABILITY_MELEE_DISTRICT_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS',                    'Preview',    '+{1_Amount} {LOC_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('TORTOISE_DEFENSE_BONUS_VS_RANGED_AND_CITIES',             'Preview',    '+{1_Amount} {LOC_PROMOTION_TORTOISE_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('ZWEIHANDER_FLANKED_BONUS',                                'Preview',  '+{1_Amount} {LOC_PROMOTION_ZWEIHANDER_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    -- ('BATTLE_LINE_COMBAT',                                      'Preview',    '+{1_Amount} {LOC_PROMOTION_BATTLE_LINE_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --ranged
+    -- ('RANGED_GARRISON_DISTRICT_BONUS',                          'Preview',    '+{1_Amount} {LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION}'),
+    -- ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'Preview',    '{1_Amount} {LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION}'),
+    ('SUPPRESSION_BONUS_VS_WOUNDED_UNITS',                      'Preview',  '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    -- ('SUPPRESSION_DEFNECE_BONUS',                               'Preview',    '+{1_Amount} {LOC_PROMOTION_SUPPRESSION_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('EMPLACEMENT_DEFENSE_BONUS_VS_RANGED',                     'Preview',  '+{1_Amount} {LOC_PROMOTION_EMPLACEMENT_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --anti-cavalry
+    -- ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
+    -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('THRUST_ATTACK_BONUS',                                     'Preview',  '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    --naval raider
+    ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',  '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 
 ---------------------------------------------------------------------------------------------------------------
 -- Recon, light & heavy Cavalry, Siege                                                                       --
@@ -785,6 +803,8 @@ values
 insert or replace into RequirementSets
     (RequirementSetId,                              RequirementSetType)
 values
+    ('HD_UNIT_IS_FLANKED_REQUIREMENTS',             'REQUIREMENTSET_TEST_ALL'),
+    -- 
     ('HD_UNIT_ATTACKING_REQUIREMENTS',              'REQUIREMENTSET_TEST_ALL'),
     ('HD_UNIT_DEFENDING_REQUIREMENTS',              'REQUIREMENTSET_TEST_ALL'),
     -- 
@@ -801,6 +821,8 @@ values
 insert or replace into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 values
+    ('HD_UNIT_IS_FLANKED_REQUIREMENTS',             'HD_REQUIRES_UNIT_IS_FLANKED'),
+    -- 
     ('HD_UNIT_ATTACKING_REQUIREMENTS',              'PLAYER_IS_ATTACKER_REQUIREMENTS'),
     ('HD_UNIT_DEFENDING_REQUIREMENTS',              'PLAYER_IS_DEFENDER_REQUIREMENTS'),
     -- 
@@ -822,6 +844,7 @@ values
 insert or replace into Requirements
     (RequirementId,                                 RequirementType,                                        Inverse)
 values
+    ('HD_REQUIRES_UNIT_IS_FLANKED',                 'REQUIREMENT_PLOT_UNIT_FLANKED',                        0),
     ('REQUIRES_COMBAT_AGAINST_WEAKER_OPPONENT',     'REQUIREMENT_OPPONENT_IS_STRONGER',                     1),
     ('REQUIRES_LIGHT_CAVALRY_NEXT_TO_OWNER',        'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES',  0),
     ('REQUIRES_HEAVY_CAVALRY_NEXT_TO_OWNER',        'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES',  0);

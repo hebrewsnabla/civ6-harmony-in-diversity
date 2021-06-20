@@ -13,7 +13,8 @@ values
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
     ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                              "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
     ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                              "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh. [NEWLINE]Siege units gain the ability: Can attack after moving."),
-    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: +1 [ICON_Movement] if starting in enemy's territory."),
     ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "+2 [ICON_gold] Gold from the Camp improvement. [NEWLINE]Recon units gain the ability: Ignore the Zone of Control."),
     -- Abilities
     ("LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                            "+3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
@@ -28,7 +29,8 @@ values
     ("LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                     "+7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
     ("LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                             "Ignore the Zone of Control."),
     ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
-    ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    -- ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    ("LOC_ABILITY_LIGHTC_ENEMY_MOVEMENT_HD_DESCRIPTION",                        "+1 [ICON_Movement] if starting in enemy's territory."),
     ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving (enabled by Military Training Civic)."),
     -- Preview Text
     ("LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                                  "Adjacent to friendly melee unit"),
@@ -56,7 +58,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "重骑兵单位获得能力：在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。 [NEWLINE]攻城单位获得能力：可移动后攻击。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "营地+2 [ICON_gold] 金币。[NEWLINE]侦察单位获得能力：忽略控制区。"),
     -- Abilities
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                         "与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。"),
@@ -71,7 +74,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                  "在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                          "忽略控制区。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                 "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                "劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    -- ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                "劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_ENEMY_MOVEMENT_HD_DESCRIPTION",                     "在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "可移动后攻击（拥有军事训练市政后允许）。"),
 -- Preview Text
     ("zh_Hans_CN",  "LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                               "相邻友方近战单位"),
@@ -92,6 +96,7 @@ values
     -- Melee
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
+    ("LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                    "+7 [ICON_Strength] Combat Strength when flanked."),
     ("LOC_PROMOTION_LONG_MARCH_HD_NAME",                                        "Long March"),
     ("LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                                 "Heals at the end of every turn, even after moving or attacking."),
     -- Ranged
@@ -174,6 +179,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- Melee
+    ("zh_Hans_CN",  "LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                 "遭夹击时+7 [ICON_Strength] 战斗力。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_NAME",                                     "长途行军"),
