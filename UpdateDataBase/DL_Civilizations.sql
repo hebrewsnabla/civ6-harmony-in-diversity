@@ -315,8 +315,32 @@ update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCO
 --木人现在可以在魅力迷人及以上的地块建造，且生成相当于魅力值100%的文化产出。
 update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierId)
+values
+	('IMPROVEMENT_PASTURE',		'PASTURE_HOUSING_WITH_MAPUCHE_TRAIT');
 
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,											SubjectRequirementSetId)
+values
+	('PASTURE_HOUSING_WITH_MAPUCHE_TRAIT',		'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_HOUSING',		'PLAYER_IS_MAPUCHE');
 
+insert or replace into ModifierArguments
+	(ModifierId,								Name,		Value)
+values
+	('PASTURE_HOUSING_WITH_MAPUCHE_TRAIT',		'Amount',	1);
+
+insert or replace into RequirementSetRequirements 
+	(RequirementSetId,			RequirementId)	
+values
+	('PLAYER_IS_MAPUCHE',		'PLAYER_IS_CIVILIZATION_MAPUCHE');
+
+insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
+values
+	('PLAYER_IS_MAPUCHE',		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType) values
+	('IMPROVEMENT_CHEMAMULL', 'FEATURE_FOREST');
 --------------------------------------------------------------------------------------------------------------------------
 -- Georgia
 -- Resume ability (April Update)

@@ -32,10 +32,12 @@ update Units set Cost = 180 where UnitType = 'UNIT_SULEIMAN_JANISSARY';
 
 -- add worker's basic building charges
 update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
-update Units set BuildCharges = 3, BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+update Units set BuildCharges = 3 and BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
 
 -- UNIT_MILITARY_ENGINEER
 update Routes_XP2 set BuildWithUnitChargeCost = 0;
+update District_BuildChargeProductions set PercentProductionPerCharge = 30;
+--delete from Unit_BuildingPrereqs where Unit = 'UNIT_MILITARY_ENGINEER' and PrereqBuilding = 'BUILDING_ARMORY';
 insert or replace into Route_ResourceCosts
     (RouteType,                 ResourceType,       BuildWithUnitCost)
 values
@@ -49,6 +51,22 @@ insert or replace into Route_ValidBuildUnits
 values
     ('ROUTE_ANCIENT_ROAD',      'UNIT_ROMAN_LEGION'),
     ('ROUTE_MEDIEVAL_ROAD',     'UNIT_ROMAN_LEGION');
+/*
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+    ('BUILDING_ARMORY',				'ARMORY_MILITARY_ENGINEER_PURCHASE_DISCOUNT');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+values
+	('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',		'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST');
+
+insert or replace into ModifierArguments
+	(ModifierId,									    Name,			Value)
+values
+	('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'UnitType',	    'UNIT_MILITARY_ENGINEER'),
+    ('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'Amount',	    20);*/
 
 -- balance adjustments
 -- update Units set Cost = 70 where UnitType = 'UNIT_SETTLER';

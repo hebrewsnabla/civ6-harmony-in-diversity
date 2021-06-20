@@ -23,6 +23,7 @@ values
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",               "Lumber Mills and Camps can be built on Rainforest."),
     ("LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",     "+50% [ICON_Tourism] Tourism across your empire."),
     ("LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "+2 [ICON_Gold] Gold to Plantations."),
+    ("LOC_CIVIC_NATIONALISM_DESCRIPTION",             "Grants the ability to construct an additional Spy. Allows forming two identical units into a Corps or Fleet. Units have 50% less [ICON_Strength] Combat Strength reduction from being injured. Allows one new Casus Belli that can be used to justify wars: Colonial War."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "Build 3 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "Build 3 Workshops."),
@@ -67,6 +68,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",               "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",     "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "种植园+2 [ICON_gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_DESCRIPTION",             "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。受到伤害后，单位的 [ICON_Strength] 战斗力减益降低50%。现在可用一个新的战争借口替战争辩护：殖民战争。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "建造3座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "建造3座工作坊。"),
