@@ -205,8 +205,7 @@ values
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
-	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_LUXURY_MINE_GOLD'),
-	('TRAIT_LEADER_SAHEL_MERCHANTS',		'MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD');
+	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_LUXURY_MINE_GOLD');
 
 insert or replace into Modifiers 
 	(ModifierId, ModifierType) 
@@ -233,16 +232,42 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
 	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'YieldType',	'YIELD_FOOD'),
 	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'Amount',		1);
+/*每个沙漠丘陵矿山为本城国际商路+1 [ICON_Food] 食物。
+insert or replace into ImprovementModifiers
+	(ImprovementType,						ModifierID)
+values
+	('IMPROVEMENT_MINE',					'MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD');
 
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,															OwnerRequirementSetId,				SubjectRequirementSetId)
+values
+	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',		'MALI_DESERT_HILLS_REQUIREMENTS',	'MALI_REQUIREMENTS');
 
+insert or replace into ModifierArguments
+	(ModifierId,											Name,			Value)
+values
+	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'YieldType',	'YIELD_FOOD'),
+	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'Amount',		1);
+
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('MALI_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
+	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('MALI_REQUIREMENTS',					'PLAYER_IS_CIVILIZATION_MALI'),
+	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_DESERT_HILLS');
+*/
 insert or replace into TraitModifiers (TraitType, ModifierId) 
 select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_BONUS' || ResourceType from Improvement_ValidResources 
 where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
---where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType != 'RESOURCE_URANIUM' and ResourceType != 'RESOURCE_NITER' and ResourceType != 'RESOURCE_IRON' and ResourceType != 'RESOURCE_COAL' and ResourceType != 'RESOURCE_ALUMINUM';
 
 insert or replace into Modifiers (ModifierId,  		ModifierType,											SubjectRequirementSetId)
 select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS' from Improvement_ValidResources 
-where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType != (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
 
 insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
 select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,			'YieldType',    'YIELD_GOLD' from Improvement_ValidResources 

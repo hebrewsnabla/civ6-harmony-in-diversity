@@ -54,7 +54,7 @@ end
 Events.UnitGreatPersonCreated.Add(PedroGreatPersonFaith)
 
 --Mali EraScore +25 Gold
-function MaliPlayerEraScoreChanged(playerID:number, amountAwarded)
+function MaliPlayerEraScoreChanged(playerID, amountAwarded)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
