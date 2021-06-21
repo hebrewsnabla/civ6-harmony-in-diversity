@@ -198,20 +198,62 @@ update ModifierArguments set Value = 100 where
 
 ------------------------------------------------------------------------------------------------------------------
 -- Mali
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_LEADER_SAHEL_MERCHANTS', 'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN');
+insert or replace into TraitModifiers 
+	(TraitType, 							ModifierId) 
+values
+	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN'),
+	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
+	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
+	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
+	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_LUXURY_MINE_GOLD'),
+	('TRAIT_LEADER_SAHEL_MERCHANTS',		'MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD');
 
-insert or replace into Modifiers (ModifierId, ModifierType) values
-	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN', 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC');
+insert or replace into Modifiers 
+	(ModifierId, ModifierType) 
+values
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL'),
+	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL');
 
 insert or replace into ModifierArguments
-	(ModifierId,								Name,			Value)
+	(ModifierId,											Name,			Value)
 values
-	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'YieldType',	'YIELD_GOLD'),
-	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'TerrainType',	'TERRAIN_DESERT'),
-	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Origin',		1),
-	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',	'Amount',		1);
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',				'YieldType',	'YIELD_GOLD'),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',				'TerrainType',	'TERRAIN_DESERT'),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',				'Origin',		1),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN',				'Amount',		1),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',		'YieldType',	'YIELD_GOLD'),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',		'TerrainType',	'TERRAIN_DESERT_HILLS'),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',		'Origin',		1),
+	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',		'Amount',		1),
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'YieldType',	'YIELD_GOLD'),
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'TerrainType',	'TERRAIN_DESERT_HILLS'),
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Origin',		1),
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
+	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'YieldType',	'YIELD_FOOD'),
+	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'Amount',		1);
 
+
+insert or replace into TraitModifiers (TraitType, ModifierId) 
+select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_BONUS' || ResourceType from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+--where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType != 'RESOURCE_URANIUM' and ResourceType != 'RESOURCE_NITER' and ResourceType != 'RESOURCE_IRON' and ResourceType != 'RESOURCE_COAL' and ResourceType != 'RESOURCE_ALUMINUM';
+
+insert or replace into Modifiers (ModifierId,  		ModifierType,											SubjectRequirementSetId)
+select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS' from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType != (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+
+insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
+select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,			'YieldType',    'YIELD_GOLD' from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+
+insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
+select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,			'Amount',       10 from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+
+-- ud
+update Districts set Entertainment = 1 where DistrictType = 'DISTRICT_SUGUBA';
 insert or replace into DistrictModifiers(DistrictType,ModifierId)values
 	('DISTRICT_SUGUBA','SUGUBA_ALLOW_PURCHASE_DISTRICT');
 insert or replace into Modifiers(ModifierID,ModifierType)values

@@ -3,7 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                 Text)
 values
-    -- LOC_LEADER_TRAIT_AKKAD_DESCRIPTION
+    ("LOC_LEADER_TRAIT_AKKAD_DESCRIPTION",                "May purchase support units with [ICON_Faith] Faith. Land units can escort moving civilian and support units at their [ICON_Movement] Movement speed. "),
+    ("LOC_CIVILIZATION_AKKAD_BONUS",                      "May purchase support units with [ICON_Faith] Faith. Land units can escort moving civilian and support units at their [ICON_Movement] Movement speed. "),
     ("LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                "Your units receive 50% more experience from battles they initiate."),
     ("LOC_CIVILIZATION_KABUL_BONUS",                      "Your units receive 50% more experience from battles they initiate."),
     ("LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. +2 [Icon_production] Production from Harbor and each building inside Harbor District."),
@@ -70,6 +71,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AKKAD_DESCRIPTION",                "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_AKKAD_BONUS",                      "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                "您的单位由他们发起的战斗中获得额外50%经验值。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_KABUL_BONUS",                      "您的单位由他们发起的战斗中获得额外50%经验值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "渔船+1 [ICON_PRODUCTION] 生产力。若玩家进入工业时代则额外 +1 [ICON_Production] 生产力。港口及每级建筑+2 [ICON_Production] 生产力。"),

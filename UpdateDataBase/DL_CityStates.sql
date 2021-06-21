@@ -255,13 +255,46 @@ insert or replace into RequirementArguments(RequirementId,Name,Value)values
 -- Kabul
 update ModifierArguments set Value = 50 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
 
--- 阿卡德改为：可用信仰购买支援单位，且为支援单位+2速。
+-- 阿卡德改为：可用信仰购买支援单位，且为陆地军事单位提供护送能力。
 -- Akkad
--- delete from TraitModifiers where TraitType = 'MINOR_CIV_AKKAD_TRAIT';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_AKKAD_TRAIT';
 -- 	-- MINOR_CIV_AKKAD_UNIQUE_INFLUENCE_BONUS_MELEE
 -- 	-- MINOR_CIV_AKKAD_UNIQUE_INFLUENCE_BONUS_ANTI_CAVALRY
 
--- insert or replace into TraitModifiers
--- 	(TraitType,					ModifierId)
--- values
--- 	('MINOR_CIV_AKKAD_TRAIT',	);
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+ 	('MINOR_CIV_AKKAD_TRAIT',	'MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT'),
+	('MINOR_CIV_AKKAD_TRAIT',	'MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+insert or replace into Modifiers	
+	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+values
+	('MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT',						'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT_MODIFIER',				'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL),
+	('MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL);	
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+values
+	('MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT',						'ModifierId',		'MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT_MODIFIER'),
+	('MINOR_CIV_AKKAD_FAITH_PURCHASE_SUPPORT_MODIFIER',				'Tag',				'CLASS_SUPPORT'),
+	('MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',				'ModifierId',		'MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT_MODIFIER'),
+	('MINOR_CIV_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT_MODIFIER',	'AbilityType',		'ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+insert or replace into Types
+	(Type,													Kind)
+values
+	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'KIND_ABILITY');
+
+insert or replace into TypeTags		(Type,					Tag)
+select 'ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		Tag from TypeTags where Type = 'ABILITY_WOLIN_LAND_UNITS';
+
+insert or replace into UnitAbilities (UnitAbilityType, Inactive) values	
+	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',  1);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'ESCORT_MOBILITY_SHARED_MOVEMENT');

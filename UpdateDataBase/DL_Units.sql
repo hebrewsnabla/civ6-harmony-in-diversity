@@ -32,7 +32,7 @@ update Units set Cost = 180 where UnitType = 'UNIT_SULEIMAN_JANISSARY';
 
 -- add worker's basic building charges
 update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
-update Units set BuildCharges = 3 and BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
+update Units set BuildCharges = 3, BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
 
 -- UNIT_MILITARY_ENGINEER
 update Routes_XP2 set BuildWithUnitChargeCost = 0;

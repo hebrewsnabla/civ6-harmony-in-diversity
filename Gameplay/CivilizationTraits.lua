@@ -52,3 +52,15 @@ function PedroGreatPersonFaith(playerID, unitID, greatPersonClassID, greatPerson
 end
 
 Events.UnitGreatPersonCreated.Add(PedroGreatPersonFaith)
+
+--Mali EraScore +25 Gold
+function MaliPlayerEraScoreChanged(playerID:number, amountAwarded)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sCiv = playerConfig:GetCivilizationTypeName()
+	local sMaliGoldDesert = 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT'
+	if (not CivilizationHasTrait(sCiv, sMaliGoldDesert)) then return; end
+	player:GetTreasury():ChangeGoldBalance(amountAwarded * 25)
+end
+
+Events.PlayerEraScoreChanged.Add(MaliPlayerEraScoreChanged)
