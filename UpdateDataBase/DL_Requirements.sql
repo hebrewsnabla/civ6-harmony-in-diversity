@@ -800,11 +800,13 @@ values
 	('REQUIRES_DISTRICT_IS_NOT_CITY_CENTER',	'DistrictType',		'DISTRICT_CITY_CENTER'),
 	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE',		'FeatureType',		'FEATURE_JUNGLE'),
 	('REQUIRES_PLOT_ADJACENT_VOLCANO',			'FeatureType',		'FEATURE_VOLCANO'),
-	('REQUIRES_PLOT_ADJACENT_EYJAFJALLAJOKULL',	'FeatureType',		'FEATURE_EYJAFJALLAJOKULL'),
 	('REQUIRES_PLOT_ADJACENT_VESUVIUS',			'FeatureType',		'FEATURE_VESUVIUS'),
 	('REQUIRES_PLOT_ADJACENT_KILIMANJARO',		'FeatureType',		'FEATURE_KILIMANJARO');
 
--- HOME CONTINENT
+-- support for Viking DLC EYJAFJALLAJOKULL
+insert or replace into RequirementArguments (RequirementId,	Name,	Value)
+select	'REQUIRES_PLOT_ADJACENT_EYJAFJALLAJOKULL',	'FeatureType',	'FEATURE_EYJAFJALLAJOKULL'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_EYJAFJALLAJOKULL');
 
 -- AYUTTHAYA
 insert or replace into RequirementSets

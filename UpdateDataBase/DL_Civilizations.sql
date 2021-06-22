@@ -204,7 +204,7 @@ values
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN'),
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
-	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
+	-- ('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
 	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_LUXURY_MINE_GOLD');
 
 insert or replace into Modifiers 
@@ -232,7 +232,7 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
 	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'YieldType',	'YIELD_FOOD'),
 	('MALI_BONUS_LUXURY_INTERNATIONAL_TRADE_ROUTE_FOOD',	'Amount',		1);
-/*每个沙漠丘陵矿山为本城国际商路+1 [ICON_Food] 食物。
+/*每个沙漠丘陵矿山为本城国际商路+1食物。
 insert or replace into ImprovementModifiers
 	(ImprovementType,						ModifierID)
 values
@@ -262,20 +262,20 @@ values
 	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_DESERT_HILLS');
 */
 insert or replace into TraitModifiers (TraitType, ModifierId) 
-select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_BONUS' || ResourceType from Improvement_ValidResources 
-where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
 
 insert or replace into Modifiers (ModifierId,  		ModifierType,											SubjectRequirementSetId)
-select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS' from Improvement_ValidResources 
-where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS' from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
 
 insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
-select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,			'YieldType',    'YIELD_GOLD' from Improvement_ValidResources 
-where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,		'YieldType',    'YIELD_GOLD' from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
 
 insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
-select 'BONUS_LUXURY_GOLD_BONUS' || ResourceType,			'Amount',       10 from Improvement_ValidResources 
-where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC');
+select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,		'Amount',       10	from Improvement_ValidResources 
+where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
 
 -- ud
 update Districts set Entertainment = 1 where DistrictType = 'DISTRICT_SUGUBA';

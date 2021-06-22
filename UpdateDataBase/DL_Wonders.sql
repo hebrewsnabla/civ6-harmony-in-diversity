@@ -108,6 +108,46 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('BROADWAY_GRANTS_MUSICIAN',	'Amount',	1),
 ('BROADWAY_GRANTS_MUSICIAN',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN');
 
+update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_BROADWAY';
+update ModifierArguments set Value = 30 where ModifierId = 'BROADWAY_ADDCULTUREYIELD' and Name = 'Amount';
+/* update Modifiers set SubjectRequirementSetId = 'CITY_HAS_BROADWAY' where ModifierId = 'BROADWAY_ADDCULTUREYIELD';
+insert or replace into RequirementSets
+	(RequirementSetId,		RequirementSetType)
+values
+	('CITY_HAS_BROADWAY',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,		RequirementId)
+values
+	('CITY_HAS_BROADWAY',	'REQUIRES_CITY_HAS_BUILDING_BROADWAY');
+*/
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_POP_CULTURE'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_10_POPULATION_TOURISM'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_20_POPULATION_TOURISM'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
+
+insert or replace into Modifiers	
+	(ModifierId,								ModifierType,												SubjectRequirementSetId) 
+values
+	('BROADWAY_REGIONAL_POP_CULTURE',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL),
+	('BROADWAY_REGIONAL_10_POPULATION_TOURISM',	'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',			'STADIUM_10_POPULATION_REQUIREMENTS'),
+	('BROADWAY_REGIONAL_20_POPULATION_TOURISM',	'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',			'STADIUM_20_POPULATION_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value) 
+values
+	('BROADWAY_REGIONAL_POP_CULTURE',			'YieldType',	'YIELD_CULTURE'),
+	('BROADWAY_REGIONAL_POP_CULTURE',			'Amount',		1),
+	('BROADWAY_REGIONAL_10_POPULATION_TOURISM',	'Amount',		10),
+	('BROADWAY_REGIONAL_20_POPULATION_TOURISM',	'Amount',		10);
+
 --BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION
 update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
 
