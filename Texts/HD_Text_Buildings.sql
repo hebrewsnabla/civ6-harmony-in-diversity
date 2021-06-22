@@ -137,7 +137,7 @@ values
     -- 学院
     ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                          "城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 每回合科技值收入。"),
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。本城 [ICON_SCIENCE] 科技值+5%。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+5% [ICON_SCIENCE] 科技值。"),
     -- 剧院
@@ -182,7 +182,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "本城 [ICON_GOLD] 金币+5%。通电后额外为本城+5% [ICON_GOLD] 金币。"),
     -- 港口
-    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。为本城的 [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠资源地块+1 [ICON_Food] 食物."),
+    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。为本城的 [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠资源地块+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION",              "此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION",                          "此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。额外产出相当于港口相邻加成的 [ICON_FOOD] 食物。 [NEWLINE]玩家的 [ICON_GREATADMIRAL] 海军将领点数积累速度+10%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。"),
     -- 政府区

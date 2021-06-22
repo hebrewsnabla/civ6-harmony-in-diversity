@@ -6,9 +6,10 @@
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_JAPANESE_SAMURAI', 'UNIT_MAN_AT_ARMS');
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ENGLISH_REDCOAT', 'UNIT_LINE_INFANTRY');
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_FRENCH_GARDE_IMPERIALE', 'UNIT_LINE_INFANTRY');
+-- UPDATE Units SET Combat = 41 WHERE UnitType = 'UNIT_ROMAN_LEGION';
 
 /* Revert Unit Upgrade Changes */
-update UnitUpgrades set UpgradeUnit = 'UNIT_TREBUCHET' where UpgradeUnit = 'UNIT_CATAPULT';
+update UnitUpgrades set UpgradeUnit = 'UNIT_TREBUCHET' where UpgradeUnit = 'UNIT_DLV_TREBUCHET';
 update UnitUpgrades set UpgradeUnit = 'UNIT_LINE_INFANTRY' where UpgradeUnit = 'UNIT_DLV_RIFLEMAN';
 update UnitUpgrades set UpgradeUnit = 'UNIT_MAN_AT_ARMS' where UpgradeUnit = 'UNIT_DLV_LONGSWORDSMAN';
 
@@ -22,6 +23,7 @@ delete from Types where Type = 'UNIT_DLV_LONGSWORDSMAN';
 
 -- Adaptation
 delete from UnitReplaces where CivUniqueUnitType = 'UNIT_SUMERIAN_WAR_CART';
+UPDATE UnitUpgrades SET UpgradeUnit = 'UNIT_DLV_COG' WHERE Unit = 'UNIT_PHOENICIA_BIREME';
 
 delete from Types where Type = 'ABILITY_CITY_CENTER_NERF';
 delete from Types where Type = 'ABILITY_PLUS_X_WHEN_DEFENDING';
