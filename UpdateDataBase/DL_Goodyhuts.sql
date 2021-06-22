@@ -5,7 +5,7 @@
 update GoodyHutSubTypes set Turn = 30 where SubTypeGoodyHut = 'GOODYHUT_ONE_RELIC';
 update GoodyHutSubTypes set Turn = 15 where SubTypeGoodyHut = 'GOODYHUT_GRANT_BUILDER';
 update GoodyHutSubTypes set Turn = 50 where SubTypeGoodyHut = 'GOODYHUT_GOVERNOR_TITLE';
-update GoodyHutSubTypes set Turn = 15 where SubTypeGoodyHut = 'GOODYHUT_FAVOR';
+update GoodyHutSubTypes set Turn = 50 where SubTypeGoodyHut = 'GOODYHUT_FAVOR';
 
 update GoodyHutSubTypes set Weight = 60 where SubTypeGoodyHut = 'GOODYHUT_LARGE_GOLD';
 update GoodyHutSubTypes set Weight = 30 where SubTypeGoodyHut = 'GOODYHUT_MEDIUM_GOLD';
