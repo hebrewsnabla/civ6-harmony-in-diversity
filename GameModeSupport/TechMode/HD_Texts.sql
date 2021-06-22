@@ -26,6 +26,7 @@ values
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
+    ("LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "Chiphyonjon"),
     ("LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "Receive + 1 [Icon_Governor] Governor Title each time when Seowon or building inside Seowon District is constructed in [ICON_Capital] Capital."),
     ("LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "+3 [ICON_Amenities] Amenities, +5 [Icon_Housing] Housing and +20 Loyalty per turn for cities that are capital or have assigned Governor. -2 [ICON_Amenities] Amenities, -20 Loyalty per turn and -50% of all yields for cities that is not capital and not have assigned Governors. +50% [ICON_PRODUCTION] Production towards Districts and Buildings for cities have Seowon. +15% [ICON_Production] Production and +15% [ICON_FOOD] Food for Cities have Library. +100% Districts Adjacency (of corresponding yields) to all Districts for Cities have University. Cities have Research Lab gain +10% of all yields and the citizen yield extra +1 of all yields."),
     ("LOC_DISTRICT_SEOWON_DESCRIPTION",                               "A district unique to Korea. Replaces the Campus. +4 [Icon_Science] Science. Have more citizen slots.");

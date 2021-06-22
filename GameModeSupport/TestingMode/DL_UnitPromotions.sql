@@ -242,7 +242,11 @@ values
     ('ABILITY_WOLFPACK_ADJACENT_BONUS',                         'KIND_ABILITY');
 
 delete from TypeTags where Type = 'ABILITY_ANTI_SPEAR' and Tag = 'CLASS_MELEE';
-delete from TypeTags where (Type != 'ABILITY_SEE_HIDDEN' and Type != 'UNIT_SCOUT') and Tag = 'CLASS_REVEAL_STEALTH';
+delete from TypeTags where (Type != 'ABILITY_SEE_HIDDEN') and Tag = 'CLASS_REVEAL_STEALTH';
+
+insert or replace into TypeTags (Type, Tag)
+select UnitType,    'CLASS_REVEAL_STEALTH'  from Units where PromotionClass = 'PROMOTION_CLASS_NAVAL_MELEE';
+
 insert or replace into TypeTags
     (Type,                                                      Tag)
 values

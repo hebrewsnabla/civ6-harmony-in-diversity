@@ -115,7 +115,7 @@ values
     ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",                                           "您收到了{1_UnitName}！"),
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
-    ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "靠近敌人城市时，对城市城墙造成全额伤害。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "靠近敌人城市时，对城市城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}环辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_HAPPINESS_DELIGHTED_NAME",                                          "愉悦"),
