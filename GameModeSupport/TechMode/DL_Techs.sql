@@ -6,7 +6,7 @@ update Projects set PrereqTech = 'TECH_ELECTRICITY' where ProjectType = 'PROJECT
 update Projects set PrereqTech = 'TECH_REFINING' where ProjectType = 'PROJECT_CONVERT_REACTOR_TO_OIL';
 
 update Buildings set PrereqTech = 'TECH_STEAM_POWER' where BuildingType = 'BUILDING_SEAPORT';
-update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_RESEARCH_LAB';
+-- update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_REFINING' where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUILDING_WORKSHOP';
@@ -99,7 +99,7 @@ update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_REPLACEABLE_P
 update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_STEEL';
 update Technologies set UITreeRow = -1, Cost = 1800 where TechnologyType = 'TECH_ELECTRICITY';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_RADIO';
-update Technologies set UITreeRow = 1, Cost = 1800 where TechnologyType = 'TECH_CHEMISTRY';
+update Technologies set UITreeRow = 0, Cost = 1800 where TechnologyType = 'TECH_CHEMISTRY';
 update Technologies set UITreeRow = 0, Cost = 1900 where TechnologyType = 'TECH_REFINING';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_COMBUSTION';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ADVANCED_FLIGHT';
@@ -206,14 +206,17 @@ values
     ('TECH_STEEL',  'TECH_RIFLING'),
     ('TECH_STEEL',  'TECH_MILITARY_SCIENCE'),
     ('TECH_CHEMISTRY',   'TECH_SANITATION'),
-    ('TECH_ELECTRICITY',    'TECH_INDUSTRIALIZATION'),
+    ('TECH_CHEMISTRY',   'TECH_ECONOMICS'),
+    ('TECH_CHEMISTRY',   'TECH_SCIENTIFIC_THEORY'),
+    -- ('TECH_ELECTRICITY',    'TECH_INDUSTRIALIZATION'),
     ('TECH_ELECTRICITY',    'TECH_SCIENTIFIC_THEORY'),
     ('TECH_ELECTRICITY',    'TECH_STEAM_POWER'),
     ('TECH_RADIO',  'TECH_FLIGHT'),
     ('TECH_RADIO',  'TECH_ELECTRICITY'),
     ('TECH_REFINING',  'TECH_CHEMISTRY'),
     ('TECH_REFINING',  'TECH_ELECTRICITY'),
-    ('TECH_REFINING',  'TECH_ECONOMICS'),
+    -- ('TECH_REFINING',  'TECH_ECONOMICS'),
+    ('TECH_COMBUSTION', 'TECH_SANITATION'),
     ('TECH_COMBUSTION', 'TECH_CHEMISTRY'),
     ('TECH_COMBUSTION', 'TECH_STEEL'),
     --  Atomic
