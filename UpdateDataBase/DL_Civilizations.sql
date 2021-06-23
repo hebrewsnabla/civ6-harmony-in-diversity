@@ -145,6 +145,10 @@ update ModifierArguments set Value = 56 where ModifierId = 'TRAIT_EUREKA_INCREAS
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
+insert or replace into Building_YieldChanges 
+	(BuildingType, 		YieldType,			YieldChange) 
+values
+	('BUILDING_MARAE', 	'YIELD_CULTURE',	2),
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_CIVILIZATION_MAORI_MANA', 'TRAIT_MAORI_PRODUCTION_RAINFOREST_CIVIL_SERVICE'),
@@ -600,7 +604,7 @@ values
 	('DISTRICTS_ON_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',			'REQUIRES_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS');
 
 insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
-select 'HD_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER' and DistrictType != 'DISTRICT_WONDER';
+select 'HD_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
 -----------------------------------------------------------------------------------------------------------------
 
 -- Brazil 

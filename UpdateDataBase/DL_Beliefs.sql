@@ -1081,7 +1081,7 @@ values
 	('TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR',				'ModifierId',					'TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR_MODIFIER'),
 	('TO_THE_GLORY_OF_GOD_GREAT_PERSON_FAVOR_MODIFIER',		'Amount',						50);
 
-update ModifierArguments set Value = 3 where ModifierId = 'JUST_WAR_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 5 where ModifierId = 'JUST_WAR_COMBAT_BONUS_MODIFIER' and Name = 'Amount';
 
 -- By 利牙菠萝
 insert or replace into BeliefModifiers

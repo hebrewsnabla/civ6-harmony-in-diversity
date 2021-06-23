@@ -131,6 +131,8 @@ values
 	('BarbarossaYields',		'YIELD_GOLD',				1,			10),
 	('BarbarossaYields',		'YIELD_PRODUCTION',			1,			10);
 
+update AiFavoredItems set Item = 'CIVIC_CIVIL_SERVICE' where ListType = 'JadwigaCivics' and Item = 'CIVIC_MERCENARIES';
+
 -- Debug.
 -- delete from RequirementSetRequirements where
 -- 	RequirementSetId = 'PLAYER_IS_HIGH_DIFFICULTY_AI' and RequirementId = 'REQUIRES_PLAYER_IS_AI';
