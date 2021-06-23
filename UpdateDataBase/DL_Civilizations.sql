@@ -148,7 +148,7 @@ delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and
 insert or replace into Building_YieldChanges 
 	(BuildingType, 		YieldType,			YieldChange) 
 values
-	('BUILDING_MARAE', 	'YIELD_CULTURE',	2),
+	('BUILDING_MARAE', 	'YIELD_CULTURE',	2);
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_CIVILIZATION_MAORI_MANA', 'TRAIT_MAORI_PRODUCTION_RAINFOREST_CIVIL_SERVICE'),
