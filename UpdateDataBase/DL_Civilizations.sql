@@ -209,14 +209,16 @@ values
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	-- ('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
-	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'HD_LUXURY_MINE_GOLD');
+	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'HD_LUXURY_MINE_GOLD'),
+	('TRAIT_LEADER_SAHEL_MERCHANTS',		'MALI_ALLOW_PROJECT');
 
 insert or replace into Modifiers 
 	(ModifierId, 											ModifierType) 
 values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
-	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL');
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL'),
+	('MALI_ALLOW_PROJECT',									'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
 
 insert or replace into Modifiers 
 	(ModifierId, 				ModifierType,							SubjectRequirementSetId) 
@@ -239,17 +241,18 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Origin',		1),
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
 	('HD_LUXURY_MINE_GOLD',									'YieldType',	'YIELD_GOLD'),
-	('HD_LUXURY_MINE_GOLD',									'Amount',		2);
-/*每个沙漠丘陵矿山为本城国际商路+1食物。
+	('HD_LUXURY_MINE_GOLD',									'Amount',		2),
+	('MALI_ALLOW_PROJECT',     								'ProjectType',	'PROJECT_ENDLESS_MONEY');
+--每个奢侈矿为本城国际商路+1食物。
 insert or replace into ImprovementModifiers
 	(ImprovementType,						ModifierID)
 values
 	('IMPROVEMENT_MINE',					'MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD');
 
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,															OwnerRequirementSetId,				SubjectRequirementSetId)
+	(ModifierId,											ModifierType,															OwnerRequirementSetId,					SubjectRequirementSetId)
 values
-	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',		'MALI_DESERT_HILLS_REQUIREMENTS',	'MALI_REQUIREMENTS');
+	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',		'PLOT_HAS_LUXURY_MINE_REQUIREMENTS',	'MALI_REQUIREMENTS');
 
 insert or replace into ModifierArguments
 	(ModifierId,											Name,			Value)
@@ -268,7 +271,7 @@ insert or replace into RequirementSetRequirements
 values
 	('MALI_REQUIREMENTS',					'PLAYER_IS_CIVILIZATION_MALI'),
 	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_DESERT_HILLS');
-*/
+
 insert or replace into TraitModifiers (TraitType, ModifierId) 
 select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType from Improvement_ValidResources 
 where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
@@ -286,13 +289,31 @@ select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,		'Amount',       10	from 
 where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
 
 -- ud
-update Districts set Entertainment = 1 where DistrictType = 'DISTRICT_SUGUBA';
+-- update Districts set Entertainment = 1 where DistrictType = 'DISTRICT_SUGUBA';
 insert or replace into DistrictModifiers(DistrictType,ModifierId)values
 	('DISTRICT_SUGUBA','SUGUBA_ALLOW_PURCHASE_DISTRICT');
 insert or replace into Modifiers(ModifierID,ModifierType)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','MODIFIER_CITY_ADJUST_CAN_PURCHASE_DISTRICTS');
 insert or replace into ModifierArguments(ModifierID, Name, Value)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','CanPurchase',1);
+
+--additonal SUGUBA project
+insert or replace into Types
+	(Type,								Kind)
+values
+	('PROJECT_ENDLESS_MONEY',			'KIND_PROJECT');
+
+insert or replace into Projects 
+	(ProjectType,				Name,										ShortName,								Description,	
+	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+values 
+	('PROJECT_ENDLESS_MONEY',	'LOC_PROJECT_ENDLESS_MONEY_HD_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION',
+	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_SUGUBA',	1);
+
+insert or replace into Project_YieldConversions
+	(ProjectType,				YieldType,		PercentOfProductionRate)
+values 
+	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	300);
 ------------------------------------------------------------------------------------------------------------------
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
