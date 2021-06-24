@@ -155,7 +155,8 @@ update Units set Cost = 220, Maintenance = 4, BaseMoves = 4, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DE_ZEVEN_PROVINCIEN';
 ------ UNIT_DUTCH_SCHUTTERIJ
 -- 克里
-update Units set Cost = 30 where UnitType = 'UNIT_CREE_OKIHTCITAW';
+update Units set Cost = 35, BaseMoves = BaseMoves + 1 where UnitType = 'UNIT_CREE_OKIHTCITAW';
+delete from TypeTags where Type = 'ABILITY_CREE_OKIHTCITAW' and Tag = 'CLASS_CREE_OKIHTCITAW';
 ------ UNIT_CREE_OTEHTAPIW
 -- 印尼
 update Units set Cost = 240, Maintenance = 4, BaseMoves = 5, Range = 2, Combat = 50, RangedCombat = 60 where UnitType = 'UNIT_INDONESIAN_JONG';

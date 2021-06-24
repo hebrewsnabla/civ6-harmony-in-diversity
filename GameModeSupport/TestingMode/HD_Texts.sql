@@ -3,6 +3,22 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+    -- UU
+    ("LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",                                    "Cree unique Ancient era unit that replaces the Scout. Strong reconnaissance unit and have one more [ICON_Movement] Movement than Scout.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    -- UU
+    ("zh_Hans_CN",  "LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",                                 "远古时代的克里特色单位，替代侦察兵。拥有更高战斗力的侦察单位，且比侦察兵多1 [ICON_Movement] 移动力。");
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                                       Text)
+values
     -- Techs
     ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength When start attacking on Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),

@@ -67,17 +67,16 @@ end);
 -- end);
 
 -- strategic projects
-function ProjectStrategicResourcesChange(playerID, projectID)
+function ProjectStrategicResourcesChange(playerID, cityID, projectID)
     local player = Players[playerID]
-    local m_project_table = GameInfo.Projects['PROJECT_BREEDING_GOOD_FOALS'].Index  
-    local resourceInfo = GameInfo.Resources();
-	local playerResources = Players[playerID]:GetResources();
-    if  (m_project_table ~= nil) then  
-        local m_project = m_project_table.Index
-        if projectID == m_project and resource.ResourceType == "RESOURCE_HORSES" then
-		    playerResources:ChangeResourceAmount(resource.Index, 20);
-        end
-	end
+    -- print(GameInfo.Projects['PROJECT_GRANT_RESOURCE_HORSES'].Index, projectID)
+    local project_name = GameInfo.Projects[projectID].ProjectType
+    local resource_name = string.sub(project_name, 15)
+    if string.sub(project_name, 1, 14) == 'PROJECT_GRANT_' then
+        local playerResources = Players[playerID]:GetResources()
+        local resource_id = GameInfo.Resources[resource_name].Index
+        playerResources:ChangeResourceAmount(resource_id, 20)
+    end
 end
 
 Events.CityProjectCompleted.Add(ProjectStrategicResourcesChange)
