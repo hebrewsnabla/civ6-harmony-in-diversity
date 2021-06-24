@@ -73,15 +73,15 @@ update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
 
 -- strategic projects
 
-insert or replace into Type	(Type,	Kind)
+insert or replace into Types	(Type,	Kind)
 select 'PROJECT_GRANT_' || ResourceType,	'KIND_PROJECT' from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into Projects 
 	(ProjectType,						Name,												ShortName,													
-	Description,												PrereqDistrict)
+	Description,												Cost,	PrereqDistrict)
 select
 	'PROJECT_GRANT_' || ResourceType,	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_NAME',	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_SHORT_NAME',	
-	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_DESCRIPTION',	'DISTRICT_ENCAMPMENT' from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_DESCRIPTION',	100,	'DISTRICT_ENCAMPMENT' from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 update Projects set Cost = 100,	PrereqTech = 'TECH_HORSEBACK_RIDING', RequiredBuilding = 'BUILDING_STABLE' where ProjectType = 'PROJECT_GRANT_RESOURCE_HORSES';
 update Projects set Cost = 150,	PrereqTech = 'TECH_IRON_WORKING', RequiredBuilding = 'BUILDING_BARRACKS'  where ProjectType = 'PROJECT_GRANT_RESOURCE_IRON';

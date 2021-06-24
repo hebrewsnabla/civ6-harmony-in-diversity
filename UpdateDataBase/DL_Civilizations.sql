@@ -1074,7 +1074,7 @@ values
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_DESERT_MOUNTAIN'),
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_TUNDRA_MOUNTAIN'),
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_SNOW_MOUNTAIN');
-
+/*
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)
 values
