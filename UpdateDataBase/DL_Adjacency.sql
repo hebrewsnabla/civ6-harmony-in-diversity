@@ -41,9 +41,12 @@ values
 	-- 
 	('DISTRICT_HARBOR',				'HD_Suguba_Gold'),
 	('DISTRICT_HARBOR',				'HD_Commercial_Hub_Gold'),
+	('DISTRICT_HARBOR',				'Commercial_Canal_Gold'),
 	('DISTRICT_COTHON',				'HD_Commercial_Hub_Gold'),
+	('DISTRICT_COTHON',				'Commercial_Canal_Gold'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'HD_Commercial_Hub_Gold'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'District_Gold_Industrial_Zone'),
+	('DISTRICT_ROYAL_NAVY_DOCKYARD', 'Commercial_Canal_Gold'),
 	-- 
 	-- ('DISTRICT_INDUSTRIAL_ZONE',	'Minel_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',	'Mine_Production'),

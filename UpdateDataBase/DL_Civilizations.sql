@@ -1090,6 +1090,17 @@ insert or replace into ModifierArguments
 values
 	('GREAT_WALL_REDUCE_COMBAT',					'Amount',			-2);
 
+insert or replace into Requirements
+	(RequirementId,										RequirementType)
+values
+	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER_AT_WAR');
+
+insert or replace into RequirementArguments
+	(RequirementId,										Name,					Value)
+values
+	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'MaxDistance',			1),
+	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'MinDistance',			1);
+
 insert or replace into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
@@ -1098,8 +1109,7 @@ values
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
-	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'UNIT_IS_ENEMY_REQUIREMENT'),
-	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'ADJACENT_TO_OWNER');
+	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT');
 
 insert or replace into ModifierStrings
 	(ModifierId,						Context,	Text)

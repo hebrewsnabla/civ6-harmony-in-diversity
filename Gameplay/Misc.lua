@@ -74,12 +74,8 @@ function ProjectStrategicResourcesChange(playerID, projectID)
 	local playerResources = Players[playerID]:GetResources();
     if  (m_project_table ~= nil) then  
         local m_project = m_project_table.Index
-        if projectID == m_project then
-	        for resource in GameInfo.Resources() do
-	            if resource.ResourceType == "RESOURCE_HORSES" then
-		        playerResources:ChangeResourceAmount(resource.Index, 20);
-	            end
-            end
+        if projectID == m_project and resource.ResourceType == "RESOURCE_HORSES" then
+		    playerResources:ChangeResourceAmount(resource.Index, 20);
         end
 	end
 end

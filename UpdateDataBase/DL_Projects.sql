@@ -73,28 +73,53 @@ update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
 
 -- strategic projects
 
-insert or replace into Types
-	(Type,								Kind)
-values
-	('PROJECT_BREEDING_GOOD_FOALS',		'KIND_PROJECT');
+insert or replace into Type	(Type,	Kind)
+select 'PROJECT_GRANT_' || ResourceType,	'KIND_PROJECT' from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into Projects 
-	(ProjectType,					Name,										ShortName,											Description,	
-	Cost,	CostProgressionModel,	CostProgressionParam1,	PrereqDistrict,			UnlocksFromEffect)
-values 
-	('PROJECT_BREEDING_GOOD_FOALS',	'LOC_PROJECT_BREEDING_GOOD_FOALS_HD_NAME',	'LOC_PROJECT_BREEDING_GOOD_FOALS_HD_SHORT_NAME',	'LOC_PROJECT_BREEDING_GOOD_FOALS_HD_DESCRIPTION',
-	100,	'NO_PROGRESSION_MODEL',	0,						'DISTRICT_ENCAMPMENT',	1);
+	(ProjectType,						Name,												ShortName,													
+	Description,												PrereqDistrict)
+select
+	'PROJECT_GRANT_' || ResourceType,	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_NAME',	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_SHORT_NAME',	
+	'LOC_PROJECT_GRANT_' || ResourceType || '_HD_DESCRIPTION',	'DISTRICT_ENCAMPMENT' from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
-insert or replace into BuildingModifiers (BuildingType,	ModifierId)
+update Projects set Cost = 100,	PrereqTech = 'TECH_HORSEBACK_RIDING', RequiredBuilding = 'BUILDING_STABLE' where ProjectType = 'PROJECT_GRANT_RESOURCE_HORSES';
+update Projects set Cost = 150,	PrereqTech = 'TECH_IRON_WORKING', RequiredBuilding = 'BUILDING_BARRACKS'  where ProjectType = 'PROJECT_GRANT_RESOURCE_IRON';
+update Projects set Cost = 200,	PrereqTech = 'TECH_GUNPOWDER', RequiredBuilding = 'BUILDING_ARMORY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_NITER';
+update Projects set Cost = 300,	PrereqTech = 'TECH_REFINING', RequiredBuilding = 'BUILDING_ARMORY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_COAL';
+update Projects set Cost = 500,	PrereqTech = 'TECH_PLASTICS', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
+update Projects set Cost = 500,	PrereqTech = 'TECH_ADVANCED_FLIGHT', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
+update Projects set Cost = 800,	PrereqTech = 'TECH_STEALTH_TECHNOLOGY', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_URANIUM';
+/*
+insert or replace into BuildingModifiers 
+	(BuildingType,					ModifierId)
 values
-	('BUILDING_STABLE',				'STABLE_HORSES_PROJECT');
+	('BUILDING_STABLE',				'STABLE_HORSES_PROJECT'),
+	('BUILDING_BARRACKS',			'BARRACKS_IRON_PROJECT'),
+	('BUILDING_ARMORY',				'ARMORY_NITER_PROJECT'),
+	('BUILDING_ARMORY',				'ARMORY_COAL_PROJECT'),
+	('BUILDING_MILITARY_ACADEMY',	'MILITARY_ACADEMY_OIL_PROJECT'),
+	('BUILDING_MILITARY_ACADEMY',	'MILITARY_ACADEMY_ALUMINUW_PROJECT'),
+	('BUILDING_MILITARY_ACADEMY',	'MILITARY_ACADEMY_URANIUM_PROJECT');
 
 insert or replace into Modifiers
-	(ModifierId,					ModifierType)
+	(ModifierId,							ModifierType)
 values
-	('STABLE_HORSES_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
+	('STABLE_HORSES_PROJECT',				'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('BARRACKS_IRON_PROJECT',				'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('ARMORY_NITER_PROJECT',				'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('ARMORY_COAL_PROJECT',					'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('MILITARY_ACADEMY_OIL_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('MILITARY_ACADEMY_ALUMINUW_PROJECT',	'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
+	('MILITARY_ACADEMY_URANIUM_PROJECT',	'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
 
 insert or replace into ModifierArguments
-	(ModifierId,								Name,				 	Value)
+	(ModifierId,							Name,				Value)
 values
-	('STABLE_HORSES_PROJECT',     				'ProjectType',			'PROJECT_BREEDING_GOOD_FOALS');
+	('STABLE_HORSES_PROJECT',     			'ProjectType',		'PROJECT_GRANT_RESOURCE_HORSES'),
+	('BARRACKS_IRON_PROJECT',				'ProjectType',		'PROJECT_GRANT_RESOURCE_IRON'),
+	('ARMORY_NITER_PROJECT',				'ProjectType',		'PROJECT_GRANT_RESOURCE_NITER'),
+	('ARMORY_COAL_PROJECT',					'ProjectType',		'PROJECT_GRANT_RESOURCE_COAL'),
+	('MILITARY_ACADEMY_OIL_PROJECT',		'ProjectType',		'PROJECT_GRANT_RESOURCE_OIL'),
+	('MILITARY_ACADEMY_ALUMINUW_PROJECT',	'ProjectType',		'PROJECT_GRANT_RESOURCE_ALUMINUM'),
+	('MILITARY_ACADEMY_URANIUM_PROJECT',	'ProjectType',		'PROJECT_GRANT_RESOURCE_URANIUM');
