@@ -1032,9 +1032,9 @@ values
 	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
 	('HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS',		'Amount',		100),
 	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_SCIENCE'),
-	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2),
+	('HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		1),
 	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'YieldType',	'YIELD_CULTURE'),
-	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		2);
+	('HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT',		'Amount',		1);
 
 ----------------------------------------------------------------------------------------------------------------------
 -- Canada
@@ -1053,3 +1053,55 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'ImprovementType',			'IMPROVEMENT_BARBARIAN_CAMP'),
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'GoodyHutImprovementType',	'IMPROVEMENT_GOODY_BUILDER');
+
+----------------------------------------------------------------------------------------------------------------------
+-- Qin
+-- the Great Wall
+update Improvements_XP2 set BuildOnAdjacentPlot = 1 where ImprovementType = 'IMPROVEMENT_GREAT_WALL';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_CASTLES' where ID = 'GreatWall_Gold';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_MASONRY' where ID = 'GreatWall_Culture';
+
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,			YieldType,		YieldChange)
+values
+	('IMPROVEMENT_GREAT_WALL',	'YIELD_FOOD',	1);
+
+insert or replace into Improvement_ValidTerrains
+	(ImprovementType,			TerrainType)
+values
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_GRASS_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_PLAINS_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_DESERT_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_TUNDRA_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_SNOW_MOUNTAIN');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_GREAT_WALL',		'GREAT_WALL_REDUCE_COMBAT');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,										SubjectRequirementSetId)
+values
+	('GREAT_WALL_REDUCE_COMBAT',	'MODIFIER_ALL_UNITS_ADJUST_COMBAT_STRENGTH',		'ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('GREAT_WALL_REDUCE_COMBAT',					'Amount',			-2);
+
+insert or replace into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'UNIT_IS_ENEMY_REQUIREMENT'),
+	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'ADJACENT_TO_OWNER');
+
+insert or replace into ModifierStrings
+	(ModifierId,						Context,	Text)
+values
+	('GREAT_WALL_REDUCE_COMBAT',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');

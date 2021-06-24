@@ -65,3 +65,23 @@ end);
 --         plot:SetOwner(playerID);
 --     end
 -- end);
+
+-- strategic projects
+function ProjectStrategicResourcesChange(playerID, projectID)
+    local player = Players[playerID]
+    local m_project_table = GameInfo.Projects['PROJECT_BREEDING_GOOD_FOALS'].Index  
+    local resourceInfo = GameInfo.Resources();
+	local playerResources = Players[playerID]:GetResources();
+    if  (m_project_table ~= nil) then  
+        local m_project = m_project_table.Index
+        if projectID == m_project then
+	        for resource in GameInfo.Resources() do
+	            if resource.ResourceType == "RESOURCE_HORSES" then
+		        playerResources:ChangeResourceAmount(resource.Index, 20);
+	            end
+            end
+        end
+	end
+end
+
+Events.CityProjectCompleted.Add(ProjectStrategicResourcesChange)

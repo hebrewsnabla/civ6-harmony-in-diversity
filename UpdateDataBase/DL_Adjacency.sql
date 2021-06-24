@@ -93,7 +93,7 @@ insert or replace into Adjacency_YieldChanges
 values
 	('AERODROME_INDUSTRIAL_Production',	'LOC_DISTRICT_AERODROME_INDUSTRIAL_PRODUCTION', 'YIELD_PRODUCTION', 2,				1,
 	0, 				'DISTRICT_AERODROME', 	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Commercial_Canal_Gold',			'LOC_DISTRICT_CANAL_GOLD', 						'YIELD_GOLD',		2,				1,
+	('Commercial_Canal_Gold',			'LOC_DISTRICT_CANAL_GOLD', 						'YIELD_GOLD',		3,				1,
 	0, 				'DISTRICT_CANAL', 		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('HD_Commercial_Hub_Gold',			'LOC_DISTRICT_COMMERCIAL_GOLD', 				'YIELD_GOLD',		2,				1,
 	0, 				'DISTRICT_COMMERCIAL_HUB',	NULL,		NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
@@ -217,6 +217,7 @@ insert or replace into Adjacency_YieldChanges
 update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mekewap_SecondBonusAdjacency';
 delete from Adjacency_YieldChanges where ID = 'Mekewap_FirstBonusAdjacency';
 delete from Improvement_Adjacencies where YieldChangeId = 'Mekewap_FirstBonusAdjacency';
+update Adjacency_YieldChanges set YieldChange = 3 where ID = 'Canal_Production';
 
 --industrial zone and hansa adjacent to harbor
 insert or replace into Adjacency_YieldChanges
