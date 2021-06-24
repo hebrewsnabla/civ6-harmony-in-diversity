@@ -278,6 +278,20 @@
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+      <File>Assets/Projects/ResourcesProjects_30.dds</File>
+      <File>Assets/Projects/ResourcesProjects_32.dds</File>
+      <File>Assets/Projects/ResourcesProjects_38.dds</File>
+      <File>Assets/Projects/ResourcesProjects_50.dds</File>
+      <File>Assets/Projects/ResourcesProjects_70.dds</File>
+      <File>Assets/Projects/ResourcesProjects_80.dds</File>
+      <File>Assets/Projects/ResourcesProjects_256.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_30.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_32.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_38.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_50.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_70.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_80.dds</File>
+      <File>Assets/Projects/ResourcesProjects_FOW_256.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -709,6 +723,7 @@
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
+      <File>UI/Icons/DL_Icons_Projects.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -913,6 +928,7 @@
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
+    <File>UI/Icons/DL_Icons_Projects.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
@@ -1102,5 +1118,19 @@
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+    <File>Assets/Projects/ResourcesProjects_30.dds</File>
+    <File>Assets/Projects/ResourcesProjects_32.dds</File>
+    <File>Assets/Projects/ResourcesProjects_38.dds</File>
+    <File>Assets/Projects/ResourcesProjects_50.dds</File>
+    <File>Assets/Projects/ResourcesProjects_70.dds</File>
+    <File>Assets/Projects/ResourcesProjects_80.dds</File>
+    <File>Assets/Projects/ResourcesProjects_256.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_30.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_32.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_38.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_50.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_70.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_80.dds</File>
+    <File>Assets/Projects/ResourcesProjects_FOW_256.dds</File>
   </Files>
 </Mod>
