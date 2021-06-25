@@ -124,6 +124,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">c6477d9f-6bad-4d24-9e76-49cda4f0a966</ModInUse>
     </Criteria>
+    <Criteria id="Civitas_CityStates_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">7d0b57ba-6a5c-4de0-ac10-e1e464ac82f6</ModInUse>
+    </Criteria>
     <Criteria id="ProjectHumankind_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
@@ -572,14 +576,14 @@
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
 
-    <ImportFiles id="ConciseUICityStates" criteria="Expansion2">
+    <ImportFiles id="ConciseUICityStates" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>250</LoadOrder></Properties>
       <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
       <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
       <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
       <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
     </ImportFiles>
-    <UpdateText id="Cui_Text">
+    <UpdateText id="Cui_Text" criteria="Civitas_CityStates_Conflict_Expansion2">
       <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
       <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
       <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
