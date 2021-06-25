@@ -2221,3 +2221,19 @@ AI测试模式：降低ai对金币的价值判定。
 
 [v0.8.2.2]
 阿兹特克能力变动，见游戏内描述。
+
+[v0.8.2.2]
+Civilizations Rework: Poland, Aztec, Mali. Tweak on Mapuche, Canada, Nubia, Germany, Russia, Scotland, Maori and China.
+Disable the coastal mountains in Pangaea and Contients Map.
+Adjustments on Citystates: Kabul, Lahore, Akkad.
+Add 2 new policy cards related to entertainment complex district.
+Add a set of projects that produce Strategic Resources (checkout in the game directly).
+Make Canal and Dam districts better.
+Tweak on some Wonders.
+
+[v0.8.2.3]
+马里特色区域的项目金改为1：2.5。
+
+科技树测试模式：
+银行和印刷调整。
+人文需求整体提升，前期后期提升约10%，中期提升约20%。

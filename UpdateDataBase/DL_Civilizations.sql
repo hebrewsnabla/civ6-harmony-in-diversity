@@ -313,7 +313,7 @@ values
 insert or replace into Project_YieldConversions
 	(ProjectType,				YieldType,		PercentOfProductionRate)
 values 
-	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	300);
+	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	250);
 ------------------------------------------------------------------------------------------------------------------
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
