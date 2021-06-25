@@ -256,7 +256,7 @@
     </UpdateText> -->
   </FrontEndActions>
   <InGameActions>
-    <ImportFiles id="DL_CityCenterBuilding_Assets" criteria="Expansion2">
+    <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
@@ -296,6 +296,10 @@
       <File>Assets/Projects/ResourcesProjects_FOW_70.dds</File>
       <File>Assets/Projects/ResourcesProjects_FOW_80.dds</File>
       <File>Assets/Projects/ResourcesProjects_FOW_256.dds</File>
+      <File>Assets/UnitActions/sacrifice_38.dds</File>
+      <File>Assets/UnitActions/sacrifice_50.dds</File>
+      <File>Assets/UnitActions/sacrifice_80.dds</File>
+      <File>Assets/UnitActions/sacrifice_256.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -372,6 +376,7 @@
     <ImportFiles id="DL_UnitPanel_Import" criteria="Expansion2">
       <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_UnitPanel.lua</File>
+      <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     </ImportFiles>
     <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
       <Properties><LoadOrder>150000</LoadOrder></Properties>
@@ -920,6 +925,8 @@
     <File>UI/Replacement/CitySupport.lua</File>
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
+    <!-- UI Additions -->
+    <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
@@ -1136,5 +1143,9 @@
     <File>Assets/Projects/ResourcesProjects_FOW_70.dds</File>
     <File>Assets/Projects/ResourcesProjects_FOW_80.dds</File>
     <File>Assets/Projects/ResourcesProjects_FOW_256.dds</File>
+    <File>Assets/UnitActions/sacrifice_38.dds</File>
+    <File>Assets/UnitActions/sacrifice_50.dds</File>
+    <File>Assets/UnitActions/sacrifice_80.dds</File>
+    <File>Assets/UnitActions/sacrifice_256.dds</File>
   </Files>
 </Mod>

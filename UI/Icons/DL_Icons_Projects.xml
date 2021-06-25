@@ -9,6 +9,12 @@
 	    <Row Name="ICON_ATLAS_HD_RESOURCE_PROJECTS" IconSize="80" IconsPerRow="8" IconsPerColumn="8" Filename="ResourcesProjects_FOW_80.dds"/>
 	    <Row Name="ICON_ATLAS_HD_RESOURCE_PROJECTS" IconSize="256" IconsPerRow="8" IconsPerColumn="8" Filename="ResourcesProjects_FOW_256.dds"/>
     </IconTextureAtlases>
+	<IconTextureAtlases>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="38" IconsPerRow="1" IconsPerColumn="1"  Filename="sacrifice_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="50" IconsPerRow="1" IconsPerColumn="1"  Filename="sacrifice_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="sacrifice_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="sacrifice_256.dds"/>
+    </IconTextureAtlases>
 	<IconDefinitions>
 		<Row Name="ICON_PROJECT_GRANT_RESOURCE_HORSES"  Atlas="ICON_ATLAS_HD_RESOURCE_PROJECTS" Index="42"/>
 		<Row Name="ICON_PROJECT_GRANT_RESOURCE_IRON"  Atlas="ICON_ATLAS_HD_RESOURCE_PROJECTS" Index="43"/>
@@ -27,5 +33,8 @@
 
 		<Row Name="ICON_PROJECT_CIRCUSES_AND_BREAD"  Atlas="ICON_ATLAS_XP1_PROJECTS" Index="1"/>
 		<Row Name="ICON_PROJECT_ENDLESS_MONEY"  Atlas="ICON_ATLAS_PROJECTS" Index="14"/>
+	</IconDefinitions>
+	<IconDefinitions>
+		<Row Name="ICON_UNITCOMMAND_AZTEC_SACRIFICE"  Atlas="ICON_ATLAS_HD_UNITACTIONS" Index="0"/>
 	</IconDefinitions>
 </GameData>

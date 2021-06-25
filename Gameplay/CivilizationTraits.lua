@@ -64,3 +64,36 @@ function MaliPlayerEraScoreChanged(playerID, amountAwarded)
 end
 
 Events.PlayerEraScoreChanged.Add(MaliPlayerEraScoreChanged)
+
+-- Aztec
+-- ===========================================================================
+--	Sacrifice
+-- ===========================================================================
+function HD_Aztec_Sacrifice(eOwner : number, iUnitID : number)
+	local pPlayer = Players[eOwner];
+	if (pPlayer == nil) then
+		return;
+	end
+
+	local pUnit = pPlayer:GetUnits():FindID(iUnitID);
+	if (pUnit == nil) then
+		return;
+	end
+
+	local city = CityManager.GetCityAt(pUnit:GetX(), pUnit:GetY());
+
+	if city == nil then
+		return;
+	end
+	local amount = 10 * pUnit:GetBuildCharges();
+	pPlayer:GetCulture():ChangeCurrentCulturalProgress(amount);
+
+	-- Flyover text
+	local message:string  = Locale.Lookup("LOC_FLYOVER_AZTEC_SACRIFICE", amount);
+	Game.AddWorldViewText(0, message, pUnit:GetX(), pUnit:GetY());
+
+	-- Report to the application side that we did something.  This helps with visualization
+	-- UnitManager.ReportActivation(pUnit, "DEMOLISH");
+
+end
+GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)

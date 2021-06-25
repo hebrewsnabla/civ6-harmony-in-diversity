@@ -112,6 +112,12 @@ values
     ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_CONTENT",                                        "向我们的敌人赠送单位可能会导致外交行动。[NEWLINE]我们已经警告你了"),
     ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_HEADLINE",                                          "{1_LeaderName}给了你一个单位！"),
     ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",                                           "您收到了{1_UnitName}！"),
+    -- UI texts
+    -- 荣冠战争 guerra florida
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值，移除该单位。"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]必须位于市中心[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_FLYOVER_AZTEC_SACRIFICE",                                           "[COLOR:ResCultureLabelCS]活人献祭+{1_Amount}[ENDCOLOR][ICON_Culture]"),
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
     ("zh_Hans_CN",  "LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "靠近敌人城市时，对城市城墙造成全额伤害。"),
