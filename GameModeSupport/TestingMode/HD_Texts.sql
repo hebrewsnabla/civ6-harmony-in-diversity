@@ -150,8 +150,8 @@ values
     ("LOC_PROMOTION_RECON_ACCURATE_NAME",                                       "Accurate"),
     ("LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                                "+1 [ICON_Range] Range."),
     -- Heavy Cavalry
-    ("LOC_PROMOTION_HEAVY_SHOCK_NAME",                                         "Shock"),
-    ("LOC_PROMOTION_HEAVY_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
+    ("LOC_PROMOTION_HEAVYC_SHOCK_NAME",                                         "Shock"),
+    ("LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_ROUT_DESCRIPTION",                                          "+5 [ICON_Strength] Combat Strength attacking damaged units."),
     ("LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when attacking units. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength when defending. Extra +7 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),

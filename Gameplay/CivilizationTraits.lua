@@ -87,6 +87,7 @@ function HD_Aztec_Sacrifice(eOwner : number, iUnitID : number)
 	end
 	local amount = 10 * pUnit:GetBuildCharges();
 	pPlayer:GetCulture():ChangeCurrentCulturalProgress(amount);
+	pPlayer:GetReligion():ChangeFaithBalance(amount);
 
 	-- Flyover text
 	local message:string  = Locale.Lookup("LOC_FLYOVER_AZTEC_SACRIFICE", amount);

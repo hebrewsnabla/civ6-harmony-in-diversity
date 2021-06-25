@@ -442,8 +442,8 @@ insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType) 
 -- Resume ability (April Update)
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
+-- delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
-delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 
 --UB ajustment for BUILDING_TSIKHE
 --adjust Ub base tourism to 5

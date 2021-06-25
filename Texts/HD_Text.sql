@@ -3,6 +3,12 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    -- UI Texts
+    ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
+    ("LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "Sacrifice this unit to God, gain +10 [ICON_Culture] Culture and +10 [ICON_Faith] for each builder charge the unit has. Remove the unit."),
+    ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must at City Center[ENDCOLOR]"),
+    ("LOC_FLYOVER_AZTEC_SACRIFICE",                                           "Human Sacrifice[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
+    -- Main
     ("LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "When adjacent to an enemy city, units do full damage to the city's Walls."),
     ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}-tile regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
@@ -112,12 +118,11 @@ values
     ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_CONTENT",                                        "向我们的敌人赠送单位可能会导致外交行动。[NEWLINE]我们已经警告你了"),
     ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_HEADLINE",                                          "{1_LeaderName}给了你一个单位！"),
     ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",                                           "您收到了{1_UnitName}！"),
-    -- UI texts
-    -- 荣冠战争 guerra florida
+    -- UI texts 
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值，移除该单位。"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和10点 [ICON_Faith] 信仰值，移除该单位。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]必须位于市中心[ENDCOLOR]"),
-    ("zh_Hans_CN",  "LOC_FLYOVER_AZTEC_SACRIFICE",                                           "[COLOR:ResCultureLabelCS]活人献祭+{1_Amount}[ENDCOLOR][ICON_Culture]"),
+    ("zh_Hans_CN",  "LOC_FLYOVER_AZTEC_SACRIFICE",                                           "活人献祭[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
     ("zh_Hans_CN",  "LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "靠近敌人城市时，对城市城墙造成全额伤害。"),
