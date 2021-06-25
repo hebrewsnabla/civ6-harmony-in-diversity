@@ -1066,6 +1066,11 @@ insert or replace into Improvement_YieldChanges
 values
 	('IMPROVEMENT_GREAT_WALL',	'YIELD_FOOD',	1);
 
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,			FeatureType)
+values
+	('IMPROVEMENT_GREAT_WALL',	'FEATURE_FOREST');
+
 insert or replace into Improvement_ValidTerrains
 	(ImprovementType,			TerrainType)
 values
@@ -1074,44 +1079,25 @@ values
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_DESERT_MOUNTAIN'),
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_TUNDRA_MOUNTAIN'),
 	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_SNOW_MOUNTAIN');
-/*
+
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)
 values
 	('IMPROVEMENT_GREAT_WALL',		'GREAT_WALL_REDUCE_COMBAT');
 
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,										SubjectRequirementSetId)
+	(ModifierId,							ModifierType,									SubjectRequirementSetId)
 values
-	('GREAT_WALL_REDUCE_COMBAT',	'MODIFIER_ALL_UNITS_ADJUST_COMBAT_STRENGTH',		'ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS');
+	('GREAT_WALL_REDUCE_COMBAT',			'MODIFIER_ALL_UNITS_ATTACH_MODIFIER',			'VARU_ADJACENT_AT_WAR_REQUIREMENTS'),
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',	'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',			NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
 values
-	('GREAT_WALL_REDUCE_COMBAT',					'Amount',			-2);
-
-insert or replace into Requirements
-	(RequirementId,										RequirementType)
-values
-	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER_AT_WAR');
-
-insert or replace into RequirementArguments
-	(RequirementId,										Name,					Value)
-values
-	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'MaxDistance',			1),
-	('UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT',		'MinDistance',			1);
-
-insert or replace into RequirementSets
-	(RequirementSetId,										RequirementSetType)
-values
-	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,										RequirementId)
-values
-	('ENEMY_ADJACENT_TO_GREAT_WALL_REQUIREMENTS',			'UNIT_IS_ENEMY_ADJACENT_TO_OWNER_REQUIREMENT');
+	('GREAT_WALL_REDUCE_COMBAT',					'ModifierId',		'GREAT_WALL_REDUCE_COMBAT_MODIFIER'),
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',			'Amount',			-2);
 
 insert or replace into ModifierStrings
-	(ModifierId,						Context,	Text)
+	(ModifierId,								Context,	Text)
 values
-	('GREAT_WALL_REDUCE_COMBAT',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
