@@ -220,6 +220,10 @@
     </Criteria>
   </ActionCriteria>
   <FrontEndActions>
+    <UpdateDatabase id="Community_STUU_ConfigUserSetting">
+      <Properties><LoadOrder>4</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
@@ -451,6 +455,10 @@
     <UpdateDatabase id="Community_STUU_support" criteria="STUU_Expansion2">
       <Properties><LoadOrder>15016</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Community_STUU_UserSetting" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>4</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     </UpdateDatabase>
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
@@ -959,6 +967,8 @@
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     <File>ModSupport/SteelThunder/STXP.sql</File>
     <File>ModSupport/SteelThunder/STUU.sql</File>
+    <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
+    <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
