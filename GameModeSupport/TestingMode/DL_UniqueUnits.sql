@@ -8,7 +8,7 @@ update Units set Cost = 330, Maintenance = 4, BaseMoves = 5, Range = 0, Combat =
 ------ UNIT_AMERICAN_P51
 ------ UNIT_AMERICAN_MINUTEMAN
 -- 阿拉伯
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 5, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
+update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_ARABIAN_MAMLUK';
 ------ UNIT_ARABIAN_CAMEL_ARCHER
 ------ UNIT_ARABIAN_GHAZI
