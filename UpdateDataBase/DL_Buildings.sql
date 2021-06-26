@@ -303,7 +303,7 @@ values
 	-- 
 	('BUILDING_HYDROELECTRIC_DAM',	'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
 	-- Workshop
-	('BUILDING_WORKSHOP',			'WORKSHOP_ADD_MINE_QUARRY_PRODUCTION'),
+	('BUILDING_WORKSHOP',			'WORKSHOP_ADD_MINE_PRODUCTION'),
 	-- Aerodrome
 	('BUILDING_HANGAR',				'HANGAR_AIR_UNIT_PRODUCTION'),
 	-- ('BUILDING_AIRPORT',			'AIRPORT_TOURISM_BOOST'),
@@ -359,7 +359,7 @@ values
 	('MILITARY_ACADEMY_ADD_RESOURCE_PRODUCTION',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'HAS_MILITARY_ACADEMY_RESOURCE'),
 	('HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),
 	-- add improvements
-	('WORKSHOP_ADD_MINE_QUARRY_PRODUCTION', 		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_OR_QUARRY');
+	('WORKSHOP_ADD_MINE_PRODUCTION', 				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_REQUIREMENTS'); -- 'PLOT_HAS_MINE_OR_QUARRY'
 
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,												Permanent)
@@ -432,8 +432,8 @@ values
 	('HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
 	('HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION',		'Amount',		1),
 	-- 
-	('WORKSHOP_ADD_MINE_QUARRY_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
-	('WORKSHOP_ADD_MINE_QUARRY_PRODUCTION',			'Amount',		1),
+	('WORKSHOP_ADD_MINE_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
+	('WORKSHOP_ADD_MINE_PRODUCTION',				'Amount',		1),
 	-- enhence trained units
 	('BARRACKS_TRAINED_STRENGTH_MODIFIER',			'AbilityType',	'ABILITY_BARRACKS_TRAINED_UNIT_STRENGTH'),
 	('BASILIKOI_TRAINED_STRENGTH_MODIFIER',			'AbilityType',	'ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH'),
@@ -536,6 +536,8 @@ values
 	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER'), -- 20%
 	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER'); -- 20%
 
+update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_SCIENTIFIC_THEORY_REQUIREMENTS' where ModifierId = 'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST';
+
 -- powered
 insert or replace into Modifiers
 	(ModifierId, 											ModifierType,										SubjectRequirementSetId)
@@ -613,8 +615,8 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
-update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_UNIVERSITY';
+update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_MARKET';

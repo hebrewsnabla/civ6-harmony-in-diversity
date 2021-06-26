@@ -80,7 +80,7 @@ values
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
-	('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
+	-- ('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),

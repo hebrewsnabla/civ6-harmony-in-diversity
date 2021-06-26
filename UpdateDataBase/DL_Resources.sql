@@ -12,6 +12,7 @@ update Resource_Harvests set YieldType =  'YIELD_PRODUCTION' , Amount = 40  wher
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_COPPER' and TerrainType = 'TERRAIN_SNOW_HILLS';
 update Resource_YieldChanges  set YieldType =  'YIELD_PRODUCTION' ,  YieldChange = 1 where ResourceType = 'RESOURCE_COPPER';
 
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_OIL' and TerrainType = 'TERRAIN_SNOW';
 
 insert or replace into Resource_Harvests (ResourceType, YieldType, Amount, PrereqTech) select
 	ResourceType, 'YIELD_PRODUCTION', 40, PrereqTech from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';

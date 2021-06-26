@@ -28,13 +28,14 @@ insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, Yie
 	('IMPROVEMENT_CAMP', 'YIELD_FOOD', 1),
 	('IMPROVEMENT_LUMBER_MILL', 'YIELD_PRODUCTION', 1);
 
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_LUMBER_MILL' and PrereqTech = 'TECH_STEEL';
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_PLANTATION' and PrereqCivic = 'CIVIC_FEUDALISM';
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_MINE' and PrereqTech = 'TECH_APPRENTICESHIP';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_QUARRY' and PrereqTech = 'TECH_ROCKETRY';
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqTech = 'TECH_CARTOGRAPHY';
 -- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqTech = 'TECH_PLASTICS';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and PrereqCivic = 'CIVIC_COLONIALISM';
-delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
+-- delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_CAMP' and PrereqCivic = 'CIVIC_MERCANTILISM';
 --delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_BATEY' and PrereqCivic = 'CIVIC_EXPLORATION';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_PASTURE' and (PrereqTech = 'TECH_STIRRUPS' or PrereqTech = 'TECH_REPLACEABLE_PARTS');
 
@@ -43,13 +44,14 @@ insert or replace into Improvement_BonusYieldChanges
 values 
 	(234,	'IMPROVEMENT_LUMBER_MILL',	'YIELD_PRODUCTION',	1,				'TECH_CONSTRUCTION',	NULL),
 	(235,	'IMPROVEMENT_LUMBER_MILL',	'YIELD_PRODUCTION',	1,				'TECH_MACHINERY',		NULL),
-	-- (236,	'IMPROVEMENT_QUARRY',		'YIELD_PRODUCTION',	1,				'TECH_APPRENTICESHIP',	NULL),
+	(236,	'IMPROVEMENT_LUMBER_MILL',	'YIELD_PRODUCTION',	1,				NULL,					'CIVIC_CIVIL_ENGINEERING'),
+	(237,	'IMPROVEMENT_QUARRY',		'YIELD_PRODUCTION',	1,				'TECH_APPRENTICESHIP',	NULL),
 	(241,	'IMPROVEMENT_PLANTATION',	'YIELD_GOLD',		2,				NULL,					'CIVIC_MEDIEVAL_FAIRES'),
 	-- (242,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_CONSTRUCTION',	NULL),
 	(242,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		1,				'TECH_ARCHERY',			NULL),
 	(243,	'IMPROVEMENT_CAMP',			'YIELD_PRODUCTION',	1,				'TECH_CONSTRUCTION',	NULL),
-	(245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
-	(246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
+	-- (245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
+	-- (246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
 	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
 	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_STIRRUPS',		NULL),
 	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_MEDIEVAL_FAIRES');

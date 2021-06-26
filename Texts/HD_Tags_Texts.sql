@@ -6,10 +6,13 @@ update Technologies set Description = 'LOC_TECH_ARCHERY_HD_DESCRIPTION' where Te
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set Description = 'LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION' where TechnologyType ='TECH_CELESTIAL_NAVIGATION';
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_HD_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
+update Technologies set Description = 'LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION' where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
-update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
+-- update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = 'LOC_TECH_STEAM_POWER_HD_DESCRIPTION' where TechnologyType = 'TECH_STEAM_POWER';
+update Technologies set Description = 'LOC_TECH_STEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_STEEL';
+update Technologies set Description = 'LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION' where TechnologyType = 'TECH_SCIENTIFIC_THEORY';
 update Technologies set Description = 'LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION' where TechnologyType ='TECH_REPLACEABLE_PARTS';
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
 
@@ -22,7 +25,8 @@ update Civics set Description = 'LOC_CIVIC_GUILDS_HD_DESCRIPTION' where CivicTyp
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
-update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+-- update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+update Civics set Description = 'LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_ENGINEERING';
 update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
 update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
 update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY'; --temp
