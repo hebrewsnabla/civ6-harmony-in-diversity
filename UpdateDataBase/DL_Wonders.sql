@@ -367,7 +367,7 @@ insert or replace into BuildingModifiers (BuildingType,	ModifierId)values
 ('BUILDING_MACHU_PICCHU', 'MACHU_PICCHU_DISTRICT_FOOD');
 	
 insert or replace into Modifiers(ModifierId, 	ModifierType, 	SubjectRequirementSetId) values 
-('MACHU_PICCHU_DISTRICT_FOOD', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', 'PLOT_ADJACENT_TO_MOUNTAIN');
+('MACHU_PICCHU_DISTRICT_FOOD', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', 'PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS');
 
 insert or replace into ModifierArguments (ModifierId,	Name, Value) values
 ('MACHU_PICCHU_DISTRICT_FOOD',	'Amount', 2),

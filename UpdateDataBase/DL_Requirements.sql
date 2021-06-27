@@ -83,6 +83,11 @@ insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_DISTRICT_IS_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES' from Districts;
 
 insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType, 'DistrictType', DistrictType from Districts;
+insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
+
+insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
@@ -260,13 +265,13 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 	select 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType from Resources;
 
 insert or replace into RequirementSets
-	(RequirementSetId,						RequirementSetType)
+	(RequirementSetId,									RequirementSetType)
 values
-	('DISTRICT_IS_SPECIALITY_DISTRICT',		'REQUIREMENTSET_TEST_ANY');
+	('DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
 insert or replace into RequirementSetRequirements
-	(RequirementSetId,						RequirementId)
+	(RequirementSetId,									RequirementId)
 select 
-	'DISTRICT_IS_SPECIALITY_DISTRICT',		'REQUIRES_DISTRICT_IS_' || DistrictType
+	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS',		'REQUIRES_DISTRICT_IS_' || DistrictType
 from Districts where RequiresPopulation = 1;
 
 -- New city center buildings
@@ -842,11 +847,33 @@ values
 	('CITY_HAS_ARENA_AND_8_POP',							'REQUIRES_CITY_HAS_ARENA'),
 	('CITY_HAS_ARENA_AND_8_POP',							'REQUIRES_CITY_HAS_8_POPULATION');
 
-insert or replace into Requirements(RequirementId,RequirementType)values
-	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB','REQUIREMENT_REQUIREMENTSET_IS_MET');
-insert or replace into RequirementArguments(RequirementId,Name,Value)values
-	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB','RequirementSetId','MINOR_3DISTRICTS_CULTURE_REQUIREMENTS');
-	
+insert or replace into Requirements
+	(RequirementId,														RequirementType)
+values
+	('HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT',						'REQUIREMENT_REQUIREMENTSET_IS_MET'),
+	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB',	'REQUIREMENT_REQUIREMENTSET_IS_MET');
+
+-- Wat Arun
+insert or replace into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_IS_SPECIALTY_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS',		'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
+	('PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
+	('PLOT_IS_SPECIALTY_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',	'HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT'),
+	('PLOT_IS_SPECIALTY_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',	'REQUIRES_PLOT_ADJACENT_TO_RIVER');
+
+insert or replace into RequirementArguments
+	(RequirementId,														Name,				Value)
+values
+	('HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT',						'RequirementSetId',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
+	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB',	'RequirementSetId',	'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS');
+
 --Gilgamesh Ziggurat
 insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
 	select 'ZIGGURAT_' || EraType,	'REQUIREMENTSET_TEST_ALL'		from Eras where EraType != 'ERA_ANCIENT';

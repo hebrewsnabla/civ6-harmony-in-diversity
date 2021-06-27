@@ -9,13 +9,13 @@ WHERE BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN' AND EXISTS (SELECT BuildingType
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN';
 
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_TEMPLE_OF_HEAVEN',	'TEMPLE_OF_HEAVEN_GOVERNOR_FOOD'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN');
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_TEMPLE_OF_HEAVEN',	'TEMPLE_OF_HEAVEN_GOVERNOR_FOOD'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN');
 
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_TEMPLE_OF_HEAVEN',	'TEMPLE_OF_HEAVEN_DOMESTIC_GOLD'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN');
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_TEMPLE_OF_HEAVEN',	'TEMPLE_OF_HEAVEN_DOMESTIC_GOLD'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN');
 
 insert or replace into Modifiers 
 	(ModifierId,						ModifierType) 
