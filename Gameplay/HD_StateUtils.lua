@@ -36,7 +36,7 @@ function SetObjectState(pObject : object, sPropertyName : string, value)
     end
     -- update gamecore
 
-    print('property', sPropertyName, 'set to', value)
+    -- print('property', sPropertyName, 'set to', value)
 
     if UI ~= nil then
         -- We are on the UI side of things.  We must sent a command to change the game state

@@ -831,7 +831,7 @@ values
 -- 	('TRAIT_PLANT_ENGINEER_POINT_ECSTATIC',			'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
 -- 	('TRAIT_PLANT_ENGINEER_POINT_ECSTATIC',			'HappinessType',				'HAPPINESS_ECSTATIC');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,							RequirementType)
 values
 	('UNIT_IN_OWNER_TERRITORY_REQUIREMENT',	'REQUIREMENT_UNIT_IN_OWNER_TERRITORY');

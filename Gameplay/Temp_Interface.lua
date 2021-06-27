@@ -99,12 +99,12 @@ function UpdateCityHasGovernor(playerID)
 end
 
 function OnGovernorChanged(playerID, governorID)
-    print('OnGovernorChanged')
+    -- print('OnGovernorChanged')
     UpdateCityHasGovernor(playerID)
 end
 
 function OnGovernorAssigned(cityOwner, cityID, governorOwner, governorType)
-    print('OnGovernorAssigned')
+    -- print('OnGovernorAssigned')
     UpdateCityHasGovernor(governorOwner)
 end
 
