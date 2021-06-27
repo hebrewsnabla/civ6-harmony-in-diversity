@@ -8,9 +8,10 @@ values
 	('UNIT_COURSER',						'CLASS_DACAOGU');
 
 insert or replace into Tags
-	(Tag,				Vocabulary)
+	(Tag,								Vocabulary)
 values
-	('CLASS_DACAOGU',	'ABILITY_CLASS');
+	('CLASS_HD_CAN_MOVE_AFTER_ATTACK',	'ABILITY_CLASS'),
+	('CLASS_DACAOGU',					'ABILITY_CLASS');
 ---------------------------------------------------
 --TypeTags all millitary units---------------------
 insert or replace into TypeTags(Type,Tag)

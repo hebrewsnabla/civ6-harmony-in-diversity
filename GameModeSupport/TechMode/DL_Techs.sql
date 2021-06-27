@@ -36,6 +36,7 @@ update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_I
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_PIKEMAN';
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GERMAN_LANDSKNECHT'; -- ST
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCHE_GUERILLA';   -- ST
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';   -- ST
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';

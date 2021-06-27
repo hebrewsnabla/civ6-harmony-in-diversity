@@ -74,7 +74,8 @@ update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_JAPANESE_SAMURAI';
 ------ UNIT_JAPANESE_SOHEI
 -- 斯基泰
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 20, RangedCombat = 27 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 4, Range = 2, Combat = 15, RangedCombat = 25 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
+insert or replace into TypeTags (Type, Tag) values ('UNIT_SCYTHIAN_HORSE_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 ------ UNIT_SCYTHIAN_AMAZON
 -- 巴西
 update Units set Cost = 500, Maintenance = 6, BaseMoves = 5, Range = 3, Combat = 80, RangedCombat = 90, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES';
