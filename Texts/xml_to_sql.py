@@ -51,7 +51,10 @@ def main():
             tag = replace.getAttribute('Tag')
             max_len = max(max_len, len(tag))
             text = replace.getElementsByTagName('Text')[0]
-            text = text.childNodes[0].data.lstrip()
+            if len(text.childNodes) > 0:
+                text = text.childNodes[0].data.lstrip()
+            else:
+                text = ''
             if lang not in texts:
                 texts[lang] = []
             texts[lang].append((tag, text))

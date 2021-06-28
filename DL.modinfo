@@ -224,6 +224,11 @@
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     </UpdateDatabase>
+    <UpdateText id="Community_STUU_support_texts"> <!-- criteria="STUU_Expansion2" -->
+      <Properties><LoadOrder>15017</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
+    </UpdateText>
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
@@ -456,6 +461,11 @@
       <Properties><LoadOrder>15016</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU.sql</File>
     </UpdateDatabase>
+    <UpdateText id="Community_STUU_support_texts" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>15017</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
+    </UpdateText>
     <UpdateDatabase id="Community_STUU_UserSetting" criteria="STUU_Expansion2">
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
@@ -967,6 +977,8 @@
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     <File>ModSupport/SteelThunder/STXP.sql</File>
     <File>ModSupport/SteelThunder/STUU.sql</File>
+    <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
+    <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <!-- Removeable Districts -->
