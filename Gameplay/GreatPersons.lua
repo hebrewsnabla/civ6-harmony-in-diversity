@@ -34,7 +34,9 @@ GreatPersonUtils.GetActivationPlots = function(playerID, greatPersonIndividualID
                 end
                 if isValid then
                     local districtPlot:table = Map.GetPlot(district:GetX(), district:GetY());
-                    table.insert(activationPlots, districtPlot:GetIndex());
+                    if districtPlot ~= nil then
+                        table.insert(activationPlots, districtPlot:GetIndex());
+                    end
                 end
             end
         end
