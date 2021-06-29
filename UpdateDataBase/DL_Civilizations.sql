@@ -1102,3 +1102,82 @@ insert or replace into ModifierStrings
 	(ModifierId,								Context,	Text)
 values
 	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
+
+----------------------------------------------------------------------------------------------------------------------
+-- Phoenicia
+-- LA
+update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'CITY_HAS_GOV_DISTRICT';
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+select 'CITY_HAS_GOV_DISTRICT', 'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'TRADE_ROUTE_DIP_DISTRICT'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'TRADE_ROUTE_CONSULATE'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'TRADE_ROUTE_CHANCERY'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'TRADE_ROUTE_DIP_DISTRICT',	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'CITY_HAS_DIP_DISTRICT'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'TRADE_ROUTE_CONSULATE',		'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'BUILDING_IS_CONSULATE'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'TRADE_ROUTE_CHANCERY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'BUILDING_IS_CHANCERY'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+
+insert or replace into ModifierArguments
+	(ModifierId,						Name,			Value)
+values
+	('TRADE_ROUTE_DIP_DISTRICT',		'Amount',		1),
+	('TRADE_ROUTE_CONSULATE',			'Amount',		1),
+	('TRADE_ROUTE_CHANCERY',			'Amount',		1);
+
+-- UA
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD');
+
+insert or replace into Modifiers
+    (ModifierId,                            			ModifierType)
+values
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL'),
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL'),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE'),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',  			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            			Name,           Value)
+values
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',  	'YieldType',    'YIELD_CULTURE'),
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',  	'Amount',       1),
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',    	'YieldType',    'YIELD_GOLD'),
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',    	'Amount',       2),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'YieldType',    'YIELD_CULTURE'),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'Amount',       2),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'YieldType',    'YIELD_GOLD'),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4);
+	
+-- UD
+insert or replace into DistrictModifiers 
+	(DistrictType,				ModifierId)
+values
+	('DISTRICT_COTHON',			'COTHON_ADDGROWTH');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType)
+values
+	('COTHON_ADDGROWTH',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH');
+
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+values
+	('COTHON_ADDGROWTH',		'Amount',		15);

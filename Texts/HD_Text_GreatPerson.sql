@@ -30,7 +30,14 @@ values
     ("LOC_GREATPERSON_NATIONAL_APPEAL_BIG",                               "+2 Appeal to all tiles within your territoty."),
     ("LOC_GREATPERSON_GPP_BOOST",                                         "+25% Great Person Points accumulate speed in your country."),
     ("LOC_GREATPERSON_DISTRICT_CULTURE_BOMB",                             "Immediately complete target district (except Spaceport) in the city if the district is not completed. Culture Bomb adjacent tiles when completing such district in any city afterwards."),
-    ("LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT",                       "Must be on a district that is completed or under construction (except Spaceport).");
+    ("LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT",                       "Must be on a district that is completed or under construction (except Spaceport)."),
+    ("LOC_ARTEMISIA_LIGHTHOUSE",                                          "Instantly builds a Lighthouse in this district."),
+    ("LOC_ARTEMISIA_LIGHTHOUSE_FOOD",                                     "Lighthouses provide +{Amount} [ICON_Food] Food."),
+    ("LOC_GREATPERSON_GRANT_A_SETTLER",                                   "Grant a settler."),
+    ("LOC_GREATPERSON_LEIF_ERIKSON_EXPANSION2_ACTIVE",                    "+1 sight range for all naval units. Allows all settlers and naval units to move over ocean tiles without the normal technology requirement."),
+    ("LOC_GREATPERSON_NAVLA_RAIDER_BONUS",                                "Naval Raider units receive +2 [ICON_Strength] Combat Strength."),
+    ("LOC_GREATPERSON_CHING_SHIH_EXPANSION2_ACTIVE",                      "Gain 500 [ICON_Gold] Gold (on Standard speed). Military units get +100% rewards for plundering sea [ICON_TradeRoute] Trade Routes."),
+    ("LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "Shipyards provide +{Amount} [ICON_Production] Production.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -65,5 +72,12 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_GPP_BOOST",                                         "所有城市的伟人点积累速率+25%。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_OMAR_KHAYYAM_ACTIVE",                               "为两个中世纪或文艺复兴的随机科技启动 [ICON_TechBoosted] 尤里卡时刻，为中世纪和文艺复兴时期的一个随机市政启动 [ICON_CivicBoosted] 鼓舞时刻。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_DISTRICT_CULTURE_BOMB",                             "令该类型的区域获得文化炸弹的效果。若该区域未完成，则立刻完成该区域（宇航中心除外）。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT",                       "必须位于已完成或者正在建造的区域上（宇航中心除外）。");
+    ("zh_Hans_CN",  "LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT",                       "必须位于已完成或者正在建造的区域上（宇航中心除外）。"),
+    ("zh_Hans_CN",  "LOC_ARTEMISIA_LIGHTHOUSE",                                          "立即在该区域建造一座灯塔。"),
+    ("zh_Hans_CN",  "LOC_ARTEMISIA_LIGHTHOUSE_FOOD",                                     "灯塔+{Amount} [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_GRANT_A_SETTLER",                                   "获得一个开拓者。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_LEIF_ERIKSON_EXPANSION2_ACTIVE",                    "所有海军单位视野范围+1。所有海军单位与开拓者可在满足正常科技要求前进入海洋单元格。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_NAVLA_RAIDER_BONUS",                                "海军袭击者+2 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_CHING_SHIH_EXPANSION2_ACTIVE",                      "获得500 [ICON_Gold] 金币（标准速度下）。军事单位掠夺海上 [ICON_TradeRoute] 贸易路线时收益+100%。"),
+    ("zh_Hans_CN",  "LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "造船厂+{Amount} [ICON_Production] 生产力。");
 

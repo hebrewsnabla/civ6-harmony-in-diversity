@@ -352,8 +352,79 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 -- 	    ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',            'Summary',                   'LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS'),
 -- 	    ('TESLA_REGIONAL_RANGE_BONUS',     'Summary',                    'LOC_TESLA_REGIONAL_RANGE_BONUS');
 
+------------------------------------------------------------
 -- great admiral
+------------------------------------------------------------
+-- GREAT_PERSON_INDIVIDUAL_ARTEMISIA grants a lighthouse and lighthouses +1 food
+-- GREAT_PERSON_INDIVIDUAL_THEMISTOCLES grants a extra district capacity and a envoy
 -- GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON grants a settler
+-- GREAT_PERSON_INDIVIDUAL_HIMERIOS +1 charge
+-- GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE naval raider units +2 combat strength
+-- GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN grants a settler instead of luxulry resource
+-- GREAT_PERSON_INDIVIDUAL_CHING_SHIH plunder bonus +100%
+-- GREAT_PERSON_INDIVIDUAL_HORATIO_NELSON shipyards +2 production
+-- GREAT_PERSON_INDIVIDUAL_LASKARINA_BOUBOULINA +2 charges
+
+update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresMilitaryUnitDomain = NULL, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1, ActionRequiresUnitCanGainExperience = 0
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
+update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresNoMilitaryUnit = 0, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HIMERIOS';
+update GreatPersonIndividuals set ActionRequiresVisibleLuxury = 0, ActionEffectTileHighlighting = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
+update ModifierArguments set Value = 100 where ModifierId = 'CHING_SHIH_PLUNDER_BONUS' and Name = 'Amount';
+update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LASKARINA_BOUBOULINA';
+
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_ARTEMISIA_ACTIVE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
+delete from GreatPersonIndividualActionModifiers where (ModifierId = 'GREATPERSON_THEMISTOCLES_ACTIVE' or ModifierId = 'GREATPERSON_THEMISTOCLES_NAVAL_RANGED') and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_GRANT_PLOT_RESOURCE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
+
+update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)	
+values	('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
+
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId,								AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',			'ARTEMISIA_LIGHTHOUSE',					'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+	('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',       	'ARTEMISIA_LIGHTHOUSE_FOOD',			'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+	('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',		'GREATPERSON_EXTRA_DISTRICT_CAPACITY',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+	('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',       	'GREATPERSON_INFLUENCE_TOKENS_SMALL',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+	('GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',       	'GREATPERSON_GRANT_A_SETTLER',			'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
+	('GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE',       'GREATPERSON_NAVLA_RAIDER_BONUS',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+	('GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN',  'GREATPERSON_GRANT_A_SETTLER',			'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
+	('GREAT_PERSON_INDIVIDUAL_HORATIO_NELSON',      'HORATIO_NELSON_SHIPYARD_PRODUCTION',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+
+insert into Modifiers
+	(ModifierId,							ModifierType,											RunOnce,	Permanent)
+values
+    ('ARTEMISIA_LIGHTHOUSE',				'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',	1,			1),
+	('ARTEMISIA_LIGHTHOUSE_FOOD',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',	0,			1),
+	('GREATPERSON_GRANT_A_SETTLER',			'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',		1,			1),
+	('GREATPERSON_NAVLA_RAIDER_BONUS',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					0,			1),
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',	0,			1);
+
+insert into ModifierArguments
+    	(ModifierId,						Name,				Value)
+values
+    ('ARTEMISIA_LIGHTHOUSE',				'BuildingType',		'BUILDING_LIGHTHOUSE'),
+	('ARTEMISIA_LIGHTHOUSE_FOOD',			'BuildingType',		'BUILDING_LIGHTHOUSE'),
+	('ARTEMISIA_LIGHTHOUSE_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('ARTEMISIA_LIGHTHOUSE_FOOD',			'Amount',			1),
+	('GREATPERSON_GRANT_A_SETTLER',			'UnitType',			'UNIT_SETTLER'),
+	('GREATPERSON_NAVLA_RAIDER_BONUS',		'AbilityType',		'ABILITY_NAVAL_RAIDER_BONUS'),
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'BuildingType',		'BUILDING_SHIPYARD'),
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'Amount',			2);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,    Text)
+values
+    ('ARTEMISIA_LIGHTHOUSE',					'Summary',  'LOC_ARTEMISIA_LIGHTHOUSE'),
+	('ARTEMISIA_LIGHTHOUSE_FOOD',				'Summary',  'LOC_ARTEMISIA_LIGHTHOUSE_FOOD'),
+	('GREATPERSON_GRANT_A_SETTLER',				'Summary',  'LOC_GREATPERSON_GRANT_A_SETTLER'),
+	('GREATPERSON_NAVLA_RAIDER_BONUS',			'Summary',  'LOC_GREATPERSON_NAVLA_RAIDER_BONUS'),
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',		'Summary',  'LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION');
+update ModifierStrings set Text = 'LOC_PIERO_DE_BARDI_GOLD' where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_ACTIVE';
 
 -- Mimar Sinan.
 insert or replace into Modifiers (ModifierId, ModifierType) values
