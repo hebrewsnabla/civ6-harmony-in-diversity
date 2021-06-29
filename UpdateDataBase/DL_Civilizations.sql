@@ -1102,3 +1102,20 @@ insert or replace into ModifierStrings
 	(ModifierId,								Context,	Text)
 values
 	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
+
+----------------------------------------------------------------------------------------------------------------------
+-- Phoenicia
+insert or replace into DistrictModifiers 
+	(DistrictType,				ModifierId)
+values
+	('DISTRICT_COTHON',			'COTHON_ADDGROWTH');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType)
+values
+	('COTHON_ADDGROWTH',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH');
+
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+values
+	('COTHON_ADDGROWTH',		'Amount',		15);
