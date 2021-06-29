@@ -365,18 +365,22 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 -- GREAT_PERSON_INDIVIDUAL_HORATIO_NELSON shipyards +2 production
 -- GREAT_PERSON_INDIVIDUAL_LASKARINA_BOUBOULINA +2 charges
 
-update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1, ActionRequiresUnitCanGainExperience = 0
+update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresMilitaryUnitDomain = NULL, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1, ActionRequiresUnitCanGainExperience = 0
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
-update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1
+update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresNoMilitaryUnit = 0, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HIMERIOS';
-update GreatPersonIndividuals set ActionRequiresVisibleLuxury = 0, AreaHighlightRadius = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
+update GreatPersonIndividuals set ActionRequiresVisibleLuxury = 0, ActionEffectTileHighlighting = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
 update ModifierArguments set Value = 100 where ModifierId = 'CHING_SHIH_PLUNDER_BONUS' and Name = 'Amount';
 update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LASKARINA_BOUBOULINA';
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_ARTEMISIA_ACTIVE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
 delete from GreatPersonIndividualActionModifiers where (ModifierId = 'GREATPERSON_THEMISTOCLES_ACTIVE' or ModifierId = 'GREATPERSON_THEMISTOCLES_NAVAL_RANGED') and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_GRANT_PLOT_RESOURCE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
+
+update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)	
+values	('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
 
 insert or replace into GreatPersonIndividualActionModifiers
 	(GreatPersonIndividualType,						ModifierId,								AttachmentTargetType)
@@ -407,8 +411,6 @@ values
 	('ARTEMISIA_LIGHTHOUSE_FOOD',			'YieldType',		'YIELD_FOOD'),
 	('ARTEMISIA_LIGHTHOUSE_FOOD',			'Amount',			1),
 	('GREATPERSON_GRANT_A_SETTLER',			'UnitType',			'UNIT_SETTLER'),
-	('GREATPERSON_GRANT_A_SETTLER',			'Experience',		0),
-	('GREATPERSON_GRANT_A_SETTLER',			'UniqueOverride',	1),
 	('GREATPERSON_NAVLA_RAIDER_BONUS',		'AbilityType',		'ABILITY_NAVAL_RAIDER_BONUS'),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'BuildingType',		'BUILDING_SHIPYARD'),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
@@ -422,6 +424,7 @@ values
 	('GREATPERSON_GRANT_A_SETTLER',				'Summary',  'LOC_GREATPERSON_GRANT_A_SETTLER'),
 	('GREATPERSON_NAVLA_RAIDER_BONUS',			'Summary',  'LOC_GREATPERSON_NAVLA_RAIDER_BONUS'),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',		'Summary',  'LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION');
+update ModifierStrings set Text = 'LOC_PIERO_DE_BARDI_GOLD' where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_ACTIVE';
 
 -- Mimar Sinan.
 insert or replace into Modifiers (ModifierId, ModifierType) values
