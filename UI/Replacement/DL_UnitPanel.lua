@@ -235,6 +235,7 @@ function AddActionButton(instance:table, action:table)
         local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
         local rawActivationPlots = GreatPersonUtils.GetActivationPlots(pSelectedUnit:GetOwner(), individual);
         if rawActivationPlots ~= nil then
+            -- print('here')
             local validActivation = false;
             local selectedPlotId = pSelectedUnit:GetPlotId();
             for _, plotId in ipairs(rawActivationPlots) do
