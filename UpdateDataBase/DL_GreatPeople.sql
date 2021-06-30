@@ -378,6 +378,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 delete from GreatPersonIndividualActionModifiers where (ModifierId = 'GREATPERSON_THEMISTOCLES_ACTIVE' or ModifierId = 'GREATPERSON_THEMISTOCLES_NAVAL_RANGED') and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_GRANT_PLOT_RESOURCE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
 
+update ModifierArguments set Value = 'TERRAIN_OCEAN,TERRAIN_COAST' where ModifierId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE' and Name = 'TerrainType';
 update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
 insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)	
 values	('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');

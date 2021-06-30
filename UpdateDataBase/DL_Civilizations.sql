@@ -1181,3 +1181,30 @@ insert or replace into ModifierArguments
 	(ModifierId,				Name,			Value)
 values
 	('COTHON_ADDGROWTH',		'Amount',		15);
+
+----------------------------------------------------------------------------------------------------------------------
+-- Cree
+-- LA : add fishing boats
+insert or replace into TraitModifiers
+	(TraitType,							ModifierId)
+values
+	('TRAIT_LEADER_ALLIANCE_AND_TRADE',	'POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS'),
+	('TRAIT_LEADER_ALLIANCE_AND_TRADE',	'POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS');
+
+insert or replace into Modifiers
+    (ModifierId,                            		ModifierType)
+values
+    ('POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_IMPROVEMENT_IN_TARGET'),
+    ('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_IMPROVEMENT_IN_TARGET');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            	Name,           Value)
+values
+    ('POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS',  	'YieldType',    	'YIELD_FOOD'),
+	('POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS',  	'Amount',    		1),
+	('POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS',  	'ImprovementType',	'IMPROVEMENT_FISHING_BOATS'),
+	('POUNDMAKER_TRADE_FOOD_FROM_FISHBOATS',  	'Origin',    		1),
+    ('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'YieldType',    	'YIELD_GOLD'),
+	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'Amount',    		1),
+	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'ImprovementType',	'IMPROVEMENT_FISHING_BOATS'),
+	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'Destination',    	1);

@@ -503,6 +503,20 @@ values
 
 -- Terracotta Army
 update ModifierArguments set Value = 15 where ModifierId = 'TERRACOTTA_ARMY_LEVEL_UP_UNITS' and Name = 'Amount';
+insert or replace into BuildingModifiers
+	(BuildingType, 					ModifierId)
+values
+	('BUILDING_TERRACOTTA_ARMY',	'TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_HILLS_AND_FOREST');
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType)
+values
+	('TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_HILLS_AND_FOREST',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+
+insert or replace into ModifierArguments 
+	(ModifierId,												Name,				Value) 
+values 
+	('TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_HILLS_AND_FOREST',	'AbilityType',		'ABILITY_IGNORE_HILLS_AND_FOREST');
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
