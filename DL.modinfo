@@ -270,10 +270,11 @@
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
     </UpdateText>
-    <!-- <UpdateText id="TechTest_update_text" criteria="TechTest_Mode_Expansion2">
-      <Properties><LoadOrder>18201</LoadOrder></Properties>
-      <File>GameModeSupport/TechMode/HD_Texts.sql</File>
-    </UpdateText> -->
+    <!-- GeneralChineseSupport -->
+    <UpdateText id="DL_GeneralChineseSupport_Texts">
+      <Properties><LoadOrder>100008</LoadOrder></Properties>
+      <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
+    </UpdateText>
   </FrontEndActions>
   <InGameActions>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
@@ -449,11 +450,6 @@
       <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     </UpdateText>
-    <!-- RadialMeasuringTool -->
-    <UpdateText id="DL_RadialMeasuringTool_Texts" criteria="Expansion2">
-      <Properties><LoadOrder>15008</LoadOrder></Properties>
-      <File>ModSupport/RadialMeasuringTool/Texts.sql</File>
-    </UpdateText>
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15009</LoadOrder></Properties>
@@ -481,6 +477,11 @@
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     </UpdateDatabase>
+    <!-- GeneralChineseSupport -->
+    <UpdateText id="DL_GeneralChineseSupport_Texts" criteria="Expansion2">
+      <Properties><LoadOrder>100008</LoadOrder></Properties>
+      <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
+    </UpdateText>
     <!-- Removable Districts -->
     <UpdateDatabase id="RemovableDistricts_mod_support" criteria="RemovableDistricts_Expansion2">
       <Properties><LoadOrder>10000000</LoadOrder></Properties>
@@ -988,7 +989,7 @@
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
-    <File>ModSupport/RadialMeasuringTool/Texts.sql</File>
+    <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
