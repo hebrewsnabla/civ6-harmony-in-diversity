@@ -2296,3 +2296,4 @@ Tweak on some Wonders.
 暂时移除：打草谷城市政策
 将推迟世界议会作为一个游戏的高级选项（默认开启）
 支持 MOD：Configure Minimal City Distance，允许调整最小城市间距。
+将AI测试模式中的对AI粮食和金币价值的调整实装，将给高难度ai提供免费宜居（神级2点）实装。

@@ -139,6 +139,8 @@ update AiFavoredItems set Item = 'CIVIC_CIVIL_SERVICE' where ListType = 'Jadwiga
 
 -- For high difficulty AI.
 insert or replace into TraitModifiers (TraitType,	ModifierId) values
+    ('TRAIT_LEADER_MAJOR_CIV',                      'AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_AMENITY'),
+    ('TRAIT_LEADER_MAJOR_CIV',                      'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_AMENITY'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_HOUSING');
 	-- ('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_CODE_OF_LAWS'),
@@ -147,7 +149,9 @@ insert or replace into TraitModifiers (TraitType,	ModifierId) values
 	-- ('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_MINING');
 
 insert or replace into Modifiers (ModifierId,				ModifierType,									OwnerRequirementSetId) values
-	('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING',		'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',	'PLAYER_IS_AT_LEAST_EMPEROR_DIFFICULTY_AI'),
+	('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_AMENITY',        'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',  'PLAYER_IS_AT_LEAST_EMPEROR_DIFFICULTY_AI'),
+    ('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_AMENITY',          'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',  'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI'),
+    ('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING',		'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',	'PLAYER_IS_AT_LEAST_EMPEROR_DIFFICULTY_AI'),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_HOUSING',			'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI'),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_CODE_OF_LAWS',		'MODIFIER_PLAYER_GRANT_RANDOM_CIVIC',			'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI'),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_POTTERY',			'MODIFIER_PLAYER_GRANT_SPECIFIC_TECHNOLOGY',	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI'),
@@ -155,7 +159,9 @@ insert or replace into Modifiers (ModifierId,				ModifierType,									OwnerRequ
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_MINING',			'MODIFIER_PLAYER_GRANT_SPECIFIC_TECHNOLOGY',	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
 
 insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
-	('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING',		'Amount',	1),
+	('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_AMENITY',        'Amount',   1),
+    ('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_AMENITY',          'Amount',   1),
+    ('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING',		'Amount',	1),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_HOUSING',			'Amount',	1),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_CODE_OF_LAWS',		'Amount',	1),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_GRANT_POTTERY',			'TechType',	'TECH_POTTERY'),
@@ -354,11 +360,11 @@ UPDATE PlotEvalConditions SET PoorValue = -4, GoodValue = 15 WHERE ConditionType
 
 -- --------------------------------------------------------------
 -- -- Yield biases
--- insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('DefaultYieldBias', 'YIELD_FOOD', 1, 10); -- new
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('DefaultYieldBias', 'YIELD_FOOD', 1, 10); -- new
 -- UPDATE AiFavoredItems SET Value = 30 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_PRODUCTION'; -- 25
 -- UPDATE AiFavoredItems SET Value = 10 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_SCIENCE'; -- 10
 -- UPDATE AiFavoredItems SET Value = 15 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_CULTURE'; -- 10
--- UPDATE AiFavoredItems SET Value = 10 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_GOLD';  -- 20, RS:0
+UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_GOLD';  -- 20, RS:0
 -- UPDATE AiFavoredItems SET Value = -20 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_FAITH'; -- -25
 
 --------------------------------------------------------------
