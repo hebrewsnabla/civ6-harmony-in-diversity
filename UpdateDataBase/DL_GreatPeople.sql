@@ -378,6 +378,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 delete from GreatPersonIndividualActionModifiers where (ModifierId = 'GREATPERSON_THEMISTOCLES_ACTIVE' or ModifierId = 'GREATPERSON_THEMISTOCLES_NAVAL_RANGED') and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_FERDINAND_MAGELLAN_GRANT_PLOT_RESOURCE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN';
 
+--update ModifierArguments set Value = 'TERRAIN_OCEAN,TERRAIN_COAST' where ModifierId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE' and Name = 'TerrainType';
 update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
 insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)	
 values	('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
@@ -403,6 +404,13 @@ values
 	('GREATPERSON_NAVLA_RAIDER_BONUS',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					0,			1),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',	0,			1);
 
+insert or replace into GreatPersonIndividualActionModifiers	(GreatPersonIndividualType,	ModifierId,	AttachmentTargetType)
+select 'GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',	'GREATPERSON_SETTLER_EMBARK',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
+where exists (select ModifierType from Modifiers where ModifierType = 'MODIFIER_PLAYER_ADJUST_EMBARK_UNIT_PASS');
+insert into Modifiers (ModifierId,		ModifierType,								RunOnce,	Permanent)
+select 'GREATPERSON_SETTLER_EMBARK',	'MODIFIER_PLAYER_ADJUST_EMBARK_UNIT_PASS',	0,			1
+where exists (select ModifierType from Modifiers where ModifierType = 'MODIFIER_PLAYER_ADJUST_EMBARK_UNIT_PASS');
+
 insert into ModifierArguments
     	(ModifierId,						Name,				Value)
 values
@@ -414,7 +422,8 @@ values
 	('GREATPERSON_NAVLA_RAIDER_BONUS',		'AbilityType',		'ABILITY_NAVAL_RAIDER_BONUS'),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'BuildingType',		'BUILDING_SHIPYARD'),
 	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
-	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'Amount',			2);
+	('HORATIO_NELSON_SHIPYARD_PRODUCTION',	'Amount',			2),
+	('GREATPERSON_SETTLER_EMBARK',			'UnitType',			'UNIT_SETTLER');
 
 insert or replace into ModifierStrings
     (ModifierId,                                Context,    Text)
