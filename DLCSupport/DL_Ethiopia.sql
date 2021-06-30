@@ -99,23 +99,23 @@ values
 -- update Policies set Description = 'LOC_POLICY_GUNBOAT_DIPLOMACY_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_GUNBOAT_DIPLOMACY';
 
 -- 打草谷
-insert or replace into TypeTags
-    (Type,                                  Tag)
-values
-    ('UNIT_ETHIOPIAN_OROMO_CAVALRY',        'CLASS_DACAOGU');
+-- insert or replace into TypeTags
+--     (Type,                                  Tag)
+-- values
+--     ('UNIT_ETHIOPIAN_OROMO_CAVALRY',        'CLASS_DACAOGU');
  
-insert or replace into BuildingModifiers 
-    (BuildingType,                              ModifierId)
-values 
-    ('BUILDING_CITY_POLICY_DACAOGU',            'CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER');
+-- insert or replace into BuildingModifiers 
+--     (BuildingType,                              ModifierId)
+-- values 
+--     ('BUILDING_CITY_POLICY_DACAOGU',            'CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER');
 
-insert or replace into Modifiers
-    (ModifierId,                                                                ModifierType)
-values
-    ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'MODIFIER_SINGLE_CITY_CHANGE_POPULATION_CREATE_UNIT');
+-- insert or replace into Modifiers
+--     (ModifierId,                                                                ModifierType)
+-- values
+--     ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'MODIFIER_SINGLE_CITY_CHANGE_POPULATION_CREATE_UNIT');
 
-insert or replace into ModifierArguments
-    (ModifierId,                                                                Name,           Value)
-values
-    ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'Amount',       '-1'),
-    ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'UnitType',     'UNIT_ETHIOPIAN_OROMO_CAVALRY');
+-- insert or replace into ModifierArguments
+--     (ModifierId,                                                                Name,           Value)
+-- values
+--     ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'Amount',       '-1'),
+--     ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'UnitType',     'UNIT_ETHIOPIAN_OROMO_CAVALRY');

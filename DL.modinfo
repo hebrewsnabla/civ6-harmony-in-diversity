@@ -132,6 +132,9 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
     </Criteria>
+    <Criteria id="STUU">
+      <ModInUse>a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0</ModInUse><!-- STUU -->
+    </Criteria>
     <Criteria id="STUU_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0</ModInUse><!-- STUU -->
@@ -220,7 +223,7 @@
     </Criteria>
   </ActionCriteria>
   <FrontEndActions>
-    <UpdateDatabase id="Community_STUU_ConfigUserSetting">
+    <UpdateDatabase id="Community_STUU_ConfigUserSetting" criteria="STUU">
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     </UpdateDatabase>

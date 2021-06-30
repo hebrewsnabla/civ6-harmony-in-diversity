@@ -30,3 +30,5 @@ update PlayerItems set Description = 'LOC_DISTRICT_HIPPODROME_HD_DESCRIPTION'
     where Type = 'DISTRICT_HIPPODROME' and Domain = 'Players:Expansion2_Players';
 update PlayerItems set Description = 'LOC_DISTRICT_SUGUBA_HD_DESCRIPTION'
     where Type = 'DISTRICT_SUGUBA' and Domain = 'Players:Expansion2_Players';
+update PlayerItems set Description = 'LOC_DISTRICT_SEOWON_HD_DESCRIPTION'
+    where Type = 'DISTRICT_SEOWON' and Domain = 'Players:Expansion2_Players';
