@@ -10,7 +10,9 @@ insert or replace into Parameters
     (Key1,      Key2,                   ParameterId,                    Name,                                       Description,
     Domain,     DefaultValue,   ConfigurationGroup, ConfigurationId,                        GroupId,            SortIndex)
 values
+    ('Ruleset', 'RULESET_EXPANSION_2',  'PostponeWorldCongress',        'LOC_GAME_POSTPONE_WORLD_CONGRESS',         'LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION',
+    'bool',     1,              'Game',             'GAME_POSTPONE_WORLD_CONGRESS',         'AdvancedOptions',  2020),
     ('Ruleset', 'RULESET_EXPANSION_2',  'CapturedSettlersAsBuilders',   'LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS',    'LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION',
-    'bool',     0,              'Game',             'GAME_CAPTURE_SETTLERS_AS_BUILDERS',    'AdvancedOptions',  2020),
+    'bool',     0,              'Game',             'GAME_CAPTURE_SETTLERS_AS_BUILDERS',    'AdvancedOptions',  2021),
     ('Ruleset', 'RULESET_EXPANSION_2',  'AIGetCopyforMilitaryUnits',    'LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS',  'LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION',
-    'bool',     0,              'Game',             'GAME_AI_GET_COPY_FOR_MILITARY_UNITS',  'AdvancedOptions',  2020);
+    'bool',     0,              'Game',             'GAME_AI_GET_COPY_FOR_MILITARY_UNITS',  'AdvancedOptions',  2022);

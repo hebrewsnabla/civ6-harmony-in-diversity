@@ -4,6 +4,8 @@ insert or replace into EnglishText
     (Tag,                                                   Text)
 values
     -- Options
+    ("LOC_GAME_POSTPONE_WORLD_CONGRESS",                    "Postpone World Congress"),
+    ("LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",        "Postpone the world congress, starts in Industrial Era. Half the world congress interval."),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",               "Captured Settlers become Builders"),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",   "Captured Settlers become Builders"),
     ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS",             "AI Double Military Units"),
@@ -27,6 +29,8 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                    Text)
 values
     -- Options
+    ("zh_Hans_CN",  "LOC_GAME_POSTPONE_WORLD_CONGRESS",                     "推迟世界议会"),
+    ("zh_Hans_CN",  "LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",         "推迟世界议会到工业时代开始。减半世界议会的周期。"),
     ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",                "抢占的开拓者变为建造者"),
     ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",    "抢占的开拓者变为建造者"),
     ("zh_Hans_CN",  "LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS",              "AI双倍军事单位"),

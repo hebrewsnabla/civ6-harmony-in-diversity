@@ -205,6 +205,14 @@
       </ConfigurationValueMatches>
     </Criteria>
     <!-- Options -->
+    <Criteria id="HD_PostponeWorldCongress_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_POSTPONE_WORLD_CONGRESS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="HD_CapturedSettlersAsBuilders_XP2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -877,6 +885,11 @@
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Options at last -->
+    HD_PostponeWorldCongress_XP2
+    <UpdateDatabase id="PostponeWorldCongress" criteria="HD_PostponeWorldCongress_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/PostponeWorldCongress.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="CapturedSettlersAsBuilders" criteria="HD_CapturedSettlersAsBuilders_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
@@ -897,6 +910,7 @@
     <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
     <!-- Options -->
+    <File>Configs/Options/PostponeWorldCongress.sql</File>
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <!-- Game Mode -->
