@@ -111,6 +111,8 @@ update Districts set Description = 'LOC_DISTRICT_COMMERCIAL_HUB_HD_DESCRIPTION' 
 update Districts set Description = 'LOC_DISTRICT_SUGUBA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_SUGUBA';
 update Districts set Description = 'LOC_DISTRICT_CANAL_HD_DESCRIPTION' where DistrictType = 'DISTRICT_CANAL';
 update Districts set Description = 'LOC_DISTRICT_DAM_HD_DESCRIPTION' where DistrictType = 'DISTRICT_DAM';
+update Districts set Description = 'LOC_DISTRICT_SEOWON_HD_DESCRIPTION' where DistrictType = 'DISTRICT_SEOWON';
+
 
 --------------------------------------------------------------------------------
 -- GreatWorks Theming

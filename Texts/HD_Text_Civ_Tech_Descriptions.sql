@@ -43,9 +43,14 @@ values
     ("LOC_BOOST_TRIGGER_RECORDED_HISTORY",            "Build 1 Library."),
     ("LOC_BOOST_TRIGGER_HUMANISM",                    "Build 2 Amphitheaters."),
     ("LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",           "Kill a unit with a Spearman."),
-    ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "Have the Defensive Tactics civic."),
+    -- ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "Have the Defensive Tactics civic."),
     ("LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",           "Own 3 Line Infantries."),
-    ("LOC_BOOST_TRIGGER_SIEGE_TACTICS",               "Own 2 Trebuchets.");
+    ("LOC_BOOST_TRIGGER_SIEGE_TACTICS",               "Own 2 Trebuchets."),
+    -- 
+    ("LOC_BOOST_TRIGGER_METAL_CASTING",               "Have the Military Training Civic."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",      "Weapons evolve along with Military training, more advanced ways of making weapons are emerging."),
+    ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "Earn a Great General."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "The Great General brings about new military tactics.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -102,9 +107,13 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",           ""), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",           "使用枪兵击杀1个单位。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",  "枪兵拥有出色的单兵作战能力，那如果将他们组合起来呢？"), -- 面对入侵威胁，您的国民已准备好了一种新型防御措施。
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",           "拥有3个线列步兵。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REPLACEABLE_PARTS",  ""), -- 您的武器制造商已厌倦了手工制作数量如此庞大的步枪。或许建立标准化对此有帮助？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",               "拥有2个投石机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",      "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"); -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",      "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_METAL_CASTING",               "拥有军事训练市政。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",      "军事训练推进着武器不断的革新，新式的武器铸造方式也孕育而生。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "获得一位大将军。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "大将军带来了全新的军事战术的思考。");
