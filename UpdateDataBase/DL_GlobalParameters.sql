@@ -32,6 +32,10 @@ update GlobalParameters set Value = 40 where Name = 'LEVY_MILITARY_PERCENT_OF_UN
 
 -- ranged unit cause 75% damage to walls instead of 50% (but -17 strength still remains)
 update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
+-- COMBAT_STRENGTH_REDUCTION_INSUFFICIENT_FUEL
+update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSUFFICIENT_RESOURCES';
+-- strategic resources
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
 
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';

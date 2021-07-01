@@ -1,6 +1,8 @@
 -------------------------------------
 --     Unique Units Adjustments    --
 -------------------------------------
+update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
+update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
 
 -- UU
 -- 美国

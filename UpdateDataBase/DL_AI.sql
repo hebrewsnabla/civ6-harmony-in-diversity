@@ -137,6 +137,22 @@ update AiFavoredItems set Item = 'CIVIC_CIVIL_SERVICE' where ListType = 'Jadwiga
 -- delete from RequirementSetRequirements where
 -- 	RequirementSetId = 'PLAYER_IS_HIGH_DIFFICULTY_AI' and RequirementId = 'REQUIRES_PLAYER_IS_AI';
 
+-- one free strategic resource for deity AI.
+insert or replace into TraitModifiers (TraitType,   ModifierId)
+select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
+insert or replace into Modifiers (ModifierId,           ModifierType,   OwnerRequirementSetId)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 1
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+
 -- For high difficulty AI.
 insert or replace into TraitModifiers (TraitType,	ModifierId) values
     ('TRAIT_LEADER_MAJOR_CIV',                      'AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_AMENITY'),
@@ -386,7 +402,7 @@ UPDATE PseudoYields SET DefaultValue = 5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_INFLUENCE'; --     0.5, envoys - Diplo? RS 0.55
 UPDATE PseudoYields SET DefaultValue = 30 WHERE PseudoYieldType = 'PSEUDOYIELD_NUCLEAR_WEAPON'; --  25, AI+ 45
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
-UPDATE PseudoYields SET DefaultValue = 1.2 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
+UPDATE PseudoYields SET DefaultValue = 1.25 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
 UPDATE PseudoYields SET DefaultValue = 0.13 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --   0.1 -- controls size of the army
 --UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --    1
 

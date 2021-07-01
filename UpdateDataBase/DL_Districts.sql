@@ -312,3 +312,25 @@ select 'CULTURE_BOMB_TRIGGER_' || DistrictType , 'MODIFIER_PLAYER_ADD_CULTURE_BO
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType, 'DistrictType', DistrictType from Districts;
 
+-- STRATEGIC_RESOURCE_ACCUMULATION
+insert or replace into DistrictModifiers (DistrictType, ModifierId)
+select 'DISTRICT_THANH',                                'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_THANH');
+
+insert or replace into DistrictModifiers
+    (DistrictType,                  ModifierId)
+values
+    ('DISTRICT_ROYAL_NAVY_DOCKYARD', 'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
+    ('DISTRICT_ENCAMPMENT',         'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
+    ('DISTRICT_IKANDA',             'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION');
+
+insert or replace into Modifiers
+    (ModifierId,                                            ModifierType)
+values
+    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_ACCUMULATION');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                            Name,       Value)
+values
+    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'Amount',   2);
+

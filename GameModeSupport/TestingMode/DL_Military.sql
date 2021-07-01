@@ -12,65 +12,28 @@
 -- update Units_XP2 set ResourceMaintenanceAmount = 1 where ResourceCost > 1;
 -- update Units_XP2 set ResourceCost = 5 where ResourceCost > 0;
 
--- Outer Defense
-update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_WALLS';
 -- update Buildings set OuterDefenseStrength = 2 where
 --     BuildingType = 'BUILDING_WALLS' or BuildingType = 'BUILDING_CASTLE' or BuildingType = 'BUILDING_STAR_FORT';
 -- update Districts set CityStrengthModifier = 1 where CityStrengthModifier = 2;
-delete from AiFavoredItems where ListType = 'DLAdjustBuildings' and Item = 'BUILDING_CASTLE';
 
--- COMBAT_STRENGTH_REDUCTION_INSUFFICIENT_FUEL
-update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSUFFICIENT_RESOURCES';
+delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_CONQUEST' and ModifierId = 'GOV_CONQUEST_MILITARY_UNIT_PRODUCTION';
+
+insert or replace into AiFavoredItems
+    (ListType,                  Item,                                   Favored,    Value)
+values
+    ('DLAdjustBuildings',       'BUILDING_CASTLE',                      1,          0);
+
 update GlobalParameters set Value = 25 where Name = 'EXPERIENCE_PROMOTE_HEALED';
 update GlobalParameters set Value = 2 where Name = 'PILLAGE_MOVEMENT_COST';
 
 update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_FISHERY';
 update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
--- strategic resources
-update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
-
--- one free strategic resource for deity AI.
-insert or replace into TraitModifiers (TraitType,   ModifierId)
-select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-
-insert or replace into Modifiers (ModifierId,           ModifierType,   OwnerRequirementSetId)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-
-insert or replace into ModifierArguments (ModifierId,   Name,   Value)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into ModifierArguments (ModifierId,   Name,   Value)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 1
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-
 -- free promotion for deity AI.
 insert or replace into TraitModifiers (TraitType,   ModifierId) values ('TRAIT_LEADER_MAJOR_CIV', 'HD_DEITY_FREE_PROMOTION');
 insert or replace into Modifiers (ModifierId,           ModifierType,   Permanent,  OwnerRequirementSetId)
 values ('HD_DEITY_FREE_PROMOTION',  'MODIFIER_PLAYER_UNITS_ADJUST_GRANT_EXPERIENCE',    1,  'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
 insert or replace into ModifierArguments (ModifierId,   Name,   Value) values ('HD_DEITY_FREE_PROMOTION',  'Amount',   -1);
-
-insert or replace into DistrictModifiers (DistrictType, ModifierId)
-select 'DISTRICT_THANH',                                'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_THANH');
-
-insert or replace into DistrictModifiers
-    (DistrictType,                  ModifierId)
-values
-    ('DISTRICT_ENCAMPMENT',         'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
-    ('DISTRICT_IKANDA',             'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION');
-
-insert or replace into Modifiers
-    (ModifierId,                                            ModifierType)
-values
-    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_ACCUMULATION');
-
-insert or replace into ModifierArguments
-    (ModifierId,                                            Name,       Value)
-values
-    ('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',   'Amount',   2);
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -170,13 +133,3 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,                      RequirementId)
 values
     ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIRES_CITY_LOYALTY_NOT_FULL');
-
-------------------------------------------------------------------------------------------------------------
--- adjust strategic projects cost
-update Projects set Cost = 50 where ProjectType = 'PROJECT_GRANT_RESOURCE_HORSES';
-update Projects set Cost = 60 where ProjectType = 'PROJECT_GRANT_RESOURCE_IRON';
-update Projects set Cost = 100 where ProjectType = 'PROJECT_GRANT_RESOURCE_NITER';
-update Projects set Cost = 150 where ProjectType = 'PROJECT_GRANT_RESOURCE_COAL';
-update Projects set Cost = 200 where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
-update Projects set Cost = 200 where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
-update Projects set Cost = 600 where ProjectType = 'PROJECT_GRANT_RESOURCE_URANIUM';

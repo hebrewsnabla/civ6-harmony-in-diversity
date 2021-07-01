@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.8.4">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.8.8">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,8 +12,8 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.8.4</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.8.4</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.8.8</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.8.8</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
       <en_US>Create a brand new Civ6.</en_US>
@@ -24,8 +24,8 @@
       <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个与迭起兴衰、风云变化等大型DLC比肩的大型游戏性mod，对游戏内容进行了大规模的修缮和平衡。该mod目前正在开发中，即将发布1.0版本。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, o(╯□╰)o</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, o(╯□╰)o</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -739,6 +739,8 @@
       <File>UpdateDataBase/DL_Technologies.sql</File>
       <File>UpdateDataBase/DL_TradeRoute.sql</File>
       <File>UpdateDataBase/DL_TypeTags.sql</File>
+      <File>UpdateDataBase/DL_UniqueUnits.sql</File>
+      <File>UpdateDataBase/DL_UnitPromotions.sql</File>
       <File>UpdateDataBase/DL_Units.sql</File>
       <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
       <File>UpdateDataBase/DL_Wonders.sql</File>
@@ -763,6 +765,7 @@
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
+      <File>UI/Icons/HD_Icons_Promotions.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -815,6 +818,7 @@
       <File>Texts/HD_Text_Pantheon.sql</File>
       <File>Texts/HD_Text_Policies.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
+      <File>Texts/HD_Text_UnitPromotions.sql</File>
       <File>Texts/HD_Text_Wonders.sql</File>
       <File>Texts/HD_Text_GreatPerson.sql</File>
     </UpdateText>
@@ -857,15 +861,8 @@
       <Properties><LoadOrder>18100</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TestingMode/DL_Military.sql</File>
-      <File>GameModeSupport/TestingMode/DL_Units.sql</File>
-      <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
       <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
-      <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
     </UpdateDatabase>
-    <UpdateIcons id="Testing_update_icons" criteria="Testing_Mode_Expansion2">
-      <Properties><LoadOrder>18101</LoadOrder></Properties>
-      <File>GameModeSupport/TestingMode/HD_Icons.xml</File>
-    </UpdateIcons>
     <UpdateText id="Testing_update_text" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18101</LoadOrder></Properties>
       <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
@@ -922,12 +919,8 @@
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
       <!-- Military Testing Mode -->
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>
-    <File>GameModeSupport/TestingMode/DL_Units.sql</File>
-    <File>GameModeSupport/TestingMode/DL_UniqueUnits.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TestingMode/DL_UnitPromotions.sql</File>
-    <File>GameModeSupport/TestingMode/HD_Icons.xml</File>
     <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
     <File>GameModeSupport/TestingMode/DL_Military.lua</File>
       <!-- Tech Test Mode -->
@@ -976,6 +969,7 @@
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
+    <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
@@ -1117,6 +1111,8 @@
     <File>UpdateDataBase/DL_Temp.sql</File>
     <File>UpdateDataBase/DL_TradeRoute.sql</File>
     <File>UpdateDataBase/DL_TypeTags.sql</File>
+    <File>UpdateDataBase/DL_UniqueUnits.sql</File>
+    <File>UpdateDataBase/DL_UnitPromotions.sql</File>
     <File>UpdateDataBase/DL_Units.sql</File>
     <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
     <File>UpdateDataBase/DL_Wonders.sql</File>
@@ -1141,6 +1137,7 @@
     <File>Texts/HD_Text_NaturalWonders.sql</File>
     <File>Texts/HD_Text_Pantheon.sql</File>
     <File>Texts/HD_Text_Policies.sql</File>
+    <File>Texts/HD_Text_UnitPromotions.sql</File>
     <File>Texts/HD_Text_Units.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>

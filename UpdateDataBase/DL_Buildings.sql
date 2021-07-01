@@ -1283,6 +1283,8 @@ values
 	('BUILDING_FAIR',						'BUILDING_TOTEMS'),
 	('BUILDING_TOTEMS',						'BUILDING_FAIR');
 
+-- Outer Defense
+update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_WALLS';
 ----------------------------------------------------------------------------------------------------------------------
 
 -- GeneralServicesOffice 总务厅, cost 250, unlocked by civil sevices, all yields (except faith) by 1.
