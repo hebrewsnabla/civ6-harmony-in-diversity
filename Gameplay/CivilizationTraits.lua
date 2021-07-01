@@ -15,6 +15,32 @@ function LeaderHasTrait(sLeader, sTrait)
 	return false
 end
 
+-- 老秦
+function ChinaBuilderScience(playerID, unitID, newCharges, oldCharges)
+	print(playerID, unitID, newCharges, oldCharges)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sCiv = playerConfig:GetCivilizationTypeName()
+	local amount = 6
+	local sWisdonOfWorkingPeople = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE'
+	if CivilizationHasTrait(sCiv, sWisdonOfWorkingPeople) and (newCharges < oldCharges) then
+		local unit = player:GetUnits():FindID(unitID)
+		if unit ~= nil then
+			-- print(unit:GetType(), unit:GetX(), unit:GetY())
+			if unit:GetType() == GameInfo.Units['UNIT_BUILDER'].Index then
+				player:GetTechs():ChangeCurrentResearchProgress(amount)
+				if newCharges > 0 then
+					-- 次数到0后会找不到单位(-9999, -9999)的原位置，无法显示浮动文本。
+					local message = '[COLOR:ResScienceLabelCS]+' .. tostring(amount) .. '[ENDCOLOR][ICON_Science]'
+					Game.AddWorldViewText(0, message, unit:GetX(), unit:GetY())
+				end
+			end
+		end
+	end
+end
+
+Events.UnitChargesChanged.Add(ChinaBuilderScience)
+
 --Phoenicia Trigger Foreign Trade Boost
 function DidoOnPlayerTurnActivated(playerID:number, bFirstTimeThisTurn:boolean)
 	local player = Players[playerID]
@@ -43,11 +69,11 @@ function PedroGreatPersonFaith(playerID, unitID, greatPersonClassID, greatPerson
 		end
 		amount = amount + 1
 		-- Every two greatperson add 1 faith to jungle.
-    	if amount == 2 then
-    		amount = 0
-        	player:AttachModifierByID(sModifierID)
-    	end
-    	player:SetProperty(PROP_KEY_NUMBER_GREAT_PEOPLE, amount)
+		if amount == 2 then
+			amount = 0
+			player:AttachModifierByID(sModifierID)
+		end
+		player:SetProperty(PROP_KEY_NUMBER_GREAT_PEOPLE, amount)
 	end
 end
 

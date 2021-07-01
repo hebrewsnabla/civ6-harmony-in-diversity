@@ -2,6 +2,24 @@
 --     Civilization Adjustment     --
 -------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
+
+-- 秦始皇
+update TraitModifiers set TraitType = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE' where ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('FIRST_EMPEROR_TRAIT',		'TRAIT_ADJUST_BUILDER_MOVEMENT_HD');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+values
+	('TRAIT_ADJUST_BUILDER_MOVEMENT_HD',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_BUILDER');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,		Value)
+values
+	('TRAIT_ADJUST_BUILDER_MOVEMENT_HD',    'Amount',	1);
+
 -- Eleanor 
 update ModifierArguments set Value = 2 where ModifierId = 'IDENTITY_NEARBY_GREATWORKS' and Name = 'Amount';
 --additonal theater project
