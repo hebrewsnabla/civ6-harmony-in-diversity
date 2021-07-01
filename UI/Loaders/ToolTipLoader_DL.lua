@@ -397,6 +397,14 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
             table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_BASE_COST", cost, yield.IconString, yield.Name));
         end
     end
+    -- Add Base Maintenance
+    local maintenance = building.Maintenance
+    if(maintenance > 1) then
+        local yield = GameInfo.Yields["YIELD_GOLD"];
+        if(yield) then
+            table.insert(toolTipLines, Locale.Lookup("LOC_TOOLTIP_MAINTENANCE", maintenance, yield.IconString, yield.Name));
+        end
+    end
     -------------------------------------------------------------
 
     -- Return the composite tooltip!

@@ -231,7 +231,7 @@
     </Criteria>
   </ActionCriteria>
   <FrontEndActions>
-    <UpdateDatabase id="Community_STUU_ConfigUserSetting" criteria="STUU">
+    <UpdateDatabase id="Community_STUU_ConfigUserSetting"> <!-- criteria="STUU" -->
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     </UpdateDatabase>
