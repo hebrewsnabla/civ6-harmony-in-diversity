@@ -298,3 +298,10 @@ insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
 values
 	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+-- La venta
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,				FeatureType)
+values
+	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST'),
+	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE');

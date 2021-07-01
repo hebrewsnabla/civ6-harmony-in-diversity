@@ -468,7 +468,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_MACEDONIAN_HETAIROI_NAME",                                                 "伙伴骑兵"),
     ("zh_Hans_CN",  "LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION",                                       "取代枪兵的马其顿远古时代特色抗骑兵单位，拥有更强的 [ICON_Strength] 战斗力且进攻近战单位时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_UNIT_MACEDONIAN_PEZHETAIROS_NAME",                                              "同伴步兵"),
-    ("zh_Hans_CN",  "LOC_UNIT_MALI_SOFA_DESCRIPTION",                                                    "取代弩兵的马里特色中世纪远程单位。当对抗受伤单位时+5 [ICON_Strength] 战斗力，邻近骑兵单位时+4 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_UNIT_MALI_SOFA_DESCRIPTION",                                                    "取代弩手的马里特色中世纪远程单位。当对抗受伤单位时+5 [ICON_Strength] 战斗力，邻近骑兵单位时+4 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_UNIT_MALI_SOFA_NAME",                                                           "奴隶射手"),
     ("zh_Hans_CN",  "LOC_UNIT_MAORI_TUPARA_DESCRIPTION",                                                 "取代游骑兵的毛利特色工业时代侦察单位。远程 [ICON_Strength] 战斗力略低于游骑兵但每回合有两次进攻机会，能够建造改良设施“帕堡”。"),
     ("zh_Hans_CN",  "LOC_UNIT_MAORI_TUPARA_NAME",                                                        "托塔帕拉"),
