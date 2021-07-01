@@ -17,16 +17,16 @@ end
 
 -- 老秦
 function ChinaBuilderScience(playerID, unitID, newCharges, oldCharges)
-	print(playerID, unitID, newCharges, oldCharges)
+	-- print(playerID, unitID, newCharges, oldCharges)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
 	local amount = 6
 	local sWisdonOfWorkingPeople = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE'
-	if CivilizationHasTrait(sCiv, sWisdonOfWorkingPeople) and (newCharges < oldCharges) then
+	if player:IsTurnActive() and CivilizationHasTrait(sCiv, sWisdonOfWorkingPeople) and (newCharges + 1 == oldCharges) then
 		local unit = player:GetUnits():FindID(unitID)
 		if unit ~= nil then
-			-- print(unit:GetType(), unit:GetX(), unit:GetY())
+			-- print(unit:GetOwner(), unit:GetType(), unit:GetX(), unit:GetY())
 			if unit:GetType() == GameInfo.Units['UNIT_BUILDER'].Index then
 				player:GetTechs():ChangeCurrentResearchProgress(amount)
 				if newCharges > 0 then
