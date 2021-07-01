@@ -882,6 +882,23 @@ insert or replace into RequirementSetRequirements	(RequirementSetId,	Requirement
 	select 'ZIGGURAT_' || EraType,	'REQUIRES_PLAYER_IS_' || EraType 	from Eras where EraType != 'ERA_ANCIENT';
 
 -- Unit promotions
+-- DLC Supports
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+values
+	('COMBAT_AGAINST_UNITS_REQUIREMENTS',						'REQUIREMENTSET_TEST_ALL');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+values
+	('COMBAT_AGAINST_UNITS_REQUIREMENTS',						'OPPONENT_IS_NOT_DISTRICT');
+
+insert or ignore into Requirements
+	(RequirementId,									RequirementType,							Inverse)
+values
+	('OPPONENT_IS_NOT_DISTRICT',					'REQUIREMENT_OPPONENT_IS_DISTRICT',			1);
+
+-- 
 insert or replace into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values

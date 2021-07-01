@@ -1342,12 +1342,15 @@ insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSe
 select 'TRADE_ROUTE_CHANCERY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'BUILDING_IS_CHANCERY'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 
-insert or replace into ModifierArguments
-	(ModifierId,						Name,			Value)
-values
-	('TRADE_ROUTE_DIP_DISTRICT',		'Amount',		1),
-	('TRADE_ROUTE_CONSULATE',			'Amount',		1),
-	('TRADE_ROUTE_CHANCERY',			'Amount',		1);
+insert or replace into ModifierArguments (ModifierId,						Name,			Value)
+select 'TRADE_ROUTE_DIP_DISTRICT',		'Amount',		1
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into ModifierArguments (ModifierId,						Name,			Value)
+select 'TRADE_ROUTE_CONSULATE',			'Amount',		1
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into ModifierArguments (ModifierId,						Name,			Value)
+select 'TRADE_ROUTE_CHANCERY',			'Amount',		1
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 
 -- UA
 insert or replace into TraitModifiers
