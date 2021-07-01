@@ -45,6 +45,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 23, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+insert or replace into TypeTags (Type, Tag) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 -- 
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
