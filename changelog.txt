@@ -2319,3 +2319,5 @@ Tweak on some Wonders.
 
 [v0.8.9]
 拉文塔的巨神头像允许修建在森林和雨林上。
+
+粗略支持Steel and Thunder 的特色单位。
