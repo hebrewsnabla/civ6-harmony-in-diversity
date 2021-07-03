@@ -172,7 +172,7 @@ update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CANADA_MOUNTIE';
 ------ UNIT_CANADA_HMCS_HAIDA
 -- 匈牙利
-update Units set Cost = 100, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set Cost = 225, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 69, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_HUSZAR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HUNGARY_HUSZAR';
@@ -216,7 +216,7 @@ update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 ------ UNIT_COLOMBIAN_BRITISH_LEGION
 -- 埃塞俄比亚
-update Units set Cost = 95, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
+update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update UnitReplaces set ReplacesUnitType = 'UNIT_COURSER' where CivUniqueUnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 ------ UNIT_ETHIOPIAN_MEHAL_SEFARI
