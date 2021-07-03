@@ -1,7 +1,7 @@
 -------------------------------------
 --     Unique Units Adjustments    --
 -------------------------------------
-update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
+-- update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
 update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
 
 -- UU
@@ -10,7 +10,7 @@ update Units set Cost = 330, Maintenance = 4, BaseMoves = 5, Range = 0, Combat =
 ------ UNIT_AMERICAN_P51
 ------ UNIT_AMERICAN_MINUTEMAN
 -- 阿拉伯
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
+update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_ARABIAN_MAMLUK';
 ------ UNIT_ARABIAN_CAMEL_ARCHER
 ------ UNIT_ARABIAN_GHAZI
@@ -158,7 +158,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 ------ UNIT_GEORGIAN_TADZREULI
 -- 荷兰
 update Units set Cost = 220, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 55, RangedCombat = 65, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DE_ZEVEN_PROVINCIEN';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DE_ZEVEN_PROVINCIEN';
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DE_ZEVEN_PROVINCIEN';
 ------ UNIT_DUTCH_SCHUTTERIJ
 -- 克里
 update Units set Cost = 35, BaseMoves = BaseMoves + 1 where UnitType = 'UNIT_CREE_OKIHTCITAW';
@@ -188,7 +188,7 @@ update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
 ------ UNIT_MALI_SOFA
 -- 毛利
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0 where UnitType = 'UNIT_MAORI_TOA';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 40, RangedCombat = 0 where UnitType = 'UNIT_MAORI_TOA';
 ------ UNIT_MAORI_TUPARA
 -- 奥斯曼
 update Units set Cost = 155, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
@@ -216,7 +216,7 @@ update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 ------ UNIT_COLOMBIAN_BRITISH_LEGION
 -- 埃塞俄比亚
-update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
+update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update UnitReplaces set ReplacesUnitType = 'UNIT_COURSER' where CivUniqueUnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 ------ UNIT_ETHIOPIAN_MEHAL_SEFARI

@@ -49,6 +49,8 @@ values
     -- 
     ("LOC_BOOST_TRIGGER_METAL_CASTING",               "Have the Military Training Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",      "Weapons evolve along with Military training, more advanced ways of making weapons are emerging."),
+    ("LOC_BOOST_TRIGGER_CASTLES",                     "Have the Defensive Tactics Civic."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_CASTLES",            "We need impressive defenses to better utilize the defensive tactics to protect our cities."),
     ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "Earn a Great General."),
     ("LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "The Great General brings about new military tactics.");
 
@@ -104,7 +106,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RECORDED_HISTORY",            "建造1个图书馆"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RECORDED_HISTORY",   ""), -- 您的国民打算把更多卷轴放在您的学院图书馆里，他们开始记录帝国历史了。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HUMANISM",                    "建造2个古罗马剧场。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",           ""), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",           "频繁戏剧的演出引领了人民的新思潮。"), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",           "使用枪兵击杀1个单位。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",  "枪兵拥有出色的单兵作战能力，那如果将他们组合起来呢？"), -- 面对入侵威胁，您的国民已准备好了一种新型防御措施。
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
@@ -115,5 +117,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",      "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_METAL_CASTING",               "拥有军事训练市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",      "军事训练推进着武器不断的革新，新式的武器铸造方式也孕育而生。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CASTLES",                     "拥有防御战术市政。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CASTLES",            "我们需要更牢靠的防御来更好地发挥防御战术保护我们的城市。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "获得一位大将军。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "大将军带来了全新的军事战术的思考。");

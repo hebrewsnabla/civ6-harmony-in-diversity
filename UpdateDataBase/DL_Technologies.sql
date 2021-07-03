@@ -30,6 +30,8 @@ update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURC
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
     Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
+update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS',
+    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_CASTLES';
 update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
     where TechnologyType = 'TECH_MILITARY_TACTICS';
 update ModifierArguments set Value = 'TECH_METAL_CASTING' where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and Name = 'TechType';
