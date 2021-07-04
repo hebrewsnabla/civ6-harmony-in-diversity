@@ -470,6 +470,7 @@
     </UpdateDatabase>
     <UpdateText id="Community_STUU_support_texts" criteria="STUU_Expansion2">
       <Properties><LoadOrder>15017</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     </UpdateText>
@@ -990,6 +991,7 @@
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     <File>ModSupport/SteelThunder/STXP.sql</File>
     <File>ModSupport/SteelThunder/STUU.sql</File>
+    <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>

@@ -23,7 +23,7 @@ delete from Types where Type = 'UNIT_DLV_LONGSWORDSMAN';
 
 -- Adaptation
 delete from UnitReplaces where CivUniqueUnitType = 'UNIT_SUMERIAN_WAR_CART';
-UPDATE UnitUpgrades SET UpgradeUnit = 'UNIT_DLV_COG' WHERE Unit = 'UNIT_PHOENICIA_BIREME';
+update UnitUpgrades set UpgradeUnit = 'UNIT_DLV_COG' where Unit = 'UNIT_PHOENICIA_BIREME';
 
 delete from Types where Type = 'ABILITY_CITY_CENTER_NERF';
 delete from Types where Type = 'ABILITY_PLUS_X_WHEN_DEFENDING';
@@ -36,4 +36,22 @@ insert or ignore into UnitAbilityModifiers (UnitAbilityType, ModifierId) values 
 
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_DLV_COG';
 update Units set PrereqTech = 'TECH_EDUCATION' where UnitType = 'UNIT_DLV_GALLEASS';
-UPDATE ModifierArguments SET Value = 10 WHERE ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' and Name = 'Amount';
+
+-- unit types and promotion updates
+update Units set PrereqTech = 'TECH_STEEL' where UnitType = 'UNIT_DLV_MORTAR';
+update Units set PrereqTech = 'TECH_ADVANCED_BALLISTICS' where UnitType = 'UNIT_DLV_SELF_PROPELLED_ARTILLERY';
+update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 2, Combat = 60, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_DLV_MORTAR';
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_DLV_MORTAR';
+update Units set Cost = 640, Maintenance = 10, BaseMoves = 3, Range = 3, Combat = 70, Bombard = 90, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_DLV_SELF_PROPELLED_ARTILLERY';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DLV_SELF_PROPELLED_ARTILLERY';
+update Units set RangedCombat = 0 where UnitType = 'UNIT_ROCKET_ARTILLERY';
+
+delete from UnitUpgrades where Unit = 'UNIT_MACHINE_GUN';
+delete from Types where Type = 'UNIT_DLV_GATLING_GUN';
+update UnitUpgrades set UpgradeUnit = 'UNIT_MACHINE_GUN' where Unit = 'UNIT_DLV_MORTAR';
+
+insert or replace into UnitUpgrades (UpgradeUnit, Unit) values ('UNIT_ROCKET_ARTILLERY',    'UNIT_DLV_SELF_PROPELLED_ARTILLERY');
+update Units set PromotionClass = 'PROMOTION_CLASS_SIEGE' where UnitType = 'UNIT_ROCKET_ARTILLERY';
+delete from TypeTags where Type = 'UNIT_ROCKET_ARTILLERY' and Tag like 'CLASS_%';
+insert into TypeTags select 'UNIT_ROCKET_ARTILLERY', Tag from TypeTags where Type = 'UNIT_ARTILLERY' and Tag like 'CLASS_%';

@@ -116,6 +116,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
 
 -- Ranged: ability cancelled.
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Ranged: -17 [ICON_Strength] Combat Strength when attacking districts or Naval units. +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. -3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles.' where Language = 'en_US' and (
+--     Tag = 'LOC_UNIT_MORTAR_DESCRIPTION' or -- STXP
 --     Tag = 'LOC_UNIT_SLINGER_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BARBARIAN_HORSE_ARCHER_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ARCHER_DESCRIPTION' or
@@ -164,12 +165,24 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [IC
 
 -- Siege: temporary disable.
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Siege: +1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry.' where Language = 'en_US' and (
+--     Tag = 'LOC_UNIT_SELF_PROPELLED_ARTILLERY_DESCRIPTION' or -- STXP
 --     Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+
+-- Naval Melee: can transport units in the sea.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed' where Language = 'en_US' and (
+    Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
+    Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CARAVEL_DESCRIPTION' or
+    Tag = 'LOC_UNIT_IRONCLAD_DESCRIPTION' or
+    Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -269,9 +282,21 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区
 
 -- 攻城能力临时取消
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻城：若相邻轻重骑兵，则+1 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
+--     Tag = 'LOC_UNIT_SELF_PROPELLED_ARTILLERY_DESCRIPTION' or -- STXP
 --     Tag = 'LOC_UNIT_CATAPULT_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BOMBARD_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+
+-- 海军近战可以运兵
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
+    Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
+    Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CARAVEL_DESCRIPTION' or
+    Tag = 'LOC_UNIT_IRONCLAD_DESCRIPTION' or
+    Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');

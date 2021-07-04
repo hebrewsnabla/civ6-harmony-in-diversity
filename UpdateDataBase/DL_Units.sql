@@ -165,7 +165,9 @@ update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_KNIGHT';
 -- update Units set Cost = 220, Maintenance = 8, BaseMoves = 4, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_REITER';
 -- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_REITER';
-update Units set Cost = 330, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
+-- update Units set Cost = 330, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
+-- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_CUIRASSIER';
+update Units set Cost = 300, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 73, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_CUIRASSIER';
 -- update Units set Cost = 400, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 82, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_LANDSHIP';
 -- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_LANDSHIP';
