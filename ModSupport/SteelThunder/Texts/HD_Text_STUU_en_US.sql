@@ -67,7 +67,7 @@ values
     ("LOC_ABILITY_T34_DESCRIPTION",                                                       "+5 [ICON_Strength] Combat Strength in or adjacent to own territory."),
     ("LOC_ABILITY_TERCIO_DESCRIPTION",                                                    "Earns experience more quickly."),
     ("LOC_ABILITY_UNIT_BONUS_VERSUS_CITY_STATES_DESCRIPTION",                             "+7 [ICON_Strength] Combat Strength when attacking City States' units."),
-    ("LOC_ABILITY_ZULU_ASSEGAI_DESCRIPTION",                                              "+4 [ICON_Strength] when adjacent to another Isijula Warrior."),
+    ("LOC_ABILITY_ZULU_ASSEGAI_DESCRIPTION",                                              "+1 [ICON_Movement] Movement when adjacent to Anti-Cavalry units."), -- +4 [ICON_Strength] when adjacent to another Isijula Warrior.
     ("LOC_HEAL_ON_VICTORY_DESCRIPTION",                                                   "Heals after defeating unit."),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_AMERICAN_AH64_APACHE_CHAPTER_HISTORY_PARA_1",             "The Boeing AH-64 Apache is an American four-blade, twin-turboshaft attack helicopter with a tailwheel-type landing gear arrangement and a tandem cockpit for a two-man crew. It features a nose-mounted sensor suite for target acquisition and night vision systems. It is armed with a 30 mm (1.18 in) M230 chain gun carried between the main landing gear, under the aircraft's forward fuselage. It has four hardpoints mounted on stub-wing pylons, typically carrying a mixture of AGM-114 Hellfire missiles and Hydra 70 rocket pods. The AH-64 has a large amount of systems redundancy to improve combat survivability. "),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_AMERICAN_AH64_APACHE_CHAPTER_HISTORY_PARA_2",             "The Apache originally started as the Model 77 developed by Hughes Helicopters for the United States Army's Advanced Attack Helicopter program to replace the AH-1 Cobra. The prototype YAH-64 was first flown on 30 September 1975. The U.S. Army selected the YAH-64 over the Bell YAH-63 in 1976, and later approved full production in 1982. After purchasing Hughes Helicopters in 1984, McDonnell Douglas continued AH-64 production and development. The helicopter was introduced to U.S. Army service in April 1986. "),
@@ -439,7 +439,7 @@ values
     ("LOC_UNIT_GREEK_ARMATOLOS_NAME",                                                     "Armatolos"),
     ("LOC_UNIT_GREEK_PELTAST_DESCRIPTION",                                                "Greek unique Ranged unit that replaces Archer. +5 [ICON_Strength] Combat Strength when defending."),
     ("LOC_UNIT_GREEK_PELTAST_NAME",                                                       "Peltast"),
-    ("LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION",                                            "Hungarian unique Medieval Era Ranged unit replacing the Crossbowman. Requires fewer movement points to pillage. Yields 50% of defeated units' [ICON_Strength] as [ICON_Gold] on combat victory."),
+    ("LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION",                                            "Hungarian unique Medieval Era Ranged unit replacing the Crossbowman. Yields 50% of defeated units' [ICON_Strength] as [ICON_Gold] on combat victory."), -- Requires fewer movement points to pillage. 
     ("LOC_UNIT_HUNGARY_KALANDOZO_NAME",                                                   "Kalandozó"),
     ("LOC_UNIT_INCA_CHASQUI_DESCRIPTION",                                                 "Incan unique Ancient Era Recon unit replacing the Scout. +1 extra movement and can build roads."),
     ("LOC_UNIT_INCA_CHASQUI_NAME",                                                        "Chasqui"),
@@ -451,7 +451,7 @@ values
     ("LOC_UNIT_INDONESIAN_KRIS_SWORDSMAN_NAME",                                           "Kris Warrior"),
     ("LOC_UNIT_JANISSARY_DESCRIPTION",                                                    "Renaissance era melee unit that can be built by the Suzerain of Preslav or Yerevan. Heals when destroying an enemy unit."),
     ("LOC_UNIT_JANISSARY_NAME",                                                           "Janissary"),
-    ("LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION",                                               "Japanese unique anti-cavalry unit available with the Feudalism Civic. Can be purchased with [ICON_Faith] Faith. +10 [ICON_Strength] Combat Strength when defending."),
+    ("LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION",                                               "Japanese unique land combat unit that uses the Warrior Monk promotion tree. May be purchased with Faith."), -- Japanese unique anti-cavalry unit available with the Feudalism Civic. Can be purchased with [ICON_Faith] Faith. +10 [ICON_Strength] Combat Strength when defending.
     ("LOC_UNIT_JAPANESE_SOHEI_NAME",                                                      "Sohei"),
     ("LOC_UNIT_JAPANESE_YAMATO_DESCRIPTION",                                              "Japanese unique naval Ranged unit. Stronger than the Battleship it replaces."),
     ("LOC_UNIT_JAPANESE_YAMATO_NAME",                                                     "Yamato"),
@@ -474,7 +474,7 @@ values
     ("LOC_UNIT_MAORI_TUPARA_NAME",                                                        "Toatupara"),
     ("LOC_UNIT_MAPUCHE_GUERILLA_DESCRIPTION",                                             "Mapuche unique Medieval anti cavalry unit that replaces Pikeman. Has ranged attack. Can move after attacking. Can move and see through Woods and Rainforest."),
     ("LOC_UNIT_MAPUCHE_GUERILLA_NAME",                                                    "Namuntulinco"),
-    ("LOC_UNIT_MAYAN_HOLKAN_DESCRIPTION",                                                 "Mayan unique Medieval Melee unit that replaces Man at Arms. +7 [ICON_Strength] when attacking City States' units and yields 100% of defeated City State units' combat strength as [ICON_Gold] Gold. "),
+    ("LOC_UNIT_MAYAN_HOLKAN_DESCRIPTION",                                                 "Mayan unique Medieval Melee unit that replaces Man at Arms. Stronger and do not require Iron resources."), -- +7 [ICON_Strength] when attacking City States' units and yields 100% of defeated City State units' combat strength as [ICON_Gold] Gold.
     ("LOC_UNIT_MAYAN_HOLKAN_NAME",                                                        "Holcan"),
     ("LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_DESCRIPTION",                                        "Mongolian unique Medieval era siege unit. Adjacent Heavy Cavalry, Light Cavalry and Melee units get +5 Combat Strength when attacking Districts."),
     ("LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_NAME",                                               "Hui Hui Pao"),
@@ -504,7 +504,7 @@ values
     ("LOC_UNIT_RUSSIAN_DRUZHINA_NAME",                                                    "Druzhina"),
     ("LOC_UNIT_RUSSIAN_T34_DESCRIPTION",                                                  "Russian unique Tank replacement that costs less to build and less maintenance. +5 [ICON_Strength] Combat Strength in or adjacent to own territory."),
     ("LOC_UNIT_RUSSIAN_T34_NAME",                                                         "T-34"),
-    ("LOC_UNIT_SCOTTISH_GALLOWGLASS_DESCRIPTION",                                         "Scottish unique Medieval era melee unit that replaces Man at Arms. Earns experience faster and receives +5 [ICON_Strength] Combat Strength when attacking."),
+    ("LOC_UNIT_SCOTTISH_GALLOWGLASS_DESCRIPTION",                                         "Scottish unique Medieval era melee unit that replaces Man at Arms. Earns 50% more experience and receives +5 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_UNIT_SCOTTISH_GALLOWGLASS_NAME",                                                "Gallowglass"),
     ("LOC_UNIT_SCYTHIAN_AMAZON_DESCRIPTION",                                              "Scythian unique Classical Era Heavy Cavalry unit that replaces Heavy Chariot. Unlocked by Horseback Riding. +1 [ICON_Movement] Movement when starts in open area. Can move after attacking."),
     ("LOC_UNIT_SCYTHIAN_AMAZON_NAME",                                                     "Amazon"),
@@ -515,11 +515,11 @@ values
     ("LOC_UNIT_SPANISH_JINETE_NAME",                                                      "Jinete"),
     ("LOC_UNIT_SPANISH_TERCIO_DESCRIPTION",                                               "Spanish unique Renaissance Era Anti-Cavalry unit. Earns experience more quickly."),
     ("LOC_UNIT_SPANISH_TERCIO_NAME",                                                      "Tercio"),
-    ("LOC_UNIT_SUMERIAN_PHALANX_DESCRIPTION",                                             "Sumerian unique Ancient Era unit that replaces the Spearman. Unlcoked without technology prerequisite. +10 [ICON_Strength] Combat Strength against barbarians."), -- The Phalanx is available with the discovery of the Mining technology. +5 [ICON_Strength] if fighting within 8 tiles of a Ziggurat improvement.
+    ("LOC_UNIT_SUMERIAN_PHALANX_DESCRIPTION",                                             "Sumerian unique Ancient Era unit that replaces the Spearman. Unlocked without technology prerequisite. +10 [ICON_Strength] Combat Strength against barbarians."), -- The Phalanx is available with the discovery of the Mining technology. +5 [ICON_Strength] if fighting within 8 tiles of a Ziggurat improvement.
     ("LOC_UNIT_SUMERIAN_PHALANX_NAME",                                                    "Phalanx"),
     ("LOC_UNIT_SWEDEN_HAKKAPELIITTA_DESCRIPTION",                                         "Swedish unique Industrial Era Light Cavalry unit replacing Cavalry. +5 [ICON_Strength] Combat Strength when attacking. Gains +2 movement points if starting on Tundra, Tundra Hills, Snow or Snow Hills."),
     ("LOC_UNIT_SWEDEN_HAKKAPELIITTA_NAME",                                                "Hakkapeliitta"),
-    ("LOC_UNIT_ZULU_ASSEGAI_DESCRIPTION",                                                 "Zulu unique Ancient era ranged unit that replaces Archer. Higher Melee Strength. +4 [ICON_Strength] when adjacent to another Isijula Warrior."),
+    ("LOC_UNIT_ZULU_ASSEGAI_DESCRIPTION",                                                 "Zulu unique Medieval era ranged unit that replaces Crossbowman. Higher Ranged Strength. +1 [ICON_Movement] when adjacent to Anti-Cavalry units."), --+4 [ICON_Strength] when adjacent to another Isijula Warrior.
     ("LOC_UNIT_ZULU_ASSEGAI_NAME",                                                        "Isijula Warrior"),
     ("LOC_UNIT_GAUL_CARRUS_DESCRIPTION",                                                  "Gaulish unique Heavy Cavalry unit that replaces the Heavy Chariot. +7 [ICON_Strength] Combat Strength against anti-cavalry units."),
     ("LOC_UNIT_GAUL_CARRUS_NAME",                                                         "Carrus"),
@@ -545,7 +545,7 @@ values
     ("LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_3",                      ""),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_4",                      ""),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_5",                      ""),
-    ("LOC_UNIT_BABYLONIAN_BOWMAN_DESCRIPTION",                                            "Babylonian unique Ancient era Ranged unit that replaces Archer. Stronger than Archer. +5 [ICON_Strength] Combat Strength when attacking or occupying a District."),
+    ("LOC_UNIT_BABYLONIAN_BOWMAN_DESCRIPTION",                                            "Babylonian unique Ancient era Ranged unit that replaces Archer. Unlocked without technology prerequisite. +5 [ICON_Strength] Combat Strength when attacking or occupying a District. Combat victories provide [ICON_SCIENCE] Science equal to 50% of that unit's base [ICON_Strength] Combat Strength (on Standard Speed)."),
     ("LOC_UNIT_BABYLONIAN_BOWMAN_NAME",                                                   "Naš Qašti"),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_1",                "We have a fairly accurate picture of the extraordinary Babylonian archer units, thanks to a beautiful Assyrian mosaic showing them marching off to battle. The Babylon archers are dressed in colorful padded robes and carry four-foot long bows, as well as a quiver of arrows slung on their backs. The archers also carry spears or daggers, doubtless for personal defense if enemy units get close enough for hand-to-hand combat."),
     ("LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_2",                "Separate units carrying large, man-height shields would accompany the bowman, providing in effect, a movable fortress. The bowmen were an integral part of the Babylonian infantry, as their numbers were easier to train and replace than the more expensive cavalry. Bowmen also helped man the famed Walls of Babylon, taking up positions in the many turrets dotting its line."),

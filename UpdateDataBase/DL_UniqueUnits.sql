@@ -232,6 +232,8 @@ update Units set Cost = 45 where UnitType = 'UNIT_GAUL_GAESATAE';
 ------ UNIT_GAUL_CARRUS
 -- 巴比伦
 update Units set Cost = 25 where UnitType = 'UNIT_BABYLONIAN_SABUM_KIBITTUM';
+insert or replace into TypeTags (Type, Tag) select UnitType, 'CLASS_HD_GAIN_SCIENCE_WHEN_KILLS'
+from Units where UnitType = 'UNIT_BABYLONIAN_SABUM_KIBITTUM';
 ------ UNIT_BABYLONIAN_BOWMAN
 -- 越南
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 35, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';

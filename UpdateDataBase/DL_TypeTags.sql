@@ -8,10 +8,9 @@ values
 	('UNIT_COURSER',						'CLASS_DACAOGU');
 
 insert or replace into Tags
-	(Tag,								Vocabulary)
+	(Tag,									Vocabulary)
 values
-	('CLASS_HD_CAN_MOVE_AFTER_ATTACK',	'ABILITY_CLASS'),
-	('CLASS_DACAOGU',					'ABILITY_CLASS');
+	('CLASS_DACAOGU',						'ABILITY_CLASS');
 ---------------------------------------------------
 --TypeTags all millitary units---------------------
 insert or replace into TypeTags(Type,Tag)
@@ -24,13 +23,15 @@ insert or replace into TypeTags(Type,Tag)
 select UnitType ,'CLASS_MILITARY' from Units where FormationClass != 'FORMATION_CLASS_CIVILIAN' AND FormationClass != 'FORMATION_CLASS_SUPPORT';
 
 insert or replace into Tags
-	(Tag,				Vocabulary)
+	(Tag,									Vocabulary)
 values
-	('CLASS_MILITARY_ENGINEER','ABILITY_CLASS'),
-	('CLASS_MILITARY',	'ABILITY_CLASS'),
-	('CLASS_AIR',		'ABILITY_CLASS'),
-	('CLASS_NAVAL',		'ABILITY_CLASS'),
-	('CLASS_LAND_COMBAT','ABILITY_CLASS');
+	('CLASS_HD_GAIN_SCIENCE_WHEN_KILLS',	'ABILITY_CLASS'),
+	('CLASS_HD_CAN_MOVE_AFTER_ATTACK',		'ABILITY_CLASS'),
+	('CLASS_MILITARY_ENGINEER',				'ABILITY_CLASS'),
+	('CLASS_MILITARY',						'ABILITY_CLASS'),
+	('CLASS_AIR',							'ABILITY_CLASS'),
+	('CLASS_NAVAL',							'ABILITY_CLASS'),
+	('CLASS_LAND_COMBAT',					'ABILITY_CLASS');
 
 insert or replace into TypeTags
 	(Type,									Tag)

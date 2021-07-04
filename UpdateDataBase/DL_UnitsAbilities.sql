@@ -5,6 +5,7 @@
 insert or replace into Types
 	(Type,														Kind)
 values
+	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',						'KIND_ABILITY'),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',						'KIND_ABILITY'),
 	('ABILITY_INCA_IGNORE_HILLS',								'KIND_ABILITY'),
 	('ABILITY_KONGO_IGNORE_WOODS',								'KIND_ABILITY'),
@@ -44,6 +45,7 @@ values
 insert or replace into TypeTags
 	(Type,																Tag)
 values
+	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',								'CLASS_HD_GAIN_SCIENCE_WHEN_KILLS'),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',								'CLASS_HD_CAN_MOVE_AFTER_ATTACK'),
 	('ABILITY_AMANI_FERR_PROMOTION',									'CLASS_SPY'),
 	('ABILITY_MILLITARY_ENGINEER_IGNORE_TERRAIN',						'CLASS_MILITARY_ENGINEER'),
@@ -98,6 +100,10 @@ values
  	('ABILITY_KONGO_IGNORE_WOODS',	'CLASS_LAND_COMBAT');
 
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',
+	'LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_NAME',
+ 	'LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_DESCRIPTION',
+ 	0),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',
 	'LOC_ABILITY_HD_CAN_MOVE_AFTER_ATTACK_NAME',
  	'LOC_ABILITY_HD_CAN_MOVE_AFTER_ATTACK_DESCRIPTION',
@@ -372,6 +378,18 @@ values
 -- UnitAbilities for Unique Units
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_NAGAO' and ModifierId = 'NAGAO_FOREST_MOVEMENT';
 insert or replace into UnitAbilityModifiers
-	(UnitAbilityType,	ModifierId)
+	(UnitAbilityType,									ModifierId)
 values
-	('ABILITY_NAGAO',	'HD_FOREST_AND_JUNGLE_COMBAT_BONUS');
+	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',				'GAIN_SCIENCE_WHEN_KILLS'),
+	('ABILITY_NAGAO',									'HD_FOREST_AND_JUNGLE_COMBAT_BONUS');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('GAIN_SCIENCE_WHEN_KILLS',						'MODIFIER_UNIT_ADJUST_POST_COMBAT_YIELD');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+values
+	('GAIN_SCIENCE_WHEN_KILLS',						'YieldType',				'YIELD_SCIENCE'),
+	('GAIN_SCIENCE_WHEN_KILLS',						'PercentDefeatedStrength',	50);

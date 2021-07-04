@@ -126,17 +126,26 @@ update Units set Cost = 220, Maintenance = 4, BaseMoves = 4, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ENGLISH_SHIP_OF_THE_LINE';
 -- -- 日本
 delete from TypeTags where Type = 'UNIT_JAPANESE_SOHEI' and Tag = 'CLASS_MELEE';
-insert or replace into TypeTags (Type, Tag) values ('UNIT_JAPANESE_SOHEI', 'CLASS_ANTI_CAVALRY');
+insert or replace into TypeTags (Type, Tag) values ('UNIT_JAPANESE_SOHEI', 'CLASS_WARRIOR_MONK');
 
-update Units set PromotionClass = 'PROMOTION_CLASS_ANTI_CAVALRY' where UnitType = 'UNIT_JAPANESE_SOHEI';
-update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_JAPANESE_SOHEI';
+update Units set PrereqCivic = 'CIVIC_THEOLOGY', PromotionClass = 'PROMOTION_CLASS_MONK' where UnitType = 'UNIT_JAPANESE_SOHEI';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_JAPANESE_SOHEI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_JAPANESE_SOHEI';
 
-insert or replace into UnitReplaces
-    (CivUniqueUnitType,                     ReplacesUnitType)
-values
-    ('UNIT_JAPANESE_SOHEI',                 'UNIT_PIKEMAN');
-update UnitUpgrades set UpgradeUnit = 'UNIT_PIKE_AND_SHOT' where Unit = 'UNIT_JAPANESE_SOHEI';
+delete from UnitUpgrades where Unit = 'UNIT_JAPANESE_SOHEI';
+delete from TypeTags where Type = 'ABILITY_PLUS_10_DEFENDER' and Tag = 'CLASS_JAPANESE_SOHEI';
+-- delete from TypeTags where Type = 'UNIT_JAPANESE_SOHEI' and Tag = 'CLASS_MELEE';
+-- insert or replace into TypeTags (Type, Tag) values ('UNIT_JAPANESE_SOHEI', 'CLASS_ANTI_CAVALRY');
+
+-- update Units set PromotionClass = 'PROMOTION_CLASS_ANTI_CAVALRY' where UnitType = 'UNIT_JAPANESE_SOHEI';
+-- update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_JAPANESE_SOHEI';
+-- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_JAPANESE_SOHEI';
+
+-- insert or replace into UnitReplaces
+--     (CivUniqueUnitType,                     ReplacesUnitType)
+-- values
+--     ('UNIT_JAPANESE_SOHEI',                 'UNIT_PIKEMAN');
+-- update UnitUpgrades set UpgradeUnit = 'UNIT_PIKE_AND_SHOT' where Unit = 'UNIT_JAPANESE_SOHEI';
 -- -- 斯基泰
 update UnitUpgrades set UpgradeUnit = 'UNIT_KNIGHT' where Unit = 'UNIT_SCYTHIAN_AMAZON';
 update UnitReplaces set ReplacesUnitType = 'UNIT_HEAVY_CHARIOT' where CivUniqueUnitType = 'UNIT_SCYTHIAN_AMAZON';
@@ -171,8 +180,17 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 update Units set Cost = 100, Maintenance = 2, BaseMoves = 3, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT';
 -- -- 祖鲁
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 20, RangedCombat = 25, StrategicResource = NULL where UnitType = 'UNIT_ZULU_ASSEGAI';
+update UnitReplaces set ReplacesUnitType = 'UNIT_CROSSBOWMAN' where CivUniqueUnitType = 'UNIT_ZULU_ASSEGAI';
+update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_CANNON' where Unit = 'UNIT_ZULU_ASSEGAI';
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_ASSEGAI';
+update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 44, StrategicResource = NULL where UnitType = 'UNIT_ZULU_ASSEGAI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ZULU_ASSEGAI';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_ZULU_ASSEGAI' and ModifierId = 'PLUS_4_ASSEGAI_ADJACENCY_COMBAT_BONUS_ATTACH';
+insert or replace into UnitAbilityModifiers (UnitAbilityType,   ModifierId) values ('ABILITY_ZULU_ASSEGAI', 'HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY');
+insert or replace into Modifiers (ModifierId,      ModifierType,                            SubjectRequirementSetId)
+values ('HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY',    'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',  'HD_NEAR_ANTI_CAVALRY_REQUIREMENTS');
+insert or replace into ModifierArguments (ModifierId,   Name,       Value)
+values ('HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY',         'Amount',   1);
 -- -- 苏格兰
 update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';
@@ -207,6 +225,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 -- -- 匈牙利
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 30, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_HUNGARY_KALANDOZO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HUNGARY_KALANDOZO';
+delete from TypeTags where Type = 'ABILITY_LESS_MOVEMENT_PILLAGE' and Tag = 'CLASS_HUNGARY_KALANDOZO';
 -- -- 印加
 -- ------ UNIT_INCA_CHASQUI
 -- -- 马里
@@ -228,8 +247,10 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ELEANOR_TEMPLAR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ELEANOR_TEMPLAR';
 -- -- 玛雅
+update Units set PrereqTech = NULL, PrereqCivic = 'CIVIC_FEUDALISM' where UnitType = 'UNIT_MAYAN_HOLKAN';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MAYAN_HOLKAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAYAN_HOLKAN';
+delete from TypeTags where Type = 'ABILITY_UNIT_BONUS_VERSUS_CITY_STATES' and Tag = 'CLASS_MAYAN_HOLKAN';
 -- -- 大哥伦比亚
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_COLOMBIAN_BRITISH_LEGION';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COLOMBIAN_BRITISH_LEGION';
@@ -243,8 +264,11 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 update Units set Cost = 55, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GAUL_CARRUS';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GAUL_CARRUS';
 -- -- 巴比伦
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 18, RangedCombat = 28, StrategicResource = NULL where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
+update Units set PrereqTech = NULL where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
+update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 23, StrategicResource = NULL where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
+insert or replace into TypeTags (Type, Tag) select UnitType, 'CLASS_HD_GAIN_SCIENCE_WHEN_KILLS'
+from Units where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
 -- -- 越南
 update Units set Cost = 270, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 78, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
