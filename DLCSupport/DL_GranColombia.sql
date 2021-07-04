@@ -20,6 +20,12 @@ insert or replace into StartBiasResources
 values
     ('CIVILIZATION_CREE',   'RESOURCE_HONEY',       4);
 
+insert or replace into StartBiasResources
+    (CivilizationType,              ResourceType,           Tier)
+select
+    'CIVILIZATION_GRAN_COLOMBIA',   ResourceType,           3
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION';
+
 ---------------------------------------------------------------------------------------------------------------
 -- Maya
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS'
@@ -41,8 +47,28 @@ insert into District_CitizenGreatPersonPoints
 values
     ("DISTRICT_OBSERVATORY",            "GREAT_PERSON_CLASS_SCIENTIST",     2);
 
---Gran Colombia
---Hacienda now requires Guilds
+-- Gran Colombia
+insert or replace into TraitModifiers 
+    (TraitType,                                 ModifierId)
+values
+    ('TRAIT_CIVILIZATION_EJERCITO_PATRIOTA',    'TRAIT_PLANTATION_CULTURE_HD'),
+    ('TRAIT_CIVILIZATION_EJERCITO_PATRIOTA',    'TRAIT_PLANTATION_CULTURE_BOMB_HD');
+
+insert or replace into Modifiers 
+    (ModifierId,                                ModifierType,                               SubjectRequirementSetId)
+values
+    ('TRAIT_PLANTATION_CULTURE_HD',             'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',        'PLOT_HAS_PLANTATION_REQUIREMENTS'),
+    ('TRAIT_PLANTATION_CULTURE_BOMB_HD',        'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', NULL);
+
+insert into ModifierArguments
+    (ModifierId,                                Name,                       Value)
+values
+    ('TRAIT_PLANTATION_CULTURE_HD',             'YieldType',                'YIELD_CULTURE'),
+    ('TRAIT_PLANTATION_CULTURE_HD',             'Amount',                   1),
+    ('TRAIT_PLANTATION_CULTURE_BOMB_HD',        'ImprovementType',          'IMPROVEMENT_PLANTATION'),
+    ('TRAIT_PLANTATION_CULTURE_BOMB_HD',        'CaptureOwnedTerritory',    0);
+
+-- Hacienda now requires Guilds
 update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_HACIENDA';
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_AdvancedHaciendaAdjacency';
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_AdvancedHaciendaAdjacency';   
@@ -50,6 +76,11 @@ update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID 
 update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_HaciendaAdjacency';
 update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Hacienda_PlantationAdjacency';
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Hacienda_MechanizedPlantationAdjacency';
+
+insert or replace into Improvement_ValidFeatures 
+    (ImprovementType,           FeatureType)
+values
+    ('IMPROVEMENT_HACIENDA',    'FEATURE_JUNGLE');
 
 -- insert or replace into Improvement_ValidTerrains 
 --     (ImprovementType,           TerrainType)

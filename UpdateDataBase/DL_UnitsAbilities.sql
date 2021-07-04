@@ -368,3 +368,10 @@ values
 	('FRANCIS_DRAKE_NAVAL_RAIDER_BONUS',				'Preview',	'+{1_Amount} {LOC_GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE_NAME}');
 
 -- <Row ModifierId="TOQUI_COMBAT_BUFF_VS_GOLDEN_AGE" Context="Preview" Text="LOC_ABILITY_TOQUI_COMBAT_BUFF_VS_GOLDEN_AGE_DESCRIPTION"/>
+
+-- UnitAbilities for Unique Units
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_NAGAO' and ModifierId = 'NAGAO_FOREST_MOVEMENT';
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,	ModifierId)
+values
+	('ABILITY_NAGAO',	'HD_FOREST_AND_JUNGLE_COMBAT_BONUS');

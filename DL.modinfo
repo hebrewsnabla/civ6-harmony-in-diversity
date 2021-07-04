@@ -817,8 +817,9 @@
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Pantheon.sql</File>
       <File>Texts/HD_Text_Policies.sql</File>
-      <File>Texts/HD_Text_Units.sql</File>
+      <File>Texts/HD_Text_UnitAbilities.sql</File>
       <File>Texts/HD_Text_UnitPromotions.sql</File>
+      <File>Texts/HD_Text_Units.sql</File>
       <File>Texts/HD_Text_Wonders.sql</File>
       <File>Texts/HD_Text_GreatPerson.sql</File>
     </UpdateText>
@@ -1137,6 +1138,7 @@
     <File>Texts/HD_Text_NaturalWonders.sql</File>
     <File>Texts/HD_Text_Pantheon.sql</File>
     <File>Texts/HD_Text_Policies.sql</File>
+    <File>Texts/HD_Text_UnitAbilities.sql</File>
     <File>Texts/HD_Text_UnitPromotions.sql</File>
     <File>Texts/HD_Text_Units.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>

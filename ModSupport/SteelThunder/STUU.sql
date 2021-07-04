@@ -41,6 +41,25 @@ update Units set PrereqTech = 'TECH_MILITARY_SCIENCE' where UnitType = 'UNIT_ETH
 -- ----------------------------------------------
 -- HD modifications
 -- ----------------------------------------------
+insert or replace into TraitModifiers
+    (TraitType,                                     ModifierId)
+values
+    ('TRAIT_CIVILIZATION_UNIT_GERMAN_LANDSKNECHT',  'UNIT_GERMAN_LANDSKNECHT_DISCOUNT'),
+    ('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY',      'TRAIT_EXTRA_SCYTHIAN_AMAZON');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType)
+values
+    ('UNIT_GERMAN_LANDSKNECHT_DISCOUNT',    'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST'),
+    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'MODIFIER_PLAYER_UNITS_ADJUST_EXTRA_UNIT_COPY');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,       Value)
+values
+    ('UNIT_GERMAN_LANDSKNECHT_DISCOUNT',    'UnitType', 'UNIT_GERMAN_LANDSKNECHT'),
+    ('UNIT_GERMAN_LANDSKNECHT_DISCOUNT',    'Amount',   50),
+    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'UnitType', 'UNIT_SCYTHIAN_AMAZON'),
+    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'Amount',   1);
 
 -- UU
 -- 美国
@@ -60,6 +79,7 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_SWORDSMAN' where CivUniqueUnitT
 -- update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- 德国
+update Units set PrereqTech = 'TECH_APPRENTICESHIP', MustPurchase = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 43, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 600, Maintenance = 15, BaseMoves = 4, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_GERMAN_PANZER';
@@ -69,8 +89,13 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GREEK_PELTAST';
 -- 苏美尔
 update Units set PrereqTech = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
-update Units set Cost = 25, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 25, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
+update Units set Cost = 25, Maintenance = 0, BaseMoves = 2, Range = 0, Combat = 25, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SUMERIAN_PHALANX';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_PHALANX' and ModifierId = 'PLUS_5_ZIGURRAT_PROXIMITY_COMBAT_BONUS';
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,   ModifierId)
+values
+    ('ABILITY_PHALANX', 'DISCIPLINE_BARBARIANCOMBAT');
 -- 埃及
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
@@ -119,19 +144,6 @@ insert or replace into TypeTags (Type, Tag) values ('UNIT_SCYTHIAN_AMAZON', 'CLA
 update Units set PrereqTech = 'TECH_HORSEBACK_RIDING' where UnitType = 'UNIT_SCYTHIAN_AMAZON';
 update Units set Cost = 90, Maintenance = 2, BaseMoves = 3, Range = 0, Combat = 39, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SCYTHIAN_AMAZON';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SCYTHIAN_AMAZON';
-insert or replace into TraitModifiers (TraitType, ModifierId) values ('TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY', 'TRAIT_EXTRA_SCYTHIAN_AMAZON');
-
-insert or replace into Modifiers
-    (ModifierId,                            ModifierType)
-values
-    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'MODIFIER_PLAYER_UNITS_ADJUST_EXTRA_UNIT_COPY');
-
-insert or replace into ModifierArguments
-    (ModifierId,                            Name,       Value)
-values
-    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'UnitType', 'UNIT_SCYTHIAN_AMAZON'),
-    ('TRAIT_EXTRA_SCYTHIAN_AMAZON',         'Amount',   1);
-
 -- -- 巴西
 update Units set Cost = 150, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';

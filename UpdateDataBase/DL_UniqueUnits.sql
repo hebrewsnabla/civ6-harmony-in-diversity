@@ -1,7 +1,7 @@
 -------------------------------------
 --     Unique Units Adjustments    --
 -------------------------------------
--- update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
+update Units set PrereqCivic = 'CIVIC_GUILDS' where UnitType ='UNIT_OTTOMAN_BARBARY_CORSAIR';
 update Units set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where UnitType ='UNIT_POLISH_HUSSAR';
 
 -- UU
@@ -135,6 +135,7 @@ insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_SCOTTISH_HIGH
 -- 蒙古
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 35, RangedCombat = 45, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_MONGOLIAN_KESHIG',  'UNIT_CROSSBOWMAN');
 insert or replace into TypeTags (Type, Tag) values ('UNIT_MONGOLIAN_KESHIG', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 ------ UNIT_MONGOLIAN_HUI_HUI_PAO
 -- 马普切

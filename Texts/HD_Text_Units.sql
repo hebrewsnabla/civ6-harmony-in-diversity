@@ -9,8 +9,10 @@ values
     ("LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        "Medieval era support unit. Requires an Armory to produce. Can construct Roads, Railroads, Forts, Airstrips, Missile Silos, and Mountain Tunnel improvements. One of their build charges can also be used to complete 30% of a Canal, Dam or Aqueduct district or a Flood Barrier building. Ignore [ICON_MOVEMENT] movement penalty from all Terrians, Features and Rivers."), -- Can move with ability that ignore all the terrain and river.
     ("LOC_UNIT_WARRIOR_MONK_DESCRIPTION",                 "Fast-moving land combat unit with a unique promotion tree. Can only be purchased by [ICON_FAITH] Faith in city with a Temple. "),
     -- Unique Units
+    ("LOC_UNIT_MALI_MANDEKALU_CAVALRY_DESCRIPTION",       "Mali unique Medieval Era unit that replaces the Knight. Stronger than Knight. Trader units are immune to being plundered if they are within 4 tiles of a Mandekalu Cavalry and on a land tile. Combat victories provide [ICON_GOLD] Gold equal to 100% of that unit's base [ICON_Strength] Combat Strength (on Standard Speed). 20% Cheaper to purchase with [ICON_Gold] Gold or [ICON_Faith] Faith (when available)."),
+    ("LOC_UNIT_DE_ZEVEN_PROVINCIEN_DESCRIPTION",          "Netherlands unique Renaissance Era unit that replaces the Frigate. +7 [ICON_Strength] Combat Strength when attacking defensible districts. Require less resources to build or upgrade."),
     ("LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION",        "Scythian unique Classical era unit. Ranged unit with 4 [ICON_Movement] Movement with a [ICON_Range] Range of 2. Can move after attacking."),
-    ("LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION",             "Mongolian unique Medieval Era Ranged Cavalry unit. Can move after attacking. Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
+    ("LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION",             "Mongolian unique Medieval Era Ranged Cavalry unit that replaces Crossbowman. Can move after attacking. Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
     ("LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION",          "Aztec unique Ancient era unit that replaces the Warrior. Has higher base combat Strength."),
     ("LOC_UNIT_ROMAN_LEGION_DESCRIPTION",                 "Roman unique Classical era melee unit that replaces the Swordsman. Can build a Roman Fort. Can construct ancient or classical roads."),
     ("LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION",      "Chinese unique Renaissance era unit that replaces the Field Cannon. Ranged unit with high combat strength."),
@@ -29,8 +31,10 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        "中世纪支援单位。需要“兵工厂”才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠区域或拦洪坝30%的建造进度。无视地形、地貌和河流的移动力消耗。"),
     ("zh_Hans_CN",  "LOC_UNIT_WARRIOR_MONK_DESCRIPTION",                 "高移动力的陆地战斗单位，拥有独特的升级树。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。"),
     -- 特色单位
+    ("zh_Hans_CN",  "LOC_UNIT_MALI_MANDEKALU_CAVALRY_DESCRIPTION",       "马里中世纪特色单位，取代骑士。基础力更高。位于陆地且与曼德卡鲁骑兵相距4个单元格内的商人单位可免遭掠夺。战斗胜利后，可获得等同于被击杀单位基础 [ICON_Strength] 战斗力数值的 [ICON_GOLD] 金币（标准速度下）。使用 [ICON_Gold] 金币购买时降价20%，若可用 [ICON_Faith] 信仰购买时也降价20%。"),
+    ("zh_Hans_CN",  "LOC_UNIT_DE_ZEVEN_PROVINCIEN_DESCRIPTION",          "荷兰文艺复兴特色单位，取代护卫舰。攻击防御区域时+7 [ICON_Strength] 战斗力。建造或升级得到时需要更少的战略资源。"),
     ("zh_Hans_CN",  "LOC_UNIT_SCYTHIAN_HORSE_ARCHER_DESCRIPTION",        "斯基泰古典时代特色单位。 [ICON_Range] 射程为2， [ICON_Movement] 移动力为4的远程单位。攻击后可移动。"),
-    ("zh_Hans_CN",  "LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION",             "中世纪蒙古特色远程骑兵单位。攻击后可移动。可利用自身的高 [ICON_Movement] 移动力护送平民和支援单位。"),
+    ("zh_Hans_CN",  "LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION",             "取代弩手的中世纪蒙古特色远程单位。攻击后可移动。可利用自身的高 [ICON_Movement] 移动力护送平民和支援单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_AZTEC_EAGLE_WARRIOR_DESCRIPTION",          "取代勇士的阿兹特克远古时代特色单位。拥有更高的基础战斗力。"),
     ("zh_Hans_CN",  "LOC_UNIT_ROMAN_LEGION_DESCRIPTION",                 "取代剑客的罗马古典时代特色近战单位。能建造一个罗马堡垒，修建远古和古典道路。"),
     ("zh_Hans_CN",  "LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION",      "中国文艺复兴特色单位，取代野战加农炮。 火药解锁的高战斗力的远程单位。"),
