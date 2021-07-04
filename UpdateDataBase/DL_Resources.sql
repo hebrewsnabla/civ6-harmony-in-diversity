@@ -2,6 +2,11 @@
 --      Resources Adjustment       --
 -------------------------------------
 
+update Resources set Frequency = 11 where ResourceType = 'RESOURCE_COAL';
+update Resources set Frequency = 11 where ResourceType = 'RESOURCE_IRON';
+update Resources set Frequency = 11 where ResourceType = 'RESOURCE_NITER';
+update Resources set Frequency = 11 where ResourceType = 'RESOURCE_OIL';
+
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_COPPER';

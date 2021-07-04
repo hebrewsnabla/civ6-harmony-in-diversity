@@ -468,9 +468,12 @@
       <Properties><LoadOrder>15016</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU.sql</File>
     </UpdateDatabase>
-    <UpdateText id="Community_STUU_support_texts" criteria="STUU_Expansion2">
+    <UpdateText id="Community_STUU_support_texts" criteria="STXP_Expansion2">
       <Properties><LoadOrder>15017</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
+    </UpdateText>
+    <UpdateText id="Community_STUU_support_texts" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>15017</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     </UpdateText>

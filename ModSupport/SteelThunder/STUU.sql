@@ -66,15 +66,21 @@ values
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_AMERICAN_MINUTEMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_AMERICAN_MINUTEMAN';
 -- 阿拉伯
-update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 23, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
+-- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+update Units set PrereqTech = 'TECH_CASTLES', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 32, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 insert or replace into TypeTags (Type, Tag) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
+delete from TypeTags where Type = 'ABILITY_CAMEL_ARCHER' and Tag = 'CLASS_ARABIAN_CAMEL_ARCHER';
 -- 
-update Units set PrereqTech = 'TECH_IRON_WORKING' where UnitType = 'UNIT_ARABIAN_GHAZI';
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
+update Units set PrereqTech = NULL, PrereqCivic = 'CIVIC_THEOLOGY', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_GHAZI';
+update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
-update UnitReplaces set ReplacesUnitType = 'UNIT_SWORDSMAN' where CivUniqueUnitType = 'UNIT_ARABIAN_GHAZI';
+update UnitReplaces set ReplacesUnitType = 'UNIT_MAN_AT_ARMS' where CivUniqueUnitType = 'UNIT_ARABIAN_GHAZI';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_GHAZI' and ModifierId = '50_PERCENT_POST_COMBAT_FAITH';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_GHAZI' and ModifierId = 'CONQUISTADOR_CITY_RELIGION_COMBAT';
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_GHAZI',  'DISCIPLES_LAND_VICTORY_SPREAD');
 -- update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
@@ -82,11 +88,13 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_SWORDSMAN' where CivUniqueUnitT
 update Units set PrereqTech = 'TECH_APPRENTICESHIP', MustPurchase = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 43, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
-update Units set Cost = 600, Maintenance = 15, BaseMoves = 4, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_GERMAN_PANZER';
+update Units set Cost = 600, Maintenance = 15, BaseMoves = 4, Range = 0, Combat = 92, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_GERMAN_PANZER';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_GERMAN_PANZER';
 -- 希腊
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 23, StrategicResource = NULL where UnitType = 'UNIT_GREEK_PELTAST';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GREEK_PELTAST';
+delete from TypeTags where Type = 'ABILITY_PLUS_5_DEFENDER' and Tag = 'CLASS_GREEK_PELTAST';
+insert or replace into TypeTags (Type, Tag) values ('ABILITY_GREEK_PELTAST', 'CLASS_GREEK_PELTAST');
 -- 苏美尔
 update Units set PrereqTech = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
 update Units set Cost = 25, Maintenance = 0, BaseMoves = 2, Range = 0, Combat = 25, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
@@ -99,6 +107,8 @@ values
 -- 埃及
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
+delete from TypeTags where Type = 'ABILITY_PLUS_5_BONUS_VS_DAMAGED' and Tag = 'CLASS_EGYPTIAN_KHOPESH';
+insert or replace into TypeTags (Type, Tag) values ('ABILITY_HD_BATTLECRY', 'CLASS_EGYPTIAN_KHOPESH');
 -- -- 中国
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_CHINESE_CHOKONU';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';
@@ -160,6 +170,8 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_FRENCH_GENDARME';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_FRENCH_GENDARME';
 -- -- 刚果
+update Units set Cost = 60 where UnitType = 'UNIT_KONGO_MEDICINE_MAN';
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_KONGO_MEDICINE_MAN',    'UNIT_MEDIC');
 -- ------ UNIT_KONGO_MEDICINE_MAN
 -- -- 澳大利亚
 update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_AUSTRALIAN_SASR';
@@ -173,6 +185,14 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- -- 马其顿
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 28, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MACEDONIAN_PEZHETAIROS';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MACEDONIAN_PEZHETAIROS';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_PEZHETAIROS' and ModifierId = 'PLUS_10_VERSUS_MELEE_COMBAT_BONUS';
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_PEZHETAIROS', 'PLUS_10_ATTACKING_UNIT_BONUS');
+insert or replace into Modifiers (ModifierId,       ModifierType,                            SubjectRequirementSetId)
+values ('PLUS_10_ATTACKING_UNIT_BONUS',             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'HD_UNIT_ATTACKING_UNIT_REQUIREMENTS');
+insert or replace into ModifierArguments (ModifierId,   Name,       Value)
+values ('PLUS_10_ATTACKING_UNIT_BONUS',                 'Amount',   10);
+insert or replace into ModifierStrings (ModifierId,     Context,    Text)
+values ('PLUS_10_ATTACKING_UNIT_BONUS',                 'Preview',  '+{1_Amount} {LOC_PLUS_10_ATTACKING_UNIT_BONUS_PREVIEW_TEXT}');
 -- -- 波斯
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PERSIAN_CATAPHRACT';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PERSIAN_CATAPHRACT';
@@ -211,7 +231,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 -- -- 荷兰
-update Units set Cost = 100, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 -- -- 克里
 update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
@@ -258,7 +278,8 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 -- -- 拜占庭
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
+update Units set PrereqTech = 'TECH_METAL_CASTING', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
 -- -- 高卢
 update Units set Cost = 55, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GAUL_CARRUS';
@@ -276,3 +297,59 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_SPANISH_JINETE';
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 1, Combat = 46, RangedCombat = 33, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SPANISH_JINETE';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_JINETE';
+
+---------------------------------------------------------------------------------------------------
+-- Unit ability
+insert or replace into Types
+    (Type,                                                      Kind)
+values
+    ('ABILITY_GREEK_PELTAST',                                   'KIND_ABILITY');
+
+insert or replace into UnitAbilities
+    (UnitAbilityType,               Description,                                    Inactive)
+values
+    ('ABILITY_GREEK_PELTAST',       'LOC_ABILITY_GREEK_PELTAST_DESCRIPTION',        0);
+
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,                               ModifierId)
+values
+    ('ABILITY_GREEK_PELTAST',                       'PELTAST_NEIGHBOR_COMBAT_HD');
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                               SubjectRequirementSetId)
+values
+    ('PELTAST_NEIGHBOR_COMBAT_HD',                  'MODIFIER_SINGLE_UNIT_ATTACH_MODIFIER',     'PELTAST_PLOT_IS_PELTAST_REQUIREMENTS'),
+    ('PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER',         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,               Value)
+values
+    ('PELTAST_NEIGHBOR_COMBAT_HD',                  'ModifierId',       'PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER'),
+    ('PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER',         'Amount',           10);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                    Context,    Text)
+values
+    ('PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER',         'Preview',  '+{1_Amount} {LOC_PELTAST_NEIGHBOR_COMBAT_HD_PREVIEW_TEXT}');
+
+------------------------------------------------------------------------------------------------
+-- Requirements
+insert or replace into RequirementSets
+    (RequirementSetId,                                  RequirementSetType)
+values
+    ('PELTAST_PLOT_IS_PELTAST_REQUIREMENTS',            'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                  RequirementId)
+values
+    ('PELTAST_PLOT_IS_PELTAST_REQUIREMENTS',            'HD_REQUIRES_UNIT_NEXT_TO_PELTAST');
+
+insert or ignore into Requirements
+    (RequirementId,                                 RequirementType)
+values
+    ('HD_REQUIRES_UNIT_NEXT_TO_PELTAST',            'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TYPE_MATCHES');
+
+insert or ignore into RequirementArguments
+    (RequirementId,                                 Name,               Value)
+values
+    ('HD_REQUIRES_UNIT_NEXT_TO_PELTAST',            'UnitType',         'UNIT_GREEK_PELTAST');

@@ -98,6 +98,7 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     -- Melee
+    ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                    "+7 [ICON_Strength] Combat Strength when flanked."),
@@ -183,6 +184,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- Melee
+    ("zh_Hans_CN",  "LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                  "攻击近战、抗骑兵和远程单位时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                 "遭夹击时+7 [ICON_Strength] 战斗力。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),

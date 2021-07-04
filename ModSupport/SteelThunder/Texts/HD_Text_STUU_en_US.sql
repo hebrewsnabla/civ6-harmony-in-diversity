@@ -3,6 +3,15 @@
 insert or replace into EnglishText
     (Tag,                                                                                 Text)
 values
+    ("LOC_PLUS_10_ATTACKING_UNIT_BONUS_PREVIEW_TEXT",                                     "from attacking units"),
+    ("LOC_ABILITY_GREEK_PELTAST_DESCRIPTION",                                             "+10 [ICON_Strength] Combat Strength when next to another Peltast."),
+    ("LOC_PELTAST_NEIGHBOR_COMBAT_HD_PREVIEW_TEXT",                                       "from next to another Peltast");
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                                                 Text)
+values
     ("LOC_ABILITY_100_PERCENT_FLANKING_DESCRIPTION",                                      "+100% flanking bonus."),
     ("LOC_ABILITY_ADDITIONAL_ATTACK_DESCRIPTION",                                         "Can attack twice per turn."),
     ("LOC_ABILITY_AMERICAN_AH64_APACHE_DESCRIPTION",                                      "+10 [ICON_Strength] Combat Strength versus Heavy Cavalry units."),
@@ -13,7 +22,7 @@ values
     ("LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION",                                           "Heals an additional 10 points per turn."),
     ("LOC_ABILITY_CREE_OTEHTAPIW_DESCRIPTION",                                            "Gains +2 movement points if it starts on flat terrain. Heals +15 per turn when on Plains or Grassland. +5 [ICON_Strength] when fighting on Plains or Grassland. "),
     ("LOC_ABILITY_DRUZHINA_DESCRIPTION",                                                  "+5 [ICON_Strength] Combat Strength versus damaged units and +4 [ICON_Strength] Combat Strength against Melee units."),
-    ("LOC_ABILITY_DUTCH_SCHUTTERIJ_DESCRIPTION",                                          "+10 [ICON_Strength] when defending districts."),
+    ("LOC_ABILITY_DUTCH_SCHUTTERIJ_DESCRIPTION",                                          "+10 [ICON_Strength] when defending at districts."),
     ("LOC_ABILITY_EQUITE_ADJACENCY_BONUS_DESCRIPTION",                                    "+5 [ICON_Strength] Combat Strength when fighting next to Legion or Warrior unit."),
     ("LOC_ABILITY_EXTRA_MOVEMENT_ON_SNOW_TUNDRA_DESCRIPTION",                             "Gains +2 movement points if starting on Tundra, Tundra Hills, Snow or Snow Hills."),
     ("LOC_ABILITY_FATHERLAND_VOLUNTEER_DESCRIPTION",                                      "+5 [ICON_Strength] Combat Strength on same continent as capital city."),
@@ -22,7 +31,7 @@ values
     ("LOC_ABILITY_GARDE_REPUBLICAINE_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength when attacking or defending districts."),
     ("LOC_ABILITY_GENDARME_DESCRIPTION",                                                  "+5 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_ABILITY_GEORGIAN_TADZREULI_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when opponent is another religion. Yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory. Converts captured cities to player's religion. "),
-    ("LOC_ABILITY_GHAZI_DESCRIPTION",                                                     "+5 [ICON_Strength] Combat Strength when opponent is another religion. Yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory. Converts captured cities to player's religion. "),
+    ("LOC_ABILITY_GHAZI_DESCRIPTION",                                                     "+5 [ICON_Strength] Combat Strength when opponent is another religion. Spread 250 religious pressure of your founded (or majority) religion to cities within 6 tiles when defeating a unit belonging to an enemy civilization or city-state."),
     ("LOC_ABILITY_GOLD_FROM_CITY_STATES_UNIT_KILLS_DESCRIPTION",                          "Yields 100% of defeated City State units' combat strength as [ICON_Gold] Gold."),
     ("LOC_ABILITY_HIRDMAN_DESCRIPTION",                                                   "+5 [ICON_Strength] Combat Strength and yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Culture] Culture on combat victory if fighting on same continent as capital. "),
     ("LOC_ABILITY_JAGUAR_DESCRIPTION",                                                    "+10 [ICON_Strength] Combat Strength when attacking and -5 [ICON_Strength] Combat Strength when defending. May capture defeated enemies, turning them into Builders. Ignores terrain movement cost in Jungle and Forest. "),
@@ -40,7 +49,7 @@ values
     ("LOC_ABILITY_PELTAST_DESCRIPTION",                                                   "+5 [ICON_Strength] Combat Strength when defending."),
     ("LOC_ABILITY_PERC_50_POST_COMBAT_GOLD_DESCRIPTION",                                  "Yields 50% of defeated units' [ICON_Strength] as [ICON_Gold] on combat victory."),
     ("LOC_ABILITY_PERSIAN_WARSHIP_DESCRIPTION",                                           "+5 [ICON_Strength] Combat Strength when attacking."),
-    ("LOC_ABILITY_PEZHETAIROS_DESCRIPTION",                                               "+10 [ICON_Strength] Combat Strength versus Melee units."),
+    ("LOC_ABILITY_PEZHETAIROS_DESCRIPTION",                                               "+10 [ICON_Strength] Combat Strength when attacking units."),
     ("LOC_ABILITY_PHALANX_DESCRIPTION",                                                   "+10 [ICON_Strength] Combat Strength when fighting Barbarians."),
     ("LOC_ABILITY_PLUS_10_DEFENDER_DESCRIPTION",                                          "+10 [ICON_Strength] Combat Strength when defending."),
     ("LOC_ABILITY_PLUS_5_BONUS_VS_DAMAGED_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength versus damaged units."),
@@ -53,7 +62,7 @@ values
     ("LOC_ABILITY_PLUS_X_WHEN_ATTACKING_RANGED_DESCRIPTION",                              "+5 [ICON_Strength] Combat Strength when attacking Ranged units."),
     ("LOC_ABILITY_GRANT_HUI_HUI_PAO_BONUS_DESCRIPTION",                                   "Grants +5 [ICON_Strength] Combat Strength to Melee and Light/Heavy Cavalry Class units when attacking Districts if adjacent to Hui Hui Pao (Mongolia)."),
     ("LOC_ABILITY_GRANT_KHMER_WAR_CANOE_BONUS_DESCRIPTION",                               "Adjacent units incur no embark/disembark movement cost if adjacent to War Canoe (Khmer)."),
-    ("LOC_ABILITY_GRANT_MEDICINE_MAN_BONUS_DESCRIPTION",                                  "Grants 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory to Melee, Anti-Cav, Ranged, and Light/Heavy Cavalry Class units adjacent to Medicine Man (Medicine Man)."),
+    ("LOC_ABILITY_GRANT_MEDICINE_MAN_BONUS_DESCRIPTION",                                  "Melee, Cavalry, Anti-Cavalry and Ranged units yield 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory when it happens at the tile adjacent to this unit."),
     ("LOC_ABILITY_GRANT_NORWEGIAN_ULFHEDNAR_BONUS_DESCRIPTION",                           "Grants +5 [ICON_Strength] Combat Strength vs. undamaged units, +10 [ICON_Strength] Combat Strength vs. damaged units, and  50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith to Land/Naval Melee, Land/Naval Ranged, Anti-Cav, and Light/Heavy Cavalry Class units adjacent to Ulfhedinn (Norway). "),
     ("LOC_ABILITY_GRANT_PERSIAN_WARSHIP_BONUS_DESCRIPTION",                               "Grants +5 [ICON_Strength] Combat Strength and +2 movement at start of turn to land units adjacent to Warship (Persia)."),
     ("LOC_ABILITY_GRANT_SHIGONG_BONUS_DESCRIPTION",                                       "Grants +5 [ICON_Strength] Combat Strength and 50% more experience to Melee, Anti-Cav, Ranged, and Light/Heavy Cavalry Class units adjacent to Strategist (China)."),
@@ -387,9 +396,9 @@ values
     ("LOC_UNIT_AMERICAN_AH64_APACHE_NAME",                                                "AH-64 Apache"),
     ("LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION",                                           "American unique Renaissance Era unit that replaces Musketman. Gains +5 [ICON_Strength] Combat Strength when fighting in or adjacent to home territory. Also gains additional +5 [ICON_Strength] when fighting in Forest or Jungle. "),
     ("LOC_UNIT_AMERICAN_MINUTEMAN_NAME",                                                  "Minuteman"),
-    ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "Arabian unique Classical Era unit. Gains additional +8 [ICON_Strength] when fighting on Desert or Plains. Can move after attacking."),
+    ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "Arabian unique Medieval Era unit that replaces Crossbowman. Can be purchased with Faith. Can move after attacking."),
     ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_NAME",                                                "Camel Archer"),
-    ("LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION",                                                "Arabian unique Medieval Era Melee unit that replaces Man at Arms. +5 [ICON_Strength] Combat Strength when opponent is another religion. Yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory. Converts captured cities to player's religion. May be purchased with Faith. "),
+    ("LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION",                                                "Arabian unique Classical Era Melee unit that replaces Man at Arms. Can be purchased with Faith. +5 [ICON_Strength] Combat Strength when opponent is another religion. Spread 250 religious pressure of your founded (or majority) religion to cities within 6 tiles when defeating a unit belonging to an enemy civilization or city-state."),
     ("LOC_UNIT_ARABIAN_GHAZI_NAME",                                                       "Ghazi"),
     ("LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION",                                              "Strong, mobile Australian Mechanized Infantry replacement that ignores Zone of Control and has +5 [ICON_Strength] Combat Strength when fighting on Desert or Plains."),
     ("LOC_UNIT_AUSTRALIAN_SASR_NAME",                                                     "S.A.S.R."),
@@ -411,11 +420,11 @@ values
     ("LOC_UNIT_COLOMBIAN_BRITISH_LEGION_NAME",                                            "Legión Británica"),
     ("LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION",                                               "Cree unique Industrial era light cavalry unit replacing Cavalry. Gains +2 movement points if it starts on flat terrain. Heals +15 per turn when on Plains or Grassland. +10 [ICON_Strength] when fighting on Plains or Grassland."),
     ("LOC_UNIT_CREE_OTEHTAPIW_NAME",                                                      "Otehtapiw"),
-    ("LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                             "Dutch unique Renaissance era melee unit that replaces Musketman. Half cost and maintenance of Musketman. +10 [ICON_Strength] when defending districts."),
+    ("LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                             "Dutch unique Renaissance era melee unit that replaces Musketman. Cheaper cost and maintenance than Musketman. +10 [ICON_Strength] when defending at districts."),
     ("LOC_UNIT_DUTCH_SCHUTTERIJ_NAME",                                                    "Schutterij"),
     ("LOC_UNIT_EGYPTIAN_HYKSOS_BOWMAN_DESCRIPTION",                                       "Egyptian unique Ranged unit that is stronger than the Archer it replaces."),
     ("LOC_UNIT_EGYPTIAN_HYKSOS_BOWMAN_NAME",                                              "Hyksos Bowman"),
-    ("LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION",                                             "Egyptian unique Melee unit. +5 [ICON_Strength] Combat Strength versus damaged units."),
+    ("LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION",                                             "Egyptian Classical unique Melee unit that replaces Swordsman. +7 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
     ("LOC_UNIT_EGYPTIAN_KHOPESH_NAME",                                                    "Khopesh Warrior"),
     ("LOC_UNIT_EGYPTIAN_WAR_GALLEY_DESCRIPTION",                                          "Egyptian unique naval Ranged unit. Stronger than the Quadrireme it replaces and has range 2 instead of 1."),
     ("LOC_UNIT_EGYPTIAN_WAR_GALLEY_NAME",                                                 "Septireme"),
@@ -437,7 +446,7 @@ values
     ("LOC_UNIT_GERMAN_PANZER_NAME",                                                       "Tiger I"),
     ("LOC_UNIT_GREEK_ARMATOLOS_DESCRIPTION",                                              "Greek unique Melee unit that replaces Rifleman. +5 [ICON_Strength] Combat Strength on Hills and ignores Hills movement penalty."),
     ("LOC_UNIT_GREEK_ARMATOLOS_NAME",                                                     "Armatolos"),
-    ("LOC_UNIT_GREEK_PELTAST_DESCRIPTION",                                                "Greek unique Ranged unit that replaces Archer. +5 [ICON_Strength] Combat Strength when defending."),
+    ("LOC_UNIT_GREEK_PELTAST_DESCRIPTION",                                                "Greek unique Ranged unit that replaces Archer. +10 [ICON_Strength] Combat Strength when next to another Peltast."),
     ("LOC_UNIT_GREEK_PELTAST_NAME",                                                       "Peltast"),
     ("LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION",                                            "Hungarian unique Medieval Era Ranged unit replacing the Crossbowman. Yields 50% of defeated units' [ICON_Strength] as [ICON_Gold] on combat victory."), -- Requires fewer movement points to pillage. 
     ("LOC_UNIT_HUNGARY_KALANDOZO_NAME",                                                   "Kalandozó"),
@@ -459,14 +468,14 @@ values
     ("LOC_UNIT_KHMER_WAR_CANOE_NAME",                                                     "War Canoe"),
     ("LOC_UNIT_KONGO_GARDE_REPUBLICAINE_DESCRIPTION",                                     "Kongolese unique Information Era Melee unit that replaces Mechanized Infantry. +10 [ICON_Strength] Combat Strength when attacking or defending districts."),
     ("LOC_UNIT_KONGO_GARDE_REPUBLICAINE_NAME",                                            "Garde Republicaine"),
-    ("LOC_UNIT_KONGO_MEDICINE_MAN_DESCRIPTION",                                           "Kongolese unique support unit replacing Medic but available earlier with the Mysticism Civic. Must be purchased with Faith. Heals units plus adjacent Melee, Cavalry, Anti-Cavalry and Ranged units yield 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory."),
+    ("LOC_UNIT_KONGO_MEDICINE_MAN_DESCRIPTION",                                           "Kongolese unique support unit replacing Medic but available earlier with the Mysticism Civic. Must be purchased with Faith. +20 HP healing for adjacent units when fortify. Melee, Cavalry, Anti-Cavalry and Ranged units yield 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory when it happens at the tile adjacent to Medicine Man."),
     ("LOC_UNIT_KONGO_MEDICINE_MAN_NAME",                                                  "Medicine Man"),
     ("LOC_UNIT_KOREAN_TURTLE_SHIP_DESCRIPTION",                                           "Korean unique Renaissance era naval melee unit. Faster and stronger than the Caravel. +5 [ICON_Strength] vs damaged units."),
     ("LOC_UNIT_KOREAN_TURTLE_SHIP_NAME",                                                  "Turtle Ship"),
     ("LOC_UNIT_MACEDONIAN_BALLISTA_DESCRIPTION",                                          "Macedonian unique Catapult replacement. +17 [ICON_Strength] versus non-District tiles and -10 [ICON_Strength] versus District tiles."),
     ("LOC_UNIT_MACEDONIAN_BALLISTA_NAME",                                                 "Ballistra"),
     ("LOC_UNIT_MACEDONIAN_HETAIROI_NAME",                                                 "Hetairos"),
-    ("LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION",                                       "Macedonian unique Spearman replacement. Stronger than Spearman and receives +10 [ICON_Strength] Combat Strength versus Melee units."),
+    ("LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION",                                       "Macedonian unique Spearman replacement. Stronger than Spearman and receives +10 [ICON_Strength] Combat Strength when attacking units."),
     ("LOC_UNIT_MACEDONIAN_PEZHETAIROS_NAME",                                              "Pezhetairos"),
     ("LOC_UNIT_MALI_SOFA_DESCRIPTION",                                                    "Malian unique Medieval Era Ranged unit replacing the Crossbowman. +5 [ICON_Strength] vs damaged units. Adjacent Cavalry units receive +4 [ICON_Strength]."),
     ("LOC_UNIT_MALI_SOFA_NAME",                                                           "Sofa"),

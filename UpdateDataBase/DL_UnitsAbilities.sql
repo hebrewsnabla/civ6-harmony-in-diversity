@@ -5,6 +5,7 @@
 insert or replace into Types
 	(Type,														Kind)
 values
+	('ABILITY_HD_BATTLECRY',									'KIND_ABILITY'),
 	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',						'KIND_ABILITY'),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',						'KIND_ABILITY'),
 	('ABILITY_INCA_IGNORE_HILLS',								'KIND_ABILITY'),
@@ -100,6 +101,10 @@ values
  	('ABILITY_KONGO_IGNORE_WOODS',	'CLASS_LAND_COMBAT');
 
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_HD_BATTLECRY',
+	'LOC_ABILITY_HD_BATTLECRY_NAME',
+ 	'LOC_ABILITY_HD_BATTLECRY_DESCRIPTION',
+ 	0),
 	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',
 	'LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_NAME',
  	'LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_DESCRIPTION',
@@ -380,16 +385,24 @@ delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_NAGAO' and Mod
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,									ModifierId)
 values
+	('ABILITY_HD_BATTLECRY',							'HD_BATTLECRY_BONUS'),
 	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',				'GAIN_SCIENCE_WHEN_KILLS'),
 	('ABILITY_NAGAO',									'HD_FOREST_AND_JUNGLE_COMBAT_BONUS');
 
 insert or replace into Modifiers
-	(ModifierId,									ModifierType)
+	(ModifierId,									ModifierType,								SubjectRequirementSetId)
 values
-	('GAIN_SCIENCE_WHEN_KILLS',						'MODIFIER_UNIT_ADJUST_POST_COMBAT_YIELD');
+	('HD_BATTLECRY_BONUS',							'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',		'BATTLECRY_REQUIREMENTS'),
+	('GAIN_SCIENCE_WHEN_KILLS',						'MODIFIER_UNIT_ADJUST_POST_COMBAT_YIELD',	NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
 values
+	('HD_BATTLECRY_BONUS',							'Amount',					7),
 	('GAIN_SCIENCE_WHEN_KILLS',						'YieldType',				'YIELD_SCIENCE'),
 	('GAIN_SCIENCE_WHEN_KILLS',						'PercentDefeatedStrength',	50);
+
+insert or replace into ModifierStrings
+	(ModifierId,										Context,	Text)
+values
+	('HD_BATTLECRY_BONUS',								'Preview',	'+{1_Amount} {LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT}');
