@@ -25,9 +25,10 @@ update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUI
 -- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_STAR_FORT';
 -- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_TSIKHE';
 
-update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
 update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
+
+
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
     Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS',
@@ -35,28 +36,6 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicTy
 update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
     where TechnologyType = 'TECH_MILITARY_TACTICS';
 update ModifierArguments set Value = 'TECH_METAL_CASTING' where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and Name = 'TechType';
-
-update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_CATAPULT';
-update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_ROMAN_ONAGER'; -- ST
-update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_MACEDONIAN_BALLISTA'; -- ST
-update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_AXE_THROWER'; -- WE
-update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_REITER'; -- WE
-update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_ARQUEBUSIER'; -- WE
-update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_STRADIOT'; -- WE
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAN_AT_ARMS';
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GEORGIAN_KHEVSURETI';
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_IMPI';
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_PIKEMAN';
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GERMAN_LANDSKNECHT'; -- ST
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCHE_GUERILLA';   -- ST
-update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';   -- ST
-update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
-update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
-update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
-
--- 调整单位过期科技。
-update Units set MandatoryObsoleteTech = 'TECH_MILITARY_TACTICS' where MandatoryObsoleteTech = 'TECH_METAL_CASTING';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';

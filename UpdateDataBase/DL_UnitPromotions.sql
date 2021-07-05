@@ -232,6 +232,7 @@ values
     ('PROMOTION_SNIPER',                                        'KIND_PROMOTION'),
     --anti-cavalry
     ('PROMOTION_LOGISTICS_SUPPLY',                              'KIND_PROMOTION'),
+    ('PROMOTION_SPRINT_HD',                                     'KIND_PROMOTION'),
     --naval melee
     ('PROMOTION_BATTERING_RAM_TACTICS',                         'KIND_PROMOTION'),
     --naval ranged
@@ -346,8 +347,8 @@ update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROM
 update UnitPromotions set Level = 4 , Column = 3 where UnitPromotionType = 'PROMOTION_EXPERT_MARKSMAN';
 --anti-cavalry 
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_SCHILTRON';
-delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SCHILTRON';
-update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_REDEPLOY';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SCHILTRON' or UnitPromotionType = 'PROMOTION_HOLD_THE_LINE';
+update UnitPromotions set Level = 2, Column = 3 where UnitPromotionType = 'PROMOTION_REDEPLOY';
 -- update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_CHOKE_POINTS';
 --naval melee
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_RUTTER';
@@ -430,7 +431,9 @@ values
     ('PROMOTION_CHOKE_POINTS',      'PROMOTION_REDEPLOY'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_REDEPLOY'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'PROMOTION_SQUARE'),
-    ('PROMOTION_HOLD_THE_LINE',     'PROMOTION_LOGISTICS_SUPPLY'),
+    -- ('PROMOTION_HOLD_THE_LINE',     'PROMOTION_LOGISTICS_SUPPLY'),
+    ('PROMOTION_SPRINT_HD',         'PROMOTION_LOGISTICS_SUPPLY'),
+    ('PROMOTION_SPRINT_HD',         'PROMOTION_CHOKE_POINTS'),
     --naval melee
     ('PROMOTION_CREEPING_ATTACK',   'PROMOTION_HELMSMAN'),
     ('PROMOTION_AUXILIARY_SHIPS',   'PROMOTION_CREEPING_ATTACK'),
@@ -468,6 +471,7 @@ values
     ('PROMOTION_SNIPER',            'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_RANGED',         1),
     --anti-cavalry
     ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   1),
+    ('PROMOTION_SPRINT_HD',         'LOC_PROMOTION_SPRINT_HD_NAME',                 'LOC_PROMOTION_SPRINT_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_ANTI_CAVALRY',   2),
     --naval melee
     ('PROMOTION_BATTERING_RAM_TACTICS', 'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME',  'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION',  4, 'PROMOTION_CLASS_NAVAL_MELEE',    2),
     --naval ranged
@@ -494,6 +498,7 @@ values
     -- ('PROMOTION_ECHELON',           'ECHELON_DEFENCE'),
     ('PROMOTION_THRUST',            'THRUST_ATTACK_BONUS'),
     ('PROMOTION_LOGISTICS_SUPPLY',  'LOGISTICS_SUPPLY_HEAL_BONUS'),
+    ('PROMOTION_SPRINT_HD',         'SPRINT_REMAINING_MOVEMENT_STRENGTH'),
     --naval melee
     ('PROMOTION_BATTERING_RAM_TACTICS', 'BREAKTHROUGH_ADDITIONAL_ATTACK'),
     ('PROMOTION_BATTERING_RAM_TACTICS', 'MOD_MOVE_AFTER_ATTACKING'),
@@ -524,12 +529,14 @@ values
     -- ('ECHELON_DEFENCE',                                             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                  'DEFENCE_MELEE_ATTACK'),
     ('THRUST_ATTACK_BONUS',                                         'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'FASCISM_REQUIREMENTS'),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_PER_TURN',            NULL),
+    ('SPRINT_REMAINING_MOVEMENT_STRENGTH',                          'MODIFIER_SINGLE_UNIT_ADJUST_COMBAT_FOR_UNUSED_MOVEMENT',   NULL),
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',                 NULL),
     --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'ATTACK_NAVAL_REQUIREMENTS'),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'MODIFIER_PLAYER_UNIT_ADJUST_PLUNDER_YIELDS',           'JUST_WAR_PLOT_UNIT_REQUIREMENTS'),
-    ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                  'WOLFPACK_ADJACENT_REQUIREMENTS');
+    -- ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                  'WOLFPACK_ADJACENT_REQUIREMENTS');
+    ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',                 'WOLFPACK_ADJACENT_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                    Name,           Value)
@@ -548,12 +555,14 @@ values
     ('THRUST_ATTACK_BONUS',                                         'Amount',       5),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Amount',       10),
     ('LOGISTICS_SUPPLY_HEAL_BONUS',                                 'Type',         'ALL'),
+    ('SPRINT_REMAINING_MOVEMENT_STRENGTH',                          'Amount',       3),
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',       1),
      --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       10),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',       100),
-    ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',  'ABILITY_WOLFPACK_ADJACENT_BONUS');
+    -- ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',  'ABILITY_WOLFPACK_ADJACENT_BONUS');
+    ('WOLFPACK_ADJACENT_BONUS',                                     'ModifierId',   'HD_WOLFPACK_ADJACENT_BONUS');
 
 insert or replace into ModifierStrings
     (ModifierId,                                                Context,    Text)
@@ -574,6 +583,7 @@ values
     -- ('ANTI_CAVALRY_HILLS_COMBAT_BONUS',                         'Preview',    '+{1_Amount} {LOC_ABILITY_ANTI_CAVALRY_HILLS_COMBAT_BONUS_DESCRIPTION}'),
     -- ('ECHELON_DEFENCE',                                         'Preview',    '+{1_Amount} {LOC_PROMOTION_ECHELON_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     ('THRUST_ATTACK_BONUS',                                     'Preview',  '+{1_Amount} {LOC_PROMOTION_THRUST_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
+    ('SPRINT_REMAINING_MOVEMENT_STRENGTH',                      'Preview',  '+{1_Amount} {LOC_PROMOTION_SPRINT_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}'),
     --naval raider
     ('BOARDING_ACTION_ATTACK_BONUS',                            'Preview',  '+{1_Amount} {LOC_PROMOTION_BOARDING_ACTION_HD_NAME} {LOC_PROMOTION_DESCRIPTOR_PREVIEW_TEXT}');
 

@@ -90,7 +90,10 @@ update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_HIPPODROME
 update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
 update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
 
--- Unlock
+-- [Unlock]
+-- Canal
+update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
+-- Harbor
 update Districts set PrereqTech = 'TECH_SAILING' where
 	DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_COTHON' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 -- Commercial hub

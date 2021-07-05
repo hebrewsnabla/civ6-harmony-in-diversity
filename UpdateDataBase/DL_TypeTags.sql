@@ -16,6 +16,8 @@ values
 insert or replace into TypeTags(Type,Tag)
 select UnitType ,'CLASS_LAND_COMBAT' from Units where FormationClass = 'FORMATION_CLASS_LAND_COMBAT';
 insert or replace into TypeTags(Type,Tag)
+select UnitType ,'CLASS_LAND_UNITS' from Units where Domain = 'DOMAIN_LAND';
+insert or replace into TypeTags(Type,Tag)
 select UnitType ,'CLASS_NAVAL' from Units where FormationClass = 'FORMATION_CLASS_NAVAL';
 insert or replace into TypeTags(Type,Tag)
 select UnitType ,'CLASS_AIR' from Units where FormationClass = 'FORMATION_CLASS_AIR';
@@ -29,6 +31,7 @@ values
 	('CLASS_HD_CAN_MOVE_AFTER_ATTACK',		'ABILITY_CLASS'),
 	('CLASS_MILITARY_ENGINEER',				'ABILITY_CLASS'),
 	('CLASS_MILITARY',						'ABILITY_CLASS'),
+	('CLASS_LAND_UNITS',					'ABILITY_CLASS'),
 	('CLASS_AIR',							'ABILITY_CLASS'),
 	('CLASS_NAVAL',							'ABILITY_CLASS'),
 	('CLASS_LAND_COMBAT',					'ABILITY_CLASS');

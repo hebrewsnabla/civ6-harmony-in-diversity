@@ -122,6 +122,8 @@ values
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+15 HP healing when Fortify."),
     ("LOC_PROMOTION_THRUST_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when attacking"),
     ("LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                                  "+7 [ICON_Strength] Combat Strength in Woods, Jungle, Hills, or Marsh."),
+    ("LOC_PROMOTION_SPRINT_HD_NAME",                                            "Sprint"),
+    ("LOC_PROMOTION_SPRINT_HD_DESCRIPTION",                                     "+3 [ICON_Strength] Combat Strength per unused [ICON_Movement] Movement."),
     -- Recon
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
     ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
@@ -204,6 +206,8 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                        "驻防时+15生命值恢复。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_THRUST_DESCRIPTION",                                     "攻击时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_CHOKE_POINTS_DESCRIPTION",                               "在树林、丛林、丘陵或沼泽时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPRINT_HD_NAME",                                         "冲刺"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPRINT_HD_DESCRIPTION",                                  "每点未使用的 [ICON_Movement] 移动力提供+3 [ICON_Strength] 战斗力。"),
     -- Recon
     ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力"), -- ，但-1 [ICON_Movement] 移动力
     ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过森林和丛林。"),

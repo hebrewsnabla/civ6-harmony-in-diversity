@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9.1">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,8 +12,8 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9.1</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
       <en_US>Create a brand new Civ6.</en_US>
@@ -240,6 +240,10 @@
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     </UpdateText>
+    <UpdateText id="Community_STUU_support_texts_late"> <!-- criteria="STUU_Expansion2" -->
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
+    </UpdateText>
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
@@ -269,6 +273,7 @@
       <File>Texts/HD_Text_Improvements.sql</File>
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
+      <!-- <File>Texts/HD_Text_Units_Late.sql</File> -->
     </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">
@@ -476,6 +481,10 @@
       <Properties><LoadOrder>15017</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
+    </UpdateText>
+    <UpdateText id="Community_STUU_support_texts_late" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
     </UpdateText>
     <UpdateDatabase id="Community_STUU_UserSetting" criteria="STUU_Expansion2">
       <Properties><LoadOrder>4</LoadOrder></Properties>
@@ -827,6 +836,10 @@
       <File>Texts/HD_Text_Wonders.sql</File>
       <File>Texts/HD_Text_GreatPerson.sql</File>
     </UpdateText>
+    <UpdateText id="DL_Text_Late" criteria="Expansion2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Texts/HD_Text_Units_Late.sql</File>
+    </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
     <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
@@ -997,6 +1010,7 @@
     <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
+    <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
     <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <!-- Removeable Districts -->
@@ -1146,6 +1160,7 @@
     <File>Texts/HD_Text_UnitAbilities.sql</File>
     <File>Texts/HD_Text_UnitPromotions.sql</File>
     <File>Texts/HD_Text_Units.sql</File>
+    <File>Texts/HD_Text_Units_Late.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
     <!-- Assets -->

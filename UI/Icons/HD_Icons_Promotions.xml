@@ -56,6 +56,7 @@
     <!-- Anti Cavalry -->
     <Update><Where Name="ICON_PROMOTION_REDEPLOY"/> <Set Index="22"/></Update>
     <Row Name="ICON_PROMOTION_LOGISTICS_SUPPLY"             Atlas="ICON_ATLAS_PROMOTIONS" Index="25"/>
+    <Row Name="ICON_PROMOTION_SPRINT_HD"                    Atlas="ICON_ATLAS_PROMOTIONS" Index="0"/>
     <!-- Recon -->
     <Row Name="ICON_PROMOTION_RECON_TRAVEL_LIGHT"           Atlas="ICON_ATLAS_PROMOTIONS" Index="22"/>
     <Row Name="ICON_PROMOTION_RECON_RAPID_FIRE"             Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>

@@ -73,6 +73,28 @@ update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 -- Testing Adjustments for units   --
 -------------------------------------
 
+update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_CATAPULT';
+update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_ROMAN_ONAGER'; -- ST
+update Units set PrereqTech = 'TECH_CONSTRUCTION' where UnitType = 'UNIT_MACEDONIAN_BALLISTA'; -- ST
+update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_AXE_THROWER'; -- WE
+update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_REITER'; -- WE
+update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_ARQUEBUSIER'; -- WE
+update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_STRADIOT'; -- WE
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAN_AT_ARMS';
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GEORGIAN_KHEVSURETI';
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_IMPI';
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_PIKEMAN';
+-- update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_GERMAN_LANDSKNECHT'; -- ST
+-- update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_MAPUCHE_GUERILLA';   -- ST
+update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';   -- ST
+-- update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
+update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
+update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
+
+-- 调整单位过期科技。
+update Units set MandatoryObsoleteTech = 'TECH_MILITARY_TACTICS' where MandatoryObsoleteTech = 'TECH_METAL_CASTING';
+
 -- Special:
 -- TODO: set LU as UU for Arabia, change player information.
 

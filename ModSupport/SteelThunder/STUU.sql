@@ -6,19 +6,20 @@
 -- General Fix
 delete from UnitUpgrades where Unit = 'UNIT_BRAZILIAN_BANDEIRANTE';
 
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select UnitType, 'UNIT_MAN_AT_ARMS'
+from Units where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD' or UnitType = 'UNIT_MAYAN_HOLKAN';
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select UnitType, 'UNIT_LINE_INFANTRY'
+from Units where UnitType = 'UNIT_COLOMBIAN_BRITISH_LEGION' or UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
+
 insert or replace into UnitReplaces
     (CivUniqueUnitType,                     ReplacesUnitType)
 values
     ('UNIT_ARABIAN_GHAZI',                  'UNIT_MAN_AT_ARMS'),
     ('UNIT_SCOTTISH_GALLOWGLASS',           'UNIT_MAN_AT_ARMS'),
     ('UNIT_ELEANOR_TEMPLAR',                'UNIT_MAN_AT_ARMS'),
-    ('UNIT_MAYAN_HOLKAN',                   'UNIT_MAN_AT_ARMS'),
-    ('UNIT_BYZANTINE_VARANGIAN_GUARD',      'UNIT_MAN_AT_ARMS'),
 
     ('UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER', 'UNIT_LINE_INFANTRY'),
     ('UNIT_INDIAN_SEPOY',                   'UNIT_LINE_INFANTRY'),
-    ('UNIT_COLOMBIAN_BRITISH_LEGION',       'UNIT_LINE_INFANTRY'),
-    ('UNIT_ETHIOPIAN_MEHAL_SEFARI',         'UNIT_LINE_INFANTRY'),
     ('UNIT_MONGOLIAN_HUI_HUI_PAO',          'UNIT_TREBUCHET');
 
 update UnitUpgrades set UpgradeUnit = 'UNIT_MAN_AT_ARMS' where Unit = 'UNIT_EGYPTIAN_KHOPESH' or Unit = 'UNIT_AZTEC_JAGUAR';
@@ -65,6 +66,11 @@ values
 -- 美国
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_AMERICAN_MINUTEMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_AMERICAN_MINUTEMAN';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_MINUTEMAN' and (ModifierId = 'COSSACK_LOCAL_COMBAT' or ModifierId = 'PLUS_5_FOREST_JUNGLE_COMBAT_BONUS');
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values
+    ('ABILITY_MINUTEMAN',  'HETAIROI_FREE_PROMOTION'),
+    ('ABILITY_MINUTEMAN',  'HD_RECON_IGNORE_HILLS_MOVEMENT_PENALTY'),
+    ('ABILITY_MINUTEMAN',  'HD_RECON_IGNORE_FOREST_MOVEMENT_PENALTY');
 -- 阿拉伯
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
 -- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
@@ -114,8 +120,18 @@ update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';
 -- -- 西班牙
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SPANISH_TERCIO';
-update Units set Cost = 120, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
+update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPANISH_TERCIO';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_TERCIO' and ModifierId = 'MUSTANG_MORE_EXPERIENCE';
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,   ModifierId)
+values
+    ('ABILITY_TERCIO', 'PLUS_5_CAPITAL_CONTINENT_COMBAT_BONUS'),
+    ('ABILITY_TERCIO', 'HD_FOREIGN_CONTINENT_MOVEMENT_BONUS');
+insert or replace into Modifiers (ModifierId,       ModifierType,                            SubjectRequirementSetId)
+values ('HD_FOREIGN_CONTINENT_MOVEMENT_BONUS',      'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',  'REDCOAT_PLOT_IS_FOREIGN_CONTINENT');
+insert or replace into ModifierArguments (ModifierId,   Name,       Value)
+values ('HD_FOREIGN_CONTINENT_MOVEMENT_BONUS',          'Amount',   1);
 -- -- 罗马
 update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 30, Bombard = 40, StrategicResource = NULL where UnitType = 'UNIT_ROMAN_ONAGER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ROMAN_ONAGER';
@@ -124,7 +140,22 @@ update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_RUSSIAN_DRUZ
 update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 -- -- 挪威
--- update Units set Cost = 70 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_NORWEGIAN_ULFHEDNAR',    'UNIT_MEDIC');
+update Units set Cost = 100, CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 20 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_COMBAT_BONUS_ATTACH';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_DAMAGED_UNITS_BONUS_ATTACH';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_FAITH_BONUS_ATTACH';
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,                               ModifierId)
+values
+    ('ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS',   'RECEIVE_NORWEGIAN_ULFHEDNAR_MOVEMENT_BONUS_ATTACH'),
+    ('ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS',   'RECEIVE_NORWEGIAN_ULFHEDNAR_EXPERIENCE_BONUS_ATTACH');
+insert or replace into Modifiers (ModifierId,                   ModifierType,                           SubjectRequirementSetId)
+values ('RECEIVE_NORWEGIAN_ULFHEDNAR_MOVEMENT_BONUS_ATTACH',    'MODIFIER_SINGLE_UNIT_ATTACH_MODIFIER', 'ADJACENT_NORWEGIAN_ULFHEDNAR_REQUIREMENTS'),
+       ('RECEIVE_NORWEGIAN_ULFHEDNAR_EXPERIENCE_BONUS_ATTACH',  'MODIFIER_SINGLE_UNIT_ATTACH_MODIFIER', 'ADJACENT_NORWEGIAN_ULFHEDNAR_REQUIREMENTS');
+insert or replace into ModifierArguments (ModifierId,           Name,       Value)
+values ('RECEIVE_NORWEGIAN_ULFHEDNAR_MOVEMENT_BONUS_ATTACH',    'ModifierId',   'PURSUIT_BONUS_MOVEMENT'),
+       ('RECEIVE_NORWEGIAN_ULFHEDNAR_EXPERIENCE_BONUS_ATTACH',  'ModifierId',   'MUSTANG_MORE_EXPERIENCE');
 -- -- 印度
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_INDIAN_SEPOY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_INDIAN_SEPOY';
@@ -170,8 +201,9 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_FRENCH_GENDARME';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_FRENCH_GENDARME';
 -- -- 刚果
-update Units set Cost = 60 where UnitType = 'UNIT_KONGO_MEDICINE_MAN';
+update Units set Cost = 50, MustPurchase = 0 where UnitType = 'UNIT_KONGO_MEDICINE_MAN';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_KONGO_MEDICINE_MAN',    'UNIT_MEDIC');
+update ModifierArguments set Value = 100 where ModifierId = 'RECEIVE_MEDICINE_MAN_FAITH_BONUS' and Name = 'PercentDefeatedStrength';
 -- ------ UNIT_KONGO_MEDICINE_MAN
 -- -- 澳大利亚
 update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat = 95, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_AUSTRALIAN_SASR';
@@ -180,13 +212,29 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 -- -- 阿兹特克
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_JAGUAR';
+-- delete from TypeTags where Type = 'UNIT_AZTEC_JAGUAR' and Tag = 'CLASS_CAPTURE_WORKER';
+update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_AZTEC_JAGUAR';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_JAGUAR';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AZTEC_JAGUAR';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_JAGUAR' and ModifierId = 'UNIT_STRONG_WHEN_ATTACKING';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_JAGUAR' and ModifierId = 'UNIT_WEAK_WHEN_DEFENDING';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_JAGUAR' and ModifierId = 'JUNGLE_MOVEMENT';
+-- 保留 RANGER_IGNORE_FOREST_MOVEMENT_PENALTY，无视雨林森林移动力消耗。
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId)
+values ('ABILITY_JAGUAR',   'GRANT_STRENGTH_FOR_EAGLE_ATTACH');
+insert or replace into Modifiers (ModifierId,   ModifierType,                               SubjectRequirementSetId)
+values ('GRANT_STRENGTH_FOR_EAGLE_ATTACH',      'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',    'UNIT_IS_ADJACENT_EAGLE_WARRIOR_REQUIREMENTS'),
+       ('STRENGTH_FOR_EAGLE_MODIFIER',          'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     NULL);
+insert or replace into ModifierArguments (ModifierId,   Name,           Value)
+values ('GRANT_STRENGTH_FOR_EAGLE_ATTACH',              'ModifierId',   'STRENGTH_FOR_EAGLE_MODIFIER'),
+       ('STRENGTH_FOR_EAGLE_MODIFIER',                  'Amount',       3);
+insert or replace into ModifierStrings (ModifierId,     Context,    Text)
+values ('STRENGTH_FOR_EAGLE_MODIFIER',                  'Preview',  '+{1_Amount} {LOC_STRENGTH_FOR_EAGLE_MODIFIER_PREVIEW_TEXT}');
 -- -- 马其顿
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 28, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MACEDONIAN_PEZHETAIROS';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MACEDONIAN_PEZHETAIROS';
-delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_PEZHETAIROS' and ModifierId = 'PLUS_10_VERSUS_MELEE_COMBAT_BONUS';
-insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_PEZHETAIROS', 'PLUS_10_ATTACKING_UNIT_BONUS');
+update UnitAbilityModifiers set ModifierId = 'PLUS_10_ATTACKING_UNIT_BONUS' where
+    UnitAbilityType = 'ABILITY_PEZHETAIROS' and ModifierId = 'PLUS_10_VERSUS_MELEE_COMBAT_BONUS';
 insert or replace into Modifiers (ModifierId,       ModifierType,                            SubjectRequirementSetId)
 values ('PLUS_10_ATTACKING_UNIT_BONUS',             'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'HD_UNIT_ATTACKING_UNIT_REQUIREMENTS');
 insert or replace into ModifierArguments (ModifierId,   Name,       Value)
@@ -205,8 +253,8 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_CANNON' where Unit = 'UNIT_ZUL
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_ASSEGAI';
 update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 44, StrategicResource = NULL where UnitType = 'UNIT_ZULU_ASSEGAI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ZULU_ASSEGAI';
-delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_ZULU_ASSEGAI' and ModifierId = 'PLUS_4_ASSEGAI_ADJACENCY_COMBAT_BONUS_ATTACH';
-insert or replace into UnitAbilityModifiers (UnitAbilityType,   ModifierId) values ('ABILITY_ZULU_ASSEGAI', 'HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY');
+update UnitAbilityModifiers set ModifierId = 'HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY' where
+    UnitAbilityType = 'ABILITY_ZULU_ASSEGAI' and ModifierId = 'PLUS_4_ASSEGAI_ADJACENCY_COMBAT_BONUS_ATTACH';
 insert or replace into Modifiers (ModifierId,      ModifierType,                            SubjectRequirementSetId)
 values ('HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY',    'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',  'HD_NEAR_ANTI_CAVALRY_REQUIREMENTS');
 insert or replace into ModifierArguments (ModifierId,   Name,       Value)
@@ -218,21 +266,40 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 -- -- 蒙古
 update Units set Cost = 120, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 38, Bombard = 52, StrategicResource = NULL where UnitType = 'UNIT_MONGOLIAN_HUI_HUI_PAO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MONGOLIAN_HUI_HUI_PAO';
+delete from TypeTags where Type = 'ABILITY_RECEIVE_HUI_HUI_PAO_BONUS';
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_GRANT_HUI_HUI_PAO_BONUS', 'HD_SIEGE_CAVALRY_MOVEMENT');
+insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_GRANT_HUI_HUI_PAO_BONUS', 'HD_SIEGE_CAVALRY_STRENGTH');
+insert or replace into Modifiers (ModifierId,   ModifierType,                            SubjectRequirementSetId)
+values ('HD_SIEGE_CAVALRY_STRENGTH',            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'HD_NEAR_CAVALRY_REQUIREMENTS');
+insert or replace into ModifierArguments (ModifierId,   Name,       Value)
+values ('HD_SIEGE_CAVALRY_STRENGTH',                    'Amount',   3);
+insert or replace into ModifierStrings (ModifierId,     Context,    Text)
+values ('HD_SIEGE_CAVALRY_STRENGTH',                    'Preview',  '+{1_Amount} {LOC_HD_SIEGE_CAVALRY_STRENGTH_PREVIEW_TEXT}');
 -- -- 马普切
-update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 1, Combat = 44, RangedCombat = 33, StrategicResource = NULL where UnitType = 'UNIT_MAPUCHE_GUERILLA';
+update Units set PrereqTech = NULL, PrereqCivic = 'CIVIC_MILITARY_TRAINING', PromotionClass = 'PROMOTION_CLASS_RECON' where UnitType = 'UNIT_MAPUCHE_GUERILLA';
+update Units set Cost = 75, Maintenance = 2, BaseMoves = 3, Range = 1, Combat = 40, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_MAPUCHE_GUERILLA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAPUCHE_GUERILLA';
+update TypeTags set Tag = 'CLASS_RECON' where Type = 'UNIT_MAPUCHE_GUERILLA' and Tag = 'CLASS_ANTI_CAVALRY';
+delete from UnitAiInfos where UnitType = 'UNIT_MAPUCHE_GUERILLA' and AiType = 'UNITTYPE_ANTI_CAVALRY';
+insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_MAPUCHE_GUERILLA', 'UNITTYPE_RANGED');
+update UnitReplaces set ReplacesUnitType = 'UNIT_SKIRMISHER' where CivUniqueUnitType = 'UNIT_MAPUCHE_GUERILLA';
+update UnitUpgrades set UpgradeUnit = 'UNIT_RANGER' where Unit = 'UNIT_MAPUCHE_GUERILLA';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_MAPUCHE_GUERILLA' and ModifierId = 'NAGAO_FOREST_MOVEMENT';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_MAPUCHE_GUERILLA' and ModifierId = 'JUNGLE_MOVEMENT';
+insert or replace into UnitAbilityModifiers (UnitAbilityType,   ModifierId) values ('ABILITY_MAPUCHE_GUERILLA', 'IGNOREZOC_IGNORE_ZOC');
+insert or replace into UnitAbilityModifiers (UnitAbilityType,   ModifierId) values ('ABILITY_MAPUCHE_GUERILLA', 'SPYGLASS_BONUS_SIGHT');
 -- -- 朝鲜
 update Units set Cost = 180, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_KOREAN_TURTLE_SHIP';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_KOREAN_TURTLE_SHIP';
 -- -- 高棉
-update Units set Cost = 55, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_KHMER_WAR_CANOE';
+update Units set Cost = 40, Maintenance = 1, BaseMoves = 4, Range = 0, Combat = 33, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_KHMER_WAR_CANOE';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_KHMER_WAR_CANOE';
 -- -- 格鲁吉亚
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 -- -- 荷兰
-update Units set Cost = 100, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
+update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 -- -- 克里
 update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CREE_OTEHTAPIW';
@@ -263,6 +330,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 -- -- 瑞典
 update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
+delete from TypeTags where Type = 'ABILITY_SWEDEN_HAKKAPELIITTA' and Tag = 'CLASS_SWEDEN_HAKKAPELIITTA';
 -- -- 埃利诺
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ELEANOR_TEMPLAR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ELEANOR_TEMPLAR';
@@ -277,6 +345,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 -- -- 埃塞俄比亚
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
+update ModifierArguments set Value = 10 where ModifierId = 'PLUS_X_VERSUS_STRONGER_UNITS' and Name = 'Amount';
 -- -- 拜占庭
 update Units set PrereqTech = 'TECH_METAL_CASTING', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
@@ -284,6 +353,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 -- -- 高卢
 update Units set Cost = 55, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GAUL_CARRUS';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GAUL_CARRUS';
+delete from TypeTags where Type = 'ABILITY_PLUS_X_VS_ANTI_CAVALRY' and Tag = 'CLASS_GAUL_CARRUS';
 -- -- 巴比伦
 update Units set PrereqTech = NULL where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 23, StrategicResource = NULL where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
@@ -353,3 +423,28 @@ insert or ignore into RequirementArguments
     (RequirementId,                                 Name,               Value)
 values
     ('HD_REQUIRES_UNIT_NEXT_TO_PELTAST',            'UnitType',         'UNIT_GREEK_PELTAST');
+
+
+-- insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId)
+-- select from UnitAbilities where UnitAbilityType = 'ABILITY_JAGUAR'
+
+------------------------------------------------------------------------------------------------
+-- Requirements
+insert or replace into RequirementSets
+    (RequirementSetId,                                  RequirementSetType)
+values
+    ('UNIT_IS_ADJACENT_JAGUAR_REQUIREMENTS',            'REQUIREMENTSET_TEST_ALL'),
+    ('UNIT_IS_ADJACENT_EAGLE_WARRIOR_REQUIREMENTS',     'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                  RequirementId)
+values
+    ('UNIT_IS_ADJACENT_JAGUAR_REQUIREMENTS',            'ADJACENT_TO_OWNER'),
+    ('UNIT_IS_ADJACENT_EAGLE_WARRIOR_REQUIREMENTS',     'ADJACENT_TO_OWNER');
+
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) select
+    'UNIT_IS_ADJACENT_JAGUAR_REQUIREMENTS',            'REQUIRES_UNIT_IS_UNIT_AZTEC_JAGUAR'
+where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) select
+    'UNIT_IS_ADJACENT_EAGLE_WARRIOR_REQUIREMENTS',     'REQUIRES_UNIT_IS_UNIT_AZTEC_EAGLE_WARRIOR'
+where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
