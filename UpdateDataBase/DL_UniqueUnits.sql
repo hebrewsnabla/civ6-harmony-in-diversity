@@ -156,8 +156,9 @@ update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NUBIAN_PITATI';
 ------ UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT
 -- 祖鲁
-update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ZULU_IMPI';
+update Units set Cost = 80, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 43, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ZULU_IMPI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ZULU_IMPI';
+update ModifierArguments set Value = 50 where ModifierId = 'IMPI_FASTER_COMBAT_XP' and Name = 'Amount';
 ------ UNIT_ZULU_ASSEGAI
 -- 苏格兰
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 65, RangedCombat = 55, StrategicResource = NULL where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
@@ -201,8 +202,8 @@ delete from TypeTags where Type = 'ABILITY_CREE_OKIHTCITAW' and Tag = 'CLASS_CRE
 update Units set Cost = 240, Maintenance = 4, BaseMoves = 5, Range = 2, Combat = 50, RangedCombat = 60 where UnitType = 'UNIT_INDONESIAN_JONG';
 ------ UNIT_INDONESIAN_KRIS_SWORDSMAN
 -- 加拿大
-update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CANADA_MOUNTIE';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CANADA_MOUNTIE';
+update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_CANADA_MOUNTIE';
+update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CANADA_MOUNTIE';
 ------ UNIT_CANADA_HMCS_HAIDA
 -- 匈牙利
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
@@ -252,7 +253,7 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAYAN_HULCHE';
 ------ UNIT_MAYAN_HOLKAN
 -- 大哥伦比亚
-update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COLOMBIAN_LLANERO';
+update Units set Cost = 220, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 ------ UNIT_COLOMBIAN_BRITISH_LEGION
 -- 埃塞俄比亚
@@ -279,7 +280,7 @@ update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
 ------ UNIT_VIETNAMESE_VIETCONG
 -- 葡萄牙
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PORTUGUESE_NAU';
+update Units set Cost = 140, Maintenance = 4, BaseMoves = 3, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_PORTUGUESE_NAU';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PORTUGUESE_NAU';
 ------ UNIT_SPANISH_JINETE
 

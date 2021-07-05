@@ -422,7 +422,7 @@ values
     ("LOC_UNIT_CHINESE_SHIGONG_NAME",                                                     "Strategist"),
     ("LOC_UNIT_COLOMBIAN_BRITISH_LEGION_DESCRIPTION",                                     "Colombian unique Industrial Melee unit. Fights at full Combat Strength when damaged while on Hills. +5 [ICON_Strength] when attacking Ranged units."),
     ("LOC_UNIT_COLOMBIAN_BRITISH_LEGION_NAME",                                            "Legión Británica"),
-    ("LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION",                                               "Cree unique Industrial era light cavalry unit replacing Cavalry. Gains +2 movement points if it starts on flat terrain. Heals +15 per turn when on Plains or Grassland. +10 [ICON_Strength] when fighting on Plains or Grassland."),
+    ("LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION",                                               "Cree unique Industrial era light cavalry unit replacing Cavalry. Gains +2 movement points if it starts on flat terrain. Heals +15 per turn when on Plains or Grassland. +5 [ICON_Strength] when fighting on Plains or Grassland."),
     ("LOC_UNIT_CREE_OTEHTAPIW_NAME",                                                      "Otehtapiw"),
     ("LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                             "Dutch unique Renaissance era melee unit that replaces Musketman. Cheaper cost and maintenance than Musketman. +10 [ICON_Strength] when defending at districts. Require less resources to build or upgrade."),
     ("LOC_UNIT_DUTCH_SCHUTTERIJ_NAME",                                                    "Schutterij"),
@@ -454,7 +454,7 @@ values
     ("LOC_UNIT_GREEK_PELTAST_NAME",                                                       "Peltast"),
     ("LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION",                                            "Hungarian unique Medieval Era Ranged unit replacing the Crossbowman. Yields 50% of defeated units' [ICON_Strength] as [ICON_Gold] on combat victory."), -- Requires fewer movement points to pillage. 
     ("LOC_UNIT_HUNGARY_KALANDOZO_NAME",                                                   "Kalandozó"),
-    ("LOC_UNIT_INCA_CHASQUI_DESCRIPTION",                                                 "Incan unique Ancient Era Recon unit replacing the Scout. +1 extra movement and can build roads."),
+    ("LOC_UNIT_INCA_CHASQUI_DESCRIPTION",                                                 "Incan unique Ancient Era Recon unit replacing the Scout. +1 extra movement and can build Incan unique improvement Mountain Road."),
     ("LOC_UNIT_INCA_CHASQUI_NAME",                                                        "Chasqui"),
     ("LOC_UNIT_INDIAN_MUGHAL_SOWAR_DESCRIPTION",                                          "Indian unique Medieval Era Heavy Cavalry unit that replaces Knight. Ignores terrain costs. Heals +15 per turn when on or adjacent to a Stepwell improvement."),
     ("LOC_UNIT_INDIAN_MUGHAL_SOWAR_NAME",                                                 "Mughal Sowar"),

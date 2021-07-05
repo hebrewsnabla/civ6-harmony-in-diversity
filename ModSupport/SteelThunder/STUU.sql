@@ -120,7 +120,7 @@ update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';
 -- -- 西班牙
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SPANISH_TERCIO';
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
+update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 53, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPANISH_TERCIO';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_TERCIO' and ModifierId = 'MUSTANG_MORE_EXPERIENCE';
 insert or replace into UnitAbilityModifiers
@@ -264,7 +264,7 @@ update Units set PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_SCOTT
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SCOTTISH_GALLOWGLASS';
 -- -- 蒙古
-update Units set Cost = 120, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 38, Bombard = 52, StrategicResource = NULL where UnitType = 'UNIT_MONGOLIAN_HUI_HUI_PAO';
+update Units set Cost = 120, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 38, Bombard = 48, StrategicResource = NULL where UnitType = 'UNIT_MONGOLIAN_HUI_HUI_PAO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MONGOLIAN_HUI_HUI_PAO';
 delete from TypeTags where Type = 'ABILITY_RECEIVE_HUI_HUI_PAO_BONUS';
 insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_GRANT_HUI_HUI_PAO_BONUS', 'HD_SIEGE_CAVALRY_MOVEMENT');
@@ -301,7 +301,7 @@ update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON
 update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 -- -- 克里
-update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
+update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CREE_OTEHTAPIW';
 -- -- 印尼
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
@@ -314,7 +314,8 @@ update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HUNGARY_KALANDOZO';
 delete from TypeTags where Type = 'ABILITY_LESS_MOVEMENT_PILLAGE' and Tag = 'CLASS_HUNGARY_KALANDOZO';
 -- -- 印加
--- ------ UNIT_INCA_CHASQUI
+delete from Route_ValidBuildUnits where UnitType = 'UNIT_INCA_CHASQUI';
+insert or replace into Improvement_ValidBuildUnits (ImprovementType, UnitType) values ('IMPROVEMENT_MOUNTAIN_ROAD', 'UNIT_INCA_CHASQUI');
 -- -- 马里
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_MALI_SOFA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MALI_SOFA';
