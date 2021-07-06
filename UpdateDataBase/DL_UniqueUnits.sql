@@ -156,7 +156,7 @@ update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NUBIAN_PITATI';
 ------ UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT
 -- 祖鲁
-update Units set Cost = 80, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 43, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ZULU_IMPI';
+update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_ZULU_IMPI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ZULU_IMPI';
 update ModifierArguments set Value = 50 where ModifierId = 'IMPI_FASTER_COMBAT_XP' and Name = 'Amount';
 ------ UNIT_ZULU_ASSEGAI

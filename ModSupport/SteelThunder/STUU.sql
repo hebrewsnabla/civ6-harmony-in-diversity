@@ -92,7 +92,7 @@ insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- 德国
 update Units set PrereqTech = 'TECH_APPRENTICESHIP', MustPurchase = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
-update Units set Cost = 80, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 43, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 600, Maintenance = 15, BaseMoves = 4, Range = 0, Combat = 92, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_GERMAN_PANZER';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_GERMAN_PANZER';
@@ -120,7 +120,7 @@ update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';
 -- -- 西班牙
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SPANISH_TERCIO';
-update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 53, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
+update Units set Cost = 160, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SPANISH_TERCIO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPANISH_TERCIO';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_TERCIO' and ModifierId = 'MUSTANG_MORE_EXPERIENCE';
 insert or replace into UnitAbilityModifiers
