@@ -140,6 +140,7 @@ values
     ("LOC_PROMOTION_HEAVYC_SHOCK_NAME",                                         "Shock"),
     ("LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_ROUT_DESCRIPTION",                                          "+5 [ICON_Strength] Combat Strength attacking damaged units."),
+    ("LOC_PROMOTION_MARAUDING_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking districts or units in districts."),
     ("LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when attacking units. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength when defending. Extra +7 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     -- Light Cavalry
@@ -190,6 +191,7 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                 "遭夹击时+7 [ICON_Strength] 战斗力。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                    "战线"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                             "与至少一个友方近战单位相邻时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_URBAN_WARFARE_DESCRIPTION",                              "在区域内进行近距离战斗时，+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_NAME",                                     "长途行军"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                              "在每回合结束时（甚至是在移动或攻击后），自动恢复生命值。"),
     -- Ranged
@@ -224,6 +226,7 @@ values
     -- ("zh_Hans_CN",  "LOC_PROMOTION_BARDING_DESCRIPTION",                                    "防御远程攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_HEAVYC_SHOCK_NAME",                                      "冲击"),
     ("zh_Hans_CN",  "LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                               "在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_MARAUDING_DESCRIPTION",                                  "进攻区域或进攻区域上的单位时，+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ROUT_DESCRIPTION",                                       "攻击受伤单位时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                             "攻击单位时+5 [ICON_Strength] 战斗力。若基础战斗力不低于对方单位，则攻击时额外 +5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "防御时+7 [ICON_Strength] 战斗力。若基础战斗力不低于对方，则防御时额外 +7 [ICON_Strength] 战斗力。"),

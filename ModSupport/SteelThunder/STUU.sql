@@ -361,6 +361,7 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
 insert or replace into TypeTags (Type, Tag) select UnitType, 'CLASS_HD_GAIN_SCIENCE_WHEN_KILLS'
 from Units where UnitType = 'UNIT_BABYLONIAN_BOWMAN';
+update Modifiers set SubjectRequirementSetId = 'URBAN_RAIDER_REQUIREMENTS' where ModifierId = 'PLUS_X_DISTRICT_ATTACK';
 -- -- 越南
 update Units set Cost = 270, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 78, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
