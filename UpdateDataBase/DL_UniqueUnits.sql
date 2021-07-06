@@ -143,7 +143,7 @@ update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HYPASPIST';
 ------ UNIT_MACEDONIAN_HETAIROI
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 -- insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MACEDONIAN_HETAIROI', 'UNIT_ARMORED_HORSEMAN'
 --     where exists (select UnitType from Units where UnitType = 'UNIT_ARMORED_HORSEMAN');
 ------ UNIT_MACEDONIAN_PEZHETAIROS
@@ -239,7 +239,9 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_SCIENCE', PromotionClass = 'PROMOTION_CLASS_MELEE' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWEDEN_CAROLEAN';
+-- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWEDEN_CAROLEAN';
+insert or replace into Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) values
+    ('UNIT_SWEDEN_CAROLEAN', 5, 'RESOURCE_NITER', 1);
 update TypeTags set Tag = 'CLASS_MELEE' where Type = 'UNIT_SWEDEN_CAROLEAN' and Tag = 'CLASS_ANTI_CAVALRY';
 delete from UnitAiInfos where UnitType = 'UNIT_SWEDEN_CAROLEAN' and AiType = 'UNITTYPE_ANTI_CAVALRY';
 update UnitReplaces set ReplacesUnitType = 'UNIT_LINE_INFANTRY' where CivUniqueUnitType = 'UNIT_SWEDEN_CAROLEAN';
