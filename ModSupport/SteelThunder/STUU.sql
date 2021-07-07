@@ -106,10 +106,12 @@ update Units set PrereqTech = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
 update Units set Cost = 25, Maintenance = 0, BaseMoves = 2, Range = 0, Combat = 25, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SUMERIAN_PHALANX';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SUMERIAN_PHALANX';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_PHALANX' and ModifierId = 'PLUS_5_ZIGURRAT_PROXIMITY_COMBAT_BONUS';
-insert or replace into UnitAbilityModifiers
-    (UnitAbilityType,   ModifierId)
-values
-    ('ABILITY_PHALANX', 'DISCIPLINE_BARBARIANCOMBAT');
+insert or replace into UnitAbilityModifiers (UnitAbilityType,   ModifierId)
+values ('ABILITY_PHALANX', 'PLUS_10_BARBARIAN_COMBAT');
+insert or replace into Modifiers (ModifierId,       ModifierType)
+values ('PLUS_10_BARBARIAN_COMBAT',      'MODIFIER_PLAYER_UNIT_ADJUST_BARBARIAN_COMBAT');
+insert or replace into ModifierArguments (ModifierId,   Name,       Value)
+values ('PLUS_10_BARBARIAN_COMBAT',      'Amount',   10);
 -- 埃及
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
