@@ -15,6 +15,14 @@ values
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
+    ("LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "Heartbeat of Steam Golden Age:[NEWLINE]+10% [ICON_Production] Production toward Industrial era and later wonders. Campus district's [ICON_SCIENCE] Science adjacency bonus provides [ICON_PRODUCTION] Production as well. Industrial zone district's [ICON_PRODUCTION] Production adjacency bonus provides [ICON_SCIENCE] Science as well."),
+    ("LOC_MOMENT_CATEGORY_MILITARY_BONUS_GOLDEN_AGE",                                 "To Arms! Golden Age:[NEWLINE]Unlock a special Casus Belli which generates 75% less [ICON_STAT_GRIEVANCE] Grievances than Formal War and can be used immediately after Denouncing the target. +30% [ICON_Production] Production towards military units."),
+    ("LOC_MOMENT_CATEGORY_TOURISM_BONUS_GOLDEN_AGE",                                  "Wish You Were Here Golden Age:[NEWLINE]Cities receive +100%  [ICON_Tourism] Tourism from World Wonders. +100%  [ICON_Tourism] Tourism to all National Parks."),
+    -- 黑暗卡
+    ("LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "+5 [ICON_Strength] Combat Strength for all melee attack units. +5 Loyalty per turn for cities with a garrisoned unit.[NEWLINE]BUT: Cannot heal outside your territory."),
+    ("LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "Domestic routes provide +3 [ICON_Food] Food, +3 [ICON_Production] Production.[NEWLINE]BUT: Can't train or buy Settlers nor settle new cities. Can't train or buy Builders."),
+    ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "Wonder Misleads the Country"),
+    ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "+20% [ICON_Production] Production toward Renaissance, Medieval, Classical, and Ancient wonders.[NEWLINE]BUT: Your cities -50% [ICON_GOLD] Gold yield."),
     -- Govs: TODO: swap the inherent and accumulate
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each Government Plaza and its building, Diplomatic Quarter and its building and palace in a city."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each Government Plaza and its building and palace in a city."),
@@ -122,12 +130,20 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "生产工业及更早时代的海军单位加速+60%，城市每有一级港口建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+60%，城市每有一级港口建筑多15%。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
-    -- 
+    -- 着力点
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "“滚滚蒸汽”黄金时代：[NEWLINE]建造后工业时代的奇观时+10% [ICON_Production] 生产力。学院区域的 [ICON_SCIENCE] 科技值相邻加成也可提供 [ICON_PRODUCTION] 生产力。工业区域的 [ICON_PRODUCTION] 生产力相邻加成也可提供 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_MILITARY_BONUS_GOLDEN_AGE",                                 "“全民皆兵”黄金时代：[NEWLINE]解锁特殊战争借口，谴责目标后可立即宣战，[ICON_STAT_GRIEVANCE] 不满-75%。生产军事单位时+30% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_TOURISM_BONUS_GOLDEN_AGE",                                  "“愿你在此”黄金时代：[NEWLINE]世界奇观产出的 [ICON_Tourism] 旅游业绩+100%。国家公园产出的 [ICON_Tourism] 旅游业绩+100%。"),
+    -- 黑暗卡
+    ("zh_Hans_CN",  "LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "所有近战攻击单位+5 [ICON_Strength] 战斗力。拥有驻军单位的城市每回合的忠诚度+5。[NEWLINE]但无法在本国领土外进行治疗。"),
+    ("zh_Hans_CN",  "LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "国内贸易路线提供+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。[NEWLINE]但无法生产或购买开拓者和建造者，也无法建立新城市。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "奇观误国"),
+    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+20% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少50%。"),
     -- 政体
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场区域或其中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
         -- Tier 2
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50%影响力点数。拥有驻军单位的城市生产单位时+20% [ICON_Production] 生产力。"),

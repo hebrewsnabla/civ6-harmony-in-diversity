@@ -489,6 +489,49 @@ insert or replace into RequirementSets (RequirementSetId, RequirementSetType) va
 update ModifierArguments set Value = 12 where ModifierId = 'TSIKHE_FAITH_GOLDEN_AGE' and Name = 'Amount';
 update ModifierArguments set Value = 15 where ModifierId = 'CONSERVATION_TSIKHE_TOURISM_GOLDEN_AGE' and Name = 'Amount';
 
+-- LA : each level of walls +1 culture and +1 faith
+insert or replace into TraitModifiers
+	(TraitType,									ModifierId)
+values
+	('TRAIT_LEADER_RELIGION_CITY_STATES',		'TAMAR_WALLS_CULTURE'),
+	('TRAIT_LEADER_RELIGION_CITY_STATES',		'TAMAR_WALLS_FAITH');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType)
+values
+    ('TAMAR_WALLS_CULTURE',					'MODIFIER_BUILDING_YIELD_CHANGE'),
+	('TAMAR_WALLS_FAITH',					'MODIFIER_BUILDING_YIELD_CHANGE');
+
+insert or replace into ModifierArguments
+    (ModifierId,				Name,          		Value)
+values
+    ('TAMAR_WALLS_CULTURE',  	'BuildingType',    	'BUILDING_WALLS_EARLY,BUILDING_WALLS,BUILDING_CASTLE,BUILDING_STAR_FORT,BUILDING_TSIKHE'),
+	('TAMAR_WALLS_CULTURE',  	'YieldType',    	'YIELD_CULTURE'),
+	('TAMAR_WALLS_CULTURE',  	'Amount',    		1),
+	('TAMAR_WALLS_FAITH',		'BuildingType',    	'BUILDING_WALLS_EARLY,BUILDING_WALLS,BUILDING_CASTLE,BUILDING_STAR_FORT,BUILDING_TSIKHE'),
+	('TAMAR_WALLS_FAITH',  		'YieldType',    	'YIELD_FAITH'),
+	('TAMAR_WALLS_FAITH',  		'Amount',    		1);
+-- UA 
+update ModifierArguments set Value = 100 where Name = 'Amount' and (ModifierId = 'TRAIT_WALLS_PRODUCTION' or ModifierId = 'TRAIT_CASTLE_PRODUCTION' or ModifierId = 'TRAIT_TSIKHE_PRODUCTION' or ModifierId = 'TRAIT_STAR_FORT_PRODUCTION');
+
+insert or replace into TraitModifiers
+	(TraitType,									ModifierId)
+values
+	('TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS',	'TRAIT_GOLDEN_AGE_WILDCARD_SLOT'),
+	('TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS',	'TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES');
+
+insert or ignore into Modifiers
+    (ModifierId,                            	ModifierType,												SubjectRequirementSetId)
+values
+    ('TRAIT_GOLDEN_AGE_WILDCARD_SLOT',			'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',	'PLAYER_HAS_GOLDEN_AGE'),
+	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'MODIFIER_PLAYER_ADJUST_PROPERTY',							'PLAYER_HAS_GOLDEN_AGE');
+
+insert or ignore into ModifierArguments
+    (ModifierId,                            	Name,          			 Value)
+values
+    ('TRAIT_GOLDEN_AGE_WILDCARD_SLOT',			'GovernmentSlotType',	'SLOT_WILDCARD'),
+	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'Key',					'CanSlotDarkPolicies'),
+	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'Amount',				1);
 ----------------------------------------------------------------------------------------------------------------------------
 
 -- inca UI adjustment
