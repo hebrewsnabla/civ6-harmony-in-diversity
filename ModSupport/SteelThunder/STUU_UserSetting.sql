@@ -16,6 +16,7 @@ update EnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_POLISH_UHLAN';
 update EnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_AZTEC_WARRIOR_PRIEST';
 update EnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_MACEDONIAN_BALLISTA';
 update EnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_PERSIAN_WARSHIP';
+update EnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
 
 update EnabledUniqueUnits set OwnerType = 'CIVILIZATION_PORTUGAL' where Type = 'UNIT_SPANISH_JINETE';
 
