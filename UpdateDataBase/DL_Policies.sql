@@ -73,6 +73,7 @@ update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationT
 update Policies_XP1 set MaximumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_MONASTICISM' or PolicyType = 'POLICY_ISOLATIONISM';
 update Policies_XP1 set MaximumGameEra = 'ERA_MEDIEVAL' where PolicyType = 'POLICY_TWILIGHT_VALOR';
 update Policies_XP1 set MinimumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ELITE_FORCES';
+delete from Policies where PolicyType = 'POLICY_INQUISITION' or PolicyType = 'POLICY_COLLECTIVISM';
 delete from Policies_XP1 where PolicyType = 'POLICY_INQUISITION' or PolicyType = 'POLICY_COLLECTIVISM';
 insert into Policies_XP1	
 	(PolicyType,						MinimumGameEra,		MaximumGameEra,		RequiresDarkAge)
