@@ -491,25 +491,25 @@ update ModifierArguments set Value = 15 where ModifierId = 'CONSERVATION_TSIKHE_
 
 -- LA : each level of walls +1 culture and +1 faith
 insert or replace into TraitModifiers	(TraitType,	ModifierId)
-select TRAIT_LEADER_RELIGION_CITY_STATES,	BuildingType || '_TAMAR_CULTURE' from Buildings	where OuterDefenseHitPoints != NULL;
+select 'TRAIT_LEADER_RELIGION_CITY_STATES',	BuildingType || '_TAMAR_CULTURE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into TraitModifiers	(TraitType,	ModifierId)
-select TRAIT_LEADER_RELIGION_CITY_STATES,	BuildingType || '_TAMAR_FAITH' from Buildings	where OuterDefenseHitPoints != NULL;
+select 'TRAIT_LEADER_RELIGION_CITY_STATES',	BuildingType || '_TAMAR_FAITH' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into Modifiers	(ModifierId,	ModifierType)
-select BuildingType || '_TAMAR_CULTURE',	'MODIFIER_BUILDING_YIELD_CHANGE' from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into Modifiers	(ModifierId,	ModifierType)
-select BuildingType || '_TAMAR_FAITH',		'MODIFIER_BUILDING_YIELD_CHANGE' from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_CULTURE',	'BuildingType',	BuildingType	from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_CULTURE',	'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_CULTURE',	'YieldType',	'YIELD_CULTURE'	from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_CULTURE',	'YieldType',	'YIELD_CULTURE'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_CULTURE',	'Amount',    	1				from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_CULTURE',	'Amount',    	1				from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_FAITH',		'BuildingType',	BuildingType	from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_FAITH',		'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_FAITH',		'YieldType',	'YIELD_FAITH'	from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_FAITH',		'YieldType',	'YIELD_FAITH'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_FAITH',		'Amount',    	1				from Buildings	where OuterDefenseHitPoints != NULL;
+select BuildingType || '_TAMAR_FAITH',		'Amount',    	1				from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 
 -- UA 
 update ModifierArguments set Value = 100 where Name = 'Amount' and (ModifierId = 'TRAIT_WALLS_PRODUCTION' or ModifierId = 'TRAIT_CASTLE_PRODUCTION' or ModifierId = 'TRAIT_TSIKHE_PRODUCTION' or ModifierId = 'TRAIT_STAR_FORT_PRODUCTION');
