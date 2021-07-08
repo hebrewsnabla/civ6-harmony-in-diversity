@@ -122,6 +122,7 @@ values
     (  "LOC_PEDIA_CONCEPTS_PAGE_HD_OTHERS_CHAPTER_GAME_OPTIONS_TITLE",              "Game Options"),
     (    "LOC_PEDIA_CONCEPTS_PAGE_HD_OTHERS_CHAPTER_GAME_OPTIONS_PARA_1",             "Add three advanced game options: [NEWLINE][ICON_BULLET] (Enabled by default) Delay the start of the World Congress until the Industrial Era and halve the interval between World Congress (to 15 turns). [NEWLINE][ICON_BULLET] (default off) Captured Settlers become Builders (same setting as Civilization V). [NEWLINE][ICON_BULLET] (default off) AI double military units: whenever an AI trains a military unit, it will get one copy of the same unit for free (only recommended to be turned on when the goal is conquest victory and challenging oneself, this option will significantly increase the difficulty of conquest victory, but also gives the player a chance to experience the excitement of a military duel)."),
 
+    ("LOC_PEDIA_GOVERNMENTS_PAGEGROUP_CITY_POLICIES_NAME",                        "City Policies"),
     ("LOC_PEDIA_CONCEPTS_PAGEGROUP_HD_NAME",                                      "Harmony in Diversity");
 
 --------------------------------------------------------------------------------
@@ -252,6 +253,7 @@ values
     ("zh_Hans_CN",    "LOC_PEDIA_CONCEPTS_PAGE_HD_OTHERS_CHAPTER_GAME_OPTIONS_TITLE",              "游戏选项"),
     ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_OTHERS_CHAPTER_GAME_OPTIONS_PARA_1",             "增加三个高级游戏选项：[NEWLINE][ICON_BULLET] （默认开启）将世界议会推迟到工业时代开始，开会的间隔时间减半（改为15t）。[NEWLINE][ICON_BULLET] （默认关闭）抢占移民变工人（同文明5的设定，降低抢移民收益）。[NEWLINE][ICON_BULLET] （默认关闭）AI双倍军事单位：每当ai训练一个军事单位，其会免费获得一个同样的单位（仅推荐目标征服胜利且挑战自我时打开，该选项将大幅提高征服胜利难度，但是也让玩家有机会体验兵海对决的刺激感）。"),
 
+    ("zh_Hans_CN",  "LOC_PEDIA_GOVERNMENTS_PAGEGROUP_CITY_POLICIES_NAME",                        "城市政策"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGEGROUP_HD_NAME",                                      "和而不同");
 
 -- Original Pedia Contents
