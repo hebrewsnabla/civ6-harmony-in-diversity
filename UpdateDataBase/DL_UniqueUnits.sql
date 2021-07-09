@@ -282,7 +282,7 @@ insert or replace into TypeTags (Type, Tag) select UnitType, 'CLASS_HD_GAIN_SCIE
 from Units where UnitType = 'UNIT_BABYLONIAN_SABUM_KIBITTUM';
 ------ UNIT_BABYLONIAN_BOWMAN
 -- 越南
-update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 35, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 38, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
 ------ UNIT_VIETNAMESE_VIETCONG
 -- 葡萄牙

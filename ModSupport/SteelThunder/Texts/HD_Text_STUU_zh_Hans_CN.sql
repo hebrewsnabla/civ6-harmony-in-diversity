@@ -402,7 +402,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_AH64_APACHE_NAME",                                                "AH-64阿帕奇"),
     ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION",                                           "取代火枪手的美国文艺复兴时代特色近战单位，初始便拥有1次免费升级。在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_MINUTEMAN_NAME",                                                  "快速民兵"),
-    ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "取代弩手的阿拉伯中世纪时代特色远程单位。可使用 [ICON_Faith] 信仰值购买。攻击后可移动。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "取代弩手的阿拉伯中世纪时代特色远程单位。可使用 [ICON_Faith] 信仰值购买。攻击后可移动且免受控制区影响。"),
     ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_CAMEL_ARCHER_NAME",                                                "骆驼骑射手"),
     ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION",                                                "取代披甲战士的阿拉伯古典时代特色近战单位。可用信仰购买。对抗信仰其他宗教的文明的作战单位时，+5 [ICON_Strength] 战斗力。在击败敌方文明或城邦的单位后，向6个单元格内的城市施加250点您创立（或主流）的宗教的压力。"),
     ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_GHAZI_NAME",                                                       "加齐"),

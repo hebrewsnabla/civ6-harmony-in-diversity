@@ -69,6 +69,9 @@ where UnitType = 'UNIT_SPY';
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';
 
+update UnitUpgrades set UpgradeUnit = 'UNIT_OBSERVATION_BALLOON' where Unit = 'UNIT_SIEGE_TOWER';
+update Units set PrereqTech = 'TECH_STEAM_POWER' where UnitType = 'UNIT_OBSERVATION_BALLOON';
+
 -------------------------------------
 -- Testing Adjustments for units   --
 -------------------------------------
@@ -228,11 +231,11 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- Special Cases: UNIT_HELICOPTER
 
 -- Support
-update Units set Cost = 60, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_BATTERING_RAM';
+update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_BATTERING_RAM';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BATTERING_RAM';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SIEGE_TOWER';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SIEGE_TOWER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SIEGE_TOWER';
-update Units set Cost = 220, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MEDIC';
+update Units set Cost = 180, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MEDIC';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MEDIC';
 update Units set Cost = 270, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SUPPLY_CONVOY';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SUPPLY_CONVOY';
@@ -241,11 +244,11 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set Cost = 500, Maintenance = 4, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_MOBILE_SAM';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MOBILE_SAM';
 
-update Units set Cost = 200, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_OBSERVATION_BALLOON';
+update Units set Cost = 200, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_OBSERVATION_BALLOON';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_OBSERVATION_BALLOON';
 -- update Units set Cost = 250, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_RECON_HELICOPTER';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_RECON_HELICOPTER';
-update Units set Cost = 200, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_DRONE';
+update Units set Cost = 300, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 0, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_DRONE';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_DRONE';
 
 -- Naval Melee

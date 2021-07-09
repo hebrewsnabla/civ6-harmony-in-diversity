@@ -79,7 +79,7 @@ update Traits set Description = 'LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DE
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
 -- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units set PrereqTech = 'TECH_CASTLES', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 32, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 30, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 insert or replace into TypeTags (Type, Tag) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 delete from TypeTags where Type = 'ABILITY_CAMEL_ARCHER' and Tag = 'CLASS_ARABIAN_CAMEL_ARCHER';
@@ -176,7 +176,7 @@ delete from TypeTags where Type = 'UNIT_JAPANESE_SOHEI' and Tag = 'CLASS_MELEE';
 insert or replace into TypeTags (Type, Tag) values ('UNIT_JAPANESE_SOHEI', 'CLASS_WARRIOR_MONK');
 
 update Units set PrereqCivic = 'CIVIC_THEOLOGY', PromotionClass = 'PROMOTION_CLASS_MONK' where UnitType = 'UNIT_JAPANESE_SOHEI';
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_JAPANESE_SOHEI';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 3, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_JAPANESE_SOHEI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_JAPANESE_SOHEI';
 
 delete from UnitUpgrades where Unit = 'UNIT_JAPANESE_SOHEI';

@@ -402,7 +402,7 @@ values
     ("LOC_UNIT_AMERICAN_AH64_APACHE_NAME",                                                "AH-64 Apache"),
     ("LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION",                                           "American unique Renaissance Era unit that replaces Musketman. Starts with 1 free promotion. Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- Gains +5 [ICON_Strength] Combat Strength when fighting in or adjacent to home territory. Also gains additional +5 [ICON_Strength] when fighting in Forest or Jungle.
     ("LOC_UNIT_AMERICAN_MINUTEMAN_NAME",                                                  "Minuteman"),
-    ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "Arabian unique Medieval Era unit that replaces Crossbowman. Can be purchased with Faith. Can move after attacking."),
+    ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION",                                         "Arabian unique Medieval Era unit that replaces Crossbowman. Can be purchased with Faith. Can move after attacking and ignore Zone of Control."),
     ("LOC_UNIT_ARABIAN_CAMEL_ARCHER_NAME",                                                "Camel Archer"),
     ("LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION",                                                "Arabian unique Classical Era Melee unit that replaces Man at Arms. Can be purchased with Faith. +5 [ICON_Strength] Combat Strength when opponent is another religion. Spread 250 religious pressure of your founded (or majority) religion to cities within 6 tiles when defeating a unit belonging to an enemy civilization or city-state."),
     ("LOC_UNIT_ARABIAN_GHAZI_NAME",                                                       "Ghazi"),

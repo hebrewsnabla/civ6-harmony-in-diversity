@@ -65,6 +65,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_ABILITY_IGNORE_ZOC_DESCRIPTION",                                    "免受敌人控制区影响。"),
     ("zh_Hans_CN",  "LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自莫克夏训练"),
     ("zh_Hans_CN",  "LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自维克多训练"),
     ("zh_Hans_CN",  "LOC_LIGHTNING_WARFARE_CAVALRY_STRENGTH_PREVIEW_TEXT",                   "来自闪电战"),
@@ -81,7 +82,7 @@ values
     ("zh_Hans_CN",  "LOC_POLAND_ALLY_COMBAT_STRENGTH_PREVIEW_TEXT",                          "+4 来自立陶宛联邦"),
     ("zh_Hans_CN",  "LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "靠近敌人城市时，对城市城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_ABILITY_INCA_IGNORE_HILLS_DESCRIPTION",                             "印加路网：无视丘陵对 [ICON_MOVEMENT] 移动力的减益。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_HD_CAN_MOVE_AFTER_ATTACK_DESCRIPTION",                      "攻击后可移动"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HD_CAN_MOVE_AFTER_ATTACK_DESCRIPTION",                      "攻击后可移动。"),
     ("zh_Hans_CN",  "LOC_ABILITY_KILL_GIVE_GREAT_GENERAL_POINTS_DESCRIPTION",                "击杀文明和城邦的单位时，获得等同于对方单位战斗力的20%（标准速度下）的 [ICON_GreatGeneral] 大将军点数"),
     ("zh_Hans_CN",  "LOC_ABILITY_KILL_GIVE_GREAT_ADMIRAL_POINTS_DESCRIPTION",                "击杀文明和城邦的单位时，获得等同于对方单位战斗力的20%（标准速度下）的 [ICON_GreatAdmiral] 海军统帅点数"),
     ("zh_Hans_CN",  "LOC_ABILITY_KONGO_IGNORE_WOODS_DESCRIPTION",                            "精神实体：无视森林和雨林对 [ICON_MOVEMENT] 移动力的减益。"),
