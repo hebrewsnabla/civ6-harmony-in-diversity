@@ -139,6 +139,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_ABILITY_ROUGH_RIDER_DESCRIPTION",                                   "在 [ICON_Capital] 首都所在的大陆上击杀敌方单位时，获得等于该单位基础 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值（标准速度下）[NEWLINE][ICON_Bullet]在丘陵上作战时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT",                  "在友方领土的4个单元格范围内战斗"),
     ("zh_Hans_CN",  "LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                   "攻击近战、抗骑兵或远程单位"),
     ("zh_Hans_CN",  "LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                  "攻击近战、抗骑兵和远程单位时+7 [ICON_Strength] 战斗力。"),
