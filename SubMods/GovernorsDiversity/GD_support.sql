@@ -49,6 +49,7 @@ values
     ('ABILITY_BISHOP_EXTRA_MOVEMENT',                           'KIND_ABILITY'),
     ('ABILITY_BISHOP_TRAINED_UNIT_STRENGTH',                    'KIND_ABILITY'),
     ('ABILITY_BISHOP_TRAINED_UNIT_EXP',                         'KIND_ABILITY'),
+    ('ABILITY_VICTOR_COMMANDER_STRENGTH',                       'KIND_ABILITY'),
     ('ABILITY_VICTOR_TRAINED_UNIT_EXP',                         'KIND_ABILITY'),
     ('ABILITY_VICTOR_TRAINED_UNIT_STRENGTH',                    'KIND_ABILITY');
 
@@ -61,6 +62,7 @@ values
     ('ABILITY_BISHOP_EXTRA_MOVEMENT',                                   'CLASS_RELIGIOUS_ALL'),
     ('ABILITY_BISHOP_TRAINED_UNIT_EXP',                                 'CLASS_WARRIOR_MONK'),
     ('ABILITY_BISHOP_TRAINED_UNIT_STRENGTH',                            'CLASS_WARRIOR_MONK'),
+    ('ABILITY_VICTOR_COMMANDER_STRENGTH',                               'CLASS_MILITARY'),
     ('ABILITY_VICTOR_TRAINED_UNIT_EXP',                                 'CLASS_MILITARY'),
     ('ABILITY_VICTOR_TRAINED_UNIT_STRENGTH',                            'CLASS_MILITARY');
 
@@ -85,6 +87,10 @@ insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inacti
     'LOC_ABILITY_BISHOP_TRAINED_UNIT_EXP_NAME',
     'LOC_ABILITY_BISHOP_TRAINED_UNIT_EXP_DESCRIPTION',
     1),
+    ('ABILITY_VICTOR_COMMANDER_STRENGTH',
+    'LOC_ABILITY_VICTOR_COMMANDER_STRENGTH_NAME',
+    'LOC_ABILITY_VICTOR_COMMANDER_STRENGTH_DESCRIPTION',
+    1),
     ('ABILITY_VICTOR_TRAINED_UNIT_EXP',
     'LOC_ABILITY_VICTOR_TRAINED_UNIT_EXP_NAME',
     'LOC_ABILITY_VICTOR_TRAINED_UNIT_EXP_DESCRIPTION',
@@ -107,6 +113,7 @@ values
     ('ABILITY_BISHOP_TRAINED_UNIT_STRENGTH',                'BISHOP_TRAINED_UNIT_STRENGTH'),
     ('ABILITY_BISHOP_TRAINED_UNIT_EXP',                     'BISHOP_TRAINED_UNIT_EXP'),
     ('ABILITY_VICTOR_TRAINED_UNIT_EXP',                     'VICTOR_TRAINED_UNIT_EXP'),
+    ('ABILITY_VICTOR_COMMANDER_STRENGTH',                   'VICTOR_COMMANDER_STRENGTH_BUFF'),
     ('ABILITY_VICTOR_TRAINED_UNIT_STRENGTH',                'VICTOR_TRAINED_UNIT_STRENGTH');
 
 insert or replace into Modifiers
@@ -120,6 +127,7 @@ values
     ('BISHOP_TRAINED_UNIT_STRENGTH',                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     1),
     ('BISHOP_TRAINED_UNIT_EXP',                     'MODIFIER_PLAYER_UNIT_ADJUST_UNIT_EXPERIENCE_MODIFIER',1),
     ('VICTOR_TRAINED_UNIT_EXP',                     'MODIFIER_PLAYER_UNIT_ADJUST_UNIT_EXPERIENCE_MODIFIER',1),
+    ('VICTOR_COMMANDER_STRENGTH_BUFF',              'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     0),
     ('VICTOR_TRAINED_UNIT_STRENGTH',                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     1);
 
 insert or replace into ModifierArguments
@@ -133,6 +141,7 @@ values
     ('BISHOP_TRAINED_UNIT_STRENGTH',                'Amount',   5),
     ('BISHOP_TRAINED_UNIT_EXP',                     'Amount',   100),
     ('VICTOR_TRAINED_UNIT_EXP',                     'Amount',   25),
+    ('VICTOR_COMMANDER_STRENGTH_BUFF',              'Amount',   5),
     ('VICTOR_TRAINED_UNIT_STRENGTH',                'Amount',   2);
 
 insert or replace into ModifierStrings
@@ -141,6 +150,7 @@ values
     ('BISHOP_TRAINED_UNIT_STRENGTH',                    'Preview',  '+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT}'),
     -- ('BISHOP_TRAINED_UNIT_EXP',                         'Preview',  '+{1_Amount} {LOC_BISHOP_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),
     -- ('VICTOR_TRAINED_UNIT_EXP',                         'Preview',  '+{1_Amount} {LOC_VICTOR_TRAINED_UNIT_EXP_PREVIEW_TEXT}'),
+    ('VICTOR_COMMANDER_STRENGTH_BUFF',                  'Preview',  '+{1_Amount} {LOC_VICTOR_COMMANDER_STRENGTH_BUFF_PREVIEW_TEXT}'),
     ('VICTOR_TRAINED_UNIT_STRENGTH',                    'Preview',  '+{1_Amount} {LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT}');
 
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -306,24 +316,29 @@ insert or replace into RequirementSets (RequirementSetId,   RequirementSetType) 
 insert or replace into Requirements
     (RequirementId,                                 RequirementType)
 values
+    ('REQUIRES_WITHIN_NINE_TILES_FROM_OWNER',       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
     ('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
 
 insert or replace into RequirementArguments
     (RequirementId,                                 Name,               Value)
 values
+    ('REQUIRES_WITHIN_NINE_TILES_FROM_OWNER',       'MinDistance',      0),
+    ('REQUIRES_WITHIN_NINE_TILES_FROM_OWNER',       'MaxDistance',      9),
     ('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',       'MinDistance',      0),
     ('REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER',       'MaxDistance',      4);
 
 insert or replace into RequirementSets
-    (RequirementSetId,                                  RequirementSetType)
+    (RequirementSetId,                                          RequirementSetType)
 values
+    ('UNIT_WITHIN_NINE_TILES_REQUIREMENTS',                     'REQUIREMENTSET_TEST_ALL'),
     ('DISTRICT_IS_HOLY_SITE_WITHIN_FOUR_TILES_REQUIREMENTS',    'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
-    (RequirementSetId,                                  RequirementId)
+    (RequirementSetId,                                          RequirementId)
 values
-    ('DISTRICT_IS_HOLY_SITE_WITHIN_FOUR_TILES_REQUIREMENTS', 'REQUIRES_PLOT_HAS_HOLY_SITE'),
-    ('DISTRICT_IS_HOLY_SITE_WITHIN_FOUR_TILES_REQUIREMENTS', 'REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER');
+    ('UNIT_WITHIN_NINE_TILES_REQUIREMENTS',                     'REQUIRES_WITHIN_NINE_TILES_FROM_OWNER'),
+    ('DISTRICT_IS_HOLY_SITE_WITHIN_FOUR_TILES_REQUIREMENTS',    'REQUIRES_PLOT_HAS_HOLY_SITE'),
+    ('DISTRICT_IS_HOLY_SITE_WITHIN_FOUR_TILES_REQUIREMENTS',    'REQUIRES_WITHIN_FOUR_TILES_FROM_OWNER');
 
 insert or replace into RequirementSets
     (RequirementSetId,                                              RequirementSetType)
