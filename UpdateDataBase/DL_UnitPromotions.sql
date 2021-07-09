@@ -167,8 +167,8 @@ insert or replace into Modifiers
 values
     ('HD_BATTLE_LINE_COMBAT',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
-    ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            NULL),
-    ('HD_IGNORE_SHORES',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',                            NULL),
+    ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
+    ('HD_IGNORE_SHORES',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_SHORES',                            'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
     ('HD_HEAL_AFTER_KILL',                      'MODIFIER_PLAYER_UNIT_ADJUST_HEAL_FROM_COMBAT',                         NULL),
     ('HD_AGAINST_UNIT_BONUS',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'COMBAT_AGAINST_UNITS_REQUIREMENTS'),
     ('HD_ATTACK_DISTRICT_BONUS',                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'ATTACKING_DISTRICTS_REQUIREMENTS'),

@@ -223,7 +223,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 60, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_RANGER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_RANGER';
 -- Special Cases: UNIT_MACHINE_GUN
-update Units set Cost = 460, Maintenance = 8, BaseMoves = 3, Range = 1, Combat = 80, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_SPEC_OPS';
+update Units set Cost = 460, Maintenance = 8, BaseMoves = 4, Range = 1, Combat = 80, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_SPEC_OPS';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SPEC_OPS';
 -- Special Cases: UNIT_HELICOPTER
 

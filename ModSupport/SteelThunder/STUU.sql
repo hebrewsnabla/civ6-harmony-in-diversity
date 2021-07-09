@@ -322,7 +322,10 @@ insert or replace into Improvement_ValidBuildUnits (ImprovementType, UnitType) v
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_MALI_SOFA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MALI_SOFA';
 -- -- 毛利
-update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 55, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_MAORI_TUPARA';
+update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_MAORI_TUPARA';
+-- update Units set Cost = 140, Maintenance = 4, BaseMoves = 3, Range = 1, Combat = 50, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_ARQUEBUSIER';
+-- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARQUEBUSIER';
+update Units set Cost = 180, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 55, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_MAORI_TUPARA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAORI_TUPARA';
 -- -- 奥斯曼
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_OTTOMAN_SIPAHI';
@@ -349,6 +352,8 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 update ModifierArguments set Value = 10 where ModifierId = 'PLUS_X_VERSUS_STRONGER_UNITS' and Name = 'Amount';
+insert or replace into ModifierStrings (ModifierId,     Context,    Text)
+values ('PLUS_X_VERSUS_STRONGER_UNITS',                 'Preview',  '+{1_Amount} {LOC_PLUS_X_VERSUS_STRONGER_UNITS_PREVIEW_TEXT}');
 -- -- 拜占庭
 update Units set PrereqTech = 'TECH_METAL_CASTING', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_BYZANTINE_VARANGIAN_GUARD';

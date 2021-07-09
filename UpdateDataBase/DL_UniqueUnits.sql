@@ -175,6 +175,9 @@ insert or replace into TypeTags (Type, Tag) values ('UNIT_MONGOLIAN_KESHIG', 'CL
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0 where UnitType = 'UNIT_MAPUCHE_MALON_RAIDER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MAPUCHE_MALON_RAIDER', 'UNIT_STRADIOT'
     where exists (select UnitType from Units where UnitType = 'UNIT_STRADIOT');
+-- update ModifierStrings set 'Text' = 'LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT' where ModifierId = 'MALON_RAIDER_TERRITORY_COMBAT_BONUS'
+insert or replace into ModifierStrings (ModifierId,     Context,    Text)
+values ('MALON_RAIDER_TERRITORY_COMBAT_BONUS',          'Preview',  '+{1_Amount} {LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT}');
 ------ UNIT_MAPUCHE_GUERILLA
 -- 朝鲜
 update Units set Cost = 120, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 40, RangedCombat = 60, StrategicResource = NULL where UnitType = 'UNIT_KOREAN_HWACHA';

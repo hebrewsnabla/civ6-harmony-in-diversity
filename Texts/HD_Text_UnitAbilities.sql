@@ -127,6 +127,7 @@ values
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT",                  "from fighting within 4 hexes of friendly territory"),
     ("LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                   "attacking Melee, Anti-Cavalry or Ranged unit"),
     ("LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                  "+7 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
     ("LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_DESCRIPTION",                    "Combat victories provide [ICON_SCIENCE] Science equal to 50% of that unit's base [ICON_Strength] Combat Strength (on Standard Speed)."),
@@ -137,6 +138,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT",                  "在友方领土的4个单元格范围内战斗"),
     ("zh_Hans_CN",  "LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                   "攻击近战、抗骑兵或远程单位"),
     ("zh_Hans_CN",  "LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                  "攻击近战、抗骑兵和远程单位时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS_DESCRIPTION",                    "战斗胜利后，可获得等同于被击杀单位50%基础 [ICON_Strength] 战斗力数值的 [ICON_SCIENCE] 科技值（标准速度下）。"),

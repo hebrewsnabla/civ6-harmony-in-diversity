@@ -51,7 +51,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- Techs
-    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
     ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                      "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
@@ -67,7 +67,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                         "与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                     "从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",   "不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",            "从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",            "免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"), --从海洋或河流进行攻击时，免除 [ICON_Strength] 战斗力和 [ICON_Movement] 移动力减益。
     ("zh_Hans_CN",  "LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                    "击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                 "与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",               "攻击区域防御+5 [ICON_Strength] 战斗力。"),

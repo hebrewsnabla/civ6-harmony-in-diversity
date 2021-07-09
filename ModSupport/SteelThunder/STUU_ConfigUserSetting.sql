@@ -16,9 +16,9 @@ update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_POLISH_UHLAN'
 update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_AZTEC_WARRIOR_PRIEST';
 update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_MACEDONIAN_BALLISTA';
 update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_PERSIAN_WARSHIP';
-update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
-
-update ConfigEnabledUniqueUnits set OwnerType = 'CIVILIZATION_PORTUGAL' where Type = 'UNIT_SPANISH_JINETE';
+update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_SPANISH_JINETE';
+-- update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
+-- update ConfigEnabledUniqueUnits set OwnerType = 'CIVILIZATION_PORTUGAL' where Type = 'UNIT_SPANISH_JINETE';
 
 -- delete from UnitsToDelete;
 insert or replace into UnitsToDelete values ('UNIT_GERMAN_UBOAT');
