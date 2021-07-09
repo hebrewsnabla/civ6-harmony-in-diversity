@@ -116,7 +116,8 @@ and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 insert or ignore into Tags (Tag, Vocabulary) values ('CLASS_AZTEC_EAGLE_WARRIOR', 'ABILITY_CLASS');
-insert or replace into TypeTags (Type, Tag) values ('UNIT_AZTEC_EAGLE_WARRIOR', 'CLASS_AZTEC_EAGLE_WARRIOR');
+insert or replace into TypeTags (Type, Tag) select 'UNIT_AZTEC_EAGLE_WARRIOR', 'CLASS_AZTEC_EAGLE_WARRIOR'
+where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 insert or replace into TypeTags (Type, Tag) select 'ABILITY_EAGLE_WARRIOR', 'CLASS_AZTEC_EAGLE_WARRIOR'
 where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId)

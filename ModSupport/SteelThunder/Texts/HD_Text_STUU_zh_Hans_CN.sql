@@ -3,7 +3,8 @@
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_ABILITY_EAGLE_WARRIOR_DESCRIPTION",                                             "无视丘陵的移动力惩罚。为相邻的美洲虎勇士提供+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "玩家可以使用平时  [ICON_Faith] 信仰值消耗的1/10 来购买他们宗教的祭祀建筑。这种祭祀建筑为阿拉伯城市的 [ICON_Science] 科技值、 [ICON_Faith] 信仰值、 [ICON_Culture] 文化值增加10%产量。研究“马镫”科技后获得特色单位“奴隶兵”。"),
+    ("zh_Hans_CN",  "LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION",                                     "阿兹特克古典时代特色近战单位。无视丘陵的移动力惩罚。为相邻的美洲虎勇士提供+3 [ICON_Strength] 战斗力（可叠加）。"),
     ("zh_Hans_CN",  "LOC_STRENGTH_FOR_EAGLE_MODIFIER_PREVIEW_TEXT",                                      "来自相邻美洲虎勇士"),
     ("zh_Hans_CN",  "LOC_STRENGTH_FOR_JAGUAR_MODIFIER_PREVIEW_TEXT",                                     "来自相邻雄鹰战士"),
     ("zh_Hans_CN",  "LOC_PLUS_10_ATTACKING_UNIT_BONUS_PREVIEW_TEXT",                                     "来自攻击单位"),
@@ -24,7 +25,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_BALLISTA_DESCRIPTION",                                                  "进攻区域防御时+17 [ICON_Strength] 战斗力，但进攻陆地单位时-10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_BANDEIRANTE_DESCRIPTION",                                               "可以建造堡垒。击败单位可获得等同于击杀单位战斗力25%的 [ICON_Gold] 金币和25％的[ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_CAMEL_ARCHER_DESCRIPTION",                                              "在沙漠或平原上作战时+8 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION",                                           "每回合额外回复10点生命值。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION",                                           "驻防时额外回复10点生命值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_CREE_OTEHTAPIW_DESCRIPTION",                                            "在平坦地形上开始时+2移动力。在平坦的平原或草原地形上每回合额外获得15点生命回复，且+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_DRUZHINA_DESCRIPTION",                                                  "与受伤单位作战时+5 [ICON_Strength] 战斗力，与近战单位作战时 +4 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_DUTCH_SCHUTTERIJ_DESCRIPTION",                                          "在区域内防御时+10 [ICON_Strength] 战斗力。"),
@@ -39,7 +40,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GHAZI_DESCRIPTION",                                                     "对抗信仰其他宗教的文明的作战单位时，+5 [ICON_Strength] 战斗力。在击败敌方文明或城邦的单位后，向6个单元格内的城市施加250点您创立（或主流）的宗教的压力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOLD_FROM_CITY_STATES_UNIT_KILLS_DESCRIPTION",                          "击杀城邦单位将获得等同于击杀单位战斗力100%的 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HIRDMAN_DESCRIPTION",                                                   "在首都所在大陆战斗时+5 [ICON_Strength] 且击杀单位将获得被击杀单位 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_JAGUAR_DESCRIPTION",                                                    "无视雨林和森林的移动力惩罚。为相邻的雄鹰战士提供+3 [ICON_Strength] 战斗力。"), --进攻时+10 [ICON_Strength] 战斗力，但防御时-5 [ICON_Strength] 战斗力。击败敌人概率将其俘获为建造者。
+    ("zh_Hans_CN",  "LOC_ABILITY_JAGUAR_DESCRIPTION",                                                    "无视雨林和森林的移动力惩罚。为相邻的雄鹰战士提供+3 [ICON_Strength] 战斗力（可叠加）。"), --进攻时+10 [ICON_Strength] 战斗力，但防御时-5 [ICON_Strength] 战斗力。击败敌人概率将其俘获为建造者。
     ("zh_Hans_CN",  "LOC_ABILITY_JINETE_DESCRIPTION",                                                    "在首都大陆作战时，击败敌人将获得等同于击杀单位 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_ABILITY_KHMER_WAR_CANOE_DESCRIPTION",                                           "编队单位将以同样的移动力进行移动。有概率俘获敌方船只。相邻的陆地单位在上下船时无移动力减益。"),
     ("zh_Hans_CN",  "LOC_ABILITY_KOREAN_TURTLE_SHIP_DESCRIPTION",                                        "对抗受伤单位时+5 [ICON_Strength] 战斗力。"),
@@ -407,7 +408,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_ARABIAN_GHAZI_NAME",                                                       "加齐"),
     ("zh_Hans_CN",  "LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION",                                              "取代机械化步兵的澳大利亚信息时代特色近战单位,当在沙漠或平原时+5 [ICON_Strength] 战斗力且忽略控制区域。"),
     ("zh_Hans_CN",  "LOC_UNIT_AUSTRALIAN_SASR_NAME",                                                     "特别空勤部队"),
-    ("zh_Hans_CN",  "LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION",                                                 "取代剑客的阿兹特克古典时代特色近战单位，不需要铁资源。无视雨林和森林的移动力惩罚。为相邻的雄鹰战士提供+3 [ICON_Strength] 战斗力。"), --当进攻时 +7 [ICON_Strength] 战斗力,防御时-7 [ICON_Strength] 战斗力,有机会把其他文明的军事单位转化为建造者并俘获。
+    ("zh_Hans_CN",  "LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION",                                                 "取代剑客的阿兹特克古典时代特色近战单位，不需要铁资源。无视雨林和森林的移动力惩罚。为相邻的雄鹰战士提供+3 [ICON_Strength] 战斗力（可叠加）。"), --当进攻时 +7 [ICON_Strength] 战斗力,防御时-7 [ICON_Strength] 战斗力,有机会把其他文明的军事单位转化为建造者并俘获。
     ("zh_Hans_CN",  "LOC_UNIT_AZTEC_JAGUAR_NAME",                                                        "美洲虎勇士"),
     ("zh_Hans_CN",  "LOC_UNIT_AZTEC_WARRIOR_PRIEST_DESCRIPTION",                                         "阿兹特克远古时代特色支援单位，研究市政树的“神秘主义”解锁。为陆地受损单位提供初始[ICON_Strength]战斗力且消灭敌方单位即获得大将军点数。"),
     ("zh_Hans_CN",  "LOC_UNIT_AZTEC_WARRIOR_PRIEST_NAME",                                                "战斗祭司"),
@@ -506,7 +507,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_PERSIAN_WARSHIP_NAME",                                                     "腓尼基战舰"),
     ("zh_Hans_CN",  "LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_DESCRIPTION",                                   "取代骑手的腓尼基特色古典时代轻骑兵单位。能使用远程攻击。攻击后可移动。"),
     ("zh_Hans_CN",  "LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_NAME",                                          "努米底亚雇佣骑手"),
-    ("zh_Hans_CN",  "LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION",                                       "取代火枪手的波兰文艺复兴时代特色近战单位，每回合生命值回复额外+10。"),
+    ("zh_Hans_CN",  "LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION",                                       "取代火枪手的波兰文艺复兴时代特色近战单位，驻防时生命值回复额外+10。"),
     ("zh_Hans_CN",  "LOC_UNIT_POLISH_CHOSEN_INFANTRY_NAME",                                              "封邑步兵"),
     ("zh_Hans_CN",  "LOC_UNIT_POLISH_UHLAN_DESCRIPTION",                                                 "取代追猎者的波兰中世纪特色轻骑兵单位，+100%夹击加成。"),
     ("zh_Hans_CN",  "LOC_UNIT_POLISH_UHLAN_NAME",                                                        "乌兰"),

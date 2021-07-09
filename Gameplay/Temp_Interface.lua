@@ -111,3 +111,29 @@ end
 Events.GovernorChanged.Add(OnGovernorChanged)
 Events.GovernorAppointed.Add(OnGovernorChanged)
 Events.GovernorAssigned.Add(OnGovernorAssigned)
+
+-- Bug fix
+-- TODO: When upgraded, check if it has free promotions.
+-- Events.UnitPromotionAvailable.Add(monitorPromotionA)
+-- Events.UnitUpgraded.Add(monitorUnitUpgraded)
+-- function monitorPromotion(playerID, unitID)
+--     print('promoted', playerID, unitID)
+-- end
+
+-- function monitorPromotionA(playerID, unitID, promotionID)
+--     print('promote available', playerID, unitID, promotionID)
+-- end
+
+-- function monitorUnitAdd(playerID, unitID)
+--     print('added', playerID, unitID)
+-- end
+
+-- function monitorUnitUpgraded(playerID, unitID)
+--     print('upgraded', playerID, unitID)
+-- end
+
+-- Events.UnitPromoted.Add(monitorPromotion)
+-- Events.UnitPromotionAvailable.Add(monitorPromotionA)
+-- Events.UnitAddedToMap.Add(monitorUnitAdd)
+-- Events.UnitUpgraded.Add(monitorUnitUpgraded)
+

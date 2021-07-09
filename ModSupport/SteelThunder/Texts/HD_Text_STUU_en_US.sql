@@ -3,7 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                                 Text)
 values
-    ("LOC_ABILITY_EAGLE_WARRIOR_DESCRIPTION",                                             "Ignores terrain movement cost in Hills. Grant +3 [ICON_Strength] Combat Strength for adjacent Jaguar Warrior."),
+    ("LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "The worship building for their Religion can be purchased by any player for just one-tenth of the usual  [ICON_Faith] Faith cost.  This worship building is enhanced to add 10% to the [ICON_Science] Science, [ICON_Faith] Faith, and [ICON_Culture] Culture output of Arabian cities. Gain the Mamluk unique unit when the Stirrups technology is researched."),
+    ("LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION",                                     "Aztec unique Classical Era Melee unit. Ignores terrain movement cost in Hills. Grant +3 [ICON_Strength] Combat Strength for adjacent Jaguar Warrior (Can stack)."),
     ("LOC_STRENGTH_FOR_EAGLE_MODIFIER_PREVIEW_TEXT",                                      "from adjacent Jaguar"),
     ("LOC_STRENGTH_FOR_JAGUAR_MODIFIER_PREVIEW_TEXT",                                     "from adjacent Eagle Warrior"),
     ("LOC_PLUS_10_ATTACKING_UNIT_BONUS_PREVIEW_TEXT",                                     "from attacking units"),
@@ -24,7 +25,7 @@ values
     ("LOC_ABILITY_BALLISTA_DESCRIPTION",                                                  "+17 [ICON_Strength] versus non-District tiles and -10 [ICON_Strength] versus District tiles."),
     ("LOC_ABILITY_BANDEIRANTE_DESCRIPTION",                                               "Can build forts. Yields 25% of defeated units' combat strength as [ICON_Gold] Gold and 25% of defeated units' combat strength as [ICON_Culture] Culture."),
     ("LOC_ABILITY_CAMEL_ARCHER_DESCRIPTION",                                              "+8 [ICON_Strength] when fighting on Desert or Plains terrain."),
-    ("LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION",                                           "Heals an additional 10 points per turn."),
+    ("LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION",                                           "Heals an additional 10 points when fortify."),
     ("LOC_ABILITY_CREE_OTEHTAPIW_DESCRIPTION",                                            "Gains +2 movement points if it starts on flat terrain. Heals +15 per turn when on Plains or Grassland. +5 [ICON_Strength] when fighting on Plains or Grassland. "),
     ("LOC_ABILITY_DRUZHINA_DESCRIPTION",                                                  "+5 [ICON_Strength] Combat Strength versus damaged units and +4 [ICON_Strength] Combat Strength against Melee units."),
     ("LOC_ABILITY_DUTCH_SCHUTTERIJ_DESCRIPTION",                                          "+10 [ICON_Strength] when defending at districts."),
@@ -39,7 +40,7 @@ values
     ("LOC_ABILITY_GHAZI_DESCRIPTION",                                                     "+5 [ICON_Strength] Combat Strength when opponent is another religion. Spread 250 religious pressure of your founded (or majority) religion to cities within 6 tiles when defeating a unit belonging to an enemy civilization or city-state."),
     ("LOC_ABILITY_GOLD_FROM_CITY_STATES_UNIT_KILLS_DESCRIPTION",                          "Yields 100% of defeated City State units' combat strength as [ICON_Gold] Gold."),
     ("LOC_ABILITY_HIRDMAN_DESCRIPTION",                                                   "+5 [ICON_Strength] Combat Strength and yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Culture] Culture on combat victory if fighting on same continent as capital. "),
-    ("LOC_ABILITY_JAGUAR_DESCRIPTION",                                                    "Ignores terrain movement cost in Jungle and Forest. Grant +3 [ICON_Strength] Combat Strength for adjacent Eagle Warrior."), -- +10 [ICON_Strength] Combat Strength when attacking and -5 [ICON_Strength] Combat Strength when defending. May capture defeated enemies, turning them into Builders. 
+    ("LOC_ABILITY_JAGUAR_DESCRIPTION",                                                    "Ignores terrain movement cost in Jungle and Forest. Grant +3 [ICON_Strength] Combat Strength for adjacent Eagle Warrior (can stack)."), -- +10 [ICON_Strength] Combat Strength when attacking and -5 [ICON_Strength] Combat Strength when defending. May capture defeated enemies, turning them into Builders. 
     ("LOC_ABILITY_JINETE_DESCRIPTION",                                                    "Yields 50% of defeated units' [ICON_Strength] Combat Strength as [ICON_Faith] Faith on combat victory if fighting on same continent as capital."),
     ("LOC_ABILITY_KHMER_WAR_CANOE_DESCRIPTION",                                           "Escorted units move at the same speed. Can capture ships. Adjacent land units incur no embark/disembark movement cost."),
     ("LOC_ABILITY_KOREAN_TURTLE_SHIP_DESCRIPTION",                                        "+5 [ICON_Strength] vs damaged units."),
@@ -407,7 +408,7 @@ values
     ("LOC_UNIT_ARABIAN_GHAZI_NAME",                                                       "Ghazi"),
     ("LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION",                                              "Strong, mobile Australian Mechanized Infantry replacement that ignores Zone of Control and has +5 [ICON_Strength] Combat Strength when fighting on Desert or Plains."),
     ("LOC_UNIT_AUSTRALIAN_SASR_NAME",                                                     "S.A.S.R."),
-    ("LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION",                                                 "Unique Aztec melee unit that replaces Swordsman. Does not require Iron resource. Ignores terrain movement cost in Jungle and Forest. Grant +3 [ICON_Strength] Combat Strength for adjacent Eagle Warrior."), -- +10 [ICON_Strength] Combat Strength when attacking and -5 [ICON_Strength] Combat Strength when defending. May capture defeated enemies, turning them into Builders. 
+    ("LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION",                                                 "Unique Aztec melee unit that replaces Swordsman. Does not require Iron resource. Ignores terrain movement cost in Jungle and Forest. Grant +3 [ICON_Strength] Combat Strength for adjacent Eagle Warrior (can stack)."), -- +10 [ICON_Strength] Combat Strength when attacking and -5 [ICON_Strength] Combat Strength when defending. May capture defeated enemies, turning them into Builders. 
     ("LOC_UNIT_AZTEC_JAGUAR_NAME",                                                        "Jaguar Warrior"),
     ("LOC_UNIT_AZTEC_WARRIOR_PRIEST_DESCRIPTION",                                         "Aztec unique support unit available with the Mysticism Civic. Can be purchased with Faith. Adjacent Melee, Anti-Cavalry and Ranged units fight at full strength when damaged and earn Great General points from kills."),
     ("LOC_UNIT_AZTEC_WARRIOR_PRIEST_NAME",                                                "Warrior Priest"),
@@ -506,7 +507,7 @@ values
     ("LOC_UNIT_PERSIAN_WARSHIP_NAME",                                                     "Warship"),
     ("LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_DESCRIPTION",                                   "Phoenician unique Classical Era Light Cavalry unit replacing Horseman. Has Ranged Attack. Can move after attacking."),
     ("LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_NAME",                                          "Numidian Cavalry"),
-    ("LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION",                                       "Polish unique Melee unit that replaces Musketman. Heals an additional 10 points per turn."),
+    ("LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION",                                       "Polish unique Melee unit that replaces Musketman. Heals an additional 10 points when fortify."),
     ("LOC_UNIT_POLISH_CHOSEN_INFANTRY_NAME",                                              "Chosen Infantry"),
     ("LOC_UNIT_POLISH_UHLAN_DESCRIPTION",                                                 "Polish unique Light Cavalry unit that replaces Courser. +100% flanking bonus."),
     ("LOC_UNIT_POLISH_UHLAN_NAME",                                                        "Uhlan"),

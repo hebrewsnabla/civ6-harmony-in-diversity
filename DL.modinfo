@@ -235,14 +235,14 @@
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="Community_STUU_PlayerItems"> <!-- criteria="STUU" -->
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>ModSupport/SteelThunder/STUU_PlayerItems.sql</File>
+    </UpdateDatabase>
     <UpdateText id="Community_STUU_support_texts"> <!-- criteria="STUU_Expansion2" -->
       <Properties><LoadOrder>15017</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
-    </UpdateText>
-    <UpdateText id="Community_STUU_support_texts_late"> <!-- criteria="STUU_Expansion2" -->
-      <Properties><LoadOrder>17000</LoadOrder></Properties>
-      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
     </UpdateText>
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -481,10 +481,6 @@
       <Properties><LoadOrder>15017</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
-    </UpdateText>
-    <UpdateText id="Community_STUU_support_texts_late" criteria="STUU_Expansion2">
-      <Properties><LoadOrder>17000</LoadOrder></Properties>
-      <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
     </UpdateText>
     <UpdateDatabase id="Community_STUU_UserSetting" criteria="STUU_Expansion2">
       <Properties><LoadOrder>4</LoadOrder></Properties>
@@ -1010,8 +1006,8 @@
     <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
-    <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_Late.sql</File>
     <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
+    <File>ModSupport/SteelThunder/STUU_PlayerItems.sql</File>
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>

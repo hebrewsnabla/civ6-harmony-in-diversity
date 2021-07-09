@@ -72,6 +72,10 @@ insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values
     ('ABILITY_MINUTEMAN',  'HD_RECON_IGNORE_HILLS_MOVEMENT_PENALTY'),
     ('ABILITY_MINUTEMAN',  'HD_RECON_IGNORE_FOREST_MOVEMENT_PENALTY');
 -- 阿拉伯
+delete from CivilizationTraits where CivilizationType = 'CIVILIZATION_ARABIA' and TraitType = 'TRAIT_CIVILIZATION_UNIT_ARABIAN_MAMLUK';
+insert or replace into LeaderTraits (LeaderType, TraitType) values ('LEADER_SALADIN', 'TRAIT_CIVILIZATION_UNIT_ARABIAN_MAMLUK');
+update Traits set Description = 'LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION' where TraitType = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH';
+-- 
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
 -- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units set PrereqTech = 'TECH_CASTLES', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
@@ -214,6 +218,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 -- -- 阿兹特克
+update units set Description = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION' where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 -- delete from TypeTags where Type = 'UNIT_AZTEC_JAGUAR' and Tag = 'CLASS_CAPTURE_WORKER';
 update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_AZTEC_JAGUAR';
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_JAGUAR';
