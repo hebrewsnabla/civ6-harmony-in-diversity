@@ -11,7 +11,6 @@ values
 insert or replace into RequirementSetRequirements 
     (RequirementSetId,                      RequirementId) 
 values
-    ('BOOTCAMP_REQUIREMENT',                'HD_REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HONEY'),
     ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
 
 --start bias(camp and pasture resources) for cree
