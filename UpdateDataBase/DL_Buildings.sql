@@ -1411,3 +1411,21 @@ update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_
 update Building_YieldChangesBonusWithPower set YieldChange = 3 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and YieldType = 'YIELD_PRODUCTION';
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and YieldType = 'YIELD_PRODUCTION';
 -- from tech testing
+
+
+Insert or replace into BuildingModifiers 
+ 	(BuildingType,									ModifierId)
+values
+ 	('BUILDING_MARAE',								'MARAE_COAST_CULTURE');
+
+Insert or replace into Modifiers
+	(ModifierId,									ModifierType,											SubjectRequirementSetId)
+values
+	('MARAE_COAST_CULTURE',							'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',		null);
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values	
+	('MARAE_COAST_CULTURE',              			'TerrainType',      'TERRAIN_COAST'),
+    ('MARAE_COAST_CULTURE',               			'YieldType',        'YIELD_CULTURE'),
+    ('MARAE_COAST_CULTURE',               			'Amount',          	0.34);
