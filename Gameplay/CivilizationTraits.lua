@@ -79,14 +79,14 @@ end
 
 Events.UnitGreatPersonCreated.Add(PedroGreatPersonFaith)
 
---Mali EraScore +25 Gold
+--Mali EraScore +15 Gold
 function MaliPlayerEraScoreChanged(playerID, amountAwarded)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
 	local sLeader = playerConfig:GetLeaderTypeName()
 	local sMaliGoldDesert = 'TRAIT_LEADER_SAHEL_MERCHANTS'
 	if (not LeaderHasTrait(sLeader, sMaliGoldDesert)) then return; end
-	player:GetTreasury():ChangeGoldBalance(amountAwarded * 25)
+	player:GetTreasury():ChangeGoldBalance(amountAwarded * 15)
 end
 
 Events.PlayerEraScoreChanged.Add(MaliPlayerEraScoreChanged)

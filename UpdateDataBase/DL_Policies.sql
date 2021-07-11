@@ -47,8 +47,10 @@ update ModifierArguments set Value = 200 where ModifierId = 'COMMEMORATION_TOURI
 -- 迟暮勇武驻军+5忠诚
 insert or replace into PolicyModifiers
 	(PolicyType,				ModifierId)
-values
-	('POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY');
+select
+	'POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY'
+where exists (select PolicyType from Policies where PolicyType = 'POLICY_TWILIGHT_VALOR');
+
 -- 孤立主义内商+3粮3锤，无法生产或购买开拓者和建造者
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_FODD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_PRODUCTION' and Name = 'Amount';
