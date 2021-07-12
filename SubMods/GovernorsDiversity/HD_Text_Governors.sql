@@ -14,10 +14,10 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Yields gained are doubled for international [ICON_TradeRoute] Trade Routes from this city when player has complete the Exploration Civic."),
     -- Victor
-    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Increase City Defence [ICON_STRENGTH] Strength by 5. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. City cannot be put under siege. Establishes in 3 turns."),
+    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. City cannot be put under siege. Increase City Defence [ICON_STRENGTH] Strength by 5. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), --Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. City gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME",                             "Logistics Supply"),
-    ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "Accumulating Strategic resources in the city gain an additional +3 per turn. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."),
+    ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "Accumulating Strategic resources in all cities gain an additional +2 per turn."),
     -- ("LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION",                              " "), -- Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city.
     ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME",                                  "Conscription"),
     ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "Military units trained in this city start with a free promotion that do not already start with a free promotion. One-time Strategic resource costs for units are discounted 80%."), -- All millitary units trained in this city receive extra +25% Combat Experience permanently.
@@ -95,13 +95,13 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     -- 维克多
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "城市防御+5 [ICON_STRENGTH] 战斗力，您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。就职城市无法被围攻。就职需要3回合。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "2回合就职。就职城市无法被围攻，城市防御+5 [ICON_STRENGTH] 战斗力。建造军营、港口和这些区域中的建筑时加速30%。"), -- 您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "城市领土内的单位防御时可+5 [ICON_Strength] 战斗力。城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。建造防御性建筑时加速100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME",                             "后勤补给"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "本城正确改良的战略每回合积累+3。建造军营、港口和这些区域中的建筑时加速30%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "在任意城市就职时，全国所有被正确改良的战略资源每回合积累+2。"),
     -- ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION",                              ""), --本城生产的军事工程师次数+2，且生产军事工程师时+100% [ICON_PRODUCTION] 生产力。
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME",                                  "征兵入伍"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "此城中生产的所有军事单位若初始未拥有免费升级，则其初始可获得一项免费升级。生产单位所需的一次性战略资源花费减少80%。"), --本城训练的所有军事单位获得永久+25%战斗经验值。
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "此城中生产的所有军事单位若初始未拥有免费晋升，则其初始可获得免费晋升。生产单位所需的一次性战略资源花费减少80%。"), --本城训练的所有军事单位获得永久+25%战斗经验值。
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_ARMS_RACE_PROPONENT_NAME",                           "军备竞赛倡导者"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_ARMS_RACE_PROPONENT_DESCRIPTION",                    "在城市中进行核武器项目时加速100%。本城生产所有军事单位时加速+30%，生产空中单位和末日机甲时额外加速50%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_COMMANDER_NAME",                                     "指挥官"),

@@ -228,6 +228,8 @@ update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_F
 -----------------------------------------------------------------------------------------------------------------------------------
 
 --Victor
+update Governors set TransitionStrength = 250 where GovernorType = 'GOVERNOR_THE_DEFENDER';
+
 --delete from GovernorPromotions where GovernorPromotionType = 'GOVERNOR_PROMOTION_DEFENSE_LOGISTICS';
 delete from GovernorPromotions where GovernorPromotionType = 'GOVERNOR_PROMOTION_AIR_DEFENSE_INITIATIVE';
 delete from GovernorPromotions where GovernorPromotionType = 'GOVERNOR_PROMOTION_EMBRASURE';
@@ -253,7 +255,11 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_P
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_REDOUBT',	'DEFENDER_ADJUST_CITY_DEFENSE_STRENGTH'),
 	('GOVERNOR_PROMOTION_REDOUBT',	'DEFENSE_LOGISTICS_SIEGE_PROTECTION'),
-	('GOVERNOR_PROMOTION_REDOUBT',	'PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES');
+	-- ('GOVERNOR_PROMOTION_REDOUBT',	'PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_ENCAMPMENT_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_ENCAMPMENT_BUILDINGS_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_HARBOR_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_HARBOR_BUILDINGS_PRODUCTION');
 
 --level 1 promotion GOVERNOR_PROMOTION_GARRISON_COMMANDER
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_GARRISON_COMMANDER';
@@ -268,13 +274,18 @@ insert or replace into GovernorPromotionModifiers (GovernorPromotionType,Modifie
 --level 1 promotion GOVERNOR_PROMOTION_DEFENSE_LOGISTICS
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_DEFENSE_LOGISTICS';
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
-	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'DEFENSE_LOGISTICS_BONUS_STRATEGICS'),
-	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'VETERANCY_ENCAMPMENT_PRODUCTION'),
-	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'VETERANCY_ENCAMPMENT_BUILDINGS_PRODUCTION'),
-	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'VETERANCY_HARBOR_PRODUCTION'),
-	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'VETERANCY_HARBOR_BUILDINGS_PRODUCTION');
+	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'DEFENSE_LOGISTICS_BONUS_STRATEGICS_ALL_CITIES');
+-- update ModifierArguments set Value = 3 where ModifierId = 'DEFENSE_LOGISTICS_BONUS_STRATEGICS' and Name = 'Amount';
 
-update ModifierArguments set Value = 3 where ModifierId = 'DEFENSE_LOGISTICS_BONUS_STRATEGICS' and Name = 'Amount';
+insert or replace into Modifiers	
+	(ModifierId,										ModifierType)
+values
+	('DEFENSE_LOGISTICS_BONUS_STRATEGICS_ALL_CITIES',	'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_ACCUMULATION');
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,		Value)
+values
+	('DEFENSE_LOGISTICS_BONUS_STRATEGICS_ALL_CITIES',	'Amount',	2);
 
 --level 2 promotion GOVERNOR_PROMOTION_EMBRASURE
 -- delete from GovernorPromotionModifiers where ModifierId = 'CITY_DEFENDER_FREE_PROMOTIONS';
