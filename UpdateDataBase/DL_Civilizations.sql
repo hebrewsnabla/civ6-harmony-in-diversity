@@ -237,8 +237,8 @@ values
 	('MALI_MANDEKALU_CAVALRY_DISCOUNT',						'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST'),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
-	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL'),
-	('MALI_ALLOW_PROJECT',									'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
+	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL');
+	-- ('MALI_ALLOW_PROJECT',									'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
 
 insert or replace into Modifiers 
 	(ModifierId, 				ModifierType,							SubjectRequirementSetId) 
@@ -263,8 +263,8 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Origin',		1),
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
 	('HD_LUXURY_MINE_GOLD',									'YieldType',	'YIELD_GOLD'),
-	('HD_LUXURY_MINE_GOLD',									'Amount',		2),
-	('MALI_ALLOW_PROJECT',     								'ProjectType',	'PROJECT_ENDLESS_MONEY');
+	('HD_LUXURY_MINE_GOLD',									'Amount',		2);
+	-- ('MALI_ALLOW_PROJECT',     								'ProjectType',	'PROJECT_ENDLESS_MONEY');
 --每个奢侈矿为本城国际商路+1食物。
 -- insert or replace into ImprovementModifiers
 -- 	(ImprovementType,						ModifierID)
@@ -320,22 +320,22 @@ insert or replace into ModifierArguments(ModifierID, Name, Value)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','CanPurchase',1);
 
 --additonal SUGUBA project
-insert or replace into Types
-	(Type,								Kind)
-values
-	('PROJECT_ENDLESS_MONEY',			'KIND_PROJECT');
+-- insert or replace into Types
+-- 	(Type,								Kind)
+-- values
+-- 	('PROJECT_ENDLESS_MONEY',			'KIND_PROJECT');
 
-insert or replace into Projects 
-	(ProjectType,				Name,										ShortName,								Description,	
-	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
-values 
-	('PROJECT_ENDLESS_MONEY',	'LOC_PROJECT_ENDLESS_MONEY_HD_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION',
-	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_SUGUBA',	1);
+-- insert or replace into Projects 
+-- 	(ProjectType,				Name,										ShortName,								Description,	
+-- 	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+-- values 
+-- 	('PROJECT_ENDLESS_MONEY',	'LOC_PROJECT_ENDLESS_MONEY_HD_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION',
+-- 	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_SUGUBA',	1);
 
-insert or replace into Project_YieldConversions
-	(ProjectType,				YieldType,		PercentOfProductionRate)
-values 
-	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	250);
+-- insert or replace into Project_YieldConversions
+-- 	(ProjectType,				YieldType,		PercentOfProductionRate)
+-- values 
+-- 	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	250);
 ------------------------------------------------------------------------------------------------------------------
 -- Rome
 insert or replace into TraitModifiers (TraitType, ModifierId) values
