@@ -61,10 +61,10 @@ function ResourceGenerator.Create(args)
 		iFrequencyTotalWater     = 0;
 		iFrequencyStrategicTotal     = 0;
 		iFrequencyStrategicTotalWater    = 0;
-		iTargetPercentage   = 29;
-		iStandardPercentage = 29;
-		iLuxuryPercentage   = 20;
-		iStrategicPercentage   = 19;
+		iTargetPercentage   = 30;
+		iStandardPercentage = 30;
+		iLuxuryPercentage   = 19.33;
+		iStrategicPercentage   = 21.7;
 		iOccurencesPerFrequency = 0;
 		iNumWaterLuxuries = 0;
 		iNumWaterStrategics = 0;
@@ -217,6 +217,7 @@ function ResourceGenerator:__ValidLuxuryPlots(eContinent)
 
 	plots = Map.GetContinentPlots(eContinent);
 	local iNumPlots = #plots;
+	
 	for i, plot in ipairs(plots) do
 
 		local bCanHaveSomeResource = false;
@@ -256,7 +257,7 @@ function ResourceGenerator:__ValidLuxuryPlots(eContinent)
 	if(self.iWaterLux == 1 and self.uiStartConfig ~= 3) then
 		iNumPlots = iNumPlots / 2;
 	end
-
+	
 	self.iOccurencesPerFrequency = self.iTargetPercentage / 100 * iNumPlots * self.iLuxuryPercentage / 100 / self.iLuxuriesPerRegion;
 end
 
@@ -316,7 +317,7 @@ function ResourceGenerator:__ScoreLuxuryPlots(iResourceIndex, eContinent)
 			row = {};
 			row.MapIndex = plot;
 			row.Score = 500;
-			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 3.5);
+			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 3.75);
 			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
 			
 			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleLuxLocs == 0) then
@@ -644,6 +645,14 @@ function ResourceGenerator:__ScoreStrategicPlots(iResourceIndex, eContinent)
 		self.aaPossibleStratLocs[iResourceIndex][k] = nil;
 	end
 
+	local iBonusAdjacent = 0;
+
+		if( self.iStandardPercentage < self.iTargetPercentage) then
+			iBonusAdjacent = 5;
+		elseif ( self.iStandardPercentage > self.iTargetPercentage) then
+			iBonusAdjacent = -5;
+		end
+
 	plots = Map.GetContinentPlots(eContinent);
 	for i, plot in ipairs(plots) do
 		local pPlot = Map.GetPlotByIndex(plot);
@@ -651,7 +660,7 @@ function ResourceGenerator:__ScoreStrategicPlots(iResourceIndex, eContinent)
 			row = {};
 			row.MapIndex = plot;
 			row.Score = 500;
-			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 4.5);
+			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * (15 + iBonusAdjacent));
 			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
 			
 			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleStratLocs == 0) then
@@ -732,7 +741,7 @@ function ResourceGenerator:__GetWaterStrategicResources()
 	end
 
 
-	self.iOccurencesPerFrequency =  self.iTargetPercentage / 100.0 * self.iWaterPlots * self.iStrategicPercentage / 100.0 / iNumStrategics / 6.0;
+	self.iOccurencesPerFrequency =  self.iTargetPercentage / 100.0 * self.iWaterPlots * self.iStrategicPercentage / 100.0 / iNumStrategics / 12.0;
 	
 	aStrategics = {};
 	aStrategics = self.aStrategicTypeCoast;

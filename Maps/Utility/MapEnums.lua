@@ -55,11 +55,17 @@ g_TERRAIN_BASE_TO_MOUNTAIN_DELTA	= 2;
 
 g_FEATURE_NONE						= -1;
 g_FEATURE_FLOODPLAINS				= GetGameInfoIndex("Features", "FEATURE_FLOODPLAINS");
+g_FEATURE_FLOODPLAINS_GRASSLAND		= GetGameInfoIndex("Features", "FEATURE_FLOODPLAINS_GRASSLAND");
+g_FEATURE_FLOODPLAINS_PLAINS		= GetGameInfoIndex("Features", "FEATURE_FLOODPLAINS_PLAINS");
 g_FEATURE_ICE						= GetGameInfoIndex("Features", "FEATURE_ICE");
 g_FEATURE_JUNGLE					= GetGameInfoIndex("Features", "FEATURE_JUNGLE");
 g_FEATURE_FOREST					= GetGameInfoIndex("Features", "FEATURE_FOREST");
 g_FEATURE_OASIS						= GetGameInfoIndex("Features", "FEATURE_OASIS");
 g_FEATURE_MARSH						= GetGameInfoIndex("Features", "FEATURE_MARSH");
+g_FEATURE_REEF						= GetGameInfoIndex("Features", "FEATURE_REEF");
+g_FEATURE_GEOTHERMAL_FISSURE		= GetGameInfoIndex("Features", "FEATURE_GEOTHERMAL_FISSURE");
+g_FEATURE_VOLCANIC_SOIL				= GetGameInfoIndex("Features", "FEATURE_VOLCANIC_SOIL");
+g_FEATURE_VOLCANO					= GetGameInfoIndex("Features", "FEATURE_VOLCANO");
 
 g_FEATURE_BARRIER_REEF				= GetGameInfoIndex("Features", "FEATURE_BARRIER_REEF");
 g_FEATURE_CLIFFS_DOVER				= GetGameInfoIndex("Features", "FEATURE_CLIFFS_DOVER");

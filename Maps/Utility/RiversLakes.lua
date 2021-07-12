@@ -116,7 +116,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 	
 		riverPlot = startPlot;
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("NORTH: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		riverPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_NORTHEAST);
 
@@ -128,7 +128,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 	
 		riverPlot = startPlot;
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("NE: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		-- riverPlot does not change
 
@@ -144,7 +144,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 			return;
 		end
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("SE: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		-- riverPlot does not change
 
@@ -164,7 +164,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 			return;
 		end		
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("SOUTH: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		-- riverPlot does not change
 
@@ -181,7 +181,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 
 		riverPlot = startPlot;
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("SW: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		-- riverPlot does not change
 
@@ -194,7 +194,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 		
 		riverPlot = startPlot;
 		_rivers[riverPlot] = riverID;
-		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection);
+		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, riverID);
 --		print ("NW: " .. tostring(riverPlot:GetX()) .. ", " .. tostring(riverPlot:GetY()));
 		riverPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_WEST);
 
@@ -263,7 +263,7 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 					
 						local value = GetRiverValueAtPlot(adjacentPlot);
 						if (flowDirection == originalFlowDirection) then
-							value = (value * 3) / 4;
+							value = (value * 11) / 12;
 						end
 						
 						if (value < bestValue) then
@@ -372,18 +372,20 @@ function AddLakes(largeLakes)
 			if (plot:IsWater() == false) then
 				if (plot:IsCoastalLand() == false) then
 					if (plot:IsRiver() == false and plot:IsRiverAdjacent() == false) then
-						if (AdjacentToNaturalWonder(plot) == false) then
-							local r = TerrainBuilder.GetRandomNumber(lakePlotRand, "MapGenerator AddLakes");
-							if r == 0 then
-								numLakesAdded = numLakesAdded + 1;
-								if(largeLakes > numLargeLakesAdded) then
-									local bLakes = AddMoreLake(plot);
-									if(bLakes == true) then
-										numLargeLakesAdded = numLargeLakesAdded + 1;
+						if (plot:GetFeatureType() ~= g_FEATURE_VOLCANO) then
+							if (AdjacentToNaturalWonder(plot) == false) then
+								local r = TerrainBuilder.GetRandomNumber(lakePlotRand, "MapGenerator AddLakes");
+								if r == 0 then
+									numLakesAdded = numLakesAdded + 1;
+									if(largeLakes > numLargeLakesAdded) then
+										local bLakes = AddMoreLake(plot);
+										if(bLakes == true) then
+											numLargeLakesAdded = numLargeLakesAdded + 1;
+										end
 									end
-								end
 
-								TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_COAST);
+									TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_COAST);
+								end
 							end
 						end
 					end
@@ -409,11 +411,13 @@ function AddMoreLake(plot)
 			if (adjacentPlot:IsWater() == false)  then
 				if (adjacentPlot:IsCoastalLand() == false) then
 					if (adjacentPlot:IsRiver() == false and adjacentPlot:IsRiverAdjacent() == false) then
-						if (AdjacentToNaturalWonder(adjacentPlot) == false) then
-							local r = TerrainBuilder.GetRandomNumber(4 + largeLake, "MapGenerator AddLakes");
-							if r < 3 then
-								table.insert(lakePlots, adjacentPlot);
-								largeLake = largeLake + 1;
+						if (adjacentPlot:GetFeatureType() ~= g_FEATURE_VOLCANO) then
+							if (AdjacentToNaturalWonder(adjacentPlot) == false) then
+								local r = TerrainBuilder.GetRandomNumber(4 + largeLake, "MapGenerator AddLakes");
+								if r < 3 then
+									table.insert(lakePlots, adjacentPlot);
+									largeLake = largeLake + 1;
+								end
 							end
 						end
 					end
