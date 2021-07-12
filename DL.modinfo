@@ -637,8 +637,14 @@
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/Utility/AssignStartingPlots.lua</File>
       <File>Maps/Utility/FeatureGenerator.lua</File>
+      <File>Maps/Utility/MapEnums.lua</File>
       <File>Maps/Utility/MapUtilities.lua</File>
       <File>Maps/Utility/MountainsCliffs.lua</File>
+      <File>Maps/Utility/NaturalWonderGenerator.lua</File>
+      <File>Maps/Utility/PlotFiltering.lua</File>
+      <File>Maps/Utility/ResourceGenerator.lua</File>
+      <File>Maps/Utility/RiversLakes.lua</File>
+      <File>Maps/Utility/SetDefaultAssignedStartingPlots.lua</File>
       <File>Maps/Utility/TerrainGenerator.lua</File>
       <!-- Maps -->
       <File>Maps/Archipelago_XP2.lua</File>
@@ -1039,8 +1045,14 @@
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
     <File>Maps/Utility/FeatureGenerator.lua</File>
+    <File>Maps/Utility/MapEnums.lua</File>
     <File>Maps/Utility/MapUtilities.lua</File>
     <File>Maps/Utility/MountainsCliffs.lua</File>
+    <File>Maps/Utility/NaturalWonderGenerator.lua</File>
+    <File>Maps/Utility/PlotFiltering.lua</File>
+    <File>Maps/Utility/ResourceGenerator.lua</File>
+    <File>Maps/Utility/RiversLakes.lua</File>
+    <File>Maps/Utility/SetDefaultAssignedStartingPlots.lua</File>
     <File>Maps/Utility/TerrainGenerator.lua</File>
     <!-- Maps -->
     <File>Maps/Archipelago_XP2.lua</File>
