@@ -462,3 +462,13 @@ where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) select
     'UNIT_IS_ADJACENT_EAGLE_WARRIOR_REQUIREMENTS',     'REQUIRES_UNIT_IS_UNIT_AZTEC_EAGLE_WARRIOR'
 where exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
+
+------------------------------------------------------------------------------------------------
+-- fix a bug for Canada 
+insert or ignore into RequirementSetRequirements 
+    (RequirementSetId, RequirementId)
+values
+    ('PLOT_HAS_SNOW_MINE_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
+    ('PLOT_HAS_SNOW_CAMP_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
+    ('PLOT_HAS_SNOW_FARM_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
+    ('PLOT_HAS_SNOW_LUMBER_MILL_REQUIREMENTS',     'REQUIRES_PLOT_HAS_SNOW');

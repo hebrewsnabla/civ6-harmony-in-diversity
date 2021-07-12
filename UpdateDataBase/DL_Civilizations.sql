@@ -1126,6 +1126,7 @@ values
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'ImprovementType',			'IMPROVEMENT_BARBARIAN_CAMP'),
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'GoodyHutImprovementType',	'IMPROVEMENT_GOODY_BUILDER');
 
+update ModifierArguments set Value = 2 where ModifierId = 'SNOW_MINES_PRODUCTION' and Name = 'Amount';
 ------------------------------------------------------------------------------------------------
 -- Korea ability updated
 delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOVERNOR_TITLE_MODIFIER';

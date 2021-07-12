@@ -356,7 +356,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 -- great admiral
 ------------------------------------------------------------
 -- GREAT_PERSON_INDIVIDUAL_ARTEMISIA grants a lighthouse and lighthouses +1 food
--- GREAT_PERSON_INDIVIDUAL_THEMISTOCLES grants a extra district capacity and a envoy
+-- GREAT_PERSON_INDIVIDUAL_THEMISTOCLES grants an extra district capacity and an envoy
 -- GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON grants a settler
 -- GREAT_PERSON_INDIVIDUAL_HIMERIOS +1 charge
 -- GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE naval raider units +2 combat strength

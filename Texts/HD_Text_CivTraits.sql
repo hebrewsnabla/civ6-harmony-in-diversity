@@ -128,6 +128,6 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_NAME",                  "太阳纪"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "使用建造者劳动力来推进20%的区域建设进程。其领土中的奢侈品资源为额外2座城市提供1点 [ICON_Amenities] 宜居度。阿兹特克国土内每种改良的奢侈品资源将为军事单位+1 [ICON_Strength] 战斗力。"),
     --("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "[ICON_VisLimited] 外交能见度比遇到的其他文明高1级。[NEWLINE]解锁“城堡”科技后免费获得1个间谍（并增加1个间谍容量）。所有同时拥有城堡和世界奇观的城市增加1个间谍容量。所有间谍初始便可免费升级为探员。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%发展速度，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。")
     ;
