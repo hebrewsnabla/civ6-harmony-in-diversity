@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9.4">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9.5">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,8 +12,8 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9.4</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9.4</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9.5</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9.5</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
       <en_US>Create a brand new Civ6.</en_US>
@@ -636,6 +636,7 @@
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Maps/Utility/AssignStartingPlots.lua</File>
+      <File>Maps/Utility/CoastalLowlands.lua</File>
       <File>Maps/Utility/FeatureGenerator.lua</File>
       <File>Maps/Utility/MapEnums.lua</File>
       <File>Maps/Utility/MapUtilities.lua</File>
@@ -1044,6 +1045,7 @@
     <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
+    <File>Maps/Utility/CoastalLowlands.lua</File>
     <File>Maps/Utility/FeatureGenerator.lua</File>
     <File>Maps/Utility/MapEnums.lua</File>
     <File>Maps/Utility/MapUtilities.lua</File>

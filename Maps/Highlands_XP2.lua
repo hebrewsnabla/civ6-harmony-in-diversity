@@ -42,7 +42,7 @@ function GenerateMap()
 	end
 	
 	plotTypes = GeneratePlotTypes();
-	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, false, temperature);
+	terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, true, temperature);
 	ApplyBaseTerrain(plotTypes, terrainTypes, g_iW, g_iH);
 	
 	AreaBuilder.Recalculate();
@@ -53,7 +53,7 @@ function GenerateMap()
 	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
 	local biggest_area = Areas.FindBiggestArea(false);
 	print("After Adding Hills: ", biggest_area:GetPlotCount());
-	AddTerrainFromContinents(plotTypes, terrainTypes, 5, g_iW, g_iH, iContinentBoundaryPlots);
+	AddTerrainFromContinents(plotTypes, terrainTypes, 5, g_iW, g_iH, iContinentBoundaryPlots, true);
 	AreaBuilder.Recalculate();
 
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
@@ -64,12 +64,13 @@ function GenerateMap()
 		end
 	end
 	
+	-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
+	-- local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents / 2);
+	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 2);
+	AddLakes(numLargeLakes);
+
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
 	AddRivers();
-
-	-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
-	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents / 2);
-	AddLakes(numLargeLakes);
 
 	AddFeatures();
 	TerrainBuilder.AnalyzeChokepoints();
@@ -139,11 +140,17 @@ function GeneratePlotTypes()
 
 	local grain = numPlates + 1;
 	
-	local mountains = 75;
-	local hills = 43;
+	-- local mountains = 75;
+	-- local hills = 43;
 	
-	local lakes = 15;
-	local lake_grain = 3;
+	-- local lakes = 15;
+	-- local lake_grain = 3;
+
+	local mountains = 73;
+	local hills = 43;
+
+	local lakes = 18;
+	local lake_grain = 4;
 	
 	local fracFlags = {};
 	
@@ -273,48 +280,59 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 		end
 			
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_EAST);
-		if (adjacentPlot == nil or riverPlot:IsWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
+			if (not riverPlot:IsWater()) then
 				TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 			return;
 		end
-			
+		
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHEAST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
+		
 		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);
 		-- riverPlot does not change
 		if (riverPlot == nil) then
 			return;
 		end
 		print ("At (x,y) SetWOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("North", riverPlot:IsWater(), adjacentPlot:IsWater());
 			
 	elseif (thisFlowDirection == FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) then
 		
 		riverPlot = startPlot;
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHEAST);
-		if (adjacentPlot == nil or riverPlot:IsNWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsNWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
+			if (not riverPlot:IsWater()) then
 				TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 			return;
 		end
-			
+		
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHWEST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
+		
 		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);
 		-- riverPlot does not change
 		if (riverPlot == nil) then
 			return;
 		end
 		print ("At (x,y) SetNWOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("NorthEast", riverPlot:IsWater(), adjacentPlot:IsWater());
 		
 	elseif (thisFlowDirection == FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST) then
 		
 		riverPlot = startPlot;
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHWEST);
-		if (adjacentPlot == nil or riverPlot:IsNEOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsNEOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
+			if (not riverPlot:IsWater()) then
 					TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 			return;
 		end
+
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_WEST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
 
 		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, iRiverID);
 		riverPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_WEST);
@@ -322,17 +340,21 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 			return;
 		end
 		print ("At (x,y) SetNEOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("SouthEast", riverPlot:IsWater(), adjacentPlot:IsWater());
 		
 	elseif (thisFlowDirection == FlowDirectionTypes.FLOWDIRECTION_SOUTH) then
 		
 		riverPlot = startPlot;
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_EAST);
-		if (adjacentPlot == nil or riverPlot:IsWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater() ) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater() ) then
+			if (not riverPlot:IsWater()) then
 				TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 			return;
 		end
+
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_NORTHEAST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
 
 		TerrainBuilder.SetWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);
 		riverPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_NORTHEAST);
@@ -340,17 +362,21 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 			return;
 		end
 		print ("At (x,y) SetWOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("South", riverPlot:IsWater(), adjacentPlot:IsWater());
 		
 	elseif (thisFlowDirection == FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST) then
 
 		riverPlot = startPlot;
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHEAST);
-		if (adjacentPlot == nil or riverPlot:IsNWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater() ) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsNWOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater() ) then
+			if (not riverPlot:IsWater()) then
 				TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 				return;
 		end
+
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_EAST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
 
 		TerrainBuilder.SetNWOfRiver(riverPlot, true, thisFlowDirection, iRiverID);
 		-- riverPlot does not change
@@ -358,6 +384,7 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 			return;
 		end
 		print ("At (x,y) SetNWOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("SouthWest", riverPlot:IsWater(), adjacentPlot:IsWater());
 
 	elseif (thisFlowDirection == FlowDirectionTypes.FLOWDIRECTION_NORTHWEST) then
 			
@@ -367,12 +394,15 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 		end
 			
 		local adjacentPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHWEST);
-		if (adjacentPlot == nil or riverPlot:IsNEOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
-			if (riverPlot:IsWater()) then
+		if ((adjacentPlot == nil) or riverPlot:IsNEOfRiver() or riverPlot:IsWater() or adjacentPlot:IsWater()) then
+			if (not riverPlot:IsWater()) then
 				TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, iRiverID);	    
 			end
 			return;
 		end
+
+		local flowPlot = Map.GetAdjacentPlot(riverPlot:GetX(), riverPlot:GetY(), DirectionTypes.DIRECTION_SOUTHEAST);
+		if (flowPlot ~= nil) and flowPlot:IsWater() then return; end
 
 		TerrainBuilder.SetNEOfRiver(riverPlot, true, thisFlowDirection, iRiverID, iRiverID);
 		-- riverPlot does not change
@@ -380,6 +410,7 @@ function DoRiverReverse(startPlot, thisFlowDirection, originalFlowDirection, min
 			return;
 		end
 		print ("At (x,y) SetNEOfRiver, flowDirection = ", riverPlot:GetX(), riverPlot:GetY(), thisFlowDirection);
+		-- print ("NorthWest", riverPlot:IsWater(), adjacentPlot:IsWater());
 		
 	else
 		-- River is starting here, set the direction in the next step
@@ -511,6 +542,7 @@ end
 
 function NotCloseToAnotherRiver(pStartPlot)
 	
+	-- local iNotAllowedAsCloseAs = 4;
 	local iNotAllowedAsCloseAs = 4;
 
 	local iPlotIndex = pStartPlot:GetIndex();
@@ -657,4 +689,55 @@ function AddRivers()
 			end			
 		end
 	end	
+end
+
+function AddLakes(largeLakes)
+
+	print("Map Generation - Adding Lakes");
+	largeLakes = largeLakes or 0;
+
+	local numLakesAdded = 0;
+	local numLargeLakesAdded = 0;
+
+	local lakePlotRand = 30; -- GlobalParameters.LAKE_PLOT_RANDOM or 25;
+	local iW, iH = Map.GetGridSize();
+
+	local plotIndex = {};
+	for i = 0, (iW * iH) - 1, 1 do
+		table.insert(plotIndex, i);
+	end
+	local shuffledPlotIndex = GetShuffledCopyOfTable(plotIndex);
+
+	-- for i = 0, (iW * iH) - 1, 1 do
+	for _, i in ipairs(shuffledPlotIndex) do
+		plot = Map.GetPlotByIndex(i);
+		if(plot) then
+			if (plot:IsWater() == false) then
+				if (plot:IsCoastalLand() == false) then
+					if (plot:IsRiver() == false and plot:IsRiverAdjacent() == false) then
+						if (AdjacentToNaturalWonder(plot) == false) then
+							local r = TerrainBuilder.GetRandomNumber(lakePlotRand, "MapGenerator AddLakes");
+							if r == 0 then
+								numLakesAdded = numLakesAdded + 1;
+								if(largeLakes > numLargeLakesAdded) then
+									local bLakes = AddMoreLake(plot);
+									if(bLakes == true) then
+										numLargeLakesAdded = numLargeLakesAdded + 1;
+									end
+								end
+
+								TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_COAST);
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+
+	-- this is a minimalist update because lakes have been added
+	if numLakesAdded > 0 then
+		print(tostring(numLakesAdded).." lakes added")
+		AreaBuilder.Recalculate();
+	end
 end
