@@ -80,12 +80,17 @@ update StartBiasResources set
 where CivilizationType = 'CIVILIZATION_GEORGIA' and ResourceType = 'RESOURCE_IRON';
 
 --- inca  start bias ajustments
-update StartBiasTerrains set Tier = 1 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_PLAINS_MOUNTAIN';
-update StartBiasTerrains set Tier = 1 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_GRASS_MOUNTAIN';
-update StartBiasTerrains set Tier = 1 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_DESERT_MOUNTAIN';
+update StartBiasTerrains set Tier = 2 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_PLAINS_MOUNTAIN';
+update StartBiasTerrains set Tier = 2 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_GRASS_MOUNTAIN';
+update StartBiasTerrains set Tier = 2 where CivilizationType = 'CIVILIZATION_INCA' and TerrainType = 'TERRAIN_DESERT_MOUNTAIN';
+
+insert or replace into StartBiasFeatures
+	(CivilizationType,		FeatureType,					Tier)
+values
+	('CIVILIZATION_INCA',	'FEATURE_GEOTHERMAL_FISSURE',	1);
 
 insert or replace into StartBiasTerrains
-	(CivilizationType,	TerrainType,	Tier)
+	(CivilizationType,		TerrainType,				Tier)
 values
-	('CIVILIZATION_INCA','TERRAIN_GRASS_HILLS',		3),
-	('CIVILIZATION_INCA','TERRAIN_PLAINS_HILLS',	3);
+	('CIVILIZATION_INCA',	'TERRAIN_GRASS_HILLS',		3),
+	('CIVILIZATION_INCA',	'TERRAIN_PLAINS_HILLS',		3);
