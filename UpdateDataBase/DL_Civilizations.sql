@@ -1372,9 +1372,8 @@ values
 ----------------------------------------------------------------------------------------------------------------------
 -- Phoenicia
 -- LA
-update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'CITY_HAS_GOV_DISTRICT';
-insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
-select 'CITY_HAS_GOV_DISTRICT', 'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER'
+insert or replace into TraitModifiers (TraitType,	ModifierId)
+select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'PRODUCTION_DIP_DISTRICT'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into TraitModifiers (TraitType,	ModifierId)
 select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'TRADE_ROUTE_DIP_DISTRICT'
@@ -1387,6 +1386,9 @@ select 'TRAIT_LEADER_FOUNDER_CARTHAGE',		'TRADE_ROUTE_CHANCERY'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 
 insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'PRODUCTION_DIP_DISTRICT',	'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',	'CITY_HAS_DIP_DISTRICT'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
 select 'TRADE_ROUTE_DIP_DISTRICT',	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'CITY_HAS_DIP_DISTRICT'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
@@ -1396,6 +1398,9 @@ insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSe
 select 'TRADE_ROUTE_CHANCERY',		'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'BUILDING_IS_CHANCERY'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 
+insert or replace into ModifierArguments (ModifierId,						Name,			Value)
+select 'PRODUCTION_DIP_DISTRICT',		'Amount',		50
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into ModifierArguments (ModifierId,						Name,			Value)
 select 'TRADE_ROUTE_DIP_DISTRICT',		'Amount',		1
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
