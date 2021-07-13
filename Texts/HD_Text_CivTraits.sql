@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
+    ("LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "Allows coastal raiding for all naval melee units and +50% [ICON_PRODUCTION] Production toward all naval melee units. In addition to normal pillage gains, receive [ICON_SCIENCE] Science from pillaging and coastal raiding Farms, Mines and Lumber Mills. Pillaging or coastal raiding Quarries, Pastures, Plantations, and Camps also provide [ICON_CULTURE] Culture. Gain the Viking Longship unique unit with Sailing."),
     ("LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_ROUGH_RIDER_DESCRIPTION",  "Units receive +5 [ICON_Strength] Combat Strength on their home continent. Envoys sent to City-States you have a [ICON_TradeRoute] Trade Route to count as two [ICON_Envoy] Envoys. Gain the Rough Rider unique unit with Ballistics."),
     ("LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",          "+1 [ICON_Movement] Movement to all units. Promoting a unit does not end that unit’s turn. Planations provides a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture."),
     ("LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "Chiphyonjon"),
@@ -69,6 +70,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "使所有海军近战单位均能发动海岸扫荡，生产所有海军近战单位时+50% [ICON_PRODUCTION] 生产力。除常规劫掠收益外，对农田、矿山、伐木场发动掠夺或海岸扫荡时还将获得 [ICON_SCIENCE] 科技值，对采石场、牧场、种植园和营地发动掠夺或海岸扫荡时还将获得 [ICON_CULTURE] 文化值。解锁“航海术”科技后即可获得特色单位维京长船。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_ROUGH_RIDER_DESCRIPTION",  "在首都所在大陆上时单位+5 [ICON_Strength] 战斗力。如与城邦之间存在 [ICON_TradeRoute] 贸易路线，派往此处的1位 [ICON_Envoy] 使者将视为2位。解锁“弹道学”科技后获得特色单位“莽骑兵”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",          "所有单位+1 [ICON_Movement] 移动力。升级单位不会结束其回合。种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
