@@ -16,6 +16,7 @@ values
     ("LOC_STABLE_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "from training in Stable"),
     ("LOC_ORDU_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                           "from training in Ordu"),
     ("LOC_MOSQUE_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "from training in Mosque"),
+    -- ("LOC_ABILITY_JUST_WAR_STRENGTH_HD_PREVIEW_TEXT",                         "from Capellani Belief"),
     ("LOC_SCHOLASTICISM_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                   "from Scholasticism Belief"),
     ("LOC_POLAND_ALLY_COMBAT_STRENGTH_PREVIEW_TEXT",                          "+4 Combat Strength from Lithuanian Union"),
     ("LOC_ABILITY_ENABLE_WALL_ATTACK_DESCRIPTION",                            "When adjacent to an enemy city, units do full damage to the city's Walls."),
@@ -58,7 +59,7 @@ values
     ("LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "from Episcopal Church"),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "from War Department"),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "from War Department"),
-    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Just War");
+    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -120,7 +121,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "来自主教座堂"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
-    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自十字军");
+    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条");
 
 -- UU Abilities
 --------------------------------------------------------------------------------
