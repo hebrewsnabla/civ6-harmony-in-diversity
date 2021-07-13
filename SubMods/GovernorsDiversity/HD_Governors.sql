@@ -274,6 +274,7 @@ insert or replace into GovernorPromotionModifiers (GovernorPromotionType,Modifie
 --level 1 promotion GOVERNOR_PROMOTION_DEFENSE_LOGISTICS
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_DEFENSE_LOGISTICS';
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
+	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'BLACK_MARKETEER_STRATEGIC_RESOURCE_COST_DISCOUNT'),
 	('GOVERNOR_PROMOTION_DEFENSE_LOGISTICS',	'DEFENSE_LOGISTICS_BONUS_STRATEGICS_ALL_CITIES');
 -- update ModifierArguments set Value = 3 where ModifierId = 'DEFENSE_LOGISTICS_BONUS_STRATEGICS' and Name = 'Amount';
 
@@ -311,7 +312,7 @@ values
 --level 2 promotion GOVERNOR_PROMOTION_CONSCRIPTION
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'CITY_DEFENDER_FREE_PROMOTIONS'),
-	('GOVERNOR_PROMOTION_CONSCRIPTION',	'BLACK_MARKETEER_STRATEGIC_RESOURCE_COST_DISCOUNT');
+	('GOVERNOR_PROMOTION_CONSCRIPTION',	'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT');
 -- update ModifierArguments set Value = 60 where ModifierId = 'BLACK_MARKETEER_STRATEGIC_RESOURCE_COST_DISCOUNT' and Name = 'Amount';
 
 -- insert or replace into Modifiers	
