@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AssetObjects..GameDependencyData>
 	<ID>
-		<name text="DL Game Balance Mod"/>
+		<name text="Harmony in Diversity"/>
 		<id text="3e78c674-e4d8-4cb4-a62e-ea2338b7c7f9"/>
 	</ID>
 	<RequiredGameArtIDs>
@@ -12,32 +12,16 @@
 	</RequiredGameArtIDs>
 	<SystemDependencies>
 		<Element>
-			<ConsumerName text="AOSystem"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Audio"/>
+			<ConsumerName text="Units"/>
 			<ArtDefDependencyPaths>
-				<Element text="Improvements.artdef"/>
+				<Element text="Units.artdef"/>
 			</ArtDefDependencyPaths>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Camera"/>
-			<ArtDefDependencyPaths/>
 			<LibraryDependencies>
-				<Element text="CameraAnimation"/>
+				<Element text="Unit"/>
+				<Element text="VFX"/>
+				<Element text="Light"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Civilizations"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
 			<ConsumerName text="Clutter"/>
@@ -48,33 +32,14 @@
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="ColorKeys"/>
-			<ArtDefDependencyPaths/>
+			<ConsumerName text="Landmarks"/>
+			<ArtDefDependencyPaths>
+				<Element text="Improvements.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
-				<Element text="ColorKey"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Cultures"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="DynamicGeometry"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="DynamicGeometry"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="FOW"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="FOWSprite"/>
-				<Element text="FOWTexture"/>
+				<Element text="CityBuildings"/>
+				<Element text="TileBase"/>
+				<Element text="RouteDecalMaterial"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
@@ -88,12 +53,6 @@
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Features"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
 			<ConsumerName text="GameLighting"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies>
@@ -103,13 +62,188 @@
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="GenericObject"/>
+			<ConsumerName text="StrategicView_Properties"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="IconManager"/>
+			<ConsumerName text="StrategicView_Sprite"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="StrategicView_Sprite"/>
+				<Element text="StrategicView_DirectedAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="StrategicView_Route"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="StrategicView_Route"/>
+				<Element text="StrategicView_DirectedAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="StrategicView_TerrainType"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="StrategicView_TerrainBlend"/>
+				<Element text="StrategicView_TerrainBlendCorners"/>
+				<Element text="StrategicView_TerrainType"/>
+				<Element text="StrategicView_DirectedAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="StrategicView_TerrainBlendCorners"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="StrategicView_TerrainBlendCorners"/>
+				<Element text="StrategicView_DirectedAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="StrategicView_TerrainBlend"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="StrategicView_TerrainBlend"/>
+				<Element text="StrategicView_DirectedAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Terrain"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="TerrainAsset"/>
+				<Element text="TerrainElement"/>
+				<Element text="TerrainMaterial"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="WorldViewRoutes"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="RouteDecalMaterial"/>
+				<Element text="RouteDoodad"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="UI"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="UITexture"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="FOW"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="FOWSprite"/>
+				<Element text="FOWTexture"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="WonderMovie"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="WonderMovie"/>
+				<Element text="TileBase"/>
+				<Element text="GameLighting"/>
+				<Element text="ColorKey"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="UILensAsset"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="OverlayTexture"/>
+				<Element text="UILensAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Overlay"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="OverlayTexture"/>
+				<Element text="UILensAsset"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="VFX"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="VFX"/>
+				<Element text="Light"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Water"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="Water"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="ColorKeys"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="ColorKey"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="ScreenWashEffects"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="ColorKey"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Camera"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Terrains"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Features"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Civilizations"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Cultures"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Resources"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -123,29 +257,28 @@
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="IndirectGrid"/>
-			<ArtDefDependencyPaths/>
+			<ConsumerName text="WorldView_Translate"/>
+			<ArtDefDependencyPaths>
+				<Element text="Improvements.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Landmarks"/>
+			<ConsumerName text="StrategicView_Translate"/>
 			<ArtDefDependencyPaths>
 				<Element text="Improvements.artdef"/>
 			</ArtDefDependencyPaths>
-			<LibraryDependencies>
-				<Element text="CityBuildings"/>
-				<Element text="TileBase"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="LeaderFallback"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="LeaderFallback"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
+			<ConsumerName text="Audio"/>
+			<ArtDefDependencyPaths>
+				<Element text="Improvements.artdef"/>
+			</ArtDefDependencyPaths>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
 			<ConsumerName text="LeaderLighting"/>
@@ -167,37 +300,55 @@
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
+			<ConsumerName text="LeaderFallback"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies>
+				<Element text="LeaderFallback"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		<Element>
 			<ConsumerName text="Lenses"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Minimap"/>
+			<ConsumerName text="IndirectGrid"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Overlay"/>
+			<ConsumerName text="AOSystem"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="GenericObject"/>
+			<ArtDefDependencyPaths/>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element>
+		<Element>
+			<ConsumerName text="Wave"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies>
-				<Element text="OverlayTexture"/>
-				<Element text="UILensAsset"/>
+				<Element text="Wave"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="RangeArrows"/>
+			<ConsumerName text="DynamicGeometry"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies>
-				<Element text="OverlayTexture"/>
-				<Element text="UILensAsset"/>
+				<Element text="DynamicGeometry"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Resources"/>
+			<ConsumerName text="UIPreview"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -211,101 +362,7 @@
 			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="StrategicView_Properties"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_Route"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="StrategicView_Route"/>
-				<Element text="StrategicView_DirectedAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_Sprite"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="StrategicView_Sprite"/>
-				<Element text="StrategicView_DirectedAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_TerrainBlend"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="StrategicView_TerrainBlend"/>
-				<Element text="StrategicView_DirectedAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_TerrainBlendCorners"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="StrategicView_TerrainBlendCorners"/>
-				<Element text="StrategicView_DirectedAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_TerrainType"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="StrategicView_TerrainBlend"/>
-				<Element text="StrategicView_TerrainBlendCorners"/>
-				<Element text="StrategicView_TerrainType"/>
-				<Element text="StrategicView_DirectedAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_Translate"/>
-			<ArtDefDependencyPaths>
-				<Element text="Improvements.artdef"/>
-			</ArtDefDependencyPaths>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Terrain"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="TerrainAsset"/>
-				<Element text="TerrainElement"/>
-				<Element text="TerrainMaterial"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Terrains"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="UI"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="UITexture"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="UILensAsset"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="OverlayTexture"/>
-				<Element text="UILensAsset"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="UIPreview"/>
+			<ConsumerName text="Minimap"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -317,68 +374,13 @@
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 		<Element>
-			<ConsumerName text="Units"/>
+			<ConsumerName text="RangeArrows"/>
 			<ArtDefDependencyPaths/>
 			<LibraryDependencies>
-				<Element text="Unit"/>
-				<Element text="VFX"/>
-				<Element text="Light"/>
+				<Element text="OverlayTexture"/>
+				<Element text="UILensAsset"/>
 			</LibraryDependencies>
 			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="VFX"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="VFX"/>
-				<Element text="Light"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Water"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="Water"/>
-				<Element text="SkyBoxTexture"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Wave"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="Wave"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="WonderMovie"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="WonderMovie"/>
-				<Element text="TileBase"/>
-				<Element text="GameLighting"/>
-				<Element text="ColorKey"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="WorldViewRoutes"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies>
-				<Element text="RouteDecalMaterial"/>
-				<Element text="RouteDoodad"/>
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="WorldView_Translate"/>
-			<ArtDefDependencyPaths>
-				<Element text="Improvements.artdef"/>
-			</ArtDefDependencyPaths>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
 	</SystemDependencies>
 	<ArtDefDependencies>
@@ -388,12 +390,18 @@
 				<Element text="Improvements.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
+		<Element>
+			<ArtDefPath text="Units.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="Units.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="Clutter.artdef"/>
+			<ArtDefDependencyPaths/>
+		</Element>
 	</ArtDefDependencies>
 	<LibraryDependencies>
-		<Element>
-			<LibraryName text="CameraAnimation"/>
-			<PackageDependencies/>
-		</Element>
 		<Element>
 			<LibraryName text="CityBuildings"/>
 			<PackageDependencies/>

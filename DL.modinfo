@@ -632,6 +632,11 @@
       <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
       <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     </UpdateText>
+    <!-- Artdef -->
+    <UpdateArt id="HD_Art" criteria="Expansion2">
+      <Properties><LoadOrder>15999</LoadOrder></Properties>
+      <File>HD.dep</File>
+    </UpdateArt>
     <!-- Map generation -->
     <ImportFiles id="DL_MapGeneration" criteria="Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -783,6 +788,7 @@
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
+      <File>UI/Icons/HD_Icons_Units.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -862,10 +868,6 @@
       <Properties><LoadOrder>16052</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     </UpdateText>
-    <UpdateArt id="Monopolies_Gold_Art" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16053</LoadOrder></Properties>
-      <File>DL.dep</File>
-    </UpdateArt>
     <!-- Random Civics and Techs -->
     <UpdateDatabase id="TreeRandomizerMode" criteria="TreeRandomizer_Mode_Expansion2">
       <Properties><LoadOrder>16055</LoadOrder></Properties>
@@ -921,8 +923,9 @@
   </InGameActions>
   <Files>
     <!-- Artdef -->
-    <File>DL.dep</File>
+    <File>HD.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
+    <File>ArtDefs/Units.artdef</File>
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>
@@ -992,6 +995,7 @@
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
+    <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>

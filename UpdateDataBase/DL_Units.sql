@@ -316,3 +316,58 @@ update Units set Cost = 1500 where UnitType = 'UNIT_GIANT_DEATH_ROBOT';
 -- Promotions
 update Units set BaseMoves = BaseMoves - 1 where PromotionClass = 'PROMOTION_CLASS_RECON';
 -- update Units set BaseMoves = BaseMoves + 1 where PromotionClass = 'PROMOTION_CLASS_SIEGE';
+
+--------------------------------------------------------------------------------------------------------------
+-- New units
+insert or replace into Types (Type,     Kind) values
+    ('UNIT_HD_BARBARIAN_GALLEY',        'KIND_UNIT'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'KIND_UNIT');
+
+insert or replace into Units
+    (UnitType,                      Name,                                           Description,
+    BaseSightRange, BaseMoves,   Combat, RangedCombat,   Range,  Cost,  ZoneOfControl,  PurchaseYield, Domain,          PrereqTech,
+    FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
+values
+    ('UNIT_HD_BARBARIAN_GALLEY',        'LOC_UNIT_HD_BARBARIAN_GALLEY_NAME',        'LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION',
+    2,              3,           20,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION',
+    2,              3,           20,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RANGED', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
+
+update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'
+    where UnitType = 'UNIT_HD_BARBARIAN_GALLEY' or UnitType = 'UNIT_HD_BARBARIAN_QUADRIREME';
+update Technologies set BarbarianFree = 0 where TechnologyType = 'TECH_SHIPBUILDING';
+
+-- UNIT_BARBARIAN_RAIDER
+insert or replace into TypeTags
+    (Type,                              Tag)
+values
+    -- ('UNIT_HD_BARBARIAN_GALLEY',        'CLASS_NAVAL_RAIDER'),
+    -- ('UNIT_HD_BARBARIAN_GALLEY',        'CLASS_NAVAL_RANGED'),
+    -- ('UNIT_HD_BARBARIAN_GALLEY',        'CLASS_STEALTH'),
+    ('UNIT_HD_BARBARIAN_GALLEY',        'CLASS_NAVAL_RAIDER'),
+    ('UNIT_HD_BARBARIAN_GALLEY',        'CLASS_REVEAL_STEALTH'),
+    -- ('UNIT_HD_BARBARIAN_QUADRIREME',    'CLASS_NAVAL_RAIDER'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'CLASS_NAVAL_RANGED');
+    -- ('UNIT_HD_BARBARIAN_GALLEY',    'CLASS_STEALTH'),
+    -- ('UNIT_HD_BARBARIAN_GALLEY',    'CLASS_REVEAL_STEALTH');
+
+-- insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_HD_BARBARIAN_GALLEY',        'UNIT_GALLEY');
+insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNIT_QUADRIREME');
+insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_HD_BARBARIAN_GALLEY',        'UNIT_PRIVATEER');
+update UnitUpgrades set UpgradeUnit = 'UNIT_DL_MEDIEVAL_PIRATE' where Unit = 'UNIT_HD_BARBARIAN_GALLEY'
+and exists (select UnitType from Units where UnitType = 'UNIT_DL_MEDIEVAL_PIRATE');
+
+insert or replace into UnitAiInfos
+    (UnitType,                          AiType)
+values
+    ('UNIT_HD_BARBARIAN_GALLEY',        'UNITAI_COMBAT'),
+    ('UNIT_HD_BARBARIAN_GALLEY',        'UNITAI_EXPLORE'),
+    ('UNIT_HD_BARBARIAN_GALLEY',        'UNITTYPE_MELEE'),
+    ('UNIT_HD_BARBARIAN_GALLEY',        'UNITTYPE_NAVAL'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITAI_COMBAT'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_RANGED'),
+    ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_NAVAL');
+
+update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';

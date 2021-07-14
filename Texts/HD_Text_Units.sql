@@ -58,6 +58,11 @@ values
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
+
+    ("LOC_UNIT_HD_BARBARIAN_GALLEY_NAME",                                       "Primitive Galley"),
+    ("LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION",                                "Ancient era naval raider unit, unique to Barbarians."),
+    ("LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME",                                   "Primitive Quadrireme"),
+    ("LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION",                            "Ancient era naval ranged unit, unique to Barbarians."),
     ("LOC_UNIT_CATAPULT_DESCRIPTION",                                           "Classical era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
     ("LOC_UNIT_BOMBARD_DESCRIPTION",                                            "Renaissance era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
     ("LOC_UNIT_ARTILLERY_DESCRIPTION",                                          "Modern era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
@@ -68,6 +73,10 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
+    ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_GALLEY_NAME",                                    "原始桨帆船"),
+    ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION",                             "远古时代蛮族部落的海上侦察单位。"),
+    ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME",                                "原始四段帆船"),
+    ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION",                         "远古时代蛮族部落的海上远程单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_CATAPULT_DESCRIPTION",                                        "古典时代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
     ("zh_Hans_CN",  "LOC_UNIT_BOMBARD_DESCRIPTION",                                         "文艺复兴时代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
     ("zh_Hans_CN",  "LOC_UNIT_ARTILLERY_DESCRIPTION",                                       "现代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
