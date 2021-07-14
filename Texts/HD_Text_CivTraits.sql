@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
-    ("LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "Allows coastal raiding for all naval melee units and +50% [ICON_PRODUCTION] Production toward all naval melee units. In addition to normal pillage gains, receive [ICON_SCIENCE] Science from pillaging and coastal raiding Farms, Mines and Lumber Mills. Pillaging or coastal raiding Quarries, Pastures, Plantations, and Camps also provide [ICON_CULTURE] Culture."),
+    ("LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "Allows coastal raiding for all naval melee units and +50% [ICON_PRODUCTION] Production toward all naval melee units. In addition to normal pillage gains, receive [ICON_SCIENCE] Science from pillaging and coastal raiding Farms, Mines and Lumber Mills. Pillaging or coastal raiding Quarries, Pastures, Plantations, and Camps also provide [ICON_CULTURE] Culture. Gain the Viking Longship unique unit with Sailing."),
     ("LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_ROUGH_RIDER_DESCRIPTION",  "Units receive +5 [ICON_Strength] Combat Strength on their home continent. Envoys sent to City-States you have a [ICON_TradeRoute] Trade Route to count as two [ICON_Envoy] Envoys. Gain the Rough Rider unique unit with Ballistics."),
     ("LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",          "+1 [ICON_Movement] Movement to all units. Promoting a unit does not end that unit’s turn. Planations provides a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture."),
     ("LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "Chiphyonjon"),
@@ -70,7 +70,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "使所有海军近战单位均能发动海岸扫荡，生产所有海军近战单位时+50% [ICON_PRODUCTION] 生产力。除常规劫掠收益外，对农田、矿山、伐木场发动掠夺或海岸扫荡时还将获得 [ICON_SCIENCE] 科技值，对采石场、牧场、种植园和营地发动掠夺或海岸扫荡时还将获得 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_THUNDERBOLT_EXPANSION2_DESCRIPTION",           "使所有海军近战单位均能发动海岸扫荡，生产所有海军近战单位时+50% [ICON_PRODUCTION] 生产力。除常规劫掠收益外，对农田、矿山、伐木场发动掠夺或海岸扫荡时还将获得 [ICON_SCIENCE] 科技值，对采石场、牧场、种植园和营地发动掠夺或海岸扫荡时还将获得 [ICON_CULTURE] 文化值。解锁“航海术”科技后即可获得特色单位维京长船。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_ROUGH_RIDER_DESCRIPTION",  "在首都所在大陆上时单位+5 [ICON_Strength] 战斗力。如与城邦之间存在 [ICON_TradeRoute] 贸易路线，派往此处的1位 [ICON_Envoy] 使者将视为2位。解锁“弹道学”科技后获得特色单位“莽骑兵”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",          "所有单位+1 [ICON_Movement] 移动力。升级单位不会结束其回合。种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
@@ -87,8 +87,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。拥有专业化区域的城市+1 [ICON_Science] 科技值和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。如与海岸或湖泊单元格相邻，娱乐区提供的 [ICON_AMENITIES] 宜居度+1。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "建造军营、圣地及其中的建筑时+20%建造速度。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。圣地从其他区域获得标准相邻加成而不是少量相邻加成。[NEWLINE]解锁行政部门后，波兰的城市每拥有2个平原、草原、平原（丘陵）或草原（丘陵）单元格+1 [Icon_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "可以使用信仰购买军事工程师且军事工程师的使用次数+2。在友好领土内建成军营或堡垒后对相邻单元格施放文化炸弹。相邻军营的单元格+1 [ICON_Production] 生产力，相邻堡垒的单元格+1 [ICON_Production] 生产力。[NEWLINE]当前政体的所有军事政策槽位均转为通配符槽位。[NEWLINE]骑兵单位受伤后的 [ICON_Strength] 战斗力减益减少50%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "建造军营、圣地及其中的建筑时+20%建造速度。相邻区域为圣地提供标准相邻加成。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。[NEWLINE]解锁行政部门后，城市每拥有2个平原、草原、平原（丘陵）或草原（丘陵）单元格+1 [Icon_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成军营或堡垒后对相邻单元格施放文化炸弹并+1 [ICON_Production] 生产力。军事工程师的使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"),
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_NAME",                           "祖国之父"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。[NEWLINE]可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。埃莉诺建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。"),
