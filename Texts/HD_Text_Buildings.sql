@@ -125,9 +125,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_NAME",                                   "坎儿井"),
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_DESCRIPTION",                            "如果市中心位于丘陵之上或靠近山脉则额外+1 [ICON_Food] 食物，且+1 [ICON_Housing] 住房。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME",                  "工官"),
-    ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "如果城市拥有采集奢侈或加成资源的矿山或采石场，则额外建造区域、建筑和奇观时+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "如果城市拥有改良奢侈或加成资源的矿山或采石场，则额外建造区域、建筑和奇观时+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BOOTCAMP_NAME",                                "训练营"),
-    ("zh_Hans_CN",  "LOC_BUILDING_BOOTCAMP_DESCRIPTION",                         "如果城市拥有采集资源的牧场或营地，或是采集战略资源的改良设施，则建造单位时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或工官的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_BOOTCAMP_DESCRIPTION",                         "如果城市拥有改良资源的牧场或营地，或是改良战略资源的改良设施，则建造单位时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或工官的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FAIR_NAME",                                    "集市"),
     ("zh_Hans_CN",  "LOC_BUILDING_FAIR_DESCRIPTION",                             "如果市中心与至少一个奢侈资源相邻，则额外+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有图腾柱的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TOTEMS_NAME",                                  "图腾柱"),
@@ -164,7 +164,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_SYNAGOGUE_DL_DESCRIPTION",                     "本城+10% [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GURDWARA_DL_DESCRIPTION",                      "本城+10%人口增长速度。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MEETING_HOUSE_DL_DESCRIPTION",                 "本城+10% [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_STUPA_DL_DESCRIPTION",                         "本城每种已开发的奢侈品 +1 [ICON_AMENITIES] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_STUPA_DL_DESCRIPTION",                         "本城每种已改良的奢侈品 +1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CATHEDRAL_DL_DESCRIPTION",                     "可放置1个 [ICON_GreatWork_Landscape] 艺术巨作。[NEWLINE] 本城 [ICON_GreatWork_Landscape] 艺术巨作产出的 [ICON_CULTURE] 文化值和 [ICON_TOURISM] 旅游业绩+100%"),
     ("zh_Hans_CN",  "LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION",                    "建造或上次修复后的每个时代均额外+2 [ICON_FAITH] 信仰值。完成后，获得一个传教士。 "),
     -- 军营
@@ -215,7 +215,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+10%，若电力充足，则人口增长速度额外+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+4 [ICON_Tourism] 旅游业绩。只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+5%，若电力充足，则 [ICON_gold] 金币产出额外增加10%。"),
     -- 堤坝
-    ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水源向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为6个单元格之内的城市（包括该城市）提供额外+3所有产出。只有当拥有总务官头衔的总督马格努斯在6个单元格以内的城市就职时方可建造。");
