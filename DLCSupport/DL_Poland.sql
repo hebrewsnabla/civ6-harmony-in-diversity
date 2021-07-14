@@ -265,7 +265,7 @@ values
     ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_ENCAPMENT'),
     ('FORT_ADJACENT_PRODUCTION',                        'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_FORT'),
     ('POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE',  'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',                    NULL),
-    ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                                  NULL),
+    ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                                  'UNIT_IS_POLAND_HUSSAR'),
     ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  NULL);
 
 insert or replace into RequirementSetRequirements
@@ -273,14 +273,16 @@ insert or replace into RequirementSetRequirements
 values
     ('PLOT_ADJACENT_TO_ENCAPMENT',  'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_ENCAMPMENT'),
     ('PLOT_ADJACENT_TO_FORT',       'REQUIRES_PLOT_ADJACENT_TO_IMPROVEMENT_FORT'),
-    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
+    ('UNIT_IS_POLAND_HUSSAR',       'REQUIRES_UNIT_IS_UNIT_POLISH_HUSSAR');
 
 insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('PLOT_ADJACENT_TO_ENCAPMENT',      'REQUIREMENTSET_TEST_ALL'),
     ('PLOT_ADJACENT_TO_FORT',           'REQUIREMENTSET_TEST_ALL'),
-    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE',  'REQUIREMENTSET_TEST_ALL');
+    ('PLAYER_HAS_CIVIC_CIVIL_SERVICE',  'REQUIREMENTSET_TEST_ALL'),
+    ('UNIT_IS_POLAND_HUSSAR',           'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,               Value)
