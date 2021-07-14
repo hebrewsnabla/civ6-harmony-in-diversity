@@ -678,8 +678,8 @@ update Buildings set Maintenance = 5,	Cost = 250	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 8,	Cost = 380	where BuildingType = 'BUILDING_AQUARIUM';
 update Buildings set Maintenance = 12,	Cost = 550	where BuildingType = 'BUILDING_AQUATICS_CENTER';
 
-update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_GROVE';
-update Buildings set Maintenance = 6,	Cost = 360	where BuildingType = 'BUILDING_SANCTUARY';
+update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_GROVE';
+update Buildings set Maintenance = 6,	Cost = 330	where BuildingType = 'BUILDING_SANCTUARY';
 update Buildings set Maintenance = 8,	Cost = 360	where BuildingType = 'BUILDING_HANGAR';
 update Buildings set Maintenance = 12,	Cost = 480	where BuildingType = 'BUILDING_AIRPORT';
 update Buildings set Maintenance = 6,	Cost = 360	where BuildingType = 'BUILDING_HYDROELECTRIC_DAM';
