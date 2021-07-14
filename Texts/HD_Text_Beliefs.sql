@@ -57,6 +57,7 @@ values
     ("LOC_BELIEF_CANONIZATION_OF_SAINTS_DL_DESCRIPTION",      "When you activate a [ICON_GreatPerson] Great Person they spread 400 Religious pressure of your founded religion to cities within 6 tiles. When you use a religious unit to convert a city for the first time earn 25 [ICON_Faith] Faith per [ICON_Citizen] Population of that city (on Standard Speed)."),
     ("LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",           "Combat units gain +5 [ICON_Strength] Combat Strength when within the borders of friendly cities that follow this Religion."),
     ("LOC_BELIEF_JUST_WAR_DL_DESCRIPTION",                    "Combat units gain +5 [ICON_Strength] Combat Strength when within the borders of foreign cities that follow this Religion, pillaging Improvements and Districts provides +25 [ICON_Faith] Faith."),
+    ("LOC_BELIEF_HOLY_WATERS_NAME",                           "Sea Festival"),
     ("LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION",                 "Your districts and wonders on or next to Coast or Lake tiles provide +2 [ICON_Science] Science."),
     ("LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION",          "Your Religion's pressure never drops due to losses in Theological Combat. Cities with this religion -100% outer religion pressure and -30% purchase cost for Inquisitors. Inquisitors newly obtained from cities with this religion receive +1 charge.  "),
     ("LOC_BELIEF_HOLY_ORDER_DESCRIPTION",                     "Missionaries and Apostles are 30% cheaper to purchase in cities with this religion."),
