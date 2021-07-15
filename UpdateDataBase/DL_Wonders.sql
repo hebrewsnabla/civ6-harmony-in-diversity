@@ -92,8 +92,8 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('GREAT_ZIMBABWE_GRANTS_MERCHANT',	'Amount',	1),
 ('GREAT_ZIMBABWE_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
-update ModifierArguments set Value = 4 where ModifierId = 'MODIFIER_PLAYER_CITY_TRADE_ROUTE_YIELD_PER_LOCAL_BONUS_RESOURCE_FOR_DOMESTIC';
-update ModifierArguments set Value = 4 where ModifierId = 'MODIFIER_PLAYER_CITY_TRADE_ROUTE_YIELD_PER_LOCAL_BONUS_RESOURCE_FOR_INTERNATIONAL';
+update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
 --BUILDING_BROADWAY
 ---grants a GREAT_PERSON_CLASS_MUSICIAN
