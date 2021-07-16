@@ -201,7 +201,7 @@ update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNIS
 update ModifierArguments set Value = 4 where ModifierId = 'COLLECTIVIZATION_INTERNAL_TRADE_PRODUCTION' and Name = 'Amount';
 -- update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_NO_DIPLOMATIC_QUARTER' where ModifierId = 'DIPLOMATICLEAGUE_DUPLICATEFIRSTINFLUENCETOKEN';
 
-delete from PolicyModifiers where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
+delete from PolicyModifiers where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE' and ModifierId = 'DIPLOMATICLEAGUE_DUPLICATEFIRSTINFLUENCETOKEN';
 
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
@@ -249,6 +249,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'PUBLICTRANSPORT_BREAT
 -- dip cards
 update ModifierArguments set Value = 3 where ModifierId = 'CHARISMATICLEADER_INFLUENCEPOINTS' and Name = 'Amount';
 update ModifierArguments set Value = 9 where ModifierId = 'GUNBOATDIPLOMACY_INFLUENCEPOINTS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'DIPLOMATIC_LEAGUE_INFLUENCEPOINTS' and exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'GUNBOATDIPLOMACY_INFLUENCEPOINTS' and exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 
 -- Strategic Resource
 update ModifierArguments set Value = 2 where Name = 'Amount' and

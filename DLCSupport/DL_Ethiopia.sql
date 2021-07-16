@@ -69,7 +69,6 @@ values
     ('GUNBOAT_DIPLOMACY_CONSULATE_INFLUENCEPOINTS',     'ModifierId',   'CHANCERY_INFLUENCEPOINTS'),
     ('GUNBOAT_DIPLOMACY_CHANCERY_INFLUENCEPOINTS',      'ModifierId',   'CHANCERY_INFLUENCEPOINTS');
 
-update ModifierArguments set Value = 3 where Name = 'Amount' and (ModifierId = 'DIPLOMATIC_LEAGUE_INFLUENCEPOINTS' or ModifierId = 'GUNBOATDIPLOMACY_INFLUENCEPOINTS');
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_DELEGATION_FAVOR';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_EMBASSY_FAVOR';
