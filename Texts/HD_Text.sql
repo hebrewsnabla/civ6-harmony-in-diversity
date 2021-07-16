@@ -201,4 +201,5 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_CITY_YIELD_FROM_TERRAIN_TOOLTIP",                               "{Value : number +#.#;-#.#}来自地形"),
     ("zh_Hans_CN",  "LOC_PLAYER_YIELD_FAITH_FROM_BELIEFS",                               "{Value : number +#.#;-#.#}来自信仰"),
+    ("zh_Hans_CN",  "LOC_PLAYER_YIELD_CULTURE_FROM_TRIBUTARIES",                         "{Value : number +#.#;-#.#}来自您是领主的城邦"),
     ("zh_Hans_CN",  "LOC_CITY_YIELD_MODIFIER_PER_GOVERNOR_TITLE_TOOLTIP",                "{Value : number +#;-#}%（{ActualValue : number +#.#;-#.#}）来自拥有{1}次{1 : plural 1?升级; other?升级;}的 [ICON_Governor] 总督");

@@ -1482,3 +1482,8 @@ values
 	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'Amount',    		1),
 	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'ImprovementType',	'IMPROVEMENT_FISHING_BOATS'),
 	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'Destination',    	1);
+
+----------------------------------------------------------------------------------------------------------------------
+-- Greece
+-- ud 
+update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
