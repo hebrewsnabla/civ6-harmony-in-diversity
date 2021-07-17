@@ -272,6 +272,7 @@ insert or replace into RequirementSets (RequirementSetId,   RequirementSetType) 
     ('PLOT_IS_IMPROVED',    'REQUIREMENTSET_TEST_ALL');
 
 -- City Park
+-- TODO: player has civic
 insert or replace into RequirementSets 
     (RequirementSetId,                                              RequirementSetType) 
 values
