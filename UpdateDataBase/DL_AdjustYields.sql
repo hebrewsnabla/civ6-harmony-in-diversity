@@ -57,7 +57,7 @@ values
 	('RESOURCE_CITRUS',		'YIELD_GOLD',		1),
 	('RESOURCE_COFFEE',		'YIELD_GOLD',		1),
 	('RESOURCE_DYES',		'YIELD_GOLD',		1),
-	('RESOURCE_INCENSE',	'YIELD_GOLD',		1),
+	-- ('RESOURCE_INCENSE',	'YIELD_GOLD',		1),
 	('RESOURCE_JADE',		'YIELD_GOLD',		1),
 	('RESOURCE_MARBLE',		'YIELD_GOLD',		1),
 	('RESOURCE_MERCURY',	'YIELD_GOLD',		1),
@@ -82,6 +82,7 @@ update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SPICES' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SUGAR' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_HONEY' and YieldType = 'YIELD_FOOD';
+update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_INCENSE' and YieldType = 'YIELD_FAITH';
 
 -- Natural Wonders.
 -- Need to provide yields to natural wonders in later game.
