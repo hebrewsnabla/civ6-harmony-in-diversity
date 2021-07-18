@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9.6">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="0.9.9">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,20 +12,20 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9.6</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9.6</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v0.9.9</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v0.9.9</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
       <en_US>Create a brand new Civ6.</en_US>
       <zh_Hans_CN>创造一个全新的文明6。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (comparable to Rise and Fall, Gathering Storm DLCs). This mod is still under development. The 1.0 version is going to be published soon.</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个与迭起兴衰、风云变化等大型DLC比肩的大型游戏性mod，对游戏内容进行了大规模的修缮和平衡。该mod目前正在开发中，即将发布1.0版本。</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.0, the first stable version.</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。当前版本为v1.0首个稳定版。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, o(╯□╰)o</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 利牙菠萝, 六亿神州尽舜尧, 陈又, wltk, 傲娇的红莉栖, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, o(╯□╰)o</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
