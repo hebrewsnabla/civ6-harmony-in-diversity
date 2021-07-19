@@ -114,7 +114,8 @@ values
     ("LOC_POLICY_PUBLIC_TRANSPORT_DESCRIPTION_XP2",                                   "Neighborhoods with Charming appeal receive +3 Food [ICON_Food] and +1 Production [ICON_Production], Breathtaking Neighborhoods receive double yields. All Neighborhoods receive +1 [ICON_Gold] Gold."),
     ("LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "+2 [ICON_Housing] Housing per level of Walls."),
     ("LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "Each Entertainment_Complex +6 [ICON_GOLD] Gold and each Arena +10 [ICON_GOLD] Gold."),
-    ("LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "If the city [ICON_CITIZEN] population is 8 or higher, +2 [ICON_Amenities] Amenities for Arenas(4 tile regional effects).");
+    ("LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "If the city [ICON_CITIZEN] population is 8 or higher, +2 [ICON_Amenities] Amenities for Arenas(4 tile regional effects)."),
+    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+1 [ICON_Food] Food, +15% growth rate and 3 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -232,4 +233,5 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PUBLIC_TRANSPORT_DESCRIPTION_XP2",                                   "拥有迷人魅力的社区+3 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Housing] 住房，若拥有惊艳魅力则翻倍。所有社区+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "每个等级的城墙提供+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "每座娱乐中心产出+6 [ICON_GOLD] 金币，竞技场产出+10 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。");
+    ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。"),
+    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。");
