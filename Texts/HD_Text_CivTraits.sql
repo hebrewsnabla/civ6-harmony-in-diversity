@@ -137,3 +137,23 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。")
     ;
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                             Text)
+values
+    ("LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "Unlocks the Builder ability to construct a Polder, unique to Netherlands.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_Production] Production, and +0.5 [ICON_Housing] Housing. +1 [ICON_FOOD] Food if adjacent to a Polder improvement. Additional [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, and [ICON_FOOD] Food  as you advance through the Civics and Technology Tree. Must be placed on a Coast or Lake tile adjacent to 2 or more passable land tiles. Increases [ICON_Movement] Movement Cost of tile to 3."),
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "The Country of Windmills"),
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +50% construction speed toward the Dam district, Shipyard and Flood Barrier buildings. Shipyard provides +1 [ICON_TradeRoute] Trade Route capacity. When completing naval units (rather than purchasing or granting for free) in the cities have a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank). "),
+    ("LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "+50% production speed towards trader units. For each [ICON_TradeRoute] Trade Routes to foreign cities or from foreign cities, the specialty districts provide yields to you as if they were international destination.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                             Text)
+values
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "解锁建造者建造荷兰特色改良设施“圩田”的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。如与圩田改良设施相邻，则+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力、[ICON_GOLD] 金币和 [ICON_FOOD] 食物。必须建在与2个或更多可通行陆地单元格相邻的海岸或湖泊单元格上。单元格的 [ICON_Movement] 移动力消耗增至3点。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。建造堤坝区域和造船厂、拦洪坝建筑时加速50%。造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "建造商人单位加速50%。对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的特色区域获得其作为国际目的地时的加成。");

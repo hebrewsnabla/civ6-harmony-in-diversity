@@ -116,6 +116,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
     </Criteria>
+    <Criteria id="Netherlands_Rework_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">97ff0be1-268e-4acc-adda-5c2a820b6521</ModInUse>
+    </Criteria>
     <Criteria id="Medieval_Pirate_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">1d396ebb-6554-4f17-ad44-c95f600b2185</ModInUse>
@@ -608,6 +612,15 @@
       <Properties><LoadOrder>15606</LoadOrder></Properties>
       <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     </UpdateText>
+    <!-- Netherlands -->
+    <UpdateDatabase id="HD_Netherlands_Rework" criteria="Netherlands_Rework_Conflict_Expansion2">
+      <Properties><LoadOrder>15608</LoadOrder></Properties>
+      <File>SubMods/Netherlands/NetherLands.sql</File>
+    </UpdateDatabase>
+    <AddGameplayScripts id="HD_Netherlands_Rework_Lua" criteria="Netherlands_Rework_Conflict_Expansion2">
+      <Properties><LoadOrder>15608</LoadOrder></Properties>
+      <File>SubMods/Netherlands/NetherLands.lua</File>
+    </AddGameplayScripts>
     <!-- Medieval Pirate -->
     <UpdateDatabase id="HD_Medieval_Pirate" criteria="Medieval_Pirate_Conflict_Expansion2">
       <Properties><LoadOrder>15610</LoadOrder></Properties>
@@ -1076,6 +1089,9 @@
     <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
     <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
     <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
+    <!-- Netherlands Rework -->
+    <File>SubMods/Netherlands/NetherLands.sql</File>
+    <File>SubMods/Netherlands/NetherLands.lua</File>
     <!-- Medieval Pirate -->
     <File>SubMods/MedievalPirate/DL_Database.sql</File>
     <File>SubMods/MedievalPirate/DL_Icons.xml</File>
