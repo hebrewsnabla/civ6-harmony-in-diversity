@@ -9,6 +9,7 @@ update Technologies set Description = 'LOC_TECH_CONSTRUCTION_HD_DESCRIPTION' whe
 update Technologies set Description = 'LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION' where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
+update Technologies set Description = 'LOC_TECH_CASTLES_HD_DESCRIPTION' where TechnologyType = 'TECH_CASTLES';
 -- update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = 'LOC_TECH_STEAM_POWER_HD_DESCRIPTION' where TechnologyType = 'TECH_STEAM_POWER';
 update Technologies set Description = 'LOC_TECH_STEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_STEEL';
