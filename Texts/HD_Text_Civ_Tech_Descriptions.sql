@@ -4,13 +4,17 @@ insert or replace into EnglishText
     (Tag,                                             Text)
 values
     -- Techs
+    ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",      "Allows harvesting of resources improved by Pastures and Camps."),
+    ("LOC_TECH_MINING_HD_DESCRIPTION",                "Allows chopping of Woods, and harvesting of resources improved by Mines."),
+    ("LOC_TECH_MASONRY_HD_DESCRIPTION",               "Allows harvesting of resources improved by Quarries."),
     ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",             "After researching the wheel, all improvements inside territory obtain roads for free. All improvements built afterward also get free roads."),
+    ("LOC_TECH_IRRIGATION_DESCRIPTION",               "Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allow Builders to build Farms on Plains Hills or Grass Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",             "+1 [ICON_Production] Production from the Lumber Mill improvements that are not adjacent to rivers."),
     ("LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",    "+50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic."),
     -- ("LOC_TECH_RIFLING_HD_DESCRIPTION",               "+1 [ICON_FOOD] Food from the Camp improvement."),
     ("LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",          "+1 [ICON_Production] Production from the Camp improvement. +1 [ICON_Production] Production from the Lumber Mill improvement."),
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",        "+1 [ICON_Production] Production to the Mine and Quarry improvement."),
-    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",  "Allows Traders to embark, and allows harvesting of [ICON_RESOURCE_FISH] Fish and [ICON_RESOURCE_CRABS] Crabs. If Ship Building is not researched, also allows all land units to embark."),
+    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",  "Allows Traders to embark, and allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",               "Allow to build Camps on Forests. +1 [ICON_gold] Gold from the Camp improvement."),
     --("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "+1 [ICON_Production] Production from the Pasture."),
     ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",              "Pasture improvements receive +1 [ICON_Production] Production."),
@@ -61,13 +65,17 @@ insert or replace into LocalizedText
     (Language,      Tag,                                             Text)
 values
     -- Techs
+    ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",      "允许收获由牧场或营地改良的资源。"),
+    ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                "允许砍伐树林和收获由矿山改良的资源。"),
+    ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",               "允许收获由采石场改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",             "研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。"),
+    ("zh_Hans_CN",  "LOC_TECH_IRRIGATION_DESCRIPTION",               "允许清理沼泽和收获由种植园改良的资源。允许在相邻淡水或水渠的平原和草原丘陵上修建农田。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",             "非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",    "所有除 [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。"),
     -- ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",               "营地+1 [ICON_FOOD] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",          "营地+1 [ICON_PRODUCTION] 生产力。伐木场改良+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",        "矿山和采石场改良设施的 [ICON_Production] 生产力+1。"),
-    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",  "可使商人上船，并收获 [ICON_RESOURCE_FISH] 鱼和 [ICON_RESOURCE_CRABS] 螃蟹。若未掌握造船术，也允许所有陆地单位上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",  "允许商人上船和收获由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
     ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",               "允许在树林上建造营地。营地+1 [ICON_gold] 金币。"),
     --("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "牧场+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",              "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
