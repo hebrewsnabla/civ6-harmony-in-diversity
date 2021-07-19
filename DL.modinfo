@@ -116,6 +116,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
     </Criteria>
+    <Criteria id="Medieval_Pirate_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">1d396ebb-6554-4f17-ad44-c95f600b2185</ModInUse>
+    </Criteria>
     <Criteria id="BetterTradeScreen_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8d4fa23a-ef43-440c-8422-2bec11f8f5d7</ModInUse>
@@ -308,13 +312,25 @@
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
-      <File>Assets/Projects/ResourcesProjects_30.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_22.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_32.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_38.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_50.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_80.dds</File>
+      <File>Assets/Units/MedivalPirate/DL_Pirates_256.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_38.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_50.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_70.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_95.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_200.dds</File>
+      <File>Assets/Units/MedivalPirate/MedivalPirate_256.dds</File>
+      <!-- <File>Assets/Projects/ResourcesProjects_30.dds</File>
       <File>Assets/Projects/ResourcesProjects_32.dds</File>
       <File>Assets/Projects/ResourcesProjects_38.dds</File>
       <File>Assets/Projects/ResourcesProjects_50.dds</File>
       <File>Assets/Projects/ResourcesProjects_70.dds</File>
       <File>Assets/Projects/ResourcesProjects_80.dds</File>
-      <File>Assets/Projects/ResourcesProjects_256.dds</File>
+      <File>Assets/Projects/ResourcesProjects_256.dds</File> -->
       <File>Assets/Projects/ResourcesProjects_FOW_30.dds</File>
       <File>Assets/Projects/ResourcesProjects_FOW_32.dds</File>
       <File>Assets/Projects/ResourcesProjects_FOW_38.dds</File>
@@ -591,6 +607,19 @@
     <UpdateText id="HD_Governors_text" criteria="Expansion2">
       <Properties><LoadOrder>15606</LoadOrder></Properties>
       <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
+    </UpdateText>
+    <!-- Medieval Pirate -->
+    <UpdateDatabase id="HD_Medieval_Pirate" criteria="Medieval_Pirate_Conflict_Expansion2">
+      <Properties><LoadOrder>15610</LoadOrder></Properties>
+      <File>SubMods/MedievalPirate/DL_Database.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="HD_Medieval_Pirate_Icons" criteria="Medieval_Pirate_Conflict_Expansion2">
+      <Properties><LoadOrder>15610</LoadOrder></Properties>
+      <File>SubMods/MedievalPirate/DL_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="HD_Medieval_Pirate_Text" criteria="Medieval_Pirate_Conflict_Expansion2">
+      <Properties><LoadOrder>15610</LoadOrder></Properties>
+      <File>SubMods/MedievalPirate/DL_Texts.sql</File>
     </UpdateText>
     <!-- Third Party -->
     <UpdateDatabase id="HetairoiBugFix" criteria="DLC_Persia">
@@ -1047,6 +1076,10 @@
     <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
     <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
     <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
+    <!-- Medieval Pirate -->
+    <File>SubMods/MedievalPirate/DL_Database.sql</File>
+    <File>SubMods/MedievalPirate/DL_Icons.xml</File>
+    <File>SubMods/MedievalPirate/DL_Texts.sql</File>
     <!-- Map Generation -->
     <File>Maps/Utility/AssignStartingPlots.lua</File>
     <File>Maps/Utility/CoastalLowlands.lua</File>
@@ -1204,13 +1237,25 @@
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
-    <File>Assets/Projects/ResourcesProjects_30.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_22.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_32.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_38.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_50.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_80.dds</File>
+    <File>Assets/Units/MedivalPirate/DL_Pirates_256.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_38.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_50.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_70.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_95.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_200.dds</File>
+    <File>Assets/Units/MedivalPirate/MedivalPirate_256.dds</File>
+    <!-- <File>Assets/Projects/ResourcesProjects_30.dds</File>
     <File>Assets/Projects/ResourcesProjects_32.dds</File>
     <File>Assets/Projects/ResourcesProjects_38.dds</File>
     <File>Assets/Projects/ResourcesProjects_50.dds</File>
     <File>Assets/Projects/ResourcesProjects_70.dds</File>
     <File>Assets/Projects/ResourcesProjects_80.dds</File>
-    <File>Assets/Projects/ResourcesProjects_256.dds</File>
+    <File>Assets/Projects/ResourcesProjects_256.dds</File> -->
     <File>Assets/Projects/ResourcesProjects_FOW_30.dds</File>
     <File>Assets/Projects/ResourcesProjects_FOW_32.dds</File>
     <File>Assets/Projects/ResourcesProjects_FOW_38.dds</File>
