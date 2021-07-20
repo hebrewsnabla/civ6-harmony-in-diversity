@@ -2,6 +2,8 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
+-- update Resources set SeaFrequency = 10 where ResourceType = 'RESOURCE_SUK_CORAL';
+
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_SQUID' and YieldType = 'YIELD_GOLD';
 insert or replace into Resource_YieldChanges
     (ResourceType,              YieldType,              YieldChange)

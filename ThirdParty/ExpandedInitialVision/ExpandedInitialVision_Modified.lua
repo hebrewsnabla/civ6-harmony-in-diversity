@@ -41,7 +41,7 @@ function RevealArea()
 			else
 				pVis:ChangeVisibilityCount(pPickPlot:GetIndex(), 1);
 				pVis:ChangeVisibilityCount(pPickPlot:GetIndex(), -1);
-				print("no unit or wonder on tile - revealing tile, temporarily removing FOW");
+				-- print("no unit or wonder on tile - revealing tile, temporarily removing FOW");
 			end
 	    end
 	end

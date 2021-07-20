@@ -454,6 +454,9 @@ values
 	--('POLICY_WORKERS_FACULTIES',	'LOC_POLICY_WORKERS_FACULTIES_NAME',	'LOC_POLICY_WORKERS_FACULTIES_DESCRIPTION',		'CIVIC_CIVIL_ENGINEERING',	'SLOT_ECONOMIC'),
 	--('POLICY_ENTREPRENEURSHIP',		'LOC_POLICY_ENTREPRENEURSHIP_NAME',		'LOC_POLICY_ENTREPRENEURSHIP_DESCRIPTION',	'CIVIC_MERCANTILISM',		'SLOT_ECONOMIC');
 
+delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
+delete from ObsoletePolicies where PolicyType = 'POLICY_RETAINERS';
+delete from ObsoletePolicies where PolicyType = 'POLICY_CARAVANSARIES';
 --update ObsoletePolicies set ObsoletePolicy = 'POLICY_FINE_ARTS' where PolicyType = 'POLICY_AESTHETICS';
 --update ObsoletePolicies set ObsoletePolicy = 'POLICY_FREE_THOUGHTS' where PolicyType = 'POLICY_NATURAL_PHILOSOPHY';
 --update ObsoletePolicies set ObsoletePolicy = 'POLICY_TREASURE_FLEETS' where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
@@ -485,9 +488,6 @@ values
 	('POLICY_GARRISON_RECLAMATION',	'POLICY_CONSTRUCTION_CROPS'),
 	('POLICY_WALL_HOUSING',			'POLICY_CONSTRUCTION_CROPS');
 
-delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
-delete from ObsoletePolicies where PolicyType = 'POLICY_RETAINERS';
-delete from ObsoletePolicies where PolicyType = 'POLICY_CARAVANSARIES';
 delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
