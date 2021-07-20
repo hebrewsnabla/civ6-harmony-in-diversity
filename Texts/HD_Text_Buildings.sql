@@ -71,7 +71,7 @@ values
     ("LOC_BUILDING_BANK_DESCRIPTION",                             "+5% [ICON_gold] Gold in this city."),
     ("LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "+5% [ICON_gold] gold in this city. +5% [ICON_GOLD] gold if the city is fully powered."),
     -- Harbor
-    ("LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast tiles for this city. +1 [ICON_TradeRoute] Trade Route capacity. +1 [ICON_Food] Food to each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls resource in this city."),
+    ("LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast tiles for this city. +1 [ICON_TradeRoute] Trade Route capacity. +1 [ICON_Food] Food to each coastal resource in this city."), -- each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls
     ("LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION",              "+25% combat experience for all naval units trained from this city. Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district. +1 [ICON_Production] Production on all Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units."),
     ("LOC_BUILDING_SEAPORT_DESCRIPTION",                          "+25% combat experience for all naval units trained in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced 25%. +2 [ICON_GOLD] Gold on all Coast tiles for this city. Bonus [ICON_FOOD] Food equal to adjacency bonus of the Harbor district.[NEWLINE]+10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points for player. +3  [ICON_STRENGTH] Combat Strength for all navy units trained in this city."),
     -- Government
@@ -182,7 +182,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "本城 [ICON_GOLD] 金币+5%。通电后额外为本城+5% [ICON_GOLD] 金币。"),
     -- 港口
-    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。为本城的 [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠资源地块+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有海岸单元格+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。为本城的海洋资源地块+1 [ICON_Food] 食物。"), -- [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠
     ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION",              "此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION",                          "此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。额外产出相当于港口相邻加成的 [ICON_FOOD] 食物。 [NEWLINE]玩家的 [ICON_GREATADMIRAL] 海军将领点数积累速度+10%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。"),
     -- 政府区

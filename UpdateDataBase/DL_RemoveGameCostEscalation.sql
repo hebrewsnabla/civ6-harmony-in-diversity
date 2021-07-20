@@ -12,7 +12,8 @@ update Feature_Removes set Yield = 30 where FeatureType = 'FEATURE_FOREST';
 update Feature_Removes set Yield = 30 where FeatureType = 'FEATURE_MARSH';
 update Feature_Removes set Yield = 15 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_FOOD';
 update Feature_Removes set Yield = 15 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_PRODUCTION';
-
+-- Suk ocean
+update Feature_Removes set Yield = 30 where FeatureType = 'FEATURE_SUK_KELP';
 -- Districts
 
 -- progression with number of previous copies

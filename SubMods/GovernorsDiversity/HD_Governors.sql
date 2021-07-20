@@ -614,7 +614,7 @@ values
 
 -- fishery now available to all major civs without Liang
 update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
-
+delete from ImprovementModifiers where ImprovementType = "IMPROVEMENT_FISHERY";
 --bishop
 --level 0 GOVERNOR_PROMOTION_CARDINAL_BISHOP
 --LEVEL 1-0 GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR

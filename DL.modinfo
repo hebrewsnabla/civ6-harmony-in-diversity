@@ -212,6 +212,15 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <!-- Suk Oceans -->
+    <Criteria id="Suk_Oceans_Rework_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_SUK_OCEANS</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <!-- Options -->
     <Criteria id="HD_PostponeWorldCongress_XP2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -282,6 +291,10 @@
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
       <!-- <File>Texts/HD_Text_Units_Late.sql</File> -->
+    </UpdateText>
+    <UpdateText id="SukOceans_mod_support_text">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">
@@ -446,6 +459,7 @@
       <Properties><LoadOrder>15002</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Gameplay.lua</File>
     </AddGameplayScripts>
+    <!-- Wetlands -->
     <UpdateDatabase id="WetLands_mod_support_removes" criteria="WetLands_Expansion2">
       <Properties><LoadOrder>15003</LoadOrder></Properties>
       <File>ModSupport/WetLands/DL_Removes.sql</File>
@@ -458,6 +472,16 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Suk Oceans -->
+    <UpdateDatabase id="SukOceans_mod_support" criteria="Suk_Oceans_Rework_Expansion2">
+      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="SukOceans_mod_support_text" criteria="Suk_Oceans_Rework_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/SukOceans/HD_Texts.sql</File>
+    </UpdateText>
+    <!-- Watch Tower -->
     <UpdateText id="WatchTower_mod_support_text" criteria="WatchTower_Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
       <File>ModSupport/Watchtower/HD_Texts.sql</File>
@@ -1046,7 +1070,9 @@
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
     <File>ModSupport/WetLands/DL_Removes.sql</File>
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
-    <File>ModSupport/WetLands/HD_Texts.sql</File>    
+    <File>ModSupport/WetLands/HD_Texts.sql</File>
+    <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
+    <File>ModSupport/SukOceans/HD_Texts.sql</File>
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
