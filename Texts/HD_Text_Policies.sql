@@ -72,6 +72,8 @@ values
     ("LOC_POLICY_WALL_HOUSING_NAME",                                                  "Feoff"),
     ("LOC_POLICY_ARENA_TICKETS_NAME",                                                 "Arena Tickets"),
     ("LOC_POLICY_WRESTING_AND_MANEUVERS_NAME",                                        "Wrestling and Maneuvers"),
+    ("LOC_POLICY_CITY_CENTRALIZATION_NAME",                                           "City Centralization"),
+    ("LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "Productuin and Construction Crops"),
     ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "+4 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
@@ -115,7 +117,9 @@ values
     ("LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "+2 [ICON_Housing] Housing per level of Walls."),
     ("LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "Each Entertainment_Complex +6 [ICON_GOLD] Gold and each Arena +10 [ICON_GOLD] Gold."),
     ("LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "If the city [ICON_CITIZEN] population is 8 or higher, +2 [ICON_Amenities] Amenities for Arenas(4 tile regional effects)."),
-    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+1 [ICON_Food] Food, +15% growth rate and 3 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent.");
+    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+1 [ICON_Food] Food, +15% growth rate and 3 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
+    ("LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_SCIENCE] Science, +1 [ICON_CULTURE] Culture, +1 [ICON_Faith] Faith and +2 [ICON_Gold] Gold in all cities."),
+    ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -191,10 +195,12 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_WALL_HOUSING_NAME",                                                  "采邑"),
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_NAME",                                                 "竞技场门票"),
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_NAME",                                        "角力与演武"),
+    ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_NAME",                                           "城市中心化"),
+    ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "生产建设兵团"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "位于海边或湖边的城市+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "位于海边或湖边的城市+4 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION",                                   "所有拥有军营的城市+4 [ICON_Food] 食物，+2 [ICON_Housing] 住房。"),
+    ("zh_Hans_CN",  "LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION",                                   "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION",                                      "所有城市+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_POLICY_OVERALL_PLANNING_DESCRIPTION",                                       "来自工业区、水上乐园和娱乐设施的区域效果范围增加3个单元格。"),
     ("zh_Hans_CN",  "LOC_POLICY_BARD_DESCRIPTION",                                                   "所有城市+1 [ICON_CULTURE] 文化。"),
@@ -234,4 +240,6 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_WALL_HOUSING_DESCRIPTION",                                           "每个等级的城墙提供+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "每座娱乐中心产出+6 [ICON_GOLD] 金币，竞技场产出+10 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。"),
-    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。");
+    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技、+1 [ICON_CULTURE] 文化、+1 [ICON_Faith] 信仰和+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。");
