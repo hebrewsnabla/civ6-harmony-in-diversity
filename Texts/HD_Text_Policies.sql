@@ -203,8 +203,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION",                                   "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION",                                      "所有城市+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_POLICY_OVERALL_PLANNING_DESCRIPTION",                                       "来自工业区、水上乐园和娱乐设施的区域效果范围增加3个单元格。"),
-    ("zh_Hans_CN",  "LOC_POLICY_BARD_DESCRIPTION",                                                   "所有城市+1 [ICON_CULTURE] 文化。"),
-    ("zh_Hans_CN",  "LOC_POLICY_CIVILIZE_DESCRIPTION",                                               "所有城市+1 [ICON_SCIENCE] 科技。"),
+    ("zh_Hans_CN",  "LOC_POLICY_BARD_DESCRIPTION",                                                   "所有城市+1 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_CIVILIZE_DESCRIPTION",                                               "所有城市+1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_POLICY_CARAVANSARIES_DESCRIPTION",                                          "所有城市+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION",                                         "所有国内 [ICON_TradeRoute] 贸易路线+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_HIGHWAY_DESCRIPTION",                                                "所有国内 [ICON_TradeRoute] 贸易路线+2 [ICON_Food] 食物和+2 [ICON_Production] 生产力。"),
@@ -241,5 +241,5 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "每座娱乐中心产出+6 [ICON_GOLD] 金币，竞技场产出+10 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。"),
-    ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技、+1 [ICON_CULTURE] 文化、+1 [ICON_Faith] 信仰和+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技值、+1 [ICON_CULTURE] 文化值、+1 [ICON_Faith] 信仰值和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。");
