@@ -38,7 +38,7 @@ values
     ("LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "Settlers and Buildiers are 20% cheaper to purchase with [ICON_GOLD] Gold, and 20% cheaper to purchase with [ICON_FAITH] Faith when allowed. May purchase Government district and Diplomatic Quarter district buildings with [ICON_Faith] Faith."),
     ("LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to mountains.+1 [ICON_Amenities] Amenity if the Holy Site is adjacent to Forests.+2 [ICON_Housing] Housing if the Holy Site is adjacent to river.So as the City Center."),
     ("LOC_BELIEF_MESSIAH_NAME",                               "Messiah"),
-    ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. +30% [ICON_PRODUCTION] Production towards Holy Site district buildings. Each building in the Holy Site district provides +5% [ICON_Faith] Faith for the city."),
+    ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 10% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. +30% [ICON_PRODUCTION] Production towards Holy Site district buildings. Each building in the Holy Site district provides +5% [ICON_Faith] Faith for the city."),
     ("LOC_BELIEF_ABBOT_NAME",                                 "Abbot"),
     ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "+2 [ICON_Production] Production for Holy Site Districts. Holy Site District and Shrine in the city provide +1 [ICON_Production] Production to all adjacent tiles in the city."),
     ("LOC_BELIEF_INITIATION_RITES_NAME",                      "Initiation Rites"),
