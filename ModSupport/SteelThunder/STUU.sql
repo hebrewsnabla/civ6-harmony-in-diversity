@@ -336,7 +336,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_OTTOMAN_SIPAHI';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_OTTOMAN_SIPAHI';
 -- -- 腓尼基
-update Units set Cost = 65, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 30, RangedCombat = 31, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
+update Units set Cost = 65, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 35, RangedCombat = 31, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
 -- -- 瑞典
 update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
