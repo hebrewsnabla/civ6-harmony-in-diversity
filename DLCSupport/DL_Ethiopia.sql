@@ -30,6 +30,7 @@ values
 update Policies set Description = 'LOC_POLICY_CHARISMATIC_LEADER_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_CHARISMATIC_LEADER';
 update Policies set Description = 'LOC_POLICY_DIPLOMATIC_LEAGUE_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 update Policies set Description = 'LOC_POLICY_GUNBOAT_DIPLOMACY_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_GUNBOAT_DIPLOMACY';
+update Traits set Description = 'LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION' where TraitType = 'TRAIT_LEADER_FOUNDER_CARTHAGE';
 
 insert or replace into PolicyModifiers  
     (PolicyType,                    ModifierId)
