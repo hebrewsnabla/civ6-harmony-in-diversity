@@ -311,7 +311,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER
 update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CREE_OTEHTAPIW';
 -- -- 印尼
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
+update Units set Cost = 60, Maintenance = 2, BaseMoves = 3, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
 -- -- 加拿大
 update Units set Cost = 670, Maintenance = 7, BaseMoves = 5, Range = 0, Combat = 90, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_CANADA_HMCS_HAIDA';
