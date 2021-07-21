@@ -107,8 +107,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [IC
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
 
--- Naval Melee: can transport units in the sea.
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed' where Language = 'en_US' and (
+-- Naval Melee: can transport units in the sea. Reveals Naval Raiders within sight range.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed. Reveals Naval Raiders within sight range.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
@@ -117,6 +117,16 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formatio
     Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
     Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
     Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');
+
+-- Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.' where Language = 'en_US' and (
+    Tag = 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PRIVATEER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_UBOAT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION');
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -224,8 +234,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
 
--- 海军近战可以运兵
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
+-- 海军近战可以运兵，能使视线范围中的海军袭击者暴露位置。
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。能使视线范围中的海军袭击者暴露位置。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
@@ -234,3 +244,13 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有
     Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
     Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
     Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');
+
+-- Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军袭击者：能够进行海岸扫荡。除非与单位相邻，否则只能被海军近战单位发现。' where Language = 'zh_Hans_CN' and (
+    Tag = 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PRIVATEER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_UBOAT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION');
