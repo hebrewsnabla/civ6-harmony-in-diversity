@@ -9,7 +9,11 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Recon: Faster [ICON_M
     Tag = 'LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION' or
     Tag = 'LOC_UNIT_SPEC_OPS_DESCRIPTION' or
     Tag = 'LOC_UNIT_SKIRMISHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION');
+    Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION' or
+    Tag = 'LOC_UNIT_INCA_CHASQUI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MAORI_TUPARA_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MAPUCHE_GUERILLA_DESCRIPTION');
+-- -- LOC_UNIT_BRAZILIAN_BANDEIRANTE_DESCRIPTION   PROMOTION_CLASS_RECON
 
 -- Melee: ability cancelled.
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Melee: +5 [ICON_Strength] when attacking Districts.' where Language = 'en_US' and (
@@ -36,7 +40,25 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Recon: Faster [ICON_M
 --     Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION' or
---     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION');
+--     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION' or
+--      -- STUU
+--     Tag = 'LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_INDIAN_SEPOY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SCOTTISH_GALLOWGLASS_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAYAN_HOLKAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_COLOMBIAN_BRITISH_LEGION_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ETHIOPIAN_MEHAL_SEFARI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BYZANTINE_VARANGIAN_GUARD_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_VIETNAMESE_VIETCONG_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION');
 
 -- +5 [ICON_Strength] Combat Strength against Cavalry units, extra 
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [ICON_Strength] Combat Strength when defending cavalry units.' where Language = 'en_US' and (
@@ -46,7 +68,12 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
     Tag = 'LOC_UNIT_AT_CREW_DESCRIPTION' or
     Tag = 'LOC_UNIT_MODERN_AT_DESCRIPTION' or
     Tag = 'LOC_UNIT_ZULU_IMPI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION');
+    Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION' or
+     -- STUU
+    Tag = 'LOC_UNIT_SUMERIAN_PHALANX_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SPANISH_TERCIO_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_LANDSKNECHT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION');
 
 -- Ranged: ability cancelled.
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Ranged: -17 [ICON_Strength] Combat Strength when attacking districts or Naval units. +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. -3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles.' where Language = 'en_US' and (
@@ -64,7 +91,16 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
 --     Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
---     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
+--     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION' or
+--      -- STUU
+--     Tag = 'LOC_UNIT_GREEK_PELTAST_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ENGLISH_LONGBOWMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ZULU_ASSEGAI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MALI_SOFA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BABYLONIAN_BOWMAN_DESCRIPTION' or
+--     Tag = 'UNIT_CHINESE_CHOKONU');
 
 -- +1 [ICON_Movement] Movement if starting in flat tiles. 
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -5 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
@@ -80,7 +116,16 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -5 [IC
     Tag = 'LOC_UNIT_CUIRASSIER_DESCRIPTION' or
     Tag = 'LOC_UNIT_MALI_MANDEKALU_CAVALRY_DESCRIPTION' or
     Tag = 'LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION');
+    Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION' or
+    -- STUU
+    Tag = 'LOC_UNIT_FRENCH_GENDARME_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SCYTHIAN_AMAZON_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PERSIAN_CATAPHRACT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GEORGIAN_TADZREULI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_SIPAHI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GAUL_CARRUS_DESCRIPTION' or
+    Tag = 'LOC_UNIT_UNIT_GERMAN_PANZER_DESCRIPTION');
 
 -- Pillaging costs only 1 [ICON_Movement] Movement point. 
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
@@ -95,7 +140,15 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [IC
     Tag = 'LOC_UNIT_HUNGARY_BLACK_ARMY_DESCRIPTION' or
     Tag = 'LOC_UNIT_HUNGARY_HUSZAR_DESCRIPTION' or
     Tag = 'LOC_UNIT_COLOMBIAN_LLANERO_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION');
+    Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION' or
+    -- STUU
+    Tag = 'LOC_UNIT_RUSSIAN_DRUZHINA_DESCRIPTION' or
+    Tag = 'LOC_UNIT_AMERICAN_AH64_APACHE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SWEDEN_HAKKAPELIITTA_DESCRIPTION');
+-- -- LOC_UNIT_ROMAN_EQUITE_DESCRIPTION   PROMOTION_CLASS_LIGHT_CAVALRY
+-- -- LOC_UNIT_POLISH_UHLAN_DESCRIPTION   PROMOTION_CLASS_LIGHT_CAVALRY
 
 -- Siege: temporary disable.
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Siege: +1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry.' where Language = 'en_US' and (
@@ -105,10 +158,13 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [IC
 --     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
---     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+--     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROMAN_ONAGER_DESCRIPTION');
+-- -- LOC_UNIT_MACEDONIAN_BALLISTA_DESCRIPTION   PROMOTION_CLASS_SIEGE
 
--- Naval Melee: can transport units in the sea.
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed' where Language = 'en_US' and (
+-- Naval Melee: can transport units in the sea. Reveals Naval Raiders within sight range.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed. Reveals Naval Raiders within sight range.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
@@ -116,7 +172,20 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formatio
     Tag = 'LOC_UNIT_IRONCLAD_DESCRIPTION' or
     Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
     Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');
+    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION' or
+    Tag = 'LOC_UNIT_KHMER_WAR_CANOE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_KOREAN_TURTLE_SHIP_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CANADA_HMCS_HAIDA_DESCRIPTION');
+
+-- Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.' where Language = 'en_US' and (
+    Tag = 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PRIVATEER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_UBOAT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION');
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -127,7 +196,10 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]侦察：在丘陵、
     Tag = 'LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION' or
     Tag = 'LOC_UNIT_SPEC_OPS_DESCRIPTION' or
     Tag = 'LOC_UNIT_SKIRMISHER_DESCRIPTION' or
-    Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION');
+    Tag = 'LOC_UNIT_INCA_WARAKAQ_DESCRIPTION' or
+    Tag = 'LOC_UNIT_INCA_CHASQUI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MAORI_TUPARA_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MAPUCHE_GUERILLA_DESCRIPTION');
 
 -- 近战能力取消。
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]近战：攻击区域防御时+5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
@@ -154,7 +226,25 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]侦察：在丘陵、
 --     Tag = 'LOC_UNIT_SULEIMAN_JANISSARY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_GAUL_GAESATAE_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_BABYLONIAN_SABUM_KIBITTUM_DESCRIPTION' or
---     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION');
+--     Tag = 'LOC_UNIT_SWEDEN_CAROLEAN_DESCRIPTION' or
+--      -- STUU
+--     Tag = 'LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_INDIAN_SEPOY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_SCOTTISH_GALLOWGLASS_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MAYAN_HOLKAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_COLOMBIAN_BRITISH_LEGION_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ETHIOPIAN_MEHAL_SEFARI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BYZANTINE_VARANGIAN_GUARD_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_VIETNAMESE_VIETCONG_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION');
 
 -- 与骑兵单位作战时+5 [ICON_Strength] 战斗力，
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑兵单位时额外+10 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
@@ -164,7 +254,12 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑
     Tag = 'LOC_UNIT_AT_CREW_DESCRIPTION' or
     Tag = 'LOC_UNIT_MODERN_AT_DESCRIPTION' or
     Tag = 'LOC_UNIT_ZULU_IMPI_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION');
+    Tag = 'LOC_UNIT_PIKE_AND_SHOT_DESCRIPTION' or
+     -- STUU
+    Tag = 'LOC_UNIT_SUMERIAN_PHALANX_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SPANISH_TERCIO_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_LANDSKNECHT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION');
 
 -- 远程能力取消。
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]远程：攻击区域防御和海军单位时-17 [ICON_Strength] 战斗力。占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。攻击森林或雨林中的目标时-3 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
@@ -181,7 +276,16 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑
 --     Tag = 'LOC_UNIT_KOREAN_HWACHA_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_MONGOLIAN_KESHIG_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_MAYAN_HULCHE_DESCRIPTION' or
---     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION');
+--     Tag = 'LOC_UNIT_VIETNAMESE_VOI_CHIEN_DESCRIPTION' or
+--      -- STUU
+--     Tag = 'LOC_UNIT_GREEK_PELTAST_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ENGLISH_LONGBOWMAN_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ZULU_ASSEGAI_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MALI_SOFA_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_BABYLONIAN_BOWMAN_DESCRIPTION' or
+--     Tag = 'UNIT_CHINESE_CHOKONU');
 
 -- 重骑兵：如果在平坦地形开始回合，本回合+1 [ICON_Movement] 移动力。
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时-5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
@@ -197,7 +301,16 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时
     Tag = 'LOC_UNIT_CUIRASSIER_DESCRIPTION' or
     Tag = 'LOC_UNIT_MALI_MANDEKALU_CAVALRY_DESCRIPTION' or
     Tag = 'LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION' or
-    Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION');
+    Tag = 'LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION' or
+    -- STUU
+    Tag = 'LOC_UNIT_FRENCH_GENDARME_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SCYTHIAN_AMAZON_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PERSIAN_CATAPHRACT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GEORGIAN_TADZREULI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_SIPAHI_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GAUL_CARRUS_DESCRIPTION' or
+    Tag = 'LOC_UNIT_UNIT_GERMAN_PANZER_DESCRIPTION');
 
 -- 劫掠只消耗一点 [ICON_Movement] 移动力。
 update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区域防御时-7 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
@@ -212,7 +325,13 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区
     Tag = 'LOC_UNIT_HUNGARY_BLACK_ARMY_DESCRIPTION' or
     Tag = 'LOC_UNIT_HUNGARY_HUSZAR_DESCRIPTION' or
     Tag = 'LOC_UNIT_COLOMBIAN_LLANERO_DESCRIPTION' or
-    Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION');
+    Tag = 'LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_EXPANSION2_DESCRIPTION' or
+    -- STUU
+    Tag = 'LOC_UNIT_RUSSIAN_DRUZHINA_DESCRIPTION' or
+    Tag = 'LOC_UNIT_AMERICAN_AH64_APACHE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SWEDEN_HAKKAPELIITTA_DESCRIPTION');
 
 -- 攻城能力临时取消
 -- update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻城：若相邻轻重骑兵，则+1 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
@@ -222,10 +341,12 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区
 --     Tag = 'LOC_UNIT_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_TREBUCHET_DESCRIPTION' or
---     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION');
+--     Tag = 'LOC_UNIT_KHMER_DOMREY_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_DESCRIPTION' or
+--     Tag = 'LOC_UNIT_ROMAN_ONAGER_DESCRIPTION');
 
--- 海军近战可以运兵
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。' where Language = 'zh_Hans_CN' and (
+-- 海军近战可以运兵，能使视线范围中的海军袭击者暴露位置。
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。能使视线范围中的海军袭击者暴露位置。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
@@ -233,4 +354,17 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有
     Tag = 'LOC_UNIT_IRONCLAD_DESCRIPTION' or
     Tag = 'LOC_UNIT_DESTROYER_DESCRIPTION' or
     Tag = 'LOC_UNIT_PHOENICIA_BIREME_DESCRIPTION' or
-    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION');
+    Tag = 'LOC_UNIT_PORTUGUESE_NAU_DESCRIPTION' or
+    Tag = 'LOC_UNIT_KHMER_WAR_CANOE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_KOREAN_TURTLE_SHIP_DESCRIPTION' or
+    Tag = 'LOC_UNIT_CANADA_HMCS_HAIDA_DESCRIPTION');
+
+-- Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军袭击者：能够进行海岸扫荡。除非与单位相邻，否则只能被海军近战单位发现。' where Language = 'zh_Hans_CN' and (
+    Tag = 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_PRIVATEER_DESCRIPTION' or
+    Tag = 'LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION' or
+    Tag = 'LOC_UNIT_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_GERMAN_UBOAT_DESCRIPTION' or
+    Tag = 'LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION' or
+    Tag = 'LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION');

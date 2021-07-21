@@ -338,6 +338,7 @@ values
 update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'
     where UnitType = 'UNIT_HD_BARBARIAN_GALLEY' or UnitType = 'UNIT_HD_BARBARIAN_QUADRIREME';
 update Technologies set BarbarianFree = 0 where TechnologyType = 'TECH_SHIPBUILDING';
+update Modifiers set SubjectRequirementSetId = 'HD_UNIT_IS_NOT_BARBARIAN_GALLEY_REQUIREMENTS' where ModifierId = 'UNIT_COASTAL_RAID';
 
 -- UNIT_BARBARIAN_RAIDER
 insert or replace into TypeTags

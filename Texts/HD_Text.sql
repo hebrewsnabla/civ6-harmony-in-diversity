@@ -9,6 +9,9 @@ values
     ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must at City Center[ENDCOLOR]"),
     ("LOC_FLYOVER_AZTEC_SACRIFICE",                                           "Human Sacrifice[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
+    ("LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "Citizen Yields change (per citizen in this district):"),
+    ("LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "Citizen Yields (per citizen in this district):"),
+    ("LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "Citizen Yields (per citizen in this district)"),
     ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}-tile regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
     ("LOC_IMPROVEMENT_GOODY_BUILDER_NAME",                                    "Please Ignore"),
@@ -69,8 +72,12 @@ values
     ("zh_Hans_CN",  "LOC_FLYOVER_AZTEC_SACRIFICE",                                           "活人献祭[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
+    ("zh_Hans_CN",  "LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "在此区域中工作的 [ICON_Citizen] 专家收益变动："),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "每个在此区域中工作的 [ICON_Citizen] 专家收益："),
+    ("zh_Hans_CN",  "LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "每个在此区域中工作的 [ICON_Citizen] 专家收益"),
+    ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENS",                                               "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 专家{1_Amount : plural 1?槽位; other?槽位;}"),
+    ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 专家{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}环辐射：其基础产出延伸到{1_num}个单元格内的市中心，但多个同种建筑的辐射不叠加。"),
-    ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 公民{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_HAPPINESS_DELIGHTED_NAME",                                          "愉悦"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_GOODY_BUILDER_NAME",                                    "请忽略"),
     ("zh_Hans_CN",  "LOC_LOYALTY_LEVEL_4_NAME",                                              "绝对忠诚"),
