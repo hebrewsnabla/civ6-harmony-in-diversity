@@ -103,26 +103,9 @@
       <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
     </Criteria>
     <!-- Mods -->
-    <Criteria id="CityPolicies_Conflict_Expansion2">
+    <Criteria id="CityPolicies_With_Suk">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
-    </Criteria>
-    <Criteria id="CityPolicies_Conflict_Expansion2_With_Suk">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse inverse="1">4a03cf08-f557-490c-a095-04907f251915</ModInUse>
       <ModInUse>805cc499-c534-4e0a-bdce-32fb3c53ba38</ModInUse>
-    </Criteria>
-    <Criteria id="FarmOnFreshHills_Conflict_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse inverse="1">aa162e00-b301-425f-8666-af258a8f16e8</ModInUse>
-    </Criteria>
-    <Criteria id="Netherlands_Rework_Conflict_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse inverse="1">97ff0be1-268e-4acc-adda-5c2a820b6521</ModInUse>
-    </Criteria>
-    <Criteria id="Medieval_Pirate_Conflict_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse inverse="1">1d396ebb-6554-4f17-ad44-c95f600b2185</ModInUse>
     </Criteria>
     <Criteria id="BetterTradeScreen_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -557,61 +540,61 @@
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
     </ImportFiles>
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
     </ImportFiles>
-    <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <!-- <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <!-- <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
         <LuaContext>UnitPanel</LuaContext>
         <LuaReplace>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript> -->
-    <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="Expansion2">
       <Properties>
         <LoadOrder>15500</LoadOrder>
         <LuaContext>WorldViewIconsManager</LuaContext>
         <LuaReplace>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="FarmOnFreshHills_Conflict_Expansion2">
+    <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="Expansion2">
       <Properties><LoadOrder>15506</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
     </UpdateText>
     <!-- CityPolicies -->
-    <UpdateDatabase id="CityPolicies" criteria="CityPolicies_Conflict_Expansion2">
+    <UpdateDatabase id="CityPolicies" criteria="Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
       <File>SubMods/CityPolicies/CityPolicies.sql</File>
     </UpdateDatabase>
-    <UpdateText id="CityPolicies_Texts" criteria="CityPolicies_Conflict_Expansion2">
+    <UpdateText id="CityPolicies_Texts" criteria="Expansion2">
       <Properties><LoadOrder>15602</LoadOrder></Properties>
       <File>SubMods/CityPolicies/HD_CityPolicies_Texts.sql</File>
     </UpdateText>
-    <UpdateIcons id="CityPolicies_Icons" criteria="CityPolicies_Conflict_Expansion2">
+    <UpdateIcons id="CityPolicies_Icons" criteria="Expansion2">
       <Properties><LoadOrder>15603</LoadOrder></Properties>
       <File>SubMods/CityPolicies/CityPolicies_Icons.xml</File>
     </UpdateIcons>
-    <AddUserInterfaces id="CityPolicy_CityPanelOverview_Instance" criteria="CityPolicies_Conflict_Expansion2">
+    <AddUserInterfaces id="CityPolicy_CityPanelOverview_Instance" criteria="Expansion2">
       <Properties>
         <LoadOrder>15604</LoadOrder>
         <Context>InGame</Context>
       </Properties>
       <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Instances.xml</File>
     </AddUserInterfaces>
-    <ImportFiles id="CityPolicy_CityPanelOverview_Import" criteria="CityPolicies_Conflict_Expansion2">
+    <ImportFiles id="CityPolicy_CityPanelOverview_Import" criteria="Expansion2">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies.lua</File>
     </ImportFiles>
-    <ImportFiles id="CityPolicy_CityPanelOverview_Suk_Import" criteria="CityPolicies_Conflict_Expansion2_With_Suk">
+    <ImportFiles id="CityPolicy_CityPanelOverview_Suk_Import" criteria="CityPolicies_With_Suk">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>SubMods/CityPolicies/UI/CityPanelOverview_CityPolicies_Suk.lua</File>
     </ImportFiles>
-    <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="CityPolicies_Conflict_Expansion2">
+    <ImportFiles id="ToolTipLoader_CityPolicies_Import" criteria="Expansion2">
       <Properties><LoadOrder>15605</LoadOrder></Properties>
       <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     </ImportFiles>
@@ -637,24 +620,24 @@
       <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     </UpdateText>
     <!-- Netherlands -->
-    <UpdateDatabase id="HD_Netherlands_Rework" criteria="Netherlands_Rework_Conflict_Expansion2">
+    <UpdateDatabase id="HD_Netherlands_Rework" criteria="Expansion2">
       <Properties><LoadOrder>15608</LoadOrder></Properties>
       <File>SubMods/Netherlands/NetherLands.sql</File>
     </UpdateDatabase>
-    <AddGameplayScripts id="HD_Netherlands_Rework_Lua" criteria="Netherlands_Rework_Conflict_Expansion2">
+    <AddGameplayScripts id="HD_Netherlands_Rework_Lua" criteria="Expansion2">
       <Properties><LoadOrder>15608</LoadOrder></Properties>
       <File>SubMods/Netherlands/NetherLands.lua</File>
     </AddGameplayScripts>
     <!-- Medieval Pirate -->
-    <UpdateDatabase id="HD_Medieval_Pirate" criteria="Medieval_Pirate_Conflict_Expansion2">
+    <UpdateDatabase id="HD_Medieval_Pirate" criteria="Expansion2">
       <Properties><LoadOrder>15610</LoadOrder></Properties>
       <File>SubMods/MedievalPirate/DL_Database.sql</File>
     </UpdateDatabase>
-    <UpdateIcons id="HD_Medieval_Pirate_Icons" criteria="Medieval_Pirate_Conflict_Expansion2">
+    <UpdateIcons id="HD_Medieval_Pirate_Icons" criteria="Expansion2">
       <Properties><LoadOrder>15610</LoadOrder></Properties>
       <File>SubMods/MedievalPirate/DL_Icons.xml</File>
     </UpdateIcons>
-    <UpdateText id="HD_Medieval_Pirate_Text" criteria="Medieval_Pirate_Conflict_Expansion2">
+    <UpdateText id="HD_Medieval_Pirate_Text" criteria="Expansion2">
       <Properties><LoadOrder>15610</LoadOrder></Properties>
       <File>SubMods/MedievalPirate/DL_Texts.sql</File>
     </UpdateText>
