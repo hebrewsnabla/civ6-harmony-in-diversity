@@ -45,31 +45,31 @@ insert or replace into Civics_XP2 (CivicType, RandomPrereqs, HiddenUntilPrereqCo
 select CivicType, 1, 1 from Civics where EraType = 'ERA_FUTURE';
 
 -- v3
-update CivicRandomCosts set Cost = 4900 where Cost = 3500;
+update CivicRandomCosts set Cost = 5200 where Cost = 3500;
 -- 
-update CivicRandomCosts set Cost = 4620 where Cost = 3300;
-update CivicRandomCosts set Cost = 4480 where Cost = 3200;
+update CivicRandomCosts set Cost = 4800 where Cost = 3300;
+update CivicRandomCosts set Cost = 4600 where Cost = 3200;
 -- Information
-update CivicRandomCosts set Cost = 4200 where Cost = 3000;
-update CivicRandomCosts set Cost = 4000 where Cost = 2880;
+update CivicRandomCosts set Cost = 4300 where Cost = 3000;
+update CivicRandomCosts set Cost = 4100 where Cost = 2880;
 -- Atomic
-update CivicRandomCosts set Cost = 3300 where Cost = 2415;
+update CivicRandomCosts set Cost = 3500 where Cost = 2415;
 update CivicRandomCosts set Cost = 2900 where Cost = 1955; --average 2100
 -- Modern
-update CivicRandomCosts set Cost = 2130 where Cost = 1640;
-update CivicRandomCosts set Cost = 2000 where Cost = 1540;
+update CivicRandomCosts set Cost = 2300 where Cost = 1640;
+update CivicRandomCosts set Cost = 2100 where Cost = 1540;
 -- Industrial
-update CivicRandomCosts set Cost = 1500 where Cost = 1210; -- average 1150
-update CivicRandomCosts set Cost = 1170 where Cost = 800; -- average 905
+update CivicRandomCosts set Cost = 1550 where Cost = 1210; -- average 1150
+update CivicRandomCosts set Cost = 1300 where Cost = 800; -- average 905
 -- Renaissance
-update CivicRandomCosts set Cost = 950 where Cost = 720;
-update CivicRandomCosts set Cost = 620 where Cost = 440; -- average 520
+update CivicRandomCosts set Cost = 1050 where Cost = 720;
+update CivicRandomCosts set Cost = 780 where Cost = 440; -- average 520
 -- Medival
-update CivicRandomCosts set Cost = 500 where Cost = 420;
-update CivicRandomCosts set Cost = 360 where Cost = 300;
+update CivicRandomCosts set Cost = 550 where Cost = 420;
+update CivicRandomCosts set Cost = 400 where Cost = 300;
 -- Classical
-update CivicRandomCosts set Cost = 190 where Cost = 175;
-update CivicRandomCosts set Cost = 120 where Cost = 110;
+update CivicRandomCosts set Cost = 210 where Cost = 175;
+update CivicRandomCosts set Cost = 140 where Cost = 110;
 -- Ancient
 update CivicRandomCosts set Cost = 70 where Cost = 70;
 update CivicRandomCosts set Cost = 50 where Cost = 50;
