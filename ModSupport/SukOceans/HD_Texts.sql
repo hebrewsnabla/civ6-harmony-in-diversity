@@ -126,7 +126,7 @@ VALUES
         (
             "LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_DESCRIPTION",
             "zh_Hans_CN",
-            "建在海岸单元格上的区域，可增加 [ICON_Amenities] 宜居度，让人民生活幸福。若相邻海藻森林+1 [ICON_Amenities] 宜居度。无法建在拥有娱乐设施的城市中。无法建在礁石上。"
+            "建在海岸单元格上的区域，可增加 [ICON_Amenities] 宜居度，让人民生活幸福。若相邻海藻森林+1 [ICON_Amenities] 宜居度。无法建在拥有娱乐设施的城市中。"
         ),
         (
             "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",
@@ -143,6 +143,11 @@ VALUES
 --========================================================================================================================
 -- Water Park Changes
 --========================================================================================================================
+        (
+            "LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_DESCRIPTION",
+            "en_US",
+            "A district placed out on a coastal tile dedicated to keeping your people happy by increasing [ICON_Amenities] Amenities. +1 [ICON_Amenities] Amenity when adjacent to Kelp Forest. Cannot be built in a city with an Entertainment Complex."
+        ),
         (
             "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",
             "en_US",
