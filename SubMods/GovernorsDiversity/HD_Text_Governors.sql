@@ -87,7 +87,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME",                     "地产商人"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "城市中商业中心和港口的相邻加成+100%。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "每个未改良的地貌可向该城市提供+4 [ICON_Gold] 金币。该城市中与未改良地貌相邻的单元格可获得+1魅力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+10%。"),

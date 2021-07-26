@@ -73,7 +73,7 @@ update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_AdvancedHaciendaAdjacency';   
 update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_HaciendaAdjacency';
 update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Plantation_HaciendaAdjacency';
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Hacienda_PlantationAdjacency';
+update Adjacency_YieldChanges set TilesRequired = 1 , ObsoleteTech = NULL where ID = 'Hacienda_PlantationAdjacency';
 -- update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Hacienda_MechanizedPlantationAdjacency';
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_HACIENDA' and YieldChangeId = 'Hacienda_MechanizedPlantationAdjacency';
 
