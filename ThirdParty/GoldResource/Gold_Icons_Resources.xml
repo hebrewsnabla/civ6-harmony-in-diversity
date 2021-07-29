@@ -6,7 +6,7 @@
 		<Row Name="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES" IconSize="50" IconsPerRow="1" IconsPerColumn="1"      Filename="Australia_Resources50.dds"/>
 		<Row Name="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES" IconSize="64" IconsPerRow="1" IconsPerColumn="1"      Filename="Australia_Resources.dds"/>
 		<Row Name="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES" IconSize="256" IconsPerRow="1" IconsPerColumn="1"     Filename="Australia_Resources256.dds"/>
-		<Row Name="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES_FOW" IconSize="64" IconsPerRow="1" IconsPerColumn="1"  Filename="Australia_Resources_FOW.dds"/>
+		<Row Name="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES_FOW" IconSize="256" IconsPerRow="1" IconsPerColumn="1"  Filename="Australia_Resources256_FOW.dds"/>
 	</IconTextureAtlases>
 	<IconDefinitions>
 		<Row Name="ICON_RESOURCE_GOLD"         Atlas="ICON_ATLAS_AUSTRALIA_SCENARIO_RESOURCES" Index="0"/>

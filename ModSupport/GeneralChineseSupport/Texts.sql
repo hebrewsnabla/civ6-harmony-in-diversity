@@ -175,3 +175,36 @@ values
     ("zh_Hans_CN",  "LOC_MSE_EXT_WINDOW_TITLE_FILTER",                                      "选择过滤项目"),
     ("zh_Hans_CN",  "LOC_MSE_EXT_SEARCH_TERMS_IMPROVEMENT_DOES_NOT_MATCH_RESOURCE_DESC",    "搜索因未正确改良而无法享受收益的资源"),
     ("zh_Hans_CN",  "LOC_MSE_EXT_SEARCH_TERMS_IMPROVEMENT_DOES_NOT_MATCH_RESOURCE",         "未正确改良的资源");
+
+-- Custom Notifications
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                Text)
+values
+    ("zh_Hans_CN",  "LOC_CN_BUTTON_TOOLTIP",            "自定义提示"),
+    ("zh_Hans_CN",  "LOC_CN_TITLE",                     "自定义提示"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_POP_CHECKBOX",         "提示城市人口增长"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_BORDER_CHECKBOX",      "提示城市边界扩展"),
+    ("zh_Hans_CN",  "LOC_CN_TRADE_DEAL_CHECKBOX",       "提示交易到期"),
+    ("zh_Hans_CN",  "LOC_CN_RELIGION_CHECKBOX",         "提示宗教传播"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_POP_TITLE",            "城市人口增长"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_POP_MESSAGE",          "{1_CN_City_Name} 的人口增长了"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_POP_MESSAGE_1",        "村民选择了 {1_CN_City_Name} 作为他们的新家"),
+    ("zh_Hans_CN",  "LOC_CN_RELIGION_TITLE",            "宗教传播"),
+    ("zh_Hans_CN",  "LOC_CN_RELIGION_MESSAGE",          "{1_CN_Religion_Name} 现在是 {2_CN_City_Name} 的主流宗教了"),
+    ("zh_Hans_CN",  "LOC_CN_RELIGION_MESSAGE_1",        "{1_CN_Religion_Name} 不再是 {2_CN_City_Name} 的主流宗教了"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_BORDER_TITLE",         "城市边界扩展"),
+    ("zh_Hans_CN",  "LOC_CN_CITY_BORDER_MESSAGE",       "{1_CN_City_Name} 城市扩展了他的边界"),
+    ("zh_Hans_CN",  "LOC_CN_TRADE_DEAL_TITLE",          "交易到期"),
+    ("zh_Hans_CN",  "LOC_CN_TRADE_DEAL_MESSAGE",        "你与 {1_CN_Player_Name} 的交易到期了");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- Policy Change Reminder
+insert or replace into LocalizedText
+    (Language,      Tag,                                Text)
+values
+    ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_TITLE",         "你有新的政策卡"),
+    ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_DESC",          "有新的政策卡刚刚解锁。[NEWLINE]这回合改变政策与政体是免费的。[NEWLINE][NEWLINE]是否不修改继续回合？"),
+    ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_CHANGE",        "改变政策"),
+    ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_CONTINUE",      "下一回合");
