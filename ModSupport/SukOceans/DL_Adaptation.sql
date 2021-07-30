@@ -3,6 +3,7 @@
 -------------------------------------
 
 -- update Resources set SeaFrequency = 10 where ResourceType = 'RESOURCE_SUK_CORAL';
+-- update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIER';
 
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_SQUID' and YieldType = 'YIELD_GOLD';
 insert or replace into Resource_YieldChanges

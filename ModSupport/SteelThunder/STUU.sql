@@ -378,9 +378,11 @@ update Modifiers set SubjectRequirementSetId = 'URBAN_RAIDER_REQUIREMENTS' where
 update Units set Cost = 270, Maintenance = 6, BaseMoves = 3, Range = 0, Combat = 78, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_VIETNAMESE_VIETCONG';
 -- 葡萄牙
-update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_SPANISH_JINETE';
-update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 1, Combat = 46, RangedCombat = 33, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SPANISH_JINETE';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_JINETE';
+-- update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_SPANISH_JINETE';
+-- update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 1, Combat = 46, RangedCombat = 33, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SPANISH_JINETE';
+-- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_JINETE';
+update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
+update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
 
 ---------------------------------------------------------------------------------------------------
 -- Unit ability

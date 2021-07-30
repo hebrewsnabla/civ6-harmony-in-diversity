@@ -35,7 +35,7 @@ insert or replace into Modifiers
     (ModifierId,                            ModifierType,                               RunOnce,    Permanent,  SubjectRequirementSetId)
 values 
     ('TORRE_DE_BELEM_OFF_HOME_POP',         'MODIFIER_PLAYER_ADJUST_EXTRA_STARTING_POPULATION_OFF_HOME_CONTINENT',  0, 0,   NULL),
-    ('TORRE_DE_BELEM_SETTLERS_MOVEMENT',    'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',    0,          0,          'UNIT_IS_SETTLER'),
+    ('TORRE_DE_BELEM_SETTLERS_MOVEMENT',    'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',    0,          0,          'HD_UNIT_IS_SETTLER'),
     ('TORRE_DE_BELEM_GRANT_SETTLERS',       'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',  1,          1,          NULL);
 
 insert or replace into ModifierArguments

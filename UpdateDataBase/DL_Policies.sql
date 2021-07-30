@@ -6,7 +6,7 @@
 -- 雄伟壮丽移除信仰购买，打折变为20%
 delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE' and ModifierId = 'COMMEMORATION_INFRASTRUCTURE_GA_PURCHASE_CIVILIAN';
 insert or replace into CommemorationModifiers (CommemorationType, ModifierId) values
-	('COMMEMORATION_INFRASTRUCTURE', 'COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT');
+	('COMMEMORATION_INFRASTRUCTURE', 'COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD');
 update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_BUILDER_DISCOUNT_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_SETTLER_DISCOUNT_MODIFIER' and Name = 'Amount';
 -- 百花齐放每个区域2文化
@@ -15,12 +15,12 @@ update ModifierArguments set Value =2 where ModifierId = 'COMMEMORATION_CULTURAL
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,								SubjectRequirementSetId)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_GOLDEN_AGE_SETTLER');
+	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_GOLDEN_AGE_SETTLER');
 
 insert or replace into ModifierArguments
 	(ModifierId,											Name,		Value)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT',	'Amount',	2);
+	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',	'Amount',	2);
 -- 滚滚蒸汽工业相邻锤转瓶
 insert or replace into CommemorationModifiers 
 	(CommemorationType,				ModifierId)

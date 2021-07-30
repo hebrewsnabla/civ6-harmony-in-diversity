@@ -187,6 +187,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="Dramatic_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_DRAMATICAGES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="TreeRandomizer_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -917,6 +925,15 @@
       <Properties><LoadOrder>16052</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     </UpdateText>
+    <!-- Dramatic Ages -->
+    <UpdateDatabase id="DramaticAgesMode" criteria="Dramatic_Mode_Expansion2">
+      <Properties><LoadOrder>16054</LoadOrder></Properties>
+      <File>GameModeSupport/DramaticMode/DL_Dramatic.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="DramaticAgesMode_Text" criteria="Dramatic_Mode_Expansion2">
+      <Properties><LoadOrder>16054</LoadOrder></Properties>
+      <File>GameModeSupport/DramaticMode/HD_Dramatic_Text.sql</File>
+    </UpdateText>
     <!-- Random Civics and Techs -->
     <UpdateDatabase id="TreeRandomizerMode" criteria="TreeRandomizer_Mode_Expansion2">
       <Properties><LoadOrder>16055</LoadOrder></Properties>
@@ -990,6 +1007,8 @@
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
+    <File>GameModeSupport/DramaticMode/DL_Dramatic.sql</File>
+    <File>GameModeSupport/DramaticMode/HD_Dramatic_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
       <!-- Military Testing Mode -->
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>

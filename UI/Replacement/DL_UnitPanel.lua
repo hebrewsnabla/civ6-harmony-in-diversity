@@ -219,7 +219,7 @@ function AddActionButton(instance:table, action:table)
             if r ~= -1 then
                 local resource = GameInfo.Resources[r];
                 if resource ~= nil then
-                    if (resource.ResourceClassType == 'RESOURCECLASS_STRATEGIC') then
+                    if ((resource.ResourceClassType == 'RESOURCECLASS_STRATEGIC') or (resource.ResourceClassType == RESOURCECLASS_ARTIFACT)) then
                         if not player:GetResources():IsResourceVisible(r) then
                             print('hide harvest resource: ', resource.ResourceType);
                             instance.UnitActionButton:SetHide(true);
