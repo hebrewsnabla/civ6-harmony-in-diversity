@@ -29,6 +29,15 @@ ToolTipHelper.GetDistrictToolTip = function(districtType)
     else
         table.insert(toolTipLines, Locale.Lookup("LOC_DISTRICT_NAME"));
     end
+
+    -----------------------------------------------------------------------------------
+    -- add specilty district
+    if (district.RequiresPopulation) then
+        table.insert(toolTipLines, Locale.Lookup("LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT"));
+    else
+        table.insert(toolTipLines, Locale.Lookup("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT"));
+    end
+    -----------------------------------------------------------------------------------
     
     if(not Locale.IsNilOrWhitespace(description)) then
         table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup(description));

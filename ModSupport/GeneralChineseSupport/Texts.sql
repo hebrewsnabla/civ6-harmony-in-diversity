@@ -44,7 +44,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_BUTTON",                                    "最伟大的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TITLE",                                     "世界上最伟大的城市"),
-    ("zh_Hans_CN",  "LOC_AKGC_CITIES_TITLE_HISTORIC",                            "{1_author}在{2_era}最伟大的城市"),
+    ("zh_Hans_CN",  "LOC_AKGC_CITIES_TITLE_HISTORIC",                            "由{1_author}统计的在{2_era}最伟大的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TAB_WORLD",                                 "世界"),
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TAB_EMPIRE",                                "帝国"),
     ("zh_Hans_CN",  "LOC_AKGC_UNDISCOVERED_CITY",                                "未发现的城市"),
@@ -86,7 +86,7 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_CITY_HISTORY_UNKNOWN",                             "{1_year}: 未知事件{2_name}"),
     ("zh_Hans_CN",  "LOC_AKGC_ERADROPDOWN_CURRENTERA",                           "当前 {1_year}"),
     ("zh_Hans_CN",  "LOC_AKGC_ENDOFERARANK_NOTIFICATION_HEADER",                 "{1_era} 最伟大的城市"),
-    ("zh_Hans_CN",  "LOC_AKGC_ENDOFERARANK_NOTIFICATION_TEXT",                   "{1_person} 完成了一个关于全世界城市的调查，并宣称 {3_city} 的 {2_civ} 城市是 {4_era} 最伟大的城市。"),
+    ("zh_Hans_CN",  "LOC_AKGC_ENDOFERARANK_NOTIFICATION_TEXT",                   "{1_person} 完成了一个关于全世界城市的调查，并宣称 {2_civ} {3_city} 是 {4_era} 最伟大的城市。"),
     ("zh_Hans_CN",  "LOC_AKGC_ENDOFERARANK_UNKNOWNWINNER_NOTIFICATION_TEXT",     "{1_person} 完成了一个关于全世界城市的调查，并宣称我们的城市 {2_city} 是 {4_era} 第{3_rank}伟大的城市。"),
     ("zh_Hans_CN",  "LOC_AKGC_UNKNOWN_AUTHOR",                                   "一位无名学者"),
     ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_HEADER",               "最伟大的城市：选项设置提示"),

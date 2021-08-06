@@ -88,6 +88,7 @@ update Units set PrereqTech = NULL, PrereqCivic = 'CIVIC_THEOLOGY', PurchaseYiel
 update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 42, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
 update UnitReplaces set ReplacesUnitType = 'UNIT_MAN_AT_ARMS' where CivUniqueUnitType = 'UNIT_ARABIAN_GHAZI';
+update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_ARABIAN_GHAZI';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_GHAZI' and ModifierId = '50_PERCENT_POST_COMBAT_FAITH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_GHAZI' and ModifierId = 'CONQUISTADOR_CITY_RELIGION_COMBAT';
 insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_GHAZI',  'DISCIPLES_LAND_VICTORY_SPREAD');

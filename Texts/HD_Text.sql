@@ -9,6 +9,8 @@ values
     ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must at City Center[ENDCOLOR]"),
     ("LOC_FLYOVER_AZTEC_SACRIFICE",                                           "Human Sacrifice[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
+    ("LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "Specialty District"),
+    ("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "Non-Specialty District"),
     ("LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "Citizen Yields change (per citizen in this district):"),
     ("LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "Citizen Yields (per citizen in this district):"),
     ("LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "Citizen Yields (per citizen in this district)"),
@@ -72,6 +74,9 @@ values
     ("zh_Hans_CN",  "LOC_FLYOVER_AZTEC_SACRIFICE",                                           "活人献祭[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
+
+    ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "专业化区域"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "非专业化区域"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "在此区域中工作的 [ICON_Citizen] 专家收益变动："),
     ("zh_Hans_CN",  "LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "每个在此区域中工作的 [ICON_Citizen] 专家收益："),
     ("zh_Hans_CN",  "LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "每个在此区域中工作的 [ICON_Citizen] 专家收益"),

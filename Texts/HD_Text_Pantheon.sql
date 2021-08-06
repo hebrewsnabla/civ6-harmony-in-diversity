@@ -63,7 +63,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "选择后即可在首都中获得1个侦察单位，若其初始未拥有免费升级，则获得一次免费升级。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "种植园+1 [ICON_Culture] 文化值和 +2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格—1魅力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力，所有营地+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商业家）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
