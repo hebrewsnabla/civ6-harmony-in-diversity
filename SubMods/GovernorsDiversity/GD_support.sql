@@ -4,6 +4,7 @@
 
 -- The New Global Parameters.
 insert or replace into GlobalParameters (Name, Value) values
+    ('REYNA_CONVERT_PERCENTAGE', 100),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE', 10),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE', 6);
 

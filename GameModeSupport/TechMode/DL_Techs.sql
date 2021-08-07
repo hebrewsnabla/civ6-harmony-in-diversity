@@ -32,3 +32,41 @@ update Technologies set Cost = 180 where Cost = 160;
 -- Ancient
 update Technologies set Cost = 80 where Cost = 80;
 update Technologies set Cost = 50 where Cost = 50;
+
+
+-------------------------------------
+-- AI adjustments
+-------------------------------------
+-- For high difficulty AI.
+insert or replace into TraitModifiers (TraitType,   ModifierId) values
+    ('TRAIT_LEADER_MAJOR_CIV',                      'HD_HIGH_DIFFICULTY_FOOD_SCALING');
+
+insert or replace into Modifiers (ModifierId,               ModifierType,                                   OwnerRequirementSetId) values
+    ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',    'PLAYER_IS_HIGH_DIFFICULTY_AI');
+
+insert or replace into ModifierArguments (ModifierId,       Name,           Value) values
+    ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                     'YieldType',    'YIELD_FOOD');
+
+insert or replace into ModifierArguments (ModifierId,   Name,       Type,                               Value,  Extra) values
+    ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                 'Amount',   'LinearScaleFromDefaultHandicap',   0,      2);
+
+-- For Debug
+-- delete from RequirementSetRequirements where RequirementSetId = 'PLAYER_IS_HIGH_DIFFICULTY_AI' and RequirementId = 'REQUIRES_PLAYER_IS_AI';
+
+-- Production Scale: 85 + 15n
+-- update ModifierArguments set Extra = 17
+--     where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
+
+-- Science Scale: 40 + 15n
+update ModifierArguments set Extra = 3
+    where ModifierId like 'HIGH_DIFFICULTY_SCIENCE_SCALING_AT_LEAST_%' and Name = 'Amount';
+
+-- Culture Scale: 40 + 15n
+update ModifierArguments set Extra = 3
+    where ModifierId like 'HIGH_DIFFICULTY_CULTURE_SCALING_AT_LEAST_%' and Name = 'Amount';
+
+-- Gold Scale: 40 + 15n
+update ModifierArguments set Extra = 8
+    where ModifierId = 'HIGH_DIFFICULTY_GOLD_SCALING' and Name = 'Amount';
+
+-- Faith Scale: 30 + 10n

@@ -29,8 +29,9 @@ local m_CivicExploration = GameInfo.Civics['CIVIC_EXPLORATION'].Index
 
 local m_DummyMagnus = GameInfo.Buildings['BUILDING_DUMMY_MAGNUS'].Index
 local m_DummyNoMagnus = GameInfo.Buildings['BUILDING_DUMMY_NO_MAGNUS'].Index
-local m_EffectDistance = tonumber(GameInfo.GlobalParameters['MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE'].Value)
-local m_LiangWonderGreatEngineerPercentage = tonumber(GameInfo.GlobalParameters['LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE'].Value)
+local m_EffectDistance = GlobalParameters.MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE
+local m_LiangWonderGreatEngineerPercentage = GlobalParameters.LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE
+local m_ReynaConvertPercentage = GlobalParameters.REYNA_CONVERT_PERCENTAGE
 
 function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
     local player = Players[ePlayer]
@@ -199,7 +200,7 @@ function UpdateReynaTradeRoutesYield(playerID)
                         if yieldInfo.Amount > 0 then
                             local yieldDetails = GameInfo.Yields[yieldInfo.YieldIndex];
                             -- Round amount to integer.
-                            local roundedValue = math.floor(yieldInfo.Amount + 0.5);
+                            local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
                             totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
                         end
                     end

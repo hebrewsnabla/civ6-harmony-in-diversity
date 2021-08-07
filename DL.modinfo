@@ -939,13 +939,17 @@
       <Properties><LoadOrder>16055</LoadOrder></Properties>
       <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
     </UpdateDatabase>
-    <!-- AT Test -->
-    <UpdateDatabase id="AITest_update" criteria="AITest_Mode_Expansion2">
+    <!-- Dev Test -->
+    <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18000</LoadOrder></Properties>
-      <File>GameModeSupport/TestAIMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/TestAIMode/DL_AI.sql</File>
-      <File>GameModeSupport/TestAIMode/DL_Temp.sql</File>
+      <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
+      <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     </UpdateDatabase>
+    <UpdateText id="DevTest_update_text" criteria="AITest_Mode_Expansion2">
+      <Properties><LoadOrder>18001</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
+    </UpdateText>
     <!-- Military Testing -->
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -973,7 +977,6 @@
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Options at last -->
-    HD_PostponeWorldCongress_XP2
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_PostponeWorldCongress_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/PostponeWorldCongress.sql</File>
@@ -1021,10 +1024,11 @@
     <File>GameModeSupport/TechMode/DL_Techs.sql</File>
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
     <File>GameModeSupport/TechMode/HD_Texts.sql</File>
-      <!-- AI Test Mode -->
-    <File>GameModeSupport/TestAIMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TestAIMode/DL_AI.sql</File>
-    <File>GameModeSupport/TestAIMode/DL_Temp.sql</File>
+      <!-- Dev Test Mode -->
+    <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
+    <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
+    <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
