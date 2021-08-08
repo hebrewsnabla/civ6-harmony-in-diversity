@@ -950,6 +950,10 @@
       <Properties><LoadOrder>18001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateIcons id="DevTest_update_icon" criteria="AITest_Mode_Expansion2">
+      <Properties><LoadOrder>18001</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
+    </UpdateIcons>
     <!-- Military Testing -->
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1029,6 +1033,7 @@
     <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
+    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>

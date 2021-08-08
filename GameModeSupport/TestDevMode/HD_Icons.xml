@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <IconDefinitions>
+    <Update><Where Name="ICON_PROMOTION_SENTRY"/> <Set Index="18"/></Update>
+    <Update><Where Name="ICON_PROMOTION_SPYGLASS"/> <Set Index="19"/></Update>
+  </IconDefinitions>
+</GameInfo>
