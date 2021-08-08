@@ -2,6 +2,11 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Amenity
+update Happinesses set GrowthModifier = 5 where HappinessType = 'HAPPINESS_DELIGHTED';
+update Happinesses set GrowthModifier = 10 where HappinessType = 'HAPPINESS_HAPPY';
+update Happinesses set GrowthModifier = 20 where HappinessType = 'HAPPINESS_ECSTATIC'; 
+
 -- Governors
 update GlobalParameters set Value = 9 where Name = 'MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE';
 update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId like 'GENERAL_SERVICE_REGIONAL_%_MODIFIER';
@@ -119,4 +124,25 @@ update Policies set PrereqCivic = 'CIVIC_MERCANTILISM' where PolicyType = 'POLIC
 -- Dip
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_FEUDALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_TERRITORIAL_WAR';
 
+insert or replace into ModifierArguments
+    (ModifierId,                                                    Name,                   Value)
+values
+    ('STANDARD_DIPLOMACY_TRADE_RELATIONS',                          'TradeBonus',           4);
+
 -- Trade Route
+update District_TradeRouteYields set YieldChangeAsInternationalDestination = 3 where DistrictType = 'DISTRICT_GOVERNMENT' and YieldType = 'YIELD_GOLD';
+
+insert or replace into DistrictModifiers (DistrictType, ModifierId)
+select DistrictType, 'HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES' from District_TradeRouteYields
+where YieldChangeAsInternationalDestination != 0;
+
+insert or replace into Modifiers
+    (ModifierId,                                                    ModifierType)
+values
+    ('HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES',                    'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                                    Name,                   Value)
+values
+    ('HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES',                    'YieldType',            'YIELD_GOLD'),
+    ('HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES',                    'Amount',               1);
