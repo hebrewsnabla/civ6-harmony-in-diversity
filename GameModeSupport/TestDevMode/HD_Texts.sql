@@ -3,7 +3,10 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",                         "Holy Site districts get +1 [ICON_Faith] Faith from  each adjacent Tundra tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent Tundra tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Tundra or Tundra Hills tiles. "),
+    ("LOC_BELIEF_FISHING_TRADITION_NAME",                                     "Fishing Traidition"),
+    ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",                           "+1 [ICON_Production] Production and +2 [ICON_Gold] Gold from Fishing Boats over Bonus Resources."),
+    ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                              "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Faith] Faith from Fishing Boats for the cities have Holy Site. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),
+    ("LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",                         "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Tundra tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent Tundra tiles. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Tundra or Tundra Hills tiles. "),
     -- ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                       "When chosen receive two recon units in your capital. The recon units start with a free promotion if they do not have. +1 [ICON_Movement] Movement for all Recon Units."),
     ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",                               "When you send an [ICON_ENVOY] Envoy to a City-State it adds 200 Religious pressure to that City-State.Reduced levy army cost by 20 percent. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion, in addition to any envoy from a City-State quest. Each City-State suzerain will provide +2 [ICON_FAITH] Faith and +2 [ICON_GOLD] Gold."),
     ("LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                               "+1 [ICON_TradeRoute] Trade Route capacity.[NEWLINE][NEWLINE]Your [ICON_TradeRoute] Trade Routes from this city get +2 [ICON_Gold] Gold for every Bonus resource within 3 tiles of the city and in this city's territory. 1 free Great Merchant appears near the city where the wonder was built.[NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with a Market and adjacent to [ICON_RESOURCE_CATTLE] Cattle."),
@@ -26,6 +29,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                                 "捕鱼传统"),
+    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",                       "改良加成资源的渔船+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                          "改良奢侈资源的渔船+1 [ICON_Food] 食物。拥有圣地的城市，渔船+1 [ICON_Faith] 信仰。如城市中有渔船，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",                     "圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值。圣地给相邻的冻土单元格+1 [ICON_Culture] 文化值。若圣地位于冻土或冻土丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                   "选择后即可在首都中获得2个侦察单位，若其初始未拥有免费升级，则获得一次免费升级。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",                           "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+2 [ICON_GOLD] 金币。"),
