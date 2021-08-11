@@ -90,8 +90,9 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_ENDOFERARANK_UNKNOWNWINNER_NOTIFICATION_TEXT",     "{1_person} 完成了一个关于全世界城市的调查，并宣称我们的城市 {2_city} 是 {4_era} 第{3_rank}伟大的城市。"),
     ("zh_Hans_CN",  "LOC_AKGC_UNKNOWN_AUTHOR",                                   "一位无名学者"),
     ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_HEADER",               "最伟大的城市：选项设置提示"),
-    ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_ON",              "[NEWLINE]可在游戏中设置选项。[NEWLINE][NEWLINE]你可以点击此处访问选项界面，或点击“最伟大的城市”窗口左上角的齿轮图标。"),
-    ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_OFF",             "[NEWLINE]可在游戏中设置选项。[NEWLINE][NEWLINE]你可以点击此处访问选项界面，或点击“最伟大的城市”窗口左上角的齿轮图标。"),
+    ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_ON",              "[NEWLINE]你可以点击此处访问选项界面，或点击“最伟大的城市”窗口左上角的齿轮图标。[NEWLINE][NEWLINE]已检测到伟大城市的奖励：[COLOR_GREEN]已启用[ENDCOLOR]时代结束时的奖励。[NEWLINE]"),
+    ("zh_Hans_CN",  "LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_OFF",             "[NEWLINE]你可以点击此处访问选项界面，或点击“最伟大的城市”窗口左上角的齿轮图标。[NEWLINE][NEWLINE]未检测到伟大城市的奖励：[COLOR_RED]未启用[ENDCOLOR]时代结束时的奖励。[NEWLINE]"),
+    ("zh_Hans_CN",  "LOC_AKGC_OPT_GENERAL",                                      "通用设置"),
     ("zh_Hans_CN",  "LOC_AKGC_OPT_NumWorldCitiesToShow",                         "显示世界城市的数量"),
     ("zh_Hans_CN",  "LOC_AKGC_OPT_NumOwnCitiesToShow",                           "显示帝国内城市的数量"),
     ("zh_Hans_CN",  "LOC_AKGC_OPT_IncludeMinors",                                "包含城邦"),
@@ -111,6 +112,11 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_OPT_GrantEndofEraAwards",                          "在每个时代结束时奖励最顶尖的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_OPT_ForDiscoveredCities",                          "已发现的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_OPT_ForUndiscoverCities",                          "未发现的城市"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_RANK",                                         "排名"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_CITY",                                         "城市"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_POPULATION",                                   "人口"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_SPECIAL",                                      "特殊"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_WONDERS",                                      "奇观"),
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_OPTIONS_TT",                                "选项"),
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSRESET",                             "重置"),
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSSAVE",                              "保存"),
@@ -208,3 +214,11 @@ values
     ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_DESC",          "有新的政策卡刚刚解锁。[NEWLINE]这回合改变政策与政体是免费的。[NEWLINE][NEWLINE]是否不修改继续回合？"),
     ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_CHANGE",        "改变政策"),
     ("zh_Hans_CN",  "LOC_FF16_NEWPOLICY_CONTINUE",      "下一回合");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- Fix CN Trans
+insert or replace into LocalizedText
+    (Language,      Tag,                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_NAME",          "阿瑜陀耶"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_DESCRIPTION",   "阿瑜陀耶城邦");
