@@ -187,11 +187,51 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="BarbarianClans_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_BARBARIAN_CLANS</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="SecretSocieties_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_SECRETSOCIETIES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="Dramatic_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <Group>Game</Group>
         <ConfigurationId>GAMEMODE_DRAMATICAGES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="Apocalypse_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_APOCALYPSE</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="Heroes_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_HEROES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="TowerDefense_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_TOWERDEFENSE</ConfigurationId>
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
@@ -911,33 +951,78 @@
     <!-- Monopolies -->
     <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
+      <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
+      <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     </UpdateDatabase>
     <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     </UpdateIcons>
     <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16052</LoadOrder></Properties>
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
+    </UpdateText>
+    <!-- Barbarian Clans -->
+    <UpdateDatabase id="BarbarianClansMode" criteria="BarbarianClans_Mode_Expansion2">
+      <Properties><LoadOrder>16052</LoadOrder></Properties>
+      <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="BarbarianClansMode_Text" criteria="BarbarianClans_Mode_Expansion2">
+      <Properties><LoadOrder>16052</LoadOrder></Properties>
+      <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans_Text.sql</File>
+    </UpdateText>
+    <!-- Secret Societies -->
+    <UpdateDatabase id="SecretSocietiesMode" criteria="SecretSocieties_Mode_Expansion2">
+      <Properties><LoadOrder>16054</LoadOrder></Properties>
+      <File>GameModeSupport/SecretSocietiesMode/HD_SecretSocieties.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="SecretSocietiesMode_Text" criteria="SecretSocieties_Mode_Expansion2">
+      <Properties><LoadOrder>16054</LoadOrder></Properties>
+      <File>GameModeSupport/SecretSocietiesMode/HD_SecretSocieties_Text.sql</File>
     </UpdateText>
     <!-- Dramatic Ages -->
     <UpdateDatabase id="DramaticAgesMode" criteria="Dramatic_Mode_Expansion2">
-      <Properties><LoadOrder>16054</LoadOrder></Properties>
-      <File>GameModeSupport/DramaticMode/DL_Dramatic.sql</File>
+      <Properties><LoadOrder>16056</LoadOrder></Properties>
+      <File>GameModeSupport/DramaticMode/HD_Dramatic.sql</File>
     </UpdateDatabase>
     <UpdateText id="DramaticAgesMode_Text" criteria="Dramatic_Mode_Expansion2">
-      <Properties><LoadOrder>16054</LoadOrder></Properties>
+      <Properties><LoadOrder>16056</LoadOrder></Properties>
       <File>GameModeSupport/DramaticMode/HD_Dramatic_Text.sql</File>
+    </UpdateText>
+    <!-- Apocalypse -->
+    <UpdateDatabase id="ApocalypseMode" criteria="Apocalypse_Mode_Expansion2">
+      <Properties><LoadOrder>16058</LoadOrder></Properties>
+      <File>GameModeSupport/ApocalypseMode/HD_Apocalypse.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ApocalypseMode_Text" criteria="Apocalypse_Mode_Expansion2">
+      <Properties><LoadOrder>16058</LoadOrder></Properties>
+      <File>GameModeSupport/ApocalypseMode/HD_Apocalypse_Text.sql</File>
+    </UpdateText>
+    <!-- Heroes -->
+    <UpdateDatabase id="HeroesMode" criteria="Heroes_Mode_Expansion2">
+      <Properties><LoadOrder>16060</LoadOrder></Properties>
+      <File>GameModeSupport/HeroesMode/HD_Heroes.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="HeroesMode_Text" criteria="Heroes_Mode_Expansion2">
+      <Properties><LoadOrder>16060</LoadOrder></Properties>
+      <File>GameModeSupport/HeroesMode/HD_Heroes_Text.sql</File>
+    </UpdateText>
+    <!-- Tower Defense -->
+    <UpdateDatabase id="TowerDefenseMode" criteria="TowerDefense_Mode_Expansion2">
+      <Properties><LoadOrder>16062</LoadOrder></Properties>
+      <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="TowerDefenseMode_Text" criteria="TowerDefense_Mode_Expansion2">
+      <Properties><LoadOrder>16062</LoadOrder></Properties>
+      <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense_Text.sql</File>
     </UpdateText>
     <!-- Random Civics and Techs -->
     <UpdateDatabase id="TreeRandomizerMode" criteria="TreeRandomizer_Mode_Expansion2">
-      <Properties><LoadOrder>16055</LoadOrder></Properties>
-      <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
+      <Properties><LoadOrder>16064</LoadOrder></Properties>
+      <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
     </UpdateDatabase>
     <!-- Dev Test -->
     <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
@@ -1010,13 +1095,23 @@
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <!-- Game Mode -->
-    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Adapt.sql</File>
-    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Resource_Gold.xml</File>
-    <File>GameModeSupport/MonopoliesMode/DL_Monopoly_Icons.xml</File>
+    <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
+    <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
+    <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
-    <File>GameModeSupport/DramaticMode/DL_Dramatic.sql</File>
+    <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans.sql</File>
+    <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans_Text.sql</File>
+    <File>GameModeSupport/SecretSocietiesMode/HD_SecretSocieties.sql</File>
+    <File>GameModeSupport/SecretSocietiesMode/HD_SecretSocieties_Text.sql</File>
+    <File>GameModeSupport/DramaticMode/HD_Dramatic.sql</File>
     <File>GameModeSupport/DramaticMode/HD_Dramatic_Text.sql</File>
-    <File>GameModeSupport/TreeRandomizerMode/DL_CivTechs.sql</File>
+    <File>GameModeSupport/ApocalypseMode/HD_Apocalypse.sql</File>
+    <File>GameModeSupport/ApocalypseMode/HD_Apocalypse_Text.sql</File>
+    <File>GameModeSupport/HeroesMode/HD_Heroes.sql</File>
+    <File>GameModeSupport/HeroesMode/HD_Heroes_Text.sql</File>
+    <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense.sql</File>
+    <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense_Text.sql</File>
+    <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
       <!-- Military Testing Mode -->
     <File>GameModeSupport/TestingMode/DL_Military.sql</File>
     <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
