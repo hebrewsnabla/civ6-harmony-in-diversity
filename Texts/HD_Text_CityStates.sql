@@ -146,3 +146,34 @@ values
     ("zh_Hant_HK",  "LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION",              "每個港口建築為城市提供+3 [ICON_Power] 電力。"),
     ("zh_Hant_HK",  "LOC_CIVILIZATION_CARDIFF_BONUS",                    "每個港口建築為城市提供+3 [ICON_Power] 電力。");
 
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                 Text)
+values
+    ("LOC_CITY_NAME_HONG_KONG_1",                         "Baikonur"),
+    ("LOC_CITY_NAME_HONG_KONG",                           "Baikonur"),
+    ("LOC_CIVILIZATION_HONG_KONG_DESCRIPTION",            "Baikonur city-state"),
+    ("LOC_CIVILIZATION_HONG_KONG_ADJECTIVE",              "Baikonur"),
+    ("LOC_CIVILIZATION_HONG_KONG_NAME",                   "Baikonur"),
+    ("LOC_LEADER_TRAIT_HONG_KONG_NAME",                   "Baikonur Suzerain Bonus"),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "Baikonur history 1"),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "Baikonur history 2"),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", "Baikonur history 3"),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "Baikonur history 4");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                 Text)
+values
+    ("zh_Hans_CN",  "LOC_CITY_NAME_HONG_KONG_1",                         "拜科努尔"),
+    ("zh_Hans_CN",  "LOC_CITY_NAME_HONG_KONG",                           "拜科努尔"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_DESCRIPTION",            "拜科努尔城邦"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_ADJECTIVE",              "拜科努尔的"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_NAME",                   "拜科努尔"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_NAME",                   "拜科努尔宗主国加成"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "拜科努尔背景1"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "拜科努尔背景2"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", "拜科努尔背景3"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "拜科努尔背景4");

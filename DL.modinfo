@@ -323,6 +323,10 @@
       <File>Texts/HD_Text_Units.sql</File>
       <!-- <File>Texts/HD_Text_Units_Late.sql</File> -->
     </UpdateText>
+    <UpdateIcons id="DL_FrontEnd_Icons">
+      <Properties><LoadOrder>16020</LoadOrder></Properties>
+      <File>UI/Icons/HD_Icons.xml</File>
+    </UpdateIcons>
     <UpdateText id="SukOceans_mod_support_text">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
@@ -390,6 +394,19 @@
       <File>Assets/UnitActions/sacrifice_50.dds</File>
       <File>Assets/UnitActions/sacrifice_80.dds</File>
       <File>Assets/UnitActions/sacrifice_256.dds</File>
+      <File>Assets/CityStates/CivBaikonur_22.dds</File>
+      <File>Assets/CityStates/CivBaikonur_30.dds</File>
+      <File>Assets/CityStates/CivBaikonur_32.dds</File>
+      <File>Assets/CityStates/CivBaikonur_36.dds</File>
+      <File>Assets/CityStates/CivBaikonur_44.dds</File>
+      <File>Assets/CityStates/CivBaikonur_45.dds</File>
+      <File>Assets/CityStates/CivBaikonur_48.dds</File>
+      <File>Assets/CityStates/CivBaikonur_50.dds</File>
+      <File>Assets/CityStates/CivBaikonur_64.dds</File>
+      <File>Assets/CityStates/CivBaikonur_80.dds</File>
+      <File>Assets/CityStates/CivBaikonur_128.dds</File>
+      <File>Assets/CityStates/CivBaikonur_200.dds</File>
+      <File>Assets/CityStates/CivBaikonur_256.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -884,6 +901,7 @@
       <File>UI/Icons/DL_Icons_Buildings.xml</File>
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
+      <File>UI/Icons/HD_Icons.xml</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
     </UpdateIcons>
@@ -1166,6 +1184,7 @@
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
+    <File>UI/Icons/HD_Icons.xml</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
@@ -1415,5 +1434,18 @@
     <File>Assets/UnitActions/sacrifice_50.dds</File>
     <File>Assets/UnitActions/sacrifice_80.dds</File>
     <File>Assets/UnitActions/sacrifice_256.dds</File>
+    <File>Assets/CityStates/CivBaikonur_22.dds</File>
+    <File>Assets/CityStates/CivBaikonur_30.dds</File>
+    <File>Assets/CityStates/CivBaikonur_32.dds</File>
+    <File>Assets/CityStates/CivBaikonur_36.dds</File>
+    <File>Assets/CityStates/CivBaikonur_44.dds</File>
+    <File>Assets/CityStates/CivBaikonur_45.dds</File>
+    <File>Assets/CityStates/CivBaikonur_48.dds</File>
+    <File>Assets/CityStates/CivBaikonur_50.dds</File>
+    <File>Assets/CityStates/CivBaikonur_64.dds</File>
+    <File>Assets/CityStates/CivBaikonur_80.dds</File>
+    <File>Assets/CityStates/CivBaikonur_128.dds</File>
+    <File>Assets/CityStates/CivBaikonur_200.dds</File>
+    <File>Assets/CityStates/CivBaikonur_256.dds</File>
   </Files>
 </Mod>
