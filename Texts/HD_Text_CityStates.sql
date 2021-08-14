@@ -157,10 +157,10 @@ values
     ("LOC_CIVILIZATION_HONG_KONG_ADJECTIVE",              "Baikonur"),
     ("LOC_CIVILIZATION_HONG_KONG_NAME",                   "Baikonur"),
     ("LOC_LEADER_TRAIT_HONG_KONG_NAME",                   "Baikonur Suzerain Bonus"),
-    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "Baikonur history 1"),
-    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "Baikonur history 2"),
-    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", "Baikonur history 3"),
-    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "Baikonur history 4");
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "Baikonur, formerly known as Leninsk (also, see Tyuratam), is a city of republic significancein Kazakhstan on the northern bank of the Syr Darya river, rented and administered by the Russian Federation. "),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "It was constructed to service the Baikonur Cosmodrome and was officially renamed Baikonur by Russian president Boris Yeltsin on December 20, 1995. During the Soviet period, it was sometimes referred to as Zvezdograd, Russian for 'Star City'."),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", ""),
+    ("LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -173,7 +173,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_ADJECTIVE",              "拜科努尔的"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_NAME",                   "拜科努尔"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_NAME",                   "拜科努尔宗主国加成"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "拜科努尔背景1"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "拜科努尔背景2"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", "拜科努尔背景3"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "拜科努尔背景4");
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_1", "拜科努尔——意思是“富裕的土地”——是位于哈萨克斯坦克孜勒奥尔达州的一座城市，位于锡尔河畔。面积57平方公里，人口约70,000人（2006年）。建于1955年，原名列宁斯克，以服务拜科努尔航天中心。苏联解体后由俄罗斯租用至2050年。1995年改名。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "原来的“拜科努尔”位于这里400公里之遥，属于卡拉干达州。1961年4月把发射中心命名为拜科努尔通常被认为是苏联掩人耳目之举。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", ""),
+    ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "");
