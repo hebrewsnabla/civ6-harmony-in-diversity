@@ -502,7 +502,7 @@ values
 	('VENETIAN_ARSENAL_COAST_GOLD',					'Amount', 			1);
 
 -- Terracotta Army
-update ModifierArguments set Value = 15 where ModifierId = 'TERRACOTTA_ARMY_LEVEL_UP_UNITS' and Name = 'Amount';
+update ModifierArguments set Value = 30 where ModifierId = 'TERRACOTTA_ARMY_LEVEL_UP_UNITS' and Name = 'Amount';
 insert or replace into BuildingModifiers
 	(BuildingType, 					ModifierId)
 values
