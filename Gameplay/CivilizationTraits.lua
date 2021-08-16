@@ -124,3 +124,20 @@ function HD_Aztec_Sacrifice(eOwner : number, iUnitID : number)
 
 end
 GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
+
+-- Saladin free Apostle when Great Prophet is created
+function OnSaladinReligionFoundedGrantApostle(playerID, religionID)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sLeader = playerConfig:GetLeaderTypeName()
+	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
+	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) then
+		local playerCities = player:GetCities()
+		if playerCities ~= nil then
+			local capitalCity = playerCities:GetCapitalCity()
+			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
+		end
+	end
+end
+
+Events.ReligionFounded.Add(OnSaladinReligionFoundedGrantApostle)
