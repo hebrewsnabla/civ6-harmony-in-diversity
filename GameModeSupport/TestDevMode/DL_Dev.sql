@@ -14,6 +14,13 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId like
 update GlobalParameters set Value = 50 where Name = 'REYNA_CONVERT_PERCENTAGE';
 update ModifierArguments set Value = 5 where Name = 'Amount' and ModifierId like 'REYNA_%_PERCENTAGE_BOOST';
 
+-- Buildings
+insert or replace into BuildingModifiers
+    (BuildingType,                          ModifierId)
+values
+    ('BUILDING_WORKSHOP',                    'WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST'),
+    ('BUILDING_WORKSHOP',                    'WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST');
+
 -- Districts
 delete from District_Adjacencies where YieldChangeId = 'HD_Commercial_Hub_Gold';
 delete from District_Adjacencies where YieldChangeId = 'HD_Suguba_Gold';
