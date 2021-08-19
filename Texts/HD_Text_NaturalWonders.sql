@@ -3,22 +3,22 @@
 insert or replace into EnglishText
     (Tag,                                                 Text)
 values
-    ("LOC_FEATURE_PAITITI_DESCRIPTION",                   "Three tile impassable natural wonder. Provides +5 [ICON_Gold] Gold to adjacent tiles. The city that owns the tile receives +4 [ICON_Gold] Gold on its outgoing international [ICON_TradeRoute] Trade Routes."),
-    ("LOC_FEATURE_FOUNTAIN_OF_YOUTH_DESCRIPTION",         "One tile natural wonder. Provides +6 [ICON_Science] Science, +2 [ICON_Faith] Faith, and Fresh Water. Land combat units that enter it receive the ability 'Water of Life' (+10 HP healing in any territory)."),
-    ("LOC_FEATURE_PIOPIOTAHI_DESCRIPTION",                "Three tile impassable natural wonder. Provides +1 [ICON_Culture] Culture and +2 [ICON_Gold] Gold to adjacent tiles."),
-    ("LOC_FEATURE_EVEREST_DESCRIPTION",                   "Three tile impassable natural wonder. Provides +2 [ICON_Faith] Faith to adjacent tiles. Religious units who move next to Mount Everest ignore Hills for the rest of the game."),
+    ("LOC_FEATURE_PAITITI_DESCRIPTION",                   "Three tile impassable Natural Wonder. Provides +5 [ICON_Gold] Gold to adjacent tiles. The city that owns the tile receives +4 [ICON_Gold] Gold on its outgoing international [ICON_TradeRoute] Trade Routes."),
+    ("LOC_FEATURE_FOUNTAIN_OF_YOUTH_DESCRIPTION",         "One tile Natural Wonder. Provides +6 [ICON_Science] Science, +2 [ICON_Faith] Faith, and Fresh Water. Land combat units that enter it receive the ability 'Water of Life' (+10 HP healing in any territory)."),
+    ("LOC_FEATURE_PIOPIOTAHI_DESCRIPTION",                "Three tile impassable Natural Wonder. Provides +1 [ICON_Culture] Culture and +2 [ICON_Gold] Gold to adjacent tiles."),
+    ("LOC_FEATURE_EVEREST_DESCRIPTION",                   "Three tile impassable Natural Wonder. Provides +2 [ICON_Faith] Faith to adjacent tiles. Religious units who move next to Mount Everest ignore Hills for the rest of the game."),
     ("LOC_FEATURE_LYSEFJORDEN_DESCRIPTION",               "Naval combat units that enter adjacent plots are granted their next promotion. Provides +1 [ICON_Production] Production to adjacent tiles."),
-    ("LOC_FEATURE_CRATER_LAKE_DESCRIPTION",               "One tile natural wonder. It appears as a Lake and provides +6 [ICON_Faith] Faith, +2 [ICON_Science] Science, and Fresh Water."),
-    ("LOC_FEATURE_BARRIER_REEF_DESCRIPTION",              "Two tile natural wonder that can be found on coastal terrain and provides +2 [ICON_Food] Food, +1 [ICON_Production] Production, +2 [ICON_Science] Science and +2 [ICON_Gold] Gold. Major adjacency bonus to the Campus district."),
-    ("LOC_FEATURE_HA_LONG_BAY_DESCRIPTION",               "Two tile natural wonder that can be found on coastal terrain and provides +4 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_CULTURE] Culture. +15 [ICON_Strength] Combat Strength when defending in this tile."),
-    ("LOC_FEATURE_DEAD_SEA_DESCRIPTION",                  "Two tile natural wonder. It appears as a Lake and provides +3 [ICON_Faith] Faith and +3 [ICON_Culture] Culture. Units heal completely if they heal for one turn adjacent to the Dead Sea. Does not provide Fresh Water."),
-    ("LOC_FEATURE_LAKE_RETBA_DESCRIPTION",                "Two tile natural wonder. It appears as a Lake and provides +3 [ICON_CULTURE] Culture, +2 [ICON_GOLD] Gold, +1 [ICON_FOOD] Food and +1 [ICON_PRODUCTION] Production. Does not provide Fresh Water."),
-    ("LOC_FEATURE_GOBUSTAN_DESCRIPTION",                  "Three tile natural wonder. It provides +3 [ICON_CULTURE] Culture and +2 [ICON_Production] Production."),
-    ("LOC_FEATURE_EYE_OF_THE_SAHARA_XP2_DESCRIPTION",     "Three tile natural wonder. Provides +1 [ICON_PRODUCTION] Production, +3 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith. After the game reaches the Atomic Era it provides an additional +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science."),
-    ("LOC_FEATURE_PANTANAL_DESCRIPTION",                  "Four tile natural wonder. Provides +3 [ICON_Food] Food and +2 [ICON_Culture] Culture."),
-    ("LOC_FEATURE_WHITEDESERT_DESCRIPTION",               "Four tile natural wonder. It provides +1 [ICON_Faith] Faith, +1 [ICON_SCIENCE] Science, +1 [ICON_Culture] Culture,  and +4 [ICON_GOLD] Gold."),
-    ("LOC_FEATURE_UBSUNUR_HOLLOW_DESCRIPTION",            "Four tile natural wonder. It appears as Marsh and provides +3 [ICON_FAITH] Faith, +1 [ICON_FOOD] Food, and +1 [ICON_PRODUCTION] Production."),
-    ("LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "Four tile natural wonder. It provides +2 [ICON_Food] Food, +2 [ICON_Production] Production,  and +1 [ICON_Science] Science.");
+    ("LOC_FEATURE_CRATER_LAKE_DESCRIPTION",               "One tile Natural Wonder. It appears as a Lake and provides +6 [ICON_Faith] Faith, +2 [ICON_Science] Science, and Fresh Water."),
+    ("LOC_FEATURE_BARRIER_REEF_DESCRIPTION",              "Two tile Natural Wonder that can be found on coastal terrain and provides +2 [ICON_Food] Food, +1 [ICON_Production] Production, +2 [ICON_Science] Science and +2 [ICON_Gold] Gold. Major adjacency bonus to the Campus district."),
+    ("LOC_FEATURE_HA_LONG_BAY_DESCRIPTION",               "Two tile Natural Wonder that can be found on coastal terrain and provides +4 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_CULTURE] Culture. +15 [ICON_Strength] Combat Strength when defending in this tile."),
+    ("LOC_FEATURE_DEAD_SEA_DESCRIPTION",                  "Two tile Natural Wonder. It appears as a Lake and provides +3 [ICON_Faith] Faith and +3 [ICON_Culture] Culture. Units heal completely if they heal for one turn adjacent to the Dead Sea. Does not provide Fresh Water."),
+    ("LOC_FEATURE_LAKE_RETBA_DESCRIPTION",                "Two tile Natural Wonder. It appears as a Lake and provides +3 [ICON_CULTURE] Culture, +2 [ICON_GOLD] Gold, +1 [ICON_FOOD] Food and +1 [ICON_PRODUCTION] Production. Does not provide Fresh Water."),
+    ("LOC_FEATURE_GOBUSTAN_DESCRIPTION",                  "Three tile Natural Wonder. It provides +3 [ICON_CULTURE] Culture and +2 [ICON_Production] Production."),
+    ("LOC_FEATURE_EYE_OF_THE_SAHARA_XP2_DESCRIPTION",     "Three tile Natural Wonder. Provides +1 [ICON_PRODUCTION] Production, +3 [ICON_SCIENCE] Science and +1 [ICON_Faith] Faith. After the game reaches the Atomic Era, it provides an additional +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science."),
+    ("LOC_FEATURE_PANTANAL_DESCRIPTION",                  "Four tile Natural Wonder. Provides +3 [ICON_Food] Food and +2 [ICON_Culture] Culture."),
+    ("LOC_FEATURE_WHITEDESERT_DESCRIPTION",               "Four tile Natural Wonder. It provides +1 [ICON_Faith] Faith, +1 [ICON_SCIENCE] Science, +1 [ICON_Culture] Culture,  and +4 [ICON_GOLD] Gold."),
+    ("LOC_FEATURE_UBSUNUR_HOLLOW_DESCRIPTION",            "Four tile Natural Wonder. It appears as Marsh and provides +3 [ICON_FAITH] Faith, +1 [ICON_FOOD] Food, and +1 [ICON_PRODUCTION] Production."),
+    ("LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "Four tile Natural Wonder. It provides +2 [ICON_Food] Food, +2 [ICON_Production] Production,  and +1 [ICON_Science] Science.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

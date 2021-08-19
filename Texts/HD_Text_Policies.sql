@@ -4,13 +4,13 @@ insert or replace into EnglishText
     (Tag,                                                                             Text)
 values
     -- New policies
-    ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+40% [ICON_PRODUCTION] Production toward Ancient and Classical era land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+40% [ICON_PRODUCTION] Production toward Ancient, Classical, Medieval and Renaissance era land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+40% [ICON_PRODUCTION] Production toward Modern era and earlier land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "+40% [ICON_PRODUCTION] Production toward all land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "+60% [ICON_PRODUCTION] Production toward Ancient and Classical era naval units. +15% for each Harbor District buildings the city has."),
-    ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+60% [ICON_PRODUCTION] Production toward Industrial era and earlier naval units. +15% for each Harbor District buildings the city has."),
-    ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+60% [ICON_PRODUCTION] Production toward all naval units, excluding Carriers. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+40% production speed toward Ancient and Classical era land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+40% production speed toward Ancient, Classical, Medieval and Renaissance era land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+40% production speed toward Modern era and earlier land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "+40% production speed toward all land military units. +15% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "+60% production speed toward Ancient and Classical era naval units. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+60% production speed toward Industrial era and earlier naval units. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+60% production speed toward all naval units, excluding Carriers. +15% for each Harbor District buildings the city has."),
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
