@@ -26,7 +26,7 @@ function RevealArea()
 		local pPlot = player:GetStartingPlot();
 		local tPlots = GetValidPlotsInRadiusR(pPlot, rad);
 		
-		for k, pPickPlot in pairs(tPlots) do
+		for k, pPickPlot in ipairs(tPlots) do
 			
 			--If there is a natural wonder on the tile, do not reveal. Any amount of revealing this tile will not allow the wonder discovery eureka during game.
 			if(pPickPlot:IsNaturalWonder()) then
