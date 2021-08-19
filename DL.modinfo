@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.0</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.0.1.2.</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.0.1.2。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.0.1.3.</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.0.1.3。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.0, the first stable version.</en_US>
@@ -720,6 +720,19 @@
       <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
     </UpdateDatabase>
+    <UpdateIcons id="BarbarianHorsesIcon" criteria="Expansion2">
+      <Properties><LoadOrder>15750</LoadOrder></Properties>
+      <File>ThirdParty/EpsBarbarians/Icons.xml</File>
+    </UpdateIcons>
+    <ImportFiles id="BarbarianHorsesIconImport" criteria="Expansion2">
+      <Properties><LoadOrder>15750</LoadOrder></Properties>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_22.dds</File>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_32.dds</File>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_38.dds</File>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_50.dds</File>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
+      <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
+    </ImportFiles>
     <UpdateDatabase id="GoldResourceDatabase" criteria="Expansion2">
       <Properties><LoadOrder>15800</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
@@ -754,6 +767,7 @@
       <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
       <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     </UpdateText>
+
     <!-- Artdef -->
     <UpdateArt id="HD_Art" criteria="Expansion2">
       <Properties><LoadOrder>15999</LoadOrder></Properties>
@@ -1305,6 +1319,14 @@
     <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
     <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
     <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
+    <!-- EpsTweak for Barbarians -->
+    <File>ThirdParty/EpsBarbarians/Icons.xml</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_22.dds</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_32.dds</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_38.dds</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_50.dds</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
+    <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>
     <File>DLCSupport/DL_Aztec.sql</File>
