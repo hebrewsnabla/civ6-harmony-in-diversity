@@ -111,8 +111,8 @@ values
 
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
 	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',
-    'LOC_ABILITY_SPY_AND_TRADER_BONUS_SIGHT_NAME',
-    'LOC_ABILITY_SPY_AND_TRADER_BONUS_SIGHT_DESCRIPTION',
+    NULL,
+    NULL,
     0),
     ('ABILITY_EAGLE_WARRIOR',
     'LOC_ABILITY_EAGLE_WARRIOR_NAME',
