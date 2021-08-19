@@ -13,7 +13,7 @@ values
     ("LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION",                 "City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith. Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Granary."),
     ("LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "+50% construction speed towards defensive buildings. +75% [ICON_Production] Production towards Districts in cities without a Specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength."),
     ("LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME",                     "Messenger of the Gods"),
-    ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "When chosen, receive a recon unit with free promotion in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
+    ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "When chosen, receive two recon units in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
     ("LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "+1 [ICON_Food] Food and +1 [ICON_Culture] Culture from Pastures."),
     ("LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "+1 [ICON_Culture] Culture and +2 [ICON_Gold] Gold from Plantations."),
     ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh. Floodplain tiles no longer lower adjacent tiles' Appeal."),

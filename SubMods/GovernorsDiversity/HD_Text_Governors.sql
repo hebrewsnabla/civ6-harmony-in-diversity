@@ -48,8 +48,8 @@ values
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_NAME",                                         "PlaceHolder"),
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "Please Ignore"),
     ("LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "This building requires {1_Building}."),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "Elected Office"),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "When Governor Magnus establishes in the city, the Elected Office provides +3 of all yields to all cities within 6 tiles. "),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "Elected Officer"),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "When Governor Magnus establishes in the city, the General Services Office provides +3 of all yields to all cities within 6 tiles."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "The city receives yields from all nearby District buildings with regional bonuses (not just from the first building of the same type)."),
     -- Liang
     ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "Rural Planning"),
