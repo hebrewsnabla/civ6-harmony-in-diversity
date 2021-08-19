@@ -27,8 +27,8 @@ function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPe
         local CityReligions = CityReligion:GetReligionsInCity()
         local religions = Game.GetReligion():GetReligions();
         if religions ~= nil then
-            for _, religion in pairs(religions) do
-                for _, beliefIndex in pairs(religion.Beliefs) do 
+            for _, religion in ipairs(religions) do
+                for _, beliefIndex in ipairs(religion.Beliefs) do 
                     if  beliefIndex == belief then                      
                         if (religion.Religion == Majority) then
                             Utils.ChangeFaithBalance(playerID, amount)

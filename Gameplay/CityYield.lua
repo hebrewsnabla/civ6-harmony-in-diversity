@@ -1,3 +1,5 @@
+include("SupportFunctions");
+
 CityYield = {};
 -- ==================================================================
 -- Cache city yield in the following format inside city properties:
@@ -31,7 +33,7 @@ CityYield.ClearYield = function(playerID, cityID, sourceType)
     yields["YIELD_GOLD"] = 0;
     yields["YIELD_PRODUCTION"] = 0;
     yields["YIELD_SCIENCE"] = 0;
-    for yieldType, amount in pairs(yields) do
+    for yieldType, amount in orderedPairs(yields) do
         CityYield.ChangeYield(playerID, cityID, amount, yieldType, sourceType);
     end
 end

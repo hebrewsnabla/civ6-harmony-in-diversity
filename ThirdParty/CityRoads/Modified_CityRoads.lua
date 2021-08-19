@@ -36,9 +36,10 @@ function GetRouteTypeForPlayer(player)
 	return route.Index;
 end
 
+local m_Tech_Wheel = GameInfo.Technologies['TECH_THE_WHEEL'].Index;
 function OnResearchCompleted(ePlayer, eTech)
 	-- print('CityRoads:OnResearchCompleted:', 'Player', ePlayer, 'Tech', eTech);
-	if ePlayer >= 0 and eTech == 10 then
+	if ePlayer >= 0 and eTech == m_Tech_Wheel then
 		-- place roads on the improvements roads after researching TECH_THE_WHEEL
 		local player = Players[ePlayer];
 		if not player:IsBarbarian() then
@@ -47,7 +48,7 @@ function OnResearchCompleted(ePlayer, eTech)
 			for i, pCity in pCities:Members() do
 				local playerRouteType = GetRouteTypeForPlayer(player);
 				local pPlots = pCity:GetOwnedPlots();
-				for key, plot in pairs(pPlots) do
+				for key, plot in ipairs(pPlots) do
 					if not plot:IsWater() and plot:GetImprovementType() >= 0 then
 						local currentRouteType = plot:GetRouteType(plot);
 						if currentRouteType == RouteTypes.NONE or CompareRoutes(playerRouteType,currentRouteType) then

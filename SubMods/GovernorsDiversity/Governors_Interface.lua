@@ -1,5 +1,6 @@
 -- Governors_interface.lua
 -- 
+include("SupportFunctions");
 
 Utils = ExposedMembers.DLHD.Utils;
 CityYield = ExposedMembers.DLHD.CityYield;
@@ -40,7 +41,7 @@ function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
         if (m_GovernorAmbassadorID == eGovernor) and (m_GovernorPromotion_TributumID == ePromotion) then
             local playersMetIDs = player:GetDiplomacy():GetPlayersMetIDs()
             if playersMetIDs ~= nil then
-                for _, id in pairs(playersMetIDs) do
+                for _, id in ipairs(playersMetIDs) do
                     local other_player = Players[id]
                     if isMinor(other_player) then
                         Utils.SendEnvoy(ePlayer, id)
@@ -209,7 +210,7 @@ function UpdateReynaTradeRoutesYield(playerID)
 
             -- Need to update city yields no matter the player has trade routes or not, in case the trade routes are cancelled or raided.
             -- Change the city yields.
-            for yieldType, amount in pairs(totalYields) do
+            for yieldType, amount in orderedPairs(totalYields) do
                 CityYield.ChangeYield(playerID, currentCity:GetID(), amount, yieldType, CityYield.Type.MULTINATIONAL_CORP);
             end
 
