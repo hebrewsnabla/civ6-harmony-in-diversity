@@ -4,8 +4,8 @@ insert or replace into EnglishText
     (Tag,                                               Text)
 values
     ("LOC_UNIT_DL_MEDIEVAL_PIRATE_NAME",                "Pirate Ship"),
-    ("LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION",         "Medieval era Naval Raiders, have the ability to coastal raid. Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range."),
-    ("LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION",    "Ottoman unique Medieval era naval unit that replaces the Pirate Ship. It costs no [ICON_Movement] Movement to coastal raid. Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range.");
+    ("LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION",         "Medieval era Naval Raiders that have the ability to coastal raid. Can only be seen by other Naval Raiders unless adjacent to them. Reveals Naval Raiders within sight range."),
+    ("LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION",    "Ottoman unique Medieval era naval unit that replaces the Pirate Ship. It costs no [ICON_Movement] Movement to coastal raid. Can only be seen by other Naval Raiders unless adjacent to them. Reveals Naval Raiders within sight range.")
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
