@@ -1526,3 +1526,24 @@ insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
+
+--------------------------------------------------------------------------
+-- France
+/*
+update ModifierArguments set Value = 300 where ModifierId = 'TRAIT_WONDER_DOUBLETOURISM' and Name = 'ScalingFactor';
+
+--Catherine De Medici
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',				'SPY_AND_TRADER_BONUS_SIGHT');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								Permanent)
+values
+	('SPY_AND_TRADER_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');

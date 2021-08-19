@@ -5,6 +5,7 @@
 insert or replace into Types
 	(Type,														Kind)
 values
+	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',						'KIND_ABILITY'),
 	('ABILITY_EAGLE_WARRIOR',									'KIND_ABILITY'),
 	('ABILITY_HD_BATTLECRY',									'KIND_ABILITY'),
 	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',						'KIND_ABILITY'),
@@ -48,6 +49,8 @@ values
 insert or replace into TypeTags
 	(Type,																Tag)
 values
+	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',								'CLASS_SPY'),
+	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',								'CLASS_TRADER'),
 	('ABILITY_HD_GAIN_SCIENCE_WHEN_KILLS',								'CLASS_HD_GAIN_SCIENCE_WHEN_KILLS'),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',								'CLASS_HD_CAN_MOVE_AFTER_ATTACK'),
 	('ABILITY_AMANI_FERR_PROMOTION',									'CLASS_SPY'),
@@ -107,6 +110,10 @@ values
  	('ABILITY_KONGO_IGNORE_WOODS',	'CLASS_LAND_UNITS');
 
 insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',
+    NULL,
+    NULL,
+    0),
     ('ABILITY_EAGLE_WARRIOR',
     'LOC_ABILITY_EAGLE_WARRIOR_NAME',
     'LOC_ABILITY_EAGLE_WARRIOR_DESCRIPTION',
@@ -266,6 +273,7 @@ values
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
 values
+	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',					'CATHERINE_BONUS_SIGHT'),
 	('ABILITY_HD_CAN_MOVE_AFTER_ATTACK',					'COSSACK_MOVE_AND_ATTACK'),
 	('ABILITY_INCA_IGNORE_HILLS',							'INCA_IGNORE_HILLS'),
 	('ABILITY_KONGO_IGNORE_WOODS',							'KONGO_IGNORE_WOODS'),
@@ -312,6 +320,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,							Permanent)
 values
+	('CATHERINE_BONUS_SIGHT',						'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT',	1),
 	('INCA_IGNORE_HILLS',							'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST',	1),
 	('KONGO_IGNORE_WOODS',							'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST',	1),
 	('BYPASS_WALLS_WARRIOR_MONK',					'MODIFIER_PLAYER_UNIT_ADJUST_BYPASS_WALLS_PROMOTION_CLASS',1),
@@ -341,6 +350,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
+	('CATHERINE_BONUS_SIGHT',						'Amount',	3),
 	('INCA_IGNORE_HILLS',							'Ignore',	1),
 	('INCA_IGNORE_HILLS',							'Type',		'HILLS'),
 	('KONGO_IGNORE_WOODS',							'Ignore',	1),
