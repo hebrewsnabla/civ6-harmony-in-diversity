@@ -48,7 +48,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "目前所有单位获得15点经验值。所拥有的考古学家无视丘陵、森林和雨林带来的 [ICON_Movement] 移动力减益，且可在没有开放边界的情况下进入外国。必须建在平坦的草原或平原上，且靠近带有兵营或马厩的军营区域。"),
     ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+1 [ICON_Production] 生产力。每回合提供6点 [ICON_RESOURCE_Coal] 煤。必须沿河而建，且与拥有工厂的工业区区域相邻。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市，城市内的奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市中，奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%（音乐巨作 [Icon_Tourism] 旅游业绩额外+100%）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "建造剧院建筑时加速50%。当所有槽位填满时自动获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。"),

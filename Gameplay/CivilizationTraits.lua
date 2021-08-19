@@ -127,33 +127,50 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 
 
 -- Saladin free Apostle when Great Prophet is created or Religion is founded
-function OnSaladinReligionFoundedGrantApostle(playerID, religionID)
-	local player = Players[playerID]
-	local playerConfig = PlayerConfigurations[playerID]
-	local sLeader = playerConfig:GetLeaderTypeName()
-	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
-	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) then
-		local playerCities = player:GetCities()
-		if playerCities ~= nil then
-			local capitalCity = playerCities:GetCapitalCity()
-			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
-		end
-	end
-end
+-- function OnSaladinReligionFoundedGrantApostle(playerID, religionID)
+-- 	local player = Players[playerID]
+-- 	local playerConfig = PlayerConfigurations[playerID]
+-- 	local sLeader = playerConfig:GetLeaderTypeName()
+-- 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
+-- 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) then
+-- 		local playerCities = player:GetCities()
+-- 		if playerCities ~= nil then
+-- 			local capitalCity = playerCities:GetCapitalCity()
+-- 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
+-- 		end
+-- 	end
+-- end
 
-function SaladinGreatProphetGrantApostle(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
-	local player = Players[playerID]
-	local playerConfig = PlayerConfigurations[playerID]
-	local sLeader = playerConfig:GetLeaderTypeName()
-	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
-	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) and greatPersonClassID == GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index then
-		local playerCities = player:GetCities()
-		if playerCities ~= nil then
-			local capitalCity = playerCities:GetCapitalCity()
-			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
-		end
-	end
-end
+-- function SaladinGreatProphetGrantApostle(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+-- 	local player = Players[playerID]
+-- 	local playerConfig = PlayerConfigurations[playerID]
+-- 	local sLeader = playerConfig:GetLeaderTypeName()
+-- 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
+-- 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) and greatPersonClassID == GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index then
+-- 		local playerCities = player:GetCities()
+-- 		if playerCities ~= nil then
+-- 			local capitalCity = playerCities:GetCapitalCity()
+-- 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
+-- 		end
+-- 	end
+-- end
 
 -- Events.ReligionFounded.Add(OnSaladinReligionFoundedGrantApostle)
 -- Events.UnitGreatPersonCreated.Add(SaladinGreatProphetGrantApostle)
+
+-- France Grand Tour: wonders grant 10% great writer points when compeleted
+-- function FranceWonderToGreatWriterPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
+--    local gameSpeed = GameConfiguration.GetGameSpeedType()
+--    local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
+--    local player = Players[playerID]
+--	  local playerConfig = PlayerConfigurations[playerID]
+--	  local sCiv = playerConfig:GetCivilizationTypeName()
+--	  local sWonderTourism = 'TRAIT_CIVILIZATION_WONDER_TOURISM'
+--	  local greatWriterID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index
+--    local amount = GameInfo.Buildings[buildingID].Cost * 0.1 * iSpeedCostMultiplier
+--    if player ~= nil and CivilizationHasTrait(sCiv, sWonderTourism) then
+--        player:GetGreatPeoplePoints():ChangePointsTotal(greatWriterID, amount)
+--    end
+-- end
+
+-- Events.WonderCompleted.Add(FranceWonderToGreatWriterPoints)
