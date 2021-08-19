@@ -37,7 +37,7 @@ values
     ("LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                                  "Adjacent to friendly melee unit"),
     ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Attacking from Hills"),
     ("LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                                  "Against units"),
-    ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Against Districts"),
+    ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Attack Districts"),
     ("LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                      "Fighting in Rainforest or Woods tiles"),
     ("LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                      "From occupying either an improvement that provides [ICON_Strength] Defense Strength or a district"),
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
