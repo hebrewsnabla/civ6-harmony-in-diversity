@@ -5,7 +5,7 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
-    ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 50 outer defense."),
+    ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
     ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "[ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5. Improved [ICON_Resource_Bananas] Bananas and [ICON_Resource_Deer] Deers provide +1 [ICON_Food] Food. "),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
     ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+1 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
@@ -37,8 +37,8 @@ values
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "+5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] Culture if this city is fully powered. "),
     -- Industrial Zone
     ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production."),
-    ("LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION",               "+1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION]."),
-    ("LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. +1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION]."),
+    ("LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION",               "+1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION] Production."),
+    ("LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. +1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION] Production."),
     ("LOC_BUILDING_COAL_POWER_PLANT_DESCRIPTION",                 "Automatically converts any amount of [ICON_RESOURCE_COAL] Coal into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_COAL] Coal [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet] Heavy CO2 into the atmosphere.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
     ("LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DESCRIPTION",          "Automatically converts any amount of [ICON_RESOURCE_OIL] Oil into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_OIL] Oil [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet] Moderate CO2 into the atmosphere[NEWLINE]Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
     ("LOC_BUILDING_POWER_PLANT_EXPANSION2_DESCRIPTION",           "Automatically converts any amount of [ICON_RESOURCE_URANIUM] Uranium into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_URANIUM] Uranium [ICON_PowerRight] 16 [ICON_Power] Power[NEWLINE][ICON_Bullet]Miniscule CO2 into the atmosphere[NEWLINE]Once built, as a Nuclear Power Plant ages, there is an increased chance for a Nuclear Accident to occur. Its [ICON_Production] Production and [ICON_Science] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
@@ -99,7 +99,7 @@ values
     ("LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "+2 [ICON_Tourism] Tourism for each Wonder built in this city on or adjacent to a Coast tile."),
     -- Aerodrome
     ("LOC_BUILDING_HANGAR_DESCRIPTION",                           "+25% combat experience for air units trained in this city. +2 air unit slot in Aerodrome district. +50% [Icon_Production] Production towards Air Units."),
-    ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+50%[ICON_Tourism] Tourism in all cities within 9 tiles of an Airport. Can not be overlapped. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
+    ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+50% [ICON_Tourism] Tourism in all cities within 9 tiles of an Airport. Can not be overlapped. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
     -- Neighborhood
     ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "Can only be built once in a city, even if the city has multiple Neighborhoods. +10% Growth rate in this city. If the city is fully powered, extra +5% Growth rate in this city."),
     ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+4 [ICON_Tourism] Tourism. Can only be built once in a city, even if the city has multiple Neighborhoods. +5% [ICON_gold] Gold yield in this city. If the city is fully powered, +10% extra [ICON_gold] Gold yield in this city."),
@@ -107,7 +107,7 @@ values
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
     ("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
-    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When Governor Magnus is estabilished in this city, if they have the Promotion 'Elected Officer', the General Service Office building provides +3 of all yields to all the cities within 6 tiles (this city included). Can only construct when Governor Magnus with the 'General Services Officer' Title is established within 6 tiles. ");
+    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When Governor Magnus is estabilished in this city, if they have the Promotion 'Elected Officer', the General Service Office building provides +3 of all yields to all the cities within 6 tiles (this city included). Can only construct when Governor Magnus with the 'Elected Officer' Title is established within 6 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -116,7 +116,7 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
-    ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供50点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "每 [ICON_Citizen] 人口消耗 [ICON_Food] 粮食由3变成2.5。为本城已开发的 [ICON_Resource_Bananas] 香蕉、 [ICON_Resource_Deer] 鹿 +1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+1 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),

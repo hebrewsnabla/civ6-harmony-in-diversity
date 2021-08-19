@@ -16,7 +16,7 @@ values
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",        "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",  "Allows Traders to embark, and allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",               "Allows Camps to be built on Forests. Camp improvements receive +1 [ICON_GOLD] Gold."),
-    --("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improments receive +1 [ICON_Production] Production."),
+    --("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",              "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_CASTLES_HD_DESCRIPTION",               "Gain a free Spy if playing as Catherine de Medici (Black Queen)."),
     ("LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",     "Upgrades Farm improvements to Mechanized Agriculture. Farms receive +1 [ICON_Food] Food Adjacency bonus for every Farm improvement they are adjacent to."),
