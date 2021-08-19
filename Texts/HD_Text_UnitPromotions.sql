@@ -4,45 +4,45 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     -- Techs
-    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
-    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength When start attacking on Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
+    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                    "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from a Sea or a River."),
+    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when attacking from Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
     ("LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                       "Quarry improvements receive +1 [ICON_Production] Production. [NEWLINE]Unlocks a [ICON_GOVERNOR] Governor title for Suleiman. [NEWLINE]Heavy Cavalry units gain the ability: +10 [ICON_Damaged] Health after defeating an enemy unit."),
     ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                         "Siege units gain the ability: +5 [ICON_Strength] Combat Strength when attacking Districts."),
     ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                      "Stepwell improvements receive +1 [ICON_Housing] Housing. [NEWLINE]Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
     -- Civic
-    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
-    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                              "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
-    ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                              "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh.
+    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                      "Plantation improvements receive +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength when fighting in Rainforest or Woods tiles."),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                              "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a District. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending from melee attack on Hills."),
+    ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                              "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
-    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: +1 [ICON_Movement] if starting in enemy's territory."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "Camp improvements receive +1 [ICON_Production] Production and +1 [ICON_Food] Food. [NEWLINE]Recon units gain the ability: Ignore the Zone of Control."),
+    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                    "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
+    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                   "Camp improvements receive +1 [ICON_Production] Production and +1 [ICON_Food] Food. [NEWLINE]Recon units gain the ability: Ignore Zones of Control."),
     -- Abilities
     ("LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION",                            "+3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
-    ("LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength When start attacking on Hills."),
+    ("LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength When attacking from Hills."),
     ("LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION",      "Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
-    ("LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",               "No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from sea or river."),
+    ("LOC_ABILITY_RECON_IGNORE_RIVERS_AND_SHORES_HD_DESCRIPTION",               "No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from a Sea or a River."),
     ("LOC_ABILITY_HEAVYC_HEAL_AFTER_KILL_HD_DESCRIPTION",                       "+10 [ICON_Damaged] Health after defeating an enemy unit."),
     ("LOC_ABILITY_LIGHTC_AGAINST_UNIT_BONUS_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength against units."),
     ("LOC_ABILITY_SIEGE_ATTACK_DISTRICT_BONUS_HD_DESCRIPTION",                  "+5 [ICON_Strength] Combat Strength when attacking Districts."),
     ("LOC_ABILITY_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS_HD_DESCRIPTION",         "+3 [ICON_Strength] Combat Strength for units fighting in Rainforest or Woods tiles."),
-    ("LOC_ABILITY_RANGED_GARRISON_BONUS_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district."),
-    ("LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                     "+7 [ICON_Strength] Combat Strength when defending melee attack on hills."),
-    ("LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                             "Ignore the Zone of Control."),
-    -- ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
+    ("LOC_ABILITY_RANGED_GARRISON_BONUS_HD_DESCRIPTION",                        "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a District."),
+    ("LOC_ABILITY_ANTIC_HILLS_DEFEND_BONUS_HD_DESCRIPTION",                     "+7 [ICON_Strength] Combat Strength when defending from melee attack on Hills."),
+    ("LOC_ABILITY_RECON_IGNORE_ZOC_HD_DESCRIPTION",                             "Ignores Zones of Control."),
+    -- ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh."),
     ("LOC_ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD_DESCRIPTION",                    "+5 [ICON_Strength] Combat Strength when attacking wounded units."),
     -- ("LOC_ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD_DESCRIPTION",                   "Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
-    ("LOC_ABILITY_LIGHTC_ENEMY_MOVEMENT_HD_DESCRIPTION",                        "+1 [ICON_Movement] if starting in enemy's territory."),
+    ("LOC_ABILITY_LIGHTC_ENEMY_MOVEMENT_HD_DESCRIPTION",                        "+1 [ICON_Movement] Movement if starting in enemy's territory."),
     ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                      "Can attack after moving (enabled by Military Training Civic)."),
     -- Preview Text
     ("LOC_HD_BATTLE_LINE_COMBAT_PREVIEW_TEXT",                                  "Adjacent to friendly melee unit"),
-    ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Start attacking on Hills"),
+    ("LOC_HD_ATTACKING_FROM_HILLS_STRENGTH_PREVIEW_TEXT",                       "Attacking from Hills"),
     ("LOC_HD_AGAINST_UNIT_BONUS_PREVIEW_TEXT",                                  "Against units"),
-    ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Attack districts"),
+    ("LOC_HD_ATTACK_DISTRICT_BONUS_PREVIEW_TEXT",                               "Against Districts"),
     ("LOC_HD_FOREST_AND_JUNGLE_COMBAT_BONUS_PREVIEW_TEXT",                      "Fighting in Rainforest or Woods tiles"),
     ("LOC_HD_GARRISON_BONUS_PREVIEW_TEXT",                                      "From occupying either an improvement that provides [ICON_Strength] Defense Strength or a district"),
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
-    -- ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flatten tiles without Woods, Jungle, or Marsh"),
-    ("LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                      "From attacking wounded Unit"),
+    -- ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flat tiles without Woods, Jungle, or Marsh"),
+    ("LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                      "From attacking a wounded Unit"),
     ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack");
 
 --------------------------------------------------------------------------------
@@ -98,26 +98,26 @@ insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
     -- Melee
-    ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
+    ("LOC_PROMOTION_BATTLECRY_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength attacking melee, anti-cavalry and ranged units."),
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_NAME",                                       "Battle Line"),
     -- ("LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit."),
     ("LOC_PROMOTION_ZWEIHANDER_DESCRIPTION",                                    "+7 [ICON_Strength] Combat Strength when flanked."),
     ("LOC_PROMOTION_LONG_MARCH_HD_NAME",                                        "Long March"),
     ("LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION",                                 "Heals at the end of every turn, even after moving or attacking."),
     -- Ranged
-    ("LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION",               "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a district."),
-    ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",            "-3 [ICON_Strength] Combat Strength when targets in Rainforest or Woods tiles."),
+    ("LOC_ABILITY_RANGED_GARRISON_DISTRICT_BONUS_HD_DESCRIPTION",               "+5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a District."),
+    ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_DESCRIPTION",            "-3 [ICON_Strength] Combat Strength when target is in Rainforest or Woods tiles."),
     ("LOC_RANGED_GARRISON_DISTRICT_BONUS_HD_PREVIEW_DESCRIPTION",               "from garrison"),
-    ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION",    "from targets in Rainforest or Woods tiles"),
+    ("LOC_RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE_HD_PREVIEW_DESCRIPTION",    "from target in Rainforest or Woods tiles"),
     ("LOC_PROMOTION_SNIPER_HD_NAME",                                            "Sniper"),
     ("LOC_PROMOTION_SNIPER_HD_DESCRIPTION",                                     "+1 [ICON_Range] Range."),
-    ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercise zone of control. +5 [ICON_Strength] when attacking damaged unit."), -- +10 [ICON_Strength] Combat Strength when defending melee combat.
+    ("LOC_PROMOTION_SUPPRESSION_DESCRIPTION",                                   "Exercises Zone of Control. +5 [ICON_Strength] when attacking damaged unit."), -- +10 [ICON_Strength] Combat Strength when defending melee combat.
     ("LOC_PROMOTION_ARROW_STORM_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength when attacking."),
     ("LOC_PROMOTION_EMPLACEMENT_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength when defending against ranged attacks."),
     -- Anti-cavalry
-    ("LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                    "+10 [ICON_Strength] Combat Strength when defending cavalry units."), --+5 [ICON_Strength] Combat Strength against Cavalry units, extra 
+    ("LOC_ABILITY_ANTI_CAVALRY_DESCRIPTION",                                    "+10 [ICON_Strength] Combat Strength when defending from cavalry units."), --+5 [ICON_Strength] Combat Strength against Cavalry units, extra 
     -- ("LOC_ABILITY_ANTI_CAVALRY_MODIFIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength against Cavalry units"),
-    ("LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                    "from defending Cavalry units"),
+    ("LOC_ANTI_CAVALRY_COMBAT_BONUS_DEFENDING_PREVIEW_TEXT",                    "from defending cavalry units"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME",                                  "Logistics Supply"),
     ("LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION",                           "+15 HP healing when Fortify."),
     ("LOC_PROMOTION_THRUST_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength when attacking"),
@@ -128,7 +128,7 @@ values
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
     ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Jungle."),
     ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME",                                   "Travel Light"),
-    ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                            "+1 [ICON_Movement] Movement."), -- Ignore Zone of Control
+    ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                            "+1 [ICON_Movement] Movement."), -- Ignores Zone of Control
     ("LOC_PROMOTION_SPYGLASS_DESCRIPTION",                                      "+1 sight range, reveal stealth units on the map within sight range."),
     ("LOC_PROMOTION_GUERRILLA_DESCRIPTION",                                     "Can move after attacking, +5 [ICON_Strength] when attacking."),
     ("LOC_PROMOTION_AMBUSH_DESCRIPTION",                                        "+5 [ICON_Strength] Combat Strength in all situations, only adjacent enemy units can reveal this unit."),
@@ -138,46 +138,46 @@ values
     ("LOC_PROMOTION_RECON_ACCURATE_DESCRIPTION",                                "+1 [ICON_Range] Range."),
     -- Heavy Cavalry
     ("LOC_PROMOTION_HEAVYC_SHOCK_NAME",                                         "Shock"),
-    ("LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
+    ("LOC_PROMOTION_HEAVYC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh."),
     ("LOC_PROMOTION_ROUT_DESCRIPTION",                                          "+5 [ICON_Strength] Combat Strength attacking damaged units."),
-    ("LOC_PROMOTION_MARAUDING_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking districts or units in districts."),
+    ("LOC_PROMOTION_MARAUDING_DESCRIPTION",                                     "+7 [ICON_Strength] Combat Strength when attacking Districts or units in Districts."),
     ("LOC_PROMOTION_ARMOR_PIERCING_DESCRIPTION",                                "+5 [ICON_Strength] Combat Strength when attacking units. Extra +5 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+7 [ICON_Strength] Combat Strength when defending. Extra +7 [ICON_Strength] Combat Strength when you have a higher (or equal) base Combat Strength."),
     -- Light Cavalry
     -- ("LOC_ABILITY_LIGHT_CAVALRY_HD_DESCRIPTION",                                "Pillaging costs only 1 [ICON_Movement] Movement point."),
     ("LOC_PROMOTION_LIGHTC_MILITANT_NAME",                                      "Militant"),
-    ("LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                               "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory."),
+    ("LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                               "+5 [ICON_Strength] Combat Strength when in enemy territory."),
     ("LOC_PROMOTION_LIGHTC_SHOCK_NAME",                                         "Shock"),
-    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flatten tiles without Woods, Jungle, or Marsh."),
-    -- ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when the unit is in the enemy territory."),
+    ("LOC_PROMOTION_LIGHTC_SHOCK_DESCRIPTION",                                  "+5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh."),
+    -- ("LOC_PROMOTION_DEPREDATION_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength when in enemy territory."),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_NAME",                                "Mobile Warfare"),
     ("LOC_PROMOTION_LIGHTC_MOBILE_WARFARE_DESCRIPTION",                         "+1 [ICON_Movement] Movement, can move after attacking."),
     ("LOC_PROMOTION_PURSUIT_DESCRIPTION",                                       "+7 [ICON_Strength] Combat Strength attacking damaged units."),
     ("LOC_PROMOTION_ESCORT_MOBILITY_DESCRIPTION",                               "Formation units all inherit escort's [ICON_Movement] Movement speed and +7 [ICON_Strength] Combat Strength when in a formation."),
     -- Siege
     ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_DESCRIPTION",                       "+1 [ICON_Movement] Movement when adjacent to Light or Heavy Cavalry."),
-    ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. district defenses."),
-    -- ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. District defenses."),
+    -- ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. District defenses."),
     ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
-    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE][ICON_Gold] Golds gained from capturing cities are +100%.[NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title."),
+    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE] +100% [ICON_Gold] Gold gained from capturing cities.[NEWLINE]+100% Yields gained from pilaging and coastal raids.[NEWLINE]Awards +1 [ICON_Governor] Governor Title."),
     --naval melee
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                      "+1 additional attack per turn if [ICON_Movement] Movement allows."),
     ("LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                               "+10 [ICON_Strength] Combat Strength vs. naval raider units."),
     --naval ranged
-    ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength vs. district defenses."),
-    ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+7 [ICON_Strength] Combat Strength vs. district defenses."),
+    ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength vs. District defenses."),
+    ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+7 [ICON_Strength] Combat Strength vs. District defenses."),
     ("LOC_PROMOTION_BULB_BOW_HD_NAME",                                          "Bulb Bow"),
     ("LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
     --naval raider
     ("LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                    "+1 [ICON_Movement] Movement and +1 sight range."),
     --("LOC_PROMOTION_LOOT_NAME",                                                 ""),
-    ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. Yields gained from plundering sea [ICON_TradeRoute] Trade Routes are +100%."),
+    ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. +100% yields gained from plundering sea [ICON_TradeRoute] Trade Routes."),
     ("LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                      "+2 [ICON_Strength] Combat Strength for adjacent naval raiders"),
     ("LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                   "Boarding Action"),
     ("LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                            "+10 [ICON_Strength] Combat Strength when attacking naval units."),
     ("LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                    "Damage Control"),
-    ("LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                             "Heal outside of friendly territory."),
+    ("LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                             "Heals outside of friendly territory."),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn.");
 
