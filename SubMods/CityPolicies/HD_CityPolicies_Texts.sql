@@ -8,6 +8,7 @@ values
     ("LOC_HUD_CITY_NO_CITY_POLICIES",                                 "No City Policies exist."),
     ("LOC_BUILDING_CITY_POLICY_EMPTY_NAME",                           "No City Policy"),
     ("LOC_BUILDING_CITY_POLICY_EMPTY_DESCRIPTION",                    "No City Policy."),
+
     ("LOC_BUILDING_CITY_POLICY_LABOR_NAME",                           "Labor Policy"),
     ("LOC_BUILDING_CITY_POLICY_LABOR_DESCRIPTION",                    "Labor city policy undergoing, each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by a project."),
     ("LOC_PROJECT_CITY_POLICY_ENABLE_LABOR_DESCRIPTION",              "Enable the Labor city policy, Each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75% and cause -1 [ICON_Amenities] Amenity. This policy can be disabled by another project."),
@@ -16,6 +17,7 @@ values
     ("LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_NAME",                    "Disable Labor City Policy"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_SHORT_NAME",              "Disable Labor"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_LABOR_DESCRIPTION",             "Disable Labor city policy, the yields back to the normal. "),
+
     ("LOC_BUILDING_CITY_POLICY_DACAOGU_NAME",                         "Pillage Preparing Policy"),
     ("LOC_BUILDING_CITY_POLICY_DACAOGU_DESCRIPTION",                  "Pillage Preparing city policy undergoing, each trained light cavalry unit of Mediveal or eralier era in this city gains the ability that can pillage tiles using only 1 [ICON_Movement] Movement. Each [ICON_Citizen] Citizen consumes extra 1 [ICON_FOOD] Food. -100% Growth Rate and -1 [ICON_Amenities] Amenity to this city. If the city has at least 3 [ICON_Citizen] Citizens, receives another unit of the same kind when a light cavalry unit of Mediveal or eralier era being trained in this city, at the cost of one [ICON_Citizen] Citizen. This policy can be disabled by a project."),
     ("LOC_PROJECT_CITY_POLICY_ENABLE_DACAOGU_DESCRIPTION",            "Enable the Pillage Preparing city policy. Once enabled, each trained light cavalry unit of Mediveal or eralier era in this city gains the ability that can pillage tiles using only 1 [ICON_Movement] Movement. Each [ICON_Citizen] Citizen consumes extra 1 [ICON_FOOD] Food. -100% Growth Rate and -1 [ICON_Amenities] Amenity to this city. If the city has at least 3 [ICON_Citizen] Citizens, receives another unit of the same kind when a light cavalry unit of Mediveal or eralier era being trained in this city, at the cost of one [ICON_Citizen] Citizen. This policy can be disabled by another project."),
@@ -24,6 +26,7 @@ values
     ("LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_NAME",                  "Disable Pillage Preparing city policy"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_SHORT_NAME",            "Disable Pillage Preparing"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_DACAOGU_DESCRIPTION",           "Disable Pillage Preparing city policy, the yields back to the normal. "),
+
     ("LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_NAME",                "Agricultural Tax Policy"),
     ("LOC_BUILDING_CITY_POLICY_AGRICULTURAL_TAX_DESCRIPTION",         "Agricultural Tax city policy undergoing, each Farm provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_Food] Food.  This policy can be disabled by a project."),
     ("LOC_PROJECT_CITY_POLICY_ENABLE_AGRICULTURAL_TAX_DESCRIPTION",   "Enable the Agricultural Tax city policy, each Farm provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_Food] Food. This policy can be disabled by a project."),
@@ -32,6 +35,7 @@ values
     ("LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_NAME",         "Disable Agricultural Tax City Policy"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_SHORT_NAME",   "Disable Agricultural Tax"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_AGRICULTURAL_TAX_DESCRIPTION",  "Disable Agricultural Tax city policy, the yields back to the normal. "),
+    
     ("LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_NAME",                  "Industrial Tax Policy"),
     ("LOC_BUILDING_CITY_POLICY_INDUSTRAIL_TAX_DESCRIPTION",           "Industrial Tax city policy undergoing, each Mine or Quarry provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_PRODUCTION] Production. This policy can be disabled by a project."),
     ("LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_DESCRIPTION",     "Enable the Industrial Tax city policy, each Mine or Quarry provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_PRODUCTION] Production. This policy can be disabled by a project."),

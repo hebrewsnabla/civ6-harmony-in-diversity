@@ -5,11 +5,11 @@ insert or replace into EnglishText
 values
     -- Options
     ("LOC_GAME_POSTPONE_WORLD_CONGRESS",                    "Postpone World Congress"),
-    ("LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",        "Postpone the world congress, starts in Industrial Era. Half the world congress interval."),
+    ("LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",        "Postpone the World Congress. Starts in Industrial Era. Halves the World Congress intervals."),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",               "Captured Settlers become Builders"),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION",   "Captured Settlers become Builders"),
     ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS",             "AI Double Military Units"),
-    ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION", "Whenever an AI trained a military unit, it will get a free copy of that.[NEWLINE]ONLY ENABLE WHEN YOU TRY TO CHALLENGE YOURSELF."),
+    ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION", "Whenever an AI trains a military unit, it will get a free copy.[NEWLINE]ONLY ENABLE WHEN YOU TRY TO CHALLENGE YOURSELF."),
     ("LOC_GAME_FOREVER_WAR",                                "War last forever"),
     ("LOC_GAME_FOREVER_WAR_DESCRIPTION",                    "The war will last forever once started."),
     -- GameModes

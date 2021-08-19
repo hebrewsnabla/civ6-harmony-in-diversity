@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                       Text)
 values
-    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE]DouBle the [ICON_Gold] Gold gained when capturing a city. [NEWLINE]Yields gained from pilaging and coastal raids are +100%.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.");
+    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE]DouBle the [ICON_Gold] Gold gained when capturing a city. [NEWLINE]+100% yields gained from pilaging and coastal raids.[NEWLINE]Awards +1 [ICON_Governor] Governor Title.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

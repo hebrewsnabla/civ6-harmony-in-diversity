@@ -5,12 +5,12 @@ insert or replace into EnglishText
 values
     -- UI Texts
     ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
-    ("LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "Sacrifice this unit to God, gain +10 [ICON_Culture] Culture and +10 [ICON_Faith] for each builder charge the unit has. Remove the unit."),
-    ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must at City Center[ENDCOLOR]"),
+    ("LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "Sacrifice this unit. Gain +10 [ICON_Culture] Culture and +10 [ICON_Faith] Faith for each builder charge the unit has."),
+    ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must occupy City Center[ENDCOLOR]"),
     ("LOC_FLYOVER_AZTEC_SACRIFICE",                                           "Human Sacrifice[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
     ("LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "Specialty District"),
-    ("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "Non-Specialty District"),
+    ("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "District"),
     ("LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "Citizen Yields change (per citizen in this district):"),
     ("LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "Citizen Yields (per citizen in this district):"),
     ("LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "Citizen Yields (per citizen in this district)"),
@@ -18,7 +18,7 @@ values
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
     ("LOC_IMPROVEMENT_GOODY_BUILDER_NAME",                                    "Please Ignore"),
     ("LOC_LOYALTY_LEVEL_4_NAME",                                              "Unswervingly Loyal"),
-    ("LOC_LOYALTY_LEVEL_4_DESCRIPTION",                                       "The citizens are Unswervingly Loyal to your civilization"),
+    ("LOC_LOYALTY_LEVEL_4_DESCRIPTION",                                       "The Citizens are Unswervingly Loyal to your civilization!"),
     ("LOC_TURNS_BEFORE_DESTROY_HD",                                           "Completely destroy after {1_num} turns"),
     ("LOC_CANNOT_REMOVE_FEATURE_USING_RECONS",                                "Cannot remove features using Recon units"),
     ("LOC_VIZSOURCE_CHANCERY",                                                "Built Building Chancery"),
@@ -50,8 +50,7 @@ values
     ("LOC_DISTRICT_HARBOR_HANSA_PRODUCTION",                                  "+{1_num} [ICON_Production] Production from adjacent Harbor {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",                               "+{1_num} [ICON_Production] Production from adjacent RoyalDock {1_Num : plural 2?district; other?districts;}."),
     ("LOC_DISTRICT_COTHON_HANSA_PRODUCTION",                                  "+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
-    ("LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",                                    "Every 10 turns (on Standard), you unlock a [ICON_TechBoosted] Eureka for a tech that your ally has researched or boosted, but you have not.")
-    ;
+    ("LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",                                    "Every 10 turns (on Standard), you unlock a [ICON_TechBoosted] Eureka for a tech that your ally has researched or boosted, but you have not.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -137,34 +136,34 @@ values
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "circuses and bread"),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "circuses and bread"),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "City project which increases the Loyalty pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +2 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city."),
-    ("LOC_PROJECT_ENDLESS_MONEY_HD_NAME",                                     "endless money"),
-    ("LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME",                               "endless money"),
+    ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "Circuses and Bread"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "Circuses and Bread"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +2 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city."),
+    ("LOC_PROJECT_ENDLESS_MONEY_HD_NAME",                                     "Endless Money"),
+    ("LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME",                               "Endless Money"),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION",                              "City project which provides a huge amount of [ICON_Gold] Gold every turn."),
-    ("LOC_PROJECT_GRANT_RESOURCE_HORSES_HD_NAME",                             "breeding good foals"),
-    ("LOC_PROJECT_GRANT_RESOURCE_HORSES_HD_SHORT_NAME",                       "breeding good foals"),
+    ("LOC_PROJECT_GRANT_RESOURCE_HORSES_HD_NAME",                             "Selective Breeding"),
+    ("LOC_PROJECT_GRANT_RESOURCE_HORSES_HD_SHORT_NAME",                       "Selective Breeding"),
     ("LOC_PROJECT_GRANT_RESOURCE_HORSES_HD_DESCRIPTION",                      "Stable project. Once completed, instantly gain +20 [ICON_RESOURCE_HORSES] Horses."),
-    ("LOC_PROJECT_GRANT_RESOURCE_IRON_HD_NAME",                               "earthen blast furnace"),
-    ("LOC_PROJECT_GRANT_RESOURCE_IRON_HD_SHORT_NAME",                         "earthen blast furnace"),
+    ("LOC_PROJECT_GRANT_RESOURCE_IRON_HD_NAME",                               "Blast Furnace"),
+    ("LOC_PROJECT_GRANT_RESOURCE_IRON_HD_SHORT_NAME",                         "Blast Furnace"),
     ("LOC_PROJECT_GRANT_RESOURCE_IRON_HD_DESCRIPTION",                        "Barracks project. Once completed, instantly gain +20 [ICON_RESOURCE_IRON] Iron."),
-    ("LOC_PROJECT_GRANT_RESOURCE_NITER_HD_NAME",                              "high explosives"),
-    ("LOC_PROJECT_GRANT_RESOURCE_NITER_HD_SHORT_NAME",                        "high explosives"),
+    ("LOC_PROJECT_GRANT_RESOURCE_NITER_HD_NAME",                              "Saltpeter Production"),
+    ("LOC_PROJECT_GRANT_RESOURCE_NITER_HD_SHORT_NAME",                        "Saltpeter Production"),
     ("LOC_PROJECT_GRANT_RESOURCE_NITER_HD_DESCRIPTION",                       "Armory project. Once completed, instantly gain +20 [ICON_RESOURCE_NITER] Niter."),
-    ("LOC_PROJECT_GRANT_RESOURCE_COAL_HD_NAME",                               "specialty fuels"),
-    ("LOC_PROJECT_GRANT_RESOURCE_COAL_HD_SHORT_NAME",                         "specialty fuels"),
+    ("LOC_PROJECT_GRANT_RESOURCE_COAL_HD_NAME",                               "Charcoal Production"),
+    ("LOC_PROJECT_GRANT_RESOURCE_COAL_HD_SHORT_NAME",                         "Charcoal Production"),
     ("LOC_PROJECT_GRANT_RESOURCE_COAL_HD_DESCRIPTION",                        "Armory project. Once completed, instantly gain +20 [ICON_RESOURCE_COAL] Coal."),
-    ("LOC_PROJECT_GRANT_RESOURCE_OIL_HD_NAME",                                "shale extraction"),
-    ("LOC_PROJECT_GRANT_RESOURCE_OIL_HD_SHORT_NAME",                          "shale extraction"),
+    ("LOC_PROJECT_GRANT_RESOURCE_OIL_HD_NAME",                                "Shale Extraction"),
+    ("LOC_PROJECT_GRANT_RESOURCE_OIL_HD_SHORT_NAME",                          "Shale Extraction"),
     ("LOC_PROJECT_GRANT_RESOURCE_OIL_HD_DESCRIPTION",                         "Military academy project. Once completed, instantly gain +20 [ICON_RESOURCE_OIL] Oil."),
-    ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_NAME",                           "rare earth research"),
-    ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_SHORT_NAME",                     "rare earth research"),
+    ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_NAME",                           "Rare Earth Prospecting"),
+    ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_SHORT_NAME",                     "Rare Earth Prospecting"),
     ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_DESCRIPTION",                    "Military academy project. Once completed, instantly gain +20 [ICON_RESOURCE_ALUMINUM] Aluminum."),
-    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "gas centrifugal"),
-    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "gas centrifugal"),
-    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium.");
+    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "Nuclear Refinery"),
+    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "Nuclear Refinery"),
+    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military Academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium.");
 
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
