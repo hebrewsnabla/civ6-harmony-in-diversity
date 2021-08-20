@@ -486,6 +486,18 @@ values
 	('WAT_ARUN_DISTRICT_FOOD_SELF',		'YieldType',	'YIELD_FOOD'),
 	('WAT_ARUN_DISTRICT_FOOD_SELF',		'Amount',		1);
 
+-- St Petersburg Cathedral
+delete from Building_GreatWorks where BuildingType = 'BUILDING_ST_PETERSBURG_CATHEDRAL' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';
+update Building_GreatWorks set 
+	NumSlots = 3 ,
+	ThemingUniquePerson = 0 ,
+	ThemingSameObjectType = 1 ,
+	ThemingSameEras = 0 ,
+	ThemingTourismMultiplier = 100 ,
+	ThemingYieldMultiplier = 100 ,
+where BuildingType ='BUILDING_ST_PETERSBURG_CATHEDRAL' and GreatWorkSlotType = 'GREATWORKSLOT_CATHEDRAL';
+
+
 -- Cost adjust
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';

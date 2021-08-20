@@ -3,9 +3,10 @@
 insert or replace into EnglishText
     (Tag,                                                     Text)
 values
+    ("LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "+20% [ICON_Science] Science in this city, and awards 2 randomly-chosen free technologies when completed. Themed when displaying objects from different writers. Must be built on Grassland or Plains adjacent to a Campus district with a University."),
     ("LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "All current units gain +15 experience. All Archaeologists from the owner may enter foreign lands without Open Borders, and ignore [ICON_MOVEMENT] movement penalty from Hills, Forest and Jungle. Must be built on flat Grassland or Plains adjacent to an Encampment district with a Barracks or Stable."),
     ("LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "+20% [ICON_Production] Production in this city, and +1 [ICON_Production] Production for each Mine and Quarry in this city. +6 [ICON_RESOURCE_Coal] Coal per turn. Must be built along a River adjacent to an Industrial Zone district with a Factory."),
-    ("LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "Must be built on the Coast, adjacent to land and a Harbor district. +100% [Icon_Tourism] Tourism (extra 100% [Icon_Tourism] Tourism for Music) from all kinds of Great works and Wonders if this city has Governor established and is founded by the player."),
+    ("LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "Must be built on the Coast, adjacent to land and a Harbor district. +100% [Icon_Tourism] Tourism (extra 100% [Icon_Tourism] Tourism for Music) from all kinds of Great works and Wonders if this city has Governor established and is founded by the player. Themed when displaying objects of musicians from the same era."),
     ("LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "+50% [ICON_PRODUCTION] Production towards all buildings in Theater Square. Automatically themed when all slots are filled."),
     ("LOC_BUILDING_PETRA_DESCRIPTION",                        "+3 [ICON_Food] Food, +2 [ICON_Gold] Gold, and +1 [ICON_Production] Production on all Desert tiles for this city (non-Floodplains). Must be built on Desert or Floodplains without Hills."),
     ("LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "+100% [ICON_Tourism] Religious Tourism from this city. +2 [ICON_Food] Food, +1 [ICON_Production] Production, and +1 [ICON_Culture] Culture on all Tundra tiles for this city. Must be built adjacent to a City Center."),
@@ -34,11 +35,12 @@ values
     ("LOC_BUILDING_TORRE_DE_BELEM_DESCRIPTION",               "International [ICON_TradeRoute] Trade Routes from this city receive +2 [ICON_GOLD] Gold for every Luxury resource at the destination. Grants two Settlers when built. +2 [ICON_Movement] Movement for all settlers. +2 starting [ICON_Citizen] Population for cities settled on a different continent than your first city. [NEWLINE][NEWLINE]Must be built on a Coast tile that is adjacent to a Harbor district."),
     ("LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY",           "Theming bonus doubling output when displaying objects from different writers."),
     ("LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE",          "Theming bonus doubling output when displaying objects of musicians from the same era."),
-    ("LOC_BUILDING_THEMINGBONUS_HERMITAGE",                   "Theming bonus doubling output when displaying objects from different artists."),
+    ("LOC_BUILDING_THEMINGBONUS_HERMITAGE",                   "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_THEMINGBONUS_GOV_CULTURE",                 "Theming bonus doubling output when displaying objects from the same era."),
     ("LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN",              "Theming bonus doubling output when displaying objects from different musicians."),
     ("LOC_BUILDING_THEMINGBONUS_NOTRE_DAME",                  "Theming bonus doubling output when displaying objects from the same era."),
     ("LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "Theming bonus doubling output when displaying objects of the same kind."),
+    ("LOC_BUILDING_THEMINGBONUS_ST_PETERSBURG_CATHEDRAL",     "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "Receive a second naval unit each time you train a naval unit. +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for coast tiles in this city. +6 [ICON_RESOURCE_Niter] Niter per turn. Must be built on a Coast tile that is adjacent to an Industrial Zone district.");
 
 --------------------------------------------------------------------------------
@@ -46,9 +48,10 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "当前城市+20% [ICON_Science] 科技值，完成时，随机奖励2项免费科技。当展示来自不同作家的作品时获得主题化加成。必须建在靠近带有大学的学院区域的草原或平原上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "目前所有单位获得15点经验值。所拥有的考古学家无视丘陵、森林和雨林带来的 [ICON_Movement] 移动力减益，且可在没有开放边界的情况下进入外国。必须建在平坦的草原或平原上，且靠近带有兵营或马厩的军营区域。"),
     ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+1 [ICON_Production] 生产力。每回合提供6点 [ICON_RESOURCE_Coal] 煤。必须沿河而建，且与拥有工厂的工业区区域相邻。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市中，奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%（音乐巨作 [Icon_Tourism] 旅游业绩额外+100%）。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市中，奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%（音乐巨作 [Icon_Tourism] 旅游业绩额外+100%）。当展示来自相同时代音乐家的作品时获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "建造剧院建筑时加速50%。当所有槽位填满时自动获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。"),
@@ -78,10 +81,11 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_TORRE_DE_BELEM_DESCRIPTION",               "目的地城市每有1处奢侈品资源，从此城起源的国际 [ICON_TradeRoute] 贸易路线便+2 [ICON_GOLD] 金币。建成时获得2个开拓者，所有开拓者+2 [ICON_Movement] 移动力。和首座城市不在同一个大陆上的城市+2初始 [ICON_Citizen] 人口。[NEWLINE][NEWLINE]必须建造在与港口区域相邻的海岸单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY",           "当展示来自不同作家的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE",          "当展示来自相同时代音乐家的作品时，主题加成翻倍。 "),
-    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_HERMITAGE",                   "当展示来自不同艺术家的作品时，主题加成翻倍。 "),
+    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_HERMITAGE",                   "当所有槽位填满时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_GOV_CULTURE",                 "当展示来自相同时代的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN",              "当展示来自不同音乐家的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_NOTRE_DAME",                  "当展示来自相同时代的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "当展示来自相同类型的作品时，主题加成翻倍。 "),
+    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_ST_PETERSBURG_CATHEDRAL",     "当所有槽位填满时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "每训练一个海军单位，便会获得第二个海军单位。为本城每个近海单元格+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币，每回合提供6点 [ICON_RESOURCE_Niter] 硝石。必须建在靠近工业区的海岸单元格上。");
 

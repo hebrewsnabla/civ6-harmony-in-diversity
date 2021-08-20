@@ -141,9 +141,4 @@ values
 	('DAR_E_MEHR_FREE_MISSIONARY',								'UnitType',					'UNIT_MISSIONARY'),
 	('DAR_E_MEHR_FREE_MISSIONARY',								'Amount',					1);
 
-insert or replace into GreatWork_ValidSubTypes
-	(GreatWorkSlotType,					GreatWorkObjectType)
-values
-	('GREATWORKSLOT_CATHEDRAL',			'GREATWORKOBJECT_SCULPTURE'),
-	('GREATWORKSLOT_CATHEDRAL',			'GREATWORKOBJECT_PORTRAIT'),
-	('GREATWORKSLOT_CATHEDRAL',			'GREATWORKOBJECT_LANDSCAPE');
+update Building_GreatWorks set GreatWorkSlotType = 'GREATWORKSLOT_ART' where BuildingType = 'BUILDING_CATHEDRAL';
