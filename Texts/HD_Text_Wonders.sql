@@ -40,7 +40,7 @@ values
     ("LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN",              "Theming bonus doubling output when displaying objects from different musicians."),
     ("LOC_BUILDING_THEMINGBONUS_NOTRE_DAME",                  "Theming bonus doubling output when displaying objects from the same era."),
     ("LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "Theming bonus doubling output when displaying objects of the same kind."),
-    ("LOC_BUILDING_THEMINGBONUS_ST_PETERSBURG_CATHEDRAL",     "Theming bonus doubling output when all slots are filled."),
+    ("LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",        "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "Receive a second naval unit each time you train a naval unit. +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for coast tiles in this city. +6 [ICON_RESOURCE_Niter] Niter per turn. Must be built on a Coast tile that is adjacent to an Industrial Zone district.");
 
 --------------------------------------------------------------------------------
@@ -86,6 +86,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN",              "当展示来自不同音乐家的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_NOTRE_DAME",                  "当展示来自相同时代的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "当展示来自相同类型的作品时，主题加成翻倍。 "),
-    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_ST_PETERSBURG_CATHEDRAL",     "当所有槽位填满时，主题加成翻倍。 "),
+    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "当所有槽位填满时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "每训练一个海军单位，便会获得第二个海军单位。为本城每个近海单元格+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币，每回合提供6点 [ICON_RESOURCE_Niter] 硝石。必须建在靠近工业区的海岸单元格上。");
 

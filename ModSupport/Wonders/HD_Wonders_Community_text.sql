@@ -4,6 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                                                             Text)
 values
     ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "All Districts receive +1 [ICON_Housing] Housing and +1 [icon_food] Food if adjacent to rivers. Doubled if Wat Arun is built in this city."),
+    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "All Districts receive +1 [ICON_Housing] Housing and +1 [icon_food] Food if adjacent to rivers. Doubled if Wat Arun is built in this city."),
     ("LOC_BUILDING_TEMPLE_OF_HEAVEN_DESCRIPTION",                                                     "+100% All Domestic trade routes yields from Destination Districts." ), -- Your Trade Routes to your own cities gain +2 [ICON_Gold] for each specialty Districts at the destination. Governors established in a city provide +3% [icon_food] Food for each Promotion they have earned, including their first one.
     ("LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                                           "{1_Amount} Combat Strength from Motherland Calls"),
     ("LOC_BUILDING_LEANING_TOWER_DESCRIPTION",                                                        "1 free Great Engineer appears near the city where the wonder was built. +25%  Great People Points accumulation speed in all cities. Can only be built flat Grass and Plain lands in city with a Harbor. "),
@@ -23,6 +24,7 @@ values
     ("LOC_BUILDING_MOTHERLAND_CALLS_DESCRIPTION",                                                     "Grant a free [ICON_GreatGeneral] Great General when built, +10 Loyalty to all Founded cities, +10 [ICON_strength] Combat Strength when fighting in own territory. [NEWLINE][NEWLINE]Must be built on flat land adjacent to the City Center."),
     -- ("LOC_BUILDING_BURJ_KHALIFA_DESCRIPTION",                                                         "Awards +3 [ICON_RESOURCE_OIL] Oil. Oil Wells, Oil Rigs and Mines within 9 tiles yield +2 [ICON_Culture] Culture. +15% [ICON_Gold] Gold in this city. +1 [ICON_TradeRoute] Trade Route."),
     ("LOC_WON_CL_KINKAKU_DESCRIPTION",                                                                "For Holy Site districts that within 6 tiles, their [ICON_Faith] Faith adjacency bonus provides [ICON_Production] Production as well. +2 [ICON_Culture] Culture for Encampments that within 6 tiles. Must be built on a Lake tile adjacent to land."),
+    ("LOC_BUILDING_AL_STPETERSBASILICA_DESCRIPTION",                                                  "+5% [ICON_CULTURE] Culture and +5% [ICON_FAITH] Faith in this city for every Capital city following your Religion. [ICON_GreatWork_Religious] Religious Great Works of Art in this city gain +3 [ICON_FAITH] Faith and provide triple the [ICON_TOURISM] Tourism. Automatically themed when all slots are filled. Must be built adjacent to your Capital, and you must have founded a Religion."),
     ("LOC_CL_BUILDING_CN_TOWER_DESCRIPTION",                                                          "Grants a Broadcast Center building in every city with a Museum. +2 [ICON_Citizen] Population in all cities when built. +2 [ICON_Housing] Housing and +1 [ICON_Amenities] Amenities to all cities. [NEWLINE][NEWLINE]Must be built adjacent to an Entertainment Complex district owned by this city.");
 
 --------------------------------------------------------------------------------
@@ -30,6 +32,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_NAME",                                                                "郑王庙"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_NAME",                                                                "郑王庙"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_QUOTE",                                                               "午夜时分，云朵在月光中现出金色的光晕，我们就在此刻乘船抵达。璀璨的郑王庙太壮丽了。我看着它，努力抑制住眼中激动的泪水。--桑托恩普"),
     ("zh_Hans_CN",  "LOC_PEDIA_WONDERS_PAGE_BUILDING_SUK_WAT_ARUN_CHAPTER_HISTORY_PARA_1",                           "郑王庙（Wat Arun），或称黎明寺，是位于曼谷昭披耶河畔的一座佛教寺庙。自大城王国时期起，郑王寺的所在地就有一座寺庙。它当时被称为玛喀寺，是以它所在的玛喀村命名的。根据历史学家丹龙·腊贾努巴王子的说法，该寺庙在纳莱国王统治时期（1656-1688）出现在法国地图上，因此可以知道它在那个时候就已经存在了，尽管该寺庙成立的确切日期还不确定。大城府沦陷后，郑昭国王在该寺附近建立了他的新首都吞武里，并将该寺更名为昌寺。据信，郑昭在黎明时分经过该寺时，曾发誓要恢复该寺。在1785年被转移到河东岸的玉佛寺之前，该寺庙供奉着翡翠佛像。在郑昭统治时期，该寺庙位于皇宫的院子里，后来他的继任者拉玛一世将皇宫搬到了河的另一边。它被遗弃了一段时间，直到拉玛二世恢复了该寺庙，并将佛塔至70米。寺庙在夜间或日落时分的景色也许是曼谷最具代表性的景色之一。"),
@@ -168,7 +171,7 @@ values
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_DESCRIPTION",                                                          "该城市+20% [ICON_GOLD] 金币，该城市的每座奇观+6 [ICON_GOLD] 金币和且奇观的 [ICON_Tourism] 旅游业绩+50%。必须建在靠近市中心的平原上。"),
     ("zh_Hans_CN",  "LOC_WON_CL_EMPIRE_STATES_QUOTE",                                                                "当我在纽约，我看到帝国大厦，感到就像它属于我……还是反之亦然？[NEWLINE]——菲伊·雷"),
     ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_NAME",                                                         "圣彼得大教堂"),
-    ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_DESCRIPTION",                                                  "每座信奉您的宗教的首都令此城市+5% [ICON_CULTURE] 文化值和+5% [ICON_FAITH] 信仰值。此城市的 [ICON_GreatWork_Religious] 宗教艺术巨作获得+3 [ICON_FAITH] 信仰值，并提供3倍 [ICON_TOURISM] 旅游业绩。必须建在首都旁，且玩家已创立宗教。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_DESCRIPTION",                                                  "每座信奉您的宗教的首都令此城市+5% [ICON_CULTURE] 文化值和+5% [ICON_FAITH] 信仰值。此城市的 [ICON_GreatWork_Religious] 宗教艺术巨作获得+3 [ICON_FAITH] 信仰值，并提供3倍 [ICON_TOURISM] 旅游业绩。当所有槽位填满时自动获得主题化加成。必须建在首都旁，且玩家已创立宗教。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AL_STPETERSBASILICA_QUOTE",                                                        "“一个人能从圣彼得的圆顶看到罗马每一件显眼的物体……他能看到一幅全景图，丰富多彩，包罗万象，胜于欧洲历史中除此以外的一切。”[NEWLINE]——马克·吐温"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_NAME",                                                                 "加拿大国家电视塔"),
     ("zh_Hans_CN",  "LOC_CL_BUILDING_CN_TOWER_DESCRIPTION",                                                          "为每座拥有博物馆建筑的城市提供广播中心。建成时所有城市获得2 [ICON_Citizen] 人口，所有城市+2 [ICON_Housing] 住房和1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]必须建在与本城的娱乐中心相邻的单元格上。"),
