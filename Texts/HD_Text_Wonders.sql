@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                     Text)
 values
     ("LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "+20% [ICON_Science] Science in this city, and awards 2 randomly-chosen free technologies when completed. Themed when displaying objects from different writers. Must be built on Grassland or Plains adjacent to a Campus district with a University."),
-    ("LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "All current units gain +15 experience. All Archaeologists from the owner may enter foreign lands without Open Borders, and ignore [ICON_MOVEMENT] movement penalty from Hills, Forest and Jungle. Must be built on flat Grassland or Plains adjacent to an Encampment district with a Barracks or Stable."),
+    ("LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "All current units gain +30 experience. All Archaeologists from the owner may enter foreign lands without Open Borders, and ignore [ICON_MOVEMENT] movement penalty from Hills, Forest and Jungle. Must be built on flat Grassland or Plains adjacent to an Encampment district with a Barracks or Stable."),
     ("LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "+20% [ICON_Production] Production in this city, and +1 [ICON_Production] Production for each Mine and Quarry in this city. +6 [ICON_RESOURCE_Coal] Coal per turn. Must be built along a River adjacent to an Industrial Zone district with a Factory."),
     ("LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "Must be built on the Coast, adjacent to land and a Harbor district. +100% [Icon_Tourism] Tourism (extra 100% [Icon_Tourism] Tourism for Music) from all kinds of Great works and Wonders if this city has Governor established and is founded by the player. Themed when displaying objects of musicians from the same era."),
     ("LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "+50% [ICON_PRODUCTION] Production towards all buildings in Theater Square. Automatically themed when all slots are filled."),
@@ -49,7 +49,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
     ("zh_Hans_CN",  "LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "当前城市+20% [ICON_Science] 科技值，完成时，随机奖励2项免费科技。当展示来自不同作家的作品时获得主题化加成。必须建在靠近带有大学的学院区域的草原或平原上。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "目前所有单位获得15点经验值。所拥有的考古学家无视丘陵、森林和雨林带来的 [ICON_Movement] 移动力减益，且可在没有开放边界的情况下进入外国。必须建在平坦的草原或平原上，且靠近带有兵营或马厩的军营区域。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TERRACOTTA_ARMY_DESCRIPTION",              "目前所有单位获得30点经验值。所拥有的考古学家无视丘陵、森林和雨林带来的 [ICON_Movement] 移动力减益，且可在没有开放边界的情况下进入外国。必须建在平坦的草原或平原上，且靠近带有兵营或马厩的军营区域。"),
     ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+1 [ICON_Production] 生产力。每回合提供6点 [ICON_RESOURCE_Coal] 煤。必须沿河而建，且与拥有工厂的工业区区域相邻。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市中，奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%（音乐巨作 [Icon_Tourism] 旅游业绩额外+100%）。当展示来自相同时代音乐家的作品时获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "建造剧院建筑时加速50%。当所有槽位填满时自动获得主题化加成。"),
