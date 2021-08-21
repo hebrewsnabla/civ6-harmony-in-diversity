@@ -113,7 +113,7 @@ insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inacti
 	('ABILITY_SPY_AND_TRADER_BONUS_SIGHT',
     NULL,
     NULL,
-    0),
+    1),
     ('ABILITY_EAGLE_WARRIOR',
     'LOC_ABILITY_EAGLE_WARRIOR_NAME',
     'LOC_ABILITY_EAGLE_WARRIOR_DESCRIPTION',

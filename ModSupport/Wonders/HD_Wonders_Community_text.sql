@@ -4,7 +4,6 @@ insert or replace into EnglishText
     (Tag,                                                                                             Text)
 values
     ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "All Districts receive +1 [ICON_Housing] Housing and +1 [icon_food] Food if adjacent to rivers. Doubled if Wat Arun is built in this city."),
-    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "All Districts receive +1 [ICON_Housing] Housing and +1 [icon_food] Food if adjacent to rivers. Doubled if Wat Arun is built in this city."),
     ("LOC_BUILDING_TEMPLE_OF_HEAVEN_DESCRIPTION",                                                     "+100% All Domestic trade routes yields from Destination Districts." ), -- Your Trade Routes to your own cities gain +2 [ICON_Gold] for each specialty Districts at the destination. Governors established in a city provide +3% [icon_food] Food for each Promotion they have earned, including their first one.
     ("LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                                           "{1_Amount} Combat Strength from Motherland Calls"),
     ("LOC_BUILDING_LEANING_TOWER_DESCRIPTION",                                                        "1 free Great Engineer appears near the city where the wonder was built. +25%  Great People Points accumulation speed in all cities. Can only be built flat Grass and Plain lands in city with a Harbor. "),
@@ -32,7 +31,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_NAME",                                                                "郑王庙"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_NAME",                                                                "郑王庙"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_QUOTE",                                                               "午夜时分，云朵在月光中现出金色的光晕，我们就在此刻乘船抵达。璀璨的郑王庙太壮丽了。我看着它，努力抑制住眼中激动的泪水。--桑托恩普"),
     ("zh_Hans_CN",  "LOC_PEDIA_WONDERS_PAGE_BUILDING_SUK_WAT_ARUN_CHAPTER_HISTORY_PARA_1",                           "郑王庙（Wat Arun），或称黎明寺，是位于曼谷昭披耶河畔的一座佛教寺庙。自大城王国时期起，郑王寺的所在地就有一座寺庙。它当时被称为玛喀寺，是以它所在的玛喀村命名的。根据历史学家丹龙·腊贾努巴王子的说法，该寺庙在纳莱国王统治时期（1656-1688）出现在法国地图上，因此可以知道它在那个时候就已经存在了，尽管该寺庙成立的确切日期还不确定。大城府沦陷后，郑昭国王在该寺附近建立了他的新首都吞武里，并将该寺更名为昌寺。据信，郑昭在黎明时分经过该寺时，曾发誓要恢复该寺。在1785年被转移到河东岸的玉佛寺之前，该寺庙供奉着翡翠佛像。在郑昭统治时期，该寺庙位于皇宫的院子里，后来他的继任者拉玛一世将皇宫搬到了河的另一边。它被遗弃了一段时间，直到拉玛二世恢复了该寺庙，并将佛塔至70米。寺庙在夜间或日落时分的景色也许是曼谷最具代表性的景色之一。"),
