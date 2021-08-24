@@ -423,8 +423,10 @@
     </UpdateIcons>
     <!-- UI -->
     <ImportFiles id="DL_Overwrite_Files_Import" criteria="Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
+      <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
@@ -1194,6 +1196,7 @@
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
+    <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     <!-- UI Additions -->
