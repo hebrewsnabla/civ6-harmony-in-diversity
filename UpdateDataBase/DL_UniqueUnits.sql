@@ -41,6 +41,7 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_GUN' where Unit = 'UNIT_CHINES
 -- 西班牙
 update Units set Cost = 150, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_SPANISH_CONQUISTADOR';
 ------ UNIT_SPANISH_TERCIO
 -- 罗马
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ROMAN_LEGION';
