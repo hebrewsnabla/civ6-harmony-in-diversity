@@ -93,18 +93,18 @@ function UpdateCityHasGovernor(playerID)
             value = 1
         end
         local plot = Map.GetPlotByIndex(plotID)
-        -- print(plot, value)
+        -- print(plotID, value)
         SetObjectState(plot, g_PropertyKeys_HD.CityFlags.HasAssignedGovernor, value)
     end
 end
 
 function OnGovernorChanged(playerID, governorID)
-    -- print('OnGovernorChanged')
+    -- print('OnGovernorChanged', playerID, governorID)
     UpdateCityHasGovernor(playerID)
 end
 
 function OnGovernorAssigned(cityOwner, cityID, governorOwner, governorType)
-    -- print('OnGovernorAssigned')
+    -- print('OnGovernorAssigned', cityOwner, cityID, governorOwner, governorType)
     UpdateCityHasGovernor(governorOwner)
 end
 
