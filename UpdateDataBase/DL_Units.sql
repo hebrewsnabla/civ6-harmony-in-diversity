@@ -11,7 +11,7 @@ where UnitType = 'UNIT_TRADER';
 update Units set
 	CostProgressionModel = 'NO_COST_PROGRESSION',
 	CostProgressionParam1 = 0
- where UnitType = 'UNIT_LAHORE_NIHANG';
+where UnitType = 'UNIT_LAHORE_NIHANG';
 
 update Units set Cost = 75, CostProgressionParam1 = 5 where UnitType = 'UNIT_MISSIONARY';
 update Units set Cost = 150, CostProgressionParam1 = 10 where UnitType = 'UNIT_APOSTLE';
