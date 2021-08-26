@@ -400,7 +400,7 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     -------------------------------------------------------------
     -- Add Base Cost
     local cost = building.Cost
-    if(cost > 1) then
+    if (cost > 1) then
         local yield = GameInfo.Yields["YIELD_PRODUCTION"];
         if(yield) then
             table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_BASE_COST", cost, yield.IconString, yield.Name));
@@ -408,7 +408,7 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     end
     -- Add Base Maintenance
     local maintenance = building.Maintenance
-    if(maintenance > 1) then
+    if (maintenance > 1) then
         local yield = GameInfo.Yields["YIELD_GOLD"];
         if(yield) then
             table.insert(toolTipLines, Locale.Lookup("LOC_TOOLTIP_MAINTENANCE", maintenance, yield.IconString, yield.Name));
@@ -422,3 +422,81 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
 end
 
 g_ToolTipGenerators.KIND_BUILDING = ToolTipHelper.GetBuildingToolTip;
+
+
+-- Cache original GetBuildingToolTip.
+Base_GetProjectToolTip = ToolTipHelper.GetProjectToolTip;
+ToolTipHelper.GetProjectToolTip = function(projectType)
+    
+    -- ToolTip Format
+    -- <Name>
+    -- <Static Description>
+    -- <Amenities While Active>
+    -- <Yield Conversions>
+    -- <Great Person Points>
+    local projectReference = GameInfo.Projects[projectType];
+
+    local name = projectReference.Name;
+    local description = projectReference.Description;
+    local amenitiesWhileActive = projectReference.AmenitiesWhileActive;
+
+    -- Build ze tip!
+    -- Build the tool tip line by line.
+    local toolTipLines = {};
+    table.insert(toolTipLines, Locale.ToUpper(name));
+    table.insert(toolTipLines, Locale.Lookup("LOC_PROJECT_NAME"));
+
+    AddProjectStrategicResourceTooltip(projectReference, toolTipLines);
+
+    if(not Locale.IsNilOrWhitespace(description)) then
+        table.insert(toolTipLines,  "[NEWLINE]" .. Locale.Lookup(description));
+    end
+
+    AddReactorProjectData(projectReference, toolTipLines);
+
+    if (amenitiesWhileActive ~= nil and amenitiesWhileActive > 0) then
+        table.insert(toolTipLines, Locale.Lookup("LOC_PROJECT_AMENITIES_WHILE_ACTIVE", amenitiesWhileActive));
+    end
+
+    for row in GameInfo.Project_YieldConversions() do
+        if(row.ProjectType == projectReference.ProjectType) then -- Fix
+            local yield = GameInfo.Yields[row.YieldType];
+            if(yield) then
+                local yieldIcon = yield.IconString;
+                local yieldName = yield.Name;
+                local percent = row.PercentOfProductionRate; --TODO: Include player bonuses, like those from government
+                table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_PROJECT_YIELD_CONVERSIONS", yieldIcon, yieldName, percent));
+            end
+        end
+    end
+
+    for row in GameInfo.Project_GreatPersonPoints() do
+        if(row.ProjectType == projectReference.ProjectType) then -- Fix
+            local greatPersonClass = GameInfo.GreatPersonClasses[row.GreatPersonClassType];
+            if(greatPersonClass) then
+                local greatPersonClassName = greatPersonClass.Name;
+                local greatPersonClassIconString = greatPersonClass.IconString;
+                table.insert(toolTipLines, Locale.Lookup("LOC_PROJECT_GREAT_PERSON_POINTS", greatPersonClassIconString, greatPersonClassName));
+            end 
+        end
+    end
+
+    -------------------------------------------------------------
+    -- Add Base Cost
+    local cost = projectReference.Cost
+    if (cost > 1) then
+        local yield = GameInfo.Yields["YIELD_PRODUCTION"];
+        if(yield) then
+            table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_BASE_COST", cost, yield.IconString, yield.Name));
+        end
+    end
+    local progression = projectReference.CostProgressionParam1
+    if progression > 0 then
+        table.insert(toolTipLines, Locale.Lookup("LOC_TOOLTIP_COST_PROGRESSION_PARAM", progression / 100) .. "[NEWLINE]");
+    end
+    -------------------------------------------------------------
+    
+    -- Return the composite tooltip!
+    return table.concat(toolTipLines, "[NEWLINE]");
+end
+g_ToolTipGenerators.KIND_PROJECT = ToolTipHelper.GetProjectToolTip;

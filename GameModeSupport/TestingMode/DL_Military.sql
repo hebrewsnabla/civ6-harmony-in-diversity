@@ -31,8 +31,8 @@ update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
 -- free promotion for deity AI.
 insert or replace into TraitModifiers (TraitType,   ModifierId) values ('TRAIT_LEADER_MAJOR_CIV', 'HD_DEITY_FREE_PROMOTION');
-insert or replace into Modifiers (ModifierId,           ModifierType,   Permanent,  OwnerRequirementSetId)
-values ('HD_DEITY_FREE_PROMOTION',  'MODIFIER_PLAYER_UNITS_ADJUST_GRANT_EXPERIENCE',    1,  'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
+insert or replace into Modifiers (ModifierId,           ModifierType,  OwnerRequirementSetId)
+values ('HD_DEITY_FREE_PROMOTION',  'MODIFIER_PLAYER_TRAINED_UNITS_ADJUST_GRANT_EXPERIENCE',  'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
 insert or replace into ModifierArguments (ModifierId,   Name,   Value) values ('HD_DEITY_FREE_PROMOTION',  'Amount',   -1);
 
 --------------------------------------------------------------------------------------------------------------------------

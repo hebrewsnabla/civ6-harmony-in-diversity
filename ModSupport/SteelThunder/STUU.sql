@@ -96,7 +96,7 @@ insert or replace into UnitAbilityModifiers (UnitAbilityType, ModifierId) values
 -- update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_GHAZI';
 -- 德国
-update Units set PrereqTech = 'TECH_APPRENTICESHIP', MustPurchase = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+update Units set PrereqTech = 'TECH_APPRENTICESHIP', MustPurchase = 0, CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressionParam1 = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 45, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 update Units set Cost = 600, Maintenance = 15, BaseMoves = 4, Range = 0, Combat = 92, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_GERMAN_PANZER';
