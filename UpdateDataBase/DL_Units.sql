@@ -65,6 +65,8 @@ update Units set
 	Cost = 200
 where UnitType = 'UNIT_SPY';
 
+update UnitOperations set BaseProbability = 16 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS' or OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_BATTERING_RAM';

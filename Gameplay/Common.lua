@@ -106,6 +106,25 @@ Utils.AddGreatPeoplePoints = function(playerID, gppID, amount)
     end
 end
 
+Utils.SetUnitExperience = function(playerID, unitID, amount)
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if unit ~= nil then
+        -- print('+exp', amount)
+        unit:GetExperience():SetExperienceLocked(false);
+        unit:GetExperience():ChangeExperience(amount);
+    end
+end
+
+Utils.SetUnitStoredPromotions = function(playerID, unitID, amount)
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if amount == nil then 
+        amount = 1
+    end
+    if unit ~= nil then
+        unit:GetExperience():ChangeStoredPromotions(amount);
+    end
+end
+
 -- Generic helper function to grant a relic to the given player.
 Utils.GrantRelic = function(playerID)
     local player = Players[playerID];

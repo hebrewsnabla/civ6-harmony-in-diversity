@@ -11,6 +11,7 @@ values
     -- Main
     ("LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "Specialty District"),
     ("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "District"),
+    ("LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "Cost Progression Param: {1_num}"),
     ("LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "Citizen Yields change (per citizen in this district):"),
     ("LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "Citizen Yields (per citizen in this district):"),
     ("LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "Citizen Yields (per citizen in this district)"),
@@ -76,6 +77,7 @@ values
 
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "专业化区域"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "非专业化区域"),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "涨价系数：{1_num}"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "在此区域中工作的 [ICON_Citizen] 专家收益变动："),
     ("zh_Hans_CN",  "LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "每个在此区域中工作的 [ICON_Citizen] 专家收益："),
     ("zh_Hans_CN",  "LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "每个在此区域中工作的 [ICON_Citizen] 专家收益"),

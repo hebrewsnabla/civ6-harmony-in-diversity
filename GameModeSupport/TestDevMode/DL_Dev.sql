@@ -32,6 +32,11 @@ update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualT
 
 -- Techs
 update Boosts set NumItems = 2 where TechnologyType = 'TECH_MASS_PRODUCTION';
+insert or replace into TechnologyPrereqs
+    (Technology,                PrereqTech)
+values
+    ('TECH_PREDICTIVE_SYSTEMS', 'TECH_STEALTH_TECHNOLOGY'),
+    ('TECH_OFFWORLD_MISSION',   'TECH_PREDICTIVE_SYSTEMS');
 
 -- Civs
 update ModifierArguments set Value = 25 where Name = 'Amount' and ModifierId = 'LIBRARY_DISTRICT_PRODUCTION';
@@ -153,3 +158,21 @@ insert or replace into ModifierArguments
 values
     ('HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES',                    'YieldType',            'YIELD_GOLD'),
     ('HD_ONE_GOLD_FROM_INCOMING_FOREIGN_ROUTES',                    'Amount',               1);
+
+-- Naval Melee 
+delete from TypeTags where Type = 'ABILITY_MONGOLIAN_KESHIG' and Tag = 'CLASS_NAVAL_MELEE';
+
+insert or replace into TechnologyModifiers
+    (TechnologyType,                                        ModifierId)
+values
+    ('TECH_SQUARE_RIGGING',                                 'HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+insert or replace into Modifiers
+    (ModifierId,                                            ModifierType)
+values
+    ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                            Name,           Value)
+values
+    ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'AbilityType',  'ABILITY_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT');

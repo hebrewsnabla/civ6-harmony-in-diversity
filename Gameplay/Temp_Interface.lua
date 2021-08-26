@@ -112,28 +112,39 @@ Events.GovernorChanged.Add(OnGovernorChanged)
 Events.GovernorAppointed.Add(OnGovernorChanged)
 Events.GovernorAssigned.Add(OnGovernorAssigned)
 
--- Bug fix
--- TODO: When upgraded, check if it has free promotions.
--- Events.UnitPromotionAvailable.Add(monitorPromotionA)
--- Events.UnitUpgraded.Add(monitorUnitUpgraded)
--- function monitorPromotion(playerID, unitID)
---     print('promoted', playerID, unitID)
--- end
+-- Bug fix: When upgraded, free promotion will make the experience to 15 exp.
+function getPropKey(playerID, unitID)
+    return 'promotion_bug_fix_' .. tostring(playerID) .. '_' .. tostring(unitID);
+end
 
--- function monitorPromotionA(playerID, unitID, promotionID)
---     print('promote available', playerID, unitID, promotionID)
--- end
+function monitorPromotionAvailable(playerID, unitID, promotionID)
+    -- print('promote available', playerID, unitID, promotionID)
+    local player = Players[playerID]
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if (player ~= nil) and (unit == nil) then
+        -- the promotion available was set before unit added and cause the bug.
+        SetObjectState(player, getPropKey(playerID, unitID), 1)
+    end
+end
 
--- function monitorUnitAdd(playerID, unitID)
---     print('added', playerID, unitID)
--- end
-
--- function monitorUnitUpgraded(playerID, unitID)
---     print('upgraded', playerID, unitID)
--- end
+function monitorUnitUpgraded(playerID, unitID)
+    -- print('upgraded', playerID, unitID)
+    local player = Players[playerID]
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if (player == nil) or (unit == nil) then
+        return
+    end
+    local value = GetObjectState(player, getPropKey(playerID, unitID))
+    if value == 1 then
+        -- print('reached');
+        local amount = unit:GetExperience():GetExperienceForNextLevel()
+        Utils.SetUnitExperience(playerID, unitID, amount)
+        SetObjectState(player, getPropKey(playerID, unitID), 0)
+    end
+end
 
 -- Events.UnitPromoted.Add(monitorPromotion)
--- Events.UnitPromotionAvailable.Add(monitorPromotionA)
+Events.UnitPromotionAvailable.Add(monitorPromotionAvailable)
 -- Events.UnitAddedToMap.Add(monitorUnitAdd)
--- Events.UnitUpgraded.Add(monitorUnitUpgraded)
-
+Events.UnitUpgraded.Add(monitorUnitUpgraded)
+-- Events.UnitRemovedFromMap.Add(monitorUnitRemove)

@@ -52,3 +52,9 @@ UPDATE PseudoYields SET DefaultValue = 0.15 WHERE PseudoYieldType = 'PSEUDOYIELD
 
 -- Combat Strength Adjustments.
 update Units set Combat = Combat - 3 where Combat > 45 and PromotionClass = 'PROMOTION_CLASS_HEAVY_CAVALRY';
+
+-- Ability from Basilikoi
+insert or replace into TypeTags
+    (Type,                                                              Tag)
+values
+    ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_HEAVY_CAVALRY');

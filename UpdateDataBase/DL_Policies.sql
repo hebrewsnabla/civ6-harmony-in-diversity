@@ -72,7 +72,7 @@ values
 -- 着力点时代调整
 update CommemorationTypes set MaximumGameEra = 'ERA_INDUSTRIAL' where CommemorationType = 'COMMEMORATION_EXPLORATION' or CommemorationType = 'COMMEMORATION_ECONOMIC';
 update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_TOURISM' or CommemorationType = 'COMMEMORATION_ESPIONAGE';
-update Policies_XP1 set MaximumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_MONASTICISM' or PolicyType = 'POLICY_ISOLATIONISM';
+update Policies_XP1 set MaximumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ISOLATIONISM';
 update Policies_XP1 set MaximumGameEra = 'ERA_MEDIEVAL' where PolicyType = 'POLICY_TWILIGHT_VALOR';
 update Policies_XP1 set MinimumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ELITE_FORCES';
 delete from Policies where PolicyType = 'POLICY_INQUISITION' or PolicyType = 'POLICY_COLLECTIVISM';

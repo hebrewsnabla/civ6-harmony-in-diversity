@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                                "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Recon units gain the ability: Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                                     "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",                           "+1 [ICON_Production] Production and +2 [ICON_Gold] Gold from Fishing Boats over Bonus Resources."),
     ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                              "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Science] Science from Fishing Boats for the cities have Holy Site. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),
@@ -30,6 +31,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                            "水运单位+1 [ICON_Movement] 移动力。[NEWLINE]海军近战单位获得能力：可利用自身的高 [ICON_Movement] 移动力护送平民和支援单位。"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                                 "捕鱼传统"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",                       "改良加成资源的渔船+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                          "改良奢侈资源的渔船+1 [ICON_Food] 食物。拥有圣地的城市，渔船+1 [ICON_Science] 科技值。如城市中有渔船，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),

@@ -8,6 +8,9 @@ g_PropertyKeys_HD = {
     CityFlags = {
         HasAssignedGovernor = "HD_HasAssignedGovernor",
     },
+    UnitFlags = {
+        PromotionAvailable = "HD_PromotionAvailable",
+    },
 };
 
 -- Every time SetObjectState is called, the script-side cache is updated to prevent unnecessary

@@ -527,10 +527,10 @@ select
 where exists (select TraitType from Traits where TraitType = 'TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS');
 
 insert or ignore into Modifiers
-    (ModifierId,                            	ModifierType,												SubjectRequirementSetId)
+    (ModifierId,                            	ModifierType,												Permanent,	SubjectRequirementSetId,	SubjectStackLimit)
 values
-    ('TRAIT_GOLDEN_AGE_WILDCARD_SLOT',			'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',	'PLAYER_HAS_GOLDEN_AGE'),
-	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'MODIFIER_PLAYER_ADJUST_PROPERTY',							'PLAYER_HAS_GOLDEN_AGE');
+    ('TRAIT_GOLDEN_AGE_WILDCARD_SLOT',			'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',	1,			'PLAYER_HAS_GOLDEN_AGE',	1),
+	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'MODIFIER_PLAYER_ADJUST_PROPERTY',							0,			'PLAYER_HAS_GOLDEN_AGE',	NULL);
 
 insert or ignore into ModifierArguments
     (ModifierId,                            	Name,          			 Value)
