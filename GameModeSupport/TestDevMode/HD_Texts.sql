@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                                "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Recon units gain the ability: Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
+    ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                                "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Naval melee units gain the ability: Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                                     "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",                           "+1 [ICON_Production] Production and +2 [ICON_Gold] Gold from Fishing Boats over Bonus Resources."),
     ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                              "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Science] Science from Fishing Boats for the cities have Holy Site. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),

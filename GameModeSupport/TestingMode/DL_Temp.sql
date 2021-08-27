@@ -57,4 +57,5 @@ update Units set Combat = Combat - 3 where Combat > 45 and PromotionClass = 'PRO
 insert or replace into TypeTags
     (Type,                                                              Tag)
 values
+    ('ABILITY_BASILIKOI_TRAINED_UNIT_XP',                               'CLASS_HEAVY_CAVALRY')
     ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_HEAVY_CAVALRY');

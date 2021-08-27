@@ -174,6 +174,7 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 -- end
 
 -- Events.WonderCompleted.Add(FranceWonderToGreatWriterPoints)
+
 --[[
 -- Eleanor Judgement of Love
 function ProjectEnemyCitiesIdentityChange(playerID, cityID, projectID)
@@ -181,20 +182,23 @@ function ProjectEnemyCitiesIdentityChange(playerID, cityID, projectID)
 	local pCity = CityManager.GetCity(playerID, cityId)
 	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
 	local pDistrict = pCity:GetDistricts():GetDistrictLocation(districtID)
+	local plotIndex = Map.GetPlotIndex(pDistrict)
 	local amount = -100
     if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
 		local players = Game.GetPlayers{ Alive=true }
 		for _, iPlayer in ipairs(players) do
-			if iPlayer == pPlayer then 
+			if iPlayer == pPlayer or iPlayer:IsMinor() then 
 				return
 			end
 			local iPlayerCities = iPlayer:GetCities()
 			for _, city in iPlayerCities:Members() do
-			local plotIndex = Map.GetPlotIndex(pDistrict)
-			local otherPlotIndex = Map.GetPlotIndex(city:GetX(), city:GetY())
-			local distance = Map.GetPlotDistance(plotIndex, otherPlotIndex)
-				if distance <= 9 then
-        			city:ChangeLoyalty(amount)
+				local otherPlotIndex = Map.GetPlotIndex(city:GetX(), city:GetY())
+				local distance = Map.GetPlotDistance(plotIndex, otherPlotIndex)
+				if distance <= 9 then 
+					local loyaltyPerTurn = iCity:GetCulturalIdentity():GetLoyaltyPerTurn()
+					if loyaltyPerTurn < 0 then
+        				city:ChangeLoyalty(amount)
+					end
 				end
 			end
 		end	
