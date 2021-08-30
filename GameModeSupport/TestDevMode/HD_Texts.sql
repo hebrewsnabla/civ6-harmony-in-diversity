@@ -46,7 +46,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                              "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_DESCRIPTION",                        "可以用 [ICON_FAITH] 信仰购买工业区建筑。用 [ICON_FAITH] 信仰值招募伟人时所需的费用-10%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION",       "所有位于冻土单元格的区域+1 [ICON_Food] 食物。建立城市可获得额外领土。冻土提供+1 [ICON_Faith] 信仰值与+1 [ICON_Production] 生产力。与俄罗斯交战的文明单位如处于俄罗斯领土中，遭遇暴风雪时受到的伤害+100%。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                                "对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的特色区域获得其作为国际目的地时的加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                                "对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的专业化区域获得其作为国际目的地时的加成。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                 "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION",                             "当拥有总务官头衔的马格努斯总督在9环内就职时会自动创建。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                          "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为9个单元格之内的城市（包括该城市）提供额外+2所有产出。只有当拥有总务官头衔的总督马格努斯在9个单元格以内的城市就职时方可建造。"),

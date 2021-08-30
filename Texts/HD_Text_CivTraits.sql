@@ -79,7 +79,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "首都每次建造完成书院区域或书院中的建筑时获得一个总督点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+50% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
-    ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_DESCRIPTION",                     "所有同盟类型均可形成共享视野。[NEWLINE]目的地城市中的每个渔船、营地或牧场可为 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。[NEWLINE]你的城市作为 [ICON_TradeRoute] 贸易路线目的地时，此城中的每个渔船、营地或牧场可为庞德梅克提供+1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_DESCRIPTION",                     "所有同盟类型均可以共享视野。[NEWLINE]目的地城市中的每个渔船、营地或牧场可为你的 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。[NEWLINE]你的城市作为 [ICON_TradeRoute] 贸易路线目的地时，此城中的每个渔船、营地或牧场可为你提供+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",           "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-30% [ICON_PRODUCTION] 生产力。"), --每一种改良的奢侈矿产资源为城市+10% [ICON_Gold] 金币，城市中的每个奢侈品资源矿产为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_FOOD] 食物。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                  "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得15 [ICON_GOLD] 金币。"), --可在拥有曼丁哥市场的任意城市中开展“多钱善贾”项目。
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "[ICON_Governor] 总督就职城市提供的 [ICON_CULTURE] 文化值+5%、 [ICON_Production] 生产力+5%，此城市中生产的所有单位的战斗经验值+10%。在非马普切建立的城市中，这些数值将乘以三倍。[ICON_Governor] 总督就职城市9单元格范围内的所有城市每回合对本方文明的忠诚度+4。牧场提供额外+1 [ICON_Housing] 住房。"),
@@ -89,7 +89,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",        "游戏初始便解锁畜牧业科技。牧场+1 [ICON_PRODUCTION] 生产力。开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。拥有专业化区域的城市+1 [ICON_Science] 科技值和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。如与海岸或湖泊单元格相邻，娱乐区提供的 [ICON_AMENITIES] 宜居度+1。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "建造军营、圣地及其中的建筑时+20%建造速度。相邻区域为圣地提供标准相邻加成。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。[NEWLINE]解锁行政部门后，城市每拥有2个平原、草原、平原（丘陵）或草原（丘陵）单元格+1 [Icon_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成军营或堡垒后对相邻单元格施放文化炸弹并+1 [ICON_Production] 生产力。军事工程师的使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"),
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
@@ -107,7 +107,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",               "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+4 [ICON_Science] 科技值。"), --获得 [ICON_GreatProphet] 大预言家或创立宗教时获得一个免费的使徒。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值15%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“中世纪集市”市政后即可栽种树林。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。特色区域与其他区域相邻时不会获得少量相邻加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。专业化区域与其他区域相邻时不会获得少量相邻加成。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION",        "在城市中完成特色项目后，可将原始 [ICON_Capital] 首都迁至任意拥有U型港的城市（必须为本方建立）。每个外交区建筑、外交区、市政广场建筑与市政广场区域+1 [ICON_TradeRoute] 贸易路线容量。在拥有市政广场或外交区的城市中建造区域时+50% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始便激活“写作”科技 [ICON_TechBoosted] 尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 鼓舞。腓尼基建造的海岸城市若与 [ICON_Capital] 首都在同一大陆，则其忠诚度为100%。开拓者上船后，[ICON_Movement] 移动力与视野范围各+2。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力。国际 [ICON_TradeRoute] 贸易路线+1 [ICON_CULTURE] 文化、+2 [ICON_Gold] 金币，若目的地为你宗主的城邦则该加成变为3倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
@@ -154,4 +154,4 @@ values
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "解锁建造者建造荷兰特色改良设施“圩田”的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。如与圩田改良设施相邻，则+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力、[ICON_GOLD] 金币和 [ICON_FOOD] 食物。必须建在与2个或更多可通行陆地单元格相邻的海岸或湖泊单元格上。单元格的 [ICON_Movement] 移动力消耗增至3点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。建造堤坝区域和造船厂、拦洪坝建筑时加速50%。造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "建造商人单位加速50%。对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的特色区域获得其作为国际目的地时的加成。");
+    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "建造商人单位加速50%。对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的专业化区域获得其作为国际目的地时的加成。");

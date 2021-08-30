@@ -25,7 +25,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_FEATURE_PAITITI_DESCRIPTION",                   "占3个单元格且无法通行的自然奇观。为相邻单元格提供+5 [ICON_Gold] 金币。如领土中包含此单元格，城市的对外国际 [ICON_TradeRoute] 贸易路线提供+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_FEATURE_PAITITI_DESCRIPTION",                   "占3个单元格且无法通行的自然奇观。为相邻单元格提供+5 [ICON_Gold] 金币。从拥有至少1个“黄金国”单元格的城市出发的国际 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。为“剧院广场”和“商业中心”区域提供大量相邻加成。"),
     ("zh_Hans_CN",  "LOC_FEATURE_FOUNTAIN_OF_YOUTH_DESCRIPTION",         "占1个单元格的自然奇观。提供+6 [ICON_Science] 科技值、+2 [ICON_Faith] 信仰值，以及淡水。进入此奇观的陆地战斗单位将获得能力“生命之水”（在任意领土中+10生命值恢复）。"),
     ("zh_Hans_CN",  "LOC_FEATURE_PIOPIOTAHI_DESCRIPTION",                "不可逾越的3个单元格的自然奇观。为邻近单元格+1 [ICON_Culture] 文化值和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_FEATURE_EVEREST_DESCRIPTION",                   "占3个单元格的自然奇观，不可通行。使相邻单元格的产出+2 [ICON_Faith] 信仰值。移动到珠穆朗玛峰附近的宗教单位可在之后的游戏中无视丘陵地貌的影响。"),

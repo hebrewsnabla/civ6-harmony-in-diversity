@@ -29,7 +29,7 @@
 			<Text>攻击信仰宗教与拜占庭主流宗教相同的城市时，骑兵将对城市外围防御造成全额伤害。解锁“王权神授”市政后将获得特色单位“靖抚骑兵”。</Text>
 		</Replace>
 		<Replace Tag="LOC_UNIT_BYZANTINE_DROMON_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>拜占庭特色古典时代单位，替代拥有更高射程的四段帆船。对抗其它单位时时+10 [ICON_Strength] 战斗力。</Text>
+			<Text>拜占庭特色古典时代单位，替代四段帆船。拥有更远的射程，对抗其它单位时时+10 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_TAGMA_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>与靖抚骑兵相邻的陆地单位+4 [ICON_Strength] 战斗力或 [ICON_RELIGION] 宗教战斗力。</Text>
