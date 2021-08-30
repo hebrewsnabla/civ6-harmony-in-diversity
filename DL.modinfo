@@ -24,8 +24,8 @@
       <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。[NEWLINE]首个稳定版v1.0已发布。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o，流浪de蒲公英</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 法拉墨, Vearmus, lp, 柚子, Winged Hussar, 榖音, Siv, o(╯□╰)o，流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -287,6 +287,30 @@
     </Criteria>
   </ActionCriteria>
   <FrontEndActions>
+    <UpdateText id="Better_Chinese_Combined">
+      <Properties><LoadOrder>5</LoadOrder></Properties>
+      <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Ethiopia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_Major_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion2_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion2_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Indonesia_Khmer_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Macedonia_Persia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Nubia_Amanitore_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Poland_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/TeddyRoosevelt_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Vanilla_zh_Hans_CN.xml</File>
+      <File>SubMods/BetterChinese/Text/VikingsLandmarks_Translations_Text.xml</File>
+    </UpdateText>
+    <UpdateText id="Better_Chinese_Addon">
+      <Properties><LoadOrder>6</LoadOrder></Properties>
+      <File>SubMods/BetterChinese/Text/BetterChineseAddon_Text.sql</File>
+    </UpdateText>
     <UpdateDatabase id="Community_STUU_ConfigUserSetting"> <!-- criteria="STUU" -->
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
@@ -601,6 +625,31 @@
     <UpdateText id="RemovableDistricts_mod_support_text" criteria="RemovableDistricts_Expansion2">
       <Properties><LoadOrder>10000000</LoadOrder></Properties>
       <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
+    </UpdateText>
+    <!-- Better Chinese -->
+    <UpdateText id="Better_Chinese_Combined" criteria="Expansion2">
+      <Properties><LoadOrder>5</LoadOrder></Properties>
+      <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Ethiopia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_Major_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion1_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion2_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Expansion2_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_Text.xml</File>
+      <File>SubMods/BetterChinese/Text/Indonesia_Khmer_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Macedonia_Persia_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Nubia_Amanitore_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Poland_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/TeddyRoosevelt_Translations_ConfigText.xml</File>
+      <File>SubMods/BetterChinese/Text/Vanilla_zh_Hans_CN.xml</File>
+      <File>SubMods/BetterChinese/Text/VikingsLandmarks_Translations_Text.xml</File>
+    </UpdateText>
+    <UpdateText id="Better_Chinese_Addon" criteria="Expansion2">
+      <Properties><LoadOrder>6</LoadOrder></Properties>
+      <File>SubMods/BetterChinese/Text/BetterChineseAddon_Text.sql</File>
     </UpdateText>
     <!-- Better builder charges tracking -->
     <ReplaceUIScript id="BuilderChargesUnitFlagManager" criteria="BetterBuilderChargesTracking_Conflict_Expansion2">
@@ -1247,6 +1296,25 @@
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
+    <!-- Better Chinese -->
+    <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Ethiopia_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Expansion1_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Expansion1_Translations_Major_Text.xml</File>
+    <File>SubMods/BetterChinese/Text/Expansion1_Translations_Text.xml</File>
+    <File>SubMods/BetterChinese/Text/Expansion2_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Expansion2_Translations_Text.xml</File>
+    <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/GranColombia_Maya_Translations_Text.xml</File>
+    <File>SubMods/BetterChinese/Text/Indonesia_Khmer_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Macedonia_Persia_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Nubia_Amanitore_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Poland_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/TeddyRoosevelt_Translations_ConfigText.xml</File>
+    <File>SubMods/BetterChinese/Text/Vanilla_zh_Hans_CN.xml</File>
+    <File>SubMods/BetterChinese/Text/VikingsLandmarks_Translations_Text.xml</File>
+    <File>SubMods/BetterChinese/Text/BetterChineseAddon_Text.sql</File>
     <!-- Builder charges -->
     <File>SubMods/BuilderCharges/UnitFlagManager_BuilderCharges.lua</File>
     <!-- City Policies -->

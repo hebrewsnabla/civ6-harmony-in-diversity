@@ -36,7 +36,7 @@ update GlobalParameters set Value = 75 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCE
 update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSUFFICIENT_RESOURCES';
 -- strategic resources
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
-update Resource_Consumption set StockpileCap = 100;
+update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
 
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
