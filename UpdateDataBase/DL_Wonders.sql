@@ -79,19 +79,20 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 
 update Building_GreatPersonPoints set PointsPerTurn = 2 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
 
---BUILDING_GREAT_ZIMBABWE
+--BUILDING_PANAMA_CANAL
 --grants a GREAT_PERSON_CLASS_MERCHANT
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_GREAT_ZIMBABWE', 'GREAT_ZIMBABWE_GRANTS_MERCHANT'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_GREAT_ZIMBABWE');
+select	'BUILDING_PANAMA_CANAL', 'PANAMA_CANAL_GRANTS_MERCHANT'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_PANAMA_CANAL');
 
 insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
-('GREAT_ZIMBABWE_GRANTS_MERCHANT',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
+('PANAMA_CANAL_GRANTS_MERCHANT',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
 
 insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
-('GREAT_ZIMBABWE_GRANTS_MERCHANT',	'Amount',	1),
-('GREAT_ZIMBABWE_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
+('PANAMA_CANAL_GRANTS_MERCHANT',	'Amount',	1),
+('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
+--BUILDING_GREAT_ZIMBABWE
 update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 

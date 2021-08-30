@@ -50,9 +50,10 @@ delete from TraitModifiers where TraitType = 'TRAIT_RADIO_ORANJE' and ModifierId
 -- Wonders
 update ModifierArguments set Value = 1 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
-update ModifierArguments set Value = 1 where ModifierId = 'COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
+-- update ModifierArguments set Value = 1 where ModifierId = 'COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
+
 
 -- Beliefs
 delete from BeliefModifiers where BeliefType = 'BELIEF_GOD_OF_THE_SEA';

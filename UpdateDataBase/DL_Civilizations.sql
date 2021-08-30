@@ -1006,8 +1006,32 @@ values
 	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
 
 ----------------------------------------------------------------------------------------------------------------------------------
---France
---Chateau
+-- France
+update ModifierArguments set Value = 300 where ModifierId = 'TRAIT_WONDER_DOUBLETOURISM' and Name = 'ScalingFactor';
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_BONUS_TO_CAPITAL'),
+	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL');
+
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,												SubjectRequirementSetId)
+values
+	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_PLOT_IS_WONDER_REQUIRMENTS'),
+	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL),
+	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_MIEDIVAL_REQUIRMENTS'),
+	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,												Name,			Value)
+values
+	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'ModifierId',	'TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER'),
+	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'Amount',		1),
+	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'ModifierId',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER'),
+	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','Amount',		1);
+
+-- Chateau
 update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
 update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldType = 'YIELD_GOLD';
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
@@ -1529,10 +1553,7 @@ values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
 
 --------------------------------------------------------------------------
--- France
 /*
-update ModifierArguments set Value = 300 where ModifierId = 'TRAIT_WONDER_DOUBLETOURISM' and Name = 'ScalingFactor';
-
 --Catherine De Medici
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
@@ -1548,3 +1569,4 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
+*/

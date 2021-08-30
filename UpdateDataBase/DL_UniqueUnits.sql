@@ -19,7 +19,7 @@ update Units set Cost = 410, Maintenance = 6, BaseMoves = 5, Range = 2, Combat =
 ------ UNIT_GERMAN_LANDSKNECHT
 ------ UNIT_GERMAN_PANZER
 -- 希腊
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 28, RangedCombat = 0 where UnitType = 'UNIT_GREEK_HOPLITE';
+update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 25, RangedCombat = 0 where UnitType = 'UNIT_GREEK_HOPLITE';
 ------ UNIT_GREEK_PELTAST
 -- 苏美尔
 update Units set Cost = 45, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 30, RangedCombat = 0 where UnitType = 'UNIT_SUMERIAN_WAR_CART';
