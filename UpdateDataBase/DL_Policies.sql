@@ -919,11 +919,11 @@ values
 	('POLICY_INTERNATIONAL_WATERS',	'ERA_INFORMATION' 	);
 
 -- Land
-update PolicyUnitProductionValidEras set SpeedUpAmount = 40, SpeedUpPerTier = 15 where
+update PolicyUnitProductionValidEras set SpeedUpAmount = 30, SpeedUpPerTier = 10 where
 	PolicyType = 'POLICY_AGOGE' or PolicyType = 'POLICY_FEUDAL_CONTRACT' or PolicyType = 'POLICY_GRANDE_ARMEE' or PolicyType = 'POLICY_MILITARY_FIRST';
 
 -- Sea
-update PolicyUnitProductionValidEras set SpeedUpAmount = 60, SpeedUpPerTier = 15 where
+update PolicyUnitProductionValidEras set SpeedUpAmount = 50, SpeedUpPerTier = 10 where
 	PolicyType = 'POLICY_MARITIME_INDUSTRIES' or PolicyType = 'POLICY_PRESS_GANGS' or PolicyType = 'POLICY_INTERNATIONAL_WATERS';
 
 insert or replace into PolicyUnitProductionValidClasses	(PolicyType,	PromotionClassType,	UnitDomain)

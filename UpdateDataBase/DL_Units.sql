@@ -169,11 +169,11 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- Light cavalry
 update Units set Cost = 65, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 36, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HORSEMAN';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HORSEMAN';
-update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 46, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COURSER';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 47, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COURSER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COURSER';
 -- update Units set Cost = 150, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_STRADIOT';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_STRADIOT';
-update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CAVALRY';
+update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 62, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CAVALRY';
 -- update Units set Cost = 330, Maintenance = 6, BaseMoves = 5, Range = 0, Combat = 76, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MOUNTED_RIFLES';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MOUNTED_RIFLES';

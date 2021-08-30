@@ -4,13 +4,13 @@ insert or replace into EnglishText
     (Tag,                                                                             Text)
 values
     -- New policies
-    ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+40% production speed toward Ancient and Classical era land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+40% production speed toward Ancient, Classical, Medieval and Renaissance era land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+40% production speed toward Modern era and earlier land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "+40% production speed toward all land military units. +15% for each Encampment District buildings the city has."),
-    ("LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "+60% production speed toward Ancient and Classical era naval units. +15% for each Harbor District buildings the city has."),
-    ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+60% production speed toward Industrial era and earlier naval units. +15% for each Harbor District buildings the city has."),
-    ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+60% production speed toward all naval units, excluding Carriers. +15% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "+30% production speed toward Ancient and Classical era land military units. +10% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "+30% production speed toward Ancient, Classical, Medieval and Renaissance era land military units. +10% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "+30% production speed toward Modern era and earlier land military units. +10% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "+30% production speed toward all land military units. +10% for each Encampment District buildings the city has."),
+    ("LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "+50% production speed toward Ancient and Classical era naval units. +10% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+50% production speed toward Industrial era and earlier naval units. +10% for each Harbor District buildings the city has."),
+    ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+50% production speed toward all naval units, excluding Carriers. +10% for each Harbor District buildings the city has."),
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
@@ -130,13 +130,13 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                             Text)
 values
     -- 新政策卡
-    ("zh_Hans_CN",  "LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "生产远古和古典时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "生产远古、古典、中世纪和文艺复兴时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "生产现代及更早时代的陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "生产所有陆地军事单位加速+40%，城市每有一级军营建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "生产远古和古典时代的海军单位加速+60%，城市每有一级港口建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "生产工业及更早时代的海军单位加速+60%，城市每有一级港口建筑多15%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+60%，城市每有一级港口建筑多15%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_AGOGE_HD_DESCRIPTION",                                               "生产远古和古典时代的陆地军事单位加速+30%，城市每有一级军营建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_FEUDAL_CONTRACT_HD_DESCRIPTION",                                     "生产远古、古典、中世纪和文艺复兴时代的陆地军事单位加速+30%，城市每有一级军营建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_GRANDE_ARMEE_HD_DESCRIPTION",                                        "生产现代及更早时代的陆地军事单位加速+30%，城市每有一级军营建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_FIRST_HD_DESCRIPTION",                                      "生产所有陆地军事单位加速+30%，城市每有一级军营建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INDUSTRIES_HD_DESCRIPTION",                                 "生产远古和古典时代的海军单位加速+50%，城市每有一级港口建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "生产工业及更早时代的海军单位加速+50%，城市每有一级港口建筑多10%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+50%，城市每有一级港口建筑多10%。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
     -- 着力点
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),

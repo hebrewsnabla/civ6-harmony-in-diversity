@@ -93,10 +93,10 @@ update Projects set Cost = 800,	PrereqTech = 'TECH_STEALTH_TECHNOLOGY', Required
 
 ------------------------------------------------------------------------------------------------------------
 -- adjust strategic projects cost
-update Projects set Cost = 50 where ProjectType = 'PROJECT_GRANT_RESOURCE_HORSES';
-update Projects set Cost = 60 where ProjectType = 'PROJECT_GRANT_RESOURCE_IRON';
-update Projects set Cost = 100 where ProjectType = 'PROJECT_GRANT_RESOURCE_NITER';
-update Projects set Cost = 150 where ProjectType = 'PROJECT_GRANT_RESOURCE_COAL';
-update Projects set Cost = 200 where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
-update Projects set Cost = 200 where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
+update Projects set Cost = 80 where ProjectType = 'PROJECT_GRANT_RESOURCE_HORSES';
+update Projects set Cost = 100 where ProjectType = 'PROJECT_GRANT_RESOURCE_IRON';
+update Projects set Cost = 150 where ProjectType = 'PROJECT_GRANT_RESOURCE_NITER';
+update Projects set Cost = 200 where ProjectType = 'PROJECT_GRANT_RESOURCE_COAL';
+update Projects set Cost = 300 where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
+update Projects set Cost = 300 where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
 update Projects set Cost = 600 where ProjectType = 'PROJECT_GRANT_RESOURCE_URANIUM';

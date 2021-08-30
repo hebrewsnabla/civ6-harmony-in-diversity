@@ -154,6 +154,8 @@ update Buildings set CitizenSlots = 1
 -- Unlock
 update Buildings set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where BuildingType = 'BUILDING_GRAND_BAZAAR';
+
 -- Regional Range
 update Buildings set RegionalRange = 3
 where BuildingType = 'BUILDING_UNIVERSITY'

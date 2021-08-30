@@ -79,7 +79,7 @@ update Traits set Description = 'LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DE
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
 -- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units set PrereqTech = 'TECH_CASTLES', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 30, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 28, RangedCombat = 38, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 insert or replace into TypeTags (Type, Tag) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 delete from TypeTags where Type = 'ABILITY_CAMEL_ARCHER' and Tag = 'CLASS_ARABIAN_CAMEL_ARCHER';
@@ -144,7 +144,7 @@ update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ROMAN_ONAGER';
 -- -- 俄罗斯
 update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
-update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 -- -- 挪威
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_NORWEGIAN_ULFHEDNAR',    'UNIT_MEDIC');
@@ -309,7 +309,7 @@ update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON
 update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 -- -- 克里
-update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
+update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 62, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CREE_OTEHTAPIW';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CREE_OTEHTAPIW';
 -- -- 印尼
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 3, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
@@ -340,7 +340,7 @@ update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON
 update Units set Cost = 65, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 35, RangedCombat = 31, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
 -- -- 瑞典
-update Units set Cost = 220, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
+update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 64, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWEDEN_HAKKAPELIITTA';
 delete from TypeTags where Type = 'ABILITY_SWEDEN_HAKKAPELIITTA' and Tag = 'CLASS_SWEDEN_HAKKAPELIITTA';
 -- -- 埃利诺

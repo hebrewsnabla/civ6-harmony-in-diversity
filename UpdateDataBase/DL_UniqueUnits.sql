@@ -48,7 +48,7 @@ update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ROMAN_LEGION';
 ------ UNIT_ROMAN_ONAGER
 -- 俄罗斯
-update Units set Cost = 230, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 71, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_COSSACK';
+update Units set Cost = 210, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 67, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_COSSACK';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_COSSACK';
 ------ UNIT_RUSSIAN_DRUZHINA
 -- 挪威
@@ -168,7 +168,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_SCOTTISH_HIGHLANDER', 'UNITTYPE_MELEE');
 ------ UNIT_SCOTTISH_GALLOWGLASS
 -- 蒙古
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 35, RangedCombat = 45, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MONGOLIAN_KESHIG';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 28, RangedCombat = 38, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_MONGOLIAN_KESHIG',  'UNIT_CROSSBOWMAN');
 insert or replace into TypeTags (Type, Tag) values ('UNIT_MONGOLIAN_KESHIG', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
@@ -200,7 +200,7 @@ update Units set Cost = 220, Maintenance = 4, BaseMoves = 4, Range = 2, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DE_ZEVEN_PROVINCIEN';
 ------ UNIT_DUTCH_SCHUTTERIJ
 -- 克里
-update Units set Cost = 35, BaseMoves = BaseMoves + 1 where UnitType = 'UNIT_CREE_OKIHTCITAW';
+update Units set Cost = 30, Combat = 17, BaseMoves = BaseMoves + 1 where UnitType = 'UNIT_CREE_OKIHTCITAW';
 delete from TypeTags where Type = 'ABILITY_CREE_OKIHTCITAW' and Tag = 'CLASS_CREE_OKIHTCITAW';
 ------ UNIT_CREE_OTEHTAPIW
 -- 印尼
@@ -211,9 +211,9 @@ update Units set Cost = 200, Maintenance = 5, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CANADA_MOUNTIE';
 ------ UNIT_CANADA_HMCS_HAIDA
 -- 匈牙利
-update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Cost = 225, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 69, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_HUSZAR';
+update Units set Cost = 205, Maintenance = 5, BaseMoves = 5, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_HUNGARY_HUSZAR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_HUNGARY_HUSZAR';
 ------ UNIT_HUNGARY_KALANDOZO
 -- 印加
@@ -260,11 +260,11 @@ update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAYAN_HULCHE';
 ------ UNIT_MAYAN_HOLKAN
 -- 大哥伦比亚
-update Units set Cost = 220, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 66, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COLOMBIAN_LLANERO';
+update Units set Cost = 200, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 62, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_COLOMBIAN_LLANERO';
 ------ UNIT_COLOMBIAN_BRITISH_LEGION
 -- 埃塞俄比亚
-update Units set Cost = 95, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 49, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
+update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update UnitReplaces set ReplacesUnitType = 'UNIT_COURSER' where CivUniqueUnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 ------ UNIT_ETHIOPIAN_MEHAL_SEFARI
