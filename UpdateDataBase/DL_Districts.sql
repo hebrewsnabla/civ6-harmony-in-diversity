@@ -48,9 +48,9 @@ update Districts set CitizenSlots = 1
  	or DistrictType = 'DISTRICT_HANSA'
  	or DistrictType = 'DISTRICT_OPPIDUM'
  	or DistrictType = 'DISTRICT_THEATER'
- 	or DistrictType = 'DISTRICT_ACROPOLIS'
- 	or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
- 	or DistrictType = 'DISTRICT_GOVERNMENT';
+ 	or DistrictType = 'DISTRICT_ACROPOLIS';
+ 	-- or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
+ 	-- or DistrictType = 'DISTRICT_GOVERNMENT';
 
 -- increase citizen slot for Neighbourhood
 update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD'
@@ -64,9 +64,9 @@ delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR'
 insert or replace into District_CitizenYieldChanges
 	(DistrictType,			YieldType,			YieldChange)
 values
-	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1),
-	('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	1),
-	('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1);
+	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1);
+	-- ('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	1),
+	-- ('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1);
 	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
 	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 

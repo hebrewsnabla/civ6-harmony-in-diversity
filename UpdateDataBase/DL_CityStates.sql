@@ -72,7 +72,7 @@ update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_T
 
 --Granada 阿卡萨地堡基础文化改为3，地块魅力加成改为75%
 update Improvements set YieldFromAppealPercent = 75 where ImprovementType ='IMPROVEMENT_ALCAZAR';
-update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPROVEMENT_ALCAZAR';
+-- update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPROVEMENT_ALCAZAR';
 
 -- Nalanda
 delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
@@ -305,3 +305,6 @@ insert or replace into Improvement_ValidFeatures
 values
 	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST'),
 	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE');
+
+delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and FeatureType = 'FEATURE_VOLCANIC_SOIL';
+delete from Improvement_ValidTerrains where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD';
