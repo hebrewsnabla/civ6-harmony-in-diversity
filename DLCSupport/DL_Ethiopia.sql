@@ -118,22 +118,23 @@ values
     ('CONSULATE_LEVY_DISCOUNT',             'Percent',          20),
     ('CONSULATE_LEVY_UNITUPGRADEDISCOUNT',  'Amount',           20);
 
-insert or replace into District_CitizenYieldChanges
-	(DistrictType,			YieldType,			YieldChange)
-values
-	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
-	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
+-- insert or replace into District_CitizenYieldChanges
+-- 	(DistrictType,			YieldType,			YieldChange)
+-- values
+-- 	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
+-- 	('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 
-insert or replace into Building_CitizenYieldChanges
-	(BuildingType,							YieldType,			YieldChange)
-values
-	--diplomatic quarter
-	('BUILDING_CONSULATE',					'YIELD_CULTURE',	1),
-	('BUILDING_CONSULATE',					'YIELD_SCIENCE',	1),
-	('BUILDING_CONSULATE',					'YIELD_GOLD',		-1),
-	('BUILDING_CHANCERY',					'YIELD_CULTURE',	2),
-	('BUILDING_CHANCERY',					'YIELD_SCIENCE',	2),
-	('BUILDING_CHANCERY',					'YIELD_GOLD',		-2);
+-- insert or replace into Building_CitizenYieldChanges
+-- 	(BuildingType,							YieldType,			YieldChange)
+-- values
+-- 	--diplomatic quarter
+-- 	('BUILDING_CONSULATE',					'YIELD_CULTURE',	1),
+-- 	('BUILDING_CONSULATE',					'YIELD_SCIENCE',	1),
+-- 	('BUILDING_CONSULATE',					'YIELD_GOLD',		-1),
+-- 	('BUILDING_CHANCERY',					'YIELD_CULTURE',	2),
+-- 	('BUILDING_CHANCERY',					'YIELD_SCIENCE',	2),
+-- 	('BUILDING_CHANCERY',					'YIELD_GOLD',		-2);
+
 /*insert or replace into DiplomaticVisibilitySources
     (VisibilitySourceType,  Description,                ActionDescription,                  GossipString,                   PrereqTech)
 values
