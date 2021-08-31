@@ -3,6 +3,7 @@
 -------------------------------------
 
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_DIVINE_RIGHT' where DiplomaticActionType = 'DIPLOACTION_DECLARE_HOLY_WAR';
+update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_FEUDALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_TERRITORIAL_WAR';
 
 -- update DiplomaticStateActions set Cost = 20 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 -- update DiplomaticStateActions set Cost = 40 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
@@ -47,3 +48,8 @@ update ModifierArguments set Value = 6 where
 -- 第三方文明因不满产出的不满
 update ModifierArguments set Value = 3 where
 	ModifierId = 'STANDARD_DIPLOMATIC_THIRD_PARTY_WARMONGER' and Name = 'PercentOfGrievancesDelta';
+
+insert or replace into ModifierArguments
+    (ModifierId,                                                    Name,                   Value)
+values
+    ('STANDARD_DIPLOMACY_TRADE_RELATIONS',                          'TradeBonus',           4);

@@ -36,6 +36,8 @@ values
 insert or replace into TechnologyModifiers
     (TechnologyType,                                        ModifierId)
 values
+    ('TECH_SQUARE_RIGGING',                                 'HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT'),
+    -- 
     ('TECH_MILITARY_TACTICS',                               'HD_MELEE_BATTLE_LINE'),
     ('TECH_MILITARY_TACTICS',                               'HD_RANGED_HILLS_STRENGTH'),
     ('TECH_SANITATION',                                     'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
@@ -59,6 +61,8 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType)
 values
+    ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
+    -- 
     ('HD_MELEE_BATTLE_LINE',                                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_RANGED_HILLS_STRENGTH',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
@@ -79,6 +83,8 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                            Name,           Value)
 values
+    ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'AbilityType',  'ABILITY_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT'),
+    -- 
     ('HD_MELEE_BATTLE_LINE',                                'AbilityType',  'ABILITY_MELEE_BATTLE_LINE_HD'),
     ('HD_RANGED_HILLS_STRENGTH',                            'AbilityType',  'ABILITY_RANGED_HILLS_STRENGTH_HD'),
     ('HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION',          'AbilityType',  'ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD'),
@@ -114,8 +120,8 @@ values
     -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'CLASS_SIEGE'),
-    ('ABILITY_SEE_HIDDEN',                                      'CLASS_NAVAL_MELEE'),
-    ('ABILITY_MONGOLIAN_KESHIG',                                'CLASS_NAVAL_MELEE');
+    -- ('ABILITY_MONGOLIAN_KESHIG',                                'CLASS_NAVAL_MELEE'),
+    ('ABILITY_SEE_HIDDEN',                                      'CLASS_NAVAL_MELEE');
 
 insert or replace into UnitAbilities 
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
@@ -640,8 +646,8 @@ values
     ('PROMOTION_LIGHTC_MOBILE_WARFARE',                         'KIND_PROMOTION');
 
 update UnitPromotions set Level = 1 where UnitPromotionType = 'PROMOTION_GUERRILLA';
-update UnitPromotions set Level = 1 where UnitPromotionType = 'PROMOTION_SENTRY';
-update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_SPYGLASS';
+update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_SENTRY';
+update UnitPromotions set Level = 1 where UnitPromotionType = 'PROMOTION_SPYGLASS';
 -- 
 update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AMBUSH';
 update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_MARAUDING';
@@ -681,14 +687,16 @@ update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LIGHTC_MOBILE_W
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LIGHTC_MILITANT' where PrereqUnitPromotion = 'PROMOTION_DEPREDATION';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LIGHTC_SHOCK' where PrereqUnitPromotion = 'PROMOTION_DOUBLE_ENVELOPMENT';
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_DEPREDATION' or UnitPromotion = 'PROMOTION_DOUBLE_ENVELOPMENT';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_SPYGLASS' and PrereqUnitPromotion = 'PROMOTION_SENTRY';
 
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion,                 PrereqUnitPromotion)
 values
     -- recon
     ('PROMOTION_RECON_TRAVEL_LIGHT', 'PROMOTION_GUERRILLA'),
+    ('PROMOTION_SENTRY',            'PROMOTION_SPYGLASS'),
     ('PROMOTION_AMBUSH',            'PROMOTION_RECON_TRAVEL_LIGHT'),
-    ('PROMOTION_AMBUSH',            'PROMOTION_SPYGLASS'),
+    ('PROMOTION_AMBUSH',            'PROMOTION_SENTRY'),
     ('PROMOTION_RECON_RAPID_FIRE',  'PROMOTION_AMBUSH'),
     ('PROMOTION_RECON_ACCURATE',    'PROMOTION_AMBUSH'),
     -- Heavy

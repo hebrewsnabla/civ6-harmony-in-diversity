@@ -37,7 +37,7 @@ update StartBiasResources set
 where CivilizationType = 'CIVILIZATION_ENGLAND' and ResourceType = 'RESOURCE_COAL';
 
 update StartBiasResources set
-	Tier = 2	
+	Tier = 3
 where CivilizationType = 'CIVILIZATION_ENGLAND' and ResourceType = 'RESOURCE_IRON';
 
 --start bias for Persia
@@ -87,7 +87,7 @@ update StartBiasTerrains set Tier = 2 where CivilizationType = 'CIVILIZATION_INC
 insert or replace into StartBiasFeatures
 	(CivilizationType,		FeatureType,					Tier)
 values
-	('CIVILIZATION_INCA',	'FEATURE_GEOTHERMAL_FISSURE',	1);
+	('CIVILIZATION_INCA',	'FEATURE_GEOTHERMAL_FISSURE',	2);
 
 insert or replace into StartBiasTerrains
 	(CivilizationType,		TerrainType,				Tier)

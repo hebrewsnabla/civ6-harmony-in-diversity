@@ -377,7 +377,7 @@ insert or replace into ModifierArguments (ModifierId,	Name, Value) values
 -- huey lake +1 food
 update Buildings set PrereqTech = 'TECH_ENGINEERING', Cost = 400 
 	where BuildingType = 'BUILDING_HUEY_TEOCALLI';
-update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
 
 --liberty to colonialism
 update Buildings set PrereqCivic = 'CIVIC_COLONIALISM'

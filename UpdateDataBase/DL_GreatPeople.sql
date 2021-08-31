@@ -20,6 +20,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CITY_APPEAL_SMALL';
 update GreatPersonIndividuals set EraType = 'ERA_RENAISSANCE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN';	
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA';
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE';
 
 insert or replace into GreatPersonIndividualActionModifiers 
 	(GreatPersonIndividualType, 						ModifierId,										AttachmentTargetType)

@@ -19,6 +19,7 @@ values
     --("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",              "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_CASTLES_HD_DESCRIPTION",               "Gain a free Spy if playing as Catherine de Medici (Black Queen)."),
+    ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",        "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Naval melee units gain the ability: Can escort moving civilian and support units at their higher [ICON_Movement] Movement speed."),
     ("LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",     "Upgrades Farm improvements to Mechanized Agriculture. Farms receive +1 [ICON_Food] Food Adjacency bonus for every Farm improvement they are adjacent to."),
     ("LOC_TECH_STEAM_POWER_HD_DESCRIPTION",           "+2 [ICON_Movement] Movement for embarked units. +15 tiles for water trade route range."),
     ("LOC_TECH_STEEL_HD_DESCRIPTION",                 "Unlocks Urban Defenses, giving all of your cities an automatic 400 Fortification Strength and the ability to perform a ranged attack. All previous wall improvements become obsolete and siege support units are no longer effective."),
@@ -34,7 +35,7 @@ values
     ("LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "Plantation improvements receive +2 [ICON_Gold] Gold."),
     ("LOC_CIVIC_NATIONALISM_DESCRIPTION",             "Grants the ability to construct an additional Spy. Allows forming two identical units into a Corps or Fleet. Units have 50% less [ICON_Strength] Combat Strength reduction from being injured. Allows one new Casus Belli that can be used to justify wars: Colonial War."),
     -- Boosts
-    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "Build 3 Lumber Mills."),
+    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "Build 3 Workshops."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",              "Kill 2 Barbarians."),
     -- TODO Longdesc
@@ -80,6 +81,7 @@ values
     --("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "牧场+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",              "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
     ("zh_Hans_CN",  "LOC_TECH_CASTLES_HD_DESCRIPTION",               "如果使用凯瑟琳·德·美第奇（黑王后），能免费获得1名间谍。"),
+    ("zh_Hans_CN",  "LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",        "水运单位+1 [ICON_Movement] 移动力。[NEWLINE]海军近战单位获得能力：可利用自身的高 [ICON_Movement] 移动力护送平民和支援单位。"),
     ("zh_Hans_CN",  "LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",     "将农场改良设施升级为机械化农业。为相邻的每个农场改良设施+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_STEAM_POWER_HD_DESCRIPTION",           "水运单位+2 [ICON_Movement] 移动力。商人单位在水域单元格的贸易范围增加15个单元格。"),
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                 "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
@@ -95,7 +97,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_DESCRIPTION",             "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。受到伤害后，单位的 [ICON_Strength] 战斗力减益降低50%。现在可用一个新的战争借口替战争辩护：殖民战争。"),
     -- Boosts
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "建造3座伐木场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "建造3座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BRONZE_WORKING",              "击杀2个蛮族单位。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BRONZE_WORKING",     ""), -- 和蛮族的战争让你渴望更强大的武器。

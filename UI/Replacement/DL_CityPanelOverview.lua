@@ -20,9 +20,10 @@ local UV_CITIZEN_GROWTH_STATUS        :table    = {};
         UV_CITIZEN_GROWTH_STATUS[2] = {u=0, v=0};        -- unhappy
         UV_CITIZEN_GROWTH_STATUS[3] = {u=0, v=50};        -- displeased
         UV_CITIZEN_GROWTH_STATUS[4] = {u=0, v=100};        -- content (normal)
-        UV_CITIZEN_GROWTH_STATUS[5] = {u=0, v=150};        -- delighted
+        UV_CITIZEN_GROWTH_STATUS[5] = {u=0, v=150};        -- delighted (new)
         UV_CITIZEN_GROWTH_STATUS[6] = {u=0, v=200};        -- happy
-        UV_CITIZEN_GROWTH_STATUS[7] = {u=0, v=250};        -- ecstatic
+        UV_CITIZEN_GROWTH_STATUS[7] = {u=0, v=250};        -- joyful (new)
+        UV_CITIZEN_GROWTH_STATUS[8] = {u=0, v=300};        -- ecstatic
 
 Base_ViewPanelAmenities = ViewPanelAmenities;
 
