@@ -148,3 +148,68 @@ Events.UnitPromotionAvailable.Add(monitorPromotionAvailable)
 -- Events.UnitAddedToMap.Add(monitorUnitAdd)
 Events.UnitUpgraded.Add(monitorUnitUpgraded)
 -- Events.UnitRemovedFromMap.Add(monitorUnitRemove)
+
+---------------------------------------------------------------------------
+--[[
+-- Espionage
+function GovSpiesGetTechOnSpyMissionCompleted(playerID, missionID)
+    local pPlayer:table = Players[playerID];
+    local buildingID:number = GameInfo.Buildings['BUILDING_GOV_SPIES'].Index;
+    if pPlayer and Utils.HasBuildingWithinCountry(playerID, buildingID) then
+        local pPlayerDiplomacy:table = pPlayer:GetDiplomacy();
+		if pPlayerDiplomacy then
+			local mission = pPlayerDiplomacy:GetMission(playerID, missionID);
+            local m_missionHistory = mission;
+            if m_missionHistory then
+                if mission.InitialResult == EspionageResultTypes.SUCCESS_UNDETECTED or 
+                   mission.InitialResult == EspionageResultTypes.SUCCESS_MUST_ESCAPE then
+                    local kOpDef:table = GameInfo.UnitOperations[m_missionHistory.Operation];
+	                if kOpDef ~= nil then
+		                if kOpDef.Hash == UnitOperationTypes.SPY_COUNTERSPY or 
+                           kOpDef.Hash == UnitOperationTypes.SPY_LISTENING_POST or 
+                           kOpDef.Hash == UnitOperationTypes.SPY_GAIN_SOURCES then 
+                            return;
+                        end 
+                        local amount = 500;
+			            pPlayer:GetTechs():ChangeCurrentResearchProgress(amount);
+                        local message = '[COLOR:ResScienceLabelCS]+' .. tostring(amount) .. '[ENDCOLOR][ICON_Science]';
+                        Game.AddWorldViewText(0, message, Map.GetPlotLocation(m_missionHistory.PlotIndex));
+                    end
+                end
+            end
+        end
+    end
+end
+
+Events.SpyMissionCompleted.Add(GovSpiesGetTechOnSpyMissionCompleted)
+
+
+-- Eleanor Judgement of Love
+function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
+	local pPlayer = Players[playerID]
+	local pCity = CityManager.GetCity(playerID, cityId)
+	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
+	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
+	local amount = -100
+    if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
+		local players = Game.GetPlayers()
+		for _, player in ipairs(players) do
+			if player:GetID() == playerID then -- or player:IsMinor()
+				return
+			end
+			local playerCities = player:GetCities()
+			for _, city in playerCities:Members() do
+				local distance = Map.GetPlotDistance(iDistrictPlotIndex, city:GetX(), city:GetY()))
+				if distance <= 9 then 
+					local loyaltyPerTurn = city:GetCulturalIdentity():GetLoyaltyPerTurn()
+					if loyaltyPerTurn < 0 then
+        				city:ChangeLoyalty(amount)
+					end
+				end
+			end
+		end	
+    end
+end
+
+Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
+---]]

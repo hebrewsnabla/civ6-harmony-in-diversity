@@ -125,85 +125,62 @@ function HD_Aztec_Sacrifice(eOwner : number, iUnitID : number)
 end
 GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 
-
--- Saladin free Apostle when Great Prophet is created or Religion is founded
--- function OnSaladinReligionFoundedGrantApostle(playerID, religionID)
--- 	local player = Players[playerID]
--- 	local playerConfig = PlayerConfigurations[playerID]
--- 	local sLeader = playerConfig:GetLeaderTypeName()
--- 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
--- 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) then
--- 		local playerCities = player:GetCities()
--- 		if playerCities ~= nil then
--- 			local capitalCity = playerCities:GetCapitalCity()
--- 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
--- 		end
--- 	end
--- end
-
--- function SaladinGreatProphetGrantApostle(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
--- 	local player = Players[playerID]
--- 	local playerConfig = PlayerConfigurations[playerID]
--- 	local sLeader = playerConfig:GetLeaderTypeName()
--- 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
--- 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) and greatPersonClassID == GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index then
--- 		local playerCities = player:GetCities()
--- 		if playerCities ~= nil then
--- 			local capitalCity = playerCities:GetCapitalCity()
--- 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
--- 		end
--- 	end
--- end
-
--- Events.ReligionFounded.Add(OnSaladinReligionFoundedGrantApostle)
--- Events.UnitGreatPersonCreated.Add(SaladinGreatProphetGrantApostle)
-
--- France Grand Tour: wonders grant 10% great writer points when compeleted
--- function FranceWonderToGreatWriterPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
---    local gameSpeed = GameConfiguration.GetGameSpeedType()
---    local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
---    local player = Players[playerID]
---	  local playerConfig = PlayerConfigurations[playerID]
---	  local sCiv = playerConfig:GetCivilizationTypeName()
---	  local sWonderTourism = 'TRAIT_CIVILIZATION_WONDER_TOURISM'
---	  local greatWriterID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index
---    local amount = GameInfo.Buildings[buildingID].Cost * 0.1 * iSpeedCostMultiplier
---    if player ~= nil and CivilizationHasTrait(sCiv, sWonderTourism) then
---        player:GetGreatPeoplePoints():ChangePointsTotal(greatWriterID, amount)
---    end
--- end
-
--- Events.WonderCompleted.Add(FranceWonderToGreatWriterPoints)
-
 --[[
--- Eleanor Judgement of Love
-function ProjectEnemyCitiesIdentityChange(playerID, cityID, projectID)
-	local pPlayer = Players[playerID]
-	local pCity = CityManager.GetCity(playerID, cityId)
-	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
-	local pDistrict = pCity:GetDistricts():GetDistrictLocation(districtID)
-	local plotIndex = Map.GetPlotIndex(pDistrict)
-	local amount = -100
-    if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
-		local players = Game.GetPlayers{ Alive=true }
-		for _, iPlayer in ipairs(players) do
-			if iPlayer == pPlayer or iPlayer:IsMinor() then 
-				return
-			end
-			local iPlayerCities = iPlayer:GetCities()
-			for _, city in iPlayerCities:Members() do
-				local otherPlotIndex = Map.GetPlotIndex(city:GetX(), city:GetY())
-				local distance = Map.GetPlotDistance(plotIndex, otherPlotIndex)
-				if distance <= 9 then 
-					local loyaltyPerTurn = iCity:GetCulturalIdentity():GetLoyaltyPerTurn()
-					if loyaltyPerTurn < 0 then
-        				city:ChangeLoyalty(amount)
+-- Saladin free Apostle when Great Prophet is created or Religion is founded
+function OnSaladinReligionFoundedGrantApostle(playerID, religionID)
+ 	local player = Players[playerID]
+ 	local playerConfig = PlayerConfigurations[playerID]
+ 	local sLeader = playerConfig:GetLeaderTypeName()
+ 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
+ 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) then
+ 		local playerCities = player:GetCities()
+ 		if playerCities ~= nil then
+ 			local capitalCity = playerCities:GetCapitalCity()
+ 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
+			local pPlot = Map.GetPlot(capitalCity:GetX(), capitalCity:GetY())
+			for _, unit in ipairs(Units.GetUnitsInPlot(pPlot)) do
+				if(unit ~= nil) then
+					if unit:GetType() == GameInfo.Units['UNIT_APOSTLE'].Index then
+						UnitManager.RequestOperation(unit, UnitOperationTypes.UNITOPERATION_EVANGELIZE_BELIEF)
 					end
 				end
 			end
-		end	
+			
+ 		end
+ 	end
+end
+
+function SaladinGreatProphetGrantApostle(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+ 	local player = Players[playerID]
+ 	local playerConfig = PlayerConfigurations[playerID]
+ 	local sLeader = playerConfig:GetLeaderTypeName()
+ 	local sRighteousnessOfFaith = 'TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH'
+ 	if LeaderHasTrait(sLeader, sRighteousnessOfFaith) and greatPersonClassID == GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index then
+ 		local playerCities = player:GetCities()
+ 		if playerCities ~= nil then
+ 			local capitalCity = playerCities:GetCapitalCity()
+ 			UnitManager.InitUnitValidAdjacentHex(playerID, "UNIT_APOSTLE", capitalCity:GetX(), capitalCity:GetY(), 1)
+ 		end
+ 	end
+end
+
+Events.ReligionFounded.Add(OnSaladinReligionFoundedGrantApostle)
+Events.UnitGreatPersonCreated.Add(SaladinGreatProphetGrantApostle)
+
+-- France Grand Tour: wonders grant 10% great writer points when compeleted
+function FranceWonderToGreatWriterPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
+    local gameSpeed = GameConfiguration.GetGameSpeedType()
+    local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
+    local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sCiv = playerConfig:GetCivilizationTypeName()
+	local sWonderTourism = 'TRAIT_CIVILIZATION_WONDER_TOURISM'
+	local greatWriterID = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index
+    local amount = GameInfo.Buildings[buildingID].Cost * 0.1 * iSpeedCostMultiplier
+    if player ~= nil and CivilizationHasTrait(sCiv, sWonderTourism) then
+        player:GetGreatPeoplePoints():ChangePointsTotal(greatWriterID, amount)
     end
 end
 
-Events.CityProjectCompleted.Add(ProjectEnemyCitiesIdentityChange)
+Events.WonderCompleted.Add(FranceWonderToGreatWriterPoints)
 ---]]
