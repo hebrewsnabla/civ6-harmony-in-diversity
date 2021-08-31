@@ -10,9 +10,9 @@ update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERN
 -- dev used for v1.0.5
 --------------------------------------------------------------------------------------------------------------------------------
 -- Amenity
-update Happinesses set GrowthModifier = 5 where HappinessType = 'HAPPINESS_DELIGHTED';
-update Happinesses set GrowthModifier = 10 where HappinessType = 'HAPPINESS_HAPPY';
-update Happinesses set GrowthModifier = 20 where HappinessType = 'HAPPINESS_ECSTATIC'; 
+-- update Happinesses set GrowthModifier = 5 where HappinessType = 'HAPPINESS_DELIGHTED';
+-- update Happinesses set GrowthModifier = 10 where HappinessType = 'HAPPINESS_HAPPY';
+-- update Happinesses set GrowthModifier = 20 where HappinessType = 'HAPPINESS_ECSTATIC'; 
 
 -- Governors
 -- update GlobalParameters set Value = 9 where Name = 'MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE';

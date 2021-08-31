@@ -62,8 +62,8 @@
     <Row Name="ICON_PROMOTION_RECON_RAPID_FIRE"             Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
     <Row Name="ICON_PROMOTION_RECON_ACCURATE"               Atlas="ICON_ATLAS_PROMOTIONS" Index="4"/>
     <Update><Where Name="ICON_PROMOTION_GUERRILLA"/> <Set Index="3"/></Update>
-    <Update><Where Name="ICON_PROMOTION_SENTRY"/> <Set Index="19"/></Update>
-    <Update><Where Name="ICON_PROMOTION_SPYGLASS"/> <Set Index="18"/></Update>
+    <Update><Where Name="ICON_PROMOTION_SENTRY"/> <Set Index="18"/></Update>
+    <Update><Where Name="ICON_PROMOTION_SPYGLASS"/> <Set Index="19"/></Update>
     <!-- Heavy -->
     <Row Name="ICON_PROMOTION_HEAVYC_SHOCK"                 Atlas="ICON_ATLAS_PROMOTIONS" Index="10"/>
     <!-- Light Cavalry -->
