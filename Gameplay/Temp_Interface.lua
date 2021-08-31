@@ -186,11 +186,11 @@ Events.SpyMissionCompleted.Add(GovSpiesGetTechOnSpyMissionCompleted)
 
 -- Eleanor Judgement of Love
 function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
-	local pPlayer = Players[playerID]
+--	local pPlayer = Players[playerID]
 	local pCity = CityManager.GetCity(playerID, cityId)
 	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
-	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
-	local amount = -100
+--	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
+	local amount = -50
     if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
 		local players = Game.GetPlayers()
 		for _, player in ipairs(players) do
@@ -199,7 +199,7 @@ function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
 			end
 			local playerCities = player:GetCities()
 			for _, city in playerCities:Members() do
-				local distance = Map.GetPlotDistance(iDistrictPlotIndex, city:GetX(), city:GetY()))
+				local distance = Map.GetPlotDistance(pCity:GetX(), pCity:GetY(), city:GetX(), city:GetY())
 				if distance <= 9 then 
 					local loyaltyPerTurn = city:GetCulturalIdentity():GetLoyaltyPerTurn()
 					if loyaltyPerTurn < 0 then

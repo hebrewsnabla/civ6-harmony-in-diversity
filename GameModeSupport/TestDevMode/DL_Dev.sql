@@ -14,16 +14,16 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and Modi
 insert or replace into BuildingModifiers (BuildingType, ModifierId)values   ('BUILDING_ORSZAGHAZ',  'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS');
 
 insert or replace into AllianceEffects (LevelRequirement,  AllianceType,    ModifierID)
-select distinct 1,   AllianceType,  'ORSZAGHAZ_'|| AllianceType from AllianceEffects;
+select distinct 1,   AllianceType,  'ORSZAGHAZ_' || AllianceType from AllianceEffects;
 
 insert or replace into Modifiers    (ModifierId,    ModifierType,   SubjectRequirementSetId)
-select distinct 'ORSZAGHAZ_'|| AllianceType,    'MODIFIER_ALLIANCES_PLAYERS_ATTACH_MODIFIER',   'PLAYER_HAS_BUILDING_ORSZAGHAZ' from AllianceEffects;
+select distinct 'ORSZAGHAZ_' || AllianceType,    'MODIFIER_ALLIANCES_PLAYERS_ATTACH_MODIFIER',   'PLAYER_HAS_BUILDING_ORSZAGHAZ' from AllianceEffects;
 
 insert or replace into Modifiers    (ModifierId,    ModifierType)
-select distinct 'ORSZAGHAZ_'|| AllianceType || '_MODIFIER',    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' from AllianceEffects;
+select distinct 'ORSZAGHAZ_' || AllianceType || '_MODIFIER',    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' from AllianceEffects;
 
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
-select distinct 'ORSZAGHAZ_'|| AllianceType,  ModifierId,  'ORSZAGHAZ_'|| AllianceType || '_MODIFIER' from AllianceEffects;
+select distinct 'ORSZAGHAZ_' || AllianceType,  'ModifierId',  'ORSZAGHAZ_' || AllianceType || '_MODIFIER' from AllianceEffects;
 
 insert or replace into ModifierArguments    
     (ModifierId,                                 Name,          Value)
@@ -58,6 +58,28 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,                                 RequirementId)
 values
     ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ');
+
+-- Kilwa
+update Buildings set PrereqTech = 'TECH_BUTTRESS' where BuildingType = 'BUILDING_KILWA_KISIWANI';
+update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
+delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
+
+insert or replace into BuildingModifiers (BuildingType,  ModifierId)
+select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId like 'KILWA_SINGLE_ADD%';
+
+insert or replace into Modifiers    
+    (ModifierId,                                ModifierType,                                               SubjectRequirementSetId)
+values 
+    ('KILWA_SINGLE_ADDSCIENCEYIELD1',           'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'SCIENTIFIC_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDFAITHYIELD1',             'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'RELIGIOUS_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDGOLDYIELD1',              'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'TRADE_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDCULTUREYIELD1',           'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'CULTURAL_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDPRODUCTIONUNITS1',        'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_MODIFIER',     'MILITARISTIC_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDPRODUCTIONBUILDINGS1',    'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS'),
+    ('KILWA_SINGLE_ADDPRODUCTIONDISTRICTS1',    'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS');
+
+insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
+select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'KILWA_SINGLE_ADD%';
 --------------------------------------------------------------------------------------------------------------------------------
 -- dev used for v1.0.5
 --------------------------------------------------------------------------------------------------------------------------------
