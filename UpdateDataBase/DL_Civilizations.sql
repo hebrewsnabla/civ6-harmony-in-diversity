@@ -660,7 +660,7 @@ insert or replace into TraitModifiers
 	(TraitType,							ModifierId)
 values
 	('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_GREAT_PERSON_DISCOUNT'),
-	('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_CAN_PURCHASE_HOLYSITE_BUILDING'),
+	-- ('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_CAN_PURCHASE_HOLYSITE_BUILDING'),
 	('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_CAN_PURCHASE_INDUSTRIAL_BUILDING'),
 	('TRAIT_CIVILIZATION_MOTHER_RUSSIA','TRAIT_TUNDRA_DISTRICT_FOOD');
 
@@ -680,7 +680,7 @@ values
 	('TRAIT_CAN_PURCHASE_HOLYSITE_BUILDING',	'DistrictType',		'DISTRICT_HOLY_SITE'),
 	('TRAIT_CAN_PURCHASE_INDUSTRIAL_BUILDING',	'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
 	('TRAIT_TUNDRA_DISTRICT_FOOD',				'YieldType',		'YIELD_FOOD'),
-	('TRAIT_TUNDRA_DISTRICT_FOOD',				'Amount',			2);
+	('TRAIT_TUNDRA_DISTRICT_FOOD',				'Amount',			1);
 
 insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_TUNDRA_OR_TUNDRA_HILL',					'RequirementSetId',	'PLOT_HAS_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS');
@@ -1254,9 +1254,9 @@ values
     ('SEWON_PRODUCTION',                    'YieldType',    'YIELD_PRODUCTION'),
     ('SEWON_PRODUCTION',                    'Amount',       15),
     -- 
-    ('LIBRARY_DISTRICT_PRODUCTION',         'Amount',       50),
+    ('LIBRARY_DISTRICT_PRODUCTION',         'Amount',       25),
     ('LIBRARY_BUILDING_PRODUCTION',         'IsWonder',     0),
-    ('LIBRARY_BUILDING_PRODUCTION',         'Amount',       50),
+    ('LIBRARY_BUILDING_PRODUCTION',         'Amount',       25),
     -- 
     ('UNIVERSITY_CAMPUS_ADJACENCY',         'YieldType',    'YIELD_SCIENCE'),
     ('UNIVERSITY_CAMPUS_ADJACENCY',         'Amount',       100),

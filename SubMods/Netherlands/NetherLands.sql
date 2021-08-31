@@ -13,7 +13,7 @@ delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN'
 delete from TraitModifiers where TraitType = 'TRAIT_RADIO_ORANJE';
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
-    ('TRAIT_RADIO_ORANJE',                  'TRAIT_TRADER_SPEEDUP'),
+    -- ('TRAIT_RADIO_ORANJE',                  'TRAIT_TRADER_SPEEDUP'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',   'TRAIT_SHIPYARD_TRADE_ROUTE'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',   'TRAIT_BOOST_BUILDING_SHIPYARD');
 

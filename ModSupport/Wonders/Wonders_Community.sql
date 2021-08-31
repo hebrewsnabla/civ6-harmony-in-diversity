@@ -252,7 +252,7 @@ update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILD
 
 --BUILDING_ITSUKUSHIMA
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
-update ModifierArguments set Value = 2 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';
 insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChange) select
 	'BUILDING_ITSUKUSHIMA',	'YIELD_CULTURE',	3

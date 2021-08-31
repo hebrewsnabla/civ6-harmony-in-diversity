@@ -36,7 +36,7 @@ values
     ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Modern era. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "+5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] Culture if this city is fully powered. "),
     -- Industrial Zone
-    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production."),
+    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production. +5% [ICON_Production] Production towards wonders, districts and buildings in this city."),
     ("LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION",               "+1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION] Production."),
     ("LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. +1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.3 [ICON_PRODUCTION] Production."),
     ("LOC_BUILDING_COAL_POWER_PLANT_DESCRIPTION",                 "Automatically converts any amount of [ICON_RESOURCE_COAL] Coal into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_COAL] Coal [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet] Heavy CO2 into the atmosphere.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
@@ -108,7 +108,7 @@ values
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
     ("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
-    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When Governor Magnus is estabilished in this city, if they have the Promotion 'Elected Officer', the General Service Office building provides +3 of all yields to all the cities within 6 tiles (this city included). Can only construct when Governor Magnus with the 'Elected Officer' Title is established within 6 tiles.");
+    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When Governor Magnus is estabilished in this city, if they have the Promotion 'Elected Officer', the General Service Office building provides +2 of all yields to all the cities within 9 tiles (this city included). Can only construct when Governor Magnus with the 'Elected Officer' Title is established within 6 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -148,7 +148,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%。通电后额外为本城+5% [ICON_CULTURE] 文化值."),
     ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%。通电后额外为本城+5% [ICON_CULTURE] 文化值."),
     -- 工业
-    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_EXPANSION2_DESCRIPTION",               "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.3 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+5% [ICON_Production] 生产力。本城每个人口获得0.3 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_COAL_POWER_PLANT_DESCRIPTION",                 "将任意数额的 [ICON_RESOURCE_COAL] 煤自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_COAL] 煤 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放大量二氧化碳。[NEWLINE]本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。"),
@@ -220,4 +220,4 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为6个单元格之内的城市（包括该城市）提供额外+3所有产出。只有当拥有总务官头衔的总督马格努斯在6个单元格以内的城市就职时方可建造。");
+    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为9个单元格之内的城市（包括该城市）提供额外+2所有产出。只有当拥有总务官头衔的总督马格努斯在6个单元格以内的城市就职时方可建造。");

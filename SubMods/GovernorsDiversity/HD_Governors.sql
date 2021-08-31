@@ -203,17 +203,17 @@ values
 	('REYNA_SHIPYARD',									'ModifierId',										'REYNA_SHIPYARD_PERCENTAGE_BOOST'),
 	('REYNA_SEAPORT',									'ModifierId',										'REYNA_SEAPORT_PERCENTAGE_BOOST'),
 	('REYNA_MARKET_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_MARKET_PERCENTAGE_BOOST',					'Amount',											10),
+	('REYNA_MARKET_PERCENTAGE_BOOST',					'Amount',											5),
 	('REYNA_BANK_PERCENTAGE_BOOST',						'YieldType',										'YIELD_GOLD'),
-	('REYNA_BANK_PERCENTAGE_BOOST',						'Amount',											10),
+	('REYNA_BANK_PERCENTAGE_BOOST',						'Amount',											5),
 	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'YieldType',										'YIELD_GOLD'),
-	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'Amount',											10),
+	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'Amount',											5),
 	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'YieldType',										'YIELD_GOLD'),
-	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'Amount',											10),
+	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'Amount',											5),
 	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'Amount',											10),
+	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'Amount',											5),
 	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'Amount',											10);
+	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'Amount',											5);
 
 -- 调整效果
 -- 税务员

@@ -119,9 +119,9 @@ insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
-    ('REYNA_CONVERT_PERCENTAGE',                        100),
+    ('REYNA_CONVERT_PERCENTAGE',                        50),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
-    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  6),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  9),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
