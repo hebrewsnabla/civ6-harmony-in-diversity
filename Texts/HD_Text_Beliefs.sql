@@ -23,7 +23,7 @@ values
     ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +200 Religious Pressure. City-State leveraging costs 20% less. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion. City-States you are a suzerain of provide +2 [ICON_CULTURE] Culture, +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
     ("LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder."),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "To the Glory of God"),
-    ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "-25% [ICON_faith] Faith cost when you patronize a great person. 33% chance to grant a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired"), -- Each time you recruit a great person, gain 50 [ICON_FAVOR] Diplomatic Favor. 
+    ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "-25% [ICON_faith] Faith cost when you patronize a great person. Grant a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired, then grant a [ICON_GreatWork_Relic] relic for every three great people are fully activated or retired."), -- Each time you recruit a great person, gain 50 [ICON_FAVOR] Diplomatic Favor. 
     ("LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "Shrines provide +3 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing. Temples provide +6 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing."),
     ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "Shrines provide +3 [ICON_CULTURE] Culture. Temples provide +6 [ICON_CULTURE] Culture."),
     ("LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "All world wonders provide +4 [ICON_Faith] Faith. Holy Site provides extra [ICON_Faith] Faith equal to their district adjacency bonus. Each time you complete a Wonder, gain [ICON_Faith] Faith equal to 50% its production cost."),
@@ -97,7 +97,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加200点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。每个宗主的城邦提供+2 [ICON_CULTURE] 文化，+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "荣神益人"),
-    ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "招募伟人-25% [ICON_faith] 信仰值花费。 每当一位伟人完全激活或隐退后，有33%的几率获得一个 [ICON_GreatWork_Relic] 遗物。"), -- 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。
+    ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "招募伟人-25% [ICON_faith] 信仰值花费。 有一个伟人完全激活或隐退后，获得一个 [ICON_GreatWork_Relic] 遗物，之后每有三位伟人完全激活或隐退后获得一个 [ICON_GreatWork_Relic] 遗物。"), -- 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。
     ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "神社提供+3 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。寺庙提供+6 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。"),
     ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "神社提供+3 [ICON_CULTURE] 文化值。寺庙提供+6 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "所有世界奇观+4 [ICON_Faith] 信仰值。圣地区域的 [ICON_Faith] 信仰值相邻加成提供额外等量的 [ICON_Faith] 信仰值。完成世界奇观后返还等同于奇观所需产能一半的 [ICON_Faith] 信仰值。"),
