@@ -798,20 +798,24 @@ values
 --------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
-update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
 
-update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_SCIENTIST_HAPPY' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_SCIENTIST_HAPPY' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENTIST_ECSTATIC' and Name = 'Amount';
-update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_ENGINEER_HAPPY' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ENGINEER_HAPPY' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_ENGINEER_ECSTATIC' and Name = 'Amount';
 
 -- untested
 insert or replace into TraitModifiers
 	(TraitType,											ModifierId)
 values
+	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_SCIENCE_JOYFUL'),
+	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_PRODUCTION_JOYFUL'),
+	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_SCIENTIST_JOYFUL'),
+	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_ENGINEER_JOYFUL'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_LIBRARY_SCIENTIST_POINT'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_UNIVERSITY_SCIENTIST_POINT'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_RESEARCHLAB_SCIENTIST_POINT'),
@@ -837,6 +841,10 @@ values
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,													SubjectRequirementSetId)
 values
+	('TRAIT_SCIENCE_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD',				NULL),
+	('TRAIT_PRODUCTION_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD',				NULL),
+	('TRAIT_SCIENTIST_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_CAMPUS_HAPPY_REQUIREMENTS'),
+	('TRAIT_ENGINEER_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_INDUSTRIAL_ZONE_HAPPY_REQUIREMENTS'),
 -- 	('TRAIT_LIBRARY_SCIENTIST_POINT',							'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_LIBRARY_HAPPY_REQUIREMENTS'),
 -- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT',						'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_UNIVERSITY_HAPPY_REQUIREMENTS'),
 -- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT',						'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_RESEARCHLAB_HAPPY_REQUIREMENTS'),
@@ -861,6 +869,19 @@ insert or replace into ExcludedAdjacencies (TraitType,	YieldChangeId)values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,							Value)
 values
+	('TRAIT_SCIENCE_JOYFUL',						'YieldType',					'YIELD_SCIENCE'),
+	('TRAIT_SCIENCE_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
+	('TRAIT_SCIENCE_JOYFUL',						'Amount',						16),
+	('TRAIT_PRODUCTION_JOYFUL',						'YieldType',					'YIELD_PRODUCTION'),
+	('TRAIT_PRODUCTION_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
+	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						16),
+	('TRAIT_SCIENTIST_JOYFUL',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+	('TRAIT_SCIENTIST_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
+	('TRAIT_SCIENTIST_JOYFUL',						'Amount',						4),
+	('TRAIT_ENGINEER_JOYFUL',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+	('TRAIT_ENGINEER_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
+	('TRAIT_ENGINEER_JOYFUL',						'Amount',						4),
+	-- 
 	('TRAIT_CAMPUS_AMENITY',						'Amount',						1),
 	('TRAIT_INDUSTRIAL_ZONE_AMENIYT',				'Amount',						1),
 	('SCOTLAND_TERRITORY_COMBAT',					'AbilityType',					'ABILITY_TERRITORY_COMBAT'),
