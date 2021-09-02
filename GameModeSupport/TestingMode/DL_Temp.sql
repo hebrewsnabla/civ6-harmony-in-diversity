@@ -74,8 +74,13 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                       SubjectRequirementSetId)
 values
-    ('TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY',                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',              'REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY'),
-    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL);
+    ('TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY',                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',              'UNIT_IS_LEVIED_REQUIREMENTS_XP2'),
+    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             'REQUIREMENTS_UNIT_IN_ENEMY_TERRITORY');
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_LEVY_DEBUFF_IN_ENEMY_TERRITORY',				'LEVY_DEBUFF_IN_ENEMY_TERRITORY');
 
 insert or replace into ModifierArguments
     (ModifierId,                                            Name,           Value)
@@ -94,12 +99,11 @@ values
 	('UNIT_IN_ENEMY_TERRITORY_REQUIREMENT',			'REQUIREMENT_UNIT_IN_ENEMY_TERRITORY');
 
 insert or replace into RequirementSets
-    (RequirementSetId,                                          RequirementSetType)
+    (RequirementSetId,                              RequirementSetType)
 values
-    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'REQUIREMENTSET_TEST_ALL');
+    ('REQUIREMENTS_UNIT_IN_ENEMY_TERRITORY',        'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
-    (RequirementSetId,                                          RequirementId)
+    (RequirementSetId,                              RequirementId)
 values
-    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'REQUIRES_UNIT_IS_LEVIED_XP2'),
-    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'UNIT_IN_ENEMY_TERRITORY_REQUIREMENT');
+    ('REQUIREMENTS_UNIT_IN_ENEMY_TERRITORY',        'UNIT_IN_ENEMY_TERRITORY_REQUIREMENT');

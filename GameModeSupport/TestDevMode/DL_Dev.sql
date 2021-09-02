@@ -9,7 +9,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERN
 update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
 
 -- ORSZAGHAZ
-update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM' where BuildingType = 'BUILDING_ORSZAGHAZ';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM', Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and ModifierId = 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN';
 insert or replace into BuildingModifiers (BuildingType, ModifierId)values   ('BUILDING_ORSZAGHAZ',  'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS');
 

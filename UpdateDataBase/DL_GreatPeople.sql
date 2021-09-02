@@ -330,7 +330,27 @@ update GreatPersonIndividualActionModifiers set ModifierId = 'ZHOU_DAGUAN_TOKENS
 update GreatPersonIndividualActionModifiers set AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 
 -- 梅里塔·本茨额外+1商路容量
-update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY' and Name = 'Amount';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ' and ModifierId = 'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY';
+
+insert or replace into GreatPersonIndividualActionModifiers 
+	(GreatPersonIndividualType, 						ModifierId,										AttachmentTargetType)
+values
+	('GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ',			'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+
+insert or replace into Modifiers
+	(ModifierId, 										ModifierType, 									Runonce, Permanent, SubjectRequirementSetId)
+values
+	('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',	1,		 1, 		NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId, 										Name,					Value)
+values
+	('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',			'Amount',			 	2);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,    Text)
+values
+    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',	'Summary',  'LOC_GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY');
 
 -- 亚当·斯密 改为+1经济槽
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADAM_SMITH' and (ModifierId = 'GREATPERSON_GOVERNOR_POINTS' or ModifierId = 'GREATPERSON_GOLD_LARGE');
@@ -361,10 +381,10 @@ insert into ModifierArguments
 values
         ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',          'Amount',             3);
 
-insert or replace into GreatPersonIndividualActionModifiers
+/*insert or replace into GreatPersonIndividualActionModifiers
 	    (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
 values
-        ('GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON',       'JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+        ('GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON',       'JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');*/
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON';
 
