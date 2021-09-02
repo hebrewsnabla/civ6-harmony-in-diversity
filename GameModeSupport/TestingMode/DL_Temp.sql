@@ -86,7 +86,7 @@ insert or replace into ModifierArguments
     (ModifierId,                                            Name,           Value)
 values
     ('TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY',                'AbilityType',  'ABILITY_LEVY_DEBUFF_IN_ENEMY_TERRITORY'),
-    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'Amount',       -5);
+    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'Amount',       -4);
 
 insert or replace into ModifierStrings
     (ModifierId,                                            Context,    Text)
