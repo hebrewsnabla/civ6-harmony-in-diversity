@@ -1,9 +1,9 @@
 -- ===========================================================================
---	Taken from Expansion2/UI/Civilopedia/CivilopediaPage_Building.lua
+--    Civilopedia - Building Page Layout
 -- ===========================================================================
 
 PageLayouts["Building" ] = function(page)
-    local sectionId = page.SectionId;
+local sectionId = page.SectionId;
     local pageId = page.PageId;
 
     SetPageHeader(page.Title);
@@ -66,8 +66,8 @@ PageLayouts["Building" ] = function(page)
         end
     end
 
-    local replaces;			-- building this one replaces.
-    local replaced_by = {};	-- buildings replaced by this building.
+    local replaces;            -- building this one replaces.
+    local replaced_by = {};    -- buildings replaced by this building.
     for row in GameInfo.BuildingReplaces() do
         if(row.CivUniqueBuildingType == buildingType) then
             local b = GameInfo.Buildings[row.ReplacesBuildingType];
@@ -210,17 +210,6 @@ PageLayouts["Building" ] = function(page)
     end
 
     local stats = {};
-
-    -- ================================================================================
-    -- DL specific logic: regional effects.
-    -- ================================================================================
-    local range = building.RegionalRange or 0;
-    if(range ~= 0) then
-        table.insert(stats, Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE", range));
-    end
-    -- ================================================================================
-    -- End DL specific logic.
-    -- ================================================================================
 
     for row in GameInfo.Building_YieldChanges() do
         if(row.BuildingType == buildingType) then
@@ -435,36 +424,11 @@ PageLayouts["Building" ] = function(page)
             if(#prereq_buildings > 1) then
                 s:AddHeader("LOC_UI_PEDIA_REQUIRED_BUILDINGS_OR");
             elseif(#prereq_buildings == 1) then
-                -- ================================================================================
-                -- DL specific logic: Replace building with governor if it's magnus dummy building.
-                -- ================================================================================
-                if prereq_buildings[1].BuildingType == "BUILDING_DUMMY_MAGNUS" then
-                    -- Add "governor name" as header instead of "building name".
-                    -- LOC_REPORTS_GOVERNOR has "Governor" instead of "Governors".
-                    s:AddHeader("LOC_REPORTS_GOVERNOR");
-                else
-                    -- Default behavior: Add "building name" as header.
-                    s:AddHeader("LOC_BUILDING_NAME");
-                end
-                -- ================================================================================
-                -- End DL specific logic.
-                -- ================================================================================
+                s:AddHeader("LOC_BUILDING_NAME");
             end
 
             for i,v in ipairs(prereq_buildings) do
-                -- ================================================================================
-                -- DL specific logic: Replace building with governor if it's magnus dummy building.
-                -- ================================================================================
-                if v.BuildingType == "BUILDING_DUMMY_MAGNUS" then
-                    -- Use icon of "governor magnus".
-                    s:AddIconLabel({"ICON_GOVERNOR_THE_RESOURCE_MANAGER"}, v.Name);
-                else
-                    -- Default behavior: Use icon name constructed from the building info.
-                    s:AddIconLabel({"ICON_" .. v.BuildingType, v.Name, v.BuildingType}, v.Name);	
-                end
-                -- ================================================================================
-                -- End DL specific logic.
-                -- ================================================================================
+                s:AddIconLabel({"ICON_" .. v.BuildingType, v.Name, v.BuildingType}, v.Name);    
             end
             
             s:AddSeparator();
@@ -551,7 +515,7 @@ PageLayouts["Building" ] = function(page)
                 end
             end
 
-            if (building.PurchaseYield) then	
+            if (building.PurchaseYield) then    
                 local y = GameInfo.Yields[building.PurchaseYield];
                 if(y) then
                     s:AddHeader("LOC_UI_PEDIA_PURCHASE_COST");
