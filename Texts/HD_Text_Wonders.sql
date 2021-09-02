@@ -41,7 +41,7 @@ values
     ("LOC_BUILDING_THEMINGBONUS_NEUSCHWANSTEIN",              "Theming bonus doubling output when displaying objects from different musicians."),
     ("LOC_BUILDING_THEMINGBONUS_NOTRE_DAME",                  "Theming bonus doubling output when displaying objects from the same era."),
     ("LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "Theming bonus doubling output when displaying objects of the same kind."),
-    ("LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",        "Theming bonus doubling output when all slots are filled."),
+    ("LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "Receive a second naval unit each time you train a naval unit. +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for coast tiles in this city. +6 [ICON_RESOURCE_Niter] Niter per turn. Must be built on a Coast tile that is adjacent to an Industrial Zone district.");
 
 --------------------------------------------------------------------------------

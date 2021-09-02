@@ -329,6 +329,7 @@ values
 	('BUILDING_STABLE',				'STABLE_TRAINED_STRENGTH_MODIFIER'),
 	('BUILDING_ORDU',				'ORDU_TRAINED_STRENGTH_MODIFIER'); --ub
 
+update Modifiers set SubjectRequirementSetId = 'HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS' where ModifierId = 'CITY_DEFENDER_FREE_PROMOTIONS';
 insert or replace into TechnologyModifiers (TechnologyType, ModifierId)
 select PrereqTech, 'AIRPORT_TOURISM_BOOST' from Buildings where BuildingType = 'BUILDING_AIRPORT';
 

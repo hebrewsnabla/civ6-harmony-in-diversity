@@ -363,7 +363,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
-	('CATHERINE_BONUS_SIGHT',						'Amount',	3),
+	('CATHERINE_BONUS_SIGHT',						'Amount',	2),
 	('INCA_IGNORE_HILLS',							'Ignore',	1),
 	('INCA_IGNORE_HILLS',							'Type',		'HILLS'),
 	('KONGO_IGNORE_WOODS',							'Ignore',	1),

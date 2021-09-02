@@ -124,3 +124,36 @@ function HD_Aztec_Sacrifice(eOwner : number, iUnitID : number)
 
 end
 GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
+
+-- France, Catherine De Medici
+-- ===========================================================================
+-- Double promotion for spy
+-- ===========================================================================
+
+-- can also use SpyAdded
+function OnUnitAddedToMap(playerID, unitID)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sLeader = playerConfig:GetLeaderTypeName()
+	local sFlyingSquadronTrait = 'FLYING_SQUADRON_TRAIT'
+	if (not LeaderHasTrait(sLeader, sFlyingSquadronTrait)) then return; end
+	-- 
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    local mSpyIndex = GameInfo.Units['UNIT_SPY'].Index
+    if (player == nil) or (unit == nil) then return; end
+    if unit:GetType() == mSpyIndex then
+	    local unitExp = unit:GetExperience()
+	    print(unitExp:CanPromote())
+	    if (unitExp:CanPromote()) then
+			-- Have promotion ready, add a stored promotion so we don't lose the experience.
+			unitExp:ChangeStoredPromotions(1);
+		else
+			-- grant the experience for the next level.
+			local nextLevelExperience :number = unitExp:GetExperienceForNextLevel()
+			unitExp:SetExperienceLocked(false)
+			unitExp:ChangeExperience(nextLevelExperience)
+		end
+	end
+end
+
+Events.UnitAddedToMap.Add(OnUnitAddedToMap);

@@ -1574,8 +1574,8 @@ values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
 
 --------------------------------------------------------------------------
-/*
 --Catherine De Medici
+delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
@@ -1590,4 +1590,3 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
-*/

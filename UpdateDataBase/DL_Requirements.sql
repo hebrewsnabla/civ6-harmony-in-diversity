@@ -17,8 +17,12 @@ insert or replace into RequirementArguments (RequirementId, Name, Value) values
 	('REQUIREMENT_UNIT_IS_LAND_COMBAT', 'Tag', 'CLASS_LAND_COMBAT');
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_UNIT_IS_' || UnitType , 'REQUIREMENT_UNIT_TYPE_MATCHES' from Units;
-insert or replace into RequirementArguments (RequirementId, Name, Value) 	
+insert or replace into RequirementArguments (RequirementId, Name, Value) 
 	select 'REQUIRES_UNIT_IS_' || UnitType , 'UnitType', UnitType from Units;
+insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+	select 'HD_REQUIRES_UNIT_IS_NOT_' || UnitType , 'REQUIREMENT_UNIT_TYPE_MATCHES', 1 from Units;
+insert or replace into RequirementArguments (RequirementId, Name, Value) 	
+	select 'HD_REQUIRES_UNIT_IS_NOT_' || UnitType , 'UnitType', UnitType from Units;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_UNIT_IS_' || PromotionClassType , 'REQUIREMENT_UNIT_PROMOTION_CLASS_MATCHES' from UnitPromotionClasses;
 insert or replace into RequirementArguments (RequirementId, Name, Value) 	
@@ -178,7 +182,7 @@ values
 insert or replace into Requirements
 	(RequirementId,									RequirementType,							Inverse)
 values
-	('REQUIRES_UNIT_NOT_BARBARIAN_GALLEY', 			'REQUIREMENT_UNIT_TYPE_MATCHES',			1),
+	-- ('REQUIRES_UNIT_NOT_BARBARIAN_GALLEY', 			'REQUIREMENT_UNIT_TYPE_MATCHES',			1),
 	('REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'REQUIREMENT_PLAYER_HAS_DISTRICT',			1),
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',	1),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'REQUIREMENT_CITY_HAS_BUILDING',			1);
@@ -212,7 +216,7 @@ values
 	('REQUIRES_PLOT_IS_HILLS',						'TerrainClass',		'TERRAIN_CLASS_HILLS'),
 	('REQUIRES_THIS_WONDER_IS_AT_LEAST_MIEDIVAL',	'EarliestEra',		'ERA_MEDIEVAL'),
 	('REQUIRES_THIS_WONDER_IS_AT_LEAST_MIEDIVAL',	'LatestEra',		'ERA_FUTURE'),
-	('REQUIRES_UNIT_NOT_BARBARIAN_GALLEY',			'UnitType',			'UNIT_HD_BARBARIAN_GALLEY'),
+	-- ('REQUIRES_UNIT_NOT_BARBARIAN_GALLEY',			'UnitType',			'UNIT_HD_BARBARIAN_GALLEY'),
 	('REQUIRES_PLAYER_HAS_NO_DIPLOMATIC_QUARTER',	'DistrictType',		'DISTRICT_DIPLOMATIC_QUARTER'),
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'TerrainType',		'TERRAIN_OCEAN'),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'BuildingType',		'BUILDING_FILM_STUDIO'),
@@ -915,6 +919,7 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
+	('HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
 	('HD_UNIT_IS_NOT_BARBARIAN_GALLEY_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
 	('HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
 	('HD_OPPONENT_IS_CAVALRY_REQUIREMENTS',						'REQUIREMENTSET_TEST_ANY'),
@@ -940,7 +945,9 @@ values
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
-	('HD_UNIT_IS_NOT_BARBARIAN_GALLEY_REQUIREMENTS',			'REQUIRES_UNIT_NOT_BARBARIAN_GALLEY'),
+	('HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS',					'HD_REQUIRES_UNIT_IS_NOT_UNIT_SPY'),
+	('HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS',					'HD_REQUIRES_UNIT_IS_NOT_UNIT_APOSTLE'),
+	('HD_UNIT_IS_NOT_BARBARIAN_GALLEY_REQUIREMENTS',			'HD_REQUIRES_UNIT_IS_NOT_UNIT_HD_BARBARIAN_GALLEY'),
 	('HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS',					'REQUIRES_UNIT_NOT_BARBARIAN'),
 	('HD_OPPONENT_IS_CAVALRY_REQUIREMENTS',						'ANTI_CAVALRY_OPPONENT_REQUIREMENT_LC'),
 	('HD_OPPONENT_IS_CAVALRY_REQUIREMENTS',						'ANTI_CAVALRY_OPPONENT_REQUIREMENT_HC'),
