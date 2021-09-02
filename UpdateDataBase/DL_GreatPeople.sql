@@ -13,6 +13,7 @@
 -- SHAH_JAHAN :tourism from district adjacency nationwide
 -- JOHN_A_ROEBLING: little goldengate + wonder tourism
 -- SHAH_JAHAN: to renissance era
+-- JOSEPH_PAXTON: to modern era, 2 charges +680 production for wonders 
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_PRINTINGTECHBOOST';
 -- update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_WORKSHOP_CULTURE' and Name = 'Amount';
@@ -21,6 +22,8 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 update GreatPersonIndividuals set EraType = 'ERA_RENAISSANCE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SHAH_JAHAN';	
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA';
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE';
+update GreatPersonIndividuals set EraType = 'ERA_MODERN', ActionCharges = 2, ActionRequiresIncompleteWonder = 1, ActionRequiresCompletedDistrictType = NULL where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON' and (ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' or ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_ENTERTAINMENT');
 
 insert or replace into GreatPersonIndividualActionModifiers 
 	(GreatPersonIndividualType, 						ModifierId,										AttachmentTargetType)
@@ -28,7 +31,8 @@ values
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_APPEAL',				'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_WONDER_TOURISM',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
 	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
-	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY');
+	('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',			'GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
+	('GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON',			'GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_WONDER_IN_TILE');
 
 insert or replace into GreatPersonIndividualActionModifiers 
 	(GreatPersonIndividualType, 						ModifierId)
@@ -54,7 +58,8 @@ values
 	('GREATPERSON_SINGLECITY_WONDER_TOURISM',			'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',					0,1,	NULL),
 	('GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM',		'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_TOURISM',		0,1,	NULL),	
 	('GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',	'MODIFIER_SINGLE_CITY_ADJUST_NATIONAL_PARK_TOURISM',	0,1,	NULL),
-	('GREATPERSON_NATIONAL_APPEAL_BIG',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_APPEAL',			0,1,	NULL);
+	('GREATPERSON_NATIONAL_APPEAL_BIG',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_APPEAL',			0,1,	NULL),
+	('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',		'MODIFIER_SINGLE_CITY_GRANT_PRODUCTION_IN_CITY',		1,1,	NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId, 													Name,					Value)
@@ -76,7 +81,9 @@ values
 	('GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',				'Amount',				100),
 	('GREATPERSON_SINGLECITY_WONDER_TOURISM',						'BoostsWonders',		1),
 	('GREATPERSON_SINGLECITY_WONDER_TOURISM',						'ScalingFactor',		200),
-	('GREATPERSON_NATIONAL_APPEAL_BIG',								'Amount',				2);
+	('GREATPERSON_NATIONAL_APPEAL_BIG',								'Amount',				2),
+	('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',					'Amount',				680),
+	('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',					'KeepOverflow',			0);
 ------------------------------------------------------------------------------------------------------------------------------
 --- Great Scientist
 -------------------------------------------------------------------------------------------------------------------------------
@@ -321,6 +328,17 @@ update GreatPersonIndividuals set ActionRequiresNonHostileTerritory = 0 where Gr
 update GreatPersonIndividuals set ActionRequiresOwnedTile = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividualActionModifiers set ModifierId = 'ZHOU_DAGUAN_TOKENS' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividualActionModifiers set AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
+
+-- 梅里塔·本茨额外+1商路容量
+update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY' and Name = 'Amount';
+
+-- 亚当·斯密 改为+1经济槽
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADAM_SMITH' and (ModifierId = 'GREATPERSON_GOVERNOR_POINTS' or ModifierId = 'GREATPERSON_GOLD_LARGE');
+
+insert or replace into GreatPersonIndividualActionModifiers
+	    (GreatPersonIndividualType,                  ModifierId,                           AttachmentTargetType)
+values
+        ('GREAT_PERSON_INDIVIDUAL_ADAM_SMITH',       'GREATPERSON_ECONOMIC_POLICY_SLOT',   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
 --约瑟夫·帕克斯顿改成全国效果
 insert or replace into RequirementSetRequirements

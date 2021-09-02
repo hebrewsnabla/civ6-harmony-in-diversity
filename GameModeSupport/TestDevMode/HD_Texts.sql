@@ -14,7 +14,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
     ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                     "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION",                           "建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中了至少1个的宗主国，本城中此类城邦对应的产出+20%；若你是其中至少2个的宗主国，本城中此类城邦对应的产出额外+20%。必须建造在与海岸相邻的平坦地形上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION",                           "建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中至少1个的宗主国，本城中此类城邦对应的产出+20%；若你是其中至少2个的宗主国，本城中此类城邦对应的产出额外+20%。必须建造在与海岸相邻的平坦地形上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                "建成时+2外交胜利点数。获得1次 [ICON_Governor] 总督升级。所有城市根据每种已结成的同盟类型获得对应的产出+5%。[NEWLINE][NEWLINE]必须修建在河边。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                           "[ICON_TradeRoute] 贸易路线容量+1。[NEWLINE][NEWLINE]城市领土中3个单元格以内的每个加成资源将为从此城市发源的 [ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场）和 [ICON_RESOURCE_CATTLE] 牛资源相邻的单元格上。");
 

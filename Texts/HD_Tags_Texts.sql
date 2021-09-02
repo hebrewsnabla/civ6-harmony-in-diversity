@@ -38,6 +38,7 @@ update Civics set Description = 'LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION' whe
 update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
 update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
 update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY'; --temp
+-- update Civics set Description = 'LOC_CIVIC_CONSERVATION_HD_DESCRIPTION' where CivicType ='CIVIC_CONSERVATION';
 
 --------------------------------------------------------------------------------
 -- Buildings

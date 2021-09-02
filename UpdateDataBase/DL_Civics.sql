@@ -105,10 +105,32 @@ update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOO
 -- insert or replace into CivicModifiers (CivicType, ModifierId) values
 -- 	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
 
-insert or replace into CivicModifiers (CivicType, ModifierId) 
+/*insert or replace into CivicModifiers (CivicType, ModifierId) 
 values
 	('CIVIC_CULTURAL_HEGEMONY',		'FUTURE_VICTORY_CULTURE_ROCK_BAND_PROMOTIONS'),
-	('CIVIC_NATIONALISM',			'NATIONALIDENTITY_REDUCESTRENGTHREDUCTIONFORDAMAGE');
+	('CIVIC_NATIONALISM',			'NATIONALIDENTITY_REDUCESTRENGTHREDUCTIONFORDAMAGE'),
+	('CIVIC_CONSERVATION',			'CITY_CENTER_ADJACENT_TO_FOREST');
+
+insert or replace into Modifiers
+    (ModifierId,                                      ModifierType,                                       SubjectRequirementSetId)
+values
+    ('CITY_CENTER_ADJACENT_TO_FOREST',                'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY',     'REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,      Value)
+values
+    ('CITY_CENTER_ADJACENT_TO_FOREST',              'Amount',  1);
+
+insert or replace into RequirementSets
+    (RequirementSetId,                                          RequirementSetType)
+values
+    ('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                          RequirementId)
+values
+    ('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT'),
+	('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_HAS_NO_IMPROVEMENT');*/
 
 -- Civic Tree v3
 update Civics set Cost = 20 where CivicType = 'CIVIC_CODE_OF_LAWS';

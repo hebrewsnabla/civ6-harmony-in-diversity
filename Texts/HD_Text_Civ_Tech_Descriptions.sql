@@ -34,6 +34,7 @@ values
     ("LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",     "+50% [ICON_Tourism] Tourism across your empire."),
     ("LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "Plantation improvements receive +2 [ICON_Gold] Gold."),
     ("LOC_CIVIC_NATIONALISM_DESCRIPTION",             "Grants the ability to construct an additional Spy. Allows forming two identical units into a Corps or Fleet. Units have 50% less [ICON_Strength] Combat Strength reduction from being injured. Allows one new Casus Belli that can be used to justify wars: Colonial War."),
+    -- ("LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",         "Awards 3 [ICON_Envoy] Envoys. Allows the building of National Parks and the purchase of Naturalists with [ICON_Faith] Faith. Allows Builders to plant Woods (second-growth). Woods in your territory that have never been removed (old-growth) gain +1 Appeal. Receives +1 [ICON_Amenities] Amenity when city center is adjacent to unimproved woods. Receive [ICON_TOURISM] Tourism from Walls."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "Build 3 Workshops."),
@@ -96,6 +97,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",     "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",        "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_DESCRIPTION",             "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。受到伤害后，单位的 [ICON_Strength] 战斗力减益降低50%。现在可用一个新的战争借口替战争辩护：殖民战争。"),
+    -- ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",         "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。允许建造者植树造林（人造林）。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻未改良森林的城市+1宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",             "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",       "建造3座工作坊。"),

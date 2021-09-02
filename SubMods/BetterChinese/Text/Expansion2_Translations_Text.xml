@@ -83,7 +83,7 @@
 			<Text>获得所有远古和古典时代的科技的尤里卡。其他玩家招募 [ICON_GreatScientist] 大科学家时将随机获得1个科技提升。必须建在与学院（其中须建有图书馆）相邻的平坦地形上。</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中了至少1个的宗主国，本城中此类城邦对应的产出+15%；若你是其中至少2个的宗主国，你的所有城市的此类城邦对应的产出+15%。必须建造在与海岸相邻的平坦地形上。</Text>
+			<Text>建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中至少1个的宗主国，本城中此类城邦对应的产出+15%；若你是其中至少2个的宗主国，你的所有城市的此类城邦对应的产出+15%。必须建造在与海岸相邻的平坦地形上。</Text>
 		</Replace>
 		<Replace Tag="LOC_LEADER_TRAIT_NAZCA_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>建造者可以建造纳斯卡巨画改良设施。[NEWLINE]纳斯卡巨画向相邻单元格提供+1 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+1 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。</Text>

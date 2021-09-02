@@ -37,7 +37,8 @@ values
     ("LOC_GREATPERSON_LEIF_ERIKSON_EXPANSION2_ACTIVE",                    "+1 sight range for all naval units. Allows all Settlers and naval units to move over ocean tiles without the normal technology requirement."),
     ("LOC_GREATPERSON_NAVLA_RAIDER_BONUS",                                "Naval Raider units receive +2 [ICON_Strength] Combat Strength."),
     ("LOC_GREATPERSON_CHING_SHIH_EXPANSION2_ACTIVE",                      "Gain +500 [ICON_Gold] Gold (on Standard speed). Military units get +100% rewards for plundering sea [ICON_TradeRoute] Trade Routes."),
-    ("LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "Shipyards provide +{Amount} [ICON_Production] Production.");
+    ("LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "Shipyards provide +{Amount} [ICON_Production] Production."),
+    ("LOC_GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN",                   "Grants {Amount} [ICON_Production] Production towards wonder construction.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -79,5 +80,6 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_LEIF_ERIKSON_EXPANSION2_ACTIVE",                    "所有海军单位视野范围+1。所有海军单位与开拓者可在满足正常科技要求前进入海洋单元格。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_NAVLA_RAIDER_BONUS",                                "海军袭击者+2 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_CHING_SHIH_EXPANSION2_ACTIVE",                      "获得500 [ICON_Gold] 金币（标准速度下）。军事单位掠夺海上 [ICON_TradeRoute] 贸易路线时收益+100%。"),
-    ("zh_Hans_CN",  "LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "造船厂+{Amount} [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "LOC_HORATIO_NELSON_SHIPYARD_PRODUCTION",                            "造船厂+{Amount} [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN",                   "为奇观建设赠予{Amount}点 [ICON_Production] 生产力。");
 

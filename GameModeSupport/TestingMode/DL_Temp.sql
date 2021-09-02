@@ -62,3 +62,44 @@ values
     ('ABILITY_BASILIKOI_TRAINED_UNIT_XP',                               'CLASS_HEAVY_CAVALRY'),
     ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_LIGHT_CAVALRY'),
     ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_HEAVY_CAVALRY');
+
+-- Levy Units
+update GlobalParameters set Value = 20 where Name = 'LEVY_MILITARY_TURN_DURATION';
+
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('TRAIT_LEADER_MAJOR_CIV',              'TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY');
+
+insert or replace into Modifiers
+    (ModifierId,                                            ModifierType,                                       SubjectRequirementSetId)
+values
+    ('TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY',                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',              'REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY'),
+    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',             NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                            Name,           Value)
+values
+    ('TRAIT_LEVY_DEBUFF_IN_ENEMY_TERRITORY',                'AbilityType',  'ABILITY_LEVY_DEBUFF_IN_ENEMY_TERRITORY'),
+    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'Amount',       -5);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                            Context,    Text)
+values
+    ('LEVY_DEBUFF_IN_ENEMY_TERRITORY',                      'Preview',  '{1_Amount} {LOC_LEVY_DEBUFF_IN_ENEMY_TERRITORY_PREVIEW_TEXT}');
+
+insert or ignore into Requirements
+	(RequirementId,									RequirementType)
+values
+	('UNIT_IN_ENEMY_TERRITORY_REQUIREMENT',			'REQUIREMENT_UNIT_IN_ENEMY_TERRITORY');
+
+insert or replace into RequirementSets
+    (RequirementSetId,                                          RequirementSetType)
+values
+    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                          RequirementId)
+values
+    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'REQUIRES_UNIT_IS_LEVIED_XP2'),
+    ('REQUIREMENTS_UNIT_IS_LEVIED_AND_IN_ENEMY_TERRITORY',      'UNIT_IN_ENEMY_TERRITORY_REQUIREMENT');
