@@ -1575,7 +1575,7 @@ values
 
 --------------------------------------------------------------------------
 --Catherine De Medici
-delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
+-- delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
