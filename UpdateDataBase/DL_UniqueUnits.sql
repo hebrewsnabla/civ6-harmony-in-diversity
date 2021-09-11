@@ -54,6 +54,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 -- 挪威
 update Units set Cost = 55, Maintenance = 1, BaseMoves = 3, Range = 0, Combat = 35, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_NORWEGIAN_LONGSHIP';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NORWEGIAN_LONGSHIP';
+insert or replace into TypeTags (Type, Tag) values ('ABILITY_MONGOLIAN_KESHIG', 'CLASS_LONGSHIP');
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 48, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
 ------ UNIT_NORWEGIAN_ULFHEDNAR
@@ -146,6 +147,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 ------ UNIT_MACEDONIAN_HETAIROI
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
+delete from UnitReplaces where CivUniqueUnitType = 'UNIT_MACEDONIAN_HETAIROI';
 -- insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MACEDONIAN_HETAIROI', 'UNIT_ARMORED_HORSEMAN'
 --     where exists (select UnitType from Units where UnitType = 'UNIT_ARMORED_HORSEMAN');
 ------ UNIT_MACEDONIAN_PEZHETAIROS
