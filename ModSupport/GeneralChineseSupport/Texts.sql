@@ -222,3 +222,11 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_NAME",          "阿瑜陀耶"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_DESCRIPTION",   "阿瑜陀耶城邦");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- Great Person Recruited Notification
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_NOTIFICATION_OTHER_PLAYER_RECRUITED_GREATPERSON_MESSAGE",              "伟人被招募"),
+    ("zh_Hans_CN",  "LOC_NOTIFICATION_OTHER_PLAYER_RECRUITED_GREATPERSON_SUMMARY",              "{1_recruiter} 已招募了 {2_greatPersonType} {3_greatPersonName}");

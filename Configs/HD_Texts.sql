@@ -19,6 +19,8 @@ values
     ("LOC_GAMEMODE_AITEST_DESCRIPTION",                     "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains the Dev adjustments."),
     ("LOC_GAMEMODE_TECHTEST_NAME",                          "Testing Tech and AI Mode"),
     ("LOC_GAMEMODE_TECHTEST_DESCRIPTION",                   "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains tech tree and AI adjustments."),
+    ("LOC_GAMEMODE_MPTEST_NAME",                            "Testing Multi Player Mode"),
+    ("LOC_GAMEMODE_MPTEST_DESCRIPTION",                     "Inner Testing Usage Only, please do not enable. Mode for Testing, current testing mode contains Multi Player adjustments."),
     -- Maps
     ("LOC_MAP_TINY_ISLANDS_NAME",                           "Tiny Islands"),
     ("LOC_MAP_TINY_ISLANDS_DESCRIPTION",                    "Many tiny islands."),
@@ -46,6 +48,8 @@ values
     ("zh_Hans_CN",  "LOC_GAMEMODE_AITEST_DESCRIPTION",                      "内部测试专用，请勿开启。用于测试的模式，当前测试模式包含了开发中内容。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_TECHTEST_NAME",                           "测试科技树和AI模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_TECHTEST_DESCRIPTION",                    "内部测试专用，请勿开启。用于测试的模式，当前测试模式中调整了科技树和AI。"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_NAME",                             "测试联机模式"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_DESCRIPTION",                      "内部测试专用，请勿开启。用于测试的模式，当前测试模式中在进行联机相关的测试。"),
     -- ("zh_Hans_CN",  "LOC_ADD_STEEL_N_THUNDER_UU_NAME",                   "添加WE对ST特色单位的支持"),
     -- ("zh_Hans_CN",  "LOC_ADD_STEEL_N_THUNDER_UU_DESC",                   "添加Warfare Expanded对SteelThunder特色单位的支持{LOC_WER_MOD_NOTE}"),
     -- Maps

@@ -179,6 +179,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="MPTest_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_MPTEST</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1159,6 +1167,17 @@
       <Properties><LoadOrder>18201</LoadOrder></Properties>
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
+    <!-- MultiPlayer -->
+    <UpdateDatabase id="MPTest_update" criteria="MPTest_Mode_Expansion2">
+      <Properties><LoadOrder>18300</LoadOrder></Properties>
+      <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
+      <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="MPTest_update_text" criteria="MPTest_Mode_Expansion2">
+      <Properties><LoadOrder>18301</LoadOrder></Properties>
+      <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
+    </UpdateText>
     <!-- Options at last -->
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_PostponeWorldCongress_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1228,6 +1247,11 @@
     <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
+    <!-- Multi Player Test Mode -->
+    <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
+    <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
+    <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>

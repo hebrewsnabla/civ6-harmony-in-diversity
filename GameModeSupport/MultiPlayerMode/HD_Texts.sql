@@ -1,0 +1,13 @@
+-- --------------------------------------------------------------------------------
+-- -- Language: en_US
+-- insert or replace into EnglishText
+--     (Tag,                                                                     Text)
+-- values
+--     ("LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                                   "");
+    
+-- --------------------------------------------------------------------------------
+-- -- Language: zh_Hans_CN
+-- insert or replace into LocalizedText
+--     (Language,      Tag,                                                                 Text)
+-- values
+--     ("zh_Hans_CN",  "LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                               "");
