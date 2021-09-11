@@ -47,6 +47,7 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TITLE_HISTORIC",                            "由{1_author}统计的在{2_era}最伟大的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TAB_WORLD",                                 "世界"),
     ("zh_Hans_CN",  "LOC_AKGC_CITIES_TAB_EMPIRE",                                "帝国"),
+    ("zh_Hans_CN",  "LOC_AKGC_CITIES_TAB_WONDERS",                               "奇观"),
     ("zh_Hans_CN",  "LOC_AKGC_UNDISCOVERED_CITY",                                "未发现的城市"),
     ("zh_Hans_CN",  "LOC_AKGC_AWARD_HIGHEST_GoldPT",                             "最富有的城市 (每回合{1} [ICON_GOLD])"),
     ("zh_Hans_CN",  "LOC_AKGC_AWARD_HIGHEST_FaithPT",                            "最虔诚的城市 (每回合{1} [ICON_FAITH])"),
@@ -120,7 +121,16 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_OPTIONS_TT",                                "选项"),
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSRESET",                             "重置"),
     ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSSAVE",                              "保存"),
-    ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSCANCEL",                            "取消");
+    ("zh_Hans_CN",  "LOC_AKGC_BUTTON_SETTINGSCANCEL",                            "取消"),
+    -- newly added
+    ("zh_Hans_CN",  "LOC_AKGC_OPT_WonderList",                                   "世界奇观列表"),
+    ("zh_Hans_CN",  "LOC_AKGC_OPT_ShowLineNumbersOnCityLists",                   "在城市列表中显示行号"),
+    ("zh_Hans_CN",  "LOC_AKGC_OPT_ShowRevealedUnderConstructionWonders",         "显示视野范围内建造中的奇观"),
+    ("zh_Hans_CN",  "LOC_AKGC_OPT_ShowUnRevealedUnderConstructionWonders",       "显示不可见范围内建造中的奇观"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_WONDER",                                       "名称"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_OWNER",                                        "所有者"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_DATEBUILT",                                    "建成时间"),
+    ("zh_Hans_CN",  "LOC_AKGC_COL_LOCATION",                                     "位置");
 
 -- Extended Map Search
 --------------------------------------------------------------------------------
