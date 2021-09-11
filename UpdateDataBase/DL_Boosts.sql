@@ -2,7 +2,7 @@
 --         Boosts Adjustment       --
 -------------------------------------
 
-update Boosts set Boost = 33 where Boost = 40;
+update Boosts set Boost = 34 where Boost = 40;
 
 update Boosts set NumItems = 2 where TechnologyType = 'TECH_BRONZE_WORKING';
 
