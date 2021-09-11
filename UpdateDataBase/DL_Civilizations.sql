@@ -117,7 +117,7 @@ delete from TraitModifiers where
 
 insert or replace into TraitModifiers (TraitType,		ModifierId)
 values
-	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_REVEAL_IRON'),
+	-- ('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_REVEAL_IRON'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_IRON_PRODUCTION'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_COAL_PRODUCTION'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION'),
@@ -163,10 +163,10 @@ update ModifierArguments set Value = 61 where ModifierId = 'TRAIT_EUREKA_INCREAS
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
-insert or replace into Building_YieldChanges 
-	(BuildingType, 		YieldType,			YieldChange) 
-values
-	('BUILDING_MARAE', 	'YIELD_CULTURE',	2);
+-- insert or replace into Building_YieldChanges 
+-- 	(BuildingType, 		YieldType,			YieldChange) 
+-- values
+-- 	('BUILDING_MARAE', 	'YIELD_CULTURE',	2);
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_CIVILIZATION_MAORI_MANA', 'TRAIT_MAORI_PRODUCTION_RAINFOREST_CIVIL_SERVICE'),
@@ -1537,7 +1537,7 @@ values
 ----------------------------------------------------------------------------------------------------------------------
 -- Greece
 -- ud 
-update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
+-- update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
 
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)

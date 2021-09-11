@@ -2,6 +2,12 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Gov
+delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_AUTOCRACY' and ModifierId = 'AUTOCRACY_GOV';
+delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and ModifierId = 'AUTOCRACY_GOV';
+delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
+delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
+
 -- Wonders
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';

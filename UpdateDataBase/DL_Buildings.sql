@@ -134,21 +134,21 @@ values
 
 delete from Building_CitizenYieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
 
-update Buildings set CitizenSlots = 1 
-	where BuildingType = 'BUILDING_GOV_TALL'
- 	or BuildingType = 'BUILDING_GOV_WIDE'
-	or BuildingType = 'BUILDING_GOV_CONQUEST'
-	or BuildingType = 'BUILDING_GOV_CITYSTATES'
-	or BuildingType = 'BUILDING_GOV_SPIES'
-	or BuildingType = 'BUILDING_GOV_FAITH'
-	or BuildingType = 'BUILDING_GOV_MILITARY'
-	or BuildingType = 'BUILDING_GOV_CULTURE'
-	or BuildingType = 'BUILDING_GOV_SCIENCE'
-	or BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE'
-	or BuildingType = 'BUILDING_CHANCERY'
-	or BuildingType = 'BUILDING_CONSULATE'
-	or BuildingType = 'BUILDING_FOOD_MARKET'
+update Buildings set CitizenSlots = 1 where
+	   BuildingType = 'BUILDING_FOOD_MARKET'
 	or BuildingType = 'BUILDING_SHOPPING_MALL'
+	-- or BuildingType = 'BUILDING_GOV_TALL'
+	-- or BuildingType = 'BUILDING_GOV_WIDE'
+	-- or BuildingType = 'BUILDING_GOV_CONQUEST'
+	-- or BuildingType = 'BUILDING_GOV_CITYSTATES'
+	-- or BuildingType = 'BUILDING_GOV_SPIES'
+	-- or BuildingType = 'BUILDING_GOV_FAITH'
+	-- or BuildingType = 'BUILDING_GOV_MILITARY'
+	-- or BuildingType = 'BUILDING_GOV_CULTURE'
+	-- or BuildingType = 'BUILDING_GOV_SCIENCE'
+	-- or BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE'
+	-- or BuildingType = 'BUILDING_CHANCERY'
+	-- or BuildingType = 'BUILDING_CONSULATE'
 ;
 
 -- Unlock
@@ -171,7 +171,7 @@ where BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_GRAND_BAZAAR'
 	or BuildingType = 'BUILDING_STOCK_EXCHANGE';
 
-update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER' or BuildingType = 'BUILDING_MARAE';
+update Buildings set RegionalRange = 4 where BuildingType = 'BUILDING_AMPHITHEATER'; -- or BuildingType = 'BUILDING_MARAE';
 update Buildings set RegionalRange = 4, Entertainment = 1 where BuildingType = 'BUILDING_ARENA' or BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set RegionalRange = 6, Entertainment = 1 where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_FOOD_MARKET';

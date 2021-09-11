@@ -151,7 +151,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+20% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少50%。"),
     -- 政体
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场区域或其中的建筑，便+2所有产出。"),
         -- Tier 2
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50%影响力点数。拥有驻军单位的城市生产单位时+20% [ICON_Production] 生产力。"),
