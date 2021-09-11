@@ -133,8 +133,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "位于河流旁的剧院、圣地、商业中心和奇观提供2 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                "剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION",              "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐设施相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_CAGUANA_BONUS",                    "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐设施相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION",              "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐中心相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_CAGUANA_BONUS",                    "您的建造者现在可以建造改良设施巴特依。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值。每与1座加成资源和娱乐中心相邻，则+1 [ICON_Culture] 文化值（拥有“人文主义”市政后+2 [Icon_Culture] 文化值）。研究完“飞行”后将产出 [Icon_Tourism] 旅游业绩。无法建造在另一座巴特依旁。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+2 [ICON_Culture] 文化值。");
 

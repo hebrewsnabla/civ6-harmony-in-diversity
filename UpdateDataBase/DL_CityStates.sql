@@ -95,8 +95,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GRE
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_RELIC_SCIENCE'    and Name = 'YieldChange';	
 
 --Caguana
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or 'Batey_BonusResourceAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or 'Batey_LateBonusResourceAdjacency';
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
 
 insert into TraitModifiers 
     (TraitType,                                  ModifierId)
