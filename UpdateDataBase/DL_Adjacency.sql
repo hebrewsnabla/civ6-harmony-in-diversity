@@ -85,7 +85,9 @@ values
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
-	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
+	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
+	('IMPROVEMENT_BATEY',			'BATEY_Street_Carnival_Culture'),
+	('IMPROVEMENT_BATEY',			'BATEY_Late_Street_Carnival_Culture');
 
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
 update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Harbor_City_Gold' or ID = 'RoyalDock_City_Gold';
@@ -134,7 +136,11 @@ values
 	('Fishing_Boats_Royal_Navy_Gold', 	'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_ROYAL_NAVY_DOCKYARD',	NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Fishing_Boats_Cothon_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
-	'DISTRICT_COTHON',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS');
+	'DISTRICT_COTHON',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
+	('BATEY_Street_Carnival_Culture', 	'Placeholder', 'YIELD_CULTURE',		1,				1,				0,
+	'DISTRICT_STREET_CARNIVAL',		NULL,			NULL,		'CIVIC_HUMANISM',	NULL,		'NO_RESOURCECLASS'),
+	('BATEY_Late_Street_Carnival_Culture', 	'Placeholder', 'YIELD_CULTURE',	2,				1,				0,
+	'DISTRICT_STREET_CARNIVAL',		'CIVIC_HUMANISM',	NULL,	NULL,			NULL,			'NO_RESOURCECLASS');
 
 -- update Adjacency_YieldChanges set PrereqTech = 'TECH_ASTRONOMY'
 --  where ID = 'Mountains_Science1'

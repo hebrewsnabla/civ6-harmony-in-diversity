@@ -63,7 +63,7 @@
 -- update Civics set Cost = 5300 where CivicType = 'CIVIC_INFORMATION_WARFARE';  
 -- update Civics set Cost = 5300 where CivicType = 'CIVIC_EXODUS_IMPERATIVE';  
 -- update Civics set Cost = 5300 where CivicType = 'CIVIC_CULTURAL_HEGEMONY';  
--- update Civics set Cost = 5700 where CivicType = 'CIVIC_FUTURE_CIVIC';  
+-- update Civics set Cost = 5700 where CivicType = 'CIVIC_FUTURE_CIVIC';
 
 -- update CivicRandomCosts set Cost = 5300 where Cost = 3200;
 -- update CivicRandomCosts set Cost = 5400 where Cost = 3300;

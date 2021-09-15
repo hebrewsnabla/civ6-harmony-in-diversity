@@ -302,15 +302,18 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- update Units set Cost = 300, Maintenance = 5, BaseMoves = 4, Range = 2, Combat = 55, RangedCombat = 65, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_RAIDER';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RAIDER';
 update Units set Cost = 450, Maintenance = 6, BaseMoves = 5, Range = 2, Combat = 65, RangedCombat = 75, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_SUBMARINE';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_COAL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUBMARINE';
+insert or replace into Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount)
+values  ('UNIT_SUBMARINE',  5, 'RESOURCE_COAL', 1);
 -- update Units set Cost = 600, Maintenance = 7, BaseMoves = 5, Range = 2, Combat = 75, RangedCombat = 85, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_ATTACK_SUBMARINE';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ATTACK_SUBMARINE';
 update Units set Cost = 900, Maintenance = 8, BaseMoves = 5, Range = 2, Combat = 85, RangedCombat = 95, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_NUCLEAR_SUBMARINE';
+insert or replace into Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount)
+values  ('UNIT_NUCLEAR_SUBMARINE',  5, 'RESOURCE_URANIUM', 1);
 
 -- Carrier
 update Units set Cost = 750, Maintenance = 7, BaseMoves = 4, Range = 0, Combat = 70, RangedCombat = 0, StrategicResource = 'RESOURCE_OIL' where UnitType = 'UNIT_AIRCRAFT_CARRIER';
-update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_AIRCRAFT_CARRIER';
+insert or replace into Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount)
+values  ('UNIT_AIRCRAFT_CARRIER',  5, 'RESOURCE_OIL', 1);
 -- update Units set Cost = 1200, Maintenance = 8, BaseMoves = 5, Range = 0, Combat = 80, RangedCombat = 0, StrategicResource = 'RESOURCE_URANIUM' where UnitType = 'UNIT_SUPERCARRIER';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_URANIUM', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUPERCARRIER';
 -- GDR
