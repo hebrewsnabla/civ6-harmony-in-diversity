@@ -20,7 +20,7 @@ update Civics set Cost = 200 where CivicType = 'CIVIC_THEOLOGY';
 update Civics set Cost = 330 where CivicType = 'CIVIC_NAVAL_TRADITION';    
 update Civics set Cost = 500 where CivicType = 'CIVIC_FEUDALISM';    
 update Civics set Cost = 650 where CivicType = 'CIVIC_CIVIL_SERVICE';    
-update Civics set Cost = 550 where CivicType = 'CIVIC_MERCENARIES';    
+update Civics set Cost = 330 where CivicType = 'CIVIC_MERCENARIES';    
 update Civics set Cost = 500 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';    
 update Civics set Cost = 650 where CivicType = 'CIVIC_GUILDS';    
 update Civics set Cost = 550 where CivicType = 'CIVIC_DIVINE_RIGHT';    

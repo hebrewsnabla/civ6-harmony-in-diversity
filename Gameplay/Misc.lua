@@ -87,11 +87,11 @@ function GreatAdmiralFreeStrategicResource(unitOwner, unitID, greatPersonClassID
     if greatPersonIndividualID == GameInfo.GreatPersonIndividuals["GREAT_PERSON_INDIVIDUAL_YI_SUN_SIN"].Index or 
        greatPersonIndividualID == GameInfo.GreatPersonIndividuals["GREAT_PERSON_INDIVIDUAL_FRANZ_VON_HIPPER"].Index then    
         local resource_id = GameInfo.Resources["RESOURCE_COAL"].Index
-		owner:GetResources()ChangeResourceAmount(resource_id, 1)
+		owner:GetResources():ChangeResourceAmount(resource_id, 1)
 	end
     if greatPersonIndividualID == GameInfo.GreatPersonIndividuals["GREAT_PERSON_INDIVIDUAL_CHESTER_NIMITZ"].Index then    
         local resource_id = GameInfo.Resources["RESOURCE_OIL"].Index
-		owner:GetResources()ChangeResourceAmount(resource_id, 1)
+		owner:GetResources():ChangeResourceAmount(resource_id, 1)
 	end
 end
 

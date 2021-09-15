@@ -105,7 +105,7 @@ update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOO
 -- insert or replace into CivicModifiers (CivicType, ModifierId) values
 -- 	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
 
-/*insert or replace into CivicModifiers (CivicType, ModifierId) 
+insert or replace into CivicModifiers (CivicType, ModifierId) 
 values
 	('CIVIC_CULTURAL_HEGEMONY',		'FUTURE_VICTORY_CULTURE_ROCK_BAND_PROMOTIONS'),
 	('CIVIC_NATIONALISM',			'NATIONALIDENTITY_REDUCESTRENGTHREDUCTIONFORDAMAGE'),
@@ -130,7 +130,7 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,                                          RequirementId)
 values
     ('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT'),
-	('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_HAS_NO_IMPROVEMENT');*/
+	('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_HAS_NO_IMPROVEMENT');
 
 -- Civic Tree v3
 update Civics set Cost = 20 where CivicType = 'CIVIC_CODE_OF_LAWS';
@@ -150,7 +150,7 @@ update Civics set Cost = 180 where CivicType = 'CIVIC_THEOLOGY';
 update Civics set Cost = 300 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set Cost = 450 where CivicType = 'CIVIC_FEUDALISM';
 update Civics set Cost = 600 where CivicType = 'CIVIC_CIVIL_SERVICE';
-update Civics set Cost = 500 where CivicType = 'CIVIC_MERCENARIES';
+update Civics set Cost = 300 where CivicType = 'CIVIC_MERCENARIES';
 update Civics set Cost = 450 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
 update Civics set Cost = 600 where CivicType = 'CIVIC_GUILDS';
 update Civics set Cost = 500 where CivicType = 'CIVIC_DIVINE_RIGHT';

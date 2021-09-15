@@ -128,6 +128,9 @@ values
     'GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',
     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
+update GreatPersonIndividualActionModifiers set AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER' 
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN' and ModifierId like 'GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_%';
+
 insert or replace into Modifiers
     (ModifierID,                                                        ModifierType,                               RunOnce, Permanent)
 values
