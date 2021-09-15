@@ -185,9 +185,9 @@ update Policies set PrereqCivic = 'CIVIC_MERCENARIES' where PolicyType = 'POLICY
 -- update Policies set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
 update Policies set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 
-update Policies set PrereqCivic = 'CIVIC_CLASS_STRUGGLE' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
-update Policies set PrereqCivic = 'CIVIC_SUFFRAGE' where PolicyType = 'POLICY_ECONOMIC_UNION';
-update Policies set PrereqCivic = 'CIVIC_TOTALITARIANISM' where PolicyType = 'POLICY_LIGHTNING_WARFARE';
+-- update Policies set PrereqCivic = 'CIVIC_CLASS_STRUGGLE' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
+-- update Policies set PrereqCivic = 'CIVIC_SUFFRAGE' where PolicyType = 'POLICY_ECONOMIC_UNION';
+-- update Policies set PrereqCivic = 'CIVIC_TOTALITARIANISM' where PolicyType = 'POLICY_LIGHTNING_WARFARE';
 
 update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_LIMITANEI';
 update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'POLICY_PRESS_GANGS';
@@ -747,10 +747,10 @@ values
 insert or replace into Policy_GovernmentExclusives_XP2
 	(PolicyType,					GovernmentType)
 values
-	('POLICY_MINARET',				'GOVERNMENT_THEOCRACY'),
-	('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_COMMUNISM'),
-	('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DEMOCRACY'),
-	('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_FASCISM');
+	('POLICY_MINARET',				'GOVERNMENT_THEOCRACY');
+	-- ('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_COMMUNISM'),
+	-- ('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DEMOCRACY'),
+	-- ('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_FASCISM');
 	--('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_SYNTHETIC_TECHNOCRACY'),
 	--('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DIGITAL_DEMOCRACY'),
 	--('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_CORPORATE_LIBERTARIANISM');
@@ -808,12 +808,12 @@ update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUS
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';		
 
 --四级政体允许使用任意三级政体专属卡
-insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
-select PolicyType,	'GOVERNMENT_SYNTHETIC_TECHNOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
-insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
-select PolicyType,	'GOVERNMENT_DIGITAL_DEMOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
-insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
-select PolicyType,	'GOVERNMENT_CORPORATE_LIBERTARIANISM' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+-- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+-- select PolicyType,	'GOVERNMENT_SYNTHETIC_TECHNOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+-- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+-- select PolicyType,	'GOVERNMENT_DIGITAL_DEMOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
+-- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
+-- select PolicyType,	'GOVERNMENT_CORPORATE_LIBERTARIANISM' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
 
 delete from PolicyModifiers where PolicyType = 'POLICY_LIGHTNING_WARFARE';
 insert or replace into PolicyModifiers
