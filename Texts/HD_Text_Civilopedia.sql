@@ -186,7 +186,7 @@ values
     ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_CITIZEN_PARA_1",          "为各个区域的专家提供了伟人点产出（如每个学院专家提供4点大科点）。区域地基也提供专家槽位。每级建筑都可为区域内的专家增加产出。"),
     ("zh_Hans_CN",    "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_AMENITY_TITLE",           "宜居度"),
     ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_AMENITY_PARA_1",          "城市免费宜居度改回1点。并增加了一档新的宜居状态："),
-    ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_AMENITY_PARA_2",          "[ICON_BULLET] 愉悦（新增）：要求城市达到+2或+3宜居，加成为5%余粮，5%非粮产出。[NEWLINE][ICON_BULLET] 高兴：要求城市达到+4或+5宜居，加成为10%余粮，10%非粮产出。[NEWLINE][ICON_BULLET] 愉悦（新增）：要求城市达到+6或+7宜居，加成为15%余粮，15%非粮产出。[NEWLINE][ICON_BULLET] 欣喜若狂：要求城市达到+8宜居或以上，加成为20%余粮，20%非粮产出。"),
+    ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_AMENITY_PARA_2",          "[ICON_BULLET] 愉悦（新增）：要求城市达到+2或+3宜居，加成为5%余粮，5%非粮产出。[NEWLINE][ICON_BULLET] 高兴：要求城市达到+4或+5宜居，加成为10%余粮，10%非粮产出。[NEWLINE][ICON_BULLET] 喜悦（新增）：要求城市达到+6或+7宜居，加成为15%余粮，15%非粮产出。[NEWLINE][ICON_BULLET] 欣喜若狂：要求城市达到+8宜居或以上，加成为20%余粮，20%非粮产出。"),
     ("zh_Hans_CN",    "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_MAINTENANCE_TITLE",       "城市与人口维护费"),
     ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_MAINTENANCE_PARA_1",      "为城市和人口引入维护费的概念，只作用于7难度（不朽）和8难度（神级）的玩家。下面以神级的数值为例，不朽难度下该维护费减半。"),
     ("zh_Hans_CN",      "LOC_PEDIA_CONCEPTS_PAGE_HD_CITIES_RELATED_CHAPTER_MAINTENANCE_PARA_2",      "每座城市需要2 [ICON_Gold] 金币维护费。"),

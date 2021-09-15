@@ -35,11 +35,12 @@ update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
 -- update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 update Civics set Description = 'LOC_CIVIC_COLONIALISM_HD_DESCRIPTION' where CivicType ='CIVIC_COLONIALISM';
+update Civics set Description = 'LOC_CIVIC_NATIONALISM_HD_DESCRIPTION' where CivicType ='CIVIC_NATIONALISM';
 update Civics set Description = 'LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_ENGINEERING';
+update Civics set Description = 'LOC_CIVIC_CONSERVATION_HD_DESCRIPTION' where CivicType ='CIVIC_CONSERVATION';
 update Civics set Description = 'LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION' where CivicType ='CIVIC_GLOBALIZATION';
 update Civics set Description = 'LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION' where CivicType ='CIVIC_ENVIRONMENTALISM';
 update Civics set Description = 'LOC_POLICY_FUTURE_VICTORY_CULTURE_DESCRIPTION' where CivicType ='CIVIC_CULTURAL_HEGEMONY'; --temp
--- update Civics set Description = 'LOC_CIVIC_CONSERVATION_HD_DESCRIPTION' where CivicType ='CIVIC_CONSERVATION';
 
 --------------------------------------------------------------------------------
 -- Buildings

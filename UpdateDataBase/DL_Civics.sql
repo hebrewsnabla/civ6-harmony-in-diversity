@@ -19,7 +19,7 @@ delete from CivicPrereqs where Civic = 'CIVIC_FEUDALISM' and PrereqCivic = 'CIVI
 delete from CivicPrereqs where Civic = 'CIVIC_CIVIL_SERVICE' and PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS';
 delete from CivicPrereqs where Civic = 'CIVIC_CIVIL_SERVICE' and PrereqCivic = 'CIVIC_RECORDED_HISTORY';
 delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_FEUDALISM';
---delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_MILITARY_TRAINING';
+delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_MILITARY_TRAINING';
 delete from CivicPrereqs where Civic = 'CIVIC_MEDIEVAL_FAIRES' and PrereqCivic = 'CIVIC_FEUDALISM';
 delete from CivicPrereqs where Civic = 'CIVIC_GUILDS' and PrereqCivic = 'CIVIC_FEUDALISM';
 delete from CivicPrereqs where Civic = 'CIVIC_GUILDS' and PrereqCivic = 'CIVIC_CIVIL_SERVICE';
@@ -60,7 +60,7 @@ values
 	-- ('CIVIC_FEUDALISM',				'CIVIC_DEFENSIVE_TACTICS'),
 	('CIVIC_MERCENARIES',				'CIVIC_DEFENSIVE_TACTICS'),
 	('CIVIC_FEUDALISM',					'CIVIC_RECORDED_HISTORY'),
-	-- ('CIVIC_MERCENARIES',				'CIVIC_MEDIEVAL_FAIRES'), -- (v2)
+	('CIVIC_MERCENARIES',				'CIVIC_MEDIEVAL_FAIRES'), -- (v2)
 	('CIVIC_GUILDS',					'CIVIC_MEDIEVAL_FAIRES'),  -- (v2)
 	-- ('CIVIC_CIVIL_SERVICE',			'CIVIC_MEDIEVAL_FAIRES'),
 	('CIVIC_CIVIL_SERVICE',				'CIVIC_FEUDALISM'),
@@ -93,17 +93,7 @@ update Civics set UITreeRow = -3 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set UITreeRow = -2, Cost = 340 where CivicType = 'CIVIC_MERCENARIES';
 update Civics set UITreeRow = -1, Cost = 300 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
 
--- update Civics set Cost = Cost * 1.1 where EraType = 'ERA_CLASSICAL';
--- update Civics set Cost = Cost * 1.2 where EraType = 'ERA_MEDIEVAL' or EraType = 'ERA_RENAISSANCE';
--- update Civics set Cost = Cost * 1.3 where EraType = 'ERA_INDUSTRIAL' or EraType = 'ERA_MODERN';
--- update Civics set Cost = Cost * 1.4 where EraType = 'ERA_ATOMIC' or EraType = 'ERA_INFORMATION' or EraType = 'ERA_FUTURE';
-
--- update CivicRandomCosts set Cost = Cost * 1.3 where Cost = 3200 or Cost = 3300;
-
 update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOOST_ALL_TOURISM' and Name = 'Amount';
-
--- insert or replace into CivicModifiers (CivicType, ModifierId) values
--- 	('CIVIC_MEDIEVAL_FAIRES',	'CIVIC_GRANT_ONE_TRADE_ROUTE');
 
 insert or replace into CivicModifiers (CivicType, ModifierId) 
 values
@@ -114,23 +104,12 @@ values
 insert or replace into Modifiers
     (ModifierId,                                      ModifierType,                                       SubjectRequirementSetId)
 values
-    ('CITY_CENTER_ADJACENT_TO_FOREST',                'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY',     'REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST');
+    ('CITY_CENTER_ADJACENT_TO_FOREST',                'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY',     'ADJACENT_TO_FOREST_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,      Value)
 values
     ('CITY_CENTER_ADJACENT_TO_FOREST',              'Amount',  1);
-
-insert or replace into RequirementSets
-    (RequirementSetId,                                          RequirementSetType)
-values
-    ('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                                          RequirementId)
-values
-    ('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT'),
-	('REQUIREMENTS_CITY_CENTER_ADJACENT_TO_FOREST',      		'REQUIRES_PLOT_HAS_NO_IMPROVEMENT');
 
 -- Civic Tree v3
 update Civics set Cost = 20 where CivicType = 'CIVIC_CODE_OF_LAWS';
@@ -150,7 +129,7 @@ update Civics set Cost = 180 where CivicType = 'CIVIC_THEOLOGY';
 update Civics set Cost = 300 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set Cost = 450 where CivicType = 'CIVIC_FEUDALISM';
 update Civics set Cost = 600 where CivicType = 'CIVIC_CIVIL_SERVICE';
-update Civics set Cost = 300 where CivicType = 'CIVIC_MERCENARIES';
+update Civics set Cost = 500 where CivicType = 'CIVIC_MERCENARIES';
 update Civics set Cost = 450 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
 update Civics set Cost = 600 where CivicType = 'CIVIC_GUILDS';
 update Civics set Cost = 500 where CivicType = 'CIVIC_DIVINE_RIGHT';
