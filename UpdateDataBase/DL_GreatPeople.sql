@@ -415,6 +415,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 -- GREAT_PERSON_INDIVIDUAL_SERGEY_GORSHKOV +1 charge
 -- GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO +1 amenity for all harbors and -25% war weariness
 -- GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO +1 Movement for all naval units
+-- GREAT_PERSON_INDIVIDUAL_CHESTER_NIMITZ grants an aircraft carrier with free promotion
 
 update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresMilitaryUnitDomain = NULL, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1, ActionRequiresUnitCanGainExperience = 0
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
@@ -428,6 +429,7 @@ update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresCom
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SERGEY_GORSHKOV';
 update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresMilitaryUnitDomain = NULL, ActionRequiresCompletedDistrictType = 'DISTRICT_HARBOR', ActionEffectTileHighlighting = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO';
 update GreatPersonIndividuals set ActionRequiresOwnedTile = 0, ActionRequiresCompletedDistrictType = NULL, ActionEffectTileHighlighting = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO';
+update ModifierArguments set Value = 'UNIT_AIRCRAFT_CARRIER' where ModifierId = 'GREATPERSON_CHESTER_NIMITZ_UNIT_PROMOTION' and Name = 'UnitType';
 
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_ARTEMISIA_ACTIVE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ARTEMISIA';
 delete from GreatPersonIndividualActionModifiers where (ModifierId = 'GREATPERSON_THEMISTOCLES_ACTIVE' or ModifierId = 'GREATPERSON_THEMISTOCLES_NAVAL_RANGED') and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_THEMISTOCLES';
@@ -476,8 +478,8 @@ values
 insert into Modifiers
 	(ModifierId,											ModifierType,										RunOnce,		Permanent,	SubjectRequirementSetId)
 values
-	('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',	1,				1,			'BUILDING_IS_SEAPORT'),
-	('GREATPERSON_CLANCY_FERNANDO_AMENITIES',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',	1,	1,		'CITY_HAS_HARBOR');
+	('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',	0,				1,			'BUILDING_IS_SEAPORT'),
+	('GREATPERSON_CLANCY_FERNANDO_AMENITIES',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',	0,	1,		'CITY_HAS_HARBOR');
 
 insert into ModifierArguments
     	(ModifierId,											Name,				Value)

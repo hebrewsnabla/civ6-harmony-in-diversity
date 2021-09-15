@@ -42,7 +42,8 @@ values
     ("LOC_GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT",                    "Instantly builds a Seaport, Shipyard, and Lighthouse in this district."),
     ("LOC_GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING",            "Seaports provide +{Amount} [ICON_Housing] Housing."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT",          "+1 [Icon_Movement] Movement for all naval units."),
-    ("LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "Harbors +{Amount} [ICON_Amenities] Amenity.");
+    ("LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "Harbors +{Amount} [ICON_Amenities] Amenity."),
+    ("LOC_GREATPERSON_CHESTER_NIMITZ_EXPANSION2_ACTIVE",                  "Instantly creates a Aircraft Carrier unit with 1 promotion level. Grants 1 [ICON_RESOURCE_Oil] Oil per Turn. +20% [ICON_Production] Production towards units of the Naval Raider promotion class.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -89,5 +90,6 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT",                    "立即在该区域建造码头、造船厂和灯塔。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING",            "所有码头+{Amount} [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT",          "所有海军单位+{Amount} [Icon_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "所有港口+{Amount} [ICON_Amenities] 宜居度。");
+    ("zh_Hans_CN",  "LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "所有港口+{Amount} [ICON_Amenities] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_CHESTER_NIMITZ_EXPANSION2_ACTIVE",                  "立即生产出拥有1次升级的航空母舰单位。每回合提供1点 [ICON_RESOURCE_Oil] 石油。生产海军突袭者类单位时+20% [ICON_Production] 生产力。");
 

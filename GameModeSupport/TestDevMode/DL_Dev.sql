@@ -8,30 +8,6 @@ delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and Modifi
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
 delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
 
---god king
-delete from BeliefModifiers where BeliefType = 'BELIEF_HD_GOD_KING' and ModifierID = 'GOD_KING_ALL_YIELDS_CHANGE_CAPITAL';
-insert or replace into BeliefModifiers
-	(BeliefType,							ModifierID)
-values
-	('BELIEF_HD_GOD_KING',					'GOD_KING_ALL_YIELDS_CHANGE_PALACE'),
-	('BELIEF_HD_GOD_KING',					'GOD_KING_ALL_YIELDS_CHANGE_GOV');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,										SubjectRequirementSetId)
-values    
-	('GOD_KING_ALL_YIELDS_CHANGE_PALACE',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
-	('GOD_KING_ALL_YIELDS_CHANGE_PALACE_MODIFIER',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',	'BUILDING_IS_PALACE'),
-	('GOD_KING_ALL_YIELDS_CHANGE_GOV',								'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
-	('GOD_KING_ALL_YIELDS_CHANGE_GOV_MODIFIER',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',	'CITY_HAS_GOV_DISTRICT');
-
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
-values
-	('GOD_KING_ALL_YIELDS_CHANGE_PALACE',							'ModifierId',			'GOD_KING_ALL_YIELDS_CHANGE_PALACE_MODIFIER'),
-	('GOD_KING_ALL_YIELDS_CHANGE_PALACE_MODIFIER',					'Amount',				1),
-	('GOD_KING_ALL_YIELDS_CHANGE_GOV',								'ModifierId',			'GOD_KING_ALL_YIELDS_CHANGE_GOV_MODIFIER'),
-	('GOD_KING_ALL_YIELDS_CHANGE_GOV_MODIFIER',						'Amount',				1);
-
 -- Wonders
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';

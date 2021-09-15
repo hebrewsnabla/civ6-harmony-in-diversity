@@ -19,7 +19,7 @@ delete from CivicPrereqs where Civic = 'CIVIC_FEUDALISM' and PrereqCivic = 'CIVI
 delete from CivicPrereqs where Civic = 'CIVIC_CIVIL_SERVICE' and PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS';
 delete from CivicPrereqs where Civic = 'CIVIC_CIVIL_SERVICE' and PrereqCivic = 'CIVIC_RECORDED_HISTORY';
 delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_FEUDALISM';
-delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_MILITARY_TRAINING';
+--delete from CivicPrereqs where Civic = 'CIVIC_MERCENARIES' and PrereqCivic = 'CIVIC_MILITARY_TRAINING';
 delete from CivicPrereqs where Civic = 'CIVIC_MEDIEVAL_FAIRES' and PrereqCivic = 'CIVIC_FEUDALISM';
 delete from CivicPrereqs where Civic = 'CIVIC_GUILDS' and PrereqCivic = 'CIVIC_FEUDALISM';
 delete from CivicPrereqs where Civic = 'CIVIC_GUILDS' and PrereqCivic = 'CIVIC_CIVIL_SERVICE';
@@ -60,7 +60,7 @@ values
 	-- ('CIVIC_FEUDALISM',				'CIVIC_DEFENSIVE_TACTICS'),
 	('CIVIC_MERCENARIES',				'CIVIC_DEFENSIVE_TACTICS'),
 	('CIVIC_FEUDALISM',					'CIVIC_RECORDED_HISTORY'),
-	('CIVIC_MERCENARIES',				'CIVIC_MEDIEVAL_FAIRES'), -- (v2)
+	-- ('CIVIC_MERCENARIES',				'CIVIC_MEDIEVAL_FAIRES'), -- (v2)
 	('CIVIC_GUILDS',					'CIVIC_MEDIEVAL_FAIRES'),  -- (v2)
 	-- ('CIVIC_CIVIL_SERVICE',			'CIVIC_MEDIEVAL_FAIRES'),
 	('CIVIC_CIVIL_SERVICE',				'CIVIC_FEUDALISM'),

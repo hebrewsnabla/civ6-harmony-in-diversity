@@ -1612,19 +1612,19 @@ select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'MODIFIER_SINGLE_CITY_ADJU
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' || BuildingType from Buildings 
+select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 || BuildingType from Buildings 
+select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' || BuildingType from Buildings 
+select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 || BuildingType from Buildings 
+select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)

@@ -3,7 +3,6 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                                 "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Government Plaza and palace."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                            "+2 to all yields for each building inside Government Plaza, building inside Diplomatic Quarter and palace in a city."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                 "+2 to all yields for each building inside Government Plaza and palace in a city."),
     ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                         "Gain 2 [ICON_Governor] Governor promotions. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza."),
@@ -16,7 +15,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                             "城市中每有一座宫殿或市政广场区域，便+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                        "城市中每有一座宫殿、市政广场中的建筑、外交区中的建筑，便+2所有产出。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                             "城市中每有一座宫殿、市政广场中的建筑，便+2所有产出。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                     "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
