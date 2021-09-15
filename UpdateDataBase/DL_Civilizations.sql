@@ -1590,3 +1590,47 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
+
+------------------------------------------------------------------------------------------------
+-- Ikanda bug in captured cities 
+delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
+
+insert into DistrictModifiers	(DistrictType,	ModifierId)
+select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_GOLD' from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert into DistrictModifiers	(DistrictType,	ModifierId)
+select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE' from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+select	'CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL' from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
+where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';

@@ -3,8 +3,9 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each building inside Government Plaza, building inside Diplomatic Quarter and palace in a city."),
-    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each building inside Government Plaza and palace in a city."),
+    ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                                 "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Government Plaza and palace."),
+    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                            "+2 to all yields for each building inside Government Plaza, building inside Diplomatic Quarter and palace in a city."),
+    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                 "+2 to all yields for each building inside Government Plaza and palace in a city."),
     ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                         "Gain 2 [ICON_Governor] Governor promotions. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza."),
     ("LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION",                               "+3 [ICON_ENVOY] Envoys when built. When you are the Suzerain of a City-State this city receives a +20% boost to the Type bonuses provided by that City-State. If you are the Suzerain to 2 or more City-States of that type this city receives an additional +20% boost to the Type bonuses provided by those City-States. Must be built on a flat tile adjacent to Coast."),
     ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                    "+2 Diplomatic Victory Points when built. Gain 1 [ICON_Governor] Governor promotions. All cities receive a +5% corresponding boost to the Type of Alliance. [NEWLINE][NEWLINE]Must be built on a River."),
@@ -15,8 +16,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场中的建筑、外交区中的建筑，便+2所有产出。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                             "城市中每有一座宫殿或市政广场区域，便+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                        "城市中每有一座宫殿、市政广场中的建筑、外交区中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                             "城市中每有一座宫殿、市政广场中的建筑，便+2所有产出。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                     "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION",                           "建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中至少1个的宗主国，本城中此类城邦对应的产出+20%；若你是其中至少2个的宗主国，本城中此类城邦对应的产出额外+20%。必须建造在与海岸相邻的平坦地形上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                "建成时+2外交胜利点数。获得1次 [ICON_Governor] 总督升级。所有城市根据每种已结成的同盟类型获得对应的产出+5%。[NEWLINE][NEWLINE]必须修建在河边。"),
