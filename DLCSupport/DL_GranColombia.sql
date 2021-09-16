@@ -93,6 +93,13 @@ values
 ---------------------------------------------------------------------------------------------------------------
 -- CityStates
 
+-- Batey
+insert or replace into Improvement_Adjacencies
+    (ImprovementType,               YieldChangeId)
+values
+    ('IMPROVEMENT_BATEY',           'BATEY_Street_Carnival_Culture'),
+    ('IMPROVEMENT_BATEY',           'BATEY_Late_Street_Carnival_Culture');
+
 -- Singapore
 -- MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL
 delete from TraitModifiers where TraitType = 'MINOR_CIV_SINGAPORE_TRAIT' and ModifierId = 'MINOR_CIV_SINGAPORE_UNIQUE_INFLUENCE_BONUS';

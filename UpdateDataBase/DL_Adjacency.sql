@@ -85,9 +85,7 @@ values
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
-	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
-	('IMPROVEMENT_BATEY',			'BATEY_Street_Carnival_Culture'),
-	('IMPROVEMENT_BATEY',			'BATEY_Late_Street_Carnival_Culture');
+	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
 
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
 update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Harbor_City_Gold' or ID = 'RoyalDock_City_Gold';
