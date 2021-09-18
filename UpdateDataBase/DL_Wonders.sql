@@ -4,10 +4,10 @@
 
 -- TODO: fix the bug for slot wonders.
 -- delete from BuildingModifiers where
--- 	ModifierId == 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
--- 	ModifierId == 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
--- 	ModifierId == 'POTALA_PALACE_DIPLOMATIC_GOVERNMENT_SLOT' or
--- 	ModifierId == 'FORBIDDEN_CITY_WILDCARD_GOVERNMENT_SLOT';
+-- 	ModifierId = 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
+-- 	ModifierId = 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
+-- 	ModifierId = 'POTALA_PALACE_DIPLOMATIC_GOVERNMENT_SLOT' or
+-- 	ModifierId = 'FORBIDDEN_CITY_WILDCARD_GOVERNMENT_SLOT';
 
 -- Oracle gives 3 * 2 great person points each.
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';

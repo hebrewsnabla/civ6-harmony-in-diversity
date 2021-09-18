@@ -308,16 +308,16 @@ insert or ignore into RequirementSetRequirements
 select
 	'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT',	'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
 from Resources r, Improvement_ValidResources i
-where r.ResourceType == i.ResourceType and (i.ImprovementType == 'IMPROVEMENT_MINE' or i.ImprovementType == 'IMPROVEMENT_QUARRY')
-	and (r.ResourceClassType == 'RESOURCECLASS_LUXURY' or r.ResourceClassType == 'RESOURCECLASS_BONUS');
+where r.ResourceType = i.ResourceType and (i.ImprovementType = 'IMPROVEMENT_MINE' or i.ImprovementType = 'IMPROVEMENT_QUARRY')
+	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 select
 	'BOOTCAMP_REQUIREMENT',					'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
 from Resources r, Improvement_ValidResources i
-where r.ResourceType == i.ResourceType and (i.ImprovementType == 'IMPROVEMENT_PASTURE' or i.ImprovementType == 'IMPROVEMENT_CAMP'
-	or r.ResourceClassType == 'RESOURCECLASS_STRATEGIC');
+where r.ResourceType = i.ResourceType and (i.ImprovementType = 'IMPROVEMENT_PASTURE' or i.ImprovementType = 'IMPROVEMENT_CAMP'
+	or r.ResourceClassType = 'RESOURCECLASS_STRATEGIC');
 
 insert or replace into RequirementSetRequirements 
     (RequirementSetId,						RequirementId) 
@@ -600,20 +600,20 @@ insert or ignore into RequirementSetRequirements
 select
 	'RELIGIOUS_IDOLS_CITY_HAS_LUXURY_OR_BONUS_MINE',	'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
 from Resources r, Improvement_ValidResources i
-where r.ResourceType == i.ResourceType and i.ImprovementType == 'IMPROVEMENT_MINE'
-	and (r.ResourceClassType == 'RESOURCECLASS_LUXURY' or r.ResourceClassType == 'RESOURCECLASS_BONUS');
+where r.ResourceType = i.ResourceType and i.ImprovementType = 'IMPROVEMENT_MINE'
+	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS');
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'STONE_CIRCLES_CITY_HAS_QUARRY', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where ImprovementType == 'IMPROVEMENT_QUARRY';
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_QUARRY';
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'TENGRI_CITY_HAS_PASTURE', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where ImprovementType == 'IMPROVEMENT_PASTURE';
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PASTURE';
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'GODDESS_OF_FESTIVALS_CITY_HAS_PLANTATION', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where ImprovementType == 'IMPROVEMENT_PLANTATION';
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION';
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'GOD_OF_THE_SEA_CITY_HAS_FISHINGBOATS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where ImprovementType == 'IMPROVEMENT_FISHING_BOATS';
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)

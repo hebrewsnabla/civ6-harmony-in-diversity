@@ -1052,7 +1052,7 @@
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
     <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
