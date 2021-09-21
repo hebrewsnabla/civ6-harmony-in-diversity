@@ -361,7 +361,7 @@
       <File>Texts/HD_Text_Improvements.sql</File>
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
-      <!-- <File>Texts/HD_Text_Units_Late.sql</File> -->
+      <!-- <File>Texts/HD_Text_Late.sql</File> -->
     </UpdateText>
     <UpdateIcons id="DL_FrontEnd_Icons">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
@@ -1047,7 +1047,7 @@
     </UpdateText>
     <UpdateText id="DL_Text_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
-      <File>Texts/HD_Text_Units_Late.sql</File>
+      <File>Texts/HD_Text_Late.sql</File>
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
@@ -1509,7 +1509,7 @@
     <File>Texts/HD_Text_UnitAbilities.sql</File>
     <File>Texts/HD_Text_UnitPromotions.sql</File>
     <File>Texts/HD_Text_Units.sql</File>
-    <File>Texts/HD_Text_Units_Late.sql</File>
+    <File>Texts/HD_Text_Late.sql</File>
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
     <!-- Assets -->

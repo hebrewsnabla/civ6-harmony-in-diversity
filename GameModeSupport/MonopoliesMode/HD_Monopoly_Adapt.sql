@@ -34,7 +34,7 @@ values
 
 create table 'HDCounter'(
 	'Count' INT NOT NULL,
-	PRIMARY KEY('Count')
+	PRIMARY KEY(Count)
 );
 insert or replace into HDCounter (Count) values (1),(2),(3),(4),(5);
 
@@ -43,8 +43,8 @@ create table 'MonopolyResourceEffects'(
 	'Category' TEXT NOT NULL,
 	'IndustryEffect' TEXT NOT NULL,
 	'CorporationEffect' TEXT NOT NULL,
-	PRIMARY KEY('ResourceType')
-	FOREIGN KEY('ResourceType') REFERENCES Resources('ResourceType') ON DELETE CASCADE ON UPDATE CASCADE
+	PRIMARY KEY(ResourceType)
+	FOREIGN KEY(ResourceType) REFERENCES Resources(ResourceType) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 insert or replace into MonopolyResourceEffects

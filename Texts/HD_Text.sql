@@ -9,6 +9,7 @@ values
     ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must occupy City Center[ENDCOLOR]"),
     ("LOC_FLYOVER_AZTEC_SACRIFICE",                                           "Human Sacrifice[COLOR:ResCultureLabelCS]+{1_Amount}[ENDCOLOR][ICON_Culture][COLOR:ResFaithLabelCS]+{1_Amount}[ENDCOLOR][ICON_Faith]"),
     -- Main
+    ("LOC_EPSTWEAK_WONDER_WORDING_TOURISM",                                   "[NEWLINE][NEWLINE]+2 [ICON_Tourism] Tourism[NEWLINE]+1 [ICON_Tourism] extra per Era that you've advanced past this Wonder's era"),
     ("LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "Specialty District"),
     ("LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "District"),
     ("LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "Cost Progression Param: {1_num}"),
@@ -59,15 +60,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-    -- [MOD] Gift it to me
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT",                                         "赠送单位（给当前位置领土的所有者）"),
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT_DISABLED",                                "赠送单位[NEWLINE] - 需要在其他玩家的领土内[NEWLINE] - 宗教单位、开拓者和考古学家无法赠送给城邦[NEWLINE] - 征兵不能赠送[NEWLINE] - 匈牙利需要将单位与金币一起赠送给宗主的城邦[NEWLINE] - 不能赠送给与你处于战争状态的玩家[NEWLINE] - 已达到每回合赠送单位的上限：{1_MaxGifts}次[NEWLINE] - 单位血量必须超过90％"),
-    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT",                                  "您确定要向其他玩家赠送（{2_GiftCount} / {3_MaxGiftCount}）你的{1_UnitName}吗？"),
-    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT_PAY",                              "您确定要向城邦赠送（{3_GiftCount} / {4_MaxGiftCount}）您的{1_UnitName}和{2_Gold}金币吗？[NEWLINE]（匈牙利需要将黄金与单位一起赠送给宗主的城邦）"),
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_HEADLINE",                                       "来自{1_LeaderName}的警告"),
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_CONTENT",                                        "向我们的敌人赠送单位可能会导致外交行动。[NEWLINE]我们已经警告你了"),
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_HEADLINE",                                          "{1_LeaderName}给了你一个单位！"),
-    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",                                           "您收到了{1_UnitName}！"),
     -- UI texts 
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和10点 [ICON_Faith] 信仰值，移除该单位。"),
@@ -76,6 +68,7 @@ values
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
 
+    ("zh_Hans_CN",  "LOC_EPSTWEAK_WONDER_WORDING_TOURISM",                                   "[NEWLINE][NEWLINE]+2 [ICON_Tourism] 旅游业绩。[NEWLINE]您所处时代每超越该奇观所属的时代，则+1 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "专业化区域"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "非专业化区域"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "涨价系数：{1_num}"),

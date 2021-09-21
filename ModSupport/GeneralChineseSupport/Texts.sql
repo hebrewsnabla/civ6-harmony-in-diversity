@@ -20,6 +20,15 @@ values
     ("zh_Hans_CN",  "LOC_CMCD_HEADER_DESCRIPTION",          "由DahakaMVl制作的 设置最小城市间距"),
     ("zh_Hans_CN",  "LOC_CMCD_FOOTER_NAME",                 "[COLOR_Production]设置最小城市间距 结束[ENDCOLOR]"),
     ("zh_Hans_CN",  "LOC_CMCD_FOOTER_DESCRIPTION",          "用于填充的假选项"),
+    -- [MOD] Gift it to me
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT",            "赠送单位（给当前位置领土的所有者）"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_GIFT_THIS_UNIT_DISABLED",   "赠送单位[NEWLINE] - 需要在其他玩家的领土内[NEWLINE] - 宗教单位、开拓者和考古学家无法赠送给城邦[NEWLINE] - 征兵不能赠送[NEWLINE] - 匈牙利需要将单位与金币一起赠送给宗主的城邦[NEWLINE] - 不能赠送给与你处于战争状态的玩家[NEWLINE] - 已达到每回合赠送单位的上限：{1_MaxGifts}次[NEWLINE] - 单位血量必须超过90％"),
+    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT",     "您确定要向其他玩家赠送（{2_GiftCount} / {3_MaxGiftCount}）你的{1_UnitName}吗？"),
+    ("zh_Hans_CN",  "LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT_PAY", "您确定要向城邦赠送（{3_GiftCount} / {4_MaxGiftCount}）您的{1_UnitName}和{2_Gold}金币吗？[NEWLINE]（匈牙利需要将黄金与单位一起赠送给宗主的城邦）"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_HEADLINE",          "来自{1_LeaderName}的警告"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_WARNING_CONTENT",           "向我们的敌人赠送单位可能会导致外交行动。[NEWLINE]我们已经警告你了"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_HEADLINE",             "{1_LeaderName}给了你一个单位！"),
+    ("zh_Hans_CN",  "LOC_GIFTITTOME_INFO_CONTENT",              "您收到了{1_UnitName}！"),
     -- RadialMeasuringTool
     ("zh_Hans_CN",  "LOC_RMT_WND_TITLE",                    "半径测量工具"),
     ("zh_Hans_CN",  "LOC_RMT_LBL1",                         "点击地图上的位置来可视化半径内的地格"),

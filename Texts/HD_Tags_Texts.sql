@@ -171,3 +171,9 @@ update Policies set Description = 'LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION' 
 update Units set Description = 'LOC_UNIT_BUILDER_DL_DESCRIPTION' where UnitType = 'UNIT_BUILDER';
 
 -- Unique Units
+
+
+
+
+-- Late oprations
+UPDATE Buildings SET Description = "{" || Description || "}{LOC_EPSTWEAK_WONDER_WORDING_TOURISM}" WHERE IsWonder = 1;
