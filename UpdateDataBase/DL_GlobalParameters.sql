@@ -148,6 +148,7 @@ values
     ('GAMESPEED_EPIC',      24,             30),
     ('GAMESPEED_EPIC',      12,             50),
     ('GAMESPEED_EPIC',      12,             80),
+    ('GAMESPEED_EPIC',      6,              375),
     ('GAMESPEED_STANDARD',  720,            50),
     ('GAMESPEED_STANDARD',  600,            30),
     ('GAMESPEED_STANDARD',  360,            30),
