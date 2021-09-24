@@ -28,3 +28,51 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD_DESCRIPTION",       "利用 [ICON_RESOURCE_GOLD] 黄金资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",  "除提供大商人点数外，行业还将根据其改良的资源为所在的城市提供特殊加成：[NEWLINE][ICON_BULLET] 琥珀：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 柑橘：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 可可豆：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 咖啡：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 棉花：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 钻石：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 染料：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 皮草：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 石膏：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 蜂蜜：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 熏香：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 象牙：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 玉：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 大理石：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 水银：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 橄榄：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 珍珠：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 盐：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 丝绸：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 白银：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 香料：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 糖：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 茶叶：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 烟草：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 松露：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 海龟：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 鲸鱼：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 葡萄酒：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 黄金：[ICON_Gold] 金币产量+25%。");
 
+-- Industrial & Corp
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                               Text)
+values
+    ("LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "INDS_GROWTH"),
+    ("LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "CORP_GROWTH"),
+    ("LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "INDS_FAITH"),
+    ("LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "CORP_FAITH"),
+    ("LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "INDS_GPP"),
+    ("LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "CORP_GPP"),
+    ("LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "INDS_TRADER"),
+    ("LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "CORP_TRADER"),
+    ("LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "INDS_FOOD"),
+    ("LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "CORP_FOOD"),
+    ("LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "INDS_AMENITY"),
+    ("LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "CORP_AMENITY"),
+    ("LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "INDS_WONDER"),
+    ("LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "CORP_WONDER"),
+    ("LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "+2 [ICON_Culture] Culture, +4 [ICON_Gold] Gold for every specialty district in this city."),
+    ("LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "CORP_TOURISM"),
+    ("LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "INDS_FISHERY"),
+    ("LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "CORP_FISHERY");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                               Text)
+values
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "本城+10%余粮，通往该城市的国内商路+3 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "对所有城市+10% [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "本城每人口提供+2 [ICON_Gold] 金币，本城+15% [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "拥有圣地的城市每人口提供+3 [ICON_Gold] 金币。"), --对所有城市，圣地和其中每级建筑令每个人口提供1 [ICON_Gold] 金币。
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "本城每人口提供0.8 [ICON_Science] 科技值和 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "所有城市的伟人点积累速率+25%。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "本城出发的国际商路+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "所有商路+8 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "本城+3 [ICON_Amenity] 宜居度，+6 [ICON_Food] 食物，+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "所有城市商业区和港口+5 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "本城+3 [ICON_Housing] 住房，+2 [ICON_Amenity] 宜居度，建造开拓者、建造者和商人单位时加速+30%。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "所有城市+1 [ICON_Amenity] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "本城建造奇观加速+15%，每个奇观+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "所有城市建造区域、建筑和奇观时+10% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "本城每个专业化区域+2 [ICON_Culture] 文化，+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "所有城市+20% [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "本城渔船+1 [ICON_Food] 食物，+1 [ICON_Production] 生产力，+3 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "所有城市渔船+2 [ICON_Science] 科技值，港口+3 [ICON_Culture] 文化值。");

@@ -29,9 +29,9 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_UNIT_IS_' || PromotionClassType , 'UnitPromotionClass', PromotionClassType from UnitPromotionClasses;
 
 -- Resource
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'ResourceType', ResourceType from Resources;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES' from Resources;
 
 insert or replace into RequirementArguments (RequirementId, Name, Value)
