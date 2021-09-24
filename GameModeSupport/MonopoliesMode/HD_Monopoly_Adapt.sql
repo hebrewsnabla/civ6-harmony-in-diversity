@@ -96,7 +96,7 @@ update HDMonopolyResourceEffects set Category = 'TOURISM',
 update HDMonopolyResourceEffects set Category = 'FISHERY',
     IndustryEffect = 'INDUSTRY_HD_FISHERY_BONUS',
     CorporationEffect = 'CORPORATION_HD_FISHERY_BONUS'
-    where ResourceType = 'RESOURCE_TRUFFLES'
+    where ResourceType = 'RESOURCE_TURTLES'
     or ResourceType = 'RESOURCE_WHALES'
     or ResourceType = 'RESOURCE_PEARLS'
     or ResourceType = 'RESOURCE_SUK_LOBSTER';
@@ -104,6 +104,20 @@ update HDMonopolyResourceEffects set Category = 'FISHERY',
 -- ====================
 -- INDUSTRY and CORPORATION
 -- ====================
+update Improvement_YieldChanges set YieldChange = 2
+where ImprovementType = 'IMPROVEMENT_INDUSTRY' and YieldType = 'YIELD_FOOD';
+update Improvement_YieldChanges set YieldChange = 3
+where ImprovementType = 'IMPROVEMENT_INDUSTRY' and YieldType = 'YIELD_PRODUCTION';
+update Improvement_YieldChanges set YieldChange = 3
+where ImprovementType = 'IMPROVEMENT_INDUSTRY' and YieldType = 'YIELD_GOLD';
+
+update Improvement_YieldChanges set YieldChange = 4
+where ImprovementType = 'IMPROVEMENT_CORPORATION' and YieldType = 'YIELD_FOOD';
+update Improvement_YieldChanges set YieldChange = 6
+where ImprovementType = 'IMPROVEMENT_CORPORATION' and YieldType = 'YIELD_PRODUCTION';
+update Improvement_YieldChanges set YieldChange = 4
+where ImprovementType = 'IMPROVEMENT_CORPORATION' and YieldType = 'YIELD_GOLD';
+
 delete from ImprovementModifiers where
     ImprovementType = 'IMPROVEMENT_INDUSTRY' or ImprovementType = 'IMPROVEMENT_CORPORATION';
 insert or replace into ImprovementModifiers
@@ -162,7 +176,7 @@ values
     ('INDUSTRY_HD_GROWTH_BONUS_TRADE',  'Amount',       3),
     ('INDUSTRY_HD_GROWTH_BONUS_TRADE',  'Domestic',     1),
     ('INDUSTRY_HD_FAITH_BONUS',         'YieldType',    'YIELD_FAITH'),
-    ('INDUSTRY_HD_FAITH_BONUS',         'Amount',       25),
+    ('INDUSTRY_HD_FAITH_BONUS',         'Amount',       15),
     ('INDUSTRY_HD_FAITH_BONUS_POP',     'YieldType',    'YIELD_GOLD'),
     ('INDUSTRY_HD_FAITH_BONUS_POP',     'Amount',       2),
     ('INDUSTRY_HD_GPP_BONUS_POP_S',     'YieldType',    'YIELD_SCIENCE'),
@@ -180,7 +194,7 @@ values
     ('INDUSTRY_HD_AMENITY_BONUS_HOUSING', 'Amount',     3),
     ('INDUSTRY_HD_AMENITY_BONUS_UNIT',  'UnitType',     'UNIT_BUILDER,UNIT_SETTLER,UNIT_TRADER'),
     ('INDUSTRY_HD_AMENITY_BONUS_UNIT',  'Amount',       30),
-    ('INDUSTRY_HD_WONDER_BONUS',        'Amount',       15),
+    ('INDUSTRY_HD_WONDER_BONUS',        'Amount',       20),
     ('INDUSTRY_HD_WONDER_BONUS_CULTURE', 'YieldType',    'YIELD_CULTURE'),
     ('INDUSTRY_HD_WONDER_BONUS_CULTURE', 'Amount',       3),
     ('INDUSTRY_HD_TOURISM_BONUS',       'YieldType',    'YIELD_CULTURE'),
@@ -197,6 +211,28 @@ values
 insert or replace into ImprovementModifiers
     (ImprovementType,           ModifierId)
 values
+    -- Duplicate
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GROWTH_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GROWTH_BONUS_TRADE'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FAITH_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FAITH_BONUS_POP'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GPP_BONUS_POP_S'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GPP_BONUS_POP_C'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_TRADER_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS_FOOD'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS_CULTURE'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_AMENITY_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_AMENITY_BONUS_HOUSING'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_AMENITY_BONUS_UNIT'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_WONDER_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_WONDER_BONUS_CULTURE'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_TOURISM_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_TOURISM_BONUS_GOLD'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FISHERY_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FISHERY_BONUS_FOOD'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FISHERY_BONUS_PROD'),
+    -- Corporation (empire wide)
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_GROWTH_BONUS'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_FAITH_BONUS'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_GPP_BONUS'),
@@ -247,7 +283,7 @@ values
     ('CORPORATION_HD_TOURISM_BONUS',    'Amount',       20),
     ('CORPORATION_HD_FISHERY_BONUS',    'YieldType',    'YIELD_SCIENCE'),
     ('CORPORATION_HD_FISHERY_BONUS',    'Amount',       2),
-    ('CORPORATION_HD_FISHERY_BONUS',    'YieldType',    'YIELD_CULTURE'),
+    ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'YieldType', 'YIELD_CULTURE'),
     ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'Amount',  3);
 
 delete from ResourceIndustries;
@@ -301,7 +337,9 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 -- ====================
 -- Products
 -- ====================
-delete from GreatWorkModifiers where GreatWorkType like 'GREATWORK_PRODUCT_%';
+update Projects set Cost = 200 where ProjectType like 'PROJECT_CREATE_CORPORATION_PRODUCT_%';
+
+delete from GreatWorkModifiers where GreatWorkType like 'GREATWORK_PRODUCT_%' and ModifierID like 'PRODUCT_%';
 -- Tourism
 update GreatWorks set Tourism = 6 where GreatWorkType like 'GREATWORK_PRODUCT_%';
 update GreatWorks set Tourism = 12 where GreatWorkType in
@@ -314,13 +352,13 @@ insert or replace into GreatWorkModifiers
 select
     'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10)||'_'||b.Count, 'HD_PRODUCT_CITY_HOUSING'
 from HDMonopolyResourceEffects a, HDCounter b where Category = 'AMENITY'
-and 'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10) in (select GreatWorkType from GreatWorks);
+and 'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10)||'_'||b.Count in (select GreatWorkType from GreatWorks);
 insert or replace into GreatWorkModifiers
     (GreatWorkType,                                                 ModifierId)
 select
     'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10)||'_'||b.Count, 'HD_PRODUCT_CITY_AMENITY'
 from HDMonopolyResourceEffects a, HDCounter b where Category = 'AMENITY'
-and 'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10) in (select GreatWorkType from GreatWorks);
+and 'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10)||'_'||b.Count in (select GreatWorkType from GreatWorks);
 
 insert or replace into Modifiers
     (ModifierId,                        ModifierType)
@@ -419,3 +457,21 @@ insert or replace into GreatWork_YieldChanges
 select
     'GREATWORK_PRODUCT_'||substr(a.ResourceType, 10)||'_'||b.Count, 'YIELD_PRODUCTION', 2
 from HDMonopolyResourceEffects a, HDCounter b where Category = 'FISHERY';
+
+-- ====================
+-- Leugi Monopoly ++
+-- ====================
+update Units set Cost = 200, CostProgressionParam1 = 20, PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_LEU_TYCOON';
+update Units set Cost = 500, CostProgressionParam1 = 30 where UnitType = 'UNIT_LEU_INVESTOR';
+
+delete from Unit_BuildingPrereqs where Unit = 'UNIT_LEU_TYCOON';
+insert or replace into Unit_BuildingPrereqs
+        (Unit,                  PrereqBuilding)
+select  UnitType,               'BUILDING_MARKET'
+from Units where UnitType = 'UNIT_LEU_TYCOON';
+
+insert or replace into Unit_BuildingPrereqs
+        (Unit,                  PrereqBuilding)
+select  'UNIT_LEU_TYCOON',        CivUniqueBuildingType
+from BuildingReplaces where ReplacesBuildingType = 'BUILDING_MARKET'
+and exists (select Unit from Units where UnitType = 'UNIT_LEU_TYCOON');

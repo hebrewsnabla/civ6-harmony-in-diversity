@@ -59,20 +59,38 @@ insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "本城+10%余粮，通往该城市的国内商路+3 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "对所有城市+10% [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION}[NEWLINE]对所有城市+10% [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "本城每人口提供+2 [ICON_Gold] 金币，本城+15% [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "拥有圣地的城市每人口提供+3 [ICON_Gold] 金币。"), --对所有城市，圣地和其中每级建筑令每个人口提供1 [ICON_Gold] 金币。
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "{LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION}[NEWLINE]拥有圣地的城市每人口提供+3 [ICON_Gold] 金币。"), --对所有城市，圣地和其中每级建筑令每个人口提供1 [ICON_Gold] 金币。
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "本城每人口提供0.8 [ICON_Science] 科技值和 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "所有城市的伟人点积累速率+25%。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "{LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION}[NEWLINE]所有城市的伟人点积累速率+25%。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "本城出发的国际商路+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "所有商路+8 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "本城+3 [ICON_Amenity] 宜居度，+6 [ICON_Food] 食物，+3 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "所有城市商业区和港口+5 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "本城+3 [ICON_Housing] 住房，+2 [ICON_Amenity] 宜居度，建造开拓者、建造者和商人单位时加速+30%。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "所有城市+1 [ICON_Amenity] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "本城建造奇观加速+15%，每个奇观+3 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "所有城市建造区域、建筑和奇观时+10% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION}[NEWLINE]所有商路+8 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "本城+3 [ICON_Amenities] 宜居度，+6 [ICON_Food] 食物，+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "{LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION}[NEWLINE]所有城市商业区和港口+5 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "本城+3 [ICON_Housing] 住房，+2 [ICON_Amenities] 宜居度，建造开拓者、建造者和商人单位时加速+30%。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION}[NEWLINE]所有城市+1 [ICON_Amenities] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "本城建造奇观加速+20%，每个奇观+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION}[NEWLINE]所有城市建造区域、建筑和奇观时+10% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "本城每个专业化区域+2 [ICON_Culture] 文化，+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "所有城市+20% [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION}[NEWLINE]所有城市+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "本城渔船+1 [ICON_Food] 食物，+1 [ICON_Production] 生产力，+3 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "所有城市渔船+2 [ICON_Science] 科技值，港口+3 [ICON_Culture] 文化值。");
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION}[NEWLINE]所有城市渔场+2 [ICON_Science] 科技值，港口+3 [ICON_Culture] 文化值。");
+
+
+-- Leugi Monopoly ++
+--------------------------------------------------------------------------------
+-- Language: en_US
+-- insert or replace into EnglishText
+--     (Tag,                                               Text)
+-- values
+--     ("LOC_UNIT_LEU_TYCOON_NAME",                        ""),
+--     ("LOC_UNIT_LEU_TYCOON_NAME",                        "");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                               Text)
+values
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NAME",                        "大亨"),
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_NAME",                      "投资人");
