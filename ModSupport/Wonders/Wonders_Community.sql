@@ -27,7 +27,7 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('LEANING_TOWER_GRANTS_ENGINEER',	'Amount',	1),
 ('LEANING_TOWER_GRANTS_ENGINEER',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_ENGINEER');
 
---+25%GPP accumulation spped
+--+25%GPP accumulation speed
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select 'BUILDING_LEANING_TOWER', 'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType from GreatPersonClasses
 where not (GreatPersonClassType = 'GREAT_PERSON_CLASS_COMANDANTE_GENERAL')

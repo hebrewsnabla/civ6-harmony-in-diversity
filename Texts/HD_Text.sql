@@ -68,7 +68,7 @@ values
     -- Main
     ("zh_Hans_CN",  "LOC_GOVERNMENT_INHERENT_BONUS",                                         "传承效果"), -- 官方好像在ui上面写反了。
 
-    ("zh_Hans_CN",  "LOC_EPSTWEAK_WONDER_WORDING_TOURISM",                                   "[NEWLINE][NEWLINE]+2 [ICON_Tourism] 旅游业绩。[NEWLINE]您所处时代每超越该奇观所属的时代，则+1 [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_EPSTWEAK_WONDER_WORDING_TOURISM",                                   "[NEWLINE][NEWLINE]+2 [ICON_Tourism] 旅游业绩。[NEWLINE]您所处时代每超越该奇观所属的时代一个时代，则+1 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_SPECIALTY_DISTRICT",                                 "专业化区域"),
     ("zh_Hans_CN",  "LOC_DISTRICT_HD_IS_NOT_SPECIALTY_DISTRICT",                             "非专业化区域"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "涨价系数：{1_num}"),

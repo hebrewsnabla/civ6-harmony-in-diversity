@@ -8,6 +8,15 @@ delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and Modifi
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
 delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and ModifierId = 'AUTOCRACY_DIP';
 
+-- Belief:
+update ModifierArguments set Value = 1 where ModifierId = 'WORK_ETHIC_SPECIAL_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
+
+-- CityStates
+update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
+
+-- Policies
+update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_HIGHWAY' or PolicyType = 'POLICY_SILK_ROAD';
+
 -- Wonders
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
@@ -15,9 +24,6 @@ update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERN
 update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
 
 update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
-
--- Policies
-update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_HIGHWAY' or PolicyType = 'POLICY_SILK_ROAD';
 
 -- ORSZAGHAZ
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM', Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
@@ -70,27 +76,6 @@ insert or replace into RequirementSetRequirements
 values
     ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ');
 
--- Kilwa
-update Buildings set PrereqTech = 'TECH_BUTTRESS' where BuildingType = 'BUILDING_KILWA_KISIWANI';
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
-delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
-
-insert or replace into BuildingModifiers (BuildingType,  ModifierId)
-select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId like 'KILWA_SINGLE_ADD%';
-
-insert or replace into Modifiers    
-    (ModifierId,                                ModifierType,                                               SubjectRequirementSetId)
-values 
-    ('KILWA_SINGLE_ADDSCIENCEYIELD1',           'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'SCIENTIFIC_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDFAITHYIELD1',             'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'RELIGIOUS_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDGOLDYIELD1',              'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'TRADE_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDCULTUREYIELD1',           'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',          'CULTURAL_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDPRODUCTIONUNITS1',        'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_MODIFIER',     'MILITARISTIC_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDPRODUCTIONBUILDINGS1',    'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS'),
-    ('KILWA_SINGLE_ADDPRODUCTIONDISTRICTS1',    'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS');
-
-insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
-select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'KILWA_SINGLE_ADD%';
 --------------------------------------------------------------------------------------------------------------------------------
 -- dev used for v1.0.5
 --------------------------------------------------------------------------------------------------------------------------------
