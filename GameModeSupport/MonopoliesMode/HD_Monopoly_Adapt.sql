@@ -490,4 +490,4 @@ insert or replace into Unit_BuildingPrereqs
         (Unit,                  PrereqBuilding)
 select  'UNIT_LEU_TYCOON',        CivUniqueBuildingType
 from BuildingReplaces where ReplacesBuildingType = 'BUILDING_MARKET'
-and exists (select Unit from Units where UnitType = 'UNIT_LEU_TYCOON');
+and exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');

@@ -34,26 +34,26 @@ values
 insert or replace into EnglishText
     (Tag,                                               Text)
 values
-    ("LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "PROD_AMENITY"),
+    ("LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "+2 [ICON_Housing] Housing, +1 [ICON_Amenities] Amenity."),
     -- 
-    ("LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "INDS_GROWTH"),
-    ("LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "CORP_GROWTH"),
-    ("LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "INDS_FAITH"),
-    ("LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "CORP_FAITH"),
-    ("LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "INDS_GPP"),
-    ("LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "CORP_GPP"),
-    ("LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "INDS_TRADER"),
-    ("LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "CORP_TRADER"),
-    ("LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "INDS_FOOD"),
-    ("LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "CORP_FOOD"),
-    ("LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "INDS_AMENITY"),
-    ("LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "CORP_AMENITY"),
-    ("LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "INDS_WONDER"),
-    ("LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "CORP_WONDER"),
-    ("LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "+2 [ICON_Culture] Culture, +4 [ICON_Gold] Gold for every specialty district in this city."),
-    ("LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "CORP_TOURISM"),
-    ("LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "INDS_FISHERY"),
-    ("LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "CORP_FISHERY");
+    ("LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "+10% Growth in the city. Your [ICON_TradeRoute] Trade Routes ending here provide +3 [ICON_Food] Food to their starting city."),
+    ("LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION}[NEWLINE]+10% [ICON_Food] Food for all cities."),
+    ("LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "[ICON_Citizen] Citizens in this city provide +2 [ICON_Gold] Gold. +15% [ICON_Faith] Faith in this city."),
+    ("LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "{LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION}[NEWLINE][ICON_Citizen] Citizens provide +3 [ICON_Gold] Gold in all cities have Holy Site."),
+    ("LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "[ICON_Citizen] Citizens in this city provide +0.8 [ICON_Science] Science and [ICON_Culture] Culture."),
+    ("LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "{LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION}[NEWLINE]+25% Great Person points."),
+    ("LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "+4 [ICON_Gold] Gold from all international [ICON_TradeRoute] Trade Routes starting from this city."),
+    ("LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION}[NEWLINE]+8 [ICON_Gold] Gold from all [ICON_TradeRoute] Trade Routes."),
+    ("LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "+3 [ICON_Amenities] Amenities, +6 [ICON_Food] Food, +3 [ICON_Culture] Culture to this city."),
+    ("LOC_CORPORATION_HD_FOOD_BONUS_DESCRIPTION",       "{LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION}[NEWLINE] +5 [ICON_Food] Food for all Harhor and Commercial Hub Districts."),
+    ("LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION",       "+3 [ICON_Housing] Housing, +2 [ICON_Amenities] Amenities, +30% production speed towards Settlers, Builders and Traders."),
+    ("LOC_CORPORATION_HD_AMENITY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_AMENITY_BONUS_DESCRIPTION}[NEWLINE]+1 [ICON_Amenities] Amenity in all cities."),
+    ("LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "+20% production speed towards Wonders, +3 [ICON_Culture] Culture from every Wonder."),
+    ("LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION}[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in all cities."),
+    ("LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "+2 [ICON_Culture] Culture, +4 [ICON_Gold] Gold from every specialty district in this city."),
+    ("LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION}[NEWLINE]+20% [ICON_Tourism] Tourism across your empire."),
+    ("LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +3 [ICON_Gold] Gold from Shipping Boats in this city."),
+    ("LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION}[NEWLINE]+2 [ICON_Science] Science from Fishery, +3 [ICON_Culture] Culture from Harbor.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -67,7 +67,7 @@ values
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "本城每人口提供+2 [ICON_Gold] 金币，本城+15% [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_FAITH_BONUS_DESCRIPTION",      "{LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION}[NEWLINE]拥有圣地的城市每人口提供+3 [ICON_Gold] 金币。"), --对所有城市，圣地和其中每级建筑令每个人口提供1 [ICON_Gold] 金币。
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION",           "本城每人口提供0.8 [ICON_Science] 科技值和 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "{LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION}[NEWLINE]所有城市的伟人点积累速率+25%。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_GPP_BONUS_DESCRIPTION",        "{LOC_INDUSTRY_HD_GPP_BONUS_DESCRIPTION}[NEWLINE]+25%伟人点数。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION",        "本城出发的国际商路+4 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_TRADER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_TRADER_BONUS_DESCRIPTION}[NEWLINE]所有商路+8 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FOOD_BONUS_DESCRIPTION",          "本城+3 [ICON_Amenities] 宜居度，+6 [ICON_Food] 食物，+3 [ICON_Culture] 文化值。"),
@@ -77,26 +77,44 @@ values
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION",        "本城建造奇观加速+20%，每个奇观+3 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_WONDER_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_WONDER_BONUS_DESCRIPTION}[NEWLINE]所有城市建造区域、建筑和奇观时+10% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION",       "本城每个专业化区域+2 [ICON_Culture] 文化，+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION}[NEWLINE]所有城市+20% [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_CORPORATION_HD_TOURISM_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_TOURISM_BONUS_DESCRIPTION}[NEWLINE]全国+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "本城渔船+1 [ICON_Food] 食物，+1 [ICON_Production] 生产力，+3 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION}[NEWLINE]所有城市渔场+2 [ICON_Science] 科技值，港口+3 [ICON_Culture] 文化值。");
 
+-- TODO: update pedia & create product project desc
 
 -- Leugi Monopoly ++
 --------------------------------------------------------------------------------
 -- Language: en_US
--- insert or replace into EnglishText
---     (Tag,                                               Text)
--- values
---     ("LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Market to be purchased.[NEWLINE][NEWLINE]Tycoons can create Railroads and Stations to improve Trade and [ICON_PRODUCTION] Production in your territory."),
---     ("LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Bank to be purchased. Investors can create Corporations that allow your civilization to create [ICON_GREATWORK_PRODUCT]Products for additional [ICON_GOLD]Gold and [ICON_TOURISM]Tourism. Additionally they can be used to create Warehouses and Container Ports in other civilizations, further strengthening trade and your Corporations");
+insert or replace into EnglishText
+    (Tag,                                               Text)
+values
+    ("LOC_IMPROVEMENT_INDUSTRY_DESCRIPTION",            "An industry dedicated to a specific Luxury Resource, provides a unique benefit to its city."),
+    ("LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Market to be purchased.[NEWLINE][NEWLINE]Tycoons can create Industries in Luxury Resource tiles, and after the discovery of Steam Power they can create Railroads and Stations to improve Trade and [ICON_PRODUCTION] Production in your territory."),
+    ("LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Bank to be purchased. Investors can create Corporations that allow your civilization to create [ICON_GREATWORK_PRODUCT] Products for additional [ICON_GOLD] Gold and [ICON_TOURISM] Tourism. Additionally they can be used to create Warehouses and Container Ports in other civilizations, further strengthening trade and your Corporations");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
+    ("zh_Hans_CN",  "LOC_POWER_REQUIREMENT_MISC",                      "其他消耗来源"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_WAREHOUSE_NAME",              "仓库"),
+    -- ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_WAREHOUSE_DESCRIPTION",       "Improvement built by Investors, unlocked at the discovery of Replaceable Parts.[NEWLINE]Must be built at a land tile next to a Luxury Resource in the territory of another civilization or City-State with whom you have Open Borders.[NEWLINE][NEWLINE]+5 [ICON_GOLD]Gold to any Corporation matching a Luxury Resource adjacent to the Warehouse.[NEWLINE]+5 [ICON_GOLD]Gold and +2 [ICON_PRODUCTION]Production to International [ICON_TRADEROUTE] Trade Routes to this city for any civilization.[NEWLINE]+1 [ICON_GOLD]Gold and +1 [ICON_PRODUCTION]Production to International [ICON_TRADEROUTE] Trade Routes to this city for every Corporation owned by the origin Civilization.[NEWLINE][NEWLINE]Only one may be built in each city."),
+    ("zh_Hans_CN",  "LOC_WAREHOUSE_ADJ_GOLD",                          "+{1_num} [ICON_GOLD] 金币来自相邻的仓库"),
+    ("zh_Hans_CN",  "LOC_WAREHOUSE_ADJ_PRODUCTION",                    "+{1_num} [ICON_Production] 生产力来自相邻的仓库"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_CONTAINER_PORT_NAME",         "集装箱码头"),
+    -- ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_WAREHOUSE_DESCRIPTION",       "Improvement built by Investors, unlocked at the discovery of Plastics.[NEWLINE]Must be built at a coastal tile next to a Luxury Resource in the territory of another civilization or City-State with whom you have Open Borders, and requires at least one adjacent land tile.[NEWLINE][NEWLINE]+4 [ICON_GOLD]Gold to any Corporation matching a Luxury Resource adjacent to the Warehouse.[NEWLINE]+5 [ICON_GOLD]Gold and +2 [ICON_PRODUCTION]Production to International [ICON_TRADEROUTE] Trade Routes to this city for any civilization.[NEWLINE]+1 [ICON_GOLD]Gold and +1 [ICON_PRODUCTION]Production to International [ICON_TRADEROUTE] Trade Routes to this city for every Corporation owned by the origin Civilization.[NEWLINE][NEWLINE]Only one may be built in each city."),
+    ("zh_Hans_CN",  "LOC_CONTAINER_PORT_ADJ_GOLD",                     "+{1_num} [ICON_GOLD] 金币来自相邻的集装箱码头"),
+    ("zh_Hans_CN",  "LOC_CONTAINER_PORT_ADJ_PRODUCTION",               "+{1_num} [ICON_Production] 生产力来自相邻的集装箱码头"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_INDUSTRY_DESCRIPTION",            "致力于一种特定奢侈品资源的行业，能为其所在城市带来独特加成。"),
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NAME",                        "大亨"),
-    ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "需要商业中心中的“市场”方可购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以创建铁路和火车站来改善你的领土上的贸易和[ICON_PRODUCTION]生产。"),
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "需要商业中心中的“市场”方可建造或购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以在奢侈资源上创建行业，在研究“蒸汽动力”后，他们也可创建铁路和火车站来改善你的领土上的贸易和 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_NAME",                      "投资人"),
-    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "需要商业中心中的“银行”方可购买的高价平民单位。[NEWLINE][NEWLINE]投资人可以创建公司，让你的文明创造 [ICON_GREATWORK_PRODUCT] 产品以获得额外的 [ICON_GOLD] 金币和[ICON_TOURISM] 旅游业绩。此外，他们可以用来在其他文明中创建仓库和集装箱港口，进一步强化贸易和你的公司。");
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "需要商业中心中的“银行”方可建造或购买的高价平民单位。[NEWLINE][NEWLINE]投资人可以创建公司，让你的文明创造 [ICON_GREATWORK_PRODUCT] 产品以获得额外的 [ICON_GOLD] 金币和 [ICON_TOURISM] 旅游业绩。此外，他们可以用来在其他文明中创建仓库和集装箱港口，进一步强化贸易和你的公司。");
+
+-- LOC_TECH_STEEL_DESCRIPTION
+-- LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_LEU_WAREHOUSE_CHAPTER_HISTORY_PARA_1
+-- LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_LEU_CONTAINER_PORT_CHAPTER_HISTORY_PARA_1
+
+-- TODO: Great People from MOD

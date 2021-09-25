@@ -21,6 +21,31 @@ update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_GREAT_PERSON_DI
 -- CityStates
 update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
 
+-- Districts
+update Districts set Description = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE';
+insert or replace into DistrictModifiers
+    (DistrictType,                      ModifierId)
+values
+    ('DISTRICT_INDUSTRIAL_ZONE',        'HD_INDUSTRIAL_ZONE_POP_PRODUCTION');
+
+insert or replace into DistrictModifiers
+    (DistrictType,                      ModifierId)
+select
+    CivUniqueDistrictType,              'HD_INDUSTRIAL_ZONE_POP_PRODUCTION'
+from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE';
+delete from DistrictModifiers where DistrictType = 'DISTRICT_HANSA' and ModifierId = 'HD_INDUSTRIAL_ZONE_POP_PRODUCTION';
+
+insert or replace into Modifiers
+    (ModifierId,                           ModifierType)
+values
+    ('HD_INDUSTRIAL_ZONE_POP_PRODUCTION',  'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,           Value)
+values
+    ('HD_INDUSTRIAL_ZONE_POP_PRODUCTION',   'YieldType',    'YIELD_PRODUCTION'),
+    ('HD_INDUSTRIAL_ZONE_POP_PRODUCTION',   'Amount',       0.5);
+
 -- Policies
 update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_HIGHWAY' or PolicyType = 'POLICY_SILK_ROAD';
 

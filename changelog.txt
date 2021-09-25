@@ -2682,8 +2682,16 @@ mod奇观圣彼得大教堂改为3个宗教艺术槽，填满时自动主题化�
 
 测试开发模式：
 道德提供的专业化区域2锤改为1锤。
+工业区和高卢UD增加能力：城市中每个人口提供0.5锤。（德国ud不加）
 塔那那利佛的加成上限由30%改为20%。
 金币和信仰赞助伟人的价格提升33%。
 
+[v1.0.6.3]
 公司模式：
-正在准备更新。
+
+请启用
+1. Monopoly++: Tycoons and Investors [https://steamcommunity.com/sharedfiles/filedetails/?id=2479197624].
+2. Monopoly++: Product and Corporation Adjustments [https://steamcommunity.com/sharedfiles/filedetails/?id=2479195330].
+
+【尚未完全完工】奢侈品的行业和公司效果集体重置。
+完工后请查看百科内和文本描述的效果。
