@@ -557,7 +557,7 @@
 			<Text>学院+{Amount} [ICON_Tourism] 旅游业绩。</Text>
 		</Replace>
 		<Replace Tag="LOC_TYPE_TRAIT_AMENITY_ENTERTAINMENT" Language="zh_Hans_CN">
-			<Text> [ICON_Amenities] {1_Amount: number +#,###;-#,###} {1_Amount : plural 1?宜居度; other?宜居度;} </Text>
+			<Text> {1_Amount: number +#,###;-#,###} [ICON_Amenities] 宜居度</Text>
 		</Replace>
 		<Replace Tag="LOC_POLICY_MARKET_ECONOMY_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>您的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Culture] 文化值和+2 [ICON_Science] 科技值，同时目的地已开发的每个奢侈品资源和战略资源为其+1 [ICON_Gold] 金币。</Text>

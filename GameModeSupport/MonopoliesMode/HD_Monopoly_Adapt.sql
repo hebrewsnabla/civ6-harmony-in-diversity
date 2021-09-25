@@ -35,6 +35,7 @@ create table 'HDMonopolyResourceEffects'(
     'Category' TEXT NOT NULL,
     'IndustryEffect' TEXT NOT NULL,
     'CorporationEffect' TEXT NOT NULL,
+    'ProductEffect' TEXT,
     PRIMARY KEY(ResourceType)
     FOREIGN KEY(ResourceType) REFERENCES Resources(ResourceType) ON DELETE CASCADE ON UPDATE CASCADE
     FOREIGN KEY(Category) REFERENCES HDMonopolyResourceClasses(Category) ON DELETE CASCADE ON UPDATE CASCADE
@@ -100,6 +101,8 @@ update HDMonopolyResourceEffects set Category = 'FISHERY',
     or ResourceType = 'RESOURCE_WHALES'
     or ResourceType = 'RESOURCE_PEARLS'
     or ResourceType = 'RESOURCE_SUK_LOBSTER';
+
+update HDMonopolyResourceEffects set ProductEffect = 'PRODUCT_HD_AMENITY_BONUS' where Category = 'AMENITY';
 
 -- ====================
 -- INDUSTRY and CORPORATION
@@ -288,6 +291,14 @@ values
 
 delete from ResourceIndustries;
 delete from ResourceCorporations;
+
+create table 'HDResourceProducts'(
+    'ResourceType' TEXT NOT NULL,
+    'ResourceEffect' TEXT,
+    'ResourceEffectTExt' TEXT,
+    PRIMARY KEY(ResourceType)
+    FOREIGN KEY(ResourceType) REFERENCES Resources(ResourceType) ON DELETE CASCADE ON UPDATE CASCADE
+);
 insert or replace into ResourceIndustries
     (ResourceType,  ResourceEffect, ResourceEffectTExt)
 select
@@ -297,6 +308,11 @@ insert or replace into ResourceCorporations
     (ResourceType,  ResourceEffect, ResourceEffectTExt)
 select
     ResourceType,   CorporationEffect,  'LOC_'||CorporationEffect||'_DESCRIPTION'
+from HDMonopolyResourceEffects;
+insert or replace into HDResourceProducts
+    (ResourceType,  ResourceEffect, ResourceEffectTExt)
+select
+    ResourceType,   ProductEffect,  'LOC_'||ProductEffect||'_DESCRIPTION'
 from HDMonopolyResourceEffects;
 
 -- ====================

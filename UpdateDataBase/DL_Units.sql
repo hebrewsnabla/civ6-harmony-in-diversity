@@ -20,7 +20,7 @@ update Units set Cost = 120, CostProgressionParam1 = 10 where UnitType = 'UNIT_G
 
 update Units set Cost = 250 where UnitType = 'UNIT_ARCHAEOLOGIST';
 -- add worker's basic building charges
-update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER';
+update Units set BuildCharges = 4 where UnitType = 'UNIT_BUILDER' and BuildCharges < 4;
 update Units set BuildCharges = 3, BaseMoves = 3 where UnitType = 'UNIT_MILITARY_ENGINEER';
 
 -- UNIT_MILITARY_ENGINEER

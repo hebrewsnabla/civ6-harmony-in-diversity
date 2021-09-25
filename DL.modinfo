@@ -150,6 +150,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>73b1478a-73bf-4907-8914-b1b5acca388b</ModInUse>
     </Criteria>
+    <Criteria id="MonopolyPlus_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>b248a322-3e2a-4a6a-830a-6b0d1f3435fc</ModInUse>
+    </Criteria>
     <Criteria id="RemovableDistricts_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>7ce74c28-41ba-4453-b3d1-d30ef8013887</ModInUse>
@@ -564,16 +568,25 @@
     </UpdateText>
     <!-- Suk Oceans -->
     <UpdateDatabase id="SukOceans_mod_support" criteria="Suk_Oceans_Rework_Expansion2">
-      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <Properties><LoadOrder>15005</LoadOrder></Properties>
       <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateText id="SukOceans_mod_support_text" criteria="Suk_Oceans_Rework_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Monopoly++ -->
+    <UpdateDatabase id="MonopolyPlus_mod_support" criteria="MonopolyPlus_Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <File>ModSupport/MonopolyPlus/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="MonopolyPlus_mod_support_text" criteria="MonopolyPlus_Expansion2">
+      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
+    </UpdateText>
     <!-- Watch Tower -->
     <UpdateText id="WatchTower_mod_support_text" criteria="WatchTower_Expansion2">
-      <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Watchtower/HD_Texts.sql</File>
     </UpdateText>
     <UpdateDatabase id="Wonder_temple_of_heaven_support" criteria="TempleOfHeaven_Expansion2">
@@ -582,21 +595,21 @@
       <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
-      <Properties><LoadOrder>15006</LoadOrder></Properties>
+      <Properties><LoadOrder>15008</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
     </UpdateDatabase>
     <UpdateText id="Community_Wonders_support_text" criteria="Expansion2">
-      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <Properties><LoadOrder>15009</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     </UpdateText>
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
-      <Properties><LoadOrder>15009</LoadOrder></Properties>
+      <Properties><LoadOrder>15010</LoadOrder></Properties>
       <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
       <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     </ImportFiles>
     <UpdateDatabase id="Community_ProjectHumankind_support" criteria="ProjectHumankind_Expansion2">
-      <Properties><LoadOrder>15010</LoadOrder></Properties>
+      <Properties><LoadOrder>15012</LoadOrder></Properties>
       <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Community_STXP_support" criteria="STXP_Expansion2">
@@ -1063,10 +1076,15 @@
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     </UpdateIcons>
-    <UpdateText id="Monopolies_Gold_Text" criteria="Monopolies_Mode_Expansion2">
+    <UpdateText id="Monopolies_Text" criteria="Monopolies_Mode_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     </UpdateText>
+    <ImportFiles id="Monopolies_UI" criteria="Monopolies_Mode_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/DiplomacyDealView_KublaiKhanVietnam_MODE.lua</File>  <!-- will be overwrite by Better Deal Window -->
+      <File>GameModeSupport/MonopoliesMode/GreatWorksOverview_KublaiKhanVietnam_Monopolies.lua</File>
+    </ImportFiles>
     <!-- Barbarian Clans -->
     <UpdateDatabase id="BarbarianClansMode" criteria="BarbarianClans_Mode_Expansion2">
       <Properties><LoadOrder>16052</LoadOrder></Properties>
@@ -1217,6 +1235,8 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
+    <File>GameModeSupport/MonopoliesMode/DiplomacyDealView_KublaiKhanVietnam_MODE.lua</File>
+    <File>GameModeSupport/MonopoliesMode/GreatWorksOverview_KublaiKhanVietnam_Monopolies.lua</File>
     <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans.sql</File>
     <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans_Text.sql</File>
     <File>GameModeSupport/SecretSocietiesMode/HD_SecretSocieties.sql</File>
@@ -1304,6 +1324,8 @@
     <File>ModSupport/WetLands/HD_Texts.sql</File>
     <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
     <File>ModSupport/SukOceans/HD_Texts.sql</File>
+    <File>ModSupport/MonopolyPlus/DL_Adaptation.sql</File>
+    <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>

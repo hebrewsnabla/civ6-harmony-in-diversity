@@ -141,6 +141,48 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_COL_DATEBUILT",                                    "建成时间"),
     ("zh_Hans_CN",  "LOC_AKGC_COL_LOCATION",                                     "位置");
 
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                             Text)
+values
+    ("zh_Hans_CN",  "LOC_AKPAL_LAUNCHBUTTON_TT",                     "宫殿和王座厅"),
+    ("zh_Hans_CN",  "LOC_AKPAL_LAUNCHBUTTON_ALERT_SINGLE_TT",        "我们的子民愿意改进宫殿！"),
+    ("zh_Hans_CN",  "LOC_AKPAL_LAUNCHBUTTON_ALERT_MULTI_TT",         "我们的子民愿意改进宫殿{1_num}次！"),
+    ("zh_Hans_CN",  "LOC_AKPAL_MAIN_TITLE",                          "{1_civadj}宫殿和王座厅"),
+    ("zh_Hans_CN",  "LOC_AKPAL_TAB_PALACE",                          "宫殿"),
+    ("zh_Hans_CN",  "LOC_AKPAL_TAB_THRONE",                          "王座厅"),
+    ("zh_Hans_CN",  "LOC_AKPAL_BUTTON_OPTIONS_TT",                   "选项"),
+    ("zh_Hans_CN",  "LOC_AKPAL_BUTTON_DELETETOGGLE_TT",              "完全移除一个之前已建造的模块"),
+    ("zh_Hans_CN",  "LOC_AKPAL_NUM_UPGRADES_AVAILABLE_SINGLE",       "升级可用！"),
+    ("zh_Hans_CN",  "LOC_AKPAL_NUM_UPGRADES_AVAILABLE_MULTI",        "{1_num}次升级可用！"),
+    ("zh_Hans_CN",  "LOC_AKPAL_NUM_UPGRADES_BUILT_SINGLE",           "已进行1次升级"),
+    ("zh_Hans_CN",  "LOC_AKPAL_NUM_UPGRADES_BUILT_MULTI",            "已进行{1_num}次升级"),
+    ("zh_Hans_CN",  "LOC_AKPAL_WLTKD",                               "我们的子民对我们的统治印象深刻，他们提出要对宫殿或王座厅进行改进！"),
+    ("zh_Hans_CN",  "LOC_AKPAL_INSTRUCTIONS",                        "将鼠标移动到图片上找到可用升级，左键点击以进行建造。绿色高亮的项目可解锁后续升级。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_INSTRUCTIONS_MULTISTYLE",             "右键点击以为该升级切换不同的风格。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_INSTRUCTIONS_DELETEMODE",             "当鼠标悬浮在可被删除的项目上时，其会红色高亮显示，双击以确认删除。[NEWLINE]删除项目不消耗升级点数。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_INSTRUCTIONS_DELETEMODE_HEADER",      "[COLOR_RED]已启用删除模式[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DELETEMODE_ENABLED",                  "已启用删除模式"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_NAME_1",                   "简单"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_NAME_2",                   "中等"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_NAME_3",                   "较难"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_DESC_1",                   "我们的子民是单纯的人，几乎任何事情都能令他们印象深刻，即使是他们以前见过的东西也会让他们赶来祝贺我们。我们很容易就能建造一座宏伟的宫殿，而且也许能重新设计好几次。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_DESC_2",                   "新颖性是我们子民的追求，如果我们不断做新的事情，不断开拓新的领域，他们会回报我们。但第四个“令人印象深刻”的学院？谁在乎呢？他们之前已经看过了。只要我们不停滞不前，一座宏伟的宫殿就在我们的掌握之中。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_DESC_3",                   "你无法想象一个更加愤世嫉俗和厌倦的人群，只有最令人印象深刻和世界领先的成就才能激励他们。我们有可能完成这座宫殿，但我们必须领先于历代的对手，才有机会。"),
+    ("zh_Hans_CN",  "LOC_AKPAL_DIFFICULTY_DESC_3_WARNING",           "[COLOR_RED]
+        在高游戏难度下玩时不推荐该选项，AI很可能在多方面超越你率先获得世界首次，你将无法获得可观的升级数量。[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_DIFFICULTY_HEADER",               "难度"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_GENERAL_HEADER",                  "通用设置"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_ShowInstructionsPanel",           "显示说明面板"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_ShowNotificationOnPointAdded",    "在获得升级点数时显示提示"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_GW_HEADER",                       "巨作"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_AllowUseOfOwnedGreatWorks",       "只有我们目前拥有的巨作可以使用"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_AllowUseOfEverOwnedGreatWorks",   "所有我们曾经拥有过的巨作都可以使用"),
+    ("zh_Hans_CN",  "LOC_AKPAL_OPT_AllowUseOfAllGreatWorks",         "所有的巨作都可以使用"),
+    ("zh_Hans_CN",  "LOC_AKPAL_POINTGAINED_NOTIFICATION_HEADER",     "获得宫殿升级点数"),
+    ("zh_Hans_CN",  "LOC_AKPAL_POINTGAINED_NOTIFICATION_TEXT",       "我们的子民对我们的统治印象深刻，他们提出要对宫殿或王座厅进行改进");
+
 -- Extended Map Search
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

@@ -11,6 +11,13 @@ delete from PolicyModifiers where PolicyType = 'POLICY_GOV_AUTOCRACY' and Modifi
 -- Belief:
 update ModifierArguments set Value = 1 where ModifierId = 'WORK_ETHIC_SPECIAL_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
 
+-- Great People
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'ORACLE_PATRONAGE_FAITH_DISCOUNT' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'TO_THE_GLORY_OF_GOD_GREAT_PRESON_DISCOUNT_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_GREAT_PERSON_DISCOUNT' and Name = 'Amount';
+
 -- CityStates
 update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
 

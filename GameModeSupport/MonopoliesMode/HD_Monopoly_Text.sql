@@ -34,6 +34,8 @@ values
 insert or replace into EnglishText
     (Tag,                                               Text)
 values
+    ("LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "PROD_AMENITY"),
+    -- 
     ("LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "INDS_GROWTH"),
     ("LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "CORP_GROWTH"),
     ("LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "INDS_FAITH"),
@@ -58,6 +60,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "+2 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
+    -- 
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "本城+10%余粮，通往该城市的国内商路+3 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION}[NEWLINE]对所有城市+10% [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FAITH_BONUS_DESCRIPTION",         "本城每人口提供+2 [ICON_Gold] 金币，本城+15% [ICON_Faith] 信仰值。"),
@@ -84,8 +88,8 @@ values
 -- insert or replace into EnglishText
 --     (Tag,                                               Text)
 -- values
---     ("LOC_UNIT_LEU_TYCOON_NAME",                        ""),
---     ("LOC_UNIT_LEU_TYCOON_NAME",                        "");
+--     ("LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Market to be purchased.[NEWLINE][NEWLINE]Tycoons can create Railroads and Stations to improve Trade and [ICON_PRODUCTION] Production in your territory."),
+--     ("LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "High-cost Civilian Unit that may only be purchased with [ICON_GOLD]Gold. Requires a Bank to be purchased. Investors can create Corporations that allow your civilization to create [ICON_GREATWORK_PRODUCT]Products for additional [ICON_GOLD]Gold and [ICON_TOURISM]Tourism. Additionally they can be used to create Warehouses and Container Ports in other civilizations, further strengthening trade and your Corporations");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -93,4 +97,6 @@ insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NAME",                        "大亨"),
-    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_NAME",                      "投资人");
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_DESCRIPTION",                 "需要商业中心中的“市场”方可购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以创建铁路和火车站来改善你的领土上的贸易和[ICON_PRODUCTION]生产。"),
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_NAME",                      "投资人"),
+    ("zh_Hans_CN",  "LOC_UNIT_LEU_INVESTOR_DESCRIPTION",               "需要商业中心中的“银行”方可购买的高价平民单位。[NEWLINE][NEWLINE]投资人可以创建公司，让你的文明创造 [ICON_GREATWORK_PRODUCT] 产品以获得额外的 [ICON_GOLD] 金币和[ICON_TOURISM] 旅游业绩。此外，他们可以用来在其他文明中创建仓库和集装箱港口，进一步强化贸易和你的公司。");
