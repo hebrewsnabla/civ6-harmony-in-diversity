@@ -53,3 +53,10 @@ insert or replace into ModifierArguments
     (ModifierId,                                                    Name,                   Value)
 values
     ('STANDARD_DIPLOMACY_TRADE_RELATIONS',                          'TradeBonus',           4);
+
+-- 宗教好感和异教红字
+insert or replace into ModifierArguments
+    (ModifierId,                                                    Name,                   Value)
+values
+    ('AGENDA_INTOLERANT_SAME_RELIGION',                          	'InitialValue',         9),
+	('AGENDA_INTOLERANT_ENCROACHING_RELIGION',                      'InitialValue',         -12);

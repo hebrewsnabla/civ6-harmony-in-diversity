@@ -494,22 +494,32 @@ insert or replace into TraitModifiers	(TraitType,	ModifierId)
 select 'TRAIT_LEADER_RELIGION_CITY_STATES',	BuildingType || '_TAMAR_CULTURE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into TraitModifiers	(TraitType,	ModifierId)
 select 'TRAIT_LEADER_RELIGION_CITY_STATES',	BuildingType || '_TAMAR_FAITH' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
-insert or replace into Modifiers	(ModifierId,	ModifierType)
-select BuildingType || '_TAMAR_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
-insert or replace into Modifiers	(ModifierId,	ModifierType)
-select BuildingType || '_TAMAR_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE' from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_CULTURE',	'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select BuildingType || '_TAMAR_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_' || BuildingType || '_REQUIREMENTS' from Buildings
+where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select BuildingType || '_TAMAR_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_' || BuildingType || '_REQUIREMENTS' from Buildings
+where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+-- insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+-- select BuildingType || '_TAMAR_CULTURE',	'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_CULTURE',	'YieldType',	'YIELD_CULTURE'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_CULTURE',	'Amount',    	1				from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select BuildingType || '_TAMAR_FAITH',		'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+-- insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+-- select BuildingType || '_TAMAR_FAITH',		'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_FAITH',		'YieldType',	'YIELD_FAITH'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_FAITH',		'Amount',    	1				from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+
+insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Buildings
+where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+
+insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIRES_CITY_HAS_' || BuildingType from Buildings
+where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 
 -- UA 
 update ModifierArguments set Value = 100 where Name = 'Amount' and (ModifierId = 'TRAIT_WALLS_PRODUCTION' or ModifierId = 'TRAIT_CASTLE_PRODUCTION' or ModifierId = 'TRAIT_TSIKHE_PRODUCTION' or ModifierId = 'TRAIT_STAR_FORT_PRODUCTION');
@@ -1039,7 +1049,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,												SubjectRequirementSetId)
 values
-	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_PLOT_IS_WONDER_REQUIRMENTS'),
+	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_ANCIENT_REQUIRMENTS'),
 	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL),
 	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_MIEDIVAL_REQUIRMENTS'),
 	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL);

@@ -344,6 +344,7 @@ delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_AMPHIBIOUS' or UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 delete from UnitPromotions where UnitPromotionType = 'PROMOTION_AMPHIBIOUS';
 update UnitPromotions set Level = 2, Column = 3 where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_ZWEIHANDER' and ModifierId = 'ZWEIHANDER_BONUS_VS_ANTI_CAVALRY';
 -- delete from UnitPromotions where UnitPromotionType = 'PROMOTION_ZWEIHANDER';
 --ranged
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_INCENDIARIES';

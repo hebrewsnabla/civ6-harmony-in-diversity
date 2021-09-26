@@ -845,3 +845,59 @@ values
 	('AMANI_HALF_RAJ_CULTURE',							'Amount',					1),
 	('AMANI_HALF_RAJ_FAITH',							'YieldType',				'YIELD_FAITH'),
 	('AMANI_HALF_RAJ_FAITH',							'Amount',					1);
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-- Ibrahim
+--LEVEL 0 GOVERNOR_PROMOTION_PASHA
+--level 1-0 GOVERNOR_PROMOTION_HEAD_FALCONER
+--level 1-2 GOVERNOR_PROMOTION_SERASKER
+--level 2-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
+--level 2-2 GOVERNOR_PROMOTION_CAPOU_AGHA
+--level 3 GOVERNOR_PROMOTION_GRAND_VISIER
+
+delete from GovernorPromotionModifiers where 
+	   GovernorPromotionType = 'GOVERNOR_PROMOTION_PASHA'
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_SERASKER' 
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI' 
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA'
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+
+update ModifierArguments set Value = 8 where ModifierId = 'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT' and Name = 'Amount';
+update ModifierArguments set Value = 5 where ModifierId = 'CAPOU_AGHA_ADJUST_GRIEVANCES' and Name = 'Score';
+update ModifierArguments set Value = 8 where ModifierId = 'KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS' and Name = 'Amount';
+
+insert or replace into GovernorPromotionModifiers 
+	(GovernorPromotionType,								ModifierId) 
+values
+	('GOVERNOR_PROMOTION_PASHA',						'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',				'PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES'),
+	('GOVERNOR_PROMOTION_SERASKER',						'SERASKER_POP_PRODUCTION'),
+	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',				'CAPOU_AGHA_ADJUST_GRIEVANCES'),
+	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',				'GRAND_VIZIER_ADJUST_IGNORE_CULTURAL_IDENTITY'),
+	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'PASHA_BONUS_UNIT_PRODUCTION'),
+	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE'),
+	('GOVERNOR_PROMOTION_GRAND_VISIER',					'KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS'),
+	('GOVERNOR_PROMOTION_GRAND_VISIER',					'TRAIT_ADJUST_ALLIANCE_ADJUST_COMBAT_STRENGTH');
+
+insert or replace into Modifiers	
+	(ModifierId,										ModifierType)
+values
+	('SERASKER_POP_PRODUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION'),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_UNIT_COPY_TAG');
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,					Value)
+values
+	('SERASKER_POP_PRODUCTION',							'YieldType',			'YIELD_PRODUCTION'),
+	('SERASKER_POP_PRODUCTION',							'Amount',				1),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Tag',					'CLASS_CAPOU_EXTRA'),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Amount',				1);
+
+insert or replace into TypeTags	(Type,	Tag)
+select UnitType,	'CLASS_CAPOU_EXTRA' from Units 
+where (PromotionClass = 'PROMOTION_CLASS_MELEE' and Combat >= 55) or (PromotionClass = 'PROMOTION_CLASS_SIEGE' and Combat >= 45);
+
+insert or replace into Tags
+	(Tag,									Vocabulary)
+values
+	('CLASS_CAPOU_EXTRA',					'ABILITY_CLASS');
