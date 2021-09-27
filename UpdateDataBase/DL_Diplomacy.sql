@@ -54,9 +54,23 @@ insert or replace into ModifierArguments
 values
     ('STANDARD_DIPLOMACY_TRADE_RELATIONS',                          'TradeBonus',           4);
 
--- 宗教好感和异教红字
-insert or replace into ModifierArguments
-    (ModifierId,                                                    Name,                   Value)
+-- 同宗教好感+3，异教-4
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
 values
-    ('AGENDA_INTOLERANT_SAME_RELIGION',                          	'InitialValue',         9),
-	('AGENDA_INTOLERANT_ENCROACHING_RELIGION',                      'InitialValue',         -12);
+	('TRAIT_LEADER_MAJOR_CIV',				'STANDARD_DIPLOMATIC_SAME_RELIGION'),
+    ('TRAIT_LEADER_MAJOR_CIV',				'STANDARD_DIPLOMATIC_ENCROACHING_RELIGION');
+
+insert or replace into Modifiers
+	(ModifierId,								    ModifierType,                                   SubjectRequirementSetId)
+values
+	('STANDARD_DIPLOMATIC_SAME_RELIGION',			'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',    'PLAYER_SAME_RELIGION'),
+	('STANDARD_DIPLOMATIC_ENCROACHING_RELIGION',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',    'PLAYER_ENCROACHING_RELIGION');
+
+insert or replace into ModifierArguments
+	(ModifierId,								    Name,				            Value)
+values
+	('STANDARD_DIPLOMATIC_SAME_RELIGION',			'InitialValue',                 3),
+    ('STANDARD_DIPLOMATIC_SAME_RELIGION',			'SimpleModifierDescription',    'LOC_DIPLO_MODIFIER_INTOLERANT_SAME'),
+	('STANDARD_DIPLOMATIC_ENCROACHING_RELIGION',	'InitialValue',                 -4),
+    ('STANDARD_DIPLOMATIC_ENCROACHING_RELIGION',	'SimpleModifierDescription',    'LOC_DIPLO_MODIFIER_INTOLERANT_ENCROACHING');

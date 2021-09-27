@@ -77,6 +77,7 @@ values
     ("LOC_POLICY_WRESTING_AND_MANEUVERS_NAME",                                        "Wrestling and Maneuvers"),
     ("LOC_POLICY_CITY_CENTRALIZATION_NAME",                                           "City Centralization"),
     ("LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "Production and Construction Crops"),
+    ("LOC_POLICY_DRILL_NAME",                                                         "Drill"),
     ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "+4 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
@@ -123,7 +124,8 @@ values
     ("LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "All units gain +100% combat experience."),
     ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+1 [ICON_Food] Food, +15% growth rate and +3 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
     ("LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_SCIENCE] Science, +1 [ICON_CULTURE] Culture, +1 [ICON_Faith] Faith and +2 [ICON_Gold] Gold in all cities."),
-    ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls.");
+    ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls."),
+    ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -204,6 +206,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_NAME",                                        "角力与演武"),
     ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_NAME",                                           "城市中心化"),
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "生产建设兵团"),
+    ("zh_Hans_CN",  "LOC_POLICY_DRILL_NAME",                                                         "演练"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "位于海边或湖边的城市+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "位于海边或湖边的城市+4 [ICON_Production] 生产力。"),
@@ -250,4 +253,5 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "所有单位的战斗经验值+100%。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。"),
     ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技值、+1 [ICON_CULTURE] 文化值、+1 [ICON_Faith] 信仰值和+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。");
+    ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。"),
+    ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。");

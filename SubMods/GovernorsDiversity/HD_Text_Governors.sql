@@ -14,7 +14,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Gain 50% more yields for international [ICON_TradeRoute] Trade Routes from the city when player has the 'Exploration' Civic."),
     -- Victor
-    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), --Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
+    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME",                             "Logistics Supply"),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "80% discount on One-time Strategic Resource cost for units trained in the city. Accumulating Strategic resources in all cities gain an additional +2 per turn."),
@@ -76,7 +76,15 @@ values
     ("GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，from Governor's Promotion"),
     ("GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，from Governor's Promotion"),
     -- Pingala
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city.");
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city."),
+    -- Ibrahim
+    ("LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} Pasha"),
+    ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "Grants all units within 10 tiles of the City Center +8 [ICON_Strength] Combat Strength when attacking defensible districts."),
+    ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "All friendly units fighting within the city's territory gain +5 [ICON_Strength] Combat Strength. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization."),
+    ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "[ICON_Citizen] Citizens in the city produce +1 [ICON_PRODUCTION] Production."),
+    ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn, none of the owner's cities exert Loyalty pressure on your cities."),
+    ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+20% [ICON_Production] Production to all military units in the city. Receive a copy unit each time you train a melee or siege unit which is at least Renaissance era."),
+    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "When established in an allied foreign [ICON_Capital] Capital, your Alliance Points with the owner increase an extra 2 per turn. +5 [ICON_Strength] Combat Strength while you and your alliance are fighting the same tagret.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -156,6 +164,13 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，来自总督晋升"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，来自总督晋升"),
-    -- 平旮旯
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。");
-
+    -- 平伽拉
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。"),
+    -- 易卜拉欣
+    ("zh_Hans_CN",  "LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} 帕夏"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "攻击防御性区域时，市中心周围10个单元格内的所有单位+8 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "在城市领土中战斗的所有友方单位+5 [ICON_Strength] 战斗力。您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "城市中每位 [ICON_Citizen] 公民提供+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "在外国 [ICON_Capital] 首都就职时，此文明对您的 [ICON_STAT_GRIEVANCE] 不满每回合多降低1点，此文明的任何城市皆无法对您的城市施加忠诚度压力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "城市建造任意军事单位时+20%  [ICON_Production] 生产力，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "在外国盟友的 [ICON_Capital] 首都就职时，此盟友的同盟点数每回合额外增加2。与本方及本方盟友的交战方作战时+5 [ICON_Strength] 战斗力。");

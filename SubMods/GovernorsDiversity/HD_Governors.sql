@@ -877,13 +877,19 @@ values
 	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'PASHA_BONUS_UNIT_PRODUCTION'),
 	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE'),
 	('GOVERNOR_PROMOTION_GRAND_VISIER',					'KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS'),
-	('GOVERNOR_PROMOTION_GRAND_VISIER',					'TRAIT_ADJUST_ALLIANCE_ADJUST_COMBAT_STRENGTH');
+	('GOVERNOR_PROMOTION_GRAND_VISIER',					'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH');
 
 insert or replace into Modifiers	
-	(ModifierId,										ModifierType)
+	(ModifierId,										ModifierType,												SubjectRequirementSetId)
 values
-	('SERASKER_POP_PRODUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION'),
-	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_UNIT_COPY_TAG');
+	('SERASKER_POP_PRODUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLAYER_IS_OTTOMAN'),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_UNIT_COPY_TAG',			'PLAYER_IS_OTTOMAN'),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',			'MODIFIER_PLAYER_ALLIANCES_ATTACH_MODIFIER',				NULL);
+
+insert or replace into Modifiers	
+	(ModifierId,										ModifierType,									SubjectRequirementSetId,					SubjectStackLimit)
+values
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',	'MODIFIER_ALLIANCE_COMBATS_UNIT_STRENGTHS',		'ALLIES_AT_WAR_WITH_TARGET_REQUIREMENTS',	1);
 
 insert or replace into ModifierArguments
 	(ModifierId,										Name,					Value)
@@ -891,7 +897,9 @@ values
 	('SERASKER_POP_PRODUCTION',							'YieldType',			'YIELD_PRODUCTION'),
 	('SERASKER_POP_PRODUCTION',							'Amount',				1),
 	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Tag',					'CLASS_CAPOU_EXTRA'),
-	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Amount',				1);
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Amount',				1),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',			'ModifierId',			'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER'),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',	'Amount',				5);
 
 insert or replace into TypeTags	(Type,	Tag)
 select UnitType,	'CLASS_CAPOU_EXTRA' from Units 
@@ -901,3 +909,18 @@ insert or replace into Tags
 	(Tag,									Vocabulary)
 values
 	('CLASS_CAPOU_EXTRA',					'ABILITY_CLASS');
+
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('PLAYER_IS_OTTOMAN',					'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('PLAYER_IS_OTTOMAN',					'PLAYER_IS_CIVILIZATION_OTTOMAN');
+
+insert or replace into ModifierStrings
+    (ModifierId,                                				Context,    Text)
+values
+    ('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',			'Preview',  'LOC_LEADER_ALLIANCE_COMBAT_BONUS_PREVIEW_TEXT');
