@@ -55,7 +55,7 @@ values
     ('STANDARD_DIPLOMACY_TRADE_RELATIONS',                          'TradeBonus',           4);
 
 -- 同宗教好感+3，异教-4
-insert or replace into TraitModifiers
+/*insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
 	('TRAIT_LEADER_MAJOR_CIV',				'STANDARD_DIPLOMATIC_SAME_RELIGION'),

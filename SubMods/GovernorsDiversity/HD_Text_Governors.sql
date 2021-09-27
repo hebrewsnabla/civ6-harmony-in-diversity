@@ -79,12 +79,13 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city."),
     -- Ibrahim
     ("LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} Pasha"),
+    ("LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} Grand Visier"),
     ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "Grants all units within 10 tiles of the City Center +8 [ICON_Strength] Combat Strength when attacking defensible districts."),
     ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "All friendly units fighting within the city's territory gain +5 [ICON_Strength] Combat Strength. Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization."),
     ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "[ICON_Citizen] Citizens in the city produce +1 [ICON_PRODUCTION] Production."),
     ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn, none of the owner's cities exert Loyalty pressure on your cities."),
     ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+20% [ICON_Production] Production to all military units in the city. Receive a copy unit each time you train a melee or siege unit which is at least Renaissance era."),
-    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "When established in an allied foreign [ICON_Capital] Capital, your Alliance Points with the owner increase an extra 2 per turn. +5 [ICON_Strength] Combat Strength while you and your alliance are fighting the same tagret.");
+    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength while you and your alliance are fighting the same tagret. When established in an allied foreign [ICON_Capital] Capital, your Alliance Points with the owner increase an extra 2 per turn.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -168,9 +169,10 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。"),
     -- 易卜拉欣
     ("zh_Hans_CN",  "LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} 帕夏"),
+    ("zh_Hans_CN",  "LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} 大维齐尔"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "攻击防御性区域时，市中心周围10个单元格内的所有单位+8 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "在城市领土中战斗的所有友方单位+5 [ICON_Strength] 战斗力。您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "城市中每位 [ICON_Citizen] 公民提供+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "在外国 [ICON_Capital] 首都就职时，此文明对您的 [ICON_STAT_GRIEVANCE] 不满每回合多降低1点，此文明的任何城市皆无法对您的城市施加忠诚度压力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "城市建造任意军事单位时+20%  [ICON_Production] 生产力，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "在外国盟友的 [ICON_Capital] 首都就职时，此盟友的同盟点数每回合额外增加2。与本方及本方盟友的交战方作战时+5 [ICON_Strength] 战斗力。");
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "与本方及本方盟友的交战方作战时+5 [ICON_Strength] 战斗力。在外国盟友的 [ICON_Capital] 首都就职时，此盟友的同盟点数每回合额外增加2。");

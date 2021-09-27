@@ -923,4 +923,4 @@ values
 insert or replace into ModifierStrings
     (ModifierId,                                				Context,    Text)
 values
-    ('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',			'Preview',  'LOC_LEADER_ALLIANCE_COMBAT_BONUS_PREVIEW_TEXT');
+    ('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',			'Preview',  'LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT');
