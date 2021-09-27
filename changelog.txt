@@ -2693,9 +2693,11 @@ mod奇观圣彼得大教堂改为3个宗教艺术槽，填满时自动主题化�
 1. Monopoly++: Tycoons and Investors [https://steamcommunity.com/sharedfiles/filedetails/?id=2479197624].
 2. Monopoly++: Product and Corporation Adjustments [https://steamcommunity.com/sharedfiles/filedetails/?id=2479195330].
 
-【尚未完全完工】奢侈品的行业和公司效果集体重置。
+奢侈品的行业和公司效果集体重置（百科尚未更新完全）。
 完工后请查看百科内和文本描述的效果。
+适配Monopoly++的效果。
 
+[v1.0.7]
 （by 傲娇）
 修复法国奇观未建成时也为首都提供产出的问题。
 修复格鲁吉亚占领城市中城墙不提供文化和信仰产出的问题。

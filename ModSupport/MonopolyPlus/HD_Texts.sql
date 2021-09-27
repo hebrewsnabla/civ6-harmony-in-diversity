@@ -12,7 +12,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NOMONOPOLY_DESCRIPTION",      "需要“工作坊”方可购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以创建铁路和火车站来改善你的领土上的贸易和[ICON_PRODUCTION]生产。"),
     ("zh_Hans_CN",  "LOC_STATION_ADJ_PRODUCTION",                      "+{1_num} [ICON_PRODUCTION] 生产力来自相邻火车站"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_NAME",                "火车站"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_DESCRIPTION",         "Improvement built by Tycoons. May only be built in flat terrain, but may be built in tiles with Forests, Floodplains and Rainforests.Only one may be built in each city, and may not be built adjacent to another Station[NEWLINE][NEWLINE]Stations provide [ICON_PRODUCTION] Production equal to 75% the Appeal of their tile. Adjacent tiles receive Railroads instantly and +1 Appeal. Receives [ICON_TOURISM] Tourism equal to the [icon_production] Production of the tile after the discovery of Steel.[NEWLINE][NEWLINE]Domestic Trade Routes to and from this city receive +4 [ICON_PRODUCTION] Production, +4 [ICON_GOLD] Gold, +2 [ICON_FOOD] Food and +2 [ICON_CULTURE] Culture. This bonus is applied both to the Origin City as to the Destination city. This bonus is increased by 50% if the city is [ICON_POWER] Powered.[NEWLINE][NEWLINE]Increases [ICON_POWER] Power Consumption at their city by 2.");
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_DESCRIPTION",         "由大亨建造，只能建在平坦单元格或森林、雨林和泛滥平原上，一座城市只能拥有一个火车站，火车站不能与另一个火车站相邻。在所在单元格和所有相邻的可通行陆地单元格上自动创建铁路。[NEWLINE][NEWLINE]以火车站所在城市为出发或目的地的国内商路+2 [ICON_PRODUCTION] 生产力, +4 [ICON_GOLD] 金币。需要2点 [ICON_Power] 电力，如果所在城市电力充足，这些产出+50%。本城改良提供的旅游业绩+50%。");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -49,48 +49,38 @@ values
 
     ("zh_Hans_CN", 
     "LOC_PEDIA_UNITS_PAGE_UNIT_LEU_TYCOON_CHAPTER_HISTORY_PARA_5",                  
-    "在这样一个巨幅扩张的时代，围绕财富和商业行为的法规较少，环境非常适合占社会很小比例的极度富有的个人阶层的崛起。他们有能力和手段为许多人创造机会和工作，尽管社会对工人权利的重视程度较低，但歧视、剥削和低工资等问题是这个时代的特点。");
+    "在这样一个巨幅扩张的时代，围绕财富和商业行为的法规较少，环境非常适合占社会很小比例的极度富有的个人阶层的崛起。他们有能力和手段为许多人创造机会和工作，尽管社会对工人权利的重视程度较低，但歧视、剥削和低工资等问题是这个时代的特点。"),
 
--- TODO: Great People from MOD
-
--- GREAT PERSON TEXT
---==========================================================================================================================
--- INSERT OR REPLACE INTO LocalizedText
---         (Language, Tag, Text)
--- VALUES
 -- --------------------------------------------------------------------
 -- -- Basic Great Person Info
 -- --------------------------------------------------------------------
---         ("en_US", 
---         "LOC_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_NAME",                 
---         "Andrew Carnegie"),
+    ("zh_Hans_CN", 
+    "LOC_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_NAME",                 
+    "安德鲁·卡内基"),
 
 -- --------------------------------------------------------------------
 -- -- Great Person Abilities / Great Works
 -- --------------------------------------------------------------------
---         ("en_US", 
---         "LOC_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_ACTIVE",                   
---         "+1 [Icon_Charges] Charge for Tycoons.[NEWLINE]Receives a free Tycoon in this distrit's city."),
+    ("zh_Hans_CN", 
+    "LOC_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_ACTIVE",                   
+    "所有大亨+1 [Icon_Charges] 使用次数.[NEWLINE]在这个区域所属的城市中立即获得一个大亨。"),
 
 -- --------------------------------------------------------------------
 -- -- Great Person Pedia
 -- --------------------------------------------------------------------
---         -- Andrew Carnegie
---         ("en_US", 
---         "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_1",                    
---         "The Scottish-born American industrialist and philanthropist Andrew Carnegie was the leader of the American steel industry from 1873 to 1901. He donated large sums of his fortune to educational, cultural, and scientific institutions."),
+    -- Andrew Carnegie
+    ("zh_Hans_CN", 
+    "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_1",                    
+    "出生于苏格兰的美国工业家和慈善家安德鲁-卡内基是1873年至1901年美国钢铁工业的领导者。他将大量的财富捐赠给教育、文化和科学机构。"),
 
---         ("en_US", 
---         "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_2",                    
---         "Andrew Carnegie was born on November 25, 1835, in Dunfermline, Scotland, the son of William Carnegie, a weaver, and Margaret Morrison Carnegie. The invention of weaving machines replaced the work Carnegie's father did, and eventually the family was forced into poverty. In 1848 the family left Scotland and settled in Allegheny City, Pennsylvania. Carnegie's father found a job in a cotton factory, but he soon quit to return to his home handloom, making linens and trying to sell them door to door. Carnegie also worked in the cotton factory, but after his father died in 1855, his strong desire to help take care of the family pushed him to educate himself. He became an avid reader, a theatergoer, and a lover of music. Carnegie became a messenger boy for the Pittsburgh telegraph office. He later became a telegraph operator. Thomas A. Scott, superintendent of the western division of the Pennsylvania Railroad, made the eighteen-year-old Carnegie his secretary. Carnegie was soon earning enough salary to buy a house for his mother. During the Civil War (1861–65), when Scott was named assistant secretary of war in charge of transportation, Carnegie helped organize the military telegraph system. But he soon returned to Pittsburgh to take Scott's old job with the railroad."),
+    ("zh_Hans_CN", 
+    "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_2",                    
+    "安德鲁-卡内基于1835年11月25日出生在苏格兰的邓弗姆林，是织工威廉-卡内基和玛格丽特-莫里森-卡内基的儿子。织布机的发明取代了卡内基父亲所做的工作，最终，这个家庭被迫陷入贫困。1848年，他们全家离开苏格兰，在宾夕法尼亚州的阿勒格尼市定居。卡内基的父亲在一家棉纺厂找到了一份工作，但他很快就辞职回到家里的手织机上，制作亚麻布并试图挨家挨户地出售。卡内基也在棉纺厂工作，但在他的父亲于1855年去世后，他帮助照顾家庭的强烈愿望促使他自己接受教育。他成了一个狂热的读者，一个剧院的观众，以及一个音乐爱好者。卡内基成为匹兹堡电报局的一名送信员。后来他成为一名电报员。宾夕法尼亚州铁路公司西部分部的主管托马斯-A-斯科特让18岁的卡内基担任他的秘书。卡内基很快就赚到了足够的薪水，为他的母亲买了一套房子。内战期间（1861-65年），斯科特被任命为负责运输的助理战争部长，卡内基帮助组织了军事电报系统。但他很快就回到了匹兹堡，接替斯科特在铁路公司的老工作。"),
 
---         ("en_US", 
---         "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_3",                    
---         "Between 1865 and 1870 Carnegie made money through investments in several small iron mills and factories. He also traveled throughout England, selling the bonds of small United States railroads and bridge companies. Carnegie began to see that steel was eventually going to replace iron for the manufacture of rails, structural shapes, pipe, and wire. In 1873 he organized a steel rail company. The first steel furnace at Braddock, Pennsylvania, began to roll rails in 1874. Carnegie continued building by cutting prices, driving out competitors, shaking off weak partners, and putting earnings back into the company. He never went public (sold shares of his company in order to raise money). Instead he obtained capital (money) from profits—and, when necessary, from local banks—and he kept on growing, making heavy steel alone. By 1878 the company was valued at $1.25 million. In the 1880s Carnegie's purchases included a majority stake in the H. C. Frick."),
-        
---         ("en_US", 
---         "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_4",                    
---         "Company, which had vast coal lands and over one thousand ovens in Connellsville, Pennsylvania, and the Homestead mills outside of Pittsburgh, Pennsylvania. Frick became his partner and eventually chairman of the Carnegie Company. Carnegie had moved to New York City in 1867 to be close to the marketing centers for steel products; Frick stayed in Pittsburgh as the general manager. They made a good team. Behind the scenes, Carnegie planned new projects, cost controls, and the improvement of plants; Frick was the working director who watched over the mass-production programs that helped keep prices down. Carnegie spent his leisure time traveling. He also wrote several books, including Triumphant Democracy (1886), which pointed out the advantages of American life over the unequal societies of Britain and other European countries. To Carnegie access to education was the key to America's political stability and industrial accomplishments. In 1889 he published an article, ''Wealth'', stating his belief that rich men had a duty to use their money to improve the welfare of the community. Carnegie remained a bachelor until his mother died in 1886. A year later he married Louise Whitfield. They had one child together. The couple began to spend six months each year in Scotland, though Carnegie kept an eye on business developments and problems.");        
-
--- --==========================================================================================================================
--- --==========================================================================================================================
+    ("zh_Hans_CN", 
+    "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_3",                    
+    "在1865年至1870年间，卡内基通过投资几个小铁厂和工厂赚了钱。他还走遍英国，出售美国小型铁路和桥梁公司的债券。卡内基开始看到，钢铁最终将取代铁，用于制造铁轨、结构形状、管道和电线。1873年，他组织了一家钢轨公司。1874年，宾夕法尼亚州布拉多克的第一个钢炉开始轧制钢轨。卡内基通过削减价格、赶走竞争对手、甩掉弱小的合作伙伴，并将收益投入到公司中，继续进行建设。他从未上市（为了筹集资金而出售公司的股份）。相反，他从利润中获得资本（资金）——必要时，从当地银行获得——他继续发展，独自制造重钢。到1878年，该公司的价值为125万美元。在19世纪80年代，卡内基的采购包括H.C.弗里克公司的多数股份。"),
+    
+    ("zh_Hans_CN", 
+    "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_LEU_ANDREW_CARNEGIE_CHAPTER_HISTORY_PARA_4",                    
+    "该公司在宾夕法尼亚州的康奈尔斯维尔和宾夕法尼亚州匹兹堡郊外的霍姆斯特德工厂拥有大片煤田和一千多座锅炉。弗里克成为他的合伙人，并最终成为卡内基公司的董事长。卡内基于1867年搬到纽约市，以接近钢铁产品的营销中心；弗里克则留在匹兹堡担任总经理。他们是一个很好的团队。在幕后，卡内基计划新项目、成本控制和改进工厂；弗里克是工作主管，负责监督有助于降低价格的大规模生产计划。卡内基将他的闲暇时间用于旅行。他还写了几本书，包括《胜利的民主》（1886年），其中指出了美国生活相对于英国和其他欧洲国家不平等社会的优势。对卡内基来说，获得教育是美国政治稳定和工业成就的关键。1889年，他发表了一篇题为“财富”的文章，阐述了他的信念，即富人有责任用他们的钱来改善社区的福利。卡内基一直是个单身汉，直到他母亲在1886年去世。一年后，他与路易丝-惠特菲尔德结婚。他们共生了一个孩子。这对夫妇开始每年在苏格兰度过六个月的时间，卡内基一直关注着商业发展和问题。");
