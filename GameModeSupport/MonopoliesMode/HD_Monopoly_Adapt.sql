@@ -488,8 +488,16 @@ from HDMonopolyResourceEffects a, HDCounter b where Category = 'FISHERY';
 -- ====================
 -- Leugi Monopoly ++
 -- ====================
-update Units set Cost = 200, CostProgressionParam1 = 20, PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_LEU_TYCOON';
-update Units set Cost = 500, CostProgressionParam1 = 30 where UnitType = 'UNIT_LEU_INVESTOR';
+update Technologies set Description = NULL where
+    TechnologyType = 'TECH_CURRENCY' or
+    TechnologyType = 'TECH_MASS_PRODUCTION' or
+    TechnologyType = 'TECH_ECONOMICS';
+
+update Improvements set PrereqTech = 'TECH_APPRENTICESHIP' where ImprovementType = 'IMPROVEMENT_INDUSTRY';
+update Improvements set PrereqTech = 'TECH_ECONOMICS' where ImprovementType = 'IMPROVEMENT_CORPORATION';
+
+update Units set Cost = 200, CostProgressionParam1 = 20, MustPurchase = 0, PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_LEU_TYCOON';
+update Units set Cost = 500, CostProgressionParam1 = 30, MustPurchase = 0 where UnitType = 'UNIT_LEU_INVESTOR';
 
 update Building_GreatWorks set NumSlots = 3 where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT' and
     (BuildingType = 'BUILDING_PANAMA_CANAL' or
