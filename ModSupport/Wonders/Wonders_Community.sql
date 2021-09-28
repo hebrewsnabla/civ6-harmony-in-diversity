@@ -417,6 +417,28 @@ insert or replace into RequirementSetRequirements (RequirementSetId,	Requirement
 select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'REQUIRES_DISTRICT_IS_HOLY_SITE'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
+insert or replace into Requirements
+	(RequirementId,						RequirementType)
+select
+	'HD_KINKAKU_PLOT_WITHIN_4_REQ',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+
+insert or replace into RequirementArguments 
+	(RequirementId,						Name,				Value)
+select
+	'HD_KINKAKU_PLOT_WITHIN_4_REQ',		'BuildingType',		'WON_CL_KINKAKU'
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+insert or replace into RequirementArguments 
+	(RequirementId,						Name,				Value)
+select
+	'HD_KINKAKU_PLOT_WITHIN_4_REQ',		'MaxRange',			4
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+insert or replace into RequirementArguments 
+	(RequirementId,						Name,				Value)
+select
+	'HD_KINKAKU_PLOT_WITHIN_4_REQ',		'MinRange',			0
+where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
+
 -- CL_BUILDING_CN_TOWER
 delete from BuildingModifiers where BuildingType = 'CL_BUILDING_CN_TOWER' and ModifierId != 'CL_GRANT_BROADCAST';
 -- update Buildings set AdjacentDistrict = NULL where BuildingType = 'CL_BUILDING_CN_TOWER';

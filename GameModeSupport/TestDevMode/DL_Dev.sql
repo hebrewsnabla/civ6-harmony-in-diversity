@@ -18,6 +18,8 @@ update ModifierArguments set Value = 20 where ModifierId = 'ORACLE_PATRONAGE_FAI
 update ModifierArguments set Value = 20 where ModifierId = 'TO_THE_GLORY_OF_GOD_GREAT_PRESON_DISCOUNT_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_GREAT_PERSON_DISCOUNT' and Name = 'Amount';
 
+update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
+
 -- CityStates
 update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
 
@@ -55,7 +57,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERN
 
 update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
 
-update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
+update RequirementSetRequirements set RequirementId = 'HD_KINKAKU_PLOT_WITHIN_4_REQ' where RequirementId = 'KINKAKU_PLOT_WITHIN_6_REQ';
 
 -- ORSZAGHAZ
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM', Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';

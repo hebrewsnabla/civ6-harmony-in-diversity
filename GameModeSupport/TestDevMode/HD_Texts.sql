@@ -12,6 +12,7 @@ values
     ("LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                                  "+1 [ICON_Production] Production for all Speciality Districts. +1% [ICON_Production] Production for each citizen following this religion in the city. May purchase Industrial Zone district buildings with [ICON_Faith] Faith."),
     ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                         "Gain 2 [ICON_Governor] Governor promotions. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza."),
     ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                    "+2 Diplomatic Victory Points when built. Gain 1 [ICON_Governor] Governor promotions. All cities receive a +5% corresponding boost to the Type of Alliance. [NEWLINE][NEWLINE]Must be built on a River."),
+    ("LOC_WON_CL_KINKAKU_DESCRIPTION",                                        "For Holy Site districts that within 4 tiles, their [ICON_Faith] Faith adjacency bonus provides [ICON_Production] Production as well. +2 [ICON_Culture] Culture for Encampments that within 4 tiles. Must be built on a Lake tile adjacent to land."),
     ("LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                               "+1 [ICON_TradeRoute] Trade Route capacity.[NEWLINE][NEWLINE]Your [ICON_TradeRoute] Trade Routes from this city get +3 [ICON_Gold] Gold for every Bonus resource within 3 tiles of the city and in this city's territory.[NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with a Market and adjacent to [ICON_RESOURCE_CATTLE] Cattle.");
 
 --------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                              "专业化区域+1 [ICON_Production] 生产力，城市中每个信仰此宗教的居民将使 [ICON_Production] 生产力+1%，可以使用 [ICON_Faith] 信仰值购买工业区内的建筑。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                     "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                "建成时+2外交胜利点数。获得1次 [ICON_Governor] 总督升级。所有城市根据每种已结成的同盟类型获得对应的产出+5%。[NEWLINE][NEWLINE]必须修建在河边。"),
+    ("zh_Hans_CN",  "LOC_WON_CL_KINKAKU_DESCRIPTION",                                    "4个单元格内的圣地的 [ICON_Faith] 信仰值相邻加成也提供 [ICON_Production] 生产力，4个单元格内的军营+2 [ICON_Culture] 文化值。必须建在靠近陆地的湖泊单元格。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                           "[ICON_TradeRoute] 贸易路线容量+1。[NEWLINE][NEWLINE]城市领土中3个单元格以内的每个加成资源将为从此城市发源的 [ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场）和 [ICON_RESOURCE_CATTLE] 牛资源相邻的单元格上。");
 
 --------------------------------------------------------------------------------------------------------------------------------

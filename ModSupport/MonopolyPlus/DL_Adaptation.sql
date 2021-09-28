@@ -2,8 +2,7 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
-update Units set Cost = 200, CostProgressionParam1 = 20, PrereqTech = 'TECH_MASS_PRODUCTION' where UnitType = 'UNIT_LEU_TYCOON';
-
+update Units set Cost = 200, CostProgressionParam1 = 20, MustPurchase = 0, PrereqTech = 'TECH_MASS_PRODUCTION' where UnitType = 'UNIT_LEU_TYCOON';
 
 delete from Improvement_Tourism where ImprovementType = 'IMPROVEMENT_LEU_STATION';
 update Improvements set Appeal = 0, YieldFromAppeal = NULL, YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_LEU_STATION';
