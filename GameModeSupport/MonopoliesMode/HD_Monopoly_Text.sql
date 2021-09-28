@@ -30,7 +30,8 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD_NAME",              "[ICON_RESOURCE_GOLD] 黄金公司：开发新产品"),
     ("zh_Hans_CN",  "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD_SHORT_NAME",        "[ICON_RESOURCE_GOLD] 开发新的黄金产品"),
     ("zh_Hans_CN",  "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD_DESCRIPTION",       "利用 [ICON_RESOURCE_GOLD] 黄金资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",  "除提供大商人点数外，行业还将根据其改良的资源为所在的城市提供特殊加成：[NEWLINE][ICON_BULLET] 琥珀：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 柑橘：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 可可豆：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 咖啡：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 棉花：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 钻石：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 染料：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 皮草：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 石膏：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 蜂蜜：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 熏香：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 象牙：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 玉：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 大理石：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 水银：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 橄榄：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 珍珠：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 盐：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 丝绸：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 白银：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 香料：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 糖：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 茶叶：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 烟草：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 松露：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 海龟：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 鲸鱼：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 葡萄酒：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 黄金：[ICON_Gold] 金币产量+25%。");
+    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",  "除提供大商人点数外，行业还将根据其改良的资源为所在的城市提供特殊加成：");
+    -- [NEWLINE][ICON_BULLET] 琥珀：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 柑橘：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 可可豆：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 咖啡：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 棉花：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 钻石：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 染料：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 皮草：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 石膏：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 蜂蜜：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 熏香：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 象牙：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 玉：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 大理石：建造建筑时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 水银：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 橄榄：生产平民单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 珍珠：[ICON_Faith] 信仰值产量+25%。[NEWLINE][ICON_BULLET] 盐：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 丝绸：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 白银：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 香料：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 糖：城市发展+20%、+3 [ICON_Housing] 住房。[NEWLINE][ICON_BULLET] 茶叶：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 烟草：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 松露：[ICON_Gold] 金币产量+25%。[NEWLINE][ICON_BULLET] 海龟：[ICON_Science] 科技值产量+15%。[NEWLINE][ICON_BULLET] 鲸鱼：生产军事单位时+30% [ICON_Production] 生产力。[NEWLINE][ICON_BULLET] 葡萄酒：[ICON_Culture] 文化值产量+20%。[NEWLINE][ICON_BULLET] 黄金：[ICON_Gold] 金币产量+25%。
 
 -- Industrial & Corp
 --------------------------------------------------------------------------------
@@ -85,16 +86,112 @@ values
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION",       "本城渔船+1 [ICON_Food] 食物，+1 [ICON_Production] 生产力，+3 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_FISHERY_BONUS_DESCRIPTION",    "{LOC_INDUSTRY_HD_FISHERY_BONUS_DESCRIPTION}[NEWLINE]所有城市渔场+2 [ICON_Science] 科技值，港口+3 [ICON_Culture] 文化值。");
 
--- TODO: update pedia (+product effects) & create product project desc
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_CITY_GROWTH_DISCOUNT_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_MILITARY_UNIT_DISCOUNT_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_CIVILIAN_UNIT_DISCOUNT_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_BUILDING_DISCOUNT_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_FAITH_YIELD_BONUS_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_SCIENCE_YIELD_BONUS_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
+update LocalizedText
+set Text = replace(Text, "{LOC_INDUSTRY_CULTURE_YIELD_BONUS_DESCRIPTION}", "")
+where Tag like "LOC_PROJECT_CREATE_CORPORATION_PRODUCT_%_DESCRIPTION";
 
 -- Pedia
+CREATE TEMPORARY TABLE "HDResourceCategory"(
+    "ResourceType"  TEXT,
+    "Category"      TEXT
+);
+insert or replace into HDResourceCategory
+    (ResourceType,          Category)
+values
+    ('RESOURCE_SPICES',     'GROWTH'),
+    ('RESOURCE_SALT',       'GROWTH'),
+    ('RESOURCE_SUGAR',      'GROWTH'),
+    ('RESOURCE_HONEY',      'GROWTH'),
+    ('RESOURCE_INCENSE',    'FAITH'),
+    ('RESOURCE_TOBACCO',    'FAITH'),
+    ('RESOURCE_DYES',       'FAITH'),
+    ('RESOURCE_COCOA',      'GPP'),
+    ('RESOURCE_COFFEE',     'GPP'),
+    ('RESOURCE_TEA',        'GPP'),
+    ('RESOURCE_SILK',       'TRADER'),
+    ('RESOURCE_SILVER',     'TRADER'),
+    ('RESOURCE_GOLD',       'TRADER'),
+    ('RESOURCE_DIAMONDS',   'TRADER'),
+    ('RESOURCE_WINE',       'FOOD'),
+    ('RESOURCE_CITRUS',     'FOOD'),
+    ('RESOURCE_TRUFFLES',   'FOOD'),
+    -- ('RESOURCE_SUK_CAVIAR', 'FOOD'),
+    ('RESOURCE_COTTON',     'AMENITY'),
+    ('RESOURCE_FURS',       'AMENITY'),
+    ('RESOURCE_OLIVES',     'AMENITY'),
+    ('RESOURCE_MARBLE',     'WONDER'),
+    ('RESOURCE_GYPSUM',     'WONDER'),
+    ('RESOURCE_MERCURY',    'WONDER'),
+    ('RESOURCE_IVORY',      'TOURISM'),
+    ('RESOURCE_JADE',       'TOURISM'),
+    ('RESOURCE_AMBER',      'TOURISM'),
+    -- ('RESOURCE_SUK_CORAL',  'TOURISM'),
+    ('RESOURCE_TURTLES',    'FISHERY'),
+    ('RESOURCE_WHALES',     'FISHERY'),
+    -- ('RESOURCE_SUK_LOBSTER','FISHERY'),
+    ('RESOURCE_PEARLS',     'FISHERY');
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                       Text)
+values
+    ("LOC_HD_PEDIA_CATEGORY_GROWTH_NAME",       "Food Production"),
+    ("LOC_HD_PEDIA_CATEGORY_FAITH_NAME",        "Sacrifical Supply"),
+    ("LOC_HD_PEDIA_CATEGORY_GPP_NAME",          "Drinks"),
+    ("LOC_HD_PEDIA_CATEGORY_TRADER_NAME",       "Currency"),
+    ("LOC_HD_PEDIA_CATEGORY_FOOD_NAME",         "Cuisine"),
+    ("LOC_HD_PEDIA_CATEGORY_AMENITY_NAME",      "Daily Necessity"),
+    ("LOC_HD_PEDIA_CATEGORY_WONDER_NAME",       "Building Material"),
+    ("LOC_HD_PEDIA_CATEGORY_TOURISM_NAME",      "Jewelry"),
+    ("LOC_HD_PEDIA_CATEGORY_FISHERY_NAME",      "Seafood");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_GROWTH_NAME",        "食品生产类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_FAITH_NAME",         "祭祀用品类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_GPP_NAME",           "饮品类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_TRADER_NAME",        "通货类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_FOOD_NAME",          "高档食品类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_AMENITY_NAME",       "日常用品类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_WONDER_NAME",        "建筑材料类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_TOURISM_NAME",       "首饰类"),
+    ("zh_Hans_CN",  "LOC_HD_PEDIA_CATEGORY_FISHERY_NAME",       "海产类");
+
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
     (Tag,                                                                   Text)
 values
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CONTENT_TITLE",            "Industries & Corporations"),
-    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CONTENT_TITLE",            "You enjoy your luxuries, but maybe it’s time to mobilize them for profit. The Industries and Corporations mode enables you to build Industries around Luxury resources, which give particular bonuses depending on the resource, found Corporations to improve those yields, manufacture unique Products – brands that act as economic Great Works, and sold worldwide. This Mode is one that is significant in all time periods, but really gets going in the later game."),
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_1",           "You enjoy your luxuries, but maybe it’s time to mobilize them for profit. The Industries and Corporations mode enables you to build Industries around Luxury resources, which give particular bonuses depending on the resource, found Corporations to improve those yields, manufacture unique Products – brands that act as economic Great Works, and sold worldwide. This Mode is one that is significant in all time periods, but really gets going in the later game."),
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_2",           "Test Info"),
+    -- ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_1",        "Test Info"),
+    -- ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",        "Test Info"),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_1",      "After researching Economics, and after securing at least three instances of the same Luxury resource and establishing an Industry, it’s time to found a Corporation. These require an Investor instead of a Tycoon to create. Corporations can only be built on top of Industry improvements. Corporations grant special bonus for the appropriate resource to the whole country. You can name your Corporation whatever you like, or use the automated name generator!"),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",      "There can only be one Corporation for each Luxury resource in the world, but Corporations can be put 'out of business' if an opposing player manages to control more instances of the resource than the owning player. Once an opponent secures a controlling interest in another Corporation's resource, they can form their own Corporation around it, and the original owner's Corporation is removed.[NEWLINE][NEWLINE]Corporations also provide additional [ICON_TOURISM]Tourism equal to the [ICON_GOLD]Gold of their tile. This [ICON_GOLD]Gold can be enhanced by sending [icon_GreatWork_Product]Products to other cities or from any improvements that enhance the [ICON_GOLD] Gold on the Corporation's Tile."),
     -- ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3",      "For corp effects"),
@@ -108,11 +205,18 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CONTENT_TITLE",             "行业与公司"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_1",            "奢侈品让人愉悦，但现在应该用它们来盈利了。在“行业与公司”模式中，玩家可以围绕奢侈品建立行业，而行业将根据资源提供特定加成；还可以创建公司来提高这些加成，制造拥有品牌的特色产品（其作用相当于经济类巨作），并将其销往世界各地。此模式在所有时期中皆有重要作用，但会在游戏偏后期扮演更重要的角色。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_2",            "在该模式中，奢侈品被归纳为了9个类别，同种类别的奢侈品对应的行业、公司和产品的效果相同。分类如下："),
+    -- ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_1",         "Test Info"),
+    -- ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",         "Test Info"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_1",       "研究完“经济学”、拥有至少3处同一种奢侈品资源并建立行业之后，便可以创建公司了。创建公司需要投资人，而非大亨。只能在行业改良设施之上创建公司。公司能在帝国范围内提供对应资源的独特加成。您可以随意对公司进行命名，也可以使用自动名称生成器！"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",       "世界上每种奢侈品资源只对应一家公司。但如果其他玩家控制了更多的资源，达成了创建公司的条件，并创建了自己的公司，则能够将已有的公司逼到破产，原始拥有者的公司将会直接被移除。[NEWLINE][NEWLINE]公司还可提供等同于其 [ICON_Gold] 金币产出的 [ICON_TOURISM] 旅游业绩，包括放置在其他城市的同资源的 [ICON_GreatWork_Product] 产品提供的 [ICON_Gold] 金币加成，或是其他增加公司地块 [ICON_GOLD] 金币产出的效果。"),
     -- ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3",       "公司效果"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_TITLE",          "查看资源控制量"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_PARA_1",         "研究“重商主义”之后，就能看到奢侈品资源的世界总量，以及每位玩家当前的控制量。");
+
+update LocalizedText set Text = Text || 
+    (select GROUP_CONCAT("[NEWLINE][ICON_BULLET][ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME}: {LOC_HD_PEDIA_CATEGORY_"||Category||"_NAME}","") FROM HDResourceCategory)
+    where Tag = "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_2";
 
 -- Leugi Monopoly ++
 --------------------------------------------------------------------------------

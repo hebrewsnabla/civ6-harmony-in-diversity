@@ -375,6 +375,10 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateText id="Monopolies_FrontEnd_Text">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
+    </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">
       <Properties><LoadOrder>100008</LoadOrder></Properties>
@@ -1244,6 +1248,7 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
+    <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
     <File>GameModeSupport/MonopoliesMode/DiplomacyDealView_KublaiKhanVietnam_MODE.lua</File>
     <File>GameModeSupport/MonopoliesMode/GreatWorksOverview_KublaiKhanVietnam_Monopolies.lua</File>
     <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans.sql</File>
