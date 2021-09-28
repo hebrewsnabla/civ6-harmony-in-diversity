@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
+    ("LOC_BUILDING_EXHIBITION_NAME",                                  "Exhibition Center"),
+    ("LOC_BUILDING_EXHIBITION_DESCRIPTION",                           "receives +3 [ICON_Gold] Gold from each improved tile."),
     ("LOC_GREATWORK_PRODUCT_GOLD_1_NAME",                             "King Solomon's Treasure"),
     ("LOC_GREATWORK_PRODUCT_GOLD_2_NAME",                             "Longevity Hill"),
     ("LOC_GREATWORK_PRODUCT_GOLD_3_NAME",                             "Gilding Crown"),
@@ -18,6 +20,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_EXHIBITION_NAME",                                  "会展中心"),
+    ("zh_Hans_CN",  "LOC_BUILDING_EXHIBITION_DESCRIPTION",                           "本城已改良的地块+3 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_GREATWORK_PRODUCT_GOLD_1_NAME",                             "所罗门王的宝藏"),
     ("zh_Hans_CN",  "LOC_GREATWORK_PRODUCT_GOLD_2_NAME",                             "寿山艮岳"),
     ("zh_Hans_CN",  "LOC_GREATWORK_PRODUCT_GOLD_3_NAME",                             "皇冠鎏金"),

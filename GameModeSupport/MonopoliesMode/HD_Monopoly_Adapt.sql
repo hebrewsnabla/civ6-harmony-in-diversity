@@ -8,6 +8,38 @@ values  ('MONOPOLY_REQUIRED_RESOURCE_CONTROL_PERCENTAGE',           201),
         ('MONOPOLY_REQUIRED_RESOURCE_CONTROL_PERCENTAGE_MED',       201),
         ('MONOPOLY_REQUIRED_RESOURCE_CONTROL_PERCENTAGE_MAX',       201);
 
+-- New CityCenter Building
+insert or replace into Types
+    (Type,                                      Kind)
+values
+    ('BUILDING_EXHIBITION',                     'KIND_BUILDING');
+
+insert or replace into Buildings 
+    (BuildingType,          Name,                           Cost,   Description,                                        
+    PrereqTech,         PrereqDistrict,         PurchaseYield) 
+values
+    ('BUILDING_EXHIBITION', 'LOC_BUILDING_EXHIBITION_NAME', 150,    'LOC_BUILDING_EXHIBITION_DESCRIPTION',                
+    'TECH_ECONOMICS',   'DISTRICT_CITY_CENTER', 'YIELD_GOLD');
+
+insert or replace into Building_GreatWorks (BuildingType, GreatWorkSlotType, NumSlots)
+values ('BUILDING_EXHIBITION', 'GREATWORKSLOT_PRODUCT', 1);
+
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
+values
+    ('BUILDING_EXHIBITION',         'HD_EXHIBITION_IMPROVEMENT_GOLD');
+
+insert or replace into Modifiers
+    (ModifierId,                        ModifierType,                                   SubjectRequirementSetId)
+values
+    ('HD_EXHIBITION_IMPROVEMENT_GOLD',  'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',  'PLOT_IS_IMPROVED');
+
+insert or replace into ModifierArguments
+    (ModifierId,                        Name,           Value)
+values
+    ('HD_EXHIBITION_IMPROVEMENT_GOLD',  'YieldType',    'YIELD_GOLD'),
+    ('HD_EXHIBITION_IMPROVEMENT_GOLD',  'Amount',       3);
+
 -- Rewrite industry and corp effects
 create table 'HDCounter'(
     'Count' INT NOT NULL,
