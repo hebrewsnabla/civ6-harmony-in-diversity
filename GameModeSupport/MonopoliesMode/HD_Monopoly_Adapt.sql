@@ -122,7 +122,10 @@ update Improvement_YieldChanges set YieldChange = 4
 where ImprovementType = 'IMPROVEMENT_CORPORATION' and YieldType = 'YIELD_GOLD';
 
 delete from ImprovementModifiers where
-    ImprovementType = 'IMPROVEMENT_INDUSTRY' or ImprovementType = 'IMPROVEMENT_CORPORATION';
+    ImprovementType = 'IMPROVEMENT_INDUSTRY' and ModifierID like 'INDUSTRY_%';
+delete from ImprovementModifiers where
+    ImprovementType = 'IMPROVEMENT_CORPORATION' and ModifierID like 'CORPORATION_%';
+
 insert or replace into ImprovementModifiers
     (ImprovementType,           ModifierId)
 values
@@ -133,6 +136,7 @@ values
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_GPP_BONUS_POP_S'),
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_GPP_BONUS_POP_C'),
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_TRADER_BONUS'),
+    ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_TRADER_BONUS_DOMESITC'),
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_FOOD_BONUS'),
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_FOOD_BONUS_FOOD'),
     ('IMPROVEMENT_INDUSTRY',    'INDUSTRY_HD_FOOD_BONUS_CULTURE'),
@@ -156,7 +160,8 @@ values
     ('INDUSTRY_HD_FAITH_BONUS_POP',     'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',    'HD_FAITH_BONUS_REQUIREMENTS',      NULL),
     ('INDUSTRY_HD_GPP_BONUS_POP_S',     'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',    'HD_GPP_BONUS_REQUIREMENTS',        NULL),
     ('INDUSTRY_HD_GPP_BONUS_POP_C',     'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',    'HD_GPP_BONUS_REQUIREMENTS',        NULL),
-    ('INDUSTRY_HD_TRADER_BONUS',        'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL', 'HD_TRADER_BONUS_REQUIREMENTS',   NULL),
+    ('INDUSTRY_HD_TRADER_BONUS',        'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL', 'HD_TRADER_BONUS_REQUIREMENTS', NULL),
+    ('INDUSTRY_HD_TRADER_BONUS_DOMESITC', 'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC', 'HD_TRADER_BONUS_REQUIREMENTS', NULL),
     ('INDUSTRY_HD_FOOD_BONUS',          'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_AMENITY',          'HD_FOOD_BONUS_REQUIREMENTS',       NULL),
     ('INDUSTRY_HD_FOOD_BONUS_FOOD',     'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',                 'HD_FOOD_BONUS_REQUIREMENTS',       NULL),
     ('INDUSTRY_HD_FOOD_BONUS_CULTURE',  'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',                 'HD_FOOD_BONUS_REQUIREMENTS',       NULL),
@@ -187,7 +192,9 @@ values
     ('INDUSTRY_HD_GPP_BONUS_POP_C',     'YieldType',    'YIELD_CULTURE'),
     ('INDUSTRY_HD_GPP_BONUS_POP_C',     'Amount',       0.8),
     ('INDUSTRY_HD_TRADER_BONUS',        'YieldType',    'YIELD_GOLD'),
-    ('INDUSTRY_HD_TRADER_BONUS',        'Amount',       4),
+    ('INDUSTRY_HD_TRADER_BONUS',        'Amount',       5),
+    ('INDUSTRY_HD_TRADER_BONUS_DOMESITC', 'YieldType',  'YIELD_GOLD'),
+    ('INDUSTRY_HD_TRADER_BONUS_DOMESITC', 'Amount',     5),
     ('INDUSTRY_HD_FOOD_BONUS',          'Amount',       3),
     ('INDUSTRY_HD_FOOD_BONUS_FOOD',     'YieldType',    'YIELD_FOOD'),
     ('INDUSTRY_HD_FOOD_BONUS_FOOD',     'Amount',       6),
@@ -222,6 +229,7 @@ values
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GPP_BONUS_POP_S'),
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_GPP_BONUS_POP_C'),
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_TRADER_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_TRADER_BONUS_DOMESITC'),
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS'),
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS_FOOD'),
     ('IMPROVEMENT_CORPORATION', 'INDUSTRY_HD_FOOD_BONUS_CULTURE'),
@@ -243,6 +251,7 @@ values
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_FOOD_BONUS'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_FOOD_BONUS_HARBOR'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_AMENITY_BONUS'),
+    ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_AMENITY_BONUS_HOUSING'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_WONDER_BONUS'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_WONDER_BONUS_DISTRI'),
     ('IMPROVEMENT_CORPORATION', 'CORPORATION_HD_TOURISM_BONUS'),
@@ -259,6 +268,7 @@ values
     ('CORPORATION_HD_FOOD_BONUS',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',            'HD_FOOD_BONUS_REQUIREMENTS',       'DISTRICT_IS_COMMERCIAL_HUB'),
     ('CORPORATION_HD_FOOD_BONUS_HARBOR',    'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',            'HD_FOOD_BONUS_REQUIREMENTS',       'DISTRICT_IS_HARBOR'),
     ('CORPORATION_HD_AMENITY_BONUS',        'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',              'HD_AMENITY_BONUS_REQUIREMENTS',    NULL),
+    ('CORPORATION_HD_AMENITY_BONUS_HOUSING', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',          'HD_AMENITY_BONUS_REQUIREMENTS',    NULL),
     ('CORPORATION_HD_WONDER_BONUS',         'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION_MODIFIER', 'HD_WONDER_BONUS_REQUIREMENTS',   NULL),
     ('CORPORATION_HD_WONDER_BONUS_DISTRI',  'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER', 'HD_WONDER_BONUS_REQUIREMENTS',   NULL),
     ('CORPORATION_HD_TOURISM_BONUS',        'MODIFIER_PLAYER_ADJUST_TOURISM',                           'HD_TOURISM_BONUS_REQUIREMENTS',    NULL),
@@ -266,28 +276,29 @@ values
     ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',           'HD_FISHERY_BONUS_REQUIREMENTS',    'DISTRICT_IS_HARBOR');
 
 insert or replace into ModifierArguments
-    (ModifierId,                        Name,           Value)
+    (ModifierId,                            Name,           Value)
 values
-    ('CORPORATION_HD_GROWTH_BONUS',     'YieldType',    'YIELD_FOOD'),
-    ('CORPORATION_HD_GROWTH_BONUS',     'Amount',       10),
-    ('CORPORATION_HD_FAITH_BONUS',      'YieldType',    'YIELD_GOLD'),
-    ('CORPORATION_HD_FAITH_BONUS',      'Amount',       3),
-    ('CORPORATION_HD_GPP_BONUS',        'BonusType',    'GOVERNMENTBONUS_GREAT_PEOPLE'),
-    ('CORPORATION_HD_GPP_BONUS',        'Amount',       25),
-    ('CORPORATION_HD_TRADER_BONUS',     'YieldType',    'YIELD_GOLD'),
-    ('CORPORATION_HD_TRADER_BONUS',     'Amount',       8),
-    ('CORPORATION_HD_FOOD_BONUS',       'YieldType',    'YIELD_FOOD'),
-    ('CORPORATION_HD_FOOD_BONUS',       'Amount',       5),
-    ('CORPORATION_HD_FOOD_BONUS_HARBOR', 'YieldType',   'YIELD_FOOD'),
-    ('CORPORATION_HD_FOOD_BONUS_HARBOR', 'Amount',      5),
-    ('CORPORATION_HD_AMENITY_BONUS',    'Amount',       1),
-    ('CORPORATION_HD_WONDER_BONUS',     'Amount',       10),
-    ('CORPORATION_HD_WONDER_BONUS_DISTRI', 'Amount',    10),
-    ('CORPORATION_HD_TOURISM_BONUS',    'Amount',       20),
-    ('CORPORATION_HD_FISHERY_BONUS',    'YieldType',    'YIELD_SCIENCE'),
-    ('CORPORATION_HD_FISHERY_BONUS',    'Amount',       2),
-    ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'YieldType', 'YIELD_CULTURE'),
-    ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'Amount',  3);
+    ('CORPORATION_HD_GROWTH_BONUS',         'YieldType',    'YIELD_FOOD'),
+    ('CORPORATION_HD_GROWTH_BONUS',         'Amount',       10),
+    ('CORPORATION_HD_FAITH_BONUS',          'YieldType',    'YIELD_GOLD'),
+    ('CORPORATION_HD_FAITH_BONUS',          'Amount',       3),
+    ('CORPORATION_HD_GPP_BONUS',            'BonusType',    'GOVERNMENTBONUS_GREAT_PEOPLE'),
+    ('CORPORATION_HD_GPP_BONUS',            'Amount',       25),
+    ('CORPORATION_HD_TRADER_BONUS',         'YieldType',    'YIELD_GOLD'),
+    ('CORPORATION_HD_TRADER_BONUS',         'Amount',       8),
+    ('CORPORATION_HD_FOOD_BONUS',           'YieldType',    'YIELD_FOOD'),
+    ('CORPORATION_HD_FOOD_BONUS',           'Amount',       5),
+    ('CORPORATION_HD_FOOD_BONUS_HARBOR',    'YieldType',    'YIELD_FOOD'),
+    ('CORPORATION_HD_FOOD_BONUS_HARBOR',    'Amount',       5),
+    ('CORPORATION_HD_AMENITY_BONUS',        'Amount',       1),
+    ('CORPORATION_HD_AMENITY_BONUS_HOUSING', 'Amount',      2),
+    ('CORPORATION_HD_WONDER_BONUS',         'Amount',       10),
+    ('CORPORATION_HD_WONDER_BONUS_DISTRI',  'Amount',       10),
+    ('CORPORATION_HD_TOURISM_BONUS',        'Amount',       20),
+    ('CORPORATION_HD_FISHERY_BONUS',        'YieldType',    'YIELD_SCIENCE'),
+    ('CORPORATION_HD_FISHERY_BONUS',        'Amount',       2),
+    ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'YieldType',   'YIELD_CULTURE'),
+    ('CORPORATION_HD_FISHERY_BONUS_CULTURE', 'Amount',      3);
 
 delete from ResourceIndustries;
 delete from ResourceCorporations;
@@ -480,6 +491,11 @@ from HDMonopolyResourceEffects a, HDCounter b where Category = 'FISHERY';
 update Units set Cost = 200, CostProgressionParam1 = 20, PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_LEU_TYCOON';
 update Units set Cost = 500, CostProgressionParam1 = 30 where UnitType = 'UNIT_LEU_INVESTOR';
 
+update Building_GreatWorks set NumSlots = 3 where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT' and
+    (BuildingType = 'BUILDING_PANAMA_CANAL' or
+     BuildingType = 'BUILDING_STOCK_EXCHANGE' or
+     BuildingType = 'BUILDING_SEAPORT');
+
 delete from Unit_BuildingPrereqs where Unit = 'UNIT_LEU_TYCOON';
 insert or replace into Unit_BuildingPrereqs
         (Unit,                  PrereqBuilding)
@@ -491,3 +507,26 @@ insert or replace into Unit_BuildingPrereqs
 select  'UNIT_LEU_TYCOON',        CivUniqueBuildingType
 from BuildingReplaces where ReplacesBuildingType = 'BUILDING_MARKET'
 and exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+
+-- Warehouse & Container Port
+update Improvements set PrereqTech = 'TECH_ECONOMICS', RequiresAdjacentLuxury = 0 where
+    (ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE') or (ImprovementType = 'IMPROVEMENT_LEU_CONTAINER_PORT');
+
+update Improvement_ValidBuildUnits set UnitType = 'UNIT_LEU_TYCOON' where
+    (ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE') or (ImprovementType = 'IMPROVEMENT_LEU_CONTAINER_PORT');
+
+update Improvement_YieldChanges set YieldChange = 3 where YieldType = 'YIELD_PRODUCTION' and
+    ((ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE') or (ImprovementType = 'IMPROVEMENT_LEU_CONTAINER_PORT'));
+update Improvement_YieldChanges set YieldChange = 6 where YieldType = 'YIELD_GOLD' and
+    ((ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE') or (ImprovementType = 'IMPROVEMENT_LEU_CONTAINER_PORT'));
+
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE' and PrereqTech = 'TECH_PLASTICS';
+update Improvement_BonusYieldChanges set PrereqTech = 'TECH_PLASTICS' where ImprovementType = 'IMPROVEMENT_LEU_WAREHOUSE' and PrereqTech = 'TECH_SYNTHETIC_MATERIALS';
+update Improvement_BonusYieldChanges set PrereqTech = 'TECH_PLASTICS' where ImprovementType = 'IMPROVEMENT_LEU_CONTAINER_PORT' and PrereqTech = 'TECH_SYNTHETIC_MATERIALS';
+
+update ModifierArguments set Value = 4 where ModifierId = 'LEU_WAREHOUSE_TRADE_GOLD' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'LEU_WAREHOUSE_TRADE_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'LEU_CONTAINER_PORT_TRADE_GOLD' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'LEU_CONTAINER_PORT_TRADE_PRODUCTION' and Name = 'Amount';
+
+update ModifierArguments set Value = 10 where ModifierId like 'LEU_INVESTOR_CORPORATION_BOOST_%' and Name = 'Amount';

@@ -13,9 +13,18 @@ insert or replace into Improvement_Adjacencies
 values
     ('IMPROVEMENT_MINE',            'Mine_Oppidum_Production'),
     ('IMPROVEMENT_QUARRY',          'Quarry_Oppidum_Production'),
-    ('IMPROVEMENT_CAMP',            'Camp_Hippodrome_Gold'),
-	('IMPROVEMENT_BATEY',			'BATEY_Hippodrome_Culture'),
-    ('IMPROVEMENT_BATEY',			'BATEY_Late_Hippodrome_Culture');
+    ('IMPROVEMENT_CAMP',            'Camp_Hippodrome_Gold');
+
+insert or replace into Improvement_Adjacencies
+    (ImprovementType,               YieldChangeId)
+select
+    ImprovementType,                'BATEY_Hippodrome_Culture'
+from Improvements where ImprovementType = 'IMPROVEMENT_BATEY';
+insert or replace into Improvement_Adjacencies
+    (ImprovementType,               YieldChangeId)
+select
+    ImprovementType,                'BATEY_Late_Hippodrome_Culture'
+from Improvements where ImprovementType = 'IMPROVEMENT_BATEY';
 
 insert or replace into District_Adjacencies
     (DistrictType,                  YieldChangeId)

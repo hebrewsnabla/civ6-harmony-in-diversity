@@ -6,7 +6,7 @@ update Units set Cost = 200, CostProgressionParam1 = 20, PrereqTech = 'TECH_MASS
 
 
 delete from Improvement_Tourism where ImprovementType = 'IMPROVEMENT_LEU_STATION';
-update Improvements set Appeal = 0, YieldFromAppeal = NULL, YieldFromAppealPercent = 0 where ImprovementType = 'IMPROVEMENT_LEU_STATION';
+update Improvements set Appeal = 0, YieldFromAppeal = NULL, YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_LEU_STATION';
 
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_LEU_STATION' and 
     ((ModifierId like 'LEU_STATION_DOMESTIC_CULTURE_%_OTHERS') or (ModifierId like 'LEU_STATION_DOMESTIC_CULTURE_%_OTHERS_POWERED') or
@@ -32,3 +32,11 @@ insert or replace into ModifierArguments
     (ModifierId,                                                Name,                                           Value)
 values
     ('LEU_STATION_IMPROVEMENT_TOURISM',                         'Amount',                                       50);
+
+-- BUG Fixing
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where Value = 'YIELD_PRODUCION' and Name = 'YieldType';
+
+insert or ignore into RequirementSetRequirements
+		(RequirementSetId,		RequirementId)
+select	'LEU_IS_'||ResourceType||'_CORPORATION',		'REQUIRES_LEU_CORPORATION_PLOT'
+FROM ResourceCorporations;

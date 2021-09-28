@@ -74,7 +74,7 @@ update Districts set Cost = 90 where DistrictType = 'DISTRICT_HARBOR';
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_COTHON';
 
-update Districts set Cost = 100 where DistrictType = 'DISTRICT_AERODROME';
+update Districts set Cost = 150 where DistrictType = 'DISTRICT_AERODROME';
 
 update Districts set Cost = 90 where DistrictType = 'DISTRICT_AQUEDUCT';
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_BATH';
