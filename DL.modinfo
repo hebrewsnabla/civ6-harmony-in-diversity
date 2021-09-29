@@ -585,6 +585,10 @@
       <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateText id="SukOceans_mod_support_text" criteria="Suk_Oceans_Rework_Expansion2">
+      <Properties><LoadOrder>15005</LoadOrder></Properties>
+      <File>ModSupport/SukOceans/HD_Monopoly_Texts.sql</File>
+    </UpdateText>
+    <UpdateText id="SukOceans_mod_support_text" criteria="Suk_Oceans_Rework_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
@@ -1337,6 +1341,7 @@
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
     <File>ModSupport/WetLands/HD_Texts.sql</File>
     <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
+    <File>ModSupport/SukOceans/HD_Monopoly_Texts.sql</File>
     <File>ModSupport/SukOceans/HD_Texts.sql</File>
     <File>ModSupport/MonopolyPlus/DL_Adaptation.sql</File>
     <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
