@@ -2,30 +2,30 @@
 --           Ethiopia DLC          --
 -------------------------------------
 
-insert or replace into PolicyModifiers
-    (PolicyType,    ModifierId)
-values
-    ('POLICY_GOV_AUTOCRACY',    'AUTOCRACY_DIP');
+-- insert or replace into PolicyModifiers
+--     (PolicyType,    ModifierId)
+-- values
+--     ('POLICY_GOV_AUTOCRACY',    'AUTOCRACY_DIP');
 
-insert or replace into GovernmentModifiers
-    (GovernmentType,    ModifierId)
-values
-    ('GOVERNMENT_AUTOCRACY',    'AUTOCRACY_DIP');
+-- insert or replace into GovernmentModifiers
+--     (GovernmentType,    ModifierId)
+-- values
+--     ('GOVERNMENT_AUTOCRACY',    'AUTOCRACY_DIP');
 
-insert or replace into Modifiers
-    (ModifierId,        ModifierType,   SubjectRequirementSetId)
-values
-    ('AUTOCRACY_DIP',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE', 'CITY_HAS_DIP_DISTRICT');
+-- insert or replace into Modifiers
+--     (ModifierId,        ModifierType,   SubjectRequirementSetId)
+-- values
+--     ('AUTOCRACY_DIP',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE', 'CITY_HAS_DIP_DISTRICT');
+
+-- insert or replace into ModifierArguments
+--     (ModifierId,            Name,       Value)
+-- values
+--     ('AUTOCRACY_DIP',       'Amount',   2);
 
 insert or replace into RequirementSetRequirements(RequirementSetId, RequirementId)values
     ('CITY_HAS_DIP_DISTRICT',   'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into RequirementSets(RequirementSetId, RequirementSetType)values
     ('CITY_HAS_DIP_DISTRICT',   'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into ModifierArguments
-    (ModifierId,            Name,       Value)
-values
-    ('AUTOCRACY_DIP',       'Amount',   2);
 
 update Policies set Description = 'LOC_POLICY_CHARISMATIC_LEADER_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_CHARISMATIC_LEADER';
 update Policies set Description = 'LOC_POLICY_DIPLOMATIC_LEAGUE_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';

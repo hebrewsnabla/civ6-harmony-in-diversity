@@ -24,8 +24,8 @@ values
     ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "Wonder Misleads the Country"),
     ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "+20% [ICON_Production] Production toward Renaissance, Medieval, Classical, and Ancient wonders.[NEWLINE]BUT: Your cities yield -50% [ICON_GOLD] Gold."),
     -- Govs: TODO: swap the inherent and accumulate
-    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each Government Plaza and its building, Diplomatic Quarter and its building and palace in a city."),
-    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each Government Plaza and its building and palace in a city."),
+    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each building inside Government Plaza, building inside Diplomatic Quarter and palace in a city."),
+    ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each building inside Government Plaza and palace in a city."),
         -- Tier 2
     ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +10%. +10% [ICON_GOLD] Gold for cities with a garrisoned unit."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50% Influence Points. +20% [ICON_Production] Production toward units for cities with a garrisoned unit."),
@@ -153,8 +153,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "奇观误国"),
     ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+20% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少50%。"),
     -- 政体
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场区域或其中的建筑、外交区或其中的建筑，便+2所有产出。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场区域或其中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场中的建筑、外交区中的建筑，便+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场中的建筑，便+2所有产出。"),
         -- Tier 2
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50%影响力点数。拥有驻军单位的城市生产单位时+20% [ICON_Production] 生产力。"),

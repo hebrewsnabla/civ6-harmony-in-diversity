@@ -38,7 +38,15 @@ values
 insert or replace into EnglishText
     (Tag,                                               Text)
 values
+    ("LOC_PRODUCT_HD_GROWTH_BONUS_DESCRIPTION",         "+8 [ICON_Food] Food."),
+    ("LOC_PRODUCT_HD_FAITH_BONUS_DESCRIPTION",          "+5 [ICON_Faith] Faith, +6 [ICON_Gold] Gold."),
+    ("LOC_PRODUCT_HD_GPP_BONUS_DESCRIPTION",            "+3 [ICON_Science] Science, +3 [ICON_Culture] Culture."),
+    ("LOC_PRODUCT_HD_TRADER_BONUS_DESCRIPTION",         "+16 [ICON_Gold] Gold."),
+    ("LOC_PRODUCT_HD_FOOD_BONUS_DESCRIPTION",           "+4 [ICON_Food] Food, +8 [ICON_Gold] Gold."),
     ("LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "+2 [ICON_Housing] Housing, +1 [ICON_Amenities] Amenity."),
+    ("LOC_PRODUCT_HD_WONDER_BONUS_DESCRIPTION",         "+8 [ICON_Production] Production."),
+    ("LOC_PRODUCT_HD_TOURISM_BONUS_DESCRIPTION",        "+4 [ICON_Culture] Culture, extra +6 [ICON_Tourism] Tourism."),
+    ("LOC_PRODUCT_HD_FISHERY_BONUS_DESCRIPTION",        "+2 [ICON_Food] Food, +2 [ICON_Production] Production, +2 [ICON_Science] Science."),
     -- 
     ("LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "+10% Growth in the city. Your [ICON_TradeRoute] Trade Routes ending here provide +3 [ICON_Food] Food to their starting city."),
     ("LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION}[NEWLINE]+10% [ICON_Food] Food for all cities."),
@@ -64,7 +72,15 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_GROWTH_BONUS_DESCRIPTION",         "+8 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_FAITH_BONUS_DESCRIPTION",          "+5 [ICON_Faith] 信仰值，+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_GPP_BONUS_DESCRIPTION",            "+3 [ICON_Science] 科技值，+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_TRADER_BONUS_DESCRIPTION",         "+16 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_FOOD_BONUS_DESCRIPTION",           "+4 [ICON_Food] 食物，+8 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_PRODUCT_HD_AMENITY_BONUS_DESCRIPTION",        "+2 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_WONDER_BONUS_DESCRIPTION",         "+8 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_TOURISM_BONUS_DESCRIPTION",        "+4 [ICON_Culture] 文化值，额外+6 [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_PRODUCT_HD_FISHERY_BONUS_DESCRIPTION",        "+2 [ICON_Food] 食物，+2 [ICON_Production] 生产力，+2 [ICON_Science] 科技值。"),
     -- 
     ("zh_Hans_CN",  "LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION",        "本城+10%余粮，通往该城市的国内商路+3 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CORPORATION_HD_GROWTH_BONUS_DESCRIPTION",     "{LOC_INDUSTRY_HD_GROWTH_BONUS_DESCRIPTION}[NEWLINE]对所有城市+10% [ICON_Food] 食物。"),
@@ -209,10 +225,11 @@ values
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_1",           "You enjoy your luxuries, but maybe it’s time to mobilize them for profit. The Industries and Corporations mode enables you to build Industries around Luxury resources, which give particular bonuses depending on the resource, found Corporations to improve those yields, manufacture unique Products – brands that act as economic Great Works, and sold worldwide. This Mode is one that is significant in all time periods, but really gets going in the later game."),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_WELCOME_PARA_2",           "In this Mode, luxuries are categorized into 9 classes, and there is no difference between effects of Industries, Corporations and Products of the same class of luxury. The classfication is (unlisted luxuries are classified as Daily Necessity as default):"),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_1",        "Once a civilization has improved two of the same type of Luxury resource and has completed the Apprenticeship technology they have the opportunity to establish an Industry around that resource using Tycoons. Resources owned by city-states also count toward this requirement if the player is suzerain of the city-state. This is done by using a Tycoon’s charge on any one of the Luxury resources. Only one Industry is allowed in a city at a time, and a player can have at most one Industry of one luxury resource."),
-    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",        "Industries usually provides benefits to the city, the effects of Industries are based on the category of the resource, the effects of each category are summarized below:"),
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",        "Industries usually provides benefits to the city, the benefits of Industries are based on the category of the resource, which are summarized below:"),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_1",      "After researching Economics, and after securing at least three instances of the same Luxury resource and establishing an Industry, it’s time to found a Corporation. These require an Investor instead of a Tycoon to create. Corporations can only be built on top of Industry improvements. Corporations grant special bonus for the appropriate resource to the whole country. You can name your Corporation whatever you like, or use the automated name generator!"),
-    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",      "There can only be one Corporation for each Luxury resource in the world, but Corporations can be put 'out of business' if an opposing player manages to control more instances of the resource than the owning player. Once an opponent secures a controlling interest in another Corporation's resource, they can form their own Corporation around it, and the original owner's Corporation is removed.[NEWLINE][NEWLINE]Corporations also provide additional [ICON_TOURISM]Tourism equal to the [ICON_GOLD]Gold of their tile. This [ICON_GOLD]Gold can be enhanced by sending [icon_GreatWork_Product]Products to other cities or from any improvements that enhance the [ICON_GOLD] Gold on the Corporation's Tile."),
-    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3",      "Corporations usually provides benefits to the whole empire, the effects of Corporations are based on the category of the resource, the effects of each category are summarized below:"),
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",      "There can only be one Corporation for each Luxury resource in the world, but Corporations can be put 'out of business' if an opposing player manages to control more instances of the resource than the owning player. Once an opponent secures a controlling interest in another Corporation's resource, they can form their own Corporation around it, and the original owner's Corporation is removed. Corporations also provide additional [ICON_TOURISM] Tourism equal to the [ICON_GOLD] Gold of their tile."), -- This [ICON_GOLD]Gold can be enhanced by sending [icon_GreatWork_Product]Products to other cities or from any improvements that enhance the [ICON_GOLD] Gold on the Corporation's Tile."
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3",      "Corporations usually provides benefits to the whole empire, the benefits of Corporations are based on the category of the resource, which are summarized below:"),
+    ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_PRODUCTS_PARA_1",          "Once you’ve established a Corporation around a specific luxury resource, you can make a unique [ICON_GreatWork_Product] Product – a brand. These are similar to Great Works, but instead of being housed in museums, they are stored in new Great Work slots in Stock Exchange, Seaport or other buildings. You can move your [ICON_GreatWork_Product] Product to any city you like with the appropriate Great Work slot, A [ICON_GreatWork_Product] Product placed outside of its origin will provide +1 [ICON_Gold] Gold for the corresponding corporation tile. the yields of Products are based on the category of the resource, which are summarized below:"), 
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_TITLE",         "Monitor Resource Control"),
     ("LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_PARA_1",        "Once you research Mercantilism, you will be able to see the total number of Luxury resources in the world, as well as what percentage each player currently controls.");
 
@@ -227,8 +244,9 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_1",         "文明改良2处同类型的奢侈品资源，并解锁“学徒”科技后，即可由大亨围绕该资源建立行业。如玩家是城邦的宗主国，则城邦所拥有的资源也将纳入计算。方法是在任意该类奢侈品资源上使用大亨的建造次数建造。一个城市中同时只能存在一个行业，且玩家只能建立一个同种行业。"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_INDUSTRIES_PARA_2",         "行业往往提供本城加成，按照其对应奢侈的分类提供加成，9种类别的行业的加成如下："),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_1",       "研究完“经济学”、拥有至少3处同一种奢侈品资源并建立行业之后，便可以创建公司了。创建公司需要投资人，而非大亨。只能在行业改良设施之上创建公司。公司能在帝国范围内提供对应资源的独特加成。您可以随意对公司进行命名，也可以使用自动名称生成器！"),
-    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",       "世界上每种奢侈品资源只对应一家公司。但如果其他玩家控制了更多的资源，达成了创建公司的条件，并创建了自己的公司，则能够将已有的公司逼到破产，原始拥有者的公司将会直接被移除。[NEWLINE][NEWLINE]公司还可提供等同于其 [ICON_Gold] 金币产出的 [ICON_TOURISM] 旅游业绩，包括放置在其他城市的同资源的 [ICON_GreatWork_Product] 产品提供的 [ICON_Gold] 金币加成，或是其他增加公司地块 [ICON_GOLD] 金币产出的效果。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_2",       "世界上每种奢侈品资源只对应一家公司。但如果其他玩家控制了更多的资源，达成了创建公司的条件，并创建了自己的公司，则能够将已有的公司逼到破产，原始拥有者的公司将会直接被移除。公司还可提供等同于其 [ICON_Gold] 金币产出的 [ICON_TOURISM] 旅游业绩。"), --或是其他增加公司地块 [ICON_GOLD] 金币产出的效果。
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3",       "公司往往提供全国范围内的加成，按照其对应奢侈的分类提供加成，9种类别的公司的加成如下："),
+    ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_PRODUCTS_PARA_1",           "围绕特定奢侈品资源建立公司后，即可通过完成项目开发拥有品牌的 [ICON_GreatWork_Product] 产品。 [ICON_GreatWork_Product] 产品类似于巨作，但不是保存在博物馆中，而是保存在“证券交易所”或“码头”等的产品槽位中。您可以将 [ICON_GreatWork_Product] 产品移至拥有对应巨作槽位的任意城市，放在产地以外的 [ICON_GreatWork_Product] 产品会为对应种类的奢侈品公司单元格提供+1 [ICON_Gold] 金币。产品按照其对应奢侈的分类提供产出加成，除了通用的6点 [ICON_Tourism] 旅游业绩外，9种类别的产品的加成如下："),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_TITLE",          "查看资源控制量"),
     ("zh_Hans_CN",  "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_MONOPOLIES_PARA_1",         "研究“重商主义”之后，就能看到奢侈品资源的世界总量，以及每位玩家当前的控制量。");
 
@@ -243,6 +261,10 @@ update LocalizedText set Text = Text ||
 update LocalizedText set Text = Text || 
     (select GROUP_CONCAT("[NEWLINE][ICON_BULLET]{LOC_HD_PEDIA_CATEGORY_"||Category||"_NAME}: [NEWLINE]{LOC_CORPORATION_HD_"||Category||"_BONUS_DESCRIPTION}","") FROM HDResourceCategoryClasses)
     where Tag = "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_CORPORATIONS_PARA_3";
+
+update LocalizedText set Text = Text || 
+    (select GROUP_CONCAT("[NEWLINE][ICON_BULLET]{LOC_HD_PEDIA_CATEGORY_"||Category||"_NAME}: {LOC_PRODUCT_HD_"||Category||"_BONUS_DESCRIPTION}","") FROM HDResourceCategoryClasses)
+    where Tag = "LOC_PEDIA_CONCEPTS_PAGE_MONOPOLIES_CHAPTER_PRODUCTS_PARA_1";
 
 -- Leugi Monopoly ++
 --------------------------------------------------------------------------------

@@ -691,7 +691,7 @@ insert or replace into ModifierArguments
 	(ModifierId,								Name,				Value)
 values
 	('TRAIT_GREAT_PERSON_DISCOUNT',				'YieldType',		'YIELD_FAITH'),
-	('TRAIT_GREAT_PERSON_DISCOUNT',				'Amount',			6),
+	('TRAIT_GREAT_PERSON_DISCOUNT',				'Amount',			8),
 	('TRAIT_CAN_PURCHASE_HOLYSITE_BUILDING',	'DistrictType',		'DISTRICT_HOLY_SITE'),
 	('TRAIT_CAN_PURCHASE_INDUSTRIAL_BUILDING',	'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
 	('TRAIT_TUNDRA_DISTRICT_FOOD',				'YieldType',		'YIELD_FOOD'),

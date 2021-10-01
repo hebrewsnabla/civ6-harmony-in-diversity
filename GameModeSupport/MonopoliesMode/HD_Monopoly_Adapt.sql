@@ -356,7 +356,7 @@ insert or replace into HDResourceProducts
     (ResourceType,  ResourceEffect, ResourceEffectTExt)
 select
     ResourceType,   ProductEffect,  'LOC_'||ProductEffect||'_DESCRIPTION'
-from HDMonopolyResourceEffects;
+from HDMonopolyResourceEffects where ProductEffect != NULL;
 
 -- ====================
 -- Requirements
@@ -522,8 +522,8 @@ from HDMonopolyResourceEffects a, HDCounter b where Category = 'FISHERY';
 -- ====================
 update Technologies set Description = NULL where
     TechnologyType = 'TECH_CURRENCY' or
-    TechnologyType = 'TECH_MASS_PRODUCTION' or
-    TechnologyType = 'TECH_ECONOMICS';
+    TechnologyType = 'TECH_MASS_PRODUCTION';
+    -- or TechnologyType = 'TECH_ECONOMICS';
 
 update Improvements set PrereqTech = 'TECH_APPRENTICESHIP' where ImprovementType = 'IMPROVEMENT_INDUSTRY';
 -- update Improvements set PrereqTech = 'TECH_ECONOMICS' where ImprovementType = 'IMPROVEMENT_CORPORATION';

@@ -38,6 +38,9 @@ update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSU
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
 update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
 
+-- Great person poinst
+update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
+
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_DESTINATION';

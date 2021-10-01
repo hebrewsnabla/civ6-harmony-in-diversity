@@ -4,6 +4,9 @@
 
 -- Minor Civs, City states
 
+-- ANTANANARIVO
+update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
+
 -- Valletta
 -- insert or replace into TraitModifiers 
 -- 	(TraitType,						ModifierId)

@@ -697,25 +697,25 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and (
  or ModifierId = 'CONSULATE_TIER1'
  or ModifierId = 'CHANCERY_TIER2');
 
-insert or replace into PolicyModifiers
-	(PolicyType,	ModifierId)
-values
-	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_GOV');
+-- insert or replace into PolicyModifiers
+-- 	(PolicyType,	ModifierId)
+-- values
+-- 	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_GOV');
 
-insert or replace into GovernmentModifiers
-	(GovernmentType,	ModifierId)
-values
-	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_GOV');
+-- insert or replace into GovernmentModifiers
+-- 	(GovernmentType,	ModifierId)
+-- values
+-- 	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_GOV');
 
-insert or replace into Modifiers
-	(ModifierId,		ModifierType,	SubjectRequirementSetId)
-values
-	('AUTOCRACY_GOV',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',	'CITY_HAS_GOV_DISTRICT');
+-- insert or replace into Modifiers
+-- 	(ModifierId,		ModifierType,	SubjectRequirementSetId)
+-- values
+-- 	('AUTOCRACY_GOV',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',	'CITY_HAS_GOV_DISTRICT');
 
-insert or replace into ModifierArguments
-	(ModifierId, 			Name, 		Value)
-values
-	('AUTOCRACY_GOV',		'Amount',	2);
+-- insert or replace into ModifierArguments
+-- 	(ModifierId, 			Name, 		Value)
+-- values
+-- 	('AUTOCRACY_GOV',		'Amount',	2);
 
 --By 利牙菠萝 君主制及传承效果调整
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';

@@ -65,10 +65,10 @@ values
 	('TRAIT_PRESERVE_VALID_FOREST',				'DistrictType',	'DISTRICT_PRESERVE'),
 	('TRAIT_PRESERVE_VALID_FOREST',				'FeatureType',	'FEATURE_FOREST'),
 	('TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT',	'YieldType',	'YIELD_FAITH'),
-	('TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT',	'Amount',		40),
+	('TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT',	'Amount',		20),
 	('TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT',	'YieldType',	'YIELD_GOLD'),
-	('TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT',	'Amount',		40);
-update ModifierArguments set Value = 15 where ModifierId = 'ORACLE_PATRONAGE_FAITH_DISCOUNT' and Name = 'Amount';
+	('TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT',	'Amount',		20);
+update ModifierArguments set Value = 20 where ModifierId = 'ORACLE_PATRONAGE_FAITH_DISCOUNT' and Name = 'Amount';
 
 create table 'PopulationMaintenance'(
 	'Pop' Int NOT NULL,
