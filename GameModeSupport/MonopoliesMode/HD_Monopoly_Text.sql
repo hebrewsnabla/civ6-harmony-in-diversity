@@ -272,6 +272,7 @@ update LocalizedText set Text = Text ||
 insert or replace into EnglishText
     (Tag,                                               Text)
 values
+    ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",          "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production. Unlocks ability to create Industries."),
     ("LOC_IMPROVEMENT_INDUSTRY_DESCRIPTION",            "An industry dedicated to a specific Luxury Resource, provides a unique benefit to its city."),
     ("LOC_IMPROVEMENT_LEU_WAREHOUSE_DESCRIPTION",       "Unlocks the Tycoon ability to construct a Warehouse.[NEWLINE][NEWLINE]Must be built at a land tile in the territory of another civilization or City-State with whom you have Open Borders. Only one may be built in each city.[NEWLINE][NEWLINE]+10 [ICON_GOLD] Gold to any Corporation matching a Luxury Resource adjacent to the Warehouse. +4 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production to International [ICON_TRADEROUTE] Trade Routes to this city for any civilization. +1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production to International [ICON_TRADEROUTE] Trade Routes to this city for every Corporation owned by the origin Civilization."),
     ("LOC_IMPROVEMENT_LEU_CONTAINER_PORT_DESCRIPTION",  "Unlocks the Tycoon ability to construct a Container Port.[NEWLINE][NEWLINE]Must be built at a coastal tile in the territory of another civilization or City-State with whom you have Open Borders. Only one may be built in each city.[NEWLINE][NEWLINE]+10 [ICON_GOLD] Gold to any Corporation matching a Luxury Resource adjacent to the Warehouse. +4 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production to International [ICON_TRADEROUTE] Trade Routes to this city for any civilization. +1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production to International [ICON_TRADEROUTE] Trade Routes to this city for every Corporation owned by the origin Civilization."),
@@ -284,6 +285,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
     ("zh_Hans_CN",  "LOC_POWER_REQUIREMENT_MISC",                      "其他消耗来源"),
+    ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",          "矿山和采石场改良设施的 [ICON_Production] 生产力+1。解锁建立行业的能力。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_INDUSTRY_DESCRIPTION",            "致力于一种特定奢侈品资源的行业，能为其所在城市带来独特加成。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_WAREHOUSE_NAME",              "仓库"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_WAREHOUSE_DESCRIPTION",       "解锁大亨建造仓库的能力。[NEWLINE][NEWLINE]只能在其他文明或城邦对你开放边境时建立在其境内的陆地单元格上。一座城市只能建造一个。[NEWLINE][NEWLINE]相邻仓库的奢侈资源对应的公司地块+10 [ICON_Gold] 金币。任何文明通往此城市的商路+4 [ICON_Gold] 金币和+1 [ICON_PRODUCTION] 生产力。建造该仓库的文明每拥有一个公司，通往此城市的商路便+1 [ICON_Gold] 金币和+1 [ICON_PRODUCTION] 生产力。"),

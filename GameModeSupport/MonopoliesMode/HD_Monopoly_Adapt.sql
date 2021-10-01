@@ -525,7 +525,7 @@ update Technologies set Description = NULL where
     TechnologyType = 'TECH_MASS_PRODUCTION';
     -- or TechnologyType = 'TECH_ECONOMICS';
 
-update Improvements set PrereqTech = 'TECH_APPRENTICESHIP' where ImprovementType = 'IMPROVEMENT_INDUSTRY';
+-- update Improvements set PrereqTech = 'TECH_APPRENTICESHIP' where ImprovementType = 'IMPROVEMENT_INDUSTRY';
 -- update Improvements set PrereqTech = 'TECH_ECONOMICS' where ImprovementType = 'IMPROVEMENT_CORPORATION';
 
 update Units set Cost = 200, CostProgressionParam1 = 20, MustPurchase = 0, PrereqTech = 'TECH_APPRENTICESHIP' where UnitType = 'UNIT_LEU_TYCOON';
