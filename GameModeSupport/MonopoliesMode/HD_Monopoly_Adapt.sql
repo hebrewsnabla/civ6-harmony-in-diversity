@@ -356,7 +356,7 @@ insert or replace into HDResourceProducts
     (ResourceType,  ResourceEffect, ResourceEffectTExt)
 select
     ResourceType,   ProductEffect,  'LOC_'||ProductEffect||'_DESCRIPTION'
-from HDMonopolyResourceEffects where ProductEffect != NULL;
+from HDMonopolyResourceEffects where ProductEffect != 'NULL';
 
 -- ====================
 -- Requirements
