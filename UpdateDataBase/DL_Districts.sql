@@ -94,17 +94,21 @@ update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_WATER_STRE
 -- Canal
 update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
 -- Harbor
-update Districts set PrereqTech = 'TECH_SAILING' where
-	DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_COTHON' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+update Districts set PrereqTech = 'TECH_SAILING' 
+	where DistrictType = 'DISTRICT_HARBOR' 
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR');
 -- Commercial hub
-update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' where
-	DistrictType = 'DISTRICT_COMMERCIAL_HUB' or DistrictType = 'DISTRICT_SUGUBA';
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' 
+	where DistrictType = 'DISTRICT_COMMERCIAL_HUB' 
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB');
 -- Industrial Zone
-update Districts set PrereqTech = 'TECH_IRON_WORKING' where
-	DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' or DistrictType = 'DISTRICT_HANSA';
+update Districts set PrereqTech = 'TECH_IRON_WORKING' 
+	where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' 
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE');
 -- WATER_ENTERTAINMENT_COMPLEX
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
-	DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' 
+	where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'  
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
 update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
 	DistrictType = 'DISTRICT_NEIGHBORHOOD';
 -- update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
@@ -354,3 +358,46 @@ insert or replace into ModifierArguments
 values
 	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',	'Amount',	2);
 
+--support for ud
+--citizen
+update Districts set CitizenSlots = 1 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces 
+where CivUniqueDistrictType != 'DISTRICT_SEOWON'
+    and (ReplacesDistrictType = 'DISTRICT_CAMPUS'
+ 	or ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'
+ 	or ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'
+ 	or ReplacesDistrictType = 'DISTRICT_HARBOR'
+ 	or ReplacesDistrictType = 'DISTRICT_HOLY_SITE'
+ 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
+ 	or ReplacesDistrictType = 'DISTRICT_THEATER'));
+
+update Districts set CitizenSlots = 5 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
+
+insert or ignore into District_CitizenGreatPersonPoints (DistrictType,	GreatPersonClassType,	PointsPerTurn)
+select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn from District_CitizenGreatPersonPoints a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType;
+
+insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
+select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType;
+
+--adjacendy
+insert or ignore into District_Adjacencies  (DistrictType,	YieldChangeId)
+select b.CivUniqueDistrictType,	a.YieldChangeId from District_Adjacencies a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType 
+	and b.CivUniqueDistrictType != 'DISTRICT_COTHON' 
+	and b.CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' 
+	and b.CivUniqueDistrictType != 'DISTRICT_OBSERVATORY' 
+	and b.CivUniqueDistrictType != 'DISTRICT_SEOWON' 
+	and b.CivUniqueDistrictType != 'DISTRICT_OPPIDUM' 
+	and b.CivUniqueDistrictType != 'DISTRICT_HANSA';
+
+--district modifiers
+insert or ignore into DistrictModifiers   (DistrictType,	ModifierId)
+select b.CivUniqueDistrictType,	a.ModifierId from DistrictModifiers a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType 
+	and b.CivUniqueDistrictType != 'DISTRICT_COTHON' 
+	and b.CivUniqueDistrictType != 'DISTRICT_HANSA' 
+	and b.CivUniqueDistrictType != 'DISTRICT_IKANDA'
+	and b.CivUniqueDistrictType != 'DISTRICT_BATH';
