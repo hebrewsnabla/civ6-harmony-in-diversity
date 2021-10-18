@@ -456,15 +456,6 @@
       <File>Assets/CityStates/CivBaikonur_200.dds</File>
       <File>Assets/CityStates/CivBaikonur_256.dds</File>
     </ImportFiles>
-    <ImportFiles id="HD_Assets" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
-      <File>Assets/Monopoly/exhibition_32.dds</File>
-      <File>Assets/Monopoly/exhibition_38.dds</File>
-      <File>Assets/Monopoly/exhibition_50.dds</File>
-      <File>Assets/Monopoly/exhibition_80.dds</File>
-      <File>Assets/Monopoly/exhibition_128.dds</File>
-      <File>Assets/Monopoly/exhibition_256.dds</File>
-    </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
       <Properties><LoadOrder>2</LoadOrder></Properties>
@@ -1097,11 +1088,6 @@
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
     </UpdateText>
-    <ImportFiles id="Monopolies_UI" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/DiplomacyDealView_KublaiKhanVietnam_MODE.lua</File>  <!-- will be overwrite by Better Deal Window -->
-      <File>GameModeSupport/MonopoliesMode/GreatWorksOverview_KublaiKhanVietnam_Monopolies.lua</File>
-    </ImportFiles>
     <!-- Barbarian Clans -->
     <UpdateDatabase id="BarbarianClansMode" criteria="BarbarianClans_Mode_Expansion2">
       <Properties><LoadOrder>16052</LoadOrder></Properties>
@@ -1621,12 +1607,5 @@
     <File>Assets/CityStates/CivBaikonur_128.dds</File>
     <File>Assets/CityStates/CivBaikonur_200.dds</File>
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
-    <!-- Monopoly -->
-    <File>Assets/Monopoly/exhibition_32.dds</File>
-    <File>Assets/Monopoly/exhibition_38.dds</File>
-    <File>Assets/Monopoly/exhibition_50.dds</File>
-    <File>Assets/Monopoly/exhibition_80.dds</File>
-    <File>Assets/Monopoly/exhibition_128.dds</File>
-    <File>Assets/Monopoly/exhibition_256.dds</File>
   </Files>
 </Mod>
