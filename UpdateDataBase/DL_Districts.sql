@@ -378,6 +378,7 @@ insert or ignore into District_CitizenGreatPersonPoints (DistrictType,	GreatPers
 select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn from District_CitizenGreatPersonPoints a, DistrictReplaces b
 where a.DistrictType = b.ReplacesDistrictType;
 
+-- NOTE: Might not change the yield if they have own setting.
 insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
 select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
 where a.DistrictType = b.ReplacesDistrictType;

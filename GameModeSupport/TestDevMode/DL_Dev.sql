@@ -2,6 +2,7 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+update ModifierArguments set Value = 150 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
 
 -- Policies
 update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_HIGHWAY' or PolicyType = 'POLICY_SILK_ROAD';
@@ -10,60 +11,60 @@ update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY
 -- update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 -- update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
-update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
+-- update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
 
 update RequirementSetRequirements set RequirementId = 'HD_KINKAKU_PLOT_WITHIN_4_REQ' where RequirementId = 'KINKAKU_PLOT_WITHIN_6_REQ';
 
 -- ORSZAGHAZ
-update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM', Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
-delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and ModifierId = 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN';
-insert or replace into BuildingModifiers (BuildingType, ModifierId)values   ('BUILDING_ORSZAGHAZ',  'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS');
+-- update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_NATIONALISM', Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
+-- delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and ModifierId = 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN';
+-- insert or replace into BuildingModifiers (BuildingType, ModifierId)values   ('BUILDING_ORSZAGHAZ',  'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS');
 
-insert or replace into AllianceEffects (LevelRequirement,  AllianceType,    ModifierID)
-select distinct 1,   AllianceType,  'ORSZAGHAZ_' || AllianceType from AllianceEffects;
+-- insert or replace into AllianceEffects (LevelRequirement,  AllianceType,    ModifierID)
+-- select distinct 1,   AllianceType,  'ORSZAGHAZ_' || AllianceType from AllianceEffects;
 
-insert or replace into Modifiers    (ModifierId,    ModifierType,   SubjectRequirementSetId)
-select distinct 'ORSZAGHAZ_' || AllianceType,    'MODIFIER_ALLIANCES_PLAYERS_ATTACH_MODIFIER',   'PLAYER_HAS_BUILDING_ORSZAGHAZ' from AllianceEffects;
+-- insert or replace into Modifiers    (ModifierId,    ModifierType,   SubjectRequirementSetId)
+-- select distinct 'ORSZAGHAZ_' || AllianceType,    'MODIFIER_ALLIANCES_PLAYERS_ATTACH_MODIFIER',   'PLAYER_HAS_BUILDING_ORSZAGHAZ' from AllianceEffects;
 
-insert or replace into Modifiers    (ModifierId,    ModifierType)
-select distinct 'ORSZAGHAZ_' || AllianceType || '_MODIFIER',    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' from AllianceEffects;
+-- insert or replace into Modifiers    (ModifierId,    ModifierType)
+-- select distinct 'ORSZAGHAZ_' || AllianceType || '_MODIFIER',    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' from AllianceEffects;
 
-insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
-select distinct 'ORSZAGHAZ_' || AllianceType,  'ModifierId',  'ORSZAGHAZ_' || AllianceType || '_MODIFIER' from AllianceEffects;
+-- insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
+-- select distinct 'ORSZAGHAZ_' || AllianceType,  'ModifierId',  'ORSZAGHAZ_' || AllianceType || '_MODIFIER' from AllianceEffects;
 
-insert or replace into ModifierArguments    
-    (ModifierId,                                 Name,          Value)
-values 
-    ('ORSZAGHAZ_ALLIANCE_CULTURAL_MODIFIER',     'YieldType',   'YIELD_CULTURE'),
-    ('ORSZAGHAZ_ALLIANCE_CULTURAL_MODIFIER',     'Amount',      5),
-    ('ORSZAGHAZ_ALLIANCE_ECONOMIC_MODIFIER',     'YieldType',   'YIELD_GOLD'),
-    ('ORSZAGHAZ_ALLIANCE_ECONOMIC_MODIFIER',     'Amount',      5),
-    ('ORSZAGHAZ_ALLIANCE_MILITARY_MODIFIER',     'YieldType',   'YIELD_PRODUCTION'),
-    ('ORSZAGHAZ_ALLIANCE_MILITARY_MODIFIER',     'Amount',      5),
-    ('ORSZAGHAZ_ALLIANCE_RELIGIOUS_MODIFIER',    'YieldType',   'YIELD_FAITH'),
-    ('ORSZAGHAZ_ALLIANCE_RELIGIOUS_MODIFIER',    'Amount',      5),
-    ('ORSZAGHAZ_ALLIANCE_RESEARCH_MODIFIER',     'YieldType',   'YIELD_SCIENCE'),
-    ('ORSZAGHAZ_ALLIANCE_RESEARCH_MODIFIER',     'Amount',      5);
+-- insert or replace into ModifierArguments    
+--     (ModifierId,                                 Name,          Value)
+-- values 
+--     ('ORSZAGHAZ_ALLIANCE_CULTURAL_MODIFIER',     'YieldType',   'YIELD_CULTURE'),
+--     ('ORSZAGHAZ_ALLIANCE_CULTURAL_MODIFIER',     'Amount',      5),
+--     ('ORSZAGHAZ_ALLIANCE_ECONOMIC_MODIFIER',     'YieldType',   'YIELD_GOLD'),
+--     ('ORSZAGHAZ_ALLIANCE_ECONOMIC_MODIFIER',     'Amount',      5),
+--     ('ORSZAGHAZ_ALLIANCE_MILITARY_MODIFIER',     'YieldType',   'YIELD_PRODUCTION'),
+--     ('ORSZAGHAZ_ALLIANCE_MILITARY_MODIFIER',     'Amount',      5),
+--     ('ORSZAGHAZ_ALLIANCE_RELIGIOUS_MODIFIER',    'YieldType',   'YIELD_FAITH'),
+--     ('ORSZAGHAZ_ALLIANCE_RELIGIOUS_MODIFIER',    'Amount',      5),
+--     ('ORSZAGHAZ_ALLIANCE_RESEARCH_MODIFIER',     'YieldType',   'YIELD_SCIENCE'),
+--     ('ORSZAGHAZ_ALLIANCE_RESEARCH_MODIFIER',     'Amount',      5);
 
-insert or replace into Requirements
-    (RequirementId,                             RequirementType)
-values
-    ('REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ',  'REQUIREMENT_PLAYER_HAS_BUILDING');
+-- insert or replace into Requirements
+--     (RequirementId,                             RequirementType)
+-- values
+--     ('REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ',  'REQUIREMENT_PLAYER_HAS_BUILDING');
 
-insert or replace into RequirementArguments
-    (RequirementId,                             Name,               Value)
-values
-    ('REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ',  'BuildingType',     'BUILDING_ORSZAGHAZ');
+-- insert or replace into RequirementArguments
+--     (RequirementId,                             Name,               Value)
+-- values
+--     ('REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ',  'BuildingType',     'BUILDING_ORSZAGHAZ');
 
-insert or replace into RequirementSets
-    (RequirementSetId,                                 RequirementSetType)
-values
-    ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSets
+--     (RequirementSetId,                                 RequirementSetType)
+-- values
+--     ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                                 RequirementId)
-values
-    ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ');
+-- insert or replace into RequirementSetRequirements
+--     (RequirementSetId,                                 RequirementId)
+-- values
+--     ('PLAYER_HAS_BUILDING_ORSZAGHAZ',                  'REQUIRES_PLAYER_HAS_BUILDING_ORSZAGHAZ');
 
 --------------------------------------------------------------------------------------------------------------------------------
 -- dev used for v1.0.7

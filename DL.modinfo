@@ -16,8 +16,8 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.0</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.0.7.</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.0.7。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.0.8.</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.0.8。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.0, the first stable version.</en_US>
@@ -147,10 +147,20 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>01159f41-7ca0-4181-84cf-2f2c912edfdd</ModInUse><!-- STXP -->
     </Criteria>
+    <!-- District Expansions begin -->
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
+    <Criteria id="Aqueduct_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1373373a-f34d-4041-a0f8-49e2004e19a1</ModInUse>
+    </Criteria>
+    <Criteria id="Industry_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
+    </Criteria>
+    <!-- District Expansions end -->
     <Criteria id="WatchTower_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
@@ -553,6 +563,28 @@
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
+      <!-- District Expansion begin -->
+    <UpdateDatabase id="DistrictExpansion_Removes" criteria="Expansion2">
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Aqueduct_support" criteria="Aqueduct_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Aqueduct_support_text" criteria="Aqueduct_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
+    </UpdateText>
+    <UpdateDatabase id="Industry_support" criteria="Industry_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Industry_support_text" criteria="Industry_Expansion2">
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
+    </UpdateText>
+      <!-- District Expansion end -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Removes.sql</File>
@@ -1339,6 +1371,11 @@
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
+    <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
+    <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
+    <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
+    <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
+    <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
