@@ -795,11 +795,11 @@
     </UpdateText>
     <!-- Netherlands -->
     <UpdateDatabase id="HD_Netherlands_Rework" criteria="Expansion2">
-      <Properties><LoadOrder>15608</LoadOrder></Properties>
+      <Properties><LoadOrder>16030</LoadOrder></Properties>
       <File>SubMods/Netherlands/NetherLands.sql</File>
     </UpdateDatabase>
     <AddGameplayScripts id="HD_Netherlands_Rework_Lua" criteria="Expansion2">
-      <Properties><LoadOrder>15608</LoadOrder></Properties>
+      <Properties><LoadOrder>16030</LoadOrder></Properties>
       <File>SubMods/Netherlands/NetherLands.lua</File>
     </AddGameplayScripts>
     <!-- Medieval Pirate -->
