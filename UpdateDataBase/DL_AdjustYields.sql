@@ -41,10 +41,10 @@ insert or replace into Feature_YieldChanges values
 	('FEATURE_FOREST', 'YIELD_FOOD', -1),
 	('FEATURE_JUNGLE', 'YIELD_PRODUCTION', -1);
 
-update Feature_YieldChanges set YieldChange = 0 where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FLOODPLAINS' and YieldType = 'YIELD_FOOD';
 update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_OASIS' and YieldType = 'YIELD_FOOD';
-update Feature_YieldChanges set YieldChange = 0 where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD'; -- remove reef extra food.
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD';
 
 -- Resource yields adjustment
 insert or replace into Resource_YieldChanges  
@@ -75,9 +75,9 @@ values
 	('RESOURCE_ALUMINUM',	'YIELD_PRODUCTION',	1);
 
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SHEEP' and YieldType = 'YIELD_FOOD';
-update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
-update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
-update Resource_YieldChanges set YieldChange = 0 where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_CITRUS' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SPICES' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SUGAR' and YieldType = 'YIELD_FOOD';
@@ -121,7 +121,7 @@ insert or replace into Feature_YieldChanges (FeatureType, YieldType, YieldChange
 ;
 update ModifierArguments set Value = 1 where ModifierId = 'EYESAHARA_SCIENCE_ATOMIC' and Name = 'Amount';
 
-update Feature_AdjacentYields set YieldChange = 0 where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
+delete from Feature_AdjacentYields where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
 update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
 -- update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';

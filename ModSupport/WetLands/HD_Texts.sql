@@ -13,6 +13,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                             Text)
 values
+    ("zh_Hans_CN",  "LOC_RESOURCE_JNR_PEAT_NAME",                    "泥炭"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_OASIS_FARM_NAME",           "绿洲花园"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION",    "解锁建造者建造绿洲花园的能力。[NEWLINE][NEWLINE]+2 [ICON_Culture] 文化值。解锁扶壁后+1 [ICON_AMENITIES] 宜居度。[NEWLINE]只可建造在绿洲上。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_REED_HOME_NAME",            "芦苇屋"),

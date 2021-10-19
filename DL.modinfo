@@ -119,6 +119,19 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">7d0b57ba-6a5c-4de0-ac10-e1e464ac82f6</ModInUse>
     </Criteria>
+    <Criteria id="Suk_Resources_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
+    </Criteria>
+    <Criteria id="Monopolies_Suk_Resources_Conflict_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAMEMODE_MONOPOLIES</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="ProjectHumankind_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>16c2195a-13af-4032-920c-8de1d6858c6f</ModInUse>
@@ -641,6 +654,14 @@
       <Properties><LoadOrder>4</LoadOrder></Properties>
       <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="Resources_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/Resources/DL_Adaptation.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Resources_mod_support_text" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/Resources/HD_Texts.sql</File>
+    </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts" criteria="Expansion2">
       <Properties><LoadOrder>100008</LoadOrder></Properties>
@@ -813,15 +834,15 @@
       <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
       <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
     </ImportFiles>
-    <UpdateDatabase id="GoldResourceDatabase" criteria="Expansion2">
+    <UpdateDatabase id="GoldResourceDatabase" criteria="Suk_Resources_Conflict_Expansion2">
       <Properties><LoadOrder>15800</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
     </UpdateDatabase>
-    <UpdateIcons id="GoldResourceIcon" criteria="Expansion2">
+    <UpdateIcons id="GoldResourceIcon" criteria="Suk_Resources_Conflict_Expansion2">
       <Properties><LoadOrder>15801</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     </UpdateIcons>
-    <UpdateText id="GoldResourceText" criteria="Expansion2">
+    <UpdateText id="GoldResourceText" criteria="Suk_Resources_Conflict_Expansion2">
       <Properties><LoadOrder>15802</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     </UpdateText>
@@ -1076,11 +1097,11 @@
       <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Mode_Expansion2">
+    <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Suk_Resources_Conflict_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     </UpdateDatabase>
-    <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Mode_Expansion2">
+    <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Suk_Resources_Conflict_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     </UpdateIcons>
@@ -1347,6 +1368,8 @@
     <File>ModSupport/SteelThunder/STUU_ConfigUserSetting.sql</File>
     <File>ModSupport/SteelThunder/STUU_PlayerItems.sql</File>
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
+    <File>ModSupport/Resources/DL_Adaptation.sql</File>
+    <File>ModSupport/Resources/HD_Texts.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
