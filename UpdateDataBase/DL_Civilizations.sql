@@ -960,7 +960,7 @@ values
 	('HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS',	'UNIT_IN_OWNER_TERRITORY_REQUIREMENT');
 
 -- ui
-update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION', Housing = 1 where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+update Improvements set PrereqCivic = 'CIVIC_GUILDS', Housing = 1 where ImprovementType = 'IMPROVEMENT_GOLF_COURSE'; --CIVIC_GAMES_RECREATION
 insert or replace into Improvement_Adjacencies (ImprovementType, YieldChangeId) values
 	('IMPROVEMENT_GOLF_COURSE',		'Golf_District_Culture');
 
@@ -1175,23 +1175,58 @@ values
 
 ----------------------------------------------------------------------------------------------------------------------
 -- Canada
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_FACES_OF_PEACE' and ModifierId = 'TRAIT_TOURISM_INTO_FAVOR';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_FACES_OF_PEACE' and ModifierId = 'TRAIT_EMERGENCY_FAVOR_MODIFIER';
+
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
+	('TRAIT_CIVILIZATION_FACES_OF_PEACE',	'PEACE_ADD_CULTURE'),
+	('TRAIT_CIVILIZATION_FACES_OF_PEACE',	'PEACE_ADD_TOURISM'),
 	('TRAIT_CIVILIZATION_FACES_OF_PEACE',	'TRAIT_BARBARIAN_CAMP_BUILDER_HD');
 
 insert or replace into Modifiers
-	(ModifierId,							ModifierType)
+	(ModifierId,							ModifierType,											SubjectRequirementSetId)
 values
-	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'MODIFIER_PLAYER_ADJUST_IMPROVEMENT_GOODY_HUT');
+	('PEACE_ADD_CULTURE',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('PEACE_ADD_TOURISM',					'MODIFIER_PLAYER_ADJUST_TOURISM',						'PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS'),
+	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'MODIFIER_PLAYER_ADJUST_IMPROVEMENT_GOODY_HUT',			NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,						Value)
 values
+	('PEACE_ADD_CULTURE',					'YieldType',				'YIELD_CULTURE'),
+	('PEACE_ADD_CULTURE',					'Amount',					15),
+	('PEACE_ADD_TOURISM',					'Amount',					25),
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'ImprovementType',			'IMPROVEMENT_BARBARIAN_CAMP'),
 	('TRAIT_BARBARIAN_CAMP_BUILDER_HD',		'GoodyHutImprovementType',	'IMPROVEMENT_GOODY_BUILDER');
 
 update ModifierArguments set Value = 2 where ModifierId = 'SNOW_MINES_PRODUCTION' and Name = 'Amount';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_LAST_BEST_WEST' and ModifierId like 'TUNDRA%_FOOD';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_LAST_BEST_WEST' and ModifierId like 'TUNDRA%_PRODUCTION';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_LAST_BEST_WEST' and ModifierId like 'SNOW_%_FOOD';
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_LAST_BEST_WEST' and ModifierId like 'SNOW_%_PRODUCTION';
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_LEADER_LAST_BEST_WEST',			'TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_PRODUCTION'),
+	('TRAIT_LEADER_LAST_BEST_WEST',			'TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_PRODUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS'),
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'HD_IS_TUNDRA_SNOW_FOOD_IMPROVEMENTS_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_PRODUCTION',	'Amount',		2),
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'Amount',		2);
+
 ------------------------------------------------------------------------------------------------
 -- Korea ability updated
 delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOVERNOR_TITLE_MODIFIER';

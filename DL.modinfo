@@ -867,15 +867,15 @@
       <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
     </ImportFiles>
     <UpdateDatabase id="GoldResourceDatabase" criteria="Suk_Resources_Conflict_Expansion2">
-      <Properties><LoadOrder>15800</LoadOrder></Properties>
+      <Properties><LoadOrder>100</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
     </UpdateDatabase>
     <UpdateIcons id="GoldResourceIcon" criteria="Suk_Resources_Conflict_Expansion2">
-      <Properties><LoadOrder>15801</LoadOrder></Properties>
+      <Properties><LoadOrder>100</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     </UpdateIcons>
     <UpdateText id="GoldResourceText" criteria="Suk_Resources_Conflict_Expansion2">
-      <Properties><LoadOrder>15802</LoadOrder></Properties>
+      <Properties><LoadOrder>100</LoadOrder></Properties>
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     </UpdateText>
 
@@ -1126,15 +1126,15 @@
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
     <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
+      <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="Monopolies_Gold" criteria="Monopolies_Suk_Resources_Conflict_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <Properties><LoadOrder>101</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     </UpdateDatabase>
     <UpdateIcons id="Monopolies_Gold_Icon" criteria="Monopolies_Suk_Resources_Conflict_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
+      <Properties><LoadOrder>101</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     </UpdateIcons>
     <UpdateText id="Monopolies_Text" criteria="Monopolies_Mode_Expansion2">
