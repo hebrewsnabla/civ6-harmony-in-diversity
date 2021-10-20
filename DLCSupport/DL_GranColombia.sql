@@ -8,10 +8,10 @@ insert or replace into Resource_YieldChanges
 values
     ('RESOURCE_HONEY',      'YIELD_GOLD',       1);
 
-insert or replace into RequirementSetRequirements 
-    (RequirementSetId,                      RequirementId) 
-values
-    ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
+-- insert or replace into RequirementSetRequirements 
+--     (RequirementSetId,                      RequirementId) 
+-- values
+--     ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
 
 --start bias(camp and pasture resources) for cree
 insert or replace into StartBiasResources

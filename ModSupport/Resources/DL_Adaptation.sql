@@ -7,6 +7,11 @@ update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_
 insert or ignore into Resource_ValidTerrains (ResourceType, TerrainType) values
     ('RESOURCE_GOLD',   'TERRAIN_PLAINS'),
     ('RESOURCE_GOLD',   'TERRAIN_PLAINS_HILLS');
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_LEU_P0K_QUINOA' and TerrainType = 'TERRAIN_DESERT';
+
+insert or ignore into Improvement_ValidResources (ImprovementType, ResourceType, MustRemoveFeature) select
+    'IMPROVEMENT_TERRACE_FARM', ResourceType,   0
+from Resources where ResourceType = 'RESOURCE_LEU_P0K_QUINOA' or ResourceType = 'RESOURCE_LEU_P0K_POTATOES';
 
 delete from Resource_Harvests where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_PRODUCTION';

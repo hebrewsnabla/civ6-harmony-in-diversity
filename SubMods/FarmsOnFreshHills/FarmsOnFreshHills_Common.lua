@@ -53,10 +53,25 @@ function ShouldDisableHillFarm(plot, player)
     end
 
     -- If reached here, player doesn't have CIVIL_ENGINEERING and the plot is a hill.
+    local resourceID = plot:GetResourceType();
+    -- print(resourceID)
+    if resourceID ~= -1 then
+        local resourceType = GameInfo.Resources[resourceID].ResourceType;
+        if resourceType ~= nil then
+            for tRow in GameInfo.Improvement_ValidResources() do
+                if tRow.ResourceType == resourceType and tRow.ImprovementType == 'IMPROVEMENT_FARM' then
+                    return false
+                end
+            end
+        end
+    end
+
+    -- If reached here, player doesn't have CIVIL_ENGINEERING and the plot is a hill, and there is no farm resource on it.
     if not HasFreshWater(plot) then
         -- Should disable hill farm since this hill is not a fresh water hill.
         return true;
     end
+
 
     -- Don't need to disable by default since it allows normal farm to check itself.
     return false;
