@@ -378,12 +378,15 @@ insert or ignore into District_CitizenGreatPersonPoints (DistrictType,	GreatPers
 select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn from District_CitizenGreatPersonPoints a, DistrictReplaces b
 where a.DistrictType = b.ReplacesDistrictType;
 
--- NOTE: Might not change the yield if they have own setting.
+delete from District_CitizenYieldChanges where (YieldType = 'YIELD_GOLD' or YieldType = 'YIELD_FOOD') and DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces 
+where ReplacesDistrictType = 'DISTRICT_HARBOR' and CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' and CivUniqueDistrictType != 'DISTRICT_COTHON');
+
 insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
 select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
 where a.DistrictType = b.ReplacesDistrictType;
 
---adjacendy
+--adjacency
 insert or ignore into District_Adjacencies  (DistrictType,	YieldChangeId)
 select b.CivUniqueDistrictType,	a.YieldChangeId from District_Adjacencies a, DistrictReplaces b
 where a.DistrictType = b.ReplacesDistrictType 
