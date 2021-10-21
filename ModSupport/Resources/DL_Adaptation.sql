@@ -13,6 +13,8 @@ insert or ignore into Improvement_ValidResources (ImprovementType, ResourceType,
     'IMPROVEMENT_TERRACE_FARM', ResourceType,   0
 from Resources where ResourceType = 'RESOURCE_LEU_P0K_QUINOA' or ResourceType = 'RESOURCE_LEU_P0K_POTATOES';
 
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_LEU_P0K_POTATOES';
+
 delete from Resource_Harvests where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_PRODUCTION';
 -- delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
