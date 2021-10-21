@@ -2,7 +2,65 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+--great person ARYABHATA
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId,												AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA',			'GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+
+insert into Modifiers
+	(ModifierId,												ModifierType,								RunOnce,	Permanent)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',		'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT',	1,			1);
+
+insert into ModifierArguments
+    (ModifierId,											 Name,				Value)
+values
+	('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',	'Amount',			2);
+	
+insert or replace into ModifierStrings
+    (ModifierId,                                				Context,    Text)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',		'Summary',  'LOC_ARYABHATA_CAMPUS_AMENITY');
+
 update ModifierArguments set Value = 150 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
+
+--inca ：Reduces the purchase cost of mountain tiles by 50%
+insert or replace into TraitModifiers   
+    (TraitType,	                            ModifierId)
+select  'TRAIT_CIVILIZATION_GREAT_MOUNTAINS',   TerrainType || 'PLOT_COST' from Terrains 
+where TerrainType = 'TERRAIN_GRASS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_PLAINS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_DESERT_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_TUNDRA_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_SNOW_MOUNTAIN';
+
+insert or replace into Modifiers
+	(ModifierId,			        ModifierType)
+select TerrainType || 'PLOT_COST', 'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN'  from Terrains 
+where TerrainType = 'TERRAIN_GRASS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_PLAINS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_DESERT_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_TUNDRA_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_SNOW_MOUNTAIN';
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select TerrainType || 'PLOT_COST',  'TerrainType',  TerrainType   from Terrains 
+where TerrainType = 'TERRAIN_GRASS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_PLAINS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_DESERT_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_TUNDRA_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_SNOW_MOUNTAIN';
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select TerrainType || 'PLOT_COST',  'Amount',       -50   from Terrains 
+where TerrainType = 'TERRAIN_GRASS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_PLAINS_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_DESERT_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_TUNDRA_MOUNTAIN' 
+    or TerrainType = 'TERRAIN_SNOW_MOUNTAIN';
 
 -- Policies
 update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_HIGHWAY' or PolicyType = 'POLICY_SILK_ROAD';

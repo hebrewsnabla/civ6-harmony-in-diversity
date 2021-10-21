@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",                    "Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production and. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion. Reduces the purchase cost of mountain tiles by 50%."),
+    ("LOC_ARYABHATA_CAMPUS_AMENITY",                                          "Chosen Campus gains 2 [ICON_AMENITIES] Amenities."),
     ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",                               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion. City-States you are a suzerain of provide +2 [ICON_FAITH] Faith and +2 [ICON_GOLD] Gold."),
     -- ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                         "Gain 2 [ICON_Governor] Governor promotions. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza."),
     -- ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                    "+2 Diplomatic Victory Points when built. Gain 1 [ICON_Governor] Governor promotions. All cities receive a +5% corresponding boost to the Type of Alliance. [NEWLINE][NEWLINE]Must be built on a River."),
@@ -14,6 +16,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",                "公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物。解锁建造科技后，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。山脉单元格购买费用降低50%。"),
+    ("zh_Hans_CN",  "LOC_ARYABHATA_CAMPUS_AMENITY",                                      "选定的学院获得2点 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",                           "将一个 [ICON_ENVOY] 使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。除了城邦的任务外，城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+2 [ICON_GOLD] 金币。"),
     -- ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                     "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
     -- ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                                "建成时+2外交胜利点数。获得1次 [ICON_Governor] 总督升级。所有城市根据每种已结成的同盟类型获得对应的产出+5%。[NEWLINE][NEWLINE]必须修建在河边。"),
