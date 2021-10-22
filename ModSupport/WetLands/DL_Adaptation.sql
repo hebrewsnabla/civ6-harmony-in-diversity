@@ -2,6 +2,9 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
+-- Peat
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_JNR_PEAT';
+
 -- Oasis Farm
 -- Unlock by Drama and Poetry, change to 0.5 housing
 update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_DRAMA_POETRY', TilesRequired = 2 where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
