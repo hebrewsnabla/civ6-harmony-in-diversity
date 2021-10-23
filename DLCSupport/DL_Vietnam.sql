@@ -7,14 +7,6 @@ insert or replace into District_GreatPersonPoints
 values
     ('DISTRICT_THANH',  'GREAT_PERSON_CLASS_GENERAL',   1);
 
-insert or replace into DistrictModifiers
-    (DistrictType,                      ModifierId)
-values
-    ('DISTRICT_THANH',                  'ENCAMPMENT_ADD_STONE_PRODUCTION'),
-    ('DISTRICT_THANH',                  'BARRACKS_ADD_COPPER_PRODUCTION'),
-    ('DISTRICT_THANH',                  'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION'),
-    ('DISTRICT_THANH',                  'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION');
-
 update Districts set Appeal = 0 where DistrictType = 'DISTRICT_THANH';
 
 -- preserve food for both international and domestic traderoute yields

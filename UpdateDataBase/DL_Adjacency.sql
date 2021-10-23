@@ -70,17 +70,25 @@ values
 	('DISTRICT_HANSA',				'Commerical_Hub_Production_Late'), -- TODO: Hansa & Suguba
 	('DISTRICT_HANSA',				'Resource_Production_Late');
 
+-- UD supports
+insert or ignore into District_Adjacencies  (DistrictType,	YieldChangeId)
+select b.CivUniqueDistrictType,	a.YieldChangeId from District_Adjacencies a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType 
+	and b.CivUniqueDistrictType != 'DISTRICT_COTHON' 
+	and b.CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' 
+	and b.CivUniqueDistrictType != 'DISTRICT_OBSERVATORY' 
+	and b.CivUniqueDistrictType != 'DISTRICT_SEOWON' 
+	and b.CivUniqueDistrictType != 'DISTRICT_OPPIDUM' 
+	and b.CivUniqueDistrictType != 'DISTRICT_HANSA';
+
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
 	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
-	-- ('IMPROVEMENT_MINE',			'Mine_Hansa_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
-	-- ('IMPROVEMENT_QUARRY',			'Quarry_Hansa_Production'),
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
-	-- ('IMPROVEMENT_PLANTATION',		'Plantation_Adjacent_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
@@ -113,12 +121,8 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Mine_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
-	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Quarry_Industrial_Production',	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
-	('Quarry_Hansa_Production',			'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
-	'DISTRICT_HANSA',				NULL,			NULL,		NULL,			NULL,			'NO_RESOURCECLASS'),
 	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
 	NULL,							NULL,			NULL,		NULL,			'TECH_MACHINERY',	'NO_RESOURCECLASS'),
 	('Plantation_Commercial_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
@@ -176,8 +180,6 @@ insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,
 	AdjacentImprovement,			PrereqCivic,	PrereqTech,			ObsoleteCivic,	ObsoleteTech)
 values
-	('Plantation_Adjacent_Gold', 		'Placeholder', 									'YIELD_GOLD',		2,				1,
-	'IMPROVEMENT_PLANTATION',		NULL,			'TECH_MATHEMATICS',	NULL,			NULL),
 	('SEAOil_INDUSTRIAL_Production',	'LOC_DISTRICT_SEAOIL_INDUSTRIAL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,
 	'IMPROVEMENT_OFFSHORE_OIL_RIG',	NULL,			NULL,				NULL,			NULL),
 	('Oil_INDUSTRIAL_Production',		'LOC_DISTRICT_OIL_INDUSTRIAL_PRODUCTION',		'YIELD_PRODUCTION',	1,				1,
