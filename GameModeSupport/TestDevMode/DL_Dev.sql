@@ -2,6 +2,9 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Buildings
+update Buildings set cost = 80 where BuildingType = 'BUILDING_SHRINE';
+
 update ModifierArguments set Value = 150 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
 
 -- Policies

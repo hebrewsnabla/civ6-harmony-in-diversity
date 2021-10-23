@@ -408,7 +408,7 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     end
     -- Add Base Maintenance
     local maintenance = building.Maintenance
-    if (maintenance > 1) then
+    if (maintenance > 0) then
         local yield = GameInfo.Yields["YIELD_GOLD"];
         if(yield) then
             table.insert(toolTipLines, Locale.Lookup("LOC_TOOLTIP_MAINTENANCE", maintenance, yield.IconString, yield.Name));
