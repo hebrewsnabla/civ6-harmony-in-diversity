@@ -2,135 +2,128 @@
 --      Districts Adjustments      --
 -------------------------------------
 
+-------------------------------------------------------------------------------
+-- Expert yield & great person points
+-------------------------------------------------------------------------------
 -- Add citizen great person points yields (NOTE: 1 represents 2 points).
-insert into District_CitizenGreatPersonPoints
+insert or replace into District_CitizenGreatPersonPoints
 	(DistrictType,						GreatPersonClassType,				PointsPerTurn)
 values
 	("DISTRICT_CAMPUS",					"GREAT_PERSON_CLASS_SCIENTIST",		2),
-	("DISTRICT_SEOWON",					"GREAT_PERSON_CLASS_SCIENTIST",		2),
 	("DISTRICT_COMMERCIAL_HUB",			"GREAT_PERSON_CLASS_MERCHANT",		2),
-	("DISTRICT_SUGUBA",					"GREAT_PERSON_CLASS_MERCHANT",		2),
 	("DISTRICT_ENCAMPMENT",				"GREAT_PERSON_CLASS_GENERAL",		2),
-	("DISTRICT_IKANDA",					"GREAT_PERSON_CLASS_GENERAL",		2),
 	("DISTRICT_HARBOR",					"GREAT_PERSON_CLASS_ADMIRAL",		2),
-	("DISTRICT_COTHON",					"GREAT_PERSON_CLASS_ADMIRAL",		2),
-	("DISTRICT_ROYAL_NAVY_DOCKYARD",	"GREAT_PERSON_CLASS_ADMIRAL",		2),
 	("DISTRICT_HOLY_SITE",				"GREAT_PERSON_CLASS_PROPHET",		2),
+	("DISTRICT_INDUSTRIAL_ZONE",		"GREAT_PERSON_CLASS_ENGINEER",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_WRITER",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_ARTIST",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
+
+-- UD support
+insert or ignore into District_CitizenGreatPersonPoints (DistrictType, GreatPersonClassType, PointsPerTurn)
+select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn
+from District_CitizenGreatPersonPoints a, DistrictReplaces b where a.DistrictType = b.ReplacesDistrictType;
+
+insert or replace into District_CitizenGreatPersonPoints
+	(DistrictType,						GreatPersonClassType,				PointsPerTurn)
+values
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_PROPHET",		1),
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_WRITER",		1),
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_ARTIST",		1),
-	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_MUSICIAN",		1),
-	("DISTRICT_INDUSTRIAL_ZONE",		"GREAT_PERSON_CLASS_ENGINEER",		2),
-	("DISTRICT_HANSA",					"GREAT_PERSON_CLASS_ENGINEER",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_WRITER",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_ARTIST",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_MUSICIAN",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_WRITER",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_ARTIST",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
+	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_MUSICIAN",		1);
 
--- increase citizen slot for districts, remove the great person point.
+----------------------------------------
+-- increase citizen slot for districts
 update Districts set CitizenSlots = 1 
  where DistrictType = 'DISTRICT_CAMPUS'
- 	or DistrictType = 'DISTRICT_OBSERVATORY'
- 	-- or DistrictType = 'DISTRICT_SEOWON'
  	or DistrictType = 'DISTRICT_COMMERCIAL_HUB'
- 	or DistrictType = 'DISTRICT_SUGUBA'
  	or DistrictType = 'DISTRICT_ENCAMPMENT'
- 	or DistrictType = 'DISTRICT_THANH'
- 	or DistrictType = 'DISTRICT_IKANDA'
  	or DistrictType = 'DISTRICT_HARBOR'
- 	or DistrictType = 'DISTRICT_COTHON'
- 	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD'
  	or DistrictType = 'DISTRICT_HOLY_SITE'
- 	or DistrictType = 'DISTRICT_LAVRA'
  	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
- 	or DistrictType = 'DISTRICT_HANSA'
- 	or DistrictType = 'DISTRICT_OPPIDUM'
- 	or DistrictType = 'DISTRICT_THEATER'
- 	or DistrictType = 'DISTRICT_ACROPOLIS';
+ 	or DistrictType = 'DISTRICT_THEATER';
  	-- or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
  	-- or DistrictType = 'DISTRICT_GOVERNMENT';
 
--- increase citizen slot for Neighbourhood
-update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD'
-	or DistrictType = 'DISTRICT_MBANZA';
+-- UD support
+update Districts set CitizenSlots = 1 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces 
+ where ReplacesDistrictType = 'DISTRICT_CAMPUS'
+ 	or ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'
+ 	or ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'
+ 	or ReplacesDistrictType = 'DISTRICT_HARBOR'
+ 	or ReplacesDistrictType = 'DISTRICT_HOLY_SITE'
+ 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
+ 	or ReplacesDistrictType = 'DISTRICT_THEATER');
+
 update Districts set CitizenSlots = 4 where DistrictType = 'DISTRICT_SEOWON';
+-- increase citizen slot for Neighbourhood
+update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD';
+update Districts set CitizenSlots = 5 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
 
-update District_CitizenYieldChanges set YieldChange = 2 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_FOOD';
-delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
+----------------------------------------
+-- Expert yield
+update District_CitizenYieldChanges set YieldChange = 2 where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_FOOD';
+delete from District_CitizenYieldChanges where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_GOLD';
 
---make government plaza and diplomatic quarter citizen slot and citizen yield 2culture and 2science
 insert or replace into District_CitizenYieldChanges
-	(DistrictType,			YieldType,			YieldChange)
+	(DistrictType,				YieldType,			YieldChange)
 values
-	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1);
+	('DISTRICT_NEIGHBORHOOD',	'YIELD_PRODUCTION',	1);
 	-- ('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	1),
 	-- ('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1);
-	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
-	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 
--- remove the great person points as they are moved to the citizen yield.
-update District_GreatPersonPoints set PointsPerTurn = 1 where
-	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
--- delete from District_GreatPersonPoints where
--- 	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
--- update District_GreatPersonPoints set PointsPerTurn = 2
--- 	where DistrictType = 'DISTRICT_LAVRA' and GreatPersonClassType = 'GREAT_PERSON_CLASS_PROPHET';
-update District_GreatPersonPoints set PointsPerTurn = 3
-	where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and GreatPersonClassType = 'GREAT_PERSON_CLASS_ADMIRAL';
+delete from District_CitizenYieldChanges where ((YieldType = 'YIELD_GOLD') or (YieldType = 'YIELD_FOOD')) and
+(DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
 
--- update District_CitizenYieldChanges set YieldChange = 3 where DistrictType = 'DISTRICT_HOLY_SITE' or DistrictType = 'DISTRICT_LAVRA';
+insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
+select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType;
 
--- Happiness adjust
-update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_STREET_CARNIVAL';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_HIPPODROME';
+----------------------------------------
+-- reduce the great person points of District base
+update District_GreatPersonPoints set PointsPerTurn = PointsPerTurn - 1 where DistrictType != 'DISTRICT_HOLY_SITE';
+update District_GreatPersonPoints set PointsPerTurn = PointsPerTurn + 1 where 
+	DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HOLY_SITE');
 
-update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
-
+-------------------------------------------------------------------------------
+-- Properties
+-------------------------------------------------------------------------------
 -- [Unlock]
 -- Canal
 update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
 -- Harbor
-update Districts set PrereqTech = 'TECH_SAILING' 
-	where DistrictType = 'DISTRICT_HARBOR' 
+update Districts set PrereqTech = 'TECH_SAILING' where DistrictType = 'DISTRICT_HARBOR' 
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR');
 -- Commercial hub
-update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' 
-	where DistrictType = 'DISTRICT_COMMERCIAL_HUB' 
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' where DistrictType = 'DISTRICT_COMMERCIAL_HUB'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB');
 -- Industrial Zone
-update Districts set PrereqTech = 'TECH_IRON_WORKING' 
-	where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' 
+update Districts set PrereqTech = 'TECH_IRON_WORKING' where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE');
 -- WATER_ENTERTAINMENT_COMPLEX
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' 
-	where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'  
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
-	DistrictType = 'DISTRICT_NEIGHBORHOOD';
--- update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
-update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where
-	DistrictType = 'DISTRICT_MBANZA';
--- Diplomacy Quarter
--- update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_POLITICAL_PHILOSOPHY' where
--- 	DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER';
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_NEIGHBORHOOD'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
+-- UD
+update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where DistrictType = 'DISTRICT_MBANZA';
 
-update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
-update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE';
+-- [Require pop]
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_AERODROME');
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_PRESERVE');
 
--- Housing
--- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
--- update Districts set Housing = Housing + 1
---  where DistrictType = 'DISTRICT_HARBOR'
--- 	or DistrictType = 'DISTRICT_COTHON'
--- 	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- Happiness adjust
+update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
+update Districts set Entertainment = 4 where DistrictType in (select CivUniqueDistrictType from DistrictReplaces
+		where ReplacesDistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX' or ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
 
--- Commercial hub & habor trade route -- Removed
+-- [Temp] here.
 -- habor gives +25% production towards naval units. (cothon still gives 50% production)
--- Encampment gives +20% production towards land military units.
+-- Encampment gives +15% production towards land military units.
 insert into DistrictModifiers
 	(DistrictType,						ModifierId)
 values
@@ -348,33 +341,6 @@ values
 	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',	'Amount',	2);
 
 --support for ud
---citizen
-update Districts set CitizenSlots = 1 where DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces 
-where CivUniqueDistrictType != 'DISTRICT_SEOWON'
-    and (ReplacesDistrictType = 'DISTRICT_CAMPUS'
- 	or ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'
- 	or ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'
- 	or ReplacesDistrictType = 'DISTRICT_HARBOR'
- 	or ReplacesDistrictType = 'DISTRICT_HOLY_SITE'
- 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
- 	or ReplacesDistrictType = 'DISTRICT_THEATER'));
-
-update Districts set CitizenSlots = 5 where DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
-
-insert or ignore into District_CitizenGreatPersonPoints (DistrictType,	GreatPersonClassType,	PointsPerTurn)
-select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn from District_CitizenGreatPersonPoints a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType;
-
-delete from District_CitizenYieldChanges where (YieldType = 'YIELD_GOLD' or YieldType = 'YIELD_FOOD') and DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces 
-where ReplacesDistrictType = 'DISTRICT_HARBOR' and CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' and CivUniqueDistrictType != 'DISTRICT_COTHON');
-
-insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
-select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType;
-
 --adjacency
 insert or ignore into District_Adjacencies  (DistrictType,	YieldChangeId)
 select b.CivUniqueDistrictType,	a.YieldChangeId from District_Adjacencies a, DistrictReplaces b

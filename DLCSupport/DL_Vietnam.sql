@@ -2,15 +2,10 @@
 --            Vietnam DLC          --
 -------------------------------------
 
-insert or replace into District_CitizenGreatPersonPoints
-    (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
-values
-    ("DISTRICT_THANH",                  "GREAT_PERSON_CLASS_GENERAL",       2);
-
 insert or replace into District_GreatPersonPoints
     (DistrictType,      GreatPersonClassType,           PointsPerTurn)
 values
-    ('DISTRICT_THANH',  'GREAT_PERSON_CLASS_GENERAL',   2);
+    ('DISTRICT_THANH',  'GREAT_PERSON_CLASS_GENERAL',   1);
 
 insert or replace into DistrictModifiers
     (DistrictType,                      ModifierId)

@@ -56,12 +56,6 @@ values
 	('BATEY_Late_Hippodrome_Culture', 	'Placeholder', 'YIELD_CULTURE',	2,				1,				0,
 	'DISTRICT_HIPPODROME',		    'CIVIC_HUMANISM',	NULL,	NULL,			NULL,			'NO_RESOURCECLASS');
 
-insert into District_CitizenGreatPersonPoints
-    (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
-values
-    ("DISTRICT_OPPIDUM",                "GREAT_PERSON_CLASS_ENGINEER",      2);
-
-
 insert or replace into RequirementSetRequirements
     (RequirementSetId,                                  RequirementId)
 values

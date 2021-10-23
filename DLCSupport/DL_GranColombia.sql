@@ -41,11 +41,6 @@ update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_R
 -- insert or replace into ModifierArguments (ModifierId, Name, Value) values
 --     ('MAYAB_EXTRA_HOUSING', 'Amount', 1);
 
-insert into District_CitizenGreatPersonPoints
-    (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
-values
-    ("DISTRICT_OBSERVATORY",            "GREAT_PERSON_CLASS_SCIENTIST",     2);
-
 -- Gran Colombia
 insert or replace into TraitModifiers 
     (TraitType,                                 ModifierId)
