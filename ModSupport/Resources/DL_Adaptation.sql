@@ -14,6 +14,11 @@ insert or ignore into Improvement_ValidResources (ImprovementType, ResourceType,
 from Resources where ResourceType = 'RESOURCE_LEU_P0K_QUINOA' or ResourceType = 'RESOURCE_LEU_P0K_POTATOES';
 
 update Resources set Frequency = 4 where ResourceType = 'RESOURCE_LEU_P0K_POTATOES';
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_DLV_BISON';
+
+insert or ignore into Resource_ValidTerrains (ResourceType, TerrainType) select
+    ResourceType,   'TERRAIN_TUNDRA'
+from Resources where ResourceType = 'RESOURCE_DLV_BISON';
 
 delete from Resource_Harvests where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_PRODUCTION';

@@ -5,6 +5,28 @@
 -- Peat
 update Resources set Frequency = 4 where ResourceType = 'RESOURCE_JNR_PEAT';
 
+insert or replace into Modifiers
+    (ModifierId,                                ModifierType,                                           SubjectRequirementSetId)
+values
+    ('HD_INDUSTRIAL_ZONE_PEAT_PRODUCTION',      'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',          'HD_PLOT_HAS_IMPROVED_PEAT_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,           Value)
+values
+    ('HD_INDUSTRIAL_ZONE_PEAT_PRODUCTION',      'YieldType',    'YIELD_PRODUCTION'),
+    ('HD_INDUSTRIAL_ZONE_PEAT_PRODUCTION',      'Amount',       1);
+
+insert or replace into RequirementSets
+    (RequirementSetId,                                  RequirementSetType)
+values
+    ('HD_PLOT_HAS_IMPROVED_PEAT_REQUIREMENTS',          'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                  RequirementId)
+values
+    ('HD_PLOT_HAS_IMPROVED_PEAT_REQUIREMENTS',          'REQUIRES_RESOURCE_JNR_PEAT_IN_PLOT'),
+    ('HD_PLOT_HAS_IMPROVED_PEAT_REQUIREMENTS',          'REQUIRES_PLOT_HAS_QUARRY');
+
 -- Oasis Farm
 -- Unlock by Drama and Poetry, change to 0.5 housing
 update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_DRAMA_POETRY', TilesRequired = 2 where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';

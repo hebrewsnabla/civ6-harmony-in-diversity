@@ -6,7 +6,7 @@ values
     -- City Center Buildings
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
-    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "[ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5. Improved [ICON_Resource_Bananas] Bananas and [ICON_Resource_Deer] Deers provide +1 [ICON_Food] Food. "),
+    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "[ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5. Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. "),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
     ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+1 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
     ("LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "Triumphal Arch"),
@@ -118,7 +118,7 @@ values
     -- 市中心建筑
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "每 [ICON_Citizen] 人口消耗 [ICON_Food] 粮食由3变成2.5。为本城已开发的 [ICON_Resource_Bananas] 香蕉、 [ICON_Resource_Deer] 鹿 +1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "每 [ICON_Citizen] 人口消耗 [ICON_Food] 粮食由3变成2.5。本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+1 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
