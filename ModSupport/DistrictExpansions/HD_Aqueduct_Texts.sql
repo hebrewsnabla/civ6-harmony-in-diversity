@@ -9,7 +9,7 @@ values
     ("LOC_DISTRICT_AQUEDUCT_HD_DESCRIPTION",            "A district that provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. If built adjacent to a Geothermal Fissure, +1 [ICON_Amenities] Amenity. Prevents [ICON_Food] Food loss during Drought. All farm adjacent to fresh water or a Cistern gain +1 [ICON_FOOD] Food. [NEWLINE] Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 30% of a Cistern's production. One per city."),
     ("LOC_DISTRICT_BATH_HD_DESCRIPTION",                "A district unique to Rome for city growth. Replaces the Cistern district and cheaper to build. Provides +2 [ICON_Housing] Housing and +1 [ICON_Amenities] Amenity. +50% construction speed for buildings inside Aqueduct. [NEWLINE][NEWLINE]It provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing.  Prevents [ICON_Food] Food loss during Drought. Must be built adjacent to the City Center. All farms adjacent to fresh water or an Aqueduct +1 [ICON_FOOD] Food. [NEWLINE]Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 30% of an Aqueduct's production. One per city."),
     ("LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",            "+10% Growth rate in this city.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +2 [ICON_Gold] Gold from Plantations and Farms over resources in this city."),
-    ("LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",       "+10% Growth rate in this city.[NEWLINE][NEWLINE]+1 [ICON_Science] Science from Mines in this city."),
+    ("LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",       "+10% Growth rate in this city.[NEWLINE][NEWLINE]+1 [ICON_Science] Science from Mines and Quarries in this city."),
     ("LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",          "+10% Growth rate in this city.[NEWLINE][NEWLINE][ICON_Citizen] Citizens in this city provide +0.3 [ICON_Culture] Culture. If built adjacent to a Geothermal Fissure, +1 [ICON_Amenities] Amenity."),
     ("LOC_BUILDING_SEWER_DESCRIPTION",                  "+20% Growth rate in this city.");
 
@@ -28,7 +28,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ORCHARD_NAME",                    "果园"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",             "本城的余粮+10%。[NEWLINE][NEWLINE]本城的种植园和农场资源+1 [ICON_Food] 食物和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_NAME",               "水力锻锤"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",        "本城的余粮+10%。[NEWLINE][NEWLINE]本城矿山+1 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",        "本城的余粮+10%。[NEWLINE][NEWLINE]本城矿山和采石场+1 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_NAME",                  "浴场"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",           "本城的余粮+10%。[NEWLINE][NEWLINE]城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_Culture] 文化值产出。若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                   "本城的余粮+20%。");

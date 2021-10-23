@@ -24,7 +24,7 @@ delete from DistrictModifiers where DistrictType = 'DISTRICT_BATH' and ModifierI
 insert or replace into DistrictModifiers
     (DistrictType,              ModifierId)
 values
-    ('DISTRICT_BATH',           'BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED');
+    ('DISTRICT_BATH',           	'BATH_ADJUST_INSIDE_BUILDINGS_PRODUCTION_SPEED');
 
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
@@ -38,6 +38,7 @@ values
     ('BUILDING_JNR_ORCHARD',        'ORCHARD_ADD_FARM_RESOURCE_FOOD'),
     ('BUILDING_JNR_ORCHARD',        'ORCHARD_ADD_FARM_RESOURCE_GOLD'),
     ('BUILDING_JNR_HAMMER_WORKS',   'HAMMER_WORKS_ADD_MINE_SCIENCE'),
+    ('BUILDING_JNR_HAMMER_WORKS',   'HAMMER_WORKS_ADD_QUARRY_SCIENCE'),
     ('BUILDING_JNR_BATHHOUSE',      'BATHHOUSE_POP_CULTURE_MODIFIER'),
     ('BUILDING_JNR_BATHHOUSE',      'AQUEDUCT_ADDAMENITIES');
 
@@ -52,6 +53,7 @@ values
     ('ORCHARD_ADD_FARM_RESOURCE_FOOD',                      'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',              'HD_PLOT_HAS_FARM_RESOURCE_REQUIREMENTS'),
     ('ORCHARD_ADD_FARM_RESOURCE_GOLD',                      'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',              'HD_PLOT_HAS_FARM_RESOURCE_REQUIREMENTS'),
     ('HAMMER_WORKS_ADD_MINE_SCIENCE',                       'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',              'PLOT_HAS_MINE_REQUIREMENTS'),
+    ('HAMMER_WORKS_ADD_QUARRY_SCIENCE',                     'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',              'PLOT_HAS_QUARRY_REQUIREMENTS'),
     ('BATHHOUSE_POP_CULTURE_MODIFIER',                      'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',    NULL);
 
 insert or replace into ModifierArguments
@@ -71,6 +73,8 @@ values
     ('ORCHARD_ADD_FARM_RESOURCE_GOLD',                  'Amount',       2),
     ('HAMMER_WORKS_ADD_MINE_SCIENCE',                   'YieldType',    'YIELD_SCIENCE'),
     ('HAMMER_WORKS_ADD_MINE_SCIENCE',                   'Amount',       1),
+    ('HAMMER_WORKS_ADD_QUARRY_SCIENCE',                 'YieldType',    'YIELD_SCIENCE'),
+    ('HAMMER_WORKS_ADD_QUARRY_SCIENCE',                 'Amount',       1),
     ('BATHHOUSE_POP_CULTURE_MODIFIER',                  'YieldType',    'YIELD_CULTURE'),
     ('BATHHOUSE_POP_CULTURE_MODIFIER',                  'Amount',       0.3);
 
