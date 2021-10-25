@@ -26,21 +26,6 @@ select
     ImprovementType,                'BATEY_Late_Hippodrome_Culture'
 from Improvements where ImprovementType = 'IMPROVEMENT_BATEY';
 
-insert or replace into District_Adjacencies
-    (DistrictType,                  YieldChangeId)
-values
-    ('DISTRICT_OPPIDUM',            'Oil_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'AERODROME_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'SEAOil_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'Bath_Production'),
-    ('DISTRICT_OPPIDUM',            'Aqueduct_Production'),
-    ('DISTRICT_OPPIDUM',            'Dam_Production'),
-    ('DISTRICT_OPPIDUM',            'Canal_Production'),
-    ('DISTRICT_OPPIDUM',            'Mine_Production'),
-    ('DISTRICT_OPPIDUM',	        'Harbor_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',	        'RoyalDock_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',	        'Cothon_INDUSTRIAL_Production');
-
 insert or replace into Adjacency_YieldChanges
     (ID,                                Description,    YieldType,          YieldChange,    TilesRequired,  AdjacentRiver,
     AdjacentDistrict,               PrereqCivic,    PrereqTech, ObsoleteCivic,  ObsoleteTech,   AdjacentResourceClass)

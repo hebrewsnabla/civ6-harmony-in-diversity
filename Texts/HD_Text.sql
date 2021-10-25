@@ -113,9 +113,6 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_ROYALDOCK_INDUSTRIAL_PRODUCTION",                          "+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_COTHON_INDUSTRIAL_PRODUCTION",                             "+{1_num} [ICON_Production] 生产力来自相邻的U型港。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_RIVER_HANSA_PRODUCTION",                                   "+{1_num} [ICON_Production] 生产力来自相邻河流。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_HARBOR_HANSA_PRODUCTION",                                  "+{1_num} [ICON_Production] 生产力来自相邻的港口。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",                               "+{1_num} [ICON_Production] 生产力来自相邻的皇家海军船坞。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_COTHON_HANSA_PRODUCTION",                                  "+{1_num} [ICON_Production] 生产力来自相邻的U型港。"),
     ("zh_Hans_CN",  "LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",                                    "每10回合（标准游戏速度下）解锁1个您盟友已研究或提升，而您尚未研究之科技的 [ICON_TechBoosted] 尤里卡");
 
 --------------------------------------------------------------------------------

@@ -46,3 +46,13 @@ delete from ModifierArguments where ModifierId like 'JNR_HAMMER_WORKS_%';
 delete from ModifierArguments where ModifierId like 'JNR_BATHHOUSE_%';
 delete from ModifierArguments where ModifierId like 'JNR_SEWER_%';
 delete from ModifierArguments where ModifierId like 'JNR_HARDENED_STEEL_%';
+
+-------------------------------------
+-- Industry
+-------------------------------------
+-- Districts
+delete from District_Adjacencies where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' and YieldChangeId like 'JNR_UC_%';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_HANSA' and YieldChangeId like 'JNR_UC_%';
+delete from District_Adjacencies where (YieldChangeId = 'LumberMill_Production' or YieldChangeId = 'Mine_Production')
+	and (DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' or (DistrictType in
+		(select CivUniqueDistrictType from DistrictReplaces where CivUniqueDistrictType = 'DISTRICT_INDUSTRIAL_ZONE')));
