@@ -852,6 +852,14 @@
       <File>SubMods/MedievalPirate/DL_Texts.sql</File>
     </UpdateText>
     <!-- Third Party -->
+    <UpdateText id="CNforMods_Texts" criteria="MonopoliesMode">
+      <Properties><LoadOrder>10000</LoadOrder></Properties>
+      <File>ThirdParty/CNforMods/SukTerraformery.sql</File>
+      <File>ThirdParty/CNforMods/Resources.sql</File>
+      <File>ThirdParty/CNforMods/VNL'CIVITAS Resources'CN_Add_IG2.sql</File>
+      <File>ThirdParty/CNforMods/VNL'Latin American Resources'CN_Add_IG2.sql</File>
+      <File>ThirdParty/CNforMods/VNL'Sukritacts Resources'CN_Add_IG2.sql</File>
+    </UpdateText>
     <UpdateDatabase id="HetairoiBugFix" criteria="DLC_Persia">
       <Properties><LoadOrder>15700</LoadOrder></Properties>
       <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
@@ -1491,6 +1499,12 @@
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
+    <!-- ThirdParty CNforMods -->
+    <File>ThirdParty/CNforMods/SukTerraformery.sql</File>
+    <File>ThirdParty/CNforMods/Resources.sql</File>
+    <File>ThirdParty/CNforMods/VNL'CIVITAS Resources'CN_Add_IG2.sql</File>
+    <File>ThirdParty/CNforMods/VNL'Latin American Resources'CN_Add_IG2.sql</File>
+    <File>ThirdParty/CNforMods/VNL'Sukritacts Resources'CN_Add_IG2.sql</File>
     <!-- ThirdParty HetairoiBugFix -->
     <File>ThirdParty/HetairoiBugFix/HetairoiBugCodeDelete.sql</File>
     <File>ThirdParty/HetairoiBugFix/HetairoiBugFix.xml</File>
