@@ -56,3 +56,8 @@ delete from District_Adjacencies where DistrictType = 'DISTRICT_HANSA' and Yield
 delete from District_Adjacencies where (YieldChangeId = 'LumberMill_Production' or YieldChangeId = 'Mine_Production')
 	and (DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' or (DistrictType in
 		(select CivUniqueDistrictType from DistrictReplaces where CivUniqueDistrictType = 'DISTRICT_INDUSTRIAL_ZONE')));
+
+-- Buildings
+update Buildings set PrereqTech = 'TECH_THE_WHEEL', Cost = 80, Maintenance = 1, Description='LOC_BUILDING_WATER_MILL_DESCRIPTION' where BuildingType = 'BUILDING_WATER_MILL';
+update Buildings set PrereqDistrict = 'DISTRICT_CITY_CENTER', CitizenSlots = 0, RequiresAdjacentRiver = 1 where BuildingType = 'BUILDING_WATER_MILL';
+delete from BuildingPrereqs where Building = 'BUILDING_WATER_MILL';
