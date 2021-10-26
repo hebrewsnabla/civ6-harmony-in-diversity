@@ -2,216 +2,199 @@
 --      Districts Adjustments      --
 -------------------------------------
 
+-------------------------------------------------------------------------------
+-- Expert yield & great person points
+-------------------------------------------------------------------------------
 -- Add citizen great person points yields (NOTE: 1 represents 2 points).
-insert into District_CitizenGreatPersonPoints
+insert or replace into District_CitizenGreatPersonPoints
 	(DistrictType,						GreatPersonClassType,				PointsPerTurn)
 values
 	("DISTRICT_CAMPUS",					"GREAT_PERSON_CLASS_SCIENTIST",		2),
-	("DISTRICT_SEOWON",					"GREAT_PERSON_CLASS_SCIENTIST",		2),
 	("DISTRICT_COMMERCIAL_HUB",			"GREAT_PERSON_CLASS_MERCHANT",		2),
-	("DISTRICT_SUGUBA",					"GREAT_PERSON_CLASS_MERCHANT",		2),
 	("DISTRICT_ENCAMPMENT",				"GREAT_PERSON_CLASS_GENERAL",		2),
-	("DISTRICT_IKANDA",					"GREAT_PERSON_CLASS_GENERAL",		2),
 	("DISTRICT_HARBOR",					"GREAT_PERSON_CLASS_ADMIRAL",		2),
-	("DISTRICT_COTHON",					"GREAT_PERSON_CLASS_ADMIRAL",		2),
-	("DISTRICT_ROYAL_NAVY_DOCKYARD",	"GREAT_PERSON_CLASS_ADMIRAL",		2),
 	("DISTRICT_HOLY_SITE",				"GREAT_PERSON_CLASS_PROPHET",		2),
+	("DISTRICT_INDUSTRIAL_ZONE",		"GREAT_PERSON_CLASS_ENGINEER",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_WRITER",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_ARTIST",		2),
+	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
+
+-- UD support
+insert or ignore into District_CitizenGreatPersonPoints (DistrictType, GreatPersonClassType, PointsPerTurn)
+select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn
+from District_CitizenGreatPersonPoints a, DistrictReplaces b where a.DistrictType = b.ReplacesDistrictType;
+
+insert or replace into District_CitizenGreatPersonPoints
+	(DistrictType,						GreatPersonClassType,				PointsPerTurn)
+values
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_PROPHET",		1),
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_WRITER",		1),
 	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_ARTIST",		1),
-	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_MUSICIAN",		1),
-	("DISTRICT_INDUSTRIAL_ZONE",		"GREAT_PERSON_CLASS_ENGINEER",		2),
-	("DISTRICT_HANSA",					"GREAT_PERSON_CLASS_ENGINEER",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_WRITER",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_ARTIST",		2),
-	("DISTRICT_THEATER",				"GREAT_PERSON_CLASS_MUSICIAN",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_WRITER",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_ARTIST",		2),
-	("DISTRICT_ACROPOLIS",				"GREAT_PERSON_CLASS_MUSICIAN",		2);
+	("DISTRICT_LAVRA",					"GREAT_PERSON_CLASS_MUSICIAN",		1);
 
--- increase citizen slot for districts, remove the great person point.
+----------------------------------------
+-- increase citizen slot for districts
 update Districts set CitizenSlots = 1 
  where DistrictType = 'DISTRICT_CAMPUS'
- 	or DistrictType = 'DISTRICT_OBSERVATORY'
- 	-- or DistrictType = 'DISTRICT_SEOWON'
  	or DistrictType = 'DISTRICT_COMMERCIAL_HUB'
- 	or DistrictType = 'DISTRICT_SUGUBA'
  	or DistrictType = 'DISTRICT_ENCAMPMENT'
- 	or DistrictType = 'DISTRICT_THANH'
- 	or DistrictType = 'DISTRICT_IKANDA'
  	or DistrictType = 'DISTRICT_HARBOR'
- 	or DistrictType = 'DISTRICT_COTHON'
- 	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD'
  	or DistrictType = 'DISTRICT_HOLY_SITE'
- 	or DistrictType = 'DISTRICT_LAVRA'
  	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
- 	or DistrictType = 'DISTRICT_HANSA'
- 	or DistrictType = 'DISTRICT_OPPIDUM'
- 	or DistrictType = 'DISTRICT_THEATER'
- 	or DistrictType = 'DISTRICT_ACROPOLIS';
+ 	or DistrictType = 'DISTRICT_THEATER';
  	-- or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
  	-- or DistrictType = 'DISTRICT_GOVERNMENT';
 
--- increase citizen slot for Neighbourhood
-update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD'
-	or DistrictType = 'DISTRICT_MBANZA';
+-- UD support
+update Districts set CitizenSlots = 1 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces 
+ where ReplacesDistrictType = 'DISTRICT_CAMPUS'
+ 	or ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'
+ 	or ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'
+ 	or ReplacesDistrictType = 'DISTRICT_HARBOR'
+ 	or ReplacesDistrictType = 'DISTRICT_HOLY_SITE'
+ 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
+ 	or ReplacesDistrictType = 'DISTRICT_THEATER');
+
 update Districts set CitizenSlots = 4 where DistrictType = 'DISTRICT_SEOWON';
+-- increase citizen slot for Neighbourhood
+update Districts set CitizenSlots = 5 where DistrictType = 'DISTRICT_NEIGHBORHOOD';
+update Districts set CitizenSlots = 5 where DistrictType in 
+(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
 
-update District_CitizenYieldChanges set YieldChange = 2 where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_FOOD';
-delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_HARBOR' or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' or DistrictType = 'DISTRICT_COTHON') and  YieldType = 'YIELD_GOLD';
+----------------------------------------
+-- Expert yield
+update District_CitizenYieldChanges set YieldChange = 2 where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_FOOD';
+delete from District_CitizenYieldChanges where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_GOLD';
 
---make government plaza and diplomatic quarter citizen slot and citizen yield 2culture and 2science
 insert or replace into District_CitizenYieldChanges
-	(DistrictType,			YieldType,			YieldChange)
+	(DistrictType,				YieldType,			YieldChange)
 values
-	('DISTRICT_NEIGHBORHOOD','YIELD_PRODUCTION',	1);
+	('DISTRICT_NEIGHBORHOOD',	'YIELD_PRODUCTION',	1);
 	-- ('DISTRICT_GOVERNMENT',	'YIELD_SCIENCE',	1),
 	-- ('DISTRICT_GOVERNMENT',	'YIELD_CULTURE',	1);
-	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_SCIENCE',	2),
-	-- ('DISTRICT_DIPLOMATIC_QUARTER','YIELD_CULTURE',	2);
 
--- remove the great person points as they are moved to the citizen yield.
-update District_GreatPersonPoints set PointsPerTurn = 1 where
-	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
--- delete from District_GreatPersonPoints where
--- 	DistrictType != 'DISTRICT_LAVRA' and DistrictType != 'DISTRICT_HOLY_SITE' and DistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD';
--- update District_GreatPersonPoints set PointsPerTurn = 2
--- 	where DistrictType = 'DISTRICT_LAVRA' and GreatPersonClassType = 'GREAT_PERSON_CLASS_PROPHET';
-update District_GreatPersonPoints set PointsPerTurn = 3
-	where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and GreatPersonClassType = 'GREAT_PERSON_CLASS_ADMIRAL';
+delete from District_CitizenYieldChanges where ((YieldType = 'YIELD_GOLD') or (YieldType = 'YIELD_FOOD')) and
+(DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
 
--- update District_CitizenYieldChanges set YieldChange = 3 where DistrictType = 'DISTRICT_HOLY_SITE' or DistrictType = 'DISTRICT_LAVRA';
+insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
+select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType;
 
--- Happiness adjust
-update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_STREET_CARNIVAL';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_HIPPODROME';
+----------------------------------------
+-- reduce the great person points of District base
+update District_GreatPersonPoints set PointsPerTurn = PointsPerTurn - 1 where DistrictType != 'DISTRICT_HOLY_SITE';
+update District_GreatPersonPoints set PointsPerTurn = PointsPerTurn + 1 where 
+	DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HOLY_SITE');
 
-update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
-update Districts set Entertainment = 4 where DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
-
+-------------------------------------------------------------------------------
+-- Properties
+-------------------------------------------------------------------------------
 -- [Unlock]
 -- Canal
 update Districts set PrereqTech = 'TECH_MASS_PRODUCTION' where DistrictType = 'DISTRICT_CANAL';
 -- Harbor
-update Districts set PrereqTech = 'TECH_SAILING' 
-	where DistrictType = 'DISTRICT_HARBOR' 
+update Districts set PrereqTech = 'TECH_SAILING' where DistrictType = 'DISTRICT_HARBOR' 
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR');
 -- Commercial hub
-update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' 
-	where DistrictType = 'DISTRICT_COMMERCIAL_HUB' 
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' where DistrictType = 'DISTRICT_COMMERCIAL_HUB'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB');
 -- Industrial Zone
-update Districts set PrereqTech = 'TECH_IRON_WORKING' 
-	where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' 
+update Districts set PrereqTech = 'TECH_IRON_WORKING' where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE');
 -- WATER_ENTERTAINMENT_COMPLEX
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' 
-	where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'  
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where
-	DistrictType = 'DISTRICT_NEIGHBORHOOD';
--- update Districts set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where
-update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where
-	DistrictType = 'DISTRICT_MBANZA';
--- Diplomacy Quarter
--- update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_POLITICAL_PHILOSOPHY' where
--- 	DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER';
+update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_NEIGHBORHOOD'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
+-- UD
+update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where DistrictType = 'DISTRICT_MBANZA';
 
-update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME';
-update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE';
+-- [Require pop]
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_AERODROME');
+update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_PRESERVE'
+	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_PRESERVE');
 
--- Housing
--- update Districts set Housing = Housing + 1 where RequiresPopulation = 1;
--- update Districts set Housing = Housing + 1
---  where DistrictType = 'DISTRICT_HARBOR'
--- 	or DistrictType = 'DISTRICT_COTHON'
--- 	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD';
+-- Happiness adjust
+update Districts set Entertainment = 3 where DistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX' or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
+update Districts set Entertainment = 4 where DistrictType in (select CivUniqueDistrictType from DistrictReplaces
+		where ReplacesDistrictType = 'DISTRICT_ENTERTAINMENT_COMPLEX' or ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
 
--- Commercial hub & habor trade route -- Removed
--- habor gives +25% production towards naval units. (cothon still gives 50% production)
--- Encampment gives +20% production towards land military units.
-insert into DistrictModifiers
+-- update Districts set Maintenance = Maintenance * 2 where InternalOnly = 0;
+update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
+
+-- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
+
+-------------------------------------------------------------------------------
+-- Modifiers
+-------------------------------------------------------------------------------
+-- habor gives +10% production towards naval units. (cothon gives 30%)
+-- Encampment gives +10% production towards land military units. (Ikanda gives 30%)
+insert or replace into DistrictModifiers
 	(DistrictType,						ModifierId)
 values
 	-- Yield Modifiers
 	('DISTRICT_HARBOR',					'HARBOR_ADD_FISHING_BOATS_FOOD'),
-	('DISTRICT_COTHON',					'HARBOR_ADD_FISHING_BOATS_FOOD'),
-	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HARBOR_ADD_FISHING_BOATS_FOOD'),
 	('DISTRICT_HARBOR',					'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
-	('DISTRICT_COTHON',					'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
-	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'LIGHTHOUSE_COASTAL_CITY_HOUSING'),
+	('DISTRICT_HARBOR',					'HARBOR_CITY_NAVAL_UNIT_PRODUCTION'),
 	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_ADD_STONE_PRODUCTION'),
-	('DISTRICT_ENCAMPMENT',				'BARRACKS_ADD_COPPER_PRODUCTION'),
-	('DISTRICT_IKANDA',					'ENCAMPMENT_ADD_STONE_PRODUCTION'),
-	('DISTRICT_IKANDA',					'BARRACKS_ADD_COPPER_PRODUCTION'),
-	('DISTRICT_COMMERCIAL_HUB',			'STABLE_ADD_SHEEP_FOOD'),
-	('DISTRICT_COMMERCIAL_HUB',			'STABLE_ADD_CATTLE_FOOD'),
+	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_ADD_COPPER_PRODUCTION'),
+	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION'),
+	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION'),
+	('DISTRICT_ENCAMPMENT',				'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
+	('DISTRICT_COMMERCIAL_HUB',			'COMMERCIAL_HUB_BONUS_PASTURE_FOOD'),
 	('DISTRICT_COMMERCIAL_HUB',			'DOSMESTIC_TRADE_ROUTE_GOLD_BONUS'),
-	-- ('DISTRICT_COMMERCIAL_HUB',			'DOSMESTIC_TRADE_ROUTE_FOOD_BONUS'),
-	-- ('DISTRICT_COMMERCIAL_HUB',			'DOSMESTIC_TRADE_ROUTE_PRODUCTION_BONUS'),
 	('DISTRICT_COMMERCIAL_HUB',			'INTERNATIONAL_TRADE_ROUTE_SCIENCE_BONUS'),
 	('DISTRICT_COMMERCIAL_HUB',			'INTERNATIONAL_TRADE_ROUTE_CULTURE_BONUS'),
-	-- ('DISTRICT_COMMERCIAL_HUB',		'COMMERCIAL_HUB_TRADE_ROUTE_CAPACITY'),
-	('DISTRICT_SUGUBA',					'STABLE_ADD_SHEEP_FOOD'),
-	('DISTRICT_SUGUBA',					'STABLE_ADD_CATTLE_FOOD'),
-	('DISTRICT_SUGUBA',					'DOSMESTIC_TRADE_ROUTE_GOLD_BONUS'),
-	-- ('DISTRICT_SUGUBA',					'DOSMESTIC_TRADE_ROUTE_FOOD_BONUS'),
-	-- ('DISTRICT_SUGUBA',					'DOSMESTIC_TRADE_ROUTE_PRODUCTION_BONUS'),
-	('DISTRICT_SUGUBA',					'INTERNATIONAL_TRADE_ROUTE_SCIENCE_BONUS'),
-	('DISTRICT_SUGUBA',					'INTERNATIONAL_TRADE_ROUTE_CULTURE_BONUS'),
-	-- ('DISTRICT_SUGUBA',				'COMMERCIAL_HUB_TRADE_ROUTE_CAPACITY'),
-	-- ('DISTRICT_HARBOR',				'HARBOR_TRADE_ROUTE_CAPACITY'),
-	-- ('DISTRICT_COTHON',				'HARBOR_TRADE_ROUTE_CAPACITY'),
-	-- ('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HARBOR_TRADE_ROUTE_CAPACITY'),
-	('DISTRICT_HARBOR',					'HARBOR_CITY_NAVAL_UNIT_PRODUCTION'),
-	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HARBOR_CITY_NAVAL_UNIT_PRODUCTION'),
-	-- 
-    ('DISTRICT_INDUSTRIAL_ZONE',        'HD_INDUSTRIAL_ZONE_POP_PRODUCTION'),
-	('DISTRICT_HANSA',					'HANSA_ADD_ADJACENT_RESOURCE_PRODUCTION'),
-	-- 
-	('DISTRICT_AERODROME',				'AERODROME_AIR_UNIT_PRODUCTION'),
-	-- 
+	('DISTRICT_INDUSTRIAL_ZONE',		'HD_INDUSTRIAL_ZONE_POP_PRODUCTION'),
 	('DISTRICT_AQUEDUCT',				'AQUEDUCT_ADD_FRESH_FARM_FOOD'),
 	('DISTRICT_AQUEDUCT',				'AQUEDUCT_ADD_AQUEDUCT_FARM_FOOD'),
 	('DISTRICT_AQUEDUCT',				'AQUEDUCT_REMOVE_FRESH_AND_AQUEDUCT_FARM_FOOD'),
-	('DISTRICT_BATH',					'AQUEDUCT_ADD_FRESH_FARM_FOOD'),
-	('DISTRICT_BATH',					'AQUEDUCT_ADD_AQUEDUCT_FARM_FOOD'),
-	('DISTRICT_BATH',					'AQUEDUCT_REMOVE_FRESH_AND_AQUEDUCT_FARM_FOOD'),
-	-- ('DISTRICT_AQUEDUCT',			'AQUEDUCT_ADD_RIVER_FARM_FOOD'),
+	('DISTRICT_CANAL',					'CANAL_ADJACENT_GOLD'),
+	('DISTRICT_DAM',					'DAM_ADJACENT_FARM_FOOD'),
+	('DISTRICT_DAM',					'DAM_ADJACENT_PLANTATION_FOOD'),
+	('DISTRICT_AERODROME',				'AERODROME_AIR_UNIT_PRODUCTION'),
+	-- UD
+	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
+	('DISTRICT_IKANDA',					'IKANDA_CITY_MILITARY_UNIT_PRODUCTION'),
+	('DISTRICT_IKANDA',					'IKANDA_CITY_NAVAL_UNIT_PRODUCTION'),
+	('DISTRICT_IKANDA',					'IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS'),
+	('DISTRICT_HANSA',					'HANSA_ADD_ADJACENT_RESOURCE_PRODUCTION'),
 	('DISTRICT_MBANZA',					'MBANZA_ADD_ADJACENT_JUNGLE_FOOD'),
 	('DISTRICT_MBANZA',					'MBANZA_ADD_ADJACENT_FOREST_FOOD'),
 	-- Mbanza enable purchase of builder and settler as Kongo cannot build holy site.
 	('DISTRICT_MBANZA',					'SHRINE_BUILDER_PURCHASE'),
-	('DISTRICT_MBANZA',					'TEMPLE_SETTLER_PURCHASE'),
-	-- Encampment
-	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION'),
-	('DISTRICT_ENCAMPMENT',				'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION'),
-	('DISTRICT_IKANDA',					'IKANDA_CITY_MILITARY_UNIT_PRODUCTION'),
-	('DISTRICT_IKANDA',					'IKANDA_CITY_NAVAL_UNIT_PRODUCTION'),
-	('DISTRICT_IKANDA',					'IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS'),
-	('DISTRICT_CANAL',					'CANAL_ADJACENT_GOLD'),
-	('DISTRICT_DAM',					'DAM_ADJACENT_FARM_FOOD'),
-	('DISTRICT_DAM',					'DAM_ADJACENT_PLANTATION_FOOD');
+	('DISTRICT_MBANZA',					'TEMPLE_SETTLER_PURCHASE');
 
--- Districts
-insert or replace into DistrictModifiers (DistrictType,ModifierId)
-select CivUniqueDistrictType, 'HD_INDUSTRIAL_ZONE_POP_PRODUCTION'
-from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE' and CivUniqueDistrictType != 'DISTRICT_HANSA';
+insert or replace into DistrictModifiers
+	(DistrictType,						ModifierId)
+select
+	'DISTRICT_INDUSTRIAL_ZONE',			'HD_INDUSTRIAL_ZONE_PEAT_PRODUCTION'
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_JNR_PEAT');
 
-insert into Modifiers
+-- support for ud
+insert or ignore into DistrictModifiers   (DistrictType,	ModifierId)
+select b.CivUniqueDistrictType,	a.ModifierId from DistrictModifiers a, DistrictReplaces b
+where a.DistrictType = b.ReplacesDistrictType;
+delete from DistrictModifiers where DistrictType = 'DISTRICT_HANSA' and ModifierId = 'HD_INDUSTRIAL_ZONE_POP_PRODUCTION';
+delete from DistrictModifiers where DistrictType = 'DISTRICT_COTHON' and ModifierId = 'HARBOR_CITY_NAVAL_UNIT_PRODUCTION';
+delete from DistrictModifiers where DistrictType = 'DISTRICT_IKANDA' and ModifierId = 'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION';
+delete from DistrictModifiers where DistrictType = 'DISTRICT_IKANDA' and ModifierId = 'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION';
+
+insert or replace into Modifiers
 	(ModifierId,									ModifierType)
 values
-	-- ('COMMERCIAL_HUB_TRADE_ROUTE_CAPACITY',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY'), 
-	-- ('HARBOR_TRADE_ROUTE_CAPACITY',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY'),
 	('HARBOR_CITY_NAVAL_UNIT_PRODUCTION',			'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
 	('AERODROME_AIR_UNIT_PRODUCTION',				'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
 	('HD_INDUSTRIAL_ZONE_POP_PRODUCTION',  			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION'),
 	-- Encampment
+	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',	'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_ACCUMULATION'),
 	('ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION',	'MODIFIER_SINGLE_CITY_ADJUST_MILITARY_UNITS_PRODUCTION'),
 	('ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION',		'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
 	('IKANDA_CITY_MILITARY_UNIT_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_MILITARY_UNITS_PRODUCTION'),
 	('IKANDA_CITY_NAVAL_UNIT_PRODUCTION',			'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
+	('IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS',		'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS'),
 	('DOSMESTIC_TRADE_ROUTE_GOLD_BONUS',			'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC'),
 	('DOSMESTIC_TRADE_ROUTE_FOOD_BONUS',			'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC'),
 	('DOSMESTIC_TRADE_ROUTE_PRODUCTION_BONUS',		'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC'),
@@ -220,14 +203,17 @@ values
 	('DIPLOMATIC_QUARTER_DUPLICATE_FIRST_INFLUENCE', 'MODIFIER_PLAYER_ADJUST_DUPLICATE_FIRST_INFLUENCE_TOKEN'),
 	('DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY',		'MODIFIER_PLAYER_GRANT_SPY');
 
-insert into Modifiers
+update Modifiers set Permanent = 1 where ModifierId = 'IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS';
+
+insert or replace into Modifiers
 	(ModifierId,										ModifierType,									SubjectRequirementSetId)
 values
 	-- Yield Modifiers
 	('HARBOR_ADD_FISHING_BOATS_FOOD',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_FISHINGBOATS_REQUIREMENTS'),
 	('ENCAMPMENT_ADD_STONE_PRODUCTION',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'HAS_IMPROVED_STONE'),
+	('ENCAMPMENT_ADD_COPPER_PRODUCTION',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'HAS_IMPROVED_COPPER'),
+	('COMMERCIAL_HUB_BONUS_PASTURE_FOOD',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'HD_PLOT_HAS_PASTURE_OVER_BONUS_RESOURCES'),
 	-- Aqueduct
-	-- ('AQUEDUCT_ADD_RIVER_FARM_FOOD',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'IS_FARM_ADJACENT_TO_RIVER');
 	('AQUEDUCT_ADD_FRESH_FARM_FOOD',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'IS_FARM_ADJACENT_TO_FRESH_WATER'),
 	('AQUEDUCT_ADD_AQUEDUCT_FARM_FOOD',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'IS_FARM_ADJACENT_TO_AQUEDUCT'),
 	('AQUEDUCT_REMOVE_FRESH_AND_AQUEDUCT_FARM_FOOD',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'IS_FARM_ADJACENT_TO_FRESH_WATER_AND_AQUEDUCT'),
@@ -239,12 +225,8 @@ values
 	('CANAL_ADJACENT_GOLD',								'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',			'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
 	('DAM_ADJACENT_FARM_FOOD',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',			'ADJACENT_FARM_REQUIREMENTS'),
 	('DAM_ADJACENT_PLANTATION_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',			'ADJACENT_PLANTATION_REQUIREMENTS');
-insert into Modifiers
-	(ModifierId,										ModifierType,									         Permanent)
-values
-	('IKANDA_CITY_ANTI_CAVALRY_MOVEMENT_BONUS',			'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',	1);
 
-insert into ModifierArguments
+insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 values
 	-- Yield Modifiers
@@ -252,9 +234,11 @@ values
 	('HARBOR_ADD_FISHING_BOATS_FOOD',					'Amount',		1),
 	('ENCAMPMENT_ADD_STONE_PRODUCTION',					'YieldType',	'YIELD_PRODUCTION'),
 	('ENCAMPMENT_ADD_STONE_PRODUCTION',					'Amount',		1),
+	('ENCAMPMENT_ADD_COPPER_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
+	('ENCAMPMENT_ADD_COPPER_PRODUCTION',				'Amount',		1),
+	('COMMERCIAL_HUB_BONUS_PASTURE_FOOD',				'YieldType',	'YIELD_FOOD'),
+	('COMMERCIAL_HUB_BONUS_PASTURE_FOOD',				'Amount',		1),
 	-- Aqueduct
-	-- ('AQUEDUCT_ADD_RIVER_FARM_FOOD',					'YieldType',	'YIELD_FOOD'),
-	-- ('AQUEDUCT_ADD_RIVER_FARM_FOOD',					'Amount',		1),
 	('AQUEDUCT_ADD_FRESH_FARM_FOOD',					'YieldType',	'YIELD_FOOD'),
 	('AQUEDUCT_ADD_FRESH_FARM_FOOD',					'Amount',		1),
 	('AQUEDUCT_ADD_AQUEDUCT_FARM_FOOD',					'YieldType',	'YIELD_FOOD'),
@@ -282,8 +266,6 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_SCIENCE_BONUS',			'Amount',		1),
 	('INTERNATIONAL_TRADE_ROUTE_CULTURE_BONUS',			'YieldType',	'YIELD_CULTURE'),
 	('INTERNATIONAL_TRADE_ROUTE_CULTURE_BONUS',			'Amount',		1),
-	-- ('COMMERCIAL_HUB_TRADE_ROUTE_CAPACITY',			'Amount',		1),
-	-- ('HARBOR_TRADE_ROUTE_CAPACITY',					'Amount',		1),
 	-- Military
 	('HARBOR_CITY_NAVAL_UNIT_PRODUCTION',				'Domain',		'DOMAIN_SEA'),
 	('HARBOR_CITY_NAVAL_UNIT_PRODUCTION',				'Amount',		10),
@@ -293,6 +275,7 @@ values
 	('ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION',		'Amount',		10),
 	('ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION',			'Domain',		'DOMAIN_SEA'),
 	('ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION',			'Amount',		-10),
+	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION', 'Amount',		2),
 	('IKANDA_CITY_MILITARY_UNIT_PRODUCTION',			'Amount',		30),
 	('IKANDA_CITY_NAVAL_UNIT_PRODUCTION',				'Domain',		'DOMAIN_SEA'),
 	('IKANDA_CITY_NAVAL_UNIT_PRODUCTION',				'Amount',		-30),
@@ -325,83 +308,8 @@ values
 update ModifierArguments set Value = 3 where ModifierId = 'MBANZA_FOOD' and Name = 'Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'MBANZA_GOLD' and Name = 'Amount';
 
--- update Districts set Maintenance = Maintenance * 2 where InternalOnly = 0;
-update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
-
--- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
-
--- Culture bombs
+-- Culture bombs [for Great Eng]
 insert or replace into Modifiers (ModifierId, ModifierType, RunOnce, Permanent)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType , 'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', 1, 1 from Districts;
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType, 'DistrictType', DistrictType from Districts;
-
--- STRATEGIC_RESOURCE_ACCUMULATION
-insert or replace into DistrictModifiers (DistrictType, ModifierId)
-select 'DISTRICT_THANH',	'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_THANH');
-
-insert or replace into DistrictModifiers
-	(DistrictType,						ModifierId)
-values
-	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
-	('DISTRICT_ENCAMPMENT',				'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION'),
-	('DISTRICT_IKANDA',					'HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION');
-
-insert or replace into Modifiers
-	(ModifierId,											ModifierType)
-values
-	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',	'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_ACCUMULATION');
-
-insert or replace into ModifierArguments
-	(ModifierId,											Name,		Value)
-values
-	('HD_ENCAMPMENT_ADD_STRATEGIC_RESOURCE_ACCUMULATION',	'Amount',	2);
-
---support for ud
---citizen
-update Districts set CitizenSlots = 1 where DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces 
-where CivUniqueDistrictType != 'DISTRICT_SEOWON'
-    and (ReplacesDistrictType = 'DISTRICT_CAMPUS'
- 	or ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'
- 	or ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'
- 	or ReplacesDistrictType = 'DISTRICT_HARBOR'
- 	or ReplacesDistrictType = 'DISTRICT_HOLY_SITE'
- 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
- 	or ReplacesDistrictType = 'DISTRICT_THEATER'));
-
-update Districts set CitizenSlots = 5 where DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
-
-insert or ignore into District_CitizenGreatPersonPoints (DistrictType,	GreatPersonClassType,	PointsPerTurn)
-select b.CivUniqueDistrictType,	a.GreatPersonClassType,	a.PointsPerTurn from District_CitizenGreatPersonPoints a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType;
-
-delete from District_CitizenYieldChanges where (YieldType = 'YIELD_GOLD' or YieldType = 'YIELD_FOOD') and DistrictType in 
-(select CivUniqueDistrictType from DistrictReplaces 
-where ReplacesDistrictType = 'DISTRICT_HARBOR' and CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' and CivUniqueDistrictType != 'DISTRICT_COTHON');
-
-insert or ignore into District_CitizenYieldChanges  (DistrictType,	YieldType,	YieldChange)
-select b.CivUniqueDistrictType,	a.YieldType,	a.YieldChange from District_CitizenYieldChanges a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType;
-
---adjacency
-insert or ignore into District_Adjacencies  (DistrictType,	YieldChangeId)
-select b.CivUniqueDistrictType,	a.YieldChangeId from District_Adjacencies a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType 
-	and b.CivUniqueDistrictType != 'DISTRICT_COTHON' 
-	and b.CivUniqueDistrictType != 'DISTRICT_ROYAL_NAVY_DOCKYARD' 
-	and b.CivUniqueDistrictType != 'DISTRICT_OBSERVATORY' 
-	and b.CivUniqueDistrictType != 'DISTRICT_SEOWON' 
-	and b.CivUniqueDistrictType != 'DISTRICT_OPPIDUM' 
-	and b.CivUniqueDistrictType != 'DISTRICT_HANSA';
-
---district modifiers
-insert or ignore into DistrictModifiers   (DistrictType,	ModifierId)
-select b.CivUniqueDistrictType,	a.ModifierId from DistrictModifiers a, DistrictReplaces b
-where a.DistrictType = b.ReplacesDistrictType 
-	and b.CivUniqueDistrictType != 'DISTRICT_COTHON' 
-	and b.CivUniqueDistrictType != 'DISTRICT_HANSA' 
-	and b.CivUniqueDistrictType != 'DISTRICT_IKANDA'
-	and b.CivUniqueDistrictType != 'DISTRICT_BATH';

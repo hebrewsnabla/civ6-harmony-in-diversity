@@ -4,11 +4,14 @@
 ------------------------------------------------------------------------------------------------------------------------
 
 -- 秦始皇
-update TraitModifiers set TraitType = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE' where ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
+-- update TraitModifiers set TraitType = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE' where ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
+delete from TraitModifiers where TraitType = 'FIRST_EMPEROR_TRAIT' and ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
+
 insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
+	(TraitType,								ModifierId)
 values
-	('FIRST_EMPEROR_TRAIT',		'TRAIT_ADJUST_BUILDER_MOVEMENT_HD');
+	('TRAIT_CIVILIZATION_DYNASTIC_CYCLE',	'TRAIT_CANAL_UNLOCK_MASONRY'),
+	('FIRST_EMPEROR_TRAIT',					'TRAIT_ADJUST_BUILDER_MOVEMENT_HD');
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,								SubjectRequirementSetId)

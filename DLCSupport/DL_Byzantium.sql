@@ -26,21 +26,6 @@ select
     ImprovementType,                'BATEY_Late_Hippodrome_Culture'
 from Improvements where ImprovementType = 'IMPROVEMENT_BATEY';
 
-insert or replace into District_Adjacencies
-    (DistrictType,                  YieldChangeId)
-values
-    ('DISTRICT_OPPIDUM',            'Oil_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'AERODROME_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'SEAOil_INDUSTRIAL_Production'),
-    ('DISTRICT_OPPIDUM',            'Bath_Production'),
-    ('DISTRICT_OPPIDUM',            'Aqueduct_Production'),
-    ('DISTRICT_OPPIDUM',            'Dam_Production'),
-    ('DISTRICT_OPPIDUM',            'Canal_Production'),
-    ('DISTRICT_OPPIDUM',            'Mine_Production'),
-    ('DISTRICT_OPPIDUM',	        'Harbor_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',	        'RoyalDock_INDUSTRIAL_Production'),
-	('DISTRICT_OPPIDUM',	        'Cothon_INDUSTRIAL_Production');
-
 insert or replace into Adjacency_YieldChanges
     (ID,                                Description,    YieldType,          YieldChange,    TilesRequired,  AdjacentRiver,
     AdjacentDistrict,               PrereqCivic,    PrereqTech, ObsoleteCivic,  ObsoleteTech,   AdjacentResourceClass)
@@ -55,12 +40,6 @@ values
 	'DISTRICT_HIPPODROME',		    NULL,			NULL,		'CIVIC_HUMANISM',	NULL,		'NO_RESOURCECLASS'),
 	('BATEY_Late_Hippodrome_Culture', 	'Placeholder', 'YIELD_CULTURE',	2,				1,				0,
 	'DISTRICT_HIPPODROME',		    'CIVIC_HUMANISM',	NULL,	NULL,			NULL,			'NO_RESOURCECLASS');
-
-insert into District_CitizenGreatPersonPoints
-    (DistrictType,                      GreatPersonClassType,               PointsPerTurn)
-values
-    ("DISTRICT_OPPIDUM",                "GREAT_PERSON_CLASS_ENGINEER",      2);
-
 
 insert or replace into RequirementSetRequirements
     (RequirementSetId,                                  RequirementId)

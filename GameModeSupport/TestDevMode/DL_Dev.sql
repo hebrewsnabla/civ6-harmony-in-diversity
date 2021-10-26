@@ -2,6 +2,9 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Buildings
+update Buildings set cost = 80 where BuildingType = 'BUILDING_SHRINE';
+
 --great person ARYABHATA
 insert or replace into GreatPersonIndividualActionModifiers
 	(GreatPersonIndividualType,						ModifierId,												AttachmentTargetType)
