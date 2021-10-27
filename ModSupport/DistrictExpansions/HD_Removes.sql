@@ -60,4 +60,26 @@ delete from District_Adjacencies where (YieldChangeId = 'LumberMill_Production' 
 -- Buildings
 update Buildings set PrereqTech = 'TECH_THE_WHEEL', Cost = 80, Maintenance = 1, Description='LOC_BUILDING_WATER_MILL_DESCRIPTION' where BuildingType = 'BUILDING_WATER_MILL';
 update Buildings set PrereqDistrict = 'DISTRICT_CITY_CENTER', CitizenSlots = 0, RequiresAdjacentRiver = 1 where BuildingType = 'BUILDING_WATER_MILL';
-delete from BuildingPrereqs where Building = 'BUILDING_WATER_MILL';
+
+update Buildings set PrereqDistrict = NULL where BuildingType = 'BUILDING_JNR_MILL_RACE';
+
+update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_FACTORY';
+insert or ignore into Building_YieldDistrictCopies
+    (BuildingType,                          OldYieldType,           NewYieldType)
+values
+    ('BUILDING_FOSSIL_FUEL_POWER_PLANT',    'YIELD_PRODUCTION',     'YIELD_PRODUCTION');
+
+-- Bonus
+delete from BuildingModifiers where ModifierId = 'JNR_ALLINDUSTRIAL_BASE_TRADEROUTE_DOMESTIC_PRODUCTION';
+
+update BuildingModifiers set BuildingType = 'BUILDING_WATER_MILL' where BuildingType = 'BUILDING_GRANARY' and ModifierId = 'WATERMILL_ADDRICEFOOD';
+update BuildingModifiers set BuildingType = 'BUILDING_WATER_MILL' where BuildingType = 'BUILDING_GRANARY' and ModifierId = 'WATERMILL_ADDWHEATYIELD';
+update BuildingModifiers set BuildingType = 'BUILDING_WATER_MILL' where BuildingType = 'BUILDING_GRANARY' and ModifierId = 'WATERMILL_ADDMAIZEYIELD';
+
+delete from DistrictModifiers where ModifierId = 'JNR_WATER_MILL_PRODUCTION_RIVER';
+
+-- Policy
+delete from Types where Type = 'POLICY_JNR_STANDARDIZATION';
+
+-- Great Person
+delete from Types where Type = 'GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU';

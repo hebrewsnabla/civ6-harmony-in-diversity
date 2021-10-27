@@ -54,6 +54,10 @@ update Buildings set Description = 'LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION' w
 update Buildings set Description = 'LOC_BUILDING_BANK_DESCRIPTION' where BuildingType = 'BUILDING_BANK';
 update Buildings set Description = 'LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION' where BuildingType = 'BUILDING_STOCK_EXCHANGE';
 update Buildings set Description = 'LOC_BUILDING_WORKSHOP_DESCRIPTION' where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Description = 'LOC_BUILDING_FACTORY_DL_DESCRIPTION' where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Description = 'LOC_BUILDING_COAL_POWER_PLANT_DL_DESCRIPTION' where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+update Buildings set Description = 'LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DL_DESCRIPTION' where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+update Buildings set Description = 'LOC_BUILDING_POWER_PLANT_DL_DESCRIPTION' where BuildingType = 'BUILDING_POWER_PLANT';
 update Buildings set Description = 'LOC_BUILDING_SEWER_DESCRIPTION' where BuildingType = 'BUILDING_SEWER';	
 
 update Buildings set Description = 'LOC_BUILDING_CATHEDRAL_DL_DESCRIPTION' where BuildingType = 'BUILDING_CATHEDRAL';
@@ -80,6 +84,7 @@ update Beliefs set Description = 'LOC_BELIEF_SYNAGOGUE_DL_DESCRIPTION' where Bel
 update Beliefs set Description = 'LOC_BELIEF_WAT_DL_DESCRIPTION' where BeliefType = 'BELIEF_WAT';
 update Beliefs set Description = 'LOC_BELIEF_STUPA_DL_DESCRIPTION' where BeliefType = 'BELIEF_STUPA';
 update Beliefs set Description = 'LOC_BELIEF_DAR_E_MEHR_DL_DESCRIPTION' where BeliefType = 'BELIEF_DAR_E_MEHR';
+
 
 --------------------------------------------------------------------------------
 -- Basic Improvements
