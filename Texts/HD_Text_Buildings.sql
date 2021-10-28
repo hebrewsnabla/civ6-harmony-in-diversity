@@ -28,7 +28,7 @@ values
     ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "+1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
     ("LOC_BUILDING_MADRASA_DESCRIPTION",                          "A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
     ("LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
-    ("LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "+5% [ICON_SCIENCE] Science in this city. +5% [ICON_SCIENCE] Science if this city is fully powered. "),
+    ("LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "+5% [ICON_SCIENCE] Science in this city. +10% [ICON_SCIENCE] Science if this city is fully powered. "),
     -- Theater
     ("LOC_BUILDING_MARAE_DESCRIPTION",                            "A building unique to the Māori. +2 [ICON_Culture] Culture. +1 [ICON_CULTURE] Culture and +1 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three coast or lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Costs no maintenance. Has no Great Work slots."),
     ("LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum. +5% [ICON_CULTURE] Culture in this city."),
@@ -140,7 +140,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
-    ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+5% [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。"),
     -- 剧院
     ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "+2 [ICON_Culture] 文化值。毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+1 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。维护免费；无巨作槽位。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),

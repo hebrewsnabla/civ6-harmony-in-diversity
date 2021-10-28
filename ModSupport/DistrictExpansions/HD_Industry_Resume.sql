@@ -17,7 +17,7 @@ values
 insert or replace into Building_YieldChanges
     (BuildingType,              YieldType,          YieldChange)
 values
-    ('BUILDING_IZ_WATER_MILL',  'YIELD_PRODUCTION', 6);
+    ('BUILDING_IZ_WATER_MILL',  'YIELD_PRODUCTION', 5);
 
 insert or replace into Building_GreatPersonPoints
     (BuildingType,              GreatPersonClassType,           PointsPerTurn)

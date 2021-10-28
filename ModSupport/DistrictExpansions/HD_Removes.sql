@@ -58,6 +58,9 @@ delete from District_Adjacencies where (YieldChangeId = 'LumberMill_Production' 
 		(select CivUniqueDistrictType from DistrictReplaces where CivUniqueDistrictType = 'DISTRICT_INDUSTRIAL_ZONE')));
 
 -- Buildings
+insert or ignore into BuildingReplaces (CivUniqueBuildingType,  ReplacesBuildingType)
+values ('BUILDING_PALGUM',  'BUILDING_WATER_MILL');
+
 update Buildings set PrereqTech = 'TECH_THE_WHEEL', Cost = 80, Maintenance = 1, Description='LOC_BUILDING_WATER_MILL_DESCRIPTION' where BuildingType = 'BUILDING_WATER_MILL';
 update Buildings set PrereqDistrict = 'DISTRICT_CITY_CENTER', CitizenSlots = 0, RequiresAdjacentRiver = 1 where BuildingType = 'BUILDING_WATER_MILL';
 

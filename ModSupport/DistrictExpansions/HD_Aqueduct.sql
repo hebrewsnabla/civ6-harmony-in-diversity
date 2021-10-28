@@ -5,9 +5,9 @@
 update Districts set Cost = 75, Entertainment = 0, PrereqTech = 'TECH_IRRIGATION' where DistrictType = 'DISTRICT_AQUEDUCT';
 update Districts set Cost = 50, Entertainment = 1, PrereqTech = 'TECH_IRRIGATION' where DistrictType = 'DISTRICT_BATH';
 
-update Buildings set Cost = 110, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_ORCHARD';
-update Buildings set Cost = 110, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_HAMMER_WORKS';
-update Buildings set Cost = 110, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 1, PrereqTech = 'TECH_ENGINEERING' where BuildingType = 'BUILDING_JNR_BATHHOUSE';
+update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_ORCHARD';
+update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 0, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_HAMMER_WORKS';
+update Buildings set Cost = 120, Maintenance = 2, CitizenSlots = 0, Housing = 1, Entertainment = 1, PrereqTech = 'TECH_ENGINEERING' where BuildingType = 'BUILDING_JNR_BATHHOUSE';
 update Buildings set Cost = 220, Maintenance = 5, CitizenSlots = 0, Housing = 2, Entertainment = 1 where BuildingType = 'BUILDING_SEWER';
 
 insert or replace into Building_YieldChanges
