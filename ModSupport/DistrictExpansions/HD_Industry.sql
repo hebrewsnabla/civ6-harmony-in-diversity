@@ -80,7 +80,7 @@ values
     ('MANUFACTURY_ADD_RESOURCE_PRODUCTION',             'YieldType',    'YIELD_PRODUCTION'),
     ('MANUFACTURY_ADD_RESOURCE_PRODUCTION',             'Amount',       1),
     ('MANUFACTURY_ADD_RESOURCE_GOLD',                   'YieldType',    'YIELD_GOLD'),
-    ('MANUFACTURY_ADD_RESOURCE_GOLD',                   'Amount',       2),
+    ('MANUFACTURY_ADD_RESOURCE_GOLD',                   'Amount',       3),
     ('FREIGHT_YARD_POP_PRODUCTION',                     'YieldType',    'YIELD_PRODUCTION'),
     ('FREIGHT_YARD_POP_PRODUCTION',                     'Amount',       1),
     ('FREIGHT_YARD_POP_GOLD',                           'YieldType',    'YIELD_GOLD'),
