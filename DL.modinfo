@@ -405,6 +405,7 @@
     <UpdateText id="Aqueduct_support_text">
       <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
+      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
     </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">

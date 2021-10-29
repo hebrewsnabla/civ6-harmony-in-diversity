@@ -86,3 +86,31 @@ delete from Types where Type = 'POLICY_JNR_STANDARDIZATION';
 
 -- Great Person
 delete from Types where Type = 'GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'JNR_GREATPERSON_FRESH_WATER_PRODUCTION';
+
+-- Monopoly Deletes
+delete from Types where Type = 'RESOURCE_JNR_MACHINES';
+delete from Types where Type = 'RESOURCE_JNR_FERTILIZERS';
+delete from Types where Type = 'RESOURCE_JNR_ELECTRONICS';
+delete from Types where Type = 'RESOURCE_JNR_SOUVENIRS';
+delete from Types where Type = 'RESOURCE_JNR_PHARMA';
+delete from Types where Type = 'RESOURCE_JNR_PLASTICS';
+
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_MACHINES';
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_FERTILIZERS';
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_ELECTRONICS';
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_SOUVENIRS';
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_PHARMA';
+delete from Types where Type = 'PROJECT_CREATE_PRODUCT_JNR_PLASTICS';
+
+delete from GreatWorks where GreatWorkType like 'GREATWORK_PRODUCT_JNR_%';
+
+update Buildings set InternalOnly = 1, PrereqTech = NULL where BuildingType = 'BUILDING_JNR_MODE_MACHINES';
+update Buildings set InternalOnly = 1, PrereqTech = NULL WHERE BuildingType = 'BUILDING_JNR_MODE_FERTILIZERS';
+update Buildings set InternalOnly = 1, PrereqTech = NULL WHERE BuildingType = 'BUILDING_JNR_MODE_ELECTRONICS';
+update Buildings set InternalOnly = 1, PrereqTech = NULL WHERE BuildingType = 'BUILDING_JNR_MODE_SOUVENIRS';
+update Buildings set InternalOnly = 1, PrereqTech = NULL WHERE BuildingType = 'BUILDING_JNR_MODE_PHARMA';
+update Buildings set InternalOnly = 1, PrereqTech = NULL WHERE BuildingType = 'BUILDING_JNR_MODE_PLASTICS';
+
+delete from District_Adjacencies where YieldChangeId = 'JNR_UC_Industry_Production';
+delete from District_Adjacencies where YieldChangeId = 'JNR_UC_Corporation_Production';

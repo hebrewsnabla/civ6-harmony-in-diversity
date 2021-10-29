@@ -9,11 +9,24 @@ update Buildings set Cost = 180, Maintenance = 3, CitizenSlots = 1, PrereqTech =
 update Buildings set Cost = 330, Maintenance = 7, PrereqTech = 'TECH_INDUSTRIALIZATION' where BuildingType = 'BUILDING_JNR_CHEMICAL';
 update Buildings set Cost = 360, Maintenance = 8 where BuildingType = 'BUILDING_JNR_FREIGHT_YARD';
 
+update Buildings set Cost = 360, Maintenance = 8, PrereqTech = 'TECH_ELECTRICITY', RegionalRange = 6, PrereqCivic = NULL, Name='LOC_BUILDING_ELECTRONICS_FACTORY_NAME',
+    Description = 'LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR' where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
+
+update Buildings_XP2 set RequiredPower = 2 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
+
 -- Yield
 insert or replace into Building_YieldChanges
-    (BuildingType,              YieldType,          YieldChange)
+    (BuildingType,                      YieldType,          YieldChange)
 values
-    ('BUILDING_POWER_PLANT',    'YIELD_SCIENCE',    3);
+    ('BUILDING_POWER_PLANT',            'YIELD_SCIENCE',    3),
+    ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_SCIENCE',    2),
+    ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_CULTURE',    2);
+
+insert or replace into Building_YieldChangesBonusWithPower
+    (BuildingType,                      YieldType,          YieldChange)
+values
+    ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_SCIENCE',    2),
+    ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_CULTURE',    2);
 
 update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_JNR_WIND_MILL' and YieldType = 'YIELD_PRODUCTION';
 -- update Building_YieldChanges set YieldChange = 0 where BuildingType = 'BUILDING_COAL_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
@@ -37,7 +50,9 @@ values
     ('BUILDING_JNR_CHEMICAL',       'YIELD_PRODUCTION', 1),
     ('BUILDING_JNR_CHEMICAL',       'YIELD_GOLD',       -1),
     ('BUILDING_JNR_FREIGHT_YARD',   'YIELD_PRODUCTION', 1),
-    ('BUILDING_JNR_FREIGHT_YARD',   'YIELD_GOLD',       -1);
+    ('BUILDING_JNR_FREIGHT_YARD',   'YIELD_GOLD',       -1),
+    ('BUILDING_ELECTRONICS_FACTORY', 'YIELD_PRODUCTION', 1),
+    ('BUILDING_ELECTRONICS_FACTORY', 'YIELD_GOLD',       -1);
 
 -- Bonus
 delete from BuildingModifiers where ModifierId like 'JNR_%' and (
@@ -127,71 +142,26 @@ values
     'LOC_BOOST_TRIGGER_ELECTRICITY_XP2',    'LOC_BOOST_TRIGGER_LONGDESC_ELECTRICITY');
 
 update Boosts set
-    TriggerDescription = 'LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2',
+    -- TriggerDescription = 'LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2',
     TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION',
-    BuildingType = 'BUILDING_WORKSHOP',
-    NumItems = 3
+    BuildingType = 'BUILDING_WORKSHOP', NumItems = 2
 where TechnologyType = 'TECH_INDUSTRIALIZATION';
 
-update Boosts set
-    TriggerDescription = 'LOC_BOOST_TRIGGER_CLASS_STRUGGLE',
-    BuildingType = 'BUILDING_FACTORY',
-    NumItems = 3
-where CivicType = 'CIVIC_CLASS_STRUGGLE';
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_MANUFACTURY', ImprovementType = NULL, NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC',
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION' -- _JNR_UC
+where TechnologyType = 'TECH_MASS_PRODUCTION';
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_CHEMICAL', NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC',
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY' -- _JNR_UC
+where TechnologyType = 'TECH_CHEMISTRY';
 
--- TODO: Move to normal case.
--- Great People
-update GreatPersonIndividuals set ActionCharges = 4 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP';
-update ModifierArguments set Value = 55 where Name = 'Amount' and ModifierId = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP_PRODUCTION_OTHER';
-update ModifierArguments set Value = 110 where Name = 'Amount' and ModifierId = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP_PRODUCTION_ANCIENT_CLASSICAL';
+update Boosts set BuildingType = 'BUILDING_FACTORY', NumItems = 2 where CivicType = 'CIVIC_CLASS_STRUGGLE';
 
-update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES';
-update ModifierArguments set Value = 1 where Name = 'Amount' and ModifierId = 'JNR_GREATPERSON_EUREKA_STRENGTH';
-
-update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_CITY_CENTER' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_LI_BING';
-
+--------------------------------------------------------------
+-- Great Person
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_LI_BING' and ModifierId = 'JNR_GREATPERSON_DAM_ADJACENCYPRODUCTION';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN' and ModifierId = 'JNR_GREATPERSON_GREAT_WORK_WRITING_PRODUCTION';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI' and ModifierId = 'JNR_GREATPERSON_WORKSHOP_PRODUCTION';
 update GreatPersonIndividuals set ActionEffectTextOverride = NULL where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI';
-
-insert or replace into GreatPersonIndividualActionModifiers
-    (GreatPersonIndividualType,             ModifierId,                                         AttachmentTargetType)
-values
-    ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',  'GREATPERSON_1MEDIEVALTECHBOOST',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION',             'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_SPEED_UP',                     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',    'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_TECH_MACHINERY',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
-
-insert or replace into Modifiers
-    (ModifierId,                                        ModifierType)
-values
-    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER'),
-    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'MODIFIER_PLAYER_CITIES_RIVER_ADJACENCY'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST');
-
-update Modifiers set SubjectRequirementSetId = 'DISTRICT_IS_DAM' where ModifierId = 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION';
-
-insert or replace into ModifierArguments
-    (ModifierId,                                        Name,               Value)
-values
-    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
-    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'DistrictType',     'DISTRICT_DAM'),
-    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'Amount',           25),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'DistrictType',     'DISTRICT_INDUSTRIAL_ZONE'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'YieldType',        'YIELD_PRODUCTION'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Amount',           1),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Description',      'LOC_DISTRICT_RIVER_PRODUCTION'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'TechType',         'TECH_MACHINERY'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'GrantTechIfBoosted', 1);
-
-insert or replace into ModifierStrings
-    (ModifierId,                                        Context,    Text)
-values
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Summary',  'LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'Summary',  'LOC_JNR_GREATPERSON_TECH_MACHINERY');
 
 --------------------------------------------------------------
 -- Reqs

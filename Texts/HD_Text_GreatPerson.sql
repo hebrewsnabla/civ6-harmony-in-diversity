@@ -93,3 +93,49 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "所有港口+{Amount} [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_CHESTER_NIMITZ_EXPANSION2_ACTIVE",                  "立即生产出拥有1次升级的航空母舰单位。每回合提供1点 [ICON_RESOURCE_Oil] 石油。生产海军突袭者类单位时+20% [ICON_Production] 生产力。");
 
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                           Text)
+values
+    ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",             "Archimedes"),
+    ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more of technologies."),
+    ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                "Li Bing"),
+    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts."),
+    ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                 "Ma Jun"),
+    ("LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",           "Standard adjacency bonus for Industrial Zones if next to a river."),
+    ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is triggered, instead completes the tech."),
+    ("LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                       "Grants 55 [ICON_Production] Production towards wonder construction, doubled if the wonder is from the Ancient or Classical Era."),
+    ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",   "Martine de Bertereau"),
+    -- history
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_1", "Archimedes of Syracuse (c. 287 – c. 212 BC) was a Greek mathematician, physicist, engineer, astronomer, and inventor. Although few details of his life are known, he is regarded as one of the leading scientists in classical antiquity. Considered to be the greatest mathematician of ancient history, and one of the greatest of all time, Archimedes anticipated modern calculus and analysis by applying the concept of the infinitely small and the method of exhaustion to derive and rigorously prove a range of geometrical theorems, including: the area of a circle; the surface area and volume of a sphere; area of an ellipse; the area under a parabola; the volume of a segment of a paraboloid of revolution; the volume of a segment of a hyperboloid of revolution; and the area of a spiral."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_2", "His other mathematical achievements include deriving an accurate approximation of pi; defining and investigating the spiral that now bears his name; and devising a system using exponentiation for expressing very large numbers. He was also one of the first to apply mathematics to physical phenomena, founding hydrostatics and statics. Archimedes' achievements in this area include a proof of the principle of the lever, the widespread use of the concept of center of gravity, and the enunciation of the law of buoyancy. He is also credited with designing innovative machines, such as his screw pump, compound pulleys, and defensive war machines to protect his native Syracuse from invasion."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_CHAPTER_HISTORY_PARA_1",   "Li Bing (Chinese: 李冰; pinyin: Lǐ Bīng; c. 3rd century BC) was a Chinese hydraulic engineer and official of the Warring States period. He served the state of Qin as an administrator and is revered for his work on the Dujiangyan River Control System, which both controlled flooding and provided irrigation water year-round, greatly increasing the productivity of the valley. Li Bing became a cultural icon, known as the vanquisher of the River God and is compared to the Great Yu."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_CHAPTER_HISTORY_PARA_2",   "Dujiangyan is still in use today and is listed as a UNESCO World Heritage Site."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_1",    "Ma Jun (fl. 220–265), courtesy name Deheng, was a Chinese mechanical engineer, inventor, and politician who lived in the state of Cao Wei during the Three Kingdoms period of China."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_2",    "His most notable invention was that of the south-pointing chariot, a directional compass vehicle which actually had no magnetic function, but was operated by use of differential gears (which applies equal amount of torque to driving wheels rotating at different speeds). It is because of this revolutionary device (and other achievements) that Ma Jun is known as one of the most brilliant mechanical engineers and inventors of his day (alongside Zhang Heng of the earlier Eastern Han dynasty). The device was re-invented by many after Ma Jun, including the astronomer and mathematician Zu Chongzhi (429–500). In the later medieval dynastic periods, Ma Jun's south-pointing chariot was combined in a single device with the distance-measuring odometer."),
+    ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_3",    "One of Ma Jun's early inventions was an improved silk drawloom. He also invented a keel waterwheel to divert water from low to high ground; created a wheel-rotating stone firing machine that could continuously fire stones up to hundreds of paces; He once invented for the Wei emperor Cao Rui an intricate hydraulic-powered, mechanical-operated puppet theatre. Since then, Ma Jun has also modified the Zhuge crossbow, contributing to scientific development and technological progress.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                 Text)
+values
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",                  "阿基米德"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                              "[ICON_TechBoosted] 尤里卡提供的科技值额外+1%。"),
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                     "李冰"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%，堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                      "马钧"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",                "工业区若沿河可获得一份标准相邻加成。"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_TECH_MACHINERY",                               "为机械科技启动 [ICON_TechBoosted] 尤里卡。 若已被触发，则完成该科技。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                            "建造奇观时提供55点 [ICON_Production] 生产力，对于远古和古典时代的奇观加倍。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE_JNR_UC",                         "此城所有与淡水源、水渠、堤坝以及运河相邻的单元格+1 [ICON_Production] 生产力。"), --JNR IZ EX
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",        "玛蒂娜·德·贝尔特罗"),
+    -- history
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_1", "阿基米德（公元前287年—公元前212年），伟大的古希腊哲学家、百科式科学家、数学家、物理学家、力学家，静态力学和流体静力学的奠基人，并且享有“力学之父”的美称，阿基米德和高斯、牛顿并列为世界三大数学家。 阿基米德曾说过：“给我一个支点，我就能撬起整个地球。”"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_2", "阿基米德确立了静力学和流体静力学的基本原理。给出许多求几何图形重心，包括由一抛物线和其网平行弦线所围成图形的重心的方法。阿基米德证明物体在液体中所受浮力等于它所排开液体的重量，这一结果后被称为阿基米德原理。他还给出正抛物旋转体浮在液体中平衡稳定的判据。阿基米德发明的机械有引水用的水螺旋，能牵动满载大船的杠杆滑轮机械，能说明日食，月食现象的地球-月球-太阳运行模型。但他认为机械发明比纯数学低级，因而没写这方面的著作。阿基米德还采用不断分割法求椭球体、旋转抛物体等的体积，这种方法已具有积分计算的雏形。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_CHAPTER_HISTORY_PARA_1",    "李冰（约公元前3世纪）是战国时代秦国水利工程专家。公元前256年—前251年被秦昭王任为蜀郡（今成都一带）郡守，任蜀郡郡守时他主持设计并建造了成都北部的都江堰，泄岷江洪水且用之于灌溉，为成都平原成为天府之国奠定了非常重要的基础。他在蜀郡还主持兴办了其他水利工程，并修筑桥梁，在广都主持开凿盐井等，为开发成都平原、发展农业生产作出了重大贡献。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_CHAPTER_HISTORY_PARA_2",    "都江堰至今仍在使用，并被列为联合国教科文组织的世界遗产地。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_1",     "马钧，字德恒，三国时期魏国扶风（今陕西省兴平市）人，机械工程师、发明家和政治家。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_2",     "他最引人注目的发明是指向南方的战车，这是一种定向罗盘车，实际上没有磁力功能，而是通过使用差动齿轮（对以不同速度旋转的驱动轮施加等量的扭矩）来操作。正是由于这一革命性的装置（以及其他成就），马钧被称为当时最杰出的机械工程师和发明家之一（与早期东汉的张衡齐名）。在马钧之后，许多人重新发明了这个装置，包括天文学家和数学家祖冲之（429-500）。在后来的中世纪王朝时期，马钧的指向南方的战车与测量距离的里程表合二为一。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_3",     "他还改进了当时操作笨重的织绫机；发明一种由低处向高地引水的龙骨水车；制作出一种轮转式发石机，能连续发射石块，远至数百步；把木制原动轮装于木偶下面，叫做“水转百戏图”。此后，马钧还改制了诸葛连弩，对科学发展和技术进步做出了贡献。");

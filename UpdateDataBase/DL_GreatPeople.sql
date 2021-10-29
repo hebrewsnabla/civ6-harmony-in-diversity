@@ -2,7 +2,160 @@
 --     GreatPeople Adjustments     --
 -------------------------------------
 
--- TODO: Great prophet grant 1 extra district slot.
+-------------------------------------------------------------------------------------------------------------------------------------------
+-- New Great Eng (Classical Era), JNR Industry Expansion
+-------------------------------------------------------------------------------------------------------------------------------------------
+-- Types
+--------------------------------------------------------------
+INSERT OR IGNORE INTO Types
+		(Type,													Kind)
+VALUES	('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',				'KIND_GREAT_PERSON_INDIVIDUAL'),
+		('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',					'KIND_GREAT_PERSON_INDIVIDUAL'),
+		('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',					'KIND_GREAT_PERSON_INDIVIDUAL');
+		-- ('GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU',	'KIND_GREAT_PERSON_INDIVIDUAL');
+--------------------------------------------------------------
+
+-- GreatPersonIndividuals
+--------------------------------------------------------------
+INSERT OR IGNORE INTO GreatPersonIndividuals
+		(
+		GreatPersonIndividualType,
+		Name,
+		GreatPersonClassType,
+		EraType,
+		Gender,
+		ActionCharges,
+		ActionRequiresCompletedDistrictType
+		)
+VALUES	(
+		'GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',
+		'LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME',
+		'GREAT_PERSON_CLASS_ENGINEER',
+		'ERA_CLASSICAL',
+		'M',
+		1,
+		'DISTRICT_INDUSTRIAL_ZONE'
+		),
+		(
+		'GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',
+		'LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME',
+		'GREAT_PERSON_CLASS_ENGINEER',
+		'ERA_CLASSICAL',
+		'M',
+		1,
+		'DISTRICT_INDUSTRIAL_ZONE'
+		),
+		(
+		'GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',
+		'LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME',
+		'GREAT_PERSON_CLASS_ENGINEER',
+		'ERA_CLASSICAL',
+		'M',
+		1,
+		'DISTRICT_CITY_CENTER'
+		);
+		-- (
+		-- 'GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU',
+		-- 'LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME',
+		-- 'GREAT_PERSON_CLASS_ENGINEER',
+		-- 'ERA_RENAISSANCE',
+		-- 'F',
+		-- 1,
+		-- 'DISTRICT_CITY_CENTER'
+		-- );
+
+UPDATE GreatPersonIndividuals SET EraType='ERA_CLASSICAL'	WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_IMHOTEP';
+
+UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC'				WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_IMHOTEP';
+-- UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_LEONARDO_DA_VINCI_ACTIVE_JNR_UC'	WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI';
+-- UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_JAMES_WATT_ACTIVE_JNR_UC'			WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_JAMES_WATT';
+--------------------------------------------------------------
+
+-- Modifiers
+--------------------------------------------------------------
+INSERT OR IGNORE INTO Modifiers
+		(ModifierId,										ModifierType,											SubjectRequirementSetId,					Permanent)
+VALUES	('JNR_GREATPERSON_EUREKA_STRENGTH',					'MODIFIER_PLAYER_ADJUST_TECHNOLOGY_BOOST',				NULL,										1),
+		('JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS',			'MODIFIER_PLAYER_ADJUST_DISTRICT_UNLOCK',				NULL,										1);
+--------------------------------------------------------------
+
+-- ModifierArguments
+--------------------------------------------------------------
+INSERT OR IGNORE INTO ModifierArguments
+		(ModifierId,										Name,					Value)
+VALUES	('JNR_GREATPERSON_EUREKA_STRENGTH',					'Amount',				5),
+		('JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS',			'DistrictType',			'DISTRICT_DAM'),
+		('JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS',			'TechType',				'TECH_MATHEMATICS');
+
+UPDATE ModifierArguments SET Extra=-1	WHERE Name='Amount' AND ModifierId='JNR_GREATPERSON_EUREKA_STRENGTH';
+--------------------------------------------------------------
+
+-- GreatPersonIndividualActionModifiers
+--------------------------------------------------------------
+INSERT OR IGNORE INTO GreatPersonIndividualActionModifiers
+		(GreatPersonIndividualType,								ModifierId,											AttachmentTargetType)
+VALUES	('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',				'JNR_GREATPERSON_EUREKA_STRENGTH',					'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
+		('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',					'JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS',			'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY');
+--------------------------------------------------------------
+
+-- ModifierStrings
+--------------------------------------------------------------
+INSERT OR IGNORE INTO ModifierStrings
+		(ModifierId,										Context,	Text)
+VALUES	('JNR_GREATPERSON_EUREKA_STRENGTH',					'Summary',	'LOC_JNR_GREATPERSON_EUREKA_STRENGTH'),
+		('JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS',			'Summary',	'LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS');
+--------------------------------------------------------------
+
+--------------------------------------------------------------
+-- Adaptation for JNR's New Great Eng
+update GreatPersonIndividuals set ActionCharges = 4 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP';
+update ModifierArguments set Value = 55 where Name = 'Amount' and ModifierId = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP_PRODUCTION_OTHER';
+update ModifierArguments set Value = 110 where Name = 'Amount' and ModifierId = 'GREAT_PERSON_INDIVIDUAL_IMHOTEP_PRODUCTION_ANCIENT_CLASSICAL';
+
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES';
+update ModifierArguments set Value = 1 where Name = 'Amount' and ModifierId = 'JNR_GREATPERSON_EUREKA_STRENGTH';
+
+update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_CITY_CENTER' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_LI_BING';
+
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,             ModifierId,                                         AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',  'GREATPERSON_1MEDIEVALTECHBOOST',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION',             'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_SPEED_UP',                     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',    'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_TECH_MACHINERY',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType)
+values
+    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER'),
+    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION'),
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'MODIFIER_PLAYER_CITIES_RIVER_ADJACENCY'),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST');
+
+update Modifiers set SubjectRequirementSetId = 'DISTRICT_IS_DAM' where ModifierId = 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION';
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+values
+    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
+    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'DistrictType',     'DISTRICT_DAM'),
+    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'Amount',           25),
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'DistrictType',     'DISTRICT_INDUSTRIAL_ZONE'),
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'YieldType',        'YIELD_PRODUCTION'),
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Amount',           1),
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Description',      'LOC_DISTRICT_RIVER_PRODUCTION'),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'TechType',         'TECH_MACHINERY'),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'GrantTechIfBoosted', 1);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                        Context,    Text)
+values
+    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Summary',  'LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY'),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'Summary',  'LOC_JNR_GREATPERSON_TECH_MACHINERY');
+-------------------------------------------------------------- End
+
 -------------------------------------------------------------------------------------------------------------------------------------------
 ---  Great Engineer
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -221,8 +374,15 @@ values
         ('MARY_KATHERINE_DEFENSE',                       'Amount',            1),
         ('MARY_KATHERINE_DEFENSE',                       'Offense',           0);
 
---瓦特给工厂+3锤
-update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
+-- GREAT_PERSON_INDIVIDUAL_ADA_LOVELACE
+update GreatPersonIndividuals set ActionCharges = ActionCharges + 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADA_LOVELACE';
+
+-- 瓦特给工厂+3锤（过期）
+-- update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
+-- 瓦特拿特斯拉的效果 TODO
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_WORKSHOP';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORY';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION';
 
 --GREAT_PERSON_INDIVIDUAL_JANAKI_AMMAL
 update ModifierArguments set Value = 800 where ModifierId = 'GREATPERSON_ADJACENT_RAINFOREST_SCIENCE' and Name = 'Amount';
