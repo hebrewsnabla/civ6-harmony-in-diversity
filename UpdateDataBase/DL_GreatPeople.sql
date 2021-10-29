@@ -159,11 +159,11 @@ values
 -------------------------------------------------------------------------------------------------------------------------------------------
 ---  Great Engineer
 -------------------------------------------------------------------------------------------------------------------------------------------
--- bisheng:if printing eruka is boosted grant this tech GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS
--- chengqiangge: +1 great engineer points for each level wall 
--- davinci: +1 production for workshop
--- CHARLES_CORREA: +2 appeal nationwide&ALVAR_AALTO: +1 appeal nationwide
--- SHAH_JAHAN :tourism from district adjacency nationwide
+-- Bi Sheng: if printing eruka is boosted grant this tech GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS
+-- JAMES_OF_ST_GEORGE: +1 great engineer points for each level wall 
+-- CHARLES_CORREA: +2 appeal national-wide
+-- ALVAR_AALTO: +1 appeal national-wide
+-- SHAH_JAHAN: tourism from district adjacency national-wide
 -- JOHN_A_ROEBLING: little goldengate + wonder tourism
 -- SHAH_JAHAN: to renissance era
 -- JOSEPH_PAXTON: to modern era, 2 charges +680 production for wonders 
@@ -176,9 +176,13 @@ delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE';
 update GreatPersonIndividuals set EraType = 'ERA_MODERN', ActionCharges = 2, ActionRequiresIncompleteWonder = 1, ActionRequiresCompletedDistrictType = NULL where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON' and (ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' or ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_ENTERTAINMENT');
+update GreatPersonIndividuals set ActionCharges = ActionCharges + 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADA_LOVELACE';
+
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA' and ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA' and ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_PRODUCTION';
 
 insert or replace into GreatPersonIndividualActionModifiers 
-    (GreatPersonIndividualType,                     ModifierId,                                     AttachmentTargetType)
+    (GreatPersonIndividualType,                         ModifierId,                                     AttachmentTargetType)
 values
     ('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',         'GREATPERSON_SINGLECITY_APPEAL',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
     ('GREAT_PERSON_INDIVIDUAL_JOHN_A_ROEBLING',         'GREATPERSON_SINGLECITY_WONDER_TOURISM',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
@@ -187,13 +191,16 @@ values
     ('GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON',           'GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_WONDER_IN_TILE');
 
 insert or replace into GreatPersonIndividualActionModifiers 
-    (GreatPersonIndividualType,                     ModifierId)
+    (GreatPersonIndividualType,                         ModifierId)
 values
     ('GREAT_PERSON_INDIVIDUAL_BI_SHENG',                'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_WALL_GEP'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_CASTLE_GEP'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP'),
-    -- ('GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI',        'GREATPERSON_WORKSHOP_PRODUCTION'),
+    ('GREAT_PERSON_INDIVIDUAL_JAMES_WATT',              'GREATPERSON_REGIONAL_RANGE_BONUS'),
+    ('GREAT_PERSON_INDIVIDUAL_JAMES_WATT',              'GREATPERSON_REGIONAL_RANGE_PRODUCTION'),
+    ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_CAMPUS_SCIENCE_PRODUCTION'),
+    ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE'),
     ('GREAT_PERSON_INDIVIDUAL_ALVAR_AALTO',             'GREATPERSON_NATIONAL_APPEAL'),
     ('GREAT_PERSON_INDIVIDUAL_CHARLES_CORREA',          'GREATPERSON_NATIONAL_APPEAL_BIG');
 
@@ -201,10 +208,13 @@ insert or replace into Modifiers
     (ModifierId,                                        ModifierType,                               Runonce, Permanent, SubjectRequirementSetId)
 values
     ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,1,    NULL),
-    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT', 0,1,    'CITY_HAS_ANCIENT_WALLS'),
+    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_ANCIENT_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_MEDIEVAL_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_RENAISSANCE_WALLS'),
-    -- ('GREATPERSON_WORKSHOP_PRODUCTION',                  'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  0,1,    NULL),
+    ('GREATPERSON_REGIONAL_RANGE_BONUS',                'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_CAMPUS'),
+    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_INDUSTRIAL_ZONE'),
     ('GREATPERSON_NATIONAL_APPEAL',                     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_APPEAL',            0,1,    NULL),
     ('GREATPERSON_SINGLECITY_APPEAL',                   'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',              0,1,    NULL),
     ('GREATPERSON_SINGLECITY_WONDER_TOURISM',           'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',                  0,1,    NULL),
@@ -217,16 +227,20 @@ insert or replace into ModifierArguments
     (ModifierId,                                                    Name,                   Value)
 values
     ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING',             'TechType',             'TECH_PRINTING'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING',             'GrantTechIfBoosted',   1),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                            'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                            'Amount',               1),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',                          'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',                          'Amount',               1),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',                       'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',                       'Amount',               1),
-    -- ('GREATPERSON_WORKSHOP_PRODUCTION',                              'BuildingType',         'BUILDING_WORKSHOP'),
-    -- ('GREATPERSON_WORKSHOP_PRODUCTION',                              'Amount',               1),
-    -- ('GREATPERSON_WORKSHOP_PRODUCTION',                              'YieldType',            'YIELD_PRODUCTION'),
+    ('GREATPERSON_REGIONAL_RANGE_BONUS',                            'Amount',               3),
+    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',                       'YieldType',            'YIELD_PRODUCTION'),
+    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',                       'Amount',               3),
+    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',                       'YieldTypeToMirror',    'YIELD_SCIENCE'),
+    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',                       'YieldTypeToGrant',     'YIELD_PRODUCTION'),
+    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',                     'YieldTypeToMirror',    'YIELD_PRODUCTION'),
+    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',                     'YieldTypeToGrant',     'YIELD_SCIENCE'),
     ('GREATPERSON_NATIONAL_APPEAL',                                 'Amount',               1),
     ('GREATPERSON_SINGLECITY_APPEAL',                               'Amount',               2),
     ('GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM',                  'Amount',               100),
@@ -236,6 +250,11 @@ values
     ('GREATPERSON_NATIONAL_APPEAL_BIG',                             'Amount',               2),
     ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',                 'Amount',               680),
     ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',                 'KeepOverflow',         0);
+
+-- 瓦特拿特斯拉的效果
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_WORKSHOP';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORY';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION';
 
 ------------------------------------------------------------------------------------------------------------------------------
 --- Great Scientist
@@ -335,6 +354,17 @@ values
     ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',       'TechType',             'TECH_SANITATION'),
     ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',       'GrantTechIfBoosted',   1);
 
+--GREAT_PERSON_INDIVIDUAL_JANAKI_AMMAL
+update ModifierArguments set Value = 800 where ModifierId = 'GREATPERSON_ADJACENT_RAINFOREST_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_MARY_LEAKEY
+update ModifierArguments set Value = 700 where ModifierId = 'GREATPERSON_ARTIFACT_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_MARGARET_MEAD
+update ModifierArguments set Value = 3000 where ModifierId = 'GREAT_PERSON_GRANT_LOTSO_SCIENCE' and Name = 'Amount';
+
+--GREAT_PERSON_INDIVIDUAL_ABDUS_SALAM
+update ModifierArguments set Value = 'ERA_FUTURE' where ModifierId = 'GREATPERSON_ALLINFORMATIONTECHBOOSTS' and Name = 'EndEraType';
 
 -- insert or replace into GreatWorks
 --  (GreatWorkType, GreatWorkObjectType, GreatPersonIndividualType, Name, Audio, Image, Quote, Tourism, Eratype)
@@ -348,6 +378,9 @@ values
 -- todo: add a button for Newton
 -- and see if he is 30% sicence boost
 
+------------------------------------------------------------------------------------------------------------------------------
+--- Great Merchants
+-------------------------------------------------------------------------------------------------------------------------------
 --柯莱欧司具有2次使用次数
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_COLAEUS'; 
 
@@ -357,132 +390,7 @@ update ModifierArguments set Value = 100 where ModifierId = 'GREATPERSON_GOLD_TI
 --拉贾托达马尔使内商从每个专业化区域+1金
 update ModifierArguments set Value = 1 where ModifierId = 'GREATPERSON_DOMESTIC_ROUTE_GOLD_PER_SPECIALTY_DISTRICT' and Name = 'Amount';
 
---玛丽凯瑟琳同时也会使敌方间谍我方领土内降级
-insert into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                             ModifierId)
-values
-        ('GREAT_PERSON_INDIVIDUAL_MARY_KATHERINE_GODDARD',     'MARY_KATHERINE_DEFENSE');
-
-insert into Modifiers
-        (ModifierId,                      ModifierType)
-values
-        ('MARY_KATHERINE_DEFENSE',        'MODIFIER_PLAYER_ADJUST_SPY_BONUS');
-
-insert into ModifierArguments
-        (ModifierId,                                     Name,                Value)
-values
-        ('MARY_KATHERINE_DEFENSE',                       'Amount',            1),
-        ('MARY_KATHERINE_DEFENSE',                       'Offense',           0);
-
--- GREAT_PERSON_INDIVIDUAL_ADA_LOVELACE
-update GreatPersonIndividuals set ActionCharges = ActionCharges + 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADA_LOVELACE';
-
--- 瓦特给工厂+3锤（过期）
--- update ModifierArguments set Value = 3 where ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION' and Name = 'Amount';
--- 瓦特拿特斯拉的效果 TODO
-delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_WORKSHOP';
-delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORY';
-delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_FACTORIES_PRODUCTION';
-
---GREAT_PERSON_INDIVIDUAL_JANAKI_AMMAL
-update ModifierArguments set Value = 800 where ModifierId = 'GREATPERSON_ADJACENT_RAINFOREST_SCIENCE' and Name = 'Amount';
-
---GREAT_PERSON_INDIVIDUAL_MARY_LEAKEY
-update ModifierArguments set Value = 700 where ModifierId = 'GREATPERSON_ARTIFACT_SCIENCE' and Name = 'Amount';
-
---GREAT_PERSON_INDIVIDUAL_MARGARET_MEAD
-update ModifierArguments set Value = 3000 where ModifierId = 'GREAT_PERSON_GRANT_LOTSO_SCIENCE' and Name = 'Amount';
-
---GREAT_PERSON_INDIVIDUAL_ABDUS_SALAM
-update ModifierArguments set Value = 'ERA_FUTURE' where ModifierId = 'GREATPERSON_ALLINFORMATIONTECHBOOSTS' and Name = 'EndEraType';
-
---特斯拉改成全国效果。
-insert into Modifiers
-        (ModifierId,                      ModifierType,                                                  SubjectRequirementSetId)
-values
-        ('TESLA_REGIONAL_RANGE_BONUS',    'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',       'DISTRICT_IS_INDUSTRIAL_ZONE');
-
-insert into ModifierArguments
-        (ModifierId,                                     Name,                Value)
-values
-        ('TESLA_REGIONAL_RANGE_BONUS',                  'Amount',             3);
-
-insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',       'TESLA_REGIONAL_RANGE_BONUS',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
--- DL: Might Better to attach to Player (default value)
-
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA';
-
---皮耶罗·迪·巴尔迪现在给300金
-insert into Modifiers
-        (ModifierId,                      ModifierType,                   RunOnce,              Permanent)
-values
-        ('PIERO_DE_BARDI_GOLD',           'MODIFIER_PLAYER_GRANT_YIELD',   1,                    1);
-
-insert or replace into ModifierArguments
-        (ModifierId,                                     Name,          Type,                    Value)
-values
-        ('PIERO_DE_BARDI_GOLD',                          'Amount',      'ScaleByGameSpeed',      300),
-        ('PIERO_DE_BARDI_GOLD',                          'YieldType',   'ARGTYPE_IDENTITY',    'YIELD_GOLD');
-
-insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_PIERO_DE_BARDI',     'PIERO_DE_BARDI_GOLD',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
-
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_SMALL' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_PIERO_DE_BARDI';
-
---雅各布·富格尔现在给400金
-insert into Modifiers
-        (ModifierId,                      ModifierType,                   RunOnce,              Permanent)
-values
-        ('JAKOB_FUGGER_GOLD',           'MODIFIER_PLAYER_GRANT_YIELD',   1,                    1);
-
-insert or replace into ModifierArguments
-        (ModifierId,                                     Name,          Type,                    Value)
-values
-        ('JAKOB_FUGGER_GOLD',                          'Amount',      'ScaleByGameSpeed',      400),
-        ('JAKOB_FUGGER_GOLD',                          'YieldType',   'ARGTYPE_IDENTITY',    'YIELD_GOLD');
-
-insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_JAKOB_FUGGER',     'JAKOB_FUGGER_GOLD',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
-
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_SMALL' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAKOB_FUGGER';
-
---约翰·雅各·阿斯特现在给600金
-insert into Modifiers
-        (ModifierId,                      ModifierType,                   RunOnce,              Permanent)
-values
-         ('JOHN_JACOB_ASTOR_GOLD',           'MODIFIER_PLAYER_GRANT_YIELD',   1,                    1);
-
-insert or replace into ModifierArguments
-        (ModifierId,                                     Name,          Type,                    Value)
-values
-        ('JOHN_JACOB_ASTOR_GOLD',                       'Amount',      'ScaleByGameSpeed',      600),
-        ('JOHN_JACOB_ASTOR_GOLD',                       'YieldType',   'ARGTYPE_IDENTITY',    'YIELD_GOLD');
-
-insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_JOHN_JACOB_ASTOR',     'JOHN_JACOB_ASTOR_GOLD',            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
-
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_LARGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOHN_JACOB_ASTOR';
-
---周达观直接给3使者
-insert into Modifiers
-        (ModifierId,                      ModifierType,                             RunOnce,              Permanent)
-values
-        ('ZHOU_DAGUAN_TOKENS',            'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',      1,                  1);
-
-insert or replace into ModifierArguments
-        (ModifierId,                                     Name,          Type,                    Value)
-values
-        ('ZHOU_DAGUAN_TOKENS',                           'Amount',      'ARGTYPE_IDENTITY',      3);
-
+-- 周达观直接给3使者
 update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_COMMERCIAL_HUB' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividuals set ActionRequiresCityStateTerritory = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividuals set ActionRequiresNonHostileTerritory = 0 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
@@ -490,64 +398,60 @@ update GreatPersonIndividuals set ActionRequiresOwnedTile = 1 where GreatPersonI
 update GreatPersonIndividualActionModifiers set ModifierId = 'ZHOU_DAGUAN_TOKENS' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 update GreatPersonIndividualActionModifiers set AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
 
+-- 皮耶罗·迪·巴尔迪现在给300金
+-- 雅各布·富格尔现在给400金
+-- 约翰·雅各·阿斯特现在给600金
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_SMALL' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_PIERO_DE_BARDI';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_SMALL' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAKOB_FUGGER';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GOLD_LARGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOHN_JACOB_ASTOR';
+-- 亚当·斯密 改为+1经济槽
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADAM_SMITH' and (ModifierId = 'GREATPERSON_GOVERNOR_POINTS' or ModifierId = 'GREATPERSON_GOLD_LARGE');
+-- 玛丽凯瑟琳同时也会使敌方间谍我方领土内降级
 -- 梅里塔·本茨额外+1商路容量
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ' and ModifierId = 'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY';
 
-insert or replace into GreatPersonIndividualActionModifiers 
-    (GreatPersonIndividualType,                     ModifierId,                                     AttachmentTargetType)
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                     ModifierId,                                 AttachmentTargetType)
 values
-    ('GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ',           'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',      'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+    ('GREAT_PERSON_INDIVIDUAL_PIERO_DE_BARDI',      'PIERO_DE_BARDI_GOLD',                      'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_JAKOB_FUGGER',        'JAKOB_FUGGER_GOLD',                        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_JOHN_JACOB_ASTOR',    'JOHN_JACOB_ASTOR_GOLD',                    'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_ADAM_SMITH',          'GREATPERSON_ECONOMIC_POLICY_SLOT',         'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_MARY_KATHERINE_GODDARD',  'MARY_KATHERINE_DEFENSE',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ',       'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
-insert or replace into Modifiers
-    (ModifierId,                                        ModifierType,                                   Runonce, Permanent, SubjectRequirementSetId)
+insert into Modifiers
+    (ModifierId,                                ModifierType,                               RunOnce,    Permanent)
 values
-    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',         'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',  1,       1,     NULL);
+    ('PIERO_DE_BARDI_GOLD',                     'MODIFIER_PLAYER_GRANT_YIELD',                  1,      1),
+    ('JAKOB_FUGGER_GOLD',                       'MODIFIER_PLAYER_GRANT_YIELD',                  1,      1),
+    ('JOHN_JACOB_ASTOR_GOLD',                   'MODIFIER_PLAYER_GRANT_YIELD',                  1,      1),
+    ('ZHOU_DAGUAN_TOKENS',                      'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',        0,      1),
+    ('MARY_KATHERINE_DEFENSE',                  'MODIFIER_PLAYER_ADJUST_SPY_BONUS',             1,      1),
+    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',  1,      1);
 
 insert or replace into ModifierArguments
-    (ModifierId,                                        Name,                   Value)
+    (ModifierId,                    Name,          Type,               Value)
 values
-    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',         'Amount',               2);
+    ('PIERO_DE_BARDI_GOLD',         'Amount',      'ScaleByGameSpeed',  300),
+    ('JAKOB_FUGGER_GOLD',           'Amount',      'ScaleByGameSpeed',  400),
+    ('JOHN_JACOB_ASTOR_GOLD',       'Amount',      'ScaleByGameSpeed',  600);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,           Value)
+values
+    ('PIERO_DE_BARDI_GOLD',                     'YieldType',    'YIELD_GOLD'),
+    ('JAKOB_FUGGER_GOLD',                       'YieldType',    'YIELD_GOLD'),
+    ('JOHN_JACOB_ASTOR_GOLD',                   'YieldType',    'YIELD_GOLD'),
+    ('ZHOU_DAGUAN_TOKENS',                      'Amount',       3),
+    ('MARY_KATHERINE_DEFENSE',                  'Amount',       1),
+    ('MARY_KATHERINE_DEFENSE',                  'Offense',      0),
+    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 'Amount',       2);
 
 insert or replace into ModifierStrings
     (ModifierId,                                Context,    Text)
 values
     ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 'Summary',  'LOC_GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY');
-
--- 亚当·斯密 改为+1经济槽
-delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ADAM_SMITH' and (ModifierId = 'GREATPERSON_GOVERNOR_POINTS' or ModifierId = 'GREATPERSON_GOLD_LARGE');
-
-insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                  ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_ADAM_SMITH',       'GREATPERSON_ECONOMIC_POLICY_SLOT',   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
-
---约瑟夫·帕克斯顿改成全国效果
-insert or replace into RequirementSetRequirements
-        (RequirementSetId,                           RequirementId)
-values
-        ('DISTRICT_IS_ENTERTAINMENT',        'REQUIRES_DISTRICT_IS_ENTERTAINMENT_COMPLEX');
-
-insert or replace into RequirementSets
-        (RequirementSetId,                           RequirementSetType)
-values
-        ('DISTRICT_IS_ENTERTAINMENT',                'REQUIREMENTSET_TEST_ALL');
-
-insert into Modifiers
-        (ModifierId,                      ModifierType,                                                           SubjectRequirementSetId)
-values
-        ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',    'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',       'DISTRICT_IS_ENTERTAINMENT');
-
-insert into ModifierArguments
-        (ModifierId,                                     Name,                Value)
-values
-        ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',          'Amount',             3);
-
-/*insert or replace into GreatPersonIndividualActionModifiers
-        (GreatPersonIndividualType,                    ModifierId,                           AttachmentTargetType)
-values
-        ('GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON',       'JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',        'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');*/
-
-delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_EXTRA_REGIONAL_BUILDING_RANGE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JOSEPH_PAXTON';
 
 -- insert or replace into ModifierStrings
 --      (ModifierId,                      Context,                     Text)
@@ -604,24 +508,24 @@ insert or replace into RequirementSetRequirements   (RequirementSetId,  Requirem
 values  ('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
 
 insert or replace into GreatPersonIndividualActionModifiers
-    (GreatPersonIndividualType,                     ModifierId,                                             AttachmentTargetType)
+    (GreatPersonIndividualType,                         ModifierId,                                             AttachmentTargetType)
 values
-    ('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',           'ARTEMISIA_LIGHTHOUSE',                                 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',       'ARTEMISIA_LIGHTHOUSE_FOOD',                            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',        'GREATPERSON_EXTRA_DISTRICT_CAPACITY',                  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',    'GREATPERSON_INFLUENCE_TOKENS_SMALL',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',    'GREATPERSON_GRANT_A_SETTLER',                          'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
-    ('GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE',       'GREATPERSON_NAVLA_RAIDER_BONUS',                       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN',  'GREATPERSON_GRANT_A_SETTLER',                          'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
-    ('GREAT_PERSON_INDIVIDUAL_HORATIO_NELSON',      'HORATIO_NELSON_SHIPYARD_PRODUCTION',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',        'GREATPERSON_SETTLER_EMBARK',                           'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_HORATIO_NELSON_LIGHTHOUSE',            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_HORATIO_NELSON_SHIPYARD',              'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
-    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',               'ARTEMISIA_LIGHTHOUSE',                                 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_ARTEMISIA',               'ARTEMISIA_LIGHTHOUSE_FOOD',                            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',            'GREATPERSON_EXTRA_DISTRICT_CAPACITY',                  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_THEMISTOCLES',            'GREATPERSON_INFLUENCE_TOKENS_SMALL',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',            'GREATPERSON_GRANT_A_SETTLER',                          'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
+    ('GREAT_PERSON_INDIVIDUAL_FRANCIS_DRAKE',           'GREATPERSON_NAVLA_RAIDER_BONUS',                       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_FERDINAND_MAGELLAN',      'GREATPERSON_GRANT_A_SETTLER',                          'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
+    ('GREAT_PERSON_INDIVIDUAL_HORATIO_NELSON',          'HORATIO_NELSON_SHIPYARD_PRODUCTION',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_LEIF_ERIKSON',            'GREATPERSON_SETTLER_EMBARK',                           'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_HORATIO_NELSON_LIGHTHOUSE',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_HORATIO_NELSON_SHIPYARD',                  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT',           'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
     ('GREAT_PERSON_INDIVIDUAL_JOAQUIM_MARQUES_LISBOA',  'GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO', 'GREATPERSON_JOAQUIM_MARQUES_LISBOA_ACTIVE',            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO', 'GREATPERSON_CLANCY_FERNANDO_AMENITIES',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO', 'GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT', 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+    ('GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO',         'GREATPERSON_JOAQUIM_MARQUES_LISBOA_ACTIVE',            'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO',         'GREATPERSON_CLANCY_FERNANDO_AMENITIES',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO',         'GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT', 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
 
 insert into Modifiers
     (ModifierId,                                                ModifierType,                                           RunOnce,    Permanent)

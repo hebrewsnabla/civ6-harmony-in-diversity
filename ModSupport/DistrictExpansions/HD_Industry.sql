@@ -162,6 +162,7 @@ delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN' and ModifierId = 'JNR_GREATPERSON_GREAT_WORK_WRITING_PRODUCTION';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI' and ModifierId = 'JNR_GREATPERSON_WORKSHOP_PRODUCTION';
 update GreatPersonIndividuals set ActionEffectTextOverride = NULL where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI';
+update GreatPersonIndividuals set ActionEffectTextOverride = 'LOC_GREATPERSON_JAMES_WATT_ACTIVE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT';
 
 --------------------------------------------------------------
 -- Reqs
