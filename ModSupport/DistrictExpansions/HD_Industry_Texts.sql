@@ -12,7 +12,7 @@ values
     ("LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",       "[ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
     ("LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",  "A building unique to Japan that replace Logistics Center, provide regional [ICON_Science] Science and [ICON_Culture] Culture yields. [ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
     -- Boosts
-    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",        "Build 2 Manufacturies."),
+    ("LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",        "Build 1 Manufactury."),
     ("LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC", "Handicraft workshops are growing in size, and more efficient production methods are being bred."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_JNR_UC",      "Build 2 Workshops."),
     ("LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",              "Build 2 Chemical Plants."),
@@ -43,7 +43,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",                "本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",      "日本特色建筑，取代物流中心，提供可辐射的 [ICON_Science] 科技和 [ICON_Culture] 文化值。 本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
     -- Boosts
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",                 "建造2座手工工场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",                 "建造1座手工工场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC",        "手工工场规模日益增大，更为高效的生产方式也孕育而生。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_JNR_UC",               "建造2座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",                       "建造2座化工厂。"),

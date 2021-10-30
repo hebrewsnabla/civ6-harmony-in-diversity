@@ -5,6 +5,8 @@
 update Buildings set PrereqTech = 'TECH_WRITING' where BuildingType = 'BUILDING_ETEMENANKI';
 
 -- Buildings
+update Buildings set PurchaseYield = NULL where BuildingType = 'BUILDING_JNR_MILL_RACE';
+
 update Buildings set Cost = 105, PrereqTech = 'TECH_IRON_WORKING' where BuildingType = 'BUILDING_JNR_WIND_MILL';
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_WORKSHOP';
 update Buildings set Cost = 180, Maintenance = 3, CitizenSlots = 1, PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_JNR_MANUFACTURY';
@@ -20,10 +22,15 @@ update Buildings_XP2 set RequiredPower = 2 where BuildingType = 'BUILDING_ELECTR
 insert or replace into Building_YieldChanges
     (BuildingType,                      YieldType,          YieldChange)
 values
+    ('BUILDING_JNR_MANUFACTURY',        'YIELD_PRODUCTION', 2),
+    ('BUILDING_JNR_CHEMICAL',           'YIELD_PRODUCTION', 2),
+    ('BUILDING_JNR_CHEMICAL',           'YIELD_SCIENCE',    2),
     ('BUILDING_POWER_PLANT',            'YIELD_SCIENCE',    3),
     ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_SCIENCE',    2),
     ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_CULTURE',    2);
 
+delete from Buildings_XP2 where BuildingType = 'BUILDING_JNR_CHEMICAL';
+delete from Building_YieldChangesBonusWithPower where BuildingType = 'BUILDING_JNR_CHEMICAL';
 insert or replace into Building_YieldChangesBonusWithPower
     (BuildingType,                      YieldType,          YieldChange)
 values
@@ -132,12 +139,10 @@ update Boosts set
     BuildingType = 'BUILDING_WORKSHOP', NumItems = 2
 where TechnologyType = 'TECH_INDUSTRIALIZATION';
 
-update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_MANUFACTURY', ImprovementType = NULL, NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC',
-    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC'
-where TechnologyType = 'TECH_MASS_PRODUCTION';
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_MANUFACTURY', ImprovementType = NULL, NumItems = 1, TriggerDescription = 'LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC',
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC' where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_CHEMICAL', NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC',
-    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC'
-where TechnologyType = 'TECH_CHEMISTRY';
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC' where TechnologyType = 'TECH_CHEMISTRY';
 
 update Boosts set BuildingType = 'BUILDING_FACTORY', NumItems = 2 where CivicType = 'CIVIC_CLASS_STRUGGLE';
 
