@@ -193,7 +193,7 @@ values
 insert or replace into GreatPersonIndividualActionModifiers 
     (GreatPersonIndividualType,                         ModifierId)
 values
-    ('GREAT_PERSON_INDIVIDUAL_BI_SHENG',                'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING'),
+    ('GREAT_PERSON_INDIVIDUAL_BI_SHENG',                'GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_WALL_GEP'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_CASTLE_GEP'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP'),
@@ -207,7 +207,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType,                               Runonce, Permanent, SubjectRequirementSetId)
 values
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,1,    NULL),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,1,    NULL),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_ANCIENT_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_MEDIEVAL_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_RENAISSANCE_WALLS'),
@@ -224,32 +224,32 @@ values
     ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',     'MODIFIER_SINGLE_CITY_GRANT_PRODUCTION_IN_CITY',        1,1,    NULL);
 
 insert or replace into ModifierArguments
-    (ModifierId,                                                    Name,                   Value)
+    (ModifierId,                                        Name,                   Value)
 values
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING',             'TechType',             'TECH_PRINTING'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_PRINTING',             'GrantTechIfBoosted',   1),
-    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                            'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
-    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                            'Amount',               1),
-    ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',                          'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
-    ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',                          'Amount',               1),
-    ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',                       'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
-    ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',                       'Amount',               1),
-    ('GREATPERSON_REGIONAL_RANGE_BONUS',                            'Amount',               3),
-    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',                       'YieldType',            'YIELD_PRODUCTION'),
-    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',                       'Amount',               3),
-    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',                       'YieldTypeToMirror',    'YIELD_SCIENCE'),
-    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',                       'YieldTypeToGrant',     'YIELD_PRODUCTION'),
-    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',                     'YieldTypeToMirror',    'YIELD_PRODUCTION'),
-    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',                     'YieldTypeToGrant',     'YIELD_SCIENCE'),
-    ('GREATPERSON_NATIONAL_APPEAL',                                 'Amount',               1),
-    ('GREATPERSON_SINGLECITY_APPEAL',                               'Amount',               2),
-    ('GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM',                  'Amount',               100),
-    ('GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',                'Amount',               100),
-    ('GREATPERSON_SINGLECITY_WONDER_TOURISM',                       'BoostsWonders',        1),
-    ('GREATPERSON_SINGLECITY_WONDER_TOURISM',                       'ScalingFactor',        200),
-    ('GREATPERSON_NATIONAL_APPEAL_BIG',                             'Amount',               2),
-    ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',                 'Amount',               680),
-    ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',                 'KeepOverflow',         0);
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'TechType',             'TECH_PRINTING'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
+    ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'Amount',               1),
+    ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
+    ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'Amount',               1),
+    ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
+    ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'Amount',               1),
+    ('GREATPERSON_REGIONAL_RANGE_BONUS',                'Amount',               3),
+    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',           'YieldType',            'YIELD_PRODUCTION'),
+    ('GREATPERSON_REGIONAL_RANGE_PRODUCTION',           'Amount',               3),
+    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'YieldTypeToMirror',    'YIELD_SCIENCE'),
+    ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'YieldTypeToGrant',     'YIELD_PRODUCTION'),
+    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'YieldTypeToMirror',    'YIELD_PRODUCTION'),
+    ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'YieldTypeToGrant',     'YIELD_SCIENCE'),
+    ('GREATPERSON_NATIONAL_APPEAL',                     'Amount',               1),
+    ('GREATPERSON_SINGLECITY_APPEAL',                   'Amount',               2),
+    ('GREATPERSON_SINGLECITY_IMPROVEMENT_TOURISM',      'Amount',               100),
+    ('GREATPERSON_SINGLECITY_NATIONAL_PARK_TOURISM',    'Amount',               100),
+    ('GREATPERSON_SINGLECITY_WONDER_TOURISM',           'BoostsWonders',        1),
+    ('GREATPERSON_SINGLECITY_WONDER_TOURISM',           'ScalingFactor',        200),
+    ('GREATPERSON_NATIONAL_APPEAL_BIG',                 'Amount',               2),
+    ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',     'Amount',               680),
+    ('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',     'KeepOverflow',         0);
 
 -- 瓦特拿特斯拉的效果
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT' and ModifierId = 'GREATPERSON_WORKSHOP';
@@ -297,27 +297,27 @@ values
 insert or replace into GreatPersonIndividualActionModifiers 
     (GreatPersonIndividualType,                     ModifierId)
 values
+    ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS'),
     ('GREAT_PERSON_INDIVIDUAL_ALBERT_EINSTEIN',         'GREATPERSON_2MODERNATOMICTECHBOOST'),
     ('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',             'GREATPERSON_1MODERNATOMICTECHBOOST'),
+    ('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',             'GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS'),
     ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS'),
-    ('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',             'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS'),
-    ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY'),
-    ('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',             'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING'),
+    ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREAT_PERSON_HD_BOOST_OR_GRANT_CHEMISTRY'),
+    ('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',             'GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',             'GREAT_PERSON_PLASTICS_TECHBOOST'),
-    ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS'),
-    ('GREAT_PERSON_INDIVIDUAL_ABU_AL_QASIM_AL_ZAHRAWI', 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION');
+    ('GREAT_PERSON_INDIVIDUAL_ABU_AL_QASIM_AL_ZAHRAWI', 'GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION');
 
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                               Runonce,    Permanent)
 values
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS',  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                  'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
     ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',             'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS',    'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
-    ('GREAT_PERSON_PLASTICS_TECHBOOST',                     'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',    'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',     'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',   'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1);
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',          'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS',            'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_CHEMISTRY',            'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING',             'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION',           'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_PLASTICS_TECHBOOST',                     'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1);
 
 insert or replace into GreatPersonIndividualActionModifiers (GreatPersonIndividualType, ModifierId)
 select 'GREAT_PERSON_INDIVIDUAL_ALFRED_NOBEL', 'GREAT_PERSON_ADD_' || GreatPersonClassType from GreatPersonClasses
@@ -332,23 +332,23 @@ select  'GREAT_PERSON_ADD_' || GreatPersonClassType ,   'Amount', 25 from GreatP
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,                   Value)
 values
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS',      'TechType',             'TECH_MATHEMATICS'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS',      'GrantTechIfBoosted',   1),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'Amount',               2),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'EndEraType',           'ERA_ATOMIC'),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'StartEraType',         'ERA_MODERN'),
     ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'Amount',               1),
     ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'EndEraType',           'ERA_MODERN'),
     ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'StartEraType',         'ERA_INDUSTRIAL'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS',        'TechType',             'TECH_COMPUTERS'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS',        'GrantTechIfBoosted',   1),
-    ('GREAT_PERSON_PLASTICS_TECHBOOST',                         'TechType',             'TECH_PLASTICS'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',        'TechType',             'TECH_CHEMISTRY'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',        'GrantTechIfBoosted',   1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',         'TechType',             'TECH_REFINING'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',         'GrantTechIfBoosted',   1),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',       'TechType',             'TECH_SANITATION'),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',       'GrantTechIfBoosted',   1);
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',              'TechType',             'TECH_MATHEMATICS'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',              'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS',                'TechType',             'TECH_COMPUTERS'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS',                'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_CHEMISTRY',                'TechType',             'TECH_CHEMISTRY'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_CHEMISTRY',                'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING',                 'TechType',             'TECH_REFINING'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING',                 'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION',               'TechType',             'TECH_SANITATION'),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION',               'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_PLASTICS_TECHBOOST',                         'TechType',             'TECH_PLASTICS');
 
 --GREAT_PERSON_INDIVIDUAL_JANAKI_AMMAL
 update ModifierArguments set Value = 800 where ModifierId = 'GREATPERSON_ADJACENT_RAINFOREST_SCIENCE' and Name = 'Amount';
