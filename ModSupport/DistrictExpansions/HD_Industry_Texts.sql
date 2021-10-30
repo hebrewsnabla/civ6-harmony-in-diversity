@@ -13,9 +13,13 @@ values
     ("LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",  "A building unique to Japan that replace Logistics Center, provide regional [ICON_Science] Science and [ICON_Culture] Culture yields. [ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",        "Build 2 Manufacturies."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC", "Handicraft workshops are growing in size, and more efficient production methods are being bred."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_JNR_UC",      "Build 2 Workshops."),
     ("LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",              "Build 2 Chemical Plants."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC",     "The booming chemical industry has also driven research in theoretical aspects of chemistry."),
     ("LOC_BOOST_TRIGGER_CLASS_STRUGGLE_JNR_UC",         "Build 2 Factories."),
+    -- Great Person
+    ("LOC_GREATPERSON_JNR_MANUFACTURY_CULTURE",         "Manufacturies provide +{Amount} [ICON_Culture] Culture."),
     -- Policies
     ("LOC_POLICY_INVENTION_DESCRIPTION_JNR_UC",         "+8 [ICON_GreatEngineer] Great Engineer points per turn. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Workshop and Manufactury."),
     ("LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",   "+4 [ICON_GreatScientist] Great Scientist points per turn for every University and +8 [ICON_GreatScientist] Great Scientist points per turn for every Research Lab. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Factory and Chemical Plant, and +8 [ICON_GreatEngineer] Great Engineer points per turn for every Power Plant and Logistics Center.");
@@ -40,9 +44,13 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR",      "日本特色建筑，取代物流中心，提供可辐射的 [ICON_Science] 科技和 [ICON_Culture] 文化值。 本城每个 [ICON_Citizen] 公民额外产出+1 [ICON_Production] 生产力和+2 [ICON_Gold] 金币。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC",                 "建造2座手工工场。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC",        "手工工场规模日益增大，更为高效的生产方式也孕育而生。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_JNR_UC",               "建造2座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC",                       "建造2座化工厂。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC",              "化学工业的蓬勃发展也推动了化学理论方面的研究。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CLASS_STRUGGLE_JNR_UC",                  "建造2座工厂。"),
+    -- Great Person
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JNR_MANUFACTURY_CULTURE",                  "手工工场+{Amount} [ICON_Culture] 文化值。"),
     -- Policies
     ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_JNR_UC",                  "每回合的 [ICON_GreatEngineer] 大工程师点数+8。每有一座工作坊或手工工场，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",            "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂或化工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂或物流中心，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),

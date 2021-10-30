@@ -2,6 +2,8 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
+update Buildings set PrereqTech = 'TECH_WRITING' where BuildingType = 'BUILDING_ETEMENANKI';
+
 -- Buildings
 update Buildings set Cost = 105, PrereqTech = 'TECH_IRON_WORKING' where BuildingType = 'BUILDING_JNR_WIND_MILL';
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_WORKSHOP';
@@ -119,28 +121,11 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) select
     'CHEMICAL_HAS_'||ResourceType||'_BONUS_SCIENCE', 'Amount',  5
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
+-- Projects, AI issue
+delete from Types where Type = 'PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT';
+
 --------------------------------------------------------------
 -- Boosts
-update Boosts set TechnologyType = 'TECH_ENGINEERING', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_ENGINEERING'
-    where TechnologyType = 'TECH_CONSTRUCTION' and TriggerDescription = 'LOC_BOOST_TRIGGER_ENGINEERING';
-update Boosts set TechnologyType = 'TECH_APPRENTICESHIP', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_APPRENTICESHIP'
-    where TechnologyType = 'TECH_ENGINEERING' and TriggerDescription = 'LOC_BOOST_TRIGGER_APPRENTICESHIP';
-update Boosts set TechnologyType = 'TECH_CONSTRUCTION', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CONSTRUCTION'
-    where TechnologyType = 'TECH_APPRENTICESHIP' and TriggerDescription = 'LOC_BOOST_TRIGGER_CONSTRUCTION';
-
-delete from Boosts where TechnologyType = 'TECH_PLASTICS';
-update Boosts set TechnologyType = 'TECH_PLASTICS', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_PLASTICS'
-    where TechnologyType = 'TECH_COMBUSTION';
-update Boosts set TechnologyType = 'TECH_COMBUSTION' where TechnologyType = 'TECH_REFINING';
-update Boosts set TechnologyType = 'TECH_REFINING', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_REFINING'
-    where TechnologyType = 'TECH_ELECTRICITY';
-insert or ignore into Boosts
-    (TechnologyType,        Boost,  BoostClass,                             Unit1Type,          NumItems,
-    TriggerDescription,                     TriggerLongDescription)
-values
-    ('TECH_ELECTRICITY',    34,     'BOOST_TRIGGER_OWN_X_UNITS_OF_TYPE',    'UNIT_PRIVATEER',   2,
-    'LOC_BOOST_TRIGGER_ELECTRICITY_XP2',    'LOC_BOOST_TRIGGER_LONGDESC_ELECTRICITY');
-
 update Boosts set
     -- TriggerDescription = 'LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2',
     TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION',
@@ -148,10 +133,10 @@ update Boosts set
 where TechnologyType = 'TECH_INDUSTRIALIZATION';
 
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_MANUFACTURY', ImprovementType = NULL, NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_MASS_PRODUCTION_JNR_UC',
-    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION' -- _JNR_UC
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_MASS_PRODUCTION_JNR_UC'
 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', BuildingType = 'BUILDING_JNR_CHEMICAL', NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_CHEMISTRY_JNR_UC',
-    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY' -- _JNR_UC
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_CHEMISTRY_JNR_UC'
 where TechnologyType = 'TECH_CHEMISTRY';
 
 update Boosts set BuildingType = 'BUILDING_FACTORY', NumItems = 2 where CivicType = 'CIVIC_CLASS_STRUGGLE';
@@ -163,6 +148,28 @@ delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI' and ModifierId = 'JNR_GREATPERSON_WORKSHOP_PRODUCTION';
 update GreatPersonIndividuals set ActionEffectTextOverride = NULL where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI';
 update GreatPersonIndividuals set ActionEffectTextOverride = 'LOC_GREATPERSON_JAMES_WATT_ACTIVE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JAMES_WATT';
+
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                     ModifierId)
+values
+    ('GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI',   'GREATPERSON_JNR_MANUFACTURY_CULTURE');
+
+insert or replace into Modifiers
+    (ModifierId,                                ModifierType,                                           Permanent)
+values
+    ('GREATPERSON_JNR_MANUFACTURY_CULTURE',     'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  1);
+
+insert or replace into ModifierArguments
+    (ModifierId,                               Name,            Value)
+values
+    ('GREATPERSON_JNR_MANUFACTURY_CULTURE',    'BuildingType',  'BUILDING_JNR_MANUFACTURY'),
+    ('GREATPERSON_JNR_MANUFACTURY_CULTURE',    'YieldType',     'YIELD_CULTURE'),
+    ('GREATPERSON_JNR_MANUFACTURY_CULTURE',    'Amount',        3);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,    Text)
+values
+    ('GREATPERSON_JNR_MANUFACTURY_CULTURE',     'Summary',  'LOC_GREATPERSON_JNR_MANUFACTURY_CULTURE');
 
 --------------------------------------------------------------
 -- Reqs

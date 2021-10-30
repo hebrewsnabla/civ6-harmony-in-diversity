@@ -3,6 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                                       "+1 [ICON_Production] Production for Holy Site Districts. Holy Site District and Shrine provide +1 [ICON_Production] Production to all adjacent tiles."),
     ("LOC_UNIT_GURU_DESCRIPTION",                                             "May use a charge to heal itself and all adjacent friendly religious units. May not initiate theological combat with units of other Religions (but can defend). Religious units adjacent to Gurus receive +5 [ICON_Religion] Religious Strength in Theological Combat and +1 [ICON_Movement] Movement."),
     ("LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",                             "+2 [ICON_FOOD] Food for Holy Site Districts. Holy Site District, Shrine and Temple provide +1 [ICON_FOOD] Food to all adjacent tiles. Your cities may purchase Builders and Settlers using [ICON_Faith] Faith. Must be built adjacent to a Holy Site and you must have founded a Religion."),
     ("LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",                    "Citizens may work Mountain tiles. Mountain tiles provide +3 [ICON_PRODUCTION] Production and. +1 [ICON_FOOD] Food to Mountain tiles for every adjacent Terrace Farm. +1 [ICON_PRODUCTION] Production after researching Construntion. Reduces the purchase cost of mountain tiles by 50%."),
@@ -18,6 +19,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                                   "圣地区域+1 [ICON_Production] 生产力。圣地区域和神社为相邻的单元格提供+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_UNIT_GURU_DESCRIPTION",                                         "消耗次数可治疗其自身以及相邻的全部友方宗教单位。无法发起和其他宗教单位的神学战争（但可进行防御）。与上师相邻的宗教单位在神学战争中+5 [ICON_Religion] 宗教战斗力、+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",                         "圣地区域+2 [ICON_Food] 食物。圣地区域、神社和寺庙为相邻的单元格提供+1 [ICON_Food] 食物。允许您的城市使用 [ICON_Faith] 信仰值购买建造者和开拓者。必须建在圣地旁，同时必须已创立宗教。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",                "公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。每个相邻的梯田农场为山脉单元格+1 [ICON_FOOD] 食物。解锁建造科技后，每个相邻的梯田农场为山脉单元格+1 [ICON_PRODUCTION] 生产力。山脉单元格购买费用降低50%。"),

@@ -290,7 +290,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MODERNATOMICTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ALBERT_EINSTEIN';
     
 insert or replace into GreatPersonIndividualActionModifiers 
-    (GreatPersonIndividualType,                     ModifierId,                                 AttachmentTargetType)
+    (GreatPersonIndividualType,                         ModifierId,                                 AttachmentTargetType)
 values
     ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREATPERSON_EXTRA_DISTRICT_CAPACITY',      'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
@@ -307,21 +307,17 @@ values
     ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS'),
     ('GREAT_PERSON_INDIVIDUAL_ABU_AL_QASIM_AL_ZAHRAWI', 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION');
 
-insert or ignore into Modifiers
-    (ModifierId,                                            ModifierType,   Runonce,   Permanent)
-values
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST', 1,1);
-
 insert or replace into Modifiers
-    (ModifierId,    ModifierType,   Runonce,   Permanent,   SubjectRequirementSetId)
+    (ModifierId,                                            ModifierType,                               Runonce,    Permanent)
 values
-    ('GREATPERSON_2MODERNATOMICTECHBOOST',              'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA',1,1, NULL),
-    ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',         'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA',1,1, NULL),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',   1,1,    NULL),
-    ('GREAT_PERSON_PLASTICS_TECHBOOST',                 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,1,    NULL),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',   1,1,    NULL),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING', 'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,1,    NULL),
-    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION','MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',   1,1,    NULL);
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS',  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREATPERSON_2MODERNATOMICTECHBOOST',                  'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
+    ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',             'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_COMPUTERS',    'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_PLASTICS_TECHBOOST',                     'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CHEMISTRY',    'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_REFINING',     'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
+    ('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_SANITATION',   'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1);
 
 insert or replace into GreatPersonIndividualActionModifiers (GreatPersonIndividualType, ModifierId)
 select 'GREAT_PERSON_INDIVIDUAL_ALFRED_NOBEL', 'GREAT_PERSON_ADD_' || GreatPersonClassType from GreatPersonClasses
@@ -420,7 +416,7 @@ values
     ('GREAT_PERSON_INDIVIDUAL_MARY_KATHERINE_GODDARD',  'MARY_KATHERINE_DEFENSE',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
     ('GREAT_PERSON_INDIVIDUAL_MELITTA_BENTZ',       'GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
-insert into Modifiers
+insert or replace into Modifiers
     (ModifierId,                                ModifierType,                               RunOnce,    Permanent)
 values
     ('PIERO_DE_BARDI_GOLD',                     'MODIFIER_PLAYER_GRANT_YIELD',                  1,      1),
@@ -447,21 +443,6 @@ values
     ('MARY_KATHERINE_DEFENSE',                  'Amount',       1),
     ('MARY_KATHERINE_DEFENSE',                  'Offense',      0),
     ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 'Amount',       2);
-
-insert or replace into ModifierStrings
-    (ModifierId,                                Context,    Text)
-values
-    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 'Summary',  'LOC_GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY');
-
--- insert or replace into ModifierStrings
---      (ModifierId,                      Context,                     Text)
--- values
---      ('PIERO_DE_BARDI_GOLD',            'Summary',                   'LOC_PIERO_DE_BARDI_GOLD'),
---      ('JAKOB_FUGGER_GOLD',            'Summary',                   'LOC_JAKOB_FUGGER_GOLD'),
---      ('JOHN_JACOB_ASTOR_GOLD',            'Summary',                   'LOC_JOHN_JACOB_ASTOR_GOLD'),
---      ('ZHOU_DAGUAN_TOKENS',            'Summary',                   'LOC_ZHOU_DAGUAN_TOKENS'),
---      ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',            'Summary',                   'LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS'),
---      ('TESLA_REGIONAL_RANGE_BONUS',     'Summary',                    'LOC_TESLA_REGIONAL_RANGE_BONUS');
 
 ------------------------------------------------------------
 -- great admiral
@@ -527,7 +508,7 @@ values
     ('GREAT_PERSON_INDIVIDUAL_CLANCY_FERNANDO',         'GREATPERSON_CLANCY_FERNANDO_AMENITIES',                'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
     ('GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO',         'GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT', 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
 
-insert into Modifiers
+insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                                           RunOnce,    Permanent)
 values
     ('ARTEMISIA_LIGHTHOUSE',                                    'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',   1,          1),
@@ -539,14 +520,14 @@ values
     ('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT',              'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',   1,          1),
     ('GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT',    'MODIFIER_PLAYER_UNITS_ADJUST_SEA_MOVEMENT',            1,          1);
 
-insert into Modifiers
+insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                       RunOnce,        Permanent,  SubjectRequirementSetId)
 values
     ('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',  'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',   0,              1,          'BUILDING_IS_SEAPORT'),
     ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',   0,  1,      'CITY_HAS_HARBOR');
 
-insert into ModifierArguments
-        (ModifierId,                                            Name,               Value)
+insert or replace into ModifierArguments
+    (ModifierId,                                                Name,               Value)
 values
     ('ARTEMISIA_LIGHTHOUSE',                                    'BuildingType',     'BUILDING_LIGHTHOUSE'),
     ('ARTEMISIA_LIGHTHOUSE_FOOD',                               'BuildingType',     'BUILDING_LIGHTHOUSE'),
@@ -562,9 +543,9 @@ values
     ('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',      'Amount',           1),
     ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',                   'Amount',           1),
     ('GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT',    'Amount',           1);
-    
+
 insert or replace into ModifierStrings
-    (ModifierId,                                Context,    Text)
+    (ModifierId,                                                Context,    Text)
 values
     ('ARTEMISIA_LIGHTHOUSE',                                    'Summary',  'LOC_ARTEMISIA_LIGHTHOUSE'),
     ('ARTEMISIA_LIGHTHOUSE_FOOD',                               'Summary',  'LOC_ARTEMISIA_LIGHTHOUSE_FOOD'),

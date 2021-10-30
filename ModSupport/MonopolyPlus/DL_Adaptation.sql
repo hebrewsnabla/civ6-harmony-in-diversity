@@ -32,6 +32,11 @@ insert or replace into ModifierArguments
 values
     ('LEU_STATION_IMPROVEMENT_TOURISM',                         'Amount',                                       50);
 
+-- Boost
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_IMPROVEMENTS', ImprovementType = 'IMPROVEMENT_LEU_STATION', NumItems = 2, TriggerDescription = 'LOC_BOOST_TRIGGER_COMBUSTION_LEU_MO',
+    TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_COMBUSTION_LEU_MO'
+where TechnologyType = 'TECH_COMBUSTION';
+
 -- BUG Fixing
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where Value = 'YIELD_PRODUCION' and Name = 'YieldType';
 
@@ -39,3 +44,9 @@ insert or ignore into RequirementSetRequirements
 		(RequirementSetId,		RequirementId)
 select	'LEU_IS_'||ResourceType||'_CORPORATION',		'REQUIRES_LEU_CORPORATION_PLOT'
 FROM ResourceCorporations;
+
+-- 
+insert or ignore into Unit_BuildingPrereqs
+        (Unit,                      PrereqBuilding)
+select  'UNIT_LEU_TYCOON',          BuildingType
+from Buildings where BuildingType = 'BUILDING_JNR_MANUFACTURY';

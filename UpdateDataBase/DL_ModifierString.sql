@@ -1,5 +1,6 @@
 ----------------------------------------------------------------------------
-------------------add modifier string here----------------------------------
+-- add modifier string here
+----------------------------------------------------------------------------
 insert or replace into ModifierStrings
 	(ModifierId,										Context, 	Text)
 values
@@ -22,4 +23,5 @@ values
 	('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',			'Summary',	'LOC_GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE'),
 	-- ('JOSEPH_PAXTON_REGIONAL_RANGE_BONUS',				'Summary',	'LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS'),
 	-- ('TESLA_REGIONAL_RANGE_BONUS',						'Summary',	'LOC_TESLA_REGIONAL_RANGE_BONUS'),
-	('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',		'Summary',	'LOC_GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN');
+	('GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN',		'Summary',	'LOC_GREATPERSON_GRANT_PRODUCTION_IN_CITY_MODERN'),
+    ('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2', 		'Summary',  'LOC_GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY');

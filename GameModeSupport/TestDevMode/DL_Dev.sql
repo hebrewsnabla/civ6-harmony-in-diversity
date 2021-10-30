@@ -1,6 +1,9 @@
 -------------------------------------
 --          Dev Adjustment         --
 -------------------------------------
+
+update ModifierArguments set Value = 1 where ModifierId = 'ABBOT_HOLY_SITE_PRODUCTION_MODIFIER';
+
 -- MEENAKSHI_TEMPLE
 delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
 update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMBAT_AOE_RELIGIOUS' or UnitAbilityType = 'ABILITY_GUIDE_MOVEMENT_AOE_RELIGIOUS';
