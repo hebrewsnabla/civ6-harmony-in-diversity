@@ -37,6 +37,11 @@ values
     ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_SCIENCE',    2),
     ('BUILDING_ELECTRONICS_FACTORY',    'YIELD_CULTURE',    2);
 
+insert or ignore into Building_YieldDistrictCopies
+    (BuildingType,                  OldYieldType,       NewYieldType)
+values
+    ('BUILDING_COAL_POWER_PLANT',   'YIELD_PRODUCTION', 'YIELD_PRODUCTION');
+
 update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_JNR_WIND_MILL' and YieldType = 'YIELD_PRODUCTION';
 -- update Building_YieldChanges set YieldChange = 0 where BuildingType = 'BUILDING_COAL_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_COAL_POWER_PLANT' and YieldType = 'YIELD_PRODUCTION';
