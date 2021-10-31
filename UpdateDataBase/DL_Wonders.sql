@@ -629,3 +629,14 @@ update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BIOSPHERE';
 update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
+
+-- Enable Wonders on Mountain
+insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
+select a.BuildingType,	b.TerrainType
+from Buildings a, Terrains b where
+	a.BuildingType in ('BUILDING_ORACLE', 'BUILDING_POTALA_PALACE', 'BUILDING_CRISTO_REDENTOR', 'BUILDING_NEUSCHWANSTEIN') and
+	b.TerrainType like 'TERRAIN_%_MOUNTAIN';
+
+insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
+values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
+	-- ('BUILDING_JEBEL_BARKAL',	'TERRAIN_DESERT_MOUNTAIN');
