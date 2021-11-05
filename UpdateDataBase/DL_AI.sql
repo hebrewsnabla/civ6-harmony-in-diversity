@@ -241,7 +241,7 @@ select	'HIGH_DIFFICULTY_CULTURE_SCALING_AT_LEAST_' || EraType, 'Amount',
 		'LinearScaleFromDefaultHandicap', 0, 2
 from Eras where not EraType = 'ERA_ANCIENT';
 
--- Gold Scale: 25 + 15n
+-- Gold Scale: 25 + 10n
 update ModifierArguments set Extra = 5
 	where ModifierId = 'HIGH_DIFFICULTY_GOLD_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
@@ -257,11 +257,11 @@ select 'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIELD_
 from Eras where not EraType = 'ERA_ANCIENT';
 insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
 select	'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 3
+		'LinearScaleFromDefaultHandicap', 0, 2
 from Eras where not EraType = 'ERA_ANCIENT';
 
--- Faith Scale: 30 + 10n
-update ModifierArguments set Extra = 6
+-- Faith Scale: 25 + 10n
+update ModifierArguments set Extra = 5
 	where ModifierId = 'HIGH_DIFFICULTY_FAITH_SCALING' and Name = 'Amount';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType

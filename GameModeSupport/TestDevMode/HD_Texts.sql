@@ -3,6 +3,9 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                               "+1 [ICON_TradeRoute] Trade Route capacity[NEWLINE][NEWLINE]Your [ICON_TradeRoute] Trade Routes from this city get +3 [ICON_Gold] Gold for every Bonus resource within 3 tiles of the city and in this city's territory. [NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with a Market and adjacent to [ICON_RESOURCE_CATTLE] Cattle."),
+    ("LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                                "+1 [ICON_Amenities] Amenity from entertainment for each Lake tile within one tile of Huey Teocalli. +1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for each Lake tile in your empire. Must be built on a Lake tile adjacent to land."),
+    ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                       "When chosen, receive a recon units with a free promotion in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
     ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                                       "+1 [ICON_Production] Production for Holy Site Districts. Holy Site District and Shrine provide +1 [ICON_Production] Production to all adjacent tiles."),
     ("LOC_UNIT_GURU_DESCRIPTION",                                             "May use a charge to heal itself and all adjacent friendly religious units. May not initiate theological combat with units of other Religions (but can defend). Religious units adjacent to Gurus receive +5 [ICON_Religion] Religious Strength in Theological Combat and +1 [ICON_Movement] Movement."),
     ("LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",                             "+2 [ICON_FOOD] Food for Holy Site Districts. Holy Site District, Shrine and Temple provide +1 [ICON_FOOD] Food to all adjacent tiles. Your cities may purchase Builders and Settlers using [ICON_Faith] Faith. Must be built adjacent to a Holy Site and you must have founded a Religion."),
@@ -19,6 +22,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                           "[ICON_TradeRoute] 贸易路线容量+1。[NEWLINE][NEWLINE]城市领土中3个单元格以内的每个加成资源将为从此城市发源的 [ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场）和 [ICON_RESOURCE_CATTLE] 牛资源相邻的单元格上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                            "在休伊神庙一个单元格以内的每个湖泊单元格为城市+1 [ICON_Amenities] 宜居度。为您帝国内的每个湖泊单元格+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币。必须建在靠近陆地的湖泊单元格上。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                   "选择后即可在首都中获得1个侦察单位,若其初始未拥有免费升级，则获得一次免费升级。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                                   "圣地区域+1 [ICON_Production] 生产力。圣地区域和神社为相邻的单元格提供+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_UNIT_GURU_DESCRIPTION",                                         "消耗次数可治疗其自身以及相邻的全部友方宗教单位。无法发起和其他宗教单位的神学战争（但可进行防御）。与上师相邻的宗教单位在神学战争中+5 [ICON_Religion] 宗教战斗力、+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",                         "圣地区域+2 [ICON_Food] 食物。圣地区域、神社和寺庙为相邻的单元格提供+1 [ICON_Food] 食物。允许您的城市使用 [ICON_Faith] 信仰值购买建造者和开拓者。必须建在圣地旁，同时必须已创立宗教。"),

@@ -2,6 +2,37 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Pantheon
+-- messenger of the gods : grant 1 recon unit with free promotion in your capital
+delete from BeliefModifiers where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS' and ModifierID = 'MESSENGER_OF_THE_GODS_FREE_SCOUT2';
+update ModifierArguments set Value = 'HETAIROI_FREE_PROMOTION' where Name = 'ModifierId' and ModifierId = 'MESSENGER_OF_THE_GODS_FREE_SCOUT_MODIFIER';
+
+-- wonders
+-- Huey Lake +1 Gold
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_HUEY_TEOCALLI',				'HUEY_LAKE_GOLD');
+
+insert or replace into Modifiers
+	(ModifierId, 							ModifierType,									SubjectRequirementSetId)
+values
+	('HUEY_LAKE_GOLD',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',			'FOODHUEY_PLAYER_REQUIREMENTS'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'FOODHUEY_PLOT_IS_LAKE_REQUIREMENTS');		
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('HUEY_LAKE_GOLD',						'ModifierId',	'HUEY_LAKE_GOLD_MODIFIER'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'YieldType',	'YIELD_GOLD'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'Amount',		1);		
+
+-- Great Zimbabwe
+update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
+
+-- follower
 update ModifierArguments set Value = 1 where ModifierId = 'ABBOT_HOLY_SITE_PRODUCTION_MODIFIER';
 
 -- MEENAKSHI_TEMPLE
@@ -87,7 +118,7 @@ values
 
 update ModifierArguments set Value = 150 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
 
---inca ：Reduces the purchase cost of mountain tiles by 50%
+-- inca ：Reduces the purchase cost of mountain tiles by 50%
 insert or replace into TraitModifiers   
     (TraitType,	                            ModifierId)
 select  'TRAIT_CIVILIZATION_GREAT_MOUNTAINS',   TerrainType || 'PLOT_COST' from Terrains 
