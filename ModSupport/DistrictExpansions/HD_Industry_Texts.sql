@@ -4,9 +4,11 @@ insert or replace into EnglishText
     (Tag,                                               Text)
 values
     ("LOC_BUILDING_JNR_MILL_RACE_NAME",                 "Adjacen to River"),
+    ("LOC_BUILDING_JNR_TOOLING_SHOP_NAME",              "Tooling Shop"),
+    -- ("LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",       ""),
     ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"),
     ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River."),
-    ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for improved tiles adjacent to sea or lakes."),
+    ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts adjacent to sea or lakes."), -- improved tiles adjacent to sea or lakes.
     ("LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold for bonus and luxury resources."),
     ("LOC_BUILDING_JNR_CHEMICAL_DESCRIPTION",           "+5% [ICON_Production] Production and +5 [ICON_SCIENCE] Science for each different improved Strategic resource in this city."),
     ("LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION",       "[ICON_Citizen] Citizens in this city provide +1 [ICON_Production] Production and +2 [ICON_Gold] Gold."),
@@ -22,7 +24,14 @@ values
     ("LOC_GREATPERSON_JNR_MANUFACTURY_CULTURE",         "Manufacturies provide +{Amount} [ICON_Culture] Culture."),
     -- Policies
     ("LOC_POLICY_INVENTION_DESCRIPTION_JNR_UC",         "+8 [ICON_GreatEngineer] Great Engineer points per turn. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Workshop and Manufactury."),
-    ("LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",   "+4 [ICON_GreatScientist] Great Scientist points per turn for every University and +8 [ICON_GreatScientist] Great Scientist points per turn for every Research Lab. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Factory and Chemical Plant, and +8 [ICON_GreatEngineer] Great Engineer points per turn for every Power Plant and Logistics Center.");
+    ("LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",   "+4 [ICON_GreatScientist] Great Scientist points per turn for every University and +8 [ICON_GreatScientist] Great Scientist points per turn for every Research Lab. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Factory and Chemical Plant, and +8 [ICON_GreatEngineer] Great Engineer points per turn for every Power Plant and Logistics Center."),
+    -- Projects
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_NAME",          "Convert to {LOC_BUILDING_IZ_WATER_MILL_NAME}"),
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_SHORT_NAME",    "Convert to {LOC_BUILDING_IZ_WATER_MILL_NAME}"),
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_DESCRIPTION",   "Convert {LOC_BUILDING_JNR_TOOLING_SHOP_NAME} to {LOC_BUILDING_IZ_WATER_MILL_NAME} in this city, requires the Industrial Zone adjacent to Rivers.[NEWLINE][NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_NAME}:[NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION}"),
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_NAME",           "Convert to {LOC_BUILDING_JNR_WIND_MILL_NAME}"),
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_SHORT_NAME",     "Convert to {LOC_BUILDING_JNR_WIND_MILL_NAME}"),
+    ("LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_DESCRIPTION",    "Convert {LOC_BUILDING_JNR_TOOLING_SHOP_NAME} to {LOC_BUILDING_JNR_WIND_MILL_NAME} in this city.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_NAME}:[NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION}");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -31,10 +40,12 @@ insert or replace into LocalizedText
 values
     -- Resume
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_NAME",                          "相邻河流"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_NAME",                       "工具铺"),
+    -- ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                ""),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_NAME",                          "水力作坊"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",                   "只有工业区相邻河流时才能建造。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "已改良的相邻湖泊或海岸的单元格+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",                   "相邻湖泊或海岸的区域+1 [ICON_Production] 生产力。"), --已改良的相邻湖泊或海岸的单元格+1 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_NAME",                        "手工工场"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MANUFACTURY_DESCRIPTION",                 "本城的加成和奢侈资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CHEMICAL_NAME",                           "化工厂"),
@@ -55,6 +66,13 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_JNR_UC",                  "每回合的 [ICON_GreatEngineer] 大工程师点数+8。每有一座工作坊或手工工场，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",            "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂或化工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂或物流中心，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),
     ("zh_Hans_CN",  "LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_JNR_UC_PRD",      "每座军营建筑、航空港建筑、物流中心、燃煤发电厂、燃油发电厂和核电站产出的 [ICON_Culture] 文化值+1、[ICON_Gold] 金币+2。"),
+    -- Project
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_NAME",          "转换为水力作坊"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_SHORT_NAME",    "转换为水力作坊"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_DESCRIPTION",   "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_IZ_WATER_MILL_NAME}，需要工业区相邻河流。[NEWLINE][NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_NAME}:[NEWLINE]{LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION}"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_NAME",           "转换为风车"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_SHORT_NAME",     "转换为风车"),
+    ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_DESCRIPTION",    "将城市中的{LOC_BUILDING_JNR_TOOLING_SHOP_NAME}变更为{LOC_BUILDING_JNR_WIND_MILL_NAME}。[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_NAME}:[NEWLINE]{LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION}"),
     -- 
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME",          "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME",    "转换为物流中心"),

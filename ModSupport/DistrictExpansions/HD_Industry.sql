@@ -7,7 +7,7 @@ update Buildings set PrereqTech = 'TECH_WRITING' where BuildingType = 'BUILDING_
 -- Buildings
 update Buildings set PurchaseYield = NULL where BuildingType = 'BUILDING_JNR_MILL_RACE';
 
-update Buildings set Cost = 105, PrereqTech = 'TECH_IRON_WORKING' where BuildingType = 'BUILDING_JNR_WIND_MILL';
+update Buildings set Cost = 90, PrereqTech = 'TECH_CONSTRUCTION' where BuildingType = 'BUILDING_JNR_WIND_MILL';
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_WORKSHOP';
 update Buildings set Cost = 180, Maintenance = 3, CitizenSlots = 1, PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_JNR_MANUFACTURY';
 update Buildings set Cost = 330, Maintenance = 7, PrereqTech = 'TECH_INDUSTRIALIZATION' where BuildingType = 'BUILDING_JNR_CHEMICAL';
@@ -17,6 +17,20 @@ update Buildings set Cost = 360, Maintenance = 8, PrereqTech = 'TECH_ELECTRICITY
     Description = 'LOC_BUILDING_ELECTRONICS_FACTORY_DESCRIPTION_UC_JNR' where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
 
 update Buildings_XP2 set RequiredPower = 2 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
+
+insert or replace into BuildingPrereqs
+    (Building,                          PrereqBuilding)
+values
+    ('BUILDING_WORKSHOP',               'BUILDING_JNR_TOOLING_SHOP'),
+    ('BUILDING_JNR_MANUFACTURY',        'BUILDING_JNR_TOOLING_SHOP');
+
+insert or replace into MutuallyExclusiveBuildings
+    (Building,                          MutuallyExclusiveBuilding)
+values
+    ('BUILDING_IZ_WATER_MILL',          'BUILDING_JNR_TOOLING_SHOP'),
+    ('BUILDING_JNR_WIND_MILL',          'BUILDING_JNR_TOOLING_SHOP'),
+    ('BUILDING_JNR_TOOLING_SHOP',       'BUILDING_IZ_WATER_MILL'),
+    ('BUILDING_JNR_TOOLING_SHOP',       'BUILDING_JNR_WIND_MILL');
 
 -- Yield
 insert or replace into Building_YieldChanges
@@ -84,7 +98,8 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_ELECTRONICS_FACTORY
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
 values
-    ('BUILDING_JNR_WIND_MILL',      'WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION'),
+    -- ('BUILDING_JNR_WIND_MILL',      'WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION'),
+    ('BUILDING_JNR_WIND_MILL',      'WIND_MILL_COASTAL_DISTRICTS_PRODUCTION'),
     ('BUILDING_JNR_MANUFACTURY',    'MANUFACTURY_ADD_RESOURCE_PRODUCTION'),
     ('BUILDING_JNR_MANUFACTURY',    'MANUFACTURY_ADD_RESOURCE_GOLD'),
     ('BUILDING_JNR_FREIGHT_YARD',   'FREIGHT_YARD_POP_PRODUCTION'),
@@ -95,7 +110,9 @@ values
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType,                                           SubjectRequirementSetId)
 values
-    ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',          'PLOT_IS_COASTAL_IMPROVED_LAND_REQUIREMENTS'),
+    -- ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',          'PLOT_IS_COASTAL_IMPROVED_LAND_REQUIREMENTS'),
+    ('WIND_MILL_COASTAL_DISTRICTS_PRODUCTION',          'MODIFIER_CITY_OWNER_ATTACH_MODIFIER',                  NULL),
+    ('WIND_MILL_COASTAL_DISTRICTS_PRODUCTION_MODIFIER', 'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',   'PLOT_IS_LAND_ADJACENT_TO_COAST'),
     ('MANUFACTURY_ADD_RESOURCE_PRODUCTION',             'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',          'HD_PLOT_HAS_LUXURY_OR_BONUS_RESOURCE_REQUIREMENTS'),
     ('MANUFACTURY_ADD_RESOURCE_GOLD',                   'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',          'HD_PLOT_HAS_LUXURY_OR_BONUS_RESOURCE_REQUIREMENTS'),
     ('FREIGHT_YARD_POP_PRODUCTION',                     'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION', NULL),
@@ -104,8 +121,11 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,           Value)
 values
-    ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'YieldType',    'YIELD_PRODUCTION'),
-    ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'Amount',       1),
+    -- ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'YieldType',    'YIELD_PRODUCTION'),
+    -- ('WIND_MILL_ADD_COASTAL_IMPROVEMENT_PRODUCTION',    'Amount',       1),
+    ('WIND_MILL_COASTAL_DISTRICTS_PRODUCTION',          'ModifierId',    'WIND_MILL_COASTAL_DISTRICTS_PRODUCTION_MODIFIER'),
+    ('WIND_MILL_COASTAL_DISTRICTS_PRODUCTION_MODIFIER', 'YieldType',    'YIELD_PRODUCTION'),
+    ('WIND_MILL_COASTAL_DISTRICTS_PRODUCTION_MODIFIER', 'Amount',       1),
     ('MANUFACTURY_ADD_RESOURCE_PRODUCTION',             'YieldType',    'YIELD_PRODUCTION'),
     ('MANUFACTURY_ADD_RESOURCE_PRODUCTION',             'Amount',       1),
     ('MANUFACTURY_ADD_RESOURCE_GOLD',                   'YieldType',    'YIELD_GOLD'),
@@ -135,6 +155,62 @@ from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- Projects, AI issue
 delete from Types where Type = 'PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT';
+
+-- Projects
+--------------------------------------------------------------
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL',  'KIND_PROJECT'),
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL',   'KIND_PROJECT');
+
+insert or replace into Projects
+    (ProjectType,
+    Name,
+    ShortName,
+    Description,
+    PrereqDistrict,
+    PrereqTech,
+    RequiredBuilding,
+    Cost,
+    AdvisorType)
+values
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_NAME',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_SHORT_NAME',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL_DESCRIPTION',
+    'DISTRICT_INDUSTRIAL_ZONE',
+    'TECH_ENGINEERING',
+    'BUILDING_JNR_MILL_RACE',
+    45,
+    'ADVISOR_GENERIC'),
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_NAME',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_SHORT_NAME',
+    'LOC_PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL_DESCRIPTION',
+    'DISTRICT_INDUSTRIAL_ZONE',
+    'TECH_CONSTRUCTION',
+    NULL,
+    45,
+    'ADVISOR_GENERIC');
+--------------------------------------------------------------
+
+-- Projects_XP2
+--------------------------------------------------------------
+insert or replace into Projects_XP2
+    (ProjectType,                                       CreateBuilding)
+values
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL',  'BUILDING_IZ_WATER_MILL'),
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL',   'BUILDING_JNR_WIND_MILL');
+--------------------------------------------------------------
+
+-- Project_BuildingCosts
+--------------------------------------------------------------
+insert or replace into Project_BuildingCosts
+    (ProjectType,                                       ConsumedBuildingType)
+values
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WATER_MILL',  'BUILDING_JNR_TOOLING_SHOP'),
+    ('PROJECT_JNR_CONVERT_TOOLING_SHOP_TO_WIND_MILL',  'BUILDING_JNR_TOOLING_SHOP');
 
 --------------------------------------------------------------
 -- Boosts

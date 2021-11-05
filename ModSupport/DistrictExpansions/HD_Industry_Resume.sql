@@ -5,19 +5,23 @@
 insert or replace into Types
     (Type,                              Kind)
 values
+    ('BUILDING_JNR_TOOLING_SHOP',       'KIND_BUILDING'),
     ('BUILDING_IZ_WATER_MILL',          'KIND_BUILDING');
 
 insert or replace into Buildings 
-    (BuildingType,                  Name,                               Cost,   Maintenance,    CitizenSlots,
+    (BuildingType,                  Name,                                   Cost,   Maintenance,    CitizenSlots,
     PrereqTech,             PrereqDistrict,             PurchaseYield,  Description) 
 values
-    ('BUILDING_IZ_WATER_MILL',      'LOC_BUILDING_IZ_WATER_MILL_NAME',  100,    1,              1,
-    'TECH_IRON_WORKING',   'DISTRICT_INDUSTRIAL_ZONE', 'YIELD_GOLD',   'LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION');
+    ('BUILDING_JNR_TOOLING_SHOP',   'LOC_BUILDING_JNR_TOOLING_SHOP_NAME',   45,     1,              1,
+    'TECH_IRON_WORKING',    'DISTRICT_INDUSTRIAL_ZONE', 'YIELD_GOLD',   NULL), -- 'LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION'
+    ('BUILDING_IZ_WATER_MILL',      'LOC_BUILDING_IZ_WATER_MILL_NAME',      90,    1,              1, -- ''
+    'TECH_ENGINEERING',     'DISTRICT_INDUSTRIAL_ZONE', 'YIELD_GOLD',   'LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION');
 
 insert or replace into Building_YieldChanges
-    (BuildingType,              YieldType,          YieldChange)
+    (BuildingType,                  YieldType,          YieldChange)
 values
-    ('BUILDING_IZ_WATER_MILL',  'YIELD_PRODUCTION', 5);
+    ('BUILDING_JNR_TOOLING_SHOP',   'YIELD_PRODUCTION', 2),
+    ('BUILDING_IZ_WATER_MILL',      'YIELD_PRODUCTION', 5);
 
 insert or replace into Building_GreatPersonPoints
     (BuildingType,              GreatPersonClassType,           PointsPerTurn)
@@ -29,6 +33,8 @@ update BuildingPrereqs set PrereqBuilding = 'BUILDING_IZ_WATER_MILL' where Prere
 update MutuallyExclusiveBuildings set Building = 'BUILDING_IZ_WATER_MILL' where Building = 'BUILDING_WATER_MILL';
 update MutuallyExclusiveBuildings set MutuallyExclusiveBuilding = 'BUILDING_IZ_WATER_MILL' where MutuallyExclusiveBuilding = 'BUILDING_WATER_MILL';
 update RequirementArguments set Value = 'BUILDING_IZ_WATER_MILL' where RequirementId = 'REQUIRES_CITY_HAS_WATER_MILL_JNR' and Name = 'BuildingType';
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+values ('BUILDING_IS_INDUSTRIAL_TIER1_JNR', 'REQUIRES_CITY_HAS_BUILDING_JNR_TOOLING_SHOP');
 
 -- Boosts
 update Boosts set TechnologyType = 'TECH_ENGINEERING', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_ENGINEERING'

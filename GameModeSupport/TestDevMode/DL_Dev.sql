@@ -2,10 +2,20 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- 
+update GlobalParameters set Value = 30 where Name = 'RELIGION_PANTHEON_MIN_FAITH';
+delete from PolicyModifiers where PolicyType = 'POLICY_GOD_KING' and ModifierId = 'GOD_KING_GOLD';
+update ModifierArguments set Value = 2 where ModifierId = 'GOD_KING_FAITH' and Name = 'Amount';
+
 -- Pantheon
 -- messenger of the gods : grant 1 recon unit with free promotion in your capital
 delete from BeliefModifiers where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS' and ModifierID = 'MESSENGER_OF_THE_GODS_FREE_SCOUT2';
 update ModifierArguments set Value = 'HETAIROI_FREE_PROMOTION' where Name = 'ModifierId' and ModifierId = 'MESSENGER_OF_THE_GODS_FREE_SCOUT_MODIFIER';
+
+-- Reyna
+update ModifierArguments set Value = 8 where ModifierId like 'REYNA_%_PERCENTAGE_BOOST' and Name = 'Amount';
+update GlobalParameters set Value = 100 where Name = 'REYNA_CONVERT_PERCENTAGE';
+
 
 -- wonders
 -- Huey Lake +1 Gold
@@ -94,6 +104,7 @@ values
 
 -- Buildings
 update Buildings set cost = 80 where BuildingType = 'BUILDING_SHRINE';
+update Buildings set cost = 100 where BuildingType = 'BUILDING_LIBRARY';
 
 --great person ARYABHATA
 insert or replace into GreatPersonIndividualActionModifiers

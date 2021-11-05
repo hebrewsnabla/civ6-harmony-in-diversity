@@ -3,6 +3,9 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_POLICY_GOD_KING_DESCRIPTION",                                       "+2 [ICON_Faith] Faith in the [ICON_Capital] Capital."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                "+8% [ICON_Gold] Gold output for each Commercial and Harbor district building in the city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",        "Gain double yields for international [ICON_TradeRoute] Trade Routes from the city when player has the 'Exploration' Civic."),
     ("LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                               "+1 [ICON_TradeRoute] Trade Route capacity[NEWLINE][NEWLINE]Your [ICON_TradeRoute] Trade Routes from this city get +3 [ICON_Gold] Gold for every Bonus resource within 3 tiles of the city and in this city's territory. [NEWLINE][NEWLINE] Must be built adjacent to a Commercial Hub district with a Market and adjacent to [ICON_RESOURCE_CATTLE] Cattle."),
     ("LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                                "+1 [ICON_Amenities] Amenity from entertainment for each Lake tile within one tile of Huey Teocalli. +1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for each Lake tile in your empire. Must be built on a Lake tile adjacent to land."),
     ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                       "When chosen, receive a recon units with a free promotion in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
@@ -22,6 +25,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
+    ("zh_Hans_CN",  "LOC_POLICY_GOD_KING_DESCRIPTION",                                   "[ICON_Capital] 首都+2 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",            "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",    "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GREAT_ZIMBABWE_DESCRIPTION",                           "[ICON_TradeRoute] 贸易路线容量+1。[NEWLINE][NEWLINE]城市领土中3个单元格以内的每个加成资源将为从此城市发源的 [ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币。[NEWLINE][NEWLINE]必须建在与商业中心区域（要求拥有市场）和 [ICON_RESOURCE_CATTLE] 牛资源相邻的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                            "在休伊神庙一个单元格以内的每个湖泊单元格为城市+1 [ICON_Amenities] 宜居度。为您帝国内的每个湖泊单元格+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币。必须建在靠近陆地的湖泊单元格上。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",                   "选择后即可在首都中获得1个侦察单位,若其初始未拥有免费升级，则获得一次免费升级。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
