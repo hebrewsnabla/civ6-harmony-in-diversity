@@ -15,7 +15,11 @@ update ModifierArguments set Value = 'HETAIROI_FREE_PROMOTION' where Name = 'Mod
 -- Reyna
 update ModifierArguments set Value = 8 where ModifierId like 'REYNA_%_PERCENTAGE_BOOST' and Name = 'Amount';
 update GlobalParameters set Value = 100 where Name = 'REYNA_CONVERT_PERCENTAGE';
-
+-- Magnus
+update GlobalParameters set Value = 8 where Name = 'MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE';
+update ModifierArguments set Value = 4 where ModifierId like 'GENERAL_SERVICE_REGIONAL_%_MODIFIER' and Name = 'Amount';
+delete from BuildingModifiers where BuildingType = 'BUILDING_GENERAL_SERVICE' and ModifierId = 'GENERAL_SERVICE_REGIONAL_FAITH';
+delete from BuildingModifiers where BuildingType = 'BUILDING_GENERAL_SERVICE' and ModifierId = 'GENERAL_SERVICE_REGIONAL_GOLD';
 
 -- wonders
 -- Huey Lake +1 Gold
@@ -48,12 +52,14 @@ update ModifierArguments set Value = 1 where ModifierId = 'ABBOT_HOLY_SITE_PRODU
 -- MEENAKSHI_TEMPLE
 delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
 update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMBAT_AOE_RELIGIOUS' or UnitAbilityType = 'ABILITY_GUIDE_MOVEMENT_AOE_RELIGIOUS';
+update ModifierArguments set Value = 1 where ModifierId = 'MEENAKSHITEMPLE_FREE_GURU' and Name = 'Amount';
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
+    ('BUILDING_MEENAKSHI_TEMPLE',           'MEENAKSHITEMPLE_FREE_GURU'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_BUILDER_PURCHASE'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SETTLER_PURCHASE'),
-	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_HOLY_SITE_FOOD'),
+	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_HOLY_SITE_FOOD'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SHRINE_FOOD'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_TEMPLE_FOOD');
