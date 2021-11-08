@@ -163,8 +163,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [IC
 --     Tag = 'LOC_UNIT_ROMAN_ONAGER_DESCRIPTION');
 -- -- LOC_UNIT_MACEDONIAN_BALLISTA_DESCRIPTION   PROMOTION_CLASS_SIEGE
 
--- Naval Melee: can transport units in the sea. Reveals Naval Raiders within sight range.
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Formation units all inherit escort''s [ICON_Movement] Movement speed. Reveals Naval Raiders within sight range.' where Language = 'en_US' and (
+-- Naval Melee: can transport units in the sea. Reveals Naval Raiders within sight range. -- Formation units all inherit escort's [ICON_Movement] Movement speed. 
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Reveals Naval Raiders within sight range.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
@@ -345,8 +345,8 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区
 --     Tag = 'LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_DESCRIPTION' or
 --     Tag = 'LOC_UNIT_ROMAN_ONAGER_DESCRIPTION');
 
--- 海军近战可以运兵，能使视线范围中的海军袭击者暴露位置。
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。能使视线范围中的海军袭击者暴露位置。' where Language = 'zh_Hans_CN' and (
+-- 海军近战可以运兵，能使视线范围中的海军袭击者暴露位置。 -- 所有编队单位将继承护卫队的 [ICON_Movement] 移动力。
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军近战：能使视线范围中的海军袭击者暴露位置。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_COG_DESCRIPTION' or -- STXP
     Tag = 'LOC_UNIT_GALLEY_DESCRIPTION' or
     Tag = 'LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION' or
