@@ -19,7 +19,7 @@ end
 include("Common");
 include("FarmsOnFreshHills_Common");
 include("HD_UnitCommandDefs");
-include "Hanyuu_CommandDefs";               --  Mod Furudu Rika Support
+include "Hanyuu_CommandDefs";               --  Mod Furude Rika Support
 
 Utils = ExposedMembers.DLHD.Utils;
 GreatPersonUtils = ExposedMembers.DLHD.GreatPersonUtils;
@@ -85,7 +85,7 @@ function GetUnitActionsTable(pUnit : object)
         end
     --end
 
-    --  Mod Furudu Rika Support
+    --  Mod Furude Rika Support
     if m_HanyuuUnitCommands then
         for sCommandKey, pCommandTable in pairs(m_HanyuuUnitCommands) do
 		
