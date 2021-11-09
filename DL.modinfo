@@ -160,6 +160,11 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
     </Criteria>
+    <Criteria id="Industry_Ethiopia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse> <!-- Ethiopia -->
+      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
+    </Criteria>
     <!-- District Expansions end -->
     <Criteria id="WatchTower_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -402,7 +407,7 @@
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
     </UpdateText>
-    <UpdateText id="Aqueduct_support_text">
+    <UpdateText id="DistrictExpansions_support_text">
       <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
       <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
@@ -412,6 +417,22 @@
       <Properties><LoadOrder>100008</LoadOrder></Properties>
       <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     </UpdateText>
+    <ImportFiles id="HD_Assets">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/CityStates/CivBaikonur_22.dds</File>
+      <File>Assets/CityStates/CivBaikonur_30.dds</File>
+      <File>Assets/CityStates/CivBaikonur_32.dds</File>
+      <File>Assets/CityStates/CivBaikonur_36.dds</File>
+      <File>Assets/CityStates/CivBaikonur_44.dds</File>
+      <File>Assets/CityStates/CivBaikonur_45.dds</File>
+      <File>Assets/CityStates/CivBaikonur_48.dds</File>
+      <File>Assets/CityStates/CivBaikonur_50.dds</File>
+      <File>Assets/CityStates/CivBaikonur_64.dds</File>
+      <File>Assets/CityStates/CivBaikonur_80.dds</File>
+      <File>Assets/CityStates/CivBaikonur_128.dds</File>
+      <File>Assets/CityStates/CivBaikonur_200.dds</File>
+      <File>Assets/CityStates/CivBaikonur_256.dds</File>
+    </ImportFiles>
   </FrontEndActions>
   <InGameActions>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
@@ -596,6 +617,10 @@
     <UpdateText id="Industry_support_text" criteria="Industry_Expansion2">
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
+    </UpdateText>
+    <UpdateText id="Industry_support_text" criteria="Industry_Ethiopia">
+      <Properties><LoadOrder>16051</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
     </UpdateText>
       <!-- District Expansion end -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
@@ -1399,6 +1424,7 @@
     <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
+    <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>

@@ -77,3 +77,15 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_NAME",          "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_SHORT_NAME",    "转换为物流中心"),
     ("zh_Hans_CN",  "LOC_PROJECT_JNR_CONVERT_REACTOR_TO_FREIGHT_DESCRIPTION",   "将城市中的发电站变更为{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}.[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_NAME}:[NEWLINE]{LOC_BUILDING_JNR_FREIGHT_YARD_DESCRIPTION}");
+
+-- City State Texts
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",    "建造奇观、建筑、区域时，每个工具铺、水力作坊和风车+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",     "建造奇观、建筑、区域时，每个工作坊和手工工场+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",          "{LOC_MINOR_CIV_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS}"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",           "{LOC_MINOR_CIV_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS}"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",         "建造奇观、建筑、区域时，每个工厂和化工厂+2 [ICON_Production] 生产力。");
