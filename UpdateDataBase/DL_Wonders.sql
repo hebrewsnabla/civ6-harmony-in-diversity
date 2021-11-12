@@ -554,10 +554,15 @@ values
 -- Kilwa
 update Buildings set PrereqTech = 'TECH_BUTTRESS' where BuildingType = 'BUILDING_KILWA_KISIWANI';
 update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
+update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
+
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
+delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDFOODYIELD';
 
 insert or replace into BuildingModifiers (BuildingType,  ModifierId)
 select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId like 'KILWA_SINGLE_ADD%';
+insert or replace into BuildingModifiers (BuildingType,  ModifierId)
+select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
 insert or replace into Modifiers    
     (ModifierId,                                ModifierType,                                               SubjectRequirementSetId)
@@ -570,8 +575,16 @@ values
     ('KILWA_SINGLE_ADDPRODUCTIONBUILDINGS1',    'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS'),
     ('KILWA_SINGLE_ADDPRODUCTIONDISTRICTS1',    'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER', 'INDUSTRIAL_SUZERAIN_2_REQUIREMENTS');
 
+insert or replace into Modifiers    
+    (ModifierId, 	ModifierType,                       				SubjectRequirementSetId)
+select
+	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CVS_CITYSTATE_AGRICULTURAL_SUZERAIN_2_REQUIREMENTSET'
+from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD1';
+
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'KILWA_SINGLE_ADD%';
+insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
+select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
