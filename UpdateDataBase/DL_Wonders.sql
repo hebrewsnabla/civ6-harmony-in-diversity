@@ -683,7 +683,7 @@ update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
 update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
 update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_POTALA_PALACE';
 update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
