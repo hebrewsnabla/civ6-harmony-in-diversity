@@ -605,7 +605,7 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 
-update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
@@ -629,7 +629,7 @@ update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
-update Buildings set Maintenance = 1,	Cost = 70	where BuildingType = 'BUILDING_SHRINE';
+update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
 update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_TEMPLE';
 update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_STAVE_CHURCH';
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_CATHEDRAL';
@@ -1327,9 +1327,9 @@ values
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_FOOD'),
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_PRODUCTION'),
  	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_SCIENCE'),
- 	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_CULTURE'),
- 	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_FAITH'),
- 	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_GOLD');
+ 	('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_CULTURE');
+ 	-- ('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_FAITH'),
+ 	-- ('BUILDING_GENERAL_SERVICE',	'GENERAL_SERVICE_REGIONAL_GOLD');
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,								SubjectRequirementSetId)
@@ -1371,22 +1371,22 @@ insert or replace into ModifierArguments
 values
 	('GENERAL_SERVICE_REGIONAL_FOOD',					'ModifierId',	'GENERAL_SERVICE_REGIONAL_FOOD_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_FOOD_MODIFIER',			'YieldType',	'YIELD_FOOD'),
-	('GENERAL_SERVICE_REGIONAL_FOOD_MODIFIER',			'Amount',		2),
+	('GENERAL_SERVICE_REGIONAL_FOOD_MODIFIER',			'Amount',		4),
 	('GENERAL_SERVICE_REGIONAL_PRODUCTION',				'ModifierId',	'GENERAL_SERVICE_REGIONAL_PRODUCTION_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_PRODUCTION_MODIFIER',	'YieldType',	'YIELD_PRODUCTION'),
-	('GENERAL_SERVICE_REGIONAL_PRODUCTION_MODIFIER',	'Amount',		2),
+	('GENERAL_SERVICE_REGIONAL_PRODUCTION_MODIFIER',	'Amount',		4),
 	('GENERAL_SERVICE_REGIONAL_SCIENCE',				'ModifierId',	'GENERAL_SERVICE_REGIONAL_SCIENCE_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_SCIENCE_MODIFIER',		'YieldType',	'YIELD_SCIENCE'),
-	('GENERAL_SERVICE_REGIONAL_SCIENCE_MODIFIER',		'Amount',		2),
+	('GENERAL_SERVICE_REGIONAL_SCIENCE_MODIFIER',		'Amount',		4),
 	('GENERAL_SERVICE_REGIONAL_CULTURE',				'ModifierId',	'GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'YieldType',	'YIELD_CULTURE'),
-	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'Amount',		2),
+	('GENERAL_SERVICE_REGIONAL_CULTURE_MODIFIER',		'Amount',		4),
 	('GENERAL_SERVICE_REGIONAL_FAITH',					'ModifierId',	'GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'YieldType',	'YIELD_FAITH'),
-	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'Amount',		2),
+	('GENERAL_SERVICE_REGIONAL_FAITH_MODIFIER',			'Amount',		4),
 	('GENERAL_SERVICE_REGIONAL_GOLD',					'ModifierId',	'GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER'),
 	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'YieldType',	'YIELD_GOLD'),
-	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'Amount',		2);
+	('GENERAL_SERVICE_REGIONAL_GOLD_MODIFIER',			'Amount',		4);
 
 ----------------------------------------------------------------------------------------------------------------------
 

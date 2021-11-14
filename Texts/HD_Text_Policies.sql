@@ -39,6 +39,7 @@ values
     ("LOC_GOVT_INHERENT_BONUS_COMMUNISM_XP1",                                         "+2 [ICON_Production] Production per [ICON_Citizen] Citizen in cities."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] Science."),
     -- Policies
+    ("LOC_POLICY_GOD_KING_DESCRIPTION",                                               "+2 [ICON_Faith] Faith in the [ICON_Capital] Capital."),
     ("LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "+4 [ICON_Production] Production and +4 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes."),
     ("LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "+10 [ICON_Strength] Unit Combat Strength when fighting Barbarians."),
     ("LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "+100% [ICON_Production] Production toward Spies."),
@@ -170,6 +171,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_COMMUNISM_XP1",                                         "城市中每位 [ICON_Citizen] 公民将提供2点 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_COMMUNISM_XP2",                                "+15% [ICON_Science] 科技值。"),
     -- 政策卡
+    ("zh_Hans_CN",  "LOC_POLICY_GOD_KING_DESCRIPTION",                                               "[ICON_Capital] 首都+2 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVIZATION_DESCRIPTION_XP2",                                   "国内贸易路线提供的 [ICON_Production] 生产力+4、[ICON_Food] 食物+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_DISCIPLINE_DESCRIPTION",                                             "同蛮族战斗时，+10 [ICON_Strength] 单位战斗力。"),
     ("zh_Hans_CN",  "LOC_POLICY_MACHIAVELLIANISM_DESCRIPTION",                                       "为生产间谍+100% [ICON_Production] 生产力。"),

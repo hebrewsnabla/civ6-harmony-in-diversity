@@ -645,14 +645,35 @@ values
 	('TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
 
 insert or replace into Modifiers
-	(ModifierId,			ModifierType)
+	(ModifierId,							ModifierType)
 values
-	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
 
 insert or replace into ModifierArguments
-	(ModifierId,									Name,				Value)
+	(ModifierId,							Name,				Value)
 values
-	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS','AbilityType','ABILITY_INCA_IGNORE_HILLS');
+	('TRAIT_ALL_LAND_UNITS_IGNORE_HILLS',	'AbilityType',		'ABILITY_INCA_IGNORE_HILLS');
+
+-- inca ：Reduces the purchase cost of mountain tiles by 50%
+insert or replace into TraitModifiers   
+    (TraitType,	                            ModifierId)
+select  'TRAIT_CIVILIZATION_GREAT_MOUNTAINS',   TerrainType || 'PLOT_COST' from Terrains 
+where TerrainType like 'TERRAIN_%_MOUNTAIN';
+
+insert or replace into Modifiers
+	(ModifierId,			        ModifierType)
+select TerrainType || 'PLOT_COST', 'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN'  from Terrains 
+where TerrainType like 'TERRAIN_%_MOUNTAIN';
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select TerrainType || 'PLOT_COST',  'TerrainType',  TerrainType   from Terrains 
+where TerrainType like 'TERRAIN_%_MOUNTAIN';
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select TerrainType || 'PLOT_COST',  'Amount',       -50   from Terrains 
+where TerrainType like 'TERRAIN_%_MOUNTAIN';
 
 -----------------------------------------------------------------------------------------------------------------
 -- Russia, Resume the ability

@@ -288,11 +288,12 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MODERNTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ALAN_TURING';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_CHEMISTRYTECHBOOST';
 delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_1MODERNATOMICTECHBOOST' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ALBERT_EINSTEIN';
-    
+
 insert or replace into GreatPersonIndividualActionModifiers 
-    (GreatPersonIndividualType,                         ModifierId,                                 AttachmentTargetType)
+    (GreatPersonIndividualType,                         ModifierId,                                             AttachmentTargetType)
 values
-    ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREATPERSON_EXTRA_DISTRICT_CAPACITY',      'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
+    ('GREAT_PERSON_INDIVIDUAL_EUCLID',                  'GREATPERSON_EXTRA_DISTRICT_CAPACITY',                  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA',               'GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE');
 
 insert or replace into GreatPersonIndividualActionModifiers 
     (GreatPersonIndividualType,                     ModifierId)
@@ -310,6 +311,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                               Runonce,    Permanent)
 values
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',    'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT',                1,  1),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                  'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
     ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',             'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',          'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
@@ -332,6 +334,7 @@ select  'GREAT_PERSON_ADD_' || GreatPersonClassType ,   'Amount', 25 from GreatP
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,                   Value)
 values
+    ('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',        'Amount',               2),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'Amount',               2),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'EndEraType',           'ERA_ATOMIC'),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'StartEraType',         'ERA_MODERN'),

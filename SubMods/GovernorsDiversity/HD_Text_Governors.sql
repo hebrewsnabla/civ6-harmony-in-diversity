@@ -10,9 +10,9 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "The city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "[ICON_Citizen] Citizens in the city produce +4 [ICON_GOLD] Gold."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "Financial Centre"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "+5% [ICON_Gold] Gold output for each Commercial and Harbor district building in the city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "+8% [ICON_Gold] Gold output for each Commercial and Harbor district building in the city."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Gain 50% more yields for international [ICON_TradeRoute] Trade Routes from the city when player has the 'Exploration' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Gain double yields for international [ICON_TradeRoute] Trade Routes from the city when player has the 'Exploration' Civic."),
     -- Victor
     ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
@@ -49,7 +49,7 @@ values
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "Please Ignore"),
     ("LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "This building requires {1_Building}."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "Elected Officer"),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "When Governor Magnus establishes in the city, the General Services Office provides +2 of all yields to all cities within 9 tiles."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "When the Governor Magnus estabilished in city, the General Service Office of the city can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "The city receives yields from all nearby District buildings with regional bonuses (not just from the first building of the same type)."),
     -- Liang
     ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "Rural Planning"),
@@ -99,9 +99,9 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+5%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益增加50%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     -- 维克多
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "2回合就职。就职城市无法被围攻，城市防御+5 [ICON_STRENGTH] 战斗力。建造军营、港口和这些区域中的建筑时加速30%。"), -- 您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度
@@ -139,7 +139,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "请忽略"),
     ("zh_Hans_CN",  "LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "该建筑需要{1_Building}。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "总务官"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "总督“马格努斯”就职的城市中的总务厅可为9个单元格之内的城市提供+2所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "总督“马格努斯”就职的城市中的总务厅可为8个单元格之内的城市提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。"),
     -- 梁
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "乡村规划"),

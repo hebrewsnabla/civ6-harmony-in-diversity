@@ -94,8 +94,9 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
 --BUILDING_GREAT_ZIMBABWE
-update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
-update ModifierArguments set Value = 4 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
+update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
 --BUILDING_BROADWAY
 ---grants a GREAT_PERSON_CLASS_MUSICIAN
@@ -375,9 +376,27 @@ insert or replace into ModifierArguments (ModifierId,	Name, Value) values
 ('MACHU_PICCHU_DISTRICT_FOOD',	'Amount', 2),
 ('MACHU_PICCHU_DISTRICT_FOOD',	'YieldType', 'YIELD_FOOD');
 
--- huey lake +1 food
+-- Huey Lake +1 Gold
 update Buildings set PrereqTech = 'TECH_ENGINEERING', Cost = 400 
 	where BuildingType = 'BUILDING_HUEY_TEOCALLI';
+
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_HUEY_TEOCALLI',				'HUEY_LAKE_GOLD');
+
+insert or replace into Modifiers
+	(ModifierId, 							ModifierType,									SubjectRequirementSetId)
+values
+	('HUEY_LAKE_GOLD',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',			'FOODHUEY_PLAYER_REQUIREMENTS'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'FOODHUEY_PLOT_IS_LAKE_REQUIREMENTS');		
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('HUEY_LAKE_GOLD',						'ModifierId',	'HUEY_LAKE_GOLD_MODIFIER'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'YieldType',	'YIELD_GOLD'),		
+	('HUEY_LAKE_GOLD_MODIFIER',				'Amount',		1);
 -- update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
 
 --liberty to colonialism
@@ -550,6 +569,65 @@ insert or replace into ModifierArguments
 values 
 	('TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_HILLS',	'AbilityType',		'ABILITY_ARCHAEOLOGIST_IGNORE_HILLS'),
 	('TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_FOREST',	'AbilityType',		'ABILITY_ARCHAEOLOGIST_IGNORE_FOREST');
+
+-- MEENAKSHI_TEMPLE
+delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMBAT_AOE_RELIGIOUS' or UnitAbilityType = 'ABILITY_GUIDE_MOVEMENT_AOE_RELIGIOUS';
+-- update ModifierArguments set Value = 1 where ModifierId = 'MEENAKSHITEMPLE_FREE_GURU' and Name = 'Amount';
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+    ('BUILDING_MEENAKSHI_TEMPLE',           'MEENAKSHITEMPLE_FREE_GURU'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_BUILDER_PURCHASE'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SETTLER_PURCHASE'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_HOLY_SITE_FOOD'),
+	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SHRINE_FOOD'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_TEMPLE_FOOD');
+
+insert or replace into Modifiers
+	(ModifierId, 									ModifierType,											SubjectRequirementSetId)
+values
+	('MEENAKSHI_BUILDER_PURCHASE',					'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL),
+	('MEENAKSHI_SETTLER_PURCHASE',					'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL),
+	('MEENAKSHI_HOLY_SITE_FOOD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_HOLY_SITE'),
+	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_HOLY_SITE'),
+	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
+	('MEENAKSHI_SHRINE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_SHRINE'),
+	('MEENAKSHI_SHRINE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
+	('MEENAKSHI_TEMPLE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_TEMPLE'),
+	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('MEENAKSHI_BUILDER_PURCHASE',					'Tag',			'CLASS_BUILDER'),		
+	('MEENAKSHI_SETTLER_PURCHASE',					'Tag',			'CLASS_SETTLER'),
+	('MEENAKSHI_HOLY_SITE_FOOD',					'YieldType',	'YIELD_FOOD'),
+	('MEENAKSHI_HOLY_SITE_FOOD',					'Amount',		2),
+	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',           'ModifierId',  	'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER'),	
+	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'YieldType',   	'YIELD_FOOD'),
+	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'Amount',	   	1),
+	('MEENAKSHI_SHRINE_FOOD',             			'ModifierId',  	'MEENAKSHI_SHRINE_FOOD_MODIFIER'),
+	('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'YieldType',   	'YIELD_FOOD'),
+	('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'Amount',	   	1),
+	('MEENAKSHI_TEMPLE_FOOD',              			'ModifierId',  	'MEENAKSHI_TEMPLE_FOOD_MODIFIER'),
+	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'YieldType',   	'YIELD_FOOD'),
+	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'Amount',      	1);
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
+	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_CITY_HAS_SHRINE'),
+	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
+	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_CITY_HAS_TEMPLE');
+
+insert or replace into RequirementSets
+	(RequirementSetId,                           	RequirementSetType)
+values
+	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
+	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
 
 -- Kilwa
 update Buildings set PrereqTech = 'TECH_BUTTRESS' where BuildingType = 'BUILDING_KILWA_KISIWANI';

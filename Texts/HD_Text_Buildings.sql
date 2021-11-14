@@ -108,7 +108,7 @@ values
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
     ("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
-    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When Governor Magnus is estabilished in this city, if they have the Promotion 'Elected Officer', the General Service Office building provides +2 of all yields to all the cities within 9 tiles (this city included). Can only construct when Governor Magnus with the 'Elected Officer' Title is established within 6 tiles.");
+    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When the Governor Magnus with the Promotion ""General Services Officer"" is estabilished in this city, the General Service Office can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles (this city included). Can only construct when Governor Magnus with General Services Officer Title is established within 8 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -220,4 +220,4 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为9个单元格之内的城市（包括该城市）提供额外+2所有产出。只有当拥有总务官头衔的总督马格努斯在6个单元格以内的城市就职时方可建造。");
+    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。");

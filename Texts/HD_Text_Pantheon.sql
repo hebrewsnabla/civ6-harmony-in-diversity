@@ -14,7 +14,7 @@ values
     ("LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION",                 "When chosen, receive a free Granary in your capital. City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith."), --  Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Granary.
     ("LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "+50% construction speed towards defensive buildings. +75% [ICON_Production] Production towards Districts in cities without a Specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength."),
     ("LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME",                     "Messenger of the Gods"),
-    ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "When chosen, receive two recon units in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
+    ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "When chosen, receive a recon units with a free promotion in your capital. +1 [ICON_Movement] Movement for all Recon Units."),
     ("LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "+1 [ICON_Food] Food and +1 [ICON_Culture] Culture from Pastures."),
     ("LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "+1 [ICON_Culture] Culture and +2 [ICON_Gold] Gold from Plantations."),
     ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh. Floodplain tiles no longer lower adjacent tiles' Appeal."),
@@ -68,7 +68,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION",                 "选择后即可在首都中获得一个免费的粮仓。拥有粮仓的城市余粮增加15%。可以使用 [ICON_Faith] 信仰值购买粮仓。"), -- ，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买粮仓的费用降低20%。粮仓的建造速度+50%
     ("zh_Hans_CN",  "LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "建造防御建筑时加速50%。没有专业化区域的城市建造区域+75% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6，城市 [ICON_Ranged] 远程攻击力+3。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME",                     "神使"),
-    ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "选择后即可在首都中获得2个侦察单位。所有侦察类型的单位+1 [ICON_Movement] 移动力。"), -- ，若其初始未拥有免费升级，则获得一次免费升级
+    ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "选择后即可在首都中获得1个可免费晋升的侦察单位。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "种植园+1 [ICON_Culture] 文化值和 +2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),

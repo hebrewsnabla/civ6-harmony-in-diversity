@@ -41,6 +41,9 @@ update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
 -- Great person poinst
 update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
 
+-- pantheon
+update GlobalParameters set Value = 30 where Name = 'RELIGION_PANTHEON_MIN_FAITH';
+
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_DESTINATION';
@@ -122,9 +125,9 @@ insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
-    ('REYNA_CONVERT_PERCENTAGE',                        50),
+    ('REYNA_CONVERT_PERCENTAGE',                        100),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
-    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  9),
+    ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
