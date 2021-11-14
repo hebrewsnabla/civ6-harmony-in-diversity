@@ -118,21 +118,21 @@ values
 	'IMPROVEMENT_OIL_WELL',			NULL,			NULL,				NULL,			NULL),
 	('Sea_Oil_Industrial_Production',	'LOC_DISTRICT_SEAOIL_INDUSTRIAL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,
 	'IMPROVEMENT_OFFSHORE_OIL_RIG',	NULL,			NULL,				NULL,			NULL),
-	-- Mine, Industrialization
+	-- Mine, METAL CASTING
 	('HD_Mine_HalfProduction',			'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,
-	'IMPROVEMENT_MINE',				NULL,			NULL,				NULL,			'TECH_INDUSTRIALIZATION'),
+	'IMPROVEMENT_MINE',				NULL,			NULL,				NULL,			'TECH_METAL_CASTING'),
 	('HD_Mine_Production',				'LOC_DISTRICT_MINE_PRODUCTION',					'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_MINE',				NULL,			'TECH_INDUSTRIALIZATION',	NULL,	NULL),
-	-- Quarry, Gunpowder
+	'IMPROVEMENT_MINE',				NULL,			'TECH_METAL_CASTING',	NULL,	NULL),
+	-- Quarry, APPRENTICESHIP
 	('HD_Quarry_HalfProduction',		'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,
-	'IMPROVEMENT_QUARRY',			NULL,			NULL,				NULL,			'TECH_GUNPOWDER'),
+	'IMPROVEMENT_QUARRY',			NULL,			NULL,				NULL,			'TECH_APPRENTICESHIP'),
 	('HD_Quarry_Production',			'LOC_DISTRICT_QUARRY_PRODUCTION',				'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_QUARRY',			NULL,			'TECH_GUNPOWDER',	NULL,			NULL),
-	-- Lumbermill, Steel
+	'IMPROVEMENT_QUARRY',			NULL,			'TECH_APPRENTICESHIP',	NULL,			NULL),
+	-- Lumbermill, CONSTRUCTION
 	('HD_LumberMill_HalfProduction',	'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,
-	'IMPROVEMENT_LUMBER_MILL',		NULL,			NULL,				NULL,			'TECH_STEEL'),
+	'IMPROVEMENT_LUMBER_MILL',		NULL,			NULL,				NULL,			'TECH_CONSTRUCTION'),
 	('HD_LumberMill_Production',		'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				1,
-	'IMPROVEMENT_LUMBER_MILL',		NULL,			'TECH_STEEL',		NULL,			NULL);
+	'IMPROVEMENT_LUMBER_MILL',		NULL,			'TECH_CONSTRUCTION',		NULL,			NULL);
 
 -- Industrial zone adjacent to harbor
 insert or replace into Adjacency_YieldChanges
@@ -173,12 +173,13 @@ insert or replace into Improvement_Adjacencies
 values
 	-- TODO: Support UDs of Industry/Commercial/Harbor/Entertainment
 	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
+	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_Industrial_Production'),
 	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
-	('IMPROVEMENT_CAMP',			'Camp_Entertainment_Gold'),
-	('IMPROVEMENT_CAMP',			'Camp_Street_Carnival_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Commercial_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Suguba_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
@@ -191,6 +192,8 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
 	NULL,							NULL,			NULL,		NULL,			'TECH_MACHINERY'),
+	('Lumber_Mill_Industrial_Production','Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
+	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL),
 	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL),
 	('Quarry_Industrial_Production',	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
@@ -199,10 +202,10 @@ values
 	'DISTRICT_COMMERCIAL_HUB',		NULL,			NULL,		NULL,			NULL),
 	('Plantation_Suguba_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_SUGUBA',				NULL,			NULL,		NULL,			NULL),
-	('Camp_Entertainment_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
-	'DISTRICT_ENTERTAINMENT_COMPLEX', NULL,			NULL,		NULL,			NULL),
-	('Camp_Street_Carnival_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
-	'DISTRICT_STREET_CARNIVAL',		NULL,			NULL,		NULL,			NULL),
+	('Camp_Commercial_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_COMMERCIAL_HUB',	 	NULL,			NULL,		NULL,			NULL),
+	('Camp_Suguba_Gold', 				'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_SUGUBA',				NULL,			NULL,		NULL,			NULL),
 	('Fishing_Boats_Harbor_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_HARBOR',				NULL,			NULL,		NULL,			NULL),
 	('Fishing_Boats_Royal_Navy_Gold', 	'Placeholder', 'YIELD_GOLD',		2,				1,				0,
