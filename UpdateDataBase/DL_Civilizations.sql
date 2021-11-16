@@ -1164,7 +1164,7 @@ values
 	('PEACE_ADDFAITH',			'Amount',		15),
 	('PEACE_ADDAMENITY',		'Amount',		1);
 ---------------------------------------------------------------------------------------------------------------------------------
---CHANDRAGUPTA By Kekeya（政事论：完成军事训练后获得一个移民到首都城市）
+--CHANDRAGUPTA By Kekeya（政事论：完成军事训练市政后获得一个移民到首都城市）
 insert or replace into TraitModifiers (TraitType, ModifierId)
 values
 ('TRAIT_LEADER_ARTHASHASTRA', 'MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC');
