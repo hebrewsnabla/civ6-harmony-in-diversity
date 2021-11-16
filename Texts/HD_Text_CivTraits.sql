@@ -66,7 +66,8 @@ values
     ("LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "Spend Builder charges to complete 20% of the original District cost. Luxury resources provide [ICON_Amenities] Amenity to 2 extra cities. Military units receive +1 [ICON_Strength] Combat Strength when attacking for each different Luxury resource improved in Aztec lands."),
     ("LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "Gain 1 level of [ICON_VisLimited] Diplomatic Visibility greater than normal with every civilization that they've met. Receives a free Spy (and extra spy capacity) with the Castles technology. +2 sight range for spies and traders. All spies start with a free promotion."), -- (if already have, can promote again after the first promotion)
     ("LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "ALL cities have +15% growth rate, 15% [ICON_Faith] Faith and +1 [ICON_Amenities] Amenity when you are at peace with all other civilizations. +5 [ICON_Faith] Faith for each civilization (including India) they have met that has founded a Religion and is not currently at war. Opposing civilizations receive double the war weariness for fighting against Gandhi."),
-    ("LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "Receives Follower Belief bonuses in a city from each Religion that has at least 1 Follower. Cities gain an [ICON_Amenities] Amenity for every Religion with at least 1 Follower. Missionaries have +2 spreads. +100% Religious pressure from your [ICON_TradeRoute] Trade Routes. +0.5 [ICON_Food] Food per Population for cities which have stepwell.");
+    ("LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "Receives Follower Belief bonuses in a city from each Religion that has at least 1 Follower. Cities gain an [ICON_Amenities] Amenity for every Religion with at least 1 Follower. Missionaries have +2 spreads. +100% Religious pressure from your [ICON_TradeRoute] Trade Routes. +0.5 [ICON_Food] Food per Population for cities which have stepwell."),
+    ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                 "After unlocked civic military training, You will get a setter to the capital city, and can declare a war of territorial expansion.After declaring the war of territorial expansion,all your units grant extra 2[ICON_MOVEMENT]movement and 5[ICON_STRENGTH]strength in 10 turns.");
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -138,8 +139,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "使用建造者劳动力来推进20%的区域建设进程。其领土中的奢侈品资源为额外2座城市提供1点 [ICON_Amenities] 宜居度。阿兹特克国土内每种改良的奢侈品资源将为军事单位+1 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "[ICON_VisLimited] 外交能见度比遇到的其他文明高1级。[NEWLINE]解锁“城堡”科技后免费获得1个间谍（并增加1个间谍容量）。间谍和商人+2视野范围。所有间谍初始便可免费获得一次升级机会。"), -- （若已能升级则可在升级后再升级一次）
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。");
-
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成军事训练市政后解锁领土扩张战争借口，并获得一个免费移民到首都城市。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

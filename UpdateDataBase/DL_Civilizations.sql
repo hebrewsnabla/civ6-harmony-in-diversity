@@ -1163,7 +1163,40 @@ values
 	('PEACE_ADDFAITH',			'YieldType',	'YIELD_FAITH'),
 	('PEACE_ADDFAITH',			'Amount',		15),
 	('PEACE_ADDAMENITY',		'Amount',		1);
+---------------------------------------------------------------------------------------------------------------------------------
+--CHANDRAGUPTA By Kekeya（政事论：完成军事训练市政后获得一个移民到首都城市）
+insert or replace into TraitModifiers (TraitType, ModifierId)
+values
+('TRAIT_LEADER_ARTHASHASTRA', 'MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC');
 
+insert or replace into Modifiers (ModifierId, ModifierType, RunOnce, Permanent, NewOnly, OwnerRequirementSetId, SubjectRequirementSetId) 
+values 
+('MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC', 'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL', 0, 0, 0, NULL, 'Req_Player_Has_Civic_Military_Training');
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+values 
+('MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC', 'Amount', '1'), 
+('MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC', 'UnitType', 'UNIT_SETTLER');
+
+-- RequirementSets
+
+insert or replace into RequirementSets (RequirementSetId, RequirementSetType) 
+values 
+('Req_Player_Has_Civic_Military_Training', 'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) 
+values 
+('Req_Player_Has_Civic_Military_Training', 'REQ_PlayerHasCivicMilitaryTraining');
+
+-- Requirements
+
+insert or replace into Requirements (RequirementId, RequirementType) 
+values 
+('REQ_PlayerHasCivicMilitaryTraining', 'REQUIREMENT_PLAYER_HAS_CIVIC');
+
+insert or replace into RequirementArguments (RequirementId, Name, Value) 
+values 
+('REQ_PlayerHasCivicMilitaryTraining', 'CivicType', 'CIVIC_MILITARY_TRAINING');
 -------------------------------------------------------------------------------------------------
 --Cree's Mekewap now provides +1 production adjacent a Luxury.
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
