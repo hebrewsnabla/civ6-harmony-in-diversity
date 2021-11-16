@@ -282,6 +282,9 @@ function AddActionButton(instance:table, action:table)
             local validActivation = false;
             local selectedPlotId = pSelectedUnit:GetPlotId();
             for _, plotId in ipairs(rawActivationPlots) do
+                print('HD_DEBUG', _, selectedPlotId, plotId)
+            end
+            for _, plotId in ipairs(rawActivationPlots) do
                 if selectedPlotId == plotId then
                     validActivation = true;
                     break;

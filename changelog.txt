@@ -2921,3 +2921,8 @@ AI和科技树测试模式（测试内容）：
 伐木场给工业的1相邻加成从钢铁前移到建造。
 矿山给工业的1相邻加成从工业化前移到金属铸造。
 采石场给工业的1相邻加成从火药前移到学徒。
+
+[v1.0.9.6]
+整合Faster Starting Settlers，不再需要开启该mod。
+在log中打印关于大工希南的调试信息，大家若遇到bug请打开：
+我的文档\My Games\Sid Meier's Civilization VI\Logs\Lua.log，将其发送给DeepLogic

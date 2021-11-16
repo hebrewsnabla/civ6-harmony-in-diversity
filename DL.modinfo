@@ -364,6 +364,10 @@
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_en_US.sql</File>
       <File>ModSupport/SteelThunder/Texts/HD_Text_STUU_zh_Hans_CN.sql</File>
     </UpdateText>
+    <UpdateText id="ModManager_CustomFilters">
+      <Properties><LoadOrder>15050</LoadOrder></Properties>
+      <File>ModSupport/ModManager/CustomFilters.sql</File>
+    </UpdateText>
     <UpdateDatabase id="DL_Settings">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/MapScripts.xml</File>
@@ -925,6 +929,10 @@
       <File>ThirdParty/GoldResource/Gold_Text.xml</File>
     </UpdateText>
 
+    <UpdateDatabase id="FasterStartingSettlers" criteria="Expansion2">
+      <Properties><LoadOrder>15854</LoadOrder></Properties>
+      <File>ThirdParty/FasterStartingSettlers/FasterStartingSettlers.sql</File>
+    </UpdateDatabase>
     <AddGameplayScripts id="Modified_ExpandedInitialVision" criteria="Expansion2">
       <Properties><LoadOrder>15855</LoadOrder></Properties>
       <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
@@ -1446,6 +1454,7 @@
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
     <File>ModSupport/ProjectHumankind/DL_Adaptation.sql</File>
+    <File>ModSupport/ModManager/CustomFilters.sql</File>
     <File>ModSupport/SteelThunder/STXP.sql</File>
     <File>ModSupport/SteelThunder/STUU.sql</File>
     <File>ModSupport/SteelThunder/Texts/HD_Text_STXP.sql</File>
@@ -1549,6 +1558,8 @@
     <File>ThirdParty/GoldResource/Gold_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Icons_Resources.xml</File>
     <File>ThirdParty/GoldResource/Gold_Text.xml</File>
+    <!-- ThirdParty Faster Starting Settlers -->
+    <File>ThirdParty/FasterStartingSettlers/FasterStartingSettlers.sql</File>
     <!-- ThirdParty Expanded Initial Vision -->
     <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
     <!-- ThirdParty Concise UI CityStates -->

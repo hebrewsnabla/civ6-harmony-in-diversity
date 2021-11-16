@@ -27,6 +27,7 @@ GreatPersonUtils.GetActivationPlots = function(playerID, greatPersonIndividualID
                     if districtCity ~= nil then
                         local currentlyBuilding = districtCity:GetBuildQueue():CurrentlyBuilding();
                         local districtType = GameInfo.Districts[district:GetType()].DistrictType;
+                        print('HD_DEBUG', currentlyBuilding, districtType)
                         if districtType == currentlyBuilding then
                             isValid = true;
                         end
@@ -34,6 +35,7 @@ GreatPersonUtils.GetActivationPlots = function(playerID, greatPersonIndividualID
                 end
                 if isValid then
                     local districtPlot:table = Map.GetPlot(district:GetX(), district:GetY());
+                    print('HD_DEBUG plot', district:GetX(), district:GetY(), districtPlot)
                     if districtPlot ~= nil then
                         table.insert(activationPlots, districtPlot:GetIndex());
                     end
