@@ -14,7 +14,11 @@ values
                                                  A55FAFB4-9070-4597-9453-B28A99910CDA,
                                                  CD953AD5-2869-4654-91EC-E48D118EF3F3,
                                                  05698E46-1032-43C7-A40C-FA3D02858D2A,
-                                                 5B0445C9-1376-45AD-9B51-C96A83A8F17D"),
+                                                 5B0445C9-1376-45AD-9B51-C96A83A8F17D,
+                                                 F653805E-F7C8-44E1-8CBD-FB48D7AABCBA,
+                                                 648CD2A8-057A-4EB5-9E41-E1F7D86B5443,"),
+                                                -- {5E991A08-08FD-4774-968B-A85377ECF60D},
+                                                -- {455B6E2D-821D-4D49-9FCD-FC950AC6A521}
     ("LOC_HD_CORE_MODS_NAME",                   "HD main"),
     ("LOC_HD_CORE_MODS_LIST",                   "521b8777-0977-4859-a5ee-3e411a732e5c,
                                                  c086b5a6-90d2-4dea-a32f-c642639b9469,
@@ -129,16 +133,17 @@ values
                                                  c3644d69-f64c-4be5-9aa7-94bab7b0f816,
                                                  45daa007-1cba-4b11-815d-313fe45c1ba6,
                                                  16c2195a-13af-4032-920c-8de1d6858c6f,
-                                                 05eb2603-db5a-4cf5-ae5f-50c40cf2ff0f"),
-    ("LOC_FF16_NUMOF_CUSTOM_FILTERS",           "7"),
+                                                 05eb2603-db5a-4cf5-ae5f-50c40cf2ff0f,
+                                                 fda41661-187f-4079-9546-9c88b6de0b1d"),
+    ("LOC_FF16_NUMOF_CUSTOM_FILTERS",           "8"),
     ("LOC_FF16_CUSTOM_FILTER_1",                "{LOC_HD_CORE_MODS_NAME};{LOC_HD_CORE_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_2",                "{LOC_HD_RECOMMENDED_MODS_NAME};{LOC_HD_RECOMMENDED_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_3",                "{LOC_WONDERS_MODS_NAME};{LOC_WONDERS_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_4",                "{LOC_NATURAL_WONDERS_MODS_NAME};{LOC_NATURAL_WONDERS_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_5",                "{LOC_HD_UI_MODS_NAME};{LOC_HD_UI_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_6",                "{LOC_HD_FULL_MODS_NAME};{LOC_HD_FULL_MODS_LIST}"),
-    ("LOC_FF16_CUSTOM_FILTER_7",                "{LOC_HD_COMPATIBLE_MODS_NAME};{LOC_HD_COMPATIBLE_MODS_LIST}");
-    -- ("LOC_FF16_CUSTOM_FILTER_8",                "{LOC_OFFICIAL_SCENARIO_NAME};{LOC_OFFICIAL_SCENARIO_LIST}");
+    ("LOC_FF16_CUSTOM_FILTER_7",                "{LOC_HD_COMPATIBLE_MODS_NAME};{LOC_HD_COMPATIBLE_MODS_LIST}"),
+    ("LOC_FF16_CUSTOM_FILTER_8",                "{LOC_OFFICIAL_SCENARIO_NAME};{LOC_OFFICIAL_SCENARIO_LIST}");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

@@ -2924,5 +2924,11 @@ AI和科技树测试模式（测试内容）：
 
 [v1.0.9.6]
 整合Faster Starting Settlers，不再需要开启该mod。
+添加对Aircraft Carriers Perfected的中文支持。
+在使用Enhanced Mod Manager时，可使用和而不同自定义的过滤器来过滤模组。
+
 在log中打印关于大工希南的调试信息，大家若遇到bug请打开：
 我的文档\My Games\Sid Meier's Civilization VI\Logs\Lua.log，将其发送给DeepLogic
+
+（By kekeya）
+月护王增加能力：完成军事训练后获得一个移民。

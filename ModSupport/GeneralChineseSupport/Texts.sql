@@ -293,6 +293,7 @@ values
     ("zh_Hans_CN",  "LOC_NOTIFICATION_OTHER_PLAYER_RECRUITED_GREATPERSON_SUMMARY",              "{1_recruiter} 已招募了 {2_greatPersonType} {3_greatPersonName}");
 
 --------------------------------------------------------------------------------------------------------------------------
+-- Enhanced Mod Manager
 insert or replace into LocalizedText
     (Language,      Tag,                                Text)
 values
@@ -300,3 +301,46 @@ values
     ("zh_Hans_CN",  "LOC_FF16_SORTBY_COMPATIBILITY",    "按兼容性排序"),
     ("zh_Hans_CN",  "LOC_FF16_CUSTOM_FILTER",           "自定义过滤："),
     ("zh_Hans_CN",  "LOC_FF16_CUSTOM_FILTER_OFF",       "关闭");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- Enhanced Mod Manager
+insert or replace into LocalizedText
+    (Language,      Tag,                                Text)
+values
+    ("zh_Hans_CN",  "LOC_FF16_SORTBY_LASTUPDATED",      "按更新时间排序"),
+    ("zh_Hans_CN",  "LOC_FF16_SORTBY_COMPATIBILITY",    "按兼容性排序"),
+    ("zh_Hans_CN",  "LOC_FF16_CUSTOM_FILTER",           "自定义过滤："),
+    ("zh_Hans_CN",  "LOC_FF16_CUSTOM_FILTER_OFF",       "Off");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- Aircraft Carriers Perfected
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_ABILITY_AIRCRAFT_CARRIER_FLEET_AIRCRAFT_SLOT_NAME",                "舰队机库扩容"),
+    ("zh_Hans_CN",  "LOC_ABILITY_AIRCRAFT_CARRIER_FLEET_AIRCRAFT_SLOT_DESCRIPTION",         "从组建舰队获得+1航空单位槽位"),
+    ("zh_Hans_CN",  "LOC_ABILITY_AIRCRAFT_CARRIER_ARMADA_AIRCRAFT_SLOT_NAME",               "无敌舰队机库扩容"),
+    ("zh_Hans_CN",  "LOC_ABILITY_AIRCRAFT_CARRIER_ARMADA_AIRCRAFT_SLOT_DESCRIPTION",        "从组建无敌舰队获得+1航空单位槽位"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_ARMOURED_FLIGHT_DECK_NAME",                           "装甲甲板"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_ARMOURED_FLIGHT_DECK_DESCRIPTION",                    "防御时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_DAMAGE_CONTROL_NAME",                                 "损伤管制"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_DAMAGE_CONTROL_DESCRIPTION",                          "每回合都可以自动回复，在友军领土外也可以回复。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_MOBILE_DRYDOCKS_NAME",                                "机动干船坞"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_MOBILE_DRYDOCKS_DESCRIPTION",                         "每回合为自己和相邻海军单位+10额外回复。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_SCOUT_PLANES_NAME",                                   "侦察机"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_SCOUT_PLANES_DESCRIPTION",                            "+2视野。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_COMBAT_AIR_PATROL_NAME",                              "防空巡航"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_COMBAT_AIR_PATROL_DESCRIPTION",                       "+15 [ICON_AntiAir_Large] 防空战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_ANTI_SUB_NAME",                                       "反潜巡航"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_ANTI_SUB_DESCRIPTION",                                "发现视野中的隐形单位。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_SUPER_CARRIER_NAME",                                  "超级航母"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_NS_SUPER_CARRIER_DESCRIPTION",                           "+1 [ICON_Movement] 移动力，+1额外航空单位槽位，每回合为舰载机+5额外回复。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_CARRIER_CANNOT_ATTACK_NAME",                               "航空母舰"),
+    ("zh_Hans_CN",  "LOC_ABILITY_CARRIER_CANNOT_ATTACK_DESCRIPTION",                        "无法攻击。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_ARMOURED_FLIGHT_DECK_CHAPTER_HISTORY_PARA_1",   "装甲飞行甲板的发展是战争对提高生存能力要求的自然结果。 设计师们必须选择装甲布置最有效的地方来保护易燃燃料、军械和关键船舶系统。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_DAMAGE_CONTROL_CHAPTER_HISTORY_PARA_1",         "安全运行飞行甲板所涉及的技能、培训和知识对于航母在攻击中幸存是至关重要的。 许多这样的规定都是在以前的灾难中产生的。 在火灾中打开通风系统可能会使整艘船沉没。 对于船员来说，无论是在正常的操作中还是在攻击后，严格遵守规章制度和程序是非常重要的。 那些遵守规定的人都能活下来。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_MOBILE_DRYDOCKS_CHAPTER_HISTORY_PARA_1",        "美国发展出的后勤中队，或移动的前沿作业船厂和基地，是跨越太平洋向日本推进的一个关键因素。 移动干船坞和可移动的码头让受损的船只进行维修，而不需要长途跋涉回到正规的船厂。 这些移动基地甚至可以建立在遍布太平洋的浅水环礁上，远离敌人侦察兵窥视的更明显的地点。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_SCOUT_PLANES_CHAPTER_HISTORY_PARA_1",           "早期的侦察机对于发现敌人是非常有价值的，以至于许多早期的巡洋舰都携带了海上飞机，就是为了这个目的。 随着航空母舰的发展和飞行技术的进步，这种侦察机可以抛弃高阻力的浮桥，更快地覆盖更多区域。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_COMBAT_AIR_PATROL_CHAPTER_HISTORY_PARA_1",      "保持战斗空中巡逻是航母保护舰队免受来袭空中威胁的主要方法。 在不断进步的雷达技术的帮助下，盟军飞行员获得了主动权，并能在气浪到达舰队之前拦截它们。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_ANTI_SUB_CHAPTER_HISTORY_PARA_1",               "世界大战期间，潜艇对盟国航运的极端危险要求盟军进一步努力探测和打击这些水下威胁。 使用带有机载雷达的侦察机是盟国用来定位和摧毁敌方潜艇的一种技巧。 即使潜艇探测到了雷达，它们也会被迫潜入水中，几乎不能动弹，因此没有效果。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_SUPER_CARRIER_CHAPTER_HISTORY_PARA_1",          "在冷战时期及以后，航母变得更加庞大，其能力也随之增强。 它们就像一个小型的城市，能够在海上持续很长时间。");
