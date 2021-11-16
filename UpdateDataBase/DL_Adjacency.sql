@@ -73,9 +73,9 @@ delete from District_Adjacencies where DistrictType = 'DISTRICT_OPPIDUM' and (
 	YieldChangeId = 'Strategic_Production'
 	or YieldChangeId = 'HD_Mine_HalfProduction'
 	or YieldChangeId = 'HD_Quarry_HalfProduction'
-	or YieldChangeId = 'HD_Quarry_Production'
-	or YieldChangeId = 'HD_LumberMill_HalfProduction'
-	or YieldChangeId = 'HD_LumberMill_Production');
+	or YieldChangeId = 'HD_Quarry_Production');
+	-- or YieldChangeId = 'HD_LumberMill_HalfProduction'
+	-- or YieldChangeId = 'HD_LumberMill_Production'
 
 -- Adjacency definition
 

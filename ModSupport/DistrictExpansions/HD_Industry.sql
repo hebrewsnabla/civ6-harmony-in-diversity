@@ -94,6 +94,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_COAL_POWER_PLANT' a
 delete from BuildingModifiers where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT' and ModifierId = 'JNR_FOSSILE_FUEL_POWER_PLANT_APPEAL_PENALTY';
 delete from BuildingModifiers where BuildingType = 'BUILDING_JNR_FREIGHT_YARD' and ModifierId = 'JNR_FREIGHT_YARD_RESOURCE_STOCKPILE_CAP';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and ModifierId = 'JNR_FREIGHT_YARD_RESOURCE_STOCKPILE_CAP';
+delete from BuildingModifiers where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and ModifierId = 'JNR_KANBAN_LOGISTICS_PROJECTS_PRODUCTION';
 
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
