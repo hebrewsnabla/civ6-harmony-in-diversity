@@ -191,27 +191,28 @@ values
 -------------------------------------------------------------------------
 delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_FAITH_RELIC'
-    or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC';
---LA 圣军区域及建筑20%加速
+    or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC'
+    or ModifierId = 'TRAIT_ADJACENT_DISTRICTS_HOLYSITE_ADJACENCYFAITH';
+--LA 圣地区域及建筑30%加速
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
 values
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_PRODUCTION'),
-    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_BUILDING_PRODUCTION'),
-    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ENCAPMENT_PRODUCTION'),
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_BUILDING_PRODUCTION');
+    /*('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ENCAPMENT_PRODUCTION'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ENCAPMENT_BUILDING_PRODUCTION'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_GRASS_CULTURE'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_GRASS_HILLS_CULTURE'),
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_PLAINS_CULTURE'),
-    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_PLAINS_HILLS_CULTURE');
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_PLAINS_HILLS_CULTURE');*/
 
 insert or replace into Modifiers
     (ModifierId,                            ModifierType,                                           SubjectRequirementSetId)
 values
     ('POLAND_HOLYSITE_PRODUCTION',          'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
-    ('POLAND_HOLYSITE_BUILDING_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
-    ('POLAND_ENCAPMENT_PRODUCTION',         'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
-    ('POLAND_ENCAPMENT_BUILDING_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL);
+    /*('POLAND_ENCAPMENT_PRODUCTION',         'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',    NULL),
+    ('POLAND_ENCAPMENT_BUILDING_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL);
     ('POLAND_GRASS_CULTURE',                'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
     ('POLAND_GRASS_HILLS_CULTURE',          'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
     ('POLAND_PLAINS_CULTURE',               'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               'PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
@@ -219,16 +220,16 @@ values
     ('POLAND_GRASS_CULTURE_MODIFIER',       'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
     ('POLAND_GRASS_HILLS_CULTURE_MODIFIER', 'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
     ('POLAND_PLAINS_CULTURE_MODIFIER',      'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL),
-    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',    'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL);
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',    'MODIFIER_CITY_ADJUST_CITY_YIELD_PER_TERRAIN_TYPE',     NULL);*/
 
 insert or replace into ModifierArguments
     (ModifierId,                                       Name,               Value)
 values
     ('POLAND_HOLYSITE_PRODUCTION',                     'DistrictType',     'DISTRICT_HOLY_SITE'),
-    ('POLAND_HOLYSITE_PRODUCTION',                     'Amount',           20),
+    ('POLAND_HOLYSITE_PRODUCTION',                     'Amount',           30),
     ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'DistrictType',     'DISTRICT_HOLY_SITE'),
-    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'Amount',           20),
-    ('POLAND_ENCAPMENT_PRODUCTION',                    'DistrictType',     'DISTRICT_ENCAMPMENT'),
+    ('POLAND_HOLYSITE_BUILDING_PRODUCTION',            'Amount',           30);
+    /*('POLAND_ENCAPMENT_PRODUCTION',                    'DistrictType',     'DISTRICT_ENCAMPMENT'),
     ('POLAND_ENCAPMENT_PRODUCTION',                    'Amount',           20),
     ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'DistrictType',     'DISTRICT_ENCAMPMENT'),
     ('POLAND_ENCAPMENT_BUILDING_PRODUCTION',           'Amount',           20),
@@ -247,14 +248,15 @@ values
     ('POLAND_PLAINS_CULTURE_MODIFIER',                 'Amount',           0.5),
     ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'TerrainType',      'TERRAIN_PLAINS_HILLS'),
     ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'YieldType',        'YIELD_CULTURE'),
-    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'Amount',           0.5);
+    ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'Amount',           0.5);*/
 
---ua
+--ua 所有红转紫，相邻堡垒+2锤+2琴，信仰购买军工且军工+2次
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
 values
-    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'ENCAMPMENT_ADJACENT_PRODUCTION'),
+    -- ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'ENCAMPMENT_ADJACENT_PRODUCTION'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_PRODUCTION'),
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_CULTURE'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'TRAIT_ADJUST_MILITARY_ENGINEER_BUILDCHARGES'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_CAVALRY_REDUCTION_DAMAGE');
@@ -262,8 +264,9 @@ values
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType,                                                           SubjectRequirementSetId)
 values
-    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_ENCAPMENT'),
+    -- ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_ENCAPMENT'),
     ('FORT_ADJACENT_PRODUCTION',                        'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_FORT'),
+    ('FORT_ADJACENT_CULTURE',                           'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_FORT'),
     ('POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE',  'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',                    NULL),
     ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                                  'UNIT_IS_POLAND_HUSSAR'),
     ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  NULL);
@@ -289,9 +292,11 @@ insert or replace into ModifierArguments
 values
     ('TRAIT_REPLACE_MILITARY_SLOT_WITH_WILDCARD',       'ReplacesAll',      1),
     ('FORT_ADJACENT_PRODUCTION',                        'YieldType',        'YIELD_PRODUCTION'),
-    ('FORT_ADJACENT_PRODUCTION',                        'Amount',           1),
-    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'YieldType',        'YIELD_PRODUCTION'),
-    ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'Amount',           1),
+    ('FORT_ADJACENT_PRODUCTION',                        'Amount',           2),
+    ('FORT_ADJACENT_CULTURE',                           'YieldType',        'YIELD_CULTURE'),
+    ('FORT_ADJACENT_CULTURE',                           'Amount',           2),
+    -- ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'YieldType',        'YIELD_PRODUCTION'),
+    -- ('ENCAMPMENT_ADJACENT_PRODUCTION',                  'Amount',           1),
     ('POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE',  'Tag',              'CLASS_MILITARY_ENGINEER'),
     ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'AbilityType',      'ABILITY_POLAND_CAVALRY_REDUCTION_DAMAGE'),
     ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'Amount',           50);
@@ -339,3 +344,72 @@ values
 
 insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
 select 'HD_DISTRICTS_BUT_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
+
+-- Poland ver3.0
+-- temple unlock military engineer
+insert or replace into Types
+    (Type,                                  Kind)
+values
+    ('BUILDING_DUMMY_POLAND',               'KIND_BUILDING');
+
+insert or replace into Buildings 
+    (BuildingType,                      Name,                                   Cost,   Description,                                InternalOnly) 
+values
+    ('BUILDING_DUMMY_POLAND',           'LOC_BUILDING_DUMMY_POLAND_NAME',       1,      'LOC_BUILDING_DUMMY_POLAND_DESCRIPTION',    1);
+
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'TEMPLE_UNLOCK_MILITARY_ENGINEER');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                               SubjectRequirementSetId)
+values
+    ('TEMPLE_UNLOCK_MILITARY_ENGINEER',     'MODIFIER_PLAYER_CITIES_GRANT_BUILDING_IN_CITY_IGNORE',     'BUILDING_IS_TEMPLE_XP2');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,               Value)
+values
+    ('TEMPLE_UNLOCK_MILITARY_ENGINEER',     'BuildingType',     'BUILDING_DUMMY_POLAND');
+
+insert or replace into ModifierArguments
+    (Unit,                      PrereqBuilding)
+values
+    ('UNIT_MILITARY_ENGINEER',  'BUILDING_DUMMY_POLAND');
+
+-- La 圣地和圣地建筑+2信仰
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_FAITH');
+
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType)
+values
+    ('POLAND_HOLYSITE_FAITH',               'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                  Name,               Value)
+values
+    ('POLAND_HOLYSITE_FAITH',                     'YieldType',        'YIELD_FAITH'),
+    ('POLAND_HOLYSITE_FAITH',                     'Amount',           2);
+
+insert or replace into TraitModifiers (TraitType,  ModifierId)
+select 'TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ '|| BuildingType || '_FAITH' from Buildings
+where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+
+insert or replace into Modifiers (ModifierId, ModifierType)
+select 'POLAND_ '|| BuildingType || '_FAITH',      'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE' from Buildings
+where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'POLAND_ '|| BuildingType || '_FAITH',      'BuildingType',  BuildingType   from Buildings
+where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'POLAND_ '|| BuildingType || '_FAITH',      'YieldType',     'YIELD_FAITH'   from Buildings
+where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'POLAND_ '|| BuildingType || '_FAITH',      'Amount',        2   from Buildings
+where PrereqDistrict = 'DISTRICT_HOLY_SITE';

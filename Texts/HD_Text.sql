@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_BUILDING_DUMMY_POLAND_NAME",                                         "PlaceHolder"),
+    ("LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "Please Ignore"),
     -- UI Texts
     ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
     ("LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "Sacrifice this unit. Gain +10 [ICON_Culture] Culture and +10 [ICON_Faith] Faith for each builder charge the unit has."),
@@ -60,6 +62,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                         "请忽略"),
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "请忽略"),
     -- UI texts 
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和10点 [ICON_Faith] 信仰值，移除该单位。"),
