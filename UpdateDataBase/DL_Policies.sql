@@ -253,6 +253,9 @@ values
 	('COLONIALOFFICES_FOREIGNFOOD',							'YieldType',			'YIELD_FOOD'),
 	('COLONIALOFFICES_FOREIGNFOOD',							'Amount',				1);
 
+update ModifierArguments set Value = 50 where ModifierId = 'ILKUM_BUILDERPRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'SERFDOM_BUILDERPRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'PUBLICWORKS_BUILDERPRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 1 where ModifierId = 'SERFDOM_BUILDERCHARGES' and Name = 'Amount';
 update ModifierArguments set Value = 2 where ModifierId = 'WISSELBANKEN_ALLIANCEPOINTS';
 update ModifierArguments set Value = 3 where ModifierId = 'PUBLICTRANSPORT_BREATHTAKING_NEIGHBORHOOD_FOOD' and Name = 'Amount';

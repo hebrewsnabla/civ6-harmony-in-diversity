@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="1.0">
+<Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="1.1">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
     <Description>LOC_HARMONY_IN_DIVERSITY_DESCRIPTION</Description>
@@ -12,20 +12,20 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v1.0</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.0</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v1.1</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.0.9.6 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.0.9.6。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.1 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.0.9.6 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。[NEWLINE]当前版本为v1.0.9.6。</zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -407,10 +407,10 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
-    <UpdateText id="Monopolies_FrontEnd_Text">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
-    </UpdateText>
+    <UpdateDatabase id="District_FrontEnd_Adjust">
+      <Properties><LoadOrder>16051</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
+    </UpdateDatabase>
     <UpdateText id="DistrictExpansions_support_text">
       <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
@@ -421,6 +421,10 @@
       <Properties><LoadOrder>100008</LoadOrder></Properties>
       <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     </UpdateText>
+    <ImportFiles id="HD_Mod_Version_Checker">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
+    </ImportFiles>
     <ImportFiles id="HD_Assets">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>Assets/CityStates/CivBaikonur_22.dds</File>
@@ -1345,7 +1349,6 @@
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Icons.xml</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Text.sql</File>
-    <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
     <File>GameModeSupport/MonopoliesMode/DiplomacyDealView_KublaiKhanVietnam_MODE.lua</File>
     <File>GameModeSupport/MonopoliesMode/GreatWorksOverview_KublaiKhanVietnam_Monopolies.lua</File>
     <File>GameModeSupport/BarbarianClansMode/HD_BarbarianClans.sql</File>
@@ -1407,6 +1410,7 @@
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     <!-- UI Additions -->
+    <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File> <!-- Mod Version Checker for multiplayer -->
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/DL_CityPanel.lua</File>
@@ -1425,6 +1429,7 @@
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
+    <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>

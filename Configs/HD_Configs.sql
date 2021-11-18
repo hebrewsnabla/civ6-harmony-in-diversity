@@ -6,7 +6,7 @@
 -- update Parameters set DefaultValue = 1 where ParameterId = 'WER_ADD_STEEL_N_THUNDER_UU';
 -- delete from Parameters where ParameterId = 'WER_ADD_STEEL_N_THUNDER_UU';
 
-delete from Parameters where ParameterId = 'GameMode_TowerDefense'; 
+-- delete from Parameters where ParameterId = 'GameMode_TowerDefense'; 
 
 insert or replace into Parameters
     (Key1,      Key2,                   ParameterId,                    Name,                                       Description,

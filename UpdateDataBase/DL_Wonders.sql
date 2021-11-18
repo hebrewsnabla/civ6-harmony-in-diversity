@@ -376,29 +376,6 @@ insert or replace into ModifierArguments (ModifierId,	Name, Value) values
 ('MACHU_PICCHU_DISTRICT_FOOD',	'Amount', 2),
 ('MACHU_PICCHU_DISTRICT_FOOD',	'YieldType', 'YIELD_FOOD');
 
--- Huey Lake +1 Gold
-update Buildings set PrereqTech = 'TECH_ENGINEERING', Cost = 400 
-	where BuildingType = 'BUILDING_HUEY_TEOCALLI';
-
-insert or replace into BuildingModifiers
-	(BuildingType,							ModifierId)
-values
-	('BUILDING_HUEY_TEOCALLI',				'HUEY_LAKE_GOLD');
-
-insert or replace into Modifiers
-	(ModifierId, 							ModifierType,									SubjectRequirementSetId)
-values
-	('HUEY_LAKE_GOLD',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',			'FOODHUEY_PLAYER_REQUIREMENTS'),		
-	('HUEY_LAKE_GOLD_MODIFIER',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'FOODHUEY_PLOT_IS_LAKE_REQUIREMENTS');		
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-values
-	('HUEY_LAKE_GOLD',						'ModifierId',	'HUEY_LAKE_GOLD_MODIFIER'),		
-	('HUEY_LAKE_GOLD_MODIFIER',				'YieldType',	'YIELD_GOLD'),		
-	('HUEY_LAKE_GOLD_MODIFIER',				'Amount',		1);
--- update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';
-
 --liberty to colonialism
 update Buildings set PrereqCivic = 'CIVIC_COLONIALISM'
 	where BuildingType = 'BUILDING_STATUE_LIBERTY';
