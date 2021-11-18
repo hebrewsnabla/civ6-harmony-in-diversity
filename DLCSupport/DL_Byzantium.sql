@@ -13,7 +13,8 @@ insert or replace into Improvement_Adjacencies
 values
     ('IMPROVEMENT_MINE',            'Mine_Oppidum_Production'),
     ('IMPROVEMENT_QUARRY',          'Quarry_Oppidum_Production'),
-    ('IMPROVEMENT_CAMP',            'Camp_Hippodrome_Gold');
+    ('IMPROVEMENT_LUMBER_MILL',     'Lumber_Mill_Oppidum_Production');
+    -- ('IMPROVEMENT_CAMP',            'Camp_Hippodrome_Gold');
 
 insert or replace into Improvement_Adjacencies
     (ImprovementType,               YieldChangeId)
@@ -33,6 +34,8 @@ values
     ('Mine_Oppidum_Production',         'Placeholder', 'YIELD_PRODUCTION',  1,              1,              0,
     'DISTRICT_OPPIDUM',             NULL,           NULL,       NULL,           NULL,           'NO_RESOURCECLASS'),
     ('Quarry_Oppidum_Production',       'Placeholder', 'YIELD_PRODUCTION',  1,              1,              0,
+    'DISTRICT_OPPIDUM',             NULL,           NULL,       NULL,           NULL,           'NO_RESOURCECLASS'),
+    ('Lumber_Mill_Oppidum_Production',  'Placeholder', 'YIELD_PRODUCTION',  1,              1,              0,
     'DISTRICT_OPPIDUM',             NULL,           NULL,       NULL,           NULL,           'NO_RESOURCECLASS'),
     ('Camp_Hippodrome_Gold',            'Placeholder', 'YIELD_GOLD',        2,              1,              0,
     'DISTRICT_HIPPODROME',          NULL,           NULL,       NULL,           NULL,           'NO_RESOURCECLASS'),

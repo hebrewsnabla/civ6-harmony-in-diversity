@@ -141,6 +141,63 @@ values
     ("zh_Hans_CN",  "LOC_AKGC_COL_DATEBUILT",                                    "建成时间"),
     ("zh_Hans_CN",  "LOC_AKGC_COL_LOCATION",                                     "位置");
 
+-- Endgame Map Replay
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                         Text)
+values
+    ("zh_Hans_CN",  "LOC_AKMH_LAUNCHBUTTON_TT",                  "地图史[NEWLINE][NEWLINE]查看您文明地图变化的历史。"),
+    ("zh_Hans_CN",  "LOC_AKMH_LAUNCHBUTTON_ALERT_SINGLE_TT",     ""),
+    ("zh_Hans_CN",  "LOC_AKMH_MAIN_TITLE",                       "地图史"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_OPTIONS_TT",                "选项"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_HEADER",                       "选项"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_GENERAL_HEADER",               "一般设置"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SETTINGSCANCEL",            "取消"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SETTINGSRESET",             "重置"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SETTINGSSAVE",              "保存"),
+    ("zh_Hans_CN",  "LOC_AKMH_ENDGAME_TITLE",                    "世界"),
+    ("zh_Hans_CN",  "LOC_AKMH_THE_KNOWN_WORLD",                  "已知的世界"),
+    ("zh_Hans_CN",  "LOC_AKMH_THE_DAWN_OF_TIME",                 "伊始之时"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_Overlays",                     "滤镜"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowOwnerOverlayRB",           "文明"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowReligionOverlayRB",        "宗教"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_layers",                       "显示内容"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowCities",                   "市中心"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowDevelopment",              "发展状况"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowResources",                "资源"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowFeatures",                 "地貌"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_Pings",                        "事件提示"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_PingCityFounded",              "建立城市"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_PingCityCaptured",             "占领城市"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_PingCityRazed",                "夷平城市"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_PingWonderBuilt",              "建成奇观"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_PingSound",                    "提示音"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_General",                      "一般设置"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_DynamicCentring",              "动态居中"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_DynamicSizing",                "动态大小"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowUnRevealed",               "未探索的疆域"),
+    ("zh_Hans_CN",  "LOC_AKMH_OPT_ShowInvisibleResources",       "未揭示的资源"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_TOGGLEWINDOWED_TT",         "窗口化显示"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_TOGGLEFULLSCREEN_TT",       "全屏显示"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_PLAY_TT",                   "播放[NEWLINE]右键点击以倒放"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_STOP_TT",                   "暂停"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SKIPTOSTART_TT",            "跳转到起始"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SKIPTOEND_TT",              "跳转到结束"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_NEXTTURN_TT",               "下一回合[NEWLINE]右键点击+50 [ICON_TURN] 回合"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_PREVTURN_TT",               "上一回合[NEWLINE]右键点击-50 [ICON_TURN] 回合"),
+    ("zh_Hans_CN",  "LOC_AKMH_BUTTON_SPEED_TT",                  "修改播放速度[NEWLINE]左键增加[NEWLINE]右键减少"),
+    ("zh_Hans_CN",  "LOC_AKMH_PING_CITYFOUNDED",                 "[COLOR_Civ6Green]{1_cityname}已建立[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKMH_PING_CITYRAZED",                   "[COLOR_RED]{1_cityname}被夷平[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKMH_PING_CITYCAPTURED",                "[COLOR_Civ6Yellow]{1_cityname}被占领[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKMH_PING_WONDERBUILT",                 "[COLOR_White]{1_wondername}[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKMH_UPDATEFREQUENCY_INFO_HEADER",      "地图回放节流调整"),
+    ("zh_Hans_CN",  "LOC_AKMH_UPDATEFREQUENCY_INFO_TEXT",        "选择({1_mapx}x{2_mapy})的地图大小与预期的({3_expectedturns})回合数意味着，在{4_fullupdatecutoff}回合之后，地图历史数据将只会每{5_updatefreq}回合更新一次。"),
+    ("zh_Hans_CN",  "LOC_AKMH_DATASIZE_WARNING_HEADER",          "[COLOR_RED]地图回放警告[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_AKMH_DATASIZE_WARNING_TEXT",            "[COLOR_RED]地图历史数据现在已经有{1_maxsafedatasize}字节大小了[ENDCOLOR][NEWLINE]若你仍将进行很多个回合，推荐禁用该mod来避免可能的存档损坏问题。"),
+    ("zh_Hans_CN",  "LOC_AKMH_SAVESPEED_WARNING_HEADER",         "地图回放"),
+    ("zh_Hans_CN",  "LOC_AKMH_SAVESPEED_WARNING_TEXT",           "[COLOR_Civ6Yellow]保存地图历史数据用了{1_slowsavecutoff}秒[ENDCOLOR][NEWLINE]存档退出并重新启动游戏或许能加速这个过程。");
+
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText

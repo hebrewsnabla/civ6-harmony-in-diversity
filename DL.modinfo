@@ -411,6 +411,10 @@
       <Properties><LoadOrder>16050</LoadOrder></Properties>
       <File>GameModeSupport/MonopoliesMode/HD_FrontEnd_Text.sql</File>
     </UpdateText>
+    <UpdateDatabase id="District_FrontEnd_Adjust">
+      <Properties><LoadOrder>16051</LoadOrder></Properties>
+      <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
+    </UpdateDatabase>
     <UpdateText id="DistrictExpansions_support_text">
       <Properties><LoadOrder>16051</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
@@ -1425,6 +1429,7 @@
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
+    <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
