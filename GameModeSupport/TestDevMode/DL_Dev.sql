@@ -2,6 +2,28 @@
 --          Dev Adjustment         --
 -------------------------------------
 
+-- Harvest & chopping
+update Resource_Harvests set Amount = 32 where YieldType = 'YIELD_FOOD';
+update Resource_Harvests set Amount = 32 where YieldType = 'YIELD_PRODUCTION';
+update Resource_Harvests set Amount = 64 where YieldType = 'YIELD_GOLD';
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_FOREST';
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_MARSH';
+update Feature_Removes set Yield = 12 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_FOOD';
+update Feature_Removes set Yield = 12 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_PRODUCTION';
+-- Suk ocean
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_SUK_KELP';
+
+insert or replace into TechnologyModifiers (TechnologyType, ModifierId)
+values ('TECH_MACHINERY', 'HD_TECH_INCREASE_HARVEST_YIELD');
+
+insert or replace into Modifiers    (ModifierId,    ModifierType)
+values ('HD_TECH_INCREASE_HARVEST_YIELD',   'MODIFIER_PLAYER_CITIES_ADJUST_RESOURCE_HARVEST_BONUS');
+
+insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
+values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
+
+update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
+
 -- Policies
 
 -- update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS' and Name = 'Delta';
