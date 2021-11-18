@@ -192,7 +192,8 @@ values
 delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_FAITH_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC'
-    or ModifierId = 'TRAIT_ADJACENT_DISTRICTS_HOLYSITE_ADJACENCYFAITH';
+    or ModifierId = 'TRAIT_ADJACENT_DISTRICTS_HOLYSITE_ADJACENCYFAITH'
+    or ModifierId = 'TRAIT_CULTURE_BOMB_TRIGGER_ENCAMPMENT';
 --LA 圣地区域及建筑30%加速
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
@@ -346,7 +347,9 @@ insert or replace into RequirementSetRequirements   (RequirementSetId,   Require
 select 'HD_DISTRICTS_BUT_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
 
 -- Poland ver3.0
--- temple unlock military engineer
+-- temple unlock military engineer and fort
+update Units set PrereqTech = NULL where UnitType = 'UNIT_MILITARY_ENGINEER';
+
 insert or replace into Types
     (Type,                                  Kind)
 values
@@ -357,42 +360,52 @@ insert or replace into Buildings
 values
     ('BUILDING_DUMMY_POLAND',           'LOC_BUILDING_DUMMY_POLAND_NAME',       1,      'LOC_BUILDING_DUMMY_POLAND_DESCRIPTION',    1);
 
-insert or replace into TraitModifiers
-    (TraitType,                             ModifierId)
-values
-    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'TEMPLE_UNLOCK_MILITARY_ENGINEER');
-
-insert or replace into Modifiers
-    (ModifierId,                            ModifierType,                                               SubjectRequirementSetId)
-values
-    ('TEMPLE_UNLOCK_MILITARY_ENGINEER',     'MODIFIER_PLAYER_CITIES_GRANT_BUILDING_IN_CITY_IGNORE',     'BUILDING_IS_TEMPLE_XP2');
-
-insert or replace into ModifierArguments
-    (ModifierId,                            Name,               Value)
-values
-    ('TEMPLE_UNLOCK_MILITARY_ENGINEER',     'BuildingType',     'BUILDING_DUMMY_POLAND');
-
-insert or replace into ModifierArguments
+insert or replace into Unit_BuildingPrereqs
     (Unit,                      PrereqBuilding)
 values
     ('UNIT_MILITARY_ENGINEER',  'BUILDING_DUMMY_POLAND');
 
--- La 圣地和圣地建筑+2信仰
+-- 寺庙触发（完成）军事工程学
+insert or replace into TraitModifiers 
+    (TraitType,		                        ModifierId)
+values
+	('TRAIT_LEADER_LITHUANIAN_UNION',		'TRAIT_TEMPLE_MILITARY_ENGINEERING');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType)
+values
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId,	RunOnce,	Permanent)
+values
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_TEMPLE_XP2',	1,		    1);
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING',				'ModifierId',	'TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER'),
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER',		'TechType',		'TECH_MILITARY_ENGINEERING'),
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER',		'GrantTechIfBoosted',	1);
+
+-- 圣地和圣地建筑+2信仰，
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
 values
     ('TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_HOLYSITE_FAITH');
 
 insert or replace into Modifiers
-    (ModifierId,                            ModifierType)
+    (ModifierId,                            ModifierType,                                           SubjectRequirementSetId)
 values
-    ('POLAND_HOLYSITE_FAITH',               'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE');
+    ('POLAND_HOLYSITE_FAITH',               'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',            'DISTRICT_IS_HOLY_SITE'),
+    ('POLAND_HOLYSITE_FAITH_MODIFIER',      'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',    NULL);
 
 insert or replace into ModifierArguments
     (ModifierId,                                  Name,               Value)
 values
-    ('POLAND_HOLYSITE_FAITH',                     'YieldType',        'YIELD_FAITH'),
-    ('POLAND_HOLYSITE_FAITH',                     'Amount',           2);
+    ('POLAND_HOLYSITE_FAITH',                     'ModifierId',       'POLAND_HOLYSITE_FAITH_MODIFIER'),
+    ('POLAND_HOLYSITE_FAITH_MODIFIER',            'YieldType',        'YIELD_FAITH'),
+    ('POLAND_HOLYSITE_FAITH_MODIFIER',            'Amount',           2);
 
 insert or replace into TraitModifiers (TraitType,  ModifierId)
 select 'TRAIT_LEADER_LITHUANIAN_UNION',       'POLAND_ '|| BuildingType || '_FAITH' from Buildings

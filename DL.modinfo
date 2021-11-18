@@ -522,6 +522,7 @@
     <ImportFiles id="DL_Overwrite_Files_Import" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
+      <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
@@ -1405,6 +1406,7 @@
     <File>Gameplay/Temp_Interface.xml</File>
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
+    <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
     <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     <!-- UI Loaders -->

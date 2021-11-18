@@ -181,3 +181,32 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 -- 	print('OnUnitPromotionAvailable', playerID, unitID, promotionID)
 -- end
 -- Events.UnitPromotionAvailable.Add(OnUnitPromotionAvailable);
+
+--Poland temple unlock military engineers
+function PolandTempleUnlockMilitaryEngineers(playerID:number, bFirstTimeThisTurn:boolean)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sCiv = playerConfig:GetCivilizationTypeName()
+	local sGoldenLiberty = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY'
+	local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
+	local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
+	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
+		return
+	end
+	local Allcity = player:GetCities()
+    if player ~= nil and Allcity ~= nil then
+        for _, city in Allcity:Members() do
+			local aCityHasBuilding = city:GetBuildings():HasBuilding(m_Dummy_Poland)
+			if not aCityHasBuilding then -- city don't have dummy_Poland
+            	local bCityHasBuilding = city:GetBuildings():HasBuilding(m_Temple)
+            	if bCityHasBuilding then -- city has temple
+        			local buildingQueue = city:GetBuildQueue()
+        			buildingQueue:CreateBuilding(m_Dummy_Poland)
+					-- print('Dummy Poland created', player:GetID(), city:GetID())
+				end
+            end            
+        end       
+    end
+end
+
+Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
