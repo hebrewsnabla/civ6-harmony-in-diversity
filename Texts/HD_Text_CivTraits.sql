@@ -96,7 +96,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则直接完成军事工程学科技。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成堡垒后对相邻单元格施放文化炸弹并+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值。拥有寺庙的城市可以训练或购买军事工程师，军事工程师的使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成堡垒后对相邻单元格施放文化炸弹，相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值。拥有寺庙的城市可以训练或购买军事工程师，军事工程师使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"),
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_NAME",                           "祖国之父"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "您的每个巨作使9个单元格内的外国城市-2忠诚度。外国城市转变为自由城市前，如对您的忠诚度最高，则直接加入您的文明。您建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。"), --埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。[NEWLINE]可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。埃莉诺建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。
