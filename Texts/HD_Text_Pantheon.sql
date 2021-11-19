@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "One with Nature"),
-    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn if a city is owns at least one natural wonder tile."),
+    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn and +1 [ICON_Amenities] Amenity if a city owns at least one natural wonder tile."),
     ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +1 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (on Standard Speed). "),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
@@ -44,7 +44,7 @@ values
     ("LOC_BELIEF_HD_DRUID_NAME",                                  "Druid"),
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
-    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production. +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors."),
+    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production."), -- +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors.
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+2 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
@@ -58,7 +58,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "天人合一"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市每回合+8 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+1 [ICON_Amenities] 宜居度，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+1 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),
@@ -98,7 +98,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_NAME",                                  "德鲁伊"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "森林单元格+1 [ICON_Food] 粮食，雨林单元格+1 [ICON_Production] 生产力，改良后的森林和雨林单元格+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "妈祖信仰"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边或湖边的城市+2 [ICON_Production] 生产力。您境内位于海岸单元格的区域和奇观+1 [ICON_Production] 生产力。从港口获得的 [ICON_GreatAdmiral] 海军提督点数+2。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边或湖边的城市+2 [ICON_Production] 生产力。您境内位于海岸单元格的区域和奇观+1 [ICON_Production] 生产力。"), -- 从港口获得的 [ICON_GreatAdmiral] 海军提督点数+2。
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "改良加成资源的渔船+2 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
