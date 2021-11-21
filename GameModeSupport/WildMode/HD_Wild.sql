@@ -1,7 +1,7 @@
 -------------------------------------
 --     Wild Testing Adjustments    --
 -------------------------------------
-update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'GODDESS_OF_FESTIVALS_HOLYSITE_CITY_PLANTATION_FOOD_MODIFIER' and Name = 'YieldType';
+
 -------------------------------------
 --耶稣会√
 update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
