@@ -4,6 +4,8 @@ insert or replace into EnglishText
     (Tag,                                                   Text)
 values
     -- Options
+    ("LOC_GAME_CITY_STATES_START_WITH_WALLS",               "Free Walls for City-States"),
+    ("LOC_GAME_CITY_STATES_START_WITH_WALLS_DESCRIPTION",   "City-States will start with Walls in their city."),
     ("LOC_GAME_POSTPONE_WORLD_CONGRESS",                    "Postpone World Congress"),
     ("LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",        "Postpone the World Congress. Starts in Industrial Era. Halves the World Congress intervals."),
     ("LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",               "Captured Settlers become Builders"),
@@ -21,6 +23,8 @@ values
     ("LOC_GAMEMODE_TECHTEST_DESCRIPTION",                   "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains tech tree and AI adjustments."),
     ("LOC_GAMEMODE_MPTEST_NAME",                            "Testing Multi Player Mode"),
     ("LOC_GAMEMODE_MPTEST_DESCRIPTION",                     "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains Multi Player adjustments."),
+    ("LOC_GAMEMODE_WILD_NAME",                              "Testing Wild Mode"),
+    ("LOC_GAMEMODE_WILD_DESCRIPTION",                       "[COLOR_Red]This Mode is still under test, please do not enable[ENDCOLOR]. Mode for testing some ideas."),
     ("LOC_GAMEMODE_MONOPOLIES_NAME",                        "Industries and Corporations Mode"),
     ("LOC_GAMEMODE_MONOPOLIES_DESCRIPTION",                 "[COLOR_Magenta]Please Subscribe ""Harmony in Diversity"": Industries and Corporations Mode (standalone MOD), We have overhaul the whole game mode, including redesigning the benefits of Industries, Corporations and Products.[ENDCOLOR][NEWLINE][NEWLINE]Control, improve, and expand upon your Luxury resources! The Industries and Corporations mode enables you to build profitable Industries around Luxury resources, found Corporations to further their development, and manufacture unique Products to secure your place in business history."),
     ("LOC_GAMEMODE_SECRETSOCIETIES_DESCRIPTION",            "[COLOR_Magenta]""Harmony in Diversity"": There is no value adjustments made by us yet, the balance cannot be guaranteed for this game mode.[ENDCOLOR][NEWLINE][NEWLINE]This game mode adds up to four powerful, mysterious, and often nefarious Secret Societies to the world, each based upon fictional or mythical organizations from the past. Their traces can be found in Barbarian Camps, Tribal Villages, or by sending Envoys to City-States and finding Natural Wonders. Alternatively, if other leaders have discovered a Society, you can learn about them by increasing your diplomatic visibility levels with them.[NEWLINE][NEWLINE]Discovering a Society does not mean joining it automatically, but it unlocks a new Governor that does not need to be assigned to a city. Spending a Governor Title on this governor means joining the society, giving you powerful bonuses. But choose wisely - once you appoint that Governor, you commit to membership for the rest of the game, and other leaders will react to your decision. Spend additional Governor Titles to prove your commitment to the Society and unlock its deeper mysteries."),
@@ -42,6 +46,8 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                    Text)
 values
     -- Options
+    ("zh_Hans_CN",  "LOC_GAME_CITY_STATES_START_WITH_WALLS",                "城邦初始城墙"),
+    ("zh_Hans_CN",  "LOC_GAME_CITY_STATES_START_WITH_WALLS_DESCRIPTION",    "城邦在游戏开始时即获得城墙。"),
     ("zh_Hans_CN",  "LOC_GAME_POSTPONE_WORLD_CONGRESS",                     "推迟世界议会"),
     ("zh_Hans_CN",  "LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION",         "推迟世界议会到工业时代开始。减半世界议会的周期。"),
     ("zh_Hans_CN",  "LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS",                "抢占的开拓者变为建造者"),
@@ -59,6 +65,8 @@ values
     ("zh_Hans_CN",  "LOC_GAMEMODE_TECHTEST_DESCRIPTION",                    "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中调整了科技树和AI。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_NAME",                             "测试联机模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_DESCRIPTION",                      "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中在进行联机相关的测试。"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_WILD_NAME",                               "测试狂野模式"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_WILD_DESCRIPTION",                        "[COLOR_Red]此模式仍在测试中，请勿开启[ENDCOLOR]。用于测试一些想法的模式。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MONOPOLIES_NAME",                         "行业与公司模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MONOPOLIES_DESCRIPTION",                  "[COLOR_Magenta]请订阅并启用“和而不同”行业与公司模式独立MOD，我们对该模式进行了全面的重制，包括行业、公司和产品的效果。[ENDCOLOR][NEWLINE][NEWLINE]控制、改良您的奢侈品资源，并在此之上进行拓展！在“行业与公司”模式中，您可以围绕奢侈品资源建立利润丰硕的行业、创建公司进行深度开发，并生产特色产品，确立您在商业历史中的显著地位。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_SECRETSOCIETIES_DESCRIPTION",             "[COLOR_Magenta]“和而不同”提示：我们尚未对此模式进行深入适配，平衡性无法保证。[ENDCOLOR][NEWLINE][NEWLINE]此游戏模式在世界中加入了4个强大而神秘的秘密结社，每个皆以现实中存在的组织为原型。清理蛮族营地、造访部落村庄、将使者派往城邦或寻找自然奇观，便能找到他们的蛛丝马迹。另外，如果其他领袖已经发现秘密结社，提高与其的外交能见度也能接触到秘密结社。[NEWLINE][NEWLINE]发现秘密结社并不代表自动加入，但会解锁一名不需要指定到城市的新总督。将头衔颁发给此总督则代表加入此结社，并获得强大加成。但此举需要谨慎抉择。一旦任命总督后，在整场游戏中便会成为此结社的成员，而其他领袖也会对此作出反应。颁发更多总督头衔可以证明自己对结社的忠诚，从而解锁深层秘密。"),

@@ -219,6 +219,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="Wild_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_WILD</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -293,6 +301,14 @@
       </ConfigurationValueMatches>
     </Criteria>
     <!-- Options -->
+    <Criteria id="HD_CityStatesStartWithWalls_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_CITY_STATES_START_WITH_WALLS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="HD_PostponeWorldCongress_XP2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1300,6 +1316,20 @@
       <Properties><LoadOrder>18201</LoadOrder></Properties>
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Wild Test -->
+    <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
+      <Properties><LoadOrder>18250</LoadOrder></Properties>
+      <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/WildMode/HD_Wild.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Wild_update_text" criteria="Wild_Mode_Expansion2">
+      <Properties><LoadOrder>18251</LoadOrder></Properties>
+      <File>GameModeSupport/WildMode/HD_Texts.sql</File>
+    </UpdateText>
+    <UpdateIcons id="Wild_update_icon" criteria="Wild_Mode_Expansion2">
+      <Properties><LoadOrder>18251</LoadOrder></Properties>
+      <File>GameModeSupport/WildMode/HD_Icons.xml</File>
+    </UpdateIcons>
     <!-- MultiPlayer -->
     <UpdateDatabase id="MPTest_update" criteria="MPTest_Mode_Expansion2">
       <Properties><LoadOrder>18300</LoadOrder></Properties>
@@ -1312,6 +1342,10 @@
       <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Options at last -->
+    <UpdateDatabase id="PostponeWorldCongress" criteria="HD_CityStatesStartWithWalls_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/CityStatesStartWithWalls.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_PostponeWorldCongress_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/PostponeWorldCongress.sql</File>
@@ -1341,6 +1375,7 @@
     <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
     <!-- Options -->
+    <File>Configs/Options/CityStatesStartWithWalls.sql</File>
     <File>Configs/Options/PostponeWorldCongress.sql</File>
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
@@ -1382,6 +1417,11 @@
     <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
+      <!-- Wild Mode -->
+    <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/WildMode/HD_Wild.sql</File>
+    <File>GameModeSupport/WildMode/HD_Texts.sql</File>
+    <File>GameModeSupport/WildMode/HD_Icons.xml</File>
     <!-- Multi Player Test Mode -->
     <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>

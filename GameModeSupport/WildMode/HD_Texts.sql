@@ -1,0 +1,15 @@
+----------------------------------------------------------------------------
+-- -- Language: en_US
+-- insert or replace into EnglishText
+--     (Tag,                                                        Text)
+-- values
+--     ("LOC_BUILDING_TEMPLATE_DESCRIPTION",                        "Template"),
+--     ("LOC_BUILDING_TEMPLATE_DESCRIPTION",                        "Template");
+
+------------------------------------------------------------------------------
+-- -- Language: zh_Hans_CN
+-- insert or replace into LocalizedText
+--     (Language,      Tag,                                                     Text)
+-- values
+--     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLATE_DESCRIPTION",                     "模板"),
+--     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLATE_DESCRIPTION",                     "模板");
