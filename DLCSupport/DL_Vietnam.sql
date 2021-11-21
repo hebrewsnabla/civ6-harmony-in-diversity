@@ -96,4 +96,4 @@ values
 
 ------------------------------------------------------------------------------------------------------------------
 -- Kublai
-delete from TraitModifiers where ModifierId = ('TRAIT_TRADING_POST_CIVIC_BOOST' or ModifierId = 'TRAIT_TRADING_POST_TECH_BOOST') and TraitType = 'TRAIT_LEADER_KUBLAI';
+delete from TraitModifiers where (ModifierId = 'TRAIT_TRADING_POST_CIVIC_BOOST' or ModifierId = 'TRAIT_TRADING_POST_TECH_BOOST') and TraitType = 'TRAIT_LEADER_KUBLAI';
