@@ -251,13 +251,13 @@ values
     ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'YieldType',        'YIELD_CULTURE'),
     ('POLAND_PLAINS_HILLS_CULTURE_MODIFIER',           'Amount',           0.5);*/
 
---ua 所有红转紫，相邻堡垒+2锤+2琴，信仰购买军工且军工+2次
+--ua 所有红转紫，信仰购买军工且军工+2次 --相邻堡垒+2锤+2琴
 insert or replace into TraitModifiers
     (TraitType,                             ModifierId)
 values
     -- ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'ENCAMPMENT_ADJACENT_PRODUCTION'),
-    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_PRODUCTION'),
-    ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_CULTURE'),
+    -- ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_PRODUCTION'),
+    -- ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'FORT_ADJACENT_CULTURE'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_ENABLE_MILITARY_ENGINEER_FAITH_PURCHASE'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'TRAIT_ADJUST_MILITARY_ENGINEER_BUILDCHARGES'),
     ('TRAIT_CIVILIZATION_GOLDEN_LIBERTY',   'POLAND_CAVALRY_REDUCTION_DAMAGE');
@@ -426,3 +426,37 @@ where PrereqDistrict = 'DISTRICT_HOLY_SITE';
 insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 select 'POLAND_ '|| BuildingType || '_FAITH',      'Amount',        2   from Buildings
 where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+
+--堡垒为相邻单元格+1锤+1琴（可叠加）
+insert or replace into ImprovementModifiers
+    (TraitType,                             ModifierId)
+values
+    ('IMPROVEMENT_FORT',                    'POLAND_FORT_ADJACENT_PRODUCTION'),
+    ('IMPROVEMENT_FORT',                    'POLAND_FORT_ADJACENT_CULTURE');
+
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType,                                                           SubjectRequirementSetId)
+values
+    ('POLAND_FORT_ADJACENT_PRODUCTION',                 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_POLAND_FORT'),
+    ('POLAND_FORT_ADJACENT_CULTURE',                    'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_POLAND_FORT');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                     RequirementId)
+values
+    ('PLOT_ADJACENT_TO_POLAND_FORT',       'ADJACENT_TO_OWNER'),
+    ('PLOT_ADJACENT_TO_POLAND_FORT',       'PLAYER_IS_CIVILIZATION_POLAND');
+
+insert or replace into RequirementSets
+    (RequirementSetId,                  RequirementSetType)
+values
+    ('PLOT_ADJACENT_TO_POLAND_FORT',    'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                                Name,               Value)
+values
+    ('POLAND_FORT_ADJACENT_PRODUCTION',                        'YieldType',        'YIELD_PRODUCTION'),
+    ('POLAND_FORT_ADJACENT_PRODUCTION',                        'Amount',           1),
+    ('POLAND_FORT_ADJACENT_CULTURE',                           'YieldType',        'YIELD_CULTURE'),
+    ('POLAND_FORT_ADJACENT_CULTURE',                           'Amount',           1);
+
+--insert into BuildingModifiers(BuildingType, ModifierId) values  ('BUILDING_PALACE', 'EDUCATOR_INCREASE_CITY_GREAT_PERSON_POINT_BONUS');
