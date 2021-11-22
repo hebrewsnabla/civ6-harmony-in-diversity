@@ -4,7 +4,7 @@
 
 update Units set Combat = Combat - 3 where Combat > 45 and PromotionClass = 'PROMOTION_CLASS_HEAVY_CAVALRY';
 
-	-- 政策卡修改：【仓库】改为【轮子】科技解锁
+/*	-- 政策卡修改：【仓库】改为【轮子】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WAREHOUSE';
 update Policies set PrereqTech = 'TECH_THE_WHEEL' where PolicyType = 'POLICY_WAREHOUSE';
 
@@ -102,5 +102,5 @@ update Policies set PrereqCivic = 'CIVIC_MOBILIZATION' where PolicyType = 'POLIC
 
 	--政策卡修改：【五年计划】改为【资本主义】市政解锁
 update Policies set PrereqCivic = 'CIVIC_CAPITALISM' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
-
-	
+*/
+delete from Policies where PolicyType = 'POLICY_SOCIAL_STATISTICS';

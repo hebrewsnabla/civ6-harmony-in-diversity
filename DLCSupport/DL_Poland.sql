@@ -429,7 +429,7 @@ where PrereqDistrict = 'DISTRICT_HOLY_SITE';
 
 --堡垒为相邻单元格+1锤+1琴（可叠加）
 insert or replace into ImprovementModifiers
-    (TraitType,                             ModifierId)
+    (ImprovementType,                       ModifierId)
 values
     ('IMPROVEMENT_FORT',                    'POLAND_FORT_ADJACENT_PRODUCTION'),
     ('IMPROVEMENT_FORT',                    'POLAND_FORT_ADJACENT_CULTURE');
@@ -458,5 +458,3 @@ values
     ('POLAND_FORT_ADJACENT_PRODUCTION',                        'Amount',           1),
     ('POLAND_FORT_ADJACENT_CULTURE',                           'YieldType',        'YIELD_CULTURE'),
     ('POLAND_FORT_ADJACENT_CULTURE',                           'Amount',           1);
-
---insert into BuildingModifiers(BuildingType, ModifierId) values  ('BUILDING_PALACE', 'EDUCATOR_INCREASE_CITY_GREAT_PERSON_POINT_BONUS');
