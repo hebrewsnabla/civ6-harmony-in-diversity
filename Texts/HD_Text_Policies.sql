@@ -12,6 +12,8 @@ values
     ("LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "+50% production speed toward Industrial era and earlier naval units. +10% for each Harbor District buildings the city has."),
     ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+50% production speed toward all naval units, excluding Carriers. +10% for each Harbor District buildings the city has."),
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
+    ("LOC_POLICY_SOCIAL_STATISTICS_NAME",                                             "Social statistics"),--xhh
+    ("LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "+0.8 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.8 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 3 specialty districts."),--xhh
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
@@ -146,6 +148,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PRESS_GANGS_HD_DESCRIPTION",                                         "生产工业及更早时代的海军单位加速+50%，城市每有一级港口建筑多10%。"),
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+50%，城市每有一级港口建筑多10%。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SOCIAL_STATISTICS_NAME",                                             "社会统计学"),--xhh
+    ("zh_Hans_CN",  "LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "所有拥有至少3个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.8点 [ICON_Science] 科技值和0.8点 [ICON_Culture] 文化值。"),--xhh
     -- 着力点
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
