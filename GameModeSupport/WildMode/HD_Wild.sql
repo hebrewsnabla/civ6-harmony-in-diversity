@@ -107,128 +107,64 @@ update Adjacency_YieldChanges set YieldChange = 4 where ID = 'HD_Commercial_Luxu
 -------------------------------------
 --刚果
 --UA
-update ModifierArguments set Value = 2 where ModifierId = 'MODIFIER_TRAIT_NKISI_HEROIC_RELIC_FAITH' and Name = 'YieldChange';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GREAT_WORK_FAITH_ARTIFACT' and Name = 'YieldChange';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GREAT_WORK_FAITH_RELIC' and Name = 'YieldChange';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GREAT_WORK_FAITH_SCULPTURE' and Name = 'YieldChange';
-insert or replace into TraitModifiers 
-	(TraitType,									ModifierId)
-values
-	('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FAITH_LANDSCAPE'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FAITH_MUSIC'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FAITH_PORTRAIT'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FAITH_RELIGIOUS'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FAITH_WRITING'),
-    
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FOOD_LANDSCAPE'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FOOD_MUSIC'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FOOD_PORTRAIT'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FOOD_RELIGIOUS'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_FOOD_WRITING'),
+insert or replace into TraitModifiers (TraitType, ModifierId) 
+	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType
+	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into TraitModifiers (TraitType, ModifierId) 
+	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType
+	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into TraitModifiers (TraitType, ModifierId) 
+	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType
+	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into TraitModifiers (TraitType, ModifierId) 
+	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType
+	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_PRODUCTION_LANDSCAPE'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_PRODUCTION_MUSIC'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_PRODUCTION_PORTRAIT'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_PRODUCTION_RELIGIOUS'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_PRODUCTION_WRITING'),
+insert or replace into Modifiers(ModifierId,ModifierType)
+    select ModifierId,'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'
+    from TraitModifiers	where ModifierId like '%TRAIT_GREAT_WORK%';
 
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_GOLD_LANDSCAPE'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_GOLD_MUSIC'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_GOLD_PORTRAIT'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_GOLD_RELIGIOUS'),
-    ('TRAIT_CIVILIZATION_NKISI',		        'TRAIT_GREAT_WORK_GOLD_WRITING');
-insert or replace into Modifiers
-	(ModifierId,								ModifierType)
-values
-	('TRAIT_GREAT_WORK_FAITH_LANDSCAPE',	    'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FAITH_MUSIC',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FAITH_PORTRAIT',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FAITH_RELIGIOUS',	    'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FAITH_WRITING',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    
-    ('TRAIT_GREAT_WORK_FOOD_LANDSCAPE',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FOOD_MUSIC',	            'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FOOD_PORTRAIT',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FOOD_RELIGIOUS',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_FOOD_WRITING',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-    ('TRAIT_GREAT_WORK_PRODUCTION_LANDSCAPE',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_PRODUCTION_MUSIC',	    'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_PRODUCTION_PORTRAIT',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_PRODUCTION_RELIGIOUS',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_PRODUCTION_WRITING',	    'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldType','YIELD_FAITH'
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldType','YIELD_FOOD'
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldType','YIELD_PRODUCTION'
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldType','YIELD_GOLD'
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-    ('TRAIT_GREAT_WORK_GOLD_LANDSCAPE',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_GOLD_MUSIC',	            'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_GOLD_PORTRAIT',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_GOLD_RELIGIOUS',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'),
-    ('TRAIT_GREAT_WORK_GOLD_WRITING',	        'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD');
-insert or replace into ModifierArguments
-	(ModifierId,										Name,			Value)
-values
-	('TRAIT_GREAT_WORK_FAITH_LANDSCAPE',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FAITH_LANDSCAPE',		'YieldType',		    'YIELD_FAITH'),
-	('TRAIT_GREAT_WORK_FAITH_LANDSCAPE',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FAITH_MUSIC',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FAITH_MUSIC',		'YieldType',		    'YIELD_FAITH'),
-	('TRAIT_GREAT_WORK_FAITH_MUSIC',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FAITH_PORTRAIT',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FAITH_PORTRAIT',		'YieldType',		    'YIELD_FAITH'),
-	('TRAIT_GREAT_WORK_FAITH_PORTRAIT',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FAITH_RELIGIOUS',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FAITH_RELIGIOUS',		'YieldType',		    'YIELD_FAITH'),
-	('TRAIT_GREAT_WORK_FAITH_RELIGIOUS',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FAITH_WRITING',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FAITH_WRITING',		'YieldType',		    'YIELD_FAITH'),
-	('TRAIT_GREAT_WORK_FAITH_WRITING',		'YieldChange',	        1),
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldChange',2
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldChange',2
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldChange',2
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldChange',4
+    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_GREAT_WORK_FAITH_GREATWORKOBJECT_WRITING'or'TRAIT_GREAT_WORK_FOOD_GREATWORKOBJECT_WRITING'or'TRAIT_GREAT_WORK_PRODUCTION_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
 
-    ('TRAIT_GREAT_WORK_FOOD_LANDSCAPE',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FOOD_LANDSCAPE',		'YieldType',		    'YIELD_FOOD'),
-	('TRAIT_GREAT_WORK_FOOD_LANDSCAPE',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FOOD_MUSIC',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FOOD_MUSIC',		'YieldType',		    'YIELD_FOOD'),
-	('TRAIT_GREAT_WORK_FOOD_MUSIC',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FOOD_PORTRAIT',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FOOD_PORTRAIT',		'YieldType',		    'YIELD_FOOD'),
-	('TRAIT_GREAT_WORK_FOOD_PORTRAIT',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FOOD_RELIGIOUS',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FOOD_RELIGIOUS',		'YieldType',		    'YIELD_FOOD'),
-	('TRAIT_GREAT_WORK_FOOD_RELIGIOUS',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_FOOD_WRITING',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_FOOD_WRITING',		'YieldType',		    'YIELD_FOOD'),
-	('TRAIT_GREAT_WORK_FOOD_WRITING',		'YieldChange',	        1),
-
-    ('TRAIT_GREAT_WORK_PRODUCTION_LANDSCAPE',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_PRODUCTION_LANDSCAPE',		'YieldType',		    'YIELD_PRODUCTION'),
-	('TRAIT_GREAT_WORK_PRODUCTION_LANDSCAPE',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_PRODUCTION_MUSIC',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_PRODUCTION_MUSIC',		'YieldType',		    'YIELD_PRODUCTION'),
-	('TRAIT_GREAT_WORK_PRODUCTION_MUSIC',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_PRODUCTION_PORTRAIT',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_PRODUCTION_PORTRAIT',		'YieldType',		    'YIELD_PRODUCTION'),
-	('TRAIT_GREAT_WORK_PRODUCTION_PORTRAIT',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_PRODUCTION_RELIGIOUS',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_PRODUCTION_RELIGIOUS',		'YieldType',		    'YIELD_PRODUCTION'),
-	('TRAIT_GREAT_WORK_PRODUCTION_RELIGIOUS',		'YieldChange',	        2),
-    ('TRAIT_GREAT_WORK_PRODUCTION_WRITING',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_PRODUCTION_WRITING',		'YieldType',		    'YIELD_PRODUCTION'),
-	('TRAIT_GREAT_WORK_PRODUCTION_WRITING',		'YieldChange',	        1),
-
-    ('TRAIT_GREAT_WORK_GOLD_LANDSCAPE',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_GOLD_LANDSCAPE',		'YieldType',		    'YIELD_GOLD'),
-	('TRAIT_GREAT_WORK_GOLD_LANDSCAPE',		'YieldChange',	        4),
-    ('TRAIT_GREAT_WORK_GOLD_MUSIC',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_GOLD_MUSIC',		'YieldType',		    'YIELD_GOLD'),
-	('TRAIT_GREAT_WORK_GOLD_MUSIC',		'YieldChange',	        4),
-    ('TRAIT_GREAT_WORK_GOLD_PORTRAIT',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_GOLD_PORTRAIT',		'YieldType',		    'YIELD_GOLD'),
-	('TRAIT_GREAT_WORK_GOLD_PORTRAIT',		'YieldChange',	        4),
-    ('TRAIT_GREAT_WORK_GOLD_RELIGIOUS',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_GOLD_RELIGIOUS',		'YieldType',		    'YIELD_GOLD'),
-	('TRAIT_GREAT_WORK_GOLD_RELIGIOUS',		'YieldChange',	        4),
-    ('TRAIT_GREAT_WORK_GOLD_WRITING',		'GreatWorkObjectType',	'GREATWORKOBJECT_LANDSCAPE'),
-	('TRAIT_GREAT_WORK_GOLD_WRITING',		'YieldType',		    'YIELD_GOLD'),
-	('TRAIT_GREAT_WORK_GOLD_WRITING',		'YieldChange',	        2);
 --LA 
 insert or replace into TraitModifiers 
 	(TraitType,						            ModifierId)
