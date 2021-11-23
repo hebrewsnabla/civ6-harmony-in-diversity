@@ -50,8 +50,9 @@ values
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
     ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Government Plaza and Palace."),
     ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Accumulating Strategic resources gain an additional +1 per turn."),
-    ("LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "+25% [ICON_Production] Production toward Ancient, Classical and Medieval military units. Strategic resource costs for units are discounted 40%.");
-
+    ("LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "+25% [ICON_Production] Production toward Ancient, Classical and Medieval military units. Strategic resource costs for units are discounted 40%."),
+    ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
+    ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and a free Trader in capital");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -104,4 +105,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "城市中每有一座宫殿或市政广场区域，便+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "为远古、古典和中世纪军事单位+25% [ICON_Production] 生产力。生产单位所需战略资源花费减少40%。");
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "为远古、古典和中世纪军事单位+25% [ICON_Production] 生产力。生产单位所需战略资源花费减少40%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_NAME",                                 "赫尔墨斯"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "首都获得一个商队，商队容量 [ICON_TradeRoute] +1。 ");
