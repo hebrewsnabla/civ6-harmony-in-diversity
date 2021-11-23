@@ -3,6 +3,12 @@
 insert or replace into EnglishText
     (Tag,                                             Text)
 values
+    -- New Techs
+    ("LOC_TECH_CALENDAR_HD_NAME",                     "Calendar"),
+    ("LOC_TECH_PAPER_MARKING_HD_NAME",                "Paper Making"),
+    ("LOC_TECH_COMPASS_HD_NAME",                      "Compass"),
+    ("LOC_TECH_PHYSICS_HD_NAME",                      "Physics"),
+    ("LOC_TECH_BIOLOGY_HD_NAME",                      "Biology"),
     -- Techs
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",      "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_MINING_HD_DESCRIPTION",                "Allows chopping of Woods, and harvesting of resources improved by Mines."),
@@ -81,6 +87,12 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                             Text)
 values
+    -- New Techs
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                     "历法"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_NAME",                "造纸术"),
+    ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                      "罗盘"),
+    ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_NAME",                      "物理"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_NAME",                      "生物"),
     -- Techs
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",      "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                "允许砍伐树林和收获由矿山改良的资源。"),
