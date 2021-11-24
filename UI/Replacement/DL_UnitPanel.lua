@@ -276,7 +276,10 @@ function AddActionButton(instance:table, action:table)
     if action.IconId == 'ICON_UNITCOMMAND_ACTIVATE_GREAT_PERSON' then
         local pSelectedUnit = UI.GetHeadSelectedUnit();
         local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
-        local rawActivationPlots = GreatPersonUtils.GetActivationPlots(pSelectedUnit:GetOwner(), individual);
+        -- local playerID = pSelectedUnit:GetOwner();
+        local playerID = Game.GetLocalPlayer();
+        print('HD_DEBUG_2', pSelectedUnit:GetOwner(), playerID);
+        local rawActivationPlots = GreatPersonUtils.GetActivationPlots(playerID, individual);
         if rawActivationPlots ~= nil then
             -- print('here')
             local validActivation = false;

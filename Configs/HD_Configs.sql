@@ -6,12 +6,18 @@
 -- update Parameters set DefaultValue = 1 where ParameterId = 'WER_ADD_STEEL_N_THUNDER_UU';
 -- delete from Parameters where ParameterId = 'WER_ADD_STEEL_N_THUNDER_UU';
 
+-- Take your time
+update Parameters set DefaultValue = 33 where ParameterId = 'TechnologyBoostAmount';
+update Parameters set DefaultValue = 33 where ParameterId = 'CivicBoostAmount';
+
 -- delete from Parameters where ParameterId = 'GameMode_TowerDefense'; 
 
 insert or replace into Parameters
     (Key1,      Key2,                   ParameterId,                    Name,                                       Description,
     Domain,     DefaultValue,   ConfigurationGroup, ConfigurationId,                        GroupId,            SortIndex)
 values
+    ('Ruleset', 'RULESET_EXPANSION_2',  'CityStatesStartWithWalls',     'LOC_GAME_CITY_STATES_START_WITH_WALLS',    'LOC_GAME_CITY_STATES_START_WITH_WALLS_DESCRIPTION',
+    'bool',     1,              'Game',             'GAME_CITY_STATES_START_WITH_WALLS',    'AdvancedOptions',  2019),
     ('Ruleset', 'RULESET_EXPANSION_2',  'PostponeWorldCongress',        'LOC_GAME_POSTPONE_WORLD_CONGRESS',         'LOC_GAME_POSTPONE_WORLD_CONGRESS_DESCRIPTION',
     'bool',     1,              'Game',             'GAME_POSTPONE_WORLD_CONGRESS',         'AdvancedOptions',  2020),
     ('Ruleset', 'RULESET_EXPANSION_2',  'CapturedSettlersAsBuilders',   'LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS',    'LOC_GAME_CAPTURE_SETTLERS_AS_BUILDERS_DESCRIPTION',
