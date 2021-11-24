@@ -31,6 +31,9 @@ values
     ("LOC_TECH_STEAM_POWER_HD_DESCRIPTION",           "+2 [ICON_Movement] Movement for embarked units. +15 tiles for water trade route range."),
     ("LOC_TECH_STEEL_HD_DESCRIPTION",                 "Unlocks Urban Defenses, giving all of your cities an automatic 400 Fortification Strength and the ability to perform a ranged attack. All previous wall improvements become obsolete and siege support units are no longer effective."),
     ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",     "Plantation improvements receive +1 [ICON_Food] Food. +5% [ICON_Science] Science for cities have University."),
+    -- New Civics
+    ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",           "Literary Tradition"),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_NAME",               "Supply"),
     -- Civics
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",        "Farm improvements receive +1 [ICON_Food] Food from every 2 adjacent Farm improvements."),
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",            "Plantation improvements receive +1 [ICON_Food] Food."),
@@ -115,6 +118,9 @@ values
     ("zh_Hans_CN",  "LOC_TECH_STEAM_POWER_HD_DESCRIPTION",           "水运单位+2 [ICON_Movement] 移动力。商人单位在水域单元格的贸易范围增加15个单元格。"),
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                 "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",     "种植园改良设施+1 [ICON_Food] 食物。拥有大学的城市+5% [ICON_Science] 科技值"),
+    -- New Civics
+    ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_NAME",           "文学传统"),
+    ("zh_Hans_CN",  "CIVIC_DEFENSIVE_TACTICS",                        "后勤补给"),
     -- Civics
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",        "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",            "种植园改良设施提供的 [ICON_Food] 食物+1。"),
