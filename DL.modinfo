@@ -437,6 +437,11 @@
       <Properties><LoadOrder>100008</LoadOrder></Properties>
       <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     </UpdateText>
+    <!-- Import files -->
+    <ImportFiles id="HD_Message">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>UI/Replacement/MainMenu.xml</File>
+    </ImportFiles>
     <ImportFiles id="HD_Mod_Version_Checker">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
@@ -1453,6 +1458,7 @@
     <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File> <!-- Mod Version Checker for multiplayer -->
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     <!-- UI replacements and icons -->
+    <File>UI/Replacement/MainMenu.xml</File>
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
