@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2753569953	Play_PaperMakingHD_Quote_2			\Default Work Unit\Play_PaperMakingHD_Quote_2	
+	2753569954	Play_PaperMakingHD_Quote_1			\Default Work Unit\Play_PaperMakingHD_Quote_1	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	5675255	paper_making_2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\paper_making_2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\paper_making_2_Chinese		2091156
+	496810842	paper_making_1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\paper_making_1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\paper_making_1_Chinese		1440496
+

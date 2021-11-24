@@ -464,6 +464,12 @@
     </ImportFiles>
   </FrontEndActions>
   <InGameActions>
+    <UpdateAudio id="HD_Audio" criteria="Expansion2">
+      <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
+      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.bnk</File>
+      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.txt</File>
+      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.xml</File>
+    </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
@@ -1784,5 +1790,10 @@
     <File>Assets/CityStates/CivBaikonur_128.dds</File>
     <File>Assets/CityStates/CivBaikonur_200.dds</File>
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
+    <!-- Platforms -->
+    <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
+    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.bnk</File>
+    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.txt</File>
+    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.xml</File>
   </Files>
 </Mod>

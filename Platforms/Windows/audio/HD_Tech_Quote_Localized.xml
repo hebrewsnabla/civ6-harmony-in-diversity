@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\</ProjectRoot>
+		<SourceFilesRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2568225787" Language="SFX">
+			<ShortName>HD_Tech_Quote_Localized</ShortName>
+			<Path>HD_Tech_Quote_Localized.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2753569954" Name="Play_PaperMakingHD_Quote_1"/>
+				<Event Id="2753569953" Name="Play_PaperMakingHD_Quote_2"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="5675255" Language="SFX">
+					<ShortName>paper_making_2_Chinese.wav</ShortName>
+					<Path>SFX\paper_making_2_Chinese_9E69E797.wem</Path>
+				</File>
+				<File Id="496810842" Language="SFX">
+					<ShortName>paper_making_1_Chinese.wav</ShortName>
+					<Path>SFX\paper_making_1_Chinese_9E69E797.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

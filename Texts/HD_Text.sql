@@ -61,6 +61,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    -- Temp
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_QUOTE_2",                                     "经验丰富的人读书用两只眼睛，一只眼睛看到纸面上的话，另一眼睛看到纸的背面。——约翰·沃尔夫冈·冯·歌德"),
     -- UI texts 
     ("zh_Hans_CN",  "LOC_HD_MESSAGE",                                                        "和而不同"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),

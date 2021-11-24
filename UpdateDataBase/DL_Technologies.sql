@@ -21,6 +21,12 @@ values
     ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',         730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
     ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',         1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC');
 
+insert or replace into TechnologyQuotes
+    (TechnologyType,            Quote,                                  QuoteAudio)
+values
+    ('TECH_PAPER_MARKING_HD',   'LOC_TECH_PAPER_MARKING_HD_QUOTE_1',    'Play_PaperMakingHD_Quote_1'),
+    ('TECH_PAPER_MARKING_HD',   'LOC_TECH_PAPER_MARKING_HD_QUOTE_2',    'Play_PaperMakingHD_Quote_2');
+
 --------------------------------------------------------------------------------
 
 update Technologies set EmbarkAll = 1 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
