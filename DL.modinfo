@@ -1146,6 +1146,7 @@
       <File>UI/Icons/DL_Icons_Projects.xml</File>
       <File>UI/Icons/HD_Icons.xml</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
+      <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
@@ -1479,6 +1480,7 @@
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
+    <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>

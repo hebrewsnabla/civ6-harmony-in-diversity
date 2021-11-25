@@ -40,7 +40,10 @@ function ShouldDisableHillFarm(plot, player)
     end
 
     -- Should disable hill farm if the player doesn't have CIVIL_ENGINEERING and the hill doesn't have fresh water.
-    if player:GetCulture():HasCivic(GameInfo.Civics['CIVIC_CIVIL_ENGINEERING'].Index) then
+    -- if player:GetCulture():HasCivic(GameInfo.Civics['CIVIC_CIVIL_ENGINEERING'].Index) then
+    --     return false;
+    -- end
+    if player:GetTechs():HasTech(GameInfo.Technologies['TECH_CIVIL_ENGINEERING_HD'].Index) then
         return false;
     end
 

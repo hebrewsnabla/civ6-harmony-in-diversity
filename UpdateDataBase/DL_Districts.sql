@@ -103,9 +103,9 @@ update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_FOREIGN_TRADE' wher
 update Districts set PrereqTech = 'TECH_IRON_WORKING' where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE');
 -- WATER_ENTERTAINMENT_COMPLEX
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
-update Districts set PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_NEIGHBORHOOD'
+update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_NEIGHBORHOOD'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
 -- UD
 update Districts set PrereqCivic = 'CIVIC_FEUDALISM' where DistrictType = 'DISTRICT_MBANZA';
