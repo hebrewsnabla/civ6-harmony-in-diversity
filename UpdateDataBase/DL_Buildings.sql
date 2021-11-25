@@ -1163,7 +1163,7 @@ delete from Building_YieldChanges where BuildingType = 'BUILDING_SEAPORT' and Yi
 ----------------------------------------------------------------------------------------------------------------------
 -- nianshi
 -- new Buildings
---市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+--市中心改动（训练营,图腾,集市降价65->55）（图腾法典解锁）（工官,凯旋,测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
 insert or replace into Types
 	(Type,										Kind)
 values
@@ -1178,7 +1178,7 @@ values
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 										Cost, 		Description,										
-		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield，			Housing) 
+		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield,			Housing) 
 values
 	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			65,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
 	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
