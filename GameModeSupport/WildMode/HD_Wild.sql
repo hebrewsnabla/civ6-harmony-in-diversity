@@ -151,19 +151,19 @@ insert or replace into ModifierArguments(ModifierId,Name,Value)
     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
 insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldChange',2
+    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldChange',3
     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldChange',2
+    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldChange',3
     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldChange',2
+    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldChange',3
     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldChange',4
+    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldChange',6
     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-update ModifierArguments set Value = 1 where ModifierId = 'TRAIT_GREAT_WORK_FAITH_GREATWORKOBJECT_WRITING'or'TRAIT_GREAT_WORK_FOOD_GREATWORKOBJECT_WRITING'or'TRAIT_GREAT_WORK_PRODUCTION_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
+update ModifierArguments set Value = 2 where ModifierId like '%GREATWORKOBJECT_WRITING%' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
 
 --LA 
 insert or replace into TraitModifiers 

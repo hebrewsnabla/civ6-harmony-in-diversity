@@ -1163,6 +1163,7 @@ delete from Building_YieldChanges where BuildingType = 'BUILDING_SEAPORT' and Yi
 ----------------------------------------------------------------------------------------------------------------------
 -- nianshi
 -- new Buildings
+--市中心改动（训练营,图腾,集市降价65->55）（图腾法典解锁）（工官,凯旋,测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
 insert or replace into Types
 	(Type,										Kind)
 values
@@ -1177,23 +1178,23 @@ values
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 										Cost, 		Description,										
-		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield) 
+		PrereqTech,						PrereqCivic,								PrereqDistrict,			PurchaseYield,			Housing) 
 values
 	('BUILDING_NILOMETER_HD',			'LOC_BUILDING_NILOMETER_HD_NAME', 			65,			'LOC_BUILDING_NILOMETER_HD_DESCRIPTION',				
-	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
+	'TECH_IRRIGATION',					null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	('BUILDING_TRIUMPHAL_ARCH',			'LOC_BUILDING_TRIUMPHAL_ARCH_NAME', 		65,			'LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION',			
-	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
+	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	('BUILDING_KAREZ',					'LOC_BUILDING_KAREZ_NAME',					65,			'LOC_BUILDING_KAREZ_DESCRIPTION',	
-	'TECH_POTTERY',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
+	'TECH_POTTERY',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			1),
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',	'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 65,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
-	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				65,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
-	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					65,			'LOC_BUILDING_FAIR_DESCRIPTION',
-	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
+	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
+	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				55,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
+	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
+	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
+	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	-- null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
-	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				65,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
-	null,								null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD');
+	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				55,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
+	null,								'CIVIC_CODE_OF_LAWS',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null);
 
 insert or replace into Building_GreatPersonPoints
 	(BuildingType,		GreatPersonClassType,			PointsPerTurn)
@@ -1217,7 +1218,7 @@ values
  	('BUILDING_NILOMETER_HD',										'NILOMETER_SCIENCE'),
  	('BUILDING_TRIUMPHAL_ARCH',										'TRIUMPHAL_ARCH_CULTURE'),
  	('BUILDING_KAREZ',												'KAREZ_FOOD'),
- 	('BUILDING_KAREZ',												'KAREZ_HOUSING'),
+ 	--('BUILDING_KAREZ',												'KAREZ_HOUSING'),
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'HANDCRAFT_BUILDING_PRODUCTION'),
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'HANDCRAFT_DISTRICT_PRODUCTION'),
  	('BUILDING_BOOTCAMP',											'BOOTCAMP_UNIT_PRODUCTION'),
@@ -1230,7 +1231,7 @@ values
 	('NILOMETER_SCIENCE',					'MODIFIER_BUILDING_YIELD_CHANGE',						'PLOT_FLOODPLAINS_REQUIREMENTS'),
  	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'DL_CITY_HAS_WONDER_REQUIREMENTS'),
  	('KAREZ_FOOD',							'MODIFIER_BUILDING_YIELD_CHANGE',						'KAREZ_REQUIREMENT'),
- 	('KAREZ_HOUSING',						'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING',			'KAREZ_REQUIREMENT'),
+ 	--('KAREZ_HOUSING',						'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING',			'KAREZ_REQUIREMENT'),
  	('HANDCRAFT_BUILDING_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
  	('HANDCRAFT_DISTRICT_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
  	('BOOTCAMP_UNIT_PRODUCTION',			'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_CHANGE',	'BOOTCAMP_REQUIREMENT'),
@@ -1242,16 +1243,16 @@ insert or replace into ModifierArguments
 values
 	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER_HD'),
 	('NILOMETER_SCIENCE',					'YieldType',										'YIELD_SCIENCE'),
-	('NILOMETER_SCIENCE',					'Amount',											1),
+	('NILOMETER_SCIENCE',					'Amount',											2),
 	('TRIUMPHAL_ARCH_CULTURE',				'BuildingType',										'BUILDING_TRIUMPHAL_ARCH'),
 	('TRIUMPHAL_ARCH_CULTURE',				'YieldType',										'YIELD_CULTURE'),
-	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											1),
+	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											2),
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
 	('KAREZ_FOOD',							'Amount',											1),
 	('KAREZ_HOUSING',						'Amount',											1),
-	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											1),
-	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											1),
+	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											2),
+	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											2),
 	('BOOTCAMP_UNIT_PRODUCTION',			'Amount',											2),
 	('FAIR_GOLD',							'BuildingType',										'BUILDING_FAIR'),
 	('FAIR_GOLD',							'YieldType',										'YIELD_GOLD'),
