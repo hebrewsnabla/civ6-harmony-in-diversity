@@ -1250,7 +1250,7 @@ values
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
 	('KAREZ_FOOD',							'Amount',											1),
-	('KAREZ_HOUSING',						'Amount',											1),
+	-- ('KAREZ_HOUSING',						'Amount',											1),
 	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											2),
 	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											2),
 	('BOOTCAMP_UNIT_PRODUCTION',			'Amount',											2),
