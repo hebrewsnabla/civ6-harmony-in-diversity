@@ -34,8 +34,8 @@ delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_ANTI_CAVALRY' 
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_ANTI_CAVALRY' and ModifierId = 'PLUS_15_VS_LIGHT_CAVALRY_COMBAT_BONUS';
 insert or ignore into UnitAbilityModifiers (UnitAbilityType, ModifierId) values ('ABILITY_ANTI_CAVALRY', 'ANTI_CAVALRY_COMBAT_BONUS');
 
-update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_DLV_COG';
-update Units set PrereqTech = 'TECH_EDUCATION' where UnitType = 'UNIT_DLV_GALLEASS';
+update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_DLV_COG';--xhh
+update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_DLV_GALLEASS';--xhh
 update ModifierArguments set Value = 10 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' and Name = 'Amount';
 
 -- unit types and promotion updates

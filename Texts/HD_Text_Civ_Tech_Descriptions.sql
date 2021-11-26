@@ -1,20 +1,23 @@
 --------------------------------------------------------------------------------
 -- Language: en_US
+
 insert or replace into EnglishText
     (Tag,                                                                                   Text)
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_PAPER_MARKING_HD_NAME",                                                      "Paper Making"),
+    ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
+    ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
     ("LOC_TECH_PHYSICS_HD_NAME",                                                            "Physics"),
     ("LOC_TECH_BIOLOGY_HD_NAME",                                                            "Biology"),
     ("LOC_TECH_CIVIL_ENGINEERING_HD_NAME",                                                  "Civil Engineering"),
+    ("LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION",                                           "Allows Farms to be built on Prairie Hills and Plain Hills. Lumber Mill improvements receive +1 [ICON_Production] Production."),
     -- New Techs Boosts
     ("LOC_BOOST_TRIGGER_CALENDAR_HD",                                                       "Build 1 Granary."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                                              "With the development of agriculture in our empire, we need to plan our production for these years."),
-    ("LOC_BOOST_TRIGGER_PAPER_MARKING_HD",                                                  "Build 2 Plantations."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_PAPER_MARKING_HD",                                         "From the stems of the plants in the plantations, we have found some useful fibers."),
+    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build 2 Plantations."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                                          "From the stems of the plants in the plantations, we have found some useful fibers."),
     ("LOC_BOOST_TRIGGER_COMPASS_HD",                                                        "Have the Naval Tradition Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                               "With the development of navigation technology, magnetic tools have become a necessity for navigators."),
     ("LOC_BOOST_TRIGGER_PHYSICS_HD",                                                        "Earn a Great Scientist."),
@@ -24,6 +27,11 @@ values
     ("LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                                              "Build 2 Castles."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                                     "Intensive warfare made the nobles to build more and more castles, while the workers learned valuable lessons about civil construction."),
     -- Techs
+    ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                                "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from a Sea or a River."),
+    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when attacking from Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
+    ("LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                                   "Quarry improvements receive +1 [ICON_Production] Production. [NEWLINE]Unlocks a [ICON_GOVERNOR] Governor title for Suleiman. [NEWLINE]Heavy Cavalry units gain the ability: +10 [ICON_Damaged] Health after defeating an enemy unit."),
+    ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                                     "Siege units gain the ability: +5 [ICON_Strength] Combat Strength when attacking Districts."),
+    ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                                  "Stepwell improvements receive +1 [ICON_Housing] Housing. [NEWLINE]Anti-cavalry units gain the ability: Ignore [ICON_Strength] Combat Strength reduction from being injured."),
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods, and harvesting of resources improved by Mines."),
     ("LOC_TECH_MASONRY_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Quarries."),
@@ -50,6 +58,7 @@ values
     ("LOC_CIVIC_DEFENSIVE_TACTICS_NAME",                                                    "Supply"),
     ("LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                                       "Imperial Examination System"),
     ("LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                                  "Evolution Theory"),
+    ("LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                                           "Camp improvements receive +1 [ICON_Production] Production +1 [ICON_Food] Food."),
     ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME",                                             "Historical Philosophy"),
     ("LOC_CIVIC_ETHICS_HD_NAME",                                                            "Ethics"),
     ("LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME",                                                    "Social Sciences"),
@@ -67,10 +76,15 @@ values
     ("LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                                 "Build 7 different specialty areas."),
     ("LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                                        "Complex cities form complex social relationships, while some geniuses see it through clearly."),
     -- Civics
+    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Plantation improvements receive +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength when fighting in Rainforest or Woods tiles."),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                                          "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a District. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending from melee attack on Hills."),
+    ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                                          "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
+    -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
+    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
+    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignore Zones of Control."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Farm improvements receive +1 [ICON_Food] Food from every 2 adjacent Farm improvements."),
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Plantation improvements receive +1 [ICON_Food] Food."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold. Pasture improvements receive +1 [ICON_Food] Food."),
-    -- ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "Camp improvements receive +2 [ICON_gold] Gold."),
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State."),
     ("LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                                          "Can build Farms on Grassland Hills and Plains Hills. Lumber Mill improvements receive +1 [ICON_Production]."),
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "Lumber Mills and Camps can be built on Rainforest."),
@@ -127,21 +141,24 @@ values
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
+
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
-    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_NAME",                                       "造纸术"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),
     ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_NAME",                                             "物理"),
     ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_NAME",                                             "生物"),
     ("zh_Hans_CN",  "LOC_TECH_CIVIL_ENGINEERING_HD_NAME",                                   "土木工程"),
+    ("zh_Hans_CN",  "LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION",                            "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
     -- New Techs Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CALENDAR_HD",                                        "建造1座粮仓。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着帝国农业的发展，我们需要去安排一下这些年的生产计划了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MARKING_HD",                                   "建造2座种植园。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MARKING_HD",                          "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造2座种植园。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                           "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPASS_HD",                                         "拥有海军传统市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                "随着航海技术的发展，拥有磁性的工具成为了领航员的必需品。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PHYSICS_HD",                                         "获得1位大科学家。"),
@@ -151,6 +168,11 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                               "建造2座中世纪城墙。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      "密集的战争导致了贵族们修建越来越多的城堡，而工人们从中总结出了有关土木建设的宝贵经验。"),
     -- Techs
+    ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
+    ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                      "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                             "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                                       "允许砍伐树林和收获由矿山改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",                                      "允许收获由采石场改良的资源。"),
@@ -177,6 +199,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_NAME",                                     "后勤补给"),
     ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                        "科举制"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                   "演化论"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地改良设施获得+1 [ICON_Production] 生产力和+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME",                              "历史哲学"),
     ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_NAME",                                             "伦理学"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME",                                     "社会科学"),
@@ -197,7 +220,6 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。牧场+1 [ICON_Food] 食物。"),
-    -- ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "营地+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                      "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "从每个宗主城邦获得+1 [ICON_Favor] 外交支持。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                           "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
@@ -205,6 +227,12 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                 "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。受到伤害后，单位的 [ICON_Strength] 战斗力减益降低50%。现在可用一个新的战争借口替战争辩护：殖民战争。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。允许建造者植树造林（人造林）。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]攻城单位获得能力：可移动后攻击。"), -- 在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。
+    -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦察单位获得能力：忽略控制区。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造3座工作坊。"),

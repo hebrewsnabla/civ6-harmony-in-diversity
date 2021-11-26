@@ -2,6 +2,8 @@
 --      Resources Adjustment       --
 -------------------------------------
 
+
+
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_COAL';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_IRON';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_NITER';

@@ -43,7 +43,16 @@ values
     ("LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_SHORT_NAME",      "Enable Industrial Tax"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_NAME",           "Disable Industrial Tax City Policy"),
     ("LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_SHORT_NAME",     "Disable Industrial Tax"),
-    ("LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION",    "Disable Industrial Tax city policy, the yields back to the normal. ");
+    ("LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION",    "Disable Industrial Tax city policy, the yields back to the normal. "),
+    -- xhh 修编历书
+    ("LOC_BUILDING_CITY_POLICY_REVISION_ALMANAC_NAME",                "Revision Almanac Policy"),
+    ("LOC_BUILDING_CITY_POLICY_REVISION_ALMANAC_DESCRIPTION",         "Revision Almanac city policy undergoing, each Plantation and Farm with any resource +1 [ICON_SCIENCE] Science in this city. -6 [ICON_GOLD] Gold in this city. This policy can be disabled by a project."),
+    ("LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_NAME",          "Enable Revision Almanac City Policy"),
+    ("LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_SHORT_NAME",    "Enable Revision Almanac"),
+    ("LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_DESCRIPTION",   "Enable the Revision Almanac city policy. Each Plantation and Farm with any resource +1 [ICON_SCIENCE] Science in this city. -6 [ICON_GOLD] Gold in this city. This policy can be disabled by a project."),
+    ("LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_NAME",         "Disable Revision Almanac City Policy"),
+    ("LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_SHORT_NAME",   "Disable Revision Almanac"),
+    ("LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_DESCRIPTION",  "Disable Revision Almanac city policy, the yields back to the normal.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -86,5 +95,15 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_ENABLE_INDUSTRAIL_TAX_SHORT_NAME",      "启用工业税"),
     ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_NAME",           "停用工业税城市政策"),
     ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_SHORT_NAME",     "停用工业税"),
-    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION",    "停用工业税城市政策，产出恢复正常。");
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_INDUSTRAIL_TAX_DESCRIPTION",    "停用工业税城市政策，产出恢复正常。"),
+    -- xhh 修编历书
+    ("zh_Hans_CN",  "LOC_BUILDING_CITY_POLICY_REVISION_ALMANAC_NAME",                "修编历书政策"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CITY_POLICY_REVISION_ALMANAC_DESCRIPTION",         "正在采用修编历书政策，城市-6 [ICON_GOLD] 金币，每个种植园和改良资源的农场+1 [ICON_SCIENCE] 科技值。该政策可通过项目关闭。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_NAME",          "启用修编历书城市政策"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_SHORT_NAME",    "启用修编历书"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_ENABLE_REVISION_ALMANAC_DESCRIPTION",   "启用修编历书政策，启用后城市-6 [ICON_GOLD] 金币，每个种植园和改良资源的农场+1 [ICON_SCIENCE] 科技值。该政策可通过另一个项目关闭。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_NAME",         "停用修编历书城市政策"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_SHORT_NAME",   "停用修编历书"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CITY_POLICY_DISABLE_REVISION_ALMANAC_DESCRIPTION",  "停用修编历书城市政策，产出恢复正常。");
+
 

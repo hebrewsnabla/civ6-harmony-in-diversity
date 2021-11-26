@@ -606,8 +606,19 @@ values
 	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
 	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
 
+-- unlock
+	-- 【泰姬陵】改为【物理】科技解锁
+update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_PHYSICS_HD' where BuildingType = 'BUILDING_TAJ_MAHAL';--xhh
+
+	-- 【金门大桥】改为【钢铁】科技解锁
+update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_STEEL' where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';--xhh
+
+	-- 【兵马俑】改为【后勤补给】市政解锁
+update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null where BuildingType = 'BUILDING_TERRACOTTA_ARMY';--xhh
+
 -- Kilwa
-update Buildings set PrereqTech = 'TECH_BUTTRESS' where BuildingType = 'BUILDING_KILWA_KISIWANI';
+	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
+update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
 update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
 update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 

@@ -4,7 +4,9 @@
 
 update Units set Combat = Combat - 3 where Combat > 45 and PromotionClass = 'PROMOTION_CLASS_HEAVY_CAVALRY';
 
--- 原【土木工程】市政解锁内容搬运到新【土木工程】科技上
+----------------------------------------------------- 删除【土木工程】市政 ------------------------------------------------------
+
+	-- 原【土木工程】市政解锁内容搬运到新【土木工程】科技上
 update Policies set PrereqTech = 'TECH_CIVIL_ENGINEERING_HD', PrereqCivic = NULL where PrereqCivic = 'CIVIC_CIVIL_ENGINEERING';
 update Buildings set PrereqTech = 'TECH_CIVIL_ENGINEERING_HD', PrereqCivic = NULL where PrereqCivic = 'CIVIC_CIVIL_ENGINEERING';
 update Districts set PrereqTech = 'TECH_CIVIL_ENGINEERING_HD', PrereqCivic = NULL where PrereqCivic = 'CIVIC_CIVIL_ENGINEERING';
@@ -18,3 +20,12 @@ update RequirementArguments set Name = 'TechnologyType', Value = 'TECH_CIVIL_ENG
 
 delete from AiFavoredItems where Item = 'CIVIC_CIVIL_ENGINEERING';
 delete from Civics where CivicType = 'CIVIC_CIVIL_ENGINEERING';
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+-- 【石油】改为【生物】科技解锁
+update Resources set PrereqTech = 'TECH_BIOLOGY_HD' where ResourceType = 'RESOURCE_OIL';--xhh
+
+--update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCANTILISM';
+--update EnglishText set Text = "Scout units gain ability: ignore zone of control." where Tag = "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION";
+--update LocalizedText set Text = "侦察单位获得能力：忽略控制区。" where Tag = "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION" and Language = "zh_Hans_CN";

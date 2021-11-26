@@ -2,6 +2,12 @@
 --    Improvements Adjustments     --
 -------------------------------------
 
+-- 【油井】改为【生物】科技解锁
+update Improvements set PrereqTech = 'TECH_BIOLOGY_HD' where ImprovementType = 'IMPROVEMENT_OIL_WELL';--xhh
+
+-- 设定【演化论】市政效果：营地+1粮+1锤，替代【重商主义】市政
+update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PrereqCivic = 'CIVIC_MERCANTILISM';--xhh
+
 -- update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MINE';
 
 update Improvements set PrereqTech = 'TECH_BRONZE_WORKING'

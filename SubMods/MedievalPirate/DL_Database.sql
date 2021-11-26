@@ -2,11 +2,11 @@
 insert or replace into Types (Type,  Kind) values ('UNIT_DL_MEDIEVAL_PIRATE',   'KIND_UNIT');
 
 insert or replace into Units
-    (UnitType,                  Name,                               Description,                                PrereqCivic,        MandatoryObsoleteTech,
+    (UnitType,                  Name,                               Description,                                PrereqTech,        MandatoryObsoleteTech,
     BaseSightRange, BaseMoves,   Combat, RangedCombat,   Range,  Cost,   ZoneOfControl,  PurchaseYield, Domain,
     FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
 values
-    ('UNIT_DL_MEDIEVAL_PIRATE', 'LOC_UNIT_DL_MEDIEVAL_PIRATE_NAME', 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION',  'CIVIC_MEDIEVAL_FAIRES',    'TECH_LASERS',
+    ('UNIT_DL_MEDIEVAL_PIRATE', 'LOC_UNIT_DL_MEDIEVAL_PIRATE_NAME', 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION',  'TECH_COMPASS_HD',    'TECH_LASERS',
     2,              4,           30,     40,             1,      180,    1,              'YIELD_GOLD',  'DOMAIN_SEA',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
 

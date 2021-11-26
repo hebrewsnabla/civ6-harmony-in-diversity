@@ -4,14 +4,14 @@ insert or replace into IconDefinitions
 values
     -- Techs
     ('ICON_TECH_CALENDAR_HD',                           'ICON_ATLAS_CIVICS',        12),
-    ('ICON_TECH_PAPER_MARKING_HD',                      'ICON_ATLAS_CIVICS',        26),
+    ('ICON_TECH_PAPER_MAKING_HD',                      'ICON_ATLAS_CIVICS',        26),
     ('ICON_TECH_COMPASS_HD',                            'ICON_ATLAS_CIVICS',        21),
     ('ICON_TECH_PHYSICS_HD',                            'ICON_ATLAS_CIVICS',        44),
     ('ICON_TECH_BIOLOGY_HD',                            'ICON_ATLAS_CIVICS',        31),
     ('ICON_TECH_CIVIL_ENGINEERING_HD',                  'ICON_ATLAS_CIVICS',        28),
     -- FOW
     ('ICON_TECH_CALENDAR_HD_FOW',                       'ICON_ATLAS_CIVICS_FOW',    12),
-    ('ICON_TECH_PAPER_MARKING_HD_FOW',                  'ICON_ATLAS_CIVICS_FOW',    26),
+    ('ICON_TECH_PAPER_MAKING_HD_FOW',                   'ICON_ATLAS_CIVICS_FOW',    26),
     ('ICON_TECH_COMPASS_HD_FOW',                        'ICON_ATLAS_CIVICS_FOW',    21),
     ('ICON_TECH_PHYSICS_HD_FOW',                        'ICON_ATLAS_CIVICS_FOW',    44),
     ('ICON_TECH_BIOLOGY_HD_FOW',                        'ICON_ATLAS_CIVICS_FOW',    31),
