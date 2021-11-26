@@ -21,7 +21,7 @@ values
 insert or replace into Civics
 	(CivicType,										Name,													Description,										Cost,	EraType,			UITreeRow,	AdvisorType)
 values
-	('CIVIC_LITERARY_TRADITION_HD',					'LOC_CIVIC_LITERARY_TRADITION_HD_NAME',					Null,												180,	'ERA_CLASSICAL',	2,			'ADVISOR_CULTURE'),
+	('CIVIC_LITERARY_TRADITION_HD',					'LOC_CIVIC_LITERARY_TRADITION_HD_NAME',					Null,												240,	'ERA_CLASSICAL',	2,			'ADVISOR_CULTURE'),
 	('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		'LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME',		Null,												450,	'ERA_MEDIEVAL',		2,			'ADVISOR_TECHNOLOGY'),
 	('CIVIC_EVOLUTION_THEORY_HD',					'LOC_CIVIC_EVOLUTION_THEORY_HD_NAME',					'LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION',		1050,	'ERA_RENAISSANCE',	-2,			'ADVISOR_GENERIC'),
 	('CIVIC_HISTORICAL_PHILOSOPHY_HD',				'LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME',				Null,												1050,	'ERA_RENAISSANCE',	0,			'ADVISOR_GENERIC'),
@@ -104,7 +104,7 @@ values
 	('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		'CIVIC_LITERARY_TRADITION_HD'),
 	('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		'CIVIC_RECORDED_HISTORY'),
 	-- 文艺复兴 --
-	('CIVIC_EXPLORATION',							'CIVIC_MEDIEVAL_FAIRES'),
+	('CIVIC_EXPLORATION',							'CIVIC_GUILDS'),
 	('CIVIC_EXPLORATION',							'CIVIC_NAVAL_TRADITION'),
 	('CIVIC_REFORMED_CHURCH',						'CIVIC_DIVINE_RIGHT'),
 	('CIVIC_REFORMED_CHURCH',						'CIVIC_CIVIL_SERVICE'),
@@ -241,32 +241,32 @@ update Civics set Cost = 120 where CivicType = 'CIVIC_GAMES_RECREATION';
 update Civics set Cost = 150 where CivicType = 'CIVIC_POLITICAL_PHILOSOPHY';
 update Civics set Cost = 120 where CivicType = 'CIVIC_DRAMA_POETRY';
 update Civics set Cost = 240 where CivicType = 'CIVIC_MILITARY_TRAINING';
-update Civics set Cost = 180 where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
+update Civics set Cost = 240 where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 update Civics set Cost = 240 where CivicType = 'CIVIC_RECORDED_HISTORY';
-update Civics set Cost = 180 where CivicType = 'CIVIC_THEOLOGY';
-update Civics set Cost = 300 where CivicType = 'CIVIC_NAVAL_TRADITION';
+update Civics set Cost = 240 where CivicType = 'CIVIC_THEOLOGY';
+update Civics set Cost = 450 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set Cost = 450 where CivicType = 'CIVIC_FEUDALISM';
 update Civics set Cost = 600 where CivicType = 'CIVIC_CIVIL_SERVICE';
-update Civics set Cost = 500 where CivicType = 'CIVIC_MERCENARIES';
+update Civics set Cost = 600 where CivicType = 'CIVIC_MERCENARIES';
 update Civics set Cost = 450 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
 update Civics set Cost = 600 where CivicType = 'CIVIC_GUILDS';
-update Civics set Cost = 500 where CivicType = 'CIVIC_DIVINE_RIGHT';
-update Civics set Cost = 660 where CivicType = 'CIVIC_EXPLORATION';
+update Civics set Cost = 450 where CivicType = 'CIVIC_DIVINE_RIGHT';
+update Civics set Cost = 750 where CivicType = 'CIVIC_EXPLORATION';
 update Civics set Cost = 900 where CivicType = 'CIVIC_HUMANISM';
 update Civics set Cost = 900 where CivicType = 'CIVIC_DIPLOMATIC_SERVICE';
-update Civics set Cost = 660 where CivicType = 'CIVIC_REFORMED_CHURCH';
+update Civics set Cost = 750 where CivicType = 'CIVIC_REFORMED_CHURCH';
 update Civics set Cost = 1050 where CivicType = 'CIVIC_MERCANTILISM';
 update Civics set Cost = 1050 where CivicType = 'CIVIC_THE_ENLIGHTENMENT';
-update Civics set Cost = 1150 where CivicType = 'CIVIC_COLONIALISM';
+update Civics set Cost = 1450 where CivicType = 'CIVIC_COLONIALISM';
 update Civics set Cost = 1450 where CivicType = 'CIVIC_CIVIL_ENGINEERING';
 update Civics set Cost = 1450 where CivicType = 'CIVIC_NATIONALISM';
-update Civics set Cost = 1150 where CivicType = 'CIVIC_OPERA_BALLET';
-update Civics set Cost = 1500 where CivicType = 'CIVIC_NATURAL_HISTORY';
+update Civics set Cost = 1450 where CivicType = 'CIVIC_OPERA_BALLET';
+update Civics set Cost = 1700 where CivicType = 'CIVIC_NATURAL_HISTORY';
 update Civics set Cost = 1700 where CivicType = 'CIVIC_SCORCHED_EARTH';
 update Civics set Cost = 1700 where CivicType = 'CIVIC_URBANIZATION';
 update Civics set Cost = 2100 where CivicType = 'CIVIC_CONSERVATION';
-update Civics set Cost = 2150 where CivicType = 'CIVIC_CAPITALISM';
-update Civics set Cost = 2500 where CivicType = 'CIVIC_NUCLEAR_PROGRAM';
+update Civics set Cost = 2250 where CivicType = 'CIVIC_CAPITALISM';
+update Civics set Cost = 2400 where CivicType = 'CIVIC_NUCLEAR_PROGRAM';
 update Civics set Cost = 2100 where CivicType = 'CIVIC_MASS_MEDIA';
 update Civics set Cost = 2100 where CivicType = 'CIVIC_MOBILIZATION';
 update Civics set Cost = 2250 where CivicType = 'CIVIC_IDEOLOGY';
