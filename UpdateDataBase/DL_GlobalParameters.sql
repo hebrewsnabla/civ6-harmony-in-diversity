@@ -49,6 +49,9 @@ update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_DESTINATION';
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_ORIGIN';
 
+-- Neutralize turns
+update GlobalParameters set Value = 4 where Name = 'ESPIONAGE_NEUTRALIZE_GOVERNOR_BASE_TURNS';
+
 -- Barbarian camp
 -- the distance to barbarian camp
 update GlobalParameters set Value = 6 where Name = 'BARBARIAN_CAMP_MINIMUM_DISTANCE_CITY';
