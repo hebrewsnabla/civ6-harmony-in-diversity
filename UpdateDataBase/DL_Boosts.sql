@@ -64,3 +64,6 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_APO
     -- 【归正会】市政鼓舞改为：建造2座寺庙
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', NumItems = 2,
     BuildingType = 'BUILDING_TEMPLE' where CivicType = 'CIVIC_REFORMED_CHURCH';
+    -- 【后勤补给】市政鼓舞改为：拥有轮子科技
+update Boosts set BoostClass = 'BOOST_TRIGGER_RESEARCH_TECH', Unit1Type = Null, NumItems = 0,
+    BoostingTechType = 'TECH_THE_WHEEL' where TechnologyType = 'CIVIC_DEFENSIVE_TACTICS';

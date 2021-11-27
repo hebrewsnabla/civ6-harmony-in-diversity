@@ -137,7 +137,9 @@ values
     ("LOC_BOOST_TRIGGER_DIVINE_RIGHT",                                                      "Own 1 Apostle."),
     ("LOC_BOOST_TRIGGER_LONGDESC_DIVINE_RIGHT",                                             "The apostle extolled your virtues, and the whole nation thought us blessed by the God."),
     ("LOC_BOOST_TRIGGER_REFORMED_CHURCH",                                                   "Build 2 Temples"),
-    ("LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                                          "How the church should waste so much money for religious activities! It is time to reform the corrupt church.");
+    ("LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                                          "How the church should waste so much money for religious activities! It is time to reform the corrupt church."),
+    ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                                  "Have the Wheel Technology."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                                         "Wheeled vehicles have become a kind of powerful tool of imperial logistics.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -281,4 +283,6 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DIVINE_RIGHT",                                       "拥有1个使徒。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIVINE_RIGHT",                              "这位使徒极力颂扬您的德行，全国上下都认为我们受到了神的保佑。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REFORMED_CHURCH",                                    "建造2座寺庙。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                           "教会为了宗教活动竟如此劳民伤财！是时候改革腐败的教会了。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                           "教会为了宗教活动竟如此劳民伤财！是时候改革腐败的教会了。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                   "拥有轮子科技。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                          "有轮子的载具成为了帝国后勤工作的有力工具。");

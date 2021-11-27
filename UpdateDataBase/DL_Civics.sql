@@ -25,22 +25,27 @@ values
 	('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		'LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME',		Null,												450,	'ERA_MEDIEVAL',		2,			'ADVISOR_TECHNOLOGY'),
 	('CIVIC_EVOLUTION_THEORY_HD',					'LOC_CIVIC_EVOLUTION_THEORY_HD_NAME',					'LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION',		1050,	'ERA_RENAISSANCE',	-2,			'ADVISOR_GENERIC'),
 	('CIVIC_HISTORICAL_PHILOSOPHY_HD',				'LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME',				Null,												1050,	'ERA_RENAISSANCE',	0,			'ADVISOR_GENERIC'),
-	('CIVIC_ETHICS_HD',								'LOC_CIVIC_ETHICS_HD_NAME',								Null,												1050,	'ERA_RENAISSANCE',	3,			'ADVISOR_GENERIC'),
+	('CIVIC_ETHICS_HD',								'LOC_CIVIC_ETHICS_HD_NAME',								Null,												1050,	'ERA_RENAISSANCE',	2,			'ADVISOR_GENERIC'),
 	('CIVIC_SOCIAL_SCIENCE_HD',						'LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME',						Null,												1450,	'ERA_INDUSTRIAL',	0,			'ADVISOR_GENERIC');
 
 -- 设定市政的总督头衔、使者等效果
 insert or replace into CivicModifiers
 	(CivicType,										ModifierId) 
 values
-	('CIVIC_LITERARY_TRADITION_HD',					'CIVIC_AWARD_ONE_INFLUENCE_TOKEN');
+	-- 使者
+	('CIVIC_MILITARY_TRADITION',					'CIVIC_AWARD_ONE_INFLUENCE_TOKEN'),
+	('CIVIC_DIVINE_RIGHT',							'CIVIC_AWARD_ONE_INFLUENCE_TOKEN'),
+	('CIVIC_EVOLUTION_THEORY_HD',					'CIVIC_AWARD_TWO_INFLUENCE_TOKENS'),
+	('CIVIC_ETHICS_HD',								'CIVIC_AWARD_TWO_INFLUENCE_TOKENS'),
+	-- 总督头衔
+	('CIVIC_SOCIAL_SCIENCE_HD',						'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS');
 
-------------------------------------------------------------------------------------------------------------
 update CivicModifiers set CivicType = 'CIVIC_CIVIL_SERVICE' where
 	CivicType = 'CIVIC_MEDIEVAL_FAIRES' and ModifierId = 'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS';
-update CivicModifiers set CivicType = 'CIVIC_MILITARY_TRAINING' where
-	CivicType = 'CIVIC_DEFENSIVE_TACTICS' and ModifierId = 'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS';
-update CivicModifiers set CivicType = 'CIVIC_DEFENSIVE_TACTICS' where
-	CivicType = 'CIVIC_MILITARY_TRAINING' and ModifierId = 'CIVIC_AWARD_ONE_INFLUENCE_TOKEN';
+update CivicModifiers set CivicType = 'CIVIC_COLONIALISM' where
+	CivicType = 'CIVIC_NATIONALISM' and ModifierId = 'CIVIC_GRANT_PLAYER_GOVERNOR_POINTS';
+update CivicModifiers set CivicType = 'CIVIC_NATIONALISM' where
+	CivicType = 'CIVIC_COLONIALISM' and ModifierId = 'CIVIC_AWARD_TWO_INFLUENCE_TOKENS';
 
 update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOOST_ALL_TOURISM' and Name = 'Amount';
 
@@ -59,6 +64,8 @@ insert or replace into ModifierArguments
     (ModifierId,                                    Name,      Value)
 values
     ('CITY_CENTER_ADJACENT_TO_FOREST',              'Amount',  1);
+
+------------------------------------------------------------------------------------------------------------
 
 insert or replace into Civics_XP2 (CivicType, RandomPrereqs, HiddenUntilPrereqComplete)
 select CivicType, 0, 0 from Civics where EraType = 'ERA_FUTURE';
@@ -182,7 +189,7 @@ values
 
 -- 原有市政UI树位置调整
 	-- 远古 --
-
+update Civics set UITreeRow = -1 where CivicType = 'CIVIC_STATE_WORKFORCE';
 	-- 古典 --
 update Civics set UITreeRow = -2 where CivicType = 'CIVIC_MILITARY_TRAINING';
 update Civics set UITreeRow = -1 where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
