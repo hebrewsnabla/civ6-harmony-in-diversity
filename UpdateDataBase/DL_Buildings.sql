@@ -157,8 +157,6 @@ update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where Bui
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where BuildingType = 'BUILDING_GRAND_BAZAAR';
 	-- 【食品市场】改为【内燃机】科技解锁
 update Buildings set PrereqTech = 'TECH_COMBUSTION', PrereqCivic = NULL where BuildingType = 'BUILDING_FOOD_MARKET';--xhh
-	-- 【动物园】改为【演化论】市政解锁
-update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where BuildingType = 'BUILDING_ZOO';--xhh
 
 -- Regional Range
 update Buildings set RegionalRange = 3

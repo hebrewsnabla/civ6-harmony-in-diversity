@@ -25,7 +25,3 @@ delete from Civics where CivicType = 'CIVIC_CIVIL_ENGINEERING';
 
 -- 【石油】改为【生物】科技解锁
 update Resources set PrereqTech = 'TECH_BIOLOGY_HD' where ResourceType = 'RESOURCE_OIL';--xhh
-
---update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCANTILISM';
---update EnglishText set Text = "Scout units gain ability: ignore zone of control." where Tag = "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION";
---update LocalizedText set Text = "侦察单位获得能力：忽略控制区。" where Tag = "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION" and Language = "zh_Hans_CN";
