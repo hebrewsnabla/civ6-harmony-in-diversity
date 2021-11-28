@@ -36,14 +36,14 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GRE
 
 -- 设定市政的鼓舞
 insert or replace into Boosts
-    (BoostID,   CivicType,                                  Boost,  TriggerDescription,                                     TriggerLongDescription,                                             Unit1Type,      BoostClass,                                         Unit2Type,      BuildingType,       ImprovementType,        BoostingTechType,           ResourceType,   NumItems,   DistrictType,           RequiresResource)
+    (BoostID,   CivicType,                                  Boost,  TriggerDescription,                                     TriggerLongDescription,                                             Unit1Type,      BoostClass,                                         Unit2Type,      BuildingType,                              ImprovementType,        BoostingTechType,           ResourceType,   NumItems,   DistrictType,           RequiresResource)
 values
-    (201,       'CIVIC_LITERARY_TRADITION_HD',              40,     'LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD',              'LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD',                 Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,               Null,                   'TECH_PAPER_MAKING_HD',     Null,           0,          Null,                   0),
-    (202,       'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',     40,     'LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD',     'LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD',        Null,           'BOOST_TRIGGER_HAVE_X_DISTRICTS',                   Null,           Null,               Null,                   Null,                       Null,           2,          'DISTRICT_CAMPUS',      0),
-    --(203,     'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           Null,                                               Null,           Null,               Null,                   Null,                       Null,           0,          Null,                   0),
-    --(204,     'CIVIC_HISTORICAL_PHILOSOPHY_HD',           40,     'LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD',           'LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD',              Null,           Null,                                               Null,           Null,               Null,                   Null,                       Null,           0,          Null,                   0),
-    (205,       'CIVIC_ETHICS_HD',                          40,     'LOC_BOOST_TRIGGER_ETHICS_HD',                          'LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD',                             Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,               Null,                   'TECH_PRINTING',            Null,           0,          Null,                   0),
-    (206,       'CIVIC_SOCIAL_SCIENCE_HD',                  40,     'LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD',                  'LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD',                     Null,           'BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS',  Null,           Null,               Null,                   Null,                       Null,           7,          Null,                   0);
+    (201,       'CIVIC_LITERARY_TRADITION_HD',              40,     'LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD',              'LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD',                 Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PAPER_MAKING_HD',     Null,           0,          Null,                   0),
+    (202,       'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',     40,     'LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD',     'LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD',        Null,           'BOOST_TRIGGER_HAVE_X_DISTRICTS',                   Null,           Null,                                      Null,                   Null,                       Null,           2,          'DISTRICT_CAMPUS',      0),
+    (203,       'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'DUMMY_BUILDING_EVOLUTION_THEORY_HD',      Null,                   Null,                       Null,           1,          Null,                   0),
+    --(204,     'CIVIC_HISTORICAL_PHILOSOPHY_HD',           40,     'LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD',           'LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD',              Null,           Null,                                               Null,           Null,                                      Null,                   Null,                       Null,           0,          Null,                   0),
+    (205,       'CIVIC_ETHICS_HD',                          40,     'LOC_BOOST_TRIGGER_ETHICS_HD',                          'LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD',                             Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PRINTING',            Null,           0,          Null,                   0),
+    (206,       'CIVIC_SOCIAL_SCIENCE_HD',                  40,     'LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD',                  'LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD',                     Null,           'BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS',  Null,           Null,                                      Null,                   Null,                       Null,           7,          Null,                   0);
 
 -- 设定科技的尤里卡
 insert or replace into Boosts
@@ -82,6 +82,47 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBS
 update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_SPY',
     NumItems = 2 where TechnologyType = 'TECH_RADIO';
 
+-- 【演化论】市政鼓舞
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('DUMMY_BUILDING_EVOLUTION_THEORY_HD',              'KIND_BUILDING');
+
+insert or replace into Buildings
+    (BuildingType,                                      Name,                                               Cost,   PrereqDistrict,               Description)
+values
+    ('DUMMY_BUILDING_EVOLUTION_THEORY_HD',              'LOC_DUMMY_BUILDING_EVOLUTION_THEORY_HD_NAME',      1,      'DISTRICT_CITY_CENTER',       'LOC_DUMMY_BUILDING_EVOLUTION_THEORY_HD_DESCRIPTION');
+
+-- insert or replace into AiFavoredItems
+--     (ListType,                                          Item,                                               Favored,            Value)
+-- values
+--     ('AI_LESS_CITY_POLICY_BUILDINGS',                   'DUMMY_BUILDING_EVOLUTION_THEORY_HD',               0,                  0);
+
+insert or replace into ImprovementModifiers
+    (ImprovementType,                                   ModifierId)
+values
+    ('IMPROVEMENT_CAMP',                                'HD_CAMP_NEW_CONTINENT_DUMMY_BUILDING_XHH');
+
+insert or replace into Modifier
+    (ModifierId,                                        ModifierType,                                               SubjectRequirementSetId)
+values
+    ('HD_CAMP_NEW_CONTINENT_DUMMY_BUILDING_XHH',        'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       'HD_CAMP_NEW_CONTINENT_RESOURCE_XHH');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,                   Value)
+values
+    ('HD_CAMP_NEW_CONTINENT_DUMMY_BUILDING_XHH',        'BuildingType',         'DUMMY_BUILDING_EVOLUTION_THEORY_HD');
+
+insert or replace into RequirementSets
+    (RequirementSetId,                                          RequirementSetType)
+values
+    ('HD_CAMP_NEW_CONTINENT_RESOURCE_XHH',                      'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                                          RequirementId)
+values
+    ('HD_CAMP_NEW_CONTINENT_RESOURCE_XHH',                      'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+    ('HD_CAMP_NEW_CONTINENT_RESOURCE_XHH',                      'REQUIRES_PLOT_IS_NOT_OWNER_CAPITAL_CONTINENT');
 
 
 update Boosts set Boost = 34 where Boost = 40;
