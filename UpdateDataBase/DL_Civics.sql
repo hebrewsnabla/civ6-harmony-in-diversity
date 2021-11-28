@@ -28,6 +28,24 @@ values
 	('CIVIC_ETHICS_HD',								'LOC_CIVIC_ETHICS_HD_NAME',								Null,												1050,	'ERA_RENAISSANCE',	2,			'ADVISOR_GENERIC'),
 	('CIVIC_SOCIAL_SCIENCE_HD',						'LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME',						Null,												1450,	'ERA_INDUSTRIAL',	0,			'ADVISOR_GENERIC');
 
+insert or replace into CivicQuotes
+    (CivicType,            						Quote,                                  				QuoteAudio)
+values
+    ('CIVIC_DEFENSIVE_TACTICS',    				'LOC_CIVIC_SUPPLY_HD_QUOTE_1',     						'Play_SupplyHD_Quote_1'),
+    ('CIVIC_DEFENSIVE_TACTICS',    				'LOC_CIVIC_SUPPLY_HD_QUOTE_2',     						'Play_SupplyHD_Quote_2'),
+    ('CIVIC_LITERARY_TRADITION_HD',    			'LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_1',     			'Play_LiteraryTraditionHD_Quote_1'),
+    ('CIVIC_LITERARY_TRADITION_HD',    			'LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_2',     			'Play_LiteraryTraditionHD_Quote_2'),
+    ('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',	'LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_1',   	'Play_ImperialExaminationSystemHD_Quote_1'),
+    ('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',    'LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_2',   	'Play_ImperialExaminationSystemHD_Quote_2'),
+    ('CIVIC_EVOLUTION_THEORY_HD',    			'LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_1',     			'Play_EvolutionTheoryHD_Quote_1'),
+    ('CIVIC_EVOLUTION_THEORY_HD',    			'LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_2',     			'Play_EvolutionTheoryHD_Quote_2'),
+    ('CIVIC_HISTORICAL_PHILOSOPHY_HD',			'LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_1',     		'Play_HistoricalPhilosophyHD_Quote_1'),
+    ('CIVIC_HISTORICAL_PHILOSOPHY_HD',    		'LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_2',     		'Play_HistoricalPhilosophyHD_Quote_2'),
+    ('CIVIC_ETHICS_HD',    						'LOC_CIVIC_ETHICS_HD_QUOTE_1',     						'Play_EthicsHD_Quote_1'),
+    ('CIVIC_ETHICS_HD',    						'LOC_CIVIC_ETHICS_HD_QUOTE_2',     						'Play_EthicsHD_Quote_2'),
+    ('CIVIC_SOCIAL_SCIENCE_HD',    				'LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1',     				'Play_SocialScienceHD_Quote_1'),
+    ('CIVIC_SOCIAL_SCIENCE_HD',    				'LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2',     				'Play_SocialScienceHD_Quote_2');
+
 -- 设定市政的总督头衔、使者等效果
 insert or replace into CivicModifiers
 	(CivicType,										ModifierId) 

@@ -466,9 +466,9 @@
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
       <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.bnk</File>
-      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.txt</File>
-      <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.xml</File>
+      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
+      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
+      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1794,8 +1794,8 @@
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
     <!-- Platforms -->
     <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_Tech_Quote_Localized.xml</File>
+    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
+    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
+    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
   </Files>
 </Mod>

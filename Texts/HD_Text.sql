@@ -62,8 +62,31 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
     -- Temp
-    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
-    ("zh_Hans_CN",  "LOC_TECH_PAPER_MARKING_HD_QUOTE_2",                                     "经验丰富的人读书用两只眼睛，一只眼睛看到纸面上的话，另一眼睛看到纸的背面。——约翰·沃尔夫冈·冯·歌德"),
+
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_1",                                         "此处记述了如何：一切处于悬止，一切平静，处于静默；一切静止，寂静，而天穹的领域是空洞的。——《波波武经》"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_2",                                         "太初元年，岁名“焉逢摄提格”，月名“毕聚”，日得甲子，夜半朔旦冬至。——司马迁《史记》"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_2",                                     "经验丰富的人读书用两只眼睛，一只眼睛看到纸面上的话，另一眼睛看到纸的背面。——约翰·沃尔夫冈·冯·歌德"),
+    ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_QUOTE_1",                                          "罗盘：舟师识地理，夜则观星，昼则观日，阴晦观指南针。——《萍洲可谈》"),
+    ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_QUOTE_2",                                          "外国用罗盘针航海，中国却用它看风水。——鲁迅"),
+    ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_QUOTE_1",                                          "这个世界最不可理解的就是它竟然是可以理解的。——阿尔伯特·爱因斯坦"),
+    ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_QUOTE_2",                                          "给我一个支点，我可以翘起整个地球——阿基米德"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_QUOTE_1",                                          "所有生命都来自生命——路易斯·巴斯德"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_QUOTE_2",                                          "女娲有体，孰制匠之？——屈原《天问》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SUPPLY_HD_QUOTE_1",                                          "一匹马！一匹马！我用王国换一匹马！——莎士比亚《理查三世》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SUPPLY_HD_QUOTE_2",                                          "自古道三军未动，粮草先行，兵精粮足，战无不胜。——《大唐秦王词话》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_1",                              "盖文章经国之大业，不朽之盛事。——曹丕《典论》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_2",                              "我认为倾向应当从断面和情节中自然而然地流露出来,而不应当特地把它指点出来。——弗雷德里克·恩格斯"),
+    ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_1",                     "春风得意马蹄疾，一日看尽长安花。——孟郊《登科后》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_2",                     "通过层层严格考试的人才能进入衙门任职，人们全然不可能设想一个比这更好的政府。——伏尔泰"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_1",                                "啊，多么神奇！这里有多少美妙的人物；人类多么美丽！奇妙的新世界啊，竟有这样美好的人！——威廉·莎士比亚《暴风雨》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_2",                                "我们不要变化。每一个变化都会危及安定。 ——阿道司·赫胥黎《美丽新世界》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_1",                           "服其善序事理，辨而不华，质而不俚，其文直，其事核，不虚美，不隐恶，故谓之实录。——班固《汉书》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_2",                           "历史给人的唯一教训，就是人们从未在历史中吸取过任何教训。——格奥尔格·黑格尔《历史哲学》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_1",                                          "亚当夏娃劳作之时，哪有什么绅士！——弗洛里安·盖耶"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_2",                                          "这种需要人们不停地工作的事业，成为他们生活中不可或缺的组成部分。事实上，这是唯一可能的动机。——马克斯·韦伯《新教伦理与资本主义精神》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                  "一门科学，只有当它成功地运用数学时，才能达到真正完善的地步。——卡尔·马克思"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                  "只有社会才能对人生的价值做出总的评价，而个人对此是无能为力的……——埃米尔·涂尔干《自杀论》"),
     -- UI texts 
     ("zh_Hans_CN",  "LOC_HD_MESSAGE",                                                        "和而不同"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
