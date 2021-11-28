@@ -1750,3 +1750,37 @@ insert or replace into RequirementSets
 values
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TEMPLE',       'REQUIREMENTSET_TEST_ALL'),
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_SHRINE',       'REQUIREMENTSET_TEST_ALL');
+
+--Pantheon HERMES
+insert or replace into Types
+	(Type,								Kind)
+values
+	('BELIEF_HD_HERMES',				'KIND_BELIEF');
+insert or replace into Beliefs
+	(BeliefType,						Name,										Description,											BeliefClassType)
+values
+	('BELIEF_HD_HERMES',				'LOC_BELIEF_HD_HERMES_NAME',				'LOC_BELIEF_HD_HERMES_DL_DESCRIPTION',					'BELIEF_CLASS_PANTHEON');
+insert or replace into BeliefModifiers
+	(BeliefType,							ModifierID)
+values
+	('BELIEF_HD_HERMES',					'BELIEF_HD_HERMES_TRADE_ROUTE'),
+	('BELIEF_HD_HERMES',					'BELIEF_HD_HERMES_ADD_TRADER');
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,										SubjectRequirementSetId)
+values
+	('BELIEF_HD_HERMES_TRADE_ROUTE',								'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
+	('BELIEF_HD_HERMES_TRADE_ROUTE_MODIFIER',						'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',		NULL);
+insert or replace into Modifiers
+	(ModifierId,									RunOnce,	Permanent,	ModifierType,										SubjectRequirementSetId)
+values
+	('BELIEF_HD_HERMES_ADD_TRADER',					0,			0,			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
+	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',		1,			1,			'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',			NULL);
+insert into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('BELIEF_HD_HERMES_TRADE_ROUTE',					'ModifierId',		'BELIEF_HD_HERMES_TRADE_ROUTE_MODIFIER'),
+	('BELIEF_HD_HERMES_ADD_TRADER',						'ModifierId',		'BELIEF_HD_HERMES_ADD_TRADER_MODIFIER'),
+	('BELIEF_HD_HERMES_TRADE_ROUTE_MODIFIER',			'Amount',			1),
+	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'UnitType',			'UNIT_TRADER'),
+	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'AllowUniqueOverride',		0),
+	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'Amount',			1);

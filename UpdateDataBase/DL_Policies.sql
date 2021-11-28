@@ -506,7 +506,9 @@ values
 	('POLICY_WALL_HOUSING',			'POLICY_CONSTRUCTION_CROPS'),
 	('POLICY_DRILL',				'POLICY_AFTER_ACTION_REPORTS');
 
-delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
+
+delete from PolicyModifiers where PolicyType = 'POLICY_CARAVANSARIES';
+-- delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
 values

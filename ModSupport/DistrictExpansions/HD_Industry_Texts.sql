@@ -5,7 +5,7 @@ insert or replace into EnglishText
 values
     ("LOC_BUILDING_JNR_MILL_RACE_NAME",                 "Adjacen to River"),
     ("LOC_BUILDING_JNR_TOOLING_SHOP_NAME",              "Tooling Shop"),
-    -- ("LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",       ""),
+    ("LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",       "Can be upgraded to {LOC_BUILDING_IZ_WATER_MILL_NAME} or {LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION} by projects."),
     ("LOC_BUILDING_IZ_WATER_MILL_NAME",                 "Hydraulic Artisans"),
     ("LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",          "Can only be built when the Industrial Zone is adjacent to River."),
     ("LOC_BUILDING_JNR_WIND_MILL_DESCRIPTION",          "+1 [ICON_Production] Production for Districts adjacent to sea or lakes."), -- improved tiles adjacent to sea or lakes.
@@ -41,7 +41,7 @@ values
     -- Resume
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_MILL_RACE_NAME",                          "相邻河流"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_NAME",                       "工具铺"),
-    -- ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                ""),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                "可通过项目升级为{LOC_BUILDING_IZ_WATER_MILL_NAME}或{LOC_BUILDING_JNR_WIND_MILL_NAME}。"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_NAME",                          "水力作坊"),
     ("zh_Hans_CN",  "LOC_BUILDING_IZ_WATER_MILL_DESCRIPTION",                   "只有工业区相邻河流时才能建造。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_WIND_MILL_NAME",                          "风车"),

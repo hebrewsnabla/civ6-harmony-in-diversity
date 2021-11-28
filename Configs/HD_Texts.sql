@@ -78,6 +78,7 @@ values
     ("zh_Hans_CN",  "LOC_GAMEMODE_TOWERDEFENSE_DESCRIPTION",                "[COLOR_Red]“和而不同”提示：此模式体验较差，非常不推荐开启，我们也不会针对该模式进行适配调整。[ENDCOLOR][NEWLINE][NEWLINE]在此模式中，活死人将从地上爬起，给活人带来混乱恐慌！利用全新的防御建筑来保护您的领土，并操纵丧尸阻扰对手。"),
     -- ("zh_Hans_CN",  "LOC_ADD_STEEL_N_THUNDER_UU_NAME",                   "添加WE对ST特色单位的支持"),
     -- ("zh_Hans_CN",  "LOC_ADD_STEEL_N_THUNDER_UU_DESC",                   "添加Warfare Expanded对SteelThunder特色单位的支持{LOC_WER_MOD_NOTE}"),
+    ("zh_Hans_CN",  "LOC_CSE_WALLS_DESC",                                   "[COLOR_Magenta]请订阅并启用“和而不同”城邦扩展独立MOD，我们在CIVITAS城邦扩展的基础上重新设计了新的农业和航海城邦：[ENDCOLOR][NEWLINE]启用时，城邦生成伊始便拥有城墙。"),
     -- Maps
     ("zh_Hans_CN",  "LOC_MAP_TINY_ISLANDS_NAME",                            "米粒岛屿"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_ISLANDS_DESCRIPTION",                     "很多如米粒般大小的岛屿。"),
