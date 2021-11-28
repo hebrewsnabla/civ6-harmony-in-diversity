@@ -25,4 +25,4 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                 "每个信奉该宗教的城市+6 [ICON_Faith] 信仰。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",             "若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+1 [ICON_housing] 住房，+2 [ICON_culture] 文化。市中心也获得相同加成。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                    "购买圣地区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。每个圣地区域内的建筑提供+8% [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",           "可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。每人口提供0.2 [ICON_Science] 科技值，若城市有神社则变为0.3，有寺庙则变为0.5。");
+    ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",           "可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。每人口提供0.2 [ICON_Science] 科技值，若城市有神社每人口额外提供0.3 [ICON_Science] 科技值，有寺庙则变为0.5每人口额外提供0.3 [ICON_Science] 科技值。");
