@@ -126,6 +126,10 @@ update Districts set Maintenance = 50 where DistrictType = 'DISTRICT_SPACEPORT';
 
 -- update Districts set Appeal = 2 where DistrictType = 'DISTRICT_PRESERVE';
 
+-- delete from District_RequiredFeatures where DistrictType = 'DISTRICT_DAM';
+-- delete from District_RequiredFeatures where DistrictType = 'DISTRICT_DAM';
+-- update Districts_XP2 set OnePerRiver = 0 where DistrictType = 'DISTRICT_DAM';
+
 -------------------------------------------------------------------------------
 -- Modifiers
 -------------------------------------------------------------------------------

@@ -24,10 +24,20 @@ values
     ('TECH_CIVIL_ENGINEERING_HD',   'LOC_TECH_CIVIL_ENGINEERING_HD_NAME',    'LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION',        930,    'ERA_INDUSTRIAL',   1,          'ADVISOR_GENERIC');
 
 insert or replace into TechnologyQuotes
-    (TechnologyType,            Quote,                                  QuoteAudio)
+    (TechnologyType,                Quote,                                      QuoteAudio)
 values
-    ('TECH_PAPER_MAKING_HD',    'LOC_TECH_PAPER_MAKING_HD_QUOTE_1',     'Play_PaperMakingHD_Quote_1'),
-    ('TECH_PAPER_MAKING_HD',    'LOC_TECH_PAPER_MAKING_HD_QUOTE_2',     'Play_PaperMakingHD_Quote_2');
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_QUOTE_1',             'Play_CalendarHD_Quote_1'),
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_QUOTE_2',             'Play_CalendarHD_Quote_2'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_QUOTE_1',         'Play_PaperMakingHD_Quote_1'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_QUOTE_2',         'Play_PaperMakingHD_Quote_2'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_QUOTE_1',              'Play_CompassHD_Quote_1'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_QUOTE_2',              'Play_CompassHD_Quote_2'),
+    ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_QUOTE_1',              'Play_PhysicsHD_Quote_1'),
+    ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_QUOTE_2',              'Play_PhysicsHD_Quote_2'),
+    ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_QUOTE_1',              'Play_BiologyHD_Quote_1'),
+    ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_QUOTE_2',              'Play_BiologyHD_Quote_2'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'LOC_CIVIC_CIVIL_SERVICE_QUOTE_1',          'PLAY_CIVIL_SERVICE_QUOTE_2'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'LOC_CIVIC_CIVIL_SERVICE_QUOTE_2',          'PLAY_CIVIL_SERVICE_QUOTE_1');
 
 --------------------------------------------------------------------------------
 

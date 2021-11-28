@@ -518,7 +518,9 @@ values
 	('POLICY_RETAINERS',			'POLICY_FREELANCERS'),
 	('POLICY_SISHU',				'POLICY_SOCIAL_STATISTICS');
 
-delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
+
+delete from PolicyModifiers where PolicyType = 'POLICY_CARAVANSARIES';
+-- delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
 values
