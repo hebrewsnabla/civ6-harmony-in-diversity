@@ -346,13 +346,17 @@ insert or replace into ModifierArguments(ModifierID, Name, Value)values
 -- 	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	250);
 ------------------------------------------------------------------------------------------------------------------
 -- Rome
+delete from TraitModifiers where TraitType = 'TRAJANS_COLUMN_TRAIT' and ModifierId = 'TRAIT_ADJUST_NON_CAPITAL_FREE_CHEAPEST_BUILDING';
 insert or replace into TraitModifiers (TraitType, ModifierId) values
+	('TRAJANS_COLUMN_TRAIT', 'TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER'),
 	('TRAJANS_COLUMN_TRAIT', 'TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION');
 insert or replace into Modifiers (ModifierId, ModifierType) values
-	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
+	('TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER', 			'GRANT_BUILDING_TO_ALL_CITIES_IGNORE'),
+	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
 insert or replace into ModifierArguments (ModifierId, Name, Value) values
-	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'DistrictType', 'DISTRICT_CITY_CENTER'),
-	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 'Amount', 50);
+	('TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER', 			'BuildingType', 'BUILDING_MONUMENT'),
+	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'DistrictType', 'DISTRICT_CITY_CENTER'),
+	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'Amount', 50);
 ---------------------------------------------------------------------------------------------------------------------------
 -- Ethiopia
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
