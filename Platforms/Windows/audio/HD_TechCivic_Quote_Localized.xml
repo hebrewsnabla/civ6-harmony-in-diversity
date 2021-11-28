@@ -43,6 +43,8 @@
 				<Event Id="2962325585" Name="Play_SocialScienceHD_Quote_2"/>
 				<Event Id="3888695130" Name="Play_SupplyHD_Quote_1"/>
 				<Event Id="3888695129" Name="Play_SupplyHD_Quote_2"/>
+				<Event Id="2780872395" Name="Stop_CalendarHD_Quote_1"/>
+				<Event Id="2780872392" Name="Stop_CalendarHD_Quote_2"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="31038191" Language="SFX">
