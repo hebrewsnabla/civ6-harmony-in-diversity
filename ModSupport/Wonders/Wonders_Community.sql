@@ -471,6 +471,9 @@ values
 	('CN_TOWER_ALL_CITY_HOUSING',	'Amount',	2),
 	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1);
 
+-- Yellow Crane Tower
+update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';
+
 --BUILDING_SUK_WAT_ARUN
 UPDATE Buildings SET  Cost = 1000, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE'
 WHERE BuildingType = 'BUILDING_SUK_WAT_ARUN' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_SUK_WAT_ARUN');

@@ -6,6 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "If a city has an Aqueduct, all farms adjacent to fresh water or an Aqueduct gain +1 [ICON_FOOD] Food.[NEWLINE]Extra +1 [ICON_Food] Food if a plantation is adjacent to fresh water or Aqueduct District (obsolete with Feudalism Civic)."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -82,7 +83,7 @@ values
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
     ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignore Zones of Control."),
-    ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Farm improvements receive +1 [ICON_Food] Food from every 2 adjacent Farm improvements."),
+    ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Farm improvements receive +1 [ICON_Food] Food from every 2 adjacent Farm improvements.[NEWLINE]Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Plantation improvements receive +1 [ICON_Food] Food."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold. Pasture improvements receive +1 [ICON_Food] Food."),
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State."),
@@ -90,8 +91,9 @@ values
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "Lumber Mills and Camps can be built on Rainforest."),
     ("LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                                           "+50% [ICON_Tourism] Tourism across your empire."),
     ("LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                                              "Plantation improvements receive +2 [ICON_Gold] Gold."),
-    ("LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                                "Grants the ability to construct an additional Spy. Allows forming two identical units into a Corps or Fleet. Units have 50% less [ICON_Strength] Combat Strength reduction from being injured. Allows one new Casus Belli that can be used to justify wars: Colonial War."),
+    ("LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                                "Grants the ability to construct an additional Spy. Allows forming two identical units into a Corps or Fleet. Allows one new Casus Belli that can be used to justify wars: Colonial War."),
     ("LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                               "Awards 3 [ICON_Envoy] Envoys. Allows the building of National Parks and the purchase of Naturalists with [ICON_Faith] Faith. Allows Builders to plant Woods (second-growth). Woods in your territory that have never been removed (old-growth) gain +1 Appeal. Receives +1 [ICON_Amenities] Amenity when city center is adjacent to woods. Receive [ICON_TOURISM] Tourism from Walls."),
+    ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 3 Workshops."),
@@ -113,8 +115,6 @@ values
     ("LOC_BOOST_TRIGGER_RECORDED_HISTORY",                                                  "Build 1 Library."),
     ("LOC_BOOST_TRIGGER_HUMANISM",                                                          "Build 2 Amphitheaters."),
     ("LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",                                                 "Frequent theatrical performances led to a new wave of thinking among the people."),
-    ("LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",                                                 "Kill a unit with a Spearman."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                                        "Spearman have excellent combat capabilities when fighting alone, so what if they are combined?"),
     -- ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "Have the Defensive Tactics civic."),
     ("LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",                                                 "Own 3 Line Infantries."),
     ("LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                                     "Own 2 Trebuchets."),
@@ -138,8 +138,14 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_DIVINE_RIGHT",                                             "The apostle extolled your virtues, and the whole nation thought us blessed by the God."),
     ("LOC_BOOST_TRIGGER_REFORMED_CHURCH",                                                   "Build 2 Temples"),
     ("LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                                          "How the church should waste so much money for religious activities! It is time to reform the corrupt church."),
-    ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                                  "Have the Wheel Technology."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                                         "Wheeled vehicles have become a kind of powerful tool of imperial logistics.");
+    ("LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",                                                 "Have the Wheel Technology."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                                        "Wheeled vehicles have become a kind of powerful tool of imperial logistics."),
+    --("LOC_BOOST_TRIGGER_RADIO",                                                             "Own 2 Submarines."),
+    --("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "Submarine crews often complain about the inefficiency of the contact of semaphore and light signals. It is time to develop a stable technology of long-distance communication."),
+    ("LOC_BOOST_TRIGGER_FLIGHT",                                                            "Own 2 Observation Balloons."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                                   "Our observation balloons have been destroyed by hostile biplanes. So why can't we find a way to take the high ground?"),
+    ("LOC_BOOST_TRIGGER_RADIO",                                                             "Own 2 Spies."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "Your spies often complain that telegraph contact is unstable. In order to promote more efficient imperial espionage, it is time for us to develop an advanced technology of long-distance communication.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -149,6 +155,7 @@ insert or replace into LocalizedText
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "拥有水渠的城市，所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE]拥有淡水或相邻水渠的种植园+1 [ICON_Food] 食物（封建后失效）。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),
@@ -219,7 +226,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                  "建造7个不同的专业化区域。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                         "复杂的城市构成了复杂的社会关系，而一些天才洞察了这一切。"),
     -- Civics
-    ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。牧场+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                      "允许在雨林上建造伐木场和营地。"),
@@ -227,7 +234,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                           "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                 "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。受到伤害后，单位的 [ICON_Strength] 战斗力减益降低50%。现在可用一个新的战争借口替战争辩护：殖民战争。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                 "可额外招募一名间谍。允许两个完全相同的单位组成一个兵团或舰队。现在可用一个新的战争借口替战争辩护：殖民战争。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。允许建造者植树造林（人造林）。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
@@ -235,6 +242,7 @@ values
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦察单位获得能力：忽略控制区。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                "核计划项目、核装置和核电站的生产力+50%。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造3座工作坊。"),
@@ -258,8 +266,6 @@ values
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RECORDED_HISTORY",   ""), -- 您的国民打算把更多卷轴放在您的学院图书馆里，他们开始记录帝国历史了。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HUMANISM",                                           "建造2个古罗马剧场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",                                  "频繁戏剧的演出引领了人民的新思潮。"), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",                                  "使用枪兵击杀1个单位。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                         "枪兵拥有出色的单兵作战能力，那如果将他们组合起来呢？"), -- 面对入侵威胁，您的国民已准备好了一种新型防御措施。
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",                                  "拥有3个线列步兵。"),
@@ -284,5 +290,11 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIVINE_RIGHT",                              "这位使徒极力颂扬您的德行，全国上下都认为我们受到了神的保佑。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REFORMED_CHURCH",                                    "建造2座寺庙。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                           "教会为了宗教活动竟如此劳民伤财！是时候改革腐败的教会了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                   "拥有轮子科技。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                          "有轮子的载具成为了帝国后勤工作的有力工具。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",                                  "拥有轮子科技。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                         "有轮子的载具成为了帝国后勤工作的有力工具。"),
+    --("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有2个潜艇。"),
+    --("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "潜艇的艇员们经常抱怨旗语和灯火的联络效率低下，我们是时候开发更稳定的通讯技术了。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FLIGHT",                                             "拥有2个观测气球。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                    "我们的观测气球在敌方双翼机的枪林弹雨之下毁坏殆尽，我们为什么就不能想办法占据战场制高点呢？"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有2个间谍。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "您的间谍经常抱怨电报联络不稳定，为了推动更高效的帝国谍报工作，我们是时候开发更先进的通讯技术了。");
