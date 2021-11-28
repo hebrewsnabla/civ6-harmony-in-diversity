@@ -2,8 +2,6 @@
 --         Boosts Adjustment       --
 -------------------------------------
 
-update Boosts set Boost = 34 where Boost = 40;
-
 update Boosts set NumItems = 2 where TechnologyType = 'TECH_BRONZE_WORKING';
 
 update Boosts set ImprovementType = 'IMPROVEMENT_PASTURE' where TechnologyType = 'TECH_THE_WHEEL';
@@ -28,6 +26,13 @@ update Boosts set Unit1Type = null, BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC
 
 update Boosts set NumItems = 2, BoostClass = 'BOOST_TRIGGER_HAVE_X_DISTRICTS', Unit1Type = NULL, DistrictType = 'DISTRICT_DAM',
     TriggerDescription = 'LOC_BOOST_TRIGGER_ELECTRICITY_HD', TriggerLongDescription = 'LOC_BOOST_TRIGGER_LONGDESC_ELECTRICITY_HD' where TechnologyType = 'TECH_ELECTRICITY';
+
+update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
+    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
+update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS',
+    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_CASTLES';
+update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
+    where TechnologyType = 'TECH_MILITARY_TACTICS';
 
 -- 设定市政的鼓舞
 insert or replace into Boosts
@@ -67,3 +72,16 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', NumItems = 2,
     -- 【后勤补给】市政鼓舞改为：拥有轮子科技
 update Boosts set BoostClass = 'BOOST_TRIGGER_RESEARCH_TECH', Unit1Type = Null, NumItems = 0,
     BoostingTechType = 'TECH_THE_WHEEL' where TechnologyType = 'CIVIC_DEFENSIVE_TACTICS';
+    -- 【飞行】科技尤里卡改为：训练2个观测气球
+update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBSERVATION_BALLOON',
+    NumItems = 2 where TechnologyType = 'LOC_BOOST_TRIGGER_LONGDESC_FLIGHT';
+    -- 【无线电】科技尤里卡改为：训练2个潜艇
+-- update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_SUBMARINE',
+--     NumItems = 2 where TechnologyType = 'TECH_RADIO';
+    -- 【无线电】科技尤里卡改为：训练2个间谍
+update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_SPY',
+    NumItems = 2 where TechnologyType = 'TECH_RADIO';
+
+
+
+update Boosts set Boost = 34 where Boost = 40;

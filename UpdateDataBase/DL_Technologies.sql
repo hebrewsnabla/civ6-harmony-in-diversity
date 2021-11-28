@@ -16,7 +16,7 @@ values
 insert or replace into Technologies
     (TechnologyType,                Name,                                    Description,                                        Cost,   EraType,            UITreeRow,  AdvisorType)
 values
-    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             Null,                                               80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             'LOC_TECH_CALENDAR_HD_DESCRIPTION',                 80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
     ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             280,    'ERA_CLASSICAL',    0,          'ADVISOR_TECHNOLOGY'),
     ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               390,    'ERA_MEDIEVAL',     -2,         'ADVISOR_CONQUEST'),
     ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',              Null,                                               730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
@@ -57,13 +57,6 @@ update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUI
 update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 
-
-update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
-    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
-update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS',
-    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_CASTLES';
-update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
-    where TechnologyType = 'TECH_MILITARY_TACTICS';
 update ModifierArguments set Value = 'TECH_METAL_CASTING' where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and Name = 'TechType';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
@@ -249,6 +242,7 @@ values
     ('TECH_RADIO',                  'TECH_ELECTRICITY'),
     ('TECH_REFINING',               'TECH_CHEMISTRY'),
     ('TECH_REFINING',               'TECH_ELECTRICITY'),
+    ('TECH_REFINING',               'TECH_BIOLOGY_HD'),
     -- ('TECH_REFINING',  'TECH_ECONOMICS'),
     ('TECH_BIOLOGY_HD',             'TECH_SANITATION'),
     ('TECH_COMBUSTION',             'TECH_BIOLOGY_HD'),

@@ -22,6 +22,8 @@ values
     ("LOC_POLICY_PURITAN_DESCRIPTION",                                                "+15% [ICON_GOLD] Gold and 15% [ICON_Production] Production in all cities with a Worship Building."),--xhh
     ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME",                                        "Scientific Expeditions"),--xhh
     ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "+15% [ICON_SCIENCE] Science in all foreign cities with a Commercial Hub district. +15% [ICON_CULTURE] Culture in all foreign cities with a Harbor district."),--xhh
+    ("LOC_POLICY_SISHU_NAME",                                                         "Sishu"),--xhh
+    ("LOC_POLICY_SISHU_DESCRIPTION",                                                  "+0.4 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.4 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 2 specialty districts."),--xhh
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),--xhh
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),--xhh
@@ -69,7 +71,7 @@ values
     ("LOC_POLICY_PUBLIC_WORKS_DESCRIPTION",                                           "+50% [ICON_Production] Production toward Builders, and newly trained Builders gain 2 extra build actions."),
     ("LOC_POLICY_LIMITANEI_DESCRIPTION",                                              "+5 Loyalty per turn for cities with a garrisoned unit."),
     ("LOC_POLICY_INSULAE_DESCRIPTION",                                                "+2 [ICON_Housing] Housing in all cities with at least 2 Specialty districts."),
-    ("LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION",                                         "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
+    --("LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION",                                         "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_POLICY_MEDINA_QUARTER_DESCRIPTION",                                         "+4 [ICON_Housing] Housing in all cities with at least 3 specialty districts."),
     ("LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION",                                      "Regardless of having Diplomatic Quarter or not, the first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys."),
     ("LOC_POLICY_PRAETORIUM_DESCRIPTION",                                             "[ICON_Governor] Governors provide +5 Loyalty per turn to their city."),
@@ -79,7 +81,7 @@ values
     ("LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION",                                     "Open Borders with all city-states. +3 Influence points per turn."),
     ("LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION",                                      "Open Borders with all city-states. +6 Influence points per turn."),
     ("LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION",                                      "Open Borders with all city-states. +9 Influence points per turn."),
-    ("LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "Units ignore [ICON_Strength] Combat Strength reduction from being injured.+5 [ICON_Strength] Combat Strength when attacking wounded units."),
+    ("LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "Units ignore [ICON_Strength] Combat Strength reduction from being injured."),
     ("LOC_POLICY_FREELANCERS_NAME",                                                   "Freelancers"),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME",                                       "Maritime Infrastructure"),
     ("LOC_POLICY_SEABORNE_SUPPLY_NAME",                                               "Seaborne Supply"),
@@ -101,7 +103,7 @@ values
     ("LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "Production and Construction Crops"),
     ("LOC_POLICY_DRILL_NAME",                                                         "Drill"),
     ("LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "Tribute Trade"),
-    ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold for cities with a garrisoned unit."),
+    ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold and +1 [ICON_Amenities] Amenity for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "+4 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION",                                   "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments."),
@@ -175,6 +177,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PURITAN_DESCRIPTION",                                                "拥有祭祀建筑的城市+15% [ICON_GOLD] 金币和15% [ICON_Production] 生产力。"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME",                                        "科学考察队"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "拥有商业中心的外大陆城市+15% [ICON_SCIENCE] 科技值，拥有港口的外大陆城市+15% [ICON_CULTURE] 文化值。"),--xhh
+    ("zh_Hans_CN",  "LOC_POLICY_SISHU_NAME",                                                         "私塾"),--xhh
+    ("zh_Hans_CN",  "LOC_POLICY_SISHU_DESCRIPTION",                                                  "所有拥有至少2个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.4点 [ICON_Science] 科技值和0.4点 [ICON_Culture] 文化值。"),--xhh
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),--xhh
@@ -222,7 +226,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PUBLIC_WORKS_DESCRIPTION",                                           "为生产建造者+50% [ICON_Production] 生产力，新训练的建造者获得两点额外劳动力。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIMITANEI_DESCRIPTION",                                              "拥有驻军单位的城市每回合的忠诚度+5。"),
     ("zh_Hans_CN",  "LOC_POLICY_INSULAE_DESCRIPTION",                                                "所有拥有至少2个专业化区域的城市+2 [ICON_Housing] 住房。"),
-    ("zh_Hans_CN",  "LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION",                                         "拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
+    --("zh_Hans_CN",  "LOC_POLICY_CIVIL_PRESTIGE_DESCRIPTION",                                         "拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_MEDINA_QUARTER_DESCRIPTION",                                         "所有拥有至少3个专业化区域的城市+4 [ICON_Housing] 住房。"),
     --("zh_Hans_CN",  "LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION",                                      "无论是否拥有外交区，您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。"),
     ("zh_Hans_CN",  "LOC_POLICY_PRAETORIUM_DESCRIPTION",                                             "[ICON_Governor] 总督为其所在城市每回合忠诚度+5。"),
@@ -232,7 +236,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_CHARISMATIC_LEADER_DESCRIPTION",                                     "开放所有城邦的边境，影响力点数每回合+3。"),
     ("zh_Hans_CN",  "LOC_POLICY_DIPLOMATIC_LEAGUE_DESCRIPTION",                                      "开放所有城邦的边境，影响力点数每回合+6。"),
     ("zh_Hans_CN",  "LOC_POLICY_GUNBOAT_DIPLOMACY_DESCRIPTION",                                      "开放所有城邦的边境，影响力点数每回合+9。"),
-    ("zh_Hans_CN",  "LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "单位无视受到伤害后的 [ICON_Strength] 战斗力减益。攻击受伤单位时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_NATIONAL_IDENTITY_DESCRIPTION",                                      "单位无视受到伤害后的 [ICON_Strength] 战斗力减益。"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_NAME",                                                   "自由佣兵"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME",                                       "海上设施"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_NAME",                                               "海上补给线"),
@@ -254,7 +258,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "生产建设兵团"),
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_NAME",                                                         "演练"),
     ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "朝贡贸易"),
-    ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币，+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "位于海边或湖边的城市+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "位于海边或湖边的城市+4 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION",                                   "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。"),
