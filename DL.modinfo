@@ -552,6 +552,26 @@
       <File>UI/Replacement/CitySupport.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
+    <ImportFiles id="CityStatesDiversity_BST_Import" criteria="Expansion2">
+      <Properties><LoadOrder>5000</LoadOrder></Properties>
+      <File>UI/Replacement/citystates.xml</File>
+      <File>UI/Replacement/citystates.lua</File>
+      <File>UI/Replacement/citystates_bst_xp2.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="CityStatesDiversity_BST_UI" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>5000</LoadOrder>
+        <LuaContext>CityStates</LuaContext>
+        <LuaReplace>UI/Replacement/citystates.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="CityStatesDiversity_BST_UI" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>5002</LoadOrder>
+        <LuaContext>CityStates</LuaContext>
+        <LuaReplace>UI/Replacement/citystates_bst_xp2.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -973,19 +993,6 @@
       <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     </AddGameplayScripts>
 
-    <ImportFiles id="ConciseUICityStates" criteria="Civitas_CityStates_Conflict_Expansion2">
-      <Properties><LoadOrder>250</LoadOrder></Properties>
-      <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
-      <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
-      <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
-      <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
-    </ImportFiles>
-    <UpdateText id="Cui_Text" criteria="Civitas_CityStates_Conflict_Expansion2">
-      <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
-      <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
-      <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
-    </UpdateText>
-
     <!-- Artdef -->
     <UpdateArt id="HD_Art" criteria="Expansion2">
       <Properties><LoadOrder>15999</LoadOrder></Properties>
@@ -1019,6 +1026,10 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="HD_Ingame_setup" criteria="Expansion2">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/HD_Ingame_setup.sql</File>
+    </UpdateDatabase>
     <!-- Double Great Person need to update in the first -->
     <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
       <Properties><LoadOrder>16008</LoadOrder></Properties>
@@ -1385,6 +1396,8 @@
     <File>Configs/HD_Configs.sql</File>
     <File>Configs/HD_Texts.sql</File>
     <File>Configs/Icons.xml</File>
+    <!--  -->
+    <File>Configs/HD_Ingame_setup.sql</File>
     <!-- Options -->
     <File>Configs/Options/CityStatesStartWithWalls.sql</File>
     <File>Configs/Options/PostponeWorldCongress.sql</File>
@@ -1466,6 +1479,9 @@
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     <!-- UI replacements and icons -->
     <File>UI/Replacement/MainMenu.xml</File>
+    <File>UI/Replacement/citystates.xml</File>
+    <File>UI/Replacement/citystates.lua</File>
+    <File>UI/Replacement/citystates_bst_xp2.lua</File>
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
@@ -1621,14 +1637,6 @@
     <File>ThirdParty/FasterStartingSettlers/FasterStartingSettlers.sql</File>
     <!-- ThirdParty Expanded Initial Vision -->
     <File>ThirdParty/ExpandedInitialVision/ExpandedInitialVision_Modified.lua</File>
-    <!-- ThirdParty Concise UI CityStates -->
-    <File>ThirdParty/ConciseUICityStates/cui_settings.lua</File>
-    <File>ThirdParty/ConciseUICityStates/cui_utils.lua</File>
-    <File>ThirdParty/ConciseUICityStates/citystates.lua</File>
-    <File>ThirdParty/ConciseUICityStates/citystates.xml</File>
-    <File>ThirdParty/ConciseUICityStates/localization/cui_config.sql</File>
-    <File>ThirdParty/ConciseUICityStates/localization/cui_en_us.sql</File>
-    <File>ThirdParty/ConciseUICityStates/localization/cui_zh_cn.sql</File>
     <!-- EpsTweak for Barbarians -->
     <File>ThirdParty/EpsBarbarians/Icons.xml</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_22.dds</File>
