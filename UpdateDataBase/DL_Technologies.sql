@@ -2,6 +2,45 @@
 --     Technologies Adjustment     --
 -------------------------------------
 
+-- New techs
+insert or replace into Types
+    (Type,                                Kind)
+values
+    ('TECH_CALENDAR_HD',                  'KIND_TECH'),
+    ('TECH_PAPER_MAKING_HD',              'KIND_TECH'),
+    ('TECH_COMPASS_HD',                   'KIND_TECH'),
+    ('TECH_PHYSICS_HD',                   'KIND_TECH'),
+    ('TECH_BIOLOGY_HD',                   'KIND_TECH'),
+    ('TECH_CIVIL_ENGINEERING_HD',         'KIND_TECH');
+
+insert or replace into Technologies
+    (TechnologyType,                Name,                                    Description,                                        Cost,   EraType,            UITreeRow,  AdvisorType)
+values
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             'LOC_TECH_CALENDAR_HD_DESCRIPTION',                 80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             280,    'ERA_CLASSICAL',    0,          'ADVISOR_TECHNOLOGY'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               390,    'ERA_MEDIEVAL',     -2,         'ADVISOR_CONQUEST'),
+    ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',              Null,                                               730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
+    ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',              Null,                                               1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'LOC_TECH_CIVIL_ENGINEERING_HD_NAME',    'LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION',        930,    'ERA_INDUSTRIAL',   1,          'ADVISOR_GENERIC');
+
+insert or replace into TechnologyQuotes
+    (TechnologyType,                Quote,                                      QuoteAudio)
+values
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_QUOTE_1',             'Play_CalendarHD_Quote_1'),
+    ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_QUOTE_2',             'Play_CalendarHD_Quote_2'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_QUOTE_1',         'Play_PaperMakingHD_Quote_1'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_QUOTE_2',         'Play_PaperMakingHD_Quote_2'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_QUOTE_1',              'Play_CompassHD_Quote_1'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_QUOTE_2',              'Play_CompassHD_Quote_2'),
+    ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_QUOTE_1',              'Play_PhysicsHD_Quote_1'),
+    ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_QUOTE_2',              'Play_PhysicsHD_Quote_2'),
+    ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_QUOTE_1',              'Play_BiologyHD_Quote_1'),
+    ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_QUOTE_2',              'Play_BiologyHD_Quote_2'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'LOC_CIVIC_CIVIL_SERVICE_QUOTE_1',          'PLAY_CIVIL_SERVICE_QUOTE_2'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'LOC_CIVIC_CIVIL_SERVICE_QUOTE_2',          'PLAY_CIVIL_SERVICE_QUOTE_1');
+
+--------------------------------------------------------------------------------
+
 update Technologies set EmbarkAll = 1 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
 -- update Technologies set EmbarkAll = 0 where TechnologyType = 'TECH_SHIPBUILDING';
 
@@ -28,13 +67,6 @@ update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUI
 update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 
-
-update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_MILITARY_TRAINING',
-    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_METAL_CASTING';
-update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS',
-    Unit1Type = NULL, NumItems = 0 where TechnologyType = 'TECH_CASTLES';
-update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GREAT_GENERAL', NumItems = 0
-    where TechnologyType = 'TECH_MILITARY_TACTICS';
 update ModifierArguments set Value = 'TECH_METAL_CASTING' where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and Name = 'TechType';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
@@ -60,8 +92,8 @@ update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SHIPBUILDING
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_MATHEMATICS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_CONSTRUCTION';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_ENGINEERING';
-update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_BUTTRESS';
-update Technologies set UITreeRow = 2, Cost = 850, EraType = 'ERA_RENAISSANCE' where TechnologyType = 'TECH_MILITARY_TACTICS';
+update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_BUTTRESS';
+update Technologies set UITreeRow = 2, Cost = 600, EraType = 'ERA_RENAISSANCE' where TechnologyType = 'TECH_MILITARY_TACTICS';
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_APPRENTICESHIP';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_MACHINERY'; -- , Cost = 550
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_EDUCATION';
@@ -71,14 +103,14 @@ update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_CASTLES'; -- 
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY'; -- Cost = 550, EraType = 'ERA_MEDIEVAL'
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_MASS_PRODUCTION';
 -- update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
-update Technologies set UITreeRow = 0, Cost = 950 where TechnologyType = 'TECH_BANKING';
+update Technologies set UITreeRow = 0, Cost = 730 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_PRINTING'; -- Cost = 950
 -- update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_PRINTING';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SQUARE_RIGGING';
-update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ASTRONOMY';
+update Technologies set UITreeRow = -2, cost = 600 where TechnologyType = 'TECH_ASTRONOMY';
 -- update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ASTRONOMY';
-update Technologies set UITreeRow = 2, Cost = 450, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_METAL_CASTING';
+update Technologies set UITreeRow = 2, Cost = 300, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_METAL_CASTING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_SIEGE_TACTICS';
 -- Industrial era
 update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_INDUSTRIALIZATION';
@@ -92,10 +124,10 @@ update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_RIFLING';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_FLIGHT';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_REPLACEABLE_PARTS';
 update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_STEEL';
-update Technologies set UITreeRow = -1, Cost = 1800 where TechnologyType = 'TECH_ELECTRICITY';
+update Technologies set UITreeRow = -1, Cost = 1250 where TechnologyType = 'TECH_ELECTRICITY';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_RADIO';
-update Technologies set UITreeRow = 0, Cost = 1800 where TechnologyType = 'TECH_CHEMISTRY';
-update Technologies set UITreeRow = 0, Cost = 1900 where TechnologyType = 'TECH_REFINING';
+update Technologies set UITreeRow = 0, Cost = 1250 where TechnologyType = 'TECH_CHEMISTRY';
+update Technologies set UITreeRow = 0, Cost = 1370 where TechnologyType = 'TECH_REFINING';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_COMBUSTION';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ADVANCED_FLIGHT';
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ROCKETRY';
@@ -127,123 +159,133 @@ delete from TechnologyPrereqs;
 insert or replace into TechnologyPrereqs
 	(Technology,					PrereqTech)
 values
-	    --  Ancient
-    ('TECH_IRRIGATION', 'TECH_POTTERY'),
-    ('TECH_ARCHERY',    'TECH_ANIMAL_HUSBANDRY'),
-    ('TECH_WRITING',    'TECH_POTTERY'),
-    ('TECH_MASONRY',    'TECH_MINING'),
-    ('TECH_BRONZE_WORKING', 'TECH_MINING'),
-    ('TECH_THE_WHEEL',  'TECH_MINING'),
-    --  Classical
+	--  Ancient  ----------------------------------------------------------
+    ('TECH_IRRIGATION',             'TECH_POTTERY'),
+    ('TECH_ARCHERY',                'TECH_ANIMAL_HUSBANDRY'),
+    ('TECH_WRITING',                'TECH_POTTERY'),
+    ('TECH_MASONRY',                'TECH_MINING'),
+    ('TECH_CALENDAR_HD',            'TECH_IRRIGATION'),
+    ('TECH_CALENDAR_HD',            'TECH_WRITING'),
+    ('TECH_BRONZE_WORKING',         'TECH_MINING'),
+    ('TECH_THE_WHEEL',              'TECH_MINING'),
+    --  Classical  --------------------------------------------------------
     ('TECH_CELESTIAL_NAVIGATION',   'TECH_SAILING'),
     ('TECH_CELESTIAL_NAVIGATION',   'TECH_ASTROLOGY'),
-    ('TECH_CURRENCY',   'TECH_WRITING'),
-    ('TECH_HORSEBACK_RIDING',   'TECH_ARCHERY'),
-    ('TECH_IRON_WORKING',   'TECH_BRONZE_WORKING'),
-    ('TECH_SHIPBUILDING',   'TECH_SAILING'),
-    ('TECH_MATHEMATICS',    'TECH_IRRIGATION'),
-    ('TECH_MATHEMATICS',    'TECH_CURRENCY'),
-    ('TECH_CONSTRUCTION',   'TECH_MASONRY'),
-    ('TECH_ENGINEERING',    'TECH_THE_WHEEL'),
-    ('TECH_ENGINEERING',    'TECH_IRON_WORKING'),
-    --  Medieval
-    ('TECH_METAL_CASTING',  'TECH_CONSTRUCTION'),
-    ('TECH_METAL_CASTING',  'TECH_IRON_WORKING'),
-    ('TECH_APPRENTICESHIP', 'TECH_CURRENCY'),
-    ('TECH_APPRENTICESHIP', 'TECH_ENGINEERING'),
-    ('TECH_MACHINERY',  'TECH_ENGINEERING'),
+    ('TECH_CURRENCY',               'TECH_WRITING'),
+    ('TECH_HORSEBACK_RIDING',       'TECH_ARCHERY'),
+    ('TECH_IRON_WORKING',           'TECH_BRONZE_WORKING'),
+    ('TECH_SHIPBUILDING',           'TECH_SAILING'),
+    ('TECH_MATHEMATICS',            'TECH_CALENDAR_HD'),
+    ('TECH_MATHEMATICS',            'TECH_CURRENCY'),
+    ('TECH_PAPER_MAKING_HD',        'TECH_CURRENCY'),
+    ('TECH_CONSTRUCTION',           'TECH_MASONRY'),
+    ('TECH_ENGINEERING',            'TECH_THE_WHEEL'),
+    ('TECH_ENGINEERING',            'TECH_IRON_WORKING'),
+    --  Medieval  ---------------------------------------------------------
+    ('TECH_METAL_CASTING',          'TECH_CONSTRUCTION'),
+    ('TECH_METAL_CASTING',          'TECH_IRON_WORKING'),
+    ('TECH_APPRENTICESHIP',         'TECH_PAPER_MAKING_HD'),
+    ('TECH_APPRENTICESHIP',         'TECH_ENGINEERING'),
+    ('TECH_MACHINERY',              'TECH_ENGINEERING'),
     -- ('TECH_MACHINERY',  'TECH_METAL_CASTING'),
-    ('TECH_BUTTRESS',   'TECH_CELESTIAL_NAVIGATION'),
-    ('TECH_BUTTRESS',   'TECH_MATHEMATICS'),
-    ('TECH_EDUCATION',  'TECH_MATHEMATICS'),
-    ('TECH_EDUCATION',  'TECH_APPRENTICESHIP'),
-    ('TECH_STIRRUPS',   'TECH_HORSEBACK_RIDING'),
+    ('TECH_COMPASS_HD',             'TECH_CELESTIAL_NAVIGATION'),
+    ('TECH_COMPASS_HD',             'TECH_MATHEMATICS'),
+    ('TECH_COMPASS_HD',             'TECH_SHIPBUILDING'),
+    ('TECH_EDUCATION',              'TECH_MATHEMATICS'),
+    ('TECH_EDUCATION',              'TECH_APPRENTICESHIP'),
+    ('TECH_STIRRUPS',               'TECH_HORSEBACK_RIDING'),
+    ('TECH_BUTTRESS',               'TECH_HORSEBACK_RIDING'),
+    ('TECH_BUTTRESS',               'TECH_CONSTRUCTION'),
     -- ('TECH_MILITARY_ENGINEERING',   'TECH_CASTLES'),
+    ('TECH_CASTLES',                'TECH_BUTTRESS'),
+    ('TECH_MILITARY_ENGINEERING',   'TECH_BUTTRESS'),
     ('TECH_MILITARY_ENGINEERING',   'TECH_METAL_CASTING'),
-    ('TECH_CASTLES',    'TECH_CONSTRUCTION'),
-    ('TECH_CASTLES',    'TECH_HORSEBACK_RIDING'),
-    --  Renaissance
-    ('TECH_CARTOGRAPHY',    'TECH_SHIPBUILDING'),
-    ('TECH_CARTOGRAPHY',    'TECH_BUTTRESS'),
-    -- ('TECH_MASS_PRODUCTION',    'TECH_BUTTRESS'),
-    ('TECH_MASS_PRODUCTION',    'TECH_EDUCATION'),
-    ('TECH_PRINTING',    'TECH_MACHINERY'),
-    ('TECH_PRINTING',   'TECH_METAL_CASTING'),
-    ('TECH_GUNPOWDER',  'TECH_CASTLES'),
-    ('TECH_GUNPOWDER',  'TECH_MILITARY_ENGINEERING'),
-    ('TECH_BANKING',    'TECH_MASS_PRODUCTION'), --TECH_EDUCATION
-    ('TECH_BANKING',    'TECH_APPRENTICESHIP'),
-    ('TECH_BANKING',    'TECH_PRINTING'),
-    ('TECH_SQUARE_RIGGING', 'TECH_CARTOGRAPHY'),
-    ('TECH_ASTRONOMY',  'TECH_EDUCATION'),
-    ('TECH_ASTRONOMY',  'TECH_BUTTRESS'),
+    --  Renaissance  ------------------------------------------------------
+    ('TECH_CARTOGRAPHY',            'TECH_SHIPBUILDING'),
+    ('TECH_CARTOGRAPHY',            'TECH_COMPASS_HD'),
+    -- ('TECH_MASS_PRODUCTION',    'TECH_COMPASS_HD'),
+    ('TECH_MASS_PRODUCTION',        'TECH_EDUCATION'),
+    ('TECH_PRINTING',               'TECH_MACHINERY'),
+    ('TECH_PRINTING',               'TECH_METAL_CASTING'),
+    ('TECH_GUNPOWDER',              'TECH_CASTLES'),
+    ('TECH_GUNPOWDER',              'TECH_MILITARY_ENGINEERING'),
+    ('TECH_BANKING',                'TECH_MASS_PRODUCTION'), --TECH_EDUCATION
+    ('TECH_BANKING',                'TECH_APPRENTICESHIP'),
+    ('TECH_BANKING',                'TECH_PRINTING'),
+    ('TECH_SQUARE_RIGGING',         'TECH_CARTOGRAPHY'),
+    ('TECH_ASTRONOMY',              'TECH_EDUCATION'),
+    ('TECH_ASTRONOMY',              'TECH_COMPASS_HD'),
+    ('TECH_PHYSICS_HD',             'TECH_ASTRONOMY'),
     -- ('TECH_MILITARY_TACTICS',   'TECH_METAL_CASTING'),
-    ('TECH_MILITARY_TACTICS',   'TECH_MILITARY_ENGINEERING'),
-    ('TECH_SIEGE_TACTICS',  'TECH_GUNPOWDER'),
-    --  Industrial
-    ('TECH_INDUSTRIALIZATION',  'TECH_BANKING'),
-    ('TECH_SCIENTIFIC_THEORY',  'TECH_BANKING'),
-    ('TECH_SCIENTIFIC_THEORY',  'TECH_ASTRONOMY'),
-    ('TECH_SCIENTIFIC_THEORY',  'TECH_MASS_PRODUCTION'), --TECH_ASTRONOMY
-    ('TECH_BALLISTICS', 'TECH_STIRRUPS'),
-    ('TECH_BALLISTICS', 'TECH_GUNPOWDER'),
-    ('TECH_MILITARY_SCIENCE',   'TECH_MILITARY_TACTICS'),
-    ('TECH_MILITARY_SCIENCE',   'TECH_SIEGE_TACTICS'),
-    ('TECH_STEAM_POWER',    'TECH_SQUARE_RIGGING'),
-    ('TECH_STEAM_POWER',    'TECH_ASTRONOMY'), --TECH_MASS_PRODUCTION
-    ('TECH_STEAM_POWER',    'TECH_SCIENTIFIC_THEORY'),
-    ('TECH_SANITATION', 'TECH_PRINTING'),
-    ('TECH_SANITATION', 'TECH_INDUSTRIALIZATION'),
-    ('TECH_ECONOMICS',  'TECH_INDUSTRIALIZATION'),
-    ('TECH_RIFLING',    'TECH_SIEGE_TACTICS'),
-    ('TECH_RIFLING',    'TECH_BALLISTICS'),
-    --  Modern
-    ('TECH_FLIGHT', 'TECH_STEAM_POWER'),
-    ('TECH_REPLACEABLE_PARTS',  'TECH_RIFLING'),
-    ('TECH_STEEL',  'TECH_RIFLING'),
-    ('TECH_STEEL',  'TECH_MILITARY_SCIENCE'),
-    ('TECH_CHEMISTRY',   'TECH_SANITATION'),
-    ('TECH_CHEMISTRY',   'TECH_ECONOMICS'),
-    ('TECH_CHEMISTRY',   'TECH_SCIENTIFIC_THEORY'),
+    ('TECH_MILITARY_TACTICS',       'TECH_MILITARY_ENGINEERING'),
+    ('TECH_SIEGE_TACTICS',          'TECH_GUNPOWDER'),
+    --  Industrial  -------------------------------------------------------
+    ('TECH_INDUSTRIALIZATION',      'TECH_BANKING'),
+    ('TECH_SCIENTIFIC_THEORY',      'TECH_BANKING'),
+    ('TECH_SCIENTIFIC_THEORY',      'TECH_PHYSICS_HD'),
+    ('TECH_SCIENTIFIC_THEORY',      'TECH_MASS_PRODUCTION'), --TECH_PHYSICS_HD
+    ('TECH_BALLISTICS',             'TECH_STIRRUPS'),
+    ('TECH_BALLISTICS',             'TECH_GUNPOWDER'),
+    ('TECH_MILITARY_SCIENCE',       'TECH_MILITARY_TACTICS'),
+    ('TECH_MILITARY_SCIENCE',       'TECH_SIEGE_TACTICS'),
+    ('TECH_STEAM_POWER',            'TECH_SQUARE_RIGGING'),
+    ('TECH_STEAM_POWER',            'TECH_PHYSICS_HD'), --TECH_MASS_PRODUCTION
+    ('TECH_STEAM_POWER',            'TECH_SCIENTIFIC_THEORY'),
+    ('TECH_SANITATION',             'TECH_CIVIL_ENGINEERING_HD'),
+    ('TECH_SANITATION',             'TECH_INDUSTRIALIZATION'),
+    ('TECH_ECONOMICS',              'TECH_INDUSTRIALIZATION'),
+    ('TECH_RIFLING',                'TECH_SIEGE_TACTICS'),
+    ('TECH_RIFLING',                'TECH_BALLISTICS'),
+    ('TECH_CIVIL_ENGINEERING_HD',   'TECH_PRINTING'),
+    --  Modern  -----------------------------------------------------------
+    ('TECH_FLIGHT',                 'TECH_STEAM_POWER'),
+    ('TECH_REPLACEABLE_PARTS',      'TECH_RIFLING'),
+    ('TECH_STEEL',                  'TECH_RIFLING'),
+    ('TECH_STEEL',                  'TECH_MILITARY_SCIENCE'),
+    ('TECH_CHEMISTRY',              'TECH_SANITATION'),
+    ('TECH_CHEMISTRY',              'TECH_ECONOMICS'),
+    ('TECH_CHEMISTRY',              'TECH_SCIENTIFIC_THEORY'),
     -- ('TECH_ELECTRICITY',    'TECH_INDUSTRIALIZATION'),
-    ('TECH_ELECTRICITY',    'TECH_SCIENTIFIC_THEORY'),
-    ('TECH_ELECTRICITY',    'TECH_STEAM_POWER'),
-    ('TECH_RADIO',  'TECH_FLIGHT'),
-    ('TECH_RADIO',  'TECH_ELECTRICITY'),
-    ('TECH_REFINING',  'TECH_CHEMISTRY'),
-    ('TECH_REFINING',  'TECH_ELECTRICITY'),
+    ('TECH_ELECTRICITY',            'TECH_SCIENTIFIC_THEORY'),
+    ('TECH_ELECTRICITY',            'TECH_STEAM_POWER'),
+    ('TECH_RADIO',                  'TECH_FLIGHT'),
+    ('TECH_RADIO',                  'TECH_ELECTRICITY'),
+    ('TECH_REFINING',               'TECH_CHEMISTRY'),
+    ('TECH_REFINING',               'TECH_ELECTRICITY'),
+    ('TECH_REFINING',               'TECH_BIOLOGY_HD'),
     -- ('TECH_REFINING',  'TECH_ECONOMICS'),
-    ('TECH_COMBUSTION', 'TECH_SANITATION'),
-    ('TECH_COMBUSTION', 'TECH_CHEMISTRY'),
-    ('TECH_COMBUSTION', 'TECH_STEEL'),
-    --  Atomic
-    ('TECH_ADVANCED_FLIGHT',    'TECH_RADIO'),
-    ('TECH_ROCKETRY',   'TECH_RADIO'),
-    ('TECH_ROCKETRY',   'TECH_REFINING'),
-    ('TECH_ROCKETRY',   'TECH_ELECTRICITY'),
+    ('TECH_BIOLOGY_HD',             'TECH_SANITATION'),
+    ('TECH_COMBUSTION',             'TECH_BIOLOGY_HD'),
+    ('TECH_COMBUSTION',             'TECH_CHEMISTRY'),
+    ('TECH_COMBUSTION',             'TECH_STEEL'),
+    --  Atomic  -----------------------------------------------------------
+    ('TECH_ADVANCED_FLIGHT',        'TECH_RADIO'),
+    ('TECH_ROCKETRY',               'TECH_RADIO'),
+    ('TECH_ROCKETRY',               'TECH_REFINING'),
+    ('TECH_ROCKETRY',               'TECH_ELECTRICITY'),
     ('TECH_ADVANCED_BALLISTICS',    'TECH_COMBUSTION'),
-    ('TECH_COMBINED_ARMS',  'TECH_STEEL'),
-    ('TECH_PLASTICS',   'TECH_REPLACEABLE_PARTS'),
-    ('TECH_COMPUTERS',  'TECH_RADIO'),
-    ('TECH_NUCLEAR_FISSION',    'TECH_ADVANCED_BALLISTICS'),
-    ('TECH_NUCLEAR_FISSION',    'TECH_COMBINED_ARMS'),
+    ('TECH_COMBINED_ARMS',          'TECH_STEEL'),
+    ('TECH_PLASTICS',               'TECH_REPLACEABLE_PARTS'),
+    ('TECH_COMPUTERS',              'TECH_RADIO'),
+    ('TECH_NUCLEAR_FISSION',        'TECH_ADVANCED_BALLISTICS'),
+    ('TECH_NUCLEAR_FISSION',        'TECH_COMBINED_ARMS'),
     ('TECH_SYNTHETIC_MATERIALS',    'TECH_PLASTICS'),
-    --  Infor
-    ('TECH_TELECOMMUNICATIONS', 'TECH_COMPUTERS'),
-    ('TECH_SATELLITES', 'TECH_ADVANCED_FLIGHT'),
-    ('TECH_SATELLITES', 'TECH_ROCKETRY'),
-    ('TECH_GUIDANCE_SYSTEMS',   'TECH_ROCKETRY'),
-    ('TECH_GUIDANCE_SYSTEMS',   'TECH_ADVANCED_BALLISTICS'),
-    ('TECH_LASERS', 'TECH_NUCLEAR_FISSION'),
-    ('TECH_COMPOSITES', 'TECH_SYNTHETIC_MATERIALS'),
-    ('TECH_STEALTH_TECHNOLOGY', 'TECH_SYNTHETIC_MATERIALS'),
-    ('TECH_ROBOTICS',   'TECH_COMPUTERS'),
-    ('TECH_ROBOTICS',   'TECH_SATELLITES'),
-    ('TECH_ROBOTICS',   'TECH_GUIDANCE_SYSTEMS'),
-    ('TECH_ROBOTICS',   'TECH_LASERS'),
-    ('TECH_NANOTECHNOLOGY', 'TECH_COMPOSITES'),
-    ('TECH_NUCLEAR_FUSION', 'TECH_LASERS'),
-	-- Future Era
+    --  Infor  ------------------------------------------------------------
+    ('TECH_TELECOMMUNICATIONS',     'TECH_COMPUTERS'),
+    ('TECH_SATELLITES',             'TECH_ADVANCED_FLIGHT'),
+    ('TECH_SATELLITES',             'TECH_ROCKETRY'),
+    ('TECH_GUIDANCE_SYSTEMS',       'TECH_ROCKETRY'),
+    ('TECH_GUIDANCE_SYSTEMS',       'TECH_ADVANCED_BALLISTICS'),
+    ('TECH_LASERS',                 'TECH_NUCLEAR_FISSION'),
+    ('TECH_COMPOSITES',             'TECH_SYNTHETIC_MATERIALS'),
+    ('TECH_STEALTH_TECHNOLOGY',     'TECH_SYNTHETIC_MATERIALS'),
+    ('TECH_ROBOTICS',               'TECH_COMPUTERS'),
+    ('TECH_ROBOTICS',               'TECH_SATELLITES'),
+    ('TECH_ROBOTICS',               'TECH_GUIDANCE_SYSTEMS'),
+    ('TECH_ROBOTICS',               'TECH_LASERS'),
+    ('TECH_NANOTECHNOLOGY',         'TECH_COMPOSITES'),
+    ('TECH_NUCLEAR_FUSION',         'TECH_LASERS'),
+	-- Future Era  --------------------------------------------------------
 	('TECH_FUTURE_TECH',			'TECH_OFFWORLD_MISSION'),
 	('TECH_OFFWORLD_MISSION',		'TECH_ADVANCED_AI'),
 	('TECH_OFFWORLD_MISSION',		'TECH_ADVANCED_POWER_CELLS'),

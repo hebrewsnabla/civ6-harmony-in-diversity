@@ -1,5 +1,5 @@
-delete from IconDefinitions where
-	Name = 'ICON_CIVILIZATION_CHINA' and Atlas = 'ICON_ATLAS_KUBLAIKHAN_VIETNAM_CIVILIZATIONS';
+-- delete from IconDefinitions where
+-- 	Name = 'ICON_CIVILIZATION_CHINA' and Atlas = 'ICON_ATLAS_KUBLAIKHAN_VIETNAM_CIVILIZATIONS';
 
 
 -- Temple of Heaven
