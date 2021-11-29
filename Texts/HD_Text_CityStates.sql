@@ -187,3 +187,79 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_2", "原来的“拜科努尔”位于这里400公里之遥，属于卡拉干达州。1961年4月把发射中心命名为拜科努尔通常被认为是苏联掩人耳目之举。"),
     ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", ""),
     ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "");
+
+
+-- Influence Bonus
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                       Text)
+values
+    ("LOC_CSE_SCIENTIFIC_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_SCIENCE] Science in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_SCIENCE] Science in every Library."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_SCIENCE] Science in every University."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_SCIENCE] Science in every Research Lab."),
+    ("LOC_CSE_CULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",            "+1 [ICON_CULTURE] Culture in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+1 [ICON_CULTURE] Culture in every Amphitheater."),
+    ("LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",            "+2 [ICON_CULTURE] Culture in every Art Museum or Artifact Museum."),
+    ("LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",          "+3 [ICON_CULTURE] Culture in every Broadcast Center."),
+    ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",               "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold in every Market or Lighthouse."),
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",               "+4 [ICON_GOLD] Gold in every Bank or Shipyard."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",             "+6 [ICON_GOLD] Gold in every Stock Exchange or Seaport."),
+    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",          "+2 [ICON_GOLD] Gold in every Market."),
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",           "+4 [ICON_GOLD] Gold in every Bank."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",         "+6 [ICON_GOLD] Gold in every Stock Exchange."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",           "+1 [ICON_FAITH] Faith in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",          "+1 [ICON_FAITH] Faith in every Shrine."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",           "+2 [ICON_FAITH] Faith in every Temple."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",         "+3 [ICON_FAITH] Faith in every Worship building."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_PRODUCTION] Production towards units in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_PRODUCTION] Production towards units in every city with a Barracks or Stable."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_PRODUCTION] Production towards units in every city with an Armory."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_PRODUCTION] Production towards units in every city with a Military Academy."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_PRODUCTION] Production towards districts and buildings in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_PRODUCTION] Production towards districts and buildings in every city with a Workshop."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_PRODUCTION] Production towards districts and buildings in every city with a Factory."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings in every city with a Power Plant.");
+    -- ("LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",        ""),
+    -- ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       ""),
+    -- ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        ""),
+    -- ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      ""),
+    -- ("LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",            ""),
+    -- ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           ""),
+    -- ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            ""),
+    -- ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_SMALL_INFLUENCE_BONUS",           "[ICON_Capital] 首都+1 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",          "每个图书馆+1 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",           "每所大学+2 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",         "每个研究实验室+3 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",             "[ICON_Capital] 首都+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每个古罗马剧场+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",             "每家艺术博物馆或考古博物馆+2 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",           "每个广播中心+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",                "[ICON_Capital] 首都+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",               "每个市场或灯塔+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",                "每家银行或每座码头+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",              "每家证券交易所或每个造船厂+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",           "每个市场+2 [ICON_Gold] 市场。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",            "每家银行+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",          "每家证券交易所+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",            "[ICON_Capital] 首都+1 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",           "每个神社+1 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",            "每座寺庙+2 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",          "每个祭祀建筑+3 [ICON_Faith] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_SMALL_INFLUENCE_BONUS",         "训练单位时，[ICON_Capital] 首都+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",        "训练单位时，每座有兵营或马厩的城市+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",         "训练单位时，每座有兵工厂的城市+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",       "训练单位时，每座有军事学院的城市+3 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",           "建造区域与建筑时，[ICON_Capital] 首都+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",          "建造区域与建筑时，每座有工作坊的城市+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",           "建造区域与建筑时，每座有工厂的城市+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",         "建造区域与建筑时，每座有发电厂的城市+3 [ICON_Production] 生产力。");
