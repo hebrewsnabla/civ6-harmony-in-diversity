@@ -24,13 +24,16 @@ values
     ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "+15% [ICON_SCIENCE] Science in all foreign cities with a Commercial Hub district. +15% [ICON_CULTURE] Culture in all foreign cities with a Harbor district."),--xhh
     ("LOC_POLICY_SISHU_NAME",                                                         "Sishu"),--xhh
     ("LOC_POLICY_SISHU_DESCRIPTION",                                                  "+0.4 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.4 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 2 specialty districts."),--xhh
+    ("LOC_POLICY_COMPILE_NAME",                                                       "Compiling Books"),
+    ("LOC_POLICY_COMPILE_DESCRIPTION",                                                "+4 [ICON_GreatScientist] Great Scientist points per turn. +2 [ICON_GreatScientist] Great Scientist points per turn for every Library."),
+    ("LOC_POLICY_SUPPLY_LINES_NAME",                                                  "Supply Lines"),
+    ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+2 [ICON_Movement] movement if staring turn in friendly territory."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),--xhh
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),--xhh
     ("LOC_POLICY_FIVE_YEAR_PLAN_NAME",                                                "The Ivy League"),--xhh
     ("LOC_POLICY_COLLECTIVIZATION_NAME",                                              "Highway"),--xhh
     ("LOC_POLICY_BASTIONS_NAME",                                                      "Fortifications"),--xhh
-    ("LOC_POLICY_LOGISTICS_NAME",                                                     "Supply Lines"),--xhh
     ("LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "Non-Aligned Movement"),--xhh
     ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Collect Ballads"),--xhh
     -- Golden age
@@ -147,11 +150,13 @@ values
     ("LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "Each Entertainment_Complex +6 [ICON_GOLD] Gold and each Arena +10 [ICON_GOLD] Gold."),
     ("LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "If the city [ICON_CITIZEN] population is 8 or higher, Arenas gain +2 [ICON_Amenities] Amenities (4 tile regional effects)."),
     ("LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "All units gain +100% combat experience."),
-    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+1 [ICON_Food] Food, +15% growth rate and +3 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
+    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+5 [ICON_Food] Food, +10% [ICON_FOOD] Food and +5 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
     ("LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_SCIENCE] Science, +1 [ICON_CULTURE] Culture, +1 [ICON_Faith] Faith and +2 [ICON_Gold] Gold in all cities."),
     ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls."),
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
-    ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "+2 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +2 [ICON_GOLD] Gold.");
+    ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "+2 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +2 [ICON_GOLD] Gold."),
+    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. Gain [ICON_Science] Science equal to 75% of the unit's cost when a non civilian unit is created."),
+    ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if staring turn in friendly territory.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -179,13 +184,16 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "拥有商业中心的外大陆城市+15% [ICON_SCIENCE] 科技值，拥有港口的外大陆城市+15% [ICON_CULTURE] 文化值。"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_SISHU_NAME",                                                         "私塾"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_SISHU_DESCRIPTION",                                                  "所有拥有至少2个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.4点 [ICON_Science] 科技值和0.4点 [ICON_Culture] 文化值。"),--xhh
+    ("zh_Hans_CN",  "LOC_POLICY_COMPILE_NAME",                                                       "编撰典籍"),
+    ("zh_Hans_CN",  "LOC_POLICY_COMPILE_DESCRIPTION",                                                "每回合+4 [ICON_GreatScientist] 大科学家点数。每有一座图书馆，每回合的 [ICON_GreatScientist] 大科学家点数便+2。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_NAME",                                                  "军需补给线"),
+    ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "在友好领土开启回合+2 [ICON_Movement] 移动力。"),
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_NAME",                                                "常春藤联盟"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVIZATION_NAME",                                              "高速公路"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_NAME",                                                      "工事"),--xhh
-    ("zh_Hans_CN",  "LOC_POLICY_LOGISTICS_NAME",                                                     "交通线"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "不结盟运动"),--xhh
     ("zh_Hans_CN",  "LOC_POLICY_LITERARY_TRADITION_NAME",                                            "采风"),--xhh
     -- 着力点
@@ -194,6 +202,10 @@ values
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "“滚滚蒸汽”黄金时代：[NEWLINE]建造后工业时代的奇观时+10% [ICON_Production] 生产力。学院区域的 [ICON_SCIENCE] 科技值相邻加成也可提供 [ICON_PRODUCTION] 生产力。工业区域的 [ICON_PRODUCTION] 生产力相邻加成也可提供 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_MILITARY_BONUS_GOLDEN_AGE",                                 "“全民皆兵”黄金时代：[NEWLINE]解锁特殊战争借口，谴责目标后可立即宣战，[ICON_STAT_GRIEVANCE] 不满-75%。生产军事单位时+30% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_TOURISM_BONUS_GOLDEN_AGE",                                  "“愿你在此”黄金时代：[NEWLINE]世界奇观产出的 [ICON_Tourism] 旅游业绩+100%。国家公园产出的 [ICON_Tourism] 旅游业绩+100%。"),
+    --("zh_Hans_CN",  "LOC_MOMENT_GOVERNMENT",                                                         "开明专制"),
+    --("zh_Hans_CN",  "LOC_MOMENT_GOVERNMENT_BONUS_GOLDEN_AGE",                                        "“开明专制”黄金时代：[NEWLINE]+1 通配符政策槽位。+5% [ICON_CULTURE] 文化值。"),
+    --("zh_Hans_CN",  "LOC_MOMENT_GOVERNMENT_BONUS_NORMAL_AGE",                                        "“开明专制”黄金时代：[NEWLINE]每次获得时代分时额外获得1点时代分。"),
+    --("zh_Hans_CN",  "LOC_MOMENT_GOVERNMENT_BONUS_DARK_AGE",                                          "“开明专制”黄金时代：[NEWLINE]每次获得时代分时额外获得1点时代分。"),
     -- 黑暗卡
     ("zh_Hans_CN",  "LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "所有近战攻击单位+5 [ICON_Strength] 战斗力。拥有驻军单位的城市每回合的忠诚度+5。[NEWLINE]但无法在本国领土外进行治疗。"),
     ("zh_Hans_CN",  "LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "国内贸易路线提供+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。[NEWLINE]但无法生产或购买开拓者和建造者，也无法建立新城市。"),
@@ -302,8 +314,10 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "每座娱乐中心产出+6 [ICON_GOLD] 金币，竞技场产出+10 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。"),
     ("zh_Hans_CN",  "LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "所有单位的战斗经验值+100%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+1 [ICON_Food] 食物、+15%余粮、每回合提供5点忠诚度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+5 [ICON_Food] 食物、+10%食物、每回合提供5点忠诚度。"),
     ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技值、+1 [ICON_CULTURE] 文化值、+1 [ICON_Faith] 信仰值和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "所有商业区每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+2 [ICON_GOLD] 金币。");
+    ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "所有商业区每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+2 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。生产非平民单位时，获得等同于单位花费75%的 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "在友好领土开启回合+1 [ICON_Movement] 移动力。");

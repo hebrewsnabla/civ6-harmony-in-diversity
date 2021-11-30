@@ -2,8 +2,25 @@
 --    Improvements Adjustments     --
 -------------------------------------
 
--- 【油井】改为【生物】科技解锁
-update Improvements set PrereqTech = 'TECH_BIOLOGY_HD' where ImprovementType = 'IMPROVEMENT_OIL_WELL';--xhh
+-- 【油井】和【海上油井】修改
+update Improvements set PrereqTech = 'TECH_BIOLOGY_HD' where ImprovementType = 'IMPROVEMENT_OIL_WELL';
+
+update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_OIL_WELL';
+update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_OFFSHORE_OIL_RIG';
+
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,						YieldType,				YieldChange)
+values
+	('IMPROVEMENT_OIL_WELL',				'YIELD_SCIENCE',		1),
+	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_SCIENCE',		1);
+
+insert or replace into Improvement_BonusYieldChanges
+	(ImprovementType,						YieldType,				BonusYieldChange,		PrereqTech)
+values
+	('IMPROVEMENT_OIL_WELL',				'YIELD_PRODUCTION',		1,						'TECH_REFINING'),
+	('IMPROVEMENT_OIL_WELL',				'YIELD_SCIENCE',		2,						'TECH_REFINING'),
+	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_SCIENCE',		2,						'TECH_REFINING'),
+	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_PRODUCTION',		1,						'TECH_REFINING');
 
 -- 设定【演化论】市政效果：营地+1粮+1锤，替代【重商主义】市政
 update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PrereqCivic = 'CIVIC_MERCANTILISM';--xhh
