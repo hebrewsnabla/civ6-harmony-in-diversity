@@ -44,6 +44,9 @@ update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PER
 -- pantheon
 update GlobalParameters set Value = 30 where Name = 'RELIGION_PANTHEON_MIN_FAITH';
 
+-- Suzerain
+update GlobalParameters set Value = 6 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
+
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_DESTINATION';
