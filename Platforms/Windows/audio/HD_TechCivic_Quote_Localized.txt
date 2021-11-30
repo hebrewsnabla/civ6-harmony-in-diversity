@@ -11,12 +11,12 @@ Event	ID	Name			Wwise Object Path	Notes
 	1119323694	Play_ImperialExaminationSystemHD_Quote_1			\Default Work Unit\Play_ImperialExaminationSystemHD_Quote_1	
 	2753569953	Play_PaperMakingHD_Quote_2			\Default Work Unit\Play_PaperMakingHD_Quote_2	
 	2753569954	Play_PaperMakingHD_Quote_1			\Default Work Unit\Play_PaperMakingHD_Quote_1	
-	2780872392	Stop_CalendarHD_Quote_2			\Default Work Unit\Stop_CalendarHD_Quote_2	
-	2780872395	Stop_CalendarHD_Quote_1			\Default Work Unit\Stop_CalendarHD_Quote_1	
 	2962325585	Play_SocialScienceHD_Quote_2			\Default Work Unit\Play_SocialScienceHD_Quote_2	
 	2962325586	Play_SocialScienceHD_Quote_1			\Default Work Unit\Play_SocialScienceHD_Quote_1	
 	2967524324	Play_CompassHD_Quote_2			\Default Work Unit\Play_CompassHD_Quote_2	
 	2967524327	Play_CompassHD_Quote_1			\Default Work Unit\Play_CompassHD_Quote_1	
+	3426462580	Stop_Speech_CivicsHD			\Default Work Unit\Stop_Speech_CivicsHD	
+	3614429708	Stop_Speech_TechsHD			\Default Work Unit\Stop_Speech_TechsHD	
 	3733953404	Play_PhysicsHD_Quote_1			\Default Work Unit\Play_PhysicsHD_Quote_1	
 	3733953407	Play_PhysicsHD_Quote_2			\Default Work Unit\Play_PhysicsHD_Quote_2	
 	3759297221	Play_CalendarHD_Quote_1			\Default Work Unit\Play_CalendarHD_Quote_1	
