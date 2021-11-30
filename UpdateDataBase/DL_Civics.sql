@@ -28,6 +28,7 @@ values
 	('CIVIC_ETHICS_HD',								'LOC_CIVIC_ETHICS_HD_NAME',								Null,												1050,	'ERA_RENAISSANCE',	2,			'ADVISOR_GENERIC'),
 	('CIVIC_SOCIAL_SCIENCE_HD',						'LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME',						Null,												1450,	'ERA_INDUSTRIAL',	0,			'ADVISOR_GENERIC');
 
+delete from CivicQuotes where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 insert or replace into CivicQuotes
     (CivicType,            						Quote,                                  				QuoteAudio)
 values
@@ -208,13 +209,13 @@ values
 	('CIVIC_ENVIRONMENTALISM',						'CIVIC_CULTURAL_HERITAGE'),
 	('CIVIC_CORPORATE_LIBERTARIANISM',				'CIVIC_GLOBALIZATION'),-- 对齐极权主义
 	('CIVIC_CORPORATE_LIBERTARIANISM',				'CIVIC_SOCIAL_MEDIA'),
-	('CIVIC_CORPORATE_LIBERTARIANISM',				'CIVIC_TOTALITARIANISM'),
+	-- ('CIVIC_CORPORATE_LIBERTARIANISM',				'CIVIC_TOTALITARIANISM'),
 	('CIVIC_DIGITAL_DEMOCRACY',						'CIVIC_GLOBALIZATION'),-- 对齐民主主义
 	('CIVIC_DIGITAL_DEMOCRACY',						'CIVIC_SOCIAL_MEDIA'),
-	('CIVIC_DIGITAL_DEMOCRACY',						'CIVIC_SUFFRAGE'),
+	-- ('CIVIC_DIGITAL_DEMOCRACY',						'CIVIC_SUFFRAGE'),
 	('CIVIC_SYNTHETIC_TECHNOCRACY',					'CIVIC_GLOBALIZATION'),-- 对齐社会主义
 	('CIVIC_SYNTHETIC_TECHNOCRACY',					'CIVIC_SOCIAL_MEDIA'),
-	('CIVIC_SYNTHETIC_TECHNOCRACY',					'CIVIC_CLASS_STRUGGLE'),
+	-- ('CIVIC_SYNTHETIC_TECHNOCRACY',					'CIVIC_CLASS_STRUGGLE'),
 	('CIVIC_NEAR_FUTURE_GOVERNANCE',				'CIVIC_GLOBALIZATION'),
 	('CIVIC_NEAR_FUTURE_GOVERNANCE',				'CIVIC_SOCIAL_MEDIA'),
 	('CIVIC_NEAR_FUTURE_GOVERNANCE',				'CIVIC_ENVIRONMENTALISM'),
@@ -239,9 +240,9 @@ update Civics set UITreeRow = -1 where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 	-- 中世纪 --
 update Civics set UITreeRow = -3 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set UITreeRow = 0 where CivicType = 'CIVIC_FEUDALISM';
-update Civics set UITreeRow = -1 where CivicType = 'CIVIC_GUILDS';
+update Civics set UITreeRow = -2 where CivicType = 'CIVIC_GUILDS';
 update Civics set UITreeRow = -2 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
-update Civics set UITreeRow = 1, Cost = 420 where CivicType = 'CIVIC_CIVIL_SERVICE';
+update Civics set UITreeRow = 2, Cost = 420 where CivicType = 'CIVIC_CIVIL_SERVICE';
 update Civics set UITreeRow = 0 where CivicType = 'CIVIC_MERCENARIES';
 	-- 文艺复兴 --
 update Civics set UITreeRow = -1 where CivicType = 'CIVIC_DIPLOMATIC_SERVICE';

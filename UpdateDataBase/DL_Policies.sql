@@ -1154,9 +1154,9 @@ update Policies set PrereqTech = 'TECH_BANKING' where PolicyType = 'POLICY_WISSE
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_INSPIRATION';
 update Policies set PrereqTech = 'TECH_PAPER_MAKING_HD' where PolicyType = 'POLICY_INSPIRATION';
 
-	-- 政策卡修改：【海军基础设施】改为【罗盘】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
-update Policies set PrereqTech = 'TECH_COMPASS_HD' where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
+-- 	-- 政策卡修改：【海军基础设施】改为【罗盘】科技解锁
+-- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
+-- update Policies set PrereqTech = 'TECH_COMPASS_HD' where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
 
 	-- 政策卡修改：【工事】改为【工程】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_BASTIONS';
