@@ -4,6 +4,9 @@
 
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_DIVINE_RIGHT' where DiplomaticActionType = 'DIPLOACTION_DECLARE_HOLY_WAR';
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_FEUDALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_TERRITORIAL_WAR';
+update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_DECLARE_RECONQUEST_WAR';
+update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_DECLARE_PROTECTORATE_WAR';
+update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_COLONIALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_COLONIAL_WAR';
 
 -- update DiplomaticStateActions set Cost = 20 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 -- update DiplomaticStateActions set Cost = 40 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';

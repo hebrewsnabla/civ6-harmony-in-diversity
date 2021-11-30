@@ -114,11 +114,17 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_ERA_IS_' || EraType, 'REQUIREMENT_GAME_ERA_IS' from Eras;
 
--- Features & Natural Wonders
+-- City Has Features & Natural Wonders
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
+
+-- Plot Has Features & Natural Wonders -- by xhh
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 0;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features where NaturalWonder = 0;
 
 --civlization
 insert or replace into RequirementArguments (RequirementId, Name, Value)
