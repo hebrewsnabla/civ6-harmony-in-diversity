@@ -40,7 +40,7 @@ insert or replace into Boosts
 values
     (201,       'CIVIC_LITERARY_TRADITION_HD',              40,     'LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD',              'LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD',                 Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PAPER_MAKING_HD',     Null,           0,          Null,                   0),
     (202,       'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',     40,     'LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD',     'LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD',        Null,           'BOOST_TRIGGER_HAVE_X_DISTRICTS',                   Null,           Null,                                      Null,                   Null,                       Null,           2,          'DISTRICT_CAMPUS',      0),
-    --(203,       'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_DUMMY_EVOLUTION_THEORY_HD',      Null,                   Null,                       Null,           1,          Null,                   0),
+    (203,       'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_CONSULATE',                      Null,                   Null,                       Null,           1,          Null,                   0),
     (204,       'CIVIC_HISTORICAL_PHILOSOPHY_HD',           40,     'LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD',           'LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD',              Null,           'BOOST_TRIGGER_HAVE_WONDER_PAST_X_ERA',             Null,           Null,                                      Null,                   Null,                       Null,           3,          Null,                   0),
     (205,       'CIVIC_ETHICS_HD',                          40,     'LOC_BOOST_TRIGGER_ETHICS_HD',                          'LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD',                             Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PRINTING',            Null,           0,          Null,                   0),
     (206,       'CIVIC_SOCIAL_SCIENCE_HD',                  40,     'LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD',                  'LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD',                     Null,           'BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS',  Null,           Null,                                      Null,                   Null,                       Null,           7,          Null,                   0);
@@ -78,43 +78,5 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBS
     -- 【无线电】科技尤里卡改为：拥有殖民主义市政
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC',
     BoostingCivicType = 'CIVIC_COLONIALISM' where TechnologyType = 'TECH_RADIO';
-
---【演化论】市政鼓舞
--- insert or replace into Types
---     (Type,                                              Kind)
--- values
---     ('BUILDING_DUMMY_EVOLUTION_THEORY_HD',              'KIND_BUILDING');
-
--- insert or replace into Buildings
---     (BuildingType,                                      Name,                                               Cost,   PrereqDistrict,               Description)
--- values
---     ('BUILDING_DUMMY_EVOLUTION_THEORY_HD',              'LOC_BUILDING_DUMMY_EVOLUTION_THEORY_HD_NAME',      1,      'DISTRICT_CAMPUS',            'LOC_BUILDING_DUMMY_EVOLUTION_THEORY_HD_DESCRIPTION');
-
--- insert or replace into Modifier
---     (ModifierId,                                        ModifierType,                                               SubjectRequirementSetId)
--- values
---     -- ('HD_CAMPUS_NEW_CONTINENT_BUILDING_DUMMY_XHH',      'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       'HD_CAMPUS_NEW_CONTINENT_XHH');
---     ('HD_CAMPUS_NEW_CONTINENT_BUILDING_DUMMY_XHH',      'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       Null);
-
--- insert or replace into ModifierArguments
---     (ModifierId,                                        Name,                   Value)
--- values
---     ('HD_CAMPUS_NEW_CONTINENT_BUILDING_DUMMY_XHH',      'BuildingType',         'BUILDING_DUMMY_EVOLUTION_THEORY_HD');
-
--- insert or replace into RequirementSets
---     (RequirementSetId,                                          RequirementSetType)
--- values
---     ('HD_CAMPUS_NEW_CONTINENT_XHH',                             'REQUIREMENTSET_TEST_ALL');
-
--- insert or replace into RequirementSetRequirements
---     (RequirementSetId,                                          RequirementId)
--- values
---     ('HD_CAMPUS_NEW_CONTINENT_XHH',                             'REQUIRES_PLOT_IS_NOT_OWNER_CAPITAL_CONTINENT');
-
--- insert or replace into DistrictModifiers
---     (DistrictType,                                      ModifierId)
--- values
---     ('DISTRICT_CAMPUS',                                 'HD_CAMPUS_NEW_CONTINENT_BUILDING_DUMMY_XHH');
-
 
 update Boosts set Boost = 34 where Boost = 40;
