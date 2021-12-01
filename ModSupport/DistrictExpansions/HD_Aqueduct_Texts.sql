@@ -12,7 +12,10 @@ values
     ("LOC_BUILDING_JNR_ORCHARD_DESCRIPTION",            "+10% Growth rate in this city.[NEWLINE][NEWLINE]+1 [ICON_Food] Food and +2 [ICON_Gold] Gold from Plantations and Farms over resources in this city."),
     ("LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",       "+10% Growth rate in this city.[NEWLINE][NEWLINE]+1 [ICON_Science] Science from Mines and Quarries in this city."),
     ("LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",          "+10% Growth rate in this city.[NEWLINE][NEWLINE][ICON_Citizen] Citizens in this city provide +0.3 [ICON_Culture] Culture. If built adjacent to a Geothermal Fissure, +1 [ICON_Amenities] Amenity."),
-    ("LOC_BUILDING_SEWER_DESCRIPTION",                  "+20% Growth rate in this city.");
+    ("LOC_BUILDING_SEWER_DESCRIPTION",                  "+20% Growth rate in this city."),
+    -- 
+    ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",   "+1 [ICON_FOOD] Food in every Cistern."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",    "+2 [ICON_FOOD] Food in every {LOC_BUILDING_CONSULATE_COMMA}Orchard, Hammer Works and Bathhouse.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -33,8 +36,11 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_HAMMER_WORKS_DESCRIPTION",        "本城的余粮+10%。[NEWLINE][NEWLINE]本城矿山和采石场+1 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_NAME",                  "浴场"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_BATHHOUSE_DESCRIPTION",           "本城的余粮+10%。[NEWLINE][NEWLINE]城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_Culture] 文化值产出。若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                   "本城的余粮+20%。");
-    
+    ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                   "本城的余粮+20%。"),
+    -- 
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",    "每座蓄水池+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",     "每座{LOC_BUILDING_CONSULATE_COMMA}果园、水力锻锤和浴场+2 [ICON_Food] 食物。");
+
 UPDATE  LocalizedText
 SET     Text = REPLACE(Text, '水渠', '蓄水池')
 WHERE   Language = 'zh_Hans_CN' and (Tag IN (

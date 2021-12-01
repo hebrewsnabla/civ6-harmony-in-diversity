@@ -167,3 +167,64 @@ values
 -- values
 --     ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'Amount',       '-1'),
 --     ('CITY_POLICY_DACAOGU_CITY_POP_ETHIOPIAN_OROMO_CAVALRYREDUCED_MODIFIER',    'UnitType',     'UNIT_ETHIOPIAN_OROMO_CAVALRY');
+
+----------------------------------------------------------------------------------------------------
+-- Ethiopia citystate bonus for diplomacy buildings
+insert or replace into TraitModifiers (TraitType, ModifierId)
+select TraitType, ModifierId||'_CONSULATE_ATTACH' from CityStateInfluenceBonus_HD where Level = 'LARGE';
+insert or replace into TraitModifiers (TraitType, ModifierId)
+select TraitType, ModifierId||'_CHANCERY_ATTACH' from CityStateInfluenceBonus_HD where Level = 'LARGEST';
+
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CONSULATE_ATTACH', 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_'||Level||'_INFLUENCE'
+from CityStateInfluenceBonus_HD where Level = 'LARGE';
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CHANCERY_ATTACH', 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_'||Level||'_INFLUENCE'
+from CityStateInfluenceBonus_HD where Level = 'LARGEST';
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CONSULATE_ATTACH', 'ModifierId', ModifierId||'_CONSULATE'
+from CityStateInfluenceBonus_HD where Level = 'LARGE';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CHANCERY_ATTACH', 'ModifierId', ModifierId||'_CHANCERY'
+from CityStateInfluenceBonus_HD where Level = 'LARGEST';
+
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CONSULATE', ModifierType, 'BUILDING_IS_CONSULATE'
+from CityStateInfluenceBonus_HD where Level = 'LARGE' and IsYieldChange = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CONSULATE', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE', 'BUILDING_IS_CONSULATE'
+from CityStateInfluenceBonus_HD where Level = 'LARGE' and IsYieldChange = 1;
+
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CHANCERY', ModifierType, 'BUILDING_IS_CHANCERY'
+from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId||'_CHANCERY', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE', 'BUILDING_IS_CHANCERY'
+from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CONSULATE', 'Amount', Amount
+from CityStateInfluenceBonus_HD where Level = 'LARGE';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CONSULATE', 'YieldType', YieldType
+from CityStateInfluenceBonus_HD where Level = 'LARGE' and IsYieldChange = 1;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CONSULATE', 'BuildingType', 'BUILDING_CONSULATE'
+from CityStateInfluenceBonus_HD where Level = 'LARGE' and IsYieldChange = 1;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CONSULATE', 'CityStatesOnly', 1
+from CityStateInfluenceBonus_HD where Level = 'LARGE' and IsYieldChange = 1;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CHANCERY', 'Amount', Amount
+from CityStateInfluenceBonus_HD where Level = 'LARGEST';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CHANCERY', 'YieldType', YieldType
+from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CHANCERY', 'BuildingType', 'BUILDING_CHANCERY'
+from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId||'_CHANCERY', 'CityStatesOnly', 1
+from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;

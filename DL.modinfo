@@ -1037,9 +1037,13 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
-    <UpdateDatabase id="HD_Ingame_setup" criteria="Expansion2">
+    <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/HD_Ingame_setup.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_EarlySetup" criteria="Expansion2">
+      <Properties><LoadOrder>16001</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_EarlySetup.sql</File>
     </UpdateDatabase>
     <!-- Double Great Person need to update in the first -->
     <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
@@ -1657,6 +1661,8 @@
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_50.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
+    <!-- Early Setup -->
+    <File>UpdateDataBase/DL_EarlySetup.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>
     <File>DLCSupport/DL_Aztec.sql</File>

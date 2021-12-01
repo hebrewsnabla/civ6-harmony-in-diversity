@@ -11,6 +11,10 @@ update Parameters set DefaultValue = 33 where ParameterId = 'TechnologyBoostAmou
 update Parameters set DefaultValue = 33 where ParameterId = 'CivicBoostAmount';
 
 -- delete from Parameters where ParameterId = 'GameMode_TowerDefense'; 
+update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Suzerain';
+-- update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Consular';
+update Parameters set DefaultValue = 0 where ParameterId = 'CSE_CityState_Walls';
+update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Ethiopia_Mode';
 
 insert or replace into Parameters
     (Key1,      Key2,                   ParameterId,                    Name,                                       Description,
