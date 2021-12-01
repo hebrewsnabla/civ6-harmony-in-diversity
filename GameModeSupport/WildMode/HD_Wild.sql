@@ -3,6 +3,10 @@
 -------------------------------------
 
 -------------------------------------
+--     狂野模式 版本V0.1    --
+-------------------------------------
+
+-------------------------------------
 --耶稣会√
 update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 0.3 where ModifierId = 'JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
@@ -34,9 +38,9 @@ insert or replace into Modifiers
 	(ModifierId,												ModifierType,											SubjectRequirementSetId)
 values
 	('ZEN_MEDITATION_CITY_CENTER_RIVER_CULTURE',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('ZEN_MEDITATION_CITY_CENTER_RIVER_CULTURE_MODIFIER',		'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'CITYCENTER_ADJACENT_TO_RIVER_REQUIREMENTS'),
+	('ZEN_MEDITATION_CITY_CENTER_RIVER_CULTURE_MODIFIER',		'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',		'CITYCENTER_ADJACENT_TO_RIVER_REQUIREMENTS'),
     ('ZEN_MEDITATION_HOLY_SITE_RIVER_CULTURE',				    'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('ZEN_MEDITATION_HOLY_SITE_RIVER_CULTURE_MODIFIER',		    'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'HOLYSITE_ADJACENT_TO_RIVER_REQUIREMENTS');
+	('ZEN_MEDITATION_HOLY_SITE_RIVER_CULTURE_MODIFIER',		    'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',		'HOLYSITE_ADJACENT_TO_RIVER_REQUIREMENTS');
 insert or replace into ModifierArguments
 	(ModifierId,												Name,						Value)
 values
@@ -50,6 +54,7 @@ values
 -------------------------------------
 --朝圣
 update ModifierArguments set Value = 6 where ModifierId = 'PILGRIMAGE_FAITH_CITY_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'PILGRIMAGE_FAITH_FOREIGN_CITY_MODIFIER' and Name = 'Amount';
 
 -------------------------------------
 --宗教统一
@@ -195,4 +200,263 @@ values
 	('District_Culture_Mbanza',		    'LOC_DISTRICT_CULTURE_MBANZA',		    'YIELD_CULTURE',	2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL),
     ('District_Gold_Mbanza',		    'LOC_DISTRICT_GOLD_MBANZA',				'YIELD_GOLD',	    2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL);
 
+-------------------------------------
+--     狂野模式 版本V0.2    --
+-------------------------------------
 
+-------------------------------------
+--市场
+update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_MARKET' ;
+
+-------------------------------------
+--加的夫
+insert into TraitModifiers 
+    (TraitType,                                 	 ModifierId)
+values
+	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_CULTURE'),
+	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_GOLD'),
+	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_SCIENCE'),
+	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_FOOD');
+
+-------------------------------------
+--威尼斯
+delete from TraitModifiers where TraitType = 'MINOR_CIV_ANTIOCH_TRAIT' ;
+insert or replace into TraitModifiers 
+	(TraitType,						        ModifierId)
+values
+	('MINOR_CIV_ANTIOCH_TRAIT',		    	'MINOR_CIV_CSD_GOA');
+
+insert or replace into	Modifiers
+	(ModifierId,								ModifierType,																	SubjectRequirementSetId)
+values
+	('MINOR_CIV_CSD_GOA',		                'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',										    'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_CSD_GOA_MODIFIER',		    	'MODIFIER_PLAYER_CITIES_ADJUST_ALL_BUILDINGS_PURCHASE_COST',					NULL);
+
+insert or replace into	ModifierArguments
+	(ModifierId, 									Name,												Value)
+values
+	('MINOR_CIV_CSD_GOA',				        'ModifierId',										'MINOR_CIV_CSD_GOA_MODIFIER'),
+    ('MINOR_CIV_CSD_GOA_MODIFIER',				'Amount',								            15);
+
+-------------------------------------
+--喀布尔
+update ModifierArguments set Value = 100 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
+
+-------------------------------------
+--阿卡德
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('MINOR_CIV_AKKAD_TRAIT',	'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT');
+
+insert or replace into Modifiers	
+	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+values
+	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL),
+	('LANDCIVILIAN_INCREASED_MOVEMENT',           					'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					NULL);	
+
+insert or replace into	ModifierArguments
+	(ModifierId, 											        Name,												Value)
+values
+	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'ModifierId',										'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER'),
+	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'AbilityType',										'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT'),
+    ('LANDCIVILIAN_INCREASED_MOVEMENT',								'Amount',											1);
+insert or replace into Types
+	(Type,													Kind)
+values
+	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'KIND_ABILITY');
+
+insert or replace into TypeTags		
+	(Type,													Tag)
+select 
+	'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'CLASS_LANDCIVILIAN';
+
+insert or replace into UnitAbilities 
+	(UnitAbilityType, 										Inactive) 
+values	
+	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',  			1);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'LANDCIVILIAN_INCREASED_MOVEMENT');
+
+-------------------------------------
+--摩艾石像
+insert or replace into Improvement_ValidResources
+	(ImprovementType,ResourceType,MustRemoveFeature)
+select
+	'IMPROVEMENT_MOAI',ResourceType,1
+from Resources;
+
+-------------------------------------
+--摩亨朱达罗
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS'),
+	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS');
+
+insert or replace into Modifiers	
+	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+values
+	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_THEATER'),
+	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'YT_CITY_HAS_THEATER');	;	
+
+insert or replace into	ModifierArguments
+	(ModifierId, 											        Name,												Value)
+values
+	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'ModifierId',										'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER'),
+	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'YieldType',										'YIELD_FOOD'),
+    ('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'Amount',											3),
+    ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',                'ModifierId',                                       'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER'),
+    ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',       'Amount',                                           1);
+
+insert or replace into RequirementSets
+	(RequirementSetId, 										RequirementSetType)
+values
+	('YT_CITY_HAS_THEATER',									'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId, 										RequirementId)
+values
+	('YT_CITY_HAS_THEATER',									'REQUIRES_CITY_HAS_DISTRICT_THEATER');
+
+-------------------------------------
+--维尔纽斯
+delete from TraitModifiers where TraitType = 'MINOR_CIV_VILNIUS_TRAIT';
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS'),
+	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS1'),
+	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS2'),
+	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS3');
+insert or replace into Modifiers	
+	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+values
+	('MINOR_CIV_VILNIUS_THEATER_BONUS',								'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS1',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS2',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS3',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS1'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS2'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS3'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'DISTRICT_IS_THEATER');
+
+insert or replace into	ModifierArguments
+	(ModifierId, 											Name,												Value)
+values
+	('MINOR_CIV_VILNIUS_THEATER_BONUS',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+    ('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'Amount',											50),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS1',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+    ('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'Amount',											50),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS2',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+    ('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'Amount',											50),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS3',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER'),
+	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+    ('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'Amount',											50);
+insert or replace into RequirementSets
+	(RequirementSetId, 										RequirementSetType)
+values
+	('YT_REQUIRE_VILNIUS1',									'REQUIREMENTSET_TEST_ALL'),
+	('YT_REQUIRE_VILNIUS2',									'REQUIREMENTSET_TEST_ALL'),
+	('YT_REQUIRE_VILNIUS3',									'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId, 										RequirementId)
+values
+	('YT_REQUIRE_VILNIUS1',									'REQUIRES_DISTRICT_IS_THEATER'),
+	('YT_REQUIRE_VILNIUS1',									'REQUIRES_PLAYER_HAS_CIVIC_HUMANISM'),
+	('YT_REQUIRE_VILNIUS2',									'REQUIRES_DISTRICT_IS_THEATER'),
+	('YT_REQUIRE_VILNIUS2',									'REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET'),
+	('YT_REQUIRE_VILNIUS3',									'REQUIRES_DISTRICT_IS_THEATER'),
+	('YT_REQUIRE_VILNIUS3',									'REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE');
+
+insert or ignore into Requirements
+    (RequirementId,                                         RequirementType)
+values 
+    ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'REQUIREMENT_PLAYER_HAS_CIVIC'),
+    ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'REQUIREMENT_PLAYER_HAS_CIVIC'),
+    ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'REQUIREMENT_PLAYER_HAS_CIVIC');
+
+insert or ignore into RequirementArguments
+    (RequirementId,                                         Name,                   Value)
+values 
+    ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'CivicType',      		'CIVIC_HUMANISM'),
+    ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'CivicType',      		'CIVIC_OPERA_BALLET'), 
+    ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'CivicType',         	'CIVIC_CULTURAL_HERITAGE');
+
+
+-------------------------------------
+--埃里温
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('MINOR_CIV_YEREVAN_TRAIT',	'MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT');
+
+insert or replace into Modifiers	
+	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+values
+	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL),
+	('RELIGIOUS_ALL_INCREASED_MOVEMENT',           					'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					NULL);	
+
+insert or replace into	ModifierArguments
+	(ModifierId, 											        Name,												Value)
+values
+	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'ModifierId',										'MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER'),
+	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER',	'AbilityType',										'ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT'),
+    ('RELIGIOUS_ALL_INCREASED_MOVEMENT',								'Amount',											1);
+insert or replace into Types
+	(Type,													Kind)
+values
+	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',				'KIND_ABILITY');
+
+insert or replace into TypeTags		
+	(Type,													Tag)
+select 
+	'ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',				'CLASS_RELIGIOUS_ALL';
+
+insert or replace into UnitAbilities 
+	(UnitAbilityType, 										Inactive) 
+values	
+	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',  			1);
+
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'RELIGIOUS_ALL_INCREASED_MOVEMENT');
+
+-------------------------------------
+--梵蒂冈x
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_FAITH_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_CULTURE_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_FAITH_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_CULTURE_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_FAITH_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1' and Name = 'YieldChange';
+update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1' and Name = 'YieldChange';
+
+-------------------------------------
+--阿尔玛
+update Adjacency_YieldChanges set YieldChange = 2 , ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';
+update Adjacency_YieldChanges set YieldChange = 3 , PrereqCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency_Divine_Right_Late';
+update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONASTERY';
+
+-------------------------------------
+--纳斯卡
+update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE' and Name = 'Amount';
+
+-------------------------------------
+--布鲁塞尔
+update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';

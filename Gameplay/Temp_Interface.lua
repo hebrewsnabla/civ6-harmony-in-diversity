@@ -213,3 +213,48 @@ end
 
 Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
 ---]]
+
+function KublaiGrantCivTraitOnConquerOriginalCity( playerID, cityID, iX, iY )
+	local captureModifier = {}
+    local captureTrait = {}
+    local pPlayer = Players[playerID]
+	local pPlayerConfig = PlayerConfigurations[playerID]
+	local sLeader = pPlayerConfig:GetLeaderTypeName()
+	local sKublai = 'TRAIT_LEADER_KUBLAI'
+    local pCity = CityManager.GetCity(playerID, cityId)
+    if pPlayer ~= nil and Utils.LeaderHasTrait(sLeader, sKublai) then
+        print('Kublai+',playerID,cityID,pCity:GetOriginalOwner()) 
+        if pCity ~= nil then
+			if pCity:IsOriginalCapital() then  -- unable to be used in Gameplay
+			    local originalOwnerID = pCity:GetOriginalOwner()  -- unable to be used in UI
+                print('Kublai0',originalOwnerID,playerID) 
+			    if originalOwnerID ~= playerID and originalOwnerID ~= nil then
+				    local oPlayer = Players[originalOwnerID]
+					local oPlayerConfig = PlayerConfigurations[originalOwnerID]
+					local oCiv = oPlayerConfig:GetCivilizationTypeName()
+					for tRow in GameInfo.CivilizationTraits() do
+						if tRow.CivilizationType == oCiv then
+					   		table.insert(captureTrait,tRow.TraitType)
+						end
+					end
+					print('Kublai1',oCiv) 
+					for _, traitType in ipairs(captureTrait) do
+						for tRow in GameInfo.TraitModifiers() do
+							if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
+						   	   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
+						       tRow.TraitType == traitType then
+								table.insert(captureModifier,tRow.ModifierId)
+							end
+						end
+					end 
+					for _, modifier in ipairs(captureModifier) do
+						pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
+						print('Kublai2',modifier) 
+					end
+				end
+			end
+		end
+    end
+end
+
+--Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCity)

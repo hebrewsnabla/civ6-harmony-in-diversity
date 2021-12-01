@@ -96,9 +96,12 @@ values
     ("LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
     ("LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "A building unique to the Aztecs. +1 [ICON_Amenities] Amenity, +2 [ICON_Culture] Culture, +2 [ICON_Faith] Faith. +1 [ICON_GreatGeneral] Great General Point per turn. +1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
     ("LOC_BUILDING_STADIUM_DL_DESCRIPTION",                       "+2 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher. +5 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher."),
+    ("LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from Camps and Pastures with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any Camp or Pasture with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
+    ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "+2 [ICON_FAITH] Faith, +2 [ICON_CULTURE] Culture from Geothermal fissures in this city. After Chemistry is researched, +2 [ICON_SCIENCE] Science additionally.[NEWLINE]+2 extra [ICON_AMENITIES] Amenity and +5 [ICON_TOURISM] Tourism if this city has any Geothermal fissure."),
     -- Water Entertainment Complex
     ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "+1 [ICON_SCIENCE] Science to each coastal Resource, Shipwreck, and Reef tile in this city."),
     ("LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "+2 [ICON_Tourism] Tourism for each Wonder built in this city on or adjacent to a Coast tile."),
+    ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science from marine features or Fishing Boats with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any marine feature or Fishing Boat with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     -- Aerodrome
     ("LOC_BUILDING_HANGAR_DESCRIPTION",                           "+25% combat experience for air units trained in this city. +2 air unit slot in Aerodrome district. +50% [Icon_Production] Production towards Air Units."),
     ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+50% [ICON_Tourism] Tourism in all cities within 9 tiles of an Airport. Can not be overlapped. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
@@ -120,7 +123,7 @@ values
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "每 [ICON_Citizen] 人口消耗 [ICON_Food] 粮食由3变成2.5。本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
@@ -209,9 +212,12 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "阿兹特克特色建筑。提供1点 [ICON_Amenities] 宜居度、+2 [ICON_Culture] 文化值、+2 [ICON_Faith] 信仰值，并提供2点 [ICON_GreatGeneral] 大将军点数。拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STADIUM_DL_DESCRIPTION",                       "如城市 [ICON_CITIZEN] 人口大于等于10，则+2 [ICON_Tourism] 旅游业绩；如城市 [ICON_CITIZEN] 人口大于等于20，则+5 [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究生物科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究化学科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
     -- 水上娱乐
     ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "此城中的每处海岸资源、海难遗址和礁石单元格+1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "此城中建在海岸单元格之上或周围的每座奇观+2 [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究生物科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     -- 航空港
     ("zh_Hans_CN",  "LOC_BUILDING_HANGAR_DESCRIPTION",                           "当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "在有机场的9个单元格内的城市产出 [ICON_Tourism] 旅游业绩+50%。不可叠加。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
@@ -222,4 +228,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
     ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。");
+    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。"),
+    -- 保护区
+    ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_NAME",                               "生态研究所");
