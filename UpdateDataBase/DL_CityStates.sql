@@ -4,6 +4,75 @@
 
 -- Minor Civs, City states
 
+-- Influence Bonus
+delete from TraitModifiers where
+	(TraitType in (select TraitType from CSE_ClassTypes)) and 
+	(ModifierId like '%_SMALL_INFLUENCE_%' or 
+	ModifierId like '%_MEDIUM_INFLUENCE_%' or 
+	ModifierId like '%_LARGE_INFLUENCE_%' or 
+	ModifierId like '%_LARGEST_INFLUENCE_%');
+
+create table if not exists CityStateInfluenceBonus_HD(
+    Type           		TEXT    not NULL,
+    TraitType           TEXT    not NULL,
+    Level       		TEXT    not NULL,
+    YieldType			TEXT	not NULL,
+    Tier       			INT     DEFAULT 0,
+    Amount 				INT     DEFAULT 0,
+    AttachModifierId    TEXT    DEFAULT NULL,
+    ModifierId    		TEXT    DEFAULT NULL,
+    ModifierType		TEXT	DEFAULT NULL,
+    RequirementSetId    TEXT    DEFAULT NULL,
+    IsYieldChange 		INT     DEFAULT 0);
+
+insert or replace into CityStateInfluenceBonus_HD (Type, TraitType, Tier, Level, YieldType, Amount)
+select Type, TraitType, 0, 'SMALL',		'YIELD_FOOD', 1 from CSE_ClassTypes;
+insert or replace into CityStateInfluenceBonus_HD (Type, TraitType, Tier, Level, YieldType, Amount)
+select Type, TraitType, 1, 'MEDIUM',	'YIELD_FOOD', 1 from CSE_ClassTypes;
+insert or replace into CityStateInfluenceBonus_HD (Type, TraitType, Tier, Level, YieldType, Amount)
+select Type, TraitType, 2, 'LARGE',		'YIELD_FOOD', 2 from CSE_ClassTypes;
+insert or replace into CityStateInfluenceBonus_HD (Type, TraitType, Tier, Level, YieldType, Amount)
+select Type, TraitType, 3, 'LARGEST',	'YIELD_FOOD', 3 from CSE_ClassTypes;
+update CityStateInfluenceBonus_HD set YieldType = 'YIELD_SCIENCE' 		where Type = 'SCIENTIFIC';
+update CityStateInfluenceBonus_HD set YieldType = 'YIELD_FAITH' 		where Type = 'RELIGIOUS';
+update CityStateInfluenceBonus_HD set YieldType = 'YIELD_GOLD' 			where Type = 'TRADE';
+update CityStateInfluenceBonus_HD set YieldType = 'YIELD_CULTURE' 		where Type = 'CULTURAL';
+update CityStateInfluenceBonus_HD set YieldType = 'UNIT_PRODUCTION' 	where Type = 'MILITARISTIC';
+update CityStateInfluenceBonus_HD set YieldType = 'DISTRICT_PRODUCTION'	where Type = 'INDUSTRIAL';
+-- 
+update CityStateInfluenceBonus_HD set YieldType = 'YIELD_GOLD'			where Type = 'CSE_MARITIME';
+
+insert or replace into CityStateInfluenceBonus_HD
+	(Type,			TraitType, 						Tier,	Level, 		YieldType,				Amount)
+values
+	('INDUSTRIAL',	'MINOR_CIV_INDUSTRIAL_TRAIT',	0,		'SMALL',	'BUILDING_PRODUCTION',	1),
+	('INDUSTRIAL',	'MINOR_CIV_INDUSTRIAL_TRAIT',	1,		'MEDIUM',	'BUILDING_PRODUCTION',	1),
+	('INDUSTRIAL',	'MINOR_CIV_INDUSTRIAL_TRAIT',	2,		'LARGE',	'BUILDING_PRODUCTION',	2),
+	('INDUSTRIAL',	'MINOR_CIV_INDUSTRIAL_TRAIT',	3,		'LARGEST',	'BUILDING_PRODUCTION',	3);
+
+update CityStateInfluenceBonus_HD set IsYieldChange = YieldType in (select YieldType from Yields);
+update CityStateInfluenceBonus_HD set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE' where IsYieldChange = 1;
+update CityStateInfluenceBonus_HD set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_'||YieldType||'_CHANGE' where IsYieldChange = 0;
+update CityStateInfluenceBonus_HD set ModifierType = 'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_YIELD_CHANGE' where Level = 'SMALL' and IsYieldChange = 1;
+update CityStateInfluenceBonus_HD set ModifierType = 'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_'||YieldType||'_CHANGE' where Level = 'SMALL' and IsYieldChange = 0;
+update CityStateInfluenceBonus_HD set RequirementSetId = NULL; -- 'HD_CITY_HAS_'||Type||'_TIER_'||Tier||'BUILDING_REQUIREMENTS';
+update CityStateInfluenceBonus_HD set ModifierId = TraitType || '_' || Level || '_INFLUENCE_' || YieldType || '_HD';
+update CityStateInfluenceBonus_HD set AttachModifierId = ModifierId || '_ATTACH';
+
+insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType, AttachModifierId from CityStateInfluenceBonus_HD;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select AttachModifierId, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_'||Level||'_INFLUENCE' from CityStateInfluenceBonus_HD;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select AttachModifierId, 'ModifierId', ModifierId from CityStateInfluenceBonus_HD;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+select ModifierId, ModifierType, RequirementSetId from CityStateInfluenceBonus_HD;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId, 'Amount', Amount from CityStateInfluenceBonus_HD;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+select ModifierId, 'YieldType', YieldType from CityStateInfluenceBonus_HD where IsYieldChange = 1;
+---------------------------------------------------------------------------------------------------------
+-- Individuals
+
 -- ANTANANARIVO
 update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
 

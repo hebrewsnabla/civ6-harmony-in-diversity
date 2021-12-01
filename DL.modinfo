@@ -640,6 +640,17 @@
       <File>UI/Replacement/DL_UnitPanel.lua</File>
       <File>UI/Additions/HD_UnitCommandDefs.lua</File>
     </ImportFiles>
+    <ReplaceUIScript id="DL_TechCivicPopup" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>TechCivicCompletedPopup</LuaContext>
+        <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="DL_TechCivicPopup_Import" criteria="Expansion2">
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
+      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+    </ImportFiles>
     <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
       <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
@@ -1491,6 +1502,7 @@
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>
+    <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>

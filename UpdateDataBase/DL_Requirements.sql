@@ -114,11 +114,17 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_ERA_IS_' || EraType, 'REQUIREMENT_GAME_ERA_IS' from Eras;
 
--- Features & Natural Wonders
+-- City Has Features & Natural Wonders
 insert or replace into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
 insert or replace into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
+
+-- Plot Has Features & Natural Wonders -- by xhh
+insert or replace into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 0;
+insert or replace into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features where NaturalWonder = 0;
 
 --civlization
 insert or replace into RequirementArguments (RequirementId, Name, Value)
@@ -1056,3 +1062,36 @@ values
 	('REQUIRES_UNIT_NEXT_TO_MELEE',			'IncludeCenter',		0),
 	('REQUIRES_PLOT_HAS_CITY_CENTER',		'DistrictType',			'DISTRICT_CITY_CENTER'),
 	('OPPONENT_IS_NAVAL_REQUIREMENT',		'Tag',					'CLASS_NAVAL');
+
+
+-----------------------------------------------
+-- 10 influence token support, from CIVITAS CSE
+-----------------------------------------------
+INSERT OR IGNORE INTO RequirementSets
+		(RequirementSetId,					RequirementSetType			)
+VALUES	('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIREMENTSET_TEST_ALL'	);
+
+-----------------------------------------------
+-- RequirementSetRequirements
+-----------------------------------------------
+
+INSERT OR IGNORE INTO RequirementSetRequirements
+		(RequirementSetId,					RequirementId							)
+VALUES	('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE'	),
+		('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_AT_PEACE'				);
+
+-----------------------------------------------
+-- Requirements
+-----------------------------------------------
+
+INSERT OR IGNORE INTO Requirements
+		(RequirementId,								RequirementType									)
+VALUES	('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS'	);
+
+-----------------------------------------------
+-- RequirementArguments
+-----------------------------------------------
+		
+INSERT OR IGNORE INTO RequirementArguments
+		(RequirementId,								Name,				Value	)
+VALUES	('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',	'MinimumTokens',	'10'	);
