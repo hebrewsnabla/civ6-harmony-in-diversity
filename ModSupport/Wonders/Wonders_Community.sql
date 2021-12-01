@@ -4,12 +4,12 @@
 ----------------------------------------------------------------------------------------------------------------
 
 --BUILDING_ABU_SIMBEL
-UPDATE Buildings SET  ObsoleteEra = 'ERA_MEDIEVAL'
-WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_ABU_SIMBEL');
+UPDATE Buildings SET  ObsoleteEra = 'ERA_MEDIEVAL', PrereqTech = 'TECH_CALENDAR_HD', PrereqCivic = Null
+WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_ABU_SIMBEL');--xhh
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
-WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');
+UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null
+WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');--xhh
 
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_ENHANCEDLATETOURISM';
@@ -470,6 +470,9 @@ values
 	('CN_TOWER_ALL_CITY_POP',		'Amount',	2),
 	('CN_TOWER_ALL_CITY_HOUSING',	'Amount',	2),
 	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1);
+
+-- Yellow Crane Tower
+update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';
 
 --BUILDING_SUK_WAT_ARUN
 UPDATE Buildings SET  Cost = 1000, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE'

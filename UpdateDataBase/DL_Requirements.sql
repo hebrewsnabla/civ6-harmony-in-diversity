@@ -3,29 +3,29 @@
 -------------------------------------
 
 -- River
-insert or replace into Requirements (RequirementId, RequirementType, Inverse) values 
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse) values 
 	('REQUIRES_PLOT_NOT_ADJACENT_TO_RIVER', 'REQUIREMENT_PLOT_ADJACENT_TO_RIVER', 1);
 
 -- Units
-insert or replace into Requirements (RequirementId, RequirementType) values 
+insert or ignore into Requirements (RequirementId, RequirementType) values 
 	('REQUIREMENT_UNIT_IS_SETTLER', 'REQUIREMENT_UNIT_TYPE_MATCHES');
-insert or replace into RequirementArguments (RequirementId, Name, Value) values
+insert or ignore into RequirementArguments (RequirementId, Name, Value) values
 	('REQUIREMENT_UNIT_IS_SETTLER', 'UnitType', 'UNIT_SETTLER');
-insert or replace into Requirements (RequirementId, RequirementType) values 
+insert or ignore into Requirements (RequirementId, RequirementType) values 
 	('REQUIREMENT_UNIT_IS_LAND_COMBAT', 'REQUIREMENT_UNIT_TAG_MATCHES');
-insert or replace into RequirementArguments (RequirementId, Name, Value) values
+insert or ignore into RequirementArguments (RequirementId, Name, Value) values
 	('REQUIREMENT_UNIT_IS_LAND_COMBAT', 'Tag', 'CLASS_LAND_COMBAT');
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_UNIT_IS_' || UnitType , 'REQUIREMENT_UNIT_TYPE_MATCHES' from Units;
-insert or replace into RequirementArguments (RequirementId, Name, Value) 
+insert or ignore into RequirementArguments (RequirementId, Name, Value) 
 	select 'REQUIRES_UNIT_IS_' || UnitType , 'UnitType', UnitType from Units;
-insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_UNIT_IS_NOT_' || UnitType , 'REQUIREMENT_UNIT_TYPE_MATCHES', 1 from Units;
-insert or replace into RequirementArguments (RequirementId, Name, Value) 	
+insert or ignore into RequirementArguments (RequirementId, Name, Value) 	
 	select 'HD_REQUIRES_UNIT_IS_NOT_' || UnitType , 'UnitType', UnitType from Units;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_UNIT_IS_' || PromotionClassType , 'REQUIREMENT_UNIT_PROMOTION_CLASS_MATCHES' from UnitPromotionClasses;
-insert or replace into RequirementArguments (RequirementId, Name, Value) 	
+insert or ignore into RequirementArguments (RequirementId, Name, Value) 	
 	select 'HD_REQUIRES_UNIT_IS_' || PromotionClassType , 'UnitPromotionClass', PromotionClassType from UnitPromotionClasses;
 
 -- Resource
@@ -34,106 +34,112 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES' from Resources;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType, 'REQUIREMENT_CITY_HAS_RESOURCE_TYPE_IMPROVED' from Resources;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType, 'ResourceType', ResourceType
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType, 'REQUIREMENT_PLAYER_HAS_RESOURCE_VISIBILITY'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- Techs
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_' || TechnologyType, 'TechnologyType', TechnologyType from Technologies;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLAYER_HAS_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY' from Technologies;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'TechnologyType', TechnologyType from Technologies;
-insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY', 1 from Technologies;
 
 -- Civic
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_HAS_' || CivicType, 'CivicType', CivicType from Civics;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_HAS_' || CivicType, 'REQUIREMENT_PLAYER_HAS_CIVIC' from Civics;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType, 'CivicType', CivicType from Civics;
-insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType, 'REQUIREMENT_PLAYER_HAS_CIVIC', 1 from Civics;
 
 -- Districts plots
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'DistrictType', DistrictType from Districts;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES' from Districts;
 
 -- Improvements plots
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'REQUIREMENT_PLOT_ADJACENT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
 
 -- District 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_DISTRICT_IS_' || DistrictType, 'DistrictType', DistrictType from Districts;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_DISTRICT_IS_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES' from Districts;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType, 'DistrictType', DistrictType from Districts;
-insert or replace into Requirements (RequirementId, RequirementType, Inverse)
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
 	
 -- Buildings
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'REQUIREMENT_CITY_HAS_BUILDING' from Buildings;
 
 -- Eras
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'EraType', EraType from Eras;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'REQUIREMENT_PLAYER_ERA_AT_LEAST' from Eras;
 
 --Game Eras
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_ERA_IS_' || EraType, 'EraType', EraType from Eras;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_ERA_IS_' || EraType, 'REQUIREMENT_GAME_ERA_IS' from Eras;
 
--- Features & Natural Wonders
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+-- City Has Features & Natural Wonders
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
 
+-- Plot Has Features & Natural Wonders -- by xhh
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 0;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features where NaturalWonder = 0;
+
 --civlization
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'PLAYER_IS_' || CivilizationType, 'CivilizationType'	, CivilizationType from Civilizations;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'PLAYER_IS_' || CivilizationType, 'REQUIREMENT_PLAYER_TYPE_MATCHES' from Civilizations;
 
 -- City has X Pop
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION', 'Amount', Pop from PopulationMaintenance;
-insert or replace into Requirements (RequirementId, RequirementType)
+insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION', 'REQUIREMENT_CITY_HAS_X_POPULATION' from PopulationMaintenance;
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'CITY_HAS_' || Pop || '_POPULATION', 'REQUIREMENTSET_TEST_ALL' from PopulationMaintenance;
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'CITY_HAS_' || Pop || '_POPULATION', 'REQUIRES_CITY_HAS_'  || Pop || '_POPULATION' from PopulationMaintenance;
 
 -- Use insert or ignore to support the missing DLC case.
@@ -281,6 +287,7 @@ values
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
 	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
@@ -509,11 +516,14 @@ values
 	-- Aqueduct
 	('IS_FARM_ADJACENT_TO_AQUEDUCT',					'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
 	('IS_FARM_ADJACENT_TO_AQUEDUCT',					'REQUIRES_PLOT_HAS_FARM'),
+	('IS_FARM_ADJACENT_TO_AQUEDUCT',					'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
 	('IS_FARM_ADJACENT_TO_FRESH_WATER',					'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('IS_FARM_ADJACENT_TO_FRESH_WATER',					'REQUIRES_PLOT_HAS_FARM'),
+	('IS_FARM_ADJACENT_TO_FRESH_WATER',					'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
 	('IS_FARM_ADJACENT_TO_FRESH_WATER_AND_AQUEDUCT',	'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
 	('IS_FARM_ADJACENT_TO_FRESH_WATER_AND_AQUEDUCT',	'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('IS_FARM_ADJACENT_TO_FRESH_WATER_AND_AQUEDUCT',	'REQUIRES_PLOT_HAS_FARM'),
+	('IS_FARM_ADJACENT_TO_FRESH_WATER_AND_AQUEDUCT',	'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
 	-- Hansa, add production to adjacent resources.
 	('HANSA_ADJACENT_PRODUCTION_RESOURCE_REQUIREMENTS',	'REQUIRES_PLOT_HAS_VISIBLE_RESOURCE'),
 	('HANSA_ADJACENT_PRODUCTION_RESOURCE_REQUIREMENTS',	'ADJACENT_TO_OWNER'),
@@ -1052,3 +1062,36 @@ values
 	('REQUIRES_UNIT_NEXT_TO_MELEE',			'IncludeCenter',		0),
 	('REQUIRES_PLOT_HAS_CITY_CENTER',		'DistrictType',			'DISTRICT_CITY_CENTER'),
 	('OPPONENT_IS_NAVAL_REQUIREMENT',		'Tag',					'CLASS_NAVAL');
+
+
+-----------------------------------------------
+-- 10 influence token support, from CIVITAS CSE
+-----------------------------------------------
+INSERT OR IGNORE INTO RequirementSets
+		(RequirementSetId,					RequirementSetType			)
+VALUES	('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIREMENTSET_TEST_ALL'	);
+
+-----------------------------------------------
+-- RequirementSetRequirements
+-----------------------------------------------
+
+INSERT OR IGNORE INTO RequirementSetRequirements
+		(RequirementSetId,					RequirementId							)
+VALUES	('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE'	),
+		('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_AT_PEACE'				);
+
+-----------------------------------------------
+-- Requirements
+-----------------------------------------------
+
+INSERT OR IGNORE INTO Requirements
+		(RequirementId,								RequirementType									)
+VALUES	('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS'	);
+
+-----------------------------------------------
+-- RequirementArguments
+-----------------------------------------------
+		
+INSERT OR IGNORE INTO RequirementArguments
+		(RequirementId,								Name,				Value	)
+VALUES	('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',	'MinimumTokens',	'10'	);

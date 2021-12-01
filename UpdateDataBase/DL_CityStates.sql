@@ -3,6 +3,8 @@
 -------------------------------------
 
 -- Minor Civs, City states
+---------------------------------------------------------------------------------------------------------
+-- Individuals
 
 -- ANTANANARIVO
 update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';

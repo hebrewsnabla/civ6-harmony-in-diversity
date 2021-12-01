@@ -148,6 +148,10 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
         buildingType = building.BuildingType;
     end
 
+    if buildingType:match "^BUILDING_CITY_POLICY_" then
+        return ToolTipHelper.GetCityPolicyToolTip(buildingHash, playerId, city);
+    end
+
     local name = building.Name;
     local description = building.Description;
 

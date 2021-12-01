@@ -153,3 +153,21 @@ end
 
 ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;
+
+
+-- --Evolution Theory Boost
+-- function EvolutionheoryBoost(playerID, cityID, iX, iY)
+--     local pPlayer = Players[playerID];
+
+--     local iCampusPlot = Map.GetPlot(iX, iY);
+
+--     local iCapital = Players:GetCities:GetCapitalCity();
+
+--     local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY'].Index;
+    
+--     pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4);
+-- end
+
+-- Events.CityBuilt.Add(EvolutionheoryBoost)
+
+-- --city Built 触发这个事件的时候你判断这个位置是不是和首都位置不在同一个大陆

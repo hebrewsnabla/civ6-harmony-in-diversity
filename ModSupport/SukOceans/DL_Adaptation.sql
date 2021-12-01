@@ -53,3 +53,6 @@ values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIREMENT
 insert or replace into RequirementSetRequirements
         (RequirementSetId,                                          RequirementId)
 values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIRES_PLOT_HAS_SUK_KELP');
+
+-- 水族馆适配 xhh
+delete from BuildingModifiers where ModifierId = 'AQUARIUM_KELP_FOREST_SCIENCE';
