@@ -82,52 +82,6 @@ insert into Policies_XP1
 values
 	('POLICY_WONDERS_MISLEAD_COUNTRY',	'ERA_CLASSICAL',	'ERA_RENAISSANCE',	1);
 
--- 着力点：开明专制 by xhh
-
--- update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
--- update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_MILITARY';
-
--- insert or replace into Types
--- 	(Type,								Kind)
--- values
--- 	('COMMEMORATION_GOVERNMENT',		'KIND_MOMENT_OUTCOME');
-
--- insert or replace into CommemorationTypes
--- 	(CommemorationType,					CategoryDescription,				GoldenAgeBonusDescription,						NormalAgeBonusDescription,						DarkAgeBonusDescription,						MinimumGameEra,				MaximumGameEra)
--- values
--- 	('COMMEMORATION_GOVERNMENT',		'LOC_MOMENT_GOVERNMENT',			'LOC_MOMENT_GOVERNMENT_BONUS_GOLDEN_AGE',		'LOC_MOMENT_GOVERNMENT_BONUS_NORMAL_AGE',		'LOC_MOMENT_GOVERNMENT_BONUS_DARK_AGE',			'ERA_RENAISSANCE',			'ERA_INDUSTRIAL');
-
--- insert or replace into CommemorationModifiers
--- 	(CommemorationType,					ModifierId),
--- values
--- 	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_ADD_SLOT_ATTACH'),
--- 	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH'),
--- 	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS_ATTACH');
-
--- insert or replace into Modifiers
--- 	(ModifierId,													ModifierType,													OwnerRequirementSetId,						SubjectRequirementSetId)
--- values
--- 	('COMMEMORATION_GOVERNMENT_ADD_SLOT_ATTACH',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',							'PLAYER_HAS_GOLDEN_AGE',					NULL),
--- 	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',							'PLAYER_HAS_GOLDEN_AGE',					NULL),
--- 	('COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS_ATTACH',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',							NULL,										'PLAYER_ELIGIBLE_FOR_COMMEMORATION_QUEST'),
-
--- 	('COMMEMORATION_GOVERNMENT_ADD_SLOT',							'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',		NULL,										NULL),
--- 	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',			NULL,										NULL),
--- 	('COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS',			'MODIFIER_PLAYER_ADJUST_PLAYER_ERA_SCORE_PER_PRIDE_MOMENT',		NULL,										NULL);
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,														Name,					Value)
--- values
--- 	('COMMEMORATION_GOVERNMENT_ADD_SLOT_ATTACH',						'ModifierId',			'COMMEMORATION_GOVERNMENT_ADD_SLOT'),
--- 	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',					'ModifierId',			'COMMEMORATION_GOVERNMENT_BOOST_CULTURE'),
--- 	('COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS_ATTACH',			'ModifierId',			'COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS'),
-
--- 	('COMMEMORATION_GOVERNMENT_ADD_SLOT',								'GovernmentSlotType',	'SLOT_WILDCARD'),
--- 	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'YieldType',			'YIELD_CULTURE'),
--- 	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'Amount',				5),
--- 	('COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS',				'Amount',				1),
--- 	('COMMEMORATION_GOVERNMENT_HISTORICAL_MOMENT_BONUS',				'MinScore',				1);
-
 -- Policy Cards
 delete from PolicyModifiers where PolicyType = 'POLICY_GOD_KING' and ModifierId = 'GOD_KING_GOLD';
 update ModifierArguments set Value = 2 where ModifierId = 'GOD_KING_FAITH' and Name = 'Amount';

@@ -155,8 +155,8 @@ update Buildings set CitizenSlots = 1 where
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where BuildingType = 'BUILDING_GRAND_BAZAAR';
-	-- 【食品市场】改为【内燃机】科技解锁
-update Buildings set PrereqTech = 'TECH_COMBUSTION', PrereqCivic = NULL where BuildingType = 'BUILDING_FOOD_MARKET';--xhh
+	-- 【食品市场】改为【城市化】市政解锁
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_URBANIZATION' where BuildingType = 'BUILDING_FOOD_MARKET';--xhh
 	-- 【水族馆】改为【生物】科技解锁
 update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_AQUARIUM';--xhh
 	-- 【生态研究所】改为【生物】科技解锁
@@ -1210,7 +1210,7 @@ values
 	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				55,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
-	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
+	null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	-- null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD'),
 	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				55,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
 	null,								'CIVIC_CODE_OF_LAWS',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null);
