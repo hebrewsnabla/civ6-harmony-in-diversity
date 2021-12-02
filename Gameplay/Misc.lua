@@ -1,4 +1,4 @@
-Utils = {};
+Utils = ExposedMembers.DLHD.Utils;
 
 function OnPlayerEraScoreChanged(playerID, amountAwarded)
     local player = Players[playerID]
@@ -96,3 +96,25 @@ function GreatAdmiralFreeStrategicResource(unitOwner, unitID, greatPersonClassID
 end
 
 Events.UnitGreatPersonActivated.Add(GreatAdmiralFreeStrategicResource)
+
+
+--Evolution Theory Boost
+function EvolutionheoryBoost(playerID, districtID, iX, iY)
+    local pPlayer = Players[playerID]
+    if pPlayer ~= nil then
+        local plot = Map.GetPlot(iX, iY)
+        local districtType = plot:GetDistrictType()
+        if Utils.IsDistrictType(districtType, 'DISTRICT_CAMPUS') then
+            local iDistrictContinent = plot:GetContinentType()
+            local iCapital = pPlayer:GetCities():GetCapitalCity()
+            local iCapitalPlot = Map.GetPlot(iCapital:GetX(), iCapital:GetY())
+            local iCapitalContinent = iCapitalPlot:GetContinentType()
+            if (iDistrictContinent ~= nil and iCapitalContinent ~= nil and iDistrictContinent ~= iCapitalContinent) then
+                local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY_HD'].Index;
+                pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 1);
+            end
+        end
+    end
+end
+
+GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)

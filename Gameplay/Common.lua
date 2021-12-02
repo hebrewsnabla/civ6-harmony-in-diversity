@@ -17,6 +17,34 @@ Utils.HasBuildingWithinCountry = function( playerID, buildingID )
     return false
 end
 
+Utils.GetDistrictIndex = function(districtType)
+    local row = GameInfo.Districts[districtType]
+    if row then
+        return row.Index
+    end
+    return nil
+end
+
+Utils.IsDistrictType = function(districtType, targetType, noUniqueReplace)
+    -- print(districtType, targetType, noUniqueReplace)
+    local index = Utils.GetDistrictIndex(targetType)
+    if index then
+        if districtType == index then
+            return true
+        end
+        if noUniqueReplace then
+            return false
+        end
+        for tRow in GameInfo.DistrictReplaces() do
+            if tRow.ReplacesDistrictType == targetType then
+                if districtType == Utils.GetDistrictIndex(tRow.CivUniqueDistrictType) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
 
 Utils.CivilizationHasTrait = function(sCiv, sTrait)
     for tRow in GameInfo.CivilizationTraits() do
@@ -153,37 +181,3 @@ end
 
 ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;
-
-
---Evolution Theory Boost
-
-function EvolutionheoryBoost(playerID, districtID, iX, iY)
-    local pPlayer = Players[playerID]
-
-    if pPlayer ~= nil then
-        
-        local pCampusPlot = Map.GetPlot(iX, iY)
-        local pCampusContinent = pCampusPlot:GetContinentType()
-
-        local iCapital = pPlayer:GetCities():GetCapitalCity()
-        local iCapitalPlot = Map.GetPlot(iCapital:GetX(), iCapital:GetY())
-        local iCapitalContinent = iCapitalPlot:GetContinentType()
-
-        print('XHH1', pPlayer, pCampusContinent, iCapitalContinent)
-
-        if (pCampusContinent ~= nil and iCapitalContinent ~= nil and pCampusContinent ~= iCapitalContinent) then
-            
-            print('XHH2')
-            local CampusInfo:table = GameInfo.Districts["DISTRICT_CAMPUS"]
-            
-            if (pCampusPlot:GetDistrictType() == CampusInfo.Index) then
-
-            local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY_HD'].Index
-            pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4)
-            
-            end
-        end
-    end
-end
-
-GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
