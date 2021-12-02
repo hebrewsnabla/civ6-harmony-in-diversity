@@ -17,10 +17,10 @@ values
 insert or replace into Improvement_BonusYieldChanges
 	(ImprovementType,						YieldType,				BonusYieldChange,		PrereqTech)
 values
-	('IMPROVEMENT_OIL_WELL',				'YIELD_PRODUCTION',		1,						'TECH_REFINING'),
+	('IMPROVEMENT_OIL_WELL',				'YIELD_PRODUCTION',		2,						'TECH_REFINING'),
 	('IMPROVEMENT_OIL_WELL',				'YIELD_SCIENCE',		2,						'TECH_REFINING'),
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_SCIENCE',		2,						'TECH_REFINING'),
-	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_PRODUCTION',		1,						'TECH_REFINING');
+	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_PRODUCTION',		2,						'TECH_REFINING');
 
 -- 设定【演化论】市政效果：营地+1粮+1锤，替代【重商主义】市政
 update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PrereqCivic = 'CIVIC_MERCANTILISM';--xhh

@@ -155,19 +155,35 @@ ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;
 
 
--- --Evolution Theory Boost
--- function EvolutionheoryBoost(playerID, cityID, iX, iY)
---     local pPlayer = Players[playerID];
+--Evolution Theory Boost
 
---     local iCampusPlot = Map.GetPlot(iX, iY);
+function EvolutionheoryBoost(playerID, districtID, iX, iY)
+    local pPlayer = Players[playerID]
 
---     local iCapital = Players:GetCities:GetCapitalCity();
+    if pPlayer ~= nil then
+        
+        local pCampusPlot = Map.GetPlot(iX, iY)
+        local pCampusContinent = pCampusPlot:GetContinentType()
 
---     local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY'].Index;
-    
---     pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4);
--- end
+        local iCapital = pPlayer:GetCities():GetCapitalCity()
+        local iCapitalPlot = Map.GetPlot(iCapital:GetX(), iCapital:GetY())
+        local iCapitalContinent = iCapitalPlot:GetContinentType()
 
--- Events.CityBuilt.Add(EvolutionheoryBoost)
+        print('XHH1', pPlayer, pCampusContinent, iCapitalContinent)
 
--- --city Built 触发这个事件的时候你判断这个位置是不是和首都位置不在同一个大陆
+        if (pCampusContinent ~= nil and iCapitalContinent ~= nil and pCampusContinent ~= iCapitalContinent) then
+            
+            print('XHH2')
+            local CampusInfo:table = GameInfo.Districts["DISTRICT_CAMPUS"]
+            
+            if (pCampusPlot:GetDistrictType() == CampusInfo.Index) then
+
+            local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY_HD'].Index
+            pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4)
+            
+            end
+        end
+    end
+end
+
+GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)

@@ -102,11 +102,16 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'REQUIREMENT_CITY_HAS_BUILDING' from Buildings;
 
--- Eras
+-- Player Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'EraType', EraType from Eras;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'REQUIREMENT_PLAYER_ERA_AT_LEAST' from Eras;
+-- Opponent Eras Less than
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_OPPONENT_LESSTHAN_' || EraType, 'EraType', EraType from Eras;
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
+	select 'REQUIRES_OPPONENT_LESSTHAN_' || EraType, 'REQUIREMENT_OPPONENT_ERA_AT_LEAST', 1 from Eras;
 
 --Game Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -287,7 +292,7 @@ values
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
-	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
+	--('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),--xhh
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
 	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
