@@ -102,11 +102,16 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'REQUIREMENT_CITY_HAS_BUILDING' from Buildings;
 
--- Eras
+-- Player Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'EraType', EraType from Eras;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'REQUIREMENT_PLAYER_ERA_AT_LEAST' from Eras;
+-- Opponent Eras Less than
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_OPPONENT_LESSTHAN_' || EraType, 'EraType', EraType from Eras;
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
+	select 'REQUIRES_OPPONENT_LESSTHAN_' || EraType, 'REQUIREMENT_OPPONENT_ERA_AT_LEAST', 1 from Eras;
 
 --Game Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

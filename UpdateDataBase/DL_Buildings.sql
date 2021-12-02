@@ -371,7 +371,8 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,								RequirementSetType)
 values
-	('HD_HAS_TECH_PAPER_MAKING_XHH',				'REQUIREMENTSET_TEST_ALL');
+	('HD_HAS_TECH_PAPER_MAKING_XHH',				'REQUIREMENTSET_TEST_ALL'),
+	('HD_HAS_TECH_CALENDAR_HD',						'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
