@@ -188,8 +188,10 @@ values
     ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_DESCRIPTION",                    "Military academy project. Once completed, instantly gain +20 [ICON_RESOURCE_ALUMINUM] Aluminum."),
     ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "Nuclear Refinery"),
     ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "Nuclear Refinery"),
-    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military Academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium.");
-
+    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military Academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium."),
+    ("LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "Recruit Workers"),
+    ("LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "Recruit Workers"),
+    ("LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "City project. If this city has at least 2 [ICON_Citizen] Citizens, this project grants a builder and reduces 1 [ICON_Citizen] Citizen.[NEWLINE]If this city has only 1 [ICON_Citizen] Citizen, this project will take effect later when the population of this city increases next time.");
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
@@ -221,7 +223,10 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_DESCRIPTION",                    "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_ALUMINUM] 铝。"),
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "气体离心"),
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "气体离心"),
-    ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_URANIUM] 铀。");
+    ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_URANIUM] 铀。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "征发民夫"),
+    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "征发民夫"),
+    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "城市项目，项目完成后，若此城至少有2 [ICON_Citizen] 人口，则获得1名建造者，城市-1 [ICON_Citizen] 人口；若该城市只有1 [ICON_Citizen] 人口，则在下一次人口增长时，获得1名建造者，城市-1 [ICON_Citizen] 人口。");
 
 --------------------------------------------------------------------------------   
 -- error texts

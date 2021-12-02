@@ -79,3 +79,20 @@ values
     ('BATHHOUSE_POP_CULTURE_MODIFIER',                  'Amount',       0.3);
 
 update ModifierArguments set Value = 20 where ModifierId = 'SEWER_GROWTH_RATE' and Name = 'Amount';
+
+-- City states
+delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_1_BUILDING_REQUIREMENTS';
+delete from RequirementSetRequirements where RequirementSetId = 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS';
+
+insert or replace into RequirementSetRequirements (RequirementSetId,    RequirementId)
+select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_1_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_DISTRICT_AQUEDUCT'
+from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
+insert or replace into RequirementSetRequirements (RequirementSetId,    RequirementId)
+select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_ORCHARD'
+from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
+insert or replace into RequirementSetRequirements (RequirementSetId,    RequirementId)
+select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_HAMMER_WORKS'
+from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';
+insert or replace into RequirementSetRequirements (RequirementSetId,    RequirementId)
+select 'HD_CITY_HAS_CSE_AGRICULTURAL_TIER_2_BUILDING_REQUIREMENTS',     'REQUIRES_CITY_HAS_BUILDING_JNR_BATHHOUSE'
+from CSE_ClassTypes where Type = 'CSE_AGRICULTURAL';

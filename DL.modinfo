@@ -24,8 +24,8 @@
       <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.1。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, o(╯□╰)o，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 小灰灰，YT，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, o(╯□╰)o，奥伊米亚，法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -1038,9 +1038,13 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
-    <UpdateDatabase id="HD_Ingame_setup" criteria="Expansion2">
+    <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/HD_Ingame_setup.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_EarlySetup" criteria="Expansion2">
+      <Properties><LoadOrder>16001</LoadOrder></Properties>
+      <File>UpdateDataBase/DL_EarlySetup.sql</File>
     </UpdateDatabase>
     <!-- Double Great Person need to update in the first -->
     <UpdateDatabase id="DL_GPPDouble" criteria="Expansion2">
@@ -1659,6 +1663,8 @@
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_50.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
+    <!-- Early Setup -->
+    <File>UpdateDataBase/DL_EarlySetup.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>
     <File>DLCSupport/DL_Aztec.sql</File>

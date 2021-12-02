@@ -224,9 +224,14 @@ values
     ("LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",            "+2 [ICON_CULTURE] Culture in every {LOC_BUILDING_CONSULATE_COMMA}Art Museum and Artifact Museum."),
     ("LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",          "+3 [ICON_CULTURE] Culture in every {LOC_BUILDING_CHANCERY_AND}Broadcast Center."),
     ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",               "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold in every Market and Lighthouse."),
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",               "+4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_COMMA}Bank and Shipyard."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",             "+6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_COMMA}Stock Exchange and Seaport."),
+    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold in every city has Market or Lighthouse."),
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",               "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}"), 
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",           "+4 [ICON_GOLD] Gold in every city has Bank or Shipyard."), 
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",      " +4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_NAME}."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",             "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}"),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",         "+6 [ICON_GOLD] Gold in every city has Stock Exchange or Seaport."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",    " +6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_NAME}."), 
+    ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS_ALT",           "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
     ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",          "+2 [ICON_GOLD] Gold in every Market."),
     ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",           "+4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_AND}Bank."),
     ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",         "+6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_AND}Stock Exchange."),
@@ -241,15 +246,15 @@ values
     ("LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_PRODUCTION] Production towards districts and buildings in your [ICON_CAPITAL] Capital."),
     ("LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_PRODUCTION] Production towards districts and buildings in every Workshop."),
     ("LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_PRODUCTION] Production towards districts and buildings in every {LOC_BUILDING_CONSULATE_AND}Factory."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings in every {LOC_BUILDING_CHANCERY_AND}Power Plant.");
-    -- ("LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",        ""),
-    -- ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       ""),
-    -- ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        ""),
-    -- ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      ""),
-    -- ("LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",            ""),
-    -- ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           ""),
-    -- ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            ""),
-    -- ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "");
+    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings in every {LOC_BUILDING_CHANCERY_AND}Power Plant."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_FOOD] Food in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_FOOD] Food in every Granary."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_FOOD] Food in every {LOC_BUILDING_CONSULATE_AND}Aqueduct."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_FOOD] Food in every {LOC_BUILDING_CHANCERY_AND}Sewer."),
+    ("LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",            "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
+    ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+2 [ICON_GOLD] Gold in every Lighthouse."),
+    ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            "+4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_AND}Shipyard."),
+    ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "+6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_AND}Seaport.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -265,9 +270,13 @@ values
     ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",             "每座{LOC_BUILDING_CONSULATE_COMMA}艺术博物馆和考古博物馆+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座{LOC_BUILDING_CHANCERY_AND}广播中心+3 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",                "[ICON_Capital] 首都+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",               "每座市场和灯塔+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",                "每座{LOC_BUILDING_CONSULATE_COMMA}银行和造船厂+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",              "每座{LOC_BUILDING_CHANCERY_COMMA}证券交易所和码头+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",               "拥有市场或灯塔的城市+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",                "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",            "拥有银行或造船厂的城市+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",       "每座{LOC_BUILDING_CONSULATE_NAME}+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",              "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",          "拥有证券交易所或码头的城市+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",     "每座{LOC_BUILDING_CHANCERY_NAME}+6 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",           "每座市场+2 [ICON_Gold] 市场。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",            "每座{LOC_BUILDING_CONSULATE_AND}银行+4 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",          "每座{LOC_BUILDING_CHANCERY_AND}证券交易所+6 [ICON_Gold] 金币。"),
@@ -282,4 +291,26 @@ values
     ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",           "建造区域与建筑时，[ICON_Capital] 首都+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",          "建造区域与建筑时，每座工作坊+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",           "建造区域与建筑时，每座{LOC_BUILDING_CONSULATE_AND}工厂+2 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",         "建造区域与建筑时，每座{LOC_BUILDING_CHANCERY_AND}发电厂+3 [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",         "建造区域与建筑时，每座{LOC_BUILDING_CHANCERY_AND}发电厂+3 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",         "[ICON_Capital] 首都+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",        "每座粮仓+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",         "每座{LOC_BUILDING_CONSULATE_AND}水渠+2 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",       "每座{LOC_BUILDING_CHANCERY_AND}下水道+3 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",             "[ICON_Capital] 首都+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座灯塔+2 [ICON_Gold] 市场。"),
+    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",             "每座{LOC_BUILDING_CONSULATE_AND}造船厂+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座{LOC_BUILDING_CHANCERY_AND}码头+6 [ICON_Gold] 金币。");
+
+insert or replace into EnglishText (Tag,            Text) select
+    "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",    "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA}"
+where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
+insert or replace into EnglishText (Tag,            Text) select
+    "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",  "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA}"
+where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
+
+insert or replace into LocalizedText (Language,      Tag,           Text) select
+    "zh_Hans_CN",   "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",    "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA}"
+where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
+insert or replace into LocalizedText (Language,      Tag,           Text) select
+    "zh_Hans_CN",   "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",  "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA}"
+where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
