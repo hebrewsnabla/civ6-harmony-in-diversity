@@ -214,47 +214,28 @@ end
 Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
 ---]]
 
+GameEvents = ExposedMembers.GameEvents;
+
 function KublaiGrantCivTraitOnConquerOriginalCity( playerID, cityID, iX, iY )
-	local captureModifier = {}
-    local captureTrait = {}
     local pPlayer = Players[playerID]
 	local pPlayerConfig = PlayerConfigurations[playerID]
 	local sLeader = pPlayerConfig:GetLeaderTypeName()
 	local sKublai = 'TRAIT_LEADER_KUBLAI'
-    local pCity = CityManager.GetCity(playerID, cityId)
+    local pCity = CityManager.GetCity(playerID, cityID)
     if pPlayer ~= nil and Utils.LeaderHasTrait(sLeader, sKublai) then
-        print('Kublai+',playerID,cityID,pCity:GetOriginalOwner()) 
+        print('Kublai3',playerID,cityID,pCity:IsOriginalCapital()) 
         if pCity ~= nil then
 			if pCity:IsOriginalCapital() then  -- unable to be used in Gameplay
-			    local originalOwnerID = pCity:GetOriginalOwner()  -- unable to be used in UI
-                print('Kublai0',originalOwnerID,playerID) 
-			    if originalOwnerID ~= playerID and originalOwnerID ~= nil then
-				    local oPlayer = Players[originalOwnerID]
-					local oPlayerConfig = PlayerConfigurations[originalOwnerID]
-					local oCiv = oPlayerConfig:GetCivilizationTypeName()
-					for tRow in GameInfo.CivilizationTraits() do
-						if tRow.CivilizationType == oCiv then
-					   		table.insert(captureTrait,tRow.TraitType)
-						end
-					end
-					print('Kublai1',oCiv) 
-					for _, traitType in ipairs(captureTrait) do
-						for tRow in GameInfo.TraitModifiers() do
-							if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
-						   	   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
-						       tRow.TraitType == traitType then
-								table.insert(captureModifier,tRow.ModifierId)
-							end
-						end
-					end 
-					for _, modifier in ipairs(captureModifier) do
-						pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
-						print('Kublai2',modifier) 
-					end
-				end
+			    GameEvents.KublaiGrantCivTraitSwitch.Call( playerID, iX, iY )
+                print('Kublai4',playerID,cityID,pCity:GetOriginalOwner()) 
 			end
 		end
     end
 end
 
---Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCity)
+Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCity)
+
+--// Swap to UI...
+--function KublaiGrantCivTraitSwitch( playerID, iX, iY )
+--	KublaiGrantCivTrait( playerID, iX, iY )
+--end

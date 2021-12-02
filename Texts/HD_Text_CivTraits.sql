@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
-    ("LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "One extra Economic policy slot in any government. Receive the civilization traits after conquering another Civilization's any city."),
+    ("LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "One extra Economic policy slot in any government. Receive the civilization traits after conquering another Civilization's Original [ICON_Capital] Capital city."),
     ("LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "+20% [ICON_Production] Production toward Medieval, Renaissance, and Industrial era wonders. [ICON_Tourism] Tourism from wonders of any era is +200%. Each wonder provides +1 of all yields to capital city, doubles when the wonder is at least Medieval era."),
     ("LOC_TRAIT_LEADER_SURROUNDED_BY_GLORY_DESCRIPTION",              "+5% [ICON_Culture] Culture per city-state you are the Suzerain of. After building an Acropolis District, the first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys."),
     ("LOC_TRAIT_LEADER_THERMOPYLAE_DESCRIPTION",                      "Combat victories provide [ICON_Culture] Culture equal to 50% of the [ICON_Strength] Combat Strength of the defeated unit. (on Standard Speed) +1 [ICON_Strength] Combat Strength for every Military Policy slotted. Receive a free anti-cavalry unit when the Acropolis district is constructed."),
@@ -75,7 +75,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "任意政体中额外增加一个经济政策槽位。占领其他文明的首个城市时，获得该文明的特色能力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "任意政体中额外增加一个经济政策槽位。占领其他文明的原始 [ICON_Capital] 首都时，获得该文明的特色能力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "为中世纪、文艺复兴时期和工业时代的奇观+20% [ICON_Production] 生产力。 所有奇观的 [ICON_Tourism] 旅游业绩+200%。每个奇观为首都+1所有产出，若为中世纪及之后的奇观则该加成翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SURROUNDED_BY_GLORY_DESCRIPTION",              "作为宗主国时，每个下辖的城邦使您的 [ICON_Culture] 文化值+5%。建造卫城后，您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_THERMOPYLAE_DESCRIPTION",                      "战斗胜利后，获得等同于被击杀单位 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值（标准速度下）。槽位中每有一项军事政策，则+1 [ICON_Strength] 战斗力。建成卫城时获得一个抗骑兵单位。"),
