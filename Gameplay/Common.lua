@@ -155,31 +155,35 @@ ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;
 
 
--- --Evolution Theory Boost
--- function EvolutionheoryBoost(playerID, districtID, cityID, iX, iY, districtType, percentComplete)
---     local pPlayer = Players[playerID]
+--Evolution Theory Boost
 
---     if pPlayer ~= nil then
---         local pCampusPlot = Map.GetPlot(iX, iY)
---         local pCampusContinent = pCampusPlot:GetContinentType()
+function EvolutionheoryBoost(playerID, districtID, iX, iY)
+    local pPlayer = Players[playerID]
 
---         local iCapital = pPlayer:GetCities():GetCapitalCity()
---         local iCapitalPlot = Map.GetPlot(iCapital:GetX(), iCapital:GetY())
---         local iCapitalContinent = iCapitalPlot:GetContinentType()
+    if pPlayer ~= nil then
+        
+        local pCampusPlot = Map.GetPlot(iX, iY)
+        local pCampusContinent = pCampusPlot:GetContinentType()
 
---         local pDistrictID = districtID
---         local iDistrictID = GameInfo.Districts['DISTRICT_CAMPUS'].Index
+        local iCapital = pPlayer:GetCities():GetCapitalCity()
+        local iCapitalPlot = Map.GetPlot(iCapital:GetX(), iCapital:GetY())
+        local iCapitalContinent = iCapitalPlot:GetContinentType()
 
---         local iPercent = percentComplete
+        print('XHH1', pPlayer, pCampusContinent, iCapitalContinent)
 
---         local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY_HD'].Index
+        if (pCampusContinent ~= nil and iCapitalContinent ~= nil and pCampusContinent ~= iCapitalContinent) then
+            
+            print('XHH2')
+            local CampusInfo:table = GameInfo.Districts["DISTRICT_CAMPUS"]
+            
+            if (pCampusPlot:GetDistrictType() == CampusInfo.Index) then
 
---             print(pPlayer, pCampusContinent, iCapitalContinent, iPercent)
+            local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY_HD'].Index
+            pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4)
+            
+            end
+        end
+    end
+end
 
---         if pCampusContinent ~= nil and iCapitalContinent ~= nil and pCampusContinent ~= iCapitalContinent and pDistrictID ~= nil and pDistrictID.DistrictType == iDistrictID.DistrictType and iPercent == 100 then
---             pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4)
---         end
---     end
--- end
-
--- Events.DistrictAddedToMap.Add(EvolutionheoryBoost)
+GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
