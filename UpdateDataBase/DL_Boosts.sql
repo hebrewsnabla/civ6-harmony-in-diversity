@@ -78,6 +78,9 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBS
     -- 【无线电】科技尤里卡改为：拥有殖民主义市政
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC',
     BoostingCivicType = 'CIVIC_COLONIALISM' where TechnologyType = 'TECH_RADIO';
+    -- 【制导系统】科技尤里卡改为：训练2个战斗机
+update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_FIGHTER',
+    NumItems = 2 where TechnologyType = 'TECH_GUIDANCE_SYSTEMS';
 
 -- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;
