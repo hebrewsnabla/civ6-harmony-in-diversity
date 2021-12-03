@@ -211,52 +211,39 @@ end
 
 Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
 
--- Kublai gets ua after conquering others' cities
-local PROP_KEY_HAVE_CAPTURED = 'HaveCaptured'
-
-function KublaiGetUniqueAbilityOnConquerOriginalCity( capturerID, ownerID, cityID, cityX, cityY )
+function KublaiGrantCivTrait( playerID, iX, iY )
 	local captureModifier = {}
     local captureTrait = {}
-    local pPlayer = Players[capturerID]
-	local pPlayerConfig = PlayerConfigurations[capturerID]
-	local sLeader = pPlayerConfig:GetLeaderTypeName()
-	local sKublai = 'TRAIT_LEADER_KUBLAI'
-    if pPlayer ~= nil and LeaderHasTrait(sLeader, sKublai) then
-		local conquerCity = CityManager.GetCityAt(cityX, cityY)
-        if conquerCity ~= nil then
-			-- if conquerCity:IsOriginalCapital() then  -- unable to be used in Gameplay
-			local originalOwnerID = conquerCity:GetOriginalOwner()
-			if (originalOwnerID) then
-				local oPlayer = Players[originalOwnerID]
-				local have_captured = oPlayer:GetProperty(PROP_KEY_HAVE_CAPTURED)
-				if have_captured == nil then
-					oPlayer:SetProperty(PROP_KEY_HAVE_CAPTURED, true) -- only first time
-					--print('Kublai0',PROP_KEY_HAVE_CAPTURED)
-					local oPlayerConfig = PlayerConfigurations[originalOwnerID]
-					local oCiv = oPlayerConfig:GetCivilizationTypeName()
-					for tRow in GameInfo.CivilizationTraits() do
-						if tRow.CivilizationType == oCiv then
-					   		table.insert(captureTrait,tRow.TraitType)
-						end
-					end
-					--print('Kublai1',originalOwnerID,oCiv) 
-					for _, traitType in ipairs(captureTrait) do
-						for tRow in GameInfo.TraitModifiers() do
-							if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
-						   	   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
-						       tRow.TraitType == traitType then
-								table.insert(captureModifier,tRow.ModifierId)
-							end
-						end
-					end 
-					for _, modifier in ipairs(captureModifier) do
-						pPlayer:AttachModifierByID(modifier)
-						--print('Kublai2',modifier) 
-					end
-				end
+    local pPlayer = Players[playerID]
+	local pCity = CityManager.GetCityAt(iX, iY)
+	local originalOwnerID = pCity:GetOriginalOwner() 
+    print('Kublai0',originalOwnerID,playerID) 
+	if originalOwnerID ~= playerID and originalOwnerID ~= nil then
+		local oPlayer = Players[originalOwnerID]
+		local oPlayerConfig = PlayerConfigurations[originalOwnerID]
+		local oCiv = oPlayerConfig:GetCivilizationTypeName()
+		for tRow in GameInfo.CivilizationTraits() do
+			if tRow.CivilizationType == oCiv then
+				table.insert(captureTrait,tRow.TraitType)
 			end
 		end
-    end
+		print('Kublai1',oCiv) 
+		for _, traitType in ipairs(captureTrait) do
+			for tRow in GameInfo.TraitModifiers() do
+				if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
+				   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
+				   tRow.TraitType == traitType then
+					table.insert(captureModifier,tRow.ModifierId)
+				end
+			end
+		end 
+		for _, modifier in ipairs(captureModifier) do
+			pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
+			print('Kublai2',modifier)
+		end
+	end
 end
 
-GameEvents.CityConquered.Add(KublaiGetUniqueAbilityOnConquerOriginalCity)
+GameEvents.KublaiGrantCivTraitSwitch.Add(KublaiGrantCivTrait)
+
+ExposedMembers.GameEvents = GameEvents
