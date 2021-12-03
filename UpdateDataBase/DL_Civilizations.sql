@@ -1745,3 +1745,33 @@ where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASIL
 insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
 select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+------------------------------------------------------------------------------------------------
+-- America
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('HD_AMERICA_PLAIN_PURCHASE',			'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN'),
+	('HD_AMERICA_PLAIN_HILLS_PURCHASE',		'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN'),
+	('HD_AMERICA_GRASS_PURCHASE',			'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN'),
+	('HD_AMERICA_GRASS_HILLS_PURCHASE',		'MODIFIER_PLAYER_CITIES_ADJUST_PLOT_PURCHASE_COST_TERRAIN');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,					Value)
+values
+	('HD_AMERICA_PLAIN_PURCHASE',			'TerrainType',			'TERRAIN_PLAINS'),
+	('HD_AMERICA_PLAIN_PURCHASE',			'Amount',				-50),
+	('HD_AMERICA_PLAIN_HILLS_PURCHASE',		'TerrainType',			'TERRAIN_PLAINS_HILLS'),
+	('HD_AMERICA_PLAIN_HILLS_PURCHASE',		'Amount',				-50),
+	('HD_AMERICA_GRASS_PURCHASE',			'TerrainType',			'TERRAIN_GRASS'),
+	('HD_AMERICA_GRASS_PURCHASE',			'Amount',				-50),
+	('HD_AMERICA_GRASS_HILLS_PURCHASE',		'TerrainType',			'TERRAIN_GRASS_HILLS'),
+	('HD_AMERICA_GRASS_HILLS_PURCHASE',		'Amount',				-50);
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_PLAIN_PURCHASE'),
+	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_PLAIN_HILLS_PURCHASE'),
+	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_PURCHASE'),
+	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_HILLS_PURCHASE');
