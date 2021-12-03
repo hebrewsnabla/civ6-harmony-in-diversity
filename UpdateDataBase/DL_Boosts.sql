@@ -21,7 +21,7 @@ update Boosts set NumItems = 0, Unit1Type = 'UNIT_SCOUT', BoostClass = 'BOOST_TR
 
 -- update Boosts set NumItems = 2, BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS' where TechnologyType = 'TECH_ENGINEERING';
 
-update Boosts set NumItems = 0, Unit1Type = 'UNIT_SPEARMAN', BoostClass = 'BOOST_TRIGGER_KILL_WITH' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
+-- update Boosts set NumItems = 0, Unit1Type = 'UNIT_SPEARMAN', BoostClass = 'BOOST_TRIGGER_KILL_WITH' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 update Boosts set Unit1Type = null, BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', BoostingCivicType = 'CIVIC_DEFENSIVE_TACTICS' where TechnologyType = 'TECH_MILITARY_TACTICS';
 
 update Boosts set NumItems = 1, BoostClass = 'BOOST_TRIGGER_HAVE_X_DISTRICTS', Unit1Type = NULL, DistrictType = 'DISTRICT_DAM',
@@ -36,14 +36,14 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_GRE
 
 -- 设定市政的鼓舞
 insert or replace into Boosts
-    (BoostID,   CivicType,                                  Boost,  TriggerDescription,                                     TriggerLongDescription,                                             Unit1Type,      BoostClass,                                         Unit2Type,      BuildingType,                              ImprovementType,        BoostingTechType,           ResourceType,   NumItems,   DistrictType,           RequiresResource)
+    (BoostID,   CivicType,                                  Boost,  TriggerDescription,                                     TriggerLongDescription,                                             Unit1Type,      BoostClass,                                         Unit2Type,      BuildingType,   ImprovementType,        BoostingTechType,           ResourceType,   NumItems,   DistrictType,           RequiresResource)
 values
-    (201,       'CIVIC_LITERARY_TRADITION_HD',              40,     'LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD',              'LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD',                 Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PAPER_MAKING_HD',     Null,           0,          Null,                   0),
-    (202,       'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',     40,     'LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD',     'LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD',        Null,           'BOOST_TRIGGER_HAVE_X_DISTRICTS',                   Null,           Null,                                      Null,                   Null,                       Null,           2,          'DISTRICT_CAMPUS',      0),
-    (203,       'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_CONSULATE',                      Null,                   Null,                       Null,           1,          Null,                   0),
-    (204,       'CIVIC_HISTORICAL_PHILOSOPHY_HD',           40,     'LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD',           'LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD',              Null,           'BOOST_TRIGGER_HAVE_WONDER_PAST_X_ERA',             Null,           Null,                                      Null,                   Null,                       Null,           3,          Null,                   0),
-    (205,       'CIVIC_ETHICS_HD',                          40,     'LOC_BOOST_TRIGGER_ETHICS_HD',                          'LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD',                             Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,                                      Null,                   'TECH_PRINTING',            Null,           0,          Null,                   0),
-    (206,       'CIVIC_SOCIAL_SCIENCE_HD',                  40,     'LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD',                  'LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD',                     Null,           'BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS',  Null,           Null,                                      Null,                   Null,                       Null,           7,          Null,                   0);
+    (201,       'CIVIC_LITERARY_TRADITION_HD',              40,     'LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD',              'LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD',                 Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,           Null,                   'TECH_PAPER_MAKING_HD',     Null,           0,          Null,                   0),
+    (202,       'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',     40,     'LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD',     'LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD',        Null,           'BOOST_TRIGGER_HAVE_X_DISTRICTS',                   Null,           Null,           Null,                   Null,                       Null,           2,          'DISTRICT_CAMPUS',      0),
+    (203,       'CIVIC_EVOLUTION_THEORY_HD',                40,     'LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD',                'LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD',                   Null,           'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH',       Null,           Null,           Null,                   Null,                       Null,           1,          Null,                   0),
+    (204,       'CIVIC_HISTORICAL_PHILOSOPHY_HD',           40,     'LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD',           'LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD',              Null,           'BOOST_TRIGGER_HAVE_WONDER_PAST_X_ERA',             Null,           Null,           Null,                   Null,                       Null,           3,          Null,                   0),
+    (205,       'CIVIC_ETHICS_HD',                          40,     'LOC_BOOST_TRIGGER_ETHICS_HD',                          'LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD',                             Null,           'BOOST_TRIGGER_RESEARCH_TECH',                      Null,           Null,           Null,                   'TECH_PRINTING',            Null,           0,          Null,                   0),
+    (206,       'CIVIC_SOCIAL_SCIENCE_HD',                  40,     'LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD',                  'LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD',                     Null,           'BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS',  Null,           Null,           Null,                   Null,                       Null,           7,          Null,                   0);
 
 -- 设定科技的尤里卡
 insert or replace into Boosts
@@ -71,7 +71,7 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_BUILDINGS', NumItems = 2,
     BuildingType = 'BUILDING_TEMPLE' where CivicType = 'CIVIC_REFORMED_CHURCH';
     -- 【后勤补给】市政鼓舞改为：拥有轮子科技
 update Boosts set BoostClass = 'BOOST_TRIGGER_RESEARCH_TECH', Unit1Type = Null, NumItems = 0,
-    BoostingTechType = 'TECH_THE_WHEEL' where TechnologyType = 'CIVIC_DEFENSIVE_TACTICS';
+    BoostingTechType = 'TECH_THE_WHEEL' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
     -- 【飞行】科技尤里卡改为：训练2个观测气球
 update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBSERVATION_BALLOON',
     NumItems = 2 where TechnologyType = 'TECH_FLIGHT';
@@ -79,4 +79,5 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_OBS
 update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC',
     BoostingCivicType = 'CIVIC_COLONIALISM' where TechnologyType = 'TECH_RADIO';
 
+-- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;

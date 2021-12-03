@@ -17,6 +17,34 @@ Utils.HasBuildingWithinCountry = function( playerID, buildingID )
     return false
 end
 
+Utils.GetDistrictIndex = function(districtType)
+    local row = GameInfo.Districts[districtType]
+    if row then
+        return row.Index
+    end
+    return nil
+end
+
+Utils.IsDistrictType = function(districtType, targetType, noUniqueReplace)
+    -- print(districtType, targetType, noUniqueReplace)
+    local index = Utils.GetDistrictIndex(targetType)
+    if index then
+        if districtType == index then
+            return true
+        end
+        if noUniqueReplace then
+            return false
+        end
+        for tRow in GameInfo.DistrictReplaces() do
+            if tRow.ReplacesDistrictType == targetType then
+                if districtType == Utils.GetDistrictIndex(tRow.CivUniqueDistrictType) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
 
 Utils.CivilizationHasTrait = function(sCiv, sTrait)
     for tRow in GameInfo.CivilizationTraits() do
@@ -153,21 +181,3 @@ end
 
 ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;
-
-
--- --Evolution Theory Boost
--- function EvolutionheoryBoost(playerID, cityID, iX, iY)
---     local pPlayer = Players[playerID];
-
---     local iCampusPlot = Map.GetPlot(iX, iY);
-
---     local iCapital = Players:GetCities:GetCapitalCity();
-
---     local m_EvolutionTheory = GameInfo.Civics['CIVIC_EVOLUTION_THEORY'].Index;
-    
---     pPlayer:GetCulture():TriggerBoost(m_EvolutionTheory, 0.4);
--- end
-
--- Events.CityBuilt.Add(EvolutionheoryBoost)
-
--- --city Built 触发这个事件的时候你判断这个位置是不是和首都位置不在同一个大陆
