@@ -22,7 +22,7 @@
 - 还有更多新奇观、新建筑等你探索。
 
 ### 获取方式
-* Steam: 创意工坊搜索Harmony找到对应项目（注意要找1.0版本），进入项目页面后，点击订阅即自动安装。
+* Steam: 创意工坊搜索Harmony找到对应项目（注意要找1.1版本），进入项目页面后，点击订阅即自动安装。
 * Epic: 请访问[在线百科的FAQ一栏](https://docs.qq.com/sheet/DTGRlWFlsRHROTldV?tab=aqb7re)
 
 ### 注意事项
@@ -57,14 +57,18 @@
 * 利牙菠萝
 * 陈又
 * wltk
+* 小灰灰
+* YT
+* 柚子
+* 奥伊米亚（配音）
+* 黑毛毛小魔仙
+* o(╯□╰)o
+* Winged Hussar
+* 榖音
 * 法拉墨
 * lp
 * Vearmus
-* 柚子
-* Winged Hussar
-* 榖音
 * Siv
-* o(╯□╰)o
 * 流浪de蒲公英
 
 ### 致谢

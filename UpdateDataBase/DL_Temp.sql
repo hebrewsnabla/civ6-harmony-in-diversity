@@ -25,3 +25,5 @@ delete from Civics where CivicType = 'CIVIC_CIVIL_ENGINEERING';
 
 -- 【石油】改为【生物】科技解锁
 update Resources set PrereqTech = 'TECH_BIOLOGY_HD' where ResourceType = 'RESOURCE_OIL';--xhh
+
+-----------------------------------------------------------------------------------------------------------------------------

@@ -68,8 +68,8 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD",                                    "The articles writen on paper have become the foundation of our culture."),
     ("LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD",                                    "Build 2 Campuses."),
     ("LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD",                           "With the increasing number of intellectuals, we should find a way to utilize their talents."),
-    --("LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD",                                               "Build a Campus on a foreign continent."),
-    --("LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD",                                      "Scholars on overseas expeditions collected a variety of novel biological resources, which has inspired not only Biology but also social thinking."),
+    ("LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD",                                               "Build a Campus on a foreign continent."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD",                                      "Scholars on overseas expeditions collected a variety of novel biological resources, which has inspired not only Biology but also social thinking."),
     ("LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD",                                          "Build a Medieval era or later wonder."),
     ("LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD",                                 "The wonders of the world mirror the rise and fall of our civilization and inspire philosophers of all ages."),
     ("LOC_BOOST_TRIGGER_ETHICS_HD",                                                         "Have the Printing Technology."),
@@ -154,7 +154,7 @@ insert or replace into LocalizedText
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
-    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "拥有水渠的城市，所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE]拥有淡水或相邻水渠的种植园+1 [ICON_Food] 食物（封建后失效）。"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "拥有水渠的城市，所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),
@@ -164,7 +164,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION",                            "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
     -- New Techs Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CALENDAR_HD",                                        "建造1座粮仓。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着帝国农业的发展，我们需要去安排一下这些年的生产计划了。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着文明农业的发展，我们需要去安排一下这些年的生产计划了。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造2座种植园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                           "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPASS_HD",                                         "拥有海军传统市政。"),
@@ -172,7 +172,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PHYSICS_HD",                                         "获得1位大科学家。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PHYSICS_HD",                                "科学家的伟大理论让我们形成了对这个世界基本认知。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BIOLOGY_HD",                                         "建造1座动物园。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                "在搜集了世界各地的动物以后，我们帝国中的动物园越来越热闹，是时候为这些生物分门别类了。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                "在搜集了世界各地的动物以后，城市中的动物园越来越热闹，我们是时候为这些生物分门别类了。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                               "建造2座中世纪城墙。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      "密集的战争导致了贵族们修建越来越多的城堡，而工人们从中总结出了有关土木建设的宝贵经验。"),
     -- Techs
@@ -213,17 +213,17 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME",                                     "社会科学"),
     -- New Civics Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LITERARY_TRADITION_HD",                              "拥有造纸术科技。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD",                     "写在纸上的文章成为了我们文化的根基。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_LITERARY_TRADITION_HD",                     "写在纸上的文字成为了我们文化的根基。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_IMPERIAL_EXAMINATION_SYSTEM_HD",                     "建造2个学院。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_IMPERIAL_EXAMINATION_SYSTEM_HD",            "随着文化人越来越多，我们应该想个办法利用他们的才能了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD",                                "建造1座领事馆。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD",                       "您的外交家们见识到了来自远方国度国土上的种种新鲜事物，而您决定让勇敢的帝国探险队前往陌生的异大陆进行科学考察。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_EVOLUTION_THEORY_HD",                                "在异大陆建造1座学院。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_EVOLUTION_THEORY_HD",                       "您派遣的学者们从世界各地搜集了多种生物资源，这些琳琅满目的来自新大陆的事物，不仅激励了生物学，也引发了社会思考。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HISTORICAL_PHILOSOPHY_HD",                           "建造1座中世纪时代或以后的奇观。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD",                  "世界奇观映照了我们文明的起起落落，启示着古往今来的哲人。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD",                  "世界奇观见证了我们文明的起起落落，启示着古往今来的哲人。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_ETHICS_HD",                                          "拥有印刷术科技。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD",                                 "当圣经一本本的印刷出来的时候，真理传遍了大地。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD",                                 "当圣经一本本被印刷出来的时候，真理传遍了大地。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                  "建造7个不同的专业化区域。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                         "复杂的城市构成了复杂的社会关系，而一些天才洞察了这一切。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                         "复杂的城市建设构成了复杂的社会关系，而一些天才洞察了这一切。"),
     -- Civics
     ("zh_Hans_CN",  "LOC_CIVIC_NATURAL_HISTORY_NAME",                                       "考古学"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
@@ -232,7 +232,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                      "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "从每个宗主城邦获得+1 [ICON_Favor] 外交支持。[NEWLINE]允许两个完全相同的单位组成一个舰队。[NEWLINE]现在可用一个新的战争借口替战争辩护：殖民战争。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                           "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "在帝国全境内+50% [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "全境内+50% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                 "可额外招募一名间谍。[NEWLINE]允许两个完全相同的单位组成一个兵团。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。允许建造者植树造林（人造林）。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
@@ -263,7 +263,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MEDIEVAL_FAIRES",                                    "经营3条贸易线。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MEDIEVAL_FAIRES",    ""), -- 您领土上的贸易正在蓬勃发展，这将很快促使商品交易会的产生。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RECORDED_HISTORY",                                   "建造1个图书馆"),
-    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RECORDED_HISTORY",   ""), -- 您的国民打算把更多卷轴放在您的学院图书馆里，他们开始记录帝国历史了。
+    -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RECORDED_HISTORY",   ""), -- 您的国民打算把更多卷轴放在您的学院图书馆里，他们开始记录文明的历史了。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_HUMANISM",                                           "建造2个古罗马剧场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_HUMANISM",                                  "频繁戏剧的演出引领了人民的新思潮。"), -- 您新获得的大艺术家带来的启示使我们的人民意识到了个体的力量。
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",            "拥有防御战术市政。"),
@@ -291,8 +291,8 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REFORMED_CHURCH",                                    "建造2座寺庙。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REFORMED_CHURCH",                           "教会为了宗教活动竟如此劳民伤财！是时候改革腐败的教会了。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DEFENSIVE_TACTICS",                                  "拥有轮子科技。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                         "有轮子的载具成为了帝国后勤工作的有力工具。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DEFENSIVE_TACTICS",                         "有轮子的载具成为了军队后勤工作的有力工具。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FLIGHT",                                             "拥有2个观测气球。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                    "我们的观测气球在敌方双翼机的枪林弹雨之下毁坏殆尽，我们为什么就不能想办法占据战场制高点呢？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "帝国在世界各地兴建殖民地，总督们希望能够开发一种新的长距离通讯技术。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。");

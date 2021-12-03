@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
+    ("LOC_BUILDING_DUMMY_POLAND_NAME",                                         "PlaceHolder"),
+    ("LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "Please Ignore"),
     -- UI Texts
     ("LOC_HD_MESSAGE",                                                        "Harmony in Diversity"),
     ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
@@ -61,6 +63,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                         "请忽略"),
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "请忽略"),
     -- Temp
 
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_1",                                         "此处记述了如何：一切处于悬止，一切平静，处于静默；一切静止，寂静，而天穹的领域是空洞的。——《波波武经》"),

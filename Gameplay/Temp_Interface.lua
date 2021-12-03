@@ -213,3 +213,29 @@ end
 
 Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
 ---]]
+
+GameEvents = ExposedMembers.GameEvents;
+
+function KublaiGrantCivTraitOnConquerOriginalCity( playerID, cityID, iX, iY )
+    local pPlayer = Players[playerID]
+	local pPlayerConfig = PlayerConfigurations[playerID]
+	local sLeader = pPlayerConfig:GetLeaderTypeName()
+	local sKublai = 'TRAIT_LEADER_KUBLAI'
+    local pCity = CityManager.GetCity(playerID, cityID)
+    if pPlayer ~= nil and Utils.LeaderHasTrait(sLeader, sKublai) then
+        print('Kublai3',playerID,cityID,pCity:IsOriginalCapital()) 
+        if pCity ~= nil then
+			if pCity:IsOriginalCapital() then  -- unable to be used in Gameplay
+			    GameEvents.KublaiGrantCivTraitSwitch.Call( playerID, iX, iY )
+                print('Kublai4',playerID,cityID,pCity:GetOriginalOwner()) 
+			end
+		end
+    end
+end
+
+Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCity)
+
+--// Swap to UI...
+--function KublaiGrantCivTraitSwitch( playerID, iX, iY )
+--	KublaiGrantCivTrait( playerID, iX, iY )
+--end

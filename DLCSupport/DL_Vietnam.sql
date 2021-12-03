@@ -93,3 +93,7 @@ values
     ('TRAIT_WOODS_PRODUCTION',      'YieldType',    'YIELD_PRODUCTION'),
     ('TRAIT_MARSH_SCIENCE',         'Amount',       2),
     ('TRAIT_MARSH_SCIENCE',         'YieldType',    'YIELD_SCIENCE');
+
+------------------------------------------------------------------------------------------------------------------
+-- Kublai
+delete from TraitModifiers where (ModifierId = 'TRAIT_TRADING_POST_CIVIC_BOOST' or ModifierId = 'TRAIT_TRADING_POST_TECH_BOOST') and TraitType = 'TRAIT_LEADER_KUBLAI';

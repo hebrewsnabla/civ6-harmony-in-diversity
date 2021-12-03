@@ -181,3 +181,69 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 -- 	print('OnUnitPromotionAvailable', playerID, unitID, promotionID)
 -- end
 -- Events.UnitPromotionAvailable.Add(OnUnitPromotionAvailable);
+
+--Poland temple unlock military engineers
+function PolandTempleUnlockMilitaryEngineers(playerID:number, bFirstTimeThisTurn:boolean)
+	local player = Players[playerID]
+	local playerConfig = PlayerConfigurations[playerID]
+	local sCiv = playerConfig:GetCivilizationTypeName()
+	local sGoldenLiberty = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY'
+	local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
+	local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
+	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
+		return
+	end
+	local Allcity = player:GetCities()
+    if player ~= nil and Allcity ~= nil then
+        for _, city in Allcity:Members() do
+			local aCityHasBuilding = city:GetBuildings():HasBuilding(m_Dummy_Poland)
+			if not aCityHasBuilding then -- city don't have dummy_Poland
+            	local bCityHasBuilding = city:GetBuildings():HasBuilding(m_Temple)
+            	if bCityHasBuilding then -- city has temple
+        			local buildingQueue = city:GetBuildQueue()
+        			buildingQueue:CreateBuilding(m_Dummy_Poland)
+					-- print('Dummy Poland created', player:GetID(), city:GetID())
+				end
+            end            
+        end       
+    end
+end
+
+Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
+
+function KublaiGrantCivTrait( playerID, iX, iY )
+	local captureModifier = {}
+    local captureTrait = {}
+    local pPlayer = Players[playerID]
+	local pCity = CityManager.GetCityAt(iX, iY)
+	local originalOwnerID = pCity:GetOriginalOwner() 
+    print('Kublai0',originalOwnerID,playerID) 
+	if originalOwnerID ~= playerID and originalOwnerID ~= nil then
+		local oPlayer = Players[originalOwnerID]
+		local oPlayerConfig = PlayerConfigurations[originalOwnerID]
+		local oCiv = oPlayerConfig:GetCivilizationTypeName()
+		for tRow in GameInfo.CivilizationTraits() do
+			if tRow.CivilizationType == oCiv then
+				table.insert(captureTrait,tRow.TraitType)
+			end
+		end
+		print('Kublai1',oCiv) 
+		for _, traitType in ipairs(captureTrait) do
+			for tRow in GameInfo.TraitModifiers() do
+				if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
+				   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
+				   tRow.TraitType == traitType then
+					table.insert(captureModifier,tRow.ModifierId)
+				end
+			end
+		end 
+		for _, modifier in ipairs(captureModifier) do
+			pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
+			print('Kublai2',modifier)
+		end
+	end
+end
+
+GameEvents.KublaiGrantCivTraitSwitch.Add(KublaiGrantCivTrait)
+
+ExposedMembers.GameEvents = GameEvents
