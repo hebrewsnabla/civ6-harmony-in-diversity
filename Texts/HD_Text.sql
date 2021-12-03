@@ -162,8 +162,8 @@ insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
     ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "Circuses and Bread"),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "Circuses and Bread"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "Judgement of Love"),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "Judgement of Love"),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +2 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city."),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_NAME",                                     "Endless Money"),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME",                               "Endless Money"),
@@ -197,9 +197,9 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     ("zh_Hans_CN",  "LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+1。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。[NEWLINE][NEWLINE]需要先建成“娱乐设施”区域。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "马戏与面包"),
-    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "马戏与面包"),
-    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+2。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "爱之审判"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "爱之审判"),
+    ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "城市项目，完成时市中心9个单元格以内的其他文明城市若每回合忠诚度在减少，将转变为自由城市。"),
     ("zh_Hans_CN",  "LOC_PROJECT_ENDLESS_MONEY_HD_NAME",                                     "多钱善贾"),
     ("zh_Hans_CN",  "LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME",                               "多钱善贾"),
     ("zh_Hans_CN",  "LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION",                              "城市项目，每回合提供巨额 [ICON_Gold] 金币。"),

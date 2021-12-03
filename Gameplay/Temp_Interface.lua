@@ -182,28 +182,36 @@ function GovSpiesGetTechOnSpyMissionCompleted(playerID, missionID)
 end
 
 Events.SpyMissionCompleted.Add(GovSpiesGetTechOnSpyMissionCompleted)
-
+---]]
 
 -- Eleanor Judgement of Love
 function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
---	local pPlayer = Players[playerID]
+	local pPlayer = Players[playerID]
 	local pCity = CityManager.GetCity(playerID, cityId)
 	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
---	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
+	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
 	local amount = -50
+    if pPlayer == nil then
+        return
+    end
+
     if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
-		local players = Game.GetPlayers()
+		local players = Game.GetPlayers{ Alive=true }
 		for _, player in ipairs(players) do
 			if player:GetID() == playerID then -- or player:IsMinor()
 				return
 			end
 			local playerCities = player:GetCities()
 			for _, city in playerCities:Members() do
-				local distance = Map.GetPlotDistance(pCity:GetX(), pCity:GetY(), city:GetX(), city:GetY())
+				local distance = Map.GetPlotDistance(iDistrictPlotIndex, city:GetX(), city:GetY())
 				if distance <= 9 then 
-					local loyaltyPerTurn = city:GetCulturalIdentity():GetLoyaltyPerTurn()
-					if loyaltyPerTurn < 0 then
-        				city:ChangeLoyalty(amount)
+					local cityCulturalIdentity = city:GetCulturalIdentity()
+                    if cityCulturalIdentity then
+                        local loyaltyPerTurn = cityCulturalIdentity:GetLoyaltyPerTurn()
+                        if loyaltyPerTurn < 0 then
+        				    city:ChangeLoyalty(amount)
+                            CityManager.TransferCityToFreeCities(city)
+                        end
 					end
 				end
 			end
@@ -211,8 +219,8 @@ function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
     end
 end
 
-Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
----]]
+--Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
+
 
 GameEvents = ExposedMembers.GameEvents;
 
