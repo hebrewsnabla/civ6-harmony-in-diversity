@@ -68,7 +68,9 @@ values
     ("LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "Gain 1 level of [ICON_VisLimited] Diplomatic Visibility greater than normal with every civilization that they've met. Receives a free Spy (and extra spy capacity) with the Castles technology. +2 sight range for spies and traders. All spies start with a free promotion."), -- (if already have, can promote again after the first promotion)
     ("LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "ALL cities have +15% growth rate, 15% [ICON_Faith] Faith and +1 [ICON_Amenities] Amenity when you are at peace with all other civilizations. +5 [ICON_Faith] Faith for each civilization (including India) they have met that has founded a Religion and is not currently at war. Opposing civilizations receive double the war weariness for fighting against Gandhi."),
     ("LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "Receives Follower Belief bonuses in a city from each Religion that has at least 1 Follower. Cities gain an [ICON_Amenities] Amenity for every Religion with at least 1 Follower. Missionaries have +2 spreads. +100% Religious pressure from your [ICON_TradeRoute] Trade Routes. +0.5 [ICON_Food] Food per Population for cities which have stepwell."),
-    ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "After unlocked civic military training, You will get a setter to the capital city, and can declare a war of territorial expansion.After declaring the war of territorial expansion,all your units grant extra 2[ICON_MOVEMENT]movement and 5[ICON_STRENGTH]strength in 10 turns.");
+    ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "After unlocked civic military training, You will get a setter to the capital city, and can declare a war of territorial expansion.After declaring the war of territorial expansion,all your units grant extra 2[ICON_MOVEMENT]movement and 5[ICON_STRENGTH]strength in 10 turns."),
+    ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "Manifest Destiny"),
+    ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.");
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -89,7 +91,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",           "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-30% [ICON_PRODUCTION] 生产力。"), --每一种改良的奢侈矿产资源为城市+10% [ICON_Gold] 金币，城市中的每个奢侈品资源矿产为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_FOOD] 食物。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                  "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得15 [ICON_GOLD] 金币。"), --可在拥有曼丁哥市场的任意城市中开展“多钱善贾”项目。
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "[ICON_Governor] 总督就职城市提供的 [ICON_CULTURE] 文化值+5%、 [ICON_Production] 生产力+5%，此城市中生产的所有单位的战斗经验值+10%。在非马普切建立的城市中，这些数值将乘以三倍。[ICON_Governor] 总督就职城市9单元格范围内的所有城市每回合对本方文明的忠诚度+4。牧场提供额外+1 [ICON_Housing] 住房。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAST_BEST_WEST_DESCRIPTION",                   "允许在冻土地貌上建造农场。解锁“土木工程”后，即可在冻土丘陵上建造农场。在雪地、冻土、雪地丘陵和冻土丘陵上的所有矿山、伐木场、牧场和采石场提供的 [ICON_PRODUCTION] 生产力+2，农场、营地、种植园提供的 [ICON_FOOD] 食物+2，战略资源积累速度+100%。这些地貌上的单元格购买费用降低50%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAST_BEST_WEST_DESCRIPTION",                   "允许在冻土地貌上建造农场。解锁“土木工程”后，即可在冻土丘陵上建造农场。在雪地、冻土、雪地丘陵和冻土丘陵上的所有矿山、伐木场、牧场和采石场提供的 [ICON_PRODUCTION] 生产力+2，农场、营地、种植园提供的 [ICON_FOOD] 食物+2，战略资源积累速度+100%。这些地形上的单元格购买费用降低50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FACES_OF_PEACE_DESCRIPTION",             "无法对城邦宣战或发动突袭战争。无法对加拿大发动突袭战争。与主要文明处于和平时所有城市+15% [ICON_Culture] 文化值，且全境内+25% [ICON_Tourism] 旅游业绩。当您清理一个蛮族哨站时，奖励一个建造者。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_DESCRIPTION",                    "可以用 [ICON_FAITH] 信仰购买工业区建筑。用 [ICON_FAITH] 信仰值招募伟人时所需的费用-10%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION",   "所有位于冻土单元格的区域+1 [ICON_Food] 食物。建立城市可获得额外领土。冻土提供+1 [ICON_Faith] 信仰值与+1 [ICON_Production] 生产力。与俄罗斯交战的文明单位如处于俄罗斯领土中，遭遇暴风雪时受到的伤害+100%。"),
@@ -142,7 +144,9 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "[ICON_VisLimited] 外交能见度比遇到的其他文明高1级。[NEWLINE]解锁“城堡”科技后免费获得1个间谍（并增加1个间谍容量）。间谍和商人+2视野范围。所有间谍初始便可免费获得一次升级机会。"), -- （若已能升级则可在升级后再升级一次）
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成军事训练市政后解锁领土扩张战争借口，并获得一个免费移民到首都。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成军事训练市政后解锁领土扩张战争借口，并获得一个免费移民到首都。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "昭昭天命"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
