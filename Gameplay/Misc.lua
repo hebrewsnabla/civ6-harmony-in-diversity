@@ -117,4 +117,20 @@ function EvolutionheoryBoost(playerID, districtID, iX, iY)
     end
 end
 
-GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
+-- GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
+
+-- -- Paper Making Boost
+-- function PaperMakingBoost(iX, iY, eImprovement, playerID, resource, isPillaged, isWorked)
+--     local pPlayer = Players[playerID]
+--     if pPlayer ~= nil then
+--         local pPlot = Map.GetPlot(iX, iY)
+--         local pFeature = pPlot:GetFeatureType() 
+--         local pCity = CityManager.GetCityAt(iX, iY)
+    
+--         local m_PaperMaking = GameInfo.Technologies['TECH_PAPER_MAKING_HD'].Index;
+--         pPlayer:GetTechs():TriggerBoost(m_PaperMaking, 1);
+
+--     end
+-- end
+
+-- Events.ImprovementAddedToMap.Add(PaperMakingBoost)

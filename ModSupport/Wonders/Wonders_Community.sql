@@ -507,9 +507,9 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
 insert or replace into Modifiers
 	(ModifierId,							ModifierType, 											SubjectRequirementSetId)
 values
-	('WAT_ARUN_INFLUENCE_POINTS_ATTACH',	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'HD_CITY_HAS_WAT_ARUN_XHH'),
-	('WAT_ARUN_HOLY_SITE_TOKEN_ATTACH',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'HD_CITY_HAS_DISTRICT_HOLY_SITE_XHH'),
-	('WAT_ARUN_THEATER_TOKEN_ATTACH',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'HD_CITY_HAS_DISTRICT_THEATER_XHH'),
+	('WAT_ARUN_INFLUENCE_POINTS_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_WAT_ARUN_XHH'),
+	('WAT_ARUN_HOLY_SITE_TOKEN_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_DISTRICT_HOLY_SITE_XHH'),
+	('WAT_ARUN_THEATER_TOKEN_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_DISTRICT_THEATER_XHH'),
 	('WAT_ARUN_INFLUENCE_POINTS',			'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		NULL),
 	('WAT_ARUN_GRANT_ONE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',				NULL);
 
@@ -540,6 +540,37 @@ values
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_HOLY_SITE_TOKEN_ATTACH'),
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_THEATER_TOKEN_ATTACH'),
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_INFLUENCE_POINTS_ATTACH');
+
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING_SELF'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+-- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+-- 	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD_SELF'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
+
+-- insert or replace into Modifiers 
+-- 	(ModifierId,						ModifierType,											SubjectRequirementSetId) 
+-- values
+-- 	('WAT_ARUN_DISTRICT_HOUSING',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_HOUSING',				'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),
+-- 	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING',		'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),												
+-- 	('WAT_ARUN_DISTRICT_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),											
+-- 	('WAT_ARUN_DISTRICT_FOOD_SELF',		'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS');	
+
+-- insert or replace into ModifierArguments 
+-- 	(ModifierId,						Name,		Value) 
+-- values
+-- 	('WAT_ARUN_DISTRICT_HOUSING',		'Amount',		1),			
+-- 	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'Amount',		1),
+-- 	('WAT_ARUN_DISTRICT_FOOD',			'YieldType',	'YIELD_FOOD'),
+-- 	('WAT_ARUN_DISTRICT_FOOD',			'Amount',		1),
+-- 	('WAT_ARUN_DISTRICT_FOOD_SELF',		'YieldType',	'YIELD_FOOD'),
+-- 	('WAT_ARUN_DISTRICT_FOOD_SELF',		'Amount',		1);
 
 -- STPETERSBASILICA
 delete from Building_GreatWorks where BuildingType = 'BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';

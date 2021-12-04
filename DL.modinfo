@@ -1542,9 +1542,7 @@
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/NationalWonders/HD_National_Wonders.sql</File>
-    <File>ModSupport/NationalWonders/HD_National_Wonders_Texts.sql</File>
     <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne.sql</File>
-    <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne_Texts.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
