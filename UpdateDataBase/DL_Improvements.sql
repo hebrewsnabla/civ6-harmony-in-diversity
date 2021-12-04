@@ -136,3 +136,8 @@ insert or replace into GoodyHutSubTypes
 	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
 values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
+
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,		YieldType,		YieldChange)
+values
+	('IMPROVEMENT_PASTURE',	'YIELD_GOLD',	0);
