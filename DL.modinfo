@@ -123,6 +123,18 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
     </Criteria>
+    <!-- 国家奇观 Start -->
+    <Criteria id="National_Wonders_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>8719d97f-0db4-4c18-9863-82eb9b0c6175</ModInUse>
+    </Criteria>
+    <!-- 国家奇观 End -->
+    <!-- 国家奇观 Pack 1 Start -->
+    <Criteria id="National_Wonders_Pack1_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>0fe4104b-80e1-434a-88fc-914ce2632944</ModInUse>
+    </Criteria>
+    <!-- 国家奇观 Pack 1 End -->
     <Criteria id="Monopolies_Suk_Resources_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
@@ -656,7 +668,19 @@
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
-      <!-- District Expansion begin -->
+      <!-- 国家奇观 Start -->
+    <UpdateDatabase id="National_Wonders_support" criteria="National_Wonders_Expansion2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>ModSupport/NationalWonders/HD_National_Wonders.sql</File>
+    </UpdateDatabase>
+      <!-- 国家奇观 End -->
+      <!-- 国家奇观 Pack 1 Start -->
+    <UpdateDatabase id="National_Wonders_Pack1_support" criteria="National_Wonders_Pack1_Expansion2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne.sql</File>
+    </UpdateDatabase>
+      <!-- 国家奇观 Pack 1 End -->
+    <!-- District Expansion begin -->
     <UpdateDatabase id="DistrictExpansion_Removes" criteria="Expansion2">
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
@@ -1517,6 +1541,10 @@
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
+    <File>ModSupport/NationalWonders/HD_National_Wonders.sql</File>
+    <File>ModSupport/NationalWonders/HD_National_Wonders_Texts.sql</File>
+    <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne.sql</File>
+    <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne_Texts.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>

@@ -98,7 +98,7 @@ end
 Events.UnitGreatPersonActivated.Add(GreatAdmiralFreeStrategicResource)
 
 
---Evolution Theory Boost
+-- Evolution Theory Boost
 function EvolutionheoryBoost(playerID, districtID, iX, iY)
     local pPlayer = Players[playerID]
     if pPlayer ~= nil then

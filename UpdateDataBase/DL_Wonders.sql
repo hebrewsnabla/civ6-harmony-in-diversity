@@ -622,6 +622,8 @@ update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDI
 update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
 update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
+update ModifierArguments set Value = 6 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
+
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDFOODYIELD';
 -- Maritime
@@ -735,3 +737,6 @@ from Buildings a, Terrains b where
 insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
 values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 	-- ('BUILDING_JEBEL_BARKAL',	'TERRAIN_DESERT_MOUNTAIN');
+
+-- Apadana
+update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN_MODIFIER';

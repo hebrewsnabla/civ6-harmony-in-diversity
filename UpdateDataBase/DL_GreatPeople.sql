@@ -577,3 +577,13 @@ where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MIMAR_SINAN';
 update GreatPersonIndividualActionModifiers
 set ModifierId = 'GREATPERSON_CULTURE_BOMB_MIMAR_SINAN', AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MIMAR_SINAN';
+
+-- 使者调整
+    -- 【大将军】 安娜·恩津加
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ANA_NZINGA';
+    -- 【大商人】 拉贾·托达·马尔 皮耶罗·迪·巴尔迪 【海军统帅】 特米斯托克力
+update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_SMALL';
+    -- 【大商人】 雅各布·富格尔 约翰·雅各·阿斯特
+update ModifierArguments set Value = 4 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_MEDIUM';
+    -- 【大商人】 周达观
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
