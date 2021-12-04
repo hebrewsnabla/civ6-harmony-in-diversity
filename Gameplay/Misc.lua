@@ -117,7 +117,7 @@ function EvolutionheoryBoost(playerID, districtID, iX, iY)
     end
 end
 
--- GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
+GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
 
 -- -- Paper Making Boost
 -- function PaperMakingBoost(iX, iY, eImprovement, playerID, resource, isPillaged, isWorked)
