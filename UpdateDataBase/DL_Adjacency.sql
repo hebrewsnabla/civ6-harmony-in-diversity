@@ -178,6 +178,8 @@ values
 	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
 	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
+	('IMPROVEMENT_PASTURE',			'Pasture_Commercial_Gold'),
+	('IMPROVEMENT_PASTURE',			'Pasture_Suguba_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Commercial_Gold'),
 	('IMPROVEMENT_CAMP',			'Camp_Suguba_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
@@ -202,6 +204,12 @@ values
 	'DISTRICT_COMMERCIAL_HUB',		NULL,			NULL,		NULL,			NULL),
 	('Plantation_Suguba_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_SUGUBA',				NULL,			NULL,		NULL,			NULL),
+	
+	('Pasture_Commercial_Gold', 		'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_COMMERCIAL_HUB',		NULL,			NULL,		NULL,			NULL),
+	('Pasture_Suguba_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
+	'DISTRICT_SUGUBA',				NULL,			NULL,		NULL,			NULL),
+
 	('Camp_Commercial_Gold', 			'Placeholder', 'YIELD_GOLD',		2,				1,				0,
 	'DISTRICT_COMMERCIAL_HUB',	 	NULL,			NULL,		NULL,			NULL),
 	('Camp_Suguba_Gold', 				'Placeholder', 'YIELD_GOLD',		2,				1,				0,

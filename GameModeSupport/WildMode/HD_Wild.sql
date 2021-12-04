@@ -205,10 +205,6 @@ values
 -------------------------------------
 
 -------------------------------------
---市场
-update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_MARKET' ;
-
--------------------------------------
 --加的夫
 insert into TraitModifiers 
     (TraitType,                                 	 ModifierId)
@@ -460,3 +456,31 @@ update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_
 -------------------------------------
 --布鲁塞尔
 update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';
+
+-------------------------------------
+--     狂野模式 版本V0.2    --
+-------------------------------------
+
+---------------------------------------
+--市场
+update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_MARKET' ;
+update Buildings set Cost = 90 where BuildingType = 'BUILDING_MARKET';
+
+---------------------------------------
+--大小庙
+update Building_YieldChanges set YieldChange = 4 where BuildingType = 'BUILDING_SHRINE';
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_TEMPLE';
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_PRASAT';
+
+---------------------------------------
+--宗社
+update ModifierArguments set Value = 1 where ModifierId = 'RELIGIOUS_COMMUNITY_SHRINE_ORIGIN_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'RELIGIOUS_COMMUNITY_TEMPLE_ORIGIN_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'RELIGIOUS_COMMUNITY_TIER3_ORIGIN_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'RELIGIOUS_COMMUNITY_SHRINE_DESTINATION_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'RELIGIOUS_COMMUNITY_TEMPLE_DESTINATION_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'RELIGIOUS_COMMUNITY_TIER3_DESTINATION_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'RELIGIOUS_COMMUNITY_SHRINE_SCIENCE_TO_OTHERS_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'RELIGIOUS_COMMUNITY_TEMPLE_SCIENCE_TO_OTHERS_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'RELIGIOUS_COMMUNITY_TIER3_SCIENCE_TO_OTHERS_MODIFIER' and Name = 'Amount';

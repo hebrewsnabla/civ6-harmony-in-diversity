@@ -76,8 +76,8 @@ values
 	-- (245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
 	-- (246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
 	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
-	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_STIRRUPS',		NULL),
-	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_MEDIEVAL_FAIRES');
+	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING',		NULL),
+	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_EXPLORATION');
 
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -136,3 +136,8 @@ insert or replace into GoodyHutSubTypes
 	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
 values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
+
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,		YieldType,		YieldChange)
+values
+	('IMPROVEMENT_PASTURE',	'YIELD_GOLD',	0);
