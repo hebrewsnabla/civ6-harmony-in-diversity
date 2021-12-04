@@ -26,7 +26,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TITHE_DL_DESCRIPTION",                      "该宗教每有1个信徒则+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_UNITY_DL_DESCRIPTION",            "该宗教每有1个信徒则+1 [ICON_Faith] 信仰。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                 "每个信奉该宗教的城市+6 [ICON_Faith] 信仰。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",             "若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+1 [ICON_housing] 住房，+2 [ICON_culture] 文化。市中心也获得相同加成。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",             "若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+1 [ICON_housing] 住房，+1 [ICON_culture] 文化。市中心也获得相同加成。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                    "购买圣地区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。每个圣地区域内的建筑提供+8% [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",           "可以使用 [ICON_Faith] 信仰值购买学院区域内的建筑。每人口提供0.2 [ICON_Science] 科技值，若城市有神社每人口提供0.5 [ICON_Science] 科技值，有寺庙则每人口提供1 [ICON_Science] 科技值。");
 
@@ -69,3 +69,20 @@ values
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",               "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAZCA_DESCRIPTION",                   "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BRUSSELS_DESCRIPTION",                "您的城市在建造奇观时+25%建造速度。");
+
+-------------------------------------
+--     狂野模式 版本V0.3    --
+-------------------------------------
+----------------------------------------------------------------------------
+-- -- Language: en_US
+-- insert or replace into EnglishText
+--     (Tag,                                                        Text)
+-- values
+--     ("LOC_BUILDING_TEMPLATE_DESCRIPTION",                        "Template");
+
+------------------------------------------------------------------------------
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                     Text)
+values
+    ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "圣地中每级建筑分别为此城出发的国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Science] 科技值，+2 [ICON_Science] 科技值和+3 [ICON_Science] 科技值，使每条通往此城的国际 [ICON_TradeRoute] 贸易路线为双方+1 [ICON_Science] 科技值，+2 [ICON_Science] 科技值和+3 [ICON_Science] 科技值。可用 [ICON_Faith] 信仰值购买商人，购买商人的费用降低20%。");
