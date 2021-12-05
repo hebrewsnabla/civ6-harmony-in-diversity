@@ -124,12 +124,15 @@ GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
 --     local pPlayer = Players[playerID]
 --     if pPlayer ~= nil then
 --         local pPlot = Map.GetPlot(iX, iY)
---         local pFeature = pPlot:GetFeatureType() 
---         local pCity = CityManager.GetCityAt(iX, iY)
-    
---         local m_PaperMaking = GameInfo.Technologies['TECH_PAPER_MAKING_HD'].Index;
---         pPlayer:GetTechs():TriggerBoost(m_PaperMaking, 1);
-
+--         local pFeature = pPlot:GetFeatureType()
+--         if pFeature == GameInfo.Features['FEATURE_FOREST'].Index then
+--             local pCity = Cities.GetPlotPurchaseCity(pPlot)
+--             local pBuildingIndex = GameInfo.Buildings['BUILDING_OFFICIAL_RUN_HANDCRAFT'].Index
+--             if pCity:GetBuildings():HasBuilding(pBuildingIndex) then
+--                 local m_PaperMaking = GameInfo.Technologies['TECH_PAPER_MAKING_HD'].Index
+--                 pPlayer:GetTechs():TriggerBoost(m_PaperMaking, 1)
+--             end
+--         end
 --     end
 -- end
 

@@ -17,7 +17,7 @@ values
     -- New Techs Boosts
     ("LOC_BOOST_TRIGGER_CALENDAR_HD",                                                       "Build 1 Granary."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                                              "With the development of agriculture in our empire, we need to plan our production for these years."),
-    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build 2 Plantations."),
+    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build a Plantation."),
     ("LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                                          "From the stems of the plants in the plantations, we have found some useful fibers."),
     ("LOC_BOOST_TRIGGER_COMPASS_HD",                                                        "Have the Naval Tradition Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                               "With the development of navigation technology, magnetic tools have become a necessity for navigators."),
@@ -167,7 +167,7 @@ values
     -- New Techs Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CALENDAR_HD",                                        "建造1座粮仓。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着文明农业的发展，我们需要去安排一下这些年的生产计划了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造2座种植园。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造1座种植园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                           "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPASS_HD",                                         "拥有海军传统市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                "随着航海技术的发展，拥有磁性的工具成为了领航员的必需品。"),
