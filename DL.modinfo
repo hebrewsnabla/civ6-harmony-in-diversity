@@ -128,13 +128,12 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8719d97f-0db4-4c18-9863-82eb9b0c6175</ModInUse>
     </Criteria>
-    <!-- 国家奇观 End -->
-    <!-- 国家奇观 Pack 1 Start -->
+    <!-- 国家奇观 Pack 1 -->
     <Criteria id="National_Wonders_Pack1_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>0fe4104b-80e1-434a-88fc-914ce2632944</ModInUse>
     </Criteria>
-    <!-- 国家奇观 Pack 1 End -->
+    <!-- 国家奇观 End -->
     <Criteria id="Monopolies_Suk_Resources_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
@@ -185,6 +184,10 @@
     <Criteria id="TempleOfHeaven_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>943808b8-5913-4cfc-93a8-0d5d4a0bc4af</ModInUse>
+    </Criteria>
+    <Criteria id="WatArun_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>b21b4017-3e53-4e35-ae38-1b5d7501e6d0</ModInUse>
     </Criteria>
     <Criteria id="WetLands_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -668,18 +671,6 @@
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
-      <!-- 国家奇观 Start -->
-    <UpdateDatabase id="National_Wonders_support" criteria="National_Wonders_Expansion2">
-      <Properties><LoadOrder>20000</LoadOrder></Properties>
-      <File>ModSupport/NationalWonders/HD_National_Wonders.sql</File>
-    </UpdateDatabase>
-      <!-- 国家奇观 End -->
-      <!-- 国家奇观 Pack 1 Start -->
-    <UpdateDatabase id="National_Wonders_Pack1_support" criteria="National_Wonders_Pack1_Expansion2">
-      <Properties><LoadOrder>20000</LoadOrder></Properties>
-      <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne.sql</File>
-    </UpdateDatabase>
-      <!-- 国家奇观 Pack 1 End -->
     <!-- District Expansion begin -->
     <UpdateDatabase id="DistrictExpansion_Removes" criteria="Expansion2">
       <Properties><LoadOrder>15000</LoadOrder></Properties>
@@ -776,6 +767,11 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="Wonder_wat_arun_support" criteria="WatArun_Expansion2">
+      <!-- After the main part -->
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/Wonder_WatArun.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Community_Wonders_support" criteria="Expansion2">
       <Properties><LoadOrder>15008</LoadOrder></Properties>
       <File>ModSupport/Wonders/Wonders_Community.sql</File>
@@ -784,6 +780,17 @@
       <Properties><LoadOrder>15009</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     </UpdateText>
+      <!-- 国家奇观 Start -->
+    <UpdateDatabase id="National_Wonders_support" criteria="National_Wonders_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
+    </UpdateDatabase>
+      <!-- 国家奇观 Pack 1 -->
+    <UpdateDatabase id="National_Wonders_Pack1_support" criteria="National_Wonders_Pack1_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
+    </UpdateDatabase>
+      <!-- 国家奇观 End -->
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15010</LoadOrder></Properties>
@@ -1541,8 +1548,6 @@
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
-    <File>ModSupport/NationalWonders/HD_National_Wonders.sql</File>
-    <File>ModSupport/NationalWonders/HD_National_Wonders_PackOne.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
@@ -1567,8 +1572,11 @@
     <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
+    <File>ModSupport/Wonders/Wonder_WatArun.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
+    <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
+    <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
     <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
     <File>ModSupport/BetterTradeScreen/TradeRouteChooser.lua</File>
