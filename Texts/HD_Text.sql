@@ -66,7 +66,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                         "请忽略"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "请忽略"),
     -- Temp
-
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_1",                                         "此处记述了如何：一切处于悬止，一切平静，处于静默；一切静止，寂静，而天穹的领域是空洞的。——《波波武经》"),
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_2",                                         "太初元年，岁名“焉逢摄提格”，月名“毕聚”，日得甲子，夜半朔旦冬至。——司马迁《史记》"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
