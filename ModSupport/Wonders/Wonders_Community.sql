@@ -10,7 +10,7 @@ WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType)
 values
-	('HD_ABU_GRANARY_ATTACH',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER'),
+	('HD_ABU_GRANARY_ATTACH',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
 	('HD_ABU_GRANARY_MODIFIER',				'MODIFIER_BUILDING_YIELD_CHANGE');
 
 insert or replace into ModifierArguments
