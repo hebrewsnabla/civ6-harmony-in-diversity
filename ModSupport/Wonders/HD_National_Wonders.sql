@@ -112,6 +112,12 @@ insert or replace into TypeTags
 values
 	('ABILITY_NAT_WONDER_CL_CITADEL',		'CLASS_MILITARY');
 
+		-- 单位晋升不消耗移动力
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,						ModifierId)
+values
+	('ABILITY_NAT_WONDER_CL_CITADEL',		'TRAIT_PROMOTE_NO_FINISH_MOVES');
+
 		-- 送城墙&军营产出
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
@@ -125,13 +131,13 @@ insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 select
 	'NAT_WONDER_CL_CITADEL',				'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION_ATTACH'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 select
 	'NAT_WONDER_CL_CITADEL',				'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE_ATTACH'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,												RunOnce,	Permanent,	SubjectRequirementSetId)
@@ -147,25 +153,25 @@ insert or replace into Modifiers
 	(ModifierId,														ModifierType)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION',			'MODIFIER_BUILDING_YIELD_CHANGE'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
@@ -183,46 +189,46 @@ insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION_ATTACH',	'ModifierId',			'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE_ATTACH',		'ModifierId',			'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION',			'BuildingType',			BuildingType
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_PRODUCTION',			'Amount',				2
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'BuildingType',			BuildingType
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'YieldType',			'YIELD_CULTURE'
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'Amount',				2
-from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType = Null);
+from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
