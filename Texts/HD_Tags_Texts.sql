@@ -14,7 +14,7 @@ update Technologies set Description = 'LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPT
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_HD_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
 update Technologies set Description = 'LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION' where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
-update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
+-- update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set Description = 'LOC_TECH_CASTLES_HD_DESCRIPTION' where TechnologyType = 'TECH_CASTLES';
 -- update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = 'LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION' where TechnologyType ='TECH_SQUARE_RIGGING';
@@ -26,11 +26,12 @@ update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTIO
 
 update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY';
 -- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
---update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
+update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_HD_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
+update Civics set Description = 'LOC_CIVIC_EXPLORATION_HD_DESCRIPTION' where CivicType ='CIVIC_EXPLORATION';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
 -- update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
