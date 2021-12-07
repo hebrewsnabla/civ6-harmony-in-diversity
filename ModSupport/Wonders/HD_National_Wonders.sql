@@ -232,3 +232,66 @@ insert or replace into ModifierArguments
 select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'Amount',				2
 from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
+
+-- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- 修改解锁条件和造价
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
+	-- 修改建造条件
+update RequirementArguments set Value = 5 where RequirementId = 'REQ_CL_PLAYER_HAS_X_CITIES_WITH_RELIGION' and Name = 'Count';
+	-- 修改特效
+update ModifierArguments set Value = 20 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE' and Name = 'Amount';
+update Modifiers set SubjectStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE';
+update Modifiers set OwnerStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE';
+
+delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH'),
+	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,									SubjectRequirementSetId)
+values
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+values
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH',		'ModifierId',			'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE'),
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'ModifierId',			'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE');
+
+-- 国家主题公园 ------------------------------------------------------------------------------------------------------------------------------------------------
+	-- 修改解锁条件和造价
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 900 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 900 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+	-- 修改本体产出
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+delete from Building_YieldChangesBonusWithPower where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+delete from Building_YieldChangesBonusWithPower where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+	-- 修改特效
+delete from RequirementSetRequirements where RequirementSetId = 'REQ_SET_CL_DISTRICT_IS_WITHIN_6_ENTERTAINMENT' and RequirementId = 'REQ_CL_PLOT_WITHIN_6';
+
+insert or replace into BuildingModifiers
+	(BuildingType,											ModifierId)
+values
+	('NAT_WONDER_CL_THEMEPARK',								'HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION'),
+	('NAT_WONDER_CL_THEMEPARK',								'HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+values
+	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
+	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+values
+	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'DistrictType',			'DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'Amount',				50),
+	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'DistrictType',			'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
+	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'Amount',				50);
