@@ -107,3 +107,30 @@ insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId
 
 insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
 	('PLOT_HAS_FISHINGBOATS_AND_INDUSTRIAL_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
+
+
+---------------------------------------------------------------------------------------------------------
+--Muscat马斯喀特
+-- delete from TraitModifiers where TraitType = 'MINOR_CIV_MUSCAT_TRAIT' and ModifierId = 'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS';
+insert into TraitModifiers 
+    (TraitType,                                  ModifierId)
+values
+    -- ('MINOR_CIV_MUSCAT_TRAIT',                   'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1'),
+    ('MINOR_CIV_MUSCAT_TRAIT',                   'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2');
+
+insert into Modifiers
+    (ModifierId,                                        ModifierType,                                                       SubjectRequirementSetId)
+values
+    -- ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                             'PLAYER_IS_SUZERAIN'),
+    -- ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_CITY_STATES',    'CITY_HAS_COMMERCIAL_HUB_REQUIREMENTS'),
+    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                             'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',                  'DISTRICT_IS_COMMERCIAL_HUB');
+
+insert into ModifierArguments
+    (ModifierId,                                        Name,                   Value)
+values
+    -- ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'ModifierId',           'MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS'),
+    -- ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'Amount',               1),
+    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2',        'ModifierId',           'MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS'),
+    ('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',           'YieldType',            'YIELD_GOLD'),
+    ('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',           'Amount',               100);

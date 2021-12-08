@@ -205,33 +205,6 @@ values
 
 
 ---------------------------------------------------------------------------------------------------------
---Muscat马斯喀特
-delete from TraitModifiers where TraitType = 'MINOR_CIV_MUSCAT_TRAIT' and ModifierId = 'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS';
-insert into TraitModifiers 
-    (TraitType,                                  ModifierId)
-values
-    ('MINOR_CIV_MUSCAT_TRAIT',                   'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1'),
-	('MINOR_CIV_MUSCAT_TRAIT',                   'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2');
-
-insert into Modifiers
-    (ModifierId,                                        ModifierType,                                       				SubjectRequirementSetId)
-values
-    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             				'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_CITY_STATES', 	'CITY_HAS_COMMERCIAL_HUB_REQUIREMENTS'),
-	('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             				'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER', 					'DISTRICT_IS_COMMERCIAL_HUB');
-
-insert into ModifierArguments
-    (ModifierId,                                        Name,            		Value)
-values
-    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'ModifierId',    		'MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS'),
-    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'Amount',        		1),
-	('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2',        'ModifierId',    		'MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS'),
-	('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',			'YieldType',			'YIELD_GOLD'),
-	('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',			'Amount',				100);
-
-
----------------------------------------------------------------------------------------------------------
 --Samarkand
 update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_TRADE_GOLD_MODIFIER' and Name = 'Amount';
 insert or replace into Improvement_YieldChanges
@@ -240,38 +213,38 @@ values
 	('IMPROVEMENT_TRADING_DOME',	'YIELD_FOOD',		0),
 	('IMPROVEMENT_TRADING_DOME',	'YIELD_PRODUCTION',	0);
 insert or replace into Improvement_BonusYieldChanges
-	(Id,	ImprovementType,			YieldType,		BonusYieldChange,	PrereqCivic)
+	(Id,	ImprovementType,			YieldType,		   BonusYieldChange,	PrereqCivic)
 values
-	(250,	'IMPROVEMENT_TRADING_DOME',	'YIELD_GOLD',		2,				'CIVIC_MEDIEVAL_FAIRES');
-insert or replace into ImprovementModifiers
-    (ImprovementType,       ModifierId)
-values
-    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_FOOD'),
-    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_PRODUCTION'),
-	('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_ADJECENT_LUXURY_GOLD');
-insert or replace into Modifiers
-    (ModifierId,                    		ModifierType,                               SubjectRequirementSetId)
-values
-    ('TRADING_DOME_DESERT_FOOD',         	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
-    ('TRADING_DOME_DESERT_PRODUCTION',      'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
-	('TRADING_DOME_ADJECENT_LUXURY_GOLD',   'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',  		'TRADING_DOME_REQUIREMENTS');
-insert or replace into ModifierArguments
-    (ModifierId,                    			Name,           	Value)
-values
-    ('TRADING_DOME_DESERT_FOOD',        		'YieldType',    	'YIELD_FOOD'),
-    ('TRADING_DOME_DESERT_FOOD',        		'Amount',       	3),
-    ('TRADING_DOME_DESERT_PRODUCTION',         	'YieldType',    	'YIELD_PRODUCTION'),
-    ('TRADING_DOME_DESERT_PRODUCTION',         	'Amount',       	1),
-	('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'YieldType',    	'YIELD_GOLD'),
-    ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'Amount',       	2);
-insert or replace into RequirementSets
-	(RequirementSetId, 										RequirementSetType)
-values
-	('TRADING_DOME_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId, 										RequirementId)
-values
-	('TRADING_DOME_REQUIREMENTS',							'REQUIRES_PLOT_HAS_LUXURY');
+	(555,	'IMPROVEMENT_TRADING_DOME',	'YIELD_GOLD',		2,				    'CIVIC_MEDIEVAL_FAIRES');
+-- insert or replace into ImprovementModifiers
+--     (ImprovementType,       ModifierId)
+-- values
+--     ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_FOOD'),
+--     ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_PRODUCTION'),
+-- 	('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_ADJECENT_LUXURY_GOLD');
+-- insert or replace into Modifiers
+--     (ModifierId,                    		ModifierType,                               SubjectRequirementSetId)
+-- values
+--     ('TRADING_DOME_DESERT_FOOD',         	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
+--     ('TRADING_DOME_DESERT_PRODUCTION',      'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
+-- 	('TRADING_DOME_ADJECENT_LUXURY_GOLD',   'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',  		'TRADING_DOME_REQUIREMENTS');
+-- insert or replace into ModifierArguments
+--     (ModifierId,                    			Name,           	Value)
+-- values
+--     ('TRADING_DOME_DESERT_FOOD',        		'YieldType',    	'YIELD_FOOD'),
+--     ('TRADING_DOME_DESERT_FOOD',        		'Amount',       	3),
+--     ('TRADING_DOME_DESERT_PRODUCTION',         	'YieldType',    	'YIELD_PRODUCTION'),
+--     ('TRADING_DOME_DESERT_PRODUCTION',         	'Amount',       	1),
+-- 	('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'YieldType',    	'YIELD_GOLD'),
+--     ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'Amount',       	2);
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId, 										RequirementSetType)
+-- values
+-- 	('TRADING_DOME_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId, 										RequirementId)
+-- values
+-- 	('TRADING_DOME_REQUIREMENTS',							'REQUIRES_PLOT_HAS_LUXURY');
 update Adjacency_YieldChanges set YieldChange = 2 where ID ='TradingDome_LuxuryAdjacency';
 
 
