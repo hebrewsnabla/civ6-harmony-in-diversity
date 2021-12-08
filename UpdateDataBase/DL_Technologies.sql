@@ -252,7 +252,6 @@ values
     ('TECH_RADIO',                  'TECH_ELECTRICITY'),
     ('TECH_REFINING',               'TECH_CHEMISTRY'),
     ('TECH_REFINING',               'TECH_ELECTRICITY'),
-    ('TECH_REFINING',               'TECH_BIOLOGY_HD'),
     -- ('TECH_REFINING',  'TECH_ECONOMICS'),
     ('TECH_BIOLOGY_HD',             'TECH_SANITATION'),
     ('TECH_COMBUSTION',             'TECH_BIOLOGY_HD'),

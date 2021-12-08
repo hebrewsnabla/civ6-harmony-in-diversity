@@ -836,7 +836,7 @@ values
 	('AMANI_GRANT_SPY_FREE_PROMOTION_MODIFIER',			'AbilityType',				'ABILITY_AMANI_FERR_PROMOTION'),
 	('AMANI_DEFFENSE',									'Offense',					0),
 	('AMANI_DEFFENSE',									'Amount',					1),
-	('AMANI_EXTRA_ENVOY',								'Amount',					1),
+	('AMANI_EXTRA_ENVOY',								'Amount',					2),
 	('AMANI_HALF_RAJ_GOLD',								'YieldType',				'YIELD_GOLD'),
 	('AMANI_HALF_RAJ_GOLD',								'Amount',					1),
 	('AMANI_HALF_RAJ_SCIENCE',							'YieldType',				'YIELD_SCIENCE'),

@@ -17,7 +17,7 @@ values
     -- New Techs Boosts
     ("LOC_BOOST_TRIGGER_CALENDAR_HD",                                                       "Build 1 Granary."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                                              "With the development of agriculture in our empire, we need to plan our production for these years."),
-    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build 2 Plantations."),
+    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build a Plantation."),
     ("LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                                          "From the stems of the plants in the plantations, we have found some useful fibers."),
     ("LOC_BOOST_TRIGGER_COMPASS_HD",                                                        "Have the Naval Tradition Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                               "With the development of navigation technology, magnetic tools have become a necessity for navigators."),
@@ -46,8 +46,8 @@ values
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows Traders to embark, and allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests. Camp improvements receive +1 [ICON_GOLD] Gold."),
-    --("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improvements receive +1 [ICON_Production] Production."),
-    ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                                    "Pasture improvements receive +1 [ICON_Production] Production."),
+    ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improvements receive +1 [ICON_Production] Production."),
+    -- ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                                    "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_CASTLES_HD_DESCRIPTION",                                                     "Gain a free Spy if playing as Catherine de Medici (Black Queen)."),
     ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                                              "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Naval melee units gain the ability: Formation units all inherit escort's [ICON_Movement] Movement speed."),
     ("LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                                           "Upgrades Farm improvements to Mechanized Agriculture. Farms receive +1 [ICON_Food] Food Adjacency bonus for every Farm improvement they are adjacent to."),
@@ -86,7 +86,8 @@ values
     ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignore Zones of Control."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Farm improvements receive +1 [ICON_Food] Food from every 2 adjacent Farm improvements.[NEWLINE]Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Plantation improvements receive +1 [ICON_Food] Food."),
-    ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold. Pasture improvements receive +1 [ICON_Food] Food."),
+    ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold."),
+    ("LOC_CIVIC_EXPLORATION_HD_DESCRIPTION",                                                "Pasture improvements receive +1 [ICON_Food] Food."), 
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State.[NEWLINE]Allows forming two identical units into a Fleet.[NEWLINE]Allows one new Casus Belli that can be used to justify wars: Colonial War."),
     ("LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                                          "Can build Farms on Grassland Hills and Plains Hills. Lumber Mill improvements receive +1 [ICON_Production]."),
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "Lumber Mills and Camps can be built on Rainforest."),
@@ -144,7 +145,9 @@ values
     ("LOC_BOOST_TRIGGER_FLIGHT",                                                            "Own 2 Observation Balloons."),
     ("LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                                   "Our observation balloons have been destroyed by hostile biplanes. So why can't we find a way to take the high ground?"),
     ("LOC_BOOST_TRIGGER_RADIO",                                                             "Have the Colonialism Civic."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology.");
+    ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology."),
+    ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         ""); 
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -165,7 +168,7 @@ values
     -- New Techs Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CALENDAR_HD",                                        "建造1座粮仓。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着文明农业的发展，我们需要去安排一下这些年的生产计划了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造2座种植园。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造1座种植园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                           "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPASS_HD",                                         "拥有海军传统市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                "随着航海技术的发展，拥有磁性的工具成为了领航员的必需品。"),
@@ -194,8 +197,8 @@ values
     ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                               "矿山和采石场改良设施的 [ICON_Production] 生产力+1。"),
     ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许商人上船和收获由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
     ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。营地+1 [ICON_gold] 金币。"),
-    --("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "牧场+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                     "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
+    ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "牧场+1 [ICON_Production] 生产力。"),
+    -- ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                     "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
     ("zh_Hans_CN",  "LOC_TECH_CASTLES_HD_DESCRIPTION",                                      "如果使用凯瑟琳·德·美第奇（黑王后），能免费获得1名间谍。"),
     ("zh_Hans_CN",  "LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                               "水运单位+1 [ICON_Movement] 移动力。[NEWLINE]海军近战单位获得能力：所有编队单位将继承护卫队的 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                            "将农场改良设施升级为机械化农业。为相邻的每个农场改良设施+1 [ICON_Food] 食物。"),
@@ -228,7 +231,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_NATURAL_HISTORY_NAME",                                       "考古学"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。牧场+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EXPLORATION_HD_DESCRIPTION",                                 "牧场+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                      "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "从每个宗主城邦获得+1 [ICON_Favor] 外交支持。[NEWLINE]允许两个完全相同的单位组成一个舰队。[NEWLINE]现在可用一个新的战争借口替战争辩护：殖民战争。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                           "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
@@ -295,4 +299,6 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FLIGHT",                                             "拥有2个观测气球。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                    "我们的观测气球在敌方双翼机的枪林弹雨之下毁坏殆尽，我们为什么就不能想办法占据战场制高点呢？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          ""); 

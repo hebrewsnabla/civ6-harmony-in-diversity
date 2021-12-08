@@ -98,7 +98,7 @@ end
 Events.UnitGreatPersonActivated.Add(GreatAdmiralFreeStrategicResource)
 
 
---Evolution Theory Boost
+-- Evolution Theory Boost
 function EvolutionheoryBoost(playerID, districtID, iX, iY)
     local pPlayer = Players[playerID]
     if pPlayer ~= nil then
@@ -118,3 +118,22 @@ function EvolutionheoryBoost(playerID, districtID, iX, iY)
 end
 
 GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
+
+-- -- Paper Making Boost
+-- function PaperMakingBoost(iX, iY, eImprovement, playerID, resource, isPillaged, isWorked)
+--     local pPlayer = Players[playerID]
+--     if pPlayer ~= nil then
+--         local pPlot = Map.GetPlot(iX, iY)
+--         local pFeature = pPlot:GetFeatureType()
+--         if pFeature == GameInfo.Features['FEATURE_FOREST'].Index then
+--             local pCity = Cities.GetPlotPurchaseCity(pPlot)
+--             local pBuildingIndex = GameInfo.Buildings['BUILDING_OFFICIAL_RUN_HANDCRAFT'].Index
+--             if pCity:GetBuildings():HasBuilding(pBuildingIndex) then
+--                 local m_PaperMaking = GameInfo.Technologies['TECH_PAPER_MAKING_HD'].Index
+--                 pPlayer:GetTechs():TriggerBoost(m_PaperMaking, 1)
+--             end
+--         end
+--     end
+-- end
+
+-- Events.ImprovementAddedToMap.Add(PaperMakingBoost)

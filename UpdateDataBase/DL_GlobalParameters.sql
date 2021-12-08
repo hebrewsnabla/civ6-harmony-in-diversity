@@ -47,6 +47,26 @@ update GlobalParameters set Value = 30 where Name = 'RELIGION_PANTHEON_MIN_FAITH
 -- Suzerain
 update GlobalParameters set Value = 5 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
 
+-- City states
+INSERT OR IGNORE INTO Requirements
+        (RequirementId,                             RequirementType                                 )
+VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS' );
+INSERT OR IGNORE INTO RequirementArguments
+        (RequirementId,                             Name,               Value )
+VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'MinimumTokens',    10    );
+update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_SMALL_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 2 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 5 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 9 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE' and Name = 'MinimumTokens';
+-- The New Global Parameters.
+insert or replace into GlobalParameters
+    (Name,                                              Value)
+values
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_SMALL_INFLUENCE',    1),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE',   2),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE',    5),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE',  9); 
+
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_TRADE_ROUTE_PRESSURE_FOR_DESTINATION';
