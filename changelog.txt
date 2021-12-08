@@ -12,7 +12,7 @@ fixed cost of districts.
 
 All districts that was having variant cost now have fixed cost 60 except
 所有以前浮动价格的区域调整为60锤，水渠80，运河和大坝200。
-aquadect 80
+AQUEDUCT 80
 canal 200
 dam 200.
 

@@ -205,38 +205,8 @@ values
 -------------------------------------
 
 -------------------------------------
---加的夫
-insert into TraitModifiers 
-    (TraitType,                                 	 ModifierId)
-values
-	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_CULTURE'),
-	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_GOLD'),
-	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_SCIENCE'),
-	('MINOR_CIV_CARDIFF_TRAIT',				         'TRAIT_POWERED_BUILDINGS_MORE_FOOD');
-
--------------------------------------
---威尼斯
-delete from TraitModifiers where TraitType = 'MINOR_CIV_ANTIOCH_TRAIT' ;
-insert or replace into TraitModifiers 
-	(TraitType,						        ModifierId)
-values
-	('MINOR_CIV_ANTIOCH_TRAIT',		    	'MINOR_CIV_CSD_GOA');
-
-insert or replace into	Modifiers
-	(ModifierId,								ModifierType,																	SubjectRequirementSetId)
-values
-	('MINOR_CIV_CSD_GOA',		                'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',										    'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_CSD_GOA_MODIFIER',		    	'MODIFIER_PLAYER_CITIES_ADJUST_ALL_BUILDINGS_PURCHASE_COST',					NULL);
-
-insert or replace into	ModifierArguments
-	(ModifierId, 									Name,												Value)
-values
-	('MINOR_CIV_CSD_GOA',				        'ModifierId',										'MINOR_CIV_CSD_GOA_MODIFIER'),
-    ('MINOR_CIV_CSD_GOA_MODIFIER',				'Amount',								            15);
-
--------------------------------------
 --喀布尔
-update ModifierArguments set Value = 100 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
+-- update ModifierArguments set Value = 100 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
 
 -------------------------------------
 --阿卡德
@@ -278,48 +248,48 @@ insert or replace into UnitAbilityModifiers
 values
 	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'LANDCIVILIAN_INCREASED_MOVEMENT');
 
--------------------------------------
---摩艾石像
-insert or replace into Improvement_ValidResources
-	(ImprovementType,ResourceType,MustRemoveFeature)
-select
-	'IMPROVEMENT_MOAI',ResourceType,1
-from Resources;
+-- -------------------------------------
+-- --摩艾石像
+-- insert or replace into Improvement_ValidResources
+-- 	(ImprovementType,ResourceType,MustRemoveFeature)
+-- select
+-- 	'IMPROVEMENT_MOAI',ResourceType,1
+-- from Resources;
 
--------------------------------------
---摩亨朱达罗
-insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
-values
-	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS'),
-	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS');
+-- -------------------------------------
+-- --摩亨朱达罗
+-- insert or replace into TraitModifiers
+-- 	(TraitType,					ModifierId)
+-- values
+-- 	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS'),
+-- 	('MINOR_CIV_MOHENJO_DARO_TRAIT',	'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS');
 
-insert or replace into Modifiers	
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_THEATER'),
-	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'YT_CITY_HAS_THEATER');	;	
+-- insert or replace into Modifiers	
+-- 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+-- values
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_THEATER'),
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',		'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'YT_CITY_HAS_THEATER');	;	
 
-insert or replace into	ModifierArguments
-	(ModifierId, 											        Name,												Value)
-values
-	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'ModifierId',										'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER'),
-	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'YieldType',										'YIELD_FOOD'),
-    ('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'Amount',											3),
-    ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',                'ModifierId',                                       'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER'),
-    ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',       'Amount',                                           1);
+-- insert or replace into	ModifierArguments
+-- 	(ModifierId, 											        Name,												Value)
+-- values
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS',					'ModifierId',										'MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER'),
+-- 	('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'YieldType',										'YIELD_FOOD'),
+--     ('MINOR_CIV_MOHENJO_DARO_THEATER_FOOD_BONUS_MODIFIER',			'Amount',											3),
+--     ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS',                'ModifierId',                                       'MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER'),
+--     ('MINOR_CIV_MOHENJO_DARO_THEATER_AMENITY_BONUS_MODIFIER',       'Amount',                                           1);
 
-insert or replace into RequirementSets
-	(RequirementSetId, 										RequirementSetType)
-values
-	('YT_CITY_HAS_THEATER',									'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId, 										RequirementSetType)
+-- values
+-- 	('YT_CITY_HAS_THEATER',									'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
-	(RequirementSetId, 										RequirementId)
-values
-	('YT_CITY_HAS_THEATER',									'REQUIRES_CITY_HAS_DISTRICT_THEATER');
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId, 										RequirementId)
+-- values
+-- 	('YT_CITY_HAS_THEATER',									'REQUIRES_CITY_HAS_DISTRICT_THEATER');
 
 -------------------------------------
 --维尔纽斯
@@ -449,13 +419,9 @@ update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONA
 
 -------------------------------------
 --纳斯卡
-update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE' and Name = 'Amount';
-
--------------------------------------
---布鲁塞尔
-update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';
+-- update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'Amount';
+-- update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE' and Name = 'Amount';
+-- update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE' and Name = 'Amount';
 
 -------------------------------------
 --     狂野模式 版本V0.2    --

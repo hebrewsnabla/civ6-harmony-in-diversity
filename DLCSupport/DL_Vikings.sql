@@ -47,24 +47,6 @@ insert or replace into Adjacency_YieldChanges
 values 
     ('Monastery_DistrictAdjacency_Divine_Right_Late', 'Placeholder', 'YIELD_FAITH', 2, 1, 1, 'CIVIC_DIVINE_RIGHT');
 
--- Muscat
-insert into TraitModifiers 
-    (TraitType,                                  ModifierId)
-values
-    ('MINOR_CIV_MUSCAT_TRAIT',                   'MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1');
-
-insert into Modifiers
-    (ModifierId,                                        ModifierType,                                       SubjectRequirementSetId)
-values
-    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_CITY_STATES', 'CITY_HAS_HARBOR');
-
-insert into ModifierArguments
-    (ModifierId,                                        Name,            Value)
-values
-    ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'ModifierId',    'MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS'),
-    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'Amount',        1);
-
 --auckland
 delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE';
 delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL';
