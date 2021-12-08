@@ -209,44 +209,44 @@ values
 -- update ModifierArguments set Value = 100 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
 
 -------------------------------------
---阿卡德
-insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
-values
-	('MINOR_CIV_AKKAD_TRAIT',	'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT');
+-- --阿卡德
+-- insert or replace into TraitModifiers
+-- 	(TraitType,					ModifierId)
+-- values
+-- 	('MINOR_CIV_AKKAD_TRAIT',	'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT');
 
-insert or replace into Modifiers	
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL),
-	('LANDCIVILIAN_INCREASED_MOVEMENT',           					'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					NULL);	
+-- insert or replace into Modifiers	
+-- 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+-- values
+-- 	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL),
+-- 	('LANDCIVILIAN_INCREASED_MOVEMENT',           					'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					NULL);	
 
-insert or replace into	ModifierArguments
-	(ModifierId, 											        Name,												Value)
-values
-	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'ModifierId',										'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER'),
-	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'AbilityType',										'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT'),
-    ('LANDCIVILIAN_INCREASED_MOVEMENT',								'Amount',											1);
-insert or replace into Types
-	(Type,													Kind)
-values
-	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'KIND_ABILITY');
+-- insert or replace into	ModifierArguments
+-- 	(ModifierId, 											        Name,												Value)
+-- values
+-- 	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT',				'ModifierId',										'MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER'),
+-- 	('MINOR_CIV_AKKAD_LANDCIVILIAN_INCREASED_MOVEMENT_MODIFIER',	'AbilityType',										'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT'),
+--     ('LANDCIVILIAN_INCREASED_MOVEMENT',								'Amount',											1);
+-- insert or replace into Types
+-- 	(Type,													Kind)
+-- values
+-- 	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'KIND_ABILITY');
 
-insert or replace into TypeTags		
-	(Type,													Tag)
-select 
-	'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'CLASS_LANDCIVILIAN';
+-- insert or replace into TypeTags		
+-- 	(Type,													Tag)
+-- select 
+-- 	'ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'CLASS_LANDCIVILIAN';
 
-insert or replace into UnitAbilities 
-	(UnitAbilityType, 										Inactive) 
-values	
-	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',  			1);
+-- insert or replace into UnitAbilities 
+-- 	(UnitAbilityType, 										Inactive) 
+-- values	
+-- 	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',  			1);
 
-insert or replace into UnitAbilityModifiers
-	(UnitAbilityType,										ModifierId)
-values
-	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'LANDCIVILIAN_INCREASED_MOVEMENT');
+-- insert or replace into UnitAbilityModifiers
+-- 	(UnitAbilityType,										ModifierId)
+-- values
+-- 	('ABILITY_LANDCIVILIAN_INCREASED_MOVEMENT',				'LANDCIVILIAN_INCREASED_MOVEMENT');
 
 -- -------------------------------------
 -- --摩艾石像

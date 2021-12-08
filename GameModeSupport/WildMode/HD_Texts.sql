@@ -45,18 +45,18 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION",                 "每个港口内建筑向城市提供3点 [ICON_Power] 电力。通电建筑额外+4对应产出"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_CARDIFF_BONUS",                       "每个港口内建筑向城市提供3点 [ICON_Power] 电力。通电建筑额外+4对应产出"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",                 "购买建筑花费-15%"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_ANTIOCH_BONUS",                       "购买建筑花费-15%"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                   "您的单位由他们发起的战斗中获得额外100%经验值。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_KABUL_BONUS",                         "您的单位由他们发起的战斗中获得额外100%经验值。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AKKAD_DESCRIPTION",                   "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。平民单位+1移动力"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_AKKAD_BONUS",                         "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。平民单位+1移动力"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",                "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+3 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修在资源上并正确改良资源"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_RAPA_NUI_BONUS",                      "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+3 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修在资源上并正确改良资源"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MOHENJO_DARO_DESCRIPTION",            "为您的所有城市+1 [ICON_Housing] 住房。无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。拥有剧院的城市+1 [ICON_Amenities] 宜居度,+3 [ICON_FOOD] 食物"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_MOHENJO_DARO_BONUS",                  "为您的所有城市+1 [ICON_Housing] 住房。无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。拥有剧院的城市+1 [ICON_Amenities] 宜居度,+3 [ICON_FOOD] 食物"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION",                 "每个港口内建筑向城市提供3点 [ICON_Power] 电力。通电建筑额外+4对应产出"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_CARDIFF_BONUS",                       "每个港口内建筑向城市提供3点 [ICON_Power] 电力。通电建筑额外+4对应产出"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",                 "购买建筑花费-15%"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_ANTIOCH_BONUS",                       "购买建筑花费-15%"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                   "您的单位由他们发起的战斗中获得额外100%经验值。"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_KABUL_BONUS",                         "您的单位由他们发起的战斗中获得额外100%经验值。"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AKKAD_DESCRIPTION",                   "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。平民单位+1移动力"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_AKKAD_BONUS",                         "可以使用信仰购买支援单位。陆地战斗单位可利用自身的 [ICON_Movement] 移动力护送平民和支援单位。平民单位+1移动力"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",                "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+3 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修在资源上并正确改良资源"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_RAPA_NUI_BONUS",                      "建造者可以建造摩艾石像改良设施。[NEWLINE][NEWLINE]摩艾石像提供+3 [ICON_Culture] 文化值。每2个相邻的摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值与 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修在资源上并正确改良资源"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MOHENJO_DARO_DESCRIPTION",            "为您的所有城市+1 [ICON_Housing] 住房。无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。拥有剧院的城市+1 [ICON_Amenities] 宜居度,+3 [ICON_FOOD] 食物"),
+    -- ("zh_Hans_CN",  "LOC_CIVILIZATION_MOHENJO_DARO_BONUS",                  "为您的所有城市+1 [ICON_Housing] 住房。无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。拥有剧院的城市+1 [ICON_Amenities] 宜居度,+3 [ICON_FOOD] 食物"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",                 "剧院广场区域的相邻加成提升50%，解锁人文主义、歌剧与芭蕾和文化遗产市政后分别额外提升50%的剧院广场相邻加成。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                   "剧院广场区域的相邻加成提升50%，解锁人文主义、歌剧与芭蕾和文化遗产市政后分别额外提升50%的剧院广场相邻加成。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_YEREVAN_DESCRIPTION",                 "你的使徒单位可以选择任何可用的升级，宗教单位+1 [ICON_Movement] 移动力"),
@@ -66,9 +66,9 @@ values
 
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ARMAGH_EXPANSION2_DESCRIPTION",       "建造者现在能够建造修道院改良设施。[NEWLINE][NEWLINE]修道院提供+2 [ICON_Faith] 信仰值。此单元格上的友方宗教单位生命值恢复+15（前提是其当前回合未发动攻击）。每1个相邻的区域使其+2 [ICON_FAITH] 信仰值。解锁“归正会”市政后每1个相邻的区域使其+3 [ICON_FAITH] 信仰值。提供+1 [ICON_HOUSING] 住房。解锁“殖民主义”市政后获得额外1点 [ICON_HOUSING] 住房。每个城只能建造一个。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_ARMAGH_BONUS_XP2",                    "建造者现在能够建造修道院改良设施。[NEWLINE][NEWLINE]修道院提供+2 [ICON_Faith] 信仰值。此单元格上的友方宗教单位生命值恢复+15（前提是其当前回合未发动攻击）。每1个相邻的区域使其+2 [ICON_FAITH] 信仰值。解锁“归正会”市政后每1个相邻的区域使其+3 [ICON_FAITH] 信仰值。提供+1 [ICON_HOUSING] 住房。解锁“殖民主义”市政后获得额外1点 [ICON_HOUSING] 住房。每个城只能建造一个。"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",               "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAZCA_DESCRIPTION",                   "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BRUSSELS_DESCRIPTION",                "您的城市在建造奇观时+25%建造速度。");
+    -- ("zh_Hans_CN",  "LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",               "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NAZCA_DESCRIPTION",                   "解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+2 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦地形+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。"),
+    -- ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BRUSSELS_DESCRIPTION",                "您的城市在建造奇观时+25%建造速度。");
 
 -------------------------------------
 --     狂野模式 版本V0.3    --
