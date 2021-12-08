@@ -224,6 +224,7 @@ values
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'YieldChange',   3);
 
 --Lahore_Nihang
+update Units set Cost = 80 where UnitType = 'UNIT_LAHORE_NIHANG';
 insert or replace into BuildingModifiers
 	(BuildingType,						    ModifierId)
 values
