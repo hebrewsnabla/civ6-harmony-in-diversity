@@ -99,7 +99,7 @@ values
     ("LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from Camps and Pastures with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any Camp or Pasture with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "+2 [ICON_FAITH] Faith, +2 [ICON_CULTURE] Culture from Geothermal fissures in this city. After Chemistry is researched, +2 [ICON_SCIENCE] Science additionally.[NEWLINE]+2 extra [ICON_AMENITIES] Amenity and +5 [ICON_TOURISM] Tourism if this city has any Geothermal fissure."),
     -- Water Entertainment Complex
-    ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "+1 [ICON_SCIENCE] Science to each coastal Resource, Shipwreck, and Reef tile in this city."),
+    --("LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] Tourism."),
     ("LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "+2 [ICON_Tourism] Tourism for each Wonder built in this city on or adjacent to a Coast tile."),
     ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science from marine features or Fishing Boats with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any marine feature or Fishing Boat with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     -- Aerodrome
@@ -147,7 +147,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。"),
     -- 剧院
-    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "+2 [ICON_Culture] 文化值。毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+1 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。维护免费；无巨作槽位。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "+2 [ICON_Culture] 文化值。毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+1 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%。通电后额外为本城+5% [ICON_CULTURE] 文化值."),
@@ -215,7 +215,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究生物科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究化学科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
     -- 水上娱乐
-    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "此城中的每处海岸资源、海难遗址和礁石单元格+1 [ICON_SCIENCE] 科技值。"),
+    --("zh_Hans_CN",  "LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "此城中建在海岸单元格之上或周围的每座奇观+2 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究生物科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     -- 航空港

@@ -233,6 +233,12 @@ select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'Amount',				2
 from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
+	-- 堡垒在飞行后获得旅游业绩
+insert or replace into Improvement_Tourism
+	(ImprovementType,		TourismSource,				PrereqTech,			ScalingFactor)
+values
+	('IMPROVEMENT_FORT',	'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',		100);
+
 -- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
 update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
