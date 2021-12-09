@@ -2,6 +2,50 @@
 --            Babylon DLC          --
 -------------------------------------
 
+---------------------------------------------------------------------------------------------------------
+--Samarkand
+update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_TRADE_GOLD_MODIFIER' and Name = 'Amount';
+insert or replace into Improvement_YieldChanges
+    (ImprovementType,               YieldType,          YieldChange)
+values
+    ('IMPROVEMENT_TRADING_DOME',    'YIELD_FOOD',       0),
+    ('IMPROVEMENT_TRADING_DOME',    'YIELD_PRODUCTION', 0);
+insert or replace into Improvement_BonusYieldChanges
+    (Id,    ImprovementType,            YieldType,         BonusYieldChange,    PrereqCivic)
+values
+    (555,   'IMPROVEMENT_TRADING_DOME', 'YIELD_GOLD',       2,                  'CIVIC_MEDIEVAL_FAIRES');
+
+insert or replace into ImprovementModifiers
+    (ImprovementType,       ModifierId)
+values
+    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_FOOD');
+ --    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_PRODUCTION'),
+    -- ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_ADJECENT_LUXURY_GOLD');
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                               SubjectRequirementSetId)
+values
+    ('TRADING_DOME_DESERT_FOOD',            'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS');
+ --    ('TRADING_DOME_DESERT_PRODUCTION',      'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
+    -- ('TRADING_DOME_ADJECENT_LUXURY_GOLD',   'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',         'TRADING_DOME_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,               Value)
+values
+    ('TRADING_DOME_DESERT_FOOD',                'YieldType',        'YIELD_FOOD'),
+    ('TRADING_DOME_DESERT_FOOD',                'Amount',           3);
+ --    ('TRADING_DOME_DESERT_PRODUCTION',           'YieldType',        'YIELD_PRODUCTION'),
+ --    ('TRADING_DOME_DESERT_PRODUCTION',           'Amount',           1),
+    -- ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'YieldType',     'YIELD_GOLD'),
+ --    ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'Amount',        2);
+-- insert or replace into RequirementSets
+--  (RequirementSetId,                                      RequirementSetType)
+-- values
+--  ('TRADING_DOME_REQUIREMENTS',                           'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSetRequirements
+--  (RequirementSetId,                                      RequirementId)
+-- values
+--  ('TRADING_DOME_REQUIREMENTS',                           'REQUIRES_PLOT_HAS_LUXURY');
+update Adjacency_YieldChanges set YieldChange = 2 where ID ='TradingDome_LuxuryAdjacency';
+
 -- AYUTTHAYA
 delete from ModifierArguments where Value = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING';
 

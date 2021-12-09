@@ -203,51 +203,6 @@ values
 	('TRAIT_CONTINENTAL_DOMESTIC_PRODUCTION',			'YieldType',	 	'YIELD_PRODUCTION'),
 	('TRAIT_CONTINENTAL_DOMESTIC_PRODUCTION',			'Amount',	 	 	1);
 
-
----------------------------------------------------------------------------------------------------------
---Samarkand
-update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_TRADE_GOLD_MODIFIER' and Name = 'Amount';
-insert or replace into Improvement_YieldChanges
-	(ImprovementType,				YieldType,			YieldChange)
-values
-	('IMPROVEMENT_TRADING_DOME',	'YIELD_FOOD',		0),
-	('IMPROVEMENT_TRADING_DOME',	'YIELD_PRODUCTION',	0);
-insert or replace into Improvement_BonusYieldChanges
-	(Id,	ImprovementType,			YieldType,		   BonusYieldChange,	PrereqCivic)
-values
-	(555,	'IMPROVEMENT_TRADING_DOME',	'YIELD_GOLD',		2,				    'CIVIC_MEDIEVAL_FAIRES');
--- insert or replace into ImprovementModifiers
---     (ImprovementType,       ModifierId)
--- values
---     ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_FOOD'),
---     ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_PRODUCTION'),
--- 	('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_ADJECENT_LUXURY_GOLD');
--- insert or replace into Modifiers
---     (ModifierId,                    		ModifierType,                               SubjectRequirementSetId)
--- values
---     ('TRADING_DOME_DESERT_FOOD',         	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
---     ('TRADING_DOME_DESERT_PRODUCTION',      'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
--- 	('TRADING_DOME_ADJECENT_LUXURY_GOLD',   'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',  		'TRADING_DOME_REQUIREMENTS');
--- insert or replace into ModifierArguments
---     (ModifierId,                    			Name,           	Value)
--- values
---     ('TRADING_DOME_DESERT_FOOD',        		'YieldType',    	'YIELD_FOOD'),
---     ('TRADING_DOME_DESERT_FOOD',        		'Amount',       	3),
---     ('TRADING_DOME_DESERT_PRODUCTION',         	'YieldType',    	'YIELD_PRODUCTION'),
---     ('TRADING_DOME_DESERT_PRODUCTION',         	'Amount',       	1),
--- 	('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'YieldType',    	'YIELD_GOLD'),
---     ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'Amount',       	2);
--- insert or replace into RequirementSets
--- 	(RequirementSetId, 										RequirementSetType)
--- values
--- 	('TRADING_DOME_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
--- insert or replace into RequirementSetRequirements
--- 	(RequirementSetId, 										RequirementId)
--- values
--- 	('TRADING_DOME_REQUIREMENTS',							'REQUIRES_PLOT_HAS_LUXURY');
-update Adjacency_YieldChanges set YieldChange = 2 where ID ='TradingDome_LuxuryAdjacency';
-
-
 ---------------------------------------------------------------------------------------------------------
 --Granada 阿卡萨地堡基础文化改为3，地块魅力加成改为75%
 update Improvements set YieldFromAppealPercent = 100 where ImprovementType ='IMPROVEMENT_ALCAZAR';
@@ -377,26 +332,6 @@ values
 	('MINOR_CIV_BABYLON_CAMPUS_GREAT_ARTIST_POINT_BONUS',					'ModifierId',											'MINOR_CIV_BABYLON_CAMPUS_GREAT_ARTIST_POINT_BONUS_MODIFIER'),
 	('MINOR_CIV_BABYLON_CAMPUS_GREAT_ARTIST_POINT_BONUS_MODIFIER',			'GreatPersonClassType',									'GREAT_PERSON_CLASS_ARTIST'),
     ('MINOR_CIV_BABYLON_CAMPUS_GREAT_ARTIST_POINT_BONUS_MODIFIER',			'Amount',												4);
-
----------------------------------------------------------------------------------------------------------
---Caguana
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
-update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_BATEY';
-insert or ignore into Improvement_Adjacencies
-	(ImprovementType,				YieldChangeId)
-values
-	('IMPROVEMENT_BATEY',			'Batey_LUXURYResourceAdjacency'),
-	('IMPROVEMENT_BATEY',			'Batey_LateLUXURYResourceAdjacency'),
-	('IMPROVEMENT_BATEY',			'Batey_STRATEGICResourceAdjacency'),
-	('IMPROVEMENT_BATEY',			'Batey_LateSTRATEGICResourceAdjacency');
-insert or ignore into Adjacency_YieldChanges
-	(ID,									Description,	YieldType,				YieldChange,	TilesRequired,	PrereqCivic,			ObsoleteCivic,			AdjacentResourceClass)
-values
-	('Batey_LUXURYResourceAdjacency', 		'Placeholder', 'YIELD_CULTURE',			1,				1,				NULL,					'CIVIC_EXPLORATION',	'RESOURCECLASS_LUXURY'),
-	('Batey_LateLUXURYResourceAdjacency', 	'Placeholder', 'YIELD_CULTURE',			2,				1,				'CIVIC_EXPLORATION',	NULL,					'RESOURCECLASS_LUXURY'),
-	('Batey_STRATEGICResourceAdjacency', 	'Placeholder', 'YIELD_CULTURE',			1,				1,				NULL,					'CIVIC_EXPLORATION',	'RESOURCECLASS_STRATEGIC'),
-	('Batey_LateSTRATEGICResourceAdjacency','Placeholder', 'YIELD_CULTURE',			2,				1,				'CIVIC_EXPLORATION',	NULL,					'RESOURCECLASS_STRATEGIC');
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -741,25 +676,6 @@ update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GRE
 
 
 -------------------------------------
---Mitla
-insert or replace into TraitModifiers 
-	(TraitType,						            ModifierId)
-values
-	('MINOR_CIV_PALENQUE_TRAIT',		    	'MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS');
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,														SubjectRequirementSetId)
-values
-    ('MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS',	    	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	    						'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS_MODIFIER','MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_CAMPUS');
-insert or replace into ModifierArguments
-	(ModifierId,							        					Name,			        Value)
-values
-	('MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS',					'ModifierId',			'MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS_MODIFIER'),
-	('MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS_MODIFIER',		'YieldTypeToMirror',	'YIELD_SCIENCE'),
-	('MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS_MODIFIER',		'YieldTypeToGrant',		'YIELD_FOOD');
-
-
--------------------------------------
 --Nazca
 delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_DESERT';
 delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_HAS_DESERT';
@@ -768,7 +684,7 @@ insert or replace into ImprovementModifiers
 values
 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_FOOD'),
 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_PRODUCTION'),
-	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_FAITH');
+	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_FAITH'),
 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH');
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,														SubjectRequirementSetId)

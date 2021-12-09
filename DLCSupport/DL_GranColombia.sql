@@ -95,6 +95,29 @@ values
     ('IMPROVEMENT_BATEY',           'BATEY_Street_Carnival_Culture'),
     ('IMPROVEMENT_BATEY',           'BATEY_Late_Street_Carnival_Culture');
 
+---------------------------------------------------------------------------------------------------------
+--Caguana
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM', AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
+    where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM', AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
+    where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
+update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_BATEY';
+-- insert or ignore into Improvement_Adjacencies
+--     (ImprovementType,               YieldChangeId)
+-- values
+--     ('IMPROVEMENT_BATEY',           'Batey_LUXURYResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_LateLUXURYResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_STRATEGICResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_LateSTRATEGICResourceAdjacency');
+-- insert or ignore into Adjacency_YieldChanges
+--     (ID,                                    Description,    YieldType,              YieldChange,    TilesRequired,  PrereqCivic,            ObsoleteCivic,          AdjacentResourceClass)
+-- values
+--     ('Batey_LUXURYResourceAdjacency',       'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_LUXURY'),
+--     ('Batey_LateLUXURYResourceAdjacency',   'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_LUXURY'),
+--     ('Batey_STRATEGICResourceAdjacency',    'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_STRATEGIC'),
+--     ('Batey_LateSTRATEGICResourceAdjacency','Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_STRATEGIC');
+
+
 -- Singapore
 -- MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL
 delete from TraitModifiers where TraitType = 'MINOR_CIV_SINGAPORE_TRAIT' and ModifierId = 'MINOR_CIV_SINGAPORE_UNIQUE_INFLUENCE_BONUS';

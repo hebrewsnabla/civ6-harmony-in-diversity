@@ -6,7 +6,7 @@ values
     ("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "1 [ICON_ENVOY] Envoys"),
     ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "2 [ICON_ENVOY] Envoys"),
     ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "5 [ICON_ENVOY] Envoys"),
-    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS"   ,            "9 [ICON_ENVOY] Envoys"),
+    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "9 [ICON_ENVOY] Envoys"),
     ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "5 [ICON_Envoy] Envoys, and more than any other civilization:"),
     ("LOC_CITY_STATES_SUZERAIN_DIPLOMATIC_BONUS",         "Suzerain Diplomacy Bonus:[NEWLINE][ICON_Bolt]The city-state follows you into war and peace with other players.[NEWLINE][ICON_Bolt]City-state lands become friendly territory. Your units can move there, heal there, and upgrade there.[NEWLINE][ICON_Bolt]Your Builder units may improve city-state tiles.[NEWLINE][ICON_Bolt]See 3 tiles around the city-state.[NEWLINE][ICON_Bolt]Can pay [ICON_Gold] Gold to temporarily take control of the city-state's military.[NEWLINE][ICON_Bolt]Gain ownership of all the city-state's resources."), --[NEWLINE][ICON_Bolt]You gain a base of +1 [ICON_FAVOR] Diplomatic Favor every turn.
     ("LOC_LEADER_TRAIT_ANTANANARIVO_DESCRIPTION",         "Your Civilization gains +2% [ICON_Culture] Culture for each Great Person it has ever earned, up to a total of +20%."),
@@ -23,8 +23,8 @@ values
     ("LOC_CIVILIZATION_LA_VENTA_BONUS_XP2",               "Your Builders can now make Colossal Head improvements.[NEWLINE][NEWLINE]Colossal Heads provide +2 [ICON_Faith] Faith. +1 [ICON_Faith] Faith for every 2 adjacent Rainforest or for every adjacent Rainforest once Humanism is discovered. +1 [ICON_Faith] Faith for every 2 adjacent Woods or for every adjacent Woods once Humanism is discovered. [ICON_TOURISM] Tourism from [ICON_FAITH] Faith once Flight is discovered. Can only be built on Forest or Jungles."),
     ("LOC_LEADER_TRAIT_KANDY_DESCRIPTION",                "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
     ("LOC_CIVILIZATION_KANDY_BONUS",                      "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
-    ("LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "City growth rate is 15% higher in cities with a Campus district. Campuses are granted [ICON_Food] Food equal to its adjacency bonus."),
-    ("LOC_CIVILIZATION_MITLA_BONUS",                      "City growth rate is 15% higher in cities with a Campus district. Campuses are granted [ICON_Food] Food equal to its adjacency bonus."),
+    ("LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "City growth rate is 15% higher in cities with a Campus district. +2 [ICON_Food] Food from Campus districts."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
+    ("LOC_CIVILIZATION_PALENQUE_BONUS",                   "City growth rate is 15% higher in cities with a Campus district. +2 [ICON_Food] Food from Campus districts."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
     ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "Your cities get +20% [ICON_Production] Production towards city projects. Your Campus and buildings in it +2 [ICON_Production] Production."),
     ("LOC_CIVILIZATION_HONG_KONG_BONUS",                  "Your cities get +20% [ICON_Production] Production towards city projects. Your Campus and buildings in it +2 [ICON_Production] Production."),
     ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture and +1 [ICON_Gold] Gold for every specialty district in the origin city."),
@@ -137,8 +137,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_FEZ_BONUS",                        "为城市中的每个圣地建筑+2 [ICON_SCIENCE] 科技值。学院+2 [ICON_SCIENCE] 科技值"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HATTUSA_EXPANSION2_DESCRIPTION",   "每回合提供2份文明已解锁战略资源。本城每种正确改良的战略资源+2 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_HATTUSA_BONUS_XP2",                "每回合提供2份文明已解锁战略资源。本城每种正确改良的战略资源+2 [ICON_SCIENCE] 科技值。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PALENQUE_DESCRIPTION",             "拥有学院的城市+15% 余粮，学院提供等同于相邻加成的 [ICON_Food] 食物"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_PALENQUE_BONUS",                   "拥有学院的城市+15% 余粮，学院提供等同于相邻加成的 [ICON_Food] 食物"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "拥有学院的城市+15%余粮，学院提供+2 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_PALENQUE_BONUS",                   "拥有学院的城市+15%余粮，学院提供+2 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NALANDA_DESCRIPTION",              "您的建造者现在可以建造大寺改良设施。[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] 科技值、+1 [Icon_Housing] 住房。每与1座学院或圣地区域相邻，则+1 [ICON_Science] 科技值。研究完“科学理论”之后，每与1座学院相邻则额外+1 [Icon_Science] 科技值。必须建在平坦地貌上，不能与其他大寺相邻。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_NALANDA_BONUS",                    "您的建造者现在可以建造大寺改良设施。[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] 科技值、+1 [Icon_Housing] 住房。每与1座学院或圣地区域相邻，则+1 [ICON_Science] 科技值。研究完“科学理论”之后，每与1座学院相邻则额外+1 [Icon_Science] 科技值。必须建在平坦地貌上，不能与其他大寺相邻。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "拥有总督的城市购买建筑花费-15%"),
