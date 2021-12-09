@@ -41,7 +41,7 @@ values
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_WOLIN_DESCRIPTION",                                            "陆地单位击杀主要和小型文明的单位时，将获得 [ICON_GreatGeneral] 大将军点数，而海军单位完成击杀将获得 [ICON_GreatAdmiral] 海军统帅点数，获得量等同于对方单位战斗力的50%（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_WOLIN_BONUS",                                                  "陆地单位击杀主要和小型文明的单位时，将获得 [ICON_GreatGeneral] 大将军点数，而海军单位完成击杀将获得 [ICON_GreatAdmiral] 海军统帅点数，获得量等同于对方单位战斗力的50%（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_EMERGENCY_REWARD_WORLD_FAIR_FIRST_PLACE_GREAT_PERSON_POINTS_DESCRIPTION",   "200点 [ICON_GREATPERSON] 伟人点数"),
-    ("zh_Hans_CN",  "LOC_POLICY_FRESCOES_DESCRIPTION_XP2",                                           "每回合的 [ICON_GreatArtist] 大艺术家点数+4。每有一座美术馆，每回合的 [ICON_GreatArtist] 大艺术家点数便+4。"),
+    ("zh_Hans_CN",  "LOC_POLICY_FRESCOES_DESCRIPTION_XP2",                                           "每回合的 [ICON_GreatArtist] 大艺术家点数+4。每有一座艺术博物馆，每回合的 [ICON_GreatArtist] 大艺术家点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_INSPIRATION_DESCRIPTION",                                            "每回合+4 [ICON_GreatScientist] 大科学家点数。"),
     ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_XP2",                                          "每回合的 [ICON_GreatEngineer] 大工程师点数+8。每有一座工作坊，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_LAISSEZ_FAIRE_DESCRIPTION_XP2",                                      "每有一座银行，每回合的 [ICON_GreatMerchant] 大商人点数便+4；每有一座证券交易所，每回合的 [ICON_GreatMerchant] 大商人点数便+8。每有一座造船厂，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4；每有一座码头，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+8。"),
