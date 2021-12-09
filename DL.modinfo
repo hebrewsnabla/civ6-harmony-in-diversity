@@ -785,6 +785,10 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
     </UpdateDatabase>
+    <ImportFiles id="National_Wonders_support" criteria="National_Wonders_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/HD_National_Wonders.lua</File>
+    </ImportFiles>
       <!-- 国家奇观 Pack 1 -->
     <UpdateDatabase id="National_Wonders_Pack1_support" criteria="National_Wonders_Pack1_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
@@ -1576,6 +1580,7 @@
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
+    <File>ModSupport/Wonders/HD_National_Wonders.lua</File>
     <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
     <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
