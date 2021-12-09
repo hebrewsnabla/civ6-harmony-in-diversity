@@ -37,7 +37,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_BOLOGNA_BONUS",                                                "拥有建筑的区域使相应类型的 [ICON_GreatPerson] 伟人点数+4（拥有建筑的剧院广场区域提供 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家和 [ICON_GreatMusician] 大音乐家点数）。"),    
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION",                                "瑞典招募伟人时可获得50点 [ICON_Favor] 外交支持（标准速度下）。工厂与大学分别提供瑞典+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。如瑞典在游戏中，进入工业时代后将增添3项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_EMERGENCY_REWARD_WORLD_FAIR_FIRST_PLACE_GREAT_PERSON_POINTS_DESCRIPTION",   "200点 [ICON_GREATPERSON] 伟人点数"),
-    ("zh_Hans_CN",  "LOC_POLICY_FRESCOES_DESCRIPTION_XP2",                                           "每回合的 [ICON_GreatArtist] 大艺术家点数+4。每有一座美术馆，每回合的 [ICON_GreatArtist] 大艺术家点数便+4。"),
+    ("zh_Hans_CN",  "LOC_POLICY_FRESCOES_DESCRIPTION_XP2",                                           "每回合的 [ICON_GreatArtist] 大艺术家点数+4。每有一座艺术博物馆，每回合的 [ICON_GreatArtist] 大艺术家点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_INSPIRATION_DESCRIPTION",                                            "每回合+4 [ICON_GreatScientist] 大科学家点数。"),
     ("zh_Hans_CN",  "LOC_POLICY_INVENTION_DESCRIPTION_XP2",                                          "每回合的 [ICON_GreatEngineer] 大工程师点数+8。每有一座工作坊，每回合的 [ICON_GreatEngineer] 大工程师点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_LAISSEZ_FAIRE_DESCRIPTION_XP2",                                      "每有一座银行，每回合的 [ICON_GreatMerchant] 大商人点数便+4；每有一座证券交易所，每回合的 [ICON_GreatMerchant] 大商人点数便+8。每有一座造船厂，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+4；每有一座码头，每回合的 [ICON_GreatAdmiral] 海军统帅点数便+8。"),

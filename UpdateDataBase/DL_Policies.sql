@@ -1171,9 +1171,9 @@ update Policies set PrereqTech = 'TECH_NUCLEAR_FISSION' where PolicyType = 'POLI
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_DRILL_MANUALS';
 update Policies set PrereqTech = 'TECH_RIFLING' where PolicyType = 'POLICY_DRILL_MANUALS';
 
-	-- 政策卡修改：【不结盟运动】改为【卫星】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
-update Policies set PrereqTech = 'TECH_SATELLITES' where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
+-- 	-- 政策卡修改：【不结盟运动】改为【卫星】科技解锁
+-- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
+-- update Policies set PrereqTech = 'TECH_SATELLITES' where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
 
 	-- 政策卡修改：【贸易银行】改为【银行业】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WISSELBANKEN';

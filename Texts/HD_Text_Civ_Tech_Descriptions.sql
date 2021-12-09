@@ -147,7 +147,7 @@ values
     ("LOC_BOOST_TRIGGER_RADIO",                                                             "Have the Colonialism Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology."),
     ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         ""); 
+    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         "Our fighters now need a targeting system like a scalpel and engineers are already working on it."); 
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -301,4 +301,4 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          ""); 
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"); 
