@@ -78,6 +78,42 @@ delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC' 
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC' and ModifierId = 'CL_NAT_WONDER_ADJUST_GREAT_PERSON_POINT_BONUS_GOLDEN';
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC' and ModifierId = 'CL_NAT_WONDER_ADJUST_GREATWORK_YIELD_GOLDEN';
 
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType || '_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+from Yields;
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType,					'MODIFIER_BUILDING_YIELD_CHANGE'
+from Yields;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType || '_ATTACH',		'ModifierId',			'HD_NAT_NATIONALEPIC_' || YieldType
+from Yields;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType,					'BuildingType',			'NAT_WONDER_CL_NATIONALEPIC'
+from Yields;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType,					'YieldType',			YieldType
+from Yields;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,					Value)
+select
+	'HD_NAT_NATIONALEPIC_' || YieldType,					'Amount',				4
+from Yields;
+
 -- 大本营 ------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
 update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 500 where BuildingType = 'NAT_WONDER_CL_CITADEL';

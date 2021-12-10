@@ -55,6 +55,7 @@ end
 
 Events.PlayerTurnActivated.Add(DidoOnPlayerTurnActivated)
 
+--Brazil
 function PedroGreatPersonFaith(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
