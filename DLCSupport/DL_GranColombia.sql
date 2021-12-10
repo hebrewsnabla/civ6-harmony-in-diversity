@@ -97,10 +97,10 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 --Caguana
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM', AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
-    where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM', AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
-    where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
+update Adjacency_YieldChanges set AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
+    where ID = 'Batey_BonusResourceAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
 update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_BATEY';
 -- insert or ignore into Improvement_Adjacencies
 --     (ImprovementType,               YieldChangeId)
@@ -157,6 +157,8 @@ insert into TraitModifiers
     (TraitType,                                  ModifierId)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH'),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS'),
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS'),
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS'),
@@ -174,6 +176,9 @@ insert into Modifiers
     (ModifierId,                                        ModifierType,                                       SubjectRequirementSetId)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH',            'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD',  NULL),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS',    'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
     ('MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS',      'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
     ('MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS',  'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
@@ -196,11 +201,18 @@ values
     ('MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1', 'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null),
     ('MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1',   'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null),
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null);
+-- update Modifiers set OwnerRequirementSetId = 'PLAYER_FOUNDED_RELIGION_REQUIREMENTS' where ModifierId = 'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1';
 
 insert into ModifierArguments
     (ModifierId,                                        Name,            Value)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH',            'ModifierId',    'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'BeliefYieldType', 'BELIEF_YIELD_PER_CITY'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'YieldType',     'YIELD_FAITH'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'Amount',        2),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'PerXItems',     1),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS',    'ModifierId',    'MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS1'),
     ('MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS',      'ModifierId',    'MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS1'),
     ('MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS',  'ModifierId',    'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1'),
@@ -247,7 +259,6 @@ values
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'YieldChange',   3);
 
 --Lahore_Nihang
-update Units set Cost = 80 where UnitType = 'UNIT_LAHORE_NIHANG';
 insert or replace into BuildingModifiers
 	(BuildingType,						    ModifierId)
 values

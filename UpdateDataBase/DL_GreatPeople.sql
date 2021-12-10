@@ -527,7 +527,7 @@ insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                       RunOnce,        Permanent,  SubjectRequirementSetId)
 values
     ('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',  'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',   0,              1,          'BUILDING_IS_SEAPORT'),
-    ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',   0,  1,      'CITY_HAS_HARBOR');
+    ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',   0,  1,      'CITY_HAS_HARBOR_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,               Value)

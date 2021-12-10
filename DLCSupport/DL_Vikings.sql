@@ -46,6 +46,11 @@ insert or replace into Adjacency_YieldChanges
     (ID, Description, YieldType, YieldChange, TilesRequired, OtherDistrictAdjacent, PrereqCivic)  
 values 
     ('Monastery_DistrictAdjacency_Divine_Right_Late', 'Placeholder', 'YIELD_FAITH', 2, 1, 1, 'CIVIC_DIVINE_RIGHT');
+-------------------------------------
+--阿尔玛
+update Adjacency_YieldChanges set YieldChange = 2, ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';
+update Adjacency_YieldChanges set YieldChange = 3, PrereqCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency_Divine_Right_Late';
+update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONASTERY';
 
 --auckland
 delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE';
@@ -122,7 +127,7 @@ insert into Modifiers
     (ModifierId,                                        ModifierType,                                                       SubjectRequirementSetId)
 values
     ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS1',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                             'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_CITY_STATES',    'CITY_HAS_COMMERCIAL_HUB_REQUIREMENTS');
+    ('MINOR_CIV_MUSCAT_HARBOR_AMENITY_BONUS',           'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_CITY_STATES',    'CITY_HAS_HARBOR_REQUIREMENTS');
     -- ('MINOR_CIV_MUSCAT_UNIQUE_INFLUENCE_BONUS2',        'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                             'PLAYER_IS_SUZERAIN'),
     -- ('MINOR_CIV_MUSCAT_COMMERCIAL_HUB_BONUS',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',                  'DISTRICT_IS_COMMERCIAL_HUB');
 

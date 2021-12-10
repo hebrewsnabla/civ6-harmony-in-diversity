@@ -361,46 +361,6 @@ values
 
 
 -------------------------------------
---埃里温
-insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
-values
-	('MINOR_CIV_YEREVAN_TRAIT',	'MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT');
-
-insert or replace into Modifiers	
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',					NULL),
-	('RELIGIOUS_ALL_INCREASED_MOVEMENT',           					'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					NULL);	
-
-insert or replace into	ModifierArguments
-	(ModifierId, 											        Name,												Value)
-values
-	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'ModifierId',										'MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER'),
-	('MINOR_CIV_YEREVAN_RELIGIOUS_ALL_INCREASED_MOVEMENT_MODIFIER',	'AbilityType',										'ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT'),
-    ('RELIGIOUS_ALL_INCREASED_MOVEMENT',								'Amount',											1);
-insert or replace into Types
-	(Type,													Kind)
-values
-	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',				'KIND_ABILITY');
-
-insert or replace into TypeTags		
-	(Type,													Tag)
-select 
-	'ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',				'CLASS_RELIGIOUS_ALL';
-
-insert or replace into UnitAbilities 
-	(UnitAbilityType, 										Inactive) 
-values	
-	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',  			1);
-
-insert or replace into UnitAbilityModifiers
-	(UnitAbilityType,										ModifierId)
-values
-	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'RELIGIOUS_ALL_INCREASED_MOVEMENT');
-
--------------------------------------
 --梵蒂冈x
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1' and Name = 'YieldChange';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_FAITH_BONUS1' and Name = 'YieldChange';
@@ -410,12 +370,6 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CIT
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_FAITH_BONUS1' and Name = 'YieldChange';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1' and Name = 'YieldChange';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1' and Name = 'YieldChange';
-
--------------------------------------
---阿尔玛
-update Adjacency_YieldChanges set YieldChange = 2 , ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';
-update Adjacency_YieldChanges set YieldChange = 3 , PrereqCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency_Divine_Right_Late';
-update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONASTERY';
 
 -------------------------------------
 --纳斯卡

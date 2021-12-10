@@ -153,6 +153,11 @@ insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,						ModifierId)
 values
 	('ABILITY_NAT_WONDER_CL_CITADEL',		'TRAIT_PROMOTE_NO_FINISH_MOVES');
+-- Gran Colombia pack
+insert or ignore into Modifiers (ModifierId, ModifierType) values
+('TRAIT_PROMOTE_NO_FINISH_MOVES',	'MODIFIER_PLAYER_UNITS_PROMOTE_NO_FINISH_MOVES');
+insert or ignore into ModifierArguments (ModifierId, Name, Value) values
+('TRAIT_PROMOTE_NO_FINISH_MOVES',	'NoFinishMoves',	1);
 
 		-- 送城墙&军营产出
 insert or replace into BuildingModifiers
