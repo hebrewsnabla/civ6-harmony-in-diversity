@@ -566,6 +566,8 @@
       <File>Assets/CityStates/CivBaikonur_128.dds</File>
       <File>Assets/CityStates/CivBaikonur_200.dds</File>
       <File>Assets/CityStates/CivBaikonur_256.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -1220,6 +1222,7 @@
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
       <File>UI/Icons/HD_Icons.xml</File>
+      <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
@@ -1562,6 +1565,7 @@
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>
+    <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
@@ -1883,6 +1887,8 @@
     <File>Assets/CityStates/CivBaikonur_128.dds</File>
     <File>Assets/CityStates/CivBaikonur_200.dds</File>
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
     <!-- Platforms -->
     <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
     <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
