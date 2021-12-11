@@ -494,11 +494,13 @@
       <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
       <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
       <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
       <File>Assets/TechCivics/HDTechIcons_30.dds</File>
       <File>Assets/TechCivics/HDTechIcons_38.dds</File>
       <File>Assets/TechCivics/HDTechIcons_42.dds</File>
       <File>Assets/TechCivics/HDTechIcons_128.dds</File>
       <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -1815,11 +1817,13 @@
     <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
     <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
     <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
     <File>Assets/TechCivics/HDTechIcons_30.dds</File>
     <File>Assets/TechCivics/HDTechIcons_38.dds</File>
     <File>Assets/TechCivics/HDTechIcons_42.dds</File>
     <File>Assets/TechCivics/HDTechIcons_128.dds</File>
     <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
