@@ -1,18 +1,32 @@
-insert or replace into IconTextureAtlases
+-- Warning: do not use replace 
+insert into IconTextureAtlases
     (Name,                      IconSize,   IconsPerRow,    IconsPerColumn,     Filename)
 values
-    -- ('ICON_ATLAS_CIVICS_HD',    30,         2,              1,                  'HDCivicIcons_30.dds'),
     ('ICON_ATLAS_CIVICS_HD',    38,         2,              1,                  'HDCivicIcons_38.dds'),
     ('ICON_ATLAS_CIVICS_HD',    42,         2,              1,                  'HDCivicIcons_42.dds'),
-    ('ICON_ATLAS_CIVICS_HD_FOW',42,         2,              1,                  'HDCivicIcons_FOW_42.dds'),
-    -- ('ICON_ATLAS_CIVICS_HD',    128,        2,              1,                  'HDCivicIcons_128.dds'),
+    ('ICON_ATLAS_CIVICS_HD',    128,        2,              1,                  'HDCivicIcons_128.dds'),
     ('ICON_ATLAS_CIVICS_HD',    160,        2,              1,                  'HDCivicIcons_160.dds'),
+    ('ICON_ATLAS_CIVICS_HD_FOW',42,         2,              1,                  'HDCivicIcons_FOW_42.dds'),
     ('ICON_ATLAS_TECHS_HD',     30,         2,              1,                  'HDTechIcons_30.dds'),
     ('ICON_ATLAS_TECHS_HD',     38,         2,              1,                  'HDTechIcons_38.dds'),
     ('ICON_ATLAS_TECHS_HD',     42,         2,              1,                  'HDTechIcons_42.dds'),
-    ('ICON_ATLAS_TECHS_HD_FOW', 42,         2,              1,                  'HDTechIcons_FOW_42.dds'),
     ('ICON_ATLAS_TECHS_HD',     128,        2,              1,                  'HDTechIcons_128.dds'),
-    ('ICON_ATLAS_TECHS_HD',     160,        2,              1,                  'HDTechIcons_160.dds');
+    ('ICON_ATLAS_TECHS_HD',     160,        2,              1,                  'HDTechIcons_160.dds'),
+    ('ICON_ATLAS_TECHS_HD_FOW', 42,         2,              1,                  'HDTechIcons_FOW_42.dds');
+
+-- <IconTextureAtlases>
+--     <Row Name="ICON_ATLAS_CIVICS_HD" IconSize="38"  IconsPerRow="2" IconsPerColumn="1" Filename="HDCivicIcons_38.dds"/>
+--     <Row Name="ICON_ATLAS_CIVICS_HD" IconSize="42"  IconsPerRow="2" IconsPerColumn="1" Filename="HDCivicIcons_42.dds"/>
+--     <Row Name="ICON_ATLAS_CIVICS_HD" IconSize="128"  IconsPerRow="2" IconsPerColumn="1" Filename="HDCivicIcons_128.dds"/>
+--     <Row Name="ICON_ATLAS_CIVICS_HD" IconSize="160"  IconsPerRow="2" IconsPerColumn="1" Filename="HDCivicIcons_160.dds"/>
+--     <Row Name="ICON_ATLAS_CIVICS_HD_FOW" IconSize="42"  IconsPerRow="2" IconsPerColumn="1" Filename="HDCivicIcons_FOW_42.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD" IconSize="30"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_30.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD" IconSize="38"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_38.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD" IconSize="42"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_42.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD" IconSize="128"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_128.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD" IconSize="160"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_160.dds"/>
+--     <Row Name="ICON_ATLAS_TECHS_HD_FOW" IconSize="42"  IconsPerRow="2" IconsPerColumn="1" Filename="HDTechIcons_FOW_42.dds"/>
+-- </IconTextureAtlases>
 
 insert or replace into IconDefinitions
     (Name,                                              Atlas,                  'Index')

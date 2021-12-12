@@ -1,4 +1,4 @@
-insert or replace into IconTextureAtlases
+insert into IconTextureAtlases
     (Name,                                              IconSize,   IconsPerRow,    IconsPerColumn,     Filename)
 values
     ('ICON_ATLAS_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU',  160,        1,              1,                  'GreatPeople_ZhuangZhou_160.dds'),
