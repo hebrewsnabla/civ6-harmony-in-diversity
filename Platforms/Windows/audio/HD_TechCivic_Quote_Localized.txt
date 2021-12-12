@@ -15,6 +15,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	2962325586	Play_SocialScienceHD_Quote_1			\Default Work Unit\Play_SocialScienceHD_Quote_1	
 	2967524324	Play_CompassHD_Quote_2			\Default Work Unit\Play_CompassHD_Quote_2	
 	2967524327	Play_CompassHD_Quote_1			\Default Work Unit\Play_CompassHD_Quote_1	
+	3100817797	Play_ArchaeologyHD_Quote_1			\Default Work Unit\Play_ArchaeologyHD_Quote_1	
+	3100817798	Play_ArchaeologyHD_Quote_2			\Default Work Unit\Play_ArchaeologyHD_Quote_2	
 	3426462580	Stop_Speech_CivicsHD			\Default Work Unit\Stop_Speech_CivicsHD	
 	3614429708	Stop_Speech_TechsHD			\Default Work Unit\Stop_Speech_TechsHD	
 	3733953404	Play_PhysicsHD_Quote_1			\Default Work Unit\Play_PhysicsHD_Quote_1	
@@ -42,6 +44,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	588775871	Civic_ImperialExaminationSystem2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_ImperialExaminationSystem2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_ImperialExaminationSystem2_Chinese		1726352
 	605013785	Civic_HistoricalPhilosophy1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_HistoricalPhilosophy1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_HistoricalPhilosophy1_Chinese		2024820
 	606498038	Tech_Calendar2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Tech_Calendar2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tech_Calendar2_Chinese		1790792
+	696574508	Civic_Archaeology1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_Archaeology1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_Archaeology1_Chinese		3105692
 	725188898	Civic_SocialScience1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_SocialScience1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_SocialScience1_Chinese		1407788
 	754257254	Tech_Compass1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Tech_Compass1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tech_Compass1_Chinese		1538636
 	767187335	Tech_Physics2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Tech_Physics2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tech_Physics2_Chinese		930136
@@ -51,4 +54,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	868672280	Civic_ImperialExaminationSystem1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_ImperialExaminationSystem1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_ImperialExaminationSystem1_Chinese		1169792
 	989872496	Civic_Ethics1_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_Ethics1_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_Ethics1_Chinese		710220
 	1032632575	Tech_Biology2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Tech_Biology2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Tech_Biology2_Chinese		591536
+	1053078861	Civic_Archaeology2_Chinese	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\SFX\Civic_Archaeology2_Chinese_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Civic_Archaeology2_Chinese		2885480
 

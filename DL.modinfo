@@ -24,8 +24,8 @@
       <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.4。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 小灰灰，YT，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, o(╯□╰)o，奥伊米亚，法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 音痴痴c, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 小灰灰，YT，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, o(╯□╰)o，奥伊米亚，音痴痴c，法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -487,12 +487,25 @@
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
       <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
+      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File> -->
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/TechCivics/HDCivicIcons_38.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_30.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_38.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_42.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_128.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -560,6 +573,8 @@
       <File>Assets/CityStates/CivBaikonur_128.dds</File>
       <File>Assets/CityStates/CivBaikonur_200.dds</File>
       <File>Assets/CityStates/CivBaikonur_256.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -572,6 +587,7 @@
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
       <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
+      <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
     <ImportFiles id="CityStatesDiversity_BST_Import" criteria="Expansion2">
@@ -1220,6 +1236,7 @@
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
       <File>UI/Icons/HD_Icons.xml</File>
+      <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
@@ -1536,6 +1553,7 @@
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
+    <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
     <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
@@ -1561,6 +1579,7 @@
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>
+    <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
@@ -1808,6 +1827,17 @@
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
     <!-- Assets -->
+    <File>Assets/TechCivics/HDCivicIcons_38.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_30.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_38.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_42.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_128.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -1875,10 +1905,14 @@
     <File>Assets/CityStates/CivBaikonur_128.dds</File>
     <File>Assets/CityStates/CivBaikonur_200.dds</File>
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
     <!-- Platforms -->
     <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
+    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
+    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File>
     <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
     <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
+    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>
