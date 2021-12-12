@@ -163,10 +163,6 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
-    <Criteria id="Aqueduct_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>1373373a-f34d-4041-a0f8-49e2004e19a1</ModInUse>
-    </Criteria>
     <Criteria id="Industry_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
@@ -438,13 +434,8 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
-    <UpdateDatabase id="District_FrontEnd_Adjust">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
-    </UpdateDatabase>
     <UpdateText id="DistrictExpansions_support_text">
       <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
       <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
     </UpdateText>
     <!-- GeneralChineseSupport -->
@@ -692,14 +683,6 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="Aqueduct_support" criteria="Aqueduct_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
-    </UpdateDatabase>
-    <UpdateText id="Aqueduct_support_text" criteria="Aqueduct_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
-    </UpdateText>
     <UpdateDatabase id="Industry_support_resume" criteria="Industry_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
       <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
@@ -1571,10 +1554,7 @@
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
-    <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
     <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
