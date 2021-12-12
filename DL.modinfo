@@ -134,6 +134,12 @@
       <ModInUse>0fe4104b-80e1-434a-88fc-914ce2632944</ModInUse>
     </Criteria>
     <!-- 国家奇观 End -->
+    <!-- 丰富资源2 Start -->
+    <Criteria id="Resouceful2_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>23879c66-7cbb-4320-a891-ad24026f1b6b</ModInUse>
+    </Criteria>
+    <!-- 丰富资源2 End -->
     <Criteria id="Monopolies_Suk_Resources_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
@@ -795,6 +801,13 @@
       <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
     </UpdateDatabase>
       <!-- 国家奇观 End -->
+      <!-- 丰富资源2 Start -->
+    <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
+    </UpdateDatabase>
+      <!-- 丰富资源2 End -->
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15010</LoadOrder></Properties>
@@ -1597,6 +1610,9 @@
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <File>ModSupport/Resources/DL_Adaptation.sql</File>
     <File>ModSupport/Resources/HD_Texts.sql</File>
+    <!-- Resourceful2 -->
+    <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
+    <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
