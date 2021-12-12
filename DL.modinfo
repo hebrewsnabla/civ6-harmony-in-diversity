@@ -763,8 +763,11 @@
     <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
-      <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
     </UpdateDatabase>
+    <UpdateText id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17001</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
+    </UpdateText>
       <!-- 丰富资源2 End -->
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
