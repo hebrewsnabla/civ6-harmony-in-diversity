@@ -16,12 +16,12 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.1.4 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.4。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.1.5 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.5。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.4 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.4。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.5 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.5。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 音痴痴c, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
@@ -158,21 +158,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>01159f41-7ca0-4181-84cf-2f2c912edfdd</ModInUse><!-- STXP -->
     </Criteria>
-    <!-- District Expansions begin -->
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
-    <Criteria id="Industry_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
-    </Criteria>
-    <Criteria id="Industry_Ethiopia">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse> <!-- Ethiopia -->
-      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
-    </Criteria>
-    <!-- District Expansions end -->
     <Criteria id="WatchTower_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
@@ -434,10 +423,6 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
-    <UpdateText id="DistrictExpansions_support_text">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">
       <Properties><LoadOrder>100008</LoadOrder></Properties>
@@ -678,32 +663,6 @@
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
-    <!-- District Expansion begin -->
-    <UpdateDatabase id="DistrictExpansion_Removes" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
-    </UpdateDatabase>
-    <UpdateDatabase id="Industry_support_resume" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>15001</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
-    </UpdateDatabase>
-    <UpdateIcons id="Industry_support_resume_Icons" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>15001</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
-    </UpdateIcons>
-    <UpdateDatabase id="Industry_support" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
-    </UpdateDatabase>
-    <UpdateText id="Industry_support_text" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    </UpdateText>
-    <UpdateText id="Industry_support_text" criteria="Industry_Ethiopia">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
-    </UpdateText>
-      <!-- District Expansion end -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Removes.sql</File>
@@ -1554,12 +1513,6 @@
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
-    <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
