@@ -212,12 +212,12 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "阿兹特克特色建筑。提供1点 [ICON_Amenities] 宜居度、+2 [ICON_Culture] 文化值、+2 [ICON_Faith] 信仰值，并提供2点 [ICON_GreatGeneral] 大将军点数。拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STADIUM_DL_DESCRIPTION",                       "如城市 [ICON_CITIZEN] 人口大于等于10，则+2 [ICON_Tourism] 旅游业绩；如城市 [ICON_CITIZEN] 人口大于等于20，则+5 [ICON_Tourism] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究生物科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究化学科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究“生物”科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究“化学”科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
     -- 水上娱乐
     --("zh_Hans_CN",  "LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "此城中建在海岸单元格之上或周围的每座奇观+2 [ICON_Tourism] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究生物科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究“生物”科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     -- 航空港
     ("zh_Hans_CN",  "LOC_BUILDING_HANGAR_DESCRIPTION",                           "当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "在有机场的9个单元格内的城市产出 [ICON_Tourism] 旅游业绩+50%。不可叠加。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
