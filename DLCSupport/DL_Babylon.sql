@@ -2,39 +2,94 @@
 --            Babylon DLC          --
 -------------------------------------
 
+---------------------------------------------------------------------------------------------------------
+--Samarkand
+update ModifierArguments set Value = 2 where ModifierId = 'MINOR_CIV_SAMARKAND_TRADE_GOLD_MODIFIER' and Name = 'Amount';
+insert or replace into Improvement_YieldChanges
+    (ImprovementType,               YieldType,          YieldChange)
+values
+    ('IMPROVEMENT_TRADING_DOME',    'YIELD_FOOD',       0),
+    ('IMPROVEMENT_TRADING_DOME',    'YIELD_PRODUCTION', 0);
+insert or replace into Improvement_BonusYieldChanges
+    (Id,    ImprovementType,            YieldType,         BonusYieldChange,    PrereqCivic)
+values
+    (555,   'IMPROVEMENT_TRADING_DOME', 'YIELD_GOLD',       2,                  'CIVIC_MEDIEVAL_FAIRES');
+
+insert or replace into ImprovementModifiers
+    (ImprovementType,       ModifierId)
+values
+    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_FOOD');
+ --    ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_DESERT_PRODUCTION'),
+    -- ('IMPROVEMENT_TRADING_DOME', 'TRADING_DOME_ADJECENT_LUXURY_GOLD');
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                               SubjectRequirementSetId)
+values
+    ('TRADING_DOME_DESERT_FOOD',            'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS');
+ --    ('TRADING_DOME_DESERT_PRODUCTION',      'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',  'PETRA_YIELD_MODIFIER_REQUIREMENTS'),
+    -- ('TRADING_DOME_ADJECENT_LUXURY_GOLD',   'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',         'TRADING_DOME_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,               Value)
+values
+    ('TRADING_DOME_DESERT_FOOD',                'YieldType',        'YIELD_FOOD'),
+    ('TRADING_DOME_DESERT_FOOD',                'Amount',           3);
+ --    ('TRADING_DOME_DESERT_PRODUCTION',           'YieldType',        'YIELD_PRODUCTION'),
+ --    ('TRADING_DOME_DESERT_PRODUCTION',           'Amount',           1),
+    -- ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'YieldType',     'YIELD_GOLD'),
+ --    ('TRADING_DOME_ADJECENT_LUXURY_GOLD',       'Amount',        2);
+ 
+-- insert or replace into RequirementSets
+--  (RequirementSetId,                                      RequirementSetType)
+-- values
+--  ('TRADING_DOME_REQUIREMENTS',                           'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSetRequirements
+--  (RequirementSetId,                                      RequirementId)
+-- values
+--  ('TRADING_DOME_REQUIREMENTS',                           'REQUIRES_PLOT_HAS_LUXURY');
+update Adjacency_YieldChanges set YieldChange = 2 where ID ='TradingDome_LuxuryAdjacency';
+
 -- AYUTTHAYA
-delete from ModifierArguments where Value = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING';
+-- delete from ModifierArguments where Value = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_AYUTTHAYA_TRAIT';
+insert or replace into TraitModifiers
+    (TraitType,                     ModifierID)
+values
+    ('MINOR_CIV_AYUTTHAYA_TRAIT',   'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE'),
+    ('MINOR_CIV_AYUTTHAYA_TRAIT',   'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE');
 
 insert or replace into Modifiers
-    (ModifierId,                                        ModifierType,                                           SubjectRequirementSetId)
+    (ModifierId,                                                ModifierType,                                           SubjectRequirementSetId)
 values
-    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',           'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               Null),
-    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',  'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',   'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS');
+    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',                   'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                 'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',          'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',        'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS'),
+    ('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE',            'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',                 'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',        'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS');
 
 insert or replace into ModifierArguments
-    (ModifierId,                                        Name,                                                   Value)
+    (ModifierId,                                                Name,           Value)
 values
-    ('MINOR_CIV_AYUTTHAYA_UNIQUE_INFLUENCE_BONUS',      'ModifierId',                                           'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE'),
-    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',           'ModifierId',                                           'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
-    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',  'YieldType',                                            'YIELD_CULTURE'),
-    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',  'Amount',                                               2);
+    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',                   'ModifierId',   'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
+    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',          'YieldType',    'YIELD_CULTURE'),
+    ('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',          'Amount',       1),
+    ('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE',            'ModifierId',   'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER'),
+    ('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'YieldType',    'YIELD_CULTURE'),
+    ('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'Amount',       1);
 
 -- Chinguetti
 update ModifierArguments set Value = 0.3 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
 insert or replace into TraitModifiers(TraitType,ModifierID)values
 	('MINOR_CIV_CHINGUETTI_TRAIT','MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2');
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,				SubjectRequirementSetId)
+	(ModifierId,                                       ModifierType,                               SubjectRequirementSetId)
 values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER','PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD',NULL);
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',   'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',     'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_CHINGUETTI_FAITH',                     'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD', NULL);
 
 insert or replace into ModifierArguments
-	(ModifierId,		Name,     Value)
+	(ModifierId,                                       Name,           Value)
 values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2','ModifierId',	'MINOR_CIV_CHINGUETTI_FAITH'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'YieldType',	'YIELD_FAITH'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					'Amount',		3);
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',   'ModifierId',   'MINOR_CIV_CHINGUETTI_FAITH'),
+	('MINOR_CIV_CHINGUETTI_FAITH',                     'YieldType',    'YIELD_FAITH'),
+	('MINOR_CIV_CHINGUETTI_FAITH',                     'Amount',       3);
 
 -- Kenzo Tange
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_KENZO_TANGE';

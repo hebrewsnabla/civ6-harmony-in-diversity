@@ -72,6 +72,7 @@ values
     ("zh_Hans_CN",  "LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自莫克夏训练"),
     ("zh_Hans_CN",  "LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自维克多训练"),
     ("zh_Hans_CN",  "LOC_LIGHTNING_WARFARE_CAVALRY_STRENGTH_PREVIEW_TEXT",                   "来自闪电战"),
+    ("zh_Hans_CN",  "LOC_PRESLAV_CAVALRY_STRENGTH_PREVIEW_TEXT",                             "来自普雷斯拉夫"),
     ("zh_Hans_CN",  "LOC_CAVALRY_WEAKER_ATTACKING_DISTRICT_PREVIEW_TEXT",                    "攻击区域"),
     ("zh_Hans_CN",  "LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT",                             "相邻长城"),
     ("zh_Hans_CN",  "LOC_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",               "从军事学院中训练获得"),

@@ -18,6 +18,10 @@
     <IconDefinitions>
         <!-- <Row Name="ICON_0" Atlas="ATLAS_CivBaikonur" Index="0"/> -->
         <Row Name="ICON_CIVILIZATION_HONG_KONG" Atlas="ATLAS_CivBaikonur" Index="0"/>
+        <Row Name="ICON_GREATWORK_ZHUANG_ZHOU_1"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
+        <Row Name="ICON_GREATWORK_ZHUANG_ZHOU_2"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
+        <Row Name="ICON_GREATWORK_SI_MA_QIAN_1"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
+        <Row Name="ICON_GREATWORK_SI_MA_QIAN_2"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
         <!-- <Update><Where Name="ICON_CIVILIZATION_HONG_KONG"/> <Set Atlas="ATLAS_CivBaikonur" Index="0"/></Update> -->
     </IconDefinitions>
 </GameData>

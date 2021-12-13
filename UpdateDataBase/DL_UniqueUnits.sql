@@ -296,4 +296,4 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- 武僧
 update Units set Cost = 70 where UnitType = 'UNIT_WARRIOR_MONK';
 -- 拉合尔
-update Units set Cost = 70 where UnitType = 'UNIT_LAHORE_NIHANG';
+update Units set Cost = 60 where UnitType = 'UNIT_LAHORE_NIHANG';

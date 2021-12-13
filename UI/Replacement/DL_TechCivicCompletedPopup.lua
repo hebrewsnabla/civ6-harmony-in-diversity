@@ -11,7 +11,7 @@ function StopSound()
 	UI.PlaySound("Stop_Speech_CivicsHD");
 	UI.PlaySound("Stop_Speech_TechsHD");
 	Base_StopSound();
-    print('stop sound');
+    -- print('stop sound');
 end
 
 Base_RealizeNextPopup = RealizeNextPopup;

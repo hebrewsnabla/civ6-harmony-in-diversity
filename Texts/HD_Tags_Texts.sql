@@ -28,6 +28,9 @@ update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY'
 -- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
+update Civics set Name = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME' where CivicType ='CIVIC_DEFENSIVE_TACTICS';
+update Civics set Name = 'LOC_CIVIC_NATURAL_HISTORY_HD_NAME' where CivicType ='CIVIC_NATURAL_HISTORY';
+
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_HD_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';

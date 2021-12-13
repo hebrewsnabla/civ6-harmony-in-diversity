@@ -162,7 +162,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每次获得一位 [ICON_GreatPerson] 伟人可奖励50点 [ICON_Favor] 外交支持（标准速度下）。二级工业区建筑与二级学院建筑分别提供+1 [ICON_GreatEngineer] 大工程师点数与+1 [ICON_GreatScientist] 大科学家点数。若对局中存在该文明，则进入工业时代后将增加3项特色世界议会竞赛。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每次获得一位 [ICON_GreatPerson] 伟人可奖励50点 [ICON_Favor] 外交支持（标准速度下）。二级工业区建筑与二级学院建筑分别提供+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。若对局中存在该文明，则进入工业时代后将增加3项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "解锁建造者建造荷兰特色改良设施“圩田”的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。如与圩田改良设施相邻，则+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力、[ICON_GOLD] 金币和 [ICON_FOOD] 食物。必须建在与2个或更多可通行陆地单元格相邻的海岸或湖泊单元格上。单元格的 [ICON_Movement] 移动力消耗增至3点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。建造堤坝区域和造船厂、拦洪坝建筑时加速50%。造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。"),

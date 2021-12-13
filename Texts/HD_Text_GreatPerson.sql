@@ -145,3 +145,35 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_1",     "马钧，字德恒，三国时期魏国扶风（今陕西省兴平市）人，机械工程师、发明家和政治家。"),
     ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_2",     "他最引人注目的发明是指向南方的战车，这是一种定向罗盘车，实际上没有磁力功能，而是通过使用差动齿轮（对以不同速度旋转的驱动轮施加等量的扭矩）来操作。正是由于这一革命性的装置（以及其他成就），马钧被称为当时最杰出的机械工程师和发明家之一（与早期东汉的张衡齐名）。在马钧之后，许多人重新发明了这个装置，包括天文学家和数学家祖冲之（429-500）。在后来的中世纪王朝时期，马钧的指向南方的战车与测量距离的里程表合二为一。"),
     ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_CHAPTER_HISTORY_PARA_3",     "他还改进了当时操作笨重的织绫机；发明一种由低处向高地引水的龙骨水车；制作出一种轮转式发石机，能连续发射石块，远至数百步；把木制原动轮装于木偶下面，叫做“水转百戏图”。此后，马钧还改制了诸葛连弩，对科学发展和技术进步做出了贡献。");
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                        Text)
+values
+    ("LOC_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU_NAME",             "Zhuang Zhou"),
+    ("LOC_GREATWORK_ZHUANG_ZHOU_1_NAME",                         "The Journey to Freedom"),
+    ("LOC_GREATWORK_ZHUANG_ZHOU_1_QUOTE",                        "The supreme man has no self, the divine man has no merit, the sage has no name."),
+    ("LOC_GREATWORK_ZHUANG_ZHOU_2_NAME",                         "The Essay on Qiwu"),
+    ("LOC_GREATWORK_ZHUANG_ZHOU_2_QUOTE",                        "I wonder if Zhou's dream was of a butterfly? Is the dream of the butterfly Zhou's dream?"),
+    ("LOC_GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN_NAME",              "Si Maqian"),
+    ("LOC_GREATWORK_SI_MA_QIAN_1_NAME",                          "Shiji"),
+    ("LOC_GREATWORK_SI_MA_QIAN_1_QUOTE",                         "All the world is bustling with profit."),
+    ("LOC_GREATWORK_SI_MA_QIAN_2_NAME",                          "The Letter to Ren'an"),
+    ("LOC_GREATWORK_SI_MA_QIAN_2_QUOTE",                         "To study the world of heaven and man, to understand the changes of the past and the present, and to form a family of words.");
+
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                             Text)
+values
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU_NAME",                  "庄周"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_ZHUANG_ZHOU_1_NAME",                              "《逍遥游》"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_ZHUANG_ZHOU_1_QUOTE",                             "至人无己，神人无功，圣人无名。"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_ZHUANG_ZHOU_2_NAME",                              "《齐物论》"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_ZHUANG_ZHOU_2_QUOTE",                             "不知周之梦为胡蝶与？胡蝶之梦为周与？"),
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN_NAME",                   "司马迁"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_1_NAME",                               "《史记》"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_1_QUOTE",                              "天下熙熙皆为利来，天下攘攘皆为利往。"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_NAME",                               "《报任安书》"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_QUOTE",                              "究天人之际，通古今之变，成一家之言。");

@@ -95,6 +95,29 @@ values
     ('IMPROVEMENT_BATEY',           'BATEY_Street_Carnival_Culture'),
     ('IMPROVEMENT_BATEY',           'BATEY_Late_Street_Carnival_Culture');
 
+---------------------------------------------------------------------------------------------------------
+--Caguana
+update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
+update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
+update Adjacency_YieldChanges set AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
+    where ID = 'Batey_BonusResourceAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
+update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_BATEY';
+-- insert or ignore into Improvement_Adjacencies
+--     (ImprovementType,               YieldChangeId)
+-- values
+--     ('IMPROVEMENT_BATEY',           'Batey_LUXURYResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_LateLUXURYResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_STRATEGICResourceAdjacency'),
+--     ('IMPROVEMENT_BATEY',           'Batey_LateSTRATEGICResourceAdjacency');
+-- insert or ignore into Adjacency_YieldChanges
+--     (ID,                                    Description,    YieldType,              YieldChange,    TilesRequired,  PrereqCivic,            ObsoleteCivic,          AdjacentResourceClass)
+-- values
+--     ('Batey_LUXURYResourceAdjacency',       'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_LUXURY'),
+--     ('Batey_LateLUXURYResourceAdjacency',   'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_LUXURY'),
+--     ('Batey_STRATEGICResourceAdjacency',    'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_STRATEGIC'),
+--     ('Batey_LateSTRATEGICResourceAdjacency','Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_STRATEGIC');
+
+
 -- Singapore
 -- MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL
 delete from TraitModifiers where TraitType = 'MINOR_CIV_SINGAPORE_TRAIT' and ModifierId = 'MINOR_CIV_SINGAPORE_UNIQUE_INFLUENCE_BONUS';
@@ -123,10 +146,10 @@ values
     ('SINGAPORE_INTERNATIONAL_TRADE_ROUTE_PRODUCTION_MODIFIER', 'Amount',       2),
     ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_ALLY',                    'ModifierId',   'SINGAPORE_TRADE_ROUTE_GOLD_FROM_ALLY_MODIFIER'),
     ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_ALLY_MODIFIER',           'YieldType',    'YIELD_GOLD'),
-    ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_ALLY_MODIFIER',           'Amount',       4),
+    ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_ALLY_MODIFIER',           'Amount',       6),
     ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_SUZERAIN',                'ModifierId',   'SINGAPORE_TRADE_ROUTE_GOLD_FROM_SUZERAIN_MODIFIER'),
     ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_SUZERAIN_MODIFIER',       'YieldType',    'YIELD_GOLD'),
-    ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_SUZERAIN_MODIFIER',       'Amount',       4);
+    ('SINGAPORE_TRADE_ROUTE_GOLD_FROM_SUZERAIN_MODIFIER',       'Amount',       6);
 
 -- Vatican City
 delete from TraitModifiers where TraitType = 'MINOR_CIV_VATICAN_CITY_TRAIT' and ModifierId = 'MINOR_CIV_VATICAN_CITY_UNIQUE_INFLUENCE_BONUS';
@@ -134,6 +157,8 @@ insert into TraitModifiers
     (TraitType,                                  ModifierId)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH'),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS'),
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS'),
     ('MINOR_CIV_VATICAN_CITY_TRAIT',             'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS'),
@@ -151,6 +176,9 @@ insert into Modifiers
     (ModifierId,                                        ModifierType,                                       SubjectRequirementSetId)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH',            'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD',  NULL),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS',    'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
     ('MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS',      'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
     ('MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS',  'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
@@ -173,11 +201,18 @@ values
     ('MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1', 'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null),
     ('MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1',   'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null),
     ('MINOR_CIV_VATICAN_CITY_RELIC_CULTURE_BONUS1',     'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',    null);
+-- update Modifiers set OwnerRequirementSetId = 'PLAYER_FOUNDED_RELIGION_REQUIREMENTS' where ModifierId = 'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1';
 
 insert into ModifierArguments
     (ModifierId,                                        Name,            Value)
 values
     --Vatican City
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH',            'ModifierId',    'MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'BeliefYieldType', 'BELIEF_YIELD_PER_CITY'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'YieldType',     'YIELD_FAITH'),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'Amount',        2),
+    -- ('MINOR_CIV_VATICAN_CITY_FOUNDER_FAITH1',           'PerXItems',     1),
+    -- 
     ('MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS',    'ModifierId',    'MINOR_CIV_VATICAN_CITY_WRITING_CULTURE_BONUS1'),
     ('MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS',      'ModifierId',    'MINOR_CIV_VATICAN_CITY_WRITING_FAITH_BONUS1'),
     ('MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS',  'ModifierId',    'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1'),

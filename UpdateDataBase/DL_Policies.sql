@@ -1133,7 +1133,7 @@ update Policies set PrereqTech = 'TECH_ELECTRICITY' where PolicyType = 'POLICY_E
 	-- 政策卡修改：【高速公路】改为【内燃机】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVIZATION';
 update Policies set PrereqTech = 'TECH_COMBUSTION' where PolicyType = 'POLICY_COLLECTIVIZATION';
-update Policy_GovernmentExclusives_XP2 set GovernmentType = Null where PolicyType = 'POLICY_COLLECTIVIZATION';
+delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
 
 	-- 政策卡修改：【电子商务】改为【远程通讯】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_ECOMMERCE';
@@ -1171,9 +1171,9 @@ update Policies set PrereqTech = 'TECH_NUCLEAR_FISSION' where PolicyType = 'POLI
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_DRILL_MANUALS';
 update Policies set PrereqTech = 'TECH_RIFLING' where PolicyType = 'POLICY_DRILL_MANUALS';
 
-	-- 政策卡修改：【不结盟运动】改为【卫星】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
-update Policies set PrereqTech = 'TECH_SATELLITES' where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
+-- 	-- 政策卡修改：【不结盟运动】改为【卫星】科技解锁
+-- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
+-- update Policies set PrereqTech = 'TECH_SATELLITES' where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
 
 	-- 政策卡修改：【贸易银行】改为【银行业】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WISSELBANKEN';
