@@ -21,7 +21,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_DESCRIPTION",                  "允许在雨林上建造伐木场和营地。芦苇屋+1 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION",        "种植园改良设施提供+1 [ICON_Food] 食物。芦苇屋+1 [ICON_Science] 科技值。");
 
-update LocalizedText set Text = Text || "+1 [ICON_Production] Production for improved [ICON_Resource_JNR_Peat] Peat in this city." where Language = 'en_US' and
+update LocalizedText set Text = Text || " +1 [ICON_Production] Production for improved [ICON_Resource_JNR_Peat] Peat in this city." where Language = 'en_US' and
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');
 update LocalizedText set Text = Text || "为本城已改良的 [ICON_Resource_JNR_Peat] 泥炭+1 [ICON_Production] 生产力。" where Language = 'zh_Hans_CN' and
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');

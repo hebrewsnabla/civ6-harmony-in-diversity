@@ -60,7 +60,8 @@ values
     ("LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "from Episcopal Church"),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "from War Department"),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "from War Department"),
-    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief");
+    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief"),
+    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -71,6 +72,7 @@ values
     ("zh_Hans_CN",  "LOC_BISHOP_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自莫克夏训练"),
     ("zh_Hans_CN",  "LOC_VICTOR_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",                         "来自维克多训练"),
     ("zh_Hans_CN",  "LOC_LIGHTNING_WARFARE_CAVALRY_STRENGTH_PREVIEW_TEXT",                   "来自闪电战"),
+    ("zh_Hans_CN",  "LOC_PRESLAV_CAVALRY_STRENGTH_PREVIEW_TEXT",                             "来自普雷斯拉夫"),
     ("zh_Hans_CN",  "LOC_CAVALRY_WEAKER_ATTACKING_DISTRICT_PREVIEW_TEXT",                    "攻击区域"),
     ("zh_Hans_CN",  "LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT",                             "相邻长城"),
     ("zh_Hans_CN",  "LOC_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_PREVIEW_TEXT",               "从军事学院中训练获得"),
@@ -123,7 +125,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "来自主教座堂"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
-    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条");
+    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条"),
+    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)");
 
 -- UU Abilities
 --------------------------------------------------------------------------------

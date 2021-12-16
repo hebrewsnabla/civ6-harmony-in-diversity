@@ -1646,9 +1646,6 @@ values
 	('POUNDMAKER_TRADE_GOLD_FROM_FISHBOATS',  	'Destination',    	1);
 
 ----------------------------------------------------------------------------------------------------------------------
--- Greece
--- ud 
--- update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
 
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)

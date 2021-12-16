@@ -55,6 +55,7 @@ end
 
 Events.PlayerTurnActivated.Add(DidoOnPlayerTurnActivated)
 
+--Brazil
 function PedroGreatPersonFaith(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
@@ -247,3 +248,17 @@ end
 GameEvents.KublaiGrantCivTraitSwitch.Add(KublaiGrantCivTrait)
 
 ExposedMembers.GameEvents = GameEvents
+
+-- Hungary Conquer Envoy
+function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
+    local pPlayer = Players[newPlayerID]
+    if pPlayer ~= nil then
+        local pPlayerConfig = PlayerConfigurations[newPlayerID]
+        local sLeader = pPlayerConfig:GetLeaderTypeName()
+        local sConquerEnvoy = 'TRAIT_LEADER_RAVEN_KING'
+        if LeaderHasTrait(sLeader, sConquerEnvoy) then
+            pPlayer:GetInfluence():ChangeTokensToGive(1)    
+        end
+    end
+end
+GameEvents.CityConquered.Add(ConquerEnvoy)

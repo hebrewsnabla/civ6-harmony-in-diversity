@@ -29,11 +29,14 @@ values
 	('CIVIC_SOCIAL_SCIENCE_HD',						'LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME',						Null,												1450,	'ERA_INDUSTRIAL',	0,			'ADVISOR_GENERIC');
 
 delete from CivicQuotes where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
+delete from CivicQuotes where CivicType = 'CIVIC_NATURAL_HISTORY';
 insert or replace into CivicQuotes
     (CivicType,            						Quote,                                  				QuoteAudio)
 values
     ('CIVIC_DEFENSIVE_TACTICS',    				'LOC_CIVIC_SUPPLY_HD_QUOTE_1',     						'Play_SupplyHD_Quote_1'),
     ('CIVIC_DEFENSIVE_TACTICS',    				'LOC_CIVIC_SUPPLY_HD_QUOTE_2',     						'Play_SupplyHD_Quote_2'),
+    ('CIVIC_NATURAL_HISTORY',    				'LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_1',     				'Play_ArchaeologyHD_Quote_1'),
+    ('CIVIC_NATURAL_HISTORY',    				'LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_2',     				'Play_ArchaeologyHD_Quote_2'),
     ('CIVIC_LITERARY_TRADITION_HD',    			'LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_1',     			'Play_LiteraryTraditionHD_Quote_1'),
     ('CIVIC_LITERARY_TRADITION_HD',    			'LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_2',     			'Play_LiteraryTraditionHD_Quote_2'),
     ('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',	'LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_1',   	'Play_ImperialExaminationSystemHD_Quote_1'),
@@ -233,7 +236,7 @@ values
 	('CIVIC_MASS_MEDIA',							'CIVIC_URBANIZATION'),
 	('CIVIC_MASS_MEDIA',							'CIVIC_NATURAL_HISTORY'),
 	('CIVIC_MOBILIZATION',							'CIVIC_URBANIZATION'),
-	('CIVIC_MOBILIZATION',							'CIVIC_NATIONALISM'),
+	('CIVIC_MOBILIZATION',							'CIVIC_SCORCHED_EARTH'),
 	('CIVIC_CAPITALISM',							'CIVIC_MASS_MEDIA'),
 	('CIVIC_IDEOLOGY',								'CIVIC_MASS_MEDIA'),
 	('CIVIC_IDEOLOGY',								'CIVIC_MOBILIZATION'),

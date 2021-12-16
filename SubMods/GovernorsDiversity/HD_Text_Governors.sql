@@ -72,7 +72,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "While established in a city-state, doubles the number of [ICON_Envoy] Envoys you have there. Enemy Spy level reduced by 1 in the city-state. Your Spy level is increased by 1 for all offensive operations."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "Pay Tribute"),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "Foreign Investor"),
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are the city-state's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as three [ICON_Envoy] envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When Suzerain, receive double the amount of accumulated Strategic and Luxury resources."),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are the city-state's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as four [ICON_Envoy] envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When Suzerain, receive double the amount of accumulated Strategic and Luxury resources."),
     ("GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，from Governor's Promotion"),
     ("GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，from Governor's Promotion"),
     -- Pingala
@@ -162,7 +162,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。我方间谍出击时+1级，在领土内敌方间谍等级下降1级。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "朝贡"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "外国投资者"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于4名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，来自总督晋升"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，来自总督晋升"),
     -- 平伽拉

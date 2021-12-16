@@ -151,6 +151,8 @@ update Buildings set CitizenSlots = 1 where
 	-- or BuildingType = 'BUILDING_CONSULATE'
 ;
 
+-- update Buildings set Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD' where BuildingType = 'BUILDING_FERRIS_WHEEL';
+
 -- Unlock
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
@@ -1517,6 +1519,11 @@ values
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET_XHH'),
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'REQUIRES_DISTRICT_IS_ENTERTAINMENT_COMPLEX');
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
+values
+	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
 
 -- 水族馆 by xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_SEARESOURCE_SCIENCE';

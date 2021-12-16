@@ -401,3 +401,68 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_COMBAT_AIR_PATROL_CHAPTER_HISTORY_PARA_1",      "保持战斗空中巡逻是航母保护舰队免受来袭空中威胁的主要方法。 在不断进步的雷达技术的帮助下，盟军飞行员获得了主动权，并能在气浪到达舰队之前拦截它们。"),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_ANTI_SUB_CHAPTER_HISTORY_PARA_1",               "世界大战期间，潜艇对盟国航运的极端危险要求盟军进一步努力探测和打击这些水下威胁。 使用带有机载雷达的侦察机是盟国用来定位和摧毁敌方潜艇的一种技巧。 即使潜艇探测到了雷达，它们也会被迫潜入水中，几乎不能动弹，因此没有效果。"),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITPROMOTIONS_PAGE_PROMOTION_NS_SUPER_CARRIER_CHAPTER_HISTORY_PARA_1",          "在冷战时期及以后，航母变得更加庞大，其能力也随之增强。 它们就像一个小型的城市，能够在海上持续很长时间。");
+
+--------------------------------------------------------------------------------------------------------------------------
+-- No Trait Challenge
+insert or replace into LocalizedText
+    (Language,      Tag,                                            Text)
+values
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_NORMAL_NAME",                 "白板文明"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_NORMAL_DESCRIPTION",          "一个白板文明"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_NORMAL_ADJECTIVE",            "你的"),
+    ("zh_Hans_CN",  "LOC_LEADER_PLAYER_ONE_NAME",                   "玩家"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NORMAL_NAME",           "白板"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NORMAL_DESCRIPTION",    "无特色能力，无特色建筑，无特色改良，无特色区域，无特色单位。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_PLAYER_ONE_NAME",             "无领袖能力"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_PLAYER_ONE_DESCRIPTION",      "无领袖能力");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                            Text)
+values
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_PLAYER_ONE_CHAPTER_CAPSULE_BODY",                "你是玩家"),
+    ("zh_Hans_CN",  "LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_NORMAL_CHAPTER_HISTORY_PARA_1",      "文明6于2016年10月21日发布。");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                            Text)
+values
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_MALE_1",                    "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_MALE_2",                    "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_MALE_3",                    "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_MALE_4",                    "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_MALE_5",                    "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_FEMALE_1",                  "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_FEMALE_2",                  "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_FEMALE_3",                  "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_FEMALE_4",                  "某人"),
+    ("zh_Hans_CN",  "LOC_CITIZEN_NORMAL_FEMALE_5",                  "某人"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_CAPITAL",          "首都"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_1",                "一分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_2",                "二分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_3",                "三分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_4",                "四分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_5",                "五分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_6",                "六分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_7",                "七分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_8",                "八分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_9",                "九分"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_10",               "第10城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_11",               "第11城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_12",               "第12城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_13",               "第13城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_14",               "第14城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_15",               "第15城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_16",               "第16城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_17",               "第17城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_18",               "第18城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_19",               "第19城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_20",               "第20城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_21",               "第21城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_22",               "第22城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_23",               "第23城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_24",               "第24城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_25",               "第25城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_26",               "第26城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_27",               "第27城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_28",               "第28城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_29",               "第29城"),
+    ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_30",               "你城好多啊！");
