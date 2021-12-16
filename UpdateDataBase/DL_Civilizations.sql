@@ -36,7 +36,7 @@ insert or replace into Projects
 	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
 values 
 	('PROJECT_CIRCUSES_AND_BREAD',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME',	'LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION',
-	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_THEATER',	1);
+	80,		'COST_PROGRESSION_GAME_PROGRESS',	800,					'DISTRICT_THEATER',	1);
 /*
 insert or replace into Projects_XP1
 	(ProjectType,					IdentityPerCitizenChange,	UnlocksFromEffect)

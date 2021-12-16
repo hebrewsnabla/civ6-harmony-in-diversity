@@ -184,66 +184,66 @@ end
 Events.SpyMissionCompleted.Add(GovSpiesGetTechOnSpyMissionCompleted)
 ---]]
 
--- Eleanor Judgement of Love
-function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
-	local pPlayer = Players[playerID]
-	local pCity = CityManager.GetCity(playerID, cityId)
-	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
-	local iDistrictPlotIndex = pCity:GetDistricts():GetDistrictLocation(districtID)
-	local amount = -50
-    if pPlayer == nil then
-        return
-    end
-
-    if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
-		local players = Game.GetPlayers{ Alive=true }
-		for _, player in ipairs(players) do
-			if player:GetID() == playerID then -- or player:IsMinor()
-				return
-			end
-			local playerCities = player:GetCities()
-			for _, city in playerCities:Members() do
-				local distance = Map.GetPlotDistance(iDistrictPlotIndex, city:GetX(), city:GetY())
-				if distance <= 9 then 
-					local cityCulturalIdentity = city:GetCulturalIdentity()
-                    if cityCulturalIdentity then
-                        local loyaltyPerTurn = cityCulturalIdentity:GetLoyaltyPerTurn()
-                        if loyaltyPerTurn < 0 then
-        				    city:ChangeLoyalty(amount)
-                            CityManager.TransferCityToFreeCities(city)
-                        end
-					end
-				end
-			end
-		end	
-    end
-end
-
---Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
-
-
 GameEvents = ExposedMembers.GameEvents;
 
-function KublaiGrantCivTraitOnConquerOriginalCity( playerID, cityID, iX, iY )
+-- Kublai
+-- ===========================================================================
+-- Grant CivTraits On Conquer Original Capital -- part of UI
+-- ===========================================================================
+function KublaiGrantCivTraitOnConquerOriginalCapital( playerID, cityID, iX, iY )
     local pPlayer = Players[playerID]
 	local pPlayerConfig = PlayerConfigurations[playerID]
 	local sLeader = pPlayerConfig:GetLeaderTypeName()
 	local sKublai = 'TRAIT_LEADER_KUBLAI'
     local pCity = CityManager.GetCity(playerID, cityID)
     if pPlayer ~= nil and Utils.LeaderHasTrait(sLeader, sKublai) then
-        print('Kublai3',playerID,cityID,pCity:IsOriginalCapital()) 
+        -- print('Kublai3',playerID,cityID,pCity:IsOriginalCapital()) 
         if pCity ~= nil then
 			if pCity:IsOriginalCapital() then  -- unable to be used in Gameplay
 			    GameEvents.KublaiGrantCivTraitSwitch.Call( playerID, iX, iY )
-                print('Kublai4',playerID,cityID,pCity:GetOriginalOwner()) 
+                -- print('Kublai4',playerID,cityID,pCity:GetOriginalOwner()) 
 			end
 		end
     end
 end
 
-Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCity)
+Events.CityAddedToMap.Add(KublaiGrantCivTraitOnConquerOriginalCapital)
 
---// Swap to UI...
---function KublaiGrantCivTraitSwitch( playerID, iX, iY )
---	KublaiGrantCivTrait( playerID, iX, iY )
---end
+-- Eleanor
+-- ===========================================================================
+-- Judgement of Love -- part of UI
+-- ===========================================================================
+function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
+	local pPlayer = Players[playerID]
+	local pCity = CityManager.GetCity(playerID, cityID)
+    local dX = pCity:GetX()
+    local dY = pCity:GetY()
+    if pPlayer == nil then
+        return
+    end
+    print('PROJECT_CIRCUSES_AND_BREAD', playerID, cityID, projectID)
+    if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
+		local players = Game.GetPlayers{ Alive=true }
+        print('PROJECT_CIRCUSES_AND_BREAD1', players)
+		for _, player in ipairs(players) do
+            print('PROJECT_CIRCUSES_AND_BREAD2', player:GetID())
+			if player:GetID() ~= playerID then -- or player:IsMinor()            
+			    local playerCities = player:GetCities()
+			    for _, city in playerCities:Members() do
+                    local iX = city:GetX()
+                    local iY = city:GetY()
+					local cityCulturalIdentity = city:GetCulturalIdentity()
+                    if cityCulturalIdentity then
+                        local loyaltyPerTurn = cityCulturalIdentity:GetLoyaltyPerTurn()
+                        if loyaltyPerTurn < 0 then
+                            print('PROJECT_CIRCUSES_AND_BREAD5', iX, iY, dX, dY )
+                            GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Call(iX, iY, dX, dY)
+                        end
+                    end
+				end
+			end
+		end	
+    end
+end
+
+Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
