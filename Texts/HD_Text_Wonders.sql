@@ -121,7 +121,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_COLLEGE_NAME",                        "国立学院"),
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_COLLEGE_DESCRIPTION",                 "国家奇观，国家境内只能建造一座。必须建在与学院区域（其中须建有图书馆）相邻的平坦地形上。[NEWLINE][NEWLINE]本城的学院相邻加成翻倍。[ICON_Governor] 总督在本城就职后，每次升级（包括首次升级）都将提供 +6% [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_COLLEGE_DESCRIPTION_INTERNA",         "国家奇观，国家境内只能建造一座。必须建在与学院区域（其中须建有图书馆）相邻的平坦地形上。[NEWLINE][NEWLINE]本城的学院相邻加成翻倍。[ICON_Governor] 总督在本城就职后，每次升级（包括首次升级）都将提供 +6% [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_COLLEGE_DESCRIPTION_INTERNAL",        "国家奇观，国家境内只能建造一座。必须建在与学院区域（其中须建有图书馆）相邻的平坦地形上。[NEWLINE][NEWLINE]本城的学院相邻加成翻倍。[ICON_Governor] 总督在本城就职后，每次升级（包括首次升级）都将提供 +6% [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_NATIONALEPIC_NAME",                   "民族史诗"),
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_NATIONALEPIC_DESCRIPTION",            "国家奇观，国家境内只能建造一座。必须建在与剧院区域（其中须建有艺术博物馆或考古博物馆）相邻的陆地上。[NEWLINE][NEWLINE]此城+20% [ICON_GreatPerson] 伟人点。您的文明每获得1位 [ICON_GreatPerson] 伟人，此城便获得等同于此 [ICON_GreatPerson] 伟人区域类型的+4产出。（大将军 [ICON_Greatgeneral] 提供 +4 [ICON_Production] 生产力；海军提督 [ICON_Greatadmiral] 提供 +4 [ICON_Food] 食物。）"),
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_NATIONALEPIC_DESCRIPTION_INTERNAL",   "国家奇观，国家境内只能建造一座。必须建在与剧院区域（其中须建有艺术博物馆或考古博物馆）相邻的陆地上。[NEWLINE][NEWLINE]此城+20% [ICON_GreatPerson] 伟人点。您的文明每获得1位 [ICON_GreatPerson] 伟人，此城便获得等同于此 [ICON_GreatPerson] 伟人区域类型的+4产出。（大将军 [ICON_Greatgeneral] 提供 +4 [ICON_Production] 生产力；海军提督 [ICON_Greatadmiral] 提供 +4 [ICON_Food] 食物。）"),

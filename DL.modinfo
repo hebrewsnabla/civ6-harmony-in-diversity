@@ -552,6 +552,17 @@
       <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
       <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
     </ImportFiles>
+    <ImportFiles id="Resouceful2_Adapt_Import" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/Resourceful2/Resourceful2_New_22.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_32.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_38.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_50.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_64.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_128.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_256.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_FOW_256.dds</File>
+    </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
       <Properties><LoadOrder>2</LoadOrder></Properties>
@@ -768,6 +779,10 @@
       <Properties><LoadOrder>17001</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
     </UpdateText>
+    <UpdateIcons id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17001</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
+    </UpdateIcons>
       <!-- 丰富资源2 End -->
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
@@ -1568,6 +1583,7 @@
     <!-- Resourceful2 -->
     <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
+    <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
@@ -1843,6 +1859,14 @@
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
     <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
     <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_22.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_32.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_38.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_50.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_64.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_128.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_256.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_FOW_256.dds</File>
     <!-- Platforms -->
     <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
     <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
