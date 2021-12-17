@@ -5,6 +5,7 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
     ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. After Calendar is researched, [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5."),
@@ -121,6 +122,7 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),

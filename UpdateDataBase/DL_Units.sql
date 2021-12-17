@@ -97,6 +97,7 @@ update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_SCOTTI
 -- update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_PIKE_AND_SHOT';
 update Units set PrereqTech = 'TECH_SIEGE_TACTICS' where UnitType = 'UNIT_BOMBARD';
+update Units set PrereqCivic = 'CIVIC_EXPLORATION' where UnitType = 'UNIT_PRIVATEER'; 
 
 -- 调整单位过期科技。
 update Units set MandatoryObsoleteTech = 'TECH_MILITARY_TACTICS' where MandatoryObsoleteTech = 'TECH_METAL_CASTING';
