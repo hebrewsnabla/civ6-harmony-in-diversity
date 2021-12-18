@@ -283,9 +283,6 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 
 -- District
 	-- 军营
-update ModifierArguments set Value = 2 where ModifierId = 'ENCAMPMENT_ADD_STONE_PRODUCTION' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'ENCAMPMENT_ADD_COPPER_PRODUCTION' and Name = 'Amount';
-
 insert or replace into DistrictModifiers
 	(DistrictType,						ModifierId)
 values
@@ -306,13 +303,13 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
 	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'Amount',		2),
+	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'Amount',		1),
 	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'Amount',		2),
+	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'Amount',		1),
 	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'Amount',		2),
+	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'Amount',		1),
 	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'Amount',		2);
+	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'Amount',		1);
 
 insert or replace into RequirementSets 
 	(RequirementSetId,						RequirementSetType) 

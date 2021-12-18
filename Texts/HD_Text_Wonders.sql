@@ -45,7 +45,8 @@ values
     ("LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "Theming bonus doubling output when displaying objects of the same kind."),
     ("LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "Receive a second naval unit each time you train a naval unit. +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for coast tiles in this city. +6 [ICON_RESOURCE_Niter] Niter per turn. Must be built on a Coast tile that is adjacent to an Industrial Zone district."),
-    ("LOC_BUILDING_APADANA_DESCRIPTION",                      "+3 [ICON_ENVOY] Envoys when you build a wonder, including Apadana, in this city.[NEWLINE][NEWLINE]Must be built adjacent to your [ICON_CAPITAL] Capital.");
+    ("LOC_BUILDING_APADANA_DESCRIPTION",                      "+3 [ICON_ENVOY] Envoys when you build a wonder, including Apadana, in this city.[NEWLINE][NEWLINE]Must be built adjacent to your [ICON_CAPITAL] Capital."),
+    ("LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 Military policy slot[NEWLINE][NEWLINE]Provides the same defensive bonuses as the Fort improvement. +2 Influence points per turn for every Encampment district. Must be built on Hills adjacent to an Encampment district.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -95,7 +96,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_UFFIZI",                      "当展示来自相同类型的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "当所有槽位填满时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "每训练一个海军单位，便会获得第二个海军单位。为本城每个近海单元格+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币，每回合提供6点 [ICON_RESOURCE_Niter] 硝石。必须建在靠近工业区的海岸单元格上。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_APADANA_DESCRIPTION",                      "在此城市中建造奇观（包括阿帕达纳宫）时+3 [ICON_ENVOY] 使者。必须建造在 [ICON_CAPITAL] 首都旁。");
+    ("zh_Hans_CN",  "LOC_BUILDING_APADANA_DESCRIPTION",                      "在此城市中建造奇观（包括阿帕达纳宫）时+3 [ICON_ENVOY] 使者。必须建造在 [ICON_CAPITAL] 首都旁。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 军事政策槽位[NEWLINE][NEWLINE]提供同堡垒改良设施一样的防御加成。每座军营提供+2影响力点数。必须建立在邻近军营区的丘陵上。");
 
 -- National Wonders
 --------------------------------------------------------------------------------
