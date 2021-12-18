@@ -45,6 +45,8 @@ update Resource_Harvests set PrereqTech = 'TECH_ANIMAL_HUSBANDRY' where Resource
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_CAMP');
 update Resource_Harvests set PrereqTech = 'TECH_POTTERY' where ResourceType in
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM');
+update Resource_Harvests set PrereqTech = 'TECH_BRONZE_WORKING' where ResourceType in
+	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_LUMBER_MILL');
 
 delete from Resource_Harvests where
 	   ResourceType = 'RESOURCE_CLOVES'

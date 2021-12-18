@@ -141,3 +141,8 @@ insert or replace into Improvement_YieldChanges
 	(ImprovementType,		YieldType,		YieldChange)
 values
 	('IMPROVEMENT_PASTURE',	'YIELD_GOLD',	0);
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
+values
+	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);

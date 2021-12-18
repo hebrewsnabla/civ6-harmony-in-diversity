@@ -5,9 +5,10 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
-    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "[ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5. Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. "),
+    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. After Calendar is researched, [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5."),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
     ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+2 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
     ("LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "Triumphal Arch"),
@@ -99,7 +100,7 @@ values
     ("LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from Camps and Pastures with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any Camp or Pasture with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "+2 [ICON_FAITH] Faith, +2 [ICON_CULTURE] Culture from Geothermal fissures in this city. After Chemistry is researched, +2 [ICON_SCIENCE] Science additionally.[NEWLINE]+2 extra [ICON_AMENITIES] Amenity and +5 [ICON_TOURISM] Tourism if this city has any Geothermal fissure."),
     -- Water Entertainment Complex
-    ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "+1 [ICON_SCIENCE] Science to each coastal Resource, Shipwreck, and Reef tile in this city."),
+    ("LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] Tourism."),
     ("LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "+2 [ICON_Tourism] Tourism for each Wonder built in this city on or adjacent to a Coast tile."),
     ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science from marine features or Fishing Boats with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any marine feature or Fishing Boat with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     -- Aerodrome
@@ -121,9 +122,10 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
@@ -147,11 +149,11 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。"),
     -- 剧院
-    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "+2 [ICON_Culture] 文化值。毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+1 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。维护免费；无巨作槽位。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "+2 [ICON_Culture] 文化值。毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+1 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%。通电后额外为本城+5% [ICON_CULTURE] 文化值."),
-    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%。通电后额外为本城+5% [ICON_CULTURE] 文化值."),
+    ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
     ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.3 [ICON_PRODUCTION] 生产力。"),
@@ -212,12 +214,12 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "阿兹特克特色建筑。提供1点 [ICON_Amenities] 宜居度、+2 [ICON_Culture] 文化值、+2 [ICON_Faith] 信仰值，并提供2点 [ICON_GreatGeneral] 大将军点数。拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STADIUM_DL_DESCRIPTION",                       "如城市 [ICON_CITIZEN] 人口大于等于10，则+2 [ICON_Tourism] 旅游业绩；如城市 [ICON_CITIZEN] 人口大于等于20，则+5 [ICON_Tourism] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究生物科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究化学科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究“生物”科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究“化学”科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
     -- 水上娱乐
-    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "此城中的每处海岸资源、海难遗址和礁石单元格+1 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "此城中建在海岸单元格之上或周围的每座奇观+2 [ICON_Tourism] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究生物科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究“生物”科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     -- 航空港
     ("zh_Hans_CN",  "LOC_BUILDING_HANGAR_DESCRIPTION",                           "当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "在有机场的9个单元格内的城市产出 [ICON_Tourism] 旅游业绩+50%。不可叠加。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),

@@ -6,7 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "If a city has an Aqueduct, all farms adjacent to fresh water or an Aqueduct gain +1 [ICON_FOOD] Food.[NEWLINE]Extra +1 [ICON_Food] Food if a plantation is adjacent to fresh water or Aqueduct District (obsolete with Feudalism Civic)."),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE]If a city has an Aqueduct, all farms adjacent to fresh water or an Aqueduct gain +1 [ICON_FOOD] Food.[NEWLINE]If a city has a Granary, [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -46,7 +46,7 @@ values
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows Traders to embark, and allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests. Camp improvements receive +1 [ICON_GOLD] Gold."),
-    ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",      "Pasture improvements receive +1 [ICON_Production] Production."),
+    ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements receive +1 [ICON_Production] Production."),
     -- ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                                    "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_CASTLES_HD_DESCRIPTION",                                                     "Gain a free Spy if playing as Catherine de Medici (Black Queen)."),
     ("LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION",                                              "+1 [ICON_Movement] Movement for embarked units.[NEWLINE]Naval melee units gain the ability: Formation units all inherit escort's [ICON_Movement] Movement speed."),
@@ -56,7 +56,8 @@ values
     ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food. +5% [ICON_Science] Science for cities have University."),
     -- New Civics
     ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                                "Literary Tradition"),
-    ("LOC_CIVIC_DEFENSIVE_TACTICS_NAME",                                                    "Supply"),
+    ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                                 "Supply"),
+    ("LOC_CIVIC_NATURAL_HISTORY_HD_NAME",                                                   "Archaeology"),
     ("LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                                       "Imperial Examination System"),
     ("LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                                  "Evolution Theory"),
     ("LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                                           "Camp improvements receive +1 [ICON_Production] Production +1 [ICON_Food] Food."),
@@ -147,7 +148,7 @@ values
     ("LOC_BOOST_TRIGGER_RADIO",                                                             "Have the Colonialism Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology."),
     ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         ""); 
+    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         "Our fighters now need a targeting system like a scalpel and engineers are already working on it."); 
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -157,7 +158,7 @@ insert or replace into LocalizedText
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
-    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "拥有水渠的城市，所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。。"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有水渠的城市，所有淡水或相邻水渠的农田+1 [ICON_FOOD] 食物。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),
@@ -207,7 +208,8 @@ values
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。拥有大学的城市+5% [ICON_Science] 科技值"),
     -- New Civics
     ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                 "文学传统"),
-    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_NAME",                                     "后勤补给"),
+    ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                  "后勤补给"),
+    ("zh_Hans_CN",  "LOC_CIVIC_NATURAL_HISTORY_HD_NAME",                                    "考古学"),
     ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                        "科举制"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                   "演化论"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地改良设施获得+1 [ICON_Production] 生产力和+1 [ICON_Food] 食物。"),
@@ -228,7 +230,6 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                  "建造7个不同的专业化区域。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                         "复杂的城市建设构成了复杂的社会关系，而一些天才洞察了这一切。"),
     -- Civics
-    ("zh_Hans_CN",  "LOC_CIVIC_NATURAL_HISTORY_NAME",                                       "考古学"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "种植园改良设施提供的 [ICON_Food] 食物+1。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。"),
@@ -301,4 +302,70 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          ""); 
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"); 
+
+--------------------------------------------------------------------------------
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                                   Text)
+values
+    -- TODO: LOC_TECH_CALENDAR_HD_QUOTE_2 change to English
+    ("LOC_TECH_CALENDAR_HD_QUOTE_1",                                        "There was nothing brought together, nothing which could make a noise, nor anything which might move, or tremble, or could make noise in the sky. -- Popul Vuh"),
+    ("LOC_TECH_CALENDAR_HD_QUOTE_2",                                        "太初元年，岁名“焉逢摄提格”，月名“毕聚”，日得甲子，夜半朔旦冬至。——司马迁《史记》"),
+    ("LOC_TECH_PAPER_MAKING_HD_QUOTE_1",                                    "The beauty of the paper is precious, the integrity of the formula, the purity of the body and the chastity of the nature. -- Fu Xian, Paper Fugue "),
+    ("LOC_TECH_PAPER_MAKING_HD_QUOTE_2",                                    "The experienced man reads with two eyes, one seeing the words on the page and the other seeing the back of the paper. -- Goethe"),
+    ("LOC_TECH_COMPASS_HD_QUOTE_1",                                         "A navigator knows geography; at night he watches the stars, at day he watches the sun, and at cloudy days he watches the compass. -- Pingzhou Ketan"),
+    ("LOC_TECH_COMPASS_HD_QUOTE_2",                                         "Foreigners use compasses for navigation, but China uses them for feng shui. -- Lu Xun"),
+    ("LOC_TECH_PHYSICS_HD_QUOTE_1",                                         "The most incomprehensible thing about the world is that it is comprehensible.-- Albert Einstein"),
+    ("LOC_TECH_PHYSICS_HD_QUOTE_2",                                         "Give me a fulcrum and I can lift the whole earth. -- Archimedes"),
+    ("LOC_TECH_BIOLOGY_HD_QUOTE_1",                                         "All life comes from life. -- Louis Pasteur"),
+    ("LOC_TECH_BIOLOGY_HD_QUOTE_2",                                         "Nüwa has a body, who makes it? -- Qu Yuan, Heavenly Questions"),
+    ("LOC_CIVIC_SUPPLY_HD_QUOTE_1",                                         "A horse! A horse! My kingdom for a horse! -- Shakespeare, Richard III"),
+    ("LOC_CIVIC_SUPPLY_HD_QUOTE_2",                                         "As the old saying goes, before the armies move, food and fodder go first, and when the army is well fed, the battle is invincible. -- The Storys of the Qin King of the Great Tang Dynasty"),
+    ("LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_1",                                    "This is the reason for this study, which is intended to be used by the doctors and counsellors, and to make the world aware of the usefulness of the relics of Yin to scholars of history and scripture. --Wang Guowei, A Study of the First Kings and First Gentlemen as Found in the Divination of Yin"),
+    ("LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_2",                                    "The French Empire has appropriated half its treasures, and now it has the impudence to go to such lengths as to bring out for public exhibition, as owner, these beautiful ancient relics from the Yuanmingyuan. --Victor Hugo"),
+    ("LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_1",                             "The essay is a great and immortal event. --Cao Pi,  A Treatise on the Canon"),
+    ("LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_2",                             "I think tendencies should flow naturally from the sections and episodes, and not be specifically pointed out. --Frederic Engels"),
+    ("LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_1",                    "The spring breeze is so fast that you can see all the flowers in Chang'an in one day. --Meng Jiao,  After the Examination"),
+    ("LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_2",                    "It is all but impossible to conceive of a better government than that in which only those who have passed a rigorous examination are admitted to the government offices. -- Voltaire"),
+    ("LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_1",                               "Ah, how magical! How many wonderful characters here; how beautiful are the human beings! O wondrous new world, to have such wonderful people! -- William Shakespeare, The Tempest"),
+    ("LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_2",                               "We don't want change. Every change endangers stability. --Aldous Huxley, Brave New World"),
+    ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_1",                          "The book is called a factual record because it is good at ordering things, discriminating without being flashy, qualitative without being slang, straight in its text, and checkable in its matter, without false beauty or hidden evil. --- Ban Gu, The Book of Han"),
+    ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_2",                          "The only lesson that history teaches is that one never learns anything in history. --Georg Hegel, The Philosophy of History"),
+    ("LOC_CIVIC_ETHICS_HD_QUOTE_1",                                         "What gentleman was there when Adam and Eve laboured! --Florian Geyer"),
+    ("LOC_CIVIC_ETHICS_HD_QUOTE_2",                                         "The kind of career that requires people to work non-stop and becomes an integral part of their lives. In fact, it is the only possible motivation. -- Max Weber, The Protestant Ethic and the Spirit of Capitalism"),
+    ("LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                 "A science can only reach the point of true perfection when it applies mathematics successfully. -- Karl Marx"),
+    ("LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                 "Only society can make a general assessment of the value of life, and the individual can do nothing about it ...... -- Émile Durkheim, On Suicide");
+
+-- Quotes
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_1",                                         "此处记述了如何：一切处于悬止，一切平静，处于静默；一切静止，寂静，而天穹的领域是空洞的。——《波波武经》"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_2",                                         "太初元年，岁名“焉逢摄提格”，月名“毕聚”，日得甲子，夜半朔旦冬至。——司马迁《史记》"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
+    ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_2",                                     "经验丰富的人读书用两只眼睛，一只眼睛看到纸面上的话，另一眼睛看到纸的背面。——约翰·沃尔夫冈·冯·歌德"),
+    ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_QUOTE_1",                                          "舟师识地理，夜则观星，昼则观日，阴晦观指南针。——《萍洲可谈》"),
+    ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_QUOTE_2",                                          "外国用罗盘针航海，中国却用它看风水。——鲁迅"),
+    ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_QUOTE_1",                                          "这个世界最不可理解的就是它竟然是可以理解的。——阿尔伯特·爱因斯坦"),
+    ("zh_Hans_CN",  "LOC_TECH_PHYSICS_HD_QUOTE_2",                                          "给我一个支点，我可以翘起整个地球——阿基米德"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_QUOTE_1",                                          "所有生命都来自生命——路易斯·巴斯德"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_QUOTE_2",                                          "女娲有体，孰制匠之？——屈原《天问》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SUPPLY_HD_QUOTE_1",                                          "一匹马！一匹马！我用王国换一匹马！——莎士比亚《理查三世》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SUPPLY_HD_QUOTE_2",                                          "自古道三军未动，粮草先行，兵精粮足，战无不胜。——《大唐秦王词话》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_1",                                     "由是有商一代，先公先王之名不见于卜辞者殆鲜。乃为此考，以质诸博士及参事,并使世人知殷虚遗物之有裨于经史二学者有如斯也。——王国维《殷卜辞中所见先公先王考》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ARCHAEOLOGY_HD_QUOTE_2",                                     "法兰西帝国侵吞了一半宝物，现在，它居然无耻到这样的地步，还以所有者的身份把圆明园的这些美轮美奂的古代文物拿出来公开展览。——维克多·雨果"),
+    ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_1",                              "盖文章经国之大业，不朽之盛事。——曹丕《典论》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_QUOTE_2",                              "我认为倾向应当从断面和情节中自然而然地流露出来,而不应当特地把它指点出来。——弗雷德里克·恩格斯"),
+    ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_1",                     "春风得意马蹄疾，一日看尽长安花。——孟郊《登科后》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_QUOTE_2",                     "通过层层严格考试的人才能进入衙门任职，人们全然不可能设想一个比这更好的政府。——伏尔泰"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_1",                                "啊，多么神奇！这里有多少美妙的人物；人类多么美丽！奇妙的新世界啊，竟有这样美好的人！——威廉·莎士比亚《暴风雨》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_QUOTE_2",                                "我们不要变化。每一个变化都会危及安定。 ——阿道司·赫胥黎《美丽新世界》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_1",                           "服其善序事理，辨而不华，质而不俚，其文直，其事核，不虚美，不隐恶，故谓之实录。——班固《汉书》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_QUOTE_2",                           "历史给人的唯一教训，就是人们从未在历史中吸取过任何教训。——格奥尔格·黑格尔《历史哲学》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_1",                                          "亚当夏娃劳作之时，哪有什么绅士！——弗洛里安·盖耶"),
+    ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_2",                                          "这种需要人们不停地工作的事业，成为他们生活中不可或缺的组成部分。事实上，这是唯一可能的动机。——马克斯·韦伯《新教伦理与资本主义精神》"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                  "一门科学，只有当它成功地运用数学时，才能达到真正完善的地步。——卡尔·马克思"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                  "只有社会才能对人生的价值做出总的评价，而个人对此是无能为力的……——埃米尔·涂尔干《自杀论》");

@@ -527,7 +527,7 @@ insert or replace into Modifiers
     (ModifierId,                                            ModifierType,                                       RunOnce,        Permanent,  SubjectRequirementSetId)
 values
     ('GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING',  'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_HOUSING',   0,              1,          'BUILDING_IS_SEAPORT'),
-    ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',   0,  1,      'CITY_HAS_HARBOR');
+    ('GREATPERSON_CLANCY_FERNANDO_AMENITIES',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_AMENITIES_FROM_GREAT_PEOPLE',   0,  1,      'CITY_HAS_HARBOR_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,               Value)
@@ -587,3 +587,16 @@ update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_INFLUENCE
 update ModifierArguments set Value = 4 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_MEDIUM';
     -- 【大商人】 周达观
 update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
+
+-- 新大作家
+insert or replace into Types
+    (Type,                                          Kind)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU',         'KIND_GREAT_PERSON_INDIVIDUAL'),
+    ('GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN',          'KIND_GREAT_PERSON_INDIVIDUAL');
+
+insert or replace into GreatPersonIndividuals
+    (GreatPersonIndividualType,                     Name,                                               GreatPersonClassType,           EraType,            ActionCharges,      ActionRequiresOwnedTile,        Gender)
+values
+    ('GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU',         'LOC_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU_NAME',     'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M'),
+    ('GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN',          'LOC_GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN_NAME',      'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M');

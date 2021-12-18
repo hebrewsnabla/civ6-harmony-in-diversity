@@ -40,6 +40,7 @@ values
 	('DISTRICT_HARBOR',				'HD_Harbor_City_Gold'),
 	('DISTRICT_HARBOR',				'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
+	('DISTRICT_ENCAMPMENT',			'Strategic_Production'),
 	-- UD
 	('DISTRICT_ROYAL_NAVY_DOCKYARD','District_Gold_Industrial_Zone'),
 	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),

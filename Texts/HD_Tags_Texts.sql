@@ -28,6 +28,9 @@ update Technologies set Description = NULL where TechnologyType ='TECH_ROCKETRY'
 -- update Technologies set Description = NULL where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION' where TechnologyType = 'TECH_HORSEBACK_RIDING'; 
 
+update Civics set Name = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME' where CivicType ='CIVIC_DEFENSIVE_TACTICS';
+update Civics set Name = 'LOC_CIVIC_NATURAL_HISTORY_HD_NAME' where CivicType ='CIVIC_NATURAL_HISTORY';
+
 update Civics set Description = 'LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_SERVICE';
 update Civics set Description = 'LOC_CIVIC_GUILDS_HD_DESCRIPTION' where CivicType ='CIVIC_GUILDS';
 update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where CivicType ='CIVIC_MEDIEVAL_FAIRES';
@@ -71,7 +74,7 @@ update Buildings set Description = 'LOC_BUILDING_STUPA_DL_DESCRIPTION' where Bui
 update Buildings set Description = 'LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION' where BuildingType = 'BUILDING_DAR_E_MEHR';
 update Buildings set Description = 'LOC_BUILDING_PAGODA_DL_DESCRIPTION' where BuildingType = 'BUILDING_PAGODA';
 
-update Buildings set Description = NULL where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set Description = 'LOC_BUILDING_AQUARIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUARIUM';
 update Buildings set Description = 'LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUATICS_CENTER';
 update Buildings set Description = 'LOC_BUILDING_STADIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_STADIUM';

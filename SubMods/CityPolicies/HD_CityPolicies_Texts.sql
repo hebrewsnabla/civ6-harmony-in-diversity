@@ -78,7 +78,7 @@ values
     ("LOC_CITY_POLICY_REVISION_ALMANAC",                              "Revision Almanac"),
     ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. If this city has and Aqueduct, each Plantation and Farm with any resource +1 [ICON_SCIENCE] Science in this city, but need maintenance cost of 8 [ICON_GOLD] Gold."),
     ("LOC_CITY_POLICY_FREIGHT",                                       "Freight"),
-    ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Commercial Hub Project. Consumes 2 [ICON_RESOURCE_HORSES] Horses per turn, provides 6 [ICON_PRODUCTION] Production."),
+    ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Commercial Hub Project. Consumes 2 [ICON_RESOURCE_HORSES] Horses per turn, provides 2 [ICON_FOOD] Food and 4 [ICON_PRODUCTION] Production."),
     ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"),
     ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Industrial Zone Project. Consumes 2 [ICON_RESOURCE_IRON] Iron per turn, provides 8 [ICON_PRODUCTION] Production.");
 
@@ -109,7 +109,7 @@ values
     ("zh_Hans_CN",  "LOC_CITY_POLICY_REVISION_ALMANAC",                              "修编历书"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "水渠项目。若此城拥有水渠，城市中每个种植园和改良资源的农场+1 [ICON_SCIENCE] 科技值，但需要8 [ICON_GOLD] 金币的维护费。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT",                                       "货运"),
-    ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT_EFFECT",                                "商业中心项目。每回合消耗 2 [ICON_RESOURCE_HORSES] 马，提供6 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT_EFFECT",                                "商业中心项目。每回合消耗 2 [ICON_RESOURCE_HORSES] 马，提供2 [ICON_FOOD] 食物和4 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON",                                  "锻铁"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "工业区项目。每回合消耗 2 [ICON_RESOURCE_IRON] 铁，提供8 [ICON_PRODUCTION] 生产力。");
 

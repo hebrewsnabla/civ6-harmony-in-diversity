@@ -16,16 +16,16 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.1.3 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.3。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.1.6 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.6。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.3 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.3。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.6 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.6。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
-      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 小灰灰，YT，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, o(╯□╰)o，奥伊米亚，法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 音痴痴c, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, 小灰灰，YT，黑毛毛小魔仙，榖音, 柚子, Winged Hussar, o(╯□╰)o，奥伊米亚，音痴痴c，法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -134,6 +134,12 @@
       <ModInUse>0fe4104b-80e1-434a-88fc-914ce2632944</ModInUse>
     </Criteria>
     <!-- 国家奇观 End -->
+    <!-- 丰富资源2 Start -->
+    <Criteria id="Resouceful2_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>23879c66-7cbb-4320-a891-ad24026f1b6b</ModInUse>
+    </Criteria>
+    <!-- 丰富资源2 End -->
     <Criteria id="Monopolies_Suk_Resources_Conflict_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse inverse="1">37fdca0b-9275-4235-9c18-c7ec348f930e</ModInUse>
@@ -158,25 +164,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>01159f41-7ca0-4181-84cf-2f2c912edfdd</ModInUse><!-- STXP -->
     </Criteria>
-    <!-- District Expansions begin -->
     <Criteria id="Worships_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
-    <Criteria id="Aqueduct_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>1373373a-f34d-4041-a0f8-49e2004e19a1</ModInUse>
-    </Criteria>
-    <Criteria id="Industry_Expansion2">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
-    </Criteria>
-    <Criteria id="Industry_Ethiopia">
-      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
-      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse> <!-- Ethiopia -->
-      <ModInUse>39c78c55-8c39-4f0d-b4c8-0097f6bcd87a</ModInUse>
-    </Criteria>
-    <!-- District Expansions end -->
     <Criteria id="WatchTower_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
@@ -438,15 +429,6 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/SukOceans/HD_Texts.sql</File>
     </UpdateText>
-    <UpdateDatabase id="District_FrontEnd_Adjust">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
-    </UpdateDatabase>
-    <UpdateText id="DistrictExpansions_support_text">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    </UpdateText>
     <!-- GeneralChineseSupport -->
     <UpdateText id="DL_GeneralChineseSupport_Texts">
       <Properties><LoadOrder>100008</LoadOrder></Properties>
@@ -481,12 +463,25 @@
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
       <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-      <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
+      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
+      <!-- <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File> -->
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/TechCivics/HDCivicIcons_38.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+      <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_30.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_38.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_42.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_128.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+      <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -554,6 +549,19 @@
       <File>Assets/CityStates/CivBaikonur_128.dds</File>
       <File>Assets/CityStates/CivBaikonur_200.dds</File>
       <File>Assets/CityStates/CivBaikonur_256.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+      <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
+    </ImportFiles>
+    <ImportFiles id="Resouceful2_Adapt_Import" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Assets/Resourceful2/Resourceful2_New_22.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_32.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_38.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_50.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_64.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_128.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_256.dds</File>
+      <File>Assets/Resourceful2/Resourceful2_New_FOW_256.dds</File>
     </ImportFiles>
     <!-- Fix Icon -->
     <UpdateIcons id="FixIcons" criteria="Expansion2">
@@ -566,6 +574,7 @@
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
       <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
+      <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
     <ImportFiles id="CityStatesDiversity_BST_Import" criteria="Expansion2">
@@ -671,40 +680,6 @@
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
     <!-- Mod Support -->
-    <!-- District Expansion begin -->
-    <UpdateDatabase id="DistrictExpansion_Removes" criteria="Expansion2">
-      <Properties><LoadOrder>15000</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
-    </UpdateDatabase>
-    <UpdateDatabase id="Aqueduct_support" criteria="Aqueduct_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
-    </UpdateDatabase>
-    <UpdateText id="Aqueduct_support_text" criteria="Aqueduct_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
-    </UpdateText>
-    <UpdateDatabase id="Industry_support_resume" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>15001</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
-    </UpdateDatabase>
-    <UpdateIcons id="Industry_support_resume_Icons" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>15001</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
-    </UpdateIcons>
-    <UpdateDatabase id="Industry_support" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
-    </UpdateDatabase>
-    <UpdateText id="Industry_support_text" criteria="Industry_Expansion2">
-      <Properties><LoadOrder>16050</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    </UpdateText>
-    <UpdateText id="Industry_support_text" criteria="Industry_Ethiopia">
-      <Properties><LoadOrder>16051</LoadOrder></Properties>
-      <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
-    </UpdateText>
-      <!-- District Expansion end -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
       <File>ModSupport/Worships/DL_Removes.sql</File>
@@ -785,12 +760,34 @@
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
     </UpdateDatabase>
+    <AddGameplayScripts id="National_Wonders_support" criteria="National_Wonders_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Wonders/HD_National_Wonders.lua</File>
+    </AddGameplayScripts>
       <!-- 国家奇观 Pack 1 -->
     <UpdateDatabase id="National_Wonders_Pack1_support" criteria="National_Wonders_Pack1_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
     </UpdateDatabase>
       <!-- 国家奇观 End -->
+      <!-- 丰富资源2 Start -->
+    <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>15000</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17001</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
+    </UpdateText>
+    <UpdateIcons id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>17001</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
+    </UpdateIcons>
+      <!-- 丰富资源2 End -->
     <!-- Better Trade Scrren -->
     <ImportFiles id="DL_BetterTradeScreen_Imports" criteria="BetterTradeScreen_Expansion2">
       <Properties><LoadOrder>15010</LoadOrder></Properties>
@@ -1203,6 +1200,7 @@
       <File>UI/Icons/DL_Icons_Policies.xml</File>
       <File>UI/Icons/DL_Icons_Projects.xml</File>
       <File>UI/Icons/HD_Icons.xml</File>
+      <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
@@ -1519,6 +1517,7 @@
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
+    <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
     <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     <!-- UI Loaders -->
     <File>UI/Loaders/ToolTipLoader_DL.lua</File>
@@ -1544,19 +1543,11 @@
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>
+    <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <!-- Mod Support -->
-    <File>ModSupport/DistrictExpansions/HD_Config_Adjust.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Removes.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Aqueduct.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Aqueduct_Texts.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Resume.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Resume_Icons.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Texts.sql</File>
-    <File>ModSupport/DistrictExpansions/HD_Industry_Texts_Ethiopia.sql</File>
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>
@@ -1576,6 +1567,7 @@
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
     <File>ModSupport/Wonders/HD_Wonders_Community_text.sql</File>
     <File>ModSupport/Wonders/HD_National_Wonders.sql</File>
+    <File>ModSupport/Wonders/HD_National_Wonders.lua</File>
     <File>ModSupport/Wonders/HD_National_Wonders_PackOne.sql</File>
     <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     <File>ModSupport/BetterTradeScreen/TradeSupport.lua</File>
@@ -1592,6 +1584,11 @@
     <File>ModSupport/SteelThunder/STUU_UserSetting.sql</File>
     <File>ModSupport/Resources/DL_Adaptation.sql</File>
     <File>ModSupport/Resources/HD_Texts.sql</File>
+    <!-- Resourceful2 -->
+    <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
+    <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
+    <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
+    <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
@@ -1787,6 +1784,17 @@
     <File>Texts/HD_Text_Wonders.sql</File>
     <File>Texts/HD_Text_GreatPerson.sql</File>
     <!-- Assets -->
+    <File>Assets/TechCivics/HDCivicIcons_38.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_42.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_128.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_160.dds</File>
+    <File>Assets/TechCivics/HDCivicIcons_FOW_42.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_30.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_38.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_42.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_128.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_160.dds</File>
+    <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -1854,10 +1862,22 @@
     <File>Assets/CityStates/CivBaikonur_128.dds</File>
     <File>Assets/CityStates/CivBaikonur_200.dds</File>
     <File>Assets/CityStates/CivBaikonur_256.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_ZhuangZhou_160.dds</File>
+    <File>Assets/GreatPeople/GreatPeople_SiNaQian_160.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_22.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_32.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_38.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_50.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_64.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_128.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_256.dds</File>
+    <File>Assets/Resourceful2/Resourceful2_New_FOW_256.dds</File>
     <!-- Platforms -->
     <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
+    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
+    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File>
     <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
     <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.xml</File>
+    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>

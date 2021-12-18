@@ -35,7 +35,7 @@
 			<Text>解锁建造者建造法国特色城堡的能力。[NEWLINE]+2 [ICON_Culture] 文化值，+1 [ICON_Gold] 金币。为相邻单元格提供+1魅力。每相邻一座奇观，+1 [ICON_Culture] 文化值（该数值在科技[飞行]后提高至+2），建造在河流边+2 [ICON_Gold] 金币。必须相邻奢侈或加成资源建造，无法建造在其它城堡旁。</Text>
 		</Replace>
 		<Replace Tag="LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>解锁建造者建造纳斯卡巨画的能力。[NEWLINE]相邻的单元格+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Faith] 信仰值；拥有资源或沙漠、沙漠丘陵地形的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻单元格+1 [ICON_FOOD] 食物。研究“大量生产”后，相邻单元格+1 [ICON_PRODUCTION] 生产力。为相邻单元格提供+1魅力。仅能建在平坦的沙漠上。此单元格无法派遣 [ICON_Citizen] 人口工作。</Text>
+			<Text>解锁建造者建造纳斯卡巨画的能力。[NEWLINE][NEWLINE]相邻的单元格+1 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“行政部门”后，相邻的沙漠、沙漠丘陵单元格+1 [ICON_FOOD] 食物。研究“大量生产”后，相邻的平坦单元格+1 [ICON_PRODUCTION] 生产力；同时+1魅力。仅能建在平坦的沙漠上。此单元格无法进行改良。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_ENTERTAINMENT_COMPLEX_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>城市中的区域，可增加 [ICON_Amenities] 宜居度，让人民生活幸福。[NEWLINE]为相邻单元格提供+1魅力。</Text>

@@ -39,7 +39,7 @@ update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_DLV_GALLE
 update ModifierArguments set Value = 10 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' and Name = 'Amount';
 
 -- unit types and promotion updates
-update Units set PrereqTech = 'TECH_CHEMISTRY' where UnitType = 'UNIT_DLV_MORTAR';
+update Units set PrereqTech = 'TECH_REPLACEABLE_PARTS' where UnitType = 'UNIT_DLV_MORTAR';
 update Units set PrereqTech = 'TECH_ADVANCED_BALLISTICS' where UnitType = 'UNIT_DLV_SELF_PROPELLED_ARTILLERY';
 update Units set Cost = 310, Maintenance = 6, BaseMoves = 3, Range = 2, Combat = 60, RangedCombat = 70, StrategicResource = NULL where UnitType = 'UNIT_DLV_MORTAR';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_DLV_MORTAR';
