@@ -6,6 +6,25 @@
 --BUILDING_ABU_SIMBEL
 UPDATE Buildings SET  ObsoleteEra = 'ERA_MEDIEVAL', PrereqTech = 'TECH_CALENDAR_HD', PrereqCivic = Null
 WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_ABU_SIMBEL');--xhh
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('HD_ABU_GRANARY_ATTACH',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
+	('HD_ABU_GRANARY_MODIFIER',				'MODIFIER_BUILDING_YIELD_CHANGE');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('HD_ABU_GRANARY_ATTACH',				'ModifierId',		'HD_ABU_GRANARY_MODIFIER'),
+	('HD_ABU_GRANARY_MODIFIER',				'BuildingType',		'BUILDING_GRANARY'),
+	('HD_ABU_GRANARY_MODIFIER',				'YieldType',		'YIELD_FOOD'),
+	('HD_ABU_GRANARY_MODIFIER',				'Amount',			1);
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select BuildingType,						'HD_ABU_GRANARY_ATTACH'
+from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL';
+
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
 UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null
@@ -473,43 +492,6 @@ values
 
 -- Yellow Crane Tower
 update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';
-
---BUILDING_SUK_WAT_ARUN
-UPDATE Buildings SET  Cost = 1000, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE'
-WHERE BuildingType = 'BUILDING_SUK_WAT_ARUN' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_SUK_WAT_ARUN');
-
-delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
-
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING_SELF'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
-insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_FOOD_SELF'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SUK_WAT_ARUN');
-
-insert or replace into Modifiers 
-	(ModifierId,						ModifierType,											SubjectRequirementSetId) 
-values
-	('WAT_ARUN_DISTRICT_HOUSING',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_HOUSING',				'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),
-	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING',		'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),												
-	('WAT_ARUN_DISTRICT_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS'),											
-	('WAT_ARUN_DISTRICT_FOOD_SELF',		'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS');	
-
-insert or replace into ModifierArguments 
-	(ModifierId,						Name,		Value) 
-values
-	('WAT_ARUN_DISTRICT_HOUSING',		'Amount',		1),			
-	('WAT_ARUN_DISTRICT_HOUSING_SELF',	'Amount',		1),
-	('WAT_ARUN_DISTRICT_FOOD',			'YieldType',	'YIELD_FOOD'),
-	('WAT_ARUN_DISTRICT_FOOD',			'Amount',		1),
-	('WAT_ARUN_DISTRICT_FOOD_SELF',		'YieldType',	'YIELD_FOOD'),
-	('WAT_ARUN_DISTRICT_FOOD_SELF',		'Amount',		1);
 
 -- STPETERSBASILICA
 delete from Building_GreatWorks where BuildingType = 'BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';

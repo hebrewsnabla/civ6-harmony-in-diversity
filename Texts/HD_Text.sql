@@ -66,7 +66,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                         "请忽略"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "请忽略"),
     -- Temp
-
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_1",                                         "此处记述了如何：一切处于悬止，一切平静，处于静默；一切静止，寂静，而天穹的领域是空洞的。——《波波武经》"),
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_QUOTE_2",                                         "太初元年，岁名“焉逢摄提格”，月名“毕聚”，日得甲子，夜半朔旦冬至。——司马迁《史记》"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_QUOTE_1",                                     "夫其为物，厥美可珍，廉方有则，体洁性贞。——傅咸《纸赋》"),
@@ -188,10 +187,10 @@ values
     ("LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_DESCRIPTION",                    "Military academy project. Once completed, instantly gain +20 [ICON_RESOURCE_ALUMINUM] Aluminum."),
     ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "Nuclear Refinery"),
     ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "Nuclear Refinery"),
-    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military Academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium."),
-    ("LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "Recruit Workers"),
-    ("LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "Recruit Workers"),
-    ("LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "City project. If this city has at least 2 [ICON_Citizen] Citizens, this project grants a builder and reduces 1 [ICON_Citizen] Citizen.[NEWLINE]If this city has only 1 [ICON_Citizen] Citizen, this project will take effect later when the population of this city increases next time.");
+    ("LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "Military Academy project. Once completed, instantly gain +20 [ICON_RESOURCE_URANIUM] Uranium.");
+    -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "Recruit Workers"),
+    -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "Recruit Workers"),
+    -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "City project. If this city has at least 2 [ICON_Citizen] Citizens, this project grants a builder and reduces 1 [ICON_Citizen] Citizen.[NEWLINE]If this city has only 1 [ICON_Citizen] Citizen, this project will take effect later when the population of this city increases next time.");
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
@@ -223,10 +222,10 @@ values
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_ALUMINUM_HD_DESCRIPTION",                    "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_ALUMINUM] 铝。"),
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_NAME",                            "气体离心"),
     ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_SHORT_NAME",                      "气体离心"),
-    ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_URANIUM] 铀。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "征发民夫"),
-    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "征发民夫"),
-    ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "城市项目，项目完成后，若此城至少有2 [ICON_Citizen] 人口，则获得1名建造者，城市-1 [ICON_Citizen] 人口；若该城市只有1 [ICON_Citizen] 人口，则在下一次人口增长时，获得1名建造者，城市-1 [ICON_Citizen] 人口。");
+    ("zh_Hans_CN",  "LOC_PROJECT_GRANT_RESOURCE_URANIUM_HD_DESCRIPTION",                     "军事学院项目，项目完成后提供20点 [ICON_RESOURCE_URANIUM] 铀。");
+    -- ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "征发民夫"),
+    -- ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "征发民夫"),
+    -- ("zh_Hans_CN",  "LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "城市项目，项目完成后，若此城至少有2 [ICON_Citizen] 人口，则获得1名建造者，城市-1 [ICON_Citizen] 人口；若该城市只有1 [ICON_Citizen] 人口，则在下一次人口增长时，获得1名建造者，城市-1 [ICON_Citizen] 人口。");
 
 --------------------------------------------------------------------------------   
 -- error texts

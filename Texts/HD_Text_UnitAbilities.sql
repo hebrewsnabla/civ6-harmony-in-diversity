@@ -60,7 +60,8 @@ values
     ("LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "from Episcopal Church"),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "from War Department"),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "from War Department"),
-    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief");
+    ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief"),
+    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -124,7 +125,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "来自主教座堂"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
-    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条");
+    ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条"),
+    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)");
 
 -- UU Abilities
 --------------------------------------------------------------------------------

@@ -17,7 +17,7 @@ values
     -- New Techs Boosts
     ("LOC_BOOST_TRIGGER_CALENDAR_HD",                                                       "Build 1 Granary."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                                              "With the development of agriculture in our empire, we need to plan our production for these years."),
-    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build 2 Plantations."),
+    ("LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                                   "Build a Plantation."),
     ("LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                                          "From the stems of the plants in the plantations, we have found some useful fibers."),
     ("LOC_BOOST_TRIGGER_COMPASS_HD",                                                        "Have the Naval Tradition Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                               "With the development of navigation technology, magnetic tools have become a necessity for navigators."),
@@ -145,7 +145,9 @@ values
     ("LOC_BOOST_TRIGGER_FLIGHT",                                                            "Own 2 Observation Balloons."),
     ("LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                                   "Our observation balloons have been destroyed by hostile biplanes. So why can't we find a way to take the high ground?"),
     ("LOC_BOOST_TRIGGER_RADIO",                                                             "Have the Colonialism Civic."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology.");
+    ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology."),
+    ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         ""); 
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -166,7 +168,7 @@ values
     -- New Techs Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CALENDAR_HD",                                        "建造1座粮仓。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CALENDAR_HD",                               "随着文明农业的发展，我们需要去安排一下这些年的生产计划了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造2座种植园。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_PAPER_MAKING_HD",                                    "建造1座种植园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PAPER_MAKING_HD",                           "从种植园中植物的茎干里，我们发现了一些可以用的纤维。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPASS_HD",                                         "拥有海军传统市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD",                                "随着航海技术的发展，拥有磁性的工具成为了领航员的必需品。"),
@@ -297,4 +299,6 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FLIGHT",                                             "拥有2个观测气球。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_FLIGHT",                                    "我们的观测气球在敌方双翼机的枪林弹雨之下毁坏殆尽，我们为什么就不能想办法占据战场制高点呢？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          ""); 

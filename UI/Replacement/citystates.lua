@@ -87,10 +87,10 @@ local FONT_SIZE_SINGLE_DIGIT_ENVOYS		:number = 40;
 local FONT_SIZE_TWO_DIGIT_ENVOYS		:number = 26;
 local FONT_SIZE_THREE_DIGIT_ENVOYS		:number = 18;
 local MIN_ENVOY_TOKENS_SUZERAIN			:number = GlobalParameters.INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN;	--TODO: expose via game core
-local NUM_ENVOY_TOKENS_FOR_FIRST_BONUS	:number = 1;
-local NUM_ENVOY_TOKENS_FOR_SECOND_BONUS	:number = 3;
-local NUM_ENVOY_TOKENS_FOR_THIRD_BONUS	:number = 6;
-local NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS	:number = 10;
+local NUM_ENVOY_TOKENS_FOR_FIRST_BONUS	:number = GlobalParameters.INFLUENCE_TOKENS_MINIMUM_FOR_SMALL_INFLUENCE;
+local NUM_ENVOY_TOKENS_FOR_SECOND_BONUS	:number = GlobalParameters.INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE;
+local NUM_ENVOY_TOKENS_FOR_THIRD_BONUS	:number = GlobalParameters.INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE;
+local NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS	:number = GlobalParameters.INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE;
 local MAX_BEFORE_TRUNC_SUZERAIN:number = 310;
 local DIPLO_PIP_INFO = {};
 		DIPLO_PIP_INFO["DIPLO_STATE_PROTECTOR"]		= { IconName="ICON_RELATIONSHIP_SUZERAIN",	Tooltip="LOC_CITY_STATES_DIPLO_SUZERAIN"};
@@ -1097,6 +1097,7 @@ function AddCityStateRow( kCityState:table )
 	kInst.BonusIcon1:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 	kInst.BonusIcon1:SetColor( kCityState.isBonus1 and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF );
 	kInst.BonusText1:SetColor( kCityState.isBonus1 and COLOR_TEXT_BONUS_ON or COLOR_TEXT_BONUS_OFF )
+	kInst.BonusText1:SetString(NUM_ENVOY_TOKENS_FOR_FIRST_BONUS);
 
 	kInst.BonusImage3:SetTexture( kCityState.isBonus3 and "CityState_BonusSlotOn" or "CityState_BonusSlotOff" );
 	-- kInst.BonusImage3:SetToolTipString( kCityState.Bonuses[3].Title .."[NEWLINE]".. kCityState.Bonuses[3].Details );
@@ -1104,6 +1105,7 @@ function AddCityStateRow( kCityState:table )
 	kInst.BonusIcon3:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 	kInst.BonusIcon3:SetColor( kCityState.isBonus3 and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF );
 	kInst.BonusText3:SetColor( kCityState.isBonus3 and COLOR_TEXT_BONUS_ON or COLOR_TEXT_BONUS_OFF )
+	kInst.BonusText3:SetString(NUM_ENVOY_TOKENS_FOR_SECOND_BONUS);
 
 	kInst.BonusImage6:SetTexture( kCityState.isBonus6 and "CityState_BonusSlotOn" or "CityState_BonusSlotOff" );
 	-- kInst.BonusImage6:SetToolTipString( kCityState.Bonuses[6].Title .."[NEWLINE]".. kCityState.Bonuses[6].Details );
@@ -1111,12 +1113,14 @@ function AddCityStateRow( kCityState:table )
 	kInst.BonusIcon6:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 	kInst.BonusIcon6:SetColor( kCityState.isBonus6 and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF );
 	kInst.BonusText6:SetColor( kCityState.isBonus6 and COLOR_TEXT_BONUS_ON or COLOR_TEXT_BONUS_OFF )
+	kInst.BonusText6:SetString(NUM_ENVOY_TOKENS_FOR_THIRD_BONUS);
 	-- Chimp --
 	kInst.BonusImage10:SetTexture( kCityState.isBonus10 and "CityState_BonusSlotOn" or "CityState_BonusSlotOff" );
 	kInst.BonusImage10:SetToolTipString( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS].Title .."[NEWLINE]".. kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS].Details );
 	kInst.BonusIcon10:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 	kInst.BonusIcon10:SetColor( kCityState.isBonus10 and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF );	
 	kInst.BonusText10:SetColor( kCityState.isBonus10 and COLOR_TEXT_BONUS_ON or COLOR_TEXT_BONUS_OFF )
+	kInst.BonusText10:SetString(NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS);
 	-- /Chimp --
 	kInst.BonusImageSuzerainOff:SetHide( kCityState.isBonusSuzerain );
 	kInst.BonusImageSuzerainOff:SetColor( COLOR_ICON_BONUS_OFF );
