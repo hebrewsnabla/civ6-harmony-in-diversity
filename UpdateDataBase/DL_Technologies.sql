@@ -366,7 +366,8 @@ values
     ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',                  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                           'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE');
 
-update Modifiers set SubjectRequirementSetId = 'IS_CAMPUS_ADJACENT_TO_MOUNTAIN_REQUIREMENTS';
+update Modifiers set SubjectRequirementSetId = 'IS_CAMPUS_ADJACENT_TO_MOUNTAIN_REQUIREMENTS'
+    where ModifierId = 'ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE';
 
 insert or replace into ModifierArguments
 	(ModifierId,												Name,						Value)
