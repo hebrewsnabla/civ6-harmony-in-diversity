@@ -194,7 +194,7 @@ insert or replace into Adjacency_YieldChanges
 	AdjacentDistrict, 				PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech)
 values
 	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
-	NULL,							NULL,			NULL,		NULL,			'TECH_MACHINERY'),
+	NULL,							NULL,			'TECH_BRONZE_WORKING',		NULL,			'TECH_MACHINERY'),
 	('Lumber_Mill_Industrial_Production','Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL),
 	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,

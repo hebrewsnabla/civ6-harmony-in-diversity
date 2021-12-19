@@ -86,7 +86,7 @@ values
 	('RESOURCE_BARLEY',			'YIELD_GOLD',			1);
 
 -- Terrain
-delete from Resource_ValidTerrains where TerrainType = 'TERRAIN_TUNDRA_HILLS' and ResourceType = 'RESOURCE_GYPSUM';
+delete from Resource_ValidTerrains where (TerrainType = 'TERRAIN_TUNDRA_HILLS' or TerrainType = 'TERRAIN_DESERT_HILLS') and ResourceType = 'RESOURCE_GYPSUM';
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
 
 insert or replace into Resource_ValidTerrains
@@ -123,6 +123,8 @@ values
 	('RESOURCE_BAMBOO',			'TERRAIN_GRASS'),
 	('RESOURCE_ALABASTER',		'TERRAIN_TUNDRA'),
 	('RESOURCE_ALABASTER',		'TERRAIN_TUNDRA_HILLS'),
+	('RESOURCE_ALABASTER',		'TERRAIN_DESERT'),
+	('RESOURCE_ALABASTER',		'TERRAIN_DESERT_HILLS'),
 	('RESOURCE_COD',			'TERRAIN_COAST'),
 	('RESOURCE_SALMON',			'TERRAIN_COAST'),
 	('RESOURCE_ALOE',			'TERRAIN_GRASS'),
@@ -270,9 +272,6 @@ update Resources set Frequency = (select Frequency from HDResourceful2_Old_Frequ
 update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIAR';
 
 -- Improvement
-	-- 伐木场改良
-update Improvements set PrereqTech = 'TECH_MINING' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
-update Adjacency_YieldChanges set PrereqTech = 'TECH_BRONZE_WORKING' where ID = 'Lumber_Mill_River_Production';
 	-- 地热有资矿山、采石场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_MINE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_QUARRY';
@@ -372,13 +371,6 @@ values
 	('HD_HAS_IMPROVED_PINE',				'REQUIRES_PLOT_HAS_LUMBER_MILL'),
 	('HD_HAS_IMPROVED_OAK',					'REQUIRES_RESOURCE_OAK_IN_PLOT'),
 	('HD_HAS_IMPROVED_OAK',					'REQUIRES_PLOT_HAS_LUMBER_MILL');
-
-	-- 水渠
-delete from BuildingModifiers where ModifierId = 'GRANARY_BONUS_PLANTATION_FOOD' and BuildingType = 'BUILDING_GRANARY';
-insert or replace into DistrictModifiers
-	(DistrictType,						ModifierId)
-values
-	('DISTRICT_AQUEDUCT',				'GRANARY_BONUS_PLANTATION_FOOD');
 
 -- Buildings
 	-- 工官
