@@ -6,24 +6,24 @@
 --     狂野模式 版本V0.1    --
 -------------------------------------
 
--------------------------------------
---耶稣会√
-update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 0.3 where ModifierId = 'JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 0.5 where ModifierId = 'JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+-- -------------------------------------
+-- --耶稣会√
+-- update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 0.3 where ModifierId = 'JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 0.5 where ModifierId = 'JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
 
--------------------------------------
---弥赛亚
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
+-- -------------------------------------
+-- --弥赛亚
+-- update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+-- delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
+-- update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+-- insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+-- select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
+-- where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
 
 -------------------------------------
 --禅修
@@ -88,117 +88,117 @@ values
 	('DAR_E_MEHR_GRANTMONKS',		'AllowUniqueOverride',		1),
 	('DAR_E_MEHR_GRANTMONKS',		'Amount',					1);
 
--------------------------------------
---自由探索
-delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
+-- -------------------------------------
+-- --自由探索
+-- delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
 
-insert or replace into CommemorationModifiers
-	(CommemorationType,					ModifierId)
-values
-	('COMMEMORATION_SCIENTIFIC',	    'COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE');
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,								                OwnerRequirementSetId)
-values
-	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_DISTRICT',	'PLAYER_HAS_GOLDEN_AGE');
-insert or replace into ModifierArguments
-	(ModifierId,									Name,		    Value)
-values
-	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'YieldType',	'YIELD_SCIENCE'),
-    ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
---奢侈加金
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
-update Adjacency_YieldChanges set YieldChange = 4 where ID = 'HD_Commercial_Luxury_Gold_Late' ;
+-- insert or replace into CommemorationModifiers
+-- 	(CommemorationType,					ModifierId)
+-- values
+-- 	('COMMEMORATION_SCIENTIFIC',	    'COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE');
+-- insert or replace into Modifiers
+-- 	(ModifierId,									ModifierType,								                OwnerRequirementSetId)
+-- values
+-- 	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_DISTRICT',	'PLAYER_HAS_GOLDEN_AGE');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,									Name,		    Value)
+-- values
+-- 	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'YieldType',	'YIELD_SCIENCE'),
+--     ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
+-- --奢侈加金
+-- update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
+-- update Adjacency_YieldChanges set YieldChange = 4 where ID = 'HD_Commercial_Luxury_Gold_Late' ;
 
--------------------------------------
---刚果
---UA
-insert or replace into TraitModifiers (TraitType, ModifierId) 
-	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType
-	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into TraitModifiers (TraitType, ModifierId) 
-	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType
-	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into TraitModifiers (TraitType, ModifierId) 
-	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType
-	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into TraitModifiers (TraitType, ModifierId) 
-	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType
-	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- -------------------------------------
+-- --刚果
+-- --UA
+-- insert or replace into TraitModifiers (TraitType, ModifierId) 
+-- 	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType
+-- 	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into TraitModifiers (TraitType, ModifierId) 
+-- 	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType
+-- 	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into TraitModifiers (TraitType, ModifierId) 
+-- 	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType
+-- 	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into TraitModifiers (TraitType, ModifierId) 
+-- 	select 'TRAIT_CIVILIZATION_NKISI' , 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType
+-- 	from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-insert or replace into Modifiers(ModifierId,ModifierType)
-    select ModifierId,'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'
-    from TraitModifiers	where ModifierId like '%TRAIT_GREAT_WORK%';
+-- insert or replace into Modifiers(ModifierId,ModifierType)
+--     select ModifierId,'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'
+--     from TraitModifiers	where ModifierId like '%TRAIT_GREAT_WORK%';
 
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'GreatWorkObjectType',GreatWorkObjectType
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldType','YIELD_FAITH'
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldType','YIELD_FOOD'
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldType','YIELD_PRODUCTION'
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldType','YIELD_GOLD'
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldType','YIELD_FAITH'
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldType','YIELD_FOOD'
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldType','YIELD_PRODUCTION'
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldType','YIELD_GOLD'
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
 
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldChange',3
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldChange',3
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldChange',3
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-insert or replace into ModifierArguments(ModifierId,Name,Value)
-    select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldChange',6
-    from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
-update ModifierArguments set Value = 2 where ModifierId like '%GREATWORKOBJECT_WRITING%' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FAITH_' || GreatWorkObjectType,'YieldChange',3
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_FOOD_' || GreatWorkObjectType,'YieldChange',3
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,'YieldChange',3
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- insert or replace into ModifierArguments(ModifierId,Name,Value)
+--     select 'TRAIT_GREAT_WORK_GOLD_' || GreatWorkObjectType,'YieldChange',6
+--     from GreatWorks where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+-- update ModifierArguments set Value = 2 where ModifierId like '%GREATWORKOBJECT_WRITING%' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING' and Name = 'YieldChange';
 
---LA 
-insert or replace into TraitModifiers 
-	(TraitType,						            ModifierId)
-values
-	('TRAIT_LEADER_RELIGIOUS_CONVERT',		    'YT_TRAIT_LEADER_CULTURAL_FAITH');
-insert or replace into Modifiers
-	(ModifierId,									ModifierType,														SubjectRequirementSetId)
-values
-    ('YT_TRAIT_LEADER_CULTURAL_FAITH',	    'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	    'DISTRICT_IS_THEATER');
-insert or replace into ModifierArguments
-	(ModifierId,							        Name,			        Value)
-values
-	('YT_TRAIT_LEADER_CULTURAL_FAITH',		'YieldTypeToMirror',	'YIELD_CULTURE'),
-	('YT_TRAIT_LEADER_CULTURAL_FAITH',		'YieldTypeToGrant',		'YIELD_FAITH');
---UD 
-delete from DistrictModifiers where DistrictType = 'DISTRICT_MBANZA' and ModifierId = 'MBANZA_ADD_ADJACENT_JUNGLE_FOOD';
-delete from DistrictModifiers where DistrictType = 'DISTRICT_MBANZA' and ModifierId = 'MBANZA_ADD_ADJACENT_FOREST_FOOD';
-update Districts set Appeal = 1 where DistrictType = 'DISTRICT_MBANZA' ;
+-- --LA 
+-- insert or replace into TraitModifiers 
+-- 	(TraitType,						            ModifierId)
+-- values
+-- 	('TRAIT_LEADER_RELIGIOUS_CONVERT',		    'YT_TRAIT_LEADER_CULTURAL_FAITH');
+-- insert or replace into Modifiers
+-- 	(ModifierId,									ModifierType,														SubjectRequirementSetId)
+-- values
+--     ('YT_TRAIT_LEADER_CULTURAL_FAITH',	    'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	    'DISTRICT_IS_THEATER');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,							        Name,			        Value)
+-- values
+-- 	('YT_TRAIT_LEADER_CULTURAL_FAITH',		'YieldTypeToMirror',	'YIELD_CULTURE'),
+-- 	('YT_TRAIT_LEADER_CULTURAL_FAITH',		'YieldTypeToGrant',		'YIELD_FAITH');
+-- --UD 
+-- delete from DistrictModifiers where DistrictType = 'DISTRICT_MBANZA' and ModifierId = 'MBANZA_ADD_ADJACENT_JUNGLE_FOOD';
+-- delete from DistrictModifiers where DistrictType = 'DISTRICT_MBANZA' and ModifierId = 'MBANZA_ADD_ADJACENT_FOREST_FOOD';
+-- update Districts set Appeal = 1 where DistrictType = 'DISTRICT_MBANZA' ;
 
-insert or replace into District_Adjacencies
-	(DistrictType,				YieldChangeId)
-values
-	('DISTRICT_THEATER',	    'District_Culture_Mbanza'),
-    ('DISTRICT_COMMERCIAL_HUB',	'District_Gold_Mbanza');
-insert or replace into Adjacency_YieldChanges
-	(ID,								Description,							YieldType,			YieldChange,	TilesRequired,  AdjacentDistrict,			PrereqCivic,	PrereqTech,			ObsoleteCivic,	ObsoleteTech)
-values
-	('District_Culture_Mbanza',		    'LOC_DISTRICT_CULTURE_MBANZA',		    'YIELD_CULTURE',	2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL),
-    ('District_Gold_Mbanza',		    'LOC_DISTRICT_GOLD_MBANZA',				'YIELD_GOLD',	    2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL);
+-- insert or replace into District_Adjacencies
+-- 	(DistrictType,				YieldChangeId)
+-- values
+-- 	('DISTRICT_THEATER',	    'District_Culture_Mbanza'),
+--     ('DISTRICT_COMMERCIAL_HUB',	'District_Gold_Mbanza');
+-- insert or replace into Adjacency_YieldChanges
+-- 	(ID,								Description,							YieldType,			YieldChange,	TilesRequired,  AdjacentDistrict,			PrereqCivic,	PrereqTech,			ObsoleteCivic,	ObsoleteTech)
+-- values
+-- 	('District_Culture_Mbanza',		    'LOC_DISTRICT_CULTURE_MBANZA',		    'YIELD_CULTURE',	2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL),
+--     ('District_Gold_Mbanza',		    'LOC_DISTRICT_GOLD_MBANZA',				'YIELD_GOLD',	    2,				1,	            'DISTRICT_MBANZA',			    NULL,			NULL,				NULL,			NULL);
 
 -------------------------------------
 --     狂野模式 版本V0.2    --
@@ -291,85 +291,85 @@ values
 -- values
 -- 	('YT_CITY_HAS_THEATER',									'REQUIRES_CITY_HAS_DISTRICT_THEATER');
 
--------------------------------------
---维尔纽斯
-delete from TraitModifiers where TraitType = 'MINOR_CIV_VILNIUS_TRAIT';
-insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
-values
-	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS'),
-	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS1'),
-	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS2'),
-	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS3');
-insert or replace into Modifiers	
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_VILNIUS_THEATER_BONUS',								'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS1',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS2',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS3',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS1'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS2'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS3'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'DISTRICT_IS_THEATER');
+-- -------------------------------------
+-- --维尔纽斯
+-- delete from TraitModifiers where TraitType = 'MINOR_CIV_VILNIUS_TRAIT';
+-- insert or replace into TraitModifiers
+-- 	(TraitType,					ModifierId)
+-- values
+-- 	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS'),
+-- 	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS1'),
+-- 	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS2'),
+-- 	('MINOR_CIV_VILNIUS_TRAIT',	'MINOR_CIV_VILNIUS_THEATER_BONUS3');
+-- insert or replace into Modifiers	
+-- 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+-- values
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS',								'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS1',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS2',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS3',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS1'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS2'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'YT_REQUIRE_VILNIUS3'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',		'DISTRICT_IS_THEATER');
 
-insert or replace into	ModifierArguments
-	(ModifierId, 											Name,												Value)
-values
-	('MINOR_CIV_VILNIUS_THEATER_BONUS',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
-    ('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'Amount',											50),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS1',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
-    ('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'Amount',											50),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS2',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
-    ('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'Amount',											50),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS3',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER'),
-	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
-    ('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'Amount',											50);
-insert or replace into RequirementSets
-	(RequirementSetId, 										RequirementSetType)
-values
-	('YT_REQUIRE_VILNIUS1',									'REQUIREMENTSET_TEST_ALL'),
-	('YT_REQUIRE_VILNIUS2',									'REQUIREMENTSET_TEST_ALL'),
-	('YT_REQUIRE_VILNIUS3',									'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into	ModifierArguments
+-- 	(ModifierId, 											Name,												Value)
+-- values
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+--     ('MINOR_CIV_VILNIUS_THEATER_BONUS_MODIFIER',			'Amount',											50),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS1',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+--     ('MINOR_CIV_VILNIUS_THEATER_BONUS1_MODIFIER',			'Amount',											50),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS2',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+--     ('MINOR_CIV_VILNIUS_THEATER_BONUS2_MODIFIER',			'Amount',											50),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS3',						'ModifierId',										'MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER'),
+-- 	('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'YieldType',										'YIELD_CULTURE'),
+--     ('MINOR_CIV_VILNIUS_THEATER_BONUS3_MODIFIER',			'Amount',											50);
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId, 										RequirementSetType)
+-- values
+-- 	('YT_REQUIRE_VILNIUS1',									'REQUIREMENTSET_TEST_ALL'),
+-- 	('YT_REQUIRE_VILNIUS2',									'REQUIREMENTSET_TEST_ALL'),
+-- 	('YT_REQUIRE_VILNIUS3',									'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
-	(RequirementSetId, 										RequirementId)
-values
-	('YT_REQUIRE_VILNIUS1',									'REQUIRES_DISTRICT_IS_THEATER'),
-	('YT_REQUIRE_VILNIUS1',									'REQUIRES_PLAYER_HAS_CIVIC_HUMANISM'),
-	('YT_REQUIRE_VILNIUS2',									'REQUIRES_DISTRICT_IS_THEATER'),
-	('YT_REQUIRE_VILNIUS2',									'REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET'),
-	('YT_REQUIRE_VILNIUS3',									'REQUIRES_DISTRICT_IS_THEATER'),
-	('YT_REQUIRE_VILNIUS3',									'REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE');
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId, 										RequirementId)
+-- values
+-- 	('YT_REQUIRE_VILNIUS1',									'REQUIRES_DISTRICT_IS_THEATER'),
+-- 	('YT_REQUIRE_VILNIUS1',									'REQUIRES_PLAYER_HAS_CIVIC_HUMANISM'),
+-- 	('YT_REQUIRE_VILNIUS2',									'REQUIRES_DISTRICT_IS_THEATER'),
+-- 	('YT_REQUIRE_VILNIUS2',									'REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET'),
+-- 	('YT_REQUIRE_VILNIUS3',									'REQUIRES_DISTRICT_IS_THEATER'),
+-- 	('YT_REQUIRE_VILNIUS3',									'REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE');
 
-insert or ignore into Requirements
-    (RequirementId,                                         RequirementType)
-values 
-    ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'REQUIREMENT_PLAYER_HAS_CIVIC'),
-    ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'REQUIREMENT_PLAYER_HAS_CIVIC'),
-    ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'REQUIREMENT_PLAYER_HAS_CIVIC');
+-- insert or ignore into Requirements
+--     (RequirementId,                                         RequirementType)
+-- values 
+--     ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'REQUIREMENT_PLAYER_HAS_CIVIC'),
+--     ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'REQUIREMENT_PLAYER_HAS_CIVIC'),
+--     ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'REQUIREMENT_PLAYER_HAS_CIVIC');
 
-insert or ignore into RequirementArguments
-    (RequirementId,                                         Name,                   Value)
-values 
-    ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'CivicType',      		'CIVIC_HUMANISM'),
-    ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'CivicType',      		'CIVIC_OPERA_BALLET'), 
-    ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'CivicType',         	'CIVIC_CULTURAL_HERITAGE');
+-- insert or ignore into RequirementArguments
+--     (RequirementId,                                         Name,                   Value)
+-- values 
+--     ('REQUIRES_PLAYER_HAS_CIVIC_HUMANISM',                  'CivicType',      		'CIVIC_HUMANISM'),
+--     ('REQUIRES_PLAYER_HAS_CIVIC_OPERA_BALLET',              'CivicType',      		'CIVIC_OPERA_BALLET'), 
+--     ('REQUIRES_PLAYER_HAS_CIVIC_CULTURAL_HERITAGE',         'CivicType',         	'CIVIC_CULTURAL_HERITAGE');
 
 
--------------------------------------
---梵蒂冈x
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_FAITH_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_CULTURE_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_FAITH_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_CULTURE_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_FAITH_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1' and Name = 'YieldChange';
+-- -------------------------------------
+-- --梵蒂冈x
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_CULTURE_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_SCULPTURE_FAITH_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_CULTURE_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_LANDSCAPE_FAITH_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_CULTURE_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_PORTRAIT_FAITH_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_CULTURE_BONUS1' and Name = 'YieldChange';
+-- update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CITY_RELIGIOUS_FAITH_BONUS1' and Name = 'YieldChange';
 
 -------------------------------------
 --纳斯卡
@@ -383,15 +383,15 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_VATICAN_CIT
 
 ---------------------------------------
 --市场
-update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_MARKET' ;
-update Buildings set Cost = 90 where BuildingType = 'BUILDING_MARKET';
+-- update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_MARKET' ;
+-- update Buildings set Cost = 100 where BuildingType = 'BUILDING_MARKET';
 
----------------------------------------
---大小庙
-update Building_YieldChanges set YieldChange = 4 where BuildingType = 'BUILDING_SHRINE';
-update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_TEMPLE';
-update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_STAVE_CHURCH';
-update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_PRASAT';
+-- ---------------------------------------
+-- --大小庙
+-- update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_SHRINE';
+-- update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE';
+-- update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_STAVE_CHURCH';
+-- update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_PRASAT';
 
 ---------------------------------------
 --宗社
