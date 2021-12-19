@@ -41,7 +41,9 @@ values
                                                  8be477ae-8642-462d-bcad-768fda353127,
                                                  01159f41-7ca0-4181-84cf-2f2c912edfdd,
                                                  72950284-90dc-424d-ba04-4a1d8de2b336,
-                                                 ccd2f70b-2257-400f-bc59-9e1919f37473"),
+                                                 ccd2f70b-2257-400f-bc59-9e1919f37473,
+                                                 63c4a8ac-9ada-4b2d-927a-2a99527980e2,
+                                                 23879c66-7cbb-4320-a891-ad24026f1b6b"),
                                                 -- b5776b4b-93b1-409c-acee-09f829856eed,
     ("LOC_WONDERS_MODS_NAME",                   "World Wonders"),
     ("LOC_WONDERS_MODS_LIST",                   "5a5601c5-090c-4172-89fe-8f1da9e2b96d,
@@ -142,7 +144,13 @@ values
                                                  16c2195a-13af-4032-920c-8de1d6858c6f,
                                                  05eb2603-db5a-4cf5-ae5f-50c40cf2ff0f,
                                                  fda41661-187f-4079-9546-9c88b6de0b1d"),
-    ("LOC_FF16_NUMOF_CUSTOM_FILTERS",           "8"),
+    ("LOC_HD_NON_COMPATIBLE_MODS_NAME",         "HD Known [COLOR_Red]NOT Compatible[ENDCOLOR]"),
+    ("LOC_HD_NON_COMPATIBLE_MODS_LIST",         "4a03cf08-f557-490c-a095-04907f251915,
+                                                 aa162e00-b301-425f-8666-af258a8f16e8,
+                                                 ceebba6a-2185-4b6d-80cf-a24fdf803cb7,
+                                                 632a4fa1-e907-4426-815b-8424aeb81bb0,
+                                                 97ff0be1-268e-4acc-adda-5c2a820b6521"),
+    ("LOC_FF16_NUMOF_CUSTOM_FILTERS",           "9"),
     ("LOC_FF16_CUSTOM_FILTER_1",                "{LOC_HD_CORE_MODS_NAME};{LOC_HD_CORE_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_2",                "{LOC_HD_RECOMMENDED_MODS_NAME};{LOC_HD_RECOMMENDED_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_3",                "{LOC_WONDERS_MODS_NAME};{LOC_WONDERS_MODS_LIST}"),
@@ -150,18 +158,20 @@ values
     ("LOC_FF16_CUSTOM_FILTER_5",                "{LOC_HD_UI_MODS_NAME};{LOC_HD_UI_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_6",                "{LOC_HD_FULL_MODS_NAME};{LOC_HD_FULL_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_7",                "{LOC_HD_COMPATIBLE_MODS_NAME};{LOC_HD_COMPATIBLE_MODS_LIST}"),
-    ("LOC_FF16_CUSTOM_FILTER_8",                "{LOC_OFFICIAL_SCENARIO_NAME};{LOC_OFFICIAL_SCENARIO_LIST}");
+    ("LOC_FF16_CUSTOM_FILTER_8",                "{LOC_HD_NON_COMPATIBLE_MODS_NAME};{LOC_HD_NON_COMPATIBLE_MODS_LIST}"),
+    ("LOC_FF16_CUSTOM_FILTER_9",                "{LOC_OFFICIAL_SCENARIO_NAME};{LOC_OFFICIAL_SCENARIO_LIST}");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
-    (Language,      Tag,                            Text)
+    (Language,      Tag,                                Text)
 values
-    ("zh_Hans_CN",  "LOC_OFFICIAL_SCENARIO_NAME",   "官方情景包（可禁用）"),
-    ("zh_Hans_CN",  "LOC_HD_CORE_MODS_NAME",        "和而不同核心"),
-    ("zh_Hans_CN",  "LOC_HD_RECOMMENDED_MODS_NAME", "和而不同推荐"),
-    ("zh_Hans_CN",  "LOC_WONDERS_MODS_NAME",        "世界奇观模组"),
-    ("zh_Hans_CN",  "LOC_NATURAL_WONDERS_MODS_NAME","自然奇观模组"),
-    ("zh_Hans_CN",  "LOC_HD_UI_MODS_NAME",          "界面优化模组"),
-    ("zh_Hans_CN",  "LOC_HD_FULL_MODS_NAME",        "和而不同全集"),
-    ("zh_Hans_CN",  "LOC_HD_COMPATIBLE_MODS_NAME",  "和而不同已知兼容");
+    ("zh_Hans_CN",  "LOC_OFFICIAL_SCENARIO_NAME",       "官方情景包（可禁用）"),
+    ("zh_Hans_CN",  "LOC_HD_CORE_MODS_NAME",            "和而不同核心"),
+    ("zh_Hans_CN",  "LOC_HD_RECOMMENDED_MODS_NAME",     "和而不同推荐"),
+    ("zh_Hans_CN",  "LOC_WONDERS_MODS_NAME",            "世界奇观模组"),
+    ("zh_Hans_CN",  "LOC_NATURAL_WONDERS_MODS_NAME",    "自然奇观模组"),
+    ("zh_Hans_CN",  "LOC_HD_UI_MODS_NAME",              "界面优化模组"),
+    ("zh_Hans_CN",  "LOC_HD_FULL_MODS_NAME",            "和而不同全集"),
+    ("zh_Hans_CN",  "LOC_HD_COMPATIBLE_MODS_NAME",      "和而不同已知兼容"),
+    ("zh_Hans_CN",  "LOC_HD_NON_COMPATIBLE_MODS_NAME",  "和而不同[COLOR_Red]已知不兼容[ENDCOLOR]");
