@@ -130,11 +130,11 @@ update Technologies set UITreeRow = 0, Cost = 1250 where TechnologyType = 'TECH_
 update Technologies set UITreeRow = 0, Cost = 1370 where TechnologyType = 'TECH_REFINING';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_COMBUSTION';
 update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_ADVANCED_FLIGHT';
-update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ROCKETRY';
+update Technologies set UITreeRow = -1, Cost = 1660 where TechnologyType = 'TECH_ROCKETRY';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_ADVANCED_BALLISTICS';
 update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_COMBINED_ARMS';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_PLASTICS';
-update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_COMPUTERS';
+update Technologies set UITreeRow = -1, Cost = 1480 where TechnologyType = 'TECH_COMPUTERS';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_NUCLEAR_FISSION';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_SYNTHETIC_MATERIALS';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_TELECOMMUNICATIONS';
@@ -252,25 +252,26 @@ values
     ('TECH_RADIO',                  'TECH_ELECTRICITY'),
     ('TECH_REFINING',               'TECH_CHEMISTRY'),
     ('TECH_REFINING',               'TECH_ELECTRICITY'),
-    -- ('TECH_REFINING',  'TECH_ECONOMICS'),
+    ('TECH_REFINING',               'TECH_BIOLOGY_HD'),
     ('TECH_BIOLOGY_HD',             'TECH_SANITATION'),
+    -- ('TECH_COMBUSTION',             'TECH_CHEMISTRY'),
     ('TECH_COMBUSTION',             'TECH_BIOLOGY_HD'),
-    ('TECH_COMBUSTION',             'TECH_CHEMISTRY'),
     ('TECH_COMBUSTION',             'TECH_STEEL'),
     --  Atomic  -----------------------------------------------------------
     ('TECH_ADVANCED_FLIGHT',        'TECH_RADIO'),
-    ('TECH_ROCKETRY',               'TECH_RADIO'),
-    ('TECH_ROCKETRY',               'TECH_REFINING'),
-    ('TECH_ROCKETRY',               'TECH_ELECTRICITY'),
+    ('TECH_COMPUTERS',              'TECH_RADIO'),
+    ('TECH_COMPUTERS',              'TECH_REFINING'),
+    ('TECH_COMPUTERS',              'TECH_ELECTRICITY'),
     ('TECH_ADVANCED_BALLISTICS',    'TECH_COMBUSTION'),
     ('TECH_COMBINED_ARMS',          'TECH_STEEL'),
     ('TECH_PLASTICS',               'TECH_REPLACEABLE_PARTS'),
-    ('TECH_COMPUTERS',              'TECH_RADIO'),
+    ('TECH_ROCKETRY',               'TECH_COMPUTERS'),
+    ('TECH_ROCKETRY',               'TECH_ADVANCED_FLIGHT'),
     ('TECH_NUCLEAR_FISSION',        'TECH_ADVANCED_BALLISTICS'),
     ('TECH_NUCLEAR_FISSION',        'TECH_COMBINED_ARMS'),
     ('TECH_SYNTHETIC_MATERIALS',    'TECH_PLASTICS'),
     --  Infor  ------------------------------------------------------------
-    ('TECH_TELECOMMUNICATIONS',     'TECH_COMPUTERS'),
+    ('TECH_TELECOMMUNICATIONS',     'TECH_ADVANCED_FLIGHT'),
     ('TECH_SATELLITES',             'TECH_ADVANCED_FLIGHT'),
     ('TECH_SATELLITES',             'TECH_ROCKETRY'),
     ('TECH_GUIDANCE_SYSTEMS',       'TECH_ROCKETRY'),
@@ -278,7 +279,7 @@ values
     ('TECH_LASERS',                 'TECH_NUCLEAR_FISSION'),
     ('TECH_COMPOSITES',             'TECH_SYNTHETIC_MATERIALS'),
     ('TECH_STEALTH_TECHNOLOGY',     'TECH_SYNTHETIC_MATERIALS'),
-    ('TECH_ROBOTICS',               'TECH_COMPUTERS'),
+    -- ('TECH_ROBOTICS',               'TECH_COMPUTERS'),
     ('TECH_ROBOTICS',               'TECH_SATELLITES'),
     ('TECH_ROBOTICS',               'TECH_GUIDANCE_SYSTEMS'),
     ('TECH_ROBOTICS',               'TECH_LASERS'),
@@ -349,7 +350,8 @@ values
 	('TECH_TELECOMMUNICATIONS',					'TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST'),
 	('TECH_TELECOMMUNICATIONS',					'TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST'),
 	('TECH_STEAM_POWER',						'TRAIT_WATER_TRADE_ROUTE_RANGE'),
-    ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE_ATTACH');
+    ('TECH_ASTRONOMY',                          'ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE'),
+    ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType)
@@ -361,8 +363,10 @@ values
 	('TECH_TELECOMMUNICATIONS_MUSIC_YIELD_BOOST',					'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM'),
 	('TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM'),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE_ATTACH',                    'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                           'MODIFIER_BUILDING_YIELD_CHANGE');
+    ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',                  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
+    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                           'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE');
+
+update Modifiers set SubjectRequirementSetId = 'IS_CAMPUS_ADJACENT_TO_MOUNTAIN_REQUIREMENTS';
 
 insert or replace into ModifierArguments
 	(ModifierId,												Name,						Value)
@@ -381,7 +385,8 @@ values
 	('TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST',			'ScalingFactor',			150),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'GreatWorkObjectType',		'GREATWORKOBJECT_ARTIFACT'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',			'ScalingFactor',			150),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE_ATTACH',                'ModifierId',               'TECH_CALENDAR_HD_MONUMENT_CULTURE'),
+    ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',              'YieldType',                'YIELD_SCIENCE'),
+    ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',              'Amount',                   3),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
