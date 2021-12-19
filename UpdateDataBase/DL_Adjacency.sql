@@ -187,7 +187,8 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
 
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
+-- Resumed v1.1.6
+-- update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentRiver,
