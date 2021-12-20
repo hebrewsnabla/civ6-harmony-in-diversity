@@ -1201,8 +1201,8 @@ update Policies set PrereqCivic = 'CIVIC_MOBILIZATION' where PolicyType = 'POLIC
 	-- 政策卡修改：【常春藤联盟】改为【资本主义】市政解锁
 update Policies set PrereqCivic = 'CIVIC_CAPITALISM' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
 
-	-- 政策卡修改：【采风】改为【文学传统】市政解锁
-update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType = 'POLICY_LITERARY_TRADITION';
+-- 	-- 政策卡修改：【采风】改为【文学传统】市政解锁
+-- update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType = 'POLICY_LITERARY_TRADITION';
 
 	-- 政策卡修改：【教育学】改为【社会科学】市政解锁
 update Policies set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where PolicyType = 'POLICY_GRAND_OPERA';
@@ -1216,8 +1216,8 @@ update Policies set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where PolicyT
 	-- 政策卡修改：【国家认同】改为【伦理学】市政解锁
 update Policies set PrereqCivic = 'CIVIC_ETHICS_HD' where PolicyType = 'POLICY_NATIONAL_IDENTITY';
 
-	-- 政策卡修改：【美学】改为【科举制】市政解锁
-update Policies set PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD' where PolicyType = 'POLICY_AESTHETICS';
+	-- 政策卡修改：【美学】改为【文学传统】市政解锁
+update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType = 'POLICY_AESTHETICS';
 
 	-- 政策卡修改：【后勤】改为【后请补给】市政解锁
 update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = 'POLICY_LOGISTICS';

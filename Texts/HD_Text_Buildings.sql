@@ -27,7 +27,7 @@ values
     ("LOC_BUILDING_SEWER_DESCRIPTION",                            "+10% Growth rate in this city."),
     -- Campus
     ("LOC_BUILDING_LIBRARY_DESCRIPTION",                          "After Paper Making is researched, [ICON_Citizen] Citizens in this city provide +0.3 [ICON_SCIENCE] Science."),
-    ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "+1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
+    ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "+1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. +5% [ICON_SCIENCE] Science in this city after completing Scientific Theory."),
     ("LOC_BUILDING_MADRASA_DESCRIPTION",                          "A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
     ("LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. +1 [ICON_SCIENCE] Science to all adjacent Rainforest tiles. Campus districts get standard adjacency bonus from Rainforests. "), -- +5% [ICON_SCIENCE] Science in this city. 
     ("LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "+5% [ICON_SCIENCE] Science in this city. +10% [ICON_SCIENCE] Science if this city is fully powered. "),
@@ -145,7 +145,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。"),
     -- 学院
     ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                          "研究造纸术科技后，城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
+    ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。研究“科学理论”后本城 [ICON_SCIENCE] 科技值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。相邻学院的雨林+1 [ICON_SCIENCE] 科技值；本城的学院获得雨林的标准相邻加成。"), -- 本城 [ICON_SCIENCE] 科技值+5%。
     ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。"),
