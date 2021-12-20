@@ -151,8 +151,6 @@ update Buildings set CitizenSlots = 1 where
 	-- or BuildingType = 'BUILDING_CONSULATE'
 ;
 
--- update Buildings set Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD' where BuildingType = 'BUILDING_FERRIS_WHEEL';
-
 -- Unlock
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
@@ -1520,11 +1518,6 @@ values
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'REQUIRES_DISTRICT_IS_ENTERTAINMENT_COMPLEX');
 
-insert or replace into Improvement_Tourism
-	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
-values
-	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
-
 -- 水族馆 by xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_SEARESOURCE_SCIENCE';
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_REEF_SCIENCE';
@@ -1681,3 +1674,12 @@ values
 	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_XHH',							'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
 	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH',				'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
 	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH',				'HD_REQUIRES_PLAYER_HAS_TECH_CHEMISTRY');
+
+--by yt
+--市场调整 
+update Buildings set Cost = 100 where BuildingType = 'BUILDING_MARKET';
+--大小庙
+update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_SHRINE';
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE';
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_PRASAT';

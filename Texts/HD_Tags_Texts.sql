@@ -16,6 +16,7 @@ update Technologies set Description = 'LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION' w
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 -- update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';
 update Technologies set Description = 'LOC_TECH_CASTLES_HD_DESCRIPTION' where TechnologyType = 'TECH_CASTLES';
+update Technologies set Description = 'LOC_TECH_ASTRONOMY_HD_DESCRIPTION' where TechnologyType = 'TECH_ASTRONOMY';
 -- update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = 'LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION' where TechnologyType ='TECH_SQUARE_RIGGING';
 update Technologies set Description = 'LOC_TECH_STEAM_POWER_HD_DESCRIPTION' where TechnologyType = 'TECH_STEAM_POWER';
@@ -74,7 +75,7 @@ update Buildings set Description = 'LOC_BUILDING_STUPA_DL_DESCRIPTION' where Bui
 update Buildings set Description = 'LOC_BUILDING_DAR_E_MEHR_DL_DESCRIPTION' where BuildingType = 'BUILDING_DAR_E_MEHR';
 update Buildings set Description = 'LOC_BUILDING_PAGODA_DL_DESCRIPTION' where BuildingType = 'BUILDING_PAGODA';
 
-update Buildings set Description = NULL where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Description = 'LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD' where BuildingType = 'BUILDING_FERRIS_WHEEL';
 update Buildings set Description = 'LOC_BUILDING_AQUARIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUARIUM';
 update Buildings set Description = 'LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION' where BuildingType = 'BUILDING_AQUATICS_CENTER';
 update Buildings set Description = 'LOC_BUILDING_STADIUM_DL_DESCRIPTION' where BuildingType = 'BUILDING_STADIUM';

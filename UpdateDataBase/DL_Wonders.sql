@@ -9,6 +9,24 @@
 -- 	ModifierId = 'POTALA_PALACE_DIPLOMATIC_GOVERNMENT_SLOT' or
 -- 	ModifierId = 'FORBIDDEN_CITY_WILDCARD_GOVERNMENT_SLOT';
 
+-- Alhambra
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_ALHAMBRA',			'ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,											SubjectRequirementSetId)
+values
+	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH',		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_ENCAMPMENT'),
+	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS',			'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		Null);
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH',		'ModifierId',	'ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS'),
+	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS',			'Amount',		2);
+
 -- Oracle gives 3 * 2 great person points each.
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATADMIRALPOINTS' and Name = 'Amount';

@@ -27,8 +27,7 @@ update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_H
 
 -- update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MINE';
 
-update Improvements set PrereqTech = 'TECH_BRONZE_WORKING'
-	where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
+update Improvements set PrereqTech = 'TECH_MINING' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 -- -- change the unlock condition.
 update Improvement_ValidFeatures set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUILDS'
@@ -141,3 +140,8 @@ insert or replace into Improvement_YieldChanges
 	(ImprovementType,		YieldType,		YieldChange)
 values
 	('IMPROVEMENT_PASTURE',	'YIELD_GOLD',	0);
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
+values
+	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);

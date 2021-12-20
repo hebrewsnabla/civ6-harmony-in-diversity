@@ -5,6 +5,7 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
     ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. After Calendar is researched, [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5."),
@@ -46,7 +47,8 @@ values
     -- Holy Site
     ("LOC_BUILDING_SHRINE_DESCRIPTION",                           "Allows the purchasing of Builders using [ICON_Faith] Faith. Allows the purchasing of Missionaries (can only be purchased with [ICON_Faith] Faith)."),
     ("LOC_BUILDING_TEMPLE_DESCRIPTION",                           "Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). +5% [ICON_Faith] Faith in this city. "),
-    ("LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "A building unique to Khmer. +6 [ICON_FAITH] Faith. Replaces the Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). [ICON_CITIZEN] Citizens in this is provide +0.5 [ICON_Culture] Culture. Once Flight is researched, receive +10 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher, and +20 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher. +5% [ICON_Faith] Faith in this city."),
+    -- ("LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "A building unique to Khmer. +6 [ICON_FAITH] Faith. Replaces the Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). [ICON_CITIZEN] Citizens in this is provide +0.5 [ICON_Culture] Culture. Once Flight is researched, receive +10 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher, and +20 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher. +5% [ICON_Faith] Faith in this city."),
+    ("LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "A building unique to Khmer. +8 [ICON_FAITH] Faith. Replaces the Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). [ICON_CITIZEN] Citizens in this is provide +0.5 [ICON_Culture] Culture. Once Flight is researched, receive +10 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher, and +20 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher. +5% [ICON_Faith] Faith in this city."),
     ("LOC_BUILDING_STAVE_CHURCH_DESCRIPTION",                     "A building unique to Norway. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). Holy Site districts get an additional standard adjacency bonus from Woods. +1 [ICON_PRODUCTION] Production to each coastal Resource tile in this city. +5% [ICON_Faith] Faith in this city."), --+1 [ICON_TradeRoute] Trade Route capacity. 
     ("LOC_BUILDING_MOSQUE_DL_DESCRIPTION",                        "Missionary and Apostles created here have +1 spread. All Religious units created in this city receive +3 [ICON_Strength] Combat Strength in religious combats."),
     ("LOC_BUILDING_PAGODA_DL_DESCRIPTION",                        "+10% [ICON_CULTURE] Culture in this city."),
@@ -99,7 +101,7 @@ values
     ("LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from Camps and Pastures with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any Camp or Pasture with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     ("LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "+2 [ICON_FAITH] Faith, +2 [ICON_CULTURE] Culture from Geothermal fissures in this city. After Chemistry is researched, +2 [ICON_SCIENCE] Science additionally.[NEWLINE]+2 extra [ICON_AMENITIES] Amenity and +5 [ICON_TOURISM] Tourism if this city has any Geothermal fissure."),
     -- Water Entertainment Complex
-    --("LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] Tourism."),
+    ("LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] Tourism."),
     ("LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "+2 [ICON_Tourism] Tourism for each Wonder built in this city on or adjacent to a Coast tile."),
     ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science from marine features or Fishing Boats with resources in this city.[NEWLINE]After Biology is researched, +5 [ICON_TOURISM] Tourism if this city has any marine feature or Fishing Boat with resources. +10 [ICON_TOURISM] Tourism if this city has both."),
     -- Aerodrome
@@ -121,6 +123,7 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
+    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
@@ -162,7 +165,8 @@ values
     -- 圣地
     ("zh_Hans_CN",  "LOC_BUILDING_SHRINE_DESCRIPTION",                           "允许使用 [ICON_Faith] 信仰值购买建造者。允许购买传教士（只能使用 [ICON_Faith] 信仰值进行购买）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLE_DESCRIPTION",                           "允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。本城的 [ICON_Faith] 信仰值+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "+6 [ICON_FAITH] 信仰值。高棉特色建筑。替代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。研究完“飞行”之后，如城市拥有10点或以上的 [ICON_CITIZEN] 人口，则+10 [ICON_Tourism] 旅游业绩；如城市拥有20点或以上的 [ICON_CITIZEN] 人口，则+20 [ICON_Tourism] 旅游业绩。本城的 [ICON_Faith] 信仰值+5%。"),
+    -- ("zh_Hans_CN",  "LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "+6 [ICON_FAITH] 信仰值。高棉特色建筑。替代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。研究完“飞行”之后，如城市拥有10点或以上的 [ICON_CITIZEN] 人口，则+10 [ICON_Tourism] 旅游业绩；如城市拥有20点或以上的 [ICON_CITIZEN] 人口，则+20 [ICON_Tourism] 旅游业绩。本城的 [ICON_Faith] 信仰值+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "+8 [ICON_FAITH] 信仰值。高棉特色建筑。替代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。研究完“飞行”之后，如城市拥有10点或以上的 [ICON_CITIZEN] 人口，则+10 [ICON_Tourism] 旅游业绩；如城市拥有20点或以上的 [ICON_CITIZEN] 人口，则+20 [ICON_Tourism] 旅游业绩。本城的 [ICON_Faith] 信仰值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STAVE_CHURCH_DESCRIPTION",                     "挪威特色建筑。取代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。圣地可从树林获得额外的标准相邻加成。城市中每个海岸资源单元格+1 [ICON_PRODUCTION] 生产力。本城的 [ICON_Faith] 信仰值+5%。"), --+1 [ICON_TradeRoute] 贸易路线容量。
     ("zh_Hans_CN",  "LOC_BUILDING_MOSQUE_DL_DESCRIPTION",                        "此处创建的传教士和使徒+1传教次数。所有从本城创建的宗教单位在宗教战争中+3力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PAGODA_DL_DESCRIPTION",                        "本城+10% [ICON_CULTURE] 文化值。"),
@@ -215,7 +219,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_ZOO_EXPANSION1_DESCRIPTION",                   "研究“生物”科技后，此城中改良资源的营地和牧场+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_CULTURE] 文化值。[NEWLINE]研究生物科技后，如果此城中有改良资源的营地或牧场，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THERMAL_BATH_DESCRIPTION",                     "此城中地热裂缝+2 [ICON_FAITH] 信仰值，+2 [ICON_CULTURE] 文化值；研究“化学”科技后，额外获得+2 [ICON_SCIENCE] 科技值。[NEWLINE]如果此城拥有地热裂缝，则提供+2额外 [ICON_AMENITIES] 宜居度，并提供5点 [ICON_TOURISM] 旅游业绩。"),
     -- 水上娱乐
-    --("zh_Hans_CN",  "LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FERRIS_WHEEL_DESCRIPTION_HD",                  "+3 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUATICS_CENTER_DL_DESCRIPTION",               "此城中建在海岸单元格之上或周围的每座奇观+2 [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究“生物”科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+1 [ICON_SCIENCE] 科技值。[NEWLINE]研究生物科技后，如果此城中有海洋地貌或改良资源的渔船，则提供5点 [ICON_TOURISM] 旅游业绩；如果同时拥有，则提供10点 [ICON_TOURISM] 旅游业绩。"),
     -- 航空港

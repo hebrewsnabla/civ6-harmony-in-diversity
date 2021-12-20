@@ -458,3 +458,6 @@ values
     ('POLAND_FORT_ADJACENT_PRODUCTION',                        'Amount',           1),
     ('POLAND_FORT_ADJACENT_CULTURE',                           'YieldType',        'YIELD_CULTURE'),
     ('POLAND_FORT_ADJACENT_CULTURE',                           'Amount',           1);
+
+--by YT
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_SUKIENNICE';

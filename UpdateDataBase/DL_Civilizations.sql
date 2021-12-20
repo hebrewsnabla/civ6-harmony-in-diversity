@@ -215,6 +215,120 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'AbilityType',	'ABILITY_KONGO_IGNORE_WOODS');
 
+-- GreatWorks Yield
+delete from TraitModifiers where ModifierId like 'TRAIT_GREAT_WORK_%' and TraitType = 'TRAIT_CIVILIZATION_NKISI';
+
+insert or replace into TraitModifiers
+	(TraitType,				 			ModifierId) 
+select
+	'TRAIT_CIVILIZATION_NKISI' , 		'TRAIT_NKISI_GREAT_WORK_FOOD_' || GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into TraitModifiers
+	(TraitType,				 			ModifierId) 
+select
+	'TRAIT_CIVILIZATION_NKISI' , 		'TRAIT_NKISI_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into TraitModifiers
+	(TraitType,				 			ModifierId) 
+select
+	'TRAIT_CIVILIZATION_NKISI' , 		'TRAIT_NKISI_GREAT_WORK_GOLD_' || GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into TraitModifiers
+	(TraitType,				 			ModifierId) 
+select
+	'TRAIT_CIVILIZATION_NKISI' , 		'TRAIT_NKISI_GREAT_WORK_FAITH_' || GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into Modifiers
+	(ModifierId,						ModifierType) 
+select
+	ModifierId,							'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD'
+from TraitModifiers	where ModifierId like 'TRAIT_NKISI_GREAT_WORK_%';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FOOD_' || GreatWorkObjectType,			'GreatWorkObjectType',	GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,	'GreatWorkObjectType',	GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_GOLD_' || GreatWorkObjectType,			'GreatWorkObjectType',	GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FAITH_' || GreatWorkObjectType,			'GreatWorkObjectType',	GreatWorkObjectType
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FOOD_' || GreatWorkObjectType,			'YieldType',			'YIELD_FOOD'
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,	'YieldType',			'YIELD_PRODUCTION'
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_GOLD_' || GreatWorkObjectType,			'YieldType',			'YIELD_GOLD'
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FAITH_' || GreatWorkObjectType,			'YieldType',			'YIELD_FAITH'
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FOOD_' || GreatWorkObjectType,			'YieldChange',			3
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT' and GreatWorkObjectType != 'GREATWORKOBJECT_WRITING';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_PRODUCTION_' || GreatWorkObjectType,	'YieldChange',			3
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT' and GreatWorkObjectType != 'GREATWORKOBJECT_WRITING';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_GOLD_' || GreatWorkObjectType,			'YieldChange',			6
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT' and GreatWorkObjectType != 'GREATWORKOBJECT_WRITING';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'TRAIT_NKISI_GREAT_WORK_FAITH_' || GreatWorkObjectType,			'YieldChange',			3
+from GreatWorkObjectTypes where GreatWorkObjectType != 'GREATWORKOBJECT_PRODUCT' and GreatWorkObjectType != 'GREATWORKOBJECT_WRITING';
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+values
+	('TRAIT_NKISI_GREAT_WORK_FOOD_GREATWORKOBJECT_WRITING',			'YieldChange',			2),
+	('TRAIT_NKISI_GREAT_WORK_PRODUCTION_GREATWORKOBJECT_WRITING',	'YieldChange',			2),
+	('TRAIT_NKISI_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING',			'YieldChange',			3),
+	('TRAIT_NKISI_GREAT_WORK_FAITH_GREATWORKOBJECT_WRITING',		'YieldChange',			2);
+
+-- GPP Double
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_DOUBLE_WRITER_POINTS');
 update ModifierArguments set Value = 100 where

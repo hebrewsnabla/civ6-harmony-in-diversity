@@ -2,64 +2,14 @@
 -- Resourceful 2 by xhh --
 --------------------------
 
--- Delete
-delete from Types where Type = 'RESOURCE_MAPLE';
-delete from Types where Type = 'RESOURCE_CORAL';
-delete from Types where Type = 'RESOURCE_CAVIAR';
-delete from Types where Type = 'RESOURCE_SORGHUM';
-delete from Types where Type = 'RESOURCE_SEASHELLS';
-delete from Types where Type = 'RESOURCE_OXEN';
-delete from Types where Type = 'RESOURCE_MACKEREL';
-delete from Types where Type = 'RESOURCE_ALGAE';
-delete from Types where Type = 'RESOURCE_GOLD2';
-
-delete from Resource_YieldChanges where ResourceType = 'RESOURCE_WOLF' or ResourceType = 'RESOURCE_TRAVERTINE' or ResourceType = 'RESOURCE_TOXINS' 
-	or ResourceType = 'RESOURCE_TIGER' or ResourceType = 'RESOURCE_STRAWBERRY' or ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' 
-	or ResourceType = 'RESOURCE_SANDALWOOD' or ResourceType = 'RESOURCE_SAKURA' or ResourceType = 'RESOURCE_SAFFRON' or ResourceType = 'RESOURCE_RUBY' 
-	or ResourceType = 'RESOURCE_POPPIES' or ResourceType = 'RESOURCE_PLATINUM' or ResourceType = 'RESOURCE_ORCA' or ResourceType = 'RESOURCE_LION' 
-	or ResourceType = 'RESOURCE_LAPIS' or ResourceType = 'RESOURCE_EBONY' or ResourceType = 'RESOURCE_CASHMERE' or ResourceType = 'RESOURCE_BAMBOO' 
-	or ResourceType = 'RESOURCE_ALABASTER' or ResourceType = 'RESOURCE_TOMATO' or ResourceType = 'RESOURCE_TIN' or ResourceType = 'RESOURCE_SALMON' 
-	or ResourceType = 'RESOURCE_RUBBER' or ResourceType = 'RESOURCE_QUARTZ' or ResourceType = 'RESOURCE_PINE' or ResourceType = 'RESOURCE_OAK' 
-	or ResourceType = 'RESOURCE_MUSSELS' or ResourceType = 'RESOURCE_MUSHROOMS' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_LIMESTONE' 
-	or ResourceType = 'RESOURCE_LEAD' or ResourceType = 'RESOURCE_HAM' or ResourceType = 'RESOURCE_GRANITE' or ResourceType = 'RESOURCE_DATES' 
-	or ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_BERRIES' or ResourceType = 'RESOURCE_BARLEY' or ResourceType = 'RESOURCE_ALOE';
-delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_WOLF' or ResourceType = 'RESOURCE_TRAVERTINE' or ResourceType = 'RESOURCE_TOXINS' 
-	or ResourceType = 'RESOURCE_TIGER' or ResourceType = 'RESOURCE_STRAWBERRY' or ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' 
-	or ResourceType = 'RESOURCE_SANDALWOOD' or ResourceType = 'RESOURCE_SAKURA' or ResourceType = 'RESOURCE_SAFFRON' or ResourceType = 'RESOURCE_RUBY' 
-	or ResourceType = 'RESOURCE_POPPIES' or ResourceType = 'RESOURCE_PLATINUM' or ResourceType = 'RESOURCE_ORCA' or ResourceType = 'RESOURCE_LION' 
-	or ResourceType = 'RESOURCE_LAPIS' or ResourceType = 'RESOURCE_EBONY' or ResourceType = 'RESOURCE_CASHMERE' or ResourceType = 'RESOURCE_BAMBOO' 
-	or ResourceType = 'RESOURCE_ALABASTER' or ResourceType = 'RESOURCE_TOMATO' or ResourceType = 'RESOURCE_TIN' or ResourceType = 'RESOURCE_SALMON' 
-	or ResourceType = 'RESOURCE_RUBBER' or ResourceType = 'RESOURCE_QUARTZ' or ResourceType = 'RESOURCE_PINE' or ResourceType = 'RESOURCE_OAK' 
-	or ResourceType = 'RESOURCE_MUSSELS' or ResourceType = 'RESOURCE_MUSHROOMS' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_LIMESTONE' 
-	or ResourceType = 'RESOURCE_LEAD' or ResourceType = 'RESOURCE_HAM' or ResourceType = 'RESOURCE_GRANITE' or ResourceType = 'RESOURCE_DATES' 
-	or ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_BERRIES' or ResourceType = 'RESOURCE_BARLEY' or ResourceType = 'RESOURCE_ALOE';
-delete from Resource_ValidFeatures where ResourceType = 'RESOURCE_WOLF' or ResourceType = 'RESOURCE_TRAVERTINE' or ResourceType = 'RESOURCE_TOXINS' 
-	or ResourceType = 'RESOURCE_TIGER' or ResourceType = 'RESOURCE_STRAWBERRY' or ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' 
-	or ResourceType = 'RESOURCE_SANDALWOOD' or ResourceType = 'RESOURCE_SAKURA' or ResourceType = 'RESOURCE_SAFFRON' or ResourceType = 'RESOURCE_RUBY' 
-	or ResourceType = 'RESOURCE_POPPIES' or ResourceType = 'RESOURCE_PLATINUM' or ResourceType = 'RESOURCE_ORCA' or ResourceType = 'RESOURCE_LION' 
-	or ResourceType = 'RESOURCE_LAPIS' or ResourceType = 'RESOURCE_EBONY' or ResourceType = 'RESOURCE_CASHMERE' or ResourceType = 'RESOURCE_BAMBOO' 
-	or ResourceType = 'RESOURCE_ALABASTER' or ResourceType = 'RESOURCE_TOMATO' or ResourceType = 'RESOURCE_TIN' or ResourceType = 'RESOURCE_SALMON' 
-	or ResourceType = 'RESOURCE_RUBBER' or ResourceType = 'RESOURCE_QUARTZ' or ResourceType = 'RESOURCE_PINE' or ResourceType = 'RESOURCE_OAK' 
-	or ResourceType = 'RESOURCE_MUSSELS' or ResourceType = 'RESOURCE_MUSHROOMS' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_LIMESTONE' 
-	or ResourceType = 'RESOURCE_LEAD' or ResourceType = 'RESOURCE_HAM' or ResourceType = 'RESOURCE_GRANITE' or ResourceType = 'RESOURCE_DATES' 
-	or ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_BERRIES' or ResourceType = 'RESOURCE_BARLEY' or ResourceType = 'RESOURCE_ALOE';
-delete from Resource_Harvests where ResourceType = 'RESOURCE_WOLF' or ResourceType = 'RESOURCE_TRAVERTINE' or ResourceType = 'RESOURCE_TOXINS' 
-	or ResourceType = 'RESOURCE_TIGER' or ResourceType = 'RESOURCE_STRAWBERRY' or ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' 
-	or ResourceType = 'RESOURCE_SANDALWOOD' or ResourceType = 'RESOURCE_SAKURA' or ResourceType = 'RESOURCE_SAFFRON' or ResourceType = 'RESOURCE_RUBY' 
-	or ResourceType = 'RESOURCE_POPPIES' or ResourceType = 'RESOURCE_PLATINUM' or ResourceType = 'RESOURCE_ORCA' or ResourceType = 'RESOURCE_LION' 
-	or ResourceType = 'RESOURCE_LAPIS' or ResourceType = 'RESOURCE_EBONY' or ResourceType = 'RESOURCE_CASHMERE' or ResourceType = 'RESOURCE_BAMBOO' 
-	or ResourceType = 'RESOURCE_ALABASTER' or ResourceType = 'RESOURCE_TOMATO' or ResourceType = 'RESOURCE_TIN' or ResourceType = 'RESOURCE_SALMON' 
-	or ResourceType = 'RESOURCE_RUBBER' or ResourceType = 'RESOURCE_QUARTZ' or ResourceType = 'RESOURCE_PINE' or ResourceType = 'RESOURCE_OAK' 
-	or ResourceType = 'RESOURCE_MUSSELS' or ResourceType = 'RESOURCE_MUSHROOMS' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_LIMESTONE' 
-	or ResourceType = 'RESOURCE_LEAD' or ResourceType = 'RESOURCE_HAM' or ResourceType = 'RESOURCE_GRANITE' or ResourceType = 'RESOURCE_DATES' 
-	or ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_BERRIES' or ResourceType = 'RESOURCE_BARLEY' or ResourceType = 'RESOURCE_ALOE';
+-- 该文件于DL_Resources.sql文件之后加载
 
 -- Basic
 update Resources set ResourceClassType = 'RESOURCECLASS_LUXURY', Happiness = 4 
 	where ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON' or ResourceType = 'RESOURCE_ALOE' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_QUARTZ';
 update Resources set Happiness = 4 where ResourceType = 'RESOURCE_RUBY';
 update Resources set LakeEligible = 0 where ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' or ResourceType = 'RESOURCE_ORCA' or
-	ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON' or ResourceType = 'RESOURCE_MUSSELS';
+	ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_MUSSELS';
 
 -- Yield
 insert or replace into Resource_YieldChanges
@@ -91,6 +41,8 @@ values
 	('RESOURCE_POPPIES',		'YIELD_GOLD',			1),
 	('RESOURCE_PLATINUM',		'YIELD_PRODUCTION',		1),
 	('RESOURCE_PLATINUM',		'YIELD_GOLD',			1),
+	('RESOURCE_ORCA',			'YIELD_FOOD',			-1),
+	('RESOURCE_ORCA',			'YIELD_SCIENCE',		1),
 	('RESOURCE_ORCA',			'YIELD_GOLD',			3),
 	('RESOURCE_LION',			'YIELD_CULTURE',		1),
 	('RESOURCE_LION',			'YIELD_GOLD',			1),
@@ -128,12 +80,15 @@ values
 	('RESOURCE_LEAD',			'YIELD_FOOD',			-1),
 	('RESOURCE_LEAD',			'YIELD_PRODUCTION',		2),
 	('RESOURCE_HAM',			'YIELD_FOOD',			1),
-	('RESOURCE_DATES',			'YIELD_FOOD',			1),
+	('RESOURCE_DATES',			'YIELD_GOLD',			2),
 	('RESOURCE_BERRIES',		'YIELD_FOOD',			1),
 	('RESOURCE_BARLEY',			'YIELD_FOOD',			1),
 	('RESOURCE_BARLEY',			'YIELD_GOLD',			1);
 
 -- Terrain
+delete from Resource_ValidTerrains where (TerrainType = 'TERRAIN_TUNDRA_HILLS' or TerrainType = 'TERRAIN_DESERT_HILLS') and ResourceType = 'RESOURCE_GYPSUM';
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
+
 insert or replace into Resource_ValidTerrains
 	(ResourceType,				TerrainType)
 values
@@ -168,6 +123,8 @@ values
 	('RESOURCE_BAMBOO',			'TERRAIN_GRASS'),
 	('RESOURCE_ALABASTER',		'TERRAIN_TUNDRA'),
 	('RESOURCE_ALABASTER',		'TERRAIN_TUNDRA_HILLS'),
+	('RESOURCE_ALABASTER',		'TERRAIN_DESERT'),
+	('RESOURCE_ALABASTER',		'TERRAIN_DESERT_HILLS'),
 	('RESOURCE_COD',			'TERRAIN_COAST'),
 	('RESOURCE_SALMON',			'TERRAIN_COAST'),
 	('RESOURCE_ALOE',			'TERRAIN_GRASS'),
@@ -185,6 +142,7 @@ values
 	('RESOURCE_TIN',			'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_TIN',			'TERRAIN_PLAINS_HILLS'),
 	('RESOURCE_MUSSELS',		'TERRAIN_COAST'),
+	('RESOURCE_LIMESTONE',		'TERRAIN_GRASS'),
 	('RESOURCE_LIMESTONE',		'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_GRANITE',		'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_GRANITE',		'TERRAIN_PLAINS_HILLS'),
@@ -204,11 +162,14 @@ values
 	('RESOURCE_BERRIES',		'TERRAIN_TUNDRA'),
 	('RESOURCE_BERRIES',		'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA'),
-	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA_HILLS');
-
-delete from Resource_ValidTerrains where TerrainType = 'TERRAIN_TUNDRA_HILLS' and ResourceType = 'RESOURCE_GYPSUM';
+	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA_HILLS'),
+	-- Old Resources
+	('RESOURCE_STONE',			'TERRAIN_PLAINS'),
+	('RESOURCE_STONE',			'TERRAIN_PLAINS_HILLS');
 
 -- Feature
+delete from Feature_ValidTerrains where FeatureType = 'FEATURE_GEOTHERMAL_FISSURE' and (TerrainType = 'TERRAIN_SNOW' or TerrainType = 'TERRAIN_SNOW_HILLS');
+
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 values
@@ -224,6 +185,8 @@ values
 	('RESOURCE_SANDALWOOD',		'FEATURE_JUNGLE'),
 	('RESOURCE_SAKURA',			'FEATURE_FOREST'),
 	('RESOURCE_SAFFRON',		'FEATURE_FLOODPLAINS'),
+	('RESOURCE_SAFFRON',		'FEATURE_FLOODPLAINS_GRASSLAND'),
+	('RESOURCE_SAFFRON',		'FEATURE_FLOODPLAINS_PLAINS'),
 	('RESOURCE_RUBY',			'FEATURE_JUNGLE'),
 	('RESOURCE_LAPIS',			'FEATURE_JUNGLE'),
 	('RESOURCE_EBONY',			'FEATURE_JUNGLE'),
@@ -239,22 +202,76 @@ values
 	('RESOURCE_OAK',			'FEATURE_FOREST'),
 	('RESOURCE_MUSSELS',		'FEATURE_REEF'),
 	('RESOURCE_GRANITE',		'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_GRANITE',		'FEATURE_JUNGLE'),
 	('RESOURCE_MUSHROOMS',		'FEATURE_FOREST'),
 	('RESOURCE_MUSHROOMS',		'FEATURE_JUNGLE'),
 	('RESOURCE_MUSHROOMS',		'FEATURE_MARSH'),
 	('RESOURCE_DATES',			'FEATURE_FLOODPLAINS'),
 	('RESOURCE_DATES',			'FEATURE_OASIS'),
-	('RESOURCE_BERRIES',		'FEATURE_FOREST');
+	('RESOURCE_BERRIES',		'FEATURE_FOREST'),
+	-- Old Resources
+	('RESOURCE_STONE',			'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_COPPER',			'FEATURE_GEOTHERMAL_FISSURE');
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+select
+	'RESOURCE_SUK_OBSIDIAN',	'FEATURE_GEOTHERMAL_FISSURE'
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SUK_OBSIDIAN');
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+select
+	'RESOURCE_SEA_URCHIN',		'FEATURE_SUK_KELP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+select
+	'RESOURCE_ORCA',			'FEATURE_SUK_KELP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+select
+	'RESOURCE_COD',				'FEATURE_SUK_KELP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 
 -- Frequency
-update Resources set SeaFrequency = 5 where ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN';
-update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON';
-update Resources set Frequency = 6 where ResourceType = 'RESOURCE_TRAVERTINE' or ResourceType = 'RESOURCE_SANDALWOOD';
+	-- New Resources
+update Resources set Frequency = (select Frequency from HDResourceful2_Basic where Resources.ResourceType = HDResourceful2_Basic.ResourceType) 
+    where ResourceType in (select ResourceType from HDResourceful2_Basic);
+update Resources set SeaFrequency = (select SeaFrequency from HDResourceful2_Basic where Resources.ResourceType = HDResourceful2_Basic.ResourceType) 
+    where ResourceType in (select ResourceType from HDResourceful2_Basic);
+    -- Old Resources
+create TEMPORARY table "HDResourceful2_Old_Frequency"(
+    "ResourceType"  TEXT,
+    "Frequency"  INTEGER
+);
+insert or replace into HDResourceful2_Old_Frequency
+	(ResourceType,					Frequency)
+values
+	('RESOURCE_JNR_PEAT',			3),
+	('RESOURCE_STONE',				5),
+	('RESOURCE_COPPER',				6),
+	('RESOURCE_CATTLE',				4),
+	('RESOURCE_DLV_BISON',			4),
+	('RESOURCE_DEER',				4),
+	('RESOURCE_SHEEP',				6),
+	('RESOURCE_RICE',				7),
+	('RESOURCE_WHEAT',				7),
+	('RESOURCE_LEU_P0K_POTATOES',	4),
+	('RESOURCE_BANANAS',			4),
+	('RESOURCE_SUK_CAMEL',			4),
+	('RESOURCE_MAIZE',				3),
+	('RESOURCE_SUK_OBSIDIAN',		2),
+	('RESOURCE_SUK_CHEESE',			2),
+	('RESOURCE_GOLD',				2);
+update Resources set Frequency = (select Frequency from HDResourceful2_Old_Frequency where Resources.ResourceType = HDResourceful2_Old_Frequency.ResourceType) 
+    where ResourceType in (select ResourceType from HDResourceful2_Old_Frequency);
+update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIAR';
 
 -- Improvement
-	-- 伐木场改良
-update Improvements set PrereqTech = 'TECH_MINING' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
-update Adjacency_YieldChanges set PrereqTech = 'TECH_BRONZE_WORKING' where ID = 'Lumber_Mill_River_Production';
 	-- 地热有资矿山、采石场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_MINE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_QUARRY';
@@ -263,57 +280,8 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 	-- 雨林有资伐木场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
 
--- Harvest
-insert or replace into Resource_Harvests
-	(ResourceType,				YieldType,			Amount,			PrereqTech)
-values
-	-- 奢侈
-	('RESOURCE_WOLF',			'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_TRAVERTINE',		'YIELD_GOLD',			80,			'TECH_MASONRY'),
-	('RESOURCE_TOXINS',			'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_TIGER',			'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_STRAWBERRY',		'YIELD_GOLD',			80,			'TECH_POTTERY'),
-	('RESOURCE_SPONGE',			'YIELD_GOLD',			80,			'TECH_IRRIGATION'),
-	('RESOURCE_SEA_URCHIN',		'YIELD_GOLD',			80,			'TECH_IRRIGATION'),
-	('RESOURCE_SANDALWOOD',		'YIELD_GOLD',			80,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_SAKURA',			'YIELD_GOLD',			80,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_SAFFRON',		'YIELD_GOLD',			80,			'TECH_MASONRY'),
-	('RESOURCE_RUBY',			'YIELD_GOLD',			80,			'TECH_MINING'),
-	('RESOURCE_POPPIES',		'YIELD_GOLD',			80,			'TECH_MASONRY'),
-	('RESOURCE_PLATINUM',		'YIELD_GOLD',			80,			'TECH_MINING'),
-	('RESOURCE_ORCA',			'YIELD_GOLD',			80,			'TECH_IRRIGATION'),
-	('RESOURCE_LION',			'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_LAPIS',			'YIELD_GOLD',			80,			'TECH_MINING'),
-	('RESOURCE_EBONY',			'YIELD_GOLD',			80,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_CASHMERE',		'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_BAMBOO',			'YIELD_GOLD',			80,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_ALABASTER',		'YIELD_GOLD',			80,			'TECH_MASONRY'),
-	('RESOURCE_COD',			'YIELD_GOLD',			80,			'TECH_IRRIGATION'),
-	('RESOURCE_SALMON',			'YIELD_GOLD',			80,			'TECH_IRRIGATION'),
-	('RESOURCE_ALOE',			'YIELD_GOLD',			80,			'TECH_MASONRY'),
-	('RESOURCE_MEDIHERBS',		'YIELD_GOLD',			80,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_QUARTZ',			'YIELD_GOLD',			80,			'TECH_MINING'),
-	-- 加成
-	('RESOURCE_TOMATO',			'YIELD_FOOD',			40,			'TECH_POTTERY'),
-	('RESOURCE_TIN',			'YIELD_PRODUCTION',		40,			'TECH_MINING'),
-	('RESOURCE_RUBBER',			'YIELD_PRODUCTION',		40,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_PINE',			'YIELD_PRODUCTION',		40,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_OAK',			'YIELD_PRODUCTION',		40,			'TECH_BRONZE_WORKING'),
-	('RESOURCE_MUSSELS',		'YIELD_PRODUCTION',		40,			'TECH_IRRIGATION'),
-	('RESOURCE_MUSHROOMS',		'YIELD_FOOD',			40,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_GRANITE',		'YIELD_PRODUCTION',		40,			'TECH_MASONRY'),
-	('RESOURCE_LIMESTONE',		'YIELD_PRODUCTION',		40,			'TECH_MASONRY'),
-	('RESOURCE_LEAD',			'YIELD_PRODUCTION',		40,			'TECH_MINING'),
-	('RESOURCE_HAM',			'YIELD_FOOD',			40,			'TECH_ANIMAL_HUSBANDRY'),
-	('RESOURCE_DATES',			'YIELD_FOOD',			40,			'TECH_MASONRY'),
-	('RESOURCE_BERRIES',		'YIELD_FOOD',			40,			'TECH_MASONRY'),
-	('RESOURCE_BARLEY',			'YIELD_FOOD',			40,			'TECH_POTTERY');
-
 -- District
 	-- 军营
-update ModifierArguments set Value = 2 where ModifierId = 'ENCAMPMENT_ADD_STONE_PRODUCTION' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'ENCAMPMENT_ADD_COPPER_PRODUCTION' and Name = 'Amount';
-
 insert or replace into DistrictModifiers
 	(DistrictType,						ModifierId)
 values
@@ -334,13 +302,13 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
 	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'Amount',		2),
+	('ENCAMPMENT_ADD_TIN_PRODUCTION',				'Amount',		1),
 	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'Amount',		2),
+	('ENCAMPMENT_ADD_LEAD_PRODUCTION',				'Amount',		1),
 	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'Amount',		2),
+	('ENCAMPMENT_ADD_GRANITE_PRODUCTION',			'Amount',		1),
 	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
-	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'Amount',		2);
+	('ENCAMPMENT_ADD_LIMESTONE_PRODUCTION',			'Amount',		1);
 
 insert or replace into RequirementSets 
 	(RequirementSetId,						RequirementSetType) 
@@ -404,9 +372,118 @@ values
 	('HD_HAS_IMPROVED_OAK',					'REQUIRES_RESOURCE_OAK_IN_PLOT'),
 	('HD_HAS_IMPROVED_OAK',					'REQUIRES_PLOT_HAS_LUMBER_MILL');
 
-	-- 水渠
-delete from BuildingModifiers where ModifierId = 'GRANARY_BONUS_PLANTATION_FOOD' and BuildingType = 'BUILDING_GRANARY';
-insert or replace into DistrictModifiers
-	(DistrictType,						ModifierId)
+-- Buildings
+	-- 工官
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+select
+	'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT',	'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
+from Resources r, Improvement_ValidResources i
+where r.ResourceType = i.ResourceType and (i.ImprovementType = 'IMPROVEMENT_LUMBER_MILL')
+	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS');
+
+-- Relogion Beliefs.
+insert or replace into Types
+	(Type,								Kind)
 values
-	('DISTRICT_AQUEDUCT',				'GRANARY_BONUS_PLANTATION_FOOD');
+	-- Pantheon
+	('BELIEF_PAN',		                'KIND_BELIEF'),
+    ('BELIEF_HEART_OF_THE_WOODS',		'KIND_BELIEF');
+
+insert or replace into Beliefs
+	(BeliefType,						Name,										Description,											BeliefClassType)
+values
+	-- Pantheon
+	('BELIEF_PAN',		                'LOC_BELIEF_PAN_NAME',		                'LOC_BELIEF_PAN_DL_DESCRIPTION',		                'BELIEF_CLASS_PANTHEON'),
+    ('BELIEF_HEART_OF_THE_WOODS',		'LOC_BELIEF_HEART_OF_THE_WOODS_NAME',		'LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION',		    'BELIEF_CLASS_PANTHEON');
+
+insert or replace into BeliefModifiers
+	(BeliefType,							ModifierID)
+values
+	-- Pantheon
+	('BELIEF_PAN',			                'PAN_FAITH_LUMBER_MILL_ADJACENCY'),
+    ('BELIEF_PAN',			                'PAN_CITY_LUMBER_MILL_FOOD'),
+	('BELIEF_PAN',			                'PAN_LUMBER_MILL_GREAT_PROPHET'),
+	('BELIEF_HEART_OF_THE_WOODS',			'HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD'),
+    ('BELIEF_HEART_OF_THE_WOODS',			'HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE'),
+	('BELIEF_HEART_OF_THE_WOODS',			'HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD'),
+    ('BELIEF_HEART_OF_THE_WOODS',			'HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE'),
+	('BELIEF_HEART_OF_THE_WOODS',			'HEART_OF_THE_WOODS_LUMBER_MILL_GOLD');
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,										SubjectRequirementSetId)
+values
+    ('PAN_FAITH_LUMBER_MILL_ADJACENCY',				                'MODIFIER_ALL_CITIES_FEATURE_ADJACENCY',		    'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('PAN_CITY_LUMBER_MILL_FOOD',			                        'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_AND_CITY_HAS_HOLYSITE'),
+	('PAN_CITY_LUMBER_MILL_FOOD_MODIFIER',	                        'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_LUMBER_MILL_REQUIREMENTS'),
+	('PAN_LUMBER_MILL_GREAT_PROPHET',				                'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),			
+	('PAN_LUMBER_MILL_GREAT_PROPHET_MODIFIER',		                'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE'),
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD',				    'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		        'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD',				    'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		        'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS'),
+
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		        'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE_MODIFIER',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		        'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE_MODIFIER',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS'),
+
+    ('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD',				            'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		        'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_LUMBER_MILL_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,									        Name,					Value)
+values
+	('PAN_FAITH_LUMBER_MILL_ADJACENCY',				        'DistrictType',			'DISTRICT_HOLY_SITE'),
+	('PAN_FAITH_LUMBER_MILL_ADJACENCY',				        'YieldType',			'YIELD_FAITH'),
+	('PAN_FAITH_LUMBER_MILL_ADJACENCY',				        'FeatureType',		    'FEATURE_FOREST'),
+	('PAN_FAITH_LUMBER_MILL_ADJACENCY',				        'Amount',				1),
+	('PAN_FAITH_LUMBER_MILL_ADJACENCY',				        'Description',			'LOC_DISTRICT_LUMBER_MILL_FAITH'),
+    ('PAN_CITY_LUMBER_MILL_FOOD',			                'ModifierId',			'PAN_CITY_LUMBER_MILL_FOOD_MODIFIER'),
+	('PAN_CITY_LUMBER_MILL_FOOD_MODIFIER',	                'YieldType',			'YIELD_FOOD'),
+	('PAN_CITY_LUMBER_MILL_FOOD_MODIFIER',	                'Amount',				1),
+	('PAN_LUMBER_MILL_GREAT_PROPHET',				        'ModifierId',			'PAN_LUMBER_MILL_GREAT_PROPHET_MODIFIER'),			
+	('PAN_LUMBER_MILL_GREAT_PROPHET_MODIFIER',		        'GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
+	('PAN_LUMBER_MILL_GREAT_PROPHET_MODIFIER',		        'Amount',				3),
+
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD',			'ModifierId',			'HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD_MODIFIER'),
+	('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD_MODIFIER', 'YieldType',			'YIELD_FOOD'),
+	('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_FOOD_MODIFIER', 'Amount',				1),	
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD',			'ModifierId',			'HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD_MODIFIER'),
+	('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD_MODIFIER', 'YieldType',			'YIELD_FOOD'),
+	('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_FOOD_MODIFIER', 'Amount',				1),	
+
+    ('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE',			    'ModifierId',			'HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE_MODIFIER'),
+	('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE_MODIFIER',     'YieldType',			'YIELD_SCIENCE'),
+	('HEART_OF_THE_WOODS_LUXURY_LUMBER_MILL_SCIENCE_MODIFIER',     'Amount',				1),	
+    ('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE',			    'ModifierId',			'HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE_MODIFIER'),
+	('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE_MODIFIER',     'YieldType',			'YIELD_SCIENCE'),
+	('HEART_OF_THE_WOODS_BONUS_LUMBER_MILL_SCIENCE_MODIFIER',     'Amount',				1),	
+
+    ('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD',			        'ModifierId',			'HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER'),
+	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'YieldType',			'YIELD_GOLD'),
+	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'Amount',				1);
+
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+values
+	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIREMENTSET_TEST_ALL'),
+	('PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE',			    'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			    	'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+values
+	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUXURY'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_BONUS'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_LUMBER_MILL');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,									RequirementId)
+select
+	'PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE',	    'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
+from Resources r, Improvement_ValidResources i
+where r.ResourceType = i.ResourceType and i.ImprovementType = 'IMPROVEMENT_LUMBER_MILL'
+	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS');

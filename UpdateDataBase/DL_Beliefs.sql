@@ -1784,3 +1784,23 @@ values
 	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'UnitType',			'UNIT_TRADER'),
 	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'AllowUniqueOverride',		0),
 	('BELIEF_HD_HERMES_ADD_TRADER_MODIFIER',			'Amount',			1);
+
+--狂野实装
+-------------------------------------
+--耶稣会
+update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 0.2 where ModifierId = 'JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 0.4 where ModifierId = 'JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER' and Name = 'Amount';
+
+-------------------------------------
+--弥赛亚
+update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
+update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';

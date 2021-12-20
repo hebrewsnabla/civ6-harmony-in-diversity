@@ -40,6 +40,7 @@ values
 	('DISTRICT_HARBOR',				'HD_Harbor_City_Gold'),
 	('DISTRICT_HARBOR',				'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
+	('DISTRICT_ENCAMPMENT',			'Strategic_Production'),
 	-- UD
 	('DISTRICT_ROYAL_NAVY_DOCKYARD','District_Gold_Industrial_Zone'),
 	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),
@@ -186,14 +187,15 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold');
 
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
+-- Resumed v1.1.6
+-- update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where ID = 'Farms_MedievalAdjacency';
 
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentRiver,
 	AdjacentDistrict, 				PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech)
 values
 	('Lumber_Mill_River_Production', 	'Placeholder', 'YIELD_PRODUCTION',	1,				1,				1,
-	NULL,							NULL,			NULL,		NULL,			'TECH_MACHINERY'),
+	NULL,							NULL,			'TECH_BRONZE_WORKING',		NULL,			'TECH_MACHINERY'),
 	('Lumber_Mill_Industrial_Production','Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,
 	'DISTRICT_INDUSTRIAL_ZONE',		NULL,			NULL,		NULL,			NULL),
 	('Mine_Industrial_Production',		'Placeholder', 'YIELD_PRODUCTION',	1,				1,				0,

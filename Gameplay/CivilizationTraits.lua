@@ -290,3 +290,27 @@ function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
     end
 end
 GameEvents.CityConquered.Add(ConquerEnvoy)
+
+-- 刚果
+function MBANZABoost(playerID, districtID, iX, iY)
+    local pPlayer = Players[playerID]
+    if pPlayer ~= nil then
+    	local plot = Map.GetPlot(iX, iY)
+        local districtType = plot:GetDistrictType()
+        if ExposedMembers.DLHD.Utils.IsDistrictType(districtType, 'DISTRICT_MBANZA') then
+            local m_THEOLOGY = GameInfo.Civics['CIVIC_THEOLOGY'].Index;
+            local m_DIVINE_RIGHT = GameInfo.Civics['CIVIC_DIVINE_RIGHT'].Index;
+            local m_REFORMED_CHURCH = GameInfo.Civics['CIVIC_REFORMED_CHURCH'].Index;
+
+            local pPlayerConfig = PlayerConfigurations[playerID]
+       		local sLeader = pPlayerConfig:GetLeaderTypeName()
+            if LeaderHasTrait(sLeader, 'TRAIT_LEADER_RELIGIOUS_CONVERT') then
+				pPlayer:GetCulture():TriggerBoost(m_THEOLOGY, 1);
+				pPlayer:GetCulture():TriggerBoost(m_DIVINE_RIGHT, 1);
+            	pPlayer:GetCulture():TriggerBoost(m_REFORMED_CHURCH, 1);
+            end
+        end
+    end
+end
+
+GameEvents.OnDistrictConstructed.Add(MBANZABoost)
