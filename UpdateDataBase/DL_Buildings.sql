@@ -1520,6 +1520,11 @@ values
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
 	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'REQUIRES_DISTRICT_IS_ENTERTAINMENT_COMPLEX');
 
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
+values
+	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
+
 -- 水族馆 by xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_SEARESOURCE_SCIENCE';
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_REEF_SCIENCE';

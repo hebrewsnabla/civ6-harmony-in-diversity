@@ -183,7 +183,10 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 -- end
 -- Events.UnitPromotionAvailable.Add(OnUnitPromotionAvailable);
 
---Poland temple unlock military engineers
+-- Poland
+-- ===========================================================================
+-- temple unlock military engineers
+-- ===========================================================================
 function PolandTempleUnlockMilitaryEngineers(playerID:number, bFirstTimeThisTurn:boolean)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
@@ -212,13 +215,18 @@ end
 
 Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
 
+
+-- Kublai 
+-- ===========================================================================
+-- Grant CivTraits On Conquer Original Capital -- part of Gameplay
+-- ===========================================================================
 function KublaiGrantCivTrait( playerID, iX, iY )
 	local captureModifier = {}
     local captureTrait = {}
     local pPlayer = Players[playerID]
 	local pCity = CityManager.GetCityAt(iX, iY)
 	local originalOwnerID = pCity:GetOriginalOwner() 
-    print('Kublai0',originalOwnerID,playerID) 
+    -- print('Kublai0',originalOwnerID,playerID) 
 	if originalOwnerID ~= playerID and originalOwnerID ~= nil then
 		local oPlayer = Players[originalOwnerID]
 		local oPlayerConfig = PlayerConfigurations[originalOwnerID]
@@ -228,7 +236,7 @@ function KublaiGrantCivTrait( playerID, iX, iY )
 				table.insert(captureTrait,tRow.TraitType)
 			end
 		end
-		print('Kublai1',oCiv) 
+		-- print('Kublai1',oCiv) 
 		for _, traitType in ipairs(captureTrait) do
 			for tRow in GameInfo.TraitModifiers() do
 				if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
@@ -240,12 +248,32 @@ function KublaiGrantCivTrait( playerID, iX, iY )
 		end 
 		for _, modifier in ipairs(captureModifier) do
 			pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
-			print('Kublai2',modifier)
+			-- print('Kublai2',modifier)
 		end
 	end
 end
 
 GameEvents.KublaiGrantCivTraitSwitch.Add(KublaiGrantCivTrait)
+
+-- Eleanor
+-- ===========================================================================
+-- Judgement of Love -- part of Gameplay
+-- ===========================================================================
+function ProjectJudgementOfLove(iX, iY, dX, dY)
+	local city = CityManager.GetCityAt(iX, iY)
+	local pCity = CityManager.GetCityAt(dX, dY)
+	local districtID = GameInfo.Districts['DISTRICT_THEATER'].Index
+	local pCityDistricts : object = pCity:GetDistricts();
+	if (pCityDistricts ~= nil) then
+		local eX, eY = pCityDistricts:GetDistrictLocation(districtID)
+		local distance = Map.GetPlotDistance(eX, eY, iX, iY)
+		--print('PROJECT_CIRCUSES_AND_BREAD3',eX, eY, iX, iY, distance)
+		if distance <= 9 then
+			city:ChangeLoyalty(-200)
+		end
+	end
+end
+GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Add(ProjectJudgementOfLove)
 
 ExposedMembers.GameEvents = GameEvents
 
