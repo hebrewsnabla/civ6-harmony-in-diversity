@@ -399,3 +399,11 @@ update CivicRandomCosts set Cost = 4800 where Cost = 3200;
 update CivicRandomCosts set Cost = 4900 where Cost = 3300;
 update CivicRandomCosts set Cost = 4800 where Cost = 4160;
 update CivicRandomCosts set Cost = 4900 where Cost = 4290;
+
+--同盟
+update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_POLITICAL_PHILOSOPHY' where DiplomaticActionType like 'DIPLOACTION_ALLIANCE%';
+update DiplomaticActions set TargetPrereqCivic = 'CIVIC_POLITICAL_PHILOSOPHY' where DiplomaticActionType like 'DIPLOACTION_ALLIANCE%';
+insert or replace into RequirementSetRequirements 
+    (RequirementSetId,						RequirementId) 
+values
+	('ROUTE_BETWEEN_ALLIES_REQUIREMENTS',					'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
