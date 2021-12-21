@@ -2,6 +2,18 @@
 --      GreatWorks Adjustments     --
 -------------------------------------
 
+-- Fail to add new great work slot type (not able to add through Building_GreatWorks, but may through add slot modifier, still have other issues).
+-- insert or ignore into GreatWorkSlotTypes (GreatWorkSlotType) values ('GREATWORKSLOT_AESTHETICS');
+-- insert or ignore into GreatWork_ValidSubTypes
+-- 	(GreatWorkSlotType, 			GreatWorkObjectType)
+-- values
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_SCULPTURE'),
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_PORTRAIT'),
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_LANDSCAPE'),
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_RELIGIOUS'),
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_WRITING'),
+-- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_MUSIC');
+
 update GlobalParameters set Value = 5 where Name = 'GREATWORK_ART_LOCK_TIME';
 
 update GreatWorks set Tourism = 3 where GreatWorkObjectType = 'GREATWORKOBJECT_WRITING';
