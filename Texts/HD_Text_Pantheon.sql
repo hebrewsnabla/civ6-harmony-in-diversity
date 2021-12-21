@@ -93,7 +93,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_NAME",                                    "长生天"),
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "圣地区域从每个相邻的牧场单元格+2 [ICON_Faith] 信仰值，给相邻的牧场单元格 +1 [ICON_Production] 生产力，给本城的牧场 +1 [ICON_Faith] 信仰值。 如城市中有牧场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。 所有农场+1 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "改良奢侈资源的渔船+1 [ICON_Food] 食物。拥有圣地的城市，渔船+1 [ICON_Science] 科技值。如城市中有渔船，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Science] 科技值，改良奢侈资源的渔船额外+1 [ICON_Food] 食物。如城市中有渔船，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "位于海边或湖边的城市+1 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_NAME",                                  "德鲁伊"),
