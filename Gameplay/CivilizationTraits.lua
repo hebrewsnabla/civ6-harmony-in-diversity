@@ -220,6 +220,7 @@ Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
 -- ===========================================================================
 -- Grant CivTraits On Conquer Original Capital -- part of Gameplay
 -- ===========================================================================
+local PROP_KEY_HAVE_CAPTURED = 'HaveCaptured'
 function KublaiGrantCivTrait( playerID, iX, iY )
 	local captureModifier = {}
     local captureTrait = {}
@@ -231,24 +232,30 @@ function KublaiGrantCivTrait( playerID, iX, iY )
 		local oPlayer = Players[originalOwnerID]
 		local oPlayerConfig = PlayerConfigurations[originalOwnerID]
 		local oCiv = oPlayerConfig:GetCivilizationTypeName()
-		for tRow in GameInfo.CivilizationTraits() do
-			if tRow.CivilizationType == oCiv then
-				table.insert(captureTrait,tRow.TraitType)
-			end
-		end
-		-- print('Kublai1',oCiv) 
-		for _, traitType in ipairs(captureTrait) do
-			for tRow in GameInfo.TraitModifiers() do
-				if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
-				   string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
-				   tRow.TraitType == traitType then
-					table.insert(captureModifier,tRow.ModifierId)
+		local have_captured = pPlayer:GetProperty(PROP_KEY_HAVE_CAPTURED)
+		-- print('Kublai5', have_captured)
+		if have_captured ~= playerID..'-'..originalOwnerID then
+			pPlayer:SetProperty(PROP_KEY_HAVE_CAPTURED, playerID..'-'..originalOwnerID)
+			-- print('Kublai6', pPlayer:GetProperty(PROP_KEY_HAVE_CAPTURED))
+			for tRow in GameInfo.CivilizationTraits() do
+				if tRow.CivilizationType == oCiv then
+					table.insert(captureTrait,tRow.TraitType)
 				end
 			end
-		end 
-		for _, modifier in ipairs(captureModifier) do
-			pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
-			-- print('Kublai2',modifier)
+			-- print('Kublai1',oCiv) 
+			for _, traitType in ipairs(captureTrait) do
+				for tRow in GameInfo.TraitModifiers() do
+					if string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_BUILDING_' and
+					string.sub(tRow.TraitType,1,28) ~= 'TRAIT_CIVILIZATION_DISTRICT_' and
+					tRow.TraitType == traitType then
+						table.insert(captureModifier,tRow.ModifierId)
+					end
+				end
+			end 
+			for _, modifier in ipairs(captureModifier) do
+				pPlayer:AttachModifierByID(modifier)  -- unable to be used in UI
+				-- print('Kublai2',modifier)
+			end
 		end
 	end
 end
