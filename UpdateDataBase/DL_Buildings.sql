@@ -644,7 +644,7 @@ update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_B
 update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_ORDU';
 update Buildings set Maintenance = 4,	Cost = 200	where BuildingType = 'BUILDING_ARMORY';
 update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
-update Buildings set Maintenance = 3,	Cost = 190	where BuildingType = 'BUILDING_WORKSHOP';
+update Buildings set Maintenance = 3,	Cost = 180	where BuildingType = 'BUILDING_WORKSHOP';
 update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_FACTORY';
 update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
@@ -664,7 +664,8 @@ update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 4,	Cost = 220	where BuildingType = 'BUILDING_DAR_E_MEHR';
 update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_PRASAT';
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_AMPHITHEATER';
-update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
+-- update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_MARAE';
+update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_MARAE';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ART';
 update Buildings set Maintenance = 4,	Cost = 300	where BuildingType = 'BUILDING_MUSEUM_ARTIFACT';
 update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_BROADCAST_CENTER';
@@ -703,8 +704,10 @@ update Buildings set Maintenance = 8,	Cost = 450	where BuildingType = 'BUILDING_
 
 ---University buff adjacent rainforest and gain science from rainforest
 insert or replace into BuildingModifiers
-	(BuildingType,							ModifierId)
+	(BuildingType,					ModifierId)
 values
+	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_ADJACENCY'),
+	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_HILLS_ADJACENCY'),
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
 	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
@@ -713,12 +716,24 @@ values
 insert into Modifiers
 	(ModifierId,									ModifierType,								SubjectRequirementSetId)
 values
+	('MADRASA_ADD_DESERT_ADJACENCY',				'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',	NULL),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',			'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',	NULL),
 	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',			'MODIFIER_SINGLE_CITY_FEATURE_ADJACENCY',	NULL),
 	('UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'UNIVERSITY_ADJACENCY_SCIENCE_JUNGLE_REQUIREMENTS');
 
 insert into ModifierArguments
 	(ModifierId,										Name,				Value)
 values
+	('MADRASA_ADD_DESERT_ADJACENCY',					'DistrictType',		'DISTRICT_CAMPUS'),
+	('MADRASA_ADD_DESERT_ADJACENCY',					'TerrainType',		'TERRAIN_DESERT'),
+	('MADRASA_ADD_DESERT_ADJACENCY',					'YieldType',		'YIELD_SCIENCE'),
+	('MADRASA_ADD_DESERT_ADJACENCY',					'Amount',			1),
+	('MADRASA_ADD_DESERT_ADJACENCY',					'Description',		'LOC_DISTRICT_DESERT_SCIENCE'),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',				'DistrictType',		'DISTRICT_CAMPUS'),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',				'TerrainType',		'TERRAIN_DESERT_HILLS'),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',				'YieldType',		'YIELD_SCIENCE'),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',				'Amount',			1),
+	('MADRASA_ADD_DESERT_HILLS_ADJACENCY',				'Description',		'LOC_DISTRICT_DESERT_HILLS_SCIENCE'),
 	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'DistrictType',		'DISTRICT_CAMPUS'),
 	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'FeatureType',		'FEATURE_JUNGLE'),
 	('UNIVERSITY_ADD_RAINFOREST_ADJACENCY',				'YieldType',		'YIELD_SCIENCE'),

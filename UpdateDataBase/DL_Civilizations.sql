@@ -166,10 +166,12 @@ update ModifierArguments set Value = 60 where ModifierId = 'TRAIT_EUREKA_INCREAS
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
--- insert or replace into Building_YieldChanges 
--- 	(BuildingType, 		YieldType,			YieldChange) 
--- values
--- 	('BUILDING_MARAE', 	'YIELD_CULTURE',	2);
+insert or replace into Building_YieldChanges 
+	(BuildingType, 		YieldType,			YieldChange) 
+values
+	('BUILDING_MARAE', 	'YIELD_CULTURE',	2);
+update ModifierArguments set Value = 2 where ModifierId = 'MARAE_FAITH_FEATURES' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'MARAE_CULTURE_FEATURES' and Name = 'Amount';
 
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_CIVILIZATION_MAORI_MANA', 'TRAIT_MAORI_PRODUCTION_RAINFOREST_CIVIL_SERVICE'),
@@ -1105,7 +1107,8 @@ values
 update Improvements set PrereqCivic = 'CIVIC_GUILDS', Housing = 1 where ImprovementType = 'IMPROVEMENT_GOLF_COURSE'; --CIVIC_GAMES_RECREATION
 insert or replace into Improvement_Adjacencies (ImprovementType, YieldChangeId) values
 	('IMPROVEMENT_GOLF_COURSE',		'Golf_District_Culture');
-
+-- update Improvements set OnePerCity = 0, where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+-- update Improvements set SameAdjacentValid = 0, where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
 ---------------------------------------------------------------------------------------------------------------------
 --SCYTHIA
 insert or replace into TraitModifiers
@@ -1402,6 +1405,7 @@ values
 	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'YieldType',	'YIELD_FOOD'),
 	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'Amount',		2);
 
+update Improvements set OnePerCity = 0, SameAdjacentValid = 0 where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 ------------------------------------------------------------------------------------------------
 -- Korea ability updated
 delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOVERNOR_TITLE_MODIFIER';

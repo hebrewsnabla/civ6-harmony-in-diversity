@@ -126,6 +126,8 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_COMBUSTION_LEU_MO",                                        "The steam trains shuttles between busy train stations, can we make them go even faster?"),
     ("LOC_BOOST_TRIGGER_ELECTRICITY_HD",                                                    "Build a Dam."),
     ("LOC_BOOST_TRIGGER_LONGDESC_ELECTRICITY_HD",                                           "The fall of water contains a huge potential energy, how can we effectively use it?"),
+    ("LOC_BOOST_TRIGGER_FEUDALISM",                                                         "Bulid 5 Farms."),
+
     -- 
     ("LOC_BOOST_TRIGGER_METAL_CASTING",                                                     "Have the Military Training Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",                                            "Weapons evolve along with Military training, more advanced ways of making weapons are emerging."),
@@ -248,7 +250,9 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦察单位获得能力：忽略控制区。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                "核计划项目、核装置和核电站的生产力+50%。"),
+    ("zh_Hans_CN",  "LOC_DIPLOACTION_ALLIANCE_DESCRIPTION",                                 "宣布友谊后即可缔结同盟。盟友之间无法开战、自动开放边界、自动签署防御协定。如其中一位盟友的城市被占领，则所有盟友都将获得对入侵文明的战争借口。解锁行政部门后，科技、文化、商业同盟间商路获得对应加成。"),
     -- Boosts
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造3座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BRONZE_WORKING",                                     "击杀2个蛮族单位。"),
