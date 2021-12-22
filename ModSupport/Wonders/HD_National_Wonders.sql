@@ -289,7 +289,7 @@ update RequirementArguments set Value = 5 where RequirementId = 'REQ_CL_PLAYER_H
 	-- 修改特效
 update ModifierArguments set Value = 20 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE' and Name = 'Amount';
 update Modifiers set SubjectStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE';
-update Modifiers set OwnerStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE';
+update Modifiers set SubjectStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE';
 
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_TEMPLE';
 

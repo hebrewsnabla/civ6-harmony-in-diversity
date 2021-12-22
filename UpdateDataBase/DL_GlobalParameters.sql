@@ -208,3 +208,7 @@ values
     ('GAMESPEED_ONLINE',    36,             15),
     ('GAMESPEED_ONLINE',    24,             15),
     ('GAMESPEED_ONLINE',    12,             110);
+
+-- Trading Post
+update GlobalParameters set Value = 3 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
+update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
