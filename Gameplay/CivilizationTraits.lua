@@ -220,7 +220,6 @@ Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
 -- ===========================================================================
 -- Grant CivTraits On Conquer Original Capital -- part of Gameplay
 -- ===========================================================================
-local PROP_KEY_HAVE_CAPTURED = 'HaveCaptured'
 function KublaiGrantCivTrait( playerID, iX, iY )
 	local captureModifier = {}
     local captureTrait = {}
@@ -232,11 +231,11 @@ function KublaiGrantCivTrait( playerID, iX, iY )
 		local oPlayer = Players[originalOwnerID]
 		local oPlayerConfig = PlayerConfigurations[originalOwnerID]
 		local oCiv = oPlayerConfig:GetCivilizationTypeName()
-		local have_captured = pPlayer:GetProperty(PROP_KEY_HAVE_CAPTURED)
+		local have_captured = pPlayer:GetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID)
 		-- print('Kublai5', have_captured)
-		if have_captured ~= playerID..'-'..originalOwnerID then
-			pPlayer:SetProperty(PROP_KEY_HAVE_CAPTURED, playerID..'-'..originalOwnerID)
-			-- print('Kublai6', pPlayer:GetProperty(PROP_KEY_HAVE_CAPTURED))
+		if have_captured == nil then
+			pPlayer:SetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID, true)
+			-- print('Kublai6', pPlayer:GetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID))
 			for tRow in GameInfo.CivilizationTraits() do
 				if tRow.CivilizationType == oCiv then
 					table.insert(captureTrait,tRow.TraitType)

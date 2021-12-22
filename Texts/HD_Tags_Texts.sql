@@ -110,8 +110,6 @@ update Improvements set Description = 'LOC_IMPROVEMENT_FISHERY_HD_DESCRIPTION' w
 -- Districts
 update Districts set Description = 'LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HOLY_SITE';
 update Districts set Description = 'LOC_DISTRICT_LAVRA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_LAVRA';
-update Districts set Description = 'LOC_DISTRICT_AQUEDUCT_HD_DESCRIPTION' where DistrictType = 'DISTRICT_AQUEDUCT';
-update Districts set Description = 'LOC_DISTRICT_BATH_HD_DESCRIPTION' where DistrictType = 'DISTRICT_BATH';
 update Districts set Description = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' where DistrictType = 'DISTRICT_INDUSTRIAL_ZONE';
 update Districts set Description = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' where DistrictType = 'DISTRICT_HANSA';
 update Districts set Description = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION' where DistrictType = 'DISTRICT_OPPIDUM';

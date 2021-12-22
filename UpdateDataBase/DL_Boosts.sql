@@ -84,3 +84,6 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_FIG
 
 -- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;
+
+--封建5田
+update Boosts set NumItems = 5 where BoostID = 15;

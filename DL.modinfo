@@ -16,12 +16,12 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.1</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.1.6.1 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.6.1。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.1.6.6 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.1.6.6。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.6.1 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.6.1。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.1.6.6 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.1.6.6。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>DeepLogic, 小小雨10101, 傲娇的红莉栖, 六亿神州尽舜尧, 利牙菠萝, 陈又, wltk, xhh, YT, 黑毛毛小魔仙, 榖音, 柚子, Winged Hussar, o(╯□╰)o, 奥伊米亚, 音痴痴c, 法拉墨, Vearmus, lp, Kekeya, Siv, 流浪de蒲公英</en_US>
@@ -404,6 +404,10 @@
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/Icons.xml</File>
     </UpdateIcons>
+    <UpdateDatabase id="DL_FrontEnd_Tags">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Texts/HD_Tags_Players_Texts_Early.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_FrontEnd_Tags">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Texts/HD_Tags_Players_Texts.sql</File>
@@ -1234,6 +1238,10 @@
     </ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
+      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <File>Texts/HD_Tags_Texts_Early.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>16019</LoadOrder></Properties>
       <!-- <File>Texts/HD_Tags_Players_Texts.sql</File> -->
       <File>Texts/HD_Tags_Texts.sql</File>
@@ -1759,7 +1767,9 @@
     <File>UpdateDataBase/DL_WonderTheming.sql</File>
     <File>UpdateDataBase/DL_ModifierString.sql</File>
     <!-- Texts -->
+    <File>Texts/HD_Tags_Players_Texts_Early.sql</File>
     <File>Texts/HD_Tags_Players_Texts.sql</File>
+    <File>Texts/HD_Tags_Texts_Early.sql</File>
     <File>Texts/HD_Tags_Texts.sql</File>
     <!--  -->
     <File>Texts/HD_Text.sql</File>

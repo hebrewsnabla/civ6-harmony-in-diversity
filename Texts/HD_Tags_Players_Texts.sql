@@ -6,8 +6,6 @@
 -- UD
 update PlayerItems set Description = 'LOC_DISTRICT_LAVRA_HD_DESCRIPTION'
     where Type = 'DISTRICT_LAVRA' and Domain = 'Players:Expansion2_Players';
-update PlayerItems set Description = 'LOC_DISTRICT_BATH_HD_DESCRIPTION'
-    where Type = 'DISTRICT_BATH' and Domain = 'Players:Expansion2_Players';
 update PlayerItems set Description = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION'
     where Type = 'DISTRICT_HANSA' and Domain = 'Players:Expansion2_Players';
 update PlayerItems set Description = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION'
