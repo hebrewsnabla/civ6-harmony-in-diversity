@@ -54,7 +54,9 @@ values
     ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
     ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and receive a free Trader in the capital."),
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
-    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "Posterity of Mountain");
+    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "+100% Campus district adjacency bonuses from the adjacent Mountain. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Mountain. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing to cities adjacent Mountain tiles."),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "Song of Siren"),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional standard adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -111,4 +113,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_NAME",                                 "赫尔墨斯"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "首都获得一个商队，+1 [ICON_TradeRoute] 贸易路线容量。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "山之苗裔"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "塞壬之歌"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外标准相邻，礁石和海藻森林+2 [ICON_Production] 生产力");

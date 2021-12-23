@@ -1941,3 +1941,78 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select 'CITY_HAS_1_MOUNTAIN',									'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType
 from Terrains where TerrainType like '%MOUNTAIN';
+
+-------------------------------------
+--Pantheon Song of Siren
+insert or replace into Types
+	(Type,								Kind)
+values
+	('BELIEF_HD_SONG_OF_SIREN',			'KIND_BELIEF');
+insert or replace into Beliefs
+	(BeliefType,						Name,										Description,											BeliefClassType)
+values
+	('BELIEF_HD_SONG_OF_SIREN',			'LOC_BELIEF_HD_SONG_OF_SIREN_NAME',			'LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION',			'BELIEF_CLASS_PANTHEON');
+
+insert or replace into BeliefModifiers
+	(BeliefType,								ModifierID)
+select 'BELIEF_HD_SONG_OF_SIREN',				'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert or replace into BeliefModifiers
+	(BeliefType,								ModifierID)
+select 'BELIEF_HD_SONG_OF_SIREN',				'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,										SubjectRequirementSetId)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'MODIFIER_ALL_CITIES_FEATURE_ADJACENCY',			'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,										SubjectRequirementSetId)
+select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,										SubjectRequirementSetId)
+select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'HD_SONG_OF_SIREN_REQ'||FeatureType
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'DistrictType',			'DISTRICT_CAMPUS'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'FeatureType',			FeatureType
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'YieldType',			'YIELD_SCIENCE'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				1	
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Description',			'LOC_DISTRICT_'||FeatureType||'_SCIENCE'	
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,											Name,					Value)
+select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS',		'ModifierId',			'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,												Name,					Value)
+select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'YieldType',			'YIELD_PRODUCTION'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert into ModifierArguments
+	(ModifierId,												Name,					Value)
+select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'Amount',				2	
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+select 'HD_SONG_OF_SIREN_REQ'||FeatureType,						'REQUIREMENTSET_TEST_ALL'
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select 'HD_SONG_OF_SIREN_REQ'||FeatureType,						'HD_REQUIRES_PLOT_HAS_'||FeatureType
+from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
