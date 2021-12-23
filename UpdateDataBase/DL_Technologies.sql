@@ -201,7 +201,6 @@ values
     ('TECH_MILITARY_ENGINEERING',   'TECH_BUTTRESS'),
     ('TECH_MILITARY_ENGINEERING',   'TECH_METAL_CASTING'),
     --  Renaissance  ------------------------------------------------------
-    ('TECH_CARTOGRAPHY',            'TECH_SHIPBUILDING'),
     ('TECH_CARTOGRAPHY',            'TECH_COMPASS_HD'),
     -- ('TECH_MASS_PRODUCTION',    'TECH_COMPASS_HD'),
     ('TECH_MASS_PRODUCTION',        'TECH_EDUCATION'),

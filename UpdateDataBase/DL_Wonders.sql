@@ -59,6 +59,8 @@ update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BU
 --STBASILS
 update ModifierArguments set Value = 2 where ModifierId = 'STBASILS_ADDFOOD_MODIFIER' and Name = 'Amount';
 --chichen itza
+update Buildings set PrereqCivic = 'CIVIC_FEUDALISM' where BuildingType = 'BUILDING_CHICHEN_ITZA';
+
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
@@ -381,7 +383,7 @@ values
 	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
 
 -- BUILDING_MACHU_PICCHU to guilds 710 add food to mountain districts
-update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_GUILDS', Cost = 710 
+update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = NULL, Cost = 710 
 	where BuildingType = 'BUILDING_MACHU_PICCHU';
 
 insert or replace into BuildingModifiers (BuildingType,	ModifierId)values
@@ -758,3 +760,6 @@ values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 
 -- Apadana
 update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN_MODIFIER';
+
+-- Panama
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_COLONIALISM' where BuildingType = 'BUILDING_PANAMA_CANAL';
