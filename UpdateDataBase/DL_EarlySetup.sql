@@ -125,3 +125,18 @@ where exists (select Type from CSE_ClassTypes where Type = 'CSE_MARITIME') and
 
 insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS', 'REQUIRES_CITY_HAS_'||BuildingType from Buildings where EnabledByReligion = 1;
+
+-- 
+insert or ignore into Requirements
+    (RequirementId,                                     RequirementType)
+values
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING', 'REQUIREMENT_REQUIREMENTSET_IS_MET'),
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING', 'REQUIREMENT_REQUIREMENTSET_IS_MET'),
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING', 'REQUIREMENT_REQUIREMENTSET_IS_MET');
+
+insert or ignore into RequirementArguments
+    (RequirementId,                                     Name,               Value)
+values
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING', 'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING', 'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING_REQUIREMENTS'),
+    ('REQUIRES_HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING', 'RequirementSetId', 'HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING_REQUIREMENTS');
