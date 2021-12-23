@@ -486,6 +486,11 @@
       <File>Assets/TechCivics/HDTechIcons_128.dds</File>
       <File>Assets/TechCivics/HDTechIcons_160.dds</File>
       <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
+      <File>Assets/TechCivics/Archaeology_38.dds</File>
+      <File>Assets/TechCivics/Archaeology_42.dds</File>
+      <File>Assets/TechCivics/Archaeology_128.dds</File>
+      <File>Assets/TechCivics/Archaeology_160.dds</File>
+      <File>Assets/TechCivics/Archaeology_FOW_42.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -1811,6 +1816,11 @@
     <File>Assets/TechCivics/HDTechIcons_128.dds</File>
     <File>Assets/TechCivics/HDTechIcons_160.dds</File>
     <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
+    <File>Assets/TechCivics/Archaeology_38.dds</File>
+    <File>Assets/TechCivics/Archaeology_42.dds</File>
+    <File>Assets/TechCivics/Archaeology_128.dds</File>
+    <File>Assets/TechCivics/Archaeology_160.dds</File>
+    <File>Assets/TechCivics/Archaeology_FOW_42.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
