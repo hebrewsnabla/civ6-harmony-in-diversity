@@ -52,7 +52,9 @@ values
     ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Accumulating Strategic resources gain an additional +1 per turn."),
     ("LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "+25% [ICON_Production] Production toward Ancient, Classical and Medieval military units. Strategic resource costs for units are discounted 40%."),
     ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
-    ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and receive a free Trader in the capital.");
+    ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and receive a free Trader in the capital."),
+    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
+    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "Posterity of Mountain");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -107,4 +109,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "为远古、古典和中世纪军事单位+25% [ICON_Production] 生产力。生产单位所需战略资源花费减少40%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_NAME",                                 "赫尔墨斯"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "首都获得一个商队，+1 [ICON_TradeRoute] 贸易路线容量。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "首都获得一个商队，+1 [ICON_TradeRoute] 贸易路线容量。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "山之苗裔"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。");

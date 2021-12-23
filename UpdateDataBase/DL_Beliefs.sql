@@ -1804,3 +1804,140 @@ update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAI
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
 where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
+
+-------------------------------------
+--Pantheon Posterity of Mountain
+insert or replace into Types
+	(Type,								Kind)
+values
+	('BELIEF_HD_POSTERITY_OF_MOUNTAIN',	'KIND_BELIEF');
+insert or replace into Beliefs
+	(BeliefType,						Name,										Description,											BeliefClassType)
+values
+	('BELIEF_HD_POSTERITY_OF_MOUNTAIN',	'LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME',				'LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION',					'BELIEF_CLASS_PANTHEON');
+
+insert or replace into BeliefModifiers
+	(BeliefType,								ModifierID)
+select 'BELIEF_HD_POSTERITY_OF_MOUNTAIN',		'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert or replace into BeliefModifiers
+	(BeliefType,								ModifierID)
+select 'BELIEF_HD_POSTERITY_OF_MOUNTAIN',		'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+
+insert or replace into Modifiers
+	(ModifierId,																	ModifierType,										SubjectRequirementSetId)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert or replace into Modifiers
+	(ModifierId,																	ModifierType,										SubjectRequirementSetId)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY',	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert or replace into Modifiers
+	(ModifierId,																			ModifierType,										SubjectRequirementSetId)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',			NULL
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert or replace into Modifiers
+	(ModifierId,																			ModifierType,										SubjectRequirementSetId)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',			NULL
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+
+insert into ModifierArguments
+	(ModifierId,																	Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY',		'ModifierId',			'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																	Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY',	'ModifierId',			'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'DistrictType',			'DISTRICT_HOLY_SITE'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'DistrictType',			'DISTRICT_CAMPUS'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'YieldType',			'YIELD_FAITH'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'YieldType',			'YIELD_SCIENCE'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'TerrainType',			AdjacentTerrain
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'TerrainType',			AdjacentTerrain
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'Amount',				1
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'Amount',				1
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_FAITH_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',		'Description',			'LOC_DISTRICT_MOUNTAIN_FAITH'
+from Adjacency_YieldChanges where ID like 'Mountain_Faith%';
+insert into ModifierArguments
+	(ModifierId,																			Name,					Value)
+select 'POSTERITY_OF_MOUNTAIN_SCIENCE_'||AdjacentTerrain||'_MOUNTAIN_ADJACENCY_MODIFIER',	'Description',			'LOC_DISTRICT_MOUNTAIN_SCIENCE'
+from Adjacency_YieldChanges where ID like 'Mountains_Science%';
+
+insert or replace into BeliefModifiers
+	(BeliefType,										ModifierID)
+values
+	('BELIEF_HD_POSTERITY_OF_MOUNTAIN',					'HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET'),
+	('BELIEF_HD_POSTERITY_OF_MOUNTAIN',					'HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE'),
+	('BELIEF_HD_POSTERITY_OF_MOUNTAIN',					'HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY');
+insert or replace into Modifiers
+	(ModifierId,																ModifierType,										SubjectRequirementSetId)
+values
+	('HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET',									'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET_MODIFIER',							'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'CITY_HAS_1_MOUNTAIN'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE_MODIFIER',		'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING',	'CITYCENTER_ADJACENT_TO_MOUNTAIN_REQUIREMENTS'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY_MODIFIER',	'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY',	'CITYCENTER_ADJACENT_TO_MOUNTAIN_REQUIREMENTS');
+
+insert into ModifierArguments
+	(ModifierId,																Name,					Value)
+values
+	('HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET',									'ModifierId',			'HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET_MODIFIER'),
+	('HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET_MODIFIER',							'GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
+	('HD_POSTERITY_OF_MOUNTAIN_GREAT_PROPHET_MODIFIER',							'Amount',				2),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE',				'ModifierId',			'HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE_MODIFIER'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_HOUSE_MODIFIER',		'Amount',				1),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY',			'ModifierId',			'HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY_MODIFIER'),
+	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY_MODIFIER',	'Amount',				1);
+
+
+insert or replace into Requirements
+	(RequirementId,												RequirementType)
+select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,       		'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'
+from Terrains where TerrainType like '%MOUNTAIN';
+
+insert or replace into RequirementArguments
+	(RequirementId,												Name,				Value)
+select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,			'Amount',			2
+from Terrains where TerrainType like '%MOUNTAIN';
+insert or replace into RequirementArguments
+	(RequirementId,												Name,				Value)
+select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,			'TerrainType',		TerrainType
+from Terrains where TerrainType like '%MOUNTAIN';
+
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+values
+	('CITY_HAS_1_MOUNTAIN',										'REQUIREMENTSET_TEST_ANY');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select 'CITY_HAS_1_MOUNTAIN',									'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType
+from Terrains where TerrainType like '%MOUNTAIN';
