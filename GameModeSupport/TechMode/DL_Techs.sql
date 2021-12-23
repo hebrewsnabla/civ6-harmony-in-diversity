@@ -3,7 +3,7 @@
 -------------------------------------
 
 -- v4
-update Technologies set Cost = 4800 where Cost = 4500;
+update Technologies set Cost = 12000 where Cost = 4500;
 -- 
 update Technologies set Cost = 10000 where Cost = 4000;
 update TechnologyRandomCosts set Cost = 9000 where Cost = 3700;
