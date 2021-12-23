@@ -71,7 +71,8 @@ values
     ("LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "Receives Follower Belief bonuses in a city from each Religion that has at least 1 Follower. Cities gain an [ICON_Amenities] Amenity for every Religion with at least 1 Follower. Missionaries have +2 spreads. +100% Religious pressure from your [ICON_TradeRoute] Trade Routes. +0.5 [ICON_Food] Food per Population for cities which have stepwell."),
     ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "After unlocked civic military training, You will get a setter to the capital city, and can declare a war of territorial expansion.After declaring the war of territorial expansion,all your units grant extra 2[ICON_MOVEMENT]movement and 5[ICON_STRENGTH]strength in 10 turns."),
     ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "Manifest Destiny"),
-    ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.");
+    ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%."),
+    ("LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your domestic [ICON_TradeRoute] Trade Routes earn extra +2 [ICON_Gold] Gold for passing through Trading Posts in your own cities.");
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -148,7 +149,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成军事训练市政后解锁领土扩张战争借口，并获得一个免费移民到首都。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "昭昭天命"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。");
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "所有您创建或攻占的城市一开始便拥有贸易站。如果位于您 [ICON_Capital] 首都的 [ICON_TradeRoute] 贸易路线范围内，城市自动建立一条通至罗马的路。您的国内 [ICON_TradeRoute] 贸易路线经过您的城市贸易站时额外+2 [ICON_Gold] 金币。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
