@@ -911,6 +911,29 @@ insert or replace into RequirementArguments (RequirementId,	Name,	Value)
 select	'REQUIRES_PLOT_ADJACENT_EYJAFJALLAJOKULL',	'FeatureType',	'FEATURE_EYJAFJALLAJOKULL'
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_EYJAFJALLAJOKULL');
 
+-- For Russia
+insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
+	('REQUIRES_TUNDRA_OR_TUNDRA_HILL',					'RequirementSetId',	'PLOT_HAS_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS');
+	-- ('REQUIRES_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',	'RequirementSetId',	'HD_DISTRICTS_IS_NOT_WONDERS_REQUIREMENTS');
+
+insert or ignore into Requirements (RequirementId,		RequirementType) values
+	('REQUIRES_TUNDRA_OR_TUNDRA_HILL',					'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	-- ('REQUIRES_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',	'REQUIREMENT_REQUIREMENTSET_IS_MET');
+
+insert or ignore into RequirementSets (RequirementSetId,		RequirementSetType) values
+	('DISTRICTS_ON_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
+	('HD_DISTRICTS_IS_NOT_WONDERS_REQUIREMENTS',    			'REQUIREMENTSET_TEST_ALL');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+values
+	('DISTRICTS_ON_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',			'REQUIRES_TUNDRA_OR_TUNDRA_HILL'),
+	('DISTRICTS_ON_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',			'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
+	('HD_DISTRICTS_IS_NOT_WONDERS_REQUIREMENTS',				'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER');
+
+-- insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
+-- select 'HD_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
+
 -- AYUTTHAYA
 insert or replace into RequirementSets
 	(RequirementSetId,										RequirementSetType)

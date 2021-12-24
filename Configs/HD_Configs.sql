@@ -15,6 +15,8 @@ update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Suzerain';
 -- update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Consular';
 update Parameters set DefaultValue = 0 where ParameterId = 'CSE_CityState_Walls';
 update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Ethiopia_Mode';
+delete from Parameters where ParameterId = 'CSE_CityState_Walls';
+delete from Parameters where ParameterId = 'CSE_Ethiopia_Mode';
 
 insert or replace into Parameters
     (Key1,      Key2,                   ParameterId,                    Name,                                       Description,
