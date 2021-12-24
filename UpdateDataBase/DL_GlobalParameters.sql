@@ -44,6 +44,10 @@ update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PER
 -- pantheon
 update GlobalParameters set Value = 30 where Name = 'RELIGION_PANTHEON_MIN_FAITH';
 
+-- Ally
+update GlobalParameters set Value = 240 where Name = 'ALLIANCE_LEVEL_TWO_XP';
+update GlobalParameters set Value = 720 where Name = 'ALLIANCE_LEVEL_THREE_XP';
+
 -- Suzerain
 update GlobalParameters set Value = 5 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
 
@@ -208,3 +212,7 @@ values
     ('GAMESPEED_ONLINE',    36,             15),
     ('GAMESPEED_ONLINE',    24,             15),
     ('GAMESPEED_ONLINE',    12,             110);
+
+-- Trading Post
+update GlobalParameters set Value = 3 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
+update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
