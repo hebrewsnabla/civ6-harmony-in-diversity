@@ -1222,3 +1222,5 @@ update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType
 	-- 政策卡修改：【后勤】改为【后请补给】市政解锁
 update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = 'POLICY_LOGISTICS';
 
+	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
+update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';

@@ -145,3 +145,6 @@ insert or replace into Improvement_Tourism
 	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
 values
 	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
+
+-- 冰球场
+update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';

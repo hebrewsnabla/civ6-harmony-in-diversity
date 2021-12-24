@@ -973,15 +973,6 @@
       <Properties><LoadOrder>15606</LoadOrder></Properties>
       <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     </UpdateText>
-    <!-- Netherlands -->
-    <UpdateDatabase id="HD_Netherlands_Rework" criteria="Expansion2">
-      <Properties><LoadOrder>16030</LoadOrder></Properties>
-      <File>SubMods/Netherlands/NetherLands.sql</File>
-    </UpdateDatabase>
-    <AddGameplayScripts id="HD_Netherlands_Rework_Lua" criteria="Expansion2">
-      <Properties><LoadOrder>16030</LoadOrder></Properties>
-      <File>SubMods/Netherlands/NetherLands.lua</File>
-    </AddGameplayScripts>
     <!-- Medieval Pirate -->
     <UpdateDatabase id="HD_Medieval_Pirate" criteria="Expansion2">
       <Properties><LoadOrder>15610</LoadOrder></Properties>
@@ -1653,9 +1644,6 @@
     <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
     <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
     <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
-    <!-- Netherlands Rework -->
-    <File>SubMods/Netherlands/NetherLands.sql</File>
-    <File>SubMods/Netherlands/NetherLands.lua</File>
     <!-- Medieval Pirate -->
     <File>SubMods/MedievalPirate/DL_Database.sql</File>
     <File>SubMods/MedievalPirate/DL_Icons.xml</File>
