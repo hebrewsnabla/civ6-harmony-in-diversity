@@ -187,8 +187,9 @@ GameEvents.HD_Aztec_Sacrifice.Add(HD_Aztec_Sacrifice)
 -- ===========================================================================
 -- temple unlock military engineers
 -- ===========================================================================
-function PolandTempleUnlockMilitaryEngineers(playerID:number, bFirstTimeThisTurn:boolean)
+function PolandTempleUnlockMilitaryEngineers(playerID:number, cityID:number)
 	local player = Players[playerID]
+	local city = player:GetCities():FindID(cityID)
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
 	local sGoldenLiberty = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY'
@@ -197,24 +198,27 @@ function PolandTempleUnlockMilitaryEngineers(playerID:number, bFirstTimeThisTurn
 	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
 		return
 	end
-	local Allcity = player:GetCities()
-    if player ~= nil and Allcity ~= nil then
-        for _, city in Allcity:Members() do
-			local aCityHasBuilding = city:GetBuildings():HasBuilding(m_Dummy_Poland)
-			if not aCityHasBuilding then -- city don't have dummy_Poland
-            	local bCityHasBuilding = city:GetBuildings():HasBuilding(m_Temple)
-            	if bCityHasBuilding then -- city has temple
-        			local buildingQueue = city:GetBuildQueue()
-        			buildingQueue:CreateBuilding(m_Dummy_Poland)
-					-- print('Dummy Poland created', player:GetID(), city:GetID())
-				end
-            end            
-        end       
+    if player ~= nil and city ~= nil then
+		local cityHasDummy = city:GetBuildings():HasBuilding(m_Dummy_Poland)
+		local cityHasTemple = city:GetBuildings():HasBuilding(m_Temple)
+		local cityTempleNotPillaged = city:GetBuildings():IsPillaged(m_Temple)
+		local buildingQueue = city:GetBuildQueue()
+		if cityHasTemple and cityTempleNotPillaged then
+			if not cityHasDummy then
+				buildingQueue:CreateBuilding(m_Dummy_Poland)
+				-- print('Dummy Poland created', player:GetID(), city:GetID())
+			end
+		else if cityHasDummy then
+			buildingQueue:RemoveBuilding(m_Dummy_Poland)
+			-- print('Dummy Poland removed', player:GetID(), city:GetID())
+		end      
     end
 end
 
-Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
-
+-- Events.PlayerTurnActivated.Add(PolandTempleUnlockMilitaryEngineers)
+GameEvents.BuildingConstructed.Add(PolandTempleUnlockMilitaryEngineers)
+GameEvents.BuildingPillageStateChanged.Add(PolandTempleUnlockMilitaryEngineers)
+Events.CityAddedToMap.Add(PolandTempleUnlockMilitaryEngineers)
 
 -- Kublai 
 -- ===========================================================================
