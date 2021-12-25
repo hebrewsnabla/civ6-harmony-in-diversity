@@ -198,18 +198,20 @@ function PolandTempleUnlockMilitaryEngineers(playerID:number, cityID:number)
 	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
 		return
 	end
+	print('Poland', player, city)
     if player ~= nil and city ~= nil then
 		local cityHasDummy = city:GetBuildings():HasBuilding(m_Dummy_Poland)
 		local cityHasTemple = city:GetBuildings():HasBuilding(m_Temple)
-		local cityTempleNotPillaged = city:GetBuildings():IsPillaged(m_Temple)
-		local buildingQueue = city:GetBuildQueue()
-		if cityHasTemple and cityTempleNotPillaged then
+		local cityTemplePillaged = city:GetBuildings():IsPillaged(m_Temple)
+		-- print('Poland', cityHasDummy, cityHasTemple, cityTemplePillaged)
+		if cityHasTemple and not cityTemplePillaged then
 			if not cityHasDummy then
+				local buildingQueue = city:GetBuildQueue()
 				buildingQueue:CreateBuilding(m_Dummy_Poland)
 				-- print('Dummy Poland created', player:GetID(), city:GetID())
 			end
-		else if cityHasDummy then
-			buildingQueue:RemoveBuilding(m_Dummy_Poland)
+		elseif cityHasDummy then -- no temple or temple is pillaged but city has Dummy
+			city:GetBuildings():RemoveBuilding(m_Dummy_Poland)
 			-- print('Dummy Poland removed', player:GetID(), city:GetID())
 		end      
     end
@@ -237,7 +239,7 @@ function KublaiGrantCivTrait( playerID, iX, iY )
 		local oCiv = oPlayerConfig:GetCivilizationTypeName()
 		local have_captured = pPlayer:GetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID)
 		-- print('Kublai5', have_captured)
-		if have_captured == nil then
+		if have_captured == nil then -- avoid repeating
 			pPlayer:SetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID, true)
 			-- print('Kublai6', pPlayer:GetProperty('PROP_KEY_HAVE_CAPTURED_'..originalOwnerID))
 			for tRow in GameInfo.CivilizationTraits() do
