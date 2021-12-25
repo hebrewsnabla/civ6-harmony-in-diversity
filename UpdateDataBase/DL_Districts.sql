@@ -108,7 +108,7 @@ update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' 
 update Districts set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where DistrictType = 'DISTRICT_NEIGHBORHOOD'
 	or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
 -- UD
-update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
+-- update Districts set PrereqCivic = 'CIVIC_EARLY_EMPIRE' where DistrictType = 'DISTRICT_ACROPOLIS';
 
 -- [Require pop]
 update Districts set RequiresPopulation = 0 where DistrictType = 'DISTRICT_AERODROME'
