@@ -11,13 +11,15 @@ values
     ("LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "+20% [ICON_Production] Production in this city, and +2 [ICON_Production] Production for each Mine and Quarry in this city. International [ICON_TradeRoute] Trade Route to this city provides +3 [ICON_Production] Production for both side. Provides +5 [ICON_Production] Production for Domestic [ICON_TradeRoute] Trade Route to this city. Must be built along a River adjacent to an Industrial Zone district with a Factory."),
     ("LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "Must be built on the Coast, adjacent to land and a Harbor district. +100% [Icon_Tourism] Tourism (extra 100% [Icon_Tourism] Tourism for Music) from all kinds of Great works and Wonders if this city has Governor established and is founded by the player. Themed when displaying objects of musicians from the same era."),
     ("LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "+50% [ICON_PRODUCTION] Production towards all buildings in Theater Square. Automatically themed when all slots are filled."),
+    ("LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 Wildcard policy slot. Themed bonus doubling output when displaying objects of the same kind.[NEWLINE][NEWLINE]Must be built on flat land adjacent to the City Center."),
+    ("LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY",              "Theming bonus doubling output when displaying objects of the same kind."),
     ("LOC_BUILDING_PETRA_DESCRIPTION",                        "+3 [ICON_Food] Food, +2 [ICON_Gold] Gold, and +1 [ICON_Production] Production on all Desert tiles for this city (non-Floodplains). Must be built on Desert or Floodplains without Hills."),
     ("LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "+100% [ICON_Tourism] Religious Tourism from this city. +2 [ICON_Food] Food, +1 [ICON_Production] Production, and +1 [ICON_Culture] Culture on all Tundra tiles for this city. Must be built adjacent to a City Center."),
     ("LOC_BUILDING_CHICHEN_ITZA_DESCRIPTION",                 "+1 [ICON_Food] Food, +2 [ICON_Culture] Culture, +1 [ICON_Production] Production to all Rainforest tiles for this city. Must be built on Rainforest."),
     ("LOC_BUILDING_ORACLE_DESCRIPTION",                       "Patronage of Great People costs 25% less [ICON_Faith] Faith. Districts in this city provide +6 [ICON_GreatPerson] Great Person points of their type (for example, [ICON_GreatWriter] Great Writer points from the Theater Square district). Must be built on Hills."),
     ("LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION",               "Each Resource Camp, Pasture, and Plantation improvements within 4 tiles of this Wonder provide +1 [ICON_AMENITIES] Amenity. Must be placed adjacent to a Camp improvement."),
     ("LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION",  "Grants 2 Apostles when built. -10% [ICON_FAITH] Faith cost when purchasing Apostle in this city.[NEWLINE][NEWLINE]Must be built on Woods adjacent to a Holy Site district with a Temple, and you must have founded a Religion."),
-    ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "+2 Diplomatic Victory Points when built. +100% [ICON_Favor] Diplomatic Favor per turn from starting a turn as Suzerain of a City-State. Costs 25% less [ICON_GOLD] Gold and resources to upgrade Levied units.[NEWLINE][NEWLINE]Must be built on a River."),
+    ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "+2 Diplomatic Victory Points when built. Gain 1 [ICON_Governor] Governor promotion. +100% Influence points. +100% [ICON_Favor] Diplomatic Favor per turn from starting a turn as Suzerain of a City-State. Costs 25% less [ICON_GOLD] Gold and resources to upgrade Levied units.[NEWLINE][NEWLINE]Must be built on a River."),
     ("LOC_BUILDING_STATUE_OF_ZEUS_DESCRIPTION",               "Grants 3 Archers, 3 Spearmen, and a Battering Ram. 1 free Great General appears near the city where the Wonder was built. +50% [ICON_PRODUCTION] Production towards anti-cavalry units. Must be built on flat land adjacent to an Encampment district with a Barrack."),
     ("LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION",                "Receive boosts to all Ancient and Classical era technologies. [ICON_TechBoosted] Eurekas provide an extra 3% [ICON_SCIENCE] Science after finishing this Wonder (Ancient and Classical Techs excluded). Receive a random tech boost after another player recruits a [ICON_GreatScientist] Great Scientist. [NEWLINE][NEWLINE]Must be built on flat land adjacent to a Campus district with a Library."),
     ("LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION",             "+1 [ICON_Movement] Movement for all naval units. 1 free Great Admiral appears near the city where the wonder was built.[NEWLINE][NEWLINE]Must be built on the Coast, and adjacent to land and a Harbor district with a Lighthouse."),
@@ -46,7 +48,8 @@ values
     ("LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "Theming bonus doubling output when all slots are filled."),
     ("LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "Receive a second naval unit each time you train a naval unit. +1 [ICON_Production] Production and +1 [ICON_Gold] Gold for coast tiles in this city. +6 [ICON_RESOURCE_Niter] Niter per turn. Must be built on a Coast tile that is adjacent to an Industrial Zone district."),
     ("LOC_BUILDING_APADANA_DESCRIPTION",                      "+3 [ICON_ENVOY] Envoys when you build a wonder, including Apadana, in this city.[NEWLINE][NEWLINE]Must be built adjacent to your [ICON_CAPITAL] Capital."),
-    ("LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 Military policy slot[NEWLINE][NEWLINE]Provides the same defensive bonuses as the Fort improvement. +2 Influence points per turn for every Encampment district. Must be built on Hills adjacent to an Encampment district.");
+    ("LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 Military policy slot[NEWLINE][NEWLINE]Provides the same defensive bonuses as the Fort improvement. +2 Influence points per turn for every Encampment district. Must be built on Hills adjacent to an Encampment district."),
+    ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",         "Gain 2 [ICON_Governor] Governor promotions. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -61,14 +64,15 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_RUHR_VALLEY_DESCRIPTION",                  "该城市+20% [ICON_Production] 生产力，此城中每个矿山和采石场+2 [ICON_Production] 生产力。通往此城的国际 [ICON_TradeRoute] 商路为双方+3 [ICON_PRODUCTION] 生产力。通往此城的国内 [ICON_TradeRoute] 商路+5 [ICON_PRODUCTION] 生产力。必须沿河而建，且与拥有工厂的工业区区域相邻。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SYDNEY_OPERA_HOUSE_DESCRIPTION",           "必须建在海岸上，且需要靠近陆地和一个港口。所有由玩家创立且有总督就职的城市中，奇观和所有巨作 [Icon_Tourism] 旅游业绩+100%（音乐巨作 [Icon_Tourism] 旅游业绩额外+100%）。当展示来自相同时代音乐家的作品时获得主题化加成。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HERMITAGE_DESCRIPTION",                    "建造剧院建筑时加速50%。当所有槽位填满时自动获得主题化加成。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位。当展示来自相同类型的作品时获得主题加成。[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY",              "当展示来自相同类型的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "为该城市所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在没有丘陵的沙漠或泛滥平原上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "此城市产出的 [ICON_Tourism] 宗教旅游业绩+100%。此城市所有冻土单元格产出的 [ICON_Food] 食物+2、[ICON_Production] 生产力+1、[ICON_Culture] 文化值+1。必须建在市中心旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHICHEN_ITZA_DESCRIPTION",                 "该城市所有雨林单元格+1 [ICON_Food] 食物，+2 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。必须建在雨林。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ORACLE_DESCRIPTION",                       "伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。该城市区域为它们类型的 [ICON_GreatPerson] 伟人点数+6（比如，来自剧院广场区的 [ICON_GreatWriter] 大作家点数）。必须建在丘陵上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLE_ARTEMIS_DESCRIPTION",               "此奇观4个单元格内的每个资源营地、牧场和种植园改良设施+1 [ICON_AMENITIES] 宜居度。必须放置在营地改良设施旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MAHABODHI_TEMPLE_EXPANSION2_DESCRIPTION",  "建成后提供2个使徒。本城购买使徒的 [ICON_FAITH] 信仰花费-10%。[NEWLINE][NEWLINE]必须建在与圣地区域（此区域中须建有寺庙）相邻的树林中，前提还须已创立宗教。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "建成时+2外交胜利点数。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少25%。[NEWLINE][NEWLINE]必须修建在河边。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "建成时+2外交胜利点数。获得1次 [ICON_Governor] 总督升级。+100%影响力点数。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少25%。[NEWLINE][NEWLINE]必须修建在河边。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STATUE_OF_ZEUS_DESCRIPTION",               "提供3名弓箭手、3名枪兵，以及1台破城槌。建成时市中心出现一位大将军。生产抗骑兵单位时+50% [ICON_PRODUCTION] 生产力。必须建在与军营区域（须拥有兵营）相邻的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GREAT_LIBRARY_DESCRIPTION",                "所有远古和古典时代的科技均获得 [ICON_TechBoosted] 尤里卡。建成后，[ICON_TechBoosted] 尤里卡提供的 [ICON_SCIENCE] 科技值+3%（不包括建成时触发的远古古典 [ICON_TechBoosted] 尤里卡）。其他玩家招募 [ICON_GreatScientist] 大科学家时将随机获得1个 [ICON_TechBoosted] 尤里卡。[NEWLINE][NEWLINE]必须建在与学院区域（其中须建有图书馆）相邻的平坦地面上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GREAT_LIGHTHOUSE_DESCRIPTION",             "所有海军单位和海运单位+1 [ICON_Movement] 移动力。建成时市中心出现一位大提督。[NEWLINE][NEWLINE]必须建在海岸上，且必须与陆地和已有灯塔的港口相邻。"),
@@ -97,7 +101,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_DL_STPETERSBASILICA",         "当所有槽位填满时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",             "每训练一个海军单位，便会获得第二个海军单位。为本城每个近海单元格+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币，每回合提供6点 [ICON_RESOURCE_Niter] 硝石。必须建在靠近工业区的海岸单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_APADANA_DESCRIPTION",                      "在此城市中建造奇观（包括阿帕达纳宫）时+3 [ICON_ENVOY] 使者。必须建造在 [ICON_CAPITAL] 首都旁。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 军事政策槽位[NEWLINE][NEWLINE]提供同堡垒改良设施一样的防御加成。每座军营提供+2影响力点数。必须建立在邻近军营区的丘陵上。");
+    ("zh_Hans_CN",  "LOC_BUILDING_ALHAMBRA_DESCRIPTION",                     "+1 军事政策槽位[NEWLINE][NEWLINE]提供同堡垒改良设施一样的防御加成。每座军营提供+2影响力点数。必须建立在邻近军营区的丘陵上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",         "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。");
 
 -- National Wonders
 --------------------------------------------------------------------------------

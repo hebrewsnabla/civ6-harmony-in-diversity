@@ -2,6 +2,33 @@
 --           Ethiopia DLC          --
 -------------------------------------
 
+--Ethiopia
+--独石教堂基础信仰由+1变为+2, 拥有独石教堂的城市可以购买移民和工人
+insert or replace into Improvement_YieldChanges
+    (ImprovementType,                 YieldType,          YieldChange)
+values
+    ('IMPROVEMENT_ROCK_HEWN_CHURCH', 'YIELD_FAITH',       2);
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,				        ModifierId)
+values
+	('IMPROVEMENT_ROCK_HEWN_CHURCH',		'DUSHI_SETTLER_PURCHASE'),
+    --('IMPROVEMENT_ROCK_HEWN_CHURCH',		'DUSHI_RELIGION_PURCHASE')，
+	('IMPROVEMENT_ROCK_HEWN_CHURCH',		'DUSHI_BUILDER_PURCHASE');
+
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,								SubjectRequirementSetId,		SubjectStackLimit)
+values
+	('DUSHI_SETTLER_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,	1),
+	('DUSHI_BUILDER_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1);
+    -- ('DUSHI_RELIGION_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1);
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('DUSHI_BUILDER_PURCHASE',						'Tag',			'CLASS_BUILDER'),
+    --('DUSHI_RELIGION_PURCHASE',                     'Tag',          'CLASS_MISSIONARY'),
+	('DUSHI_SETTLER_PURCHASE',						'Tag',			'CLASS_SETTLER');
 -- insert or replace into PolicyModifiers
 --     (PolicyType,    ModifierId)
 -- values

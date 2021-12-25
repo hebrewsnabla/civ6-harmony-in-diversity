@@ -75,8 +75,8 @@ values
 	-- (245,	'IMPROVEMENT_CAMP',			'YIELD_GOLD',		2,				NULL,					'CIVIC_MERCANTILISM'),
 	-- (246,	'IMPROVEMENT_CAMP',			'YIELD_FOOD',		1,				'TECH_RIFLING',			NULL),
 	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
-	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING',		NULL),
-	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				NULL,					'CIVIC_EXPLORATION');
+	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING', NULL),
+	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				'TECH_MASS_PRODUCTION',	NULL); -- CIVIC_EXPLORATION
 ----250已占用
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -145,3 +145,6 @@ insert or replace into Improvement_Tourism
 	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
 values
 	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
+
+-- 冰球场
+update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';

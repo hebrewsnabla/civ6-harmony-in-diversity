@@ -763,3 +763,34 @@ update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INF
 
 -- Panama
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_COLONIALISM' where BuildingType = 'BUILDING_PANAMA_CANAL';
+
+-- 紫禁城
+insert or replace into Building_GreatWorks
+	(BuildingType,					GreatWorkSlotType,				NumSlots,	ThemingSameObjectType,		ThemingYieldMultiplier,		ThemingTourismMultiplier,	ThemingBonusDescription)
+values
+	('BUILDING_FORBIDDEN_CITY',		'GREATWORKSLOT_PALACE',			2,			1,							100,						100,						'LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY');
+
+-- 西印度交易所
+update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS';
+
+-- 匈牙利议会大厦
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where BuildingType = 'BUILDING_ORSZAGHAZ';
+
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_GOVERNOR_POINTS'),
+	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,									RunOnce)
+values
+	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',		1),
+	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',		0);
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,			Value)
+values
+	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'Delta',		1),
+	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
+	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		100);
