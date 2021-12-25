@@ -498,12 +498,17 @@ values
 insert or replace into ImprovementModifiers
 	(ImprovementType,						ModifierId)
 values
-	('IMPROVEMENT_SPHINX',					'SPHINX_ADJACENT_FLOODPLAINS_FARM_FOOD');
+	('IMPROVEMENT_SPHINX',					'SPHINX_ADJACENT_FARM_FOOD');
+
+insert or replace into Improvement_BonusYieldChanges
+	(ImprovementType,       YieldType,      BonusYieldChange,	PrereqCivic)
+values
+	('IMPROVEMENT_SPHINX', 'YIELD_CULTURE',	1, 					'CIVIC_LITERARY_TRADITION_HD');
 
 insert or replace into Modifiers 
 	(ModifierId, 									ModifierType,													RunOnce,	Permanent,	SubjectRequirementSetId)
 values
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							0,0,'SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS'),
+	('SPHINX_ADJACENT_FARM_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							0,0,'SPHINX_ADJACENT_FARM_REQUIREMENTS'),
 	-- ('TRAIT_FLOODPLAIN_BUILDINGS_FOOD',				'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
 	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
 	-- ('TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
@@ -512,15 +517,15 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,									RequirementSetType)
 values
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
+	('SPHINX_ADJACENT_FARM_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('EGYPT_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS','ADJACENT_TO_OWNER'),
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS','REQUIRES_PLOT_HAS_FARM'),
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS','REQUIRES_PLOT_HAS_FLOODPLAINS_TAG'),
+	('SPHINX_ADJACENT_FARM_REQUIREMENTS',			'ADJACENT_TO_OWNER'),
+	('SPHINX_ADJACENT_FARM_REQUIREMENTS',			'REQUIRES_PLOT_HAS_FARM'),
+	--('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS','REQUIRES_PLOT_HAS_FLOODPLAINS_TAG'),
 	('EGYPT_REQUIREMENTS',							'PLAYER_IS_CIVILIZATION_EGYPT');
 
 insert or replace into BuildingModifiers (BuildingType,ModifierId)
@@ -529,8 +534,8 @@ insert or replace into BuildingModifiers (BuildingType,ModifierId)
 insert or replace into ModifierArguments 
 	(ModifierId, 											Name,				 Value) 
 values
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_FOOD',				'Amount',			1),
-	('SPHINX_ADJACENT_FLOODPLAINS_FARM_FOOD',				'YieldType',		'YIELD_FOOD'),
+	('SPHINX_ADJACENT_FARM_FOOD',							'Amount',			1),
+	('SPHINX_ADJACENT_FARM_FOOD',							'YieldType',		'YIELD_FOOD'),
 	('TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER',			'UnitType',			'UNIT_BUILDER'),
 	('TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER',			'Amount',			1);
 	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',				'FeatureType',		'FEATURE_FLOODPLAINS_GRASSLAND'),
@@ -1300,6 +1305,8 @@ values
 -------------------------------------------------------------------------------------------------
 --Cree's Mekewap now provides +1 production adjacent a Luxury.
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
+--Cree's Mekewap provides +2 gold base production.
+update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldType = 'YIELD_GOLD';
 
 ----------------------------------------------------------------------------------------------------------------------
 -- Germany
