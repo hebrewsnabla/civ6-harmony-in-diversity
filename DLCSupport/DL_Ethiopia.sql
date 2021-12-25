@@ -20,8 +20,8 @@ insert or replace into Modifiers
 	(ModifierId,				ModifierType,								SubjectRequirementSetId,		SubjectStackLimit)
 values
 	('DUSHI_SETTLER_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,	1),
-	--('DUSHI_BUILDER_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1),
-    ('DUSHI_RELIGION_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1);
+	('DUSHI_BUILDER_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1);
+    -- ('DUSHI_RELIGION_PURCHASE',	'MODIFIER_CITY_ENABLE_UNIT_FAITH_PURCHASE',	NULL,   1);
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,				Value)
