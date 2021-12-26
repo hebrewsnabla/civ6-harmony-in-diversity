@@ -25,8 +25,8 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_PHYSICS_HD",                                               "Scientists' great theories form our basic understanding of the world."),
     ("LOC_BOOST_TRIGGER_BIOLOGY_HD",                                                        "Build a Zoo."),
     ("LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                               "After collecting animals from all over the world, the zoos in our empire are getting busier and busier. It's time to sort these creatures out."),
-    ("LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                                              "Build 2 Castles."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                                     "Intensive warfare made the nobles to build more and more castles, while the workers learned valuable lessons about civil construction."),
+    ("LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                                              "Build 2 Workshops."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                                     ""),
     -- Techs
     ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                                "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from a Sea or a River."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when attacking from Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
@@ -99,7 +99,6 @@ values
     ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
-    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 3 Workshops."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",                                                    "Kill 2 Barbarians."),
     -- 
     ("LOC_BOOST_TRIGGER_THE_WHEEL",                                                         "Build a Pasture."),
@@ -150,7 +149,15 @@ values
     ("LOC_BOOST_TRIGGER_RADIO",                                                             "Have the Colonialism Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                                    "The colonies have been built around the world, and our governors want to develop a new long-distance communication technology."),
     ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         "Our fighters now need a targeting system like a scalpel and engineers are already working on it."); 
+    ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         "Our fighters now need a targeting system like a scalpel and engineers are already working on it."),
+    ("LOC_BOOST_TRIGGER_COMPUTERS",                                                         "Build an Aluminum Mine."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                                ""),
+    ("LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                                    "Build an Aluminum Mine and own a helicopter."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                                           ""),
+    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 individual Zones."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                                        ""),
+    ("LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                                "Have a level 2 Alliance."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -179,8 +186,8 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_PHYSICS_HD",                                "科学家的伟大理论让我们形成了对这个世界基本认知。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BIOLOGY_HD",                                         "建造1座动物园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                "在搜集了世界各地的动物以后，城市中的动物园越来越热闹，我们是时候为这些生物分门别类了。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                               "建造2座中世纪城墙。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      "密集的战争导致了贵族们修建越来越多的城堡，而工人们从中总结出了有关土木建设的宝贵经验。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                               "建造2座工作坊"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      ""),
     -- Techs
     ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
@@ -254,7 +261,6 @@ values
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造3座工作坊。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BRONZE_WORKING",                                     "击杀2个蛮族单位。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BRONZE_WORKING",     ""), -- 和蛮族的战争让你渴望更强大的武器。
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_THE_WHEEL",                                          "建造1座牧场。"),
@@ -306,7 +312,15 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RADIO",                                              "拥有殖民主义市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RADIO",                                     "世界各地都在兴建殖民地，因此总督们希望能够开发一种新的长距离通讯技术。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"); 
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPUTERS",                                          "建造一座铝矿。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                 ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                     "建造一座铝矿，训练一个直升飞机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                            ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造4座工业区。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                         ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                 "拥有第2级同盟。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        "");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
