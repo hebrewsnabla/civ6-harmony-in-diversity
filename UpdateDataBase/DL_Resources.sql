@@ -8,6 +8,7 @@ update Resources set Frequency = 11 where ResourceType = 'RESOURCE_COAL';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_IRON';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_NITER';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_OIL';
+update Resources set Frequency = 10 where ResourceType = 'RESOURCE_ALUMINUM';
 
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';

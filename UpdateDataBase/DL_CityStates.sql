@@ -55,6 +55,8 @@ update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_C
 insert or replace into Improvement_ValidResources (ImprovementType,ResourceType,MustRemoveFeature)
 select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources;
 
+update Improvement_Tourism set PrereqTech = NULL where ImprovementType = 'IMPROVEMENT_MOAI';
+
 ---------------------------------------------------------------------------------------------------------
 -- Mohenjo Daro朱大罗
 insert or replace into TraitModifiers 
