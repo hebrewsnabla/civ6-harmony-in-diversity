@@ -198,7 +198,7 @@ function PolandTempleUnlockMilitaryEngineers(playerID:number, cityID:number)
 	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
 		return
 	end
-	print('Poland', player, city)
+	-- print('Poland', player, city)
     if player ~= nil and city ~= nil then
 		local cityHasDummy = city:GetBuildings():HasBuilding(m_Dummy_Poland)
 		local cityHasTemple = city:GetBuildings():HasBuilding(m_Temple)

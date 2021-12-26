@@ -360,6 +360,11 @@ insert or replace into Buildings
 values
     ('BUILDING_DUMMY_POLAND',           'LOC_BUILDING_DUMMY_POLAND_NAME',       1,      'LOC_BUILDING_DUMMY_POLAND_DESCRIPTION',    1);
 
+insert or replace into Buildings_XP2
+    (BuildingType,                      Pillage)
+values
+    ('BUILDING_DUMMY_POLAND',           0);
+
 insert or replace into Unit_BuildingPrereqs
     (Unit,                      PrereqBuilding)
 values
