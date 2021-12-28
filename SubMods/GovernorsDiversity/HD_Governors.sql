@@ -773,19 +773,8 @@ update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_RELI
 update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_MUSIC_TOURISM' and Name = 'ScalingFactor';
 update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_WRITING_TOURISM' and Name = 'ScalingFactor';
 
-	-- 图书馆员 初始升级
-update GovernorPromotionModifiers set ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN' 
-	where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN' and ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS';
-update GovernorPromotionModifiers set ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' 
-	where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN' and ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS';
-
-update ModifierArguments set Value = 0.6 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
-
-	-- 鉴赏家 研究员
-update GovernorPromotionModifiers set ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR';
-update GovernorPromotionModifiers set ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS' where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER';
-
-update ModifierArguments set Value = 30 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
+update ModifierArguments set Value = 1.2 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
+update ModifierArguments set Value = 20 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
 
 	-- 太空计划 改名 科教兴国
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD' where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE';
