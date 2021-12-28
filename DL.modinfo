@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Mod id="521b8777-0977-4859-a5ee-3e411a732e5c" version="1.1">
   <Properties>
     <Name>LOC_HARMONY_IN_DIVERSITY_NAME</Name>
@@ -439,10 +439,6 @@
       <File>ModSupport/GeneralChineseSupport/Texts.sql</File>
     </UpdateText>
     <!-- Import files -->
-    <ImportFiles id="HD_Message">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
-      <File>UI/Replacement/MainMenu.xml</File>
-    </ImportFiles>
     <ImportFiles id="HD_Mod_Version_Checker">
       <Properties><LoadOrder>1</LoadOrder></Properties>
       <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
@@ -593,12 +589,7 @@
       <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
-    <ImportFiles id="CityStatesDiversity_BST_Import" criteria="Expansion2">
-      <Properties><LoadOrder>5000</LoadOrder></Properties>
-      <File>UI/Replacement/citystates.xml</File>
-      <File>UI/Replacement/citystates.lua</File>
-      <File>UI/Replacement/citystates_bst_xp2.lua</File>
-    </ImportFiles>
+    <!-- 待 -->
     <ReplaceUIScript id="CityStatesDiversity_BST_UI" criteria="Expansion2">
       <Properties>
         <LoadOrder>5000</LoadOrder>
@@ -635,28 +626,6 @@
       <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_PlotToolTip.lua</File>
     </ImportFiles>
-    <ReplaceUIScript id="DL_ProductionPanel" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>150000</LoadOrder>
-        <LuaContext>ProductionPanel</LuaContext>
-        <LuaReplace>UI/Replacement/DL_ProductionPanel.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <ImportFiles id="DL_ProductionPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_ProductionPanel.lua</File>
-    </ImportFiles>
-    <ReplaceUIScript id="DL_CityPanel" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>150000</LoadOrder>
-        <LuaContext>CityPanel</LuaContext>
-        <LuaReplace>UI/Replacement/DL_CityPanel.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanel.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_SelectedUnit" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -687,10 +656,6 @@
         <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_TechCivicPopup_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
-    </ImportFiles>
     <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
       <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
