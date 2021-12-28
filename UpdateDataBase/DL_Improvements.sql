@@ -150,7 +150,7 @@ values
 update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 --by 弱猹
 --西班牙，传教团的提升
-UPDATE Improvement_BonusYieldChanges SET PrereqCivic="CIVIC_EXPLORATION" where ImprovementType="IMPROVEMENT_MISSION";
+UPDATE Improvement_BonusYieldChanges SET PrereqCivic="CIVIC_EXPLORATION" where ImprovementType="IMPROVEMENT_MISSION" and PrereqCivic="CIVIC_CULTURAL_HERITAGE";
 --土澳，内陆牧场的提升，
 UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_Outback_Production";
 --法国UI改为文学传统
