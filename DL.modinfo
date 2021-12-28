@@ -1861,12 +1861,5 @@
     <File>Assets/Buildings/General_Service_80.dds</File>
     <File>Assets/Buildings/General_Service_128.dds</File>
     <File>Assets/Buildings/General_Service_256.dds</File>
-    <!-- Platforms -->
-    <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>
