@@ -2,7 +2,7 @@
 <GameData>
 	<!-- Testing -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Testing" Name="LOC_GAMEMODE_TESTING_NAME" Description="LOC_GAMEMODE_TESTING_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TESTING" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Testing" Name="LOC_GAMEMODE_TESTING_NAME" Description="LOC_GAMEMODE_TESTING_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TESTING" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="3000"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_Testing" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
@@ -30,7 +30,7 @@
 	</QueryCriteria>
 	<!-- Tech test -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Techtest" Name="LOC_GAMEMODE_TECHTEST_NAME" Description="LOC_GAMEMODE_TECHTEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Techtest" Name="LOC_GAMEMODE_TECHTEST_NAME" Description="LOC_GAMEMODE_TECHTEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_TECHTEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="3002"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_Techtest" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
@@ -58,7 +58,7 @@
 	</QueryCriteria>
 	<!-- AI test -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_AItest" Name="LOC_GAMEMODE_AITEST_NAME" Description="LOC_GAMEMODE_AITEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_AItest" Name="LOC_GAMEMODE_AITEST_NAME" Description="LOC_GAMEMODE_AITEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="3001"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_AItest" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
@@ -86,7 +86,7 @@
 	</QueryCriteria>
 	<!-- MultiPlayer test -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_MPtest" Name="LOC_GAMEMODE_MPTEST_NAME" Description="LOC_GAMEMODE_MPTEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MPTEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_MPtest" Name="LOC_GAMEMODE_MPTEST_NAME" Description="LOC_GAMEMODE_MPTEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MPTEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="3003"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_MPtest" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
@@ -114,7 +114,7 @@
 	</QueryCriteria>
 	<!-- Wild Mode -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Wild" Name="LOC_GAMEMODE_WILD_NAME" Description="LOC_GAMEMODE_WILD_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_WILD" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Wild" Name="LOC_GAMEMODE_WILD_NAME" Description="LOC_GAMEMODE_WILD_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_WILD" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="3004"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_Wild" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
