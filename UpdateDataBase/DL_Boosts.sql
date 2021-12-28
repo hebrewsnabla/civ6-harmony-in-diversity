@@ -96,7 +96,12 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_ALLIANCE_LEVEL_X', NumItems =
     -- 【化学】科技尤里卡改为：大科或间谍触发
 update Boosts set BoostClass = 'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH', NumItems = 0, TriggerDescription = 'LOC_BOOST_TRIGGER_MUST_STEAL_NO_GREAT_SCIENTIST', 
     TriggerLongDescription = 'Critical late game tech - boost description not needed' where TechnologyType = 'TECH_CHEMISTRY';
-
+    -- 【横帆装置】科技尤里卡改为：建造一座硝石矿，训练一个轻快帆船
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_UNIT_AND_IMPROVEMENT', ImprovementType = 'IMPROVEMENT_MINE', 
+    ResourceType = 'RESOURCE_NITER', Unit1Type = 'UNIT_CARAVEL' where TechnologyType = 'TECH_SQUARE_RIGGING';
+    -- 【膛线】科技尤里卡改为：用火枪手击杀一个单位
+update Boosts set BoostClass = 'BOOST_TRIGGER_KILL_WITH', ImprovementType = NULL, 
+    ResourceType = Null, Unit1Type = 'UNIT_MUSKETMAN' where TechnologyType = 'TECH_RIFLING';
 
 -- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;

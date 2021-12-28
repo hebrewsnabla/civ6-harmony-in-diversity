@@ -149,11 +149,11 @@ update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MODERN_AT';
 
 -- Ranged
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 23, StrategicResource = NULL where UnitType = 'UNIT_ARCHER';
+update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 15, RangedCombat = 25, StrategicResource = NULL where UnitType = 'UNIT_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARCHER';
 -- update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 20, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_COMPOSITE_BOWMAN';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_COMPOSITE_BOWMAN';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_CROSSBOWMAN';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_CROSSBOWMAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CROSSBOWMAN';
 -- update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_CULVERIN';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CULVERIN';

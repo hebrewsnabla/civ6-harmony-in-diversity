@@ -157,7 +157,11 @@ values
     ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 individual Zones."),
     ("LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                                        ""),
     ("LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                                "Have a level 2 Alliance."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "");
+    ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       ""),
+    ("LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                                    "Build a Niter Mine and own a Caravel."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                                           ""),
+    ("LOC_BOOST_TRIGGER_RIFLING",                                                           "Kill a unit with a Musketman."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -315,12 +319,16 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPUTERS",                                          "建造一座铝矿。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                 ""),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                     "建造一座铝矿，训练一个直升飞机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                     "建造一座铝矿，拥有一个直升飞机。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                            ""),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造4座工业区。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                         ""),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                 "拥有第2级同盟。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        "");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                     "建造一座硝石矿，拥有一个轻快帆船。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                            ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RIFLING",                                            "用火枪手击杀一个单位。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "");
 
 --------------------------------------------------------------------------------
 -- Language: en_US

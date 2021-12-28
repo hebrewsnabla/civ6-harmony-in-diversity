@@ -270,6 +270,7 @@ update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILD
 ------------------------------------------------------------------------------------------------------------------
 
 --BUILDING_ITSUKUSHIMA
+update Buildings set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where BuildingType = 'BUILDING_ITSUKUSHIMA';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';
