@@ -123,3 +123,14 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外标准相邻，礁石和海藻森林+2 [ICON_Production] 生产力"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_NAME",                                  "御岳"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度， +2 [ICON_Housing] 住房；每相邻两块海洋单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");
+	
+	-- 海妈：沿海市中心1琴改为沿海市中心2琴
+insert or replace into EnglishText
+    (Tag,                                                         Text)
+values
+	("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                  "+2 [ICON_CULTURE] Culture to all cities adjacent to coasts or lakes. +1 [ICON_Food] Food from all coast and ocean tiles .");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                         Text)
+values
+	("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                   "位于海边或湖边的城市+2 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 ");

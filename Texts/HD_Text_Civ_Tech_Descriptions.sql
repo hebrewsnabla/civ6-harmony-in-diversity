@@ -387,3 +387,16 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_2",                                          "这种需要人们不停地工作的事业，成为他们生活中不可或缺的组成部分。事实上，这是唯一可能的动机。——马克斯·韦伯《新教伦理与资本主义精神》"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                  "一门科学，只有当它成功地运用数学时，才能达到真正完善的地步。——卡尔·马克思"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                  "只有社会才能对人生的价值做出总的评价，而个人对此是无能为力的……——埃米尔·涂尔干《自杀论》");
+
+
+-- 研究货币给商业地基（非相邻加成）+3金	
+insert or replace into EnglishText
+    (Tag,                                                         Text)
+values
+	("LOC_TECH_CURRENCY_HD_DESCRIPTION",                    	"Provides +3 [ICON_GOLD] Gold to Commercial Hubs.");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                         Text)
+values
+	("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                    		"商业中心产出的[ICON_GOLD] 金币+3 ");
+	
