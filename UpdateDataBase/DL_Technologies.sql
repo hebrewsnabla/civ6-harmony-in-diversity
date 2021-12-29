@@ -392,7 +392,6 @@ values
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
 
 -- 研究货币给商业地基（非相邻加成）+3金
-update Technologies set Description = 'LOC_TECH_CURRENCY_HD_DESCRIPTION' where TechnologyType = 'TECH_CURRENCY';
 insert or replace into TechnologyModifiers
 	(TechnologyType,													ModifierId)
 values

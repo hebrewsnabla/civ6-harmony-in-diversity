@@ -6,12 +6,14 @@
 update Technologies set Description = 'LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION' where TechnologyType ='TECH_ANIMAL_HUSBANDRY';
 update Technologies set Description = 'LOC_TECH_MINING_HD_DESCRIPTION' where TechnologyType ='TECH_MINING';
 update Technologies set Description = 'LOC_TECH_MASONRY_HD_DESCRIPTION' where TechnologyType ='TECH_MASONRY';
+update Technologies set Description = 'LOC_TECH_SAILING_HD_DESCRIPTION' where TechnologyType ='TECH_SAILING';
 -- 
 update Technologies set Description = 'LOC_TECH_ARCHERY_HD_DESCRIPTION' where TechnologyType ='TECH_ARCHERY';
 update Technologies set Description = 'LOC_TECH_IRRIGATION_DESCRIPTION' where TechnologyType ='TECH_IRRIGATION';
 update Technologies set Description = 'LOC_TECH_THE_WHEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_THE_WHEEL';
 update Technologies set Description = 'LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION' where TechnologyType ='TECH_CELESTIAL_NAVIGATION';
 update Technologies set Description = 'LOC_TECH_CONSTRUCTION_HD_DESCRIPTION' where TechnologyType ='TECH_CONSTRUCTION';
+update Technologies set Description = 'LOC_TECH_CURRENCY_HD_DESCRIPTION' where TechnologyType ='TECH_CURRENCY';
 update Technologies set Description = 'LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION' where TechnologyType ='TECH_APPRENTICESHIP';
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 -- update Technologies set Description = 'LOC_TECH_STIRRUPS_HD_DESCRIPTION' where TechnologyType = 'TECH_STIRRUPS';

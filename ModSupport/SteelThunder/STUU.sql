@@ -123,7 +123,7 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 delete from TypeTags where Type = 'ABILITY_PLUS_5_BONUS_VS_DAMAGED' and Tag = 'CLASS_EGYPTIAN_KHOPESH';
 insert or replace into TypeTags (Type, Tag) values ('ABILITY_HD_BATTLECRY', 'CLASS_EGYPTIAN_KHOPESH');
 -- -- 中国
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_CHINESE_CHOKONU';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_CHINESE_CHOKONU';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';
 -- -- 西班牙
 update Units set PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SPANISH_TERCIO';
@@ -167,7 +167,7 @@ values ('RECEIVE_NORWEGIAN_ULFHEDNAR_MOVEMENT_BONUS_ATTACH',    'ModifierId',   
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 2, Range = 0, Combat = 68, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_INDIAN_SEPOY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_INDIAN_SEPOY';
 -- -- 英国
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 3, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_ENGLISH_LONGBOWMAN';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 3, Combat = 32, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_ENGLISH_LONGBOWMAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ENGLISH_LONGBOWMAN';
 delete from TypeTags where Type = 'ABILITY_LONGBOWMAN' and Tag = 'CLASS_ENGLISH_LONGBOWMAN';
 update Units set Cost = 220, Maintenance = 4, BaseMoves = 4, Range = 2, Combat = 50, RangedCombat = 60, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_ENGLISH_SHIP_OF_THE_LINE';
@@ -259,7 +259,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update UnitReplaces set ReplacesUnitType = 'UNIT_CROSSBOWMAN' where CivUniqueUnitType = 'UNIT_ZULU_ASSEGAI';
 update UnitUpgrades set UpgradeUnit = 'UNIT_FIELD_CANNON' where Unit = 'UNIT_ZULU_ASSEGAI';
 update Units set PrereqTech = 'TECH_METAL_CASTING' where UnitType = 'UNIT_ZULU_ASSEGAI';
-update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 44, StrategicResource = NULL where UnitType = 'UNIT_ZULU_ASSEGAI';
+update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_ZULU_ASSEGAI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ZULU_ASSEGAI';
 update UnitAbilityModifiers set ModifierId = 'HD_MOVEMENT_ADJACENT_TO_ANTI_CAVALRY' where
     UnitAbilityType = 'ABILITY_ZULU_ASSEGAI' and ModifierId = 'PLUS_4_ASSEGAI_ADJACENCY_COMBAT_BONUS_ATTACH';
@@ -318,14 +318,14 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 update Units set Cost = 670, Maintenance = 7, BaseMoves = 5, Range = 0, Combat = 90, RangedCombat = 0, StrategicResource = 'RESOURCE_COAL' where UnitType = 'UNIT_CANADA_HMCS_HAIDA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CANADA_HMCS_HAIDA';
 -- -- 匈牙利
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 30, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_HUNGARY_KALANDOZO';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 3, Range = 2, Combat = 32, RangedCombat = 47, StrategicResource = NULL where UnitType = 'UNIT_HUNGARY_KALANDOZO';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HUNGARY_KALANDOZO';
 delete from TypeTags where Type = 'ABILITY_LESS_MOVEMENT_PILLAGE' and Tag = 'CLASS_HUNGARY_KALANDOZO';
 -- -- 印加
 delete from Route_ValidBuildUnits where UnitType = 'UNIT_INCA_CHASQUI';
 insert or replace into Improvement_ValidBuildUnits (ImprovementType, UnitType) values ('IMPROVEMENT_MOUNTAIN_ROAD', 'UNIT_INCA_CHASQUI');
 -- -- 马里
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_MALI_SOFA';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_MALI_SOFA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MALI_SOFA';
 -- -- 毛利
 update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_MAORI_TUPARA';

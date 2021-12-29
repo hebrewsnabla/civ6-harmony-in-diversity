@@ -145,3 +145,13 @@ VALUES
         );
 --========================================================================================================================
 --========================================================================================================================
+
+insert or replace into EnglishText
+    (Tag,                                                                                   Text)
+values
+    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of Kelp Forest and resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark.");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获海藻森林和由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。");
