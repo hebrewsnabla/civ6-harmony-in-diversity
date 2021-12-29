@@ -1997,7 +1997,7 @@ select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'YieldType',			'YIELD_SC
 from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
-select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				1	
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				2	
 from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
