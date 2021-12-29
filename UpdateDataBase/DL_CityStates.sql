@@ -408,7 +408,7 @@ values
 	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT'),
 	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_STRENGTH'),	
 	('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'Amount',			1),
-	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			5);
+	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			3);
 insert or replace into ModifierStrings
 	(ModifierId,							Context,	Text)
 values

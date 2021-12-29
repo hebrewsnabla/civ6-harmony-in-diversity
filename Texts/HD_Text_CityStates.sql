@@ -81,8 +81,8 @@ values
     ("LOC_CIVILIZATION_CARDIFF_BONUS",                    "Cities receive +3 [ICON_Power] Power for every Harbor building."), -- +4 corresponding output for buildings powered.
     ("LOC_LEADER_TRAIT_WOLIN_DESCRIPTION",                "Receive [ICON_GreatGeneral] Great General points when a land unit defeats a major or minor civilization's unit and receive [ICON_GreatAdmiral] Great Admiral points when a naval unit defeats a major or minor civilization's unit equal to 100% of the opposing unit's strength (Standard Speed)."),
     ("LOC_CIVILIZATION_WOLIN_BONUS",                      "Receive [ICON_GreatGeneral] Great General points when a land unit defeats a major or minor civilization's unit and receive [ICON_GreatAdmiral] Great Admiral points when a naval unit defeats a major or minor civilization's unit equal to 100% of the opposing unit's strength (Standard Speed)."),
-    ("LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
-    ("LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
+    ("LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
+    ("LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
     ("LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture, double when they are located near river."),
     ("LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture, double when they are located near river."),
     ("LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus."),
@@ -177,8 +177,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_BRUSSELS_BONUS",                   "城市建造奇观时+25% [ICON_Production] 生产力。"), -- 每个奇观提供+2 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_WOLIN_DESCRIPTION",                "陆地单位击杀主要和小型文明的单位时，将获得 [ICON_GreatGeneral] 大将军点数，而海军单位完成击杀将获得 [ICON_GreatAdmiral] 海军统帅点数，获得量等同于对方单位战斗力的100%（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_WOLIN_BONUS",                      "陆地单位击杀主要和小型文明的单位时，将获得 [ICON_GreatGeneral] 大将军点数，而海军单位完成击杀将获得 [ICON_GreatAdmiral] 海军统帅点数，获得量等同于对方单位战斗力的100%（标准速度下）。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "城市中建成的每个军营及军营区域建筑提供+2 [ICON_SCIENCE] 科技值。你的骑兵+1 [ICON_Movement] 移动力，+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "城市中建成的每个军营及军营区域建筑提供+2 [ICON_SCIENCE] 科技值。你的骑兵+1 [ICON_Movement] 移动力，+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "城市中建成的每个军营及军营区域建筑提供+2 [ICON_SCIENCE] 科技值。你的骑兵+1 [ICON_Movement] 移动力，+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "城市中建成的每个军营及军营区域建筑提供+2 [ICON_SCIENCE] 科技值。你的骑兵+1 [ICON_Movement] 移动力，+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "剧院、圣地、商业中心、娱乐中心和奇观提供1 [ICON_CULTURE] 文化值，位于河流旁时加成翻倍。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "剧院、圣地、商业中心、娱乐中心和奇观提供1 [ICON_CULTURE] 文化值，位于河流旁时加成翻倍。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "剧院广场区域的相邻加成提升50%，与其他玩家同盟后，每一级同盟都额外提升50%的剧院广场相邻加成。"),

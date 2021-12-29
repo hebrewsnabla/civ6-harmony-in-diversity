@@ -219,10 +219,10 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_OIL',
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_CHOSEN_INFANTRY';
 -- -- 阿兹特克
-update units set Description = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION' where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update units set Description = 'LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION', Cost = 65 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 -- delete from TypeTags where Type = 'UNIT_AZTEC_JAGUAR' and Tag = 'CLASS_CAPTURE_WORKER';
 update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_AZTEC_JAGUAR';
-update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_JAGUAR';
+update Units set Cost = 65, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_JAGUAR';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AZTEC_JAGUAR';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_JAGUAR' and ModifierId = 'UNIT_STRONG_WHEN_ATTACKING';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_JAGUAR' and ModifierId = 'UNIT_WEAK_WHEN_DEFENDING';

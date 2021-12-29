@@ -113,7 +113,7 @@ delete from UnitReplaces where CivUniqueUnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
-update Units set PrereqTech = 'TECH_IRON_WORKING', Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
+update Units set PrereqTech = 'TECH_IRON_WORKING', Cost = 65, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
