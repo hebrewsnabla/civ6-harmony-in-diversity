@@ -2091,3 +2091,9 @@ values
 	('BELIEF_HD_UTAKI_CITY_CENTER_PRODUCTION_BONUS_MODIFIER',			'YieldType',	'YIELD_PRODUCTION'),
 	('BELIEF_HD_UTAKI_CITY_CENTER_PRODUCTION_BONUS_MODIFIER',			'Amount',		1),
 	('BELIEF_HD_UTAKI_CITY_CENTER_PRODUCTION_BONUS_MODIFIER',			'TilesRequired',2);
+	
+	-- 海妈：沿海市中心1琴改为沿海市中心2琴
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+values
+	('OCEAN_MOTHER_COASTAL_CITY_CULTURE_MODIFIER',					'Amount',				2);

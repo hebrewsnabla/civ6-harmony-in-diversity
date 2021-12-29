@@ -89,3 +89,9 @@ values
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",            "解锁建造者建造纳斯卡巨画的能力。[NEWLINE][NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“封建主义”后，相邻的沙漠、沙漠丘陵单元格+1 [ICON_FOOD] 食物。研究“批量生产”后，相邻的平坦的单元格+1 [ICON_PRODUCTION] 生产力；同时+1魅力。仅能建在平坦的沙漠上。此单元格无法进行改良。"),
     -- 总督改良
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                         Text)
+values
+	("zh_Hans_CN",  "LOC_IMPROVEMENT_KURGAN_DESCRIPTION",               		 "解锁建造者建造斯基泰特色坟墩的能力。[NEWLINE][NEWLINE]为相邻的牧场+1 [ICON_Faith] 信仰值。[NEWLINE]+1 [ICON_Faith] 信仰值、+3 [ICON_Gold] 金币。每与一座牧场相邻便+1 [ICON_Faith] 信仰值（研究完“马镫”后提升为+2）。研究完“飞行”之后将根据 [ICON_FAITH] 信仰值提供 [ICON_TOURISM] 旅游业绩。不能建在丘陵上。");
+    

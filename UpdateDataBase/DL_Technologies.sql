@@ -390,3 +390,20 @@ values
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
+
+-- 研究货币给商业地基（非相邻加成）+3金
+update Technologies set Description = 'LOC_TECH_CURRENCY_HD_DESCRIPTION' where TechnologyType = 'TECH_CURRENCY';
+insert or replace into TechnologyModifiers
+	(TechnologyType,													ModifierId)
+values
+	('TECH_CURRENCY',														'TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId)
+values
+	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_COMMERCIAL_HUB');
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+values
+	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'YieldType',				'YIELD_GOLD'),
+	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'Amount',					3			);
