@@ -155,7 +155,8 @@ insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
-    ('REYNA_CONVERT_PERCENTAGE',                        100),
+    -- ('REYNA_CONVERT_PERCENTAGE',                        100),
+    ('REYNA_CONVERT_PERCENTAGE',                        75),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
@@ -214,5 +215,5 @@ values
     ('GAMESPEED_ONLINE',    12,             110);
 
 -- Trading Post
-update GlobalParameters set Value = 3 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
+update GlobalParameters set Value = 2 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
 update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';

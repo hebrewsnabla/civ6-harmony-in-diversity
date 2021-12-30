@@ -22,7 +22,7 @@ update UnitAbilities set Inactive = 1 where UnitAbilityType = 'ABILITY_CAPTIVE_W
 insert or replace into TypeTags (Type, Tag)
     select UnitType,    'CLASS_CAPTURE_WORKER' from Units where PromotionClass = 'PROMOTION_CLASS_MELEE';
 
-update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update Units set Cost = 65 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 
 
 -- Wonder

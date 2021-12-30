@@ -3448,10 +3448,12 @@ local function CompiledModVersionData()
 	local compiledString = ""
     for m, v in pairs(ExposedMembers.MOD_VERSION_CHECKER.ModVersionData) do
     	local title = lookupTitle(m)
-		if compiledString == "" then
-			compiledString = compiledString .. title .. "#" .. v
-		else
-			compiledString = compiledString .. "," .. title .. "#" .. v
+    	if v > 0 then
+			if compiledString == "" then
+				compiledString = compiledString .. title .. "#" .. v
+			else
+				compiledString = compiledString .. "," .. title .. "#" .. v
+			end
 		end
     end
 	return "Mod Version Checker: " .. compiledString

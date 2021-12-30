@@ -8,6 +8,7 @@ update Resources set Frequency = 11 where ResourceType = 'RESOURCE_COAL';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_IRON';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_NITER';
 update Resources set Frequency = 11 where ResourceType = 'RESOURCE_OIL';
+update Resources set Frequency = 10 where ResourceType = 'RESOURCE_ALUMINUM';
 
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';
@@ -59,3 +60,25 @@ delete from Resource_Harvests where
 -- Monopoly Resource Gold
 update RequirementArguments set Value = 'RESOURCE_DIAMONDS, RESOURCE_GOLD, RESOURCE_JADE, RESOURCE_SILVER, RESOURCE_TRUFFLES'
 	where Name = 'ResourceType' and RequirementId = 'REQUIREMENT_GOLD_BONUS_RESOURCE';
+
+-- Harvest & chopping
+update Resource_Harvests set Amount = 32 where YieldType = 'YIELD_FOOD';
+update Resource_Harvests set Amount = 32 where YieldType = 'YIELD_PRODUCTION';
+update Resource_Harvests set Amount = 64 where YieldType = 'YIELD_GOLD';
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_FOREST';
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_MARSH';
+update Feature_Removes set Yield = 12 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_FOOD';
+update Feature_Removes set Yield = 12 where FeatureType = 'FEATURE_JUNGLE' and YieldType = 'YIELD_PRODUCTION';
+-- Suk ocean
+update Feature_Removes set Yield = 24 where FeatureType = 'FEATURE_SUK_KELP';
+
+insert or replace into TechnologyModifiers (TechnologyType, ModifierId)
+values ('TECH_MACHINERY', 'HD_TECH_INCREASE_HARVEST_YIELD');
+
+insert or replace into Modifiers    (ModifierId,    ModifierType)
+values ('HD_TECH_INCREASE_HARVEST_YIELD',   'MODIFIER_PLAYER_CITIES_ADJUST_RESOURCE_HARVEST_BONUS');
+
+insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
+values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
+
+update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';

@@ -39,7 +39,7 @@ values
     ("LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "Holy Site districts get +2 [ICON_Faith] Faith from each adjacent Pasture tile. Holy Site provides +1 [ICON_Production] Production to all adjacent Pasture tiles, and +1 [ICON_Faith] Faith to all Pasture tiles within the same city. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Pasture."),
     ("LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "+1 [ICON_Food] Food and +1 [ICON_Production] Production from [ICON_Resource_Wheat] Wheats, [ICON_Resource_Rice] Rices and [ICON_Resource_Maize] Maize. +1 [ICON_Gold] Gold from Farms. "),
     ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Science] Science from Fishing Boats for the cities have Holy Site. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),
-    ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+1 [ICON_CULTURE] Culture to all cities adjacent to coasts or lakes. +1 [ICON_Food] Food from all coast and ocean tiles ."),
+    ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+2 [ICON_CULTURE] Culture to all cities adjacent to coasts or lakes. +1 [ICON_Food] Food from all coast and ocean tiles ."),
     ("LOC_BELIEF_OCEAN_MOTHER_NAME",                              "Ocean Mother"),
     ("LOC_BELIEF_HD_DRUID_NAME",                                  "Druid"),
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
@@ -57,7 +57,7 @@ values
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "+100% Campus district adjacency bonuses from the adjacent Mountain. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Mountain. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing to cities adjacent Mountain tiles."),
     ("LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "Song of Siren"),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional standard adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep."),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional Major adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
     ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts;City Center receive +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Coast tiles.");
 
@@ -102,7 +102,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "圣地区域从每个相邻的牧场单元格+2 [ICON_Faith] 信仰值，给相邻的牧场单元格 +1 [ICON_Production] 生产力，给本城的牧场 +1 [ICON_Faith] 信仰值。 如城市中有牧场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。 所有农场+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Science] 科技值，改良奢侈资源的渔船额外+1 [ICON_Food] 食物。如城市中有渔船，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "位于海边或湖边的城市+1 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
+    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "位于海边或湖边的城市+2 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_NAME",                                  "德鲁伊"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "森林单元格+1 [ICON_Food] 粮食，雨林单元格+1 [ICON_Production] 生产力，改良后的森林和雨林单元格+1 [ICON_Gold] 金币。"),
@@ -120,6 +120,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "山之苗裔"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "塞壬之歌"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外标准相邻，礁石和海藻森林+2 [ICON_Production] 生产力"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外大相邻加成，礁石和海藻森林+2 [ICON_Production] 生产力"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_NAME",                                  "御岳"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度， +2 [ICON_Housing] 住房；每相邻两块海洋单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");

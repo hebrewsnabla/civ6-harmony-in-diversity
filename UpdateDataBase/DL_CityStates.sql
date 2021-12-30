@@ -55,6 +55,8 @@ update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_C
 insert or replace into Improvement_ValidResources (ImprovementType,ResourceType,MustRemoveFeature)
 select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources;
 
+update Improvement_Tourism set PrereqTech = NULL where ImprovementType = 'IMPROVEMENT_MOAI';
+
 ---------------------------------------------------------------------------------------------------------
 -- Mohenjo Daro朱大罗
 insert or replace into TraitModifiers 
@@ -406,7 +408,7 @@ values
 	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT'),
 	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_STRENGTH'),	
 	('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'Amount',			1),
-	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			5);
+	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			3);
 insert or replace into ModifierStrings
 	(ModifierId,							Context,	Text)
 values

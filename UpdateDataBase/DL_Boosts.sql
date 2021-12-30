@@ -7,7 +7,6 @@ update Boosts set NumItems = 2 where TechnologyType = 'TECH_BRONZE_WORKING';
 update Boosts set ImprovementType = 'IMPROVEMENT_PASTURE' where TechnologyType = 'TECH_THE_WHEEL';
 update Boosts set BoostClass = 'BOOST_TRIGGER_IMPROVE_SPECIFIC_RESOURCE', ResourceType = 'RESOURCE_HORSES' where TechnologyType = 'TECH_HORSEBACK_RIDING';
 update Boosts set NumItems = 2 where TechnologyType = 'TECH_MASS_PRODUCTION';
-update Boosts set NumItems = 3 where TechnologyType = 'TECH_INDUSTRIALIZATION';
 -- update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC', ImprovementType = NULL, NumItems = 0, BoostingCivicType = 'CIVIC_NAVAL_TRADITION' where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Boosts set BoostClass = 'BOOST_TRIGGER_OWN_X_UNITS_OF_TYPE', NumItems = 1 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_IMPROVEMENTS', NumItems = 2, ImprovementType = 'IMPROVEMENT_CAMP' where CivicType = 'CIVIC_GAMES_RECREATION';
@@ -54,7 +53,7 @@ values
     (252,       'TECH_COMPASS_HD',                          40,     'LOC_BOOST_TRIGGER_COMPASS_HD',                        'LOC_BOOST_TRIGGER_LONGDESC_COMPASS_HD',                             Null,                        'BOOST_TRIGGER_CULTURVATE_CIVIC',                   Null,           Null,               Null,                         'CIVIC_NAVAL_TRADITION',    Null,           0,          Null,                   0),
     (253,       'TECH_PHYSICS_HD',                          40,     'LOC_BOOST_TRIGGER_PHYSICS_HD',                        'LOC_BOOST_TRIGGER_LONGDESC_PHYSICS_HD',                             'UNIT_GREAT_SCIENTIST',      'BOOST_TRIGGER_TRAIN_UNIT',                         Null,           Null,               Null,                         Null,                       Null,           0,          Null,                   0),
     (254,       'TECH_BIOLOGY_HD',                          40,     'LOC_BOOST_TRIGGER_BIOLOGY_HD',                        'LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD',                             Null,                        'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_ZOO',     Null,                         Null,                       Null,           1,          Null,                   0),
-    (255,       'TECH_CIVIL_ENGINEERING_HD',                40,     'LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD',              'LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD',                   Null,                        'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_CASTLE',  Null,                         Null,                       Null,           2,          Null,                   0);
+    (255,       'TECH_CIVIL_ENGINEERING_HD',                40,     'LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD',              'LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD',                   Null,                        'BOOST_TRIGGER_HAVE_X_BUILDINGS',                   Null,           'BUILDING_WORKSHOP',Null,                         Null,                       Null,           2,          Null,                   0);
 
 -- 新科文版本 原有科文尤里卡&鼓舞调整
     -- 【教育】科技尤里卡改为：拥有科举制市政
@@ -81,9 +80,28 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_CULTURVATE_CIVIC',
     -- 【制导系统】科技尤里卡改为：训练2个战斗机
 update Boosts set BoostClass = 'BOOST_TRIGGER_TRAIN_UNIT', Unit1Type = 'UNIT_FIGHTER',
     NumItems = 2 where TechnologyType = 'TECH_GUIDANCE_SYSTEMS';
+    -- 【封建主义】市政鼓舞改为：建造5个农场
+update Boosts set NumItems = 5 where BoostID = 15;
+    -- 【电脑】科技尤里卡改为：建造一座铝矿
+update Boosts set BoostClass = 'BOOST_TRIGGER_IMPROVE_SPECIFIC_RESOURCE', ImprovementType = 'IMPROVEMENT_MINE', 
+    ResourceType = 'RESOURCE_ALUMINUM', NumItems = 0, GovernmentTierType = NULL where TechnologyType = 'TECH_COMPUTERS';
+    -- 【纳米技术】科技尤里卡改为：建造一座铝矿，训练一个直升机
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_UNIT_AND_IMPROVEMENT', 
+    Unit1Type = 'UNIT_HELICOPTER' where TechnologyType = 'TECH_NANOTECHNOLOGY';
+    -- 【工业化】科技尤里卡改为：建造4座工业区
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_DISTRICTS', BuildingType = NULL, 
+    NumItems = 4, DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' where TechnologyType = 'TECH_INDUSTRIALIZATION';
+    -- 【外交部门】市政鼓舞改为：2级同盟
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_ALLIANCE_LEVEL_X', NumItems = 2 where CivicType = 'CIVIC_DIPLOMATIC_SERVICE';
+    -- 【化学】科技尤里卡改为：大科或间谍触发
+update Boosts set BoostClass = 'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH', NumItems = 0, TriggerDescription = 'LOC_BOOST_TRIGGER_MUST_STEAL_NO_GREAT_SCIENTIST', 
+    TriggerLongDescription = 'Critical late game tech - boost description not needed' where TechnologyType = 'TECH_CHEMISTRY';
+    -- 【横帆装置】科技尤里卡改为：建造一座硝石矿，训练一个轻快帆船
+update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_UNIT_AND_IMPROVEMENT', ImprovementType = 'IMPROVEMENT_MINE', 
+    ResourceType = 'RESOURCE_NITER', Unit1Type = 'UNIT_CARAVEL' where TechnologyType = 'TECH_SQUARE_RIGGING';
+    -- 【膛线】科技尤里卡改为：用火枪手击杀一个单位
+update Boosts set BoostClass = 'BOOST_TRIGGER_KILL_WITH', ImprovementType = NULL, 
+    ResourceType = Null, Unit1Type = 'UNIT_MUSKETMAN' where TechnologyType = 'TECH_RIFLING';
 
 -- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;
-
---封建5田
-update Boosts set NumItems = 5 where BoostID = 15;

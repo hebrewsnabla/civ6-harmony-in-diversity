@@ -113,7 +113,7 @@ delete from UnitReplaces where CivUniqueUnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 update UnitUpgrades set UpgradeUnit = 'UNIT_MUSKETMAN' where Unit = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
-update Units set PrereqTech = 'TECH_IRON_WORKING', Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
+update Units set PrereqTech = 'TECH_IRON_WORKING', Cost = 65, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 38, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
 and exists (select UnitType from Units where UnitType = 'UNIT_AZTEC_JAGUAR');
@@ -156,7 +156,7 @@ update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 ------ UNIT_PERSIAN_CATAPHRACT
 -- 努比亚
-update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 17, RangedCombat = 29, StrategicResource = NULL where UnitType = 'UNIT_NUBIAN_PITATI';
+update Units set Cost = 60, Maintenance = 1, BaseMoves = 3, Range = 2, Combat = 18, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_NUBIAN_PITATI';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_NUBIAN_PITATI';
 ------ UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT
 -- 祖鲁
@@ -258,7 +258,7 @@ update UnitUpgrades set UpgradeUnit = 'UNIT_INFANTRY' where Unit = 'UNIT_SWEDEN_
 ------ UNIT_ELEANOR_TEMPLAR
 -- 玛雅
 update UnitUpgrades set UpgradeUnit = 'UNIT_CROSSBOWMAN' where Unit = 'UNIT_MAYAN_HULCHE';
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 26, StrategicResource = NULL where UnitType = 'UNIT_MAYAN_HULCHE';
+update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 15, RangedCombat = 28, StrategicResource = NULL where UnitType = 'UNIT_MAYAN_HULCHE';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAYAN_HULCHE';
 ------ UNIT_MAYAN_HOLKAN
 -- 大哥伦比亚

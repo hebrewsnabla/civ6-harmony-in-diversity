@@ -58,3 +58,28 @@ update LocalizedText set Text = Text || " +1 [ICON_Production] Production to Lum
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');
 update LocalizedText set Text = Text || "为本城改良加成资源的伐木场+1 [ICON_Production] 生产力。" where Language = 'zh_Hans_CN' and
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');
+
+CREATE TEMPORARY TABLE "HDResourceful2_Pedia_Text"(
+    "ResourceType"  TEXT
+);
+insert or replace into HDResourceful2_Pedia_Text
+    (ResourceType)
+values
+    ('RESOURCE_SPONGE'),('RESOURCE_CASHMERE'),('RESOURCE_SANDALWOOD'),('RESOURCE_EBONY'),('RESOURCE_STRAWBERRY'),('RESOURCE_SALMON'),('RESOURCE_BAMBOO'),
+    ('RESOURCE_ALABASTER'),('RESOURCE_QUARTZ'),('RESOURCE_LAPIS'),('RESOURCE_RUBY'),('RESOURCE_PLATINUM'),('RESOURCE_SEA_URCHIN'),
+    ('RESOURCE_COD'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_SAKURA'),('RESOURCE_POPPIES'),('RESOURCE_ORCA'),('RESOURCE_LION'),
+    ('RESOURCE_TRAVERTINE'),('RESOURCE_TOXINS'),('RESOURCE_SAFFRON'),('RESOURCE_ALOE'),('RESOURCE_MEDIHERBS'),
+    ('RESOURCE_TOMATO'),('RESOURCE_TIN'),('RESOURCE_RUBBER'),('RESOURCE_PINE'),('RESOURCE_OAK'),('RESOURCE_MUSSELS'),('RESOURCE_MUSHROOMS'),
+    ('RESOURCE_GRANITE'),('RESOURCE_LIMESTONE'),('RESOURCE_LEAD'),('RESOURCE_HAM'),('RESOURCE_DATES'),('RESOURCE_BERRIES'),('RESOURCE_BARLEY');
+
+insert or replace into EnglishText
+    (Tag,                                                                       Text)
+select
+    'LOC_PEDIA_RESOURCES_PAGE_' || ResourceType ||'_CHAPTER_HISTORY_PARA_1',    " "
+from HDResourceful2_Pedia_Text;
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                        Text)
+select
+    "zh_Hans_CN",   'LOC_PEDIA_RESOURCES_PAGE_' || ResourceType ||'_CHAPTER_HISTORY_PARA_1',    " "
+from HDResourceful2_Pedia_Text;

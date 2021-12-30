@@ -89,6 +89,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "首都每次建造完成书院区域或书院中的建筑时获得一个总督点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
+    ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_NAME",                            "最惠条款"),
     ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_DESCRIPTION",                     "所有同盟类型均可以共享视野。[NEWLINE]目的地城市中的每个渔船、营地或牧场可为你的 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。[NEWLINE]你的城市作为 [ICON_TradeRoute] 贸易路线目的地时，此城中的每个渔船、营地或牧场可为你提供+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",           "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-30% [ICON_PRODUCTION] 生产力。"), --每一种改良的奢侈矿产资源为城市+10% [ICON_Gold] 金币，城市中的每个奢侈品资源矿产为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_FOOD] 食物。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                  "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得15 [ICON_GOLD] 金币。"), --可在拥有曼丁哥市场的任意城市中开展“多钱善贾”项目。
