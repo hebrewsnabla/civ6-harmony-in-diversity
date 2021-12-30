@@ -3,7 +3,8 @@
 -------------------------------------
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
-select TechnologyType, 1, 1 from Technologies where EraType = 'ERA_FUTURE';
+select TechnologyType, 1, 1 from Technologies 
+where TechnologyType != 'TECH_POTTERY' and TechnologyType != 'TECH_ANIMAL_HUSBANDRY' and TechnologyType != 'TECH_MINING';
 
 -- v3
 update TechnologyRandomCosts set Cost = 4500 where Cost = 2600;
@@ -42,7 +43,7 @@ update TechnologyRandomCosts set Cost = 50 where Cost = 50;
 -- update Civics set Cost = Cost * 1.4 where EraType = 'ERA_ATOMIC' or EraType = 'ERA_INFORMATION' or EraType = 'ERA_FUTURE';
 
 insert or replace into Civics_XP2 (CivicType, RandomPrereqs, HiddenUntilPrereqComplete)
-select CivicType, 1, 1 from Civics where EraType = 'ERA_FUTURE';
+select CivicType, 1, 1 from Civics where CivicType != 'CIVIC_CODE_OF_LAWS';
 
 -- v3
 update CivicRandomCosts set Cost = 5200 where Cost = 3500;
