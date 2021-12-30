@@ -132,7 +132,7 @@ values
     -- 
     ("LOC_BOOST_TRIGGER_METAL_CASTING",                                                     "Have the Military Training Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",                                            "Weapons evolve along with Military training, more advanced ways of making weapons are emerging."),
-    ("LOC_BOOST_TRIGGER_CASTLES",                                                           "Have the Defensive Tactics Civic."),
+    ("LOC_BOOST_TRIGGER_CASTLES",                                                           "Have the Supply Civic."),
     ("LOC_BOOST_TRIGGER_LONGDESC_CASTLES",                                                  "We need impressive defenses to better utilize the defensive tactics to protect our cities."),
     ("LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                                  "Earn a Great General."),
     ("LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                                         "The Great General brings about new military tactics."),
@@ -301,7 +301,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_ELECTRICITY_HD",                            "水的落差蕴含着巨大的势能，如何才能有效地利用呢？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_METAL_CASTING",                                      "拥有军事训练市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_METAL_CASTING",                             "军事训练推进着武器不断的革新，新式的武器铸造方式也孕育而生。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CASTLES",                                            "拥有防御战术市政。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CASTLES",                                            "拥有后勤补给市政。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CASTLES",                                   "我们需要更牢靠的防御来更好地发挥防御战术保护我们的城市。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MILITARY_TACTICS",                                   "获得1位大将军。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",                          "大将军带来了全新的军事战术的思考。"),

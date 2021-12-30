@@ -57,7 +57,7 @@ values
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "+100% Campus district adjacency bonuses from the adjacent Mountain. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Mountain. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing to cities adjacent Mountain tiles."),
     ("LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "Song of Siren"),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional major adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep."),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional Major adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
     ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts;City Center receive +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Coast tiles.");
 
@@ -120,6 +120,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "山之苗裔"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "塞壬之歌"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外大量相邻，礁石和海藻森林+2 [ICON_Production] 生产力"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外大相邻加成，礁石和海藻森林+2 [ICON_Production] 生产力"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_NAME",                                  "御岳"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度， +2 [ICON_Housing] 住房；每相邻两块海洋单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");
