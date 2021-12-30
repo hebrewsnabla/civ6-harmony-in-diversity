@@ -781,7 +781,7 @@ values
 	('OCEAN_MOTHER_OCEAN_FOOD_MODIFIER',							'Amount',				1),
 	('OCEAN_MOTHER_COASTAL_CITY_CULTURE',							'ModifierId',			'OCEAN_MOTHER_COASTAL_CITY_CULTURE_MODIFIER'),
 	('OCEAN_MOTHER_COASTAL_CITY_CULTURE_MODIFIER',					'YieldType',			'YIELD_CULTURE'),
-	('OCEAN_MOTHER_COASTAL_CITY_CULTURE_MODIFIER',					'Amount',				1),
+	('OCEAN_MOTHER_COASTAL_CITY_CULTURE_MODIFIER',					'Amount',				2),
 	('DRUID_FOREST_FOOD',											'ModifierId',			'DRUID_FOREST_FOOD_MODIFIER'),
 	('DRUID_FOREST_FOOD_MODIFIER',									'YieldType',			'YIELD_FOOD'),
 	('DRUID_FOREST_FOOD_MODIFIER',									'Amount',				1),
@@ -1997,7 +1997,7 @@ select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'YieldType',			'YIELD_SC
 from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
-select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				1	
+select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				2	
 from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)

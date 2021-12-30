@@ -157,3 +157,19 @@ UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_
 UPDATE Improvements SET PrereqCivic="CIVIC_LITERARY_TRADITION_HD"  where ImprovementType="IMPROVEMENT_CHATEAU"  ;
 --瑞典UI改为人文主义
 UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
+
+-- 坟墩给相邻牧场+1鸽
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,	YieldType,	YieldChange)
+values
+	('IMPROVEMENT_PASTURE',	'YIELD_FAITH',0);
+	
+insert or replace into Adjacency_YieldChanges
+	(ID,	Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement)
+values
+	('Pasture_Kurgan_Faith',	'Placeholder',	'YIELD_FAITH',	1,	1,	'IMPROVEMENT_KURGAN');
+insert into Improvement_Adjacencies
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_PASTURE',	'Pasture_Kurgan_Faith');
+	

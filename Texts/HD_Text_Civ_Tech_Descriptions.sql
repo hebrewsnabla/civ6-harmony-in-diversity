@@ -26,8 +26,9 @@ values
     ("LOC_BOOST_TRIGGER_BIOLOGY_HD",                                                        "Build a Zoo."),
     ("LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                               "After collecting animals from all over the world, the zoos in our empire are getting busier and busier. It's time to sort these creatures out."),
     ("LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                                              "Build 2 Workshops."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                                     ""),
+    ("LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                                     "The workshop's artisans summed up the basic principles of civil engineering for us."),
     -- Techs
+    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows Builders and Traders to embark."),
     ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                                "Allows all land units to embark. [NEWLINE]Recon units gain the ability: No [ICON_Strength] Combat Strength and [ICON_Movement] Movement penalty when attacking from a Sea or a River."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Strength if there is at least one adjacent friendly melee unit.[NEWLINE]Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when attacking from Hills. [NEWLINE]Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength against units."),
     ("LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                                   "Quarry improvements receive +1 [ICON_Production] Production. [NEWLINE]Unlocks a [ICON_GOVERNOR] Governor title for Suleiman. [NEWLINE]Heavy Cavalry units gain the ability: +10 [ICON_Damaged] Health after defeating an enemy unit."),
@@ -41,10 +42,11 @@ values
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",                                                   "+1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
     ("LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                               "+50% yields from plot harvests and feature removals. +1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
     ("LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                                          "+50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic."),
-    -- ("LOC_TECH_RIFLING_HD_DESCRIPTION",               "Camp improvements receive +1 [ICON_FOOD] Food."),
+    -- ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                                  "Camp improvements receive +1 [ICON_FOOD] Food."),
+    ("LOC_TECH_CURRENCY_HD_DESCRIPTION",                                                    "Provides +3 [ICON_GOLD] Gold to Commercial Hubs."),
     ("LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                                "Camp and Lumber Mill improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production."),
-    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows Traders to embark, and allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
+    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests. Camp improvements receive +1 [ICON_GOLD] Gold."),
     ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements receive +1 [ICON_Production] Production."),
     -- ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                                    "Pasture improvements receive +1 [ICON_Production] Production."),
@@ -151,13 +153,17 @@ values
     ("LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                                  "Own 2 Fighters."),
     ("LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                                         "Our fighters now need a targeting system like a scalpel and engineers are already working on it."),
     ("LOC_BOOST_TRIGGER_COMPUTERS",                                                         "Build an Aluminum Mine."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                                ""),
+    ("LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                                "The superior corrosion resistance of aluminum makes it an ideal choice for precision equipment."),
     ("LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                                    "Build an Aluminum Mine and own a helicopter."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                                           ""),
-    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 individual Zones."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                                        ""),
+    ("LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                                           "With the new alloy in action, your scientists are developing new material technologies.  "),
+    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 Individual Zones."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                                        "The bustling centers of industrial activity hint at the coming of great times. Is this a sign that the industrial revolution is just around the corner?"),
     ("LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                                "Have a level 2 Alliance."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "");
+    ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "A strong diplomatic alliance has nurtured an elite team of diplomats."),
+    ("LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                                    "Build a Niter Mine and own a Caravel."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                                           "Gunpowder weapons proved so powerful that our navy was eager to use them."),
+    ("LOC_BOOST_TRIGGER_RIFLING",                                                           "Kill a unit with a Musketman."),
+    ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "Your musketeers have mastered firearms, so it's time to upgrade their weapons.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -187,8 +193,9 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_BIOLOGY_HD",                                         "建造1座动物园。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_BIOLOGY_HD",                                "在搜集了世界各地的动物以后，城市中的动物园越来越热闹，我们是时候为这些生物分门别类了。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_CIVIL_ENGINEERING_HD",                               "建造2座工作坊"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_CIVIL_ENGINEERING_HD",                      "工坊的工匠为我们总结了土木工程的基本原理。"),
     -- Techs
+    ("zh_Hans_CN",  "LOC_TECH_SAILING_HD_DESCRIPTION",                                      "允许建造者和商人上船。"),
     ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：击杀敌方单位后+10 [ICON_Damaged] 生命值。"),
@@ -203,9 +210,10 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                "收获和移除地貌的产出+50%。非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                           "所有除 [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。"),
     -- ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                   "营地+1 [ICON_FOOD] 食物。"),
+    ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
     ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                 "营地+1 [ICON_PRODUCTION] 生产力。伐木场改良+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                               "矿山和采石场改良设施的 [ICON_Production] 生产力+1。"),
-    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许商人上船和收获由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
     ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。营地+1 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                             "牧场+1 [ICON_Production] 生产力。"),
     -- ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                     "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
@@ -314,13 +322,17 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_GUIDANCE_SYSTEMS",                                   "拥有2个战斗机。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_GUIDANCE_SYSTEMS",                          "我们的战斗机现在需要手术刀一样的瞄准系统，工程师已经开始了工作。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMPUTERS",                                          "建造一座铝矿。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                 ""),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                     "建造一座铝矿，训练一个直升飞机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                            ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                 "铝材料优越的抗腐蚀性质为精密设备的材料提供了理想选择。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                     "建造一座铝矿，拥有一个直升飞机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                            "新型合金投入实战后，您的科学家们开始研发新的材料技术。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                              "建造4座工业区。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                         ""),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                         "繁忙的工业活动中心暗示着伟大时代的到来。这预示着工业革命就近在眼前吗？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                 "拥有第2级同盟。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        "");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        "牢固的外交联盟为您培养了一支精英外交官团队。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                     "建造一座硝石矿，拥有一个轻快帆船。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                            "火药武器展现出了非凡威力，我们的海军迫不及待的想要运用它们。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RIFLING",                                            "用火枪手击杀一个单位。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "您的火枪手们对火器的使用已经炉火纯青，是时候为他们升级兵器了。");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
@@ -387,3 +399,5 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_QUOTE_2",                                          "这种需要人们不停地工作的事业，成为他们生活中不可或缺的组成部分。事实上，这是唯一可能的动机。——马克斯·韦伯《新教伦理与资本主义精神》"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                  "一门科学，只有当它成功地运用数学时，才能达到真正完善的地步。——卡尔·马克思"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                  "只有社会才能对人生的价值做出总的评价，而个人对此是无能为力的……——埃米尔·涂尔干《自杀论》");
+
+	
