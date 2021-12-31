@@ -17,7 +17,7 @@ insert or replace into Technologies
     (TechnologyType,                Name,                                    Description,                                        Cost,   EraType,            UITreeRow,  AdvisorType)
 values
     ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             'LOC_TECH_CALENDAR_HD_DESCRIPTION',                 80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
-    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             280,    'ERA_CLASSICAL',    0,          'ADVISOR_TECHNOLOGY'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             200,    'ERA_CLASSICAL',    0,          'ADVISOR_TECHNOLOGY'),
     ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               300,    'ERA_MEDIEVAL',     -2,         'ADVISOR_CONQUEST'),
     ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',              Null,                                               730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
     ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',              Null,                                               1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC'),
@@ -329,7 +329,7 @@ update Technologies set Cost = 1300 where Cost = 930;
 update Technologies set Cost = 950 where Cost = 730;
 update Technologies set Cost = 850 where Cost = 600;
 -- 
-update Technologies set Cost = 550 where Cost = 390;
+update Technologies set Cost = 600 where Cost = 390;
 update Technologies set Cost = 450 where Cost = 300;
 -- 
 update Technologies set Cost = 280 where Cost = 200;
