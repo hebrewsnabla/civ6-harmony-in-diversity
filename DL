@@ -611,10 +611,6 @@
         <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanelOverview_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanelOverview.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
