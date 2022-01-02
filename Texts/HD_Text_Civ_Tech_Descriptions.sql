@@ -79,7 +79,7 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_HISTORICAL_PHILOSOPHY_HD",                                 "The wonders of the world mirror the rise and fall of our civilization and inspire philosophers of all ages."),
     ("LOC_BOOST_TRIGGER_ETHICS_HD",                                                         "Have the Printing Technology."),
     ("LOC_BOOST_TRIGGER_LONGDESC_ETHICS_HD",                                                "When the Bible was printed, truth spreads all over the world."),
-    ("LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                                 "Build 7 different specialty areas."),
+    ("LOC_BOOST_TRIGGER_SOCIAL_SCIENCE_HD",                                                 "Build 7 different specialty districts."),
     ("LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                                        "Complex cities form complex social relationships, while some geniuses see it through clearly."),
     -- Civics
     ("LOC_CIVIC_NATURAL_HISTORY_NAME",                                                      "Archaeology"),

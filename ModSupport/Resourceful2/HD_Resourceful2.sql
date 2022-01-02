@@ -273,12 +273,11 @@ update Resources set Frequency = (select Frequency from HDResourceful2_Old_Frequ
 update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIAR';
 
 -- Improvement
-	-- 地热有资矿山、采石场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_MINE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_QUARRY';
-	-- 礁石有资渔船
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FARM';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_PASTURE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
-	-- 雨林有资伐木场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
 
 -- Buildings
