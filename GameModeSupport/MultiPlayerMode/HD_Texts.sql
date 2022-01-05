@@ -21,7 +21,7 @@ values
     ("LOC_DISTRICT_SUGUBA_DESCRIPTION",                                                     "A district unique to Mali specializing in finance and trade that replaces the Commercial Hub. Units, Buildings, and Districts are 10% cheaper to purchase with [ICON_GOLD] Gold and [ICON_FAITH] Faith in this City.[NEWLINE][NEWLINE]+1 [ICON_Gold] Gold bonus for each adjacent Holy Site. +2 [ICON_Gold] Gold bonus from a tile containing a River edge. +1 [ICON_Gold] Gold bonus for every two adjacent district tiles."),
     ("LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                                        "International [ICON_TradeRoute] Trade Routes gain +1 [ICON_GOLD] Gold for every flat Desert or Desert hills tile in the origin city. Receive +1 [ICON_TradeRoute] Trade Capacity every time you enter a Golden Age. Earn extra 5 [ICON_GOLD] Gold for each era score earned."), 
     ("LOC_TRAIT_LEADER_JOAO_III_DESCRIPTION",                                               "All units receive +1 sight. +2 [ICON_TradeRoute] Trade Route capacity when meeting the first civilization. Open Borders with all city-states."), 
-    ("LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                                 "Religious units newly obtained from cities following this religion can provide +3 [ICON_Strength] Combat Strength to the Combat Units in the same tile (not retroactive)."),
+    ("LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                                 "Religious units newly obtained from cities following this religion can provide +3 [ICON_Strength] Combat Strength to the Combat Units in the same tile (not retroactive).");
 
 -- --------------------------------------------------------------------------------
 -- -- Language: zh_Hans_CN
@@ -44,6 +44,6 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CITADEL_CIVILIZATION_DESCRIPTION",                    "如他们在过去10回合内收到宣战书（或在过去20回合内解放一座城市），则+50% [ICON_Production] 生产力。牧场+1 [Icon_Food] 食物"), 
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_SUGUBA_DESCRIPTION",                                      "马里特色区域，专精于经济与贸易，取代商业中心。使用 [ICON_GOLD] 金币和 [ICON_FAITH] 信仰值在此城中购买单位、建筑和区域时，花费-10%。[NEWLINE][NEWLINE] 与普通商业中心不同的是，其每相邻1个圣地获得+1 [ICON_Gold] 金币加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                         "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得5 [ICON_GOLD] 金币。"), 
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                         "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得5 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_JOAO_III_DESCRIPTION",                                "所有单位+1视野。与第一个文明相遇时+2 [ICON_TradeRoute] 贸易路线容量。对所有城邦开放边界。"), 
-    ("zh_Hans_CN",  "LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                  "强化后从信仰此宗教的城市中新获得的宗教单位为同一单元格军事单位+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                  "强化后从信仰此宗教的城市中新获得的宗教单位为同一单元格军事单位+3 [ICON_Strength] 战斗力。");
