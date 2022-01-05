@@ -1419,6 +1419,10 @@
       <Properties><LoadOrder>18501</LoadOrder></Properties>
       <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
     </UpdateText>
+    <ImportFiles id="MPTest_update_Maps" criteria="MPTest_Mode_Expansion2">
+      <Properties><LoadOrder>18502</LoadOrder></Properties>
+      <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
+    </ImportFiles>
     <!-- Options at last -->
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_CityStatesStartWithWalls_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1507,6 +1511,8 @@
     <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
     <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
     <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
+    <!-- Pvp Maps -->
+    <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
