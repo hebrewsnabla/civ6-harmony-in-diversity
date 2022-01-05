@@ -160,6 +160,7 @@ values
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
+    ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY',               3);
