@@ -55,13 +55,10 @@ update Units set Combat = Combat + 1 where Combat > 25 and PromotionClass = 'PRO
 -- update Units set Combat = Combat + 2, RangedCombat = RangedCombat + 2 where Combat < 20 and PromotionClass = 'PROMOTION_CLASS_RANGED';
 
 -- Ability from Basilikoi
-insert or replace into TypeTags
-    (Type,                                                              Tag)
-values
-    ('ABILITY_BASILIKOI_TRAINED_UNIT_XP',                               'CLASS_LIGHT_CAVALRY'),
-    ('ABILITY_BASILIKOI_TRAINED_UNIT_XP',                               'CLASS_HEAVY_CAVALRY'),
-    ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_LIGHT_CAVALRY'),
-    ('ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH',                         'CLASS_HEAVY_CAVALRY');
+insert or replace into TypeTags (Type, Tag) select AbilityType,  'CLASS_LIGHT_CAVALRY'
+from UnitAbilities where UnitAbilityType = 'ABILITY_BASILIKOI_TRAINED_UNIT_XP' or UnitAbilityType = 'ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH';
+insert or replace into TypeTags (Type, Tag) select AbilityType,  'CLASS_HEAVY_CAVALRY'
+from UnitAbilities where UnitAbilityType = 'ABILITY_BASILIKOI_TRAINED_UNIT_XP' or UnitAbilityType = 'ABILITY_BASILIKOI_TRAINED_UNIT_STRENGTH';
 
 -- Levy Units
 update GlobalParameters set Value = 20 where Name = 'LEVY_MILITARY_TURN_DURATION';

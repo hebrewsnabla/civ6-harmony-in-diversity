@@ -2,9 +2,46 @@
 --     RandomCosts Adjustment      --
 -------------------------------------
 
+update TechnologyRandomCosts set Cost = 600 where TechnologyType = 'TECH_MILITARY_TACTICS' and Cost = 300;
+update TechnologyRandomCosts set Cost = 730 where TechnologyType = 'TECH_MILITARY_TACTICS' and Cost = 390;
+update TechnologyRandomCosts set Cost = 300 where TechnologyType = 'TECH_METAL_CASTING' and Cost = 600;
+update TechnologyRandomCosts set Cost = 390 where TechnologyType = 'TECH_METAL_CASTING' and Cost = 730;
+
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 1, 1 from Technologies 
 where TechnologyType != 'TECH_POTTERY' and TechnologyType != 'TECH_ANIMAL_HUSBANDRY' and TechnologyType != 'TECH_MINING';
+
+insert or replace into TechnologyRandomCosts 
+    (TechnologyType,                      Cost)
+values
+    ('TECH_CALENDAR_HD',                  50),
+    ('TECH_CALENDAR_HD',                  80),
+    ('TECH_PAPER_MAKING_HD',              120),
+    ('TECH_PAPER_MAKING_HD',              200),
+    ('TECH_COMPASS_HD',                   300),
+    ('TECH_COMPASS_HD',                   390),
+    ('TECH_PHYSICS_HD',                   600),
+    ('TECH_PHYSICS_HD',                   730),
+    ('TECH_BIOLOGY_HD',                   1250),
+    ('TECH_BIOLOGY_HD',                   1370),
+    ('TECH_CIVIL_ENGINEERING_HD',         930),
+    ('TECH_CIVIL_ENGINEERING_HD',         1070);
+
+insert or replace into CivicRandomCosts 
+    (CivicType,             Cost)
+values
+    ('CIVIC_LITERARY_TRADITION_HD',                 110),
+    ('CIVIC_LITERARY_TRADITION_HD',                 175),
+    ('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',        300),
+    ('CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',        420),
+    ('CIVIC_EVOLUTION_THEORY_HD',                   720),
+    ('CIVIC_EVOLUTION_THEORY_HD',                   440),
+    ('CIVIC_HISTORICAL_PHILOSOPHY_HD',              720),
+    ('CIVIC_HISTORICAL_PHILOSOPHY_HD',              440),
+    ('CIVIC_ETHICS_HD',                             720),
+    ('CIVIC_ETHICS_HD',                             440),
+    ('CIVIC_SOCIAL_SCIENCE_HD',                     1210),
+    ('CIVIC_SOCIAL_SCIENCE_HD',                     800);
 
 -- v3
 update TechnologyRandomCosts set Cost = 4500 where Cost = 2600;
@@ -28,7 +65,7 @@ update TechnologyRandomCosts set Cost = 1300 where Cost = 930;
 update TechnologyRandomCosts set Cost = 950 where Cost = 730;
 update TechnologyRandomCosts set Cost = 850 where Cost = 600;
 -- Medival
-update TechnologyRandomCosts set Cost = 550 where Cost = 390;
+update TechnologyRandomCosts set Cost = 600 where Cost = 390;
 update TechnologyRandomCosts set Cost = 450 where Cost = 300;
 -- Classical
 update TechnologyRandomCosts set Cost = 280 where Cost = 200;
