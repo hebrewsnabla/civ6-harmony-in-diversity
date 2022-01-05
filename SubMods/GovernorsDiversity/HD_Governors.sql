@@ -890,12 +890,23 @@ values
 
 -----------------------------------------------------------------------------------------------------------------------------------
 -- Ibrahim
+-- 树调整
+update GovernorPromotionPrereqs set PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_CAPOU_AGHA' where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 1 where GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA';
+update GovernorPromotions set level = 3 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 0 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 2 where GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+insert into GovernorPromotionPrereqs
+    (GovernorPromotionType,             PrereqGovernorPromotion)
+values
+    ('GOVERNOR_PROMOTION_CAPOU_AGHA',   'GOVERNOR_PROMOTION_HEAD_FALCONER');
+delete from GovernorPromotionPrereqs where PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI' and GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
 --LEVEL 0 GOVERNOR_PROMOTION_PASHA
 --level 1-0 GOVERNOR_PROMOTION_HEAD_FALCONER
 --level 1-2 GOVERNOR_PROMOTION_SERASKER
---level 2-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
---level 2-2 GOVERNOR_PROMOTION_CAPOU_AGHA
---level 3 GOVERNOR_PROMOTION_GRAND_VISIER
+--level 2-1 GOVERNOR_PROMOTION_CAPOU_AGHA
+--level 3-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
+--level 3-2 GOVERNOR_PROMOTION_GRAND_VISIER
 
 delete from GovernorPromotionModifiers where 
 	   GovernorPromotionType = 'GOVERNOR_PROMOTION_PASHA'
