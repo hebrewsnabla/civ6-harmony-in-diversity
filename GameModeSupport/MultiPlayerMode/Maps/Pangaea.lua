@@ -123,9 +123,9 @@ function GeneratePlotTypes(world_age)
 	local sea_level_normal = 58;
 	local sea_level_high = 63;
 	-- BEGIN DL update sea level
-	-- sea_level_low = 43
-	-- sea_level_normal = 48
-	-- sea_level_high = 53
+	sea_level_low = 48
+	sea_level_normal = 53
+	sea_level_high = 58
 	-- END
 	local grain_amount = 3;
 	local adjust_plates = 1.3;
