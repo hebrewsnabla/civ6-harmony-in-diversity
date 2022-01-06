@@ -150,7 +150,7 @@ insert or replace into EnglishText
     (Tag,                                                                                   Text)
 values
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of Kelp Forest and resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus receive an additional Major adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep.");
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus Districts get extra major adjacency bonus from Reefs and Kelps. +2 [ICON_Production] Production from Reefs and Kelps.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)

@@ -33,7 +33,7 @@ values
     ("LOC_POLICY_NEW_ROUTE_NAME",                                                     "New Route"),
     ("LOC_POLICY_NEW_ROUTE_DESCRIPTION",                                              "+3 [ICON_Culture] Culture and +3 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes."),
     ("LOC_POLICY_WATER_TRANSPORT_NAME",                                               "Water Transport"),
-    ("LOC_POLICY_WATER_TRANSPORT_DESCRIPTION",                                        "+3 [ICON_Production] Production and +3 [ICON_Food] Food from domestic [ICON_TradeRoute] Trade Routes."),
+    ("LOC_POLICY_WATER_TRANSPORT_DESCRIPTION",                                        "+3 [ICON_Production] Production and +3 [ICON_Food] Food from all domestic [ICON_TradeRoute] Trade Routes."),
     ("LOC_POLICY_TEXTBOOK_NAME",                                                      "Textbook"),
     ("LOC_POLICY_TEXTBOOK_DESCRIPTION",                                               "+4 [ICON_GreatScientist] Great Scientist points per turn. +4 [ICON_GreatScientist] Great Scientist points per turn for every University."),
     ("LOC_POLICY_SUPERPOWER_NAME",                                                    "Superpower"),
