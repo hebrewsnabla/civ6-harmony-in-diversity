@@ -47,19 +47,19 @@ update Units set Combat = 55 where UnitType = 'UNIT_FRENCH_GENDARME';
 update ModifierArguments set Value = 3 where ModifierId = 'PLUS_5_WHEN_ATTACKING_COMBAT_BONUS' AND Name='Amount';
 -- 弩手
 update Units set Combat = 30 , RangedCombat = 44 where UnitType = 'UNIT_CROSSBOWMAN';
--- 玛雅投枪
+-- 玛雅披甲
 update Units set Combat = 48 where UnitType = 'UNIT_MAYAN_HOLKAN';
---英法线列
+-- 英法线列
 update Units set Combat = 68 where UnitType = 'UNIT_ENGLISH_REDCOAT';
 update Units set Combat = 68 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
 update ModifierArguments set Value = 5 where ModifierId = 'REDCOAT_FOREIGN_COMBAT' AND Name='Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBAT' AND Name='Amount';
---西班牙征服者
+-- 西班牙征服者
 update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
---追猎及追猎UU
+-- 追猎及追猎UU
 update Units set Combat = 46 where UnitType = 'UNIT_COURSER';
-update Units set Combat = 46 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Combat = 46 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = cost -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Combat = cost -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
@@ -74,15 +74,20 @@ delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH'
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
 --高卢
 update ModifierArguments set Value = 1 where ModifierId = 'AMBIORIX_NEIGHBOR_COMBAT' AND Name='Amount';
+delete from DistrictModifiers where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and DistrictType = 'DISTRICT_OPPIDUM';
+insert or replace into DistrictModifiers
+    (DistrictType,          ModifierId)
+values
+    ('DISTRICT_OPPIDUM',    'OPPIDUM_GRANT_TECH_METAL_CASTING');
 insert or replace into Modifiers 
     (ModifierId,                               ModifierType,                                   RunOnce,    Permanent)
 values
-    ('OPPIDUM_GRANT_TECH_APPRENTICESHIP',      'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,          1);
+    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,          1);
 insert or replace into ModifierArguments 
     (ModifierId,                               Name,                        Value)
 values
-    ('OPPIDUM_GRANT_TECH_APPRENTICESHIP',      'TechType',                  'TECH_METAL_CASTING'),
-    ('OPPIDUM_GRANT_TECH_APPRENTICESHIP',      'GrantTechIfBoosted',        1);
+    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
+    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
 --越南
 update ModifierArguments set Value = 3 where ModifierId = 'TRIEU_UNFRIENDLY_COMBAT' AND Name='Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRIEU_FRIENDLY_COMBAT' AND Name='Amount';
