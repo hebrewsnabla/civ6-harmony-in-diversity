@@ -57,9 +57,9 @@ update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBA
 -- 西班牙征服者
 update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
 -- 追猎及追猎UU
-update Units set Combat = 46 where UnitType = 'UNIT_COURSER';
-update Units set Combat = cost -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Combat = cost -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
+update Units set Combat = Combat -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
