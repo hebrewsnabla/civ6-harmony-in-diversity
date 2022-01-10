@@ -277,3 +277,19 @@
 --     (ModifierId,                                            Name,           Value)
 -- values
 --     ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'AbilityType',  'ABILITY_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+
+------------------------------------
+-- by xhh
+
+-- 美国森林关联
+insert or replace into StartBiasFeatures
+	(CivilizationType,					FeatureType,					Tier)
+values
+	('CIVILIZATION_AMERICA',			'FEATURE_FOREST',				2);
+
+insert or replace into StartBiasTerrains
+	(CivilizationType,					TerrainType,					Tier)
+values
+	('CIVILIZATION_AMERICA',			'TERRAIN_GRASS_MOUNTAIN',		2),
+	('CIVILIZATION_AMERICA',			'TERRAIN_PLAINS_MOUNTAIN',		2);
