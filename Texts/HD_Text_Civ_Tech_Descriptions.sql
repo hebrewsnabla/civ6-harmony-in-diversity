@@ -6,7 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE]If a city has a Granary, [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5."),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5 in cities having Granary."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -156,7 +156,7 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_COMPUTERS",                                                "The superior corrosion resistance of aluminum makes it an ideal choice for precision equipment."),
     ("LOC_BOOST_TRIGGER_NANOTECHNOLOGY",                                                    "Build an Aluminum Mine and own a helicopter."),
     ("LOC_BOOST_TRIGGER_LONGDESC_NANOTECHNOLOGY",                                           "With the new alloy in action, your scientists are developing new material technologies.  "),
-    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 Individual Zones."),
+    ("LOC_BOOST_TRIGGER_INDUSTRIALIZATION_XP2",                                             "Build 4 Industrial Zones."),
     ("LOC_BOOST_TRIGGER_LONGDESC_INDUSTRIALIZATION",                                        "The bustling centers of industrial activity hint at the coming of great times. Is this a sign that the industrial revolution is just around the corner?"),
     ("LOC_BOOST_TRIGGER_DIPLOMATIC_SERVICE",                                                "Have a level 2 Alliance."),
     ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "A strong diplomatic alliance has nurtured an elite team of diplomats."),
