@@ -135,4 +135,37 @@ update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ER
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
 UPDATE ModifierArguments SET Value= 2 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
 
-
+--市政&科技
+--远程占领区域加力
+delete from CivicModifiers where ModifierId = "HD_RANGED_GARRISON_BONUS";
+insert or replace into TechnologyModifiers
+    (TechnologyType,                               ModifierId)
+values
+    ('TECH_MACHINERY',                             'HD_RANGED_GARRISON_BONUS');
+--抗骑兵
+delete from  TechnologyModifiers where ModifierId = "HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION";
+insert or replace into TechnologyModifiers
+    (TechnologyType,                               ModifierId)
+values
+    ('TECH_MILITARY_TACTICS',                             'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION');
+delete from  CivicModifiers where ModifierId = "HD_ANTIC_HILLS_DEFEND_BONUS";
+insert or replace into CivicModifiers
+    (CivicType,                                       ModifierId)
+values
+    ('CIVIC_MERCENARIES',                             'HD_ANTIC_HILLS_DEFEND_BONUS');
+--后勤补给文本改动    
+update Civics set Description = null where CivicType ='CIVIC_DEFENSIVE_TACTICS';
+--重骑兵
+delete from  CivicModifiers where ModifierId = "HD_HEAVYC_OPEN_AREA_STRENGTH";
+insert or replace into CivicModifiers
+    (CivicType,                                       ModifierId)
+values
+    ('CIVIC_FEUDALISM',                               'HD_HEAVYC_OPEN_AREA_STRENGTH');
+--攻城单位
+delete from  TechnologyModifiers where ModifierId = "HD_SIEGE_ATTACK_DISTRICT_BONUS";
+insert or replace into TechnologyModifiers
+    (TechnologyType,                               ModifierId)
+values
+    ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
+update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
+update Technologies set Description = "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION" where TechnologyType = 'TECH_SIEGE_TACTICS';
