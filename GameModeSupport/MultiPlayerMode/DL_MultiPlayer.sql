@@ -41,7 +41,7 @@ update Units set cost = cost * 1.2 where PromotionClass != 'FORMATION_CLASS_CIVI
 
 
 --------------------------------------------------------------------------------------------------------------------------------------
--- 力调整
+-- UU调整
 -- 法国宪兵
 update Units set Combat = 55 where UnitType = 'UNIT_FRENCH_GENDARME';
 update ModifierArguments set Value = 3 where ModifierId = 'PLUS_5_WHEN_ATTACKING_COMBAT_BONUS' AND Name='Amount';
@@ -55,6 +55,7 @@ update Units set Combat = 68 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
 update ModifierArguments set Value = 5 where ModifierId = 'REDCOAT_FOREIGN_COMBAT' AND Name='Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBAT' AND Name='Amount';
 -- 西班牙征服者
+update Units set Combat = 55 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
 -- 追猎及追猎UU
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
@@ -63,12 +64,57 @@ update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
+--莽骑兵
+update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
+--铜盾方阵
+update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
+--诸葛连弩
+update Units set RangedCombat = 40 where UnitType = 'UNIT_CHINESE_CHOKONU';
+--罗马弩炮
+-- update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
+--矿工军团
+update ModifierArguments set Value = 0 where ModifierId = 'DIGGER_BONUS_ON_COAST' AND Name='Amount';
+--长生军
+update Units set Combat = 38 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+--独木战船
+update Units set Combat = 35 where UnitType = 'UNIT_KHMER_WAR_CANOE';
+--格鲁吉亚塔兹卢利骑兵
+update Units set Combat = 55 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+--荷兰公民卫队
+update Units set StrategicResource = null where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
+update ModifierArguments set Value = 7 where ModifierId = 'PLUS_10_WHEN_DEFENDING_DISTRICT_BONUS' AND Name='Amount';
+--印尼彩票剑
+update Units set Combat = 42 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
+--马里曼德鲁卡
+update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+--毛利托阿，托塔帕拉
+update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
+update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
+--阿兹特克UU
+update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_JAGUAR';
+update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_JAGUAR';
+--苏丹亲兵
+
+
+
+
+
+
+
+
+
 
 -------------------------------------
 --              文明               --
 -------------------------------------
 --斯基泰
 delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
+delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
+
 --祖鲁
 delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
@@ -135,7 +181,10 @@ update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ER
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
 UPDATE ModifierArguments SET Value= 2 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
 
---市政&科技
+
+-------------------------------------
+--           市政&科技             --
+-------------------------------------
 --远程占领区域加力
 delete from CivicModifiers where ModifierId = "HD_RANGED_GARRISON_BONUS";
 insert or replace into TechnologyModifiers
