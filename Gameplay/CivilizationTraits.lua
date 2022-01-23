@@ -86,8 +86,9 @@ function MaliPlayerEraScoreChanged(playerID, amountAwarded)
 	local playerConfig = PlayerConfigurations[playerID]
 	local sLeader = playerConfig:GetLeaderTypeName()
 	local sMaliGoldDesert = 'TRAIT_LEADER_SAHEL_MERCHANTS'
+	local amount = GlobalParameters.MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE
 	if (not LeaderHasTrait(sLeader, sMaliGoldDesert)) then return; end
-	player:GetTreasury():ChangeGoldBalance(amountAwarded * 15)
+	player:GetTreasury():ChangeGoldBalance(amountAwarded * amount)
 end
 
 Events.PlayerEraScoreChanged.Add(MaliPlayerEraScoreChanged)
