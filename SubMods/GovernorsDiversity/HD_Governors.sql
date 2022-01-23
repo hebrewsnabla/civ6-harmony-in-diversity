@@ -472,8 +472,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
-	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'YieldType',									'YIELD_PRODUCTION,YIELD_FOOD'),
-	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'Amount',										'1,1');
+	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'YieldType',									'YIELD_PRODUCTION'), -- ,YIELD_FOOD
+	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'Amount',										'1'); -- ,1
 
 -- 规划委员：建造区域、建筑+30%面板锤
 -- update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER' 

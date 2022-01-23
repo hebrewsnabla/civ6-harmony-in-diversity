@@ -767,7 +767,7 @@ values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 	-- ('BUILDING_JEBEL_BARKAL',	'TERRAIN_DESERT_MOUNTAIN');
 
 -- Apadana
-update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN_MODIFIER';
+-- update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN_MODIFIER';
 
 -- Panama
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_COLONIALISM' where BuildingType = 'BUILDING_PANAMA_CANAL';

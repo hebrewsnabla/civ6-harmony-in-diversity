@@ -58,7 +58,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME",                                   "Paradise"),
     ("LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION",                    "All Builders trained in the city get +1 build charge and +1 [ICON_Movement] Movement."),
     ("LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION",                    "The city gets +20% production speed towards Wonders. When a Wonder is completed in the city, gain Great Engineer points equal to 20% of the cost."),
-    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Food] Food and +1 [ICON_Production] Production for all improved plots in the city ."),
+    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Production] Production for all improved plots in the city."), -- +1 [ICON_Food] Food and 
     ("LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "The city's improvements, buildings, and Districts cannot be damaged by Environmental Effects. +100% Districts adjacency yields in the city"),
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city gain +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement when the 'Urbanization Civic' is unlocked."),
     ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement (unlocked by Medieval Faires Civic) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."),
@@ -153,7 +153,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME",                                   "世外天堂"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION",                    "城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION",                    "城市在建造奇观时加速20%。此城市建成奇观后获得等同于其生产力20%的大工程师点数。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Production] 生产力。"), -- +1 [ICON_Food] 食物、
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。解锁“城市化”后可在全国修建“市立公园”。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”（由中世纪集市市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"),

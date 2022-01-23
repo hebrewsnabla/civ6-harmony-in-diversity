@@ -415,7 +415,7 @@ update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCH
 
 update ModifierArguments set Value = 50 where Name = 'Amount' and ModifierID = 'SCRIPTURE_DISTRICTFAITH';
 
-update ModifierArguments set Value = 4 where Name = 'Amount' and (ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' or ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE');
+-- update ModifierArguments set Value = 4 where Name = 'Amount' and (ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' or ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE');
 
 update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'INTERNATIONALSPACEAGENCY_SCIENCEPERTRIBUTARY';
 
@@ -826,9 +826,9 @@ values
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'YieldType',					'YIELD_PRODUCTION'),
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'Amount',						3),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'YieldType',					'YIELD_CULTURE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						3),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						2),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'YieldType',					'YIELD_SCIENCE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						3),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						2),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'Amount',						4),
 	('TEXTBOOK_TIER2_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),

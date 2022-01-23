@@ -84,6 +84,7 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 -- Kumasi
+delete from TraitModifiers where TraitType = 'MINOR_CIV_KUMASI_TRAIT' and ModifierId = 'MINOR_CIV_KUMASI_UNIQUE_INFLUENCE_TRADE_GOLD_BONUS';
 -- update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 
 ---------------------------------------------------------------------------------------------------------
@@ -112,7 +113,7 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 --Hunza罕萨
-update ModifierArguments set Value = 0.4 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
+update ModifierArguments set Value = 0.25 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -136,10 +137,10 @@ values
 insert or replace into TraitModifiers 
     (TraitType,                                  ModifierId)
 values
-	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_INTERNATIONAL_GOLD1'),
+	-- ('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_INTERNATIONAL_GOLD1'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_DOMESTIC_FOOD1'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_DOMESTIC_PRODUCTION1'),
-	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERNATIONAL_GOLD2'),
+	-- ('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERNATIONAL_GOLD2'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_DOMESTIC_FOOD2'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_DOMESTIC_PRODUCTION2');
 insert or replace into Modifiers
