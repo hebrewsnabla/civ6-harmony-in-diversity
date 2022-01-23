@@ -647,27 +647,27 @@ update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null 
 -- Kilwa
 	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
 update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
-update ModifierArguments set Value = 6 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
+update ModifierArguments set Value = 5 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDFOODYIELD';
 -- Maritime
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORPRODUCTION'; -- leave the food one to be modified
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBOR%';
-update ModifierArguments set Value = 'YIELD_GOLD' where Name = 'YieldType' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update BuildingModifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update Modifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update ModifierArguments set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update ModifierArguments set Value = 'YIELD_GOLD' where Name = 'YieldType' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update BuildingModifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update Modifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update ModifierArguments set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 insert or replace into BuildingModifiers (BuildingType,  ModifierId)
 select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId like 'KILWA_SINGLE_ADD%';
 insert or replace into BuildingModifiers (BuildingType,  ModifierId)
 select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where
-ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD';
+ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 insert or replace into Modifiers    
     (ModifierId,                                ModifierType,                                               SubjectRequirementSetId)
@@ -690,13 +690,13 @@ insert or replace into Modifiers
     (ModifierId, 	ModifierType,                       				SubjectRequirementSetId)
 select
 	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CVS_CITYSTATE_MARITIME_SUZERAIN_2_REQUIREMENTSET'
-from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD1';
+from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD1';
 
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'KILWA_SINGLE_ADD%';
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where
-	ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD';
+	ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
