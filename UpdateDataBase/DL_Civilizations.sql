@@ -504,9 +504,9 @@ values
 	('IMPROVEMENT_SPHINX',					'SPHINX_ADJACENT_FARM_FOOD');
 
 insert or replace into Improvement_BonusYieldChanges
-	(ImprovementType,       YieldType,      BonusYieldChange,	PrereqCivic)
+	(Id,	ImprovementType,       YieldType,      BonusYieldChange,	PrereqCivic)
 values
-	('IMPROVEMENT_SPHINX', 'YIELD_CULTURE',	1, 					'CIVIC_LITERARY_TRADITION_HD');
+	(599,	'IMPROVEMENT_SPHINX', 'YIELD_CULTURE',	1, 					'CIVIC_LITERARY_TRADITION_HD');
 
 insert or replace into Modifiers 
 	(ModifierId, 									ModifierType,													RunOnce,	Permanent,	SubjectRequirementSetId)
