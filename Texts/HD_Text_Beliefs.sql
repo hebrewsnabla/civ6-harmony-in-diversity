@@ -39,7 +39,7 @@ values
     ("LOC_BELIEF_RELIGIOUS_ART_DL_DESCRIPTION",               "Holy Site district’s [ICON_Faith] Faith adjacency bonus provides [ICON_Culture] Culture as well. May purchase Theater district buildings with [ICON_Faith] Faith."),
     ("LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                  "+1 [ICON_Production] Production for all Speciality Districts. +1% [ICON_Production] Production for each citizen following this religion in the city. May purchase Industrial Zone district buildings with [ICON_Faith] Faith."),
     ("LOC_BELIEF_PRACTICAL_APPLICATION_NAME",                 "Practical Application"),
-    ("LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "Each [ICON_Citizen] citizen yields +2 [ICON_Gold] Gold. +1% [ICON_Gold] Gold for each citizen following this religion in the city."),
+    ("LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "Each [ICON_Citizen] citizen yields +1.5 [ICON_Gold] Gold. +1% [ICON_Gold] Gold for each citizen following this religion in the city."),
     ("LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "Settlers and Buildiers are 20% cheaper to purchase with [ICON_GOLD] Gold, and 20% cheaper to purchase with [ICON_FAITH] Faith (when allowed). May purchase Government district and Diplomatic Quarter district buildings with [ICON_Faith] Faith."),
     ("LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "+1 [ICON_Amenities] Amenity to cities if they have a Holy Site adjacent to a Mountain. +1 [ICON_Amenities] Amenity to cities if they have a Holy Site adjacent to a Forest. +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. The same bonus also apply to City Center (instead of Holy Site) with the same requirements."), -- So did City Center.
     ("LOC_BELIEF_MESSIAH_NAME",                               "Messiah"),
@@ -118,7 +118,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_ART_DL_DESCRIPTION",               "圣地区域的 [ICON_Faith] 信仰值相邻加成也提供 [ICON_Culture] 文化值。可以使用 [ICON_Faith] 信仰值购买剧院广场区域内的建筑。"),
     ("zh_Hans_CN",  "LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                  "专业化区域+1 [ICON_Production] 生产力，城市中每个信仰此宗教的居民将使 [ICON_Production] 生产力+1%，可以使用 [ICON_Faith] 信仰值购买工业区内的建筑。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PRACTICAL_APPLICATION_NAME",                 "经世致用"),
-    ("zh_Hans_CN",  "LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "城市中每 [ICON_Citizen] 人口提供+2 [ICON_Gold] 金币，每个信仰此宗教的居民将使 [ICON_Gold] 金币+1%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "城市中每 [ICON_Citizen] 人口提供+1.5 [ICON_Gold] 金币，每个信仰此宗教的居民将使 [ICON_Gold] 金币+1%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "用 [ICON_GOLD] 金币购买开拓者和建造者的费用降低20%，若可用[ICON_FAITH] 信仰值购买，则也降低20% 。可以使用 [ICON_Faith] 信仰值购买市政广场和外交区内的建筑。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "若圣地相邻山脉，+1 [ICON_Amenities] 宜居度；相邻森林，+1 [ICON_Amenities] 宜居度；相邻河流，+2 [ICON_housing] 住房。市中心也获得相同加成。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_NAME",                               "弥赛亚"),

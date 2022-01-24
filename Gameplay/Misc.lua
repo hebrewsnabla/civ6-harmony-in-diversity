@@ -137,3 +137,6 @@ GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
 -- end
 
 -- Events.ImprovementAddedToMap.Add(PaperMakingBoost)
+
+-- local playerFavor   :number = localPlayer:GetFavor();
+-- Events.FavorChanged.Add();

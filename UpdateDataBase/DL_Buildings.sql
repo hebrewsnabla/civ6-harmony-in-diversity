@@ -1702,7 +1702,7 @@ values
 --市场调整 
 update Buildings set Cost = 100 where BuildingType = 'BUILDING_MARKET';
 --大小庙
-update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_SHRINE';
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE';
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_STAVE_CHURCH';
-update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_PRASAT';
+update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_SHRINE';
+update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_TEMPLE';
+update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_STAVE_CHURCH';
+update Building_YieldChanges set YieldChange = 12 where BuildingType = 'BUILDING_PRASAT';
