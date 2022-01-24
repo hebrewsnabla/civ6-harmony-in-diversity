@@ -216,7 +216,7 @@ update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWO
 update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_3';
 ------------------------------------------------------------------------------------------------------------
 -----BUILDING_NOTRE_DAME------------------------------------------------------------------------------------
-update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
+update Buildings set Entertainment = 2, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,

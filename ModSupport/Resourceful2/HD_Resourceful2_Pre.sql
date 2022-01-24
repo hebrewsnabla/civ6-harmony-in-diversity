@@ -55,7 +55,7 @@ values
 	('RESOURCE_LEAD',			'RESOURCECLASS_BONUS',			'YIELD_PRODUCTION',		2,				0),
 	('RESOURCE_HAM',			'RESOURCECLASS_BONUS',			'YIELD_FOOD',			4,				0),
 	('RESOURCE_DATES',			'RESOURCECLASS_BONUS',			'YIELD_FOOD',			1,				0),
-	('RESOURCE_BERRIES',		'RESOURCECLASS_BONUS',			'YIELD_GOLD',			3,				0),
+	('RESOURCE_BERRIES',		'RESOURCECLASS_BONUS',			'YIELD_FOOD',			3,				0),
 	('RESOURCE_BARLEY',			'RESOURCECLASS_BONUS',			'YIELD_FOOD',			2,				0);
 
 -- Delete
@@ -74,6 +74,10 @@ delete from Resource_YieldChanges where ResourceType in (select ResourceType fro
 delete from Resource_ValidTerrains where ResourceType in (select ResourceType from HDResourceful2_Basic);
 delete from Resource_ValidFeatures where ResourceType in (select ResourceType from HDResourceful2_Basic);
 delete from Resource_Harvests where ResourceType in (select ResourceType from HDResourceful2_Basic);
+
+update Resources set ResourceClassType = 'RESOURCECLASS_LUXURY', Happiness = 4 
+	where ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON' or ResourceType = 'RESOURCE_ALOE' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_QUARTZ';
+update Resources set Happiness = 4 where ResourceType = 'RESOURCE_RUBY';
 
 -- Harvest
 insert or replace into Resource_Harvests

@@ -123,7 +123,7 @@ insert or replace into Modifiers
 	(ModifierId,										ModifierType,									    SubjectRequirementSetId)
 values
     --Bandar Seri Begawan(Jakarta)
-	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_OR_ADJACENT_TO_COAST');
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST');
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			 Value)
 values
