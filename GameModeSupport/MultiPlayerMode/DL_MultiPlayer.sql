@@ -13,7 +13,25 @@ UPDATE GlobalParameters SET Value='0' WHERE Name='FAVOR_GRIEVANCES_MINIMUM';
 --海商山洞商路无额外加成
 UPDATE GlobalParameters SET Value='0' WHERE Name='TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_BEST_ROUTE_TILE';
 UPDATE GlobalParameters SET Value='0' WHERE Name='TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
-
+--自由探索
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_HARBOR';
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_SCIENTIFIC',	    'COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,								                OwnerRequirementSetId)
+values
+	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_DISTRICT',	'PLAYER_HAS_GOLDEN_AGE');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,		    Value)
+values
+	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'YieldType',	'YIELD_SCIENCE'),
+    ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
+--奢侈加金
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
+update Adjacency_YieldChanges set YieldChange = 4 where ID = 'HD_Commercial_Luxury_Gold_Late' ;
 
 -------------------------------------
 --              总督               --
@@ -59,8 +77,8 @@ update Units set Combat = 55 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
 -- 追猎及追猎UU
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
-update Units set Combat = Combat -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = Combat -4 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Combat = Combat -4 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set Combat = Combat -1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
@@ -70,6 +88,8 @@ update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_ETHIOPIAN_O
 update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
 --铜盾方阵
 update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
+--驴车
+update Units set PrereqTech = 'TECH_ANIMAL_HUSBANDRY' where UnitType = 'UNIT_SUMERIAN_WAR_CART';
 --诸葛连弩
 update Units set RangedCombat = 40 where UnitType = 'UNIT_CHINESE_CHOKONU';
 --罗马弩炮
@@ -86,7 +106,7 @@ insert or replace into UnitAbilities
     (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
 values
     ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    null,    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
-insert or replace into UnitAbilityModifiers
+insert or ignore into UnitAbilityModifiers
     (UnitAbilityType,                                   ModifierId)
 values
     ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT');
@@ -119,8 +139,8 @@ update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
 update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
 update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
 --阿兹特克UU
-update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
-update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_JAGUAR';
+update Units set Combat = 32 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update Units set Combat = 32 where UnitType = 'UNIT_AZTEC_JAGUAR';
 update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_JAGUAR';
 --苏丹亲兵
@@ -181,6 +201,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_CO
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_EUREKA_INCREASE' AND Name='Amount';
 --苏美尔
 delete from TraitModifiers where ModifierId = 'TRAIT_ATTACH_ALLIANCE_COMBAT_ADJUSTMENT';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_EXPERIENCE' AND Name='Range';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_PLUNDER' AND Name='Range';
 --朝鲜
 update Adjacency_YieldChanges set YieldChange = 3 where Id = 'BaseDistrict_Science';
 update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
@@ -217,7 +239,7 @@ UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_DISTRI
 update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE';
 --葡萄牙
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
-UPDATE ModifierArguments SET Value= 2 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
+UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
 
 
 -------------------------------------
@@ -256,7 +278,7 @@ insert or replace into UnitAbilities
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
 values
     ('ABILITY_HD_RANGED_ATTACK_BONUS',                          NULL,   'LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION',                       1);
-insert or replace into UnitAbilityModifiers
+insert or ignore into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
 values
     ('ABILITY_HD_RANGED_ATTACK_BONUS',                        'ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER');
@@ -366,7 +388,7 @@ update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION" where TechnologyType = 'TECH_SIEGE_TACTICS';
 --封建友好2速（文本√）
 update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = "HD_SIEGE_ATTACK_AFTER_MOVE";
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = "HD_ATTACK_AFTER_MOVE";
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = "HD_ATTACK_AFTER_MOVE";
 update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = "HD_ATTACK_AFTER_MOVE";
 insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
@@ -378,3 +400,9 @@ values
 	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
 update Civics set Description = null where CivicType ='CIVIC_MILITARY_TRAINING';
 update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+
+
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                           ModifierId)
+values
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'HD_ENEMY_MOVEMENT');

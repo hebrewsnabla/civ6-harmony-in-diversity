@@ -29,13 +29,20 @@ values
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",                                                   "Ranged units gain ability: +5 [ICON_Strength] Combat Strength when occupying an area or an improvement that provides [ICON_Strength] Defensive Strength. [NEWLINE] +1 [ICON_Production] Productivity for lumberyard improvements not along a river."),
     ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                                  "Stairwell Improvements +1 [ICON_Housing] Housing." ),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Strength when adjacent to at least one friendly melee unit. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
-    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Anti-Cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending against a close range attack on a hill. [NEWLINE] Light Cavalry units gain the ability: +1 [ICON_Movement] movement when starting a turn in enemy territory." ),
+    ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Anti-Cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending against a close range attack on a hill. [NEWLINE] Light Cavalry units gain the ability: +3 [ICON_Strength] Combat Strength when starting a turn in enemy territory." ),
     ("LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                                   "Ranged units gain ability: +5 [ICON_Strength] Combat Strength when attacking in friendly territory." ),
     ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Now +1 [ICON_Food] food from farms when adjacent to 2 farm improvements.[NEWLINE] +1 [ICON_Food] food from plantation improvements.[NEWLINE] Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE] Melee units gain ability: +3 [ICON_Strength] combat power when fighting in forests or rainforests.[NEWLINE] Siege units gain the ability: +2 [ICON_Movement] movement if starting turn in friendly territory."),
     ("LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                               "Siege units gain the ability: +5 to attack area defense [ICON_Strength] Combat Strength."),
     ("LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                                           "+7 [ICON_Strength] Combat Strength when in enemy territory."),
     ("LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                                  "+2 [ICON_Movement] movement if starting turn in friendly territory. (enabled by Feudalism Civic)."),
     ("LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION",                                      "+5 [ICON_Strength] Combat Strength when attacking in friendly territory. (enabled by Humanism Civic)."),
+    ("LOC_ABILITY_GENDARME_DESCRIPTION",                                                    "+3 [ICON_Strength] Combat Strength when attacking."),
+    ("LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                                     "Free Inquiry Golden Age:[NEWLINE][ICON_TechBoosted] Eurekas provide an additional 10% of technology costs. Each city receives +2 [ICON_Culture] Culture for each specialty district."),
+    ("PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC",                                             "+3 [ICON_Strength] Combat Strength when attacking."),
+    ("LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION",                                           "Spanish unique Renaissance Era unit that replaces the Musketman. +5 [ICON_Strength] Combat Strength when there is a Missionary, Inquisitor, or Apostle in the same hex. If this unit captures a city or is adjacent to a city when it is captured, the city will automatically adopt the Conquistador player's Religion as the dominant Religion. "),
+    ("LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                                "American unique Industrial era unit when Teddy Roosevelt is their leader that replaces the Cuirassiers. [ICON_Culture] Culture is earned from kills on their [ICON_Capital] Capital's continent. +5 [ICON_Strength] Combat Strength when fighting on Hills. Lower maintenance cost."),
+    ("LOC_UNIT_DIGGER_DESCRIPTION",                                                         "+5 [ICON_Strength] Combat Strength when fighting on Neutral or Foreign Territory."),
+
     ("LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",                        "+17 [ICON_Strength] Combat Strength vs. land units.");
 
 
@@ -70,12 +77,20 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。" ),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。" ),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
     ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                            "在敌方领土内时 +7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "在友好领土开始时+2 [ICON_Movement] 移动力。（拥有封建主义市政后允许）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION",                       "在友好领土内进攻时+5 [ICON_Strength] 战斗力。（拥有人文主义市政后允许）。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                      "“自由探索”黄金时代：[NEWLINE][ICON_TechBoosted]尤里卡额外提供10%的科技开销。城市每拥有1处特色区域，则+2 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC",                              "当进攻时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION",                            "取代火枪手的西班牙文艺复兴时期特色近战单位，当有宗教单位跟随时+5 [ICON_Strength] 战斗力，征服者攻破城市或攻破城市时征服者与城市中心相邻，则强迫该城市改信西班牙的主流宗教。"),
+    ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                 "泰迪·罗斯福作为领袖时的工业时代美国特色单位，替代胸甲骑兵。在首都所处大陆上击杀敌人后将获得 [ICON_Culture] 文化值。在丘陵地形作战时+5 [ICON_Strength] 战斗力。维护费用更低。"),
+    ("zh_Hans_CN",  "LOC_UNIT_DIGGER_DESCRIPTION",                                          "澳大利亚特色的现代单位，替代步兵。在中立或外国领土上作战时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                "取代火枪手的荷兰文艺复兴时期特色近战单位。当在区域内防御时+7 [ICON_Strength] 战斗力，且相比火枪手更加廉价，无需战略资源。"),
+
+    ("zh_Hans_CN",  "LOC_ABILITY_GENDARME_DESCRIPTION",                                     "进攻时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",         "攻击陆地单位+17 [ICON_Strength] 战斗力。");
 
