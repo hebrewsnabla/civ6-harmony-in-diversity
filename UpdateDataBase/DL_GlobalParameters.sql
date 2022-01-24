@@ -23,6 +23,9 @@ update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL
 update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
 update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
+-- Change from 2 to 1. Only full sea trade route gets 100% more gold, only need half of the route before.
+update GlobalParameters set Value = 1 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
+
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DEFENSIVE_PACT_TIME_LIMIT';
@@ -160,6 +163,7 @@ values
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
+    ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY',               3);
@@ -215,5 +219,5 @@ values
     ('GAMESPEED_ONLINE',    12,             110);
 
 -- Trading Post
-update GlobalParameters set Value = 2 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
-update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
+-- update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
+-- update GlobalParameters set Value = 0 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';

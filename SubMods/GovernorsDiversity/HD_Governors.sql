@@ -217,10 +217,10 @@ values
 
 -- 调整效果
 -- 税务员
-update ModifierArguments set Value = 4 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
 -- 港务局长
-update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
-update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
 
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
@@ -472,8 +472,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
-	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'YieldType',									'YIELD_PRODUCTION,YIELD_FOOD'),
-	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'Amount',										'1,1');
+	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'YieldType',									'YIELD_PRODUCTION'), -- ,YIELD_FOOD
+	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'Amount',										'1'); -- ,1
 
 -- 规划委员：建造区域、建筑+30%面板锤
 -- update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER' 
@@ -890,12 +890,23 @@ values
 
 -----------------------------------------------------------------------------------------------------------------------------------
 -- Ibrahim
+-- 树调整
+update GovernorPromotionPrereqs set PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_CAPOU_AGHA' where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 1 where GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA';
+update GovernorPromotions set level = 3 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 0 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set column = 2 where GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+insert into GovernorPromotionPrereqs
+    (GovernorPromotionType,             PrereqGovernorPromotion)
+values
+    ('GOVERNOR_PROMOTION_CAPOU_AGHA',   'GOVERNOR_PROMOTION_HEAD_FALCONER');
+delete from GovernorPromotionPrereqs where PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI' and GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
 --LEVEL 0 GOVERNOR_PROMOTION_PASHA
 --level 1-0 GOVERNOR_PROMOTION_HEAD_FALCONER
 --level 1-2 GOVERNOR_PROMOTION_SERASKER
---level 2-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
---level 2-2 GOVERNOR_PROMOTION_CAPOU_AGHA
---level 3 GOVERNOR_PROMOTION_GRAND_VISIER
+--level 2-1 GOVERNOR_PROMOTION_CAPOU_AGHA
+--level 3-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
+--level 3-2 GOVERNOR_PROMOTION_GRAND_VISIER
 
 delete from GovernorPromotionModifiers where 
 	   GovernorPromotionType = 'GOVERNOR_PROMOTION_PASHA'

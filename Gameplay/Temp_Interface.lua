@@ -2,14 +2,16 @@
 -- Temp Interface for DEBUG   --
 --------------------------------
 
--- NOTE: The content here can be loaded without game load.
--- NOTE: You can use ExposedMembers to call the functions in the Gameplay, see also Temp_Gameplay.lua
+-- NOTE: The content here can be loaded without game reload.
+-- NOTE: You can use ExposedMembers to call the functions in the Gameplay (but may cause desync in multiplayer), see also Temp_Gameplay.lua
+-- NOTE: It is better to use GameEvents to implement some gameplay changes.
 
 -- Do not change the above ones
 -----------------------------------------------------------------------
 include "HD_StateUtils"
 
 Utils = ExposedMembers.DLHD.Utils;
+GameEvents = ExposedMembers.GameEvents;
 
 function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown )
     local pPlayerConfig = PlayerConfigurations[playerID]
@@ -184,7 +186,6 @@ end
 Events.SpyMissionCompleted.Add(GovSpiesGetTechOnSpyMissionCompleted)
 ---]]
 
-GameEvents = ExposedMembers.GameEvents;
 
 -- Kublai
 -- ===========================================================================
@@ -221,12 +222,12 @@ function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
     if pPlayer == nil then
         return
     end
-    print('PROJECT_CIRCUSES_AND_BREAD', playerID, cityID, projectID)
+    -- print('PROJECT_CIRCUSES_AND_BREAD', playerID, cityID, projectID)
     if projectID == GameInfo.Projects['PROJECT_CIRCUSES_AND_BREAD'].Index then
 		local players = Game.GetPlayers{ Alive=true }
-        print('PROJECT_CIRCUSES_AND_BREAD1', players)
+        -- print('PROJECT_CIRCUSES_AND_BREAD1', players)
 		for _, player in ipairs(players) do
-            print('PROJECT_CIRCUSES_AND_BREAD2', player:GetID())
+            -- print('PROJECT_CIRCUSES_AND_BREAD2', player:GetID())
 			if player:GetID() ~= playerID then -- or player:IsMinor()            
 			    local playerCities = player:GetCities()
 			    for _, city in playerCities:Members() do
@@ -236,7 +237,7 @@ function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
                     if cityCulturalIdentity then
                         local loyaltyPerTurn = cityCulturalIdentity:GetLoyaltyPerTurn()
                         if loyaltyPerTurn < 0 then
-                            print('PROJECT_CIRCUSES_AND_BREAD5', iX, iY, dX, dY )
+                            -- print('PROJECT_CIRCUSES_AND_BREAD5', iX, iY, dX, dY )
                             GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Call(iX, iY, dX, dY)
                         end
                     end

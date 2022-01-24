@@ -473,6 +473,9 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER', 			'BuildingType', 'BUILDING_MONUMENT'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'DistrictType', 'DISTRICT_CITY_CENTER'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'Amount', 50);
+
+-- update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GOLD_FROM_DOMESTIC_TRADING_POSTS' and Name = 'Amount';
+
 ---------------------------------------------------------------------------------------------------------------------------
 -- Ethiopia
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
@@ -1876,9 +1879,6 @@ values
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_PLAIN_HILLS_PURCHASE'),
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_PURCHASE'),
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_HILLS_PURCHASE');
-
--- Rome
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GOLD_FROM_DOMESTIC_TRADING_POSTS' and Name = 'Amount';
 
 -- Netherlands
 update StartBiasRivers set Tier = 3 where CivilizationType = 'CIVILIZATION_NETHERLANDS';

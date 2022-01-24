@@ -16,12 +16,12 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.2</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.2.0.1 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.0.1。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.2.1 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.1。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.0.1 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.0.1。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.1 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.1。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
@@ -1419,6 +1419,10 @@
       <Properties><LoadOrder>18501</LoadOrder></Properties>
       <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
     </UpdateText>
+    <ImportFiles id="MPTest_update_Maps" criteria="MPTest_Mode_Expansion2">
+      <Properties><LoadOrder>18502</LoadOrder></Properties>
+      <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
+    </ImportFiles>
     <!-- Options at last -->
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_CityStatesStartWithWalls_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1507,6 +1511,8 @@
     <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
     <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
     <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
+    <!-- Pvp Maps -->
+    <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>

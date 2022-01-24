@@ -45,7 +45,7 @@ values
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
     -- ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production."), -- +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors.
-    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. Your Harbor +1 [ICON_Production] Production. +2 [ICON_Gold] Gold from Fishing Boats adjacent Harbor."), 
+    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +1 [ICON_Production] Production for Harbor Districts. Harbor Districts provide extra +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+2 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
@@ -55,11 +55,11 @@ values
     ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
     ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and receive a free Trader in the capital."),
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
-    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "+100% Campus district adjacency bonuses from the adjacent Mountain. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Mountain. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing to cities adjacent Mountain tiles."),
+    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "Campus Districts and Holy Sites get extra standard adjacency bonus from Mountains. +2 [ICON_GreatProphet] Great Prophet point per turn for cities have Mountains. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing for cities that adjacent to Mountains."),
     ("LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "Song of Siren"),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional Major adjacency bonus for being adjacent to Reef. +2 [ICON_Production] Production from Reef"),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus Districts get extra major adjacency bonus from Reefs. +2 [ICON_Production] Production from Reef."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
-    ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts;City Center receive +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Coast tiles.");
+    ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts; City Center receives +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Lake or Coast tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -122,4 +122,4 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "塞壬之歌"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石为学院提供额外大量相邻加成，礁石单元格+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_NAME",                                  "御岳"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度， +2 [ICON_Housing] 住房；每相邻两块海洋单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度，+2 [ICON_Housing] 住房；每相邻两块近海或湖泊单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");
