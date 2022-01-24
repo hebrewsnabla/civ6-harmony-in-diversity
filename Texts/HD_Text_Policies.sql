@@ -27,7 +27,7 @@ values
     ("LOC_POLICY_COMPILE_NAME",                                                       "Compiling Books"),
     ("LOC_POLICY_COMPILE_DESCRIPTION",                                                "+4 [ICON_GreatScientist] Great Scientist points per turn. +2 [ICON_GreatScientist] Great Scientist points per turn for every Library."),
     ("LOC_POLICY_SUPPLY_LINES_NAME",                                                  "Supply Lines"),
-    ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+2 [ICON_Movement] movement if staring turn in friendly territory."),
+    ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+2 [ICON_Movement] movement if starting turn in friendly territory."),
     ("LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME",                                            "Scholar Bureaucrat"),
     ("LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION",                                     "+4 [ICON_GreatWriter] Great Writer points per turn. +2 [ICON_GreatWriter] Great Writer points per turn for every Amphitheater."),
     ("LOC_POLICY_NEW_ROUTE_NAME",                                                     "New Route"),
@@ -166,7 +166,7 @@ values
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
     ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "+2 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +2 [ICON_GOLD] Gold."),
     ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. Gain [ICON_Science] Science equal to 75% of the unit's cost when a non civilian unit is created."),
-    ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if staring turn in friendly territory."),
+    ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if starting turn in friendly territory."),
     ("LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "Your international [ICON_TradeRoute] Trade Routes provide +1 [ICON_Gold] Gold per Luxury and Strategic resource improved at the destination, as well as +4 [ICON_Culture] Culture and +4 [ICON_Science] Science."),
     ("LOC_POLICY_INTERNATIONAL_SPACE_AGENCY_DESCRIPTION",                             "+3% [ICON_Science] Science per city-state you are the Suzerain of.");
 

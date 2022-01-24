@@ -61,9 +61,11 @@ update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
 update Units set Combat = Combat -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = Combat -1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
+update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY'; 
 --莽骑兵
 update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
 --铜盾方阵
@@ -81,9 +83,9 @@ insert or replace into TypeTags
 values
     ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER');
 insert or replace into UnitAbilities
-    (UnitAbilityType,                                   Name,                                                       Description,                                                        Permanent)
+    (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
 values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_NAME',    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    null,    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
 insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                   ModifierId)
 values
@@ -228,7 +230,7 @@ insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_MACHINERY',                             'HD_RANGED_GARRISON_BONUS');
---境内进攻5力
+--境内进攻5力（文本√）
 delete from TechnologyModifiers where ModifierId = "HD_RANGED_HILLS_STRENGTH";
 insert or replace into CivicModifiers
     (CivicType,                               ModifierId)
@@ -259,9 +261,9 @@ insert or replace into UnitAbilityModifiers
 values
     ('ABILITY_HD_RANGED_ATTACK_BONUS',                        'ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER');
 insert or replace into Modifiers
-    (ModifierId,                                         ModifierType,                           SubjectRequirementSetId)
+    (ModifierId,                                         ModifierType,                           OwnerRequirementSetId,                                     SubjectRequirementSetId)
 values
-    ('ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'HD_RANGED_ATTACK_BONUS_REQUIREMENTS');
+    ('ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',   'HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS',      'HD_RANGED_ATTACK_BONUS_REQUIREMENTS');
 insert or replace into ModifierArguments
 	(ModifierId,					                Name,						Value)
 values
@@ -273,8 +275,7 @@ values
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
-	('HD_RANGED_ATTACK_BONUS_REQUIREMENTS',							'PLAYER_IS_ATTACKER_REQUIREMENTS'),
-	('HD_RANGED_ATTACK_BONUS_REQUIREMENTS',							'UNIT_IN_OWNER_TERRITORY_REQUIREMENT');
+	('HD_RANGED_ATTACK_BONUS_REQUIREMENTS',							'PLAYER_IS_ATTACKER_REQUIREMENTS');
 
 
 --抗骑兵
@@ -290,13 +291,72 @@ values
     ('CIVIC_MERCENARIES',                             'HD_ANTIC_HILLS_DEFEND_BONUS');
 --后勤补给文本改动    
 update Civics set Description = null where CivicType ='CIVIC_DEFENSIVE_TACTICS';
+
+
 --重骑兵
+--伤兵5力到封建
 delete from  CivicModifiers where ModifierId = "HD_HEAVYC_OPEN_AREA_STRENGTH";
 insert or replace into CivicModifiers
     (CivicType,                                       ModifierId)
 values
     ('CIVIC_FEUDALISM',                               'HD_HEAVYC_OPEN_AREA_STRENGTH');
+--火药光环(搁置)
+-- insert or replace into Modifiers
+-- 	(ModifierId,							ModifierType,                           SubjectRequirementSetId)
+-- values
+-- 	('HD_HEAVYC_HEAL_AFTER_KILL',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',  'AOE_TAGMA_NONRELIGIOUS_REQUIREMENTS'),
+--     ('HD_HEAL_AFTER_KILL',			        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'AOE_HC_NOTCENTER_REQUIREMENTS');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,					Name,						Value)
+-- values
+-- 	('HD_HEAL_AFTER_KILL',		    'Amount',				    2);
+-- insert or ignore into RequirementSets
+-- 	(RequirementSetId,												RequirementSetType)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
+-- insert or ignore into RequirementSetRequirements
+-- 	(RequirementSetId,												RequirementId)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'AOE_HC_NOTCENTER_REQUIREMENTS');
+-- insert or ignore into Requirements
+-- 	(RequirementId,												RequirementType)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES');
+-- insert or ignore into RequirementArguments
+-- 	(RequirementId,							Name,	            Value				)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'Tag',              'CLASS_HEAVY_CAVALRY'),
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'IncludeCenter',    0);
+
+
+--轻骑兵
+--雇佣兵市政调整（未生效）
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,                               SubjectRequirementSetId)
+values
+	('HD_ENEMY_MOVEMENT',			        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'BERSERKER_PLOT_IS_ENEMY_TERRITORY');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,						Value)
+values
+	('HD_ENEMY_MOVEMENT',		    'Amount',				    3);
+--升级调整（文本√）
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or UnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+delete from UnitPromotionPrereqs where PrereqUnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or PrereqUnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+insert or replace into UnitPromotionPrereqs
+	(UnitPromotion,					    PrereqUnitPromotion)
+values
+    ('PROMOTION_LIGHTC_MOBILE_WARFARE',	'PROMOTION_DEPREDATION'),
+	('PROMOTION_LIGHTC_MILITANT',	'PROMOTION_LIGHTC_MOBILE_WARFARE'),
+	('PROMOTION_PURSUIT',	'PROMOTION_LIGHTC_MOBILE_WARFARE'),
+	('PROMOTION_LIGHTC_MILITANT',	'PROMOTION_LIGHTC_SHOCK'),
+	('PROMOTION_ESCORT_MOBILITY',	'PROMOTION_LIGHTC_MILITANT');
+update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_LIGHTC_MILITANT';
+update ModifierArguments set Value = 7 where ModifierId = 'PROMOTION_LIGHTC_MILITANT';
+
+
 --攻城单位
+--膛线改攻城（文本√）
 delete from  TechnologyModifiers where ModifierId = "HD_SIEGE_ATTACK_DISTRICT_BONUS";
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
@@ -304,3 +364,17 @@ values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
 update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION" where TechnologyType = 'TECH_SIEGE_TACTICS';
+--封建友好2速（文本√）
+update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = "HD_SIEGE_ATTACK_AFTER_MOVE";
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = "HD_ATTACK_AFTER_MOVE";
+update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = "HD_ATTACK_AFTER_MOVE";
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'REQUIREMENTSET_TEST_ANY');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
+update Civics set Description = null where CivicType ='CIVIC_MILITARY_TRAINING';
+update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
