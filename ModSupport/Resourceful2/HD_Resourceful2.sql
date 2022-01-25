@@ -356,22 +356,6 @@ values
 	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'YieldType',			'YIELD_GOLD'),
 	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'Amount',				1);
 
-insert or ignore into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-values
-	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIREMENTSET_TEST_ALL'),
-	('PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE',			    'REQUIREMENTSET_TEST_ANY'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			    	'REQUIREMENTSET_TEST_ALL');
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-values
-	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIRES_PLOT_HAS_LUMBER_MILL'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUXURY'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUMBER_MILL'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_BONUS'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_LUMBER_MILL');
-
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
 select
