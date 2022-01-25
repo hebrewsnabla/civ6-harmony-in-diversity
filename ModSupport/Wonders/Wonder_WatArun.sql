@@ -9,43 +9,30 @@ values
 	('BUILDING_SUK_WAT_ARUN',				'YIELD_CULTURE',							5);
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType, 											SubjectRequirementSetId)
-values
-	('WAT_ARUN_INFLUENCE_POINTS_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_WAT_ARUN_XHH'),
-	('WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH','MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH'),
-	('WAT_ARUN_THEATER_TOKEN_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_CITY_HAS_DISTRICT_THEATER_XHH'),
-	('WAT_ARUN_INFLUENCE_POINTS',			'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		NULL),
-	('WAT_ARUN_GRANT_ONE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',				NULL);
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-values
-	('WAT_ARUN_INFLUENCE_POINTS_ATTACH',	'ModifierId',	'WAT_ARUN_INFLUENCE_POINTS'),
-	('WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH','ModifierId',	'WAT_ARUN_GRANT_ONE_TOKEN'),
-	('WAT_ARUN_THEATER_TOKEN_ATTACH',		'ModifierId',	'WAT_ARUN_GRANT_ONE_TOKEN'),
-	('WAT_ARUN_INFLUENCE_POINTS',			'Amount',		5),
-	('WAT_ARUN_GRANT_ONE_TOKEN',			'Amount',		1);
-
-insert or replace into RequirementSets
-	(RequirementSetId,							RequirementSetType)
-values
-	('HD_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH',	'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_WAT_ARUN_XHH',				'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,							RequirementId)
-values
-	('HD_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH',	'REQUIRES_CITY_HAS_DISTRICT_COMMERCIAL_HUB'),
-	('HD_CITY_HAS_WAT_ARUN_XHH',				'REQUIRES_CITY_HAS_BUILDING_SUK_WAT_ARUN');
-
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH'),
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_THEATER_TOKEN_ATTACH'),
-	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_INFLUENCE_POINTS_ATTACH');
+	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_INFLUENCE_POINTS');
+
+insert or replace into Modifiers
+	(ModifierId,								ModifierType, 											SubjectRequirementSetId)
+values
+	('WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_COMMERCIAL_HUB'),
+	('WAT_ARUN_THEATER_TOKEN_ATTACH',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_THEATER'),
+	('WAT_ARUN_INFLUENCE_POINTS',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		NULL),
+	('WAT_ARUN_GRANT_ONE_TOKEN',				'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',				NULL);
+update Modifiers set RunOnce = 1 where ModifierId = 'WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH';
+update Modifiers set RunOnce = 1 where ModifierId = 'WAT_ARUN_THEATER_TOKEN_ATTACH';
+
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH',	'ModifierId',	'WAT_ARUN_GRANT_ONE_TOKEN'),
+	('WAT_ARUN_THEATER_TOKEN_ATTACH',			'ModifierId',	'WAT_ARUN_GRANT_ONE_TOKEN'),
+	('WAT_ARUN_INFLUENCE_POINTS',				'Amount',		5),
+	('WAT_ARUN_GRANT_ONE_TOKEN',				'Amount',		1);
 
 -- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
 -- 	'BUILDING_SUK_WAT_ARUN',	'WAT_ARUN_DISTRICT_HOUSING'

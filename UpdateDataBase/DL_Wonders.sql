@@ -232,9 +232,9 @@ values
 
 --BUILDING_STATUE_OF_ZEUS
 ---grants a GREAT_PERSON_CLASS_GENERAL
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_STATUE_OF_ZEUS', 'STATUE_OF_ZEUS_GRANTS_GENERAL'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+-- insert or replace into BuildingModifiers (BuildingType, ModifierId)
+-- select	'BUILDING_STATUE_OF_ZEUS', 'STATUE_OF_ZEUS_GRANTS_GENERAL'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
 
 insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
 ('STATUE_OF_ZEUS_GRANTS_GENERAL',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
@@ -242,6 +242,50 @@ insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) v
 insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
 ('STATUE_OF_ZEUS_GRANTS_GENERAL',	'Amount',	1),
 ('STATUE_OF_ZEUS_GRANTS_GENERAL',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_GENERAL');
+
+----
+
+update Buildings set PrereqCivic = 'CIVIC_DRAMA_POETRY', AdjacentDistrict = 'DISTRICT_THEATER', RegionalRange = 5, RequiresRiver = 1 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+
+delete from Building_ValidTerrains where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+delete from BuildingPrereqs where Building = 'BUILDING_STATUE_OF_ZEUS';
+delete from Building_YieldChanges where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+
+insert or replace into Building_YieldChanges
+	(BuildingType,					YieldType,			YieldChange)
+values
+	('BUILDING_STATUE_OF_ZEUS',		'YIELD_CULTURE',	2),
+	('BUILDING_STATUE_OF_ZEUS',		'YIELD_FAITH',		2);
+
+delete from BuildingModifiers where BuildingType = 'BUILDING_STATUE_OF_ZEUS' and ModifierId != 'TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
+
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+select
+	'BUILDING_STATUE_OF_ZEUS',		'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,								SubjectRequirementSetId)
+select
+	'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_MONUMENT'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+select
+	'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH',		'ModifierId',	'STATUE_OF_ZEUS_INFLUENCE_POINTS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('STATUE_OF_ZEUS_INFLUENCE_POINTS',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('STATUE_OF_ZEUS_INFLUENCE_POINTS',				'Amount',		1);
 
 --Great Library extra eruka boost 3%
 insert or replace into BuildingModifiers
@@ -647,27 +691,27 @@ update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null 
 -- Kilwa
 	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
 update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
-update ModifierArguments set Value = 6 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
+update ModifierArguments set Value = 5 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDFOODYIELD';
 -- Maritime
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORPRODUCTION'; -- leave the food one to be modified
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBOR%';
-update ModifierArguments set Value = 'YIELD_GOLD' where Name = 'YieldType' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update ModifierArguments set Value = 20 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update BuildingModifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update Modifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
-update ModifierArguments set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update ModifierArguments set Value = 'YIELD_GOLD' where Name = 'YieldType' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update BuildingModifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update Modifiers set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+-- update ModifierArguments set ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD' where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 insert or replace into BuildingModifiers (BuildingType,  ModifierId)
 select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where ModifierId like 'KILWA_SINGLE_ADD%';
 insert or replace into BuildingModifiers (BuildingType,  ModifierId)
 select 'BUILDING_KILWA_KISIWANI',  ModifierId || '1' from BuildingModifiers where
-ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD';
+ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 insert or replace into Modifiers    
     (ModifierId,                                ModifierType,                                               SubjectRequirementSetId)
@@ -690,13 +734,13 @@ insert or replace into Modifiers
     (ModifierId, 	ModifierType,                       				SubjectRequirementSetId)
 select
 	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'CVS_CITYSTATE_MARITIME_SUZERAIN_2_REQUIREMENTSET'
-from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD1';
+from BuildingModifiers where ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD1';
 
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId like 'KILWA_SINGLE_ADD%';
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where
-	ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORGOLD';
+	ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
@@ -767,7 +811,21 @@ values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 	-- ('BUILDING_JEBEL_BARKAL',	'TERRAIN_DESERT_MOUNTAIN');
 
 -- Apadana
-update ModifierArguments set Value = 3 where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN_MODIFIER';
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+values
+	('BUILDING_APADANA',				'APADANA_TRIBUTARY_CULTURE');
+
+insert or replace into Modifiers
+	(ModifierId,						ModifierType)
+values
+	('APADANA_TRIBUTARY_CULTURE',		'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY');
+
+insert or replace into ModifierArguments
+	(ModifierId,						Name,			Value)
+values
+	('APADANA_TRIBUTARY_CULTURE',		'YieldType',	'YIELD_CULTURE'),
+	('APADANA_TRIBUTARY_CULTURE',		'Amount',		2);
 
 -- Panama
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_COLONIALISM' where BuildingType = 'BUILDING_PANAMA_CANAL';

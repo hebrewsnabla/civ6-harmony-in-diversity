@@ -52,3 +52,9 @@ from Resources where ResourceType = 'RESOURCE_SUK_OBSIDIAN'
     or ResourceType = 'RESOURCE_LEU_P0K_CAPYBARAS'
     or ResourceType = 'RESOURCE_P0K_PAPYRUS'
     or ResourceType = 'RESOURCE_LEU_P0K_YERBAMATE';
+
+insert or replace into Resource_ValidFeatures
+    (ResourceType,              FeatureType)
+select
+    'RESOURCE_SUK_OBSIDIAN',    'FEATURE_GEOTHERMAL_FISSURE'
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SUK_OBSIDIAN');

@@ -198,11 +198,13 @@ function UpdateReynaTradeRoutesYield(playerID)
                 -- Check that the destination city owner is not the current player.
                 if route.DestinationCityPlayer ~= playerID then
                     for _, yieldInfo in ipairs(route.OriginYields) do
-                        if yieldInfo.Amount > 0 then
+                        if (yieldInfo.Amount > 0) then 
                             local yieldDetails = GameInfo.Yields[yieldInfo.YieldIndex];
-                            -- Round amount to integer.
-                            local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
-                            totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
+                            if (yieldDetails.YieldType == 'YIELD_GOLD') then
+                                -- Round amount to integer.
+                                local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
+                                totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
+                            end
                         end
                     end
                 end

@@ -189,11 +189,12 @@ values
 
 --Poland another plan by zhushou
 -------------------------------------------------------------------------
-delete from TraitModifiers where ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
+delete from TraitModifiers where (TraitType = 'TRAIT_LEADER_LITHUANIAN_UNION' 
+    and (ModifierId = 'TRAIT_LITHUANIANUNION_GOLD_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_FAITH_RELIC'
     or ModifierId = 'TRAIT_LITHUANIANUNION_CULTURE_RELIC'
-    or ModifierId = 'TRAIT_ADJACENT_DISTRICTS_HOLYSITE_ADJACENCYFAITH'
-    or ModifierId = 'TRAIT_CULTURE_BOMB_TRIGGER_ENCAMPMENT';
+    or ModifierId = 'TRAIT_ADJACENT_DISTRICTS_HOLYSITE_ADJACENCYFAITH'))
+    or (TraitType = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY' and ModifierId = 'TRAIT_CULTURE_BOMB_TRIGGER_ENCAMPMENT');
 
 delete from ExcludedAdjacencies where TraitType = 'TRAIT_LEADER_LITHUANIAN_UNION' and YieldChangeId = 'District_Faith';
 --LA 圣地区域及建筑30%加速

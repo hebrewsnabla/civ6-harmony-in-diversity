@@ -277,3 +277,8 @@
 --     (ModifierId,                                            Name,           Value)
 -- values
 --     ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'AbilityType',  'ABILITY_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT');
+
+
+------------------------------------
+-- by xhh
+
