@@ -84,6 +84,9 @@ insert or replace into Buildings (BuildingType,	Name,	Cost,	Description)
 select BuildingType, 'LOC_'||BuildingType||'_NAME',		1, 		'LOC_'||BuildingType||'_DESCRIPTION'
 from CityPolicyMaster;
 
+insert or replace into Buildings_XP2 (BuildingType, Pillage)
+select BuildingType, 0 from CityPolicyMaster;
+
 ------【此处需要手动修改】------
 -- Building Yield
 update Buildings set Maintenance = 8 where BuildingType = 'BUILDING_CITY_POLICY_REVISION_ALMANAC';
