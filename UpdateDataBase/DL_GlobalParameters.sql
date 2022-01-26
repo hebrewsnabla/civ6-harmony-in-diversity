@@ -40,6 +40,9 @@ update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSU
 -- strategic resources
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
 update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
+-- Plunder
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_FISHERY';
+update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
 -- Great person poinst
 update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';

@@ -1,3 +1,4 @@
+include "HD_StateUtils"
 Utils = ExposedMembers.DLHD.Utils;
 
 function OnPlayerEraScoreChanged(playerID, amountAwarded)
@@ -138,5 +139,8 @@ GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
 
 -- Events.ImprovementAddedToMap.Add(PaperMakingBoost)
 
--- local playerFavor   :number = localPlayer:GetFavor();
--- Events.FavorChanged.Add();
+function SyncFavor(playerID)
+    local player = Players[playerID]
+    player:AttachModifierByID('HD_GRANT_ZERO_FAVOR')
+end
+GameEvents.ForceSyncFavor.Add(SyncFavor)

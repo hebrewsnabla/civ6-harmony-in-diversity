@@ -379,9 +379,3 @@ values
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_NAVAL');
 
 update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';
-
---巴西uu米舰改到殖民主义，翼骑兵移到归正会
---土鸡巴巴里移到罗盘
-update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
-update Units set PrereqCivic = 'CIVIC_COLONIALISM' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES'; 
-update Units set PrereqCivic = 'CIVIC_REFORMED_CHURCH' where UnitType = 'UNIT_POLISH_HUSSAR'; 

@@ -114,6 +114,44 @@ Events.GovernorChanged.Add(OnGovernorChanged)
 Events.GovernorAppointed.Add(OnGovernorChanged)
 Events.GovernorAssigned.Add(OnGovernorAssigned)
 
+function cityHasDistrict(city, districtID)
+    local districts = city:GetDistricts();
+    if districts then
+        return districts:HasDistrict(districtID, true);
+    end
+    return false
+end
+
+function DetectFavorChanged(playerID)
+    local player = Players[playerID]
+    local pCities = player:GetCities()
+    local playerFavor   :number = player:GetFavor()
+    local dipDistrict = GameInfo.Districts['DISTRICT_DIPLOMATIC_QUARTER']
+    if dipDistrict == nil then
+        return
+    end
+    local dipDistrictID = dipDistrict.Index
+    local hasFavor = 0
+    if playerFavor and playerFavor > 0 then
+        hasFavor = 1
+    end
+    -- print(playerID, playerFavor)
+    for _, city in pCities:Members() do
+        if cityHasDistrict(city, dipDistrictID) then
+            local plotID = getCityCenterPlotIndex(city)
+            local plot = Map.GetPlotByIndex(plotID)
+            local lastValue = GetObjectState(plot, g_PropertyKeys_HD.CityFlags.HasDipFavor)
+            -- print(plot:GetX(), plot:GetY(), 'here', lastValue, hasFavor)
+            SetObjectState(plot, g_PropertyKeys_HD.CityFlags.HasDipFavor, hasFavor)
+            if lastValue ~= hasFavor then
+                GameEvents.ForceSyncFavor.Call(playerID)
+            end
+        end
+    end
+end
+Events.CityProjectCompleted.Add(DetectFavorChanged)
+Events.FavorChanged.Add(DetectFavorChanged);
+
 -- Bug fix: When upgraded, free promotion will make the experience to 15 exp.
 function getPropKey(playerID, unitID)
     return 'promotion_bug_fix_' .. tostring(playerID) .. '_' .. tostring(unitID);
