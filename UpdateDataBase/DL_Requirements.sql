@@ -92,9 +92,21 @@ insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'DistrictType', DistrictType from Districts;
 insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || ReplacesDistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || CivUniqueDistrictType || '_RAW' from DistrictReplaces;
+
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'RequirementSetId', 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET' from Districts;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Districts;
 	
 -- Buildings
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
