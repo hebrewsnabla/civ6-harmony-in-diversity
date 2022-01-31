@@ -337,10 +337,10 @@ insert or replace into Units
     FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
 values
     ('UNIT_HD_BARBARIAN_GALLEY',        'LOC_UNIT_HD_BARBARIAN_GALLEY_NAME',        'LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION',
-    2,              3,           20,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              2,           10,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST'),
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION',
-    2,              3,           20,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              3,           15,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RANGED', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
 
 update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'

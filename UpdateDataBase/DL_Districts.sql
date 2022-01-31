@@ -67,7 +67,7 @@ update Districts set CitizenSlots = 5 where DistrictType in
 update District_CitizenYieldChanges set YieldChange = 2 where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_FOOD';
 delete from District_CitizenYieldChanges where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_GOLD';
 
-delete from District_CitizenYieldChanges where DistrictType = 'DISTRICT_ENCAMPMENT' and YieldType = 'YIELD_GOLD';
+delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_ENCAMPMENT' or DistrictType = 'DISTRICT_IKANDA' or DistrictType = 'DISTRICT_THANH') and YieldType = 'YIELD_GOLD';
 
 insert or replace into District_CitizenYieldChanges
 	(DistrictType,				YieldType,			YieldChange)

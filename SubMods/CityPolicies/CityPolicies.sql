@@ -135,9 +135,6 @@ values
 	('BUILDING_CITY_POLICY_FREIGHT',			'CITY_POLICY_FREIGHT_FOOD'),
 	('BUILDING_CITY_POLICY_FORGING_IRON',		'CITY_POLICY_FORGING_IRON_PRODUCTION');
 
-delete from BuildingModifiers where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING'
-	and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING');
-
 -- Modifiers
 -- insert or replace into Modifiers
 -- 	(ModifierId,													ModifierType,											Permanent)
@@ -288,6 +285,13 @@ values
 	('CITY_POLICY_FREIGHT_FOOD',										    'Amount',		2),--xhh 货运
 	('CITY_POLICY_FORGING_IRON_PRODUCTION',									'YieldType',	'YIELD_PRODUCTION'),--xhh 锻铁
 	('CITY_POLICY_FORGING_IRON_PRODUCTION',									'Amount',		5);--xhh 锻铁
+
+delete from BuildingModifiers where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING'
+	and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING');
+delete from Modifiers where ModifierId like 'CITY_POLICY_DIPLOMATIC_MEETING_%'
+	and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING');
+delete from ModifierArguments where ModifierId like 'CITY_POLICY_DIPLOMATIC_MEETING_%'
+	and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CITY_POLICY_DIPLOMATIC_MEETING');
 
 insert or replace into Building_ResourceCosts
 	(BuildingType,							ResourceType,			StartProductionCost,		PerTurnMaintenanceCost)
