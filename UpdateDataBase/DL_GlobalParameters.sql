@@ -208,7 +208,7 @@ values
     ('GAMESPEED_QUICK',     240,            20),
     ('GAMESPEED_QUICK',     120,            20),
     ('GAMESPEED_QUICK',     36,             15),
-    ('GAMESPEED_QUICK',     36,             15),
+    ('GAMESPEED_QUICK',     24,             15),
     ('GAMESPEED_QUICK',     12,             15),
     ('GAMESPEED_QUICK',     6,              160),
     ('GAMESPEED_ONLINE',    1200,           30),

@@ -33,19 +33,19 @@ function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPe
                 for _, beliefIndex in ipairs(religion.Beliefs) do 
                     if  beliefIndex == belief then                      
                         if (religion.Religion == Majority) then
-                            Utils.ChangeFaithBalance(playerID, amount)
-                            return  
+                            GameEvents.RequestChangeFaithBalance.Call(playerID, amount)
+                            return
                         end
                         if (Utils.CivilizationHasTrait(sCiv,sDarma)) then
                             for _, rel in ipairs(CityReligions) do
                                 if rel.Religion == religion.Religion then
                                     if rel.Followers >= 1 then
-                                        Utils.ChangeFaithBalance(playerID, amount)
+                                        GameEvents.RequestChangeFaithBalance.Call(playerID, amount)
                                     end
                                 end
                             end
-                        end                         
-                    end            
+                        end
+                    end
                 end
             end
         end
@@ -57,18 +57,21 @@ Events.WonderCompleted.Add(DevineInspirationWonderFaith)
 
 -- local m_Walls = GameInfo.Buildings["BUILDING_WALLS"].Index
 local m_Walls = GameInfo.Buildings["BUILDING_WALLS_EARLY"].Index
-local PROP_KEY_HAVE_GRANT_WALL = 'HaveGrantWalls'
+-- local PROP_KEY_HAVE_GRANT_WALL = 'HaveGrantWalls'
 
 function FreeWallForCapital(playerID, cityID, iX, iY)
     local player = Players[playerID]
     local city = CityManager.GetCity(playerID, cityID)
     if player:IsMajor() then
         -- print('Capital', city:IsCapital(), 'original capital', city:IsOriginalCapital())
-        local have_granted = player:GetProperty(PROP_KEY_HAVE_GRANT_WALL)
+        -- local have_granted = player:GetProperty(PROP_KEY_HAVE_GRANT_WALL)
+        local have_granted = GetObjectState(player, g_PropertyKeys_HD.PlayerFlags.HaveGrantWalls)
         if have_granted == nil then
             if (city:IsOriginalCapital()) then
-                Utils.CreateBuilding(playerID, cityID, m_Walls)
-                Utils.SetPlayerProperty(playerID, PROP_KEY_HAVE_GRANT_WALL, true)
+                -- Utils.CreateBuilding(playerID, cityID, m_Walls)
+                GameEvents.RequestCreateBuilding.Call(playerID, cityID, m_Walls)
+                -- Utils.SetPlayerProperty(playerID, PROP_KEY_HAVE_GRANT_WALL, true)
+                SetObjectState(player, g_PropertyKeys_HD.PlayerFlags.HaveGrantWalls, 1)
             end
         end
     end
@@ -178,7 +181,9 @@ function monitorUnitUpgraded(playerID, unitID)
     if value == 1 then
         -- print('reached');
         local amount = unit:GetExperience():GetExperienceForNextLevel()
-        Utils.SetUnitExperience(playerID, unitID, amount)
+        -- Utils.SetUnitExperience(playerID, unitID, amount)
+        GameEvents.ChangeUnitExperience.Call(playerID, unitID, amount)
+
         SetObjectState(player, getPropKey(playerID, unitID), 0)
     end
 end
