@@ -1305,3 +1305,43 @@ update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = '
 
 	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';
+
+-- 着力点：开明专制 by xhh
+
+update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
+update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_MILITARY';
+
+insert or replace into Types
+	(Type,								Kind)
+values
+	('COMMEMORATION_GOVERNMENT',		'KIND_MOMENT_OUTCOME');
+
+insert or replace into CommemorationTypes
+	(CommemorationType,					CategoryDescription,				GoldenAgeBonusDescription,							NormalAgeBonusDescription,							DarkAgeBonusDescription,							MinimumGameEra,			MaximumGameEra)
+values
+	('COMMEMORATION_GOVERNMENT',		'LOC_MOMENT_CATEGORY_GOVERNMENT',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_GOLDEN_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_NORMAL_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_DARK_AGE',	'ERA_RENAISSANCE',		'ERA_INDUSTRIAL');
+
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_ADD_SLOT'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_QUEST');
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													OwnerRequirementSetId,						SubjectRequirementSetId)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',							'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE',					NULL),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',				'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'PLAYER_HAS_GOLDEN_AGE',					'HD_DISTRICT_IS_CITY_CENTER'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				NUll,										NULL),
+	('COMMEMORATION_GOVERNMENT_QUEST',								'MODIFIER_PLAYER_ADJUST_PLAYER_ERA_SCORE_PER_PRIDE_MOMENT',		NULL,										'PLAYER_ELIGIBLE_FOR_COMMEMORATION_QUEST');
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',								'GovernmentSlotType',	'SLOT_WILDCARD'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',					'ModifierId',			'COMMEMORATION_GOVERNMENT_BOOST_CULTURE'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'YieldType',			'YIELD_CULTURE'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'Amount',				5),
+	('COMMEMORATION_GOVERNMENT_QUEST',									'Amount',				1),
+	('COMMEMORATION_GOVERNMENT_QUEST',									'MinScore',				1);
