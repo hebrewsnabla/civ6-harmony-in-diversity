@@ -69,13 +69,6 @@ Utils.PlayerAttachModifierByID = function(playerID, sModifierID)
     end
 end
 
-Utils.ChangeFaithBalance = function(capturerID, amount)
-    local player = Players[capturerID]
-    if player ~= nil then
-        player:GetReligion():ChangeFaithBalance(amount)
-    end
-end
-
 Utils.ChangeGoldBalance = function(playerID, amount)
     local player = Players[playerID]
     if player ~= nil then
@@ -114,18 +107,18 @@ Utils.SetPlotProperty = function(plotID, key, value)
     plot:SetProperty(key, value)
 end
 
-Utils.SetPlayerProperty = function(playerID, key, value)
-    local player = Players[playerID]
-    player:SetProperty(key, value)
-end
+-- Utils.SetPlayerProperty = function(playerID, key, value)
+--     local player = Players[playerID]
+--     player:SetProperty(key, value)
+-- end
 
-Utils.SendEnvoy = function(playerID, citystateID)
-    -- Need to make sure the second is citystate
-    local player = Players[playerID]
-    if player ~= nil then
-        player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
-    end
-end
+-- Utils.SendEnvoy = function(playerID, citystateID)
+--     -- Need to make sure the second is citystate
+--     local player = Players[playerID]
+--     if player ~= nil then
+--         player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
+--     end
+-- end
 
 Utils.AddGreatPeoplePoints = function(playerID, gppID, amount)
     local player = Players[playerID]

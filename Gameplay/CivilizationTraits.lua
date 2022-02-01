@@ -194,11 +194,11 @@ function PolandTempleUnlockMilitaryEngineers(playerID:number, cityID:number)
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
 	local sGoldenLiberty = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY'
-	local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
-	local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
 	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
 		return
 	end
+    local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
+    local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
 	-- print('Poland', player, city)
     if player ~= nil and city ~= nil then
 		local cityHasDummy = city:GetBuildings():HasBuilding(m_Dummy_Poland)
@@ -287,8 +287,6 @@ function ProjectJudgementOfLove(iX, iY, dX, dY)
 	end
 end
 GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Add(ProjectJudgementOfLove)
-
-ExposedMembers.GameEvents = GameEvents
 
 -- Hungary Conquer Envoy
 function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
