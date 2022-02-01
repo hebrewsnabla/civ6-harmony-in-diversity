@@ -85,8 +85,6 @@ values
 	('RESOURCE_BARLEY',			'YIELD_GOLD',			1);
 
 -- Terrain
-delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
-
 insert or replace into Resource_ValidTerrains
 	(ResourceType,				TerrainType)
 values
@@ -160,7 +158,6 @@ values
 	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA_HILLS');
 
 -- Feature
-
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 values

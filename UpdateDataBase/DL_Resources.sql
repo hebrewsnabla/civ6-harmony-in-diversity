@@ -83,6 +83,7 @@ values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
 
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 values
