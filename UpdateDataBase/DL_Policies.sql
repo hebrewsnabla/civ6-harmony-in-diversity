@@ -563,6 +563,7 @@ values
 	('POLICY_TEXTBOOK',				'POLICY_NOBEL_PRIZE'),
 	('POLICY_INSPIRATION',			'POLICY_TEXTBOOK'),
 	('POLICY_TRIBUTE_TRADE',		'POLICY_SELF_DETERMINATION');
+delete from ObsoletePolicies where PolicyType = 'POLICY_MILITARY_RESEARCH';
 
 
 delete from PolicyModifiers where PolicyType = 'POLICY_CARAVANSARIES';
@@ -1200,7 +1201,7 @@ update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_FREE_MARKET';
 update Policies set PrereqTech = 'TECH_BANKING' where PolicyType = 'POLICY_FREE_MARKET';
 
 	-- 政策卡修改：【公共交通】改为【城市化】科技解锁
-update Policies set PrereqCivic = 'CIVIC_URBANIZATION' where PolicyType = 'POLICY_PUBLIC_TRANSPORT'
+update Policies set PrereqCivic = 'CIVIC_URBANIZATION' where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
 
 	-- 政策卡修改：【公共卫生】改为【卫生设备】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_EXPROPRIATION';
