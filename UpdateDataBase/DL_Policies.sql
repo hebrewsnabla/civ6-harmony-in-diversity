@@ -1387,11 +1387,11 @@ select
 	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH'
 from HD_DistrictBonus;
 
-insert or replace into PolicyModifiers
-	(PolicyType,					ModifierId)
-select
-	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1'
-from HD_DistrictBonus;
+-- insert or replace into PolicyModifiers
+-- 	(PolicyType,					ModifierId)
+-- select
+-- 	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1'
+-- from HD_DistrictBonus;
 
 insert or replace into PolicyModifiers
 	(PolicyType,					ModifierId)
