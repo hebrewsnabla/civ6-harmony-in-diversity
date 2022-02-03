@@ -1721,3 +1721,20 @@ update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_
 update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_TEMPLE';
 update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING_STAVE_CHURCH';
 update Building_YieldChanges set YieldChange = 12 where BuildingType = 'BUILDING_PRASAT';
+
+-- 木板教堂
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_STAVE_CHURCH',		'STAVE_CHURCH_FOREST_FOOD');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,									SubjectRequirementSetId)
+values
+	('STAVE_CHURCH_FOREST_FOOD',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'HD_PLOT_HAS_FOREST_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,                                    Name,               Value)
+values
+	('STAVE_CHURCH_FOREST_FOOD',					'YieldType',		'YIELD_FOOD'),
+	('STAVE_CHURCH_FOREST_FOOD',					'Amount',			1);

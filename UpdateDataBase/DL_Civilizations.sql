@@ -1985,3 +1985,59 @@ insert or replace into RequirementSetRequirements (RequirementSetId, Requirement
 
 -- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
 --     ('RADIO_ORANJE_TRAIT_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT');
+
+-- Norway
+insert or replace into TraitModifiers
+    (TraitType, ModifierId)
+values
+    ('TRAIT_LEADER_MELEE_COASTAL_RAIDS', 'TRAIT_LEADER_PILLAGE_SCIENCE_FARMS'),
+    ('TRAIT_LEADER_MELEE_COASTAL_RAIDS', 'TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS');
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType)
+values
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'MODIFIER_PLAYER_ADJUST_ADDITIONAL_PILLAGING'),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'MODIFIER_PLAYER_ADJUST_ADDITIONAL_PILLAGING');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,               Value)
+values
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'PlunderType',      'PLUNDER_SCIENCE'),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'ImprovementType',  'IMPROVEMENT_FARM'),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'Amount',           15),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'PlunderType',      'PLUNDER_SCIENCE'),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'ImprovementType',  'IMPROVEMENT_LUMBER_MILL'),
+    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'Amount',           15);
+
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('TRAIT_CIVILIZATION_EARLY_OCEAN_NAVIGATION',	'NORWAY_LUMBER_MILL_PRODUCTION');
+
+insert or replace into ImprovementModifiers
+	(ImprovementType,								ModifierId)
+values
+	('IMPROVEMENT_LUMBER_MILL',						'NORWAY_LUMBER_MILL_HOUSING');
+
+insert or replace into Modifiers
+	(ModifierId,                                    ModifierType,										SubjectRequirementSetId)
+values
+	('NORWAY_LUMBER_MILL_PRODUCTION',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_LUMBER_MILL_REQUIREMENTS'),
+	('NORWAY_LUMBER_MILL_HOUSING',					'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_HOUSING',	'NORWAY_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,                                    Name,               Value)
+values
+	('NORWAY_LUMBER_MILL_PRODUCTION',				'YieldType',		'YIELD_PRODUCTION'),
+	('NORWAY_LUMBER_MILL_PRODUCTION',				'Amount',			1),
+	('NORWAY_LUMBER_MILL_HOUSING',					'Amount',			1);
+
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('NORWAY_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('NORWAY_REQUIREMENTS',							'PLAYER_IS_CIVILIZATION_NORWAY');
