@@ -148,7 +148,7 @@ update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 -- -- 挪威
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_NORWEGIAN_ULFHEDNAR',    'UNIT_MEDIC');
-update Units set Cost = 100, CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 20 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+update Units set Cost = 100, CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 20, PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_COMBAT_BONUS_ATTACH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_DAMAGED_UNITS_BONUS_ATTACH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_FAITH_BONUS_ATTACH';

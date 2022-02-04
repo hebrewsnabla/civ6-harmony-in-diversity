@@ -107,7 +107,7 @@ values
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",             "Archimedes"),
     ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more of technologies."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                "Li Bing"),
-    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts."),
+    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. +25% construction speed toward the Dam district. Dams provide +1 [ICON_PRODUCTION] Production to tiles adjacent to rivers in this city."),--Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                 "Ma Jun"),
     ("LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",           "Standard adjacency bonus for Industrial Zones if next to a river."),
     ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is triggered, instead completes the tech."),

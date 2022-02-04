@@ -73,7 +73,8 @@ values
     ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "After unlocked civic military training, You will get a setter to the capital city, and can declare a war of territorial expansion.After declaring the war of territorial expansion,all your units grant extra 2[ICON_MOVEMENT]movement and 5[ICON_STRENGTH]strength in 10 turns."),
     ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "Manifest Destiny"),
     ("LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%."),
-    ("LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your domestic [ICON_TradeRoute] Trade Routes earn extra +1 [ICON_Gold] Gold for passing through Trading Posts in your own cities.");
+    ("LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "All cities you found or conquer start with a Trading Post. If in [ICON_TradeRoute] Trade Route range of your [ICON_Capital] Capital, they also start with a road to it. Your domestic [ICON_TradeRoute] Trade Routes earn extra +1 [ICON_Gold] Gold for passing through Trading Posts in your own cities."),
+    ("LOC_TRAIT_CIVILIZATION_CREE_TRADE_GAIN_TILES_DESCRIPTION",      "+1 [ICON_TradeRoute] Trade Route capacity and a free Trader with the Pottery technology. +1 [ICON_TradeRoute] Trade Route capacity and a free Trader with the State Workforce civic. Unclaimed tiles within 3 tiles of a Cree city come under Cree control when a Trader first moves into them.");
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -153,17 +154,17 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成军事训练市政后解锁领土扩张战争借口，并获得一个免费移民到首都。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "昭昭天命"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "所有您创建或攻占的城市一开始便拥有贸易站。如果位于您 [ICON_Capital] 首都的 [ICON_TradeRoute] 贸易路线范围内，城市自动建立一条通至罗马的路。您的国内 [ICON_TradeRoute] 贸易路线经过您的城市贸易站时额外+1 [ICON_Gold] 金币。");
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "所有您创建或攻占的城市一开始便拥有贸易站。如果位于您 [ICON_Capital] 首都的 [ICON_TradeRoute] 贸易路线范围内，城市自动建立一条通至罗马的路。您的国内 [ICON_TradeRoute] 贸易路线经过您的城市贸易站时额外+1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_CREE_TRADE_GAIN_TILES_DESCRIPTION",      "拥有制陶术科技后，+1 [ICON_TradeRoute] 贸易路线容量，获得1个免费商人。拥有国家劳动力市政后，+1 [ICON_TradeRoute] 贸易路线容量，获得1个免费商人。商人首次进入克里城市3个单元格内的无主单元格后，这些单元格将划入克里领土中。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
     (Tag,                                                             Text)
 values
     ("LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "Sweden gains 50 [ICON_Favor] Diplomatic Favor when earning a Great Person (on Standard Speed). Sweden receives +2 [ICON_GreatEngineer] Great Engineer point from Level 2 Industrial Zone buildings and +2 [ICON_GreatScientist] Great Scientist point from Level 2 Campus buildings. Having Sweden in the game adds three unique World Congress competitions starting in the Industrial Era."),
-    ("LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "Unlocks the Builder ability to construct a Polder, unique to Netherlands.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_Production] Production, and +0.5 [ICON_Housing] Housing. +1 [ICON_FOOD] Food if adjacent to a Polder improvement. Additional [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, and [ICON_FOOD] Food  as you advance through the Civics and Technology Tree. Must be placed on a Coast or Lake tile adjacent to 2 or more passable land tiles. Increases [ICON_Movement] Movement Cost of tile to 3."),
     ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "The Country of Windmills"),
-    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +50% construction speed toward the Dam district, Shipyard and Flood Barrier buildings. Shipyard provides +1 [ICON_TradeRoute] Trade Route capacity. When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank). "),
-    ("LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "For each [ICON_TradeRoute] Trade Routes to foreign cities or from foreign cities, Specialty districts provide yields to you as if they were international destination.");
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +20% [ICON_Production] Production toward Districts in the city with a Harbor district. Harbor district buildings are 15% cheaper to purchase. +50% construction speed toward the Dam district, Shipyard and Flood Barrier buildings. Dams provide +1 [ICON_PRODUCTION] Production to tiles adjacent to rivers in this city."),--When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank).
+    ("LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "Shipyard provides +1 [ICON_TradeRoute] Trade Route capacity. For each [ICON_TradeRoute] Trade Routes to foreign cities or from foreign cities, Specialty districts provide yields to you as if they were international destination.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -171,7 +172,6 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每次获得一位 [ICON_GreatPerson] 伟人可奖励50点 [ICON_Favor] 外交支持（标准速度下）。二级工业区建筑与二级学院建筑分别提供+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。若对局中存在该文明，则进入工业时代后将增加3项特色世界议会竞赛。"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_POLDER_DESCRIPTION",                            "解锁建造者建造荷兰特色改良设施“圩田”的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。如与圩田改良设施相邻，则+1 [ICON_FOOD] 食物。解锁更多市政和科技后即可获得更多 [ICON_PRODUCTION] 生产力、[ICON_GOLD] 金币和 [ICON_FOOD] 食物。必须建在与2个或更多可通行陆地单元格相邻的海岸或湖泊单元格上。单元格的 [ICON_Movement] 移动力消耗增至3点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。建造堤坝区域和造船厂、拦洪坝建筑时加速50%。造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的专业化区域获得其作为国际目的地时的加成。");
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。购买港口区域内建筑的费用降低15%。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
+    ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。对于每一条 [ICON_TradeRoute] 商路连接，无论您的城市作为国际商路的起点还是终点，您都可从该城内的专业化区域获得其作为国际目的地时的加成。");

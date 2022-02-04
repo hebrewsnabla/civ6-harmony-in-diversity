@@ -1311,6 +1311,39 @@ update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKE
 --Cree's Mekewap provides +2 gold base production.
 update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldType = 'YIELD_GOLD';
 
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('TRAIT_CIVILIZATION_CREE_TRADE_GAIN_TILES',	'TRAIT_STATE_WORKFORCE_TRADE_ROUTE'),
+	('TRAIT_CIVILIZATION_CREE_TRADE_GAIN_TILES',	'TRAIT_STATE_WORKFORCE_ADD_TRADER');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,									OwnerRequirementSetId,						SubjectRequirementSetId)
+values
+	('TRAIT_STATE_WORKFORCE_TRADE_ROUTE',	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',	NULL,										'PLAYER_HAS_STATE_WORKFORCE_AND_CAPITAL'),
+	('TRAIT_STATE_WORKFORCE_ADD_TRADER',	'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',		'PLAYER_HAS_STATE_WORKFORCE_AND_CAPITAL',	NULL);
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'TRAIT_STATE_WORKFORCE_ADD_TRADER';
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,					Value)
+values
+	('TRAIT_STATE_WORKFORCE_TRADE_ROUTE',	'Amount',				1),
+	('TRAIT_STATE_WORKFORCE_ADD_TRADER',	'UnitType',				'UNIT_TRADER'),
+	('TRAIT_STATE_WORKFORCE_ADD_TRADER',	'AllowUniqueOverride',	0),
+	('TRAIT_STATE_WORKFORCE_ADD_TRADER',	'Amount',				1);
+
+insert or ignore into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+values
+	('PLAYER_HAS_STATE_WORKFORCE_AND_CAPITAL',	'REQUIREMENTSET_TEST_ALL');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+values
+	('PLAYER_HAS_STATE_WORKFORCE_AND_CAPITAL',	'REQUIRES_PLAYER_HAS_CIVIC_STATE_WORKFORCE'),
+	('PLAYER_HAS_STATE_WORKFORCE_AND_CAPITAL',	'REQUIRES_CAPITAL_CITY');
+
 ----------------------------------------------------------------------------------------------------------------------
 -- Germany
 -- UA: TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES
@@ -1881,34 +1914,68 @@ values
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_HILLS_PURCHASE');
 
 -- Netherlands
-update StartBiasRivers set Tier = 3 where CivilizationType = 'CIVILIZATION_NETHERLANDS';
-update StartBiasTerrains set Tier = 3 where CivilizationType = 'CIVILIZATION_NETHERLANDS' and TerrainType = 'TERRAIN_COAST';
-
-update Improvements set ValidAdjacentTerrainAmount = 2 where ImprovementType = 'IMPROVEMENT_POLDER';
+update StartBiasRivers set Tier = 2 where CivilizationType = 'CIVILIZATION_NETHERLANDS';
+update StartBiasTerrains set Tier = 1 where CivilizationType = 'CIVILIZATION_NETHERLANDS' and TerrainType = 'TERRAIN_COAST';
 
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_CAMPUS_RIVER_ADJACENCY';
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_INDUSTRIAL_ZONE_RIVER_ADJACENCY';
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_THEATER_DISTRICT_RIVER_ADJACENCY';
 delete from TraitModifiers where TraitType = 'TRAIT_RADIO_ORANJE';
 
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-    -- ('TRAIT_RADIO_ORANJE',                  'TRAIT_TRADER_SPEEDUP'),
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',   'TRAIT_SHIPYARD_TRADE_ROUTE'),
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',   'TRAIT_BOOST_BUILDING_SHIPYARD');
+insert or replace into TraitModifiers
+	(TraitType, 								ModifierId)
+values
+    -- ('TRAIT_RADIO_ORANJE',                   'TRAIT_TRADER_SPEEDUP'),
+    -- ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',    'TRAIT_BOOST_BUILDING_SHIPYARD');
+    ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
+    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_DISTRICT_PRODUCTION'),
+    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION');
 
-insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) values
-    ('TRAIT_TRADER_SPEEDUP',                'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         NULL),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE',          'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               NULL),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          'BUILDING_IS_SHIPYARD'),
-    ('TRAIT_BOOST_BUILDING_SHIPYARD',       'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    NULL);
+insert or replace into Modifiers
+	(ModifierId, 										ModifierType, 													SubjectRequirementSetId)
+values
+    -- ('TRAIT_TRADER_SPEEDUP',                 		'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         		NULL),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE',          			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               		NULL),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          		'BUILDING_IS_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
+    ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
+    ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM');
 
-insert or replace into ModifierArguments (ModifierId, Name, Value) values
-    ('TRAIT_TRADER_SPEEDUP',                'UnitType',     'UNIT_TRADER'),
-    ('TRAIT_TRADER_SPEEDUP',                'Amount',       50),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE',          'ModifierId',   'TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER'),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 'Amount',       1),
-    ('TRAIT_BOOST_BUILDING_SHIPYARD',       'BuildingType', 'BUILDING_SHIPYARD'),
-    ('TRAIT_BOOST_BUILDING_SHIPYARD',       'Amount',       50);
+insert or replace into ModifierArguments
+	(ModifierId,								Name,				Value)
+values
+    -- ('TRAIT_TRADER_SPEEDUP',                 'UnitType',     	'UNIT_TRADER'),
+    -- ('TRAIT_TRADER_SPEEDUP',                 'Amount',       	50),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE',          	'ModifierId',   	'TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER'),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 	'Amount',       	1),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'BuildingType', 	'BUILDING_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'Amount',       	50);
+    ('TRAIT_HARBOR_DISTRICT_PRODUCTION', 		'Amount',       	20),
+    ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION');
+
+insert or replace into TraitModifiers
+	(TraitType, 								ModifierId)
+select
+	'TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER'
+from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+insert or replace into Modifiers
+	(ModifierId,																ModifierType,											SubjectRequirementSetId)
+select
+	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PURCHASE_COST',	NULL
+from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+insert or replace into ModifierArguments
+	(ModifierId,																Name,					Value)
+select
+	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'BuildingType',			BuildingType
+from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+insert or replace into ModifierArguments
+	(ModifierId,																Name,					Value)
+select
+	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				15
+from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
 
 -- From Others
 insert or replace into DistrictModifiers (DistrictType, ModifierId)
