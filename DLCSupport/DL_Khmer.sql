@@ -24,7 +24,7 @@ values  ('IMPROVEMENT_KAMPUNG', 'FEATURE_REEF', NULL, NULL);
 
 update Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_KAMPUNG' and YieldType = 'YIELD_FOOD';
 update Adjacency_YieldChanges set YieldType = 'YIELD_PRODUCTION' where ID = 'Kampung_FoodFishingBoats';
-update Improvement_Tourism set TourismSource = 'YIELD_PRODUCTION' where ImprovementType = 'IMPROVEMENT_KAMPUNG';
+update Improvement_Tourism set TourismSource = 'TOURISMSOURCE_PRODUCTION' where ImprovementType = 'IMPROVEMENT_KAMPUNG';
 update RequirementSetRequirements set RequirementId = 'HD_REQUIRES_PLAYER_HAS_TECH_CIVIL_ENGINEERING_HD'  -- RequirementId = 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_ENGINEERING' 
 where RequirementSetId = 'PLAYER_HAS_KAMPUNG_TECHNOLOGY_REQUIREMENTS' and RequirementId = 'REQUIRES_PLAYER_HAS_MASS_PRODUCTION_TECHNOLOGY';
 

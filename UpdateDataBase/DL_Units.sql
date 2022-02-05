@@ -65,7 +65,8 @@ update Units set
 	Cost = 200
 where UnitType = 'UNIT_SPY';
 
--- update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
+update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set BaseProbability = 16 where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
@@ -336,10 +337,10 @@ insert or replace into Units
     FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
 values
     ('UNIT_HD_BARBARIAN_GALLEY',        'LOC_UNIT_HD_BARBARIAN_GALLEY_NAME',        'LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION',
-    2,              3,           20,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              2,           10,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST'),
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION',
-    2,              3,           20,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              3,           15,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RANGED', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
 
 update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'
@@ -379,9 +380,3 @@ values
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_NAVAL');
 
 update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';
-
---巴西uu米舰改到殖民主义，翼骑兵移到归正会
---土鸡巴巴里移到罗盘
-update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
-update Units set PrereqCivic = 'CIVIC_COLONIALISM' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES'; 
-update Units set PrereqCivic = 'CIVIC_REFORMED_CHURCH' where UnitType = 'UNIT_POLISH_HUSSAR'; 

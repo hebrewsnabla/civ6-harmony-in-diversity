@@ -1,4 +1,7 @@
+include "HD_StateUtils"
 Utils = ExposedMembers.DLHD.Utils;
+
+ExposedMembers.GameEvents = GameEvents
 
 function OnPlayerEraScoreChanged(playerID, amountAwarded)
     local player = Players[playerID]
@@ -138,5 +141,57 @@ GameEvents.OnDistrictConstructed.Add(EvolutionheoryBoost)
 
 -- Events.ImprovementAddedToMap.Add(PaperMakingBoost)
 
--- local playerFavor   :number = localPlayer:GetFavor();
--- Events.FavorChanged.Add();
+function SyncFavor(playerID)
+    local player = Players[playerID]
+    player:AttachModifierByID('HD_GRANT_ZERO_FAVOR')
+end
+GameEvents.ForceSyncFavor.Add(SyncFavor)
+
+function ChangeFaithBalance(playerID, amount)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetReligion():ChangeFaithBalance(amount)
+    end
+end
+GameEvents.RequestChangeFaithBalance.Add(ChangeFaithBalance)
+
+GameEvents.RequestCreateBuilding.Add(function (playerID, cityID, buildingID)
+    local city = CityManager.GetCity(playerID, cityID)
+    if city then
+        local buildingQueue = city:GetBuildQueue()
+        -- print(city, buildingQueue)
+        buildingQueue:CreateBuilding(buildingID) 
+    end
+end)
+
+GameEvents.RequestRemoveBuilding.Add(function (playerID, cityID, buildingID)
+    local city = CityManager.GetCity(playerID, cityID)
+    if city ~= nil then
+        local buildings = city:GetBuildings()
+        buildings:RemoveBuilding(buildingID)
+    end
+end)
+
+GameEvents.ChangeUnitExperience.Add(function(playerID, unitID, amount)
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if unit ~= nil then
+        -- print('+exp', amount)
+        unit:GetExperience():SetExperienceLocked(false);
+        unit:GetExperience():ChangeExperience(amount);
+    end
+end)
+
+GameEvents.SendEnvoytoCityState.Add(function(playerID, citystateID)
+    -- Need to make sure the second is citystate
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetInfluence():GiveFreeTokenToPlayer(citystateID)
+    end
+end)
+
+GameEvents.AddGreatPeoplePoints.Add(function(playerID, gppID, amount)
+    local player = Players[playerID]
+    if player ~= nil then
+        player:GetGreatPeoplePoints():ChangePointsTotal(gppID, amount)
+    end
+end)

@@ -40,6 +40,9 @@ update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSU
 -- strategic resources
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
 update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
+-- Plunder
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_FISHERY';
+update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
 -- Great person poinst
 update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
@@ -159,7 +162,7 @@ insert or replace into GlobalParameters
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
     -- ('REYNA_CONVERT_PERCENTAGE',                        100),
-    ('REYNA_CONVERT_PERCENTAGE',                        75),
+    ('REYNA_CONVERT_PERCENTAGE',                        80),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
@@ -205,7 +208,7 @@ values
     ('GAMESPEED_QUICK',     240,            20),
     ('GAMESPEED_QUICK',     120,            20),
     ('GAMESPEED_QUICK',     36,             15),
-    ('GAMESPEED_QUICK',     36,             15),
+    ('GAMESPEED_QUICK',     24,             15),
     ('GAMESPEED_QUICK',     12,             15),
     ('GAMESPEED_QUICK',     6,              160),
     ('GAMESPEED_ONLINE',    1200,           30),

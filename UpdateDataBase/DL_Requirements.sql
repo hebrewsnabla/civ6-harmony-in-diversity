@@ -92,9 +92,21 @@ insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'DistrictType', DistrictType from Districts;
 insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || ReplacesDistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || CivUniqueDistrictType || '_RAW' from DistrictReplaces;
+
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'RequirementSetId', 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET' from Districts;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Districts;
 	
 -- Buildings
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -426,7 +438,8 @@ values
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_FOREST_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_JUNGLE_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_MARSH_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL');
+	('PLOT_HAS_MARSH_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_DISTRICT_IS_CITY_CENTER',						'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
@@ -449,7 +462,8 @@ values
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'OPPONENT_IS_DISTRICT'),
 	('PLOT_HAS_FOREST_REQUIREMENT',						'PLOT_IS_FOREST_REQUIREMENT'),
 	('PLOT_HAS_JUNGLE_REQUIREMENT',						'PLOT_IS_JUNGLE_REQUIREMENT'),
-	('PLOT_HAS_MARSH_REQUIREMENT',						'PLOT_IS_MARSH_REQUIREMENT');
+	('PLOT_HAS_MARSH_REQUIREMENT',						'PLOT_IS_MARSH_REQUIREMENT'),
+	('HD_DISTRICT_IS_CITY_CENTER',						'REQUIRES_DISTRICT_IS_DISTRICT_CITY_CENTER');
 
 -- RequirementSets
 insert or ignore into RequirementSets
@@ -707,6 +721,11 @@ values
 	('PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_BONUS_FISHING_BOATS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	--
+	('HD_CITY_HAS_RESOURCE_CAMP',								'REQUIREMENTSET_TEST_ANY'),
+	('HD_CITY_HAS_RESOURCE_FARM',								'REQUIREMENTSET_TEST_ANY'),
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
 	-- Follower
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
 
@@ -729,6 +748,12 @@ from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION'
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'GOD_OF_THE_SEA_CITY_HAS_FISHINGBOATS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+select	'HD_CITY_HAS_RESOURCE_CAMP', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_CAMP';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+select	'HD_CITY_HAS_RESOURCE_FARM', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM';
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
@@ -786,6 +811,11 @@ values
 	('PLOT_HAS_BONUS_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_BONUS'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_FISHINGBOATS'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_LUXURY'),
+	-------
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_FARM'),
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_BONUS'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_FARM'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_LUXURY'),
 	-- Follower
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIRES_PLOT_HAS_HOLY_SITE'),
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIRES_CITY_FOLLOWS_RELIGION');
