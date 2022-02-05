@@ -616,9 +616,9 @@ insert or replace into ModifierStrings
 values
     ('GREAT_PERSON_INDIVIDUAL_SUN_TZU_1',  'Summary',        'LOC_GREATPERSON_SUN_ZTU_ACTIVE');
 insert or replace into GreatPersonIndividualActionModifiers
-    (GreatPersonIndividualType,                                           ModifierId)
+    (GreatPersonIndividualType,           ModifierId)
 values
-    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU',                                   'GREAT_PERSON_INDIVIDUAL_SUN_TZU_1');
+    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU',   'GREAT_PERSON_INDIVIDUAL_SUN_TZU_1');
 insert or replace into Modifiers
     (ModifierId,                                                    ModifierType,RunOnce,NewOnly,Permanent,Repeatable)
 values
@@ -627,4 +627,44 @@ insert or replace into ModifierArguments
     (ModifierID,                          Name,     Type,               Value) 
 values 
     ("GREAT_PERSON_INDIVIDUAL_SUN_TZU_1", "Amount", "ARGTYPE_IDENTITY", 25);
---埃塞尔弗莱德
+--埃塞尔弗莱德修改能力：完成1个兵营，对蛮子+3力。可以使用两次
+insert or replace into ModifierStrings
+    (ModifierId,                            Context,          Text)
+values
+    ('GREATPERSON_AETHELFLAED_ACTIVE_1',    'Summary',        'LOC_GREATPERSON_AETHELFLAED_ACTIVE');
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_AETHELFLAED_ACTIVE' and GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                                           ModifierId,                           AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_AETHELFLAED',                               'GREATPERSON_AETHELFLAED_ACTIVE_1',   "GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE"),
+    ('GREAT_PERSON_INDIVIDUAL_AETHELFLAED',                               'GREATPERSON_AETHELFLAED_ACTIVE_2',   "GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE");
+insert or replace into Modifiers
+    (ModifierId,                                                    ModifierType,RunOnce,NewOnly,Permanent,Repeatable)
+values
+    ('GREATPERSON_AETHELFLAED_ACTIVE_1',                            'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',1,0,1,0),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_2',                            'MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT',1,0,1,0);
+insert or replace into ModifierArguments 
+    (ModifierID,                                 Name,           Type,               Value) 
+values 
+    ("GREATPERSON_AETHELFLAED_ACTIVE_1",        "BuildingType", "ARGTYPE_IDENTITY", "BUILDING_BARRACKS"),
+    ("GREATPERSON_AETHELFLAED_ACTIVE_2",        "Amount",       "ARGTYPE_IDENTITY", 3);
+update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_ENCAMPMENT' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
+--艾尔·熙德增加能力：给一个升级
+insert or replace into ModifierStrings
+    (ModifierId,                            Context,          Text)
+values
+    ('GREATPERSON_EL_CID_ACTIVE',           'Summary',        'LOC_GREATPERSON_EL_CID_ACTIVE_ACTIVE');
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                                      ModifierId,                           AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_EL_CID',                               'GREATPERSON_INDIVIDUAL_EL_CID_1',    "GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_DOMAIN_MILITARY_IN_TILE");
+insert or replace into Modifiers
+    (ModifierId,                                                    ModifierType,RunOnce,NewOnly,Permanent,Repeatable)
+values
+    ('GREATPERSON_INDIVIDUAL_EL_CID_1',                            'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE',0,0,0,0);
+insert or replace into ModifierArguments 
+    (ModifierID,                                 Name,           Type,               Value) 
+values 
+    ("GREATPERSON_INDIVIDUAL_EL_CID_1",         "Amount",        "ARGTYPE_IDENTITY", -1);
+ 
