@@ -177,3 +177,16 @@ values
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_1_QUOTE",                              "天下熙熙皆为利来，天下攘攘皆为利往。"),
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_NAME",                               "《报任安书》"),
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_QUOTE",                              "究天人之际，通古今之变，成一家之言。");
+
+--大军改动 by先驱
+
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                        Text)
+values
+    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience in combat.");
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                 Text)
+values
+    ("zh_Hans_CN",  "LOC_GREATPERSON_SUN_ZTU_ACTIVE",                                    "所有战斗单位战斗获得经验+25%。");

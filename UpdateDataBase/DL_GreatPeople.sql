@@ -603,3 +603,28 @@ insert or replace into GreatPersonIndividuals
 values
     ('GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU',         'LOC_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU_NAME',     'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M'),
     ('GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN',          'LOC_GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN_NAME',      'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M');
+
+--大军改动 by先驱
+--布狄卡由一次改为两次
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
+--汉尼拔·巴卡由两次改为三次
+update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HANNIBAL_BARCA';
+--孙子新增能力：全国军事单位战斗经验+25%
+update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SUN_TZU';
+insert or replace into ModifierStrings
+    (ModifierId,                            Context,         Text)
+values
+    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU_1',  'Summary',        'LOC_GREATPERSON_SUN_ZTU_ACTIVE');
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                                           ModifierId)
+values
+    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU',                                   'GREAT_PERSON_INDIVIDUAL_SUN_TZU_1');
+insert or replace into Modifiers
+    (ModifierId,                                                    ModifierType,RunOnce,NewOnly,Permanent,Repeatable)
+values
+    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU_1',                           'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',0,0,1,0);
+insert or replace into ModifierArguments 
+    (ModifierID,                          Name,     Type,               Value) 
+values 
+    ("GREAT_PERSON_INDIVIDUAL_SUN_TZU_1", "Amount", "ARGTYPE_IDENTITY", 25);
+--埃塞尔弗莱德
