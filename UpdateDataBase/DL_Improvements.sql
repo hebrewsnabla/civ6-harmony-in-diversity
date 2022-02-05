@@ -180,11 +180,11 @@ values
 	('IMPROVEMENT_PASTURE',	'Pasture_Kurgan_Faith');
 	
 -- 圩田
-update Improvements set ValidAdjacentTerrainAmount = 2, PrereqTech = 'TECH_BUTTRESS', PrereqCivic = NULL where ImprovementType = 'IMPROVEMENT_POLDER';
+update Improvements set ValidAdjacentTerrainAmount = 2, PrereqTech = 'TECH_COMPASS_HD', PrereqCivic = NULL where ImprovementType = 'IMPROVEMENT_POLDER';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_POLDER';
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Early';
 update Adjacency_YieldChanges set PrereqTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Late';
-update Adjacency_YieldChanges set PrereqTech = 'TECH_MASS_PRODUCTION' where ID = 'Polder_Polder_Production';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_BUTTRESS' where ID = 'Polder_Polder_Production';
 
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			YieldChangeId)
@@ -194,7 +194,7 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
 values
-	('HD_POLDER_GOLD',				'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_POLDER',		NULL,			'TECH_BANKING',				NULL,			NULL);
+	('HD_POLDER_GOLD',				'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_POLDER',		NULL,			'TECH_CIVIL_ENGINEERING_HD',NULL,			NULL);
 
 -- 陆地圩田
 insert or ignore into Types
@@ -251,9 +251,13 @@ insert or replace into Adjacency_YieldChanges
 values
 	('HD_LAND_POLDER_FOOD_EARLY',	'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			NULL,						NULL,			'TECH_BIOLOGY_HD'),
 	('HD_LAND_POLDER_FOOD_LATE',	'Placeholder',	'YIELD_FOOD',		2,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_BIOLOGY_HD',			NULL,			NULL),
-	('HD_LAND_POLDER_PRODUCTION',	'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_MASS_PRODUCTION',		NULL,			NULL),
-	('HD_LAND_POLDER_GOLD',			'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_BANKING',				NULL,			NULL);
+	('HD_LAND_POLDER_PRODUCTION',	'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_MACHINERY',			NULL,			NULL),
+	('HD_LAND_POLDER_GOLD',			'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_CIVIL_ENGINEERING_HD',NULL,			NULL);
 
+insert or replace into MomentIllustrations
+	(MomentIllustrationType,						MomentDataType,					GameDataType,					Texture)
+values
+	('MOMENT_ILLUSTRATION_UNIQUE_IMPROVEMENT',		'MOMENT_DATA_IMPROVEMENT',		'IMPROVEMENT_LAND_POLDER',		'Moment_Infrastructure_Netherlands.dds');
 -- 海陆圩田相互Buff
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			YieldChangeId)
