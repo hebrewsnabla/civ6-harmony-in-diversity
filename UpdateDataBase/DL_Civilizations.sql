@@ -1718,9 +1718,11 @@ insert or replace into TraitModifiers
 	(TraitType,										ModifierId)
 values
 	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
-	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD'),
+	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD'),
 	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE'),
-	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD');
+	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_WRITING_INFLUENCE_TOKEN');
 
 insert or replace into Modifiers
     (ModifierId,                            			ModifierType)
@@ -1730,17 +1732,28 @@ values
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',  			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE');
 
+insert or replace into Modifiers
+    (ModifierId,                            			ModifierType,								SubjectRequirementSetId)
+values
+	('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_TECH_WRITING'),
+	('PHOENICIA_WRITING_INFLUENCE_TOKEN',				'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE');
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_WRITING_INFLUENCE_TOKEN';
+
 insert or replace into ModifierArguments
     (ModifierId,                            			Name,           Value)
 values
     ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',  	'YieldType',    'YIELD_CULTURE'),
-    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',  	'Amount',       1),
+    ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE',  	'Amount',       2),
     ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',    	'YieldType',    'YIELD_GOLD'),
     ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',    	'Amount',       2),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'YieldType',    'YIELD_CULTURE'),
-    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'Amount',       2),
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'Amount',       4),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'YieldType',    'YIELD_GOLD'),
-    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4);
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4),
+    ('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',  		'Amount',       1),
+    ('PHOENICIA_WRITING_INFLUENCE_TOKEN',  				'Amount',       1);
 	
 -- UD
 insert or replace into DistrictModifiers 
@@ -2108,3 +2121,14 @@ insert or replace into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
 	('NORWAY_REQUIREMENTS',							'PLAYER_IS_CIVILIZATION_NORWAY');
+
+-- 日本
+delete from TraitModifiers where ModifierId = 'TRAIT_HURRICANE_PREVENTION_CAT_4';
+delete from TraitModifiers where ModifierId = 'TRAIT_HURRICANE_PREVENTION_CAT_5';
+delete from TraitModifiers where ModifierId = 'TRAIT_HURRICANE_DOUBLE_DAMAGE_CAT_4';
+delete from TraitModifiers where ModifierId = 'TRAIT_HURRICANE_DOUBLE_DAMAGE_CAT_5';
+
+update ModifierArguments set Value = 'DISTRICT_HARBOR' where ModifierId = 'TRAIT_BOOST_ENCAMPMENT_PRODUCTION' and Name = 'DistrictType';
+update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_ENCAMPMENT_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_HOLY_SITE_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_THEATER_DISTRICT_PRODUCTION' and Name = 'Amount';
