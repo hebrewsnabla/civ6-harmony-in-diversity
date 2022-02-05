@@ -29,8 +29,8 @@ values
     ("LOC_CIVILIZATION_YEREVAN_CITY_BONUS",               "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
     ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "Your cities get +20% [ICON_Production] Production towards city projects. Your Campus and buildings inside it provide +2 [ICON_Production] Production."),
     ("LOC_CIVILIZATION_HONG_KONG_BONUS",                  "Your cities get +20% [ICON_Production] Production towards city projects. Your Campus and buildings inside it provide +2 [ICON_Production] Production."),
-    ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
-    ("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +2 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
+    ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
+    ("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
     ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3 [Icon_Faith] Faith to all your Trade Routes."),
     ("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3 [Icon_Faith] Faith to all your Trade Routes."),
     ("LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city."),
@@ -123,8 +123,8 @@ values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_KANDY_BONUS",                      "从所有 [ICON_GreatWork_Relic] 遗物中获得的 [ICON_Faith] 信仰值+100%。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_YEREVAN_DESCRIPTION",              "你的使徒单位可以选择任何可用的升级，宗教单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_YEREVAN_CITY_BONUS",               "你的使徒单位可以选择任何可用的升级，宗教单位+1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+2 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_KUMASI_BONUS",                     "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+2 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+1 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
+    ("zh_Hans_CN",  "LOC_CIVILIZATION_KUMASI_BONUS",                     "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+1 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "城市中每拥有1个“军营”内建筑，购买陆地战斗或支援单位所需的 [ICON_GOLD] 金币便减少20%，若可用 [ICON_Faith] 信仰购买，则费用也减少20%。"),

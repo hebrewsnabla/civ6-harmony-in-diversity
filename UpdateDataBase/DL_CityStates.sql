@@ -86,6 +86,7 @@ values
 -- Kumasi
 delete from TraitModifiers where TraitType = 'MINOR_CIV_KUMASI_TRAIT' and ModifierId = 'MINOR_CIV_KUMASI_UNIQUE_INFLUENCE_TRADE_GOLD_BONUS';
 -- update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 
 ---------------------------------------------------------------------------------------------------------
 -- Kandy

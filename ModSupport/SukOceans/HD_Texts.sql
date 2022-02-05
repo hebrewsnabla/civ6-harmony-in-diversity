@@ -150,10 +150,12 @@ insert or replace into EnglishText
     (Tag,                                                                                   Text)
 values
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of Kelp Forest and resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus Districts get extra major adjacency bonus from Reefs and Kelps. +2 [ICON_Production] Production from Reefs and Kelps.");
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus Districts get extra major adjacency bonus from Reefs and Kelps. +2 [ICON_Production] Production from Reefs and Kelps."),
+    ("LOC_HD_KELP_HOLYSITE_FAITH",                                                          "+{1_num} [ICON_Faith] Faith from the adjacent Kelp Forest {1_Num : plural 1?tile; other?tiles;}.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获海藻森林和由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                           "礁石和海藻森林为学院提供额外大相邻加成，礁石和海藻森林单元格+2 [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                           "礁石和海藻森林为学院提供额外大相邻加成，礁石和海藻森林单元格+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_HD_KELP_HOLYSITE_FAITH",                                           "+{1_num} [ICON_Faith] 信仰值来自相邻海藻森林{1_Num : plural 1?单元格; other?单元格;}。");

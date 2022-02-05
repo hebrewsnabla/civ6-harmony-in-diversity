@@ -56,3 +56,14 @@ values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIRES_PL
 
 -- 水族馆适配 xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_KELP_FOREST_SCIENCE';
+
+-- 海藻森林给圣地标准相邻加成
+insert or replace into Adjacency_YieldChanges
+    (ID,                            Description,                    YieldType,      YieldChange,    TilesRequired,  AdjacentFeature)
+values
+    ('HD_KELP_HOLYSITE_FAITH',      'LOC_HD_KELP_HOLYSITE_FAITH',   'YIELD_FAITH',  1,              1,              'FEATURE_SUK_KELP');
+
+insert or replace into District_Adjacencies
+    (DistrictType,                  YieldChangeId)
+values
+    ('DISTRICT_HOLY_SITE',          'HD_KELP_HOLYSITE_FAITH');
