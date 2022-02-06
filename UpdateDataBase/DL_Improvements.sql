@@ -184,7 +184,12 @@ update Improvements set ValidAdjacentTerrainAmount = 2, PrereqTech = 'TECH_COMPA
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_POLDER';
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Early';
 update Adjacency_YieldChanges set PrereqTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Late';
-update Adjacency_YieldChanges set PrereqTech = 'TECH_BUTTRESS' where ID = 'Polder_Polder_Production';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_MASS_PRODUCTION' where ID = 'Polder_Polder_Production';
+
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,			FeatureType)
+values
+	('IMPROVEMENT_POLDER',		'FEATURE_REEF');
 
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			YieldChangeId)
