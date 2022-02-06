@@ -306,3 +306,19 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_BUILDINGS_PAGE_BUILDING_BOOTCAMP_CHAPTER_HISTORY_PARA_1",                "“训练营”是一个定义非常广泛的词汇。和而不同中的训练营指的是从早期的专业军队产生到有规模的军营出现这段时间的军事机构，比如说斗兽场和各种兵器生产机构与设施。当阶级分化开始形成，处于有资格无偿占有他人生产生活资料的地位的那些阶级——贵族和祭司——就需要对他们忠诚的武装团体来保护他们对物质资料的无偿占有的权利，军事组织就此登上历史舞台，参与了极为漫长的历史和纷繁复杂的历史事件，为他们的目的服务的机构、设施和人员也随之产生并发展。在当人类历史上第一次有两支不同文明的军队会战于卡迭石之前，这样的集团就已经初步完备，赫梯人就以他们发明并生产的铁质兵器和战车车轴而闻名。"),
     ("zh_Hans_CN",  "LOC_PEDIA_BUILDINGS_PAGE_BUILDING_FAIR_CHAPTER_HISTORY_PARA_1",                    "从物质生产出现分工开始就有了不同物质的交互，然后商品交换随之产生。然后，因为商品生产的分工和地域性，人们开始在交通便利的地方自发的形成集市。在很长一段时间内，集市都是人们获得自己无法生产的东西的主要来源，直到超级市场出现。"),
     ("zh_Hans_CN",  "LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TOTEMS_CHAPTER_HISTORY_PARA_1",                  "各种语言中的“图腾”一词都来自北美原住民语言。指的是各种传统的对一种特定形象的崇拜。比较常见的图腾形象有鸟类、猛兽等等，这些形象一开始是具体的，后来逐渐变得抽象，直到出现龙和双头鹰这种经典的广泛使用的图形。");
+insert or replace into EnglishText
+    (Tag,                                                                               Text)
+values
+    ("LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_CHINA_CHAPTER_CAPSULE_BODY",            "Unlike his grandfather, Kublai placed more emphasis on the integration of civilizations and civilizations with each other, and was able to use the leadership abilities of this civilization after conquering the original capitals of other major civilizations."),
+    ("LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_CHINA_CHAPTER_DETAILED_BODY",           "Kublai had additional economic policy slots for a variety of different ways of winning. But he prefers to conquer more civilisations and make them available to him. So you need to actively wage war to conquer more civilisations, which in turn fuels technological, cultural or conquest victories."),
+    ("LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_MONGOLIA_CHAPTER_CAPSULE_BODY",         "Unlike his grandfather, Kublai placed more emphasis on the integration of civilizations and civilizations with each other, and was able to use the leadership abilities of this civilization after conquering the original capitals of other major civilizations."),
+    ("LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_MONGOLIA_CHAPTER_DETAILED_BODY",        "Kublai had additional economic policy slots for a variety of different ways of winning. But he prefers to conquer more civilisations and make them available to him. So you need to actively wage war to conquer more civilisations, which in turn fuels technological, cultural or conquest victories.");
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                                Text)
+values
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_CHINA_CHAPTER_CAPSULE_BODY",             "与祖父不同，忽必烈更加强调文明和文明之间的融合，在征服其他主要文明的原始首都之后，能够使用这个文明的领袖能力。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_CHINA_CHAPTER_DETAILED_BODY",            "忽必烈拥有额外的经济政策槽位，适合各种不同的胜利方式。但是他更倾向于征服更多的文明，让他们为自己所用。所以你需要积极发动战争，征服更多的文明，进而助力科技、文化或征服胜利。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_MONGOLIA_CHAPTER_CAPSULE_BODY",          "与祖父不同，忽必烈更加强调文明和文明之间的融合，在征服其他主要文明的原始首都之后，能够使用这个文明的领袖能力。"),
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_KUBLAI_KHAN_MONGOLIA_CHAPTER_DETAILED_BODY",         "忽必烈拥有额外的经济政策槽位，适合各种不同的胜利方式。但是他更倾向于征服更多的文明，让他们为自己所用。所以你需要积极发动战争，征服更多的文明，进而助力科技、文化或征服胜利。");

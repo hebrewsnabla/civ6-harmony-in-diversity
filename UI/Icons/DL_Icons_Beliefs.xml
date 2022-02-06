@@ -23,6 +23,8 @@
 		<Row Name="ICON_BELIEF_HD_MAZU_BELIEF"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20"/>
     	<Row Name="ICON_BELIEF_FISHING_TRADITION"           Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="7"/>
 		<Row Name="ICON_BELIEF_HD_GOD_KING"					Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="5"/>
+		<Row Name="ICON_BELIEF_HD_WOLF_GOD"           		Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="9"/>
+		<Row Name="ICON_BELIEF_HD_SUN_GOD"					Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="8"/>
 		<!--Follower Beliefs-->
 		<Row Name="ICON_BELIEF_RELIGIOUS_ART"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/>
 		<!-- <Row Name="ICON_BELIEF_CASTE_SYSTEM"				Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="23"/> -->

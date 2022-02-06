@@ -2,29 +2,6 @@
 --            Vikings DLC          --
 -------------------------------------
 
--- Norway
-insert or replace into TraitModifiers
-    (TraitType, ModifierId)
-values
-    ('TRAIT_LEADER_MELEE_COASTAL_RAIDS', 'TRAIT_LEADER_PILLAGE_SCIENCE_FARMS'),
-    ('TRAIT_LEADER_MELEE_COASTAL_RAIDS', 'TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS');
-
-insert or replace into Modifiers
-    (ModifierId,                                    ModifierType)
-values
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'MODIFIER_PLAYER_ADJUST_ADDITIONAL_PILLAGING'),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'MODIFIER_PLAYER_ADJUST_ADDITIONAL_PILLAGING');
-
-insert or replace into ModifierArguments
-    (ModifierId,                                    Name,               Value)
-values
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'PlunderType',      'PLUNDER_SCIENCE'),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'ImprovementType',  'IMPROVEMENT_FARM'),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_FARMS',          'Amount',           15),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'PlunderType',      'PLUNDER_SCIENCE'),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'ImprovementType',  'IMPROVEMENT_LUMBER_MILL'),
-    ('TRAIT_LEADER_PILLAGE_SCIENCE_LUMBER_MILLS',   'Amount',           15);
-
 -- Natural Wonders
 insert or replace into Feature_AdjacentYields (FeatureType, YieldType, YieldChange) values
     -- ('FEATURE_TSINGY', 'YIELD_GOLD', 1),

@@ -2,6 +2,12 @@
 --    Improvements Adjustments     --
 -------------------------------------
 
+-- 农场
+insert or replace into Improvement_BonusYieldChanges
+	(Id,	ImprovementType,						YieldType,				BonusYieldChange,		PrereqTech)
+values
+	(604,	'IMPROVEMENT_FARM',						'YIELD_FOOD',			1,						'TECH_CALENDAR_HD');
+
 -- 【油井】和【海上油井】修改
 update Improvements set PrereqTech = 'TECH_BIOLOGY_HD' where ImprovementType = 'IMPROVEMENT_OIL_WELL';
 
@@ -15,12 +21,12 @@ values
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_SCIENCE',		1);
 
 insert or replace into Improvement_BonusYieldChanges
-	(ImprovementType,						YieldType,				BonusYieldChange,		PrereqTech)
+	(Id,	ImprovementType,						YieldType,				BonusYieldChange,		PrereqTech)
 values
-	('IMPROVEMENT_OIL_WELL',				'YIELD_PRODUCTION',		2,						'TECH_REFINING'),
-	('IMPROVEMENT_OIL_WELL',				'YIELD_SCIENCE',		2,						'TECH_REFINING'),
-	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_SCIENCE',		2,						'TECH_REFINING'),
-	('IMPROVEMENT_OFFSHORE_OIL_RIG',		'YIELD_PRODUCTION',		2,						'TECH_REFINING');
+	(600,	'IMPROVEMENT_OIL_WELL',					'YIELD_PRODUCTION',		2,						'TECH_REFINING'),
+	(601,	'IMPROVEMENT_OIL_WELL',					'YIELD_SCIENCE',		2,						'TECH_REFINING'),
+	(602,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_SCIENCE',		2,						'TECH_REFINING'),
+	(603,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_PRODUCTION',		2,						'TECH_REFINING');
 
 -- 设定【演化论】市政效果：营地+1粮+1锤，替代【重商主义】市政
 update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PrereqCivic = 'CIVIC_MERCANTILISM';--xhh
@@ -157,3 +163,115 @@ UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_
 UPDATE Improvements SET PrereqCivic="CIVIC_LITERARY_TRADITION_HD"  where ImprovementType="IMPROVEMENT_CHATEAU"  ;
 --瑞典UI改为人文主义
 UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
+
+-- 坟墩给相邻牧场+1鸽
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,	YieldType,	YieldChange)
+values
+	('IMPROVEMENT_PASTURE',	'YIELD_FAITH',0);
+	
+insert or replace into Adjacency_YieldChanges
+	(ID,	Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement)
+values
+	('Pasture_Kurgan_Faith',	'Placeholder',	'YIELD_FAITH',	1,	1,	'IMPROVEMENT_KURGAN');
+insert into Improvement_Adjacencies
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_PASTURE',	'Pasture_Kurgan_Faith');
+	
+-- 圩田
+update Improvements set ValidAdjacentTerrainAmount = 2, PrereqTech = 'TECH_COMPASS_HD', PrereqCivic = NULL where ImprovementType = 'IMPROVEMENT_POLDER';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_POLDER';
+update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Early';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_BIOLOGY_HD' where ID = 'Polder_Polder_Food_Late';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_MASS_PRODUCTION' where ID = 'Polder_Polder_Production';
+
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,			FeatureType)
+values
+	('IMPROVEMENT_POLDER',		'FEATURE_REEF');
+
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,			YieldChangeId)
+values
+	('IMPROVEMENT_POLDER',		'HD_POLDER_GOLD');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
+values
+	('HD_POLDER_GOLD',				'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_POLDER',		NULL,			'TECH_CIVIL_ENGINEERING_HD',NULL,			NULL);
+
+-- 陆地圩田
+insert or ignore into Types
+	(Type,											Kind)
+values
+	('TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	'KIND_TRAIT'),
+	('IMPROVEMENT_LAND_POLDER',						'KIND_IMPROVEMENT');
+
+insert or replace into Traits
+	(TraitType,										Name)
+values
+	('TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME');
+
+insert or replace into CivilizationTraits
+	(CivilizationType,								TraitType)
+values
+	('CIVILIZATION_NETHERLANDS',					'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER');
+
+insert or replace into Improvements
+	(ImprovementType,			Name,								PrereqTech,			PrereqCivic,		Buildable,	Description,								PlunderType,		PlunderAmount,	Icon,							TraitType,										Housing,	TilesRequired,	MovementChange)
+values
+	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_BUTTRESS',	Null,				1,			'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				2);
+
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,			YieldType,			YieldChange)
+values
+	('IMPROVEMENT_LAND_POLDER',	'YIELD_FOOD',		1),
+	('IMPROVEMENT_LAND_POLDER',	'YIELD_PRODUCTION',	1),
+	('IMPROVEMENT_LAND_POLDER',	'YIELD_GOLD',		0);
+
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,			FeatureType)
+values
+	('IMPROVEMENT_LAND_POLDER',	'FEATURE_FLOODPLAINS'),
+	('IMPROVEMENT_LAND_POLDER',	'FEATURE_FLOODPLAINS_GRASSLAND'),
+	('IMPROVEMENT_LAND_POLDER',	'FEATURE_FLOODPLAINS_PLAINS'),
+	('IMPROVEMENT_LAND_POLDER',	'FEATURE_MARSH');
+
+insert or replace into Improvement_ValidBuildUnits
+	(ImprovementType,			UnitType)
+values
+	('IMPROVEMENT_LAND_POLDER',	'UNIT_BUILDER');
+
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,			YieldChangeId)
+values
+	('IMPROVEMENT_LAND_POLDER',	'HD_LAND_POLDER_FOOD_EARLY'),
+	('IMPROVEMENT_LAND_POLDER',	'HD_LAND_POLDER_FOOD_LATE'),
+	('IMPROVEMENT_LAND_POLDER',	'HD_LAND_POLDER_PRODUCTION'),
+	('IMPROVEMENT_LAND_POLDER',	'HD_LAND_POLDER_GOLD');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqCivic,	PrereqTech,					ObsoleteCivic,	ObsoleteTech)
+values
+	('HD_LAND_POLDER_FOOD_EARLY',	'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			NULL,						NULL,			'TECH_BIOLOGY_HD'),
+	('HD_LAND_POLDER_FOOD_LATE',	'Placeholder',	'YIELD_FOOD',		2,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_BIOLOGY_HD',			NULL,			NULL),
+	('HD_LAND_POLDER_PRODUCTION',	'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_MACHINERY',			NULL,			NULL),
+	('HD_LAND_POLDER_GOLD',			'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_LAND_POLDER',	NULL,			'TECH_CIVIL_ENGINEERING_HD',NULL,			NULL);
+
+insert or replace into MomentIllustrations
+	(MomentIllustrationType,						MomentDataType,					GameDataType,					Texture)
+values
+	('MOMENT_ILLUSTRATION_UNIQUE_IMPROVEMENT',		'MOMENT_DATA_IMPROVEMENT',		'IMPROVEMENT_LAND_POLDER',		'Moment_Infrastructure_Netherlands.dds');
+-- 海陆圩田相互Buff
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,			YieldChangeId)
+select
+	'IMPROVEMENT_POLDER',		YieldChangeId
+from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_LAND_POLDER';
+
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,			YieldChangeId)
+select
+	'IMPROVEMENT_LAND_POLDER',	YieldChangeId
+from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';

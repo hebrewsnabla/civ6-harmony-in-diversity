@@ -83,6 +83,10 @@ update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SUGAR' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_HONEY' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_INCENSE' and YieldType = 'YIELD_FAITH';
+update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_PRODUCTION';
+update Resource_YieldChanges set YieldChange = -1 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_GOLD';
+update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_PEARLS' and YieldType = 'YIELD_FAITH';
+update Resource_YieldChanges set YieldChange = -1 where ResourceType = 'RESOURCE_PEARLS' and YieldType = 'YIELD_GOLD';
 
 -- Natural Wonders.
 -- Need to provide yields to natural wonders in later game.

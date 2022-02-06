@@ -86,8 +86,9 @@ function MaliPlayerEraScoreChanged(playerID, amountAwarded)
 	local playerConfig = PlayerConfigurations[playerID]
 	local sLeader = playerConfig:GetLeaderTypeName()
 	local sMaliGoldDesert = 'TRAIT_LEADER_SAHEL_MERCHANTS'
+	local amount = GlobalParameters.MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE
 	if (not LeaderHasTrait(sLeader, sMaliGoldDesert)) then return; end
-	player:GetTreasury():ChangeGoldBalance(amountAwarded * 15)
+	player:GetTreasury():ChangeGoldBalance(amountAwarded * amount)
 end
 
 Events.PlayerEraScoreChanged.Add(MaliPlayerEraScoreChanged)
@@ -193,11 +194,11 @@ function PolandTempleUnlockMilitaryEngineers(playerID:number, cityID:number)
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
 	local sGoldenLiberty = 'TRAIT_CIVILIZATION_GOLDEN_LIBERTY'
-	local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
-	local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
 	if (not CivilizationHasTrait(sCiv, sGoldenLiberty)) then 
 		return
 	end
+    local m_Dummy_Poland = GameInfo.Buildings['BUILDING_DUMMY_POLAND'].Index
+    local m_Temple = GameInfo.Buildings['BUILDING_TEMPLE'].Index
 	-- print('Poland', player, city)
     if player ~= nil and city ~= nil then
 		local cityHasDummy = city:GetBuildings():HasBuilding(m_Dummy_Poland)
@@ -287,8 +288,6 @@ function ProjectJudgementOfLove(iX, iY, dX, dY)
 end
 GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Add(ProjectJudgementOfLove)
 
-ExposedMembers.GameEvents = GameEvents
-
 -- Hungary Conquer Envoy
 function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
     local pPlayer = Players[newPlayerID]
@@ -327,39 +326,39 @@ end
 
 GameEvents.OnDistrictConstructed.Add(MBANZABoost)
 
--- Netherlands
-local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
-local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index
+-- -- Netherlands
+-- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
+-- local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index
 
-function OnCityProductionCompleted(playerID, cityID, iConstructionType, itemID, bCancelled)
-    local player = Players[playerID]
-    local pPlayerConfig = PlayerConfigurations[playerID]
-    local city = CityManager.GetCity(playerID, cityID)
-    local gameSpeed = GameConfiguration.GetGameSpeedType()
-    local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
-    local sCiv = pPlayerConfig:GetCivilizationTypeName()
-    local sGroteRivieren = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN'
-    if iConstructionType == 0 and CivilizationHasTrait(sCiv, sGroteRivieren) then -- Units, Netherlands
-        local unit = GameInfo.Units[itemID]
-        if unit ~= nil and city ~= nil then
-            if unit.Domain == 'DOMAIN_SEA' then
-                -- Only grant gold when built sea units.
-                local multiplier = 0
-                if city:GetBuildings():HasBuilding(m_Shipyard) then
-                    multiplier = 1
-                    if city:GetBuildings():HasBuilding(m_Bank) then
-                        multiplier = 2
-                    end
-                end
-                local amount = math.floor(unit.Cost * multiplier * iSpeedCostMultiplier)
-                if amount > 0 then
-                    player:GetTreasury():ChangeGoldBalance(amount)
-                    local message = '[COLOR:ResGoldLabelCS]+' .. tostring(amount) .. '[ENDCOLOR][ICON_Gold]'
-                    Game.AddWorldViewText(0, message, city:GetX(), city:GetY())
-                end
-            end
-        end
-    end
-end
+-- function OnCityProductionCompleted(playerID, cityID, iConstructionType, itemID, bCancelled)
+--     local player = Players[playerID]
+--     local pPlayerConfig = PlayerConfigurations[playerID]
+--     local city = CityManager.GetCity(playerID, cityID)
+--     local gameSpeed = GameConfiguration.GetGameSpeedType()
+--     local iSpeedCostMultiplier = GameInfo.GameSpeeds[gameSpeed].CostMultiplier * 0.01
+--     local sCiv = pPlayerConfig:GetCivilizationTypeName()
+--     local sGroteRivieren = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN'
+--     if iConstructionType == 0 and CivilizationHasTrait(sCiv, sGroteRivieren) then -- Units, Netherlands
+--         local unit = GameInfo.Units[itemID]
+--         if unit ~= nil and city ~= nil then
+--             if unit.Domain == 'DOMAIN_SEA' then
+--                 -- Only grant gold when built sea units.
+--                 local multiplier = 0
+--                 if city:GetBuildings():HasBuilding(m_Shipyard) then
+--                     multiplier = 1
+--                     if city:GetBuildings():HasBuilding(m_Bank) then
+--                         multiplier = 2
+--                     end
+--                 end
+--                 local amount = math.floor(unit.Cost * multiplier * iSpeedCostMultiplier)
+--                 if amount > 0 then
+--                     player:GetTreasury():ChangeGoldBalance(amount)
+--                     local message = '[COLOR:ResGoldLabelCS]+' .. tostring(amount) .. '[ENDCOLOR][ICON_Gold]'
+--                     Game.AddWorldViewText(0, message, city:GetX(), city:GetY())
+--                 end
+--             end
+--         end
+--     end
+-- end
 
-Events.CityProductionCompleted.Add(OnCityProductionCompleted);
+-- Events.CityProductionCompleted.Add(OnCityProductionCompleted);

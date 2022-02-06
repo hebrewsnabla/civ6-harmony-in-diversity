@@ -5,9 +5,6 @@
 -- 该文件于DL_Resources.sql文件之后加载
 
 -- Basic
-update Resources set ResourceClassType = 'RESOURCECLASS_LUXURY', Happiness = 4 
-	where ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON' or ResourceType = 'RESOURCE_ALOE' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_QUARTZ';
-update Resources set Happiness = 4 where ResourceType = 'RESOURCE_RUBY';
 update Resources set LakeEligible = 0 where ResourceType = 'RESOURCE_SPONGE' or ResourceType = 'RESOURCE_SEA_URCHIN' or ResourceType = 'RESOURCE_ORCA' or
 	ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_MUSSELS';
 
@@ -20,9 +17,11 @@ values
 	('RESOURCE_WOLF',			'YIELD_GOLD',			1),
 	('RESOURCE_TRAVERTINE',		'YIELD_SCIENCE',		1),
 	('RESOURCE_TRAVERTINE',		'YIELD_GOLD',			1),
+	('RESOURCE_TOXINS',			'YIELD_FOOD',			-1),
+	('RESOURCE_TOXINS',			'YIELD_PRODUCTION',		1),
 	('RESOURCE_TOXINS',			'YIELD_SCIENCE',		1),
 	('RESOURCE_TOXINS',			'YIELD_GOLD',			1),
-	('RESOURCE_TIGER',			'YIELD_SCIENCE',		1),
+	('RESOURCE_TIGER',			'YIELD_CULTURE',		1),
 	('RESOURCE_TIGER',			'YIELD_GOLD',			1),
 	('RESOURCE_STRAWBERRY',		'YIELD_FOOD',			1),
 	('RESOURCE_STRAWBERRY',		'YIELD_GOLD',			1),
@@ -63,7 +62,7 @@ values
 	('RESOURCE_ALOE',			'YIELD_GOLD',			1),
 	('RESOURCE_MEDIHERBS',		'YIELD_SCIENCE',		1),
 	('RESOURCE_MEDIHERBS',		'YIELD_GOLD',			1),
-	('RESOURCE_QUARTZ',			'YIELD_FAITH',			1),
+	('RESOURCE_QUARTZ',			'YIELD_PRODUCTION',		1),
 	('RESOURCE_QUARTZ',			'YIELD_GOLD',			1),
 	-- 加成
 	('RESOURCE_TOMATO',			'YIELD_FOOD',			1),
@@ -86,39 +85,34 @@ values
 	('RESOURCE_BARLEY',			'YIELD_GOLD',			1);
 
 -- Terrain
-delete from Resource_ValidTerrains where (TerrainType = 'TERRAIN_TUNDRA_HILLS' or TerrainType = 'TERRAIN_DESERT_HILLS') and ResourceType = 'RESOURCE_GYPSUM';
-delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
-
 insert or replace into Resource_ValidTerrains
 	(ResourceType,				TerrainType)
 values
 	-- 奢侈
 	('RESOURCE_WOLF',			'TERRAIN_GRASS'),
-	('RESOURCE_WOLF',			'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_WOLF',			'TERRAIN_PLAINS'),
-	('RESOURCE_WOLF',			'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_WOLF',			'TERRAIN_TUNDRA'),
+	('RESOURCE_WOLF',			'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_TRAVERTINE',		'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_STRAWBERRY',		'TERRAIN_GRASS'),
 	('RESOURCE_RUBY',			'TERRAIN_DESERT_HILLS'),
-	('RESOURCE_RUBY',			'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_RUBY',			'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_RUBY',			'TERRAIN_GRASS'),
+	('RESOURCE_RUBY',			'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_POPPIES',		'TERRAIN_PLAINS'),
 	('RESOURCE_POPPIES',		'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_PLATINUM',		'TERRAIN_DESERT'),
+	('RESOURCE_PLATINUM',		'TERRAIN_TUNDRA'),
 	('RESOURCE_PLATINUM',		'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_PLATINUM',		'TERRAIN_PLAINS_HILLS'),
-	('RESOURCE_PLATINUM',		'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_ORCA',			'TERRAIN_COAST'),
 	('RESOURCE_LION',			'TERRAIN_PLAINS'),
 	('RESOURCE_LION',			'TERRAIN_DESERT'),
-	('RESOURCE_LAPIS',			'TERRAIN_DESERT'),
+	('RESOURCE_LAPIS',			'TERRAIN_TUNDRA'),
 	('RESOURCE_LAPIS',			'TERRAIN_DESERT_HILLS'),
 	('RESOURCE_LAPIS',			'TERRAIN_GRASS'),
 	('RESOURCE_LAPIS',			'TERRAIN_GRASS_HILLS'),
-	('RESOURCE_LAPIS',			'TERRAIN_PLAINS'),
-	('RESOURCE_LAPIS',			'TERRAIN_PLAINS_HILLS'),
 	('RESOURCE_CASHMERE',		'TERRAIN_GRASS_HILLS'),
-	('RESOURCE_CASHMERE',		'TERRAIN_PLAINS_HILLS'),
-	('RESOURCE_CASHMERE',		'TERRAIN_DESERT_HILLS'),
 	('RESOURCE_CASHMERE',		'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_BAMBOO',			'TERRAIN_GRASS'),
 	('RESOURCE_ALABASTER',		'TERRAIN_TUNDRA'),
@@ -135,12 +129,14 @@ values
 	('RESOURCE_QUARTZ',			'TERRAIN_DESERT'),
 	('RESOURCE_QUARTZ',			'TERRAIN_DESERT_HILLS'),
 	('RESOURCE_QUARTZ',			'TERRAIN_PLAINS'),
-	('RESOURCE_QUARTZ',			'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_QUARTZ',			'TERRAIN_GRASS_HILLS'),
 	-- 加成
 	('RESOURCE_TOMATO',			'TERRAIN_GRASS'),
 	('RESOURCE_TOMATO',			'TERRAIN_PLAINS'),
 	('RESOURCE_TIN',			'TERRAIN_GRASS_HILLS'),
 	('RESOURCE_TIN',			'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_PINE',			'TERRAIN_TUNDRA'),
+	('RESOURCE_PINE',			'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_MUSSELS',		'TERRAIN_COAST'),
 	('RESOURCE_LIMESTONE',		'TERRAIN_GRASS'),
 	('RESOURCE_LIMESTONE',		'TERRAIN_GRASS_HILLS'),
@@ -155,21 +151,12 @@ values
 	('RESOURCE_LEAD',			'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_HAM',			'TERRAIN_GRASS'),
 	('RESOURCE_HAM',			'TERRAIN_PLAINS'),
-	('RESOURCE_BERRIES',		'TERRAIN_GRASS'),
 	('RESOURCE_BERRIES',		'TERRAIN_GRASS_HILLS'),
-	('RESOURCE_BERRIES',		'TERRAIN_PLAINS'),
 	('RESOURCE_BERRIES',		'TERRAIN_PLAINS_HILLS'),
-	('RESOURCE_BERRIES',		'TERRAIN_TUNDRA'),
-	('RESOURCE_BERRIES',		'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA'),
-	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA_HILLS'),
-	-- Old Resources
-	('RESOURCE_STONE',			'TERRAIN_PLAINS'),
-	('RESOURCE_STONE',			'TERRAIN_PLAINS_HILLS');
+	('RESOURCE_BARLEY',			'TERRAIN_TUNDRA_HILLS');
 
 -- Feature
-delete from Feature_ValidTerrains where FeatureType = 'FEATURE_GEOTHERMAL_FISSURE' and (TerrainType = 'TERRAIN_SNOW' or TerrainType = 'TERRAIN_SNOW_HILLS');
-
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 values
@@ -195,6 +182,7 @@ values
 	('RESOURCE_MEDIHERBS',		'FEATURE_FOREST'),
 	('RESOURCE_MEDIHERBS',		'FEATURE_MARSH'),
 	('RESOURCE_QUARTZ',			'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_QUARTZ',			'FEATURE_FOREST'),
 	-- 加成
 	('RESOURCE_TIN',			'FEATURE_GEOTHERMAL_FISSURE'),
 	('RESOURCE_RUBBER',			'FEATURE_JUNGLE'),
@@ -208,22 +196,15 @@ values
 	('RESOURCE_MUSHROOMS',		'FEATURE_MARSH'),
 	('RESOURCE_DATES',			'FEATURE_FLOODPLAINS'),
 	('RESOURCE_DATES',			'FEATURE_OASIS'),
-	('RESOURCE_BERRIES',		'FEATURE_FOREST'),
-	-- Old Resources
-	('RESOURCE_STONE',			'FEATURE_GEOTHERMAL_FISSURE'),
-	('RESOURCE_COPPER',			'FEATURE_GEOTHERMAL_FISSURE');
-
-insert or replace into Resource_ValidFeatures
-	(ResourceType,				FeatureType)
-select
-	'RESOURCE_SUK_OBSIDIAN',	'FEATURE_GEOTHERMAL_FISSURE'
-where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SUK_OBSIDIAN');
+	('RESOURCE_BERRIES',		'FEATURE_FOREST');
 
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 select
 	'RESOURCE_SEA_URCHIN',		'FEATURE_SUK_KELP'
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
+
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_ORCA' and exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
@@ -243,6 +224,7 @@ update Resources set Frequency = (select Frequency from HDResourceful2_Basic whe
     where ResourceType in (select ResourceType from HDResourceful2_Basic);
 update Resources set SeaFrequency = (select SeaFrequency from HDResourceful2_Basic where Resources.ResourceType = HDResourceful2_Basic.ResourceType) 
     where ResourceType in (select ResourceType from HDResourceful2_Basic);
+update Resources set SeaFrequency = 5 where ResourceType = 'RESOURCE_ORCA' and exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
     -- Old Resources
 create TEMPORARY table "HDResourceful2_Old_Frequency"(
     "ResourceType"  TEXT,
@@ -272,12 +254,11 @@ update Resources set Frequency = (select Frequency from HDResourceful2_Old_Frequ
 update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIAR';
 
 -- Improvement
-	-- 地热有资矿山、采石场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_MINE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_QUARRY';
-	-- 礁石有资渔船
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FARM';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_PASTURE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
-	-- 雨林有资伐木场
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
 
 -- Buildings
@@ -371,22 +352,6 @@ values
     ('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD',			        'ModifierId',			'HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER'),
 	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'YieldType',			'YIELD_GOLD'),
 	('HEART_OF_THE_WOODS_LUMBER_MILL_GOLD_MODIFIER',        'Amount',				1);
-
-insert or ignore into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-values
-	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIREMENTSET_TEST_ALL'),
-	('PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE',			    'REQUIREMENTSET_TEST_ANY'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			    	'REQUIREMENTSET_TEST_ALL');
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-values
-	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIRES_PLOT_HAS_LUMBER_MILL'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUXURY'),
-	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUMBER_MILL'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_BONUS'),
-	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_LUMBER_MILL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)

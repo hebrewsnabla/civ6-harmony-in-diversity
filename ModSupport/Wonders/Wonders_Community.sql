@@ -216,7 +216,7 @@ update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWO
 update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_CARAVAGGIO_3';
 ------------------------------------------------------------------------------------------------------------
 -----BUILDING_NOTRE_DAME------------------------------------------------------------------------------------
-update Buildings set Entertainment = 1, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
+update Buildings set Entertainment = 2, RegionalRange = 9 where BuildingType = 'BUILDING_NOTRE_DAME';
 ---	notre_dame theming bonus from same era
 update Building_GreatWorks set 
 	ThemingUniquePerson = 0 ,
@@ -270,6 +270,7 @@ update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILD
 ------------------------------------------------------------------------------------------------------------------
 
 --BUILDING_ITSUKUSHIMA
+update Buildings set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where BuildingType = 'BUILDING_ITSUKUSHIMA';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';

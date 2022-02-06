@@ -19,7 +19,7 @@ values
     ("LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "Grants a free [ICON_GreatProphet] Great Prophet. [ICON_GreatProphet] Great Prophets may found a Religion on Stonehenge instead of a Holy Site. Must be adjacent to [ICON_RESOURCE_STONE] Andesite and on flat land."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "+2 [ICON_Production] Production towards Districts, Buildings and Wonders if this city owns Quarries, Mines or Lumber Mills over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already have a Karez or Boot Camp."),
     ("LOC_BELIEF_PAN_NAME",                                       "Pan"),
-    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Forest tile. Holy Site provides +1 [ICON_Food] Food to all Lumber Mill tiles within the same city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Lumber Mill over Luxury and Bonus resources."),
+    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Forest tile. Holy Site provides +1 [ICON_Food] Food to all Lumber Mill tiles within the same city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Lumber Mill over Luxury or Bonus resources."),
     ("LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] Faith from the adjacent Lumber Mill {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "Heart of the Woods"),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "+1 [ICON_Food] Food and +1 [ICON_Science] Science from Lumber Mills over Luxury and Bonus resources. +1 [ICON_Gold] Gold from all Lumber mills.");
@@ -58,3 +58,28 @@ update LocalizedText set Text = Text || " +1 [ICON_Production] Production to Lum
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');
 update LocalizedText set Text = Text || "为本城改良加成资源的伐木场+1 [ICON_Production] 生产力。" where Language = 'zh_Hans_CN' and
     (Tag = 'LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_HANSA_HD_DESCRIPTION' or Tag = 'LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION');
+
+CREATE TEMPORARY TABLE "HDResourceful2_Pedia_Text"(
+    "ResourceType"  TEXT
+);
+insert or replace into HDResourceful2_Pedia_Text
+    (ResourceType)
+values
+    ('RESOURCE_SPONGE'),('RESOURCE_CASHMERE'),('RESOURCE_SANDALWOOD'),('RESOURCE_EBONY'),('RESOURCE_STRAWBERRY'),('RESOURCE_SALMON'),('RESOURCE_BAMBOO'),
+    ('RESOURCE_ALABASTER'),('RESOURCE_QUARTZ'),('RESOURCE_LAPIS'),('RESOURCE_RUBY'),('RESOURCE_PLATINUM'),('RESOURCE_SEA_URCHIN'),
+    ('RESOURCE_COD'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_SAKURA'),('RESOURCE_POPPIES'),('RESOURCE_ORCA'),('RESOURCE_LION'),
+    ('RESOURCE_TRAVERTINE'),('RESOURCE_TOXINS'),('RESOURCE_SAFFRON'),('RESOURCE_ALOE'),('RESOURCE_MEDIHERBS'),
+    ('RESOURCE_TOMATO'),('RESOURCE_TIN'),('RESOURCE_RUBBER'),('RESOURCE_PINE'),('RESOURCE_OAK'),('RESOURCE_MUSSELS'),('RESOURCE_MUSHROOMS'),
+    ('RESOURCE_GRANITE'),('RESOURCE_LIMESTONE'),('RESOURCE_LEAD'),('RESOURCE_HAM'),('RESOURCE_DATES'),('RESOURCE_BERRIES'),('RESOURCE_BARLEY');
+
+insert or replace into EnglishText
+    (Tag,                                                                       Text)
+select
+    'LOC_PEDIA_RESOURCES_PAGE_' || ResourceType ||'_CHAPTER_HISTORY_PARA_1',    " "
+from HDResourceful2_Pedia_Text;
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                        Text)
+select
+    "zh_Hans_CN",   'LOC_PEDIA_RESOURCES_PAGE_' || ResourceType ||'_CHAPTER_HISTORY_PARA_1',    " "
+from HDResourceful2_Pedia_Text;

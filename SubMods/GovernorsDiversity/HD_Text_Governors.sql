@@ -6,13 +6,13 @@ values
     -- Reyna
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME",                     "Real Estate Developer"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "The city receives +3 [ICON_Gold] Gold from each District, and receives +1 [ICON_Gold] Gold from each improved tile."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "Commercial Hub and Harbor Districts receive +100% adjacency bonuses in the city."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "The city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "Commercial Hub and Harbor Districts receive +150% adjacency bonuses in the city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "The city receives +6 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "[ICON_Citizen] Citizens in the city produce +4 [ICON_GOLD] Gold."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "Financial Centre"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "+8% [ICON_Gold] Gold output for each Commercial and Harbor district building in the city."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Gain double yields for international [ICON_TradeRoute] Trade Routes from the city when player has the 'Exploration' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "+80% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic."),
     -- Victor
     ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
@@ -58,7 +58,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME",                                   "Paradise"),
     ("LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION",                    "All Builders trained in the city get +1 build charge and +1 [ICON_Movement] Movement."),
     ("LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION",                    "The city gets +20% production speed towards Wonders. When a Wonder is completed in the city, gain Great Engineer points equal to 20% of the cost."),
-    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Food] Food and +1 [ICON_Production] Production for all improved plots in the city ."),
+    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Production] Production for all improved plots in the city."), -- +1 [ICON_Food] Food and 
     ("LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "The city's improvements, buildings, and Districts cannot be damaged by Environmental Effects. +100% Districts adjacency yields in the city"),
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city gain +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement when the 'Urbanization Civic' is unlocked."),
     ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement (unlocked by Medieval Faires Civic) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."),
@@ -76,9 +76,9 @@ values
     ("GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，from Governor's Promotion"),
     ("GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，from Governor's Promotion"),
     -- Pingala
-    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN_DESCRIPTION",                     "+0.6 [ICON_CULTURE] Culture and 0.6 [ICON_SCIENCE] Science per turn for each [ICON_Citizen] Citizen in the city."),
-    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR_DESCRIPTION",                   "30% increase in [ICON_Culture] Culture generated by the city."),
-    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER_DESCRIPTION",                    "30% increase in [ICON_Science] Science generated by the city."),
+    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN_DESCRIPTION",                     "20% increase in [ICON_Science] Science and [ICON_Culture] Culture generated by the city."),
+    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR_DESCRIPTION",                   "+1.2 [ICON_CULTURE] Culture per turn for each [ICON_Citizen] Citizen in the city."),
+    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER_DESCRIPTION",                    "+1.2 [ICON_SCIENCE] Science per turn for each [ICON_Citizen] Citizen in the city."),
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_NAME",                     "Science and Education"),
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD",           "Every building in Campus District provide +5 [ICON_SCIENCE] Science and 10% increase in [ICON_Science] Science generated by the city. {LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION}"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "+200% [ICON_Tourism] Tourism from Great Works of Art, Music, and Writing in the city."),
@@ -100,13 +100,13 @@ values
     -- 瑞纳
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME",                     "地产商人"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "城市中每个区域+3 [ICON_Gold] 金币。城市中每个改良设施+1 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "城市中商业中心和港口的相邻加成+100%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "城市中商业中心和港口的相邻加成+150%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来6 [ICON_Gold] 金币的收入。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线收益翻倍。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "当玩家研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+80%。"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     -- 维克多
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "2回合就职。就职城市无法被围攻，城市防御+5 [ICON_STRENGTH] 战斗力。建造军营、港口和这些区域中的建筑时加速30%。"), -- 您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度
@@ -153,7 +153,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME",                                   "世外天堂"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION",                    "城市中生产的所有建造者+1建造次数，+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION",                    "城市在建造奇观时加速20%。此城市建成奇观后获得等同于其生产力20%的大工程师点数。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Production] 生产力。"), -- +1 [ICON_Food] 食物、
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。解锁“城市化”后可在全国修建“市立公园”。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”（由中世纪集市市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"),
@@ -171,9 +171,9 @@ values
     ("zh_Hans_CN",  "GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，来自总督晋升"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，来自总督晋升"),
     -- 平伽拉
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN_DESCRIPTION",                     "城市中每位 [ICON_Citizen] 公民 +0.6 [ICON_SCIENCE] 科技值和+0.6 [ICON_CULTURE] 文化值产出。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR_DESCRIPTION",                   "城市每回合产出的 [ICON_Culture] 文化值+30%。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER_DESCRIPTION",                    "城市每回合产出的 [ICON_Science] 科技值+30%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_LIBRARIAN_DESCRIPTION",                     "城市每回合产出的 [ICON_Science] 科技值和 [ICON_Culture] 文化值+20%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR_DESCRIPTION",                   "城市中每位 [ICON_Citizen] 公民 +1.2 [ICON_CULTURE] 文化值产出。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER_DESCRIPTION",                    "城市中每位 [ICON_Citizen] 公民 +1.2 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_NAME",                     "科教兴国"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD",           "城市中每座学院建筑提供 +5 [ICON_SCIENCE] 科技值，并为城市每回合产出的 [ICON_Science] 科技值+10%。{LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION}"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "城市中艺术、音乐和著作巨作提供的 [ICON_Tourism] 旅游业绩+200%。"),

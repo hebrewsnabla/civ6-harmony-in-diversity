@@ -75,6 +75,10 @@ delete from Resource_ValidTerrains where ResourceType in (select ResourceType fr
 delete from Resource_ValidFeatures where ResourceType in (select ResourceType from HDResourceful2_Basic);
 delete from Resource_Harvests where ResourceType in (select ResourceType from HDResourceful2_Basic);
 
+update Resources set ResourceClassType = 'RESOURCECLASS_LUXURY', Happiness = 4 
+	where ResourceType = 'RESOURCE_COD' or ResourceType = 'RESOURCE_SALMON' or ResourceType = 'RESOURCE_ALOE' or ResourceType = 'RESOURCE_MEDIHERBS' or ResourceType = 'RESOURCE_QUARTZ';
+update Resources set Happiness = 4 where ResourceType = 'RESOURCE_RUBY';
+
 -- Harvest
 insert or replace into Resource_Harvests
 	(ResourceType,				YieldType,			Amount)

@@ -65,7 +65,8 @@ update Units set
 	Cost = 200
 where UnitType = 'UNIT_SPY';
 
--- update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
+update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set BaseProbability = 16 where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
@@ -149,11 +150,11 @@ update Units set Cost = 690, Maintenance = 8, BaseMoves = 3, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MODERN_AT';
 
 -- Ranged
-update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 13, RangedCombat = 23, StrategicResource = NULL where UnitType = 'UNIT_ARCHER';
+update Units set Cost = 45, Maintenance = 1, BaseMoves = 2, Range = 2, Combat = 15, RangedCombat = 25, StrategicResource = NULL where UnitType = 'UNIT_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARCHER';
 -- update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 20, RangedCombat = 30, StrategicResource = NULL where UnitType = 'UNIT_COMPOSITE_BOWMAN';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_COMPOSITE_BOWMAN';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 30, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_CROSSBOWMAN';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 42, StrategicResource = NULL where UnitType = 'UNIT_CROSSBOWMAN';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CROSSBOWMAN';
 -- update Units set Cost = 140, Maintenance = 4, BaseMoves = 2, Range = 2, Combat = 40, RangedCombat = 50, StrategicResource = NULL where UnitType = 'UNIT_CULVERIN';
 -- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CULVERIN';
@@ -336,10 +337,10 @@ insert or replace into Units
     FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
 values
     ('UNIT_HD_BARBARIAN_GALLEY',        'LOC_UNIT_HD_BARBARIAN_GALLEY_NAME',        'LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION',
-    2,              3,           20,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              2,           10,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST'),
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION',
-    2,              3,           20,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              3,           15,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RANGED', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
 
 update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'

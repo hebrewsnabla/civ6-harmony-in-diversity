@@ -9,8 +9,8 @@ values
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (on Standard Speed). "),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_DESCRIPTION",          "Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (Standard Speed). (God of War Belief)"),
-    ("LOC_GOD_OF_WAR_GREAT_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",  "God of War Belief"),
-    ("LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION",            "When chosen, receive a free Monument in your capital. +10% [ICON_Culture] Culture if city has a Monument. May purchase Monument with [ICON_Faith] Faith."), --  Monument are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Monument.
+    ("LOC_GOD_OF_WAR_GREAT_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT","God of War Belief"),
+    ("LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION",            "+15% [ICON_Production] Production towards Ancient and Classical era wonders. When chosen, receive a free Monument in your capital. +10% [ICON_Culture] Culture if city has a Monument. May purchase Monument with [ICON_Faith] Faith."), --  Monument are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Monument.
     ("LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION",                 "When chosen, receive a free Granary in your capital. City growth rate is 15% higher if city has a Granary. May purchase Granary with [ICON_Faith] Faith."), --  Granary are 20% cheaper to purchase with [ICON_FAITH] Faith and [ICON_GOLD] Gold. +50% [ICON_production] Production towards Granary.
     ("LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "+50% construction speed towards defensive buildings. +75% [ICON_Production] Production towards Districts in cities without a Specialty district. +6 City [ICON_Strength] Defense Strength. +3 City [ICON_Ranged] Ranged Strength."),
     ("LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME",                     "Messenger of the Gods"),
@@ -38,16 +38,16 @@ values
     ("LOC_BELIEF_TENGRI_NAME",                                    "Tengri"),
     ("LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "Holy Site districts get +2 [ICON_Faith] Faith from each adjacent Pasture tile. Holy Site provides +1 [ICON_Production] Production to all adjacent Pasture tiles, and +1 [ICON_Faith] Faith to all Pasture tiles within the same city. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Pasture."),
     ("LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "+1 [ICON_Food] Food and +1 [ICON_Production] Production from [ICON_Resource_Wheat] Wheats, [ICON_Resource_Rice] Rices and [ICON_Resource_Maize] Maize. +1 [ICON_Gold] Gold from Farms. "),
-    ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Science] Science from Fishing Boats for the cities have Holy Site. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),
-    ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+1 [ICON_CULTURE] Culture to all cities adjacent to coasts or lakes. +1 [ICON_Food] Food from all coast and ocean tiles ."),
+    ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "+1 [ICON_Food] Food from Fishing Boats over Luxury Resources. +1 [ICON_Science] Science from Fishing Boats. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Fishing Boats."),
+    ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+2 [ICON_CULTURE] Culture to all cities adjacent to coasts or lakes. +1 [ICON_Food] Food from all coast and ocean tiles ."),
     ("LOC_BELIEF_OCEAN_MOTHER_NAME",                              "Ocean Mother"),
     ("LOC_BELIEF_HD_DRUID_NAME",                                  "Druid"),
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
     -- ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production."), -- +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors.
-    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. Your Harbor +1 [ICON_Production] Production. +2 [ICON_Gold] Gold from Fishing Boats adjacent Harbor."), 
+    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +2 [ICON_Production] Production for Harbor Districts. Every district provides +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
-    ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+2 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
+    ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+1 [ICON_Production] Production from Fishing Boats. Extra +1 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
     ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Government Plaza and Palace."),
     ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Accumulating Strategic resources gain an additional +1 per turn."),
@@ -55,11 +55,15 @@ values
     ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
     ("LOC_BELIEF_HD_HERMES_DL_DESCRIPTION",                       "+1 [ICON_TradeRoute] Trade Route capacity and receive a free Trader in the capital."),
     ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "Posterity of Mountain"),
-    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "+100% Campus district adjacency bonuses from the adjacent Mountain. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Mountain. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing to cities adjacent Mountain tiles."),
+    ("LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "Campus Districts and Holy Sites get extra standard adjacency bonus from Mountains. +2 [ICON_GreatProphet] Great Prophet point per turn for cities have Mountains. +1 [ICON_Amenities] Amenity and +1 [ICON_Housing] Housing for cities that adjacent to Mountains."),
     ("LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "Song of Siren"),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus receive an additional standard adjacency bonus for being adjacent to Reef or Klep. +2 [ICON_Production] Production from Reef and Klep."),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus Districts get extra major adjacency bonus from Reefs. +2 [ICON_Production] Production from Reef."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
-    ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts;City Center receive +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Coast tiles.");
+    ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts; City Center receives +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Lake or Coast tiles."),
+    ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "The Wolf God"),
+    ("LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "+1 [ICON_CULTURE] Culture from Camps over Luxury and Bonus resources. Holy Site provides +1 [ICON_Faith] Faith to all Camps in this city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns Camps over Luxury or Bonus resources."),
+    ("LOC_BELIEF_HD_SUN_GOD_NAME",                                "Apollo"),
+    ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Holy Site provides +1 [ICON_Science] Science to all Farms over Luxury and Bonus resources in this city. +1 [ICON_Faith] Faith from Farms. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns Farms over Luxury or Bonus resources.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -72,8 +76,8 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_DESCRIPTION",          "战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。（战争之神）"),
-    ("zh_Hans_CN",  "LOC_GOD_OF_WAR_GREAT_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",  "战争之神"),
-    ("zh_Hans_CN",  "LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION",            "选择后即可在首都中获得一个免费的纪念碑。拥有纪念碑的城市增加10% [ICON_Culture] 文化值。可以使用 [ICON_Faith] 信仰值购买纪念碑"), -- ，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买纪念碑的费用降低20%。纪念碑的建造速度+50%。
+    ("zh_Hans_CN",  "LOC_GOD_OF_WAR_GREAT_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT","战争之神"),
+    ("zh_Hans_CN",  "LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION",            "远古和古典奇观+15% [ICON_Production] 生产力。选择后即可在首都中获得一个免费的纪念碑。拥有纪念碑的城市增加10% [ICON_Culture] 文化值。可以使用 [ICON_Faith] 信仰值购买纪念碑。"), -- ，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买纪念碑的费用降低20%。纪念碑的建造速度+50%。
     ("zh_Hans_CN",  "LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION",                 "选择后即可在首都中获得一个免费的粮仓。拥有粮仓的城市余粮增加15%。可以使用 [ICON_Faith] 信仰值购买粮仓。"), -- ，用 [ICON_FAITH] 信仰值和 [ICON_GOLD] 金币购买粮仓的费用降低20%。粮仓的建造速度+50%
     ("zh_Hans_CN",  "LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "建造防御建筑时加速50%。没有专业化区域的城市建造区域+75% [ICON_Production] 生产力。城市 [ICON_Strength] 防御力+6，城市 [ICON_Ranged] 远程攻击力+3。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_NAME",                     "神使"),
@@ -102,15 +106,15 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "圣地区域从每个相邻的牧场单元格+2 [ICON_Faith] 信仰值，给相邻的牧场单元格 +1 [ICON_Production] 生产力，给本城的牧场 +1 [ICON_Faith] 信仰值。 如城市中有牧场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。 所有农场+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Science] 科技值，改良奢侈资源的渔船额外+1 [ICON_Food] 食物。如城市中有渔船，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "位于海边或湖边的城市+1 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
+    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "位于海边或湖边的城市+2 [ICON_CULTURE] 文化值。所有近海和海洋单元格+1 [ICON_Food] 食物。 "),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_NAME",                                  "德鲁伊"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "森林单元格+1 [ICON_Food] 粮食，雨林单元格+1 [ICON_Production] 生产力，改良后的森林和雨林单元格+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "妈祖信仰"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边或湖边的城市+2 [ICON_Production] 生产力。您境内位于海岸单元格的区域和奇观+1 [ICON_Production] 生产力。"), -- 从港口获得的 [ICON_GreatAdmiral] 海军提督点数+2。
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+1 [ICON_Production] 生产力。港口给相邻渔船+2 [ICON_Gold] 金币。"), 
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+2 [ICON_Production] 生产力。渔船相邻每个区域获得+2 [ICON_Gold] 金币。"), 
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
-    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "改良加成资源的渔船+2 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
+    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "渔船+1 [ICON_Production] 生产力，改良加成资源的渔船额外+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "城市中每有一座宫殿或市政广场区域，便+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),
@@ -120,6 +124,10 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_NAME",                  "山之苗裔"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_POSTERITY_OF_MOUNTAIN_DL_DESCRIPTION",        "学院和圣地靠山获得的加成翻倍，有山脉的城市+2 [ICON_GreatProphet] 大预言家点数，相邻山脉的市中心+1 [ICON_Housing] 住房，+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_NAME",                          "塞壬之歌"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石和海藻森林为学院提供额外标准相邻，礁石和海藻森林+2 [ICON_Production] 生产力"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "礁石为学院提供额外大量相邻加成，礁石单元格+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_NAME",                                  "御岳"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度， +2 [ICON_Housing] 住房；每相邻两块海洋单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "沿海市中心+2 [ICON_Amenities] 宜居度，+2 [ICON_Housing] 住房；每相邻两块近海或湖泊单元格，市中心额外+1 [ICON_Culture] 文化值，+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_NAME",                               "牧狼神"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "采集奢侈品资源和加成资源的营地+1 [ICON_Culture] 文化值。圣地区域给所在城市的营地+1 [ICON_Faith] 信仰值。如城市拥有采集奢侈或加成资源的营地，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_NAME",                                "太阳神"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "圣地区域给所在城市采集奢侈品资源和加成资源的农场+1 [ICON_Science] 科技值。农场+1 [ICON_Faith] 信仰值。如城市拥有采集奢侈或加成资源的农场，则每回合+2 [ICON_GreatProphet] 大预言家点数。");

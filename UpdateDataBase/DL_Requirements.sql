@@ -92,9 +92,21 @@ insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'DistrictType', DistrictType from Districts;
 insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'REQUIREMENT_CITY_HAS_DISTRICT' from Districts;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'REQUIRES_CITY_HAS_' || ReplacesDistrictType || '_UDMET', 'REQUIRES_CITY_HAS_' || CivUniqueDistrictType || '_RAW' from DistrictReplaces;
+
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'RequirementSetId', 'REQUIRES_CITY_HAS_' || DistrictType || '_UDMET' from Districts;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Districts;
 	
 -- Buildings
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -170,14 +182,14 @@ values
 -- Misc
 
 -- new Terrain class
-insert or replace into TerrainClasses
+insert or ignore into TerrainClasses
 	(TerrainClassType,					Name)
 values
 	('TERRAIN_CLASS_TUNDRA_OR_SNOW',	'LOC_TERRAIN_CLASS_TUNDRA_OR_SNOW_NAME'),
 	('TERRAIN_CLASS_FLATTEN',			'LOC_TERRAIN_CLASS_FLATTEN_NAME'),
 	('TERRAIN_CLASS_HILLS',				'LOC_TERRAIN_CLASS_HILLS_NAME');
 
-insert or replace into TerrainClass_Terrains
+insert or ignore into TerrainClass_Terrains
 	(TerrainClassType,					TerrainType)
 values
 	('TERRAIN_CLASS_TUNDRA_OR_SNOW',	'TERRAIN_TUNDRA'),
@@ -195,7 +207,7 @@ values
 	('TERRAIN_CLASS_HILLS',				'TERRAIN_TUNDRA_HILLS'),
 	('TERRAIN_CLASS_HILLS',				'TERRAIN_SNOW_HILLS');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType,							Inverse)
 values
 	-- ('REQUIRES_UNIT_NOT_BARBARIAN_GALLEY', 			'REQUIREMENT_UNIT_TYPE_MATCHES',			1),
@@ -203,7 +215,7 @@ values
 	('REQUIRES_PLOT_HAS_NOT_OCEAN',					'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',	1),
 	('REQUIRES_CITY_HAS_NO_FILM_STUDIO',			'REQUIREMENT_CITY_HAS_BUILDING',			1);
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
     ('REQUIRES_WITHIN_NINE_TILES_FROM_OWNER',       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
@@ -220,10 +232,13 @@ values
 	-- ('REQUIRES_GENERAL_SERVICE_AND_WITHIN_9TILES',	'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'),
 	('REQUIRES_AIRPORT_AND_WITHIN_9TILES',			'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'),
 	('REQUIRES_PLOT_WITHIN_EIGHT_CITY_CENTER',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES'),
+	('PLOT_IS_COASTAL_LAND',						'REQUIREMENT_PLOT_IS_COASTAL_LAND'),
+	('REQUIRES_PLOT_HAS_WORKSHOP_IMPROVEMENTS',		'REQUIREMENT_REQUIREMENTSET_IS_MET'),
+	('REQUIRES_PLOT_HAS_MANU_IMPROVEMENTS',			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('HD_PLOT_IS_COAST_NOT_LAKE_MET',				'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('HD_PLOT_ADJACENT_TO_COAST_NOT_LAKE_MET',		'REQUIREMENT_REQUIREMENTSET_IS_MET');	
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,									Name,				Value)
 values
 	-- it's actually checking is there are {Amount - 1} tiles
@@ -261,13 +276,16 @@ values
 	('REQUIRES_PLOT_WITHIN_EIGHT_CITY_CENTER',		'DistrictType',		'DISTRICT_CITY_CENTER'),
 	('REQUIRES_PLOT_WITHIN_EIGHT_CITY_CENTER',		'MinRange',			0),
 	('REQUIRES_PLOT_WITHIN_EIGHT_CITY_CENTER',		'MaxRange',			8),
+	('REQUIRES_PLOT_HAS_WORKSHOP_IMPROVEMENTS',		'RequirementSetId',	'PLOT_HAS_WORKSHOP_IMPROVEMENTS_REQUIREMENTS'),
+	('REQUIRES_PLOT_HAS_MANU_IMPROVEMENTS',			'RequirementSetId',	'PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS'),
 	('HD_PLOT_IS_COAST_NOT_LAKE_MET',				'RequirementSetId',	'PLOT_IS_COAST_NOT_LAKE_REQUIREMENTS'),
 	('HD_PLOT_ADJACENT_TO_COAST_NOT_LAKE_MET',		'RequirementSetId',	'PLOT_IS_COASTAL_LAND_REQUIREMENTS');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
 	-- Improvements
+	('PLOT_IS_COASTAL_LAND_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIREMENTSET_TEST_ALL'),
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIREMENTSET_TEST_ALL'),
@@ -292,11 +310,14 @@ values
 	-- ('CITY_HAS_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',	'REQUIREMENTSET_TEST_ALL'),
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_IS_OR_ADJACENT_TO_COAST_NOT_LAKE',					'REQUIREMENTSET_TEST_ANY'),
-	('PLAYER_NOT_HAS_GOLDEN_AGE',									'REQUIREMENTSET_TEST_ALL');	
+	('PLAYER_NOT_HAS_GOLDEN_AGE',									'REQUIREMENTSET_TEST_ALL'),
+	('NON_WONDER_PLOT_IS_OR_ADJACENT_TO_COAST',						'REQUIREMENTSET_TEST_ALL'),
+	('DISTRICT_IS_HOLY_SITE_ADJACENT_TO_COAST',						'REQUIREMENTSET_TEST_ALL');	
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
+	('PLOT_IS_COASTAL_LAND_REQUIREMENTS',							'PLOT_IS_COASTAL_LAND'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
@@ -340,25 +361,29 @@ values
 	('CITY_HAS_MAGNUS_WITHIN_RANGE',								'REQUIRES_CITY_HAS_BUILDING_DUMMY_MAGNUS'),
 	('HD_PLOT_IS_OR_ADJACENT_TO_COAST_NOT_LAKE',					'HD_PLOT_ADJACENT_TO_COAST_NOT_LAKE_MET'),
 	('HD_PLOT_IS_OR_ADJACENT_TO_COAST_NOT_LAKE',					'HD_PLOT_IS_COAST_NOT_LAKE_MET'),
-	('PLAYER_NOT_HAS_GOLDEN_AGE',									'REQUIRES_PLAYER_NOT_HAS_GOLDEN_AGE');
+	('PLAYER_NOT_HAS_GOLDEN_AGE',									'REQUIRES_PLAYER_NOT_HAS_GOLDEN_AGE'),
+	('NON_WONDER_PLOT_IS_OR_ADJACENT_TO_COAST',						'PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS'),
+	('NON_WONDER_PLOT_IS_OR_ADJACENT_TO_COAST',						'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
+	('DISTRICT_IS_HOLY_SITE_ADJACENT_TO_COAST',						'PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS'),
+	('DISTRICT_IS_HOLY_SITE_ADJACENT_TO_COAST',						'REQUIRES_DISTRICT_IS_HOLY_SITE');
 
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType from Resources;
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,									RequirementSetType)
 values
 	('DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
 select 
 	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS',		'REQUIRES_DISTRICT_IS_' || DistrictType
 from Districts where RequiresPopulation = 1;
 
 -- New city center buildings
-insert or replace into RequirementSets 
+insert or ignore into RequirementSets 
 	(RequirementSetId, 						RequirementSetType) 
 values
 	('HD_PLOT_HAS_FARM_RESOURCE_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY'),
@@ -390,7 +415,7 @@ from Resources r, Improvement_ValidResources i
 where r.ResourceType = i.ResourceType and (i.ImprovementType = 'IMPROVEMENT_PASTURE' or i.ImprovementType = 'IMPROVEMENT_CAMP'
 	or r.ResourceClassType = 'RESOURCECLASS_STRATEGIC');
 
-insert or replace into RequirementSetRequirements 
+insert or ignore into RequirementSetRequirements 
     (RequirementSetId,						RequirementId) 
 values
 	('KAREZ_REQUIREMENT',					'REQUIRES_PLOT_IS_HILLS'),
@@ -419,7 +444,10 @@ values
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_FOREST_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_JUNGLE_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_HAS_MARSH_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL');
+	('PLOT_HAS_MARSH_REQUIREMENT',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_DISTRICT_IS_CITY_CENTER',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLAYER_HAS_TECH_WRITING',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE',				'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
@@ -442,7 +470,10 @@ values
 	('ATTACKING_DISTRICTS_REQUIREMENTS',				'OPPONENT_IS_DISTRICT'),
 	('PLOT_HAS_FOREST_REQUIREMENT',						'PLOT_IS_FOREST_REQUIREMENT'),
 	('PLOT_HAS_JUNGLE_REQUIREMENT',						'PLOT_IS_JUNGLE_REQUIREMENT'),
-	('PLOT_HAS_MARSH_REQUIREMENT',						'PLOT_IS_MARSH_REQUIREMENT');
+	('PLOT_HAS_MARSH_REQUIREMENT',						'PLOT_IS_MARSH_REQUIREMENT'),
+	('HD_DISTRICT_IS_CITY_CENTER',						'REQUIRES_DISTRICT_IS_DISTRICT_CITY_CENTER'),
+	('HD_PLAYER_HAS_TECH_WRITING',						'HD_REQUIRES_PLAYER_HAS_TECH_WRITING'),
+	('HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE',				'REQUIRES_PLAYER_HAS_CIVIC_FOREIGN_TRADE');
 
 -- RequirementSets
 insert or ignore into RequirementSets
@@ -458,6 +489,10 @@ values
 	('HD_PLOT_HAS_BONUS_RESOURCE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_HAS_STRATEGIC_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_HAS_LUXURY_OR_BONUS_RESOURCE_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_HAS_WORKSHOP_RESOURCES_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_WORKSHOP_IMPROVEMENTS_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_HAS_MANU_RESOURCES_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS',			'REQUIREMENTSET_TEST_ANY'),
 	-- buildings
 	('HD_PLOT_HAS_PLANTATION_OVER_BONUS_RESOURCES',		'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_HAS_CAMP_OVER_BONUS_RESOURCES',			'REQUIREMENTSET_TEST_ALL'),
@@ -512,6 +547,17 @@ values
 	('HD_PLOT_HAS_STRATEGIC_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_STRATEGIC'),
 	('HD_PLOT_HAS_LUXURY_OR_BONUS_RESOURCE_REQUIREMENTS', 'REQUIRES_PLOT_HAS_LUXURY'),
 	('HD_PLOT_HAS_LUXURY_OR_BONUS_RESOURCE_REQUIREMENTS', 'REQUIRES_PLOT_HAS_BONUS'),
+	('PLOT_HAS_WORKSHOP_RESOURCES_REQUIREMENTS',		'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+	('PLOT_HAS_WORKSHOP_RESOURCES_REQUIREMENTS',		'REQUIRES_PLOT_HAS_WORKSHOP_IMPROVEMENTS'),
+	('PLOT_HAS_WORKSHOP_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_MINE'),
+	('PLOT_HAS_WORKSHOP_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_QUARRY'),
+	('PLOT_HAS_WORKSHOP_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_MANU_RESOURCES_REQUIREMENTS',			'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+	('PLOT_HAS_MANU_RESOURCES_REQUIREMENTS',			'REQUIRES_PLOT_HAS_MANU_IMPROVEMENTS'),
+	('PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_HAS_FARM'),
+	('PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_HAS_PLANTATION'),
+	('PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_HAS_PASTURE'),
+	('PLOT_HAS_MANU_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_HAS_CAMP'),
 	-- Lumber mill
 	-- ('HAS_CONSTRUCTION_AND_PLOT_ADJACENT_TO_RIVER_REQUIREMENTS',	'REQUIRES_PLOT_ADJACENT_TO_RIVER'),
 	-- ('HAS_CONSTRUCTION_AND_PLOT_ADJACENT_TO_RIVER_REQUIREMENTS',	'HD_REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION'),
@@ -603,6 +649,22 @@ values
 	('IS_FARM_NOT_ADJACENT_TO_RIVER',					'REQUIRES_PLOT_NOT_ADJACENT_TO_RIVER'),
 	('IS_FARM_NOT_ADJACENT_TO_RIVER',					'REQUIRES_PLOT_HAS_FARM');
 
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+values
+	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIREMENTSET_TEST_ALL'),
+	('PAN_CITY_HAS_IMPROVED_LUMBER_MILL_RESOURCE',			    'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			    	'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+values
+	('PLOT_HAS_LUMBER_MILL_REQUIREMENTS',			            'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUXURY'),
+	('PLOT_HAS_LUXURY_LUMBER_MILL_REQUIREMENTS',			    'REQUIRES_PLOT_HAS_LUMBER_MILL'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_BONUS'),
+	('PLOT_HAS_BONUS_LUMBER_MILL_REQUIREMENTS',			        'REQUIRES_PLOT_HAS_LUMBER_MILL');
+
 -- Policies (include Golden Age)
 insert or ignore into RequirementSets
 	(RequirementSetId,							RequirementSetType)
@@ -669,6 +731,11 @@ values
 	('PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_BONUS_FISHING_BOATS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
+	--
+	('HD_CITY_HAS_RESOURCE_CAMP',								'REQUIREMENTSET_TEST_ANY'),
+	('HD_CITY_HAS_RESOURCE_FARM',								'REQUIREMENTSET_TEST_ANY'),
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
 	-- Follower
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
 
@@ -691,6 +758,12 @@ from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION'
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'GOD_OF_THE_SEA_CITY_HAS_FISHINGBOATS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+select	'HD_CITY_HAS_RESOURCE_CAMP', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_CAMP';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+select	'HD_CITY_HAS_RESOURCE_FARM', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
+from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM';
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
@@ -748,62 +821,67 @@ values
 	('PLOT_HAS_BONUS_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_BONUS'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_FISHINGBOATS'),
 	('PLOT_HAS_LUXURY_FISHING_BOATS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_LUXURY'),
+	-------
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_FARM'),
+	('HD_PLOT_HAS_FARM_AND_BONUS_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_BONUS'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_FARM'),
+	('HD_PLOT_HAS_FARM_AND_LUXURY_RESOURCE_REQUIREMENTS',		'REQUIRES_PLOT_HAS_LUXURY'),
 	-- Follower
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIRES_PLOT_HAS_HOLY_SITE'),
 	('RELIGIOUS_ART_ADJACENCY_CULTURE_REQUIREMENTS',			'REQUIRES_CITY_FOLLOWS_RELIGION');
 
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER', 'REQUIRES_CITY_HAS_' || FeatureType from Features where NaturalWonder = 1;
 
 -- AI 
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIREMENTSET_TEST_ALL' from Eras;
 
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_AI' from Eras;
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_HIGH_DIFFICULTY' from Eras;
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_' || EraType from Eras;
 
--- insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+-- insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 -- select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIREMENTSET_TEST_ALL' from Eras;
 
--- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+-- insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 -- select 'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType, 'REQUIRES_PLAYER_IS_AI' from Eras;
 
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType)
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIREMENTSET_TEST_ALL'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIRES_PLAYER_IS_AI'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'REQUIRES_DIFFICULTY_AT_LEAST_DEITY'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType, 'HD_REQUIRES_PLAYER_CAN_SEE_' || ResourceType
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- 6 or 8 difficulty.
-insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
+insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_DIFFICULTY_AT_LEAST_EMPEROR',					'Handicap',	'DIFFICULTY_EMPEROR'),
 	('REQUIRES_DIFFICULTY_AT_LEAST_IMMORTAL',					'Handicap',	'DIFFICULTY_IMMORTAL'),
 	('REQUIRES_DIFFICULTY_AT_LEAST_DEITY',						'Handicap',	'DIFFICULTY_DEITY');
 
-insert or replace into Requirements (RequirementId,				RequirementType) values
+insert or ignore into Requirements (RequirementId,				RequirementType) values
 	('REQUIRES_DIFFICULTY_AT_LEAST_EMPEROR',					'REQUIREMENT_PLAYER_HANDICAP_AT_OR_ABOVE'),
 	('REQUIRES_DIFFICULTY_AT_LEAST_IMMORTAL',					'REQUIREMENT_PLAYER_HANDICAP_AT_OR_ABOVE'),
 	('REQUIRES_DIFFICULTY_AT_LEAST_DEITY',						'REQUIREMENT_PLAYER_HANDICAP_AT_OR_ABOVE');
 
-insert or replace into RequirementSets (RequirementSetId,		RequirementSetType) values
+insert or ignore into RequirementSets (RequirementSetId,		RequirementSetType) values
 	('PLAYER_IS_AT_LEAST_EMPEROR_DIFFICULTY_AI',				'REQUIREMENTSET_TEST_ALL'),
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI',					'REQUIREMENTSET_TEST_ALL'),
 	('PLAYER_IS_AT_LEAST_IMMORTAL_DIFFICULTY_HUMAN',			'REQUIREMENTSET_TEST_ALL'),
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN',				'REQUIREMENTSET_TEST_ALL'),
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',	'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('PLAYER_IS_AT_LEAST_EMPEROR_DIFFICULTY_AI',				'REQUIRES_PLAYER_IS_AI'),
@@ -819,21 +897,21 @@ values
 	('PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',	'REQUIRES_PLAYER_HAS_AT_LEAST_ONE_CITY');
 
 -- PLOT IS IMPROVED
-insert or replace into Requirements (RequirementId,	RequirementType,	Inverse)	values
+insert or ignore into Requirements (RequirementId,	RequirementType,	Inverse)	values
 	('REQUIRES_PLOT_IS_IMPROVED',	'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',	0);
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)	values
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)	values
 	('PLOT_IS_IMPROVED',	'REQUIRES_PLOT_IS_IMPROVED');
-insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	values
+insert or ignore into RequirementSets (RequirementSetId,	RequirementSetType)	values
 	('PLOT_IS_IMPROVED',	'REQUIREMENTSET_TEST_ALL');
 
 -- City Park
-insert or replace into RequirementSets 
+insert or ignore into RequirementSets 
 	(RequirementSetId,												RequirementSetType) 
 values
 	('REQUIRE_PLOT_ADJACENT_TO_OWNER',								'REQUIREMENTSET_TEST_ALL'),
 	('CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION_AND_ADJACENT',	'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
 	('REQUIRE_PLOT_ADJACENT_TO_OWNER',								'ADJACENT_TO_OWNER'),
@@ -841,7 +919,7 @@ values
 	('CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION_AND_ADJACENT',	'REQUIRES_CITY_HAS_GOVERNOR_PROMOTION_PARKS_RECREATION');
 
 --UNIT_IS_RELIGIOUS_ALL
-insert or replace into RequirementSetRequirements 
+insert or ignore into RequirementSetRequirements 
 	(RequirementSetId,				RequirementId)	
 values
 	('UNIT_IS_LAND_COMBAT',			'REQUIREMENT_UNIT_IS_LAND_COMBAT'),
@@ -855,13 +933,13 @@ values
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIRES_UNIT_IS_UNIT_GURU'),
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIRES_UNIT_IS_UNIT_WARRIOR_MONK');
 
-insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	values
+insert or ignore into RequirementSets (RequirementSetId,	RequirementSetType)	values
 	('UNIT_IS_LAND_COMBAT',			'REQUIREMENTSET_TEST_ALL'),
 	('UNIT_IS_RELIGOUS_ALL_AND_MONK','REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGOUS_ALL',		'REQUIREMENTSET_TEST_ANY');
 
 --Player_Can_See_Strategic resources(Hattusa)
-insert or replace into RequirementSetRequirements 
+insert or ignore into RequirementSetRequirements 
 	(RequirementSetId,				RequirementId)	
 values
 	('PLAYER_CAN_SEE_HORSES',		'REQUIRES_PLAYER_CAN_SEE_HORSES'),
@@ -872,7 +950,7 @@ values
 	('PLAYER_CAN_SEE_ALUMINUM',		'REQUIRES_PLAYER_CAN_SEE_ALUMINUM'),
 	('PLAYER_CAN_SEE_URANIUM',		'REQUIRES_PLAYER_CAN_SEE_URANIUM');
 
-insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
+insert or ignore into RequirementSets (RequirementSetId,	RequirementSetType)	
 values
 	('PLAYER_CAN_SEE_HORSES',		'REQUIREMENTSET_TEST_ALL'),
 	('PLAYER_CAN_SEE_IRON',			'REQUIREMENTSET_TEST_ALL'),
@@ -884,13 +962,13 @@ values
 
 -- NOT CITY CENTER
 --TOWER_BRIDGE at war with any Major
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType,									Inverse)
 values
 	('REQUIRES_DISTRICT_IS_NOT_CITY_CENTER',		'REQUIREMENT_DISTRICT_TYPE_MATCHES',				1),
 	('REQUIRES_PLAYER_AT_WAR_WITH_ANY_MAJOR',		'REQUIREMENT_PLAYER_IS_AT_PEACE_WITH_ALL_MAJORS',	1);
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_JUNGLE',			'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES'),
@@ -899,7 +977,7 @@ values
 	('REQUIRES_PLOT_ADJACENT_VESUVIUS',				'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES'),
 	('REQUIRES_PLOT_ADJACENT_KILIMANJARO',			'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,								Name,				Value)
 values
 	('REQUIRES_DISTRICT_IS_NOT_CITY_CENTER',	'DistrictType',		'DISTRICT_CITY_CENTER'),
@@ -909,7 +987,7 @@ values
 	('REQUIRES_PLOT_ADJACENT_KILIMANJARO',		'FeatureType',		'FEATURE_KILIMANJARO');
 
 -- support for Viking DLC EYJAFJALLAJOKULL
-insert or replace into RequirementArguments (RequirementId,	Name,	Value)
+insert or ignore into RequirementArguments (RequirementId,	Name,	Value)
 select	'REQUIRES_PLOT_ADJACENT_EYJAFJALLAJOKULL',	'FeatureType',	'FEATURE_EYJAFJALLAJOKULL'
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_EYJAFJALLAJOKULL');
 
@@ -933,11 +1011,11 @@ values
 	('DISTRICTS_ON_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',			'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
 	('HD_DISTRICTS_IS_NOT_WONDERS_REQUIREMENTS',				'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER');
 
--- insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
+-- insert or ignore into RequirementSetRequirements   (RequirementSetId,   RequirementId)
 -- select 'HD_DISTRICTS_NOT_CITY_CENTER_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
 
 -- AYUTTHAYA
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
 	('MINOR_3DISTRICTS_CULTURE_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
@@ -948,7 +1026,7 @@ values
 	('PLOT_ADJACENT_TO_VOLCANO_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
 	('CITY_HAS_ARENA_AND_8_POP',							'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
 	('THE_HOME_CONTINENT_NEW_REQUIREMENT',					'REQUIRES_PLOT_IS_OWNER_CAPITAL_CONTINENT'),
@@ -969,21 +1047,21 @@ values
 	('CITY_HAS_ARENA_AND_8_POP',							'REQUIRES_CITY_HAS_ARENA'),
 	('CITY_HAS_ARENA_AND_8_POP',							'REQUIRES_CITY_HAS_8_POPULATION');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,														RequirementType)
 values
 	('HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT',						'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB',	'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
 -- Wat Arun
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
 	('PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_IS_SPECIALTY_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
 	('PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS',		'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
@@ -993,17 +1071,17 @@ values
 	('PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',				'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
 	('PLOT_IS_DISTRICT_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIRES_PLOT_ADJACENT_TO_RIVER');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,														Name,				Value)
 values
 	('HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT',						'RequirementSetId',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'),
 	('REQUIRES_DISTRICT_IS_WONDER_THEATER_HOLY_SITE_COMMERCIAL_HUB',	'RequirementSetId',	'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS');
 
 --Gilgamesh Ziggurat
-insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+insert or ignore into RequirementSets	(RequirementSetId,	RequirementSetType)
 	select 'ZIGGURAT_' || EraType,	'REQUIREMENTSET_TEST_ALL'		from Eras where EraType != 'ERA_ANCIENT';
 
-insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+insert or ignore into RequirementSetRequirements	(RequirementSetId,	RequirementId)
 	select 'ZIGGURAT_' || EraType,	'REQUIRES_PLAYER_IS_' || EraType 	from Eras where EraType != 'ERA_ANCIENT';
 
 -- Unit promotions
@@ -1024,7 +1102,7 @@ values
 	('OPPONENT_IS_NOT_DISTRICT',					'REQUIREMENT_OPPONENT_IS_DISTRICT',			1);
 
 -- 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
 	('HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
@@ -1052,7 +1130,7 @@ values
 	('ATTACK_NAVAL_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL'),
 	('WOLFPACK_ADJACENT_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS',					'HD_REQUIRES_UNIT_IS_NOT_UNIT_SPY'),
@@ -1100,14 +1178,14 @@ values
 	('WOLFPACK_ADJACENT_REQUIREMENTS',							'ADJACENT_TO_OWNER'),
 	('WOLFPACK_ADJACENT_REQUIREMENTS',							'REQUIRES_UNIT_IS_NAVAL_RAIDER');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType,							Inverse)
 values
 	('REQUIRES_PLOT_IS_NOT_FOREST',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1),
 	('REQUIRES_PLOT_IS_NOT_JUNGLE',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1),
 	('REQUIRES_PLOT_IS_NOT_MARSH',					'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',	1);
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_PLOT_HAS_FOREST_OR_JUNGLE',			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
@@ -1116,7 +1194,7 @@ values
 	('REQUIRES_PLOT_HAS_CITY_CENTER',				'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES'),
 	('OPPONENT_IS_NAVAL_REQUIREMENT',				'REQUIREMENT_OPPONENT_UNIT_TAG_MATCHES');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,							Name,					Value)
 values
 	('REQUIRES_PLOT_IS_NOT_FOREST',			'FeatureType',			'FEATURE_FOREST'),
