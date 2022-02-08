@@ -163,6 +163,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_NAME",              "圣盾"),
+    ("zh_Hans_CN",  "LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_NAME",              "护盾"),
     ("zh_Hans_CN",  "LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_DESCRIPTION",       "格挡每回合受到的第一次非致命攻击。"),
     ("zh_Hans_CN",  "LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_POP",               "格挡");

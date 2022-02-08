@@ -475,3 +475,25 @@ values
     ('PLOT_HAS_SNOW_CAMP_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
     ('PLOT_HAS_SNOW_FARM_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
     ('PLOT_HAS_SNOW_LUMBER_MILL_REQUIREMENTS',     'REQUIRES_PLOT_HAS_SNOW');
+
+-- 圣殿骑士 by xiaoxiao
+insert or replace into Tags
+    (Tag,                       Vocabulary)
+values
+    ('CLASS_ELEANOR_TEMPLAR',   'ABILITY_CLASS');
+insert or replace into Types 
+	(Type, 												Kind)
+values
+	('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',	'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('UNIT_ELEANOR_TEMPLAR',                            'CLASS_ELEANOR_TEMPLAR'),
+    ('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN', 'CLASS_ELEANOR_TEMPLAR');
+insert or replace into UnitAbilities
+	(UnitAbilityType, Name, Description, Inactive)
+values
+	('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',
+    'LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_NAME',
+    'LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_DESCRIPTION',
+    0);
