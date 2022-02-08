@@ -1942,7 +1942,7 @@ values
 insert or replace into BeliefModifiers
 	(BeliefType,						ModifierID)
 values
-    -- ('BELIEF_ABBOT',                    'ABBOT_HOLY_SITE_PRODUCTION'),
+    ('BELIEF_ABBOT',                    'ABBOT_HOLY_SITE_PRODUCTION'),
     -- ('BELIEF_ABBOT',              		'BELIEF_WORK_ETHIC_PRODUCTION_TINY'),
     ('BELIEF_ABBOT',              		'BELIEF_WORK_ETHIC_PRODUCTION_MEDIUM'),
     ('BELIEF_ABBOT',              		'BELIEF_WORK_ETHIC_PRODUCTION_LARGE'),
