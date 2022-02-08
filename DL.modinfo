@@ -1225,6 +1225,7 @@
       <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
       <File>Gameplay/Wonders.lua</File>
+      <File>Gameplay/UnitAbilities.lua</File>
     </AddGameplayScripts>
     <!-- UI scripts for gameplay -->
     <AddUserInterfaces id="DL_Scripts_Interface" criteria="Expansion2">
@@ -1525,6 +1526,7 @@
     <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
     <File>Gameplay/Wonders.lua</File>
+    <File>Gameplay/UnitAbilities.lua</File>
     <!-- UI scripts -->
     <!-- <File>Gameplay/Governors_Interface.lua</File> -->
     <!-- <File>Gameplay/Governors_Interface.xml</File> -->

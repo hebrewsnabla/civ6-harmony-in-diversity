@@ -2132,3 +2132,19 @@ update ModifierArguments set Value = 'DISTRICT_HARBOR' where ModifierId = 'TRAIT
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_ENCAMPMENT_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_HOLY_SITE_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_THEATER_DISTRICT_PRODUCTION' and Name = 'Amount';
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+values
+	('ALL_UNITS_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+insert or replace into ModifierArguments
+	(ModifierId,											Name,			Value)
+values
+	('ALL_UNITS_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',	'AbilityType',	'ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN');
+/*
+-- add the modifier to China
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_DYNASTIC_CYCLE',	'ALL_UNITS_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN');
+*/
