@@ -275,3 +275,11 @@ insert or replace into Improvement_Adjacencies
 select
 	'IMPROVEMENT_LAND_POLDER',	YieldChangeId
 from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';
+
+-- 独石教堂
+delete from Improvement_YieldChanges where ImprovementType = "IMPROVEMENT_ROCK_HEWN_CHURCH";
+insert or replace into Improvement_YieldChanges
+	(ImprovementType, YieldType, YieldChange)
+values
+	("IMPROVEMENT_ROCK_HEWN_CHURCH", "YIELD_FOOD", 1),
+	("IMPROVEMENT_ROCK_HEWN_CHURCH", "YIELD_FAITH", 1);
