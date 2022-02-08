@@ -100,8 +100,12 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH', Num
 update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_UNIT_AND_IMPROVEMENT', ImprovementType = 'IMPROVEMENT_MINE', 
     ResourceType = 'RESOURCE_NITER', Unit1Type = 'UNIT_CARAVEL' where TechnologyType = 'TECH_SQUARE_RIGGING';
     -- 【膛线】科技尤里卡改为：用火枪手击杀一个单位
-update Boosts set BoostClass = 'BOOST_TRIGGER_KILL_WITH', ImprovementType = NULL, 
-    ResourceType = Null, Unit1Type = 'UNIT_MUSKETMAN' where TechnologyType = 'TECH_RIFLING';
+--update Boosts set BoostClass = 'BOOST_TRIGGER_KILL_WITH', ImprovementType = NULL, 
+--    ResourceType = Null, Unit1Type = 'UNIT_MUSKETMAN' where TechnologyType = 'TECH_RIFLING';
 
 -- update boost ratio at last
 update Boosts set Boost = 34 where Boost = 40;
+
+--膛线尤里卡改为生产两个射石炮
+--by 先驱
+update Boosts set BoostClass = "BOOST_TRIGGER_TRAIN_UNIT", NumItems = 2, Unit1Type = "UNIT_BOMBARD", ImprovementType = NULL, ResourceType = NULL where TechnologyType ="TECH_RIFLING";
