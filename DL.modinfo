@@ -753,6 +753,10 @@
       <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Watchtower/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateDatabase id="WatchTower_mod_support" criteria="WatchTower_Expansion2">
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <File>ModSupport/Watchtower/HD_Balance.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Wonder_temple_of_heaven_support" criteria="TempleOfHeaven_Expansion2">
       <!-- After the main part -->
       <Properties><LoadOrder>17000</LoadOrder></Properties>
@@ -1584,6 +1588,7 @@
     <File>ModSupport/MonopolyPlus/DL_Adaptation.sql</File>
     <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
+    <File>ModSupport/Watchtower/HD_Balance.sql</File>
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonder_WatArun.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>

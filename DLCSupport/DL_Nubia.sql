@@ -63,7 +63,7 @@ values
     ('TRAIT_BONUS_MINE_PRODUCTION',                 'YieldType',    'YIELD_PRODUCTION'),
     ('TRAIT_BONUS_MINE_PRODUCTION',                 'Amount',       1);
 
-update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PYRAMID_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PYRAMID_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
 
 create TEMPORARY table 'Nubia_Resource'(
     'ResourceType' Text NOT NULL

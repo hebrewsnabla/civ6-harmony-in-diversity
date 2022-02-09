@@ -1,0 +1,1 @@
+update ModifierArguments set Value = 1 where ModifierId = 'SAILOR_WATCHTOWER_MAJOR_SIGHT_MOD' and Name = 'Amount';
