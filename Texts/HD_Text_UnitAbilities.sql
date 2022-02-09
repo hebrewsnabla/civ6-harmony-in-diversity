@@ -61,7 +61,8 @@ values
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "from War Department"),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "from War Department"),
     ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief"),
-    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)");
+    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)"),
+    ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION",                 "+1 [ICON_MOVEMENT] Move power to adjacent Light Cavalry units at the start of the turn.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -126,7 +127,9 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条"),
-    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)");
+    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION",                 "回合开始时相邻轻骑兵单位+1 [ICON_MOVEMENT] 移动力。");
+
 
 -- UU Abilities
 --------------------------------------------------------------------------------

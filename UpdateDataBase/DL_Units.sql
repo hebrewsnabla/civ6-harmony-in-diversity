@@ -385,16 +385,16 @@ update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn 
 insert or replace into Modifiers
 	(ModifierId,                                  ModifierType,                             RunOnce, NewOnly, Permanent, Repeatable, OwnerRequirementSetId)
 values
-	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT",  0,       0,       0,         0,          "ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS");
+	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT",  0,       0,       0,         0,          "ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS");
 
 insert or replace into ModifierArguments
 	(ModifierId,                                  Name,      Type,               Value)
 values
 	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "Amount",  "ARGTYPE_IDENTITY", 1);
 insert or replace into UnitAbilities
-	(UnitAbilityType,                           Name, Description,                                             inactive, ShowFloat, Permanent)
+	(UnitAbilityType,                           Name, Description,                                             inactive, ShowFloatTextWhenEarned, Permanent)
 values
-	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW",   NULL, "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION", 0,        0,         1);
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW",   NULL, "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION", 0,        0,                       1);
 insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,                         ModifierId)
 values
