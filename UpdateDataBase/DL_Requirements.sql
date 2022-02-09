@@ -1223,3 +1223,24 @@ INSERT OR IGNORE INTO RequirementSetRequirements
 		(RequirementSetId,					RequirementId							)
 VALUES	('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE'	),
 		('PLAYER_HAS_LARGEST_INFLUENCE',	'REQUIRES_PLAYER_AT_PEACE'				);
+
+--新增reqs相邻轻骑兵
+insert or ignore into Requirements
+	(RequirementId,									                RequirementType)
+values
+	('ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT',			'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES');
+	
+insert or ignore into RequirementArguments
+	(RequirementId,							                        Name,					Value)
+values
+	('ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT',			'Tag',			        'CLASS_LIGHT_CAVALRY');
+
+insert or ignore into RequirementSets
+	(RequirementSetId,                                              RequirementSetType)
+values
+	("ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS",       'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,                                              RequirementId)
+values
+	("ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS",       'ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT');
+	

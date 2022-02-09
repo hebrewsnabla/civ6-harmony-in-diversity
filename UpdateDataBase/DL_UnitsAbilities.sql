@@ -452,3 +452,5 @@ values
 -- update ModifierArguments set Value = 1000 where ModifierId = 'HETAIROI_FREE_PROMOTION' and Name = 'Amount';
 -- update ModifierArguments set Value = 1000 where ModifierId = 'CORBACI_FREE_PROMOTION' and Name = 'Amount';
 -- update ModifierArguments set Value = 1000 where ModifierId = 'NAU_FREE_PROMOTION' and Name = 'Amount';
+--攻城单位增加基础能力：回合开始时相邻轻骑兵+1速
+

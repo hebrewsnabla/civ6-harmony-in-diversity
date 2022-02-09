@@ -380,3 +380,31 @@ values
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_NAVAL');
 
 update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';
+
+--攻城单位增加基础能力：回合开始时相邻轻骑兵+1速
+insert or replace into Modifiers
+	(ModifierId,                                  ModifierType,                             RunOnce, NewOnly, Permanent, Repeatable, OwnerRequirementSetId)
+values
+	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT",  0,       0,       0,         0,          "ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS");
+
+insert or replace into ModifierArguments
+	(ModifierId,                                  Name,      Type,               Value)
+values
+	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "Amount",  "ARGTYPE_IDENTITY", 1);
+insert or replace into UnitAbilities
+	(UnitAbilityType,                           Name, Description,                                             inactive, ShowFloat, Permanent)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW",   NULL, "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION", 0,        0,         1);
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,                         ModifierId)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", "HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING");
+insert or replace into Types
+	(Type,                                    Kind)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", "KIND_ABILITY");
+insert or replace into TypeTags
+	(Type,                                    Tag)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", 'CLASS_SIEGE');
+
