@@ -981,11 +981,14 @@ values
 --大维齐尔修改
 --3t就职一级：就职城市的每个人口为本城+1锤。获得单位造价25%的科技值。
 --左一：建造军营建筑时额外+30%生产力。军营和军营每级建筑+3瓶。
-delete from GovernorPromotionModifiers where GovernorPromotion = "GOVERNOR_PROMOTION_PASHA";
-delete from GovernorPromotionModifiers where GovernorPromotion = "GOVERNOR_PROMOTION_HEAD_FALCONER";
-delete from GovernorPromotionModifiers where GovernorPromotion = "GOVERNOR_PROMOTION_SERASKER";
-delete from GovernorPromotionModifiers where GovernorPromotion = "GOVERNOR_PROMOTION_CAPOU_AGHA";
-delete from GovernorPromotionModifiers where GovernorPromotion = "GOVERNOR_PROMOTION_GRAND_VISIER";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_PASHA" and ModifierId = "SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_HEAD_FALCONER" and ModifierId = "HEAD_FALCONER_ADJUST_CITY_COMBAT_BONUS";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_HEAD_FALCONER" and ModifierId = "PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_SERASKER" and ModifierId = "SERASKER_POP_PRODUCTION";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_CAPOU_AGHA" and ModifierId = "PASHA_BONUS_UNIT_PRODUCTION";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_CAPOU_AGHA" and ModifierId = "CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_GRAND_VISIER" and ModifierId = "KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS";
+delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_GRAND_VISIER" and ModifierId = "GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH";
 update Modifiers set Permanent = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
 update Modifiers set RunOnce = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
 update ModifierArguments set Value = 10 where ModifierId = "SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT";
