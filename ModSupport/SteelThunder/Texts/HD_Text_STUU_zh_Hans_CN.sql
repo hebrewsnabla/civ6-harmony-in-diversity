@@ -434,7 +434,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_EGYPTIAN_KHOPESH_NAME",                                                    "弯刀战士"),
     ("zh_Hans_CN",  "LOC_UNIT_EGYPTIAN_WAR_GALLEY_DESCRIPTION",                                          "取代四段帆船的埃及特色海军远程攻击单位，拥有更强的 [ICON_Strength] 战斗力且+1 [ICON_Range] 射程。"),
     ("zh_Hans_CN",  "LOC_UNIT_EGYPTIAN_WAR_GALLEY_NAME",                                                 "四十桨战船"),
-    ("zh_Hans_CN",  "LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",                                              "阿基坦埃莉诺中世纪时代特色近战单位。当对抗异教徒时+5[ICON_Strength]战斗力，位于圣地附近时+5[ICON_Strength]战斗力。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",                                              "阿基坦埃莉诺中世纪时代特色近战单位。当对抗异教徒时+5[ICON_Strength]战斗力，位于圣地附近时+5[ICON_Strength]战斗力。格挡每回合受到的第一次非致命攻击。"),
     ("zh_Hans_CN",  "LOC_UNIT_ELEANOR_TEMPLAR_NAME",                                                     "圣殿骑士"),
     ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_LONGBOWMAN_DESCRIPTION",                                           "取代了弩手的英国中世纪特色远程攻击单位，额外+1 [ICON_Range] 射程。"),
     ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_LONGBOWMAN_NAME",                                                  "长弓手"),

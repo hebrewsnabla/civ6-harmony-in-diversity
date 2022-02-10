@@ -434,7 +434,7 @@ values
     ("LOC_UNIT_EGYPTIAN_KHOPESH_NAME",                                                    "Khopesh Warrior"),
     ("LOC_UNIT_EGYPTIAN_WAR_GALLEY_DESCRIPTION",                                          "Egyptian unique naval Ranged unit. Stronger than the Quadrireme it replaces and has range 2 instead of 1."),
     ("LOC_UNIT_EGYPTIAN_WAR_GALLEY_NAME",                                                 "Septireme"),
-    ("LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",                                              "Unique unit for Eleanor of Aquitaine. +5 [ICON_Strength] Combat Strength when opponent is another religion. +5 [ICON_Strength] within 4 tiles of any Holy Site District."),
+    ("LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",                                              "Unique unit for Eleanor of Aquitaine. +5 [ICON_Strength] Combat Strength when opponent is another religion. +5 [ICON_Strength] within 4 tiles of any Holy Site District. Blocks the first non-lethal attack each turn."),
     ("LOC_UNIT_ELEANOR_TEMPLAR_NAME",                                                     "Templar"),
     ("LOC_UNIT_ENGLISH_LONGBOWMAN_DESCRIPTION",                                           "English unique Medieval Era Ranged unit that replaces the Crossbowman. +1 [ICON_Range] Range."),
     ("LOC_UNIT_ENGLISH_LONGBOWMAN_NAME",                                                  "Longbowman"),
