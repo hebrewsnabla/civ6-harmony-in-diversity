@@ -1306,6 +1306,64 @@ update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = '
 	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';
 
+<<<<<<< HEAD
+	--by 先驱 政策卡增加：【艺术赞助人】 银行业解锁
+insert or replace into Types
+	(Type,								Kind)
+values
+	('POLICY_ART_PATRONS',				'KIND_POLICY');
+insert or replace into Policies
+	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
+values
+	('POLICY_ART_PATRONS',				'LOC_POLICY_ART_PATRONS_NAME',				'LOC_POLICY_ART_PATRONS_DESCRIPTION',				NULL,						                'TECH_BANKING',			    'SLOT_ECONOMIC');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_ART_PATRONS',				'ART_PATRONS_1'),
+	('POLICY_ART_PATRONS',				'ART_PATRONS_2');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,RunOnce,Permanent)
+values
+	('ART_PATRONS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
+	('ART_PATRONS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+insert or replace into ModifierArguments
+	(ModifierId,							Name, 				Value)
+values
+	('ART_PATRONS_1',				        'PolicyType',		'TECH_BANKING'),
+	('ART_PATRONS_1',	                    'DistrictType',		'DISTRICT_THEATER'),
+	('ART_PATRONS_1',	                    'Amount',			30),
+	('ART_PATRONS_2',				        'PolicyType',		'TECH_BANKING'),
+	('ART_PATRONS_2',	                    'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
+	('ART_PATRONS_2',	                    'Amount',			30);
+--by 先驱 政策卡增加：【历史进步】 历史哲学解锁
+insert or replace into Types
+	(Type,								Kind)
+values
+	('POLICY_HISTORICAL_PROGRESS',	    'KIND_POLICY');
+insert or replace into Policies
+	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
+values
+	('POLICY_HISTORICAL_PROGRESS',	    'LOC_POLICY_HISTORICAL_PROGRESS_NAME',		'LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',		    NULL,			            'SLOT_ECONOMIC');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_1'),
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_2');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,RunOnce,Permanent)
+values
+	('HISTORICAL_PROGRESS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
+	('HISTORICAL_PROGRESS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+insert or replace into ModifierArguments
+	(ModifierId,							Name, 				Value)
+values
+	('HISTORICAL_PROGRESS_1',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
+	('HISTORICAL_PROGRESS_1',	            'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
+	('HISTORICAL_PROGRESS_1',	            'Amount',			30),
+	('HISTORICAL_PROGRESS_2',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
+	('HISTORICAL_PROGRESS_2',	            'DistrictType',		'DISTRICT_CAMPUS'),
+	('HISTORICAL_PROGRESS_2',	            'Amount',			30);
+=======
 -- 着力点：开明专制 by xhh
 
 update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
@@ -1590,3 +1648,4 @@ insert or replace into RequirementSetRequirements
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
 from HD_DistrictBonus;
+>>>>>>> dev

@@ -38,6 +38,11 @@ values
     ("LOC_POLICY_TEXTBOOK_DESCRIPTION",                                               "+4 [ICON_GreatScientist] Great Scientist points per turn. +4 [ICON_GreatScientist] Great Scientist points per turn for every University."),
     ("LOC_POLICY_SUPERPOWER_NAME",                                                    "Superpower"),
     ("LOC_POLICY_SUPERPOWER_DESCRIPTION",                                             "Every Research Lab gives +2% [ICON_SCIENCE] Science Boost to all your cities. Every Broadcast Center gives +2% [ICON_CULTURE] Culture Boost to all your cities."),
+    ("LOC_POLICY_ART_PATRONS_NAME",                                                   "Patrons of the Arts"),
+    ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% [ICON_Production] Productivity when constructing buildings in the Theatre and Commercial centre area."),
+    ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
+    ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% [ICON_Production] Productivity when constructing buildings in the Campus and Industrial Zone areas."),
+
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -216,6 +221,11 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_TEXTBOOK_DESCRIPTION",                                               "每回合+4 [ICON_GreatScientist] 大科学家点数。每有一座大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4。"),
     ("zh_Hans_CN",  "LOC_POLICY_SUPERPOWER_NAME",                                                    "超级大国"),
     ("zh_Hans_CN",  "LOC_POLICY_SUPERPOWER_DESCRIPTION",                                             "每座研究实验室为所有城市+2% [ICON_SCIENCE] 科技值。每座广播中心为所有城市+2% [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_NAME",                                                   "艺术赞助人"),
+    ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "建造剧院和商业中心区域中的建筑时+30% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "历史进步"),
+    ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造学院和工业区区域中的建筑时+30% [ICON_Production] 生产力。"),
+
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),

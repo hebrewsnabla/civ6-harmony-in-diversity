@@ -37,8 +37,8 @@ values
     ("LOC_ABILITY_VICTOR_COMMANDER_STRENGTH_DESCRIPTION",                     "+5 [ICON_Strength] Combat Strength from Commander Victor established within 9 tiles"),
     ("LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION",              "1 free promotion from Kotoku In "),
     ("LOC_ABILITY_TRAINED_LIGHT_CAVALRY_PILLAGE_LESS_MOVEMENT_DESCRIPTION",   "Pillage costs 1 movement from Pillage Preparing city policy"),
-    ("LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "-7 [ICON_Strength] Combat Strength when attacking Districts"),
-    ("LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "-5 [ICON_Strength] Combat Strength when attacking Districts"),
+    ("LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "-3 [ICON_Strength] Combat Strength when attacking Districts"),
+    ("LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "-3 [ICON_Strength] Combat Strength when attacking Districts"),
     ("LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION",        "+3 [ICON_Strength] Combat Strength from training in Military Academy"),
     ("LOC_ABILITY_SEAPORT_TRAINED_UNIT_STRENGTH_DESCRIPTION",                 "+3 [ICON_Strength] Combat Strength from training in Seaport"),
     ("LOC_ABILITY_BARRACKS_TRAINED_UNIT_STRENGTH_DESCRIPTION",                "+2 [ICON_Strength] Combat Strength from training in Barracks"),
@@ -61,7 +61,8 @@ values
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "from War Department"),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "from War Department"),
     ("LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "Combat Strength from Capellani Belief"),
-    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)");
+    ("LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "+4 [ICON_STRENGTH] Strength in your territory. (Grand Citadel)"),
+    ("LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION",                 "+1 [ICON_MOVEMENT] Move power to adjacent Light Cavalry units at the start of the turn.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -102,8 +103,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_VICTOR_COMMANDER_STRENGTH_DESCRIPTION",                     "来自指挥官维克多在9个单元格内就职：+5 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION_DESCRIPTION",              "高德院训练：免费获得1级晋升"),
     ("zh_Hans_CN",  "LOC_ABILITY_TRAINED_LIGHT_CAVALRY_PILLAGE_LESS_MOVEMENT_DESCRIPTION",   "打草谷训练：劫掠只消耗1移动力"),
-    ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "攻击区域时-7 [ICON_Strength] 战斗力"),
-    ("zh_Hans_CN",  "LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "攻击区域时-5 [ICON_Strength] 战斗力"),
+    ("zh_Hans_CN",  "LOC_ABILITY_LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "攻击区域时-3 [ICON_Strength] 战斗力"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT_DESCRIPTION",       "攻击区域时-3 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_MILITARY_ACADEMY_TRAINED_UNIT_STRENGTH_DESCRIPTION",        "在军事学院中训练获得的+3 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_SEAPORT_TRAINED_UNIT_STRENGTH_DESCRIPTION",                 "在码头中训练获得的+3 [ICON_Strength] 战斗力"),
     ("zh_Hans_CN",  "LOC_ABILITY_BARRACKS_TRAINED_UNIT_STRENGTH_DESCRIPTION",                "在兵营中训练获得的+2 [ICON_Strength] 战斗力"),
@@ -126,7 +127,9 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条"),
-    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)");
+    ("zh_Hans_CN",  "LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD",                      "在国境内战斗时+4 [ICON_STRENGTH] 战斗力。(大本营)"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION",                 "回合开始时相邻轻骑兵单位+1 [ICON_MOVEMENT] 移动力。");
+
 
 -- UU Abilities
 --------------------------------------------------------------------------------

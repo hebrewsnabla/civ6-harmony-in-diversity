@@ -275,3 +275,10 @@ insert or replace into Improvement_Adjacencies
 select
 	'IMPROVEMENT_LAND_POLDER',	YieldChangeId
 from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';
+
+--种植园劫掠更改为金币，牧场劫掠改为hp，采石场劫掠金币
+--by 先驱
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_PLANTATION';
+update Improvements set PlunderType = 'PLUNDER_HEAL' where ImprovementType = 'IMPROVEMENT_PASTURE';
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_QUARRY';
+

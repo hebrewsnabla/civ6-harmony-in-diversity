@@ -60,6 +60,8 @@ values
     ("LOC_TECH_STEAM_POWER_HD_DESCRIPTION",                                                 "+2 [ICON_Movement] Movement for embarked units. +15 tiles for water trade route range."),
     ("LOC_TECH_STEEL_HD_DESCRIPTION",                                                       "Unlocks Urban Defenses, giving all of your cities an automatic 400 Fortification Strength and the ability to perform a ranged attack. All previous wall improvements become obsolete and siege support units are no longer effective."),
     ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food. +5% [ICON_Science] Science for cities have University."),
+    ("LOC_TECH_SANITATION_HD_DESCRIPTION",                                                  "Stairwell Improvements +1 [ICON_Housing] Housing." ),
+    ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Power when adjacent to at least one friendly melee unit. [NEWLINE] Ranged units gain ability: +5 [ICON_Strength] Combat Power when attacking from a hill. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
     -- New Civics
     ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                                "Literary Tradition"),
     ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                                 "Supply"),
@@ -90,7 +92,7 @@ values
     ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                                          "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignore Zones of Control."),
+    ("LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                                   "Recon units gain the ability: Ignore Zones of Control."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold."),
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State.[NEWLINE]Allows forming two identical units into a Fleet.[NEWLINE]Allows one new Casus Belli that can be used to justify wars: Colonial War."),
@@ -164,7 +166,7 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                                       "A strong diplomatic alliance has nurtured an elite team of diplomats."),
     ("LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                                    "Build a Niter Mine and own a Caravel."),
     ("LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                                           "Gunpowder weapons proved so powerful that our navy was eager to use them."),
-    ("LOC_BOOST_TRIGGER_RIFLING",                                                           "Kill a unit with a Musketman."),
+    ("LOC_BOOST_TRIGGER_RIFLING",                                                           "Own 2 Bombards."),
     ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "Your musketeers have mastered firearms, so it's time to upgrade their weapons.");
 
 --------------------------------------------------------------------------------
@@ -229,6 +231,8 @@ values
     ("zh_Hans_CN",  "LOC_TECH_STEAM_POWER_HD_DESCRIPTION",                                  "水运单位+2 [ICON_Movement] 移动力。商人单位在水域单元格的贸易范围增加15个单元格。"),
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                                        "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。拥有大学的城市+5% [ICON_Science] 科技值"),
+    ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。" ),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
     -- New Civics
     ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                 "文学传统"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                  "后勤补给"),
@@ -267,7 +271,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]攻城单位获得能力：可移动后攻击。"), -- 在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦察单位获得能力：忽略控制区。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "侦察单位获得能力：忽略控制区。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                "核计划项目、核装置和核电站的生产力+50%。"),
     ("zh_Hans_CN",  "LOC_DIPLOACTION_ALLIANCE_DESCRIPTION",                                 "宣布友谊后即可缔结同盟。盟友之间无法开战、自动开放边界、自动签署防御协定。如其中一位盟友的城市被占领，则所有盟友都将获得对入侵文明的战争借口。解锁行政部门后，科技、文化、商业同盟间商路获得对应加成。"),
     -- Boosts
@@ -335,7 +339,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_DIPLOMATIC_SERVICE",                        "牢固的外交联盟为您培养了一支精英外交官团队。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                     "建造一座硝石矿，拥有一个轻快帆船。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                            "火药武器展现出了非凡威力，我们的海军迫不及待的想要运用它们。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RIFLING",                                            "用火枪手击杀一个单位。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RIFLING",                                            "拥有2个射石炮。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "您的火枪手们对火器的使用已经炉火纯青，是时候为他们升级兵器了。");
 
 --------------------------------------------------------------------------------
