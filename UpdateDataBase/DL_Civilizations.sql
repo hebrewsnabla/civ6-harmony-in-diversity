@@ -1944,7 +1944,8 @@ values
     -- ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',    'TRAIT_BOOST_BUILDING_SHIPYARD');
     ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_DISTRICT_PRODUCTION'),
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION');
+    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION'),
+    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_COAST_PRODUCTION_AFTER_CONSTRUCTION'); --建造后水域+1锤
 
 insert or replace into Modifiers
 	(ModifierId, 										ModifierType, 													SubjectRequirementSetId)
@@ -1954,7 +1955,8 @@ values
     ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          		'BUILDING_IS_SHIPYARD'),
     -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
     ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
-    ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM');
+    ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM'),
+	('TRAIT_COAST_PRODUCTION_AFTER_CONSTRUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							'PLOT_IS_WATER_AND_PLAYER_HAS_CONSTRUCTION');
 
 insert or replace into ModifierArguments
 	(ModifierId,								Name,				Value)
@@ -1966,8 +1968,19 @@ values
     -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'BuildingType', 	'BUILDING_SHIPYARD'),
     -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'Amount',       	50);
     ('TRAIT_HARBOR_DISTRICT_PRODUCTION', 		'Amount',       	20),
-    ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION');
-
+    ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
+	('TRAIT_COAST_PRODUCTION_AFTER_CONSTRUCTION','YieldType',		'YIELD_PRODUCTION'),
+	('TRAIT_COAST_PRODUCTION_AFTER_CONSTRUCTION','Amount',			1);
+	
+insert or replace into RequirementSets
+	(RequirementSetId,								RequirementSetType)
+values
+	('PLOT_IS_WATER_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,								RequirementId)
+values
+	('PLOT_IS_WATER_AND_PLAYER_HAS_CONSTRUCTION',);
+/*
 insert or replace into TraitModifiers
 	(TraitType, 								ModifierId)
 select
@@ -1991,7 +2004,7 @@ insert or replace into ModifierArguments
 select
 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				15
 from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
-
+*/
 -- From Others
 insert or replace into DistrictModifiers (DistrictType, ModifierId)
 select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
