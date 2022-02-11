@@ -3,8 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-    ("LOC_BUILDING_DUMMY_POLAND_NAME",                                         "PlaceHolder"),
-    ("LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "Please Ignore"),
+    ("LOC_BUILDING_DUMMY_POLAND_NAME",                                        "PlaceHolder"),
+    ("LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                 "Please Ignore"),
     -- UI Texts
     ("LOC_HD_MESSAGE",                                                        "Harmony in Diversity"),
     ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
@@ -18,6 +18,8 @@ values
     ("LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "Cost Progression Param: {1_num}"),
     ("LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "Citizen Yields change (per citizen in this district):"),
     ("LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "Citizen Yields (per citizen in this district):"),
+    ("LOC_TOOLTIP_RESOURCE_IMPROVED_BY",                                      "Can be improved by: "),
+    ("LOC_TOOLTIP_RESOURCE_CORP_CATEGORY",                                    "Luxury categorized as: "),
     ("LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "Citizen Yields (per citizen in this district)"),
     ("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE",                                     "{1_num}-tile regional effects: Its basic yields extend to each city center within {1_num} tiles. Multiple copies of this effect from the same type of building do not provide additional bonuses."),
     ("LOC_HAPPINESS_DELIGHTED_NAME",                                          "Delighted"),
@@ -63,8 +65,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                         "请忽略"),
-    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                  "请忽略"),
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_NAME",                                        "请忽略"),
+    ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_POLAND_DESCRIPTION",                                 "请忽略"),
     -- UI texts 
     ("zh_Hans_CN",  "LOC_HD_MESSAGE",                                                        "和而不同"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
@@ -80,6 +82,8 @@ values
     ("zh_Hans_CN",  "LOC_TOOLTIP_COST_PROGRESSION_PARAM",                                    "涨价系数：{1_num}"),
     ("zh_Hans_CN",  "LOC_TOOLTIP_BUILDING_CITIZEN_YIELDS_HEADER",                            "在此区域中工作的 [ICON_Citizen] 专家收益变动："),
     ("zh_Hans_CN",  "LOC_TOOLTIP_DISTRICT_CITIZEN_YIELDS_HEADER",                            "每个在此区域中工作的 [ICON_Citizen] 专家收益："),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_RESOURCE_IMPROVED_BY",                                      "改良设施类型："),
+    ("zh_Hans_CN",  "LOC_TOOLTIP_RESOURCE_CORP_CATEGORY",                                    "奢侈品所属类别："),
     ("zh_Hans_CN",  "LOC_UI_PEDIA_CITIZEN_YIELDS",                                           "每个在此区域中工作的 [ICON_Citizen] 专家收益"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENS",                                               "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 专家{1_Amount : plural 1?槽位; other?槽位;}"),
     ("zh_Hans_CN",  "LOC_TYPE_TRAIT_CITIZENSLOTS",                                           "{1_Amount: number +#,###;-#,###} [ICON_Citizen] 专家{1_Amount : plural 1?槽位; other?槽位;}"),
@@ -166,6 +170,7 @@ values
     -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_NAME",                                   "Recruit Workers"),
     -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME",                             "Recruit Workers"),
     -- ("LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",                            "City project. If this city has at least 2 [ICON_Citizen] Citizens, this project grants a builder and reduces 1 [ICON_Citizen] Citizen.[NEWLINE]If this city has only 1 [ICON_Citizen] Citizen, this project will take effect later when the population of this city increases next time.");
+
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
