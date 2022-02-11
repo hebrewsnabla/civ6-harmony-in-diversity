@@ -613,6 +613,21 @@
         <LuaReplace>UI/Replacement/citystates_bst_xp2.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
+    <!-- UI Replacements import -->
+    <ImportFiles id="DL_UI_Import" criteria="Expansion2">
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
+      <File>UI/Replacement/DL_CityPanelOverview.lua</File>
+      <File>UI/Replacement/DL_PlotToolTip.lua</File>
+      <File>UI/Replacement/DL_ProductionPanel.lua</File>
+      <File>UI/Replacement/DL_CityPanel.lua</File>
+      <File>UI/Replacement/DL_SelectedUnit.lua</File>
+      <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
+      <File>UI/Replacement/DL_UnitPanel.lua</File>
+      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+      <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+      <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
+      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
+    </ImportFiles>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -620,10 +635,6 @@
         <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanelOverview_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanelOverview.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -631,10 +642,6 @@
         <LuaReplace>UI/Replacement/DL_PlotToolTip.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_PlotToolTip_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_PlotToolTip.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_ProductionPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -642,10 +649,6 @@
         <LuaReplace>UI/Replacement/DL_ProductionPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_ProductionPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_ProductionPanel.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_CityPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -653,10 +656,6 @@
         <LuaReplace>UI/Replacement/DL_CityPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanel.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_SelectedUnit" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -664,10 +663,13 @@
         <LuaReplace>UI/Replacement/DL_SelectedUnit.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_SelectedUnit_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_SelectedUnit.lua</File>
-    </ImportFiles>
+    <ReplaceUIScript id="DL_WorldViewIconsManager" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>WorldViewIconsManager</LuaContext>
+        <LuaReplace>UI/Replacement/DL_WorldViewIconsManager.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -675,11 +677,6 @@
         <LuaReplace>UI/Replacement/DL_UnitPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_UnitPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_UnitPanel.lua</File>
-      <File>UI/Additions/HD_UnitCommandDefs.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_TechCivicPopup" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -687,14 +684,6 @@
         <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_TechCivicPopup_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
-    </ImportFiles>
-    <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
-    </ImportFiles>
     <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
@@ -895,36 +884,10 @@
       </Properties>
     </ReplaceUIScript>
     <!-- Farm on fresh hills -->
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    </ImportFiles>
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <!-- <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>15500</LoadOrder>
-        <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript> -->
-    <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>15500</LoadOrder>
-        <LuaContext>WorldViewIconsManager</LuaContext>
-        <LuaReplace>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="Expansion2">
-      <Properties><LoadOrder>15506</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
-    </UpdateText>
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
@@ -1547,6 +1510,7 @@
     <!-- UI Additions -->
     <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File> <!-- Mod Version Checker for multiplayer -->
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+    <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
     <!-- UI replacements and icons -->
     <!-- FrontEnd -->
     <File>UI/Replacement/StagingRoom.lua</File>
@@ -1557,6 +1521,7 @@
     <File>UI/Replacement/citystates_bst_xp2.lua</File>
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
+    <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
@@ -1651,10 +1616,6 @@
     <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
-    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
-    <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
     <!-- Governors Diversity -->
     <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
     <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>

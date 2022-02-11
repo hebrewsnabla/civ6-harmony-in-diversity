@@ -8,7 +8,7 @@ local files = {
 for _, file in ipairs(files) do
     include(file)
     if Initialize then
-        print("FOFH Loading " .. file .. " as base file");
+        print("WorldViewIconsManager Loading " .. file .. " as base file");
         break
     end
 end
