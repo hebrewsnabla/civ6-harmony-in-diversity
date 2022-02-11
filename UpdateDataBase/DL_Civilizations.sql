@@ -123,14 +123,14 @@ values
 	-- ('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_REVEAL_IRON'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_IRON_PRODUCTION'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_COAL_PRODUCTION'),
-	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION'),
-	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_SHIPYARD_INDISTRIALIZATION');
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION');
+	-- ('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_SHIPYARD_INDISTRIALIZATION');
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType)
 values
-	('TRAIT_REVEAL_IRON',								'MODIFIER_PLAYER_GRANT_FREE_RESOURCE_VISIBILITY'),
-	('TRAIT_SHIPYARD_INDISTRIALIZATION',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
+	('TRAIT_REVEAL_IRON',								'MODIFIER_PLAYER_GRANT_FREE_RESOURCE_VISIBILITY');
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												SubjectRequirementSetId)
@@ -139,10 +139,10 @@ values
 	('TRAIT_COAL_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'HAS_IMPROVED_COAL'),
 	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',	'DISTRICT_IS_INDUSTRIAL_ZONE');
 
-insert or replace into Modifiers
-	(ModifierId,										ModifierType,									SubjectRequirementSetId,	RunOnce,	Permanent)
-values
-	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_SHIPYARD',			1,		1);
+-- insert or replace into Modifiers
+	-- (ModifierId,										ModifierType,									-- SubjectRequirementSetId,	RunOnce,	Permanent)
+-- values
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_SHIPYARD',			1,		1);
 -- REQUIRES_PLAYER_CAN_SEE_IRON
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
@@ -153,10 +153,63 @@ values
 	('TRAIT_COAL_PRODUCTION',							'YieldType',	'YIELD_PRODUCTION'),
 	('TRAIT_COAL_PRODUCTION',							'Amount',		1),
 	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
-	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'Amount',		4),
-	('TRAIT_SHIPYARD_INDISTRIALIZATION',				'ModifierId',	'TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER'),
-	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'TechType',		'TECH_INDUSTRIALIZATION'),
-	('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'GrantTechIfBoosted',	1);
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'Amount',		4);
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION',				'ModifierId',	'TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER'),
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'TechType',		'TECH_INDUSTRIALIZATION'),
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'GrantTechIfBoosted',	1);
+
+-- 2级港口建筑给工业化ulk, by xiaoxiao
+create temporary table HarborTier2Buildings (BuildingType text);
+insert or replace into HarborTier2Buildings (BuildingType) values ('BUILDING_SHIPYARD');
+insert or replace into HarborTier2Buildings (BuildingType) select Building from MutuallyExclusiveBuildings where MutuallyExclusiveBuilding = 'BUILDING_SHIPYARD';
+
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+select
+	'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST'
+from HarborTier2Buildings;
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType)
+select
+	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+from HarborTier2Buildings;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+select
+	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST',	'ModifierId',	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST_MODIFIER'
+from HarborTier2Buildings;
+
+insert or replace into Modifiers
+	(ModifierId,															ModifierType,									SubjectRequirementSetId,					RunOnce)
+select
+	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST_MODIFIER',	'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'HD_ENGLAND_CITY_HAS_' || BuildingType,		1
+from HarborTier2Buildings;
+
+insert or replace into ModifierArguments
+	(ModifierId,															Name,					Value)
+select
+	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST_MODIFIER',	'TechType',				'TECH_INDUSTRIALIZATION'
+from HarborTier2Buildings;
+
+insert or replace into ModifierArguments
+	(ModifierId,															Name,					Value)
+select
+	'HD_ENGLAND_' || BuildingType || '_INDISTRIALIZATION_BOOST_MODIFIER',	'GrantTechIfBoosted',	1
+from HarborTier2Buildings;
+
+insert or replace into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+select
+	'HD_ENGLAND_CITY_HAS_' || BuildingType, 	'REQUIREMENTSET_TEST_ALL'
+from HarborTier2Buildings;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+select
+	'HD_ENGLAND_CITY_HAS_' || BuildingType,		'REQUIRES_CITY_HAS_' || BuildingType
+from HarborTier2Buildings;
 
 -- Arab
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
@@ -1856,7 +1909,6 @@ values
 -- Ikanda bug in captured cities 
 delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
 
-/*
 insert into DistrictModifiers	(DistrictType,	ModifierId)
 select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_GOLD' from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
@@ -1896,7 +1948,6 @@ where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASIL
 insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
 select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
 where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
-*/
 
 ------------------------------------------------------------------------------------------------
 -- America
@@ -1942,71 +1993,32 @@ insert or replace into TraitModifiers
 values
     -- ('TRAIT_RADIO_ORANJE',                   'TRAIT_TRADER_SPEEDUP'),
     -- ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',    'TRAIT_BOOST_BUILDING_SHIPYARD');
-    -- ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
-    -- ('TRAIT_RADIO_ORANJE',   					'HD_TRADE_ROUTE_CAPACITY_WHEN_NON_GOLDEN'), -- 非黄金+1贸易路线容量
-    -- ('TRAIT_RADIO_ORANJE',   					'HD_TRADE_ROUTE_SCIENCE_WHEN_NON_GOLDEN'), -- 非黄金商路+4瓶
+    ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_DISTRICT_PRODUCTION'),
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION'),
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION'), -- 建造后水域+1锤
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_CONSTRUCTION_BOOST'); -- 开局送建造ylk
+    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION');
 
 insert or replace into Modifiers
-	(ModifierId, 											ModifierType, 													SubjectRequirementSetId)
+	(ModifierId, 										ModifierType, 													SubjectRequirementSetId)
 values
-    -- ('TRAIT_TRADER_SPEEDUP',                 			'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         		NULL),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE',          				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               		NULL),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          		'BUILDING_IS_SHIPYARD'),
-    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
-    ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    				'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
-    ('TRAIT_DAM_RIVER_PRODUCTION',        			    	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM'),
-	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							'HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION');
-	-- ('HD_TRADE_ROUTE_CAPACITY_WHEN_NON_GOLDEN',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',					'PLAYER_NOT_HAS_GOLDEN_AGE'),
-	-- ('HD_TRADE_ROUTE_SCIENCE_WHEN_NON_GOLDEN',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD',					'PLAYER_NOT_HAS_GOLDEN_AGE');
+    -- ('TRAIT_TRADER_SPEEDUP',                 		'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         		NULL),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE',          			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               		NULL),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          		'BUILDING_IS_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
+    ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
+    ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM');
 
-insert or replace into Modifiers
-	(ModifierId, 				ModifierType,									RunOnce)
-values
-	('HD_CONSTRUCTION_BOOST',	'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	1);
 insert or replace into ModifierArguments
-	(ModifierId,										Name,				Value)
+	(ModifierId,								Name,				Value)
 values
-    -- ('TRAIT_TRADER_SPEEDUP',                 		'UnitType',     	'UNIT_TRADER'),
-    -- ('TRAIT_TRADER_SPEEDUP',                 		'Amount',       	50),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE',          			'ModifierId',   	'TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER'),
-    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 			'Amount',       	1),
-    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'BuildingType', 	'BUILDING_SHIPYARD'),
-    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'Amount',       	50);
-    ('TRAIT_HARBOR_DISTRICT_PRODUCTION', 				'Amount',       	20),
-    ('TRAIT_DAM_RIVER_PRODUCTION',         	    		'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
-	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'YieldType',		'YIELD_PRODUCTION'),
-	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'Amount',			1),
-	('HD_CONSTRUCTION_BOOST',							'TechType',			'TECH_CONSTRUCTION');
-	-- ('HD_TRADE_ROUTE_CAPACITY_WHEN_NON_GOLDEN',			'Amount',			1),
-	-- ('HD_TRADE_ROUTE_SCIENCE_WHEN_NON_GOLDEN',			'YieldType',		'YIELD_SCIENCE'),
-	-- ('HD_TRADE_ROUTE_SCIENCE_WHEN_NON_GOLDEN',			'Amount',			4);
+    -- ('TRAIT_TRADER_SPEEDUP',                 'UnitType',     	'UNIT_TRADER'),
+    -- ('TRAIT_TRADER_SPEEDUP',                 'Amount',       	50),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE',          	'ModifierId',   	'TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER'),
+    ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 	'Amount',       	1),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'BuildingType', 	'BUILDING_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'Amount',       	50);
+    ('TRAIT_HARBOR_DISTRICT_PRODUCTION', 		'Amount',       	20),
+    ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION');
 
-insert or replace into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-values
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-values
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN'),
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'HD_REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_COAST'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_OCEAN');
-insert or replace into Requirements
-	(RequirementId,								RequirementType)
-values
-	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'REQUIREMENT_REQUIREMENTSET_IS_MET');
-insert or replace into RequirementArguments
-	(RequirementId,								Name,					Value)
-values
-	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'RequirementSetId',		'HD_PLOT_IS_COAST_OR_OCEAN');
-
-/*
 insert or replace into TraitModifiers
 	(TraitType, 								ModifierId)
 select
@@ -2030,7 +2042,7 @@ insert or replace into ModifierArguments
 select
 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				15
 from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
-*/
+
 -- From Others
 insert or replace into DistrictModifiers (DistrictType, ModifierId)
 select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
@@ -2173,111 +2185,3 @@ update ModifierArguments set Value = 'DISTRICT_HARBOR' where ModifierId = 'TRAIT
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_ENCAMPMENT_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_HOLY_SITE_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_THEATER_DISTRICT_PRODUCTION' and Name = 'Amount';
-
--- 蒙古: 商路每经过一个贸易站+1瓶
--- 成吉思汗: 牧场给圣地和商业提供标准加成
--- by xiaoxiao
-insert or replace into TraitModifiers
-	(TraitType, 							ModifierId)
-values
-	('TRAIT_CIVILIZATION_MONGOLIAN_ORTOO',	'HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN'),
-	('TRAIT_CIVILIZATION_MONGOLIAN_ORTOO',	'HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN'),
-	('TRAIT_LEADER_GENGHIS_KHAN_ABILITY',	'HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY'),
-	('TRAIT_LEADER_GENGHIS_KHAN_ABILITY',	'HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY');
-insert or replace into Modifiers
-	(ModifierId,											ModifierType)
-values
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_OWN_CITY'),
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY'),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY',			'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY'),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY',	'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY');
-insert or replace into ModifierArguments
-	(ModifierId, 											Name, 				Value)
-values
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'YieldType', 		'YIELD_SCIENCE'),
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'Amount', 			1),
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'YieldType', 		'YIELD_SCIENCE'),
-	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'Amount', 			1),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'DistrictType',		'DISTRICT_HOLY_SITE'),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'ImprovementType',	'IMPROVEMENT_PASTURE'),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'YieldType',		'YIELD_FAITH'),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'Amount',			1),
-	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'Description',		'LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE'),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'ImprovementType',	'IMPROVEMENT_PASTURE'),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'YieldType',		'YIELD_GOLD'),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'Amount',			1),
-	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'Description',		'LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB');
-
--- 祖鲁: 拥有驻军的城市+1琴
--- UD伊坎达: 文化炸弹, 地基和其中建筑+2瓶+2锤
--- by xiaoxiao
-insert or replace into TraitModifiers
-	(TraitType, 							ModifierId)
-values
-	('TRAIT_CIVILIZATION_ZULU_ISIBONGO',	'HD_ZULU_GARRISON_CULTURE'),
-	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_CULTURE_BOMB'),
-	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_SCIENCE'),
-	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_PRODUCTION');
-insert or replace into Modifiers
-	(ModifierId,							ModifierType, 										SubjectRequirementSetId)
-values
-	('HD_ZULU_GARRISON_CULTURE',		 	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
-	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',			null),
-	('HD_IKANDA_CULTURE_BOMB', 				'MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER',	null),
-	('HD_IKANDA_SCIENCE', 					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA'),
-	('HD_IKANDA_PRODUCTION', 				'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA');
-insert or replace into ModifierArguments
-	(ModifierId, 							Name, 			Value)
-values
-	('HD_ZULU_GARRISON_CULTURE',		 	'ModifierId',	'HD_ZULU_GARRISON_CULTURE_MODIFIER'),
-	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'YieldType', 	'YIELD_CULTURE'),
-	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'Amount', 		1),
-	('HD_IKANDA_CULTURE_BOMB', 				'DistrictType',	'DISTRICT_IKANDA'),
-	('HD_IKANDA_SCIENCE', 					'YieldType', 	'YIELD_SCIENCE'),
-	('HD_IKANDA_SCIENCE', 					'Amount', 		2),
-	('HD_IKANDA_PRODUCTION', 				'YieldType', 	'YIELD_PRODUCTION'),
-	('HD_IKANDA_PRODUCTION', 				'Amount', 		2);
-insert or replace into RequirementSets
-	(RequirementSetId,			RequirementSetType)
-values
-	('HD_DISTRICT_IS_IKANDA',	'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,			RequirementId)
-values
-	('HD_DISTRICT_IS_IKANDA',	'REQUIRES_DISTRICT_IS_DISTRICT_IKANDA');
-
--- 伊坎达建筑+2瓶+2锤
-create temporary table IkandaBuildings (BuildingType text);
-insert into IkandaBuildings (BuildingType) select BuildingType from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT';
-create temporary table IkandaYields (YieldType text);
-insert into IkandaYields (YieldType) values ('YIELD_SCIENCE'), ('YIELD_PRODUCTION');
-insert or replace into DistrictModifiers
-	(DistrictType, 		ModifierId)
-select
-	'DISTRICT_IKANDA', 	'HD_IKANDA_' || BuildingType || '_' || YieldType
-from IkandaBuildings left outer join IkandaYields;
-
-insert or replace into Modifiers
-	(ModifierId,										ModifierType)
-select
-	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_YIELD'
-from IkandaBuildings left outer join IkandaYields;
-
-insert or replace into ModifierArguments
-	(ModifierId, 										Name, 			Value)
-select
-	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'BuildingType', BuildingType
-from IkandaBuildings left outer join IkandaYields;
-
-insert or replace into ModifierArguments
-	(ModifierId, 										Name, 			Value)
-select
-	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'YieldType', 	YieldType
-from IkandaBuildings left outer join IkandaYields;
-
-insert or replace into ModifierArguments
-	(ModifierId, 										Name, 			Value)
-select
-	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'Amount', 		2
-from IkandaBuildings left outer join IkandaYields;
