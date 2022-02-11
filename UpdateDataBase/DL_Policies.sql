@@ -1446,27 +1446,27 @@ select
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
