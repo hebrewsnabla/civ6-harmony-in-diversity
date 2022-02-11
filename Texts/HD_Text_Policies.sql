@@ -39,9 +39,9 @@ values
     ("LOC_POLICY_SUPERPOWER_NAME",                                                    "Superpower"),
     ("LOC_POLICY_SUPERPOWER_DESCRIPTION",                                             "Every Research Lab gives +2% [ICON_SCIENCE] Science Boost to all your cities. Every Broadcast Center gives +2% [ICON_CULTURE] Culture Boost to all your cities."),
     ("LOC_POLICY_ART_PATRONS_NAME",                                                   "Patrons of the Arts"),
-    ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% [ICON_Production] Productivity when constructing buildings in the Theatre and Commercial centre area."),
+    ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% [ICON_Production] Productivity when constructing buildings in the Theatre and Commercial centre districts. "),
     ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
-    ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% [ICON_Production] Productivity when constructing buildings in the Campus and Industrial Zone areas."),
+    ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% [ICON_Production] Productivity when constructing buildings in the Campus and Industrial Zone districts. "),
 
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),

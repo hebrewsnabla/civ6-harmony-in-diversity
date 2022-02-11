@@ -184,13 +184,13 @@ values
 insert or replace into EnglishText
     (Tag,                                                        Text)
 values
-    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience in combat."),
-    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "+3 [ICON_Strength] combat power against barbarians and immediately build a barracks in the area."),
-    ("LOC_GREATPERSON_EL_CID_ACTIVE",                            "Turn a military land unit into a legion and gives the unit 1 enhancement level."),
-    ("LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                "Turn a military land unit into an army and give the unit 1 enhancement level."),
-    ("LOC_GREATPERSON_TIMUR_ACTIVE",                             "Grant a free trader unit to the city, increasing the capacity of 1 [ICON_TradeRoute] trade route."),
-    ("LOC_GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE",                 "Create 1 unit of rock-shooting cannon immediately."),
-    ("LOC_GREATPERSON_SIMON_BOLIVAR_ACTIVE",                     "Create 1 unit of breastplate cavalry immediately.");
+    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience in combat. "),
+    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "+3 [ICON_Strength] combat power against barbarians and immediately build a barracks in the area. "),
+    ("LOC_GREATPERSON_EL_CID_ACTIVE",                            "Turn a military land unit into a legion and gives the unit 1 enhancement level. "),
+    ("LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                "Turn a military land unit into an army and give the unit 1 enhancement level. "),
+    ("LOC_GREATPERSON_TIMUR_ACTIVE",                             "Grant a free trader unit to the city, increasing the capacity of 1 [ICON_TradeRoute] trade route. "),
+    ("LOC_GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE",                 "Create 1 unit of rock-shooting cannon immediately. "),
+    ("LOC_GREATPERSON_SIMON_BOLIVAR_ACTIVE",                     "Create 1 unit of breastplate cavalry immediately. ");
     -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
