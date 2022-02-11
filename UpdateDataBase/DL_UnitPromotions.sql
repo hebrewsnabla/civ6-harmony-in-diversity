@@ -333,10 +333,13 @@ delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' 
 -- update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
 update Modifiers set SubjectRequirementSetId = 'CHOKE_POINTS_PLOT_REQUIREMENTS' where ModifierId = 'CHOKE_POINTS_BONUS';
 --naval melee
-update ModifierArguments set Value = 10 where ModifierId = 'CREEPING_ATTACK_BONUS_VS_RAIDERS' and Name = 'Amount';
+--匍匐攻击：与海军袭击者战斗+12力
+update ModifierArguments set Value = 12 where ModifierId = 'CREEPING_ATTACK_BONUS_VS_RAIDERS' and Name = 'Amount';
 --naval ranged
-update ModifierArguments set Value = 5 where ModifierId = 'BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+--轰炸：攻击区域防御+7力
+update ModifierArguments set Value = 7 where ModifierId = 'BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+--徐进弹：攻击区域防御+12力
+update ModifierArguments set Value = 12 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 --naval raider
 update ModifierArguments set Value = 100 where ModifierId = 'LOOT_GOLD_FROM_COASTAL_RAID' and Name = 'Bonus';
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK' and ModifierId = 'WOLFPACK_ADDITIONAL_ATTACK';
@@ -567,7 +570,8 @@ values
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',       1),
      --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       10),
+     --跳帮：主动攻击海军单位+7力
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       7),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',       100),
     -- ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',  'ABILITY_WOLFPACK_ADJACENT_BONUS');
     ('WOLFPACK_ADJACENT_BONUS',                                     'ModifierId',   'HD_WOLFPACK_ADJACENT_BONUS');
