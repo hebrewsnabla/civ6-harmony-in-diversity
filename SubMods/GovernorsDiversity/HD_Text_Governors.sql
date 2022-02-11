@@ -85,12 +85,12 @@ values
     -- Ibrahim
     ("LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} Pasha"),
     ("LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} Grand Visier"),
-    ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "[ICON_Citizen] Citizens in the city produce +1 [ICON_PRODUCTION] Production. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created. Establishes in 3 turns."),
-    ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "+30% [ICON_Production] Productivity when constructing buildings in the barracks area. +3 [ICON_SCIENCE] Technology value for each barracks and barracks area building built in the city."),
-    ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "When attacking a defensive area, +10 [ICON_Strength] Combat Power to all units within 10 cells around the city centre."),
+    ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "[ICON_Citizen] Citizens in the city produce +1 [ICON_PRODUCTION] Production. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city. Establishes in 3 turns."),
+    ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "+30% [ICON_Production] Production toward Encampment buildings in this city. +3 [ICON_SCIENCE] Science for each Encampment and Encampment building in this city."),
+    ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "Units within 10 tiles of the City Center get +10 [ICON_STRENGTH] Combat Strength when attacking defensible districts."),
     ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn, none of the owner's cities exert Loyalty pressure on your cities."),
     ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+5 [ICON_STRENGTH] Combat Strength while you and your alliance are fighting the same tagret."),
-    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+20% [ICON_PRODUCTION] Production to all military units in the city. Receive a copy unit each time you train a melee or siege unit which is at least Renaissance era.");
+    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+20% [ICON_PRODUCTION] Production toward military units in this city. Receive a second unit each time you train a Renaissance era or later melee or siege unit.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
