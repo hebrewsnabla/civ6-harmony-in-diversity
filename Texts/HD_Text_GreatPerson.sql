@@ -184,8 +184,8 @@ values
 insert or replace into EnglishText
     (Tag,                                                        Text)
 values
-    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience in combat."),
-    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "+3 [ICON_Strength] combat strength against barbarians and immediately build a barracks in the district."),
+    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% more experience when attacking."),
+    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "+3 [ICON_Strength] Combat Strength against barbarians and immediately build a barracks in the district."),
     ("LOC_GREATPERSON_EL_CID_ACTIVE",                            "Turn a military land unit into a legion and gives the unit 1 enhancement level."),
     ("LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                "Turn a military land unit into an army and give the unit 1 enhancement level."),
     ("LOC_GREATPERSON_TIMUR_ACTIVE",                             "Grant a free trader unit to the city, increasing the capacity of 1 [ICON_TradeRoute] trade route."),
@@ -195,7 +195,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_GREATPERSON_SUN_ZTU_ACTIVE",                                    "所有战斗单位战斗获得经验+25%。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_SUN_ZTU_ACTIVE",                                    "所有单位攻击获得的经验+25%。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_AETHELFLAED_ACTIVE",                                "对抗蛮族时+3 [ICON_Strength] 战斗力，立即在该区域建造一座兵营。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_EL_CID_ACTIVE",                                     "把一个军事陆地单变成军团，并赋予该单位1次强化等级。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                         "把一个军事陆地单变成军队，并赋予该单位1次强化等级。"),

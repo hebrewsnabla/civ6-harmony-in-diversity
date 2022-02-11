@@ -408,9 +408,3 @@ insert or replace into ModifierArguments
 values
 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'YieldType',				'YIELD_GOLD'),
 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'Amount',					3			);
---抗骑兵卫生加强前移到战术
-delete from  TechnologyModifiers where ModifierId = "HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION";
-insert or replace into TechnologyModifiers
-    (TechnologyType,                               ModifierId)
-values
-    ('TECH_MILITARY_TACTICS',                      'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION');
