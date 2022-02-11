@@ -16,13 +16,13 @@ for _, file in ipairs(files) do
     end
 end
 
-include("Common");
 include("FarmsOnFreshHills_Common");
+include("HD_GreatPeople_Common");
 include("HD_UnitCommandDefs");
 include "Hanyuu_CommandDefs";               --  Mod Furude Rika Support
 
-Utils = ExposedMembers.DLHD.Utils;
-GreatPersonUtils = ExposedMembers.DLHD.GreatPersonUtils;
+-- Utils = ExposedMembers.DLHD.Utils;
+GameEvents = ExposedMembers.GameEvents;
 
 -- =================================================================================
 -- Cache base functions
@@ -224,22 +224,9 @@ function OnUnitActionClicked( actionType:number, actionHash:number, currentMode:
             if (actionType == UnitCommandTypes.TYPE) then
                 if actionHash == mGreatPersonActivateHash then
                     local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
-                    GreatPersonUtils.HandleActivation(pSelectedUnit:GetOwner(), pSelectedUnit:GetID(), individual);
+                    -- GreatPersonUtils.HandleActivation(pSelectedUnit:GetOwner(), pSelectedUnit:GetID(), individual);
+                    GameEvents.GreatPersonHandleActivation.Call(pSelectedUnit:GetOwner(), pSelectedUnit:GetID(), individual);
                 end
---             else
---                 if (actionType == UnitOperationTypes.TYPE) then
---                     if actionHash == mUnitoperationRemoveFeatureHash then
---                         -- print(pSelectedUnit:GetUnitType());
---                         if (pSelectedUnit:GetUnitType() == mMilitaryEngineer) then
---                             print('removing')
---                             -- TODO: set the moves to zero.
---                             -- TODO: Remove the Features. (maybe need to refresh)
---                             -- pSelectedUnit
---                             -- Utils.SetMovesToZero()
---                             -- return
---                         end
---                     end
---                 end
             end
         end
     end
@@ -278,15 +265,15 @@ function AddActionButton(instance:table, action:table)
         local individual = pSelectedUnit:GetGreatPerson():GetIndividual();
         -- local playerID = pSelectedUnit:GetOwner();
         local playerID = Game.GetLocalPlayer();
-        print('HD_DEBUG_2', pSelectedUnit:GetOwner(), playerID);
-        local rawActivationPlots = GreatPersonUtils.GetActivationPlots(playerID, individual);
+        -- print('HD_DEBUG_2', pSelectedUnit:GetOwner(), playerID);
+        local rawActivationPlots = HDGreatPersonGetActivationPlots(playerID, individual);
         if rawActivationPlots ~= nil then
             -- print('here')
             local validActivation = false;
             local selectedPlotId = pSelectedUnit:GetPlotId();
-            for _, plotId in ipairs(rawActivationPlots) do
-                print('HD_DEBUG', _, selectedPlotId, plotId)
-            end
+            -- for _, plotId in ipairs(rawActivationPlots) do
+            --     print('HD_DEBUG', _, selectedPlotId, plotId)
+            -- end
             for _, plotId in ipairs(rawActivationPlots) do
                 if selectedPlotId == plotId then
                     validActivation = true;
@@ -312,7 +299,8 @@ function OnGreatPersonActivated(unitOwner, unitID, greatPersonClassID, greatPers
     local owner = Players[unitOwner];
     if owner:IsAI() then
         -- Only need to handle AI activation since player activation will be handled in OnUnitActionClicked.
-        GreatPersonUtils.HandleActivation(unitOwner, unitID, greatPersonIndividualID);
+        -- GreatPersonUtils.HandleActivation(unitOwner, unitID, greatPersonIndividualID);
+        GameEvents.GreatPersonHandleActivation.Call(unitOwner, unitID, greatPersonIndividualID);
     end
 end
 

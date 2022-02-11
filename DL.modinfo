@@ -625,6 +625,7 @@
       <File>UI/Replacement/DL_UnitPanel.lua</File>
       <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
       <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+      <File>UI/Additions/HD_GreatPeople_Common.lua</File>
       <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
       <File>UI/Loaders/ToolTipLoader_DL.lua</File>
     </ImportFiles>
@@ -1184,7 +1185,7 @@
       <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
-      <File>Gameplay/Common.lua</File>
+      <File>Gameplay/HD_Common.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
       <!-- <File>Gameplay/Governors.lua</File> -->
       <File>Gameplay/GreatPersons.lua</File>
@@ -1485,7 +1486,7 @@
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
-    <File>Gameplay/Common.lua</File>
+    <File>Gameplay/HD_Common.lua</File>
     <File>Gameplay/HD_StateUtils.lua</File>
     <!-- <File>Gameplay/Governors.lua</File> -->
     <File>Gameplay/GreatPersons.lua</File>
@@ -1510,6 +1511,7 @@
     <!-- UI Additions -->
     <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File> <!-- Mod Version Checker for multiplayer -->
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+    <File>UI/Additions/HD_GreatPeople_Common.lua</File>
     <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
     <!-- UI replacements and icons -->
     <!-- FrontEnd -->
