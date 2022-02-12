@@ -1907,47 +1907,47 @@ values
 
 ------------------------------------------------------------------------------------------------
 -- Ikanda bug in captured cities 
-delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
+-- delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
 
-insert into DistrictModifiers	(DistrictType,	ModifierId)
-select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_GOLD' from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert into DistrictModifiers	(DistrictType,	ModifierId)
+--select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_GOLD' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert into DistrictModifiers	(DistrictType,	ModifierId)
-select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE' from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert into DistrictModifiers	(DistrictType,	ModifierId)
+--select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
-select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
-select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
-select	'CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL' from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+--select	'CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
-insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
-select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
-where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+--insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+--select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 ------------------------------------------------------------------------------------------------
 -- America
@@ -2218,3 +2218,112 @@ update ModifierArguments set Value = 'DISTRICT_HARBOR' where ModifierId = 'TRAIT
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_ENCAMPMENT_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_HOLY_SITE_PRODUCTION' and Name = 'Amount';
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_BOOST_THEATER_DISTRICT_PRODUCTION' and Name = 'Amount';
+
+-- 蒙古: 商路每经过一个贸易站+1瓶
+-- 成吉思汗: 牧场给圣地和商业提供标准加成
+-- by xiaoxiao
+insert or replace into TraitModifiers
+	(TraitType, 							ModifierId)
+values
+	('TRAIT_CIVILIZATION_MONGOLIAN_ORTOO',	'HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN'),
+	('TRAIT_CIVILIZATION_MONGOLIAN_ORTOO',	'HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN'),
+	('TRAIT_LEADER_GENGHIS_KHAN_ABILITY',	'HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY'),
+	('TRAIT_LEADER_GENGHIS_KHAN_ABILITY',	'HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY');
+insert or replace into Modifiers
+	(ModifierId,											ModifierType)
+values
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_OWN_CITY'),
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY'),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY',			'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY'),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY',	'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY');
+insert or replace into ModifierArguments
+	(ModifierId, 											Name, 				Value)
+values
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'YieldType', 		'YIELD_SCIENCE'),
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_OWN', 		'Amount', 			1),
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'YieldType', 		'YIELD_SCIENCE'),
+	('HD_MONGOLIA_TRADE_ROUTE_SCIENCE_FOR_POST_FOREIGN', 	'Amount', 			1),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'DistrictType',		'DISTRICT_HOLY_SITE'),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'ImprovementType',	'IMPROVEMENT_PASTURE'),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'YieldType',		'YIELD_FAITH'),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'Amount',			1),
+	('HD_GENGHIS_KHAN_PASTURE_HOLY_SITE_ADJACENCY', 		'Description',		'LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE'),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'ImprovementType',	'IMPROVEMENT_PASTURE'),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'YieldType',		'YIELD_GOLD'),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'Amount',			1),
+	('HD_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB_ADJACENCY', 	'Description',		'LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB');
+
+-- 祖鲁: 拥有驻军的城市+1琴
+-- UD伊坎达: 文化炸弹, 地基和其中建筑+2瓶+2锤
+-- by xiaoxiao
+insert or replace into TraitModifiers
+	(TraitType, 							ModifierId)
+values
+	('TRAIT_CIVILIZATION_ZULU_ISIBONGO',	'HD_ZULU_GARRISON_CULTURE'),
+	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_CULTURE_BOMB'),
+	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_SCIENCE'),
+	('TRAIT_LEADER_MAJOR_CIV',				'HD_IKANDA_PRODUCTION');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType, 										SubjectRequirementSetId)
+values
+	('HD_ZULU_GARRISON_CULTURE',		 	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
+	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',			null),
+	('HD_IKANDA_CULTURE_BOMB', 				'MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER',	null),
+	('HD_IKANDA_SCIENCE', 					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA'),
+	('HD_IKANDA_PRODUCTION', 				'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA');
+insert or replace into ModifierArguments
+	(ModifierId, 							Name, 			Value)
+values
+	('HD_ZULU_GARRISON_CULTURE',		 	'ModifierId',	'HD_ZULU_GARRISON_CULTURE_MODIFIER'),
+	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'YieldType', 	'YIELD_CULTURE'),
+	('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'Amount', 		1),
+	('HD_IKANDA_CULTURE_BOMB', 				'DistrictType',	'DISTRICT_IKANDA'),
+	('HD_IKANDA_SCIENCE', 					'YieldType', 	'YIELD_SCIENCE'),
+	('HD_IKANDA_SCIENCE', 					'Amount', 		2),
+	('HD_IKANDA_PRODUCTION', 				'YieldType', 	'YIELD_PRODUCTION'),
+	('HD_IKANDA_PRODUCTION', 				'Amount', 		2);
+insert or replace into RequirementSets
+	(RequirementSetId,			RequirementSetType)
+values
+	('HD_DISTRICT_IS_IKANDA',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,			RequirementId)
+values
+	('HD_DISTRICT_IS_IKANDA',	'REQUIRES_DISTRICT_IS_DISTRICT_IKANDA');
+
+-- 伊坎达建筑+2瓶+2锤
+delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
+create temporary table IkandaBuildings (BuildingType text);
+insert into IkandaBuildings (BuildingType) select BuildingType from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT';
+create temporary table IkandaYields (YieldType text);
+insert into IkandaYields (YieldType) values ('YIELD_SCIENCE'), ('YIELD_PRODUCTION');
+insert or replace into DistrictModifiers
+	(DistrictType, 		ModifierId)
+select
+	'DISTRICT_IKANDA', 	'HD_IKANDA_' || BuildingType || '_' || YieldType
+from IkandaBuildings left outer join IkandaYields;
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType)
+select
+	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_YIELD'
+from IkandaBuildings left outer join IkandaYields;
+
+insert or replace into ModifierArguments
+	(ModifierId, 										Name, 			Value)
+select
+	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'BuildingType', BuildingType
+from IkandaBuildings left outer join IkandaYields;
+
+insert or replace into ModifierArguments
+	(ModifierId, 										Name, 			Value)
+select
+	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'YieldType', 	YieldType
+from IkandaBuildings left outer join IkandaYields;
+
+insert or replace into ModifierArguments
+	(ModifierId, 										Name, 			Value)
+select
+	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'Amount', 		2
+from IkandaBuildings left outer join IkandaYields;
