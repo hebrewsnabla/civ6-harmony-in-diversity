@@ -460,7 +460,7 @@ values
 	('MAZU_BELIEF_COASTAL_DISTRICT_PROD',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	-- ('MAZU_BELIEF_COASTAL_DISTRICT_PROD_MODIFIER',					'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',		'PLOT_IS_COAST_NOT_LAKE_REQUIREMENTS'),
 	('MAZU_BELIEF_COASTAL_DISTRICT_PROD_MODIFIER',					'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_HARBOR'),
-	('MAZU_BELIEF_HARBOR_FISHING_BOATS_GOLD',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('MAZU_BELIEF_HARBOR_FISHING_BOATS_GOLD',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'CITY_FOLLOWS_PANTHEON_AND_DISTRICT_IS_SPECIALTY_REQUIREMENTS'),
 	('MAZU_BELIEF_HARBOR_FISHING_BOATS_GOLD_MODIFIER',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'HD_MAZU_REQUIREMENTS'),
 	('MAZU_BELIEF_HARBOR_GREAT_ADMIRAL',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('MAZU_BELIEF_HARBOR_GREAT_ADMIRAL_MODIFIER',					'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',	'DISTRICT_IS_HARBOR'),		
@@ -637,7 +637,7 @@ values
 	('RELIGIOUS_IDOLS_GREAT_PROPHET_MODIFIER',						'Amount',				2),
 	('STONE_CIRCLES_GREAT_PROPHET',									'ModifierId',			'STONE_CIRCLES_GREAT_PROPHET_MODIFIER'),
 	('STONE_CIRCLES_GREAT_PROPHET_MODIFIER',						'GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
-	('STONE_CIRCLES_GREAT_PROPHET_MODIFIER',						'Amount',				3),
+	('STONE_CIRCLES_GREAT_PROPHET_MODIFIER',						'Amount',				4),
 	('GODDESS_OF_FESTIVALS_FAITH_PLANTATION_ADJACENCY',				'DistrictType',			'DISTRICT_HOLY_SITE'),
 	('GODDESS_OF_FESTIVALS_FAITH_PLANTATION_ADJACENCY',				'YieldType',			'YIELD_FAITH'),
 	('GODDESS_OF_FESTIVALS_FAITH_PLANTATION_ADJACENCY',				'ImprovementType',		'IMPROVEMENT_PLANTATION'),
@@ -2220,77 +2220,80 @@ values
 insert or replace into BeliefModifiers
 	(BeliefType,								ModifierID)
 select 'BELIEF_HD_SONG_OF_SIREN',				'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert or replace into BeliefModifiers
 	(BeliefType,								ModifierID)
 select 'BELIEF_HD_SONG_OF_SIREN',				'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,										SubjectRequirementSetId)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'MODIFIER_ALL_CITIES_FEATURE_ADJACENCY',			'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,										SubjectRequirementSetId)
 select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS',		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,										SubjectRequirementSetId)
 select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'HD_SONG_OF_SIREN_REQ'||FeatureType
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'DistrictType',			'DISTRICT_CAMPUS'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'FeatureType',			FeatureType
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'YieldType',			'YIELD_SCIENCE'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Amount',				2	
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_CAMPUS_'||FeatureType||'_BONUS',		'Description',			'LOC_DISTRICT_'||FeatureType||'_SCIENCE'	
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,											Name,					Value)
 select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS',		'ModifierId',			'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,												Name,					Value)
 select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'YieldType',			'YIELD_PRODUCTION'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert into ModifierArguments
 	(ModifierId,												Name,					Value)
 select 'SONG_OF_SIREN_'||FeatureType||'YIELD_BONUS_MODIFIER',	'Amount',				2	
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 
 insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 select 'HD_SONG_OF_SIREN_REQ'||FeatureType,						'REQUIREMENTSET_TEST_ALL'
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select 'HD_SONG_OF_SIREN_REQ'||FeatureType,						'HD_REQUIRES_PLOT_HAS_'||FeatureType
-from Feature_ValidTerrains where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
+from Features where FeatureType = 'FEATURE_REEF' or FeatureType = 'FEATURE_SUK_KELP';
 
 --Pantheon 妈祖
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('HD_MAZU_REQUIREMENTS',									'ADJACENT_TO_OWNER'),
-	('HD_MAZU_REQUIREMENTS',									'REQUIRES_PLOT_HAS_FISHING_BOATS');
+	('HD_MAZU_REQUIREMENTS',									'REQUIRES_PLOT_HAS_FISHING_BOATS'),
+	('CITY_FOLLOWS_PANTHEON_AND_DISTRICT_IS_SPECIALTY_REQUIREMENTS',		'REQUIRES_CITY_FOLLOWS_PANTHEON'),
+	('CITY_FOLLOWS_PANTHEON_AND_DISTRICT_IS_SPECIALTY_REQUIREMENTS',		'HD_REQUIRES_DISTRICT_IS_SPECIALTY_DISTRICT');
 insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
-	('HD_MAZU_REQUIREMENTS',									'REQUIREMENTSET_TEST_ALL');
+	('HD_MAZU_REQUIREMENTS',									'REQUIREMENTSET_TEST_ALL'),
+	('CITY_FOLLOWS_PANTHEON_AND_DISTRICT_IS_SPECIALTY_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
 insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
