@@ -25,7 +25,7 @@ values  ('IMPROVEMENT_KAMPUNG', 'FEATURE_REEF', NULL, NULL);
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) 
 select  'IMPROVEMENT_KAMPUNG', 'FEATURE_SUK_KELP', 'TECH_CELESTIAL_NAVIGATION', NULL
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
-update Improvements set Description = 'LOC_IMPROVEMENT_KAMPUNG_KELP_DESCRIPTION' where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
+update Improvements set Description = 'LOC_IMPROVEMENT_KAMPUNG_KELP_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_KAMPUNG' and exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 
 update Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_KAMPUNG' and YieldType = 'YIELD_FOOD';
 update Adjacency_YieldChanges set YieldType = 'YIELD_PRODUCTION' where ID = 'Kampung_FoodFishingBoats';

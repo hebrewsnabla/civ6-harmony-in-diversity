@@ -39,9 +39,9 @@ values
     ("LOC_POLICY_SUPERPOWER_NAME",                                                    "Superpower"),
     ("LOC_POLICY_SUPERPOWER_DESCRIPTION",                                             "Every Research Lab gives +2% [ICON_SCIENCE] Science Boost to all your cities. Every Broadcast Center gives +2% [ICON_CULTURE] Culture Boost to all your cities."),
     ("LOC_POLICY_ART_PATRONS_NAME",                                                   "Patrons of the Arts"),
-    ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% [ICON_Production] Productivity when constructing buildings in the Theatre and Commercial centre districts. "),
+    ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% production speed toward Theather Square buildings and Commercial Hub buildings."),
     ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
-    ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% [ICON_Production] Productivity when constructing buildings in the Campus and Industrial Zone districts. "),
+    ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% production speed toward Campus buildings and Industrial Zone buildings."),
 
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
@@ -222,9 +222,9 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_SUPERPOWER_NAME",                                                    "超级大国"),
     ("zh_Hans_CN",  "LOC_POLICY_SUPERPOWER_DESCRIPTION",                                             "每座研究实验室为所有城市+2% [ICON_SCIENCE] 科技值。每座广播中心为所有城市+2% [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_NAME",                                                   "艺术赞助人"),
-    ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "建造剧院和商业中心区域中的建筑时+30% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "建造剧院广场和商业中心内的建筑时+30%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "历史进步"),
-    ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造学院和工业区区域中的建筑时+30% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造工业区和学院内的建筑时+30%建造速度。"),
 
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),

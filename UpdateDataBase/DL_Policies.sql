@@ -1306,66 +1306,48 @@ update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = '
 	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';
 
-<<<<<<< HEAD
-	--by 先驱 政策卡增加：【艺术赞助人】 银行业解锁
-insert or replace into Types
-	(Type,								Kind)
-values
-	('POLICY_ART_PATRONS',				'KIND_POLICY');
-insert or replace into Policies
-	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
-values
-	('POLICY_ART_PATRONS',				'LOC_POLICY_ART_PATRONS_NAME',				'LOC_POLICY_ART_PATRONS_DESCRIPTION',				NULL,						                'TECH_BANKING',			    'SLOT_ECONOMIC');
-insert or replace into PolicyModifiers
-	(PolicyType,						ModifierId)
-values
-	('POLICY_ART_PATRONS',				'ART_PATRONS_1'),
-	('POLICY_ART_PATRONS',				'ART_PATRONS_2');
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,RunOnce,Permanent)
-values
-	('ART_PATRONS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
-	('ART_PATRONS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
-insert or replace into ModifierArguments
-	(ModifierId,							Name, 				Value)
-values
-	('ART_PATRONS_1',				        'PolicyType',		'TECH_BANKING'),
-	('ART_PATRONS_1',	                    'DistrictType',		'DISTRICT_THEATER'),
-	('ART_PATRONS_1',	                    'Amount',			30),
-	('ART_PATRONS_2',				        'PolicyType',		'TECH_BANKING'),
-	('ART_PATRONS_2',	                    'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
-	('ART_PATRONS_2',	                    'Amount',			30);
+--by 先驱 政策卡增加：【艺术赞助人】 银行业解锁
 --by 先驱 政策卡增加：【历史进步】 历史哲学解锁
 insert or replace into Types
 	(Type,								Kind)
 values
+	('POLICY_ART_PATRONS',				'KIND_POLICY'),
 	('POLICY_HISTORICAL_PROGRESS',	    'KIND_POLICY');
 insert or replace into Policies
 	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
 values
+	('POLICY_ART_PATRONS',				'LOC_POLICY_ART_PATRONS_NAME',				'LOC_POLICY_ART_PATRONS_DESCRIPTION',				NULL,						                'TECH_BANKING',			    'SLOT_ECONOMIC'),
 	('POLICY_HISTORICAL_PROGRESS',	    'LOC_POLICY_HISTORICAL_PROGRESS_NAME',		'LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',		    NULL,			            'SLOT_ECONOMIC');
+
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
 values
-	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_1'),
-	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_2');
+	('POLICY_ART_PATRONS',				'ART_PATRONS_THEATER_SPEEDUP'),
+	('POLICY_ART_PATRONS',				'ART_PATRONS_COMMERCIAL_SPEEDUP'),
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_IND_SPEEDUP'),
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_CMP_SPEEDUP');
+
 insert or replace into Modifiers
-	(ModifierId,							ModifierType,RunOnce,Permanent)
+	(ModifierId,						ModifierType)
 values
-	('HISTORICAL_PROGRESS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
-	('HISTORICAL_PROGRESS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+	('ART_PATRONS_THEATER_SPEEDUP',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
+	('ART_PATRONS_COMMERCIAL_SPEEDUP',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
+	('HISTORICAL_PROGRESS_IND_SPEEDUP',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
+	('HISTORICAL_PROGRESS_CMP_SPEEDUP',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
+
 insert or replace into ModifierArguments
 	(ModifierId,							Name, 				Value)
 values
-	('HISTORICAL_PROGRESS_1',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
-	('HISTORICAL_PROGRESS_1',	            'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
-	('HISTORICAL_PROGRESS_1',	            'Amount',			30),
-	('HISTORICAL_PROGRESS_2',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
-	('HISTORICAL_PROGRESS_2',	            'DistrictType',		'DISTRICT_CAMPUS'),
-	('HISTORICAL_PROGRESS_2',	            'Amount',			30);
-=======
--- 着力点：开明专制 by xhh
+	('ART_PATRONS_THEATER_SPEEDUP',	     	'DistrictType',		'DISTRICT_THEATER'),
+	('ART_PATRONS_THEATER_SPEEDUP',	    	'Amount',			30),
+	('ART_PATRONS_COMMERCIAL_SPEEDUP',	 	'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
+	('ART_PATRONS_COMMERCIAL_SPEEDUP',	  	'Amount',			30),
+	('HISTORICAL_PROGRESS_IND_SPEEDUP',	   	'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
+	('HISTORICAL_PROGRESS_IND_SPEEDUP',	  	'Amount',			30),
+	('HISTORICAL_PROGRESS_CMP_SPEEDUP',	  	'DistrictType',		'DISTRICT_CAMPUS'),
+	('HISTORICAL_PROGRESS_CMP_SPEEDUP',	 	'Amount',			30);
 
+-- 着力点：开明专制 by xhh
 update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
 update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_MILITARY';
 
@@ -1464,27 +1446,27 @@ select
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
@@ -1648,4 +1630,3 @@ insert or replace into RequirementSetRequirements
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
 from HD_DistrictBonus;
->>>>>>> dev

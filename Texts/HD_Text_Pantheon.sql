@@ -20,7 +20,7 @@ values
     ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh. Floodplain tiles no longer lower adjacent tiles' Appeal."),
     ("LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "+1 [ICON_Food] Food and +1 [ICON_Production] Production from Camps over Luxury and Bonus resources. +1 [ICON_Gold] Gold from all Camps."),
     ("LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "+2 [ICON_GreatPerson] Great Person Points from Holy Sites (Prophet), Campuses (Scientist), Theater Squares  (Writer), Industial Zones (Engineer) and Commercial Hubs (Merchant)."),
-    ("LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "+2 [ICON_Faith] Faith from Quarries. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry."),
+    ("LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "+2 [ICON_Faith] Faith from Quarries. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry."),
     ("LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "+1 [ICON_Faith] Faith and +1 [ICON_CULTURE] Culture from Mines over Luxury and Bonus resources. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns mines over Luxury or Bonus resources."),
     ("LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "+2 [ICON_Faith] Faith from tiles with Breathtaking Appeal. +1 [ICON_Faith] Faith from tiles with Charming Appeal. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Charming tile, doubles for Breathtaking tile."),
     ("LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION",                 "+1 [ICON_FAITH] Faith and +1 [ICON_CULTURE] Culture from Geothermal Fissures and Volcanic Soil. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Geothermal Fissures, Volcanic Soil or Volcano (Volcanic Wonders included) tile."),
@@ -45,7 +45,7 @@ values
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
     -- ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production."), -- +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors.
-    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +2 [ICON_Production] Production for Harbor Districts. Every district provides +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
+    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +2 [ICON_Production] Production for Harbor Districts. Every Specialty district provides +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+1 [ICON_Production] Production from Fishing Boats. Extra +1 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
@@ -87,7 +87,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力，所有营地+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商人）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+4 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "所有奢侈和加成矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在迷人地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数，惊艳则翻倍。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION",                 "地热裂缝和火山土单元格提供+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。每座拥有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+4 [ICON_GreatProphet] 大预言家点数。"),
@@ -112,7 +112,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "森林单元格+1 [ICON_Food] 粮食，雨林单元格+1 [ICON_Production] 生产力，改良后的森林和雨林单元格+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "妈祖信仰"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边或湖边的城市+2 [ICON_Production] 生产力。您境内位于海岸单元格的区域和奇观+1 [ICON_Production] 生产力。"), -- 从港口获得的 [ICON_GreatAdmiral] 海军提督点数+2。
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+2 [ICON_Production] 生产力。渔船相邻每个区域获得+2 [ICON_Gold] 金币。"), 
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+2 [ICON_Production] 生产力。渔船相邻每个专业化区域获得+2 [ICON_Gold] 金币。"), 
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "渔船+1 [ICON_Production] 生产力，改良加成资源的渔船额外+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
