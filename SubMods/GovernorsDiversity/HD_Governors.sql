@@ -333,6 +333,8 @@ values
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'CITY_DEFENDER_FREE_PROMOTIONS'),
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT');
+update Modifiers set Permanent = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
+update Modifiers set RunOnce = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
 -- update ModifierArguments set Value = 60 where ModifierId = 'BLACK_MARKETEER_STRATEGIC_RESOURCE_COST_DISCOUNT' and Name = 'Amount';
 
 -- insert or replace into Modifiers	
@@ -1013,8 +1015,7 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_P
 delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_CAPOU_AGHA" and ModifierId = "CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE";
 delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_GRAND_VISIER" and ModifierId = "KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS";
 delete from GovernorPromotionModifiers where GovernorPromotionType = "GOVERNOR_PROMOTION_GRAND_VISIER" and ModifierId = "GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH";
-update Modifiers set Permanent = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
-update Modifiers set RunOnce = 0 where ModifierId = "BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT";
+
 update ModifierArguments set Value = 10 where ModifierId = "SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT";
 update ModifierArguments set Value = 5 where ModifierId = "GRAND_VIZIER_ADJUST_IGNORE_CULTURAL_IDENTITY";
 insert or replace into GovernorPromotionModifiers
