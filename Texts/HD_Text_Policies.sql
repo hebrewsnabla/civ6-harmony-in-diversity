@@ -42,7 +42,6 @@ values
     ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% production speed toward Theather Square buildings and Commercial Hub buildings."),
     ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
     ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% production speed toward Campus buildings and Industrial Zone buildings."),
-
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
