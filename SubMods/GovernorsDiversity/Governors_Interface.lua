@@ -2,6 +2,7 @@
 -- 
 include("SupportFunctions");
 
+GameEvents = ExposedMembers.GameEvents;
 Utils = ExposedMembers.DLHD.Utils;
 CityYield = ExposedMembers.DLHD.CityYield;
 
@@ -34,9 +35,9 @@ local m_EffectDistance = GlobalParameters.MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_
 local m_LiangWonderGreatEngineerPercentage = GlobalParameters.LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE
 local m_ReynaConvertPercentage = GlobalParameters.REYNA_CONVERT_PERCENTAGE
 
-function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
-    local player = Players[ePlayer]
-    -- print(ePlayer, ambassadorID, tributumID, 'e', eGovernor, ePromotion)
+function AmbassadorTributumEnvoy(playerID, eGovernor, ePromotion)
+    local player = Players[playerID]
+    -- print(playerID, ambassadorID, tributumID, 'e', eGovernor, ePromotion)
     if player ~= nil then
         if (m_GovernorAmbassadorID == eGovernor) and (m_GovernorPromotion_TributumID == ePromotion) then
             local playersMetIDs = player:GetDiplomacy():GetPlayersMetIDs()
@@ -44,7 +45,8 @@ function AmbassadorTributumEnvoy(ePlayer, eGovernor, ePromotion)
                 for _, id in ipairs(playersMetIDs) do
                     local other_player = Players[id]
                     if isMinor(other_player) then
-                        Utils.SendEnvoy(ePlayer, id)
+                        -- Utils.SendEnvoy(playerID, id)
+                        GameEvents.SendEnvoytoCityState.Call(playerID, id)
                     end
                 end
             end
@@ -84,11 +86,13 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
                             validCities[city:GetID()] = true
                             local buildings = city:GetBuildings()
                             if not buildings:HasBuilding(m_DummyMagnus) then
-                                Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
+                                -- Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
+                                GameEvents.RequestCreateBuilding.Call(player:GetID(), city:GetID(), m_DummyMagnus)
                                 -- print('Dummy Magnus created', player:GetID(), city:GetID())
                             end
                             if buildings:HasBuilding(m_DummyNoMagnus) then
-                                Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
+                                -- Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
+                                GameEvents.RequestRemoveBuilding.Call(player:GetID(), city:GetID(), m_DummyNoMagnus)
                                 -- print('Dummy NoMagnus removed', player:GetID(), city:GetID())
                             end
                         end
@@ -103,21 +107,23 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
         -- print(city:GetID(), validCities[city:GetID()])
         if validCities[city:GetID()] == nil then
             if buildings:HasBuilding(m_DummyMagnus) then
-                Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
+                -- Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
+                GameEvents.RequestRemoveBuilding.Call(player:GetID(), city:GetID(), m_DummyMagnus)
                 -- print('Dummy Magnus removed', player:GetID(), city:GetID())
             end
             if not buildings:HasBuilding(m_DummyNoMagnus) then
-                Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
+                -- Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
+                GameEvents.RequestCreateBuilding.Call(player:GetID(), city:GetID(), m_DummyNoMagnus)
                 -- print('Dummy NoMagnus created', player:GetID(), city:GetID())
             end
         end
     end
 end
 
-function CheckGeneralServicesOfficer(ePlayer, eGovernor, ePromotion)
+function CheckGeneralServicesOfficer(playerID, eGovernor, ePromotion)
     -- print('IsPromoted', eGovernor, ePromotion)
     if (eGovernor == m_GovernorResourceManagerID) and (ePromotion == m_GovernorPromotion_GeneralServicesOfficerID) then
-        local player = Players[ePlayer]
+        local player = Players[playerID]
         GeneralServicesOfficerUpdateDummyBuilding(player, eGovernor)
     end
 end
@@ -158,7 +164,8 @@ function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPerc
         if governor ~= nil and promotion ~= nil then
             -- print('WonderToGreatEngineerPoints', governor:HasPromotion(promotion.Hash), governor:IsEstablished())
             if governor:IsEstablished() and governor:HasPromotion(promotion.Hash) then
-                Utils.AddGreatPeoplePoints(playerID, greatEngID, amount)
+                -- Utils.AddGreatPeoplePoints(playerID, greatEngID, amount)
+                GameEvents.AddGreatPeoplePoints.Call(playerID, greatEngID, amount)
             end
         end
     end
@@ -198,11 +205,13 @@ function UpdateReynaTradeRoutesYield(playerID)
                 -- Check that the destination city owner is not the current player.
                 if route.DestinationCityPlayer ~= playerID then
                     for _, yieldInfo in ipairs(route.OriginYields) do
-                        if yieldInfo.Amount > 0 then
+                        if (yieldInfo.Amount > 0) then 
                             local yieldDetails = GameInfo.Yields[yieldInfo.YieldIndex];
-                            -- Round amount to integer.
-                            local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
-                            totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
+                            if (yieldDetails.YieldType == 'YIELD_GOLD') then
+                                -- Round amount to integer.
+                                local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
+                                totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
+                            end
                         end
                     end
                 end

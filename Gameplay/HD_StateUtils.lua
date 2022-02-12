@@ -5,8 +5,15 @@
 -- ===========================================================================
 
 g_PropertyKeys_HD = {
+    TempFlags = {
+        isSyncFavor = "HD_IsSyncFavor",
+    },
+    PlayerFlags = {
+        HaveGrantWalls = "HD_HaveGrantWalls",
+    },
     CityFlags = {
         HasAssignedGovernor = "HD_HasAssignedGovernor",
+        HasDipFavor = 'HD_HasDipFavor',
     },
     UnitFlags = {
         PromotionAvailable = "HD_PromotionAvailable",

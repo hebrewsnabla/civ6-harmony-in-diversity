@@ -219,8 +219,8 @@ values
 	('POLICY_DIPLOMATIC_LEAGUE',		'DIPLOMATIC_LEAGUE_INFLUENCEPOINTS'),
 	('POLICY_DIPLOMATIC_LEAGUE',		'CHARISMATICLEADER_OPENBORDERS'),
 	('POLICY_SERFDOM',					'SERFDOM_BUILDERPRODUCTION'),
-	('POLICY_PUBLIC_TRANSPORT',			'PUBLICTRANSPORT_CHARMING_NEIGHBORHOOD_HOUSING'),
-	('POLICY_PUBLIC_TRANSPORT',			'PUBLICTRANSPORT_BREATHTAKING_NEIGHBORHOOD_HOUSING'),
+	-- ('POLICY_PUBLIC_TRANSPORT',			'PUBLICTRANSPORT_CHARMING_NEIGHBORHOOD_HOUSING'),
+	-- ('POLICY_PUBLIC_TRANSPORT',			'PUBLICTRANSPORT_BREATHTAKING_NEIGHBORHOOD_HOUSING'),
 	('POLICY_COLONIAL_OFFICES',			'COLONIALOFFICES_FOREIGNFOOD'),
 	('POLICY_COLONIAL_OFFICES',			'COLONIALOFFICES_FOREIGNFOODPERCENTAGE'),
 	('POLICY_MILITARY_RESEARCH',		'HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_XHH');
@@ -415,7 +415,7 @@ update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCH
 
 update ModifierArguments set Value = 50 where Name = 'Amount' and ModifierID = 'SCRIPTURE_DISTRICTFAITH';
 
-update ModifierArguments set Value = 4 where Name = 'Amount' and (ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' or ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE');
+-- update ModifierArguments set Value = 4 where Name = 'Amount' and (ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' or ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE');
 
 update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'INTERNATIONALSPACEAGENCY_SCIENCEPERTRIBUTARY';
 
@@ -445,6 +445,7 @@ values
 	('POLICY_CONSTRUCTION_CROPS',		'KIND_POLICY'),
 	('POLICY_DRILL',					'KIND_POLICY'),
 	('POLICY_TRIBUTE_TRADE',			'KIND_POLICY'),
+	('POLICY_SELF_DETERMINATION',		'KIND_POLICY'),
 	('POLICY_SOCIAL_STATISTICS',		'KIND_POLICY'),
 	('POLICY_PLUTONOMY',				'KIND_POLICY'),
 	('POLICY_PHILOSOPHY_EDUCATION',		'KIND_POLICY'),
@@ -491,11 +492,12 @@ values
 	('POLICY_CONSTRUCTION_CROPS',		'LOC_POLICY_CONSTRUCTION_CROPS_NAME',		'LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION',		'CIVIC_URBANIZATION',						NULL,						'SLOT_MILITARY'),
 	('POLICY_DRILL',					'LOC_POLICY_DRILL_NAME',					'LOC_POLICY_DRILL_DESCRIPTION',						'CIVIC_MILITARY_TRAINING',					NULL,						'SLOT_MILITARY'),
 	('POLICY_TRIBUTE_TRADE',			'LOC_POLICY_TRIBUTE_TRADE_NAME',			'LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION',				'CIVIC_RECORDED_HISTORY',					NULL,						'SLOT_DIPLOMATIC'),
+	('POLICY_SELF_DETERMINATION',		'LOC_POLICY_SELF_DETERMINATION_NAME',		'LOC_POLICY_SELF_DETERMINATION_DESCRIPTION',		'CIVIC_NATIONALISM',						NULL,						'SLOT_DIPLOMATIC'),
 	('POLICY_SOCIAL_STATISTICS',		'LOC_POLICY_SOCIAL_STATISTICS_NAME',		'LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION',			'CIVIC_SOCIAL_SCIENCE_HD',					NULL,						'SLOT_ECONOMIC'),
 	('POLICY_PLUTONOMY',				'LOC_POLICY_PLUTONOMY_NAME',				'LOC_POLICY_PLUTONOMY_DESCRIPTION',					'CIVIC_SOCIAL_SCIENCE_HD',					NULL,						'SLOT_ECONOMIC'),
 	('POLICY_PHILOSOPHY_EDUCATION',		'LOC_POLICY_PHILOSOPHY_EDUCATION_NAME',		'LOC_POLICY_PHILOSOPHY_EDUCATION_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',			NULL,						'SLOT_WILDCARD'),
 	('POLICY_PURITAN',					'LOC_POLICY_PURITAN_NAME',					'LOC_POLICY_PURITAN_DESCRIPTION',					'CIVIC_ETHICS_HD',							NULL,						'SLOT_ECONOMIC'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',	'CIVIC_EVOLUTION_THEORY_HD',				NULL,						'SLOT_ECONOMIC'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',	'CIVIC_EVOLUTION_THEORY_HD',				NULL,						'SLOT_DIPLOMATIC'),
 	('POLICY_SISHU',					'LOC_POLICY_SISHU_NAME',					'LOC_POLICY_SISHU_DESCRIPTION',						'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		NULL,						'SLOT_ECONOMIC'),
 	('POLICY_COMPILE',					'LOC_POLICY_COMPILE_NAME',					'LOC_POLICY_COMPILE_DESCRIPTION',					NULL,										'TECH_PAPER_MAKING_HD',		'SLOT_WILDCARD'),
 	('POLICY_SUPPLY_LINES',				'LOC_POLICY_SUPPLY_LINES_NAME',				'LOC_POLICY_SUPPLY_LINES_DESCRIPTION',				NULL,										'TECH_MILITARY_TACTICS',	'SLOT_MILITARY'),
@@ -559,7 +561,9 @@ values
 	('POLICY_NEW_ROUTE',			'POLICY_MARKET_ECONOMY'),
 	('POLICY_WATER_TRANSPORT',		'POLICY_COLLECTIVIZATION'),
 	('POLICY_TEXTBOOK',				'POLICY_NOBEL_PRIZE'),
-	('POLICY_INSPIRATION',			'POLICY_TEXTBOOK');
+	('POLICY_INSPIRATION',			'POLICY_TEXTBOOK'),
+	('POLICY_TRIBUTE_TRADE',		'POLICY_SELF_DETERMINATION');
+delete from ObsoletePolicies where PolicyType = 'POLICY_MILITARY_RESEARCH';
 
 
 delete from PolicyModifiers where PolicyType = 'POLICY_CARAVANSARIES';
@@ -619,6 +623,8 @@ values
 	('POLICY_DRILL',					'DRILL_EXPERIENCE'),
 	('POLICY_TRIBUTE_TRADE',			'COMMERCIAL_HUB_INFLUENCEPOINTS'),
 	('POLICY_TRIBUTE_TRADE',			'TRADE_ROUTE_GOLD_TO_CITY_STATES'),
+	('POLICY_SELF_DETERMINATION',		'SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS'),
+	('POLICY_SELF_DETERMINATION',		'SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES'),
 	('POLICY_SOCIAL_STATISTICS',		'SOCIAL_STATISTICS_POPULATION_SCIENCE'),
 	('POLICY_SOCIAL_STATISTICS',		'SOCIAL_STATISTICS_POPULATION_CULTURE'),
 	('POLICY_PLUTONOMY',				'PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST'),
@@ -626,8 +632,8 @@ values
 	('POLICY_PHILOSOPHY_EDUCATION',		'PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS'),
 	('POLICY_PURITAN',					'PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST'),
 	('POLICY_PURITAN',					'PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_SCIENCE_PERCENTAGE_BOOST'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_CULTURE_PERCENTAGE_BOOST'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_SCIENCE'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_CULTURE'),
 	('POLICY_SISHU',					'SISHU_POPULATION_SCIENCE'),
 	('POLICY_SISHU',					'SISHU_POPULATION_CULTURE'),
 	('POLICY_COMPILE',					'COMPILE_FIXED_SCIENTIST_POINTS'),
@@ -685,7 +691,10 @@ values
 	('DRILL_EXPERIENCE',									'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',				NULL),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'DISTRICT_IS_COMMERCIAL_HUB'),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						NULL),
+	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'DISTRICT_IS_COMMERCIAL_HUB'),
+	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',	'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						NULL),
 	('TRADE_ROUTE_GOLD_TO_CITY_STATES',						'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	NULL),
+	('SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES',	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	NULL),
 	('SOCIAL_STATISTICS_POPULATION_SCIENCE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_3_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('SOCIAL_STATISTICS_POPULATION_CULTURE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_3_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_CITY_HAS_DISTRICT_THEATER_XHH'),
@@ -693,8 +702,10 @@ values
 	('PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS',		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT_BONUS',				'HD_CITY_HAS_DISTRICT_WONDER_XHH'),
 	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
 	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
-	('SCIENTIFIC_EXPEDITIONS_SCIENCE_PERCENTAGE_BOOST',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH'),
-	('SCIENTIFIC_EXPEDITIONS_CULTURE_PERCENTAGE_BOOST',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR_XHH'),
+	('SCIENTIFIC_EXPEDITIONS_SCIENCE',						'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB'),
+	('SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'THE_HOME_CONTINENT_NEW_REQUIREMENT'),
+	('SCIENTIFIC_EXPEDITIONS_CULTURE',						'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR'),
+	('SCIENTIFIC_EXPEDITIONS_CULTURE_MODIFIER',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'THE_HOME_CONTINENT_NEW_REQUIREMENT'),
 	('SISHU_POPULATION_SCIENCE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_2_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('SISHU_POPULATION_CULTURE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_2_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('COMPILE_FIXED_SCIENTIST_POINTS',						'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							NULL),
@@ -788,9 +799,13 @@ values
 	('POLICY_WONDER_LESS_GOLD',												'Amount',						-50),
 	('DRILL_EXPERIENCE',													'Amount',						50),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS',										'ModifierId',					'COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER'),
-	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',								'Amount',						2),
+	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',								'Amount',						1),
 	('TRADE_ROUTE_GOLD_TO_CITY_STATES',										'YieldType',					'YIELD_GOLD'),
-	('TRADE_ROUTE_GOLD_TO_CITY_STATES',										'Amount',						2),
+	('TRADE_ROUTE_GOLD_TO_CITY_STATES',										'Amount',						3),
+	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS',					'ModifierId',					'SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER'),
+	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',			'Amount',						2),
+	('SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES',					'YieldType',					'YIELD_GOLD'),
+	('SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES',					'Amount',						5),
 	('SOCIAL_STATISTICS_POPULATION_SCIENCE',								'YieldType',					'YIELD_SCIENCE'),
 	('SOCIAL_STATISTICS_POPULATION_SCIENCE',								'Amount',						0.8),
 	('SOCIAL_STATISTICS_POPULATION_CULTURE',								'YieldType',					'YIELD_CULTURE'),
@@ -801,13 +816,15 @@ values
 	('PLUTONOMY_CAMPUS_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						5),
 	('PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS',						'Amount',						25),
 	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'YieldType',					'YIELD_GOLD'),
-	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'Amount',						15),
+	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'Amount',						10),
 	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'YieldType',					'YIELD_PRODUCTION'),
-	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						15),
-	('SCIENTIFIC_EXPEDITIONS_SCIENCE_PERCENTAGE_BOOST',						'YieldType',					'YIELD_SCIENCE'),
-	('SCIENTIFIC_EXPEDITIONS_SCIENCE_PERCENTAGE_BOOST',						'Amount',						15),
-	('SCIENTIFIC_EXPEDITIONS_CULTURE_PERCENTAGE_BOOST',						'YieldType',					'YIELD_CULTURE'),
-	('SCIENTIFIC_EXPEDITIONS_CULTURE_PERCENTAGE_BOOST',						'Amount',						15),
+	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						10),
+	('SCIENTIFIC_EXPEDITIONS_SCIENCE',										'ModifierId',					'SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER'),
+	('SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER',								'YieldType',					'YIELD_SCIENCE'),
+	('SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER',								'Amount',						3),
+	('SCIENTIFIC_EXPEDITIONS_CULTURE',										'ModifierId',					'SCIENTIFIC_EXPEDITIONS_CULTURE_MODIFIER'),
+	('SCIENTIFIC_EXPEDITIONS_CULTURE_MODIFIER',								'YieldType',					'YIELD_CULTURE'),
+	('SCIENTIFIC_EXPEDITIONS_CULTURE_MODIFIER',								'Amount',						3),
 	('SISHU_POPULATION_SCIENCE',											'YieldType',					'YIELD_SCIENCE'),
 	('SISHU_POPULATION_SCIENCE',											'Amount',						0.4),
 	('SISHU_POPULATION_CULTURE',											'YieldType',					'YIELD_CULTURE'),
@@ -826,9 +843,9 @@ values
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'YieldType',					'YIELD_PRODUCTION'),
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'Amount',						3),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'YieldType',					'YIELD_CULTURE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						3),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						2),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'YieldType',					'YIELD_SCIENCE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						3),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						2),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'Amount',						4),
 	('TEXTBOOK_TIER2_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
@@ -857,8 +874,8 @@ values
 	('HD_CITY_HAS_DISTRICT_THEATER_XHH', 						'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_HAS_DISTRICT_CAMPUS_XHH', 						'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_HAS_DISTRICT_WONDER_XHH', 						'REQUIREMENTSET_TEST_ALL'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH', 		'REQUIREMENTSET_TEST_ALL'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR_XHH', 				'REQUIREMENTSET_TEST_ALL');
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB', 			'REQUIREMENTSET_TEST_ALL'),
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR', 					'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
@@ -869,10 +886,10 @@ values
 	('HD_CITY_HAS_DISTRICT_THEATER_XHH', 						'REQUIRES_CITY_HAS_DISTRICT_THEATER'),
 	('HD_CITY_HAS_DISTRICT_CAMPUS_XHH', 						'REQUIRES_CITY_HAS_DISTRICT_CAMPUS'),
 	('HD_CITY_HAS_DISTRICT_WONDER_XHH', 						'REQUIRES_CITY_HAS_WONDER'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH', 		'REQUIRES_CITY_HAS_DISTRICT_COMMERCIAL_HUB'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB_XHH', 		'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR_XHH', 				'REQUIRES_CITY_HAS_DISTRICT_HARBOR'),
-	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR_XHH', 				'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT');
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB', 			'REQUIRES_CITY_HAS_DISTRICT_COMMERCIAL_HUB'),
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB', 			'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR', 					'REQUIRES_CITY_HAS_DISTRICT_HARBOR'),
+	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR', 					'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT');
 
 -- DeepLogic
 -- 独裁效果调整
@@ -1183,9 +1200,8 @@ update Policies set PrereqTech = 'TECH_CARTOGRAPHY' where PolicyType = 'POLICY_T
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_FREE_MARKET';
 update Policies set PrereqTech = 'TECH_BANKING' where PolicyType = 'POLICY_FREE_MARKET';
 
-	-- 政策卡修改：【公共交通】改为【内燃机】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
-update Policies set PrereqTech = 'TECH_COMBUSTION' where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
+	-- 政策卡修改：【公共交通】改为【城市化】科技解锁
+update Policies set PrereqCivic = 'CIVIC_URBANIZATION' where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
 
 	-- 政策卡修改：【公共卫生】改为【卫生设备】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_EXPROPRIATION';
@@ -1289,3 +1305,347 @@ update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = '
 
 	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';
+
+<<<<<<< HEAD
+	--by 先驱 政策卡增加：【艺术赞助人】 银行业解锁
+insert or replace into Types
+	(Type,								Kind)
+values
+	('POLICY_ART_PATRONS',				'KIND_POLICY');
+insert or replace into Policies
+	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
+values
+	('POLICY_ART_PATRONS',				'LOC_POLICY_ART_PATRONS_NAME',				'LOC_POLICY_ART_PATRONS_DESCRIPTION',				NULL,						                'TECH_BANKING',			    'SLOT_ECONOMIC');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_ART_PATRONS',				'ART_PATRONS_1'),
+	('POLICY_ART_PATRONS',				'ART_PATRONS_2');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,RunOnce,Permanent)
+values
+	('ART_PATRONS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
+	('ART_PATRONS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+insert or replace into ModifierArguments
+	(ModifierId,							Name, 				Value)
+values
+	('ART_PATRONS_1',				        'PolicyType',		'TECH_BANKING'),
+	('ART_PATRONS_1',	                    'DistrictType',		'DISTRICT_THEATER'),
+	('ART_PATRONS_1',	                    'Amount',			30),
+	('ART_PATRONS_2',				        'PolicyType',		'TECH_BANKING'),
+	('ART_PATRONS_2',	                    'DistrictType',		'DISTRICT_COMMERCIAL_HUB'),
+	('ART_PATRONS_2',	                    'Amount',			30);
+--by 先驱 政策卡增加：【历史进步】 历史哲学解锁
+insert or replace into Types
+	(Type,								Kind)
+values
+	('POLICY_HISTORICAL_PROGRESS',	    'KIND_POLICY');
+insert or replace into Policies
+	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
+values
+	('POLICY_HISTORICAL_PROGRESS',	    'LOC_POLICY_HISTORICAL_PROGRESS_NAME',		'LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',		    NULL,			            'SLOT_ECONOMIC');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_1'),
+	('POLICY_HISTORICAL_PROGRESS',		'HISTORICAL_PROGRESS_2');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,RunOnce,Permanent)
+values
+	('HISTORICAL_PROGRESS_1',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0),
+	('HISTORICAL_PROGRESS_2',				            'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+insert or replace into ModifierArguments
+	(ModifierId,							Name, 				Value)
+values
+	('HISTORICAL_PROGRESS_1',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
+	('HISTORICAL_PROGRESS_1',	            'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
+	('HISTORICAL_PROGRESS_1',	            'Amount',			30),
+	('HISTORICAL_PROGRESS_2',				'PolicyType',		'CIVIC_HISTORICAL_PHILOSOPHY_HD'),
+	('HISTORICAL_PROGRESS_2',	            'DistrictType',		'DISTRICT_CAMPUS'),
+	('HISTORICAL_PROGRESS_2',	            'Amount',			30);
+=======
+-- 着力点：开明专制 by xhh
+
+update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
+update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_MILITARY';
+
+insert or replace into Types
+	(Type,								Kind)
+values
+	('COMMEMORATION_GOVERNMENT',		'KIND_MOMENT_OUTCOME');
+
+insert or replace into CommemorationTypes
+	(CommemorationType,					CategoryDescription,				GoldenAgeBonusDescription,							NormalAgeBonusDescription,							DarkAgeBonusDescription,							MinimumGameEra,			MaximumGameEra)
+values
+	('COMMEMORATION_GOVERNMENT',		'LOC_MOMENT_CATEGORY_GOVERNMENT',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_GOLDEN_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_NORMAL_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_DARK_AGE',	'ERA_RENAISSANCE',		'ERA_INDUSTRIAL');
+
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_ADD_SLOT'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_QUEST');
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													OwnerRequirementSetId,						SubjectRequirementSetId)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',							'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE',					NULL),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',				'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'PLAYER_HAS_GOLDEN_AGE',					'HD_DISTRICT_IS_CITY_CENTER'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				NUll,										NULL),
+	('COMMEMORATION_GOVERNMENT_QUEST',								'MODIFIER_PLAYER_ADJUST_PLAYER_ERA_SCORE_PER_PRIDE_MOMENT',		NULL,										'PLAYER_ELIGIBLE_FOR_COMMEMORATION_QUEST');
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',								'GovernmentSlotType',	'SLOT_WILDCARD'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',					'ModifierId',			'COMMEMORATION_GOVERNMENT_BOOST_CULTURE'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'YieldType',			'YIELD_CULTURE'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'Amount',				5),
+	('COMMEMORATION_GOVERNMENT_QUEST',									'Amount',				1),
+	('COMMEMORATION_GOVERNMENT_QUEST',									'MinScore',				1);
+
+-- 公共交通 by xhh
+delete from PolicyModifiers where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
+
+insert or replace into Requirements
+	(RequirementId,									RequirementType)
+values
+	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
+	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
+	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
+
+insert or replace into RequirementArguments
+	(RequirementId,									Name,				Value)
+values
+	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'MinDistance',		1),
+	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'MaxDistance',		1),
+	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'MinDistance',		2),
+	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'MaxDistance',		2),
+	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'MinDistance',		3),
+	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'MaxDistance',		3);
+
+CREATE TEMPORARY TABLE 'HD_DistrictBonus'(
+    'DistrictType' TEXT NOT NULL,
+    'YieldType' TEXT NOT NULL
+);
+
+insert or replace into HD_DistrictBonus
+	(DistrictType,					YieldType)
+values
+	('DISTRICT_HOLY_SITE',			'YIELD_FAITH'),
+	('DISTRICT_CAMPUS',				'YIELD_SCIENCE'),
+	('DISTRICT_HARBOR',				'YIELD_GOLD'),
+	('DISTRICT_COMMERCIAL_HUB',		'YIELD_GOLD'),
+	('DISTRICT_THEATER',			'YIELD_CULTURE'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'YIELD_PRODUCTION');
+
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH'
+from HD_DistrictBonus;
+
+-- insert or replace into PolicyModifiers
+-- 	(PolicyType,					ModifierId)
+-- select
+-- 	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1'
+-- from HD_DistrictBonus;
+
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2'
+from HD_DistrictBonus;
+
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_DISTRICT_IS_CITY_CENTER'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'MODIFIER_PLAYER_DISTRICT_ADJUST_DISTRICT_AMENITY',						Null
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2',	'MODIFIER_ADJUST_HOUSING_IN_DISTRICT',									Null
+from HD_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',		'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'YieldType',			YieldType
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'Amount',				100
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2'
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'Amount',				1
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2',	'Amount',				1
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'YieldTypeToMirror',	YieldType
+from HD_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,														Name,					Value)
+select
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'YieldTypeToGrant',		'YIELD_GOLD'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIREMENTSET_TEST_ALL'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIREMENTSET_TEST_ALL'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIREMENTSET_TEST_ALL'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_DISTRICT_IS_' || DistrictType
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_DISTRICT_IS_' || DistrictType
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER'
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_DISTRICT_IS_' || DistrictType
+from HD_DistrictBonus;
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+select
+	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
+from HD_DistrictBonus;
+>>>>>>> dev

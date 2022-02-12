@@ -148,7 +148,7 @@ update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 -- -- 挪威
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_NORWEGIAN_ULFHEDNAR',    'UNIT_MEDIC');
-update Units set Cost = 100, CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 20 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+update Units set Cost = 100, CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 20, PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_COMBAT_BONUS_ATTACH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_DAMAGED_UNITS_BONUS_ATTACH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_FAITH_BONUS_ATTACH';
@@ -475,3 +475,25 @@ values
     ('PLOT_HAS_SNOW_CAMP_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
     ('PLOT_HAS_SNOW_FARM_REQUIREMENTS',            'REQUIRES_PLOT_HAS_SNOW'),
     ('PLOT_HAS_SNOW_LUMBER_MILL_REQUIREMENTS',     'REQUIRES_PLOT_HAS_SNOW');
+
+-- 圣殿骑士 by xiaoxiao
+insert or replace into Tags
+    (Tag,                       Vocabulary)
+values
+    ('CLASS_ELEANOR_TEMPLAR',   'ABILITY_CLASS');
+insert or replace into Types 
+	(Type, 												Kind)
+values
+	('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',	'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('UNIT_ELEANOR_TEMPLAR',                            'CLASS_ELEANOR_TEMPLAR'),
+    ('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN', 'CLASS_ELEANOR_TEMPLAR');
+insert or replace into UnitAbilities
+	(UnitAbilityType, Name, Description, Inactive)
+values
+	('ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN',
+    'LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_NAME',
+    'LOC_ABILITY_BLOCK_FIRST_NON_LETHAL_ATTACK_EACH_TURN_DESCRIPTION',
+    0);

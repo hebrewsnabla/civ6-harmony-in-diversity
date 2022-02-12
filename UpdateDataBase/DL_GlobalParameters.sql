@@ -23,6 +23,9 @@ update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MINOR_NATURAL
 update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_BASE';
 update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
+-- Change from 2 to 1. Only full sea trade route gets 100% more gold, only need half of the route before.
+update GlobalParameters set Value = 1 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
+
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DEFENSIVE_PACT_TIME_LIMIT';
@@ -37,6 +40,9 @@ update GlobalParameters set Value = 15 where Name = 'UNIT_MAX_STR_REDUCTION_INSU
 -- strategic resources
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate + 1;
 update Resource_Consumption set StockpileCap = 100 where StockpileCap = 50;
+-- Plunder
+update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_FISHERY';
+update Improvements set PlunderAmount = 25 where PlunderType = 'PLUNDER_HEAL';
 
 -- Great person poinst
 update GlobalParameters set Value = 0.5 where Name = 'FAITH_PER_UNUSED_GREAT_PERSON_POINT';
@@ -156,7 +162,7 @@ insert or replace into GlobalParameters
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
     -- ('REYNA_CONVERT_PERCENTAGE',                        100),
-    ('REYNA_CONVERT_PERCENTAGE',                        75),
+    ('REYNA_CONVERT_PERCENTAGE',                        80),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
@@ -202,7 +208,7 @@ values
     ('GAMESPEED_QUICK',     240,            20),
     ('GAMESPEED_QUICK',     120,            20),
     ('GAMESPEED_QUICK',     36,             15),
-    ('GAMESPEED_QUICK',     36,             15),
+    ('GAMESPEED_QUICK',     24,             15),
     ('GAMESPEED_QUICK',     12,             15),
     ('GAMESPEED_QUICK',     6,              160),
     ('GAMESPEED_ONLINE',    1200,           30),
@@ -216,5 +222,5 @@ values
     ('GAMESPEED_ONLINE',    12,             110);
 
 -- Trading Post
-update GlobalParameters set Value = 2 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
-update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
+-- update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
+-- update GlobalParameters set Value = 0 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';

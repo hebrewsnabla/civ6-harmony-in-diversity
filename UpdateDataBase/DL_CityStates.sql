@@ -84,7 +84,9 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 -- Kumasi
+delete from TraitModifiers where TraitType = 'MINOR_CIV_KUMASI_TRAIT' and ModifierId = 'MINOR_CIV_KUMASI_UNIQUE_INFLUENCE_TRADE_GOLD_BONUS';
 -- update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_KUMASI_CULTURE_TRADE_ROUTE_YIELD_BONUS' and Name = 'Amount';
 
 ---------------------------------------------------------------------------------------------------------
 -- Kandy
@@ -112,7 +114,7 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 --Hunza罕萨
-update ModifierArguments set Value = 0.4 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
+update ModifierArguments set Value = 0.25 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -122,7 +124,7 @@ insert or replace into Modifiers
 	(ModifierId,										ModifierType,									    SubjectRequirementSetId)
 values
     --Bandar Seri Begawan(Jakarta)
-	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_OR_ADJACENT_TO_COAST');
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST');
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			 Value)
 values
@@ -136,10 +138,10 @@ values
 insert or replace into TraitModifiers 
     (TraitType,                                  ModifierId)
 values
-	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_INTERNATIONAL_GOLD1'),
+	-- ('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_INTERNATIONAL_GOLD1'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_DOMESTIC_FOOD1'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERCONTINENTAL_DOMESTIC_PRODUCTION1'),
-	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERNATIONAL_GOLD2'),
+	-- ('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_INTERNATIONAL_GOLD2'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_DOMESTIC_FOOD2'),
 	('MINOR_CIV_LISBON_TRAIT',				     'TRAIT_LISBON_DOMESTIC_PRODUCTION2');
 insert or replace into Modifiers

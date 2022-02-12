@@ -65,7 +65,8 @@ update Units set
 	Cost = 200
 where UnitType = 'UNIT_SPY';
 
--- update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
+update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set BaseProbability = 16 where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
@@ -336,10 +337,10 @@ insert or replace into Units
     FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
 values
     ('UNIT_HD_BARBARIAN_GALLEY',        'LOC_UNIT_HD_BARBARIAN_GALLEY_NAME',        'LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION',
-    2,              3,           20,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              2,           10,     0,              0,      40,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST'),
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME',    'LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION',
-    2,              3,           20,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
+    2,              3,           15,     25,             1,      60,    1,              'YIELD_GOLD',  'DOMAIN_SEA',    'TECH_SAILING',
     'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RANGED', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
 
 update Units set TraitType = 'TRAIT_BARBARIAN_BUT_SHOWS_UP_IN_PEDIA'
@@ -380,8 +381,30 @@ values
 
 update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';
 
---巴西uu米舰改到殖民主义，翼骑兵移到归正会
---土鸡巴巴里移到罗盘
-update Units set PrereqTech = 'TECH_COMPASS_HD' where UnitType = 'UNIT_OTTOMAN_BARBARY_CORSAIR';
-update Units set PrereqCivic = 'CIVIC_COLONIALISM' where UnitType = 'UNIT_BRAZILIAN_MINAS_GERAES'; 
-update Units set PrereqCivic = 'CIVIC_REFORMED_CHURCH' where UnitType = 'UNIT_POLISH_HUSSAR'; 
+--攻城单位增加基础能力：回合开始时相邻轻骑兵+1速
+insert or replace into Modifiers
+	(ModifierId,                                  ModifierType,                             RunOnce, NewOnly, Permanent, Repeatable, OwnerRequirementSetId)
+values
+	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT",  0,       0,       0,         0,          "ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS");
+
+insert or replace into ModifierArguments
+	(ModifierId,                                  Name,      Type,               Value)
+values
+	("HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING",    "Amount",  "ARGTYPE_IDENTITY", 1);
+insert or replace into UnitAbilities
+	(UnitAbilityType,                           Name, Description,                                             inactive, ShowFloatTextWhenEarned, Permanent)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW",   NULL, "LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION", 0,        0,                       1);
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,                         ModifierId)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", "HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING");
+insert or replace into Types
+	(Type,                                    Kind)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", "KIND_ABILITY");
+insert or replace into TypeTags
+	(Type,                                    Tag)
+values
+	("ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW", 'CLASS_SIEGE');
+

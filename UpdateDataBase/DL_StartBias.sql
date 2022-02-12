@@ -74,6 +74,28 @@ update StartBiasResources set
 	Tier = 4		
 where CivilizationType = 'CIVILIZATION_NORWAY' and ResourceType = 'RESOURCE_IRON';
 
+update StartBiasTerrains set
+	Tier = 1		
+where CivilizationType = 'CIVILIZATION_NORWAY' and TerrainType = 'TERRAIN_COAST';
+
+insert or replace into StartBiasResources
+	(CivilizationType,		ResourceType,		Tier)
+select
+	'CIVILIZATION_NORWAY',	'RESOURCE_OAK',		2
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_OAK');
+
+insert or replace into StartBiasResources
+	(CivilizationType,		ResourceType,		Tier)
+select
+	'CIVILIZATION_NORWAY',	'RESOURCE_SAKURA',	2
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_SAKURA');
+
+insert or replace into StartBiasResources
+	(CivilizationType,		ResourceType,		Tier)
+select
+	'CIVILIZATION_NORWAY',	'RESOURCE_PINE',	2
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_PINE');
+
 --start bias for Georgia
 update StartBiasResources set
 	Tier = 4		

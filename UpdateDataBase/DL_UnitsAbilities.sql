@@ -379,8 +379,8 @@ values
 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER',	'Amount',	5),
     ('VICTOR_COMMANDER_STRENGTH_BUFF',              'Amount',   5),
 	('VICTOR_TRAINED_UNIT_STRENGTH',				'Amount',	2),
-	('LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT',		'Amount',	-7),
-	('HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT',		'Amount',	-5),
+	('LIGHT_CAVALRY_WEAKER_ATTACKING_DISTRICT',		'Amount',	-3),
+	('HEAVY_CAVALRY_WEAKER_ATTACKING_DISTRICT',		'Amount',	-3),
 	('BARRACKS_TRAINED_UNIT_STRENGTH',				'Amount',	2),
 	('BASILIKOI_TRAINED_UNIT_STRENGTH',				'Amount',	3),
 	('STABLE_TRAINED_UNIT_STRENGTH',				'Amount',	2),
@@ -452,3 +452,4 @@ values
 -- update ModifierArguments set Value = 1000 where ModifierId = 'HETAIROI_FREE_PROMOTION' and Name = 'Amount';
 -- update ModifierArguments set Value = 1000 where ModifierId = 'CORBACI_FREE_PROMOTION' and Name = 'Amount';
 -- update ModifierArguments set Value = 1000 where ModifierId = 'NAU_FREE_PROMOTION' and Name = 'Amount';
+--攻城单位增加基础能力：回合开始时相邻轻骑兵+1速

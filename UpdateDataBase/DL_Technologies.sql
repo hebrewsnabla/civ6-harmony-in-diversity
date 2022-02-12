@@ -17,8 +17,8 @@ insert or replace into Technologies
     (TechnologyType,                Name,                                    Description,                                        Cost,   EraType,            UITreeRow,  AdvisorType)
 values
     ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             'LOC_TECH_CALENDAR_HD_DESCRIPTION',                 80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
-    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             200,    'ERA_CLASSICAL',    0,          'ADVISOR_TECHNOLOGY'),
-    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               300,    'ERA_MEDIEVAL',     -2,         'ADVISOR_CONQUEST'),
+    ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             120,    'ERA_CLASSICAL',    -1,         'ADVISOR_TECHNOLOGY'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               300,    'ERA_MEDIEVAL',     -3,         'ADVISOR_CONQUEST'),
     ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',              Null,                                               730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
     ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',              Null,                                               1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC'),
     ('TECH_CIVIL_ENGINEERING_HD',   'LOC_TECH_CIVIL_ENGINEERING_HD_NAME',    'LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION',        930,    'ERA_INDUSTRIAL',   1,          'ADVISOR_GENERIC');
@@ -175,21 +175,21 @@ values
     ('TECH_HORSEBACK_RIDING',       'TECH_ARCHERY'),
     ('TECH_IRON_WORKING',           'TECH_BRONZE_WORKING'),
     ('TECH_SHIPBUILDING',           'TECH_SAILING'),
-    ('TECH_MATHEMATICS',            'TECH_CALENDAR_HD'),
+    ('TECH_PAPER_MAKING_HD',        'TECH_CALENDAR_HD'),
+    ('TECH_MATHEMATICS',            'TECH_PAPER_MAKING_HD'),
     ('TECH_MATHEMATICS',            'TECH_CURRENCY'),
-    ('TECH_PAPER_MAKING_HD',        'TECH_CURRENCY'),
     ('TECH_CONSTRUCTION',           'TECH_MASONRY'),
     ('TECH_ENGINEERING',            'TECH_THE_WHEEL'),
     ('TECH_ENGINEERING',            'TECH_IRON_WORKING'),
     --  Medieval  ---------------------------------------------------------
     ('TECH_METAL_CASTING',          'TECH_CONSTRUCTION'),
     ('TECH_METAL_CASTING',          'TECH_IRON_WORKING'),
-    ('TECH_APPRENTICESHIP',         'TECH_PAPER_MAKING_HD'),
+    ('TECH_APPRENTICESHIP',         'TECH_CURRENCY'),
     ('TECH_APPRENTICESHIP',         'TECH_ENGINEERING'),
     ('TECH_MACHINERY',              'TECH_ENGINEERING'),
     -- ('TECH_MACHINERY',  'TECH_METAL_CASTING'),
     ('TECH_COMPASS_HD',             'TECH_CELESTIAL_NAVIGATION'),
-    ('TECH_COMPASS_HD',             'TECH_MATHEMATICS'),
+    -- ('TECH_COMPASS_HD',             'TECH_MATHEMATICS'),
     ('TECH_COMPASS_HD',             'TECH_SHIPBUILDING'),
     ('TECH_EDUCATION',              'TECH_MATHEMATICS'),
     ('TECH_EDUCATION',              'TECH_APPRENTICESHIP'),
@@ -205,6 +205,7 @@ values
     -- ('TECH_MASS_PRODUCTION',    'TECH_COMPASS_HD'),
     ('TECH_MASS_PRODUCTION',        'TECH_EDUCATION'),
     ('TECH_PRINTING',               'TECH_MACHINERY'),
+    ('TECH_PRINTING',               'TECH_MILITARY_ENGINEERING'),
     ('TECH_PRINTING',               'TECH_METAL_CASTING'),
     ('TECH_GUNPOWDER',              'TECH_CASTLES'),
     ('TECH_GUNPOWDER',              'TECH_MILITARY_ENGINEERING'),
@@ -213,7 +214,8 @@ values
     ('TECH_BANKING',                'TECH_PRINTING'),
     ('TECH_SQUARE_RIGGING',         'TECH_CARTOGRAPHY'),
     ('TECH_ASTRONOMY',              'TECH_EDUCATION'),
-    ('TECH_ASTRONOMY',              'TECH_COMPASS_HD'),
+    ('TECH_ASTRONOMY',              'TECH_CELESTIAL_NAVIGATION'),
+    -- ('TECH_ASTRONOMY',              'TECH_COMPASS_HD'),
     ('TECH_PHYSICS_HD',             'TECH_ASTRONOMY'),
     -- ('TECH_MILITARY_TACTICS',   'TECH_METAL_CASTING'),
     ('TECH_MILITARY_TACTICS',       'TECH_MILITARY_ENGINEERING'),
@@ -406,3 +408,9 @@ insert or replace into ModifierArguments
 values
 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'YieldType',				'YIELD_GOLD'),
 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'Amount',					3			);
+--抗骑兵卫生加强前移到战术
+delete from  TechnologyModifiers where ModifierId = "HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION";
+insert or replace into TechnologyModifiers
+    (TechnologyType,                               ModifierId)
+values
+    ('TECH_MILITARY_TACTICS',                      'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION');

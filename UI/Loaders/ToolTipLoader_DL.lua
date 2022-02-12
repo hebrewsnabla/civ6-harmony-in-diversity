@@ -504,3 +504,26 @@ ToolTipHelper.GetProjectToolTip = function(projectType)
     return table.concat(toolTipLines, "[NEWLINE]");
 end
 g_ToolTipGenerators.KIND_PROJECT = ToolTipHelper.GetProjectToolTip;
+
+-- -------------------------------------------------------------------------------
+-- ToolTipHelper.GetResourceToolTip = function(resourceType)
+--     -- Gather up all the information
+--     local resource = GameInfo.Resources[resourceType];
+--     if(resource == nil) then
+--         return;
+--     end
+
+--     local name = resource.Name;
+--     local description = resource.Description;
+    
+--     -- Build the tool tip line by line.
+--     local toolTipLines = {};
+--     table.insert(toolTipLines, Locale.ToUpper(name));
+--     table.insert(toolTipLines, Locale.Lookup("LOC_RESOURCE_NAME"));
+--     if(not Locale.IsNilOrWhitespace(description)) then
+--         table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup(description));
+--     end
+    
+--     return table.concat(toolTipLines, "[NEWLINE]");
+-- end
+-- g_ToolTipGenerators.KIND_RESOURCE = ToolTipHelper.GetResourceToolTip;

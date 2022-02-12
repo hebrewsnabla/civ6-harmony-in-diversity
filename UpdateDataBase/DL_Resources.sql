@@ -82,3 +82,38 @@ insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
 
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
+
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+values
+	('RESOURCE_STONE',			'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_COPPER',			'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_IRON',			'FEATURE_GEOTHERMAL_FISSURE'),
+	('RESOURCE_IRON',			'FEATURE_JUNGLE'),
+	('RESOURCE_PEARLS',			'FEATURE_REEF');
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+select
+	'RESOURCE_PEARLS',			'FEATURE_SUK_KELP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
+
+insert or replace into Resource_ValidTerrains
+	(ResourceType,				TerrainType)
+values
+	('RESOURCE_STONE',			'TERRAIN_PLAINS'),
+	('RESOURCE_STONE',			'TERRAIN_PLAINS_HILLS'),
+	('RESOURCE_OLIVES',			'TERRAIN_GRASS_HILLS');
+
+delete from Feature_ValidTerrains where FeatureType = 'FEATURE_GEOTHERMAL_FISSURE' and (TerrainType = 'TERRAIN_SNOW' or TerrainType = 'TERRAIN_SNOW_HILLS');
+
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_MINE';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_QUARRY';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FARM';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_PASTURE';
+update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
+
+--硝石和铝产量多+1 （Resource_Consumption）
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_NITER';
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';

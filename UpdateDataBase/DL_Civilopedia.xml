@@ -75,6 +75,10 @@
         <Row SectionId="BUILDINGS" PageGroupIdColumn="PageGroupId" TooltipColumn="Tooltip" SortIndex="10">
             <SQL>SELECT BuildingType as PageId, PreReqDistrict as PageGroupId, "Building" as PageLayoutId, Name, null as Tooltip FROM Buildings Where IsWonder = 0 AND InternalOnly = 0 AND BuildingType NOT LIKE "BUILDING_CITY_POLICY_%" AND BuildingType != "BUILDING_JNR_MILL_RACE" AND BuildingType != "BUILDING_JNR_WHARF_BASE"</SQL>
         </Row>
+        <Delete SectionId="GREATPEOPLE" />
+        <Row SectionId="GREATPEOPLE" PageGroupIdColumn="PageGroupId" TooltipColumn="Tooltip" SortIndexColumn="SortIndex" SortIndex="10">
+            <SQL>SELECT GreatPersonIndividualType as PageId, GreatPersonClassType as PageGroupId, "GreatPerson" as PageLayoutId, GreatPersonIndividuals.Name, null as Tooltip, Eras.ChronologyIndex as SortIndex FROM GreatPersonIndividuals INNER JOIN Eras ON GreatPersonIndividuals.EraType = Eras.EraType ORDER BY Eras.ChronologyIndex</SQL>
+        </Row>
     </CivilopediaPageQueries>
 
     <!-- Add city policies to Governments section -->

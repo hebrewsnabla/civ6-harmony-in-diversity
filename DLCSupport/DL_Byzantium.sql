@@ -2,6 +2,65 @@
 --      Gaul & Byzantium DLC       --
 -------------------------------------
 
+-- Wonder
+
+--BUILDING_STATUE_OF_ZEUS
+---grants a GREAT_PERSON_CLASS_GENERAL
+-- insert or replace into BuildingModifiers (BuildingType, ModifierId)
+-- select   'BUILDING_STATUE_OF_ZEUS', 'STATUE_OF_ZEUS_GRANTS_GENERAL'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into Modifiers    (ModifierId,ModifierType,   RunOnce,    Permanent) values
+('STATUE_OF_ZEUS_GRANTS_GENERAL',   'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
+
+insert or replace into ModifierArguments (ModifierId,   Name,   Value) values
+('STATUE_OF_ZEUS_GRANTS_GENERAL',   'Amount',   1),
+('STATUE_OF_ZEUS_GRANTS_GENERAL',   'GreatPersonClassType', 'GREAT_PERSON_CLASS_GENERAL');
+
+----
+
+update Buildings set PrereqCivic = 'CIVIC_DRAMA_POETRY', AdjacentDistrict = 'DISTRICT_THEATER', RegionalRange = 5, RequiresRiver = 1 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+
+delete from Building_ValidTerrains where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+delete from BuildingPrereqs where Building = 'BUILDING_STATUE_OF_ZEUS';
+delete from Building_YieldChanges where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+
+insert or replace into Building_YieldChanges
+    (BuildingType,                  YieldType,          YieldChange)
+values
+    ('BUILDING_STATUE_OF_ZEUS',     'YIELD_CULTURE',    2),
+    ('BUILDING_STATUE_OF_ZEUS',     'YIELD_FAITH',      2);
+
+delete from BuildingModifiers where BuildingType = 'BUILDING_STATUE_OF_ZEUS' and ModifierId != 'TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
+
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
+select
+    'BUILDING_STATUE_OF_ZEUS',      'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                               SubjectRequirementSetId)
+select
+    'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH',       'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',   'CITY_HAS_MONUMENT'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,           Value)
+select
+    'STATUE_OF_ZEUS_INFLUENCE_POINTS_ATTACH',       'ModifierId',   'STATUE_OF_ZEUS_INFLUENCE_POINTS'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_STATUE_OF_ZEUS');
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType)
+values
+    ('STATUE_OF_ZEUS_INFLUENCE_POINTS',             'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,           Value)
+values
+    ('STATUE_OF_ZEUS_INFLUENCE_POINTS',             'Amount',       1);
+
 ----start bias for Gaul
 insert or replace into StartBiasResources 
     (CivilizationType,      ResourceType,           Tier)

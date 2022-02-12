@@ -107,7 +107,7 @@ values
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",             "Archimedes"),
     ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more of technologies."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                "Li Bing"),
-    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts."),
+    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. +25% construction speed toward the Dam district. Dams provide +1 [ICON_PRODUCTION] Production to tiles adjacent to rivers in this city."),--Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                 "Ma Jun"),
     ("LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",           "Standard adjacency bonus for Industrial Zones if next to a river."),
     ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is triggered, instead completes the tech."),
@@ -177,3 +177,28 @@ values
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_1_QUOTE",                              "天下熙熙皆为利来，天下攘攘皆为利往。"),
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_NAME",                               "《报任安书》"),
     ("zh_Hans_CN",  "LOC_GREATWORK_SI_MA_QIAN_2_QUOTE",                              "究天人之际，通古今之变，成一家之言。");
+
+--大军改动 by先驱
+
+-- Language: en_US
+insert or replace into EnglishText
+    (Tag,                                                        Text)
+values
+    ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience in combat."),
+    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "+3 [ICON_Strength] combat strength against barbarians and immediately build a barracks in the district."),
+    ("LOC_GREATPERSON_EL_CID_ACTIVE",                            "Turn a military land unit into a legion and gives the unit 1 enhancement level."),
+    ("LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                "Turn a military land unit into an army and give the unit 1 enhancement level."),
+    ("LOC_GREATPERSON_TIMUR_ACTIVE",                             "Grant a free trader unit to the city, increasing the capacity of 1 [ICON_TradeRoute] trade route."),
+    ("LOC_GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE",                 "Create 1 unit of rock-shooting cannon immediately."),
+    ("LOC_GREATPERSON_SIMON_BOLIVAR_ACTIVE",                     "Create 1 unit of breastplate cavalry immediately.");
+    -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                 Text)
+values
+    ("zh_Hans_CN",  "LOC_GREATPERSON_SUN_ZTU_ACTIVE",                                    "所有战斗单位战斗获得经验+25%。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_AETHELFLAED_ACTIVE",                                "对抗蛮族时+3 [ICON_Strength] 战斗力，立即在该区域建造一座兵营。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_EL_CID_ACTIVE",                                     "把一个军事陆地单变成军团，并赋予该单位1次强化等级。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                         "把一个军事陆地单变成军队，并赋予该单位1次强化等级。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_TIMUR_ACTIVE",                                      "为该城市赠予一个免费的商人单位，增加1 [ICON_TradeRoute] 条贸易路线容量。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE",                          "立即创建1个射石炮单位。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_SIMON_BOLIVAR_ACTIVE",                              "立即创建1个胸甲骑兵单位。");

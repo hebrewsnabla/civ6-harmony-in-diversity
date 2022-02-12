@@ -14,7 +14,8 @@ for _, file in ipairs(files) do
     end
 end
 
-GreatPersonUtils = ExposedMembers.DLHD.GreatPersonUtils;
+include "HD_GreatPeople_Common"
+-- GreatPersonUtils = ExposedMembers.DLHD.GreatPersonUtils;
 
 -- SelectedUnit_Expansion2.lua
 -- ===========================================================================
@@ -113,7 +114,7 @@ function RealizeGreatPersonLens(kUnit:table)
         if playerID == Game.GetLocalPlayer() then
             local kUnitGreatPerson:table = kUnit:GetGreatPerson();
             if kUnitGreatPerson ~= nil and kUnitGreatPerson:IsGreatPerson() then
-                local rawActivationPlots = GreatPersonUtils.GetActivationPlots(playerID, kUnitGreatPerson:GetIndividual());
+                local rawActivationPlots = HDGreatPersonGetActivationPlots(playerID, kUnitGreatPerson:GetIndividual());
                 if rawActivationPlots ~= nil then
                     local areaHighlightPlots:table = {};
                     local activationPlots:table = {};

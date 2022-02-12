@@ -103,7 +103,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [IC
 --     Tag = 'UNIT_CHINESE_CHOKONU');
 
 -- +1 [ICON_Movement] Movement if starting in flat tiles. 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -5 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -3 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
     -- Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
     Tag = 'LOC_UNIT_HEAVY_CHARIOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_KNIGHT_DESCRIPTION' or
@@ -128,7 +128,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Heavy Cavalry: -5 [IC
     Tag = 'LOC_UNIT_UNIT_GERMAN_PANZER_DESCRIPTION');
 
 -- Pillaging costs only 1 [ICON_Movement] Movement point. 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -7 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Light Cavalry: -3 [ICON_Strength] Combat Strength when attacking districts.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_BARBARIAN_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_CAVALRY_DESCRIPTION' or
@@ -288,7 +288,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]抗骑兵：防御骑
 --     Tag = 'UNIT_CHINESE_CHOKONU');
 
 -- 重骑兵：如果在平坦地形开始回合，本回合+1 [ICON_Movement] 移动力。
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时-5 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时-3 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     -- Tag = 'LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION' or
     Tag = 'LOC_UNIT_HEAVY_CHARIOT_DESCRIPTION' or
     Tag = 'LOC_UNIT_KNIGHT_DESCRIPTION' or
@@ -313,7 +313,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]攻击区域防御时
     Tag = 'LOC_UNIT_UNIT_GERMAN_PANZER_DESCRIPTION');
 
 -- 劫掠只消耗一点 [ICON_Movement] 移动力。
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区域防御时-7 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]轻骑兵：攻击区域防御时-3 [ICON_Strength] 战斗力。' where Language = 'zh_Hans_CN' and (
     Tag = 'LOC_UNIT_BARBARIAN_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_HORSEMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_CAVALRY_DESCRIPTION' or
