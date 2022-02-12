@@ -184,5 +184,5 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "建造军营区域中的建筑时+30% [ICON_Production] 生产力。城市中建成的每个军营及军营区域建筑提供+3 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "攻击防御性区域时，市中心周围10个单元格内的所有单位+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "在外国 [ICON_Capital] 首都就职时，此文明对您的 [ICON_STAT_GRIEVANCE] 不满每回合多降低5点，此文明的任何城市皆无法对您的城市施加忠诚度压力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "与本方及本方盟友的交战方作战时+5 [ICON_STRENGTH] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "城市建造任意军事单位时+20% [ICON_PRODUCTION] 生产力，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。");
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "与本方及本方盟友的交战方作战时+5 [ICON_STRENGTH] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "城市建造任意军事单位时+20% [ICON_PRODUCTION] 生产力，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。");
