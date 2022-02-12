@@ -13,7 +13,25 @@ UPDATE GlobalParameters SET Value='0' WHERE Name='FAVOR_GRIEVANCES_MINIMUM';
 --海商山洞商路无额外加成
 UPDATE GlobalParameters SET Value='0' WHERE Name='TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_BEST_ROUTE_TILE';
 UPDATE GlobalParameters SET Value='0' WHERE Name='TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
-
+--自由探索
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_HARBOR';
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_SCIENTIFIC',	    'COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,								                OwnerRequirementSetId)
+values
+	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_DISTRICT',	'PLAYER_HAS_GOLDEN_AGE');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,		    Value)
+values
+	('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'YieldType',	'YIELD_SCIENCE'),
+    ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
+--奢侈加金
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
+update Adjacency_YieldChanges set YieldChange = 4 where ID = 'HD_Commercial_Luxury_Gold_Late' ;
 
 -------------------------------------
 --              总督               --
@@ -59,19 +77,47 @@ update Units set Combat = 55 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
 update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
 -- 追猎及追猎UU
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
-update Units set Combat = Combat -1 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = Combat -4 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set Combat = Combat -4 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set Combat = Combat -1 where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
+update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY'; 
 --莽骑兵
 update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
 --铜盾方阵
 update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
+--驴车
+update Units set PrereqTech = 'TECH_ANIMAL_HUSBANDRY' where UnitType = 'UNIT_SUMERIAN_WAR_CART';
 --诸葛连弩
 update Units set RangedCombat = 40 where UnitType = 'UNIT_CHINESE_CHOKONU';
 --罗马弩炮
--- update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
+update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER');
+insert or replace into UnitAbilities
+    (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    null,    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                   ModifierId)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT');
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType,                           SubjectRequirementSetId)
+values
+    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH','GRAPE_SHOT_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,                           Value)
+values
+    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','Amount',                       17);
 --矿工军团
 update ModifierArguments set Value = 0 where ModifierId = 'DIGGER_BONUS_ON_COAST' AND Name='Amount';
 --长生军
@@ -93,12 +139,25 @@ update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
 update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
 update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
 --阿兹特克UU
-update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
-update Units set Combat = 35 where UnitType = 'UNIT_AZTEC_JAGUAR';
+update Units set Combat = 32 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
+update Units set Combat = 32 where UnitType = 'UNIT_AZTEC_JAGUAR';
 update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_JAGUAR';
 --苏丹亲兵
-
+delete from UnitReplaces where CivUniqueUnitType = 'UNIT_SULEIMAN_JANISSARY';
+--挪威牧师
+update Units set BaseMoves = 4 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+--高棉战象
+update Units set Bombard = 45 where UnitType = 'UNIT_KHMER_DOMREY';
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_DOMREY'),
+    ('UNIT_KHMER_DOMREY',                               'CLASS_DOMREY');
+insert or replace into Tags
+    (Tag,               Vocabulary)
+values
+    ('CLASS_DOMREY',    'ABILITY_CLASS');
 
 
 
@@ -114,7 +173,6 @@ update Units set Cost = 60 where UnitType = 'UNIT_AZTEC_JAGUAR';
 --斯基泰
 delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
 delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
-
 --祖鲁
 delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
@@ -143,6 +201,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_CO
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_EUREKA_INCREASE' AND Name='Amount';
 --苏美尔
 delete from TraitModifiers where ModifierId = 'TRAIT_ATTACH_ALLIANCE_COMBAT_ADJUSTMENT';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_EXPERIENCE' AND Name='Range';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_PLUNDER' AND Name='Range';
 --朝鲜
 update Adjacency_YieldChanges set YieldChange = 3 where Id = 'BaseDistrict_Science';
 update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
@@ -179,18 +239,67 @@ UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_DISTRI
 update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE';
 --葡萄牙
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
-UPDATE ModifierArguments SET Value= 2 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
+UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
 
 
 -------------------------------------
 --           市政&科技             --
 -------------------------------------
---远程占领区域加力
+--远程
+--占领区域加力
 delete from CivicModifiers where ModifierId = "HD_RANGED_GARRISON_BONUS";
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_MACHINERY',                             'HD_RANGED_GARRISON_BONUS');
+--境内进攻5力（文本√）
+delete from TechnologyModifiers where ModifierId = "HD_RANGED_HILLS_STRENGTH";
+insert or replace into CivicModifiers
+    (CivicType,                               ModifierId)
+values
+    ('CIVIC_HUMANISM',                        'HD_RANGED_ATTACK_BONUS');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('HD_RANGED_ATTACK_BONUS',				'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,						Value)
+values
+	('HD_RANGED_ATTACK_BONUS',		'AbilityType',				'ABILITY_HD_RANGED_ATTACK_BONUS');
+insert or replace into Types
+    (Type,                                                      Kind)
+values
+    ('ABILITY_HD_RANGED_ATTACK_BONUS',                          'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                                      Tag)
+values
+    ('ABILITY_HD_RANGED_ATTACK_BONUS',                          'CLASS_RANGED');
+insert or replace into UnitAbilities 
+    (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
+values
+    ('ABILITY_HD_RANGED_ATTACK_BONUS',                          NULL,   'LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION',                       1);
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                           ModifierId)
+values
+    ('ABILITY_HD_RANGED_ATTACK_BONUS',                        'ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER');
+insert or replace into Modifiers
+    (ModifierId,                                         ModifierType,                           OwnerRequirementSetId,                                     SubjectRequirementSetId)
+values
+    ('ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER',        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',   'HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS',      'HD_RANGED_ATTACK_BONUS_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,					                Name,						Value)
+values
+	('ABILITY_HD_RANGED_ATTACK_BONUS_MODIFIER',		'Amount',				    5);
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('HD_RANGED_ATTACK_BONUS_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('HD_RANGED_ATTACK_BONUS_REQUIREMENTS',							'PLAYER_IS_ATTACKER_REQUIREMENTS');
+
+
 --抗骑兵
 delete from  TechnologyModifiers where ModifierId = "HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION";
 insert or replace into TechnologyModifiers
@@ -204,13 +313,72 @@ values
     ('CIVIC_MERCENARIES',                             'HD_ANTIC_HILLS_DEFEND_BONUS');
 --后勤补给文本改动    
 update Civics set Description = null where CivicType ='CIVIC_DEFENSIVE_TACTICS';
+
+
 --重骑兵
+--伤兵5力到封建
 delete from  CivicModifiers where ModifierId = "HD_HEAVYC_OPEN_AREA_STRENGTH";
 insert or replace into CivicModifiers
     (CivicType,                                       ModifierId)
 values
     ('CIVIC_FEUDALISM',                               'HD_HEAVYC_OPEN_AREA_STRENGTH');
+--火药光环(搁置)
+-- insert or replace into Modifiers
+-- 	(ModifierId,							ModifierType,                           SubjectRequirementSetId)
+-- values
+-- 	('HD_HEAVYC_HEAL_AFTER_KILL',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',  'AOE_TAGMA_NONRELIGIOUS_REQUIREMENTS'),
+--     ('HD_HEAL_AFTER_KILL',			        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'AOE_HC_NOTCENTER_REQUIREMENTS');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,					Name,						Value)
+-- values
+-- 	('HD_HEAL_AFTER_KILL',		    'Amount',				    2);
+-- insert or ignore into RequirementSets
+-- 	(RequirementSetId,												RequirementSetType)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
+-- insert or ignore into RequirementSetRequirements
+-- 	(RequirementSetId,												RequirementId)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'AOE_HC_NOTCENTER_REQUIREMENTS');
+-- insert or ignore into Requirements
+-- 	(RequirementId,												RequirementType)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES');
+-- insert or ignore into RequirementArguments
+-- 	(RequirementId,							Name,	            Value				)
+-- values
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'Tag',              'CLASS_HEAVY_CAVALRY'),
+-- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'IncludeCenter',    0);
+
+
+--轻骑兵
+--雇佣兵市政调整（未生效）
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,                               SubjectRequirementSetId)
+values
+	('HD_ENEMY_MOVEMENT',			        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',     'BERSERKER_PLOT_IS_ENEMY_TERRITORY');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,						Value)
+values
+	('HD_ENEMY_MOVEMENT',		    'Amount',				    3);
+--升级调整（文本√）
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or UnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+delete from UnitPromotionPrereqs where PrereqUnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or PrereqUnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+insert or replace into UnitPromotionPrereqs
+	(UnitPromotion,					    PrereqUnitPromotion)
+values
+    ('PROMOTION_LIGHTC_MOBILE_WARFARE',	'PROMOTION_DEPREDATION'),
+	('PROMOTION_LIGHTC_MILITANT',	'PROMOTION_LIGHTC_MOBILE_WARFARE'),
+	('PROMOTION_PURSUIT',	'PROMOTION_LIGHTC_MOBILE_WARFARE'),
+	('PROMOTION_LIGHTC_MILITANT',	'PROMOTION_LIGHTC_SHOCK'),
+	('PROMOTION_ESCORT_MOBILITY',	'PROMOTION_LIGHTC_MILITANT');
+update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
+update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_LIGHTC_MILITANT';
+update ModifierArguments set Value = 7 where ModifierId = 'PROMOTION_LIGHTC_MILITANT';
+
+
 --攻城单位
+--膛线改攻城（文本√）
 delete from  TechnologyModifiers where ModifierId = "HD_SIEGE_ATTACK_DISTRICT_BONUS";
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
@@ -218,3 +386,23 @@ values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
 update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
 update Technologies set Description = "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION" where TechnologyType = 'TECH_SIEGE_TACTICS';
+--封建友好2速（文本√）
+update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = "HD_SIEGE_ATTACK_AFTER_MOVE";
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = "HD_ATTACK_AFTER_MOVE";
+update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = "HD_ATTACK_AFTER_MOVE";
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'REQUIREMENTSET_TEST_ANY');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
+update Civics set Description = null where CivicType ='CIVIC_MILITARY_TRAINING';
+update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+
+
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                           ModifierId)
+values
+    ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'HD_ENEMY_MOVEMENT');
