@@ -5,7 +5,7 @@
 update Units set Cost = 200, CostProgressionParam1 = 20, MustPurchase = 0, PrereqTech = 'TECH_MASS_PRODUCTION' where UnitType = 'UNIT_LEU_TYCOON';
 
 delete from Improvement_Tourism where ImprovementType = 'IMPROVEMENT_LEU_STATION';
-update Improvements set Appeal = 0, YieldFromAppeal = NULL, YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_LEU_STATION';
+update Improvements set Appeal = 0, YieldFromAppeal = NULL, YieldFromAppealPercent = 100, Removable = 1 where ImprovementType = 'IMPROVEMENT_LEU_STATION';
 
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_LEU_STATION' and 
     ((ModifierId like 'LEU_STATION_DOMESTIC_CULTURE_%_OTHERS') or (ModifierId like 'LEU_STATION_DOMESTIC_CULTURE_%_OTHERS_POWERED') or

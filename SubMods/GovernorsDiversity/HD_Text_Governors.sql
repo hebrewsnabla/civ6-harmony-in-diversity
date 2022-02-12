@@ -86,11 +86,11 @@ values
     ("LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} Pasha"),
     ("LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} Grand Visier"),
     ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "[ICON_Citizen] Citizens in the city produce +1 [ICON_PRODUCTION] Production. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city. Establishes in 3 turns."),
-    ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "+30% [ICON_Production] Production toward Encampment buildings in this city. +3 [ICON_SCIENCE] Science for each Encampment and Encampment building in this city."),
+    ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "+30% production speed toward Encampment buildings in this city. +3 [ICON_SCIENCE] Science for each Encampment and Encampment building in this city."),
     ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "Units within 10 tiles of the City Center get +10 [ICON_STRENGTH] Combat Strength when attacking defensible districts."),
     ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn, none of the owner's cities exert Loyalty pressure on your cities."),
     ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+5 [ICON_STRENGTH] Combat Strength while you and your alliance are fighting the same tagret."),
-    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+20% [ICON_PRODUCTION] Production toward military units in this city. Receive a second unit each time you train a Renaissance era or later melee or siege unit.");
+    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+20% production speed toward military units in this city. Receive a second unit each time you train a Renaissance era or later melee or siege unit.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -181,8 +181,8 @@ values
     ("zh_Hans_CN",  "LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} 帕夏"),
     ("zh_Hans_CN",  "LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} 大维齐尔"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "城市中每位 [ICON_Citizen] 公民提供+1 [ICON_PRODUCTION] 生产力。生产非平民单位时，获得等同于单位花费25%的 [ICON_SCIENCE] 科技值。就职需要3回合。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "建造军营区域中的建筑时+30% [ICON_Production] 生产力。城市中建成的每个军营及军营区域建筑提供+3 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "建造军营区域中的建筑时加速+30%。城市中建成的每个军营及军营区域建筑提供+3 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "攻击防御性区域时，市中心周围10个单元格内的所有单位+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "在外国 [ICON_Capital] 首都就职时，此文明对您的 [ICON_STAT_GRIEVANCE] 不满每回合多降低5点，此文明的任何城市皆无法对您的城市施加忠诚度压力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "与本方及本方盟友的交战方作战时+5 [ICON_STRENGTH] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "城市建造任意军事单位时+20% [ICON_PRODUCTION] 生产力，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。");
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "城市建造任意军事单位时加速+20%，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。");

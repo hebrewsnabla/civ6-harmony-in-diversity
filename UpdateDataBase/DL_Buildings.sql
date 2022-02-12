@@ -161,6 +161,8 @@ update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_URBANIZATION' where
 update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_AQUARIUM';--xhh
 	-- 【生态研究所】改为【生物】科技解锁
 update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_SANCTUARY';--xhh
+	-- [兵营]改为[炼铁]科技解锁 by xiaoxiao
+update Buildings set PrereqTech = 'TECH_IRON_WORKING', PrereqCivic = NULL where BuildingType = 'BUILDING_BARRACKS';
 
 -- Regional Range
 update Buildings set RegionalRange = 4
@@ -657,9 +659,9 @@ update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_SHIPYARD';
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_SEAPORT';
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BARRACKS';
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_STABLE';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_STABLE';
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_ORDU';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_ORDU';
 update Buildings set Maintenance = 4,	Cost = 200	where BuildingType = 'BUILDING_ARMORY';
 update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
 update Buildings set Maintenance = 3,	Cost = 180	where BuildingType = 'BUILDING_WORKSHOP';

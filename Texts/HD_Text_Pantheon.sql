@@ -45,7 +45,7 @@ values
     ("LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "+1 [ICON_Food] Food from Forest tiles, +1 [ICON_Production] Production from Jungle tiles, +1 [ICON_Gold] Gold from improved Forest or Jungle tiles."),
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
     -- ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes. Your Districts and Wonders on Coast tiles provide +1 [ICON_Production] Production."), -- +2 [ICON_GreatAdmiral] Great Admiral Points from Harbors.
-    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +2 [ICON_Production] Production for Harbor Districts. Every district provides +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
+    ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "+2 [ICON_Production] Production to all cities adjacent to coasts. +2 [ICON_Production] Production for Harbor Districts. Every Specialty district provides +2 [ICON_Gold] Gold to adjacent Fishing Boats."), 
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+1 [ICON_Production] Production from Fishing Boats. Extra +1 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
@@ -112,7 +112,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_DL_DESCRIPTION",                        "森林单元格+1 [ICON_Food] 粮食，雨林单元格+1 [ICON_Production] 生产力，改良后的森林和雨林单元格+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "妈祖信仰"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边或湖边的城市+2 [ICON_Production] 生产力。您境内位于海岸单元格的区域和奇观+1 [ICON_Production] 生产力。"), -- 从港口获得的 [ICON_GreatAdmiral] 海军提督点数+2。
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+2 [ICON_Production] 生产力。渔船相邻每个区域获得+2 [ICON_Gold] 金币。"), 
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。港口区域+2 [ICON_Production] 生产力。渔船相邻每个专业化区域获得+2 [ICON_Gold] 金币。"), 
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "渔船+1 [ICON_Production] 生产力，改良加成资源的渔船额外+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
