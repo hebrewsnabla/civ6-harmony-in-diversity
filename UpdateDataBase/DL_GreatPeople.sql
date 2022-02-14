@@ -607,8 +607,8 @@ values
 ------------------------------------------------------------------------------------------------
 --大军改动 by先驱
 
---布狄卡由一次改为两次
-update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
+--布狄卡由一次改为两次(取消)
+--update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
 --汉尼拔·巴卡由两次改为三次
 update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HANNIBAL_BARCA';
 --孙子新增能力：全国军事单位战斗经验+25%
