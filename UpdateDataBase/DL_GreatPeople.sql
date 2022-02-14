@@ -611,8 +611,8 @@ values
 --update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
 --汉尼拔·巴卡由两次改为三次
 update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HANNIBAL_BARCA';
---孙子新增能力：全国军事单位战斗经验+25%
-update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SUN_TZU';
+--孙子新增能力：全国军事单位战斗经验+25%（效果还在大军上，能力写在书上）
+--update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SUN_TZU';
 --埃塞尔弗莱德能力重做：完成1个兵营，对蛮子+3力。可以使用两次
 update GreatPersonIndividuals set ActionCharges = 2, ActionRequiresCompletedDistrictType = 'DISTRICT_ENCAMPMENT'
     where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
@@ -642,7 +642,7 @@ where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR';
 insert or replace into ModifierStrings
     (ModifierId,                                Context,        Text)
 values
-    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'Summary',      'LOC_GREATPERSON_SUN_ZTU_ACTIVE'),
+--    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'Summary',      'LOC_GREATPERSON_SUN_ZTU_ACTIVE'),
     ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'Summary',      'LOC_GREATPERSON_AETHELFLAED_ACTIVE'),
     ('GREATPERSON_EL_CID_ACTIVE',               'Summary',      'LOC_GREATPERSON_EL_CID_ACTIVE'),
     ('GREATPERSON_TIMUR_ACTIVE_1',              'Summary',      'LOC_GREATPERSON_TIMUR_ACTIVE'),
@@ -671,11 +671,14 @@ values
     ('GREAT_PERSON_INDIVIDUAL_NAPOLEON_BONAPARTE',  'GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE_1',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_DOMAIN_MILITARY_IN_TILE'),
 --圣马丁能力重做：立即创建1个胸甲骑兵单位。
     ('GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR',       'GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON');
-
+--insert or replace into GreatWorkModifiers
+--    (GreatWorkType,                 ModifierId)
+--values
+--   ('GREATWORK_SUN_TZU',           'GREATPERSON_SUN_ZTU_ACTIVE_1');
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                               RunOnce,   Permanent)
 values
-    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',    1,  1),
+    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',    0,  0),
     ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       1,  1),
     ('GREATPERSON_AETHELFLAED_ACTIVE_2',        'MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT',            1,  1),
     ('GREATPERSON_EL_CID_ACTIVE_1',             'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE',             1,  1),
