@@ -42,6 +42,7 @@ values
     ("LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "+30% production speed toward Theather Square buildings and Commercial Hub buildings."),
     ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
     ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% production speed toward Campus buildings and Industrial Zone buildings."),
+    ("LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "+30% Production toward Encampment districts, Harbor districts, and buildings for these districts."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -225,6 +226,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_ART_PATRONS_DESCRIPTION",                                            "建造剧院广场和商业中心内的建筑时+30%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "历史进步"),
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造工业区和学院内的建筑时+30%建造速度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "建造军营、港口和这些区域中的建筑时+30%建造速度。"),
 
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),

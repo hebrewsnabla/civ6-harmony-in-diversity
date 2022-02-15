@@ -2327,3 +2327,23 @@ insert or replace into ModifierArguments
 select
 	'HD_IKANDA_' || BuildingType || '_' || YieldType,	'Amount', 		2
 from IkandaBuildings left outer join IkandaYields;
+--英国ua改动：工业区建筑加速20%———区域和建筑25%
+--工厂辐射额外+4锤———额外+4锤+2瓶
+update ModifierArguments set Value = 25 where ModifierId ='TRAIT_ADJUST_INDUSTRIAL_ZONE_BUILDINGS_PRODUCTION' and Name = 'Amount';
+insert or replace into TraitModifiers
+	(TraitType,												ModifierId)
+values
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',			'TRAIT_ADJUST_INDUSTRIAL_ZONE_DISTRICTS_PRODUCTION'),
+	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',			'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD');
+insert or replace into Modifiers
+	(ModifierId, 											ModifierType,												SubjectRequirementSetId)
+values
+	('TRAIT_ADJUST_INDUSTRIAL_ZONE_DISTRICTS_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',		NULL),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',	'DISTRICT_IS_INDUSTRIAL_ZONE');
+insert or replace into ModifierArguments
+	(ModifierId,											Name,														Value)
+values
+	('TRAIT_ADJUST_INDUSTRIAL_ZONE_DISTRICTS_PRODUCTION',	'DistrictType',												'DISTRICT_INDUSTRIAL_ZONE'),
+	('TRAIT_ADJUST_INDUSTRIAL_ZONE_DISTRICTS_PRODUCTION',	'Amount',													25),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'YieldType',												'YIELD_SCIENCE'),
+	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'Amount',													2);
