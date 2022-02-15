@@ -1510,8 +1510,7 @@ values
 insert or replace into Requirements
 	(RequirementId,										RequirementType)
 values
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET',					'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET',			'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET',					'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
 insert or replace into RequirementArguments
 	(RequirementId,										Name,					Value)
@@ -1556,19 +1555,16 @@ insert or replace into RequirementSets
 values
 	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY',			'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY',						'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS',					'REQUIREMENTSET_TEST_ANY'),
 	('HD_PLOT_HAS_SEA_FEATURE',								'REQUIREMENTSET_TEST_ANY');
 
 insert or replace into Requirements
 	(RequirementId,											RequirementType)
 values
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET',				'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('HD_PLOT_HAS_SEA_FEATURE_MET',							'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
 insert or replace into RequirementArguments
 	(RequirementId,											Name,					Value)
 values
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET',				'RequirementSetId',		'HD_CITY_HAS_RESOURCE_FISHING_BOATS'),
 	('HD_PLOT_HAS_SEA_FEATURE_MET',							'RequirementSetId',		'HD_PLOT_HAS_SEA_FEATURE');
 
 insert or ignore into RequirementSetRequirements
