@@ -103,8 +103,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_VENETIAN_ARSENAL_DESCRIPTION",                                                    "每训练一个海军单位，便会获得第二个海军单位。为本城每个近海单元格+1 [ICON_Production] 生产力和+1 [ICON_Gold] 金币，每回合提供6点 [ICON_RESOURCE_Niter] 硝石。必须建在靠近工业区的海岸单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_APADANA_DESCRIPTION",                                                             "在此城市中建造奇观（包括阿帕达纳宫）时+2 [ICON_ENVOY] 使者。每个宗主的城邦提供+2 [ICON_CULTURE] 文化。必须建造在 [ICON_CAPITAL] 首都旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ALHAMBRA_DESCRIPTION",                                                            "+1 军事政策槽位[NEWLINE][NEWLINE]提供同堡垒改良设施一样的防御加成。每座军营提供+2影响力点数。必须建立在邻近军营区的丘陵上。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                                                "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。");
-    ("zh_Hans_CN",  "{LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION}{LOC_EPSTWEAK_WONDER_WORDING_TOURISM}",    "+4外交胜利点数。为9个单元格以内的所有海岸城市市中心提供：+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得当前可在该区域中建造的、所需 [ICON_PRODUCTION] 生产力最低的建筑。如与城邦之间存在 [ICON_TRADEROUTE] 贸易路线，派往此处的1位 [ICON_ENVOY] 使者将视为2位。每拥有100点军评，获得1点影响力。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。");
+    ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",                                                "获得2次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",                                           "+4外交胜利点数。为9个单元格以内的所有海岸城市市中心提供：+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得当前可在该区域中建造的、所需 [ICON_PRODUCTION] 生产力最低的建筑。如与城邦之间存在 [ICON_TRADEROUTE] 贸易路线，派往此处的1位 [ICON_ENVOY] 使者将视为2位。每拥有100点军评，获得1点影响力。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。");
 -- National Wonders
 --------------------------------------------------------------------------------
 -- Language: en_US
