@@ -75,4 +75,5 @@
 -- update Civics set Cost = 6600 where CivicType = 'CIVIC_FUTURE_CIVIC';
 
 update PseudoYields set DefaultValue = 3 where PseudoYieldType = 'PSEUDOYIELD_RESOURCE_LUXURY'; -- previous 6
+update PseudoYields set DefaultValue = 0.2 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
 update AiFavoredItems set Value = 30 where ListType = 'CatherineAltLuxuries'; -- previous 50
