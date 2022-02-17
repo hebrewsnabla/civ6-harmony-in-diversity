@@ -34,6 +34,89 @@ end
 
 Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
 
+-- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
+function BuildingIsCheaper (a, b)
+    if a.BuildingType == 'BUILDING_LIGHTHOUSE' then return true end
+    if b.BuildingType == 'BUILDING_LIGHTHOUSE' then return false end
+    return a.Cost < b.Cost
+end
+function StatueLibertyGrantBuilding (playerID, cityID, buildingID, plotID, bOriginalConstruction)
+    local statue_table = GameInfo.Buildings['BUILDING_STATUE_LIBERTY']
+    if statue_table == nil then return end
+    local statue = statue_table.Index
+    if playerID >= 0 and buildingID == statue then
+        print('Statu of Liberty Completed!')
+
+        -- find harbor buildings
+        local tier1 = {}
+        local tier2 = {}
+        local tier3 = {}
+        for row in GameInfo.Buildings() do
+            if row.PrereqDistrict == 'DISTRICT_HARBOR' and not row.IsWonder then
+                local building = row.BuildingType
+                local isTier2 = false
+                local isTier3 = false
+                for row2 in GameInfo.BuildingPrereqs() do
+                    if row2.Building == building and row2.PrereqBuilding == 'BUILDING_LIGHTHOUSE' then
+                        isTier2 = true
+                    end
+                    if row2.Building == building and row2.PrereqBuilding == 'BUILDING_SHIPYARD' then
+                        isTier3 = true
+                    end
+                end
+                if isTier2 then
+                    table.insert(tier2, row)
+                end
+                if isTier3 then
+                    table.insert(tier3, row)
+                end
+                if not isTier2 and not isTier3 then
+                    table.insert(tier1, row)
+                end
+            end
+        end
+        table.sort(tier1, BuildingIsCheaper)
+        table.sort(tier2, BuildingIsCheaper)
+        table.sort(tier3, BuildingIsCheaper)
+
+        local player = Players[playerID]
+        for _, city in player:GetCities():Members() do
+            local harbor = Utils.GetDistrictIndex('DISTRICT_HARBOR')
+            if city:GetDistricts():HasDistrict(harbor) then
+                local cityHasTier1 = false
+                local cityHasTier2 = false
+                local cityHasTier3 = false
+                for _, row in pairs(tier1) do
+                    if city:GetBuildings():HasBuilding(row.Index) then
+                        cityHasTier1 = true
+                    end
+                end
+                for _, row in pairs(tier2) do
+                    if city:GetBuildings():HasBuilding(row.Index) then
+                        cityHasTier2 = true
+                    end
+                end
+                for _, row in pairs(tier3) do
+                    if city:GetBuildings():HasBuilding(row.Index) then
+                        cityHasTier3 = true
+                    end
+                end
+                if not cityHasTier1 then
+                    city:GetBuildQueue():CreateBuilding(tier1[1].Index)
+                end
+                if cityHasTier1 and not cityHasTier2 then
+                    city:GetBuildQueue():CreateBuilding(tier2[1].Index)
+                end
+                if cityHasTier2 and not cityHasTier3 then
+                    city:GetBuildQueue():CreateBuilding(tier3[1].Index)
+                end
+            end
+        end
+    end
+end
+
+GameEvents.BuildingConstructed.Add(StatueLibertyGrantBuilding)
+
 -- local PROP_KEY_HAS_PLAYER_TURN_ACTIVATED = 'DLHasPlayerTurnActivated'
 -- local PROP_KEY_HAS_ALHAMBRA_GRANTED = 'DLHasAlhambraGranted'
 -- local PROP_KEY_HAS_BIG_BEN_GRANTED = 'DLHasBigBenGranted'

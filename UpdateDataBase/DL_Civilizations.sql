@@ -110,6 +110,31 @@ values
 -- values
 -- 	('TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER',	'UnitPromotionClassType',	'PROMOTION_CLASS_SUPPORT');
 
+-- 维多利亚: 招提督送同时代ylk, 这里只定义lua用到的Modifier, by xiaoxiao
+insert or replace into Modifiers
+	(ModifierId, 											ModifierType, 												RunOnce)
+select
+	'HD_VICTORIA_GRANT_' || EraType || 'TECHNOLOGY_BOOST', 	'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 	1
+from Eras;
+
+insert or replace into ModifierArguments
+	(ModifierId, 											Name, 				Value)
+select
+	'HD_VICTORIA_GRANT_' || EraType || 'TECHNOLOGY_BOOST', 	'StartEraType', 	EraType
+from Eras;
+
+insert or replace into ModifierArguments
+	(ModifierId, 											Name, 			Value)
+select
+	'HD_VICTORIA_GRANT_' || EraType || 'TECHNOLOGY_BOOST', 	'EndEraType', 	EraType
+from Eras;
+
+insert or replace into ModifierArguments
+	(ModifierId, 											Name, 		Value)
+select
+	'HD_VICTORIA_GRANT_' || EraType || 'TECHNOLOGY_BOOST', 	'Amount', 	1
+from Eras;
+
 -- England
 delete from TraitModifiers where 
 	TraitType = 'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION' and ModifierId like 'TRAIT_POWERED_BUILDINGS_MORE_%';

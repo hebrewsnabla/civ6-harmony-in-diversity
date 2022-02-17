@@ -326,6 +326,25 @@ end
 
 GameEvents.OnDistrictConstructed.Add(MBANZABoost)
 
+-- 维多利亚: 招提督送同时代ylk by xiaoxiao
+function OnUnitGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+	local playerConfig = PlayerConfigurations[playerID]
+	local leader = playerConfig:GetLeaderTypeName()
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_PAX_BRITANNICA') then return end
+	local era = nil;
+	for row in GameInfo.GreatPersonIndividuals() do
+		if row.Index == greatPersonIndividualID and row.GreatPersonClassType == 'GREAT_PERSON_CLASS_ADMIRAL' then
+			era = row.EraType
+			break
+		end
+	end
+	if not era then return end
+	local player = Players[playerID]
+	player:AttachModifierByID('HD_VICTORIA_GRANT_' .. era .. 'TECHNOLOGY_BOOST')
+end
+
+Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreated)
+
 -- -- Netherlands
 -- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
 -- local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index
