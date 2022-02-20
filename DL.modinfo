@@ -1245,6 +1245,10 @@
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Texts/HD_Text_Late.sql</File>
     </UpdateText>
+    <UpdateText id="DL_Settings_Text" criteria="Expansion2">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/HD_Texts.sql</File>
+    </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
     <UpdateDatabase id="Monopolies_Adapt" criteria="Monopolies_Mode_Expansion2">
