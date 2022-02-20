@@ -158,7 +158,16 @@ insert or replace into Tags
     (Tag,               Vocabulary)
 values
     ('CLASS_DOMREY',    'ABILITY_CLASS');
+--怯薛
+update Units set Combat = 20 , RangedCombat = 30 , BaseMoves = 4 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 
+--骆驼骑手
+update Units set Combat = 25 , RangedCombat = 38 , BaseMoves = 3 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+
+--越南象兵
+update Units set Combat = 30 , RangedCombat = 35 , BaseMoves = 2 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
+--萨卡弓骑
+update Units set Combat = 17 , RangedCombat = 27 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
 
 
 
@@ -193,8 +202,8 @@ values
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
 --越南
-update ModifierArguments set Value = 3 where ModifierId = 'TRIEU_UNFRIENDLY_COMBAT' AND Name='Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'TRIEU_FRIENDLY_COMBAT' AND Name='Amount';
+delete from TraitModifiers where ModifierId = 'TRAIT_TRIEU_ABILITY';
+update Districts set RequiresPopulation = 1 where UnitType = 'DISTRICT_THANH';
 --玛雅
 update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_COMBAT' AND Name='Amount';
 --巴比伦
@@ -241,6 +250,9 @@ update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ER
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
 UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
 
+--蒙古
+delete from TraitModifiers where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
+ 
 
 -------------------------------------
 --           市政&科技             --
