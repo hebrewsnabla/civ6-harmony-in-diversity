@@ -225,6 +225,35 @@ update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
 
+-- 公司模式 跨国公司
+update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'
+	where GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
+	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,				ModifierId)
+select
+	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP',	'MULTINATIONAL_CORP_PRODUCT_TOURISM'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',	'HD_PLAYER_HAS_CIVIC_CAPITALISM'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'GreatWorkObjectType',		'GREATWORKOBJECT_PRODUCT'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'ScalingFactor',			250
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 --Victor
@@ -808,6 +837,7 @@ update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_EDUCATOR_SPA
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,								ModifierId)
 values
+	('GOVERNOR_PROMOTION_MERCHANT_CURATOR',				'CURATOR_DOUBLE_ARTIFACT_TOURISM'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER1_SCIENCE'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER2_SCIENCE'),
@@ -818,6 +848,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,											SubjectRequirementSetId)
 values
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',					Null),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',				'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',		'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
 	('EDUCATOR_CAMPUS_TIER2_SCIENCE',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',				'HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING_REQUIREMENTS'),
@@ -828,6 +859,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'GreatWorkObjectType',	'GREATWORKOBJECT_ARTIFACT'),
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'ScalingFactor',		300),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'YieldType',	'YIELD_SCIENCE'),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'Amount',		5),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER',		'YieldType',	'YIELD_SCIENCE'),

@@ -985,11 +985,6 @@ insert or replace into ExcludedAdjacencies
 values
 	('TRAIT_CIVILIZATION_AMAZON',	'LumberMill_HalfProduction');
 
-insert or replace into Improvement_Tourism
-	(ImprovementType,TourismSource,PrereqTech,ScalingFactor)
-values
-	('IMPROVEMENT_LUMBER_MILL','TOURISMSOURCE_CULTURE','TECH_FLIGHT',100);
-
 insert or replace into TraitModifiers (TraitType,	ModifierId) 
 	select 'TRAIT_CIVILIZATION_AMAZON', 'TRAIT_JUNGLE_VALID_' || DistrictType from Districts where DistrictType != 'DISTRICT_CITY_CENTER';
 

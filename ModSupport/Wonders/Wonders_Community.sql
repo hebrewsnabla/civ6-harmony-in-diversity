@@ -27,8 +27,8 @@ from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL';
 
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null
-WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');--xhh
+UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null, PrereqDistrict = NULL, AdjacentDistrict = 'DISTRICT_HARBOR'
+WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');
 
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_ENHANCEDLATETOURISM';
@@ -59,22 +59,20 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value)
 select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'GreatPersonClassType',  GreatPersonClassType from GreatPersonClasses;
 insert or replace into ModifierArguments (ModifierId,	Name,	Value)
 select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'Amount', 25 from GreatPersonClasses;
-
-update Buildings set AdjacentDistrict = NULL where BuildingType = 'BUILDING_LEANING_TOWER';
 ----------------------------------------------------------------------------------------------------------------------
 ----------------BUILDING_PORCELAIN_TOWER------------------------------------------------------------------------------
 UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
-WHERE BuildingType = 'BUILDING_PORCELAIN_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_PORCELAIN_TOWER');
+WHERE BuildingType = 'BUILDING_PORCELAIN_TOWER';
 
 --grants a scientist
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
+insert or ignore into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_PORCELAIN_TOWER', 'PORCELAIN_TOWER_GRANTS_SCIENTIST'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_PORCELAIN_TOWER');
 
-insert or replace into Modifiers	(ModifierId, ModifierType,	RunOnce,	Permanent) values
+insert or ignore into Modifiers	(ModifierId, ModifierType,	RunOnce,	Permanent) values
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
 
-insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
+insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'Amount',	1),
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST');
 -----------------------------------------------------------------------------------------------------------------------
@@ -202,7 +200,9 @@ update Building_GreatWorks set
 	ThemingSameObjectType = 1,
 	ThemingSameEras = 0,
 	ThemingTourismMultiplier = 100,
-	ThemingYieldMultiplier = 100
+	ThemingYieldMultiplier = 100,
+	NonUniquePersonYield = 1,
+	NonUniquePersonTourism = 1
 where BuildingType = 'BUILDING_UFFIZI';
 -- uffizi +3 great artist (need to assigin era)
 update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWORK_CWON_BOTTICELLI_1';
@@ -282,8 +282,97 @@ where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_
 --delete from BuildingModifiers where BuildingType = 'BUILDING_BURJ_KHALIFA';
 
 --BUILDING_TOWER_BRIDGE
-update ModifierArguments set Value = '10' where ModifierId = 'TOWER_BRIDGE_CITY_PRODUCTION' and Name = 'Amount';
-update ModifierArguments set Value = '10' where ModifierId = 'TOWER_BRIDGE_CITY_GOLD' and Name = 'Amount';
+delete from BuildingModifiers where BuildingType = 'BUILDING_TOWER_BRIDGE'
+	and (ModifierId = 'TOWER_BRIDGE_GRANT_COAL_PER_TURN' or ModifierId = 'TOWER_BRIDGE_CITIES_PRODUCTION' or ModifierId = 'TOWER_BRIDGE_CITIES_GOLD');
+
+CREATE TEMPORARY TABLE 'TOWER_BRIDGE_DistrictBonus'(
+    'DistrictType' TEXT NOT NULL,
+    'YieldType' TEXT NOT NULL
+);
+
+insert or replace into TOWER_BRIDGE_DistrictBonus
+	(DistrictType,					YieldType)
+values
+	('DISTRICT_HOLY_SITE',			'YIELD_FAITH'),
+	('DISTRICT_CAMPUS',				'YIELD_SCIENCE'),
+	('DISTRICT_HARBOR',				'YIELD_FOOD'),
+	('DISTRICT_ENCAMPMENT',			'YIELD_PRODUCTION'),
+	('DISTRICT_COMMERCIAL_HUB',		'YIELD_GOLD'),
+	('DISTRICT_THEATER',			'YIELD_CULTURE'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'YIELD_PRODUCTION'),
+	('DISTRICT_AQUEDUCT',			'YIELD_FOOD');
+
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_TOWER_BRIDGE',			'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH1'
+from TOWER_BRIDGE_DistrictBonus where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,										SubjectRequirementSetId)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH1', 'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_' || substr(DistrictType, 10)
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH1', 'ModifierId',		'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1'
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,												OwnerRequirementSetId)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'YieldType',		YieldType
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'Amount',			5
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_TOWER_BRIDGE',			'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2'
+from TOWER_BRIDGE_DistrictBonus where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE');
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,										SubjectRequirementSetId)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2', 'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_' || substr(DistrictType, 10)
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2', 'ModifierId',		'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2'
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,												OwnerRequirementSetId)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'PLOT_IS_OR_ADJACENT_TO_COAST'
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'YieldType',		YieldType
+from TOWER_BRIDGE_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,				Value)
+select
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'Amount',			5
+from TOWER_BRIDGE_DistrictBonus;
 
 --BUILDING_BRANDENBURG_GATE
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GATE_TRAINED_UNIT_XP_MODIFIER';
@@ -353,18 +442,54 @@ update Modifiers set SubjectRequirementSetId = 'JANISSARY_CITY_FOUNDED' where Mo
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
 	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_GOLDEN_SCIENCE'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_GOLDEN_CULTURE'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_NORMAL_FOOD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_NORMAL_PRODUCTION'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_DARK_FOOD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'BUILDING_MOTHERLAND_CALLS',	'MOTHERLAND_CALLS_DARK_PRODUCTION'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_MOTHERLAND_CALLS');
 
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,								SubjectRequirementSetId) 
+	(ModifierId,											ModifierType,												SubjectRequirementSetId,					OwnerRequirementSetId) 
 values
-	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		NULL),
-	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',		'HD_UNIT_IN_OWNER_TERRITORY_REQUIREMENTS');
+	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',						NULL,										Null),
+	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',						'HD_UNIT_IN_OWNER_TERRITORY_REQUIREMENTS',	Null),
+	('MOTHERLAND_CALLS_GOLDEN_SCIENCE',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_HAS_GOLDEN_AGE'),
+	('MOTHERLAND_CALLS_GOLDEN_CULTURE',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_HAS_GOLDEN_AGE'),
+	('MOTHERLAND_CALLS_NORMAL_FOOD',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_NOT_HAS_GOLDEN_AGE'),
+	('MOTHERLAND_CALLS_NORMAL_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_NOT_HAS_GOLDEN_AGE'),
+	('MOTHERLAND_CALLS_DARK_FOOD',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_HAS_DARK_AGE'),
+	('MOTHERLAND_CALLS_DARK_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'HD_OBJECT_WITHIN_10_TILES',				'PLAYER_HAS_DARK_AGE');
 
 insert or replace into ModifierArguments
-	(ModifierId,											Name,			Value) 
+	(ModifierId,											Name,					Value) 
 values
-	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'AbilityType',	'ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY'),
-	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'Amount',		10);
+	('MOTHERLAND_CALLS_OWNER_TERRITORY_COMBAT_STRENGTH',	'AbilityType',			'ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY'),
+	('OWN_TERRITORY_COMBAT_STRENGTH_BUFF',					'Amount',				10),
+	('MOTHERLAND_CALLS_GOLDEN_SCIENCE',						'YieldType',			'YIELD_SCIENCE'),
+	('MOTHERLAND_CALLS_GOLDEN_SCIENCE',						'Amount',				7),
+	('MOTHERLAND_CALLS_GOLDEN_CULTURE',						'YieldType',			'YIELD_CULTURE'),
+	('MOTHERLAND_CALLS_GOLDEN_CULTURE',						'Amount',				7),
+	('MOTHERLAND_CALLS_NORMAL_FOOD',						'YieldType',			'YIELD_FOOD'),
+	('MOTHERLAND_CALLS_NORMAL_FOOD',						'Amount',				7),
+	('MOTHERLAND_CALLS_NORMAL_PRODUCTION',					'YieldType',			'YIELD_PRODUCTION'),
+	('MOTHERLAND_CALLS_NORMAL_PRODUCTION',					'Amount',				7),
+	('MOTHERLAND_CALLS_DARK_FOOD',							'YieldType',			'YIELD_FOOD'),
+	('MOTHERLAND_CALLS_DARK_FOOD',							'Amount',				7),
+	('MOTHERLAND_CALLS_DARK_PRODUCTION',					'YieldType',			'YIELD_PRODUCTION'),
+	('MOTHERLAND_CALLS_DARK_PRODUCTION',					'Amount',				7);
 
 insert or replace into ModifierStrings
 	(ModifierId,											Context,		Text) 
@@ -472,11 +597,44 @@ where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDI
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
 	'CL_BUILDING_CN_TOWER',	'CN_TOWER_ALL_CITY_AMENITY'
 where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'CL_BUILDING_CN_TOWER',	'CN_TOWER_MUSIC_TOURISM'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
+
+	-- Product
+insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
+	'CL_BUILDING_CN_TOWER',	'CN_TOWER_PRODUCT_TOURISM'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER')
+  and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+update Buildings set Description = 'LOC_CL_BUILDING_CN_TOWER_DESCRIPTION_CORP' where BuildingType = 'CL_BUILDING_CN_TOWER'
+	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+insert or replace into Modifiers 
+	(ModifierId,					ModifierType,								SubjectRequirementSetId) 
+select
+	'CN_TOWER_PRODUCT_TOURISM',		'MODIFIER_PLAYER_CITIES_ADD_POPULATION',	'HD_CITY_HAS_BROADCAST_AND_POWERED'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+insert or replace into ModifierArguments 
+	(ModifierId,					Name,		Value) 
+select
+	'CN_TOWER_PRODUCT_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_PRODUCT'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+insert or replace into ModifierArguments 
+	(ModifierId,					Name,		Value) 
+select
+	'CN_TOWER_PRODUCT_TOURISM',		'ScalingFactor',	200
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into Building_GreatWorks
+	(BuildingType,			GreatWorkSlotType,		NumSlots,ThemingUniquePerson,ThemingYieldMultiplier,ThemingTourismMultiplier,ThemingBonusDescription)
+select
+	'CL_BUILDING_CN_TOWER',	'GREATWORKSLOT_MUSIC',	3,		 1,					 200,					200,					 'LOC_BUILDING_THEMINGBONUS_CN_TOWER'
+where exists (select BuildingType from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER');
 
 insert or replace into Modifiers 
-	(ModifierId,					ModifierType,							RunOnce,	Permanent) 
+	(ModifierId,					ModifierType,							RunOnce,	Permanent,	SubjectRequirementSetId) 
 values
-	('CN_TOWER_ALL_CITY_POP',		'MODIFIER_PLAYER_CITIES_ADD_POPULATION',	1,		1);
+	('CN_TOWER_ALL_CITY_POP',		'MODIFIER_PLAYER_CITIES_ADD_POPULATION',	1,		1,			Null),
+	('CN_TOWER_MUSIC_TOURISM',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',	0,		0,			'HD_CITY_HAS_BROADCAST_AND_POWERED');
 
 insert or replace into Modifiers 
 	(ModifierId,					ModifierType) 
@@ -489,7 +647,9 @@ insert or replace into ModifierArguments
 values
 	('CN_TOWER_ALL_CITY_POP',		'Amount',	2),
 	('CN_TOWER_ALL_CITY_HOUSING',	'Amount',	2),
-	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1);
+	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1),
+	('CN_TOWER_MUSIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_MUSIC'),
+	('CN_TOWER_MUSIC_TOURISM',	 	'ScalingFactor',		200);
 
 -- Yellow Crane Tower
 update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';
@@ -497,14 +657,19 @@ update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = N
 -- STPETERSBASILICA
 delete from Building_GreatWorks where BuildingType = 'BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';
 update Building_GreatWorks set 
-	NumSlots = 3 ,
-	ThemingUniquePerson = 0 ,
-	ThemingSameObjectType = 1 ,
-	ThemingSameEras = 0 ,
-	ThemingTourismMultiplier = 100 ,
-	ThemingYieldMultiplier = 100 
+	NumSlots = 3,
+	ThemingUniquePerson = 0,
+	ThemingSameObjectType = 1,
+	ThemingSameEras = 0,
+	ThemingTourismMultiplier = 100,
+	ThemingYieldMultiplier = 100,
+	NonUniquePersonYield = 1,
+	NonUniquePersonTourism = 1
 where BuildingType ='BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_CATHEDRAL';
 
+-- 帝国大厦
+update Buildings set PrereqCivic = 'CIVIC_SUFFRAGE' where BuildingType = 'WON_CL_EMPIRE_STATES';
+update ModifierArguments set Value = 300 where ModifierId = 'EMPIRE_CITY_WONDER_TOURISM' and Name = 'ScalingFactor';
 
 -- Cost adjust
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
@@ -520,12 +685,12 @@ update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
 update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
 update Buildings set Cost = 240 where BuildingType = 'BUILDING_ABU_SIMBEL';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_BURJ_KHALIFA';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BURJ_KHALIFA';
 update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
-update Buildings set Cost = 1600 where BuildingType = 'WON_CL_EMPIRE_STATES';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
+update Buildings set Cost = 1800 where BuildingType = 'WON_CL_EMPIRE_STATES';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
 update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';
 update Buildings set Cost = 750 where BuildingType = 'WON_CL_KINKAKU';
 update Buildings set Cost = 1800 where BuildingType = 'CL_BUILDING_CN_TOWER';

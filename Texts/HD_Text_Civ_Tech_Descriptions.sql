@@ -6,7 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food to Farms.[NEWLINE]Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5 in cities having Granary."),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food to Farms.[NEWLINE]Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in cities having Granary."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -102,6 +102,7 @@ values
     ("LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                                "Grants the ability to construct an additional Spy.[NEWLINE]Allows forming two identical units into a Corps."),
     ("LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                               "Awards 3 [ICON_Envoy] Envoys. Allows the building of National Parks and the purchase of Naturalists with [ICON_Faith] Faith. Allows Builders to plant Woods (second-growth). Woods in your territory that have never been removed (old-growth) gain +1 Appeal. Receives +1 [ICON_Amenities] Amenity when city center is adjacent to woods. Receive [ICON_TOURISM] Tourism from Walls."),
     ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
+    ("LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION",                                                "Naval Raider units gain ability:  It costs no [ICON_MOVEMENT] Movement to coastal raid."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",                                                    "Kill 2 Barbarians."),
@@ -176,7 +177,7 @@ insert or replace into LocalizedText
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
-    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),
@@ -271,6 +272,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "侦察单位获得能力：忽略控制区。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                "核计划项目、核装置和核电站的生产力+50%。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION",                                 "海军袭击者单位获得能力：进行海岸扫荡不消耗 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_DIPLOACTION_ALLIANCE_DESCRIPTION",                                 "宣布友谊后即可缔结同盟。盟友之间无法开战、自动开放边界、自动签署防御协定。如其中一位盟友的城市被占领，则所有盟友都将获得对入侵文明的战争借口。解锁行政部门后，科技、文化、商业同盟间商路获得对应加成。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),

@@ -147,11 +147,6 @@ insert or replace into Improvement_YieldChanges
 values
 	('IMPROVEMENT_PASTURE',	'YIELD_GOLD',	0);
 
-insert or replace into Improvement_Tourism
-	(ImprovementType,			TourismSource,				PrereqTech,				ScalingFactor)
-values
-	('IMPROVEMENT_CAMP',		'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',			100);
-
 -- 冰球场
 update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 --by 弱猹
@@ -283,3 +278,57 @@ update Improvements set PlunderAmount = 50 where ImprovementType = 'IMPROVEMENT_
 update Improvements set PlunderType = 'PLUNDER_HEAL' where ImprovementType = 'IMPROVEMENT_PASTURE';
 update Improvements set PlunderType = 'PLUNDER_GOLD' where ImprovementType = 'IMPROVEMENT_QUARRY';
 update Improvements set PlunderAmount = 50 where ImprovementType = 'IMPROVEMENT_QUARRY';
+
+-- 旅游业绩
+update Improvement_Tourism set TourismSource = 'TOURISMSOURCE_GOLD', PrereqCivic = 'CIVIC_CAPITALISM', PrereqTech = Null where ImprovementType in (
+	'IMPROVEMENT_PASTURE',
+	'IMPROVEMENT_PLANTATION'
+);
+update Improvement_Tourism set TourismSource = 'TOURISMSOURCE_SCIENCE' where ImprovementType ='IMPROVEMENT_ZIGGURAT';
+update Improvement_Tourism set TourismSource = 'TOURISMSOURCE_PRODUCTION' where ImprovementType = 'IMPROVEMENT_SEASTEAD';
+delete from Improvement_Tourism where ImprovementType = 'IMPROVEMENT_MINE';
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,				TourismSource,				PrereqTech,		PrereqCivic,		ScalingFactor)
+values
+	('IMPROVEMENT_CAMP',			'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_LUMBER_MILL',		'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_FISHING_BOATS',	'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_MEKEWAP',			'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_POLDER',			'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_LAND_POLDER',		'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM',	100),
+	('IMPROVEMENT_FORT',			'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',	NULL,				100);
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,		PrereqCivic,		ScalingFactor)
+select
+	'IMPROVEMENT_TRADING_DOME', 'TOURISMSOURCE_GOLD',		Null,			'CIVIC_CAPITALISM', 100
+where exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_TRADING_DOME');
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,		PrereqCivic,		ScalingFactor)
+select
+	ImprovementType, 			'TOURISMSOURCE_SCIENCE',	'TECH_FLIGHT',	Null,	 			100
+from Improvements where ImprovementType in (
+	'IMPROVEMENT_MAHAVIHARA',
+	'IMPROVEMENT_ALCAZAR',
+	'IMPROVEMENT_MISSION'
+);
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,		PrereqCivic,		ScalingFactor)
+select
+	ImprovementType, 			'TOURISMSOURCE_FAITH',		'TECH_FLIGHT',	Null,	 			100
+from Improvements where ImprovementType in (
+	'IMPROVEMENT_PYRAMID',
+	'IMPROVEMENT_MONASTERY'
+);
+
+insert or replace into Improvement_Tourism
+	(ImprovementType,			TourismSource,				PrereqTech,		PrereqCivic,		ScalingFactor)
+select
+	ImprovementType, 			'TOURISMSOURCE_PRODUCTION',	'TECH_FLIGHT',	Null,	 			100
+from Improvements where ImprovementType in (
+	'IMPROVEMENT_OUTBACK_STATION',
+	'IMPROVEMENT_HACIENDA'
+);

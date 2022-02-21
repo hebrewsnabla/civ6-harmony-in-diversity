@@ -491,7 +491,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 
 --update ModifierArguments set Value = 'TERRAIN_OCEAN,TERRAIN_COAST' where ModifierId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE' and Name = 'TerrainType';
 update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
-insert or replace into RequirementSetRequirements   (RequirementSetId,  RequirementId)  
+insert or ignore into RequirementSetRequirements   (RequirementSetId,  RequirementId)  
 values  ('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
 
 insert or replace into GreatPersonIndividualActionModifiers

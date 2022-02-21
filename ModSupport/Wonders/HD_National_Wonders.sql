@@ -40,12 +40,12 @@ values
 	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
 	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'Amount',			6);
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('CITY_HAS_NAT_COLLEGE',				'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 values
 	('CITY_HAS_NAT_COLLEGE',				'REQUIRES_CITY_HAS_NAT_WONDER_CL_COLLEGE');
@@ -274,12 +274,6 @@ select
 	'HD_NAT_CITADEL_ADJUST_' || BuildingType || '_CULTURE',				'Amount',				2
 from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Null);
 
-	-- 堡垒在飞行后获得旅游业绩
-insert or replace into Improvement_Tourism
-	(ImprovementType,		TourismSource,				PrereqTech,			ScalingFactor)
-values
-	('IMPROVEMENT_FORT',	'TOURISMSOURCE_CULTURE',	'TECH_FLIGHT',		100);
-
 -- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
 update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
@@ -292,6 +286,9 @@ update Modifiers set SubjectStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJ
 update Modifiers set SubjectStackLimit = 5 where ModifierId = 'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE';
 
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+
+insert or replace into Building_GreatWorks (BuildingType, GreatWorkSlotType, NumSlots)
+values ('NAT_WONDER_CL_TEMPLE', 'GREATWORKSLOT_RELIC', 2),('NAT_WONDER_CL_TEMPLE_INTERNAL', 'GREATWORKSLOT_RELIC', 2);
 
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
@@ -313,32 +310,113 @@ values
 
 -- 国家主题公园 ------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 900 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 900 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1050, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1050, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
 	-- 修改本体产出
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
-delete from Building_YieldChangesBonusWithPower where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-delete from Building_YieldChangesBonusWithPower where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE'  where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE'  where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+
 	-- 修改特效
-delete from RequirementSetRequirements where RequirementSetId = 'REQ_SET_CL_DISTRICT_IS_WITHIN_6_ENTERTAINMENT' and RequirementId = 'REQ_CL_PLOT_WITHIN_6';
+delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_THEMEPARK'
+	and (ModifierId = 'CL_NAT_WONDER_ADJUST_TOURISM_ENTERTAINMENT' or ModifierId = 'CL_NAT_WONDER_ADJUST_TOURISM_ENTERTAINMENT_ADJACENT');
 
 insert or replace into BuildingModifiers
-	(BuildingType,											ModifierId)
+	(BuildingType,					ModifierId)
 values
-	('NAT_WONDER_CL_THEMEPARK',								'HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION'),
-	('NAT_WONDER_CL_THEMEPARK',								'HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION');
+	('NAT_WONDER_CL_THEMEPARK',		'HD_NAT_THEMEPARK_CAMP_TOURISM'),
+	('NAT_WONDER_CL_THEMEPARK',		'HD_NAT_THEMEPARK_PASTURE_TOURISM'),
+	('NAT_WONDER_CL_THEMEPARK',		'HD_NAT_THEMEPARK_FISHBOAT_TOURISM'),
+	('NAT_WONDER_CL_THEMEPARK',		'HD_NAT_THEMEPARK_WONDER_TOURISM');
 
 insert or replace into Modifiers
-	(ModifierId,											ModifierType)
+	(ModifierId,							ModifierType,									SubjectRequirementSetId)
 values
-	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
-	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
+	('HD_NAT_THEMEPARK_CAMP_TOURISM',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_HAS_ZOO'),
+	('HD_NAT_THEMEPARK_PASTURE_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_HAS_ZOO'),
+	('HD_NAT_THEMEPARK_FISHBOAT_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_HAS_AQUARIUM'),
+	('HD_NAT_THEMEPARK_WONDER_TOURISM',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_ALL_ENTERTAINMENT');
 
 insert or replace into ModifierArguments
 	(ModifierId,											Name,					Value)
 values
-	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'DistrictType',			'DISTRICT_ENTERTAINMENT_COMPLEX'),
-	('HD_NAT_THEMEPARK_ENTERTAINMENT_BUILDING_PRODUCTION',	'Amount',				50),
-	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'DistrictType',			'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
-	('HD_NAT_THEMEPARK_WATERENTER_BUILDING_PRODUCTION',		'Amount',				50);
+	('HD_NAT_THEMEPARK_CAMP_TOURISM',						'ImprovementType',		'IMPROVEMENT_CAMP'),
+	('HD_NAT_THEMEPARK_CAMP_TOURISM',						'ScalingFactor',		150),
+	('HD_NAT_THEMEPARK_PASTURE_TOURISM',					'ImprovementType',		'IMPROVEMENT_PASTURE'),
+	('HD_NAT_THEMEPARK_PASTURE_TOURISM',					'ScalingFactor',		150),
+	('HD_NAT_THEMEPARK_FISHBOAT_TOURISM',					'ImprovementType',		'IMPROVEMENT_FISHING_BOATS'),
+	('HD_NAT_THEMEPARK_FISHBOAT_TOURISM',					'ScalingFactor',		150),
+	('HD_NAT_THEMEPARK_WONDER_TOURISM',						'BoostsWonders',		1),
+	('HD_NAT_THEMEPARK_WONDER_TOURISM',						'ScalingFactor',		400);
+
+insert or ignore into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('HD_CITY_HAS_ZOO',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_CITY_HAS_AQUARIUM', 				'REQUIREMENTSET_TEST_ALL'),
+	('HD_CITY_ALL_ENTERTAINMENT', 			'REQUIREMENTSET_TEST_ANY');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('HD_CITY_HAS_ZOO',						'REQUIRES_CITY_HAS_BUILDING_ZOO'),
+	('HD_CITY_HAS_AQUARIUM',				'REQUIRES_CITY_HAS_BUILDING_AQUARIUM'),
+	('HD_CITY_ALL_ENTERTAINMENT',			'REQUIRES_CITY_HAS_DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('HD_CITY_ALL_ENTERTAINMENT',			'REQUIRES_CITY_HAS_DISTRICT_WATER_ENTERTAINMENT_COMPLEX');
+
+CREATE TEMPORARY TABLE 'HD_DistrictTourism'(
+    'DistrictType' TEXT NOT NULL,
+    'YieldType' TEXT NOT NULL
+);
+
+insert or replace into HD_DistrictTourism
+	(DistrictType,					YieldType)
+values
+	('DISTRICT_HOLY_SITE',			'YIELD_FAITH'),
+	('DISTRICT_CAMPUS',				'YIELD_SCIENCE'),
+	('DISTRICT_COMMERCIAL_HUB',		'YIELD_GOLD'),
+	('DISTRICT_THEATER',			'YIELD_CULTURE'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'YIELD_PRODUCTION');
+
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+select
+	'NAT_WONDER_CL_THEMEPARK',		'HD_NAT_THEMEPARK' || DistrictType || '_TOURISM'
+from HD_DistrictTourism;
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,															SubjectRequirementSetId)
+select
+	'HD_NAT_THEMEPARK' || DistrictType || '_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	'HD_IS_BREATHTAKING_' || DistrictType
+from HD_DistrictTourism;
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'HD_NAT_THEMEPARK' || DistrictType || '_TOURISM',	'YieldType',	YieldType
+from HD_DistrictTourism;
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'HD_NAT_THEMEPARK' || DistrictType || '_TOURISM',	'Amount',		100
+from HD_DistrictTourism;
+
+insert or ignore into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+select
+	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIREMENTSET_TEST_ALL'
+from HD_DistrictTourism;
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+select
+	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIRES_DISTRICT_IS_' || DistrictType
+from HD_DistrictTourism;
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+select
+	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIRES_PLOT_BREATHTAKING_APPEAL'
+from HD_DistrictTourism;

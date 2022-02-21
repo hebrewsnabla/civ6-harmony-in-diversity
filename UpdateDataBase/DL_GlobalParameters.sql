@@ -224,3 +224,6 @@ values
 -- Trading Post
 -- update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
 -- update GlobalParameters set Value = 0 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
+
+-- Art move lock
+update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';

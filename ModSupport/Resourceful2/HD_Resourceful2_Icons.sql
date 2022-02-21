@@ -5,13 +5,13 @@
 insert into IconTextureAtlases
 	(Name,									IconSize,		IconsPerRow,		IconsPerColumn,			Filename)
 values
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		32,				8,					1,						'Resourceful2_New_32.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		38,				8,					1,						'Resourceful2_New_38.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		50,				8,					1,						'Resourceful2_New_50.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		64,				8,					1,						'Resourceful2_New_64.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		128,			8,					1,						'Resourceful2_New_128.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		256,			8,					1,						'Resourceful2_New_256.dds'),
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD_FOW',	256,			8,					1,						'Resourceful2_New_FOW_256.dds');
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		32,				8,					2,						'Resourceful2_New_32.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		38,				8,					2,						'Resourceful2_New_38.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		50,				8,					2,						'Resourceful2_New_50.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		64,				8,					2,						'Resourceful2_New_64.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		128,			8,					2,						'Resourceful2_New_128.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		256,			8,					2,						'Resourceful2_New_256.dds'),
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD_FOW',	256,			8,					2,						'Resourceful2_New_FOW_256.dds');
 
 insert into IconTextureAtlases
 	(Name,									Baseline,	IconSize,		IconsPerRow,		IconsPerColumn,			Filename)
@@ -67,4 +67,8 @@ values
 
 	('ICON_RESOURCE_BARLEY',			'ICON_ATLAS_RESOURCEFUL2_NEW_HD',		6),
 	('ICON_RESOURCE_BARLEY_FOW',		'ICON_ATLAS_RESOURCEFUL2_NEW_HD_FOW',	6),
-	('RESOURCE_BARLEY',					'ICON_ATLAS_RESOURCEFUL2_NEW_HD',		6);
+	('RESOURCE_BARLEY',					'ICON_ATLAS_RESOURCEFUL2_NEW_HD',		6),
+
+	('ICON_RESOURCE_SEASHELLS',			'ICON_ATLAS_RESOURCEFUL2_NEW_HD',		8),
+	('ICON_RESOURCE_SEASHELLS_FOW',		'ICON_ATLAS_RESOURCEFUL2_NEW_HD_FOW',	8),
+	('RESOURCE_SEASHELLS',				'ICON_ATLAS_RESOURCEFUL2_NEW_HD',		8);

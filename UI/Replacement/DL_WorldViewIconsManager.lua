@@ -21,7 +21,7 @@ include("FarmsOnFreshHills_Common");
 --  Cache base functions
 -- ===========================================================================
 BASE_AddImprovementRecommendationsForCity = AddImprovementRecommendationsForCity;
-BASE_SetResourceIcon = SetResourceIcon;
+BASE_SetResourceIcon_HD = SetResourceIcon;
 
 -- =================================================================================
 -- Overrides
@@ -92,7 +92,7 @@ function AddImprovementRecommendationsForCity( pCity:table, pSelectedUnit:table 
 end
 
 function SetResourceIcon(pInstance:table, pPlot, type, state)
-    BASE_SetResourceIcon(pInstance, pPlot, type, state);
+    BASE_SetResourceIcon_HD(pInstance, pPlot, type, state);
 
     local resourceInfo = GameInfo.Resources[type];
     if pPlot and resourceInfo then
