@@ -6,7 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food to Farms.[NEWLINE]Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5 in cities having Granary."),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food to Farms.[NEWLINE]Provides an additional +1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in cities having Granary."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -176,7 +176,7 @@ insert or replace into LocalizedText
 values
     -- New Techs
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_NAME",                                            "历法"),
-    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
+    ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_NAME",                                        "造纸术"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPASS_HD_NAME",                                             "罗盘"),

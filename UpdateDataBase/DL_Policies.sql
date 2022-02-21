@@ -562,7 +562,9 @@ values
 	('POLICY_WATER_TRANSPORT',		'POLICY_COLLECTIVIZATION'),
 	('POLICY_TEXTBOOK',				'POLICY_NOBEL_PRIZE'),
 	('POLICY_INSPIRATION',			'POLICY_TEXTBOOK'),
-	('POLICY_TRIBUTE_TRADE',		'POLICY_SELF_DETERMINATION');
+	('POLICY_TRIBUTE_TRADE',		'POLICY_SELF_DETERMINATION'),
+	('POLICY_OVERALL_PLANNING',		'POLICY_FIVE_YEAR_PLAN'),
+	('POLICY_OVERALL_PLANNING',		'POLICY_SPORTS_MEDIA');
 delete from ObsoletePolicies where PolicyType = 'POLICY_MILITARY_RESEARCH';
 
 
@@ -648,7 +650,11 @@ values
 	('POLICY_TEXTBOOK',					'TEXTBOOK_FIXED_SCIENTIST_POINTS'),
 	('POLICY_TEXTBOOK',					'TEXTBOOK_TIER2_SCIENTIST_POINTS'),
 	('POLICY_SUPERPOWER',				'SUPERPOWER_SCIENCE_ATTACH'),
-	('POLICY_SUPERPOWER',				'SUPERPOWER_CULTURE_ATTACH');
+	('POLICY_SUPERPOWER',				'SUPERPOWER_CULTURE_ATTACH'),
+	('POLICY_LIBERALISM',				'LIBERALISM_ENTERTAINMENT_PRODUCTION'),
+	('POLICY_LIBERALISM',				'LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION'),
+	('POLICY_FIVE_YEAR_PLAN',			'FIVE_YEAR_PLAN_INDUSTRIAL_RANGE'),
+	('POLICY_SPORTS_MEDIA',				'SPORTS_MEDIA_ENTERTAINMENT_RANGE');
 
 update ModifierArguments set Value = 2 where Name = 'Amount' and (ModifierId = 'MONARCHY_WALLS_HOUSING' or ModifierId = 'MONARCHY_CASTLE_HOUSING' or ModifierId = 'MONARCHY_STARFORT_HOUSING');
 
@@ -722,7 +728,11 @@ values
 	('SUPERPOWER_SCIENCE_ATTACH',							'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING_REQUIREMENTS'),
 	('SUPERPOWER_CULTURE_ATTACH',							'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS'),
 	('SUPERPOWER_SCIENCE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL),
-	('SUPERPOWER_CULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL);
+	('SUPERPOWER_CULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL),
+	('LIBERALISM_ENTERTAINMENT_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
+	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
+	('FIVE_YEAR_PLAN_INDUSTRIAL_RANGE',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',				'DISTRICT_IS_INDUSTRIAL_ZONE'),
+	('SPORTS_MEDIA_ENTERTAINMENT_RANGE',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',				'HD_DISTRICT_IS_ENTERTAINMENT_OR_WARTERPARK');
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												SubjectRequirementSetId,								SubjectStackLimit)
@@ -855,7 +865,13 @@ values
 	('SUPERPOWER_SCIENCE',													'Amount',						2),
 	('SUPERPOWER_SCIENCE',													'YieldType',					'YIELD_SCIENCE'),
 	('SUPERPOWER_CULTURE',													'Amount',						2),
-	('SUPERPOWER_CULTURE',													'YieldType',					'YIELD_CULTURE');
+	('SUPERPOWER_CULTURE',													'YieldType',					'YIELD_CULTURE'),
+	('LIBERALISM_ENTERTAINMENT_PRODUCTION',	 								'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('LIBERALISM_ENTERTAINMENT_PRODUCTION',	  								'Amount',						50),
+	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',	 						'DistrictType',					'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
+	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',	  						'Amount',						50),
+	('FIVE_YEAR_PLAN_INDUSTRIAL_RANGE',	  									'Amount',						3),
+	('SPORTS_MEDIA_ENTERTAINMENT_RANGE',	  								'Amount',						3);
 
 insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'BuildingType',	'BUILDING_ARENA'),
@@ -1216,9 +1232,9 @@ update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVIZATI
 update Policies set PrereqTech = 'TECH_COMBUSTION' where PolicyType = 'POLICY_COLLECTIVIZATION';
 delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
 
-	-- 政策卡修改：【电子商务】改为【远程通讯】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_ECOMMERCE';
-update Policies set PrereqTech = 'TECH_TELECOMMUNICATIONS' where PolicyType = 'POLICY_ECOMMERCE';
+-- 	-- 政策卡修改：【电子商务】改为【远程通讯】科技解锁
+-- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_ECOMMERCE';
+-- update Policies set PrereqTech = 'TECH_TELECOMMUNICATIONS' where PolicyType = 'POLICY_ECOMMERCE';
 
 	-- 政策卡修改：【采邑】改为【城堡】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WALL_HOUSING';
@@ -1240,9 +1256,9 @@ update Policies set PrereqTech = 'TECH_RADIO' where PolicyType = 'POLICY_RESOURC
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
 update Policies set PrereqTech = 'TECH_COMBINED_ARMS' where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
 
-	-- 政策卡修改：【战略空军】改为【现代航空】科技解锁
+	-- 政策卡修改：【战略空军】改为【火箭研究】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
-update Policies set PrereqTech = 'TECH_ADVANCED_FLIGHT' where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
+update Policies set PrereqTech = 'TECH_ROCKETRY' where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
 
 	-- 政策卡修改：【二次攻击能力】改为【核裂变】科技解锁
 update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
@@ -1451,11 +1467,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
 from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
-from HD_DistrictBonus;
+-- insert or replace into Modifiers
+-- 	(ModifierId,														ModifierType)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+-- from HD_DistrictBonus;
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType)
@@ -1475,11 +1491,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER'
 from HD_DistrictBonus;
 
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1'
-from HD_DistrictBonus;
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,														Name,			Value)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1'
+-- from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,			Value)
@@ -1499,11 +1515,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE'
 from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
-from HD_DistrictBonus;
+-- insert or replace into Modifiers
+-- 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
+-- from HD_DistrictBonus;
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
@@ -1511,11 +1527,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
 from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'MODIFIER_PLAYER_DISTRICT_ADJUST_DISTRICT_AMENITY',						Null
-from HD_DistrictBonus;
+-- insert or replace into Modifiers
+-- 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'MODIFIER_PLAYER_DISTRICT_ADJUST_DISTRICT_AMENITY',						Null
+-- from HD_DistrictBonus;
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
@@ -1541,11 +1557,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'Amount',				100
 from HD_DistrictBonus;
 
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1'
-from HD_DistrictBonus;
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,														Name,			Value)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1'
+-- from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,			Value)
@@ -1553,11 +1569,11 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2'
 from HD_DistrictBonus;
 
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'Amount',				1
-from HD_DistrictBonus;
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,														Name,					Value)
+-- select
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'Amount',				1
+-- from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)

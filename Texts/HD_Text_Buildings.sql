@@ -8,7 +8,7 @@ values
     ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
-    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced from 3 to 2.5 after completing Calendar."),
+    ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 after completing Calendar."),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
     ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+2 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
     ("LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "Triumphal Arch"),
@@ -35,7 +35,7 @@ values
     ("LOC_BUILDING_MARAE_DESCRIPTION",                            "A building unique to the Māori. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three coast or lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
     ("LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum. +5% [ICON_CULTURE] Culture in this city."),
     ("LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "Holds [ICON_GreatWork_Landscape] Great Works of Art. May not be built in a Theater Square district that already has an Archaeological Museum. +5% [ICON_CULTURE] Culture in this city."),
-    ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Modern era. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
+    ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Industrial era. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "+5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] Culture if this city is fully powered. "),
     -- Industrial Zone
     ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production. +5% [ICON_Production] Production towards wonders, districts and buildings in this city."), -- , Quarries and Lumber Mills
@@ -106,7 +106,8 @@ values
     ("LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "After Biology is researched, +1 [ICON_Food] Food, +1 [ICON_PRODUCTION] Production and +3 [ICON_Gold] Gold from marine features or Fishing Boats with resources in this city."),
     -- Aerodrome
     ("LOC_BUILDING_HANGAR_DESCRIPTION",                           "+25% combat experience for air units trained in this city. +2 air unit slot in Aerodrome district. +50% [Icon_Production] Production towards Air Units."),
-    ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+50% [ICON_Tourism] Tourism in all cities within 9 tiles of an Airport. Can not be overlapped. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
+    ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+100% [ICON_TOURISM] Tourism from Wonders, and +50% [ICON_TOURISM] Tourism from Improvements, Great Works in this city if is fully [ICON_POWER] Powered. This bonus is extended to all cities within 9 tiles that do not already have a bonus from another Airport. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
+    ("LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT",                  "+100% [ICON_TOURISM] Tourism from Wonders, and +50% [ICON_TOURISM] Tourism from Improvements, Great Works, Products in this city if is fully [ICON_POWER] Powered. This bonus is extended to all cities within 9 tiles that do not already have a bonus from another Airport. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
     -- Neighborhood
     ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "Can only be built once in a city, even if the city has multiple Neighborhoods. +10% Growth rate in this city. If the city is fully powered, extra +5% Growth rate in this city."),
     ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+4 [ICON_Tourism] Tourism. Can only be built once in a city, even if the city has multiple Neighborhoods. +5% [ICON_gold] Gold yield in this city. If the city is fully powered, +10% extra [ICON_gold] Gold yield in this city."),
@@ -126,7 +127,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 人口消耗 [ICON_Food] 食物由3变成2.5。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
@@ -154,7 +155,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入现代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入工业时代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
     ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。"), -- 、采石场和伐木场
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),
@@ -224,7 +225,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_AQUARIUM_DL_DESCRIPTION",                      "研究“生物”科技后，此城中的海洋地貌和改良资源的渔船+1 [ICON_Food] 食物，+1 [ICON_PRODUCTION] 生产力，+3 [ICON_Gold] 金币。"),
     -- 航空港
     ("zh_Hans_CN",  "LOC_BUILDING_HANGAR_DESCRIPTION",                           "当前城市训练的空中单位+25%战斗经验值。航空港区域+2空中单位槽位。建造空中单位时，+50% [Icon_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "在有机场的9个单元格内的城市产出 [ICON_Tourism] 旅游业绩+50%。不可叠加。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到9个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT",                  "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作、 [ICON_GreatWork_Product] 产品的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到9个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
     -- 社区
     ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+10%，若电力充足，则人口增长速度额外+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+4 [ICON_Tourism] 旅游业绩。只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+5%，若电力充足，则 [ICON_gold] 金币产出额外增加10%。"),

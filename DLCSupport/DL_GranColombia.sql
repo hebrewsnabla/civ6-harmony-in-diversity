@@ -25,6 +25,11 @@ select
     'CIVILIZATION_GRAN_COLOMBIA',   ResourceType,           3
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION';
 
+insert or replace into Resource_ValidFeatures
+    (ResourceType,              FeatureType)
+values
+    ('RESOURCE_HONEY',          'FEATURE_FOREST');
+
 ---------------------------------------------------------------------------------------------------------------
 -- Maya
 update Modifiers set SubjectRequirementSetId = 'OBJECT_IS_6_TILES_FROM_CAPITAL_REQUIREMENTS'

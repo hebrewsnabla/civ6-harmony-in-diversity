@@ -441,3 +441,5 @@ insert or replace into UnitPromotionPrereqs
 	(UnitPromotion, 					PrereqUnitPromotion)
 values
 	('PROMOTION_AUTO_SOLICITATION',		'PROMOTION_WOLFPACK');
+
+update Units set PrereqTech = 'TECH_ROCKETRY' where UnitType = 'UNIT_BOMBER';

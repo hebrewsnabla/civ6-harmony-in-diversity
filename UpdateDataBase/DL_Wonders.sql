@@ -110,14 +110,14 @@ update Building_GreatPersonPoints set PointsPerTurn = 2 where BuildingType = 'BU
 
 --BUILDING_PANAMA_CANAL
 --grants a GREAT_PERSON_CLASS_MERCHANT
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
+insert or ignore into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_PANAMA_CANAL', 'PANAMA_CANAL_GRANTS_MERCHANT'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_PANAMA_CANAL');
 
-insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
+insert or ignore into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
 
-insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
+insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'Amount',	1),
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
@@ -146,27 +146,22 @@ select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_POP_CULTURE'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_10_POPULATION_TOURISM'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
-
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_BROADWAY', 'BROADWAY_REGIONAL_20_POPULATION_TOURISM'
+select	'BUILDING_BROADWAY', 'BROADWAY_MUSICIAN_POINTS'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
 
 insert or replace into Modifiers	
 	(ModifierId,								ModifierType,												SubjectRequirementSetId) 
 values
 	('BROADWAY_REGIONAL_POP_CULTURE',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',	'BROADWAY_WITHIN_6_REQUIREMENTS'),
-	('BROADWAY_REGIONAL_10_POPULATION_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_CHANGE',			'BROADWAY_REGIONAL_10_POPULATION_REQUIREMENTS'),
-	('BROADWAY_REGIONAL_20_POPULATION_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_CHANGE',			'BROADWAY_REGIONAL_20_POPULATION_REQUIREMENTS');
+	('BROADWAY_MUSICIAN_POINTS',				'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',		Null);
 
 insert or replace into ModifierArguments
-	(ModifierId,								Name,			Value) 
+	(ModifierId,								Name,					Value) 
 values
-	('BROADWAY_REGIONAL_POP_CULTURE',			'YieldType',	'YIELD_CULTURE'),
-	('BROADWAY_REGIONAL_POP_CULTURE',			'Amount',		1),
-	('BROADWAY_REGIONAL_10_POPULATION_TOURISM',	'Amount',		10),
-	('BROADWAY_REGIONAL_20_POPULATION_TOURISM',	'Amount',		10);
+	('BROADWAY_REGIONAL_POP_CULTURE',			'YieldType',			'YIELD_CULTURE'),
+	('BROADWAY_REGIONAL_POP_CULTURE',			'Amount',				1),
+	('BROADWAY_MUSICIAN_POINTS',				'GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN'),
+	('BROADWAY_MUSICIAN_POINTS',				'Amount',				50);
 
 insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'BuildingType',	'BUILDING_BROADWAY'),
@@ -177,18 +172,10 @@ insert or replace into Requirements (RequirementId,		RequirementType) values
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES');
 
 insert or replace into RequirementSets (RequirementSetId,		RequirementSetType) values
-	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL'),
-	('BROADWAY_REGIONAL_10_POPULATION_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
-	('BROADWAY_REGIONAL_20_POPULATION_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
+	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId) values
-	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6'),
-	('BROADWAY_REGIONAL_10_POPULATION_REQUIREMENTS',			'REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6'),
-	('BROADWAY_REGIONAL_10_POPULATION_REQUIREMENTS',			'REQUIRES_DISTRICT_IS_CITY_CENTER'),
-	('BROADWAY_REGIONAL_10_POPULATION_REQUIREMENTS',			'REQUIRES_POPULATION_10'),
-	('BROADWAY_REGIONAL_20_POPULATION_REQUIREMENTS',			'REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6'),
-	('BROADWAY_REGIONAL_20_POPULATION_REQUIREMENTS',			'REQUIRES_DISTRICT_IS_CITY_CENTER'),
-	('BROADWAY_REGIONAL_20_POPULATION_REQUIREMENTS',			'REQUIRES_POPULATION_20');
+	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6');
 
 --BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION
 update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
@@ -408,28 +395,26 @@ values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
 
 --hermitage
--- update Building_GreatWorks set NumSlots = 3 where GreatWorkSlotType = 'GREATWORKSLOT_ART' and BuildingType = 'BUILDING_HERMITAGE';
--- insert or replace into Building_GreatWorks (BuildingType, GreatWorkSlotType, NumSlots) values
--- 	('BUILDING_HERMITAGE','GREATWORKSLOT_ARTIFACT',3);
-
 insert or replace into BuildingModifiers
 	(BuildingType,				ModifierId)
 values
-	('BUILDING_HERMITAGE',		'Auto_Theme_Hermitage'),
-	('BUILDING_HERMITAGE',		'Hermitage_THEATER_BUILDING-BOOST');
+	('BUILDING_HERMITAGE',		'HERMITAGE_THEATER_BUILDING_BOOST');
 
 insert or replace into Modifiers
-	(ModifierId,							ModifierType,RunOnce,Permanent)
+	(ModifierId,							ModifierType)
 values
-	('Auto_Theme_Hermitage',				'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING',0,0),
-	('Hermitage_THEATER_BUILDING-BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',0,0);
+	('HERMITAGE_THEATER_BUILDING_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name, 				Value)
 values
-	('Auto_Theme_Hermitage',				'BuildingType',		'BUILDING_HERMITAGE'),
-	('Hermitage_THEATER_BUILDING-BOOST',	'DistrictType',		'DISTRICT_THEATER'),
-	('Hermitage_THEATER_BUILDING-BOOST',	'Amount',			50);
+	('HERMITAGE_THEATER_BUILDING_BOOST',	'DistrictType',		'DISTRICT_THEATER'),
+	('HERMITAGE_THEATER_BUILDING_BOOST',	'Amount',			50);
+
+insert or replace into Unit_BuildingPrereqs
+	(Unit,					PrereqBuilding,				NumSupported)
+values
+	('UNIT_ARCHAEOLOGIST',	'BUILDING_HERMITAGE',		1);
 
 -- sydney opera house
 
@@ -786,3 +771,101 @@ values
 	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'Delta',		1),
 	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
 	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		100);
+
+-- 马拉卡纳体育场
+update Buildings set RegionalRange = 12 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
+insert into Building_YieldChangesBonusWithPower
+	(BuildingType,						YieldType,			YieldChange)
+values
+	('BUILDING_ESTADIO_DO_MARACANA',	'YIELD_CULTURE',	6);
+
+insert into Buildings_XP2
+	(BuildingType,						RequiredPower,	EntertainmentBonusWithPower)
+values
+	('BUILDING_ESTADIO_DO_MARACANA',	6,				2);
+
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+values
+	('BUILDING_ESTADIO_DO_MARACANA',	'MARACANA_CITIES_GPP_BOOST');
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,												OwnerRequirementSetId,	SubjectRequirementSetId)
+values
+	('MARACANA_CITIES_GPP_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT_BONUS',	'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_12_TILES');
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,		Value)
+values
+	('MARACANA_CITIES_GPP_BOOST',	'Amount',	50);
+
+CREATE TEMPORARY TABLE 'MARACANA_DistrictBonus'(
+    'DistrictType' TEXT NOT NULL,
+    'YieldType' TEXT NOT NULL
+);
+
+insert or replace into MARACANA_DistrictBonus
+	(DistrictType,					YieldType)
+values
+	('DISTRICT_HOLY_SITE',			'YIELD_FAITH'),
+	('DISTRICT_CAMPUS',				'YIELD_SCIENCE'),
+	('DISTRICT_HARBOR',				'YIELD_FOOD'),
+	('DISTRICT_ENCAMPMENT',			'YIELD_PRODUCTION'),
+	('DISTRICT_COMMERCIAL_HUB',		'YIELD_GOLD'),
+	('DISTRICT_THEATER',			'YIELD_CULTURE'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'YIELD_PRODUCTION');
+
+insert or replace into Types
+    (Type,                                      Kind)
+select
+    'BUILDING_MARACANA_DUMMY_' || DistrictType, 'KIND_BUILDING'
+from MARACANA_DistrictBonus;
+
+insert or replace into Buildings 
+    (BuildingType,Name,Cost,Description,PrereqDistrict,MustPurchase) 
+select
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,
+	'BUILDING_MARACANA_DUMMY_' || DistrictType || '_NAME',
+	9999,
+	'BUILDING_MARACANA_DUMMY_' || DistrictType || '_DESCRIPTION',
+	DistrictType,
+	1
+from MARACANA_DistrictBonus;
+
+insert or replace into Buildings_XP2 (BuildingType,Pillage) select
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,0
+from MARACANA_DistrictBonus;
+
+insert or replace into Building_CitizenYieldChanges (BuildingType,YieldType,YieldChange) select
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,YieldType,2
+from MARACANA_DistrictBonus;
+
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_ESTADIO_DO_MARACANA',		'MARACANA_' || DistrictType || '_EXPERT_ATTACH'
+from MARACANA_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,										SubjectRequirementSetId)
+select
+	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'HD_OBJECT_WITHIN_12_TILES'
+from MARACANA_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,				Value)
+select
+	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'ModifierId',		'MARACANA_' || DistrictType || '_EXPERT_YIELD'
+from MARACANA_DistrictBonus;
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,												OwnerRequirementSetId)
+select
+	'MARACANA_' || DistrictType || '_EXPERT_YIELD', 	'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		'DISTRICT_IS_' || substr(DistrictType, 10)
+from MARACANA_DistrictBonus;
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,				Value)
+select
+	'MARACANA_' || DistrictType || '_EXPERT_YIELD', 	'BuildingType',		'BUILDING_MARACANA_DUMMY_' || DistrictType
+from MARACANA_DistrictBonus;
