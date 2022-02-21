@@ -72,7 +72,6 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                            Text)
 values
-<<<<<<< HEAD
     ("zh_Hans_CN",  "LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",             "获得2名上师。圣地+2 [ICON_Food] 食物，神社和寺庙为相邻的单元格提供+1 [ICON_Food] 食物。允许您的城市使用 [ICON_Faith] 信仰值购买建造者和开拓者。必须建在圣地旁，同时必须已创立宗教。"), --圣地区域+2 [ICON_Food] 食物。
     ("zh_Hans_CN",  "LOC_BUILDING_PANAMA_CANAL_DESCRIPTION",                 "建成时市中心出现一位 [Icon_GreatMerchant] 大商人。开始修建巴拿马运河时，将在满足条件的相邻单元格自动开始建造1或2个运河，完成巴拿马运河的同时运河也将完成。建成的巴拿马运河将同样被视为运河。[NEWLINE]将巴拿马运河视为水域单元格时，必须有两个相邻巴拿马运河的且关于其对称的单元格满足：两个单元格均可以修建运河；或是一个单元格可以修建运河，一个单元格是城市/水域。如想使用巴拿马运河连接两座城市，那么这两座城市必须有至少一座相邻水域单元格或已经被运河连接至水域单元格。[NEWLINE]必须修建在平坦地形单元格之上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "当前城市+20% [ICON_Science] 科技值，完成时，随机奖励2项免费科技。当展示来自不同作家的作品时获得主题化加成。必须建在靠近带有大学的学院区域的草原或平原上。"),
