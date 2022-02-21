@@ -43,6 +43,7 @@ values
     ("LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "Historical Progress"),
     ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% production speed toward Campus buildings and Industrial Zone buildings."),
     ("LOC_POLICY_LIBERALISM_DESCRIPTION",                                             "+1 [ICON_Amenities] Amenity to all cities with at least 2 specialty districts. +50% production speed toward Entertainment Complex buildings and Water Park buildings."),
+    ("LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "+30% Production toward Encampment districts, Harbor districts, and buildings for these districts."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -229,7 +230,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_NAME",                                           "历史进步"),
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造工业区和学院内的建筑时+30%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIBERALISM_DESCRIPTION",                                             "拥有至少两个独立区域的所有城市+1 [ICON_Amenities] 宜居度。建造娱乐中心和水上乐园内的建筑时+50%建造速度。"),
-
+    ("zh_Hans_CN",  "LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "建造军营、港口和这些区域中的建筑时+30%建造速度。"),
     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),

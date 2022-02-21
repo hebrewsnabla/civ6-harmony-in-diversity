@@ -64,13 +64,15 @@ values
     ("BUILDING_MARACANA_DUMMY_DISTRICT_THEATER_NAME",                   "[COLOR:ResCultureLabelCS]Receive extra yields[ENDCOLOR]"),
     ("BUILDING_MARACANA_DUMMY_DISTRICT_THEATER_DESCRIPTION",            "The Theater is built in 12 tiles of the Estádio do Maracanã, citizens working in this district provide +2 [ICON_Culture] Culture."),
     ("BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_NAME",           "[COLOR:ResProductionLabelCS]Receive extra yields[ENDCOLOR]"),
-    ("BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",    "The Industrial Zone is built in 12 tiles of the Estádio do Maracanã, citizens working in this district provide +2 [ICON_Production] Production.");
+    ("BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",    "The Industrial Zone is built in 12 tiles of the Estádio do Maracanã, citizens working in this district provide +2 [ICON_Production] Production."),
+    ("LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",    "+4 Diplomatic Victory point. The Statue of Liberty provides the following: [ICON_CULTURE] Culture and [ICON_AMENITIES] Amenities to each coastal city center within 9 tiles. Envoys sent to City-States you have a [ICON_TRADEROUTE] Trade Route to count as two [ICON_ENVOY] Envoys. [NEWLINE][NEWLINE]Must be built on the Coast, adjacent to land and a Harbor district.");--+1 influence point, for every 100 military strength points you have.
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
-    (Language,      Tag,                                                     Text)
+    (Language,      Tag,                                                                                            Text)
 values
+<<<<<<< HEAD
     ("zh_Hans_CN",  "LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",             "获得2名上师。圣地+2 [ICON_Food] 食物，神社和寺庙为相邻的单元格提供+1 [ICON_Food] 食物。允许您的城市使用 [ICON_Faith] 信仰值购买建造者和开拓者。必须建在圣地旁，同时必须已创立宗教。"), --圣地区域+2 [ICON_Food] 食物。
     ("zh_Hans_CN",  "LOC_BUILDING_PANAMA_CANAL_DESCRIPTION",                 "建成时市中心出现一位 [Icon_GreatMerchant] 大商人。开始修建巴拿马运河时，将在满足条件的相邻单元格自动开始建造1或2个运河，完成巴拿马运河的同时运河也将完成。建成的巴拿马运河将同样被视为运河。[NEWLINE]将巴拿马运河视为水域单元格时，必须有两个相邻巴拿马运河的且关于其对称的单元格满足：两个单元格均可以修建运河；或是一个单元格可以修建运河，一个单元格是城市/水域。如想使用巴拿马运河连接两座城市，那么这两座城市必须有至少一座相邻水域单元格或已经被运河连接至水域单元格。[NEWLINE]必须修建在平坦地形单元格之上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OXFORD_UNIVERSITY_DESCRIPTION",            "当前城市+20% [ICON_Science] 科技值，完成时，随机奖励2项免费科技。当展示来自不同作家的作品时获得主题化加成。必须建在靠近带有大学的学院区域的草原或平原上。"),
@@ -132,7 +134,8 @@ values
     ("zh_Hans_CN",  "BUILDING_MARACANA_DUMMY_DISTRICT_THEATER_NAME",                   "[COLOR:ResCultureLabelCS]专家产出已提升[ENDCOLOR]"),
     ("zh_Hans_CN",  "BUILDING_MARACANA_DUMMY_DISTRICT_THEATER_DESCRIPTION",            "该剧院建造于“马拉卡纳体育场”奇观12个单元格内，专家额外+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_NAME",           "[COLOR:ResProductionLabelCS]专家产出已提升[ENDCOLOR]"),
-    ("zh_Hans_CN",  "BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",    "该工业区建造于“马拉卡纳体育场”奇观12个单元格内，专家额外+2 [ICON_Production] 生产力。");
+    ("zh_Hans_CN",  "BUILDING_MARACANA_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",    "该工业区建造于“马拉卡纳体育场”奇观12个单元格内，专家额外+2 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4外交胜利点数。为9个单元格以内的所有海岸城市市中心提供：+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得当前可在该区域中建造的、所需 [ICON_PRODUCTION] 生产力最低的建筑。如与城邦之间存在 [ICON_TRADEROUTE] 贸易路线，派往此处的1位 [ICON_ENVOY] 使者将视为2位。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。");--每拥有100点军评，获得1点影响力。
 
 -- National Wonders
 --------------------------------------------------------------------------------

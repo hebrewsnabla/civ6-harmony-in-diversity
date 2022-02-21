@@ -30,7 +30,8 @@ values
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
     -- ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flat tiles without Woods, Jungle, or Marsh"),
     ("LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                      "From attacking a wounded Unit"),
-    ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack");
+    ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack"),
+    ("LOC_HD_GENERAL_GUARD_PREVIEW_TEXT",                                       "From General Guard");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -64,7 +65,8 @@ values
     ("zh_Hans_CN",  "LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                               "来自在丘陵上防御"),
     -- ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战"),
     ("zh_Hans_CN",  "LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                   "来自攻击受伤的单位"),
-    ("zh_Hans_CN",  "LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                          "来自狼群战术");
+    ("zh_Hans_CN",  "LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                          "来自狼群战术"),
+    ("zh_Hans_CN",  "LOC_HD_GENERAL_GUARD_PREVIEW_TEXT",                                    "来自将领卫队");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
@@ -153,7 +155,9 @@ values
     ("LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                    "Damage Control"),
     ("LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                             "Heals outside of friendly territory."),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
-    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn.");
+    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
+    ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
+    ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -240,4 +244,6 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                 "损害管制"),
     ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                          "可在友军领土之外回复。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                              "自动索敌"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。");
+    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                    "将领卫队"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。");

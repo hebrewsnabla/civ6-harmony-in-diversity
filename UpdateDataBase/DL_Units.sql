@@ -407,6 +407,7 @@ insert or replace into TypeTags
 	(Type,                                    Tag)
 values
 	('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW', 'CLASS_SIEGE');
+
 --海军近战单位升级改动：左一舵手改为一速一视野
 --海军远程单位升级改动：右三球鼻艏改为一速一视野
 insert or replace into UnitPromotionModifiers
