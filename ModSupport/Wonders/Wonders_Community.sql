@@ -306,7 +306,7 @@ insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select
 	'BUILDING_TOWER_BRIDGE',			'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH1'
-from TOWER_BRIDGE_DistrictBonus;
+from TOWER_BRIDGE_DistrictBonus where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE');
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,										SubjectRequirementSetId)
@@ -342,7 +342,7 @@ insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select
 	'BUILDING_TOWER_BRIDGE',			'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2'
-from TOWER_BRIDGE_DistrictBonus;
+from TOWER_BRIDGE_DistrictBonus where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE');
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,										SubjectRequirementSetId)
