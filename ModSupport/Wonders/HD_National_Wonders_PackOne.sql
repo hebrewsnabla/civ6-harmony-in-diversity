@@ -174,13 +174,13 @@ insert or replace into DiplomaticVisibilitySources
 values
     ('SOURCE_NAT_AIRPORT',		'LOC_VIZSOURCE_NAT_AIRPORT',	'LOC_VIZSOURCE_ACTION_NAT_AIRPORT',   	'LOC_GOSSIP_SOURCE_NAT_AIRPORT',   'TECH_ADVANCED_FLIGHT');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('HD_CITY_HAS_AIRPORT_OR_NATAIRPORT',	'REQUIREMENTSET_TEST_ANY'),
 	('HD_PLAYER_HAS_NAT_AIRPORT', 			'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 values
 	('HD_CITY_HAS_AIRPORT_OR_NATAIRPORT',	'REQUIRES_CITY_HAS_BUILDING_AIRPORT'),

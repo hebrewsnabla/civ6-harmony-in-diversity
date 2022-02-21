@@ -187,14 +187,14 @@ values
 	('CITY_POLICY_FREIGHT_FOOD',										'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'HD_PLAYER_HAS_HORSES_REQUIREMENTS'),--xhh 货运
 	('CITY_POLICY_FORGING_IRON_PRODUCTION',								'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'HD_PLAYER_HAS_IRON_REQUIREMENTS');--xhh 锻铁
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,								RequirementSetType)
 values
 	('HD_PLOT_HAS_FARM_OVER_BONUS_RESOURCES',       'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLOT_HAS_FARM_OVER_LUXURY_RESOURCES',      'REQUIREMENTSET_TEST_ALL'),
 	('HD_PLAYER_HAS_FAVOR_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
 	('HD_PLOT_HAS_FARM_OVER_BONUS_RESOURCES',       'REQUIRES_PLOT_HAS_BONUS'),
@@ -205,12 +205,12 @@ values
 	('HD_PLOT_HAS_FARM_OVER_LUXURY_RESOURCES',      'REQUIRES_CITY_HAS_DISTRICT_AQUEDUCT'),
 	('HD_PLAYER_HAS_FAVOR_REQUIREMENTS',     		'HD_REQUIRES_PLAYER_HAS_FAVOR');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('HD_REQUIRES_PLAYER_HAS_FAVOR',				'REQUIREMENT_PLOT_PROPERTY_MATCHES');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,									Name,						Value)
 values
     ('HD_REQUIRES_PLAYER_HAS_FAVOR', 				'PropertyName',     		'HD_HasDipFavor'),

@@ -40,12 +40,12 @@ values
 	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
 	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'Amount',			6);
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('CITY_HAS_NAT_COLLEGE',				'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 values
 	('CITY_HAS_NAT_COLLEGE',				'REQUIRES_CITY_HAS_NAT_WONDER_CL_COLLEGE');
@@ -350,14 +350,14 @@ values
 	('HD_NAT_THEMEPARK_WONDER_TOURISM',						'BoostsWonders',		1),
 	('HD_NAT_THEMEPARK_WONDER_TOURISM',						'ScalingFactor',		400);
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('HD_CITY_HAS_ZOO',						'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_HAS_AQUARIUM', 				'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_ALL_ENTERTAINMENT', 			'REQUIREMENTSET_TEST_ANY');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
 values
 	('HD_CITY_HAS_ZOO',						'REQUIRES_CITY_HAS_BUILDING_ZOO'),
@@ -403,19 +403,19 @@ select
 	'HD_NAT_THEMEPARK' || DistrictType || '_TOURISM',	'Amount',		100
 from HD_DistrictTourism;
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,							RequirementSetType)
 select
 	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIREMENTSET_TEST_ALL'
 from HD_DistrictTourism;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,							RequirementId)
 select
 	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIRES_DISTRICT_IS_' || DistrictType
 from HD_DistrictTourism;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,							RequirementId)
 select
 	'HD_IS_BREATHTAKING_' || DistrictType,		'REQUIRES_PLOT_BREATHTAKING_APPEAL'

@@ -163,18 +163,18 @@ values
 	('BROADWAY_MUSICIAN_POINTS',				'GreatPersonClassType',	'GREAT_PERSON_CLASS_MUSICIAN'),
 	('BROADWAY_MUSICIAN_POINTS',				'Amount',				50);
 
-insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
+insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'BuildingType',	'BUILDING_BROADWAY'),
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'MinRange',		0),
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'MaxRange',		6);
 
-insert or replace into Requirements (RequirementId,		RequirementType) values
+insert or ignore into Requirements (RequirementId,		RequirementType) values
 	('REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES');
 
-insert or replace into RequirementSets (RequirementSetId,		RequirementSetType) values
+insert or ignore into RequirementSets (RequirementSetId,		RequirementSetType) values
 	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId) values
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId) values
 	('BROADWAY_WITHIN_6_REQUIREMENTS',							'REQUIRES_PLOT_HAS_BROADWAY_WITHIN_6');
 
 --BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION
@@ -385,12 +385,12 @@ update Buildings set PrereqCivic = 'CIVIC_COLONIALISM'
 --Hagia Sophia
 update Modifiers set SubjectRequirementSetId = 'HAGIA_SOPHIA_REQUIREMENTS' where ModifierId = 'HAGIA_SOPHIA_ADJUST_RELIGIOUS_CHARGES';
 
-insert or replace into RequirementSetRequirements 	(RequirementSetId, RequirementId)	
+insert or ignore into RequirementSetRequirements 	(RequirementSetId, RequirementId)	
 values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIRES_UNIT_IS_MISSIONARY'),
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIRES_UNIT_IS_APOSTLE');
 
-insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
+insert or ignore into RequirementSets (RequirementSetId,	RequirementSetType)	
 values
 	('HAGIA_SOPHIA_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY');
 
@@ -592,7 +592,7 @@ values
 	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'YieldType',   	'YIELD_FOOD'),
 	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'Amount',      	1);
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
 	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
@@ -600,7 +600,7 @@ values
 	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
 	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_CITY_HAS_TEMPLE');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,                           	RequirementSetType)
 values
 	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),

@@ -304,12 +304,12 @@ delete from PolicyModifiers where PolicyType = 'POLICY_FREE_MARKET' and Modifier
 delete from PolicyModifiers where PolicyType = 'POLICY_GRAND_OPERA' and ModifierId = 'GRANDOPERA_BUILDING_YIELDS_HIGH_ADJACENCY';
 delete from PolicyModifiers where PolicyType = 'POLICY_GRAND_OPERA' and ModifierId = 'GRANDOPERA_BUILDING_YIELDS_HIGH_POP';
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
 	('BUILDING_IS_MUSEUM', 										'REQUIREMENTSET_TEST_ANY');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('BUILDING_IS_MUSEUM', 										'REQUIRES_CITY_HAS_BUILDING_MUSEUM_ART'),
@@ -873,15 +873,15 @@ values
 	('FIVE_YEAR_PLAN_INDUSTRIAL_RANGE',	  									'Amount',						3),
 	('SPORTS_MEDIA_ENTERTAINMENT_RANGE',	  								'Amount',						3);
 
-insert or replace into RequirementArguments (RequirementId,		Name,		Value) values
+insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'BuildingType',	'BUILDING_ARENA'),
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'MinRange',		0),
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'MaxRange',		4);
 
-insert or replace into Requirements (RequirementId,		RequirementType) values
+insert or ignore into Requirements (RequirementId,		RequirementType) values
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY_REQUIREMENTS', 		'REQUIREMENTSET_TEST_ALL'),
@@ -893,7 +893,7 @@ values
 	('HD_OVERSEAS_CITY_HAS_DISTRICT_COMMERCIAL_HUB', 			'REQUIREMENTSET_TEST_ALL'),
 	('HD_OVERSEAS_CITY_HAS_DISTRICT_HARBOR', 					'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY_REQUIREMENTS', 		'REQUIRES_PLOT_HAS_ARENA_WITHIN_4'),
@@ -1405,14 +1405,14 @@ values
 -- 公共交通 by xhh
 delete from PolicyModifiers where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,									Name,				Value)
 values
 	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'MinDistance',		1),
@@ -1593,55 +1593,55 @@ select
 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'YieldTypeToGrant',		'YIELD_GOLD'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIREMENTSET_TEST_ALL'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIREMENTSET_TEST_ALL'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIREMENTSET_TEST_ALL'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_DISTRICT_IS_' || DistrictType
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_DISTRICT_IS_' || DistrictType
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER'
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_DISTRICT_IS_' || DistrictType
 from HD_DistrictBonus;
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'

@@ -816,15 +816,15 @@ insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementI
 select	'HD_CITY_HAS_RESOURCE_FARM', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM';
 -- 太阳神, by xiaoxiao
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'HD_CITY_HAS_RESOURCE_FARM_OR_PLANTATION_REQUIREMENTS', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM' or ImprovementType = 'IMPROVEMENT_PLANTATION';
 -- 城市拥有改良奢侈 xhh
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'CITY_HAS_IMPROVED_LUXURY_RESOURCE', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Resources where ResourceClassType = 'RESOURCECLASS_LUXURY';
 -- 单位是平民单位 不包括伟人、商队、间谍和宗教单位
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'UNIT_IS_CIVILIAN_CLASS', 'REQUIRES_UNIT_IS_' || UnitType
 from Units where UnitType in ('UNIT_SETTLER','UNIT_BUILDER','UNIT_ARCHAEOLOGIST','UNIT_NATURALIST','UNIT_ROCK_BAND','UNIT_LEU_INVESTOR','UNIT_LEU_TYCOON');
 

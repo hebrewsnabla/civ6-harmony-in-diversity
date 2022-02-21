@@ -1658,7 +1658,7 @@ select
 	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER_MODIFIER',	'Amount',				40
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId, 									RequirementId)
 values
 	('HOLYSITE_ADJACENT_TO_FOREST_REQUIREMENTS',		'REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT'),
@@ -1678,7 +1678,7 @@ values
 	('HOLYSITE_ADJACENT_TO_FOREST_OR_MOUNTAIN',			'REQUIRES_PLOT_ADJACENT_TO_FOREST_OR_MOUNTAIN'),
 	('HOLYSITE_ADJACENT_TO_FOREST_OR_MOUNTAIN',			'REQUIRES_DISTRICT_IS_HOLY_SITE');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
 	('HOLYSITE_ADJACENT_TO_FOREST_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
@@ -1690,12 +1690,12 @@ values
 	('PLOT_ADJACENT_TO_FOREST_OR_MOUNTAIN',					'REQUIREMENTSET_TEST_ANY'),
 	('HOLYSITE_ADJACENT_TO_FOREST_OR_MOUNTAIN',				'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,											RequirementType)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_FOREST_OR_MOUNTAIN',		'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,											Name,					Value)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_FOREST_OR_MOUNTAIN',		'RequirementSetId',		'PLOT_ADJACENT_TO_FOREST_OR_MOUNTAIN');
@@ -1922,19 +1922,19 @@ insert or replace into ModifierStrings
 values
 	('ABILITY_JUST_WAR_STRENGTH',					    'Preview',	'+{1_Amount}{LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT}');
 
-insert or replace into RequirementSetRequirements 	(RequirementSetId, RequirementId)	
+insert or ignore into RequirementSetRequirements 	(RequirementSetId, RequirementId)	
 values
 	('JUST_WAR_PLOT_UNIT_REQUIREMENTS',		'REQUIRES_JUST_WAR_PLOT_UNIT');
 
-insert or replace into RequirementSets (RequirementSetId,	RequirementSetType)	
+insert or ignore into RequirementSets (RequirementSetId,	RequirementSetType)	
 values
 	('JUST_WAR_PLOT_UNIT_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into Requirements (RequirementId,	RequirementType)	
+insert or ignore into Requirements (RequirementId,	RequirementType)	
 values
 	('REQUIRES_JUST_WAR_PLOT_UNIT',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');	
 
-insert or replace into RequirementArguments (RequirementId, Name, Value)
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
 values
     ('REQUIRES_JUST_WAR_PLOT_UNIT',		'MinDistance',   0),
     ('REQUIRES_JUST_WAR_PLOT_UNIT',		'MaxDistance',   0);
@@ -1984,7 +1984,7 @@ values
 	('BELIEF_WORK_ETHIC_PRODUCTION_HUGE_MODIFIER',		'YieldType',   'YIELD_PRODUCTION'),
 	('BELIEF_WORK_ETHIC_PRODUCTION_HUGE_MODIFIER',		'Amount',      1);
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,											RequirementId)
 values
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TEMPLE',                      'REQUIRES_DISTRICT_IS_HOLY_SITE'),
@@ -1997,19 +1997,19 @@ values
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TIER3',                       'REQUIRES_CITY_FOLLOWS_RELIGION'),
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TIER3',                       'REQUIRES_CITY_HAS_HOLYSITE_TIER3');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,                           RequirementSetType)
 values
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TEMPLE',       'REQUIREMENTSET_TEST_ALL'),
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_SHRINE',       'REQUIREMENTSET_TEST_ALL'),
 	('CITY_FOLLOWS_WORK_ETHIC_HAS_TIER3',        'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,								 RequirementType)
 values
 	('REQUIRES_CITY_HAS_HOLYSITE_TIER3',		 'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,								 Name,					Value)
 values
 	('REQUIRES_CITY_HAS_HOLYSITE_TIER3',		 'RequirementSetId',	'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS');
@@ -2183,16 +2183,16 @@ values
 	('HD_POSTERITY_OF_MOUNTAIN_CITY_CENTER_ADJECT_MOUNTAIN_AMENITY_MODIFIER',	'Amount',				1);
 
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,												RequirementType)
 select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,       		'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE'
 from Terrains where TerrainType like '%MOUNTAIN';
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,												Name,				Value)
 select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,			'Amount',			2
 from Terrains where TerrainType like '%MOUNTAIN';
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,												Name,				Value)
 select 'REQUIRES_CITY_HAS_1_MOUNTAIN_'||TerrainType,			'TerrainType',		TerrainType
 from Terrains where TerrainType like '%MOUNTAIN';
