@@ -347,6 +347,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="HD_RealStartLocation_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_REAL_START_LOCATIONS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateText id="Better_Chinese_Combined">
@@ -1432,6 +1440,10 @@
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/ForeverWar.sql</File>
     </UpdateDatabase>
+    <ImportFiles id="RealStartLocation" criteria="HD_RealStartLocation_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/AssignStartingPlots.lua</File>
+    </ImportFiles>
   </InGameActions>
   <Files>
     <!-- Artdef -->
@@ -1452,6 +1464,7 @@
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <File>Configs/Options/ForeverWar.sql</File>
+    <File>Configs/Options/AssignStartingPlots.lua</File>
     <!-- Game Mode -->
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
