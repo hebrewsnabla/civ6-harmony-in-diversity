@@ -42,7 +42,6 @@ values
     ("LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION",                                           "Spanish unique Renaissance Era unit that replaces the Musketman. +5 [ICON_Strength] Combat Strength when there is a Missionary, Inquisitor, or Apostle in the same hex. If this unit captures a city or is adjacent to a city when it is captured, the city will automatically adopt the Conquistador player's Religion as the dominant Religion. "),
     ("LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                                "American unique Industrial era unit when Teddy Roosevelt is their leader that replaces the Cuirassiers. [ICON_Culture] Culture is earned from kills on their [ICON_Capital] Capital's continent. +5 [ICON_Strength] Combat Strength when fighting on Hills. Lower maintenance cost."),
     ("LOC_UNIT_DIGGER_DESCRIPTION",                                                         "+5 [ICON_Strength] Combat Strength when fighting on Neutral or Foreign Territory."),
-
     ("LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",                        "+17 [ICON_Strength] Combat Strength vs. land units.");
 
 
@@ -90,7 +89,6 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                 "泰迪·罗斯福作为领袖时的工业时代美国特色单位，替代胸甲骑兵。在首都所处大陆上击杀敌人后将获得 [ICON_Culture] 文化值。在丘陵地形作战时+5 [ICON_Strength] 战斗力。维护费用更低。"),
     ("zh_Hans_CN",  "LOC_UNIT_DIGGER_DESCRIPTION",                                          "澳大利亚特色的现代单位，替代步兵。在中立或外国领土上作战时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                "取代火枪手的荷兰文艺复兴时期特色近战单位。当在区域内防御时+7 [ICON_Strength] 战斗力，且相比火枪手更加廉价，无需战略资源。"),
-
     ("zh_Hans_CN",  "LOC_ABILITY_GENDARME_DESCRIPTION",                                     "进攻时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",         "攻击陆地单位+17 [ICON_Strength] 战斗力。");
 

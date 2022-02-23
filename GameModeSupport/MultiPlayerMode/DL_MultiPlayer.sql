@@ -91,7 +91,9 @@ update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
 --驴车
 update Units set PrereqTech = 'TECH_ANIMAL_HUSBANDRY' where UnitType = 'UNIT_SUMERIAN_WAR_CART';
 --诸葛连弩
-update Units set RangedCombat = 40 where UnitType = 'UNIT_CHINESE_CHOKONU';
+update Units set Combat = 25 , RangedCombat = 35 where UnitType = 'UNIT_CHINESE_CHOKONU';
+--虎蹲炮
+update Units set Combat = 40 , RangedCombat = 52 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 --罗马弩炮
 update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
 insert or replace into Types
@@ -160,16 +162,23 @@ values
     ('CLASS_DOMREY',    'ABILITY_CLASS');
 --怯薛
 update Units set Combat = 20 , RangedCombat = 30 , BaseMoves = 4 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
-
 --骆驼骑手
 update Units set Combat = 25 , RangedCombat = 38 , BaseMoves = 3 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
-
 --越南象兵
 update Units set Combat = 30 , RangedCombat = 35 , BaseMoves = 2 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
 --萨卡弓骑
 update Units set Combat = 17 , RangedCombat = 27 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
-
-
+--弯刀
+update Units set Combat = 35 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
+update ModifierArguments set Value = 5 where ModifierId = 'HD_BATTLECRY_BONUS' AND Name='Amount';
+--贵族战车射手
+update Units set Cost = 80 where UnitType = 'UNIT_AZTEC_JAGUAR';
+--西帕希
+update Units set Combat = 52 where UnitType = 'UNIT_OTTOMAN_SIPAHI';
+--狂暴武士
+update Units set Combat = 45 where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
+update ModifierArguments set Value = 7 where ModifierId = 'UNIT_STRONG_WHEN_ATTACKING' AND Name='Amount';
+update ModifierArguments set Value = -3 where ModifierId = 'UNIT_WEAK_WHEN_DEFENDING' AND Name='Amount';
 
 
 
@@ -182,9 +191,15 @@ update Units set Combat = 17 , RangedCombat = 27 where UnitType = 'UNIT_SCYTHIAN
 --斯基泰
 delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
 delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
+update ModifierArguments set Value = 3 where ModifierId = 'TOMYRIS_BONUS_VS_WOUNDED_UNITS' AND Name='Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TOMYRIS_HEAL_AFTER_DEFEATING_UNIT' AND Name='Amount';
+
 --祖鲁
 delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
+update ModifierArguments set Value = 'CIVIC_HUMANISM' where ModifierId = 'TRAIT_LAND_CORPS_EARLY' AND Name = 'CivicType';
+update ModifierArguments set Value = 'CIVIC_SCORCHED_EARTH' where ModifierId = 'TRAIT_LAND_ARMIES_EARLY' AND Name = 'CivicType';
+
 --高卢
 update ModifierArguments set Value = 1 where ModifierId = 'AMBIORIX_NEIGHBOR_COMBAT' AND Name='Amount';
 delete from DistrictModifiers where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and DistrictType = 'DISTRICT_OPPIDUM';
@@ -202,12 +217,16 @@ values
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
 --越南
-delete from TraitModifiers where ModifierId = 'TRAIT_TRIEU_ABILITY';
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_FRIENDLY_COMBAT';
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_MOVEMENT';
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_COMBAT';
 update Districts set RequiresPopulation = 1 where UnitType = 'DISTRICT_THANH';
 --玛雅
 update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_COMBAT' AND Name='Amount';
 --巴比伦
-update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_EUREKA_INCREASE' AND Name='Amount';
+update ModifierArguments set Value = 35 where ModifierId = 'TRAIT_EUREKA_INCREASE' AND Name='Amount';
+update ModifierArguments set Value = -30 where ModifierId = 'TRAIT_SCIENCE_DECREASE' AND Name='Amount';
+
 --苏美尔
 delete from TraitModifiers where ModifierId = 'TRAIT_ATTACH_ALLIANCE_COMBAT_ADJUSTMENT';
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_EXPERIENCE' AND Name='Range';
@@ -249,10 +268,18 @@ update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ER
 --葡萄牙
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
 UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
-
 --蒙古
 delete from TraitModifiers where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
- 
+--中国
+update Adjacency_YieldChanges set YieldType = 'YIELD_GOLD' where ID = 'GreatWall_Culture';
+update Adjacency_YieldChanges set YieldType = 'YIELD_CULTURE' where ID = 'GreatWall_Gold';
+--奥斯曼
+update ModifierArguments set Value = 3 where ModifierId = 'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER'  AND Name='Amount';
+
+--克里
+delete from TraitModifiers where ModifierId = "TRAIT_STATE_WORKFORCE_TRADE_ROUTE";
+delete from TraitModifiers where ModifierId = "TRAIT_STATE_WORKFORCE_ADD_TRADER";
+
 
 -------------------------------------
 --           市政&科技             --
