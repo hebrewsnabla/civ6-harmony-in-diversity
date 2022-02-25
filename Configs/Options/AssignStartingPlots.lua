@@ -41,6 +41,7 @@ function AssignStartingPlots.Create(args)
 		__SortByArray						= AssignStartingPlots.__SortByArray,
 		__ArraySize							= AssignStartingPlots.__ArraySize,
 		__AddResourcesBalanced				= AssignStartingPlots.__AddResourcesBalanced,
+		__AddResourcesStandard				= AssignStartingPlots.__AddResourcesStandard,
 		__AddResourcesLegendary				= AssignStartingPlots.__AddResourcesLegendary,
 		__BalancedStrategic					= AssignStartingPlots.__BalancedStrategic,
 		__FindSpecificStrategic				= AssignStartingPlots.__FindSpecificStrategic,
@@ -190,6 +191,8 @@ function AssignStartingPlots:__InitStartingData()
 
 	if(self.uiStartConfig == 1 ) then
 		self:__AddResourcesBalanced();
+	elseif(self.uiStartConfig == 2) then
+		self:__AddResourcesStandard();
 	elseif(self.uiStartConfig == 3 ) then
 		self:__AddResourcesLegendary();
 	end
@@ -1869,6 +1872,19 @@ function AssignStartingPlots:__AddResourcesBalanced()
 	end
 end
 ------------------------------------------------------------------------------
+function AssignStartingPlots:__AddResourcesStandard() --wraps the balance strategic function inside.
+	local iStartEra = GameInfo.Eras[ GameConfiguration.GetStartEra() ];
+	local iStartIndex = 1;
+	if iStartEra ~= nil then
+		iStartIndex = iStartEra.ChronologyIndex;
+	end
+
+	local iHighestFertility = 0;
+	for i, plot in ipairs(self.majorStartPlots) do
+		self:__BalancedStrategic(plot, iStartIndex);
+	end
+end
+------------------------------------------------------------------------------
 function AssignStartingPlots:__AddResourcesLegendary()
 	local iStartEra = GameInfo.Eras[ GameConfiguration.GetStartEra() ];
 	local iStartIndex = 1;
@@ -1921,14 +1937,14 @@ function AssignStartingPlots:__BalancedStrategic(plot, iStartIndex)
 
 	for row = 0, iResourcesInDB do
 		if (eResourceClassType[row]== "RESOURCECLASS_STRATEGIC") then
-			if(iStartIndex - iRange <= eRevealedEra[row] and iStartIndex + iRange >= eRevealedEra[row]) then
-				local bHasResource = false;
-				bHasResource = self:__FindSpecificStrategic(eResourceType[row], plot);	
-				if(bHasResource == false) then
-					self:__AddStrategic(eResourceType[row], plot)
-					--print("Placed!");
-				end
+			--if(iStartIndex - iRange <= eRevealedEra[row] and iStartIndex + iRange >= eRevealedEra[row]) then
+			local bHasResource = false;
+			bHasResource = self:__FindSpecificStrategic(eResourceType[row], plot);	
+			if(bHasResource == false) then
+				self:__AddStrategic(eResourceType[row], plot)
+				--print("Placed!");
 			end
+			--end
 		end
 	end
 end
@@ -1939,14 +1955,15 @@ function AssignStartingPlots:__FindSpecificStrategic(eResourceType, plot)
 
 	local plotX = plot:GetX();
 	local plotY = plot:GetY();
-	for dx = -3, 3 do
-		for dy = -3,3 do
-			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3);
+	local range = 3
+	for dx = -range, range do
+		for dy = -range,range do
+			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, range);
 			if(otherPlot) then
 				if(otherPlot:GetResourceCount() > 0) then
 					if(eResourceType == otherPlot:GetResourceType() ) then
 						return true;
-					end
+					end 
 				end
 			end
 		end
@@ -1961,31 +1978,37 @@ function AssignStartingPlots:__AddStrategic(eResourceType, plot)
 
 	local plotX = plot:GetX();
 	local plotY = plot:GetY();
-
-	for dx = -2, 2 do
-		for dy = -2,2 do
-			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2);
-			if(otherPlot) then
+	local range = 7;
+--[[
+	for dx = -range, range, 1 do
+		for dy = -range, range, 1 do
+			local otherPlot = Map.GetPlotXY(plotX+dx, plotY+dy);
+			if(otherPlot and otherPlot ~= nil) then
 				if(ResourceBuilder.CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 					ResourceBuilder.SetResourceType(otherPlot, eResourceType, 1);
-					return;
+					current_count += 1
+					if (current_count >= add_count) then
+						return;
 				end
 			end
 		end
 	end 
-
-	for dx = -3, 3 do
-		for dy = -3,3 do
-			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3);
-			if(otherPlot) then
-				if(ResourceBuilder.CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
-					ResourceBuilder.SetResourceType(otherPlot, eResourceType, 1);
-					return;
+]]--
+	for ring = 4, range do
+		for dx = -ring, ring do
+			for dy = -ring, ring do
+				local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, ring);
+				if(otherPlot) then
+					if(ResourceBuilder.CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+						ResourceBuilder.SetResourceType(otherPlot, eResourceType, 1);
+						print(eResourceType, " added successfully.")
+						return;
+					end
 				end
 			end
 		end
-	end 
-
+	end
+	return
 	--print("Failed");
 end
 
@@ -2627,8 +2650,8 @@ function AssignStartingPlots:__StartBiasResourcesMajor(playerIndex, tier, minor,
 
 			local hasResource = false;
 			local numResourcesInRadius = 0;
-			local numStrategicsInRadius = 0;
-
+			local numStrategicsInRadius = 1;
+			--[[
 			for dx = -range, range, 1 do
 				for dy = -range,range, 1 do
 					local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, range);
@@ -2649,7 +2672,7 @@ function AssignStartingPlots:__StartBiasResourcesMajor(playerIndex, tier, minor,
 					end
 				end
 			end
-			
+			]]--
 			if numResourcesInRadius >= NumResReq and (IsStrategic == false) then
 				hasResource = true;
 			elseif numResourcesInRadius >= NumResReq and (IsStrategic == true) and numStrategicsInRadius >= NumResReq then
