@@ -73,7 +73,7 @@
     <CivilopediaPageQueries>
         <Delete SectionId="BUILDINGS" />
         <Row SectionId="BUILDINGS" PageGroupIdColumn="PageGroupId" TooltipColumn="Tooltip" SortIndex="10">
-            <SQL>SELECT BuildingType as PageId, PreReqDistrict as PageGroupId, "Building" as PageLayoutId, Name, null as Tooltip FROM Buildings Where IsWonder = 0 AND InternalOnly = 0 AND BuildingType NOT LIKE "BUILDING_CITY_POLICY_%" AND BuildingType != "BUILDING_JNR_MILL_RACE" AND BuildingType != "BUILDING_JNR_WHARF_BASE" AND BuildingType != "BUILDING_CANAL" AND BuildingType NOT LIKE "BUILDING_MARACANA_DUMMY_%"</SQL>
+            <SQL>SELECT BuildingType as PageId, PreReqDistrict as PageGroupId, "Building" as PageLayoutId, Name, null as Tooltip FROM Buildings Where IsWonder = 0 AND InternalOnly = 0 AND BuildingType NOT LIKE "BUILDING_CITY_POLICY_%" AND BuildingType != "BUILDING_JNR_MILL_RACE" AND BuildingType != "BUILDING_JNR_WHARF_BASE" AND BuildingType != "BUILDING_CANAL" AND BuildingType NOT LIKE "BUILDING_MARACANA_DUMMY_%" AND BuildingType !="BUILDING_INTERNATIONAL_AIRPORT_DUMMY"</SQL>
         </Row>
         <Delete SectionId="GREATPEOPLE" />
         <Row SectionId="GREATPEOPLE" PageGroupIdColumn="PageGroupId" TooltipColumn="Tooltip" SortIndexColumn="SortIndex" SortIndex="10">
