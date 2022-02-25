@@ -130,3 +130,45 @@ update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_P
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
 -- update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
+--建议表本体产出改动
+--白沙漠：+2瓶+2琴+4金
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_WHITEDESERT' and YieldType = 'YIELD_SCIENCE';
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_WHITEDESERT' and YieldType = 'YIELD_CULTURE';
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_WHITEDESERT' and YieldType = 'YIELD_FAITH';
+--大堡礁：+3粮+1锤+2瓶
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_BARRIER_REEF' and YieldType = 'YIELD_FOOD';
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_BARRIER_REEF' and YieldType = 'YIELD_GOLD';
+--白岸：+3琴+2粮+2金
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_CLIFFS_DOVER' and YieldType = 'YIELD_GOLD';
+--玫瑰湖：+2琴+4金+2锤
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_LAKE_RETBA' and YieldType = 'YIELD_CULTURE';
+update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_LAKE_RETBA' and YieldType = 'YIELD_GOLD';
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_LAKE_RETBA' and YieldType = 'YIELD_PRODUCTION';
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_LAKE_RETBA' and YieldType = 'YIELD_FOOD';
+--火山口湖：+4鸽+2瓶
+update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_CRATER_LAKE' and YieldType = 'YIELD_FAITH';
+--戈布斯坦：+3琴+1锤+2瓶
+--巧克力山：+2琴+2锤+2粮
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_CHOCOLATEHILLS' and YieldType = 'YIELD_SCIENCE';
+update Feature_YieldChanges set YieldChange = 1 where FeatureType = 'FEATURE_GOBUSTAN' and YieldType = 'YIELD_PRODUCTION';
+insert or replace into Feature_YieldChanges
+	(FeatureType,				YieldType,			YieldChange)
+values
+	('FEATURE_GOBUSTAN',		'YIELD_SCIENCE',	2),
+	('FEATURE_CHOCOLATEHILLS',	'YIELD_CULTURE',	2);
+--潘塔纳尔：+3粮+3琴
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_PANTANAL' and YieldType = 'YIELD_CULTURE';
+--青春之泉：+3瓶+3鸽
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FOUNTAIN_OF_YOUTH' and YieldType = 'YIELD_SCIENCE';
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FOUNTAIN_OF_YOUTH' and YieldType = 'YIELD_FAITH';
+--撒哈拉之眼：+3锤+3瓶
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_EYE_OF_THE_SAHARA' and YieldType = 'YIELD_FAITH';
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_EYE_OF_THE_SAHARA' and YieldType = 'YIELD_PRODUCTION';
+--乌布苏盆地：+2鸽+2粮+2锤
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_UBSUNUR_HOLLOW' and YieldType = 'YIELD_PRODUCTION';
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_UBSUNUR_HOLLOW' and YieldType = 'YIELD_FAITH';
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_UBSUNUR_HOLLOW' and YieldType = 'YIELD_FOOD';
+--下龙湾：+2琴+3粮+1锤
+update Feature_YieldChanges set YieldChange = 1 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_PRODUCTION';
+update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_CULTURE';
+update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_FOOD';
