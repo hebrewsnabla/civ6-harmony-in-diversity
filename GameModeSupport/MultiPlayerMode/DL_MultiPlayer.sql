@@ -53,120 +53,11 @@ update ModifierArguments set Value = 3 where ModifierId = 'ABILITY_JUST_WAR_STRE
 -------------------------------------
 --              兵种               --
 -------------------------------------
-
-
-
---------------------------------------------------------------------------------------------------------------------------------------
--- UU调整
--- 法国宪兵
-update Units set Combat = 55 where UnitType = 'UNIT_FRENCH_GENDARME';
-update ModifierArguments set Value = 3 where ModifierId = 'PLUS_5_WHEN_ATTACKING_COMBAT_BONUS' AND Name='Amount';
 -- 弩手
 update Units set Combat = 30 , RangedCombat = 44 where UnitType = 'UNIT_CROSSBOWMAN';
--- 玛雅披甲
-update Units set Combat = 48 where UnitType = 'UNIT_MAYAN_HOLKAN';
--- 英法线列
-update Units set Combat = 68 where UnitType = 'UNIT_ENGLISH_REDCOAT';
-update Units set Combat = 68 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
-update ModifierArguments set Value = 5 where ModifierId = 'REDCOAT_FOREIGN_COMBAT' AND Name='Amount';
-update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBAT' AND Name='Amount';
--- 西班牙征服者
-update Units set Combat = 55 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
-update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
 -- 追猎及追猎UU
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
-update Units set Combat = Combat -4 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set Combat = Combat -4 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
-update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
-update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
-
---莽骑兵
-update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
---铜盾方阵
-update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
---驴车
-update Units set PrereqTech = 'TECH_ANIMAL_HUSBANDRY' where UnitType = 'UNIT_SUMERIAN_WAR_CART';
---诸葛连弩
-update Units set Combat = 25 , RangedCombat = 35 where UnitType = 'UNIT_CHINESE_CHOKONU';
---虎蹲炮
-update Units set Combat = 40 , RangedCombat = 52 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
---罗马弩炮
-update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
-insert or replace into Types
-    (Type,                                              Kind)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'KIND_ABILITY');
-insert or replace into TypeTags
-    (Type,                                              Tag)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER');
-insert or replace into UnitAbilities
-    (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    null,    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
-insert or ignore into UnitAbilityModifiers
-    (UnitAbilityType,                                   ModifierId)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT');
-insert or replace into Modifiers
-    (ModifierId,                                        ModifierType,                           SubjectRequirementSetId)
-values
-    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH','GRAPE_SHOT_REQUIREMENTS');
-insert or replace into ModifierArguments
-    (ModifierId,                                        Name,                           Value)
-values
-    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','Amount',                       17);
---长生军
-update Units set Combat = 38 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
-update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
-update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
---独木战船
-update Units set Combat = 35 where UnitType = 'UNIT_KHMER_WAR_CANOE';
---格鲁吉亚塔兹卢利骑兵
-update Units set Combat = 55 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
---荷兰公民卫队
-update Units set StrategicResource = null where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
-update ModifierArguments set Value = 7 where ModifierId = 'PLUS_10_WHEN_DEFENDING_DISTRICT_BONUS' AND Name='Amount';
---印尼彩票剑
-update Units set Combat = 42 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
---马里曼德鲁卡
-update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
---毛利托阿，托塔帕拉
-update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
-update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
-
---挪威牧师
-update Units set BaseMoves = 4 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
---高棉战象
-update Units set Bombard = 45 where UnitType = 'UNIT_KHMER_DOMREY';
-insert or replace into TypeTags
-    (Type,                                              Tag)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_DOMREY'),
-    ('UNIT_KHMER_DOMREY',                               'CLASS_DOMREY');
-insert or replace into Tags
-    (Tag,               Vocabulary)
-values
-    ('CLASS_DOMREY',    'ABILITY_CLASS');
---怯薛
-update Units set Combat = 20 , RangedCombat = 30 , BaseMoves = 4 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
---越南象兵
-update Units set Combat = 30 , RangedCombat = 35 , BaseMoves = 2 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
---弯刀
-update Units set Combat = 35 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
-update ModifierArguments set Value = 5 where ModifierId = 'HD_BATTLECRY_BONUS' AND Name='Amount';
---贵族战车射手
-update Units set Cost = 80 where UnitType = 'UNIT_AZTEC_JAGUAR';
-
---狂暴武士
-update Units set Combat = 45 where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
-update ModifierArguments set Value = 7 where ModifierId = 'UNIT_STRONG_WHEN_ATTACKING' AND Name='Amount';
-update ModifierArguments set Value = -3 where ModifierId = 'UNIT_WEAK_WHEN_DEFENDING' AND Name='Amount';
-
-
-
-
 
 
 -------------------------------------
@@ -208,6 +99,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'GRAND_VISIER_ALLIANCE
 update Units set Combat = 52 where UnitType = 'UNIT_OTTOMAN_SIPAHI';
 --苏丹亲兵
 delete from UnitReplaces where CivUniqueUnitType = 'UNIT_SULEIMAN_JANISSARY';
+
 ------------------------------------------------------------------------------------------------------------------------------------
 --澳大利亚
 update ModifierArguments set Value = 50 where ModifierId = 'TRAIT_CITADELCIVILIZATION_DEFENSIVE_PRODUCTION'  AND Name='Amount';
@@ -238,12 +130,19 @@ update ModifierArguments set Value = -30 where ModifierId = 'TRAIT_SCIENCE_DECRE
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --拜占庭
+update ModifierArguments set Value = 2 where ModifierId = 'BYZANTIUM_COMBAT_HOLY_CITIES' AND Name = 'Amount';
+update Units set Combat = 30 where UnitType = 'UNIT_BYZANTINE_DROMON';
+delete from Typetags where Type = 'ABILITY_DROMON' and Tag = 'CLASS_DROMON';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --波兰
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --波斯
+--长生军
+update Units set Combat = 38 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
+update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --朝鲜
@@ -252,23 +151,34 @@ update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
 update ModifierArguments set Value = 2 where ModifierId = 'HWARANG_AMENITY' AND Name='Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'HWARANG_HOUSING' AND Name='Amount';
 
-
-
---斯基泰
-delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
-delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
-update ModifierArguments set Value = 3 where ModifierId = 'TOMYRIS_BONUS_VS_WOUNDED_UNITS' AND Name = 'Amount';
-update ModifierArguments set Value = 10 where ModifierId = 'TOMYRIS_HEAL_AFTER_DEFEATING_UNIT' AND Name = 'Amount';
---萨卡弓骑
-update Units set Combat = 17 , RangedCombat = 27 , Range = 1 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
+------------------------------------------------------------------------------------------------------------------------------------
+--大哥
 
 ------------------------------------------------------------------------------------------------------------------------------------
---祖鲁
-delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
-update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
-update ModifierArguments set Value = 'CIVIC_HUMANISM' where ModifierId = 'TRAIT_LAND_CORPS_EARLY' AND Name = 'CivicType';
-update ModifierArguments set Value = 'CIVIC_SCORCHED_EARTH' where ModifierId = 'TRAIT_LAND_ARMIES_EARLY' AND Name = 'CivicType';
+--德国
 
+------------------------------------------------------------------------------------------------------------------------------------
+--毛子
+--公国骑兵
+update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA'; 
+update Units set Combat = Combat -1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--法国
+--宪兵
+update Units set Combat = 55 where UnitType = 'UNIT_FRENCH_GENDARME';
+update ModifierArguments set Value = 3 where ModifierId = 'PLUS_5_WHEN_ATTACKING_COMBAT_BONUS' AND Name='Amount';
+--帝国卫队
+update Units set Combat = 68 where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
+update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBAT' AND Name='Amount';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--腓尼基
+
+------------------------------------------------------------------------------------------------------------------------------------
+--刚果
+
+------------------------------------------------------------------------------------------------------------------------------------
 --高卢
 update ModifierArguments set Value = 1 where ModifierId = 'AMBIORIX_NEIGHBOR_COMBAT' AND Name='Amount';
 delete from DistrictModifiers where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and DistrictType = 'DISTRICT_OPPIDUM';
@@ -286,25 +196,71 @@ values
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
 
---越南
-delete from UnitAbilityModifiers where ModifierId = 'TRIEU_FRIENDLY_COMBAT';
-delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_MOVEMENT';
-delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_COMBAT';
-update Districts set RequiresPopulation = 1 where UnitType = 'DISTRICT_THANH';
-update ModifierArguments set Value = 1 where ModifierId = 'TRIEU_FRIENDLY_MOVEMENT' AND Name = 'Amount';
+------------------------------------------------------------------------------------------------------------------------------------
+--高棉
+--独木战船
+update Units set Combat = 35 where UnitType = 'UNIT_KHMER_WAR_CANOE';
+--高棉战象
+update Units set Bombard = 45 where UnitType = 'UNIT_KHMER_DOMREY';
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_DOMREY'),
+    ('UNIT_KHMER_DOMREY',                               'CLASS_DOMREY');
+insert or replace into Tags
+    (Tag,               Vocabulary)
+values
+    ('CLASS_DOMREY',    'ABILITY_CLASS');
 
---玛雅
-update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_COMBAT' AND Name = 'Amount';
+------------------------------------------------------------------------------------------------------------------------------------
+--格鲁吉亚
+--塔兹卢利骑兵
+update Units set Combat = 55 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 
---苏美尔
-delete from TraitModifiers where ModifierId = 'TRAIT_ATTACH_ALLIANCE_COMBAT_ADJUSTMENT';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_EXPERIENCE' AND Name='Range';
-update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_PLUNDER' AND Name='Range';
---西班牙
-update ModifierArguments set Value = 3 where ModifierId = 'PHILIP_II_COMBAT_BONUS_OTHER_RELIGION' AND Name='Amount';
---马普切
-update ModifierArguments set Value = 5 where ModifierId = 'TRAIT_TOQUI_COMBAT_BONUS_VS_GOLDEN_AGE_CIV' AND Name='Amount';
+------------------------------------------------------------------------------------------------------------------------------------
+--荷兰
+--公民卫队
+update Units set StrategicResource = null where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
+update ModifierArguments set Value = 7 where ModifierId = 'PLUS_10_WHEN_DEFENDING_DISTRICT_BONUS' AND Name='Amount';
 
+------------------------------------------------------------------------------------------------------------------------------------
+--加拿大
+
+------------------------------------------------------------------------------------------------------------------------------------
+--克里
+delete from TraitModifiers where ModifierId = 'TRAIT_STATE_WORKFORCE_TRADE_ROUTE';
+delete from TraitModifiers where ModifierId = 'TRAIT_STATE_WORKFORCE_ADD_TRADER';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--罗马
+--弩炮
+update Units set Bombard = 35 where UnitType = 'UNIT_ROMAN_ONAGER';
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER');
+insert or replace into UnitAbilities
+    (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    null,    'LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION',     1);
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                   ModifierId)
+values
+    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT');
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType,                           SubjectRequirementSetId)
+values
+    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH','GRAPE_SHOT_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,                           Value)
+values
+    ('MOD_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT','Amount',                       17);
+
+------------------------------------------------------------------------------------------------------------------------------------
 --马里
 UPDATE ModifierArguments SET Value='-15' WHERE ModifierId='TRAIT_LESS_BUILDING_PRODUCTION' AND Name='Amount';
 UPDATE ModifierArguments SET Value='-15' WHERE ModifierId='TRAIT_LESS_UNIT_PRODUCTION' AND Name='Amount';
@@ -312,32 +268,154 @@ update Adjacency_YieldChanges set YieldChange = 1 where Id = 'Holy_Site_Gold';
 UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_BUILDING_PURCHASE' AND Name='Amount';
 UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_DISTRICT_PURCHASE' AND Name='Amount';
 update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE';
+--曼德鲁卡
+update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--马普切
+update ModifierArguments set Value = 5 where ModifierId = 'TRAIT_TOQUI_COMBAT_BONUS_VS_GOLDEN_AGE_CIV' AND Name='Amount';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--马其顿
+
+------------------------------------------------------------------------------------------------------------------------------------
+--玛雅
+update ModifierArguments set Value = 3 where ModifierId = 'MUTAL_NEAR_CAPITAL_COMBAT' AND Name = 'Amount';
+--黑曜石
+update Units set Combat = 48 where UnitType = 'UNIT_MAYAN_HOLKAN';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--毛利
+--托阿，托塔帕拉
+update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
+update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--美国
+--莽骑兵
+update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_HILLS' AND Name='Amount';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--蒙古
+delete from TraitModifiers where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
+--怯薛
+update Units set Combat = 20 , RangedCombat = 30 , BaseMoves = 4 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--努比亚
+
+------------------------------------------------------------------------------------------------------------------------------------
+--挪威
+--符文牧师
+update Units set BaseMoves = 4 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+--狂暴武士
+update Units set Combat = 45 where UnitType = 'UNIT_NORWEGIAN_BERSERKER';
+update ModifierArguments set Value = 7 where ModifierId = 'UNIT_STRONG_WHEN_ATTACKING' AND Name='Amount';
+update ModifierArguments set Value = -3 where ModifierId = 'UNIT_WEAK_WHEN_DEFENDING' AND Name='Amount';
+
+------------------------------------------------------------------------------------------------------------------------------------
 --葡萄牙
 UPDATE Modifiers SET ModifierType='MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY' WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET';
 UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_ON_MEET' AND Name='Amount';
---蒙古
-delete from TraitModifiers where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--日本
+
+------------------------------------------------------------------------------------------------------------------------------------
+--瑞典
+
+------------------------------------------------------------------------------------------------------------------------------------
+--斯基泰
+delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
+delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
+update ModifierArguments set Value = 3 where ModifierId = 'TOMYRIS_BONUS_VS_WOUNDED_UNITS' AND Name = 'Amount';
+update ModifierArguments set Value = 10 where ModifierId = 'TOMYRIS_HEAL_AFTER_DEFEATING_UNIT' AND Name = 'Amount';
+--萨卡弓骑
+update Units set Combat = 17 , RangedCombat = 27 , Range = 1 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--苏格兰
+
+------------------------------------------------------------------------------------------------------------------------------------
+--苏美尔
+delete from TraitModifiers where ModifierId = 'TRAIT_ATTACH_ALLIANCE_COMBAT_ADJUSTMENT';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_EXPERIENCE' AND Name='Range';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_ADJUST_JOINTWAR_PLUNDER' AND Name='Range';
+--铜盾方阵
+update Units set BaseMoves = 3 where UnitType = 'UNIT_SUMERIAN_PHALANX';
+--驴车
+update Units set PrereqTech = 'TECH_THE_WHEEL' where UnitType = 'UNIT_SUMERIAN_WAR_CART';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--希腊
+
+------------------------------------------------------------------------------------------------------------------------------------
+--西班牙
+update ModifierArguments set Value = 3 where ModifierId = 'PHILIP_II_COMBAT_BONUS_OTHER_RELIGION' AND Name='Amount';
+-- 征服者
+update Units set Combat = 55 where UnitType = 'UNIT_SPANISH_CONQUISTADOR';
+update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC_UNIT_COMBAT' AND Name='Amount';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--匈牙利
+--骠骑
+update Units set Combat = Combat -4 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--印度
+
+------------------------------------------------------------------------------------------------------------------------------------
+--印度尼西亚
+--克里斯
+update Units set Combat = 42 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
+
+------------------------------------------------------------------------------------------------------------------------------------
+--印加
+
+------------------------------------------------------------------------------------------------------------------------------------
+--英国
+--红衫军
+update Units set Combat = 68 where UnitType = 'UNIT_ENGLISH_REDCOAT';
+update ModifierArguments set Value = 5 where ModifierId = 'REDCOAT_FOREIGN_COMBAT' AND Name='Amount';
+------------------------------------------------------------------------------------------------------------------------------------
+--越南
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_FRIENDLY_COMBAT';
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_MOVEMENT';
+delete from UnitAbilityModifiers where ModifierId = 'TRIEU_UNFRIENDLY_COMBAT';
+-- update Districts set RequiresPopulation = 1 where UnitType = 'DISTRICT_THANH';
+update ModifierArguments set Value = 1 where ModifierId = 'TRIEU_FRIENDLY_MOVEMENT' AND Name = 'Amount';
+--越南象兵
+update Units set Combat = 30 , RangedCombat = 35 , BaseMoves = 2 where UnitType = 'UNIT_VIETNAMESE_VOI_CHIEN';
+
+------------------------------------------------------------------------------------------------------------------------------------
 --中国
 update Adjacency_YieldChanges set YieldType = 'YIELD_GOLD' where ID = 'GreatWall_Culture';
 update Adjacency_YieldChanges set YieldType = 'YIELD_CULTURE' where ID = 'GreatWall_Gold';
+--诸葛连弩
+update Units set Combat = 25 , RangedCombat = 35 where UnitType = 'UNIT_CHINESE_CHOKONU';
+--虎蹲炮
+update Units set Combat = 40 , RangedCombat = 52 where UnitType = 'UNIT_CHINESE_CROUCHING_TIGER';
 
---克里
-delete from TraitModifiers where ModifierId = "TRAIT_STATE_WORKFORCE_TRADE_ROUTE";
-delete from TraitModifiers where ModifierId = "TRAIT_STATE_WORKFORCE_ADD_TRADER";
-
+------------------------------------------------------------------------------------------------------------------------------------
+--祖鲁
+delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
+update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
+update ModifierArguments set Value = 'CIVIC_HUMANISM' where ModifierId = 'TRAIT_LAND_CORPS_EARLY' AND Name = 'CivicType';
+update ModifierArguments set Value = 'CIVIC_SCORCHED_EARTH' where ModifierId = 'TRAIT_LAND_ARMIES_EARLY' AND Name = 'CivicType';
 
 -------------------------------------
 --           市政&科技             --
 -------------------------------------
 --远程
 --占领区域加力
-delete from CivicModifiers where ModifierId = "HD_RANGED_GARRISON_BONUS";
+delete from CivicModifiers where ModifierId = 'HD_RANGED_GARRISON_BONUS';
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_MACHINERY',                             'HD_RANGED_GARRISON_BONUS');
---境内进攻5力（文本√）
-delete from TechnologyModifiers where ModifierId = "HD_RANGED_HILLS_STRENGTH";
+--境内进攻5力
+delete from TechnologyModifiers where ModifierId = 'HD_RANGED_HILLS_STRENGTH';
 insert or replace into CivicModifiers
     (CivicType,                               ModifierId)
 values
@@ -385,12 +463,12 @@ values
 
 
 --抗骑兵
-delete from  TechnologyModifiers where ModifierId = "HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION";
+delete from  TechnologyModifiers where ModifierId = 'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION';
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_MILITARY_TACTICS',                             'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION');
-delete from  CivicModifiers where ModifierId = "HD_ANTIC_HILLS_DEFEND_BONUS";
+delete from  CivicModifiers where ModifierId = 'HD_ANTIC_HILLS_DEFEND_BONUS';
 insert or replace into CivicModifiers
     (CivicType,                                       ModifierId)
 values
@@ -400,40 +478,30 @@ update Civics set Description = null where CivicType ='CIVIC_DEFENSIVE_TACTICS';
 
 
 --重骑兵
---伤兵5力到封建
-delete from  CivicModifiers where ModifierId = "HD_HEAVYC_OPEN_AREA_STRENGTH";
-insert or replace into CivicModifiers
-    (CivicType,                                       ModifierId)
-values
-    ('CIVIC_FEUDALISM',                               'HD_HEAVYC_OPEN_AREA_STRENGTH');
---火药光环(搁置)
--- insert or replace into Modifiers
--- 	(ModifierId,							ModifierType,                           SubjectRequirementSetId)
--- values
--- 	('HD_HEAVYC_HEAL_AFTER_KILL',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',  'AOE_TAGMA_NONRELIGIOUS_REQUIREMENTS'),
---     ('HD_HEAL_AFTER_KILL',			        'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',  'AOE_HC_NOTCENTER_REQUIREMENTS');
--- insert or replace into ModifierArguments
--- 	(ModifierId,					Name,						Value)
--- values
--- 	('HD_HEAL_AFTER_KILL',		    'Amount',				    2);
--- insert or ignore into RequirementSets
--- 	(RequirementSetId,												RequirementSetType)
--- values
--- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL');
--- insert or ignore into RequirementSetRequirements
--- 	(RequirementSetId,												RequirementId)
--- values
--- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'AOE_HC_NOTCENTER_REQUIREMENTS');
--- insert or ignore into Requirements
--- 	(RequirementId,												RequirementType)
--- values
--- 	('AOE_HC_NOTCENTER_REQUIREMENTS',							'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES');
--- insert or ignore into RequirementArguments
--- 	(RequirementId,							Name,	            Value				)
--- values
--- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'Tag',              'CLASS_HEAVY_CAVALRY'),
--- 	('AOE_HC_NOTCENTER_REQUIREMENTS',		'IncludeCenter',    0);
+--封建打伤兵5力
+update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId ='HD_HEAVYC_OPEN_AREA_STRENGTH';
 
+-- insert or replace into CivicModifiers
+--     (CivicType,                                       ModifierId)
+-- values
+--     ('CIVIC_FEUDALISM',                             'HD_HEAVYC_HEAL_AFTER_KILL');
+--火药光环2力
+delete from  TechnologyModifiers where ModifierId = 'HD_HEAVYC_HEAL_AFTER_KILL';
+insert or replace into TechnologyModifiers
+    (TechnologyType,                               ModifierId)
+values
+    ('TECH_GUNPOWDER',                             'HD_HC_AOE_STRENGRH');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('HD_HC_AOE_STRENGRH',			        'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,						Value)
+values
+	('HD_HC_AOE_STRENGRH',		    'AbilityType',				'ABILITY_TAGMA');
+update TypeTags set Tag = 'CLASS_HEAVY_CAVALRY' where Type = 'ABILITY_TAGMA';
+update ModifierArguments set Value = 2 where ModifierId = 'TAGMA_COMBAT_STRENGTH' AND Name = 'Amount';
+update RequirementArguments set Value = 'CLASS_HEAVY_CAVALRY' where RequirementId = 'REQUIRES_UNIT_IS_NOTCENTER_ADJACENT_TAGMA' AND Name = 'Tag';
 
 --轻骑兵
 --雇佣兵市政调整（未生效）
@@ -463,17 +531,17 @@ update ModifierArguments set Value = 7 where ModifierId = 'PROMOTION_LIGHTC_MILI
 
 --攻城单位
 --膛线改攻城（文本√）
-delete from  TechnologyModifiers where ModifierId = "HD_SIEGE_ATTACK_DISTRICT_BONUS";
+delete from  TechnologyModifiers where ModifierId = 'HD_SIEGE_ATTACK_DISTRICT_BONUS';
 insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
 update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
-update Technologies set Description = "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION" where TechnologyType = 'TECH_SIEGE_TACTICS';
+update Technologies set Description = 'LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION' where TechnologyType = 'TECH_SIEGE_TACTICS';
 --封建友好2速（文本√）
-update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = "HD_SIEGE_ATTACK_AFTER_MOVE";
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = "HD_ATTACK_AFTER_MOVE";
-update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = "HD_ATTACK_AFTER_MOVE";
+update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = 'HD_SIEGE_ATTACK_AFTER_MOVE';
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = 'HD_ATTACK_AFTER_MOVE';
+update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = 'HD_ATTACK_AFTER_MOVE';
 insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values

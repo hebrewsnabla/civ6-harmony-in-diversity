@@ -58,7 +58,8 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                "城市领土内的单位防御时可+3 [ICON_Strength] 战斗力。城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。建造防御性建筑时加速100%。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                      "“自由探索”黄金时代：[NEWLINE][ICON_TechBoosted]尤里卡额外提供10%的科技开销。城市每拥有1处特色区域，则+2 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                      "与本方及本方盟友的交战方作战时+3 [ICON_STRENGTH] 战斗力。");
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                      "与本方及本方盟友的交战方作战时+3 [ICON_STRENGTH] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",      "+3 大维齐尔");
 
 -- --------------------------------------------------------------------------------
 --宗教
@@ -107,7 +108,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_HD_DESCRIPTION",                                   "朝鲜特色区域，替代“学院”。+3 [Icon_Science] 科技值。拥有更多的专家槽位。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_SUGUBA_HD_DESCRIPTION",                                   "马里特色区域，专精于经济与贸易，替代“商业中心”，与圣地相邻获得标准相邻加成。允许本城使用金币购买区域。使用 [ICON_GOLD] 金币和 [ICON_FAITH] 信仰值在此城中购买单位、建筑和区域时，费用减少10%。[NEWLINE][NEWLINE]本城出发的国内 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币，国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Culture] 文化值和+1 [ICON_Science] 科技值。改良加成资源的牧场+1 [ICON_Food] 食物。"), --[NEWLINE][NEWLINE]每相邻一个圣地获得+2 [ICON_Gold] 金币加成。每相邻一个港口获得+2 [ICON_Gold] 金币加成。
-    ("zh_Hans_CN",  "LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                                  "高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。建成此区域后，触发“金属铸造”尤里卡，若已有提升，则完成该科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                                  "高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。建成此区域后，触发“金属铸造”尤里卡，若已有提升，则完成该科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。");
 
 
 -- --------------------------------------------------------------------------------
@@ -119,6 +120,11 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION",                                "取代剑客的埃及古典时代特色近战单位。攻击近战、抗骑兵和远程单位时+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                  "攻击近战、抗骑兵或远程单位"),
     ("zh_Hans_CN",  "LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                 "攻击近战、抗骑兵和远程单位时+5 [ICON_Strength] 战斗力。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION",                                 "巴兹尔二世的特色中世纪单位，替代骑士。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_DESCRIPTION",                                        "重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_NONRELIGIOUS_COMBAT_DESCRIPTION",                    "位于重骑兵周围1单元格内时+2 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_RELIGIOUS_COMBAT_DESCRIPTION",                       "位于甲胄骑兵周围1单元格内时+4 [ICON_RELIGION] 宗教战斗力。"),
 
     ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION",                          "工业时代法国特色近战单位，替代线列步兵。在首都所处大陆作战时+5 [ICON_Strength] 战斗力。击杀单位后将获得 [ICON_GreatGeneral] 大将军点数。"),
     ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GENDARME_DESCRIPTION",                                 "取代骑士的法国中世纪特色重骑兵单位，当进攻时+3 [ICON_Strength] 战斗力。"),
@@ -160,4 +166,5 @@ values
 
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
     ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
+    ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。。"), 
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。");
