@@ -3,6 +3,12 @@
 insert or replace into EnglishText
     (Tag,                                                                                   Text)
 values
+    ("LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION",                                               "Egyptian Classical unique Melee unit that replaces Swordsman. +5 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
+    ("LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                                 "attacking Melee, Anti-Cavalry or Ranged unit"),
+    ("LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                                "+5 [ICON_Strength] Combat Strength attacking Melee, Anti-Cavalry and Ranged units."),
+
+
+
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                               "Units defending within the city's territory get +3 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
     ("LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",                              "Improved [ICON_RESOURCE_HORSES] Horses accumulate 3 more resources per turn. Receive a second light cavalry unit or Saka Horse Archer each time you train a light cavalry unit or Saka Horse Archer."),
     ("LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                               "May form Corps (Mercenaries Civic) and Armies (Nationalism Civic) earlier."),
@@ -44,51 +50,114 @@ values
     ("LOC_UNIT_DIGGER_DESCRIPTION",                                                         "+5 [ICON_Strength] Combat Strength when fighting on Neutral or Foreign Territory."),
     ("LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",                        "+17 [ICON_Strength] Combat Strength vs. land units.");
 
-
 -- --------------------------------------------------------------------------------
+--总督
 -- -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                "城市领土内的单位防御时可+3 [ICON_Strength] 战斗力。城市每回合获得一次额外的 [ICON_Ranged] 远程攻击机会。建造防御性建筑时加速100%。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                      "“自由探索”黄金时代：[NEWLINE][ICON_TechBoosted]尤里卡额外提供10%的科技开销。城市每拥有1处特色区域，则+2 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                      "与本方及本方盟友的交战方作战时+3 [ICON_STRENGTH] 战斗力。");
+
+-- --------------------------------------------------------------------------------
+--宗教
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                  "强化后从信仰此宗教的城市中新获得的宗教单位为同一单元格军事单位+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",                          "战斗单位处于信奉该宗教的友好城市境内时+3 [ICON_Strength] 战斗力。");
+
+
+-- --------------------------------------------------------------------------------
+--文明
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "可更早组建军团（需雇佣兵市政）和军队（需民族主义市政）。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的64%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-30%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",                      "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+2 [ICON_Science] 科技值。"), 
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。");
+
+-- --------------------------------------------------------------------------------
+--领袖
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "可更早组建军团（需人文主义市政）和军队（需焦土策略市政）。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMBIORIX_DESCRIPTION",                                "生产出一个非平民单位时，您的文明获得等同于该单位生产力花费20%的 [ICON_CULTURE] 文化值。近战、抗骑兵和远程单位每与一个其他单位相邻（无论该单位属于哪个文明），便+1 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRIEU_DESCRIPTION",                                   "在雨林、沼泽或树林单元格中战斗的单位+3 [ICON_Strength] 战斗力。如果单位在回合开始时处于这些地貌中，则+1 [ICON_Movement] 移动力。而如果这些地貌单元格是您的领土，则以上加成均加倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRIEU_DESCRIPTION",                                   "回合开始时，领土内在雨林、沼泽或树林地貌中的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                                   "揭示出生点6个单元格内的地块。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的84%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION",            "与同一个敌人交战时，如果他们与其盟友位于5个单元格以内，则共享掠夺奖励和战斗经验值。其同盟针对同一个敌人作战可获得同盟点数。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_HD_DESCRIPTION",                                   "朝鲜特色区域，替代“学院”。+3 [Icon_Science] 科技值。拥有更多的专家槽位。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION",            "与同一个敌人交战时，如果他们与其盟友相邻，则共享掠夺奖励和战斗经验值。其同盟针对同一个敌人作战可获得同盟点数。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                                 "首都或派遣了总督的城市获得+2 [ICON_Amenities] 宜居度，+3 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_EL_ESCORIAL_EXPANSION2_DESCRIPTION",                  "审判官可额外进行一次“清除异教”操作。审判官能完全铲除其他宗教的势力。与信仰其他宗教的单位进行战斗时，战斗和宗教单位+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",                     "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_Strength] 战斗力。在敌方城市边界中击杀敌方单位后，将使此城损失20点忠诚度（如此文明正处在黄金/英雄时代中，则损失40点忠诚度）。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",                      "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+2 [ICON_Science] 科技值。"), 
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CITADEL_CIVILIZATION_EXPANSION2_DESCRIPTION",         "若其在过去10回合内遭到宣战或曾解放城市，则+50% [ICON_PRODUCTION] 生产力。牧场+1 [Icon_Food] 食物"), 
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                         "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得5 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_JOAO_III_DESCRIPTION",                                "所有单位+1视野。与第一个文明相遇时+2 [ICON_TradeRoute] 贸易路线容量。对所有城邦开放边界。"), 
-    ("zh_Hans_CN",  "LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",                                  "强化后从信仰此宗教的城市中新获得的宗教单位为同一单元格军事单位+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION",                          "工业时代法国特色近战单位，替代线列步兵。在首都所处大陆作战时+5 [ICON_Strength] 战斗力。击杀单位后将获得 [ICON_GreatGeneral] 大将军点数。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION",                                 "维多利亚作为领袖时的工业时代英国特色单位，替代线列步兵。在非首都所处大陆作战时+5 [ICON_Strength] 战斗力。下船不消耗移动力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_JOAO_III_DESCRIPTION",                                "所有单位+1视野。与第一个文明相遇时+2 [ICON_TradeRoute] 贸易路线容量。对所有城邦开放边界。");
+
+-- --------------------------------------------------------------------------------
+--区域
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_HD_DESCRIPTION",                                   "朝鲜特色区域，替代“学院”。+3 [Icon_Science] 科技值。拥有更多的专家槽位。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_SUGUBA_HD_DESCRIPTION",                                   "马里特色区域，专精于经济与贸易，替代“商业中心”，与圣地相邻获得标准相邻加成。允许本城使用金币购买区域。使用 [ICON_GOLD] 金币和 [ICON_FAITH] 信仰值在此城中购买单位、建筑和区域时，费用减少10%。[NEWLINE][NEWLINE]本城出发的国内 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币，国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Culture] 文化值和+1 [ICON_Science] 科技值。改良加成资源的牧场+1 [ICON_Food] 食物。"), --[NEWLINE][NEWLINE]每相邻一个圣地获得+2 [ICON_Gold] 金币加成。每相邻一个港口获得+2 [ICON_Gold] 金币加成。
     ("zh_Hans_CN",  "LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",                                  "高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。建成此区域后，触发“金属铸造”尤里卡，若已有提升，则完成该科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",                          "战斗单位处于信奉该宗教的友好城市境内时+3 [ICON_Strength] 战斗力。"),
+
+
+-- --------------------------------------------------------------------------------
+--兵种
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION",                                "取代剑客的埃及古典时代特色近战单位。攻击近战、抗骑兵和远程单位时+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT",                                  "攻击近战、抗骑兵或远程单位"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HD_BATTLECRY_DESCRIPTION",                                 "攻击近战、抗骑兵和远程单位时+5 [ICON_Strength] 战斗力。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION",                          "工业时代法国特色近战单位，替代线列步兵。在首都所处大陆作战时+5 [ICON_Strength] 战斗力。击杀单位后将获得 [ICON_GreatGeneral] 大将军点数。"),
+    ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GENDARME_DESCRIPTION",                                 "取代骑士的法国中世纪特色重骑兵单位，当进攻时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC",                              "当进攻时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_GENDARME_DESCRIPTION",                                     "进攻时+3 [ICON_Strength] 战斗力。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_REDCOAT_DESCRIPTION",                                 "维多利亚作为领袖时的工业时代英国特色单位，替代线列步兵。在非首都所处大陆作战时+5 [ICON_Strength] 战斗力。下船不消耗移动力。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION",                            "取代火枪手的西班牙文艺复兴时期特色近战单位，当有宗教单位跟随时+5 [ICON_Strength] 战斗力，征服者攻破城市或攻破城市时征服者与城市中心相邻，则强迫该城市改信西班牙的主流宗教。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                 "泰迪·罗斯福作为领袖时的工业时代美国特色单位，替代胸甲骑兵。在首都所处大陆上击杀敌人后将获得 [ICON_Culture] 文化值。在丘陵地形作战时+5 [ICON_Strength] 战斗力。维护费用更低。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_DIGGER_DESCRIPTION",                                          "澳大利亚特色的现代单位，替代步兵。在中立或外国领土上作战时+5 [ICON_Strength] 战斗力。"),
+
+    ("zh_Hans_CN",  "LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                "取代火枪手的荷兰文艺复兴时期特色近战单位。当在区域内防御时+7 [ICON_Strength] 战斗力，且相比火枪手更加廉价，无需战略资源。"),
+
+    ("zh_Hans_CN",  "LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",         "攻击陆地单位+17 [ICON_Strength] 战斗力。");
+
+-- --------------------------------------------------------------------------------
+--强化
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
+    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                            "在敌方领土内时 +7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "在友好领土开始时+2 [ICON_Movement] 移动力。（拥有封建主义市政后允许）。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION",                       "在友好领土内进攻时+5 [ICON_Strength] 战斗力。（拥有人文主义市政后允许）。");
+
+-- --------------------------------------------------------------------------------
+--科技市政
+-- -- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                    Text)
+values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。" ),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
+
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
     ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
-    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                            "在敌方领土内时 +7 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "在友好领土开始时+2 [ICON_Movement] 移动力。（拥有封建主义市政后允许）。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION",                       "在友好领土内进攻时+5 [ICON_Strength] 战斗力。（拥有人文主义市政后允许）。"),
-    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                      "“自由探索”黄金时代：[NEWLINE][ICON_TechBoosted]尤里卡额外提供10%的科技开销。城市每拥有1处特色区域，则+2 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC",                              "当进攻时+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION",                            "取代火枪手的西班牙文艺复兴时期特色近战单位，当有宗教单位跟随时+5 [ICON_Strength] 战斗力，征服者攻破城市或攻破城市时征服者与城市中心相邻，则强迫该城市改信西班牙的主流宗教。"),
-    ("zh_Hans_CN",  "LOC_UNIT_AMERICAN_ROUGH_RIDER_EXPANSION2_DESCRIPTION",                 "泰迪·罗斯福作为领袖时的工业时代美国特色单位，替代胸甲骑兵。在首都所处大陆上击杀敌人后将获得 [ICON_Culture] 文化值。在丘陵地形作战时+5 [ICON_Strength] 战斗力。维护费用更低。"),
-    ("zh_Hans_CN",  "LOC_UNIT_DIGGER_DESCRIPTION",                                          "澳大利亚特色的现代单位，替代步兵。在中立或外国领土上作战时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION",                                "取代火枪手的荷兰文艺复兴时期特色近战单位。当在区域内防御时+7 [ICON_Strength] 战斗力，且相比火枪手更加廉价，无需战略资源。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_GENDARME_DESCRIPTION",                                     "进攻时+3 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT_DESCRIPTION",         "攻击陆地单位+17 [ICON_Strength] 战斗力。");
-
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。");
