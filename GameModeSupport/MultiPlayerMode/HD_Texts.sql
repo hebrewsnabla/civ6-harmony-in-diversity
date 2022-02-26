@@ -77,9 +77,14 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",                      "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+2 [ICON_Science] 科技值。"), 
+
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BYZANTIUM_DESCRIPTION",                         "每有1座圣城皈依拜占庭的宗教（也包括拜占庭的圣城），拜占庭的单位便获得+2 [ICON_Strength] 战斗力或+3 [ICON_Religion] 宗教战斗力。每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（250宗教压力）。如城市拥有圣地区域，其提供的 [ICON_GreatProphet] 大预言家点数+2。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_BYZANTIUM_COMBAT_UNITS_DESCRIPTION",                       "每有一座圣城皈依您的宗教，便+2 [ICON_Strength] 战斗力；主要文明的单位被击杀后，每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（天授规矩）"),
+
+
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的64%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-30%。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",                      "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+2 [ICON_Science] 科技值。"), 
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。");
 
 -- --------------------------------------------------------------------------------
@@ -126,6 +131,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_NONRELIGIOUS_COMBAT_DESCRIPTION",                    "位于重骑兵周围1单元格内时+2 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_RELIGIOUS_COMBAT_DESCRIPTION",                       "位于甲胄骑兵周围1单元格内时+4 [ICON_RELIGION] 宗教战斗力。"),
 
+    ("zh_Hans_CN",  "LOC_ABILITY_AMBIORIX_NEIGHBOR_COMBAT_BONUS_DESCRIPTION",               "每个相邻的单位提供+1 [ICON_Strength] 战斗力（厄勃隆尼斯之王）"),
+
     ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GARDE_IMPERIALE_DESCRIPTION",                          "工业时代法国特色近战单位，替代线列步兵。在首都所处大陆作战时+5 [ICON_Strength] 战斗力。击杀单位后将获得 [ICON_GreatGeneral] 大将军点数。"),
     ("zh_Hans_CN",  "LOC_UNIT_FRENCH_GENDARME_DESCRIPTION",                                 "取代骑士的法国中世纪特色重骑兵单位，当进攻时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC",                              "当进攻时+3 [ICON_Strength] 战斗力。"),
@@ -161,10 +168,11 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。" ),
-    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
     ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
-
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
-    ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
     ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。。"), 
-    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。");
+
+    ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。");
