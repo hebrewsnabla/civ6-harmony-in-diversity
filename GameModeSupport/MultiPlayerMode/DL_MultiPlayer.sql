@@ -577,3 +577,5 @@ insert or ignore into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
 values
     ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'HD_ENEMY_MOVEMENT');
+--兵种造价增幅
+update Units set cost = cost * 1.2 where PromotionClass != 'FORMATION_CLASS_CIVILIAN';
