@@ -121,15 +121,14 @@ insert or replace into Feature_YieldChanges (FeatureType, YieldType, YieldChange
 	('FEATURE_EYE_OF_THE_SAHARA', 'YIELD_FAITH', 1),
 	('FEATURE_BARRIER_REEF', 'YIELD_PRODUCTION', 1),
 	('FEATURE_BARRIER_REEF', 'YIELD_GOLD', 2),
-	('FEATURE_LAKE_RETBA', 'YIELD_FOOD', 1)
-;
+	('FEATURE_LAKE_RETBA', 'YIELD_FOOD', 1);
 update ModifierArguments set Value = 1 where ModifierId = 'EYESAHARA_SCIENCE_ATOMIC' and Name = 'Amount';
 
 delete from Feature_AdjacentYields where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
 update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
 -- update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
-update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
+--update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
 --建议表本体产出改动
 --白沙漠：+2瓶+2琴+4金
 update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_WHITEDESERT' and YieldType = 'YIELD_SCIENCE';
@@ -172,3 +171,97 @@ update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_UBS
 update Feature_YieldChanges set YieldChange = 1 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_PRODUCTION';
 update Feature_YieldChanges set YieldChange = 2 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_CULTURE';
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_HA_LONG_BAY' and YieldType = 'YIELD_FOOD';
+--建议表周围产出改动
+--加拉帕戈斯：+2瓶+2金
+--吕瑟峡湾：+2瓶
+--伊卡基尔地下水坑：+1瓶+1鸽
+insert or replace into Feature_AdjacentYields
+	(FeatureType,				YieldType,			YieldChange)
+values
+	('FEATURE_GALAPAGOS',		'YIELD_GOLD',		2),
+	('FEATURE_LYSEFJORDEN',		'YIELD_SCIENCE',	2),
+	('FEATURE_IKKIL',			'YIELD_SCIENCE',	1),
+	('FEATURE_IKKIL',			'YIELD_FAITH',		1);
+delete from Feature_AdjacentYields where FeatureType = 'FEATURE_LYSEFJORDEN' and YieldType = 'YIELD_PRODUCTION';
+--精致拱门：+2鸽+2金
+update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
+--巨人堤：+2琴
+update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_GIANTS_CAUSEWAY' and YieldType = 'YIELD_CULTURE';
+--马特洪峰：+2琴
+update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_MATTERHORN' and YieldType = 'YIELD_CULTURE';
+--米尔福德峡湾：+1琴+1金
+update Feature_AdjacentYields set YieldChange = 1 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
+--约塞米蒂：+1粮+2金+1瓶
+update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_YOSEMITE' and YieldType = 'YIELD_GOLD';
+--珠穆朗玛峰：+3鸽
+update Feature_AdjacentYields set YieldChange = 3 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
+--自然奇观绑定地形改动
+--艾雅法拉火山移除绑定雪地
+--艾雅法拉火山增加排斥草原平原沙漠雪地
+--大堡礁增加排斥冻土雪地
+--魔鬼塔增加排斥雪地冻土沙漠
+--下龙湾增加排斥冻土雪地
+--约塞米蒂增加排斥冻土雪地
+--张掖丹霞增加排斥山脉
+delete from Feature_AdjacentTerrains where FeatureType = 'FEATURE_EYJAFJALLAJOKULL' and TerrainType = 'TERRAIN_SNOW';
+delete from Feature_AdjacentTerrains where FeatureType = 'FEATURE_EYJAFJALLAJOKULL' and TerrainType = 'TERRAIN_SNOW_HILLS';
+insert or replace into Feature_NotAdjacentTerrains
+	(FeatureType,					TerrainType)
+values
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_GRASS_MOUNTAIN'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_PLAINS_MOUNTAIN'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_DESERT_MOUNTAIN'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_GRASS_HILLS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_PLAINS_HILLS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_DESERT_HILLS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_SNOW_HILLS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_GRASS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_PLAINS'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_DESERT'),
+	('FEATURE_EYJAFJALLAJOKULL',	'TERRAIN_SNOW'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_SNOW'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_SNOW_HILLS'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_TUNDRA'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_TUNDRA_HILLS'),
+	('FEATURE_BARRIER_REEF',		'TERRAIN_TUNDRA_MOUNTAIN'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_TUNDRA'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_TUNDRA_HILLS'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_TUNDRA_MOUNTAIN'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_SNOW'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_SNOW_HILLS'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_DESERT'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_DESERT_HILLS'),
+	('FEATURE_DEVILSTOWER',			'TERRAIN_DESERT_MOUNTAIN'),
+	('FEATURE_PAITITI',				'TERRAIN_TUNDRA'),
+	('FEATURE_PAITITI',				'TERRAIN_TUNDRA_HILLS'),
+	('FEATURE_PAITITI',				'TERRAIN_TUNDRA_MOUNTAIN'),
+	('FEATURE_PAITITI',				'TERRAIN_SNOW'),
+	('FEATURE_PAITITI',				'TERRAIN_SNOW_HILLS'),
+	('FEATURE_PAITITI',				'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_PAITITI',				'TERRAIN_DESERT'),
+	('FEATURE_PAITITI',				'TERRAIN_DESERT_HILLS'),
+	('FEATURE_PAITITI',				'TERRAIN_DESERT_MOUNTAIN'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_SNOW'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_SNOW_HILLS'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_TUNDRA'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_TUNDRA_HILLS'),
+	('FEATURE_HA_LONG_BAY',			'TERRAIN_TUNDRA_MOUNTAIN'),
+	('FEATURE_YOSEMITE',			'TERRAIN_SNOW'),
+	('FEATURE_YOSEMITE',			'TERRAIN_SNOW_HILLS'),
+	('FEATURE_YOSEMITE',			'TERRAIN_TUNDRA'),
+	('FEATURE_YOSEMITE',			'TERRAIN_TUNDRA_HILLS'),
+	('FEATURE_ZHANGYE_DANXIA',		'TERRAIN_GRASS_MOUNTAIN'),
+	('FEATURE_ZHANGYE_DANXIA',		'TERRAIN_PLAINS_MOUNTAIN'),
+	('FEATURE_ZHANGYE_DANXIA',		'TERRAIN_DESERT_MOUNTAIN'),
+	('FEATURE_ZHANGYE_DANXIA',		'TERRAIN_SNOW_MOUNTAIN'),
+	('FEATURE_ZHANGYE_DANXIA',		'TERRAIN_TUNDRA_MOUNTAIN');
+--潘塔纳尔增加绑定沼泽
+insert or replace into Feature_AdjacentFeatures
+	(FeatureType,					FeatureTypeAdjacent)
+values
+	('FEATURE_PANTANAL',			'FEATURE_MARSH'),
+	('FEATURE_KILIMANJARO',			'FEATURE_JUNGLE');
