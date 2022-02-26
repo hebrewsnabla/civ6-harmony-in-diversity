@@ -34,6 +34,8 @@ values
     ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
 --奢侈加金
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
+--删除土墙
+
 
 -------------------------------------
 --              总督               --
@@ -136,6 +138,7 @@ update ModifierArguments set Value = -30 where ModifierId = 'TRAIT_SCIENCE_DECRE
 update ModifierArguments set Value = 2 where ModifierId = 'BYZANTIUM_COMBAT_HOLY_CITIES' AND Name = 'Amount';
 update Units set Combat = 30 where UnitType = 'UNIT_BYZANTINE_DROMON';
 delete from Typetags where Type = 'ABILITY_DROMON' and Tag = 'CLASS_DROMON';
+update Units set Combat = 55 where UnitType = 'UNIT_BYZANTINE_TAGMA';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --波兰
@@ -156,6 +159,8 @@ update ModifierArguments set Value = 3 where ModifierId = 'HWARANG_HOUSING' AND 
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --大哥
+delete from TraitModifiers where ModifierId = 'TRAIT_PROMOTE_NO_FINISH_MOVES';
+delete from TraitModifiers where ModifierId = 'TRAIT_EJERCITO_PATRIOTA_EXTRA_MOVEMENT';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --德国
@@ -198,6 +203,8 @@ insert or replace into ModifierArguments
 values
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
+--高卢战车
+update Units set Combat = 30 where UnitType = 'UNIT_GAUL_CARRUS';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --高棉
@@ -375,6 +382,8 @@ update Units set Combat = 42 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --印加
+--瓦剌卡
+update Units set Combat = 40 , RangedCombat = 35 , BaseMoves = 1 where UnitType = 'UNIT_INCA_WARAKAQ';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --英国
@@ -507,7 +516,7 @@ update ModifierArguments set Value = 2 where ModifierId = 'TAGMA_COMBAT_STRENGTH
 update RequirementArguments set Value = 'CLASS_HEAVY_CAVALRY' where RequirementId = 'REQUIRES_UNIT_IS_NOTCENTER_ADJACENT_TAGMA' AND Name = 'Tag';
 
 --轻骑兵
---雇佣兵市政调整（未生效）
+--雇佣兵市政调整
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,                               SubjectRequirementSetId)
 values
@@ -516,6 +525,13 @@ insert or replace into ModifierArguments
 	(ModifierId,					Name,						Value)
 values
 	('HD_ENEMY_MOVEMENT',		    'Amount',				    3);
+update CivicModifiers set CivicType = 'CIVIC_MILITARY_TRAINING' where ModifierId = 'HD_ENEMY_MOVEMENT';
+delete from  TechnologyModifiers where ModifierId = 'HD_LIGHTC_AGAINST_UNIT_BONUS';
+insert or replace into CivicModifiers
+    (CivicType,                                       ModifierId)
+values
+    ('CIVIC_MERCENARIES',                            'HD_LIGHTC_AGAINST_UNIT_BONUS');
+
 --升级调整（文本√）
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or UnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
 delete from UnitPromotionPrereqs where PrereqUnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or PrereqUnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
