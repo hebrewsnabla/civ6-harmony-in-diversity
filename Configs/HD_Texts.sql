@@ -14,6 +14,8 @@ values
     ("LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION", "Whenever an AI trains a military unit, it will get a free copy.[NEWLINE]ONLY ENABLE WHEN YOU TRY TO CHALLENGE YOURSELF."),
     ("LOC_GAME_FOREVER_WAR",                                "War last forever"),
     ("LOC_GAME_FOREVER_WAR_DESCRIPTION",                    "The war will last forever once started."),
+    ("LOC_GAME_REAL_START_LOCATIONS",                       "Better Starting Location"),
+    ("LOC_GAME_REAL_START_LOCATIONS_DESCRIPTION",           "Gives a starting location that respects their civilization's start biases. Copied from Zegangani's mod Origin - Real Start Locations."),
     -- GameModes
     ("LOC_GAMEMODE_TESTING_NAME",                           "Testing Military Mode"),
     ("LOC_GAMEMODE_TESTING_DESCRIPTION",                    "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains the military adjustments."),
@@ -56,6 +58,8 @@ values
     ("zh_Hans_CN",  "LOC_GAME_AI_GET_COPY_FOR_MILITARY_UNITS_DESCRIPTION",  "每当ai训练一个军事单位，其会免费获得一个同样的单位。[NEWLINE]请谨慎开启。"),
     ("zh_Hans_CN",  "LOC_GAME_FOREVER_WAR",                                 "永恒的战争"),
     ("zh_Hans_CN",  "LOC_GAME_FOREVER_WAR_DESCRIPTION",                     "战争一旦开始就无法结束。"),
+    ("zh_Hans_CN",  "LOC_GAME_REAL_START_LOCATIONS",                       "出生点优化"),
+    ("zh_Hans_CN",  "LOC_GAME_REAL_START_LOCATIONS_DESCRIPTION",           "通过文明的关联调整出生点的位置。复制自Zegangani的模组Origin - Real Start Locations。"),
     -- GameModes
     ("zh_Hans_CN",  "LOC_GAMEMODE_TESTING_NAME",                            "测试军事模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_TESTING_DESCRIPTION",                     "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中调整了军事。"),
