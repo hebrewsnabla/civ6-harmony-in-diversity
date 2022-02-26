@@ -169,6 +169,7 @@ values
     ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
+    ('HD_CITY_ROADS_REQUIRE_WHEEL',                     1),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY',               3);
 
 -- Turns & Years Mapping. 

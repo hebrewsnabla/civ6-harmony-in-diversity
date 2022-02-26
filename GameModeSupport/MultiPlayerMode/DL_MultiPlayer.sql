@@ -6,6 +6,9 @@
 -------------------------------------
 --              全局               --
 -------------------------------------
+update GlobalParameters set Value = 0 where Name = 'HD_CITY_ROADS_REQUIRE_WHEEL';
+update Technologies set Description = NULL where TechnologyType ='TECH_THE_WHEEL';
+
 -- ranged unit cause 50% damage to walls instead of 75% (but -17 strength still remains)
 update GlobalParameters set Value = 50 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
 --宣战不扣外交点
