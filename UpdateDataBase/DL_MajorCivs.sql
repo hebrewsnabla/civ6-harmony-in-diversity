@@ -110,7 +110,16 @@ values
 	(28,	'-2',					'-2'),
 	(29,	'-2',					'-2'),
 	(30,	'-2',					'-2'),
-	(31,	'-2',					'-2');
+	(31,	'-2',					'-2'),
+	(32,	'-2',					'-2'),
+	(33,	'-2',					'-2'),
+	(34,	'-2',					'-2'),
+	(35,	'-2',					'-2'),
+	(36,	'-2',					'-2'),
+	(37,	'-2',					'-2'),
+	(38,	'-2',					'-2'),
+	(39,	'-2',					'-2'),
+	(40,	'-2',					'-2');
 
 insert or replace into TraitModifiers (TraitType, ModifierId)
 	select 'TRAIT_LEADER_MAJOR_CIV', 'AT_LEAST_IMMORTAL_HUMAN_' || Pop || '_POPULATION_MAINTENANCE'

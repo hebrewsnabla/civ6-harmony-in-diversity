@@ -51,7 +51,7 @@ UPDATE PseudoYields SET DefaultValue = 1.33 WHERE PseudoYieldType = 'PSEUDOYIELD
 UPDATE PseudoYields SET DefaultValue = 0.15 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --   0.1 -- controls size of the army
 
 -- Combat Strength Adjustments.
-update Units set Combat = Combat + 1 where Combat > 25 and PromotionClass = 'PROMOTION_CLASS_MELEE';
+-- update Units set Combat = Combat + 1 where Combat > 25 and PromotionClass = 'PROMOTION_CLASS_MELEE';
 -- update Units set Combat = Combat + 2, RangedCombat = RangedCombat + 2 where Combat < 20 and PromotionClass = 'PROMOTION_CLASS_RANGED';
 
 -- Ability from Basilikoi

@@ -156,11 +156,11 @@ update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' 
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HUMANISM' where BuildingType = 'BUILDING_ZOO' or BuildingType = 'BUILDING_THERMAL_BATH';
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where BuildingType = 'BUILDING_GRAND_BAZAAR';
 	-- 【食品市场】改为【城市化】市政解锁
-update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_URBANIZATION' where BuildingType = 'BUILDING_FOOD_MARKET';--xhh
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_URBANIZATION' where BuildingType = 'BUILDING_FOOD_MARKET';
 	-- 【水族馆】改为【生物】科技解锁
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_AQUARIUM';--xhh
-	-- 【生态研究所】改为【生物】科技解锁
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_SANCTUARY';--xhh
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL where BuildingType = 'BUILDING_AQUARIUM';
+	-- [兵营]改为[炼铁]科技解锁 by xiaoxiao
+update Buildings set PrereqTech = 'TECH_IRON_WORKING', PrereqCivic = NULL where BuildingType = 'BUILDING_BARRACKS';
 
 -- Regional Range
 update Buildings set RegionalRange = 4
@@ -323,7 +323,6 @@ values
 	-- ('BUILDING_WORKSHOP',			'WORKSHOP_ADD_LUMBER_MILL_PRODUCTION'),
 	-- Aerodrome
 	('BUILDING_HANGAR',				'HANGAR_AIR_UNIT_PRODUCTION'),
-	-- ('BUILDING_AIRPORT',			'AIRPORT_TOURISM_BOOST'),
 	-- Harbor
 	('BUILDING_SHIPYARD',			'SHIPYARD_NAVAL_UNIT_PRODUCTION'),
 	('BUILDING_SEAPORT',			'SEAPORT_EXTRA_GREAT_ADMIRAL_POINTS'),
@@ -339,8 +338,6 @@ values
 	('BUILDING_ORDU',				'ORDU_TRAINED_STRENGTH_MODIFIER'); --ub
 
 update Modifiers set SubjectRequirementSetId = 'HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS' where ModifierId = 'CITY_DEFENDER_FREE_PROMOTIONS';
-insert or replace into TechnologyModifiers (TechnologyType, ModifierId)
-select PrereqTech, 'AIRPORT_TOURISM_BOOST' from Buildings where BuildingType = 'BUILDING_AIRPORT';
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType)
@@ -360,8 +357,6 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,													SubjectRequirementSetId)
 values
-	('AIRPORT_TOURISM_BOOST',						'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',						'HAS_AIRPORT_WITHIN_9_TILES'),
-	('AIRPORT_TOURISM_BOOST_MODIFIER',				'MODIFIER_SINGLE_CITY_ADJUST_TOURISM_LATE_ERAS',				NULL), -- 'CITY_HAS_NO_FILM_STUDIO'),
 	('GRANARY_BONUS_PLANTATION_FOOD',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',					'HD_PLOT_HAS_PLANTATION_OVER_BONUS_RESOURCES'),
 	('GRANARY_BONUS_CAMP_FOOD',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',					'HD_PLOT_HAS_CAMP_OVER_BONUS_RESOURCES'),
 	('GRANARY_POP_FOOD_MODIFIER',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		'HD_HAS_TECH_CALENDAR_HD'),
@@ -380,18 +375,18 @@ values
 	('WORKSHOP_ADD_LUMBER_MILL_PRODUCTION', 		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',					'PLOT_HAS_LUMBER_MILL_REQUIREMENTS'),
 
 -- 设定【造纸术】科技效果：图书馆人口瓶需要【造纸术】科技
-	('LIBRARY_POP_SCIENCE_MODIFIER',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		'HD_HAS_TECH_PAPER_MAKING_XHH');
+	('LIBRARY_POP_SCIENCE_MODIFIER',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		'HD_HAS_TECH_PAPER_MAKING');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,								RequirementSetType)
 values
-	('HD_HAS_TECH_PAPER_MAKING_XHH',				'REQUIREMENTSET_TEST_ALL'),
+	('HD_HAS_TECH_PAPER_MAKING',					'REQUIREMENTSET_TEST_ALL'),
 	('HD_HAS_TECH_CALENDAR_HD',						'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
-	('HD_HAS_TECH_PAPER_MAKING_XHH',				'HD_REQUIRES_PLAYER_HAS_TECH_PAPER_MAKING_HD'),
+	('HD_HAS_TECH_PAPER_MAKING',					'HD_REQUIRES_PLAYER_HAS_TECH_PAPER_MAKING_HD'),
 	('HD_HAS_TECH_CALENDAR_HD',						'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD');
 -- 设定【造纸术】科技效果：图书馆人口瓶需要【造纸术】科技 (结束)
 
@@ -408,9 +403,6 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
-	('AIRPORT_TOURISM_BOOST',						'ModifierId',	'AIRPORT_TOURISM_BOOST_MODIFIER'),
-	('AIRPORT_TOURISM_BOOST_MODIFIER',				'Modifier',		50),
-	('AIRPORT_TOURISM_BOOST_MODIFIER',				'MinimumEra',	'ERA_ANCIENT'),
 	-- 
 	('SHRINE_BUILDER_PURCHASE',						'Tag',			'CLASS_BUILDER'),
 	('TEMPLE_SETTLER_PURCHASE',						'Tag',			'CLASS_SETTLER'),
@@ -632,6 +624,8 @@ values
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'YieldType',	'YIELD_GOLD'),
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		5);
 
+update ModifierArguments set Value = 'ERA_INDUSTRIAL' where ModifierId = 'FILMSTUDIO_ENHANCEDLATETOURISM' and Name = 'MinimumEra';
+
 -- Maintainance
 --update Buildings set Maintenance = Maintenance * 2 where IsWonder = 0;
 update Buildings set Maintenance = 0,	Cost = 50	where BuildingType = 'BUILDING_MONUMENT';
@@ -657,9 +651,9 @@ update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_SHIPYARD';
 update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_SEAPORT';
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BARRACKS';
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_STABLE';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_STABLE';
 update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_BASILIKOI_PAIDES';
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_ORDU';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_ORDU';
 update Buildings set Maintenance = 4,	Cost = 200	where BuildingType = 'BUILDING_ARMORY';
 update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_MILITARY_ACADEMY';
 update Buildings set Maintenance = 3,	Cost = 180	where BuildingType = 'BUILDING_WORKSHOP';
@@ -692,10 +686,10 @@ update Buildings set Maintenance = 1,	Cost = 150	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 1,	Cost = 120	where BuildingType = 'BUILDING_TLACHTLI';
 update Buildings set Maintenance = 4,	Cost = 380	where BuildingType = 'BUILDING_ZOO';
 update Buildings set Maintenance = 4,	Cost = 320	where BuildingType = 'BUILDING_THERMAL_BATH';
-update Buildings set Maintenance = 12,	Cost = 550	where BuildingType = 'BUILDING_STADIUM';
-update Buildings set Maintenance = 5,	Cost = 250	where BuildingType = 'BUILDING_FERRIS_WHEEL';
-update Buildings set Maintenance = 8,	Cost = 380	where BuildingType = 'BUILDING_AQUARIUM';
-update Buildings set Maintenance = 12,	Cost = 550	where BuildingType = 'BUILDING_AQUATICS_CENTER';
+update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_STADIUM';
+update Buildings set Maintenance = 1,	Cost = 250	where BuildingType = 'BUILDING_FERRIS_WHEEL';
+update Buildings set Maintenance = 4,	Cost = 380	where BuildingType = 'BUILDING_AQUARIUM';
+update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_AQUATICS_CENTER';
 
 update Buildings set Maintenance = 1,	Cost = 135	where BuildingType = 'BUILDING_GROVE';
 update Buildings set Maintenance = 6,	Cost = 330	where BuildingType = 'BUILDING_SANCTUARY';
@@ -828,7 +822,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_FAITH';
 --中书省额外总督点
 --update ModifierArguments set Value = 2 where ModifierId = 'GOV_BUILDING_CITYSTATES_GRANT_GOVERNOR_POINTS';
 --中书省要求
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId, 						RequirementId)
 values
 	('GOV_GH_REQUIREMENT',					'REQUIRES_CITY_HAS_GOVERNOR'),
@@ -836,7 +830,7 @@ values
 	--('GOV_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
 	--('GOV_G_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
 	--('GOV_G_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_HAS_GOVERNOR');
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('GOV_GH_REQUIREMENT',					'REQUIREMENTSET_TEST_ALL');
@@ -1486,75 +1480,43 @@ delete from BuildingModifiers where ModifierId = 'ZOO_MARSH_SCIENCE';
 insert or replace into BuildingModifiers
 	(BuildingType,									ModifierId)
 values
-	('BUILDING_ZOO',								'HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_FOOD_XHH'),
-	('BUILDING_ZOO',								'HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_PRODUCTION_XHH'),
-	('BUILDING_ZOO',								'HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_CULTURE_XHH'),
-	('BUILDING_ZOO',								'HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_TOURISM_XHH');
+	('BUILDING_ZOO',								'HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_BOOST');
 
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,											SubjectRequirementSetId)
 values
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_FOOD_XHH',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_PRODUCTION_XHH',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_CULTURE_XHH',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_TOURISM_XHH',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_CHANGE',		'HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH');
+	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_BOOST',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY');
 
 insert or replace into ModifierArguments
 	(ModifierId,										Name,				Value)
 values
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_FOOD_XHH',				'YieldType',		'YIELD_FOOD'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_FOOD_XHH',				'Amount',			1),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_PRODUCTION_XHH',			'YieldType',		'YIELD_PRODUCTION'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_PRODUCTION_XHH',			'Amount',			1),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_CULTURE_XHH',			'YieldType',		'YIELD_CULTURE'),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_CULTURE_XHH',			'Amount',			1),
-	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_TOURISM_XHH',			'Amount',			5);
+	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_BOOST',			'YieldType',		'YIELD_FOOD,YIELD_CULTURE,YIELD_GOLD'),
+	('HD_ZOO_ADD_RESOURCE_CAMP_PASTURE_BOOST',			'Amount',			'1,1,3');
 
-insert or replace into RequirementSets
-	(RequirementSetId,																			RequirementSetType)
+insert or ignore into RequirementSets
+	(RequirementSetId,									RequirementSetType)
 values
-	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH',											'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY',		'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_CAMP_OR_PASTURE',						'REQUIREMENTSET_TEST_ANY');
 
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET_XHH',														'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET_XHH',												'REQUIREMENTSET_TEST_ALL'),
-
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_XHH',															'REQUIREMENTSET_TEST_ANY'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_XHH',													'REQUIREMENTSET_TEST_ANY');
-
-insert or replace into Requirements
-	(RequirementId,																				RequirementType)
+insert or ignore into Requirements
+	(RequirementId,										RequirementType)
 values
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET_XHH',														'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET_XHH',												'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET',					'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,										Name,					Value)
 values
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET_XHH',				'RequirementSetId',		'HD_PLOT_HAS_CAMP_OR_PASTURE_XHH'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET_XHH',		'RequirementSetId',		'HD_CITY_HAS_RESOURCE_CAMP_PASTURE_XHH');
-
+	('HD_PLOT_HAS_CAMP_OR_PASTURE_MET',					'RequirementSetId',		'HD_PLOT_HAS_CAMP_OR_PASTURE');
 
 insert or ignore into RequirementSetRequirements
-	(RequirementSetId,										RequirementId)
-select
-	'HD_CITY_HAS_RESOURCE_CAMP_PASTURE_XHH',				'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where (ImprovementType = 'IMPROVEMENT_CAMP' or ImprovementType = 'IMPROVEMENT_PASTURE');
-
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,																			RequirementId)
+	(RequirementSetId,									RequirementId)
 values
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_XHH',															'REQUIRES_PLOT_HAS_CAMP'),
-	('HD_PLOT_HAS_CAMP_OR_PASTURE_XHH',															'REQUIRES_PLOT_HAS_PASTURE'),
-
-	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH',											'HD_PLOT_HAS_CAMP_OR_PASTURE_MET_XHH'),
-	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH',											'PLOT_HAS_RESOURCE_REQUIREMENTS'),
-	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_XHH',											'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_CITY_HAS_RESOURCE_CAMP_PASTURE_MET_XHH'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-	('HD_CITY_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY_ENTERTAINMENT_COMPLEX_XHH',						'REQUIRES_DISTRICT_IS_ENTERTAINMENT_COMPLEX');
+	('HD_PLOT_HAS_CAMP_OR_PASTURE',						'REQUIRES_PLOT_HAS_CAMP'),
+	('HD_PLOT_HAS_CAMP_OR_PASTURE',						'REQUIRES_PLOT_HAS_PASTURE'),
+	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY',		'HD_PLOT_HAS_CAMP_OR_PASTURE_MET'),
+	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY',		'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+	('HD_PLOT_HAS_RESOURCE_CAMP_PASTURE_BIOLOGY',		'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD');
 
 -- 水族馆 by xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_SEARESOURCE_SCIENCE';
@@ -1563,155 +1525,112 @@ delete from BuildingModifiers where ModifierId = 'AQUARIUM_REEF_SCIENCE';
 insert or replace into BuildingModifiers
 	(BuildingType,									ModifierId)
 values
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_FOOD_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_PRODUCTION_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_SCIENCE_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_TOURISM_XHH'),
-
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_SEA_FEATURE_FOOD_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_SEA_FEATURE_PRODUCTION_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_SEA_FEATURE_SCIENCE_XHH'),
-	('BUILDING_AQUARIUM',								'HD_AQUARIUM_ADD_SEA_FEATURE_TOURISM_XHH');
+	('BUILDING_AQUARIUM',							'HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_BOOST'),
+	('BUILDING_AQUARIUM',							'HD_AQUARIUM_ADD_SEA_FEATURE_BOOST');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
 values
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_FOOD_XHH',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_PRODUCTION_XHH',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_SCIENCE_XHH',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_TOURISM_XHH',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_CHANGE',		'HD_CITY_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH'),
-
-	('HD_AQUARIUM_ADD_SEA_FEATURE_FOOD_XHH',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_PRODUCTION_XHH',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_SCIENCE_XHH',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_TOURISM_XHH',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_CHANGE',		'HD_CITY_HAS_SEA_FEATURE_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH');
+	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_BOOST',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY'),
+	('HD_AQUARIUM_ADD_SEA_FEATURE_BOOST',							'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_SEA_FEATURE_BIOLOGY');
 
 insert or replace into ModifierArguments
 	(ModifierId,													Name,				Value)
 values
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_FOOD_XHH',				'YieldType',		'YIELD_FOOD'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_FOOD_XHH',				'Amount',			1),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_PRODUCTION_XHH',		'YieldType',		'YIELD_PRODUCTION'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_PRODUCTION_XHH',		'Amount',			1),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_SCIENCE_XHH',			'YieldType',		'YIELD_SCIENCE'),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_SCIENCE_XHH',			'Amount',			1),
-	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_TOURISM_XHH',			'Amount',			5),
+	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_BOOST',				'YieldType',		'YIELD_FOOD,YIELD_PRODUCTION,YIELD_GOLD'),
+	('HD_AQUARIUM_ADD_RESOURCE_FISHING_BOATS_BOOST',				'Amount',			'1,1,3'),
+	('HD_AQUARIUM_ADD_SEA_FEATURE_BOOST',							'YieldType',		'YIELD_FOOD,YIELD_PRODUCTION,YIELD_GOLD'),
+	('HD_AQUARIUM_ADD_SEA_FEATURE_BOOST',							'Amount',			'1,1,3');
 
-	('HD_AQUARIUM_ADD_SEA_FEATURE_FOOD_XHH',						'YieldType',		'YIELD_FOOD'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_FOOD_XHH',						'Amount',			1),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_PRODUCTION_XHH',					'YieldType',		'YIELD_PRODUCTION'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_PRODUCTION_XHH',					'Amount',			1),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_SCIENCE_XHH',						'YieldType',		'YIELD_SCIENCE'),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_SCIENCE_XHH',						'Amount',			1),
-	('HD_AQUARIUM_ADD_SEA_FEATURE_TOURISM_XHH',						'Amount',			5);
-
-insert or replace into RequirementSets
-	(RequirementSetId,																	RequirementSetType)
+insert or ignore into RequirementSets
+	(RequirementSetId,										RequirementSetType)
 values
-	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH',									'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',		'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH',												'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_SEA_FEATURE_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',					'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY',			'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY',						'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_SEA_FEATURE',								'REQUIREMENTSET_TEST_ANY');
 
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET_XHH',										'REQUIREMENTSET_TEST_ALL'),
-	('HD_CITY_HAS_SEA_FEATURE_MET_XHH',													'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_SEA_FEATURE_MET_XHH',													'REQUIREMENTSET_TEST_ALL'),
-
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_XHH',											'REQUIREMENTSET_TEST_ANY'),
-	('HD_CITY_HAS_SEA_FEATURE_XHH',														'REQUIREMENTSET_TEST_ANY'),
-	('HD_PLOT_HAS_SEA_FEATURE_XHH',														'REQUIREMENTSET_TEST_ANY');
-
-insert or replace into Requirements
-	(RequirementId,																		RequirementType)
+insert or ignore into Requirements
+	(RequirementId,											RequirementType)
 values
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET_XHH',										'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-	('HD_CITY_HAS_SEA_FEATURE_MET_XHH',													'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-	('HD_PLOT_HAS_SEA_FEATURE_MET_XHH',													'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	('HD_PLOT_HAS_SEA_FEATURE_MET',							'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,											Name,					Value)
 values
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET_XHH',			'RequirementSetId',		'HD_CITY_HAS_RESOURCE_FISHING_BOATS_XHH'),
-	('HD_CITY_HAS_SEA_FEATURE_MET_XHH',						'RequirementSetId',		'HD_CITY_HAS_SEA_FEATURE_XHH'),
-	('HD_PLOT_HAS_SEA_FEATURE_MET_XHH',						'RequirementSetId',		'HD_PLOT_HAS_SEA_FEATURE_XHH');
+	('HD_PLOT_HAS_SEA_FEATURE_MET',							'RequirementSetId',		'HD_PLOT_HAS_SEA_FEATURE');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 select
-	'HD_CITY_HAS_RESOURCE_FISHING_BOATS_XHH',				'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
-from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,										RequirementId)
-select
-	'HD_CITY_HAS_SEA_FEATURE_XHH',							'REQUIRES_CITY_HAS_' || i.FeatureType
+	'HD_PLOT_HAS_SEA_FEATURE',								'HD_REQUIRES_PLOT_HAS_' || i.FeatureType
 from Feature_ValidTerrains i, Features j
 where i.FeatureType = j.FeatureType and (i.TerrainType = 'TERRAIN_COAST' and j.Impassable = 0 and j.NaturalWonder = 0);
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
-select
-	'HD_PLOT_HAS_SEA_FEATURE_XHH',							'HD_REQUIRES_PLOT_HAS_' || i.FeatureType
-from Feature_ValidTerrains i, Features j
-where i.FeatureType = j.FeatureType and (i.TerrainType = 'TERRAIN_COAST' and j.Impassable = 0 and j.NaturalWonder = 0);
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,																	RequirementId)
 values
-	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH',									'REQUIRES_PLOT_HAS_FISHINGBOATS'),
-	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH',									'PLOT_HAS_RESOURCE_REQUIREMENTS'),
-	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_XHH',									'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-
-	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH',												'HD_PLOT_HAS_SEA_FEATURE_MET_XHH'),
-	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY_XHH',												'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',		'HD_CITY_HAS_RESOURCE_FISHING_BOATS_MET_XHH'),
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',		'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-	('HD_CITY_HAS_RESOURCE_FISHING_BOATS_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',		'REQUIRES_DISTRICT_IS_WATER_ENTERTAINMENT_COMPLEX'),
-
-	('HD_CITY_HAS_SEA_FEATURE_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',					'HD_CITY_HAS_SEA_FEATURE_MET_XHH'),
-	('HD_CITY_HAS_SEA_FEATURE_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',					'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
-	('HD_CITY_HAS_SEA_FEATURE_BIOLOGY_WATER_ENTERTAINMENT_COMPLEX_XHH',					'REQUIRES_DISTRICT_IS_WATER_ENTERTAINMENT_COMPLEX');
+	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY',			'REQUIRES_PLOT_HAS_FISHINGBOATS'),
+	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY',			'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+	('HD_PLOT_HAS_RESOURCE_FISHING_BOATS_BIOLOGY',			'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD'),
+	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY',						'HD_PLOT_HAS_SEA_FEATURE_MET'),
+	('HD_PLOT_HAS_SEA_FEATURE_BIOLOGY',						'HD_REQUIRES_PLAYER_HAS_TECH_BIOLOGY_HD');
 
 -- 温泉浴场 by xhh
-update ModifierArguments set Value = 5 where ModifierId = 'THERMALBATH_ADDTOURISM';
+delete from BuildingModifiers where ModifierId = 'THERMALBATH_ADDTOURISM' and BuildingType = 'BUILDING_THERMAL_BATH';
+delete from BuildingModifiers where ModifierId = 'THERMALBATH_ADDAMENITIES' and BuildingType = 'BUILDING_THERMAL_BATH';
 
 insert or replace into BuildingModifiers
 	(BuildingType,									ModifierId)
 values
-	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_FAITH_XHH'),
-	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_CULTURE_XHH'),
-	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_SCIENCE_CHEMISTRY_XHH');
+	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_ATTACH'),
+	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY_ATTACH'),
+	('BUILDING_THERMAL_BATH',						'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_ENTERTAINMENT_ATTACH');
 
 insert or replace into Modifiers
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
 values
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_FAITH_XHH',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_GEOTHERMAL_FISSURE_XHH'),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_CULTURE_XHH',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_GEOTHERMAL_FISSURE_XHH'),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_SCIENCE_CHEMISTRY_XHH','MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH');
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_ATTACH',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_OBJECT_IS_WHITHIN_6_PLOT'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_GEOTHERMAL_FISSURE'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_OBJECT_IS_WHITHIN_6_PLOT'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',			'HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_ENTERTAINMENT_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				'HD_OBJECT_IS_WHITHIN_6_PLOT');
 
 insert or replace into ModifierArguments
-	(ModifierId,													Name,				Value)
+	(ModifierId,														Name,				Value)
 values
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_FAITH_XHH',			'YieldType',		'YIELD_FAITH'),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_FAITH_XHH',			'Amount',			2),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_CULTURE_XHH',			'YieldType',		'YIELD_CULTURE'),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_CULTURE_XHH',			'Amount',			2),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_SCIENCE_CHEMISTRY_XHH','YieldType',		'YIELD_SCIENCE'),
-	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_SCIENCE_CHEMISTRY_XHH','Amount',			2);
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_ATTACH',				'ModifierId',		'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST',					'YieldType',		'YIELD_FAITH,YIELD_CULTURE'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST',					'Amount',			'2,2'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY_ATTACH',	'ModifierId',		'HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY',			'YieldType',		'YIELD_SCIENCE'),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_BOOST_CHEMISTRY',			'Amount',			2),
+	('HD_THERMAL_BATH_ADD_GEOTHERMAL_FISSURE_ENTERTAINMENT_ATTACH',		'ModifierId',		'THERMALBATH_ADDAMENITIES');
 
-insert or replace into RequirementSets
-	(RequirementSetId,												RequirementSetType)
+insert or ignore into RequirementSets
+	(RequirementSetId,											RequirementSetType)
 values
-	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_XHH',							'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH',				'REQUIREMENTSET_TEST_ALL');
+	('HD_PLOT_HAS_GEOTHERMAL_FISSURE',							'REQUIREMENTSET_TEST_ALL'),
+	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY',				'REQUIREMENTSET_TEST_ALL'),
+	('HD_OBJECT_IS_WHITHIN_6_PLOT',								'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,												RequirementId)
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
 values
-	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_XHH',							'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
-	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH',				'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
-	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY_XHH',				'HD_REQUIRES_PLAYER_HAS_TECH_CHEMISTRY');
+	('HD_PLOT_HAS_GEOTHERMAL_FISSURE',							'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
+	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY',				'REQUIRES_PLOT_HAS_GEOTHERMAL_FIISSURE'),
+	('HD_PLOT_HAS_GEOTHERMAL_FISSURE_CHEMISTRY',				'HD_REQUIRES_PLAYER_HAS_TECH_CHEMISTRY'),
+	('HD_OBJECT_IS_WHITHIN_6_PLOT',								'HD_REQUIRES_IS_WHITHIN_6_PLOT');
+
+insert or ignore into Requirements
+	(RequirementId,									RequirementType)
+values
+	('HD_REQUIRES_IS_WHITHIN_6_PLOT',				'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
+
+insert or ignore into RequirementArguments
+	(RequirementId,									Name,						Value)
+values
+	('HD_REQUIRES_IS_WHITHIN_6_PLOT',				'MinDistance',				0),
+	('HD_REQUIRES_IS_WHITHIN_6_PLOT',				'MaxDistance',				6);
 
 --by yt
 --市场调整 
@@ -1738,3 +1657,60 @@ insert or replace into ModifierArguments
 values
 	('STAVE_CHURCH_FOREST_FOOD',					'YieldType',		'YIELD_FOOD'),
 	('STAVE_CHURCH_FOREST_FOOD',					'Amount',			1);
+
+	-- 机场
+update Buildings set Description = 'LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT'	where BuildingType = 'BUILDING_AIRPORT'
+	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into BuildingModifiers
+	(BuildingType,			ModifierId)
+values
+	('BUILDING_AIRPORT',	'AIRPORT_IMPROVEMENT_TOURISM_BONUS_ATTACH'),
+	('BUILDING_AIRPORT',	'AIRPORT_WONDER_TOURISM_BONUS_ATTACH');
+
+insert or replace into Modifiers
+    (ModifierId,                       				ModifierType,                                               OwnerRequirementSetId,  SubjectRequirementSetId,	SubjectStackLimit)
+values
+	('AIRPORT_IMPROVEMENT_TOURISM_BONUS_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_9_TILES',	1),
+	('AIRPORT_IMPROVEMENT_TOURISM_BONUS',			'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_TOURISM',			Null,					Null,						Null),
+	('AIRPORT_WONDER_TOURISM_BONUS_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_9_TILES',	1),
+	('AIRPORT_WONDER_TOURISM_BONUS',				'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',						Null,					Null,						Null);
+
+insert or replace into ModifierArguments
+    (ModifierId,                       		 		Name,           	Value)
+values
+	('AIRPORT_IMPROVEMENT_TOURISM_BONUS_ATTACH',	'ModifierId',		'AIRPORT_IMPROVEMENT_TOURISM_BONUS'),
+	('AIRPORT_IMPROVEMENT_TOURISM_BONUS',			'Amount',			50),
+	('AIRPORT_WONDER_TOURISM_BONUS_ATTACH',			'ModifierId',		'AIRPORT_WONDER_TOURISM_BONUS'),
+	('AIRPORT_WONDER_TOURISM_BONUS',				'BoostsWonders',	1),
+	('AIRPORT_WONDER_TOURISM_BONUS',				'ScalingFactor',	200);
+
+insert or replace into BuildingModifiers
+	(BuildingType,			ModifierId)
+select
+	'BUILDING_AIRPORT',		'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS'
+from GreatWorkObjectTypes;
+
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,									OwnerRequirementSetId,	SubjectRequirementSetId,	SubjectStackLimit)
+select
+	'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_9_TILES',	1
+from GreatWorkObjectTypes;
+
+insert or replace into ModifierArguments
+	(ModifierId,												Name,					Value)
+select
+	'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS',		'GreatWorkObjectType',	GreatWorkObjectType
+from GreatWorkObjectTypes;
+
+insert or replace into ModifierArguments
+	(ModifierId,												Name,					Value)
+select
+	'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS',		'ScalingFactor',		150
+from GreatWorkObjectTypes;
+
+-- 女王图书馆
+update Building_GreatWorks set 
+	NonUniquePersonYield = 1,
+	NonUniquePersonTourism = 1
+where BuildingType ='BUILDING_QUEENS_BIBLIOTHEQUE' and GreatWorkSlotType = 'GREATWORKSLOT_ART';

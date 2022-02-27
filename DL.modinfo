@@ -16,16 +16,16 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.2</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.2.1.3 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.1.3。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.2.3 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.3。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.1.3 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.1.3。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.3 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.3。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 榖音, 奥伊米亚, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑，时代的先驱，榖音, 奥伊米亚, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -347,6 +347,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="HD_RealStartLocation_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_REAL_START_LOCATIONS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateText id="Better_Chinese_Combined">
@@ -613,6 +621,23 @@
         <LuaReplace>UI/Replacement/citystates_bst_xp2.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
+    <!-- UI Replacements import -->
+    <ImportFiles id="DL_UI_Import" criteria="Expansion2">
+      <Properties><LoadOrder>150000</LoadOrder></Properties>
+      <File>UI/Replacement/DL_CityPanelOverview.lua</File>
+      <!-- <File>UI/Replacement/DL_DiplomacyRibbon.lua</File> -->
+      <File>UI/Replacement/DL_PlotToolTip.lua</File>
+      <File>UI/Replacement/DL_ProductionPanel.lua</File>
+      <File>UI/Replacement/DL_CityPanel.lua</File>
+      <File>UI/Replacement/DL_SelectedUnit.lua</File>
+      <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
+      <File>UI/Replacement/DL_UnitPanel.lua</File>
+      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+      <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+      <File>UI/Additions/HD_GreatPeople_Common.lua</File>
+      <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
+      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
+    </ImportFiles>
     <ReplaceUIScript id="DL_CityPanelOverview" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -620,10 +645,6 @@
         <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanelOverview_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanelOverview.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -631,10 +652,6 @@
         <LuaReplace>UI/Replacement/DL_PlotToolTip.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_PlotToolTip_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_PlotToolTip.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_ProductionPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -642,10 +659,6 @@
         <LuaReplace>UI/Replacement/DL_ProductionPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_ProductionPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_ProductionPanel.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_CityPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -653,10 +666,6 @@
         <LuaReplace>UI/Replacement/DL_CityPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_CityPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_CityPanel.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_SelectedUnit" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -664,10 +673,13 @@
         <LuaReplace>UI/Replacement/DL_SelectedUnit.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_SelectedUnit_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_SelectedUnit.lua</File>
-    </ImportFiles>
+    <ReplaceUIScript id="DL_WorldViewIconsManager" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>WorldViewIconsManager</LuaContext>
+        <LuaReplace>UI/Replacement/DL_WorldViewIconsManager.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <ReplaceUIScript id="DL_UnitPanel" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -675,11 +687,6 @@
         <LuaReplace>UI/Replacement/DL_UnitPanel.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_UnitPanel_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_UnitPanel.lua</File>
-      <File>UI/Additions/HD_UnitCommandDefs.lua</File>
-    </ImportFiles>
     <ReplaceUIScript id="DL_TechCivicPopup" criteria="Expansion2">
       <Properties>
         <LoadOrder>150000</LoadOrder>
@@ -687,14 +694,6 @@
         <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
-    <ImportFiles id="DL_TechCivicPopup_Import" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
-    </ImportFiles>
-    <ImportFiles id="DL_UI_Loaders" criteria="Expansion2">
-      <Properties><LoadOrder>150000</LoadOrder></Properties>
-      <File>UI/Loaders/ToolTipLoader_DL.lua</File>
-    </ImportFiles>
     <!-- Mod Support -->
     <UpdateDatabase id="Worships_mod_support_removes" criteria="Worships_Expansion2">
       <Properties><LoadOrder>15001</LoadOrder></Properties>
@@ -753,6 +752,10 @@
       <Properties><LoadOrder>15007</LoadOrder></Properties>
       <File>ModSupport/Watchtower/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateDatabase id="WatchTower_mod_support" criteria="WatchTower_Expansion2">
+      <Properties><LoadOrder>15007</LoadOrder></Properties>
+      <File>ModSupport/Watchtower/HD_Balance.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="Wonder_temple_of_heaven_support" criteria="TempleOfHeaven_Expansion2">
       <!-- After the main part -->
       <Properties><LoadOrder>17000</LoadOrder></Properties>
@@ -891,36 +894,10 @@
       </Properties>
     </ReplaceUIScript>
     <!-- Farm on fresh hills -->
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    </ImportFiles>
-    <ImportFiles id="DL_FarmsOnFreshHills_Imports" criteria="Expansion2">
-      <Properties><LoadOrder>15500</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    </ImportFiles>
     <UpdateDatabase id="DL_FarmsOnFreshHills_Database" criteria="Expansion2">
       <Properties><LoadOrder>15500</LoadOrder></Properties>
       <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
     </UpdateDatabase>
-    <!-- <ReplaceUIScript id="DL_UnitPanel_FarmsOnFreshHills" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>15500</LoadOrder>
-        <LuaContext>UnitPanel</LuaContext>
-        <LuaReplace>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript> -->
-    <ReplaceUIScript id="DL_WorldViewIconsManager_FOFH" criteria="Expansion2">
-      <Properties>
-        <LoadOrder>15500</LoadOrder>
-        <LuaContext>WorldViewIconsManager</LuaContext>
-        <LuaReplace>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <UpdateText id="DL_FarmsOnFreshHills_Text" criteria="Expansion2">
-      <Properties><LoadOrder>15506</LoadOrder></Properties>
-      <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
-    </UpdateText>
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
@@ -1217,7 +1194,7 @@
       <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/CityYield.lua</File>
       <File>Gameplay/CivilizationTraits.lua</File>
-      <File>Gameplay/Common.lua</File>
+      <File>Gameplay/HD_Common.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
       <!-- <File>Gameplay/Governors.lua</File> -->
       <File>Gameplay/GreatPersons.lua</File>
@@ -1225,6 +1202,7 @@
       <File>Gameplay/Religions.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
       <File>Gameplay/Wonders.lua</File>
+      <File>Gameplay/UnitAbilities.lua</File>
     </AddGameplayScripts>
     <!-- UI scripts for gameplay -->
     <AddUserInterfaces id="DL_Scripts_Interface" criteria="Expansion2">
@@ -1275,6 +1253,10 @@
     <UpdateText id="DL_Text_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Texts/HD_Text_Late.sql</File>
+    </UpdateText>
+    <UpdateText id="DL_Settings_Text" criteria="Expansion2">
+      <Properties><LoadOrder>16000</LoadOrder></Properties>
+      <File>Configs/HD_Texts.sql</File>
     </UpdateText>
     <!-- GameMode Support (at end) -->
     <!-- Monopolies -->
@@ -1423,6 +1405,20 @@
       <Properties><LoadOrder>18502</LoadOrder></Properties>
       <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
     </ImportFiles>
+    <ReplaceUIScript id="MP_DL_DiplomacyRibbon" criteria="MPTest_Mode_Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>DiplomacyRibbon</LuaContext>
+        <LuaReplace>GameModeSupport/MultiPlayerMode/UI/DL_DiplomacyRibbon.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="MP_DL_WorldRankings" criteria="MPTest_Mode_Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>WorldRankings</LuaContext>
+        <LuaReplace>GameModeSupport/MultiPlayerMode/UI/DL_WorldRankings.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <!-- Options at last -->
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_CityStatesStartWithWalls_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1444,6 +1440,10 @@
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/ForeverWar.sql</File>
     </UpdateDatabase>
+    <ImportFiles id="RealStartLocation" criteria="HD_RealStartLocation_XP2">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>Configs/Options/AssignStartingPlots.lua</File>
+    </ImportFiles>
   </InGameActions>
   <Files>
     <!-- Artdef -->
@@ -1464,6 +1464,7 @@
     <File>Configs/Options/CapturedSettlersAsBuilders.sql</File>
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <File>Configs/Options/ForeverWar.sql</File>
+    <File>Configs/Options/AssignStartingPlots.lua</File>
     <!-- Game Mode -->
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
@@ -1511,13 +1512,15 @@
     <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
     <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
     <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
+    <File>GameModeSupport/MultiPlayerMode/UI/DL_DiplomacyRibbon.lua</File>
+    <File>GameModeSupport/MultiPlayerMode/UI/DL_WorldRankings.lua</File>
     <!-- Pvp Maps -->
     <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
     <File>Gameplay/CivilizationTraits.lua</File>
-    <File>Gameplay/Common.lua</File>
+    <File>Gameplay/HD_Common.lua</File>
     <File>Gameplay/HD_StateUtils.lua</File>
     <!-- <File>Gameplay/Governors.lua</File> -->
     <File>Gameplay/GreatPersons.lua</File>
@@ -1525,6 +1528,7 @@
     <File>Gameplay/Religions.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
     <File>Gameplay/Wonders.lua</File>
+    <File>Gameplay/UnitAbilities.lua</File>
     <!-- UI scripts -->
     <!-- <File>Gameplay/Governors_Interface.lua</File> -->
     <!-- <File>Gameplay/Governors_Interface.xml</File> -->
@@ -1541,6 +1545,8 @@
     <!-- UI Additions -->
     <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File> <!-- Mod Version Checker for multiplayer -->
     <File>UI/Additions/HD_UnitCommandDefs.lua</File>
+    <File>UI/Additions/HD_GreatPeople_Common.lua</File>
+    <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
     <!-- UI replacements and icons -->
     <!-- FrontEnd -->
     <File>UI/Replacement/StagingRoom.lua</File>
@@ -1551,9 +1557,10 @@
     <File>UI/Replacement/citystates_bst_xp2.lua</File>
     <File>UI/Replacement/DL_CityPanel.lua</File>
     <File>UI/Replacement/DL_CityPanelOverview.lua</File>
+    <!-- <File>UI/Replacement/DL_DiplomacyRibbon.lua</File> -->
+    <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
-    <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>
     <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
@@ -1582,6 +1589,7 @@
     <File>ModSupport/MonopolyPlus/DL_Adaptation.sql</File>
     <File>ModSupport/MonopolyPlus/HD_Texts.sql</File>
     <File>ModSupport/Watchtower/HD_Texts.sql</File>
+    <File>ModSupport/Watchtower/HD_Balance.sql</File>
     <File>ModSupport/Wonders/Wonder_Temple_of_Heaven.sql</File>
     <File>ModSupport/Wonders/Wonder_WatArun.sql</File>
     <File>ModSupport/Wonders/Wonders_Community.sql</File>
@@ -1644,10 +1652,6 @@
     <File>SubMods/CityPolicies/UI/ToolTipLoader_CityPolicies.lua</File>
     <!-- Farms On Fresh Hills -->
     <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills.sql</File>
-    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Common.lua</File>
-    <!-- <File>SubMods/FarmsOnFreshHills/UnitPanel_FarmsOnFreshHills.lua</File> -->
-    <File>SubMods/FarmsOnFreshHills/WorldViewIconsManager_FOFH.lua</File>
-    <File>SubMods/FarmsOnFreshHills/FarmsOnFreshHills_Texts.sql</File>
     <!-- Governors Diversity -->
     <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
     <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>

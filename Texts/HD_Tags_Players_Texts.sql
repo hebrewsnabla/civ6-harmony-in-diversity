@@ -34,5 +34,7 @@ update PlayerItems set Description = 'LOC_DISTRICT_SEOWON_HD_DESCRIPTION'
 insert into PlayerItems
     (Domain,                        CivilizationType,              LeaderType,              Type,                       Icon,                               Name,                                   Description,                                    SortIndex)
 values
-    ("Players:Expansion1_Players",  "CIVILIZATION_NETHERLANDS",    "LEADER_WILHELMINA",     "IMPROVEMENT_LAND_POLDER",  "ICON_IMPROVEMENT_LAND_POLDER",     "LOC_IMPROVEMENT_LAND_POLDER_NAME",     "LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",      20),
-    ("Players:Expansion2_Players",  "CIVILIZATION_NETHERLANDS",    "LEADER_WILHELMINA",     "IMPROVEMENT_LAND_POLDER",  "ICON_IMPROVEMENT_LAND_POLDER",     "LOC_IMPROVEMENT_LAND_POLDER_NAME",     "LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",      20);
+    ("Players:Expansion1_Players",  "CIVILIZATION_NETHERLANDS",    "LEADER_WILHELMINA",     "IMPROVEMENT_LAND_POLDER",  "ICON_IMPROVEMENT_LAND_POLDER",     "LOC_IMPROVEMENT_LAND_POLDER_NAME",     "LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",      40),
+    ("Players:Expansion2_Players",  "CIVILIZATION_NETHERLANDS",    "LEADER_WILHELMINA",     "IMPROVEMENT_LAND_POLDER",  "ICON_IMPROVEMENT_LAND_POLDER",     "LOC_IMPROVEMENT_LAND_POLDER_NAME",     "LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",      40);
+
+update PlayerItems set SortIndex = 30 where Type = 'IMPROVEMENT_POLDER';

@@ -169,6 +169,7 @@ values
     ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
+    ('HD_CITY_ROADS_REQUIRE_WHEEL',                     1),
     ('GENERATE_NEW_GOODY_HUTS_FOR_EVERY',               3);
 
 -- Turns & Years Mapping. 
@@ -224,3 +225,6 @@ values
 -- Trading Post
 -- update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
 -- update GlobalParameters set Value = 0 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
+
+-- Art move lock
+update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';

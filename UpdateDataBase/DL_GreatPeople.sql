@@ -491,7 +491,7 @@ delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON
 
 --update ModifierArguments set Value = 'TERRAIN_OCEAN,TERRAIN_COAST' where ModifierId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE' and Name = 'TerrainType';
 update RequirementSets set RequirementSetType = 'REQUIREMENTSET_TEST_ANY' where RequirementSetId = 'GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS';
-insert or replace into RequirementSetRequirements   (RequirementSetId,  RequirementId)  
+insert or ignore into RequirementSetRequirements   (RequirementSetId,  RequirementId)  
 values  ('GREATPERSON_LEIF_ERIKSON_ACTIVE_REQUIREMENTS', 'REQUIREMENT_UNIT_IS_SETTLER');
 
 insert or replace into GreatPersonIndividualActionModifiers
@@ -567,9 +567,9 @@ update ModifierStrings set Text = 'LOC_PIERO_DE_BARDI_GOLD' where ModifierId = '
 
 -- Mimar Sinan.
 insert or replace into Modifiers (ModifierId, ModifierType) values
-("GREATPERSON_CULTURE_BOMB_MIMAR_SINAN", "MODIFIER_DO_NOTHING");
+('GREATPERSON_CULTURE_BOMB_MIMAR_SINAN', 'MODIFIER_DO_NOTHING');
 insert or replace into ModifierStrings (ModifierId, Context, Text) values
-("GREATPERSON_CULTURE_BOMB_MIMAR_SINAN", "Summary", "LOC_GREATPERSON_DISTRICT_CULTURE_BOMB");
+('GREATPERSON_CULTURE_BOMB_MIMAR_SINAN', 'Summary', 'LOC_GREATPERSON_DISTRICT_CULTURE_BOMB');
 
 update GreatPersonIndividuals set
 ActionCharges = 2,
@@ -603,3 +603,101 @@ insert or replace into GreatPersonIndividuals
 values
     ('GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU',         'LOC_GREAT_PERSON_INDIVIDUAL_ZHUANG_ZHOU_NAME',     'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M'),
     ('GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN',          'LOC_GREAT_PERSON_INDIVIDUAL_SI_MA_QIAN_NAME',      'GREAT_PERSON_CLASS_WRITER',    'ERA_CLASSICAL',    0,                  1,                              'M');
+
+------------------------------------------------------------------------------------------------
+--大军改动 by先驱
+
+--布狄卡由一次改为两次(取消)
+--update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
+--汉尼拔·巴卡由两次改为三次
+update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HANNIBAL_BARCA';
+--孙子新增能力：全国军事单位战斗经验+25%（效果还在大军上，能力写在书上）
+--update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SUN_TZU';
+--埃塞尔弗莱德能力重做：完成1个兵营，对蛮子+3力。可以使用两次
+update GreatPersonIndividuals set ActionCharges = 2, ActionRequiresCompletedDistrictType = 'DISTRICT_ENCAMPMENT'
+    where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
+--古斯塔夫·阿道弗斯，不送单位的晋升，次数由1改为2
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_GUSTAVUS_ADOLPHUS';
+update ModifierArguments set Value = 0 where ModifierId = 'GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE' and Name = 'Experience';
+--安娜·恩津加次数由2改为4
+update GreatPersonIndividuals set ActionCharges = 4 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ANA_NZINGA';
+--詹西女王由一次改为两次
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_RANI_LAKSHMIBAI';
+--次数由1改为2
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR';
+
+update GreatPersonIndividuals set
+    ActionRequiresUnitCanGainExperience = 0,
+    ActionRequiresMilitaryUnitDomain = NULL,
+    ActionRequiresCompletedDistrictType = 'DISTRICT_CITY_CENTER'
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_TIMUR';
+
+update GreatPersonIndividuals set 
+    ActionRequiresCompletedDistrictType = NULL,
+    ActionRequiresNoMilitaryUnit = 1,
+    ActionRequiresOwnedTile = 0,
+    ActionEffectTileHighlighting = 0
+where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR';
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,        Text)
+values
+--    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'Summary',      'LOC_GREATPERSON_SUN_ZTU_ACTIVE'),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'Summary',      'LOC_GREATPERSON_AETHELFLAED_ACTIVE'),
+    ('GREATPERSON_EL_CID_ACTIVE',               'Summary',      'LOC_GREATPERSON_EL_CID_ACTIVE'),
+    ('GREATPERSON_TIMUR_ACTIVE_1',              'Summary',      'LOC_GREATPERSON_TIMUR_ACTIVE'),
+    ('GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE',    'Summary',      'LOC_GREATPERSON_GUSTAVUS_ADOLPHUS_ACTIVE'),
+    ('GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE',   'Summary',      'LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE'),
+    ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'Summary',      'LOC_GREATPERSON_SIMON_BOLIVAR_ACTIVE');
+
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED' and ModifierId = 'GREATPERSON_AETHELFLAED_ACTIVE';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_TIMUR' and ModifierId = 'GREATPERSON_TIMUR_ACTIVE';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_TIMUR' and ModifierId = 'GREATPERSON_TIMUR_ACTIVE_UNIT_BONUS';
+delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR' and ModifierId = 'GREATPERSON_SIMON_BOLIVAR_ACTIVE';
+
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                     ModifierId,                                 AttachmentTargetType)
+values
+    ('GREAT_PERSON_INDIVIDUAL_SUN_TZU',             'GREATPERSON_SUN_ZTU_ACTIVE_1',             'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+--埃塞尔弗莱德能力重做：完成1个兵营，对蛮子+3力。可以使用两次
+    ('GREAT_PERSON_INDIVIDUAL_AETHELFLAED',         'GREATPERSON_AETHELFLAED_ACTIVE_1',         'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_AETHELFLAED',         'GREATPERSON_AETHELFLAED_ACTIVE_2',         'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+--艾尔·熙德新增能力：给一个升级
+    ('GREAT_PERSON_INDIVIDUAL_EL_CID',              'GREATPERSON_EL_CID_ACTIVE_1',              'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_DOMAIN_MILITARY_IN_TILE'),
+--帖木儿能力重做：为该城市赠予一个免费的商人单位，增加1条贸易路线容量。
+    ('GREAT_PERSON_INDIVIDUAL_TIMUR',               'GREATPERSON_TIMUR_ACTIVE_1',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_CITY'),
+    ('GREAT_PERSON_INDIVIDUAL_TIMUR',               'GREATPERSON_TIMUR_ACTIVE_2',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+--拿破仑波拿巴新增能力：给一个升级
+    ('GREAT_PERSON_INDIVIDUAL_NAPOLEON_BONAPARTE',  'GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE_1',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_DOMAIN_MILITARY_IN_TILE'),
+--圣马丁能力重做：立即创建1个胸甲骑兵单位。
+    ('GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR',       'GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON');
+--insert or replace into GreatWorkModifiers
+--    (GreatWorkType,                 ModifierId)
+--values
+--   ('GREATWORK_SUN_TZU',           'GREATPERSON_SUN_ZTU_ACTIVE_1');
+insert or replace into Modifiers
+    (ModifierId,                                ModifierType,                               RunOnce,   Permanent)
+values
+    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',    0,  0),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       1,  1),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_2',        'MODIFIER_PLAYER_UNITS_ADJUST_BARBARIAN_COMBAT',            1,  1),
+    ('GREATPERSON_EL_CID_ACTIVE_1',             'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE',             1,  1),
+    ('GREATPERSON_TIMUR_ACTIVE_1',              'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',                  1,  1),
+    ('GREATPERSON_TIMUR_ACTIVE_2',              'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',              1,  1),
+    ('GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE_1', 'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE',             1,  1),
+    ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',          1,  1);
+
+insert or replace into ModifierArguments 
+    (ModifierID,                                Name,           Value) 
+values 
+    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'Amount',       25),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'BuildingType', 'BUILDING_BARRACKS'),
+    ('GREATPERSON_AETHELFLAED_ACTIVE_2',        'Amount',       3),
+    ('GREATPERSON_EL_CID_ACTIVE_1',             'Amount',       -1),
+    ('GREATPERSON_TIMUR_ACTIVE_1',              'Amount',       1),
+    ('GREATPERSON_TIMUR_ACTIVE_1',              'UnitType',     'UNIT_TRADER'),
+    ('GREATPERSON_TIMUR_ACTIVE_2',              'Amount',       1),
+    ('GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE_1', 'Amount',       -1),
+    ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'Experience',   0),
+    ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'UnitType',     'UNIT_CUIRASSIER'),
+    ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'UniqueOverride',   1);

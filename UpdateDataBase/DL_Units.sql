@@ -380,3 +380,67 @@ values
     ('UNIT_HD_BARBARIAN_QUADRIREME',    'UNITTYPE_NAVAL');
 
 update BarbarianTribes set ScoutTag = 'CLASS_NAVAL_RAIDER', TurnsToWarriorSpawn = 15 where TribeType = 'TRIBE_NAVAL';
+
+--攻城单位增加基础能力：回合开始时相邻轻骑兵+1速
+insert or replace into Modifiers
+	(ModifierId,                                  ModifierType,                             RunOnce, NewOnly, Permanent, Repeatable, OwnerRequirementSetId)
+values
+	('HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING',    'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',  0,       0,       0,         0,          'ADJACENT_FRIENDLY_LIGHT_CAVALRY_UNIT_REQUIREMENT_SETS');
+
+insert or replace into ModifierArguments
+	(ModifierId,                                  Name,      Type,               Value)
+values
+	('HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING',    'Amount',  'ARGTYPE_IDENTITY', 1);
+insert or replace into UnitAbilities
+	(UnitAbilityType,                           Name, Description,                                             inactive, ShowFloatTextWhenEarned, Permanent)
+values
+	('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW',   NULL, 'LOC_ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW_DESCRIPTION', 0,        0,                       1);
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,                         ModifierId)
+values
+	('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW', 'HD_ADJACENT_LIGHT_CAVALRY_ACCELERATING');
+insert or replace into Types
+	(Type,                                    Kind)
+values
+	('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW', 'KIND_ABILITY');
+insert or replace into TypeTags
+	(Type,                                    Tag)
+values
+	('ABILITY_SIEGE_CAVALRY_MOVEMENT_HD_NEW', 'CLASS_SIEGE');
+
+--海军近战单位升级改动：左一舵手改为一速一视野
+--海军远程单位升级改动：右三球鼻艏改为一速一视野
+insert or replace into UnitPromotionModifiers
+	(UnitPromotionType, 		ModifierId)
+values
+	('PROMOTION_HELMSMAN',		'HELMSMAN_BONUS_WATER_PERSPECTIVE'),
+	('PROMOTION_BULB_BOW',		'BULB_BOW_BONUS_WATER_PERSPECTIVE');
+insert or replace into Modifiers
+	(ModifierId, 							ModifierType)
+values
+	('HELMSMAN_BONUS_WATER_PERSPECTIVE',	'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT'),
+	('BULB_BOW_BONUS_WATER_PERSPECTIVE',	'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT');
+insert or replace into ModifierArguments
+	(ModifierId, 							Name, 		Type, 				Value)
+values
+	('HELMSMAN_BONUS_WATER_PERSPECTIVE',	'Amount',	'ARGTYPE_IDENTITY',	1),
+	('BULB_BOW_BONUS_WATER_PERSPECTIVE',	'Amount',	'ARGTYPE_IDENTITY',	1);
+--海军远程左2右2换位
+update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_PREPARATORY_FIRE';
+update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLING_BARRAGE';
+update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
+update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
+update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
+update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
+update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
+update UnitPromotions set Level = 4 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_LOOT';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_AUTO_SOLICITATION';
+insert or replace into UnitPromotionPrereqs
+	(UnitPromotion, 					PrereqUnitPromotion)
+values
+	('PROMOTION_AUTO_SOLICITATION',		'PROMOTION_WOLFPACK');
+
+update Units set PrereqTech = 'TECH_ROCKETRY' where UnitType = 'UNIT_BOMBER';

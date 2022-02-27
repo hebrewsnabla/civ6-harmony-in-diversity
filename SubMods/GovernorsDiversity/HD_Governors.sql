@@ -225,6 +225,35 @@ update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
 
+-- 公司模式 跨国公司
+update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'
+	where GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
+	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,				ModifierId)
+select
+	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP',	'MULTINATIONAL_CORP_PRODUCT_TOURISM'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,							SubjectRequirementSetId)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',	'HD_PLAYER_HAS_CIVIC_CAPITALISM'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'GreatWorkObjectType',		'GREATWORKOBJECT_PRODUCT'
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+select
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'ScalingFactor',			250
+where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 --Victor
@@ -256,10 +285,30 @@ insert or replace into GovernorPromotionModifiers (GovernorPromotionType,Modifie
 	('GOVERNOR_PROMOTION_REDOUBT',	'DEFENDER_ADJUST_CITY_DEFENSE_STRENGTH'),
 	('GOVERNOR_PROMOTION_REDOUBT',	'DEFENSE_LOGISTICS_SIEGE_PROTECTION'),
 	-- ('GOVERNOR_PROMOTION_REDOUBT',	'PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES'),
-	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_ENCAMPMENT_PRODUCTION'),
-	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_ENCAMPMENT_BUILDINGS_PRODUCTION'),
-	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_HARBOR_PRODUCTION'),
-	('GOVERNOR_PROMOTION_REDOUBT',	'VETERANCY_HARBOR_BUILDINGS_PRODUCTION');
+	('GOVERNOR_PROMOTION_REDOUBT',	'VICTOR_ENCAMPMENT_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VICTOR_ENCAMPMENT_BUILDINGS_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VICTOR_HARBOR_PRODUCTION'),
+	('GOVERNOR_PROMOTION_REDOUBT',	'VICTOR_HARBOR_BUILDINGS_PRODUCTION');
+--维克多bug修复
+insert or replace into Modifiers
+	(ModifierId,                                            	ModifierType)
+values
+	('VICTOR_ENCAMPMENT_PRODUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'),
+	('VICTOR_ENCAMPMENT_BUILDINGS_PRODUCTION',					'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION'),
+	('VICTOR_HARBOR_PRODUCTION',								'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'),
+	('VICTOR_HARBOR_BUILDINGS_PRODUCTION',						'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION');
+insert or replace into ModifierArguments
+	(ModifierId,                                            	Name,                   	Type,                Value)
+values
+	('VICTOR_ENCAMPMENT_PRODUCTION',							'DistrictType',				'ARGTYPE_IDENTITY',	'DISTRICT_ENCAMPMENT'),
+	('VICTOR_ENCAMPMENT_PRODUCTION',							'Amount',					'ARGTYPE_IDENTITY',	30),
+	('VICTOR_HARBOR_PRODUCTION',								'DistrictType',				'ARGTYPE_IDENTITY',	'DISTRICT_HARBOR'),
+	('VICTOR_HARBOR_PRODUCTION',								'Amount',					'ARGTYPE_IDENTITY',	30),
+	('VICTOR_ENCAMPMENT_BUILDINGS_PRODUCTION',					'DistrictType',				'ARGTYPE_IDENTITY',	'DISTRICT_ENCAMPMENT'),
+	('VICTOR_ENCAMPMENT_BUILDINGS_PRODUCTION',					'Amount',					'ARGTYPE_IDENTITY',	30),
+	('VICTOR_HARBOR_BUILDINGS_PRODUCTION',						'DistrictType',				'ARGTYPE_IDENTITY',	'DISTRICT_HARBOR'),
+	('VICTOR_HARBOR_BUILDINGS_PRODUCTION',						'Amount',					'ARGTYPE_IDENTITY',	30);
+
 
 --level 1 promotion GOVERNOR_PROMOTION_GARRISON_COMMANDER
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_GARRISON_COMMANDER';
@@ -312,7 +361,10 @@ values
 --level 2 promotion GOVERNOR_PROMOTION_CONSCRIPTION
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'CITY_DEFENDER_FREE_PROMOTIONS'),
-	('GOVERNOR_PROMOTION_CONSCRIPTION',	'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT');
+	('GOVERNOR_PROMOTION_CONSCRIPTION',	'VICTOR_SCIENCE_TRAINED_UNIT');
+
+-- update Modifiers set Permanent = 0 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT';
+-- update Modifiers set RunOnce = 0 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT';
 -- update ModifierArguments set Value = 60 where ModifierId = 'BLACK_MARKETEER_STRATEGIC_RESOURCE_COST_DISCOUNT' and Name = 'Amount';
 
 -- insert or replace into Modifiers	
@@ -363,6 +415,7 @@ insert or replace into GovernorPromotionModifiers (GovernorPromotionType,Modifie
 insert or replace into Modifiers	
 	(ModifierId,									ModifierType)
 values
+	('VICTOR_SCIENCE_TRAINED_UNIT',					'MODIFIER_SINGLE_CITY_GRANT_YIELD_PER_UNIT_COST'),
 	('VICTOR_AIR_UNITS_PRODUCTION',					'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
 	('VICTOR_GDR_PRODUCTION',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_TAG_ERA_PRODUCTION'),
 	('VICTOR_ALL_MILITARY_UNITS_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_MILITARY_UNITS_PRODUCTION');
@@ -370,6 +423,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
+	('VICTOR_SCIENCE_TRAINED_UNIT',				'UnitProductionPercent',	25),
+	('VICTOR_SCIENCE_TRAINED_UNIT',				'YieldType',			'YIELD_SCIENCE'),
 	('VICTOR_AIR_UNITS_PRODUCTION',				'Domain',				'DOMAIN_AIR'),
 	('VICTOR_AIR_UNITS_PRODUCTION',				'Amount',				50),
 	('VICTOR_ALL_MILITARY_UNITS_PRODUCTION',	'Amount',				30),
@@ -614,7 +669,7 @@ values
 
 -- fishery now available to all major civs without Liang
 update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
-delete from ImprovementModifiers where ImprovementType = "IMPROVEMENT_FISHERY";
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHERY';
 --bishop
 --level 0 GOVERNOR_PROMOTION_CARDINAL_BISHOP
 --LEVEL 1-0 GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR
@@ -782,6 +837,7 @@ update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_EDUCATOR_SPA
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,								ModifierId)
 values
+	('GOVERNOR_PROMOTION_MERCHANT_CURATOR',				'CURATOR_DOUBLE_ARTIFACT_TOURISM'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER1_SCIENCE'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER'),
 	('GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE',	'EDUCATOR_CAMPUS_TIER2_SCIENCE'),
@@ -792,6 +848,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,											SubjectRequirementSetId)
 values
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',					Null),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',				'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',		'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
 	('EDUCATOR_CAMPUS_TIER2_SCIENCE',				'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',				'HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING_REQUIREMENTS'),
@@ -802,6 +859,8 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'GreatWorkObjectType',	'GREATWORKOBJECT_ARTIFACT'),
+	('CURATOR_DOUBLE_ARTIFACT_TOURISM',				'ScalingFactor',		300),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'YieldType',	'YIELD_SCIENCE'),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE',				'Amount',		5),
 	('EDUCATOR_CAMPUS_TIER1_SCIENCE_MODIFIER',		'YieldType',	'YIELD_SCIENCE'),
@@ -890,54 +949,82 @@ values
 
 -----------------------------------------------------------------------------------------------------------------------------------
 -- Ibrahim
--- 树调整
-update GovernorPromotionPrereqs set PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_CAPOU_AGHA' where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
-update GovernorPromotions set column = 1 where GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA';
-update GovernorPromotions set level = 3 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
-update GovernorPromotions set column = 0 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
-update GovernorPromotions set column = 2 where GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
-insert into GovernorPromotionPrereqs
-    (GovernorPromotionType,             PrereqGovernorPromotion)
-values
-    ('GOVERNOR_PROMOTION_CAPOU_AGHA',   'GOVERNOR_PROMOTION_HEAD_FALCONER');
-delete from GovernorPromotionPrereqs where PrereqGovernorPromotion = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI' and GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
---LEVEL 0 GOVERNOR_PROMOTION_PASHA
---level 1-0 GOVERNOR_PROMOTION_HEAD_FALCONER
---level 1-2 GOVERNOR_PROMOTION_SERASKER
---level 2-1 GOVERNOR_PROMOTION_CAPOU_AGHA
---level 3-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
---level 3-2 GOVERNOR_PROMOTION_GRAND_VISIER
+--3t就职一级：就职城市的每个人口为本城+1锤。获得单位造价25%的科技值。
+--左一：建造军营建筑时额外+30%生产力。军营和军营每级建筑+3瓶。
+--右一：10环内对区域+10力。
+--中二：与本方和盟友的共同敌人作战时+5力。
+--左二：在外国首都就职时，此文明对你不满每回合多降低5，此文明任何城市无法对您城市施加忠诚度压力。
+--右二：建造军事单位加速20%。在任职城市内生产文艺复兴以后的近战和攻城单位时会额外赠送一个相同的单位。
 
-delete from GovernorPromotionModifiers where 
+update Governors set TransitionStrength = 150 where GovernorType = 'GOVERNOR_IBRAHIM';
+
+-- 树调整
+--level 0 GOVERNOR_PROMOTION_PASHA
+--level 1-0 GOVERNOR_PROMOTION_HEAD_FALCONER
+--LEVEL 1-2 GOVERNOR_PROMOTION_SERASKER
+--level 2-1 GOVERNOR_PROMOTION_GRAND_VISIER
+--level 3-0 GOVERNOR_PROMOTION_KHASS_ODA_BASHI
+--level 3-2 GOVERNOR_PROMOTION_CAPOU_AGHA
+
+--位置调整
+update GovernorPromotions set Level = 2, Column = 1 where GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+update GovernorPromotions set Level = 3, Column = 0 where GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI';
+update GovernorPromotions set Level = 3, Column = 2 where GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA';
+
+--连线
+delete from GovernorPromotionPrereqs where 
 	   GovernorPromotionType = 'GOVERNOR_PROMOTION_PASHA'
 	or GovernorPromotionType = 'GOVERNOR_PROMOTION_SERASKER' 
 	or GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI' 
 	or GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA'
-	or GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER'
+	or GovernorPromotionType = 'GOVERNOR_PROMOTION_HEAD_FALCONER';
 
-update ModifierArguments set Value = 8 where ModifierId = 'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT' and Name = 'Amount';
-update ModifierArguments set Value = 5 where ModifierId = 'CAPOU_AGHA_ADJUST_GRIEVANCES' and Name = 'Score';
-update ModifierArguments set Value = 8 where ModifierId = 'KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS' and Name = 'Amount';
-
-insert or replace into GovernorPromotionModifiers 
-	(GovernorPromotionType,								ModifierId) 
+insert into GovernorPromotionPrereqs
+    (GovernorPromotionType,             	PrereqGovernorPromotion)
 values
-	('GOVERNOR_PROMOTION_PASHA',						'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT'),
-	('GOVERNOR_PROMOTION_HEAD_FALCONER',				'PRESTIGE_IDENTITY_PRESSURE_TO_DOMESTIC_CITIES'),
-	('GOVERNOR_PROMOTION_SERASKER',						'SERASKER_POP_PRODUCTION'),
-	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',				'CAPOU_AGHA_ADJUST_GRIEVANCES'),
-	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',				'GRAND_VIZIER_ADJUST_IGNORE_CULTURAL_IDENTITY'),
-	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'PASHA_BONUS_UNIT_PRODUCTION'),
-	('GOVERNOR_PROMOTION_CAPOU_AGHA',					'CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE'),
-	('GOVERNOR_PROMOTION_GRAND_VISIER',					'KHASS_ODA_BASHI_ADJUST_ALLIANCE_POINTS'),
-	('GOVERNOR_PROMOTION_GRAND_VISIER',					'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH');
+    ('GOVERNOR_PROMOTION_HEAD_FALCONER',   	'GOVERNOR_PROMOTION_PASHA'),
+    ('GOVERNOR_PROMOTION_SERASKER',   		'GOVERNOR_PROMOTION_PASHA'),
+	('GOVERNOR_PROMOTION_GRAND_VISIER',   	'GOVERNOR_PROMOTION_HEAD_FALCONER'),    
+	('GOVERNOR_PROMOTION_GRAND_VISIER',   	'GOVERNOR_PROMOTION_SERASKER'),
+	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',  'GOVERNOR_PROMOTION_GRAND_VISIER'),    
+	('GOVERNOR_PROMOTION_CAPOU_AGHA',   	'GOVERNOR_PROMOTION_GRAND_VISIER');
+
+--能力
+delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_PASHA'
+	or   GovernorPromotionType = 'GOVERNOR_PROMOTION_HEAD_FALCONER'
+	or   GovernorPromotionType = 'GOVERNOR_PROMOTION_CAPOU_AGHA'
+	or   GovernorPromotionType = 'GOVERNOR_PROMOTION_KHASS_ODA_BASHI'
+	or   GovernorPromotionType = 'GOVERNOR_PROMOTION_GRAND_VISIER';
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,         	 	ModifierId)
+values
+	('GOVERNOR_PROMOTION_PASHA',     		'SERASKER_POP_PRODUCTION'),
+	('GOVERNOR_PROMOTION_PASHA',     		'HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_TIME'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',	'HEAD_FALCONER_ENCAMPMENT_BUILDINGS_PRODUCTION_MODIFIER'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',	'HEAD_FALCONER_ENCAMPMENT_SCIENCE_BONUS1'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',	'HEAD_FALCONER_BARRACKS_STABLE_SCIENCE_BONUS1'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',	'HEAD_FALCONER_ARMORY_SCIENCE_BONUS1'),
+	('GOVERNOR_PROMOTION_HEAD_FALCONER',	'HEAD_FALCONER_MILITARY_ACADEMY_SCIENCE_BONUS1'),
+	('GOVERNOR_PROMOTION_SERASKER',			'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT'),
+	('GOVERNOR_PROMOTION_GRAND_VISIER',		'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH'),
+	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',	'GRAND_VIZIER_ADJUST_IGNORE_CULTURAL_IDENTITY'),
+	('GOVERNOR_PROMOTION_KHASS_ODA_BASHI',	'CAPOU_AGHA_ADJUST_GRIEVANCES'),
+	('GOVERNOR_PROMOTION_CAPOU_AGHA',		'PASHA_BONUS_UNIT_PRODUCTION'),
+	('GOVERNOR_PROMOTION_CAPOU_AGHA',		'CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE');
 
 insert or replace into Modifiers	
-	(ModifierId,										ModifierType,												SubjectRequirementSetId)
+	(ModifierId,												ModifierType,												SubjectRequirementSetId)
 values
-	('SERASKER_POP_PRODUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLAYER_IS_OTTOMAN'),
-	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_UNIT_COPY_TAG',			'PLAYER_IS_OTTOMAN'),
-	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',			'MODIFIER_PLAYER_ALLIANCES_ATTACH_MODIFIER',				NULL);
+	('SERASKER_POP_PRODUCTION',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLAYER_IS_OTTOMAN'),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',						'MODIFIER_SINGLE_CITY_ADJUST_EXTRA_UNIT_COPY_TAG',			'PLAYER_IS_OTTOMAN'),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',					'MODIFIER_PLAYER_ALLIANCES_ATTACH_MODIFIER',				NULL),
+	('HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_TIME',  	'MODIFIER_SINGLE_CITY_GRANT_YIELD_PER_UNIT_COST',			NULL),
+	('HEAD_FALCONER_ENCAMPMENT_BUILDINGS_PRODUCTION_MODIFIER',	'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION',			NULL),
+	('HEAD_FALCONER_ENCAMPMENT_SCIENCE_BONUS1',					'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'CITY_HAS_ENCAMPMENT'),
+	('HEAD_FALCONER_BARRACKS_STABLE_SCIENCE_BONUS1',			'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'BUILDING_IS_BARRACKS_STABLE_MILITARITIC_CITY_STATE'),
+	('HEAD_FALCONER_ARMORY_SCIENCE_BONUS1',						'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'BUILDING_IS_ARMORY'),
+	('HEAD_FALCONER_MILITARY_ACADEMY_SCIENCE_BONUS1',			'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',					'BUILDING_IS_MILITARY_ACADEMY');
 
 insert or replace into Modifiers	
 	(ModifierId,										ModifierType,									SubjectRequirementSetId,					SubjectStackLimit)
@@ -945,14 +1032,30 @@ values
 	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',	'MODIFIER_ALLIANCE_COMBATS_UNIT_STRENGTHS',		'ALLIES_AT_WAR_WITH_TARGET_REQUIREMENTS',	1);
 
 insert or replace into ModifierArguments
-	(ModifierId,										Name,					Value)
+	(ModifierId,                                            	Name,                   	Value)
 values
-	('SERASKER_POP_PRODUCTION',							'YieldType',			'YIELD_PRODUCTION'),
-	('SERASKER_POP_PRODUCTION',							'Amount',				1),
-	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Tag',					'CLASS_CAPOU_EXTRA'),
-	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',				'Amount',				1),
-	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',			'ModifierId',			'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER'),
-	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',	'Amount',				5);
+	('SERASKER_POP_PRODUCTION',									'YieldType',				'YIELD_PRODUCTION'),
+	('SERASKER_POP_PRODUCTION',									'Amount',					1),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',						'Tag',						'CLASS_CAPOU_EXTRA'),
+	('CAPOU_AGHA_EXTRA_MELEE_AND_SIEGE',						'Amount',					1),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH',					'ModifierId',				'GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER'),
+	('GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER',			'Amount',					5),
+	('HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_TIME',  	'YieldType',           		'YIELD_SCIENCE'),
+	('HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_TIME',  	'UnitProductionPercent',	25),
+	('HEAD_FALCONER_ENCAMPMENT_BUILDINGS_PRODUCTION_MODIFIER',	'DistrictType',				'DISTRICT_ENCAMPMENT'),
+	('HEAD_FALCONER_ENCAMPMENT_BUILDINGS_PRODUCTION_MODIFIER',	'Amount',					30),
+	('HEAD_FALCONER_ENCAMPMENT_SCIENCE_BONUS1',					'YieldType',				'YIELD_SCIENCE'),
+	('HEAD_FALCONER_ENCAMPMENT_SCIENCE_BONUS1',					'Amount',					3),
+	('HEAD_FALCONER_BARRACKS_STABLE_SCIENCE_BONUS1',			'YieldType',				'YIELD_SCIENCE'),
+	('HEAD_FALCONER_BARRACKS_STABLE_SCIENCE_BONUS1',			'Amount',					3),
+	('HEAD_FALCONER_ARMORY_SCIENCE_BONUS1',						'YieldType',				'YIELD_SCIENCE'),
+	('HEAD_FALCONER_ARMORY_SCIENCE_BONUS1',						'Amount',					3),
+	('HEAD_FALCONER_MILITARY_ACADEMY_SCIENCE_BONUS1',			'YieldType',				'YIELD_SCIENCE'),
+	('HEAD_FALCONER_MILITARY_ACADEMY_SCIENCE_BONUS1',			'Amount',					3);
+
+update ModifierArguments set Value = 10 where ModifierId = 'SERASKER_ADJUST_GOVERNOR_COMBAT_DISTRICT';
+update ModifierArguments set Value = 5 where ModifierId = 'GRAND_VIZIER_ADJUST_IGNORE_CULTURAL_IDENTITY';
+
 
 insert or replace into TypeTags	(Type,	Tag)
 select UnitType,	'CLASS_CAPOU_EXTRA' from Units 

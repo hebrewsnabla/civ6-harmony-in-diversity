@@ -30,7 +30,8 @@ values
     ("LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                                  "From defending on Hills"),
     -- ("LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                                  "Fighting on flat tiles without Woods, Jungle, or Marsh"),
     ("LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                      "From attacking a wounded Unit"),
-    ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack");
+    ("LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                             "From Wolfpack"),
+    ("LOC_HD_GENERAL_GUARD_PREVIEW_TEXT",                                       "From General Guard");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -64,7 +65,8 @@ values
     ("zh_Hans_CN",  "LOC_HD_HILLS_DEFEND_BONUS_PREVIEW_TEXT",                               "来自在丘陵上防御"),
     -- ("zh_Hans_CN",  "LOC_HD_OPEN_AREA_STRENGTH_PREVIEW_TEXT",                               "来自在没有雨林、树林、沼泽地貌的平坦地形作战"),
     ("zh_Hans_CN",  "LOC_HD_ATTACK_WOUNDED_PREVIEW_TEXT",                                   "来自攻击受伤的单位"),
-    ("zh_Hans_CN",  "LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                          "来自狼群战术");
+    ("zh_Hans_CN",  "LOC_HD_WOLFPACK_ADJACENT_BONUS_PREVIEW_TEXT",                          "来自狼群战术"),
+    ("zh_Hans_CN",  "LOC_HD_GENERAL_GUARD_PREVIEW_TEXT",                                    "来自将领卫队");
 
 --------------------------------------------------------------------------------
 -- Language: en_US
@@ -137,23 +139,25 @@ values
     --naval melee
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                      "+1 additional attack per turn if [ICON_Movement] Movement allows."),
-    ("LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                               "+10 [ICON_Strength] Combat Strength vs. naval raider units."),
+    ("LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                               "+12 [ICON_Strength] Combat Strength vs. naval raider units."),
     --naval ranged
-    ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+5 [ICON_Strength] Combat Strength vs. District defenses."),
-    ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+7 [ICON_Strength] Combat Strength vs. District defenses."),
+    ("LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                   "+7 [ICON_Strength] Combat Strength vs. District defenses."),
+    ("LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                               "+12 [ICON_Strength] Combat Strength vs. District defenses."),
     ("LOC_PROMOTION_BULB_BOW_HD_NAME",                                          "Bulb Bow"),
-    ("LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
+    ("LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                   "+1 [ICON_Movement] Movement and +1 sight range."),
     --naval raider
     ("LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                    "+1 [ICON_Movement] Movement and +1 sight range."),
     --("LOC_PROMOTION_LOOT_NAME",                                                 ""),
     ("LOC_PROMOTION_LOOT_DESCRIPTION",                                          "+100 [ICON_Gold] Gold from coastal raids. +100% yields gained from plundering sea [ICON_TradeRoute] Trade Routes."),
     ("LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                      "+2 [ICON_Strength] Combat Strength for adjacent naval raiders"),
     ("LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                   "Boarding Action"),
-    ("LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                            "+10 [ICON_Strength] Combat Strength when attacking naval units."),
+    ("LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                            "+7 [ICON_Strength] Combat Strength when attacking naval units."),
     ("LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                    "Damage Control"),
     ("LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                             "Heals outside of friendly territory."),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
-    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn.");
+    ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
+    ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
+    ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -224,20 +228,22 @@ values
     --naval melee
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                          "冲撞战术"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                   "如果移动力 [ICON_Movement] 允许，每回合攻击次数+1"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                            "与海军袭击者单位战斗时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_CREEPING_ATTACK_DESCRIPTION",                            "与海军袭击者单位战斗时+12 [ICON_Strength] 战斗力。"),
     --naval ranged
-    ("zh_Hans_CN",  "LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                "攻击区域防御时+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                            "攻击区域防御时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BOMBARDMENT_DESCRIPTION",                                "攻击区域防御时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_ROLLING_BARRAGE_DESCRIPTION",                            "攻击区域防御时+12 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BULB_BOW_HD_NAME",                                       "球鼻艏"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                "+1 [ICON_Movement] 移动力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION",                                "+1 [ICON_Movement] 移动力并+1 视野范围。"),
     --naval raider
-    ("zh_Hans_CN",  "LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                 "+1 [ICON_Movement] 移动力并+1视野范围。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SWIFT_KEEL_DESCRIPTION",                                 "+1 [ICON_Movement] 移动力并+1 视野范围。"),
     --("zh_Hans_CN",  "LOC_PROMOTION_LOOT_NAME",                                              "破交作战"),
     ("zh_Hans_CN",  "LOC_PROMOTION_LOOT_DESCRIPTION",                                       "海岸扫荡获得的 [ICON_Gold] 金币+100。掠夺海上 [ICON_TradeRoute] 贸易路线的收益+100%。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_WOLFPACK_DESCRIPTION",                                   "为相邻的友方海军袭击者单位+2 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_NAME",                                "跳帮"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                         "进攻海军单位时+10 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION",                         "进攻海军单位时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME",                                 "损害管制"),
     ("zh_Hans_CN",  "LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION",                          "可在友军领土之外回复。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                              "自动索敌"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。");
+    ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                    "将领卫队"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。");

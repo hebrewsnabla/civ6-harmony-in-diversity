@@ -4,10 +4,19 @@
 
 --Ethiopia
 --独石教堂基础信仰由+1变为+2, 拥有独石教堂的城市可以购买移民和工人
+
+--insert or replace into Improvement_YieldChanges
+--    (ImprovementType,                 YieldType,          YieldChange)
+--values
+--    ('IMPROVEMENT_ROCK_HEWN_CHURCH', 'YIELD_FAITH',       2);
+
+-- 独石教堂基础产出改为 +1 信仰 +1 食物, 拥有独石教堂的城市可以购买移民和工人
+delete from Improvement_YieldChanges where ImprovementType = "IMPROVEMENT_ROCK_HEWN_CHURCH";
 insert or replace into Improvement_YieldChanges
-    (ImprovementType,                 YieldType,          YieldChange)
+	(ImprovementType, YieldType, YieldChange)
 values
-    ('IMPROVEMENT_ROCK_HEWN_CHURCH', 'YIELD_FAITH',       2);
+	("IMPROVEMENT_ROCK_HEWN_CHURCH", "YIELD_FOOD", 1),
+	("IMPROVEMENT_ROCK_HEWN_CHURCH", "YIELD_FAITH", 1);
 
 insert or replace into ImprovementModifiers
 	(ImprovementType,				        ModifierId)

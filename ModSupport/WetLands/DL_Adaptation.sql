@@ -24,6 +24,7 @@ insert or replace into Improvement_YieldChanges
 values  ('IMPROVEMENT_JNR_OASIS_FARM',  'YIELD_CULTURE',    2),
         ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_PRODUCTION', 1),
         ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_SCIENCE',    0);
+update Improvements set TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
 
 -- Improvement_BonusYieldChanges Removed
 --------------------------------------------------------------

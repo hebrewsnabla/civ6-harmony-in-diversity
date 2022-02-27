@@ -23,7 +23,7 @@ from Resources where ResourceType = 'RESOURCE_DLV_BISON';
 delete from Resource_Harvests where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
 -- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_PRODUCTION';
 -- delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_CAMEL' and YieldType = 'YIELD_GOLD';
-delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_CHEESE' and YieldType = 'YIELD_FOOD';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_CHEESE' and YieldType = 'YIELD_CULTURE';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_SHARK' and YieldType = 'YIELD_PRODUCTION';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_P0K_PLUMS' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_CVS_POMEGRANATES' and YieldType = 'YIELD_FOOD';

@@ -6,13 +6,13 @@
 update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 update Civics set Description = 'LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION' where CivicType = 'CIVIC_MILITARY_TRAINING';
 update Civics set Description = 'LOC_CIVIC_MERCENARIES_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCENARIES';
-update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
-
+update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+update Civics set Description = 'LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION' where CivicType ='CIVIC_SCORCHED_EARTH';
 update Technologies set Description = 'LOC_TECH_SHIPBUILDING_HD_DESCRIPTION' where TechnologyType ='TECH_SHIPBUILDING';
 update Technologies set Description = 'LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION' where TechnologyType ='TECH_MILITARY_TACTICS';
 update Technologies set Description = 'LOC_TECH_GUNPOWDER_HD_DESCRIPTION' where TechnologyType ='TECH_GUNPOWDER';
 update Technologies set Description = 'LOC_TECH_RIFLING_HD_DESCRIPTION' where TechnologyType ='TECH_RIFLING';
-update Technologies set Description = 'LOC_TECH_SANITATION_HD_DESCRIPTION' where TechnologyType ='TECH_SANITATION';
+-- update Technologies set Description = 'LOC_TECH_SANITATION_HD_DESCRIPTION' where TechnologyType ='TECH_SANITATION';
 
 insert or replace into Types
     (Type,                                                      Kind)
@@ -40,7 +40,7 @@ values
     -- 
     ('TECH_MILITARY_TACTICS',                               'HD_MELEE_BATTLE_LINE'),
     ('TECH_MILITARY_TACTICS',                               'HD_RANGED_HILLS_STRENGTH'),
-    ('TECH_SANITATION',                                     'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
+    ('TECH_MILITARY_TACTICS',                               'HD_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
     ('TECH_SHIPBUILDING',                                   'HD_RECON_IGNORE_RIVERS_AND_SHORES'),
     ('TECH_GUNPOWDER',                                      'HD_HEAVYC_HEAL_AFTER_KILL'),
     ('TECH_MILITARY_TACTICS',                               'HD_LIGHTC_AGAINST_UNIT_BONUS'),
@@ -52,7 +52,7 @@ values
     ('CIVIC_FEUDALISM',                                     'HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_RANGED_GARRISON_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_ANTIC_HILLS_DEFEND_BONUS'),
-    ('CIVIC_MERCANTILISM',                                  'HD_RECON_IGNORE_ZOC'),
+    ('CIVIC_HUMANISM',                                      'HD_RECON_IGNORE_ZOC'),
     ('CIVIC_MILITARY_TRAINING',                             'HD_HEAVYC_OPEN_AREA_STRENGTH'),
     -- ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_EXTRA_FAITH_PLUNDER'),
     ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_ENEMY_MOVEMENT'),
@@ -332,10 +332,13 @@ delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_THRUST' 
 -- update ModifierArguments set Value = 10 where ModifierId = 'CHOKE_POINTS_BONUS' and Name = 'Amount';
 update Modifiers set SubjectRequirementSetId = 'CHOKE_POINTS_PLOT_REQUIREMENTS' where ModifierId = 'CHOKE_POINTS_BONUS';
 --naval melee
-update ModifierArguments set Value = 10 where ModifierId = 'CREEPING_ATTACK_BONUS_VS_RAIDERS' and Name = 'Amount';
+--匍匐攻击：与海军袭击者战斗+12力
+update ModifierArguments set Value = 12 where ModifierId = 'CREEPING_ATTACK_BONUS_VS_RAIDERS' and Name = 'Amount';
 --naval ranged
-update ModifierArguments set Value = 5 where ModifierId = 'BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+--轰炸：攻击区域防御+7力
+update ModifierArguments set Value = 7 where ModifierId = 'BOMBARDMENT_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
+--徐进弹：攻击区域防御+12力
+update ModifierArguments set Value = 12 where ModifierId = 'ROLLING_BARRAGE_BONUS_VS_DISTRICT_DEFENSES' and Name = 'Amount';
 --naval raider
 update ModifierArguments set Value = 100 where ModifierId = 'LOOT_GOLD_FROM_COASTAL_RAID' and Name = 'Bonus';
 delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_WOLFPACK' and ModifierId = 'WOLFPACK_ADDITIONAL_ATTACK';
@@ -566,7 +569,8 @@ values
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',       1),
      --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       10),
+     --跳帮：主动攻击海军单位+7力
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       7),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',       100),
     -- ('WOLFPACK_ADJACENT_BONUS',                                     'AbilityType',  'ABILITY_WOLFPACK_ADJACENT_BONUS');
     ('WOLFPACK_ADJACENT_BONUS',                                     'ModifierId',   'HD_WOLFPACK_ADJACENT_BONUS');
@@ -889,3 +893,87 @@ values
     ('REQUIRES_ANTI_CAVALRY_NEXT_TO_OWNER',         'Tag',      'CLASS_ANTI_CAVALRY'),
     ('REQUIRES_LIGHT_CAVALRY_NEXT_TO_OWNER',        'Tag',      'CLASS_LIGHT_CAVALRY'),
     ('REQUIRES_HEAVY_CAVALRY_NEXT_TO_OWNER',        'Tag',      'CLASS_HEAVY_CAVALRY');
+--海军近战单位升级改动：左一舵手改为一速一视野
+--海军远程单位升级改动：右三球鼻艏改为一速一视野
+--海军袭击者焦土政策：海岸扫荡不结束回合
+--重骑兵单位升级改动：右三反应装甲改为将领卫队：给周围一环单位+2力（升级线左右三互通）
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_REACTIVE_ARMOR' and ModifierId = 'REACTIVE_ARMOR_DEFEND_BONUS';
+delete from UnitPromotionModifiers where UnitPromotionType = 'PROMOTION_REACTIVE_ARMOR' and ModifierId = 'REACTIVE_ARMOR_DEFEND_BONUS_HIGHER_STRENGTH';
+insert or replace into UnitPromotionPrereqs
+    (UnitPromotion,                 PrereqUnitPromotion)
+values
+    ('PROMOTION_REACTIVE_ARMOR',    'PROMOTION_HEAVYC_SHOCK'),
+    ('PROMOTION_ARMOR_PIERCING',    'PROMOTION_MARAUDING');
+insert or replace into UnitPromotionModifiers
+    (UnitPromotionType,             ModifierId)
+values
+    ('PROMOTION_HELMSMAN',          'HELMSMAN_BONUS_WATER_PERSPECTIVE'),
+    ('PROMOTION_BULB_BOW',          'BULB_BOW_BONUS_WATER_PERSPECTIVE'),
+    ('PROMOTION_REACTIVE_ARMOR',    'HD_GENERAL_GUARD');
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                                           SubjectRequirementSetId)
+values
+    ('HELMSMAN_BONUS_WATER_PERSPECTIVE',            'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT',                    NULL),
+    ('BULB_BOW_BONUS_WATER_PERSPECTIVE',            'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT',                    NULL),
+    ('HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',          'MODIFIER_PLAYER_UNIT_ADJUST_ADVANCED_COASTAL_RAID',    NULL),
+    ('HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID_MODIFIER', 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                  NULL),
+    ('HD_GENERAL_GUARD',                            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                  'HD_AOE_REQUIRES_GENERAL_GUARD'),
+    ('HD_GENERAL_GUARD_STRENGTH',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 NULL);
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,                           Value)
+values
+    ('HELMSMAN_BONUS_WATER_PERSPECTIVE',                'Amount',                       1),
+    ('BULB_BOW_BONUS_WATER_PERSPECTIVE',                'Amount',                       1),
+    ('HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',              'UseAdvancedCoastalRaid',       1),
+    ('HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID_MODIFIER',     'AbilityType',                  'ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID'),
+    ('HD_GENERAL_GUARD',                                'AbilityType',                  'ABILITY_GENERAL_GUARD_STRENGTH'),
+    ('HD_GENERAL_GUARD_STRENGTH',                       'Amount',                       2);
+insert or replace into CivicModifiers
+    (CivicType,                                         ModifierId)
+values
+    ('CIVIC_SCORCHED_EARTH',                            'HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID_MODIFIER');
+
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',      'KIND_ABILITY'),
+    ('ABILITY_GENERAL_GUARD_STRENGTH',                  'KIND_ABILITY');
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',      'CLASS_NAVAL_RAIDER');
+insert or replace into TypeTags 
+    (Type,                                              Tag)
+select 'ABILITY_GENERAL_GUARD_STRENGTH',Tag from TypeTags where Type = 'ABILITY_GREAT_GENERAL_STRENGTH';
+insert or replace into UnitAbilities
+    (UnitAbilityType,                                   Name,                                   Description,                                                        inactive,   Permanent)
+values
+    ('ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',      null,                                   'LOC_ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID_DESCRIPTION',       1,          1),
+    ('ABILITY_GENERAL_GUARD_STRENGTH',                  'LOC_GENERAL_GUARD_STRENGTH_NAME',      'LOC_GENERAL_GUARD_STRENGTH_DESCRIPTION',                           1,          0);
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                   ModifierId)
+values
+    ('ABILITY_HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID',      'HD_NAVAL_RAIDER_LESS_MOVEMENT_RAID'),
+    ('ABILITY_GENERAL_GUARD_STRENGTH',                  'HD_GENERAL_GUARD_STRENGTH');
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,        Text)
+values
+    ('HD_GENERAL_GUARD_STRENGTH',               'Preview',      '+{1_Amount} {LOC_HD_GENERAL_GUARD_PREVIEW_TEXT}');
+
+--海军远程左2右2换位
+update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_PREPARATORY_FIRE';
+update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLING_BARRAGE';
+update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
+update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
+update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
+update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
+update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
+update UnitPromotions set Level = 4 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_LOOT';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_AUTO_SOLICITATION';
+insert or replace into UnitPromotionPrereqs
+    (UnitPromotion,                     PrereqUnitPromotion)
+values
+    ('PROMOTION_AUTO_SOLICITATION',     'PROMOTION_WOLFPACK');

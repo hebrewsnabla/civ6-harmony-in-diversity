@@ -113,3 +113,7 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FARM';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_PASTURE';
 update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementType = 'IMPROVEMENT_FISHING_BOATS';
+
+--硝石和铝产量多+1 （Resource_Consumption）
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_NITER';
+update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';

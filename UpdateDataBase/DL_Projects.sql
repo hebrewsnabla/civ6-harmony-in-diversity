@@ -88,7 +88,7 @@ update Projects set Cost = 150,	PrereqTech = 'TECH_IRON_WORKING', RequiredBuildi
 update Projects set Cost = 200,	PrereqTech = 'TECH_GUNPOWDER', RequiredBuilding = 'BUILDING_ARMORY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_NITER';
 update Projects set Cost = 300,	PrereqTech = 'TECH_REFINING', RequiredBuilding = 'BUILDING_ARMORY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_COAL';
 update Projects set Cost = 500,	PrereqTech = 'TECH_PLASTICS', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
-update Projects set Cost = 500,	PrereqTech = 'TECH_ADVANCED_FLIGHT', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
+update Projects set Cost = 500,	PrereqTech = 'TECH_COMPUTERS', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
 update Projects set Cost = 800,	PrereqTech = 'TECH_STEALTH_TECHNOLOGY', RequiredBuilding = 'BUILDING_MILITARY_ACADEMY'  where ProjectType = 'PROJECT_GRANT_RESOURCE_URANIUM';
 
 ------------------------------------------------------------------------------------------------------------
