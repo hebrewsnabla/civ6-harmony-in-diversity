@@ -374,11 +374,13 @@ function FeatureGenerator:AddIceToMap()
 					if (plot ~= nil) then
 						local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_ICE);
 						if (TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) == true and iAdjacent > 0) then
-							local kPlotDetails = {};
-							kPlotDetails.PlotIndex = i;
-							kPlotDetails.AdjacentIce = iAdjacent;
-							kPlotDetails.AdjacentToLand = IsAdjacentToLandPlot(x, y);
-							table.insert(aTargetPlots, kPlotDetails);
+							if not IsAdjacentToLandPlot(x, y) then -- HD: no ice adjacent to land
+								local kPlotDetails = {};
+								kPlotDetails.PlotIndex = i;
+								kPlotDetails.AdjacentIce = iAdjacent;
+								kPlotDetails.AdjacentToLand = IsAdjacentToLandPlot(x, y);
+								table.insert(aTargetPlots, kPlotDetails);
+							end -- HD: no ice adjacent to land
 						end
 					end
 				end

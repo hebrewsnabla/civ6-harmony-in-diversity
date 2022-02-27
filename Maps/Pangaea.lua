@@ -71,7 +71,7 @@ function GenerateMap()
 	
 	-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
 	-- local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 1.5); -- original setting
-	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 3);
+	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 4);
 	AddLakes(numLargeLakes);
 
 	AddFeatures();
