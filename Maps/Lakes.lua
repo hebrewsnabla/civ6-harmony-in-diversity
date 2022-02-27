@@ -208,8 +208,11 @@ function GeneratePlotTypes(world_age)
 	args.iH = g_iH
 	args.iFlags = g_iFlags;
 	args.blendRidge = 10;
-	args.blendFract = 5;
+	-- args.blendFract = 5; -- original setting
+	args.blendFract = 1;
+	-- args.extra_mountains = 5; -- original setting
 	args.extra_mountains = 2;
+	-- mountainRatio = 8 + world_age * 3; -- original setting
 	mountainRatio = 7 + world_age * 3;
 	plotTypes = ApplyTectonics(args, plotTypes);
 	plotTypes = AddLonelyMountains(plotTypes, mountainRatio);

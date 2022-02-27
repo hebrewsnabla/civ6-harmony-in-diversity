@@ -37,6 +37,7 @@ function ApplyTectonics(args, plotTypes)
 	local hillsTop2 = 72 + adjustment;
 	local hillsClumps = 1 + adjustment;
 	local hillsNearMountains = 91 - (adjustment * 2) - extra_mountains;
+	-- local mountains = 97 - adjustment - extra_mountains; -- original setting
 	local mountains = 97 - adjustment - extra_mountains;
 
 	-- Hills and Mountains handled differently according to map size
@@ -54,7 +55,8 @@ function ApplyTectonics(args, plotTypes)
 	-- 	[WorldSizeTypes.WORLDSIZE_LARGE]    = 5,
 	-- 	[WorldSizeTypes.WORLDSIZE_HUGE]		= 5
 	-- }; 
-	local grain = 3;
+	-- local grain = 3; -- original setting
+	local grain = 4;
 	-- Tectonics Plate Counts
 	--local platevalues = {
 	-- 	[WorldSizeTypes.WORLDSIZE_DUEL]		= 6,
@@ -72,27 +74,46 @@ function ApplyTectonics(args, plotTypes)
 	hillsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
 	mountainsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
 
-	-- for x = 0, args.iW - 1 do
-	-- 	local str = ""
-	-- 	for y = 0, args.iH - 1 do
-	-- 		local mountainVal = mountainsFrac:GetHeight(x, y);
-	-- 		str = str .. ' '..tostring(mountainVal)
-	-- 	end
-	-- 	print(str)
-	-- end
-	-- print('---------------------------------------------------------------------------------------')
-	-- for x = 0, args.iW - 1 do
-	-- 	local str = ""
-	-- 	for y = 0, args.iH - 1 do
-	-- 		local hillVal = hillsFrac:GetHeight(x, y);
-	-- 		str = str .. ' '.. tostring(hillVal)
-	-- 	end
-	-- 	print(str)
-	-- end
+	for x = 0, args.iW - 1 do
+		local str = ""
+		for y = 0, args.iH - 1 do
+			local mountainVal = mountainsFrac:GetHeight(x, y);
+			str = str .. ' '..tostring(mountainVal)
+		end
+		print(str)
+	end
+	print('---------------------------------------------------------------------------------------')
+	for x = 0, args.iW - 1 do
+		local str = ""
+		for y = 0, args.iH - 1 do
+			local hillVal = hillsFrac:GetHeight(x, y);
+			str = str .. ' '.. tostring(hillVal)
+		end
+		print(str)
+	end
 
 	-- Use Brian's tectonics method to weave ridgelines in to the fractals.
 	hillsFrac:BuildRidges(numPlates, iFlags, blendRidge, blendFract);
 	mountainsFrac:BuildRidges(numPlates, peaks_ridge_flags, blendRidge, blendFract);
+
+	print('---------------------------------------------------------------------------------------')
+	for x = 0, args.iW - 1 do
+		local str = ""
+		for y = 0, args.iH - 1 do
+			local mountainVal = mountainsFrac:GetHeight(x, y);
+			str = str .. ' '..tostring(mountainVal)
+		end
+		print(str)
+	end
+	print('---------------------------------------------------------------------------------------')
+	for x = 0, args.iW - 1 do
+		local str = ""
+		for y = 0, args.iH - 1 do
+			local hillVal = hillsFrac:GetHeight(x, y);
+			str = str .. ' '.. tostring(hillVal)
+		end
+		print(str)
+	end
 
 	-- Get height values for plot types
 	local iHillsBottom1 = hillsFrac:GetHeight(hillsBottom1);

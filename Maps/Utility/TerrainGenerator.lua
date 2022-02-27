@@ -263,7 +263,8 @@ end
 
 function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iContinentBoundaryPlots, bNoCoastalMountains)
 
-	local iMountainPercentByDistance:table = {42, 24, 6}; 
+	-- local iMountainPercentByDistance:table = {42, 24, 6}; 
+	local iMountainPercentByDistance:table = {36, 18, 6}; 
 	local iHillPercentByDistance:table = {50, 40, 30};
 	local aLonelyMountainIndices:table = {};
 	local aPlacedVolcanoes:table = {};
