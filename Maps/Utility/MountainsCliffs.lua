@@ -74,46 +74,27 @@ function ApplyTectonics(args, plotTypes)
 	hillsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
 	mountainsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
 
-	for x = 0, args.iW - 1 do
-		local str = ""
-		for y = 0, args.iH - 1 do
-			local mountainVal = mountainsFrac:GetHeight(x, y);
-			str = str .. ' '..tostring(mountainVal)
-		end
-		print(str)
-	end
-	print('---------------------------------------------------------------------------------------')
-	for x = 0, args.iW - 1 do
-		local str = ""
-		for y = 0, args.iH - 1 do
-			local hillVal = hillsFrac:GetHeight(x, y);
-			str = str .. ' '.. tostring(hillVal)
-		end
-		print(str)
-	end
+	-- for x = 0, args.iW - 1 do
+	-- 	local str = ""
+	-- 	for y = 0, args.iH - 1 do
+	-- 		local mountainVal = mountainsFrac:GetHeight(x, y);
+	-- 		str = str .. ' '..tostring(mountainVal)
+	-- 	end
+	-- 	print(str)
+	-- end
+	-- print('---------------------------------------------------------------------------------------')
+	-- for x = 0, args.iW - 1 do
+	-- 	local str = ""
+	-- 	for y = 0, args.iH - 1 do
+	-- 		local hillVal = hillsFrac:GetHeight(x, y);
+	-- 		str = str .. ' '.. tostring(hillVal)
+	-- 	end
+	-- 	print(str)
+	-- end
 
 	-- Use Brian's tectonics method to weave ridgelines in to the fractals.
 	hillsFrac:BuildRidges(numPlates, iFlags, blendRidge, blendFract);
 	mountainsFrac:BuildRidges(numPlates, peaks_ridge_flags, blendRidge, blendFract);
-
-	print('---------------------------------------------------------------------------------------')
-	for x = 0, args.iW - 1 do
-		local str = ""
-		for y = 0, args.iH - 1 do
-			local mountainVal = mountainsFrac:GetHeight(x, y);
-			str = str .. ' '..tostring(mountainVal)
-		end
-		print(str)
-	end
-	print('---------------------------------------------------------------------------------------')
-	for x = 0, args.iW - 1 do
-		local str = ""
-		for y = 0, args.iH - 1 do
-			local hillVal = hillsFrac:GetHeight(x, y);
-			str = str .. ' '.. tostring(hillVal)
-		end
-		print(str)
-	end
 
 	-- Get height values for plot types
 	local iHillsBottom1 = hillsFrac:GetHeight(hillsBottom1);
