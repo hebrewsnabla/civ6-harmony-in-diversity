@@ -1404,6 +1404,7 @@
     <ImportFiles id="MPTest_update_Maps" criteria="MPTest_Mode_Expansion2">
       <Properties><LoadOrder>18502</LoadOrder></Properties>
       <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
+      <File>GameModeSupport/MultiPlayerMode/Maps/MountainsCliffs.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="MP_DL_DiplomacyRibbon" criteria="MPTest_Mode_Expansion2">
       <Properties>
@@ -1516,6 +1517,7 @@
     <File>GameModeSupport/MultiPlayerMode/UI/DL_WorldRankings.lua</File>
     <!-- Pvp Maps -->
     <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
+    <File>GameModeSupport/MultiPlayerMode/Maps/MountainsCliffs.lua</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>
