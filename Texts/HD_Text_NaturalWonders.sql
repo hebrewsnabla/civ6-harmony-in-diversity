@@ -18,8 +18,7 @@ values
     ("LOC_FEATURE_PANTANAL_DESCRIPTION",                  "Four tile Natural Wonder. Provides +3 [ICON_Food] Food and +2 [ICON_Culture] Culture."),
     ("LOC_FEATURE_WHITEDESERT_DESCRIPTION",               "Four tile Natural Wonder. It provides +1 [ICON_Faith] Faith, +1 [ICON_SCIENCE] Science, +1 [ICON_Culture] Culture,  and +4 [ICON_GOLD] Gold."),
     ("LOC_FEATURE_UBSUNUR_HOLLOW_DESCRIPTION",            "Four tile Natural Wonder. It appears as Marsh and provides +3 [ICON_FAITH] Faith, +1 [ICON_FOOD] Food, and +1 [ICON_PRODUCTION] Production."),
-    ("LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "Four tile Natural Wonder. It provides +2 [ICON_Food] Food, +2 [ICON_Production] Production,  and +1 [ICON_Science] Science."),
-    ("LOC_FEATURE_EYJAFJALLAJOKULL_XP2_DESCRIPTION",      "Two tile impassable natural wonder. It appears as a Volcano and provides +1 [ICON_CULTURE] Culture and +1 [ICON_FOOD] Food. On eruption it gives medium yields and is most likely to damage buildings and districts. Infrequently erupts, but is always active. +1 [ICON_FOOD] Food for all Tundra Districts, if you own at least one of these tiles.");
+    ("LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "Four tile Natural Wonder. It provides +2 [ICON_Food] Food, +2 [ICON_Production] Production,  and +1 [ICON_Science] Science.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -41,5 +40,4 @@ values
     ("zh_Hans_CN",  "LOC_FEATURE_PANTANAL_DESCRIPTION",                  "占4个单元格的自然奇观。提供+3 [ICON_Food] 食物、+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_FEATURE_WHITEDESERT_DESCRIPTION",               "占4个单元格的自然奇观，提供+1 [ICON_Faith] 信仰值，+1 [ICON_SCIENCE] 科技值、+1 [ICON_Culture] 文化值、+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_FEATURE_UBSUNUR_HOLLOW_DESCRIPTION",            "占4个单元格的沼泽自然奇观。+3 [ICON_FAITH] 信仰值、+1 [ICON_FOOD] 食物、+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "占4个单元格的自然奇观，提供+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_FEATURE_EYJAFJALLAJOKULL_XP2_DESCRIPTION",      "占2个单元格且无法通行的自然奇观，以火山形态呈现，提供+1 [ICON_CULTURE] 文化值、+1 [ICON_FOOD] 食物。喷发时提供中量产出，造成建筑与区域损坏的几率最大。不常喷发，但总为活跃状态。玩家将其至少1个单元格纳入领土后，所有位于冻土单元格的区域+1 [ICON_FOOD] 食物。");
+    ("zh_Hans_CN",  "LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "占4个单元格的自然奇观，提供+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。");
