@@ -251,8 +251,9 @@ values
     ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'KIND_ABILITY');
 insert or replace into TypeTags
     (Type,                                              Tag)
-values
-    ('ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER');
+select
+    'ABILITY_COMBAT_STRENGTH_BONUS_TO_LAND_COMBAT',    'CLASS_ROMAN_ONAGER'
+from Units where UnitType = 'UNIT_ROMAN_ONAGER';
 insert or replace into UnitAbilities
     (UnitAbilityType,                                   Name,    Description,                                                        Permanent)
 values
