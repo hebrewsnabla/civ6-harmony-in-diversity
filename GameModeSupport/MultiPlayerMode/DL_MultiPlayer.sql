@@ -45,7 +45,9 @@ update Governors set TransitionStrength = 150 ;
 update Governors set TransitionStrength = 250 where GovernorType = 'GOVERNOR_THE_DEFENDER' or GovernorType = 'GOVERNOR_THE_CARDINAL' or GovernorType = 'GOVERNOR_IBRAHIM';
 --维克多左1改为3
 update ModifierArguments set Value = 3 where ModifierId = 'GARRISON_COMMANDER_ADJUST_CITY_COMBAT_BONUS' AND Name='Amount';
-
+--平回调
+update ModifierArguments set Value = 1 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
+update ModifierArguments set Value = 15 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
 
 -------------------------------------
 --              信条               --
