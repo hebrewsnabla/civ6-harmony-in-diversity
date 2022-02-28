@@ -8,6 +8,9 @@
 -------------------------------------
 update GlobalParameters set Value = 0 where Name = 'HD_CITY_ROADS_REQUIRE_WHEEL';
 update Technologies set Description = NULL where TechnologyType ='TECH_THE_WHEEL';
+update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
+update Technologies set Description = 'LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION' where TechnologyType = 'TECH_SIEGE_TACTICS';
 
 -- ranged unit cause 50% damage to walls instead of 75% (but -17 strength still remains)
 update GlobalParameters set Value = 50 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
@@ -558,8 +561,6 @@ insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
-update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
-update Technologies set Description = 'LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION' where TechnologyType = 'TECH_SIEGE_TACTICS';
 --封建友好2速（文本√）
 update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = 'HD_SIEGE_ATTACK_AFTER_MOVE';
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = 'HD_ATTACK_AFTER_MOVE';
@@ -572,8 +573,7 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
 	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
-update Civics set Description = null where CivicType ='CIVIC_MILITARY_TRAINING';
-update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+
 
 
 insert or ignore into UnitAbilityModifiers
