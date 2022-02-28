@@ -1345,3 +1345,25 @@ values
 	('HD_CITY_HAS_HARBOR_TIER_1_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_LIGHTHOUSE_BASIC'),
 	('HD_CITY_HAS_HARBOR_TIER_2_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_SHIPYARD_BASIC'),
 	('HD_AOE_REQUIRES_GENERAL_GUARD',								'AOE_REQUIRES_GENERAL_GUARD');
+--新增reqs拥有艾雅法拉火山
+--新增reqs拥有白沙漠
+insert or ignore into Requirements
+	(RequirementId,													RequirementType)
+values
+	('REQUIRES_PLAYER_HAS_EYJAFJALLAJOKULL',						'REQUIREMENT_PLAYER_HAS_FEATURE'),
+	('REQUIRES_PLAYER_HAS_SAHARA_EL_BEYDA',							'REQUIREMENT_PLAYER_HAS_FEATURE');
+insert or ignore into RequirementArguments
+	(RequirementId,													Name,					Value)
+values
+	('REQUIRES_PLAYER_HAS_EYJAFJALLAJOKULL',						'FeatureType',			'FEATURE_EYJAFJALLAJOKULL'),
+	('REQUIRES_PLAYER_HAS_SAHARA_EL_BEYDA',							'FeatureType',			'FEATURE_WHITEDESERT');
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('PLAYER_HAS_EYJAFJALLAJOKULL',									'REQUIREMENTSET_TEST_ALL'),
+	('PLAYER_HAS_SAHARA_EL_BEYDA',									'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('PLAYER_HAS_EYJAFJALLAJOKULL',									'REQUIRES_PLAYER_HAS_EYJAFJALLAJOKULL'),
+	('PLAYER_HAS_SAHARA_EL_BEYDA',									'REQUIRES_PLAYER_HAS_SAHARA_EL_BEYDA');
