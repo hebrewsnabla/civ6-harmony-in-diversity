@@ -55,8 +55,7 @@ function ApplyTectonics(args, plotTypes)
 	-- 	[WorldSizeTypes.WORLDSIZE_LARGE]    = 5,
 	-- 	[WorldSizeTypes.WORLDSIZE_HUGE]		= 5
 	-- }; 
-	-- local grain = 3; -- original setting
-	local grain = 4;
+	-- local grain = 3;
 	-- Tectonics Plate Counts
 	--local platevalues = {
 	-- 	[WorldSizeTypes.WORLDSIZE_DUEL]		= 6,
@@ -164,18 +163,34 @@ function ApplyTectonics(args, plotTypes)
 	end
 	
 	--Remove Random Coastal Mountains
+	local plot_size = args.iW*args.iH;
 	for x = 0, args.iW - 1 do
 		for y = 0, args.iH - 1 do
 			local i = y * args.iW + x + 1;
-			if(plotTypes[i] == g_PLOT_TYPE_MOUNTAIN  and AdjacentToWater(x,y,plotTypes) == true) then
-				local iRandomRemoval = TerrainBuilder.GetRandomNumber(10, "Coastal Mountain Removal");
-
-				if(iRandomRemoval < 9 ) then
-					plotTypes[i] = g_PLOT_TYPE_HILLS;
-				else
-					plotTypes[i] = g_PLOT_TYPE_MOUNTAIN;
+			-- due to the original adjacent mountain count was somehow malfunctioning here, hand write a loop
+			if(plotTypes[i] == g_PLOT_TYPE_MOUNTAIN) then
+				local iAdjMountainCount = 0;
+				for dx=-1,1 do
+					for dy=-1,1 do
+						if (math.abs(dx+dy) ~= 2) then
+							local j = i+dy*args.iW + dx;
+							if(j>0 and j<plot_size) then
+								--print("i=",i,"j=",j, plotTypes[i], plotTypes[j]);
+								if(plotTypes[j] == g_PLOT_TYPE_MOUNTAIN) then
+									iAdjMountainCount = iAdjMountainCount + 1;
+								end
+							end
+						end
+					end
 				end
-				
+				-- if in a very mountainous area, bias the mountain threshold by number of adjacent mountains.
+				if (iAdjMountainCount > 3) then
+					local new_thresh = iMountainThreshold + iAdjMountainCount*4 - 4;
+					local mountainVal = mountainsFrac:GetHeight(x, y);
+					if (mountainVal < new_thresh) then
+						plotTypes[i] = g_PLOT_TYPE_HILLS;
+					end
+				end
 				--print("Removed. X: ", x, " Y: ", y);
 			end
 		end
