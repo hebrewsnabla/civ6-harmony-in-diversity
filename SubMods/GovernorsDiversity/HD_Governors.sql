@@ -458,7 +458,8 @@ values
 
 -- 梁总督修改 by PineApple
 
-update GovernorPromotionModifiers set ModifierId = 'AQUACULTURE_ADDITIONAL_PRODUCTION' where GovernorPromotionType = 'GOVERNOR_PROMOTION_AQUACULTURE';
+-- update GovernorPromotionModifiers set ModifierId = 'AQUACULTURE_ADDITIONAL_PRODUCTION' where GovernorPromotionType = 'GOVERNOR_PROMOTION_AQUACULTURE';
+delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_AQUACULTURE';
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_WATER_WORKS';
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_ZONING_COMMISSIONER';
 
@@ -468,6 +469,8 @@ values
 	('GOVERNOR_PROMOTION_BUILDER_GUILDMASTER',					'GUILDMASTER_TRAINED_BUILDER_MOVEMENT'),
 	-- ('GOVERNOR_PROMOTION_ZONING_COMMISSIONER',					'ZONING_COMMISSIONER_FASTER_BUILDING_CONSTRUCTION'),
 	('GOVERNOR_PROMOTION_ZONING_COMMISSIONER',					'ARCHITECTURE_MASTER_WONDERS_BOOST'),
+	('GOVERNOR_PROMOTION_AQUACULTURE',							'AQUACULTURE_ADDITIONAL_PRODUCTION'),
+	('GOVERNOR_PROMOTION_AQUACULTURE',							'AQUACULTURE_POP_PRODUCTION'),
 	('GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE',			'REINFORCED_INFRASTRUCTURE_ENCAMPMENT_ADJACENCY'),
 	('GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE',			'REINFORCED_INFRASTRUCTURE_HOLY_SITE_ADJACENCY'),
 	('GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE',			'REINFORCED_INFRASTRUCTURE_CAMPUS_ADJACENCY'),
@@ -520,13 +523,16 @@ values
 
 -- 耕樵渔猎（原水产养殖）：改良地块+1锤
 insert or replace into Modifiers
-	(ModifierId,												ModifierType,									SubjectRequirementSetId)
+	(ModifierId,												ModifierType,												SubjectRequirementSetId)
 values
-	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_IS_IMPROVED');
+	('AQUACULTURE_POP_PRODUCTION',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL),
+	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',				'PLOT_IS_IMPROVED');
 
 insert or replace into ModifierArguments
 	(ModifierId,												Name,											Value)
 values
+	('AQUACULTURE_POP_PRODUCTION',								'YieldType',									'YIELD_PRODUCTION'),
+	('AQUACULTURE_POP_PRODUCTION',								'Amount',										0.5),
 	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'YieldType',									'YIELD_PRODUCTION'), -- ,YIELD_FOOD
 	('AQUACULTURE_ADDITIONAL_PRODUCTION',						'Amount',										'1'); -- ,1
 
@@ -646,7 +652,7 @@ values
 	('IMPROVEMENT_CITY_PARK',									'FEATURE_FLOODPLAINS_PLAINS');
 
 -- update Improvements set PrereqCivic = 'CIVIC_GUILDS' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
-update Improvements set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
+-- update Improvements set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where ImprovementType = 'IMPROVEMENT_CITY_PARK';
 
 -- 世外天堂：代替自来水工程，本城所有改良设施和国家公园旅游业绩+200%
 insert or replace into Modifiers
