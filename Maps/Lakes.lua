@@ -157,6 +157,7 @@ function GeneratePlotTypes(world_age)
 	local iWaterShift1 = math.ceil(g_iH * 15 / 100);
 	local iWaterHeight1 = g_iH - iWaterShift1 * 2;
 
+	-- by changing iRegionFracXExp and iRegionFracYExp to control the shape of oceans.
 	-- Generate Large Lakes		
 	local args = {};	
 	args.iWaterPercent = 81 + water_percent_modifier;
@@ -182,7 +183,7 @@ function GeneratePlotTypes(world_age)
 	args.iRegionGrain = 4;
 	args.iRegionHillsGrain = 4;
 	args.iRegionPlotFlags = g_iFlags;
-	args.iRegionFracXExp = 7;
+	args.iRegionFracXExp = 5;
 	args.iRegionFracYExp = 6;
     plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
 	islands = plotTypes;
@@ -197,8 +198,8 @@ function GeneratePlotTypes(world_age)
 	args.iRegionGrain = 5;
 	args.iRegionHillsGrain = 4;
 	args.iRegionPlotFlags = g_iFlags;
-	args.iRegionFracXExp = 7;
-	args.iRegionFracYExp = 6;
+	args.iRegionFracXExp = 6;
+	args.iRegionFracYExp = 7;
     plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes);
 
 	-- Land and water are set. Apply hills and mountains.
@@ -210,7 +211,7 @@ function GeneratePlotTypes(world_age)
 	args.blendRidge = 10;
 	args.blendFract = 5;
 	args.extra_mountains = 5;
-	mountainRatio = 8 + world_age * 3;
+	local mountainRatio = 8 + world_age * 3 + 4; --further lower the mountainRation in order to generate less lonely mountains
 	plotTypes = ApplyTectonics(args, plotTypes);
 	plotTypes = AddLonelyMountains(plotTypes, mountainRatio);
 
@@ -285,13 +286,50 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 	local iWaterThreshold = regionContinentsFrac:GetHeight(iWaterPercent);
 
 	-- Loop through the region's plots
-	for x = 0, iRegionWidth - 1, 1 do
-		for y = 0, iRegionHeight - 1, 1 do
-			local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
-			local val = regionContinentsFrac:GetHeight(x,y);
-			if val >= iWaterThreshold or Adjacent(i) == true then
-				--do nothing
+	-- remove ocean at north and south pole
+	local half_height = math.floor(iRegionHeight/2);
+	local half_width = math.floor(iRegionWidth/2);
+	for x = 0, iRegionWidth-1,1 do
+		local i = x + 1;
+		plotTypes2[i] = g_PLOT_TYPE_LAND;
+		i = (iRegionHeight-1) * iRegionWidth + x + 1;
+		plotTypes2[i] = g_PLOT_TYPE_LAND;
+	end
+	for y = 0, iRegionHeight - 1, 1 do
+		for x = 0, iRegionWidth - 1, 1 do
+			-- adjust the order of looping over the map, might relieve the stripe ocean problem.
+			local dir_y = y%2;
+			local dir_x = x%2;
+			local i;
+			local loc_x=x;
+			local loc_y=y;
+			
+			if (dir_y == 1) then
+				loc_y = (y-1)/2+half_height;
 			else
+				loc_y = y/2;
+			end
+			
+			if (dir_x == 1) then
+				loc_x = (x-1)/2+half_width;
+			else
+				loc_x = x/2;
+			end
+			
+			i = loc_y * iRegionWidth + loc_x + 1;
+			local val = regionContinentsFrac:GetHeight(loc_x,loc_y);
+			
+			local adjCount = AdjacentCount(i);
+			if (val >= iWaterThreshold) then
+				--do nothing
+			elseif (adjCount == 7) then
+				--do nothing
+			-- by changing oceans adjacent to lots of land into land, might be able to relieve the stripe ocean problem.
+			elseif (adjCount > 1 and adjCount < 6) then
+				if (math.random(2,4) <= adjCount) then
+					plotTypes2[i] = g_PLOT_TYPE_LAND;
+				end
+			elseif (adjCount == 0) then
 				plotTypes2[i] = g_PLOT_TYPE_LAND;
 			end
 		end
@@ -351,6 +389,36 @@ function Adjacent(index)
 	return false;
 end
 
+function AdjacentCount(index)
+	aIslands = islands;
+	index = index -1;
+
+	if(aIslands == nil) then
+		return 0;
+	end
+	
+	if(index < 0) then
+		return 0;
+	end
+
+	local plot = Map.GetPlotByIndex(index);
+	if(aIslands[index] ~= nil and aIslands[index] == g_PLOT_TYPE_LAND) then
+		return 7;
+	end
+
+	local adjCount = 0;
+	for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+		local adjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+		if(adjacentPlot ~= nil) then
+			local newIndex = adjacentPlot:GetIndex();
+			if(aIslands  ~= nil and aIslands[newIndex] == g_PLOT_TYPE_LAND) then
+				adjCount = adjCount+1;
+			end
+		end
+	end
+
+	return adjCount;
+end
 -------------------------------------------------------------------------------------------
 function AddLakes(largeLakes)
 
@@ -366,10 +434,14 @@ function AddLakes(largeLakes)
 	for i = 0, (iW * iH) - 1, 1 do
 		plot = Map.GetPlotByIndex(i);
 		if(plot) then
+			if (plot:IsMountain() == false) then
 			if (plot:IsWater() == false) then
 				if (plot:IsCoastalLand() == false) then
 					if (plot:IsRiver() == false) then
 						if (AdjacentToNaturalWonder(plot) == false) then
+							local iX = plot:GetX();
+							local iY = plot:GetY();
+							if (GetNumberAdjacentLakes(iX,iY)==0 or GetNumberAdjacentMountains(iX,iY)<2) then
 							local r = TerrainBuilder.GetRandomNumber(lakePlotRand, "MapGenerator AddLakes");
 							if r == 0 then
 								numLakesAdded = numLakesAdded + 1;
@@ -382,9 +454,11 @@ function AddLakes(largeLakes)
 
 								TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_COAST);
 							end
+							end
 						end
 					end
 				end
+			end
 			end
 		end
 	end

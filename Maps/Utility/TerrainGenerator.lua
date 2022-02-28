@@ -264,6 +264,8 @@ end
 function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iContinentBoundaryPlots, bNoCoastalMountains)
 
 	local iMountainPercentByDistance:table = {42, 24, 6}; 
+	-- bias the probability of generate mountains when adjacent to mountains
+	local iMountainPercentBias:table = {12,6,0};
 	local iHillPercentByDistance:table = {50, 40, 30};
 	local aLonelyMountainIndices:table = {};
 	local aPlacedVolcanoes:table = {};
@@ -313,26 +315,28 @@ function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iC
 					local iNumAdjacentMountains = GetNumberAdjacentMountains(iX, iY);
 					-- Changes: no longer place inaccessible volcanoes, and no longer place volcanoes along continent boundaries too near each other
 					if (iNumAdjacentMountains ~= 6 and GetNumberNearbyVolcanoes(iX, iY, 3, aPlacedVolcanoes) == 0) then
-						if (Map.FindSecondContinent(pPlot, 1)) then
-							if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano *.7, "Volcano on boundary") == 0) then
-								bVolcanoHere = true;
-							end
-							iPlotsFromBoundary = 1;
-						elseif(Map.FindSecondContinent(pPlot, 2)) then
-							if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano, "Volcano 1 from boundary") == 0) then
-								bVolcanoHere = true;
-							end
-							iPlotsFromBoundary = 2;
-						elseif(Map.FindSecondContinent(pPlot, 3)) then
-							if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano * 1.5, "Volcano 2 from boundary") == 0) then
-								bVolcanoHere = true;
-							end
-							iPlotsFromBoundary = 3;
+						if not(bNoCoastalMountains and IsAdjacentToShallowWater(terrainTypes, iX, iY)) then --get rid of coastal volcano.
+							if (Map.FindSecondContinent(pPlot, 1)) then
+								if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano *.7, "Volcano on boundary") == 0) then
+									bVolcanoHere = true;
+								end
+								iPlotsFromBoundary = 1;
+							elseif(Map.FindSecondContinent(pPlot, 2)) then
+								if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano, "Volcano 1 from boundary") == 0) then
+									bVolcanoHere = true;
+								end
+								iPlotsFromBoundary = 2;
+							elseif(Map.FindSecondContinent(pPlot, 3)) then
+								if (TerrainBuilder.GetRandomNumber(iBoundaryPlotsPerVolcano * 1.5, "Volcano 2 from boundary") == 0) then
+									bVolcanoHere = true;
+								end
+								iPlotsFromBoundary = 3;
 
-						elseif (plotTypes[index] == g_PLOT_TYPE_MOUNTAIN) then
-							if (iNumAdjacentMountains == 0 or (iNumAdjacentMountains > 1 and iNumAdjacentMountains < 4 )) then
-								local iContinentType = pPlot:GetContinentType();
-								table.insert(aLonelyMountainIndices[pPlot:GetContinentType()], index);
+							elseif (plotTypes[index] == g_PLOT_TYPE_MOUNTAIN) then
+								if (iNumAdjacentMountains == 0 or (iNumAdjacentMountains > 1 and iNumAdjacentMountains < 4 )) then
+									local iContinentType = pPlot:GetContinentType();
+									table.insert(aLonelyMountainIndices[pPlot:GetContinentType()], index);
+								end
 							end
 						end
 					end
@@ -345,6 +349,11 @@ function AddTerrainFromContinents(plotTypes, terrainTypes, world_age, iW, iH, iC
 
 					elseif (iPlotsFromBoundary > 0)	then	
 						local iMountainChance = iMountainPercentByDistance[iPlotsFromBoundary];
+						-- bias the probability of generating continent boundary mountains when adjacent to other mountains.
+						-- the goal is to make continent boundary more accessible.
+						local AdjacentBias = iMountainPercentBias[iPlotsFromBoundary];
+						local iNumAdjacentMountains = GetNumberAdjacentMountains(iX, iY);
+						iMountainChance = math.max(iMountainChance - AdjacentBias*iNumAdjacentMountains, 0);
 						if (GetNumberAdjacentVolcanoes(iX, iY) > 0) then
 							iMountainChance = iMountainChance / 2;
 						end						
