@@ -8,6 +8,9 @@
 -------------------------------------
 update GlobalParameters set Value = 0 where Name = 'HD_CITY_ROADS_REQUIRE_WHEEL';
 update Technologies set Description = NULL where TechnologyType ='TECH_THE_WHEEL';
+update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
+update Technologies set Description = 'LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION' where TechnologyType = 'TECH_SIEGE_TACTICS';
 
 -- ranged unit cause 50% damage to walls instead of 75% (but -17 strength still remains)
 update GlobalParameters set Value = 50 where Name = 'COMBAT_DEFENSE_DAMAGE_PERCENT_RANGED';
@@ -153,7 +156,7 @@ update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 ------------------------------------------------------------------------------------------------------------------------------------
---朝鲜
+--朝鲜ban
 update Adjacency_YieldChanges set YieldChange = 3 where Id = 'BaseDistrict_Science';
 update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
 update ModifierArguments set Value = 2 where ModifierId = 'HWARANG_AMENITY' AND Name='Amount';
@@ -227,7 +230,7 @@ values
 ------------------------------------------------------------------------------------------------------------------------------------
 --格鲁吉亚
 --塔兹卢利骑兵
-update Units set Combat = 55 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+update Units set Combat = 52 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --荷兰
@@ -283,6 +286,7 @@ UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_DISTRI
 update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE';
 --曼德鲁卡
 update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+--奴隶射手
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --马普切
@@ -517,6 +521,7 @@ values
 update TypeTags set Tag = 'CLASS_HEAVY_CAVALRY' where Type = 'ABILITY_TAGMA';
 update ModifierArguments set Value = 2 where ModifierId = 'TAGMA_COMBAT_STRENGTH' AND Name = 'Amount';
 update RequirementArguments set Value = 'CLASS_HEAVY_CAVALRY' where RequirementId = 'REQUIRES_UNIT_IS_NOTCENTER_ADJACENT_TAGMA' AND Name = 'Tag';
+update UnitAbilities set Inactive = 1 where UnitAbilityType = 'ABILITY_TAGMA';
 
 --轻骑兵
 --雇佣兵市政调整
@@ -558,8 +563,6 @@ insert or replace into TechnologyModifiers
     (TechnologyType,                               ModifierId)
 values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
-update Technologies set Description = null where TechnologyType ='TECH_RIFLING';
-update Technologies set Description = 'LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION' where TechnologyType = 'TECH_SIEGE_TACTICS';
 --封建友好2速（文本√）
 update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = 'HD_SIEGE_ATTACK_AFTER_MOVE';
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = 'HD_ATTACK_AFTER_MOVE';
@@ -572,8 +575,7 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
 	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
-update Civics set Description = null where CivicType ='CIVIC_MILITARY_TRAINING';
-update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+
 
 
 insert or ignore into UnitAbilityModifiers

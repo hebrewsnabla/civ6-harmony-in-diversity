@@ -87,6 +87,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BYZANTIUM_DESCRIPTION",                         "每有1座圣城皈依拜占庭的宗教（也包括拜占庭的圣城），拜占庭的单位便获得+2 [ICON_Strength] 战斗力或+3 [ICON_Religion] 宗教战斗力。每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（250宗教压力）。如城市拥有圣地区域，其提供的 [ICON_GreatProphet] 大预言家点数+2。"),
     ("zh_Hans_CN",  "LOC_ABILITY_BYZANTIUM_COMBAT_UNITS_DESCRIPTION",                       "每有一座圣城皈依您的宗教，便+2 [ICON_Strength] 战斗力；主要文明的单位被击杀后，每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（天授规矩）"),
 
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",                 "种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
 
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的64%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-30%。"),
@@ -134,7 +135,11 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION",                                 "巴兹尔二世的特色中世纪单位，替代骑士。"),
     ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_DESCRIPTION",                                        "重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_NONRELIGIOUS_COMBAT_DESCRIPTION",                    "位于重骑兵周围1单元格内时+2 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_RELIGIOUS_COMBAT_DESCRIPTION",                       "位于甲胄骑兵周围1单元格内时+4 [ICON_RELIGION] 宗教战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_RELIGIOUS_COMBAT_DESCRIPTION",                       "位于重骑兵周围1单元格内时+4 [ICON_RELIGION] 宗教战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_COMBAT_STRENGTH_DESCRIPTION",                        "位于重骑兵1个单元格内时+{1_Amount}战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TAGMA_RELIGIOUS_DESCRIPTION",                              "位于重骑兵1个单元格内时+{1_Amount}宗教战斗力。"),
+
+
 
     ("zh_Hans_CN",  "LOC_ABILITY_AMBIORIX_NEIGHBOR_COMBAT_BONUS_DESCRIPTION",               "每个相邻的单位提供+1 [ICON_Strength] 战斗力（厄勃隆尼斯之王）"),
 
