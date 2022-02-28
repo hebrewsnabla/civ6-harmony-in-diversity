@@ -37,6 +37,7 @@ function ApplyTectonics(args, plotTypes)
 	local hillsTop2 = 72 + adjustment;
 	local hillsClumps = 1 + adjustment;
 	local hillsNearMountains = 91 - (adjustment * 2) - extra_mountains;
+	-- local mountains = 97 - adjustment - extra_mountains; -- original setting
 	local mountains = 97 - adjustment - extra_mountains;
 
 	-- Hills and Mountains handled differently according to map size
@@ -54,7 +55,7 @@ function ApplyTectonics(args, plotTypes)
 	-- 	[WorldSizeTypes.WORLDSIZE_LARGE]    = 5,
 	-- 	[WorldSizeTypes.WORLDSIZE_HUGE]		= 5
 	-- }; 
-	local grain = 3;
+	-- local grain = 3;
 	-- Tectonics Plate Counts
 	--local platevalues = {
 	-- 	[WorldSizeTypes.WORLDSIZE_DUEL]		= 6,
@@ -71,6 +72,24 @@ function ApplyTectonics(args, plotTypes)
 	-- Generate fractals to govern hills and mountains
 	hillsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
 	mountainsFrac = Fractal.Create(args.iW, args.iH, grain_amount, iFlags, fracXExp, fracYExp);
+
+	-- for x = 0, args.iW - 1 do
+	-- 	local str = ""
+	-- 	for y = 0, args.iH - 1 do
+	-- 		local mountainVal = mountainsFrac:GetHeight(x, y);
+	-- 		str = str .. ' '..tostring(mountainVal)
+	-- 	end
+	-- 	print(str)
+	-- end
+	-- print('---------------------------------------------------------------------------------------')
+	-- for x = 0, args.iW - 1 do
+	-- 	local str = ""
+	-- 	for y = 0, args.iH - 1 do
+	-- 		local hillVal = hillsFrac:GetHeight(x, y);
+	-- 		str = str .. ' '.. tostring(hillVal)
+	-- 	end
+	-- 	print(str)
+	-- end
 
 	-- Use Brian's tectonics method to weave ridgelines in to the fractals.
 	hillsFrac:BuildRidges(numPlates, iFlags, blendRidge, blendFract);
@@ -94,13 +113,14 @@ function ApplyTectonics(args, plotTypes)
 
 	--[[ Activate printout for debugging only.
 	print("-"); print("--- Tectonics Readout ---");
-	print("- World Age Setting:", world_age);
+	print("- World Age Setting:", args.world_age);
 	print("- Mountain Threshold:", mountains);
 	print("- Foot Hills Threshold:", hillsNearMountains);
 	print("- Clumps of Hills %:", hillsClumps);
 	print("- Loose Hills %:", 4 * adjustment);
 	print("- Tectonic Plate Count:", numPlates);
 	print("- Tectonic Islands?", tectonic_islands);
+	print("- MountainThreshold?", iMountainThreshold);
 	print("- - - - - - - - - - - - - - - - -");
 	]]--
 
@@ -110,7 +130,6 @@ function ApplyTectonics(args, plotTypes)
 			local mountainVal = mountainsFrac:GetHeight(x, y);
 			local hillVal = hillsFrac:GetHeight(x, y);		
 			local i = y * args.iW + x + 1;
-	
 			if (plotTypes[i] == g_PLOT_TYPE_OCEAN) then
 				-- No hills or mountains here, but check for tectonic islands if that setting is active.
 				if tectonic_islands then -- Build islands in oceans along tectonic ridge lines

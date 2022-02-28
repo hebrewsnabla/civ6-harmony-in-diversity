@@ -212,6 +212,7 @@ function GeneratePlotTypes(world_age)
 	args.blendFract = 5;
 	args.extra_mountains = 5;
 	local mountainRatio = 8 + world_age * 3 + 4; --further lower the mountainRation in order to generate less lonely mountains
+
 	plotTypes = ApplyTectonics(args, plotTypes);
 	plotTypes = AddLonelyMountains(plotTypes, mountainRatio);
 

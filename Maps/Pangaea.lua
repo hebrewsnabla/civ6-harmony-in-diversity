@@ -219,7 +219,8 @@ function GeneratePlotTypes(world_age)
 	args.iFlags = g_iFlags;
 	args.blendRidge = 10;
 	args.blendFract = 1;
-	args.extra_mountains = 4;
+	-- args.extra_mountains = 4;
+	args.extra_mountains = 1;
 	plotTypes = ApplyTectonics(args, plotTypes);
 	
 	-- Now shift everything toward one of the poles, to reduce how much jungles tend to dominate this script.
