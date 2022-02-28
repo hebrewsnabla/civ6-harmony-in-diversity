@@ -45,7 +45,8 @@ update Governors set TransitionStrength = 150 ;
 update Governors set TransitionStrength = 250 where GovernorType = 'GOVERNOR_THE_DEFENDER' or GovernorType = 'GOVERNOR_THE_CARDINAL' or GovernorType = 'GOVERNOR_IBRAHIM';
 --维克多左1改为3
 update ModifierArguments set Value = 3 where ModifierId = 'GARRISON_COMMANDER_ADJUST_CITY_COMBAT_BONUS' AND Name='Amount';
-
+--平回调
+update ModifierArguments set Value = 1 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
 
 -------------------------------------
 --              信条               --
@@ -151,7 +152,7 @@ update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 ------------------------------------------------------------------------------------------------------------------------------------
---朝鲜
+--朝鲜ban
 update Adjacency_YieldChanges set YieldChange = 3 where Id = 'BaseDistrict_Science';
 update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
 update ModifierArguments set Value = 2 where ModifierId = 'HWARANG_AMENITY' AND Name='Amount';
@@ -225,7 +226,7 @@ values
 ------------------------------------------------------------------------------------------------------------------------------------
 --格鲁吉亚
 --塔兹卢利骑兵
-update Units set Combat = 55 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+update Units set Combat = 52 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --荷兰
@@ -280,6 +281,7 @@ UPDATE ModifierArguments SET Value='-10' WHERE ModifierId='SUGUBA_CHEAPER_DISTRI
 update GlobalParameters set Value = 5 where Name = 'MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE';
 --曼德鲁卡
 update Units set Combat = 55 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+--奴隶射手
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --马普切
@@ -514,6 +516,7 @@ values
 update TypeTags set Tag = 'CLASS_HEAVY_CAVALRY' where Type = 'ABILITY_TAGMA';
 update ModifierArguments set Value = 2 where ModifierId = 'TAGMA_COMBAT_STRENGTH' AND Name = 'Amount';
 update RequirementArguments set Value = 'CLASS_HEAVY_CAVALRY' where RequirementId = 'REQUIRES_UNIT_IS_NOTCENTER_ADJACENT_TAGMA' AND Name = 'Tag';
+update UnitAbilities set Inactive = 1 where UnitAbilityType = 'ABILITY_TAGMA';
 
 --轻骑兵
 --雇佣兵市政调整
