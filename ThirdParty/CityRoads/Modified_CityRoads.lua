@@ -1,3 +1,5 @@
+local m_Tech_Wheel = GameInfo.Technologies['TECH_THE_WHEEL'].Index;
+local city_roads_require_wheel = GlobalParameters.HD_CITY_ROADS_REQUIRE_WHEEL;
 function OnImprovementAddedToMap(locationX, locationY, improvementType, eImprovementOwner, resource, isPillaged, isWorked)
 	local plot = Map.GetPlot(locationX,locationY);
 	local owner = plot:GetOwner();
@@ -5,7 +7,7 @@ function OnImprovementAddedToMap(locationX, locationY, improvementType, eImprove
 		local player = Players[owner];
 		local playerTechs = player:GetTechs();
 		-- enable the improvements roads after researching TECH_THE_WHEEL
-		if playerTechs:HasTech(10) then
+		if playerTechs:HasTech(m_Tech_Wheel) or (city_roads_require_wheel == 0) then
 			local era = GameInfo.Eras[player:GetEra()];
 			local currentRouteType = plot:GetRouteType(plot);
 			local playerRouteType = GetRouteTypeForPlayer(player);
@@ -36,10 +38,9 @@ function GetRouteTypeForPlayer(player)
 	return route.Index;
 end
 
-local m_Tech_Wheel = GameInfo.Technologies['TECH_THE_WHEEL'].Index;
 function OnResearchCompleted(ePlayer, eTech)
 	-- print('CityRoads:OnResearchCompleted:', 'Player', ePlayer, 'Tech', eTech);
-	if ePlayer >= 0 and eTech == m_Tech_Wheel then
+	if ePlayer >= 0 and (eTech == m_Tech_Wheel) and (city_roads_require_wheel ~= 0) then
 		-- place roads on the improvements roads after researching TECH_THE_WHEEL
 		local player = Players[ePlayer];
 		if not player:IsBarbarian() then
@@ -56,7 +57,6 @@ function OnResearchCompleted(ePlayer, eTech)
 						end
 					end
 				end
-				
 			end
 		end
 	end

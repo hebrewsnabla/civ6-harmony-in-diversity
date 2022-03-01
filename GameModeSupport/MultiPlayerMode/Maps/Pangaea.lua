@@ -70,7 +70,8 @@ function GenerateMap()
 	AddRivers();
 	
 	-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
-	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 1.5);
+	-- local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 1.5); -- original setting
+	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents * 4);
 	AddLakes(numLargeLakes);
 
 	AddFeatures();
@@ -123,9 +124,15 @@ function GeneratePlotTypes(world_age)
 	local sea_level_normal = 58;
 	local sea_level_high = 63;
 	-- BEGIN DL update sea level
+	-- sea_level_low = 43
+	-- sea_level_normal = 48
+	-- sea_level_high = 53
 	sea_level_low = 48
 	sea_level_normal = 53
 	sea_level_high = 58
+	-- sea_level_low = 38
+	-- sea_level_normal = 43
+	-- sea_level_high = 48
 	-- END
 	local grain_amount = 3;
 	local adjust_plates = 1.3;
@@ -155,7 +162,8 @@ function GeneratePlotTypes(world_age)
 	local iWaterThreshold, biggest_area, iNumBiggestAreaTiles, iBiggestID;
 	while done == false do
 		local grain_dice = TerrainBuilder.GetRandomNumber(7, "Continental Grain roll - LUA Pangea");
-		if grain_dice < 4 then
+		-- if grain_dice < 4 then -- original setting
+		if grain_dice < 8 then
 			grain_dice = 1;
 		else
 			grain_dice = 2;
@@ -198,16 +206,26 @@ function GeneratePlotTypes(world_age)
 		iAttempts = iAttempts + 1;
 		
 		-- Printout for debug use only
-		-- print("-"); print("--- Pangea landmass generation, Attempt#", iAttempts, "---");
-		-- print("- This attempt successful: ", done);
-		-- print("- Total Land Plots in world:", g_iNumTotalLandTiles);
-		-- print("- Land Plots belonging to biggest landmass:", iNumBiggestAreaTiles);
-		-- print("- Percentage of land belonging to Pangaea: ", 100 * iNumBiggestAreaTiles / g_iNumTotalLandTiles);
-		-- print("- Continent Grain for this attempt: ", grain_dice);
-		-- print("- Rift Grain for this attempt: ", rift_dice);
-		-- print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+		print("-"); print("--- Pangea landmass generation, Attempt#", iAttempts, "---");
+		print("- This attempt successful: ", done);
+		print("- Total Land Plots in world:", g_iNumTotalLandTiles);
+		print("- Land Plots belonging to biggest landmass:", iNumBiggestAreaTiles);
+		print("- Percentage of land belonging to Pangaea: ", 100 * iNumBiggestAreaTiles / g_iNumTotalLandTiles);
+		print("- Continent Grain for this attempt: ", grain_dice);
+		print("- Rift Grain for this attempt: ", rift_dice);
+		print("- WaterThreshold: ", iWaterThreshold);
+		print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 		-- print(".");
 	end
+
+	-- for x = 0, g_iW - 1 do
+	-- 	local str = ''
+	-- 	for y = 0, g_iH - 1 do
+	-- 		local val = g_continentsFrac:GetHeight(x, y);
+	-- 		str = str .. tostring(val) .. ' '
+	-- 	end
+	-- 	print(str)
+	-- end
 	
 	local args = {};
 	args.world_age = world_age;
@@ -216,7 +234,8 @@ function GeneratePlotTypes(world_age)
 	args.iFlags = g_iFlags;
 	args.blendRidge = 10;
 	args.blendFract = 1;
-	args.extra_mountains = 4;
+	-- args.extra_mountains = 4;
+	args.extra_mountains = 1;
 	plotTypes = ApplyTectonics(args, plotTypes);
 	
 	-- Now shift everything toward one of the poles, to reduce how much jungles tend to dominate this script.
@@ -369,7 +388,8 @@ function InitFractal(args)
 	-- Blend a bit of ridge into the fractal.
 	-- This will do things like roughen the coastlines and build inland seas. - Brian
 
-	g_continentsFrac:BuildRidges(numPlates, {}, 1, 2);
+	-- HD update: remove this convertion
+	-- g_continentsFrac:BuildRidges(numPlates, {}, 1, 2);
 end
 
 function AddFeatures()
