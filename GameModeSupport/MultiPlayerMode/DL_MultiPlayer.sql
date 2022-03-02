@@ -38,7 +38,11 @@ values
 --奢侈加金
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
 --删除土墙
-
+--胸甲增加攻城术前置
+insert or replace into TechnologyPrereqs
+	(Technology,					PrereqTech)
+values
+	('TECH_BALLISTICS',	    'TECH_SIEGE_TACTICS');
 
 -------------------------------------
 --              总督               --
@@ -389,8 +393,6 @@ update Units set Combat = 42 where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --印加
---瓦剌卡
-update Units set Combat = 40 , RangedCombat = 35 , BaseMoves = 1 where UnitType = 'UNIT_INCA_WARAKAQ';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --英国
