@@ -82,6 +82,7 @@ values
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DYES' and YieldType = 'YIELD_FAITH';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_CITRUS' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SPICES' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SUGAR' and YieldType = 'YIELD_FOOD';
@@ -96,7 +97,7 @@ update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_TRUFFLES' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_TOBACCO' and YieldType = 'YIELD_FAITH';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_COTTON' and YieldType = 'YIELD_GOLD';
-update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_DYES' and YieldType = 'YIELD_GOLD';
+
 
 -- Natural Wonders.
 -- Need to provide yields to natural wonders in later game.
