@@ -37,12 +37,50 @@ values
     ('COMMEMORATION_SCIENTIFIC_DISTRICTSCIENCE',	'Amount',	    2);
 --奢侈加金
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxury_Gold';
---删除土墙
+--墙
+update Buildings set OuterDefenseHitPoints = 1 where BuildingType = 'BUILDING_WALLS_EARLY';
+update Buildings set OuterDefenseHitPoints = 49 where BuildingType = 'BUILDING_WALLS';
+update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_CASTLE';
+update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_STAR_FORT';
+update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_TSIKHE';
+
 --胸甲增加攻城术前置
 insert or replace into TechnologyPrereqs
 	(Technology,					PrereqTech)
 values
 	('TECH_BALLISTICS',	    'TECH_SIEGE_TACTICS');
+--兵工厂给近战抗骑兵1速
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_ARMORY',	    'PVP_ARMORY_GAIN_MOVEMENT');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
+values
+	('PVP_ARMORY_GAIN_MOVEMENT',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS');
+update Modifiers set Permanent = 1 where ModifierId = 'PVP_ARMORY_GAIN_MOVEMENT';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,		    Value)
+values
+	('PVP_ARMORY_GAIN_MOVEMENT',			'AbilityType',	'ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS');
+insert or replace into Types
+	(Type,														Kind)
+values
+	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',					'KIND_ABILITY');
+insert or replace into TypeTags
+	(Type,															Tag)
+values
+	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',				        'CLASS_ANTI_CAVALRY'),
+	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',						'CLASS_MELEE');
+insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
+	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',
+	'LOC_ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS_NAME',
+	'LOC_ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS_DESCRIPTION',
+	1);
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,										ModifierId)
+values
+	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',          'ORDU_ADJUST_MOVEMENT');
 
 -------------------------------------
 --              总督               --
@@ -72,8 +110,15 @@ update Units set Combat = 30 , RangedCombat = 44 where UnitType = 'UNIT_CROSSBOW
 -- 追猎及追猎UU
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
-
-
+--线列改膛线
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_LINE_INFANTRY';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_ENGLISH_REDCOAT';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_INDIAN_SEPOY';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_COLOMBIAN_BRITISH_LEGION';
+-- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
 -------------------------------------
 --              文明               --
 -------------------------------------
@@ -318,7 +363,7 @@ update ModifierArguments set Value = 5 where ModifierId = 'ROUGH_RIDER_BONUS_ON_
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --蒙古
-delete from TraitModifiers where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
+update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_EACH_DIPLO_VISIBILITY_COMBAT_MODIFIER';
 --怯薛
 update Units set Combat = 20 , RangedCombat = 30 , BaseMoves = 4 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 
@@ -347,12 +392,13 @@ UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_O
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --斯基泰
-delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY' or ModifierId = 'TRAIT_PASTURE_PRODUCTION';
+delete from TraitModifiers where ModifierId = 'TRAIT_EXTRALIGHTCAVALRY';
+delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY';
 delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
 update ModifierArguments set Value = 3 where ModifierId = 'TOMYRIS_BONUS_VS_WOUNDED_UNITS' AND Name = 'Amount';
 update ModifierArguments set Value = 10 where ModifierId = 'TOMYRIS_HEAL_AFTER_DEFEATING_UNIT' AND Name = 'Amount';
 --萨卡弓骑
-update Units set Combat = 17 , RangedCombat = 27 , Range = 1 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
+update Units set Combat = 15 , RangedCombat = 25 , Range = 1 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --苏格兰
@@ -536,11 +582,8 @@ insert or replace into ModifierArguments
 values
 	('HD_ENEMY_MOVEMENT',		    'Amount',				    3);
 update CivicModifiers set CivicType = 'CIVIC_MILITARY_TRAINING' where ModifierId = 'HD_ENEMY_MOVEMENT';
-delete from  TechnologyModifiers where ModifierId = 'HD_LIGHTC_AGAINST_UNIT_BONUS';
-insert or replace into CivicModifiers
-    (CivicType,                                       ModifierId)
-values
-    ('CIVIC_MERCENARIES',                            'HD_LIGHTC_AGAINST_UNIT_BONUS');
+update TechnologyModifiers set TechnologyType = 'TECH_MILITARY_TACTICS' where ModifierId = 'HD_LIGHTC_AGAINST_UNIT_BONUS';
+
 
 --升级调整（文本√）
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_LIGHTC_MILITANT' or UnitPromotion = 'PROMOTION_LIGHTC_MOBILE_WARFARE';
@@ -578,6 +621,9 @@ insert or ignore into RequirementSetRequirements
 values
 	('HD_UNIT_IS_SEIGE_REQUIREMENTS',							'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_SIEGE');
 
+--侦查单位
+--无视zoc移到雇佣兵
+update CivicModifiers set CivicType = 'CIVIC_MERCENARIES' where ModifierId = 'HD_RECON_IGNORE_ZOC';
 
 
 insert or ignore into UnitAbilityModifiers

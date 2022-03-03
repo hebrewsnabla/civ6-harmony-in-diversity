@@ -168,6 +168,8 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_PROMOTION_LIGHTC_MILITANT_DESCRIPTION",                            "在敌方领土内时 +7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD_DESCRIPTION",                   "在友好领土开始时+2 [ICON_Movement] 移动力。（拥有封建主义市政后允许）。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS_DESCRIPTION",               "在兵工厂中训练获得的+1 [ICON_MOVEMENT] 移动力"),
+
     ("zh_Hans_CN",  "LOC_ABILITY_HD_RANGED_ATTACK_BONUS_DESCRIPTION",                       "在友好领土内进攻时+5 [ICON_Strength] 战斗力。（拥有人文主义市政后允许）。");
 
 -- --------------------------------------------------------------------------------
@@ -178,11 +180,11 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_SANITATION_HD_DESCRIPTION",                                   "梯井改良设施+1 [ICON_Housing] 住房。" ),
-    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。。"), 
+    ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。"), 
 
     ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。"), 
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                    "远程单位获得能力：在友好领土内进攻时+5 [ICON_Strength] 战斗力。[NEWLINE]侦察单位获得能力：忽略控制区。"), 
     ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。[NEWLINE]重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。[NEWLINE]攻城单位获得能力：在友好领土开始时+2 [ICON_Movement] 移动力。");
