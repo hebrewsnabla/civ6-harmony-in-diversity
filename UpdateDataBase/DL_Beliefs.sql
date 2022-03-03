@@ -100,13 +100,19 @@ from Yields;
 insert or replace into ModifierArguments
 	(ModifierId,							             Name,										Value)
 select
+    'ONE_WITH_NATURE_WONDER_'|| YieldType||,            'ModifierId',                               'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER'
+from Yields;
+
+insert or replace into ModifierArguments
+	(ModifierId,							             Name,										Value)
+select
     'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'YieldType',                               YieldType
 from Yields;
 
 insert or replace into ModifierArguments
 	(ModifierId,							             Name,										Value)
 select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'Amount',                               10
+    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'Amount',                                  10
 from Yields;
 
 insert or replace into Beliefs
