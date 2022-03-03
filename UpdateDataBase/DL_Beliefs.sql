@@ -82,33 +82,28 @@ update Beliefs set Description = 'LOC_BELIEF_JUST_WAR_DL_DESCRIPTION' where Beli
 insert or replace into BeliefModifiers
 	(BeliefType,							ModifierID)
 select
-    'BELIEF_ONE_WITH_NATURE',               'ONE_WITH_NATURE_'||YieldType
+    'BELIEF_ONE_WITH_NATURE',               'ONE_WITH_NATURE_WONDER_'||YieldType
 from Yields; 
-
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId)
 select
     'ONE_WITH_NATURE_WONDER_'|| YieldType,  'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
 from Yields;
-
 insert or replace into Modifiers
 	(ModifierId,							             ModifierType,										SubjectRequirementSetId)
 select
     'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'
 from Yields;
-
 insert or replace into ModifierArguments
 	(ModifierId,							             Name,										Value)
 select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||,            'ModifierId',                               'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER'
+    'ONE_WITH_NATURE_WONDER_'|| YieldType,               'ModifierId',                               'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER'
 from Yields;
-
 insert or replace into ModifierArguments
 	(ModifierId,							             Name,										Value)
 select
     'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'YieldType',                               YieldType
 from Yields;
-
 insert or replace into ModifierArguments
 	(ModifierId,							             Name,										Value)
 select
