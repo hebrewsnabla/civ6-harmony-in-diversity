@@ -221,6 +221,10 @@ insert or replace into TypeTags
     (Type,                                          Tag)
 values
     ('ABILITY_EJERCITO_PATRIOTA_EXTRA_MOVEMENT',    'CLASS_BUILDER');
+update ModifierArguments set Value = 3 where ModifierId = 'COMANDANTE_AOE_STRENGTH' AND Name='Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'COMMANDANTE_CAVALRY_BUFF' AND Name='Amount';
+update ModifierArguments set Value = 5 where ModifierId = 'COMMANDANTE_UNIT_STRENGTH_BUFF' AND Name='Amount';
+
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --德国
@@ -481,7 +485,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,							ModifierType)
 values
-	('PVP_FRIENDLY_MOVEMENT_BONUS',			'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT');
+	('PVP_FRIENDLY_MOVEMENT_BONUS',			'MODIFIER_PLAYER_UNITS_ADJUST_FRIENDLY_TERRITORY_START_MOVEMENT');
 insert or replace into ModifierArguments
 	(ModifierId,					Name,						Value)
 values
@@ -668,7 +672,7 @@ values
     ('TECH_SIEGE_TACTICS',                      'HD_SIEGE_ATTACK_DISTRICT_BONUS');
 --封建友好2速（文本√）
 update CivicModifiers set CivicType = 'CIVIC_FEUDALISM' where ModifierId = 'HD_SIEGE_ATTACK_AFTER_MOVE';
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = 'HD_ATTACK_AFTER_MOVE';
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_UNITS_ADJUST_FRIENDLY_TERRITORY_START_MOVEMENT' , SubjectRequirementSetId = 'HD_UNIT_IS_SEIGE_REQUIREMENTS' where ModifierId = 'HD_ATTACK_AFTER_MOVE';
 update ModifierArguments set Name = 'Amount' , Value = 2 where ModifierId = 'HD_ATTACK_AFTER_MOVE';
 insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
