@@ -40,9 +40,9 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Commercial_Luxu
 --墙
 update Buildings set OuterDefenseHitPoints = 1 where BuildingType = 'BUILDING_WALLS_EARLY';
 update Buildings set OuterDefenseHitPoints = 49 where BuildingType = 'BUILDING_WALLS';
-update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_CASTLE';
-update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_STAR_FORT';
-update Buildings set OuterDefenseHitPoints = 50 where BuildingType = 'BUILDING_TSIKHE';
+update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_CASTLE';
+update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_STAR_FORT';
+update Buildings set OuterDefenseHitPoints = 100 where BuildingType = 'BUILDING_TSIKHE';
 
 --胸甲增加攻城术前置
 insert or replace into TechnologyPrereqs
@@ -82,6 +82,8 @@ insert or replace into UnitAbilityModifiers
 values
 	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',          'ORDU_ADJUST_MOVEMENT');
 
+--城市政策
+
 -------------------------------------
 --              总督               --
 -------------------------------------
@@ -111,14 +113,11 @@ update Units set Combat = 30 , RangedCombat = 44 where UnitType = 'UNIT_CROSSBOW
 update Units set Combat = Combat -1 where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_COURSER';
 --线列改膛线
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_LINE_INFANTRY';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_ENGLISH_REDCOAT';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_FRENCH_GARDE_IMPERIALE';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_INDIAN_SEPOY';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_COLOMBIAN_BRITISH_LEGION';
--- update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_ETHIOPIAN_MEHAL_SEFARI';
+update Units set Cost = 240 , PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_CUIRASSIER';
+update Units set Cost = 270 , PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_AMERICAN_ROUGH_RIDER';
+update Units set PrereqTech = 'TECH_BALLISTICS' where UnitType = 'UNIT_RANGER';
+update Units set PrereqTech = 'TECH_BALLISTICS' where UnitType = 'UNIT_SCOTTISH_HIGHLANDER';
+
 -------------------------------------
 --              文明               --
 -------------------------------------
@@ -205,16 +204,23 @@ update Units set RangedCombat = 30 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 update Units set Range = 1 where UnitType = 'UNIT_PERSIAN_IMMORTAL';
 
 ------------------------------------------------------------------------------------------------------------------------------------
---朝鲜ban
+--朝鲜
 update Adjacency_YieldChanges set YieldChange = 3 where Id = 'BaseDistrict_Science';
 update Districts set CitizenSlots = 2 where DistrictType = 'DISTRICT_SEOWON';
 update ModifierArguments set Value = 2 where ModifierId = 'HWARANG_AMENITY' AND Name='Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'HWARANG_HOUSING' AND Name='Amount';
+delete from TraitModifiers where ModifierId = 'CAPITAL_LIBRARY_TITLE';
+delete from TraitModifiers where ModifierId = 'CAPITAL_UNIVERSITY_TITLE';
+delete from TraitModifiers where ModifierId = 'CAPITAL_RESERCHLAB_TITLE';
+delete from TraitModifiers where ModifierId = 'CAPITAL_CAMPUS_TIER4_TITLE';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --大哥
-delete from TraitModifiers where ModifierId = 'TRAIT_PROMOTE_NO_FINISH_MOVES';
-delete from TraitModifiers where ModifierId = 'TRAIT_EJERCITO_PATRIOTA_EXTRA_MOVEMENT';
+update TypeTags set Tag = 'CLASS_SETTLER' where Type = 'ABILITY_EJERCITO_PATRIOTA_EXTRA_MOVEMENT';
+insert or replace into TypeTags 
+    (Type,                                          Tag)
+values
+    ('ABILITY_EJERCITO_PATRIOTA_EXTRA_MOVEMENT',    'CLASS_BUILDER');
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --德国
@@ -244,6 +250,8 @@ update ModifierArguments set Value = 5 where ModifierId = 'GARDE_CONTINENT_COMBA
 --高卢
 update ModifierArguments set Value = 1 where ModifierId = 'AMBIORIX_NEIGHBOR_COMBAT' AND Name='Amount';
 delete from DistrictModifiers where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and DistrictType = 'DISTRICT_OPPIDUM';
+delete from TraitModifiers where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED';
+
 insert or replace into DistrictModifiers
     (DistrictType,          ModifierId)
 values
@@ -280,6 +288,7 @@ values
 --格鲁吉亚
 --塔兹卢利骑兵
 update Units set Combat = 52 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+update ModifierArguments set Value = 5 where ModifierId = 'KHEVSURETI_HILLS_BUFF' AND Name='Amount';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --荷兰
@@ -343,6 +352,9 @@ update ModifierArguments set Value = 5 where ModifierId = 'TRAIT_TOQUI_COMBAT_BO
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --马其顿
+update Units set Combat = 25 , Cost = 50 where UnitType = 'UNIT_MACEDONIAN_PEZHETAIROS';
+update Units set Combat = 38 , Cost = 80 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
+delete from UnitAbilityModifiers where ModifierId = 'HETAIROI_GREAT_GENERAL_POINTS';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --玛雅
@@ -352,6 +364,10 @@ update Units set Combat = 48 where UnitType = 'UNIT_MAYAN_HOLKAN';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --毛利
+--UA
+delete from TraitModifiers where ModifierId = 'TRAIT_MAORI_MANA_SHIPBUILDING';
+delete from TraitModifiers where ModifierId = 'TRAIT_MAORI_FISHING_BOAT_FOOD';
+
 --托阿，托塔帕拉
 update Units set Combat = 38 where UnitType = 'UNIT_MAORI_TOA';
 update Units set RangedCombat = 50 where UnitType = 'UNIT_MAORI_TUPARA';
@@ -390,13 +406,35 @@ UPDATE ModifierArguments SET Value= 4 WHERE ModifierId='TRAIT_JOAO_TRADE_ROUTE_O
 ------------------------------------------------------------------------------------------------------------------------------------
 --瑞典
 
+
 ------------------------------------------------------------------------------------------------------------------------------------
 --斯基泰
 delete from TraitModifiers where ModifierId = 'TRAIT_EXTRALIGHTCAVALRY';
+delete from TraitModifiers where ModifierId = 'TRAIT_EXTRASAKAHORSEARCHER';
 delete from TraitModifiers where ModifierId = 'TRAIT_TECH_ANIMAL_HUSBANDRY';
 delete from TraitModifiers where ModifierId = 'TRAIT_EXTRA_SCYTHIAN_AMAZON';
 update ModifierArguments set Value = 3 where ModifierId = 'TOMYRIS_BONUS_VS_WOUNDED_UNITS' AND Name = 'Amount';
 update ModifierArguments set Value = 10 where ModifierId = 'TOMYRIS_HEAL_AFTER_DEFEATING_UNIT' AND Name = 'Amount';
+update Modifiers set SubjectRequirementSetId = 'PVP_SCYTHIA_PASTURE_PRODUCTION_REQUIRES' where ModifierId = 'TRAIT_PASTURE_PRODUCTION';
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+	('PVP_SCYTHIA_PASTURE_PRODUCTION_REQUIRES',						'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('PVP_SCYTHIA_PASTURE_PRODUCTION_REQUIRES',						'REQUIRES_PLOT_HAS_PASTURE'),
+    ('PVP_SCYTHIA_PASTURE_PRODUCTION_REQUIRES',						'HD_REQUIRES_PLAYER_HAS_TECH_HORSEBACK_RIDING');
+insert or replace into TraitModifiers(TraitType,	ModifierId)
+select 'TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY','TRAIT_'||EraType||'_RANGED_UNIT_PRODUCTION' from Eras;
+insert or replace into Modifiers(ModifierId,ModifierType)
+select 'TRAIT_'||EraType||'_RANGED_UNIT_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_UNIT_TAG_ERA_PRODUCTION' from Eras;
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+select 'TRAIT_'||EraType||'_RANGED_UNIT_PRODUCTION','UnitPromotionClass','PROMOTION_CLASS_LIGHT_CAVALRY' from Eras;
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+select 'TRAIT_'||EraType||'_RANGED_UNIT_PRODUCTION','EraType',EraType from Eras;
+insert or replace into ModifierArguments(ModifierId,Name,Value)
+select 'TRAIT_'||EraType||'_RANGED_UNIT_PRODUCTION','Amount',50 from Eras;
 --萨卡弓骑
 update Units set Combat = 15 , RangedCombat = 25 , Range = 1 where UnitType = 'UNIT_SCYTHIAN_HORSE_ARCHER';
 
@@ -415,6 +453,9 @@ update Units set PrereqTech = 'TECH_THE_WHEEL' where UnitType = 'UNIT_SUMERIAN_W
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --希腊
+update ModifierArguments set Value = 5 where ModifierId = 'PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER' AND Name='Amount';
+update ModifierArguments set Value = 7 where ModifierId = 'HOPLITE_NEIGHBOR_COMBAT' AND Name='Amount';
+update Units set Cost = 50 where UnitType = 'UNIT_GREEK_HOPLITE';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --西班牙
@@ -428,9 +469,25 @@ update ModifierArguments set Value = 5 where ModifierId = 'CONQUISTADOR_SPECIFIC
 --骠骑
 update Units set Combat = Combat -4 where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_BUTTRESS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update ModifierArguments set Value = 3 where ModifierId = 'LEVY_MILITARY_TWO_FREE_ENVOYS' AND Name='Amount';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --印度
+update Units set Maintenance = 0 where UnitType = 'UNIT_INDIAN_SEPOY';
+insert or replace into TraitModifiers
+    (TraitType,                               ModifierId)
+values
+    ('TRAIT_LEADER_ARTHASHASTRA',             'PVP_FRIENDLY_MOVEMENT_BONUS');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+values
+	('PVP_FRIENDLY_MOVEMENT_BONUS',			'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,						Value)
+values
+	('PVP_FRIENDLY_MOVEMENT_BONUS',		'Amount',				2);
+--文印度
+update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'PEACE_ADDGROWTH';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --印度尼西亚
@@ -466,10 +523,11 @@ update Units set Combat = 40 , RangedCombat = 52 where UnitType = 'UNIT_CHINESE_
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --祖鲁
-delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' or ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH';
+delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_EARLY' or ModifierId = 'TRAIT_LAND_ARMIES_EARLY';
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
-update ModifierArguments set Value = 'CIVIC_HUMANISM' where ModifierId = 'TRAIT_LAND_CORPS_EARLY' AND Name = 'CivicType';
-update ModifierArguments set Value = 'CIVIC_SCORCHED_EARTH' where ModifierId = 'TRAIT_LAND_ARMIES_EARLY' AND Name = 'CivicType';
+update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' AND Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH' AND Name = 'Amount';
+update ModifierArguments set Value = 1 where ModifierId = 'HD_IKANDA_SCIENCE' AND Name = 'Amount';
 
 -------------------------------------
 --           市政&科技             --

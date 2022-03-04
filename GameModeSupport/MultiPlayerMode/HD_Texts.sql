@@ -88,8 +88,9 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_BYZANTIUM_COMBAT_UNITS_DESCRIPTION",                       "每有一座圣城皈依您的宗教，便+2 [ICON_Strength] 战斗力；主要文明的单位被击杀后，每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（天授规矩）"),
 
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",                 "种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",                    "首都每次建造完成书院区域时获得一个总督点。"),
 
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。训练轻骑兵单位+50% [ICON_PRODUCTION] 生产力。研究科技“骑马”后，牧场+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的64%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-30%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。");
 
@@ -100,7 +101,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "可更早组建军团（需人文主义市政）和军队（需焦土策略市政）。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMBIORIX_DESCRIPTION",                                "生产出一个非平民单位时，您的文明获得等同于该单位生产力花费20%的 [ICON_CULTURE] 文化值。近战、抗骑兵和远程单位每与一个其他单位相邻（无论该单位属于哪个文明），便+1 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMBIORIX_DESCRIPTION",                                "近战、抗骑兵和远程单位每与一个其他单位相邻（无论该单位属于哪个文明），便+1 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRIEU_DESCRIPTION",                                   "回合开始时，领土内在雨林、沼泽或树林地貌中的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                                   "揭示出生点6个单元格内的地块。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION",            "与同一个敌人交战时，如果他们与其盟友相邻，则共享掠夺奖励和战斗经验值。其同盟针对同一个敌人作战可获得同盟点数。"),
@@ -109,6 +110,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",                     "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_Strength] 战斗力。在敌方城市边界中击杀敌方单位后，将使此城损失20点忠诚度（如此文明正处在黄金/英雄时代中，则损失40点忠诚度）。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CITADEL_CIVILIZATION_EXPANSION2_DESCRIPTION",         "若其在过去10回合内遭到宣战或曾解放城市，则+50% [ICON_PRODUCTION] 生产力。牧场+1 [Icon_Food] 食物"), 
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION",                         "起始城市中的每个沙漠或沙漠丘陵单元格为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_GOLD] 金币。文明进入黄金时代后可获得+1 [ICON_TradeRoute] 贸易路线容量。每获得1点时代分，额外获得5 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KILLER_OF_CYRUS_DESCRIPTION",                         "攻击受伤单位时，所有单位+3 [ICON_Strength] 战斗力。消灭一个单位时恢复10点生命值。"),
+
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_JOAO_III_DESCRIPTION",                                "所有单位+1视野。与第一个文明相遇时+2 [ICON_TradeRoute] 贸易路线容量。对所有城邦开放边界。");
 
 -- --------------------------------------------------------------------------------
