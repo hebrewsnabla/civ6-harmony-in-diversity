@@ -7,7 +7,7 @@ values
     ("LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE",                            "Gain +400 [ICON_Science] Science (on Standard speed) for each adjacent Mountain tile."),
     ("LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE",                              "Gain +3000 [ICON_SCIENCE] Science and +1000 [ICON_CULTURE] Culture (on Standard speed)."),
     ("LOC_GREATPERSON_DIPLO_VISIBILITY",                                  "+{Amount} {Amount : plural 1?level; other?levels;} of diplomatic visibility with all other civilizations. Enemy Spy level reduced by 1 in your lands."),
-    ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "Industrial Zone's regional buildings reach {Amount} {Amount : plural 1?tile; other?tiles;} farther, and provide +3 [ICON_Production] Production."), -- Instantly builds a Factory and Workshop in this district. Factories provide +3 [ICON_Production] Production.
+    ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "Industrial Zone's regional buildings reach {Amount} {Amount : plural 1?tile; other?tiles;} farther, and provide +3 [ICON_Science] Science."), -- Instantly builds a Factory and Workshop in this district. Factories provide +3 [ICON_Production] Production.
     ("LOC_PIERO_DE_BARDI_GOLD",                                           "Gain +300 [ICON_Gold] Gold."),
     ("LOC_JAKOB_FUGGER_GOLD",                                             "Gain +400 [ICON_Gold] Gold."),
     ("LOC_JOHN_JACOB_ASTOR_GOLD",                                         "Gain +600 [ICON_Gold] Gold."),
@@ -26,7 +26,7 @@ values
     ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING",                       "Triggers the [ICON_TechBoosted] Eureka moment for Refining. If Refining is already triggered, instead complete the tech."),
     ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION",                     "Triggers the [ICON_TechBoosted] Eureka moment for Sanitation. If Sanitation is already triggered, instead complete the tech."),
     ("LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM",    "All districts yield [ICON_TOURISM] Tourism equal to their adjacency bonus."),
-    ("LOC_GREATPERSON_CAMPUS_SCIENCE_PRODUCTION",                         "All Campus district's [ICON_Science] Science adjacency bonus provides [ICON_Production] Production as well."),
+    ("LOC_GREATPERSON_ELECTRICITY",                                       "Provides All cities +3 [ICON_POWER] Power from renewable water sources. +5% [ICON_Production] Production if this city is fully powered. "),
     ("LOC_GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE",                       "All Industrial Zone district's [ICON_Production] Production adjacency bonus provides [ICON_Science] Science as well."),
     ("LOC_GREATPERSON_NATIONAL_APPEAL",                                   "+1 Appeal to all tiles within your territoty. "),
     ("LOC_GREATPERSON_SINGLECITY_APPEAL",                                 "+2 Appeal to all tiles in this city. +100% [ICON_TOURISM] Tourism from Wonder, Improvment and National Park in this city."),
@@ -57,7 +57,7 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE",                            "在标准速度下，所在单元格每相邻一个山脉单元格获得400 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE",                              "获得3000点 [ICON_SCIENCE] 科技值与1000点 [ICON_CULTURE] 文化值（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_DIPLO_VISIBILITY",                                  "所有文明的外交能见度+{Amount} {Amount : plural 1?级; other?级;}。在您的领土内，敌方间谍等级降低1级。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "工业区内地区性建筑延伸3个单元格且+3 [ICON_Production] 生产力。"), --立即在该区域建造工厂和工作坊。工厂+3 [ICON_Production] 生产力。
+    ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "工业区内地区性建筑延伸3个单元格且+3 [ICON_Science] 科技值。"), --立即在该区域建造工厂和工作坊。工厂+3 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_PIERO_DE_BARDI_GOLD",                                           "获得300 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_JAKOB_FUGGER_GOLD",                                             "获得400 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_JOHN_JACOB_ASTOR_GOLD",                                         "获得600 [ICON_Gold] 金币。"),
@@ -76,7 +76,7 @@ values
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING",                       "为精炼启动 [ICON_TechBoosted] 尤里卡时刻。若精炼已被触发，则完成该科技。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION",                     "为卫生设备启动 [ICON_TechBoosted] 尤里卡时刻。若卫生设备已被触发，则完成该科技。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM",    "激活时当前全国所有已建成的区域提供等于相邻加成的 [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_GREATPERSON_CAMPUS_SCIENCE_PRODUCTION",                         "所有学院区域的 [ICON_Science] 科技值相邻加成也提供 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GREATPERSON_ELECTRICITY",                                       "向本文明所有城市提供+3点 [ICON_POWER] 电力，通电后额外为本城+5% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE",                       "所有工业区域的 [ICON_Production] 生产力相邻加成也提供 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_NATIONAL_APPEAL",                                   "国境内的所有单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_SINGLECITY_APPEAL",                                 "本城+2魅力。本城来自奇观、改良设施和自然公园的业绩+100%。"),

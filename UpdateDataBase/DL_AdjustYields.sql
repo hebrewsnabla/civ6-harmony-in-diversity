@@ -132,12 +132,11 @@ insert or replace into Feature_YieldChanges (FeatureType, YieldType, YieldChange
 	('FEATURE_EYE_OF_THE_SAHARA', 'YIELD_FAITH', 1),
 	('FEATURE_BARRIER_REEF', 'YIELD_PRODUCTION', 1),
 	('FEATURE_BARRIER_REEF', 'YIELD_GOLD', 2),
-	('FEATURE_LAKE_RETBA', 'YIELD_FOOD', 1)
-;
+	('FEATURE_LAKE_RETBA', 'YIELD_FOOD', 1);
 update ModifierArguments set Value = 1 where ModifierId = 'EYESAHARA_SCIENCE_ATOMIC' and Name = 'Amount';
 
 delete from Feature_AdjacentYields where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
 update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
--- update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
+update Feature_AdjacentYields set YieldChange = 2 whereFeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';

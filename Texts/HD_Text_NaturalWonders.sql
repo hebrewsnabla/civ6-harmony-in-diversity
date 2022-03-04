@@ -41,4 +41,3 @@ values
     ("zh_Hans_CN",  "LOC_FEATURE_WHITEDESERT_DESCRIPTION",               "占4个单元格的自然奇观，提供+1 [ICON_Faith] 信仰值，+1 [ICON_SCIENCE] 科技值、+1 [ICON_Culture] 文化值、+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_FEATURE_UBSUNUR_HOLLOW_DESCRIPTION",            "占4个单元格的沼泽自然奇观。+3 [ICON_FAITH] 信仰值、+1 [ICON_FOOD] 食物、+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION",            "占4个单元格的自然奇观，提供+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。");
-
