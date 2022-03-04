@@ -102,7 +102,7 @@ from HD_DistrictBonus_Mono;
 insert or ignore into ModifierArguments
     (ModifierId,                                Name,           Value)
 select
-    'HD_STATION_' || DistrictType || '_BONUS',  'Amount',       50
+    'HD_STATION_' || DistrictType || '_BONUS',  'Amount',       25
 from HD_DistrictBonus_Mono;
 
 insert or ignore into ImprovementModifiers
@@ -126,7 +126,7 @@ from HD_DistrictBonus_Mono;
 insert or ignore into ModifierArguments
     (ModifierId,                                        Name,           Value)
 select
-    'HD_STATION_' || DistrictType || '_BONUS_POWERED',  'Amount',       50
+    'HD_STATION_' || DistrictType || '_BONUS_POWERED',  'Amount',       25
 from HD_DistrictBonus_Mono;
 
 insert or ignore into RequirementSets

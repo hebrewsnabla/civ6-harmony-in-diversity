@@ -417,7 +417,7 @@ update ModifierArguments set Value = 50 where Name = 'Amount' and ModifierID = '
 
 -- update ModifierArguments set Value = 4 where Name = 'Amount' and (ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' or ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE');
 
-update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'INTERNATIONALSPACEAGENCY_SCIENCEPERTRIBUTARY';
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'INTERNATIONALSPACEAGENCY_SCIENCEPERTRIBUTARY';
 
 -- New Policy Cards
 insert or replace into Types
@@ -821,14 +821,14 @@ values
 	('SOCIAL_STATISTICS_POPULATION_CULTURE',								'YieldType',					'YIELD_CULTURE'),
 	('SOCIAL_STATISTICS_POPULATION_CULTURE',								'Amount',						0.8),
 	('PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST',								'YieldType',					'YIELD_GOLD'),
-	('PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST',								'Amount',						10),
+	('PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST',								'Amount',						5),
 	('PLUTONOMY_CAMPUS_PRODUCTION_PERCENTAGE_BOOST',						'YieldType',					'YIELD_PRODUCTION'),
 	('PLUTONOMY_CAMPUS_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						5),
 	('PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS',						'Amount',						25),
 	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'YieldType',					'YIELD_GOLD'),
-	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'Amount',						10),
+	('PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST',								'Amount',						7),
 	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'YieldType',					'YIELD_PRODUCTION'),
-	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						10),
+	('PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST',						'Amount',						7),
 	('SCIENTIFIC_EXPEDITIONS_SCIENCE',										'ModifierId',					'SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER'),
 	('SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER',								'YieldType',					'YIELD_SCIENCE'),
 	('SCIENTIFIC_EXPEDITIONS_SCIENCE_MODIFIER',								'Amount',						3),
@@ -1462,27 +1462,27 @@ select
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType)
+	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
 from HD_DistrictBonus;
 
 -- insert or replace into Modifiers
--- 	(ModifierId,														ModifierType)
+-- 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 -- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
 -- from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType)
+	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
-	(ModifierId,														ModifierType)
+	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
 from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
@@ -1554,7 +1554,7 @@ from HD_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,														Name,					Value)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'Amount',				100
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'Amount',				50
 from HD_DistrictBonus;
 
 -- insert or replace into ModifierArguments

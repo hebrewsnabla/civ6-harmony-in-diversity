@@ -51,8 +51,7 @@ delete from Building_GreatWorks where BuildingType = 'BUILDING_HERMITAGE';
 insert or replace into Building_GreatWorks
 	(BuildingType, 			GreatWorkSlotType, 			NumSlots,	ThemingSameEras,	ThemingYieldMultiplier,	ThemingTourismMultiplier,	NonUniquePersonYield,	NonUniquePersonTourism)
 values
-	('BUILDING_HERMITAGE',	'GREATWORKSLOT_ART',		3,			1,					200,					200,						1,						1),
-	('BUILDING_HERMITAGE',	'GREATWORKSLOT_ARTIFACT',	3,			1,					200,					200,						1,						1);
+	('BUILDING_HERMITAGE',	'GREATWORKSLOT_ART',		4,			1,					200,					200,						1,						1);
 
 --SYDNEY_OPERA_HOUSE
 --同时代
