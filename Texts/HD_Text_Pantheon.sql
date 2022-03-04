@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "One with Nature"),
-    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn and +3 [ICON_Amenities] Amenity if a city owns at least one natural wonder tile."),
+    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +2 [ICON_Amenities] Amenity and +10% to all yields if a city owns at least one natural wonder tile."),
     ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +1 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (on Standard Speed). "),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
@@ -20,7 +20,7 @@ values
     ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh. Floodplain tiles no longer lower adjacent tiles' Appeal."),
     ("LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "+1 [ICON_Food] Food and +1 [ICON_Production] Production from Camps over Luxury and Bonus resources. +1 [ICON_Gold] Gold from all Camps."),
     ("LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "+2 [ICON_GreatPerson] Great Person Points from Holy Sites (Prophet), Campuses (Scientist), Theater Squares  (Writer), Industial Zones (Engineer) and Commercial Hubs (Merchant)."),
-    ("LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "+2 [ICON_Faith] Faith from Quarries. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry."),
+    ("LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "+1 [ICON_Faith] Faith and +1 [ICON_Production] Production from Quarries. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Quarry."),
     ("LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "+1 [ICON_Faith] Faith and +1 [ICON_CULTURE] Culture from Mines over Luxury and Bonus resources. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns mines over Luxury or Bonus resources."),
     ("LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "+2 [ICON_Faith] Faith from tiles with Breathtaking Appeal. +1 [ICON_Faith] Faith from tiles with Charming Appeal. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located on a Charming tile, doubles for Breathtaking tile."),
     ("LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION",                 "+1 [ICON_FAITH] Faith and +1 [ICON_CULTURE] Culture from Geothermal Fissures and Volcanic Soil. +4 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Geothermal Fissures, Volcanic Soil or Volcano (Volcanic Wonders included) tile."),
@@ -49,7 +49,7 @@ values
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
     ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "+1 [ICON_Production] Production from Fishing Boats. Extra +1 [ICON_Production] Production from Fishing Boats over Bonus Resources."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
-    ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Government Plaza and Palace."),
+    ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold to Palace.When chosen, receive a [ICON_CITIZEN] Citizen and a [ICON_HOUSING] Housing in your capital."),
     ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Accumulating Strategic resources gain an additional +1 per turn."),
     ("LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "+50% [ICON_Production] Production toward Ancient, Classical and Medieval military units. Strategic resource costs for units are discounted 40%."),
     ("LOC_BELIEF_HD_HERMES_NAME",                                 "Hermes"),
@@ -71,7 +71,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "天人合一"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+3 [ICON_Amenities] 宜居度，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+10%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+1 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),
@@ -87,7 +87,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力，所有营地+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商人）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+2 [ICON_Faith] 信仰值。如城市中有采石场，则每回合+4 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+1 [ICON_Faith] 信仰值和+1 [ICON_Production] 生产力。如城市中有采石场，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "所有奢侈和加成矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在迷人地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数，惊艳则翻倍。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION",                 "地热裂缝和火山土单元格提供+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。每座拥有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+4 [ICON_GreatProphet] 大预言家点数。"),
@@ -116,7 +116,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "渔船+1 [ICON_Production] 生产力，改良加成资源的渔船额外+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "城市中每有一座宫殿或市政广场区域，便+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "宫殿+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。首都+1 [ICON_CITIZEN] 人口+1 [ICON_HOUSING] 住房"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_FORGE_DESCRIPTION",                   "为远古、古典和中世纪军事单位+50% [ICON_Production] 生产力。生产单位所需战略资源花费减少40%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_HERMES_NAME",                                 "赫尔墨斯"),

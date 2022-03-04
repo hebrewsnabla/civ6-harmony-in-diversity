@@ -335,7 +335,7 @@ from TOWER_BRIDGE_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,											Name,				Value)
 select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'Amount',			5
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'Amount',			4
 from TOWER_BRIDGE_DistrictBonus;
 
 insert or replace into BuildingModifiers
@@ -371,7 +371,7 @@ from TOWER_BRIDGE_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,											Name,				Value)
 select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'Amount',			5
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'Amount',			4
 from TOWER_BRIDGE_DistrictBonus;
 
 --BUILDING_BRANDENBURG_GATE
@@ -398,9 +398,9 @@ insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value) 
 values
 	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS', 	'YieldType',	'YIELD_PRODUCTION'),
-	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'Amount',		10),
+	('BRANDENBURG_GATE_PRODUCTION_AT_PEACE_BONUS',	'Amount',		8),
 	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS', 		'YieldType',	'YIELD_SCIENCE'),
-	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'Amount',		10),
+	('BRANDENBURG_GATE_SCIENCE_AT_WAR_BONUS',		'Amount',		8),
 	('BRANDENBURG_GARRISON_LOYALTY',				'Amount',		3);
 
 --BUILDING_BOROBUDUR

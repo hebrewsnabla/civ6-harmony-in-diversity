@@ -17,7 +17,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NOMONOPOLY_DESCRIPTION",      "需要“工作坊”方可建造或购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以创建铁路和火车站来改善你的领土上的区域产出、贸易和[ICON_PRODUCTION]生产。"),
     ("zh_Hans_CN",  "LOC_STATION_ADJ_PRODUCTION",                      "+{1_num} [ICON_PRODUCTION] 生产力来自相邻火车站。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_NAME",                "火车站"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_DESCRIPTION",         "由大亨建造，能建在平坦、丘陵单元格或森林、雨林、泛滥平原和火山土上，一座城市只能拥有一个火车站，火车站不能与另一个火车站相邻。需要2点 [ICON_Power] 电力。在所在单元格和所有相邻的可通行陆地单元格上自动创建铁路。[NEWLINE][NEWLINE]以火车站所在城市为出发或目的地的国内商路+2 [ICON_PRODUCTION] 生产力, +4 [ICON_GOLD] 金币；此城 [ICON_POWER] 供电充足时，这些产出+50%。本城改良提供的 [ICON_TOURISM] 旅游业绩+50%。[NEWLINE]为相邻的圣地、学院、剧院广场、商业中心、港口或工业区+50%相邻加成；此城 [ICON_POWER] 供电充足时，该效果翻倍。");
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LEU_STATION_DESCRIPTION",         "由大亨建造，能建在平坦、丘陵单元格或森林、雨林、泛滥平原和火山土上，一座城市只能拥有一个火车站，火车站不能与另一个火车站相邻。需要2点 [ICON_Power] 电力。在所在单元格和所有相邻的可通行陆地单元格上自动创建铁路。[NEWLINE][NEWLINE]以火车站所在城市为出发或目的地的国内商路+2 [ICON_PRODUCTION] 生产力, +4 [ICON_GOLD] 金币；此城 [ICON_POWER] 供电充足时，这些产出+50%。本城改良提供的 [ICON_TOURISM] 旅游业绩+50%。[NEWLINE]为相邻的圣地、学院、剧院广场、商业中心、港口或工业区+25%相邻加成；此城 [ICON_POWER] 供电充足时，该效果翻倍。");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
