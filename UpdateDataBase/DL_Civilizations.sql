@@ -784,8 +784,7 @@ values
 insert or replace into Improvement_ValidResources
 	(ImprovementType,				ResourceType)
 values
-	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_SHEEP'),
-	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_MAIZE');
+	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_SHEEP');
 
 -- 1 housing (2 & 2 in official update)
 update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';

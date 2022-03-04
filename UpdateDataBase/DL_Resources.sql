@@ -13,8 +13,7 @@ update Resources set Frequency = 10 where ResourceType = 'RESOURCE_ALUMINUM';
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_COPPER';
--- remove some maize. 
-update Resources set Frequency = 4 where ResourceType = 'RESOURCE_MAIZE';
+
 -- 
 update Resource_Harvests set YieldType =  'YIELD_PRODUCTION' , Amount = 40  where ResourceType = 'RESOURCE_COPPER';
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_COPPER' and TerrainType = 'TERRAIN_SNOW_HILLS';
@@ -85,16 +84,6 @@ update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' wh
 
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
 
-delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_MAIZE';
-delete from Resource_ValidFeatures where ResourceType = 'RESOURCE_MAIZE';
-delete from Resource_YieldChanges where ResourceType = 'RESOURCE_MAIZE' and YieldType = 'YIELD_GOLD';
-
-insert or replace into Resource_YieldChanges (ResourceType, YieldType, YieldChange) select
-    ResourceType,    'YIELD_FOOD',   2
-from Resources where ResourceType = 'RESOURCE_MAIZE';
-insert or replace into Resource_YieldChanges (ResourceType, YieldType, YieldChange) select
-    ResourceType,    'YIELD_PRODUCTION',   -1
-from Resources where ResourceType = 'RESOURCE_MAIZE';
 
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
@@ -116,9 +105,6 @@ insert or replace into Resource_ValidTerrains
 values
 	('RESOURCE_STONE',			'TERRAIN_PLAINS'),
 	('RESOURCE_STONE',			'TERRAIN_PLAINS_HILLS'),
-	('RESOURCE_MAIZE',			'TERRAIN_GRASS_HILLS'),
-	('RESOURCE_MAIZE',			'TERRAIN_PLAINS_HILLS'),
-	('RESOURCE_MAIZE',			'TERRAIN_TUNDRA_HILLS'),
 	('RESOURCE_OLIVES',			'TERRAIN_GRASS_HILLS');
 
 delete from Feature_ValidTerrains where FeatureType = 'FEATURE_GEOTHERMAL_FISSURE' and (TerrainType = 'TERRAIN_SNOW' or TerrainType = 'TERRAIN_SNOW_HILLS');

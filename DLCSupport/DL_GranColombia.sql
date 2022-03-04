@@ -3,10 +3,33 @@
 -------------------------------------
 
 -- Resource
+-- remove some maize. 
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_MAIZE';
 insert or replace into Resource_YieldChanges  
     (ResourceType,          YieldType,          YieldChange)
 values
     ('RESOURCE_HONEY',      'YIELD_GOLD',       1);
+delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_MAIZE';
+delete from Resource_ValidFeatures where ResourceType = 'RESOURCE_MAIZE';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_MAIZE' and YieldType = 'YIELD_GOLD';
+insert or replace into Resource_ValidTerrains
+    (ResourceType,              TerrainType)
+values
+    ('RESOURCE_MAIZE',          'TERRAIN_GRASS_HILLS'),
+    ('RESOURCE_MAIZE',          'TERRAIN_PLAINS_HILLS'),
+    ('RESOURCE_MAIZE',          'TERRAIN_TUNDRA_HILLS');
+
+insert or replace into Resource_YieldChanges (ResourceType, YieldType, YieldChange) select
+    ResourceType,    'YIELD_FOOD',   2
+from Resources where ResourceType = 'RESOURCE_MAIZE';
+insert or replace into Resource_YieldChanges (ResourceType, YieldType, YieldChange) select
+    ResourceType,    'YIELD_PRODUCTION',   -1
+from Resources where ResourceType = 'RESOURCE_MAIZE';
+
+insert or replace into Improvement_ValidResources
+    (ImprovementType,               ResourceType)
+values
+    ('IMPROVEMENT_TERRACE_FARM',    'RESOURCE_MAIZE');
 
 -- insert or replace into RequirementSetRequirements 
 --     (RequirementSetId,                      RequirementId) 
