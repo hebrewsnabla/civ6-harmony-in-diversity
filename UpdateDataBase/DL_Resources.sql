@@ -13,8 +13,7 @@ update Resources set Frequency = 10 where ResourceType = 'RESOURCE_ALUMINUM';
 -- add more sheeps and copper.
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_SHEEP';
 update Resources set Frequency = 8 where ResourceType = 'RESOURCE_COPPER';
--- remove some maize. 
-update Resources set Frequency = 4 where ResourceType = 'RESOURCE_MAIZE';
+
 -- 
 update Resource_Harvests set YieldType =  'YIELD_PRODUCTION' , Amount = 40  where ResourceType = 'RESOURCE_COPPER';
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_COPPER' and TerrainType = 'TERRAIN_SNOW_HILLS';
@@ -84,6 +83,8 @@ values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
 update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
+
+
 insert or replace into Resource_ValidFeatures
 	(ResourceType,				FeatureType)
 values
