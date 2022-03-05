@@ -157,6 +157,7 @@ GameEvents.RequestChangeFaithBalance.Add(ChangeFaithBalance)
 
 GameEvents.RequestCreateBuilding.Add(function (playerID, cityID, buildingID)
     local city = CityManager.GetCity(playerID, cityID)
+    print('HD DEBUG create building requested', playerID, cityID, buildingID)
     if city then
         local buildingQueue = city:GetBuildQueue()
         -- print(city, buildingQueue)
@@ -166,6 +167,7 @@ end)
 
 GameEvents.RequestRemoveBuilding.Add(function (playerID, cityID, buildingID)
     local city = CityManager.GetCity(playerID, cityID)
+    print('HD DEBUG remove building requested', playerID, cityID, buildingID)
     if city ~= nil then
         local buildings = city:GetBuildings()
         buildings:RemoveBuilding(buildingID)
@@ -175,7 +177,7 @@ end)
 GameEvents.ChangeUnitExperience.Add(function(playerID, unitID, amount)
     local unit = UnitManager.GetUnit(playerID, unitID)
     if unit ~= nil then
-        -- print('+exp', amount)
+        print('HD DEBUG +exp', amount, playerID, unitID)
         unit:GetExperience():SetExperienceLocked(false);
         unit:GetExperience():ChangeExperience(amount);
     end
@@ -192,6 +194,7 @@ end)
 GameEvents.AddGreatPeoplePoints.Add(function(playerID, gppID, amount)
     local player = Players[playerID]
     if player ~= nil then
+        print('HD DEBUG add great people point', playerID, gppID, amount)
         player:GetGreatPeoplePoints():ChangePointsTotal(gppID, amount)
     end
 end)
