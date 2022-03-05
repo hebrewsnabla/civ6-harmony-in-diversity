@@ -256,19 +256,19 @@ update ModifierArguments set Value = 1 where ModifierId = 'AMBIORIX_NEIGHBOR_COM
 delete from DistrictModifiers where ModifierId = 'OPPIDUM_GRANT_TECH_APPRENTICESHIP' and DistrictType = 'DISTRICT_OPPIDUM';
 delete from TraitModifiers where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED';
 
-insert or replace into DistrictModifiers
-    (DistrictType,          ModifierId)
-values
-    ('DISTRICT_OPPIDUM',    'OPPIDUM_GRANT_TECH_METAL_CASTING');
-insert or replace into Modifiers 
-    (ModifierId,                               ModifierType,                                   RunOnce,    Permanent)
-values
-    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,          1);
-insert or replace into ModifierArguments 
-    (ModifierId,                               Name,                        Value)
-values
-    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
-    ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
+-- insert or replace into DistrictModifiers
+--     (DistrictType,          ModifierId)
+-- values
+--     ('DISTRICT_OPPIDUM',    'OPPIDUM_GRANT_TECH_METAL_CASTING');
+-- insert or replace into Modifiers 
+--     (ModifierId,                               ModifierType,                                   RunOnce,    Permanent)
+-- values
+--     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',    1,          1);
+-- insert or replace into ModifierArguments 
+--     (ModifierId,                               Name,                        Value)
+-- values
+--     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'TechType',                  'TECH_METAL_CASTING'),
+--     ('OPPIDUM_GRANT_TECH_METAL_CASTING',      'GrantTechIfBoosted',        1);
 --高卢战车
 update Units set Combat = 30 where UnitType = 'UNIT_GAUL_CARRUS';
 
@@ -460,6 +460,9 @@ update Units set PrereqTech = 'TECH_THE_WHEEL' where UnitType = 'UNIT_SUMERIAN_W
 update ModifierArguments set Value = 5 where ModifierId = 'PELTAST_NEIGHBOR_COMBAT_HD_MODIFIER' AND Name='Amount';
 update ModifierArguments set Value = 7 where ModifierId = 'HOPLITE_NEIGHBOR_COMBAT' AND Name='Amount';
 update Units set Cost = 50 where UnitType = 'UNIT_GREEK_HOPLITE';
+delete from TraitModifiers where ModifierId = 'UNIQUE_LEADER_CULTURE_KILLS';
+update TraitModifiers set TraitType = 'TRAIT_CIVILIZATION_PLATOS_REPUBLIC' where ModifierId = 'ACROPOLIS_DUPLICATE_FIRST_INFLUENCE_TOKEN';
+update TraitModifiers set TraitType = 'TRAIT_LEADER_SURROUNDED_BY_GLORY' where ModifierId = 'TRAIT_WILDCARD_GOVERNMENT_SLOT';
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --西班牙
@@ -528,10 +531,12 @@ update Units set Combat = 40 , RangedCombat = 52 where UnitType = 'UNIT_CHINESE_
 ------------------------------------------------------------------------------------------------------------------------------------
 --祖鲁
 delete from TraitModifiers where ModifierId = 'TRAIT_LAND_CORPS_EARLY' or ModifierId = 'TRAIT_LAND_ARMIES_EARLY';
+delete from TraitModifiers where ModifierId = 'HD_IKANDA_CULTURE_BOMB';
 update Units set PrereqTech = 'TECH_MACHINERY' where UnitType = 'UNIT_ZULU_ASSEGAI';
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_LAND_CORPS_COMBAT_STRENGTH' AND Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_LAND_ARMIES_COMBAT_STRENGTH' AND Name = 'Amount';
 update ModifierArguments set Value = 1 where ModifierId = 'HD_IKANDA_SCIENCE' AND Name = 'Amount';
+update Units set Combat = 43 where UnitType = 'UNIT_ZULU_IMPI';
 
 -------------------------------------
 --           市政&科技             --
