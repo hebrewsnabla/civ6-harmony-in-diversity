@@ -44,11 +44,10 @@ update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_C
 update Buildings set OuterDefenseHitPoints = 75 where BuildingType = 'BUILDING_STAR_FORT';
 update Buildings set OuterDefenseHitPoints = 100 where BuildingType = 'BUILDING_TSIKHE';
 
---胸甲增加攻城术前置
-insert or replace into TechnologyPrereqs
-	(Technology,					PrereqTech)
-values
-	('TECH_BALLISTICS',	    'TECH_SIEGE_TACTICS');
+--结盟回调
+update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_CIVIL_SERVICE' where DiplomaticActionType like 'DIPLOACTION_ALLIANCE%';
+update DiplomaticActions set TargetPrereqCivic = 'CIVIC_CIVIL_SERVICE' where DiplomaticActionType like 'DIPLOACTION_ALLIANCE%';
+
 --兵工厂给近战抗骑兵1速
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
@@ -83,6 +82,11 @@ values
 	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',          'ORDU_ADJUST_MOVEMENT');
 
 --城市政策
+update Projects set RequiredBuilding = 'BUILDING_JNR_WAYSTATION' where ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FREIGHT';
+update Projects set RequiredBuilding = 'BUILDING_JNR_TOOLING_SHOP' where ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FORGING_IRON';
+update ModifierArguments set Value = 0 where ModifierId = 'WAYSTATION_FREIGHT_PRODUCTION' AND Name='Amount';
+update ModifierArguments set Value = 0 where ModifierId = 'TOOLING_SHOP_FORGING_IRON_PRODUCTION' AND Name='Amount';
+
 
 -------------------------------------
 --              总督               --

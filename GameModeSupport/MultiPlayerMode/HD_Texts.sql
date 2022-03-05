@@ -82,16 +82,20 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
+    --阿拉伯
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION",                      "当倒数第二个 [ICON_GreatProphet] 预言家被招募后（如果您尚未获得 [ICON_GreatProphet] 大预言家），自动获得最后一个大预言家。每座信奉阿拉伯宗教的外国城市+2 [ICON_Science] 科技值。"), 
-
+    --拜占庭
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BYZANTIUM_DESCRIPTION",                         "每有1座圣城皈依拜占庭的宗教（也包括拜占庭的圣城），拜占庭的单位便获得+2 [ICON_Strength] 战斗力或+3 [ICON_Religion] 宗教战斗力。每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（250宗教压力）。如城市拥有圣地区域，其提供的 [ICON_GreatProphet] 大预言家点数+2。"),
     ("zh_Hans_CN",  "LOC_ABILITY_BYZANTIUM_COMBAT_UNITS_DESCRIPTION",                       "每有一座圣城皈依您的宗教，便+2 [ICON_Strength] 战斗力；主要文明的单位被击杀后，每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（天授规矩）"),
-
+    --大哥
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",                 "种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
+    --朝鲜
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",                    "首都每次建造完成书院区域时获得一个总督点。"),
-
+    --斯基泰
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",               "开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。训练轻骑兵单位+50% [ICON_PRODUCTION] 生产力。研究科技“骑马”后，牧场+1 [ICON_PRODUCTION] 生产力。"),
+    --巴比伦
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                           "[ICON_TechBoosted] 尤里卡提供科技的64%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-30%。"),
+    --马里
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",                  "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，奢侈品资源矿产提供+2 [ICON_Gold] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-15% [ICON_PRODUCTION] 生产力。");
 
 -- --------------------------------------------------------------------------------
@@ -100,7 +104,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "可更早组建军团（需人文主义市政）和军队（需焦土策略市政）。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "军团和军队的 [ICON_STRENGTH] 基础战斗力额外+3。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMBIORIX_DESCRIPTION",                                "近战、抗骑兵和远程单位每与一个其他单位相邻（无论该单位属于哪个文明），便+1 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRIEU_DESCRIPTION",                                   "回合开始时，领土内在雨林、沼泽或树林地貌中的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                                   "揭示出生点6个单元格内的地块。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+3 [ICON_Strength] 战斗力。"),
@@ -186,6 +190,9 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_SIEGE_TACTICS_HD_DESCRIPTION",                                "攻城单位获得能力：攻击区域防御+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TECH_GUNPOWDER_HD_DESCRIPTION",                                    "采石场改良设施+1 [ICON_Production] 生产力。[NEWLINE]为苏莱曼一世解锁1个 [ICON_GOVERNOR] 总督头衔。[NEWLINE]重骑兵单位获得能力：重骑兵周围1单元格内的陆地单位+2 [ICON_Strength] 战斗力或+4 [ICON_RELIGION] 宗教战斗力。"), 
+
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_WAYSTATION_DESCRIPTION",                              "+1 [ICON_TradeRoute] 贸易路线容量。城市中每个改良资源的营地和牧场+1 [ICON_Food] 食物，+2 [ICON_Gold] 金币。允许城市政策：货运项目"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_TOOLING_SHOP_DESCRIPTION",                            "允许城市政策：锻铁。"),
 
     ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "轻骑兵单位获得能力：在敌方领土内开始回合时+3 [ICON_Strength] 战斗力。" ),
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
