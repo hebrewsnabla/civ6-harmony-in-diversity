@@ -81,12 +81,15 @@ insert or replace into UnitAbilityModifiers
 values
 	('ABILITY_PVP_ARMORY_GAIN_MOVEMENT_BONUS',          'ORDU_ADJUST_MOVEMENT');
 
---城市政策
-update Projects set RequiredBuilding = 'BUILDING_JNR_WAYSTATION' where ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FREIGHT';
-update Projects set RequiredBuilding = 'BUILDING_JNR_TOOLING_SHOP' where ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FORGING_IRON';
-update ModifierArguments set Value = 0 where ModifierId = 'WAYSTATION_FREIGHT_PRODUCTION' AND Name='Amount';
-update ModifierArguments set Value = 0 where ModifierId = 'TOOLING_SHOP_FORGING_IRON_PRODUCTION' AND Name='Amount';
-
+-- 城市政策
+update Projects set PrereqDistrict = NULL, RequiredBuilding = 'BUILDING_JNR_WAYSTATION' where
+    ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FREIGHT'
+and exists (select BuildingType from Buildings where BuildingType = 'BUILDING_JNR_WAYSTATION');
+update Projects set PrereqDistrict = NULL, RequiredBuilding = 'BUILDING_JNR_TOOLING_SHOP' where
+    ProjectType = 'PROJECT_CITY_POLICY_ENABLE_FORGING_IRON'
+and exists (select BuildingType from Buildings where BuildingType = 'BUILDING_JNR_TOOLING_SHOP');
+delete from BuildingModifiers where BuildingType = 'BUILDING_JNR_WAYSTATION' and ModifierId = 'WAYSTATION_FREIGHT_PRODUCTION';
+delete from BuildingModifiers where BuildingType = 'BUILDING_JNR_TOOLING_SHOP' and ModifierId = 'TOOLING_SHOP_FORGING_IRON_PRODUCTION';
 
 -------------------------------------
 --              总督               --
