@@ -21,9 +21,9 @@ function ChinaBuilderScience(playerID, unitID, newCharges, oldCharges)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
 	local sCiv = playerConfig:GetCivilizationTypeName()
-	local amount = 6
+	local amount = GlobalParameters.CHINA_WORKER_SCIENCE_PER_CHARGE
 	local sWisdonOfWorkingPeople = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE'
-	if player:IsTurnActive() and CivilizationHasTrait(sCiv, sWisdonOfWorkingPeople) and (newCharges + 1 == oldCharges) then
+	if player:IsTurnActive() and CivilizationHasTrait(sCiv, sWisdonOfWorkingPeople) and (newCharges + 1 == oldCharges) and (amount > 0) then
 		local unit = player:GetUnits():FindID(unitID)
 		if unit ~= nil then
 			-- print(unit:GetOwner(), unit:GetType(), unit:GetX(), unit:GetY())
