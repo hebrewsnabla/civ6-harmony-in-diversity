@@ -1512,7 +1512,7 @@ delete from District_Adjacencies where YieldChangeId = 'NegativeDistrict_Science
 insert or replace into TraitModifiers (TraitType,   ModifierId)
 select  'TRAIT_LEADER_HWARANG', 'HWARANG_RESEARCHLAB_POP' || YieldType from Yields;
 insert or replace into Modifiers (ModifierId,   ModifierType,   SubjectRequirementSetId)
-select  'HWARANG_RESEARCHLAB_POP' || YieldType, 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION', 'CITY_HAS_BUILDING_RESEARCH_LAB' from Yields;
+select  'HWARANG_RESEARCHLAB_POP' || YieldType, 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION', 'HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING_REQUIREMENTS' from Yields;
 insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 select  'HWARANG_RESEARCHLAB_POP' || YieldType, 'YieldType', YieldType from Yields;
 insert or replace into ModifierArguments (ModifierId,   Name,   Value)
