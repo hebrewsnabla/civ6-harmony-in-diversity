@@ -37,6 +37,8 @@ insert or replace into AiListTypes (ListType) values
 	('DLAdjustUnits'),
 	('DLAdjustUnitPCBuilds'),
 	-- ('DLAdjustPseudoYields'),
+	('DLCityStateDistricts'),
+	('DLAdjustWeights'),
 	('DLFewerWaronCityStates');
 
 insert or replace into AiLists
@@ -44,6 +46,8 @@ insert or replace into AiLists
 values
 	('DLMedievalDistricts',		NULL,						'Districts'),
 	('DLRenaissanceDistricts',	NULL,						'Districts'),
+	('DLAdjustWeights',			NULL, 						'Yields'),
+	('DLCityStateDistricts',    'MINOR_CIV_DEFAULT_TRAIT',   'Districts'),
 	('DLAdjustBuildings',		'TRAIT_LEADER_MAJOR_CIV',	'Buildings'),
 	('DLAdjustDistricts',		'TRAIT_LEADER_MAJOR_CIV',	'Districts'),
 	('DLAdjustCivics',			'TRAIT_LEADER_MAJOR_CIV',	'Civics'),
@@ -66,12 +70,78 @@ values
 	('DLAdjustBuildings',		'BUILDING_GOV_SPIES',					1,			0),
 	-- ('DLAdjustBuildings',		'BUILDING_UNIVERSITY',					1,			0),
 	-- ('DLAdjustBuildings',		'BUILDING_WORKSHOP',					1,			0),
-	('DLAdjustDistricts',		'DISTRICT_GOVERNMENT',					1,			0),
+	('DLAdjustDistricts', 		'DISTRICT_INDUSTRIAL_ZONE', 			1, 			70),
+    ('DLAdjustDistricts', 		'DISTRICT_GOVERNMENT', 					1, 			100),
+    ('DLAdjustDistricts', 		'DISTRICT_DIPLOMATIC_QUARTER', 			1, 			100),
+    ('DLAdjustDistricts', 		'DISTRICT_AQUEDUCT', 					1, 			70),
+    ('DLAdjustDistricts', 		'DISTRICT_HARBOR', 						1, 			30),
+    ('DLAdjustDistricts', 		'DISTRICT_CAMPUS', 						1, 			40),
+    ('DLAdjustDistricts', 		'DISTRICT_THEATER',						1, 			40),
+    ('DLAdjustDistricts', 		'DISTRICT_ENCAMPMENT', 					1, 			30),
+    ('DLAdjustDistricts', 		'DISTRICT_ENTERTAINMENT_COMPLEX', 		1, 			31),
 	-- ('DLAdjustDistricts',		'DISTRICT_AQUEDUCT',					1,			0),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_HAPPINESS',				1,			-50),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_RESOURCE_LUXURY',			1,			300),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_IMPROVEMENT',				1,			8),
 	('DLFewerWaronCityStates',	'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	0,			0),
+	('DLCityStateDistricts', 	'DISTRICT_HOLY_SITE', 1, 0),
+	('DLCityStateDistricts', 'DISTRICT_CAMPUS', 1, 10),
+    ('DLCityStateDistricts', 'DISTRICT_COMMERCIAL_HUB', 1, 50),
+    ('DLCityStateDistricts', 'DISTRICT_INDUSTRIAL_ZONE', 1, 50),
+    ('DLCityStateDistricts', 'DISTRICT_ENCAMPMENT', 1, 50),
+    ('DLCityStateDistricts', 'DISTRICT_THEATER', 1, 10),
+    ('DLCityStateDistricts', 'DISTRICT_HARBOR', 1, 30),
+    ('DLCityStateDistricts', 'DISTRICT_AQUEDUCT', 1, 30),
+	('DLCityStateDistricts', 	'DISTRICT_AQUEDUCT', 1, 30),
+	('DLAdjustTechs', 'TECH_MINING', 1, 5),
+	('DLAdjustTechs', 'TECH_ANIMAL_HUSBANDRY', 1, 5),
+	-- set several tech goals for ai. maybe civil engineering is a good line.
+    ('DLAdjustTechs', 'TECH_IRRIGATION', 1, 4),
+    ('DLAdjustTechs', 'TECH_IRON_WORKING', 1, 10),
+    ('DLAdjustTechs', 'TECH_MACHINERY', 1, 15),
+    ('DLAdjustTechs', 'TECH_METAL_CASTING', 1, 10),
+    ('DLAdjustTechs', 'TECH_CIVIL_ENGINEERING', 1, 10),
+    ('DLAdjustTechs', 'TECH_CHEMISTRY', 1, 10),
+    ('DLAdjustTechs', 'TECH_COMPUTERS', 1, 20),
+    -- important building unlocks.
+    ('DLAdjustTechs', 'TECH_INDUSTRIALIZATION', 1, 8),
+    ('DLAdjustTechs', 'TECH_CURRENCY', 1, 5),
+    ('DLAdjustTechs', 'TECH_PAPER_MAKING_HD', 1, 5),
+    ('DLAdjustTechs', 'TECH_APPRENTICESHIP', 1, 8),
+    -- more nushou
+    ('DLAdjustTechs', 'MACHINERY', 1, 10),
+    ('DLAdjustWeights', 'YIELD_FAITH', 1, 0),
+    ('DLAdjustWeights', 'YIELD_GOLD',  1, 10),
+    ('DLAdjustWeights', 'YIELD_FOOD', 1, 20),
+    ('DLAdjustWeights', 'YIELD_PRODUCTION', 1, 20),
+	('DLAdjustBuildings', 'BUILDING_TOTEMS', 0, -20),
+    ('DLAdjustBuildings', 'BUILDING_MONUMENT', 1, 10),
+    ('DLAdjustBuildings', 'BUILDING_OFFICIAL_RUN_HANDCRAFT',1, 20),
+    ('DLAdjustBuildings', 'BUILDING_WALLS', 1, 5),
+    ('DLAdjustBuildings', 'BUILDING_CASTLE', 1, 5),
+    ('DLAdjustBuildings', 'BUILDING_STAR_FORT', 1, 5),
+	('DLAdjustBuildings', 'BUILDING_GRANARY', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_JNR_WIND_MILL', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_WORKSHOP', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_FACTORY', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_LIGHTHOUSE', 1, 10),
+    ('DLAdjustBuildings', 'BUILDING_SHIPYARD', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_SEAPORTS', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_LIBRARY', 1, 20),
+    ('DLAdjustBuildings', 'BUILDING_JNR_SCHOOL', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_JNR_ARCHITECTURE', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_JNR_EDUCATION', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_MARKET', 1, 30),
+    ('DLAdjustBuildings', 'BUIDLING_BANK', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_STOCK_EXCHANGE', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_JNR_ASSEMBLY', 1, 20),
+    ('DLAdjustBuildings', 'BUILDING_JNR_CABINET', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_JNR_OPERA', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_BARRACKS', 1, 0),
+    ('DLAdjustBuildings', 'BUILDING_ARMORY', 1, 0),
+    ('DLAdjustBuildings', 'BUILDING_MILITARY_ACADEMY', 1, 0),
+    ('DLAdjustBuildings', 'BUILDING_JNR_BATHHOUSE', 1, 30),
+    ('DLAdjustBuildings', 'BUILDING_SEWER', 1, 30),
 	('AgressiveDiplomacy',		'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	1,			0);
 
 -- Replaced by later changes
@@ -310,7 +380,11 @@ values
     ('DLAdjustCivics',          'CIVIC_FOREIGN_TRADE',                  1,          0),
     ('DLAdjustCivics',          'CIVIC_STATE_WORKFORCE',                1,          0),
     ('DLAdjustCivics',          'CIVIC_EARLY_EMPIRE',                   1,          0),
-    ('DLAdjustCivics',          'CIVIC_POLITICAL_PHILOSOPHY',           1,          0),
+    ('DLAdjustCivics',          'CIVIC_POLITICAL_PHILOSOPHY',           1,          10),
+	('DLAdjustCivics',			'CIVIC_GUILDS',							1,			10),
+	('DLAdjustCivics',			'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',	1,			0),
+	('DLAdjustCivics',			'CIVIC_DRAMA_POETRY',					1,			5),
+	('DLAdjustCivics',			'CIVIC_CIVIL_SERVICE',					1,			0),
     -- ('DLAdjustCivics',          'CIVIC_MILITARY_TRADITION',             1,          0),
     -- ('DLAdjustCivics',          'CIVIC_MYSTICISM',                      1,          0),
     -- 
@@ -332,29 +406,30 @@ delete from AiFavoredItems where ListType = 'StandardSettlePlot';
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal, TooltipString) values
 ('StandardSettlePlot', 'Cultural Pressure', 0, 1, NULL, NULL), -- 1
 ('StandardSettlePlot', 'Cultural Pressure', 1, -6, NULL, NULL), -- -6
-('StandardSettlePlot', 'Foreign Continent', 1, -4, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
-('StandardSettlePlot', 'Nearest Friendly City', 0, -8, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
+--('StandardSettlePlot', 'Foreign Continent', 1, -4, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
+('StandardSettlePlot', 'Foreign Continent', 0, 0, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
+('StandardSettlePlot', 'Nearest Friendly City', 0, -12, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
 ('StandardSettlePlot', 'Fresh Water', 0, 20, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
 ('StandardSettlePlot', 'Coastal', 0, 8, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_COAST'), -- 12
 ('StandardSettlePlot', 'Total Yield', 0, 1, 'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_TOTAL_YIELD'), -- 2
-('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_FOOD',    'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1, RS:1
-('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- def
+('StandardSettlePlot', 'Inner Ring Yield', 0, 2, 'YIELD_FOOD',    'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1, RS:1
+('StandardSettlePlot', 'Inner Ring Yield', 0, 2, 'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- def
 -- ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_GOLD',    'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- new
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_SCIENCE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_CULTURE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 1, 'YIELD_FAITH',   'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
-('StandardSettlePlot', 'New Resources', 0, 2, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
-('StandardSettlePlot', 'Resource Class', 0, 1, 'RESOURCECLASS_BONUS',     'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new, RS:2
-('StandardSettlePlot', 'Resource Class', 0, 1, 'RESOURCECLASS_LUXURY',    'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2
-('StandardSettlePlot', 'Resource Class', 0, 1, 'RESOURCECLASS_STRATEGIC', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2, RS:4
-('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_HORSES', 'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 3
-('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_IRON',   'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 5, RS:4
-('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_NITER',  'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- def
+('StandardSettlePlot', 'New Resources', 0, 3, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
+('StandardSettlePlot', 'Resource Class', 0, 2, 'RESOURCECLASS_BONUS',     'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new, RS:2
+('StandardSettlePlot', 'Resource Class', 0, 3, 'RESOURCECLASS_LUXURY',    'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2
+('StandardSettlePlot', 'Resource Class', 0, 3, 'RESOURCECLASS_STRATEGIC', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2, RS:4
+('StandardSettlePlot', 'Specific Resource', 0, 3, 'RESOURCE_HORSES', 'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 3
+('StandardSettlePlot', 'Specific Resource', 0, 3, 'RESOURCE_IRON',   'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 5, RS:4
+('StandardSettlePlot', 'Specific Resource', 0, 3, 'RESOURCE_NITER',  'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- def
 --('StandardSettlePlot', 'Specific Resource', 0, 0, 'RESOURCE_COAL'), -- plenty
 --('StandardSettlePlot', 'Specific Resource', 0, 0, 'RESOURCE_OIL'), -- plenty
 -- ('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_ALUMINUM', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new
 -- ('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_URANIUM', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new, RS:10
-('StandardSettlePlot', 'Specific Feature', 0, -5, 'FEATURE_ICE', 'LOC_SETTLEMENT_RECOMMENDATION_FEATURES');
+('StandardSettlePlot', 'Specific Feature', 0, -50, 'FEATURE_ICE', 'LOC_SETTLEMENT_RECOMMENDATION_FEATURES'); -- fuck maui
 -- put Natural Wonders as generally good to be around
 -- insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal, TooltipString)
 -- select 'StandardSettlePlot', 'Specific Feature', 0, 1, FeatureType, 'LOC_SETTLEMENT_RECOMMENDATION_FEATURES' -- +1, RS:3
@@ -392,13 +467,13 @@ UPDATE PseudoYields SET DefaultValue = 150 WHERE PseudoYieldType = 'PSEUDOYIELD_
 -- UPDATE PseudoYields SET DefaultValue =  75 WHERE PseudoYieldType = 'PSEUDOYIELD_CITY_POPULATION'; --     50, not so important overall
 
 -- infrastructure & various
-UPDATE PseudoYields SET DefaultValue =  1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_CLEAR_BANDIT_CAMPS'; --    0.5, Ai+ 1.6
+UPDATE PseudoYields SET DefaultValue =  3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CLEAR_BANDIT_CAMPS'; --    0.5, Ai+ 1.6
 --UPDATE PseudoYields SET DefaultValue =  0.15 WHERE PseudoYieldType = 'PSEUDOYIELD_DIPLOMATIC_BONUS'; --   0.25 -- let's not change diplomacy yet
 --UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; --     3.5, AI+ = 6.7! check if this helps with Holy Sites - this is the earliest available district!
 -- UPDATE PseudoYields SET DefaultValue =  0.8 WHERE PseudoYieldType = 'PSEUDOYIELD_ENVIRONMENT'; --    0.5, AI+ 0.75
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_GOLDENAGE_POINT'; -- 1, R&F
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- 1
-UPDATE PseudoYields SET DefaultValue = 5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
+UPDATE PseudoYields SET DefaultValue = 2.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_INFLUENCE'; --     0.5, envoys - Diplo? RS 0.55
 UPDATE PseudoYields SET DefaultValue = 30 WHERE PseudoYieldType = 'PSEUDOYIELD_NUCLEAR_WEAPON'; --  25, AI+ 45
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
@@ -407,16 +482,30 @@ UPDATE PseudoYields SET DefaultValue = 0.13 WHERE PseudoYieldType = 'PSEUDOYIELD
 --UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --    1
 
 -- Changed based on Real Strategy
-UPDATE PseudoYields SET DefaultValue = 1.4 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT'; -- 1.0, AI+ 1.4, RS 1.1 -- This is land combat units
--- UPDATE PseudoYields SET DefaultValue =  1.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_NAVAL_COMBAT'; --  1 -- leave for naval strategies
-UPDATE PseudoYields SET DefaultValue = 1.1 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_EXPLORER'; --  1, RS 0.7
+UPDATE PseudoYields SET DefaultValue = 1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT'; -- 1.0, AI+ 1.4, RS 1.1 -- This is land combat units
+UPDATE PseudoYields SET DefaultValue = 1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_NAVAL_COMBAT'; --  1 -- leave for naval strategies
+UPDATE PseudoYields SET DefaultValue = 1.3 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_EXPLORER'; --  1, RS 0.7
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_RELIGIOUS'; -- 1, RS 0.8
-UPDATE PseudoYields SET DefaultValue = 1.2 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SETTLER'; -- 1 -- 1.4 seems to much, they build Settlers even with 0 army and undeveloped cities
+UPDATE PseudoYields SET DefaultValue = 1.51 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SETTLER'; -- 1 -- 1.4 seems to much, they build Settlers even with 0 army and undeveloped cities
 UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_TRADE'; -- 1, AI+ 11 -- make sure they build them all
 
 UPDATE PseudoYields SET DefaultValue = 2.0 WHERE PseudoYieldType = 'PSEUDOYIELD_GOLDENAGE_POINT'; -- 1, R&F, RS unchanged
 UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_GOVERNOR'; -- 2, R&F, RS unchanged
-UPDATE PseudoYields SET DefaultValue = 1.0 WHERE PseudoYieldType = 'PSEUDOYIELD_WONDER'; -- 2, AI+ 0.55, RS 0.6
-UPDATE PseudoYields SET DefaultValue = 6.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; --   4.0, AI+ = 6.7! RS 4.0
-UPDATE PseudoYields SET DefaultValue = 10.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SPY'; -- 20, RS not changed
+UPDATE PseudoYields SET DefaultValue = 0.9 WHERE PseudoYieldType = 'PSEUDOYIELD_WONDER'; -- 2, AI+ 0.55, RS 0.6
+UPDATE PseudoYields SET DefaultValue = 10.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; --   4.0, AI+ = 6.7! RS 4.0
+UPDATE PseudoYields SET DefaultValue = 6.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SPY'; -- 20, RS not changed
 UPDATE PseudoYields SET DefaultValue = -0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_DIPLOMATIC_GRIEVANCE'; -- -0.5, RS not changed
+
+--UPDATE PseudoYields SET DefaultValue = 3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT';
+--UPDATE PseudoYields SET DefaultValue = 15.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; 
+--UPDATE PseudoYields SET DefaultValue = 1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SETTLER';
+--UPDATE PseudoYields SET DefaultValue =  5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CLEAR_BANDIT_CAMPS';
+--UPDATE PseudoYields SET DefaultValue = 30.0 WHERE PseudoYieldType = 'PSEUDOYIELD_TECHNOLOGY';
+--UPDATE PseudoYields SET DefaultValue = 30.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CIVIC';
+-- adjust standard yield judgement, I'm afraid might change ai's tendancy on pantheon.
+UPDATE Yields SET DefaultValue = 0.5 WHERE YieldType = 'YIELD_FAITH';
+UPDATE Yields SET DefaultValue = 0.33 WHERE YieldType = 'YIELD_GOLD';
+UPDATE Yields SET DefaultValue = 0.95 WHERE YieldType = 'YIELD_FOOD';
+UPDATE Yields SET DefaultValue = 1.25 WHERE YieldType = 'YIELD_SCIENCE';
+UPDATE Yields SET DefautValue = 1.25 WHERE YieldType ='YIELD_CULTURE';
+
