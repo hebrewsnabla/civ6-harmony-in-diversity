@@ -70,7 +70,7 @@ values
 	('DLAdjustBuildings',		'BUILDING_GOV_SPIES',					1,			0),
 	-- ('DLAdjustBuildings',		'BUILDING_UNIVERSITY',					1,			0),
 	-- ('DLAdjustBuildings',		'BUILDING_WORKSHOP',					1,			0),
-	('DLAdjustDistricts', 		'DISTRICT_INDUSTRIAL_ZONE', 			1, 			70),
+	('DLAdjustDistricts', 		'DISTRICT_INDUSTRIAL_ZONE', 			1, 			99),
     ('DLAdjustDistricts', 		'DISTRICT_GOVERNMENT', 					1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_DIPLOMATIC_QUARTER', 			1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_AQUEDUCT', 					1, 			70),
@@ -84,15 +84,14 @@ values
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_RESOURCE_LUXURY',			1,			300),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_IMPROVEMENT',				1,			8),
 	('DLFewerWaronCityStates',	'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	0,			0),
-	('DLCityStateDistricts', 	'DISTRICT_HOLY_SITE', 1, 0),
-	('DLCityStateDistricts', 'DISTRICT_CAMPUS', 1, 10),
-    ('DLCityStateDistricts', 'DISTRICT_COMMERCIAL_HUB', 1, 50),
-    ('DLCityStateDistricts', 'DISTRICT_INDUSTRIAL_ZONE', 1, 50),
-    ('DLCityStateDistricts', 'DISTRICT_ENCAMPMENT', 1, 50),
-    ('DLCityStateDistricts', 'DISTRICT_THEATER', 1, 10),
-    ('DLCityStateDistricts', 'DISTRICT_HARBOR', 1, 30),
-    ('DLCityStateDistricts', 'DISTRICT_AQUEDUCT', 1, 30),
-	('DLCityStateDistricts', 	'DISTRICT_AQUEDUCT', 1, 30),
+	('DLCityStateDistricts', 	'DISTRICT_HOLY_SITE', 1, 100),
+	('DLCityStateDistricts', 'DISTRICT_CAMPUS', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_COMMERCIAL_HUB', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_INDUSTRIAL_ZONE', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_ENCAMPMENT', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_THEATER', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_HARBOR', 1, 100),
+    ('DLCityStateDistricts', 'DISTRICT_AQUEDUCT', 1, 100),
 	('DLAdjustTechs', 'TECH_MINING', 1, 5),
 	('DLAdjustTechs', 'TECH_ANIMAL_HUSBANDRY', 1, 5),
 	-- set several tech goals for ai. maybe civil engineering is a good line.
@@ -408,8 +407,8 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal
 ('StandardSettlePlot', 'Cultural Pressure', 1, -6, NULL, NULL), -- -6
 --('StandardSettlePlot', 'Foreign Continent', 1, -4, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
 ('StandardSettlePlot', 'Foreign Continent', 0, 0, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -2
-('StandardSettlePlot', 'Nearest Friendly City', 0, -12, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
-('StandardSettlePlot', 'Fresh Water', 0, 20, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
+('StandardSettlePlot', 'Nearest Friendly City', 0, -6, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4
+('StandardSettlePlot', 'Fresh Water', 0, 25, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
 ('StandardSettlePlot', 'Coastal', 0, 8, NULL, 'LOC_SETTLEMENT_RECOMMENDATION_COAST'), -- 12
 ('StandardSettlePlot', 'Total Yield', 0, 1, 'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_TOTAL_YIELD'), -- 2
 ('StandardSettlePlot', 'Inner Ring Yield', 0, 2, 'YIELD_FOOD',    'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1, RS:1
@@ -473,7 +472,7 @@ UPDATE PseudoYields SET DefaultValue =  3.0 WHERE PseudoYieldType = 'PSEUDOYIELD
 -- UPDATE PseudoYields SET DefaultValue =  0.8 WHERE PseudoYieldType = 'PSEUDOYIELD_ENVIRONMENT'; --    0.5, AI+ 0.75
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_GOLDENAGE_POINT'; -- 1, R&F
 --UPDATE PseudoYields SET DefaultValue = X.X WHERE PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- 1
-UPDATE PseudoYields SET DefaultValue = 2.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
+UPDATE PseudoYields SET DefaultValue = 3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
 UPDATE PseudoYields SET DefaultValue = 0.75 WHERE PseudoYieldType = 'PSEUDOYIELD_INFLUENCE'; --     0.5, envoys - Diplo? RS 0.55
 UPDATE PseudoYields SET DefaultValue = 30 WHERE PseudoYieldType = 'PSEUDOYIELD_NUCLEAR_WEAPON'; --  25, AI+ 45
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
@@ -492,7 +491,7 @@ UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_
 UPDATE PseudoYields SET DefaultValue = 2.0 WHERE PseudoYieldType = 'PSEUDOYIELD_GOLDENAGE_POINT'; -- 1, R&F, RS unchanged
 UPDATE PseudoYields SET DefaultValue = 4.0 WHERE PseudoYieldType = 'PSEUDOYIELD_GOVERNOR'; -- 2, R&F, RS unchanged
 UPDATE PseudoYields SET DefaultValue = 0.9 WHERE PseudoYieldType = 'PSEUDOYIELD_WONDER'; -- 2, AI+ 0.55, RS 0.6
-UPDATE PseudoYields SET DefaultValue = 10.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; --   4.0, AI+ = 6.7! RS 4.0
+UPDATE PseudoYields SET DefaultValue = 25.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; --   4.0, AI+ = 6.7! RS 4.0
 UPDATE PseudoYields SET DefaultValue = 6.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SPY'; -- 20, RS not changed
 UPDATE PseudoYields SET DefaultValue = -0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_DIPLOMATIC_GRIEVANCE'; -- -0.5, RS not changed
 
