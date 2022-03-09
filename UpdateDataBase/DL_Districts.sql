@@ -427,7 +427,16 @@ insert or replace into RequirementSetRequirements
 values
 	('RESOURCE_HORSES_IN_PLOT',								'REQUIRES_RESOURCE_HORSES_IN_PLOT'),
 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIRES_DISTRICT_IS_DISTRICT_HIPPODROME'),
-	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER');
+	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER'),
+	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'HD_REQUIRES_PLAYER_IS_BYZANTIUM');
+insert or replace into Requirements
+	(RequirementId,							RequirementType)
+values
+	('HD_REQUIRES_PLAYER_IS_BYZANTIUM',		'REQUIREMENT_PLAYER_TYPE_MATCHES');
+insert or replace into RequirementArguments
+	(RequirementId,							Name,				Value)
+values
+	('HD_REQUIRES_PLAYER_IS_BYZANTIUM',		'CivilizationType',	'CIVILIZATION_BYZANTIUM');
 
 -- 巴西UD改动, by xiaoxiao
 insert or replace into Modifiers
