@@ -27,7 +27,7 @@ values
     ("LOC_POLICY_COMPILE_NAME",                                                       "Compiling Books"),
     ("LOC_POLICY_COMPILE_DESCRIPTION",                                                "+4 [ICON_GreatScientist] Great Scientist points per turn. +2 [ICON_GreatScientist] Great Scientist points per turn for every Library."),
     ("LOC_POLICY_SUPPLY_LINES_NAME",                                                  "Supply Lines"),
-    ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+2 [ICON_Movement] movement if starting turn in friendly territory."),
+    ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+1 [ICON_Movement] movement if starting turn in friendly territory. +30% [ICON_PRODUCTION] Production toward Encampment districts, Harbor districts, and buildings for these districts."),
     ("LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME",                                            "Scholar Bureaucrat"),
     ("LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION",                                     "+4 [ICON_GreatWriter] Great Writer points per turn. +2 [ICON_GreatWriter] Great Writer points per turn for every Amphitheater."),
     ("LOC_POLICY_NEW_ROUTE_NAME",                                                     "New Route"),
@@ -44,12 +44,16 @@ values
     ("LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "+30% production speed toward Campus buildings and Industrial Zone buildings."),
     ("LOC_POLICY_LIBERALISM_DESCRIPTION",                                             "+1 [ICON_Amenities] Amenity to all cities with at least 2 specialty districts. +50% production speed toward Entertainment Complex buildings and Water Park buildings."),
     ("LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "+30% Production toward Encampment districts, Harbor districts, and buildings for these districts."),
+    ("LOC_POLICY_FORTIFICATIONS_NAME",                                                "Fortifications"),
+    ("LOC_POLICY_FORTIFICATIONS_DESCRIPTION",                                         "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength."),
+    ("LOC_POLICY_BASTIONS_NAME",                                                      "Bastions"),
+    ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
     ("LOC_POLICY_FIVE_YEAR_PLAN_NAME",                                                "The Ivy League"),
     ("LOC_POLICY_COLLECTIVIZATION_NAME",                                              "Highway"),
-    ("LOC_POLICY_BASTIONS_NAME",                                                      "Fortifications"),
+
     ("LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "Non-Aligned Movement"),
     ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Collect Ballads"),
     -- Golden age
@@ -214,7 +218,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_COMPILE_NAME",                                                       "编撰典籍"),
     ("zh_Hans_CN",  "LOC_POLICY_COMPILE_DESCRIPTION",                                                "每回合+4 [ICON_GreatScientist] 大科学家点数。每有一座图书馆，每回合的 [ICON_GreatScientist] 大科学家点数便+2。"),
     ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_NAME",                                                  "军需补给线"),
-    ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "在友好领土开启回合+2 [ICON_Movement] 移动力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "在友好领土开启回合+1 [ICON_Movement] 移动力。建造军营、港口和这些区域中的建筑时+30% [ICON_PRODUCTION] 建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME",                                            "士大夫文化"),
     ("zh_Hans_CN",  "LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION",                                     "每回合+4 [ICON_GreatWriter] 大作家点数。每有一座古罗马剧场，每回合的 [ICON_GreatWriter] 大作家点数便+2。"),
     ("zh_Hans_CN",  "LOC_POLICY_NEW_ROUTE_NAME",                                                     "新航线"),
@@ -231,12 +235,15 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION",                                    "建造工业区和学院内的建筑时+30%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIBERALISM_DESCRIPTION",                                             "拥有至少两个独立区域的所有城市+1 [ICON_Amenities] 宜居度。建造娱乐中心和水上乐园内的建筑时+50%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_VETERANCY_DESCRIPTION_XP2",                                          "建造军营、港口和这些区域中的建筑时+30%建造速度。"),
-    -- 政策卡改名
+    ("zh_Hans_CN",  "LOC_POLICY_FORTIFICATIONS_NAME",                                                "工事"),
+    ("zh_Hans_CN",  "LOC_POLICY_FORTIFICATIONS_DESCRIPTION",                                         "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。"),
+    ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_NAME",                                                      "棱堡"),
+    ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
+     -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_NAME",                                                "常春藤联盟"),
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVIZATION_NAME",                                              "高速公路"),
-    ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_NAME",                                                      "工事"),
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "不结盟运动"),
     ("zh_Hans_CN",  "LOC_POLICY_LITERARY_TRADITION_NAME",                                            "采风"),
     -- 着力点
