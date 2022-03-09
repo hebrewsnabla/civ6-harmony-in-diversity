@@ -382,3 +382,50 @@ insert or replace into RequirementArguments
 values
 	('REQUIRES_PLOT_ADJACENT_TO_STRATEGIC',		'ResourceClassType',	'RESOURCECLASS_STRATEGIC'),
 	('REQUIRES_PLOT_ADJACENT_TO_BONUS',			'ResourceClassType',	'RESOURCECLASS_BONUS');
+
+-- 跑马场改动, by xiaoxiao
+insert or replace into District_Adjacencies
+	(DistrictType,			YieldChangeId)
+values
+	('DISTRICT_HIPPODROME',	'HD_Holy_Site_Culture'),
+	('DISTRICT_HIPPODROME',	'HD_Encampment_Production');
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description, 	YieldType,			YieldChange,	AdjacentDistrict)
+values
+	('HD_Holy_Site_Culture',		'Placeholder',	'YIELD_CULTURE',	2,				'DISTRICT_HOLY_SITE'),
+	('HD_Encampment_Production',	'Placeholder',	'YIELD_PRODUCTION',	2,				'DISTRICT_ENCAMPMENT');
+insert or replace into ImprovementModifiers
+	(ImprovementType,		ModifierId)
+values
+	('IMPROVEMENT_PASTURE',	'MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY');
+insert or replace into BuildingModifiers
+	(BuildingType,			ModifierId)
+values
+	('BUILDING_STABLE',		'MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY');
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,								OwnerRequirementSetId,	 	SubjectRequirementSetId)
+values
+	('MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',	'RESOURCE_HORSES_IN_PLOT',	'DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER'),
+	('MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',	null,						'DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER');
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,								OwnerStackLimit)
+values
+	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',					'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT',		1);
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'ModifierId',	'HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY'),
+	('MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'ModifierId',	'HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY'),
+	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',						'Amount',		1);
+insert or replace into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+	('RESOURCE_HORSES_IN_PLOT',								'REQUIREMENTSET_TEST_ALL'),
+	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+	('RESOURCE_HORSES_IN_PLOT',								'REQUIRES_RESOURCE_HORSES_IN_PLOT'),
+	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIRES_DISTRICT_IS_DISTRICT_HIPPODROME'),
+	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER');
+	
