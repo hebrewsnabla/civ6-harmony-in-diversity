@@ -428,4 +428,36 @@ values
 	('RESOURCE_HORSES_IN_PLOT',								'REQUIRES_RESOURCE_HORSES_IN_PLOT'),
 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIRES_DISTRICT_IS_DISTRICT_HIPPODROME'),
 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER');
-	
+
+-- 巴西UD改动, by xiaoxiao
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,										SubjectRequirementSetId,	OwnerStackLimit)
+select
+	'HD_BRAZIL_UD_' || GreatPersonClassType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_BRAZIL_UD',	1
+from GreatPersonClasses;
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+select
+	'HD_BRAZIL_UD_' || GreatPersonClassType,		'Amount',		1
+from GreatPersonClasses;
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values	
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_GENERAL',		'YieldType',	'YIELD_PRODUCTION'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ADMIRAL',		'YieldType',	'YIELD_FOOD'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ENGINEER',	'YieldType',	'YIELD_PRODUCTION'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_MERCHANT',	'YieldType',	'YIELD_GOLD'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_PROPHET',		'YieldType',	'YIELD_FAITH'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_SCIENTIST',	'YieldType',	'YIELD_SCIENCE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_WRITER',		'YieldType',	'YIELD_CULTURE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ARTIST',		'YieldType',	'YIELD_CULTURE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_MUSICIAN',	'YieldType',	'YIELD_CULTURE');
+insert or replace into RequirementSets
+	(RequirementSetId,			RequirementSetType)
+values
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,			RequirementId)
+values
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_STREET_CARNIVAL'),
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_WATER_STREET_CARNIVAL');
