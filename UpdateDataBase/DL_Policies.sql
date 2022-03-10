@@ -1480,25 +1480,25 @@ from HD_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
 from HD_DistrictBonus;
 
 -- insert or replace into Modifiers
 -- 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 -- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
+-- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
 -- from HD_DistrictBonus;
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
 from HD_DistrictBonus;
 
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
 select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_20_POPULATION'
+	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
 from HD_DistrictBonus;
 
 insert or replace into ModifierArguments
