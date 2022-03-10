@@ -496,16 +496,3 @@ UPDATE PseudoYields SET DefaultValue = 6.0 WHERE PseudoYieldType = 'PSEUDOYIELD_
 UPDATE PseudoYields SET DefaultValue = -0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_DIPLOMATIC_GRIEVANCE'; -- -0.5, RS not changed
 UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_GREATWORK_RELIC';
 
---UPDATE PseudoYields SET DefaultValue = 3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT';
---UPDATE PseudoYields SET DefaultValue = 15.0 WHERE PseudoYieldType = 'PSEUDOYIELD_DISTRICT'; 
---UPDATE PseudoYields SET DefaultValue = 1.5 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_SETTLER';
---UPDATE PseudoYields SET DefaultValue =  5.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CLEAR_BANDIT_CAMPS';
---UPDATE PseudoYields SET DefaultValue = 30.0 WHERE PseudoYieldType = 'PSEUDOYIELD_TECHNOLOGY';
---UPDATE PseudoYields SET DefaultValue = 30.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CIVIC';
--- adjust standard yield judgement, I'm afraid might change ai's tendancy on pantheon.
-UPDATE Yields SET DefaultValue = 0.5 WHERE YieldType = 'YIELD_FAITH';
-UPDATE Yields SET DefaultValue = 0.33 WHERE YieldType = 'YIELD_GOLD';
-UPDATE Yields SET DefaultValue = 0.95 WHERE YieldType = 'YIELD_FOOD';
-UPDATE Yields SET DefaultValue = 1.25 WHERE YieldType = 'YIELD_SCIENCE';
-UPDATE Yields SET DefautValue = 1.25 WHERE YieldType ='YIELD_CULTURE';
-
