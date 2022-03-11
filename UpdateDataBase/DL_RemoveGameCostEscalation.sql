@@ -71,7 +71,7 @@ update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressi
 	or DistrictType = 'DISTRICT_DAM'					--大坝
 	or DistrictType = 'DISTRICT_THANH'					--城池（越南）
 	or DistrictType = 'DISTRICT_PRESERVE'				--保护区
-	or DistrictType = 'DISTRICT_HIPPODROME'				--跑马场(拜占庭)
+--	or DistrictType = 'DISTRICT_HIPPODROME'				--跑马场(拜占庭)
 ;
 
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_GOVERNMENT';
