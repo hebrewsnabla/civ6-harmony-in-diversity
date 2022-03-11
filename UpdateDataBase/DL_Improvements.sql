@@ -332,3 +332,29 @@ from Improvements where ImprovementType in (
 	'IMPROVEMENT_OUTBACK_STATION',
 	'IMPROVEMENT_HACIENDA'
 );
+--种植园从灌溉前移到制陶(淡水粮保留在灌溉)
+update Improvements set PrereqTech = 'TECH_POTTERY' where ImprovementType = 'IMPROVEMENT_PLANTATION';
+update Modifiers set SubjectRequirementSetId = 'PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW' where ModifierId = 'PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_FOOD';
+insert or ignore into Requirements
+    (RequirementId,                     RequirementType)
+values
+    ('REQUIRES_PLAYER_HAS_IRRIGATION',  'REQUIREMENT_PLAYER_HAS_TECHNOLOGY');
+insert or ignore into RequirementArguments
+    (RequirementId,                     Name,               Value)
+values
+    ('REQUIRES_PLAYER_HAS_IRRIGATION',  'TechnologyType',   'TECH_IRRIGATION');
+insert or ignore into RequirementSets
+    (RequirementSetId,                                                  RequirementSetType)
+values
+    ('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW',   'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                                                  RequirementId)
+values
+    ('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW',   'REQUIRES_PLOT_IS_FRESH_WATER'),
+    ('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW',   'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
+    ('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW',   'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
+    ('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM_NEW',   'REQUIRES_PLAYER_HAS_IRRIGATION');
+--移除雨林前移到采矿
+update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
+--种树前移到工会，越南到神秘主义
+update Features set AddCivic = 'CIVIC_GUILDS' where FeatureType = 'FEATURE_FOREST';
