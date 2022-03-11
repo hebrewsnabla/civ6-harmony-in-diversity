@@ -8,8 +8,8 @@ update Buildings set AdjacentResource = 'RESOURCE_IRON', cost = 600, RegionalRan
 update RequirementArguments set Value = 4 where RequirementId = 'REQ_CL_PLAYER_HAS_X_STRATEGIC_IMPROVEMENTS' and Name = 'Count';
 
 	-- 修改本体产出
-update Building_YieldChanges set YieldChange = 3 where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and YieldType = 'YIELD_PRODUCTION';
-update Building_YieldChanges set YieldChange = 3 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
+update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and YieldType = 'YIELD_PRODUCTION';
+update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
 	-- 修改特效
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and ModifierId = 'CL_NAT_WONDER_ATTACH_STRATEGIC_YIELD_MODIFIER';
 
@@ -34,7 +34,7 @@ from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 insert or replace into ModifierArguments
 	(ModifierId,											Name,				Value)
 select
-	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'Amount',			2
+	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'Amount',			3
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- 金融中心 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -134,8 +134,8 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 
 -- 国际机场 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set cost = 1350, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT';
-update Buildings set cost = 1350, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
+update Buildings set cost = 1500, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT';
+update Buildings set cost = 1500, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
 	-- 修改建造条件
 update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_AIRPORT';
 	-- 修改特效

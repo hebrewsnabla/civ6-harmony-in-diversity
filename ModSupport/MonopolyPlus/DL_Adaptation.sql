@@ -37,6 +37,8 @@ update Boosts set BoostClass = 'BOOST_TRIGGER_HAVE_X_IMPROVEMENTS', ImprovementT
 where TechnologyType = 'TECH_COMBUSTION';
 
     -- by xhh
+delete from ImprovementModifiers where ModifierId = 'LEU_STATION_REQUIRED_POWER';
+
 CREATE TEMPORARY TABLE 'HD_DistrictBonus_Mono'(
     'DistrictType' TEXT NOT NULL,
     'YieldType' TEXT NOT NULL
