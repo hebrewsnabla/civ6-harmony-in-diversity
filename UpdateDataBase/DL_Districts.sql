@@ -382,3 +382,121 @@ insert or replace into RequirementArguments
 values
 	('REQUIRES_PLOT_ADJACENT_TO_STRATEGIC',		'ResourceClassType',	'RESOURCECLASS_STRATEGIC'),
 	('REQUIRES_PLOT_ADJACENT_TO_BONUS',			'ResourceClassType',	'RESOURCECLASS_BONUS');
+
+-- 跑马场改动, by xiaoxiao
+insert or replace into District_Adjacencies
+	(DistrictType,			YieldChangeId)
+values
+	('DISTRICT_HIPPODROME',	'HD_Holy_Site_Culture'),
+	('DISTRICT_HIPPODROME',	'HD_Encampment_Production');
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description, 	YieldType,			YieldChange,	AdjacentDistrict)
+values
+	('HD_Holy_Site_Culture',		'Placeholder',	'YIELD_CULTURE',	2,				'DISTRICT_HOLY_SITE'),
+	('HD_Encampment_Production',	'Placeholder',	'YIELD_PRODUCTION',	2,				'DISTRICT_ENCAMPMENT');
+insert or replace into DistrictModifiers
+	(DistrictType,			ModifierId)
+values
+	('DISTRICT_HIPPODROME',	'HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,							OwnerRequirementSetId)
+values
+	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT',	'HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,		Value)
+values
+	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'Amount',	1);
+insert or replace into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+values
+	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+values
+	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_CITY_HAS_IMPROVED_HORSES'),
+	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_PLOT_IS_ADJACENT_TO_STABLE');
+insert or replace into Requirements
+	(RequirementId,							RequirementType)
+values
+	('REQUIRES_PLOT_IS_ADJACENT_TO_STABLE',	'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES');
+insert or replace into RequirementArguments
+	(RequirementId,							Name,			Value)
+values
+	('REQUIRES_PLOT_IS_ADJACENT_TO_STABLE',	'BuildingType',	'BUILDING_STABLE');
+-- 以下为“相邻正确改良的马或马厩则+1区域位”
+-- insert or replace into ImprovementModifiers
+-- 	(ImprovementType,		ModifierId)
+-- values
+-- 	('IMPROVEMENT_PASTURE',	'MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY');
+-- insert or replace into BuildingModifiers
+-- 	(BuildingType,			ModifierId)
+-- values
+-- 	('BUILDING_STABLE',		'MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY');
+-- insert or replace into Modifiers
+-- 	(ModifierId,													ModifierType,								OwnerRequirementSetId,	 	SubjectRequirementSetId)
+-- values
+-- 	('MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',	'RESOURCE_HORSES_IN_PLOT',	'DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER'),
+-- 	('MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',	null,						'DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER');
+-- insert or replace into Modifiers
+-- 	(ModifierId,												ModifierType,								OwnerStackLimit)
+-- values
+-- 	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',					'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT',		1);
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,													Name,			Value)
+-- values
+-- 	('MODIFIER_HORSE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'ModifierId',	'HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY'),
+-- 	('MODIFIER_STABLE_ADJACENT_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'ModifierId',	'HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY'),
+-- 	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',						'Amount',		1);
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId,										RequirementSetType)
+-- values
+-- 	('RESOURCE_HORSES_IN_PLOT',								'REQUIREMENTSET_TEST_ALL'),
+-- 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId,										RequirementId)
+-- values
+-- 	('RESOURCE_HORSES_IN_PLOT',								'REQUIRES_RESOURCE_HORSES_IN_PLOT'),
+-- 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'REQUIRES_DISTRICT_IS_DISTRICT_HIPPODROME'),
+-- 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER'),
+-- 	('DISTRICT_IS_HIPPODROME_AND_ADJACENT_TO_OWNER',		'HD_REQUIRES_PLAYER_IS_BYZANTIUM');
+-- insert or replace into Requirements
+-- 	(RequirementId,							RequirementType)
+-- values
+-- 	('HD_REQUIRES_PLAYER_IS_BYZANTIUM',		'REQUIREMENT_PLAYER_TYPE_MATCHES');
+-- insert or replace into RequirementArguments
+-- 	(RequirementId,							Name,				Value)
+-- values
+-- 	('HD_REQUIRES_PLAYER_IS_BYZANTIUM',		'CivilizationType',	'CIVILIZATION_BYZANTIUM');
+
+-- 巴西UD改动, by xiaoxiao
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,										SubjectRequirementSetId,	OwnerStackLimit)
+select
+	'HD_BRAZIL_UD_' || GreatPersonClassType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_BRAZIL_UD',	1
+from GreatPersonClasses;
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+select
+	'HD_BRAZIL_UD_' || GreatPersonClassType,		'Amount',		1
+from GreatPersonClasses;
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values	
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_GENERAL',		'YieldType',	'YIELD_PRODUCTION'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ADMIRAL',		'YieldType',	'YIELD_FOOD'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ENGINEER',	'YieldType',	'YIELD_PRODUCTION'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_MERCHANT',	'YieldType',	'YIELD_GOLD'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_PROPHET',		'YieldType',	'YIELD_FAITH'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_SCIENTIST',	'YieldType',	'YIELD_SCIENCE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_WRITER',		'YieldType',	'YIELD_CULTURE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_ARTIST',		'YieldType',	'YIELD_CULTURE'),
+	('HD_BRAZIL_UD_GREAT_PERSON_CLASS_MUSICIAN',	'YieldType',	'YIELD_CULTURE');
+insert or replace into RequirementSets
+	(RequirementSetId,			RequirementSetType)
+values
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,			RequirementId)
+values
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_STREET_CARNIVAL'),
+	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_WATER_STREET_CARNIVAL');

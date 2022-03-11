@@ -813,7 +813,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,					ModifierType,												OwnerRequirementSetId,	SubjectRequirementSetId)
 values
-	('MARACANA_CITIES_GPP_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT_BONUS',	'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_12_TILES');
+	('MARACANA_CITIES_GPP_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT_BONUS',	'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_9_TILES');
 
 insert or replace into ModifierArguments
 	(ModifierId,					Name,		Value)
@@ -858,7 +858,7 @@ insert or replace into Buildings_XP2 (BuildingType,Pillage) select
 from MARACANA_DistrictBonus;
 
 insert or replace into Building_CitizenYieldChanges (BuildingType,YieldType,YieldChange) select
-	'BUILDING_MARACANA_DUMMY_' || DistrictType,YieldType,2
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,YieldType,3
 from MARACANA_DistrictBonus;
 
 insert or replace into BuildingModifiers
@@ -870,7 +870,7 @@ from MARACANA_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,										SubjectRequirementSetId)
 select
-	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'HD_OBJECT_WITHIN_12_TILES'
+	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'HD_OBJECT_WITHIN_9_TILES'
 from MARACANA_DistrictBonus;
 
 insert or replace into ModifierArguments

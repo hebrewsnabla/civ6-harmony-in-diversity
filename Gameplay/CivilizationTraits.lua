@@ -345,6 +345,20 @@ end
 
 Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreated)
 
+-- 巴西UD改动, by xiaoxiao
+function OnUnitGreatPersonCreatedBrazil(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+	local player = Players[playerID]
+	local leader = playerConfig:GetLeaderTypeName()
+	if not LeaderHasTrait(leader, 'TRAIT_CIVILIZATION_STREET_CARNIVAL') then return end
+	for row in GameInfo.GreatPersonClasses() do
+		if row.Index == greatPersonClassID then
+			local classType = row.GreatPersonClassType
+			player:AttachModifierByID('HD_BRAZIL_UD_' .. classType)
+		end
+	end
+end
+Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreatedBrazil)
+
 -- -- Netherlands
 -- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
 -- local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index
