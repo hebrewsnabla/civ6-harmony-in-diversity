@@ -48,6 +48,8 @@ values
     ("LOC_POLICY_FORTIFICATIONS_DESCRIPTION",                                         "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength."),
     ("LOC_POLICY_BASTIONS_NAME",                                                      "Bastions"),
     ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
+    ("LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "Deepwater Port"),
+    ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "+4 [ICON_Production] Production to all coastal city. +6 [ICON_GOLD] Gold and +3 [ICON_Housing] housing to each Seaport."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -240,7 +242,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_NAME",                                                      "棱堡"),
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
-    ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座港口三级建筑额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
+    ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座海港额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
