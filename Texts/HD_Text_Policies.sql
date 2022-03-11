@@ -239,6 +239,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_FORTIFICATIONS_DESCRIPTION",                                         "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。"),
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_NAME",                                                      "棱堡"),
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
+    ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座港口三级建筑额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
