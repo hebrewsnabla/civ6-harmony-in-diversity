@@ -118,6 +118,7 @@ insert or replace into Features_XP2 (FeatureType, ValidWonderPlacement, ValidDis
 
 -- change era minimum turns
 update Eras_XP1 set GameEraMinimumTurns = 20 where not EraType = 'ERA_FUTURE';
+update Eras_XP1 set GameEraMinimumTurns = 30 where EraType = 'ERA_CLASSICAL'; -- for winged hussar
 update GlobalParameters set Value = 10 where Name = 'THRESHOLD_SHIFT_PER_PAST_GOLDEN_AGE';
 update GlobalParameters set Value = -10 where Name = 'THRESHOLD_SHIFT_PER_PAST_DARK_AGE';
 update GlobalParameters set Value = 2 where Name = 'THRESHOLD_SHIFT_PER_CITY';
