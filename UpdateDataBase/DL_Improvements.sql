@@ -270,6 +270,12 @@ insert or replace into Improvement_Adjacencies
 select
 	'IMPROVEMENT_LAND_POLDER',	YieldChangeId
 from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';
+-- 陆地圩田改良特定资源
+insert or replace into Improvement_ValidResources
+	(ImprovementType,			ResourceType)
+select
+	'IMPROVEMENT_LAND_POLDER',	ResourceType
+from Resources where ResourceType in ('RESOURCE_SUGAR','RESOURCE_SAFFRON','RESOURCE_P0K_PAPYRUS');
 
 --种植园劫掠更改为金币，牧场劫掠改为hp，采石场劫掠金币
 --by 先驱
