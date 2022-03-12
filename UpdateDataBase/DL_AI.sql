@@ -102,9 +102,9 @@ UPDATE PseudoYields SET DefaultValue = 5 WHERE PseudoYieldType = 'PSEUDOYIELD_CI
 UPDATE PseudoYields SET DefaultValue = 5 WHERE PseudoYieldType = 'PSEUDOYIELD_TECHNOLOGY';
 */
 
-update PseudoYields set DefaultValue = 6 where PseudoYieldType = 'PSEUDOYIELD_RESOURCE_LUXURY';
-update AiFavoredItems set Value = 50 where ListType = 'CatherineAltLuxuries';
-
+update PseudoYields set DefaultValue = 3 where PseudoYieldType = 'PSEUDOYIELD_RESOURCE_LUXURY';
+update AiFavoredItems set Value = 30 where ListType = 'CatherineAltLuxuries';
+update PseudoYields set DefaultValue = 0.2 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
 -- update AiFavoredItems set Value = 50 where ListType = 'ScottishEnlightnmentBiases';
 
 -- For different Leaders 

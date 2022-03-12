@@ -2016,8 +2016,12 @@ values
     ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_DISTRICT_PRODUCTION'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION'),
-	('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION'), -- 建造后水域+1锤
-    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_CONSTRUCTION_BOOST'); -- 开局送建造ylk;
+	('TRAIT_RADIO_ORANJE',						'TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE'),
+	('TRAIT_RADIO_ORANJE',						'TRAIT_INCOMING_TRADE_GAIN_SCIENCE'),
+	('TRAIT_RADIO_ORANJE',						'TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK'),
+	('TRAIT_RADIO_ORANJE',						'TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK');
+--	('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION'), -- 建造后水域+1锤
+--    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_CONSTRUCTION_BOOST'); -- 开局送建造ylk;
 
 insert or replace into Modifiers
 	(ModifierId, 										ModifierType, 													SubjectRequirementSetId)
@@ -2028,8 +2032,11 @@ values
     -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
     ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
     ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM'),
-	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							'HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION');
-
+	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							'HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION'),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	NULL),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE',				'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',	NULL),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	'PLAYER_HAS_DARK_AGE'),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK',			'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',	'PLAYER_HAS_DARK_AGE');
 insert or replace into Modifiers
 	(ModifierId, 				ModifierType,									RunOnce)
 values
@@ -2048,7 +2055,17 @@ values
     ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
 	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'YieldType',		'YIELD_PRODUCTION'),
 	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'Amount',			1),
-	('HD_CONSTRUCTION_BOOST',							'TechType',			'TECH_CONSTRUCTION');
+	('HD_CONSTRUCTION_BOOST',							'TechType',			'TECH_CONSTRUCTION'),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE',	'YieldType',		'YIELD_SCIENCE'),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE',	'Amount',			2),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE',	'Intercontinental',	0),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE',		'Amount',			2),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK',	'YieldType',		'YIELD_SCIENCE'),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK',	'Amount',			2),
+	('TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK',	'Intercontinental',	0),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK',		'YieldType',		'YIELD_SCIENCE'),
+	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK',		'Amount',			2);
 
 -- insert or replace into TraitModifiers
 -- 	(TraitType, 								ModifierId)
@@ -2096,68 +2113,68 @@ insert or replace into RequirementArguments
 values
 	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'RequirementSetId',		'HD_PLOT_IS_COAST_OR_OCEAN');
 
--- From Others
-insert or replace into DistrictModifiers (DistrictType, ModifierId)
-select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- -- From Others
+-- insert or replace into DistrictModifiers (DistrictType, ModifierId)
+-- select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
-insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
-select DistrictType || '_' || YieldType || '_FROM_OTHERS',
-    'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',
-    'NETHERLANDS_REQUIREMENTS'
-    -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS',
+--     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',
+--     'NETHERLANDS_REQUIREMENTS'
+--     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'YieldType', YieldType
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'Amount', YieldChangeAsInternationalDestination
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'YieldType', YieldType
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'Amount', YieldChangeAsInternationalDestination
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
--- For International
-insert or replace into DistrictModifiers (DistrictType, ModifierId)
-select DistrictType, DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL'
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- -- For International
+-- insert or replace into DistrictModifiers (DistrictType, ModifierId)
+-- select DistrictType, DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
-insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
-select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL',
-    'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',
-    'NETHERLANDS_REQUIREMENTS'
-    -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL',
+--     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',
+--     'NETHERLANDS_REQUIREMENTS'
+--     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'YieldType', YieldType
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'Amount', YieldChangeAsInternationalDestination
-from District_TradeRouteYields
-where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'YieldType', YieldType
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'Amount', YieldChangeAsInternationalDestination
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
 -- The trade route extra yields should be Leader Ability by design,
 -- but the requirement REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT failed.
 -- So we have to use REQUIREMENT_PLAYER_TYPE_MATCHES and it is actually tied to Civlization.
 -- Requirement
 
-insert or replace into Requirements (RequirementId, RequirementType) values
-    ('REQUIRES_PLAYER_IS_NETHERLANDS', 'REQUIREMENT_PLAYER_TYPE_MATCHES');
+-- insert or replace into Requirements (RequirementId, RequirementType) values
+--     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'REQUIREMENT_PLAYER_TYPE_MATCHES');
 
-insert or replace into RequirementArguments (RequirementId, Name, Value) values
-    ('REQUIRES_PLAYER_IS_NETHERLANDS', 'CivilizationType', 'CIVILIZATION_NETHERLANDS');
+-- insert or replace into RequirementArguments (RequirementId, Name, Value) values
+--     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'CivilizationType', 'CIVILIZATION_NETHERLANDS');
 
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
-    ('NETHERLANDS_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
+-- insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
+--     ('NETHERLANDS_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
-    ('NETHERLANDS_REQUIREMENTS', 'REQUIRES_PLAYER_IS_NETHERLANDS');
+-- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
+--     ('NETHERLANDS_REQUIREMENTS', 'REQUIRES_PLAYER_IS_NETHERLANDS');
 
 -- insert or replace into Requirements (RequirementId, RequirementType) values
 --     ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT');
