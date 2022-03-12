@@ -24,11 +24,11 @@ update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionT
 -- update DiplomaticStateActions set Cost = -60 where StateType = 'DIPLO_STATE_UNFRIENDLY' and DiplomaticActionType = 'DIPLOACTION_OPEN_BORDERS';
 -- update DiplomaticStateActions set Cost = 1000 where StateType = 'DIPLO_STATE_DENOUNCED' and DiplomaticActionType = 'DIPLOACTION_OPEN_BORDERS';
 
-update DiplomaticStateActions set Cost = 5 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 10 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 10 where StateType = 'DIPLO_STATE_FRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_NEUTRAL' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 20 where StateType = 'DIPLO_STATE_UNFRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+--update DiplomaticStateActions set Cost = 5 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+--update DiplomaticStateActions set Cost = 10 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+--update DiplomaticStateActions set Cost = 10 where StateType = 'DIPLO_STATE_FRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+--update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_NEUTRAL' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+--update DiplomaticStateActions set Cost = 20 where StateType = 'DIPLO_STATE_UNFRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 update DiplomaticStateActions set Cost = 1000 where StateType = 'DIPLO_STATE_DENOUNCED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 
 -- Useless for adjust trading.

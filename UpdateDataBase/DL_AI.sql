@@ -73,24 +73,24 @@ values
     ('DLAdjustDistricts', 		'DISTRICT_GOVERNMENT', 					1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_DIPLOMATIC_QUARTER', 			1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_AQUEDUCT', 					1, 			100),
-    ('DLAdjustDistricts', 		'DISTRICT_HARBOR', 						0, 			0),
+    ('DLAdjustDistricts', 		'DISTRICT_HARBOR', 						1, 			0),
     ('DLAdjustDistricts', 		'DISTRICT_CAMPUS', 						1, 			0),
     ('DLAdjustDistricts', 		'DISTRICT_THEATER',						1, 			0),
-    ('DLAdjustDistricts', 		'DISTRICT_ENCAMPMENT', 					0, 			0),
-    ('DLAdjustDistricts', 		'DISTRICT_ENTERTAINMENT_COMPLEX', 		0, 			0),
+    ('DLAdjustDistricts', 		'DISTRICT_ENCAMPMENT', 					1, 			0),
+    ('DLAdjustDistricts', 		'DISTRICT_ENTERTAINMENT_COMPLEX', 		1, 			0),
 	-- ('DLAdjustDistricts',		'DISTRICT_AQUEDUCT',					1,			0),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_HAPPINESS',				1,			-50),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_RESOURCE_LUXURY',			1,			300),
 	-- ('DLAdjustPseudoYields',	'PSEUDOYIELD_IMPROVEMENT',				1,			8),
 	('DLFewerWaronCityStates',	'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	0,			0),
-	('DLCityStateDistricts', 	'DISTRICT_HOLY_SITE', 1, 100),
-	('DLCityStateDistricts', 'DISTRICT_CAMPUS', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_COMMERCIAL_HUB', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_INDUSTRIAL_ZONE', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_ENCAMPMENT', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_THEATER', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_HARBOR', 1, 100),
-    ('DLCityStateDistricts', 'DISTRICT_AQUEDUCT', 1, 100),
+	('DLCityStateDistricts', 	'DISTRICT_HOLY_SITE', 1, 0),
+	('DLCityStateDistricts', 'DISTRICT_CAMPUS', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_COMMERCIAL_HUB', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_INDUSTRIAL_ZONE', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_ENCAMPMENT', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_THEATER', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_HARBOR', 1, 0),
+    ('DLCityStateDistricts', 'DISTRICT_AQUEDUCT', 1, 0),
 	('DLAdjustTechs', 'TECH_MINING', 1, 6),
 	('DLAdjustTechs', 'TECH_ANIMAL_HUSBANDRY', 1, 10),
 	('DLAdjustTechs', 'TECH_POTTERY', 1, 0),
@@ -119,7 +119,7 @@ values
 	('DLAdjustBuildings', 'BUILDING_TOTEMS', 0, -20),
     ('DLAdjustBuildings', 'BUILDING_MONUMENT', 1, 0),
     ('DLAdjustBuildings', 'BUILDING_OFFICIAL_RUN_HANDCRAFT',1, 100),
-	('DLAdjustBuildings', 'BUILDING_BOOTCAMP',1, 100),
+	('DLAdjustBuildings', 'BUILDING_BOOTCAMP',1, 0),
     ('DLAdjustBuildings', 'BUILDING_WALLS', 1, 0), --ai would build walls but not to build them at first place.
     ('DLAdjustBuildings', 'BUILDING_CASTLE', 1, 0),
     ('DLAdjustBuildings', 'BUILDING_STAR_FORT', 1, 0),
@@ -178,7 +178,7 @@ UPDATE PseudoYields SET DefaultValue = 5 WHERE PseudoYieldType = 'PSEUDOYIELD_TE
 
 update PseudoYields set DefaultValue = 3 where PseudoYieldType = 'PSEUDOYIELD_RESOURCE_LUXURY';
 update AiFavoredItems set Value = 30 where ListType = 'CatherineAltLuxuries';
-update PseudoYields set DefaultValue = 0.2 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
+update PseudoYields set DefaultValue = 1 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
 -- update AiFavoredItems set Value = 50 where ListType = 'ScottishEnlightnmentBiases';
 
 -- For different Leaders 
@@ -229,6 +229,7 @@ from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- For high difficulty AI.
 insert or replace into TraitModifiers (TraitType,	ModifierId) values
+	('MINOR_CIV_DEFAULT_TRAIT',						'HIGH_DIFFICULTY_PRODUCTION_SCALING'),
     ('TRAIT_LEADER_MAJOR_CIV',                      'AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_AMENITY'),
     ('TRAIT_LEADER_MAJOR_CIV',                      'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_AMENITY'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING'),
@@ -488,19 +489,26 @@ UPDATE AiFavoredItems SET Value = 100 WHERE ListType = 'DefaultCitySettlement' a
 --UPDATE AiFavoredItems SET Value = 1 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_CITY_VALUE_MULTIPLIER';
 
 -- --------------------------------------------------------------
+-- apply yield bias to city states
+update AiLists set value = NULL Where ListType = 'DefaultYieldBias';
 -- -- Yield biases
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('DefaultYieldBias', 'YIELD_FOOD', 1, 5); -- new
 UPDATE AiFavoredItems SET Value = 10 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_PRODUCTION'; -- 25
 UPDATE AiFavoredItems SET Value = 10 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_SCIENCE'; -- 10
 UPDATE AiFavoredItems SET Value = 10 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_CULTURE'; -- 10
-UPDATE AiFavoredItems SET Value = -34 where ListType = 'DefaultYieldBias' And Item = 'YIELD_FAITH';
-UPDATE AiFavoredItems SET Value = -34 where ListType = 'DefaultYieldBias' And Item = 'YIELD_GOLD';
-
+--UPDATE AiFavoredItems SET Value = -34 where ListType = 'DefaultYieldBias' And Item = 'YIELD_FAITH';
+--UPDATE AiFavoredItems SET Value = -34 where ListType = 'DefaultYieldBias' And Item = 'YIELD_GOLD';
+UPDATE Yields SET DefaultValue = 0.333 where YieldType = 'Gold';
+UPDATE Yields SET DefaultValue = 0.667 where YieldType = 'Faith';
 --insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_GPP_PROPHET', 1, 20);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_DISTRICT', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_UNIT_COMBAT', 1, 30);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_UNIT_EXPLORER', 1, 30);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_TOURISM', 0, -200);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_GREATWORK_WRITING', 0, -200);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('AncientPseudoYields', 'PSEUDOYIELD_HAPPINESS', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalPseudoYields', 'PSEUDOYIELD_UNIT_COMBAT', 1, 30);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalPseudoYields', 'PSEUDOYIELD_HAPPINESS', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('MedievalPseudoYields', 'PSEUDOYIELD_UNIT_COMBAT', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissancePseudoYields', 'PSEUDOYIELD_UNIT_COMBAT', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernPseudoYields', 'PSEUDOYIELD_UNIT_COMBAT', 1, 0);
@@ -512,10 +520,10 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissancePseudoYields', 'PSEUDOYIELD_UNIT_SETTLER', 1, 50);
 
 
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalPseudoYields', 'PSEUDOYIELD_GPP_WRITER', 1, 10);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalPseudoYields', 'PSEUDOYIELD_GPP_WRITER', 1, 20);
 --UPDATE AiFavoredItems SET Favored = 0 WHERE ListType = 'ClassicalPseudoYields' AND Item = 'PSEUDOYIELD_GPP_MERCHANT';
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'ClassicalYields' AND Item = 'YIELD_FOOD';
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalYields', 'YIELD_PRODUCTION}', 1, 20);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalYields', 'YIELD_PRODUCTION', 1, 20);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ClassicalYields', 'YIELD_CULTURE', 1, 20);
 UPDATE AiFavoredItems SET Value = 20 WHERE ListType = 'ClassicalYields' And Item = 'YIELD_SCIENCE';
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'ClassicalYields' AND Item = 'YIELD_GOLD';
@@ -554,8 +562,6 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('
 UPDATE AiFavoredItems SET Value = 20  WHERE ListType =  'ModernYields' AND Item = 'YIELD_FOOD';
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType =  'ModernYields' AND Item = 'YIELD_GOLD';
 -- move them from ai mode to here, in case I'm not sure who has the higher priority.
-update PseudoYields set DefaultValue = 1 where PseudoYieldType = 'PSEUDOYIELD_RESOURCE_LUXURY'; -- previous 6
-update PseudoYields set DefaultValue = 0.2 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
 
 
 
