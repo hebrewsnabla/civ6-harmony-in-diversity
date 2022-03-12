@@ -1394,32 +1394,7 @@
     <UpdateDatabase id="MPTest_update" criteria="MPTest_Mode_Expansion2">
       <Properties><LoadOrder>18500</LoadOrder></Properties>
       <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
-      <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
     </UpdateDatabase>
-    <UpdateText id="MPTest_update_text" criteria="MPTest_Mode_Expansion2">
-      <Properties><LoadOrder>18501</LoadOrder></Properties>
-      <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
-    </UpdateText>
-    <ImportFiles id="MPTest_update_Maps" criteria="MPTest_Mode_Expansion2">
-      <Properties><LoadOrder>18502</LoadOrder></Properties>
-      <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
-      <File>GameModeSupport/MultiPlayerMode/Maps/MountainsCliffs.lua</File>
-    </ImportFiles>
-    <ReplaceUIScript id="MP_DL_DiplomacyRibbon" criteria="MPTest_Mode_Expansion2">
-      <Properties>
-        <LoadOrder>150000</LoadOrder>
-        <LuaContext>DiplomacyRibbon</LuaContext>
-        <LuaReplace>GameModeSupport/MultiPlayerMode/UI/DL_DiplomacyRibbon.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
-    <ReplaceUIScript id="MP_DL_WorldRankings" criteria="MPTest_Mode_Expansion2">
-      <Properties>
-        <LoadOrder>150000</LoadOrder>
-        <LuaContext>WorldRankings</LuaContext>
-        <LuaReplace>GameModeSupport/MultiPlayerMode/UI/DL_WorldRankings.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
     <!-- Options at last -->
     <UpdateDatabase id="PostponeWorldCongress" criteria="HD_CityStatesStartWithWalls_XP2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1510,14 +1485,6 @@
     <File>GameModeSupport/WildMode/HD_Icons.xml</File>
     <!-- Multi Player Test Mode -->
     <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/MultiPlayerMode/DL_MultiPlayer.sql</File>
-    <File>GameModeSupport/MultiPlayerMode/DL_Temp.sql</File>
-    <File>GameModeSupport/MultiPlayerMode/HD_Texts.sql</File>
-    <File>GameModeSupport/MultiPlayerMode/UI/DL_DiplomacyRibbon.lua</File>
-    <File>GameModeSupport/MultiPlayerMode/UI/DL_WorldRankings.lua</File>
-    <!-- Pvp Maps -->
-    <File>GameModeSupport/MultiPlayerMode/Maps/Pangaea.lua</File>
-    <File>GameModeSupport/MultiPlayerMode/Maps/MountainsCliffs.lua</File>
     <!-- Gameplay -->
     <!-- TODO: add prefix HD -->
     <File>Gameplay/CityYield.lua</File>

@@ -71,29 +71,29 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
     local validCities = {}
     if governor then
         if (governor:HasPromotion(m_GeneralServicesOfficerHash)) then
-            -- print('DEBUG: Has Prmotion')
+            print('DEBUG: Has Prmotion')
             if governor:IsEstablished() then
-                -- print('DEBUG: Is Established')
+                print('DEBUG: Is Established')
                 local pAssignedCity:table = governor:GetAssignedCity()
                 if pAssignedCity ~= nil then
                     local plotIndex = getCityCenterPlotIndex(pAssignedCity)
-                    -- print('DEBUG: Assigned City', pAssignedCity:GetID())
+                    print('DEBUG: Assigned City', pAssignedCity:GetID())
                     for _, city in pCities:Members() do
                         local otherPlotIndex = getCityCenterPlotIndex(city)
                         local distance = Utils.GetPlotDistance(plotIndex, otherPlotIndex)
-                        -- print(plotIndex, otherPlotIndex, distance)
+                        print('DEBUG', plotIndex, otherPlotIndex, distance)
                         if distance <= m_EffectDistance then
                             validCities[city:GetID()] = true
                             local buildings = city:GetBuildings()
                             if not buildings:HasBuilding(m_DummyMagnus) then
                                 -- Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
                                 GameEvents.RequestCreateBuilding.Call(player:GetID(), city:GetID(), m_DummyMagnus)
-                                -- print('Dummy Magnus created', player:GetID(), city:GetID())
+                                print('Dummy Magnus created', player:GetID(), city:GetID())
                             end
                             if buildings:HasBuilding(m_DummyNoMagnus) then
                                 -- Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
                                 GameEvents.RequestRemoveBuilding.Call(player:GetID(), city:GetID(), m_DummyNoMagnus)
-                                -- print('Dummy NoMagnus removed', player:GetID(), city:GetID())
+                                print('Dummy NoMagnus removed', player:GetID(), city:GetID())
                             end
                         end
                     end
@@ -104,17 +104,17 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
     -- Clean
     for _, city in pCities:Members() do
         local buildings = city:GetBuildings()
-        -- print(city:GetID(), validCities[city:GetID()])
+        print('DEBUG', city:GetID(), validCities[city:GetID()])
         if validCities[city:GetID()] == nil then
             if buildings:HasBuilding(m_DummyMagnus) then
                 -- Utils.RemoveBuilding(player:GetID(), city:GetID(), m_DummyMagnus)
                 GameEvents.RequestRemoveBuilding.Call(player:GetID(), city:GetID(), m_DummyMagnus)
-                -- print('Dummy Magnus removed', player:GetID(), city:GetID())
+                print('during cleaning, Dummy Magnus removed', player:GetID(), city:GetID())
             end
             if not buildings:HasBuilding(m_DummyNoMagnus) then
                 -- Utils.CreateBuilding(player:GetID(), city:GetID(), m_DummyNoMagnus)
                 GameEvents.RequestCreateBuilding.Call(player:GetID(), city:GetID(), m_DummyNoMagnus)
-                -- print('Dummy NoMagnus created', player:GetID(), city:GetID())
+                print('during cleaning, Dummy NoMagnus created', player:GetID(), city:GetID())
             end
         end
     end
