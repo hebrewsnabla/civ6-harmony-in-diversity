@@ -1252,7 +1252,7 @@ values
 insert or replace into Building_GreatPersonPoints
 	(BuildingType,		GreatPersonClassType,			PointsPerTurn)
 values
-	('BUILDING_TOTEMS',	'GREAT_PERSON_CLASS_PROPHET',	1);
+	('BUILDING_TOTEMS',	'GREAT_PERSON_CLASS_PROPHET',	2);
 
 insert or replace into Building_YieldChanges 
 	(BuildingType,													YieldType,					YieldChange)
@@ -1263,7 +1263,7 @@ values
 	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'YIELD_PRODUCTION',			2),
 	('BUILDING_BOOTCAMP',											'YIELD_PRODUCTION',			2),
 	('BUILDING_FAIR',												'YIELD_GOLD',				6),
-	('BUILDING_TOTEMS',												'YIELD_FAITH',				2);
+	('BUILDING_TOTEMS',												'YIELD_FAITH',				1);
 
 insert or replace into BuildingModifiers 
  	(BuildingType,													ModifierId)
@@ -1276,7 +1276,7 @@ values
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'HANDCRAFT_DISTRICT_PRODUCTION'),
  	('BUILDING_BOOTCAMP',											'BOOTCAMP_UNIT_PRODUCTION'),
  	('BUILDING_FAIR',												'FAIR_GOLD'),
- 	('BUILDING_TOTEMS',												'TOTEMS_FAITH');
+ 	('BUILDING_TOTEMS',												'TOTEMS_FAITH_HD');
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,											SubjectRequirementSetId)
@@ -1289,7 +1289,7 @@ values
  	('HANDCRAFT_DISTRICT_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
  	('BOOTCAMP_UNIT_PRODUCTION',			'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_CHANGE',	'BOOTCAMP_REQUIREMENT'),
  	('FAIR_GOLD',							'MODIFIER_BUILDING_YIELD_CHANGE',						'FAIR_REQUIREMENT'),
- 	('TOTEMS_FAITH',						'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',		'TOTEMS_ADJACENT_REQUIREMENT');
+ 	('TOTEMS_FAITH_HD',						'MODIFIER_BUILDING_YIELD_CHANGE',						'TOTEMS_ADJACENT_REQUIREMENT');
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,												Value)
@@ -1310,8 +1310,9 @@ values
 	('FAIR_GOLD',							'BuildingType',										'BUILDING_FAIR'),
 	('FAIR_GOLD',							'YieldType',										'YIELD_GOLD'),
 	('FAIR_GOLD',							'Amount',											2),
-	('TOTEMS_FAITH',						'GreatPersonClassType',								'GREAT_PERSON_CLASS_PROPHET'),
-	('TOTEMS_FAITH',						'Amount',											1);
+	('TOTEMS_FAITH_HD',						'BuildingType',										'BUILDING_TOTEMS'),
+	('TOTEMS_FAITH_HD',						'YieldType',										'YIELD_FAITH'),
+	('TOTEMS_FAITH_HD',						'Amount',											2);
 
 insert or replace into MutuallyExclusiveBuildings
 	(Building,								MutuallyExclusiveBuilding)
