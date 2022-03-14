@@ -30,8 +30,8 @@ values
     ("LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION",            "Sumerian unique Ancient era unit. Stronger than all other starting units. No penalties against anti-cavalry units. 4 [ICON_Movement] Movement if this unit starts in open terrain. Attacks do full damage to the city's Walls."),
     ("LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",              "Cree unique Ancient era unit that replaces the Scout. Strong reconnaissance unit and have one more [ICON_Movement] Movement than Scout."),
     ("LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "Polish unique Renaissance era unit. Pushes defending enemy units back from their hex in any battle where they score more damage. Defenders that cannot retreat suffer additional damage. 50% less [ICON_Strength] Combat Strength reduction from being injured."),
-    ("LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "ANCIENT_PRIVATE_UNIT"),
-    ("LOC_UNIT_ANCIENT_SEADOG_NAME",                      "ANCIENT_SEADOG");
+    ("LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "Ancient era ranged raiding naval unit."),
+    ("LOC_UNIT_ANCIENT_SEADOG_NAME",                      "SEADOG");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -65,7 +65,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION",            "苏美尔远古时代特色单位。比其他所有初始单位更强大。对战抗骑兵单位时，无减益。如果该单位从开阔地形开始回合， [ICON_Movement] 移动力为4。对城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",              "远古时代的克里特色单位，替代侦察兵。拥有更高战斗力的侦察单位，且比侦察兵多1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "波兰文艺复兴特色单位。伤害点数高于敌方的状况下，会将防守的敌方单位推至后方的单元格。无法后退的防守单位会遭受额外伤害。受伤后的 [ICON_Strength] 战斗力减益减少50%。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "远古海盗单位"),
+    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "远古时代的海军袭击者。"),
     ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_NAME",                      "海狗");
 
 -- Units information updates
