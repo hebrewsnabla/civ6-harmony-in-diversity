@@ -20,9 +20,9 @@ select
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,											OwnerRequirementSetId,								SubjectRequirementSetId)
+	(ModifierId,											ModifierType,											OwnerRequirementSetId,										SubjectRequirementSetId)
 select
-	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'CITY_HAS_IMPROVED_' || substr(ResourceType, 10),	'HD_OBJECT_WITHIN_8_TILES'
+	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 insert or replace into ModifierArguments
@@ -131,6 +131,16 @@ select
 	'HD_NAT_FINANCE_PRODUCT_' || YieldType,	'ScalingFactor',		200
 from Yields
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+
+insert or ignore into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+values
+    ('HD_CITY_HAS_COMMERCIAL_TIER_3_BUILDING_REQUIREMENTS',		    'REQUIREMENTSET_TEST_ANY');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+values
+	('HD_CITY_HAS_COMMERCIAL_TIER_3_BUILDING_REQUIREMENTS',		    'REQUIRES_CITY_HAS_BUILDING_STOCK_EXCHANGE');
 
 -- 国际机场 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价

@@ -48,7 +48,13 @@ values
     ("LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",            "Unlocks the Builder ability to construct a Nazca Line.[NEWLINE][NEWLINE]+2 [ICON_Faith] Faith to adjacent tiles. +1 [ICON_Faith] Faith to adjacent tiles with a resource. +1 [ICON_FOOD] Food to adjacent Desert and Desert Hill tiles after discovering Feudalism. +1 [ICON_PRODUCTION] Production to adjacent flat tiles after researching Mass Production. +1 Appeal. Can only be built on flat Desert. This tile cannot be worked."),
     ("LOC_IMPROVEMENT_MOAI_DESCRIPTION",                  "Unlocks the Builder ability to construct a Moai.[NEWLINE][NEWLINE]Moai provide +3 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile.  Additional [ICON_Culture] Culture as you advance through the Civics and Technology Tree. Receives [ICON_TOURISM] Tourism from [ICON_Culture] Culture. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can be built on resourses but can only be placed adjacent to a Lake or Coast tile."),    
     -- UI of Governor
-    ("LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles.");
+    ("LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles."),
+    ("LOC_IMPROVEMENT_PLANTATION_HD_DESCRIPTION",         "Unlocks the Builder ability to construct Plantations.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold. Once Irrigation is unlocked, extra +1 [ICON_Food] Food if adjacent to fresh water or Aqueduct District. (obsolete with Feudalism Civic). +2 [ICON_Gold] Gold for each adjacent Commercial Hub District. [NEWLINE][NEWLINE]Can only be built on valid resources. If built on Luxury resources, the city will gain use of that resource." ),
+    ("LOC_TECH_MINING_HD_DESCRIPTION",                          "Allows chopping of Woods and Rainforest, and harvesting of resources improved by Mines."),
+    ("LOC_TECH_BRONZE_WORKING_DESCRIPTION",                     "Reveals [ICON_RESOURCE_IRON] Iron."),
+    ("LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                   "Awards 3 [ICON_Envoy] Envoys. Allows the building of National Parks and the purchase of Naturalists with [ICON_Faith] Faith. Woods in your territory that have never been removed (old-growth) gain +1 Appeal. Receives +1 [ICON_Amenities] Amenity when city center is adjacent to woods. Receive [ICON_TOURISM] Tourism from Walls."),
+    ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                         "Lumber Mills and Camps can be built on Rainforest. Allows Builders to plant Woods (second-growth)."),
+    ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",          "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] in Marsh. Woods can be planted with the Mysticism civic.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -102,10 +108,14 @@ values
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_NAZCA_LINE_DESCRIPTION",            "解锁建造者建造纳斯卡巨画的能力。[NEWLINE][NEWLINE]相邻的单元格+2 [ICON_Faith] 信仰值；拥有资源的相邻单元格+1 [ICON_Faith] 信仰值。发现“封建主义”后，相邻的沙漠、沙漠丘陵单元格+1 [ICON_FOOD] 食物。研究“批量生产”后，相邻的平坦的单元格+1 [ICON_PRODUCTION] 生产力；同时+1魅力。仅能建在平坦的沙漠上。此单元格无法进行改良。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_MOAI_DESCRIPTION",                  "解锁建造者建造摩艾石像的能力。[NEWLINE][NEWLINE]提供+3 [ICON_Culture] 文化值。每相邻一个摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值。可通过 [ICON_Culture] 文化值获得 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修建在资源上并改良资源。"),
     -- 总督改良
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。");
-
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_PLANTATION_HD_DESCRIPTION",    "解锁建造者建造种植园的能力。[NEWLINE][NEWLINE]+2 [ICON_Gold] 金币。研究“灌溉”科技后，拥有淡水或相邻蓄水池的种植园+1 [ICON_FOOD] 食物（封建后失效）。每相邻1个商业中心单元格则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。"),
+    ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",               "允许砍伐树林、雨林和收获由矿山改良的资源。"),
+    ("zh_Hans_CN",  "LOC_TECH_BRONZE_WORKING_DESCRIPTION",          "显示 [ICON_RESOURCE_IRON] 铁资源。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",        "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",              "允许在雨林上建造伐木场和营地。允许建造者植树造林（人造林）。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",   "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。");   
 insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
 	("zh_Hans_CN",  "LOC_IMPROVEMENT_KURGAN_DESCRIPTION",               		 "解锁建造者建造斯基泰特色坟墩的能力。[NEWLINE][NEWLINE]为相邻的牧场+1 [ICON_Faith] 信仰值。[NEWLINE]+1 [ICON_Faith] 信仰值、+3 [ICON_Gold] 金币。每与一座牧场相邻便+1 [ICON_Faith] 信仰值（研究完“马镫”后提升为+2）。不能建在丘陵上。");
-    
