@@ -24,5 +24,15 @@
         <Row Name="ICON_GREATWORK_SI_MA_QIAN_2"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
         <!-- <Update><Where Name="ICON_CIVILIZATION_HONG_KONG"/> <Set Atlas="ATLAS_CivBaikonur" Index="0"/></Update> -->
         <Row Name="ICON_IMPROVEMENT_LAND_POLDER" Atlas="ICON_ATLAS_EXPANSION_1_IMPROVEMENTS" Index="2"/>
+        <!-- copy code of english_seadog to create ancient_seadog unit. -->
+        <Row Name="ICON_UNIT_ANCIENT_SEADOG"                Atlas="ICON_ATLAS_UNITS" Index="59"/>
+        <Row Name="ICON_UNIT_ANCIENT_SEADOG_FOW"            Atlas="ICON_ATLAS_UNITS_FOW" Index="59"/>
+        <Row Name="ICON_UNIT_ANCIENT_SEADOG_PORTRAIT"                              Atlas="ICON_ATLAS_UNIT_PORTRAITS"   Index="57"/>
+        <Row Name="ICON_ETHNICITY_ASIAN_UNIT_ANCIENT_SEADOG_PORTRAIT"               Atlas="ICON_ATLAS_ASIAN_UNIT_PORTRAITS"   Index="57"/>
+        <Row Name="ICON_ETHNICITY_MEDIT_UNIT_ANCIENT_SEADOG_PORTRAIT"               Atlas="ICON_ATLAS_MEDITERRANEAN_UNIT_PORTRAITS"   Index="57"/>
+        <Row Name="ICON_ETHNICITY_SOUTHAM_UNIT_ANCIENT_SEADOG_PORTRAIT"               Atlas="ICON_ATLAS_SOUTH_AMERICAN_UNIT_PORTRAITS"   Index="57"/>
+        <Row Name="ICON_ETHNICITY_AFRICAN_UNIT_ANCIENT_SEADOG_PORTRAIT"               Atlas="ICON_ATLAS_AFRICAN_UNIT_PORTRAITS"   Index="57"/>
+        <Row Name="ICON_UNIT_ANCIENT_SEADOG_WHITE" Index="59" Atlas="ICON_ATLAS_UNIT_FLAG_SYMBOLS_WHITE"/>
+    	<Row Name="ICON_UNIT_ANCIENT_SEADOG_BLACK" Index="59" Atlas="ICON_ATLAS_UNIT_FLAG_SYMBOLS_BLACK"/>
     </IconDefinitions>
 </GameData>

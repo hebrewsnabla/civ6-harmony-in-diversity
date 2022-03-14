@@ -444,3 +444,30 @@ values
 	('PROMOTION_AUTO_SOLICITATION',		'PROMOTION_WOLFPACK');
 
 update Units set PrereqTech = 'TECH_ROCKETRY' where UnitType = 'UNIT_BOMBER';
+------------------------------------------------------------------------------------------------
+-- make a new unit - ancient seadog. by Five.
+insert or replace into Types (Type, Kind) values ('UNIT_ANCIENT_SEADOG',    'KIND_UNIT');
+insert or replace into Units
+    (UnitType,                  Name,                               Description,                    TraitType,  PrereqTech,     MandatoryObsoleteTech,
+    BaseSightRange, BaseMoves,   Combat, RangedCombat,   Range,  Cost,   ZoneOfControl, PurchaseYield, Domain,
+    FormationClass,             PromotionClass,                 PseudoYieldType,                    AdvisorType)
+values
+    ('UNIT_ANCIENT_SEADOG', 'LOC_UNIT_ANCIENT_SEADOG_NAME', 'LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION',  NULL,       NULL,           'TECH_COMPASS_HD',
+    2,              3,           15,     10,             1,      30,    1,              'YIELD_GOLD',  'DOMAIN_SEA',
+    'FORMATION_CLASS_NAVAL',    'PROMOTION_CLASS_NAVAL_RAIDER', 'PSEUDOYIELD_UNIT_NAVAL_COMBAT',    'ADVISOR_CONQUEST');
+insert or replace into TypeTags
+    (Type,  Tag)
+values
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_NAVAL_RAIDER'),
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_NAVAL_RANGED'),
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_STEALTH'),
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_REVEAL_STEALTH');
+insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_ANCIENT_SEADOG', 'UNIT_DL_MEDIEVAL_PIRATE');
+insert or replace into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_ANCIENT_SEADOG', 'UNIT_PRIVATEER');
+insert or replace into UnitReplaces (CivUniqueUnitType,  ReplacesUnitType) values ('UNIT_HD_BARBARIAN_GALLEY', 'UNIT_ANCIENT_SEADOG');
+insert or replace into UnitAiInfos
+    (UnitType,                  AiType)
+values
+    ('UNIT_ANCIENT_SEADOG', 'UNITAI_COMBAT'),
+    ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_RANGED'),
+    ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_NAVAL');
