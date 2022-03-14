@@ -10,6 +10,8 @@ values
     ("LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        "Medieval era support unit. Requires an Armory to produce. Can construct Roads, Railroads, Forts, Airstrips, Missile Silos, and Mountain Tunnel improvements. One of their build charges can also be used to complete 30% of a Canal, Dam or Aqueduct district or a Flood Barrier building. Ignore [ICON_MOVEMENT] movement penalty from all Terrians, Features and Rivers."), -- Can move with ability that ignore all the terrain and river.
     ("LOC_UNIT_WARRIOR_MONK_DESCRIPTION",                 "Fast-moving land combat unit with a unique promotion tree. Can only be purchased by [ICON_FAITH] Faith in city with a Temple. "),
     ("LOC_UNIT_OBSERVATION_BALLOON_DESCRIPTION",          "Industrial era support unit. Grants +1 [ICON_Range] Range to Siege class units within 1 hex."),
+    ("LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "Ancient era ranged raiding naval unit."),
+    ("LOC_UNIT_ANCIENT_SEADOG_NAME",                      "Outrigger Boats"),
     -- Unique Units
     ("LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION",           "Norwegian unique Ancient era naval unit that replaces the Galley. Can pillage enemy coastal lands and capture civilians if adjacent using its coastal raiding ability. Formation units all inherit escort's [ICON_Movement] Movement speed. 4 [ICON_Movement] Movement while in coastal waters."),
     ("LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION",               "English unique Renaissance era naval unit that replaces the Privateer. Has a chance to capture defeated enemy ships."), -- Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range.
@@ -29,9 +31,7 @@ values
     ("LOC_UNIT_MACEDONIAN_HETAIROI_DESCRIPTION",          "Macedonian unique heavy cavalry unit. Additional +5 [ICON_Strength] Combat Strength when adjacent to a Great General. +10 Great General points when killing an enemy unit. Starts with 1 free Promotion."),
     ("LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION",            "Sumerian unique Ancient era unit. Stronger than all other starting units. No penalties against anti-cavalry units. 4 [ICON_Movement] Movement if this unit starts in open terrain. Attacks do full damage to the city's Walls."),
     ("LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",              "Cree unique Ancient era unit that replaces the Scout. Strong reconnaissance unit and have one more [ICON_Movement] Movement than Scout."),
-    ("LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "Polish unique Renaissance era unit. Pushes defending enemy units back from their hex in any battle where they score more damage. Defenders that cannot retreat suffer additional damage. 50% less [ICON_Strength] Combat Strength reduction from being injured."),
-    ("LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "Ancient era ranged raiding naval unit."),
-    ("LOC_UNIT_ANCIENT_SEADOG_NAME",                      "SEADOG");
+    ("LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "Polish unique Renaissance era unit. Pushes defending enemy units back from their hex in any battle where they score more damage. Defenders that cannot retreat suffer additional damage. 50% less [ICON_Strength] Combat Strength reduction from being injured.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -45,6 +45,8 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION",        "中世纪支援单位。需要“兵工厂”才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠区域或拦洪坝30%的建造进度。无视地形、地貌和河流的移动力消耗。"),
     ("zh_Hans_CN",  "LOC_UNIT_WARRIOR_MONK_DESCRIPTION",                 "高移动力的陆地战斗单位，拥有独特的升级树。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。"),
     ("zh_Hans_CN",  "LOC_UNIT_OBSERVATION_BALLOON_DESCRIPTION",          "工业时代支援单位。为1单元格内的攻城类单位+1 [ICON_Range] 射程。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "远古时代的海军袭击者。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_NAME",                      "桨架划艇"),
     -- 特色单位
     ("zh_Hans_CN",  "LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION",           "取代桨帆船的挪威远古时代特色海军单位。通过海岸扫荡能力，可掠夺敌方海岸土地，并俘获附近的平民。能在中立领土上恢复。可使编队单位继承自己的移动力。位于海岸水域时， [ICON_Movement] 移动力为4。"),
     ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION",               "文艺复兴时代英国特色海军单位，取代私掠船。击败敌方船只后有几率将其俘获。"),
@@ -64,9 +66,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_MACEDONIAN_HETAIROI_DESCRIPTION",          "马其顿特色重骑兵单位。与大将军相邻时额外+5 [ICON_Strength] 战斗力。击杀敌方单位时+10大将军点数。初始便拥有1次免费升级。"),
     ("zh_Hans_CN",  "LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION",            "苏美尔远古时代特色单位。比其他所有初始单位更强大。对战抗骑兵单位时，无减益。如果该单位从开阔地形开始回合， [ICON_Movement] 移动力为4。对城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",              "远古时代的克里特色单位，替代侦察兵。拥有更高战斗力的侦察单位，且比侦察兵多1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "波兰文艺复兴特色单位。伤害点数高于敌方的状况下，会将防守的敌方单位推至后方的单元格。无法后退的防守单位会遭受额外伤害。受伤后的 [ICON_Strength] 战斗力减益减少50%。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "远古时代的海军袭击者。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_NAME",                      "海狗");
+    ("zh_Hans_CN",  "LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "波兰文艺复兴特色单位。伤害点数高于敌方的状况下，会将防守的敌方单位推至后方的单元格。无法后退的防守单位会遭受额外伤害。受伤后的 [ICON_Strength] 战斗力减益减少50%。");
 
 -- Units information updates
 --------------------------------------------------------------------------------
