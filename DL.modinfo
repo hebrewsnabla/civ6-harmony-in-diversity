@@ -1371,6 +1371,7 @@
       <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TechMode/DL_Techs.sql</File>
       <File>GameModeSupport/TechMode/DL_Temp.sql</File>
+      <File>GameModeSupport/TechMode/DL_AI.sql</File>
     </UpdateDatabase>
     <UpdateText id="TechTest_update_text" criteria="TechTest_Mode_Expansion2">
       <Properties><LoadOrder>18201</LoadOrder></Properties>
@@ -1471,6 +1472,7 @@
     <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TechMode/DL_Techs.sql</File>
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
+    <File>GameModeSupport/TechMode/DL_AI.sql</File>
     <File>GameModeSupport/TechMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
     <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
