@@ -842,10 +842,10 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/DL_Adaptation.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="Civilizations_mod_support" criteria="Expansion2">
+    <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Text.sql</File>
-    </UpdateDatabase>
+    </UpdateText>
     <UpdateText id="Resources_mod_support_text" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/HD_Texts.sql</File>
