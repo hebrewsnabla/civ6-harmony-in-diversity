@@ -131,7 +131,7 @@ values
 
 update UnitCommands set PrereqCivic = 'CIVIC_MOBILIZATION' where CommandType = 'UNITCOMMAND_FORM_CORPS';
 
-update ModifierArguments set Value = 50 where ModifierId = 'ENVIRONMENTALISM_BOOST_ALL_TOURISM' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'ENVIRONMENTALISM_BOOST_ALL_TOURISM' and Name = 'Amount';
 
 insert or replace into Modifiers
     (ModifierId,                                     		 	ModifierType,                                      		 SubjectRequirementSetId)
