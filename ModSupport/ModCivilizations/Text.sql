@@ -5,7 +5,7 @@
 -- values
 --     ();
 -------------------------------------------------------------------------------
--- Language: zh_Hans_C
+-- Language: zh_Hans_CN
 insert or replace into LocalizedTex
     (Language,      Tag,                                                                 Text)
 value
