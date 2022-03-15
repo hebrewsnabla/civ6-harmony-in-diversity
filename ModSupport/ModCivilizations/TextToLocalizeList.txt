@@ -1,25 +1,26 @@
-workshop_path = C:\Users\f\App\steam\steamapps\workshop\content\289070
+workshop_path = 
+C:\Users\f\App\steam\steamapps\workshop\content\289070
 
-1.CIVILIZATION_GEDEMO_ZIMBABWE 
-2087866677\Core\Template_GameText.xml
-2.Charlemagne (German)
+1. ZIMBABWE 
+workshop_path\2087866677\Core\Template_GameText.xml
+2. Charlemagne (German)
 workshop_path\1647124021\Core\KarlDerGrosse_Text.xml
-3.Theodora
+3. Theodora
 workshop_path\2238636446\Core\Theodora_Text.xml
-4.Catherine
+4. Catherine
 workshop_path\1978431516\Core\Catherine2_Text.xml
-5.Charlemagne (France)
+5. Charlemagne (France)
 workshop_path\1580369598\Core\Charlemagne_Text.xml
-6.Leugi's Pacal 
+6. Leugi's Pacal 
 workshop_path\2104384400\text\LeaderText_Pacal.sql
 workshop_path\2104384400\text\DiploText_Pacal.sql
-7.Merrick's Hittites
+7. Hittites
 workshop_path\2381680617\Core\Hittites_GameText.xml
 workshop_path\2381680617\Core\DiploText.xml
-8.Merrick's Bulgaria
+8. Bulgaria
 workshop_path\1672726078\Core\Bulgaria_GameText.xml
 workshop_path\1672726078\Core\DiploText.xml
-9.Berbers
+9. Berbers
 workshop_path\1335234936\Core\Berber_Localisation.sql
 10.Dihya
 workshop_path\1765625281\Core\Dihya_Localisation.sql
