@@ -46,10 +46,12 @@ update Technologies set EmbarkAll = 1 where TechnologyType = 'TECH_CELESTIAL_NAV
 
 -- update Technologies set Cost = 300 where TechnologyType = 'TECH_CASTLES';
 -- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
--- update ModifierArguments set Value = 50 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
+
+update Technologies set AdvisorType = 'ADVISOR_TECHNOLOGY' where TechnologyType = 'TECH_COMPUTERS';
 
 --------------------------------------------------------------------------------
 -- from tech testing
