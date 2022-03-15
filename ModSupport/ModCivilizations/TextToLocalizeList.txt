@@ -35,7 +35,9 @@ workshop_path\1680028283\Core\Iskandar_Localisation.sql
 15.Vlad III 
 workshop_path\1657664177\Core\Vlad_III_Localisation.sql
 16.Siam: Ramkhamhaeng
-workshop_path\931093180\Core\Localisation.sql
+workshop_path\884825964\Core\Localisation\Suk_SiamRamkhamhaeng_LeaderText.sql
+workshop_path\884825964\Core\Localisation\Suk_SiamRamkhamhaeng_InGameText.sql
+workshop_path\884825964\Core\Localisation\Suk_SiamRamkhamhaeng_ConfigText.sql
 17.Narai(Siam)
 workshop_path\1734072409\Core\Localisation\Localisation_en_US.sql
 18.Chulalongkorn(Siam)
