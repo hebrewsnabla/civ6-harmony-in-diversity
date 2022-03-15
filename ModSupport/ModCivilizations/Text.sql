@@ -6,9 +6,9 @@
 --     ();
 -------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
-insert or replace into LocalizedTex
+insert or replace into LocalizedText
     (Language,      Tag,                                                                 Text)
-value
+values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_SUK_SWAHILI_NAME",                                 "斯瓦西里"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_SUK_SWAHILI_DESCRIPTION",                          "斯瓦西里"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_SUK_SWAHILI_ADJECTIVE",                            "斯瓦西里"),
