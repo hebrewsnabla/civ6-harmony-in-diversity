@@ -121,7 +121,7 @@ values
     ("LOC_POLICY_BARD_NAME",                                                          "Bards"),
     ("LOC_POLICY_CIVILIZE_NAME",                                                      "Oral Tradition"),
     ("LOC_POLICY_DOMESTIC_TRADE_NAME",                                                "Domestic Trade"),
-    ("LOC_POLICY_HIGHWAY_NAME",                                                       "Highway"),
+    ("LOC_POLICY_HIGHWAY_NAME",                                                       "Government-financed Road"),
     ("LOC_POLICY_SILK_ROAD_NAME",                                                     "Silk Road"),
     ("LOC_POLICY_WAREHOUSE_NAME",                                                     "Artisan Office"),
     ("LOC_POLICY_SAFETY_BOX_NAME",                                                    "Commune"),

@@ -60,7 +60,7 @@ values
     ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus Districts get extra major adjacency bonus from Reefs. +2 [ICON_Production] Production from Reef."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
     ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts; City Center receives +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Lake or Coast tiles."),
-    ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "The Wolf God"),
+    ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "Lupercal"),
     ("LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "+1 [ICON_CULTURE] Culture from Camps over Luxury and Bonus resources. Holy Site provides +1 [ICON_Faith] Faith to all Camps in this city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns Camps over Luxury or Bonus resources."),
     ("LOC_BELIEF_HD_SUN_GOD_NAME",                                "Apollo"),
     ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Holy Site provides +1 [ICON_FAITH] Faith to all Farms in this city. +1 [ICON_FOOD] Food from Farms over resources and Plantations. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Farm over resource or a Plantation.");
