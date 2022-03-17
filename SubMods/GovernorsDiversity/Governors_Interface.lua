@@ -121,7 +121,7 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
 end
 
 function CheckGeneralServicesOfficer(playerID, eGovernor, ePromotion)
-    -- print('IsPromoted', eGovernor, ePromotion)
+    print('IsPromoted', eGovernor, ePromotion)
     if (eGovernor == m_GovernorResourceManagerID) and (ePromotion == m_GovernorPromotion_GeneralServicesOfficerID) then
         local player = Players[playerID]
         GeneralServicesOfficerUpdateDummyBuilding(player, eGovernor)
@@ -129,7 +129,7 @@ function CheckGeneralServicesOfficer(playerID, eGovernor, ePromotion)
 end
 
 function OnGovernorChanged(playerID, governorID)
-    -- print('IsChanged', playerID, governorID)
+    print('IsChanged', playerID, governorID)
     local player = Players[playerID]
     GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
 end
