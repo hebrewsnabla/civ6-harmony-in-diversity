@@ -313,6 +313,10 @@ UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'ClassicalYields' AND Item 
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'ClassicalYields' AND Item = 'YIELD_FAITH';
 
 
+insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_ORBITAL_LASER',1);
+insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_TERRESTRIAL_LASER',1);
+insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_LAUNCH_MARS_BASE',1);
+insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_LAUNCH_EXOPLANET_EXPEDITION',1);
 
 UPDATE AiFavoredItems SET Value = 0  WHERE ListType = 'MedievalYields' AND Item = 'YIELD_FOOD';
 UPDATE AiFavoredItems SET Value = 25 WHERE ListType = 'MedievalYields' AND Item = 'YIELD_PRODUCTION';
