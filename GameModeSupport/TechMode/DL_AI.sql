@@ -107,20 +107,20 @@ values
     ('DLAdjustBuildings', 'BUILDING_SEWER', 1, 30);
 
 -- 10 strategics per turn from mars, tries to relief strategic price problem and ai maintaining strategic unit problem.
-insert or replace into TraitModifiers (TraitType,   ModifierId)
-select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-
-insert or replace into Modifiers (ModifierId,           ModifierType,   OwnerRequirementSetId)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-
-insert or replace into ModifierArguments (ModifierId,   Name,   Value)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-insert or replace into ModifierArguments (ModifierId,   Name,   Value)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 10
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+--insert or replace into TraitModifiers (TraitType,   ModifierId)
+--select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
+--from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+--
+--insert or replace into Modifiers (ModifierId,           ModifierType,   OwnerRequirementSetId)
+--select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI_CAN_SEE_' || ResourceType
+--from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+--
+--insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+--select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
+--from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+--insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+--select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 10
+--from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- For high difficulty AI.
 -- grant ai animal husbandry
@@ -154,44 +154,44 @@ insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
 -- Science Scale: 40 + 10n
 -- Culture Scale: 40 + 10n
 -- Gold Scale: 25 + 10n, remove + 10n only leaves 25%
-update ModifierArguments set Extra = 5
-	where ModifierId = 'HIGH_DIFFICULTY_GOLD_SCALING' and Name = 'Amount';
-insert or replace into TraitModifiers (TraitType, ModifierId)
-select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
-select	'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType,
-		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
-		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select 'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIELD_GOLD'
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
-select	'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 0
-from Eras where not EraType = 'ERA_ANCIENT';
+--update ModifierArguments set Extra = 5
+--	where ModifierId = 'HIGH_DIFFICULTY_GOLD_SCALING' and Name = 'Amount';
+--insert or replace into TraitModifiers (TraitType, ModifierId)
+--select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+--select	'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType,
+--		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
+--		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into ModifierArguments (ModifierId, Name, Value)
+--select 'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIELD_GOLD'
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
+--select	'HIGH_DIFFICULTY_GOLD_SCALING_AT_LEAST_' || EraType, 'Amount',
+--		'LinearScaleFromDefaultHandicap', 0, 0
+--from Eras where not EraType = 'ERA_ANCIENT';
 
 -- Faith Scale: 25 + 10n, removes +10n
-update ModifierArguments set Extra = 5
-	where ModifierId = 'HIGH_DIFFICULTY_FAITH_SCALING' and Name = 'Amount';
-insert or replace into TraitModifiers (TraitType, ModifierId)
-select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
-select	'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType,
-		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
-		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into ModifierArguments (ModifierId, Name, Value)
-select 'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIELD_FAITH'
-from Eras where not EraType = 'ERA_ANCIENT';
-insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
-select	'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType, 'Amount',
-		'LinearScaleFromDefaultHandicap', 0, 0
-from Eras where not EraType = 'ERA_ANCIENT';
+--update ModifierArguments set Extra = 5
+--	where ModifierId = 'HIGH_DIFFICULTY_FAITH_SCALING' and Name = 'Amount';
+--insert or replace into TraitModifiers (TraitType, ModifierId)
+--select 'TRAIT_LEADER_MAJOR_CIV', 'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+--select	'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType,
+--		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
+--		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into ModifierArguments (ModifierId, Name, Value)
+--select 'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType, 'YieldType', 'YIELD_FAITH'
+--from Eras where not EraType = 'ERA_ANCIENT';
+--insert or replace into ModifierArguments (ModifierId, Name, Type, Value, Extra)
+--select	'HIGH_DIFFICULTY_FAITH_SCALING_AT_LEAST_' || EraType, 'Amount',
+--		'LinearScaleFromDefaultHandicap', 0, 0
+--from Eras where not EraType = 'ERA_ANCIENT';
 
--- food, removes extra +10n
+-- food, give back extra +10n
 insert or replace into TraitModifiers (TraitType,   ModifierId) values
     ('TRAIT_LEADER_MAJOR_CIV',                      'HD_HIGH_DIFFICULTY_FOOD_SCALING');
 
@@ -202,7 +202,7 @@ insert or replace into ModifierArguments (ModifierId,       Name,           Valu
     ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                     'YieldType',    'YIELD_FOOD');
 
 insert or replace into ModifierArguments (ModifierId,   Name,       Type,                               Value,  Extra) values
-    ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                 'Amount',   'LinearScaleFromDefaultHandicap',   0,      0);
+    ('HD_HIGH_DIFFICULTY_FOOD_SCALING',                 'Amount',   'LinearScaleFromDefaultHandicap',   0,      2);
 --------------------------------------------------------------
 -- Changed based on [MOD] Real Strategy
 delete from AiFavoredItems where ListType = 'StandardSettlePlot';
