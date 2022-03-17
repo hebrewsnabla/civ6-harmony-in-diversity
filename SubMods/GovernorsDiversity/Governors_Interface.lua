@@ -146,6 +146,16 @@ Events.GovernorPromoted.Add(AmbassadorTributumEnvoy)
 Events.GovernorPromoted.Add(CheckGeneralServicesOfficer)
 Events.GovernorChanged.Add(OnGovernorChanged)
 -- Events.GovernorEstablished.Add(OnGovernorEstablished)
+
+Events.CityAddedToMap.Add(function (playerID, cityID, iX, iY)
+    local city = CityManager.GetCity(playerID, cityID)
+    local buildings = city:GetBuildings()
+    if not buildings:HasBuilding(m_DummyNoMagnus) then
+        GameEvents.RequestCreateBuilding.Call(playerID, cityID, m_DummyNoMagnus)
+        print('CityAddedToMap, Dummy NoMagnus created', playerID, cityID)
+    end
+end)
+
 -- ===========================================================================
 
 function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
