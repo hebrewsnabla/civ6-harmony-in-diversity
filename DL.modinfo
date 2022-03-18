@@ -842,6 +842,10 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/DL_Adaptation.sql</File>
     </UpdateDatabase>
+    <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Text.sql</File>
+    </UpdateText>
     <UpdateText id="Resources_mod_support_text" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/HD_Texts.sql</File>
@@ -1589,6 +1593,8 @@
     <!-- Removeable Districts -->
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
+    <!-- Mod Civilizations -->
+    <File>ModSupport/ModCivilizations/Text.sql</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
     <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
