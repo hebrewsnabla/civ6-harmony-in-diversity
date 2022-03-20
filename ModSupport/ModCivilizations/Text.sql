@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
-    (Tag,                                                                                 Text)
+    (Tag,                                                                                               Text)
 values
     -- Bulgaria_diplo
     ("LOC_CIVINFO_MER_BULGARIA_LOCATION",                                                             "Bulgaria"),
@@ -798,7 +798,7 @@ values
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
-    (Language,      Tag,                                                                                 Text)
+    (Language,      Tag,                                                                Text)
 values
     ("zh_Hans_CN",  "LOC_CIVILIZATION_SUK_SWAHILI_NAME",                                 "斯瓦西里"),
     ("zh_Hans_CN",  "LOC_CIVILIZATION_SUK_SWAHILI_DESCRIPTION",                          "斯瓦西里"),
@@ -1043,8 +1043,8 @@ values
     ("zh_Hans_CN",  "LOC_NAMED_RIVER_ISKAR_NAME",                                        "伊斯卡河"),
 
     -- charlemagne_de_zh
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GEDEMO_KARLDERGROSSE1_NAME",                                       "亚琛"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GEDEMO_KARLDERGROSSE1_DESCRIPTION",                                "皇家信使"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GEDEMO_KARLDERGROSSE1_NAME",                                       "皇家信使"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GEDEMO_KARLDERGROSSE1_DESCRIPTION",                                "圣地相邻也获得金币。研究马镫以后，获得特色单位圣骑士。"),
     ("zh_Hans_CN",  "LOC_LEADER_GEDEMO_KARLDERGROSSE1",                                                  "查理曼"),
     ("zh_Hans_CN",  "LOC_LOADING_INFO_LEADER_GEDEMO_KARLDERGROSSE1",                                     "查理大帝啊！你是中世纪最有名的君主，是法兰克人的国王和西方的皇帝，伟大的征服者和熟练的管理者。你以自己的名字命名了一个王朝，那就是加洛林王朝。你的帝国是如此之大，出现在西欧好几个国家的历史书中，包括法国和德国。[NewLine]你能建立一个经得起时间考验的文明吗？"),
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KARLDERGROSSE1_TITLE",                         "查理曼"),
