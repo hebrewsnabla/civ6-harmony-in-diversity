@@ -910,7 +910,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_XP2_DESCRIPTION",   "蒙通体系"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_SUK_DAMRONG_NAME",                         "丹隆"),
     ("zh_Hans_CN",  "LOC_AGENDA_SUK_PHRA_PIYA_MAHARAT_NAME",                 "朱拉隆功大帝"),
-    ("zh_Hans_CN",  "LOC_AGENDA_SUK_PHRA_PIYA_MAHARAT_DESCRIPTION",          "喜欢那些其他大陆的文明，但是讨厌定居在他首都所在大陆的异大陆文明。")
+    ("zh_Hans_CN",  "LOC_AGENDA_SUK_PHRA_PIYA_MAHARAT_DESCRIPTION",          "喜欢那些其他大陆的文明，但是讨厌定居在他首都所在大陆的异大陆文明。"),
     
     -- Bulgaria_diplo_zh
     ("zh_Hans_CN",  "LOC_CIVINFO_MER_BULGARIA_LOCATION",                                                             "保加利亚"),
