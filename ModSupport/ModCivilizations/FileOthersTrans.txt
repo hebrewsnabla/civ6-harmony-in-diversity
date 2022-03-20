@@ -1,0 +1,31 @@
+workshop_path = 
+C:\Users\f\App\steam\steamapps\workshop\content\289070
+
+3. Theodora
+workshop_path\2649883604\UnIncludedCNedCollection\GS'Gedemo Theodora'CN_Add_FI.xml
+4. Catherine
+workshop_path\2649883604\UnIncludedCNedCollection\GS'Gedemo Catherine'CN_Add_FI.xml
+6. Leugi's Pacal 
+workshop_path\2649883604\UnIncludedCNedCollection\GS'NF Leugis Pacal (Maya)'CN_Add_FI.xml
+9. Berbers
+workshop_path\2649883604\UnIncludedCNedCollection\VNL'CIVITAS Berbers'CN_Add_FI.sql
+11.Malaysia
+workshop_path\2649883604\UnIncludedCNedCollection\GS'CIVITAS Malaysia'CN_Add_FI.sql
+12.Tun Perak
+workshop_path\2649883604\UnIncludedCNedCollection\GS'CIVITAS Tun Perak'CN_Add_FI.sql
+14.Iskandar
+workshop_path\2649883604\UnIncludedCNedCollection\GS'CIVITAS Iskandar'CN_Add_FI.sql
+16.Siam: Ramkhamhaeng
+workshop_path\2649883604\UnIncludedCNedCollection\VNL'Sukritacts Siam Ramkhamhaeng'CN_Add_FI.sql
+17.Narai(Siam)
+workshop_path\2649883604\UnIncludedCNedCollection\GS'Sukritacts Narai (Siam)'CN_Add_FI.xml
+18.Chulalongkorn(Siam)
+workshop_path\2649883604\UnIncludedCNedCollection\VNL'Sukritacts Chulalongkorn (Siam)'CN_Add_FI.xml
+19.Ingolfur Arnarson(Iceland)
+workshop_path\2649883604\UnIncludedCNedCollection\RF'Sukritacts Ingolfur Arnarson (Iceland)'CN_Add_FI.xml
+20.Bayinnaung(Burma)
+workshop_path\2649883604\UnIncludedCNedCollection\VNL'Sukritacts Bayinnaung (Burma)'CN_Add_FI.sql
+21.Swahili: Al-Hasan ibn Sulaiman
+workshop_path\2649883604\UnIncludedCNedCollection\VNL'Sukritacts Swahili Al-Hasan ibn Sulaiman'CN_Add_FI.sql
+22.Muhammad Keita(Mali)
+workshop_path\2649883604\UnIncludedCNedCollection\GS'Sukritacts Muhammad Keita (Mali)'CN_Add_FI.sql
