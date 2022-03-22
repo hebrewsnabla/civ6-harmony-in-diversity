@@ -842,6 +842,10 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/DL_Adaptation.sql</File>
     </UpdateDatabase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Civilizations.sql</File>
+    </UpdateDataBase>
     <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Text.sql</File>
@@ -1594,6 +1598,7 @@
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
     <!-- Mod Civilizations -->
+    <File>ModSupport/ModCivilizations/Civilizations.sql</File>
     <File>ModSupport/ModCivilizations/Text.sql</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>

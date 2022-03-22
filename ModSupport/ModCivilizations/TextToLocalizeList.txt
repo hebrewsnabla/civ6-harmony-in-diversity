@@ -3,6 +3,7 @@ C:\Users\f\App\steam\steamapps\workshop\content\289070
 
 1. ZIMBABWE 
 workshop_path\2087866677\Core\Template_GameText.xml
+workshop_path\2087866677\Core\Geotext.xml
 2. Charlemagne (German)
 workshop_path\1647124021\Core\KarlDerGrosse_Text.xml
 3. Theodora
