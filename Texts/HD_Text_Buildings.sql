@@ -22,7 +22,7 @@ values
     ("LOC_BUILDING_FAIR_NAME",                                    "Fair"),
     ("LOC_BUILDING_FAIR_DESCRIPTION",                             "+2 [ICON_Gold] Gold if the City Center is locate on or adjacent to at least one Luxury resource.[NEWLINE][NEWLINE]May not be built in cities that already have a Totem."),
     ("LOC_BUILDING_TOTEMS_NAME",                                  "Totem"),
-    ("LOC_BUILDING_TOTEMS_DESCRIPTION",                           "+1 [ICON_GreatProphet] Great Prophet Points if the City Center is adjacent to Mountains or Forests.[NEWLINE][NEWLINE]May not be built in cities that already have a Fair."),
+    ("LOC_BUILDING_TOTEMS_DESCRIPTION",                           "+2 [ICON_FAITH] Faith if the City Center is adjacent to Mountains or Forests or Rainforest.[NEWLINE][NEWLINE]May not be built in cities that already have a Fair."),
     ("LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "A building unique to Georgia. Lower [ICON_Production] Production cost and higher outer defenses than Renaissance Walls. Provides +5 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. Provides +4 [ICON_Faith] Faith. When in a Golden Age, +300% [ICON_TOURISM] Tourism and +300% [ICON_FAITH] Faith."),
     ("LOC_BUILDING_SEWER_DESCRIPTION",                            "+20% Growth rate in this city."),
     -- Campus
@@ -141,7 +141,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_FAIR_NAME",                                    "集市"),
     ("zh_Hans_CN",  "LOC_BUILDING_FAIR_DESCRIPTION",                             "如果市中心拥有或与至少一个奢侈资源相邻，则额外+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]无法建造在已有图腾柱的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TOTEMS_NAME",                                  "图腾柱"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TOTEMS_DESCRIPTION",                           "如果市中心与山脉或森林相邻，则额外+1 [ICON_GreatProphet] 大预言家点数。[NEWLINE][NEWLINE]无法建造在已有集市的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TOTEMS_DESCRIPTION",                           "如果市中心与山脉或森林或雨林相邻，则额外+2 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]无法建造在已有集市的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                            "本城的余粮+20%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。"),
     -- 学院
