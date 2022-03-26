@@ -1276,13 +1276,13 @@ values
 	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER',			'Amount',				30),
 	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				5),
+	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
 	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				5),
+	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
 	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST',				'ModifierId',			'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'Amount',				5),
+	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'Amount',				8),
 	('MESSIAH_SHRINE_PURCHASE_DISCOUNT',						'ModifierId',			'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER'),
 	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'BuildingType',			'BUILDING_SHRINE'),
 	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				10),
@@ -2113,9 +2113,9 @@ update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCH
 update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
 delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
 where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
