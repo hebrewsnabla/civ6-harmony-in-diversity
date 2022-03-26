@@ -16,3 +16,4 @@ subcat JNR社区区域拓展
 end subcat
 end cat
 end order
+[基础设施建设]：城市化解锁，建造水渠、堤坝、运河和社区以及区域内的建筑的建造速度+50%。
