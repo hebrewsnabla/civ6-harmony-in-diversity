@@ -78,38 +78,6 @@ update Beliefs set Description = 'LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION' where Bel
 update Beliefs set Description = 'LOC_BELIEF_JUST_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_JUST_WAR';
 -- update Beliefs set Description = 'LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION' where BeliefType = 'BELIEF_HOLY_WATERS';
 
---One with Nature
-insert or replace into BeliefModifiers
-	(BeliefType,							ModifierID)
-select
-    'BELIEF_ONE_WITH_NATURE',               'ONE_WITH_NATURE_WONDER_'||YieldType
-from Yields; 
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,										SubjectRequirementSetId)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType,  'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
-from Yields;
-insert or replace into Modifiers
-	(ModifierId,							             ModifierType,										SubjectRequirementSetId)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType,               'ModifierId',                               'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER'
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'YieldType',                               YieldType
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'Amount',                                  10
-from Yields;
-
 insert or replace into Beliefs
 	(BeliefType,						Name,										Description,											BeliefClassType)
 values
@@ -223,6 +191,7 @@ values
 	('BELIEF_TENGRI',						'TENGRI_PASTURE_GREAT_PROPHET'),
 	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_GREAT_PROPHET'),
 	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_AMENITY'),
+	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_ALL_YIELDS'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_CAMPUS'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_THEATRE'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_COMMERCIAL_HUB'),
@@ -395,6 +364,8 @@ values
 	('ONE_WITH_NATURE_WONDER_GREAT_PROPHET_MODIFIER',				'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
 	('ONE_WITH_NATURE_WONDER_AMENITY',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER',						'MODIFIER_SINGLE_CITY_ADJUST_NATURAL_WONDER_AMENITY',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'MODIFIER_SINGLE_CITY_RIVER_ADJACENCY',				NULL),
 	('RIVER_GODDESS_GREAT_PROPHET',									'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
@@ -715,6 +686,9 @@ values
 	('ONE_WITH_NATURE_WONDER_GREAT_PROPHET_MODIFIER',				'Amount',				8),
 	('ONE_WITH_NATURE_WONDER_AMENITY',								'ModifierId',			'ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER'),
 	('ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER',						'Amount',				2),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS',							'ModifierId',			'ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'YieldType',			'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'Amount',				'5, 5, 5, 5, 5, 5'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY',							'ModifierId',			'RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'DistrictType',			'DISTRICT_HOLY_SITE'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'YieldType',			'YIELD_FAITH'),
