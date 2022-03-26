@@ -1346,3 +1346,19 @@ values
 	('HD_CITY_HAS_HARBOR_TIER_1_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_LIGHTHOUSE_BASIC'),
 	('HD_CITY_HAS_HARBOR_TIER_2_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_SHIPYARD_BASIC'),
 	('HD_AOE_REQUIRES_GENERAL_GUARD',								'AOE_REQUIRES_GENERAL_GUARD');
+insert or ignore into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+	('CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',	'REQUIREMENTSET_TEST_ALL');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+	('CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',	'REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR');
+insert or ignore into Requirements
+    (RequirementId,                        								RequirementType)
+values
+	('REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',		'REQUIREMENT_CITY_HAS_BUILDING');
+insert or ignore into RequirementArguments
+    (RequirementId,                        								Name,                Value)
+values
+	('REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',		'BuildingType',		'BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR');
