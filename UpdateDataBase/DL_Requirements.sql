@@ -1354,11 +1354,3 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
 	('CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',	'REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR');
-insert or ignore into Requirements
-    (RequirementId,                        								RequirementType)
-values
-	('REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',		'REQUIREMENT_CITY_HAS_BUILDING');
-insert or ignore into RequirementArguments
-    (RequirementId,                        								Name,                Value)
-values
-	('REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',		'BuildingType',		'BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR');
