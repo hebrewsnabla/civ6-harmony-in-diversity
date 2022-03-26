@@ -228,8 +228,10 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到9个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT",                  "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作、 [ICON_GreatWork_Product] 产品的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到9个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
     -- 社区
-    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+10%，若电力充足，则人口增长速度额外+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+4 [ICON_Tourism] 旅游业绩。只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+5%，若电力充足，则 [ICON_gold] 金币产出额外增加10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+10%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城的人口增长速度+10%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出的 [ICON_FOOD] 食物和 [ICON_PRODUCTION] 生产力+100%；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“食品市场”建筑获得加成）。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+10%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "只能在城市中建造一个，即使城市拥有多个社区也同样如此。本城 [ICON_gold] 金币产出+10%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出的 [ICON_GOLD] 金币+100%， [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值+50%；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“购物商场”建筑获得加成）。"),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
