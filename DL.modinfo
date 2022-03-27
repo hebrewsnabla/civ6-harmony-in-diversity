@@ -460,7 +460,7 @@
       <File>UI/Replacement/MainMenu.xml</File>
     </ImportFiles>
     <ImportFiles id="HD_Mod_Version_Checker">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <Properties><LoadOrder>10</LoadOrder></Properties>
       <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
       <File>UI/Replacement/StagingRoom.lua</File>
     </ImportFiles>
