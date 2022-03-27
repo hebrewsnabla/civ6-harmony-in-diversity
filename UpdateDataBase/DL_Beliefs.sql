@@ -1032,8 +1032,8 @@ values
 	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST'),
 	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BELIEF_MESSIAH',					'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST'),
-	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_PURCHASE_DISCOUNT'),
-	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_PURCHASE_DISCOUNT'),
+--	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_PURCHASE_DISCOUNT'),
+--	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_PURCHASE_DISCOUNT'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_DISTRICT_FAITH'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_HOLYSITE_BONUS'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_FAITH_PURCHASE_HORBOR_BUILDINGS'),
@@ -1071,6 +1071,25 @@ where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
 where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
+
+insert or replace into BeliefModifiers	(BeliefType,	ModifierID)
+select 'BELIEF_MESSIAH',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_FOLLOWS_RELIGION_REQUIREMENTS' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into Modifiers	(ModifierId,	ModifierType)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'ModifierId',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'BuildingType',	BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
 
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,													SubjectRequirementSetId)
