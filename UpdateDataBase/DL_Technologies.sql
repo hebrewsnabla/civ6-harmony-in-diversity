@@ -23,6 +23,7 @@ values
     ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',              Null,                                               1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC'),
     ('TECH_CIVIL_ENGINEERING_HD',   'LOC_TECH_CIVIL_ENGINEERING_HD_NAME',    'LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION',        930,    'ERA_INDUSTRIAL',   1,          'ADVISOR_GENERIC');
 
+
 insert or replace into TechnologyQuotes
     (TechnologyType,                Quote,                                      QuoteAudio)
 values
@@ -52,6 +53,8 @@ insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUn
 select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
 
 update Technologies set AdvisorType = 'ADVISOR_TECHNOLOGY' where TechnologyType = 'TECH_COMPUTERS';
+
+update Technologies set Description = 'LOC_TECH_ENGINEERING_HD_DESCRIPTION' where TechnologyType = 'TECH_ENGINEERING';
 
 --------------------------------------------------------------------------------
 -- from tech testing
@@ -394,6 +397,8 @@ values
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
+
+update Technologies set Description = NULL where TechnologyType = 'TECH_STIRRUPS';
 
 -- -- 研究货币给商业地基（非相邻加成）+3金
 -- insert or replace into TechnologyModifiers
