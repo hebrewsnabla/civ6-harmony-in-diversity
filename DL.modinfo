@@ -460,7 +460,7 @@
       <File>UI/Replacement/MainMenu.xml</File>
     </ImportFiles>
     <ImportFiles id="HD_Mod_Version_Checker">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <Properties><LoadOrder>10</LoadOrder></Properties>
       <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
       <File>UI/Replacement/StagingRoom.lua</File>
     </ImportFiles>
@@ -850,6 +850,10 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/DL_Adaptation.sql</File>
     </UpdateDatabase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Civilizations.sql</File>
+    </UpdateDataBase>
     <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Text.sql</File>
@@ -1607,6 +1611,7 @@
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
     <!-- Mod Civilizations -->
+    <File>ModSupport/ModCivilizations/Civilizations.sql</File>
     <File>ModSupport/ModCivilizations/Text.sql</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
