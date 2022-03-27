@@ -1715,3 +1715,35 @@ update Building_GreatWorks set
 	NonUniquePersonYield = 1,
 	NonUniquePersonTourism = 1
 where BuildingType ='BUILDING_QUEENS_BIBLIOTHEQUE' and GreatWorkSlotType = 'GREATWORKSLOT_ART';
+
+delete from BuildingModifiers where BuildingType = 'BUILDING_WATER_MILL';
+
+insert or replace into BuildingModifiers
+	(BuildingType,								ModifierId)
+values
+	('BUILDING_WATER_MILL',						'WATERMILL_ADDFARMBONUSRESOURCEFOOD');
+
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,										SubjectRequirementSetId)
+values
+	('WATERMILL_ADDFARMBONUSRESOURCEFOOD',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'FARM_BONUS_RESOURCE');
+
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('WATERMILL_ADDFARMBONUSRESOURCEFOOD',		'YieldType',	'YIELD_FOOD'),
+	('WATERMILL_ADDFARMBONUSRESOURCEFOOD',		'Amount',		1);
+
+insert or ignore into RequirementSets
+	(RequirementSetId,				RequirementSetType)
+values
+	('FARM_BONUS_RESOURCE',			'REQUIREMENTSET_TEST_ANY');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,				RequirementId)
+select
+	'FARM_BONUS_RESOURCE',			'REQUIRES_' || Improvement_ValidResources.ResourceType || '_IN_PLOT'
+from Improvement_ValidResources
+inner join Resources
+on Improvement_ValidResources.ResourceType = Resources.ResourceType
+where Resources.ResourceClassType = 'RESOURCECLASS_BONUS' and Improvement_ValidResources.ImprovementType = 'IMPROVEMENT_FARM';

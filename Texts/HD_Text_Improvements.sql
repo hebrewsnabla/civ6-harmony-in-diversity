@@ -62,7 +62,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                 Text)
 values
     -- 基础改良
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_MINE_HD_DESCRIPTION",               "解锁建造者建造矿山的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。研究“铸铜术”科技后，若靠近山脉单元格，额外+1 [ICON_Production] 生产力（学徒后失效）。 每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。若本城有工业区，额外+1 [ICON_Production] 生产力。 相邻单元格-1魅力。[NEWLINE][NEWLINE]只能在丘陵或有效资源上建造。如果建在奢侈品资源或战略资源上，城市则可以利用该资源。"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_MINE_HD_DESCRIPTION",               "解锁建造者建造矿山的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。研究“铸铜术”科技后，若靠近山脉单元格，额外+1 [ICON_Production] 生产力（学徒后失效）。 每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。相邻单元格-1魅力。[NEWLINE][NEWLINE]只能在丘陵或有效资源上建造。如果建在奢侈品资源或战略资源上，城市则可以利用该资源。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_QUARRY_HD_DESCRIPTION",             "解锁建造者建造采石场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。相邻单元格-1魅力。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。[NEWLINE][NEWLINE]城市若拥有采石场，则建造远古和古典奇观加速10%，建造中古和文艺复兴的奇观加速5%。若该城市还拥有第二个采石场，则该加成加倍。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_FISHING_BOATS_HD_DESCRIPTION",      "解锁建造者建造渔船的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。若城市有港口区域，则+1 [ICON_Food] 食物。每相邻1个港口区域则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_PLANTATION_HD_DESCRIPTION",         "解锁建造者建造种植园的能力。[NEWLINE][NEWLINE]+2 [ICON_Gold] 金币。拥有淡水或相邻水渠的种植园+1 [ICON_Food] 食物（封建后失效）。每相邻1个商业中心单元格则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。"),

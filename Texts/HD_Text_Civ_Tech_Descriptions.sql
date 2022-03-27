@@ -39,7 +39,7 @@ values
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods, and harvesting of resources improved by Mines."),
     ("LOC_TECH_MASONRY_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Quarries."),
-    ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory obtain roads for free. All improvements built afterward also get free roads."),
+    ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory obtain roads for free. All improvements built afterward also get free roads.Pasture improvements receive +1 [ICON_GOLD] Gold."),
     ("LOC_TECH_IRRIGATION_DESCRIPTION",                                                     "Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allow Builders to build Farms on Plains Hills or Grass Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",                                                   "+1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
     ("LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                               "+50% yields from plot harvests and feature removals. +1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
@@ -62,6 +62,7 @@ values
     ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food. +5% [ICON_Science] Science for cities have University."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Power when adjacent to at least one friendly melee unit. [NEWLINE] Ranged units gain ability: +5 [ICON_Strength] Combat Power when attacking from a hill. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
     ("LOC_TECH_COMPUTERS_DESCRIPTION",                                                      "Grants the ability to construct an additional Spy. +20% [ICON_Tourism] Tourism across your empire."),
+    ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
     -- New Civics
     ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                                "Literary Tradition"),
     ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                                 "Supply"),
@@ -211,7 +212,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                             "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                                       "允许砍伐树林和收获由矿山改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",                                      "允许收获由采石场改良的资源。"),
-    ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。"),
+    ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。牧场+1[ICON_GOLD]金币。"),
     ("zh_Hans_CN",  "LOC_TECH_IRRIGATION_DESCRIPTION",                                      "允许清理沼泽和收获由种植园改良的资源。允许在相邻淡水或水渠的平原和草原丘陵上修建农场。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                "收获和移除地貌的产出+50%。非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
@@ -233,6 +234,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                                        "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。拥有大学的城市+5% [ICON_Science] 科技值"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
+    ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1[ICON_Production]生产力。"),
     -- New Civics
     ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                 "文学传统"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                  "后勤补给"),
@@ -410,4 +412,3 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_1",                                  "一门科学，只有当它成功地运用数学时，才能达到真正完善的地步。——卡尔·马克思"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_QUOTE_2",                                  "只有社会才能对人生的价值做出总的评价，而个人对此是无能为力的……——埃米尔·涂尔干《自杀论》");
 
-	
