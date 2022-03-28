@@ -251,7 +251,7 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into ModifierArguments
 	(ModifierId,									Name,						Value)
 select
-	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'ScalingFactor',			250
+	'MULTINATIONAL_CORP_PRODUCT_TOURISM',			'ScalingFactor',			200
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 -----------------------------------------------------------------------------------------------------------------------------------
