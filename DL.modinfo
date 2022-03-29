@@ -355,6 +355,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="HD_TestingOption_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_TESTING_OPTION</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
   </ActionCriteria>
   <FrontEndActions>
     <UpdateText id="Better_Chinese_Combined">
@@ -1428,6 +1436,10 @@
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>Configs/Options/AssignStartingPlots.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="TestingOption" criteria="HD_TestingOption_XP2">
+      <Properties><LoadOrder>200000</LoadOrder></Properties>
+      <File>Configs/Options/TestingOption.sql</File>
+    </UpdateDatabase>
   </InGameActions>
   <Files>
     <!-- Artdef -->
@@ -1449,6 +1461,7 @@
     <File>Configs/Options/AIGetCopyForMilitaryUnits.sql</File>
     <File>Configs/Options/ForeverWar.sql</File>
     <File>Configs/Options/AssignStartingPlots.lua</File>
+    <File>Configs/Options/TestingOption.sql</File>
     <!-- Game Mode -->
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Adapt.sql</File>
     <File>GameModeSupport/MonopoliesMode/HD_Monopoly_Resource_Gold.xml</File>
