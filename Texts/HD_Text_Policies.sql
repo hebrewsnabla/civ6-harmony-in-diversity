@@ -50,6 +50,10 @@ values
     ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
     ("LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "Deepwater Port"),
     ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "+4 [ICON_Production] Production to all coastal city. +6 [ICON_GOLD] Gold and +3 [ICON_Housing] housing to each Seaport."),
+    ("LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "TRAVEL BLOGGER"),
+    ("LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "Improvements in your cities yields +200% [ICON_TOURISM] Tourism if the city is [ICON_POWER] Powered."),
+    ("LOC_POLICY_GREEN_CITY_NAME",                                                    "GREEN CITY"),
+    ("LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "National parks and wonders in your cities yields +100% [ICON_TOURISM] Tourism if a city is located on a Breathtaking tile."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -243,6 +247,10 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座海港额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
+    ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "旅游博主"), 
+    ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "通电的城市中的改良设施提供的 [ICON_TOURISM] 旅游业绩+200%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_NAME",                                                    "绿色都市"),
+    ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "位于惊艳单元格的城市国家公园和奇观旅游业绩+100%。"), 
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
