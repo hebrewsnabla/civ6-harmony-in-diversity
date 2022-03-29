@@ -1063,6 +1063,7 @@
       <File>Maps/Highlands_XP2.lua</File>
       <File>Maps/Wetlands_XP2.lua</File>
       <!-- New Maps -->
+      <File>Maps/Regular_Pangaea.lua</File>
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
@@ -1678,6 +1679,7 @@
     <File>Maps/Highlands_XP2.lua</File>
     <File>Maps/Wetlands_XP2.lua</File>
     <!-- New Maps -->
+    <File>Maps/Regular_Pangaea.lua</File>
     <File>Maps/Tiny_Islands.lua</File>
     <File>Maps/Tiny_Lakes.lua</File>
     <!-- Game Scripts -->
