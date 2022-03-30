@@ -39,6 +39,8 @@ values
     ("LOC_GAMEMODE_TREE_RANDOMIZER_DESCRIPTION",            "[COLOR_Civ6LightBlue]""Harmony in Diversity"" :The cost of Techs and Civics have been adjusted accordingly, but be careful to enable as it randomize the tech and civic tree.[ENDCOLOR][NEWLINE][NEWLINE]This game mode shuffles techs and civics within their historical eras, leading to different costs and prerequisites than normal. The resulting trees are the same for all players. Techs and civics are also hidden until a prerequisite is earned, preserving the mystery of discovery all the way until the end of the game."),
     ("LOC_GAMEMODE_TOWERDEFENSE_DESCRIPTION",               "[COLOR_Red]""Harmony in Diversity"" Warning: This game mode is highly discouraged as its bad game experience. We will not make adjustments specifically to this mode.[ENDCOLOR][NEWLINE][NEWLINE]In this game mode, the dead rise to wreak havoc among the living!  Use new defensive structures to protect your territory, and manipulate zombies to slow your opponents."),
     -- Maps
+    ("LOC_MAP_REGULAR_PANGAEA_NAME",                        "Regular Pangaea"),
+    ("LOC_MAP_REGULAR_PANGAEA_DESCRIPTION",                 "An ellipse-shape Pangaea map."),
     ("LOC_MAP_TINY_ISLANDS_NAME",                           "Tiny Islands"),
     ("LOC_MAP_TINY_ISLANDS_DESCRIPTION",                    "Many tiny islands."),
     ("LOC_MAP_TINY_LAKES_NAME",                             "Tiny Lakes"),
@@ -90,6 +92,8 @@ values
     ("zh_Hans_CN",  "LOC_CSE_ETHIOPIA_MODE_DESC",                           "[COLOR_Civ6LightBlue]“和而不同”：我们已全面调整了使者加成机制，该模式失效，请勿开启，将于后续移除该模式。[ENDCOLOR][NEWLINE]启用时，使者加成将随相关区域建筑阶级提升而增加，且会因外交区建筑而获得额外加成，与[COLOR:ResGoldLabelCS]“新纪元季票——埃塞俄比亚DLC”[ENDCOLOR]中所做改动类似。"),
     ("zh_Hans_CN",  "LOC_CSE_WALLS_DESC",                                   "[COLOR_Magenta]城邦多样化：和而不同本体已增加该选项，请勿启用，将于后续移除该模式。[ENDCOLOR][NEWLINE]启用时，城邦生成伊始便拥有城墙。"),
     -- Maps
+    ("zh_Hans_CN",  "LOC_MAP_REGULAR_PANGAEA_NAME",                         "规则的盘古大陆"),
+    ("zh_Hans_CN",  "LOC_MAP_REGULAR_PANGAEA_DESCRIPTION",                  "椭圆状的较为规则的盘古大陆。"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_ISLANDS_NAME",                            "米粒岛屿"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_ISLANDS_DESCRIPTION",                     "很多如米粒般大小的岛屿。"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_LAKES_NAME",                              "星罗棋布"),

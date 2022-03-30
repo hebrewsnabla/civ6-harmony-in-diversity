@@ -183,6 +183,7 @@ delete from DistrictModifiers where DistrictType = 'DISTRICT_COTHON' and Modifie
 delete from DistrictModifiers where DistrictType = 'DISTRICT_IKANDA' and ModifierId = 'ENCAMPMENT_CITY_MILITARY_UNIT_PRODUCTION';
 delete from DistrictModifiers where DistrictType = 'DISTRICT_IKANDA' and ModifierId = 'ENCAMPMENT_CITY_NAVAL_UNIT_PRODUCTION';
 
+
 insert or replace into Modifiers
 	(ModifierId,									ModifierType)
 values
