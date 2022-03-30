@@ -2589,3 +2589,116 @@ from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
 	('BELIEF_HD_SUN_GOD',					'HD_SUN_GOD_FARM_SCIENCE_LUXURY'),
 	('BELIEF_HD_SUN_GOD',					'HD_SUN_GOD_FARM_FAITH');
 	*/
+
+-- Sort Index
+create table 'BeliefsSortIndex'(
+	'BeliefType' TEXT NOT NULL,
+	'SortIndex' Int NOT NULL,
+	PRIMARY KEY('BeliefType')
+);
+
+insert or replace into BeliefsSortIndex
+	(BeliefType,			SortIndex)
+select
+	BeliefType,				10
+from Beliefs;
+
+update BeliefsSortIndex set SortIndex =	10 where BeliefType = 'BELIEF_DEFENDER_OF_FAITH';
+update BeliefsSortIndex set SortIndex =	20 where BeliefType = 'BELIEF_HOLY_ORDER';
+update BeliefsSortIndex set SortIndex =	30 where BeliefType = 'BELIEF_ITINERANT_PREACHERS';
+update BeliefsSortIndex set SortIndex =	40 where BeliefType = 'BELIEF_MISSIONARY_ZEAL';
+update BeliefsSortIndex set SortIndex =	50 where BeliefType = 'BELIEF_SCRIPTURE';
+update BeliefsSortIndex set SortIndex =	60 where BeliefType = 'BELIEF_INITIATION_RITES';
+update BeliefsSortIndex set SortIndex =	70 where BeliefType = 'BELIEF_CAPELLANI';
+update BeliefsSortIndex set SortIndex =	80 where BeliefType = 'BELIEF_SCHOLASTICISM';
+update BeliefsSortIndex set SortIndex =	90 where BeliefType = 'BELIEF_PIOUS_MERCHANTS';
+update BeliefsSortIndex set SortIndex =	100 where BeliefType = 'BELIEF_MILLENNIALISM';
+update BeliefsSortIndex set SortIndex =	110 where BeliefType = 'BELIEF_CANONIZATION_OF_SAINTS';
+update BeliefsSortIndex set SortIndex =	120 where BeliefType = 'BELIEF_MONASTIC_ISOLATION';
+update BeliefsSortIndex set SortIndex =	130 where BeliefType = 'BELIEF_FEED_THE_WORLD';
+update BeliefsSortIndex set SortIndex =	140 where BeliefType = 'BELIEF_CHORAL_MUSIC';
+update BeliefsSortIndex set SortIndex =	150 where BeliefType = 'BELIEF_WARRIOR_MONKS';
+update BeliefsSortIndex set SortIndex =	160 where BeliefType = 'BELIEF_DIVINE_INSPIRATION';
+update BeliefsSortIndex set SortIndex =	170 where BeliefType = 'BELIEF_JESUIT_EDUCATION';
+update BeliefsSortIndex set SortIndex =	180 where BeliefType = 'BELIEF_RELIQUARIES';
+update BeliefsSortIndex set SortIndex =	190 where BeliefType = 'BELIEF_ZEN_MEDITATION';
+update BeliefsSortIndex set SortIndex =	200 where BeliefType = 'BELIEF_RELIGIOUS_ART';
+update BeliefsSortIndex set SortIndex =	210 where BeliefType = 'BELIEF_WORK_ETHIC';
+update BeliefsSortIndex set SortIndex =	220 where BeliefType = 'BELIEF_PRACTICAL_APPLICATION';
+update BeliefsSortIndex set SortIndex =	230 where BeliefType = 'BELIEF_RELIGIOUS_COLONIZATION';
+update BeliefsSortIndex set SortIndex =	240 where BeliefType = 'BELIEF_MESSIAH';
+update BeliefsSortIndex set SortIndex =	250 where BeliefType = 'BELIEF_ABBOT';
+update BeliefsSortIndex set SortIndex =	260 where BeliefType = 'BELIEF_HOLY_WATERS';
+update BeliefsSortIndex set SortIndex =	270 where BeliefType = 'BELIEF_RELIGIOUS_COMMUNITY';
+update BeliefsSortIndex set SortIndex =	280 where BeliefType = 'BELIEF_JUST_WAR';
+update BeliefsSortIndex set SortIndex =	290 where BeliefType = 'BELIEF_TITHE';
+update BeliefsSortIndex set SortIndex =	300 where BeliefType = 'BELIEF_RELIGIOUS_UNITY';
+update BeliefsSortIndex set SortIndex =	310 where BeliefType = 'BELIEF_WORLD_CHURCH';
+update BeliefsSortIndex set SortIndex =	320 where BeliefType = 'BELIEF_CROSS_CULTURAL_DIALOGUE';
+update BeliefsSortIndex set SortIndex =	330 where BeliefType = 'BELIEF_CHURCH_PROPERTY';
+update BeliefsSortIndex set SortIndex =	340 where BeliefType = 'BELIEF_PILGRIMAGE';
+update BeliefsSortIndex set SortIndex =	350 where BeliefType = 'BELIEF_LAY_MINISTRY';
+update BeliefsSortIndex set SortIndex =	360 where BeliefType = 'BELIEF_STEWARDSHIP';
+update BeliefsSortIndex set SortIndex =	370 where BeliefType = 'BELIEF_PAPAL_PRIMACY';
+update BeliefsSortIndex set SortIndex =	380 where BeliefType = 'BELIEF_SACRED_PLACES';
+update BeliefsSortIndex set SortIndex =	390 where BeliefType = 'BELIEF_TO_THE_GLORY_OF_GOD';
+-- Pantheon
+update BeliefsSortIndex set SortIndex =	400 where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
+update BeliefsSortIndex set SortIndex =	410 where BeliefType = 'BELIEF_DESERT_FOLKLORE';
+update BeliefsSortIndex set SortIndex =	420 where BeliefType = 'BELIEF_SACRED_PATH';
+update BeliefsSortIndex set SortIndex =	430 where BeliefType = 'BELIEF_RIVER_GODDESS';
+update BeliefsSortIndex set SortIndex =	440 where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
+update BeliefsSortIndex set SortIndex =	450 where BeliefType = 'BELIEF_DIVINE_SPARK';
+update BeliefsSortIndex set SortIndex =	460 where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
+update BeliefsSortIndex set SortIndex =	470 where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
+update BeliefsSortIndex set SortIndex =	480 where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY';
+update BeliefsSortIndex set SortIndex =	490 where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
+update BeliefsSortIndex set SortIndex =	500 where BeliefType = 'BELIEF_STONE_CIRCLES';
+update BeliefsSortIndex set SortIndex =	510 where BeliefType = 'BELIEF_RELIGIOUS_IDOLS';
+update BeliefsSortIndex set SortIndex =	520 where BeliefType = 'BELIEF_GOD_OF_CRAFTSMEN';
+update BeliefsSortIndex set SortIndex =	530 where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
+update BeliefsSortIndex set SortIndex =	540 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
+update BeliefsSortIndex set SortIndex =	550 where BeliefType = 'BELIEF_GOD_OF_WAR';
+update BeliefsSortIndex set SortIndex =	560 where BeliefType = 'BELIEF_FERTILITY_RITES';
+update BeliefsSortIndex set SortIndex =	570 where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
+update BeliefsSortIndex set SortIndex =	580 where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
+update BeliefsSortIndex set SortIndex =	590 where BeliefType = 'BELIEF_EARTH_GODDESS';
+update BeliefsSortIndex set SortIndex =	600 where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
+update BeliefsSortIndex set SortIndex =	610 where BeliefType = 'BELIEF_THE_PEOPLE_OF_POLAR';
+update BeliefsSortIndex set SortIndex =	620 where BeliefType = 'BELIEF_GODDESS_OF_THE_DESERT';
+update BeliefsSortIndex set SortIndex =	630 where BeliefType = 'BELIEF_VOODOO';
+update BeliefsSortIndex set SortIndex =	640 where BeliefType = 'BELIEF_TENGRI';
+update BeliefsSortIndex set SortIndex =	650 where BeliefType = 'BELIEF_ONE_WITH_NATURE';
+update BeliefsSortIndex set SortIndex =	660 where BeliefType = 'BELIEF_ORAL_TRADITION';
+update BeliefsSortIndex set SortIndex =	670 where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS';
+update BeliefsSortIndex set SortIndex =	680 where BeliefType = 'BELIEF_GODDESS_OF_THE_HARVEST';
+update BeliefsSortIndex set SortIndex =	690 where BeliefType = 'BELIEF_OCEAN_MOTHER';
+update BeliefsSortIndex set SortIndex =	700 where BeliefType = 'BELIEF_HD_DRUID';
+update BeliefsSortIndex set SortIndex =	710 where BeliefType = 'BELIEF_HD_MAZU_BELIEF';
+update BeliefsSortIndex set SortIndex =	720 where BeliefType = 'BELIEF_FISHING_TRADITION';
+update BeliefsSortIndex set SortIndex =	730 where BeliefType = 'BELIEF_HD_GOD_KING';
+update BeliefsSortIndex set SortIndex =	740 where BeliefType = 'BELIEF_HD_WOLF_GOD';
+update BeliefsSortIndex set SortIndex =	750 where BeliefType = 'BELIEF_HD_SUN_GOD';
+update BeliefsSortIndex set SortIndex =	760 where BeliefType = 'BELIEF_HD_HERMES';
+update BeliefsSortIndex set SortIndex =	770 where BeliefType = 'BELIEF_HD_POSTERITY_OF_MOUNTAIN';
+update BeliefsSortIndex set SortIndex =	780 where BeliefType = 'BELIEF_HD_SONG_OF_SIREN';
+update BeliefsSortIndex set SortIndex =	790 where BeliefType = 'BELIEF_HD_UTAKI';
+-- Worships
+update BeliefsSortIndex set SortIndex =	800 where BeliefType = 'BELIEF_CATHEDRAL';
+update BeliefsSortIndex set SortIndex =	810 where BeliefType = 'BELIEF_GURDWARA';
+update BeliefsSortIndex set SortIndex =	820 where BeliefType = 'BELIEF_MEETING_HOUSE';
+update BeliefsSortIndex set SortIndex =	830 where BeliefType = 'BELIEF_MOSQUE';
+update BeliefsSortIndex set SortIndex =	840 where BeliefType = 'BELIEF_PAGODA';
+update BeliefsSortIndex set SortIndex =	850 where BeliefType = 'BELIEF_SYNAGOGUE';
+update BeliefsSortIndex set SortIndex =	860 where BeliefType = 'BELIEF_WAT';
+update BeliefsSortIndex set SortIndex =	870 where BeliefType = 'BELIEF_STUPA';
+update BeliefsSortIndex set SortIndex =	880 where BeliefType = 'BELIEF_DAR_E_MEHR';
+update BeliefsSortIndex set SortIndex =	890 where BeliefType = 'BELIEF_JNR_CANDI';
+update BeliefsSortIndex set SortIndex =	900 where BeliefType = 'BELIEF_JNR_DAOGUAN';
+update BeliefsSortIndex set SortIndex =	910 where BeliefType = 'BELIEF_JNR_JINJA';
+update BeliefsSortIndex set SortIndex =	920 where BeliefType = 'BELIEF_JNR_KHALWAT';
+update BeliefsSortIndex set SortIndex =	930 where BeliefType = 'BELIEF_JNR_MANDIR';
+update BeliefsSortIndex set SortIndex =	940 where BeliefType = 'BELIEF_JNR_MBARI';
+update BeliefsSortIndex set SortIndex =	950 where BeliefType = 'BELIEF_JNR_PERIPTEROS';
+update BeliefsSortIndex set SortIndex =	960 where BeliefType = 'BELIEF_JNR_SOBOR';
+update BeliefsSortIndex set SortIndex =	970 where BeliefType = 'BELIEF_JNR_TZACUALLI';
