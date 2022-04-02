@@ -191,19 +191,19 @@ update Units set Cost = 55, Maintenance = 1, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_HEAVY_CHARIOT';
 -- update Units set Cost = 80, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARMORED_HORSEMAN';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARMORED_HORSEMAN';
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_KNIGHT';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_KNIGHT';
+update Units set Cost = 120, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 53, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_KNIGHT';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_KNIGHT';
 -- update Units set Cost = 220, Maintenance = 8, BaseMoves = 4, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_REITER';
 -- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_REITER';
 -- update Units set Cost = 330, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 75, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
 -- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_CUIRASSIER';
-update Units set Cost = 300, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 73, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_CUIRASSIER';
+update Units set Cost = 250, Maintenance = 5, BaseMoves = 4, Range = 0, Combat = 73, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_CUIRASSIER';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_CUIRASSIER';
 -- update Units set Cost = 400, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 82, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_LANDSHIP';
 -- update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_LANDSHIP';
 -- Special Case: UNIT_TANK
-update Units set Cost = 500, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 85, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_TANK';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_TANK';
+update Units set Cost = 500, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 83, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_TANK';
+update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_TANK';
 update Units set Cost = 1080, Maintenance = 16, BaseMoves = 5, Range = 0, Combat = 105, RangedCombat = 0, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_MODERN_ARMOR';
 update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_OIL', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_MODERN_ARMOR';
 
@@ -471,3 +471,8 @@ values
     ('UNIT_ANCIENT_SEADOG', 'UNITAI_COMBAT'),
     ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_RANGED'),
     ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_NAVAL');
+update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_COURSER';
+update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
+update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
+update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_CUIRASSIER';
+update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_AMERICAN_ROUGH_RIDER';
