@@ -23,7 +23,7 @@ values
     ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Forest tile. Holy Site provides +1 [ICON_Food] Food to all Lumber Mill tiles within the same city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Lumber Mill over Luxury or Bonus resources."),
     ("LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] Faith from the adjacent Lumber Mill {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "Heart of the Woods"),
-    ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "+1 [ICON_Food] Food and +1 [ICON_Science] Science from Lumber Mills over Luxury and Bonus resources. +1 [ICON_Gold] Gold from all Lumber mills.");
+    ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "+1 [ICON_Food] Food and +1 [ICON_Science] Science from Lumber Mills over Luxury and Bonus resources.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -53,7 +53,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PAN_DL_DESCRIPTION",                             "圣地区域从每个相邻的森林单元格+1 [ICON_Faith] 信仰值，给本城的伐木场 +1 [ICON_Food] 食物。 如城市拥有采集奢侈或加成资源的伐木场，则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] 信仰值来自相邻森林{1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "森灵之心"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "采集奢侈品资源和加成资源的伐木场+1 [ICON_Food] 食物和 +1 [ICON_Science] 科技值，所有伐木场+1 [ICON_Gold] 金币。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "采集奢侈品资源和加成资源的伐木场+1 [ICON_Food] 食物和 +1 [ICON_Science] 科技值。");
 
 --------------------------------------------------------------------------------
 update LocalizedText set Text = Text || " +1 [ICON_Production] Production to Lumber Mills over bonus resources in this city." where Language = 'en_US' and
