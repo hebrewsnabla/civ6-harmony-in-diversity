@@ -121,7 +121,7 @@ function GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
 end
 
 function CheckGeneralServicesOfficer(playerID, eGovernor, ePromotion)
-    -- print('IsPromoted', eGovernor, ePromotion)
+    print('IsPromoted', eGovernor, ePromotion)
     if (eGovernor == m_GovernorResourceManagerID) and (ePromotion == m_GovernorPromotion_GeneralServicesOfficerID) then
         local player = Players[playerID]
         GeneralServicesOfficerUpdateDummyBuilding(player, eGovernor)
@@ -129,7 +129,7 @@ function CheckGeneralServicesOfficer(playerID, eGovernor, ePromotion)
 end
 
 function OnGovernorChanged(playerID, governorID)
-    -- print('IsChanged', playerID, governorID)
+    print('IsChanged', playerID, governorID)
     local player = Players[playerID]
     GeneralServicesOfficerUpdateDummyBuilding(player, governorID)
 end
@@ -146,6 +146,16 @@ Events.GovernorPromoted.Add(AmbassadorTributumEnvoy)
 Events.GovernorPromoted.Add(CheckGeneralServicesOfficer)
 Events.GovernorChanged.Add(OnGovernorChanged)
 -- Events.GovernorEstablished.Add(OnGovernorEstablished)
+
+Events.CityAddedToMap.Add(function (playerID, cityID, iX, iY)
+    local city = CityManager.GetCity(playerID, cityID)
+    local buildings = city:GetBuildings()
+    if not buildings:HasBuilding(m_DummyNoMagnus) then
+        GameEvents.RequestCreateBuilding.Call(playerID, cityID, m_DummyNoMagnus)
+        print('CityAddedToMap, Dummy NoMagnus created', playerID, cityID)
+    end
+end)
+
 -- ===========================================================================
 
 function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)

@@ -137,9 +137,9 @@ where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_UFFIZI', 'UFFIZI_CITY_CULTURE'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_UFFIZI', 'UFFIZI_CITY_WRITING_TOURISM'
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
+-- insert or replace into BuildingModifiers (BuildingType, ModifierId)
+-- select	'BUILDING_UFFIZI', 'UFFIZI_CITY_WRITING_TOURISM'
+-- where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_UFFIZI', 'UFFIZI_CITY_SCULPTURE_TOURISM'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
@@ -164,7 +164,7 @@ insert or replace into Modifiers
 values
 	('UFFIZI_CITY_GOLD',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),			
 	('UFFIZI_CITY_CULTURE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
-	('UFFIZI_CITY_WRITING_TOURISM',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
+	-- ('UFFIZI_CITY_WRITING_TOURISM',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
 	('UFFIZI_CITY_SCULPTURE_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
 	('UFFIZI_CITY_PORTRAIT_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
 	('UFFIZI_CITY_ART_TOURISM',			'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'CITY_HAS_THEATER_AND_COMMERCIAL_HUB_REQUIRMENTS'),	
@@ -179,8 +179,8 @@ values
 	('UFFIZI_CITY_GOLD',					'YieldType',			'YIELD_GOLD'),				
 	('UFFIZI_CITY_CULTURE',					'Amount',				10),
 	('UFFIZI_CITY_CULTURE',					'YieldType',			'YIELD_CULTURE'),
-	('UFFIZI_CITY_WRITING_TOURISM',			'GreatWorkObjectType',	'GREATWORKOBJECT_WRITING'),	
-	('UFFIZI_CITY_WRITING_TOURISM',			'ScalingFactor',		150),
+	-- ('UFFIZI_CITY_WRITING_TOURISM',			'GreatWorkObjectType',	'GREATWORKOBJECT_WRITING'),	
+	-- ('UFFIZI_CITY_WRITING_TOURISM',			'ScalingFactor',		150),
 	('UFFIZI_CITY_SCULPTURE_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_SCULPTURE'),
 	('UFFIZI_CITY_SCULPTURE_TOURISM',		'ScalingFactor',		150),
 	('UFFIZI_CITY_PORTRAIT_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_PORTRAIT'),
@@ -227,12 +227,27 @@ update Building_GreatWorks set
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 920, ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0
+UPDATE Buildings SET  ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0
 WHERE BuildingType = 'BUILDING_GLOBE_THEATRE' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
 
-update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'BUILDING_GLOBE_THEATRE';
 insert into Building_ValidTerrains (BuildingType, TerrainType)
 select 'BUILDING_GLOBE_THEATRE', 'TERRAIN_DESERT' where exists (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_GLOBE_THEATRE');
+
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+select	'BUILDING_GLOBE_THEATRE', 'GLOBE_THEATRE_CITY_WRITING_TOURISM'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_GLOBE_THEATRE');
+
+insert or replace into Modifiers
+	(ModifierId, 							ModifierType,				 						SubjectRequirementSetId) 
+values
+	('GLOBE_THEATRE_CITY_WRITING_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'HD_OBJECT_IS_WHITHIN_6_PLOT');
+
+insert or replace into ModifierArguments 
+	(ModifierId,							Name,					Value) 
+values
+	('GLOBE_THEATRE_CITY_WRITING_TOURISM',	'GreatWorkObjectType',	'GREATWORKOBJECT_WRITING'),	
+	('GLOBE_THEATRE_CITY_WRITING_TOURISM',	'ScalingFactor',		150);
 
 delete from BuildingModifiers where ModifierId = 'GLOBE_THEATRE_AMPHITHEATER_AMENITY_MODIFIER';
 -- globe theter +3 great writer (need to assign era)
@@ -621,7 +636,7 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into ModifierArguments 
 	(ModifierId,					Name,		Value) 
 select
-	'CN_TOWER_PRODUCT_TOURISM',		'ScalingFactor',	200
+	'CN_TOWER_PRODUCT_TOURISM',		'ScalingFactor',	250
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into Building_GreatWorks
@@ -649,7 +664,7 @@ values
 	('CN_TOWER_ALL_CITY_HOUSING',	'Amount',	2),
 	('CN_TOWER_ALL_CITY_AMENITY', 	'Amount',	1),
 	('CN_TOWER_MUSIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_MUSIC'),
-	('CN_TOWER_MUSIC_TOURISM',	 	'ScalingFactor',		200);
+	('CN_TOWER_MUSIC_TOURISM',	 	'ScalingFactor',		250);
 
 -- Yellow Crane Tower
 update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';

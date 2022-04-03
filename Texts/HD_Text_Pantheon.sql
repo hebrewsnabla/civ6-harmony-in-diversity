@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "One with Nature"),
-    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +2 [ICON_Amenities] Amenity and +10% to all yields if a city owns at least one natural wonder tile."),
+    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +2 [ICON_Amenities] Amenity and +5% to all yields if a city owns at least one natural wonder tile."),
     ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +1 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (on Standard Speed). "),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
@@ -60,7 +60,7 @@ values
     ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                "Campus Districts get extra major adjacency bonus from Reefs. +2 [ICON_Production] Production from Reef."),
     ("LOC_BELIEF_HD_UTAKI_NAME",                                  "Utaki"),
     ("LOC_BELIEF_HD_UTAKI_DL_DESCRIPTION",                        "+2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities adjacent to coasts; City Center receives +1 [ICON_Culture] Culture and +1 [ICON_Production] Production from every two adjacent Lake or Coast tiles."),
-    ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "The Wolf God"),
+    ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "Lupercal"),
     ("LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "+1 [ICON_CULTURE] Culture from Camps over Luxury and Bonus resources. Holy Site provides +1 [ICON_Faith] Faith to all Camps in this city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns Camps over Luxury or Bonus resources."),
     ("LOC_BELIEF_HD_SUN_GOD_NAME",                                "Apollo"),
     ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Holy Site provides +1 [ICON_FAITH] Faith to all Farms in this city. +1 [ICON_FOOD] Food from Farms over resources and Plantations. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Farm over resource or a Plantation.");
@@ -71,7 +71,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "天人合一"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+10%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+5%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+1 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),

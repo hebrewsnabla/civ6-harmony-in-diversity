@@ -50,6 +50,8 @@ values
     ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
     ("LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "Deepwater Port"),
     ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "+4 [ICON_Production] Production to all coastal city. +6 [ICON_GOLD] Gold and +3 [ICON_Housing] housing to each Seaport."),
+    ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "Infrastructure construction"),
+    ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "+50% Construction speed when building Aqueduct, Dam, Canal or Neighborhood Districts and their buildings."),
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -121,7 +123,7 @@ values
     ("LOC_POLICY_BARD_NAME",                                                          "Bards"),
     ("LOC_POLICY_CIVILIZE_NAME",                                                      "Oral Tradition"),
     ("LOC_POLICY_DOMESTIC_TRADE_NAME",                                                "Domestic Trade"),
-    ("LOC_POLICY_HIGHWAY_NAME",                                                       "Highway"),
+    ("LOC_POLICY_HIGHWAY_NAME",                                                       "Government-financed Road"),
     ("LOC_POLICY_SILK_ROAD_NAME",                                                     "Silk Road"),
     ("LOC_POLICY_WAREHOUSE_NAME",                                                     "Artisan Office"),
     ("LOC_POLICY_SAFETY_BOX_NAME",                                                    "Commune"),
@@ -243,6 +245,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座海港额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
+    ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "基础设施建设"),
+    ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "修建水渠、堤坝、运河和社区以及其中建筑时+50%建造速度。"),
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),

@@ -78,38 +78,6 @@ update Beliefs set Description = 'LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION' where Bel
 update Beliefs set Description = 'LOC_BELIEF_JUST_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_JUST_WAR';
 -- update Beliefs set Description = 'LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION' where BeliefType = 'BELIEF_HOLY_WATERS';
 
---One with Nature
-insert or replace into BeliefModifiers
-	(BeliefType,							ModifierID)
-select
-    'BELIEF_ONE_WITH_NATURE',               'ONE_WITH_NATURE_WONDER_'||YieldType
-from Yields; 
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,										SubjectRequirementSetId)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType,  'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'
-from Yields;
-insert or replace into Modifiers
-	(ModifierId,							             ModifierType,										SubjectRequirementSetId)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER', 'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType,               'ModifierId',                               'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER'
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'YieldType',                               YieldType
-from Yields;
-insert or replace into ModifierArguments
-	(ModifierId,							             Name,										Value)
-select
-    'ONE_WITH_NATURE_WONDER_'|| YieldType||'_MODIFIER',  'Amount',                                  10
-from Yields;
-
 insert or replace into Beliefs
 	(BeliefType,						Name,										Description,											BeliefClassType)
 values
@@ -223,6 +191,7 @@ values
 	('BELIEF_TENGRI',						'TENGRI_PASTURE_GREAT_PROPHET'),
 	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_GREAT_PROPHET'),
 	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_AMENITY'),
+	('BELIEF_ONE_WITH_NATURE',				'ONE_WITH_NATURE_WONDER_ALL_YIELDS'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_CAMPUS'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_THEATRE'),
 	('BELIEF_DIVINE_SPARK',					'DIVINE_SPARK_COMMERCIAL_HUB'),
@@ -395,6 +364,8 @@ values
 	('ONE_WITH_NATURE_WONDER_GREAT_PROPHET_MODIFIER',				'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
 	('ONE_WITH_NATURE_WONDER_AMENITY',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER',						'MODIFIER_SINGLE_CITY_ADJUST_NATURAL_WONDER_AMENITY',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'MODIFIER_SINGLE_CITY_RIVER_ADJACENCY',				NULL),
 	('RIVER_GODDESS_GREAT_PROPHET',									'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
@@ -715,6 +686,9 @@ values
 	('ONE_WITH_NATURE_WONDER_GREAT_PROPHET_MODIFIER',				'Amount',				8),
 	('ONE_WITH_NATURE_WONDER_AMENITY',								'ModifierId',			'ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER'),
 	('ONE_WITH_NATURE_WONDER_AMENITY_MODIFIER',						'Amount',				2),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS',							'ModifierId',			'ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'YieldType',			'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+	('ONE_WITH_NATURE_WONDER_ALL_YIELDS_MODIFIER',					'Amount',				'5, 5, 5, 5, 5, 5'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY',							'ModifierId',			'RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'DistrictType',			'DISTRICT_HOLY_SITE'),
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'YieldType',			'YIELD_FAITH'),
@@ -1054,12 +1028,12 @@ values
 	-- ('BELIEF_PRACTICAL_APPLICATION',	'PRACTICAL_APPLICATION_FOLLOWER_GOLD'),
 	('BELIEF_PRACTICAL_APPLICATION',	'PRACTICAL_APPLICATION_GOLD_BUILDINGS'),
 	('BELIEF_MESSIAH',					'MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS'),
-	('BELIEF_MESSIAH',					'MESSIAH_HOLYSITE_BUILDING_PRODUCTION'),
+--	('BELIEF_MESSIAH',					'MESSIAH_HOLYSITE_BUILDING_PRODUCTION'),
 	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST'),
 	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BELIEF_MESSIAH',					'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST'),
-	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_PURCHASE_DISCOUNT'),
-	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_PURCHASE_DISCOUNT'),
+--	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_PURCHASE_DISCOUNT'),
+--	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_PURCHASE_DISCOUNT'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_DISTRICT_FAITH'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_HOLYSITE_BONUS'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_FAITH_PURCHASE_HORBOR_BUILDINGS'),
@@ -1095,8 +1069,27 @@ insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'BuildingType',	BuildingType from Buildings 
 where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	10 from Buildings 
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
 where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
+
+insert or replace into BeliefModifiers	(BeliefType,	ModifierID)
+select 'BELIEF_MESSIAH',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_FOLLOWS_RELIGION_REQUIREMENTS' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into Modifiers	(ModifierId,	ModifierType)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'ModifierId',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER' from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'BuildingType',	BuildingType from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
+insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
+where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
 
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,													SubjectRequirementSetId)
@@ -1228,16 +1221,16 @@ values
 	--
 	('JESUIT_EDUCATION_POPULATION_SCIENCE',						'ModifierId',			'JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER'),
 	('JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER',			'YieldType',			'YIELD_SCIENCE'),
-	('JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER',			'Amount',				0.2),
+	('JESUIT_EDUCATION_POPULATION_SCIENCE_MODIFIER',			'Amount',				0.3),
 	('JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE',				'ModifierId',			'JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER'),
 	('JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER',		'YieldType',			'YIELD_SCIENCE'),
-	('JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER',		'Amount',				0.2),
+	('JESUIT_EDUCATION_SHRINE_POPULATION_SCIENCE_MODIFIER',		'Amount',				0.3),
 	('JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE',				'ModifierId',			'JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER'),
 	('JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER',		'YieldType',			'YIELD_SCIENCE'),
-	('JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER',		'Amount',				0.4),
+	('JESUIT_EDUCATION_TEMPLE_POPULATION_SCIENCE_MODIFIER',		'Amount',				0.6),
 	('JESUIT_EDUCATION_WORSHIP_POPULATION_SCIENCE',				'ModifierId',			'JESUIT_EDUCATION_WORSHIP_POPULATION_SCIENCE_MODIFIER'),
 	('JESUIT_EDUCATION_WORSHIP_POPULATION_SCIENCE_MODIFIER',	'YieldType',			'YIELD_SCIENCE'),
-	('JESUIT_EDUCATION_WORSHIP_POPULATION_SCIENCE_MODIFIER',	'Amount',				0.4),
+	('JESUIT_EDUCATION_WORSHIP_POPULATION_SCIENCE_MODIFIER',	'Amount',				0.6),
 	--
 	('RELIGIOUS_COMMUNITY_TRADER_PURCHASE',						'ModifierId',			'RELIGIOUS_COMMUNITY_TRADER_PURCHASE_MODIFIER'),
 	('RELIGIOUS_COMMUNITY_TRADER_PURCHASE_MODIFIER',			'Tag',					'CLASS_TRADER'),
@@ -1276,19 +1269,19 @@ values
 	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER',			'Amount',				30),
 	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				5),
+	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
 	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				5),
+	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
 	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST',				'ModifierId',			'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER'),
 	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'Amount',				5),
+	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'Amount',				8),
 	('MESSIAH_SHRINE_PURCHASE_DISCOUNT',						'ModifierId',			'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER'),
 	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'BuildingType',			'BUILDING_SHRINE'),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				10),
+	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				20),
 	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT',						'ModifierId',			'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER'),
 	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'BuildingType',			'BUILDING_TEMPLE'),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				10),
+	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				20),
 	('HOLY_WATERS_DISTRICT_FAITH',								'ModifierId',			'HOLY_WATERS_DISTRICT_FAITH_MODIFIER'),
 	('HOLY_WATERS_DISTRICT_FAITH_MODIFIER',						'YieldType',			'YIELD_FAITH'),
 	('HOLY_WATERS_DISTRICT_FAITH_MODIFIER',						'Amount',				4),
@@ -2109,16 +2102,16 @@ values
 
 -------------------------------------
 --弥赛亚
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
+--update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 20 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--delete from BeliefModifiers where ModifierId = 'MESSIAH_HOLYSITE_BUILDING_PRODUCTION';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--update ModifierArguments set Value = 8 where ModifierId = 'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER' and Name = 'Amount';
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
+--where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
 
 -------------------------------------
 --Pantheon Posterity of Mountain
@@ -2596,3 +2589,125 @@ from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
 	('BELIEF_HD_SUN_GOD',					'HD_SUN_GOD_FARM_SCIENCE_LUXURY'),
 	('BELIEF_HD_SUN_GOD',					'HD_SUN_GOD_FARM_FAITH');
 	*/
+
+-- Sort Index
+create table 'BeliefsSortIndex'(
+	'BeliefType' TEXT NOT NULL,
+	'SortIndex' Int NOT NULL,
+	PRIMARY KEY('BeliefType')
+);
+
+insert or replace into BeliefsSortIndex
+	(BeliefType,			SortIndex)
+select
+	BeliefType,				10
+from Beliefs;
+
+update BeliefsSortIndex set SortIndex =	10 where BeliefType = 'BELIEF_DEFENDER_OF_FAITH';
+update BeliefsSortIndex set SortIndex =	20 where BeliefType = 'BELIEF_HOLY_ORDER';
+update BeliefsSortIndex set SortIndex =	30 where BeliefType = 'BELIEF_ITINERANT_PREACHERS';
+update BeliefsSortIndex set SortIndex =	40 where BeliefType = 'BELIEF_MISSIONARY_ZEAL';
+update BeliefsSortIndex set SortIndex =	50 where BeliefType = 'BELIEF_SCRIPTURE';
+update BeliefsSortIndex set SortIndex =	60 where BeliefType = 'BELIEF_INITIATION_RITES';
+update BeliefsSortIndex set SortIndex =	70 where BeliefType = 'BELIEF_CAPELLANI';
+update BeliefsSortIndex set SortIndex =	80 where BeliefType = 'BELIEF_SCHOLASTICISM';
+update BeliefsSortIndex set SortIndex =	90 where BeliefType = 'BELIEF_PIOUS_MERCHANTS';
+update BeliefsSortIndex set SortIndex =	100 where BeliefType = 'BELIEF_MILLENNIALISM';
+update BeliefsSortIndex set SortIndex =	110 where BeliefType = 'BELIEF_CANONIZATION_OF_SAINTS';
+update BeliefsSortIndex set SortIndex =	120 where BeliefType = 'BELIEF_MONASTIC_ISOLATION';
+update BeliefsSortIndex set SortIndex =	130 where BeliefType = 'BELIEF_FEED_THE_WORLD';
+update BeliefsSortIndex set SortIndex =	140 where BeliefType = 'BELIEF_CHORAL_MUSIC';
+update BeliefsSortIndex set SortIndex =	150 where BeliefType = 'BELIEF_WARRIOR_MONKS';
+update BeliefsSortIndex set SortIndex =	160 where BeliefType = 'BELIEF_DIVINE_INSPIRATION';
+update BeliefsSortIndex set SortIndex =	170 where BeliefType = 'BELIEF_JESUIT_EDUCATION';
+update BeliefsSortIndex set SortIndex =	180 where BeliefType = 'BELIEF_RELIQUARIES';
+update BeliefsSortIndex set SortIndex =	190 where BeliefType = 'BELIEF_ZEN_MEDITATION';
+update BeliefsSortIndex set SortIndex =	200 where BeliefType = 'BELIEF_RELIGIOUS_ART';
+update BeliefsSortIndex set SortIndex =	210 where BeliefType = 'BELIEF_WORK_ETHIC';
+update BeliefsSortIndex set SortIndex =	220 where BeliefType = 'BELIEF_PRACTICAL_APPLICATION';
+update BeliefsSortIndex set SortIndex =	230 where BeliefType = 'BELIEF_RELIGIOUS_COLONIZATION';
+update BeliefsSortIndex set SortIndex =	240 where BeliefType = 'BELIEF_MESSIAH';
+update BeliefsSortIndex set SortIndex =	250 where BeliefType = 'BELIEF_ABBOT';
+update BeliefsSortIndex set SortIndex =	260 where BeliefType = 'BELIEF_HOLY_WATERS';
+update BeliefsSortIndex set SortIndex =	270 where BeliefType = 'BELIEF_RELIGIOUS_COMMUNITY';
+update BeliefsSortIndex set SortIndex =	280 where BeliefType = 'BELIEF_JUST_WAR';
+update BeliefsSortIndex set SortIndex =	290 where BeliefType = 'BELIEF_TITHE';
+update BeliefsSortIndex set SortIndex =	300 where BeliefType = 'BELIEF_RELIGIOUS_UNITY';
+update BeliefsSortIndex set SortIndex =	310 where BeliefType = 'BELIEF_WORLD_CHURCH';
+update BeliefsSortIndex set SortIndex =	320 where BeliefType = 'BELIEF_CROSS_CULTURAL_DIALOGUE';
+update BeliefsSortIndex set SortIndex =	330 where BeliefType = 'BELIEF_CHURCH_PROPERTY';
+update BeliefsSortIndex set SortIndex =	340 where BeliefType = 'BELIEF_PILGRIMAGE';
+update BeliefsSortIndex set SortIndex =	350 where BeliefType = 'BELIEF_LAY_MINISTRY';
+update BeliefsSortIndex set SortIndex =	360 where BeliefType = 'BELIEF_STEWARDSHIP';
+update BeliefsSortIndex set SortIndex =	370 where BeliefType = 'BELIEF_PAPAL_PRIMACY';
+update BeliefsSortIndex set SortIndex =	380 where BeliefType = 'BELIEF_SACRED_PLACES';
+update BeliefsSortIndex set SortIndex =	390 where BeliefType = 'BELIEF_TO_THE_GLORY_OF_GOD';
+-- Pantheon 
+-- 排序依据：海洋万神[0]、资源类[改良类型优先(10)]、无资源发教类[地形(30)-地貌(40)-其他(50)]、无资源不发教类[地形(60)-地貌(70)-其他(80)] 
+-- 海洋系
+update BeliefsSortIndex set SortIndex =	400 where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
+update BeliefsSortIndex set SortIndex =	401 where BeliefType = 'BELIEF_OCEAN_MOTHER';
+update BeliefsSortIndex set SortIndex =	402 where BeliefType = 'BELIEF_HD_MAZU_BELIEF';
+update BeliefsSortIndex set SortIndex =	403 where BeliefType = 'BELIEF_FISHING_TRADITION';
+update BeliefsSortIndex set SortIndex =	404 where BeliefType = 'BELIEF_HD_UTAKI';
+update BeliefsSortIndex set SortIndex =	405 where BeliefType = 'BELIEF_HD_SONG_OF_SIREN';
+-- 资源系
+update BeliefsSortIndex set SortIndex =	410 where BeliefType = 'BELIEF_GODDESS_OF_THE_HARVEST';
+update BeliefsSortIndex set SortIndex =	411 where BeliefType = 'BELIEF_HD_SUN_GOD';
+update BeliefsSortIndex set SortIndex =	413 where BeliefType = 'BELIEF_RELIGIOUS_IDOLS'; --2,4 矿山采石
+update BeliefsSortIndex set SortIndex =	415 where BeliefType = 'BELIEF_STONE_CIRCLES';
+update BeliefsSortIndex set SortIndex =	418 where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY'; --6,7 伐木 位于resourceful2
+update BeliefsSortIndex set SortIndex =	419 where BeliefType = 'BELIEF_TENGRI';
+update BeliefsSortIndex set SortIndex =	420 where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
+update BeliefsSortIndex set SortIndex =	421 where BeliefType = 'BELIEF_HD_WOLF_GOD';
+update BeliefsSortIndex set SortIndex =	422 where BeliefType = 'BELIEF_ORAL_TRADITION';
+update BeliefsSortIndex set SortIndex =	423 where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
+update BeliefsSortIndex set SortIndex =	424 where BeliefType = 'BELIEF_GOD_OF_CRAFTSMEN';
+-- 发教-地形
+update BeliefsSortIndex set SortIndex =	430 where BeliefType = 'BELIEF_GODDESS_OF_THE_DESERT';--市中心、圣地
+update BeliefsSortIndex set SortIndex =	431 where BeliefType = 'BELIEF_DESERT_FOLKLORE';
+update BeliefsSortIndex set SortIndex =	432 where BeliefType = 'BELIEF_THE_PEOPLE_OF_POLAR';
+update BeliefsSortIndex set SortIndex =	433 where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
+update BeliefsSortIndex set SortIndex =	435 where BeliefType = 'BELIEF_RIVER_GODDESS';
+update BeliefsSortIndex set SortIndex =	437 where BeliefType = 'BELIEF_HD_POSTERITY_OF_MOUNTAIN';
+-- 发教-地貌
+update BeliefsSortIndex set SortIndex =	440 where BeliefType = 'BELIEF_SACRED_PATH';
+update BeliefsSortIndex set SortIndex =	441 where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
+-- 发教-其他
+update BeliefsSortIndex set SortIndex =	450 where BeliefType = 'BELIEF_DIVINE_SPARK';
+update BeliefsSortIndex set SortIndex =	451 where BeliefType = 'BELIEF_EARTH_GODDESS';
+update BeliefsSortIndex set SortIndex =	452 where BeliefType = 'BELIEF_ONE_WITH_NATURE';
+update BeliefsSortIndex set SortIndex =	453 where BeliefType = 'BELIEF_GOD_OF_WAR';
+-- 不发教-地形
+-- 不发教-地貌
+update BeliefsSortIndex set SortIndex =	470 where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
+update BeliefsSortIndex set SortIndex =	471 where BeliefType = 'BELIEF_VOODOO';
+update BeliefsSortIndex set SortIndex =	472 where BeliefType = 'BELIEF_HD_DRUID';
+-- 不发教-其他
+update BeliefsSortIndex set SortIndex =	480 where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
+update BeliefsSortIndex set SortIndex =	481 where BeliefType = 'BELIEF_FERTILITY_RITES';
+update BeliefsSortIndex set SortIndex =	482 where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
+update BeliefsSortIndex set SortIndex =	483 where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
+update BeliefsSortIndex set SortIndex =	484 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
+update BeliefsSortIndex set SortIndex =	485 where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS';
+update BeliefsSortIndex set SortIndex =	486 where BeliefType = 'BELIEF_HD_GOD_KING';
+update BeliefsSortIndex set SortIndex =	487 where BeliefType = 'BELIEF_HD_HERMES';
+-- Worships
+update BeliefsSortIndex set SortIndex =	800 where BeliefType = 'BELIEF_CATHEDRAL';
+update BeliefsSortIndex set SortIndex =	810 where BeliefType = 'BELIEF_GURDWARA';
+update BeliefsSortIndex set SortIndex =	820 where BeliefType = 'BELIEF_MEETING_HOUSE';
+update BeliefsSortIndex set SortIndex =	830 where BeliefType = 'BELIEF_MOSQUE';
+update BeliefsSortIndex set SortIndex =	840 where BeliefType = 'BELIEF_PAGODA';
+update BeliefsSortIndex set SortIndex =	850 where BeliefType = 'BELIEF_SYNAGOGUE';
+update BeliefsSortIndex set SortIndex =	860 where BeliefType = 'BELIEF_WAT';
+update BeliefsSortIndex set SortIndex =	870 where BeliefType = 'BELIEF_STUPA';
+update BeliefsSortIndex set SortIndex =	880 where BeliefType = 'BELIEF_DAR_E_MEHR';
+update BeliefsSortIndex set SortIndex =	890 where BeliefType = 'BELIEF_JNR_CANDI';
+update BeliefsSortIndex set SortIndex =	900 where BeliefType = 'BELIEF_JNR_DAOGUAN';
+update BeliefsSortIndex set SortIndex =	910 where BeliefType = 'BELIEF_JNR_JINJA';
+update BeliefsSortIndex set SortIndex =	920 where BeliefType = 'BELIEF_JNR_KHALWAT';
+update BeliefsSortIndex set SortIndex =	930 where BeliefType = 'BELIEF_JNR_MANDIR';
+update BeliefsSortIndex set SortIndex =	940 where BeliefType = 'BELIEF_JNR_MBARI';
+update BeliefsSortIndex set SortIndex =	950 where BeliefType = 'BELIEF_JNR_PERIPTEROS';
+update BeliefsSortIndex set SortIndex =	960 where BeliefType = 'BELIEF_JNR_SOBOR';
+update BeliefsSortIndex set SortIndex =	970 where BeliefType = 'BELIEF_JNR_TZACUALLI';

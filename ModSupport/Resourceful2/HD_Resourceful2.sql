@@ -289,6 +289,11 @@ values
 	('BELIEF_PAN',		                'LOC_BELIEF_PAN_NAME',		                'LOC_BELIEF_PAN_DL_DESCRIPTION',		                'BELIEF_CLASS_PANTHEON'),
     ('BELIEF_HEART_OF_THE_WOODS',		'LOC_BELIEF_HEART_OF_THE_WOODS_NAME',		'LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION',		    'BELIEF_CLASS_PANTHEON');
 
+insert or replace into BeliefsSortIndex
+	(BeliefType,			SortIndex)
+values
+	('BELIEF_HEART_OF_THE_WOODS',	416),
+	('BELIEF_PAN',					417);
 insert or replace into BeliefModifiers
 	(BeliefType,							ModifierID)
 values

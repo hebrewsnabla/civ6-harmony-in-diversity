@@ -1,6 +1,8 @@
 -------------------------------------
 --            Khmer DLC            --
 -------------------------------------
+--delete from CivilizationTraits where TraitType = 'TRAIT_CIVILIZATION_BUILDING_PRASAT';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_BUILDING_PRASAT';
 
 insert or replace into Building_CitizenYieldChanges
     (BuildingType,                          YieldType,          YieldChange)

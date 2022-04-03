@@ -38,7 +38,10 @@ values
 
     -- 出生点优化, by xiaoxiao, 从 https://steamcommunity.com/sharedfiles/filedetails/?id=2733192047 抄的
     ('Ruleset', 'RULESET_EXPANSION_2',  'RealStartLocations',           'LOC_GAME_REAL_START_LOCATIONS',            'LOC_GAME_REAL_START_LOCATIONS_DESCRIPTION',
-    'bool',     0,              'Game',             'GAME_REAL_START_LOCATIONS',             'AdvancedOptions',  2024);
+    'bool',     0,              'Game',             'GAME_REAL_START_LOCATIONS',            'AdvancedOptions',  2024),
+    -- 测试用
+    ('Ruleset', 'RULESET_EXPANSION_2',  'TestingOption',                'LOC_GAME_TESTING_OPTION',                  'LOC_GAME_TESTING_OPTION_DESCRIPTION',
+    'bool',     0,              'Game',             'GAME_TESTING_OPTION',                  'AdvancedOptions',  2025);
 
 -- update MapStartPositions set Plot = 6194 where 
 --     Map="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/EarthMaps/TSLWorldMapHuge_XP2.Civ6Map" and Type="LEADER" and Value="LEADER_MINOR_CIV_HONG_KONG";
