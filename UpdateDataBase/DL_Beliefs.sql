@@ -2642,47 +2642,56 @@ update BeliefsSortIndex set SortIndex =	360 where BeliefType = 'BELIEF_STEWARDSH
 update BeliefsSortIndex set SortIndex =	370 where BeliefType = 'BELIEF_PAPAL_PRIMACY';
 update BeliefsSortIndex set SortIndex =	380 where BeliefType = 'BELIEF_SACRED_PLACES';
 update BeliefsSortIndex set SortIndex =	390 where BeliefType = 'BELIEF_TO_THE_GLORY_OF_GOD';
--- Pantheon
-update BeliefsSortIndex set SortIndex =	400 where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
-update BeliefsSortIndex set SortIndex =	410 where BeliefType = 'BELIEF_DESERT_FOLKLORE';
-update BeliefsSortIndex set SortIndex =	420 where BeliefType = 'BELIEF_SACRED_PATH';
-update BeliefsSortIndex set SortIndex =	430 where BeliefType = 'BELIEF_RIVER_GODDESS';
-update BeliefsSortIndex set SortIndex =	440 where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
+-- Pantheon 
+-- 排序依据：海洋万神[0]、资源类[改良类型优先(10)]、无资源发教类[地形(30)-地貌(40)-其他(50)]、无资源不发教类[地形(60)-地貌(70)-其他(80)] 
+-- 海洋系
+update BeliefsSortIndex set SortIndex =	400 where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
+update BeliefsSortIndex set SortIndex =	401 where BeliefType = 'BELIEF_OCEAN_MOTHER';
+update BeliefsSortIndex set SortIndex =	402 where BeliefType = 'BELIEF_HD_MAZU_BELIEF';
+update BeliefsSortIndex set SortIndex =	403 where BeliefType = 'BELIEF_FISHING_TRADITION';
+update BeliefsSortIndex set SortIndex =	404 where BeliefType = 'BELIEF_HD_UTAKI';
+update BeliefsSortIndex set SortIndex =	405 where BeliefType = 'BELIEF_HD_SONG_OF_SIREN';
+-- 资源系
+update BeliefsSortIndex set SortIndex =	410 where BeliefType = 'BELIEF_GODDESS_OF_THE_HARVEST';
+update BeliefsSortIndex set SortIndex =	411 where BeliefType = 'BELIEF_HD_SUN_GOD';
+update BeliefsSortIndex set SortIndex =	413 where BeliefType = 'BELIEF_RELIGIOUS_IDOLS'; --2,4 矿山采石
+update BeliefsSortIndex set SortIndex =	415 where BeliefType = 'BELIEF_STONE_CIRCLES';
+update BeliefsSortIndex set SortIndex =	418 where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY'; --6,7 伐木 位于resourceful2
+update BeliefsSortIndex set SortIndex =	419 where BeliefType = 'BELIEF_TENGRI';
+update BeliefsSortIndex set SortIndex =	420 where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
+update BeliefsSortIndex set SortIndex =	421 where BeliefType = 'BELIEF_HD_WOLF_GOD';
+update BeliefsSortIndex set SortIndex =	422 where BeliefType = 'BELIEF_ORAL_TRADITION';
+update BeliefsSortIndex set SortIndex =	423 where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
+update BeliefsSortIndex set SortIndex =	424 where BeliefType = 'BELIEF_GOD_OF_CRAFTSMEN';
+-- 发教-地形
+update BeliefsSortIndex set SortIndex =	430 where BeliefType = 'BELIEF_GODDESS_OF_THE_DESERT';--市中心、圣地
+update BeliefsSortIndex set SortIndex =	431 where BeliefType = 'BELIEF_DESERT_FOLKLORE';
+update BeliefsSortIndex set SortIndex =	432 where BeliefType = 'BELIEF_THE_PEOPLE_OF_POLAR';
+update BeliefsSortIndex set SortIndex =	433 where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
+update BeliefsSortIndex set SortIndex =	435 where BeliefType = 'BELIEF_RIVER_GODDESS';
+update BeliefsSortIndex set SortIndex =	437 where BeliefType = 'BELIEF_HD_POSTERITY_OF_MOUNTAIN';
+-- 发教-地貌
+update BeliefsSortIndex set SortIndex =	440 where BeliefType = 'BELIEF_SACRED_PATH';
+update BeliefsSortIndex set SortIndex =	441 where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
+-- 发教-其他
 update BeliefsSortIndex set SortIndex =	450 where BeliefType = 'BELIEF_DIVINE_SPARK';
-update BeliefsSortIndex set SortIndex =	460 where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
-update BeliefsSortIndex set SortIndex =	470 where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
-update BeliefsSortIndex set SortIndex =	480 where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY';
-update BeliefsSortIndex set SortIndex =	490 where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
-update BeliefsSortIndex set SortIndex =	500 where BeliefType = 'BELIEF_STONE_CIRCLES';
-update BeliefsSortIndex set SortIndex =	510 where BeliefType = 'BELIEF_RELIGIOUS_IDOLS';
-update BeliefsSortIndex set SortIndex =	520 where BeliefType = 'BELIEF_GOD_OF_CRAFTSMEN';
-update BeliefsSortIndex set SortIndex =	530 where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
-update BeliefsSortIndex set SortIndex =	540 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
-update BeliefsSortIndex set SortIndex =	550 where BeliefType = 'BELIEF_GOD_OF_WAR';
-update BeliefsSortIndex set SortIndex =	560 where BeliefType = 'BELIEF_FERTILITY_RITES';
-update BeliefsSortIndex set SortIndex =	570 where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
-update BeliefsSortIndex set SortIndex =	580 where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
-update BeliefsSortIndex set SortIndex =	590 where BeliefType = 'BELIEF_EARTH_GODDESS';
-update BeliefsSortIndex set SortIndex =	600 where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
-update BeliefsSortIndex set SortIndex =	610 where BeliefType = 'BELIEF_THE_PEOPLE_OF_POLAR';
-update BeliefsSortIndex set SortIndex =	620 where BeliefType = 'BELIEF_GODDESS_OF_THE_DESERT';
-update BeliefsSortIndex set SortIndex =	630 where BeliefType = 'BELIEF_VOODOO';
-update BeliefsSortIndex set SortIndex =	640 where BeliefType = 'BELIEF_TENGRI';
-update BeliefsSortIndex set SortIndex =	650 where BeliefType = 'BELIEF_ONE_WITH_NATURE';
-update BeliefsSortIndex set SortIndex =	660 where BeliefType = 'BELIEF_ORAL_TRADITION';
-update BeliefsSortIndex set SortIndex =	670 where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS';
-update BeliefsSortIndex set SortIndex =	680 where BeliefType = 'BELIEF_GODDESS_OF_THE_HARVEST';
-update BeliefsSortIndex set SortIndex =	690 where BeliefType = 'BELIEF_OCEAN_MOTHER';
-update BeliefsSortIndex set SortIndex =	700 where BeliefType = 'BELIEF_HD_DRUID';
-update BeliefsSortIndex set SortIndex =	710 where BeliefType = 'BELIEF_HD_MAZU_BELIEF';
-update BeliefsSortIndex set SortIndex =	720 where BeliefType = 'BELIEF_FISHING_TRADITION';
-update BeliefsSortIndex set SortIndex =	730 where BeliefType = 'BELIEF_HD_GOD_KING';
-update BeliefsSortIndex set SortIndex =	740 where BeliefType = 'BELIEF_HD_WOLF_GOD';
-update BeliefsSortIndex set SortIndex =	750 where BeliefType = 'BELIEF_HD_SUN_GOD';
-update BeliefsSortIndex set SortIndex =	760 where BeliefType = 'BELIEF_HD_HERMES';
-update BeliefsSortIndex set SortIndex =	770 where BeliefType = 'BELIEF_HD_POSTERITY_OF_MOUNTAIN';
-update BeliefsSortIndex set SortIndex =	780 where BeliefType = 'BELIEF_HD_SONG_OF_SIREN';
-update BeliefsSortIndex set SortIndex =	790 where BeliefType = 'BELIEF_HD_UTAKI';
+update BeliefsSortIndex set SortIndex =	451 where BeliefType = 'BELIEF_EARTH_GODDESS';
+update BeliefsSortIndex set SortIndex =	452 where BeliefType = 'BELIEF_ONE_WITH_NATURE';
+update BeliefsSortIndex set SortIndex =	453 where BeliefType = 'BELIEF_GOD_OF_WAR';
+-- 不发教-地形
+-- 不发教-地貌
+update BeliefsSortIndex set SortIndex =	470 where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
+update BeliefsSortIndex set SortIndex =	471 where BeliefType = 'BELIEF_VOODOO';
+update BeliefsSortIndex set SortIndex =	472 where BeliefType = 'BELIEF_HD_DRUID';
+-- 不发教-其他
+update BeliefsSortIndex set SortIndex =	480 where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
+update BeliefsSortIndex set SortIndex =	481 where BeliefType = 'BELIEF_FERTILITY_RITES';
+update BeliefsSortIndex set SortIndex =	482 where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
+update BeliefsSortIndex set SortIndex =	483 where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
+update BeliefsSortIndex set SortIndex =	484 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
+update BeliefsSortIndex set SortIndex =	485 where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS';
+update BeliefsSortIndex set SortIndex =	486 where BeliefType = 'BELIEF_HD_GOD_KING';
+update BeliefsSortIndex set SortIndex =	487 where BeliefType = 'BELIEF_HD_HERMES';
 -- Worships
 update BeliefsSortIndex set SortIndex =	800 where BeliefType = 'BELIEF_CATHEDRAL';
 update BeliefsSortIndex set SortIndex =	810 where BeliefType = 'BELIEF_GURDWARA';
