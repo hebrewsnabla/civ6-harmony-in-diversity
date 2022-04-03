@@ -4,10 +4,12 @@
 -- add an city state district list to allow build city states build more districts
 -- add adjustWeights list to adjust yield at different age.
 insert or replace into AiListTypes (ListType) values
+    ('DLAIImprovements'),
 	('DLCityStateDistricts'),
 	('DLAdjustWeights');
 
 insert or replace into AiLists (ListType, LeaderType,	System) values
+    ('DLAIImprovements',        NULL,                       'Improvements'),
 	('DLAdjustWeights',			NULL, 						'Yields'),
 	('DLCityStateDistricts',    'MINOR_CIV_DEFAULT_TRAIT',   'Districts');
 
@@ -16,13 +18,22 @@ update AiFavoredItems set Value = 100 where ListType = 'DLAdjustBuildings' and I
 insert or replace into AiFavoredItems
 	(ListType,					Item,									Favored,	Value)
 values
+-- removes farm and fishing farm from ai favored improvements
+    ('DLAIImprovements','IMPROVEMENT_FARM',0,-200),
+    ('DLAIImprovements','IMPROVEMENT_MINE',1,100),
+    ('DLAIImprovements','IMPROVEMENT_QUARRY',1,100),
+    ('DLAIImprovements','IMPROVEMENT_LUMBER_MILL',1,100),
+    ('DLAIImprovements','IMPROVEMENT_PLANTATION',1,100),
+    ('DLAIImprovements','IMPROVEMENT_FISHING_BOATS',1,100),
+    ('DLAIImprovements','IMPROVEMENT_PASTURE',1,100),   
+    ('DLAIImprovements','IMPROVEMENT_CAMP',1,100),  
 -- ask ai to build more industrial zone
 	('DLAdjustDistricts', 		'DISTRICT_INDUSTRIAL_ZONE', 			1, 			1000),
 -- increase ai's favor to goverment plaza and diplomatic quarter
 	('DLAdjustDistricts', 		'DISTRICT_GOVERNMENT', 					1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_DIPLOMATIC_QUARTER', 			1, 			100),
 -- aqueduct is important, but since its price won't change, 100 should be enough
-	('DLAdjustDistricts', 		'DISTRICT_AQUEDUCT', 					1, 			100),
+    ('DLAdjustDistricts', 		'DISTRICT_AQUEDUCT', 					1, 			100),
     ('DLAdjustDistricts', 		'DISTRICT_HARBOR', 						1, 			0),
     ('DLAdjustDistricts', 		'DISTRICT_CAMPUS', 						1, 			0),
     ('DLAdjustDistricts', 		'DISTRICT_THEATER',						1, 			0),
@@ -44,6 +55,7 @@ values
 	--('DLAdjustTechs', 'TECH_ANIMAL_HUSBANDRY', 1, 10),
 	('DLAdjustTechs', 'TECH_POTTERY', 1, 0),
 	('DLAdjustTechs', 'TECH_ASTROLOGY', 1, 0),
+    ('DLAdjustTechs', 'TECH_WRITING', 1, 0),
 	-- set several tech goals for ai. maybe civil engineering is a good line.
     ('DLAdjustTechs', 'TECH_IRRIGATION', 0, 3),
 	-- unlocks industrial zone for ai. hope they can build more.
@@ -58,17 +70,18 @@ values
 	-- unlocks campus 3rd level building. school of architecture is by no means a bad idea for them
     ('DLAdjustTechs', 'TECH_CIVIL_ENGINEERING', 1, 10),
 	-- import tech towards science vicotry.
-    ('DLAdjustTechs', 'TECH_CHEMISTRY', 1, 10),
-    ('DLAdjustTechs', 'TECH_COMPUTERS', 1, 19),
+    ('DLAdjustTechs', 'TECH_CHEMISTRY', 1, 100),
+    ('DLAdjustTechs', 'TECH_COMPUTERS', 1, 100),
     -- several important building unlocks.
-    ('DLAdjustTechs', 'TECH_INDUSTRIALIZATION', 1, 8),
+    ('DLAdjustTechs', 'TECH_INDUSTRIALIZATION', 1, 20),
     ('DLAdjustTechs', 'TECH_CURRENCY', 1, 5),
     ('DLAdjustTechs', 'TECH_PAPER_MAKING_HD', 1, 5),
 	-- adjust important civics ai should run.
-	('DLAdjustCivics',          'CIVIC_POLITICAL_PHILOSOPHY',           1,          10),
+    ('DLAdjustCivics',          'CIVIC_GAMES_RECREATION',               0,          -100),
+	('DLAdjustCivics',          'CIVIC_POLITICAL_PHILOSOPHY',           1,          100),
 	('DLAdjustCivics',          'CIVIC_MERCENARIES',           			1,          10),
 	('DLAdjustCivics',			'CIVIC_GUILDS',							1,			10),
-	('DLAdjustCivics',			'CIVIC_DRAMA_POETRY',					1,			10),
+	('DLAdjustCivics',			'CIVIC_DRAMA_POETRY',					1,			200),
 	('DLAdjustCivics',			'CIVIC_EXPLORATION',					1,			10),
 	('DLAdjustCivics',			'CIVIC_OPERA_BALLET',					1,			10),
 	-- this value should change as how much totems they build
@@ -131,8 +144,9 @@ insert or replace into TraitModifiers (TraitType,	ModifierId) values
 
 -- extra 10 speed for ai settlers to relief ai stuck at settle a city so that they won't build more cities/
 -- in this sense, they will be able to build more cities since now they save time at the stage of find a spot to settle.
-insert or replace into TraitModifiers (TraitType,	ModifierId) values
-    ('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_SETTLER_SPEED');
+--remove it for now, maybe enters challenge mode in the future.
+--insert or replace into TraitModifiers (TraitType,	ModifierId) values
+--    ('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_SETTLER_SPEED');
 insert or replace into Modifiers (ModifierId, ModifierType, Permanent, OwnerRequirementSetId, SubjectRequirementSetId) values
 	('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_SETTLER_SPEED',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT', 1, 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI', 'AI_SETTLER_SPEED_REQSET');
 insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
@@ -146,6 +160,14 @@ INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType, Inverse) VAL
 INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value) VALUES
     ('REQUIRES_UNIT_IS_SETTLER', 'UnitType', 'UNIT_SETTLER');
 
+-- remove extra builder, even it should be added, it should be added started at a later era maybe classical or even medieval.
+--insert or replace into TraitModifiers (TraitType, ModifierId) values
+--    ('TRAIT_LEADER_MAJOR_CIV',  'AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_BUILDER');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId) values
+	('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_BUILDER',	'MODIFIER_PLAYER_BUILT_CITIES_GRANT_FREE_UNIT', 'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_AI');
+insert or replace into ModifierArguments (ModifierId, Name, Value) values
+    ('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_BUILDER', 'UnitType', 'UNIT_BUILDER'),
+    ('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_BUILDER', 'Amount', 1);
 -- 2 more extra amenities, reilief happiness problem when ai build more cities.
 -- further relief problem of ai luxury price too high.
 insert or replace into ModifierArguments (ModifierId,		Name,		Value) values
@@ -238,10 +260,11 @@ insert or replace into AiFavoredItems (ListType, Item, Favored, Value, StringVal
 -- I would keep these parameters to keep adjust ai's tendancy to settle more cities.
 -- but maybe I would comment these lines out to help test how are they behaving without shifting these
 -- params towards expansion ai.
+delete from AiFavoredItems where ListType = 'MedievalSettlements';
 --UPDATE AiFavoredItems SET Value = -50 WHERE ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_MIN_VALUE_NEEDED';
---UPDATE AiFavoredItems SET Value = -1 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_ADDITIONAL_VALUE_PER_CITY';
---UPDATE AiFavoredItems SET Value = -3 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_DECAY_TURNS';
---UPDATE AiFavoredItems SET Value = -3 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_DECAY_AMOUNT';
+UPDATE AiFavoredItems SET Value = -1 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_ADDITIONAL_VALUE_PER_CITY';
+UPDATE AiFavoredItems SET Value = -3 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_DECAY_TURNS';
+UPDATE AiFavoredItems SET Value = -3 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_DECAY_AMOUNT';
 --UPDATE AiFavoredItems SET Value = 100 WHERE ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_CITY_MINIMUM_VALUE';
 --UPDATE AiFavoredItems SET Value = 1 WHERE  ListType = 'DefaultCitySettlement' and Item = 'SETTLEMENT_CITY_VALUE_MULTIPLIER';
 
@@ -318,6 +341,16 @@ insert or replace into AiFavoredItems (ListType, Item, Favored) values ('Science
 insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_LAUNCH_MARS_BASE',1);
 insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryProjects', 'PROJECT_LAUNCH_EXOPLANET_EXPEDITION',1);
 
+insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryTechs', 'TECH_SMART_MATERIALS',1);
+--insert or replace into AiFavoredItems (ListType, Item, Favored) values ('ScienceVictoryTechs', 'PROJECT_LAUNCH_EXOPLANET_EXPEDITION',1);
+UPDATE AiFavoredItems set Value = 100 WHERE ListType='ScienceVictoryTechs' And Item = 'TECH_ROCKERY';
+UPDATE AiFavoredItems set Value = 100 WHERE ListType='ScienceVictoryTechs' And Item = 'TECH_SATELLITES';
+UPDATE AiFavoredItems set Value = -1 WHERE ListType='ScienceVictoryTechs' And Item = 'TECH_NANOTECHNOLOGY';
+UPDATE AiFavoredItems set Favored = 0 WHERE ListType='ScienceVictoryTechs' And Item = 'TECH_ROBOTICS';
+UPDATE AiFavoredItems set Favored = 0 WHERE ListType='ScienceVictoryTechs' And Item = 'TECH_NUCLEAR_FUSION';
+
+UPDATE AiFavoredItems set Value = 100 WHERE ListType='ScienceVictoryDistricts' And Item = 'DISTRICT_SPACEPORT';
+
 UPDATE AiFavoredItems SET Value = 0  WHERE ListType = 'MedievalYields' AND Item = 'YIELD_FOOD';
 UPDATE AiFavoredItems SET Value = 25 WHERE ListType = 'MedievalYields' AND Item = 'YIELD_PRODUCTION';
 UPDATE AiFavoredItems SET Value = 20 WHERE ListType = 'MedievalYields' And Item = 'YIELD_CULTURE';
@@ -348,7 +381,8 @@ UPDATE AiFavoredItems SET Value = 20  WHERE ListType =  'ModernYields' AND Item 
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType =  'ModernYields' AND Item = 'YIELD_GOLD';
 
 UPDATE PseudoYields SET DefaultValue =  3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_CLEAR_BANDIT_CAMPS'; --    0.5, Ai+ 1.6
-UPDATE PseudoYields SET DefaultValue = 3.0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
+--I'm doubting ai use this to check whether to remove their farms.
+UPDATE PseudoYields SET DefaultValue = 0 WHERE PseudoYieldType = 'PSEUDOYIELD_IMPROVEMENT'; --    3, 13.5 too much
 -- I honestly don't know about the following two params, so comment them out.
 --UPDATE PseudoYields SET DefaultValue = 1.0 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --  1 -- controls size of the army
 --UPDATE PseudoYields SET DefaultValue = 0.2 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --   0.1 -- controls size of the army
