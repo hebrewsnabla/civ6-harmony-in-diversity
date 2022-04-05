@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	280632403	Stop_Speech_GreatWriting_HD			\Default Work Unit\Stop_Speech_GreatWriting_HD	
+	1475897952	PLAY_GREAT_WRITING_QUOTE_HD_1			\Default Work Unit\PLAY_GREAT_WRITING_QUOTE_HD_1	
+	1475897954	PLAY_GREAT_WRITING_QUOTE_HD_3			\Default Work Unit\PLAY_GREAT_WRITING_QUOTE_HD_3	
+	1475897955	PLAY_GREAT_WRITING_QUOTE_HD_2			\Default Work Unit\PLAY_GREAT_WRITING_QUOTE_HD_2	
+	1475897957	PLAY_GREAT_WRITING_QUOTE_HD_4			\Default Work Unit\PLAY_GREAT_WRITING_QUOTE_HD_4	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	157438569	GreatWriting_ZhuangZhou1	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Mac\Voices\Chinese(PRC)\GreatWriting_ZhuangZhou1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\GreatWriting_ZhuangZhou1		1260904
+	174641522	GreatWriting_SiMaQian2	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Mac\Voices\Chinese(PRC)\GreatWriting_SiMaQian2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\GreatWriting_SiMaQian2		1279272
+	580490131	GreatWriting_SiMaQian1	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Mac\Voices\Chinese(PRC)\GreatWriting_SiMaQian1_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\GreatWriting_SiMaQian1		1201084
+	646131844	GreatWriting_ZhuangZhou2	D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Mac\Voices\Chinese(PRC)\GreatWriting_ZhuangZhou2_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\GreatWriting_ZhuangZhou2		1226260
+
