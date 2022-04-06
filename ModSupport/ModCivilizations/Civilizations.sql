@@ -1,6 +1,99 @@
+--------------------------------------------------------------------------------
+-- Bug fix
+--------------------------------------------------------------------------------
 -- ZIMBABWE bug fix
 update ModifierArguments set YieldType = 'YIELD_GOLD' where ModifierId = 'GEDEMO_ZIMBABWE_TRAIT_GOLD_IMPROVEMENT_PLANTATION_TRADE';
--- ZIMBABWE UA UI LA
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-- -- 暹罗
+-- -- 暹罗-朱拉隆功-丹隆
+-- update TraitModifiers set TraitType = 'TRAIT_LEADER_SUK_MONTHON_SYSTEM_DL' where TraitType = 'TRAIT_LEADER_SUK_MONTHON_SYSTEM'.
+-- update ModifierArguments set Amount = 3 where ModifierId  = 'SUK_DAMRONG_ROYAL_SURVEY_PROD' or 'SUK_DAMRONG_ROYAL_SURVEY_FOOD'.
+-- delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS'. 
+-- insert into GovernorPromotionModifiers
+--         (GovernorPromotionType,										ModifierId)
+-- values  -- Left 1
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT_BUILDING'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM_BUILDING'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANAL'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANNAL_BUILDING'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS',       'GOVERNOR_PROMOTION_SUK_DAMRONG_SANITARY_DISTRICTS_FOOD'),
+--         -- Right 1 and 2
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SUANKULARB_COLLEGE',       'SUK_DAMRONG_SUANKULARB_COLLEGE_CAMPUS'),
+--         ('GOVERNOR_PROMOTION_SUK_DAMRONG_SIAM_SOCIETY',             'SUK_DAMRONG_SIAM_SOCIETY_THEATER');
+-- insert into Modifiers
+--         (ModifierId,                                                                            ModifierType,                                       OwnerRequirementSetId,  SubjectRequirementSetId)
+-- values  -- Left 1
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT',           'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION',  NULL,                   NULL),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT_BUILDING',  'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'， NULL,                   NULL),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM',                'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION'， NULL,                   NULL),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM_BUILDING',       'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'， NULL,                   NULL),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANAL',              'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION'， NULL,                   NULL),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANNAL_BUILDING',    'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'， NULL,                   NULL),
+--         -- Right 1 and 2
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_SCIENCE_CAMPUS',                'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',  'SUK_DAMRONG_CAMPUS_REQUIREMENTS',  'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS'),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS',                'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION',  NULL,                   'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS'),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS_BULIDING',       'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION',  NULL,                   'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_CLUTURE_THEATER',                     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',  'SUK_DAMRONG_THEATER_REQUIREMENTS', 'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER',                     'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION',  NULL,                   'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER_BUILDING',            'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION',  NULL,                   'SUK_DAMRONG_AOE_EXCL_REQUIREMENTS');
+
+-- insert or ignore into ModifierArguments
+--         (ModifierId,                                                            Name,           Value)
+-- values  -- Left 1
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT',              'DistrictType', 'DISTRICT_AQUEDUCT'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT_BUILDING',     'DistrictType', 'DISTRICT_AQUEDUCT'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM',                   'DistrictType', 'DISTRICT_DAM'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM_BUILDING',          'DistrictType', 'DISTRICT_DAM'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANAL',                 'DistrictType', 'DISTRICT_CANAL'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANNAL_BUILDING',       'DistrictType', 'DISTRICT_CANAL'),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT',              'Amount',       50),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_AQUEDUCT_BUILDING',     'Amount',       50),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM',                   'Amount',       50),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_DAM_BUILDING',          'Amount',       50),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANAL',                 'Amount',       50),
+--         ('SUK_DAMRONG_SANITARY_DISTRICTS_ADD_PRODUCTION_CANNAL_BUILDING',       'Amount',       50),
+--         -- Right 1 and 2
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_SCIENCE_CAMPUS',                   'YieldType',    'YIELD_SCIENCE'),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_SCIENCE_CAMPUS',                   'Amount',       2),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS',                   'DistrictType', 'DISTRICT_CAMPUS'),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS',                   'Amount',       20),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS_BULIDING'           'DistrictType', 'DISTRICT_CAMPUS'),
+--         ('SUK_DAMRONG_SUANKULARB_COLLEGE_ADD_PRODUCT_CAMPUS_BULIDING'           'Amount',       20),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_CLUTURE_THEATER',                        'YieldType',    'YIELD_CULTURE'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_CLUTURE_THEATER',                        'Amount',       2),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER',                        'DistrictType', 'DISTRICT_THEATER'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER',                        'Amount',       20),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER_BUILDING',               'DistrictType', 'DISTRICT_THEATER'),
+--         ('SUK_DAMRONG_SIAM_SOCIETY_ADD_PRODUCT_THEATER_BUILDING',               'Amount',       20);
+-- -- Left 2
+-- update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER' where ModifierId = 'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE' select * from SukDamrongMonthonReformsData;
+-- -- Right 1 and 2
+-- update ModifierArguments set Amount = 2 where ModifierId = select 'SUK_DAMRONG_SUANKULARB_COLLEGE_' || BuildingType from Buildings WHERE Buildings.PrereqDistrict = 'DISTRICT_CAMPUS';
+-- update ModifierArguments set Amount = 2 where ModifierId = select 'SUK_DAMRONG_SIAM_SOCIETY_' || BuildingType from Buildings WHERE Buildings.PrereqDistrict = 'DISTRICT_THEATER';
+-- -- Middle 3
+-- update ModifierArguments set Amount = 10 where ModifierId = 'SUK_DAMRONG_KHWAM_SIWILAI_CULTURE' or 'SUK_DAMRONG_KHWAM_SIWILAI_SCIENCE';
+-- --------------------------------------------------------------------------------
+-- -- RequirementSets & RequirementSetRequirements
+-- insert or ignore into RequirementSets
+--         (RequirementSetId,                      RequirementSetType)
+-- values 
+--         ('SUK_DAMRONG_CAMPUS_REQUIREMENTS',     'REQUIREMENTSET_TEST_ALL'),
+--         ('SUK_DAMRONG_THEATER_REQUIREMENTS',    'REQUIREMENTSET_TEST_ALL');
+-- insert or ignore into RequirementSetRequirements
+--         (RequirementSetId,                      RequirementId)
+-- values
+--         ('SUK_DAMRONG_CAMPUS_REQUIREMENTS',     'SUK_DAMRONG_CAMPUS'),
+--         ('SUK_DAMRONG_THEATER_REQUIREMENTS',    'SUK_DAMRONG_THEATER');
+-- -- 暹罗-那莱
+-- update ModifierArguments set Amount = 2 where ModifierId = 'SUK_SIAMOISES_EXTRA_INFLUENCE';
+-- 
+--------------------------------------------------------------------------------
+-- ZIMBABWE UA UI LA not completed.
 -- update ModifierArguments set Amount = 1 where ModifierId = 'GEDEMO_ZIMBABWE_TRAIT_CULTURE_IMPROVEMENT_PLANTATION_TRADE';
 
 -- delete from TraitModifiers where ModifierId = DZIMBABWE_BUFF_ADJACENT_TILES;

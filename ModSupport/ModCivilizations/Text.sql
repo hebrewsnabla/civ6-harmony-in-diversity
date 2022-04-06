@@ -795,6 +795,7 @@ values
     ("LOC_IMPROVEMENT_GEDEMO_DZIMBABWE_DESCRIPTION",                                      "Masonry unlocks the Builder ability to construct Dzimbabwes, unique improvement to Great Zimbabwe. [NEWLINE]+2 [ICON_FOOD] Food. +2 [ICON_GOLD] Gold. +1 [ICON_HOUSING] Housing.[NEWLINE]Cities receive +1 [ICON_AMENITIES] Amenity from their first Dzimbabwe Improvement. Upon discovering Natural History, cities receive +1 [ICON_AMENITIES] Amenity from their second Dzimbabwe Improvement.[NEWLINE]Tiles receive +1 [ICON_GOLD] Gold if adjacent to a Dzimbabwe. +4 [ICON_Strength] Defense Strength for occupying units. Cannot be constructed adjacent to one another."),
     ("LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_GEDEMO_DZIMBABWE_CHAPTER_HISTORY_PARA_1",   "A Dzimbabwe is a walled fort or citadel. It was a place for the local leader to live, and a point of defense in case of city attack. Dzimbabwe is a Shona name that, while the translation varies, can mean houses of stone. The ruins contain numerous stone enclosures with soaring walls as tall as 11 meters (36 feet). They were made without the use of mortar. Some scholars think that the city's rulers secluded themselves in a hilltop area where they could conduct rainmaking ceremonies, while others think that the city's rulers were willing to mix with people from different walks of life. Some scholars also think that the city's rulers didn't have a permanent palace but that when a ruler died the heir ruled from wherever they happened to be living at the time.");
 
+    -- STUU expansion
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -1851,7 +1852,7 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TUN_PERAK_CHAPTER_HISTORY_PARA_2",                            "由于他的效率和智慧，敦霹雳在四个苏丹的统治下担任顾问，他不仅是保护马六甲的有效统治者，而且在马六甲海峡的十几个州的殖民统治中发挥了重要作用。作为一个具有强大领导力的人，敦霹雳的扩张有助于提升马六甲国力，加强其在政治、社会和经济方面的地位，他与中国、奥斯曼帝国、阿拉伯诸国等国家建立了外交关系。敦霹雳政府所实行的外交政策很快就吸引了世界各地更多的商人与马六甲建立关系。"),
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TUN_PERAK_CHAPTER_HISTORY_PARA_3",                            "霹雳在世时已成为著名的造王者，他于1498年去世，由他的弟弟敦霹雳普提继任。敦霹雳的死被广泛认为是马六甲苏丹国衰退的开始。"),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_CVS_TUN_PERAK_UU_CHAPTER_HISTORY_PARA_1",                             "马来武术的传统大多是口头的，几乎完全靠口口相传。由于没有书面记录，其大部分历史只能通过神话和考古证据来了解。在努桑塔拉发现的最早的武器是削尖的石制工具，如斧头。"),
-    ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_CVS_TUN_PERAK_UU_CHAPTER_HISTORY_PARA_2",                             "一些被称为马来武者的马来武术练习者成为东南亚和中国东南部的游牧船民，他们被描述为拥有多种武器的凶猛战士，会在新加坡、苏门答腊、爪哇和中国南海附近攻击过往船只。像马六甲的伊斯坎达尔-沙阿（Iskandar Shah）这样的当地统治者，依靠当地船民来维持对其领土的控制，他们在该地区的权力斗争中发挥了关键作用，甚至到了殖民时代。");
+    ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_CVS_TUN_PERAK_UU_CHAPTER_HISTORY_PARA_2",                             "一些被称为马来武者的马来武术练习者成为东南亚和中国东南部的游牧船民，他们被描述为拥有多种武器的凶猛战士，会在新加坡、苏门答腊、爪哇和中国南海附近攻击过往船只。像马六甲的伊斯坎达尔-沙阿（Iskandar Shah）这样的当地统治者，依靠当地船民来维持对其领土的控制，他们在该地区的权力斗争中发挥了关键作用，甚至到了殖民时代。"),
 
     -- 264988360_GS'Gedemo Catherine'CN_Add_FI
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GEDEMO_CATHERINE2_NAME",                                       "西伯利亚的财富"),
@@ -2718,8 +2719,8 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_BURMA_CHAPTER_HISTORY_PARA_16",   "奈温的联邦革命委员会停用了宪法并建立了专制的军事统治，将全部注意力转向共产主义和少数民族叛乱团体。该国与外界长期隔绝，因为这位新暴君提倡一种基于他所谓的缅甸社会主义之路的孤立意识形态。在接下来的三十年里，奈温让一个繁荣的国家走上了文化、环境和经济毁灭的灾难性道路。外来游客很少，仅限于仰光、曼德勒和少数靠近中原的其他一些受到严格控制的城镇。叛乱仍然很普遍，在缅甸的许多地区，武装斗争成为一种生活方式。1988年7月，奈温突然宣布准备离开政治舞台。看到终于有可能摆脱军事统治、经济衰退和侵犯人权的行为，成千上万的人走上仰光街头。在随后的所谓“民主之夏”期间，全国各地爆发了示威游行。但在1988年8月8日，军队开始了为期四天的屠杀，向聚集在仰光的成群结队的男女老少开枪。全国至少有10000名示威者被杀。数以千计的学生和民主倡导者逃到被少数民族控制的边境地区，并与民族抵抗运动结成联盟。其中一些团体包括缅甸联邦全国联合政府(NCGUB)、全缅学生民主阵线、缅甸民主联盟，以及位于马那布罗的长期民族民主阵线（克伦民族联盟的前总部，1995年1月并入SLORC）。这些团体共同组成了缅甸全国民主联盟，这是一个代表所有民主团体的组织。"),
     ("zh_Hans_CN",  "LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_BURMA_CHAPTER_HISTORY_PARA_17",   "在1988年的动荡时期，一直在国外生活的国父昂山的女儿昂山素季回到缅甸照顾生病的母亲。她对国家的热爱使她最终留在那里，并带她进入政治领域。为了平息国际社会对其暴力行为的谴责，军方宣布将举行多党选举。在学生和其他反对派领导人的劝说下，昂山素季和志同道合的同僚成立了缅甸全国民主联盟（NLD）。她所在的政党很快获得了全国的支持。就在民主变革似乎迫在眉睫的时候，奈温从幕后征用了军队，以一场“政变”接管了这个国家。1988年9月18日，该国的控制权交给了一个由19个成员组成的缅甸国家法律和秩序恢复委员会（SLORC），随后对反对派进行了恶性镇压。尽管致力于非暴力运动，昂山素季于1989年7月仍因“危害国家”而被软禁，并在接下来的六年里被关押。为了改善形象和吸引外国投资，SLORC于1990年5月27日继续举行了他们承诺的多党选举。尽管SLORC严厉镇压反对党成员（昂山素季被软禁）并且全国完全缺乏言论自由，但昂山素季的全国民主联盟党仍以82%的选票获胜。SLORC既惊讶又愤怒，拒绝承认选举结果，并保留了对权力的压制性控制。"),
     ("zh_Hans_CN",  "LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_BURMA_CHAPTER_HISTORY_PARA_18",   "尽管昂山素季于2002年5月被释放，但军方拒绝放弃权力。将军们没有进行任何形式的对话。缅甸的人道主义局势是灾难性的，内战仍在边境地区肆虐。军事统治导致缅甸一直是一个严重贫困和不发达的国家，缅甸在联合国发展指数中被评为第二个最不发达国家。和平、民主和最基本的人权是不存在的。数以百万计的人因军事统治被迫逃离，分散在世界各地，渴望有一天能回到家乡，与家人团聚，安居乐业。"),
-    ("zh_Hans_CN",  "LOC_UNIT_SUK_MYINSI_NAME",                                                      "闵西骑士"),
-    ("zh_Hans_CN",  "LOC_UNIT_SUK_MYINSI_DESCRIPTION_XP2",                                           "取代胸甲骑兵，战斗力较低而解锁早（金属铸造）。占领或与一个区域相邻时+3[ICON_Strength]战斗力，如果该区域是市中心或军营，则额外再+3[ICON_Strength]战斗力。"),
+    ("zh_Hans_CN",  "LOC_UNIT_SUK_MYINSI_NAME",                                                      "敏西骑士"),
+    ("zh_Hans_CN",  "LOC_UNIT_SUK_MYINSI_DESCRIPTION_XP2",                                           "取代胸甲骑兵，战斗力较低而解锁早（战术）。占领或与一个区域相邻时+3[ICON_Strength]战斗力，如果该区域是市中心或军营，则额外再+3[ICON_Strength]战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SUK_MYINSI_DESCRIPTION",                                            "在区域1格范围内时+3 [ICON_Strength] 战斗力；若该区域为市中心或军营，则再额外+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_SUK_MYINSI_CHAPTER_HISTORY_PARA_1",                   "“Myinsi”（敏西）是一种缅甸骑兵军官，通常负责管理50名左右的骑兵。从17世纪开始，骑兵部队约占一个标准军队的10%。骑兵主要来自上缅甸的世袭村庄。"),
     ("zh_Hans_CN",  "LOC_ABILITY_MYINSI_DISTRICT_COMBAT_MODIFIER_DESCRIPTION",                       "+{1_Amount} 战斗力 来自于附近的区域"),
@@ -2811,15 +2812,11 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_THE_THAI_ALPHABET_INSPIRATION",        "尤里卡和鼓舞提供金币。令c=科技或人文的需求，N = c / 10 + sqrt(c * 10)，则给钱=0.66N。"),
     ("zh_Hans_CN",  "LOC_LEADER_SUK_CHULALONGKORN_NAME",                     "朱拉隆功"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_NAME",              "蒙通体系"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_DESCRIPTION",       "蒙通体系"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_XP2_DESCRIPTION",   "蒙通体系"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_SUK_DAMRONG_NAME",                         "丹隆"),
     ("zh_Hans_CN",  "LOC_AGENDA_SUK_PHRA_PIYA_MAHARAT_NAME",                 "朱拉隆功大帝"),
     ("zh_Hans_CN",  "LOC_AGENDA_SUK_PHRA_PIYA_MAHARAT_DESCRIPTION",          "喜欢那些其他大陆的文明，但是讨厌定居在他首都所在大陆的异大陆文明。"),
     ("zh_Hans_CN",  "LOC_LEADER_SUK_CHULALONGKORN_NAME",                                                             "朱拉隆功"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_NAME",                                                      "道省制度"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_DESCRIPTION",                                               "位于 [ICON_Capital] 首都所在大陆的城市获得+2 [ICON_Food] 食物、+1 [ICON_Culture] 文化值；若至少拥有1个专业化区域，则额外获得+2 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。完成科技“工业化”后，这些加成提升至+3。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_XP2_DESCRIPTION",                                           "市政广场提供额外 [ICON_Citizen] 专家槽位。市政广场及其建筑建造完成时，未派遣出去的 [ICON_Envoy] 使者可转换为 [ICON_Governor] 总督头衔。拥有具备地区性能力的专属特色总督：{LOC_GOVERNOR_SUK_DAMRONG_TITLE}。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SUK_MONTHON_SYSTEM_XP2_DESCRIPTION",                                           "市政广场提供额外 [ICON_Citizen] 专家槽位。市政广场及其建筑建造完成时，未派遣出去的2个[ICON_Envoy]使者可转换为1个[ICON_Governor]总督头衔。拥有具备地区性能力的专属特色总督：{LOC_GOVERNOR_SUK_DAMRONG_TITLE}。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_SUK_DAMRONG_NAME",                                                                 "丹隆"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_SUK_DAMRONG_TITLE",                                                                "摩诃泰"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_SUK_DAMRONG_SHORT_TITLE",                                                          "摩诃泰"),
@@ -3079,5 +3076,7 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_AL_HASAN_CHAPTER_HISTORY_PARA_2",             "伊本·白图泰记录了他在1331年左右对这座城市的访问，并称赞了哈桑的谦逊和宗教信仰。根据传说，苏丹哈桑·伊本·苏莱曼是一个慷慨而聪明的人。 他在麦加学习了几年的科学，在那里他变得“博学多才”。伊本·白图塔对苏丹的慷慨印象深刻，指出他会和乞丐坐在一起吃饭，并且非常慷慨地向所有来看他的人（包括伊本·巴图塔本人）分发礼物。 正是由于这种慷慨，哈桑赢得了“礼物之父”的称号。"),
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_AL_HASAN_CHAPTER_HISTORY_PARA_3",             "伊本·白图泰也对这座城市的规划印象特别深刻，并认为这是基尔瓦在沿海地区取得成功的原因。在哈桑统治期间，基尔瓦见证了胡苏尼库布瓦宫的建造。该遗址由锯齿状的珊瑚块组成，称为珊瑚建筑，现在只能从悬崖上雕刻的破旧楼梯进入，从水中走出。废墟中随处可见传统的斯瓦希里元素，例如与来访商人的客房接壤的阶梯式迎宾厅，以及从其他伊斯兰宫殿借用的元素，例如八角形游泳池、大观众厅和拥有约100间客房的住宅。但苏丹的野心已经超出了他的预算：这座宫殿只被使用了很短的时间，就被遗弃了，并未完工。"),
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_AL_HASAN_CHAPTER_HISTORY_PARA_4",             "同样在他的统治期间，苏丹对基尔瓦大清真寺进行了重大扩建，该清真寺由珊瑚石制成，是同类清真寺中最大的。他从北祈祷堂的东墙开始扩建，四周环绕形成一个大的露天庭院。一个非常狭窄的桶形拱形走廊，配有珊瑚板做装饰，并由珊瑚柱支撑，向南延伸。这个延伸部分稍微向东突出，形成了一个偏离正交平面的形状。在墙壁展开的空间内，两个不规则的小房间前面是一个小门廊，里面有一个装满光滑石英鹅卵石、砂岩脚垫和长凳的水箱。在这个小房间集合的后面是一个稍微大一点的简单的拱形房间。这个长房间通向一个四米宽的方形房间，上面有大圆顶。这座穹顶在《基尔瓦编年史》中有所记载，被认为是非洲东海岸第一个真正的穹顶。它由斜柱支撑，并用珊瑚板装饰。在1331年访问之后，伊本·白图泰记录下了圆顶的辉煌，直到19世纪，它还是东非海岸最大的圆顶。");
+
+    -- STUU expansion
 
 
