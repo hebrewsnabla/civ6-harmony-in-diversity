@@ -483,13 +483,12 @@
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
-      <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <File>Assets/Platforms/Mac/audio/HD_Banks.ini</File>
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File> -->
+      <File>Platforms/Windows/audio/HD_Banks.ini</File>
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
+      <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1912,17 +1911,15 @@
     <File>Assets/Buildings/General_Service_128.dds</File>
     <File>Assets/Buildings/General_Service_256.dds</File>
     <!-- Platforms -->
-    <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-    <File>Assets/Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
-    <!-- Mac -->
-    <File>Assets/Platforms/Mac/audio/HD_Banks.ini</File>
+    <File>Platforms/Windows/audio/HD_Banks.ini</File>
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>

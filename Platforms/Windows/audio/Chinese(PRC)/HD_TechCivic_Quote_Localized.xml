@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\</ProjectRoot>
+		<SourceFilesRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\Chinese(PRC)\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="3370757413" Language="Chinese(PRC)">
+			<ShortName>HD_TechCivic_Quote_Localized</ShortName>
+			<Path>Chinese(PRC)\HD_TechCivic_Quote_Localized.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3100817797" Name="Play_ArchaeologyHD_Quote_1"/>
+				<Event Id="3100817798" Name="Play_ArchaeologyHD_Quote_2"/>
+				<Event Id="776153598" Name="Play_BiologyHD_Quote_1"/>
+				<Event Id="776153597" Name="Play_BiologyHD_Quote_2"/>
+				<Event Id="3759297221" Name="Play_CalendarHD_Quote_1"/>
+				<Event Id="3759297222" Name="Play_CalendarHD_Quote_2"/>
+				<Event Id="2967524327" Name="Play_CompassHD_Quote_1"/>
+				<Event Id="2967524324" Name="Play_CompassHD_Quote_2"/>
+				<Event Id="714688583" Name="Play_EthicsHD_Quote_1"/>
+				<Event Id="714688580" Name="Play_EthicsHD_Quote_2"/>
+				<Event Id="3866050843" Name="Play_EvolutionTheoryHD_Quote_1"/>
+				<Event Id="3866050840" Name="Play_EvolutionTheoryHD_Quote_2"/>
+				<Event Id="35734510" Name="Play_HistoricalPhilosophyHD_Quote_1"/>
+				<Event Id="35734509" Name="Play_HistoricalPhilosophyHD_Quote_2"/>
+				<Event Id="1119323694" Name="Play_ImperialExaminationSystemHD_Quote_1"/>
+				<Event Id="1119323693" Name="Play_ImperialExaminationSystemHD_Quote_2"/>
+				<Event Id="48370447" Name="Play_LiteraryTraditionHD_Quote_1"/>
+				<Event Id="48370444" Name="Play_LiteraryTraditionHD_Quote_2"/>
+				<Event Id="2753569954" Name="Play_PaperMakingHD_Quote_1"/>
+				<Event Id="2753569953" Name="Play_PaperMakingHD_Quote_2"/>
+				<Event Id="3733953404" Name="Play_PhysicsHD_Quote_1"/>
+				<Event Id="3733953407" Name="Play_PhysicsHD_Quote_2"/>
+				<Event Id="2962325586" Name="Play_SocialScienceHD_Quote_1"/>
+				<Event Id="2962325585" Name="Play_SocialScienceHD_Quote_2"/>
+				<Event Id="3888695130" Name="Play_SupplyHD_Quote_1"/>
+				<Event Id="3888695129" Name="Play_SupplyHD_Quote_2"/>
+				<Event Id="3426462580" Name="Stop_Speech_CivicsHD"/>
+				<Event Id="3614429708" Name="Stop_Speech_TechsHD"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="58627921" Language="Chinese(PRC)">
+					<ShortName>Civic_Ethics2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Ethics2_9E69E797.wem</Path>
+				</File>
+				<File Id="72227471" Language="Chinese(PRC)">
+					<ShortName>Tech_Compass2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Compass2_9E69E797.wem</Path>
+				</File>
+				<File Id="125608668" Language="Chinese(PRC)">
+					<ShortName>Civic_ImperialExaminationSystem1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_ImperialExaminationSystem1_9E69E797.wem</Path>
+				</File>
+				<File Id="128189912" Language="Chinese(PRC)">
+					<ShortName>Tech_PaperMaking2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_PaperMaking2_9E69E797.wem</Path>
+				</File>
+				<File Id="180482318" Language="Chinese(PRC)">
+					<ShortName>Civic_HistoricalPhilosophy1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_HistoricalPhilosophy1_9E69E797.wem</Path>
+				</File>
+				<File Id="200687658" Language="Chinese(PRC)">
+					<ShortName>Tech_Biology1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Biology1_9E69E797.wem</Path>
+				</File>
+				<File Id="215232204" Language="Chinese(PRC)">
+					<ShortName>Civic_ImperialExaminationSystem2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_ImperialExaminationSystem2_9E69E797.wem</Path>
+				</File>
+				<File Id="223405828" Language="Chinese(PRC)">
+					<ShortName>Tech_PaperMaking1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_PaperMaking1_9E69E797.wem</Path>
+				</File>
+				<File Id="422984589" Language="Chinese(PRC)">
+					<ShortName>Civic_Supply1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Supply1_9E69E797.wem</Path>
+				</File>
+				<File Id="426868176" Language="Chinese(PRC)">
+					<ShortName>Civic_LiteraryTradition1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_LiteraryTradition1_9E69E797.wem</Path>
+				</File>
+				<File Id="492314285" Language="Chinese(PRC)">
+					<ShortName>Civic_SocialScience1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_SocialScience1_9E69E797.wem</Path>
+				</File>
+				<File Id="592620016" Language="Chinese(PRC)">
+					<ShortName>Civic_EvolutionTheory2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_EvolutionTheory2_9E69E797.wem</Path>
+				</File>
+				<File Id="604226751" Language="Chinese(PRC)">
+					<ShortName>Tech_Calendar2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Calendar2_9E69E797.wem</Path>
+				</File>
+				<File Id="631519508" Language="Chinese(PRC)">
+					<ShortName>Civic_Supply2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Supply2_9E69E797.wem</Path>
+				</File>
+				<File Id="636400989" Language="Chinese(PRC)">
+					<ShortName>Civic_HistoricalPhilosophy2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_HistoricalPhilosophy2_9E69E797.wem</Path>
+				</File>
+				<File Id="675961574" Language="Chinese(PRC)">
+					<ShortName>Civic_Archaeology2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Archaeology2_9E69E797.wem</Path>
+				</File>
+				<File Id="688655763" Language="Chinese(PRC)">
+					<ShortName>Tech_Physics1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Physics1_9E69E797.wem</Path>
+				</File>
+				<File Id="700995911" Language="Chinese(PRC)">
+					<ShortName>Civic_Archaeology1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Archaeology1_9E69E797.wem</Path>
+				</File>
+				<File Id="723748757" Language="Chinese(PRC)">
+					<ShortName>Civic_SocialScience2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_SocialScience2_9E69E797.wem</Path>
+				</File>
+				<File Id="762279146" Language="Chinese(PRC)">
+					<ShortName>Tech_Biology2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Biology2_9E69E797.wem</Path>
+				</File>
+				<File Id="774467123" Language="Chinese(PRC)">
+					<ShortName>Civic_LiteraryTradition2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_LiteraryTradition2_9E69E797.wem</Path>
+				</File>
+				<File Id="847561924" Language="Chinese(PRC)">
+					<ShortName>Tech_Compass1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Compass1_9E69E797.wem</Path>
+				</File>
+				<File Id="990487076" Language="Chinese(PRC)">
+					<ShortName>Tech_Physics2.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Physics2_9E69E797.wem</Path>
+				</File>
+				<File Id="997906322" Language="Chinese(PRC)">
+					<ShortName>Tech_Calendar1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Tech_Calendar1_9E69E797.wem</Path>
+				</File>
+				<File Id="1043907405" Language="Chinese(PRC)">
+					<ShortName>Civic_EvolutionTheory1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_EvolutionTheory1_9E69E797.wem</Path>
+				</File>
+				<File Id="1047325210" Language="Chinese(PRC)">
+					<ShortName>Civic_Ethics1.wav</ShortName>
+					<Path>Voices\Chinese(PRC)\Civic_Ethics1_9E69E797.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
