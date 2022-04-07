@@ -476,3 +476,9 @@ update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_HUNGARY_BLA
 update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
 update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_CUIRASSIER';
 update Units set PrereqTech = 'TECH_RIFLING' where UnitType = 'UNIT_AMERICAN_ROUGH_RIDER';
+insert or replace into TypeTags(Type,Tag)
+select UnitType, 'CLASS_LAND_MILITARY' from Units where FormationClass = 'FORMATION_CLASS_LAND_COMBAT';
+insert or replace into Tags
+    (Tag,                       Vocabulary)
+values
+   ('CLASS_LAND_MILITARY',		'ABILITY_CLASS');
