@@ -218,7 +218,7 @@
 			<Text>生产建造者时+30%建造速度。</Text>
 		</Replace>
 		<Replace Tag="LOC_POLICY_INTEGRATED_SPACE_CELL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>如果一座城市有一所军事学院或一座码头，则为太空竞赛项目+15%建造速度。</Text>
+			<Text>如果一座城市拥有军事学院或码头，则为太空竞赛项目+15%建造速度。</Text>
 		</Replace>
 		<Replace Tag="LOC_POLICY_INTERNATIONAL_WATERS_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>生产航空母舰以外的所有海军单位时+100%建造速度。</Text>

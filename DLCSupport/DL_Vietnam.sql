@@ -99,3 +99,17 @@ values
 delete from TraitModifiers where (ModifierId = 'TRAIT_TRADING_POST_CIVIC_BOOST' or ModifierId = 'TRAIT_TRADING_POST_TECH_BOOST') and TraitType = 'TRAIT_LEADER_KUBLAI';
 --越南种树前移
 update ModifierArguments set Value = 'CIVIC_MYSTICISM' where ModifierId = 'TRAIT_PLANT_MEDIEVAL_WOODS' and Name = 'CivicType';
+insert or replace into District_Adjacencies
+	(DistrictType,								YieldChangeId)
+values
+    ('DISTRICT_THANH',							'Strategic_Production2'),
+    ('DISTRICT_THANH',							'Aerodrome_Industrial_Production'),
+    ('DISTRICT_THANH',							'Station_Production'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_ROMAN_FORT'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_SAILOR_WATCHTOWER'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_FORT'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_AIRSTRIP'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_MOUNTAIN_TUNNEL'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_MISSILE_SILO'),
+--    ('DISTRICT_THANH',							'HD_IMPROVEMENT_ALCAZAR'),
+    ('DISTRICT_THANH',							'HD_IMPROVEMENT_MAORI_PA');

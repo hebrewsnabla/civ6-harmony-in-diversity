@@ -185,14 +185,15 @@ values
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
     ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "+1 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +3 [ICON_GOLD] Gold."),
     ("LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "+2 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +5 [ICON_GOLD] Gold."),
-    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. Gain [ICON_Science] Science equal to 75% of the unit's cost when a non civilian unit is created."),
+    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. +100% Encampment district adjacency bonuses."),
     ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if staring turn in friendly territory."),
     ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if starting turn in friendly territory."),
     -- ("LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "Your international [ICON_TradeRoute] Trade Routes provide +1 [ICON_Gold] Gold per Luxury and Strategic resource improved at the destination, as well as +4 [ICON_Culture] Culture and +4 [ICON_Science] Science."),
     ("LOC_POLICY_INTERNATIONAL_SPACE_AGENCY_DESCRIPTION",                             "+2% [ICON_Science] Science per city-state you are the Suzerain of."),
     ("LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100% Campus and Industrial Zone district adjacency bonuses. Regional effects from your Industrial Zone districts reach 3 tiles farther."),
-    ("LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100% Theater Square district adjacency bonuses, and Stadiums generate +1 [ICON_Amenities] Amenity. Regional effects from your Water Park and Entertainment Complex districts reach 3 tiles farther.");
-
+    ("LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100% Theater Square district adjacency bonuses, and Stadiums generate +1 [ICON_Amenities] Amenity. Regional effects from your Water Park and Entertainment Complex districts reach 3 tiles farther."),
+    ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "Weapons Management Service"),
+    ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100% Encampment district adjacency bonuses.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -379,9 +380,11 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "所有商业区每回合提供+1影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+3 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "所有商业区每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+5 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。生产非平民单位时，获得等同于单位花费75%的 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。+100%军营相邻加成。"),
     ("zh_Hans_CN",  "LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "在友好领土开启回合+1 [ICON_Movement] 移动力。"),
     -- ("zh_Hans_CN",  "LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "您的国际 [ICON_TradeRoute] 贸易路线+4 [ICON_Culture] 文化值和+4 [ICON_Science] 科技值，同时目的地已开发的每个奢侈品资源和战略资源为其+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_SPACE_AGENCY_DESCRIPTION",                             "作为宗主国时，每个下辖城邦将使您的 [ICON_Science] 科技值+2%。"),
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100%学院和工业区相邻加成。来自工业区建筑的辐射范围增加3个单元格。"),
-    ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。");
+    ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "军器监"),
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100%军营相邻加成。");
