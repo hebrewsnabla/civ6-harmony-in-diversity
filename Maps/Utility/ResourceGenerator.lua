@@ -24,6 +24,7 @@ function ResourceGenerator.Create(args)
 		__InitResourceData		= ResourceGenerator.__InitResourceData,
 		__FindValidLocs			= ResourceGenerator.__FindValidLocs,
 		__GetLuxuryResources	= ResourceGenerator.__GetLuxuryResources,
+		__PrepareContinentsData	= ResourceGenerator.__PrepareContinentsData, -- HD
 		__ValidLuxuryPlots		= ResourceGenerator.__ValidLuxuryPlots,
 		__PlaceLuxuryResources		= ResourceGenerator.__PlaceLuxuryResources,
 		__ScoreLuxuryPlots			= ResourceGenerator.__ScoreLuxuryPlots,
@@ -151,181 +152,276 @@ function ResourceGenerator:__InitResourceData()
 		self.iFrequency[self.iResourcesInDB] = row.Frequency;
 		self.iSeaFrequency[self.iResourcesInDB] = row.SeaFrequency;
 		self.aPeakEra[self.iResourcesInDB] = row.PeakEra;
-	    self.iResourcesInDB = self.iResourcesInDB + 1;
+		self.iResourcesInDB = self.iResourcesInDB + 1;
+	end
+end
+
+------------------------------------------------------------------------------
+-- HD rewrite begin
+function ResourceGenerator:__PrepareContinentsData()
+	local continentsInUse = Map.GetContinentsInUse()
+	self.continentInfo = {}
+	local totalPlots = 0
+	local totalLuxuries = #continentsInUse * self.iLuxuriesPerRegion
+	-- print('total luxuries', totalLuxuries)
+	for _, eContinent in ipairs(continentsInUse) do 
+		plots = Map.GetContinentPlots(eContinent)
+		local iNumPlots = #plots
+		local info = {plots=plots, num=iNumPlots, id=eContinent} 
+		totalPlots = totalPlots + iNumPlots
+		table.insert(self.continentInfo, info)
+	end
+	-- Get num luxuries for each continent according to the size of the continent
+	local remainsAmount = totalLuxuries
+	for _, cont in ipairs(self.continentInfo) do
+		cont.plotsRatio = cont.num / totalPlots
+		local requiredAmount = totalLuxuries * cont.plotsRatio
+		cont.numLuxuries = math.floor(requiredAmount)
+		cont.reminder = requiredAmount - cont.numLuxuries
+		remainsAmount = remainsAmount - cont.numLuxuries
+		-- print(cont.id, cont.numLuxuries)
+	end
+	-- assign the remains, first to the ones with larger reminder
+	if remainsAmount > 0 then
+		local tmp = {}
+		for i, cont in ipairs(self.continentInfo) do
+			table.insert(tmp, {score=cont.reminder, id=i})
+		end
+		table.sort(tmp, function(a, b) return a.score > b.score; end)
+		for i = 1, remainsAmount do
+			self.continentInfo[tmp[i].id].numLuxuries = self.continentInfo[tmp[i].id].numLuxuries + 1
+		end
+	end
+	print('HD: continent resources')
+	for _, cont in ipairs(self.continentInfo) do
+		print('id', cont.id, 'assign amount', cont.numLuxuries, 'plots', cont.num, 'ratio', cont.plotsRatio)
 	end
 end
 
 ------------------------------------------------------------------------------
 function ResourceGenerator:__GetLuxuryResources()
-	local continentsInUse = Map.GetContinentsInUse();	
-	self.aLuxuryType = {};
-	local max = self.iLuxuriesPerRegion;
-
+	self:__PrepareContinentsData();
+	self.aLuxuryIds = {}
 	-- Find the Luxury Resources
-	for row = 0, self.iResourcesInDB do
-		local index = self.aIndex[row]
-		if (self.eResourceClassType[row] == "RESOURCECLASS_LUXURY" and self.iFrequency[index] > 0) then
-			table.insert(self.aLuxuryType, index);
+	for row = 0, self.iResourcesInDB - 1 do
+		if (self.eResourceClassType[row] == "RESOURCECLASS_LUXURY" and self.iFrequency[row] > 0) then
+			table.insert(self.aLuxuryIds, row)
 		end
 	end
-	
-	-- Shuffle the table
-	self.aLuxuryType = GetShuffledCopyOfTable(self.aLuxuryType);
-
-	for _, eContinent in ipairs(continentsInUse) do 
-
-		--print ("Retrieved plots for continent: " .. tostring(eContinent));
-
-		self:__ValidLuxuryPlots(eContinent);
-
-		-- next find the valid plots for each of the luxuries
-		local failed = 0;
-		local iI = 1;
-		local index = 1;
-		while max >= iI and failed < 2 do 
-			local eChosenLux = self.aLuxuryType[self.aIndex[index]];
-			local isValid = false;
-			if (eChosenLux ~= nil) then
-				isValid = true;
-			end
-			
-			if (isValid == true and #self.aLuxuryType > 0) then
-				table.remove(self.aLuxuryType,index);
-				self:__PlaceLuxuryResources(eChosenLux, eContinent);
-
-				index = index + 1;
-				iI = iI + 1;
-				failed = 0;
-			end
-
-			if index > #self.aLuxuryType then
-				index = 1;
-				failed = failed + 1;
-			elseif (isValid == false) then
-				failed = failed + 1;
-			end
+	self.aLuxuryIds = GetShuffledCopyOfTable(self.aLuxuryIds)
+	local cur_index = 0;
+	for i, cont in ipairs(self.continentInfo) do
+		local num = cont.numLuxuries
+		for j = 1, num do
+			self:__PlaceLuxuryResources(self.aLuxuryIds[cur_index + j], i)
 		end
+		cur_index = cur_index + num
 	end
 end
 
-------------------------------------------------------------------------------
-function ResourceGenerator:__ValidLuxuryPlots(eContinent)
-	-- go through each plot on the continent and put the luxuries	
-	local iSize = #self.aLuxuryType;
-	local iBaseScore = 1;
-	self.iTotalValidPlots = 0;
-
-	plots = Map.GetContinentPlots(eContinent);
-	local iNumPlots = #plots;
-	
-	for i, plot in ipairs(plots) do
-
-		local bCanHaveSomeResource = false;
-		local pPlot = Map.GetPlotByIndex(plot);
-
-		if(pPlot~=nil and pPlot:IsWater() == false) then
-
-			-- See which resources can appear here
-			for iI = 1, iSize do
-				local bIce = false;
-
-				if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
-					bIce = true;
-				end
-			
-				if (ResourceBuilder.CanHaveResource(pPlot, self.eResourceType[self.aLuxuryType[iI]]) and bIce == false) then
-					row = {};
-					row.MapIndex = plot;
-					row.Score = iBaseScore;
-
-					table.insert (self.aaPossibleLuxLocs[self.aLuxuryType[iI]], row);
-					bCanHaveSomeResource = true;
+-- ------------------------------------------------------------------------------
+function ResourceGenerator:__PlaceLuxuryResources(chosenLuxID, continentID)
+	local cont = self.continentInfo[continentID]
+	local possiblePlots = {};
+	local numToPlace = self.iTargetPercentage / 100 * cont.num * self.iLuxuryPercentage / 100 / cont.numLuxuries;
+	for i, plot in ipairs(cont.plots) do
+		local pPlot = Map.GetPlotByIndex(plot)
+		if (pPlot~=nil and pPlot:IsWater() == false) then
+			if (ResourceBuilder.CanHaveResource(pPlot, self.eResourceType[chosenLuxID])) then
+				local score = 500
+				local adjResources = ResourceBuilder.GetAdjacentResourceCount(pPlot)
+				score = score / ((adjResources + 1) * 3.75)
+				score = score + TerrainBuilder.GetRandomNumber(200, "Resource Placement Score Adjust") -- origin: 100
+				if adjResources <= 1 then
+					table.insert(possiblePlots, {plotID=plot, score=score})
 				end
 			end
-
-
-			if (bCanHaveSomeResource == true) then
-				self.iTotalValidPlots = self.iTotalValidPlots + 1;
-			end
-
-		end
-
-		-- Compute how many of each resource to place
-	end
-	
-	--This is a fix to make land heavy maps have a more equal amount of luxuries to other maps. Unless it is a legendary start.
-	if(self.iWaterLux == 1 and self.uiStartConfig ~= 3) then
-		iNumPlots = iNumPlots / 2;
-	end
-	
-	self.iOccurencesPerFrequency = self.iTargetPercentage / 100 * iNumPlots * self.iLuxuryPercentage / 100 / self.iLuxuriesPerRegion;
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__PlaceLuxuryResources(eChosenLux, eContinent)
-	-- Go through continent placing the chosen luxuries
-	
-	plots = Map.GetContinentPlots(eContinent);
-	--print ("Occurrences per frequency: " .. tostring(self.iOccurencesPerFrequency));
-	--print("Resource: ", eChosenLux);
-
-	local iTotalPlaced = 0;
-
-	-- Compute how many to place
-	local iNumToPlace = 1;
-	if(self.iOccurencesPerFrequency > 1) then
-		iNumToPlace = self.iOccurencesPerFrequency;
-	end
-
-	-- Score possible locations
-	self:__ScoreLuxuryPlots(eChosenLux, eContinent);
-
-	-- Sort and take best score
-	table.sort (self.aaPossibleLuxLocs[eChosenLux], function(a, b) return a.Score > b.Score; end);
-
-	for iI = 1, iNumToPlace do
-			if (iI <= #self.aaPossibleLuxLocs[eChosenLux]) then
-				local iMapIndex = self.aaPossibleLuxLocs[eChosenLux][iI].MapIndex;
-				local iScore = self.aaPossibleLuxLocs[eChosenLux][iI].Score;
-
-				-- Place at this location
-				local pPlot = Map.GetPlotByIndex(iMapIndex);
-				ResourceBuilder.SetResourceType(pPlot, self.eResourceType[eChosenLux], 1);
-			iTotalPlaced = iTotalPlaced + 1;
-			--print ("   Placed at (" .. tostring(pPlot:GetX()) .. ", " .. tostring(pPlot:GetY()) .. ") with score of " .. tostring(iScore));
 		end
 	end
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__ScoreLuxuryPlots(iResourceIndex, eContinent)
-	-- Clear all earlier entries (some might not be valid if resources have been placed
-	for k, v in pairs(self.aaPossibleLuxLocs[iResourceIndex]) do
-		self.aaPossibleLuxLocs[iResourceIndex][k] = nil;
+	table.sort(possiblePlots, function(a, b) return a.score > b.score; end)
+	local numPossiblePlots = #possiblePlots
+	print('num to place', numToPlace, 'possible plots', numPossiblePlots)
+	for i = 1, numToPlace do
+		if i > numPossiblePlots then
+			break
+		end
+		local pPlot = Map.GetPlotByIndex(possiblePlots[i].plotID)
+		ResourceBuilder.SetResourceType(pPlot, self.eResourceType[chosenLuxID], 1)
 	end
+end
+-- HD rewrite end
 
-	plots = Map.GetContinentPlots(eContinent);
-	for i, plot in ipairs(plots) do
-		local pPlot = Map.GetPlotByIndex(plot);
-		local bIce = false;
+-- ------------------------------------------------------------------------------
+-- function ResourceGenerator:__GetLuxuryResources()
+-- 	local continentsInUse = Map.GetContinentsInUse();	
+-- 	self.aLuxuryType = {};
+-- 	local max = self.iLuxuriesPerRegion;
+
+-- 	-- Find the Luxury Resources
+-- 	for row = 0, self.iResourcesInDB do
+-- 		local index = self.aIndex[row]
+-- 		if (self.eResourceClassType[row] == "RESOURCECLASS_LUXURY" and self.iFrequency[index] > 0) then
+-- 			table.insert(self.aLuxuryType, index);
+-- 		end
+-- 	end
+	
+-- 	-- Shuffle the table
+-- 	self.aLuxuryType = GetShuffledCopyOfTable(self.aLuxuryType);
+
+-- 	for _, eContinent in ipairs(continentsInUse) do 
+
+-- 		--print ("Retrieved plots for continent: " .. tostring(eContinent));
+
+-- 		self:__ValidLuxuryPlots(eContinent);
+
+-- 		-- next find the valid plots for each of the luxuries
+-- 		local failed = 0;
+-- 		local iI = 1;
+-- 		local index = 1;
+-- 		while max >= iI and failed < 2 do 
+-- 			local eChosenLux = self.aLuxuryType[self.aIndex[index]];
+-- 			local isValid = false;
+-- 			if (eChosenLux ~= nil) then
+-- 				isValid = true;
+-- 			end
+			
+-- 			if (isValid == true and #self.aLuxuryType > 0) then
+-- 				table.remove(self.aLuxuryType,index);
+-- 				self:__PlaceLuxuryResources(eChosenLux, eContinent);
+
+-- 				index = index + 1;
+-- 				iI = iI + 1;
+-- 				failed = 0;
+-- 			end
+
+-- 			if index > #self.aLuxuryType then
+-- 				index = 1;
+-- 				failed = failed + 1;
+-- 			elseif (isValid == false) then
+-- 				failed = failed + 1;
+-- 			end
+-- 		end
+-- 	end
+-- end
+
+-- ------------------------------------------------------------------------------
+-- function ResourceGenerator:__ValidLuxuryPlots(eContinent)
+-- 	-- go through each plot on the continent and put the luxuries	
+-- 	local iSize = #self.aLuxuryType;
+-- 	local iBaseScore = 1;
+-- 	self.iTotalValidPlots = 0;
+
+-- 	plots = Map.GetContinentPlots(eContinent);
+-- 	local iNumPlots = #plots;
+	
+-- 	for i, plot in ipairs(plots) do
+
+-- 		local bCanHaveSomeResource = false;
+-- 		local pPlot = Map.GetPlotByIndex(plot);
+
+-- 		if(pPlot~=nil and pPlot:IsWater() == false) then
+
+-- 			-- See which resources can appear here
+-- 			for iI = 1, iSize do
+-- 				local bIce = false;
+
+-- 				if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
+-- 					bIce = true;
+-- 				end
+			
+-- 				if (ResourceBuilder.CanHaveResource(pPlot, self.eResourceType[self.aLuxuryType[iI]]) and bIce == false) then
+-- 					row = {};
+-- 					row.MapIndex = plot;
+-- 					row.Score = iBaseScore;
+
+-- 					table.insert (self.aaPossibleLuxLocs[self.aLuxuryType[iI]], row);
+-- 					bCanHaveSomeResource = true;
+-- 				end
+-- 			end
+
+
+-- 			if (bCanHaveSomeResource == true) then
+-- 				self.iTotalValidPlots = self.iTotalValidPlots + 1;
+-- 			end
+
+-- 		end
+
+-- 		-- Compute how many of each resource to place
+-- 	end
+	
+-- 	--This is a fix to make land heavy maps have a more equal amount of luxuries to other maps. Unless it is a legendary start.
+-- 	if(self.iWaterLux == 1 and self.uiStartConfig ~= 3) then
+-- 		iNumPlots = iNumPlots / 2;
+-- 	end
+	
+-- 	self.iOccurencesPerFrequency = self.iTargetPercentage / 100 * iNumPlots * self.iLuxuryPercentage / 100 / self.iLuxuriesPerRegion;
+-- end
+
+-- ------------------------------------------------------------------------------
+-- function ResourceGenerator:__PlaceLuxuryResources(eChosenLux, eContinent)
+-- 	-- Go through continent placing the chosen luxuries
+	
+-- 	plots = Map.GetContinentPlots(eContinent);
+-- 	--print ("Occurrences per frequency: " .. tostring(self.iOccurencesPerFrequency));
+-- 	--print("Resource: ", eChosenLux);
+
+-- 	local iTotalPlaced = 0;
+
+-- 	-- Compute how many to place
+-- 	local iNumToPlace = 1;
+-- 	if(self.iOccurencesPerFrequency > 1) then
+-- 		iNumToPlace = self.iOccurencesPerFrequency;
+-- 	end
+
+-- 	-- Score possible locations
+-- 	self:__ScoreLuxuryPlots(eChosenLux, eContinent);
+
+-- 	-- Sort and take best score
+-- 	table.sort (self.aaPossibleLuxLocs[eChosenLux], function(a, b) return a.Score > b.Score; end);
+
+-- 	for iI = 1, iNumToPlace do
+-- 			if (iI <= #self.aaPossibleLuxLocs[eChosenLux]) then
+-- 				local iMapIndex = self.aaPossibleLuxLocs[eChosenLux][iI].MapIndex;
+-- 				local iScore = self.aaPossibleLuxLocs[eChosenLux][iI].Score;
+
+-- 				-- Place at this location
+-- 				local pPlot = Map.GetPlotByIndex(iMapIndex);
+-- 				ResourceBuilder.SetResourceType(pPlot, self.eResourceType[eChosenLux], 1);
+-- 			iTotalPlaced = iTotalPlaced + 1;
+-- 			--print ("   Placed at (" .. tostring(pPlot:GetX()) .. ", " .. tostring(pPlot:GetY()) .. ") with score of " .. tostring(iScore));
+-- 		end
+-- 	end
+-- end
+
+-- ------------------------------------------------------------------------------
+-- function ResourceGenerator:__ScoreLuxuryPlots(iResourceIndex, eContinent)
+-- 	-- Clear all earlier entries (some might not be valid if resources have been placed
+-- 	for k, v in pairs(self.aaPossibleLuxLocs[iResourceIndex]) do
+-- 		self.aaPossibleLuxLocs[iResourceIndex][k] = nil;
+-- 	end
+
+-- 	plots = Map.GetContinentPlots(eContinent);
+-- 	for i, plot in ipairs(plots) do
+-- 		local pPlot = Map.GetPlotByIndex(plot);
+-- 		local bIce = false;
 		
-		if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
-			bIce = true;
-		end
+-- 		if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
+-- 			bIce = true;
+-- 		end
 
-		if (ResourceBuilder.CanHaveResource(pPlot, self.eResourceType[iResourceIndex]) and bIce == false) then
-			row = {};
-			row.MapIndex = plot;
-			row.Score = 500;
-			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 3.75);
-			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
+-- 		if (ResourceBuilder.CanHaveResource(pPlot, self.eResourceType[iResourceIndex]) and bIce == false) then
+-- 			row = {};
+-- 			row.MapIndex = plot;
+-- 			row.Score = 500;
+-- 			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 3.75);
+-- 			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
 			
-			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleLuxLocs == 0) then
-					table.insert (self.aaPossibleLuxLocs[iResourceIndex], row);
-			end
-		end
-	end
-end
+-- 			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleLuxLocs == 0) then
+-- 					table.insert (self.aaPossibleLuxLocs[iResourceIndex], row);
+-- 			end
+-- 		end
+-- 	end
+-- end
 
 ------------------------------------------------------------------------------
 function ResourceGenerator:__GetWaterLuxuryResources()
