@@ -25,7 +25,7 @@ function GetPlayersWithTrait_DL(sTrait)
 end
 --------------------------------------------------------------------------------
 -- 暹罗-朱拉隆功-蒙通体系-TRAIT_LEADER_SUK_MONTHON_SYSTEM_DL
-local tMonthonPlayers, iMonthonPlayers	= GetPlayersWithTrait("TRAIT_LEADER_SUK_MONTHON_SYSTEM_DL")
+local tMonthonPlayers, iMonthonPlayers	= GetPlayersWithTrait_DL("TRAIT_LEADER_SUK_MONTHON_SYSTEM_DL")
 local tValidTypes_MONTHON_SYSTEM_DL		= {}
 tValidTypes_MONTHON_SYSTEM_DL["DISTRICT_GOVERNMENT"] = true
 for tBuilding in GameInfo.Buildings() do 
