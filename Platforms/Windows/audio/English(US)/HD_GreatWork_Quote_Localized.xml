@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\</ProjectRoot>
+		<SourceFilesRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\English(US)\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\projects\civ6\Civ6\Wwise\Civ6 Project\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="4282669275" Language="English(US)">
+			<ShortName>HD_GreatWork_Quote_Localized</ShortName>
+			<Path>English(US)\HD_GreatWork_Quote_Localized.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1475897952" Name="PLAY_GREAT_WRITING_QUOTE_HD_1"/>
+				<Event Id="1475897955" Name="PLAY_GREAT_WRITING_QUOTE_HD_2"/>
+				<Event Id="1475897954" Name="PLAY_GREAT_WRITING_QUOTE_HD_3"/>
+				<Event Id="1475897957" Name="PLAY_GREAT_WRITING_QUOTE_HD_4"/>
+				<Event Id="280632403" Name="Stop_Speech_GreatWriting_HD"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="46301086" Language="English(US)">
+					<ShortName>GreatWriting_ZhuangZhou1.wav</ShortName>
+					<Path>Voices\English(US)\GreatWriting_ZhuangZhou1_9E69E797.wem</Path>
+				</File>
+				<File Id="241809276" Language="English(US)">
+					<ShortName>GreatWriting_SiMaQian1.wav</ShortName>
+					<Path>Voices\English(US)\GreatWriting_SiMaQian1_9E69E797.wem</Path>
+				</File>
+				<File Id="336992502" Language="English(US)">
+					<ShortName>GreatWriting_ZhuangZhou2.wav</ShortName>
+					<Path>Voices\English(US)\GreatWriting_ZhuangZhou2_9E69E797.wem</Path>
+				</File>
+				<File Id="370559131" Language="English(US)">
+					<ShortName>GreatWriting_SiMaQian2.wav</ShortName>
+					<Path>Voices\English(US)\GreatWriting_SiMaQian2_9E69E797.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

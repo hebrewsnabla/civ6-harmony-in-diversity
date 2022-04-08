@@ -25,7 +25,7 @@
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, 阿伟, 榖音, 奥伊米亚, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, 阿伟, 榖音, 奥伊米亚, 凯欧利, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -483,12 +483,12 @@
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
-      <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File> -->
+      <File>Platforms/Windows/audio/HD_Banks.ini</File>
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
+      <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1913,11 +1913,15 @@
     <File>Assets/Buildings/General_Service_128.dds</File>
     <File>Assets/Buildings/General_Service_256.dds</File>
     <!-- Platforms -->
-    <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
+    <File>Platforms/Windows/audio/HD_Banks.ini</File>
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>
