@@ -398,7 +398,7 @@ UPDATE PseudoYields SET DefaultValue = 6.0 WHERE PseudoYieldType = 'PSEUDOYIELD_
 -- original way to lower relic price.
 --UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_GREATWORK_RELIC';
 -- gaurantees ocean maps classical time.
-update Eras_XP1 set GameEraMinimumTurns = 30 where EraType = 'ERA_CLASSICAL'; -- for winged hussar
+--update Eras_XP1 set GameEraMinimumTurns = 30 where EraType = 'ERA_CLASSICAL'; -- for winged hussar
 
 --update DiplomaticStateActions set Cost = 0 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 --update DiplomaticStateActions set Cost = 5 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
