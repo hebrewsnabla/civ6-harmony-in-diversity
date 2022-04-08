@@ -150,7 +150,7 @@ insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 insert or replace into ModifierArguments (ModifierId,   Name,   Value)
-select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 10
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 1
 from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- For high difficulty AI.

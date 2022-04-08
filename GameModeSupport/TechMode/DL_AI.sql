@@ -19,14 +19,15 @@ insert or replace into AiFavoredItems
 	(ListType,					Item,									Favored,	Value)
 values
 -- removes farm and fishing farm from ai favored improvements
-    ('DLAIImprovements','IMPROVEMENT_FARM',0,-200),
-    ('DLAIImprovements','IMPROVEMENT_MINE',1,100),
-    ('DLAIImprovements','IMPROVEMENT_QUARRY',1,100),
-    ('DLAIImprovements','IMPROVEMENT_LUMBER_MILL',1,100),
-    ('DLAIImprovements','IMPROVEMENT_PLANTATION',1,100),
-    ('DLAIImprovements','IMPROVEMENT_FISHING_BOATS',1,100),
-    ('DLAIImprovements','IMPROVEMENT_PASTURE',1,100),   
-    ('DLAIImprovements','IMPROVEMENT_CAMP',1,100),  
+    ('DLAIImprovements','IMPROVEMENT_FARM',         1,100),
+    ('DLAIImprovements','IMPROVEMENT_FISHERY',      1,100),
+    ('DLAIImprovements','IMPROVEMENT_MINE',         0,-50),
+    ('DLAIImprovements','IMPROVEMENT_QUARRY',       0,-50),
+    ('DLAIImprovements','IMPROVEMENT_LUMBER_MILL',  0,-50),
+    ('DLAIImprovements','IMPROVEMENT_PLANTATION',   0,-50),
+    ('DLAIImprovements','IMPROVEMENT_FISHING_BOATS',0,-50),
+    ('DLAIImprovements','IMPROVEMENT_PASTURE',      0,-50),   
+    ('DLAIImprovements','IMPROVEMENT_CAMP',         0,-50),  
 -- ask ai to build more industrial zone
 	('DLAdjustDistricts', 		'DISTRICT_INDUSTRIAL_ZONE', 			1, 			1000),
 -- increase ai's favor to goverment plaza and diplomatic quarter
@@ -58,6 +59,7 @@ values
     ('DLAdjustTechs', 'TECH_WRITING', 1, 0),
 	-- set several tech goals for ai. maybe civil engineering is a good line.
     ('DLAdjustTechs', 'TECH_IRRIGATION', 0, 3),
+    ('DLAdjustTechs', 'TECH_CALENDAR_HD',  1, 10),
 	-- unlocks industrial zone for ai. hope they can build more.
     ('DLAdjustTechs', 'TECH_IRON_WORKING', 1, 10),
 	--helps ai to goto machinery
@@ -102,7 +104,7 @@ values
     ('DLAdjustBuildings', 'BUILDING_LIBRARY', 1, 20),
     ('DLAdjustBuildings', 'BUILDING_JNR_SCHOOL', 1, 30),
     ('DLAdjustBuildings', 'BUILDING_JNR_ARCHITECTURE', 1, 100),
-	('DLAdjustBuildings', 'BUILDING_JNR_LIBERAL_ARTS', 0, -20),
+	('DLAdjustBuildings', 'BUILDING_JNR_LIBERAL_ARTS', 0, -50),
     ('DLAdjustBuildings', 'BUILDING_JNR_EDUCATION', 1, 100),
 	-- these commercial hub building should no longer have high priority.
     --('DLAdjustBuildings', 'BUILDING_MARKET', 1, 30),
@@ -117,8 +119,8 @@ values
     ('DLAdjustBuildings', 'BUILDING_MILITARY_ACADEMY', 1, 0),
 	-- build bathhouse to gain happiness.
     ('DLAdjustBuildings', 'BUILDING_JNR_BATHHOUSE', 1, 100),
-    ('DLAdjustBuildings', 'BUILDING_SEWER', 1, 30);
-
+    ('DLAdjustBuildings', 'BUILDING_SEWER', 1, 30),
+    ('NavalPreferredTechs', 'TECH_MASS_PRODUCTION', 1, 100);
 -- 10 strategics per turn from mars, tries to relief strategic price problem and ai maintaining strategic unit problem.
 --insert or replace into TraitModifiers (TraitType,   ModifierId)
 --select 'TRAIT_LEADER_MAJOR_CIV',                    'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType
@@ -131,9 +133,9 @@ values
 --insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 --select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'ResourceType', ResourceType
 --from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
---insert or replace into ModifierArguments (ModifierId,   Name,   Value)
---select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 10
---from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId,   Name,   Value)
+select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 20
+from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- For high difficulty AI.
 -- grant ai animal husbandry
@@ -360,21 +362,21 @@ UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'MedievalYields' AND Item =
 UPDATE AiFavoredItems SET Value = -25  WHERE ListType = 'MedievalYields' AND Item = 'YIELD_FAITH';
 
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_SCIENCE', 1, 100);
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_CULTURE', 1, 30);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_CULTURE', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_FAITH', 1, -25);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_PRODUCTION', 1, 20);
 UPDATE AiFavoredItems SET Value = 20  WHERE ListType =  'RenaissanceYields' AND Item = 'YIELD_FOOD';
 UPDATE AiFavoredItems SET Value = 0 WHERE ListType =  'RenaissanceYields' AND Item = 'YIELD_GOLD';
 
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_SCIENCE', 1, 100);
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_CULTURE', 1, 30);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_CULTURE', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_FOOD', 1, 20);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('RenaissanceYields', 'YIELD_PRODUTION', 1, 20);
 UPDATE AiFavoredItems SET Value = -50  WHERE ListType = 'IndustrialYields' AND Item = 'YIELD_FAITH';
 UPDATE AiFavoredItems SET Value = -25 WHERE ListType =  'IndustrialYields' AND Item = 'YIELD_GOLD';
 
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernYields', 'YIELD_SCIENCE', 1, 100);
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernYields', 'YIELD_CULTURE', 1, 30);
+insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernYields', 'YIELD_CULTURE', 1, 0);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernYields', 'YIELD_FAITH', 1, -50);
 insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('ModernYields', 'YIELD_PRODUCTION', 1, 20);
 UPDATE AiFavoredItems SET Value = 20  WHERE ListType =  'ModernYields' AND Item = 'YIELD_FOOD';
