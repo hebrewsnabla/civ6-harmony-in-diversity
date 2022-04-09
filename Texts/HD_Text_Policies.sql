@@ -50,15 +50,12 @@ values
     ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
     ("LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "Deepwater Port"),
     ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "+4 [ICON_Production] Production to all coastal city. +6 [ICON_GOLD] Gold and +3 [ICON_Housing] housing to each Seaport."),
-<<<<<<< HEAD
     ("LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "TRAVEL BLOGGER"),
     ("LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "Improvements in your cities yields +200% [ICON_TOURISM] Tourism if the city is [ICON_POWER] Powered."),
     ("LOC_POLICY_GREEN_CITY_NAME",                                                    "GREEN CITY"),
     ("LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "National parks and wonders in your cities yields +100% [ICON_TOURISM] Tourism if a city is located on a Breathtaking tile."),
-=======
     ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "Infrastructure construction"),
     ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "+50% Construction speed when building Aqueduct, Dam, Canal or Neighborhood Districts and their buildings."),
->>>>>>> origin/dev
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
