@@ -9,12 +9,12 @@ update Units set PrereqCivic = 'CIVIC_REFORMED_CHURCH' where UnitType = 'UNIT_PO
 
 -- UU
 -- 美国
-update Units set Cost = 330, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 72, RangedCombat = 0 where UnitType = 'UNIT_AMERICAN_ROUGH_RIDER';
+update Units set Cost = 260, Maintenance = 4, BaseMoves = 5, Range = 0, Combat = 76, RangedCombat = 0 where UnitType = 'UNIT_AMERICAN_ROUGH_RIDER';
 ------ UNIT_AMERICAN_P51
 ------ UNIT_AMERICAN_MINUTEMAN
 -- 阿拉伯
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_ARABIAN_MAMLUK';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_ARABIAN_MAMLUK';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_ARABIAN_MAMLUK';
 ------ UNIT_ARABIAN_CAMEL_ARCHER
 ------ UNIT_ARABIAN_GHAZI
 -- 德国
@@ -105,8 +105,8 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_WW1_INFANTRY' where CivUniqueUn
     and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_AUSTRALIAN_SASR
 -- 波兰
-update Units set Cost = 270, Maintenance = 10, BaseMoves = 4, Range = 0, Combat = 72, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_POLISH_HUSSAR';
+update Units set Cost = 260, Maintenance = 5, BaseMoves = 4, Range = 0, Combat = 76, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_HUSSAR';
 ------ UNIT_POLISH_CHOSEN_INFANTRY
 -- 阿兹特克
 -- delete from TypeTags where Type = 'UNIT_AZTEC_EAGLE_WARRIOR' and Tag = 'CLASS_CAPTURE_WORKER';
@@ -228,8 +228,8 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_INCA_WARAKAQ', 'UNITTYPE_MELEE');
 ------ UNIT_INCA_CHASQUI
 -- 马里
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 60, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
 ------ UNIT_MALI_SOFA
 -- 毛利
 update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 40, RangedCombat = 0 where UnitType = 'UNIT_MAORI_TOA';
@@ -276,8 +276,8 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_COURSER' where CivUniqueUnitTyp
 -- 拜占庭
 update Units set Cost = 80, Maintenance = 2, BaseMoves = 3, Range = 2, Combat = 25, RangedCombat = 35, StrategicResource = NULL where UnitType = 'UNIT_BYZANTINE_DROMON';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_BYZANTINE_DROMON';
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_BYZANTINE_TAGMA';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_BYZANTINE_TAGMA';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_BYZANTINE_TAGMA';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_BYZANTINE_TAGMA';
 ------ UNIT_BYZANTINE_VARANGIAN_GUARD
 -- 高卢
 update Units set Cost = 45 where UnitType = 'UNIT_GAUL_GAESATAE';

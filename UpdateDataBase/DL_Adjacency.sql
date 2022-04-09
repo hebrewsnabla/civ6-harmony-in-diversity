@@ -247,3 +247,61 @@ values
 update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mekewap_SecondBonusAdjacency';
 delete from Adjacency_YieldChanges where ID = 'Mekewap_FirstBonusAdjacency';
 delete from Improvement_Adjacencies where YieldChangeId = 'Mekewap_FirstBonusAdjacency';
+
+--军营地基相邻加成
+--军营的相邻加成：战略资源+2、飞机场+2、火车站+2锤。各种军事设施+1锤（堡垒包括UI，飞机跑道，导弹井、隧道等军工开的改良）。【现在军营的战略资源+1相邻加成是直接复用的工业区的，不要直接改数值，要新写几个专门给军营用的相邻加成，且要适配UD】
+delete from District_Adjacencies where DistrictType = 'DISTRICT_ENCAMPMENT' and YieldChangeId = 'Strategic_Production';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_IKANDA' and YieldChangeId = 'Strategic_Production';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_THANH' and YieldChangeId = 'Strategic_Production';
+
+insert or replace into District_Adjacencies
+	(DistrictType,								YieldChangeId)
+values
+	('DISTRICT_ENCAMPMENT',						'Strategic_Production2'),
+	('DISTRICT_IKANDA',							'Strategic_Production2'),
+	
+	('DISTRICT_ENCAMPMENT',						'Aerodrome_Industrial_Production'),
+	('DISTRICT_IKANDA',							'Aerodrome_Industrial_Production'),
+	
+	('DISTRICT_ENCAMPMENT',						'Station_Production'),
+	('DISTRICT_IKANDA',							'Station_Production'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_ROMAN_FORT'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_ROMAN_FORT'),
+	
+--	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_SAILOR_WATCHTOWER'),
+--	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_SAILOR_WATCHTOWER'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_FORT'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_FORT'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_AIRSTRIP'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_AIRSTRIP'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_MOUNTAIN_TUNNEL'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_MOUNTAIN_TUNNEL'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_MISSILE_SILO'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_MISSILE_SILO'),
+	
+--	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_ALCAZAR'),
+--	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_ALCAZAR'),
+	
+	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_MAORI_PA'),
+	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_MAORI_PA');
+
+
+
+insert or replace into Adjacency_YieldChanges
+	(ID,									Description,					YieldType,				YieldChange,				TilesRequired,				AdjacentImprovement)
+values
+	('HD_IMPROVEMENT_ROMAN_FORT',			'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_ROMAN_FORT'),
+	('HD_IMPROVEMENT_SAILOR_WATCHTOWER',	'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_SAILOR_WATCHTOWER'),
+	('HD_IMPROVEMENT_FORT',					'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_FORT'),
+	('HD_IMPROVEMENT_AIRSTRIP',				'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_AIRSTRIP'),
+	('HD_IMPROVEMENT_MOUNTAIN_TUNNEL',		'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MOUNTAIN_TUNNEL'),
+	('HD_IMPROVEMENT_MISSILE_SILO',			'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MISSILE_SILO'),
+	('HD_IMPROVEMENT_ALCAZAR',				'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_ALCAZAR'),
+	('HD_IMPROVEMENT_MAORI_PA',				'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MAORI_PA'),
+	('HD_IMPROVEMENT_GREAT_WALL',			'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_GREAT_WALL');
+

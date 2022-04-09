@@ -5,7 +5,7 @@ insert or replace into EnglishText
 values
     ("LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "One with Nature"),
     ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +2 [ICON_Amenities] Amenity and +5% to all yields if a city owns at least one natural wonder tile."),
-    ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +1 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. +1 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
+    ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities and +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (on Standard Speed). "),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_DESCRIPTION",          "Receive [ICON_GreatProphet] Great Prophet points when a combat unit defeats a major or minor civilization's unit equal to 50% of the opposing unit's strength (Standard Speed). (God of War Belief)"),
@@ -72,7 +72,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "天人合一"),
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+5%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+1 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果市中心与河流相邻，则城市+2 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房，每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_DESCRIPTION",          "战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。（战争之神）"),

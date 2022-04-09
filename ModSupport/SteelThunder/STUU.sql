@@ -143,7 +143,7 @@ values ('HD_FOREIGN_CONTINENT_MOVEMENT_BONUS',          'Amount',   1);
 update Units set Cost = 75, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 30, Bombard = 40, StrategicResource = NULL where UnitType = 'UNIT_ROMAN_ONAGER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ROMAN_ONAGER';
 -- -- 俄罗斯
-update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
+update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 0, Combat = 50, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_RUSSIAN_DRUZHINA';
 -- -- 挪威
@@ -205,8 +205,8 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 update Units set Cost = 150, Maintenance = 3, BaseMoves = 2, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER';
 -- -- 法国
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_FRENCH_GENDARME';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_FRENCH_GENDARME';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_FRENCH_GENDARME';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_FRENCH_GENDARME';
 -- -- 刚果
 update Units set Cost = 50, MustPurchase = 0 where UnitType = 'UNIT_KONGO_MEDICINE_MAN';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_KONGO_MEDICINE_MAN',    'UNIT_MEDIC');
@@ -303,8 +303,8 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 update Units set Cost = 40, Maintenance = 1, BaseMoves = 4, Range = 0, Combat = 33, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_KHMER_WAR_CANOE';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_KHMER_WAR_CANOE';
 -- -- 格鲁吉亚
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_GEORGIAN_TADZREULI';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_GEORGIAN_TADZREULI';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_GEORGIAN_TADZREULI';
 -- -- 荷兰
 update Units set Cost = 90, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_DUTCH_SCHUTTERIJ';
@@ -334,8 +334,8 @@ update Units set PrereqTech = 'TECH_GUNPOWDER' where UnitType = 'UNIT_MAORI_TUPA
 update Units set Cost = 180, Maintenance = 5, BaseMoves = 3, Range = 1, Combat = 55, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_MAORI_TUPARA';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_MAORI_TUPARA';
 -- -- 奥斯曼
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 58, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_OTTOMAN_SIPAHI';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_OTTOMAN_SIPAHI';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_OTTOMAN_SIPAHI';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_OTTOMAN_SIPAHI';
 -- -- 腓尼基
 update Units set Cost = 65, Maintenance = 2, BaseMoves = 4, Range = 1, Combat = 35, RangedCombat = 31, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PHOENICIA_NUMIDIAN_CAVALRY';
@@ -382,8 +382,8 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 -- update Units set PrereqTech = 'TECH_CASTLES' where UnitType = 'UNIT_SPANISH_JINETE';
 -- update Units set Cost = 100, Maintenance = 3, BaseMoves = 5, Range = 1, Combat = 46, RangedCombat = 33, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_SPANISH_JINETE';
 -- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SPANISH_JINETE';
-update Units set Cost = 150, Maintenance = 6, BaseMoves = 4, Range = 0, Combat = 55, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
-update Units_XP2 set ResourceCost = 10, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 2 where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
+update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
+update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_PORTUGUESE_KNIGHT_OF_AVIZ';
 
 ---------------------------------------------------------------------------------------------------
 -- Unit ability

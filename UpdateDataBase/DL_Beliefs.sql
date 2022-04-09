@@ -270,7 +270,9 @@ values
 -- Pantheon
 -- update Modifiers set SubjectRequirementSetId = 'PLOT_EIGHT_INCLUDE_CITY_CENTER' where ModifierId = 'GOD_OF_WAR_FAITH_KILLS_MODIFIER';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOD_OF_WAR_FAITH_KILLS_MODIFIER';
-update ModifierArguments set Value = 1 where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER' and Name = 'Amount';
+update Modifiers set SubjectRequirementSetId = 'HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS' where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER';
+update Modifiers set SubjectRequirementSetId = 'HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS' where ModifierId = 'RIVER_GODDESS_HOLY_SITE_HOUSING_MODIFIER';
 update ModifierArguments set Value = 'ERA_MEDIEVAL' where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'EndEra';
 update ModifierArguments set Value = 50 where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 1 where ModifierId = 'GODDESS_OF_FIRE_FEATURES_FAITH_MODIFIER' and Name = 'Amount';
@@ -696,7 +698,7 @@ values
 	('RIVER_GODDESS_FAITH_RIVER_ADJACENCY_MODIFIER',				'Description',			'LOC_DISTRICT_RIVER_FAITH'),
 	('RIVER_GODDESS_GREAT_PROPHET',									'ModifierId',			'RIVER_GODDESS_GREAT_PROPHET_MODIFIER'),
 	('RIVER_GODDESS_GREAT_PROPHET_MODIFIER',						'GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
-	('RIVER_GODDESS_GREAT_PROPHET_MODIFIER',						'Amount',				1),
+	('RIVER_GODDESS_GREAT_PROPHET_MODIFIER',						'Amount',				2),
 	('DIVINE_SPARK_CAMPUS',											'ModifierId',			'DIVINE_SPARK_CAMPUS_MODIFIER'),
 	('DIVINE_SPARK_CAMPUS_MODIFIER',								'GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST'),
 	('DIVINE_SPARK_CAMPUS_MODIFIER',								'Amount',				2),	
