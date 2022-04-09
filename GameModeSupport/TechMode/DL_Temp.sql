@@ -78,13 +78,3 @@
 --update PseudoYields set DefaultValue = 0.2 where PseudoYieldType = 'PSEUDOYIELD_HAPPINESS'; -- previous 1
 --update AiFavoredItems set Value = 30 where ListType = 'CatherineAltLuxuries'; -- previous 50
 
--- Try to change AI's favor on great people projects by set the default value to half of it used to be, by FiveYear
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_GENERAL';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_ADMIRAL';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_ENGINEER';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_MERCHANT';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_PROPHET';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_SCIENTIST';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_WRITER';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_ARTIST';
-UPDATE PseudoYields SET DefaultValue = 0.25 WHERE PseudoYieldType = 'PSEUDOYIELD_GPP_MUSICIAN';
