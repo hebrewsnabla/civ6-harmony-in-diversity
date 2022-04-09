@@ -1,9 +1,11 @@
-version 1.2.5.1
-cat AI相关改动
-subcat 时代长度
-古典时代最短时长增加到30t.(应对当前ai海图古典过快问题)
-暂时回滚为不动.
-end subcat
+version 1.2.7
+
+order 10000
+cat AI相关改动（AI与科技树测试模式内容）
+//subcat 时代长度
+//古典时代最短时长增加到30t.(应对当前ai海图古典过快问题)
+//暂时回滚为不动.
+//end subcat
 subcat 基础产出
 将ai对于[信仰]的判断从1产下调至0.667产.
 将ai对于[金币]的判断从1产下调至0.333产.
@@ -55,3 +57,5 @@ subcat AI海图相关
 将AI海图对海军单位+150%的偏好回调至100%.
 end subcat
 end cat
+
+end order
