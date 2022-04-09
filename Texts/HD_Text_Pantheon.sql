@@ -63,7 +63,7 @@ values
     ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "Lupercal"),
     ("LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "+1 [ICON_CULTURE] Culture from Camps over Luxury and Bonus resources. Holy Site provides +1 [ICON_Faith] Faith to all Camps in this city. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns Camps over Luxury or Bonus resources."),
     ("LOC_BELIEF_HD_SUN_GOD_NAME",                                "Apollo"),
-    ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Holy Site provides +1 [ICON_FAITH] Faith to all Farms in this city. +1 [ICON_FOOD] Food from Farms over resources and Plantations. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Farm over resource or a Plantation.");
+    ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "+1 [ICON_FOOD] Food from Farms over resources and Plantations. +2 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Farm over resource or a Plantation. Holy Site provides +1 [ICON_FAITH] Faith to all Farms in this city.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -85,7 +85,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "种植园+1 [ICON_Culture] 文化值和 +2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力，所有营地+1 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商人）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+1 [ICON_Faith] 信仰值和+1 [ICON_Production] 生产力。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "所有奢侈和加成矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
@@ -130,4 +130,4 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_NAME",                               "牧狼神"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "采集奢侈品资源和加成资源的营地+1 [ICON_Culture] 文化值。圣地区域给所在城市的营地+1 [ICON_Faith] 信仰值。如城市拥有采集奢侈或加成资源的营地，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_NAME",                                "太阳神"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "圣地给所在城市的农场+1 [ICON_FAITH] 信仰值。种植园和改良资源的农场+1 [ICON_FOOD] 食物。如城市拥有种植园或改良资源的农场，则每回合+2 [ICON_GreatProphet] 大预言家点数。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "种植园和改良资源的农场+1 [ICON_FOOD] 食物。如城市拥有种植园或改良资源的农场，则每回合+2 [ICON_GreatProphet] 大预言家点数。圣地给所在城市的农场+1 [ICON_FAITH] 信仰值。");
