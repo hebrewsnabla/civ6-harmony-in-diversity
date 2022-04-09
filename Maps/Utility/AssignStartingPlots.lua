@@ -2193,7 +2193,7 @@ function AssignStartingPlots:__BalancedStrategic(plot, iStartIndex)
     eResourceType   = {};
     eResourceClassType = {};    
     eRevealedEra = {};  
-    local iRange = STRATEGIC_RESOURCE_FERTILITY_STARTING_ERA_RANGE or 1;
+    local iRange = GlobalParameters.STRATEGIC_RESOURCE_FERTILITY_STARTING_ERA_RANGE or 1;
 
     for row in GameInfo.Resources() do
         eResourceType[iResourcesInDB] = row.Hash;

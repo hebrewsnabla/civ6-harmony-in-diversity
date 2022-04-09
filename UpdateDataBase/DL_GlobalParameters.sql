@@ -14,6 +14,7 @@ update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAI
 
 -- Map
 update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
+update GlobalParameters set Value = 3 where Name = 'STRATEGIC_RESOURCE_FERTILITY_STARTING_ERA_RANGE';
 
 -- the distance to netural wonders
 update GlobalParameters set Value = 5 where Name = 'START_DISTANCE_MAJOR_NATURAL_WONDER';

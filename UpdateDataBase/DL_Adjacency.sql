@@ -304,4 +304,5 @@ values
 	('HD_IMPROVEMENT_ALCAZAR',				'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_ALCAZAR'),
 	('HD_IMPROVEMENT_MAORI_PA',				'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MAORI_PA'),
 	('HD_IMPROVEMENT_GREAT_WALL',			'LOC_HD_ENCAMPMENT_AFJACENCY',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_GREAT_WALL');
-
+delete from Adjacency_YieldChanges where AdjacentImprovement = 'IMPROVEMENT_SAILOR_WATCHTOWER'
+	and not exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_SAILOR_WATCHTOWER');
