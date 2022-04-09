@@ -253,15 +253,12 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座海港额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
-<<<<<<< HEAD
     ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "旅游博主"), 
     ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "通电的城市中的改良设施提供的 [ICON_TOURISM] 旅游业绩+200%。"),
     ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_NAME",                                                    "绿色都市"),
     ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "位于惊艳单元格的城市国家公园和奇观旅游业绩+100%。"), 
-=======
     ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "基础设施建设"),
     ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "修建水渠、堤坝、运河和社区以及其中建筑时+50%建造速度。"),
->>>>>>> origin/dev
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
@@ -401,4 +398,4 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100%学院和工业区相邻加成。来自工业区建筑的辐射范围增加3个单元格。"),
     ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。"),
     ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "军器监"),
-    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100%军营生产力相邻加成。");
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "军营来自相邻加成的生产力+100%");
