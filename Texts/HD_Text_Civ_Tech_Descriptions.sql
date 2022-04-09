@@ -63,6 +63,7 @@ values
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Power when adjacent to at least one friendly melee unit. [NEWLINE] Ranged units gain ability: +5 [ICON_Strength] Combat Power when attacking from a hill. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
     ("LOC_TECH_COMPUTERS_DESCRIPTION",                                                      "Grants the ability to construct an additional Spy. +20% [ICON_Tourism] Tourism across your empire."),
     ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
+    ("LOC_TECH_FLIGHT_DESCRIPTION",                                                         "Receive [ICON_Tourism] Tourism on partial improvements that provide [ICON_Science] Science, [ICON_Culture] Culture, [ICON_Faith] Faith or [ICON_PRODUCTION] Production. Amount of [ICON_Tourism] Tourism generated is equivalent to these yields."),
     -- New Civics
     ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                                "Literary Tradition"),
     ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                                 "Supply"),
@@ -217,6 +218,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                "收获和移除地貌的产出+50%。非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                           "所有除 [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。"),
+    ("zh_Hans_CN",  "LOC_TECH_FLIGHT_DESCRIPTION",                                          "为部分提供 [ICON_SCIENCE] 科技值， [ICON_Culture] 文化值， [ICON_Faith] 信仰值或 [ICON_Production] 生产力的改良设施提供等于其产出的 [ICON_Tourism] 旅游业绩加成。"),
     -- ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                   "营地+1 [ICON_FOOD] 食物。"),
     -- ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
     ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                 "营地+1 [ICON_PRODUCTION] 生产力。伐木场改良+1 [ICON_PRODUCTION] 生产力。"),
