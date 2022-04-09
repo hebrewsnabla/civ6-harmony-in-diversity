@@ -209,14 +209,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
-    <Criteria id="AITest_Mode_Expansion2">
+    <!-- <Criteria id="AITest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_AITEST</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria>
+    </Criteria> -->
     <Criteria id="MPTest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -225,14 +225,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
-    <Criteria id="Wild_Mode_Expansion2">
+    <!-- <Criteria id="Wild_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_WILD</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria>
+    </Criteria> -->
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1361,7 +1361,7 @@
       <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
     </UpdateDatabase>
     <!-- Dev Test -->
-    <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
+    <!-- <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18000</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
@@ -1374,7 +1374,7 @@
     <UpdateIcons id="DevTest_update_icon" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
-    </UpdateIcons>
+    </UpdateIcons> -->
     <!-- Military Testing -->
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1402,7 +1402,7 @@
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Wild Test -->
-    <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
+    <!-- <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
       <Properties><LoadOrder>18250</LoadOrder></Properties>
       <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/WildMode/HD_Wild.sql</File>
@@ -1414,7 +1414,7 @@
     <UpdateIcons id="Wild_update_icon" criteria="Wild_Mode_Expansion2">
       <Properties><LoadOrder>18251</LoadOrder></Properties>
       <File>GameModeSupport/WildMode/HD_Icons.xml</File>
-    </UpdateIcons>
+    </UpdateIcons> -->
     <!-- MultiPlayer -->
     <UpdateDatabase id="MPTest_update" criteria="MPTest_Mode_Expansion2">
       <Properties><LoadOrder>18500</LoadOrder></Properties>
@@ -1503,16 +1503,16 @@
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
     <File>GameModeSupport/TechMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
-    <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
+    <!-- <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
-    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
+    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File> -->
       <!-- Wild Mode -->
-    <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
+    <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
     <File>GameModeSupport/WildMode/HD_Texts.sql</File>
-    <File>GameModeSupport/WildMode/HD_Icons.xml</File>
+    <File>GameModeSupport/WildMode/HD_Icons.xml</File> -->
     <!-- Multi Player Test Mode -->
     <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
     <!-- Gameplay -->
