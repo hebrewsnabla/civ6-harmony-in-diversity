@@ -31,6 +31,7 @@ local BASE_BuildActionModHook = BuildActionModHook;
 local BASE_LateInitialize = LateInitialize;
 local BASE_OnUnitActionClicked = OnUnitActionClicked;
 local BASE_AddActionButton = AddActionButton;
+local BASE_OnUnitActionClicked_FoundCity = OnUnitActionClicked_FoundCity;
 local BASE_GetUnitActionsTable = GetUnitActionsTable;
 
 local m_ShouldUpdateBestImprovement = false;
@@ -294,6 +295,41 @@ function AddActionButton(instance:table, action:table)
     end
     BASE_AddActionButton(instance, action)
 end
+
+-- ===========================================================================
+--  UnitAction<FoundCity> was clicked.
+-- ===========================================================================
+function OnUnitActionClicked_FoundCity(kResults:table)
+    if (g_isOkayToProcess) then
+        local pSelectedUnit = UI.GetHeadSelectedUnit();
+        if ( pSelectedUnit ~= nil ) then
+            UnitManager.RequestOperation( pSelectedUnit, UnitOperationTypes.FOUND_CITY );
+            -- if kResults ~= nil and table.count(kResults) ~= 0 then
+            --     local popupString:string = Locale.Lookup("LOC_FOUND_CITY_CONFIRM_POPUP");
+            --     if (kResults[UnitOperationResults.FEATURE_TYPE] ~= nil) then
+            --         local featureName = GameInfo.Features[kResults[UnitOperationResults.FEATURE_TYPE]].Name;
+            --         popupString = popupString .. "[NEWLINE]" .. Locale.Lookup("LOC_FOUND_CITY_WILL_REMOVE_FEATURE", featureName);
+            --     end
+                
+            --     --Request confirmation
+            --     local pPopupDialog :table = PopupDialogInGame:new("FoundCityAt"); -- unique identifier
+            --     pPopupDialog:AddText(popupString);
+            --     pPopupDialog:AddConfirmButton(Locale.Lookup("LOC_YES"), function()
+            --         UnitManager.RequestOperation( pSelectedUnit, UnitOperationTypes.FOUND_CITY );
+            --     end);
+            --     pPopupDialog:AddCancelButton(Locale.Lookup("LOC_NO"), nil);
+            --     pPopupDialog:Open();
+            -- else
+            --     UnitManager.RequestOperation( pSelectedUnit, UnitOperationTypes.FOUND_CITY );
+            -- end
+        end
+    end
+    if UILens.IsLayerOn( m_HexColoringWaterAvail ) then
+        UILens.ToggleLayerOff(m_HexColoringWaterAvail);
+    end
+    UILens.SetActive("Default");
+end
+
 
 function OnGreatPersonActivated(unitOwner, unitID, greatPersonClassID, greatPersonIndividualID)
     local owner = Players[unitOwner];

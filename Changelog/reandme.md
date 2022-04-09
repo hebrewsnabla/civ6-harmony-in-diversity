@@ -12,9 +12,28 @@ changelog 每一行作为一个句子，允许空行，`//` 后为注释。在�
 
 `[哈瓦那]：新增沿海惊艳额外+1[琴]。`
 
-将会在最终专栏/百科更新中显示为
+或
 
-> [哈瓦那](http://civ6hd.wiki/zh_Hans_CN/citystates/cse_maritime/CIVILIZATION_CSE_HAVANA.html)：新增沿海惊艳额外+1![](http://civ6hd.wiki/icons/ICON_CULTURE.png)琴。
+`[哈瓦那]：新增沿海惊艳额外+1[文化值]。`
+
+或
+
+`[哈瓦那]：新增沿海惊艳额外+1[ICON_CULTURE]文化值。`
+
+均会在最终专栏/百科更新中显示为
+
+> [哈瓦那](http://civ6hd.wiki/zh_Hans_CN/citystates/cse_maritime/CIVILIZATION_CSE_HAVANA.html)：新增沿海惊艳额外+1![](http://civ6hd.wiki/icons/ICON_CULTURE.png)文化值。
+
+### 预览changelog
+
+请需要预览的开发人员下载java，然后在命令行运行
+
+```
+cd Changelog
+java -jar build.jar 版本号
+```
+
+即可在 `Changelog` 文件夹中生成对应版本的Changelog预览。其中未被成功解析的中括号内容会在命令行中输出。
 
 ### 指定分类
 
@@ -51,8 +70,6 @@ end subsubcat
 end subcat
 end cat
 ```
-
-以上两个例子中对分类 `cat` 的指定都是冗余的，只是为了演示代码。
 
 ### 指定顺序
 

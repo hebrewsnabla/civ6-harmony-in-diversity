@@ -1,0 +1,5 @@
+--------------------------------------------------------------------------------
+-- 暹罗
+-- update Units set cost = 120, Combat = 56, StrategicResource = NULL, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SUK_SIAM_CHANGSUEK'.
+-- 缅甸
+-- update Units set cost = 140, Combat = 63, PrereqTech = 'TECH_MILITARY_TACTICS' where UnitType = 'UNIT_SUK_MYINSI'.

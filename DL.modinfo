@@ -16,16 +16,16 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.2</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.2.5 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.5。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.2.6.1 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.6.1。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.5 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.5。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.6.1 .</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.6.1。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, 榖音, 奥伊米亚, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, 阿伟, 榖音, 奥伊米亚, 凯欧利, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
@@ -209,14 +209,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
-    <Criteria id="AITest_Mode_Expansion2">
+    <!-- <Criteria id="AITest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_AITEST</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria>
+    </Criteria> -->
     <Criteria id="MPTest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -225,14 +225,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
-    <Criteria id="Wild_Mode_Expansion2">
+    <!-- <Criteria id="Wild_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_WILD</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria>
+    </Criteria> -->
     <Criteria id="Monopolies_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -460,7 +460,7 @@
       <File>UI/Replacement/MainMenu.xml</File>
     </ImportFiles>
     <ImportFiles id="HD_Mod_Version_Checker">
-      <Properties><LoadOrder>1</LoadOrder></Properties>
+      <Properties><LoadOrder>10</LoadOrder></Properties>
       <File>UI/Additions/MVC_521b8777-0977-4859-a5ee-3e411a732e5c.lua</File>
       <File>UI/Replacement/StagingRoom.lua</File>
     </ImportFiles>
@@ -483,12 +483,12 @@
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
-      <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
-      <!-- <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File> -->
+      <File>Platforms/Windows/audio/HD_Banks.ini</File>
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File> -->
+      <!-- <File>Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File> -->
+      <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
     </UpdateAudio>
     <ImportFiles id="HD_Assets" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -503,11 +503,11 @@
       <File>Assets/TechCivics/HDTechIcons_128.dds</File>
       <File>Assets/TechCivics/HDTechIcons_160.dds</File>
       <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
-      <File>Assets/TechCivics/Archaeology_38.dds</File>
-      <File>Assets/TechCivics/Archaeology_42.dds</File>
-      <File>Assets/TechCivics/Archaeology_128.dds</File>
-      <File>Assets/TechCivics/Archaeology_160.dds</File>
-      <File>Assets/TechCivics/Archaeology_FOW_42.dds</File>
+      <File>Assets/TechCivics/HDTechCivic_2_30.dds</File>
+      <File>Assets/TechCivics/HDTechCivic_2_38.dds</File>
+      <File>Assets/TechCivics/HDTechCivic_2_42.dds</File>
+      <File>Assets/TechCivics/HDTechCivic_2_128.dds</File>
+      <File>Assets/TechCivics/HDTechCivic_2_160.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -634,6 +634,7 @@
       <Properties><LoadOrder>150000</LoadOrder></Properties>
       <File>UI/Replacement/DL_CityPanelOverview.lua</File>
       <!-- <File>UI/Replacement/DL_DiplomacyRibbon.lua</File> -->
+      <File>UI/Replacement/DL_PantheonChooser.lua</File>
       <File>UI/Replacement/DL_PlotToolTip.lua</File>
       <File>UI/Replacement/DL_ProductionPanel.lua</File>
       <File>UI/Replacement/DL_CityPanel.lua</File>
@@ -651,6 +652,13 @@
         <LoadOrder>150000</LoadOrder>
         <LuaContext>CityPanelOverview</LuaContext>
         <LuaReplace>UI/Replacement/DL_CityPanelOverview.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="DL_PantheonChooser" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>PantheonChooser</LuaContext>
+        <LuaReplace>UI/Replacement/DL_PantheonChooser.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
@@ -850,6 +858,22 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/DL_Adaptation.sql</File>
     </UpdateDatabase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Civilizations.sql</File>
+    </UpdateDataBase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
+    </UpdateDataBase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Units.sql</File>
+    </UpdateDataBase>
+    <AddGameplayScripts id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/ModCiv.lua</File>
+    </AddGameplayScripts>
     <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Text.sql</File>
@@ -1059,6 +1083,7 @@
       <File>Maps/Highlands_XP2.lua</File>
       <File>Maps/Wetlands_XP2.lua</File>
       <!-- New Maps -->
+      <File>Maps/Regular_Pangaea.lua</File>
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
     </ImportFiles>
@@ -1200,6 +1225,7 @@
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
+      <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -1348,7 +1374,7 @@
       <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
     </UpdateDatabase>
     <!-- Dev Test -->
-    <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
+    <!-- <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18000</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
@@ -1361,7 +1387,7 @@
     <UpdateIcons id="DevTest_update_icon" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
-    </UpdateIcons>
+    </UpdateIcons> -->
     <!-- Military Testing -->
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1389,7 +1415,7 @@
       <File>GameModeSupport/TechMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Wild Test -->
-    <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
+    <!-- <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
       <Properties><LoadOrder>18250</LoadOrder></Properties>
       <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/WildMode/HD_Wild.sql</File>
@@ -1401,7 +1427,7 @@
     <UpdateIcons id="Wild_update_icon" criteria="Wild_Mode_Expansion2">
       <Properties><LoadOrder>18251</LoadOrder></Properties>
       <File>GameModeSupport/WildMode/HD_Icons.xml</File>
-    </UpdateIcons>
+    </UpdateIcons> -->
     <!-- MultiPlayer -->
     <UpdateDatabase id="MPTest_update" criteria="MPTest_Mode_Expansion2">
       <Properties><LoadOrder>18500</LoadOrder></Properties>
@@ -1490,16 +1516,16 @@
     <File>GameModeSupport/TechMode/DL_Temp.sql</File>
     <File>GameModeSupport/TechMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
-    <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
+    <!-- <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
-    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
+    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File> -->
       <!-- Wild Mode -->
-    <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
+    <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
     <File>GameModeSupport/WildMode/HD_Texts.sql</File>
-    <File>GameModeSupport/WildMode/HD_Icons.xml</File>
+    <File>GameModeSupport/WildMode/HD_Icons.xml</File> -->
     <!-- Multi Player Test Mode -->
     <File>GameModeSupport/MultiPlayerMode/DL_GameCapabilities.sql</File>
     <!-- Gameplay -->
@@ -1546,6 +1572,7 @@
     <!-- <File>UI/Replacement/DL_DiplomacyRibbon.lua</File> -->
     <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
+    <File>UI/Replacement/DL_PantheonChooser.lua</File>
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>
@@ -1560,6 +1587,7 @@
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
+    <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
@@ -1607,7 +1635,11 @@
     <File>ModSupport/RemovableDistricts/DL_Adaptation.sql</File>
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
     <!-- Mod Civilizations -->
+    <File>ModSupport/ModCivilizations/Civilizations.sql</File>
+    <File>ModSupport/ModCivilizations/Units.sql</File>
+    <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
     <File>ModSupport/ModCivilizations/Text.sql</File>
+    <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
     <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
@@ -1673,6 +1705,7 @@
     <File>Maps/Highlands_XP2.lua</File>
     <File>Maps/Wetlands_XP2.lua</File>
     <!-- New Maps -->
+    <File>Maps/Regular_Pangaea.lua</File>
     <File>Maps/Tiny_Islands.lua</File>
     <File>Maps/Tiny_Lakes.lua</File>
     <!-- Game Scripts -->
@@ -1806,11 +1839,11 @@
     <File>Assets/TechCivics/HDTechIcons_128.dds</File>
     <File>Assets/TechCivics/HDTechIcons_160.dds</File>
     <File>Assets/TechCivics/HDTechIcons_FOW_42.dds</File>
-    <File>Assets/TechCivics/Archaeology_38.dds</File>
-    <File>Assets/TechCivics/Archaeology_42.dds</File>
-    <File>Assets/TechCivics/Archaeology_128.dds</File>
-    <File>Assets/TechCivics/Archaeology_160.dds</File>
-    <File>Assets/TechCivics/Archaeology_FOW_42.dds</File>
+    <File>Assets/TechCivics/HDTechCivic_2_30.dds</File>
+    <File>Assets/TechCivics/HDTechCivic_2_38.dds</File>
+    <File>Assets/TechCivics/HDTechCivic_2_42.dds</File>
+    <File>Assets/TechCivics/HDTechCivic_2_128.dds</File>
+    <File>Assets/TechCivics/HDTechCivic_2_160.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_32.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_38.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsFair_50.dds</File>
@@ -1895,11 +1928,15 @@
     <File>Assets/Buildings/General_Service_128.dds</File>
     <File>Assets/Buildings/General_Service_256.dds</File>
     <!-- Platforms -->
-    <File>Assets/Platforms/Windows/audio/HD_Banks.ini</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_GreatWork_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.bnk</File>
-    <File>Assets/Platforms/Windows/audio/HD_TechCivic_Quote_Localized.txt</File>
-    <File>Assets/Platforms/Windows/audio/SoundbanksInfo.xml</File>
+    <File>Platforms/Windows/audio/HD_Banks.ini</File>
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/Chinese(PRC)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_GreatWork_Quote_Localized.txt</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.bnk</File> -->
+    <!-- <File>Platforms/Windows/audio/English(US)/HD_TechCivic_Quote_Localized.txt</File> -->
+    <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
   </Files>
 </Mod>

@@ -13,6 +13,7 @@
 update Parameters set DefaultValue = 33 where ParameterId = 'TechnologyBoostAmount';
 update Parameters set DefaultValue = 33 where ParameterId = 'CivicBoostAmount';
 
+update Parameters set DefaultValue = 1 where ParameterId = 'GameMode_Suk_Oceans';
 -- delete from Parameters where ParameterId = 'GameMode_TowerDefense'; 
 update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Suzerain';
 -- update Parameters set DefaultValue = 0 where ParameterId = 'CSE_Favor_Consular';

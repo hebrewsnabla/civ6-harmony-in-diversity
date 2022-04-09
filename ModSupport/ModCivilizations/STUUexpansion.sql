@@ -1,0 +1,2 @@
+--------------------------------------------------------------------------------
+-- Add one UU for every mod civilizations when STUU is ON. 

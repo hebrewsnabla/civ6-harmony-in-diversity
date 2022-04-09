@@ -50,10 +50,15 @@ values
     ("LOC_POLICY_BASTIONS_DESCRIPTION",                                               "+6 City [ICON_STRENGTH] Defense Strength. +5 City [ICON_RANGED] Ranged Strength. +100% [ICON_PRODUCTION] Production toward defensive buildings."),
     ("LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "Deepwater Port"),
     ("LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "+4 [ICON_Production] Production to all coastal city. +6 [ICON_GOLD] Gold and +3 [ICON_Housing] housing to each Seaport."),
+<<<<<<< HEAD
     ("LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "TRAVEL BLOGGER"),
     ("LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "Improvements in your cities yields +200% [ICON_TOURISM] Tourism if the city is [ICON_POWER] Powered."),
     ("LOC_POLICY_GREEN_CITY_NAME",                                                    "GREEN CITY"),
     ("LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "National parks and wonders in your cities yields +100% [ICON_TOURISM] Tourism if a city is located on a Breathtaking tile."),
+=======
+    ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "Infrastructure construction"),
+    ("LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "+50% Construction speed when building Aqueduct, Dam, Canal or Neighborhood Districts and their buildings."),
+>>>>>>> origin/dev
     -- 政策卡改名
     ("LOC_POLICY_GRAND_OPERA_NAME",                                                   "Pedagogy"),
     ("LOC_POLICY_EXPROPRIATION_NAME",                                                 "Public Health"),
@@ -187,14 +192,15 @@ values
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
     ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "+1 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +3 [ICON_GOLD] Gold."),
     ("LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "+2 Influence points per turn for Commercial Hubs. Your [ICON_TradeRoute] Trade Routes to a vassal city-state provide +5 [ICON_GOLD] Gold."),
-    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. Gain [ICON_Science] Science equal to 75% of the unit's cost when a non civilian unit is created."),
+    ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. +100% Encampment district Production adjacency bonuses."),
     ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if staring turn in friendly territory."),
     ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if starting turn in friendly territory."),
     -- ("LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "Your international [ICON_TradeRoute] Trade Routes provide +1 [ICON_Gold] Gold per Luxury and Strategic resource improved at the destination, as well as +4 [ICON_Culture] Culture and +4 [ICON_Science] Science."),
     ("LOC_POLICY_INTERNATIONAL_SPACE_AGENCY_DESCRIPTION",                             "+2% [ICON_Science] Science per city-state you are the Suzerain of."),
     ("LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100% Campus and Industrial Zone district adjacency bonuses. Regional effects from your Industrial Zone districts reach 3 tiles farther."),
-    ("LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100% Theater Square district adjacency bonuses, and Stadiums generate +1 [ICON_Amenities] Amenity. Regional effects from your Water Park and Entertainment Complex districts reach 3 tiles farther.");
-
+    ("LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100% Theater Square district adjacency bonuses, and Stadiums generate +1 [ICON_Amenities] Amenity. Regional effects from your Water Park and Entertainment Complex districts reach 3 tiles farther."),
+    ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "Weapons Management Service"),
+    ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100% Encampment district Production adjacency bonuses.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -247,10 +253,15 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_BASTIONS_DESCRIPTION",                                               "城市 [ICON_STRENGTH] 防御力+6。城市 [ICON_RANGED] 远程攻击力+5。建造城墙时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_NAME",                                               "深水港"),
     ("zh_Hans_CN",  "LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION",                                        "为所有沿海城市+4 [ICON_Production] 生产力。每座海港额外+6 [ICON_GOLD] 金币和+3 [ICON_Housing] 住房。"),
+<<<<<<< HEAD
     ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_NAME",                                                "旅游博主"), 
     ("zh_Hans_CN",  "LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION",                                         "通电的城市中的改良设施提供的 [ICON_TOURISM] 旅游业绩+200%。"),
     ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_NAME",                                                    "绿色都市"),
     ("zh_Hans_CN",  "LOC_POLICY_GREEN_CITY_DESCRIPTION",                                             "位于惊艳单元格的城市国家公园和奇观旅游业绩+100%。"), 
+=======
+    ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME",                                   "基础设施建设"),
+    ("zh_Hans_CN",  "LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION",                            "修建水渠、堤坝、运河和社区以及其中建筑时+50%建造速度。"),
+>>>>>>> origin/dev
      -- 政策卡改名
     ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_NAME",                                                   "教育学"),
     ("zh_Hans_CN",  "LOC_POLICY_EXPROPRIATION_NAME",                                                 "公共卫生"),
@@ -383,9 +394,11 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "所有商业区每回合提供+1影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+3 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "所有商业区每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+5 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。生产非平民单位时，获得等同于单位花费75%的 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。+100%军营生产力相邻加成。"),
     ("zh_Hans_CN",  "LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "在友好领土开启回合+1 [ICON_Movement] 移动力。"),
     -- ("zh_Hans_CN",  "LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "您的国际 [ICON_TradeRoute] 贸易路线+4 [ICON_Culture] 文化值和+4 [ICON_Science] 科技值，同时目的地已开发的每个奢侈品资源和战略资源为其+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_SPACE_AGENCY_DESCRIPTION",                             "作为宗主国时，每个下辖城邦将使您的 [ICON_Science] 科技值+2%。"),
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100%学院和工业区相邻加成。来自工业区建筑的辐射范围增加3个单元格。"),
-    ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。");
+    ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "军器监"),
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100%军营生产力相邻加成。");

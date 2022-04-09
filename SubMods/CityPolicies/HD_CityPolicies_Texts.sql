@@ -18,6 +18,8 @@ values
     ('AGRICULTURAL_TAX'),
     ('INDUSTRAIL_TAX'),
     ('DIPLOMATIC_MEETING'),
+    ('JIMI'),
+    ('THEOLOGICAL_SEMINAR'),
     ('FREIGHT'),
     ('FORGING_IRON');
 update CityPolicyTextMaster set
@@ -77,11 +79,16 @@ values
     ("LOC_CITY_POLICY_INDUSTRAIL_TAX",                                "Industrial Tax"),
     ("LOC_CITY_POLICY_INDUSTRAIL_TAX_EFFECT",                         "Each Mine or Quarry provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_PRODUCTION] Production."),
     ("LOC_CITY_POLICY_REVISION_ALMANAC",                              "Revision Almanac"),
-    ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. Need maintenance cost of 8 [ICON_GOLD] Gold. If this city has and Aqueduct, each Plantation receives -2 [ICON_GOLD] Gold, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science in this city; each Farm with any resource receives -1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science."),
+    ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. Need maintenance cost of 6 [ICON_GOLD] Gold. If this city has and Aqueduct, each Plantation receives -2 [ICON_GOLD] Gold, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science in this city; each Farm with any resource receives -1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science. After Calendar is researched, provides +2 [ICON_Production] Production."),
     ("LOC_CITY_POLICY_DIPLOMATIC_MEETING",                            "Diplomatic Meeting"),
     ("LOC_CITY_POLICY_DIPLOMATIC_MEETING_EFFECT",                     "Diplomatic Quarter Project. Diplomatic Quarter and each its building consumes 2 [ICON_Favor] Favor per turn, and provides 5 influence points."),
+    ("LOC_CITY_POLICY_JIMI",                                          "JIMI"),
+    ("LOC_CITY_POLICY_JIMI_EFFECT",                                   "Encampment Project. Consumes 1 [ICON_RESOURCE_HORSES] Horses and 1 [ICON_RESOURCE_IRON] Iron per turn, and provides 2 influence points."),
     ("LOC_CITY_POLICY_FREIGHT",                                       "Freight"),
     ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Commercial Hub Project. Consumes 2 [ICON_RESOURCE_HORSES] Horses per turn, provides 2 [ICON_FOOD] Food and 3 [ICON_PRODUCTION] Production."),
+    ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "Theological Seminar"),
+    ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "Holy Site Project. Consumes 4 [ICON_FAITH] Faith per turn, provides 2 [ICON_CULTURE] Culture and 2 [ICON_SCIENCE] Science. Religious spread from adjacent city pressure is 50% weaker."),
+
     ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"),
     ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Industrial Zone Project. Consumes 2 [ICON_RESOURCE_IRON] Iron per turn, provides 5 [ICON_PRODUCTION] Production.");
 
@@ -110,11 +117,15 @@ values
     ("zh_Hans_CN",  "LOC_CITY_POLICY_INDUSTRAIL_TAX",                                "工业税"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_INDUSTRAIL_TAX_EFFECT",                         "每个矿山或采石场多2 [ICON_GOLD] 金币，但额外减少1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_REVISION_ALMANAC",                              "修编历书"),
-    ("zh_Hans_CN",  "LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "水渠项目。需要8 [ICON_GOLD] 金币的维护费。若此城拥有水渠，城市中每个种植园-2 [ICON_GOLD] 金币，+1 [ICON_Production] 生产力和+1 [ICON_SCIENCE] 科技值；每个改良资源的农场-1 [ICON_Food] 食物，+1 [ICON_Production] 生产力和+1 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "水渠项目。需要6 [ICON_GOLD] 金币的维护费。若此城拥有水渠，城市中每个种植园-2 [ICON_GOLD] 金币，+1 [ICON_Production] 生产力和+1 [ICON_SCIENCE] 科技值；每个改良资源的农场-1 [ICON_Food] 食物，+1 [ICON_Production] 生产力和+1 [ICON_SCIENCE] 科技值。研究“历法”科技后，提供+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_DIPLOMATIC_MEETING",                            "外交会晤"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_DIPLOMATIC_MEETING_EFFECT",                     "外交区项目。外交区和其中的每个建筑每回合消耗 2 [ICON_Favor] 外交支持，提供5点影响力点数。"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_JIMI",                                          "羁縻"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_JIMI_EFFECT",                                   "军营项目。每回合消耗 1 [ICON_RESOURCE_HORSES] 马和1 [ICON_RESOURCE_IRON] 铁，提供2点影响力点数。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT",                                       "货运"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT_EFFECT",                                "商业中心项目。每回合消耗 2 [ICON_RESOURCE_HORSES] 马，提供2 [ICON_FOOD] 食物和3 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "神学研讨"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "圣地项目。每回合消耗 4 [ICON_FAITH] 信仰值，提供2 [ICON_CULTURE] 文化值和2 [ICON_SCIENCE] 科技值。邻近城市的宗教传播的压力减少50%。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON",                                  "锻铁"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "工业区项目。每回合消耗 2 [ICON_RESOURCE_IRON] 铁，提供5 [ICON_PRODUCTION] 生产力。");
 
