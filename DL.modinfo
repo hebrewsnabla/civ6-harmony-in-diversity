@@ -862,6 +862,18 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Civilizations.sql</File>
     </UpdateDataBase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="STUU_Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
+    </UpdateDataBase>
+    <UpdateDataBase id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/Units.sql</File>
+    </UpdateDataBase>
+    <AddGameplayScripts id="Civilizations_mod_support" criteria="Expansion2">
+      <Properties><LoadOrder>15020</LoadOrder></Properties>
+      <File>ModSupport/ModCivilizations/ModCiv.lua</File>
+    </AddGameplayScripts>
     <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/Text.sql</File>
@@ -1213,6 +1225,7 @@
       <File>UI/Icons/HD_Icons_Promotions.xml</File>
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
+      <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -1574,6 +1587,7 @@
     <File>UI/Icons/HD_Icons_Promotions.xml</File>
     <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
     <File>UI/Icons/HD_Icons_Units.xml</File>
+    <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
     <!-- Mod Support -->
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
@@ -1622,7 +1636,10 @@
     <File>ModSupport/RemovableDistricts/DL_Texts.sql</File>
     <!-- Mod Civilizations -->
     <File>ModSupport/ModCivilizations/Civilizations.sql</File>
+    <File>ModSupport/ModCivilizations/Units.sql</File>
+    <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
     <File>ModSupport/ModCivilizations/Text.sql</File>
+    <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
     <File>SubMods/BetterChinese/Text/Byzantium_Gaul_Translations_ConfigText.xml</File>
