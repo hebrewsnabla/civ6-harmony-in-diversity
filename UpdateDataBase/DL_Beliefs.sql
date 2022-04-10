@@ -2703,27 +2703,27 @@ update BeliefsSortIndex set SortIndex =	182 where BeliefType = 'BELIEF_CAPELLANI
 update BeliefsSortIndex set SortIndex =	183 where BeliefType = 'BELIEF_DEFENDER_OF_FAITH';
 
 update BeliefsSortIndex set SortIndex =	190 where BeliefType = 'BELIEF_MISSIONARY_ZEAL';
-update BeliefsSortIndex set SortIndex =	191 where BeliefType = 'BELIEF_SCHOLASTICISM';
-update BeliefsSortIndex set SortIndex =	192 where BeliefType = 'BELIEF_MILLENNIALISM';
-update BeliefsSortIndex set SortIndex =	193 where BeliefType = 'BELIEF_HOLY_ORDER';
+update BeliefsSortIndex set SortIndex =	191 where BeliefType = 'BELIEF_HOLY_ORDER';
+update BeliefsSortIndex set SortIndex =	192 where BeliefType = 'BELIEF_SCHOLASTICISM';
+update BeliefsSortIndex set SortIndex =	193 where BeliefType = 'BELIEF_MILLENNIALISM';
 
 -- Worships(200-229)
-update BeliefsSortIndex set SortIndex =	200 where BeliefType = 'BELIEF_CATHEDRAL';
-update BeliefsSortIndex set SortIndex =	201 where BeliefType = 'BELIEF_GURDWARA';
-update BeliefsSortIndex set SortIndex =	202 where BeliefType = 'BELIEF_MEETING_HOUSE';
-update BeliefsSortIndex set SortIndex =	203 where BeliefType = 'BELIEF_MOSQUE';
-update BeliefsSortIndex set SortIndex =	204 where BeliefType = 'BELIEF_PAGODA';
-update BeliefsSortIndex set SortIndex =	205 where BeliefType = 'BELIEF_SYNAGOGUE';
-update BeliefsSortIndex set SortIndex =	206 where BeliefType = 'BELIEF_WAT';
-update BeliefsSortIndex set SortIndex =	207 where BeliefType = 'BELIEF_STUPA';
-update BeliefsSortIndex set SortIndex =	208 where BeliefType = 'BELIEF_DAR_E_MEHR';
+update BeliefsSortIndex set SortIndex =	200 where BeliefType = 'BELIEF_GURDWARA'; --粮
+update BeliefsSortIndex set SortIndex =	201 where BeliefType = 'BELIEF_MEETING_HOUSE';--锤
+update BeliefsSortIndex set SortIndex =	202 where BeliefType = 'BELIEF_WAT';--瓶
+update BeliefsSortIndex set SortIndex =	203 where BeliefType = 'BELIEF_PAGODA';--琴
+update BeliefsSortIndex set SortIndex =	204 where BeliefType = 'BELIEF_STUPA';--宜居
+update BeliefsSortIndex set SortIndex =	205 where BeliefType = 'BELIEF_SYNAGOGUE';--鸽
+update BeliefsSortIndex set SortIndex =	206 where BeliefType = 'BELIEF_DAR_E_MEHR';--拜火
+update BeliefsSortIndex set SortIndex =	207 where BeliefType = 'BELIEF_MOSQUE';--清真
+update BeliefsSortIndex set SortIndex =	208 where BeliefType = 'BELIEF_CATHEDRAL'; -- 大教堂
 
-update BeliefsSortIndex set SortIndex =	210 where BeliefType = 'BELIEF_JNR_CANDI';
-update BeliefsSortIndex set SortIndex =	211 where BeliefType = 'BELIEF_JNR_DAOGUAN';
-update BeliefsSortIndex set SortIndex =	212 where BeliefType = 'BELIEF_JNR_JINJA';
-update BeliefsSortIndex set SortIndex =	213 where BeliefType = 'BELIEF_JNR_KHALWAT';
-update BeliefsSortIndex set SortIndex =	214 where BeliefType = 'BELIEF_JNR_MANDIR';
-update BeliefsSortIndex set SortIndex =	215 where BeliefType = 'BELIEF_JNR_MBARI';
-update BeliefsSortIndex set SortIndex =	216 where BeliefType = 'BELIEF_JNR_PERIPTEROS';
-update BeliefsSortIndex set SortIndex =	217 where BeliefType = 'BELIEF_JNR_SOBOR';
-update BeliefsSortIndex set SortIndex =	218 where BeliefType = 'BELIEF_JNR_TZACUALLI';
+update BeliefsSortIndex set SortIndex =	210 where BeliefType = 'BELIEF_JNR_SOBOR';--东正
+update BeliefsSortIndex set SortIndex =	211 where BeliefType = 'BELIEF_JNR_PERIPTEROS';--柱廊
+update BeliefsSortIndex set SortIndex =	212 where BeliefType = 'BELIEF_JNR_TZACUALLI';--羽蛇
+update BeliefsSortIndex set SortIndex =	213 where BeliefType = 'BELIEF_JNR_MBARI';--商路
+update BeliefsSortIndex set SortIndex =	214 where BeliefType = 'BELIEF_JNR_MANDIR';--印度
+update BeliefsSortIndex set SortIndex =	215 where BeliefType = 'BELIEF_JNR_JINJA';--神道
+update BeliefsSortIndex set SortIndex =	216 where BeliefType = 'BELIEF_JNR_CANDI';--塔祠
+update BeliefsSortIndex set SortIndex =	217 where BeliefType = 'BELIEF_JNR_DAOGUAN';--道观
+update BeliefsSortIndex set SortIndex =	218 where BeliefType = 'BELIEF_JNR_KHALWAT';--隐修
