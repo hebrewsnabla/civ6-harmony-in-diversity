@@ -292,8 +292,8 @@ values
 insert or replace into BeliefsSortIndex
 	(BeliefType,			SortIndex)
 values
-	('BELIEF_HEART_OF_THE_WOODS',	416),
-	('BELIEF_PAN',					417);
+	('BELIEF_HEART_OF_THE_WOODS',	16),
+	('BELIEF_PAN',					17);
 insert or replace into BeliefModifiers
 	(BeliefType,							ModifierID)
 values
