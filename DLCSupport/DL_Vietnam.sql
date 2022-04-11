@@ -104,7 +104,6 @@ insert or replace into District_Adjacencies
 values
     ('DISTRICT_THANH',							'Strategic_Production2'),
     ('DISTRICT_THANH',							'Aerodrome_Industrial_Production'),
-    ('DISTRICT_THANH',							'Station_Production'),
     ('DISTRICT_THANH',							'HD_IMPROVEMENT_ROMAN_FORT'),
 --    ('DISTRICT_THANH',							'HD_IMPROVEMENT_SAILOR_WATCHTOWER'),
     ('DISTRICT_THANH',							'HD_IMPROVEMENT_FORT'),

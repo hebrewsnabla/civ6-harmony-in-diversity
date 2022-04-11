@@ -57,6 +57,16 @@ values
 update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Station_Production_From_Industry';
 delete from District_Adjacencies where YieldChangeId = 'Station_Production';
 update Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_LEU_STATION' and YieldType = 'YIELD_PRODUCTION';
+insert or replace into District_Adjacencies
+	(DistrictType,		    YieldChangeId)
+values
+	('DISTRICT_ENCAMPMENT', 'Station_Production'),
+	('DISTRICT_IKANDA',	    'Station_Production');
+
+insert or replace into District_Adjacencies
+	(DistrictType,		    YieldChangeId)
+values
+    ('DISTRICT_THANH',		'Station_Production') where exists (select * from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
 
 update Improvement_Tourism set PrereqTech = 'TECH_FLIGHT' where ImprovementType = 'IMPROVEMENT_LEU_STATION';
 insert or ignore into Adjacency_YieldChanges
@@ -65,7 +75,9 @@ values
     ('HD_INDUSTRIAL_STATION_PRODUCTION',       'Placeholder', 'YIELD_PRODUCTION',       1,              1,              'DISTRICT_INDUSTRIAL_ZONE'),
     ('HD_COMMERCIAL_STATION_PRODUCTION',       'Placeholder', 'YIELD_PRODUCTION',       1,              1,              'DISTRICT_COMMERCIAL_HUB'),
     ('HD_HARBOR_STATION_PRODUCTION',           'Placeholder', 'YIELD_PRODUCTION',       1,              1,              'DISTRICT_HARBOR'),
-    ('HD_AERODROME_STATION_PRODUCTION',        'Placeholder', 'YIELD_PRODUCTION',       1,              1,              'DISTRICT_AERODROME');
+    ('HD_AERODROME_STATION_PRODUCTION',        'Placeholder', 'YIELD_PRODUCTION',       1,              1,              'DISTRICT_AERODROME'),
+    ('Station_Production',                     'Placeholder', 'YIELD_PRODUCTION',       2,              1,              'DISTRICT_ENCAMPMENT');
+    
 insert or ignore into Improvement_Adjacencies
     (ImprovementType,           YieldChangeId)
 values
