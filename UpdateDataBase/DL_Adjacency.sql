@@ -263,6 +263,9 @@ values
 	('DISTRICT_ENCAMPMENT',						'Aerodrome_Industrial_Production'),
 	('DISTRICT_IKANDA',							'Aerodrome_Industrial_Production'),
 	
+	('DISTRICT_ENCAMPMENT',						'Station_Production'),
+	('DISTRICT_IKANDA',							'Station_Production'),
+	
 	('DISTRICT_ENCAMPMENT',						'HD_IMPROVEMENT_ROMAN_FORT'),
 	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_ROMAN_FORT'),
 	
