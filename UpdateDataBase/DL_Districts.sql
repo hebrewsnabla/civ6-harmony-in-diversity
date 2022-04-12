@@ -298,7 +298,7 @@ values
 	('DAM_ADJACENT_PLANTATION_FOOD',					'YieldType',	'YIELD_FOOD'),
 	('DAM_ADJACENT_PLANTATION_FOOD',					'Amount',		2);
 
-update ModifierArguments set Value = 30 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION';
+update ModifierArguments set Value = 30 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION' and Name = 'Amount';
 
 insert or replace into RequirementSets 
 	(RequirementSetId,						RequirementSetType) 
