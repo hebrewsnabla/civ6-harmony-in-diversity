@@ -537,7 +537,7 @@ values
 --	('POLICY_TREASURE_FLEETS',		'POLICY_ECONOMIC_UNION'),
 --	('POLICY_WORKERS_FACULTIES',	'POLICY_FIVE_YEAR_PLAN'),
 --	('POLICY_ENTREPRENEURSHIP',		'POLICY_ECONOMIC_UNION');
-	('POLICY_SCRIPTURE',			'POLICY_SIMULTANEUM'),
+--	('POLICY_SCRIPTURE',			'POLICY_SIMULTANEUM'),
 	--
 	('POLICY_CHARISMATIC_LEADER',	'POLICY_DIPLOMATIC_LEAGUE'),
 	('POLICY_DIPLOMATIC_LEAGUE',	'POLICY_GUNBOAT_DIPLOMACY'),
@@ -1741,3 +1741,7 @@ insert or ignore into RequirementSetRequirements
 select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
 from HD_DistrictBonus;
+--共享教堂移动至神学，删除经文
+update Policies set PrereqCivic = 'CIVIC_THEOLOGY' where PolicyType = 'POLICY_SIMULTANEUM';
+delete from Policies where PolicyType = 'POLICY_SCRIPTURE';
+delete from PolicyModifiers where PolicyType = 'POLICY_SCRIPTURE';

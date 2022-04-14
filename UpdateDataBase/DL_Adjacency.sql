@@ -286,7 +286,11 @@ values
 delete from District_Adjacencies where YieldChangeId = 'Station_Production'
 	and not exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_LEU_STATION');
 
-
+insert or ignore into Adjacency_YieldChanges
+	(ID,									Description,							YieldType,				YieldChange,				TilesRequired,				AdjacentResourceClass)
+values
+	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC2_PRODUCTION',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');
+	
 insert or replace into Adjacency_YieldChanges
 	(ID,									Description,					YieldType,				YieldChange,				TilesRequired,				AdjacentImprovement)
 values
