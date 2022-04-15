@@ -466,3 +466,11 @@ values
     ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_28",               "第28分城"),
     ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_29",               "第29分城"),
     ("zh_Hans_CN",  "LOC_CIVLIZATION_NORMAL_CITY_30",               "你城好多啊！");
+--------------------------------------------------------------------------------
+-- Language: zh_Hans_CN
+insert or replace into LocalizedText
+    (Language,      Tag,                                    Text)
+values
+    -- Better Religion Screen
+    ("zh_Hans_CN",  "LOC_BRW_CITY_SORT_ALL",                "所有城市"),
+    ("zh_Hans_CN",  "LOC_BRW_CITY_SORT_NOT_FOLLOWING",      "[COLOR_Red]不[ENDCOLOR]信奉宗教的城市");
