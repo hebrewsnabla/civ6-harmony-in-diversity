@@ -173,7 +173,7 @@ update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceM
 insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_SCOTTISH_HIGHLANDER', 'UNITTYPE_MELEE');
 ------ UNIT_SCOTTISH_GALLOWGLASS
 -- 蒙古
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 28, RangedCombat = 38, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MONGOLIAN_KESHIG';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 35, RangedCombat = 45, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MONGOLIAN_KESHIG';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_MONGOLIAN_KESHIG',  'UNIT_CROSSBOWMAN');
 insert or replace into TypeTags (Type, Tag) values ('UNIT_MONGOLIAN_KESHIG', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');

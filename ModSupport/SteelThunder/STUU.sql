@@ -79,7 +79,7 @@ update Traits set Description = 'LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DE
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'UNIT_CROSSBOWMAN');
 -- update Units set PrereqTech = 'TECH_STIRRUPS', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units set PrereqTech = 'TECH_CASTLES', PurchaseYield = 'YIELD_FAITH' where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
-update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 28, RangedCombat = 38, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
+update Units set Cost = 90, Maintenance = 3, BaseMoves = 4, Range = 2, Combat = 35, RangedCombat = 45, StrategicResource = NULL where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_ARABIAN_CAMEL_ARCHER';
 insert or replace into TypeTags (Type, Tag) values ('UNIT_ARABIAN_CAMEL_ARCHER', 'CLASS_HD_CAN_MOVE_AFTER_ATTACK');
 delete from TypeTags where Type = 'ABILITY_CAMEL_ARCHER' and Tag = 'CLASS_ARABIAN_CAMEL_ARCHER';

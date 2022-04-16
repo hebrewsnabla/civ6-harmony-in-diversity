@@ -50,22 +50,27 @@ values
 insert or replace into TraitModifiers
     (TraitType,                     ModifierId)
 values
-    ('TRAIT_CIVILIZATION_TA_SETI',  'TRAIT_BONUS_MINE_PRODUCTION');
+    ('TRAIT_CIVILIZATION_TA_SETI',  'HD_BONUS_MINE_GOLD'),
+	('TRAIT_CIVILIZATION_TA_SETI',  'HD_LUXURY_MINE_GOLD');
 
 insert or replace into Modifiers
     (ModifierId,                                    ModifierType,                                           SubjectRequirementSetId)
 values
-    ('TRAIT_BONUS_MINE_PRODUCTION',                 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'PLOT_HAS_BONUS_MINE_REQUIREMENTS');
+    ('HD_BONUS_MINE_GOLD',                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'PLOT_HAS_BONUS_MINE_REQUIREMENTS');
 
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,           Value)
 values  
-    ('TRAIT_BONUS_MINE_PRODUCTION',                 'YieldType',    'YIELD_PRODUCTION'),
-    ('TRAIT_BONUS_MINE_PRODUCTION',                 'Amount',       1);
+    ('HD_BONUS_MINE_GOLD',						'YieldType',    'YIELD_GOLD'),
+    ('HD_BONUS_MINE_GOLD',						'Amount',       2);
 
 -- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_PYRAMID_DISTRICT_PRODUCTION_MODIFIER' and Name = 'Amount';
 
 create TEMPORARY table 'Nubia_Resource'(
+    'ResourceType' Text NOT NULL
+);
+
+create TEMPORARY table 'Nubia_Resource1'(
     'ResourceType' Text NOT NULL
 );
 
@@ -74,28 +79,51 @@ insert or replace into Nubia_Resource
 select
     i.ResourceType
 from Resources i, Improvement_ValidResources j
-where i.ResourceType = j.ResourceType and (i.ResourceClassType = 'RESOURCECLASS_BONUS' or i.ResourceClassType = 'RESOURCECLASS_STRATEGIC') and j.ImprovementType = 'IMPROVEMENT_MINE';
+where i.ResourceType = j.ResourceType and (i.ResourceClassType = 'RESOURCECLASS_BONUS' or i.ResourceClassType = 'RESOURCECLASS_LUXURY') and j.ImprovementType = 'IMPROVEMENT_MINE';
+
+insert or replace into Nubia_Resource1
+    (ResourceType)
+select
+    i.ResourceType
+from Resources i, Improvement_ValidResources j
+where i.ResourceType = j.ResourceType and i.ResourceClassType = 'RESOURCECLASS_STRATEGIC' and j.ImprovementType = 'IMPROVEMENT_MINE';
 
 insert or replace into TraitModifiers
     (TraitType,                     ModifierId)
 select
-    'TRAIT_CIVILIZATION_TA_SETI',  'TRAIT_' || ResourceType || '_MINE_PRODUCTION_PERCENTAGE'
+    'TRAIT_CIVILIZATION_TA_SETI',  'TRAIT_' || ResourceType || '_MINE_GOLD_PERCENTAGE'
 from Nubia_Resource;
 
 insert or replace into Modifiers
     (ModifierId,                                                     ModifierType,                                           SubjectRequirementSetId)
 select
-    'TRAIT_' || ResourceType || '_MINE_PRODUCTION_PERCENTAGE',     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',    'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    'TRAIT_' || ResourceType || '_MINE_GOLD_PERCENTAGE',     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',    'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
 from Nubia_Resource;
 
 insert or replace into ModifierArguments
     (ModifierId,                                                     Name,           Value)
 select
-    'TRAIT_' || ResourceType || '_MINE_PRODUCTION_PERCENTAGE',     'YieldType',    'YIELD_PRODUCTION'
+    'TRAIT_' || ResourceType || '_MINE_GOLD_PERCENTAGE',     'YieldType',    'YIELD_GOLD'
 from Nubia_Resource;
 
 insert or replace into ModifierArguments
     (ModifierId,                                                     Name,           Value)
 select
-    'TRAIT_' || ResourceType || '_MINE_PRODUCTION_PERCENTAGE',     'Amount',       10
+    'TRAIT_' || ResourceType || '_MINE_GOLD_PERCENTAGE',     'Amount',       10
 from Nubia_Resource;
+
+insert or replace into TraitModifiers (TraitType, ModifierId) select
+	'TRAIT_CIVILIZATION_TA_SETI',    'TRAIT_'||ResourceType||'_MINE_PRODUCTION_RATIO'
+from Nubia_Resource1;
+
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select
+    'TRAIT_'||ResourceType||'_MINE_PRODUCTION_RATIO', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',  'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+from Nubia_Resource1;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+    'TRAIT_'||ResourceType||'_MINE_PRODUCTION_RATIO', 'YieldType',  'YIELD_PRODUCTION'
+from Nubia_Resource1;
+
+insert or replace into ModifierArguments (ModifierId, Name, Value) select
+    'TRAIT_'||ResourceType||'_MINE_PRODUCTION_RATIO', 'Amount',  10
+from Nubia_Resource1;
