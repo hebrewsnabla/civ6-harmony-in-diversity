@@ -168,6 +168,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>8be477ae-8642-462d-bcad-768fda353127</ModInUse>
     </Criteria>
+    <Criteria id="No_Better_Religion">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse inverse="1">67B4DBCB-82AD-3F90-1595-43C677C1301E</ModInUse>
+    </Criteria>
     <Criteria id="WatchTower_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>72950284-90dc-424d-ba04-4a1d8de2b336</ModInUse>
@@ -659,6 +663,13 @@
         <LoadOrder>150000</LoadOrder>
         <LuaContext>PantheonChooser</LuaContext>
         <LuaReplace>UI/Replacement/DL_PantheonChooser.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="No_Better_Religion_Screen" criteria="No_Better_Religion">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>ReligionScreen</LuaContext>
+        <LuaReplace>UI/Replacement/DL_ReligionScreen.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <ReplaceUIScript id="DL_PlotToolTip" criteria="Expansion2">
@@ -1388,32 +1399,32 @@
       <Properties><LoadOrder>18001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
     </UpdateIcons> -->
-    <!-- Military Testing -->
+    <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
-      <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/TestingMode/DL_Military.sql</File>
-      <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
+      <File>GameModeSupport/MilitaryMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/MilitaryMode/DL_Military.sql</File>
+      <File>GameModeSupport/MilitaryMode/DL_Temp.sql</File>
     </UpdateDatabase>
     <UpdateText id="Testing_update_text" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18101</LoadOrder></Properties>
-      <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
+      <File>GameModeSupport/MilitaryMode/HD_Texts.sql</File>
     </UpdateText>
     <AddGameplayScripts id="Testing_gameplay" criteria="Testing_Mode_Expansion2">
       <Properties><LoadOrder>18102</LoadOrder></Properties>
-      <File>GameModeSupport/TestingMode/DL_Military.lua</File>
+      <File>GameModeSupport/MilitaryMode/DL_Military.lua</File>
     </AddGameplayScripts>
     <!-- Tech -->
     <UpdateDatabase id="TechTest_update" criteria="TechTest_Mode_Expansion2">
       <Properties><LoadOrder>18200</LoadOrder></Properties>
-      <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/TechMode/DL_Techs.sql</File>
-      <File>GameModeSupport/TechMode/DL_Temp.sql</File>
-      <File>GameModeSupport/TechMode/DL_AI.sql</File>
+      <File>GameModeSupport/TestAiMode/DL_GameCapabilities.sql</File>
+      <File>GameModeSupport/TestAiMode/DL_Techs.sql</File>
+      <File>GameModeSupport/TestAiMode/DL_Temp.sql</File>
+      <File>GameModeSupport/TestAiMode/DL_AI.sql</File>
     </UpdateDatabase>
     <UpdateText id="TechTest_update_text" criteria="TechTest_Mode_Expansion2">
       <Properties><LoadOrder>18201</LoadOrder></Properties>
-      <File>GameModeSupport/TechMode/HD_Texts.sql</File>
+      <File>GameModeSupport/TestAiMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Wild Test -->
     <!-- <UpdateDatabase id="Wild_update" criteria="Wild_Mode_Expansion2">
@@ -1505,18 +1516,18 @@
     <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense.sql</File>
     <File>GameModeSupport/TowerDefenseMode/HD_TowerDefense_Text.sql</File>
     <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
-      <!-- Military Testing Mode -->
-    <File>GameModeSupport/TestingMode/DL_Military.sql</File>
-    <File>GameModeSupport/TestingMode/DL_Temp.sql</File>
-    <File>GameModeSupport/TestingMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TestingMode/HD_Texts.sql</File>
-    <File>GameModeSupport/TestingMode/DL_Military.lua</File>
-      <!-- Tech Test Mode -->
-    <File>GameModeSupport/TechMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TechMode/DL_Techs.sql</File>
-    <File>GameModeSupport/TechMode/DL_Temp.sql</File>
-    <File>GameModeSupport/TechMode/DL_AI.sql</File>
-    <File>GameModeSupport/TechMode/HD_Texts.sql</File>
+      <!-- Military Mode -->
+    <File>GameModeSupport/MilitaryMode/DL_Military.sql</File>
+    <File>GameModeSupport/MilitaryMode/DL_Temp.sql</File>
+    <File>GameModeSupport/MilitaryMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/MilitaryMode/HD_Texts.sql</File>
+    <File>GameModeSupport/MilitaryMode/DL_Military.lua</File>
+      <!-- AI Test Mode -->
+    <File>GameModeSupport/TestAiMode/DL_GameCapabilities.sql</File>
+    <File>GameModeSupport/TestAiMode/DL_Techs.sql</File>
+    <File>GameModeSupport/TestAiMode/DL_Temp.sql</File>
+    <File>GameModeSupport/TestAiMode/DL_AI.sql</File>
+    <File>GameModeSupport/TestAiMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
     <!-- <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
@@ -1575,6 +1586,7 @@
     <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
     <File>UI/Replacement/DL_UnitPanel.lua</File>
     <File>UI/Replacement/DL_PantheonChooser.lua</File>
+    <File>UI/Replacement/DL_ReligionScreen.lua</File>
     <File>UI/Replacement/DL_PlotToolTip.lua</File>
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>

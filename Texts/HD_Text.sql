@@ -8,6 +8,7 @@ values
     -- UI Texts
     ("LOC_HD_MESSAGE",                                                        "Harmony in Diversity"),
     ("LOC_PANTHEON_SELECTED_BY_OTHERS",                                       "This pantheon has been selected by others."),
+    ("LOC_BELIEF_SELECTED_BY_OTHERS",                                         "This religion belief has been selected by others."),
     ("LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "Human Sacrifice"),
     ("LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "Sacrifice this unit. Gain +10 [ICON_Culture] Culture and +10 [ICON_Faith] Faith for each builder charge the unit has."),
     ("LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]Must occupy City Center[ENDCOLOR]"),
@@ -71,6 +72,7 @@ values
     -- UI texts 
     ("zh_Hans_CN",  "LOC_HD_MESSAGE",                                                        "和而不同"),
     ("zh_Hans_CN",  "LOC_PANTHEON_SELECTED_BY_OTHERS",                                       "该万神殿已被他人选取"),
+    ("zh_Hans_CN",  "LOC_BELIEF_SELECTED_BY_OTHERS",                                         "该宗教信仰已被他人选取"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_NAME",                                        "活人献祭"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DESCRIPTION",                                 "向神明献祭该单位，每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和10点 [ICON_Faith] 信仰值，移除该单位。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_DISABLED_TT",                                 "[COLOR_RED]必须位于市中心[ENDCOLOR]"),
