@@ -22,7 +22,7 @@ function DevineInspirationWonderFaith( iX, iY, buildingID, playerID, cityID, iPe
     local sCiv = pPlayerConfig:GetCivilizationTypeName()
 
     if player ~= nil and city ~= nil and building ~= nil then
-        local amount = building.Cost * 0.5
+        local amount = building.Cost * 0.25
         local belief = GameInfo.Beliefs['BELIEF_DIVINE_INSPIRATION'].Index
         local CityReligion = city:GetReligion()
         local Majority = CityReligion:GetMajorityReligion()

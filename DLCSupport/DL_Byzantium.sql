@@ -219,3 +219,7 @@ values
 -- 	(RequirementId,							Name,				Value)
 -- values
 -- 	('HD_REQUIRES_PLAYER_IS_BYZANTIUM',		'CivilizationType',	'CIVILIZATION_BYZANTIUM');
+insert or replace into DistrictModifiers
+	(DistrictType,						ModifierId)
+values
+    ('DISTRICT_OPPIDUM',		        'HD_INDUSTRIAL_ZONE_POP_PRODUCTION');
