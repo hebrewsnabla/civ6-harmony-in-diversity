@@ -54,8 +54,6 @@ select TechnologyType, 0, 0 from Technologies where EraType = 'ERA_FUTURE';
 
 update Technologies set AdvisorType = 'ADVISOR_TECHNOLOGY' where TechnologyType = 'TECH_COMPUTERS';
 
-update Technologies set Description = 'LOC_TECH_ENGINEERING_HD_DESCRIPTION' where TechnologyType = 'TECH_ENGINEERING';
-
 --------------------------------------------------------------------------------
 -- from tech testing
 update Projects set PrereqTech = 'TECH_ELECTRICITY' where ProjectType = 'PROJECT_CONVERT_REACTOR_TO_COAL';
@@ -399,8 +397,6 @@ values
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
-
-update Technologies set Description = NULL where TechnologyType = 'TECH_STIRRUPS';
 
 -- -- 研究货币给商业地基（非相邻加成）+3金
 -- insert or replace into TechnologyModifiers

@@ -39,17 +39,17 @@ values
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods, and harvesting of resources improved by Mines."),
     ("LOC_TECH_MASONRY_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Quarries."),
-    ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory obtain roads for free. All improvements built afterward also get free roads. Pasture improvements receive +1 [ICON_GOLD] Gold."),
+    ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory obtain roads for free. All improvements built afterward also get free roads."), -- Pasture improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_IRRIGATION_DESCRIPTION",                                                     "Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allow Builders to build Farms on Plains Hills or Grass Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",                                                   "+1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
     ("LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                               "+50% yields from plot harvests and feature removals. +1 [ICON_Production] Production to Lumber Mills that are not adjacent to rivers."),
     ("LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                                          "+50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic."),
     -- ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                                  "Camp improvements receive +1 [ICON_FOOD] Food."),
     -- ("LOC_TECH_CURRENCY_HD_DESCRIPTION",                                                    "Provides +3 [ICON_GOLD] Gold to Commercial Hubs."),
-    ("LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                                "Camp and Lumber Mill improvements receive +1 [ICON_PRODUCTION] Production."),
-    ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Quarry and Mine improvements receive +1 [ICON_PRODUCTION] Production."),
+    ("LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                                "Camp improvements receive +1 [ICON_PRODUCTION] Production."), -- and Lumber Mill 
+    ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Mine improvements receive +1 [ICON_PRODUCTION] Production."), -- Quarry and 
     ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
-    ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests. Camp improvements receive +1 [ICON_GOLD] Gold."),
+    ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests."), -- Camp improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements receive +1 [ICON_Production] Production."),
     -- ("LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                                    "Pasture improvements receive +1 [ICON_Production] Production."),
     ("LOC_TECH_CASTLES_HD_DESCRIPTION",                                                     "Gain a free Spy if playing as Catherine de Medici (Black Queen)."),
@@ -62,7 +62,7 @@ values
     ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Power when adjacent to at least one friendly melee unit. [NEWLINE] Ranged units gain ability: +5 [ICON_Strength] Combat Power when attacking from a hill. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
     ("LOC_TECH_COMPUTERS_DESCRIPTION",                                                      "Grants the ability to construct an additional Spy. +20% [ICON_Tourism] Tourism across your empire."),
-    ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
+    -- ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_FLIGHT_DESCRIPTION",                                                         "Receive [ICON_Tourism] Tourism on partial improvements that provide [ICON_Science] Science, [ICON_Culture] Culture, [ICON_Faith] Faith or [ICON_PRODUCTION] Production. Amount of [ICON_Tourism] Tourism generated is equivalent to these yields."),
     -- New Civics
     ("LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                                "Literary Tradition"),
@@ -70,7 +70,7 @@ values
     ("LOC_CIVIC_NATURAL_HISTORY_HD_NAME",                                                   "Archaeology"),
     ("LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                                       "Imperial Examination System"),
     ("LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                                  "Evolution Theory"),
-    ("LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                                           "Camp improvements receive +1 [ICON_Production] Production +1 [ICON_Food] Food."),
+    ("LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                                           "Camp improvements receive +1 [ICON_Food] Food."), -- +1 [ICON_Production] Production 
     ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME",                                             "Historical Philosophy"),
     ("LOC_CIVIC_ETHICS_HD_NAME",                                                            "Ethics"),
     ("LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME",                                                    "Social Sciences"),
@@ -96,7 +96,7 @@ values
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
     ("LOC_CIVIC_HUMANISM_HD_DESCRIPTION",                                                   "Recon units gain the ability: Ignore Zones of Control."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
-    ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold."),
+    -- ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements receive +2 [ICON_gold] Gold."),
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State.[NEWLINE]Allows forming two identical units into a Fleet.[NEWLINE]Allows one new Casus Belli that can be used to justify wars: Colonial War."),
     ("LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                                          "Can build Farms on Grassland Hills and Plains Hills. Lumber Mill improvements receive +1 [ICON_Production]."),
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "Lumber Mills and Camps can be built on Rainforest."),
@@ -213,7 +213,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                             "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                                       "允许砍伐树林和收获由矿山改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",                                      "允许收获由采石场改良的资源。"),
-    ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。牧场+1 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "研究轮子后，所有境内改良设施获得道路。之后建造的改良设施也自动获得道路。"), -- 牧场+1 [ICON_GOLD] 金币。
     ("zh_Hans_CN",  "LOC_TECH_IRRIGATION_DESCRIPTION",                                      "允许清理沼泽和收获由种植园改良的资源。允许在相邻淡水或水渠的平原和草原丘陵上修建农场。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION",                                "收获和移除地貌的产出+50%。非沿河的伐木场改良+1 [ICON_Production] 生产力。"),
@@ -221,10 +221,10 @@ values
     ("zh_Hans_CN",  "LOC_TECH_FLIGHT_DESCRIPTION",                                          "为部分提供 [ICON_SCIENCE] 科技值， [ICON_Culture] 文化值， [ICON_Faith] 信仰值或 [ICON_Production] 生产力的改良设施提供等于其产出的 [ICON_Tourism] 旅游业绩加成。"),
     -- ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                   "营地+1 [ICON_FOOD] 食物。"),
     -- ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
-    ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                 "营地+1 [ICON_PRODUCTION] 生产力。伐木场改良+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                               "矿山和采石场改良设施的 [ICON_Production] 生产力+1。"),
+    ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                 "营地+1 [ICON_PRODUCTION] 生产力。"), -- 伐木场改良+1 [ICON_PRODUCTION] 生产力。
+    ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                               "矿山改良设施的 [ICON_Production] 生产力+1。"), -- 和采石场
     ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获由渔船改良的资源。若未掌握造船术，也允许所有陆地单位上船。"),
-    ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。营地+1 [ICON_gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。"), -- 营地+1 [ICON_gold] 金币。
     ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                             "牧场+1 [ICON_Production] 生产力。"),
     -- ("zh_Hans_CN",  "LOC_TECH_STIRRUPS_HD_DESCRIPTION",                                     "牧场改良设施提供的 [ICON_PRODUCTION] 生产力+1。"),
     ("zh_Hans_CN",  "LOC_TECH_CASTLES_HD_DESCRIPTION",                                      "如果使用凯瑟琳·德·美第奇（黑王后），能免费获得1名间谍。"),
@@ -236,14 +236,14 @@ values
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                                        "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
     ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
-    ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1 [ICON_Production] 生产力。"),
+    -- ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1 [ICON_Production] 生产力。"),
     -- New Civics
     ("zh_Hans_CN",  "LOC_CIVIC_LITERARY_TRADITION_HD_NAME",                                 "文学传统"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_NAME",                                  "后勤补给"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATURAL_HISTORY_HD_NAME",                                    "考古学"),
     ("zh_Hans_CN",  "LOC_CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD_NAME",                        "科举制"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_NAME",                                   "演化论"),
-    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地改良设施获得+1 [ICON_Production] 生产力和+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地改良设施获得+1 [ICON_Food] 食物。"), -- +1 [ICON_Production] 生产力和
     ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_NAME",                              "历史哲学"),
     ("zh_Hans_CN",  "LOC_CIVIC_ETHICS_HD_NAME",                                             "伦理学"),
     ("zh_Hans_CN",  "LOC_CIVIC_SOCIAL_SCIENCE_HD_NAME",                                     "社会科学"),
@@ -262,7 +262,7 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                         "复杂的城市建设构成了复杂的社会关系，而一些天才洞察了这一切。"),
     -- Civics
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。"),
+    -- ("zh_Hans_CN",  "LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                             "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                      "允许在雨林上建造伐木场和营地。"),
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "从每个宗主城邦获得+1 [ICON_Favor] 外交支持。[NEWLINE]允许两个完全相同的单位组成一个舰队。[NEWLINE]现在可用一个新的战争借口替战争辩护：殖民战争。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION",                           "可以在草原丘陵和平原丘陵上建造农场。伐木场+1 [ICON_Production] 生产力。"),
