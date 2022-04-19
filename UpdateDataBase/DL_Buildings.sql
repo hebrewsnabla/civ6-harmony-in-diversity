@@ -266,7 +266,7 @@ values
 	('BUILDING_SEAPORT',			'YIELD_FOOD',		3),
 	('BUILDING_SEAPORT',			'YIELD_GOLD',		6),
 	('BUILDING_HANGAR',				'YIELD_PRODUCTION',	5),
-	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		8);
+	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		6);
 
 insert or replace into Building_YieldChangesBonusWithPower
 	(BuildingType,					YieldType,			YieldChange)
@@ -275,9 +275,9 @@ values
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
 	('BUILDING_BROADCAST_CENTER',	'YIELD_CULTURE',	3),
 	('BUILDING_FILM_STUDIO',		'YIELD_CULTURE',	3),
-	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		8);
-
-update Building_YieldChangesBonusWithPower set YieldChange = 4 where BuildingType = 'BUILDING_FOOD_MARKET';
+	('BUILDING_SHOPPING_MALL',		'YIELD_GOLD',		6);
+update Building_YieldChanges set YieldChange = 3 where BuildingType = 'BUILDING_FOOD_MARKET';
+update Building_YieldChangesBonusWithPower set YieldChange = 3 where BuildingType = 'BUILDING_FOOD_MARKET';
 
 -- trade route
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'LIGHTHOUSE_TRADE_ROUTE_CAPACITY';
@@ -483,8 +483,8 @@ values
 	('BUILDING_SHOPPING_MALL',				'POWERED_SHOPPING_MALL_GOLD_PERCENTAGE_BOOST'),
 	-- Campus
 	-- ('BUILDING_LIBRARY',					'LIBRARY_SCIENCE_PERCENTAGE_BOOST'),
-	('BUILDING_UNIVERSITY',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
-	('BUILDING_MADRASA',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
+--	('BUILDING_UNIVERSITY',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
+--	('BUILDING_MADRASA',					'UNIVERSITY_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_RESEARCH_LAB',				'RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST'),
 	('BUILDING_RESEARCH_LAB',				'POWERED_RESEARCH_LAB_SCIENCE_PERCENTAGE_BOOST'),
 	-- Theater
@@ -516,8 +516,8 @@ values
 	('BUILDING_STUPA',						'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_DAR_E_MEHR',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	-- Industrial Zone
-	('BUILDING_WORKSHOP',					'WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST'),
-	('BUILDING_WORKSHOP',					'WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST'),
+--	('BUILDING_WORKSHOP',					'WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST'),
+--	('BUILDING_WORKSHOP',					'WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST'),
 	('BUILDING_FACTORY',					'FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST'),
 	('BUILDING_FACTORY',					'FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST'),
 	('BUILDING_ELECTRONICS_FACTORY',		'FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST'),
@@ -578,9 +578,9 @@ insert or replace into ModifierArguments
 values
 	('SEWER_GROWTH_RATE',									'Amount',		20),
 	-- Neighborhood
-	('FOOD_MARKET_GROWTH_RATE',								'Amount',		10),
+	('FOOD_MARKET_GROWTH_RATE',								'Amount',		5),
 	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'YieldType',	'YIELD_GOLD'),
-	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		10),
+	('SHOPPING_MALL_GOLD_PERCENTAGE_BOOST',					'Amount',		5),
 	-- 
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'YieldType',	'YIELD_SCIENCE'),
 	('LIBRARY_SCIENCE_PERCENTAGE_BOOST',					'Amount',		5),
@@ -612,8 +612,8 @@ values
 	-- 
 	('WORKSHOP_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
 	('WORKSHOP_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
-	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
-	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		10),
+	('FACTORY_BUILDING_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
+	('FACTORY_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',		'Amount',		5),
 	('POWER_PLANT_BUILDING_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
 	('POWER_PLANT_DISTRICT_PRODUCTION_PERCENTAGE_BOOST',	'Amount',		10),
 	-- powered
@@ -662,8 +662,8 @@ update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 3,	Cost = 180	where BuildingType = 'BUILDING_WORKSHOP';
 update Buildings set Maintenance = 7,	Cost = 400	where BuildingType = 'BUILDING_FACTORY';
 update Buildings set Maintenance = 7,	Cost = 360	where BuildingType = 'BUILDING_ELECTRONICS_FACTORY';
-update Buildings set Maintenance = 10,	Cost = 400	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
-update Buildings set Maintenance = 10,	Cost = 480	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
+update Buildings set Maintenance = 10,	Cost = 500	where BuildingType = 'BUILDING_COAL_POWER_PLANT';
+update Buildings set Maintenance = 10,	Cost = 550	where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_POWER_PLANT';
 update Buildings set Maintenance = 1,	Cost = 80	where BuildingType = 'BUILDING_SHRINE';
 update Buildings set Maintenance = 2,	Cost = 140	where BuildingType = 'BUILDING_TEMPLE';
@@ -723,10 +723,10 @@ insert or replace into BuildingModifiers
 values
 	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_ADJACENCY'),
 	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_HILLS_ADJACENCY'),
-	('BUILDING_MADRASA',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
+--	('BUILDING_MADRASA',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
 	-- ('BUILDING_MADRASA',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_POPULATION_SCIENCE'),
-	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
+--	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_RAINFOREST_ADJACENCY'),
 	-- ('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE');
 	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_POPULATION_SCIENCE');
 
@@ -1242,9 +1242,9 @@ values
 	null,								'CIVIC_EARLY_EMPIRE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	('BUILDING_KAREZ',					'LOC_BUILDING_KAREZ_NAME',					65,			'LOC_BUILDING_KAREZ_DESCRIPTION',	
 	'TECH_POTTERY',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			1),
-	('BUILDING_OFFICIAL_RUN_HANDCRAFT',	'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 65,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
+	('BUILDING_OFFICIAL_RUN_HANDCRAFT',	'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME', 70,			'LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION',	
 	'TECH_MINING',						null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
-	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				55,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
+	('BUILDING_BOOTCAMP',				'LOC_BUILDING_BOOTCAMP_NAME',				60,			'LOC_BUILDING_BOOTCAMP_DESCRIPTION',	
 	'TECH_ANIMAL_HUSBANDRY',			null,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
 	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
 	null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			Null),
@@ -1299,10 +1299,10 @@ insert or replace into ModifierArguments
 values
 	('NILOMETER_SCIENCE',					'BuildingType',										'BUILDING_NILOMETER_HD'),
 	('NILOMETER_SCIENCE',					'YieldType',										'YIELD_SCIENCE'),
-	('NILOMETER_SCIENCE',					'Amount',											2),
+	('NILOMETER_SCIENCE',					'Amount',											1),
 	('TRIUMPHAL_ARCH_CULTURE',				'BuildingType',										'BUILDING_TRIUMPHAL_ARCH'),
 	('TRIUMPHAL_ARCH_CULTURE',				'YieldType',										'YIELD_CULTURE'),
-	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											2),
+	('TRIUMPHAL_ARCH_CULTURE',				'Amount',											1),
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
 	('KAREZ_FOOD',							'Amount',											1),
@@ -1449,7 +1449,7 @@ values
 ----------------------------------------------------------------------------------------------------------------------
 
 -- from tech testing
-update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
+update Buildings set Cost = 400 where BuildingType = 'BUILDING_FACTORY';
 update Buildings_XP2 set RequiredPower = 0 where BuildingType = 'BUILDING_FACTORY';
 
 delete from Building_YieldChangesBonusWithPower where BuildingType = 'BUILDING_FACTORY';
@@ -1725,6 +1725,9 @@ update Buildings set Description = 'LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP' w
 	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 update Buildings set Description = 'LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP' where BuildingType = 'BUILDING_SHOPPING_MALL'
 	and exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
+    --造价
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_FOOD_MARKET';
+update Buildings set Cost = 500 where BuildingType = 'BUILDING_SHOPPING_MALL';
 
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)

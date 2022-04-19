@@ -276,8 +276,8 @@ from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Nu
 
 -- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 300 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 360 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 360 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
 	-- 修改建造条件
 update RequirementArguments set Value = 5 where RequirementId = 'REQ_CL_PLAYER_HAS_X_CITIES_WITH_RELIGION' and Name = 'Count';
 	-- 修改特效
@@ -294,19 +294,35 @@ insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 values
 	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH'),
-	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH');
+	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH'),
+	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_CULTURE_PER_TRIBUTARY'),
+	('NAT_WONDER_CL_TEMPLE',		'HD_NAT_TEMPLE_SCIENCE_PER_TRIBUTARY');
+	
 
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,									SubjectRequirementSetId)
 values
 	('HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
-	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS');
-
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
+	('HD_NAT_TEMPLE_CULTURE_CITY',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
+	('HD_NAT_TEMPLE_SCIENCE_CITY',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
+	('HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER',        			'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD',		NULL),
+	('HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER',        			'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD',		NULL),
 insert or replace into ModifierArguments
 	(ModifierId,											Name,					Value)
 values
 	('HD_NAT_TEMPLE_ADJUST_RELIGION_PRESSURE_ATTACH',		'ModifierId',			'CL_NAT_WONDER_ADJUST_RELIGION_PRESSURE'),
-	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'ModifierId',			'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE');
+	('HD_NAT_TEMPLE_ADJUST_RELIGION_DISTANCE_ATTACH',		'ModifierId',			'CL_NAT_WONDER_ADJUST_RELIGION_DISTANCE'),
+	('HD_NAT_TEMPLE_CULTURE_CITY',							'ModifierId',			'HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER'),
+	('HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER',					'BeliefYieldType',		'BELIEF_YIELD_PER_CITY'),
+	('HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER',					'YieldType',			'YIELD_CULTURE'),
+	('HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER',					'Amount',				1),
+	('HD_NAT_TEMPLE_CULTURE_CITY_MODIFIER',					'PerXItems',			1),
+	('HD_NAT_TEMPLE_SCIENCE_CITY',							'ModifierId',			'HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER'),
+	('HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER',					'BeliefYieldType',		'BELIEF_YIELD_PER_CITY'),
+	('HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER',					'YieldType',			'YIELD_SCIENCE'),
+	('HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER',					'Amount',				1),
+	('HD_NAT_TEMPLE_SCIENCE_CITY_MODIFIER',					'PerXItems',			1);
 
 -- 国家主题公园 ------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价

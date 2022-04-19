@@ -5,14 +5,14 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
-    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
+    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
     ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources provide +1 [ICON_Food] Food. [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 after completing Calendar."),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
-    ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+2 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
+    ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+1 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
     ("LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "Triumphal Arch"),
-    ("LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "+2 [ICON_Culture] Culture if this city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already have a Nilometer."),
+    ("LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "+1 [ICON_Culture] Culture if this city has World Wonders.[NEWLINE][NEWLINE]May not be built in cities that already have a Nilometer."),
     ("LOC_BUILDING_KAREZ_NAME",                                   "Karez"),
     ("LOC_BUILDING_KAREZ_DESCRIPTION",                            "+1 [ICON_Food] Food if the City Center is on Hills or is adjacent to Mountains.[NEWLINE][NEWLINE]May not be built in cities that already have an Artizan Plaza or a Boot Camp."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME",                  "Artisan Plaza"),
@@ -27,9 +27,9 @@ values
     ("LOC_BUILDING_SEWER_DESCRIPTION",                            "+20% Growth rate in this city."),
     -- Campus
     ("LOC_BUILDING_LIBRARY_DESCRIPTION",                          "After Paper Making is researched, [ICON_Citizen] Citizens in this city provide +0.3 [ICON_SCIENCE] Science."),
-    ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "[ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science. Campus districts get standard adjacency bonus from Rainforests. +5% [ICON_SCIENCE] Science in this city after completing Scientific Theory."),
-    ("LOC_BUILDING_MADRASA_DESCRIPTION",                          "A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science. Campus districts get standard adjacency bonus from Rainforests, desert and desert hills. +5% [ICON_SCIENCE] Science in this city after completing Scientific Theory."),
-    ("LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science. Campus districts get standard adjacency bonus from Rainforests. +5% [ICON_SCIENCE] Science in this city after completing Scientific Theory."),
+    ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "[ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science."),
+    ("LOC_BUILDING_MADRASA_DESCRIPTION",                          "A building unique to Arabia. Bonus [ICON_Faith] Faith equal to the adjacency bonus of the Campus district. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science. Campus districts get standard adjacency bonus from desert and desert hills."),
+    ("LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "A building unique to Portugal. +25% [ICON_PRODUCTION] Production towards naval units in this city. +1 [ICON_SCIENCE] Science for every two coast or lake tiles in this city. +2 [ICON_GreatAdmiral] Great Admiral points. [ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science."),
     ("LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "+5% [ICON_SCIENCE] Science in this city. +10% [ICON_SCIENCE] Science if this city is fully powered. "),
     -- Theater
     ("LOC_BUILDING_MARAE_DESCRIPTION",                            "A building unique to the Māori. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three coast or lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
@@ -38,9 +38,9 @@ values
     ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Industrial era. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "+5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] Culture if this city is fully powered. "),
     -- Industrial Zone
-    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production. +5% [ICON_Production] Production towards wonders, districts and buildings in this city."), -- , Quarries and Lumber Mills
+    ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Mines in this city gain +1 [ICON_PRODUCTION] Production."), -- , Quarries and Lumber Mills
     ("LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "+1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +10% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production."),
-    ("LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. +1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +10% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production."),
+    ("LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "A building unique to Japan. Provides +4 [ICON_Culture] Culture to this city after researching the Electricity technology. +1 [ICON_Production] production for each [ICON_RESOURCE_COAL] Coal in this city. +5% [ICON_Production] Production towards wonders, districts and buildings in this city. All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production."),
     ("LOC_BUILDING_COAL_POWER_PLANT_DL_DESCRIPTION",              "Automatically converts any amount of [ICON_RESOURCE_COAL] Coal into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_COAL] Coal [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet] Heavy CO2 into the atmosphere.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
     ("LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DL_DESCRIPTION",       "Automatically converts any amount of [ICON_RESOURCE_OIL] Oil into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_OIL] Oil [ICON_PowerRight] 4 [ICON_Power] Power[NEWLINE][ICON_Bullet] Moderate CO2 into the atmosphere[NEWLINE]Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
     ("LOC_BUILDING_POWER_PLANT_DL_DESCRIPTION",                   "Automatically converts any amount of [ICON_RESOURCE_URANIUM] Uranium into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_URANIUM] Uranium [ICON_PowerRight] 16 [ICON_Power] Power[NEWLINE][ICON_Bullet]Miniscule CO2 into the atmosphere[NEWLINE]Once built, as a Nuclear Power Plant ages, there is an increased chance for a Nuclear Accident to occur. Its [ICON_Production] Production and [ICON_Science] Science bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE]+10% [ICON_Production] Production towards wonders, districts and buildings in this city."),
@@ -109,10 +109,10 @@ values
     ("LOC_BUILDING_AIRPORT_DESCRIPTION",                          "+100% [ICON_TOURISM] Tourism from Wonders, and +50% [ICON_TOURISM] Tourism from Improvements, Great Works in this city if is fully [ICON_POWER] Powered. This bonus is extended to all cities within 4 tiles that do not already have a bonus from another Airport. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
     ("LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT",                  "+100% [ICON_TOURISM] Tourism from Wonders, and +50% [ICON_TOURISM] Tourism from Improvements, Great Works, Products in this city if is fully [ICON_POWER] Powered. This bonus is extended to all cities within 4 tiles that do not already have a bonus from another Airport. [NEWLINE] +50% combat experience for air units trained in this city. Allows the ability to airlift land units between Aerodrome districts with Airports after the Rapid Deployment civic is unlocked."),
     -- Neighborhood
-    ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "+10% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city."),
-    ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+10% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city."),
-    ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "+10% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city. [NEWLINE] If the city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_FOOD] Food and [ICON_PRODUCTION] Production. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
-    ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "+10% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city. [NEWLINE] If they city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_gold] Gold and 1.5 times as much [ICON_SCIENCE] Science and [ICON_CULTURE] Culture. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
+    ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "+5% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city."),
+    ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "+5% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city."),
+    ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "+5% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city. [NEWLINE] If the city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_FOOD] Food and [ICON_PRODUCTION] Production. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
+    ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "+5% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city. [NEWLINE] If they city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_gold] Gold and 1.5 times as much [ICON_SCIENCE] Science and [ICON_CULTURE] Culture. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
     -- Dam
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
@@ -126,14 +126,14 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
-    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
-    ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+1 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "如果城市中拥有至少1个世界奇观，则额外+1 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_NAME",                                   "坎儿井"),
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_DESCRIPTION",                            "如果市中心位于丘陵之上或靠近山脉则额外+1 [ICON_Food] 食物。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME",                  "工官"),
@@ -148,9 +148,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。"),
     -- 学院
     ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                          "研究造纸术科技后，城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。本城的学院获得雨林的标准相邻加成。研究“科学理论”后本城 [ICON_SCIENCE] 科技值+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。本城的学院获得雨林、沙漠和沙漠丘陵的标准相邻加成。研究“科学理论”后本城 [ICON_SCIENCE] 科技值+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。本城的学院获得雨林的标准相邻加成。研究“科学理论”后本城 [ICON_SCIENCE] 科技值+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MADRASA_DESCRIPTION",                          "阿拉伯特色建筑。提供与学院区的相邻加成等量的 [ICON_Faith] 信仰值。每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。本城的学院获得沙漠和沙漠丘陵的标准相邻加成。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_NAVIGATION_SCHOOL_DESCRIPTION",                "葡萄牙特色建筑。在此城中生产海军单位时+25%生产力。此城中每拥有2个海岸或湖泊单元格，则+1 [ICON_SCiENCE] 科技值。+2 [ICON_GreatAdmiral] 海军统帅点数。每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_RESEARCH_LAB_DESCRIPTION",                     "本城 [ICON_SCIENCE] 科技值+5%。通电后额外为本城+10% [ICON_SCIENCE] 科技值。"),
     -- 剧院
     ("zh_Hans_CN",  "LOC_BUILDING_MARAE_DESCRIPTION",                            "毛利特色建筑。城市中所有包含可通行地貌或自然奇观的单元格+2 [ICON_CULTURE] 文化值与 [ICON_FAITH] 信仰值。此城中每拥有3个海岸或湖泊单元格，则+1 [ICON_CULTURE] 文化值。研究“飞行”科技后，城市中所有包含地貌或自然奇观的单元格+1 [ICON_TOURISM] 旅游业绩。无巨作槽位。"),
@@ -159,8 +159,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入工业时代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
-    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。"), -- 、采石场和伐木场
-    ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+10% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "为本城的矿山+1 [ICON_PRODUCTION] 生产力。"), -- 、采石场和伐木场
+    ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。本城每个人口获得0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_COAL_POWER_PLANT_DL_DESCRIPTION",              "将任意数额的 [ICON_RESOURCE_COAL] 煤自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_COAL] 煤 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放大量二氧化碳。[NEWLINE]本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FOSSIL_FUEL_POWER_PLANT_DL_DESCRIPTION",       "将任意数额的 [ICON_RESOURCE_OIL] 石油自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_OIL] 石油 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放中量二氧化碳[NEWLINE]其 [ICON_Production] 生产力加成延伸到6个单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成）。[NEWLINE]本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。"),
@@ -230,10 +230,10 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION",                          "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到4个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
     ("zh_Hans_CN",  "LOC_BUILDING_AIRPORT_DESCRIPTION_PRODUCT",                  "若此城 [ICON_POWER] 供电充足，则城市中来自改良、巨作、 [ICON_GreatWork_Product] 产品的 [ICON_Tourism] 旅游业绩+50%，来自奇观的 [ICON_Tourism] 旅游业绩+100%；该加成效果延伸到4个单元格内的所有城市（前提是其尚未从其他的“机场”建筑获得加成）。 [NEWLINE] 该城市训练的空中单位+50%战斗经验值。紧急部署市政解锁后，可以在带有机场的航空港之间空运陆地单位。"),
     -- 社区
-    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "本城的人口增长速度+10%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "本城的人口增长速度+10%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_FOOD] 食物和 [ICON_PRODUCTION] 生产力；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“食品市场”建筑获得加成）。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "本城 [ICON_gold] 金币产出+10%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "本城 [ICON_gold] 金币产出+10%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_GOLD] 金币，产出1.5倍的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“购物商场”建筑获得加成）。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION",                      "本城的人口增长速度+5%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "本城的人口增长速度+5%，若 [Icon_Power] 供电充足，则人口增长速度额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_FOOD] 食物和 [ICON_PRODUCTION] 生产力；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“食品市场”建筑获得加成）。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_GOLD] 金币，产出1.5倍的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“购物商场”建筑获得加成）。"),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
