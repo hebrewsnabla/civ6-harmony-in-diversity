@@ -487,6 +487,7 @@
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
+      <Properties><LoadOrder>100</LoadOrder></Properties>
       <File>Platforms/Windows/audio/HD_Banks.ini</File>
       <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
     </UpdateAudio>
