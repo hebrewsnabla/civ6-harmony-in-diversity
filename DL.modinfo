@@ -610,6 +610,7 @@
       <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
       <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
       <File>UI/Replacement/CitySupport.lua</File>
+      <File>UI/Replacement/NotificationPanel_HD.lua</File>
       <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
@@ -1563,6 +1564,7 @@
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
+    <File>UI/Replacement/NotificationPanel_HD.lua</File>
     <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
     <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     <!-- UI Loaders -->
