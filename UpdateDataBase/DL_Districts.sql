@@ -416,3 +416,6 @@ insert or replace into RequirementSetRequirements
 values
 	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_STREET_CARNIVAL'),
 	('DISTRICT_IS_BRAZIL_UD',	'REQUIRES_DISTRICT_IS_DISTRICT_WATER_STREET_CARNIVAL');
+--区域价格调整
+update Districts set Cost = 80 where Cost = 75;
+update Districts set Cost = 64 where Cost = 60;

@@ -38,7 +38,7 @@ values
 	('HD_NAT_COLLEGE_CAMPUS_DOUBLE',		'YieldType',		'YIELD_SCIENCE'),
 	('HD_NAT_COLLEGE_CAMPUS_DOUBLE',		'Amount',			100),
 	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
-	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'Amount',			6);
+	('HD_NAT_COLLEGE_GOVERN_SCIENCE',		'Amount',			4);
 
 insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)

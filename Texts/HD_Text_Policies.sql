@@ -13,7 +13,7 @@ values
     ("LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "+50% production speed toward all naval units, excluding Carriers. +10% for each Harbor District buildings the city has."),
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
     ("LOC_POLICY_SOCIAL_STATISTICS_NAME",                                             "Social Statistics"),
-    ("LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "+0.8 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.8 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 3 specialty districts."),
+    ("LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "+0.6 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.6 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 3 specialty districts."),
     ("LOC_POLICY_PLUTONOMY_NAME",                                                     "Plutonomy"),
     ("LOC_POLICY_PLUTONOMY_DESCRIPTION",                                              "+5% [ICON_GOLD] Gold in all cities with a Theater district. +5% [ICON_Production] Production in all cities with a Campus district."),
     ("LOC_POLICY_PHILOSOPHY_EDUCATION_NAME",                                          "Philosophy Education"),
@@ -21,9 +21,9 @@ values
     ("LOC_POLICY_PURITAN_NAME",                                                       "Puritan"),
     ("LOC_POLICY_PURITAN_DESCRIPTION",                                                "+7% [ICON_GOLD] Gold and 7% [ICON_Production] Production in all cities with a Worship Building."),
     ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME",                                        "Scientific Expeditions"),
-    ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "Every Commercial Hub district in a foreign city +3 [ICON_SCIENCE] Science to every cities on your original [ICON_Capital] Capital's continent. Every Harbor district in a foreign city +3 [ICON_Culture] Culture to every cities on your original [ICON_Capital] Capital's continent."),
+    ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "Every Bank,Guildhall,Merchant Quarter in a foreign city +3 [ICON_SCIENCE] Science to every cities on your original [ICON_Capital] Capital's continent. Every Haven, Shipyard, Enterpot in a foreign city +3 [ICON_Culture] Culture to every cities on your original [ICON_Capital] Capital's continent."),
     ("LOC_POLICY_SISHU_NAME",                                                         "Private Education"),
-    ("LOC_POLICY_SISHU_DESCRIPTION",                                                  "+0.4 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.4 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 2 specialty districts."),
+    ("LOC_POLICY_SISHU_DESCRIPTION",                                                  "+0.3 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.3 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 2 specialty districts."),
     ("LOC_POLICY_COMPILE_NAME",                                                       "Compiling Books"),
     ("LOC_POLICY_COMPILE_DESCRIPTION",                                                "+4 [ICON_GreatScientist] Great Scientist points per turn. +2 [ICON_GreatScientist] Great Scientist points per turn for every Library."),
     ("LOC_POLICY_SUPPLY_LINES_NAME",                                                  "Supply Lines"),
@@ -83,11 +83,11 @@ values
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "+2 to all yields for each building inside Government Plaza, building inside Diplomatic Quarter and palace in a city."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "+2 to all yields for each building inside Government Plaza and palace in a city."),
         -- Tier 2
-    ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +10%. +10% [ICON_GOLD] Gold for cities with a garrisoned unit."),
+    ("LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "Increases the city growth rate by +5%. +10% [ICON_GOLD] Gold for cities with a garrisoned unit."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50% Influence Points. +20% [ICON_Production] Production toward units for cities with a garrisoned unit."),
     ("LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "+20% [ICON_GOLD] Gold in all cities with an established [ICON_Governor] Governor. +20% Production toward Districts."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "Reduces the cost of purchasing a tile by 20%."),
-    ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat. Gains +1 [ICON_Faith] Faith from each follower of the Religion that is established as majority in your civilization."),
+    ("LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "+5 [ICON_Religion] Religious Strength in Theological Combat. Gains +0.5 [ICON_Faith] Faith from each follower of the Religion that is established as majority in your cities with Temple or Monastrey."),
     ("LOC_GOVT_ACCUMULATED_BONUS_BRIEF_THEOCRACY_XP1",                                "15% Discount on Purchases with [ICON_Faith] Faith. Enable purchase land military units with [ICON_Faith] Faith in cities that has Holy Site."),
         -- Tier 3
     ("LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-states provide +4 [ICON_Food] Food and +4 [ICON_Production] Production for both cities. Alliance Points with all Allies increase by an additional .25 per turn. Allows city to purchase districts with [ICON_Gold] Gold."),
@@ -160,9 +160,9 @@ values
     ("LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_PRIMITIVE_COMMUNE_CHAPTER_HISTORY_PARA_1",    "TBD Primitive commune paragraph 1"),
     ("LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_BARD_CHAPTER_HISTORY_PARA_1",                 "TBD One more culture paragraph 1"),
     ("LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_CIVILIZE_CHAPTER_HISTORY_PARA_1",             "TBD One more science paragraph 1"),
-    ("LOC_POLICY_RATIONALISM_DESCRIPTION",                                            "Regional effects from Campus district reach 3 tiles farther. Universties generate 0.3 [ICON_SCIENCE] Science and Research Labs generate 0.5 [ICON_SCIENCE] Science per [ICON_Citizen] citizen in the city."),
+    ("LOC_POLICY_RATIONALISM_DESCRIPTION",                                            "Regional effects from Campus district reach 3 tiles farther. Universties generate 0.2 [ICON_SCIENCE] Science and Research Labs generate 0.4 [ICON_SCIENCE] Science per [ICON_Citizen] citizen in the city."),
     ("LOC_POLICY_FREE_MARKET_DESCRIPTION",                                            "Regional effects from Commercial Hub district reach 3 tiles farther. Banks generate 0.6 [ICON_GOLD] Gold and Stock Exchanges generate 1 [ICON_GOLD] gold per [ICON_Citizen] citizen in the city."),
-    ("LOC_POLICY_GRAND_OPERA_DESCRIPTION",                                            "Regional effects from Theater district reach 3 tiles farther. Art Museums or Archaeological Museums generate 0.3 [ICON_CULTURE] Culture and Broadcast Centers generate 0.5 [ICON_CULTURE] Culture per [ICON_Citizen] citizen in the city."),
+    ("LOC_POLICY_GRAND_OPERA_DESCRIPTION",                                            "Regional effects from Theater district reach 3 tiles farther. Art Museums or Archaeological Museums generate 0.2 [ICON_CULTURE] Culture and Broadcast Centers generate 0.4 [ICON_CULTURE] Culture per [ICON_Citizen] citizen in the city."),
     ("LOC_POLICY_MINARET_DESCRIPTION",                                                "Temples generate 0.3 [ICON_FAITH] Faith and Worship Buildings generate 0.5 [ICON_FAITH] Faith per [ICON_Citizen] citizen in the city."),
     ("LOC_POLICY_SCRIPTURE_DESCRIPTION",                                              "+50% Holy Site district adjacency bonuses."),
     ("LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION",                                         "+100% Holy Site district adjacency bonuses."),
@@ -197,6 +197,11 @@ values
     ("LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100% Campus and Industrial Zone district adjacency bonuses. Regional effects from your Industrial Zone districts reach 3 tiles farther."),
     ("LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100% Theater Square district adjacency bonuses, and Stadiums generate +1 [ICON_Amenities] Amenity. Regional effects from your Water Park and Entertainment Complex districts reach 3 tiles farther."),
     ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "Weapons Management Service"),
+    ("LOC_POLICY_MONASTICISM_DESCRIPTION",                                            "+50% [ICON_Science] Science in cities with a Holy Site.[NEWLINE]BUT: -25% [ICON_Culture] Culture in all cities."),
+    ("LOC_POLICY_ROBBER_BARONS_DESCRIPTION",                                          "+25% [ICON_Gold] Gold in cities with a Stock Exchange. +15% [ICON_Production] Production in cities with a Factory.[NEWLINE]BUT: -2 [ICON_Amenities] Amenities in all cities."),
+    ("LOC_POLICY_COLONIAL_TAXES_DESCRIPTION",                                         "+15% [ICON_Gold] Gold and +5% [ICON_PRODUCTION] Production in cities not on your original [ICON_Capital] Capital's continent."),
+    ("LOC_POLICY_RAJ_DESCRIPTION_XP2",                                                "+1 [ICON_Science] Science, [ICON_Culture] Culture, [ICON_Faith] Faith, and [ICON_Gold] Gold from each city-state you are Suzerain of. [ICON_TradeRoute] Trade Routes to City-States receive +2 [ICON_GOLD] Gold."),
+
     ("LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "+100% Encampment district Production adjacency bonuses.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -213,7 +218,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_INTERNATIONAL_WATERS_HD_DESCRIPTION",                                "生产除航空母舰外的所有海军单位加速+50%，城市每有一级港口建筑多10%。"),
     ("zh_Hans_CN",  "LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "所有轻骑兵和重骑兵+1 [ICON_Movement] 移动力且+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SOCIAL_STATISTICS_NAME",                                             "社会统计学"),
-    ("zh_Hans_CN",  "LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "所有拥有至少3个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.8点 [ICON_Science] 科技值和0.8点 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "所有拥有至少3个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.6点 [ICON_Science] 科技值和0.6点 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_PLUTONOMY_NAME",                                                     "政治经济学"),
     ("zh_Hans_CN",  "LOC_POLICY_PLUTONOMY_DESCRIPTION",                                              "拥有剧院的城市+5% [ICON_GOLD] 金币，拥有学院的城市+5% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_PHILOSOPHY_EDUCATION_NAME",                                          "哲学教育"),
@@ -221,9 +226,9 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_PURITAN_NAME",                                                       "清教"),
     ("zh_Hans_CN",  "LOC_POLICY_PURITAN_DESCRIPTION",                                                "拥有祭祀建筑的城市+7% [ICON_GOLD] 金币和7% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME",                                        "科学考察队"),
-    ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "与 [ICON_Capital] 首都不在同一大陆的城市中的每个商业中心或港口分别为与 [ICON_Capital] 首都处于同一大陆的城市+3 [ICON_SCIENCE] 科技值或+3 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "与 [ICON_Capital] 首都不在同一大陆的城市中的每个商业中心或港口内的二级建筑分别为与 [ICON_Capital] 首都处于同一大陆的城市+3 [ICON_SCIENCE] 科技值或+3 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_SISHU_NAME",                                                         "私学"),
-    ("zh_Hans_CN",  "LOC_POLICY_SISHU_DESCRIPTION",                                                  "所有拥有至少2个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.4点 [ICON_Science] 科技值和0.4点 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SISHU_DESCRIPTION",                                                  "所有拥有至少2个专业化区域的城市每位 [ICON_Citizen] 公民将提供0.3点 [ICON_Science] 科技值和0.3点 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_COMPILE_NAME",                                                       "编撰典籍"),
     ("zh_Hans_CN",  "LOC_POLICY_COMPILE_DESCRIPTION",                                                "每回合+4 [ICON_GreatScientist] 大科学家点数。每有一座图书馆，每回合的 [ICON_GreatScientist] 大科学家点数便+2。"),
     ("zh_Hans_CN",  "LOC_POLICY_SUPPLY_LINES_NAME",                                                  "军需补给线"),
@@ -282,11 +287,11 @@ values
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "城市中每有一座宫殿、市政广场中的建筑、外交区中的建筑，便+2所有产出。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "城市中每有一座宫殿、市政广场中的建筑，便+2所有产出。"),
         -- Tier 2
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+10%；城市产出的 [ICON_GOLD] 金币+10%。"),
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MONARCHY_XP1",                                          "拥有驻军单位的城市获得以下效果：人口增长速度+5%；城市产出的 [ICON_GOLD] 金币+10%。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MONARCHY_XP1",                                 "+50%影响力点数。拥有驻军单位的城市生产单位时+20% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_MERCHREP_XP1",                                          "所有 [ICON_Governor] 总督就职城市产出的 [ICON_GOLD] 金币+20%。建造区域时+20%生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_MERCHREP_XP1",                                 "购买一个单元格的费用降低20%。"),
-    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "神学战争中+5 [ICON_Religion] 宗教战斗力。每个人口产出1 [ICON_Faith] 信仰。"), -- 从已成为多数城市信仰的宗教中获得信仰值，每个信仰该宗教的人口+1 [Icon_Faith] 信仰值
+    ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_THEOCRACY_XP1",                                         "神学战争中+5 [ICON_Religion] 宗教战斗力。拥有寺庙或教堂的城市每个人口产出1 [ICON_Faith] 信仰。"), -- 从已成为多数城市信仰的宗教中获得信仰值，每个信仰该宗教的人口+1 [Icon_Faith] 信仰值
     ("zh_Hans_CN",  "LOC_GOVT_ACCUMULATED_BONUS_BRIEF_THEOCRACY_XP1",                                "使用 [ICON_Faith] 信仰值购买可享受15%折扣。可使用信仰在拥有圣地的城市购买陆地军事单位。"),
         -- Tier 3
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_DEMOCRACY_XP2",                                         "您通往盟友或宗主国城市的 [ICON_TradeRoute] 贸易路线为双边城市+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力。所有盟友的同盟点数每回合额外增加0.25点。城市可使用 [ICON_Gold] 金币购买区域。"),
@@ -359,9 +364,9 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_PRIMITIVE_COMMUNE_CHAPTER_HISTORY_PARA_1",    "待定 原始公社 第一段"),
     ("zh_Hans_CN",  "LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_BARD_CHAPTER_HISTORY_PARA_1",                 "待定 对城弹琴 第一段"),
     ("zh_Hans_CN",  "LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_CIVILIZE_CHAPTER_HISTORY_PARA_1",             "待定 再来一瓶 第一段"),
-    ("zh_Hans_CN",  "LOC_POLICY_RATIONALISM_DESCRIPTION",                                            "来自学院区域建筑的辐射范围增加3个单元格。拥有大学的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_SCIENCE] 科技值。拥有研究实验室的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_RATIONALISM_DESCRIPTION",                                            "来自学院区域建筑的辐射范围增加3个单元格。拥有大学的城市每位 [ICON_Citizen] 公民提供0.2 [ICON_SCIENCE] 科技值。拥有研究实验室的城市每位 [ICON_Citizen] 公民提供0.4 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_POLICY_FREE_MARKET_DESCRIPTION",                                            "来自商业中心区域建筑的辐射范围增加3个单元格。拥有银行的城市每位 [ICON_Citizen] 公民提供0.6 [ICON_GOLD] 金币。拥有证券交易所的城市每位 [ICON_Citizen] 公民提供1 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_DESCRIPTION",                                            "来自剧院广场区域建筑的辐射范围增加3个单元格。拥有艺术博物馆或考古博物馆的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_CULTURE] 文化值。拥有广播中心的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_POLICY_GRAND_OPERA_DESCRIPTION",                                            "来自剧院广场区域建筑的辐射范围增加3个单元格。拥有艺术博物馆或考古博物馆的城市每位 [ICON_Citizen] 公民提供0.2 [ICON_CULTURE] 文化值。拥有广播中心的城市每位 [ICON_Citizen] 公民提供0.4 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_MINARET_DESCRIPTION",                                                "拥有寺庙的城市每位 [ICON_Citizen] 公民提供0.3 [ICON_FAITH] 信仰值。拥有祭祀建筑的城市每位 [ICON_Citizen] 公民提供0.5 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_POLICY_SCRIPTURE_DESCRIPTION",                                              "+50%圣地相邻加成。"),
     ("zh_Hans_CN",  "LOC_POLICY_SIMULTANEUM_DL_DESCRIPTION",                                         "+100%圣地相邻加成。"),
@@ -395,4 +400,9 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_FIVE_YEAR_PLAN_DESCRIPTION",                                         "+100%学院和工业区相邻加成。来自工业区建筑的辐射范围增加3个单元格。"),
     ("zh_Hans_CN",  "LOC_POLICY_SPORTS_MEDIA_DESCRIPTION",                                           "+100%剧院广场相邻加成，体育场+1 [ICON_Amenities] 宜居度。来自娱乐区或水上乐园区域建筑的辐射范围增加3个单元格。"),
     ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME",                                    "军器监"),
-    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "军营来自相邻加成的生产力+100%");
+    ("zh_Hans_CN",  "LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION",                             "军营来自相邻加成的生产力+100%"),
+    ("zh_Hans_CN",  "LOC_POLICY_ROBBER_BARONS_DESCRIPTION",                                          "拥有证券交易所的城市+25% [ICON_Gold] 金币。拥有工厂的城市+15% [ICON_Production] 生产力。[NEWLINE]但所有城市-2 [ICON_Amenities] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_TAXES_DESCRIPTION",                                         "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+15% [ICON_Gold] 金币、+5% [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_POLICY_RAJ_DESCRIPTION_XP2",                                                "作为宗主国，从每个下属城邦获得+1 [ICON_Science] 科技值、[ICON_Culture] 文化值、[ICON_Faith] 信仰值和 [ICON_Gold] 金币。通往城邦的 [ICON_TradeRoute] 贸易路线所提供的 [ICON_GOLD] 金币+2。"),
+
+    ("zh_Hans_CN",  "LOC_POLICY_MONASTICISM_DESCRIPTION",                                            "拥有圣地的城市 [ICON_Science] 科技值+50%。[NEWLINE]但所有城市的 [ICON_Culture] 文化值-25%。");

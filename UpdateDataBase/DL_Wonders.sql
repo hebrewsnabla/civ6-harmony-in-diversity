@@ -626,10 +626,10 @@ update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null 
 -- Kilwa
 	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
 update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
-update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
-update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
+update ModifierArguments set Value = 10 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
+update ModifierArguments set Value = 10 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
-update ModifierArguments set Value = 5 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
+update ModifierArguments set Value = 3 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId like 'KILWA_PLAYERCITIES_ADD%';
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDFOODYIELD';
@@ -777,7 +777,7 @@ insert or replace into ModifierArguments
 values
 	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'Delta',		1),
 	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
-	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		100);
+	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		50);
 
 
 

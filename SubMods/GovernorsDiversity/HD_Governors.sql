@@ -69,6 +69,7 @@ values
 	('MAGNUS_EXTRA_DISTRICT',										'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT'),
 	('MAGNUS_FASTER_DISTRICT_CONSTRUCTION',							'MODIFIER_CITY_INCREASE_DISTRICT_PRODUCTION_RATE'),
 	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_ALLBUILDING_PRODUCTION_MODIFIER'),
+	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',					'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS'),
 	-- ('SURPLUS_LOGISTICS_TRADE_ROUTE_GOLD',							'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS'),
 	('MAGNUS_ADJUST_CITY_YIELD',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
 	('MAGNUS_PLACEHOLDER',											'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE'),
@@ -86,9 +87,9 @@ values
 	('MAGNUS_FASTER_DISTRICT_CONSTRUCTION',				'Amount',			50),
 	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',				'Amount',			50),
 	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',				'IsWonder',			0),
-	-- ('SURPLUS_LOGISTICS_TRADE_ROUTE_GOLD',				'YieldType',		'YIELD_GOLD'),
-	-- ('SURPLUS_LOGISTICS_TRADE_ROUTE_GOLD',				'Amount',			4),
-	-- ('SURPLUS_LOGISTICS_TRADE_ROUTE_GOLD',				'Domestic',			1),
+	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',		'YieldType',		'YIELD_PRODUCTION'),
+	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',		'Amount',			1),
+	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',		'Domestic',			1),
 	('MAGNUS_ADJUST_CITY_YIELD',						'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION'),
 	('MAGNUS_ADJUST_CITY_YIELD',						'Amount',			'15,15'),
 	('MAGNUS_PLACEHOLDER',								'YieldType',		'YIELD_GOLD'),
@@ -99,6 +100,7 @@ values
 	('VERTICAL_INTEGRATION_CULTURE_REGIONAL_STACKING',	'YieldType',		'YIELD_CULTURE'),
 	('VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING',	'YieldType',		'YIELD_FAITH');
 
+update ModifierArguments set Value = 2 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD';
 -----------------------------------------------------------------------------------------------------------------------------------
 
 -- Reyna
@@ -192,9 +194,9 @@ insert or replace into ModifierArguments
 values
 -- 地产商人
 	('REAL_ESTATE_DEVELOPER_DISTRICT',					'YieldType',										'YIELD_GOLD'),
-	('REAL_ESTATE_DEVELOPER_DISTRICT',					'Amount',											3),
+	('REAL_ESTATE_DEVELOPER_DISTRICT',					'Amount',											2),
 	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'YieldType',										'YIELD_GOLD'),
-	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'Amount',											1),
+	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'Amount',											2),
 -- 金融中心
 	('REYNA_MARKET',									'ModifierId',										'REYNA_MARKET_PERCENTAGE_BOOST'),
 	('REYNA_BANK',										'ModifierId',										'REYNA_BANK_PERCENTAGE_BOOST'),
@@ -218,12 +220,40 @@ values
 -- 调整效果
 -- 税务员
 update ModifierArguments set Value = 6 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,							ModifierId)
+VALUES
+	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',	'TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,														SubjectRequirementSetId)
+VALUES
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+VALUES
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'YieldTypeToMirror',		'YIELD_GOLD'),
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'YieldTypeToGrant',			'YIELD_CULTURE');
 -- 港务局长
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
-update ModifierArguments set Value = 150 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
+update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
 
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,									ModifierId)
+select
+	'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',		'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE'
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+insert or replace into Modifiers
+	(ModifierId,												ModifierType,								Permanent,			SubjectRequirementSetId)
+VALUES
+	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',		0,					NULL),
+	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'MODIFIER_SINGLE_CITY_BUILDER_CHARGES',		1,					'LEU_UNIT_IS_TYCOON');
+insert or replace into ModifierArguments
+	(ModifierId,											Name,						Value)
+VALUES
+	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'ModifierId',				'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER'),
+	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'Amount',					1);
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'
@@ -835,7 +865,7 @@ update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_MUSI
 update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_WRITING_TOURISM' and Name = 'ScalingFactor';
 
 update ModifierArguments set Value = 1.2 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
-update ModifierArguments set Value = 20 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
+update ModifierArguments set Value = 15 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
 
 	-- 太空计划 改名 科教兴国
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD' where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE';
