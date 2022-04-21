@@ -239,21 +239,6 @@ update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_
 
 -- 林业管理
 update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
-insert or replace into GovernorPromotionModifiers
-	(GovernorPromotionType,									ModifierId)
-select
-	'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',		'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE'
-where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,								Permanent,			SubjectRequirementSetId)
-VALUES
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',		0,					NULL),
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'MODIFIER_SINGLE_CITY_BUILDER_CHARGES',		1,					'LEU_UNIT_IS_TYCOON');
-insert or replace into ModifierArguments
-	(ModifierId,											Name,						Value)
-VALUES
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'ModifierId',				'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER'),
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'Amount',					1);
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'

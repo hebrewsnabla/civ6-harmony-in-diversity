@@ -25,7 +25,8 @@ update GlobalParameters set Value = 12 where Name = 'TRADE_ROUTE_TURN_DURATION_B
 update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
 -- Change from 2 to 1. Only full sea trade route gets 100% more gold, only need half of the route before.
-update GlobalParameters set Value = 1 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
+-- back to 1.5, double when at least 2/3 is sea.
+update GlobalParameters set Value = 1.5 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
 
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';

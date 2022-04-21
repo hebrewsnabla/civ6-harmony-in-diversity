@@ -7,12 +7,14 @@
 insert or replace into EnglishText
     (Tag,                                                           Text)
 values
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_ALT_DESCRIPTION", "The city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal. Tycoon units trained in this city receive an additional charge. "),
     ("LOC_IMPROVEMENT_LEU_STATION_DESCRIPTION",                     "Improvement built by Tycoons. May be built in flat terrain or hill, or in tiles with Forest, Floodplain, Rainforest or Volcanic Soil. Only one may be built in each city, and may not be built adjacent to another Station. [NEWLINE][NEWLINE]Instantly creates railroads on this tile and all adjacent passable land tiles. Domestic Trade Routes to and from this city receive +2 [ICON_PRODUCTION] Production, +4 [ICON_GOLD] Gold, increased by 50% if the city is [ICON_POWER] Powered. Improvements in this city yields +50% [ICON_TOURISM] Tourism.[NEWLINE]+50% Adjacency bonus to adjacent Holy Site, Campus, Theater Square, Commercial Hub, Harbor or Industial Zone districts, doubled if the city is [ICON_POWER] Powered.");
-    
+
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
     (Language,      Tag,                                               Text)
 values
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_ALT_DESCRIPTION",  "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。本城训练的大亨使用次数+1。"),
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NAME",                        "大亨"),
     ("zh_Hans_CN",  "LOC_UNIT_LEU_TYCOON_NOMONOPOLY_DESCRIPTION",      "需要“工作坊”方可建造或购买的高价平民单位。[NEWLINE][NEWLINE]大亨们可以创建铁路和火车站来改善你的领土上的区域产出、贸易和[ICON_PRODUCTION]生产。"),
     ("zh_Hans_CN",  "LOC_STATION_ADJ_PRODUCTION",                      "+{1_num} [ICON_PRODUCTION] 生产力来自相邻火车站。"),

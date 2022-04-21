@@ -98,3 +98,7 @@ update Districts set Cost = 60 where DistrictType = 'DISTRICT_THANH';
 update Districts set Cost = 150 where DistrictType = 'DISTRICT_AERODROME';
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_CANAL';
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_DAM';
+
+-- 区域价格调整（搁置）
+-- update Districts set Cost = 80 where Cost = 75;
+-- update Districts set Cost = 64 where Cost = 60;
