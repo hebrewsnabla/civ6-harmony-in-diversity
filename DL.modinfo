@@ -197,30 +197,30 @@
       <ModInUse>7ce74c28-41ba-4453-b3d1-d30ef8013887</ModInUse>
     </Criteria>
     <!-- Game Modes -->
-    <Criteria id="Testing_Mode_Expansion2">
+    <Criteria id="Military_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
-        <ConfigurationId>GAMEMODE_TESTING</ConfigurationId>
+        <ConfigurationId>GAMEMODE_MILITARY</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
-    <Criteria id="TechTest_Mode_Expansion2">
+    <!-- <Criteria id="TechTest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_TECHTEST</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria>
-    <!-- <Criteria id="AITest_Mode_Expansion2">
+    </Criteria> -->
+    <Criteria id="AITest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_AITEST</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
-    </Criteria> -->
+    </Criteria>
     <Criteria id="MPTest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1398,29 +1398,29 @@
       <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
     </UpdateIcons> -->
     <!-- Military -->
-    <UpdateDatabase id="Testing_upd" criteria="Testing_Mode_Expansion2">
+    <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
       <File>GameModeSupport/MilitaryMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/MilitaryMode/DL_Military.sql</File>
       <File>GameModeSupport/MilitaryMode/DL_Temp.sql</File>
     </UpdateDatabase>
-    <UpdateText id="Testing_update_text" criteria="Testing_Mode_Expansion2">
+    <UpdateText id="Testing_update_text" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18101</LoadOrder></Properties>
       <File>GameModeSupport/MilitaryMode/HD_Texts.sql</File>
     </UpdateText>
-    <AddGameplayScripts id="Testing_gameplay" criteria="Testing_Mode_Expansion2">
+    <AddGameplayScripts id="Testing_gameplay" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18102</LoadOrder></Properties>
       <File>GameModeSupport/MilitaryMode/DL_Military.lua</File>
     </AddGameplayScripts>
     <!-- Tech -->
-    <UpdateDatabase id="TechTest_update" criteria="TechTest_Mode_Expansion2">
+    <UpdateDatabase id="TechTest_update" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18200</LoadOrder></Properties>
       <File>GameModeSupport/TestAiMode/DL_GameCapabilities.sql</File>
       <File>GameModeSupport/TestAiMode/DL_Techs.sql</File>
       <File>GameModeSupport/TestAiMode/DL_Temp.sql</File>
       <File>GameModeSupport/TestAiMode/DL_AI.sql</File>
     </UpdateDatabase>
-    <UpdateText id="TechTest_update_text" criteria="TechTest_Mode_Expansion2">
+    <UpdateText id="TechTest_update_text" criteria="AITest_Mode_Expansion2">
       <Properties><LoadOrder>18201</LoadOrder></Properties>
       <File>GameModeSupport/TestAiMode/HD_Texts.sql</File>
     </UpdateText>
