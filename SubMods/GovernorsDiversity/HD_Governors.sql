@@ -43,7 +43,7 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_P
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST';
 
 -- update ModifierArguments set Value = 30 where ModifierId = 'SURPLUS_LOGISTICS_EXTRA_GROWTH' and Name = 'Amount';
-update ModifierArguments set Value = 4 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
 
 -- 新增效果
 insert or replace into GovernorPromotionModifiers
@@ -69,7 +69,7 @@ values
 	('MAGNUS_EXTRA_DISTRICT',										'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT'),
 	('MAGNUS_FASTER_DISTRICT_CONSTRUCTION',							'MODIFIER_CITY_INCREASE_DISTRICT_PRODUCTION_RATE'),
 	('MAGNUS_FASTER_BUILDING_CONSTRUCTION',							'MODIFIER_SINGLE_CITY_ADJUST_ALLBUILDING_PRODUCTION_MODIFIER'),
-	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',					'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS'),
+	('SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION',					'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_TO_OTHERS'),
 	-- ('SURPLUS_LOGISTICS_TRADE_ROUTE_GOLD',							'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS'),
 	('MAGNUS_ADJUST_CITY_YIELD',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'),
 	('MAGNUS_PLACEHOLDER',											'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE'),
@@ -100,7 +100,6 @@ values
 	('VERTICAL_INTEGRATION_CULTURE_REGIONAL_STACKING',	'YieldType',		'YIELD_CULTURE'),
 	('VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING',	'YieldType',		'YIELD_FAITH');
 
-update ModifierArguments set Value = 2 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD';
 -----------------------------------------------------------------------------------------------------------------------------------
 
 -- Reyna
