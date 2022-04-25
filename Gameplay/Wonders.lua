@@ -5,6 +5,20 @@ end
 
 Utils = ExposedMembers.DLHD.Utils
 
+function CityHasDistrict(city, DistrictType)
+    local district_index = Utils.GetDistrictIndex(DistrictType)
+    if city:GetDistricts():HasDistrict(district_index) then return true end
+    
+    for row in GameInfo.DistrictReplaces() do
+        if row.ReplacesDistrictType == DistrictType then
+            district_index = Utils.GetDistrictIndex(district_type)
+            if city:GetDistricts():HasDistrict(district_index) then
+                return true
+            end
+        end
+    end
+end
+
 function PotalaPalaceIncreaseFaithAmount( playerID, cityID, buildingID, plotID, bOriginalConstruction)
     local m_Potala_table = GameInfo.Buildings['BUILDING_POTALA_PALACE']
     if  (m_Potala_table ~= nil) then
@@ -81,8 +95,7 @@ function StatueLibertyGrantBuilding (playerID, cityID, buildingID, plotID, bOrig
 
         local player = Players[playerID]
         for _, city in player:GetCities():Members() do
-            local harbor = Utils.GetDistrictIndex('DISTRICT_HARBOR')
-            if city:GetDistricts():HasDistrict(harbor) then
+            if CityHasDistrict(city, 'DISTRICT_HARBOR') then
                 local cityHasTier1 = false
                 local cityHasTier2 = false
                 local cityHasTier3 = false
