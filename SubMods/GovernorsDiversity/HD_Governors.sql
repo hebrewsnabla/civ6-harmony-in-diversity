@@ -226,8 +226,8 @@ VALUES
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,														SubjectRequirementSetId)
 VALUES
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
-insert or replace into ModifierArguments
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
+insert or replace into ModifierArguments			
 	(ModifierId,									Name,						Value)
 VALUES
 	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'YieldTypeToMirror',		'YIELD_GOLD'),
