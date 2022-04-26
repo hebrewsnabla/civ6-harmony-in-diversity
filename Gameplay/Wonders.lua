@@ -11,7 +11,7 @@ function CityHasDistrict(city, DistrictType)
     
     for row in GameInfo.DistrictReplaces() do
         if row.ReplacesDistrictType == DistrictType then
-            district_index = Utils.GetDistrictIndex(district_type)
+            district_index = Utils.GetDistrictIndex(row.CivUniqueDistrictType)
             if city:GetDistricts():HasDistrict(district_index) then
                 return true
             end
