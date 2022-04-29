@@ -45,5 +45,26 @@ function HDGreatPersonGetActivationPlots(playerID, greatPersonIndividualID)
         end
         return activationPlots;
     end
+
+    -- 公司模式大商开公司, by xiaoxiao
+    if GameInfo.XXCAT_GreatPersonUniqueResources ~= nil then
+        for row in GameInfo.XXCAT_GreatPersonUniqueResources() do
+            local greatPersonIndex = GameInfo.GreatPersonIndividuals[row.GreatPersonIndividualType].Index;
+            if greatPersonIndividualID == greatPersonIndex then
+                activationPlots = {};
+                for _, city in player:GetCities():Members() do
+                    local plots = Map.GetCityPlots():GetPurchasedPlots(city)
+                    for _, plotIndex in pairs(plots) do
+                        local plot = Map.GetPlotByIndex(plotIndex);
+                        if plot:GetDistrictType() == -1 then
+                            table.insert(activationPlots, plotIndex);
+                        end
+                    end
+                end
+                return activationPlots;
+            end
+        end
+    end
+        
     return nil;
 end
