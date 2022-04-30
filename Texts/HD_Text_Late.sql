@@ -61,7 +61,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Recon: Faster [ICON_M
 --     Tag = 'LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION');
 
 -- +5 [ICON_Strength] Combat Strength against Cavalry units, extra 
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [ICON_Strength] Combat Strength when defending cavalry units.' where Language = 'en_US' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Anti Cavalry: +10 [ICON_Strength] Combat Strength when defending against cavalry units.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_SPEARMAN_DESCRIPTION' or
     Tag = 'LOC_UNIT_GREEK_HOPLITE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PIKEMAN_DESCRIPTION' or
@@ -178,7 +178,7 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Melee: Reveals 
     Tag = 'LOC_UNIT_CANADA_HMCS_HAIDA_DESCRIPTION');
 
 -- Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.
-update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval raider: have the ability to coastal raid. Can only be seen by Naval Melee unless adjacent to it.' where Language = 'en_US' and (
+update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]Naval Raider: have the ability to coastal raid. Can only be seen by Naval Melee units unless adjacent to it.' where Language = 'en_US' and (
     Tag = 'LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION' or
     Tag = 'LOC_UNIT_PRIVATEER_DESCRIPTION' or
     Tag = 'LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION' or

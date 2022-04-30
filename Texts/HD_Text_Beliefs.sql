@@ -48,7 +48,7 @@ values
     -- ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 10% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. +30% [ICON_PRODUCTION] Production towards Holy Site district buildings. Each building in the Holy Site district provides +5% [ICON_Faith] Faith for the city."),
     ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. Each building in the Holy Site district provides +8% [ICON_Faith] Faith for the city."),
     ("LOC_BELIEF_ABBOT_NAME",                                 "Abbot"),
-    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "Holy Site district provides +1 [ICON_Production] Production. All Holy Site buildings provide +1 [ICON_Production] Production to all adjacent tiles."),
+    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "Holy Site district provides +1 [ICON_Production] Production. Each Holy Site building provides +1 [ICON_Production] Production to all adjacent tiles."),
     ("LOC_BELIEF_INITIATION_RITES_NAME",                      "Initiation Rites"),
     ("LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION",            "When you use a religious unit to convert a city for the first time, earn 50 [ICON_Gold] Gold per [ICON_Citizen] citizens living in that city (on Standard Speed)."),
     ("LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION",         "Religion spreads to cities 30% further away. When you use a religious unit to convert a city for the first time earn 15 [ICON_Culture] Culture per [ICON_Citizen] citizens living in that city (on Standard Speed)."),

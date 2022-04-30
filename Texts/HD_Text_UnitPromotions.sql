@@ -135,7 +135,6 @@ values
     ("LOC_PROMOTION_SHELLS_DESCRIPTION",                                        "+10 [ICON_Strength] Combat Strength vs. District defenses."),
     -- ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+10 [ICON_Strength] Combat Strength vs. District defenses."),
     ("LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                   "+1 [ICON_Movement] Movement."),
-    ("LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                   "Capturing an enemy City grants 15% bonus [ICON_Production] Production in all Cities for 5 turns.[NEWLINE] +100% [ICON_Gold] Gold gained from capturing cities.[NEWLINE]+100% Yields gained from pilaging and coastal raids.[NEWLINE]Awards +1 [ICON_Governor] Governor Title."),
     --naval melee
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                             "Battering Ram Tactics"),
     ("LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                      "+1 additional attack per turn if [ICON_Movement] Movement allows."),
@@ -224,7 +223,6 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_SHELLS_DESCRIPTION",                                     "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "与区域防御战斗时+10 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_EXPERT_CREW_DESCRIPTION",                                "+1 [ICON_Movement] 移动力。"),
-    -- ("zh_Hans_CN",  "LOC_BUILDING_GOV_CONQUEST_DESCRIPTION",                                "占领一座敌方城市后，所有城市将获得15%的 [ICON_Production] 生产力加成，效果持续5回合。[NEWLINE]占领城市获得的 [ICON_Gold] 金币收益+100%。[NEWLINE]掠夺和海岸扫荡的收益+100%。[NEWLINE]奖励1个 [ICON_Governor] 总督头衔。"),
     --naval melee
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME",                          "冲撞战术"),
     ("zh_Hans_CN",  "LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION",                   "如果移动力 [ICON_Movement] 允许，每回合攻击次数+1"),

@@ -9,4 +9,4 @@ values
 insert or replace into EnglishText
     (Tag,                                                               Text)
 values
-    ("LOC_IMPROVEMENT_SAILOR_WATCHTOWER_DESCRIPTION",     "Occupying units have +1 Sight and can see through woods and jungles. +1 Sight for units occupying adjacent Encampments and defensive improvements.");
+    ("LOC_IMPROVEMENT_SAILOR_WATCHTOWER_DESCRIPTION",     "Can only be built by recon units. +1 Sight for occupying units; +1 Sight for units occupying adjacent Encampments and defensive improvements.");

@@ -3,10 +3,10 @@
 insert or replace into EnglishText
     (Tag,                                                 Text)
 values
-    ("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "1 [ICON_ENVOY] Envoys"),
-    ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "2 [ICON_ENVOY] Envoys"),
-    ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "5 [ICON_ENVOY] Envoys"),
-    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "9 [ICON_ENVOY] Envoys"),
+    ("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "1 [ICON_ENVOY] Envoy:"),
+    ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "2 [ICON_ENVOY] Envoys:"),
+    ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "5 [ICON_ENVOY] Envoys:"),
+    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "9 [ICON_ENVOY] Envoys:"),
     ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "5 [ICON_Envoy] Envoys, and more than any other civilization:"),
     ("LOC_CITY_STATES_SUZERAIN_DIPLOMATIC_BONUS",         "Suzerain Diplomacy Bonus:[NEWLINE][ICON_Bolt]The city-state follows you into war and peace with other players.[NEWLINE][ICON_Bolt]City-state lands become friendly territory. Your units can move there, heal there, and upgrade there.[NEWLINE][ICON_Bolt]Your Builder units may improve city-state tiles.[NEWLINE][ICON_Bolt]See 3 tiles around the city-state.[NEWLINE][ICON_Bolt]Can pay [ICON_Gold] Gold to temporarily take control of the city-state's military.[NEWLINE][ICON_Bolt]Gain ownership of all the city-state's resources."), --[NEWLINE][ICON_Bolt]You gain a base of +1 [ICON_FAVOR] Diplomatic Favor every turn.
     ("LOC_LEADER_TRAIT_ANTANANARIVO_DESCRIPTION",         "Your Civilization gains +2% [ICON_Culture] Culture for each Great Person it has ever earned, up to a total of +20%."),
@@ -15,8 +15,8 @@ values
     ("LOC_CIVILIZATION_AKKAD_BONUS",                      "May purchase support units with [ICON_Faith] Faith. Land units can escort moving civilian and support units at their [ICON_Movement] Movement speed."), --  +1 [ICON_Movement] Movement for land units when they are escorting units.
     ("LOC_LEADER_TRAIT_KABUL_DESCRIPTION",                "Your units receive 100% more experience from battles they initiate."),
     ("LOC_CIVILIZATION_KABUL_BONUS",                      "Your units receive 100% more experience from battles they initiate."),
-    ("LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. +2 [Icon_production] Production from each building inside Harbor District."),
-    ("LOC_CIVILIZATION_AUCKLAND_BONUS",                   "Fishing Boats +1 [ICON_Production] Production. +1 extra [ICON_Production] Production if the player has entered Industrial Era. +2 [Icon_production] Production from each building inside Harbor District."),
+    ("LOC_LEADER_TRAIT_AUCKLAND_DESCRIPTION",             "Fishing Boats provide +1 [ICON_Production] Production. Additional +1 [ICON_Production] Production when you reach the Industrial Era. +2 [Icon_production] Production for each building in Harbor districts."),
+    ("LOC_CIVILIZATION_AUCKLAND_BONUS",                   "Fishing Boats provide +1 [ICON_Production] Production. Additional +1 [ICON_Production] Production when you reach the Industrial Era. +2 [Icon_production] Production for each building in Harbor districts."),
     ("LOC_LEADER_TRAIT_RAPA_NUI_DESCRIPTION",             "Your Builders can now make Moai improvements.[NEWLINE][NEWLINE]Moai provide +3 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile.  Additional [ICON_Culture] Culture as you advance through the Civics and Technology Tree. Receives [ICON_TOURISM] Tourism from [ICON_Culture] Culture. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can be built on resourses but can only be placed adjacent to a Lake or Coast tile."),
     ("LOC_CIVILIZATION_RAPA_NUI_BONUS",                   "Your Builders can now make Moai improvements.[NEWLINE][NEWLINE]Moai provide +3 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Moai. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil tile.  Additional [ICON_Culture] Culture as you advance through the Civics and Technology Tree. Receives [ICON_TOURISM] Tourism from [ICON_Culture] Culture. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Can be built on resourses but can only be placed adjacent to a Lake or Coast tile."),
     ("LOC_LEADER_TRAIT_LA_VENTA_EXPANSION2_DESCRIPTION",  "Your Builders can now make Colossal Head improvements.[NEWLINE][NEWLINE]Colossal Heads provide +2 [ICON_Faith] Faith. +1 [ICON_Faith] Faith for every 2 adjacent Rainforest or for every adjacent Rainforest once Humanism is discovered. +1 [ICON_Faith] Faith for every 2 adjacent Woods or for every adjacent Woods once Humanism is discovered. [ICON_TOURISM] Tourism from [ICON_FAITH] Faith once Flight is discovered. Can only be built on Forest or Jungles."),
@@ -31,24 +31,24 @@ values
     ("LOC_CIVILIZATION_HONG_KONG_BONUS",                  "Your cities get +20% [ICON_Production] Production towards city projects. Your Campus and buildings inside it provide +2 [ICON_Production] Production."),
     ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
     ("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
-    ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3 [Icon_Faith] Faith to all your Trade Routes."),
-    ("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. +3 [Icon_Faith] Faith to all your Trade Routes."),
+    ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. [ICON_TradeRoute]Trade Routes provide +3 [Icon_Faith] Faith."),
+    ("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. [ICON_TradeRoute]Trade Routes provide +3 [Icon_Faith] Faith."),
     ("LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city."),
     ("LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "Land combat or Support units are 20% cheaper to purchase with [ICON_GOLD] Gold (or [ICON_Faith] Faith if allowed) for each Encampment district building in that city."),
     ("LOC_LEADER_TRAIT_BOLOGNA_DESCRIPTION",              "Your districts with a building provide +2 [ICON_GreatPerson] Great Person point of their type ([ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, and [ICON_GreatMusician] Great Musician for Theater Square districts with a building)."),
     ("LOC_CIVILIZATION_BOLOGNA_BONUS",                    "Your districts with a building provide +2 [ICON_GreatPerson] Great Person point of their type ([ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, and [ICON_GreatMusician] Great Musician for Theater Square districts with a building)."),
-    ("LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "+7% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have."),
-    ("LOC_CIVILIZATION_TARUGA_BONUS",                     "+7% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have."),
-    ("LOC_LEADER_TRAIT_VALLETTA_DESCRIPTION",             "City Center buildings and Encampment district buildings can be bought with [ICON_Faith] Faith. Purchasing Encampment district buildings is 20% cheaper. Purchasing Ancient, Medieval, and Renaissance Walls (including Tsikhe) is 50% cheaper, but they can only be bought with [ICON_Faith] Faith."),
-    ("LOC_CIVILIZATION_VALLETTA_BONUS",                   "City Center buildings and Encampment district buildings can be bought with [ICON_Faith] Faith. Purchasing Encampment district buildings is 20% cheaper. Purchasing Ancient, Medieval, and Renaissance Walls (including Tsikhe) is 50% cheaper, but they can only be bought with [ICON_Faith] Faith."),
-    ("LOC_LEADER_TRAIT_SINGAPORE_DESCRIPTION",            "Your International [ICON_TradeRoute] Trade Routes gain +2 [ICON_Production] Production. Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state gain +2 [ICON_Gold] Gold."),
-    ("LOC_CIVILIZATION_SINGAPORE_BONUS",                  "Your International [ICON_TradeRoute] Trade Routes gain +2 [ICON_Production] Production. Your [ICON_TradeRoute] Trade Routes to an Ally's city or vassal city-state gain +2 [ICON_Gold] Gold."),
-    ("LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION",         "Theater district's [ICON_Culture] Culture adjacency bonus provides [ICON_Faith] Faith as well.[NEWLINE]+3 [ICON_Culture] Culture from each [ICON_GreatWork_Sculpture] Great Work of Sculpture, [ICON_GreatWork_Portrait] Great Work of Portrait, [ICON_GreatWork_Landscape] Great Work of Landscape and [ICON_GreatWork_Religious] Great Work of Religious. +3 [ICON_Culture] Culture from each [ICON_GreatWork_RELIC] Relic."), -- +2 [ICON_Faith] Faith for each city following your Religion if you have found religion.
+    ("LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "+7% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have within 3 tiles."),
+    ("LOC_CIVILIZATION_TARUGA_BONUS",                     "+7% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have within 3 tiles."),
+    ("LOC_LEADER_TRAIT_VALLETTA_DESCRIPTION",             "City Center buildings and Encampment district buildings can be bought with [ICON_Faith] Faith. Encampment district buildings is 20% cheaper to purchase. Ancient, Medieval, and Renaissance Walls (including Tsikhe) are 50% cheaper to purchase with [ICON_Faith] Faith."),
+    ("LOC_CIVILIZATION_VALLETTA_BONUS",                   "City Center buildings and Encampment district buildings can be bought with [ICON_Faith] Faith. Encampment district buildings is 20% cheaper to purchase. Ancient, Medieval, and Renaissance Walls (including Tsikhe) are 50% cheaper to purchase with [ICON_Faith] Faith."),
+    ("LOC_LEADER_TRAIT_SINGAPORE_DESCRIPTION",            "Your International [ICON_TradeRoute] Trade Routes provide +2 [ICON_Production] Production. Your [ICON_TradeRoute] Trade Routes to an Ally's city, or a city-state you are suzerain of, provide +2 [ICON_Gold] Gold."),
+    ("LOC_CIVILIZATION_SINGAPORE_BONUS",                  "Your International [ICON_TradeRoute] Trade Routes provide +2 [ICON_Production] Production. Your [ICON_TradeRoute] Trade Routes to an Ally's city, or a city-state you are suzerain of, provide +2 [ICON_Gold] Gold."),
+    ("LOC_LEADER_TRAIT_VATICAN_CITY_DESCRIPTION",         "Theater district's [ICON_Culture] Culture adjacency bonus provides [ICON_Faith] Faith as well.[NEWLINE][ICON_GreatWork_Sculpture] Great Work of Sculpture, [ICON_GreatWork_Portrait] Great Work of Portrait, [ICON_GreatWork_Landscape] Great Work of Landscape,, [ICON_GreatWork_Religious] Great Work of Religious and [ICON_GreatWork_RELIC] Relic provide +3 [ICON_Culture] Culture."), -- +2 [ICON_Faith] Faith for each city following your Religion if you have found religion.
     ("LOC_CIVILIZATION_VATICAN_CITY_BONUS",               "Theater district's [ICON_Culture] Culture adjacency bonus provides [ICON_Faith] Faith as well.[NEWLINE]+3 [ICON_Culture] Culture from each [ICON_GreatWork_Sculpture] Great Work of Sculpture, [ICON_GreatWork_Portrait] Great Work of Portrait, [ICON_GreatWork_Landscape] Great Work of Landscape and [ICON_GreatWork_Religious] Great Work of Religious. +3 [ICON_Culture] Culture from each [ICON_GreatWork_RELIC] Relic."), -- 
-    ("LOC_LEADER_TRAIT_BABYLON_DESCRIPTION",              "+3 [ICON_SCIENCE] Science from each [ICON_GreatWork_WRITING] Great Work of Writing, [ICON_GreatWork_RELIC] Relic and [ICON_GreatWork_Artifact] Artifact."), -- Campus provides +4 Great Writer points per turn.
-    ("LOC_CIVILIZATION_BABYLON_BONUS",                    "+3 [ICON_SCIENCE] Science from each [ICON_GreatWork_WRITING] Great Work of Writing, [ICON_GreatWork_RELIC] Relic and [ICON_GreatWork_Artifact] Artifact."), -- Campus provides +4 Great Writer points per turn.
-    ("LOC_LEADER_TRAIT_FEZ_DESCRIPTION",                  "+2 [ICON_SCIENCE] Science from each Holy Site and its buildings."),
-    ("LOC_CIVILIZATION_FEZ_BONUS",                        "+2 [ICON_SCIENCE] Science from each Holy Site and its buildings."),
+    ("LOC_LEADER_TRAIT_BABYLON_DESCRIPTION",              "+3 [ICON_SCIENCE] Science from each [ICON_GreatWork_RELIC] Relic and [ICON_GreatWork_Artifact] Artifact. 1st tier buildings in Campus and Theater districts provide +2 [ICON_SCIENCE] Science."), -- Campus provides +4 Great Writer points per turn.
+    ("LOC_CIVILIZATION_BABYLON_BONUS",                    "+3 [ICON_SCIENCE] Science from each [ICON_GreatWork_RELIC] Relic and [ICON_GreatWork_Artifact] Artifact. 1st tier buildings in Campus and Theater districts provide +2 [ICON_SCIENCE] Science."), -- Campus provides +4 Great Writer points per turn.
+    ("LOC_LEADER_TRAIT_FEZ_DESCRIPTION",                  "Holy Site and its buildings provides +2 [ICON_SCIENCE] Science."),
+    ("LOC_CIVILIZATION_FEZ_BONUS",                        "Holy Site and its buildings provides +2 [ICON_SCIENCE] Science."),
     ("LOC_LEADER_TRAIT_HATTUSA_EXPANSION2_DESCRIPTION",   "Provides you with 2 of each Strategic resource per turn that you have revealed. +2 [ICON_Science] Science from improved Strategic resources."),
     ("LOC_CIVILIZATION_HATTUSA_BONUS_XP2",                "Provides you with 2 of each Strategic resource per turn that you have revealed. +2 [ICON_Science] Science from improved Strategic resources."),
     ("LOC_LEADER_TRAIT_NALANDA_DESCRIPTION",              "Your Builders can now make Mahavihara improvements.[NEWLINE][NEWLINE]+3 [ICON_SCIENCE] Science and +1 [Icon_Housing] Housing. +1 [ICON_Science] Science for every adjacent Campus district or Holy Site district. After researching Scientific Theory receive an additional +1 [Icon_Science] Science for every adjacent Campus. Must be built on flat terrain not adjacent to another Mahavihara."),
@@ -57,8 +57,8 @@ values
     -- ("LOC_CIVILIZATION_ANTIOCH_BONUS",                    "Your [ICON_TradeRoute] Trade Routes to foreign cities earn +2 [ICON_Gold] Gold for each Luxury resource at the destination."),
     ("LOC_LEADER_TRAIT_BRUSSELS_DESCRIPTION",             "Your cities get +25% [ICON_Production] Production towards Wonders."), -- Each World Wonder +2 [ICON_Production] Production for your city.
     ("LOC_CIVILIZATION_BRUSSELS_BONUS",                   "Your cities get +25% [ICON_Production] Production towards Wonders."), -- Each World Wonder +2 [ICON_Production] Production for your city.
-    ("LOC_LEADER_TRAIT_MEXICO_CITY_DESCRIPTION",          "Regional effects from your Industrial Zone,Water Park and Entertainment Complex districts reach 3 tiles farther."), -- Industrial Zone +1 [ICON_AMENITIES] Amenity。Entertainment Complex +5 [ICON_Production] Production.
-    ("LOC_CIVILIZATION_MEXICO_CITY_BONUS",                "Regional effects from your Industrial Zone,Water Park and Entertainment Complex districts reach 3 tiles farther."), -- Industrial Zone +1 [ICON_AMENITIES] Amenity。Entertainment Complex +5 [ICON_Production] Production.
+    ("LOC_LEADER_TRAIT_MEXICO_CITY_DESCRIPTION",          "Regional effects from your Industrial Zone, Water Park and Entertainment Complex districts reach 3 tiles farther."), -- Industrial Zone +1 [ICON_AMENITIES] Amenity。Entertainment Complex +5 [ICON_Production] Production.
+    ("LOC_CIVILIZATION_MEXICO_CITY_BONUS",                "Regional effects from your Industrial Zone, Water Park and Entertainment Complex districts reach 3 tiles farther."), -- Industrial Zone +1 [ICON_AMENITIES] Amenity。Entertainment Complex +5 [ICON_Production] Production.
     ("LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "-15% cost when purchasing buildings in Cities with established governor."),
     ("LOC_CIVILIZATION_ANTIOCH_BONUS",                    "-15% cost when purchasing buildings in Cities with established governor."),
     ("LOC_LEADER_TRAIT_HUNZA_DESCRIPTION",                "Your [ICON_TradeRoute] Trade Routes generate +1 [ICON_Gold] Gold for every 4 tiles they travel."),
@@ -71,8 +71,8 @@ values
     ("LOC_CIVILIZATION_SAMARKAND_BONUS",                  "Your Builders can now make Trading Dome improvements.[NEWLINE][NEWLINE]+2 [ICON_GOLD] Gold. Extra +2 [ICON_GOLD] Gold after discovring Civiv Medieval Faires. +2 [ICON_Gold] Gold to adjacent Luxury resource. Your outgoing international [ICON_TradeRoute] Trade Routes grant +2 [ICON_GOLD] Gold per Trading Dome at the origin. +3 [ICON_Food] when built on Desert or Desert Hill tiles. Cannot be built next to another Trading Dome."), -- +2 [ICON_Gold] Gold for every adjacent Luxury resource. 
     ("LOC_LEADER_TRAIT_ARMAGH_EXPANSION2_DESCRIPTION",    "Your Builders can now make Monastery improvements.[NEWLINE][NEWLINE]Monasteries provide +2 [ICON_Faith] Faith. +15 HP healing for friendly religious unit on this tile that has not attacked this turn. +2 [ICON_FAITH] Faith for every adjacent Districts. +3 [ICON_FAITH] Faith for every adjacent Districts once Reformed Church is discovered. Provides +1 [ICON_HOUSING] Housing. Receive an additional [ICON_HOUSING] Housing once Colonialism is discovered. One per city."),
     ("LOC_CIVILIZATION_ARMAGH_BONUS_XP2",                 "Your Builders can now make Monastery improvements.[NEWLINE][NEWLINE]Monasteries provide +2 [ICON_Faith] Faith. +15 HP healing for friendly religious unit on this tile that has not attacked this turn. +2 [ICON_FAITH] Faith for every adjacent Districts. +3 [ICON_FAITH] Faith for every adjacent Districts once Reformed Church is discovered. Provides +1 [ICON_HOUSING] Housing. Receive an additional [ICON_HOUSING] Housing once Colonialism is discovered. Cannot be built next to another Monastery."),
-    ("LOC_LEADER_TRAIT_LISBON_DESCRIPTION",               "Your Trader units are immune to being plundered on water tiles. [ICON_TradeRoute] Trade Routes receive bonus +1 [ICON_Food] Food and +1 [ICON_Production] Production for routes between your own cities. [ICON_TradeRoute] Trade Routes between multiple continents receive triple these numbers."),--bonus +6 [ICON_Gold] Gold for routes to other civilizations, and 
-    ("LOC_CIVILIZATION_LISBON_BONUS",                     "Your Trader units are immune to being plundered on water tiles. [ICON_TradeRoute] Trade Routes receive bonus +1 [ICON_Food] Food and +1 [ICON_Production] Production for routes between your own cities. [ICON_TradeRoute] Trade Routes between multiple continents receive triple these numbers."),--bonus +6 [ICON_Gold] Gold for routes to other civilizations, and 
+    ("LOC_LEADER_TRAIT_LISBON_DESCRIPTION",               "Your Trader units are immune to being plundered on water tiles. Domestic [ICON_TradeRoute] Trade Routes receive +1 [ICON_Food] Food and +1 [ICON_Production] Production; this bonus is doubled for [ICON_TradeRoute] Trade Routes between continents."),
+    ("LOC_CIVILIZATION_LISBON_BONUS",                     "Your Trader units are immune to being plundered on water tiles. Domestic [ICON_TradeRoute] Trade Routes receive +1 [ICON_Food] Food and +1 [ICON_Production] Production; this bonus is doubled for [ICON_TradeRoute] Trade Routes between continents."),--bonus +6 [ICON_Gold] Gold for routes to other civilizations, and 
     ("LOC_LEADER_TRAIT_MOHENJO_DARO_DESCRIPTION",         "Your cities have full [ICON_Housing] Housing from water, as if they were all next to a River. Both Theater and Aqueduct Districts provide +0.3 [ICON_Culture] Culture for each [ICON_Citizen] citizen in the city."),
     ("LOC_CIVILIZATION_MOHENJO_DARO_BONUS",               "Your cities have full [ICON_Housing] Housing from water, as if they were all next to a River. Both Theater and Aqueduct Districts provide +0.3 [ICON_Culture] Culture for each [ICON_Citizen] citizen in the city."),
     ("LOC_LEADER_TRAIT_GRANADA_EXPANSION2_DESCRIPTION",   "Your Builders can now make Alcázar improvements.[NEWLINE][NEWLINE]Alcázars provide +3 [ICON_Culture] Culture. Provides [ICON_SCIENCE] Science equal to 100% of the tile's Appeal. Occupying unit receives +4 [ICON_Strength] Defense Strength, and automatically gains 2 turns of fortification. Provides [ICON_TOURISM] Tourism after researching Flight. Cannot be built next to another Alcázar."),
@@ -81,12 +81,12 @@ values
     ("LOC_CIVILIZATION_CARDIFF_BONUS",                    "Cities receive +3 [ICON_Power] Power for every Harbor building."), -- +4 corresponding output for buildings powered.
     ("LOC_LEADER_TRAIT_WOLIN_DESCRIPTION",                "Receive [ICON_GreatGeneral] Great General points when a land unit defeats a major or minor civilization's unit and receive [ICON_GreatAdmiral] Great Admiral points when a naval unit defeats a major or minor civilization's unit equal to 100% of the opposing unit's strength (Standard Speed)."),
     ("LOC_CIVILIZATION_WOLIN_BONUS",                      "Receive [ICON_GreatGeneral] Great General points when a land unit defeats a major or minor civilization's unit and receive [ICON_GreatAdmiral] Great Admiral points when a naval unit defeats a major or minor civilization's unit equal to 100% of the opposing unit's strength (Standard Speed)."),
-    ("LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
-    ("LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "+2 [ICON_SCIENCE] Science from each Encampment, Barracks, Stable, Armory and Military Academy. Your Cavalry +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
-    ("LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture, double when they are located near river."),
-    ("LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture, double when they are located near river."),
-    ("LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus."),
-    ("LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                "Increase 50% of theater district adjacent bonus and each ally level with other player provide extra 50% increase of theater district adjacent bonus."),
+    ("LOC_LEADER_TRAIT_PRESLAV_DESCRIPTION",              "+2 [ICON_SCIENCE] Science from Encampment district and each building inside it. Your Cavalry units receive +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
+    ("LOC_CIVILIZATION_PRESLAV_BONUS_XP1",                "+2 [ICON_SCIENCE] Science from Encampment district and each building inside it. Your Cavalry units receive +1 [ICON_Movement] Movement and +3 [ICON_Strength] Combat Strength."),
+    ("LOC_LEADER_TRAIT_AYUTTHAYA_DESCRIPTION",            "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture; doubled if placed next to river."),
+    ("LOC_CIVILIZATION_AYUTTHAYA_BONUS",                  "Theater, Holy Site, Commercial Hub, Entertainment Complex and Wonders provide 1 [ICON_CULTURE] Culture; doubled if placed next to river."),
+    ("LOC_LEADER_TRAIT_VILNIUS_DESCRIPTION",              "+50% adjacent bonus for Theater districts; each ally level with other Major Civilization provides additional +50% adjacency bonus for Theater districts."),
+    ("LOC_CIVILIZATION_VILNIUS_BONUS_XP1",                "+50% adjacent bonus for Theater districts; each ally level with other Major Civilization provides additional +50% adjacency bonus for Theater districts."),
     ("LOC_LEADER_TRAIT_CAGUANA_DESCRIPTION",              "Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills."),
     ("LOC_CIVILIZATION_CAGUANA_BONUS",                    "Unlocks the Builder ability to construct a Batey.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture. +1 [ICON_Culture] Culture for every adjacent Resource and Entertainment Complex (increased to +2 [Icon_Culture] Culture when Humanism is discovered). Provides [Icon_Tourism] Tourism after researching Flight. Cannot be built adjacent to another Batey or on Hills."),
     ("LOC_LEADER_TRAIT_NAN_MADOL_DESCRIPTION",            "Your Districts(except City center) and Wonders on or next to Coast or Lake tiles provide +2 [ICON_Culture] Culture."),
@@ -260,45 +260,45 @@ insert or replace into EnglishText
     (Tag,                                                       Text)
 values
     ("LOC_CSE_SCIENTIFIC_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_SCIENCE] Science in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_SCIENCE] Science in every Library."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_SCIENCE] Science in every {LOC_BUILDING_CONSULATE_AND}University."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_SCIENCE] Science in every {LOC_BUILDING_CHANCERY_AND}Research Lab."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_SCIENCE] Science from every Library."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_SCIENCE] Science from every {LOC_BUILDING_CONSULATE_AND}University."),
+    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_SCIENCE] Science from every {LOC_BUILDING_CHANCERY_AND}Research Lab."),
     ("LOC_CSE_CULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",            "+1 [ICON_CULTURE] Culture in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+1 [ICON_CULTURE] Culture in every Amphitheater."),
-    ("LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",            "+2 [ICON_CULTURE] Culture in every {LOC_BUILDING_CONSULATE_COMMA}Art Museum and Artifact Museum."),
-    ("LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",          "+3 [ICON_CULTURE] Culture in every {LOC_BUILDING_CHANCERY_AND}Broadcast Center."),
+    ("LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+1 [ICON_CULTURE] Culture from every Amphitheater."),
+    ("LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",            "+2 [ICON_CULTURE] Culture from every {LOC_BUILDING_CONSULATE_COMMA}Art Museum and Artifact Museum."),
+    ("LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",          "+3 [ICON_CULTURE] Culture from every {LOC_BUILDING_CHANCERY_AND}Broadcast Center."),
     ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",               "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold in every city has Market or Lighthouse."),
+    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold from every city has Market or Lighthouse."),
     ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",               "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}"), 
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",           "+4 [ICON_GOLD] Gold in every city has Bank or Shipyard."), 
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",      " +4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_NAME}."),
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",           "+4 [ICON_GOLD] Gold from every city has Bank or Shipyard."), 
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",      " +4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_NAME}."),
     ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",             "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}"),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",         "+6 [ICON_GOLD] Gold in every city has Stock Exchange or Seaport."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",    " +6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_NAME}."), 
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",         "+6 [ICON_GOLD] Gold from every city has Stock Exchange or Seaport."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",    " +6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_NAME}."), 
     ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS_ALT",           "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",          "+2 [ICON_GOLD] Gold in every Market."),
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",           "+4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_AND}Bank."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",         "+6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_AND}Stock Exchange."),
+    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",          "+2 [ICON_GOLD] Gold from every Market."),
+    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",           "+4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_AND}Bank."),
+    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",         "+6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_AND}Stock Exchange."),
     ("LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",           "+1 [ICON_FAITH] Faith in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",          "+1 [ICON_FAITH] Faith in every Shrine."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",           "+2 [ICON_FAITH] Faith in every {LOC_BUILDING_CONSULATE_AND}Temple."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",         "+3 [ICON_FAITH] Faith in every {LOC_BUILDING_CHANCERY_AND}Worship building."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",          "+1 [ICON_FAITH] Faith from every Shrine."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",           "+2 [ICON_FAITH] Faith from every {LOC_BUILDING_CONSULATE_AND}Temple."),
+    ("LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",         "+3 [ICON_FAITH] Faith from every {LOC_BUILDING_CHANCERY_AND}Worship building."),
     ("LOC_CSE_MILITARISTIC_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_PRODUCTION] Production towards units in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_PRODUCTION] Production towards units in every Barracks and Stable."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_PRODUCTION] Production towards units in every {LOC_BUILDING_CONSULATE_AND}Armory."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_PRODUCTION] Production towards units in every {LOC_BUILDING_CHANCERY_AND}Military Academy."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_PRODUCTION] Production towards units from every Barracks and Stable."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_PRODUCTION] Production towards units from every {LOC_BUILDING_CONSULATE_AND}Armory."),
+    ("LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_PRODUCTION] Production towards units from every {LOC_BUILDING_CHANCERY_AND}Military Academy."),
     ("LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_PRODUCTION] Production towards districts and buildings in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_PRODUCTION] Production towards districts and buildings in every Workshop."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_PRODUCTION] Production towards districts and buildings in every {LOC_BUILDING_CONSULATE_AND}Factory."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings in every {LOC_BUILDING_CHANCERY_AND}Power Plant."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_PRODUCTION] Production towards districts and buildings from every Workshop."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_PRODUCTION] Production towards districts and buildings from every {LOC_BUILDING_CONSULATE_AND}Factory."),
+    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings from every {LOC_BUILDING_CHANCERY_AND}Power Plant."),
     ("LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_FOOD] Food in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_FOOD] Food in every Granary."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_FOOD] Food in every {LOC_BUILDING_CONSULATE_AND}Aqueduct."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_FOOD] Food in every {LOC_BUILDING_CHANCERY_AND}Sewer."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_FOOD] Food from every Granary."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_FOOD] Food from every {LOC_BUILDING_CONSULATE_AND}Aqueduct."),
+    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_FOOD] Food from every {LOC_BUILDING_CHANCERY_AND}Sewer."),
     ("LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",            "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+2 [ICON_GOLD] Gold in every Lighthouse."),
-    ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            "+4 [ICON_GOLD] Gold in every {LOC_BUILDING_CONSULATE_AND}Shipyard."),
-    ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "+6 [ICON_GOLD] Gold in every {LOC_BUILDING_CHANCERY_AND}Seaport.");
+    ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+2 [ICON_GOLD] Gold from every Lighthouse."),
+    ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            "+4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_AND}Shipyard."),
+    ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "+6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_AND}Seaport.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

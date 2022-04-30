@@ -14,7 +14,7 @@ values
     ("LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION",                                   "All Heavy and Light Cavalry units get +1 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength."),
     ("LOC_POLICY_SOCIAL_STATISTICS_NAME",                                             "Social Statistics"),
     ("LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION",                                      "+0.6 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.6 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 3 specialty districts."),
-    ("LOC_POLICY_PLUTONOMY_NAME",                                                     "Plutonomy"),
+    ("LOC_POLICY_PLUTONOMY_NAME",                                                     "Political Economy"),
     ("LOC_POLICY_PLUTONOMY_DESCRIPTION",                                              "+5% [ICON_GOLD] Gold in all cities with a Theater district. +5% [ICON_Production] Production in all cities with a Campus district."),
     ("LOC_POLICY_PHILOSOPHY_EDUCATION_NAME",                                          "Philosophy Education"),
     ("LOC_POLICY_PHILOSOPHY_EDUCATION_DESCRIPTION",                                   "+25% [ICON_GreatPerson] Great Person points in all cities with a World Wonder."),
@@ -24,7 +24,7 @@ values
     -- ("LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION",                                 "For cities not on your original [ICON_Capital] Capital's continent, Tier-2 building inside Commercial Hub and Harbor District provide +3 [ICON_SCIENCE] Science and +3 [ICON_Culture] Culture correspondingly to every cities on your original [ICON_Capital] Capital's continent."),
     ("LOC_POLICY_SISHU_NAME",                                                         "Private Education"),
     ("LOC_POLICY_SISHU_DESCRIPTION",                                                  "+0.3 [ICON_Science] Science per [ICON_Citizen] Citizen and 0.3 [ICON_Culture] Culture per [ICON_Citizen] Citizen in all cities with at least 2 specialty districts."),
-    ("LOC_POLICY_COMPILE_NAME",                                                       "Compiling Books"),
+    ("LOC_POLICY_COMPILE_NAME",                                                       "Encyclopedia Compilation"),
     ("LOC_POLICY_COMPILE_DESCRIPTION",                                                "+4 [ICON_GreatScientist] Great Scientist points per turn. +2 [ICON_GreatScientist] Great Scientist points per turn for every Library."),
     ("LOC_POLICY_SUPPLY_LINES_NAME",                                                  "Supply Lines"),
     ("LOC_POLICY_SUPPLY_LINES_DESCRIPTION",                                           "+1 [ICON_Movement] movement if starting turn in friendly territory. +30% [ICON_PRODUCTION] Production toward Encampment districts, Harbor districts, and buildings for these districts."),
@@ -63,7 +63,7 @@ values
     ("LOC_POLICY_COLLECTIVIZATION_NAME",                                              "Highway"),
 
     ("LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "Non-Aligned Movement"),
-    ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Collect Ballads"),
+    ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Airs of the States"), -- Collect Ballads
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
@@ -120,16 +120,16 @@ values
     ("LOC_POLICY_FREELANCERS_NAME",                                                   "Freelancers"),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME",                                       "Maritime Infrastructure"),
     ("LOC_POLICY_SEABORNE_SUPPLY_NAME",                                               "Seaborne Supply"),
-    ("LOC_POLICY_GARRISON_RECLAMATION_NAME",                                          "Garrison Reclamation"),
+    ("LOC_POLICY_GARRISON_RECLAMATION_NAME",                                          "Tuntian"), -- Garrison Reclamation
     ("LOC_POLICY_MINARET_NAME",                                                       "Minaret"),
     ("LOC_POLICY_PRIMITIVE_COMMUNE_NAME",                                             "Primitive Commune"),
     ("LOC_POLICY_OVERALL_PLANNING_NAME",                                              "Overall Planning"),
     ("LOC_POLICY_BARD_NAME",                                                          "Bards"),
     ("LOC_POLICY_CIVILIZE_NAME",                                                      "Oral Tradition"),
     ("LOC_POLICY_DOMESTIC_TRADE_NAME",                                                "Domestic Trade"),
-    ("LOC_POLICY_HIGHWAY_NAME",                                                       "Government-financed Road"),
+    ("LOC_POLICY_HIGHWAY_NAME",                                                       "King's Highway"), -- Government-financed Road
     ("LOC_POLICY_SILK_ROAD_NAME",                                                     "Silk Road"),
-    ("LOC_POLICY_WAREHOUSE_NAME",                                                     "Artisan Office"),
+    ("LOC_POLICY_WAREHOUSE_NAME",                                                     "State-owned Artisans"), -- Artisan Office
     ("LOC_POLICY_SAFETY_BOX_NAME",                                                    "Commune"),
     ("LOC_POLICY_WALL_HOUSING_NAME",                                                  "Feoff"),
     ("LOC_POLICY_ARENA_TICKETS_NAME",                                                 "Arena Tickets"),
@@ -137,7 +137,7 @@ values
     ("LOC_POLICY_CITY_CENTRALIZATION_NAME",                                           "City Centralization"),
     ("LOC_POLICY_CONSTRUCTION_CROPS_NAME",                                            "Production and Construction Crops"),
     ("LOC_POLICY_DRILL_NAME",                                                         "Drill"),
-    ("LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "Tribute Trade"),
+    ("LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "Tributary Trade"),
     ("LOC_POLICY_SELF_DETERMINATION_NAME",                                            "National Self-determination"),
     ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold and +1 [ICON_Amenities] Amenity for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),

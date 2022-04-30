@@ -7,7 +7,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_RESOURCE_POPPIES_NAME",                                 "Corn Poppies"),
-    ("LOC_RESOURCE_SEASHELLS_NAME",                               "Cowrie"),
+    ("LOC_RESOURCE_SEASHELLS_NAME",                               "Money Cowrie"),
     ("LOC_RESOURCE_WHALES_NAME",                                  "Sperm Whale"),
     ("LOC_RESOURCE_TOXINS_NAME",                                  "Poison Dart Frog"),
     ("LOC_RESOURCE_MEDIHERBS_NAME",                               "Dendrobium Officinale"),
@@ -16,7 +16,7 @@ values
     ("LOC_RESOURCE_BARLEY_NAME",                                  "Highland Barley"),
     ("LOC_RESOURCE_STONE_NAME",                                   "Andesite"),
     ("LOC_RESOURCE_FISH_NAME",                                    "Chum Salmon"),
-    ("LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",                "Unlocks the Builder ability to construct a Lumber Mill.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. Once Bronze Working is unlocked, extra +1 [ICON_Production] Production if adjacent to a River.[NEWLINE][NEWLINE]Can be built on Woods or valid Resources. If built on Luxury resources, the city will gain use of that Resource. +1 [ICON_Production] Production for each adjacent Industrial Zone District (except Hansa District). Once Guilds is unlocked it can also be built on Rainforest."),
+    ("LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",                "Unlocks the Builder ability to construct a Lumber Mill.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. [NEWLINE][NEWLINE]Can be built on Woods or valid Resources. If built on Luxury resources, the city will gain use of that Resource. +1 [ICON_Production] Production for each adjacent Industrial Zone District (except Hansa District). Once Guilds is unlocked it can also be built on Rainforest."), -- Once Bronze Working is unlocked, extra +1 [ICON_Production] Production if adjacent to a River.
     ("LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "Grants a free [ICON_GreatProphet] Great Prophet. [ICON_GreatProphet] Great Prophets may found a Religion on Stonehenge instead of a Holy Site. Must be adjacent to [ICON_RESOURCE_STONE] Andesite and on flat land."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "+2 [ICON_Production] Production towards Districts, Buildings and Wonders if this city owns Quarries, Mines or Lumber Mills over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already have a Karez or Boot Camp."),
     ("LOC_BELIEF_PAN_NAME",                                       "Pan"),
@@ -46,7 +46,7 @@ values
     ("zh_Hans_CN",  "LOC_RESOURCE_STONE_NAME",                                   "安山岩"),
     ("zh_Hans_CN",  "LOC_RESOURCE_FISH_NAME",                                    "马哈鱼"),
     ("zh_Hans_CN",  "LOC_RESOURCE_COPPER_NAME",                                  "铜矿"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",                "解锁建造者建造伐木场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。研究“铸铜术”科技后，若沿河，额外+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能在森林或有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。解锁“公会”市政后也能建造在雨林上。"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",                "解锁建造者建造伐木场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能在森林或有效资源上建造。如果建在奢侈品资源上，城市则可以利用该资源。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。解锁“公会”市政后也能建造在雨林上。"), -- 研究“铸铜术”科技后，若沿河，额外+1 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "免费获得1个 [ICON_GreatProphet] 大预言家。 [ICON_GreatProphet] 大预言家可在巨石阵（代替圣地）创立一个宗教。必须建在靠近 [ICON_RESOURCE_STONE] 安山岩的平坦地形上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "如果城市拥有改良奢侈或加成资源的矿山、采石场或伐木场，则额外建造区域、建筑和奇观时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PAN_NAME",                                       "潘神"),

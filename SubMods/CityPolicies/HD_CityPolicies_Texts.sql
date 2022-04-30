@@ -72,13 +72,13 @@ values
     ("LOC_DISABLE_BY_PROJECT",                                        "This policy can be disabled by a project."),
     ("LOC_CITYPOLICY_BACK_TO_NORMAL",                                 "the yields back to the normal."),
 
-    ("LOC_CITY_POLICY_LABOR",                                         "Labor"),
+    ("LOC_CITY_POLICY_LABOR",                                         "Conscripting Labor"),
     ("LOC_CITY_POLICY_LABOR_EFFECT",                                  "Each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75%."),
-    ("LOC_CITY_POLICY_AGRICULTURAL_TAX",                              "Agricultural Tax"),
+    ("LOC_CITY_POLICY_AGRICULTURAL_TAX",                              "Cash Crops"),
     ("LOC_CITY_POLICY_AGRICULTURAL_TAX_EFFECT",                       "Each Farm provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_Food] Food."),
-    ("LOC_CITY_POLICY_INDUSTRAIL_TAX",                                "Industrial Tax"),
+    ("LOC_CITY_POLICY_INDUSTRAIL_TAX",                                "Daily Goods"),
     ("LOC_CITY_POLICY_INDUSTRAIL_TAX_EFFECT",                         "Each Mine or Quarry provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_PRODUCTION] Production."),
-    ("LOC_CITY_POLICY_REVISION_ALMANAC",                              "Revision Almanac"),
+    ("LOC_CITY_POLICY_REVISION_ALMANAC",                              "Almanac Revision"),
     ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. Need maintenance cost of 6 [ICON_GOLD] Gold. If this city has and Aqueduct, each Plantation receives -2 [ICON_GOLD] Gold, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science in this city; each Farm with any resource receives -1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science. After Calendar is researched, provides +2 [ICON_Production] Production."),
     ("LOC_CITY_POLICY_DIPLOMATIC_MEETING",                            "Diplomatic Meeting"),
     ("LOC_CITY_POLICY_DIPLOMATIC_MEETING_EFFECT",                     "Diplomatic Quarter Project. Diplomatic Quarter and each its building consumes 2 [ICON_Favor] Favor per turn, and provides 5 influence points."),
@@ -89,7 +89,7 @@ values
     ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "Theological Seminar"),
     ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "Holy Site Project. Consumes 3 [ICON_FAITH] Faith per turn, provides 1 [ICON_CULTURE] Culture and 1 [ICON_SCIENCE] Science. Religious spread from adjacent city pressure is 50% weaker."),
 
-    ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"),
+    ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"), -- Tool Production
     ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Industrial Zone Project. Consumes 3 [ICON_RESOURCE_IRON] Iron per turn, provides 5 [ICON_PRODUCTION] Production.");
 
     -- ("LOC_CITY_POLICY_DACAOGU",                                       "Pillage Preparing"),

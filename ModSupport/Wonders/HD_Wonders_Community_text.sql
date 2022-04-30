@@ -3,6 +3,8 @@
 insert or replace into EnglishText
     (Tag,                                                                                             Text)
 values
+    ("LOC_BUILDING_GLOBE_THEATRE_NAME",                                                               "Globe Theatre"),
+    ("LOC_BUILDING_BURJ_KHALIFA_NAME",                                                                "Burj Khalifa"),
     ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",                                                         "Gain +1 [ICON_ENVOY] Envoy for every Theater and Commercial Hub District which has been built across your empire. Must be built along a River."),
     ("LOC_BUILDING_TEMPLE_OF_HEAVEN_DESCRIPTION",                                                     "+100% All Domestic trade routes yields from Destination Districts." ), -- Your Trade Routes to your own cities gain +2 [ICON_Gold] for each specialty Districts at the destination. Governors established in a city provide +3% [icon_food] Food for each Promotion they have earned, including their first one.
     ("LOC_OWN_TERRITORY_COMBAT_STRENGTH_BUFF_PREVIEW_TEXT",                                           "{1_Amount} Combat Strength from Motherland Calls"),
