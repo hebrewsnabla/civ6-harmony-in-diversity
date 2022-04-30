@@ -163,9 +163,9 @@ insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
-    -- ('REYNA_CONVERT_PERCENTAGE',                        100),
     ('REYNA_CONVERT_PERCENTAGE',                        80),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
+    ('DEVINE_INSPIRATION_WONDER_FAITH_PERCENTAGE',      25),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
     ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),

@@ -59,7 +59,7 @@ values
     ("LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                                           "Upgrades Farm improvements to Mechanized Agriculture. Farms receive +1 [ICON_Food] Food Adjacency bonus for every Farm improvement they are adjacent to."),
     ("LOC_TECH_STEAM_POWER_HD_DESCRIPTION",                                                 "+2 [ICON_Movement] Movement for embarked units. +15 tiles for water trade route range."),
     ("LOC_TECH_STEEL_HD_DESCRIPTION",                                                       "Unlocks Urban Defenses, giving all of your cities an automatic 400 Fortification Strength and the ability to perform a ranged attack. All previous wall improvements become obsolete and siege support units are no longer effective."),
-    ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food."),
+    ("LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                                           "Plantation improvements receive +1 [ICON_Food] Food. Fisheries provide +1 [ICON_Housing] Housing."),
     ("LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                                            "Melee units gain the ability: +3 [ICON_Strength] Combat Power when adjacent to at least one friendly melee unit. [NEWLINE] Ranged units gain ability: +5 [ICON_Strength] Combat Power when attacking from a hill. [NEWLINE] Light Cavalry units gain the ability: +5 [ICON_Strength] Combat Power when fighting units. [NEWLINE] Anti-Cavalry units gain the ability to no longer suffer [ICON_Strength] combat strength reductions from the unit's wound level."),
     ("LOC_TECH_COMPUTERS_DESCRIPTION",                                                      "Grants the ability to construct an additional Spy. +20% [ICON_Tourism] Tourism across your empire."),
     -- ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
@@ -234,7 +234,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                            "将农场改良设施升级为机械化农业。为相邻的每个农场改良设施+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_STEAM_POWER_HD_DESCRIPTION",                                  "水运单位+2 [ICON_Movement] 移动力。商人单位在水域单元格的贸易范围增加15个单元格。"),
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                                        "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙改良设施将全部过时，攻城单位进攻时不再拥有特殊效果。"),
-    ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION",                            "种植园改良设施+1 [ICON_Food] 食物。渔场提供+1 [ICON_housing] 住房。"),
     ("zh_Hans_CN",  "LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION",                             "近战单位获得能力：与至少一个友方近战单位相邻时+3 [ICON_Strength] 战斗力。[NEWLINE]远程单位获得能力：从丘陵上发动攻击时+5 [ICON_Strength] 战斗力。[NEWLINE]轻骑兵单位获得能力：与单位作战时+5[ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：不再受到来自单位受伤程度的 [ICON_Strength] 战斗力减益。"),
     -- ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1 [ICON_Production] 生产力。"),
     -- New Civics
