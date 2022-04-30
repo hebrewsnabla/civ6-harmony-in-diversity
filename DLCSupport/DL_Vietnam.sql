@@ -102,7 +102,6 @@ update ModifierArguments set Value = 'CIVIC_MYSTICISM' where ModifierId = 'TRAIT
 insert or replace into District_Adjacencies
 	(DistrictType,								YieldChangeId)
 values
-    ('DISTRICT_THANH',							'Strategic_Production2'),
     ('DISTRICT_THANH',							'Aerodrome_Industrial_Production'),
     ('DISTRICT_THANH',							'Station_Production'),
     ('DISTRICT_THANH',							'HD_IMPROVEMENT_ROMAN_FORT'),
