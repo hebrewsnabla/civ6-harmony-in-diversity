@@ -48,7 +48,7 @@ values
     -- ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 10% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. +30% [ICON_PRODUCTION] Production towards Holy Site district buildings. Each building in the Holy Site district provides +5% [ICON_Faith] Faith for the city."),
     ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith. Each building in the Holy Site district provides +8% [ICON_Faith] Faith for the city."),
     ("LOC_BELIEF_ABBOT_NAME",                                 "Abbot"),
-    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "Holy Site district provides +1 [ICON_Production] Production. Each Holy Site building provides +1 [ICON_Production] Production to all adjacent tiles."),
+    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "Each Holy Site building provides +1 [ICON_Production] Production to all adjacent tiles."), -- Holy Site district provides +1 [ICON_Production] Production. 
     ("LOC_BELIEF_INITIATION_RITES_NAME",                      "Initiation Rites"),
     ("LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION",            "When you use a religious unit to convert a city for the first time, earn 50 [ICON_Gold] Gold per [ICON_Citizen] citizens living in that city (on Standard Speed)."),
     ("LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION",         "Religion spreads to cities 30% further away. When you use a religious unit to convert a city for the first time earn 15 [ICON_Culture] Culture per [ICON_Citizen] citizens living in that city (on Standard Speed)."),
@@ -129,7 +129,7 @@ values
     -- ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "购买圣地区域内建筑的费用降低10%且可以用 [ICON_Faith] 信仰值购买。建造圣地区域内的建筑时+30%建造速度。每个圣地区域内的建筑提供+5% [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "购买圣地区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。每个圣地区域内的建筑提供+8% [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_NAME",                                 "苦行"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "圣地提供+1 [ICON_Production] 生产力。圣地中每座建筑为相邻的单元格提供+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "圣地中每座建筑为相邻的单元格提供+1 [ICON_Production] 生产力。"), -- 圣地提供+1 [ICON_Production] 生产力。
     ("zh_Hans_CN",  "LOC_BELIEF_INITIATION_RITES_NAME",                      "入会仪式"),
     ("zh_Hans_CN",  "LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION",            "利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供50点 [ICON_Gold] 金币（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION",         "宗教传播距离增加30%。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供15点 [ICON_Culture] 文化值（标准速度下）。"),
