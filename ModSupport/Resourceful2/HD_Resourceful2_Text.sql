@@ -20,10 +20,10 @@ values
     ("LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "Grants a free [ICON_GreatProphet] Great Prophet. [ICON_GreatProphet] Great Prophets may found a Religion on Stonehenge instead of a Holy Site. Must be adjacent to [ICON_RESOURCE_STONE] Andesite and on flat land."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "+2 [ICON_Production] Production towards Districts, Buildings and Wonders if this city owns Quarries, Mines or Lumber Mills over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already have a Karez or Boot Camp."),
     ("LOC_BELIEF_PAN_NAME",                                       "Pan"),
-    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Forest tile. Holy Site provides +1 [ICON_Food] Food to all Lumber Mill tiles within the same city. +3 [ICON_GreatProphet] Great Prophet point per turn if a city owns a Lumber Mill over Luxury or Bonus resources."),
+    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "Holy Site districts provide + [ICON_Faith] Faith for each adjacent Woods tile. Lumber Mills in cities with Holy Site districts provide +1 [ICON_Food] Food. Cities having Lumber Mills over Luxury or Bonus resources provide +3 [ICON_GreatProphet] Great Prophet point per turn."),
     ("LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] Faith from the adjacent Lumber Mill {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "Heart of the Woods"),
-    ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "+1 [ICON_Food] Food and +1 [ICON_Science] Science from Lumber Mills over Luxury and Bonus resources.");
+    ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "Lumber Mills over Luxury and Bonus resources provide +1 [ICON_Food] Food and +1 [ICON_Science] Science.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

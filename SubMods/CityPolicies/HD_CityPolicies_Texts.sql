@@ -70,7 +70,7 @@ values
     ("LOC_HD_SPACE",                                                  " "),
     ("LOC_UNDERGOING_TEXT",                                           "undergoing"),
     ("LOC_DISABLE_BY_PROJECT",                                        "This policy can be disabled by a project."),
-    ("LOC_CITYPOLICY_BACK_TO_NORMAL",                                 "the yields back to the normal."),
+    ("LOC_CITYPOLICY_BACK_TO_NORMAL",                                 "Restore the original yields."),
 
     ("LOC_CITY_POLICY_LABOR",                                         "Conscripting Labor"),
     ("LOC_CITY_POLICY_LABOR_EFFECT",                                  "Each [ICON_Citizen] Citizen provides 1.5 extra [ICON_Production] Production, but consume extra 1 [ICON_Food] Food. The city growth rate decreased by 75%."),
@@ -79,18 +79,17 @@ values
     ("LOC_CITY_POLICY_INDUSTRAIL_TAX",                                "Daily Goods"),
     ("LOC_CITY_POLICY_INDUSTRAIL_TAX_EFFECT",                         "Each Mine or Quarry provides extra 2 [ICON_GOLD] Gold, but -1 [ICON_PRODUCTION] Production."),
     ("LOC_CITY_POLICY_REVISION_ALMANAC",                              "Almanac Revision"),
-    ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. Need maintenance cost of 6 [ICON_GOLD] Gold. If this city has and Aqueduct, each Plantation receives -2 [ICON_GOLD] Gold, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science in this city; each Farm with any resource receives -1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science. After Calendar is researched, provides +2 [ICON_Production] Production."),
+    ("LOC_CITY_POLICY_REVISION_ALMANAC_EFFECT",                       "Aqueduct Project. Need maintenance cost of 6 [ICON_GOLD] Gold.  In this City: Plantations provide -2 [ICON_GOLD] Gold, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science; Farm over resource provide -1 [ICON_Food] Food, +1 [ICON_Production] Production and +1 [ICON_SCIENCE] Science. After Calendar is researched, provides +2 [ICON_Production] Production."),
     ("LOC_CITY_POLICY_DIPLOMATIC_MEETING",                            "Diplomatic Meeting"),
-    ("LOC_CITY_POLICY_DIPLOMATIC_MEETING_EFFECT",                     "Diplomatic Quarter Project. Diplomatic Quarter and each its building consumes 2 [ICON_Favor] Favor per turn, and provides 5 influence points."),
+    ("LOC_CITY_POLICY_DIPLOMATIC_MEETING_EFFECT",                     "Diplomatic Quarter Project. Each turn, Diplomatic Quarter and each of its building consumes 2 [ICON_Favor] Favor, and provides 5 influence points."),
     ("LOC_CITY_POLICY_JIMI",                                          "JIMI"),
     ("LOC_CITY_POLICY_JIMI_EFFECT",                                   "Encampment Project. Consumes 1 [ICON_RESOURCE_HORSES] Horses and 1 [ICON_RESOURCE_IRON] Iron per turn, and provides 2 influence points."),
     ("LOC_CITY_POLICY_FREIGHT",                                       "Freight"),
-    ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Commercial Hub Project. Consumes 3 [ICON_RESOURCE_HORSES] Horses per turn, provides 2 [ICON_FOOD] Food and 3 [ICON_PRODUCTION] Production."),
+    ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Commercial Hub Project. Each turn, consumes 3 [ICON_RESOURCE_HORSES] Horses, provides 2 [ICON_FOOD] Food and 3 [ICON_PRODUCTION] Production."),
     ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "Theological Seminar"),
     ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "Holy Site Project. Consumes 3 [ICON_FAITH] Faith per turn, provides 1 [ICON_CULTURE] Culture and 1 [ICON_SCIENCE] Science. Religious spread from adjacent city pressure is 50% weaker."),
-
     ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"), -- Tool Production
-    ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Industrial Zone Project. Consumes 3 [ICON_RESOURCE_IRON] Iron per turn, provides 5 [ICON_PRODUCTION] Production.");
+    ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Industrial Zone Project. Each turn, consumes 3 [ICON_RESOURCE_IRON] Iron, provides 5 [ICON_PRODUCTION] Production.");
 
     -- ("LOC_CITY_POLICY_DACAOGU",                                       "Pillage Preparing"),
     -- ("LOC_CITY_POLICY_DACAOGU_EFFECT",                                "Each trained light cavalry unit of Mediveal or eralier era in this city gains the ability that can pillage tiles using only 1 [ICON_Movement] Movement. Each [ICON_Citizen] Citizen consumes extra 1 [ICON_FOOD] Food. -100% Growth Rate and -1 [ICON_Amenities] Amenity to this city. If the city has at least 3 [ICON_Citizen] Citizens, receives another unit of the same kind when a light cavalry unit of Mediveal or eralier era being trained in this city, at the cost of one [ICON_Citizen] Citizen. This policy can be disabled by a project.");

@@ -151,7 +151,7 @@ insert or replace into EnglishText
 values
     ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows Builders and Traders to embark. Allows harvesting of Kelp Forest."),
     -- ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of Kelp Forest and resources improved by Fishing Boats. If Ship Building is not researched, also allows all land units to embark."),
-    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus Districts get extra major adjacency bonus from Reefs and Kelps. +2 [ICON_Production] Production from Reefs and Kelps."),
+    ("LOC_BELIEF_HD_SONG_OF_SIREN_DL_DESCRIPTION",                                          "Campus districts receive additional major adjacency bonus from Reefs and Kelps. +2 [ICON_Production] Production from Reefs and Kelps."),
     ("LOC_HD_KELP_HOLYSITE_FAITH",                                                          "+{1_num} [ICON_Faith] Faith from the adjacent Kelp Forest {1_Num : plural 1?tile; other?tiles;}.");
 
 insert or replace into LocalizedText

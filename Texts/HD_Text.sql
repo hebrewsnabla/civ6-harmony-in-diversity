@@ -146,7 +146,7 @@ values
     ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "Judgement of Love"),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "Judgement of Love"),
-    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "Once completed, other cities within 9 tiles and not owned by you will instantly lose all Loyalty if Loyalty per turn is decreasing."),
+    ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_DESCRIPTION",                         "Once completed, other Civilizations' cities within 9 tiles and having negative Loyalty per turn will instantly lose all Loyalty."),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_NAME",                                     "Endless Money"),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME",                               "Endless Money"),
     ("LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION",                              "City project which provides a huge amount of [ICON_Gold] Gold every turn."),

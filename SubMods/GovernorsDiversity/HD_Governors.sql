@@ -218,20 +218,24 @@ values
 
 -- 调整效果
 -- 税务员
-update ModifierArguments set Value = 6 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,							ModifierId)
 VALUES
+	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',	'TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS'),
 	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',	'TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS');
 insert or replace into Modifiers
-	(ModifierId,									ModifierType,														SubjectRequirementSetId)
+	(ModifierId,											ModifierType,														SubjectRequirementSetId)
 VALUES
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
+	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_COMMERCIAL_HUB'),
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
 insert or replace into ModifierArguments			
-	(ModifierId,									Name,						Value)
+	(ModifierId,											Name,						Value)
 VALUES
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'YieldTypeToMirror',		'YIELD_GOLD'),
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',	'YieldTypeToGrant',			'YIELD_CULTURE');
+	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'YieldTypeToMirror',		'YIELD_GOLD'),
+	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'YieldTypeToGrant',			'YIELD_CULTURE'),
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'YieldTypeToMirror',		'YIELD_GOLD'),
+	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'YieldTypeToGrant',			'YIELD_CULTURE');
 -- 港务局长
 update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
 update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';

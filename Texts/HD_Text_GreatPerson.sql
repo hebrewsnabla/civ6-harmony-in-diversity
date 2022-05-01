@@ -14,24 +14,24 @@ values
     ("LOC_ZHOU_DAGUAN_TOKENS",                                            "Gain +3 [ICON_Envoy] Envoys."),
     -- ("LOC_JOSEPH_PAXTON_REGIONAL_RANGE_BONUS",                            "This district's regional buildings reach 3 tiles farther."),
     -- ("LOC_TESLA_REGIONAL_RANGE_BONUS",                                    "This district's regional buildings reach 3 tiles farther."),
-    ("LOC_ARYABHATA_CAMPUS_AMENITY",                                      "Chosen Campus gains 2 [ICON_AMENITIES] Amenities."),
-    ("LOC_GREATPERSON_ALAN_TURING_ACTIVE",                                "Triggers the [ICON_TechBoosted] Eureka moment for Computers and 1 random technology from the Modern and Aotomic era. If Computers is already triggered, instead complete the tech."),
-    ("LOC_GREATPERSON_DMITRI_MENDELEEV_ACTIVE",                           "Reveals [ICON_RESOURCE_ALUMINUM] Aluminum without the normal technology requirement. Triggers the [ICON_TechBoosted] Eureka moment for Chemistry. If Chemistry is already triggered, instead complete the tech."),
-    ("LOC_GREATPERSON_EUCLID_ACTIVE",                                     "Triggers the [ICON_TechBoosted] Eureka moment for Mathematics and 1 random technology from the Medieval era. If Mathematics is already triggered, instead complete the tech. Let this city build one more district than the population limit allows."),
+    ("LOC_ARYABHATA_CAMPUS_AMENITY",                                      "Chosen Campus provide +2 [ICON_AMENITIES] Amenities."),
+    ("LOC_GREATPERSON_ALAN_TURING_ACTIVE",                                "Triggers the [ICON_TechBoosted] Eureka moment for Computers and 1 random technology from the Modern and Atomic era. If Computers is already boosted, instead complete the tech."),
+    ("LOC_GREATPERSON_DMITRI_MENDELEEV_ACTIVE",                           "Reveals [ICON_RESOURCE_ALUMINUM] Aluminum without the normal technology requirement. Triggers the [ICON_TechBoosted] Eureka moment for Chemistry. If Chemistry is already boosted, instead complete the tech."),
+    ("LOC_GREATPERSON_EUCLID_ACTIVE",                                     "Triggers the [ICON_TechBoosted] Eureka moment for Mathematics and 1 random technology from the Medieval era. If Mathematics is already boosted, instead complete the tech. Let this city build one more district than the population limit allows."),
     ("LOC_GREATPERSON_ISAAC_NEWTON_ACTIVE",                               "Instantly builds a University and Library in this district. Universities provide +4 [ICON_Science] Science."),
     ("LOC_GREATPERSON_JAMES_OF_ST_GEORGE_ACTIVE",                         "Instantly builds Ancient and Medieval Walls in this city. +1 Great Engineer point per turn for each level of wall."),
-    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING",                       "Triggers the [ICON_TechBoosted] Eureka moment for Printing. If Printing is already triggered, instead complete the tech."),
+    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING",                       "Triggers the [ICON_TechBoosted] Eureka moment for Printing. If Printing is already boosted, instead complete the tech."),
     ("LOC_GREATPERSON_2MODERNATOMICTECHBOOST",                            "Triggers the [ICON_TechBoosted] Eureka moment for {Amount} random {Amount : plural 1?technology; other?technologies;} from the Modern or Atomic era."),
     ("LOC_GREAT_PERSON_PLASTICS_TECHBOOST",                               "Triggers the [ICON_TechBoosted] Eureka moment for Plastic."),
-    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING",                       "Triggers the [ICON_TechBoosted] Eureka moment for Refining. If Refining is already triggered, instead complete the tech."),
-    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION",                     "Triggers the [ICON_TechBoosted] Eureka moment for Sanitation. If Sanitation is already triggered, instead complete the tech."),
-    ("LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM",    "All districts yield [ICON_TOURISM] Tourism equal to their adjacency bonus."),
-    ("LOC_GREATPERSON_ELECTRICITY",                                       "Provides All cities +3 [ICON_POWER] Power from renewable water sources. +5% [ICON_Production] Production if this city is fully powered. "),
+    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING",                       "Triggers the [ICON_TechBoosted] Eureka moment for Refining. If Refining is already boosted, instead complete the tech."),
+    ("LOC_GREAT_PERSON_HD_BOOST_OR_GRANT_SANITATION",                     "Triggers the [ICON_TechBoosted] Eureka moment for Sanitation. If Sanitation is already boosted, instead complete the tech."),
+    ("LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM",    "All Districts you have built yield [ICON_TOURISM] Tourism equal to their adjacency bonus."),
+    ("LOC_GREATPERSON_ELECTRICITY",                                       "Grants all Cities with +3 [ICON_POWER] Power from renewable water sources. +5% [ICON_Production] Production if this City is fully powered."),
     ("LOC_GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE",                       "All Industrial Zone district's [ICON_Production] Production adjacency bonus provides [ICON_Science] Science as well."),
     ("LOC_GREATPERSON_NATIONAL_APPEAL",                                   "+1 Appeal to all tiles within your territoty. "),
-    ("LOC_GREATPERSON_SINGLECITY_APPEAL",                                 "+2 Appeal to all tiles in this city. +100% [ICON_TOURISM] Tourism from Wonder, Improvment and National Park in this city."),
+    ("LOC_GREATPERSON_SINGLECITY_APPEAL",                                 "+2 Appeal to all tiles in this City. Wonder, Improvment and National Park in this City provide +100% [ICON_TOURISM] Tourism."),
     ("LOC_GREATPERSON_NATIONAL_APPEAL_BIG",                               "+2 Appeal to all tiles within your territory."),
-    ("LOC_GREATPERSON_GPP_BOOST",                                         "+25% Great Person Points accumulate speed in your country."),
+    ("LOC_GREATPERSON_GPP_BOOST",                                         "Your Cities generate +25% Great Person points."),
     ("LOC_GREATPERSON_DISTRICT_CULTURE_BOMB",                             "Immediately complete target District (except Spaceport) in the city if the District is not completed. Culture Bomb adjacent tiles when completing such District in any city afterwards."),
     ("LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT",                       "Must be on a District that is completed or under construction (except Spaceport). [COLOR_RED]If it does not work, try save and load.[ENDCOLOR]"),
     ("LOC_ARTEMISIA_LIGHTHOUSE",                                          "Instantly builds a Lighthouse in this district."),
@@ -46,7 +46,7 @@ values
     ("LOC_GREATPERSON_JOAQUIM_MARQUES_LISBOA_SEAPORT_HOUSING",            "Seaports provide +{Amount} [ICON_Housing] Housing."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_TOGO_HEIHACHIRO_SEA_MOVEMENT",          "+1 [Icon_Movement] Movement for all naval units."),
     ("LOC_GREATPERSON_CLANCY_FERNANDO_AMENITIES",                         "Harbors +{Amount} [ICON_Amenities] Amenity."),
-    ("LOC_GREATPERSON_CHESTER_NIMITZ_EXPANSION2_ACTIVE",                  "Instantly creates a Aircraft Carrier unit with 1 promotion level. Grants 1 [ICON_RESOURCE_Oil] Oil per Turn. +20% [ICON_Production] Production towards units of the Naval Raider promotion class.");
+    ("LOC_GREATPERSON_CHESTER_NIMITZ_EXPANSION2_ACTIVE",                  "Instantly creates a Aircraft Carrier unit with 1 promotion level. Grants 1 [ICON_RESOURCE_Oil] Oil per Turn. +20% [ICON_Production] Production towards Naval Raider units.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -105,13 +105,13 @@ insert or replace into EnglishText
     (Tag,                                                           Text)
 values
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",             "Archimedes"),
-    ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more of technologies."),
+    ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more progress."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                "Li Bing"),
-    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Dams are already unlocked with the Mathematics technology. +25% construction speed toward the Dam district. Dams provide +1 [ICON_PRODUCTION] Production to tiles adjacent to rivers in this city."),--Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts
+    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Can build Dam districts with Mathematics researched. +25% construction speed towards the Dam districts. Tiles next to a River yield +1 [ICON_PRODUCTION] Production for each Dam district in this City."),--Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                 "Ma Jun"),
     ("LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",           "Standard adjacency bonus for Industrial Zones if next to a river."),
-    ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is triggered, instead completes the tech."),
-    ("LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                       "Grants 55 [ICON_Production] Production towards wonder construction, doubled if the wonder is from the Ancient or Classical Era."),
+    ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is already boosted, complete the tech instead."),
+    ("LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                       "Grants 55 [ICON_Production] Production (on Standard Speed) towards wonder construction, doubled if the wonder is from the Ancient or Classical Era."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",   "Martine de Bertereau"),
     -- history
     ("LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_1", "Archimedes of Syracuse (c. 287 – c. 212 BC) was a Greek mathematician, physicist, engineer, astronomer, and inventor. Although few details of his life are known, he is regarded as one of the leading scientists in classical antiquity. Considered to be the greatest mathematician of ancient history, and one of the greatest of all time, Archimedes anticipated modern calculus and analysis by applying the concept of the infinitely small and the method of exhaustion to derive and rigorously prove a range of geometrical theorems, including: the area of a circle; the surface area and volume of a sphere; area of an ellipse; the area under a parabola; the volume of a segment of a paraboloid of revolution; the volume of a segment of a hyperboloid of revolution; and the area of a spiral."),
@@ -185,7 +185,7 @@ insert or replace into EnglishText
     (Tag,                                                        Text)
 values
     ("LOC_GREATPERSON_SUN_ZTU_ACTIVE",                           "All combat units gain +25% experience when attacking."),
-    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "Instantly builds a Barracks in this district. +3 [ICON_STRENGTH] Unit Combat Strength when fighting Barbarians."),
+    ("LOC_GREATPERSON_AETHELFLAED_ACTIVE",                       "Instantly builds a Barracks in this District. +3 [ICON_STRENGTH] Combat Strength when fighting Barbarians."),
     ("LOC_GREATPERSON_EL_CID_ACTIVE",                            "Forms a Corps out of a military land unit, and grants it 1 promotion level."),
     ("LOC_GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE",                "Forms an Army out of a military land unit, and grants it 1 promotion level."),
     ("LOC_GREATPERSON_TIMUR_ACTIVE",                             "+1 [ICON_TRADEROUTE] Trade Route capacity. Grants a trader unit. "),
