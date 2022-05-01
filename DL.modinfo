@@ -1274,6 +1274,10 @@
       <!-- <File>Texts/HD_Tags_Players_Texts.sql</File> -->
       <File>Texts/HD_Tags_Texts.sql</File>
     </UpdateDatabase>
+    <UpdateText id="DL_BetterEnglish" criteria="Expansion2">
+      <Properties><LoadOrder>16018</LoadOrder></Properties>
+      <File>Texts/HD_Text_BetterEnglish.sql</File>
+    </UpdateText>
     <UpdateText id="DL_Text" criteria="Expansion2">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>Texts/HD_Text.sql</File>
@@ -1820,6 +1824,7 @@
     <File>Texts/HD_Tags_Texts.sql</File>
     <!--  -->
     <File>Texts/HD_Text.sql</File>
+    <File>Texts/HD_Text_BetterEnglish.sql</File>
     <File>Texts/HD_Text_Beliefs.sql</File>
     <File>Texts/HD_Text_Buildings.sql</File>
     <File>Texts/HD_Text_City_Yield.sql</File>
