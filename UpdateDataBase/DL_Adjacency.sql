@@ -249,17 +249,10 @@ delete from Adjacency_YieldChanges where ID = 'Mekewap_FirstBonusAdjacency';
 delete from Improvement_Adjacencies where YieldChangeId = 'Mekewap_FirstBonusAdjacency';
 
 --军营地基相邻加成
---军营的相邻加成：战略资源+2、飞机场+2、火车站+2锤。各种军事设施+1锤（堡垒包括UI，飞机跑道，导弹井、隧道等军工开的改良）。【现在军营的战略资源+1相邻加成是直接复用的工业区的，不要直接改数值，要新写几个专门给军营用的相邻加成，且要适配UD】
-delete from District_Adjacencies where DistrictType = 'DISTRICT_ENCAMPMENT' and YieldChangeId = 'Strategic_Production';
-delete from District_Adjacencies where DistrictType = 'DISTRICT_IKANDA' and YieldChangeId = 'Strategic_Production';
-delete from District_Adjacencies where DistrictType = 'DISTRICT_THANH' and YieldChangeId = 'Strategic_Production';
-
+--军营的相邻加成：战略资源+1、飞机场+2、火车站+2锤。各种军事设施+1锤（堡垒包括UI，飞机跑道，导弹井、隧道等军工开的改良）。【现在军营的战略资源+1相邻加成是直接复用的工业区的，不要直接改数值，要新写几个专门给军营用的相邻加成，且要适配UD】
 insert or replace into District_Adjacencies
 	(DistrictType,								YieldChangeId)
 values
-	('DISTRICT_ENCAMPMENT',						'Strategic_Production2'),
-	('DISTRICT_IKANDA',							'Strategic_Production2'),
-	
 	('DISTRICT_ENCAMPMENT',						'Aerodrome_Industrial_Production'),
 	('DISTRICT_IKANDA',							'Aerodrome_Industrial_Production'),
 	
@@ -285,11 +278,6 @@ values
 	('DISTRICT_IKANDA',							'HD_IMPROVEMENT_MAORI_PA');
 delete from District_Adjacencies where YieldChangeId = 'Station_Production'
 	and not exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_LEU_STATION');
-
-insert or ignore into Adjacency_YieldChanges
-	(ID,									Description,							YieldType,				YieldChange,				TilesRequired,				AdjacentResourceClass)
-values
-	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC2_PRODUCTION',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');
 	
 insert or replace into Adjacency_YieldChanges
 	(ID,									Description,									YieldType,				YieldChange,				TilesRequired,				AdjacentImprovement)

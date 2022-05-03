@@ -385,9 +385,9 @@ values
 	('TRAIT_TEMPLE_MILITARY_ENGINEERING',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
 
 insert or replace into Modifiers
-	(ModifierId,										ModifierType,									SubjectRequirementSetId,	RunOnce,	Permanent)
+	(ModifierId,										ModifierType,									SubjectRequirementSetId,	                          RunOnce,	Permanent)
 values
-	('TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_TEMPLE_XP2',	1,		    1);
+	('TRAIT_TEMPLE_MILITARY_ENGINEERING_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'HD_CITY_HAS_RELIGIOUS_TIER_2_BUILDING_REQUIREMENTS', 1,		    1);
 
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)

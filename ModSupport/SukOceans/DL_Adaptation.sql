@@ -74,3 +74,7 @@ insert or replace into District_Adjacencies
     (DistrictType,                  YieldChangeId)
 values
     ('DISTRICT_HOLY_SITE',          'HD_KELP_HOLYSITE_FAITH');
+
+--------------------------------------------------------------------------------
+-- from multi mode
+update Features set RemoveTech = 'TECH_SAILING' where FeatureType = 'FEATURE_SUK_KELP';

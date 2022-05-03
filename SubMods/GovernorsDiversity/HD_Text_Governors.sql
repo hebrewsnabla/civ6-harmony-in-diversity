@@ -8,20 +8,20 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "The city receives +2 [ICON_Gold] Gold from each District, and receives +2 [ICON_Gold] Gold from each improved tile."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "Commercial Hub and Harbor Districts receive +100% adjacency bonuses in the city."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "The city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "[ICON_Citizen] Citizens in the city produce +4 [ICON_GOLD] Gold. Harbor district's [ICON_Gold] Gold adjacency bonus provides [ICON_Culture] Culture as well."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "[ICON_Citizen] Citizens in the city provide +4 [ICON_GOLD] Gold. Commercial Hub and Harbor districts in this city provide [ICON_Culture] Culture as their [ICON_Gold] Gold adjacency bonus."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "Financial Centre"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "+8% [ICON_Gold] Gold output for each Commercial and Harbor district building in the city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "City generates +8% [ICON_Gold] Gold for each building in its Commercial and Harbor districts."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "+80% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "+80% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic. +100% [ICON_Tourism] Tourism for [ICON_Greatwork_Product] Product in this city when player has the 'Capitalism' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "International [ICON_TradeRoute] Trade Routes from this City provide +80% [ICON_Gold] Gold after finishing the 'Exploration' civic. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."),
     -- Victor
-    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 3 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
+    ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 2 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
     ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_NAME",                             "Logistics Supply"),
-    ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "80% discount on One-time Strategic Resource cost for units trained in the city. Accumulating Strategic resources in all cities gain an additional +2 per turn."),
+    ("LOC_GOVERNOR_PROMOTION_DEFENSE_LOGISTICS_DESCRIPTION",                      "80% discount on Strategic Resource cost for units trained in the city. Properly improved Strategic resources in all cities gain an additional +2 per turn."),
     -- ("LOC_GOVERNOR_PROMOTION_EMBRASURE_DESCRIPTION",                              " "), -- Millitary Engineer trained in this city receive extra 2 charges. +100% [ICON_PRODUCTION] Production towards Millitary Engineer in this city.
     ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_NAME",                                  "Conscription"),
-    ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "Military units trained in this city start with a free promotion. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city."), -- All millitary units trained in this city receive extra +25% Combat Experience permanently.
+    ("LOC_GOVERNOR_PROMOTION_CONSCRIPTION_DESCRIPTION",                           "Military units trained in this city start with a free promotion (does not stack). Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non-civilian unit is created in this city."), -- All millitary units trained in this city receive extra +25% Combat Experience permanently.
     ("LOC_GOVERNOR_PROMOTION_ARMS_RACE_PROPONENT_NAME",                           "Arms Race Proponent"), -- +100% production speed
     ("LOC_GOVERNOR_PROMOTION_ARMS_RACE_PROPONENT_DESCRIPTION",                    "+100% production speed to Nuclear Armament projects in the city. +30% Production speed towards all millitary units (50% more bonus when producing Air units and GDRs)."),
     ("LOC_GOVERNOR_PROMOTION_COMMANDER_NAME",                                     "Commander"),
@@ -39,10 +39,10 @@ values
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION",              "Relics in the city produce +300% [ICON_TOURISM] Tourism and +50% [ICON_FAITH] Faith."),
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME",                     "Oecumenical Patriarch"),
     -- Magnus
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "+20% Growth in the city. Domestic [ICON_TradeRoute] Trade Routes ending the city provide +2 [ICON_Food] Food and +1 [ICON_Production] Production to their starting city."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "+20% Growth in the city. Domestic [ICON_TradeRoute] Trade Routes ending here provide +2 [ICON_Food] Food and +1 [ICON_Production] Production to their starting city."), 
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME",                "Ground Breaker"),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "+50% construction speed when constructing Districts and buildings in the city. Allow the city to build one more district than the [ICON_Citizen] Population limit allows."),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "Quan'Nong"),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "Agricultural Overseer"), -- Quan'Nong
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION",       "+15% [ICON_Food] Food and +15% [ICON_Production] Production in the city."),
     ("LOC_BUILDING_DUMMY_MAGNUS_NAME",                                            "Elected Officer Magnus"),
     ("LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION",                                     "Created when Governor Magnus with the Elected Officer title establishes within 9 tiles."),
@@ -59,12 +59,12 @@ values
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_NAME",                                   "Paradise"),
     ("LOC_GOVERNOR_PROMOTION_BUILDER_GUILDMASTER_DESCRIPTION",                    "All Builders trained in the city get +1 build charge and +1 [ICON_Movement] Movement."),
     ("LOC_GOVERNOR_PROMOTION_ZONING_COMMISSIONER_DESCRIPTION",                    "The city gets +20% production speed towards Wonders. When a Wonder is completed in the city, gain Great Engineer points equal to 20% of the cost."),
-    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "+1 [ICON_Production] Production for all improved plots in the city. Each [ICON_Citizen] Citizen in the city provides +0.5 [ICON_PRODUCTION] Production."), -- +1 [ICON_Food] Food and 
+    ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "Improved tiles in the City have +1 [ICON_Production] Production. Each [ICON_Citizen] Citizen in the city provides +0.5 [ICON_PRODUCTION] Production."), -- +1 [ICON_Food] Food and 
     ("LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "The city's improvements, buildings, and Districts cannot be damaged by Environmental Effects. +100% Districts adjacency yields in the city"),
-    ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city gain +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement when the 'Urbanization Civic' is unlocked."),
-    ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement (unlocked by Games Recreation) in this city. +1 [ICON_Culture] Culture and +2 Appeal to adjacent tiles. Cannot be adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."),
+    ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city provide +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement across your nation when the 'Urbanization Civic' is unlocked."),
+    ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement in this city. Provides +1 [ICON_Culture] Culture, and adjacent tiles receive +2 Appeal. Cannot be placed adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."), -- (unlocked by Games and Recreation civic) 
     -- Amani
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "Other cities within 9 tiles and not owned by you lose 3 Loyalty per turn. [ICON_FAITH] Faith can be used to recruit Spy directly in Amani's city and the cost is reduced by 25%. Spys trained in the city start with a free promotion. "),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "Other cities within 9 tiles and not owned by you lose 3 Loyalty per turn. [ICON_FAITH] Faith can be used to recruit Spy if established in your city, with 25% discount. Spys trained in the city start with a free promotion."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME",                           "Local Informants "),
     ("LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "Disguise"),
@@ -73,7 +73,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "While established in a city-state, doubles the number of [ICON_Envoy] Envoys you have there. Enemy Spy level reduced by 1 in the city-state. Your Spy level is increased by 1 for all offensive operations."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "Pay Tribute"),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "Foreign Investor"),
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are the city-state's Suzerain (including Leveraged Units) and it cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as four [ICON_Envoy] envoys (instead of 2). While established in a city-state, accumulate its Strategic and Luxury resources. When Suzerain, receive double the amount of accumulated Strategic and Luxury resources."),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as four [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain."),
     ("GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，from Governor's Promotion"),
     ("GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，from Governor's Promotion"),
     -- Pingala
@@ -81,17 +81,17 @@ values
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_CONNOISSEUR_DESCRIPTION",                   "+1.2 [ICON_CULTURE] Culture per turn for each [ICON_Citizen] Citizen in the city."),
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_RESEARCHER_DESCRIPTION",                    "+1.2 [ICON_SCIENCE] Science per turn for each [ICON_Citizen] Citizen in the city."),
     ("LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_NAME",                     "Science and Education"),
-    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD",           "Every building in Campus District provide +5 [ICON_SCIENCE] Science and 10% increase in [ICON_Science] Science generated by the city. {LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION}"),
+    ("LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD",           "Each building in Campus district provides +5 [ICON_SCIENCE] Science. City generates +10% [ICON_Science] Science for each building in its Campus districts. {LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION}"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CURATOR_DESCRIPTION",                       "+200% [ICON_Tourism] Tourism from Great Works of Art, Artifact, Music, and Writing in the city."),
     -- Ibrahim
     ("LOC_COMBAT_PREVIEW_CITY_GOVERNOR_ATTACK_DISTRICT_COMBAT_BONUS",             "+{1_Amount} Pasha"),
     ("LOC_GRAND_VISIER_ALLIANCE_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",           "+{1_Amount} Grand Visier"),
-    ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "Each [ICON_Citizen] Citizen in the city provides +1 [ICON_PRODUCTION] Production. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non civilian unit is created in this city. Establishes in 3 turns."),
+    ("LOC_GOVERNOR_PROMOTION_PASHA_DESCRIPTION",                                  "Each [ICON_Citizen] Citizen in the city provides +1 [ICON_PRODUCTION] Production. Gain [ICON_SCIENCE] Science equal to 25% of the unit's cost when a non-civilian unit is trained in this city. Establishes in 3 turns."),
     ("LOC_GOVERNOR_PROMOTION_HEAD_FALCONER_DESCRIPTION",                          "+30% production speed toward Encampment buildings in this city. +3 [ICON_SCIENCE] Science for each Encampment and Encampment building in this city."),
     ("LOC_GOVERNOR_PROMOTION_SERASKER_DESCRIPTION",                               "Units within 10 tiles of the City Center get +10 [ICON_STRENGTH] Combat Strength when attacking defensible districts."),
-    ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn, none of the owner's cities exert Loyalty pressure on your cities."),
-    ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+5 [ICON_STRENGTH] Combat Strength while you and your alliance are fighting the same tagret."),
-    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+20% production speed toward military units in this city. Receive a second unit each time you train a Renaissance era or later melee or siege unit.");
+    ("LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "When established in a foreign [ICON_Capital] Capital, [ICON_STAT_GRIEVANCE] Grievances from the city owner against you are reduced by 5 more per turn; none of the owner's cities exert Loyalty pressure on your cities."),
+    ("LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "+20% [ICON_Production] Production towards military units in the city. Receive a copy of unit each time you train a Renaissance era or later melee/siege unit."),
+    ("LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "+5 [ICON_Strength] Combat Strength when fighting your and your allies' enemy.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -103,7 +103,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "城市中每个区域+2 [ICON_Gold] 金币。城市中每个改良设施+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "城市中商业中心和港口的相邻加成+100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来6 [ICON_Gold] 金币的收入。港口区域的 [ICON_GOLD]金币相邻加成也提供 [ICON_CULTURE]文化值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。此城的商业和港口区域也提供与其 [ICON_GOLD] 金币相邻加成相同的 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
@@ -135,7 +135,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION",              "本城遗物+300% [ICON_TOURISM] 旅游业绩产出和+50% [ICON_FAITH] 信仰值产出。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME",                     "普世牧首"),
     -- 老马
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "城市的 [ICON_Food] 增长+20%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+2 [ICON_Food] 食物, +1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "城市的 [ICON_Food] 增长+20%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+2 [ICON_Food] 食物，+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME",                "大兴土木"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "在城市中建造区域和建筑时加速50%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "督农制"),
@@ -158,7 +158,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_DESCRIPTION",                            "本城已改良地块+1 [ICON_Production] 生产力。城市中每位 [ICON_Citizen] 公民提供+0.5 [ICON_PRODUCTION] 生产力。"), -- +1 [ICON_Food] 食物、
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REINFORCED_INFRASTRUCTURE_DESCRIPTION",              "环境效应无法对此城市的改良设施、建筑与区域造成伤害。本城所有区域的相邻产出+100%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。解锁“城市化”后可在全国修建“市立公园”。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”（由游戏与娱乐市政解锁）。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"), -- （由游戏与娱乐市政解锁）
     -- 阿玛尼
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "9个单元格内其他文明的城市每回合失去3点忠诚度。 在己方文明城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。"),

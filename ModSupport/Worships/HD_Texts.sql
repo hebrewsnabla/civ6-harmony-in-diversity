@@ -3,23 +3,23 @@
 insert or replace into EnglishText
     (Tag,                                             Text)
 values
-    ("LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION",           "Allow constructs Candi(+8 [ICON_Faith] Faith; +2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the plots in this city that adjacent to Lake or Coast tiles.)"),
-    ("LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION",         "+2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the land plots in this city that adjacent to Lake or Coast tiles."),
-    ("LOC_BELIEF_JNR_KHALWAT_DL_DESCRIPTION",         "Allow constructs Khalwat (+8 [ICON_Faith] Faith; Unlock the boost of Civic 'Conservation' after first Khalwat was built.+1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city.)"),
-    ("LOC_BUILDING_JNR_KHALWAT_DL_DESCRIPTION",       "Unlock the boost of Civic 'Conservation' after first Khalwat was built.+1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city."),
-    ("LOC_BELIEF_JNR_MANDIR_DL_DESCRIPTION",          "Allow constructs Mandir (+8 [ICON_Faith] Faith; +3 [ICON_FOOD] Food for all Speciality Districts in this city.)"),
-    ("LOC_BUILDING_JNR_MANDIR_DL_DESCRIPTION",        "+3 [ICON_FOOD] Food for all Speciality Districts in this city."),
-    ("LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION",           "Allow constructs Jinja (+8 [ICON_Faith] Faith; +2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_SCIENCE] Science for Rainforest tiles, and +2 [ICON_CULTURE] Culture for marsh tiles in this city."),
-    ("LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION",         "+2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_SCIENCE] Science for Rainforest tiles, and +2 [ICON_CULTURE] Culture for marsh tiles in this city."),
-    ("LOC_BELIEF_JNR_DAOGUAN_DL_DESCRIPTION",         "Allow constructs Daoguan (+8 [ICON_Faith] Faith; +3 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre). +3 extra Great Person Points if Districts have builidings within.)"),
-    ("LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION",       "+3 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre). +3 extra Great Person Points if Districts have builidings within."),
-    ("LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION",           "Allow constructs Mbari (+8 [ICON_Faith] Faith and +6 [ICON_GOLD] Gold; +1 [ICON_TradeRoute] Trade Route Capacity.)"),
+    ("LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION",           "Allows construction of Candi(+8 [ICON_Faith] Faith; +2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the land plots adjacent to Lake or Coast tiles in this city.)"),
+    ("LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION",         "+2 [ICON_Faith] Faith, +2 [ICON_CULTURE] Culture to the land plots adjacent to Lake or Coast tiles in this city."),
+    ("LOC_BELIEF_JNR_KHALWAT_DL_DESCRIPTION",         "Allows construction of Khalwat (+8 [ICON_Faith] Faith; provides [ICON_CivicBoosted] Inspiration to Civic 'Conservation' after first Khalwat is built. +1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city.)"),
+    ("LOC_BUILDING_JNR_KHALWAT_DL_DESCRIPTION",       "provides [ICON_CivicBoosted] Inspiration to Civic 'Conservation' after first Khalwat is built. +1 Appeal to all tiles in city with a Khalwat and -50% cost when purchasing Naturalist in this city."),
+    ("LOC_BELIEF_JNR_MANDIR_DL_DESCRIPTION",          "Allows construction of Mandir (+8 [ICON_Faith] Faith; Speciality Districts in this city provide +3 [ICON_FOOD] Food.)"),
+    ("LOC_BUILDING_JNR_MANDIR_DL_DESCRIPTION",        "Speciality Districts in this city provide +3 [ICON_FOOD] Food.)"),
+    ("LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION",           "Allows construction of Jinja (+8 [ICON_Faith] Faith; +2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_SCIENCE] Science for Rainforest tiles, and +2 [ICON_CULTURE] Culture for Marsh tiles in this city.)"),
+    ("LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION",         "+2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_SCIENCE] Science for Rainforest tiles, and +2 [ICON_CULTURE] Culture for Marsh tiles in this city."),
+    ("LOC_BELIEF_JNR_DAOGUAN_DL_DESCRIPTION",         "Allows construction of Daoguan (+8 [ICON_Faith] Faith; +3 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre), doubled if Districts have builidings within.)"),
+    ("LOC_BUILDING_JNR_DAOGUAN_DL_DESCRIPTION",       "+3 extra Great Person Points for each Districts (Great Writer points, Great Musician Points and Great Artists Points for Theatre), doubled if Districts have builidings within."),
+    ("LOC_BELIEF_JNR_MBARI_DL_DESCRIPTION",           "Allows construction of Mbari (+8 [ICON_Faith] Faith and +6 [ICON_GOLD] Gold; +1 [ICON_TradeRoute] Trade Route Capacity.)"),
     ("LOC_BUILDING_JNR_MBARI_DL_DESCRIPTION",         "+1 [ICON_TradeRoute] Trade Route Capacity."),
-    ("LOC_BELIEF_JNR_TZACUALLI_DL_DESCRIPTION",       "Allow constructs Tzacualli (+8 [ICON_Faith] Faith; Each Tzacualli provides extra 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost with 10% as the upper bound.)"),
-    ("LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION",     "Each Tzacualli provides extra 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Boost with 10% as the upper bound."),
-    ("LOC_BELIEF_JNR_PERIPTEROS_DL_DESCRIPTION",      "Allow constructs Peripteros (+8 [ICON_Faith] Faith; +2 Influence Points per turn. Each Peripteros awards 1 [ICON_Envoy] Envoy when completed.)"),
+    ("LOC_BELIEF_JNR_TZACUALLI_DL_DESCRIPTION",       "Allows construction of Tzacualli (+8 [ICON_Faith] Faith; provides extra 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Inspiration (max. +10%).)"),
+    ("LOC_BUILDING_JNR_TZACUALLI_DL_DESCRIPTION",     "Each Tzacualli provides extra 1% [ICON_SCIENCE] Science for Eruka and 1% [ICON_CULTURE] Culture for Inspiration (max. +10%)."),
+    ("LOC_BELIEF_JNR_PERIPTEROS_DL_DESCRIPTION",      "Allows construction of Peripteros (+8 [ICON_Faith] Faith; +2 Influence Points per turn. Each Peripteros awards 1 [ICON_Envoy] Envoy when completed.)"),
     ("LOC_BUILDING_JNR_PERIPTEROS_DL_DESCRIPTION",    "+2 Influence Points per turn. Each Peripteros awards 1 [ICON_Envoy] Envoy when completed."),
-    ("LOC_BELIEF_JNR_SOBOR_DL_DESCRIPTION",           "Allow constructs Sobor (+8 [ICON_Faith] Faith; 1 slot for [ICON_GreatWork_Relic] Relics. [ICON_GreatWork_Relic] Relics in this city have 100% more yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism.)"),
+    ("LOC_BELIEF_JNR_SOBOR_DL_DESCRIPTION",           "Allows construction of Sobor (+8 [ICON_Faith] Faith; 1 slot for [ICON_GreatWork_Relic] Relics. [ICON_GreatWork_Relic] Relics in this city have 100% more yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism.)"),
     ("LOC_BUILDING_JNR_SOBOR_DL_DESCRIPTION",         "1 slot for [ICON_GreatWork_Relic] Relics. [ICON_GreatWork_Relic] Relics in this city have 100% more yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism.");
 
 --------------------------------------------------------------------------------

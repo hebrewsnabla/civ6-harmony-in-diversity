@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                             Text)
 values
-    ("LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION",    "Unlocks the Builder ability to construct an Oasis Garden.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture。+1 [ICON_AMENITIES] Amenity when Buttress being researched. [NEWLINE]Can only be built on Oases."),
+    ("LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION",    "Unlocks the Builder ability to construct an Oasis Garden.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture. +1 [ICON_AMENITIES] Amenity after Buttress is researched. [NEWLINE]Can only be built on Oases."),
     ("LOC_IMPROVEMENT_JNR_REED_HOME_DESCRIPTION",     "Unlocks the Builder ability to construct a Reed Home.[NEWLINE][NEWLINE]+1 [ICON_Production] Production. [NEWLINE][NEWLINE]Can only be built on Marsh. Can only be pillaged (never destroyed) by natural disasters."),
     ("LOC_CIVIC_GUILDS_DESCRIPTION",                  "Lumber Mills and Camps can be built on Rainforest. +1 [ICON_Science] Science from the Reed Home improvement."),
     ("LOC_TECH_SCIENTIFIC_THEORY_DESCRIPTION",        "+1 [ICON_Food] Food from the Plantation improvement. +1 [ICON_Science] Science from the Reed Home improvement.");
