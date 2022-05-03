@@ -131,3 +131,5 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,                      RequirementId)
 values
     ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIRES_CITY_LOYALTY_NOT_FULL');
+
+update Units set Combat = Combat + 5, Bombard = Bombard + 5 where PromotionClass = 'PROMOTION_CLASS_SIEGE' and Combat < 55;
