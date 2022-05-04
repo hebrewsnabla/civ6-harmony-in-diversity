@@ -225,6 +225,10 @@ update Building_GreatWorks set
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,					YieldChange)
+values
+	('BUILDING_NOTRE_DAME',					'YIELD_CULTURE',			2);
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
 UPDATE Buildings SET  ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0

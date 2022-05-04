@@ -353,9 +353,9 @@ values
 -- POLICY_RATIONALISM
 	('POLICY_RATIONALISM_REGIONAL_RANGE_BONUS',					'Amount',													3),
 	('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE',		'YieldType',												'YIELD_SCIENCE'),
-	('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE',		'Amount',													0.2),
+	('POLICY_RATIONALISM_UNIVERSITY_POPULATION_SCIENCE',		'Amount',													0.3),
 	('POLICY_RATIONALISM_RESEARCH_LAB_POPULATION_SCIENCE',		'YieldType',												'YIELD_SCIENCE'),
-	('POLICY_RATIONALISM_RESEARCH_LAB_POPULATION_SCIENCE',		'Amount',													0.4),
+	('POLICY_RATIONALISM_RESEARCH_LAB_POPULATION_SCIENCE',		'Amount',													0.5),
 -- POLICY_FREE_MARKET
 	('POLICY_FREE_MARKET_REGIONAL_RANGE_BONUS',					'Amount',													3),
 	('POLICY_FREE_MARKET_BANK_POPULATION_GOLD',					'YieldType',												'YIELD_GOLD'),
@@ -365,9 +365,9 @@ values
 -- POLICY_GRAND_OPERA
 	('POLICY_GRAND_OPERA_REGIONAL_RANGE_BONUS',					'Amount',													3),
 	('POLICY_GRAND_OPERA_MUSEUM_POPULATION_CULTURE',			'YieldType',												'YIELD_CULTURE'),
-	('POLICY_GRAND_OPERA_MUSEUM_POPULATION_CULTURE',			'Amount',													0.2),
+	('POLICY_GRAND_OPERA_MUSEUM_POPULATION_CULTURE',			'Amount',													0.3),
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'YieldType',												'YIELD_CULTURE'),
-	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'Amount',													0.4);
+	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'Amount',													0.5);
 
 -- 民主购买区域
 insert or replace into Types
@@ -449,7 +449,7 @@ values
 	('POLICY_PLUTONOMY',				'KIND_POLICY'),
 	('POLICY_PHILOSOPHY_EDUCATION',		'KIND_POLICY'),
 	('POLICY_PURITAN',					'KIND_POLICY'),
-	-- ('POLICY_SCIENTIFIC_EXPEDITIONS',	'KIND_POLICY'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'KIND_POLICY'),
 	('POLICY_SISHU',					'KIND_POLICY'),
 	('POLICY_COMPILE',					'KIND_POLICY'),
 	('POLICY_SUPPLY_LINES',				'KIND_POLICY'),
@@ -500,7 +500,7 @@ values
 	('POLICY_PLUTONOMY',				'LOC_POLICY_PLUTONOMY_NAME',				'LOC_POLICY_PLUTONOMY_DESCRIPTION',					'CIVIC_SOCIAL_SCIENCE_HD',					NULL,						'SLOT_ECONOMIC'),
 	('POLICY_PHILOSOPHY_EDUCATION',		'LOC_POLICY_PHILOSOPHY_EDUCATION_NAME',		'LOC_POLICY_PHILOSOPHY_EDUCATION_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',			NULL,						'SLOT_WILDCARD'),
 	('POLICY_PURITAN',					'LOC_POLICY_PURITAN_NAME',					'LOC_POLICY_PURITAN_DESCRIPTION',					'CIVIC_ETHICS_HD',							NULL,						'SLOT_ECONOMIC'),
-	-- ('POLICY_SCIENTIFIC_EXPEDITIONS',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',	'CIVIC_EVOLUTION_THEORY_HD',				NULL,						'SLOT_DIPLOMATIC'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',	'CIVIC_EVOLUTION_THEORY_HD',				NULL,						'SLOT_DIPLOMATIC'),
 	('POLICY_SISHU',					'LOC_POLICY_SISHU_NAME',					'LOC_POLICY_SISHU_DESCRIPTION',						'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		NULL,						'SLOT_ECONOMIC'),
 	('POLICY_COMPILE',					'LOC_POLICY_COMPILE_NAME',					'LOC_POLICY_COMPILE_DESCRIPTION',					NULL,										'TECH_PAPER_MAKING_HD',		'SLOT_WILDCARD'),
 	('POLICY_SUPPLY_LINES',				'LOC_POLICY_SUPPLY_LINES_NAME',				'LOC_POLICY_SUPPLY_LINES_DESCRIPTION',				NULL,										'TECH_MILITARY_TACTICS',	'SLOT_MILITARY'),
@@ -648,8 +648,8 @@ values
 	('POLICY_PHILOSOPHY_EDUCATION',		'PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS'),
 	('POLICY_PURITAN',					'PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST'),
 	('POLICY_PURITAN',					'PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST'),
-	-- ('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_SCIENCE'),
-	-- ('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_CULTURE'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_SCIENCE'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_CULTURE'),
 	('POLICY_SISHU',					'SISHU_POPULATION_SCIENCE'),
 	('POLICY_SISHU',					'SISHU_POPULATION_CULTURE'),
 	('POLICY_COMPILE',					'COMPILE_FIXED_SCIENTIST_POINTS'),
@@ -1051,7 +1051,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,							Name,														Value)
 values
-	('MONARCHY_CITYGROWTH_BONUS',			'Amount',													5),
+	('MONARCHY_CITYGROWTH_BONUS',			'Amount',													10),
 	('MONARCHY_UNITPRODUCTION_BONUS',		'Amount',													20),
 	('MONARCHY_GOLD_BONUS',					'YieldType',												'YIELD_GOLD'),
 	('MONARCHY_GOLD_BONUS',					'Amount',													10);
@@ -1100,7 +1100,7 @@ insert or replace into PolicyModifiers(PolicyType,	ModifierID)values
 -- insert or replace into GovernmentModifiers(GovernmentType,	ModifierID)values
 -- 	('GOVERNMENT_THEOCRACY',	'TRAIT_GAINS_FOUNDER_BELIEF_MAJORITY_RELIGION');
 
-update Modifiers set SubjectRequirementSetId = 'HD_CITY_HAS_RELIGIOUS_TIER_2_BUILDING_REQUIREMENTS' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
+update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
 
 update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
 
@@ -1748,13 +1748,15 @@ select
 	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
 from HD_DistrictBonus;
 -- 隐修会
-update ModifierArguments set Value = 50 where ModifierId = 'MONASTICISM_HOLYSITE_SCIENCE' and Name = 'Amount';
+-- update ModifierArguments set Value = 50 where ModifierId = 'MONASTICISM_HOLYSITE_SCIENCE' and Name = 'Amount';
 -- 敛财大亨
-update ModifierArguments set Value = 25 where ModifierId = 'ROBBERBARONS_STOCKEXCHANGE_GOLD' and Name = 'Amount';
-update ModifierArguments set Value = 15 where ModifierId = 'ROBBERBARONS_FACTORY_PRODUCTION' and Name = 'Amount';
+-- update ModifierArguments set Value = 25 where ModifierId = 'ROBBERBARONS_STOCKEXCHANGE_GOLD' and Name = 'Amount';
+-- update ModifierArguments set Value = 15 where ModifierId = 'ROBBERBARONS_FACTORY_PRODUCTION' and Name = 'Amount';
+update Modifiers set SubjectRequirementSetId = "HD_CITY_HAS_INDUSTRIAL_TIER_3_BUILDING_REQUIREMENTS" where ModifierId = 'ROBBERBARONS_FACTORY_PRODUCTION';
+update Modifiers set SubjectRequirementSetId = "HD_CITY_HAS_COMMERCIAL_TIER_3_BUILDING_REQUIREMENTS" where ModifierId = 'ROBBERBARONS_STOCKEXCHANGE_GOLD';
 -- 殖民地税收
-update ModifierArguments set Value = 15 where ModifierId = 'COLONIALTAXES_FOREIGNGOLD' and Name = 'Amount';
-update ModifierArguments set Value = 5 where ModifierId = 'COLONIALTAXES_FOREIGNPRODUCTION' and Name = 'Amount';
+-- update ModifierArguments set Value = 15 where ModifierId = 'COLONIALTAXES_FOREIGNGOLD' and Name = 'Amount';
+-- update ModifierArguments set Value = 5 where ModifierId = 'COLONIALTAXES_FOREIGNPRODUCTION' and Name = 'Amount';
 -- 统治
-update ModifierArguments set Value = 1 where ModifierId = 'RAJ_SCIENCEPERTRIBUTARY' and Name = 'Amount';
-update ModifierArguments set Value = 1 where ModifierId = 'RAJ_CULTUREPERTRIBUTARY' and Name = 'Amount';
+-- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_SCIENCEPERTRIBUTARY' and Name = 'Amount';
+-- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_CULTUREPERTRIBUTARY' and Name = 'Amount';

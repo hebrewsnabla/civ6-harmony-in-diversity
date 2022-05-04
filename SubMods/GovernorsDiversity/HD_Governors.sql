@@ -43,7 +43,7 @@ delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_P
 delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST';
 
 -- update ModifierArguments set Value = 30 where ModifierId = 'SURPLUS_LOGISTICS_EXTRA_GROWTH' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'SURPLUS_LOGISTICS_TRADE_ROUTE_FOOD' and Name = 'Amount';
 
 -- 新增效果
 insert or replace into GovernorPromotionModifiers
@@ -53,7 +53,7 @@ values
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER',			'MAGNUS_EXTRA_DISTRICT'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER',			'MAGNUS_FASTER_DISTRICT_CONSTRUCTION'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER',			'MAGNUS_FASTER_BUILDING_CONSTRUCTION'),
-	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS',		'SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION'),
+	-- ('GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS',		'SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER',			'MAGNUS_ADJUST_CITY_YIELD'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',			'MAGNUS_PLACEHOLDER'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_FOOD_REGIONAL_STACKING'),
@@ -853,7 +853,7 @@ update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_MUSI
 update ModifierArguments set Value = 300 where ModifierId = 'CURATOR_DOUBLE_WRITING_TOURISM' and Name = 'ScalingFactor';
 
 update ModifierArguments set Value = 1.2 where (ModifierId = 'RESEARCHER_SCIENCE_CITIZEN' or ModifierId = 'CONNOISSEUR_CULTURE_CITIZEN') and Name = 'Amount';
-update ModifierArguments set Value = 15 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
+update ModifierArguments set Value = 20 where (ModifierId = 'LIBRARIAN_CULTURE_YIELD_BONUS' or ModifierId = 'LIBRARIAN_SCIENCE_YIELD_BONUS') and Name = 'Amount';
 
 	-- 太空计划 改名 科教兴国
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE_DESCRIPTION_HD' where GovernorPromotionType = 'GOVERNOR_PROMOTION_EDUCATOR_SPACE_INITIATIVE';
