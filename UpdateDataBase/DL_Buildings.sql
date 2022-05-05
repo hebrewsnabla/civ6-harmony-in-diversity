@@ -1599,9 +1599,9 @@ values
 insert or replace into Modifiers
     (ModifierId,                       				ModifierType,                                               OwnerRequirementSetId,  SubjectRequirementSetId,	SubjectStackLimit)
 values
-	('AIRPORT_IMPROVEMENT_TOURISM_BONUS_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_4_TILES',	1),
+	('AIRPORT_IMPROVEMENT_TOURISM_BONUS_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_5_TILES',	1),
 	('AIRPORT_IMPROVEMENT_TOURISM_BONUS',			'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_TOURISM',			Null,					Null,						Null),
-	('AIRPORT_WONDER_TOURISM_BONUS_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_4_TILES',	1),
+	('AIRPORT_WONDER_TOURISM_BONUS_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_5_TILES',	1),
 	('AIRPORT_WONDER_TOURISM_BONUS',				'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',						Null,					Null,						Null);
 
 insert or replace into ModifierArguments
@@ -1622,7 +1622,7 @@ from GreatWorkObjectTypes;
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,									OwnerRequirementSetId,	SubjectRequirementSetId,	SubjectStackLimit)
 select
-	'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_9_TILES',	1
+	'AIRPORT_' || GreatWorkObjectType || '_TOURISM_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'CITY_IS_POWERED',		'HD_OBJECT_WITHIN_5_TILES',	1
 from GreatWorkObjectTypes;
 
 insert or replace into ModifierArguments
