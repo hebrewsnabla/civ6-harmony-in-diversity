@@ -13,7 +13,7 @@ insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_COMMERCIAL_HUB_TOKEN_ATTACH'),
-	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_THEATER_TOKEN_ATTACH');
+	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_THEATER_TOKEN_ATTACH'),
 	('BUILDING_SUK_WAT_ARUN',				'WAT_ARUN_INFLUENCE_POINTS');
 
 insert or replace into Modifiers

@@ -40,7 +40,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_DESCRIPTION",              "Relics in the city produce +300% [ICON_TOURISM] Tourism and +50% [ICON_FAITH] Faith."),
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT_NAME",                     "Oecumenical Patriarch"),
     -- Magnus
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "+20% Growth in the city. Domestic [ICON_TradeRoute] Trade Routes ending here provide +2 [ICON_Food] Food to their starting city."), 
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "+20% Growth in the city. Domestic [ICON_TradeRoute] Trade Routes ending here provide +4 [ICON_Food] Food to their starting city."), 
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME",                "Ground Breaker"),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "+50% construction speed when constructing Districts and buildings in the city. Allow the city to build one more district than the [ICON_Citizen] Population limit allows."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "Agricultural Overseer"), -- Quan'Nong
