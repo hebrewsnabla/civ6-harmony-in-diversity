@@ -5,14 +5,14 @@ insert or replace into EnglishText
 values
     -- City Center Buildings
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
-    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture."),
+    ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
     ("LOC_BUILDING_GRANARY_DESCRIPTION",                          "Plantations and Camps over bonus resources in this City provide +1 [ICON_Food] Food. [ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 after completing Calendar."),
     ("LOC_BUILDING_NILOMETER_HD_NAME",                            "Nilometer"),
-    ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+1 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
+    ("LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "+2 [ICON_Science] Science if the City Center is on Flood Plains.[NEWLINE][NEWLINE]May not be built in cities that already have a Triumphal Arch."),
     ("LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "Triumphal Arch"),
-    ("LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "+1 [ICON_Culture] Culture if this city has any World Wonder.[NEWLINE][NEWLINE]May not be built in cities that already have a Nilometer."),
+    ("LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "+2 [ICON_Culture] Culture if this city has any World Wonder.[NEWLINE][NEWLINE]May not be built in cities that already have a Nilometer."),
     ("LOC_BUILDING_KAREZ_NAME",                                   "Karez"),
     ("LOC_BUILDING_KAREZ_DESCRIPTION",                            "+1 [ICON_Food] Food if the City Center is on Hills or is adjacent to Mountains.[NEWLINE][NEWLINE]May not be built in cities that already have an Artizan Plaza or a Boot Camp."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME",                  "Artisan Plaza"),
@@ -127,14 +127,14 @@ insert or replace into LocalizedText
 values
     -- 市中心建筑
     --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
-    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRANARY_DESCRIPTION",                          "本城改良加成资源的种植园和营地+1 [ICON_Food] 食物。研究“历法”科技后，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
     ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_NAME",                            "测量仪"),
-    ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+1 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_NILOMETER_HD_DESCRIPTION",                     "如果市中心位于泛滥平原上，则额外+2 [ICON_Science] 科技值。[NEWLINE][NEWLINE]无法建造在已有凯旋门的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_NAME",                          "凯旋门"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "如果城市中拥有至少1个世界奇观，则额外+1 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TRIUMPHAL_ARCH_DESCRIPTION",                   "如果城市中拥有至少1个世界奇观，则额外+2 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]无法建造在已有测量仪的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_NAME",                                   "坎儿井"),
     ("zh_Hans_CN",  "LOC_BUILDING_KAREZ_DESCRIPTION",                            "如果市中心位于丘陵之上或靠近山脉则额外+1 [ICON_Food] 食物。[NEWLINE][NEWLINE]无法建造在已有工官或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_NAME",                  "工官"),

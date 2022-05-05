@@ -68,6 +68,11 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType, 'REQUIREMENT_PLAYER_HAS_CIVIC', 1 from Civics;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_' || CivicType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Civics;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_' || CivicType || '_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_' || CivicType from Civics;
+
 -- Districts plots
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'DistrictType', DistrictType from Districts;
