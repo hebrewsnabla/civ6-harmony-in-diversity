@@ -25,7 +25,7 @@ insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, 
 values  ('IMPROVEMENT_KAMPUNG', 'FEATURE_REEF', NULL, NULL);
 
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) 
-select  'IMPROVEMENT_KAMPUNG', 'FEATURE_SUK_KELP', 'TECH_SHIPBUILDING', NULL
+select  'IMPROVEMENT_KAMPUNG', 'FEATURE_SUK_KELP', NULL, NULL
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 update Improvements set Description = 'LOC_IMPROVEMENT_KAMPUNG_KELP_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_KAMPUNG' and exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 
