@@ -6,7 +6,7 @@ insert or replace into EnglishText
 values
     -- New Techs
     ("LOC_TECH_CALENDAR_HD_NAME",                                                           "Calendar"),
-    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "Farms provide +1 [ICON_Food] Food.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in Cities having Granary."),
+    ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "Farms provide +1 [ICON_Food] Food. [NEWLINE]Provides an additional +1 [ICON_CULTURE] Culture for Monuments. [NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in Cities having Granary."),
     ("LOC_TECH_PAPER_MAKING_HD_NAME",                                                       "Paper Making"),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "[ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_TECH_COMPASS_HD_NAME",                                                            "Compass"),
@@ -89,7 +89,7 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_SOCIAL_SCIENCE_HD",                                        "Complex cities form complex social relationships, while some geniuses see it through clearly."),
     -- Civics
     ("LOC_CIVIC_NATURAL_HISTORY_NAME",                                                      "Archaeology"),
-    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Farms provide +1 [ICON_Food] Food from every 2 adjacent Farms.[NEWLINE]Plantations provide +1 [ICON_Food] Food. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength when fighting in Rainforest or Woods tiles."),
+    ("LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                                  "Farms provide +1 [ICON_Food] Food from every 2 adjacent Farms.[NEWLINE]Plantations provide +1 [ICON_Food] Food. [NEWLINE]Campus districts with university receive an additional standard adjacency bonus from rainforest tiles. [NEWLINE]Melee units gain the ability: +3 [ICON_Strength] Combat Strength when fighting in Rainforest or Woods tiles."),
     ("LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                                          "Ranged units gain the ability: +5 [ICON_Strength] Combat Strength when occupying either an improvement that provides [ICON_Strength] Defense Strength or a District. [NEWLINE]Anti-cavalry units gain the ability: +7 [ICON_Strength] Combat Strength when defending from melee attack on Hills."),
     ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                                          "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
@@ -270,7 +270,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                 "可额外招募一名间谍。[NEWLINE]允许两个完全相同的单位组成一个兵团。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",                                "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。允许建造者植树造林（人造林）。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_FEUDALISM_HD_DESCRIPTION",                                   "现与2个农场改良设施相邻时，农场产出的 [ICON_Food] 食物+1。[NEWLINE]种植园改良设施提供的 [ICON_Food] 食物+1。[NEWLINE]拥有大学的学院从雨林获得额外标准相邻加成。[NEWLINE]近战单位获得能力：在森林或雨林中战斗时+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION",                           "远程单位获得能力：占领一个区域或一个提供 [ICON_Strength] 防御力的改良设施时+5 [ICON_Strength] 战斗力。[NEWLINE]抗骑兵单位获得能力：在丘陵上防御近距离攻击时+7 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                           "重骑兵单位获得能力：攻击受伤单位时+5 [ICON_Strength] 战斗力。 [NEWLINE]攻城单位获得能力：可移动后攻击。"), -- 在没有雨林、树林、沼泽地貌的平坦地形作战时+5 [ICON_Strength] 战斗力。
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
