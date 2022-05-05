@@ -17,7 +17,7 @@ insert or replace into ModifierArguments
     (ModifierId,                        Name,           Value)
 values
     ('APADANA_TRIBUTARY_CULTURE',       'YieldType',    'YIELD_CULTURE'),
-    ('APADANA_TRIBUTARY_CULTURE',       'Amount',       1);
+    ('APADANA_TRIBUTARY_CULTURE',       'Amount',       2);
 
 -- 
 insert or replace into Building_CitizenYieldChanges
