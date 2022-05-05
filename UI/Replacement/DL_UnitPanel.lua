@@ -283,10 +283,20 @@ function AddActionButton(instance:table, action:table)
             end
             if not validActivation then
                 -- Not activatable plot.
-                local errorHint = "[NEWLINE][COLOR_Red]" .. Locale.Lookup("LOC_GREATPERSON_MIMAR_SINAN_ACTIVATION_HINT") .. "[ENDCOLOR]";
+                local errorHint = "";
+                for row in GameInfo.GreatPersonIndividuals() do
+                    if row.Index == individual then
+                        local hint = Locale.Lookup("LOC_" .. row.GreatPersonIndividualType .."_ACTIVATION_HINT");
+                        if hint ~= "LOC_" .. row.GreatPersonIndividualType .."_ACTIVATION_HINT" then
+                            errorHint = "[NEWLINE][COLOR_Red]" .. hint .. "[ENDCOLOR]";
+                        end
+                    end
+                end
                 if not action.Disabled then
                     -- Not disabled, append additional newline.
-                    errorHint = "[NEWLINE]" .. errorHint;
+                    if errorHint ~= "" then
+                        errorHint = "[NEWLINE]" .. errorHint;
+                    end
                     action.Disabled = true;
                 end
                 action.helpString = action.helpString .. errorHint;

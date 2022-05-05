@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "One with Nature"),
-    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +5% to all yields, and +2 [ICON_Amenities] Amenity for cities having at least one natural wonder tile."),
+    ("LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "+8 [ICON_GreatProphet] Great Prophet point per turn, +10% to all yields, and +2 [ICON_Amenities] Amenity for cities having at least one natural wonder tile."),
     ("LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "Major adjacency bonus for Holy Site if next to a River. +2 [ICON_Amenities] Amenity and +2 [ICON_Housing] Housing to cities if they have a Holy Site district adjacent to a River. +2 [ICON_GreatProphet] Great Prophet point per turn if a city is located adjacent to a River."),
     ("LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "Combat units receive +1 [ICON_Strength] combat strength. Bonus [ICON_Faith] Faith equal to 50% of the base strength of each combat unit killed (on Standard Speed). Receive [ICON_GreatProphet] Great Prophet points equal to 50% of the opposing unit's base strength (on Standard Speed) when a combat unit defeats a major or minor civilization's unit."),
     ("LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "Great Prophet Points"),
@@ -34,10 +34,9 @@ values
     ("LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Rainforest tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent Rainforest tiles when not pillaged. +2 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Rainforest tiles."),
     ("LOC_BELIEF_VOODOO_NAME",                                    "Voodoo"),
     ("LOC_BELIEF_VOODOO_DL_DESCRIPTION",                          "City centers provide +1 [ICON_Production] Production for each adjacent Rainforest tile, +1 [ICON_Culture] Culture from every two adjacent Rainforest tiles."),
-    ("LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "Plantations provide +1 [ICON_Food] Food. Plantations provide major adjacency bonus to 
-Holy Site districts. Plantations adjacent to your Holy Site districts provides +1 [ICON_Faith] Faith. Cities having Plantations provide +1 [ICON_GreatProphet] Great Prophet point per turn."),
+    ("LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "Plantations provide +1 [ICON_Food] Food. Holy Site districts provide +1 [ICON_Faith] Faith for each adjacent Plantation tile. Plantations adjacent to your Holy Site districts provides +1 [ICON_Faith] Faith. Cities having Plantations provide +1 [ICON_GreatProphet] Great Prophet point per turn."),
     ("LOC_BELIEF_TENGRI_NAME",                                    "Tengri"),
-    ("LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "Pastures provide +1 [ICON_Faith] Faith. Holy Site districts provide +2 [ICON_Faith] Faith for each adjacent Pasture tile. Pastures adjacent to your Holy Site districts provides +1 [ICON_Production] Production. Cities having Pastures provide +1 [ICON_GreatProphet] Great Prophet point per turn."),
+    ("LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "Pastures provide +1 [ICON_Production] Production. Holy Site districts provide +1 [ICON_Faith] Faith for each adjacent Pasture tile. Pastures adjacent to your Holy Site districts provides +1 [ICON_Faith] Faith. Cities having Pastures provide +2 [ICON_GreatProphet] Great Prophet point per turn."),
     ("LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "Farm-able resources provide +1 [ICON_Food] Food and +1 [ICON_Production] Production."),
     ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "Fishing Boats provide +1 [ICON_Science] Science. Fishing Boats over Luxury Resources provide +1 [ICON_Food] Food. Cities having Fishing Boats provide +3 [ICON_GreatProphet] Great Prophet point per turn."),
     ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "+2 [ICON_CULTURE] Culture to all cities adjacent to Coasts or Lakes. +1 [ICON_Food] Food from all Coast and Ocean tiles."),
@@ -72,7 +71,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
     ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_NAME",                           "天人合一"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+5%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ONE_WITH_NATURE_DL_DESCRIPTION",                 "拥有自然奇观的城市+2 [ICON_Amenities] 宜居度、+10%所有产出，且每回合+8 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION",                   "与河流相邻时，圣地获得大量相邻加成。如果拥有与河流相邻的圣地区域，则城市+2 [ICON_Amenities] 宜居度、+2 [ICON_Housing] 住房。如城市市中心坐落在河边，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION",                      "战斗单位+1 [ICON_Strength] 战斗力。每击杀1个战斗单位即可获得等于其战斗力50%的 [ICON_Faith] 信仰值（标准速度下）。战斗单位击杀主要和小型文明的单位时，获得等同于对方单位战斗力50%的 [ICON_GreatProphet] 大预言家点数（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOD_OF_WAR_GREAT_PROPHET_NAME",                 "大预言家点数"),
@@ -102,7 +101,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "圣地区域从每个相邻的雨林的单元格+1 [ICON_Faith] 信仰值。未被劫掠过的圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_VOODOO_NAME",                                    "伏都教"),
     ("zh_Hans_CN",  "LOC_BELIEF_VOODOO_DL_DESCRIPTION",                          "市中心相邻每个雨林单元格+1 [ICON_Production] 生产力。每2个雨林单元格+1 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "种植园 +1 [ICON_Food] 食物。圣地区域从每个相邻的种植园获得+2 [ICON_Faith] 信仰值，给相邻的种植园 +1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "种植园 +1 [ICON_Food] 食物。圣地区域从每个相邻的种植园获得+1 [ICON_Faith] 信仰值，给相邻的种植园 +1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_NAME",                                    "长生天"),
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "牧场 +1 [ICON_Production] 生产力。圣地区域从每个相邻的牧场获得+2 [ICON_Faith] 信仰值，给本城的牧场 +1 [ICON_Faith] 信仰值。如城市中有牧场，则每回合+1 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。 "),
