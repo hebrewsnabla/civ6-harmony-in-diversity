@@ -129,14 +129,6 @@ VALUES
             "建在海岸单元格上的区域，可增加 [ICON_Amenities] 宜居度，让人民生活幸福。若相邻海藻森林+1 [ICON_Amenities] 宜居度。无法建在拥有娱乐区的城市中。"
         );
 --========================================================================================================================
--- Kampung
---========================================================================================================================
-        (
-            "LOC_IMPROVEMENT_KAMPUNG_KELP_DESCRIPTION",
-            "zh_Hans_CN",
-            "+1 [ICON_FOOD] 食物、+1 [ICON_PRODUCTION] 生产力、+1 [ICON_HOUSING] 住房。相邻市中心+1 [ICON_PRODUCTION] 生产力。每个相邻渔船+1 [ICON_PRODUCTION] 生产力。解锁“土木工程”后+1 [ICON_PRODUCTION] 生产力和+1 [ICON_HOUSING] 住房，渔船每相邻2个甘榜屋+1 [ICON_PRODUCTION] 生产力。必须建造在靠近海洋资源的海岸、湖泊、礁石或海藻森林单元格上。"
-        );
---========================================================================================================================
 --========================================================================================================================
 
 -- English
@@ -150,14 +142,6 @@ VALUES
             "LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_HD_DESCRIPTION",
             "en_US",
             "A district placed out on a coastal tile dedicated to keeping your people happy by increasing [ICON_Amenities] Amenities. +1 [ICON_Amenities] Amenity when adjacent to Kelp Forest. Cannot be built in a city with an Entertainment Complex."
-        );
---========================================================================================================================
--- Kampung
---========================================================================================================================
-        (
-            "LOC_IMPROVEMENT_KAMPUNG_KELP_DESCRIPTION",
-            "en_US",
-            "+1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_HOUSING] Housing. +1 [ICON_PRODUCTION] Production for adjacent City Center district. +1 [ICON_PRODUCTION] Production for each adjacent Fishing Boat. Once Civil Engineering is unlocked, +1 [ICON_PRODUCTION] Production, +1 [ICON_HOUSING] Housing, and Fishing Boats receive +1 [ICON_PRODUCTION] Production for every 2 adjacent Kampungs. Must be placed on a Coast, Lake, Reef or Kelp Forest tile adjacent to a sea Resource. "
         );
 --========================================================================================================================
 --========================================================================================================================
