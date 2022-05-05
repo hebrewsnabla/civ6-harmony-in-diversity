@@ -227,7 +227,7 @@ update Building_GreatWorks set
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 insert or replace into Building_YieldChanges (BuildingType,	YieldType, YieldChange)
 'BUILDING_NOTRE_DAME', 'YIELD_CULTURE', 2
-where exists (select 1 from Buildings where BuildingType = 'BUILDING_NOTRE_DAME');
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_NOTRE_DAME');
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------
 UPDATE Buildings SET  ObsoleteEra = 'ERA_MODERN', RegionalRange = 6, Entertainment = 0
