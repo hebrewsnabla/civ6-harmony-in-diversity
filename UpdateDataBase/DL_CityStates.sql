@@ -53,7 +53,7 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Moai_SecondBonusAd
 
 update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
 insert or replace into Improvement_ValidResources (ImprovementType,ResourceType,MustRemoveFeature)
-select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources;
+select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources where Frequency > 0;
 
 update Improvement_Tourism set PrereqTech = NULL where ImprovementType = 'IMPROVEMENT_MOAI';
 

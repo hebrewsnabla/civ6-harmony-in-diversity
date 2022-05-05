@@ -357,7 +357,8 @@ values
 	('TECH_TELECOMMUNICATIONS',					'TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST'),
 	('TECH_STEAM_POWER',						'TRAIT_WATER_TRADE_ROUTE_RANGE'),
 --    ('TECH_ASTRONOMY',                          'ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE'),
-   ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE');
+   ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE'),
+   ('TECH_SAILING',							'TECH_SAILING_TRADER_EMBARK');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType)
@@ -370,7 +371,8 @@ values
 	('TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM'),
 	('TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM'),
     ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',                  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                           'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE');
+    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                           'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'),
+	('TECH_SAILING_TRADER_EMBARK',									'MODIFIER_PLAYER_ADJUST_EMBARK_UNIT_PASS');
 
 update Modifiers set SubjectRequirementSetId = 'IS_CAMPUS_ADJACENT_TO_MOUNTAIN_REQUIREMENTS'
     where ModifierId = 'ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE';
@@ -396,7 +398,8 @@ values
     ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',              'Amount',                   3),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1);
+    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1)),
+	('TECH_SAILING_TRADER_EMBARK',								'UnitType',					'UNIT_TRADER');
 
 -- -- 研究货币给商业地基（非相邻加成）+3金
 -- insert or replace into TechnologyModifiers
