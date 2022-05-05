@@ -80,8 +80,6 @@ values ('HD_TECH_INCREASE_HARVEST_YIELD',   'MODIFIER_PLAYER_CITIES_ADJUST_RESOU
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 values ('HD_TECH_INCREASE_HARVEST_YIELD',   'Amount',   50);
 
-update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
-
 delete from Resource_ValidTerrains where ResourceType = 'RESOURCE_STONE';
 
 
@@ -118,3 +116,5 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 --硝石和铝产量多+1 （Resource_Consumption）
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_NITER';
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';
+
+-- update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';

@@ -2384,3 +2384,5 @@ values
 	('TRAIT_ADJUST_INDUSTRIAL_ZONE_DISTRICTS_PRODUCTION',	'Amount',													25),
 	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'YieldType',												'YIELD_SCIENCE'),
 	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'Amount',													2);
+
+update Technologies set Description = NULL where TechnologyType = 'TECH_CASTLES';

@@ -30,6 +30,7 @@ values
 
 -- 设定【演化论】市政效果：营地+1粮+1锤，替代【重商主义】市政
 update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PrereqCivic = 'CIVIC_MERCANTILISM';--xhh
+update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_GUILDS' where PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' and YieldType = 'YIELD_PRODUCTION';
 -- update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MINE';
 
 update Improvements set PrereqTech = 'TECH_MINING' where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
@@ -82,7 +83,7 @@ values
 	--(247,	'IMPROVEMENT_BATEY',		'YIELD_CULTURE',	2,				NULL,					'CIVIC_HUMANISM'),
 	(248,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				'TECH_HORSEBACK_RIDING', NULL),
 	(249,	'IMPROVEMENT_PASTURE',		'YIELD_FOOD',		1,				'TECH_MASS_PRODUCTION',	NULL), -- CIVIC_EXPLORATION
-	-- (427,	'IMPROVEMENT_PASTURE',		'YIELD_GOLD',		1,				'TECH_THE_WHEEL',		NULL),
+	(427,	'IMPROVEMENT_PASTURE',		'YIELD_PRODUCTION',	1,				NULL,					'CIVIC_MEDIEVAL_FAIRES'),
 	(428,	'IMPROVEMENT_MINE',			'YIELD_PRODUCTION',	1,				'TECH_ENGINEERING',		NULL);
 ----250已占用
 insert or replace into ImprovementModifiers
@@ -365,3 +366,5 @@ values
 update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
 --种树前移到工会，越南到神秘主义
 update Features set AddCivic = 'CIVIC_GUILDS' where FeatureType = 'FEATURE_FOREST';
+
+update Technologies set Description = NULL where TechnologyType = "TECH_SANITATION";
