@@ -56,7 +56,16 @@ function HDGreatPersonGetActivationPlots(playerID, greatPersonIndividualID)
                     local plots = Map.GetCityPlots():GetPurchasedPlots(city)
                     for _, plotIndex in pairs(plots) do
                         local plot = Map.GetPlotByIndex(plotIndex);
-                        if plot:GetDistrictType() == -1 then
+                        if plot:GetDistrictType() == -1 -- 没有区域
+                        and plot:GetImprovementType() == -1 -- 没有改良
+                        and plot:GetResourceType() == -1 --没有资源
+                        and not plot:IsNaturalWonder() -- 没有自然奇观
+                        and not plot:IsWater() -- 是陆地单元格
+                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNING_FOREST"].Index -- 没有燃烧的树林
+                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNT_FOREST"].Index -- 没有烧毁的的树林
+                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNING_JUNGLE"].Index -- 没有燃烧的雨林
+                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNT_JUNGLE"].Index -- 没有烧毁的雨林
+                        then
                             table.insert(activationPlots, plotIndex);
                         end
                     end
