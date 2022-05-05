@@ -52,8 +52,6 @@ values
     ("LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles."),
 
     -- To be moved
-    ("LOC_TECH_BRONZE_WORKING_DESCRIPTION",                     "Reveals [ICON_RESOURCE_IRON] Iron."),
-    ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                         "Lumber Mills and Camps can be built on Rainforest. Allows Builders to plant Woods (second-growth)."),
     ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",          "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] in Marsh. Woods can be planted with the Mysticism civic.");
 
 --------------------------------------------------------------------------------
@@ -109,8 +107,4 @@ values
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_MOAI_DESCRIPTION",                  "解锁建造者建造摩艾石像的能力。[NEWLINE][NEWLINE]提供+3 [ICON_Culture] 文化值。每相邻一个摩艾石像+1 [ICON_Culture] 文化值。在火山土单元格之上或与其相邻时，+2 [ICON_Culture] 文化值。随着市政与科技树的发展，可获得额外的 [ICON_Culture] 文化值。可通过 [ICON_Culture] 文化值获得 [ICON_Tourism] 旅游业绩。只可建在相邻湖泊或近海的平原、平原丘陵、草原、草原丘陵或火山土单元格之上。可以修建在资源上并改良资源。"),
     -- 总督改良
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",             "产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。"),
-    ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",               "允许砍伐树林、雨林和收获由矿山改良的资源。"),
-    ("zh_Hans_CN",  "LOC_TECH_BRONZE_WORKING_DESCRIPTION",          "显示 [ICON_RESOURCE_IRON] 铁资源。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_CONSERVATION_HD_DESCRIPTION",        "奖励3位 [ICON_Envoy] 使者。允许使用 [ICON_Faith] 信仰值建造国家公园和购买自然学家。您领土上从未被移除的树林（非人造林）获得+1魅力。市中心相邻森林的城市+1 [ICON_Amenities] 宜居度。从城墙获得 [ICON_TOURISM] 旅游业绩。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",              "允许在雨林上建造伐木场和营地。允许建造者植树造林（人造林）。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",   "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。");   
