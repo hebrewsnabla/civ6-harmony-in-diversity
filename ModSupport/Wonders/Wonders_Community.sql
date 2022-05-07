@@ -226,7 +226,7 @@ update Building_GreatWorks set
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_NOTRE_DAME'; 
 insert or replace into Building_YieldChanges (BuildingType,	YieldType, YieldChange)
-'BUILDING_NOTRE_DAME', 'YIELD_CULTURE', 2
+select 'BUILDING_NOTRE_DAME', 'YIELD_CULTURE', 2
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_NOTRE_DAME');
 ------------------------------------------------------------------------------------------------------------
 ------BUILDING_GLOBE_THEATRE--------------------------------------------------------------------------------

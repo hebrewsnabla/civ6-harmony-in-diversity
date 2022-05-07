@@ -37,7 +37,7 @@ values
     ("LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "All Holy Site buildings provide +0.5 [ICON_SCIENCE] Science for each [ICON_CITIZEN] citizen in this city. Campus district buildings are 20% cheaper to purchase. May purchase Campus district buildings with [ICON_FAITH] Faith. "),
     ("LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "All Holy Site buildings provide +1 [ICON_SCIENCE] Science for international [ICON_TradeRoute] Trade Routes, and +1 [ICON_SCIENCE] Science for both sides of international [ICON_TradeRoute] Trade Routes to this city. May purchase trader units with [ICON_Faith] Faith. Traders are 20% cheaper to purchase. "),
     ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "All Holy Site buildings provide +8% [ICON_Faith] Faith to the city. Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith."),
-    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "All Holy Site buildings provide +1 [ICON_Production] Production to all adjacent tiles."), -- Holy Site district provides +1 [ICON_Production] Production. 
+    ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "All Holy Site buildings provide +1 [ICON_Production] Production to all adjacent tiles. Holy Site district provides +2 [ICON_Production] Production."), -- 
 
     ("LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "All world wonders provide +4 [ICON_Faith] Faith. Each time you complete a Wonder, gain [ICON_Faith] Faith equal to 33% its production cost."),
     ("LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",       "Allows spending [ICON_FAITH] Faith to train Warriors Monks (A land combat unit) and Culture Bomb adjacent tiles when completing a Holy Site. Holy Site provides extra [ICON_FAITH] Faith equal to their district adjacency bonus."),
@@ -115,11 +115,11 @@ values
 
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_NAME",                               "弥赛亚"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_NAME",                                 "苦行"),
-    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "所有圣地建筑提供+4 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。每名信仰此宗教的居民将使 [ICON_food] 食物+1%。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "所有圣地建筑提供+4 [ICON_CULTURE] 文化值。每名信仰此宗教的居民将使 [ICON_culture] 文化+1%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "所有圣地建筑提供+4 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。每名信仰此宗教的居民将使 [ICON_Food] 食物+1%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "所有圣地建筑提供+4 [ICON_CULTURE] 文化值。每名信仰此宗教的居民将使 [ICON_Culture] 文化+1%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "所有圣地建筑为每人口提供0.5 [ICON_SCIENCE] 科技值。购买学院区域内建筑的费用降低20%且可以用 [ICON_FAITH] 信仰值购买。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "所有圣地建筑为此城出发的国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Science] 科技值，使每条通往此城的国际 [ICON_TradeRoute] 贸易路线为双方+1 [ICON_Science] 科技值。可用 [ICON_Faith] 信仰值购买商人，购买商人的费用降低20%。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "所有圣地建筑为相邻的单元格提供+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "所有圣地建筑为相邻的单元格提供+1 [ICON_Production] 生产力。圣地+2 [ICON_Production] 生产力"),
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "所有圣地建筑提供+8% [ICON_Faith] 信仰值。购买圣地区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
     
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "所有世界奇观+4 [ICON_Faith] 信仰值。完成世界奇观后返还等同于奇观所需产能33%的 [ICON_Faith] 信仰值。"),
