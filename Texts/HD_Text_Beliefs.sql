@@ -115,8 +115,8 @@ values
 
     ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_NAME",                               "弥赛亚"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_NAME",                                 "苦行"),
-    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "所有圣地建筑提供+4 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。每名信仰此宗教的居民将使 [ICON_food] 食物+1%。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "所有圣地建筑提供+4 [ICON_CULTURE] 文化值。每名信仰此宗教的居民将使 [ICON_culture] 文化+1%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "所有圣地建筑提供+4 [ICON_FOOD] 食物，+2 [ICON_HOUSING] 住房。每名信仰此宗教的居民将使 [ICON_Food] 食物+1%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "所有圣地建筑提供+4 [ICON_CULTURE] 文化值。每名信仰此宗教的居民将使 [ICON_Culture] 文化+1%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "所有圣地建筑为每人口提供0.5 [ICON_SCIENCE] 科技值。购买学院区域内建筑的费用降低20%且可以用 [ICON_FAITH] 信仰值购买。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "所有圣地建筑为此城出发的国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Science] 科技值，使每条通往此城的国际 [ICON_TradeRoute] 贸易路线为双方+1 [ICON_Science] 科技值。可用 [ICON_Faith] 信仰值购买商人，购买商人的费用降低20%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "所有圣地建筑为相邻的单元格提供+1 [ICON_Production] 生产力。"),
