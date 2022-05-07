@@ -782,7 +782,7 @@ values
 
 
 -- 马拉卡纳体育场
-update Buildings set RegionalRange = 12 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
+update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
 insert into Building_YieldChangesBonusWithPower
 	(BuildingType,						YieldType,			YieldChange)
 values
