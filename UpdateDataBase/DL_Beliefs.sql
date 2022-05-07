@@ -2044,7 +2044,7 @@ values
 insert into ModifierArguments
 	(ModifierId,										Name,			Value)
 values
-    ('BELIEF_ABBOT_HOLY_SITE_PRODUCTION',            	'ModifierId',  'ABBOT_HOLY_SITE_PRODUCTION_MODIFIER'),
+    ('BELIEF_ABBOT_HOLY_SITE_PRODUCTION',            	'ModifierId',  'BELIEF_ABBOT_HOLY_SITE_PRODUCTION_MODIFIER'),
 	('BELIEF_ABBOT_HOLY_SITE_PRODUCTION_MODIFIER',   	'YieldType',   'YIELD_PRODUCTION'),
 	('BELIEF_ABBOT_HOLY_SITE_PRODUCTION_MODIFIER',   	'Amount',      2),
 	('BELIEF_ABBOT_PRODUCTION_TINY',               		'ModifierId',  'BELIEF_ABBOT_PRODUCTION_TINY_MODIFIER'),
