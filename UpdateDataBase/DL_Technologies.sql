@@ -242,7 +242,7 @@ values
     ('TECH_RIFLING',                'TECH_SIEGE_TACTICS'),
     ('TECH_RIFLING',                'TECH_BALLISTICS'),
     ('TECH_CIVIL_ENGINEERING_HD',   'TECH_PRINTING'),
-    ('TECH_CIVIL_ENGINEERING_HD',   'TECH_MILITARY_TACTICS'),
+    -- ('TECH_CIVIL_ENGINEERING_HD',   'TECH_MILITARY_TACTICS'),
     --  Modern  -----------------------------------------------------------
     ('TECH_FLIGHT',                 'TECH_STEAM_POWER'),
     ('TECH_REPLACEABLE_PARTS',      'TECH_RIFLING'),
