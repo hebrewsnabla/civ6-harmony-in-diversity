@@ -398,7 +398,7 @@ values
     ('ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE',              'Amount',                   3),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'BuildingType',             'BUILDING_MONUMENT'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
-    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1)),
+    ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1),
 	('TECH_SAILING_TRADER_EMBARK',								'UnitType',					'UNIT_TRADER');
 
 -- -- 研究货币给商业地基（非相邻加成）+3金
