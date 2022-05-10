@@ -25,7 +25,11 @@
 		</Element>
 		<Element>
 			<ConsumerName text="Clutter"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="Landmark"/>
 			</LibraryDependencies>
@@ -35,6 +39,8 @@
 			<ConsumerName text="Landmarks"/>
 			<ArtDefDependencyPaths>
 				<Element text="Buildings.artdef"/>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
 				<Element text="Landmarks.artdef"/>
 				<Element text="Improvements.artdef"/>
 			</ArtDefDependencyPaths>
@@ -224,13 +230,23 @@
 		</Element>
 		<Element>
 			<ConsumerName text="Terrains"/>
-			<ArtDefDependencyPaths/>
-			<LibraryDependencies/>
-			<LoadsLibraries>false</LoadsLibraries>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
+			<LibraryDependencies>
+				<Element text="TerrainElement"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
 		</Element>
 		<Element>
 			<ConsumerName text="Features"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
@@ -248,7 +264,11 @@
 		</Element>
 		<Element>
 			<ConsumerName text="Resources"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
@@ -256,6 +276,9 @@
 			<ConsumerName text="Improvements"/>
 			<ArtDefDependencyPaths>
 				<Element text="Improvements.artdef"/>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -264,6 +287,9 @@
 			<ConsumerName text="WorldView_Translate"/>
 			<ArtDefDependencyPaths>
 				<Element text="Improvements.artdef"/>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -280,6 +306,9 @@
 			<ConsumerName text="Audio"/>
 			<ArtDefDependencyPaths>
 				<Element text="Improvements.artdef"/>
+				<Element text="Clutter.artdef"/>
+				<Element text="Features.artdef"/>
+				<Element text="Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -392,6 +421,7 @@
 			<ArtDefPath text="Improvements.artdef"/>
 			<ArtDefDependencyPaths>
 				<Element text="Improvements.artdef"/>
+				<Element text="Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
@@ -415,7 +445,15 @@
 		</Element>
 		<Element>
 			<ArtDefPath text="Clutter.artdef"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="Features.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="Clutter.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 	</ArtDefDependencies>
 	<LibraryDependencies>
@@ -445,7 +483,10 @@
 		</Element>
 		<Element>
 			<LibraryName text="Landmark"/>
-			<PackageDependencies/>
+			<PackageDependencies>
+				<Element text="environment/clutter.blp"/>
+				<Element text="landmarks/tilebases.blp"/>
+			</PackageDependencies>
 		</Element>
 		<Element>
 			<LibraryName text="Leader"/>
@@ -517,7 +558,9 @@
 		</Element>
 		<Element>
 			<LibraryName text="TileBase"/>
-			<PackageDependencies/>
+			<PackageDependencies>
+				<Element text="landmarks/tilebases.blp"/>
+			</PackageDependencies>
 		</Element>
 		<Element>
 			<LibraryName text="UILensAsset"/>

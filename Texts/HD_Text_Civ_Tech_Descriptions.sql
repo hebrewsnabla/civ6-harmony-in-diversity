@@ -105,7 +105,7 @@ values
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "Plantation improvements provide +2 [ICON_gold] Gold.[newline]Pasture improvements provide +1 [ICON_Production] Production."),
     ("LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                                "Gain +1 [ICON_Favor] Favor as Suzerain of a City-State.[NEWLINE]Allows forming two identical units into a Fleet.[NEWLINE]Allows one new Casus Belli that can be used to justify wars: Colonial War."),
-    ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "Lumber Mills and Camps can be built on Rainforest. Allows Builders to plant Woods (second-growth)."),
+    ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",                                                     "+1 [ICON_PRODUCTION] Production from the Camp improvement. Lumber Mills and Camps can be built on Rainforest. Allows Builders to plant Woods (second-growth)."),
     ("LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                                           "+20% [ICON_Tourism] Tourism across your empire."),
     ("LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                                              "Plantation improvements provide +2 [ICON_Gold] Gold."),
     ("LOC_CIVIC_NATIONALISM_HD_DESCRIPTION",                                                "Grants the ability to construct an additional Spy.[NEWLINE]Allows forming two identical units into a Corps."),

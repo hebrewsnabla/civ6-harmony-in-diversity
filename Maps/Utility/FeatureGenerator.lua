@@ -1,5 +1,4 @@
 include "MapUtilities.lua"
-
 ------------------------------------------------------------------------------
 FeatureGenerator = {};
 ------------------------------------------------------------------------------
@@ -31,11 +30,13 @@ function FeatureGenerator.Create(args)
 	local iOasisPercent = args.iOasisPercent or 1;
 	local iReefPercent = args.iReefPercent or 9;
 	local iIcePercent = args.iIcePercent or 0;
+	local iSwampPercent = args.iSwampPercent or 3;
 
 	iJunglePercent = iJunglePercent + rainfall;
 	iForestPercent = iForestPercent + rainfall;
 	iMarshPercent = iMarshPercent + rainfall / 2;
 	iOasisPercent = iOasisPercent + rainfall / 4;
+	iSwampPercent = iSwampPercent + rainfall / 2;
 
 	local gridWidth, gridHeight = Map.GetGridSize();
 	local iEquator = math.ceil(gridHeight / 2) + iEquatorAdjustment;
@@ -56,6 +57,7 @@ function FeatureGenerator.Create(args)
 		AddJunglesAtPlot	= FeatureGenerator.AddJunglesAtPlot,
 		AddForestsAtPlot	= FeatureGenerator.AddForestsAtPlot,
 		AddReefAtPlot		= FeatureGenerator.AddReefAtPlot,
+		AddSwampAtPlot		= FeatureGenerator.AddSwampAtPlot,
 		
 		-- members
 		iGridW = gridWidth,
@@ -67,6 +69,7 @@ function FeatureGenerator.Create(args)
 		iOasisMaxPercent = iOasisPercent,
 		iReefMaxPercent = iReefPercent,
 		iIceModifiedPercent = iIcePercent,
+		iSwampMaxPercent = iSwampPercent,
 
 		iForestCount = 0,
 		iJungleCount = 0,
@@ -78,6 +81,7 @@ function FeatureGenerator.Create(args)
 		iNumJunglablePlots = 0,
 		iNumReefablePlots = 0,
 		iceLat = 0.78;
+		iSwampCount = 0,
 
 		-- Rainforest on Earth mostly in Tropics, so keep in narrow band around Equator
 		iJungleBottom = iEquator - (20 * gridHeight / 180);
@@ -151,17 +155,23 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast, bRiversStartInla
 
 				local bMarsh = false;
 				local bJungle = false;
+				local bSwamp = false;
 				--None of these are guarenteed
 				if(featureType == g_FEATURE_NONE) then
 					--First check to add Marsh
 					bMarsh = self:AddMarshAtPlot(plot, x, y);
 
-					if(featureType == g_FEATURE_NONE and  bMarsh == false) then
+					if(featureType == g_FEATURE_NONE and bMarsh == false) then 
+						--check to add Swamp
+						bSwamp = self:AddSwampAtPlot(plot, x, y);
+					end
+
+					if(featureType == g_FEATURE_NONE and bMarsh == false and bSwamp == false) then
 						--check to add Jungle
 						bJungle = self:AddJunglesAtPlot(plot, x, y);
 					end
 					
-					if(featureType == g_FEATURE_NONE and bMarsh== false and bJungle == false) then 
+					if(featureType == g_FEATURE_NONE and bMarsh== false and bSwamp == false and bJungle == false) then 
 						--check to add Forest
 						self:AddForestsAtPlot(plot, x, y);
 					end
@@ -178,6 +188,7 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast, bRiversStartInla
 	print("Percent Jungles: ", (100 * self.iJungleCount) / self.iNumLandPlots);
 	print("Percent of Junglable: ", (100 * self.iJungleCount) / self.iNumJunglablePlots);
 	print("Number of Marshes: ", self.iMarshCount);
+	print("Number of Swamps: ", self.iSwampCount);
 end
 ------------------------------------------------------------------------------
 function FeatureGenerator:AddFeaturesFromContinents()
@@ -430,6 +441,47 @@ function FeatureGenerator:AddMarshAtPlot(plot, iX, iY)
 			if(TerrainBuilder.GetRandomNumber(450, "Resource Placement Score Adjust") <= iScore) then
 				TerrainBuilder.SetFeatureType(plot, g_FEATURE_MARSH);
 				self.iMarshCount = self.iMarshCount + 1;
+
+				return true;
+			end
+		end
+	end
+
+	return false;
+end
+------------------------------------------------------------------------------
+function FeatureGenerator:AddSwampAtPlot(plot, iX, iY)
+	--Swamp Check. First see if it can place the feature.
+	
+	local sSwamp				= "FEATURE_HD_SWAMP"
+	local g_FEATURE_HD_SWAMP	= GameInfo.Features[sSwamp].Index
+
+	if(g_FEATURE_HD_SWAMP == nil)then
+		return false;
+	end
+	
+	if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_HD_SWAMP)) then
+		if(math.ceil(self.iSwampCount * 100 / self.iNumLandPlots) <= self.iSwampMaxPercent) then
+			--Weight based on adjacent plots if it has more than 3 start subtracting
+			local iScore = 300;
+			local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_HD_SWAMP);
+				
+
+			if(iAdjacent == 0 ) then
+				iScore = iScore;
+			elseif(iAdjacent == 1) then
+				iScore = iScore + 50;
+			elseif (iAdjacent == 2 or iAdjacent == 3) then
+				iScore = iScore + 150;
+			elseif (iAdjacent == 4) then
+				iScore = iScore - 50;
+			else
+				iScore = iScore - 200;
+			end
+				
+			if(TerrainBuilder.GetRandomNumber(450, "Resource Placement Score Adjust") <= iScore) then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_HD_SWAMP);
+				self.iSwampCount = self.iSwampCount + 1;
 
 				return true;
 			end

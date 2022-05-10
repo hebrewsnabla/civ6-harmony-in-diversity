@@ -819,7 +819,7 @@ function AddFeatures()
 		rainfall = 1 + TerrainBuilder.GetRandomNumber(3, "Random Rainfall - Lua");
 	end
 	
-	local args = {rainfall = rainfall, iMarshPercent = 12, iJunglePercent = 24, iForestPercent = 27, iOasisPercent = 2}
+	local args = {rainfall = rainfall, iMarshPercent = 12, iSwampPercent = 12, iJunglePercent = 24, iForestPercent = 27, iOasisPercent = 2}
 
 	featuregen = FeatureGenerator.Create(args);
 	featuregen:AddFeatures(true, true);  --second parameter is whether or not rivers start inland);
