@@ -584,6 +584,9 @@
       <File>Assets/Buildings/General_Service_80.dds</File>
       <File>Assets/Buildings/General_Service_128.dds</File>
       <File>Assets/Buildings/General_Service_256.dds</File>
+      <File>Assets/Wetlands/HD_Swamp_50.dds</File>
+      <File>Assets/Wetlands/HD_Swamp_64.dds</File>
+      <File>Assets/Wetlands/HD_Swamp_256.dds</File>
     </ImportFiles>
     <ImportFiles id="Resouceful2_Adapt_Import" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -743,13 +746,17 @@
       <File>ModSupport/WetLands/DL_Removes.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="WetLands_mod_support" criteria="WetLands_Expansion2">
-      <Properties><LoadOrder>15004</LoadOrder></Properties>
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/DL_Adaptation.sql</File>
     </UpdateDatabase>
     <UpdateText id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
       <File>ModSupport/WetLands/HD_Texts.sql</File>
     </UpdateText>
+    <UpdateIcons id="WetLands_mod_support_text" criteria="WetLands_Expansion2">
+      <Properties><LoadOrder>17000</LoadOrder></Properties>
+      <File>ModSupport/WetLands/HD_Icons.sql</File>
+    </UpdateIcons>
     <!-- Suk Oceans -->
     <UpdateDatabase id="SukOceans_mod_support" criteria="Suk_Oceans_Rework_Expansion2">
       <Properties><LoadOrder>15005</LoadOrder></Properties>
@@ -1482,6 +1489,9 @@
     <File>HD.dep</File>
     <File>ArtDefs/Improvements.artdef</File>
     <File>ArtDefs/Units.artdef</File>
+    <File>ArtDefs/Features.artdef</File>
+    <File>ArtDefs/Clutter.artdef</File>
+    <File>ArtDefs/Landmarks.artdef</File>
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>
@@ -1614,6 +1624,7 @@
     <File>ModSupport/WetLands/DL_Removes.sql</File>
     <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
     <File>ModSupport/WetLands/HD_Texts.sql</File>
+    <File>ModSupport/WetLands/HD_Icons.sql</File>
     <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
     <File>ModSupport/SukOceans/HD_Monopoly_Texts.sql</File>
     <File>ModSupport/SukOceans/HD_Texts.sql</File>
@@ -1945,6 +1956,10 @@
     <File>Assets/Buildings/General_Service_80.dds</File>
     <File>Assets/Buildings/General_Service_128.dds</File>
     <File>Assets/Buildings/General_Service_256.dds</File>
+
+    <File>Assets/Wetlands/HD_Swamp_50.dds</File>
+    <File>Assets/Wetlands/HD_Swamp_64.dds</File>
+    <File>Assets/Wetlands/HD_Swamp_256.dds</File>
     <!-- Platforms -->
     <File>Platforms/Windows/audio/HD_Banks.ini</File>
     <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
