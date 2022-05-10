@@ -266,3 +266,9 @@ insert or replace into ModifierArguments    (ModifierId,    Name,        Value)
     select 'TRAIT_SWAMP_VALID_' || DistrictType, 'FeatureType', 'FEATURE_HD_SWAMP'
     from Districts where DistrictType != 'DISTRICT_CITY_CENTER'
     and exists (select CivilizationType from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'TRIEU_FEATURE_REQUIREMENTS',                   'HD_PLOT_IS_SWAMP_REQUIREMENT'
+where exists (select CivilizationType from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
