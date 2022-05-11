@@ -178,7 +178,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                                                           SubjectRequirementSetId)
 values
-    ('HD_SCOUNT_IGNORE_ALL_HD',                 'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_TERRAIN',                          'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
+    ('HD_SCOUNT_IGNORE_ALL_HD',                 'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_TERRAIN_COST',                      'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
     ('HD_BATTLE_LINE_COMBAT',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
     ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
