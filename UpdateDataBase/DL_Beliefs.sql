@@ -143,6 +143,7 @@ delete from BeliefModifiers where BeliefType = 'BELIEF_DIVINE_SPARK' and Modifie
 delete from BeliefModifiers where BeliefType = 'BELIEF_DIVINE_SPARK' and ModifierID = 'DIVINE_SPARK_WRITER';
 delete from BeliefModifiers where BeliefType = 'BELIEF_GOD_OF_CRAFTSMEN' and ModifierID = 'GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_FAITH';
 delete from BeliefModifiers where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
+delete from BeliefModifiers where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
 
 insert or replace into BeliefModifiers
 	(BeliefType,							ModifierID)
@@ -257,7 +258,10 @@ values
     ('BELIEF_HD_GOD_KING',					'GOD_KING_ADDPOPULATION'),
     ('BELIEF_GOD_OF_CRAFTSMEN',				'GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_GOLD'),
 	('BELIEF_GOD_OF_CRAFTSMEN',				'GOD_OF_CRAFTSMEN_BONUS_STRATEGICS'),
-	('BELIEF_GOD_OF_THE_FORGE',				'GOD_OF_THE_FORGE_STRATEGIC_RESOURCE_COST_DISCOUNT'),
+	-- ('BELIEF_GOD_OF_THE_FORGE',				'GOD_OF_THE_FORGE_STRATEGIC_RESOURCE_COST_DISCOUNT'),
+	('BELIEF_GOD_OF_THE_FORGE',				'GOD_OF_THE_FORGE_GRANT_HANDCRAFT'),
+	('BELIEF_GOD_OF_THE_FORGE',				'GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION'),
+	('BELIEF_GOD_OF_THE_FORGE',				'GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION'),
 	('BELIEF_HD_WOLF_GOD',					'HD_WOLF_GOD_CAMP_GREAT_PROPHET'),
 	('BELIEF_HD_WOLF_GOD',					'HD_WOLF_GOD_CAMP_CULTURE'),
 	('BELIEF_HD_WOLF_GOD',					'HD_WOLF_GOD_CAMP_FAITH'),
@@ -273,8 +277,8 @@ update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOD_OF_W
 update ModifierArguments set Value = 2 where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER' and Name = 'Amount';
 -- update Modifiers set SubjectRequirementSetId = 'HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS' where ModifierId = 'RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER';
 -- update Modifiers set SubjectRequirementSetId = 'HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS' where ModifierId = 'RIVER_GODDESS_HOLY_SITE_HOUSING_MODIFIER';
-update ModifierArguments set Value = 'ERA_MEDIEVAL' where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'EndEra';
-update ModifierArguments set Value = 50 where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'Amount';
+-- update ModifierArguments set Value = 'ERA_MEDIEVAL' where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'EndEra';
+-- update ModifierArguments set Value = 50 where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 1 where ModifierId = 'GODDESS_OF_FIRE_FEATURES_FAITH_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 'YIELD_FAITH,YIELD_PRODUCTION' where ModifierId = 'STONE_CIRCLES_QUARRY_FAITH_MODIFIER' and Name = 'YieldType';
 update ModifierArguments set Value = '1,1' where ModifierId = 'STONE_CIRCLES_QUARRY_FAITH_MODIFIER' and Name = 'Amount';
@@ -499,6 +503,12 @@ values
 	('HD_WOLF_GOD_CAMP_CULTURE_MODIFIER',							'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS'),
 	('HD_WOLF_GOD_CAMP_FAITH',										'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'CITY_FOLLOWS_PANTHEON_AND_HOLYSITE_REQUIREMENTS'),
 	('HD_WOLF_GOD_CAMP_FAITH_MODIFIER',								'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_CAMP_REQUIREMENTS'),
+	('GOD_OF_THE_FORGE_GRANT_HANDCRAFT',							'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
+	('GOD_OF_THE_FORGE_GRANT_HANDCRAFT_MODIFIER',					'MODIFIER_GRANT_BUILDING_IN_CAPITAL',				NULL),
+	('GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION_MODIFIER',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_BONUS_MINE_REQUIREMENTS'),
+	('GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_LUXURY_MINE_REQUIREMENTS'),
 	-- 太阳神, by xiaoxiao
 	('HD_SUN_GOD_RESOURCE_FARM_OR_PLANTATION_GREAT_PROPHET', 		'MODIFIER_ALL_CITIES_ATTACH_MODIFIER', 				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('HD_SUN_GOD_RESOURCE_FARM_OR_PLANTATION_GREAT_PROPHET_MODIFIER','MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT', 	'HD_CITY_HAS_RESOURCE_FARM_OR_PLANTATION_REQUIREMENTS'),
@@ -892,7 +902,16 @@ values
 	('HD_SUN_GOD_RESOURCE_FARM_FOOD_MODIFIER',						'Amount',				1),
 	('HD_SUN_GOD_PLANTATION_FOOD',									'ModifierId',			'HD_SUN_GOD_PLANTATION_FOOD_MODIFIER'),
 	('HD_SUN_GOD_PLANTATION_FOOD_MODIFIER',							'YieldType',			'YIELD_FOOD'),
-	('HD_SUN_GOD_PLANTATION_FOOD_MODIFIER',							'Amount',				1);
+	('HD_SUN_GOD_PLANTATION_FOOD_MODIFIER',							'Amount',				1),
+	-- xhh
+	('GOD_OF_THE_FORGE_GRANT_HANDCRAFT',							'ModifierId',			'GOD_OF_THE_FORGE_GRANT_HANDCRAFT_MODIFIER'),
+	('GOD_OF_THE_FORGE_GRANT_HANDCRAFT_MODIFIER',					'BuildingType',			'BUILDING_OFFICIAL_RUN_HANDCRAFT'),
+	('GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION',						'ModifierId',			'GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION_MODIFIER'),
+	('GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION_MODIFIER',				'YieldType',			'YIELD_PRODUCTION'),
+	('GOD_OF_THE_FORGE_BONUS_MINE_PRODUCTION_MODIFIER',				'Amount',				1),
+	('GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION',						'ModifierId',			'GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION_MODIFIER'),
+	('GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION_MODIFIER',			'YieldType',			'YIELD_PRODUCTION'),
+	('GOD_OF_THE_FORGE_LUXURY_MINE_PRODUCTION_MODIFIER',			'Amount',				1);
 
 -- 天人合一，使用select是因为 better report screen 无法识别写一起的写法
 insert or replace into BeliefModifiers
@@ -2648,6 +2667,7 @@ update BeliefsSortIndex set SortIndex =	5 where BeliefType = 'BELIEF_HD_SONG_OF_
 -- 资源系
 update BeliefsSortIndex set SortIndex =	10 where BeliefType = 'BELIEF_GODDESS_OF_THE_HARVEST';
 update BeliefsSortIndex set SortIndex =	11 where BeliefType = 'BELIEF_HD_SUN_GOD';
+update BeliefsSortIndex set SortIndex =	12 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
 update BeliefsSortIndex set SortIndex =	13 where BeliefType = 'BELIEF_RELIGIOUS_IDOLS'; --2,4 矿山采石
 update BeliefsSortIndex set SortIndex =	15 where BeliefType = 'BELIEF_STONE_CIRCLES';
 update BeliefsSortIndex set SortIndex =	18 where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY'; --6,7 伐木 位于resourceful2
@@ -2682,7 +2702,6 @@ update BeliefsSortIndex set SortIndex =	80 where BeliefType = 'BELIEF_MONUMENT_T
 update BeliefsSortIndex set SortIndex =	81 where BeliefType = 'BELIEF_FERTILITY_RITES';
 update BeliefsSortIndex set SortIndex =	82 where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
 update BeliefsSortIndex set SortIndex =	83 where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
-update BeliefsSortIndex set SortIndex =	84 where BeliefType = 'BELIEF_GOD_OF_THE_FORGE';
 update BeliefsSortIndex set SortIndex =	85 where BeliefType = 'BELIEF_MESSENGER_OF_THE_GODS';
 update BeliefsSortIndex set SortIndex =	86 where BeliefType = 'BELIEF_HD_GOD_KING';
 update BeliefsSortIndex set SortIndex =	87 where BeliefType = 'BELIEF_HD_HERMES';
