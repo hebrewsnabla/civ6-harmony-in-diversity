@@ -31,7 +31,8 @@ values
     ('ABILITY_HEAVYC_OPEN_AREA_STRENGTH_HD',                    'KIND_ABILITY'),
     -- ('ABILITY_LIGHTC_EXTRA_FAITH_PLUNDER_HD',                   'KIND_ABILITY'),
     ('ABILITY_LIGHTC_ENEMY_MOVEMENT_HD',                        'KIND_ABILITY'),
-    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'KIND_ABILITY');
+    ('ABILITY_SIEGE_ATTACK_AFTER_MOVE_HD',                      'KIND_ABILITY'),
+    ('ABILITY_SCOUNT_IGNORE_ALL_HD',                            'KIND_ABILITY');
 
 insert or replace into TechnologyModifiers
     (TechnologyType,                                        ModifierId)
@@ -49,6 +50,7 @@ values
 insert or replace into CivicModifiers
     (CivicType,                                             ModifierId)
 values
+    ('CIVIC_CRAFTSMANSHIP',                                 'HD_CIVIC_CRAFTSMANSHIP_SCOUNT_IGNORE_ALL'),
     ('CIVIC_FEUDALISM',                                     'HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_RANGED_GARRISON_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_ANTIC_HILLS_DEFEND_BONUS'),
@@ -61,6 +63,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                            ModifierType)
 values
+    ('HD_CIVIC_CRAFTSMANSHIP_SCOUNT_IGNORE_ALL',            'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
     -- 
     ('HD_MELEE_BATTLE_LINE',                                'MODIFIER_PLAYER_UNITS_GRANT_ABILITY'),
@@ -83,6 +86,7 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                            Name,           Value)
 values
+    ('HD_CIVIC_CRAFTSMANSHIP_SCOUNT_IGNORE_ALL',            'AbilityType',  'ABILITY_SCOUNT_IGNORE_ALL_HD'),
     ('HD_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT',      'AbilityType',  'ABILITY_NAVAL_MELEE_ESCORT_MOBILITY_SHARED_MOVEMENT'),
     -- 
     ('HD_MELEE_BATTLE_LINE',                                'AbilityType',  'ABILITY_MELEE_BATTLE_LINE_HD'),
@@ -105,6 +109,7 @@ values
 insert or replace into TypeTags
     (Type,                                                      Tag)
 values
+    ('ABILITY_SCOUNT_IGNORE_ALL_HD',                            'CLASS_RECON'),
     ('ABILITY_MELEE_BATTLE_LINE_HD',                            'CLASS_MELEE'),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'CLASS_RANGED'),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'CLASS_ANTI_CAVALRY'),
@@ -126,6 +131,7 @@ values
 insert or replace into UnitAbilities 
     (UnitAbilityType,                                           Name,   Description,                                                            Inactive) 
 values
+    ('ABILITY_SCOUNT_IGNORE_ALL_HD',                            NULL,   'LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION',                          1),
     ('ABILITY_MELEE_BATTLE_LINE_HD',                            NULL,   'LOC_ABILITY_MELEE_BATTLE_LINE_HD_DESCRIPTION',                            1),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        NULL,   'LOC_ABILITY_RANGED_HILLS_STRENGTH_HD_DESCRIPTION',                        1),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      NULL,   'LOC_ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD_DESCRIPTION',      1),
@@ -145,6 +151,7 @@ values
 insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                           ModifierId)
 values
+    ('ABILITY_SCOUNT_IGNORE_ALL_HD',                            'HD_SCOUNT_IGNORE_ALL_HD'),
     ('ABILITY_MELEE_BATTLE_LINE_HD',                            'HD_BATTLE_LINE_COMBAT'),
     ('ABILITY_RANGED_HILLS_STRENGTH_HD',                        'HD_ATTACKING_FROM_HILLS_STRENGTH'),
     ('ABILITY_ANTIC_IGNORE_DAMAGED_STRENGTH_REDUCTION_HD',      'HD_IGNORE_DAMAGED_STRENGTH_REDUCTION'),
@@ -171,6 +178,7 @@ values
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                                                           SubjectRequirementSetId)
 values
+    ('HD_SCOUNT_IGNORE_ALL_HD',                 'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_TERRAIN',                          'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
     ('HD_BATTLE_LINE_COMBAT',                   'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                                 'BATTLE_LINE_COMBAT_REQUIREMENTS'),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'MODIFIER_PLAYER_UNIT_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',   NULL),
     ('HD_IGNORE_RIVERS',                        'MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_RIVERS',                            'HD_UNIT_IS_NOT_BARBARIAN_REQUIREMENTS'),
@@ -191,6 +199,8 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                                Name,          Value)
 values
+    ('HD_SCOUNT_IGNORE_ALL_HD',                 'Ignore',      1),
+    ('HD_SCOUNT_IGNORE_ALL_HD',                 'Type',        'ALL'),
     ('HD_BATTLE_LINE_COMBAT',                   'Amount',      3),
     ('HD_ATTACKING_FROM_HILLS_STRENGTH',        'Amount',      5),
     ('HD_IGNORE_DAMAGED_STRENGTH_REDUCTION',    'Amount',      100),

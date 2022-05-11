@@ -1102,6 +1102,7 @@
       <File>Maps/Regular_Pangaea.lua</File>
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
+      <File>Maps/Wet_Lakes.lua</File>
     </ImportFiles>
     <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -1736,6 +1737,7 @@
     <File>Maps/Regular_Pangaea.lua</File>
     <File>Maps/Tiny_Islands.lua</File>
     <File>Maps/Tiny_Lakes.lua</File>
+    <File>Maps/Wet_Lakes.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->

@@ -102,7 +102,7 @@ values
     ("LOC_PROMOTION_SPRINT_HD_DESCRIPTION",                                     "+3 [ICON_Strength] Combat Strength per unused [ICON_Movement] Movement."),
     -- Recon
     ("LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                    "Faster [ICON_Movement] Movement in Hills, Woods and Rainforest terrain."), -- , but -1 [ICON_Movement] Base Movement.
-    ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Woods and Rainforests."),
+    ("LOC_PROMOTION_SENTRY_DESCRIPTION",                                        "+1 sight range, can see through Features."),
     ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME",                                   "Travel Light"),
     ("LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                            "+1 [ICON_Movement] Movement."), -- Ignores Zone of Control
     ("LOC_PROMOTION_SPYGLASS_DESCRIPTION",                                      "+1 sight range. Reveals stealth units on the map within sight range."),
@@ -156,7 +156,8 @@ values
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
-    ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles.");
+    ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles."),
+    ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                            "Faster [ICON_Movement] Movement in Marsh tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -188,8 +189,8 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_SPRINT_HD_NAME",                                         "冲刺"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SPRINT_HD_DESCRIPTION",                                  "每点未使用的 [ICON_Movement] 移动力提供+3 [ICON_Strength] 战斗力。"),
     -- Recon
-    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力"), -- ，但-1 [ICON_Movement] 移动力
-    ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过森林和丛林。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_RECON_IGNORE_TERRIAN_COST_HD_DESCRIPTION",                 "在丘陵、树林和雨林地形有更快的 [ICON_Movement] 移动力。"), -- ，但-1 [ICON_Movement] 移动力
+    ("zh_Hans_CN",  "LOC_PROMOTION_SENTRY_DESCRIPTION",                                     "+1视野范围，视野能穿过地貌。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_RECON_TRAVEL_LIGHT_NAME",                                "轻装"),
     ("zh_Hans_CN",  "LOC_PROMOTION_RECON_TRAVEL_LIGHT_DESCRIPTION",                         "+1 [ICON_Movement] 移动力。"), -- 忽略控制区
     ("zh_Hans_CN",  "LOC_PROMOTION_SPYGLASS_DESCRIPTION",                                   "+1视野范围，显示视野范围内的隐形单位。"),
@@ -244,4 +245,5 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                              "自动索敌"),
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                    "将领卫队"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。");
+    ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                         "在沼泽地形有更快的 [ICON_Movement] 移动力。");

@@ -162,13 +162,13 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast, bRiversStartInla
 					bMarsh = self:AddMarshAtPlot(plot, x, y);
 
 					if(featureType == g_FEATURE_NONE and bMarsh == false) then 
-						--check to add Swamp
-						bSwamp = self:AddSwampAtPlot(plot, x, y);
-					end
-
-					if(featureType == g_FEATURE_NONE and bMarsh == false and bSwamp == false) then
 						--check to add Jungle
 						bJungle = self:AddJunglesAtPlot(plot, x, y);
+					end
+
+					if(featureType == g_FEATURE_NONE and bMarsh == false and bJungle == false) then
+						--check to add Swamp
+						bSwamp = self:AddSwampAtPlot(plot, x, y);
 					end
 					
 					if(featureType == g_FEATURE_NONE and bMarsh== false and bSwamp == false and bJungle == false) then 
