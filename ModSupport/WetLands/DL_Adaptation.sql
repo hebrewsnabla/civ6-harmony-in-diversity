@@ -14,7 +14,7 @@ update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_DRAMA_POETRY', T
 
 -- Reed Home
 -- Unlock by Craftsmanship
-update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_CRAFTSMANSHIP', TilesRequired = 2, SameAdjacentValid = 0 where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
+update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_CRAFTSMANSHIP', TilesRequired = 2 where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
 
 delete from Improvement_YieldChanges where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
 delete from Improvement_YieldChanges where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
@@ -25,34 +25,26 @@ values  ('IMPROVEMENT_JNR_OASIS_FARM',  'YIELD_CULTURE',    1),
         ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_PRODUCTION', 1),
         ('IMPROVEMENT_JNR_REED_HOME',   'YIELD_SCIENCE',    0);
 
--- Improvement_BonusYieldChanges Removed
---------------------------------------------------------------
--- INSERT OR IGNORE INTO Improvement_BonusYieldChanges
---         (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
--- VALUES  (1301,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_PRODUCTION', 1,                  'TECH_MACHINERY',           NULL),
---         (1302,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_FOOD',       1,                  'TECH_SCIENTIFIC_THEORY',   NULL),
---         (1303,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',       2,                  NULL,                       'CIVIC_GLOBALIZATION'),
---         (1304,  'IMPROVEMENT_JNR_FLOOD_FARM',   'YIELD_FOOD',       1,                  NULL,                       'CIVIC_FEUDALISM'),
---         (1305,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION', 1,                  NULL,                       'CIVIC_MERCANTILISM');
 -- --------------------------------------------------------------
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_JNR_REED_HOME';
 insert or replace into Improvement_BonusYieldChanges
-        (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
-values  (307,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  NULL,                       'CIVIC_GUILDS'),
-        (308,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_BUTTRESS',            NULL),
-        (309,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  'TECH_BIOLOGY_HD',          NULL),
-        (310,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_NANOTECHNOLOGY',      NULL),
+    (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
+values  
+    -- (307,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  NULL,                       'CIVIC_GUILDS'),
+    (308,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_BUTTRESS',            NULL),
+    (309,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  'TECH_BIOLOGY_HD',          NULL),
+    (310,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_NANOTECHNOLOGY',      NULL),
 
-        (311,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BUTTRESS',            NULL),
-        (312,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  NULL,                       'CIVIC_MERCANTILISM'),
-        (313,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BIOLOGY_HD',          Null),
-        (314,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_SYNTHETIC_MATERIALS', NULL);
+    (311,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BUTTRESS',            NULL),
+    -- (312,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  NULL,                       'CIVIC_MERCANTILISM'),
+    (313,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BIOLOGY_HD',          Null),
+    (314,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_SYNTHETIC_MATERIALS', NULL);
 
 update Technologies set Description = 'LOC_TECH_BIOLOGY_HD_DESCRIPTION' where TechnologyType = 'TECH_BIOLOGY_HD';
 update Technologies set Description = 'LOC_TECH_BUTTRESS_DESCRIPTION' where TechnologyType = 'TECH_BUTTRESS';
 update Technologies set Description = 'LOC_TECH_NANOTECHNOLOGY_DESCRIPTION' where TechnologyType = 'TECH_NANOTECHNOLOGY';
-update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+-- update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 
 insert or replace into Adjacency_YieldChanges
 	(ID,							        Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentDistrict)
@@ -122,6 +114,7 @@ insert or replace into Improvement_ValidFeatures
     (ImprovementType,               FeatureType)
 values
     ('IMPROVEMENT_JNR_REED_HOME',   'FEATURE_HD_SWAMP'),
+    ('IMPROVEMENT_JNR_REED_HOME',   'FEATURE_FLOODPLAINS'),
     ('IMPROVEMENT_BARBARIAN_CAMP',  'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_GOODY_HUT',       'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_METEOR_GOODY',    'FEATURE_HD_SWAMP'),
@@ -144,6 +137,8 @@ select
     'BUILDING_ETEMENANKI',         'FEATURE_HD_SWAMP'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ETEMENANKI');
 
+delete from Resource_ValidFeatures where ResourceType = 'RESOURCE_TOBACCO' and FeatureType = 'FEATURE_FOREST';
+
 insert or replace into Resource_ValidFeatures
     (ResourceType,                  FeatureType)
 values
@@ -152,14 +147,17 @@ values
     ('RESOURCE_GYPSUM',             'FEATURE_HD_SWAMP'),
     ('RESOURCE_WHEAT',              'FEATURE_HD_SWAMP'),
     ('RESOURCE_SALT',               'FEATURE_HD_SWAMP'),
-    ('RESOURCE_ANTIQUITY_SITE',     'FEATURE_HD_SWAMP');
+    ('RESOURCE_ANTIQUITY_SITE',     'FEATURE_HD_SWAMP'),
+    ('RESOURCE_TOBACCO',            'FEATURE_HD_SWAMP'),
+    ('RESOURCE_AMBER',              'FEATURE_HD_SWAMP');
 
 insert or replace into Resource_ValidFeatures
     (ResourceType,                  FeatureType)
 select
     ResourceType,                   'FEATURE_HD_SWAMP'
 from Resources where ResourceType in
-    ('RESOURCE_WOLF','RESOURCE_TOXINS','RESOURCE_LEU_P0K_CAPYBARAS','RESOURCE_OAK','RESOURCE_LIMESTONE','RESOURCE_P0K_MAPLE','RESOURCE_TIN');
+    ('RESOURCE_WOLF','RESOURCE_TOXINS','RESOURCE_LEU_P0K_CAPYBARAS','RESOURCE_PINE','RESOURCE_LIMESTONE',
+    'RESOURCE_P0K_MAPLE','RESOURCE_TIN','RESOURCE_HONEY','RESOURCE_BERRIES','RESOURCE_OAK');
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
@@ -176,7 +174,7 @@ where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_
 insert or replace into BeliefModifiers
 	(BeliefType,							    ModifierID)
 values
-    ('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_THE_SWAMP_CULTURE');
+    ('BELIEF_HD_DRUID',	                        'LADY_OF_THE_SWAMP_CULTURE');
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
@@ -205,8 +203,8 @@ values
     ('JNR_JINJA_SWAMP_SCIENCE',             'YieldType',        'YIELD_SCIENCE'),
     ('JNR_JINJA_SWAMP_SCIENCE',             'Amount',           2),
     ('LADY_OF_THE_SWAMP_CULTURE',           'ModifierId',       'LADY_OF_THE_SWAMP_CULTURE_MODIFIER'),
-    ('LADY_OF_THE_SWAMP_CULTURE_MODIFIER',	'YieldType',        'YIELD_CULTURE'),
-    ('LADY_OF_THE_SWAMP_CULTURE_MODIFIER',	'Amount',           1),
+    ('LADY_OF_THE_SWAMP_CULTURE_MODIFIER',	'YieldType',        'YIELD_CULTURE,YIELD_PRODUCTION'),
+    ('LADY_OF_THE_SWAMP_CULTURE_MODIFIER',	'Amount',           '1,2'),
     ('TRAIT_SWAMP_CULTIRE',	                'YieldType',        'YIELD_CULTURE'),
     ('TRAIT_SWAMP_CULTIRE',	                'Amount',           2),
     ('TRAIT_SWAMP_BUILDINGS_CULTIRE',	    'FeatureType',      'FEATURE_HD_SWAMP'),
@@ -231,7 +229,7 @@ values
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 values
-    ('PLOT_HAS_REEDS_REQUIREMENTS',                 'HD_PLOT_IS_SWAMP_REQUIREMENT'),
+    -- ('PLOT_HAS_REEDS_REQUIREMENTS',                 'HD_PLOT_IS_SWAMP_REQUIREMENT'),
     ('HD_PLOT_HAS_SWAMP_REQUIREMENTS',              'HD_PLOT_IS_SWAMP_REQUIREMENT'),
     ('PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_PLOT_IS_SWAMP_REQUIREMENT');
 

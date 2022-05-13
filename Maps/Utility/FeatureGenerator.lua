@@ -26,11 +26,11 @@ function FeatureGenerator.Create(args)
 	-- Set feature traits.
 	local iJunglePercent = args.iJunglePercent or 35;
 	local iForestPercent = args.iForestPercent or 18;
-	local iMarshPercent = args.iMarshPercent or 3;
+	local iMarshPercent = args.iMarshPercent or 2;
 	local iOasisPercent = args.iOasisPercent or 1;
 	local iReefPercent = args.iReefPercent or 9;
 	local iIcePercent = args.iIcePercent or 0;
-	local iSwampPercent = args.iSwampPercent or 3;
+	local iSwampPercent = args.iSwampPercent or 2;
 
 	iJunglePercent = iJunglePercent + rainfall;
 	iForestPercent = iForestPercent + rainfall;
@@ -426,9 +426,9 @@ function FeatureGenerator:AddMarshAtPlot(plot, iX, iY)
 			local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_MARSH);
 				
 
-			if(iAdjacent == 0 ) then
+			if (iAdjacent == 0 ) then
 				iScore = iScore;
-			elseif(iAdjacent == 1) then
+			elseif (iAdjacent == 1) then
 				iScore = iScore + 50;
 			elseif (iAdjacent == 2 or iAdjacent == 3) then
 				iScore = iScore + 150;
@@ -467,16 +467,18 @@ function FeatureGenerator:AddSwampAtPlot(plot, iX, iY)
 			local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_HD_SWAMP);
 				
 
-			if(iAdjacent == 0 ) then
+			if (iAdjacent == 0 ) then
 				iScore = iScore;
-			elseif(iAdjacent == 1) then
-				iScore = iScore + 50;
-			elseif (iAdjacent == 2 or iAdjacent == 3) then
-				iScore = iScore + 150;
+			elseif (iAdjacent == 1) then
+				iScore = iScore + 100;
+			elseif (iAdjacent == 2) then
+				iScore = iScore - 100;
+			elseif (iAdjacent == 3) then
+				iScore = iScore - 150;
 			elseif (iAdjacent == 4) then
-				iScore = iScore - 50;
-			else
 				iScore = iScore - 200;
+			else
+				iScore = iScore - 250;
 			end
 				
 			if(TerrainBuilder.GetRandomNumber(450, "Resource Placement Score Adjust") <= iScore) then
@@ -502,9 +504,9 @@ function FeatureGenerator:AddJunglesAtPlot(plot, iX, iY)
 				local iScore = 300;
 				local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_JUNGLE);
 
-				if(iAdjacent == 0 ) then
+				if (iAdjacent == 0 ) then
 					iScore = iScore;
-				elseif(iAdjacent == 1) then
+				elseif (iAdjacent == 1) then
 					iScore = iScore + 50;
 				elseif (iAdjacent == 2 or iAdjacent == 3) then
 					iScore = iScore + 150;
@@ -543,9 +545,9 @@ function FeatureGenerator:AddForestsAtPlot(plot, iX, iY)
 			local iScore = 300;
 			local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_FOREST);
 
-			if(iAdjacent == 0 ) then
+			if (iAdjacent == 0 ) then
 				iScore = iScore;
-			elseif(iAdjacent == 1) then
+			elseif (iAdjacent == 1) then
 				iScore = iScore + 50;
 			elseif (iAdjacent == 2 or iAdjacent == 3) then
 				iScore = iScore + 150;
@@ -573,9 +575,9 @@ function FeatureGenerator:AddReefAtPlot(plot, iX, iY)
 				local iScore  = 3 * math.abs(iY - self.iNumEquator);
 				local iAdjacent = TerrainBuilder.GetAdjacentFeatureCount(plot, g_FEATURE_REEF);
 
-				if(iAdjacent == 0 ) then
+				if (iAdjacent == 0 ) then
 					iScore = iScore + 100;
-				elseif(iAdjacent == 1) then
+				elseif (iAdjacent == 1) then
 					iScore = iScore + 125;
 				elseif (iAdjacent == 2) then
 					iScore = iScore  + 150;
