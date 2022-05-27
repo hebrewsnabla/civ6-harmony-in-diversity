@@ -156,49 +156,6 @@ insert or replace into BuildingModifiers
 select
     'BUILDING_GOV_SPIES',   'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE'
 from GovSpiesBuffedBuildings;
-insert or replace into Requirements
-    (RequirementId,                         RequirementType)
-select
-    'REQUIRES_PLAYER_HAS_' || BuildingType, 'REQUIREMENT_PLAYER_HAS_BUILDING'
-from GovSpiesBuffedBuildings;
-insert or replace into RequirementArguments
-    (RequirementId,                         Name,           Value)
-select
-    'REQUIRES_PLAYER_HAS_' || BuildingType, 'BuildingType', BuildingType
-from GovSpiesBuffedBuildings;
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType not in (select Building from BuildingPrereqs);
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_MARKET');
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_BANK');
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_HARBOR_TIER1',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where PrereqDistrict = 'DISTRICT_HARBOR' and BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType not in (select Building from BuildingPrereqs);
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_HARBOR_TIER2',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_LIGHTHOUSE');
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                      RequirementId)
-select
-    'HD_PLAYER_HAS_HARBOR_TIER3',   'REQUIRES_PLAYER_HAS_' || BuildingType
-from Buildings where BuildingType in (select BuildingType from GovSpiesBuffedBuildings) and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_SHIPYARD');
-
-/*
--- 笑笑: 淦, 看错效果了, 下面写的是"全国每个商业/港口建筑为所在城市+4%金"
 insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                                       SubjectRequirementSetId)
 select
@@ -224,7 +181,40 @@ insert or replace into RequirementSetRequirements
 select
     'HD_CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType
 from GovSpiesBuffedBuildings;
-*/
+
+-- 以下效果为"全国每个等级的商业和港口建筑为本城 +4% [ICON_GOLD] 金币产出。"
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and BuildingType in GovSpiesBuffedBuildings and BuildingType not in (select Building from BuildingPrereqs);
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where BuildingType in GovSpiesBuffedBuildings and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_MARKET');
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where BuildingType in GovSpiesBuffedBuildings and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_BANK');
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_HARBOR_TIER1',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where PrereqDistrict = 'DISTRICT_HARBOR' and BuildingType in GovSpiesBuffedBuildings and BuildingType not in (select Building from BuildingPrereqs);
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_HARBOR_TIER2',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where BuildingType in GovSpiesBuffedBuildings and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_LIGHTHOUSE');
+--insert or replace into RequirementSetRequirements
+--    (RequirementSetId,                      RequirementId)
+--select
+--    'HD_PLAYER_HAS_HARBOR_TIER3',   'REQUIRES_PLAYER_HAS_' || BuildingType
+--from Buildings where BuildingType in GovSpiesBuffedBuildings and BuildingType in (select Building from BuildingPrereqs where PrereqBuilding = 'BUILDING_SHIPYARD');
+
+
 
 -- 自由探索: 多10%尤里卡, 每个不同的区域和建筑给1瓶
 delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';

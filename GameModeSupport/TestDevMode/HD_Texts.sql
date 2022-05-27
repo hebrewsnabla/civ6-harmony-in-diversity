@@ -18,7 +18,7 @@ values
     ("LOC_GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT",       "Creates a naval melee unit with +2 [ICON_MOVEMENT] Movement. Escorted units with it move at the same speed."),
     -- 情报局能力给外交办，情报局重置为贸易本埠
     ("LOC_BUILDING_GOV_SPIES_NAME",         "Main Trading Port"),
-    ("LOC_BUILDING_GOV_SPIES_DESCRIPTION",  "+1 [ICON_TRADEROUTE] Trade Route capacity. This city gets +4% [ICON_GOLD] Gold for each tier of Commercial Hub building and each tier of Harbor building in your empire. Your [ICON_TRADEROUTE] Trade Routes provide additional +3 [ICON_GOLD] Gold for passing through each of your[ICON_TRADINGPOST] Trading Post in foreign city.[NEWLINE]Awards +1 [ICON_GOVERNOR] Governor Title."),
+    ("LOC_BUILDING_GOV_SPIES_DESCRIPTION",  "+1 [ICON_TRADEROUTE] Trade Route capacity. Each of your city yields +4% [ICON_GOLD] Gold for each Commercial Hub building and each Harbor building in that city. Your [ICON_TRADEROUTE] Trade Routes provide additional +3 [ICON_GOLD] Gold for passing through each of your[ICON_TRADINGPOST] Trading Post in foreign city.[NEWLINE]Awards +1 [ICON_GOVERNOR] Governor Title."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",   "Receive one Spy and +1 Spy capacity. +1 [ICON_VISLIMITED] Visibility level on all other Civs. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. Your Spy units can choose from any possible promotion. +50% [ICON_PRODUCTION] toward Spies in all Cities.+3 Influence Points per turn. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy. Alliance Points with all allies increase by an additional 0.5 per turn. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE", "Free Inquiry Golden Age:[NEWLINE][ICON_TECHBOOSTED] Eurekas provide an additional 10% of technology costs. Each different District and Building provides +1 [ICON_SCIENCE] Science to your capital."),
     -- 殖民地办事处
@@ -42,7 +42,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_HANNO_DESCRIPTION",       "+2 [ICON_MOVEMENT] 移动力。被护送的单位将以同样的速度移动。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT",       "创建1个拥有+2 [ICON_MOVEMENT] 移动力的海军近战单位。被该单位护送的单位将以同样的速度移动。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GOV_SPIES_NAME",         "贸易本埠"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GOV_SPIES_DESCRIPTION",  "+1 [ICON_TRADEROUTE] 贸易路线容量。全国每个等级的商业和港口建筑为本城 +4% [ICON_GOLD] 金币产出。您的 [ICON_TRADEROUTE] 贸易路线每经过一个您在国外城市的 [ICON_TRADINGPOST] 贸易站便+3 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GOV_SPIES_DESCRIPTION",  "+1 [ICON_TRADEROUTE] 贸易路线容量。全国商业和港口建筑为所在城市 +4% [ICON_GOLD] 金币产出。您的 [ICON_TRADEROUTE] 贸易路线每经过一个您在国外城市的 [ICON_TRADINGPOST] 贸易站便+3 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",   "获得一个间谍并+1间谍容量。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有间谍行动的成功率上升。间谍执行任务的时间缩短25%，您的间谍可以选择任何可用升级。所有城市训练间谍时+50% [ICON_PRODUCTION] 生产力。每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。所有盟友的同盟点数每回合额外增加0.5点。获得1名 [ICON_ENVOY] 使者。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE", "“自由探索”黄金时代：[NEWLINE][ICON_TECHBOOSTED]尤里卡额外提供（对应科技所需科技总量的）10%。每个不同的区域和建筑为首都提供 +1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+5 [ICON_Food] 食物、+10%余粮、每回合提供5点忠诚度。"),
