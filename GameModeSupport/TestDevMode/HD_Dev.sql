@@ -32,12 +32,16 @@ update UnitPromotions set Level = 2 where UnitPromotionType = 'PROMOTION_DAMAGE_
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_LOOT' and PrereqUnitPromotion = 'PROMOTION_SWIFT_KEEL';
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_DAMAGE_CONTROL' and PrereqUnitPromotion = 'PROMOTION_LOOT';
 delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_DAMAGE_CONTROL' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_LOOT';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion, PrereqUnitPromotion)
 values
     ('PROMOTION_DAMAGE_CONTROL',	'PROMOTION_SWIFT_KEEL'),
     ('PROMOTION_LOOT',	'PROMOTION_DAMAGE_CONTROL'),
-    ('PROMOTION_LOOT',	'PROMOTION_SILENT_RUNNING');
+    ('PROMOTION_LOOT',	'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_WOLFPACK',	'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_AUTO_SOLICITATION',	'PROMOTION_LOOT');
 
 -- 航海卡从探索移动到海军传统
 update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'POLICY_NAVIGATION';
@@ -286,6 +290,14 @@ insert or replace into ModifierArguments
 select
     'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'Amount',       1
 from BuffedObjects;
+-- 商业 & 港口地基回调
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Harbor_City_Gold';
+insert or replace into District_Adjacencies
+	(DistrictType,					YieldChangeId)
+values
+    ('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center');
+update Adjacency_YieldChanges set YieldChange = 2, ObsoleteCivic = null where ID = 'HD_Commercial_Luxury_Gold';
+delete from Adjacency_YieldChanges where ID = 'HD_Commercial_Luxury_Gold_Late';
 
 -- 殖民地办事处10%总粮回调为10%余粮
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH' where ModifierId = 'COLONIALOFFICES_FOREIGNFOODPERCENTAGE';
