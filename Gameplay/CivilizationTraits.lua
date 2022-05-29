@@ -296,7 +296,7 @@ function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
         local sLeader = pPlayerConfig:GetLeaderTypeName()
         local sConquerEnvoy = 'TRAIT_LEADER_RAVEN_KING'
         if LeaderHasTrait(sLeader, sConquerEnvoy) then
-            pPlayer:GetInfluence():ChangeTokensToGive(1)    
+            pPlayer:GetInfluence():ChangeTokensToGive(GlobalParameters.HUNGARY_ENVOY_NUMBER)    
         end
     end
 end

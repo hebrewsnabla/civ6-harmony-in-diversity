@@ -285,9 +285,10 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'HD_Harbor_City_Gol
 insert or replace into District_Adjacencies
 	(DistrictType,					YieldChangeId)
 values
-    ('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center');
+    ('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
+    ('DISTRICT_SUGUBA',		        'District_Gold_City_Center');
 update Adjacency_YieldChanges set YieldChange = 2, ObsoleteCivic = null where ID = 'HD_Commercial_Luxury_Gold';
-delete from Adjacency_YieldChanges where ID = 'HD_Commercial_Luxury_Gold_Late';
+delete from District_Adjacencies where YieldChangeId = 'HD_Commercial_Luxury_Gold_Late';
 
 -- 殖民地办事处10%总粮回调为10%余粮
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH' where ModifierId = 'COLONIALOFFICES_FOREIGNFOODPERCENTAGE';
@@ -360,3 +361,246 @@ insert or replace into ModifierArguments
 select
     'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'BuildingType',  BuildingType
 from HolySiteBuildings;
+
+-- 使者全面回调136系统
+-- 城邦需求
+update GlobalParameters set Value = 1 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SMALL_INFLUENCE';
+update GlobalParameters set Value = 1 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE';
+update GlobalParameters set Value = 3 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
+update GlobalParameters set Value = 3 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE';
+update GlobalParameters set Value = 6 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE';
+update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_SMALL_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 3 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 6 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE' and Name = 'MinimumTokens';
+-- 市政树上的使者分布
+update CivicModifiers set ModifierId = 'CIVIC_AWARD_ONE_INFLUENCE_TOKEN' where ModifierId = 'CIVIC_AWARD_TWO_INFLUENCE_TOKENS';
+update CivicModifiers set ModifierId = 'CIVIC_AWARD_TWO_INFLUENCE_TOKENS' where ModifierId = 'CIVIC_AWARD_THREE_INFLUENCE_TOKENS' and (CivicType = 'CIVIC_NATIONALISM' or CivicType = 'CIVIC_OPERA_BALLET' or CivicType = 'CIVIC_SCORCHED_EARTH' or CivicType = 'CIVIC_NATURAL_HISTORY');
+-- 伟人的使者
+update ModifierArguments set Value = 1 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_SMALL' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_MEDIUM' and Name = 'Amount';
+update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ANA_NZINGA';
+-- 城邦效果调整
+-- 加的夫
+update ModifierArguments set Value = 0 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
+-- 奥克兰
+insert or replace into TraitModifiers
+    (TraitType,                     ModifierId)
+values
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE'),
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL');
+insert or replace into RequirementSets
+    (RequirementSetId,                                      RequirementSetType)
+values
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'HD_REQUIRES_PLAYER_HAS_TECH_STEAM_POWER');
+update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL';
+-- 拜科努尔
+delete from TraitModifiers where TraitType = 'MINOR_CIV_HONG_KONG_TRAIT' and ModifierId = 'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS';
+-- 布鲁塞尔
+update ModifierArguments set Value = 15 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';
+-- 约翰内斯堡
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS_LATE';
+create temporary table 'JohannesburgImprovementType'(
+    ImprovementType TEXT not null primary key
+);
+insert into JohannesburgImprovementType values
+    ('IMPROVEMENT_FARM'),
+    ('IMPROVEMENT_PLANTATION'),
+    ('IMPROVEMENT_CAMP'),
+    ('IMPROVEMENT_PASTURE'),
+    ('IMPROVEMENT_MINE'),
+    ('IMPROVEMENT_QUARRY'),
+    ('IMPROVEMENT_LUMBER_MILL');
+insert or ignore into RequirementSets(RequirementSetId, 						RequirementSetType) 
+	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES',	'REQUIREMENTSET_TEST_ANY'
+	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+insert or ignore into RequirementSetRequirements(RequirementSetId,						RequirementId)
+	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ivr.ResourceType
+	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+insert or ignore into TraitModifiers(TraitType,		ModifierId)
+    select 'MINOR_CIV_JOHANNESBURG_TRAIT', 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType
+    from JohannesburgImprovementType;
+insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_IS_SUZERAIN'
+    from JohannesburgImprovementType;
+insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_REQUIRES_CITY_HAS_' || ImprovementType || '_OVER_RESOURCES'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'ModifierId' , 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'YieldType', 'YIELD_PRODUCTION'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'Amount', '1'
+    from JohannesburgImprovementType;
+-- 哈瓦那
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_HAVANA_TRAIT' and ModifierId = 'MINOR_CIV_CSE_HAVANA_CULTURE_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_HAVANA_TRAIT' and ModifierId = 'MINOR_CIV_CSE_HAVANA_COASTAL_CULTURE_BONUS';
+-- 吉布提
+insert or ignore into RequirementSets
+    (RequirementSetId,                          RequirementSetType)
+values
+    ('MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER',     'REQUIREMENTSET_TEST_ALL');
+    insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                          RequirementId)
+values
+    ('MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER',     'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER',     'ADJACENT_TO_OWNER');
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_DJIBOUTI_TRAIT';
+insert or replace into TraitModifiers 
+    (TraitType,                                ModifierId)
+values
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT',        'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT',        'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION');
+insert or replace into    Modifiers
+    (ModifierId,                                                ModifierType,                                       SubjectRequirementSetId)
+values
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD',                  'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION',            'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_CITY',             'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_CITY',       'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
+	('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER'),
+	('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER');
+insert or replace into    ModifierArguments
+    (ModifierId,                                                Name,                                       Value)
+values
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD',                  'ModifierId',                               'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_CITY'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION',            'ModifierId',                               'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_CITY'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_CITY',             'ModifierId',                               'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_MODIFIER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_CITY',       'ModifierId',                               'MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_MODIFIER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_MODIFIER',         'YieldType',                                'YIELD_FOOD'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_MODIFIER',   		'Amount',                                   1),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_MODIFIER',   'YieldType',                                'YIELD_PRODUCTION'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_MODIFIER',   'Amount',                                   1);
+-- 里加
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSD_RIGA_TRAIT' and ModifierId = 'MINOR_CIV_CSD_RIGA_SCIENCE_BOUNUS_HARBOR';
+-- 普雷斯拉夫
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PRESLAV_TRAIT' and ModifierId = 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT';
+-- 瓦莱塔
+delete from TraitModifiers where TraitType = 'MINOR_CIV_VALLETTA_TRAIT' and ModifierId like 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_%_BONUS';
+-- 安善
+delete from TraitModifiers where TraitType = 'MINOR_CIV_BABYLON_TRAIT' and ModifierId = 'MINOR_CIV_BABYLON_CAMPUS_TIER1_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_BABYLON_TRAIT' and ModifierId = 'MINOR_CIV_BABYLON_THEATER_TIER1_BONUS';
+insert or replace into TraitModifiers
+    (TraitType,                             ModifierId)
+values
+    ('MINOR_CIV_BABYLON_TRAIT',             'MINOR_CIV_BABYLON_WRITING_BONUS');
+-- 檀香山
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSD_HONOLULU_TRAIT' and ModifierID = 'MINOR_CIV_CSD_HONOLULU_FISHING_BOATS_CULTURE_BONUS';
+-- 蒙巴萨
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MINOR_CIV_CSE_MOMBASA_PLANTATION_CULTURE_BONUS_MODIFIER' and Name = 'YieldType';
+update ModifierArguments set Value = 'YIELD_GOLD' where ModifierId = 'MINOR_CIV_CSE_MOMBASA_PLANTATION_SCIENCE_BONUS_MODIFIER' and Name = 'YieldType';
+-- 费尔干纳
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSD_FERGANA_TRAIT' and ModifierID = 'MINOR_CIV_CSD_FERGANA_GROWTH_BONUS';
+-- 基辅
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH' where ModifierId = 'MINOR_CIV_CSD_KIEV_FOOD_AT_PEACE_BONUS_MODIFIER';
+delete from ModifierArguments where ModifierId = 'MINOR_CIV_CSD_KIEV_FOOD_AT_PEACE_BONUS_MODIFIER' and Name = 'YieldType';
+-- 米特拉
+update ModifierArguments set value = 20 where ModifierId = 'MINOR_CIV_PALENQUE_CAMPUS_GROWTH_BONUS' and Name = 'Amount';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_PALENQUE_TRAIT' and ModifierID = 'MINOR_CIV_PALENQUE_CAMPUS_SCIENCE_TO_FOOD_BONUS';
+-- 日内瓦
+update ModifierArguments set Value = 10 where ModifierId = 'MINOR_CIV_GENEVA_SCIENCE_AT_PEACE_BONUS' and Name = 'Amount';
+-- 塔鲁加
+update ModifierArguments set Value = 5 where ModifierId like 'MINOR_CIV_TARUGA_%_RESOURCE_SCIENCE' and Name = 'Amount';
+-- 菲斯
+delete from TraitModifiers where TraitType = 'MINOR_CIV_FEZ_TRAIT' and ModifierID = 'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE';
+-- 哈图沙
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE_MODIFIER' and Name = 'Amount';
+-- 南马都尔
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS' and Name = 'Amount';
+-- 阿育陀耶
+delete from RequirementSetRequirements where RequirementSetId = 'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS' and RequirementId = 'REQUIRES_DISTRICT_IS_DISTRICT_HOLY_SITE';
+delete from RequirementSetRequirements where RequirementSetId = 'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS' and RequirementId = 'REQUIRES_DISTRICT_IS_DISTRICT_COMMERCIAL_HUB';
+delete from RequirementSetRequirements where RequirementSetId = 'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS' and RequirementId = 'REQUIRES_DISTRICT_IS_DISTRICT_ENTERTAINMENT_COMPLEX';
+-- 塔那那利佛
+update GlobalParameters set Value = 10 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
+-- 罕萨
+update ModifierArguments set Value = 0.2 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
+-- 斯里巴加湾
+update ModifierArguments set Value = 'MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS' where ModifierId = 'MINOR_CIV_JAKARTA_UNIQUE_INFLUENCE_BONUS' and Name = 'ModifierId';
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									    SubjectRequirementSetId)
+values
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST');
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			 Value)
+values
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',			'YieldType',	 'YIELD_GOLD'),
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',			'Amount',	     3);
+-- 马尼拉
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSD_MANILA_TRAIT' and ModifierID = 'MINOR_CIV_CSD_MANILA_TRADE_ROUTE_YIELD_FOR_SEA_TOWN_BONUS';
+-- 阿帕
+delete from BuildingModifiers where BuildingType = 'BUILDING_APADANA' and ModifierId = 'APADANA_TRIBUTARY_CULTURE';
+-- 基尔瓦
+update ModifierArguments set Value = 5 where ModifierId = 'KILWA_THREE_INFLUENCE_TOKENS';
+-- 自由女神像
+delete from BuildingModifiers where BuildingType = 'BUILDING_STATUE_LIBERTY' and ModifierId = 'STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN';
+-- 腓尼基
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES' and ModifierId = '	PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES' and ModifierId = '	PHOENICIA_WRITING_INFLUENCE_TOKEN';
+-- 匈牙利
+update GlobalParameters set Value = 0 where Name = 'HUNGARY_ENVOY_NUMBER';
+-- 阿玛尼
+update ModifierArguments set Value = 1 where ModifierId = 'AMANI_EXTRA_ENVOY' and Name = 'Amount';
+
+-- 匈牙利议会大厦和西印度交易所
+update ModifierArguments set Value = 3 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS';
+delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and ModifierId = 'BUILDING_ORSZAGHAZ_GOVERNOR_POINTS';
+delete from BuildingModifiers where BuildingType = 'BUILDING_ORSZAGHAZ' and ModifierId = 'BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER';
+insert or replace into Modifiers
+    (ModifierId,                    ModifierType,                               RunOnce)
+values
+    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',    1);
+insert or replace into ModifierArguments
+    (ModifierId,                    Name,        Value)
+values
+    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'Amount',    4);
+insert or replace into BuildingModifiers
+    (BuildingType,          ModifierId)
+values
+    ('BUILDING_ORSZAGHAZ',  'ORSZAGHAZ_INFLUENCE_TOKENS');
+insert or replace into Requirements
+    (RequirementId,                     RequirementType)
+values
+    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENT_PLAYER_HAS_BUILDING');
+insert or replace into RequirementArguments
+    (RequirementId,                     Name,           Value)
+values
+    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'BuildingType', 'BUILDING_ORSZAGHAZ');
+insert or replace into RequirementSets
+    (RequirementSetId,         RequirementSetType)
+values
+    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,         RequirementId)
+values
+    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_PLAYER_HAS_ORSZAGHAZ');
+create temporary table OrszaghazModifiers (PolicyType text not null, OldModifierId text not null, NewModifierId text not null);
+insert into OrszaghazModifiers
+    (PolicyType,    OldModifierId,  NewModifierId)
+select
+    PolicyType,    ModifierId,      'ORSZAGHAZ_GRANT_' || ModifierId
+from PolicyModifiers where PolicyType in (select PolicyType from Policies where GovernmentSlotType = 'SLOT_GREAT_PERSON' or GovernmentSlotType = 'SLOT_WILDCARD');
+insert or replace into Modifiers
+    (ModifierId,	ModifierType,	                                SubjectRequirementSetId)
+select
+    NewModifierId,	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',         'PLAYER_HAS_ORSZAGHAZ'
+from OrszaghazModifiers;
+insert or replace into ModifierArguments
+    (ModifierId,	Name,	        Value)
+select
+    NewModifierId,	'ModifierId',   OldModifierId
+from OrszaghazModifiers;
+insert or replace into PolicyModifiers
+    (PolicyType,   ModifierId)
+select
+    PolicyType,    NewModifierId
+from OrszaghazModifiers;

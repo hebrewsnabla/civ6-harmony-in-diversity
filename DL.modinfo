@@ -1411,6 +1411,18 @@
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
+    <ImportFiles id="DevTest_CityStates_Import" criteria="DevTest_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/citystates.xml</File>
+      <File>GameModeSupport/TestDevMode/citystates.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="DevTest_CityStates_UI" criteria="DevTest_Mode_Expansion2">
+      <Properties>
+        <LoadOrder>19001</LoadOrder>
+        <LuaContext>CityStates</LuaContext>
+        <LuaReplace>GameModeSupport/TestDevMode/citystates.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1546,6 +1558,8 @@
       <!-- Dev Test Mode -->
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
+    <File>GameModeSupport/TestDevMode/citystates.lua</File>
+    <File>GameModeSupport/TestDevMode/citystates.xml</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
