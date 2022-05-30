@@ -41,12 +41,33 @@ function TajOnPlayerEraScoreChanged(playerID, amountAwarded)
     if player ~= nil then
         -- print(player)
         if player:IsMajor() and Utils.HasBuildingWithinCountry(playerID, buildingID) then
-            player:GetTreasury():ChangeGoldBalance(amountAwarded * 45)
+            player:GetTreasury():ChangeGoldBalance(amountAwarded * GlobalParameters.TAJ_MAHAL_GOLD)
         end
     end
 end
 
 Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
+
+-- 泰姬陵 金币版神灵启示, by xiaoxiao
+local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
+function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+    local playerHasTaj = false;
+    local player = Players[playerId];
+    for _, city in player:GetCities():Members() do
+        if city:GetBuildings():HasBuilding(TAJ_INDEX) then
+            playerHasTaj = true;
+            break;
+        end
+    end
+    if playerHasTaj then
+        local building = GameInfo.Buildings[buildingId];
+        local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
+        player:GetTreasury():ChangeGoldBalance(amount);
+    end
+end
+
+Events.WonderCompleted.Add(TajWonderGold);
+
 
 -- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
 function BuildingIsCheaper (a, b)

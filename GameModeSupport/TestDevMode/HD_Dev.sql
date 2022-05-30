@@ -464,8 +464,8 @@ insert or replace into    Modifiers
 values
     ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD',                  'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
     ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION',            'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_IS_SUZERAIN'),
-    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_CITY',             'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
-    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_CITY',       'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_CITY',             'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
+    ('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_CITY',       'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',           'HD_DISTRICT_IS_CITY_CENTER'),
 	('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_FOOD_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER'),
 	('MINOR_CIV_CSE_DJIBOUTI_TRAIT_PLOT_PRODUCTION_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'MINOR_CIV_CSE_DJIBOUTI_NEARED_WATER');
 insert or replace into    ModifierArguments
@@ -582,7 +582,8 @@ values
 insert or replace into RequirementSetRequirements
     (RequirementSetId,         RequirementId)
 values
-    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_PLAYER_HAS_ORSZAGHAZ');
+    -- ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_PLAYER_HAS_ORSZAGHAZ');
+    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_CITY_HAS_BUILDING_ORSZAGHAZ');
 create temporary table OrszaghazModifiers (PolicyType text not null, OldModifierId text not null, NewModifierId text not null);
 insert into OrszaghazModifiers
     (PolicyType,    OldModifierId,  NewModifierId)
@@ -592,7 +593,7 @@ from PolicyModifiers where PolicyType in (select PolicyType from Policies where 
 insert or replace into Modifiers
     (ModifierId,	ModifierType,	                                SubjectRequirementSetId)
 select
-    NewModifierId,	'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',         'PLAYER_HAS_ORSZAGHAZ'
+    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'PLAYER_HAS_ORSZAGHAZ'
 from OrszaghazModifiers;
 insert or replace into ModifierArguments
     (ModifierId,	Name,	        Value)
@@ -604,3 +605,216 @@ insert or replace into PolicyModifiers
 select
     PolicyType,    NewModifierId
 from OrszaghazModifiers;
+
+-- 军营相邻战略+2
+delete from District_Adjacencies where DistrictType = 'DISTRICT_ENCAMPMENT' and YieldChangeId = 'Strategic_Production';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_IKANDA' and YieldChangeId = 'Strategic_Production';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_THANH' and YieldChangeId = 'Strategic_Production';
+insert or ignore into Adjacency_YieldChanges
+	(ID,									Description,							YieldType,				YieldChange,				TilesRequired,				AdjacentResourceClass)
+values
+	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC2_PRODUCTION',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');
+insert or replace into District_Adjacencies
+	(DistrictType,								YieldChangeId)
+values
+	('DISTRICT_ENCAMPMENT',						'Strategic_Production2'),
+	('DISTRICT_IKANDA',							'Strategic_Production2'),
+	('DISTRICT_THANH',						    'Strategic_Production2');
+
+-- 锻造之神改名后重新实装
+update ModifierArguments set Value = 'ERA_MEDIEVAL' where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'EndEra';
+update ModifierArguments set Value = 50 where ModifierId = 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION_MODIFIER' and Name = 'Amount';
+insert or replace into Types
+    (Type,                          Kind)
+values
+    ('BELIEF_OLD_GOD_OF_THE_FORGE', 'KIND_BELIEF');
+insert or replace into Beliefs
+    (BeliefType,	                Name,	                                 Description,	                                 BeliefClassType)
+values
+    ('BELIEF_OLD_GOD_OF_THE_FORGE', 'LOC_BELIEF_OLD_GOD_OF_THE_FORGE_NAME',  'LOC_BELIEF_OLD_GOD_OF_THE_FORGE_DESCRIPTION',  'BELIEF_CLASS_PANTHEON');
+insert or replace into BeliefsSortIndex
+	(BeliefType,			            SortIndex)
+values
+	('BELIEF_OLD_GOD_OF_THE_FORGE',	    84);
+insert or replace into BeliefModifiers
+    (BeliefType,                    ModifierId)
+values
+    ('BELIEF_OLD_GOD_OF_THE_FORGE', 'GOD_OF_THE_FORGE_STRATEGIC_RESOURCE_COST_DISCOUNT'),
+    ('BELIEF_OLD_GOD_OF_THE_FORGE', 'GOD_OF_THE_FORGE_UNIT_ANCIENT_CLASSICAL_PRODUCTION');
+
+-- 翼骑兵由73力下调至70力
+update Units set Combat = 70 where UnitType = 'UNIT_POLISH_HUSSAR';
+
+-- 删除人口维护费
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_MAJOR_CIV' and ModifierId like 'AT_LEAST_%_HUMAN_%_POPULATION_MAINTENANCE';
+
+-- 泰姬陵：取消时代分多给钱的能力，每次全国建成奇观可以返还80%的金币，同时所有奇观+8金。
+update GlobalParameters set Value = 0 where Name = 'TAJ_MAHAL_GOLD';
+insert or replace into Modifiers
+    (ModifierId,                ModifierType)
+values
+    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+insert or replace into ModifierArguments
+    (ModifierId,                Name,           Value)
+values
+    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+insert or replace into BuildingModifiers
+    (BuildingType,          ModifierId)
+values
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
+
+
+-- 搬迦太基分支的万神改动
+-- 海洋母亲
+delete from BeliefModifiers where BeliefType = 'BELIEF_OCEAN_MOTHER';
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,										SubjectRequirementSetId)
+values
+    ('OCEAN_MOTHER_CENTER_COAST_FOOD',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',			NULL),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'MODIFIER_SINGLE_CITY_TERRAIN_ADJACENCY',			NULL),
+	('OCEAN_MOTHER_GREAT_PROPHET',									'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	('OCEAN_MOTHER_GREAT_PROPHET_MODIFIER',							'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'PLOT_IS_ADJACENT_TO_COAST'),
+	('OCEAN_MOTHER_HOUSING',										'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('OCEAN_MOTHER_HOUSING_MODIFIER',                               'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING',	'PLOT_IS_ADJACENT_TO_COAST');
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+values
+    ('OCEAN_MOTHER_CENTER_COAST_FOOD',								'ModifierId',			'OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER'),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'DistrictType',			'DISTRICT_CITY_CENTER'),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'YieldType',			'YIELD_FOOD'),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'TerrainType',			'TERRAIN_COAST'),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'Amount',				1),
+	('OCEAN_MOTHER_CENTER_COAST_FOOD_MODIFIER',						'Description',			'LOC_DISTRICT_COAST_FOOD'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH',								'ModifierId',			'OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'DistrictType',			'DISTRICT_CITY_CENTER'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'YieldType',			'YIELD_FAITH'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'TerrainType',			'TERRAIN_COAST'),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'Amount',				1),
+	('OCEAN_MOTHER_CENTER_COAST_FAITH_MODIFIER',					'Description',			'LOC_DISTRICT_COAST_FAITH'),
+	('OCEAN_MOTHER_GREAT_PROPHET',									'ModifierId',			'OCEAN_MOTHER_GREAT_PROPHET_MODIFIER'),
+	('OCEAN_MOTHER_GREAT_PROPHET_MODIFIER',							'GreatPersonClassType',	'GREAT_PERSON_CLASS_PROPHET'),
+	('OCEAN_MOTHER_GREAT_PROPHET_MODIFIER',							'Amount',				2),
+	('OCEAN_MOTHER_HOUSING',							            'ModifierId',			'OCEAN_MOTHER_HOUSING_MODIFIER'),
+	('OCEAN_MOTHER_HOUSING_MODIFIER',					            'Amount',				1);
+insert or replace into BeliefModifiers
+	(BeliefType,							ModifierID)
+values
+    ('BELIEF_OCEAN_MOTHER',					'OCEAN_MOTHER_CENTER_COAST_FOOD'),
+	('BELIEF_OCEAN_MOTHER',					'OCEAN_MOTHER_CENTER_COAST_FAITH'),
+	('BELIEF_OCEAN_MOTHER',					'OCEAN_MOTHER_GREAT_PROPHET'),
+	('BELIEF_OCEAN_MOTHER',					'OCEAN_MOTHER_HOUSING');
+-- 极光之舞
+delete from BeliefModifiers where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA' and ModifierId = 'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD';
+delete from BeliefModifiers where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA' and ModifierId = 'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD';
+insert or replace into BeliefModifiers
+	(BeliefType,							ModifierID)
+values
+	('BELIEF_DANCE_OF_THE_AURORA',			'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD'),
+	('BELIEF_DANCE_OF_THE_AURORA',			'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD');
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,										SubjectRequirementSetId)
+values
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD',					'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'CITY_FOLLOWS_PANTHEON_AND_HOLYSITE_REQUIREMENTS'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD_MODIFIER',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'HOLYSITE_TUNDRA_REQUIREMENTS'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD',				'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'CITY_FOLLOWS_PANTHEON_AND_HOLYSITE_REQUIREMENTS'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD_MODIFIER',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'HOLYSITE_TUNDRA_HILL_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+values
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD',					'ModifierId',			'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD_MODIFIER'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD_MODIFIER',			'YieldType',			'YIELD_FOOD'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_FOOD_MODIFIER',			'Amount',				1),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD',				'ModifierId',			'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD_MODIFIER'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
+	('DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_HILL_FOOD_MODIFIER',		'Amount',				1);
+update ModifierArguments set Value = 3 where ModifierId = 'DANCE_OF_THE_AURORA_HOLYSITE_TUNDRA_GREAT_PROPHET_MODIFIER' and Name = 'Amount';
+-- 沙漠民俗 & 神圣道路
+update ModifierArguments set Value = 3 where ModifierId = 'DESERT_FOLKLORE_HOLYSITE_DESERT_GREAT_PROPHET_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId = 'SACRED_PATH_HOLYSITE_JUNGLE_GREAT_PROPHET_MODIFIER' and Name = 'Amount';
+-- 城守删去城防能力
+delete from BeliefModifiers where BeliefType = 'BELIEF_CITY_PATRON_GODDESS' and ModifierId != 'CITY_PATRON_GODDESS_DISTRICT_PRODUCTION_MODIFIER';
+
+-- 新增万神殿矮人传说：资源矿1粮，所有矿2金1住房
+-- 新增万神殿巨石崇拜：采石场+1琴+3金
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('BELIEF_TALE_OF_DWALVES',                          'KIND_BELIEF'),
+    ('BELIEF_MEGALITHIC_WORSHIP',                       'KIND_BELIEF'),
+    ('MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',    'KIND_MODIFIER');
+insert or replace into DynamicModifiers
+    (ModifierType,	CollectionType,	EffectType)
+values
+    ('MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',    'COLLECTION_PLAYER_IMPROVEMENTS',   'EFFECT_ATTACH_MODIFIER');
+insert or replace into Beliefs
+    (BeliefType,	                Name,	                                 Description,	                                 BeliefClassType)
+values
+    ('BELIEF_TALE_OF_DWALVES',      'LOC_BELIEF_TALE_OF_DWALVES_NAME',      'LOC_BELIEF_TALE_OF_DWALVES_DESCRIPTION',       'BELIEF_CLASS_PANTHEON'),
+    ('BELIEF_MEGALITHIC_WORSHIP',   'LOC_BELIEF_MEGALITHIC_WORSHIP_NAME',   'LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION',    'BELIEF_CLASS_PANTHEON');
+update BeliefsSortIndex set SortIndex = SortIndex + 1 where SortIndex > 15 and SortIndex < 30;
+insert or replace into BeliefsSortIndex
+	(BeliefType,			        SortIndex)
+values
+	('BELIEF_TALE_OF_DWALVES',	    14),
+	('BELIEF_MEGALITHIC_WORSHIP',	16);
+insert or replace into BeliefModifiers
+    (BeliefType,                     ModifierId)
+values
+    ('BELIEF_TALE_OF_DWALVES',      'TALE_OF_DWALVES_BONUS_MINE_FOOD'),
+    ('BELIEF_TALE_OF_DWALVES',      'TALE_OF_DWALVES_LUXURY_MINE_FOOD'),
+    ('BELIEF_TALE_OF_DWALVES',      'TALE_OF_DWALVES_MINE_GOLD'),
+    ('BELIEF_TALE_OF_DWALVES',      'TALE_OF_DWALVES_MINE_HOUSING'),
+    ('BELIEF_MEGALITHIC_WORSHIP',   'MEGALITHIC_WORSHIP_QUARRY_CULTURE'),
+    ('BELIEF_MEGALITHIC_WORSHIP',   'MEGALITHIC_WORSHIP_QUARRY_GOLD');
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                                       SubjectRequirementSetId)
+values
+    ('TALE_OF_DWALVES_BONUS_MINE_FOOD',             'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_BONUS_MINE_FOOD_MODIFIER',    'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'PLOT_HAS_BONUS_MINE_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_LUXURY_MINE_FOOD',            'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_LUXURY_MINE_FOOD_MODIFIER',   'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'PLOT_HAS_LUXURY_MINE_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_MINE_GOLD',                   'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_MINE_GOLD_MODIFIER',          'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'PLOT_HAS_MINE_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_MINE_HOUSING',                'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_HAS_PANTHEON_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_MINE_HOUSING_MODIFIER',       'MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',     'PLOT_HAS_MINE_REQUIREMENTS'),
+    ('TALE_OF_DWALVES_MINE_HOUSING_MODIMODIFIER',   'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_HOUSING',  null),
+    ('MEGALITHIC_WORSHIP_QUARRY_CULTURE',           'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('MEGALITHIC_WORSHIP_QUARRY_CULTURE_MODIFIER',  'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'PLOT_HAS_QUARRY_REQUIREMENTS'),
+    ('MEGALITHIC_WORSHIP_QUARRY_GOLD',              'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',              'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+    ('MEGALITHIC_WORSHIP_QUARRY_GOLD_MODIFIER',     'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'PLOT_HAS_QUARRY_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,           Value)
+values
+    ('TALE_OF_DWALVES_BONUS_MINE_FOOD',             'ModifierId',   'TALE_OF_DWALVES_BONUS_MINE_FOOD_MODIFIER'),
+    ('TALE_OF_DWALVES_BONUS_MINE_FOOD_MODIFIER',    'YieldType',    'YIELD_FOOD'),
+    ('TALE_OF_DWALVES_BONUS_MINE_FOOD_MODIFIER',    'Amount',       1),
+    ('TALE_OF_DWALVES_LUXURY_MINE_FOOD',            'ModifierId',   'TALE_OF_DWALVES_LUXURY_MINE_FOOD_MODIFIER'),
+    ('TALE_OF_DWALVES_LUXURY_MINE_FOOD_MODIFIER',   'YieldType',    'YIELD_FOOD'),
+    ('TALE_OF_DWALVES_LUXURY_MINE_FOOD_MODIFIER',   'Amount',       1),
+    ('TALE_OF_DWALVES_MINE_GOLD',                   'ModifierId',   'TALE_OF_DWALVES_MINE_GOLD_MODIFIER'),
+    ('TALE_OF_DWALVES_MINE_GOLD_MODIFIER',          'YieldType',    'YIELD_GOLD'),
+    ('TALE_OF_DWALVES_MINE_GOLD_MODIFIER',          'Amount',       2),
+    ('TALE_OF_DWALVES_MINE_HOUSING',                'ModifierId',   'TALE_OF_DWALVES_MINE_HOUSING_MODIFIER'),
+    ('TALE_OF_DWALVES_MINE_HOUSING_MODIFIER',       'ModifierId',   'TALE_OF_DWALVES_MINE_HOUSING_MODIMODIFIER'),
+    ('TALE_OF_DWALVES_MINE_HOUSING_MODIMODIFIER',   'Amount',       1),
+    ('MEGALITHIC_WORSHIP_QUARRY_CULTURE',           'ModifierId',   'MEGALITHIC_WORSHIP_QUARRY_CULTURE_MODIFIER'),
+    ('MEGALITHIC_WORSHIP_QUARRY_CULTURE_MODIFIER',  'YieldType',    'YIELD_CULTURE'),
+    ('MEGALITHIC_WORSHIP_QUARRY_CULTURE_MODIFIER',  'Amount',       1),
+    ('MEGALITHIC_WORSHIP_QUARRY_GOLD',              'ModifierId',   'MEGALITHIC_WORSHIP_QUARRY_GOLD_MODIFIER'),
+    ('MEGALITHIC_WORSHIP_QUARRY_GOLD_MODIFIER',     'YieldType',    'YIELD_GOLD'),
+    ('MEGALITHIC_WORSHIP_QUARRY_GOLD_MODIFIER',     'Amount',       3);
+
+-- 教皇权威: 删除给使者，移动到强化
+delete from BeliefModifiers where BeliefType = 'BELIEF_PAPAL_PRIMACY' and ModifierId = 'RELIGIOUS_UNITY_ENVOY_ON_ADOPTION';
+update Beliefs set BeliefClassType = 'BELIEF_CLASS_ENHANCER' where BeliefType = 'BELIEF_PAPAL_PRIMACY';
+update BeliefsSortIndex set SortIndex =	194 where BeliefType = 'BELIEF_PAPAL_PRIMACY';
+update ModifierArguments set Value = 4 where ModifierId = 'PAPAL_PRIMACY_GOLD_PER_TRIBUTARY_MODIFIER' and Name = 'Amount';
+
+-- 法国UA
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_WONDER_TOURISM' and ModifierId = 'TRAIT_WONDER_BONUS_TO_CAPITAL';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_WONDER_TOURISM' and ModifierId = 'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL';
+insert or replace into GlobalParameters (Name,  Value) values ('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',  20);

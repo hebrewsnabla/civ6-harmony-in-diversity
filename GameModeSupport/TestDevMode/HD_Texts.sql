@@ -33,7 +33,9 @@ values
     ("LOC_BUILDING_APADANA_DESCRIPTION",                      "+2 [ICON_ENVOY] Envoys when you build a wonder, including Apadana, in this city. Must be built adjacent to your [ICON_CAPITAL] Capital."),
     ("LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",         "Gain 3 [ICON_Governor] Governor titles. All your cities not on your original [ICON_Capital] Capital's continent with a [ICON_Governor] Governor gain +15% [ICON_Production] Production, +15% [ICON_Faith] Faith and +15% [ICON_Gold] Gold. Must be built adjacent to a Government Plaza."),
     ("LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "+2 Diplomatic Victory Points and +4 [ICON_ENVOY] Envoys when built. Receive +100% [ICON_Favor] Diplomatic Favor per turn from starting a turn as Suzerain of a City-State.[NEWLINE][NEWLINE]Must be built next to a River."),
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as 3 [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain.");
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as 3 [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain."),
+    ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
+    ("LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "+20% [ICON_Production] Production toward Medieval, Renaissance, and Industrial era wonders. [ICON_Tourism] Tourism from wonders of any era is +200%. Each time you complete a Wonder, gain [ICON_GREATWRITER] Great Writer, [ICON_GREATARTIST] Great Artist and [ICON_GREATMUSICIAN] Great Musician Points each equals to 20% of its production cost.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                        Text)
@@ -54,7 +56,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",   "获得一个间谍并+1间谍容量。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有间谍行动的成功率上升。间谍执行任务的时间缩短25%，您的间谍可以选择任何可用升级。所有城市训练间谍时+50% [ICON_PRODUCTION] 生产力。每回合影响力点数+3。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。所有盟友的同盟点数每回合额外增加0.5点。获得1名 [ICON_ENVOY] 使者。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE", "“自由探索”黄金时代：[NEWLINE][ICON_TECHBOOSTED]尤里卡额外提供（对应科技所需科技总量的）10%。每个不同的区域和建筑为首都提供 +1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+5 [ICON_Food] 食物、+10%余粮、每回合提供5点忠诚度。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGIOUS_CONVERT_DESCRIPTION",                "无法建造圣地区、获得大预言家，或创建宗教。从已成为多数刚果城市信仰的宗教中获得信仰值。每次完成一个姆班赞或剧院广场区时获得一位（城市主流宗教的）使徒。首次建成姆班赞后，激活“神学”、“王权神授”和“归正会”市政 [ICON_CivicBoosted] 鼓舞。采用神权政体时，有姆班赞的城市每个人口产出1 [ICON_FAITH] 信仰。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGIOUS_CONVERT_DESCRIPTION",                "无法建造圣地区、获得大预言家，或创建宗教。从已成为多数刚果城市信仰的宗教中获得创始人信条加成。每次完成一个姆班赞或剧院广场区时获得一位（城市主流宗教的）使徒。首次建成姆班赞后，激活“神学”、“王权神授”和“归正会”市政 [ICON_CivicBoosted] 鼓舞。采用神权政体时，有姆班赞的城市每个人口产出1 [ICON_FAITH] 信仰。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MEENAKSHI_TEMPLE_DESCRIPTION",            "获得2名上师。圣地提供 +2 [ICON_FOOD] 食物，每个圣地建筑提供 +4 [ICON_FOOD] 食物。允许您的城市使用 [ICON_Faith] 信仰值购买建造者和开拓者。必须建在圣地旁，同时必须已创立宗教。"),
     ("zh_Hans_CN",  "LOC_BUILDING_KILWA_KISIWANI_DESCRIPTION",               "建成后+3 [ICON_ENVOY] 使者。对于每一类城邦，若你是其中至少1个的宗主国，本城中此类城邦对应的产出+15%；若你是其中至少2个的宗主国，本城中此类城邦对应的产出额外+15%。必须建造在与海岸相邻的平坦地形上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4外交胜利点数。为9个单元格以内的所有海岸城市市中心提供：+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得当前可在该区域中建造的、所需 [ICON_PRODUCTION] 生产力最低的建筑。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。"),
@@ -63,7 +65,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_APADANA_DESCRIPTION",                      "在此城市中建造奇观（包括阿帕达纳宫）时+2 [ICON_ENVOY] 使者。必须建造在 [ICON_CAPITAL] 首都旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CASA_DE_CONTRATACION_DESCRIPTION",         "获得3次 [ICON_Governor] 总督升级。所有与原始 [ICON_Capital] 首都不在同一大陆、且拥有 [ICON_Governor] 总督的城市 [ICON_Production] 生产力+15%、[ICON_Faith] 信仰值+15%、[ICON_Gold] 金币+15%。必须建造在市政广场旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ORSZAGHAZ_DESCRIPTION",                    "建成时+2外交胜利点数，+4 [ICON_ENVOY] 使者。成为一座城邦的宗主国后，每回合从此城邦获得的 [ICON_Favor] 外交支持+100%。[NEWLINE][NEWLINE]必须修建在河边。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。");
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "为中世纪、文艺复兴时期和工业时代的奇观+20% [ICON_Production] 生产力。 所有奇观的 [ICON_Tourism] 旅游业绩+200%。完成奇观时，获得各等同于其所需生产力20%的 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家点数。");
 
 -- 城邦加成文本
 update LocalizedText set Text = '首都和' || Text where Language = 'zh_Hans_CN' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';
@@ -166,3 +170,34 @@ values
 
 UPDATE LocalizedText SET Text=REPLACE(Text, 'Shipyard and Seaport','Entrepot, Haven, Shipyard, Seaport, Cruise Terminal and Naval Base') WHERE Tag = 'LOC_CIVILIZATION_CARDIFF_BONUS' or Tag = 'LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION';
 UPDATE LocalizedText SET Text=REPLACE(Text, '造船厂和码头','商港、避风港、造船厂、海港、游轮码头和海军基地') WHERE Tag = 'LOC_CIVILIZATION_CARDIFF_BONUS' or Tag = 'LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION';
+
+-- 万神
+insert or replace into EnglishText
+    (Tag,                                           Text)
+values
+    ("LOC_BELIEF_OLD_GOD_OF_THE_FORGE_NAME",                   "Old God of the Forge"),
+    ("LOC_BELIEF_OLD_GOD_OF_THE_FORGE_DESCRIPTION",            "+50% [ICON_PRODUCTION] Production toward Ancient, Classical and Medieval military units. Receive 40% discount on Strategic resource costs for units."),
+    ("LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",             "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Tundra tile. Holy Site provides +1 [ICON_Food] Food to all adjacent Tundra tiles. +3 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Tundra or Tundra Hills tiles. "),
+    ("LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION",                 "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Desert tile. Holy Site provides +1 [ICON_Food] Food and +1 [ICON_Faith] Faith to all adjacent Desert tiles. +3 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is located on Desert or Desert Hills tiles."),
+    ("LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "Holy Site districts get +1 [ICON_Faith] Faith from each adjacent Rainforest tile. Holy Site provides +1 [ICON_Culture] Culture to all adjacent Rainforest tiles.+3 [ICON_GreatProphet] Great Prophet point per turn if Holy Site is adjacent to Rainforest tiles."),
+    ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each adjacent Coast tile. +1 [ICON_Housing] Housing and +2 [ICON_GreatProphet] Great Prophet point per turn for cities that adjacent to Coasts."),
+    ("LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "+75% [ICON_Production] Production towards Districts in cities without a Specialty district."),
+    ("LOC_BELIEF_TALE_OF_DWALVES_NAME",                         "Tale of Dwalves"),
+    ("LOC_BELIEF_TALE_OF_DWALVES_DESCRIPTION",                  "+1 [ICON_FOOD] Food from Mines over Luxury and Bonus resources. +2 [ICON_GOLD] Gold and +1 [ICON_HOUSING] Housing from all Mines."),
+    ("LOC_BELIEF_MEGALITHIC_WORSHIP_NAME",                      "Megalithic Worship"),
+    ("LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",               "Quarries provide +1 [ICON_CULTURE] Culture and +3 [ICON_GOLD] Gold.");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                        Text)
+values
+    ("zh_Hans_CN",  "LOC_BELIEF_OLD_GOD_OF_THE_FORGE_NAME",                   "锻造之神（怀旧版）"),
+    ("zh_Hans_CN",  "LOC_BELIEF_OLD_GOD_OF_THE_FORGE_DESCRIPTION",            "为远古、古典和中世纪军事单位+50% [ICON_PRODUCTION] 生产力。生产单位所需战略资源花费减少40%。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",             "圣地区域从每个相邻的冻土单元格+1 [ICON_Faith] 信仰值。未被劫掠过的圣地给相邻的冻土单元格+1 [ICON_Food] 食物。若圣地位于冻土或冻土丘陵则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION",                 "圣地区域从每个相邻的沙漠单元格+1 [ICON_Faith] 信仰值。未被劫掠过的圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。若圣地位于沙漠或沙漠丘陵则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "圣地区域从每个相邻的雨林的单元格+1 [ICON_Faith] 信仰值。未被劫掠过的圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+3 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "市中心相邻每个海岸单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。相邻海岸的市中心+1 [ICON_Housing] 住房，且城市每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION",             "没有专业化区域的城市建造区域+75% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_TALE_OF_DWALVES_NAME",                         "矮人传说"),
+    ("zh_Hans_CN",  "LOC_BELIEF_TALE_OF_DWALVES_DESCRIPTION",                  "改良奢侈和加成资源的矿山+1 [ICON_FOOD] 食物。所有矿山+2 [ICON_GOLD] 金币，+1 [ICON_HOUSING] 住房。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_MEGALITHIC_WORSHIP_NAME",                      "巨石崇拜"),
+    ("zh_Hans_CN",  "LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",               "采石场+1 [ICON_CULTURE] 文化值，+3 [ICON_GOLD] 金币。");;
