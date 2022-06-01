@@ -324,10 +324,11 @@ insert or replace into BuildingModifiers
 values
     ('BUILDING_MEENAKSHI_TEMPLE',   'MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD');
 insert or replace into Modifiers
-    (ModifierId,                                    ModifierType)
+    (ModifierId,                                    ModifierType,                                           SubjectRequirementSetId)
 values
-    ('MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD',     'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER'),
-    ('MEENAKSHI_TEMPLE_HOLY_SITE_FOOD',            'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE');
+    ('MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD',     'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'DISTRICT_IS_HOLY_SITE'),
+    ('MEENAKSHI_TEMPLE_HOLY_SITE_FOOD',            'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',     null);
+
 insert or replace into ModifierArguments
     (ModifierId,                                Name,           Value)
 values

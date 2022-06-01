@@ -36,7 +36,12 @@ values
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as 3 [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain."),
     ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
     ("LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "+20% [ICON_Production] Production toward Medieval, Renaissance, and Industrial era wonders. [ICON_Tourism] Tourism from wonders of any era is +200%. Each time you complete a Wonder, gain [ICON_GREATWRITER] Great Writer, [ICON_GREATARTIST] Great Artist and [ICON_GREATMUSICIAN] Great Musician Points each equals to 20% of its production cost."),
-    ("LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "+1 Era Score from Historic Moment earned after this wonder is complete if that Moment is usually worth 2 or more Era Score. +8 [ICON_GOLD] Gold for all world wonders in your empire. Each time you complete a wonder, gain [ICON_GOLD] Gold equal to 80% of its production cost.[NEWLINE][NEWLINE]Must be built next to a River.");
+    ("LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "+1 Era Score from Historic Moment earned after this wonder is complete if that Moment is usually worth 2 or more Era Score. +8 [ICON_GOLD] Gold for all world wonders in your empire. Each time you complete a wonder, gain [ICON_GOLD] Gold equal to 80% of its production cost.[NEWLINE][NEWLINE]Must be built next to a River."),
+    ("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "1 [ICON_ENVOY] Envoy:"),
+    ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "1 [ICON_ENVOY] Envoys:"),
+    ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "3 [ICON_ENVOY] Envoys:"),
+    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "6 [ICON_ENVOY] Envoys:"),
+    ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "3 [ICON_Envoy] Envoys, and more than any other civilization:");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                        Text)
@@ -69,7 +74,12 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "为中世纪、文艺复兴时期和工业时代的奇观+20% [ICON_Production] 生产力。 所有奇观的 [ICON_Tourism] 旅游业绩+200%。完成奇观时，获得各等同于其所需生产力20%的 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家点数。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。所有世界奇观+8 [ICON_GOLD] 金币。完成世界奇观后返还等同于奇观所需产能80%的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]必须建在河流旁。");
+    ("zh_Hans_CN",  "LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。所有世界奇观+8 [ICON_GOLD] 金币。完成世界奇观后返还等同于奇观所需产能80%的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]必须建在河流旁。"),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "派遣1位 [ICON_Envoy] 使者："),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "派遣1位 [ICON_Envoy] 使者："),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "派遣3位 [ICON_Envoy] 使者："),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "派遣6位 [ICON_Envoy] 使者："),
+    ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "已派至少3位 [ICON_Envoy] 使者，并多于其他文明：");
 
 -- 城邦加成文本
 update LocalizedText set Text = '首都和' || Text where Language = 'zh_Hans_CN' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';
