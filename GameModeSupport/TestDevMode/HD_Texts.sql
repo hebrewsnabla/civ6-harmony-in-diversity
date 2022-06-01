@@ -41,7 +41,8 @@ values
     ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "1 [ICON_ENVOY] Envoys:"),
     ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "3 [ICON_ENVOY] Envoys:"),
     ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "6 [ICON_ENVOY] Envoys:"),
-    ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "3 [ICON_Envoy] Envoys, and more than any other civilization:");
+    ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "3 [ICON_Envoy] Envoys, and more than any other civilization:"),
+    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "Holy Site buildings in cities with a Worship building provide [ICON_TOURISM] Tourism equal to their intrinsic [ICON_FAITH] Faith yield. +2 Influence Points from each Worship building. Must be built along a River.");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                        Text)
@@ -79,7 +80,8 @@ values
     ("zh_Hans_CN",  "LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "派遣1位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "派遣3位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "派遣6位 [ICON_Envoy] 使者："),
-    ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "已派至少3位 [ICON_Envoy] 使者，并多于其他文明：");
+    ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "已派至少3位 [ICON_Envoy] 使者，并多于其他文明："),
+    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "有祭祀建筑的城市内的圣地建筑产出等同于基础 [ICON_FAITH] 信仰产出的 [ICON_TOURISM] 旅游业绩。祭祀建筑+2影响力点数。必须建在临近河流的单元格中。");
 
 -- 城邦加成文本
 update LocalizedText set Text = '首都和' || Text where Language = 'zh_Hans_CN' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';
