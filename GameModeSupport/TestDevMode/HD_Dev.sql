@@ -345,7 +345,7 @@ from HolySiteBuildings;
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType)
 select
-    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'MODIFIER_BUILDING_YIELD_CHANGE'
+    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
 from HolySiteBuildings;
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,           Value)
