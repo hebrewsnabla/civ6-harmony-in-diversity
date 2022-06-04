@@ -443,7 +443,7 @@ insert or ignore into ModifierArguments(ModifierId,                            N
     from JohannesburgImprovementType;
 -- 哈瓦那
 delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_HAVANA_TRAIT' and ModifierId = 'MINOR_CIV_CSE_HAVANA_CULTURE_BONUS';
-delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_HAVANA_TRAIT' and ModifierId = 'MINOR_CIV_CSE_HAVANA_COASTAL_CULTURE_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_CSE_HAVANA_TRAIT' and ModifierId = 'MINOR_CIV_CSE_HAVANA_BREATHTAKING_CULTURE_BONUS';
 -- 吉布提
 insert or ignore into RequirementSets
     (RequirementSetId,                          RequirementSetType)
