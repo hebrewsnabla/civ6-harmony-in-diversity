@@ -32,8 +32,8 @@ values
 
     ("LOC_BELIEF_MESSIAH_NAME",                               "Messiah"),
     ("LOC_BELIEF_ABBOT_NAME",                                 "Abbot"),
-    ("LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "All Holy Site buildings provide +4 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing. "),
-    ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "All Holy Site buildings provide +4 [ICON_CULTURE] Culture. "),
+    ("LOC_BELIEF_FEED_THE_WORLD_DL_DESCRIPTION",              "All Holy Site buildings provide +4 [ICON_FOOD] Food and +2 [ICON_HOUSING] Housing. +1% [ICON_FOOD] Food for every follower of this Religion."),
+    ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "All Holy Site buildings provide +4 [ICON_CULTURE] Culture.  +1% [ICON_CULTURE] Culture for every follower of this Religion. "),
     ("LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "All Holy Site buildings provide +0.5 [ICON_SCIENCE] Science for each [ICON_CITIZEN] citizen in this city. Campus district buildings are 20% cheaper to purchase. May purchase Campus district buildings with [ICON_FAITH] Faith. "),
     ("LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "All Holy Site buildings provide +1 [ICON_SCIENCE] Science for international [ICON_TradeRoute] Trade Routes, and +1 [ICON_SCIENCE] Science for both sides of international [ICON_TradeRoute] Trade Routes to this city. May purchase trader units with [ICON_Faith] Faith. Traders are 20% cheaper to purchase. "),
     ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "All Holy Site buildings provide +8% [ICON_Faith] Faith to the city. Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith."),
