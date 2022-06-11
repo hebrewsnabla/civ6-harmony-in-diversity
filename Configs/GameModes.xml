@@ -57,7 +57,7 @@
 		<Row QueryId="AiTestModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_AITEST" Operator="Equals" ConfigurationValue="1"/>
 	</QueryCriteria>
 	<!-- DevTestMode -->
-	<!-- <Parameters>
+	<Parameters>
 		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Devtest" Name="LOC_GAMEMODE_DEVTEST_NAME" Description="LOC_GAMEMODE_DEVTEST_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_DEVTEST" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
 	</Parameters>
 	<ParameterCriteria>
@@ -68,7 +68,7 @@
 	</ParameterDependencies>
 	<GameModeItems>
 		<Row GameModeType="GAMEMODE_DEVTEST" Name="LOC_GAMEMODE_DEVTEST_NAME" Description="LOC_GAMEMODE_DEVTEST_DESCRIPTION" Portrait="GAMEMODE_TREE_RANDOMIZER_NEUTRAL" Background="GAMEMODE_TREE_RANDOMIZER_BACKGROUND" Icon="ICON_GAMEMODE_DEVTEST" SortIndex="10"/>
-	</GameModeItems> -->
+	</GameModeItems>
 	<!-- Mode-based Player Overrides -->
 	<!-- <PlayerInfoOverrideQueries>
 		<Row QueryId="DevTestModePlayerInfoOverrides"/>

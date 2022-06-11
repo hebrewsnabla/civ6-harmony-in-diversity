@@ -233,3 +233,6 @@ values
 update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';
 --市中心改为3粮2锤
 update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
+
+insert or replace into GlobalParameters (Name, Value) values ('HUNGARY_ENVOY_NUMBER', 1);
+insert or replace into GlobalParameters (Name, Value) values ('TAJ_MAHAL_GOLD', 45);

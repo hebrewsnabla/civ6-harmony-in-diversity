@@ -213,6 +213,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria> -->
+    <Criteria id="DevTest_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_DEVTEST</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="AITest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1395,20 +1403,30 @@
       <File>GameModeSupport/TreeRandomizerMode/HD_CivTechs.sql</File>
     </UpdateDatabase>
     <!-- Dev Test -->
-    <!-- <UpdateDatabase id="DevTest_update" criteria="AITest_Mode_Expansion2">
-      <Properties><LoadOrder>18000</LoadOrder></Properties>
-      <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
-      <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
-      <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
+    <UpdateDatabase id="DevTest_update" criteria="DevTest_Mode_Expansion2">
+      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     </UpdateDatabase>
-    <UpdateText id="DevTest_update_text" criteria="AITest_Mode_Expansion2">
-      <Properties><LoadOrder>18001</LoadOrder></Properties>
+    <UpdateIcons id="DevTest_icons" criteria="DevTest_Mode_Expansion2">
+      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="DevTest_update_text" criteria="DevTest_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
-    <UpdateIcons id="DevTest_update_icon" criteria="AITest_Mode_Expansion2">
-      <Properties><LoadOrder>18001</LoadOrder></Properties>
-      <File>GameModeSupport/TestDevMode/HD_Icons.xml</File>
-    </UpdateIcons> -->
+    <ImportFiles id="DevTest_CityStates_Import" criteria="DevTest_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/TestDevMode/citystates.xml</File>
+      <File>GameModeSupport/TestDevMode/citystates.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="DevTest_CityStates_UI" criteria="DevTest_Mode_Expansion2">
+      <Properties>
+        <LoadOrder>19001</LoadOrder>
+        <LuaContext>CityStates</LuaContext>
+        <LuaReplace>GameModeSupport/TestDevMode/citystates.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1542,11 +1560,11 @@
     <File>GameModeSupport/TestAiMode/DL_AI.sql</File>
     <File>GameModeSupport/TestAiMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
-    <!-- <File>GameModeSupport/TestDevMode/DL_GameCapabilities.sql</File>
-    <File>GameModeSupport/TestDevMode/DL_Dev.sql</File>
-    <File>GameModeSupport/TestDevMode/DL_Temp.sql</File>
+    <File>GameModeSupport/TestDevMode/icons.xml</File>
+    <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
-    <File>GameModeSupport/TestDevMode/HD_Icons.xml</File> -->
+    <File>GameModeSupport/TestDevMode/citystates.lua</File>
+    <File>GameModeSupport/TestDevMode/citystates.xml</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>

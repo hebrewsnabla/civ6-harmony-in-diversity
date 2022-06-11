@@ -296,7 +296,7 @@ function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
         local sLeader = pPlayerConfig:GetLeaderTypeName()
         local sConquerEnvoy = 'TRAIT_LEADER_RAVEN_KING'
         if LeaderHasTrait(sLeader, sConquerEnvoy) then
-            pPlayer:GetInfluence():ChangeTokensToGive(1)    
+            pPlayer:GetInfluence():ChangeTokensToGive(GlobalParameters.HUNGARY_ENVOY_NUMBER)    
         end
     end
 end
@@ -359,6 +359,25 @@ function OnUnitGreatPersonCreatedBrazil(playerID, unitID, greatPersonClassID, gr
 	end
 end
 Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreatedBrazil)
+
+-- 法国UA改动, by xiaoxiao
+local WRITER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index;
+local ARTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ARTIST'].Index;
+local MUSICIAN_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MUSICIAN'].Index;
+function FranceWonderGreatPeoplePoint (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+	local player = Players[playerId];
+	local playerConfig = PlayerConfigurations[playerId];
+	local civ = playerConfig:GetCivilizationTypeName();
+	if CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_WONDER_TOURISM') then
+        local building = GameInfo.Buildings[buildingId];
+        local amount = building.Cost * (GlobalParameters.FRANCE_WONDER_GREATPEOPLE_PERCENTAGE or 0) * 0.01;
+        player:GetGreatPeoplePoints():ChangePointsTotal(WRITER_INDEX, amount);
+        player:GetGreatPeoplePoints():ChangePointsTotal(ARTIST_INDEX, amount);
+        player:GetGreatPeoplePoints():ChangePointsTotal(MUSICIAN_INDEX, amount);
+	end
+end
+
+Events.WonderCompleted.Add(FranceWonderGreatPeoplePoint);
 
 -- -- Netherlands
 -- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
