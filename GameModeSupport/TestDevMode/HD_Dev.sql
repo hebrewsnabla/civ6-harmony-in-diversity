@@ -386,11 +386,12 @@ update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualT
 -- 加的夫
 update ModifierArguments set Value = 0 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
 -- 奥克兰
+delete from TraitModifiers where TraitType = 'MINOR_CIV_AUCKLAND_TRAIT';
 insert or replace into TraitModifiers
     (TraitType,                     ModifierId)
 values
-    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE'),
-    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL');
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE2'),
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL2');
 insert or replace into RequirementSets
     (RequirementSetId,                                      RequirementSetType)
 values
@@ -895,3 +896,6 @@ insert or replace into ModifierArguments
 values  
     ('WAT_ARUN_INFLUENCE_ATTACH',   'ModifierId',   'WAT_ARUN_INFLUENCE'),
     ('WAT_ARUN_INFLUENCE',          'Amount',       2);
+
+-- 荷兰跳探索
+insert or replace into GlobalParameters (Name,  Value) values ('NETHERLANDS_EXPLORATION',  1);

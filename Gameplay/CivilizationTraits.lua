@@ -379,6 +379,32 @@ end
 
 Events.WonderCompleted.Add(FranceWonderGreatPeoplePoint);
 
+-- 荷兰跳探索, by xiaoxiao
+local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;
+function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, unknown2)
+	if not GlobalParameters.NETHERLANDS_EXPLORATION then
+		return;
+	end
+	local player = Players[playerId];
+	local playerConfig = PlayerConfigurations[playerId];
+	local civ = playerConfig:GetCivilizationTypeName();
+	if CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_GROTE_RIVIEREN') then
+		local building = GameInfo.Buildings[buildingId];
+		print( building.PrereqDistrict);
+		if building.PrereqDistrict == 'DISTRICT_HARBOR' then
+			print('building');
+			if player:GetCulture():HasBoostBeenTriggered(EXPLORATION_INDEX) then
+				local cost = player:GetCulture():GetCultureCost(EXPLORATION_INDEX);
+				player:GetCulture():SetCulturalProgress(EXPLORATION_INDEX, cost);
+			else
+				print('nothasboost');
+				player:GetCulture():TriggerBoost(EXPLORATION_INDEX, 1);
+			end
+		end
+	end
+end
+Events.BuildingAddedToMap.Add(NetherlandsBuildingAddedToMap);
+
 -- -- Netherlands
 -- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
 -- local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index

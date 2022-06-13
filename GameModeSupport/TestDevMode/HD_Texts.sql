@@ -42,7 +42,8 @@ values
     ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "3 [ICON_ENVOY] Envoys:"),
     ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "6 [ICON_ENVOY] Envoys:"),
     ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "3 [ICON_Envoy] Envoys, and more than any other civilization:"),
-    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "Holy Site buildings in cities with a Worship building provide [ICON_TOURISM] Tourism equal to their intrinsic [ICON_FAITH] Faith yield. +2 Influence Points from each Worship building. Must be built along a River.");
+    ("LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "Holy Site buildings in cities with a Worship building provide [ICON_TOURISM] Tourism equal to their intrinsic [ICON_FAITH] Faith yield. +2 Influence Points from each Worship building. Must be built along a River."),
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +20% [ICON_Production] Production toward Districts in cities with a Harbor district. +50% construction speed toward the Dam district, Shipyard and Flood Barrier buildings. Tiles next to a River provide +1 [ICON_PRODUCTION] Production for each Dam district owned by the City. Grant [ICON_CIVICBOOSTED] Inspiration to Civic 'Exploration' for each time a Harbor building is constructed (complete 'Exploration' if already boosted).");
 
 insert or replace into LocalizedText
     (Language,      Tag,                                        Text)
@@ -81,7 +82,8 @@ values
     ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "派遣3位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "派遣6位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "已派至少3位 [ICON_Envoy] 使者，并多于其他文明："),
-    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "有祭祀建筑的城市内的圣地建筑产出等同于基础 [ICON_FAITH] 信仰产出的 [ICON_TOURISM] 旅游业绩。祭祀建筑+2影响力点数。必须建在临近河流的单元格中。");
+    ("zh_Hans_CN",  "LOC_BUILDING_SUK_WAT_ARUN_DESCRIPTION",             "有祭祀建筑的城市内的圣地建筑产出等同于基础 [ICON_FAITH] 信仰产出的 [ICON_TOURISM] 旅游业绩。祭祀建筑+2影响力点数。必须建在临近河流的单元格中。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。每次完成港口建筑时，触发探索 [ICON_CIVICBOOSTED] 鼓舞，若已触发，则直接完成探索市政。");
 
 -- 城邦加成文本
 update LocalizedText set Text = '首都和' || Text where Language = 'zh_Hans_CN' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';
