@@ -382,7 +382,7 @@ Events.WonderCompleted.Add(FranceWonderGreatPeoplePoint);
 -- 荷兰跳探索, by xiaoxiao
 local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;
 function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, unknown2)
-	if not GlobalParameters.NETHERLANDS_EXPLORATION then
+	if GlobalParameters.NETHERLANDS_EXPLORATION ~= 1 then
 		return;
 	end
 	local player = Players[playerId];
