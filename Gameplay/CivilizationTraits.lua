@@ -390,15 +390,12 @@ function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, un
 	local civ = playerConfig:GetCivilizationTypeName();
 	if CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_GROTE_RIVIEREN') then
 		local building = GameInfo.Buildings[buildingId];
-		print( building.PrereqDistrict);
 		if building.PrereqDistrict == 'DISTRICT_HARBOR' then
-			print('building');
-			if player:GetCulture():HasBoostBeenTriggered(EXPLORATION_INDEX) then
+			if not player:GetCulture():HasBoostBeenTriggered(EXPLORATION_INDEX) then
+				player:GetCulture():TriggerBoost(EXPLORATION_INDEX, 1);
+			elseif not player:GetCulture():HasCivic(EXPLORATION_INDEX) then
 				local cost = player:GetCulture():GetCultureCost(EXPLORATION_INDEX);
 				player:GetCulture():SetCulturalProgress(EXPLORATION_INDEX, cost);
-			else
-				print('nothasboost');
-				player:GetCulture():TriggerBoost(EXPLORATION_INDEX, 1);
 			end
 		end
 	end
