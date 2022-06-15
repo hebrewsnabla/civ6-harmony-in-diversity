@@ -390,8 +390,8 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_AUCKLAND_TRAIT';
 insert or replace into TraitModifiers
     (TraitType,                     ModifierId)
 values
-    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE2'),
-    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL2');
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE'),
+    ('MINOR_CIV_AUCKLAND_TRAIT',    'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL');
 insert or replace into RequirementSets
     (RequirementSetId,                                      RequirementSetType)
 values
@@ -399,7 +399,7 @@ values
 insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'HD_REQUIRES_PLAYER_HAS_TECH_STEAM_POWER');
-update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL';
+update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_SHALLOW_WATER_PRODUCTION_BONUS_INDUSTRIAL';
 -- 拜科努尔
 delete from TraitModifiers where TraitType = 'MINOR_CIV_HONG_KONG_TRAIT' and ModifierId = 'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS';
 -- 布鲁塞尔
