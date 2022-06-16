@@ -386,6 +386,7 @@ update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualT
 -- 加的夫
 update ModifierArguments set Value = 0 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
 -- 奥克兰
+delete from TraitModifiers where TraitType = 'MINOR_CIV_AUCKLAND_TRAIT';
 insert or replace into TraitModifiers
     (TraitType,                     ModifierId)
 values
@@ -398,7 +399,7 @@ values
 insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'HD_REQUIRES_PLAYER_HAS_TECH_STEAM_POWER');
-update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_INDUSTRIAL';
+update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_SHALLOW_WATER_PRODUCTION_BONUS_INDUSTRIAL';
 -- 拜科努尔
 delete from TraitModifiers where TraitType = 'MINOR_CIV_HONG_KONG_TRAIT' and ModifierId = 'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS';
 -- 布鲁塞尔
@@ -895,3 +896,6 @@ insert or replace into ModifierArguments
 values  
     ('WAT_ARUN_INFLUENCE_ATTACH',   'ModifierId',   'WAT_ARUN_INFLUENCE'),
     ('WAT_ARUN_INFLUENCE',          'Amount',       2);
+
+-- 荷兰跳探索
+insert or replace into GlobalParameters (Name,  Value) values ('NETHERLANDS_EXPLORATION',  1);
