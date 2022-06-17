@@ -236,3 +236,5 @@ update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAI
 
 insert or replace into GlobalParameters (Name, Value) values ('HUNGARY_ENVOY_NUMBER', 1);
 insert or replace into GlobalParameters (Name, Value) values ('TAJ_MAHAL_GOLD', 45);
+insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_PRODUCTION_RATE', 20);
+insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_STRATEGIC_MULTIPLIER', 5);
