@@ -18,3 +18,27 @@ function OnCombat (combatResult)
 end
 
 Events.Combat.Add(OnCombat)
+
+-- 垃圾回收中心, by xiaoxiao
+function HDRecyclingPlantRecycle (playerId, unitId)
+    local unit = UnitManager.GetUnit(playerId, unitId);
+    local unitInfo = GameInfo.Units[unit:GetType()];
+    local cost = unitInfo.Cost;
+    local costRate = GlobalParameters.RECYCLING_PLANT_PRODUCTION_RATE or 0;
+    local resourceCost = 0;
+    for row in GameInfo.Units_XP2() do
+        if row.UnitType == unitInfo.UnitType then
+            resourceCost = row.ResourceCost;
+        end
+    end
+    local resourceCostMultiplier = GlobalParameters.RECYCLING_PLANT_STRATEGIC_MULTIPLIER or 0;
+    local production = costRate * cost / 100 + resourceCostMultiplier * resourceCost;
+    
+	local location = unit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local district = CityManager.GetDistrictAt(x, y);
+	local city = district:GetCity();
+    city:GetBuildQueue():AddProgress(production);
+end
+GameEvents.HDRecyclingPlantRecycle.Add(HDRecyclingPlantRecycle);
