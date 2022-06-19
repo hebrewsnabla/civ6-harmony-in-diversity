@@ -380,6 +380,7 @@ values
 insert or replace into GovernorPromotionModifiers (GovernorPromotionType,ModifierId) values
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'CITY_DEFENDER_FREE_PROMOTIONS'),
 	('GOVERNOR_PROMOTION_CONSCRIPTION',	'VICTOR_SCIENCE_TRAINED_UNIT');
+update Modifiers set SubjectRequirementSetId = 'HD_CITY_DEFENDER_PROMOTION_REQUIREMENTS' where ModifierId = 'CITY_DEFENDER_FREE_PROMOTIONS';
 
 -- update Modifiers set Permanent = 0 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT';
 -- update Modifiers set RunOnce = 0 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT';
@@ -961,7 +962,7 @@ values
 	('AMANI_GRANT_SPY_FREE_PROMOTION_MODIFIER',			'AbilityType',				'ABILITY_AMANI_FERR_PROMOTION'),
 	('AMANI_DEFFENSE',									'Offense',					0),
 	('AMANI_DEFFENSE',									'Amount',					1),
-	('AMANI_EXTRA_ENVOY',								'Amount',					2),
+	('AMANI_EXTRA_ENVOY',								'Amount',					1),
 	('AMANI_HALF_RAJ_GOLD',								'YieldType',				'YIELD_GOLD'),
 	('AMANI_HALF_RAJ_GOLD',								'Amount',					1),
 	('AMANI_HALF_RAJ_SCIENCE',							'YieldType',				'YIELD_SCIENCE'),

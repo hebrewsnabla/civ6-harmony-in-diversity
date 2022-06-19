@@ -430,18 +430,6 @@ update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_PREPAR
 update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLING_BARRAGE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
-update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
-update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
-update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
-update UnitPromotions set Level = 4 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_LOOT';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
-delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_AUTO_SOLICITATION';
-insert or replace into UnitPromotionPrereqs
-	(UnitPromotion, 					PrereqUnitPromotion)
-values
-	('PROMOTION_AUTO_SOLICITATION',		'PROMOTION_WOLFPACK');
 
 update Units set PrereqTech = 'TECH_ROCKETRY' where UnitType = 'UNIT_BOMBER';
 ------------------------------------------------------------------------------------------------

@@ -105,7 +105,7 @@ update UnitReplaces set ReplacesUnitType = 'UNIT_WW1_INFANTRY' where CivUniqueUn
     and exists (select UnitType from Units where UnitType = 'UNIT_WW1_INFANTRY');
 ------ UNIT_AUSTRALIAN_SASR
 -- 波兰
-update Units set Cost = 260, Maintenance = 5, BaseMoves = 4, Range = 0, Combat = 76, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
+update Units set Cost = 260, Maintenance = 5, BaseMoves = 4, Range = 0, Combat = 73, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_POLISH_HUSSAR';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_HUSSAR';
 ------ UNIT_POLISH_CHOSEN_INFANTRY
 -- 阿兹特克

@@ -35,18 +35,18 @@ end
 
 GameEvents.BuildingConstructed.Add(PotalaPalaceIncreaseFaithAmount)
 
-function TajOnPlayerEraScoreChanged(playerID, amountAwarded)
-    local player = Players[playerID]
-    local buildingID = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index
-    if player ~= nil then
-        -- print(player)
-        if player:IsMajor() and Utils.HasBuildingWithinCountry(playerID, buildingID) then
-            player:GetTreasury():ChangeGoldBalance(amountAwarded * GlobalParameters.TAJ_MAHAL_GOLD)
-        end
-    end
-end
+--function TajOnPlayerEraScoreChanged(playerID, amountAwarded)
+--    local player = Players[playerID]
+--    local buildingID = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index
+--    if player ~= nil then
+--        -- print(player)
+--        if player:IsMajor() and Utils.HasBuildingWithinCountry(playerID, buildingID) then
+--            player:GetTreasury():ChangeGoldBalance(amountAwarded * 45)
+--        end
+--    end
+--end
 
-Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
+--Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
 
 -- 泰姬陵 金币版神灵启示, by xiaoxiao
 local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;

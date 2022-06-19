@@ -289,18 +289,18 @@ end
 GameEvents.ProjectEnemyCitiesChangeLoyaltySwitch.Add(ProjectJudgementOfLove)
 
 -- Hungary Conquer Envoy
-function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
-    local pPlayer = Players[newPlayerID]
-    if pPlayer ~= nil then
-        local pPlayerConfig = PlayerConfigurations[newPlayerID]
-        local sLeader = pPlayerConfig:GetLeaderTypeName()
-        local sConquerEnvoy = 'TRAIT_LEADER_RAVEN_KING'
-        if LeaderHasTrait(sLeader, sConquerEnvoy) then
-            pPlayer:GetInfluence():ChangeTokensToGive(GlobalParameters.HUNGARY_ENVOY_NUMBER)    
-        end
-    end
-end
-GameEvents.CityConquered.Add(ConquerEnvoy)
+--function ConquerEnvoy(newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
+--    local pPlayer = Players[newPlayerID]
+--    if pPlayer ~= nil then
+--        local pPlayerConfig = PlayerConfigurations[newPlayerID]
+--        local sLeader = pPlayerConfig:GetLeaderTypeName()
+--        local sConquerEnvoy = 'TRAIT_LEADER_RAVEN_KING'
+--        if LeaderHasTrait(sLeader, sConquerEnvoy) then
+--            pPlayer:GetInfluence():ChangeTokensToGive(1)
+--        end
+--    end
+--end
+--GameEvents.CityConquered.Add(ConquerEnvoy)
 
 -- 刚果
 function MBANZABoost(playerID, districtID, iX, iY)

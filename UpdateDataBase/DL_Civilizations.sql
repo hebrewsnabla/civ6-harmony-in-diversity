@@ -294,6 +294,28 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('TRAIT_ALL_LAND_UNITS_IGNORE_WOODS',	'AbilityType',	'ABILITY_KONGO_IGNORE_WOODS');
+-- 拥有姆班赞的城市享受神权的人头鸽收益
+insert or replace into Requirements
+    (RequirementId,                             RequirementType)
+values
+    ('REQUIRES_CITY_HAS_DISTRICT_MBANZA_FIXED', 'REQUIREMENT_REQUIREMENTSET_IS_MET');
+    insert or replace into RequirementArguments
+    (RequirementId,                             Name,               Value)
+values
+    ('REQUIRES_CITY_HAS_DISTRICT_MBANZA_FIXED', 'RequirementSetId', 'CITY_HAS_DISTRICT_MBANZA_FIXED');
+insert or replace into RequirementSets
+    (RequirementSetId,                  RequirementSetType)
+values
+    ('CITY_HAS_HOLY_SITE_OR_MBANZA',    'REQUIREMENTSET_TEST_ANY'),
+    ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                  RequirementId)
+values
+    ('CITY_HAS_HOLY_SITE_OR_MBANZA',    'REQUIRES_CITY_HAS_DISTRICT_HOLY_SITE'),
+    ('CITY_HAS_HOLY_SITE_OR_MBANZA',    'REQUIRES_CITY_HAS_DISTRICT_MBANZA_FIXED'),
+    ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'REQUIRES_CITY_HAS_DISTRICT_MBANZA'),
+    ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'PLAYER_IS_CIVILIZATION_KONGO');
+update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
 
 -- GreatWorks Yield
 delete from TraitModifiers where ModifierId like 'TRAIT_GREAT_WORK_%' and TraitType = 'TRAIT_CIVILIZATION_NKISI';
@@ -1249,28 +1271,28 @@ values
 ----------------------------------------------------------------------------------------------------------------------------------
 -- France
 update ModifierArguments set Value = 300 where ModifierId = 'TRAIT_WONDER_DOUBLETOURISM' and Name = 'ScalingFactor';
+insert or replace into GlobalParameters (Name,  Value) values ('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',  20);
+--insert or replace into TraitModifiers
+--	(TraitType,								ModifierId)
+--values
+--	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_BONUS_TO_CAPITAL'),
+--	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL');
 
-insert or replace into TraitModifiers
-	(TraitType,								ModifierId)
-values
-	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_BONUS_TO_CAPITAL'),
-	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL');
+--insert or replace into Modifiers
+--	(ModifierId,												ModifierType,												SubjectRequirementSetId)
+--values
+--	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_ANCIENT_REQUIRMENTS'),
+--	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL),
+--	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_MIEDIVAL_REQUIRMENTS'),
+--	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL);
 
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,												SubjectRequirementSetId)
-values
-	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_ANCIENT_REQUIRMENTS'),
-	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL),
-	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DL_THIS_WONDER_IS_AT_LEAST_MIEDIVAL_REQUIRMENTS'),
-	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_ALL_YIELDS_CHANGE', NULL);
-
-insert or replace into ModifierArguments
-	(ModifierId,												Name,			Value)
-values
-	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'ModifierId',	'TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER'),
-	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'Amount',		1),
-	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'ModifierId',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER'),
-	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','Amount',		1);
+--insert or replace into ModifierArguments
+--	(ModifierId,												Name,			Value)
+--values
+--	('TRAIT_WONDER_BONUS_TO_CAPITAL',							'ModifierId',	'TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER'),
+--	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'Amount',		1),
+--	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'ModifierId',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER'),
+--	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','Amount',		1);
 
 -- Chateau
 update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
@@ -1792,10 +1814,10 @@ insert or replace into TraitModifiers
 values
 	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
 	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD'),
-	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE'),
+	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE');
 	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD'),
-	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN'),
-	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_WRITING_INFLUENCE_TOKEN');
+--	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN'),
+--	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_WRITING_INFLUENCE_TOKEN');
 
 insert or replace into Modifiers
     (ModifierId,                            			ModifierType)
@@ -1805,14 +1827,14 @@ values
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',  			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE');
 
-insert or replace into Modifiers
-    (ModifierId,                            			ModifierType,								SubjectRequirementSetId)
-values
-	('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_TECH_WRITING'),
-	('PHOENICIA_WRITING_INFLUENCE_TOKEN',				'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE');
+--insert or replace into Modifiers
+--    (ModifierId,                            			ModifierType,								SubjectRequirementSetId)
+--values
+--	('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_TECH_WRITING'),
+--	('PHOENICIA_WRITING_INFLUENCE_TOKEN',				'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE');
 
-update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN';
-update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_WRITING_INFLUENCE_TOKEN';
+--update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN';
+--update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_WRITING_INFLUENCE_TOKEN';
 
 insert or replace into ModifierArguments
     (ModifierId,                            			Name,           Value)
@@ -1824,9 +1846,9 @@ values
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'YieldType',    'YIELD_CULTURE'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'Amount',       4),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'YieldType',    'YIELD_GOLD'),
-    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4),
-    ('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',  		'Amount',       1),
-    ('PHOENICIA_WRITING_INFLUENCE_TOKEN',  				'Amount',       1);
+    ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4);
+--    ('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',  		'Amount',       1),
+--    ('PHOENICIA_WRITING_INFLUENCE_TOKEN',  				'Amount',       1);
 	
 -- UD
 insert or replace into DistrictModifiers 

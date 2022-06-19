@@ -57,27 +57,27 @@ update GlobalParameters set Value = 240 where Name = 'ALLIANCE_LEVEL_TWO_XP';
 update GlobalParameters set Value = 720 where Name = 'ALLIANCE_LEVEL_THREE_XP';
 
 -- Suzerain
-update GlobalParameters set Value = 5 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
+update GlobalParameters set Value = 3 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
 
 -- City states
 INSERT OR IGNORE INTO Requirements
         (RequirementId,                             RequirementType                                 )
 VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS' );
 INSERT OR IGNORE INTO RequirementArguments
-        (RequirementId,                             Name,               Value )
-VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'MinimumTokens',    10    );
+        (RequirementId,                             Name,               Value)
+VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'MinimumTokens',    6);
 update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_SMALL_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 2 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 5 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 9 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 3 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 6 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE' and Name = 'MinimumTokens';
 -- The New Global Parameters.
 insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('INFLUENCE_TOKENS_MINIMUM_FOR_SMALL_INFLUENCE',    1),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE',   2),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE',    5),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE',  9); 
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE',   1),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE',    3),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE',  6); 
 
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';
@@ -163,7 +163,7 @@ insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('EXPANDED_INIT_VISION_RANGE',                      3),
-    ('REYNA_CONVERT_PERCENTAGE',                        80),
+    ('REYNA_CONVERT_PERCENTAGE',                        100),
     ('LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE',          20),
     ('DEVINE_INSPIRATION_WONDER_FAITH_PERCENTAGE',      33),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
@@ -234,7 +234,5 @@ update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';
 --市中心改为3粮2锤
 update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 
-insert or replace into GlobalParameters (Name, Value) values ('HUNGARY_ENVOY_NUMBER', 1);
-insert or replace into GlobalParameters (Name, Value) values ('TAJ_MAHAL_GOLD', 45);
 insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_PRODUCTION_RATE', 20);
 insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_STRATEGIC_MULTIPLIER', 5);

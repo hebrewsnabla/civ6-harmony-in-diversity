@@ -34,13 +34,12 @@ values
 	('DISTRICT_INDUSTRIAL_ZONE',	'HD_LumberMill_Production'),
 	('DISTRICT_COMMERCIAL_HUB',		'HD_Commercial_Canal_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',		'HD_Commercial_Luxury_Gold'),
-	('DISTRICT_COMMERCIAL_HUB',		'HD_Commercial_Luxury_Gold_Late'),
 	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_Hansa'),
-	-- ('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
+	('DISTRICT_COMMERCIAL_HUB',		'District_Gold_City_Center'),
 	('DISTRICT_HARBOR',				'HD_Harbor_City_Gold'),
 	('DISTRICT_HARBOR',				'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
-	('DISTRICT_ENCAMPMENT',			'Strategic_Production'),
+	('DISTRICT_ENCAMPMENT',			'Strategic_Production2'),
 	-- UD
 	('DISTRICT_ROYAL_NAVY_DOCKYARD','District_Gold_Industrial_Zone'),
 	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),
@@ -92,16 +91,15 @@ values
 	('HD_Commercial_Canal_Gold',		'LOC_DISTRICT_CANAL_GOLD', 				'YIELD_GOLD',	3,	1,	0,	'DISTRICT_CANAL');
 
 insert or replace into Adjacency_YieldChanges
-	(ID,								Description,		YieldType, YieldChange, TilesRequired, PrereqCivic, ObsoleteCivic, AdjacentResourceClass)
+	(ID,								Description,				YieldType, 		YieldChange,	TilesRequired,	AdjacentResourceClass)
 values
-	('HD_Commercial_Luxury_Gold',		'LOC_DISTRICT_LUXURY_GOLD', 'YIELD_GOLD',	1,	1,	NULL,	'CIVIC_MEDIEVAL_FAIRES',	'RESOURCECLASS_LUXURY'),
-	('HD_Commercial_Luxury_Gold_Late',	'LOC_DISTRICT_LUXURY_GOLD',	'YIELD_GOLD',	2,	1,	'CIVIC_MEDIEVAL_FAIRES',	NULL,	'RESOURCECLASS_LUXURY');
+	('HD_Commercial_Luxury_Gold',		'LOC_DISTRICT_LUXURY_GOLD', 'YIELD_GOLD',	2,				1,				'RESOURCECLASS_LUXURY');
 
 -- City Center related
 insert or replace into Adjacency_YieldChanges
 	(ID,									Description,					YieldType,	YieldChange,	TilesRequired,	AdjacentDistrict)
 values
-	('HD_Harbor_City_Gold',					'LOC_DISTRICT_CITY_CENTER_GOLD',			'YIELD_GOLD',		1,	1,	'DISTRICT_CITY_CENTER'),
+	('HD_Harbor_City_Gold',					'LOC_DISTRICT_CITY_CENTER_GOLD',			'YIELD_GOLD',		2,	1,	'DISTRICT_CITY_CENTER'),
 	('District_Gold_City_Center',			'LOC_DISTRICT_GOLD_CITY_CENTER',			'YIELD_GOLD',		1,	1,	'DISTRICT_CITY_CENTER'),
 	('District_Culture_Double_City_Center',	'LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER',	'YIELD_CULTURE',	2,	1,	'DISTRICT_CITY_CENTER');
 
@@ -288,3 +286,7 @@ values
 	('HD_IMPROVEMENT_MOUNTAIN_TUNNEL',		'LOC_HD_ENCAMPMENT_AFJACENCY_MOUNTAIN_TUNNEL',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MOUNTAIN_TUNNEL'),
 	('HD_IMPROVEMENT_MISSILE_SILO',			'LOC_HD_ENCAMPMENT_AFJACENCY_MISSILE_SILO',		'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MISSILE_SILO'),
 	('HD_IMPROVEMENT_MAORI_PA',				'LOC_HD_ENCAMPMENT_AFJACENCY_MAORI_PA',			'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MAORI_PA');
+insert or ignore into Adjacency_YieldChanges
+	(ID,									Description,							YieldType,				YieldChange,				TilesRequired,				AdjacentResourceClass)
+values
+	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC2_PRODUCTION',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');

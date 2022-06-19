@@ -197,7 +197,7 @@ update Policies set PrereqCivic = 'CIVIC_DIPLOMATIC_SERVICE' where PolicyType = 
 
 update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_LIMITANEI';
 update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'POLICY_PRESS_GANGS';
-update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_NAVIGATION';
+-- update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_NAVIGATION';
 update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_RETAINERS';
 
 update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
@@ -233,7 +233,7 @@ values
 	('PUBLICTRANSPORT_CHARMING_NEIGHBORHOOD_HOUSING',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_HOUSING',				'DISTRICT_IS_CHARMING_NEIGHBORHOOD'),
 	('PUBLICTRANSPORT_BREATHTAKING_NEIGHBORHOOD_HOUSING',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_HOUSING',				'DISTRICT_IS_BREATHTAKING_NEIGHBORHOOD'),
 	('COLONIALOFFICES_FOREIGNFOOD',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'CITY_NOT_OWNER_CAPITAL_CONTINENT_REQUIREMENTS'),
-	('COLONIALOFFICES_FOREIGNFOODPERCENTAGE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'CITY_NOT_OWNER_CAPITAL_CONTINENT_REQUIREMENTS');
+	('COLONIALOFFICES_FOREIGNFOODPERCENTAGE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',	'CITY_NOT_OWNER_CAPITAL_CONTINENT_REQUIREMENTS');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType)
@@ -257,7 +257,6 @@ values
 	('PUBLICTRANSPORT_BREATHTAKING_NEIGHBORHOOD_HOUSING',	'Amount',				1),
 	('COLONIALOFFICES_FOREIGNFOOD',							'YieldType',			'YIELD_FOOD'),
 	('COLONIALOFFICES_FOREIGNFOOD',							'Amount',				5),
-	('COLONIALOFFICES_FOREIGNFOODPERCENTAGE',				'YieldType',			'YIELD_FOOD'),
 	('COLONIALOFFICES_FOREIGNFOODPERCENTAGE',				'Amount',				10),
 	('HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_XHH',	'YieldType',			'YIELD_SCIENCE'),
 	('HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_XHH',	'UnitProductionPercent',75);
@@ -1760,3 +1759,68 @@ update Modifiers set SubjectRequirementSetId = "HD_CITY_HAS_COMMERCIAL_TIER_3_BU
 -- 统治
 -- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_SCIENCEPERTRIBUTARY' and Name = 'Amount';
 -- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_CULTUREPERTRIBUTARY' and Name = 'Amount';
+
+-- 自由探索: 多10%尤里卡, 每个不同的区域和建筑给1瓶
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_HARBOR';
+
+create temporary table RealBuildings (BuildingType text not null primary key);
+insert or replace into RealBuildings (BuildingType) select BuildingType from Buildings where BuildingType != 'BUILDING_CANAL' and BuildingType not like 'BUILDING_MARACANA_DUMMY_%' and IsWonder = 0 and InternalOnly = 0 and PrereqDistrict is not null;
+create temporary table BuffedObjects (ObjectType text not null primary key);
+insert or replace into BuffedObjects (ObjectType) select BuildingType from RealBuildings;
+insert or replace into BuffedObjects (ObjectType) select DistrictType from Districts;
+insert or replace into Requirements
+    (RequirementId,                         RequirementType)
+select
+    'REQUIRES_PLAYER_HAS_' || BuildingType, 'REQUIREMENT_PLAYER_HAS_BUILDING'
+from RealBuildings;
+insert or replace into Requirements
+    (RequirementId,                         RequirementType)
+select
+    'REQUIRES_PLAYER_HAS_' || DistrictType, 'REQUIREMENT_PLAYER_HAS_DISTRICT'
+from Districts;
+insert or replace into RequirementArguments
+    (RequirementId,                         Name,           Value)
+select
+    'REQUIRES_PLAYER_HAS_' || BuildingType, 'BuildingType', BuildingType
+from RealBuildings;
+insert or replace into RequirementArguments
+    (RequirementId,                         Name,           Value)
+select
+    'REQUIRES_PLAYER_HAS_' || DistrictType, 'DistrictType', DistrictType
+from Districts;
+insert or replace into RequirementSets
+    (RequirementSetId,                             RequirementSetType)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIREMENTSET_TEST_ALL'
+from BuffedObjects;
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                             RequirementId)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_' || ObjectType
+from BuffedObjects;
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                             RequirementId)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_GOLDEN_AGE'
+from BuffedObjects;
+insert or replace into CommemorationModifiers
+    (CommemorationType,         ModifierId)
+select
+    'COMMEMORATION_SCIENTIFIC', 'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE'
+from BuffedObjects;
+insert or replace into Modifiers
+    (ModifierId,                                              ModifierType,                                               OwnerRequirementSetId)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_YIELD_CHANGE',    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType
+from BuffedObjects;
+insert or replace into ModifierArguments
+    (ModifierId,                                              Name,           Value)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'YieldType',    'YIELD_SCIENCE'
+from BuffedObjects;
+insert or replace into ModifierArguments
+    (ModifierId,                                              Name,           Value)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'Amount',       1
+from BuffedObjects;
