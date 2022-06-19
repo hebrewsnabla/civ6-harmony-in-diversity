@@ -368,3 +368,6 @@ update LocalizedText set Text = Text || '[NEWLINE][NEWLINE]海军袭击者：能
     Tag = 'LOC_UNIT_GERMAN_UBOAT_DESCRIPTION' or
     Tag = 'LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION' or
     Tag = 'LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION');
+
+update LocalizedText set Text = '首都和' || Text where Language = 'zh_Hans_CN' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';
+update LocalizedText set Text = substr(Text, 0, length(Text) - 1) || ' and in your [ICON_CAPITAL] Capital.' where Language = 'en_US' and Tag like 'LOC_CSE_%_TRAIT_MEDIUM_INFLUENCE_BONUS';

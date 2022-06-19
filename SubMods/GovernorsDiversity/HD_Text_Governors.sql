@@ -13,8 +13,8 @@ values
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "Financial Centre"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "City generates +8% [ICON_Gold] Gold for each building in its Commercial and Harbor districts."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "+80% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "International [ICON_TradeRoute] Trade Routes from this City provide +80% [ICON_Gold] Gold after finishing the 'Exploration' civic. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "+100% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "International [ICON_TradeRoute] Trade Routes from this City provide +100% [ICON_Gold] Gold after finishing the 'Exploration' civic. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."),
     -- Victor
     ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 2 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
@@ -74,7 +74,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "While established in a city-state, doubles the number of [ICON_Envoy] Envoys you have there. Enemy Spy level reduced by 1 in the city-state. Your Spy level is increased by 1 for all offensive operations."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "Pay Tribute"),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "Foreign Investor"),
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as four [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain."),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "City-state units gain +4 [ICON_Strength] Combat Strength if you are its Suzerain (including Leveraged Units) and cost 20% less [ICON_GOLD] Gold to levy troops. Amani now acts as 3 [ICON_Envoy] envoys (instead of 2). When established in a city-state, provide you with its Strategic and Luxury resources, doubled if you are its Suzerain."),
     ("GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，from Governor's Promotion"),
     ("GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，from Governor's Promotion"),
     -- Pingala
@@ -109,8 +109,8 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+80%。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+80%。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+100%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+100%。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     -- 维克多
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "2回合就职。就职城市无法被围攻，城市防御+5 [ICON_STRENGTH] 战斗力。建造军营、港口和这些区域中的建筑时加速30%。"), -- 您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度
@@ -171,7 +171,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。我方间谍出击时+1级，在领土内敌方间谍等级下降1级。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "朝贡"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "外国投资者"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于4名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "对所有宗主的城邦，其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵时花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者（而不是2名），可获得其奢侈和战略（宗主时翻倍）。"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_LEVIED_COMBAT_STRENGTH_DESCRIPTION",                         "+4，来自总督晋升"),
     ("zh_Hans_CN",  "GOV_CITYSTATES_COMBAT_STRENGTH_DESCRIPTION",                                "+4，来自总督晋升"),
     -- 平伽拉
