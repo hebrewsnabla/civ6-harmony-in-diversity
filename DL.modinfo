@@ -1112,6 +1112,10 @@
       <File>Maps/Tiny_Lakes.lua</File>
       <File>Maps/Wet_Lakes.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="HD_BuildingTiers" criteria="Expansion2">
+      <Properties><LoadOrder>12001</LoadOrder></Properties>
+      <File>UpdateDataBase/HD_BuildingTiers.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/HD_Ingame_setup.sql</File>
@@ -1198,7 +1202,6 @@
       <File>UpdateDataBase/DL_Districts.sql</File>
       <File>UpdateDataBase/DL_GlobalParameters.sql</File>
       <File>UpdateDataBase/DL_Goodyhuts.sql</File>
-      <!-- <File>UpdateDataBase/DL_Governors.sql</File> -->
       <File>UpdateDataBase/DL_GreatPeople.sql</File>
       <File>UpdateDataBase/DL_GreatWorks.sql</File>
       <File>UpdateDataBase/DL_Happiness.xml</File>
@@ -1407,26 +1410,10 @@
       <Properties><LoadOrder>19000</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     </UpdateDatabase>
-    <UpdateIcons id="DevTest_icons" criteria="DevTest_Mode_Expansion2">
-      <Properties><LoadOrder>19000</LoadOrder></Properties>
-      <File>GameModeSupport/TestDevMode/icons.xml</File>
-    </UpdateIcons>
     <UpdateText id="DevTest_update_text" criteria="DevTest_Mode_Expansion2">
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
-    <ImportFiles id="DevTest_CityStates_Import" criteria="DevTest_Mode_Expansion2">
-      <Properties><LoadOrder>19001</LoadOrder></Properties>
-      <File>GameModeSupport/TestDevMode/citystates.xml</File>
-      <File>GameModeSupport/TestDevMode/citystates.lua</File>
-    </ImportFiles>
-    <ReplaceUIScript id="DevTest_CityStates_UI" criteria="DevTest_Mode_Expansion2">
-      <Properties>
-        <LoadOrder>19001</LoadOrder>
-        <LuaContext>CityStates</LuaContext>
-        <LuaReplace>GameModeSupport/TestDevMode/citystates.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1560,11 +1547,8 @@
     <File>GameModeSupport/TestAiMode/DL_AI.sql</File>
     <File>GameModeSupport/TestAiMode/HD_Texts.sql</File>
       <!-- Dev Test Mode -->
-    <File>GameModeSupport/TestDevMode/icons.xml</File>
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
-    <File>GameModeSupport/TestDevMode/citystates.lua</File>
-    <File>GameModeSupport/TestDevMode/citystates.xml</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
@@ -1785,6 +1769,7 @@
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
     <!-- Early Setup -->
+    <File>UpdateDataBase/HD_BuildingTiers_Early.sql</File>
     <File>UpdateDataBase/DL_EarlySetup.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GameData>
-	<IconDefinitions>
-		<Row Name="ICON_BELIEF_OLD_GOD_OF_THE_FORGE" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="15"/>
-		<Row Name="ICON_BELIEF_TALE_OF_DWALVES" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="11"/>
-		<Row Name="ICON_BELIEF_MEGALITHIC_WORSHIP" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="10"/>
-		<Replace Name="ICON_BELIEF_PAPAL_PRIMACY" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="25"/>
-    </IconDefinitions>
-</GameData>

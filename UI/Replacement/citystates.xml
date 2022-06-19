@@ -221,24 +221,24 @@
                 <Button ID="EnvoyMoreButton" Anchor="R,C" Offset="-6,0" Size="34,34" Texture="Controls_Stepper" AnchorSide="O,I" />
                 <Label ID="EnvoyCount" Anchor="C,C" Offset="-1,1" String="0" Style="FontFlairLua" Color="160,160,160,240" />
             </Image>
-            <Image ID="BonusImage1" Anchor="L,T" Offset="240,2" Size="29,42" Texture="CityState_BonusSlotOff">
+            <!--<Image ID="BonusImage1" Anchor="L,T" Offset="240,2" Size="29,42" Texture="CityState_BonusSlotOff">
                 <Label ID="BonusText1" Anchor="R,T" Offset="3,2" Style="FontNormal12" String="1" />
                 <Image ID="BonusIcon1" Anchor="C,B" Size="26,26" Texture="EnvoyBonuses26" TextureOffset="104,0" />
-            </Image>
-            <Image ID="BonusImage3" Anchor="L,T" Offset="270,2" Size="29,42" Texture="CityState_BonusSlotOn">
+            </Image>-->
+            <Image ID="BonusImage3" Anchor="L,T" Offset="240,2" Size="29,42" Texture="CityState_BonusSlotOn">
                 <Label ID="BonusText3" Anchor="R,T" Offset="3,2" Style="FontNormal12" String="3" />
                 <Image ID="BonusIcon3" Anchor="C,B" Size="26,26" Texture="EnvoyBonuses26" TextureOffset="104,0" />
             </Image>
-            <Image ID="BonusImage6" Anchor="L,T" Offset="300,2" Size="29,42" Texture="CityState_BonusSlotOn">
+            <Image ID="BonusImage6" Anchor="L,T" Offset="270,2" Size="29,42" Texture="CityState_BonusSlotOn">
                 <Label ID="BonusText6" Anchor="R,T" Offset="3,2" Style="FontNormal12" String="6" />
                 <Image ID="BonusIcon6" Anchor="C,B" Size="26,26" Texture="EnvoyBonuses26" TextureOffset="104,0" />
             </Image>
             <!-- ==== CIVITAS/CQUI: Add Bonus for 10 Envoy (Chimp) ==== -->
-            <Image ID="BonusImage10" Anchor="L,T" Offset="330,2" Size="29,42" Texture="CityState_BonusSlotOn">
+            <Image ID="BonusImage10" Anchor="L,T" Offset="300,2" Size="29,42" Texture="CityState_BonusSlotOn">
                 <Label ID="BonusText10" Anchor="R,T" Offset="3,2" Style="FontNormal12" String="10" />
                 <Image ID="BonusIcon10" Anchor="C,B" Size="26,26" Texture="EnvoyBonuses26" TextureOffset="104,0" />
             </Image>
-            <Container Anchor="L,T" Offset="360,2" Size="106,42">
+            <Container Anchor="L,T" Offset="330,2" Size="106,42">
             <!-- <Container ID="SuzerainStatus" Anchor="L,T" Offset="376,2" Size="108,42"> -->
                 <Grid ID="BonusImageSuzerainOff" Size="parent,parent" Texture="CityState_BonusSlotBigOff" SliceCorner="31,21" SliceTextureSize="34,42" />
                 <Grid ID="BonusImageSuzerainOn" Size="parent,parent" Texture="CityState_BonusSlotBigOn" SliceCorner="31,21" SliceTextureSize="34,42" />

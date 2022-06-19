@@ -275,6 +275,27 @@ values
 --     ('RANGED_WEAKER_ATTACKING_FOREST_AND_JUNGLE',               'CLASS_RANGED');
     ('ABILITY_WOLFPACK_ADJACENT_BONUS',                         'CLASS_NAVAL_RAIDER');
 
+insert or replace into UnitPromotions
+    (UnitPromotionType,             Name,                                           Description,                                        Level,    PromotionClass,                   Column)
+values
+    --melee
+    -- ('PROMOTION_BATTLE_LINE',       'LOC_PROMOTION_BATTLE_LINE_HD_NAME',            'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',         2,        'PROMOTION_CLASS_MELEE',          3),
+    ('PROMOTION_LONG_MARCH',        'LOC_PROMOTION_LONG_MARCH_HD_NAME',             'LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION',          3,        'PROMOTION_CLASS_MELEE',          1),
+    --ranged
+    ('PROMOTION_SNIPER',            'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_RANGED',         1),
+    --anti-cavalry
+    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   1),
+    ('PROMOTION_SPRINT_HD',         'LOC_PROMOTION_SPRINT_HD_NAME',                 'LOC_PROMOTION_SPRINT_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_ANTI_CAVALRY',   2),
+    --naval melee
+    ('PROMOTION_BATTERING_RAM_TACTICS', 'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME',  'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION',  4, 'PROMOTION_CLASS_NAVAL_MELEE',    2),
+    --naval ranged
+    ('PROMOTION_BULB_BOW',          'LOC_PROMOTION_BULB_BOW_HD_NAME',               'LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION',            3,        'PROMOTION_CLASS_NAVAL_RANGED',   3),
+    --naval raider
+    ('PROMOTION_BOARDING_ACTION',   'LOC_PROMOTION_BOARDING_ACTION_HD_NAME',        'LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION',     1,        'PROMOTION_CLASS_NAVAL_RAIDER',   3),
+    -- ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      2,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
+    ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      3,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
+    ('PROMOTION_AUTO_SOLICITATION', 'LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME',      'LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION',   3,        'PROMOTION_CLASS_NAVAL_RAIDER',   3);
+
 insert or replace into UnitAbilities 
     (UnitAbilityType,                               Name,      Description,                                                     Inactive) 
 values
@@ -380,10 +401,21 @@ delete from UnitPromotions where UnitPromotionType = 'PROMOTION_PROXIMITY_FUSES'
 --naval raider
 -- update UnitPromotions set Column = -1 where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
 delete from UnitPromotions where UnitPromotionType = 'PROMOTION_BOARDING' or UnitPromotionType = 'PROMOTION_HOMING_TORPEDOES' or UnitPromotionType = 'PROMOTION_OBSERVATION';
-update UnitPromotions set Level = 1 , Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';
-update UnitPromotions set Level = 2 , Column = 3 where UnitPromotionType = 'PROMOTION_SILENT_RUNNING';
--- update UnitPromotions set Level = 3 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
-update UnitPromotions set Level = 2 , Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
+update UnitPromotions set Level = 1, Column = 1 where UnitPromotionType = 'PROMOTION_SWIFT_KEEL';
+update UnitPromotions set Level = 2, Column = 1 where UnitPromotionType = 'PROMOTION_DAMAGE_CONTROL';
+update UnitPromotions set Level = 2, Column = 3 where UnitPromotionType = 'PROMOTION_SILENT_RUNNING';
+update UnitPromotions set Level = 3, Column = 1 where UnitPromotionType = 'PROMOTION_LOOT';
+update UnitPromotions set Level = 3, Column = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
+update UnitPromotions set Level = 4, Column = 2 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
+/* update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_LOOT';
+update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
+delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_AUTO_SOLICITATION';
+insert or replace into UnitPromotionPrereqs
+	(UnitPromotion, 					PrereqUnitPromotion)
+values
+	('PROMOTION_AUTO_SOLICITATION',		'PROMOTION_WOLFPACK');
+ */
 
 delete from UnitPromotionPrereqs 
     --melee
@@ -412,18 +444,7 @@ where  UnitPromotion = 'PROMOTION_AMPHIBIOUS'
     or UnitPromotion = 'PROMOTION_PROXIMITY_FUSES' 
     or PrereqUnitPromotion = 'PROMOTION_PROXIMITY_FUSES'
     --naval raider
-    or PrereqUnitPromotion = 'PROMOTION_LOOT'
-    or PrereqUnitPromotion = 'PROMOTION_BOARDING'
-    or UnitPromotion = 'PROMOTION_SWIFT_KEEL' 
-    or PrereqUnitPromotion = 'PROMOTION_SWIFT_KEEL'
-    or UnitPromotion = 'PROMOTION_HOMING_TORPEDOES' 
-    or PrereqUnitPromotion = 'PROMOTION_HOMING_TORPEDOES'
-    or UnitPromotion = 'PROMOTION_OBSERVATION' 
-    or PrereqUnitPromotion = 'PROMOTION_OBSERVATION'
-    or UnitPromotion = 'PROMOTION_SILENT_RUNNING' 
-    or PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING'
-    or UnitPromotion = 'PROMOTION_WOLFPACK'
-    ;
+    or UnitPromotion in (select UnitPromotion from UnitPromotions where PromotionClass = 'PROMOTION_CLASS_NAVAL_RAIDER');
 
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)
@@ -465,42 +486,14 @@ values
     ('PROMOTION_BULB_BOW',           'PROMOTION_ROLLING_BARRAGE'),
     ('PROMOTION_COINCIDENCE_RANGEFINDING',  'PROMOTION_BULB_BOW'),
     --naval raider
-    ('PROMOTION_LOOT',               'PROMOTION_SWIFT_KEEL'),
-    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_DAMAGE_CONTROL',	'PROMOTION_SWIFT_KEEL'),
     ('PROMOTION_SILENT_RUNNING',     'PROMOTION_BOARDING_ACTION'),
-    ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_LOOT'),
-    ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_LOOT'),
-    ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_SILENT_RUNNING'),
-    ('PROMOTION_WOLFPACK',           'PROMOTION_DAMAGE_CONTROL'),
-    -- ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SWIFT_KEEL'),
-    -- ('PROMOTION_DAMAGE_CONTROL',     'PROMOTION_SILENT_RUNNING'),
-    -- ('PROMOTION_SILENT_RUNNING',     'PROMOTION_BOARDING_ACTION'),
-    -- ('PROMOTION_SILENT_RUNNING',     'PROMOTION_DAMAGE_CONTROL'),
-    -- ('PROMOTION_LOOT',               'PROMOTION_DAMAGE_CONTROL'),
-    -- ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_SILENT_RUNNING'),
-    -- ('PROMOTION_WOLFPACK',           'PROMOTION_LOOT'),
-    ('PROMOTION_WOLFPACK',           'PROMOTION_AUTO_SOLICITATION');
-
-insert or replace into UnitPromotions
-    (UnitPromotionType,             Name,                                           Description,                                        Level,    PromotionClass,                   Column)
-values
-    --melee
-    -- ('PROMOTION_BATTLE_LINE',       'LOC_PROMOTION_BATTLE_LINE_HD_NAME',            'LOC_PROMOTION_BATTLE_LINE_HD_DESCRIPTION',         2,        'PROMOTION_CLASS_MELEE',          3),
-    ('PROMOTION_LONG_MARCH',        'LOC_PROMOTION_LONG_MARCH_HD_NAME',             'LOC_PROMOTION_LONG_MARCH_HD_DESCRIPTION',          3,        'PROMOTION_CLASS_MELEE',          1),
-    --ranged
-    ('PROMOTION_SNIPER',            'LOC_PROMOTION_SNIPER_HD_NAME',                 'LOC_PROMOTION_SNIPER_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_RANGED',         1),
-    --anti-cavalry
-    ('PROMOTION_LOGISTICS_SUPPLY',  'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_NAME',       'LOC_PROMOTION_LOGISTICS_SUPPLY_HD_DESCRIPTION',    3,        'PROMOTION_CLASS_ANTI_CAVALRY',   1),
-    ('PROMOTION_SPRINT_HD',         'LOC_PROMOTION_SPRINT_HD_NAME',                 'LOC_PROMOTION_SPRINT_HD_DESCRIPTION',              4,        'PROMOTION_CLASS_ANTI_CAVALRY',   2),
-    --naval melee
-    ('PROMOTION_BATTERING_RAM_TACTICS', 'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_NAME',  'LOC_PROMOTION_BATTERING_RAM_TACTICS_HD_DESCRIPTION',  4, 'PROMOTION_CLASS_NAVAL_MELEE',    2),
-    --naval ranged
-    ('PROMOTION_BULB_BOW',          'LOC_PROMOTION_BULB_BOW_HD_NAME',               'LOC_PROMOTION_BULB_BOW_HD_DESCRIPTION',            3,        'PROMOTION_CLASS_NAVAL_RANGED',   3),
-    --naval raider
-    ('PROMOTION_BOARDING_ACTION',   'LOC_PROMOTION_BOARDING_ACTION_HD_NAME',        'LOC_PROMOTION_BOARDING_ACTION_HD_DESCRIPTION',     1,        'PROMOTION_CLASS_NAVAL_RAIDER',   3),
-    -- ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      2,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
-    ('PROMOTION_DAMAGE_CONTROL',    'LOC_PROMOTION_DAMAGE_CONTROL_HD_NAME',         'LOC_PROMOTION_DAMAGE_CONTROL_HD_DESCRIPTION',      3,        'PROMOTION_CLASS_NAVAL_RAIDER',   1),
-    ('PROMOTION_AUTO_SOLICITATION', 'LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME',      'LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION',   3,        'PROMOTION_CLASS_NAVAL_RAIDER',   3);
+    ('PROMOTION_LOOT',	'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_LOOT',	'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_WOLFPACK',	'PROMOTION_DAMAGE_CONTROL'),
+    ('PROMOTION_WOLFPACK',     'PROMOTION_SILENT_RUNNING'),
+    ('PROMOTION_AUTO_SOLICITATION',	'PROMOTION_LOOT'),
+    ('PROMOTION_AUTO_SOLICITATION',  'PROMOTION_WOLFPACK');
 
 insert or replace into UnitPromotionModifiers
     (UnitPromotionType,             ModifierId)
@@ -975,15 +968,4 @@ update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_PREPAR
 update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLING_BARRAGE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
-update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
-update UnitPromotions set Level = 3 where UnitPromotionType = 'PROMOTION_WOLFPACK';
-update UnitPromotions set Column = 2 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
-update UnitPromotions set Level = 4 where UnitPromotionType = 'PROMOTION_AUTO_SOLICITATION';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_DAMAGE_CONTROL';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_LOOT';
-update UnitPromotionPrereqs set UnitPromotion = 'PROMOTION_WOLFPACK' where UnitPromotion = 'PROMOTION_AUTO_SOLICITATION' and PrereqUnitPromotion = 'PROMOTION_SILENT_RUNNING';
-delete from UnitPromotionPrereqs where UnitPromotion = 'PROMOTION_WOLFPACK' and PrereqUnitPromotion = 'PROMOTION_AUTO_SOLICITATION';
-insert or replace into UnitPromotionPrereqs
-    (UnitPromotion,                     PrereqUnitPromotion)
-values
-    ('PROMOTION_AUTO_SOLICITATION',     'PROMOTION_WOLFPACK');
+

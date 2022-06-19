@@ -25,7 +25,7 @@ values
     ("LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                  "+4 [ICON_Faith] Faith for each city following this Religion."),
     ("LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION",                 "+3 [ICON_Science] Science for each city following this Religion."),
     -- ("LOC_PROMOTION_JUST_WAR_DESCRIPTION",                    "+{1_Value} from Papal Primary"),
-    ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. +1 or +2 [ICON_Envoy] Envoy at each City-State when it first adopts this Religion. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +2 [ICON_GOLD] Gold."),
+    ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
     ("LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder."),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "To the Glory of God"),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "-25% [ICON_faith] Faith cost when you patronize a great person. Grant a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired, then grant a [ICON_GreatWork_Relic] relic for every three great people are fully activated or retired."), -- Each time you recruit a great person, gain 50 [ICON_FAVOR] Diplomatic Favor. 
@@ -40,7 +40,7 @@ values
     ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "All Holy Site buildings provide +1 [ICON_Production] Production to all adjacent tiles. Holy Site district provides +2 [ICON_Production] Production."), -- 
 
     ("LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "All world wonders provide +4 [ICON_Faith] Faith. Each time you complete a Wonder, gain [ICON_Faith] Faith equal to 33% its production cost."),
-    ("LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",       "Allows spending [ICON_FAITH] Faith to train Warriors Monks (A land combat unit) and Culture Bomb adjacent tiles when completing a Holy Site. Holy Site provides extra [ICON_FAITH] Faith equal to their district adjacency bonus."),
+    ("LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",       "Allows spending [ICON_FAITH] Faith to train Warriors Monks (A land combat unit) in city with Temple. Culture Bomb adjacent tiles when completing a Holy Site. Holy Site provides extra [ICON_FAITH] Faith equal to their district adjacency bonus."),
     ("LOC_BELIEF_RELIQUARIES_DL_DESCRIPTION",                 "[ICON_GreatWork_Relic] Relics have triple yield of both [ICON_Faith] Faith and [ICON_Tourism] Tourism."),
     ("LOC_BELIEF_RELIGIOUS_ART_NAME",                         "Religious Art"),
     ("LOC_BELIEF_RELIGIOUS_ART_DL_DESCRIPTION",               "Holy Site districts provide [ICON_Culture] Culture equal to their [ICON_Faith] Faith adjacency bonus. Theater district buildings are 20% cheaper to purchase, and can be purchased with [ICON_Faith] Faith."),
@@ -108,7 +108,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                  "每个信奉该宗教的城市+4 [ICON_Faith] 信仰。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION",                 "每个信奉该宗教的城市+3 [ICON_Science] 科技。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_JUST_WAR_DESCRIPTION",                    "+{1_Value}教皇权威"),
-    ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。城邦信教将自动向该城邦派遣1至2个 [ICON_Envoy] 使者。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+2 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "荣神益人"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "招募伟人-25% [ICON_faith] 信仰值花费。 有一个伟人完全激活或隐退后，获得一个 [ICON_GreatWork_Relic] 遗物，之后每有三位伟人完全激活或隐退后获得一个 [ICON_GreatWork_Relic] 遗物。"), -- 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。
@@ -152,7 +152,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HOLY_WATERS_NAME",                           "海祭"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION",                 "您境内位于或与海岸单元格相邻的区域和奇观+2 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION",                 "相邻海岸或湖泊的圣地获得+100%相邻加成。拥有圣地的城市中每个位于或相邻海岸或湖泊的区域+4 [ICON_Faith] 信仰值。购买港口区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",       "允许花费 [ICON_FAITH] 信仰值来生产陆地战斗单位“武僧”。建成圣地后对相邻单元格施放文化炸弹。圣地区域的 [ICON_FAITH] 信仰值相邻加成提供额外等量的 [ICON_FAITH] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",       "允许花费 [ICON_FAITH] 信仰值来在有寺庙的城市生产陆地战斗单位“武僧”。建成圣地后对相邻单元格施放文化炸弹。圣地区域的 [ICON_FAITH] 信仰值相邻加成提供额外等量的 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MONASTIC_ISOLATION_DL_DESCRIPTION",          "您的宗教压力不会因为神学战斗失败而减少。强化后信仰此宗教的城市减少100%外来宗教压力影响，购买审判官的费用降低30%，购买的审判官+1使用次数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HOLY_ORDER_DESCRIPTION",                     "信仰此宗教的城市购买传教士和使徒的费用降低30%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MISSIONARY_ZEAL_DESCRIPTION",                "强化后从信仰此宗教的城市中新获得的宗教单位忽略地形和地貌的 [ICON_Movement] 移动力消耗。"),

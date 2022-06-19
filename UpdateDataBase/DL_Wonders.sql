@@ -563,59 +563,118 @@ insert or replace into BuildingModifiers
 values
     ('BUILDING_MEENAKSHI_TEMPLE',           'MEENAKSHITEMPLE_FREE_GURU'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_BUILDER_PURCHASE'),
-	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SETTLER_PURCHASE'),
+	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SETTLER_PURCHASE');
 	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_HOLY_SITE_FOOD'),
 	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD'),
-	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SHRINE_FOOD'),
-	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_TEMPLE_FOOD');
+	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SHRINE_FOOD'),
+	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_TEMPLE_FOOD');
 
 insert or replace into Modifiers
 	(ModifierId, 									ModifierType,											SubjectRequirementSetId)
 values
 	('MEENAKSHI_BUILDER_PURCHASE',					'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL),
-	('MEENAKSHI_SETTLER_PURCHASE',					'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL),
-	('MEENAKSHI_HOLY_SITE_FOOD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_HOLY_SITE'),
-	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_HOLY_SITE'),
-	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
-	('MEENAKSHI_SHRINE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_SHRINE'),
-	('MEENAKSHI_SHRINE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
-	('MEENAKSHI_TEMPLE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_TEMPLE'),
-	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER');
+	('MEENAKSHI_SETTLER_PURCHASE',					'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	NULL);
+	-- ('MEENAKSHI_HOLY_SITE_FOOD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_HOLY_SITE'),
+	-- ('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_HOLY_SITE'),
+	-- ('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER');
+	-- ('MEENAKSHI_SHRINE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_SHRINE'),
+	-- ('MEENAKSHI_SHRINE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER'),
+	-- ('MEENAKSHI_TEMPLE_FOOD',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'HD_HOLY_SITE_HAS_TEMPLE'),
+	-- ('MEENAKSHI_TEMPLE_FOOD_MODIFIER',  			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                    'REQUIRE_PLOT_ADJACENT_TO_OWNER');
 
 insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
 	('MEENAKSHI_BUILDER_PURCHASE',					'Tag',			'CLASS_BUILDER'),		
-	('MEENAKSHI_SETTLER_PURCHASE',					'Tag',			'CLASS_SETTLER'),
-	('MEENAKSHI_HOLY_SITE_FOOD',					'YieldType',	'YIELD_FOOD'),
-	('MEENAKSHI_HOLY_SITE_FOOD',					'Amount',		1),
-	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',           'ModifierId',  	'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER'),	
-	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'YieldType',   	'YIELD_FOOD'),
-	('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'Amount',	   	1),
-	('MEENAKSHI_SHRINE_FOOD',             			'ModifierId',  	'MEENAKSHI_SHRINE_FOOD_MODIFIER'),
-	('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'YieldType',   	'YIELD_FOOD'),
-	('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'Amount',	   	1),
-	('MEENAKSHI_TEMPLE_FOOD',              			'ModifierId',  	'MEENAKSHI_TEMPLE_FOOD_MODIFIER'),
-	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'YieldType',   	'YIELD_FOOD'),
-	('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'Amount',      	1);
+	('MEENAKSHI_SETTLER_PURCHASE',					'Tag',			'CLASS_SETTLER');
+	-- ('MEENAKSHI_HOLY_SITE_FOOD',					'YieldType',	'YIELD_FOOD'),
+	-- ('MEENAKSHI_HOLY_SITE_FOOD',					'Amount',		1),
+	-- ('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD',           'ModifierId',  	'MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER'),	
+	-- ('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'YieldType',   	'YIELD_FOOD'),
+	-- ('MEENAKSHI_DISTRICT_HOLY_SITE_FOOD_MODIFIER',	'Amount',	   	1);
+	-- ('MEENAKSHI_SHRINE_FOOD',             			'ModifierId',  	'MEENAKSHI_SHRINE_FOOD_MODIFIER'),
+	-- ('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'YieldType',   	'YIELD_FOOD'),
+	-- ('MEENAKSHI_SHRINE_FOOD_MODIFIER',    			'Amount',	   	1),
+	-- ('MEENAKSHI_TEMPLE_FOOD',              			'ModifierId',  	'MEENAKSHI_TEMPLE_FOOD_MODIFIER'),
+	-- ('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'YieldType',   	'YIELD_FOOD'),
+	-- ('MEENAKSHI_TEMPLE_FOOD_MODIFIER',				'Amount',      	1);
 
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,								RequirementId)
-values
-	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
-	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_CITY_HAS_SHRINE'),
-	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
-	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_CITY_HAS_TEMPLE');
+-- insert or ignore into RequirementSetRequirements
+--	(RequirementSetId,								RequirementId)
+-- values
+--	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
+--	('HD_HOLY_SITE_HAS_SHRINE',                     'REQUIRES_CITY_HAS_SHRINE'),
+--	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_DISTRICT_IS_HOLY_SITE'),
+--	('HD_HOLY_SITE_HAS_TEMPLE',                     'REQUIRES_CITY_HAS_TEMPLE');
 
-insert or ignore into RequirementSets
-	(RequirementSetId,                           	RequirementSetType)
+--insert or ignore into RequirementSets
+--	(RequirementSetId,                           	RequirementSetType)
+--values
+--	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
+--	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
 values
-	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
-	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
+	('BUILDING_MEENAKSHI_TEMPLE',   'MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD');
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                                           SubjectRequirementSetId)
+values
+    ('MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD',     'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'DISTRICT_IS_HOLY_SITE'),
+    ('MEENAKSHI_TEMPLE_HOLY_SITE_FOOD',            'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',     null);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                Name,           Value)
+values
+    ('MEENAKSHI_TEMPLE_ATTACH_HOLY_SITE_FOOD',  'ModifierId',   'MEENAKSHI_TEMPLE_HOLY_SITE_FOOD'),
+    ('MEENAKSHI_TEMPLE_HOLY_SITE_FOOD',         'YieldType',    'YIELD_FOOD'),
+    ('MEENAKSHI_TEMPLE_HOLY_SITE_FOOD',         'Amount',       2);
+create temporary table HolySiteBuildings (BuildingType text not null primary key);
+insert into HolySiteBuildings (BuildingType) select BuildingType from Buildings where PrereqDistrict = 'DISTRICT_HOLY_SITE' and BuildingType not like 'BUILDING_MARACANA_DUMMY_%' and IsWonder = 0 and InternalOnly = 0;
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
+select
+    'BUILDING_MEENAKSHI_TEMPLE',   'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD'
+from HolySiteBuildings;
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType)
+select
+    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HolySiteBuildings;
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,           Value)
+select
+    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'YieldType',     'YIELD_FOOD'
+from HolySiteBuildings;
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,           Value)
+select
+    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'Amount',        4
+from HolySiteBuildings;
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,           Value)
+select
+    'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'BuildingType',  BuildingType
+from HolySiteBuildings;
+
 
 -- unlock
 	-- 【泰姬陵】改为【物理】科技解锁
 update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_PHYSICS_HD' where BuildingType = 'BUILDING_TAJ_MAHAL';--xhh
+insert or replace into Modifiers
+    (ModifierId,                ModifierType)
+values
+    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+insert or replace into ModifierArguments
+    (ModifierId,                Name,           Value)
+values
+    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+insert or replace into BuildingModifiers
+    (BuildingType,          ModifierId)
+values
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
+
 
 	-- 【金门大桥】改为【钢铁】科技解锁
 update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_STEEL' where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';--xhh
@@ -755,30 +814,78 @@ values
 	('BUILDING_FORBIDDEN_CITY',		'GREATWORKSLOT_PALACE',			2,			1,							100,						100,						'LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY');
 
 -- 西印度交易所
-update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS';
+-- update ModifierArguments set Value = 2 where ModifierId = 'CONTRATACION_GOVERNOR_POINTS';
 
 -- 匈牙利议会大厦
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where BuildingType = 'BUILDING_ORSZAGHAZ';
 
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-values
-	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_GOVERNOR_POINTS'),
-	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER');
+--insert or replace into BuildingModifiers
+--	(BuildingType,					ModifierId)
+--values
+--	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_GOVERNOR_POINTS'),
+--	('BUILDING_ORSZAGHAZ',			'BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER');
 
+--insert or replace into Modifiers
+--	(ModifierId,											ModifierType,									RunOnce)
+--values
+--	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',		1),
+--	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',		0);
+
+--insert or replace into ModifierArguments
+--	(ModifierId,											Name,			Value)
+--values
+--	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'Delta',		1),
+--	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
+--	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		100);
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,									RunOnce)
+    (ModifierId,                    ModifierType,                               RunOnce)
 values
-	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',		1),
-	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',		0);
-
+    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',    1);
 insert or replace into ModifierArguments
-	(ModifierId,											Name,			Value)
+    (ModifierId,                    Name,        Value)
 values
-	('BUILDING_ORSZAGHAZ_GOVERNOR_POINTS',					'Delta',		1),
-	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'BonusType',	'GOVERNMENTBONUS_ENVOYS'),
-	('BUILDING_ORSZAGHAZ_INFLUENCE_POINTS_MODIFIER',		'Amount',		100);
-
+    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'Amount',    4);
+insert or replace into BuildingModifiers
+    (BuildingType,          ModifierId)
+values
+    ('BUILDING_ORSZAGHAZ',  'ORSZAGHAZ_INFLUENCE_TOKENS');
+insert or replace into Requirements
+    (RequirementId,                     RequirementType)
+values
+    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENT_PLAYER_HAS_BUILDING');
+insert or replace into RequirementArguments
+    (RequirementId,                     Name,           Value)
+values
+    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'BuildingType', 'BUILDING_ORSZAGHAZ');
+insert or replace into RequirementSets
+    (RequirementSetId,         RequirementSetType)
+values
+    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,         RequirementId)
+values
+    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_CITY_HAS_BUILDING_ORSZAGHAZ');
+create temporary table OrszaghazModifiers (PolicyType text not null, OldModifierId text not null, NewModifierId text not null);
+insert into OrszaghazModifiers
+    (PolicyType,    OldModifierId,  NewModifierId)
+select
+    PolicyType,    ModifierId,      'ORSZAGHAZ_GRANT_' || ModifierId
+from PolicyModifiers where PolicyType in (select PolicyType from Policies where GovernmentSlotType = 'SLOT_GREAT_PERSON' or GovernmentSlotType = 'SLOT_WILDCARD');
+insert or replace into Modifiers
+    (ModifierId,	ModifierType,	                                SubjectRequirementSetId)
+select
+    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'PLAYER_HAS_ORSZAGHAZ'
+from OrszaghazModifiers;
+insert or replace into ModifierArguments
+    (ModifierId,	Name,	        Value)
+select
+    NewModifierId,	'ModifierId',   OldModifierId
+from OrszaghazModifiers;
+insert or replace into PolicyModifiers
+    (PolicyType,   ModifierId)
+select
+    PolicyType,    NewModifierId
+from OrszaghazModifiers;
 
 
 -- 马拉卡纳体育场
@@ -889,8 +996,8 @@ insert or replace into BuildingModifiers
 	(BuildingType, 											ModifierId)
 values
 	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_COASTAL_RADIATION_CULTURE'),
-	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY'),
-	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN');
+	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY');
+--	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN');
 --	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_HARBOR_CLASS_3'),
 --	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_HARBOR_CLASS_2'),
 --	('BUILDING_STATUE_LIBERTY',								'STATUE_OF_LIBERTY_HARBOR_CLASS_1');
@@ -898,8 +1005,8 @@ insert or replace into Modifiers
 	(ModifierId,											ModifierType,																RunOnce,	SubjectRequirementSetId)
 values
 	('STATUE_OF_LIBERTY_COASTAL_RADIATION_CULTURE',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',							0,			'STATUE_OF_LIBERTY_WITHIN_9_REQUIREMENTS'),
-	('STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY',			'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY',								0,			'STATUE_OF_LIBERTY_WITHIN_9_REQUIREMENTS'),
-	('STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN',					'MODIFIER_PLAYER_ADJUST_DUPLICATE_INFLUENCE_TOKEN_WHEN_TRADE_ROUTE_TO',		0,			NULL);
+	('STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY',			'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY',								0,			'STATUE_OF_LIBERTY_WITHIN_9_REQUIREMENTS');
+--	('STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN',					'MODIFIER_PLAYER_ADJUST_DUPLICATE_INFLUENCE_TOKEN_WHEN_TRADE_ROUTE_TO',		0,			NULL);
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_1',					'GRANT_BUILDING_TO_ALL_CITIES_IGNORE',										1,			'CITY_HAS_HARBOR_REQUIREMENTS'),
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_2',					'GRANT_BUILDING_TO_ALL_CITIES_IGNORE',										1,			'HD_CITY_HAS_HARBOR_TIER_1_BUILDING_REQUIREMENTS_BASIC'),
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_3',					'GRANT_BUILDING_TO_ALL_CITIES_IGNORE',										1,			'HD_CITY_HAS_HARBOR_TIER_2_BUILDING_REQUIREMENTS_BASIC');
@@ -908,8 +1015,8 @@ insert or replace into ModifierArguments
 values
 	('STATUE_OF_LIBERTY_COASTAL_RADIATION_CULTURE',			'YieldType',										'YIELD_CULTURE'),
 	('STATUE_OF_LIBERTY_COASTAL_RADIATION_CULTURE',			'Amount',											4),
-	('STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY',			'Amount',											4),
-	('STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN',					'Amount',											1);
+	('STATUE_OF_LIBERTY_COASTAL_RADIATION_AMENITY',			'Amount',											4);
+--	('STATUE_OF_LIBERTY_TRADE_ROUTE_TOKEN',					'Amount',											1);
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_1',					'BuildingType',										'BUILDING_LIGHTHOUSE'),
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_2',					'BuildingType',										'BUILDING_SHIPYARD'),
 --	('STATUE_OF_LIBERTY_HARBOR_CLASS_3',					'BuildingType',										'BUILDING_SEAPORT');

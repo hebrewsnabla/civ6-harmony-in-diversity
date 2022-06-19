@@ -290,9 +290,10 @@ function GetBonusText( playerID:number, envoyTokenNum:number )
 	
 	if sCityStateType ~= "unknown" then
 		local tCSType = tCityStateTypes[sCityStateType]
-		if envoyTokenNum == NUM_ENVOY_TOKENS_FOR_FIRST_BONUS then 
-			bonusDetailsText = tCSType.SmallBonus
-		elseif envoyTokenNum == NUM_ENVOY_TOKENS_FOR_SECOND_BONUS then 
+		-- if envoyTokenNum == NUM_ENVOY_TOKENS_FOR_FIRST_BONUS then 
+		--	bonusDetailsText = tCSType.SmallBonus
+		-- else
+		if envoyTokenNum == NUM_ENVOY_TOKENS_FOR_SECOND_BONUS then 
 			bonusDetailsText = tCSType.MediumBonus
 		elseif envoyTokenNum == NUM_ENVOY_TOKENS_FOR_THIRD_BONUS then 
 			bonusDetailsText = tCSType.LargeBonus
@@ -1091,6 +1092,7 @@ function AddCityStateRow( kCityState:table )
 	-- Get small icons
 	textureOffsetX, textureOffsetY, textureSheet = GetBonusIconAtlasPieces( kCityState, 26 );
 
+	--[[
 	kInst.BonusImage1:SetTexture( kCityState.isBonus1 and "CityState_BonusSlotOn" or "CityState_BonusSlotOff" );
 	-- kInst.BonusImage1:SetToolTipString( kCityState.Bonuses[1].Title .."[NEWLINE]".. kCityState.Bonuses[1].Details );
 	kInst.BonusImage1:SetToolTipString( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Title .."[NEWLINE]".. kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Details ); -- Chimp
@@ -1098,6 +1100,7 @@ function AddCityStateRow( kCityState:table )
 	kInst.BonusIcon1:SetColor( kCityState.isBonus1 and kCityState.ColorSecondary or COLOR_ICON_BONUS_OFF );
 	kInst.BonusText1:SetColor( kCityState.isBonus1 and COLOR_TEXT_BONUS_ON or COLOR_TEXT_BONUS_OFF )
 	kInst.BonusText1:SetString(NUM_ENVOY_TOKENS_FOR_FIRST_BONUS);
+	]]--
 
 	kInst.BonusImage3:SetTexture( kCityState.isBonus3 and "CityState_BonusSlotOn" or "CityState_BonusSlotOff" );
 	-- kInst.BonusImage3:SetToolTipString( kCityState.Bonuses[3].Title .."[NEWLINE]".. kCityState.Bonuses[3].Details );
@@ -1374,14 +1377,15 @@ function ViewList()
 				local kHeader	:table = m_BonusCityHeaderIM:GetInstance();
 				kHeader.CityName:SetText( Locale.ToUpper(  kCityState.Name ) );
 
-				local kItem		:table = m_BonusItemIM:GetInstance();
 				local textureOffsetX, textureOffsetY, textureSheet = GetBonusIconAtlasPieces( kCityState, 50 );
+				local kItem;--		:table = m_BonusItemIM:GetInstance();
+				--[[
 				kItem.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 				kItem.Icon:SetColor( kCityState.ColorSecondary );
 				kItem.Title:SetColor( kCityState.ColorSecondary );
 				kItem.Title:SetText( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Title );
 				kItem.Details:SetText( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Details );
-
+				--]]
 				if kCityState.isBonus3 then
 					kItem		= m_BonusItemIM:GetInstance();
 					kItem.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );	-- Same as above
@@ -1610,13 +1614,14 @@ function ViewCityState( iPlayer:number )
 		kHeader.CityName:SetText( Locale.ToUpper( Locale.Lookup("LOC_CITY_STATES_BONUSES",kCityState.Name)) );
 
 		-- At least the simplest of bonuses?
-		local kItem		:table = m_EnvoysBonusItemIM:GetInstance();
+		local kItem;--		:table = m_EnvoysBonusItemIM:GetInstance();
 		local textureOffsetX, textureOffsetY, textureSheet = GetBonusIconAtlasPieces( kCityState, 50 );
+		--[[
 		kItem.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );
 		kItem.Title:SetText( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Title );
 		kItem.Details:SetText( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_FIRST_BONUS].Details );
 		ColorizeBonusItem( kCityState.isBonus1, kItem, kCityState );
-
+		]]--
 		kItem		= m_EnvoysBonusItemIM:GetInstance();
 		kItem.Icon:SetTexture( textureOffsetX, textureOffsetY, textureSheet );	-- Same as above
 		kItem.Title:SetText( kCityState.Bonuses[NUM_ENVOY_TOKENS_FOR_SECOND_BONUS].Title );
@@ -2432,7 +2437,7 @@ function Initialize()
 		NUM_ENVOY_TOKENS_FOR_SECOND_BONUS  == NUM_ENVOY_TOKENS_FOR_THIRD_BONUS	or
 		NUM_ENVOY_TOKENS_FOR_SECOND_BONUS  == NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS	or
 		NUM_ENVOY_TOKENS_FOR_THIRD_BONUS   == NUM_ENVOY_TOKENS_FOR_FOURTH_BONUS	then
-		alert("At least 2 city state bonuses have the same value, this will cause issues!");
+		-- alert("At least 2 city state bonuses have the same value, this will cause issues!");
 	end
 	-- /Chimp --
 

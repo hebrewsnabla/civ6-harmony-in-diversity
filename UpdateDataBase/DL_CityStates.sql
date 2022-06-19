@@ -9,37 +9,37 @@
 
 ---------------------------------------------------------------------------------------------------------
 -- ANTANANARIVO--塔娜
-update GlobalParameters set Value = 20 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
+update GlobalParameters set Value = 10 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
 
 
 ---------------------------------------------------------------------------------------------------------
 -- Valletta瓦莱塔
-insert or replace into TraitModifiers 
-	(TraitType,						ModifierId)
-select 'MINOR_CIV_VALLETTA_TRAIT',	'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS'
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into TraitModifiers 
+--	(TraitType,						ModifierId)
+--select 'MINOR_CIV_VALLETTA_TRAIT',	'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS'
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
 
-insert or replace into Modifiers 
-	(ModifierId,															ModifierType,											SubjectRequirementSetId)
-select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
-insert or replace into Modifiers 
-	(ModifierId,															ModifierType,											SubjectRequirementSetId)
-select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PURCHASE_COST',NULL
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into Modifiers 
+--	(ModifierId,															ModifierType,											SubjectRequirementSetId)
+--select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into Modifiers 
+--	(ModifierId,															ModifierType,											SubjectRequirementSetId)
+--select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PURCHASE_COST',NULL
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
 
-insert or replace into	ModifierArguments
-	(ModifierId, 															Name,			Value)
-select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS',		'ModifierId',	'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1'
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
-insert or replace into	ModifierArguments
-	(ModifierId, 															Name,			Value)
-select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',	'BuildingType',	BuildingType
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
-insert or replace into	ModifierArguments
-	(ModifierId, 															Name,			Value)
-select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',	'Amount',			20
-from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into	ModifierArguments
+--	(ModifierId, 															Name,			Value)
+--select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS',		'ModifierId',	'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1'
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into	ModifierArguments
+--	(ModifierId, 															Name,			Value)
+--select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',	'BuildingType',	BuildingType 
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
+--insert or replace into	ModifierArguments
+--	(ModifierId, 															Name,			Value)
+--select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',	'Amount',			20
+--from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
 
 ---------------------------------------------------------------------------------------------------------
 -- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
@@ -114,7 +114,7 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 --Hunza罕萨
-update ModifierArguments set Value = 0.25 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
+update ModifierArguments set Value = 0.2 where ModifierId = 'MINOR_CIV_HUNZA_GOLD_FROM_TRADE_ROUTE_LENGTH' and Name = 'Amount';
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ insert or replace into ModifierArguments
 values
     --Bandar Seri Begawan(Jakarta)
 	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',			'YieldType',	 'YIELD_GOLD'),
-	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',			'Amount',	     4);
+	('MINOR_CIV_JAKARTA_DISTRICT_GOLD_BONUS',			'Amount',	     3);
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -226,7 +226,7 @@ insert or replace into ModifierArguments
 values
 	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE', 			'ModifierId', 	'MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE_MODIFIER'),
 	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE_MODIFIER', 	'YieldType',    'YIELD_SCIENCE'),
-	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE_MODIFIER', 	'Amount',    	2);
+	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE_MODIFIER', 	'Amount',    	1);
 
 -- insert or replace into TraitModifiers 
 -- 	(TraitType,						            ModifierId)
@@ -269,30 +269,30 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_FEZ_TRAIT' and ModifierI
 insert or replace into TraitModifiers 
     (TraitType,                                  ModifierId)
 values
-	('MINOR_CIV_FEZ_TRAIT',						 'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE'),
+--	('MINOR_CIV_FEZ_TRAIT',						 'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE'),
 	('MINOR_CIV_FEZ_TRAIT',				         'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE'),
 	('MINOR_CIV_FEZ_TRAIT',				         'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE'),
 	('MINOR_CIV_FEZ_TRAIT',				         'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_RELIGIOUS_BUILDING');
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,									    SubjectRequirementSetId)
 values
-	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_IS_SUZERAIN'),
+--	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				'PLAYER_IS_SUZERAIN'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE',         		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            'PLAYER_IS_SUZERAIN'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE',          	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            'PLAYER_IS_SUZERAIN'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_RELIGIOUS_BUILDING',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	        	'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_HOLY_SITE'),
+--	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_HOLY_SITE'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE1',         	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',  'BUILDING_IS_SHRINE'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE1',         	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',  'BUILDING_IS_TEMPLE_XP2'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_RELIGIOUS_BUILDING1',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 	'BUILDING_IS_TIER3_HOLY_SITE');
 insert or replace into ModifierArguments
 	(ModifierId,											Name,			Value)
 values
-	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE',			'ModifierId',	'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1'),
+--	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE',			'ModifierId',	'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE',          	'ModifierId',   'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE1'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE',          	'ModifierId',	'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE1'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_RELIGIOUS_BUILDING',	'ModifierId',	'MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_RELIGIOUS_BUILDING1'),
-	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'YieldType',	'YIELD_SCIENCE'),
-    ('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'Amount',		2),
+--	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'YieldType',	'YIELD_SCIENCE'),
+--  ('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_HOLY_SITE1',			'Amount',		2),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE1',          	'YieldType',	'YIELD_SCIENCE'),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_SHRINE1',          	'Amount',	    2),
 	('MINOR_CIV_FEZ_YIELD_SCIENCE_FOR_TEMPLE1',          	'YieldType',	'YIELD_SCIENCE'),
@@ -325,7 +325,7 @@ update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GRE
 
 ---------------------------------------------------------------------------------------------------------
 -- Cardiff
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
+update ModifierArguments set Value = 0 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SHIPYARD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_SEAPORT' and Name = 'Amount';
 -- insert or replace into TraitModifiers 
@@ -372,9 +372,9 @@ values
 	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS'),
 	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS'),
 	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS'),
-	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS'),
-	('MINOR_CIV_PRESLAV_TRAIT',						 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT'),
-	('MINOR_CIV_PRESLAV_TRAIT',						 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT');
+	('MINOR_CIV_PRESLAV_TRAIT',				         'MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS');
+	--('MINOR_CIV_PRESLAV_TRAIT',						 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT'),
+	--('MINOR_CIV_PRESLAV_TRAIT',						 'MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT');
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,									   			 SubjectRequirementSetId)
 values
@@ -385,12 +385,12 @@ values
 	('MINOR_CIV_PRESLAV_ENCAMPMENT_SCIENCE_BONUS1',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_ENCAMPMENT'),
 	('MINOR_CIV_PRESLAV_BARRACKS_STABLE_SCIENCE_BONUS1',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'BUILDING_IS_BARRACKS_STABLE_MILITARITIC_CITY_STATE'),
 	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 			'BUILDING_IS_ARMORY'),
-	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 			'BUILDING_IS_MILITARY_ACADEMY'),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 			'BUILDING_IS_MILITARY_ACADEMY');
 	-- 
-	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',					'UNIT_IS_CAVALRY_REQUIREMENTS'),
-	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',				'UNIT_IS_CAVALRY_REQUIREMENTS');
+	--('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	--('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	            		'PLAYER_IS_SUZERAIN'),
+	--('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',					'UNIT_IS_CAVALRY_REQUIREMENTS'),
+	--('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',				'UNIT_IS_CAVALRY_REQUIREMENTS');
 insert or replace into ModifierArguments
 	(ModifierId,													Name,				 Value)
 values
@@ -405,16 +405,16 @@ values
 	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'YieldType',	 	'YIELD_SCIENCE'),
 	('MINOR_CIV_PRESLAV_ARMORY_SCIENCE_BONUS1',						'Amount',	     	2),
 	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'YieldType',	 	'YIELD_SCIENCE'),
-	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'Amount',	     	2),
+	('MINOR_CIV_PRESLAV_MILITARY_ACADEMY_SCIENCE_BONUS1',			'Amount',	     	2);
 	-- 
-	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT'),
-	('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_STRENGTH'),	
-	('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'Amount',			1),
-	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			3);
-insert or replace into ModifierStrings
-	(ModifierId,							Context,	Text)
-values
-	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',	'Preview',	'+{1_Amount} {LOC_PRESLAV_CAVALRY_STRENGTH_PREVIEW_TEXT}');
+	--('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_MOVEMENT',				'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT'),
+	--('MINOR_CIV_PRESLAV_CAVALRY_INCREASED_COMBAT',					'ModifierId',		'MINOR_CIV_PRESLAV_CAVALRY_STRENGTH'),	
+	--('MINOR_CIV_PRESLAV_CAVALRY_MOVEMENT',							'Amount',			1),
+	--('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',							'Amount',			3);
+--insert or replace into ModifierStrings
+--	(ModifierId,							Context,	Text)
+--values
+--	('MINOR_CIV_PRESLAV_CAVALRY_STRENGTH',	'Preview',	'+{1_Amount} {LOC_PRESLAV_CAVALRY_STRENGTH_PREVIEW_TEXT}');
 
 ---------------------------------------------------------------------------------------------------------
 -- vilnius
@@ -437,6 +437,7 @@ values
 ---------------------------------------------------------------------------------------------------------
 --Nan Madol
 update Modifiers set SubjectRequirementSetId = 'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST' where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS';
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS' and Name = 'Amount';
 
 insert or replace into RequirementSets
 	(RequirementSetId,			RequirementSetType)
@@ -532,51 +533,51 @@ delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and
 
 ---------------------------------------------------------------------------------------------------------
 --Baikonur
-insert or replace into TraitModifiers
-	(TraitType,							ModifierId)
-values
-	('MINOR_CIV_HONG_KONG_TRAIT',		'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS');
+--insert or replace into TraitModifiers
+--	(TraitType,							ModifierId)
+--values
+--	('MINOR_CIV_HONG_KONG_TRAIT',		'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS');
 
-insert or replace into Modifiers	
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
-values
-	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS',						'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_CAMPUS');	
+--insert or replace into Modifiers	
+--	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+--values
+--	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS',						'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_IS_SUZERAIN'),
+--	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_CAMPUS');	
 
-insert or replace into	ModifierArguments
-	(ModifierId, 											        	Name,												Value)
-values
-	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS',						'ModifierId',										'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER'),
-	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'YieldType',										'YIELD_PRODUCTION'),
-    ('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'Amount',											2);
-insert or replace into TraitModifiers
-	(TraitType,							ModifierId)
-	select 'MINOR_CIV_HONG_KONG_TRAIT',		'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS'
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into Modifiers	
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER','PLAYER_IS_SUZERAIN'
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into Modifiers	
-	(ModifierId,														ModifierType,											SubjectRequirementSetId)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',NULL
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into	ModifierArguments
-	(ModifierId, 											        	Name,												Value)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS','ModifierId','MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER'
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into ModifierArguments	
-	(ModifierId,														Name,											Value)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','BuildingType',BuildingType
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into ModifierArguments	
-	(ModifierId,														Name,											Value)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','YieldType','YIELD_PRODUCTION'
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
-insert or replace into ModifierArguments	
-	(ModifierId,														Name,											Value)
-	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','Amount',2
-from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into	ModifierArguments
+--	(ModifierId, 											        	Name,												Value)
+--values
+--	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS',						'ModifierId',										'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER'),
+--	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'YieldType',										'YIELD_PRODUCTION'),
+--    ('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION_BONUS_MODIFIER',			'Amount',											2);
+--insert or replace into TraitModifiers
+--	(TraitType,							ModifierId)
+--	select 'MINOR_CIV_HONG_KONG_TRAIT',		'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS'
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into Modifiers	
+--	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER','PLAYER_IS_SUZERAIN'
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into Modifiers	
+--	(ModifierId,														ModifierType,											SubjectRequirementSetId)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',NULL
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into	ModifierArguments
+--	(ModifierId, 											        	Name,												Value)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS','ModifierId','MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER'
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into ModifierArguments	
+--	(ModifierId,														Name,											Value)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','BuildingType',BuildingType
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into ModifierArguments	
+--	(ModifierId,														Name,											Value)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','YieldType','YIELD_PRODUCTION'
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
+--insert or replace into ModifierArguments	
+--	(ModifierId,														Name,											Value)
+--	select 'MINOR_CIV_HONG_KONG_'||BuildingType||'_PRODUCTION_BONUS_MODIFIER','Amount',2
+--from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
 
 -------------------------------------
 --MEXICO_CITY
@@ -605,7 +606,7 @@ from Buildings where PrereqDistrict = 'DISTRICT_CAMPUS' and TraitType is NULL;
 
 -------------------------------------
 --布鲁塞尔
-update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';
+-- update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_WONDER_PRODUCTION_BONUS' and Name = 'Amount';
 -- insert or replace into TraitModifiers
 -- 	(TraitType,							ModifierId)
 -- values
@@ -629,13 +630,13 @@ update ModifierArguments set Value = 25 where ModifierId = 'MINOR_CIV_BRUSSELS_W
 
 -------------------------------------
 --Taruga
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_ALUMINUM_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_COAL_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_HORSES_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_IRON_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_NITER_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_OIL_RESOURCE_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_URANIUM_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_ALUMINUM_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_COAL_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_HORSES_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_IRON_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_NITER_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_OIL_RESOURCE_SCIENCE' and Name = 'Amount';
+--update ModifierArguments set Value = 7 where ModifierId = 'MINOR_CIV_TARUGA_URANIUM_RESOURCE_SCIENCE' and Name = 'Amount';
 
 
 -------------------------------------
@@ -739,3 +740,45 @@ insert or replace into UnitAbilityModifiers
 	(UnitAbilityType,										ModifierId)
 values
 	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'RELIGIOUS_ALL_INCREASED_MOVEMENT');
+
+-- 约翰内斯堡
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS';
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS_LATE';
+create temporary table 'JohannesburgImprovementType'(
+    ImprovementType TEXT not null primary key
+);
+insert into JohannesburgImprovementType values
+    ('IMPROVEMENT_FARM'),
+    ('IMPROVEMENT_PLANTATION'),
+    ('IMPROVEMENT_CAMP'),
+    ('IMPROVEMENT_PASTURE'),
+    ('IMPROVEMENT_MINE'),
+    ('IMPROVEMENT_QUARRY'),
+    ('IMPROVEMENT_LUMBER_MILL');
+insert or ignore into RequirementSets(RequirementSetId, 						RequirementSetType) 
+	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES',	'REQUIREMENTSET_TEST_ANY'
+	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+insert or ignore into RequirementSetRequirements(RequirementSetId,						RequirementId)
+	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ivr.ResourceType
+	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+insert or ignore into TraitModifiers(TraitType,		ModifierId)
+    select 'MINOR_CIV_JOHANNESBURG_TRAIT', 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType
+    from JohannesburgImprovementType;
+insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_IS_SUZERAIN'
+    from JohannesburgImprovementType;
+insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_REQUIRES_CITY_HAS_' || ImprovementType || '_OVER_RESOURCES'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'ModifierId' , 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'YieldType', 'YIELD_PRODUCTION'
+    from JohannesburgImprovementType;
+insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'Amount', '1'
+    from JohannesburgImprovementType;
+
+-- 日内瓦
+update ModifierArguments set Value = 10 where ModifierId = 'MINOR_CIV_GENEVA_SCIENCE_AT_PEACE_BONUS' and Name = 'Amount';

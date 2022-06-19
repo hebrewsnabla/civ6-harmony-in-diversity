@@ -66,6 +66,7 @@ values
     ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Airs of the States"), -- Collect Ballads
     -- Golden age
     ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
+    ("LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                               "Free Inquiry Golden Age:[NEWLINE][ICON_TECHBOOSTED] Eurekas provide an additional 10% of technology costs. Each different District and Building provides +1 [ICON_SCIENCE] Science to your capital."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
     ("LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "Heartbeat of Steam Golden Age:[NEWLINE]+10% [ICON_Production] Production toward Industrial era and later wonders. Campus district's [ICON_SCIENCE] Science adjacency bonus provides [ICON_PRODUCTION] Production as well. Industrial zone district's [ICON_PRODUCTION] Production adjacency bonus provides [ICON_SCIENCE] Science as well."),
     ("LOC_MOMENT_CATEGORY_MILITARY_BONUS_GOLDEN_AGE",                                 "To Arms! Golden Age:[NEWLINE]Unlock a special Casus Belli which generates 75% less [ICON_STAT_GRIEVANCE] Grievances than Formal War and can be used immediately after Denouncing the target. +30% [ICON_Production] Production towards military units."),
@@ -183,7 +184,7 @@ values
     ("LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "Each Entertainment Complex provides +6 [ICON_GOLD] Gold and each Arena provides +10 [ICON_GOLD] Gold."),
     ("LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "If the city [ICON_CITIZEN] population is 8 or higher, Arenas provide +2 [ICON_Amenities] Amenities (4-tile regional effect)."),
     ("LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "All units gain +100% combat experience."),
-    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+5 [ICON_Food] Food, +10% [ICON_FOOD] Food and +5 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
+    ("LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "+5 [ICON_Food] Food, +10% Growth rate and +5 Loyalty per turn for cities not on your original [ICON_Capital] Capital's continent."),
     ("LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "+1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_SCIENCE] Science, +1 [ICON_CULTURE] Culture, +1 [ICON_Faith] Faith and +2 [ICON_Gold] Gold in all cities."),
     ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls."),
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
@@ -269,6 +270,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_LITERARY_TRADITION_NAME",                                            "采风"),
     -- 着力点
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                               "“自由探索”黄金时代：[NEWLINE][ICON_TECHBOOSTED]尤里卡额外提供（对应科技所需科技总量的）10%。每个不同的区域和建筑为首都提供 +1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "“滚滚蒸汽”黄金时代：[NEWLINE]建造后工业时代的奇观时+10% [ICON_Production] 生产力。学院区域的 [ICON_SCIENCE] 科技值相邻加成也可提供 [ICON_PRODUCTION] 生产力。工业区域的 [ICON_PRODUCTION] 生产力相邻加成也可提供 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_MILITARY_BONUS_GOLDEN_AGE",                                 "“全民皆兵”黄金时代：[NEWLINE]解锁特殊战争借口，谴责目标后可立即宣战，[ICON_STAT_GRIEVANCE] 不满-75%。生产军事单位时+30% [ICON_Production] 生产力。"),
@@ -386,7 +388,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_ARENA_TICKETS_DESCRIPTION",                                          "每座娱乐中心产出+6 [ICON_GOLD] 金币，竞技场产出+10 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION",                                 "拥有8点或以上 [ICON_Citizen] 人口城市中的竞技场+2 [ICON_Amenities] 宜居度（4环辐射）。"),
     ("zh_Hans_CN",  "LOC_POLICY_AFTER_ACTION_REPORTS_DESCRIPTION",                                   "所有单位的战斗经验值+100%。"),
-    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+5 [ICON_Food] 食物、+10%食物、每回合提供5点忠诚度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_COLONIAL_OFFICES_DESCRIPTION",                                       "与您最初的 [ICON_Capital] 首都不在同一大陆的城市+5 [ICON_Food] 食物、+10%余粮、每回合提供5点忠诚度。"),
     ("zh_Hans_CN",  "LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION",                                    "所有城市+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_SCIENCE] 科技值、+1 [ICON_CULTURE] 文化值、+1 [ICON_Faith] 信仰值和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。"),

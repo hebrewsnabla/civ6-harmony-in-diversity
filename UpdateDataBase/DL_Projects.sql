@@ -130,6 +130,3 @@ update Projects set Cost = 600 where ProjectType = 'PROJECT_GRANT_RESOURCE_URANI
 -- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'UnitType',			'UNIT_BUILDER'),
 -- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'Amount',			1),
 -- 	('HD_RECRUIT_WORKERS_POPU_DECREASE_XHH',			'Amount',			-1);
-
-update Projects set Cost = 800 where ProjectType = 'PROJECT_ORBITAL_LASER';
-update Projects set Cost = 800 where ProjectType = 'PROJECT_TERRESTRIAL_LASER';

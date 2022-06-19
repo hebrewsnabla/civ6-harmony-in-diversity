@@ -3,21 +3,21 @@
 -------------------------------------
 
 -- Apadana
-insert or replace into BuildingModifiers
-    (BuildingType,                      ModifierId)
-values
-    ('BUILDING_APADANA',                'APADANA_TRIBUTARY_CULTURE');
+--insert or replace into BuildingModifiers
+--    (BuildingType,                      ModifierId)
+--values
+--    ('BUILDING_APADANA',                'APADANA_TRIBUTARY_CULTURE');
 
-insert or replace into Modifiers
-    (ModifierId,                        ModifierType)
-values
-    ('APADANA_TRIBUTARY_CULTURE',       'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY');
+--insert or replace into Modifiers
+--    (ModifierId,                        ModifierType)
+--values
+--    ('APADANA_TRIBUTARY_CULTURE',       'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY');
 
-insert or replace into ModifierArguments
-    (ModifierId,                        Name,           Value)
-values
-    ('APADANA_TRIBUTARY_CULTURE',       'YieldType',    'YIELD_CULTURE'),
-    ('APADANA_TRIBUTARY_CULTURE',       'Amount',       2);
+--insert or replace into ModifierArguments
+--    (ModifierId,                        Name,           Value)
+--values
+--    ('APADANA_TRIBUTARY_CULTURE',       'YieldType',    'YIELD_CULTURE'),
+--    ('APADANA_TRIBUTARY_CULTURE',       'Amount',       2);
 
 -- 
 insert or replace into Building_CitizenYieldChanges
