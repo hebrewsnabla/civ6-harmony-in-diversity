@@ -3,13 +3,13 @@
 -------------------------------------
 
 -- Influence Bonus
-delete from TraitModifiers where
-    (TraitType in (select TraitType from CSE_ClassTypes)) and 
-    (ModifierId like '%_SMALL_INFLUENCE_%' or 
-    ModifierId like '%_MEDIUM_INFLUENCE_%' or 
-    ModifierId like '%_LARGE_INFLUENCE_%' or 
-    ModifierId like '%_LARGEST_INFLUENCE_%' or
-    ModifierId like 'MODIFIER_CSE_%');
+--delete from TraitModifiers where
+--    (TraitType in (select TraitType from CSE_ClassTypes)) and 
+--    (ModifierId like '%_SMALL_INFLUENCE_%' or 
+--    ModifierId like '%_MEDIUM_INFLUENCE_%' or 
+--    ModifierId like '%_LARGE_INFLUENCE_%' or 
+--    ModifierId like '%_LARGEST_INFLUENCE_%' or
+--    ModifierId like 'MODIFIER_CSE_%');
 
 create table if not exists CityStateInfluenceBonus_HD(
     Type                TEXT    not NULL,
@@ -60,7 +60,7 @@ update CityStateInfluenceBonus_HD set RequirementSetId = 'HD_CITY_HAS_'||Type||'
 update CityStateInfluenceBonus_HD set ModifierId = TraitType || '_' || Level || '_INFLUENCE_' || YieldType || '_HD';
 update CityStateInfluenceBonus_HD set AttachModifierId = ModifierId || '_ATTACH';
 
-insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType, AttachModifierId from CityStateInfluenceBonus_HD;
+--insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType, AttachModifierId from CityStateInfluenceBonus_HD;
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
 select AttachModifierId, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_'||Level||'_INFLUENCE' from CityStateInfluenceBonus_HD;
 insert or replace into ModifierArguments (ModifierId, Name, Value)

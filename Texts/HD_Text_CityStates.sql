@@ -240,6 +240,17 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_3", ""),
     ("zh_Hans_CN",  "LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HONG_KONG_CHAPTER_HISTORY_PARA_4", "");
 
+insert or replace into EnglishText
+    (Tag,           Text)
+values
+    ("LOC_COMMA",   ", "),
+    ("LOC_AND",     " and ");
+insert or replace into LocalizedText
+    (Language,      Tag,            Text)
+values
+    ("zh_Hans_CN",  "LOC_COMMA",    "、"),
+    ("zh_Hans_CN",  "LOC_AND",      "和");
+
 -- Influence Bonus
 insert or replace into EnglishText (Tag, Text) select "LOC_HD_ETHIOPIA_COMMA", ", "
 from EnglishText where Tag = 'LOC_BUILDING_CONSULATE_NAME';

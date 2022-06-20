@@ -96,6 +96,11 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_DISTRICT_IS_NOT_' || DistrictType,	'REQUIREMENT_DISTRICT_TYPE_MATCHES',	1 from Districts;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS', 'REQUIRES_DISTRICT_IS_' || DistrictType from Districts;
+
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || DistrictType || '_RAW', 'DistrictType', DistrictType from Districts;
 insert or ignore into Requirements (RequirementId, RequirementType)
@@ -118,6 +123,10 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'REQUIREMENT_CITY_HAS_BUILDING' from Buildings;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Buildings;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIRES_CITY_HAS_' || BuildingType from Buildings;
 
 -- Player Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
