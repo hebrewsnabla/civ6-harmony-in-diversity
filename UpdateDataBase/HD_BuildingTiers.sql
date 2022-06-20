@@ -126,7 +126,7 @@ update HD_CityStateBuffedBuildings set Level = 'MEDIUM' where Amount = 2;
 update HD_CityStateBuffedBuildings set Level = 'LARGE'  where Amount = 3;
 delete from HD_CityStateBuffedBuildings where Level is null;
 -- Agricultural City States adjusts
-update HD_CityStateBuffedBuildings set Level = 'LARGE'  where Level = 'MEDIUM'  and YieldType = 'YIELD_FOOD';
+update HD_CityStateBuffedBuildings set Level = 'LARGE'  where Level = 'MEDIUM'  and YieldType = 'YIELD_FOOD' and BuildingType != 'BUILDING_CONSULATE';
 update HD_CityStateBuffedBuildings set Level = 'MEDIUM' where Level = 'SMALL'   and YieldType = 'YIELD_FOOD' and BuildingType != 'BUILDING_PALACE';
 -- double gold yield
 update HD_CityStateBuffedBuildings set Amount = Amount * 2 where YieldType = 'YIELD_GOLD';
@@ -194,6 +194,3 @@ values
     ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD',           'ModifierId',   'MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER'),
     ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER',  'YieldType',    'YIELD_FOOD'),
     ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER',  'Amount',       1);
-
--- Texts
--- update CSE_ClassTypes c set SmallBonus = (select group_concat('{' || Name || '}', ', ') from (HD_CityStateBuffedBuildings a inner join Buildings b on a.BuildingType = b.BuildingType) where Level = 'SMALL' and a.TraitType = c.TraitType group by BuildingType;
