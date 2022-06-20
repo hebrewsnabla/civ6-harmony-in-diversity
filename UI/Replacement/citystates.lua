@@ -172,6 +172,62 @@ for row in GameInfo.CSE_ClassTypes() do
 	BonusIcon = row.BonusIcon,
 	TypeIcon = row.TypeIcon}
 end
+-- xiaoxiao get text
+for row in GameInfo.HD_CityStateBuffedBuildings() do
+	local typeString = string.sub(row.TraitType, 11, string.len(row.TraitType) - 6);
+	local type = tCityStateTypes[typeString];
+	type[row.Level] = type[row.Level] or {};
+	local buildings = type[row.Level];
+	local building = GameInfo.Buildings[row.BuildingType];
+	buildings[building.Index] = true;
+end
+for k, v in pairs(tCityStateTypes) do
+	local s = {};
+	s["SMALL"] = "";
+	s["MEDIUM"] = "";
+	s["LARGE"] = "";
+	for level, str in pairs(s) do
+		if v[level] ~= nil then
+			-- search building names with the following order: City Center & Diplomatic Quarter -> Others
+			names = {};
+			for row in GameInfo.Buildings() do
+				if v[level][row.Index] and (row.PrereqDistrict == "DISTRICT_CITY_CENTER" or row.PrereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER") then
+					table.insert(names, Locale.Lookup(row.Name));
+				end
+			end
+			local flag = true;
+			for row in GameInfo.Buildings() do
+				if v[level][row.Index] and not (row.PrereqDistrict == "DISTRICT_CITY_CENTER" or row.PrereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER") then
+					if row.EnabledByReligion then
+						if flag then
+							table.insert(names, Locale.Lookup('LOC_WORSHIP_BUILDINGS'));
+							flag = false;
+						end
+					else
+						table.insert(names, Locale.Lookup(row.Name));
+					end
+				end
+			end
+			-- Argricultural City States buff Aqueduct with district expansion not enabled.
+			if level == "MEDIUM" and k == "CSE_AGRICULTURAL" and GameInfo.Buildings["BUILDING_SEWER"].PrereqDistrict == "DISTRICT_CITY_CENTER" then
+				table.insert(names, Locale.Lookup(GameInfo.Districts["DISTRICT_AQUEDUCT"].Name));
+			end
+			-- generate string
+			for i, name in ipairs(names) do
+				s[level] = s[level] .. name;
+				if names[i + 2] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_COMMA");
+				elseif names[i + 1] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_AND");
+				end
+			end
+		end
+	end
+	v.SmallBonus	= string.gsub(v.SmallBonus,		"*", s["SMALL"]);
+	v.MediumBonus	= string.gsub(v.MediumBonus,	"*", s["MEDIUM"]);
+	v.LargeBonus	= string.gsub(v.LargeBonus,		"*", s["LARGE"]);
+end
+-- xiaoxiao end
 -- /C15 --
 
 -- ===========================================================================
