@@ -60,24 +60,22 @@ update GlobalParameters set Value = 720 where Name = 'ALLIANCE_LEVEL_THREE_XP';
 update GlobalParameters set Value = 3 where Name = 'INFLUENCE_TOKENS_MINIMUM_FOR_SUZERAIN';
 
 -- City states
-INSERT OR IGNORE INTO Requirements
-        (RequirementId,                             RequirementType                                 )
-VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS' );
-INSERT OR IGNORE INTO RequirementArguments
-        (RequirementId,                             Name,               Value)
-VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'MinimumTokens',    6);
+-- INSERT OR IGNORE INTO Requirements
+--        (RequirementId,                             RequirementType                                 )
+-- VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'REQUIREMENT_PLAYER_HAS_GIVEN_INFLUENCE_TOKENS' );
+-- INSERT OR IGNORE INTO RequirementArguments
+--        (RequirementId,                             Name,               Value)
+-- VALUES  ('REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE',   'MinimumTokens',    6);
 update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_SMALL_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 1 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 3 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
-update RequirementArguments set Value = 6 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGEST_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 3 where RequirementId = 'REQUIRES_PLAYER_HAS_MEDIUM_INFLUENCE' and Name = 'MinimumTokens';
+update RequirementArguments set Value = 6 where RequirementId = 'REQUIRES_PLAYER_HAS_LARGE_INFLUENCE' and Name = 'MinimumTokens';
 -- The New Global Parameters.
 insert or replace into GlobalParameters
     (Name,                                              Value)
 values
     ('INFLUENCE_TOKENS_MINIMUM_FOR_SMALL_INFLUENCE',    1),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE',   1),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE',    3),
-    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGEST_INFLUENCE',  6); 
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_MEDIUM_INFLUENCE',   3),
+    ('INFLUENCE_TOKENS_MINIMUM_FOR_LARGE_INFLUENCE',    6); 
 
 -- Religion pressure
 update GlobalParameters set Value = 2 where Name = 'RELIGION_SPREAD_ADJACENT_PER_TURN_PRESSURE';

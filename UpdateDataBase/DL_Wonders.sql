@@ -36,11 +36,11 @@ update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATPROPHETPO
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATSCIENTISTPOINTS' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATWRITERPOINTS' and Name = 'Amount';
 -- ARTEMIS does not affect empty camp.
-insert into RequirementSets (RequirementSetId, RequirementSetType) values
+insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
 	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL')
 ;
 
-insert into RequirementSetRequirements values
+insert or replace into RequirementSetRequirements values
 	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'PLOT_HAS_RESOURCE_REQUIREMENTS'),
 	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'REQUIRES_PLOT_HAS_ARTEMIS_WITHIN_4')
 ;

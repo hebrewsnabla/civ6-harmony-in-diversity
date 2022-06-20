@@ -1112,16 +1112,13 @@
       <File>Maps/Tiny_Lakes.lua</File>
       <File>Maps/Wet_Lakes.lua</File>
     </ImportFiles>
-    <UpdateDatabase id="HD_BuildingTiers" criteria="Expansion2">
-      <Properties><LoadOrder>12001</LoadOrder></Properties>
-      <File>UpdateDataBase/HD_BuildingTiers.sql</File>
-    </UpdateDatabase>
     <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
       <File>Configs/HD_Ingame_setup.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="DL_EarlySetup" criteria="Expansion2">
       <Properties><LoadOrder>16001</LoadOrder></Properties>
+      <File>UpdateDataBase/HD_BuildingTiers.sql</File>
       <File>UpdateDataBase/DL_EarlySetup.sql</File>
     </UpdateDatabase>
     <!-- Double Great Person need to update in the first -->
@@ -1769,7 +1766,7 @@
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_80.dds</File>
     <File>ThirdParty/EpsBarbarians/ICON_UNITS_EPSTWEAK_BARBARIAN_256.dds</File>
     <!-- Early Setup -->
-    <File>UpdateDataBase/HD_BuildingTiers_Early.sql</File>
+    <File>UpdateDataBase/HD_BuildingTiers.sql</File>
     <File>UpdateDataBase/DL_EarlySetup.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>
