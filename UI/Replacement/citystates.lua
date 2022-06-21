@@ -159,7 +159,6 @@ end
 -- C15 --
 local tCityStateTypes = {}
 for row in GameInfo.CSE_ClassTypes() do
-	print(row.TypeName)
 	tCityStateTypes[row.Type] = {
 	enabled = GetCityStateTypeEnabled(row.Type),
 	idx = row.Index,
@@ -172,6 +171,76 @@ for row in GameInfo.CSE_ClassTypes() do
 	BonusIcon = row.BonusIcon,
 	TypeIcon = row.TypeIcon}
 end
+-- xiaoxiao get text
+for row in GameInfo.HD_CityStateBuffedBuildings() do
+	local typeString = string.sub(row.TraitType, 11, string.len(row.TraitType) - 6);
+	local type = tCityStateTypes[typeString];
+	type[row.Level] = type[row.Level] or {};
+	local objects = type[row.Level];
+	if row.IsDistrict then
+		local district = GameInfo.Districts[row.ObjectType];
+		table.insert(objects, {
+			prereqDistrict = row.ObjectType,
+			name = district.Name,
+			index = district.Index,
+			isDistrict = true
+		});
+	else
+		local building = GameInfo.Buildings[row.ObjectType];
+		table.insert(objects, {
+			prereqDistrict = building.PrereqDistrict,
+			name = building.Name,
+			index = building.Index,
+			isWorship = building.EnabledByReligion,
+			isDistrict = false
+		});
+	end
+end
+for k, v in pairs(tCityStateTypes) do
+	local s = {};
+	s["SMALL"]		= "";
+	s["MEDIUM"]		= "";
+	s["LARGE"]		= "";
+	s["LARGEST"]	= "";
+	for level, str in pairs(s) do
+		if v[level] ~= nil then
+			-- names with the following order: district -> buildings; City Center & Diplomatic Quarter -> Others
+			table.sort(v[level], function (o1, o2)
+				local d = o1.Index - o2.Index;
+				if o1.isDistrict then d = d + 1024; end
+				if o2.isDistrict then d = d - 1024; end
+				if o1.prereqDistrict == "DISTRICT_CITY_CENTER" or o1.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d + 512; end
+				if o2.prereqDistrict == "DISTRICT_CITY_CENTER" or o2.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d - 512; end
+				return d < 0;
+			end);
+			local names = {};
+			local flag = true;
+			for _, object in v[level] do
+				if object.isWorship then
+					if flag then
+						table.insert(names, Locale.Lookup('LOC_WORSHIP_BUILDINGS'));
+						flag = false;
+					end
+				else
+					table.insert(names, Locale.Lookup(object.name));
+				end
+			end
+			-- generate string
+			for i, name in ipairs(names) do
+				s[level] = s[level] .. name;
+				if names[i + 2] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_COMMA");
+				elseif names[i + 1] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_AND");
+				end
+			end
+		end
+	end
+	v.SmallBonus	= string.gsub(v.SmallBonus,		"*", s["SMALL"]);
+	v.MediumBonus	= string.gsub(v.MediumBonus,	"*", s["MEDIUM"]);
+	v.LargeBonus	= string.gsub(v.LargeBonus,		"*", s["LARGE"]);
+end
+-- xiaoxiao end
 -- /C15 --
 
 -- ===========================================================================

@@ -118,6 +118,12 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || DistrictType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Districts;
 	
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'CITY_HAS_' || DistrictType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'CITY_HAS_' || DistrictType || '_REQUIREMENTS', 'REQUIRES_CITY_HAS_' || DistrictType from Districts;
+
+	
 -- Buildings
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_CITY_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
@@ -375,7 +381,7 @@ values
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'REQUIRES_NOT_ADJACENT_TO_AQUEDUCT'),
 	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
-	--('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_TECH_CALENDAR_HD'),
+	('PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM',	'HD_REQUIRES_PLAYER_HAS_TECH_IRRIGATION'),
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'REQUIRES_PLOT_ADJACENT_TO_AQUEDUCT'),
 	('IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM',						'HD_REQUIRES_PLAYER_HAS_NO_CIVIC_FEUDALISM'),
 	('PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
