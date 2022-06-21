@@ -3,7 +3,8 @@ create table if not exists HD_BuildingTiers (
     BuildingType text not null primary key,
     PrereqDistrict text not null,
     Tier int not null default 1,
-    IsUB int not null default 0
+    IsUB int not null default 0,
+    Tag text
 );
 
 -- Initialize
@@ -16,6 +17,8 @@ update HD_BuildingTiers set Tier = 0 where PrereqDistrict = 'DISTRICT_CITY_CENTE
 update HD_BuildingTiers set Tier = 2 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 1));
 update HD_BuildingTiers set Tier = 3 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 2));
 update HD_BuildingTiers set Tier = 4 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 3));
+-- Worship buildings moves to Tier 4 with District Expansion enabled.
+update HD_BuildingTiers set Tier = 4 where BuildingType in (select BuildingType from Buildings where EnabledByReligion = 1) and exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and Tier = 3 and BuildingType not in (select BuildingType from Buildings where EnabledByReligion = 1));
 
 -- Reqs
 insert or replace into RequirementSets
@@ -41,156 +44,134 @@ from HD_BuildingTiers;
 
 -- City State
 delete from TraitModifiers where TraitType in (select TraitType from CSE_ClassTypes);
-create table if not exists HD_CityStateBuffedBuildings (
-    TraitType text not null,
-    YieldType text not null,
-    BuildingType text not null,
+create table if not exists HD_CityStateBuffedObjects (
+    TraitType text,
+    YieldType text,
+    ObjectType text,
+    IsDistrict int default 0,
     Amount int default 0,
-    Level text default null,
-    AttachId text default null,
-    ModifierId text default null,
-    primary key (TraitType, YieldType, BuildingType)
+    PrereqDistrict text,
+    Level text,
+    IsYieldChange int,
+    AttachId text,
+    ModifierId text,
+    ModifierType text,
+    SubjectRequirementSetId text,
+    primary key (TraitType, YieldType, ObjectType)
 );
 
 -- City State buffed Buildings
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,          BuildingType,   Amount)
+-- Initialize
+insert or replace into HD_CityStateBuffedObjects
+    (PrereqDistrict,    ObjectType,     Amount)
 select
-    'MINOR_CIV_SCIENTIFIC_TRAIT',   'YIELD_SCIENCE',    BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,          BuildingType,   Amount)
+    PrereqDistrict,     BuildingType,   Tier
+from HD_BuildingTiers where IsUB = 0;
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_SCIENTIFIC_TRAIT',        YieldType = 'YIELD_SCIENCE'         where PrereqDistrict = 'DISTRICT_CAMPUS';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CULTURAL_TRAIT',          YieldType = 'YIELD_CULTURE'         where PrereqDistrict = 'DISTRICT_THEATER';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_RELIGIOUS_TRAIT',         YieldType = 'YIELD_FAITH'           where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_TRADE_TRAIT',             YieldType = 'YIELD_GOLD'            where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_MILITARISTIC_TRAIT',      YieldType = 'UNIT_PRODUCTION'       where PrereqDistrict = 'DISTRICT_ENCAMPMENT';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_INDUSTRIAL_TRAIT',        YieldType = 'BUILDING_PRODUCTION'   where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_MARITIME_TRAIT',      YieldType = 'YIELD_GOLD'            where PrereqDistrict = 'DISTRICT_HARBOR';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',  YieldType = 'YIELD_FOOD', Amount = Amount + 1 where PrereqDistrict = 'DISTRICT_AQUEDUCT';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',  YieldType = 'YIELD_FOOD', Amount = Amount + 2 where PrereqDistrict = 'DISTRICT_NEIGHBORHOOD';
+-- remove Buildings that are not buffed.
+delete from HD_CityStateBuffedObjects where TraitType is null or YieldType is null or PrereqDistrict is null;
+-- Buffs District itself as Tier 4 with no Tier 4 building
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType,         YieldType, ObjectType,      Amount, IsDistrict)
 select
-    'MINOR_CIV_CULTURAL_TRAIT',     'YIELD_CULTURE',    BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_THEATER' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,          BuildingType,   Amount)
+    distinct TraitType, YieldType, PrereqDistrict,  4,      1
+from HD_CityStateBuffedObjects a where not exists (select ObjectType from HD_CityStateBuffedObjects b where Amount = 4 and a.PrereqDistrict = b.PrereqDistrict);
+-- Industrial Zone bonus for District production
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType, YieldType,              PrereqDistrict, ObjectType, Amount)
 select
-    'MINOR_CIV_RELIGIOUS_TRAIT',    'YIELD_FAITH',      BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,          BuildingType,   Amount)
+    TraitType,  'DISTRICT_PRODUCTION',  PrereqDistrict, ObjectType, Amount
+from HD_CityStateBuffedObjects where YieldType = 'BUILDING_PRODUCTION';
+-- Aqueduct & Neighborhood
+update HD_CityStateBuffedObjects set Amount = 2 where ObjectType = 'DISTRICT_AQUEDUCT';
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType,                             YieldType,              ObjectType,                 Amount, IsDistrict)
+values
+    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT',    'YIELD_FOOD',           'DISTRICT_NEIGHBORHOOD',    2,      1);
+-- Agricultural City States buff Aqueduct as Tier 2, sewer as Tier 3 with district expansion not enabled.
+delete from HD_CityStateBuffedObjects where ObjectType = 'DISTRICT_AQUEDUCT' and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SEWER' and PrereqDistrict = 'DISTRICT_CITY_CENTER');
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType,                             YieldType,              ObjectType,     Amount)
 select
-    'MINOR_CIV_TRADE_TRAIT',        'YIELD_GOLD',       BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,          BuildingType,   Amount)
-select
-    'MINOR_CIV_CSE_MARITIME_TRAIT', 'YIELD_GOLD',       BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HARBOR' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                             YieldType,      BuildingType,   Amount)
-select
-    'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',     'YIELD_FOOD',   BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_AQUEDUCT' and IsUB = 0 and 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT' in (select Type from Types);
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,              BuildingType,   Amount)
-select
-    'MINOR_CIV_MILITARISTIC_TRAIT', 'UNIT_PRODUCTION',      BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,              BuildingType,   Amount)
-select
-    'MINOR_CIV_INDUSTRIAL_TRAIT',   'BUILDING_PRODUCTION',  BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and IsUB = 0;
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                     YieldType,              BuildingType,   Amount)
-select
-    'MINOR_CIV_INDUSTRIAL_TRAIT',   'DISTRICT_PRODUCTION',  BuildingType,   Tier
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and IsUB = 0;
--- Agricultural City States buff sewer with district expansion not enabled.
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,                             YieldType,      BuildingType,   Amount)
-select
-    'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',     'YIELD_FOOD',   BuildingType,   2
-from Buildings where BuildingType = 'BUILDING_SEWER' and PrereqDistrict = 'DISTRICT_CITY_CENTER' and 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT' in (select Type from Types);
+    'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',     'YIELD_FOOD',           BuildingType,   3
+from Buildings where BuildingType = 'BUILDING_SEWER' and PrereqDistrict = 'DISTRICT_CITY_CENTER';
 -- Trade City States buff Harbor buildings with Maritime not enabled.
-update HD_CityStateBuffedBuildings set TraitType = 'MINOR_CIV_TRADE_TRAIT' where TraitType = 'MINOR_CIV_CSE_MARITIME_TRAIT' and TraitType not in (select Type from Types);
--- Diplomatic Quater buildings if Ethiopia enabled
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType, YieldType,  BuildingType,   Amount)
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_TRADE_TRAIT' where TraitType = 'MINOR_CIV_CSE_MARITIME_TRAIT' and TraitType not in (select Type from Types);
+-- remove City State Types that are not enabled.
+delete from HD_CityStateBuffedObjects where TraitType not in (select Type from Types);
+-- Diplomatic Quater buildings
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType, YieldType,  ObjectType,     Amount)
 select
     TraitType,  YieldType,  BuildingType,   Tier + 1
-from ((select distinct TraitType, YieldType from HD_CityStateBuffedBuildings)
+from ((select distinct TraitType, YieldType from HD_CityStateBuffedObjects)
 left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and IsUB = 0));
+-- Diplomatic Quater
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType,         YieldType,  ObjectType,                     Amount, IsDistrict)
+select
+    distinct TraitType, YieldType,  'DISTRICT_DIPLOMATIC_QUARTER',  4,      1
+from HD_CityStateBuffedObjects where 'DISTRICT_DIPLOMATIC_QUARTER' in (select Type from Types);
 -- Palace
-insert or replace into HD_CityStateBuffedBuildings
-    (TraitType,         YieldType,  BuildingType,       Amount)
+insert or replace into HD_CityStateBuffedObjects
+    (TraitType,         YieldType,  ObjectType,         Amount)
 select
     distinct TraitType, YieldType,  'BUILDING_PALACE',  1
-from HD_CityStateBuffedBuildings;
+from HD_CityStateBuffedObjects;
 
 -- stores Influence Level
-update HD_CityStateBuffedBuildings set Level = 'SMALL'  where Amount = 1;
-update HD_CityStateBuffedBuildings set Level = 'MEDIUM' where Amount = 2;
-update HD_CityStateBuffedBuildings set Level = 'LARGE'  where Amount = 3;
-delete from HD_CityStateBuffedBuildings where Level is null;
+update HD_CityStateBuffedObjects set Level = 'SMALL'      where Amount = 1;
+update HD_CityStateBuffedObjects set Level = 'MEDIUM'     where Amount = 2;
+update HD_CityStateBuffedObjects set Level = 'LARGE'      where Amount = 3;
+update HD_CityStateBuffedObjects set Level = 'LARGEST'    where Amount = 4;
+delete from HD_CityStateBuffedObjects where Level is null;
 -- Agricultural City States adjusts
-update HD_CityStateBuffedBuildings set Level = 'LARGE'  where Level = 'MEDIUM'  and YieldType = 'YIELD_FOOD' and BuildingType != 'BUILDING_CONSULATE';
-update HD_CityStateBuffedBuildings set Level = 'MEDIUM' where Level = 'SMALL'   and YieldType = 'YIELD_FOOD' and BuildingType != 'BUILDING_PALACE';
+update HD_CityStateBuffedObjects set Amount = Amount - 1 where Amount > 1 and YieldType = 'YIELD_FOOD';
 -- double gold yield
-update HD_CityStateBuffedBuildings set Amount = Amount * 2 where YieldType = 'YIELD_GOLD';
+update HD_CityStateBuffedObjects set Amount = Amount * 2 where YieldType = 'YIELD_GOLD';
 
--- City State Trait Modifiers
-update HD_CityStateBuffedBuildings set AttachId = TraitType || '_' || BuildingType || '_' || YieldType;
-update HD_CityStateBuffedBuildings set ModifierId = AttachId || '_MODIFIER';
-insert or replace into TraitModifiers
-    (TraitType, ModifierId)
-select
-    TraitType,  AttachId
-from HD_CityStateBuffedBuildings;
+-- Modifier Info
+update HD_CityStateBuffedObjects set
+    IsYieldChange           = YieldType in (select YieldType from Yields),
+    AttachId                = TraitType || '_' || ObjectType || '_' || YieldType;
+update HD_CityStateBuffedObjects set
+    ModifierId              = AttachId || '_MODIFIER';
+update HD_CityStateBuffedObjects set
+    ModifierType            = 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',
+    SubjectRequirementSetId = null
+where IsYieldChange = 1 and IsDistrict = 0;
+update HD_CityStateBuffedObjects set
+    ModifierType            = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',
+    SubjectRequirementSetId = 'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
+where IsYieldChange = 1 and IsDistrict = 1;
+update HD_CityStateBuffedObjects set
+    ModifierType            = 'MODIFIER_PLAYER_CITIES_ADJUST_' || YieldType || '_CHANGE',
+    SubjectRequirementSetId = 'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
+where IsYieldChange = 0;
+-- TraitModifiers
+insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType,  AttachId from HD_CityStateBuffedObjects;
 insert or replace into Modifiers
     (ModifierId,    ModifierType,                           SubjectRequirementSetId)
 select
     AttachId,       'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_' || Level || '_INFLUENCE'
-from HD_CityStateBuffedBuildings;
-insert or replace into ModifierArguments
-    (ModifierId,    Name,           Value)
-select
-    AttachId,       'ModifierId',   ModifierId
-from HD_CityStateBuffedBuildings;
--- YieldChange
-insert or replace into Modifiers
-    (ModifierId,    ModifierType)
-select
-    ModifierId,     'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
-from HD_CityStateBuffedBuildings where YieldType in (select YieldType from Yields);
-insert or replace into ModifierArguments
-    (ModifierId,    Name,           Value)
-select
-    ModifierId,    'YieldType',    YieldType
-from HD_CityStateBuffedBuildings where YieldType in (select YieldType from Yields);
-insert or replace into ModifierArguments
-    (ModifierId,    Name,           Value)
-select
-    ModifierId,    'BuildingType', BuildingType
-from HD_CityStateBuffedBuildings where YieldType in (select YieldType from Yields);
--- non-YieldChange
-insert or replace into Modifiers
-    (ModifierId,    ModifierType,                                                   SubjectRequirementSetId)
-select
-    ModifierId,    'MODIFIER_PLAYER_CITIES_ADJUST_' || YieldType || '_CHANGE',     'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
-from HD_CityStateBuffedBuildings where YieldType not in (select YieldType from Yields);
+from HD_CityStateBuffedObjects;
+insert or replace into ModifierArguments (ModifierId, Name, Value) select AttachId, 'ModifierId', ModifierId from HD_CityStateBuffedObjects;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select ModifierId, ModifierType, SubjectRequirementSetId from HD_CityStateBuffedObjects;
+-- ModifierArguments
+-- BuildingType
+insert or replace into ModifierArguments (ModifierId, Name, Value) select ModifierId, 'BuildingType', ObjectType from HD_CityStateBuffedObjects where IsYieldChange = 1 and IsDistrict = 0;
+-- YieldType
+insert or replace into ModifierArguments (ModifierId, Name, Value) select ModifierId, 'YieldType', YieldType from HD_CityStateBuffedObjects where IsYieldChange = 1;
 -- Amount
-insert or replace into ModifierArguments
-    (ModifierId,    Name,           Value)
-select
-    ModifierId,    'Amount',       Amount
-from HD_CityStateBuffedBuildings;
--- Agricultural City States buff Aqueduct with district expansion not enabled.
-insert or replace into TraitModifiers
-    (TraitType,                             ModifierId)
-select
-    'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',     'MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD'
-from Buildings where BuildingType = 'BUILDING_SEWER' and PrereqDistrict = 'DISTRICT_CITY_CENTER' and 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT' in (select Type from Types);;
-insert or replace into Modifiers
-    (ModifierId,                                                                ModifierType,                                       SubjectRequirementSetId)
-values
-    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD',           'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',             'PLAYER_HAS_MEDIUM_INFLUENCE'),
-    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER',  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',    'DISTRICT_IS_DISTRICT_AQUEDUCT_REQUIREMENTS');
-insert or replace into ModifierArguments
-    (ModifierId,                                                                Name,           Value)
-values
-    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD',           'ModifierId',   'MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER'),
-    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER',  'YieldType',    'YIELD_FOOD'),
-    ('MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_AQUEDUCT_YIELD_FOOD_MODIFIER',  'Amount',       1);
+insert or replace into ModifierArguments (ModifierId, Name, Value) select ModifierId, 'Amount', Amount from HD_CityStateBuffedObjects;
+
+-- Yields for Neighborhood attached directly to district instead of city
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', SubjectRequirementSetId = 'DISTRICT_IS_DISTRICT_NEIGHBORHOOD_REQUIREMENTS' where ModifierId = 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT_DISTRICT_NEIGHBORHOOD_YIELD_FOOD_MODIFIER';

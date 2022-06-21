@@ -159,7 +159,6 @@ end
 -- C15 --
 local tCityStateTypes = {}
 for row in GameInfo.CSE_ClassTypes() do
-	print(row.TypeName)
 	tCityStateTypes[row.Type] = {
 	enabled = GetCityStateTypeEnabled(row.Type),
 	idx = row.Index,
@@ -177,40 +176,54 @@ for row in GameInfo.HD_CityStateBuffedBuildings() do
 	local typeString = string.sub(row.TraitType, 11, string.len(row.TraitType) - 6);
 	local type = tCityStateTypes[typeString];
 	type[row.Level] = type[row.Level] or {};
-	local buildings = type[row.Level];
-	local building = GameInfo.Buildings[row.BuildingType];
-	buildings[building.Index] = true;
+	local objects = type[row.Level];
+	if row.IsDistrict then
+		local district = GameInfo.Districts[row.ObjectType];
+		table.insert(objects, {
+			prereqDistrict = row.ObjectType,
+			name = district.Name,
+			index = district.Index,
+			isDistrict = true
+		});
+	else
+		local building = GameInfo.Buildings[row.ObjectType];
+		table.insert(objects, {
+			prereqDistrict = building.PrereqDistrict,
+			name = building.Name,
+			index = building.Index,
+			isWorship = building.EnabledByReligion,
+			isDistrict = false
+		});
+	end
 end
 for k, v in pairs(tCityStateTypes) do
 	local s = {};
-	s["SMALL"] = "";
-	s["MEDIUM"] = "";
-	s["LARGE"] = "";
+	s["SMALL"]		= "";
+	s["MEDIUM"]		= "";
+	s["LARGE"]		= "";
+	s["LARGEST"]	= "";
 	for level, str in pairs(s) do
 		if v[level] ~= nil then
-			-- search building names with the following order: City Center & Diplomatic Quarter -> Others
-			names = {};
-			for row in GameInfo.Buildings() do
-				if v[level][row.Index] and (row.PrereqDistrict == "DISTRICT_CITY_CENTER" or row.PrereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER") then
-					table.insert(names, Locale.Lookup(row.Name));
-				end
-			end
+			-- names with the following order: district -> buildings; City Center & Diplomatic Quarter -> Others
+			table.sort(v[level], function (o1, o2)
+				local d = o1.Index - o2.Index;
+				if o1.isDistrict then d = d + 1024; end
+				if o2.isDistrict then d = d - 1024; end
+				if o1.prereqDistrict == "DISTRICT_CITY_CENTER" or o1.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d + 512; end
+				if o2.prereqDistrict == "DISTRICT_CITY_CENTER" or o2.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d - 512; end
+				return d < 0;
+			end);
+			local names = {};
 			local flag = true;
-			for row in GameInfo.Buildings() do
-				if v[level][row.Index] and not (row.PrereqDistrict == "DISTRICT_CITY_CENTER" or row.PrereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER") then
-					if row.EnabledByReligion then
-						if flag then
-							table.insert(names, Locale.Lookup('LOC_WORSHIP_BUILDINGS'));
-							flag = false;
-						end
-					else
-						table.insert(names, Locale.Lookup(row.Name));
+			for _, object in v[level] do
+				if object.isWorship then
+					if flag then
+						table.insert(names, Locale.Lookup('LOC_WORSHIP_BUILDINGS'));
+						flag = false;
 					end
+				else
+					table.insert(names, Locale.Lookup(object.name));
 				end
-			end
-			-- Argricultural City States buff Aqueduct with district expansion not enabled.
-			if level == "MEDIUM" and k == "CSE_AGRICULTURAL" and GameInfo.Buildings["BUILDING_SEWER"].PrereqDistrict == "DISTRICT_CITY_CENTER" then
-				table.insert(names, Locale.Lookup(GameInfo.Districts["DISTRICT_AQUEDUCT"].Name));
 			end
 			-- generate string
 			for i, name in ipairs(names) do
