@@ -19,6 +19,16 @@ function CityHasDistrict(city, DistrictType)
     end
 end
 
+function PlayerHasWonder (player, wonderId)
+    if player == nil then return false; end
+    for _, city in player:GetCities():Members() do
+        if city:GetBuildings():HasBuilding(wonderId) then
+            return true;
+        end
+    end
+    return false;
+end
+
 function PotalaPalaceIncreaseFaithAmount( playerID, cityID, buildingID, plotID, bOriginalConstruction)
     local m_Potala_table = GameInfo.Buildings['BUILDING_POTALA_PALACE']
     if  (m_Potala_table ~= nil) then
@@ -51,15 +61,8 @@ GameEvents.BuildingConstructed.Add(PotalaPalaceIncreaseFaithAmount)
 -- 泰姬陵 金币版神灵启示, by xiaoxiao
 local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
 function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
-    local playerHasTaj = false;
     local player = Players[playerId];
-    for _, city in player:GetCities():Members() do
-        if city:GetBuildings():HasBuilding(TAJ_INDEX) then
-            playerHasTaj = true;
-            break;
-        end
-    end
-    if playerHasTaj then
+    if PlayerHasWonder(player, TAJ_INDEX) then
         local building = GameInfo.Buildings[buildingId];
         local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
         player:GetTreasury():ChangeGoldBalance(amount);
@@ -67,7 +70,6 @@ function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unk
 end
 
 Events.WonderCompleted.Add(TajWonderGold);
-
 
 -- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
 function BuildingIsCheaper (a, b)
@@ -150,6 +152,24 @@ function StatueLibertyGrantBuilding (playerID, cityID, buildingID, plotID, bOrig
 end
 
 GameEvents.BuildingConstructed.Add(StatueLibertyGrantBuilding)
+
+-- 郑王庙: 招募伟人返还原始点数20%的信仰，每招募一名伟人+2影响力。
+local WAT_ARUN = GameInfo.Buildings['BUILDING_SUK_WAT_ARUN'];
+function UnitGreatPersonCreatedWatArun(playerId, unitId, greatPersonClassId, greatPersonIndividualId)
+	local player = Players[playerId];
+    player:AttachModifierByID('WAT_ARUN_INFLUNCE');
+    if PlayerHasWonder (player, WAT_ARUN.Index) then
+        local greatPerson = GameInfo.GreatPersonIndividuals[greatPersonIndividualId];
+        local era = GameInfo.Eras[greatPerson.EraType];
+        local cost = era.GreatPersonBaseCost;
+        local percent = (GlobalParameters.WAT_ARUN_FAITH_PERCENTAGE or 0) / 100;
+        player:GetReligion():ChangeFaithBalance(cost * percent);
+    end
+end
+
+if WAT_ARUN ~= nil then
+    Events.UnitGreatPersonCreated.Add(UnitGreatPersonCreatedWatArun);
+end
 
 -- local PROP_KEY_HAS_PLAYER_TURN_ACTIVATED = 'DLHasPlayerTurnActivated'
 -- local PROP_KEY_HAS_ALHAMBRA_GRANTED = 'DLHasAlhambraGranted'

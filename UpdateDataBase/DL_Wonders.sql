@@ -612,6 +612,8 @@ values
 --values
 --	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
 --	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
+
+/* 以下内容：圣地地基+2粮，圣地建筑+4粮
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
 values
@@ -655,7 +657,7 @@ insert or replace into ModifierArguments
 select
     'MEENAKSHI_TEMPLE_' || BuildingType || '_FOOD',    'BuildingType',  BuildingType
 from HolySiteBuildings;
-
+*/
 
 -- unlock
 	-- 【泰姬陵】改为【物理】科技解锁
@@ -844,7 +846,7 @@ values
 insert or replace into ModifierArguments
     (ModifierId,                    Name,        Value)
 values
-    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'Amount',    4);
+    ('ORSZAGHAZ_INFLUENCE_TOKENS',  'Amount',    2);
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
@@ -953,7 +955,7 @@ insert or replace into Buildings_XP2 (BuildingType,Pillage) select
 from MARACANA_DistrictBonus;
 
 insert or replace into Building_CitizenYieldChanges (BuildingType,YieldType,YieldChange) select
-	'BUILDING_MARACANA_DUMMY_' || DistrictType,YieldType,3
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,YieldType,4
 from MARACANA_DistrictBonus;
 
 insert or replace into BuildingModifiers

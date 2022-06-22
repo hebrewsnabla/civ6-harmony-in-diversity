@@ -540,7 +540,7 @@ values
 update Buildings set PrereqCivic = 'CIVIC_FEUDALISM', PrereqTech = NULL where BuildingType = 'WON_CL_KINKAKU';
 delete from BuildingModifiers where BuildingType = 'WON_CL_KINKAKU';
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
-	'WON_CL_KINKAKU',	'KINKAKU_RANGE_ENCAMPMENT_CULTURE'
+	'WON_CL_KINKAKU',	'KINKAKU_RANGE_ENCAMPMENT_FAITH'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
 	'WON_CL_KINKAKU',	'KINKAKU_RANGE_HOLYSITE_PRODUCTION'
@@ -549,14 +549,14 @@ where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KI
 insert or replace into Modifiers 
 	(ModifierId,							ModifierType,														SubjectRequirementSetId) 
 values
-	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',					'KINKAKU_ENCAMPMENT_REQUIREMENT'),
+	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'KINKAKU_ENCAMPMENT_REQUIREMENT'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'KINKAKU_HOLY_SITE_REQUIREMENT');
 
 insert or replace into ModifierArguments 
 	(ModifierId,							Name,					Value) 
 values
-	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'YieldType',			'YIELD_CULTURE'),
-	('KINKAKU_RANGE_ENCAMPMENT_CULTURE',	'Amount',				2),
+	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'YieldTypeToMirror',	'YIELD_PRODUCTION'),
+	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'YieldTypeToGrant',		'YIELD_FAITH'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION', 	'YieldTypeToMirror',	'YIELD_FAITH'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'YieldTypeToGrant',		'YIELD_PRODUCTION');
 
@@ -567,14 +567,14 @@ values
 	('KINKAKU_HOLY_SITE_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL');
 
 insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'HD_KINKAKU_PLOT_WITHIN_5_REQ'
+select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'HD_KINKAKU_PLOT_WITHIN_6_REQ'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIRES_DISTRICT_IS_ENCAMPMENT'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'HD_KINKAKU_PLOT_WITHIN_5_REQ'
+select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'HD_KINKAKU_PLOT_WITHIN_6_REQ'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'REQUIRES_DISTRICT_IS_HOLY_SITE'
@@ -583,23 +583,23 @@ where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KI
 insert or replace into Requirements
 	(RequirementId,						RequirementType)
 select
-	'HD_KINKAKU_PLOT_WITHIN_5_REQ',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'
+	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 insert or replace into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
-	'HD_KINKAKU_PLOT_WITHIN_5_REQ',		'BuildingType',		'WON_CL_KINKAKU'
+	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'BuildingType',		'WON_CL_KINKAKU'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 insert or replace into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
-	'HD_KINKAKU_PLOT_WITHIN_5_REQ',		'MaxRange',			5
+	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MaxRange',			6
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 insert or replace into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
-	'HD_KINKAKU_PLOT_WITHIN_5_REQ',		'MinRange',			0
+	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MinRange',			0
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 -- CL_BUILDING_CN_TOWER

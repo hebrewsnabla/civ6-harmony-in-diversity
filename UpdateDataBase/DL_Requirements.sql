@@ -133,6 +133,15 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Buildings;
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'CITY_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIRES_CITY_HAS_' || BuildingType from Buildings;
+	
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || BuildingType, 'REQUIREMENT_PLAYER_HAS_BUILDING' from Buildings;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Buildings;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_' || BuildingType from Buildings;
 
 -- Player Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
