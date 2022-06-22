@@ -801,7 +801,8 @@ values
 
 --主教座堂
 --移除信仰加成
-update Building_YieldChanges set YieldChange = 0 where BuildingType = 'BUILDING_GOV_FAITH';
+-- update Building_YieldChanges set YieldChange = 0 where BuildingType = 'BUILDING_GOV_FAITH';
+delete from Building_YieldChanges where BuildingType = 'BUILDING_GOV_FAITH';
 --宗教单位加力前置
 -- insert or replace into Types
 -- 	(Type,											Kind)

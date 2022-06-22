@@ -561,7 +561,6 @@ update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMB
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
-    ('BUILDING_MEENAKSHI_TEMPLE',           'MEENAKSHITEMPLE_FREE_GURU'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_BUILDER_PURCHASE'),
 	('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_SETTLER_PURCHASE');
 	-- ('BUILDING_MEENAKSHI_TEMPLE',			'MEENAKSHI_HOLY_SITE_FOOD'),
@@ -612,6 +611,104 @@ values
 --values
 --	('HD_HOLY_SITE_HAS_SHRINE',       				'REQUIREMENTSET_TEST_ALL'),
 --	('HD_HOLY_SITE_HAS_TEMPLE',       				'REQUIREMENTSET_TEST_ALL');
+
+-- 圣地给相邻有专家的区域多一个专家，专家+1琴+1鸽
+create temporary table Meenakshi_DistrictBonus (
+	DistrictType text not null primary key
+);
+insert or replace into Meenakshi_DistrictBonus (DistrictType)
+select DistrictType from Districts where CitizenSlots > 0 and TraitType is null;
+insert or replace into Types
+	(Type,											Kind)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'KIND_BUILDING'
+from Meenakshi_DistrictBonus;
+insert or replace into Buildings
+	(BuildingType,	Name,	Description,	PrereqDistrict,	Cost,	MustPurchase,	CitizenSlots)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType || '_NAME',
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType || '_DESCRIPTION',
+	DistrictType,
+	9999,	1,	1
+from Meenakshi_DistrictBonus;
+insert or replace into Buildings_XP2
+	(BuildingType,									Pillage)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	0
+from Meenakshi_DistrictBonus;
+insert or replace into Building_CitizenYieldChanges
+	(BuildingType,									YieldType,		YieldChange)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'YIELD_FAITH',	1
+from Meenakshi_DistrictBonus;
+insert or replace into Building_CitizenYieldChanges
+	(BuildingType,									YieldType,			YieldChange)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'YIELD_CULTURE',	1
+from Meenakshi_DistrictBonus;
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+select
+	'BUILDING_MEENAKSHI_TEMPLE',	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH'
+from Meenakshi_DistrictBonus;
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_DISTRICT_HOLY_SITE_REQUIREMENTS'
+from Meenakshi_DistrictBonus;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH',	'ModifierId',	'MEENAKSHI_' || DistrictType || '_EXPERT'
+from Meenakshi_DistrictBonus;
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'REQUIRE_PLOT_ADJACENT_TO_OWNER'
+from Meenakshi_DistrictBonus;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT',			'ModifierId',	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD'
+from Meenakshi_DistrictBonus;
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,											OwnerRequirementSetId)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD',	'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
+from Meenakshi_DistrictBonus;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD',	'BuildingType',	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType
+from Meenakshi_DistrictBonus;
+
+-- 圣地给相邻没有专家的区域+1住房
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_MEENAKSHI_TEMPLE',	'MEENAKSHI_HOUSING_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,									OwnerRequirementSetId,	SubjectRequirementSetId, 						OwnerStackLimit)
+values
+	('MEENAKSHI_HOUSING_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	null,					'DISTRICT_IS_DISTRICT_HOLY_SITE_REQUIREMENTS',	null),
+	('MEENAKSHI_HOUSING',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	null,					'REQUIRE_PLOT_ADJACENT_TO_OWNER',				null),
+	('MEENAKSHI_HOUSING_MODIFIER',	'MODIFIER_ADJUST_HOUSING_IN_DISTRICT',			'DISTRICT_HAS_NO_CITIZEN_SLOT', null,									1);
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('MEENAKSHI_HOUSING_ATTACH',	'ModifierId',	'MEENAKSHI_HOUSING'),
+	('MEENAKSHI_HOUSING',			'ModifierId',	'MEENAKSHI_HOUSING_MODIFIER'),
+	('MEENAKSHI_HOUSING',			'Amount',		1);
+insert or replace into RequirementSets
+	(RequirementSetId,					RequirementSetType)
+values
+	('DISTRICT_HAS_NO_CITIZEN_SLOT',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,					RequirementId)
+select
+	'DISTRICT_HAS_NO_CITIZEN_SLOT',		'REQUIRES_DISTRICT_IS_' || DistrictType
+from Districts where (CitizenSlots is null or CitizenSlots = 0) and TraitType is null and DistrictType != 'DISTRICT_CITY_CENTER' and DistrictType != 'DISTRICT_WONDER';
 
 /* 以下内容：圣地地基+2粮，圣地建筑+4粮
 insert or replace into BuildingModifiers

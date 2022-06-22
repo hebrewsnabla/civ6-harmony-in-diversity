@@ -151,6 +151,7 @@ update Districts set Description = 'LOC_DISTRICT_THEATER_HD_DESCRIPTION' where D
 
 --------------------------------------------------------------------------------
 -- GreatWorks Theming
+update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_GLOBE_THEATRE' where BuildingType = 'BUILDING_GLOBE_THEATRE';
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY' where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
 
 update Building_GreatWorks set ThemingBonusDescription = 'LOC_BUILDING_THEMINGBONUS_HERMITAGE' where BuildingType = 'BUILDING_HERMITAGE';
