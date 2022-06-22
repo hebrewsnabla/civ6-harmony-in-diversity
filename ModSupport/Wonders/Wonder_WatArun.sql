@@ -1,13 +1,29 @@
 
 --BUILDING_SUK_WAT_ARUN
-update Buildings set  Cost = 1160, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD'
-where BuildingType = 'BUILDING_SUK_WAT_ARUN' AND EXISTS (select BuildingType from Buildings where BuildingType ='BUILDING_SUK_WAT_ARUN');
+update Buildings set  Cost = 1160, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where BuildingType = 'BUILDING_SUK_WAT_ARUN';-- AND EXISTS (select BuildingType from Buildings where BuildingType ='BUILDING_SUK_WAT_ARUN');
 
 insert or replace into Building_YieldChanges
 	(BuildingType,							YieldType,									YieldChange)
 values
 	('BUILDING_SUK_WAT_ARUN',				'YIELD_CULTURE',							5);
 delete from Building_GreatPersonPoints where BuildingType = 'BUILDING_SUK_WAT_ARUN';
+delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
+insert or replace into GlobalParameters
+    (Name,                          Value)
+values
+    ('WAT_ARUN_FAITH_PERCENTAGE',   100);
+
+-- this modifier is used by lua instead of directly attached to Wat Arun
+insert or replace into Modifiers
+    (ModifierId,            ModifierType,                                       SubjectRequirementSetId)
+values
+    ('WAT_ARUN_INFLUNCE',   'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN', 'PLAYER_HAS_BUILDING_SUK_WAT_ARUN_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,            Name,       Value)
+values
+    ('WAT_ARUN_INFLUNCE',   'Amount',   2);
+
+/*
 create temporary table WatArunBuildingTourisms (BuildingType text not null primary key, Tourism int);
 insert into WatArunBuildingTourisms
     (BuildingType,  Tourism)
@@ -80,6 +96,7 @@ insert or replace into ModifierArguments
 values  
     ('WAT_ARUN_INFLUENCE_ATTACH',   'ModifierId',   'WAT_ARUN_INFLUENCE'),
     ('WAT_ARUN_INFLUENCE',          'Amount',       2);
+*/
 
 --delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
 --insert or replace into BuildingModifiers
