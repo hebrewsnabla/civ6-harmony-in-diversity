@@ -126,7 +126,7 @@ update ModifierArguments set Value = 100 where ModifierID = 'AFTERACTIONREPORTS_
 update Policies set PrereqCivic = 'CIVIC_MOBILIZATION' where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
 
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
-update Governments set InfluencePointsThreshold = InfluencePointsThreshold * 0.8;
+-- update Governments set InfluencePointsThreshold = InfluencePointsThreshold * 0.8;
 insert or replace into Government_SlotCounts
 	(GovernmentType,					GovernmentSlotType,	NumSlots)
 values
