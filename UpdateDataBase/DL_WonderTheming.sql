@@ -26,6 +26,16 @@ update Building_GreatWorks set
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
 
+--GLOBE_THEATRE
+--不同作者
+update Building_GreatWorks set 
+	NumSlots = 3 ,
+	ThemingUniquePerson = 1 ,
+	ThemingSameObjectType = 1 ,
+	ThemingTourismMultiplier = 100 ,
+	ThemingYieldMultiplier = 100
+where BuildingType = 'BUILDING_GLOBE_THEATRE';
+
 --APADANA
 --同类型
 -- update Building_GreatWorks set 

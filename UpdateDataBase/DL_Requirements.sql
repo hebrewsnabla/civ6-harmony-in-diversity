@@ -1404,3 +1404,35 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
 	('CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR',	'REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_THEOLOGICAL_SEMINAR');
+
+-- Great Bath:	Update "plot adjacent to river"	to "plot adjacent to river	or player has Great Bath"
+-- 				Update "plot is fresh water"	to "plot is fresh water 	or player has Great Bath"
+insert or replace into RequirementArguments
+	(RequirementId,		Name,				Value)
+select
+	RequirementId,		'RequirementSetId',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW'
+from Requirements where RequirementType = 'REQUIREMENT_PLOT_ADJACENT_TO_RIVER';
+insert or replace into RequirementArguments
+	(RequirementId,		Name,				Value)
+select
+	RequirementId,		'RequirementSetId',	'PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW'
+from Requirements where RequirementType = 'REQUIREMENT_PLOT_IS_FRESH_WATER';
+update Requirements set RequirementType = 'REQUIREMENT_REQUIREMENTSET_IS_MET'
+	where RequirementType = 'REQUIREMENT_PLOT_ADJACENT_TO_RIVER' or RequirementType = 'REQUIREMENT_PLOT_IS_FRESH_WATER';
+insert or replace into Requirements
+	(RequirementId,								RequirementType)
+values
+	('REQUIRES_PLOT_ADJACENT_TO_RIVER_RAW',		'REQUIREMENT_PLOT_ADJACENT_TO_RIVER'),
+	('REQUIRES_PLOT_IS_FRESH_WATER_RAW',		'REQUIREMENT_PLOT_IS_FRESH_WATER');
+insert or replace into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW',	'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+values
+	('PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW',	'REQUIRES_PLOT_ADJACENT_TO_RIVER_RAW'),
+	('PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW',	'REQUIRES_PLAYER_HAS_BUILDING_GREAT_BATH'),
+	('PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW',	'REQUIRES_PLOT_IS_FRESH_WATER_RAW'),
+	('PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW',	'REQUIRES_PLAYER_HAS_BUILDING_GREAT_BATH');
