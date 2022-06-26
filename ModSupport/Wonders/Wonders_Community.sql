@@ -670,7 +670,48 @@ values
 	('CN_TOWER_MUSIC_TOURISM',	 	'ScalingFactor',		250);
 
 -- Yellow Crane Tower
-update Buildings set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', PrereqTech = NULL where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into Types
+	(Type, 			Kind)
+select
+	Type || '_HD', 	Kind
+from Types where Type = 'BUILDING_YELLOW_CRANE';
+insert or replace into Buildings
+	(BuildingType, 			Name, Description, Cost,	AdvisorType, MaxWorldInstances, IsWonder, RequiresPlacement, RequiresRiver, Quote, PrereqCivic)
+select
+	BuildingType || '_HD',	Name, Description, Cost,	AdvisorType, MaxWorldInstances, IsWonder, RequiresPlacement, RequiresRiver, Quote, 'CIVIC_LITERARY_TRADITION_HD'
+from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into Building_ValidTerrains
+	(BuildingType, 			TerrainType)
+select
+	BuildingType || '_HD', 	TerrainType
+from Building_ValidTerrains where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into Building_GreatPersonPoints
+	(BuildingType, 			GreatPersonClassType, PointsPerTurn)
+select
+	BuildingType || '_HD',	GreatPersonClassType, PointsPerTurn
+from Building_GreatPersonPoints where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into Building_GreatWorks
+	(BuildingType,			GreatWorkSlotType,	NumSlots,	ThemingSameEras,	ThemingYieldMultiplier,	ThemingTourismMultiplier)
+select
+	BuildingType || '_HD', 	GreatWorkSlotType,	3,			1,					100,					100
+from Building_GreatWorks where BuildingType = 'BUILDING_YELLOW_CRANE';
+update Buildings set InternalOnly = 1 where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into GlobalParameters (Name, Value) values ('YELLOW_CRANE_TOWER_POINT_PERCENTAGE', 15);
+insert or replace into BuildingModifiers
+	(BuildingType,	ModifierId)
+select
+	BuildingType,	'YELLOW_CRANE_WRITER_BOOST'
+from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE_HD';
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
+values
+	('YELLOW_CRANE_WRITER_BOOST',	'MODIFIER_PLAYER_GRANT_BOOST_WITH_GREAT_PERSON');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,				Value)
+values
+	('YELLOW_CRANE_WRITER_BOOST',	'GreatPersonClass',	'GREAT_PERSON_CLASS_WRITER'),
+	('YELLOW_CRANE_WRITER_BOOST',	'OtherPlayers',		0),
+	('YELLOW_CRANE_WRITER_BOOST',	'TechBoost',		0);
 
 -- STPETERSBASILICA
 delete from Building_GreatWorks where BuildingType = 'BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';

@@ -172,6 +172,43 @@ if WAT_ARUN ~= nil then
     Events.UnitGreatPersonCreated.Add(UnitGreatPersonCreatedWatArun);
 end
 
+-- 黄鹤楼: 使用大作家返还30%当前需要大作家的点数
+function OnYellowCraneGreatWriterActived(playerID, unitID, greatpersonclassID)
+    local pPlayer = Players[playerID];
+    local pUnit = pPlayer:GetUnits():FindID(unitID);
+    local iYellowCrane = GameInfo.Buildings["BUILDING_YELLOW_CRANE_HD"].Index;
+    local tGreatpersonClass = GameInfo.GreatPersonClasses[greatpersonclassID].GreatPersonClassType; 
+    if (pPlayer ~= nil) then
+      local bHasYC = false;
+      for i, pCity in pPlayer:GetCities():Members() do
+        if (pCity:GetBuildings():HasBuilding(iYellowCrane)) then
+          bHasYC = true;
+          break;
+        end
+      end
+      if (bHasYC) then
+        if (tGreatpersonClass == "GREAT_PERSON_CLASS_WRITER") then
+          local iGreatWriter = GameInfo.GreatPersonClasses["GREAT_PERSON_CLASS_WRITER"].Index;
+          -- local nGPPTotal = pPlayer:GetGreatPeoplePoints():GetPointsTotal(iGreatWriter);
+          -- local nGPPGained = nGPPTotal * 0.3;
+          local timeline = Game.GetGreatPeople():GetTimeline();
+          local cost = 0;
+          for i, entry in ipairs(timeline) do
+			if entry.Class == iGreatWriter then
+            	cost = entry.Cost;
+            end
+          end
+          local nGPPGained = cost * GlobalParameters.YELLOW_CRANE_TOWER_POINT_PERCENTAGE / 100;
+          pPlayer:GetGreatPeoplePoints():ChangePointsTotal(greatpersonclassID, nGPPGained);
+          local sGPPNotifier = tostring(nGPPGained)..Locale.Lookup("LOC_NOTIFIER_GREATWRITER_YELLOWCRANE_GPP");
+          NotificationManager.SendNotification(playerID, "NOTIFICATION_RELIC_CREATED", sGPPNotifier);
+        end
+      end
+    end
+  end
+  
+  Events.UnitGreatPersonActivated.Add(OnYellowCraneGreatWriterActived);
+
 -- local PROP_KEY_HAS_PLAYER_TURN_ACTIVATED = 'DLHasPlayerTurnActivated'
 -- local PROP_KEY_HAS_ALHAMBRA_GRANTED = 'DLHasAlhambraGranted'
 -- local PROP_KEY_HAS_BIG_BEN_GRANTED = 'DLHasBigBenGranted'
