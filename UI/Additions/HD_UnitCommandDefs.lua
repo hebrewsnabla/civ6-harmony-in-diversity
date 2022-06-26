@@ -9,6 +9,11 @@
 		UnitPanel script.
 
 -- =========================================================================]]
+if ExposedMembers.DLHD == nil then
+    ExposedMembers.DLHD = {};
+end
+
+Utils = ExposedMembers.DLHD.Utils;
 
 m_HDUnitCommands = {};
 
@@ -48,7 +53,7 @@ end
 
 -- ===========================================================================
 function m_HDUnitCommands.SACRIFICE.CanUse(pUnit : object)
-	if (pUnit == nil) then
+	if pUnit == nil then
 		return false;
 	end
 
@@ -71,18 +76,18 @@ end
 
 -- ===========================================================================
 function m_HDUnitCommands.SACRIFICE.IsDisabled(pUnit : object)
-	if (pUnit == nil or pUnit:GetMovesRemaining() == 0) then
+	if pUnit == nil or pUnit:GetMovesRemaining() == 0 then
 		return true;
 	end
 
 	local iPlotId : number = pUnit:GetPlotId();
 	local pPlot : object = Map.GetPlotByIndex(iPlotId);
 	
-	if (pPlot == nil) then
+	if pPlot == nil then
 		return true;
 	end
 	
-	if (not pPlot:GetOwner() == pUnit:GetOwner()) then
+	if not pPlot:GetOwner() == pUnit:GetOwner() then
 		return true;
 	end
 	local city = CityManager.GetCityAt(pUnit:GetX(), pUnit:GetY());
@@ -103,18 +108,24 @@ m_HDUnitCommands.RECYCLE.ToolTipString = Locale.Lookup("LOC_UNITCOMMAND_RECYCLE_
 m_HDUnitCommands.RECYCLE.DisabledToolTipString = Locale.Lookup("LOC_UNITCOMMAND_RECYCLE_DISABLED_TT");
 m_HDUnitCommands.RECYCLE.VisibleInUI = true;
 function m_HDUnitCommands.RECYCLE.CanUse(pUnit : object)
-	if (pUnit == nil) then
+	if pUnit == nil then
 		return false;
 	end
-	return GameInfo.Units[pUnit:GetType()].FormationClass == "FORMATION_CLASS_LAND_COMBAT";
+	local formationClass = GameInfo.Units[pUnit:GetType()].FormationClass;
+	return formationClass == 'FORMATION_CLASS_LAND_COMBAT' or formationClass == 'FORMATION_CLASS_AIR' or formationClass == 'FORMATION_CLASS_NAVAL';
 end
 
 local NEIGHBORHOOD_INDEX = GameInfo.Districts['DISTRICT_NEIGHBORHOOD'].Index;
-local RECYCLING_PLANT_INDEX = GameInfo.Buildings['BUILDING_JNR_RECYCLING_PLANT'].Index;
+local HARBOR_INDEX = GameInfo.Districts['DISTRICT_HARBOR'].Index;
+local RECYCLING_PLANT_INDEX;
+if GameInfo.Buildings['BUILDING_JNR_RECYCLING_PLANT'] ~= nil then
+	RECYCLING_PLANT_INDEX = GameInfo.Buildings['BUILDING_JNR_RECYCLING_PLANT'].Index;
+end
 function m_HDUnitCommands.RECYCLE.IsVisible(pUnit : object)
 	if pUnit == nil then
 		return;
 	end
+	local formationClass = GameInfo.Units[pUnit:GetType()].FormationClass;
 	local playerID = pUnit:GetOwner();
 	local player = Players[playerID];
 	local location = pUnit:GetLocation();
@@ -128,7 +139,10 @@ function m_HDUnitCommands.RECYCLE.IsVisible(pUnit : object)
 	if district == nil then
 		return false;
 	end
-	if district:GetType() ~= NEIGHBORHOOD_INDEX then
+	if (formationClass == 'FORMATION_CLASS_LAND_COMBAT' or formationClass == 'FORMATION_CLASS_AIR') and district:GetType() ~= NEIGHBORHOOD_INDEX then
+		return false;
+	end
+	if (formationClass == 'FORMATION_CLASS_NAVAL') and district:GetType() ~= HARBOR_INDEX then
 		return false;
 	end
 	local city = district:GetCity();
@@ -143,6 +157,96 @@ function m_HDUnitCommands.RECYCLE.IsDisabled(pUnit : object)
 	if pUnit:GetMovesRemaining() == 0 then
 		return true;
 	end
-	print(pUnit:GetDamage());
 	return pUnit:GetDamage() ~= 0;
+end
+
+-- 奇琴伊察的献祭按钮, by xiaoxiao
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA = {};
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.Properties = {};
+
+-- UI Data
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.EventName = "HDChiChenItzaSacrifice";
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.CategoryInUI = "SPECIFIC";
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.Icon = "ICON_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA";
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.ToolTipString = Locale.Lookup("LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_NAME") .. "[NEWLINE][NEWLINE]" .. 
+										Locale.Lookup("LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_DESCRIPTION");
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.DisabledToolTipString = Locale.Lookup("LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_DISABLED_TT");
+m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.VisibleInUI = true;
+function m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.CanUse(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	return GameInfo.Units[pUnit:GetType()].FormationClass == "FORMATION_CLASS_LAND_COMBAT";
+end
+
+local SACRIFICED_CHICHEN_ITZA_KEY = 'SACRIFICED_CHICHEN_ITZA';
+local CHICHEN_ITZA_INDEX = GameInfo.Buildings['BUILDING_CHICHEN_ITZA'].Index;
+function m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.IsVisible(pUnit : object)
+	local ownerId = pUnit:GetOwner();
+	local owner = Players[ownerId];
+	if not Utils.PlayerHasWonder(owner, CHICHEN_ITZA_INDEX) then
+		return false;
+	end
+	local unitType = GameInfo.Units[pUnit:GetType()].UnitType;
+	local sacrificed = owner:GetProperty(SACRIFICED_CHICHEN_ITZA_KEY) or {};
+	if sacrificed[unitType] then
+		return false;
+	end
+	return true;
+end
+
+-- ===========================================================================
+function m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.IsDisabled(pUnit : object)
+	if pUnit == nil then
+		return true;
+	end
+	if pUnit:GetMovesRemaining() == 0 then
+		return true;
+	end
+	local location = pUnit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local plot = Map.GetPlot(x, y);
+	return plot:GetWonderType() ~= CHICHEN_ITZA_INDEX;
+end
+
+-- 高德院的出家按钮, by xiaoxiao
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN = {};
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.Properties = {};
+
+-- UI Data
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.EventName = "HDKotokuInPravrajya";
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.CategoryInUI = "SPECIFIC";
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.Icon = "ICON_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN";
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.ToolTipString = Locale.Lookup("LOC_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN_NAME") .. "[NEWLINE][NEWLINE]" .. 
+										Locale.Lookup("LOC_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN_DESCRIPTION");
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.DisabledToolTipString = Locale.Lookup("LOC_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN_DISABLED_TT");
+m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.VisibleInUI = true;
+function m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.CanUse(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	return GameInfo.Units[pUnit:GetType()].FormationClass == "FORMATION_CLASS_CIVILIAN";
+end
+
+local KOTOKU_IN_INDEX = GameInfo.Buildings['BUILDING_KOTOKU_IN'].Index;
+function m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.IsVisible(pUnit : object)
+	local ownerId = pUnit:GetOwner();
+	local owner = Players[ownerId];
+	return Utils.PlayerHasWonder(owner, KOTOKU_IN_INDEX);
+end
+
+-- ===========================================================================
+function m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.IsDisabled(pUnit : object)
+	if pUnit == nil then
+		return true;
+	end
+	if pUnit:GetMovesRemaining() == 0 then
+		return true;
+	end
+	local location = pUnit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local plot = Map.GetPlot(x, y);
+	return plot:GetWonderType() ~= KOTOKU_IN_INDEX;
 end

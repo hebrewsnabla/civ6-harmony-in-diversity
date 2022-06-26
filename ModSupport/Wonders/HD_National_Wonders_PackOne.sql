@@ -2,8 +2,8 @@
 
 -- 大铁厂 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set AdjacentResource = 'RESOURCE_IRON', cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS';
-update Buildings set AdjacentResource = 'RESOURCE_IRON', cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL';
+update Buildings set cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS'; --AdjacentResource = 'RESOURCE_IRON', 
+update Buildings set cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL'; --AdjacentResource = 'RESOURCE_IRON', 
 	-- 修改建造条件
 update RequirementArguments set Value = 4 where RequirementId = 'REQ_CL_PLAYER_HAS_X_STRATEGIC_IMPROVEMENTS' and Name = 'Count';
 

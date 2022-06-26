@@ -444,7 +444,7 @@ where  UnitPromotion = 'PROMOTION_AMPHIBIOUS'
     or UnitPromotion = 'PROMOTION_PROXIMITY_FUSES' 
     or PrereqUnitPromotion = 'PROMOTION_PROXIMITY_FUSES'
     --naval raider
-    or UnitPromotion in (select UnitPromotion from UnitPromotions where PromotionClass = 'PROMOTION_CLASS_NAVAL_RAIDER');
+    or UnitPromotion in (select UnitPromotionType from UnitPromotions where PromotionClass = 'PROMOTION_CLASS_NAVAL_RAIDER');
 
 insert or replace into UnitPromotionPrereqs
     (UnitPromotion,             PrereqUnitPromotion)

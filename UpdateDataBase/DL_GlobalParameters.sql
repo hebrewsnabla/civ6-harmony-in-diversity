@@ -232,6 +232,3 @@ values
 update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';
 --市中心改为3粮2锤
 update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
-
-insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_PRODUCTION_RATE', 20);
-insert or replace into GlobalParameters (Name, Value) values ('RECYCLING_PLANT_STRATEGIC_MULTIPLIER', 5);

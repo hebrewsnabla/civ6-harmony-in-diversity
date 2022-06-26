@@ -689,6 +689,25 @@ where BuildingType ='BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREA
 update Buildings set PrereqCivic = 'CIVIC_SUFFRAGE' where BuildingType = 'WON_CL_EMPIRE_STATES';
 update ModifierArguments set Value = 300 where ModifierId = 'EMPIRE_CITY_WONDER_TOURISM' and Name = 'ScalingFactor';
 
+-- 三峡大坝
+insert or replace into BuildingModifiers (BuildingType, ModifierId) select
+	'BUILDING_THREE_GORDES_DAM', 'THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD'
+from Buildings where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)	select
+	'BUILDING_THREE_GORDES_DAM', 'THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION'
+from Buildings where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM');
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,									SubjectRequirementSetId)
+values
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER'),
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER');
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+values
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'YieldType',	'YIELD_FOOD'),
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'Amount',		1),
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'Amount',		1);
 -- Cost adjust
 update Buildings set Cost = 1000 where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
 update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';

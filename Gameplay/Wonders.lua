@@ -28,6 +28,7 @@ function PlayerHasWonder (player, wonderId)
     end
     return false;
 end
+Utils.PlayerHasWonder = PlayerHasWonder;
 
 function PotalaPalaceIncreaseFaithAmount( playerID, cityID, buildingID, plotID, bOriginalConstruction)
     local m_Potala_table = GameInfo.Buildings['BUILDING_POTALA_PALACE']
@@ -59,17 +60,17 @@ GameEvents.BuildingConstructed.Add(PotalaPalaceIncreaseFaithAmount)
 --Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
 
 -- 泰姬陵 金币版神灵启示, by xiaoxiao
-local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
-function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
-    local player = Players[playerId];
-    if PlayerHasWonder(player, TAJ_INDEX) then
-        local building = GameInfo.Buildings[buildingId];
-        local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
-        player:GetTreasury():ChangeGoldBalance(amount);
-    end
-end
+--local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
+--function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+--    local player = Players[playerId];
+--    if PlayerHasWonder(player, TAJ_INDEX) then
+--        local building = GameInfo.Buildings[buildingId];
+--        local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
+--        player:GetTreasury():ChangeGoldBalance(amount);
+--    end
+--end
 
-Events.WonderCompleted.Add(TajWonderGold);
+--Events.WonderCompleted.Add(TajWonderGold);
 
 -- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
 function BuildingIsCheaper (a, b)

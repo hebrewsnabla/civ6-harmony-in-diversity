@@ -60,32 +60,42 @@ update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BU
 update ModifierArguments set Value = 2 where ModifierId = 'STBASILS_ADDFOOD_MODIFIER' and Name = 'Amount';
 --chichen itza
 update Buildings set PrereqCivic = 'CIVIC_FEUDALISM' where BuildingType = 'BUILDING_CHICHEN_ITZA';
+delete from BuildingModifiers where BuildingType = 'BUILDING_CHICHEN_ITZA';
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
-	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_JUNGLE_FOOD'),
+--	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_JUNGLE_FOOD'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_GOLDEN_FAITH'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_NORMAL_PRODUCTION');
 
 insert or replace into Modifiers
 	(ModifierId, 							ModifierType,												SubjectRequirementSetId)
 values
-	('CHICHEN_ITZA_JUNGLE_FOOD',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',						'CITY_HAS_CHICHEN_ITZA_REQUIREMENTS'),
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',				'PLOT_HAS_JUNGLE_REQUIREMENTS'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',						'CITY_HAS_CHICHEN_ITZA_REQUIREMENTS'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',				'PLOT_HAS_JUNGLE_REQUIREMENTS'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		null),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		null),
 	('CHICHEN_ITZA_GOLDEN_FAITH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_NOT_HAS_GOLDEN_AGE');
 
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
-	('CHICHEN_ITZA_JUNGLE_FOOD',				'ModifierId',			'CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER'),		
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'Amount',				1),
+--	('CHICHEN_ITZA_JUNGLE_FOOD',				'ModifierId',			'CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER'),		
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'Amount',				1),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'BuildingType',			'BUILDING_CHICHEN_ITZA'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'YieldType',			'YIELD_FAITH'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'Amount',				1),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'BuildingType',			'BUILDING_CHICHEN_ITZA'),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'YieldType',			'YIELD_CULTURE'),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'Amount',				1),
 	('CHICHEN_ITZA_GOLDEN_FAITH',				'YieldType',			'YIELD_FAITH'),
 	('CHICHEN_ITZA_GOLDEN_FAITH',				'Amount',				10),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'Amount',				10);
+insert or replace into GlobalParameters (Name, Value) values ('CHICHEN_ITZA_PERCENTAGE', 5);
 
 --remove MAHABODHI_DIPLOVP 
 --add ORSZAGHAZ DVP
@@ -122,7 +132,7 @@ insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
 --BUILDING_GREAT_ZIMBABWE
-update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
@@ -272,7 +282,7 @@ update ModifierArguments set Value = 2 where ModifierId = 'BIOSPHERE_ADJUST_APPE
 
 --BUILDING_KOTOKU_IN
 --grants all UNIT_WARRIOR_MONK trained in this city free Promotion
-delete from BuildingModifiers where ModifierId = 'KOTOKU_GRANTMONKS';
+delete from BuildingModifiers where BuildingType = 'BUILDING_KOTOKU_IN';
 insert or replace into BuildingModifiers
 	(BuildingType,						 ModifierId)
 values
@@ -284,25 +294,33 @@ values
 
 --'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE'
 insert or replace into Modifiers	
-	(ModifierId,								ModifierType,					RunOnce,	Permanent)
+	(ModifierId,								ModifierType,											RunOnce,	Permanent)
 values
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',0,1);
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',	0,			1),
+	('KOTUKU_GRANT_ENLIGHTENED',				'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',					1,			1);
+insert or replace into Modifiers	
+	(ModifierId,								ModifierType,									SubjectRequirementSetId)
+values
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'MODIFIER_PLAYER_CITIES_GRANT_UNIT_IN_CITY',	'CITY_HAS_BUILDING_KOTOKU_IN_REQUIREMENTS');
 insert or replace into ModifierArguments 
-	(ModifierId,								Name,			Value) 
+	(ModifierId,								Name,						Value) 
 values
-	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'AbilityType',	'ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),			
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION');
+	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'AbilityType',				'ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION'),
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),			
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'UnitType',					'UNIT_WARRIOR_MONK'),
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'Amount',					1),
+	('KOTUKU_GRANT_ENLIGHTENED',				'AbilityType',				'ABILITY_KOTOKU_IN_ENLIGHTENED');
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitType',		'UNIT_WARRIOR_MONK'),
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'Experience',	-1),
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UniqueOverride',1),
@@ -759,20 +777,65 @@ from HolySiteBuildings;
 -- unlock
 	-- 【泰姬陵】改为【物理】科技解锁
 update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_PHYSICS_HD' where BuildingType = 'BUILDING_TAJ_MAHAL';--xhh
-insert or replace into Modifiers
-    (ModifierId,                ModifierType)
+insert or replace into Building_GreatPersonPoints
+	(BuildingType,			GreatPersonClassType,			PointsPerTurn)
 values
-    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
-insert or replace into ModifierArguments
-    (ModifierId,                Name,           Value)
-values
-    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
-    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+	('BUILDING_TAJ_MAHAL',	'GREAT_PERSON_CLASS_ENGINEER',	4);
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
-    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
-insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_CULTURE'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_TOURISM');
+insert or replace into Modifiers
+    (ModifierId,                						ModifierType,											SubjectRequirementSetId)
+values
+    ('TAJ_MAHAL_WONDER_CULTURE',   						'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',		null),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',		null),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT',			'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',				'PLOT_HAS_COMPLETE_WONDER'),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',				null),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',	null);
+insert or replace into ModifierArguments
+    (ModifierId,                						Name,          			Value)
+values
+	('TAJ_MAHAL_WONDER_CULTURE',   						'YieldType',			'YIELD_CULTURE'),
+	('TAJ_MAHAL_WONDER_CULTURE',   						'Amount',				4),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'YieldType',			'YIELD_GOLD'),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'Amount',				4),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT',			'ModifierId',			'TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER'),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'BoostsWonders',		1),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'ScalingFactor',		200),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_ENGINEER'),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'Amount',				10);
+--insert or replace into Modifiers
+--    (ModifierId,                ModifierType)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+--insert or replace into ModifierArguments
+--    (ModifierId,                Name,           Value)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+--    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+--insert or replace into BuildingModifiers
+--    (BuildingType,          ModifierId)
+--values
+--    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+
+--insert or replace into Modifiers
+--    (ModifierId,                ModifierType)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+--insert or replace into ModifierArguments
+--    (ModifierId,                Name,           Value)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+--    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+--insert or replace into BuildingModifiers
+--    (BuildingType,          ModifierId)
+--values
+--    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+-- insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
 
 
 	-- 【金门大桥】改为【钢铁】科技解锁
@@ -948,22 +1011,6 @@ insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
     ('BUILDING_ORSZAGHAZ',  'ORSZAGHAZ_INFLUENCE_TOKENS');
-insert or replace into Requirements
-    (RequirementId,                     RequirementType)
-values
-    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENT_PLAYER_HAS_BUILDING');
-insert or replace into RequirementArguments
-    (RequirementId,                     Name,           Value)
-values
-    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'BuildingType', 'BUILDING_ORSZAGHAZ');
-insert or replace into RequirementSets
-    (RequirementSetId,         RequirementSetType)
-values
-    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,         RequirementId)
-values
-    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_CITY_HAS_BUILDING_ORSZAGHAZ');
 create temporary table OrszaghazModifiers (PolicyType text not null, OldModifierId text not null, NewModifierId text not null);
 insert into OrszaghazModifiers
     (PolicyType,    OldModifierId,  NewModifierId)
@@ -973,7 +1020,7 @@ from PolicyModifiers where PolicyType in (select PolicyType from Policies where 
 insert or replace into Modifiers
     (ModifierId,	ModifierType,	                                SubjectRequirementSetId)
 select
-    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'PLAYER_HAS_ORSZAGHAZ'
+    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'CITY_HAS_BUILDING_ORSZAGHAZ_REQUIREMENTS'
 from OrszaghazModifiers;
 insert or replace into ModifierArguments
     (ModifierId,	Name,	        Value)
