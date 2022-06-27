@@ -118,8 +118,8 @@ function Refresh()
 
     -- Disable these buttons if is in EspionageView.
     local IsEspionageView = m_kEspionageViewManager:IsEspionageView();
-    Controls.PurchaseTileCheck:SetDisabled(IsEspionageView);
-    Controls.ManageCitizensCheck:SetDisabled(IsEspionageView);
+    if Controls.PurchaseTileCheck ~= nil then Controls.PurchaseTileCheck:SetDisabled(IsEspionageView); end
+    if Controls.ManageCitizensCheck ~= nil then Controls.ManageCitizensCheck:SetDisabled(IsEspionageView); end
 end
 
 function LateInitialize()

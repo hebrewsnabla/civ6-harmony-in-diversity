@@ -28,6 +28,7 @@ function PlayerHasWonder (player, wonderId)
     end
     return false;
 end
+Utils.PlayerHasWonder = PlayerHasWonder;
 
 function PotalaPalaceIncreaseFaithAmount( playerID, cityID, buildingID, plotID, bOriginalConstruction)
     local m_Potala_table = GameInfo.Buildings['BUILDING_POTALA_PALACE']
@@ -59,17 +60,17 @@ GameEvents.BuildingConstructed.Add(PotalaPalaceIncreaseFaithAmount)
 --Events.PlayerEraScoreChanged.Add(TajOnPlayerEraScoreChanged)
 
 -- 泰姬陵 金币版神灵启示, by xiaoxiao
-local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
-function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
-    local player = Players[playerId];
-    if PlayerHasWonder(player, TAJ_INDEX) then
-        local building = GameInfo.Buildings[buildingId];
-        local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
-        player:GetTreasury():ChangeGoldBalance(amount);
-    end
-end
+--local TAJ_INDEX = GameInfo.Buildings['BUILDING_TAJ_MAHAL'].Index;
+--function TajWonderGold (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+--    local player = Players[playerId];
+--    if PlayerHasWonder(player, TAJ_INDEX) then
+--        local building = GameInfo.Buildings[buildingId];
+--        local amount = building.Cost * (GlobalParameters.TAJ_WONDER_GOLD_PERCENTAGE or 0) * 0.01;
+--        player:GetTreasury():ChangeGoldBalance(amount);
+--    end
+--end
 
-Events.WonderCompleted.Add(TajWonderGold);
+--Events.WonderCompleted.Add(TajWonderGold);
 
 -- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
 function BuildingIsCheaper (a, b)
@@ -170,6 +171,43 @@ end
 if WAT_ARUN ~= nil then
     Events.UnitGreatPersonCreated.Add(UnitGreatPersonCreatedWatArun);
 end
+
+-- 黄鹤楼: 使用大作家返还30%当前需要大作家的点数
+function OnYellowCraneGreatWriterActived(playerID, unitID, greatpersonclassID)
+    local pPlayer = Players[playerID];
+    local pUnit = pPlayer:GetUnits():FindID(unitID);
+    local iYellowCrane = GameInfo.Buildings["BUILDING_YELLOW_CRANE_HD"].Index;
+    local tGreatpersonClass = GameInfo.GreatPersonClasses[greatpersonclassID].GreatPersonClassType; 
+    if (pPlayer ~= nil) then
+      local bHasYC = false;
+      for i, pCity in pPlayer:GetCities():Members() do
+        if (pCity:GetBuildings():HasBuilding(iYellowCrane)) then
+          bHasYC = true;
+          break;
+        end
+      end
+      if (bHasYC) then
+        if (tGreatpersonClass == "GREAT_PERSON_CLASS_WRITER") then
+          local iGreatWriter = GameInfo.GreatPersonClasses["GREAT_PERSON_CLASS_WRITER"].Index;
+          -- local nGPPTotal = pPlayer:GetGreatPeoplePoints():GetPointsTotal(iGreatWriter);
+          -- local nGPPGained = nGPPTotal * 0.3;
+          local timeline = Game.GetGreatPeople():GetTimeline();
+          local cost = 0;
+          for i, entry in ipairs(timeline) do
+			if entry.Class == iGreatWriter then
+            	cost = entry.Cost;
+            end
+          end
+          local nGPPGained = cost * GlobalParameters.YELLOW_CRANE_TOWER_POINT_PERCENTAGE / 100;
+          pPlayer:GetGreatPeoplePoints():ChangePointsTotal(greatpersonclassID, nGPPGained);
+          local sGPPNotifier = tostring(nGPPGained)..Locale.Lookup("LOC_NOTIFIER_GREATWRITER_YELLOWCRANE_GPP");
+          NotificationManager.SendNotification(playerID, "NOTIFICATION_RELIC_CREATED", sGPPNotifier);
+        end
+      end
+    end
+  end
+  
+  Events.UnitGreatPersonActivated.Add(OnYellowCraneGreatWriterActived);
 
 -- local PROP_KEY_HAS_PLAYER_TURN_ACTIVATED = 'DLHasPlayerTurnActivated'
 -- local PROP_KEY_HAS_ALHAMBRA_GRANTED = 'DLHasAlhambraGranted'

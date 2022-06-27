@@ -2,8 +2,8 @@
 
 -- 大铁厂 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set AdjacentResource = 'RESOURCE_IRON', cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS';
-update Buildings set AdjacentResource = 'RESOURCE_IRON', cost = 600, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL';
+update Buildings set cost = 1000, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS'; --AdjacentResource = 'RESOURCE_IRON', 
+update Buildings set cost = 1000, RegionalRange = 8 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL'; --AdjacentResource = 'RESOURCE_IRON', 
 	-- 修改建造条件
 update RequirementArguments set Value = 4 where RequirementId = 'REQ_CL_PLAYER_HAS_X_STRATEGIC_IMPROVEMENTS' and Name = 'Count';
 
@@ -39,8 +39,9 @@ from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
 -- 金融中心 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1250 where BuildingType = 'NAT_WON_CL_FINANCE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1250 where BuildingType = 'NAT_WON_CL_FINANCE_INTERNAL';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE_INTERNAL';
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'NAT_WON_CL_FINANCE' and YieldType = 'YIELD_GOLD';
 	-- 修改特效
 update ModifierArguments set Value = 2 where ModifierId = 'CL_NAT_WONDER_ADJUST_TRADE_ROUTE_YIELD_INTERNATIONAL_01' and Name = 'Amount';
 update ModifierArguments set Value = 4 where ModifierId = 'CL_NAT_WONDER_ADJUST_TRADE_ROUTE_YIELD_INTERNATIONAL_02' and Name = 'Amount';
@@ -144,8 +145,13 @@ values
 
 -- 国际机场 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set cost = 1500, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT';
-update Buildings set cost = 1500, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
+update Buildings set cost = 2000, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT';
+update Buildings set cost = 2000, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,			YieldChange)
+values
+	('NAT_WON_CL_AIRPORT',					'YIELD_GOLD',		4),
+	('NAT_WON_CL_AIRPORT_INTERNAL',			'YIELD_GOLD',		4);
 	-- 修改建造条件
 update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_AIRPORT';
 	-- 修改特效

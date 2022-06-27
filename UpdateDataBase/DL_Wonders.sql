@@ -2,7 +2,106 @@
 --       Wonders Adjustments       --
 -------------------------------------
 
--- TODO: fix the bug for slot wonders.
+-- Adjust Cost.
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
+update Buildings set Cost = 260 where BuildingType = 'BUILDING_PYRAMIDS';
+update Buildings set Cost = 260 where BuildingType = 'BUILDING_ORACLE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSUS';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_PETRA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSEUM';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIBRARY';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_MAHABODHI_TEMPLE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_APADANA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HALICARNASSUS_MAUSOLEUM';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_HAGIA_SOPHIA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KILWA_KISIWANI';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KOTOKU_IN';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MACHU_PICCHU';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ST_BASILS_CATHEDRAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TAJ_MAHAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_CASA_DE_CONTRATACION';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_POTALA_PALACE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_PANAMA_CANAL';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BOLSHOI_THEATRE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_STATUE_LIBERTY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BIG_BEN';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_HERMITAGE';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_BIOSPHERE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
+
+-- Adjust Basic Yield.
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,			YieldChange)
+values
+	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
+	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
+	('BUILDING_PETRA',							'YIELD_FOOD',		1),
+	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
+	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		5),
+	('BUILDING_TERRACOTTA_ARMY',				'YIELD_CULTURE',	2),
+	('BUILDING_HUEY_TEOCALLI',					'YIELD_FAITH',		2),
+	('BUILDING_APADANA',						'YIELD_CULTURE',	1),
+	('BUILDING_HALICARNASSUS_MAUSOLEUM',		'YIELD_CULTURE',	2),
+	('BUILDING_ALHAMBRA',						'YIELD_PRODUCTION',	4),
+	('BUILDING_CHICHEN_ITZA',					'YIELD_CULTURE',	2),
+	('BUILDING_CHICHEN_ITZA',					'YIELD_FAITH',		2),
+	('BUILDING_ANGKOR_WAT',						'YIELD_FOOD',		2),
+	('BUILDING_ANGKOR_WAT',						'YIELD_FAITH',		2),
+	('BUILDING_KILWA_KISIWANI',					'YIELD_GOLD',		6),
+	('BUILDING_KOTOKU_IN',						'YIELD_FAITH',		5),
+	('BUILDING_MONT_ST_MICHEL',					'YIELD_FAITH',		5),
+	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_CULTURE',	2),
+	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_FAITH',		2),
+	('BUILDING_VENETIAN_ARSENAL',				'YIELD_PRODUCTION',	3),
+	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_GOLD',		8),
+	('BUILDING_ST_BASILS_CATHEDRAL',			'YIELD_FAITH',		6),
+	('BUILDING_TAJ_MAHAL',						'YIELD_CULTURE',	2),
+	('BUILDING_TAJ_MAHAL',						'YIELD_FAITH',		2),
+	('BUILDING_POTALA_PALACE',					'YIELD_CULTURE',	3),
+	('BUILDING_POTALA_PALACE',					'YIELD_FAITH',		3),
+	('BUILDING_RUHR_VALLEY',					'YIELD_PRODUCTION',	6),
+	('BUILDING_BOLSHOI_THEATRE',				'YIELD_CULTURE',	6),
+	('BUILDING_OXFORD_UNIVERSITY',				'YIELD_SCIENCE',	6),
+	('BUILDING_STATUE_LIBERTY',					'YIELD_GOLD',		8),
+	('BUILDING_EIFFEL_TOWER',					'YIELD_CULTURE',	8),
+	('BUILDING_BROADWAY',						'YIELD_CULTURE',	5),
+	('BUILDING_BROADWAY',						'YIELD_GOLD',		5),
+	('BUILDING_CRISTO_REDENTOR',				'YIELD_FAITH',		4),
+	('BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION','YIELD_SCIENCE',	8),
+	('BUILDING_GOLDEN_GATE_BRIDGE',				'YIELD_GOLD',		12),
+	('BUILDING_BIOSPHERE',						'YIELD_FOOD',		3),
+	('BUILDING_BIOSPHERE',						'YIELD_PRODUCTION',	3),
+	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	3);
+
+-- TODO: fix the bug for slot wonders.	
 -- delete from BuildingModifiers where
 -- 	ModifierId = 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
 -- 	ModifierId = 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
@@ -60,32 +159,42 @@ update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BU
 update ModifierArguments set Value = 2 where ModifierId = 'STBASILS_ADDFOOD_MODIFIER' and Name = 'Amount';
 --chichen itza
 update Buildings set PrereqCivic = 'CIVIC_FEUDALISM' where BuildingType = 'BUILDING_CHICHEN_ITZA';
+delete from BuildingModifiers where BuildingType = 'BUILDING_CHICHEN_ITZA';
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
-	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_JUNGLE_FOOD'),
+--	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_JUNGLE_FOOD'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_GOLDEN_FAITH'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_NORMAL_PRODUCTION');
 
 insert or replace into Modifiers
 	(ModifierId, 							ModifierType,												SubjectRequirementSetId)
 values
-	('CHICHEN_ITZA_JUNGLE_FOOD',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',						'CITY_HAS_CHICHEN_ITZA_REQUIREMENTS'),
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',				'PLOT_HAS_JUNGLE_REQUIREMENTS'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',						'CITY_HAS_CHICHEN_ITZA_REQUIREMENTS'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',				'PLOT_HAS_JUNGLE_REQUIREMENTS'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		null),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		null),
 	('CHICHEN_ITZA_GOLDEN_FAITH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_NOT_HAS_GOLDEN_AGE');
 
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
-	('CHICHEN_ITZA_JUNGLE_FOOD',				'ModifierId',			'CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER'),		
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
-	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'Amount',				1),
+--	('CHICHEN_ITZA_JUNGLE_FOOD',				'ModifierId',			'CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER'),		
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'YieldType',			'YIELD_FOOD'),
+--	('CHICHEN_ITZA_JUNGLE_FOOD_MODIFIER',		'Amount',				1),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'BuildingType',			'BUILDING_CHICHEN_ITZA'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'YieldType',			'YIELD_FAITH'),
+	('CHICHEN_ITZA_SACRIFICE_FAITH',			'Amount',				1),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'BuildingType',			'BUILDING_CHICHEN_ITZA'),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'YieldType',			'YIELD_CULTURE'),
+	('CHICHEN_ITZA_SACRIFICE_CULTURE',			'Amount',				1),
 	('CHICHEN_ITZA_GOLDEN_FAITH',				'YieldType',			'YIELD_FAITH'),
 	('CHICHEN_ITZA_GOLDEN_FAITH',				'Amount',				10),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'Amount',				10);
+insert or replace into GlobalParameters (Name, Value) values ('CHICHEN_ITZA_PERCENTAGE', 5);
 
 --remove MAHABODHI_DIPLOVP 
 --add ORSZAGHAZ DVP
@@ -122,7 +231,7 @@ insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
 --BUILDING_GREAT_ZIMBABWE
-update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
@@ -272,7 +381,7 @@ update ModifierArguments set Value = 2 where ModifierId = 'BIOSPHERE_ADJUST_APPE
 
 --BUILDING_KOTOKU_IN
 --grants all UNIT_WARRIOR_MONK trained in this city free Promotion
-delete from BuildingModifiers where ModifierId = 'KOTOKU_GRANTMONKS';
+delete from BuildingModifiers where BuildingType = 'BUILDING_KOTOKU_IN';
 insert or replace into BuildingModifiers
 	(BuildingType,						 ModifierId)
 values
@@ -284,25 +393,33 @@ values
 
 --'MODIFIER_PLAYER_UNIT_ADJUST_GRANT_EXPERIENCE'
 insert or replace into Modifiers	
-	(ModifierId,								ModifierType,					RunOnce,	Permanent)
+	(ModifierId,								ModifierType,											RunOnce,	Permanent)
 values
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',1,1),
-	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',0,1);
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER',	1,			1),
+	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',	0,			1),
+	('KOTUKU_GRANT_ENLIGHTENED',				'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',					1,			1);
+insert or replace into Modifiers	
+	(ModifierId,								ModifierType,									SubjectRequirementSetId)
+values
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'MODIFIER_PLAYER_CITIES_GRANT_UNIT_IN_CITY',	'CITY_HAS_BUILDING_KOTOKU_IN_REQUIREMENTS');
 insert or replace into ModifierArguments 
-	(ModifierId,								Name,			Value) 
+	(ModifierId,								Name,						Value) 
 values
-	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'AbilityType',	'ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),			
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION'),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UnitPromotionClassType','PROMOTION_CLASS_MONK'),
-	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'ModifierId',	'HETAIROI_FREE_PROMOTION');
+	('KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION',	'AbilityType',				'ABILITY_KOTOKU_IN_TRAINED_FREE_PROMOTION'),
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_1_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),			
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_2_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_3_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'UnitPromotionClassType',	'PROMOTION_CLASS_MONK'),
+	('KOTOKU_IN_GRANTS_4_EXPMONKS',				'ModifierId',				'KOTUKU_GRANT_ENLIGHTENED'),
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'UnitType',					'UNIT_WARRIOR_MONK'),
+	('KOTOKU_IN_GRANTS_CIVILIAN_MONK',			'Amount',					1),
+	('KOTUKU_GRANT_ENLIGHTENED',				'AbilityType',				'ABILITY_KOTOKU_IN_ENLIGHTENED');
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UnitType',		'UNIT_WARRIOR_MONK'),
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'Experience',	-1),
 	-- ('KOTOKU_IN_GRANTS_1_EXPMONKS',				'UniqueOverride',1),
@@ -342,8 +459,6 @@ insert or replace into Building_YieldChanges
 values
 ('BUILDING_HANGING_GARDENS','YIELD_FOOD', 4);
 
-update Buildings set cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
-
 -- Jebel region 9
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARKAL';
 
@@ -365,8 +480,7 @@ values
 	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
 
 -- BUILDING_MACHU_PICCHU to guilds 710 add food to mountain districts
-update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = NULL, Cost = 710 
-	where BuildingType = 'BUILDING_MACHU_PICCHU';
+update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = NULL where BuildingType = 'BUILDING_MACHU_PICCHU';
 
 insert or replace into BuildingModifiers (BuildingType,	ModifierId)values
 ('BUILDING_MACHU_PICCHU', 'MACHU_PICCHU_DISTRICT_FOOD');
@@ -759,20 +873,65 @@ from HolySiteBuildings;
 -- unlock
 	-- 【泰姬陵】改为【物理】科技解锁
 update Buildings set PrereqCivic = Null, PrereqTech = 'TECH_PHYSICS_HD' where BuildingType = 'BUILDING_TAJ_MAHAL';--xhh
-insert or replace into Modifiers
-    (ModifierId,                ModifierType)
+insert or replace into Building_GreatPersonPoints
+	(BuildingType,			GreatPersonClassType,			PointsPerTurn)
 values
-    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
-insert or replace into ModifierArguments
-    (ModifierId,                Name,           Value)
-values
-    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
-    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+	('BUILDING_TAJ_MAHAL',	'GREAT_PERSON_CLASS_ENGINEER',	4);
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
-    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
-insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_CULTURE'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT'),
+    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_TOURISM');
+insert or replace into Modifiers
+    (ModifierId,                						ModifierType,											SubjectRequirementSetId)
+values
+    ('TAJ_MAHAL_WONDER_CULTURE',   						'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',		null),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'MODIFIER_SINGLE_CITY_ADJUST_WONDER_YIELD_CHANGE',		null),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT',			'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',				'PLOT_HAS_COMPLETE_WONDER'),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',				null),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT',	null);
+insert or replace into ModifierArguments
+    (ModifierId,                						Name,          			Value)
+values
+	('TAJ_MAHAL_WONDER_CULTURE',   						'YieldType',			'YIELD_CULTURE'),
+	('TAJ_MAHAL_WONDER_CULTURE',   						'Amount',				4),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'YieldType',			'YIELD_GOLD'),
+    ('TAJ_MAHAL_WONDER_GOLD',   						'Amount',				4),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT',			'ModifierId',			'TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER'),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'BoostsWonders',		1),
+    ('TAJ_MAHAL_WONDER_TOURISM',   						'ScalingFactor',		200),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_ENGINEER'),
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'Amount',				10);
+--insert or replace into Modifiers
+--    (ModifierId,                ModifierType)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+--insert or replace into ModifierArguments
+--    (ModifierId,                Name,           Value)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+--    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+--insert or replace into BuildingModifiers
+--    (BuildingType,          ModifierId)
+--values
+--    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+
+--insert or replace into Modifiers
+--    (ModifierId,                ModifierType)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE');
+--insert or replace into ModifierArguments
+--    (ModifierId,                Name,           Value)
+--values
+--    ('TAJ_MAHAL_WONDER_GOLD',   'YieldType',    'YIELD_GOLD'),
+--    ('TAJ_MAHAL_WONDER_GOLD',   'Amount',        8);
+--insert or replace into BuildingModifiers
+--    (BuildingType,          ModifierId)
+--values
+--    ('BUILDING_TAJ_MAHAL',  'TAJ_MAHAL_WONDER_GOLD');
+-- insert or replace into GlobalParameters (Name,  Value) values ('TAJ_WONDER_GOLD_PERCENTAGE',  80);
 
 
 	-- 【金门大桥】改为【钢铁】科技解锁
@@ -837,60 +996,6 @@ select ModifierId || '1', Name,   Value from ModifierArguments where
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
--- Adjust the Cost.
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_PYRAMIDS';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_ORACLE';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSUS';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_PETRA';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSEUM';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIBRARY';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_MAHABODHI_TEMPLE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_HAGIA_SOPHIA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
-update Buildings set Cost = 1160 where BuildingType = 'BUILDING_POTALA_PALACE';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BOLSHOI_THEATRE';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_BIG_BEN';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_HERMITAGE';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
-update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_APADANA';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_HALICARNASSUS_MAUSOLEUM';
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_KILWA_KISIWANI';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_KOTOKU_IN';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_CASA_DE_CONTRATACION';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ST_BASILS_CATHEDRAL';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TAJ_MAHAL';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_STATUE_LIBERTY';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MACHU_PICCHU';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ORSZAGHAZ';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_PANAMA_CANAL';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BIOSPHERE';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
 
 -- Enable Wonders on Mountain
 insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
@@ -948,22 +1053,6 @@ insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
     ('BUILDING_ORSZAGHAZ',  'ORSZAGHAZ_INFLUENCE_TOKENS');
-insert or replace into Requirements
-    (RequirementId,                     RequirementType)
-values
-    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENT_PLAYER_HAS_BUILDING');
-insert or replace into RequirementArguments
-    (RequirementId,                     Name,           Value)
-values
-    ('REQUIRES_PLAYER_HAS_ORSZAGHAZ',   'BuildingType', 'BUILDING_ORSZAGHAZ');
-insert or replace into RequirementSets
-    (RequirementSetId,         RequirementSetType)
-values
-    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,         RequirementId)
-values
-    ('PLAYER_HAS_ORSZAGHAZ',   'REQUIRES_CITY_HAS_BUILDING_ORSZAGHAZ');
 create temporary table OrszaghazModifiers (PolicyType text not null, OldModifierId text not null, NewModifierId text not null);
 insert into OrszaghazModifiers
     (PolicyType,    OldModifierId,  NewModifierId)
@@ -973,7 +1062,7 @@ from PolicyModifiers where PolicyType in (select PolicyType from Policies where 
 insert or replace into Modifiers
     (ModifierId,	ModifierType,	                                SubjectRequirementSetId)
 select
-    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'PLAYER_HAS_ORSZAGHAZ'
+    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',       'CITY_HAS_BUILDING_ORSZAGHAZ_REQUIREMENTS'
 from OrszaghazModifiers;
 insert or replace into ModifierArguments
     (ModifierId,	Name,	        Value)

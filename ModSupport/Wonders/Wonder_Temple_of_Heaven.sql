@@ -4,9 +4,14 @@
 ----------------------------------------------------------------------------------------------------------------
 
 --BUILDING_TEMPLE_OF_HEAVEN
-UPDATE Buildings SET  Cost = 1160, ObsoleteEra = 'ERA_MODERN',  PrereqTech = 'TECH_ASTRONOMY', PrereqCivic = NULL
+UPDATE Buildings SET  Cost = 1000, ObsoleteEra = 'ERA_MODERN',  PrereqTech = 'TECH_ASTRONOMY', PrereqCivic = NULL
 WHERE BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_TEMPLE_OF_HEAVEN');
 
+delete from Building_YieldChanges where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN' and YieldType = 'YIELD_FAITH';
+insert or replace into Building_YieldChanges
+	(BuildingType,					YieldType,			YieldChange)
+values
+	('BUILDING_TEMPLE_OF_HEAVEN',	'YIELD_CULTURE',	4);
 delete from BuildingModifiers where BuildingType = 'BUILDING_TEMPLE_OF_HEAVEN';
 
 -- insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
