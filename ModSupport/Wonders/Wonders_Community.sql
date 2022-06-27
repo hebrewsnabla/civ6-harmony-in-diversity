@@ -760,7 +760,11 @@ update Building_GreatWorks set
 	NonUniquePersonTourism = 1
 where BuildingType ='BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_CATHEDRAL';
 
--- 帝国大厦
+-- WON_CL_EMPIRE_STATES
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'WON_CL_EMPIRE_STATES', 'YIELD_GOLD', 8 from Buildings where BuildingType = 'WON_CL_EMPIRE_STATES';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'WON_CL_EMPIRE_STATES', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'WON_CL_EMPIRE_STATES';
 update Buildings set PrereqCivic = 'CIVIC_SUFFRAGE' where BuildingType = 'WON_CL_EMPIRE_STATES';
 update ModifierArguments set Value = 300 where ModifierId = 'EMPIRE_CITY_WONDER_TOURISM' and Name = 'ScalingFactor';
 
