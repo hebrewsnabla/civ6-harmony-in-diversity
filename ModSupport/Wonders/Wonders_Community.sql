@@ -27,9 +27,13 @@ from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL';
 
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null, PrereqDistrict = NULL, AdjacentDistrict = 'DISTRICT_HARBOR'
+UPDATE Buildings set ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null, PrereqDistrict = NULL, AdjacentDistrict = 'DISTRICT_HARBOR'
 WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');
-
+delete from Building_YieldChanges where BuildingType = 'BUILDING_LEANING_TOWER';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_LEANING_TOWER', 'YIELD_SCIENCE', 4 from Buildings where BuildingType = 'BUILDING_LEANING_TOWER';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_LEANING_TOWER', 'YIELD_FAITH', 2 from Buildings where BuildingType = 'BUILDING_LEANING_TOWER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_ENHANCEDLATETOURISM';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_HARBOR_DISTRICT_GOLD';
@@ -61,7 +65,7 @@ insert or replace into ModifierArguments (ModifierId,	Name,	Value)
 select  'MODIFIER_LEANING_TOWER_ADD_' || GreatPersonClassType ,	'Amount', 25 from GreatPersonClasses;
 ----------------------------------------------------------------------------------------------------------------------
 ----------------BUILDING_PORCELAIN_TOWER------------------------------------------------------------------------------
-UPDATE Buildings SET  Cost = 1060, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
+UPDATE Buildings SET ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_THE_ENLIGHTENMENT'
 WHERE BuildingType = 'BUILDING_PORCELAIN_TOWER';
 
 --grants a scientist
@@ -77,7 +81,7 @@ insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PORCELAIN_TOWER_GRANTS_SCIENTIST',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_SCIENTIST');
 -----------------------------------------------------------------------------------------------------------------------
 -------BUILDING_NEUSCHWANSTEIN-----------------------------------------------------------------------------------------
-update Buildings set  Cost = 1240, ObsoleteEra = 'ERA_ATOMIC' where BuildingType = 'BUILDING_NEUSCHWANSTEIN'
+update Buildings set ObsoleteEra = 'ERA_ATOMIC' where BuildingType = 'BUILDING_NEUSCHWANSTEIN'
 	AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_NEUSCHWANSTEIN');
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
@@ -131,6 +135,10 @@ UPDATE Buildings SET ObsoleteEra = 'ERA_MODERN'
 WHERE BuildingType = 'BUILDING_UFFIZI' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_UFFIZI');
 delete from BuildingModifiers where ModifierId = 'UFFIZI_ART_MUSEUM_CULTURE_MODIFIER';
 
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_UFFIZI', 'YIELD_CULTURE', 4 from Buildings where BuildingType = 'BUILDING_UFFIZI';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_UFFIZI', 'YIELD_GOLD', 4 from Buildings where BuildingType = 'BUILDING_UFFIZI';
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_UFFIZI', 'UFFIZI_CITY_GOLD'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
@@ -297,9 +305,13 @@ insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChan
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ITSUKUSHIMA');
 
 --BUILDING_BURJ_KHALIFA
---delete from BuildingModifiers where BuildingType = 'BUILDING_BURJ_KHALIFA';
+update Building_YieldChanges set YieldChange = 15 where BuildingType = 'BUILDING_BURJ_KHALIFA' and YieldType = 'YIELD_GOLD';
 
 --BUILDING_TOWER_BRIDGE
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_TOWER_BRIDGE', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_TOWER_BRIDGE', 'YIELD_GOLD', 4 from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE';
 delete from BuildingModifiers where BuildingType = 'BUILDING_TOWER_BRIDGE'
 	and (ModifierId = 'TOWER_BRIDGE_GRANT_COAL_PER_TURN' or ModifierId = 'TOWER_BRIDGE_CITIES_PRODUCTION' or ModifierId = 'TOWER_BRIDGE_CITIES_GOLD');
 
@@ -393,6 +405,10 @@ select
 from TOWER_BRIDGE_DistrictBonus;
 
 --BUILDING_BRANDENBURG_GATE
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_BRANDENBURG_GATE', 'YIELD_SCIENCE', 2 from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_BRANDENBURG_GATE', 'YIELD_PRODUCTION', 2 from Buildings where BuildingType = 'BUILDING_BRANDENBURG_GATE';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GATE_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where BuildingType = 'BUILDING_BRANDENBURG_GATE' and ModifierId = 'BRANDENBURG_GRANT_GENERAL';
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
@@ -537,7 +553,11 @@ values
 	('ABILITY_MOTHERLAND_CALLS_OWN_TERRITORY',			'OWN_TERRITORY_COMBAT_STRENGTH_BUFF');
 
 -- WON_CL_KINKAKU
-update Buildings set PrereqCivic = 'CIVIC_FEUDALISM', PrereqTech = NULL where BuildingType = 'WON_CL_KINKAKU';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'WON_CL_KINKAKU', 'YIELD_FAITH', 2 from Buildings where BuildingType = 'WON_CL_KINKAKU';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'WON_CL_KINKAKU', 'YIELD_PRODUCTION', 2 from Buildings where BuildingType = 'WON_CL_KINKAKU';
+update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT', PrereqTech = NULL where BuildingType = 'WON_CL_KINKAKU';
 delete from BuildingModifiers where BuildingType = 'WON_CL_KINKAKU';
 insert or replace into BuildingModifiers (BuildingType,	ModifierId) select
 	'WON_CL_KINKAKU',	'KINKAKU_RANGE_ENCAMPMENT_FAITH'
@@ -603,6 +623,10 @@ select
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 -- CL_BUILDING_CN_TOWER
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'CL_BUILDING_CN_TOWER', 'YIELD_GOLD', 6 from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'CL_BUILDING_CN_TOWER', 'YIELD_CULTURE', 4 from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER';
 delete from BuildingModifiers where BuildingType = 'CL_BUILDING_CN_TOWER' and ModifierId != 'CL_GRANT_BROADCAST';
 -- update Buildings set AdjacentDistrict = NULL where BuildingType = 'CL_BUILDING_CN_TOWER';
 
@@ -678,7 +702,7 @@ from Types where Type = 'BUILDING_YELLOW_CRANE';
 insert or replace into Buildings
 	(BuildingType, 			Name, Description, Cost,	AdvisorType, MaxWorldInstances, IsWonder, RequiresPlacement, RequiresRiver, Quote, PrereqCivic)
 select
-	BuildingType || '_HD',	Name, Description, Cost,	AdvisorType, MaxWorldInstances, IsWonder, RequiresPlacement, RequiresRiver, Quote, 'CIVIC_LITERARY_TRADITION_HD'
+	BuildingType || '_HD',	Name, Description, 420,		AdvisorType, MaxWorldInstances, IsWonder, RequiresPlacement, RequiresRiver, Quote, 'CIVIC_LITERARY_TRADITION_HD'
 from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into Building_ValidTerrains
 	(BuildingType, 			TerrainType)
@@ -695,7 +719,13 @@ insert or replace into Building_GreatWorks
 select
 	BuildingType || '_HD', 	GreatWorkSlotType,	3,			1,					100,					100
 from Building_GreatWorks where BuildingType = 'BUILDING_YELLOW_CRANE';
-update Buildings set InternalOnly = 1 where BuildingType = 'BUILDING_YELLOW_CRANE';
+insert or replace into Building_YieldChanges
+	(BuildingType,					YieldType,			YieldChange)
+select
+	BuildingType || '_HD',			'YIELD_CULTURE',	2
+from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
+-- update Buildings set InternalOnly = 1
+delete from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into GlobalParameters (Name, Value) values ('YELLOW_CRANE_TOWER_POINT_PERCENTAGE', 15);
 insert or replace into BuildingModifiers
 	(BuildingType,	ModifierId)
@@ -714,6 +744,10 @@ values
 	('YELLOW_CRANE_WRITER_BOOST',	'TechBoost',		0);
 
 -- STPETERSBASILICA
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_AL_STPETERSBASILICA', 'YIELD_CULTURE', 2 from Buildings where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_AL_STPETERSBASILICA', 'YIELD_FAITH', 2 from Buildings where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
 delete from Building_GreatWorks where BuildingType = 'BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_RELIC';
 update Building_GreatWorks set 
 	NumSlots = 3,
@@ -731,6 +765,10 @@ update Buildings set PrereqCivic = 'CIVIC_SUFFRAGE' where BuildingType = 'WON_CL
 update ModifierArguments set Value = 300 where ModifierId = 'EMPIRE_CITY_WONDER_TOURISM' and Name = 'ScalingFactor';
 
 -- 三峡大坝
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_THREE_GORDES_DAM', 'YIELD_FOOD', 4 from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM';
+insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
+select 'BUILDING_THREE_GORDES_DAM', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM';
 insert or replace into BuildingModifiers (BuildingType, ModifierId) select
 	'BUILDING_THREE_GORDES_DAM', 'THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD'
 from Buildings where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM');
@@ -749,26 +787,30 @@ values
 	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'Amount',		1),
 	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
 	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'Amount',		1);
+
+-- WON_CL_BUILDING_ARECIBO
+update Building_YieldChanges set YieldChange = 8 where BuildingType = 'WON_CL_BUILDING_ARECIBO' and YieldType = 'YIELD_SCIENCE';
+
 -- Cost adjust
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
-update Buildings set Cost = 1160 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';
-update Buildings set Cost = 1160 where BuildingType = 'BUILDING_LEANING_TOWER';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GLOBE_THEATRE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_YELLOW_CRANE';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_NOTRE_DAME';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
-update Buildings set Cost = 240 where BuildingType = 'BUILDING_ABU_SIMBEL';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BURJ_KHALIFA';
 update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
+update Buildings set Cost = 260 where BuildingType = 'BUILDING_ABU_SIMBEL';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_BOROBUDUR';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_YELLOW_CRANE';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_BAMYAN';
 update Buildings set Cost = 420 where BuildingType = 'BUILDING_ITSUKUSHIMA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_NOTRE_DAME';
+update Buildings set Cost = 750 where BuildingType = 'WON_CL_KINKAKU';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_AL_STPETERSBASILICA';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_UFFIZI';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_GLOBE_THEATRE';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_PORCELAIN_TOWER';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_LEANING_TOWER';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_NEUSCHWANSTEIN';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BRANDENBURG_GATE';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_THREE_GORDES_DAM';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_TOWER_BRIDGE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_BURJ_KHALIFA';
 update Buildings set Cost = 1800 where BuildingType = 'WON_CL_EMPIRE_STATES';
 update Buildings set Cost = 1800 where BuildingType = 'BUILDING_MOTHERLAND_CALLS';
-update Buildings set Cost = 1800 where BuildingType = 'WON_CL_BUILDING_ARECIBO';
-update Buildings set Cost = 750 where BuildingType = 'WON_CL_KINKAKU';
-update Buildings set Cost = 1800 where BuildingType = 'CL_BUILDING_CN_TOWER';
+update Buildings set Cost = 2000 where BuildingType = 'WON_CL_BUILDING_ARECIBO';
+update Buildings set Cost = 2000 where BuildingType = 'CL_BUILDING_CN_TOWER';

@@ -2,7 +2,106 @@
 --       Wonders Adjustments       --
 -------------------------------------
 
--- TODO: fix the bug for slot wonders.
+-- Adjust Cost.
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
+update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
+update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
+update Buildings set Cost = 260 where BuildingType = 'BUILDING_PYRAMIDS';
+update Buildings set Cost = 260 where BuildingType = 'BUILDING_ORACLE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSUS';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_PETRA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSEUM';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIBRARY';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_MAHABODHI_TEMPLE';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_APADANA';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_HALICARNASSUS_MAUSOLEUM';
+update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_HAGIA_SOPHIA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KILWA_KISIWANI';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_KOTOKU_IN';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MACHU_PICCHU';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+update Buildings set Cost = 750 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ST_BASILS_CATHEDRAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TAJ_MAHAL';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_CASA_DE_CONTRATACION';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
+update Buildings set Cost = 1000 where BuildingType = 'BUILDING_POTALA_PALACE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_PANAMA_CANAL';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_ORSZAGHAZ';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BOLSHOI_THEATRE';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_STATUE_LIBERTY';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BIG_BEN';
+update Buildings set Cost = 1360 where BuildingType = 'BUILDING_HERMITAGE';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
+update Buildings set Cost = 1800 where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_BIOSPHERE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
+update Buildings set Cost = 2000 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
+
+-- Adjust Basic Yield.
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,			YieldChange)
+values
+	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
+	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
+	('BUILDING_PETRA',							'YIELD_FOOD',		1),
+	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
+	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		5),
+	('BUILDING_TERRACOTTA_ARMY',				'YIELD_CULTURE',	2),
+	('BUILDING_HUEY_TEOCALLI',					'YIELD_FAITH',		2),
+	('BUILDING_APADANA',						'YIELD_CULTURE',	1),
+	('BUILDING_HALICARNASSUS_MAUSOLEUM',		'YIELD_CULTURE',	2),
+	('BUILDING_ALHAMBRA',						'YIELD_PRODUCTION',	4),
+	('BUILDING_CHICHEN_ITZA',					'YIELD_CULTURE',	2),
+	('BUILDING_CHICHEN_ITZA',					'YIELD_FAITH',		2),
+	('BUILDING_ANGKOR_WAT',						'YIELD_FOOD',		2),
+	('BUILDING_ANGKOR_WAT',						'YIELD_FAITH',		2),
+	('BUILDING_KILWA_KISIWANI',					'YIELD_GOLD',		6),
+	('BUILDING_KOTOKU_IN',						'YIELD_FAITH',		5),
+	('BUILDING_MONT_ST_MICHEL',					'YIELD_FAITH',		5),
+	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_CULTURE',	2),
+	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_FAITH',		2),
+	('BUILDING_VENETIAN_ARSENAL',				'YIELD_PRODUCTION',	3),
+	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_GOLD',		8),
+	('BUILDING_ST_BASILS_CATHEDRAL',			'YIELD_FAITH',		6),
+	('BUILDING_TAJ_MAHAL',						'YIELD_CULTURE',	2),
+	('BUILDING_TAJ_MAHAL',						'YIELD_FAITH',		2),
+	('BUILDING_POTALA_PALACE',					'YIELD_CULTURE',	3),
+	('BUILDING_POTALA_PALACE',					'YIELD_FAITH',		3),
+	('BUILDING_RUHR_VALLEY',					'YIELD_PRODUCTION',	6),
+	('BUILDING_BOLSHOI_THEATRE',				'YIELD_CULTURE',	6),
+	('BUILDING_OXFORD_UNIVERSITY',				'YIELD_SCIENCE',	6),
+	('BUILDING_STATUE_LIBERTY',					'YIELD_GOLD',		8),
+	('BUILDING_EIFFEL_TOWER',					'YIELD_CULTURE',	8),
+	('BUILDING_BROADWAY',						'YIELD_CULTURE',	5),
+	('BUILDING_BROADWAY',						'YIELD_GOLD',		5),
+	('BUILDING_CRISTO_REDENTOR',				'YIELD_FAITH',		4),
+	('BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION','YIELD_SCIENCE',	8),
+	('BUILDING_GOLDEN_GATE_BRIDGE',				'YIELD_GOLD',		12),
+	('BUILDING_BIOSPHERE',						'YIELD_FOOD',		3),
+	('BUILDING_BIOSPHERE',						'YIELD_PRODUCTION',	3),
+	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	3);
+
+-- TODO: fix the bug for slot wonders.	
 -- delete from BuildingModifiers where
 -- 	ModifierId = 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
 -- 	ModifierId = 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
@@ -132,7 +231,7 @@ insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
 ('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
 
 --BUILDING_GREAT_ZIMBABWE
-update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP', Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
@@ -360,8 +459,6 @@ insert or replace into Building_YieldChanges
 values
 ('BUILDING_HANGING_GARDENS','YIELD_FOOD', 4);
 
-update Buildings set cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
-
 -- Jebel region 9
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARKAL';
 
@@ -383,8 +480,7 @@ values
 	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
 
 -- BUILDING_MACHU_PICCHU to guilds 710 add food to mountain districts
-update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = NULL, Cost = 710 
-	where BuildingType = 'BUILDING_MACHU_PICCHU';
+update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = NULL where BuildingType = 'BUILDING_MACHU_PICCHU';
 
 insert or replace into BuildingModifiers (BuildingType,	ModifierId)values
 ('BUILDING_MACHU_PICCHU', 'MACHU_PICCHU_DISTRICT_FOOD');
@@ -900,60 +996,6 @@ select ModifierId || '1', Name,   Value from ModifierArguments where
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
--- Adjust the Cost.
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_HANGING_GARDENS';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_PYRAMIDS';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_ORACLE';
-update Buildings set Cost = 300 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSUS';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_PETRA';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_COLOSSEUM';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_GREAT_LIBRARY';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_MAHABODHI_TEMPLE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_HAGIA_SOPHIA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_ALHAMBRA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_CHICHEN_ITZA';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MONT_ST_MICHEL';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_VENETIAN_ARSENAL';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_FORBIDDEN_CITY';
-update Buildings set Cost = 1160 where BuildingType = 'BUILDING_POTALA_PALACE';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_RUHR_VALLEY';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_BOLSHOI_THEATRE';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_OXFORD_UNIVERSITY';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_BIG_BEN';
-update Buildings set Cost = 1600 where BuildingType = 'BUILDING_HERMITAGE';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_EIFFEL_TOWER';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BROADWAY';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_CRISTO_REDENTOR';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';
-update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_HUEY_TEOCALLI';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_ANGKOR_WAT';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_JEBEL_BARKAL';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_APADANA';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_HALICARNASSUS_MAUSOLEUM';
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_KILWA_KISIWANI';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_KOTOKU_IN';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_CASA_DE_CONTRATACION';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ST_BASILS_CATHEDRAL';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TAJ_MAHAL';
-update Buildings set Cost = 1360 where BuildingType = 'BUILDING_STATUE_LIBERTY';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
-update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MACHU_PICCHU';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
-update Buildings set Cost = 750 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_ORSZAGHAZ';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_PANAMA_CANAL';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
-update Buildings set Cost = 420 where BuildingType = 'BUILDING_STATUE_OF_ZEUS';
-update Buildings set Cost = 1800 where BuildingType = 'BUILDING_BIOSPHERE';
-update Buildings set Cost = 220 where BuildingType = 'BUILDING_ETEMENANKI';
-update Buildings set Cost = 1000 where BuildingType = 'BUILDING_TORRE_DE_BELEM';
 
 -- Enable Wonders on Mountain
 insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)

@@ -2,8 +2,8 @@
 
 -- 国立大学 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 500 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 500 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
 	-- 修改建造条件
 update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_COLLEGE';
 insert or replace into BuildingPrereqs
@@ -53,8 +53,8 @@ values
 
 -- 民族史诗 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 880 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 880 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
 	-- 修改建造条件
 update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_NATIONALEPIC';
 
@@ -69,8 +69,8 @@ values
 	('NAT_WONDER_CL_NATIONALEPIC_INTERNAL',	'BUILDING_MUSEUM_ART'),
 	('NAT_WONDER_CL_NATIONALEPIC_INTERNAL',	'BUILDING_MUSEUM_ARTIFACT');
 	-- 修改本体产出
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC' and YieldType = 'YIELD_PRODUCTION';
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
 delete from Building_GreatWorks where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
 delete from Building_GreatWorks where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
 	-- 修改特效
@@ -116,11 +116,13 @@ from Yields;
 
 -- 大本营 ------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 500 where BuildingType = 'NAT_WONDER_CL_CITADEL';
-update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 500 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
+update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL';
+update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
 	-- 修改本体产出
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL';
-delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL' and YieldType = 'YIELD_SCIENCE';
+delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL' and YieldType = 'YIELD_SCIENCE';
+update Building_YieldChanges set YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_CITADEL' and YieldType = 'YIELD_CULTURE';
+update Building_YieldChanges set YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL' and YieldType = 'YIELD_CULTURE';
 
 update Building_GreatPersonPoints set PointsPerTurn = 6 where BuildingType = 'NAT_WONDER_CL_CITADEL';
 update Building_GreatPersonPoints set PointsPerTurn = 6 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
@@ -287,8 +289,8 @@ from Buildings where (PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is Nu
 
 -- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 360 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 360 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
 	-- 修改建造条件
 update RequirementArguments set Value = 5 where RequirementId = 'REQ_CL_PLAYER_HAS_X_CITIES_WITH_RELIGION' and Name = 'Count';
 	-- 修改特效
@@ -333,8 +335,8 @@ values
 
 -- 国家主题公园 ------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1050, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1050, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
 	-- 修改本体产出
 update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
 update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';

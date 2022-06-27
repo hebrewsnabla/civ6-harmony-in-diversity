@@ -1,6 +1,6 @@
 
 --BUILDING_SUK_WAT_ARUN
-update Buildings set  Cost = 1160, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where BuildingType = 'BUILDING_SUK_WAT_ARUN';-- AND EXISTS (select BuildingType from Buildings where BuildingType ='BUILDING_SUK_WAT_ARUN');
+update Buildings set  Cost = 1000, ObsoleteEra = 'ERA_MODERN', PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where BuildingType = 'BUILDING_SUK_WAT_ARUN';-- AND EXISTS (select BuildingType from Buildings where BuildingType ='BUILDING_SUK_WAT_ARUN');
 
 insert or replace into Building_YieldChanges
 	(BuildingType,							YieldType,									YieldChange)
