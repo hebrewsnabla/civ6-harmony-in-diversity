@@ -43,6 +43,7 @@ values
 	('RESOURCE_MEDIHERBS',		'RESOURCECLASS_LUXURY',			'YIELD_GOLD',			2,				0),
 	('RESOURCE_QUARTZ',			'RESOURCECLASS_LUXURY',			'YIELD_GOLD',			2,				0),
 	('RESOURCE_SEASHELLS',		'RESOURCECLASS_LUXURY',			'YIELD_GOLD',			0,				1),
+	('RESOURCE_SORGHUM',		'RESOURCECLASS_LUXURY',			'YIELD_GOLD',			2,				0),
 	-- 加成
 	('RESOURCE_TOMATO',			'RESOURCECLASS_BONUS',			'YIELD_FOOD',			2,				0),
 	('RESOURCE_TIN',			'RESOURCECLASS_BONUS',			'YIELD_PRODUCTION',		3,				0),
@@ -63,7 +64,6 @@ values
 delete from Types where Type = 'RESOURCE_MAPLE';
 delete from Types where Type = 'RESOURCE_CORAL';
 delete from Types where Type = 'RESOURCE_CAVIAR';
-delete from Types where Type = 'RESOURCE_SORGHUM';
 delete from Types where Type = 'RESOURCE_OXEN';
 delete from Types where Type = 'RESOURCE_MACKEREL';
 delete from Types where Type = 'RESOURCE_ALGAE';
@@ -76,7 +76,7 @@ delete from Resource_ValidFeatures where ResourceType in (select ResourceType fr
 delete from Resource_Harvests where ResourceType in (select ResourceType from HDResourceful2_Basic);
 
 update Resources set ResourceClassType = 'RESOURCECLASS_LUXURY', Happiness = 4 
-	where ResourceType in ('RESOURCE_COD','RESOURCE_SALMON','RESOURCE_ALOE','RESOURCE_MEDIHERBS','RESOURCE_QUARTZ','RESOURCE_SEASHELLS');
+	where ResourceType in ('RESOURCE_COD','RESOURCE_SALMON','RESOURCE_ALOE','RESOURCE_MEDIHERBS','RESOURCE_QUARTZ','RESOURCE_SEASHELLS','RESOURCE_SORGHUM');
 update Resources set Happiness = 4 where ResourceType = 'RESOURCE_RUBY';
 
 -- Harvest

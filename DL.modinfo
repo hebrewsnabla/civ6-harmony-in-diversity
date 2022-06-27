@@ -541,6 +541,12 @@
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
       <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+      <File>Assets/Buildings/New_Buildings_32.dds</File>
+      <File>Assets/Buildings/New_Buildings_38.dds</File>
+      <File>Assets/Buildings/New_Buildings_50.dds</File>
+      <File>Assets/Buildings/New_Buildings_80.dds</File>
+      <File>Assets/Buildings/New_Buildings_128.dds</File>
+      <File>Assets/Buildings/New_Buildings_256.dds</File>
       <File>Assets/Units/MedivalPirate/DL_Pirates_22.dds</File>
       <File>Assets/Units/MedivalPirate/DL_Pirates_32.dds</File>
       <File>Assets/Units/MedivalPirate/DL_Pirates_38.dds</File>
@@ -1899,6 +1905,12 @@
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_80.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_128.dds</File>
     <File>Assets/Buildings/CityCenterBuildingsTriumphalArch_256.dds</File>
+    <File>Assets/Buildings/New_Buildings_32.dds</File>
+    <File>Assets/Buildings/New_Buildings_38.dds</File>
+    <File>Assets/Buildings/New_Buildings_50.dds</File>
+    <File>Assets/Buildings/New_Buildings_80.dds</File>
+    <File>Assets/Buildings/New_Buildings_128.dds</File>
+    <File>Assets/Buildings/New_Buildings_256.dds</File>
     <File>Assets/Units/MedivalPirate/DL_Pirates_22.dds</File>
     <File>Assets/Units/MedivalPirate/DL_Pirates_32.dds</File>
     <File>Assets/Units/MedivalPirate/DL_Pirates_38.dds</File>

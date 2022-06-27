@@ -92,7 +92,7 @@ from HD_DistrictBonus_Mono;
 insert or ignore into Modifiers
     (ModifierId,                                ModifierType,                                       SubjectRequirementSetId)
 select
-    'HD_STATION_' || DistrictType || '_BONUS',  'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',    'DISTRICT_IS_' || substr(DistrictType,10)
+    'HD_STATION_' || DistrictType || '_BONUS',  'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT'
 from HD_DistrictBonus_Mono;
 
 insert or ignore into ModifierArguments
@@ -129,24 +129,6 @@ insert or ignore into ModifierArguments
     (ModifierId,                                        Name,           Value)
 select
     'HD_STATION_' || DistrictType || '_BONUS_POWERED',  'Amount',       25
-from HD_DistrictBonus_Mono;
-
-insert or ignore into RequirementSets
-    (RequirementSetId,                                  RequirementSetType)
-select
-    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'REQUIREMENTSET_TEST_ALL'
-from HD_DistrictBonus_Mono;
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                                  RequirementId)
-select
-    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'ADJACENT_TO_OWNER'
-from HD_DistrictBonus_Mono;
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                                  RequirementId)
-select
-    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'REQUIRES_DISTRICT_IS_'  || substr(DistrictType,10)
 from HD_DistrictBonus_Mono;
 
 -- BUG Fixing

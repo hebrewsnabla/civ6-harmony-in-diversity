@@ -63,7 +63,6 @@ values
 	('RESOURCE_JADE',		'YIELD_GOLD',		1),
 	('RESOURCE_MARBLE',		'YIELD_GOLD',		1),
 	('RESOURCE_MERCURY',	'YIELD_GOLD',		1),
-	('RESOURCE_PEARLS',		'YIELD_GOLD',		1),
 	('RESOURCE_SILK',		'YIELD_GOLD',		1),
 	('RESOURCE_SPICES',		'YIELD_GOLD',		1),
 	('RESOURCE_SUGAR',		'YIELD_GOLD',		1),
@@ -88,10 +87,9 @@ update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_SUGAR' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_HONEY' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_INCENSE' and YieldType = 'YIELD_FAITH';
-update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_PRODUCTION';
-update Resource_YieldChanges set YieldChange = -1 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_GOLD';
+update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_PRODUCTION';
+update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_WHALES' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_PEARLS' and YieldType = 'YIELD_FAITH';
-update Resource_YieldChanges set YieldChange = -1 where ResourceType = 'RESOURCE_PEARLS' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_COCOA' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_DIAMONDS' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_TRUFFLES' and YieldType = 'YIELD_GOLD';

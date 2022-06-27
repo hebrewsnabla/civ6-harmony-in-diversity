@@ -2,14 +2,14 @@
 --     Adaptation for the Mod      --
 -------------------------------------
 
--- update Resources set SeaFrequency = 10 where ResourceType = 'RESOURCE_SUK_CORAL';
--- update Resources set SeaFrequency = 1 where ResourceType = 'RESOURCE_SUK_CAVIER';
+update Resources set LakeEligible = 1 where ResourceType = 'RESOURCE_SUK_LOBSTER';
 
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_SQUID' and YieldType = 'YIELD_GOLD';
+update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_SUK_CAVIAR' and YieldType = 'YIELD_GOLD';
 insert or replace into Resource_YieldChanges
     (ResourceType,              YieldType,              YieldChange)
 values
-    ('RESOURCE_SUK_CORAL',      'YIELD_GOLD',           1),
+    ('RESOURCE_SUK_CORAL',      'YIELD_GOLD',           2),
     ('RESOURCE_SUK_LOBSTER',    'YIELD_GOLD',           1);
 
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and ModifierId = 'SUK_FISHERY_FOOD';

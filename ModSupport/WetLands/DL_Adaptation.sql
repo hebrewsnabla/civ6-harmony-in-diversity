@@ -157,7 +157,7 @@ select
     ResourceType,                   'FEATURE_HD_SWAMP'
 from Resources where ResourceType in
     ('RESOURCE_WOLF','RESOURCE_TOXINS','RESOURCE_LEU_P0K_CAPYBARAS','RESOURCE_PINE','RESOURCE_LIMESTONE',
-    'RESOURCE_P0K_MAPLE','RESOURCE_TIN','RESOURCE_HONEY','RESOURCE_BERRIES','RESOURCE_OAK');
+    'RESOURCE_P0K_MAPLE','RESOURCE_TIN','RESOURCE_HONEY','RESOURCE_BERRIES','RESOURCE_OAK','RESOURCE_SORGHUM');
 
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
@@ -230,8 +230,13 @@ insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 values
     -- ('PLOT_HAS_REEDS_REQUIREMENTS',                 'HD_PLOT_IS_SWAMP_REQUIREMENT'),
-    ('HD_PLOT_HAS_SWAMP_REQUIREMENTS',              'HD_PLOT_IS_SWAMP_REQUIREMENT'),
-    ('PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_PLOT_IS_SWAMP_REQUIREMENT');
+    ('HD_PLOT_HAS_SWAMP_REQUIREMENTS',              'HD_PLOT_IS_SWAMP_REQUIREMENT');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_PLOT_IS_SWAMP_REQUIREMENT'
+where exists (select UnitType from Units where UnitType = 'UNIT_VIETNAMESE_VIETCONG');
 
 insert or replace into TraitModifiers 
     (TraitType,                         ModifierId)
@@ -270,3 +275,17 @@ insert or ignore into RequirementSetRequirements
 select
     'TRIEU_FEATURE_REQUIREMENTS',                   'HD_PLOT_IS_SWAMP_REQUIREMENT'
 where exists (select CivilizationType from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
+
+-- 泛滥螃蟹
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_CRABS';
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+values
+    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_GRASSLAND'),
+    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_PLAINS');
+
+insert or replace into Improvement_ValidResources
+    (ImprovementType,               ResourceType,           MustRemoveFeature)
+values
+    ('IMPROVEMENT_JNR_REED_HOME',   'RESOURCE_CRABS',       0);

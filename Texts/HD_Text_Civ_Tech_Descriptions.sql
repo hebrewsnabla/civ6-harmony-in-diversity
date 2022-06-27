@@ -64,7 +64,7 @@ values
     -- ("LOC_TECH_RIFLING_HD_DESCRIPTION",                                                     "Camp improvements receive +1 [ICON_FOOD] Food."),
     ("LOC_TECH_FLIGHT_DESCRIPTION",                                                         "Receive [ICON_Tourism] Tourism on partial improvements that provide [ICON_Science] Science, [ICON_Culture] Culture, [ICON_Faith] Faith or [ICON_PRODUCTION] Production. Amount of [ICON_Tourism] Tourism generated is equivalent to these yields."),
     ("LOC_TECH_STEEL_HD_DESCRIPTION",                                                       "Unlocks Urban Defenses, giving all of your cities an automatic 400 Fortification HP and the ability to perform a ranged attack. All previous walls become obsolete and siege support units are no longer effective."),
-    ("LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                                           "Farms provide +1 [ICON_Food] Food from every adjacent Farms instead of two."),
+    ("LOC_TECH_BIOLOGY_HD_DESCRIPTION",                                                     "Farms provide +1 [ICON_Food] Food from every adjacent Farms instead of two."),
     ("LOC_TECH_COMPUTERS_DESCRIPTION",                                                      "Grants the ability to construct an additional Spy. +20% [ICON_Tourism] Tourism across your empire."),
     ("LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                                          "+50% [ICON_TOURISM] Tourism from all kinds of Great Works except for [ICON_GREATWORK_RELIC] Relic."),
     ("LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION",                                         "Camp improvements +2 [ICON_Gold] Gold."),
@@ -245,7 +245,7 @@ values
     -- ("zh_Hans_CN",  "LOC_TECH_RIFLING_HD_DESCRIPTION",                                      "营地+1 [ICON_FOOD] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_FLIGHT_DESCRIPTION",                                          "为部分提供 [ICON_SCIENCE] 科技值， [ICON_Culture] 文化值， [ICON_Faith] 信仰值或 [ICON_Production] 生产力的改良设施提供等于其产出的 [ICON_Tourism] 旅游业绩加成。"),
     ("zh_Hans_CN",  "LOC_TECH_STEEL_HD_DESCRIPTION",                                        "解锁城市防御，为所有城市提供400点自动防御力和发起远程攻击的能力。之前的城墙将全部过时，攻城单位进攻时不再拥有特殊效果。"),
-    ("zh_Hans_CN",  "LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION",                            "现与每个农场相邻时，农场+1 [ICON_Food] 食物。"),
+    ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_DESCRIPTION",                                      "每与1个农场相邻，农场+1 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_TECH_COMPUTERS_DESCRIPTION",                                       "可以额外招募1个间谍。在帝国全境内+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION",                           "所有除 [ICON_GREATWORK_RELIC] 遗物外的巨作+50% [ICON_TOURISM] 旅游业绩。"),
     

@@ -26,7 +26,7 @@ update Technologies set Description = 'LOC_TECH_SQUARE_RIGGING_HD_DESCRIPTION' w
 update Technologies set Description = 'LOC_TECH_STEAM_POWER_HD_DESCRIPTION' where TechnologyType = 'TECH_STEAM_POWER';
 update Technologies set Description = 'LOC_TECH_STEEL_HD_DESCRIPTION' where TechnologyType = 'TECH_STEEL';
 update Technologies set Description = 'LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION' where TechnologyType = 'TECH_SCIENTIFIC_THEORY';
-update Technologies set Description = 'LOC_TECH_REPLACEABLE_PARTS_HD_DESCRIPTION' where TechnologyType ='TECH_REPLACEABLE_PARTS';
+update Technologies set Description = null where TechnologyType ='TECH_REPLACEABLE_PARTS';
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
 -- update Technologies set Description = 'LOC_TECH_CARTOGRAPHY_HD_DESCRIPTION' where TechnologyType ='TECH_CARTOGRAPHY';
 -- update Technologies set Description = 'LOC_TECH_INDUSTRIALIZATION_HD_DESCRIPTION' where TechnologyType ='TECH_INDUSTRIALIZATION';

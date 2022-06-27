@@ -35,6 +35,13 @@
 	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_GENERAL_SERVICE" IconSize="80" IconsPerRow="1" IconsPerColumn="1"  Filename="General_Service_80.dds"/>
 	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_GENERAL_SERVICE" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="General_Service_128.dds"/>
 	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_GENERAL_SERVICE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="General_Service_256.dds"/>
+
+		<Row Name="ATLAS_New_Buildings" IconSize="32" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_32.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="38" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_38.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="50" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_50.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_80.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_128.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_256.dds"/>
     </IconTextureAtlases>
 	<IconDefinitions>
 		<!-- <Row Name="ICON_BUILDING_NILOMETER" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/> -->
@@ -104,5 +111,10 @@
 		<Row Name="ICON_BUILDING_MEENAKSHI_DUMMY_DISTRICT_THEATER_FOW"               Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="8"/>
 		<Row Name="ICON_BUILDING_MEENAKSHI_DUMMY_DISTRICT_INDUSTRIAL_ZONE_FOW"       Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="9"/>
 		<Row Name="ICON_BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_FOW"          Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="10"/>
+
+		<Row Name="ICON_BUILDING_HD_TAVERN" Atlas="ATLAS_New_Buildings" Index="0"/>
+        <Row Name="ICON_BUILDING_HD_INN" Atlas="ATLAS_New_Buildings" Index="1"/>
+		<Row Name="ICON_BUILDING_HD_TAVERN_FOW" Atlas="ATLAS_New_Buildings" Index="0"/>
+        <Row Name="ICON_BUILDING_HD_INN_FOW" Atlas="ATLAS_New_Buildings" Index="1"/>
 	</IconDefinitions>
 </GameData>

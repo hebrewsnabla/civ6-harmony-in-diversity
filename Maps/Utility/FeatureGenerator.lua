@@ -454,12 +454,10 @@ function FeatureGenerator:AddSwampAtPlot(plot, iX, iY)
 	--Swamp Check. First see if it can place the feature.
 	
 	local sSwamp				= "FEATURE_HD_SWAMP"
-	local g_FEATURE_HD_SWAMP	= GameInfo.Features[sSwamp].Index
-
-	if(g_FEATURE_HD_SWAMP == nil)then
+	if(GameInfo.Features[sSwamp] == nil)then
 		return false;
 	end
-	
+	local g_FEATURE_HD_SWAMP	= GameInfo.Features[sSwamp].Index
 	if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_HD_SWAMP)) then
 		if(math.ceil(self.iSwampCount * 100 / self.iNumLandPlots) <= self.iSwampMaxPercent) then
 			--Weight based on adjacent plots if it has more than 3 start subtracting

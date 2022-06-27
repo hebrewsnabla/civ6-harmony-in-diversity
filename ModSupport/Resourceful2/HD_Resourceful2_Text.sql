@@ -7,6 +7,7 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     ("LOC_RESOURCE_POPPIES_NAME",                                 "Corn Poppies"),
+    ("LOC_RESOURCE_SUGAR_NAME",                                   "Sugarcane"),
     ("LOC_RESOURCE_SEASHELLS_NAME",                               "Money Cowrie"),
     ("LOC_RESOURCE_WHALES_NAME",                                  "Sperm Whale"),
     ("LOC_RESOURCE_TOXINS_NAME",                                  "Poison Dart Frog"),
@@ -30,6 +31,8 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
+    ("zh_Hans_CN",  "LOC_RESOURCE_SORGHUM_NAME",                                 "高粱"),
+    ("zh_Hans_CN",  "LOC_RESOURCE_SUGAR_NAME",                                   "甘蔗"),
     ("zh_Hans_CN",  "LOC_RESOURCE_POPPIES_NAME",                                 "虞美人"),
     ("zh_Hans_CN",  "LOC_RESOURCE_SEASHELLS_NAME",                               "货贝"),
     ("zh_Hans_CN",  "LOC_RESOURCE_SAKURA_NAME",                                  "樱桃木"),
@@ -68,7 +71,7 @@ insert or replace into HDResourceful2_Pedia_Text
     (ResourceType)
 values
     ('RESOURCE_SPONGE'),('RESOURCE_CASHMERE'),('RESOURCE_SANDALWOOD'),('RESOURCE_EBONY'),('RESOURCE_STRAWBERRY'),('RESOURCE_SALMON'),('RESOURCE_BAMBOO'),
-    ('RESOURCE_ALABASTER'),('RESOURCE_QUARTZ'),('RESOURCE_LAPIS'),('RESOURCE_RUBY'),('RESOURCE_PLATINUM'),('RESOURCE_SEA_URCHIN'),
+    ('RESOURCE_ALABASTER'),('RESOURCE_QUARTZ'),('RESOURCE_LAPIS'),('RESOURCE_RUBY'),('RESOURCE_PLATINUM'),('RESOURCE_SEA_URCHIN'),('RESOURCE_SORGHUM'),
     ('RESOURCE_COD'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_SAKURA'),('RESOURCE_POPPIES'),('RESOURCE_ORCA'),('RESOURCE_LION'),
     ('RESOURCE_TRAVERTINE'),('RESOURCE_TOXINS'),('RESOURCE_SAFFRON'),('RESOURCE_ALOE'),('RESOURCE_MEDIHERBS'),('RESOURCE_SEASHELLS'),
     ('RESOURCE_TOMATO'),('RESOURCE_TIN'),('RESOURCE_RUBBER'),('RESOURCE_PINE'),('RESOURCE_OAK'),('RESOURCE_MUSSELS'),('RESOURCE_MUSHROOMS'),

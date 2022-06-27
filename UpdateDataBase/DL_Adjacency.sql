@@ -40,7 +40,9 @@ values
 	('DISTRICT_HARBOR',				'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',			'District_Culture_City_Center'),
 	('DISTRICT_ENCAMPMENT',			'Strategic_Production2'),
+	('DISTRICT_AQUEDUCT',			'Aqueduct_self_food'),
 	-- UD
+	('DISTRICT_BATH',				'Aqueduct_self_food'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD','District_Gold_Industrial_Zone'),
 	('DISTRICT_ACROPOLIS',			'District_Culture_Double_City_Center'),
 	('DISTRICT_HANSA',				'Oil_Industrial_Production'),
@@ -102,6 +104,11 @@ values
 	('HD_Harbor_City_Gold',					'LOC_DISTRICT_CITY_CENTER_GOLD',			'YIELD_GOLD',		2,	1,	'DISTRICT_CITY_CENTER'),
 	('District_Gold_City_Center',			'LOC_DISTRICT_GOLD_CITY_CENTER',			'YIELD_GOLD',		1,	1,	'DISTRICT_CITY_CENTER'),
 	('District_Culture_Double_City_Center',	'LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER',	'YIELD_CULTURE',	2,	1,	'DISTRICT_CITY_CENTER');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,						Description,						YieldType,		YieldChange,	Self)
+values
+	('Aqueduct_self_food',		'LOC_AQUEDUCT_SELF_FOOD',			'YIELD_FOOD',	1,				1);
 
 -- Industry
 update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Commerical_Hub_Production';
@@ -286,7 +293,34 @@ values
 	('HD_IMPROVEMENT_MOUNTAIN_TUNNEL',		'LOC_HD_ENCAMPMENT_AFJACENCY_MOUNTAIN_TUNNEL',	'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MOUNTAIN_TUNNEL'),
 	('HD_IMPROVEMENT_MISSILE_SILO',			'LOC_HD_ENCAMPMENT_AFJACENCY_MISSILE_SILO',		'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MISSILE_SILO'),
 	('HD_IMPROVEMENT_MAORI_PA',				'LOC_HD_ENCAMPMENT_AFJACENCY_MAORI_PA',			'YIELD_PRODUCTION',		1,							1,							'IMPROVEMENT_MAORI_PA');
+
 insert or ignore into Adjacency_YieldChanges
 	(ID,									Description,							YieldType,				YieldChange,				TilesRequired,				AdjacentResourceClass)
 values
-	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC2_PRODUCTION',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');
+	('Strategic_Production2',				'LOC_DISTRICT_STRATEGIC_PRODUCTION2',	'YIELD_PRODUCTION',		2,							1,							'RESOURCECLASS_STRATEGIC');
+
+update Adjacency_YieldChanges set PrereqTech = 'TECH_BIOLOGY_HD' where ID = 'Farms_MechanizedAdjacency' or ID = 'Terrace_MechanizedAdjacency';
+update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BIOLOGY_HD' where ID = 'Farms_MedievalAdjacency' or ID = 'Terrace_MedievalAdjacency';
+
+-- MBZ
+insert or replace into Adjacency_YieldChanges
+	(ID,				Description,			YieldType,			YieldChange,	Self)
+values
+	('MBANZA_FOOD',		'LOC_MBANZA_FOOD',		'YIELD_FOOD',		2,				1),
+	('MBANZA_GOLD',		'LOC_MBANZA_GOLD',		'YIELD_GOLD',		2,				1);
+
+insert or replace into Adjacency_YieldChanges
+	(ID,				Description,				YieldType,				YieldChange,	TilesRequired,		AdjacentResourceClass)
+values
+	('MBANZA_BONUS',	'LOC_MBANZA_BONUS',			'YIELD_PRODUCTION',		1,				1,					'RESOURCECLASS_BONUS'),
+	('MBANZA_LUXURY',	'LOC_MBANZA_LUXURY',		'YIELD_GOLD',			2,				1,					'RESOURCECLASS_LUXURY'),
+	('MBANZA_STRATEGIC','LOC_MBANZA_STRATEGIC',		'YIELD_SCIENCE',		1,				1,					'RESOURCECLASS_STRATEGIC');
+
+insert or replace into District_Adjacencies
+	(DistrictType,			YieldChangeId)
+values
+	('DISTRICT_MBANZA',		'MBANZA_FOOD'),
+	('DISTRICT_MBANZA',		'MBANZA_GOLD'),
+	('DISTRICT_MBANZA',		'MBANZA_BONUS'),
+	('DISTRICT_MBANZA',		'MBANZA_LUXURY'),
+	('DISTRICT_MBANZA',		'MBANZA_STRATEGIC');
