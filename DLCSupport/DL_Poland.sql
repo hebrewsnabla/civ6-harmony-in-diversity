@@ -275,7 +275,7 @@ values
     ('POLAND_CAVALRY_REDUCTION_DAMAGE',                 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',                                  'UNIT_IS_POLAND_HUSSAR'),
     ('POLAND_CAVALRY_HALF_REDUCTION_DAMAGE',            'MODIFIER_PLAYER_UNITS_ADJUST_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER',  NULL);
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,              RequirementId)
 values
     ('PLOT_ADJACENT_TO_ENCAPMENT',  'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_ENCAMPMENT'),
@@ -283,7 +283,7 @@ values
     ('PLAYER_HAS_CIVIC_CIVIL_SERVICE', 'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE'),
     ('UNIT_IS_POLAND_HUSSAR',       'REQUIRES_UNIT_IS_UNIT_POLISH_HUSSAR');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('PLOT_ADJACENT_TO_ENCAPMENT',      'REQUIREMENTSET_TEST_ALL'),
@@ -341,12 +341,12 @@ values
     ('SUKINENNICE_DISTRCIT_GOLD',       'YieldType',    'YIELD_GOLD'),
     ('SUKINENNICE_DISTRCIT_GOLD',       'Amount',       2);
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('HD_DISTRICTS_BUT_NOT_WONDERS',    'REQUIREMENTSET_TEST_ANY');
 
-insert or replace into RequirementSetRequirements   (RequirementSetId,   RequirementId)
+insert or ignore into RequirementSetRequirements   (RequirementSetId,   RequirementId)
 select 'HD_DISTRICTS_BUT_NOT_WONDERS',  'REQUIRES_DISTRICT_IS_' || DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
 
 -- Poland ver3.0
@@ -448,13 +448,13 @@ values
     ('POLAND_FORT_ADJACENT_PRODUCTION',                 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_POLAND_FORT'),
     ('POLAND_FORT_ADJACENT_CULTURE',                    'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                                    'PLOT_ADJACENT_TO_POLAND_FORT');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                     RequirementId)
 values
     ('PLOT_ADJACENT_TO_POLAND_FORT',       'ADJACENT_TO_OWNER'),
     ('PLOT_ADJACENT_TO_POLAND_FORT',       'PLAYER_IS_CIVILIZATION_POLAND');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('PLOT_ADJACENT_TO_POLAND_FORT',    'REQUIREMENTSET_TEST_ALL');

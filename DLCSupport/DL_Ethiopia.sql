@@ -58,9 +58,9 @@ values
 -- values
 --     ('AUTOCRACY_DIP',       'Amount',   2);
 
-insert or replace into RequirementSetRequirements(RequirementSetId, RequirementId)values
+insert or ignore into RequirementSetRequirements(RequirementSetId, RequirementId)values
     ('CITY_HAS_DIP_DISTRICT',   'REQUIRES_CITY_HAS_DISTRICT_DIPLOMATIC_QUARTER');
-insert or replace into RequirementSets(RequirementSetId, RequirementSetType)values
+insert or ignore into RequirementSets(RequirementSetId, RequirementSetType)values
     ('CITY_HAS_DIP_DISTRICT',   'REQUIREMENTSET_TEST_ALL');
 
 update Policies set Description = 'LOC_POLICY_CHARISMATIC_LEADER_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_CHARISMATIC_LEADER';

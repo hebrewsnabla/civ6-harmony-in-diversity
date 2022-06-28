@@ -1737,7 +1737,7 @@ insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 select
     'BUILDING_CHANCERY',    ModifierId
-from BuildingModifiers where BuildingType = 'BUILDING_GOV_SPIES';
+from BuildingModifiers where BuildingType = 'BUILDING_GOV_SPIES' and exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CHANCERY');
 delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_SPIES';
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
@@ -1779,7 +1779,7 @@ values
     ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'Amount',       4),
     ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'YieldType',    'YIELD_GOLD'),
     ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'Amount',       4);
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                      RequirementSetType)
 values
     ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1',  'REQUIREMENTSET_TEST_ANY'),
@@ -1810,12 +1810,12 @@ insert or replace into ModifierArguments
 select
     'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',   'YieldType',    'YIELD_GOLD'
 from GovSpiesBuffedBuildings;
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,              RequirementSetType)
 select
     'HD_CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL'
 from GovSpiesBuffedBuildings;
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,              RequirementId)
 select
     'HD_CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType
