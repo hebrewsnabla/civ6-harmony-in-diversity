@@ -514,9 +514,9 @@ values
 	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST'),
 	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE');
 
-delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and FeatureType = 'FEATURE_VOLCANIC_SOIL';
-delete from Improvement_ValidTerrains where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD';
-
+--delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and FeatureType = 'FEATURE_VOLCANIC_SOIL';
+--delete from Improvement_ValidTerrains where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD';
+UPDATE Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and YieldType = 'YIELD_FAITH';
 
 ---------------------------------------------------------------------------------------------------------
 --CAHOKIA
