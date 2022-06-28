@@ -117,17 +117,17 @@ values
     ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'IncludeCivilian',  1),
     ('DOUBLE_UNIT_PURCHASE_COST_WHEN_LOYALTY_NOT_FULL',         'UnitDomain',       'DOMAIN_ALL');
 
-insert or replace into Requirements
+insert or ignore into Requirements
     (RequirementId,                         RequirementType,                        Inverse)
 values
     ('REQUIRES_CITY_LOYALTY_NOT_FULL',      'REQUIREMENT_CITY_HAS_FULL_LOYALTY',    1);
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                      RequirementSetType)
 values
     ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                      RequirementId)
 values
     ('LOYALTY_NOT_FULL_REQUIREMENTS',       'REQUIRES_CITY_LOYALTY_NOT_FULL');

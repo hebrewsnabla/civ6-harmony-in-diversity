@@ -95,12 +95,12 @@ insert or ignore into Requirements
 values
 	('UNIT_IN_ENEMY_TERRITORY_REQUIREMENT',			'REQUIREMENT_UNIT_IN_ENEMY_TERRITORY');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                              RequirementSetType)
 values
     ('REQUIREMENTS_UNIT_IN_ENEMY_TERRITORY',        'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 values
     ('REQUIREMENTS_UNIT_IN_ENEMY_TERRITORY',        'UNIT_IN_ENEMY_TERRITORY_REQUIREMENT');

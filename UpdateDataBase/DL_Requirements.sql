@@ -1457,29 +1457,29 @@ values
 -- Great Bath:	Update "plot adjacent to river"	to "plot adjacent to river	or player has Great Bath"
 -- 				Update "plot is fresh water"	to "plot is fresh water 	or player has Great Bath"
 
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,		Name,				Value)
 select
 	RequirementId,		'RequirementSetId',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW'
 from Requirements where RequirementType = 'REQUIREMENT_PLOT_ADJACENT_TO_RIVER';
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,		Name,				Value)
 select
 	RequirementId,		'RequirementSetId',	'PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW'
 from Requirements where RequirementType = 'REQUIREMENT_PLOT_IS_FRESH_WATER';
 update Requirements set RequirementType = 'REQUIREMENT_REQUIREMENTSET_IS_MET'
 	where RequirementType = 'REQUIREMENT_PLOT_ADJACENT_TO_RIVER' or RequirementType = 'REQUIREMENT_PLOT_IS_FRESH_WATER';
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,								RequirementType)
 values
 	('REQUIRES_PLOT_ADJACENT_TO_RIVER_RAW',		'REQUIREMENT_PLOT_ADJACENT_TO_RIVER'),
 	('REQUIRES_PLOT_IS_FRESH_WATER_RAW',		'REQUIREMENT_PLOT_IS_FRESH_WATER');
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,							RequirementSetType)
 values
 	('PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW',	'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW',	'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,							RequirementId)
 values
 	('PLOT_ADJACENT_TO_RIVER_REQUIREMENTS_RAW',	'REQUIRES_PLOT_ADJACENT_TO_RIVER_RAW'),
@@ -1558,36 +1558,36 @@ insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementI
 	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
 
 -- Ayutthaya & Nan Madol bug fix
-insert or replace into Requirements	(RequirementId,	RequirementType)
+insert or ignore into Requirements	(RequirementId,	RequirementType)
 select 'PLOT_HAS_' || BuildingType, 'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES' from Buildings;
-insert or replace into RequirementArguments	(RequirementId,	Name, Value)
+insert or ignore into RequirementArguments	(RequirementId,	Name, Value)
 select 'PLOT_HAS_' || BuildingType, 'BuildingType', BuildingType from Buildings;
-insert or replace into RequirementArguments	(RequirementId,	Name, Value)
+insert or ignore into RequirementArguments	(RequirementId,	Name, Value)
 select 'PLOT_HAS_' || BuildingType, 'MinRange', 0 from Buildings;
-insert or replace into RequirementArguments	(RequirementId,	Name, Value)
+insert or ignore into RequirementArguments	(RequirementId,	Name, Value)
 select 'PLOT_HAS_' || BuildingType, 'MaxRange', 0 from Buildings;
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId, 							RequirementSetType)
 values
 	('PLOT_HAS_COMPLETE_WONDER',				'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER',	'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_HAS_WONDER',							'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select 'PLOT_HAS_COMPLETE_WONDER',	'PLOT_HAS_' || BuildingType from Buildings where IsWonder = 1;
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId, 							RequirementId)
 values
 	('PLOT_HAS_WONDER',							'REQUIRES_PLOT_HAS_WONDER'),
 	('PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER',	'REQUIRES_PLOT_DOES_NOT_HAVE_WONDER'),
 	('PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER',	'REQUIRES_PLOT_HAS_COMPLETE_WONDER');
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,										RequirementType,									Inverse)
 values
 	('REQUIRES_PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER',	'REQUIREMENT_REQUIREMENTSET_IS_MET',				0),
 	('REQUIRES_PLOT_DOES_NOT_HAVE_WONDER',				'REQUIREMENT_REQUIREMENTSET_IS_MET',				1),
 	('REQUIRES_PLOT_HAS_COMPLETE_WONDER',				'REQUIREMENT_REQUIREMENTSET_IS_MET',				0),
 	('REQUIRES_PLOT_HAS_WONDER',						'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',	0);
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,										Name,				Value)
 values
 	('REQUIRES_PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER',	'RequirementSetId',	'PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER'),

@@ -21,22 +21,22 @@ update HD_BuildingTiers set Tier = 4 where BuildingType in (select Building from
 update HD_BuildingTiers set Tier = 4 where BuildingType in (select BuildingType from Buildings where EnabledByReligion = 1) and exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and Tier = 3 and BuildingType not in (select BuildingType from Buildings where EnabledByReligion = 1));
 
 -- Reqs
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                                                                          RequirementSetType)
 select
     distinct 'CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS',     'REQUIREMENTSET_TEST_ANY'
 from HD_BuildingTiers;
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                                                                          RequirementId)
 select
     'CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS',              'REQUIRES_CITY_HAS_' || BuildingType
 from HD_BuildingTiers;
-insert or replace into Requirements
+insert or ignore into Requirements
     (RequirementId,                                                                             RequirementType)
 select
     distinct 'REQUIRES_CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING',         'REQUIREMENT_REQUIREMENTSET_IS_MET'
 from HD_BuildingTiers;
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
     (RequirementId,                                                                     Name,               Value)
 select
     distinct 'REQUIRES_CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING', 'RequirementSetId', 'CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS'

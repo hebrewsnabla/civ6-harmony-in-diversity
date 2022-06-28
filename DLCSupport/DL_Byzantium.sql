@@ -103,7 +103,7 @@ values
 	('BATEY_Late_Hippodrome_Culture', 	'Placeholder', 'YIELD_CULTURE',	2,				1,				0,
 	'DISTRICT_HIPPODROME',		    'CIVIC_HUMANISM',	NULL,	NULL,			NULL,			'NO_RESOURCECLASS');
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                                  RequirementId)
 values
     ('PLOT_ADJACENT_TO_INDUSTRIAL_ZONE',                'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_OPPIDUM');
@@ -158,20 +158,20 @@ insert or replace into ModifierArguments
 	(ModifierId,								Name,		Value)
 values
 	('HD_HIPPODROME_EXTRA_DISTRICT_CAPACITY',	'Amount',	1);
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId,							RequirementSetType)
 values
 	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,							RequirementId)
 values
 	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_CITY_HAS_IMPROVED_HORSES'),
 	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_PLOT_IS_ADJACENT_TO_STABLE');
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,							RequirementType)
 values
 	('REQUIRES_PLOT_IS_ADJACENT_TO_STABLE',	'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES');
-insert or replace into RequirementArguments
+insert or ignore into RequirementArguments
 	(RequirementId,							Name,			Value)
 values
 	('REQUIRES_PLOT_IS_ADJACENT_TO_STABLE',	'BuildingType',	'BUILDING_STABLE');

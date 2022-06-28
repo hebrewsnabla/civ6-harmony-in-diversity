@@ -580,43 +580,43 @@ values
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION', 	'YieldTypeToMirror',	'YIELD_FAITH'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'YieldTypeToGrant',		'YIELD_PRODUCTION');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
 	(RequirementSetId, RequirementSetType)
 values
 	('KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL'),
 	('KINKAKU_HOLY_SITE_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'HD_KINKAKU_PLOT_WITHIN_6_REQ'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIRES_DISTRICT_IS_ENCAMPMENT'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'HD_KINKAKU_PLOT_WITHIN_6_REQ'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or replace into RequirementSetRequirements (RequirementSetId,	RequirementId)
+insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
 select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'REQUIRES_DISTRICT_IS_HOLY_SITE'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
-insert or replace into Requirements
+insert or ignore into Requirements
 	(RequirementId,						RequirementType)
 select
 	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
-insert or replace into RequirementArguments 
+insert or ignore into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
 	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'BuildingType',		'WON_CL_KINKAKU'
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or replace into RequirementArguments 
+insert or ignore into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
 	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MaxRange',			6
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or replace into RequirementArguments 
+insert or ignore into RequirementArguments 
 	(RequirementId,						Name,				Value)
 select
 	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MinRange',			0

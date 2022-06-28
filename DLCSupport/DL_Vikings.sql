@@ -7,7 +7,7 @@ insert or replace into Feature_AdjacentYields (FeatureType, YieldType, YieldChan
     -- ('FEATURE_TSINGY', 'YIELD_GOLD', 1),
     ('FEATURE_LYSEFJORDEN', 'YIELD_PRODUCTION', 1);
 
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
     (RequirementSetId,                                          RequirementId)
 values
     ('GODDESS_OF_FIRE_CITY_HAS_VOLCANO',                        'REQUIRES_CITY_HAS_FEATURE_EYJAFJALLAJOKULL');
@@ -83,18 +83,18 @@ update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONA
 --	('MINOR_CIV_AUCKLAND_BONUS_HARBOR',								'YieldType',		'YIELD_PRODUCTION'),
 --	('MINOR_CIV_AUCKLAND_BONUS_HARBOR',								'Amount',			2);
 
---insert or replace into RequirementSetRequirements(RequirementSetId,RequirementId)values
+--insert or ignore into RequirementSetRequirements(RequirementSetId,RequirementId)values
 --	('PLOT_HAS_FISHINGBOATS_AND_INDUSTRIAL_REQUIREMENTS','REQUIRES_PLOT_HAS_FISHINGBOATS'),
 --	('PLOT_HAS_FISHINGBOATS_AND_INDUSTRIAL_REQUIREMENTS','REQUIRES_PLAYER_IS_INDUSTRIAL_ERA');
 
---insert or replace into RequirementSets(RequirementSetId,RequirementSetType)values
+--insert or ignore into RequirementSets(RequirementSetId,RequirementSetType)values
 --	('PLOT_HAS_FISHINGBOATS_AND_INDUSTRIAL_REQUIREMENTS','REQUIREMENTSET_TEST_ALL');
 
-insert or replace into RequirementSets
+insert or ignore into RequirementSets
     (RequirementSetId,                                      RequirementSetType)
 values
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
+insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
 	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
