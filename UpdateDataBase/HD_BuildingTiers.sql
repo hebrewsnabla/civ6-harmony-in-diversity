@@ -120,6 +120,7 @@ left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDis
 -- select
 --     distinct TraitType, YieldType,  'DISTRICT_DIPLOMATIC_QUARTER',  4,      1
 -- from HD_CityStateBuffedObjects where 'DISTRICT_DIPLOMATIC_QUARTER' in (select Type from Types);
+
 -- Palace
 insert or replace into HD_CityStateBuffedObjects
     (TraitType,         YieldType,  ObjectType,         Amount)

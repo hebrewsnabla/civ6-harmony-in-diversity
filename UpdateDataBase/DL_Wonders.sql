@@ -2,7 +2,7 @@
 --       Wonders Adjustments       --
 -------------------------------------
 
--- Adjust Cost.
+-- Adjust cost
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_STONEHENGE';
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
 update Buildings set Cost = 180 where BuildingType = 'BUILDING_GREAT_BATH';
@@ -57,12 +57,14 @@ update Buildings set Cost = 2000 where BuildingType = 'BUILDING_BIOSPHERE';
 update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOUSE';
 update Buildings set Cost = 2000 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
 
--- Adjust Basic Yield.
+-- Adjust basic yield
 insert or replace into Building_YieldChanges
-	(BuildingType,							YieldType,			YieldChange)
+	(BuildingType,								YieldType,			YieldChange)
 values
+	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		4),
 	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
 	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
+	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		6),
 	('BUILDING_PETRA',							'YIELD_FOOD',		1),
 	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
 	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		5),
@@ -80,6 +82,7 @@ values
 	('BUILDING_MONT_ST_MICHEL',					'YIELD_FAITH',		5),
 	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_CULTURE',	2),
 	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_FAITH',		2),
+	('BUILDING_UNIVERSITY_SANKORE',				'YIELD_SCIENCE',	5),
 	('BUILDING_VENETIAN_ARSENAL',				'YIELD_PRODUCTION',	3),
 	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_GOLD',		8),
 	('BUILDING_ST_BASILS_CATHEDRAL',			'YIELD_FAITH',		6),
@@ -88,6 +91,8 @@ values
 	('BUILDING_POTALA_PALACE',					'YIELD_CULTURE',	3),
 	('BUILDING_POTALA_PALACE',					'YIELD_FAITH',		3),
 	('BUILDING_RUHR_VALLEY',					'YIELD_PRODUCTION',	6),
+	('BUILDING_HERMITAGE',						'YIELD_CULTURE',	8),
+	('BUILDING_HERMITAGE',						'YIELD_FAITH',		8),
 	('BUILDING_BOLSHOI_THEATRE',				'YIELD_CULTURE',	6),
 	('BUILDING_OXFORD_UNIVERSITY',				'YIELD_SCIENCE',	6),
 	('BUILDING_STATUE_LIBERTY',					'YIELD_GOLD',		8),
@@ -101,73 +106,55 @@ values
 	('BUILDING_BIOSPHERE',						'YIELD_PRODUCTION',	3),
 	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	3);
 
--- TODO: fix the bug for slot wonders.	
--- delete from BuildingModifiers where
--- 	ModifierId = 'ALHAMBRA_MILITARY_GOVERNMENT_SLOT' or
--- 	ModifierId = 'BIG_BEN_ECONOMIC_GOVERNMENT_SLOT' or
--- 	ModifierId = 'POTALA_PALACE_DIPLOMATIC_GOVERNMENT_SLOT' or
--- 	ModifierId = 'FORBIDDEN_CITY_WILDCARD_GOVERNMENT_SLOT';
+-- Adjust building effects
 
 -- Alhambra
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 values
 	('BUILDING_ALHAMBRA',			'ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH');
-
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,											SubjectRequirementSetId)
 values
 	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH',		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',			'DISTRICT_IS_ENCAMPMENT'),
-	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS',			'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		Null);
-
+	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS',			'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		null);
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 values
 	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS_ATTACH',		'ModifierId',	'ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS'),
 	('ALHAMBRA_ENCAMPMENT_INFLUENCE_POINTS',			'Amount',		2);
 
--- Oracle gives 3 * 2 great person points each.
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATGENERALPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATADMIRALPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATENGINEERPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATMERCHANTPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATPROPHETPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATSCIENTISTPOINTS' and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'ORACLE_GREATWRITERPOINTS' and Name = 'Amount';
--- ARTEMIS does not affect empty camp.
-insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL')
-;
+-- Oracle
+update ModifierArguments set Value = 6 where ModifierId like 'ORACLE_GREAT%POINTS' and Name = 'Amount';
 
-insert or replace into RequirementSetRequirements values
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'PLOT_HAS_RESOURCE_REQUIREMENTS'),
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS', 'REQUIRES_PLOT_HAS_ARTEMIS_WITHIN_4')
-;
+-- Temple of Artemis does not affect empty camp.
+insert or replace into RequirementSets
+	(RequirementSetId,									RequirementSetType)
+values
+	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,									RequirementId)
+values
+	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'PLOT_HAS_RESOURCE_REQUIREMENTS'),
+	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'REQUIRES_PLOT_HAS_ARTEMIS_WITHIN_4');
+update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS' where ModifierId = 'TEMPLE_ARTEMIS_CAMP_AMENITY';
 
-update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS'
-	where ModifierId = 'TEMPLE_ARTEMIS_CAMP_AMENITY';
-
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_TEMPLE_ARTEMIS';
 -- Petra
 update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';
 update ModifierArguments set Value = '3,2,1' where ModifierId = 'PETRA_YIELD_MODIFIER' and Name = 'Amount';
 
--- MEENAKSHI_TEMPLE
-update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
-
---STBASILS
+-- St. Basil's Cathedral
 update ModifierArguments set Value = 2 where ModifierId = 'STBASILS_ADDFOOD_MODIFIER' and Name = 'Amount';
---chichen itza
+
+-- Chichen Itza
 update Buildings set PrereqCivic = 'CIVIC_FEUDALISM' where BuildingType = 'BUILDING_CHICHEN_ITZA';
 delete from BuildingModifiers where BuildingType = 'BUILDING_CHICHEN_ITZA';
-
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
 --	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_JUNGLE_FOOD'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_GOLDEN_FAITH'),
 	('BUILDING_CHICHEN_ITZA',				'CHICHEN_ITZA_NORMAL_PRODUCTION');
-
 insert or replace into Modifiers
 	(ModifierId, 							ModifierType,												SubjectRequirementSetId)
 values
@@ -177,7 +164,6 @@ values
 	('CHICHEN_ITZA_SACRIFICE_CULTURE',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		null),
 	('CHICHEN_ITZA_GOLDEN_FAITH',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'PLAYER_NOT_HAS_GOLDEN_AGE');
-
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
@@ -196,47 +182,45 @@ values
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'Amount',				10);
 insert or replace into GlobalParameters (Name, Value) values ('CHICHEN_ITZA_PERCENTAGE', 5);
 
---remove MAHABODHI_DIPLOVP 
---add ORSZAGHAZ DVP
+-- Mahabodhi Temple
 delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
-insert or replace into BuildingModifiers (BuildingType,ModifierId) values
-	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP');
 
---Great Lighthouse grants GREAT_PERSON_CLASS_ADMIRAL
---grants an Admiral 
+-- Great Lighthouse
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_GREAT_LIGHTHOUSE', 'GREAT_LIGHTHOUSE_GRANTS_ADMIRAL'
+select 'BUILDING_GREAT_LIGHTHOUSE', 'GREAT_LIGHTHOUSE_GRANTS_ADMIRAL'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE');
-
-insert or replace into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
-('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
-
-insert or replace into ModifierArguments (ModifierId,	Name,	Value) values
-('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',	'Amount',	1),
-('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_ADMIRAL');
-
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,												RunOnce,	Permanent)
+values
+	('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',		'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',	1,			1);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,						Value)
+values
+	('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',		'Amount',					1),
+	('GREAT_LIGHTHOUSE_GRANTS_ADMIRAL',		'GreatPersonClassType',		'GREAT_PERSON_CLASS_ADMIRAL');
 update Building_GreatPersonPoints set PointsPerTurn = 2 where BuildingType = 'BUILDING_GREAT_LIGHTHOUSE';
 
---BUILDING_PANAMA_CANAL
---grants a GREAT_PERSON_CLASS_MERCHANT
+-- Panama Canal
 insert or ignore into BuildingModifiers (BuildingType, ModifierId)
-select	'BUILDING_PANAMA_CANAL', 'PANAMA_CANAL_GRANTS_MERCHANT'
+select 'BUILDING_PANAMA_CANAL', 'PANAMA_CANAL_GRANTS_MERCHANT'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_PANAMA_CANAL');
 
-insert or ignore into Modifiers	(ModifierId,ModifierType,	RunOnce,	Permanent) values
-('PANAMA_CANAL_GRANTS_MERCHANT',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',1,1);
+insert or ignore into Modifiers
+	(ModifierId,						ModifierType,												RunOnce,	Permanent)
+values
+	('PANAMA_CANAL_GRANTS_MERCHANT',	'MODIFIER_SINGLE_CITY_GRANT_GREAT_PERSON_CLASS_IN_CITY',	1,			1);
+insert or ignore into ModifierArguments
+	(ModifierId,						Name,						Value)
+values
+	('PANAMA_CANAL_GRANTS_MERCHANT',	'Amount',					1),
+	('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',		'GREAT_PERSON_CLASS_MERCHANT');
 
-insert or ignore into ModifierArguments (ModifierId,	Name,	Value) values
-('PANAMA_CANAL_GRANTS_MERCHANT',	'Amount',	1),
-('PANAMA_CANAL_GRANTS_MERCHANT',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT');
-
---BUILDING_GREAT_ZIMBABWE
+-- Great Zimbabwe
 update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
 
---BUILDING_BROADWAY
----grants a GREAT_PERSON_CLASS_MUSICIAN
+-- Broadway
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_BROADWAY', 'BROADWAY_GRANTS_MUSICIAN'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_BROADWAY');
@@ -294,7 +278,6 @@ update Buildings set PrereqCivic = 'CIVIC_COLD_WAR' where BuildingType = 'BUILDI
 delete from BuildingModifiers where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and ModifierId !='TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
 
 update Buildings set RegionalRange = 6 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE';
-update Building_YieldChanges set YieldChange = 5 where BuildingType = 'BUILDING_UNIVERSITY_SANKORE' and YieldType = 'YIELD_SCIENCE';
 
 insert or replace into BuildingModifiers
 	(BuildingType,						 ModifierId)
@@ -454,10 +437,7 @@ values
 
 update Buildings set Housing = 1 where BuildingType = 'BUILDING_HANGING_GARDENS';
 
-insert or replace into Building_YieldChanges
-	(BuildingType,  YieldType,	YieldChange)
-values
-('BUILDING_HANGING_GARDENS','YIELD_FOOD', 4);
+
 
 -- Jebel region 9
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARKAL';
@@ -510,12 +490,6 @@ values
 
 --hermitage
 UPDATE Buildings SET RegionalRange = 9, Entertainment = 1 WHERE BuildingType = 'BUILDING_HERMITAGE';
-
-insert or replace into Building_YieldChanges
-	(BuildingType,						YieldType,				YieldChange)
-values
-	('BUILDING_HERMITAGE',				'YIELD_CULTURE',		8),
-	('BUILDING_HERMITAGE',				'YIELD_FAITH',			8);
 
 insert or replace into BuildingModifiers
 	(BuildingType,				ModifierId)
@@ -669,6 +643,8 @@ values
 	('TERRACOTTA_ARMY_ARCHAEOLOGIST_IGNORE_FOREST',	'AbilityType',		'ABILITY_ARCHAEOLOGIST_IGNORE_FOREST');
 
 -- MEENAKSHI_TEMPLE
+update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+
 delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
 update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMBAT_AOE_RELIGIOUS' or UnitAbilityType = 'ABILITY_GUIDE_MOVEMENT_AOE_RELIGIOUS';
 -- update ModifierArguments set Value = 1 where ModifierId = 'MEENAKSHITEMPLE_FREE_GURU' and Name = 'Amount';
@@ -943,7 +919,10 @@ update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null 
 -- Kilwa
 	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
 update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
-update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER' where ModifierId like 'KILWA_PLAYERCITIES_ADD%YIELD' or ModifierId like 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADD%YIELD';
+update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'			where ModifierId like 'KILWA_PLAYERCITIES_ADD%YIELD' or ModifierId like 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADD%';
+update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_MODIFIER'	where ModifierId = 'KILWA_PLAYERCITIES_ADDPRODUCTIONBUILDINGS';
+update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_MODIFIER'	where ModifierId = 'KILWA_PLAYERCITIES_ADDPRODUCTIONDISTRICTS';
+update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_MODIFIER'		where ModifierId = 'KILWA_PLAYERCITIES_ADDPRODUCTIONUNITS';
 update ModifierArguments set Value = 15 where Name = 'Amount' and (ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD' or ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBORFOOD');
 delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and (ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORPRODUCTION' or ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBORPRODUCTION');
 /*
@@ -1025,7 +1004,8 @@ values
 
 -- 匈牙利议会大厦
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where BuildingType = 'BUILDING_ORSZAGHAZ';
-
+insert or replace into BuildingModifiers (BuildingType,ModifierId) values
+	('BUILDING_ORSZAGHAZ', 'MAHABODHI_DIPLOVP');
 --insert or replace into BuildingModifiers
 --	(BuildingType,					ModifierId)
 --values

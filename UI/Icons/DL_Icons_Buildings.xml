@@ -117,6 +117,11 @@
 		<Row Name="ICON_BUILDING_HD_TAVERN_FOW" Atlas="ATLAS_New_Buildings" Index="0"/>
         <Row Name="ICON_BUILDING_HD_INN_FOW" Atlas="ATLAS_New_Buildings" Index="1"/>
 
+		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER" Atlas="ATLAS_New_Buildings" Index="2"/>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS" Atlas="ATLAS_New_Buildings" Index="3"/>
+		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER_FOW" Atlas="ATLAS_New_Buildings" Index="2"/>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_FOW" Atlas="ATLAS_New_Buildings" Index="3"/>
+
 		<Row Name="ICON_BUILDING_YELLOW_CRANE_HD" Atlas="ICON_ATLAS_YELLOW_CRANE" Index="0"/>
 	</IconDefinitions>
 </GameData>
