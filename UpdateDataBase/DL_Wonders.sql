@@ -943,6 +943,10 @@ update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = Null 
 -- Kilwa
 	-- 【基尔瓦基斯瓦尼】改为【罗盘】科技解锁
 update Buildings set PrereqTech = 'TECH_COMPASS_HD' where BuildingType = 'BUILDING_KILWA_KISIWANI';--xhh
+update Modifiers set ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER' where ModifierId like 'KILWA_PLAYERCITIES_ADD%YIELD' or ModifierId like 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADD%YIELD';
+update ModifierArguments set Value = 15 where Name = 'Amount' and (ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD' or ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBORFOOD');
+delete from BuildingModifiers where BuildingType = 'BUILDING_KILWA_KISIWANI' and (ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORPRODUCTION' or ModifierId = 'CVS_CITYSTATE_KILWA_PLAYERCITIES_ADDHARBORPRODUCTION');
+/*
 update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId like 'KILWA_SINGLE_ADD%';
 update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD';
 
@@ -991,6 +995,7 @@ select ModifierId || '1', Name,   Value from ModifierArguments where ModifierId 
 insert or replace into ModifierArguments    (ModifierId,    Name,   Value)
 select ModifierId || '1', Name,   Value from ModifierArguments where
 	ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDFOODYIELD' or ModifierId = 'CVS_CITYSTATE_KILWA_SINGLE_ADDHARBORFOOD';
+*/
 
 -- insert or replace into Unit_BuildingPrereqs(Unit, PrereqBuilding, NumSupported)
 -- values ('UNIT_ARCHAEOLOGIST','BUILDING_HERMITAGE',1);
