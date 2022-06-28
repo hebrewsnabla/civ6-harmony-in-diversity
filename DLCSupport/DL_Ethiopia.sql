@@ -131,8 +131,8 @@ values
     -- ('BUILDING_CONSULATE',                  'MODIFIER_MAJOR_PLAYER_TRADE_ROUTE_BY_CITY_STATE_BONUS_TYPE_MODIFIER'),
     ('BUILDING_CONSULATE',                  'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
     ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_DISCOUNT'),
-    ('BUILDING_CHANCERY',                   'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN'),
-    ('BUILDING_CHANCERY',                   'WISSELBANKEN_ALLIANCEPOINTS');
+    ('BUILDING_CHANCERY',                   'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN');
+    -- ('BUILDING_CHANCERY',                   'WISSELBANKEN_ALLIANCEPOINTS');
     -- ('BUILDING_CONSULATE',                  'CONSULATE_LEVY_UNITUPGRADEDISCOUNT');
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_GRANTS_SPY_CAPACITY'),
     -- ('BUILDING_CONSULATE',                   'DIPLOMATIC_QUARTER_DELEGATION_FAVOR'),
@@ -249,13 +249,15 @@ values
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_DIPLOMATIC_SLOT'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_INFLUENCE_BONUS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_DIPLOMATIC_VICTOR_POINTS'),
-    ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_THREE_TOKENS'),
+    ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_TOKENS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_ALLIANCE_POINTS'),
+    ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_DIPLOMATIC_VISIBLE'),
 
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_DIPLOMATIC_SLOT'),
-    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_INFLUENCE_BONUS'),
-    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_DIPLOMATIC_VICTOR_POINTS'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_INFLUENCE_BONUS'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_DIPLOMATIC_VICTOR_POINTS'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_ALLIANCE_POINTS'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_DIPLOMATIC_VISIBLE'),
 
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_CS_ADD_SCIENCE'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_CS_ADD_CULTURE'),
@@ -267,9 +269,143 @@ values
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_CS_ADD_WONDER_PRODUCTION');
 
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,			OwnerRequirementSetId,      SubjectRequirementSetId)
+	(ModifierId,					        ModifierType,			                                        SubjectRequirementSetId)
 values
-    (),
+    ('HD_RCC_DIPLOMATIC_SLOT',              'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',     Null),
+    ('HD_RCC_INFLUENCE_BONUS',              'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',                        Null),
+    ('HD_RCC_DIPLOMATIC_VICTOR_POINTS',     'MODIFIER_PLAYER_ADJUST_DIPLOMATIC_VICTORY_POINTS',             Null),
+    ('HD_RCC_TOKENS',                       'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',                        Null),
+    ('HD_RCC_ALLIANCE_POINTS',              'MODIFIER_PLAYER_ADJUST_ALLIANCE_POINTS',                       Null),
+    ('HD_RCC_DIPLOMATIC_VISIBLE',           'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',                         Null),
+
+    ('HD_WPH_INFLUENCE_BONUS',              'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',                        Null),
+    ('HD_WPH_DIPLOMATIC_VICTOR_POINTS',     'MODIFIER_PLAYER_ADJUST_DIPLOMATIC_VICTORY_POINTS',             Null),
+
+    ('HD_WPH_CS_ADD_SCIENCE',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',            'HD_SCIENTIFIC_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_CULTURE',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',            'HD_CULTURAL_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_GOLD',                  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',            'HD_TRADE_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_FAITH',                 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',            'HD_RELIGIOUS_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_UNIT_PRODUCTION',       'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER',       'HD_MILITARISTIC_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_BUILDING_PRODUCTION',   'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION_MODIFIER',   'HD_INDUSTRIAL_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_DISTRICT_PRODUCTION',   'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'HD_INDUSTRIAL_SUZERAIN_3_REQUIREMENTS'),
+    ('HD_WPH_CS_ADD_WONDER_PRODUCTION',     'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_PRODUCTION',              'HD_INDUSTRIAL_SUZERAIN_3_REQUIREMENTS');
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId in ('HD_RCC_DIPLOMATIC_VICTOR_POINTS','HD_RCC_TOKENS','HD_WPH_DIPLOMATIC_VICTOR_POINTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,		            Value)
+values
+    ('HD_RCC_DIPLOMATIC_SLOT',              'GovernmentSlotType',   'SLOT_DIPLOMATIC'),
+    ('HD_RCC_INFLUENCE_BONUS',              'BonusType',            'GOVERNMENTBONUS_ENVOYS'),
+    ('HD_RCC_INFLUENCE_BONUS',              'Amount',               25),
+    ('HD_RCC_DIPLOMATIC_VICTOR_POINTS',     'Amount',               1),
+    ('HD_RCC_DIPLOMATIC_VICTOR_POINTS',     'Tooltip',              'LOC_DVP_TOOLTIP_OTHER_SOURCES'),
+    ('HD_RCC_TOKENS',                       'Amount',               2),
+    ('HD_RCC_ALLIANCE_POINTS',              'Amount',               8),
+	('HD_RCC_DIPLOMATIC_VISIBLE',           'Amount',               1),
+    ('HD_RCC_DIPLOMATIC_VISIBLE',           'Source',               'SOURCE_GOV_SPIES'),
+   	('HD_RCC_DIPLOMATIC_VISIBLE',           'SourceType',           'DIPLO_SOURCE_ALL_NAMES'),
+
+    ('HD_WPH_INFLUENCE_BONUS',              'BonusType',            'GOVERNMENTBONUS_ENVOYS'),
+    ('HD_WPH_INFLUENCE_BONUS',              'Amount',               50),
+    ('HD_WPH_DIPLOMATIC_VICTOR_POINTS',     'Amount',               3),
+    ('HD_WPH_DIPLOMATIC_VICTOR_POINTS',     'Tooltip',              'LOC_DVP_TOOLTIP_OTHER_SOURCES'),
+
+    ('HD_WPH_CS_ADD_SCIENCE',               'Amount',               10),
+    ('HD_WPH_CS_ADD_SCIENCE',               'YieldType',            'YIELD_SCIENCE'),
+    ('HD_WPH_CS_ADD_CULTURE',               'Amount',               10),
+    ('HD_WPH_CS_ADD_CULTURE',               'YieldType',            'YIELD_CULTURE'),
+    ('HD_WPH_CS_ADD_GOLD',                  'Amount',               10),
+    ('HD_WPH_CS_ADD_GOLD',                  'YieldType',            'YIELD_GOLD'),
+    ('HD_WPH_CS_ADD_FAITH',                 'Amount',               10),
+    ('HD_WPH_CS_ADD_FAITH',                 'YieldType',            'YIELD_FAITH'),
+    ('HD_WPH_CS_ADD_UNIT_PRODUCTION',       'Amount',               10),
+    ('HD_WPH_CS_ADD_BUILDING_PRODUCTION',   'Amount',               10),
+    ('HD_WPH_CS_ADD_DISTRICT_PRODUCTION',   'Amount',               10),
+    ('HD_WPH_CS_ADD_WONDER_PRODUCTION',     'Amount',               10);
+
+insert or replace into DiplomaticVisibilitySources
+    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString)
+values
+    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES');
+
+insert or ignore into RequirementSets
+	(RequirementSetId, 							    RequirementSetType)
+values
+    ('HD_SCIENTIFIC_SUZERAIN_3_REQUIREMENTS',       'REQUIREMENTSET_TEST_ALL'),
+    ('HD_CULTURAL_SUZERAIN_3_REQUIREMENTS',         'REQUIREMENTSET_TEST_ALL'),
+    ('HD_TRADE_SUZERAIN_3_REQUIREMENTS',            'REQUIREMENTSET_TEST_ALL'),
+    ('HD_RELIGIOUS_SUZERAIN_3_REQUIREMENTS',        'REQUIREMENTSET_TEST_ALL'),
+    ('HD_MILITARISTIC_SUZERAIN_3_REQUIREMENTS',     'REQUIREMENTSET_TEST_ALL'),
+    ('HD_INDUSTRIAL_SUZERAIN_3_REQUIREMENTS',       'REQUIREMENTSET_TEST_ALL'),
+    
+    ('CITY_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS',   'REQUIREMENTSET_TEST_ANY');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId, 							    RequirementId)
+values
+    ('HD_SCIENTIFIC_SUZERAIN_3_REQUIREMENTS',       'HD_SCIENTIFIC_SUZERAIN_3_LEADER'),
+    ('HD_CULTURAL_SUZERAIN_3_REQUIREMENTS',         'HD_CULTURAL_SUZERAIN_3_LEADER'),
+    ('HD_TRADE_SUZERAIN_3_REQUIREMENTS',            'HD_TRADE_SUZERAIN_3_LEADER'),
+    ('HD_RELIGIOUS_SUZERAIN_3_REQUIREMENTS',        'HD_RELIGIOUS_SUZERAIN_3_LEADER'),
+    ('HD_MILITARISTIC_SUZERAIN_3_REQUIREMENTS',     'HD_MILITARISTIC_SUZERAIN_3_LEADER'),
+    ('HD_INDUSTRIAL_SUZERAIN_3_REQUIREMENTS',       'HD_INDUSTRIAL_SUZERAIN_3_LEADER'),
+
+    ('CITY_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS',   'REQUIRES_CITY_HAS_BUILDING_HD_REGIONAL_COUNCIL_CENTER'),
+    ('CITY_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS',   'REQUIRES_CITY_HAS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS');
+
+
+insert or ignore into Requirements
+	(RequirementId,								RequirementType)
+values
+    ('HD_SCIENTIFIC_SUZERAIN_3_LEADER',         'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE'),
+    ('HD_CULTURAL_SUZERAIN_3_LEADER',           'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE'),
+    ('HD_TRADE_SUZERAIN_3_LEADER',              'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE'),
+    ('HD_RELIGIOUS_SUZERAIN_3_LEADER',          'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE'),
+    ('HD_MILITARISTIC_SUZERAIN_3_LEADER',       'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE'),
+    ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'REQUIREMENT_PLAYER_IS_SUZERAIN_X_TYPE');
+
+
+insert or ignore into RequirementArguments
+	(RequirementId,								Name,				Value)
+values
+    ('HD_SCIENTIFIC_SUZERAIN_3_LEADER',         'Amount',           3),
+    ('HD_CULTURAL_SUZERAIN_3_LEADER',           'Amount',           3),
+    ('HD_TRADE_SUZERAIN_3_LEADER',              'Amount',           3),
+    ('HD_RELIGIOUS_SUZERAIN_3_LEADER',          'Amount',           3),
+    ('HD_MILITARISTIC_SUZERAIN_3_LEADER',       'Amount',           3),
+    ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'Amount',           3),
+    ('HD_SCIENTIFIC_SUZERAIN_3_LEADER',         'LeaderType',       'LEADER_MINOR_CIV_SCIENTIFIC'),
+    ('HD_CULTURAL_SUZERAIN_3_LEADER',           'LeaderType',       'LEADER_MINOR_CIV_CULTURAL'),
+    ('HD_TRADE_SUZERAIN_3_LEADER',              'LeaderType',       'LEADER_MINOR_CIV_TRADE'),
+    ('HD_RELIGIOUS_SUZERAIN_3_LEADER',          'LeaderType',       'LEADER_MINOR_CIV_RELIGIOUS'),
+    ('HD_MILITARISTIC_SUZERAIN_3_LEADER',       'LeaderType',       'LEADER_MINOR_CIV_MILITARISTIC'),
+    ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'LeaderType',       'LEADER_MINOR_CIV_INDUSTRIAL');
+
+create temporary table RCCModifiers (LevelRequirement INTEGER not null, AllianceType text not null, OldModifierID text not null, NewModifierID text not null);
+insert into RCCModifiers
+    (LevelRequirement,    AllianceType,     OldModifierID,     NewModifierID)
+select
+    LevelRequirement,     AllianceType,     ModifierID,        'RCC_GRANT_' || ModifierId
+from AllianceEffects;
+
+insert or replace into AllianceEffects
+    (LevelRequirement,    AllianceType,     ModifierID)
+select
+    LevelRequirement,     AllianceType,     NewModifierID
+from RCCModifiers;
+
+insert or replace into Modifiers
+    (ModifierId,	ModifierType,                                   SubjectRequirementSetId)
+select
+    NewModifierID,  'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',    'CITY_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS'
+from RCCModifiers;
+
+insert or replace into ModifierArguments
+    (ModifierId,	Name,	        Value)
+select
+    NewModifierID,	'ModifierId',   OldModifierID
+from RCCModifiers;
 
 ----------------------------------------------------------------------------------------------------
 -- Ethiopia citystate bonus for diplomacy buildings

@@ -115,11 +115,11 @@ select
 from ((select distinct TraitType, YieldType from HD_CityStateBuffedObjects)
 left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and IsUB = 0));
 -- Diplomatic Quater
-insert or replace into HD_CityStateBuffedObjects
-    (TraitType,         YieldType,  ObjectType,                     Amount, IsDistrict)
-select
-    distinct TraitType, YieldType,  'DISTRICT_DIPLOMATIC_QUARTER',  4,      1
-from HD_CityStateBuffedObjects where 'DISTRICT_DIPLOMATIC_QUARTER' in (select Type from Types);
+-- insert or replace into HD_CityStateBuffedObjects
+--     (TraitType,         YieldType,  ObjectType,                     Amount, IsDistrict)
+-- select
+--     distinct TraitType, YieldType,  'DISTRICT_DIPLOMATIC_QUARTER',  4,      1
+-- from HD_CityStateBuffedObjects where 'DISTRICT_DIPLOMATIC_QUARTER' in (select Type from Types);
 -- Palace
 insert or replace into HD_CityStateBuffedObjects
     (TraitType,         YieldType,  ObjectType,         Amount)

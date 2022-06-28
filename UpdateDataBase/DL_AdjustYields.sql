@@ -95,6 +95,7 @@ update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_TRUFFLES' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_TOBACCO' and YieldType = 'YIELD_FAITH';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_COTTON' and YieldType = 'YIELD_GOLD';
+update Resource_YieldChanges set YieldChange = 3 where ResourceType = 'RESOURCE_CRABS' and YieldType = 'YIELD_GOLD';
 
 
 -- Natural Wonders.
