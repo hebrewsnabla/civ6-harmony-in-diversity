@@ -252,7 +252,7 @@ where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_
 insert or replace into Modifiers
 	(ModifierId, 							ModifierType,				 						SubjectRequirementSetId) 
 values
-	('GLOBE_THEATRE_CITY_WRITING_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'HD_OBJECT_IS_WHITHIN_6_PLOT');
+	('GLOBE_THEATRE_CITY_WRITING_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',			'HD_OBJECT_WITHIN_6_TILES');
 
 insert or replace into ModifierArguments 
 	(ModifierId,							Name,					Value) 

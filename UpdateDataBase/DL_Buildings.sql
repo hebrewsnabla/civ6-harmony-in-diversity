@@ -1612,13 +1612,13 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										OwnerRequirementSetId,		SubjectRequirementSetId,		SubjectStackLimit)
 select
-	'HD_FOOD_MARKET_PRODUCT_FOOD_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_IS_WHITHIN_6_PLOT',	1
+	'HD_FOOD_MARKET_PRODUCT_FOOD_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_WITHIN_6_TILES',	1
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,										OwnerRequirementSetId,		SubjectRequirementSetId,		SubjectStackLimit)
 select
-	'HD_FOOD_MARKET_PRODUCT_PRODUCTION_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_IS_WHITHIN_6_PLOT',	1
+	'HD_FOOD_MARKET_PRODUCT_PRODUCTION_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_WITHIN_6_TILES',	1
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into ModifierArguments
@@ -1680,19 +1680,19 @@ where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSl
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										OwnerRequirementSetId,		SubjectRequirementSetId,		SubjectStackLimit)
 select
-	'HD_SHOPPING_MALL_PRODUCT_GOLD_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_IS_WHITHIN_6_PLOT',	1
+	'HD_SHOPPING_MALL_PRODUCT_GOLD_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_WITHIN_6_TILES',	1
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,										OwnerRequirementSetId,		SubjectRequirementSetId,		SubjectStackLimit)
 select
-	'HD_SHOPPING_MALL_PRODUCT_SCIENCE_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_IS_WHITHIN_6_PLOT',	1
+	'HD_SHOPPING_MALL_PRODUCT_SCIENCE_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_WITHIN_6_TILES',	1
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,										OwnerRequirementSetId,		SubjectRequirementSetId,		SubjectStackLimit)
 select
-	'HD_SHOPPING_MALL_PRODUCT_CULTURE_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_IS_WHITHIN_6_PLOT',	1
+	'HD_SHOPPING_MALL_PRODUCT_CULTURE_BOOST',	'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',	'CITY_IS_POWERED',			'HD_OBJECT_WITHIN_6_TILES',	1
 where exists (select GreatWorkSlotType from GreatWorkSlotTypes where GreatWorkSlotType = 'GREATWORKSLOT_PRODUCT');
 
 insert or replace into ModifierArguments
