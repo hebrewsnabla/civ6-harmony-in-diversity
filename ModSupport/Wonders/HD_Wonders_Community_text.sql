@@ -36,7 +36,7 @@ values
     ("LOC_BUILDING_ABU_SIMBEL_DESCRIPTION",                                                           "Grants free Granary for every City including new Cities founded afterwards. Granaries provide +1 [Icon_food] Food. Cities with 6 tiles have +2 Loyalty per turn. Must be built on Floodplains (Desert, Plains or Grassland)."),
     ("LOC_WON_CL_EMPIRE_STATES_DESCRIPTION",                                                          "+20% [ICON_GOLD] Gold to this city. Wonders in this City provide +6 [ICON_GOLD] Gold and +200% [ICON_Tourism] Tourism.[NEWLINE]Must be built on flat land adjacent to the City Center."),
     ("LOC_BUILDING_YELLOW_CRANE_DESCRIPTION",                                                         "Whenever you activate a [ICON_GreatWriter] Great Writer, gain [ICON_GreatWriter] Great Writer Points equal to 15% of the next [ICON_GreatWriter] Great Writer's cost. Whenever you recruit a [ICON_GreatWriter] Great Writer, recieve a random [ICON_CIVICBOOSTED] Inspiration. Themed when displaying [ICON_GREATWORK_WRITING] Great Works of Writing from the same Era.[NEWLINE][NEWLINE]Must be built on Hill tiles adjacent to river."),
-    ("LOC_BUILDING_THEMINGBONUS_BUILDING_YELLOW_CRANE_HD",                                            "Theming bonus doubling output when displaying objects from the same era.");
+    ("LOC_BUILDING_THEMINGBONUS_YELLOW_CRANE_HD",                                                     "Theming bonus doubling output when displaying objects from the same era.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
