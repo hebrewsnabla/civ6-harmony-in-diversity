@@ -20,6 +20,10 @@ values
     ('IMPROVEMENT_PYRAMID', 'TERRAIN_GRASS'),
     ('IMPROVEMENT_PYRAMID', 'TERRAIN_PLAINS_HILLS');
 
+insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
+    ('IMPROVEMENT_PYRAMID', 'FEATURE_FLOODPLAINS_GRASSLAND', NULL, NULL),
+	('IMPROVEMENT_PYRAMID', 'FEATURE_FLOODPLAINS_PLAINS', NULL, NULL);
+
 update Improvement_YieldChanges set YieldChange = 1 where ImprovementType ='IMPROVEMENT_PYRAMID' and YieldType = 'YIELD_FOOD';
 
 insert or replace into ImprovementModifiers

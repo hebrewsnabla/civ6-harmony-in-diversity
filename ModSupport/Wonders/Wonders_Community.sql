@@ -715,9 +715,9 @@ select
 	BuildingType || '_HD',	GreatPersonClassType, PointsPerTurn
 from Building_GreatPersonPoints where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into Building_GreatWorks
-	(BuildingType,			GreatWorkSlotType,	NumSlots,	ThemingSameEras,	ThemingYieldMultiplier,	ThemingTourismMultiplier)
+	(BuildingType,			GreatWorkSlotType,	NumSlots,	ThemingSameEras,	ThemingYieldMultiplier,	ThemingTourismMultiplier,	ThemingBonusDescription)
 select
-	BuildingType || '_HD', 	GreatWorkSlotType,	3,			1,					100,					100
+	BuildingType || '_HD', 	GreatWorkSlotType,	3,			1,					100,					100,						'LOC_BUILDING_THEMINGBONUS_YELLOW_CRANE_HD'
 from Building_GreatWorks where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into Building_YieldChanges
 	(BuildingType,					YieldType,			YieldChange)

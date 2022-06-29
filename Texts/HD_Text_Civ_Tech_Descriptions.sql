@@ -42,7 +42,7 @@ values
     -- ("LOC_TECH_CURRENCY_HD_DESCRIPTION",                                                    "Provides +3 [ICON_GOLD] Gold to Commercial Hubs."),
     ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements provide +1 [ICON_Production] Production."),
     ("LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                                "Allows all land units to embark. [NEWLINE]Recon units are exempt from [ICON_Strength] Combat Strength penalty when attacking from the water or over a River, and [ICON_Movement] Movement penalty from embarking, disembarking and crossing River."),
-    ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production."),
+    ("LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                                 "Mine improvements receive +1 [ICON_PRODUCTION] Production. Mine improvements can be built on Geothermal Fissures."),
     ("LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                                "Camp and Lumber Mill improvements provide +1 [ICON_PRODUCTION] Production."), -- 
     ("LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                                              "Mine and Quary improvements receive +1 [ICON_PRODUCTION] Production."),
     ("LOC_TECH_MACHINERY_HD_DESCRIPTION",                                                   "+50% yields from resource harvests and feature removals. +1 [ICON_Production] Production to Lumber Mills."),
@@ -223,7 +223,7 @@ values
     -- ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
     ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                             "牧场+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_SHIPBUILDING_HD_DESCRIPTION",                                 "允许所有陆地单位上船。[NEWLINE]侦察单位获得能力：免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
-    ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TECH_ENGINEERING_HD_DESCRIPTION",                                  "矿山+1 [ICON_Production] 生产力，并且可以建造在地热裂缝上。"),
     ("zh_Hans_CN",  "LOC_TECH_CONSTRUCTION_HD_DESCRIPTION",                                 "营地和伐木场+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TECH_APPRENTICESHIP_HD_DESCRIPTION",                               "矿山和采石场+1 [ICON_Production] 生产力。"), 
     ("zh_Hans_CN",  "LOC_TECH_MACHINERY_HD_DESCRIPTION",                                    "收获和移除地貌的产出+50%。伐木场+1 [ICON_Production] 生产力。"),

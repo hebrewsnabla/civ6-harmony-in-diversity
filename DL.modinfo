@@ -1501,6 +1501,8 @@
     <File>ArtDefs/Features.artdef</File>
     <File>ArtDefs/Clutter.artdef</File>
     <File>ArtDefs/Landmarks.artdef</File>
+    <File>ArtDefs/StrategicView.artdef</File>
+    <File>ArtDefs/WonderMovie.artdef</File>
     <!-- Configs -->
     <File>Configs/MapScripts.xml</File>
     <File>Configs/GameModes.xml</File>

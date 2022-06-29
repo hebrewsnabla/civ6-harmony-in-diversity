@@ -43,6 +43,7 @@
 				<Element text="Features.artdef"/>
 				<Element text="Landmarks.artdef"/>
 				<Element text="Improvements.artdef"/>
+				<Element text="StrategicView.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="CityBuildings"/>
@@ -162,7 +163,9 @@
 		</Element>
 		<Element>
 			<ConsumerName text="WonderMovie"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="WonderMovie.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="WonderMovie"/>
 				<Element text="TileBase"/>
@@ -427,6 +430,7 @@
 		<Element>
 			<ArtDefPath text="Buildings.artdef"/>
 			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
 				<Element text="Buildings.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
@@ -435,6 +439,12 @@
 			<ArtDefDependencyPaths>
 				<Element text="Landmarks.artdef"/>
 				<Element text="Buildings.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="Districts.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
@@ -453,6 +463,18 @@
 			<ArtDefPath text="Features.artdef"/>
 			<ArtDefDependencyPaths>
 				<Element text="Clutter.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="WonderMovie.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="WonderMovie.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
+			<ArtDefPath text="StrategicView.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="StrategicView.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
 	</ArtDefDependencies>
