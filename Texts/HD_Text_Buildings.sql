@@ -97,9 +97,10 @@ values
     ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "Receive one Spy and +1 Spy capacity. +1 [ICON_VISLIMITED] Visibility level on all other Civs. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. Your Spy units can choose from any possible promotion. +50% [ICON_PRODUCTION] toward Spies in all Cities. +3 Influence Points per turn. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "Regional Council Centre"),
-    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。"),
+    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus from alliances."),
     ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "World Parliament Headquarters"),
-    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),
+    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "Building unique to America. +1 Wildcard Policy Slot. +3 Dipolomatic Victory Point. +50% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus from alliances. If you are the suzerain of at least 3 City States of the same type, all of your cities receive +10% of the respective yield."),
+    ("LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "American unique building: World Parliament Headquarters"),
     -- Entertainment Complex
     ("LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
     ("LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "A building unique to the Aztecs. +1 [ICON_Amenities] Amenity, +2 [ICON_Culture] Culture, +2 [ICON_Faith] Faith. +1 [ICON_GreatGeneral] Great General Point per turn. +1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
@@ -235,6 +236,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "世界议会总部"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "美国特色建筑：世界议会总部"),
     -- 娱乐区
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TLACHTLI_XP1_DESCRIPTION",                     "阿兹特克特色建筑。提供1点 [ICON_Amenities] 宜居度、+2 [ICON_Culture] 文化值、+2 [ICON_Faith] 信仰值，并提供2点 [ICON_GreatGeneral] 大将军点数。拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
