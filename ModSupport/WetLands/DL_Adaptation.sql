@@ -214,12 +214,12 @@ values
 insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
-    ('HD_PLOT_IS_SWAMP_REQUIREMENT',                'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES');
+    ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',       'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES');
 
 insert or ignore into RequirementArguments
 	(RequirementId,									Name,				Value)
 values
-    ('HD_PLOT_IS_SWAMP_REQUIREMENT',                'FeatureType',      'FEATURE_HD_SWAMP');
+    ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',       'FeatureType',      'FEATURE_HD_SWAMP');
 
 insert or ignore into RequirementSets
 	(RequirementSetId,								RequirementSetType)
@@ -229,14 +229,38 @@ values
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 values
-    -- ('PLOT_HAS_REEDS_REQUIREMENTS',                 'HD_PLOT_IS_SWAMP_REQUIREMENT'),
-    ('HD_PLOT_HAS_SWAMP_REQUIREMENTS',              'HD_PLOT_IS_SWAMP_REQUIREMENT');
+    -- ('PLOT_HAS_REEDS_REQUIREMENTS',                 'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'),
+    ('HD_PLOT_HAS_SWAMP_REQUIREMENTS',              'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP');
 
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 select
-    'PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_PLOT_IS_SWAMP_REQUIREMENT'
+    'PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
 where exists (select UnitType from Units where UnitType = 'UNIT_VIETNAMESE_VIETCONG');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'HD_PLOT_HAS_GROVE_FEATURE',                    'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'HD_PLOT_HAS_WETLANDS_REQUIREMENTS',            'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'HD_ON_OR_ADJACENT_WETLANDS',                   'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
+
+insert or ignore into RequirementSetRequirements
+    (RequirementSetId,                              RequirementId)
+select
+    'HD_ON_OR_ADJACENT_WETLANDS',                   'HD_REQUIRES_PLOT_ADJACENT_TO_FEATURE_HD_SWAMP'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
 insert or replace into TraitModifiers 
     (TraitType,                         ModifierId)
@@ -273,7 +297,7 @@ insert or replace into ModifierArguments    (ModifierId,    Name,        Value)
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                              RequirementId)
 select
-    'TRIEU_FEATURE_REQUIREMENTS',                   'HD_PLOT_IS_SWAMP_REQUIREMENT'
+    'TRIEU_FEATURE_REQUIREMENTS',                   'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
 where exists (select CivilizationType from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
 
 -- 泛滥螃蟹

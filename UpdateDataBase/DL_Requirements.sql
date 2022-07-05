@@ -170,11 +170,17 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
 
--- Plot Has Features & Natural Wonders -- by xhh
+-- Plot Has Features & Natural Wonders
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 0;
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
 insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features where NaturalWonder = 0;
+	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features;
+
+-- Plot Adjacent to Features & Natural Wonders
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType, 'FeatureType', FeatureType from Features;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType, 'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES' from Features;
 
 --civlization
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

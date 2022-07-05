@@ -17,7 +17,7 @@ values
     ("LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "When chosen, receive a Recon units with one free promotion in your [ICON_Capital] Capital. +1 [ICON_Movement] Movement for all Recon Units."),
     ("LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "+1 [ICON_Food] Food and +1 [ICON_Culture] Culture from Pastures."),
     ("LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "+1 [ICON_Culture] Culture and +3 [ICON_Gold] Gold from Plantations."),
-    ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh. Floodplain tiles no longer lower adjacent tiles' Appeal."),
+    ("LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "+2 [ICON_Production] Production from Marsh, Oasis, and Desert Floodplains. +1 [ICON_Science] Science from Marsh."),-- Floodplain tiles no longer lower adjacent tiles' Appeal.
     ("LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "Camps over Luxury and Bonus resources provide +1 [ICON_Food] Food and +1 [ICON_Production] Production."),
     ("LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "+2 [ICON_GreatPerson] Great Person Points from Holy Sites (Prophet), Campuses (Scientist), Theater Squares  (Writer), Industial Zones (Engineer) and Commercial Hubs (Merchant)."),
     ("LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "Quarries provide +1 [ICON_Faith] Faith and +1 [ICON_Production] Production. Cities having Quarries provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
@@ -90,7 +90,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_MESSENGER_OF_THE_GODS_DL_DESCRIPTION",           "选择后即可在首都中获得1个有免费晋升的侦察单位。所有侦察类型的单位+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION",             "牧场+1 [ICON_Food] 食物和 +1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ORAL_TRADITION_DL_DESCRIPTION",                  "种植园+1 [ICON_Culture] 文化值和 +3 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。泛滥平原不再为相邻单元格-1魅力。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION",   "沼泽、绿洲、沙漠泛滥平原提供+2 [ICON_Production] 生产力。沼泽提供+1 [ICON_Science] 科技值。"),-- 泛滥平原不再为相邻单元格-1魅力。
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION",             "采集奢侈品资源和加成资源的营地+1 [ICON_Food] 食物和 +1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商人）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+1 [ICON_Faith] 信仰值和+1 [ICON_Production] 生产力。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),

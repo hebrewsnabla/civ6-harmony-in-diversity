@@ -238,9 +238,9 @@ values
 	('BELIEF_ORAL_TRADITION',				'ORAL_TRADITION_PLANTATION_GOLD'),
 	-- ('BELIEF_GODDESS_OF_THE_HUNT',				'GODDESS_OF_THE_HUNT_GOLD'),
 	('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_THE_MARSHES_SCIENCE'),
-	('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_FLOODLAN_APPEAL'),
-	('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_GRASSFLOODLAN_APPEAL'),
-	('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_PLAINFLOODLAN_APPEAL'),
+	-- ('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_FLOODLAN_APPEAL'),
+	-- ('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_GRASSFLOODLAN_APPEAL'),
+	-- ('BELIEF_LADY_OF_THE_REEDS_AND_MARSHES',	'LADY_OF_PLAINFLOODLAN_APPEAL'),
 	('BELIEF_GODDESS_OF_THE_HARVEST',		'GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD'),
 	('BELIEF_GODDESS_OF_THE_HARVEST',		'GODDESS_OF_THE_HARVEST_FARM_RESOURCE_PRODUCTION'),
 	-- ('BELIEF_GODDESS_OF_THE_HARVEST',		'GODDESS_OF_THE_HARVEST_FARM_GOLD'),
@@ -460,12 +460,12 @@ values
 	-- ('GODDESS_OF_THE_HUNT_GOLD_MODIFIER',							'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_CAMP_REQUIREMENTS'),
 	('LADY_OF_THE_MARSHES_SCIENCE',									'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('LADY_OF_THE_MARSHES_SCIENCE_MODIFIER',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_HAS_MARSH_REQUIREMENTS'),
-	('LADY_OF_FLOODLAN_APPEAL',										'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
-	('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
-	('LADY_OF_GRASSFLOODLAN_APPEAL',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
-	('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
-	('LADY_OF_PLAINFLOODLAN_APPEAL',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
-	('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
+	-- ('LADY_OF_FLOODLAN_APPEAL',										'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	-- ('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
+	-- ('LADY_OF_GRASSFLOODLAN_APPEAL',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	-- ('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
+	-- ('LADY_OF_PLAINFLOODLAN_APPEAL',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
+	-- ('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',		NULL),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD',					'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD_MODIFIER',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'HD_PLOT_HAS_FARM_RESOURCE_REQUIREMENTS'),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_PRODUCTION',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
@@ -849,15 +849,15 @@ values
 	('LADY_OF_THE_MARSHES_SCIENCE',									'ModifierId',			'LADY_OF_THE_MARSHES_SCIENCE_MODIFIER'),
 	('LADY_OF_THE_MARSHES_SCIENCE_MODIFIER',						'YieldType',			'YIELD_SCIENCE'),
 	('LADY_OF_THE_MARSHES_SCIENCE_MODIFIER',						'Amount',				1),
-	('LADY_OF_FLOODLAN_APPEAL',										'ModifierId',			'LADY_OF_FLOODLAN_APPEAL_MODIFIER'),
-	('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'FeatureType',			'FEATURE_FLOODPLAINS'),
-	('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'Amount',				1),
-	('LADY_OF_GRASSFLOODLAN_APPEAL',								'ModifierId',			'LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER'),
-	('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'FeatureType',			'FEATURE_FLOODPLAINS_GRASSLAND'),
-	('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'Amount',				1),
-	('LADY_OF_PLAINFLOODLAN_APPEAL',								'ModifierId',			'LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER'),
-	('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'FeatureType',			'FEATURE_FLOODPLAINS_PLAINS'),
-	('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'Amount',				1),
+	-- ('LADY_OF_FLOODLAN_APPEAL',										'ModifierId',			'LADY_OF_FLOODLAN_APPEAL_MODIFIER'),
+	-- ('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'FeatureType',			'FEATURE_FLOODPLAINS'),
+	-- ('LADY_OF_FLOODLAN_APPEAL_MODIFIER',							'Amount',				1),
+	-- ('LADY_OF_GRASSFLOODLAN_APPEAL',								'ModifierId',			'LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER'),
+	-- ('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'FeatureType',			'FEATURE_FLOODPLAINS_GRASSLAND'),
+	-- ('LADY_OF_GRASSFLOODLAN_APPEAL_MODIFIER',						'Amount',				1),
+	-- ('LADY_OF_PLAINFLOODLAN_APPEAL',								'ModifierId',			'LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER'),
+	-- ('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'FeatureType',			'FEATURE_FLOODPLAINS_PLAINS'),
+	-- ('LADY_OF_PLAINFLOODLAN_APPEAL_MODIFIER',						'Amount',				1),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD',					'ModifierId',			'GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD_MODIFIER'),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD_MODIFIER',			'YieldType',			'YIELD_FOOD'),
 	('GODDESS_OF_THE_HARVEST_FARM_RESOURCE_FOOD_MODIFIER',			'Amount',				1),
@@ -1733,18 +1733,6 @@ select
 	'BELIEF_ZEN_MEDITATION',			'ZEN_MEDITATION_PRESERVE_PURCHASE_FAITH'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
-insert or replace into BeliefModifiers
-	(BeliefType,						ModifierID)
-select
-	'BELIEF_ZEN_MEDITATION',			'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into BeliefModifiers
-	(BeliefType,						ModifierID)
-select
-	'BELIEF_ZEN_MEDITATION',			'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
 select
@@ -1754,31 +1742,7 @@ where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,											SubjectRequirementSetId)
 select
-	'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'CITY_FOLLOWS_RELIGION_REQUIREMENTS'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-select
-	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'CITY_FOLLOWS_RELIGION_REQUIREMENTS'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-select
 	'ZEN_MEDITATION_PRESERVE_PURCHASE_FAITH_MODIFIER',				'MODIFIER_CITY_ENABLE_BUILDING_FAITH_PURCHASE',			NULL
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-select
-	'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER_MODIFIER',		'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',			NULL
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,											SubjectRequirementSetId)
-select
-	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',			NULL
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
 insert or replace into ModifierArguments
@@ -1790,44 +1754,39 @@ where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_
 insert or replace into ModifierArguments
 	(ModifierId,													Name,					Value)
 select
-	'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER',				'ModifierId',			'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER_MODIFIER'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
-select
-	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER',			'ModifierId',			'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER_MODIFIER'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
-select
 	'ZEN_MEDITATION_PRESERVE_PURCHASE_FAITH_MODIFIER',				'DistrictType',			'DISTRICT_PRESERVE'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
+insert or replace into BeliefModifiers
+	(BeliefType,						ModifierID)
 select
-	'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER_MODIFIER',		'BuildingType',			'BUILDING_GROVE'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
+	'BELIEF_ZEN_MEDITATION',			'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER'
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
+insert or replace into Modifiers
+	(ModifierId,																ModifierType,											SubjectRequirementSetId)
 select
-	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER_MODIFIER',	'BuildingType',			'BUILDING_SANCTUARY'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
+	'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER',					'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',					'CITY_FOLLOWS_RELIGION_REQUIREMENTS'
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
+insert or replace into Modifiers
+	(ModifierId,																ModifierType,											SubjectRequirementSetId)
 select
-	'ZEN_MEDITATION_BUILDING_GROVE_PURCHASE_CHEAPER_MODIFIER',		'Amount',				40
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
+	'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',			NULL
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
 insert or replace into ModifierArguments
-	(ModifierId,													Name,					Value)
+	(ModifierId,																Name,					Value)
 select
-	'ZEN_MEDITATION_BUILDING_SANCTUARY_PURCHASE_CHEAPER_MODIFIER',	'Amount',				40
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
+	'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER',					'ModifierId',			'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER'
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
+insert or replace into ModifierArguments
+	(ModifierId,																Name,					Value)
+select
+	'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'BuildingType',			BuildingType
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
+insert or replace into ModifierArguments
+	(ModifierId,																Name,					Value)
+select
+	'ZEN_MEDITATION_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				40
+from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE';
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId, 									RequirementId)
