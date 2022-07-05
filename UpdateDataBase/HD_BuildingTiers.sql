@@ -20,6 +20,21 @@ update HD_BuildingTiers set Tier = 4 where BuildingType in (select Building from
 -- Worship buildings moves to Tier 4 with District Expansion enabled.
 update HD_BuildingTiers set Tier = 4 where BuildingType in (select BuildingType from Buildings where EnabledByReligion = 1) and exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and Tier = 3 and BuildingType not in (select BuildingType from Buildings where EnabledByReligion = 1));
 
+create table if not exists HD_DistrictPseudoYields (
+    DistrictType text not null primary key,
+    YieldType text not null
+);
+insert or replace into HD_DistrictPseudoYields
+    (DistrictType,                  YieldType)
+values
+    ('DISTRICT_HARBOR',             'YIELD_FOOD'),
+    ('DISTRICT_ENCAMPMENT',         'YIELD_PRODUCTION'),
+    ('DISTRICT_INDUSTRIAL_ZONE',    'YIELD_PRODUCTION'),
+    ('DISTRICT_CAMPUS',             'YIELD_SCIENCE'),
+    ('DISTRICT_THEATER',            'YIELD_CULTURE'),
+    ('DISTRICT_COMMERCIAL_HUB',     'YIELD_GOLD'),
+    ('DISTRICT_HOLY_SITE',          'YIELD_FAITH');
+
 -- Reqs
 insert or ignore into RequirementSets
     (RequirementSetId,                                                                          RequirementSetType)
@@ -158,7 +173,7 @@ update HD_CityStateBuffedObjects set
     SubjectRequirementSetId = 'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
 where IsYieldChange = 0;
 -- TraitModifiers
-insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType,  AttachId from HD_CityStateBuffedObjects;
+insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType, AttachId from HD_CityStateBuffedObjects;
 insert or replace into Modifiers
     (ModifierId,    ModifierType,                           SubjectRequirementSetId)
 select

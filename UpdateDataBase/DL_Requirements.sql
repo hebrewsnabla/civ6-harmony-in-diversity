@@ -158,7 +158,7 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'REQUIRES_OPPONENT_LESSTHAN_' || EraType, 'REQUIREMENT_OPPONENT_ERA_AT_LEAST', 1 from Eras;
 
---Game Eras
+-- Game Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_ERA_IS_' || EraType, 'EraType', EraType from Eras;
 insert or ignore into Requirements (RequirementId, RequirementType)
@@ -176,7 +176,7 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features where NaturalWonder = 0;
 
---civlization
+-- civlization
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'PLAYER_IS_' || CivilizationType, 'CivilizationType'	, CivilizationType from Civilizations;
 insert or ignore into Requirements (RequirementId, RequirementType)
@@ -288,7 +288,8 @@ values
 	('HD_PLOT_HAS_RESOURCE_FARM',       			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('HD_PLOT_HAS_RESOURCE_MINE',       			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
 	('HD_PLOT_HAS_RESOURCE_LUMBER_MILL',       		'REQUIREMENT_REQUIREMENTSET_IS_MET'),
-	('HD_PLOT_HAS_RESOURCE_CAMP',       			'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	('HD_PLOT_HAS_RESOURCE_CAMP',       			'REQUIREMENT_REQUIREMENTSET_IS_MET'),
+	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS',	'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
 insert or ignore into RequirementArguments
 	(RequirementId,									Name,				Value)
@@ -360,7 +361,8 @@ values
 	('HD_PLOT_HAS_RESOURCE_FARM',       			'RequirementSetId',	'HD_PLOT_HAS_RESOURCE_FARM_REQUIREMENTS'),
 	('HD_PLOT_HAS_RESOURCE_MINE',       			'RequirementSetId',	'HD_PLOT_HAS_RESOURCE_MINE_REQUIREMENTS'),
 	('HD_PLOT_HAS_RESOURCE_LUMBER_MILL',       		'RequirementSetId',	'HD_PLOT_HAS_RESOURCE_LUMBER_MILL_REQUIREMENTS'),
-	('HD_PLOT_HAS_RESOURCE_CAMP',       			'RequirementSetId',	'HD_PLOT_HAS_RESOURCE_CAMP_REQUIREMENTS');
+	('HD_PLOT_HAS_RESOURCE_CAMP',       			'RequirementSetId',	'HD_PLOT_HAS_RESOURCE_CAMP_REQUIREMENTS'),
+	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS',	'RequirementSetId',	'PLOT_IS_OR_ADJACENT_TO_COAST');
 
 insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
@@ -410,7 +412,9 @@ values
 	('PLOT_IS_IMPROVED_ADJACENT',									'REQUIREMENTSET_TEST_ALL'),
 	('OBJECT_IS_AT_OR_ADJACENT',									'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
-	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIREMENTSET_TEST_ANY');
+	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIREMENTSET_TEST_ANY'),
+    ('PLOT_IS_HILLS',                                               'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_LAKE',										'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
@@ -489,7 +493,9 @@ values
 	('HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIRES_DISTRICT_IS_CITY_CENTER'),
 	('HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIRES_PLOT_ADJACENT_TO_RIVER'),
 	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIRES_UNIT_IS_UNIT_MISSIONARY'),
-	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIRES_UNIT_IS_UNIT_APOSTLE');
+	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIRES_UNIT_IS_UNIT_APOSTLE'),
+    ('PLOT_IS_HILLS',                                               'REQUIRES_PLOT_IS_HILLS'),
+    ('PLOT_ADJACENT_TO_LAKE',                                      	'REQUIRES_PLOT_ADJACENT_TO_LAKE');
 
 insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;
@@ -513,7 +519,7 @@ values
 	('HD_PLOT_HAS_FARM_RESOURCE_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY'),
 	('OFFICIAL_RUN_HANDCRAFT_REQUIREMENT',	'REQUIREMENTSET_TEST_ANY'),
 	('BOOTCAMP_REQUIREMENT',				'REQUIREMENTSET_TEST_ANY'),
-	('KAREZ_REQUIREMENT',					'REQUIREMENTSET_TEST_ANY'),
+	('PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN','REQUIREMENTSET_TEST_ANY'),
 	('FAIR_REQUIREMENT',					'REQUIREMENTSET_TEST_ANY'),
 	('TOTEMS_ADJACENT_REQUIREMENT',			'REQUIREMENTSET_TEST_ANY');
 
@@ -542,8 +548,8 @@ where r.ResourceType = i.ResourceType and (i.ImprovementType = 'IMPROVEMENT_PAST
 insert or ignore into RequirementSetRequirements 
     (RequirementSetId,						RequirementId) 
 values
-	('KAREZ_REQUIREMENT',					'REQUIRES_PLOT_IS_HILLS'),
-	('KAREZ_REQUIREMENT',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
+	('PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN',					'REQUIRES_PLOT_IS_HILLS'),
+	('PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN',					'REQUIRES_PLOT_ADJACENT_TO_MOUNTAIN'),
 	('FAIR_REQUIREMENT',					'REQUIRES_PLOT_ADJACENT_TO_LUXURY'),
 	('FAIR_REQUIREMENT',					'REQUIRES_PLOT_HAS_LUXURY'),
 	('TOTEMS_ADJACENT_REQUIREMENT',			'REQUIRES_PLOT_ADJACENT_FOREST_ROOSEVELT'),
@@ -1500,7 +1506,8 @@ insert or ignore into Requirements
 values
 	('REQUIRES_INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',		'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT'),
 	('REQUIRES_HARBOR_HAS_HIGH_ADJACENCY',				'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT'),
-	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT');
+	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT'),
+	('REQUIRES_THEATER_HAS_HIGH_ADJACENCY',				'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT');
 
 insert or ignore into RequirementArguments
 	(RequirementId,										Name,				Value)
@@ -1508,26 +1515,47 @@ values
 	('REQUIRES_INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',		'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
 	('REQUIRES_HARBOR_HAS_HIGH_ADJACENCY',				'DistrictType',		'DISTRICT_HARBOR'),
 	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'DistrictType',		'DISTRICT_ENCAMPMENT'),
+	('REQUIRES_THEATER_HAS_HIGH_ADJACENCY',				'DistrictType',		'DISTRICT_THEATER'),
 	('REQUIRES_INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',		'YieldType',		'YIELD_PRODUCTION'),
 	('REQUIRES_HARBOR_HAS_HIGH_ADJACENCY',				'YieldType',		'YIELD_GOLD'),
 	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'YieldType',		'YIELD_PRODUCTION'),
+	('REQUIRES_THEATER_HAS_HIGH_ADJACENCY',				'YieldType',		'YIELD_CULTURE'),
 	('REQUIRES_INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',		'Amount',			6),
 	('REQUIRES_HARBOR_HAS_HIGH_ADJACENCY',				'Amount',			6),
-	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'Amount',			6);
+	('REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY',			'Amount',			6),
+	('REQUIRES_THEATER_HAS_HIGH_ADJACENCY',				'Amount',			6);
 
 insert or ignore into RequirementSets
 	(RequirementSetId,									RequirementSetType)
 values
 	('INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',				'REQUIREMENTSET_TEST_ALL'),
 	('HARBOR_HAS_HIGH_ADJACENCY',						'REQUIREMENTSET_TEST_ALL'),
-	('ENCAMPMENT_HAS_HIGH_ADJACENCY',					'REQUIREMENTSET_TEST_ALL');
+	('ENCAMPMENT_HAS_HIGH_ADJACENCY',					'REQUIREMENTSET_TEST_ALL'),
+	('THEATER_HAS_HIGH_ADJACENCY',						'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
 values
 	('INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY',				'REQUIRES_INDUSTRIAL_ZONE_HAS_HIGH_ADJACENCY'),
 	('HARBOR_HAS_HIGH_ADJACENCY',						'REQUIRES_HARBOR_HAS_HIGH_ADJACENCY'),
-	('ENCAMPMENT_HAS_HIGH_ADJACENCY',					'REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY');
+	('ENCAMPMENT_HAS_HIGH_ADJACENCY',					'REQUIRES_ENCAMPMENT_HAS_HIGH_ADJACENCY'),
+	('THEATER_HAS_HIGH_ADJACENCY',						'REQUIRES_THEATER_HAS_HIGH_ADJACENCY');
+
+insert or replace into RequirementSets
+	(RequirementSetId,												RequirementSetType)
+select
+	'DISTRICT_IS_' || DistrictType || '_AND_HAS_HIGH_ADJACENCY',	'REQUIREMENTSET_TEST_ALL'
+from HD_DistrictPseudoYields;
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+	'DISTRICT_IS_' || DistrictType || '_AND_HAS_HIGH_ADJACENCY',	'REQUIRES_' || substr(DistrictType, 10) || '_HAS_HIGH_ADJACENCY'
+from HD_DistrictPseudoYields;
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+	'DISTRICT_IS_' || DistrictType || '_AND_HAS_HIGH_ADJACENCY',	'REQUIRES_DISTRICT_IS_' || DistrictType
+from HD_DistrictPseudoYields;
 
 -- 相邻的区域Req
 insert or ignore into RequirementSets
