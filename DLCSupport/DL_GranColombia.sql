@@ -127,9 +127,18 @@ values
 --Caguana
 update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HUMANISM' where ID = 'Batey_EntertainmentComplexAdjacency' or ID = 'Batey_BonusResourceAdjacency';
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HUMANISM' where ID = 'Batey_LateEntertainmentComplexAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
-update Adjacency_YieldChanges set AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS'
-    where ID = 'Batey_BonusResourceAdjacency' or ID = 'Batey_LateBonusResourceAdjacency';
-update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_BATEY';
+--update Adjacency_YieldChanges set AdjacentResource = 1, AdjacentResourceClass = 'NO_RESOURCECLASS' where ID = 'Batey_BonusResourceAdjacency' or ID = 'Batey_LateBonusResourceAdjacency'
+insert or replace into Improvement_Adjacencies 
+    (ImprovementType,     YieldChangeId) 
+values 
+    ('IMPROVEMENT_BATEY','Batey_LuxuryResourceAdjacency'),
+    ('IMPROVEMENT_BATEY','Batey_LateLuxuryResourceAdjacency'),
+    ('IMPROVEMENT_BATEY','Batey_NeighborhoodAdjacency'),
+    ('IMPROVEMENT_BATEY','Batey_LateNeighborhoodAdjacency'),
+    ('IMPROVEMENT_BATEY','Batey_MbanzaAdjacency'),
+    ('IMPROVEMENT_BATEY','Batey_LateMbanzaAdjacency');
+
+--update Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_BATEY';'Batey_ResourceAdjacency')
 -- insert or ignore into Improvement_Adjacencies
 --     (ImprovementType,               YieldChangeId)
 -- values
@@ -137,13 +146,19 @@ update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMP
 --     ('IMPROVEMENT_BATEY',           'Batey_LateLUXURYResourceAdjacency'),
 --     ('IMPROVEMENT_BATEY',           'Batey_STRATEGICResourceAdjacency'),
 --     ('IMPROVEMENT_BATEY',           'Batey_LateSTRATEGICResourceAdjacency');
--- insert or ignore into Adjacency_YieldChanges
---     (ID,                                    Description,    YieldType,              YieldChange,    TilesRequired,  PrereqCivic,            ObsoleteCivic,          AdjacentResourceClass)
--- values
---     ('Batey_LUXURYResourceAdjacency',       'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_LUXURY'),
---     ('Batey_LateLUXURYResourceAdjacency',   'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_LUXURY'),
---     ('Batey_STRATEGICResourceAdjacency',    'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_EXPLORATION',    'RESOURCECLASS_STRATEGIC'),
---     ('Batey_LateSTRATEGICResourceAdjacency','Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_EXPLORATION',    NULL,                   'RESOURCECLASS_STRATEGIC');
+insert or ignore into Adjacency_YieldChanges
+    (ID,                                    Description,    YieldType,              YieldChange,    TilesRequired,  PrereqCivic,            ObsoleteCivic,          AdjacentResourceClass)
+values
+    ('Batey_LuxuryResourceAdjacency',       'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_HUMANISM',    'RESOURCECLASS_LUXURY'),
+    ('Batey_LateLuxuryResourceAdjacency',   'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_HUMANISM',    NULL,                   'RESOURCECLASS_LUXURY');
+insert or ignore into Adjacency_YieldChanges
+    (ID,                                    Description,    YieldType,              YieldChange,    TilesRequired,  PrereqCivic,            ObsoleteCivic,          AdjacentDistrict)
+values
+    ('Batey_NeighborhoodAdjacency',         'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_HUMANISM',    'DISTRICT_NEIGHBORHOOD'),
+    ('Batey_LateNeighborhoodAdjacency',     'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_HUMANISM',    NULL,                   'DISTRICT_NEIGHBORHOOD'),
+    ('Batey_MbanzaAdjacency',         'Placeholder', 'YIELD_CULTURE',         1,              1,              NULL,                   'CIVIC_HUMANISM',    'DISTRICT_MBANZA'),
+    ('Batey_LateMbanzaAdjacency',     'Placeholder', 'YIELD_CULTURE',         2,              1,              'CIVIC_HUMANISM',    NULL,                   'DISTRICT_MBANZA');
+
 
 
 -- Singapore

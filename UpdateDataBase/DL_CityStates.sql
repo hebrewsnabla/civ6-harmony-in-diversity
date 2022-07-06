@@ -43,11 +43,11 @@ update GlobalParameters set Value = 10 where Name = 'YIELD_MODIFIER_PER_EARNED_G
 
 ---------------------------------------------------------------------------------------------------------
 -- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
-delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
+--delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
 update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = 'IMPROVEMENT_MOAI';
-insert or replace into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
-	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
-
+--insert or replace into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
+--	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
+update Improvement_YieldChanges set ImprovementType = IMPROVEMENT_MOAI WHERE YieldChange = 2
 update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Moai_FirstBonusAdjacency';
 update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Moai_SecondBonusAdjacency';
 
