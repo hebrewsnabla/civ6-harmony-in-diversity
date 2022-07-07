@@ -1,88 +1,499 @@
--------------------------------------
---      Policies Adjustments       --
--------------------------------------
-
--- Golden Age 
--- 雄伟壮丽移除信仰购买，打折变为20%
+-- Golden Age Commemorations
+-- Era Adjustment
+update CommemorationTypes set MaximumGameEra = 'ERA_INDUSTRIAL' where CommemorationType = 'COMMEMORATION_EXPLORATION' or CommemorationType = 'COMMEMORATION_ECONOMIC';
+update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
+update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_TOURISM' or CommemorationType = 'COMMEMORATION_ESPIONAGE' or CommemorationType = 'COMMEMORATION_MILITARY';
+-- Free Inquiry
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_HARBOR';
+create temporary table FreeInquiryBuffedObjects (ObjectType text not null primary key);
+insert or replace into FreeInquiryBuffedObjects (ObjectType) select BuildingType from HD_BuildingTiers;
+insert or replace into FreeInquiryBuffedObjects (ObjectType) select DistrictType from Districts where DistrictType != 'DISTRICT_WONDER';
+insert or replace into RequirementSets
+    (RequirementSetId,                             RequirementSetType)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIREMENTSET_TEST_ALL'
+from FreeInquiryBuffedObjects;
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                             RequirementId)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_' || ObjectType
+from FreeInquiryBuffedObjects;
+insert or replace into RequirementSetRequirements
+    (RequirementSetId,                             RequirementId)
+select
+    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_GOLDEN_AGE'
+from FreeInquiryBuffedObjects;
+insert or replace into CommemorationModifiers
+    (CommemorationType,         ModifierId)
+select
+    'COMMEMORATION_SCIENTIFIC', 'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE'
+from FreeInquiryBuffedObjects;
+insert or replace into Modifiers
+    (ModifierId,                                              ModifierType,                                               OwnerRequirementSetId)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_YIELD_CHANGE',    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType
+from FreeInquiryBuffedObjects;
+insert or replace into ModifierArguments
+    (ModifierId,                                              Name,           Value)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'YieldType',    'YIELD_SCIENCE'
+from FreeInquiryBuffedObjects;
+insert or replace into ModifierArguments
+    (ModifierId,                                              Name,           Value)
+select
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'Amount',       1
+from FreeInquiryBuffedObjects;
+-- Pen, Brush, and Voice
+update ModifierArguments set Value = 2 where ModifierId = 'COMMEMORATION_CULTURAL_DISTRICTCULTURE' and Name = 'Amount';
+-- Monumentality
 delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE' and ModifierId = 'COMMEMORATION_INFRASTRUCTURE_GA_PURCHASE_CIVILIAN';
-insert or replace into CommemorationModifiers (CommemorationType, ModifierId) values
-	('COMMEMORATION_INFRASTRUCTURE', 'COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD');
 update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_BUILDER_DISCOUNT_MODIFIER' and Name = 'Amount';
 update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_SETTLER_DISCOUNT_MODIFIER' and Name = 'Amount';
--- 百花齐放每个区域2文化
-update ModifierArguments set Value =2 where ModifierId = 'COMMEMORATION_CULTURAL_DISTRICTCULTURE' and Name = 'Amount';
-
+insert or replace into CommemorationModifiers
+	(CommemorationType, 				ModifierId)
+values
+	('COMMEMORATION_INFRASTRUCTURE', 	'COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD');
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,								SubjectRequirementSetId)
+	(ModifierId,												ModifierType,								SubjectRequirementSetId)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',	'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_GOLDEN_AGE_SETTLER');
-
+	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',		'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_GOLDEN_AGE_SETTLER');
 insert or replace into ModifierArguments
-	(ModifierId,											Name,		Value)
+	(ModifierId,												Name,		Value)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',	'Amount',	2);
--- 滚滚蒸汽工业相邻锤转瓶
+	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',		'Amount',	2);
+-- New Commemoration: Enlightened Despotism
+insert or replace into Types
+	(Type,								Kind)
+values
+	('COMMEMORATION_GOVERNMENT',		'KIND_MOMENT_OUTCOME');
+insert or replace into CommemorationTypes
+	(CommemorationType,					CategoryDescription,				GoldenAgeBonusDescription,							NormalAgeBonusDescription,							DarkAgeBonusDescription,							MinimumGameEra,			MaximumGameEra)
+values
+	('COMMEMORATION_GOVERNMENT',		'LOC_MOMENT_CATEGORY_GOVERNMENT',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_GOLDEN_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_NORMAL_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_DARK_AGE',	'ERA_RENAISSANCE',		'ERA_INDUSTRIAL');
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_ADD_SLOT'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_BOOST_CULTURE'),
+	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_QUEST');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,													OwnerRequirementSetId,		SubjectRequirementSetId)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',		'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',			'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_GOVERNMENT_QUEST',			'MODIFIER_PLAYER_ADJUST_PLAYER_ERA_SCORE_PER_PRIDE_MOMENT',		null,						'PLAYER_ELIGIBLE_FOR_COMMEMORATION_QUEST');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,					Value)
+values
+	('COMMEMORATION_GOVERNMENT_ADD_SLOT',		'GovernmentSlotType',	'SLOT_WILDCARD'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',	'YieldType',			'YIELD_CULTURE'),
+	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',	'Amount',				5),
+	('COMMEMORATION_GOVERNMENT_QUEST',			'Amount',				1),
+	('COMMEMORATION_GOVERNMENT_QUEST',			'MinScore',				1);
+-- Heartbeat of Steam
 insert or replace into CommemorationModifiers 
 	(CommemorationType,				ModifierId)
 values
 	('COMMEMORATION_INDUSTRIAL',	'COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE');
-
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,														OwnerRequirementSetId,		SubjectRequirementSetId)
 values
-	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',							'PLAYER_HAS_GOLDEN_AGE',	NULL),
-	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	NULL,						'DISTRICT_IS_INDUSTRIAL_ZONE');
-
+	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',							'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	null,						'DISTRICT_IS_INDUSTRIAL_ZONE');
 insert or replace into ModifierArguments
 	(ModifierId,												Name,					Value)
 values
 	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE',				'ModifierId',			'COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE_MODIFIER'),
 	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE_MODIFIER',	'YieldTypeToMirror',	'YIELD_PRODUCTION'),
 	('COMMEMORATION_INUDSTRIAL_GA_INDUSTRIAL_ZONE_MODIFIER',	'YieldTypeToGrant',		'YIELD_SCIENCE');
--- 全民皆兵+30%
+-- To Arms!
 update ModifierArguments set Value = 30 where ModifierId = 'COMMEMORATION_MILITARY_GA_PRODUCTION' and Name = 'Amount';
--- 愿你在此奇观业绩+100%且不需要总督 
+-- Wish You Were Here
 update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_GOLDEN_AGE' where ModifierId = 'COMMEMORATION_TOURISM_GA_WONDERS';
 update ModifierArguments set Value = 200 where ModifierId = 'COMMEMORATION_TOURISM_GA_WONDERS' and Name = 'ScalingFactor';
--- 迟暮勇武驻军+5忠诚
+
+-- Governments
+-- Government Slots
+insert or replace into Government_SlotCounts
+	(GovernmentType,					GovernmentSlotType,		NumSlots)
+values
+	('GOVERNMENT_MONARCHY',				'SLOT_MILITARY',		2),
+	('GOVERNMENT_MONARCHY',				'SLOT_ECONOMIC',		2),
+	('GOVERNMENT_MONARCHY',				'SLOT_DIPLOMATIC',		1),
+	('GOVERNMENT_MONARCHY',				'SLOT_WILDCARD',		1),
+
+	('GOVERNMENT_THEOCRACY',			'SLOT_MILITARY',		2),
+	('GOVERNMENT_THEOCRACY',			'SLOT_ECONOMIC',		1),
+	('GOVERNMENT_THEOCRACY',			'SLOT_DIPLOMATIC',		1),
+	('GOVERNMENT_THEOCRACY',			'SLOT_WILDCARD',		2),
+
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_MILITARY',		1),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_ECONOMIC',		2),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_DIPLOMATIC',		1),
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_WILDCARD',		2),
+
+	('GOVERNMENT_FASCISM',				'SLOT_MILITARY',		3),
+	('GOVERNMENT_FASCISM',				'SLOT_ECONOMIC',		2),
+	('GOVERNMENT_FASCISM',				'SLOT_DIPLOMATIC',		1),
+	('GOVERNMENT_FASCISM',				'SLOT_WILDCARD',		2),
+
+	('GOVERNMENT_COMMUNISM',			'SLOT_MILITARY',		2),
+	('GOVERNMENT_COMMUNISM',			'SLOT_ECONOMIC',		3),
+	('GOVERNMENT_COMMUNISM',			'SLOT_DIPLOMATIC',		1),
+	('GOVERNMENT_COMMUNISM',			'SLOT_WILDCARD',		2),
+
+	('GOVERNMENT_DEMOCRACY',			'SLOT_MILITARY',		1),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_ECONOMIC',		3),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',		2),
+	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',		2);
+-- Autocracy
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in
+	(values	('AUTOCRACY_CAPITAL'), ('AUTOCRACY_TIER1'), ('AUTOCRACY_TIER2'), ('AUTOCRACY_TIER3'), ('CONSULATE_TIER1'), ('CHANCERY_TIER2'));
+-- Monarchy
+update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
+delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId in
+	(values	('MONARCHY_WALLS_HOUSING'), ('MONARCHY_CASTLE_HOUSING'), ('MONARCHY_STARFORT_HOUSING'), ('MONARCHY_STARFORT_FAVOR'));
+delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId in
+	(values	('MONARCHY_WALLS_HOUSING'), ('MONARCHY_CASTLE_HOUSING'), ('MONARCHY_STARFORT_HOUSING'), ('MONARCHY_STARFORT_FAVOR'));
+insert or replace into GovernmentModifiers
+	(GovernmentType,						ModifierId)
+values
+	('GOVERNMENT_MONARCHY',					'MONARCHY_CITYGROWTH_BONUS'),
+	('GOVERNMENT_MONARCHY',					'MONARCHY_GOLD_BONUS'),
+	('GOVERNMENT_MONARCHY',					'MONARCHY_UNITPRODUCTION_BONUS');
+insert or replace into PolicyModifiers
+	(PolicyType,							ModifierId)
+values
+	('POLICY_GOV_MONARCHY',					'MONARCHY_CITYGROWTH_BONUS'),
+	('POLICY_GOV_MONARCHY',					'MONARCHY_GOLD_BONUS');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,												SubjectRequirementSetId)
+values
+	('MONARCHY_CITYGROWTH_BONUS',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',				'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
+	('MONARCHY_GOLD_BONUS',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
+	('MONARCHY_UNITPRODUCTION_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER',	'CITY_HAS_GARRISON_UNIT_REQUIERMENT');
+insert or replace into ModifierArguments
+	(ModifierId,							Name,														Value)
+values
+	('MONARCHY_CITYGROWTH_BONUS',			'Amount',													10),
+	('MONARCHY_GOLD_BONUS',					'YieldType',												'YIELD_GOLD'),
+	('MONARCHY_GOLD_BONUS',					'Amount',													10),
+	('MONARCHY_UNITPRODUCTION_BONUS',		'Amount',													20);
+-- Theocracy
+update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
+update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
+insert or replace into GovernmentModifiers
+	(GovernmentType,			ModifierID)
+values
+	('GOVERNMENT_THEOCRACY',	'THEOCRACY_HOLY_SITE_PURCHASE_MILITARY');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,											SubjectRequirementSetId)
+values
+	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	'CITY_HAS_HOLY_SITE');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,	Value)
+values
+	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'Tag',	'CLASS_LAND_COMBAT');
+insert or replace into Policy_GovernmentExclusives_XP2
+	(PolicyType,					GovernmentType)
+values
+	('POLICY_SIMULTANEUM',			'GOVERNMENT_THEOCRACY');
+-- Merchant Republic
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_DISTRICTS' and Name = 'Amount';
+update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_GOLD_MODIFIER' and Name = 'Amount';
+insert or replace into GovernmentModifiers
+	(GovernmentType,					ModifierId)
+values
+	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierID)
+values
+	('POLICY_GOV_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_DISTRICTS');
+-- Democracy
+update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId in
+	(select ModifierId from GovernmentModifiers where GovernmentType = 'GOVERNMENT_DEMOCRACY');
+insert or replace into GovernmentModifiers
+	(GovernmentType,								ModifierId)
+values
+	('GOVERNMENT_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
+insert or replace into PolicyModifiers
+	(PolicyType,									ModifierId)
+values
+	('POLICY_GOV_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'MODIFIER_PLAYER_CITIES_ENABLE_DISTRICT_PURCHASE');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,											Value)
+values
+	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'CanPurchase',									1);
+update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
+-- Communism
+update ModifierArguments set Value = 1 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
+update Modifiers set SubjectRequirementSetId = null where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE';
+update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
+
+-- Policy Cards
+-- New Policy Cards
+insert or replace into Types
+	(Type,									Kind)
+values
+	('POLICY_FREELANCERS',					'KIND_POLICY'),
+	('POLICY_MARITIME_INFRASTRUCTURE',		'KIND_POLICY'),
+	('POLICY_SEABORNE_SUPPLY',				'KIND_POLICY'),
+	('POLICY_GARRISON_RECLAMATION',			'KIND_POLICY'),
+	('POLICY_PRIMITIVE_COMMUNE',			'KIND_POLICY'),
+	('POLICY_OVERALL_PLANNING',				'KIND_POLICY'),
+	--('POLICY_BARD',							'KIND_POLICY'),
+	--('POLICY_CIVILIZE',						'KIND_POLICY'),
+	('POLICY_DOMESTIC_TRADE',				'KIND_POLICY'),
+	('POLICY_HIGHWAY',						'KIND_POLICY'),
+	('POLICY_SILK_ROAD',					'KIND_POLICY'),
+	('POLICY_WAREHOUSE',					'KIND_POLICY'),
+	('POLICY_SAFETY_BOX',					'KIND_POLICY'),
+	('POLICY_WALL_HOUSING',					'KIND_POLICY'),
+	--('POLICY_ARENA_TICKETS',				'KIND_POLICY'),
+	('POLICY_WRESTING_AND_MANEUVERS',		'KIND_POLICY'),
+	('POLICY_WONDERS_MISLEAD_COUNTRY',		'KIND_POLICY'),
+	('POLICY_CITY_CENTRALIZATION',			'KIND_POLICY'),
+	('POLICY_CONSTRUCTION_CROPS',			'KIND_POLICY'),
+	('POLICY_DRILL',						'KIND_POLICY'),
+	('POLICY_TRIBUTE_TRADE',				'KIND_POLICY'),
+	('POLICY_SELF_DETERMINATION',			'KIND_POLICY'),
+	('POLICY_SOCIAL_STATISTICS',			'KIND_POLICY'),
+	('POLICY_PLUTONOMY',					'KIND_POLICY'),
+	('POLICY_PHILOSOPHY_EDUCATION',			'KIND_POLICY'),
+	('POLICY_PURITAN',						'KIND_POLICY'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',		'KIND_POLICY'),
+	('POLICY_SISHU',						'KIND_POLICY'),
+	('POLICY_COMPILE',						'KIND_POLICY'),
+	('POLICY_SUPPLY_LINES',					'KIND_POLICY'),
+	('POLICY_SCHOLAR_BUREAUCRAT',			'KIND_POLICY'),
+	('POLICY_NEW_ROUTE',					'KIND_POLICY'),
+	('POLICY_WATER_TRANSPORT',				'KIND_POLICY'),
+	('POLICY_TEXTBOOK',						'KIND_POLICY'),
+	('POLICY_SUPERPOWER',					'KIND_POLICY'),
+	('POLICY_DEEP_WATER_PORT',				'KIND_POLICY'), 
+	('POLICY_GREEN_CITY',					'KIND_POLICY'),
+	('POLICY_TRAVEL_BLOGGER', 				'KIND_POLICY'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',	'KIND_POLICY'),
+	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'KIND_POLICY'),
+	('POLICY_FORTIFICATIONS',				'KIND_POLICY'),
+	('POLICY_INTERNATIONALISM',				'KIND_POLICY'),
+	('POLICY_SOCIAL_DARWINISM',				'KIND_POLICY'),
+	('POLICY_WELL_FIELD',					'KIND_POLICY'),
+	('POLICY_HD_FIVE_YEAR_PLAN',			'KIND_POLICY'),
+	('POLICY_HOUSEHOOD_REGISTRATION',		'KIND_POLICY'),
+	('POLICY_HAJJ',							'KIND_POLICY'),
+	('POLICY_MARTIAL_ELECTION',				'KIND_POLICY'),
+	('POLICY_GLADIATORIAL_GAME',			'KIND_POLICY');
+insert or replace into Policies
+	(PolicyType,							Name,											Description,											PrereqCivic,								PrereqTech,					GovernmentSlotType)
+values	
+	('POLICY_FREELANCERS',					'LOC_POLICY_FREELANCERS_NAME',					'LOC_POLICY_FREELANCERS_DESCRIPTION',					'CIVIC_MERCENARIES',						null,						'SLOT_MILITARY'),
+	('POLICY_MARITIME_INFRASTRUCTURE',		'LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME',		'LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION',		'CIVIC_NAVAL_TRADITION',					null,						'SLOT_ECONOMIC'),
+	('POLICY_SEABORNE_SUPPLY',				'LOC_POLICY_SEABORNE_SUPPLY_NAME',				'LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION',				'CIVIC_EXPLORATION',						null,						'SLOT_ECONOMIC'),
+	('POLICY_GARRISON_RECLAMATION',			'LOC_POLICY_GARRISON_RECLAMATION_NAME',			'LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION',			'CIVIC_FEUDALISM',							null,						'SLOT_MILITARY'),
+	('POLICY_PRIMITIVE_COMMUNE',			'LOC_POLICY_PRIMITIVE_COMMUNE_NAME',			'LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION',				'CIVIC_CODE_OF_LAWS',						null,						'SLOT_ECONOMIC'),
+	('POLICY_OVERALL_PLANNING',				'LOC_POLICY_OVERALL_PLANNING_NAME',				'LOC_POLICY_OVERALL_PLANNING_DESCRIPTION',				'CIVIC_URBANIZATION',						null,						'SLOT_ECONOMIC'),												
+	--('POLICY_BARD',							'LOC_POLICY_BARD_NAME',							'LOC_POLICY_BARD_DESCRIPTION',							'CIVIC_DRAMA_POETRY',						null,						'SLOT_DIPLOMATIC'),
+	--('POLICY_CIVILIZE',						'LOC_POLICY_CIVILIZE_NAME',						'LOC_POLICY_CIVILIZE_DESCRIPTION',						'CIVIC_GAMES_RECREATION',					null,						'SLOT_DIPLOMATIC'),
+	('POLICY_DOMESTIC_TRADE',				'LOC_POLICY_DOMESTIC_TRADE_NAME',				'LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION',				'CIVIC_DEFENSIVE_TACTICS',					null,						'SLOT_ECONOMIC'),
+	('POLICY_HIGHWAY',						'LOC_POLICY_HIGHWAY_NAME',						'LOC_POLICY_HIGHWAY_DESCRIPTION',						'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,						'SLOT_ECONOMIC'),
+	('POLICY_SILK_ROAD',					'LOC_POLICY_SILK_ROAD_NAME',					'LOC_POLICY_SILK_ROAD_DESCRIPTION',						'CIVIC_MEDIEVAL_FAIRES',					null,						'SLOT_ECONOMIC'),
+	('POLICY_WAREHOUSE',					'LOC_POLICY_WAREHOUSE_NAME',					'LOC_POLICY_WAREHOUSE_DESCRIPTION',						'CIVIC_STATE_WORKFORCE',					null,						'SLOT_ECONOMIC'),
+	('POLICY_SAFETY_BOX',					'LOC_POLICY_SAFETY_BOX_NAME',					'LOC_POLICY_SAFETY_BOX_DESCRIPTION',					'CIVIC_EXPLORATION',						null,						'SLOT_ECONOMIC'),
+	('POLICY_WALL_HOUSING',					'LOC_POLICY_WALL_HOUSING_NAME',					'LOC_POLICY_WALL_HOUSING_DESCRIPTION',					'CIVIC_DIVINE_RIGHT',						null,						'SLOT_MILITARY'),
+	--('POLICY_ARENA_TICKETS',				'LOC_POLICY_ARENA_TICKETS_NAME',				'LOC_POLICY_ARENA_TICKETS_DESCRIPTION',					'CIVIC_GAMES_RECREATION',					null,						'SLOT_ECONOMIC'),
+	('POLICY_WRESTING_AND_MANEUVERS',		'LOC_POLICY_WRESTING_AND_MANEUVERS_NAME',		'LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION',		'CIVIC_MERCENARIES',						null,						'SLOT_MILITARY'),
+	('POLICY_WONDERS_MISLEAD_COUNTRY',		'LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME',		'LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION',		null,										null,						'SLOT_WILDCARD'),
+	('POLICY_CITY_CENTRALIZATION',			'LOC_POLICY_CITY_CENTRALIZATION_NAME',			'LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION',			'CIVIC_URBANIZATION',						null,						'SLOT_ECONOMIC'),
+	('POLICY_CONSTRUCTION_CROPS',			'LOC_POLICY_CONSTRUCTION_CROPS_NAME',			'LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION',			'CIVIC_URBANIZATION',						null,						'SLOT_MILITARY'),
+	('POLICY_DRILL',						'LOC_POLICY_DRILL_NAME',						'LOC_POLICY_DRILL_DESCRIPTION',							'CIVIC_MILITARY_TRAINING',					null,						'SLOT_MILITARY'),
+	('POLICY_TRIBUTE_TRADE',				'LOC_POLICY_TRIBUTE_TRADE_NAME',				'LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION',					'CIVIC_RECORDED_HISTORY',					null,						'SLOT_DIPLOMATIC'),
+	('POLICY_SELF_DETERMINATION',			'LOC_POLICY_SELF_DETERMINATION_NAME',			'LOC_POLICY_SELF_DETERMINATION_DESCRIPTION',			'CIVIC_NATIONALISM',						null,						'SLOT_DIPLOMATIC'),
+	('POLICY_SOCIAL_STATISTICS',			'LOC_POLICY_SOCIAL_STATISTICS_NAME',			'LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION',				'CIVIC_SOCIAL_SCIENCE_HD',					null,						'SLOT_ECONOMIC'),
+	('POLICY_PLUTONOMY',					'LOC_POLICY_PLUTONOMY_NAME',					'LOC_POLICY_PLUTONOMY_DESCRIPTION',						'CIVIC_SOCIAL_SCIENCE_HD',					null,						'SLOT_ECONOMIC'),
+	('POLICY_PHILOSOPHY_EDUCATION',			'LOC_POLICY_PHILOSOPHY_EDUCATION_NAME',			'LOC_POLICY_PHILOSOPHY_EDUCATION_DESCRIPTION',			'CIVIC_HISTORICAL_PHILOSOPHY_HD',			null,						'SLOT_WILDCARD'),
+	('POLICY_PURITAN',						'LOC_POLICY_PURITAN_NAME',						'LOC_POLICY_PURITAN_DESCRIPTION',						'CIVIC_ETHICS_HD',							null,						'SLOT_ECONOMIC'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',		'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',		'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',		'CIVIC_EVOLUTION_THEORY_HD',				null,						'SLOT_DIPLOMATIC'),
+	('POLICY_SISHU',						'LOC_POLICY_SISHU_NAME',						'LOC_POLICY_SISHU_DESCRIPTION',							'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,						'SLOT_ECONOMIC'),
+	('POLICY_COMPILE',						'LOC_POLICY_COMPILE_NAME',						'LOC_POLICY_COMPILE_DESCRIPTION',						null,										'TECH_PAPER_MAKING_HD',		'SLOT_GREAT_PERSON'),
+	('POLICY_SUPPLY_LINES',					'LOC_POLICY_SUPPLY_LINES_NAME',					'LOC_POLICY_SUPPLY_LINES_DESCRIPTION',					null,										'TECH_MILITARY_TACTICS',	'SLOT_MILITARY'),
+	('POLICY_SCHOLAR_BUREAUCRAT',			'LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME',			'LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION',			'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,						'SLOT_GREAT_PERSON'),
+	('POLICY_NEW_ROUTE',					'LOC_POLICY_NEW_ROUTE_NAME',					'LOC_POLICY_NEW_ROUTE_DESCRIPTION',						'CIVIC_MERCANTILISM',						Null,						'SLOT_ECONOMIC'),
+	('POLICY_WATER_TRANSPORT',				'LOC_POLICY_WATER_TRANSPORT_NAME',				'LOC_POLICY_WATER_TRANSPORT_DESCRIPTION',				'CIVIC_MERCANTILISM',						null,						'SLOT_ECONOMIC'),
+	('POLICY_TEXTBOOK',						'LOC_POLICY_TEXTBOOK_NAME',						'LOC_POLICY_TEXTBOOK_DESCRIPTION',						null,										'TECH_PRINTING',			'SLOT_GREAT_PERSON'),
+	('POLICY_SUPERPOWER',					'LOC_POLICY_SUPERPOWER_NAME',					'LOC_POLICY_SUPERPOWER_DESCRIPTION',					'CIVIC_COLD_WAR',							null,						'SLOT_DIPLOMATIC'),
+	('POLICY_DEEP_WATER_PORT',				'LOC_POLICY_DEEP_WATER_PORT_NAME',				'LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION',				'CIVIC_URBANIZATION',						null,						'SLOT_ECONOMIC'), 
+	('POLICY_GREEN_CITY',					'LOC_POLICY_GREEN_CITY_NAME',					'LOC_POLICY_GREEN_CITY_DESCRIPTION',					'CIVIC_ENVIRONMENTALISM',					null,						'SLOT_ECONOMIC'),
+	('POLICY_TRAVEL_BLOGGER', 				'LOC_POLICY_TRAVEL_BLOGGER_NAME', 				'LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION', 				'CIVIC_SOCIAL_MEDIA', 						null,						'SLOT_ECONOMIC'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',	'LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME',	'LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION',	'CIVIC_URBANIZATION',						null,						'SLOT_ECONOMIC'),
+	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME',	'LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION',	'CIVIC_MILITARY_TRAINING',					null,			    		'SLOT_MILITARY'),
+	('POLICY_FORTIFICATIONS',				'LOC_POLICY_FORTIFICATIONS_NAME',				'LOC_POLICY_FORTIFICATIONS_DESCRIPTION',				null,										'TECH_ENGINEERING',			'SLOT_MILITARY'),
+	('POLICY_INTERNATIONALISM',				'LOC_POLICY_INTERNATIONALISM_NAME',				'LOC_POLICY_INTERNATIONALISM_DESCRIPTION',				'CIVIC_CLASS_STRUGGLE',						null,			    		'SLOT_DIPLOMATIC'),
+	('POLICY_SOCIAL_DARWINISM',				'LOC_POLICY_SOCIAL_DARWINISM_NAME',				'LOC_POLICY_SOCIAL_DARWINISM_DESCRIPTION',				'CIVIC_EVOLUTION_THEORY_HD',				null,			    		'SLOT_MILITARY'),
+	('POLICY_WELL_FIELD',					'LOC_POLICY_WELL_FIELD_NAME',					'LOC_POLICY_WELL_FIELD_DESCRIPTION',					null,										'TECH_CALENDAR_HD',    		'SLOT_ECONOMIC'),
+	('POLICY_HD_FIVE_YEAR_PLAN',			'LOC_POLICY_HD_FIVE_YEAR_PLAN_NAME',			'LOC_POLICY_HD_FIVE_YEAR_PLAN_DESCRIPTION',				'CIVIC_CLASS_STRUGGLE',						null,			    		'SLOT_ECONOMIC'),
+	('POLICY_HOUSEHOOD_REGISTRATION',		'LOC_POLICY_HOUSEHOOD_REGISTRATION_NAME',		'LOC_POLICY_HOUSEHOOD_REGISTRATION_DESCRIPTION',		'CIVIC_CIVIL_SERVICE',						null,			    		'SLOT_ECONOMIC'),
+	('POLICY_HAJJ',							'LOC_POLICY_HAJJ_NAME',							'LOC_POLICY_HAJJ_DESCRIPTION',							'CIVIC_POLITICAL_PHILOSOPHY',				null,			    		'SLOT_DIPLOMATIC'),
+	('POLICY_MARTIAL_ELECTION',				'LOC_POLICY_MARTIAL_ELECTION_NAME',				'LOC_POLICY_MARTIAL_ELECTION_DESCRIPTION',				'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,			    		'SLOT_GREAT_PERSON'),
+	('POLICY_GLADIATORIAL_GAME',			'LOC_POLICY_GLADIATORIAL_GAME_NAME',			'LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION',				'CIVIC_GAMES_RECREATION',					null,			    		'SLOT_MILITARY');
+
+-- Obsolete Policies
+delete from ObsoletePolicies where ObsoletePolicy is null or PolicyType in
+	(values	('POLICY_URBAN_PLANNING'), ('POLICY_RETAINERS'), ('POLICY_CARAVANSARIES'), ('POLICY_MILITARY_RESEARCH'), ('POLICY_REVELATION'));
+update ObsoletePolicies set RequiresAvailableGreatPersonClass = null;
+insert or replace into ObsoletePolicies
+	(PolicyType,							ObsoletePolicy)
+values
+	('POLICY_MARITIME_INFRASTRUCTURE', 		'POLICY_SEABORNE_SUPPLY'),
+	('POLICY_CHARISMATIC_LEADER',			'POLICY_DIPLOMATIC_LEAGUE'),
+	('POLICY_DIPLOMATIC_LEAGUE',			'POLICY_GUNBOAT_DIPLOMACY'),
+	('POLICY_DOMESTIC_TRADE',				'POLICY_HIGHWAY'),
+	('POLICY_DOMESTIC_TRADE',				'POLICY_COLLECTIVIZATION'),
+	('POLICY_HIGHWAY',						'POLICY_COLLECTIVIZATION'),
+	('POLICY_DOMESTIC_TRADE',				'POLICY_WATER_TRANSPORT'),
+	('POLICY_HIGHWAY',						'POLICY_WATER_TRANSPORT'),
+	('POLICY_TRADE_CONFEDERATION',			'POLICY_SILK_ROAD'),
+	('POLICY_TRADE_CONFEDERATION',			'POLICY_MARKET_ECONOMY'),
+	('POLICY_SILK_ROAD',					'POLICY_MARKET_ECONOMY'),
+	('POLICY_TRADE_CONFEDERATION',			'POLICY_NEW_ROUTE'),
+	('POLICY_SILK_ROAD',					'POLICY_NEW_ROUTE'),
+	('POLICY_WAREHOUSE',					'POLICY_SAFETY_BOX'),
+	('POLICY_PRIMITIVE_COMMUNE',			'POLICY_WELL_FIELD'),
+	('POLICY_URBAN_PLANNING',				'POLICY_WELL_FIELD'),
+	('POLICY_PRIMITIVE_COMMUNE',			'POLICY_CITY_CENTRALIZATION'),
+	('POLICY_URBAN_PLANNING',				'POLICY_CITY_CENTRALIZATION'),
+	('POLICY_WELL_FIELD',					'POLICY_CITY_CENTRALIZATION'),
+	--('POLICY_BARD',							'POLICY_CITY_CENTRALIZATION'),
+	--('POLICY_CIVILIZE',						'POLICY_CITY_CENTRALIZATION'),
+	('POLICY_CARAVANSARIES',				'POLICY_CITY_CENTRALIZATION'),
+	('POLICY_GARRISON_RECLAMATION',			'POLICY_CONSTRUCTION_CROPS'),
+	('POLICY_WALL_HOUSING',					'POLICY_CONSTRUCTION_CROPS'),
+	('POLICY_DRILL',						'POLICY_AFTER_ACTION_REPORTS'),
+	('POLICY_RETAINERS',					'POLICY_FREELANCERS'),
+	('POLICY_SISHU',						'POLICY_SOCIAL_STATISTICS'),
+	('POLICY_LOGISTICS',					'POLICY_SUPPLY_LINES'),
+	('POLICY_VETERANCY',					'POLICY_SUPPLY_LINES'),
+	('POLICY_FORTIFICATIONS',				'POLICY_BASTIONS'),
+	('POLICY_LIMES',						'POLICY_BASTIONS'),
+	('POLICY_NEW_ROUTE',					'POLICY_MARKET_ECONOMY'),
+	('POLICY_WATER_TRANSPORT',				'POLICY_COLLECTIVIZATION'),
+	('POLICY_TRIBUTE_TRADE',				'POLICY_SELF_DETERMINATION'),
+	('POLICY_OVERALL_PLANNING',				'POLICY_FIVE_YEAR_PLAN'),
+	('POLICY_OVERALL_PLANNING',				'POLICY_SPORTS_MEDIA'),
+	('POLICY_SEABORNE_SUPPLY',				'POLICY_DEEP_WATER_PORT'),
+	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'POLICY_MILITARY_RESEARCH'),
+	('POLICY_HOUSEHOOD_REGISTRATION',		'POLICY_INFRASTRUCTURE_CONSTRUCTION'),
+	('POLICY_HAJJ',							'POLICY_RAJ'),
+	('POLICY_GLADIATORIAL_GAME',			'POLICY_LIBERALISM'),
+	-- Great Person Policies
+	('POLICY_INSPIRATION',					'POLICY_COMPILE'),
+	('POLICY_INSPIRATION',					'POLICY_TEXTBOOK'),
+	('POLICY_COMPILE',						'POLICY_TEXTBOOK'),
+	('POLICY_COMPILE',						'POLICY_NOBEL_PRIZE'),
+	('POLICY_TEXTBOOK',						'POLICY_NOBEL_PRIZE'),
+	('POLICY_LITERARY_TRADITION',			'POLICY_SCHOLAR_BUREAUCRAT'),
+	('POLICY_STRATEGOS',					'POLICY_MARTIAL_ELECTION'),
+	('POLICY_MARTIAL_ELECTION',				'POLICY_MILITARY_ORGANIZATION');
+insert or replace into ObsoletePolicies
+	(PolicyType,							RequiresAvailableGreatPersonClass)
+values
+	('POLICY_REVELATION',					'GREAT_PERSON_CLASS_PROPHET'),
+	('POLICY_INSPIRATION',					'GREAT_PERSON_CLASS_SCIENTIST'),
+	('POLICY_COMPILE',						'GREAT_PERSON_CLASS_SCIENTIST'),
+	('POLICY_TEXTBOOK',						'GREAT_PERSON_CLASS_SCIENTIST'),
+	('POLICY_LITERARY_TRADITION',			'GREAT_PERSON_CLASS_WRITER'),
+	('POLICY_SCHOLAR_BUREAUCRAT',			'GREAT_PERSON_CLASS_WRITER'),
+	('POLICY_FRESCOES',						'GREAT_PERSON_CLASS_ARTIST'),
+	('POLICY_SYMPHONIES',					'GREAT_PERSON_CLASS_MUSICIAN'),
+	('POLICY_STRATEGOS',					'GREAT_PERSON_CLASS_GENERAL'),
+	('POLICY_MARTIAL_ELECTION',				'GREAT_PERSON_CLASS_GENERAL'),
+	('POLICY_MILITARY_ORGANIZATION',		'GREAT_PERSON_CLASS_GENERAL'),
+	('POLICY_TRAVELING_MERCHANTS',			'GREAT_PERSON_CLASS_MERCHANT'),
+	('POLICY_LAISSEZ_FAIRE',				'GREAT_PERSON_CLASS_MERCHANT'),
+	('POLICY_NAVIGATION',					'GREAT_PERSON_CLASS_ADMIRAL'),
+	('POLICY_INVENTION',					'GREAT_PERSON_CLASS_ENGINEER');
+
+-- Policy Prereqs
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_THE_WHEEL'			where PolicyType = 'POLICY_WAREHOUSE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASS_PRODUCTION'		where PolicyType = 'POLICY_SAFETY_BOX';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_INSULAE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_APPRENTICESHIP'		where PolicyType = 'POLICY_MEDINA_QUARTER';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_BUTTRESS'			where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CARTOGRAPHY'			where PolicyType = 'POLICY_TRIANGULAR_TRADE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_FREE_MARKET';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_SANITATION'			where PolicyType = 'POLICY_EXPROPRIATION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_ELECTRICITY'			where PolicyType = 'POLICY_ECONOMIC_UNION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CASTLES'				where PolicyType = 'POLICY_WALL_HOUSING';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_MILITARY_RESEARCH';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_RADIO'				where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBINED_ARMS'		where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_ROCKETRY'			where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_NUCLEAR_FISSION'		where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_RIFLING'				where PolicyType = 'POLICY_DRILL_MANUALS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_WISSELBANKEN';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_SIEGE_TACTICS'		where PolicyType = 'POLICY_BASTIONS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_LIMES';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBUSTION'			where PolicyType = 'POLICY_COLLECTIVIZATION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_WRITING' 			where PolicyType = 'POLICY_INSPIRATION';
+update Policies set PrereqCivic = 'CIVIC_URBANIZATION'				where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
+update Policies set PrereqCivic = 'CIVIC_MOBILIZATION'				where PolicyType = 'POLICY_FORCE_MODERNIZATION';
+update Policies set PrereqCivic = 'CIVIC_CAPITALISM'				where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
+update Policies set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD'			where PolicyType = 'POLICY_GRAND_OPERA';
+update Policies set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD'		where PolicyType = 'POLICY_COLONIAL_OFFICES';
+update Policies set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD'	where PolicyType = 'POLICY_INVENTION';
+update Policies set PrereqCivic = 'CIVIC_ETHICS_HD'					where PolicyType = 'POLICY_NATIONAL_IDENTITY';
+update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD'		where PolicyType = 'POLICY_AESTHETICS';
+update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS'			where PolicyType = 'POLICY_LOGISTICS';
+update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES'			where PolicyType = 'POLICY_TOWN_CHARTERS';
+
+-- Governement Exclusive Policies
+delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
+insert or replace into Policy_GovernmentExclusives_XP2
+	(PolicyType,					GovernmentType)
+values
+	('POLICY_INTERNATIONALISM',		'GOVERNMENT_COMMUNISM');
+
+-- Dark Age Policies
+-- Era Adjustment
+update Policies_XP1 set MaximumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ISOLATIONISM' or PolicyType = 'POLICY_ELITE_FORCES';
+update Policies_XP1 set MaximumGameEra = 'ERA_MEDIEVAL' where PolicyType = 'POLICY_TWILIGHT_VALOR';
+-- Twilight Valor
 insert or replace into PolicyModifiers
 	(PolicyType,				ModifierId)
-select
-	'POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY'
-where exists (select PolicyType from Policies where PolicyType = 'POLICY_TWILIGHT_VALOR');
-
--- 孤立主义内商+3粮3锤，无法生产或购买开拓者和建造者
+values
+	('POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY');
+-- Isolationism
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_FODD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_PRODUCTION' and Name = 'Amount';
 insert or replace into PolicyModifiers
 	(PolicyType,				ModifierId)
 values
 	('POLICY_ISOLATIONISM',		'ISOLATIONISM_DISABLE_BUILD_BUILDER');
-
 insert or replace into Modifiers
 	(ModifierId,										ModifierType)
 values
 	('ISOLATIONISM_DISABLE_BUILD_BUILDER',				'MODIFIER_PLAYER_UNIT_BUILD_DISABLED');
-
 insert or replace into ModifierArguments
 	(ModifierId,										Name,		Value)
 values
 	('ISOLATIONISM_DISABLE_BUILD_BUILDER',				'UnitType',	'UNIT_BUILDER');
-
--- 着力点时代调整
-update CommemorationTypes set MaximumGameEra = 'ERA_INDUSTRIAL' where CommemorationType = 'COMMEMORATION_EXPLORATION' or CommemorationType = 'COMMEMORATION_ECONOMIC';
-update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_TOURISM' or CommemorationType = 'COMMEMORATION_ESPIONAGE';
-update Policies_XP1 set MaximumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ISOLATIONISM';
-update Policies_XP1 set MaximumGameEra = 'ERA_MEDIEVAL' where PolicyType = 'POLICY_TWILIGHT_VALOR';
-update Policies_XP1 set MinimumGameEra = 'ERA_RENAISSANCE' where PolicyType = 'POLICY_ELITE_FORCES';
+-- Removes
 delete from Policies where PolicyType = 'POLICY_INQUISITION' or PolicyType = 'POLICY_COLLECTIVISM';
 delete from Policies_XP1 where PolicyType = 'POLICY_INQUISITION' or PolicyType = 'POLICY_COLLECTIVISM';
+-- Wonder-Obsession
 insert into Policies_XP1	
 	(PolicyType,						MinimumGameEra,		MaximumGameEra,		RequiresDarkAge)
 values
 	('POLICY_WONDERS_MISLEAD_COUNTRY',	'ERA_CLASSICAL',	'ERA_RENAISSANCE',	1);
 
--- Policy Cards
+-- Policy Cards Modifiers
+delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
 delete from PolicyModifiers where PolicyType = 'POLICY_GOD_KING' and ModifierId = 'GOD_KING_GOLD';
 update ModifierArguments set Value = 2 where ModifierId = 'GOD_KING_FAITH' and Name = 'Amount';
 
@@ -94,8 +505,9 @@ update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIAL
 update ModifierArguments set Value = 5 where ModifierId = 'LIMITANEI_GARRISONIDENTITY' and Name = 'Amount';
 update ModifierArguments set Value = 5 where ModifierId = 'PRAETORIUM_GOVERNORIDENTITY' and Name = 'Amount';
 
-update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' and Name = 'Amount';
-update ModifierArguments set Value = 3 where ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE' and Name = 'Amount';
+delete from PolicyModifiers where PolicyType = 'POLICY_MARKET_ECONOMY' and ModifierId = 'MARKETECONOMY_TRADEROUTEGOLDPERLUXURY' or ModifierId = 'MARKETECONOMY_TRADEROUTEGOLDPERSTRATEGIC';
+update ModifierArguments set Value = 4 where ModifierId = 'MARKETECONOMY_TRADEROUTECULTURE' and Name = 'Amount';
+update ModifierArguments set Value = 4 where ModifierId = 'MARKETECONOMY_TRADEROUTESCIENCE' and Name = 'Amount';
 
 -- Remove effect: 25% less operation time for spy.
 -- delete from PolicyModifiers where PolicyType = 'POLICY_MACHIAVELLIANISM' and ModifierId = 'MACHIAVELLIANISM_OFFENSIVESPYTIME';
@@ -125,61 +537,6 @@ update ModifierArguments set Value = 100 where ModifierID = 'AFTERACTIONREPORTS_
 
 update Policies set PrereqCivic = 'CIVIC_MOBILIZATION' where PolicyType = 'POLICY_AFTER_ACTION_REPORTS';
 
-update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
--- update Governments set InfluencePointsThreshold = InfluencePointsThreshold * 0.8;
-insert or replace into Government_SlotCounts
-	(GovernmentType,					GovernmentSlotType,	NumSlots)
-values
-	('GOVERNMENT_MONARCHY',				'SLOT_MILITARY',	2),
-	('GOVERNMENT_MONARCHY',				'SLOT_ECONOMIC',	2),
-	('GOVERNMENT_MONARCHY',				'SLOT_DIPLOMATIC',	1),
-	('GOVERNMENT_MONARCHY',				'SLOT_WILDCARD',	1),
-	-- 
-	('GOVERNMENT_THEOCRACY',			'SLOT_MILITARY',	2),
-	('GOVERNMENT_THEOCRACY',			'SLOT_ECONOMIC',	1),
-	('GOVERNMENT_THEOCRACY',			'SLOT_DIPLOMATIC',	1),
-	('GOVERNMENT_THEOCRACY',			'SLOT_WILDCARD',	2),
-	-- 
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_MILITARY',	1),
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_ECONOMIC',	2),
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_DIPLOMATIC',	1),
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'SLOT_WILDCARD',	2),
-	-- 
-	('GOVERNMENT_FASCISM',				'SLOT_MILITARY',	3),
-	('GOVERNMENT_FASCISM',				'SLOT_ECONOMIC',	2),
-	('GOVERNMENT_FASCISM',				'SLOT_DIPLOMATIC',	1),
-	('GOVERNMENT_FASCISM',				'SLOT_WILDCARD',	2),
-	-- 
-	('GOVERNMENT_COMMUNISM',			'SLOT_MILITARY',	2),
-	('GOVERNMENT_COMMUNISM',			'SLOT_ECONOMIC',	3),
-	('GOVERNMENT_COMMUNISM',			'SLOT_DIPLOMATIC',	1),
-	('GOVERNMENT_COMMUNISM',			'SLOT_WILDCARD',	2),
-	-- 
-	('GOVERNMENT_DEMOCRACY',			'SLOT_MILITARY',	1),
-	('GOVERNMENT_DEMOCRACY',			'SLOT_ECONOMIC',	3),
-	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',	2),
-	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',	2);
-
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_MILITARY';
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_ECONOMIC';
--- update Government_SlotCounts set NumSlots = 1 where
--- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_DIPLOMATIC';
--- update Government_SlotCounts set NumSlots = 1 where
--- 	GovernmentType = 'GOVERNMENT_MONARCHY' and GovernmentSlotType = 'SLOT_WILDCARD';
--- update Government_SlotCounts set NumSlots = 1 where
--- 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_ECONOMIC';
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_THEOCRACY' and GovernmentSlotType = 'SLOT_WILDCARD';
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_WILDCARD';
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_COMMUNISM' and GovernmentSlotType = 'SLOT_MILITARY';
--- update Government_SlotCounts set NumSlots = 3 where
--- 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_MILITARY';
--- update Government_SlotCounts set NumSlots = 2 where
--- 	GovernmentType = 'GOVERNMENT_FASCISM' and GovernmentSlotType = 'SLOT_ECONOMIC';
 
 update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_CONSCRIPTION';
 update Policies set PrereqCivic = 'CIVIC_STATE_WORKFORCE' where PolicyType = 'POLICY_INSULAE';
@@ -200,9 +557,6 @@ update Policies set PrereqCivic = 'CIVIC_NAVAL_TRADITION' where PolicyType = 'PO
 -- update Policies set PrereqCivic = 'CIVIC_EXPLORATION' where PolicyType = 'POLICY_NAVIGATION';
 update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 'POLICY_RETAINERS';
 
-update ModifierArguments set Value = 15 where ModifierId = 'COMMUNISM_SCIENCE' and Name = 'Amount';
-update ModifierArguments set Value = 2 where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE' and Name = 'Amount';
-update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'COMMUNISM_PRODUCTIVE_PEOPLE';
 update ModifierArguments set Value = 4 where ModifierId = 'COLLECTIVIZATION_INTERNAL_TRADE_PRODUCTION' and Name = 'Amount';
 -- update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_NO_DIPLOMATIC_QUARTER' where ModifierId = 'DIPLOMATICLEAGUE_DUPLICATEFIRSTINFLUENCETOKEN';
 
@@ -288,9 +642,6 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and
 
 delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
 
--- delete MONARCHY_STARFORT_FAVOR
-delete from PolicyModifiers where ModifierId = 'MONARCHY_STARFORT_FAVOR';
-delete from GovernmentModifiers where ModifierId = 'MONARCHY_STARFORT_FAVOR';
 
 -- 陈又
 -- POLICY_RATIONALISM
@@ -368,41 +719,6 @@ values
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'YieldType',												'YIELD_CULTURE'),
 	('POLICY_GRAND_OPERA_BROADCAST_CENTER_POPULATION_CULTURE',	'Amount',													0.5);
 
--- 民主购买区域
-insert or replace into Types
-	(Type,											Kind)
-values
-	('MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE',	'KIND_MODIFIER');
-
-insert or replace into DynamicModifiers
-	(ModifierType,									CollectionType,									EffectType)
-values
-	('MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE',	'COLLECTION_OWNER',								'EFFECT_ADJUST_CITY_CAN_PURCHASE_DISTRICTS');
-
-insert or replace into Modifiers
-	(ModifierId,									ModifierType)
-values
-	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
-	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER',	'MODIFIER_DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
-
-insert or replace into GovernmentModifiers
-	(GovernmentType,								ModifierId)
-values
-	('GOVERNMENT_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
-
-insert or replace into PolicyModifiers
-	(PolicyType,									ModifierId)
-values
-	('POLICY_GOV_DEMOCRACY',						'DEMOCRACY_ENABLE_DISTRICT_PURCHASE');
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,											Value)
-values
-	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE',			'ModifierId',									'DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER'),
-	('DEMOCRACY_ENABLE_DISTRICT_PURCHASE_MODIFIER',	'CanPurchase',									1);
-
-update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
-
 -- level-one district yield policies
 --update ModifierArguments set Value = 50 where Name = 'Amount'
  	--and (ModifierID = 'AESTHETICS_DISTRICTCULTURE'
@@ -417,279 +733,140 @@ update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCH
 
 update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'INTERNATIONALSPACEAGENCY_SCIENCEPERTRIBUTARY';
 
--- New Policy Cards
-insert or replace into Types
-	(Type,								Kind)
-values
-	('POLICY_FREELANCERS',				'KIND_POLICY'),
-	('POLICY_MARITIME_INFRASTRUCTURE',	'KIND_POLICY'),
-	('POLICY_SEABORNE_SUPPLY',			'KIND_POLICY'),
-	('POLICY_GARRISON_RECLAMATION',		'KIND_POLICY'),
-	('POLICY_PRIMITIVE_COMMUNE',		'KIND_POLICY'),
-	('POLICY_OVERALL_PLANNING',			'KIND_POLICY'),
-	('POLICY_BARD',						'KIND_POLICY'),
-	('POLICY_CIVILIZE',					'KIND_POLICY'),
-	-- ('POLICY_MINARET',					'KIND_POLICY'),
-	('POLICY_DOMESTIC_TRADE',			'KIND_POLICY'),
-	('POLICY_HIGHWAY',					'KIND_POLICY'),
-	('POLICY_SILK_ROAD',				'KIND_POLICY'),
-	('POLICY_WAREHOUSE',				'KIND_POLICY'),
-	('POLICY_SAFETY_BOX',				'KIND_POLICY'),
-	('POLICY_WALL_HOUSING',				'KIND_POLICY'),
-	('POLICY_ARENA_TICKETS',			'KIND_POLICY'),
-	('POLICY_WRESTING_AND_MANEUVERS',	'KIND_POLICY'),
-	('POLICY_WONDERS_MISLEAD_COUNTRY',	'KIND_POLICY'),
-	('POLICY_CITY_CENTRALIZATION',		'KIND_POLICY'),
-	('POLICY_CONSTRUCTION_CROPS',		'KIND_POLICY'),
-	('POLICY_DRILL',					'KIND_POLICY'),
-	('POLICY_TRIBUTE_TRADE',			'KIND_POLICY'),
-	('POLICY_SELF_DETERMINATION',		'KIND_POLICY'),
-	('POLICY_SOCIAL_STATISTICS',		'KIND_POLICY'),
-	('POLICY_PLUTONOMY',				'KIND_POLICY'),
-	('POLICY_PHILOSOPHY_EDUCATION',		'KIND_POLICY'),
-	('POLICY_PURITAN',					'KIND_POLICY'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'KIND_POLICY'),
-	('POLICY_SISHU',					'KIND_POLICY'),
-	('POLICY_COMPILE',					'KIND_POLICY'),
-	('POLICY_SUPPLY_LINES',				'KIND_POLICY'),
-	('POLICY_SCHOLAR_BUREAUCRAT',		'KIND_POLICY'),
-	('POLICY_NEW_ROUTE',				'KIND_POLICY'),
-	('POLICY_WATER_TRANSPORT',			'KIND_POLICY'),
-	('POLICY_TEXTBOOK',					'KIND_POLICY'),
-	('POLICY_SUPERPOWER',				'KIND_POLICY'),
-	('POLICY_DEEP_WATER_PORT',			'KIND_POLICY'), 
-	('POLICY_GREEN_CITY',				'KIND_POLICY'),
-	('POLICY_TRAVEL_BLOGGER', 			'KIND_POLICY'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION','KIND_POLICY');
-	--('POLICY_FINE_ARTS',				'KIND_POLICY'),
-	--('POLICY_FREE_THOUGHTS',			'KIND_POLICY'),
-	--('POLICY_TREASURE_FLEETS',			'KIND_POLICY'),
-	--('POLICY_WORKERS_FACULTIES',		'KIND_POLICY'),
-	--('POLICY_ENTREPRENEURSHIP',			'KIND_POLICY');
-
-insert or replace into Policies
-	(PolicyType,						Name,										Description,										PrereqCivic,								PrereqTech,					GovernmentSlotType)
-values
-	('POLICY_FREELANCERS',				'LOC_POLICY_FREELANCERS_NAME',				'LOC_POLICY_FREELANCERS_DESCRIPTION',				'CIVIC_MERCENARIES',						NULL,						'SLOT_MILITARY'),
-	('POLICY_MARITIME_INFRASTRUCTURE',	'LOC_POLICY_MARITIME_INFRASTRUCTURE_NAME',	'LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION',	'CIVIC_NAVAL_TRADITION',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_SEABORNE_SUPPLY',			'LOC_POLICY_SEABORNE_SUPPLY_NAME',			'LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION',			'CIVIC_EXPLORATION',						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_GARRISON_RECLAMATION',		'LOC_POLICY_GARRISON_RECLAMATION_NAME',		'LOC_POLICY_GARRISON_RECLAMATION_DESCRIPTION',		'CIVIC_FEUDALISM',							NULL,						'SLOT_MILITARY'),
-	('POLICY_PRIMITIVE_COMMUNE',		'LOC_POLICY_PRIMITIVE_COMMUNE_NAME',		'LOC_POLICY_PRIMITIVE_COMMUNE_DESCRIPTION',			'CIVIC_CODE_OF_LAWS',						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_OVERALL_PLANNING',			'LOC_POLICY_OVERALL_PLANNING_NAME',			'LOC_POLICY_OVERALL_PLANNING_DESCRIPTION',			'CIVIC_URBANIZATION',						NULL,						'SLOT_ECONOMIC'),												
-	('POLICY_BARD',						'LOC_POLICY_BARD_NAME',						'LOC_POLICY_BARD_DESCRIPTION',						'CIVIC_DRAMA_POETRY',						NULL,						'SLOT_DIPLOMATIC'), -- 'CIVIC_EARLY_EMPIRE'
-	('POLICY_CIVILIZE',					'LOC_POLICY_CIVILIZE_NAME',					'LOC_POLICY_CIVILIZE_DESCRIPTION',					'CIVIC_GAMES_RECREATION',					NULL,						'SLOT_DIPLOMATIC'), --'CIVIC_STATE_WORKFORCE'
-	-- 
-	-- ('POLICY_MINARET',					'LOC_POLICY_MINARET_NAME',					'LOC_POLICY_MINARET_DESCRIPTION',					'CIVIC_REFORMED_CHURCH',					NULL,						'SLOT_ECONOMIC'),
-	--
-	('POLICY_DOMESTIC_TRADE',			'LOC_POLICY_DOMESTIC_TRADE_NAME',			'LOC_POLICY_DOMESTIC_TRADE_DESCRIPTION',			'CIVIC_DEFENSIVE_TACTICS',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_HIGHWAY',					'LOC_POLICY_HIGHWAY_NAME',					'LOC_POLICY_HIGHWAY_DESCRIPTION',					'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		NULL,						'SLOT_ECONOMIC'),
-	('POLICY_SILK_ROAD',				'LOC_POLICY_SILK_ROAD_NAME',				'LOC_POLICY_SILK_ROAD_DESCRIPTION',					'CIVIC_MEDIEVAL_FAIRES',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_WAREHOUSE',				'LOC_POLICY_WAREHOUSE_NAME',				'LOC_POLICY_WAREHOUSE_DESCRIPTION',					'CIVIC_STATE_WORKFORCE',					NULL,						'SLOT_ECONOMIC'), --'CIVIC_GAMES_RECREATION',
-	('POLICY_SAFETY_BOX',				'LOC_POLICY_SAFETY_BOX_NAME',				'LOC_POLICY_SAFETY_BOX_DESCRIPTION',				'CIVIC_EXPLORATION',						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_WALL_HOUSING',				'LOC_POLICY_WALL_HOUSING_NAME',				'LOC_POLICY_WALL_HOUSING_DESCRIPTION',				'CIVIC_DIVINE_RIGHT',						NULL,						'SLOT_MILITARY'),
-	('POLICY_ARENA_TICKETS',			'LOC_POLICY_ARENA_TICKETS_NAME',			'LOC_POLICY_ARENA_TICKETS_DESCRIPTION',				'CIVIC_GAMES_RECREATION',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_WRESTING_AND_MANEUVERS',	'LOC_POLICY_WRESTING_AND_MANEUVERS_NAME',	'LOC_POLICY_WRESTING_AND_MANEUVERS_DESCRIPTION',	'CIVIC_MERCENARIES',						NULL,						'SLOT_MILITARY'),
-	('POLICY_WONDERS_MISLEAD_COUNTRY',	'LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME',	'LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION',	NULL,										NULL,						'SLOT_WILDCARD'),
-	('POLICY_CITY_CENTRALIZATION',		'LOC_POLICY_CITY_CENTRALIZATION_NAME',		'LOC_POLICY_CITY_CENTRALIZATION_DESCRIPTION',		'CIVIC_URBANIZATION',						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_CONSTRUCTION_CROPS',		'LOC_POLICY_CONSTRUCTION_CROPS_NAME',		'LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION',		'CIVIC_URBANIZATION',						NULL,						'SLOT_MILITARY'),
-	('POLICY_DRILL',					'LOC_POLICY_DRILL_NAME',					'LOC_POLICY_DRILL_DESCRIPTION',						'CIVIC_MILITARY_TRAINING',					NULL,						'SLOT_MILITARY'),
-	('POLICY_TRIBUTE_TRADE',			'LOC_POLICY_TRIBUTE_TRADE_NAME',			'LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION',				'CIVIC_RECORDED_HISTORY',					NULL,						'SLOT_DIPLOMATIC'),
-	('POLICY_SELF_DETERMINATION',		'LOC_POLICY_SELF_DETERMINATION_NAME',		'LOC_POLICY_SELF_DETERMINATION_DESCRIPTION',		'CIVIC_NATIONALISM',						NULL,						'SLOT_DIPLOMATIC'),
-	('POLICY_SOCIAL_STATISTICS',		'LOC_POLICY_SOCIAL_STATISTICS_NAME',		'LOC_POLICY_SOCIAL_STATISTICS_DESCRIPTION',			'CIVIC_SOCIAL_SCIENCE_HD',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_PLUTONOMY',				'LOC_POLICY_PLUTONOMY_NAME',				'LOC_POLICY_PLUTONOMY_DESCRIPTION',					'CIVIC_SOCIAL_SCIENCE_HD',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_PHILOSOPHY_EDUCATION',		'LOC_POLICY_PHILOSOPHY_EDUCATION_NAME',		'LOC_POLICY_PHILOSOPHY_EDUCATION_DESCRIPTION',		'CIVIC_HISTORICAL_PHILOSOPHY_HD',			NULL,						'SLOT_WILDCARD'),
-	('POLICY_PURITAN',					'LOC_POLICY_PURITAN_NAME',					'LOC_POLICY_PURITAN_DESCRIPTION',					'CIVIC_ETHICS_HD',							NULL,						'SLOT_ECONOMIC'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_NAME',	'LOC_POLICY_SCIENTIFIC_EXPEDITIONS_DESCRIPTION',	'CIVIC_EVOLUTION_THEORY_HD',				NULL,						'SLOT_DIPLOMATIC'),
-	('POLICY_SISHU',					'LOC_POLICY_SISHU_NAME',					'LOC_POLICY_SISHU_DESCRIPTION',						'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		NULL,						'SLOT_ECONOMIC'),
-	('POLICY_COMPILE',					'LOC_POLICY_COMPILE_NAME',					'LOC_POLICY_COMPILE_DESCRIPTION',					NULL,										'TECH_PAPER_MAKING_HD',		'SLOT_WILDCARD'),
-	('POLICY_SUPPLY_LINES',				'LOC_POLICY_SUPPLY_LINES_NAME',				'LOC_POLICY_SUPPLY_LINES_DESCRIPTION',				NULL,										'TECH_MILITARY_TACTICS',	'SLOT_MILITARY'),
-	('POLICY_SCHOLAR_BUREAUCRAT',		'LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME',		'LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION',		'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		NULL,						'SLOT_WILDCARD'),
-	('POLICY_NEW_ROUTE',				'LOC_POLICY_NEW_ROUTE_NAME',				'LOC_POLICY_NEW_ROUTE_DESCRIPTION',					'CIVIC_MERCANTILISM',						Null,						'SLOT_ECONOMIC'),
-	('POLICY_WATER_TRANSPORT',			'LOC_POLICY_WATER_TRANSPORT_NAME',			'LOC_POLICY_WATER_TRANSPORT_DESCRIPTION',			'CIVIC_MERCANTILISM',						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_TEXTBOOK',					'LOC_POLICY_TEXTBOOK_NAME',					'LOC_POLICY_TEXTBOOK_DESCRIPTION',					NULL,										'TECH_PRINTING',			'SLOT_WILDCARD'),
-	('POLICY_SUPERPOWER',				'LOC_POLICY_SUPERPOWER_NAME',				'LOC_POLICY_SUPERPOWER_DESCRIPTION',				'CIVIC_COLD_WAR',							NULL,						'SLOT_WILDCARD'),
-	('POLICY_DEEP_WATER_PORT',			'LOC_POLICY_DEEP_WATER_PORT_NAME',			'LOC_POLICY_DEEP_WATER_PORT_DESCRIPTION',			'CIVIC_URBANIZATION',						NULL,						'SLOT_ECONOMIC'), 
-	('POLICY_GREEN_CITY',				'LOC_POLICY_GREEN_CITY_NAME',				'LOC_POLICY_GREEN_CITY_DESCRIPTION',				'CIVIC_ENVIRONMENTALISM',					NULL,						'SLOT_ECONOMIC'),
-	('POLICY_TRAVEL_BLOGGER', 			'LOC_POLICY_TRAVEL_BLOGGER_NAME', 			'LOC_POLICY_TRAVEL_BLOGGER_DESCRIPTION', 			'CIVIC_SOCIAL_MEDIA', 						NULL,						'SLOT_ECONOMIC'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION','LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_NAME','LOC_POLICY_INFRASTRUCTURE_CONSTRUCTION_DESCRIPTION','CIVIC_URBANIZATION',					NULL,						'SLOT_ECONOMIC');
-	--('POLICY_FINE_ARTS',			'LOC_POLICY_FINE_ARTS_NAME',			'LOC_POLICY_FINE_ARTS_DESCRIPTION',				'CIVIC_OPERA_BALLET',		'SLOT_ECONOMIC'),
-	--('POLICY_FREE_THOUGHTS',		'LOC_POLICY_FREE_THOUGHTS_NAME',		'LOC_POLICY_FREE_THOUGHTS_DESCRIPTION',			'CIVIC_THE_ENLIGHTENMENT',	'SLOT_ECONOMIC'),
-	--('POLICY_TREASURE_FLEETS',		'LOC_POLICY_TREASURE_FLEETS_NAME',		'LOC_POLICY_TREASURE_FLEETS_DESCRIPTION',	'CIVIC_COLONIALISM',		'SLOT_ECONOMIC'),
-	--('POLICY_WORKERS_FACULTIES',	'LOC_POLICY_WORKERS_FACULTIES_NAME',	'LOC_POLICY_WORKERS_FACULTIES_DESCRIPTION',		'CIVIC_CIVIL_ENGINEERING',	'SLOT_ECONOMIC'),
-	--('POLICY_ENTREPRENEURSHIP',		'LOC_POLICY_ENTREPRENEURSHIP_NAME',		'LOC_POLICY_ENTREPRENEURSHIP_DESCRIPTION',	'CIVIC_MERCANTILISM',		'SLOT_ECONOMIC');
-
-delete from ObsoletePolicies where PolicyType = 'POLICY_URBAN_PLANNING';
-delete from ObsoletePolicies where PolicyType = 'POLICY_RETAINERS';
-delete from ObsoletePolicies where PolicyType = 'POLICY_CARAVANSARIES';
---update ObsoletePolicies set ObsoletePolicy = 'POLICY_FINE_ARTS' where PolicyType = 'POLICY_AESTHETICS';
---update ObsoletePolicies set ObsoletePolicy = 'POLICY_FREE_THOUGHTS' where PolicyType = 'POLICY_NATURAL_PHILOSOPHY';
---update ObsoletePolicies set ObsoletePolicy = 'POLICY_TREASURE_FLEETS' where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
---update ObsoletePolicies set ObsoletePolicy = 'POLICY_WORKERS_FACULTIES' where PolicyType = 'POLICY_CRAFTSMEN';
---update ObsoletePolicies set ObsoletePolicy = 'POLICY_ENTREPRENEURSHIP' where PolicyType = 'POLICY_TOWN_CHARTERS';
-insert or replace into ObsoletePolicies
-	(PolicyType,					ObsoletePolicy)
-values
-	('POLICY_MARITIME_INFRASTRUCTURE', 'POLICY_SEABORNE_SUPPLY'),
---	('POLICY_FINE_ARTS',			'POLICY_SPORTS_MEDIA'),
---	('POLICY_FREE_THOUGHTS',		'POLICY_FIVE_YEAR_PLAN'),
---	('POLICY_TREASURE_FLEETS',		'POLICY_ECONOMIC_UNION'),
---	('POLICY_WORKERS_FACULTIES',	'POLICY_FIVE_YEAR_PLAN'),
---	('POLICY_ENTREPRENEURSHIP',		'POLICY_ECONOMIC_UNION');
---	('POLICY_SCRIPTURE',			'POLICY_SIMULTANEUM'),
-	--
-	('POLICY_CHARISMATIC_LEADER',	'POLICY_DIPLOMATIC_LEAGUE'),
-	('POLICY_DIPLOMATIC_LEAGUE',	'POLICY_GUNBOAT_DIPLOMACY'),
-	('POLICY_DOMESTIC_TRADE',		'POLICY_HIGHWAY'),
-	('POLICY_DOMESTIC_TRADE',		'POLICY_COLLECTIVIZATION'),
-	('POLICY_HIGHWAY',				'POLICY_COLLECTIVIZATION'),
-	('POLICY_DOMESTIC_TRADE',		'POLICY_WATER_TRANSPORT'),
-	('POLICY_HIGHWAY',				'POLICY_WATER_TRANSPORT'),
-	('POLICY_TRADE_CONFEDERATION',	'POLICY_SILK_ROAD'),
-	('POLICY_TRADE_CONFEDERATION',	'POLICY_MARKET_ECONOMY'),
-	('POLICY_SILK_ROAD',			'POLICY_MARKET_ECONOMY'),
-	('POLICY_TRADE_CONFEDERATION',	'POLICY_NEW_ROUTE'),
-	('POLICY_SILK_ROAD',			'POLICY_NEW_ROUTE'),
-	('POLICY_WAREHOUSE',			'POLICY_SAFETY_BOX'),
-	('POLICY_PRIMITIVE_COMMUNE',	'POLICY_CITY_CENTRALIZATION'),
-	('POLICY_BARD',					'POLICY_CITY_CENTRALIZATION'),
-	('POLICY_CIVILIZE',				'POLICY_CITY_CENTRALIZATION'),
-	('POLICY_URBAN_PLANNING',		'POLICY_CITY_CENTRALIZATION'),
-	('POLICY_CARAVANSARIES',		'POLICY_CITY_CENTRALIZATION'),
-	('POLICY_GARRISON_RECLAMATION',	'POLICY_CONSTRUCTION_CROPS'),
-	('POLICY_WALL_HOUSING',			'POLICY_CONSTRUCTION_CROPS'),
-	('POLICY_DRILL',				'POLICY_AFTER_ACTION_REPORTS'),
-	('POLICY_RETAINERS',			'POLICY_FREELANCERS'),
-	('POLICY_SISHU',				'POLICY_SOCIAL_STATISTICS'),
-	('POLICY_COMPILE',				'POLICY_NOBEL_PRIZE'),
-	('POLICY_INSPIRATION',			'POLICY_COMPILE'),
-	('POLICY_LOGISTICS',			'POLICY_SUPPLY_LINES'),
-	('POLICY_VETERANCY',			'POLICY_SUPPLY_LINES'),
-	('POLICY_FORTIFICATIONS',		'POLICY_BASTIONS'),
-	('POLICY_LIMES',				'POLICY_BASTIONS'),
-	('POLICY_LITERARY_TRADITION',	'POLICY_SCHOLAR_BUREAUCRAT'),
-	('POLICY_NEW_ROUTE',			'POLICY_MARKET_ECONOMY'),
-	('POLICY_WATER_TRANSPORT',		'POLICY_COLLECTIVIZATION'),
-	('POLICY_TEXTBOOK',				'POLICY_NOBEL_PRIZE'),
-	('POLICY_INSPIRATION',			'POLICY_TEXTBOOK'),
-	('POLICY_TRIBUTE_TRADE',		'POLICY_SELF_DETERMINATION'),
-	('POLICY_OVERALL_PLANNING',		'POLICY_FIVE_YEAR_PLAN'),
-	('POLICY_OVERALL_PLANNING',		'POLICY_SPORTS_MEDIA'),
-	('POLICY_SEABORNE_SUPPLY',		'POLICY_DEEP_WATER_PORT'),
-	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'POLICY_MILITARY_RESEARCH');
-delete from ObsoletePolicies where PolicyType = 'POLICY_MILITARY_RESEARCH';
 
 
 delete from PolicyModifiers where PolicyType = 'POLICY_CARAVANSARIES';
+delete from PolicyModifiers where PolicyType = 'POLICY_RAJ' and ModifierId = 'RAJ_CITY_TRADE_ROUTE_GOLD';
 -- delete from Modifiers where ModifierId = 'CARAVANSARIES_TRADEROUTEGOLD';
 insert or replace into PolicyModifiers
-	(PolicyType,						ModifierId)
+	(PolicyType,								ModifierId)
 values
-	('POLICY_FREELANCERS',				'FREELANCERS_GARRISON_GOLD'),
-	('POLICY_FREELANCERS',				'RETAINERS_AMENITYBONUS'),
-	('POLICY_MARITIME_INFRASTRUCTURE',	'MARITIME_INFRASTRUCTURE_COASTAL_CITY_PROD'),
-	('POLICY_SEABORNE_SUPPLY',			'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
-	('POLICY_GARRISON_RECLAMATION',		'GARRISON_RECLAMATION_ENCAMPMENT_FOOD'),
-	('POLICY_GARRISON_RECLAMATION',		'GARRISON_RECLAMATION_ENCAMPMENT_HOUSING'),
-	('POLICY_PRIMITIVE_COMMUNE',		'PRIMITIVE_COMMUNE_ALLCITYFOOD'),
-	('POLICY_OVERALL_PLANNING',			'MINOR_CIV_MEXICO_CITY_REGIONAL_RANGE_BONUS'),
-	('POLICY_BARD',						'BARD_ALLCITYCULTURE'),
-	('POLICY_CIVILIZE',					'CIVILIZE_ALLCITYSCIENCE'),
-	('POLICY_CARAVANSARIES',			'CARAVANSARIES_ALLCITYGOLD'),
-	-- ('POLICY_MINARET',					'MINARET_TEMPLE_POP_FAITH'),
-	-- ('POLICY_MINARET',					'MINARET_TIER3_BUILDING_POP_FAITH'),
---	('POLICY_FINE_ARTS',				'FINE_ARTS_DISTRICTCULTURE'),
---	('POLICY_FREE_THOUGHTS',			'FREE_THOUGHTS_DISTRICTSCIENCE'),
---	('POLICY_TREASURE_FLEETS',			'TREASURE_FLEETS_HARBORGOLD'),
---	('POLICY_WORKERS_FACULTIES',		'WORKERS_FACULTIES_DISTRICTPRODUCTION'),
---	('POLICY_ENTREPRENEURSHIP',			'ENTREPRENEURSHIP_DISTRICTGOLD'),
-	-- ('POLICY_SIMULTANEUM',				'SIMULTANEUM_DISTRICTFAITH'),
-	('POLICY_SIMULTANEUM',				'MINARET_TEMPLE_POP_FAITH'),
-	('POLICY_SIMULTANEUM',				'MINARET_TIER3_BUILDING_POP_FAITH'),
+	('POLICY_FREELANCERS',						'FREELANCERS_GARRISON_GOLD'),
+	('POLICY_FREELANCERS',						'RETAINERS_AMENITYBONUS'),
+	('POLICY_MARITIME_INFRASTRUCTURE',			'MARITIME_INFRASTRUCTURE_COASTAL_CITY_PROD'),
+	('POLICY_SEABORNE_SUPPLY',					'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
+	('POLICY_GARRISON_RECLAMATION',				'GARRISON_RECLAMATION_ENCAMPMENT_FOOD'),
+	('POLICY_GARRISON_RECLAMATION',				'GARRISON_RECLAMATION_ENCAMPMENT_HOUSING'),
+	('POLICY_PRIMITIVE_COMMUNE',				'PRIMITIVE_COMMUNE_ALLCITYFOOD'),
+	('POLICY_OVERALL_PLANNING',					'MINOR_CIV_MEXICO_CITY_REGIONAL_RANGE_BONUS'),
+	--('POLICY_BARD',								'BARD_ALLCITYCULTURE'),
+	--('POLICY_CIVILIZE',							'CIVILIZE_ALLCITYSCIENCE'),
+	('POLICY_CARAVANSARIES',					'CARAVANSARIES_ALLCITYGOLD'),
+	-- ('POLICY_MINARET',							'MINARET_TEMPLE_POP_FAITH'),
+	-- ('POLICY_MINARET',							'MINARET_TIER3_BUILDING_POP_FAITH'),
+--	('POLICY_FINE_ARTS',						'FINE_ARTS_DISTRICTCULTURE'),
+--	('POLICY_FREE_THOUGHTS',					'FREE_THOUGHTS_DISTRICTSCIENCE'),
+--	('POLICY_TREASURE_FLEETS',					'TREASURE_FLEETS_HARBORGOLD'),
+--	('POLICY_WORKERS_FACULTIES',				'WORKERS_FACULTIES_DISTRICTPRODUCTION'),
+--	('POLICY_ENTREPRENEURSHIP',					'ENTREPRENEURSHIP_DISTRICTGOLD'),
+	-- ('POLICY_SIMULTANEUM',						'SIMULTANEUM_DISTRICTFAITH'),
+	('POLICY_SIMULTANEUM',						'MINARET_TEMPLE_POP_FAITH'),
+	('POLICY_SIMULTANEUM',						'MINARET_TIER3_BUILDING_POP_FAITH'),
 	--
-	('POLICY_DOMESTIC_TRADE',			'POLICY_DOMESTIC_TRADE_ROUTE_FOOD'),
-	('POLICY_DOMESTIC_TRADE',			'POLICY_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
-	('POLICY_HIGHWAY',					'HIGHWAY_DOMESTIC_TRADE_ROUTE_FOOD'),
-	('POLICY_HIGHWAY',					'HIGHWAY_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
-	('POLICY_SILK_ROAD',				'SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
-	('POLICY_SILK_ROAD',				'SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_SCIENCE'),
-	('POLICY_WAREHOUSE',				'WAREHOUSE_PRODUCTION_FOR_COMMERCIAL_HUB'),
-	('POLICY_SAFETY_BOX',				'SAFETY_BOX_PRODUCTION_FOR_COMMERCIAL_HUB'),
-	('POLICY_WALL_HOUSING',				'MONARCHY_WALLS_HOUSING'),
-	('POLICY_WALL_HOUSING',				'MONARCHY_CASTLE_HOUSING'),
-	('POLICY_WALL_HOUSING',				'MONARCHY_STARFORT_HOUSING'),
-	('POLICY_WALL_HOUSING',				'WALLS_EARLY_HOUSING'),
-	('POLICY_ARENA_TICKETS',			'ARENA_TICKETS_ENTERTAINMENT_GOLD'),
-	('POLICY_ARENA_TICKETS',			'ARENA_TICKETS_ARENA_GOLD'),
-	('POLICY_WRESTING_AND_MANEUVERS',	'WRESTING_AND_MANEUVERS_ARENA_AMENITY'),
-	('POLICY_WONDERS_MISLEAD_COUNTRY',	'ANCIENTRENAISSANCEWONDER'),
-	('POLICY_WONDERS_MISLEAD_COUNTRY',	'POLICY_WONDER_LESS_GOLD'),
-	('POLICY_CITY_CENTRALIZATION',		'BARD_ALLCITYCULTURE'),
-	('POLICY_CITY_CENTRALIZATION',		'CIVILIZE_ALLCITYSCIENCE'),
-	('POLICY_CITY_CENTRALIZATION',		'CARAVANSARIES_ALLCITYGOLD'),
-	('POLICY_CITY_CENTRALIZATION',		'URBAN_PLANNING_ALLCITYPRODUCTION'),
-	('POLICY_CITY_CENTRALIZATION',		'PRIMITIVE_COMMUNE_ALLCITYFOOD'),
-	('POLICY_CITY_CENTRALIZATION',		'SHAMAN_ALLCITYFAITH'),
-	('POLICY_CONSTRUCTION_CROPS',		'GARRISON_RECLAMATION_ENCAMPMENT_FOOD'),
-	('POLICY_CONSTRUCTION_CROPS',		'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
-	('POLICY_CONSTRUCTION_CROPS',		'WALLS_EARLY_HOUSING'),
-	('POLICY_CONSTRUCTION_CROPS',		'MONARCHY_WALLS_HOUSING'),
-	('POLICY_CONSTRUCTION_CROPS',		'MONARCHY_CASTLE_HOUSING'),
-	('POLICY_CONSTRUCTION_CROPS',		'MONARCHY_STARFORT_HOUSING'),
-	('POLICY_DRILL',					'DRILL_EXPERIENCE'),
-	('POLICY_TRIBUTE_TRADE',			'COMMERCIAL_HUB_INFLUENCEPOINTS'),
-	('POLICY_TRIBUTE_TRADE',			'TRADE_ROUTE_GOLD_TO_CITY_STATES'),
-	('POLICY_SELF_DETERMINATION',		'SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS'),
-	('POLICY_SELF_DETERMINATION',		'SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES'),
-	('POLICY_SOCIAL_STATISTICS',		'SOCIAL_STATISTICS_POPULATION_SCIENCE'),
-	('POLICY_SOCIAL_STATISTICS',		'SOCIAL_STATISTICS_POPULATION_CULTURE'),
-	('POLICY_PLUTONOMY',				'PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST'),
-	('POLICY_PLUTONOMY',				'PLUTONOMY_CAMPUS_PRODUCTION_PERCENTAGE_BOOST'),
-	('POLICY_PHILOSOPHY_EDUCATION',		'PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS'),
-	('POLICY_PURITAN',					'PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST'),
-	('POLICY_PURITAN',					'PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_SCIENCE'),
-	('POLICY_SCIENTIFIC_EXPEDITIONS',	'SCIENTIFIC_EXPEDITIONS_CULTURE'),
-	('POLICY_SISHU',					'SISHU_POPULATION_SCIENCE'),
-	('POLICY_SISHU',					'SISHU_POPULATION_CULTURE'),
-	('POLICY_COMPILE',					'COMPILE_FIXED_SCIENTIST_POINTS'),
-	('POLICY_COMPILE',					'COMPILE_LIBRARY_SCIENTIST_POINTS'),
-	('POLICY_SUPPLY_LINES',				'LOGISTICS_FRIENDLYTERRITORYMOVEMENTBONUS'),
-	('POLICY_SUPPLY_LINES',				'VETERANCY_ENCAMPMENT_PRODUCTION'),
-	('POLICY_SUPPLY_LINES',				'VETERANCY_ENCAMPMENT_BUILDINGS_PRODUCTION'),
-	('POLICY_SUPPLY_LINES',				'VETERANCY_HARBOR_PRODUCTION'),
-	('POLICY_SUPPLY_LINES',				'VETERANCY_HARBOR_BUILDINGS_PRODUCTION'),
-	('POLICY_BASTIONS',					'LIMES_CASTLEPRODUCTION'),
-	('POLICY_BASTIONS',					'LIMES_WALLSPRODUCTION'),
-	('POLICY_BASTIONS',					'LIMES_STARFORTPRODUCTION'),
-	('POLICY_BASTIONS',					'LIMES_TSIKHEPRODUCTION'),
-	('POLICY_SCHOLAR_BUREAUCRAT',		'SCHOLAR_BUREAUCRAT_GREATWRITERPOINTS'),
-	('POLICY_SCHOLAR_BUREAUCRAT',		'SCHOLAR_BUREAUCRAT_THEATER_TIER1_GREATWRITERPOINTS'),
-	('POLICY_NEW_ROUTE',				'NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
-	('POLICY_NEW_ROUTE',				'NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE'),
-	('POLICY_WATER_TRANSPORT',			'WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_FOOD'),
-	('POLICY_WATER_TRANSPORT',			'WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
-	('POLICY_TEXTBOOK',					'TEXTBOOK_FIXED_SCIENTIST_POINTS'),
-	('POLICY_TEXTBOOK',					'TEXTBOOK_TIER2_SCIENTIST_POINTS'),
-	('POLICY_SUPERPOWER',				'SUPERPOWER_SCIENCE_ATTACH'),
-	('POLICY_SUPERPOWER',				'SUPERPOWER_CULTURE_ATTACH'),
-	('POLICY_LIBERALISM',				'LIBERALISM_ENTERTAINMENT_PRODUCTION'),
-	('POLICY_LIBERALISM',				'LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION'),
-	('POLICY_FIVE_YEAR_PLAN',			'FIVE_YEAR_PLAN_INDUSTRIAL_RANGE'),
-	('POLICY_SPORTS_MEDIA',				'SPORTS_MEDIA_ENTERTAINMENT_RANGE'),
-	('POLICY_DEEP_WATER_PORT',			'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
-	('POLICY_DEEP_WATER_PORT',			'DEEPWATERPORT_GOLD'),
-	('POLICY_DEEP_WATER_PORT',			'DEEPWATERPORT_HOUSING'), 
-	('POLICY_GREEN_CITY',				'HD_GREEN_CITY_WONDER_TOURISM'),
-	('POLICY_GREEN_CITY',				'HD_GREEN_CITY_NATIONALPARK_TOURISM'),
-	('POLICY_TRAVEL_BLOGGER',			'TRAVEL_BLOGGER_TOURISM'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT_BUILDING'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_DAM'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_DAM_BUILDING'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_CANAL'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_CANAL_BUILDING'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD'),
-	('POLICY_INFRASTRUCTURE_CONSTRUCTION',			'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING');
+	('POLICY_DOMESTIC_TRADE',					'POLICY_DOMESTIC_TRADE_ROUTE_FOOD'),
+	('POLICY_DOMESTIC_TRADE',					'POLICY_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
+	('POLICY_HIGHWAY',							'HIGHWAY_DOMESTIC_TRADE_ROUTE_FOOD'),
+	('POLICY_HIGHWAY',							'HIGHWAY_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
+	('POLICY_SILK_ROAD',						'SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
+	('POLICY_SILK_ROAD',						'SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_SCIENCE'),
+	('POLICY_WAREHOUSE',						'WAREHOUSE_PRODUCTION_FOR_COMMERCIAL_HUB'),
+	('POLICY_SAFETY_BOX',						'SAFETY_BOX_PRODUCTION_FOR_COMMERCIAL_HUB'),
+	('POLICY_WALL_HOUSING',						'MONARCHY_WALLS_HOUSING'),
+	('POLICY_WALL_HOUSING',						'MONARCHY_CASTLE_HOUSING'),
+	('POLICY_WALL_HOUSING',						'MONARCHY_STARFORT_HOUSING'),
+	('POLICY_WALL_HOUSING',						'WALLS_EARLY_HOUSING'),
+	--('POLICY_ARENA_TICKETS',					'ARENA_TICKETS_ENTERTAINMENT_GOLD'),
+	--('POLICY_ARENA_TICKETS',					'ARENA_TICKETS_ARENA_GOLD'),
+	('POLICY_WRESTING_AND_MANEUVERS',			'WRESTING_AND_MANEUVERS_ARENA_AMENITY'),
+	('POLICY_WONDERS_MISLEAD_COUNTRY',			'ANCIENTRENAISSANCEWONDER'),
+	('POLICY_WONDERS_MISLEAD_COUNTRY',			'POLICY_WONDER_LESS_GOLD'),
+	('POLICY_CITY_CENTRALIZATION',				'CITY_CENTRALIZATION_ALLCITYALLYIELD'),
+	('POLICY_CITY_CENTRALIZATION',				'CITY_CENTRALIZATION_ALLCITYGOLD'),
+	('POLICY_CONSTRUCTION_CROPS',				'GARRISON_RECLAMATION_ENCAMPMENT_FOOD'),
+	('POLICY_CONSTRUCTION_CROPS',				'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
+	('POLICY_CONSTRUCTION_CROPS',				'WALLS_EARLY_HOUSING'),
+	('POLICY_CONSTRUCTION_CROPS',				'MONARCHY_WALLS_HOUSING'),
+	('POLICY_CONSTRUCTION_CROPS',				'MONARCHY_CASTLE_HOUSING'),
+	('POLICY_CONSTRUCTION_CROPS',				'MONARCHY_STARFORT_HOUSING'),
+	('POLICY_DRILL',							'DRILL_EXPERIENCE'),
+	('POLICY_TRIBUTE_TRADE',					'COMMERCIAL_HUB_INFLUENCEPOINTS'),
+	('POLICY_TRIBUTE_TRADE',					'TRADE_ROUTE_GOLD_TO_CITY_STATES'),
+	('POLICY_SELF_DETERMINATION',				'SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS'),
+	('POLICY_SELF_DETERMINATION',				'SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES'),
+	('POLICY_SOCIAL_STATISTICS',				'SOCIAL_STATISTICS_POPULATION_SCIENCE'),
+	('POLICY_SOCIAL_STATISTICS',				'SOCIAL_STATISTICS_POPULATION_CULTURE'),
+	('POLICY_PLUTONOMY',						'PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST'),
+	('POLICY_PLUTONOMY',						'PLUTONOMY_CAMPUS_PRODUCTION_PERCENTAGE_BOOST'),
+	('POLICY_PHILOSOPHY_EDUCATION',				'PHILOSOPHY_EDUCATION_WONDER_GREAT_PERSON_POINTS'),
+	('POLICY_PURITAN',							'PURITAN_WORKSHIP_GOLD_PERCENTAGE_BOOST'),
+	('POLICY_PURITAN',							'PURITAN_WORKSHIP_PRODUCTION_PERCENTAGE_BOOST'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',			'SCIENTIFIC_EXPEDITIONS_SCIENCE'),
+	('POLICY_SCIENTIFIC_EXPEDITIONS',			'SCIENTIFIC_EXPEDITIONS_CULTURE'),
+	('POLICY_SISHU',							'SISHU_POPULATION_SCIENCE'),
+	('POLICY_SISHU',							'SISHU_POPULATION_CULTURE'),
+	('POLICY_COMPILE',							'COMPILE_FIXED_SCIENTIST_POINTS'),
+	('POLICY_COMPILE',							'COMPILE_LIBRARY_SCIENTIST_POINTS'),
+	('POLICY_SUPPLY_LINES',						'LOGISTICS_FRIENDLYTERRITORYMOVEMENTBONUS'),
+	('POLICY_SUPPLY_LINES',						'VETERANCY_ENCAMPMENT_PRODUCTION'),
+	('POLICY_SUPPLY_LINES',						'VETERANCY_ENCAMPMENT_BUILDINGS_PRODUCTION'),
+	('POLICY_SUPPLY_LINES',						'VETERANCY_HARBOR_PRODUCTION'),
+	('POLICY_SUPPLY_LINES',						'VETERANCY_HARBOR_BUILDINGS_PRODUCTION'),
+	('POLICY_BASTIONS',							'LIMES_CASTLEPRODUCTION'),
+	('POLICY_BASTIONS',							'LIMES_WALLSPRODUCTION'),
+	('POLICY_BASTIONS',							'LIMES_STARFORTPRODUCTION'),
+	('POLICY_BASTIONS',							'LIMES_TSIKHEPRODUCTION'),
+	('POLICY_SCHOLAR_BUREAUCRAT',				'SCHOLAR_BUREAUCRAT_GREATWRITERPOINTS'),
+	('POLICY_SCHOLAR_BUREAUCRAT',				'SCHOLAR_BUREAUCRAT_THEATER_TIER1_GREATWRITERPOINTS'),
+	('POLICY_NEW_ROUTE',						'NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
+	('POLICY_NEW_ROUTE',						'NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE'),
+	('POLICY_WATER_TRANSPORT',					'WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_FOOD'),
+	('POLICY_WATER_TRANSPORT',					'WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION'),
+	('POLICY_TEXTBOOK',							'TEXTBOOK_FIXED_SCIENTIST_POINTS'),
+	('POLICY_TEXTBOOK',							'TEXTBOOK_TIER2_SCIENTIST_POINTS'),
+	('POLICY_SUPERPOWER',						'SUPERPOWER_SCIENCE_ATTACH'),
+	('POLICY_SUPERPOWER',						'SUPERPOWER_CULTURE_ATTACH'),
+	('POLICY_LIBERALISM',						'LIBERALISM_ENTERTAINMENT_PRODUCTION'),
+	('POLICY_LIBERALISM',						'LIBERALISM_ENTERTAINMENT_BUILDING_PRODUCTION'),
+	('POLICY_LIBERALISM',						'LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION'),
+	('POLICY_LIBERALISM',						'LIBERALISM_WATHER_ENTERTAINMENT_BUILDING_PRODUCTION'),
+	('POLICY_FIVE_YEAR_PLAN',					'FIVE_YEAR_PLAN_INDUSTRIAL_RANGE'),
+	('POLICY_SPORTS_MEDIA',						'SPORTS_MEDIA_ENTERTAINMENT_RANGE'),
+	('POLICY_DEEP_WATER_PORT',					'SEABORNE_SUPPLY_COASTAL_CITY_PROD'),
+	('POLICY_DEEP_WATER_PORT',					'DEEPWATERPORT_GOLD'),
+	('POLICY_DEEP_WATER_PORT',					'DEEPWATERPORT_HOUSING'), 
+	('POLICY_GREEN_CITY',						'HD_GREEN_CITY_WONDER_TOURISM'),
+	('POLICY_GREEN_CITY',						'HD_GREEN_CITY_NATIONALPARK_TOURISM'),
+	('POLICY_TRAVEL_BLOGGER',					'TRAVEL_BLOGGER_TOURISM'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT_BUILDING'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_DAM'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_DAM_BUILDING'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_CANAL'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_CANAL_BUILDING'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD'),
+	('POLICY_INFRASTRUCTURE_CONSTRUCTION',		'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING'),
+	('POLICY_RAJ',								'RAJ_CAPTURED_CITY_CULTURE'),
+	('POLICY_RAJ',								'RAJ_CAPTURED_CITY_SCIENCE'),
+	('POLICY_RAJ',								'RAJ_CAPTURED_CITY_GOLD'),
+	('POLICY_RAJ',								'RAJ_CAPTURED_CITY_FAITH'),
+	('POLICY_INTERNATIONALISM',					'INTERNATIONALISM_DELEGATION_FAVOR'),
+	('POLICY_INTERNATIONALISM',					'INTERNATIONALISM_EMBASSY_FAVOR'),
+	('POLICY_INTERNATIONALISM',					'INTERNATIONALISM_INFLUENCE_POINTS'),
+	('POLICY_SOCIAL_DARWINISM',					'SOCIAL_DARWINISM_CULTURE_ATTACH'),
+	('POLICY_SOCIAL_DARWINISM',					'SOCIAL_DARWINISM_SCIENCE_ATTACH'),
+	('POLICY_WELL_FIELD',						'PRIMITIVE_COMMUNE_ALLCITYFOOD'),
+	('POLICY_WELL_FIELD',						'URBAN_PLANNING_ALLCITYPRODUCTION'),
+	('POLICY_HD_FIVE_YEAR_PLAN',				'FIVE_YEAR_PLAN_DISTRICT_PRODUCTION'),
+	('POLICY_HOUSEHOOD_REGISTRATION',			'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT'),
+	('POLICY_HOUSEHOOD_REGISTRATION',			'INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT_BUILDING'),
+	('POLICY_HOUSEHOOD_REGISTRATION',			'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD'),
+	('POLICY_HOUSEHOOD_REGISTRATION',			'INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING'),
+	('POLICY_HAJJ',								'HAJJ_SCIENCEPERTRIBUTARY'),
+	('POLICY_HAJJ',								'HAJJ_CULTUREPERTRIBUTARY'),
+	('POLICY_MARTIAL_ELECTION',					'MARTIAL_ELECTION_GREAT_GENERAL_POINTS'),
+	('POLICY_MARTIAL_ELECTION',					'MARTIAL_ELECTION_BUILDING_GREAT_GENERAL_POINTS'),
+	('POLICY_GLADIATORIAL_GAME',				'GLADIATORIAL_GAME_ENTERTAINMENT_PRODUCTION'),
+	('POLICY_GLADIATORIAL_GAME',				'GLADIATORIAL_GAME_ENTERTAINMENT_BUILDING_PRODUCTION');
 
 update ModifierArguments set Value = 2 where Name = 'Amount' and (ModifierId = 'MONARCHY_WALLS_HOUSING' or ModifierId = 'MONARCHY_CASTLE_HOUSING' or ModifierId = 'MONARCHY_STARFORT_HOUSING');
 
@@ -703,11 +880,11 @@ values
 	('GARRISON_RECLAMATION_ENCAMPMENT_HOUSING',				'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',							'CITY_HAS_ENCAMPMENT'),
 	('MINARET_TEMPLE_POP_FAITH',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'BUILDING_IS_TEMPLE_XP2'),
 	('MINARET_TIER3_BUILDING_POP_FAITH',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'BUILDING_IS_TIER3_HOLY_SITE'),
-	('PRIMITIVE_COMMUNE_ALLCITYFOOD',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						NULL),
-	('SHAMAN_ALLCITYFAITH',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						NULL),
-	('BARD_ALLCITYCULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						NULL),
-	('CIVILIZE_ALLCITYSCIENCE',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						NULL),
-	('CARAVANSARIES_ALLCITYGOLD',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						NULL),
+	('PRIMITIVE_COMMUNE_ALLCITYFOOD',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
+	('SHAMAN_ALLCITYFAITH',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
+	--('BARD_ALLCITYCULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
+	--('CIVILIZE_ALLCITYSCIENCE',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
+	('CARAVANSARIES_ALLCITYGOLD',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
 --	('FINE_ARTS_DISTRICTCULTURE',							'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'DISTRICT_IS_THEATER'),
 --	('FREE_THOUGHTS_DISTRICTSCIENCE',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'DISTRICT_IS_CAMPUS'),
 --	('TREASURE_FLEETS_HARBORGOLD',							'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'DISTRICT_IS_HARBOR'),
@@ -715,27 +892,27 @@ values
 --	('ENTREPRENEURSHIP_DISTRICTGOLD',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'DISTRICT_IS_COMMERCIAL_HUB'),
 	('SIMULTANEUM_DISTRICTFAITH',							'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'DISTRICT_IS_HOLY_SITE'),
 	--
-	('POLICY_DOMESTIC_TRADE_ROUTE_FOOD',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('POLICY_DOMESTIC_TRADE_ROUTE_PRODUCTION',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('HIGHWAY_DOMESTIC_TRADE_ROUTE_FOOD',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('HIGHWAY_DOMESTIC_TRADE_ROUTE_PRODUCTION',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			NULL),
-	('SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_SCIENCE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			NULL),
+	('POLICY_DOMESTIC_TRADE_ROUTE_FOOD',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('POLICY_DOMESTIC_TRADE_ROUTE_PRODUCTION',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('HIGHWAY_DOMESTIC_TRADE_ROUTE_FOOD',					'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('HIGHWAY_DOMESTIC_TRADE_ROUTE_PRODUCTION',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			null),
+	('SILK_ROAD_INTERNATIONAL_TRADE_ROUTE_SCIENCE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			null),
 	('WAREHOUSE_PRODUCTION_FOR_COMMERCIAL_HUB',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_HAS_COMMERCIAL_HUB_REQUIREMENTS'),
 	('SAFETY_BOX_PRODUCTION_FOR_COMMERCIAL_HUB',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_HAS_COMMERCIAL_HUB_REQUIREMENTS'),
-	('ARENA_TICKETS_ENTERTAINMENT_GOLD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',						'DL_PLOT_IS_DISTRICT_IS_ENTERTAINMENT_REQUIRMENTS'),
-	('ARENA_TICKETS_ARENA_GOLD',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',					NULL),
+--	('ARENA_TICKETS_ENTERTAINMENT_GOLD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',						'DL_PLOT_IS_DISTRICT_IS_ENTERTAINMENT_REQUIRMENTS'),
+--	('ARENA_TICKETS_ARENA_GOLD',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',					null),
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'CITY_HAS_ARENA_AND_8_POP'),
 	('WALLS_EARLY_HOUSING',									'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',							'CITY_HAS_WALLS_EARLY'),
-	('ANCIENTRENAISSANCEWONDER',							'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_ERA_PRODUCTION',					NULL),
-	('POLICY_WONDER_LESS_GOLD',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL),
-	('DRILL_EXPERIENCE',									'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',				NULL),
+	('ANCIENTRENAISSANCEWONDER',							'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_ERA_PRODUCTION',					null),
+	('POLICY_WONDER_LESS_GOLD',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					null),
+	('DRILL_EXPERIENCE',									'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER',				null),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS',						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'DISTRICT_IS_COMMERCIAL_HUB'),
-	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						NULL),
+	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						null),
 	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'DISTRICT_IS_COMMERCIAL_HUB'),
-	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',	'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						NULL),
-	('TRADE_ROUTE_GOLD_TO_CITY_STATES',						'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	NULL),
-	('SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES',	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	NULL),
+	('SELF_DETERMINATION_COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',	'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',						null),
+	('TRADE_ROUTE_GOLD_TO_CITY_STATES',						'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	null),
+	('SELF_DETERMINATION_TRADE_ROUTE_GOLD_TO_CITY_STATES',	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE',	null),
 	('SOCIAL_STATISTICS_POPULATION_SCIENCE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_3_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('SOCIAL_STATISTICS_POPULATION_CULTURE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_3_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('PLUTONOMY_THEATER_GOLD_PERCENTAGE_BOOST',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'HD_CITY_HAS_DISTRICT_THEATER_XHH'),
@@ -749,39 +926,61 @@ values
 	('SCIENTIFIC_EXPEDITIONS_CULTURE_MODIFIER',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'THE_HOME_CONTINENT_NEW_REQUIREMENT'),
 	('SISHU_POPULATION_SCIENCE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_2_SPECIALTY_DISTRICTS_REQUIREMENTS'),
 	('SISHU_POPULATION_CULTURE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',				'CITY_HAS_2_SPECIALTY_DISTRICTS_REQUIREMENTS'),
-	('COMPILE_FIXED_SCIENTIST_POINTS',						'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							NULL),
+	('COMPILE_FIXED_SCIENTIST_POINTS',						'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							null),
 	('COMPILE_LIBRARY_SCIENTIST_POINTS',					'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',						'HD_CITY_HAS_SCIENTIFIC_TIER_1_BUILDING_REQUIREMENTS'),
-	('SUPPLY_LINES_MOVEMENT_BONUS',							'MODIFIER_PLAYER_UNITS_ADJUST_FRIENDLY_TERRITORY_START_MOVEMENT',		NULL),
-	('SCHOLAR_BUREAUCRAT_GREATWRITERPOINTS',				'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							NULL),
+	('SUPPLY_LINES_MOVEMENT_BONUS',							'MODIFIER_PLAYER_UNITS_ADJUST_FRIENDLY_TERRITORY_START_MOVEMENT',		null),
+	('SCHOLAR_BUREAUCRAT_GREATWRITERPOINTS',				'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							null),
 	('SCHOLAR_BUREAUCRAT_THEATER_TIER1_GREATWRITERPOINTS',	'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',						'HD_CITY_HAS_CULTURAL_TIER_1_BUILDING_REQUIREMENTS'),
-	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_FOOD',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				NULL),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			NULL),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			NULL),
-	('TEXTBOOK_FIXED_SCIENTIST_POINTS',						'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							NULL),
+	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_FOOD',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC',				null),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			null),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',			null),
+	('TEXTBOOK_FIXED_SCIENTIST_POINTS',						'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							null),
 	('TEXTBOOK_TIER2_SCIENTIST_POINTS',						'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',						'HD_CITY_HAS_SCIENTIFIC_TIER_2_BUILDING_REQUIREMENTS'),
 	('SUPERPOWER_SCIENCE_ATTACH',							'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_CITY_HAS_SCIENTIFIC_TIER_3_BUILDING_REQUIREMENTS'),
 	('SUPERPOWER_CULTURE_ATTACH',							'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'HD_CITY_HAS_CULTURAL_TIER_3_BUILDING_REQUIREMENTS'),
-	('SUPERPOWER_SCIENCE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL),
-	('SUPERPOWER_CULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					NULL),
-	('LIBERALISM_ENTERTAINMENT_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
-	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
+	('SUPERPOWER_SCIENCE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					null),
+	('SUPERPOWER_CULTURE',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					null),
+	('LIBERALISM_ENTERTAINMENT_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('LIBERALISM_ENTERTAINMENT_BUILDING_PRODUCTION',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
+	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('LIBERALISM_WATHER_ENTERTAINMENT_BUILDING_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
 	('FIVE_YEAR_PLAN_INDUSTRIAL_RANGE',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',				'DISTRICT_IS_INDUSTRIAL_ZONE'),
 	('SPORTS_MEDIA_ENTERTAINMENT_RANGE',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',				'HD_DISTRICT_IS_ENTERTAINMENT_OR_WARTERPARK'),
 	('DEEPWATERPORT_GOLD',									'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'HD_CITY_HAS_HARBOR_TIER_3_BUILDING_REQUIREMENTS'),
 	('DEEPWATERPORT_HOUSING',								'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_HOUSING',							'HD_CITY_HAS_HARBOR_TIER_3_BUILDING_REQUIREMENTS'),
-	('HD_GREEN_CITY_NATIONALPARK_TOURISM',					'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								NULL),
+	('HD_GREEN_CITY_NATIONALPARK_TOURISM',					'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								null),
 	('HD_GREEN_CITY_NATIONALPARK_TOURISM_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_NATIONAL_PARK_TOURISM',					'PLOT_BREATHTAKING_APPEAL'),
 	('HD_GREEN_CITY_WONDER_TOURISM',						'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',								'PLOT_BREATHTAKING_APPEAL'),
 	('TRAVEL_BLOGGER_TOURISM', 								'MODIFIER_PLAYER_CITIES_ADJUST_IMPROVEMENT_TOURISM', 					'CITY_IS_POWERED'),
-	('INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT',				'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT_BUILDING',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_DAM',						'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_DAM_BUILDING',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_CANAL',					'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_CANAL_BUILDING',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					NULL),
-	('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					NULL);
+	('INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT',				'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_AQUEDUCT_BUILDING',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_DAM',						'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_DAM_BUILDING',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_CANAL',					'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_CANAL_BUILDING',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null),
+	('RAJ_CAPTURED_CITY_CULTURE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_NOT_FOUNDED'),
+	('RAJ_CAPTURED_CITY_SCIENCE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_NOT_FOUNDED'),
+	('RAJ_CAPTURED_CITY_GOLD',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_NOT_FOUNDED'),
+	('RAJ_CAPTURED_CITY_FAITH',								'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_NOT_FOUNDED'),
+	('INTERNATIONALISM_DELEGATION_FAVOR',					'MODIFIER_PLAYER_ADJUST_FAVOR_FROM_DELEGATIONS',						null),
+	('INTERNATIONALISM_EMBASSY_FAVOR',						'MODIFIER_PLAYER_ADJUST_FAVOR_FROM_EMBASSIES',							null),
+	('INTERNATIONALISM_INFLUENCE_POINTS',					'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS',								null),
+	('SOCIAL_DARWINISM_CULTURE_ATTACH',						'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'CITY_WAS_NOT_FOUNDED'),
+	('SOCIAL_DARWINISM_SCIENCE_ATTACH',						'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',								'CITY_WAS_NOT_FOUNDED'),
+	('SOCIAL_DARWINISM_CULTURE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_FOUNDED'),
+	('SOCIAL_DARWINISM_SCIENCE',							'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						'CITY_WAS_FOUNDED'),
+	('CITY_CENTRALIZATION_ALLCITYALLYIELD',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',					null),
+	('CITY_CENTRALIZATION_ALLCITYGOLD',						'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',						null),
+	('FIVE_YEAR_PLAN_DISTRICT_PRODUCTION',					'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',			null),
+	('HAJJ_SCIENCEPERTRIBUTARY',							'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY',					null),
+	('HAJJ_CULTUREPERTRIBUTARY',							'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY',					null),
+	('MARTIAL_ELECTION_GREAT_GENERAL_POINTS',				'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',							null),
+	('MARTIAL_ELECTION_BUILDING_GREAT_GENERAL_POINTS',		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',						'CITY_HAS_DISTRICT_ENCAMPMENT_TIER_1_BUILDING_REQUIREMENTS'),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_PRODUCTION',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',					null),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_BUILDING_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',					null);
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												SubjectRequirementSetId,								SubjectStackLimit)
@@ -803,10 +1002,10 @@ values
 	('PRIMITIVE_COMMUNE_ALLCITYFOOD',										'Amount',						1),
 	('SHAMAN_ALLCITYFAITH',													'YieldType',					'YIELD_FAITH'),
 	('SHAMAN_ALLCITYFAITH',													'Amount',						1),
-	('BARD_ALLCITYCULTURE',													'YieldType',					'YIELD_CULTURE'),
-	('BARD_ALLCITYCULTURE',													'Amount',						1),
-	('CIVILIZE_ALLCITYSCIENCE',												'YieldType',					'YIELD_SCIENCE'),
-	('CIVILIZE_ALLCITYSCIENCE',												'Amount',						1),
+	--('BARD_ALLCITYCULTURE',													'YieldType',					'YIELD_CULTURE'),
+	--('BARD_ALLCITYCULTURE',													'Amount',						1),
+	--('CIVILIZE_ALLCITYSCIENCE',												'YieldType',					'YIELD_SCIENCE'),
+	--('CIVILIZE_ALLCITYSCIENCE',												'Amount',						1),
 	('CARAVANSARIES_ALLCITYGOLD',											'YieldType',					'YIELD_GOLD'),
 	('CARAVANSARIES_ALLCITYGOLD',											'Amount',						2),
 	('MINARET_TEMPLE_POP_FAITH',											'YieldType',					'YIELD_FAITH'),
@@ -842,11 +1041,11 @@ values
 	('WAREHOUSE_PRODUCTION_FOR_COMMERCIAL_HUB',								'Amount',						2),
 	('SAFETY_BOX_PRODUCTION_FOR_COMMERCIAL_HUB',							'YieldType',					'YIELD_PRODUCTION'),
 	('SAFETY_BOX_PRODUCTION_FOR_COMMERCIAL_HUB',							'Amount',						4),
-	('ARENA_TICKETS_ENTERTAINMENT_GOLD',									'YieldType',					'YIELD_GOLD'),
-	('ARENA_TICKETS_ENTERTAINMENT_GOLD',									'Amount',						6),
-	('ARENA_TICKETS_ARENA_GOLD',											'BuildingType',					'BUILDING_ARENA'),
-	('ARENA_TICKETS_ARENA_GOLD',											'YieldType',					'YIELD_GOLD'),
-	('ARENA_TICKETS_ARENA_GOLD',											'Amount',						10),
+--	('ARENA_TICKETS_ENTERTAINMENT_GOLD',									'YieldType',					'YIELD_GOLD'),
+--	('ARENA_TICKETS_ENTERTAINMENT_GOLD',									'Amount',						6),
+--	('ARENA_TICKETS_ARENA_GOLD',											'BuildingType',					'BUILDING_ARENA'),
+--	('ARENA_TICKETS_ARENA_GOLD',											'YieldType',					'YIELD_GOLD'),
+--	('ARENA_TICKETS_ARENA_GOLD',											'Amount',						10),
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY',								'ModifierId',					'WRESTING_AND_MANEUVERS_ARENA_AMENITY_MODIFIER'),
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY_MODIFIER',						'Amount',										2),
 	('WALLS_EARLY_HOUSING',													'Amount',						2),
@@ -902,9 +1101,9 @@ values
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'YieldType',					'YIELD_PRODUCTION'),
 	('WATER_TRANSPORT_DOMESTIC_TRADE_ROUTE_PRODUCTION',						'Amount',						3),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'YieldType',					'YIELD_CULTURE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						2),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_CULTURE',							'Amount',						3),
 	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'YieldType',					'YIELD_SCIENCE'),
-	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						2),
+	('NEW_ROUTE_INTERNATIONAL_TRADE_ROUTE_SCIENCE',							'Amount',						3),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TEXTBOOK_FIXED_SCIENTIST_POINTS',										'Amount',						4),
 	('TEXTBOOK_TIER2_SCIENTIST_POINTS',										'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
@@ -917,8 +1116,12 @@ values
 	('SUPERPOWER_CULTURE',													'YieldType',					'YIELD_CULTURE'),
 	('LIBERALISM_ENTERTAINMENT_PRODUCTION',	 								'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'),
 	('LIBERALISM_ENTERTAINMENT_PRODUCTION',	  								'Amount',						50),
+	('LIBERALISM_ENTERTAINMENT_BUILDING_PRODUCTION',	 					'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('LIBERALISM_ENTERTAINMENT_BUILDING_PRODUCTION',	  					'Amount',						50),
 	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',	 						'DistrictType',					'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
-	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',	  						'Amount',						50),
+	('LIBERALISM_WATHER_ENTERTAINMENT_BUILDING_PRODUCTION',	  				'Amount',						50),
+	('LIBERALISM_WATHER_ENTERTAINMENT_PRODUCTION',	 						'DistrictType',					'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'),
+	('LIBERALISM_WATHER_ENTERTAINMENT_BUILDING_PRODUCTION',	  				'Amount',						50),
 	('FIVE_YEAR_PLAN_INDUSTRIAL_RANGE',	  									'Amount',						3),
 	('SPORTS_MEDIA_ENTERTAINMENT_RANGE',	  								'Amount',						3),
 	('DEEPWATERPORT_GOLD',													'YieldType',					'YIELD_GOLD'),
@@ -944,7 +1147,41 @@ values
     ('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD',                    		'DistrictType',                 'DISTRICT_NEIGHBORHOOD'),
     ('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD',                    		'Amount',                       50),
     ('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING',                   'DistrictType',                 'DISTRICT_NEIGHBORHOOD'),
-    ('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING',                   'Amount',                       50);
+    ('INFRASTRUCTURE_CONSTRUCTION_NEIGHBORHOOD_BUILDING',                   'Amount',                       50),
+	('RAJ_CAPTURED_CITY_CULTURE',											'YieldType',					'YIELD_CULTURE'),
+	('RAJ_CAPTURED_CITY_CULTURE',											'Amount',						2),
+	('RAJ_CAPTURED_CITY_SCIENCE',											'YieldType',					'YIELD_SCIENCE'),
+	('RAJ_CAPTURED_CITY_SCIENCE',											'Amount',						2),
+	('RAJ_CAPTURED_CITY_GOLD',												'YieldType',					'YIELD_GOLD'),
+	('RAJ_CAPTURED_CITY_GOLD',												'Amount',						2),
+	('RAJ_CAPTURED_CITY_FAITH',												'YieldType',					'YIELD_FAITH'),
+	('RAJ_CAPTURED_CITY_FAITH',												'Amount',						2),
+	('INTERNATIONALISM_DELEGATION_FAVOR',									'Amount',						3),
+	('INTERNATIONALISM_EMBASSY_FAVOR',										'Amount',						3),
+	('INTERNATIONALISM_INFLUENCE_POINTS',									'BonusType',					'GOVERNMENTBONUS_ENVOYS'),
+	('INTERNATIONALISM_INFLUENCE_POINTS',									'Amount',						30),
+	('SOCIAL_DARWINISM_CULTURE_ATTACH',										'ModifierId',					'SOCIAL_DARWINISM_CULTURE'),
+	('SOCIAL_DARWINISM_SCIENCE_ATTACH',										'ModifierId',					'SOCIAL_DARWINISM_SCIENCE'),
+	('SOCIAL_DARWINISM_CULTURE',											'YieldType',					'YIELD_CULTURE'),
+	('SOCIAL_DARWINISM_CULTURE',											'Amount',						1),
+	('SOCIAL_DARWINISM_SCIENCE',											'YieldType',					'YIELD_SCIENCE'),
+	('SOCIAL_DARWINISM_SCIENCE',											'Amount',						1),
+	('CITY_CENTRALIZATION_ALLCITYALLYIELD',									'Amount',						2),
+	('CITY_CENTRALIZATION_ALLCITYGOLD',										'YieldType',					'YIELD_GOLD'),
+	('CITY_CENTRALIZATION_ALLCITYGOLD',										'Amount',						2),
+	('FIVE_YEAR_PLAN_DISTRICT_PRODUCTION',									'Amount',						30),
+	('HAJJ_SCIENCEPERTRIBUTARY',											'YieldType',					'YIELD_SCIENCE'),
+	('HAJJ_SCIENCEPERTRIBUTARY',											'Amount',						1),
+	('HAJJ_CULTUREPERTRIBUTARY',											'YieldTyoe',					'YIELD_CULTURE'),
+	('HAJJ_CULTUREPERTRIBUTARY',											'Amount',						1),
+	('MARTIAL_ELECTION_GREAT_GENERAL_POINTS',								'GreatPersonClassType',			'GREAT_PERSON_CLASS_GENERAL'),
+	('MARTIAL_ELECTION_GREAT_GENERAL_POINTS',								'Amount',						4),
+	('MARTIAL_ELECTION_BUILDING_GREAT_GENERAL_POINTS',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_GENERAL'),
+	('MARTIAL_ELECTION_BUILDING_GREAT_GENERAL_POINTS',						'Amount',						2),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_PRODUCTION',	 						'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_PRODUCTION',	  						'Amount',						30),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_BUILDING_PRODUCTION',	 				'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'),
+	('GLADIATORIAL_GAME_ENTERTAINMENT_BUILDING_PRODUCTION',	  				'Amount',						30);
 
 insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
 	('REQUIRES_PLOT_HAS_ARENA_WITHIN_4',		'BuildingType',	'BUILDING_ARENA'),
@@ -987,146 +1224,11 @@ values
 	('HD_OVERSEAS_CITY_HAS_TIER_2_HARBOR_BUILDINGS', 			'REQUIRES_HD_CITY_HAS_HARBOR_TIER_2_BUILDING'),
 	('HD_OVERSEAS_CITY_HAS_TIER_2_HARBOR_BUILDINGS', 			'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT');
 
--- DeepLogic
--- 独裁效果调整
-update ModifierArguments set Value = 2 where Name = 'Amount' and (
-	ModifierId = 'AUTOCRACY_CAPITAL'
- or ModifierId = 'AUTOCRACY_TIER1'
- or ModifierId = 'AUTOCRACY_TIER2'
- or ModifierId = 'AUTOCRACY_TIER3'
- or ModifierId = 'CONSULATE_TIER1'
- or ModifierId = 'CHANCERY_TIER2');
 
--- insert or replace into PolicyModifiers
--- 	(PolicyType,	ModifierId)
--- values
--- 	('POLICY_GOV_AUTOCRACY',	'AUTOCRACY_GOV');
-
--- insert or replace into GovernmentModifiers
--- 	(GovernmentType,	ModifierId)
--- values
--- 	('GOVERNMENT_AUTOCRACY',	'AUTOCRACY_GOV');
-
--- insert or replace into Modifiers
--- 	(ModifierId,		ModifierType,	SubjectRequirementSetId)
--- values
--- 	('AUTOCRACY_GOV',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE',	'CITY_HAS_GOV_DISTRICT');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId, 			Name, 		Value)
--- values
--- 	('AUTOCRACY_GOV',		'Amount',	2);
-
---By 利牙菠萝 君主制及传承效果调整
-delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';
-delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_CASTLE_HOUSING';
-delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId = 'MONARCHY_STARFORT_HOUSING';
-
-delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId = 'MONARCHY_WALLS_HOUSING';
-delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId = 'MONARCHY_CASTLE_HOUSING';
-delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId = 'MONARCHY_STARFORT_HOUSING';
-
-insert or replace into GovernmentModifiers
-	(GovernmentType,						ModifierId)
-values
-	('GOVERNMENT_MONARCHY',					'MONARCHY_CITYGROWTH_BONUS'),
-	('GOVERNMENT_MONARCHY',					'MONARCHY_UNITPRODUCTION_BONUS'),
-	('GOVERNMENT_MONARCHY',					'MONARCHY_GOLD_BONUS');
-
-insert or replace into PolicyModifiers
-	(PolicyType,							ModifierId)
-values
-	('POLICY_GOV_MONARCHY',					'MONARCHY_CITYGROWTH_BONUS'),
-	-- ('POLICY_GOV_MONARCHY',					'MONARCHY_UNITPRODUCTION_BONUS'),
-	('POLICY_GOV_MONARCHY',					'MONARCHY_GOLD_BONUS');
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,												SubjectRequirementSetId)
-values
-	('MONARCHY_CITYGROWTH_BONUS',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_GROWTH',				'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
-	('MONARCHY_UNITPRODUCTION_BONUS',		'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION_MODIFIER',	'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
-	('MONARCHY_GOLD_BONUS',					'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',		'CITY_HAS_GARRISON_UNIT_REQUIERMENT');
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,														Value)
-values
-	('MONARCHY_CITYGROWTH_BONUS',			'Amount',													10),
-	('MONARCHY_UNITPRODUCTION_BONUS',		'Amount',													20),
-	('MONARCHY_GOLD_BONUS',					'YieldType',												'YIELD_GOLD'),
-	('MONARCHY_GOLD_BONUS',					'Amount',													10);
-
-insert or replace into Policy_GovernmentExclusives_XP2
-	(PolicyType,					GovernmentType)
-values
-	('POLICY_SIMULTANEUM',			'GOVERNMENT_THEOCRACY');
-	-- ('POLICY_MINARET',				'GOVERNMENT_THEOCRACY');
-	-- ('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_COMMUNISM'),
-	-- ('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DEMOCRACY'),
-	-- ('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_FASCISM');
-	--('POLICY_FIVE_YEAR_PLAN',		'GOVERNMENT_SYNTHETIC_TECHNOCRACY'),
-	--('POLICY_ECONOMIC_UNION',		'GOVERNMENT_DIGITAL_DEMOCRACY'),
-	--('POLICY_LIGHTNING_WARFARE',	'GOVERNMENT_CORPORATE_LIBERTARIANISM');
-
---Democracy discount -25%
---update ModifierArguments set Value = 25 where ModifierId = 'DEMOCRACY_GOLD_PURCHASE' and Name = 'Amount';
-
-delete from Policies where PolicyType = 'POLICY_LAND_SURVEYORS';
-
--- 商共效果
-insert or replace into GovernmentModifiers
-	(GovernmentType,					ModifierId)
-values
-	-- ('GOVERNMENT_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_GOLD_PURCHASE'),
-	('GOVERNMENT_MERCHANT_REPUBLIC',	'LANDSURVEYORS_PLOTPURCHASECOST');
-update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_DISTRICTS' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'MERCHANT_REPUBLIC_GOLD_MODIFIER' and Name = 'Amount';
--- insert or replace into Modifiers
--- 	(ModifierId,							ModifierType)
--- values
--- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',		'MODIFIER_PLAYER_GOVERNMENT_FLAT_BONUS');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,						Name,			Value)
--- values
--- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'BonusType',	'GOVERNMENTBONUS_GOLD_PURCHASES'),
--- 	('MERCHANT_REPUBLIC_GOLD_PURCHASE',	'Amount',		15);
-
-insert or replace into PolicyModifiers(PolicyType,	ModifierID)values
-	('POLICY_GOV_MERCHANT_REPUBLIC',	'MERCHANT_REPUBLIC_DISTRICTS');
-
--- 神权
--- delete from GovernmentModifiers where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
--- insert or replace into GovernmentModifiers(GovernmentType,	ModifierID)values
--- 	('GOVERNMENT_THEOCRACY',	'TRAIT_GAINS_FOUNDER_BELIEF_MAJORITY_RELIGION');
-
-update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
-
-update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
-
-insert or replace into GovernmentModifiers(GovernmentType,	ModifierID)values
-	('GOVERNMENT_THEOCRACY',	'THEOCRACY_HOLY_SITE_PURCHASE_MILITARY');
-
-insert or replace into Modifiers
-	(ModifierId,								ModifierType,											SubjectRequirementSetId)
-values
-	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE',	'CITY_HAS_HOLY_SITE');
-
-insert or replace into ModifierArguments
-	(ModifierId,								Name,	Value)
-values
-	('THEOCRACY_HOLY_SITE_PURCHASE_MILITARY',	'Tag',	'CLASS_LAND_COMBAT');
 
 -- policy housing
 update ModifierArguments set Value = 2 where ModifierId = 'INSULAE_SPECIALTYHOUSING';
 update ModifierArguments set Value = 4 where ModifierId = 'MEDINAQUARTER_SPECIALTYHOUSING';		
-
---四级政体允许使用任意三级政体专属卡
--- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
--- select PolicyType,	'GOVERNMENT_SYNTHETIC_TECHNOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
--- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
--- select PolicyType,	'GOVERNMENT_DIGITAL_DEMOCRACY' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
--- insert or replace into Policy_GovernmentExclusives_XP2  (PolicyType, GovernmentType)
--- select PolicyType,	'GOVERNMENT_CORPORATE_LIBERTARIANISM' from Policy_GovernmentExclusives_XP2 where GovernmentType = 'GOVERNMENT_DEMOCRACY' or GovernmentType = 'GOVERNMENT_FASCISM' or GovernmentType = 'GOVERNMENT_COMMUNISM';
 
 delete from PolicyModifiers where PolicyType = 'POLICY_LIGHTNING_WARFARE';
 insert or replace into PolicyModifiers
@@ -1176,17 +1278,17 @@ delete from PolicyModifiers where
 	PolicyType = 'POLICY_INTERNATIONAL_WATERS';
 
 create table 'PolicyUnitProductionValidEras'(
-	'PolicyType' TEXT NOT NULL,
-	'EraType' TEXT NOT NULL,
-	'SpeedUpAmount' INTEGER NOT NULL DEFAULT 0,
-	'SpeedUpPerTier' INTEGER NOT NULL DEFAULT 0,
+	'PolicyType' TEXT NOT null,
+	'EraType' TEXT NOT null,
+	'SpeedUpAmount' INTEGER NOT null DEFAULT 0,
+	'SpeedUpPerTier' INTEGER NOT null DEFAULT 0,
 	PRIMARY KEY('PolicyType', 'EraType'),
 	FOREIGN KEY('PolicyType') REFERENCES Policies('PolicyType') ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY('EraType') REFERENCES Eras('EraType') ON DELETE CASCADE ON UPDATE CASCADE);
 
 create table 'PolicyUnitProductionValidClasses'(
-	'PolicyType' TEXT NOT NULL,
-	'PromotionClassType' TEXT NOT NULL,
+	'PolicyType' TEXT NOT null,
+	'PromotionClassType' TEXT NOT null,
 	'UnitDomain' TEXT,
 	PRIMARY KEY('PolicyType', 'PromotionClassType'),
 	FOREIGN KEY('PolicyType') REFERENCES Policies('PolicyType') ON DELETE CASCADE ON UPDATE CASCADE,
@@ -1262,167 +1364,6 @@ select a.PolicyType, b.PromotionClassType,	'Sea' from Policies a CROSS JOIN Unit
 	b.PromotionClassType = 'PROMOTION_CLASS_NAVAL_RANGED' or
 	b.PromotionClassType = 'PROMOTION_CLASS_NAVAL_RAIDER');
 
--- Policy on Tech tree.
--- update Policies set PrereqTech = 'TECH_BUTTRESS', PrereqCivic = NULL where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
-
-
------------------------------
--- 政策卡解锁时间修改 by xhh --
------------------------------
-
-	-- 政策卡修改：【工商食官】改为【轮子】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WAREHOUSE';
-update Policies set PrereqTech = 'TECH_THE_WHEEL' where PolicyType = 'POLICY_WAREHOUSE';
-
-	-- 政策卡修改：【城市公社】改为【批量生产】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_SAFETY_BOX';
-update Policies set PrereqTech = 'TECH_MASS_PRODUCTION' where PolicyType = 'POLICY_SAFETY_BOX';
-
-	-- 政策卡修改：【楼房】改为【砌砖】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_INSULAE';
-update Policies set PrereqTech = 'TECH_MASONRY' where PolicyType = 'POLICY_INSULAE';
-
-	-- 政策卡修改：【古老城区】改为【学徒】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_MEDINA_QUARTER';
-update Policies set PrereqTech = 'TECH_APPRENTICESHIP' where PolicyType = 'POLICY_MEDINA_QUARTER';
-
-	-- 政策卡修改：【哥特式建筑】改为【扶壁】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
-update Policies set PrereqTech = 'TECH_BUTTRESS' where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
-
-	-- 政策卡修改：【三角贸易】改为【制图学】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_TRIANGULAR_TRADE';
-update Policies set PrereqTech = 'TECH_CARTOGRAPHY' where PolicyType = 'POLICY_TRIANGULAR_TRADE';
-
-	-- 政策卡修改：【自由市场】改为【银行业】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_FREE_MARKET';
-update Policies set PrereqTech = 'TECH_BANKING' where PolicyType = 'POLICY_FREE_MARKET';
-
-	-- 政策卡修改：【公共交通】改为【城市化】科技解锁
-update Policies set PrereqCivic = 'CIVIC_URBANIZATION' where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
-
-	-- 政策卡修改：【公共卫生】改为【卫生设备】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_EXPROPRIATION';
-update Policies set PrereqTech = 'TECH_SANITATION' where PolicyType = 'POLICY_EXPROPRIATION';
-
-	-- 政策卡修改：【经济同盟】改为【电力】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_ECONOMIC_UNION';
-update Policies set PrereqTech = 'TECH_ELECTRICITY' where PolicyType = 'POLICY_ECONOMIC_UNION';
-
-	-- 政策卡修改：【高速公路】改为【内燃机】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVIZATION';
-update Policies set PrereqTech = 'TECH_COMBUSTION' where PolicyType = 'POLICY_COLLECTIVIZATION';
-delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
-
--- 	-- 政策卡修改：【电子商务】改为【远程通讯】科技解锁
--- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_ECOMMERCE';
--- update Policies set PrereqTech = 'TECH_TELECOMMUNICATIONS' where PolicyType = 'POLICY_ECOMMERCE';
-
-	-- 政策卡修改：【采邑】改为【城堡】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WALL_HOUSING';
-update Policies set PrereqTech = 'TECH_CASTLES' where PolicyType = 'POLICY_WALL_HOUSING';
-
-	-- 政策卡修改：【生产建设兵团】改为【军事学】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
-update Policies set PrereqTech = 'TECH_MILITARY_SCIENCE' where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
-
-	-- 政策卡修改：【军事研究】改为【军事学】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_MILITARY_RESEARCH';
-update Policies set PrereqTech = 'TECH_MILITARY_SCIENCE' where PolicyType = 'POLICY_MILITARY_RESEARCH';
-
-	-- 政策卡修改：【资源管理】改为【无线电】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
-update Policies set PrereqTech = 'TECH_RADIO' where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
-
-	-- 政策卡修改：【公海】改为【联合作战】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
-update Policies set PrereqTech = 'TECH_COMBINED_ARMS' where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
-
-	-- 政策卡修改：【战略空军】改为【火箭研究】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
-update Policies set PrereqTech = 'TECH_ROCKETRY' where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
-
-	-- 政策卡修改：【二次攻击能力】改为【核裂变】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
-update Policies set PrereqTech = 'TECH_NUCLEAR_FISSION' where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
-
-	-- 政策卡修改：【训练手册】改为【膛线】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_DRILL_MANUALS';
-update Policies set PrereqTech = 'TECH_RIFLING' where PolicyType = 'POLICY_DRILL_MANUALS';
-
--- 	-- 政策卡修改：【不结盟运动】改为【卫星】科技解锁
--- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
--- update Policies set PrereqTech = 'TECH_SATELLITES' where PolicyType = 'POLICY_COLLECTIVE_ACTIVISM';
-
-	-- 政策卡修改：【贸易银行】改为【银行业】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_WISSELBANKEN';
-update Policies set PrereqTech = 'TECH_BANKING' where PolicyType = 'POLICY_WISSELBANKEN';
-
--- 	-- 政策卡修改：【鼓舞】改为【造纸术】科技解锁
--- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_INSPIRATION';
--- update Policies set PrereqTech = 'TECH_PAPER_MAKING_HD' where PolicyType = 'POLICY_INSPIRATION';
-
--- 	-- 政策卡修改：【海军基础设施】改为【罗盘】科技解锁
--- update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
--- update Policies set PrereqTech = 'TECH_COMPASS_HD' where PolicyType = 'POLICY_NAVAL_INFRASTRUCTURE';
-
-	-- 政策卡修改：【棱堡】改为【攻城学】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_BASTIONS';
-update Policies set PrereqTech = 'TECH_SIEGE_TACTICS' where PolicyType = 'POLICY_BASTIONS';
-
-	-- 政策卡修改：【边界】改为【砌砖】科技解锁
-update Policies set PrereqCivic = NULL where PolicyType = 'POLICY_LIMES';
-update Policies set PrereqTech = 'TECH_MASONRY' where PolicyType = 'POLICY_LIMES';
-
-	-- 政策卡修改：【军队现代化】改为【动员】市政解锁
-update Policies set PrereqCivic = 'CIVIC_MOBILIZATION' where PolicyType = 'POLICY_FORCE_MODERNIZATION';
-
-	-- 政策卡修改：【常春藤联盟】改为【资本主义】市政解锁
-update Policies set PrereqCivic = 'CIVIC_CAPITALISM' where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
-
--- 	-- 政策卡修改：【采风】改为【文学传统】市政解锁
--- update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType = 'POLICY_LITERARY_TRADITION';
-
-	-- 政策卡修改：【教育学】改为【社会科学】市政解锁
-update Policies set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where PolicyType = 'POLICY_GRAND_OPERA';
-
-	-- 政策卡修改：【殖民地办事处】改为【演化论】市政解锁
-update Policies set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD' where PolicyType = 'POLICY_COLONIAL_OFFICES';
-
-	-- 政策卡修改：【发明】改为【历史哲学】市政解锁
-update Policies set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where PolicyType = 'POLICY_INVENTION';
-
-	-- 政策卡修改：【国家认同】改为【伦理学】市政解锁
-update Policies set PrereqCivic = 'CIVIC_ETHICS_HD' where PolicyType = 'POLICY_NATIONAL_IDENTITY';
-
-	-- 政策卡修改：【美学】改为【文学传统】市政解锁
-update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD' where PolicyType = 'POLICY_AESTHETICS';
-
-	-- 政策卡修改：【后勤】改为【后请补给】市政解锁
-update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS' where PolicyType = 'POLICY_LOGISTICS';
-
-	-- 政策卡修改：【城镇特许状】改为【中世纪集市】市政解锁
-update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES' where PolicyType = 'POLICY_TOWN_CHARTERS';
-
---by 先驱 政策卡增加：【艺术赞助人】 银行业解锁
---by 先驱 政策卡增加：【历史进步】 历史哲学解锁
---by 先驱 政策卡增加：【工事】 工程解锁
---新增政策卡：军器监 Weapons Management Service [军事训练解锁]
-insert or replace into Types
-	(Type,												Kind)
-values
-	-- ('POLICY_ART_PATRONS',								'KIND_POLICY'),
-	-- ('POLICY_HISTORICAL_PROGRESS',	    				'KIND_POLICY'),
-	('POLICY_WEAPONS_MANAGEMENT_SERVICE',				'KIND_POLICY'),
-	('POLICY_FORTIFICATIONS',							'KIND_POLICY');
-insert or replace into Policies
-	(PolicyType,							Name,											Description,											PrereqCivic,								PrereqTech,					GovernmentSlotType)
-values
-	-- ('POLICY_ART_PATRONS',					'LOC_POLICY_ART_PATRONS_NAME',					'LOC_POLICY_ART_PATRONS_DESCRIPTION',					NULL,						                'TECH_BANKING',			    'SLOT_ECONOMIC'),
-	-- ('POLICY_HISTORICAL_PROGRESS',	    	'LOC_POLICY_HISTORICAL_PROGRESS_NAME',			'LOC_POLICY_HISTORICAL_PROGRESS_DESCRIPTION',			'CIVIC_HISTORICAL_PHILOSOPHY_HD',		    NULL,			            'SLOT_ECONOMIC'),
-	('POLICY_FORTIFICATIONS',				'LOC_POLICY_FORTIFICATIONS_NAME',				'LOC_POLICY_FORTIFICATIONS_DESCRIPTION',				NULL,										'TECH_ENGINEERING',			'SLOT_MILITARY'),
-	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_NAME',	'LOC_POLICY_WEAPONS_MANAGEMENT_SERVICE_DESCRIPTION',	'CIVIC_MILITARY_TRAINING',					NULL,			    		'SLOT_MILITARY');
-
 insert or replace into PolicyModifiers
 	(PolicyType,							ModifierId)
 values
@@ -1463,44 +1404,6 @@ values
 --军事研究政策卡：删除造兵给瓶能力，替代且并入“军器监”政策。
 delete from PolicyModifiers where PolicyType = 'POLICY_MILITARY_RESEARCH' and ModifierId = 'HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_XHH';
 
--- 着力点：开明专制 by xhh
-update CommemorationTypes set MaximumGameEra = 'ERA_MEDIEVAL' where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE';
-update CommemorationTypes set MinimumGameEra = 'ERA_MODERN' where CommemorationType = 'COMMEMORATION_MILITARY';
-
-insert or replace into Types
-	(Type,								Kind)
-values
-	('COMMEMORATION_GOVERNMENT',		'KIND_MOMENT_OUTCOME');
-
-insert or replace into CommemorationTypes
-	(CommemorationType,					CategoryDescription,				GoldenAgeBonusDescription,							NormalAgeBonusDescription,							DarkAgeBonusDescription,							MinimumGameEra,			MaximumGameEra)
-values
-	('COMMEMORATION_GOVERNMENT',		'LOC_MOMENT_CATEGORY_GOVERNMENT',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_GOLDEN_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_NORMAL_AGE',	'LOC_MOMENT_CATEGORY_GOVERNMENT_BONUS_DARK_AGE',	'ERA_RENAISSANCE',		'ERA_INDUSTRIAL');
-
-insert or replace into CommemorationModifiers
-	(CommemorationType,					ModifierId)
-values
-	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_ADD_SLOT'),
-	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH'),
-	('COMMEMORATION_GOVERNMENT',		'COMMEMORATION_GOVERNMENT_QUEST');
-
-insert or replace into Modifiers
-	(ModifierId,													ModifierType,													OwnerRequirementSetId,						SubjectRequirementSetId)
-values
-	('COMMEMORATION_GOVERNMENT_ADD_SLOT',							'MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER',		'PLAYER_HAS_GOLDEN_AGE',					NULL),
-	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',				'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'PLAYER_HAS_GOLDEN_AGE',					'HD_DISTRICT_IS_CITY_CENTER'),
-	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				NUll,										NULL),
-	('COMMEMORATION_GOVERNMENT_QUEST',								'MODIFIER_PLAYER_ADJUST_PLAYER_ERA_SCORE_PER_PRIDE_MOMENT',		NULL,										'PLAYER_ELIGIBLE_FOR_COMMEMORATION_QUEST');
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-values
-	('COMMEMORATION_GOVERNMENT_ADD_SLOT',								'GovernmentSlotType',	'SLOT_WILDCARD'),
-	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE_ATTACH',					'ModifierId',			'COMMEMORATION_GOVERNMENT_BOOST_CULTURE'),
-	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'YieldType',			'YIELD_CULTURE'),
-	('COMMEMORATION_GOVERNMENT_BOOST_CULTURE',							'Amount',				5),
-	('COMMEMORATION_GOVERNMENT_QUEST',									'Amount',				1),
-	('COMMEMORATION_GOVERNMENT_QUEST',									'MinScore',				1);
 
 -- 公共交通 by xhh
 delete from PolicyModifiers where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
@@ -1523,8 +1426,8 @@ values
 	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'MaxDistance',		3);
 
 CREATE TEMPORARY TABLE 'HD_DistrictBonus'(
-    'DistrictType' TEXT NOT NULL,
-    'YieldType' TEXT NOT NULL
+    'DistrictType' TEXT NOT null,
+    'YieldType' TEXT NOT null
 );
 
 insert or replace into HD_DistrictBonus
@@ -1760,67 +1663,5 @@ update Modifiers set SubjectRequirementSetId = "HD_CITY_HAS_COMMERCIAL_TIER_3_BU
 -- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_SCIENCEPERTRIBUTARY' and Name = 'Amount';
 -- update ModifierArguments set Value = 1 where ModifierId = 'RAJ_CULTUREPERTRIBUTARY' and Name = 'Amount';
 
--- 自由探索: 多10%尤里卡, 每个不同的区域和建筑给1瓶
-delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_COMMERCIAL_HUB';
-delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_SCIENTIFIC' and ModifierId = 'COMMEMORATION_SCIENTIFIC_GA_HARBOR';
-
-create temporary table RealBuildings (BuildingType text not null primary key);
-insert or replace into RealBuildings (BuildingType) select BuildingType from Buildings where BuildingType != 'BUILDING_CANAL' and BuildingType not like 'BUILDING_MARACANA_DUMMY_%' and IsWonder = 0 and InternalOnly = 0 and PrereqDistrict is not null;
-create temporary table BuffedObjects (ObjectType text not null primary key);
-insert or replace into BuffedObjects (ObjectType) select BuildingType from RealBuildings;
-insert or replace into BuffedObjects (ObjectType) select DistrictType from Districts;
-insert or replace into Requirements
-    (RequirementId,                         RequirementType)
-select
-    'REQUIRES_PLAYER_HAS_' || BuildingType, 'REQUIREMENT_PLAYER_HAS_BUILDING'
-from RealBuildings;
-insert or replace into Requirements
-    (RequirementId,                         RequirementType)
-select
-    'REQUIRES_PLAYER_HAS_' || DistrictType, 'REQUIREMENT_PLAYER_HAS_DISTRICT'
-from Districts;
-insert or replace into RequirementArguments
-    (RequirementId,                         Name,           Value)
-select
-    'REQUIRES_PLAYER_HAS_' || BuildingType, 'BuildingType', BuildingType
-from RealBuildings;
-insert or replace into RequirementArguments
-    (RequirementId,                         Name,           Value)
-select
-    'REQUIRES_PLAYER_HAS_' || DistrictType, 'DistrictType', DistrictType
-from Districts;
-insert or replace into RequirementSets
-    (RequirementSetId,                             RequirementSetType)
-select
-    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIREMENTSET_TEST_ALL'
-from BuffedObjects;
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                             RequirementId)
-select
-    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_' || ObjectType
-from BuffedObjects;
-insert or replace into RequirementSetRequirements
-    (RequirementSetId,                             RequirementId)
-select
-    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType,    'REQUIRES_PLAYER_HAS_GOLDEN_AGE'
-from BuffedObjects;
-insert or replace into CommemorationModifiers
-    (CommemorationType,         ModifierId)
-select
-    'COMMEMORATION_SCIENTIFIC', 'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE'
-from BuffedObjects;
-insert or replace into Modifiers
-    (ModifierId,                                              ModifierType,                                               OwnerRequirementSetId)
-select
-    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_YIELD_CHANGE',    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType
-from BuffedObjects;
-insert or replace into ModifierArguments
-    (ModifierId,                                              Name,           Value)
-select
-    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'YieldType',    'YIELD_SCIENCE'
-from BuffedObjects;
-insert or replace into ModifierArguments
-    (ModifierId,                                              Name,           Value)
-select
-    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'Amount',       1
-from BuffedObjects;
+update ModifierArguments set Value = 2 where ModifierId = 'TRIANGULARTRADE_TRADEROUTEFAITH' and Name = 'Amount';
+delete from PolicyModifiers where PolicyType = 'POLICY_SPORTS_MEDIA' and ModifierId = 'SPORTSMEDIA_STADIUMENTERTAINMENT';

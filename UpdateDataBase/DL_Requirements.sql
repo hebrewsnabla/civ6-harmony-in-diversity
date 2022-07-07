@@ -127,6 +127,14 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'CITY_HAS_' || DistrictType || '_REQUIREMENTS', 'REQUIRES_CITY_HAS_' || DistrictType from Districts;
 
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || DistrictType, 'DistrictType', DistrictType from Districts;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || DistrictType, 'REQUIREMENT_PLAYER_HAS_DISTRICT' from Districts;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_' || DistrictType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_' || DistrictType || '_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_' || DistrictType from Districts;
 	
 -- Buildings
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -414,7 +422,9 @@ values
 	('HD_CITY_CENTER_ADJACENT_TO_RIVER_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL'),
 	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIREMENTSET_TEST_ANY'),
     ('PLOT_IS_HILLS',                                               'REQUIREMENTSET_TEST_ALL'),
-	('PLOT_ADJACENT_TO_LAKE',										'REQUIREMENTSET_TEST_ALL');
+	('ENCAMPMENT_ADJACENT_TO_LAKE',									'REQUIREMENTSET_TEST_ALL'),
+	('CITY_WAS_FOUNDED',											'REQUIREMENTSET_TEST_ALL'),
+	('CITY_WAS_NOT_FOUNDED',										'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
@@ -495,7 +505,10 @@ values
 	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIRES_UNIT_IS_UNIT_MISSIONARY'),
 	('UNIT_IS_MISSIONARY_OR_APOSTLE',								'REQUIRES_UNIT_IS_UNIT_APOSTLE'),
     ('PLOT_IS_HILLS',                                               'REQUIRES_PLOT_IS_HILLS'),
-    ('PLOT_ADJACENT_TO_LAKE',                                      	'REQUIRES_PLOT_ADJACENT_TO_LAKE');
+    ('ENCAMPMENT_ADJACENT_TO_LAKE',                                 'REQUIRES_PLOT_ADJACENT_TO_LAKE'),
+    ('ENCAMPMENT_ADJACENT_TO_LAKE',                                 'REQUIRES_DISTRICT_IS_DISTRICT_ENCAMPMENT'),
+	('CITY_WAS_FOUNDED',											'REQUIRES_CITY_WAS_FOUNDED'),
+	('CITY_WAS_NOT_FOUNDED',										'REQUIRES_CITY_WAS_NOT_FOUNDED');
 
 insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;

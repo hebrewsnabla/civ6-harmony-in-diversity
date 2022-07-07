@@ -6,7 +6,7 @@ values
     ("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "1 [ICON_ENVOY] Envoy:"),
     ("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "3 [ICON_ENVOY] Envoys:"),
     ("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "6 [ICON_ENVOY] Envoys:"),
-    --("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "9 [ICON_ENVOY] Envoys:"),
+    ("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "10 [ICON_ENVOY] Envoys:"),
     ("LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "3 [ICON_Envoy] Envoys, and more than any other civilization:"),
     ("LOC_CITY_STATES_SUZERAIN_DIPLOMATIC_BONUS",         "Suzerain Diplomacy Bonus:[NEWLINE][ICON_Bolt]The city-state follows you into war and peace with other players.[NEWLINE][ICON_Bolt]City-state lands become friendly territory. Your units can move there, heal there, and upgrade there.[NEWLINE][ICON_Bolt]Your Builder units may improve city-state tiles.[NEWLINE][ICON_Bolt]See 3 tiles around the city-state.[NEWLINE][ICON_Bolt]Can pay [ICON_Gold] Gold to temporarily take control of the city-state's military.[NEWLINE][ICON_Bolt]Gain ownership of all the city-state's resources."), --[NEWLINE][ICON_Bolt]You gain a base of +1 [ICON_FAVOR] Diplomatic Favor every turn.
     ("LOC_LEADER_TRAIT_ANTANANARIVO_DESCRIPTION",         "Your Civilization gains +1% [ICON_Culture] Culture for each Great Person it has ever earned, up to a total of +15%."),
@@ -115,7 +115,7 @@ values
     ("zh_Hans_CN",  "LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS",              "派遣1位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS",             "派遣3位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS",              "派遣6位 [ICON_Envoy] 使者："),
-    --("zh_Hans_CN",  "LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "派遣9位 [ICON_Envoy] 使者："),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS",            "派遣10位 [ICON_Envoy] 使者："),
     ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_ENVOYS",                   "已派至少3位 [ICON_Envoy] 使者，并多于其他文明："),
     ("zh_Hans_CN",  "LOC_CITY_STATES_SUZERAIN_DIPLOMATIC_BONUS",         "宗主国外交加成：[NEWLINE][ICON_Bolt] 您对其他玩家宣战时，城邦跟随您加入战争，同盟友或中立文明和平共处。[NEWLINE][ICON_Bolt] 城邦领土成为友方领土。您的单位可以在城邦领土内移动、治愈和升级。[NEWLINE][ICON_Bolt] 您的建造者单位能改良城邦的单元格。[NEWLINE][ICON_Bolt] 获得城邦周围3个单元格的视野。[NEWLINE][ICON_Bolt] 花费 [ICON_Gold] 金币暂时获得城邦军队的控制权。[NEWLINE][ICON_Bolt] 获得所有城邦资源的所有权。"), --[NEWLINE][ICON_Bolt]每回合您可获得1点基础 [ICON_FAVOR] 外交支持。
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTANANARIVO_DESCRIPTION",         "您的文明每获得1位伟人，[ICON_Culture] 文化值便+1%（上限为+15%）。"),
@@ -344,6 +344,10 @@ values
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",               "每座*+4 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",                "每座*+6 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",              "每座*+8 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS_ALT",            "每座*+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",           "每座*+4 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",            "每座*+6 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",          "每座*+8 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",            "每座*+1 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",           "每座*+2 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",            "每座*+3 [ICON_Faith] 信仰值。"),

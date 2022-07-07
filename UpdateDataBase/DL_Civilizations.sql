@@ -1407,6 +1407,7 @@ values
 	('PEACE_ADDAMENITY',		'Amount',		1);
 ---------------------------------------------------------------------------------------------------------------------------------
 --CHANDRAGUPTA By Kekeya（政事论：完成军事训练市政后获得一个移民到首都）
+update ModifierArguments set Value = 'CIVIC_MILITARY_TRADITION' where ModifierId = 'TRAIT_TERRITORIAL_WAR_PREREQ_OVERRIDE' and Name = 'CivicType';
 insert or replace into TraitModifiers (TraitType, ModifierId)
 values
 ('TRAIT_LEADER_ARTHASHASTRA', 'MODIFIER_KKY_GRANT_SETTLER_AFTER_CIVIC');

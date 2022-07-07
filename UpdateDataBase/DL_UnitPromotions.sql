@@ -6,7 +6,7 @@
 update Civics set Description = 'LOC_CIVIC_DEFENSIVE_TACTICS_HD_DESCRIPTION' where CivicType = 'CIVIC_DEFENSIVE_TACTICS';
 update Civics set Description = 'LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION' where CivicType = 'CIVIC_MILITARY_TRAINING';
 update Civics set Description = 'LOC_CIVIC_MERCENARIES_HD_DESCRIPTION' where CivicType = 'CIVIC_MERCENARIES';
-update Civics set Description = 'LOC_CIVIC_HUMANISM_HD_DESCRIPTION' where CivicType ='CIVIC_HUMANISM';
+update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 update Civics set Description = 'LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION' where CivicType ='CIVIC_SCORCHED_EARTH';
 update Technologies set Description = 'LOC_TECH_SHIPBUILDING_HD_DESCRIPTION' where TechnologyType ='TECH_SHIPBUILDING';
 update Technologies set Description = 'LOC_TECH_MILITARY_TACTICS_HD_DESCRIPTION' where TechnologyType ='TECH_MILITARY_TACTICS';
@@ -54,7 +54,7 @@ values
     ('CIVIC_FEUDALISM',                                     'HD_MELEE_FOREST_AND_JUNGLE_COMBAT_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_RANGED_GARRISON_BONUS'),
     ('CIVIC_DEFENSIVE_TACTICS',                             'HD_ANTIC_HILLS_DEFEND_BONUS'),
-    ('CIVIC_HUMANISM',                                      'HD_RECON_IGNORE_ZOC'),
+    ('CIVIC_MERCANTILISM',                                  'HD_RECON_IGNORE_ZOC'),
     ('CIVIC_MILITARY_TRAINING',                             'HD_HEAVYC_OPEN_AREA_STRENGTH'),
     -- ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_EXTRA_FAITH_PLUNDER'),
     ('CIVIC_MERCENARIES',                                   'HD_LIGHTC_ENEMY_MOVEMENT'),

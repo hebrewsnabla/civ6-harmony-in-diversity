@@ -182,7 +182,7 @@ values
 	('CHICHEN_ITZA_GOLDEN_FAITH',				'Amount',				10),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'),
 	('CHICHEN_ITZA_NORMAL_PRODUCTION',			'Amount',				10);
-insert or replace into GlobalParameters (Name, Value) values ('CHICHEN_ITZA_PERCENTAGE', 5);
+insert or replace into GlobalParameters (Name, Value) values ('CHICHEN_ITZA_PERCENTAGE', 10);
 
 -- Mahabodhi Temple
 delete from BuildingModifiers where ModifierId = 'MAHABODHI_DIPLOVP';
@@ -733,7 +733,7 @@ values
     ('TAJ_MAHAL_WONDER_TOURISM',   						'BoostsWonders',		1),
     ('TAJ_MAHAL_WONDER_TOURISM',   						'ScalingFactor',		200),
     ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'GreatPersonClassType',	'GREAT_PERSON_CLASS_ENGINEER'),
-    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'Amount',				10);
+    ('TAJ_MAHAL_WONDER_GREAT_ENGINEER_POINT_MODIFIER',	'Amount',				5);
 
 -- Golden Gate Bridge
 update Buildings set PrereqCivic = null, PrereqTech = 'TECH_STEEL' where BuildingType = 'BUILDING_GOLDEN_GATE_BRIDGE';
