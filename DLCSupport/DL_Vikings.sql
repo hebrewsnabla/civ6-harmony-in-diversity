@@ -30,14 +30,6 @@ insert or replace into Adjacency_YieldChanges
     (ID, Description, YieldType, YieldChange, TilesRequired, OtherDistrictAdjacent, PrereqCivic)  
 values 
     ('Monastery_DistrictAdjacency_Divine_Right_Late', 'Placeholder', 'YIELD_FAITH', 2, 1, 1, 'CIVIC_DIVINE_RIGHT');
-
-insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
-	('IMPROVEMENT_MONASTERY', 'FEATURE_FLOODPLAINS', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_MONASTERY', 'FEATURE_FLOODPLAINS_GRASSLAND', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_MONASTERY', 'FEATURE_FLOODPLAINS_PLAINS', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_ALCAZAR', 'FEATURE_FLOODPLAINS', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_ALCAZAR', 'FEATURE_FLOODPLAINS_GRASSLAND', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_ALCAZAR', 'FEATURE_FLOODPLAINS_PLAINS', 'TECH_BUTTRESS', NULL);
 -------------------------------------
 --阿尔玛
 update Adjacency_YieldChanges set YieldChange = 2, ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';

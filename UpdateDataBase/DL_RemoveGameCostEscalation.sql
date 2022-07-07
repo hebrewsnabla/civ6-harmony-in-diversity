@@ -30,6 +30,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_THEATER'				--剧院
 	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
+	or DistrictType = 'DISTRICT_HARBOR'					--港口
 ;
 
 -- unique districts
@@ -43,6 +44,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or ReplacesDistrictType = 'DISTRICT_THEATER'				--剧院
 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
+	or ReplacesDistrictType = 'DISTRICT_HARBOR'					--港口
 );
 
 -- update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 12, Cost = 60 
@@ -64,7 +66,7 @@ update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressi
  where DistrictType = 'DISTRICT_GOVERNMENT'				--政府区
 	or DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'		--外交区
 	or DistrictType = 'DISTRICT_AERODROME'				--空港
-	or DistrictType = 'DISTRICT_HARBOR'					--港口
+--	or DistrictType = 'DISTRICT_HARBOR'					--港口
 	or DistrictType = 'DISTRICT_AQUEDUCT'				--水渠
 	or DistrictType = 'DISTRICT_NEIGHBORHOOD'			--社区
 	or DistrictType = 'DISTRICT_CANAL'					--运河
@@ -82,8 +84,8 @@ update Districts set Cost = 90 where DistrictType = 'DISTRICT_AQUEDUCT';
 update Districts set Cost = 90 where DistrictType = 'DISTRICT_PRESERVE';
 update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 0, Cost = 60 where DistrictType in 
 (select CivUniqueDistrictType from DistrictReplaces where
-	ReplacesDistrictType = 'DISTRICT_HARBOR'
-	or ReplacesDistrictType = 'DISTRICT_AQUEDUCT'
+	ReplacesDistrictType = 'DISTRICT_AQUEDUCT'
+--	or ReplacesDistrictType = 'DISTRICT_HARBOR'
 	or ReplacesDistrictType = 'DISTRICT_PRESERVE'
 	or ReplacesDistrictType = 'DISTRICT_GOVERNMENT'
 	or ReplacesDistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'

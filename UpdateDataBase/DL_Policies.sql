@@ -148,14 +148,25 @@ values
 	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',		2),
 	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',		2);
 -- Autocracy
-update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in
-	(values	('AUTOCRACY_CAPITAL'), ('AUTOCRACY_TIER1'), ('AUTOCRACY_TIER2'), ('AUTOCRACY_TIER3'), ('CONSULATE_TIER1'), ('CHANCERY_TIER2'));
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in (
+	'AUTOCRACY_CAPITAL',
+	'AUTOCRACY_TIER1',
+	'AUTOCRACY_TIER2',
+	'AUTOCRACY_TIER3',
+	'CONSULATE_TIER1',
+	'CHANCERY_TIER2');
 -- Monarchy
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
-delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId in
-	(values	('MONARCHY_WALLS_HOUSING'), ('MONARCHY_CASTLE_HOUSING'), ('MONARCHY_STARFORT_HOUSING'), ('MONARCHY_STARFORT_FAVOR'));
-delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId in
-	(values	('MONARCHY_WALLS_HOUSING'), ('MONARCHY_CASTLE_HOUSING'), ('MONARCHY_STARFORT_HOUSING'), ('MONARCHY_STARFORT_FAVOR'));
+delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId in (
+	'MONARCHY_WALLS_HOUSING',
+	'MONARCHY_CASTLE_HOUSING',
+	'MONARCHY_STARFORT_HOUSING',
+	'MONARCHY_STARFORT_FAVOR');
+delete from PolicyModifiers where PolicyType = 'POLICY_GOV_MONARCHY' and ModifierId in (
+	'MONARCHY_WALLS_HOUSING',
+	'MONARCHY_CASTLE_HOUSING',
+	'MONARCHY_STARFORT_HOUSING',
+	'MONARCHY_STARFORT_FAVOR');
 insert or replace into GovernmentModifiers
 	(GovernmentType,						ModifierId)
 values

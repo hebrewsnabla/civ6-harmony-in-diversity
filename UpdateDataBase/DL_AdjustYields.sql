@@ -1,49 +1,39 @@
------------------------------------------------
--- Terrain & Feature & Resource yield adjust --
------------------------------------------------
-
--- Lake +1 food
-insert or replace into GameModifiers (ModifierId) values ('LAKE_ADD_FOOD');
-insert or replace into Modifiers
-	(ModifierId,		ModifierType,						SubjectRequirementSetId)
+-- Terrain Yields Adjustment
+delete from Terrain_YieldChanges;
+insert or replace into Terrain_YieldChanges
+	(TerrainType, 				YieldType, 			YieldChange)
 values
-	('LAKE_ADD_FOOD',	'MODIFIER_GAME_ADJUST_PLOT_YIELD',	'DL_PLOT_IS_LAKE_REQUIREMENTS');
-
-insert or replace into ModifierArguments
-	(ModifierId,		Name,			Value)
+	('TERRAIN_GRASS',			'YIELD_FOOD',		3),
+	('TERRAIN_GRASS_HILLS',		'YIELD_FOOD',		2),
+	('TERRAIN_GRASS_HILLS',		'YIELD_PRODUCTION',	1),
+	('TERRAIN_PLAINS',			'YIELD_FOOD',		2),
+	('TERRAIN_PLAINS',			'YIELD_PRODUCTION',	1),
+	('TERRAIN_PLAINS_HILLS',	'YIELD_FOOD',		1),
+	('TERRAIN_PLAINS_HILLS',	'YIELD_PRODUCTION',	2),
+	('TERRAIN_TUNDRA',			'YIELD_FOOD',		2),
+	('TERRAIN_TUNDRA_HILLS',	'YIELD_FOOD',		1),
+	('TERRAIN_TUNDRA_HILLS',	'YIELD_PRODUCTION',	1),
+	('TERRAIN_DESERT',			'YIELD_FAITH',		1),
+	('TERRAIN_DESERT_HILLS',	'YIELD_FAITH',		1),
+	('TERRAIN_DESERT_HILLS',	'YIELD_PRODUCTION',	1),
+	('TERRAIN_SNOW_HILLS',		'YIELD_PRODUCTION',	1),
+	('TERRAIN_COAST',			'YIELD_FOOD',		2),
+	('TERRAIN_COAST',			'YIELD_GOLD',		3);
+-- Feature Yields Adjustment
+insert or replace into Feature_YieldChanges
+	(FeatureType,		YieldType,			YieldChange)
 values
-	('LAKE_ADD_FOOD',	'YieldType',	'YIELD_FOOD'),
-	('LAKE_ADD_FOOD',	'Amount',		1);
-
--- Terrain yields adjustment
-insert or replace into Terrain_YieldChanges values
-	-- TerrainType, YieldType, YieldChange
-	('TERRAIN_DESERT', 'YIELD_FAITH', 1),
-	('TERRAIN_DESERT_HILLS', 'YIELD_FAITH', 1);
-
-update Terrain_YieldChanges set YieldChange = 3 where TerrainType = 'TERRAIN_GRASS' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_GRASS_HILLS' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_GRASS_HILLS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_PLAINS' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_PLAINS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_PLAINS_HILLS' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_PLAINS_HILLS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_TUNDRA' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_TUNDRA_HILLS' and YieldType = 'YIELD_FOOD';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_TUNDRA_HILLS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_DESERT_HILLS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 1 where TerrainType = 'TERRAIN_SNOW_HILLS' and YieldType = 'YIELD_PRODUCTION';
-update Terrain_YieldChanges set YieldChange = 2 where TerrainType = 'TERRAIN_COAST' and YieldType = 'YIELD_FOOD';
-
--- Feature yields adjustment
-insert or replace into Feature_YieldChanges values 
-	-- FeatureType, YieldType, YieldChange
-	('FEATURE_FOREST', 'YIELD_FOOD', -1),
-	('FEATURE_JUNGLE', 'YIELD_PRODUCTION', -1);
-
-delete from Feature_YieldChanges where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
+	('FEATURE_FOREST',	'YIELD_FOOD',		-1),
+	('FEATURE_JUNGLE',	'YIELD_PRODUCTION',	-1),
+	('FEATURE_REEF',	'YIELD_GOLD',		-2);
+insert or replace into Feature_YieldChanges
+	(FeatureType,		YieldType,			YieldChange)
+select
+	'FEATURE_SUK_KELP',	'YIELD_GOLD',		-2
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FLOODPLAINS' and YieldType = 'YIELD_FOOD';
 update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_OASIS' and YieldType = 'YIELD_FOOD';
+delete from Feature_YieldChanges where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
 delete from Feature_YieldChanges where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD';
 
 -- Resource yields adjustment
@@ -54,12 +44,9 @@ values
 	('RESOURCE_CATTLE',		'YIELD_PRODUCTION',	1),
 	('RESOURCE_COTTON',		'YIELD_PRODUCTION',	1),
 	('RESOURCE_DYES',		'YIELD_PRODUCTION',	1),
-	-- ('RESOURCE_SHEEP',		'YIELD_PRODUCTION',		-1),
-	--
 	('RESOURCE_CITRUS',		'YIELD_GOLD',		1),
 	('RESOURCE_COFFEE',		'YIELD_GOLD',		1),
 	('RESOURCE_DYES',		'YIELD_GOLD',		1),
-	-- ('RESOURCE_INCENSE',	'YIELD_GOLD',		1),
 	('RESOURCE_JADE',		'YIELD_GOLD',		1),
 	('RESOURCE_MARBLE',		'YIELD_GOLD',		1),
 	('RESOURCE_MERCURY',	'YIELD_GOLD',		1),
@@ -67,12 +54,9 @@ values
 	('RESOURCE_SPICES',		'YIELD_GOLD',		1),
 	('RESOURCE_SUGAR',		'YIELD_GOLD',		1),
 	('RESOURCE_TEA',		'YIELD_GOLD',		1),
- 	--('RESOURCE_TOBACCO',	'YIELD_GOLD',		1),
 	('RESOURCE_AMBER',		'YIELD_GOLD',		1),
 	('RESOURCE_TURTLES',	'YIELD_GOLD',		1),
-	--
 	('RESOURCE_SILVER',		'YIELD_PRODUCTION',	1),
-	--
 	('RESOURCE_ALUMINUM',	'YIELD_PRODUCTION',	1);
 
 

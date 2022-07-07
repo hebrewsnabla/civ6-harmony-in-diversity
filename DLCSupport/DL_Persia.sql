@@ -103,8 +103,3 @@ INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES
 
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
-
-insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType, PrereqTech, PrereqCivic) values
-    ('IMPROVEMENT_PAIRIDAEZA', 'FEATURE_FLOODPLAINS', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_PAIRIDAEZA', 'FEATURE_FLOODPLAINS_GRASSLAND', 'TECH_BUTTRESS', NULL),
-	('IMPROVEMENT_PAIRIDAEZA', 'FEATURE_FLOODPLAINS_PLAINS', 'TECH_BUTTRESS', NULL);
