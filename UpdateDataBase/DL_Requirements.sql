@@ -185,6 +185,19 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLAYER_HAS_' || BuildingType || '_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_' || BuildingType from Buildings;
 
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLOT_ADJACENT_TO' || BuildingType, 'BuildingType', BuildingType from Buildings;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLOT_ADJACENT_TO' || BuildingType, 'MinRange', 1 from Buildings;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLOT_ADJACENT_TO' || BuildingType, 'MaxRange', 1 from Buildings;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLOT_ADJACENT_TO' || BuildingType, 'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES' from Buildings;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ADJACENT_TO' || BuildingType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Buildings;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ADJACENT_TO' || BuildingType || '_REQUIREMENTS', 'REQUIRES_PLOT_ADJACENT_TO' || BuildingType from Buildings;
+
 -- Player Eras
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLAYER_IS_' || EraType, 'EraType', EraType from Eras;

@@ -1245,15 +1245,15 @@
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
+		<Properties><LoadOrder>16014</LoadOrder></Properties>
+		<!-- Requirements need to update in the end -->
+		<File>UpdateDataBase/DL_Requirements.sql</File>
+    </UpdateDatabase>
 	<UpdateDatabase id="DL_Babylon_Late" criteria="DLC_Babylon">
 	  <Properties><LoadOrder>17010</LoadOrder></Properties>
 	  <File>DLCSupport/DL_Babylon_Late.sql</File>
 	</UpdateDatabase>
-    <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
-      <Properties><LoadOrder>16014</LoadOrder></Properties>
-      <!-- Requirements need to update in the end -->
-      <File>UpdateDataBase/DL_Requirements.sql</File>
-    </UpdateDatabase>
     <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>UpdateDataBase/DL_PostProcess.sql</File>

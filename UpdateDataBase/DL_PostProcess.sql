@@ -144,3 +144,37 @@ from PolicyUnitProductionValidEras a CROSS JOIN PolicyUnitProductionValidClasses
 insert or replace into ModifierArguments (ModifierId,   Name,   Value) select
     'HD_' || a.PolicyType || '_' || a.EraType || '_' || b.PromotionClassType || '_PRODUCTION_SEA_TIER3',    'Amount',   a.SpeedUpPerTier
 from PolicyUnitProductionValidEras a CROSS JOIN PolicyUnitProductionValidClasses b where a.PolicyType = b.PolicyType and b.UnitDomain = 'Sea';
+
+-- Sphinx (Egypt)
+-- other basic adjustments are written in UpdateDatabse/DL_Improvements.sql
+create temporary table SphinxWonderYields (
+	BuildingType text not null,
+	YieldType text not null,
+	YieldChange int not null,
+	primary key (BuildingType, YieldType)
+);
+insert or replace into SphinxWonderYields
+	(BuildingType,	YieldType,	YieldChange)
+select
+	BuildingType,	YieldType,	YieldChange
+from Building_YieldChanges where BuildingType in (select BuildingType from Buildings where IsWonder = 1);
+insert or replace into ImprovementModifiers
+	(ImprovementType,		ModifierId)
+select
+	'IMPROVEMENT_SPHINX',	'SPHINX_' || BuildingType || '_' || YieldType
+from SphinxWonderYields;
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,								SubjectRequirementSetId)
+select
+	'SPHINX_' || BuildingType || '_' || YieldType,		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO' || BuildingType || '_REQUIREMENTS'
+from SphinxWonderYields;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'SPHINX_' || BuildingType || '_' || YieldType,		'YieldType',	YieldType
+from SphinxWonderYields;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,			Value)
+select
+	'SPHINX_' || BuildingType || '_' || YieldType,		'Amount',		YieldChange
+from SphinxWonderYields;

@@ -593,65 +593,20 @@ insert or replace into TraitModifiers
 values
 	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_CAMPUS_RIVER_ADJACENCY'),
 	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_THEATER_DISTRICT_RIVER_ADJACENCY'),
-	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FLOODPLAIN_BUILDINGS_FOOD'),
-	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD'),
-	-- ('TRAIT_CIVILIZATION_ITERU',			'TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD'),
 	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_WONDER_GRANT_BUILDER');
-
-insert or replace into ImprovementModifiers
-	(ImprovementType,						ModifierId)
-values
-	('IMPROVEMENT_SPHINX',					'SPHINX_ADJACENT_FARM_FOOD');
-
-insert or replace into Improvement_BonusYieldChanges
-	(Id,	ImprovementType,       YieldType,      BonusYieldChange,	PrereqCivic)
-values
-	(599,	'IMPROVEMENT_SPHINX', 'YIELD_CULTURE',	1, 					'CIVIC_LITERARY_TRADITION_HD');
 
 insert or replace into Modifiers 
 	(ModifierId, 									ModifierType,													RunOnce,	Permanent,	SubjectRequirementSetId)
 values
-	('SPHINX_ADJACENT_FARM_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							0,0,'SPHINX_ADJACENT_FARM_REQUIREMENTS'),
 	('TRAIT_WONDER_GRANT_BUILDER',					'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					0,0,'PLOT_HAS_COMPLETE_WONDER'),
-	-- ('TRAIT_FLOODPLAIN_BUILDINGS_FOOD',				'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
-	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
-	-- ('TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',	0,0,NULL),
 	('TRAIT_WONDER_GRANT_BUILDER_MODIFIER',			'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',						1,1,null);
-
-insert or replace into RequirementSets
-	(RequirementSetId,									RequirementSetType)
-values
-	('SPHINX_ADJACENT_FARM_REQUIREMENTS',				'REQUIREMENTSET_TEST_ALL');
---	('EGYPT_REQUIREMENTS',								'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,								RequirementId)
-values
-	('SPHINX_ADJACENT_FARM_REQUIREMENTS',			'ADJACENT_TO_OWNER'),
-	('SPHINX_ADJACENT_FARM_REQUIREMENTS',			'REQUIRES_PLOT_HAS_FARM');
-	--('SPHINX_ADJACENT_FLOODPLAINS_FARM_REQUIREMENTS','REQUIRES_PLOT_HAS_FLOODPLAINS_TAG'),
---	('EGYPT_REQUIREMENTS',							'PLAYER_IS_CIVILIZATION_EGYPT');
-
--- insert or replace into BuildingModifiers (BuildingType,ModifierId)
---	select 	BuildingType ,'TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER' from Buildings where IsWonder = 1; 
 
 insert or replace into ModifierArguments 
 	(ModifierId, 											Name,				 Value) 
 values
-	('SPHINX_ADJACENT_FARM_FOOD',							'Amount',			1),
-	('SPHINX_ADJACENT_FARM_FOOD',							'YieldType',		'YIELD_FOOD'),
 	('TRAIT_WONDER_GRANT_BUILDER',							'ModifierId',		'TRAIT_WONDER_GRANT_BUILDER_MODIFIER'),
 	('TRAIT_WONDER_GRANT_BUILDER_MODIFIER',					'UnitType',			'UNIT_BUILDER'),
 	('TRAIT_WONDER_GRANT_BUILDER_MODIFIER',					'Amount',			1);
-	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',				'FeatureType',		'FEATURE_FLOODPLAINS_GRASSLAND'),
-	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',				'YieldType',		'YIELD_FOOD'),
-	-- ('TRAIT_GRASSFLOODPLAIN_BUILDINGS_FOOD',				'Amount',			1),
-	-- ('TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD',				'FeatureType',		'FEATURE_FLOODPLAINS_PLAINS'),
-	-- ('TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD',				'YieldType',		'YIELD_FOOD'),
-	-- ('TRAIT_PLAINFLOODPLAIN_BUILDINGS_FOOD',				'Amount',			1),
-	-- ('TRAIT_FLOODPLAIN_BUILDINGS_FOOD',						'FeatureType',		'FEATURE_FLOODPLAINS'),
-	-- ('TRAIT_FLOODPLAIN_BUILDINGS_FOOD',						'YieldType',		'YIELD_FOOD'),
-	-- ('TRAIT_FLOODPLAIN_BUILDINGS_FOOD',						'Amount',			1);
 
 update ModifierArguments set value = 8 where ModifierId ='TRAIT_INTERNATIONAL_TRADE_GAIN_GOLD' and Name = 'Amount';
 update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_GAIN_GOLD' and Name = 'Amount';
@@ -662,20 +617,20 @@ update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_
 insert or replace into Requirements
 	(RequirementId,									RequirementType,					Inverse)
 values
-	('REQUIRES_PLAYER_DOES_NOT_HAS_GREAT_BATH',		'REQUIREMENT_PLAYER_HAS_BUILDING',	1);
+	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'REQUIREMENT_PLAYER_HAS_BUILDING',	1);
 insert or replace into RequirementArguments
 	(RequirementId,									Name,				Value)
 values
-	('REQUIRES_PLAYER_DOES_NOT_HAS_GREAT_BATH',		'BuildingType',		'BUILDING_GREAT_BATH');
+	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'BuildingType',		'BUILDING_GREAT_BATH');
 insert or replace into RequirementSets
-	(RequirementSetId,								RequirementSetType)
+	(RequirementSetId,									RequirementSetType)
 values
-	('PLAYER_DOES_NOT_HAS_GREAT_BATH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY');
+	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY');
 insert or replace into RequirementSetRequirements
-	(RequirementSetId,								RequirementId)
+	(RequirementSetId,									RequirementId)
 values
-	('PLAYER_DOES_NOT_HAS_GREAT_BATH_REQUIREMENTS',	'REQUIRES_PLAYER_DOES_NOT_HAS_GREAT_BATH');
-update Modifiers set SubjectRequirementSetId = 'PLAYER_DOES_NOT_HAS_GREAT_BATH_REQUIREMENTS'
+	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH');
+update Modifiers set SubjectRequirementSetId = 'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS'
 	where ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_WONDER' or ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_DISTRICT';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
@@ -824,84 +779,34 @@ values
 	('TRAIT_GOLDEN_AGE_UNLOCK_DARK_POLICIES',	'Amount',				1);
 ----------------------------------------------------------------------------------------------------------------------------
 
--- inca UI adjustment
-
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID = 'Terrace_GrassMountainAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID = 'Terrace_PlainsMountainAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID = 'Terrace_DesertMountainAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID = 'Terrace_TundraMountainAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID = 'Terrace_SnowMountainAdjacency';
-
-insert or replace into Improvement_Adjacencies
-	(ImprovementType,				YieldChangeId)
-values
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_GrassMountainAdjacency_later'),
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_PlainsMountainAdjacency_later'),
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_DesertMountainAdjacency_later'),
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_TundraMountainAdjacency_later'),
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_SnowMountainAdjacency_later');
-
-insert or replace into Improvement_ValidResources
-	(ImprovementType,				ResourceType)
-values
-	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_SHEEP');
-
--- 1 housing (2 & 2 in official update)
-update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
-
-insert or replace into Adjacency_YieldChanges
-	(ID,	Description,	YieldChange,	YieldType,	AdjacentTerrain,	PrereqTech)
-values
-	('Terrace_GrassMountainAdjacency_later',	'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_GRASS_MOUNTAIN',	'TECH_ENGINEERING'),
-	('Terrace_PlainsMountainAdjacency_later',	'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_PLAINS_MOUNTAIN',	'TECH_ENGINEERING'),
-	('Terrace_DesertMountainAdjacency_later',	'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_DESERT_MOUNTAIN',	'TECH_ENGINEERING'),
-	('Terrace_TundraMountainAdjacency_later',	'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_TUNDRA_MOUNTAIN',	'TECH_ENGINEERING'),
-	('Terrace_SnowMountainAdjacency_later',		'Placeholder',		2,	'YIELD_FOOD',	'TERRAIN_SNOW_MOUNTAIN',	'TECH_ENGINEERING');
-
 update ModifierArguments set Value = 3 where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN' and Name = 'Amount';
-delete from TraitModifiers where ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN_LATE';
-
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GREAT_MOUNTAINS' and (ModifierId = 'TRAIT_PRODUCTION_MOUNTAIN_LATE' or ModifierId like 'TRAIT_TERRACE_%_MOUNTAIN');
+/*
+insert or replace into DistrictModifiers
+	(DistrictType,			ModifierId)
+values
+	('DISTRICT_AQUEDUCT',	'TERRACE_FARM_PRODUCTION');
+insert or replace into BuildingModifiers
+	(BuildingType,			ModifierId)
+select
+	BuildingType,			'TERRACE_FARM_PRODUCTION'
+from Buildings where BuildingType in ('BUILDING_JNR_BATHHOUSE', 'BUILDING_JNR_ORCHARD', 'BUILDING_JNR_HAMMER_WORKS');
+*/
 insert or replace into TraitModifiers
-	(TraitType,						ModifierId)
+	(TraitType,								ModifierId)
 values
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION'),
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION'),
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION'),
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION'),
-	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION');
-
+	('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TERRACE_FARM_AQUEDUCT_ATTACH');
 insert or replace into Modifiers
-	(ModifierId,			ModifierType,	SubjectRequirementSetId)
+	(ModifierId,								ModifierType,									SubjectRequirementSetId)
 values
-	('TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
-	('TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
-	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
-	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION','MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS'),
-	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_TERRAIN_YIELD_FROM_ADJACENT_IMPROVEMENTS',	'PLAYER_HAS_CONSTRUCTION_REQUIREMENTS');
-
+	('TERRACE_FARM_AQUEDUCT_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'CITY_HAS_DISTRICT_AQUEDUCT_REQUIREMENTS'),
+	('TERRACE_FARM_PRODUCTION',					'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_TERRACE_FARM_REQUIREMENTS');
 insert or replace into ModifierArguments
-	(ModifierId,									Name,				Value)
+	(ModifierId,						Name,			Value)
 values
-	('TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION',		'TerrainType',		'TERRAIN_GRASS_MOUNTAIN'),
-	('TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION',		'ImprovementType',	'IMPROVEMENT_TERRACE_FARM'),
-	('TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION',		'YieldType',		'YIELD_PRODUCTION'),
-	('TRAIT_TERRACE_GRASS_MOUNTAIN_PRODUCTION',		'Amount',			1),
-	('TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION',	'TerrainType',		'TERRAIN_PLAINS_MOUNTAIN'),
-	('TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION',	'ImprovementType',	'IMPROVEMENT_TERRACE_FARM'),
-	('TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
-	('TRAIT_TERRACE_PLAINS_MOUNTAIN_PRODUCTION',	'Amount',			1),
-	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION',	'TerrainType',		'TERRAIN_DESERT_MOUNTAIN'),
-	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION',	'ImprovementType',	'IMPROVEMENT_TERRACE_FARM'),
-	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
-	('TRAIT_TERRACE_DESERT_MOUNTAIN_PRODUCTION',	'Amount',			1),
-	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION',	'TerrainType',		'TERRAIN_TUNDRA_MOUNTAIN'),
-	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION',	'ImprovementType',	'IMPROVEMENT_TERRACE_FARM'),
-	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'),
-	('TRAIT_TERRACE_TUNDRA_MOUNTAIN_PRODUCTION',	'Amount',			1),
-	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',		'TerrainType',		'TERRAIN_SNOW_MOUNTAIN'),
-	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',		'ImprovementType',	'IMPROVEMENT_TERRACE_FARM'),
-	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',		'YieldType',		'YIELD_PRODUCTION'),
-	('TRAIT_TERRACE_SNOW_MOUNTAIN_PRODUCTION',		'Amount',			1);
+	('TERRACE_FARM_AQUEDUCT_ATTACH',	'ModifierId',	'TERRACE_FARM_PRODUCTION'),
+	('TERRACE_FARM_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
+	('TERRACE_FARM_PRODUCTION',			'Amount',		1);
 
 -- inca all land units receive ability to move on hills without movement penalty
 insert or replace into TraitModifiers

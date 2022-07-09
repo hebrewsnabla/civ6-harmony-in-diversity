@@ -402,6 +402,18 @@ function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, un
 end
 Events.BuildingAddedToMap.Add(NetherlandsBuildingAddedToMap);
 
+-- 印加梯田触发尤里卡和鼓舞
+local TERRACE_FARM_INDEX = GameInfo.Improvements['IMPROVEMENT_TERRACE_FARM'].Index;
+local IRRIGATION_INDEX = GameInfo.Technologies['TECH_IRRIGATION'].Index;
+local FEUDALISM_INDEX = GameInfo.Civics['CIVIC_FEUDALISM'].Index;
+function ImprovementAddedToMap (x, y, improvementId, playerId, resourceId, isPillaged, isWorked)
+	if improvementId == TERRACE_FARM_INDEX and resourceId >= 0 then
+		local player = Players[playerId];
+		player:GetTechs():TriggerBoost(IRRIGATION_INDEX, 1);
+		player:GetCulture():TriggerBoost(FEUDALISM_INDEX, 1);
+	end
+end
+Events.ImprovementAddedToMap.Add(ImprovementAddedToMap);
 -- -- Netherlands
 -- local m_Shipyard = GameInfo.Buildings['BUILDING_SHIPYARD'].Index
 -- local m_Bank = GameInfo.Buildings['BUILDING_BANK'].Index
