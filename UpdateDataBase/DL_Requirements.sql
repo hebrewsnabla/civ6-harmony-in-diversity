@@ -38,6 +38,11 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES' from Resources;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_HAS_' || ResourceType, 'REQUIREMENTSET_TEST_ALL' from Resources;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_HAS_' || ResourceType, 'REQUIRES_' || ResourceType || '_IN_PLOT' from Resources;
+
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
 insert or ignore into Requirements (RequirementId, RequirementType)
@@ -88,6 +93,11 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'REQUIREMENT_PLOT_ADJACENT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
+
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
 
 -- District 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -170,17 +180,104 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_CITY_HAS_' || FeatureType, 'REQUIREMENT_CITY_HAS_FEATURE' from Features;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_CITY_HAS_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_CITY_HAS_' || FeatureType, 'REQUIRES_CITY_HAS_' || FeatureType from Features;
+
+-- Player Has Features
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST' from Features;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'CollectionType', 'COLLECTION_PLAYER_PLOT_YIELDS' from Features;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'Count', 1 from Features;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'RequirementSetId', 'HD_PLOT_HAS_' || FeatureType from Features;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIRES_PLAYER_HAS_' || FeatureType from Features;
+
+-- Player Has Terrains
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST' from Terrains;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'CollectionType', 'COLLECTION_PLAYER_PLOT_YIELDS' from Terrains;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'Count', 1 from Terrains;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'RequirementSetId', 'HD_PLOT_HAS_' || TerrainType from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || TerrainType, 'REQUIRES_PLAYER_HAS_' || TerrainType from Terrains;
+
+-- 玩家有改良的资源
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'REQUIREMENT_PLAYER_HAS_RESOURCE_IMPROVED' from Resources;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
+
+-- Map-Resources
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST', 1 from Resources;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'CollectionType', 'COLLECTION_ALL_PLOT_YIELDS' from Resources;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'Count', 1 from Resources;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'RequirementSetId', 'HD_PLOT_HAS_' || ResourceType from Resources;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_GOT_' || ResourceType, 'REQUIREMENTSET_TEST_ANY' from Resources;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_GOT_' || ResourceType, 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_GOT_' || ResourceType, 'REQUIRES_MAP_NOT_HAS_' || ResourceType from Resources;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLAYER_GOT_' || ResourceType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Resources;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLAYER_GOT_' || ResourceType, 'RequirementSetId', 'HD_PLAYER_GOT_' || ResourceType from Resources;
+
+-- Plot Has Terrains
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_HAS_' || TerrainType, 'TerrainType', TerrainType from Terrains;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_HAS_' || TerrainType, 'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES' from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_HAS_' || TerrainType, 'HD_REQUIRES_PLOT_HAS_' || TerrainType from Terrains;
+
 -- Plot Has Features & Natural Wonders
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES' from Features;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_HAS_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_HAS_' || FeatureType, 'HD_REQUIRES_PLOT_HAS_' || FeatureType from Features;
+
 -- Plot Adjacent to Features & Natural Wonders
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType, 'FeatureType', FeatureType from Features;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType, 'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES' from Features;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType from Features;
 
 --civlization
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -623,6 +720,7 @@ values
 	('NOT_WONDER_IS_OR_ADJACENT_TO_COAST',    			'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
 	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS'),
 	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'REQUIRES_DISTRICT_IS_DISTRICT_WONDER'),
+	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'REQUIRES_PLOT_HAS_COMPLETE_WONDER'),
     ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',             'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
     ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',             'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_CITY_CENTER');
 
@@ -1553,16 +1651,6 @@ insert or ignore into RequirementSetRequirements
 select
     'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'REQUIRES_DISTRICT_IS_'  || DistrictType
 from Districts;
-
--- 玩家有改良的资源
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
-insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'REQUIREMENT_PLAYER_HAS_RESOURCE_IMPROVED' from Resources;
-insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
-	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;
-insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
-	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
 
 -- Ayutthaya & Nan Madol bug fix
 insert or ignore into Requirements	(RequirementId,	RequirementType)

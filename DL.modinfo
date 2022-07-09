@@ -1181,6 +1181,10 @@
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Vietnam.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_Vietnam" criteria="DLC_Vietnam">
+      <Properties><LoadOrder>16015</LoadOrder></Properties>
+      <File>DLCSupport/DL_Vietnam_Late.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_Portugal" criteria="DLC_Portugal">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Portugal.sql</File>
@@ -1630,7 +1634,7 @@
     <File>ModSupport/Worships/HD_Texts.sql</File>
     <File>ModSupport/Worships/DL_Gameplay.lua</File>
     <File>ModSupport/WetLands/DL_Removes.sql</File>
-    <File>ModSupport/WetLands/DL_Adaptation.sql</File>    
+    <File>ModSupport/WetLands/DL_Adaptation.sql</File>
     <File>ModSupport/WetLands/HD_Texts.sql</File>
     <File>ModSupport/WetLands/HD_Icons.sql</File>
     <File>ModSupport/SukOceans/DL_Adaptation.sql</File>
@@ -1789,6 +1793,7 @@
     <File>DLCSupport/DL_Ethiopia.sql</File>
     <File>DLCSupport/DL_GranColombia.sql</File>
     <File>DLCSupport/DL_Vietnam.sql</File>
+    <File>DLCSupport/DL_Vietnam_Late.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/DL_Adjacency.sql</File>

@@ -36,12 +36,12 @@
 	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_GENERAL_SERVICE" IconSize="128" IconsPerRow="1" IconsPerColumn="1" Filename="General_Service_128.dds"/>
 	    <Row Name="ICON_ATLAS_HD_CITYCENTER_BUILDINGS_GENERAL_SERVICE" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="General_Service_256.dds"/>
 
-		<Row Name="ATLAS_New_Buildings" IconSize="32" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_32.dds"/>
-        <Row Name="ATLAS_New_Buildings" IconSize="38" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_38.dds"/>
-        <Row Name="ATLAS_New_Buildings" IconSize="50" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_50.dds"/>
-        <Row Name="ATLAS_New_Buildings" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_80.dds"/>
-        <Row Name="ATLAS_New_Buildings" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_128.dds"/>
-        <Row Name="ATLAS_New_Buildings" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="New_Buildings_256.dds"/>
+		<Row Name="ATLAS_New_Buildings" IconSize="32" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_32.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="38" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_38.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="50" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_50.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="80" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_80.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="128" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_128.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="256" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_256.dds"/>
     </IconTextureAtlases>
 	<IconDefinitions>
 		<!-- <Row Name="ICON_BUILDING_NILOMETER" Atlas="ICON_ATLAS_EXPANSION_2_BUILDINGS" Index="0"/> -->
@@ -112,15 +112,55 @@
 		<Row Name="ICON_BUILDING_MEENAKSHI_DUMMY_DISTRICT_INDUSTRIAL_ZONE_FOW"       Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="9"/>
 		<Row Name="ICON_BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_FOW"          Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="10"/>
 
-		<Row Name="ICON_BUILDING_HD_TAVERN" Atlas="ATLAS_New_Buildings" Index="0"/>
-        <Row Name="ICON_BUILDING_HD_INN" Atlas="ATLAS_New_Buildings" Index="1"/>
-		<Row Name="ICON_BUILDING_HD_TAVERN_FOW" Atlas="ATLAS_New_Buildings" Index="0"/>
-        <Row Name="ICON_BUILDING_HD_INN_FOW" Atlas="ATLAS_New_Buildings" Index="1"/>
+		<Row Name="ICON_BUILDING_HD_TAVERN" 		Atlas="ATLAS_New_Buildings" Index="0"/>
+        <Row Name="ICON_BUILDING_HD_INN" 			Atlas="ATLAS_New_Buildings" Index="1"/>
+		<Row Name="ICON_BUILDING_HD_TAVERN_FOW" 	Atlas="ATLAS_New_Buildings" Index="0"/>
+        <Row Name="ICON_BUILDING_HD_INN_FOW" 		Atlas="ATLAS_New_Buildings" Index="1"/>
 
-		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER" Atlas="ATLAS_New_Buildings" Index="2"/>
-        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS" Atlas="ATLAS_New_Buildings" Index="3"/>
-		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER_FOW" Atlas="ATLAS_New_Buildings" Index="2"/>
-        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_FOW" Atlas="ATLAS_New_Buildings" Index="3"/>
+		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER" 			Atlas="ATLAS_New_Buildings" Index="2"/>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS" 		Atlas="ATLAS_New_Buildings" Index="3"/>
+		<Row Name="ICON_BUILDING_HD_REGIONAL_COUNCIL_CENTER_FOW" 		Atlas="ATLAS_New_Buildings" Index="2"/>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_FOW" 	Atlas="ATLAS_New_Buildings" Index="3"/>
+
+		<Row Name="ICON_BUILDING_GROVE" 		Atlas="ATLAS_New_Buildings" Index="4"/>
+		<Row Name="ICON_BUILDING_GROVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="4"/>
+		<Row Name="ICON_BUILDING_HD_MONASTERY" 		Atlas="ATLAS_New_Buildings" Index="5"/>
+		<Row Name="ICON_BUILDING_HD_MONASTERY_FOW" 	Atlas="ATLAS_New_Buildings" Index="5"/>
+		<Row Name="ICON_BUILDING_HD_HOLYWATERS" 		Atlas="ATLAS_New_Buildings" Index="6"/>
+		<Row Name="ICON_BUILDING_HD_HOLYWATERS_FOW" 	Atlas="ATLAS_New_Buildings" Index="6"/>
+
+		<Row Name="ICON_BUILDING_SANCTUARY" 		Atlas="ATLAS_New_Buildings" Index="7"/>
+		<Row Name="ICON_BUILDING_SANCTUARY_FOW" 	Atlas="ATLAS_New_Buildings" Index="7"/>
+		<Row Name="ICON_BUILDING_HD_JUNGLE_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="8"/>
+		<Row Name="ICON_BUILDING_HD_JUNGLE_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="8"/>
+		<Row Name="ICON_BUILDING_HD_WETLANDS_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="9"/>
+		<Row Name="ICON_BUILDING_HD_WETLANDS_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="9"/>
+		<Row Name="ICON_BUILDING_HD_WATER_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="10"/>
+		<Row Name="ICON_BUILDING_HD_WATER_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="10"/>
+		<Row Name="ICON_BUILDING_HD_CULTURE_HERITAGE_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="11"/>
+		<Row Name="ICON_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="11"/>
+
+		<Row Name="ICON_BUILDING_HD_LANDFORM_EPO" 		Atlas="ATLAS_New_Buildings" Index="12"/>
+		<Row Name="ICON_BUILDING_HD_LANDFORM_EPO_FOW" 	Atlas="ATLAS_New_Buildings" Index="12"/>
+		<Row Name="ICON_BUILDING_HD_RESOURCE_EPO" 		Atlas="ATLAS_New_Buildings" Index="13"/>
+		<Row Name="ICON_BUILDING_HD_RESOURCE_EPO_FOW" 	Atlas="ATLAS_New_Buildings" Index="13"/>
+		<Row Name="ICON_BUILDING_HD_SPECIES_EPO" 		Atlas="ATLAS_New_Buildings" Index="14"/>
+		<Row Name="ICON_BUILDING_HD_SPECIES_EPO_FOW" 	Atlas="ATLAS_New_Buildings" Index="14"/>
+		<Row Name="ICON_BUILDING_HD_SCENIC_EPO" 		Atlas="ATLAS_New_Buildings" Index="15"/>
+		<Row Name="ICON_BUILDING_HD_SCENIC_EPO_FOW" 	Atlas="ATLAS_New_Buildings" Index="15"/>
+
+		<Row Name="ICON_BUILDING_HD_DUMMY_PREREQ_PRESERVE" 			Atlas="ICON_ATLAS_KUBLAIKHAN_VIETNAM_DISTRICTS" Index="1"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_PREREQ_PRESERVE_FOW" 		Atlas="ICON_ATLAS_KUBLAIKHAN_VIETNAM_DISTRICTS" Index="1"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_FOREST_PRESERVE" 			Atlas="ATLAS_New_Buildings" Index="16"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_FOREST_PRESERVE_FOW" 		Atlas="ATLAS_New_Buildings" Index="16"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_JUNGLE_PRESERVE" 			Atlas="ATLAS_New_Buildings" Index="17"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_JUNGLE_PRESERVE_FOW" 		Atlas="ATLAS_New_Buildings" Index="17"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_WETLANDS_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="18"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_WETLANDS_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="18"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_WATER_PRESERVE" 			Atlas="ATLAS_New_Buildings" Index="19"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_WATER_PRESERVE_FOW" 		Atlas="ATLAS_New_Buildings" Index="19"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_HERITAGE_PRESERVE" 		Atlas="ATLAS_New_Buildings" Index="20"/>
+		<Row Name="ICON_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_FOW" 	Atlas="ATLAS_New_Buildings" Index="20"/>
 
 		<Row Name="ICON_BUILDING_YELLOW_CRANE_HD" Atlas="ICON_ATLAS_YELLOW_CRANE" Index="0"/>
 	</IconDefinitions>

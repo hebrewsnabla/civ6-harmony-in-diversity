@@ -92,7 +92,7 @@ from HD_DistrictBonus_Mono;
 insert or ignore into Modifiers
     (ModifierId,                                ModifierType,                                       SubjectRequirementSetId)
 select
-    'HD_STATION_' || DistrictType || '_BONUS',  'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER',    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT'
+    'HD_STATION_' || DistrictType || '_BONUS',  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT'
 from HD_DistrictBonus_Mono;
 
 insert or ignore into ModifierArguments

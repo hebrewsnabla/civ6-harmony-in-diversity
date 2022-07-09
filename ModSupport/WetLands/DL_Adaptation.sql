@@ -84,16 +84,6 @@ values
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
-insert or ignore into Types
-    (Type,                  Kind)
-values
-    ('FEATURE_HD_SWAMP',    'KIND_FEATURE');
-
-insert or replace into Features
-    (FeatureType,           Name,                           MovementChange,     SightThroughModifier,   RemoveTech,         Removable,  DefenseModifier,    Appeal, AntiquityPriority)
-values
-    ('FEATURE_HD_SWAMP',    'LOC_FEATURE_HD_SWAMP_NAME',    1,                  1,                      'TECH_IRRIGATION',  1,          3,                  1,      5);
-
 insert or replace into Features_XP2
     (FeatureType,           ValidForReplacement)
 values
@@ -211,15 +201,17 @@ values
     ('TRAIT_SWAMP_BUILDINGS_CULTIRE',	    'YieldType',        'YIELD_CULTURE'),
     ('TRAIT_SWAMP_BUILDINGS_CULTIRE',	    'Amount',           2);
 
-insert or ignore into Requirements
-	(RequirementId,									RequirementType)
-values
-    ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',       'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES');
+-- insert or ignore into Requirements
+-- 	(RequirementId,									        RequirementType)
+-- values
+--     ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',               'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES'),
+--     ('HD_REQUIRES_PLOT_ADJACENT_TO_FEATURE_HD_SWAMP',       'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES');
 
-insert or ignore into RequirementArguments
-	(RequirementId,									Name,				Value)
-values
-    ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',       'FeatureType',      'FEATURE_HD_SWAMP');
+-- insert or ignore into RequirementArguments
+-- 	(RequirementId,									        Name,				Value)
+-- values
+--     ('HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP',               'FeatureType',      'FEATURE_HD_SWAMP'),
+--     ('HD_REQUIRES_PLOT_ADJACENT_TO_FEATURE_HD_SWAMP',       'FeatureType',      'FEATURE_HD_SWAMP');
 
 insert or ignore into RequirementSets
 	(RequirementSetId,								RequirementSetType)
@@ -237,30 +229,6 @@ insert or ignore into RequirementSetRequirements
 select
     'PLOT_IS_JUNGLE_FOREST_MARSH_REQUIREMENTS',    'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
 where exists (select UnitType from Units where UnitType = 'UNIT_VIETNAMESE_VIETCONG');
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                              RequirementId)
-select
-    'HD_PLOT_HAS_GROVE_FEATURE',                    'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                              RequirementId)
-select
-    'HD_PLOT_HAS_WETLANDS_REQUIREMENTS',            'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                              RequirementId)
-select
-    'HD_ON_OR_ADJACENT_WETLANDS',                   'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,                              RequirementId)
-select
-    'HD_ON_OR_ADJACENT_WETLANDS',                   'HD_REQUIRES_PLOT_ADJACENT_TO_FEATURE_HD_SWAMP'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
 insert or replace into TraitModifiers 
     (TraitType,                         ModifierId)
