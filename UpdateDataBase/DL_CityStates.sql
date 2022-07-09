@@ -39,22 +39,6 @@ update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_ANTANANARIV
 --from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
 
 ---------------------------------------------------------------------------------------------------------
--- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
-delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
-update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = 'IMPROVEMENT_MOAI';
-insert or replace into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
-	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
-
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Moai_FirstBonusAdjacency';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Moai_SecondBonusAdjacency';
-
-update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
-insert or replace into Improvement_ValidResources (ImprovementType,ResourceType,MustRemoveFeature)
-select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources where Frequency > 0;
-
-update Improvement_Tourism set PrereqTech = NULL where ImprovementType = 'IMPROVEMENT_MOAI';
-
----------------------------------------------------------------------------------------------------------
 -- Mohenjo Daro朱大罗
 insert or replace into TraitModifiers 
 	(TraitType,								ModifierId)
@@ -184,19 +168,6 @@ values
 	('TRAIT_LISBON_DOMESTIC_FOOD',							'Amount',	 	 	1),
 	('TRAIT_LISBON_DOMESTIC_PRODUCTION',					'YieldType',	 	'YIELD_PRODUCTION'),
 	('TRAIT_LISBON_DOMESTIC_PRODUCTION',					'Amount',	 	 	1);
-
----------------------------------------------------------------------------------------------------------
---Granada 阿卡萨地堡基础文化改为3，地块魅力加成改为100%
-update Improvements set YieldFromAppealPercent = 100 where ImprovementType ='IMPROVEMENT_ALCAZAR';
-update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPROVEMENT_ALCAZAR';
-
-
----------------------------------------------------------------------------------------------------------
--- Nalanda
-delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
-update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' and YieldType = 'YIELD_SCIENCE';
-update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Holy_Site_Faith';
-update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Lavra_Faith';
 
 
 ---------------------------------------------------------------------------------------------------------
@@ -559,30 +530,6 @@ values
 	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'ESCORT_MOBILITY_SHARED_MOVEMENT');
 
 ---------------------------------------------------------------------------------------------------------
--- La venta
-insert or replace into Improvement_ValidFeatures
-	(ImprovementType,				FeatureType)
-values
-	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST'),
-	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE');
-
---delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and FeatureType = 'FEATURE_VOLCANIC_SOIL';
---delete from Improvement_ValidTerrains where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD';
-UPDATE Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and YieldType = 'YIELD_FAITH';
-
----------------------------------------------------------------------------------------------------------
---CAHOKIA
-update Modifiers set SubjectStackLimit = 2 where ModifierId = 'MOUND_AMENITY_MAX_ONE';
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = NULL where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Mound_MechanizedAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MechanizedAdjacency';
-update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Mound_MechanizedAdjacency';
-delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and ModifierID = 'MOUND_HOUSING';
-
----------------------------------------------------------------------------------------------------------
 --Baikonur
 --insert or replace into TraitModifiers
 --	(TraitType,							ModifierId)
@@ -702,51 +649,6 @@ update ModifierArguments set Value = 3 where ModifierId like 'MINOR_CIV_BOLOGNA_
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_ARTIST_POINTS_BONUS' and Name = 'Amount';
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_MUSICIAN_POINTS_BONUS' and Name = 'Amount';
 
--------------------------------------
---Nazca
-update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'Amount';
-update RequirementSetRequirements set RequirementId = 'REQUIRES_PLAYER_HAS_CIVIC_FEUDALISM' where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLAYER_HAS_CIVIL_SERVICE_XP2';
-update RequirementSetRequirements set RequirementId = 'REQUIRES_PLAYER_HAS_CIVIC_FEUDALISM' where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLAYER_HAS_CIVIL_SERVICE_XP2';
--- delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_DESERT';
--- delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_HAS_DESERT';
--- insert or replace into ImprovementModifiers
--- 	(ImprovementType,			ModifierID)
--- values
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_FOOD'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_PRODUCTION'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_FAITH'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH');
--- insert or replace into Modifiers
--- 	(ModifierId,												ModifierType,														SubjectRequirementSetId)
--- values
---     ('NAZCA_LINE_ADJACENCY_FOOD',	    						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	    						'NAZCA_LINE_ADJACENCY_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',								'NAZCA_LINE_ADJACENCY_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_DESERT_FAITH',	    				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	    						'NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',								'NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,								Name,			        Value)
--- values
--- 	('NAZCA_LINE_ADJACENCY_FOOD',				'YieldType',			'YIELD_FOOD'),
--- 	('NAZCA_LINE_ADJACENCY_FOOD',				'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'),
--- 	('NAZCA_LINE_ADJACENCY_PRODUCTION',			'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH',		'YieldType',			'YIELD_FAITH'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH',		'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',	'YieldType',			'YIELD_FAITH'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',	'Amount',				1);
--- insert or replace into RequirementSets
--- 	(RequirementSetId,											RequirementSetType)
--- values
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
--- insert or replace into RequirementSetRequirements
--- 	(RequirementSetId,												RequirementId)
--- values
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'ADJACENT_TO_OWNER'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'REQUIRES_PLOT_DESERT'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'ADJACENT_TO_OWNER'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'REQUIRES_PLOT_HAS_DESERT');
 -------------------------------------
 --Wolin
 update ModifierArguments set Value = 100 where ModifierId = 'WOLIN_GREAT_GENERAL_POINTS' and Name = 'Amount';

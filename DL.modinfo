@@ -1245,6 +1245,10 @@
       <!-- Temp -->
       <File>UpdateDataBase/DL_Temp.sql</File>
     </UpdateDatabase>
+	<UpdateDatabase id="DL_Babylon_Late" criteria="DLC_Babylon">
+	  <Properties><LoadOrder>17010</LoadOrder></Properties>
+	  <File>DLCSupport/DL_Babylon_Late.sql</File>
+	</UpdateDatabase>
     <UpdateDatabase id="DL_Requirements" criteria="Expansion2">
       <Properties><LoadOrder>16014</LoadOrder></Properties>
       <!-- Requirements need to update in the end -->
@@ -1794,6 +1798,7 @@
     <File>DLCSupport/DL_Poland.sql</File>
     <File>DLCSupport/DL_Vikings.sql</File>
     <File>DLCSupport/DL_Babylon.sql</File>
+	<File>DLCSupport/DL_Babylon_Late.sql</File>
     <File>DLCSupport/DL_Byzantium.sql</File>
     <File>DLCSupport/DL_Ethiopia.sql</File>
     <File>DLCSupport/DL_EthiopiaBuildingDefinations.sql</File>

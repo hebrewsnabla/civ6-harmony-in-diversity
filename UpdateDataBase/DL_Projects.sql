@@ -101,6 +101,9 @@ update Projects set Cost = 300 where ProjectType = 'PROJECT_GRANT_RESOURCE_OIL';
 update Projects set Cost = 300 where ProjectType = 'PROJECT_GRANT_RESOURCE_ALUMINUM';
 update Projects set Cost = 600 where ProjectType = 'PROJECT_GRANT_RESOURCE_URANIUM';
 
+-- Launch Moon Landing
+delete from ProjectCompletionModifiers where ProjectType = 'PROJECT_LAUNCH_MOON_LANDING' and ModifierId = 'PROJECT_COMPLETION_GRANT_CULTURE_BASED_ON_SCIENCE_RATE';
+
 -- -- 征发民夫 by xhh
 -- insert or replace into Types
 -- 	(Type,							Kind)

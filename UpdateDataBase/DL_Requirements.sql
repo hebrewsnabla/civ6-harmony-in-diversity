@@ -37,6 +37,11 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'ResourceType', ResourceType from Resources;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_' || ResourceType || '_IN_PLOT', 'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES' from Resources;
+	
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select ResourceType || '_IN_PLOT_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Resources;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId) 
+	select ResourceType || '_IN_PLOT_REQUIREMENTS', 'REQUIRES_' || ResourceType || '_IN_PLOT' from Resources;
 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
@@ -56,10 +61,20 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'HD_REQUIRES_PLAYER_HAS_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY' from Technologies;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_' || TechnologyType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Technologies;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_' || TechnologyType || '_REQUIREMENTS', 'HD_REQUIRES_PLAYER_HAS_' || TechnologyType from Technologies;
+
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'TechnologyType', TechnologyType from Technologies;
 insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType, 'REQUIREMENT_PLAYER_HAS_TECHNOLOGY', 1 from Technologies;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_NO_' || TechnologyType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Technologies;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_NO_' || TechnologyType || '_REQUIREMENTS', 'HD_REQUIRES_PLAYER_HAS_NO_' || TechnologyType from Technologies;
 
 -- Civic
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -77,6 +92,11 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLAYER_HAS_' || CivicType || '_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_' || CivicType from Civics;
 
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_HAS_NO_' || CivicType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Civics;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_HAS_NO_' || CivicType || '_REQUIREMENTS', 'HD_REQUIRES_PLAYER_HAS_NO_' || CivicType from Civics;
+
 -- Districts plots
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'DistrictType', DistrictType from Districts;
@@ -88,6 +108,16 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType, 'REQUIREMENT_PLOT_ADJACENT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
+	
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_HAS_' || ImprovementType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Improvements;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_HAS_' || ImprovementType || '_REQUIREMENTS', 'REQUIRES_PLOT_HAS_' || ImprovementType from Improvements;
 
 -- District 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

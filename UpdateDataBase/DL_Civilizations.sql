@@ -1441,10 +1441,6 @@ insert or replace into RequirementArguments (RequirementId, Name, Value)
 values 
 ('REQ_PlayerHasCivicMilitaryTraining', 'CivicType', 'CIVIC_MILITARY_TRAINING');
 -------------------------------------------------------------------------------------------------
---Cree's Mekewap now provides +1 production adjacent a Luxury.
-update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
---Cree's Mekewap provides +2 gold base production.
-update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldType = 'YIELD_GOLD';
 
 insert or replace into TraitModifiers
 	(TraitType,										ModifierId)

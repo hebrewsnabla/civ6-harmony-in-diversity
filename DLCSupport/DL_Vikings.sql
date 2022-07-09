@@ -20,21 +20,17 @@ create temporary table if not exists TraitAttachedModifiers (
 );
 
 --------------------------------------------------------------------------------------------------------------
--- Armagh
-update Adjacency_YieldChanges set TilesRequired = 1 , ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Monastery_DistrictAdjacency';
+-- Monastery (Armagh)
+update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONASTERY';
+update Adjacency_YieldChanges set TilesRequired = 1, YieldChange = 2, ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';
 insert or replace into Improvement_Adjacencies
     (ImprovementType,               YieldChangeId)
 values 
     ('IMPROVEMENT_MONASTERY',       'Monastery_DistrictAdjacency_Divine_Right_Late');
 insert or replace into Adjacency_YieldChanges
-    (ID, Description, YieldType, YieldChange, TilesRequired, OtherDistrictAdjacent, PrereqCivic)  
+    (ID,												Description,	YieldType,		YieldChange,	OtherDistrictAdjacent,	PrereqCivic)  
 values 
-    ('Monastery_DistrictAdjacency_Divine_Right_Late', 'Placeholder', 'YIELD_FAITH', 2, 1, 1, 'CIVIC_DIVINE_RIGHT');
--------------------------------------
---阿尔玛
-update Adjacency_YieldChanges set YieldChange = 2, ObsoleteCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency';
-update Adjacency_YieldChanges set YieldChange = 3, PrereqCivic = 'CIVIC_REFORMED_CHURCH' where ID = 'Monastery_DistrictAdjacency_Divine_Right_Late';
-update Improvements set OnePerCity = 1 where ImprovementType = 'IMPROVEMENT_MONASTERY';
+    ('Monastery_DistrictAdjacency_Divine_Right_Late',	'Placeholder',	'YIELD_FAITH',	3,				1,						'CIVIC_DIVINE_RIGHT');
 
 --auckland
 -- delete from TraitModifiers where ModifierId = 'MINOR_CIV_AUCKLAND_UNIQUE_INFLUENCE_BONUS_BASE';

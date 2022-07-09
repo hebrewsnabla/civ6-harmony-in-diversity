@@ -1,8 +1,10 @@
--- Basic Yields
+-- Basic Yield
 delete from Improvement_YieldChanges where
 	(ImprovementType = 'IMPROVEMENT_FISHING_BOATS'	and YieldType = 'YIELD_FOOD') or
 	(ImprovementType = 'IMPROVEMENT_PLANTATION'		and YieldType = 'YIELD_GOLD') or
-	(ImprovementType = 'IMPROVEMENT_CAMP'			and YieldType = 'YIELD_FOOD');
+	(ImprovementType = 'IMPROVEMENT_CAMP'			and YieldType = 'YIELD_GOLD') or
+
+	(ImprovementType = 'IMPROVEMENT_MEKEWAP'		and YieldType = 'YIELD_PRODUCTION');
 insert or replace into Improvement_YieldChanges
 	(ImprovementType,					YieldType,				YieldChange)
 values
@@ -13,9 +15,14 @@ values
 	('IMPROVEMENT_OIL_WELL',			'YIELD_PRODUCTION',		3),
 	('IMPROVEMENT_OIL_WELL',			'YIELD_SCIENCE',		1),
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_PRODUCTION',		3),
-	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_SCIENCE',		1);
+	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_SCIENCE',		1),
+	
+	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			1),
+	('IMPROVEMENT_MOAI',				'YIELD_CULTURE',		2),
+	
+	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2);
 
--- Bonus Yields
+-- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
 	'IMPROVEMENT_FARM',
 	'IMPROVEMENT_PLANTATION',
@@ -68,6 +75,66 @@ values
 	(702,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_PRODUCTION',		2,					null,							'TECH_REFINING'),
 	(703,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_SCIENCE',		2,					null,							'TECH_REFINING');
 
+-- Adjacency Yield
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MAHAVIHARA';
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,				YieldChangeId)
+values
+	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_River_Production'),
+	('IMPROVEMENT_LUMBER_MILL',		'Lumber_Mill_Industrial_Production'),
+	('IMPROVEMENT_MINE',			'Mine_Industrial_Production'),
+	('IMPROVEMENT_QUARRY',			'Quarry_Industrial_Production'),
+	('IMPROVEMENT_PLANTATION',		'Plantation_Commercial_Gold'),
+	('IMPROVEMENT_PLANTATION',		'Plantation_Suguba_Gold'),
+	('IMPROVEMENT_PASTURE',			'Pasture_Commercial_Gold'),
+	('IMPROVEMENT_PASTURE',			'Pasture_Suguba_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Commercial_Gold'),
+	('IMPROVEMENT_CAMP',			'Camp_Suguba_Gold'),
+	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Harbor_Gold'),
+	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
+	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
+
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Early'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Holy_Site_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Lavra_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Neighborhood_Science'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Mbanza_Science'),
+	
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production');
+insert or replace into Adjacency_YieldChanges
+	(ID,									Description,	YieldType,			YieldChange,	AdjacentDistrict)
+values
+	('Lumber_Mill_Industrial_Production',	'Placeholder',	'YIELD_PRODUCTION',	1,				'DISTRICT_INDUSTRIAL_ZONE'),
+	('Mine_Industrial_Production',			'Placeholder',	'YIELD_PRODUCTION',	1,				'DISTRICT_INDUSTRIAL_ZONE'),
+	('Quarry_Industrial_Production',		'Placeholder',	'YIELD_PRODUCTION',	1,				'DISTRICT_INDUSTRIAL_ZONE'),
+	('Plantation_Commercial_Gold', 			'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COMMERCIAL_HUB'),
+	('Plantation_Suguba_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_SUGUBA'),
+	('Pasture_Commercial_Gold', 			'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COMMERCIAL_HUB'),
+	('Pasture_Suguba_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_SUGUBA'),
+	('Camp_Commercial_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COMMERCIAL_HUB'),
+	('Camp_Suguba_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_SUGUBA'),
+	('Fishing_Boats_Harbor_Gold', 			'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_HARBOR'),
+	('Fishing_Boats_Royal_Navy_Gold', 		'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_ROYAL_NAVY_DOCKYARD'),
+	('Fishing_Boats_Cothon_Gold', 			'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COTHON');
+insert or replace into Adjacency_YieldChanges
+	(ID,									Description,	YieldType,			YieldChange,	AdjacentRiver,	AdjacentDistrict,			OtherDistrictAdjacent,	AdjacentResourceClass, 		PrereqCivic,			ObsoleteCivic,			PrereqTech,				ObsoleteTech)
+values	
+	('Lumber_Mill_River_Production', 		'Placeholder',	'YIELD_PRODUCTION',	1,				1,				null,						null,					'NO_RESOURCECLASS',			null,					null,					'TECH_BRONZE_WORKING',	'TECH_MACHINERY'),
+
+	('Mahavihara_Seowon_Science_Early', 	'Placeholder',	'YIELD_SCIENCE',	1,				0,				'DISTRICT_SEOWON',			null,					'NO_RESOURCECLASS',			null,					'CIVIC_DIVINE_RIGHT',	null,					null),
+	('Mahavihara_Seowon_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				0,				'DISTRICT_SEOWON',			null,					'NO_RESOURCECLASS',			'CIVIC_DIVINE_RIGHT',	null,					null,					null),
+	('Mahavihara_Holy_Site_Science_Late', 	'Placeholder',	'YIELD_SCIENCE',	2,				0,				'DISTRICT_HOLY_SITE',		null,					'NO_RESOURCECLASS',			'CIVIC_DIVINE_RIGHT',	null,					null,					null),
+	('Mahavihara_Lavra_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				0,				'DISTRICT_LAVRA',			null,					'NO_RESOURCECLASS',			'CIVIC_DIVINE_RIGHT',	null,					null,					null),
+	('Mahavihara_Neighborhood_Science', 	'Placeholder',	'YIELD_SCIENCE',	1,				0,				'DISTRICT_NEIGHBORHOOD',	null,					'NO_RESOURCECLASS',			null,					null,					null,					null),
+	('Mahavihara_Mbanza_Science', 			'Placeholder',	'YIELD_SCIENCE',	1,				0,				'DISTRICT_MBANZA',			null,					'NO_RESOURCECLASS',			null,					null,					null,					null),
+
+	('Mekewap_Luxury_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				0,				null,						null,					'RESOURCECLASS_LUXURY',		null,					null,					null,					null),
+	('Mekewap_Strategic_Production', 		'Placeholder',	'YIELD_PRODUCTION',	1,				0,				null,						null,					'RESOURCECLASS_STRATEGIC',	null,					null,					null,					null),
+
+	('Golf_District_Culture',				'placeholder',	'YIELD_CULTURE',	1, 				0,				null,						1,						'NO_RESOURCECLASS',			'CIVIC_HUMANISM',		null,					null,					null);
+
 -- Prereq Tech / Civic
 update Improvements set PrereqTech = 'TECH_POTTERY'					where ImprovementType = 'IMPROVEMENT_PLANTATION';
 update Improvements set PrereqTech = 'TECH_MINING'					where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
@@ -76,13 +143,18 @@ update Improvements set PrereqTech = 'TECH_BIOLOGY_HD'				where ImprovementType 
 
 -- Valid Features
 insert or replace into Improvement_ValidFeatures
-	(ImprovementType,			FeatureType,					PrereqTech,			PrereqCivic)
+	(ImprovementType,				FeatureType,					PrereqTech,			PrereqCivic)
 values
-	('IMPROVEMENT_CAMP',		'FEATURE_FOREST',				'TECH_ARCHERY',		null),
-	('IMPROVEMENT_CAMP',		'FEATURE_JUNGLE',				null,				'CIVIC_GUILDS'),
-	('IMPROVEMENT_LUMBER_MILL',	'FEATURE_JUNGLE',				null,				'CIVIC_GUILDS'),
-	('IMPROVEMENT_FISHERY',		'FEATURE_REEF',					null,				null),
-	('IMPROVEMENT_MINE',		'FEATURE_GEOTHERMAL_FISSURE',	'TECH_ENGINEERING',	null);
+	('IMPROVEMENT_CAMP',			'FEATURE_FOREST',				'TECH_ARCHERY',		null),
+	('IMPROVEMENT_CAMP',			'FEATURE_JUNGLE',				null,				'CIVIC_GUILDS'),
+	('IMPROVEMENT_LUMBER_MILL',		'FEATURE_JUNGLE',				null,				'CIVIC_GUILDS'),
+	('IMPROVEMENT_MINE',			'FEATURE_GEOTHERMAL_FISSURE',	'TECH_ENGINEERING',	null),
+	('IMPROVEMENT_FISHERY',			'FEATURE_REEF',					null,				null),
+
+	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST',				null,				null),
+	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE',				null,				null),
+
+	('IMPROVEMENT_MEKEWAP',			'FEATURE_FOREST',				'TECH_MINING',		null);
 with I(ImprovementType) as (select ImprovementType from Improvements where ImprovementType in (
 	'IMPROVEMENT_GREAT_WALL',
 	'IMPROVEMENT_MISSION',
@@ -189,6 +261,170 @@ from Improvements where ImprovementType in (
 	'IMPROVEMENT_SEASTEAD'
 );
 
+-- City State UI
+-- Cahokia Mounds
+update Modifiers set SubjectRequirementSetId = null, SubjectStackLimit = 2 where ModifierId = 'MOUND_AMENITY_MAX_ONE';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and (ModifierId = 'MOUND_AMENITY_MAX_TWO' or ModifierId = 'MOUND_HOUSING');
+update Adjacency_YieldChanges set TilesRequired = 1, PrereqCivic = null, ObsoleteTech = null, ObsoleteCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MedievalAdjacency';
+update Adjacency_YieldChanges set YieldChange = 2, PrereqTech = null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MechanizedAdjacency';
+
+-- Alcázar
+update Improvements set YieldFromAppealPercent = 100 where ImprovementType ='IMPROVEMENT_ALCAZAR';
+
+-- Moai
+insert or replace into Improvement_ValidResources
+	(ImprovementType,	ResourceType,	MustRemoveFeature)
+select
+	'IMPROVEMENT_MOAI', ResourceType,	0
+from Resources where Frequency > 0;
+update Improvement_Tourism set PrereqTech = null where ImprovementType = 'IMPROVEMENT_MOAI';
+
+-- Nazca Line
+update Improvements set SameAdjacentValid = 0 where ImprovementType = 'IMPROVEMENT_NAZCA_LINE';
+update ModifierArguments set Value = 'YIELD_FOOD' where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'YieldType';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_NAZCA_LINE' and ModifierId in (
+	'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE',
+	'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE',
+	'NAZCA_LINE_ADJACENCY_PRODUCTION_FLAT_MASS_PRODUCTION');
+insert or replace into ImprovementModifiers
+ 	(ImprovementType,			ModifierId)
+values
+	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_FRESH_WATER'),
+	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ENGINEERING_ADJACENCY_FOOD'),
+	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_MASS_PRODUCTION_ADJACENCY_PRODUCTION');
+insert or replace into GameModifiers
+	(ModifierId)
+values
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE'),
+	('NAZCA_LINE_THEATER_ADJACENCY'),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE');
+insert or replace into Modifiers
+ 	(ModifierId,											ModifierType,											SubjectRequirementSetId,									SubjectStackLimit)
+values
+	('NAZCA_LINE_FRESH_WATER',								'MODIFIER_PLAYER_CITIES_ADJUST_IMPROVEMENT_HOUSING',	'REQUIRE_PLOT_ADJACENT_TO_OWNER',							1),
+	('NAZCA_LINE_ENGINEERING_ADJACENCY_FOOD',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	    			'PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_ENGINEERING',		null),
+	('NAZCA_LINE_MASS_PRODUCTION_ADJACENCY_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',					'PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_MASS_PRODUCTION',	null),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_NO_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_NO_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_NO_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'MODIFIER_ALL_CITIES_IMPROVEMENT_ADJACENCY',			'PLAYER_HAS_CIVIC_NATURAL_HISTORY_REQUIREMENTS',			null);
+insert or replace into ModifierArguments
+	(ModifierId,											Name,			        Value)
+values
+	('NAZCA_LINE_FRESH_WATER',								'Amount',				2),
+	('NAZCA_LINE_ENGINEERING_ADJACENCY_FOOD',				'YieldType',			'YIELD_FOOD'),
+	('NAZCA_LINE_ENGINEERING_ADJACENCY_FOOD',				'Amount',				1),
+	('NAZCA_LINE_MASS_PRODUCTION_ADJACENCY_PRODUCTION',		'YieldType',			'YIELD_PRODUCTION'),
+	('NAZCA_LINE_MASS_PRODUCTION_ADJACENCY_PRODUCTION',		'Amount',				1),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'DistrictType',			'DISTRICT_HOLY_SITE'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'YieldType',			'YIELD_FAITH'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'Amount',				1),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY',						'Description',			'LOC_NAZCA_LINE_HOLY_SITE_ADJACENCY_DESCRIPTION'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'DistrictType',			'DISTRICT_HOLY_SITE'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'YieldType',			'YIELD_FAITH'),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'Amount',				2),
+	('NAZCA_LINE_HOLY_SITE_ADJACENCY_LATE',					'Description',			'LOC_NAZCA_LINE_HOLY_SITE_ADJACENCY_DESCRIPTION'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'DistrictType',			'DISTRICT_CAMPUS'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'YieldType',			'YIELD_SCIENCE'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'Amount',				1),
+	('NAZCA_LINE_CAMPUS_ADJACENCY',							'Description',			'LOC_NAZCA_LINE_CAMPUS_ADJACENCY_DESCRIPTION'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'DistrictType',			'DISTRICT_CAMPUS'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'YieldType',			'YIELD_SCIENCE'),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'Amount',				2),
+	('NAZCA_LINE_CAMPUS_ADJACENCY_LATE',					'Description',			'LOC_NAZCA_LINE_CAMPUS_ADJACENCY_LATE_DESCRIPTION'),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'DistrictType',			'DISTRICT_THEATER'),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'YieldType',			'YIELD_CULTURE'),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'Amount',				1),
+	('NAZCA_LINE_THEATER_ADJACENCY',						'Description',			'LOC_NAZCA_LINE_THEATER_ADJACENCY_DESCRIPTION'),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'DistrictType',			'DISTRICT_THEATER'),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'ImprovementType',		'IMPROVEMENT_NAZCA_LINE'),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'YieldType',			'YIELD_CULTURE'),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'Amount',				2),
+	('NAZCA_LINE_THEATER_ADJACENCY_LATE',					'Description',			'LOC_NAZCA_LINE_THEATER_ADJACENCY_LATE_DESCRIPTION');
+insert or replace into RequirementSets
+	(RequirementSetId,											RequirementSetType)
+values
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_ENGINEERING',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_MASS_PRODUCTION',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,											RequirementId)
+values
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_ENGINEERING',		'ADJACENT_TO_OWNER'),
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_ENGINEERING',		'HD_REQUIRES_PLAYER_HAS_TECH_ENGINEERING'),
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_MASS_PRODUCTION',	'ADJACENT_TO_OWNER'),
+	('PLOT_ADJACENT_TO_OWNER_AND_PLAYER_HAS_MASS_PRODUCTION',	'HD_REQUIRES_PLAYER_HAS_TECH_MASS_PRODUCTION');
+
+-- Mahavihara
+delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
+update Adjacency_YieldChanges set PrereqTech = null, PrereqCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Mahavihara_Campus_Science_Late' or ID = 'Mahavihara_Observatory_Science_Late';
+update Adjacency_YieldChanges set ObsoleteTech = null, ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Mahavihara_Campus_Science_Early' or ID = 'Mahavihara_Observatory_Science_Early';
+update Adjacency_YieldChanges set YieldType = 'YIELD_SCIENCE', ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Mahavihara_Holy_Site_Faith';
+update Adjacency_YieldChanges set YieldType = 'YIELD_SCIENCE', ObsoleteCivic = 'CIVIC_DIVINE_RIGHT' where ID = 'Mahavihara_Lavra_Faith';
+
+-- Civilization UI
+-- Mekewap
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MEKEWAP' and ModifierId = 'MEKEWAP_LUXURY_GOLD';
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
+update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency';
+
+-- Kurgan
+insert or replace into ImprovementModifiers
+	(ImprovementType,		ModifierId)
+values
+	('IMPROVEMENT_KURGAN',	'KURGAN_PASTURE_FAITH'),
+	('IMPROVEMENT_KURGAN',	'KURGAN_PURCHASE_LIGHT_CAVALRY'),
+	('IMPROVEMENT_KURGAN',	'KURGAN_PURCHASE_HEAVY_CAVALRY');
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,		ModifierId,					AttachmentTargetType)
+select
+	GreatPersonIndividualType,		'KURGAN_GENERAL_FAITH',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
+from GreatPersonIndividuals where GreatPersonClassType = 'GREAT_PERSON_CLASS_GENERAL';
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,										SubjectRequirementSetId)
+values
+	('KURGAN_PASTURE_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER'),
+	('KURGAN_PURCHASE_LIGHT_CAVALRY',	'MODIFIER_SINGLE_CITY_ENABLE_UNIT_FAITH_PURCHASE',	null),
+	('KURGAN_PURCHASE_HEAVY_CAVALRY',	'MODIFIER_SINGLE_CITY_ENABLE_UNIT_FAITH_PURCHASE',	null),
+	('KURGAN_GENERAL_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_KURGAN_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,						Name,			Value)
+values
+	('KURGAN_PASTURE_FAITH',			'YieldType',	'YIELD_FAITH'),
+	('KURGAN_PASTURE_FAITH',			'Amount',		1),
+	('KURGAN_PURCHASE_LIGHT_CAVALRY',	'Tag',			'CLASS_LIGHT_CAVALRY'),
+	('KURGAN_PURCHASE_HEAVY_CAVALRY',	'Tag',			'CLASS_HEAVY_CAVALRY'),
+	('KURGAN_GENERAL_FAITH',			'YieldType',	'YIELD_FAITH'),
+	('KURGAN_GENERAL_FAITH',			'Amount',		2);
+insert or replace into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+values
+	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'REQUIREMENTSET_TEST_ALL');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+values
+	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'ADJACENT_TO_OWNER'),
+	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'REQUIRES_PLOT_HAS_IMPROVEMENT_PASTURE');
+/*
+insert or replace into Adjacency_YieldChanges
+	(ID,	Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement)
+values
+	('Pasture_Kurgan_Faith',	'Placeholder',	'YIELD_FAITH',	1,	1,	'IMPROVEMENT_KURGAN');
+insert into Improvement_Adjacencies
+	(ImprovementType,		YieldChangeId)
+values
+	('IMPROVEMENT_PASTURE',	'Pasture_Kurgan_Faith');
+*/
 -- Misc
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -198,7 +434,6 @@ values
 	-- ('IMPROVEMENT_MINE',		'MINE_ON_HILL_PRODUCTION_MODIFIER'),
 	('IMPROVEMENT_MINE',		'MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION');
 	-- ('IMPROVEMENT_MINE',		'MINE_ADJACENT_TO_MOUNTAIN_APPRENTICESHIP_MODIFIER');
-
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,								SubjectRequirementSetId)
 values
@@ -255,21 +490,6 @@ UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_
 UPDATE Improvements SET PrereqCivic="CIVIC_LITERARY_TRADITION_HD"  where ImprovementType="IMPROVEMENT_CHATEAU"  ;
 --瑞典UI改为人文主义
 UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
-
--- 坟墩给相邻牧场+1鸽
-insert or replace into Improvement_YieldChanges
-	(ImprovementType,	YieldType,	YieldChange)
-values
-	('IMPROVEMENT_PASTURE',	'YIELD_FAITH',0);
-	
-insert or replace into Adjacency_YieldChanges
-	(ID,	Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement)
-values
-	('Pasture_Kurgan_Faith',	'Placeholder',	'YIELD_FAITH',	1,	1,	'IMPROVEMENT_KURGAN');
-insert into Improvement_Adjacencies
-	(ImprovementType,		YieldChangeId)
-values
-	('IMPROVEMENT_PASTURE',	'Pasture_Kurgan_Faith');
 	
 -- 圩田
 update Improvements set ValidAdjacentTerrainAmount = 2, PrereqTech = 'TECH_COMPASS_HD', PrereqCivic = null where ImprovementType = 'IMPROVEMENT_POLDER';
