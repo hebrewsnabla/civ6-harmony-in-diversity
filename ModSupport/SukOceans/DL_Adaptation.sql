@@ -5,7 +5,9 @@
 update Resources set LakeEligible = 1 where ResourceType = 'RESOURCE_SUK_LOBSTER';
 
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_SQUID' and YieldType = 'YIELD_GOLD';
+delete from Resource_YieldChanges where ResourceType = 'RESOURCE_SUK_ABALONE' and YieldType = 'YIELD_FOOD';
 update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_SUK_CAVIAR' and YieldType = 'YIELD_GOLD';
+update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_SUK_ABALONE' and YieldType = 'YIELD_GOLD';
 insert or replace into Resource_YieldChanges
     (ResourceType,              YieldType,              YieldChange)
 values
@@ -60,6 +62,10 @@ values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIREMENT
 insert or replace into RequirementSetRequirements
         (RequirementSetId,                                          RequirementId)
 values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIRES_PLOT_HAS_SUK_KELP');
+
+INSERT INTO Resource_ValidFeatures
+        (ResourceType,				FeatureType)
+VALUES	('RESOURCE_SUK_ABALONE',	'FEATURE_REEF');
 
 -- 水族馆适配 xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_KELP_FOREST_SCIENCE';

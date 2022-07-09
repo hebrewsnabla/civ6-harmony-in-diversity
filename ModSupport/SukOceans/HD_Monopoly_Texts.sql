@@ -177,6 +177,62 @@ VALUES
             "卡伊的小龙虾"
         ),
     --------------------------------------------------------------------
+	-- Stringrays
+	--------------------------------------------------------------------
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_RAYS_1_NAME",
+            "zh_Hans_CN",
+			"巨型黄貂鱼"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_RAYS_2_NAME",
+            "zh_Hans_CN",
+			"辛辣味赤魟"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_RAYS_3_NAME",
+            "zh_Hans_CN",
+			"赤魟尾毒液"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_RAYS_4_NAME",
+            "zh_Hans_CN",
+			"皇家菜：大扒鱼皮"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_RAYS_5_NAME",
+            "zh_Hans_CN",
+			"Q弹美容花胶"
+		),
+	--------------------------------------------------------------------
+	-- Abalone
+	--------------------------------------------------------------------
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_ABALONE_1_NAME",
+            "zh_Hans_CN",
+			"蒜香粉丝鲍鱼"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_ABALONE_2_NAME",
+            "zh_Hans_CN",
+			"泰式冰镇鲍鱼"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_ABALONE_3_NAME",
+            "zh_Hans_CN",
+			"日式矶煮鲍鱼"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_ABALONE_4_NAME",
+            "zh_Hans_CN",
+			"茄香鲜鲍"
+		),
+		(
+			"LOC_GREATWORK_PRODUCT_SUK_ABALONE_5_NAME",
+            "zh_Hans_CN",
+			"松茸鲍鱼花胶鸡汤"
+		),
+    --------------------------------------------------------------------
     -- Caviar
     --------------------------------------------------------------------
         (

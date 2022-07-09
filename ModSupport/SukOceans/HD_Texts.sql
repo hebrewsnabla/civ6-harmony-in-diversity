@@ -108,6 +108,42 @@ VALUES
             "鲟鱼的数量在全球范围内不断减少，部分原因是鱼子酱作为一种奢侈食品受到欢迎，许多地方现在有严格的捕捞限制甚至禁令。种群数量下降的其他原因包括水污染和由于大坝阻隔了鱼群到达繁殖地造成的栖息地丧失。许多种类的鲟鱼都被列入了濒危物种名单。为了减轻野生鲟鱼种群不断减少的压力，有20个国家的公司在养殖鲟鱼。在绝大多数情况下，鱼卵会在鱼被杀死后取出。其他公司已经尝试了一种更持久的方法，将鱼饲养到可以产卵，然后在通过剖腹产取出鱼卵后，再将鱼缝合起来，饲养它们以获得更多产量。这个过程对鱼来说是非常艰难的，在一些国家已经被禁止了。"
         ),
 --========================================================================================================================
+-- Stingrays
+--========================================================================================================================
+		(
+			"LOC_RESOURCE_SUK_RAYS_NAME",
+			"zh_Hans_CN",
+			"赤魟"
+		),
+		(
+			"LOC_PEDIA_RESOURCES_PAGE_RESOURCE_SUK_RAYS_CHAPTER_HISTORY_PARA_1",
+			"zh_Hans_CN",
+			"Stingrays are an instantly recognizable fish, with their pancake-like bodies that glide gracefully through the water. Around 200 species of stingrays inhabit the world's oceans, as well as some freshwater rivers and lakes. Stingrays have tails which often have a serrated, toxin-filled barb. If a stingray feels threatened, it can lift its barbed tail upward and injure potential predators."
+		),
+		(
+			"LOC_PEDIA_RESOURCES_PAGE_RESOURCE_SUK_RAYS_CHAPTER_HISTORY_PARA_2",
+			"zh_Hans_CN",
+			"Stingrays are eaten in many cultures. The meatiest part of the stingray is the fins; Icelanders like their stingray rotten and fermented; while it's more popular fresh, spicy or barbecued in Malaysia and Singapore. Stingray meat is flaky yet dense and chewy and tastes like a mix of fish and lobster. Stingrays are also used for their leather, which also referred to as shagreen. It has been used over the years for making leather goods, covering furniture, and many other applications."
+		),
+--========================================================================================================================
+-- Abalone
+--========================================================================================================================
+		(
+			"LOC_RESOURCE_SUK_ABALONE_NAME",
+			"zh_Hans_CN",
+			"鲍鱼"
+		),
+		(
+			"LOC_PEDIA_RESOURCES_PAGE_RESOURCE_SUK_ABALONE_CHAPTER_HISTORY_PARA_1",
+			"zh_Hans_CN",
+			"The abalone is a gastropod mollusk notable not only for a resemblance to the human ear that earned it the nickname “ear-shell,” but also for being the most value shellfish in the world. The abalone’s value comes both from its delicious meat and from its polished shell, a beautiful iridescent, blue mother of pearl carapace. In nature, it lives on rocky outcrops in the ocean, where it feeds on algae. The shell’s tough exterior creates an extremely strong hold to the rocks it lives on—so much so that removing abalone is extremely difficult, and requires time, skill and dedication. Abalones have long been a valuable food source for humans in every area of the world where a species is abundant. The meat of this mollusc is considered a delicacy in certain parts of Latin America (particularly Chile), France, New Zealand, East Asia and Southeast Asia."
+		),
+		(
+			"LOC_PEDIA_RESOURCES_PAGE_RESOURCE_SUK_ABALONE_CHAPTER_HISTORY_PARA_2",
+			"zh_Hans_CN",
+			"Abundant in the early 20th century, abalone once supported huge commercial and sport fisheries. Due to overfishing and disease, today's abalone faces extinction — both white and black abalone are listed as endangered under the Endangered Species Act. To protect wild abalone, strict fishing laws have been enacted. Farmed abalone may offer a sustainable alternative."
+		),
+--========================================================================================================================
 -- Kelp Forest
 --========================================================================================================================
         (
