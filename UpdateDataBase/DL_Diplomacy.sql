@@ -3,7 +3,7 @@
 -------------------------------------
 
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_DIVINE_RIGHT' where DiplomaticActionType = 'DIPLOACTION_DECLARE_HOLY_WAR';
-update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_FEUDALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_TERRITORIAL_WAR';
+update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_MILITARY_TRAINING' where DiplomaticActionType = 'DIPLOACTION_DECLARE_TERRITORIAL_WAR';
 update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_DECLARE_RECONQUEST_WAR';
 update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_DECLARE_PROTECTORATE_WAR';
 update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_COLONIALISM' where DiplomaticActionType = 'DIPLOACTION_DECLARE_COLONIAL_WAR';

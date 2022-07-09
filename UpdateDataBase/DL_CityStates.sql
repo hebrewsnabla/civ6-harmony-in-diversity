@@ -1,16 +1,13 @@
--------------------------------------
---     Citystates Adjustment     --
--------------------------------------
+-- Modifiers in this table are attached to suzerain
+create temporary table if not exists TraitAttachedModifiers (
+    TraitType text not null,
+    ModifierId text not null,
+    primary key (TraitType, ModifierId)
+);
 
--- Minor Civs, City states
----------------------------------------------------------------------------------------------------------
--- Individuals
-
-
----------------------------------------------------------------------------------------------------------
--- ANTANANARIVO--塔娜
-update GlobalParameters set Value = 10 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
-
+-- Antananarivo
+update GlobalParameters set Value = 15 where Name = 'YIELD_MODIFIER_PER_EARNED_GREAT_PERSON_MAXIMUM';
+update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_ANTANANARIVO_CULTURE_FROM_EARNED_GREAT_PEOPLE_BONUS' and Name = 'Amount';
 
 ---------------------------------------------------------------------------------------------------------
 -- Valletta瓦莱塔
@@ -40,22 +37,6 @@ update GlobalParameters set Value = 10 where Name = 'YIELD_MODIFIER_PER_EARNED_G
 --	(ModifierId, 															Name,			Value)
 --select 'MINOR_CIV_VALLETTA_PURCHASE_CHEAPER_'||BuildingType||'_BONUS1',	'Amount',			20
 --from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is NULL;
-
----------------------------------------------------------------------------------------------------------
--- Rapa nui, opinion: only plots adjacent to coast/lake can build moai, but cannot enable the placement on VOLCANIC_SOIL.
-delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
-update Improvements set ValidAdjacentTerrainAmount = 1 where ImprovementType = 'IMPROVEMENT_MOAI';
-insert or replace into Improvement_ValidAdjacentTerrains (ImprovementType, TerrainType) values
-	('IMPROVEMENT_MOAI', 'TERRAIN_COAST');
-
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Moai_FirstBonusAdjacency';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Moai_SecondBonusAdjacency';
-
-update ModifierArguments set value = 2 where ModifierId = 'MOAI_COASTADJACENCY_CULTURE' and Name = 'Amount';
-insert or replace into Improvement_ValidResources (ImprovementType,ResourceType,MustRemoveFeature)
-select 'IMPROVEMENT_MOAI', ResourceType, 1 from Resources where Frequency > 0;
-
-update Improvement_Tourism set PrereqTech = NULL where ImprovementType = 'IMPROVEMENT_MOAI';
 
 ---------------------------------------------------------------------------------------------------------
 -- Mohenjo Daro朱大罗
@@ -188,19 +169,6 @@ values
 	('TRAIT_LISBON_DOMESTIC_PRODUCTION',					'YieldType',	 	'YIELD_PRODUCTION'),
 	('TRAIT_LISBON_DOMESTIC_PRODUCTION',					'Amount',	 	 	1);
 
----------------------------------------------------------------------------------------------------------
---Granada 阿卡萨地堡基础文化改为3，地块魅力加成改为100%
-update Improvements set YieldFromAppealPercent = 100 where ImprovementType ='IMPROVEMENT_ALCAZAR';
-update Improvement_YieldChanges set YieldChange = 3 where ImprovementType ='IMPROVEMENT_ALCAZAR';
-
-
----------------------------------------------------------------------------------------------------------
--- Nalanda
-delete from TraitModifiers where TraitType = 'MINOR_CIV_NALANDA_TRAIT' and ModifierId = 'MINOR_CIV_NALANDA_FREE_TECHNOLOGY';
-update Improvement_YieldChanges set YieldChange = 3 where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' and YieldType = 'YIELD_SCIENCE';
-update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Holy_Site_Faith';
-update Adjacency_YieldChanges  set YieldType = 'YIELD_SCIENCE' where ID = 'Mahavihara_Lavra_Faith';
-
 
 ---------------------------------------------------------------------------------------------------------
 --Hattusa
@@ -302,9 +270,68 @@ values
 
 ---------------------------------------------------------------------------------------------------------
 --Babylon安善
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_WRITING_SCIENCE'  and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_ARTIFACT_SCIENCE' and Name = 'YieldChange';
-update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_RELIC_SCIENCE'    and Name = 'YieldChange';	
+delete from TraitModifiers where TraitType = 'MINOR_CIV_BABYLON_TRAIT';
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+values
+	('MINOR_CIV_BABYLON_TRAIT',		'MINOR_CIV_BABYLON_HILL_CITY_SCIENCE');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,										SubjectRequirementSetId)
+values
+	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'PLOT_IS_HILLS');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'YieldType',	'YIELD_SCIENCE'),
+	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'Amount',		1);
+create temporary table BabylonAdjacencies (TerrainType text not null primary key);
+insert or replace into BabylonAdjacencies
+	(TerrainType)
+values
+	('TERRAIN_GRASS_HILLS'),
+	('TERRAIN_PLAINS_HILLS'),
+	('TERRAIN_DESERT_HILLS'),
+	('TERRAIN_TUNDRA_HILLS'),
+	('TERRAIN_SNOW_HILLS');
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+select
+	'MINOR_CIV_BABYLON_TRAIT',		'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY'
+from BabylonAdjacencies;
+insert or replace into Modifiers
+	(ModifierId,													ModifierType)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY'
+from BabylonAdjacencies;
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'DistrictType',		'DISTRICT_CAMPUS'
+from BabylonAdjacencies;
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'TerrainType',		TerrainType
+from BabylonAdjacencies;
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'YieldType',		'YIELD_SCIENCE'
+from BabylonAdjacencies;
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'Amount',			1
+from BabylonAdjacencies;
+insert or replace into ModifierArguments
+	(ModifierId,													Name,				Value)
+select
+	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'Description',		'LOC_MINOR_CIV_BABYLON_HILLS_CAMPUS_ADJACENCY_DESCRIPTION'
+from BabylonAdjacencies;
+
+--update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_WRITING_SCIENCE'  and Name = 'YieldChange';
+--update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_ARTIFACT_SCIENCE' and Name = 'YieldChange';
+--update ModifierArguments set Value = 3 where ModifierId = 'MINOR_CIV_BABYLON_GREAT_WORK_RELIC_SCIENCE'    and Name = 'YieldChange';	
 -- insert or replace into TraitModifiers
 -- 	(TraitType,							ModifierId)
 -- values
@@ -451,12 +478,6 @@ values
 	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST',	'PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS'),
 	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST',	'REQUIRES_PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER');
 
-insert or replace into Requirements(RequirementId, RequirementType)values
-	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','REQUIREMENT_REQUIREMENTSET_IS_MET');
-insert or replace into RequirementArguments(RequirementId,Name,Value)values
-	('PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS','RequirementSetId','PLOT_IS_OR_ADJACENT_TO_COAST');
-
-
 ---------------------------------------------------------------------------------------------------------
 -- Kabul
 -- update ModifierArguments set Value = 50 where ModifierId = 'MINOR_CIV_KABUL_UNIT_EXPERIENCE_BONUS' and Name = 'Amount';
@@ -507,30 +528,6 @@ insert or replace into UnitAbilityModifiers
 values
 	-- ('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'AKKAD_ESCORT_MOVEMENT_BONUS');
 	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'ESCORT_MOBILITY_SHARED_MOVEMENT');
-
----------------------------------------------------------------------------------------------------------
--- La venta
-insert or replace into Improvement_ValidFeatures
-	(ImprovementType,				FeatureType)
-values
-	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_FOREST'),
-	('IMPROVEMENT_COLOSSAL_HEAD',	'FEATURE_JUNGLE');
-
---delete from Improvement_ValidFeatures where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and FeatureType = 'FEATURE_VOLCANIC_SOIL';
---delete from Improvement_ValidTerrains where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD';
-UPDATE Improvement_YieldChanges set YieldChange = 1 where ImprovementType = 'IMPROVEMENT_COLOSSAL_HEAD' and YieldType = 'YIELD_FAITH';
-
----------------------------------------------------------------------------------------------------------
---CAHOKIA
-update Modifiers set SubjectStackLimit = 2 where ModifierId = 'MOUND_AMENITY_MAX_ONE';
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = NULL where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set ObsoleteTech = NULL where ID = 'Mound_MedievalAdjacency';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Mound_MechanizedAdjacency';
-update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ID = 'Mound_MechanizedAdjacency';
-update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Mound_MechanizedAdjacency';
-delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and ModifierID = 'MOUND_HOUSING';
 
 ---------------------------------------------------------------------------------------------------------
 --Baikonur
@@ -642,7 +639,7 @@ delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and
 
 -------------------------------------
 --Bologna
--- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_GENERAL_POINTS_BONUS' and Name = 'Amount';
+update ModifierArguments set Value = 3 where ModifierId like 'MINOR_CIV_BOLOGNA_GREAT_%_BONUS' and Name = 'Amount';
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_ADMIRAL_POINTS_BONUS' and Name = 'Amount';
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_ENGINEER_POINTS_BONUS' and Name = 'Amount';
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_MERCHANT_POINTS_BONUS' and Name = 'Amount';
@@ -652,51 +649,6 @@ delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MOUND' and
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_ARTIST_POINTS_BONUS' and Name = 'Amount';
 -- update ModifierArguments set Value = 4 where ModifierId = 'MINOR_CIV_BOLOGNA_GREAT_MUSICIAN_POINTS_BONUS' and Name = 'Amount';
 
--------------------------------------
---Nazca
-update ModifierArguments set Value = 2 where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'Amount';
-update RequirementSetRequirements set RequirementId = 'REQUIRES_PLAYER_HAS_CIVIC_FEUDALISM' where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLAYER_HAS_CIVIL_SERVICE_XP2';
-update RequirementSetRequirements set RequirementId = 'REQUIRES_PLAYER_HAS_CIVIC_FEUDALISM' where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLAYER_HAS_CIVIL_SERVICE_XP2';
--- delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_DESERT';
--- delete from RequirementSetRequirements where RequirementSetId = 'NAZCA_LINE_ADJACENCY_FOOD_DESERT_HILLS_CIVIL_SERVICE_REQUIREMENTS' and RequirementId = 'REQUIRES_PLOT_HAS_DESERT';
--- insert or replace into ImprovementModifiers
--- 	(ImprovementType,			ModifierID)
--- values
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_FOOD'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_PRODUCTION'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_FAITH'),
--- 	('IMPROVEMENT_NAZCA_LINE',	'NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH');
--- insert or replace into Modifiers
--- 	(ModifierId,												ModifierType,														SubjectRequirementSetId)
--- values
---     ('NAZCA_LINE_ADJACENCY_FOOD',	    						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	    						'NAZCA_LINE_ADJACENCY_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',								'NAZCA_LINE_ADJACENCY_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_DESERT_FAITH',	    				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	    						'NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS'),
---     ('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',								'NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,								Name,			        Value)
--- values
--- 	('NAZCA_LINE_ADJACENCY_FOOD',				'YieldType',			'YIELD_FOOD'),
--- 	('NAZCA_LINE_ADJACENCY_FOOD',				'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_PRODUCTION',			'YieldType',			'YIELD_PRODUCTION'),
--- 	('NAZCA_LINE_ADJACENCY_PRODUCTION',			'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH',		'YieldType',			'YIELD_FAITH'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH',		'Amount',				1),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',	'YieldType',			'YIELD_FAITH'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH',	'Amount',				1);
--- insert or replace into RequirementSets
--- 	(RequirementSetId,											RequirementSetType)
--- values
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
--- insert or replace into RequirementSetRequirements
--- 	(RequirementSetId,												RequirementId)
--- values
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'ADJACENT_TO_OWNER'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_FAITH_REQUIREMENTS',			'REQUIRES_PLOT_DESERT'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'ADJACENT_TO_OWNER'),
--- 	('NAZCA_LINE_ADJACENCY_DESERT_HILLS_FAITH_REQUIREMENTS',	'REQUIRES_PLOT_HAS_DESERT');
 -------------------------------------
 --Wolin
 update ModifierArguments set Value = 100 where ModifierId = 'WOLIN_GREAT_GENERAL_POINTS' and Name = 'Amount';
@@ -743,43 +695,140 @@ values
 	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',			'RELIGIOUS_ALL_INCREASED_MOVEMENT');
 
 -- 约翰内斯堡
-delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS';
-delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT' and ModifierId = 'MINOR_CIV_JOHANNESBURG_UNIQUE_INFLUENCE_BONUS_LATE';
-create temporary table 'JohannesburgImprovementType'(
-    ImprovementType TEXT not null primary key
-);
-insert into JohannesburgImprovementType values
-    ('IMPROVEMENT_FARM'),
-    ('IMPROVEMENT_PLANTATION'),
-    ('IMPROVEMENT_CAMP'),
-    ('IMPROVEMENT_PASTURE'),
-    ('IMPROVEMENT_MINE'),
-    ('IMPROVEMENT_QUARRY'),
-    ('IMPROVEMENT_LUMBER_MILL');
-insert or ignore into RequirementSets(RequirementSetId, 						RequirementSetType) 
-	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES',	'REQUIREMENTSET_TEST_ANY'
-	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
-insert or ignore into RequirementSetRequirements(RequirementSetId,						RequirementId)
-	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ivr.ResourceType
-	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
-insert or ignore into TraitModifiers(TraitType,		ModifierId)
-    select 'MINOR_CIV_JOHANNESBURG_TRAIT', 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType
-    from JohannesburgImprovementType;
-insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
-    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_IS_SUZERAIN'
-    from JohannesburgImprovementType;
-insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
-    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_REQUIRES_CITY_HAS_' || ImprovementType || '_OVER_RESOURCES'
-    from JohannesburgImprovementType;
-insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
-    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'ModifierId' , 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER'
-    from JohannesburgImprovementType;
-insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
-    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'YieldType', 'YIELD_PRODUCTION'
-    from JohannesburgImprovementType;
-insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
-    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'Amount', '1'
-    from JohannesburgImprovementType;
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT';
+create temporary table JohannesburgResources (ResourceType text not null primary key);
+insert or replace into JohannesburgResources (ResourceType) select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_MINE' or ImprovementType = 'IMPROVEMENT_QUARRY';
+insert or replace into TraitAttachedModifiers
+    (TraitType,                   		ModifierId)
+select
+    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType
+from JohannesburgResources;
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                               		SubjectRequirementSetId)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,    	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                           		Name,           Value)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'Amount',       1
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                         		Name,           Value)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'YieldType',    'YIELD_PRODUCTION'
+from JohannesburgResources;
+
+--create temporary table 'JohannesburgImprovementType'(
+--    ImprovementType TEXT not null primary key
+--);
+--insert into JohannesburgImprovementType values
+--    ('IMPROVEMENT_FARM'),
+--    ('IMPROVEMENT_PLANTATION'),
+--    ('IMPROVEMENT_CAMP'),
+--    ('IMPROVEMENT_PASTURE'),
+--    ('IMPROVEMENT_MINE'),
+--    ('IMPROVEMENT_QUARRY'),
+--    ('IMPROVEMENT_LUMBER_MILL');
+--insert or ignore into RequirementSets(RequirementSetId, 						RequirementSetType) 
+--	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES',	'REQUIREMENTSET_TEST_ANY'
+--	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+--insert or ignore into RequirementSetRequirements(RequirementSetId,						RequirementId)
+--	select 'HD_REQUIRES_CITY_HAS_' || imps.ImprovementType || '_OVER_RESOURCES', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ivr.ResourceType
+--	from Improvements imps, Improvement_ValidResources ivr where imps.ImprovementType = ivr.ImprovementType;
+--insert or ignore into TraitModifiers(TraitType,		ModifierId)
+--    select 'MINOR_CIV_JOHANNESBURG_TRAIT', 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType
+--    from JohannesburgImprovementType;
+--insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+--    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_IS_SUZERAIN'
+--    from JohannesburgImprovementType;
+--insert or ignore into Modifiers(ModifierId,		ModifierType,   SubjectRequirementSetId)
+--    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_REQUIRES_CITY_HAS_' || ImprovementType || '_OVER_RESOURCES'
+--    from JohannesburgImprovementType;
+--insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+--    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType, 'ModifierId' , 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||--'_MODIFIER'
+--    from JohannesburgImprovementType;
+--insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+--    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'YieldType', 'YIELD_PRODUCTION'
+--    from JohannesburgImprovementType;
+--insert or ignore into ModifierArguments(ModifierId,                            Name,   Value)
+--    select 'MINOR_CIV_JOHANNESBURG_PRODUCTION_'||ImprovementType||'_MODIFIER',  'Amount', '1'
+--    from JohannesburgImprovementType;
 
 -- 日内瓦
 update ModifierArguments set Value = 10 where ModifierId = 'MINOR_CIV_GENEVA_SCIENCE_AT_PEACE_BONUS' and Name = 'Amount';
+
+-- Ngazargamu
+delete from TraitModifiers where TraitType = 'MINOR_CIV_NGAZARGAMU_TRAIT';
+insert or replace into TraitAttachedModifiers
+	(TraitType,                   	ModifierId)
+values
+	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY'),
+	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD');
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,														SubjectRequirementSetId)
+values
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',							null),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'ENCAMPMENT_ADJACENT_TO_LAKE');
+insert or replace into ModifierArguments
+	(ModifierId,										Name,					Value)
+values
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'DistrictType',			'DISTRICT_ENCAMPMENT'),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'TerrainType',			'TERRAIN_COAST'),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'YieldType',			'YIELD_PRODUCTION'),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'Description',			'LOC_MINOR_CIV_NGAZARGAMU_COAST_ENCAMPMENT_DESCRIPTION'),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'Amount',				1),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'TilesRequired',		2),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'YieldTypeToMirror',	'YIELD_PRODUCTION'),
+	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'YieldTypeToGrant',		'YIELD_FOOD');
+
+-- Buenos Aires
+delete from TraitModifiers where TraitType = 'MINOR_CIV_BUENOS_AIRES_TRAIT';
+insert or replace into TraitAttachedModifiers
+	(TraitType,                   		ModifierId)
+select
+	'MINOR_CIV_BUENOS_AIRES_TRAIT',		'MINOR_CIV_BUENOS_AIRES_' || DistrictType
+from HD_DistrictPseudoYields;
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,									SubjectRequirementSetId)
+select
+	'MINOR_CIV_BUENOS_AIRES_' || DistrictType,	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_AND_HAS_HIGH_ADJACENCY'
+from HD_DistrictPseudoYields;
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select
+	'MINOR_CIV_BUENOS_AIRES_' || DistrictType,	'ModifierId',	'MINOR_CIV_BUENOS_AIRES_' || YieldType
+from HD_DistrictPseudoYields;
+insert or replace into Modifiers
+	(ModifierId,								ModifierType)
+select distinct
+	'MINOR_CIV_BUENOS_AIRES_' || YieldType,		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER'
+from HD_DistrictPseudoYields;
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select distinct
+	'MINOR_CIV_BUENOS_AIRES_' || YieldType,		'YieldType',	YieldType
+from HD_DistrictPseudoYields;
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select distinct
+	'MINOR_CIV_BUENOS_AIRES_' || YieldType,		'Amount',		6
+from HD_DistrictPseudoYields;
+
+
+-- Attach modifiers in TraitAttachedModifiers to suzerain
+insert or ignore into TraitModifiers
+    (TraitType, ModifierId)
+select
+    TraitType,  ModifierId || '_ATTACH'
+from TraitAttachedModifiers;
+insert or ignore into Modifiers
+    (ModifierId,                ModifierType,                               SubjectRequirementSetId)
+select
+    ModifierId || '_ATTACH',    'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',     'PLAYER_IS_SUZERAIN'
+from TraitAttachedModifiers;
+insert or ignore into ModifierArguments
+    (ModifierId,                Name,           Value)
+select
+    ModifierId || '_ATTACH',    'ModifierId',   ModifierId
+from TraitAttachedModifiers;
