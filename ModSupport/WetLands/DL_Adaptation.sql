@@ -110,6 +110,11 @@ values
     ('IMPROVEMENT_METEOR_GOODY',    'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_LAND_POLDER',     'FEATURE_HD_SWAMP');
 
+insert or replace into Improvement_InvalidAdjacentFeatures
+    (ImprovementType,               FeatureType)
+values
+    ('IMPROVEMENT_MOAI',   			'FEATURE_HD_SWAMP');
+
 insert or replace into Improvement_ValidFeatures
     (ImprovementType,               FeatureType)
 select

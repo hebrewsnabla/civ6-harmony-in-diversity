@@ -295,14 +295,6 @@ update Adjacency_YieldChanges set YieldChange = 2, PrereqTech = null, PrereqCivi
 -- Alcázar
 update Improvements set YieldFromAppealPercent = 100 where ImprovementType ='IMPROVEMENT_ALCAZAR';
 
--- Moai
-insert or replace into Improvement_ValidResources
-	(ImprovementType,	ResourceType,	MustRemoveFeature)
-select
-	'IMPROVEMENT_MOAI', ResourceType,	0
-from Resources where Frequency > 0;
-update Improvement_Tourism set PrereqTech = null where ImprovementType = 'IMPROVEMENT_MOAI';
-
 -- Nazca Line
 update Improvements set SameAdjacentValid = 0 where ImprovementType = 'IMPROVEMENT_NAZCA_LINE';
 update ModifierArguments set Value = 'YIELD_FOOD' where ModifierId = 'NAZCA_LINE_ADJACENCY_FAITH' and Name = 'YieldType';
