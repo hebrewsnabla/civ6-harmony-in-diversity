@@ -57,6 +57,27 @@ select distinct
 	'REQUIRES_CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING',	'RequirementSetId',	'CITY_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS'
 from HD_BuildingTiers;
 
+insert or ignore into RequirementSets
+	(RequirementSetId,																	RequirementSetType)
+select distinct
+	'PLAYER_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY'
+from HD_BuildingTiers;
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,																	RequirementId)
+select
+	'PLAYER_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS',	'REQUIRES_PLAYER_HAS_' || BuildingType
+from HD_BuildingTiers;
+insert or ignore into Requirements
+	(RequirementId,																	RequirementType)
+select distinct
+	'REQUIRES_PLAYER_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING',	'REQUIREMENT_REQUIREMENTSET_IS_MET'
+from HD_BuildingTiers;
+insert or ignore into RequirementArguments
+	(RequirementId,																	Name,				Value)
+select distinct
+	'REQUIRES_PLAYER_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING',	'RequirementSetId',	'PLAYER_HAS_' || PrereqDistrict || '_TIER_' || Tier || '_BUILDING_REQUIREMENTS'
+from HD_BuildingTiers;
+
 -- City State
 delete from TraitModifiers where TraitType in (select TraitType from CSE_ClassTypes);
 create table if not exists HD_CityStateBuffedObjects (

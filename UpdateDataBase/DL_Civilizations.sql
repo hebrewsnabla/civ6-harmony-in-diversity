@@ -659,9 +659,6 @@ update ModifierArguments set value = 50 where ModifierId ='LEVY_UNITUPGRADEDISCO
 
 -------------------------------------------------------------------------------------------------------------------------------
 --Mapuche
---木人现在可以在魅力迷人及以上的地块建造，且生成相当于魅力值100%的文化产出。
-update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
-update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierId)
 values
@@ -1258,35 +1255,6 @@ values
 
 -----------------------------------------------------------------------------------------------------------------------------
 --India
-insert or replace into RequirementSets
-	(RequirementSetId,						RequirementSetType)
-values
-	('PLAYER_IS_CIVILIZATION_INDIA',		'REQUIREMENTSET_TEST_ALL');
-
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,						RequirementId)
-values
-	('PLAYER_IS_CIVILIZATION_INDIA',		'PLAYER_IS_CIVILIZATION_INDIA');
-
-insert or replace into ImprovementModifiers
-	(ImprovementType,				ModifierId)
-values
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE');
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
-values
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				'PLAYER_IS_CIVILIZATION_INDIA',	1),
-	('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	NULL,							1);
-
-insert or replace into ModifierArguments
-	(ModifierId,									Name,				Value)
-values
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
-	('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1);
-
 ---------------------------------------------------------------------------------------------------------------------------------
 --Gandhi
 insert or replace into TraitModifiers 

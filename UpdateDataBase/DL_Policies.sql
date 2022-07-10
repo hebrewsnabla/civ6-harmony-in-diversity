@@ -1183,7 +1183,7 @@ values
 	('FIVE_YEAR_PLAN_DISTRICT_PRODUCTION',									'Amount',						30),
 	('HAJJ_SCIENCEPERTRIBUTARY',											'YieldType',					'YIELD_SCIENCE'),
 	('HAJJ_SCIENCEPERTRIBUTARY',											'Amount',						1),
-	('HAJJ_CULTUREPERTRIBUTARY',											'YieldTyoe',					'YIELD_CULTURE'),
+	('HAJJ_CULTUREPERTRIBUTARY',											'YieldType',					'YIELD_CULTURE'),
 	('HAJJ_CULTUREPERTRIBUTARY',											'Amount',						1),
 	('MARTIAL_ELECTION_GREAT_GENERAL_POINTS',								'GreatPersonClassType',			'GREAT_PERSON_CLASS_GENERAL'),
 	('MARTIAL_ELECTION_GREAT_GENERAL_POINTS',								'Amount',						4),

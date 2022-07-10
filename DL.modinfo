@@ -102,6 +102,11 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
     </Criteria>
+    <Criteria id="DLC_Persia_Ethiopia">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>E2749E9A-8056-45CD-901B-C368C8E83DEB</ModInUse>
+      <ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse>
+    </Criteria>
     <!-- Mods -->
     <Criteria id="CityPolicies_With_Suk">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -1162,6 +1167,11 @@
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Persia.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DLC_Persia_Ethiopia" criteria="DLC_Persia_Ethiopia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Persia_Ethiopia.sql</File>
+    </UpdateDatabase>
+	
     <UpdateDatabase id="DL_Poland" criteria="DLC_Poland">
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Poland.sql</File>
@@ -1810,6 +1820,7 @@
     <File>DLCSupport/DL_Vietnam.sql</File>
     <File>DLCSupport/DL_Vietnam_Late.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
+	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/DL_Adjacency.sql</File>
     <File>UpdateDataBase/DL_AdjustYields.sql</File>

@@ -52,25 +52,40 @@ values
 --波斯UA内商+1琴改为+2琴
 --波斯、马其顿、罗马、刚果、日本、格鲁吉亚、挪威增加铁关联（4级关联，在DL_StartBias里面修改）
 --城市中建造的首座波斯庭院改良设施可以提供+1点宜居度
-insert or replace into Improvement_YieldChanges
-    (ImprovementType,                           YieldType,          YieldChange)
-values
-    ('IMPROVEMENT_PAIRIDAEZA',                  'YIELD_FOOD',       0);
-
 insert or replace into Improvement_Adjacencies 
-    (ImprovementType,                           YieldChangeId)
+    (ImprovementType,				YieldChangeId)
 values
-    ('IMPROVEMENT_PAIRIDAEZA',                  'Pairidaeza_CityCenterAdjacency_Food'),
-    ('IMPROVEMENT_PAIRIDAEZA',                  'Pairidaeza_HarborAdjacency');
-
+    ('IMPROVEMENT_PAIRIDAEZA',		'Pairidaeza_CityCenterAdjacency_Food');
 insert or replace into Adjacency_YieldChanges
     (ID,                                        Description,        YieldType,      YieldChange,    AdjacentDistrict)
 values
-    ('Pairidaeza_CityCenterAdjacency_Food',     'Placeholder',      'YIELD_FOOD',   1,              'DISTRICT_CITY_CENTER'),
-    ('Pairidaeza_HarborAdjacency',              'Placeholder',      'YIELD_GOLD',   1,              'DISTRICT_HARBOR');
-
+    ('Pairidaeza_CityCenterAdjacency_Food',     'Placeholder',      'YIELD_FOOD',   1,              'DISTRICT_CITY_CENTER');
 update Improvements set Appeal = 2 where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
-
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_PAIRIDAEZA',		'PAIRIDAEZA_GOVERNMENT_CULTURE'),
+	('IMPROVEMENT_PAIRIDAEZA',		'PAIRIDAEZA_GOVERNMENT_TIER_1_CULTURE'),
+	('IMPROVEMENT_PAIRIDAEZA',		'PAIRIDAEZA_GOVERNMENT_TIER_2_CULTURE'),
+	('IMPROVEMENT_PAIRIDAEZA',		'PAIRIDAEZA_GOVERNMENT_TIER_3_CULTURE');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								SubjectRequirementSetId)
+values
+	('PAIRIDAEZA_GOVERNMENT_CULTURE',			'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLAYER_HAS_DISTRICT_GOVERNMENT_REQUIREMENTS'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_1_CULTURE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLAYER_HAS_DISTRICT_GOVERNMENT_TIER_1_BUILDING_REQUIREMENTS'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_2_CULTURE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLAYER_HAS_DISTRICT_GOVERNMENT_TIER_2_BUILDING_REQUIREMENTS'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_3_CULTURE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLAYER_HAS_DISTRICT_GOVERNMENT_TIER_3_BUILDING_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('PAIRIDAEZA_GOVERNMENT_CULTURE',			'YieldType',	'YIELD_CULTURE'),
+	('PAIRIDAEZA_GOVERNMENT_CULTURE',			'Amount',		1),
+	('PAIRIDAEZA_GOVERNMENT_TIER_1_CULTURE',	'YieldType',	'YIELD_CULTURE'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_1_CULTURE',	'Amount',		1),
+	('PAIRIDAEZA_GOVERNMENT_TIER_2_CULTURE',	'YieldType',	'YIELD_CULTURE'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_2_CULTURE',	'Amount',		1),
+	('PAIRIDAEZA_GOVERNMENT_TIER_3_CULTURE',	'YieldType',	'YIELD_CULTURE'),
+	('PAIRIDAEZA_GOVERNMENT_TIER_3_CULTURE',	'Amount',		1);
 /*insert or replace into ImprovementModifiers
     (ImprovementType,                           ModifierId)
 values

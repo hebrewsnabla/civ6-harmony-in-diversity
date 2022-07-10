@@ -124,10 +124,13 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'PLOT_HAS_' || ImprovementType || '_REQUIREMENTS', 'REQUIRES_PLOT_HAS_' || ImprovementType from Improvements;
 
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'ImprovementType', ImprovementType from Improvements;
-insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_PLOT_HAS_' || ImprovementType, 'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES' from Improvements;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_HAS_' || ImprovementType || '_AND_ADJACENT_TO_OWNER_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Improvements;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_HAS_' || ImprovementType || '_AND_ADJACENT_TO_OWNER_REQUIREMENTS', 'REQUIRES_PLOT_HAS_' || ImprovementType from Improvements;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_HAS_' || ImprovementType || '_AND_ADJACENT_TO_OWNER_REQUIREMENTS', 'ADJACENT_TO_OWNER' from Improvements;
+
 
 -- District 
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

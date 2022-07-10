@@ -409,7 +409,7 @@ from GreatPersonIndividuals where GreatPersonClassType = 'GREAT_PERSON_CLASS_GEN
 insert or replace into Modifiers
 	(ModifierId,						ModifierType,										SubjectRequirementSetId)
 values
-	('KURGAN_PASTURE_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER'),
+	('KURGAN_PASTURE_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_PASTURE_AND_ADJACENT_TO_OWNER_REQUIREMENTS'),
 	('KURGAN_PURCHASE_LIGHT_CAVALRY',	'MODIFIER_SINGLE_CITY_ENABLE_UNIT_FAITH_PURCHASE',	null),
 	('KURGAN_PURCHASE_HEAVY_CAVALRY',	'MODIFIER_SINGLE_CITY_ENABLE_UNIT_FAITH_PURCHASE',	null),
 	('KURGAN_GENERAL_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_KURGAN_REQUIREMENTS');
@@ -422,15 +422,6 @@ values
 	('KURGAN_PURCHASE_HEAVY_CAVALRY',	'Tag',			'CLASS_HEAVY_CAVALRY'),
 	('KURGAN_GENERAL_FAITH',			'YieldType',	'YIELD_FAITH'),
 	('KURGAN_GENERAL_FAITH',			'Amount',		2);
-insert or replace into RequirementSets
-	(RequirementSetId,							RequirementSetType)
-values
-	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,							RequirementId)
-values
-	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'ADJACENT_TO_OWNER'),
-	('PLOT_HAS_PASTURE_AND_ADJACENT_TO_OWNER',	'REQUIRES_PLOT_HAS_IMPROVEMENT_PASTURE');
 
 -- Terrace Farm (Inca)
 insert or replace into Improvement_ValidTerrains
@@ -452,7 +443,7 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_SHEEP');
 update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
 
--- Sphinx
+-- Sphinx (Egypt)
 -- In order to adapt the wonder yield change made in UpdateDatabse/DL_Wonders.sql at LoadOrder 16010, Modifiers about adjacent wonders are written in UpdateDatabse/DL_PostProcess.sql, which is at LoadOrder 20000
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_SPHINX';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_SPHINX';
@@ -467,7 +458,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,												OwnerRequirementSetId,							SubjectRequirementSetId,						SubjectStackLimit)
 values
-	('SPHINX_FARM_FOOD',						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						null,											'PLOT_HAS_FARM_AND_ADJACENT_TO_OWNER',			null),
+	('SPHINX_FARM_FOOD',						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						null,											'PLOT_HAS_IMPROVEMENT_FARM_AND_ADJACENT_TO_OWNER_REQUIREMENTS',			null),
 	('SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_DISTRICT_PRODUCTION',	'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
 	('SPHINX_RIVER_FASTER_BUILDTIME_WONDER',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_WONDER_PRODUCTION',		'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
 	('SPHINX_FASTER_BUILDTIME_DISTRICT',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS',	1),
@@ -484,15 +475,44 @@ values
 insert or replace into RequirementSets
 	(RequirementSetId,								RequirementSetType)
 values
-	('PLOT_HAS_FARM_AND_ADJACENT_TO_OWNER',			'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'REQUIREMENTSET_TEST_ALL');
 insert or replace into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
-	('PLOT_HAS_FARM_AND_ADJACENT_TO_OWNER',			'ADJACENT_TO_OWNER'),
-	('PLOT_HAS_FARM_AND_ADJACENT_TO_OWNER',			'REQUIRES_PLOT_HAS_IMPROVEMENT_FARM'),
 	('PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'REQUIRES_PLOT_HAS_FLOODPLAINS_TAG'),
 	('PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'REQUIRES_PLOT_ADJACENT_TO_DISTRICT_CITY_CENTER');
+
+-- Chemamull (Mapuche)
+update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
+
+-- Stepwell (India)
+update Improvement_BonusYieldChanges set PrereqCivic = null, PrereqTech = 'TECH_SANITATION' where ImprovementType = 'IMPROVEMENT_STEPWELL' and YieldType = 'YIELD_FOOD';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_STEPWELL' and ModifierId = 'STEPWELL_FARMADJACENCY_FOOD';
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_FARM_FOOD'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_PLANTATION_FOOD');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId,												SubjectStackLimit)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				null,																	1),
+	('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	null,																	1),
+	('STEPWELL_FARM_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_FARM_AND_ADJACENT_TO_OWNER_REQUIREMENTS',			null),
+	('STEPWELL_PLANTATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_PLANTATION_AND_ADJACENT_TO_OWNER_REQUIREMENTS',	null);
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
+	('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1),
+	('STEPWELL_FARM_FOOD',							'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_FARM_FOOD',							'Amount',			1),
+	('STEPWELL_PLANTATION_FOOD',					'YieldType',		'YIELD_FOOD'),
+	('STEPWELL_PLANTATION_FOOD',					'Amount',			1);
 
 -- Misc
 insert or replace into ImprovementModifiers
