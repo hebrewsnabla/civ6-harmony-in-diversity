@@ -30,7 +30,9 @@ values
 	
 	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2),
 	('IMPROVEMENT_MEKEWAP',				'YIELD_PRODUCTION',		0),
-	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1);
+	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1),
+	('IMPROVEMENT_CHATEAU',				'YIELD_CULTURE',		1),
+	('IMPROVEMENT_CHATEAU',				'YIELD_GOLD',			2);
 
 -- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
@@ -118,7 +120,10 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_DesertMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_TundraMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_SnowMountainAdjacency_Late'),
-	('IMPROVEMENT_TERRACE_FARM',	'Terrace_ConstructionAdjacency');
+	('IMPROVEMENT_TERRACE_FARM',	'Terrace_ConstructionAdjacency'),
+	('IMPROVEMENT_CHATEAU',			'Chateau_Bonus_Culture'),
+	('IMPROVEMENT_CHATEAU',			'Chateau_Luxury_Culture'),
+	('IMPROVEMENT_CHATEAU',			'Chateau_Luxury_Gold');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict)
 values
@@ -148,10 +153,13 @@ values
 	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_NEIGHBORHOOD',	null,					null),
 	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
 insert or replace into Adjacency_YieldChanges
-	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass)
+	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
 values
-	('Mekewap_Luxury_Production', 				'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY'),
-	('Mekewap_Strategic_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC');
+	('Mekewap_Luxury_Production', 				'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY',		null,			null),
+	('Mekewap_Strategic_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC',	null,			null),
+	('Chateau_Bonus_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_BONUS',		null,			null),
+	('Chateau_Luxury_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY',		'TECH_CASTLES',	null),
+	('Chateau_Luxury_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY',		null,			'CIVIC_GUILDS');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	OtherDistrictAdjacent,	PrereqCivic)
 values
@@ -563,6 +571,12 @@ insert or replace into ModifierStrings
 values
 	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
 
+-- Château (France)
+update Improvements set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', Housing = 1 where ImprovementType = 'IMPROVEMENT_CHATEAU';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
+update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLate';
+
 -- Misc
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -624,8 +638,6 @@ update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType
 UPDATE Improvement_BonusYieldChanges SET PrereqCivic="CIVIC_EXPLORATION" where ImprovementType="IMPROVEMENT_MISSION" and PrereqCivic="CIVIC_CULTURAL_HERITAGE";
 --土澳，内陆牧场的提升，
 UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_Outback_Production";
---法国UI改为文学传统
-UPDATE Improvements SET PrereqCivic="CIVIC_LITERARY_TRADITION_HD"  where ImprovementType="IMPROVEMENT_CHATEAU"  ;
 --瑞典UI改为人文主义
 UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
 	

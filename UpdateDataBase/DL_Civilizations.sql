@@ -1236,22 +1236,6 @@ insert or replace into GlobalParameters (Name,  Value) values ('FRANCE_WONDER_GR
 --	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','Amount',		1);
 
 -- Chateau
-update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_CHATEAU';
-update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldType = 'YIELD_GOLD';
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
-update Adjacency_YieldChanges set PrereqTech = NULL where ID = 'Chateau_WonderLate';
-
-insert or replace into Adjacency_YieldChanges
-	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
-values
-	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
-	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2,				'RESOURCECLASS_BONUS');
-
-insert or replace into Improvement_Adjacencies 
-	(ImprovementType,		YieldChangeId)
-values
-	('IMPROVEMENT_CHATEAU',	'Chateau_Luxury'),
-	('IMPROVEMENT_CHATEAU',	'Chateau_Bonus');
 
 -----------------------------------------------------------------------------------------------------------------------------
 --India
