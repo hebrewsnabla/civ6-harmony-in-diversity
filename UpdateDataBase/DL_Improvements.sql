@@ -447,6 +447,10 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'TERRAIN_GRASS_MOUNTAIN'),
 	('IMPROVEMENT_TERRACE_FARM',	'TERRAIN_PLAINS_MOUNTAIN'),
 	('IMPROVEMENT_TERRACE_FARM',	'TERRAIN_DESERT_MOUNTAIN');
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,				FeatureType)
+values
+	('IMPROVEMENT_TERRACE_FARM',	'FEATURE_VOLCANO');
 insert or replace into Improvements_XP2
 	(ImprovementType,				BuildOnAdjacentPlot)
 values

@@ -1129,10 +1129,10 @@ values
 
 insert or replace into Buildings 
 	(BuildingType, 						Name, 									Cost, 	Description,										
-	PrereqTech,				PrereqCivic,				PrereqDistrict) 
+	PrereqTech,				PrereqTech,				PrereqDistrict) 
 values
 	('BUILDING_GENERAL_SERVICE', 		'LOC_BUILDING_GENERAL_SERVICE_NAME', 	250, 	'LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION',				
-	NULL,					'CIVIC_CIVIL_SERVICE',		'DISTRICT_CITY_CENTER');
+	NULL,					'TECH_MATHEMATICS',		'DISTRICT_CITY_CENTER');
 
 insert or replace into Building_YieldChanges 
 	(BuildingType,						YieldType,				YieldChange)
