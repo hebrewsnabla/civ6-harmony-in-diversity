@@ -577,16 +577,6 @@ delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
 update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLate';
 
-insert or replace into Adjacency_YieldChanges
-	(ID,				Description,	YieldType,			YieldChange,	AdjacentResourceClass)
-values
-	('Chateau_Luxury',	'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY'),
-	('Chateau_Bonus',	'Placeholder',	'YIELD_GOLD', 		2,				'RESOURCECLASS_BONUS');
-
-insert or replace into Improvement_Adjacencies 
-	(ImprovementType,		YieldChangeId)
-values
-
 -- Misc
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
