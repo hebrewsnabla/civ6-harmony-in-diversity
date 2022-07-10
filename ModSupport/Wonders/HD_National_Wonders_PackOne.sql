@@ -8,34 +8,81 @@ update Buildings set cost = 1000, RegionalRange = 8 where BuildingType = 'NAT_WO
 update RequirementArguments set Value = 4 where RequirementId = 'REQ_CL_PLAYER_HAS_X_STRATEGIC_IMPROVEMENTS' and Name = 'Count';
 
 	-- 修改本体产出
-update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and YieldType = 'YIELD_PRODUCTION';
-update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
+update Building_YieldChanges set YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and YieldType = 'YIELD_PRODUCTION';
+update Building_YieldChanges set YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_IRONWORKS_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
+update Building_GreatPersonPoints set PointsPerTurn = 2
+	where BuildingType in ('NAT_WONDER_CL_IRONWORKS','NAT_WONDER_CL_IRONWORKS_INTERNAL') and GreatPersonClassType = 'GREAT_PERSON_CLASS_ENGINEER';
+
+insert or replace into Building_GreatPersonPoints
+    (BuildingType,                  		GreatPersonClassType,           PointsPerTurn)
+values  
+    ('NAT_WONDER_CL_IRONWORKS',      		'GREAT_PERSON_CLASS_SCIENTIST', 2),
+	('NAT_WONDER_CL_IRONWORKS_INTERNAL',    'GREAT_PERSON_CLASS_SCIENTIST', 2);
+
 	-- 修改特效
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_IRONWORKS' and ModifierId = 'CL_NAT_WONDER_ATTACH_STRATEGIC_YIELD_MODIFIER';
 
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-select
-	'NAT_WONDER_CL_IRONWORKS',		'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+	-- 战略
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'NAT_WONDER_CL_IRONWORKS', 'HD_NAT_IRONWORKS_CITIES_SCIENCE_' || ResourceType
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENCE_' || ResourceType, 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENCE_' || ResourceType, 'YieldType', 'YIELD_SCIENCE'
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENCE_' || ResourceType, 'Amount', 2
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
-insert or replace into Modifiers
-	(ModifierId,											ModifierType,											OwnerRequirementSetId,										SubjectRequirementSetId)
-select
-	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'NAT_WONDER_CL_IRONWORKS', 'HD_NAT_IRONWORKS_CITIES_SCIENTIST_' || ResourceType
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENTIST_' || ResourceType, 'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT', 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENTIST_' || ResourceType, 'GreatPersonClassType', 'GREAT_PERSON_CLASS_SCIENTIST'
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_SCIENTIST_' || ResourceType, 'Amount', 2
+	from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
 
-insert or replace into ModifierArguments
-	(ModifierId,											Name,				Value)
-select
-	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'YieldType',		'YIELD_PRODUCTION'
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+	-- 加成
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'NAT_WONDER_CL_IRONWORKS', 'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || a.ResourceType
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+	select 'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || a.ResourceType, 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE', 'HD_CITY_HAS_IMPROVED_' || a.ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || a.ResourceType, 'YieldType', 'YIELD_PRODUCTION'
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || a.ResourceType, 'Amount', 2
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
 
-insert or replace into ModifierArguments
-	(ModifierId,											Name,				Value)
-select
-	'HD_NAT_IRONWORKS_CITIES_PRODUCTION_' || ResourceType,	'Amount',			3
-from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+	select 'NAT_WONDER_CL_IRONWORKS', 'HD_NAT_IRONWORKS_CITIES_ENGINEER_' || a.ResourceType
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+	select 'HD_NAT_IRONWORKS_CITIES_ENGINEER_' || a.ResourceType, 'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT', 'HD_CITY_HAS_IMPROVED_' || a.ResourceType || '_REQUIRMENTS',	'HD_OBJECT_WITHIN_8_TILES'
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_ENGINEER_' || a.ResourceType, 'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'HD_NAT_IRONWORKS_CITIES_ENGINEER_' || a.ResourceType, 'Amount', 2
+	from Resources a inner join Improvement_ValidResources b on a.ResourceType = b.ResourceType
+	where a.ResourceClassType = 'RESOURCECLASS_BONUS' and b.ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY');
 
 -- 金融中心 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价

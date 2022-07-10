@@ -31,12 +31,12 @@ delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_J
 insert or replace into Improvement_BonusYieldChanges
     (Id,    ImprovementType,                YieldType,          BonusYieldChange,   PrereqTech,                 PrereqCivic)
 values  
-    -- (307,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  NULL,                       'CIVIC_GUILDS'),
+    (307,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  NULL,                       'CIVIC_GAMES_RECREATION'),
     (308,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_BUTTRESS',            NULL),
     (309,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_SCIENCE',     1,                  'TECH_BIOLOGY_HD',          NULL),
     (310,  'IMPROVEMENT_JNR_REED_HOME',    'YIELD_PRODUCTION',  1,                  'TECH_NANOTECHNOLOGY',      NULL),
 
-    (311,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BUTTRESS',            NULL),
+    (311,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_BUTTRESS',            NULL),
     -- (312,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  NULL,                       'CIVIC_MERCANTILISM'),
     (313,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BIOLOGY_HD',          Null),
     (314,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_SYNTHETIC_MATERIALS', NULL);
@@ -44,6 +44,7 @@ values
 update Technologies set Description = 'LOC_TECH_BIOLOGY_HD_DESCRIPTION' where TechnologyType = 'TECH_BIOLOGY_HD';
 update Technologies set Description = 'LOC_TECH_BUTTRESS_DESCRIPTION' where TechnologyType = 'TECH_BUTTRESS';
 update Technologies set Description = 'LOC_TECH_NANOTECHNOLOGY_DESCRIPTION' where TechnologyType = 'TECH_NANOTECHNOLOGY';
+update Civics set Description = 'LOC_CIVIC_GAMES_RECREATION_HD_DESCRIPTION' where CivicType = 'CIVIC_GAMES_RECREATION';
 -- update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
 
 insert or replace into Adjacency_YieldChanges
@@ -51,13 +52,24 @@ insert or replace into Adjacency_YieldChanges
 values
     ('HD_REED_HOME_PRODUCTION_AQUEDUCT',	'Placeholder',	'YIELD_PRODUCTION', 1,				1,				'DISTRICT_AQUEDUCT'),
 	('HD_REED_HOME_PRODUCTION_BATH',        'Placeholder',	'YIELD_PRODUCTION', 1,				1,				'DISTRICT_BATH'),
-	('HD_REED_HOME_PRODUCTION_DAM',	        'Placeholder',	'YIELD_PRODUCTION', 1,				1,				'DISTRICT_DAM');
+	('HD_REED_HOME_PRODUCTION_DAM',	        'Placeholder',	'YIELD_PRODUCTION', 1,				1,				'DISTRICT_DAM'),
+
+	('HD_OASIS_FARM_CULTURE_NEIGHBORHOOD',  'Placeholder',	'YIELD_GOLD',       2,				1,				'DISTRICT_NEIGHBORHOOD'),
+	('HD_OASIS_FARM_CULTURE_MBANZA',	    'Placeholder',	'YIELD_GOLD',       2,				1,				'DISTRICT_MBANZA'),
+    ('HD_OASIS_FARM_CULTURE_THEATER',       'Placeholder',	'YIELD_CULTURE',    1,				1,				'DISTRICT_THEATER'),
+	('HD_OASIS_FARM_CULTURE_ACROPOLIS',	    'Placeholder',	'YIELD_CULTURE',    1,				1,				'DISTRICT_ACROPOLIS');
 
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			    YieldChangeId)
 values
 	('IMPROVEMENT_JNR_REED_HOME',	'HD_REED_HOME_PRODUCTION_AQUEDUCT'),
-	('IMPROVEMENT_JNR_REED_HOME',	'HD_REED_HOME_PRODUCTION_DAM');
+    ('IMPROVEMENT_JNR_REED_HOME',	'HD_REED_HOME_PRODUCTION_BATH'),
+	('IMPROVEMENT_JNR_REED_HOME',	'HD_REED_HOME_PRODUCTION_DAM'),
+
+    ('IMPROVEMENT_JNR_OASIS_FARM',	'HD_OASIS_FARM_CULTURE_NEIGHBORHOOD'),
+    ('IMPROVEMENT_JNR_OASIS_FARM',	'HD_OASIS_FARM_CULTURE_MBANZA'),
+	('IMPROVEMENT_JNR_OASIS_FARM',	'HD_OASIS_FARM_CULTURE_THEATER'),
+	('IMPROVEMENT_JNR_OASIS_FARM',	'HD_OASIS_FARM_CULTURE_ACROPOLIS');
 
 -- Improvement_Adjacencies
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_JNR_OASIS_FARM' and YieldChangeId = 'District_Gold';
