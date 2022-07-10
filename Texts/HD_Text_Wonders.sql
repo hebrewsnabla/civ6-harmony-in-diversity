@@ -255,8 +255,8 @@ values
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_THEMEPARK_DESCRIPTION_INTERNAL",      "国家奇观，国家境内只能建造一座。[COLOR:Red]解锁条件：国家境内拥有4座娱乐中心或水上乐园。[ENDCOLOR]必须建在与娱乐中心相邻的平坦地形上。[NEWLINE][NEWLINE]拥有惊艳魅力的单元格中的区域，相邻加成也提供相等的 [ICON_TOURISM] 旅游业绩。拥有娱乐中心或者水上乐园的城市，奇观的 [ICON_Tourism] 旅游业绩+300%。拥有动物园的城市“牧场”和“营地”改良设施产出的 [ICON_Tourism] 旅游业绩+50%；拥有水族馆的城市“渔船”改良设施产出的 [ICON_Tourism] 旅游业绩+50%。"),
 
     ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_IRONWORKS_NAME",                      "大铁厂"),
-    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION",               "国家奇观，国家境内只能建造一座。解锁条件：国家境内拥有至少4个战略资源的改良设施。必须建在工业区旁。[NEWLINE][NEWLINE]本城每拥有一种被改良的战略资源，为8个单元格之内的城市提供+3 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION_INTERNAL",      "国家奇观，国家境内只能建造一座。[COLOR:Red]解锁条件：国家境内拥有至少4个战略资源的改良设施。[ENDCOLOR]必须建在工业区旁。[NEWLINE][NEWLINE]本城每拥有一种被改良的战略资源，为8个单元格之内的城市提供+3 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION",               "国家奇观，国家境内只能建造一座。解锁条件：国家境内拥有至少4个战略资源的改良设施。必须建在工业区旁。[NEWLINE][NEWLINE]本城每拥有一种矿山或采石场改良的加成资源，为8个单元格之内的城市提供+2 [ICON_Production] 生产力和+2 [ICON_GREATENGINEER] 大工程师点数。本城每拥有一种改良的战略资源，为8个单元格之内的城市提供+2 [ICON_Science] 科技值和+2 [ICON_GREATSCIENTIST] 大科学家点数。"),
+    ("zh_Hans_CN",  "LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION_INTERNAL",      "国家奇观，国家境内只能建造一座。[COLOR:Red]解锁条件：国家境内拥有至少4个战略资源的改良设施。[ENDCOLOR]必须建在工业区旁。[NEWLINE][NEWLINE]本城每拥有一种矿山或采石场改良的加成资源，为8个单元格之内的城市提供+2 [ICON_Production] 生产力和+2 [ICON_GREATENGINEER] 大工程师点数。本城每拥有一种改良的战略资源，为8个单元格之内的城市提供+2 [ICON_Science] 科技值和+2 [ICON_GREATSCIENTIST] 大科学家点数。"),
     
     ("zh_Hans_CN",  "LOC_NAT_WON_CL_FINANCE_NAME",                           "金融中心"),
     ("zh_Hans_CN",  "LOC_NAT_WON_CL_FINANCE_DESCRIPTION",                    "国家奇观，国家境内只能建造一座。解锁条件：经营8条贸易路线。必须建在与商业中心相邻的陆地上。[NEWLINE][NEWLINE]本城+100%商业中心相邻加成。从拥有银行的城市出发的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币，从拥有证券交易所的城市出发的国际 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。 [ICON_GreatPerson] 伟人赞助消耗的 [ICON_Gold] 金币减少50%。"),

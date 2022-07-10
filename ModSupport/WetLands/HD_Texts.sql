@@ -8,8 +8,9 @@ values
     
     ("LOC_CIVIC_GUILDS_HD_DESCRIPTION",               "+1 [ICON_PRODUCTION] Production from the Camp improvement. +1 [ICON_Science] Science from the Reed Home improvement. Lumber Mills and Camps can be built on Rainforest. Allows Builders to plant Woods (second-growth)."),
     ("LOC_TECH_BIOLOGY_HD_DESCRIPTION",               "Farms provide +1 [ICON_Food] Food from every adjacent Farms instead of two.[NEWLINE]+1 [ICON_Science] Science from the Reed Home improvement. +1 [ICON_Culture] Culture from the Oasis Garden improvement."),
-    ("LOC_TECH_BUTTRESS_DESCRIPTION",                 "+1 [ICON_Production] Production from the Reed Home improvement. +1 [ICON_Culture] Culture from the Oasis Garden improvement."),
+    ("LOC_TECH_BUTTRESS_DESCRIPTION",                 "+1 [ICON_Production] Production from the Reed Home improvement. +2 [ICON_Gold] Gold from the Oasis Garden improvement."),
     ("LOC_TECH_NANOTECHNOLOGY_DESCRIPTION",           "+1 [ICON_Production] Production from the Reed Home improvement."),
+    ("LOC_CIVIC_GAMES_RECREATION_HD_DESCRIPTION",     "+1 [ICON_Science] Science from the Reed Home improvement."),
     ("LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION",   "+2 [ICON_Gold] Gold to Camps. +2 [ICON_Gold] Gold from the Oasis Garden improvement."),
     ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "+2 [ICON_Gold] Gold from the Oasis Garden improvement."),
     
@@ -30,14 +31,15 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_RESOURCE_JNR_PEAT_NAME",                    "泥炭"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_OASIS_FARM_NAME",           "绿洲花园"),
-    ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION",    "解锁建造者建造绿洲花园的能力。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值，+1 [ICON_AMENITIES] 宜居度。[NEWLINE]只可建造在绿洲上。"),
+    ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_OASIS_FARM_DESCRIPTION",    "解锁建造者建造绿洲花园的能力。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值，+1 [ICON_AMENITIES] 宜居度。每相邻1个剧院广场或社区单元格，额外+1 [ICON_Culture] 文化值。[NEWLINE]只可建造在绿洲上。"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_REED_HOME_NAME",            "芦苇屋"),
     ("zh_Hans_CN",  "LOC_IMPROVEMENT_JNR_REED_HOME_DESCRIPTION",     "解锁建造者建造芦苇屋的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。每相邻1个水渠或堤坝单元格，额外+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]可建造在沼泽或泛滥平原上。"),
     
     -- ("zh_Hans_CN",  "LOC_CIVIC_GUILDS_HD_DESCRIPTION",               "营地+1 [ICON_production] 生产力。芦苇屋+1 [ICON_Science] 科技值。[newline]允许在雨林上建造伐木场和营地。[newline]允许建造者植树造林（人造林）。"),
     ("zh_Hans_CN",  "LOC_TECH_BIOLOGY_HD_DESCRIPTION",               "每与1个农场相邻，农场+1 [ICON_Food] 食物。[NEWLINE]芦苇屋+1 [ICON_Science] 科技值。绿洲花园+1 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_TECH_BUTTRESS_DESCRIPTION",                 "芦苇屋+1 [ICON_Production] 生产力。绿洲花园+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_TECH_BUTTRESS_DESCRIPTION",                 "芦苇屋+1 [ICON_Production] 生产力。绿洲花园+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TECH_NANOTECHNOLOGY_DESCRIPTION",           "芦苇屋+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_GAMES_RECREATION_HD_DESCRIPTION",     "芦苇屋+1 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION",   "营地+2 [ICON_Gold] 金币。绿洲花园+2 [ICON_Gold] 金币。"),
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "绿洲花园+2 [ICON_Gold] 金币。"),
     
