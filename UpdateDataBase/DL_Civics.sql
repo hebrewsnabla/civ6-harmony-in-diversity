@@ -295,7 +295,7 @@ update Civics set UITreeRow = -3 where CivicType = 'CIVIC_NAVAL_TRADITION';
 update Civics set UITreeRow = 0 where CivicType = 'CIVIC_FEUDALISM';
 update Civics set UITreeRow = -2 where CivicType = 'CIVIC_GUILDS';
 update Civics set UITreeRow = -2 where CivicType = 'CIVIC_MEDIEVAL_FAIRES';
-update Civics set UITreeRow = 2, Cost = 420 where CivicType = 'CIVIC_CIVIL_SERVICE';
+update Civics set UITreeRow = 2 where CivicType = 'CIVIC_CIVIL_SERVICE';
 update Civics set UITreeRow = 0 where CivicType = 'CIVIC_MERCENARIES';
 	-- 文艺复兴 --
 update Civics set UITreeRow = -1 where CivicType = 'CIVIC_DIPLOMATIC_SERVICE';

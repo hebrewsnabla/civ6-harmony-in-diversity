@@ -108,7 +108,8 @@ values
     ('IMPROVEMENT_BARBARIAN_CAMP',  'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_GOODY_HUT',       'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_METEOR_GOODY',    'FEATURE_HD_SWAMP'),
-    ('IMPROVEMENT_LAND_POLDER',     'FEATURE_HD_SWAMP');
+    ('IMPROVEMENT_LAND_POLDER',     'FEATURE_HD_SWAMP'),
+	('IMPROVEMENT_GREAT_WALL',		'FEATURE_HD_SWAMP');
 
 insert or replace into Improvement_InvalidAdjacentFeatures
     (ImprovementType,               FeatureType)

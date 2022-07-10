@@ -1,18 +1,25 @@
 -- Basic Yield
-delete from Improvement_YieldChanges where
-	(ImprovementType = 'IMPROVEMENT_FISHING_BOATS'	and YieldType = 'YIELD_FOOD') or
-	(ImprovementType = 'IMPROVEMENT_PLANTATION'		and YieldType = 'YIELD_GOLD') or
-	(ImprovementType = 'IMPROVEMENT_CAMP'			and YieldType = 'YIELD_GOLD') or
-
-	(ImprovementType = 'IMPROVEMENT_MEKEWAP'		and YieldType = 'YIELD_PRODUCTION') or 
-	(ImprovementType = 'IMPROVEMENT_SPHINX'			and YieldType = 'YIELD_FAITH');
 insert or replace into Improvement_YieldChanges
 	(ImprovementType,					YieldType,				YieldChange)
 values
+	('IMPROVEMENT_FISHING_BOATS',		'YIELD_FOOD',			0),
 	('IMPROVEMENT_FISHING_BOATS',		'YIELD_PRODUCTION',		1),
+	('IMPROVEMENT_FISHING_BOATS',		'YIELD_GOLD',			0),
+
 	('IMPROVEMENT_PLANTATION',			'YIELD_FOOD',			1),
+	('IMPROVEMENT_PLANTATION',			'YIELD_PRODUCTION',		0),
+	('IMPROVEMENT_PLANTATION',			'YIELD_GOLD',			0),
+
 	('IMPROVEMENT_CAMP',				'YIELD_FOOD',			1),
+	('IMPROVEMENT_CAMP',				'YIELD_PRODUCTION',		0),
+	('IMPROVEMENT_CAMP',				'YIELD_GOLD',			0),
+
+	('IMPROVEMENT_PASTURE',				'YIELD_FOOD',			0),
+	('IMPROVEMENT_PASTURE',				'YIELD_PRODUCTION',		1),
+	('IMPROVEMENT_PASTURE',				'YIELD_GOLD',			0),
+
 	('IMPROVEMENT_LUMBER_MILL',			'YIELD_PRODUCTION',		1),
+
 	('IMPROVEMENT_OIL_WELL',			'YIELD_PRODUCTION',		3),
 	('IMPROVEMENT_OIL_WELL',			'YIELD_SCIENCE',		1),
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_PRODUCTION',		3),
@@ -21,7 +28,9 @@ values
 	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			1),
 	('IMPROVEMENT_MOAI',				'YIELD_CULTURE',		2),
 	
-	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2);
+	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2),
+	('IMPROVEMENT_MEKEWAP',				'YIELD_PRODUCTION',		0),
+	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1);
 
 -- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
@@ -146,7 +155,7 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	OtherDistrictAdjacent,	PrereqCivic)
 values
-	('Golf_District_Culture',					'placeholder',	'YIELD_CULTURE',	1, 				1,						'CIVIC_HUMANISM');
+	('Golf_District_Culture',					'Placeholder',	'YIELD_CULTURE',	1, 				1,						'CIVIC_HUMANISM');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentTerrain,			PrereqTech)
 values
@@ -441,6 +450,11 @@ insert or replace into Improvement_ValidResources
 	(ImprovementType,				ResourceType)
 values
 	('IMPROVEMENT_TERRACE_FARM',	'RESOURCE_SHEEP');
+insert or replace into Improvement_ValidResources
+	(ImprovementType,				ResourceType)
+select
+	'IMPROVEMENT_TERRACE_FARM',		'RESOURCE_STRAWBERRY'
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_STRAWBERRY');
 update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
 
 -- Sphinx (Egypt)
@@ -513,6 +527,41 @@ values
 	('STEPWELL_FARM_FOOD',							'Amount',			1),
 	('STEPWELL_PLANTATION_FOOD',					'YieldType',		'YIELD_FOOD'),
 	('STEPWELL_PLANTATION_FOOD',					'Amount',			1);
+
+-- Great Wall (China)
+update Improvements_XP2 set BuildOnAdjacentPlot = 1 where ImprovementType = 'IMPROVEMENT_GREAT_WALL';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_CASTLES' where ID = 'GreatWall_Gold';
+update Adjacency_YieldChanges set PrereqTech = 'TECH_MASONRY' where ID = 'GreatWall_Culture';
+insert or replace into Improvement_ValidFeatures
+	(ImprovementType,			FeatureType)
+values
+	('IMPROVEMENT_GREAT_WALL',	'FEATURE_FOREST');
+insert or replace into Improvement_ValidTerrains
+	(ImprovementType,			TerrainType)
+values
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_GRASS_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_PLAINS_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_DESERT_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_TUNDRA_MOUNTAIN'),
+	('IMPROVEMENT_GREAT_WALL',	'TERRAIN_SNOW_MOUNTAIN');
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_GREAT_WALL',		'GREAT_WALL_REDUCE_COMBAT');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,									SubjectRequirementSetId)
+values
+	('GREAT_WALL_REDUCE_COMBAT',			'MODIFIER_ALL_UNITS_ATTACH_MODIFIER',			'VARU_ADJACENT_AT_WAR_REQUIREMENTS'),
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',	'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',			NULL);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('GREAT_WALL_REDUCE_COMBAT',			'ModifierId',		'GREAT_WALL_REDUCE_COMBAT_MODIFIER'),
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',	'Amount',			-2);
+insert or replace into ModifierStrings
+	(ModifierId,								Context,	Text)
+values
+	('GREAT_WALL_REDUCE_COMBAT_MODIFIER',		'Preview',	'{1_Amount} {LOC_GREAT_WALL_REDUCE_COMBAT_PREVIEW_TEXT}');
 
 -- Misc
 insert or replace into ImprovementModifiers
