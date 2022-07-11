@@ -376,8 +376,42 @@ function FranceWonderGreatPeoplePoint (x, y, buildingId, playerId, cityId, perce
         player:GetGreatPeoplePoints():ChangePointsTotal(MUSICIAN_INDEX, amount);
 	end
 end
-
 Events.WonderCompleted.Add(FranceWonderGreatPeoplePoint);
+
+function FranceGreatPeopleActiveWonder (playerId, unitId, greatPersonClassId, greatPersonIndividualId)
+	if greatPersonClassId ~= WRITER_INDEX and greatPersonClassId ~= ARTIST_INDEX and greatPersonClassId ~= MUSICIAN_INDEX then
+		return;
+	end
+	local player = Players[playerId];
+	local playerConfig = PlayerConfigurations[playerId];
+	local civ = playerConfig:GetCivilizationTypeName();
+	if not CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_WONDER_TOURISM') then
+		return;
+	end
+	local unit = UnitManager.GetUnit(playerId, unitId);
+	local location = unit:GetLocation();
+	local plot = Map.GetPlot(location.x, location.y);
+	local districtId = plot:GetDistrictID();
+	if not (districtId > 0) then
+		return;
+	end
+	local district = player:GetDistricts():FindID(districtId);
+	local city = district:GetCity();
+	local current = city:GetBuildQueue():CurrentlyBuilding();
+	if not current then
+		return;
+	end
+	local buildingInfo = GameInfo.Buildings[current];
+	if not buildingInfo.IsWonder then
+		return;
+	end
+	local cost = buildingInfo.Cost;
+	local rate = GlobalParameters.FRANCE_GREATPEOPLE_WONDER_PERCENTAGE or 0;
+	local amount = cost * rate / 100;
+	city:GetBuildQueue():AddProgress(amount);
+	Game.AddWorldViewText(0, "+" .. amount .. " [ICON_PRODUCTION]", location.x, location.y);
+end
+Events.UnitGreatPersonActivated.Add(FranceGreatPeopleActiveWonder);
 
 -- 荷兰跳探索, by xiaoxiao
 local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;

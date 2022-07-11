@@ -1212,26 +1212,11 @@ values
 ----------------------------------------------------------------------------------------------------------------------------------
 -- France
 update ModifierArguments set Value = 300 where ModifierId = 'TRAIT_WONDER_DOUBLETOURISM' and Name = 'ScalingFactor';
-insert or replace into GlobalParameters (Name,  Value) values ('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',  20);
-insert or replace into TraitModifiers
-	(TraitType,								ModifierId)
+insert or replace into GlobalParameters
+	(Name,										Value)
 values
-	('TRAIT_CIVILIZATION_WONDER_TOURISM',	'TRAIT_PLANTATION_PRODUCTION');
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,										SubjectRequirementSetId)
-values
-	('TRAIT_PLANTATION_PRODUCTION',								'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_PLANTATION_REQUIREMENTS');
-insert or replace into ModifierArguments
-	(ModifierId,												Name,			Value)
-values
-	('TRAIT_PLANTATION_PRODUCTION',								'YieldType',	'YIELD_PRODUCTION'),
-	('TRAIT_PLANTATION_PRODUCTION',								'Amount',		1);
---	('TRAIT_WONDER_BONUS_TO_CAPITAL_MODIFIER',					'Amount',		1),
---	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL',			'ModifierId',	'TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER'),
---	('TRAIT_WONDER_AT_LEAST_MEDIEVAL_BONUS_TO_CAPITAL_MODIFIER','Amount',		1);
-
--- Chateau
-
+	('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',	20),
+	('FRANCE_GREATPEOPLE_WONDER_PERCENTAGE',	20);
 -----------------------------------------------------------------------------------------------------------------------------
 --India
 ---------------------------------------------------------------------------------------------------------------------------------
