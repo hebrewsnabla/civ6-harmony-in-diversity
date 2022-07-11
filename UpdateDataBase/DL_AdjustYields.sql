@@ -26,11 +26,11 @@ insert or replace into Feature_YieldChanges
 values
 	('FEATURE_FOREST',	'YIELD_FOOD',		-1),
 	('FEATURE_JUNGLE',	'YIELD_PRODUCTION',	-1),
-	('FEATURE_REEF',	'YIELD_GOLD',		-2);
+	('FEATURE_REEF',	'YIELD_GOLD',		-3);
 insert or replace into Feature_YieldChanges
 	(FeatureType,		YieldType,			YieldChange)
 select
-	'FEATURE_SUK_KELP',	'YIELD_GOLD',		-2
+	'FEATURE_SUK_KELP',	'YIELD_GOLD',		-3
 where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_KELP');
 update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FLOODPLAINS' and YieldType = 'YIELD_FOOD';
 update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_OASIS' and YieldType = 'YIELD_FOOD';
