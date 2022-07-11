@@ -32,7 +32,12 @@ values
 	('IMPROVEMENT_MEKEWAP',				'YIELD_PRODUCTION',		0),
 	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1),
 	('IMPROVEMENT_CHATEAU',				'YIELD_CULTURE',		1),
-	('IMPROVEMENT_CHATEAU',				'YIELD_GOLD',			2);
+	('IMPROVEMENT_CHATEAU',				'YIELD_GOLD',			2),
+	('IMPROVEMENT_LAND_POLDER',			'YIELD_FOOD',			1),
+	('IMPROVEMENT_LAND_POLDER',			'YIELD_PRODUCTION',		1),
+	('IMPROVEMENT_LAND_POLDER',			'YIELD_GOLD',			0),
+	('IMPROVEMENT_MISSION',				'YIELD_FOOD',			0),
+	('IMPROVEMENT_MISSION',				'YIELD_PRODUCTION',		0);
 
 -- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
@@ -123,7 +128,11 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_ConstructionAdjacency'),
 	('IMPROVEMENT_CHATEAU',			'Chateau_Bonus_Gold'),
 	('IMPROVEMENT_CHATEAU',			'Chateau_Luxury_Culture'),
-	('IMPROVEMENT_CHATEAU',			'Chateau_Luxury_Gold');
+	('IMPROVEMENT_CHATEAU',			'Chateau_Luxury_Gold'),
+	('IMPROVEMENT_MISSION',			'Mission_Neighborhood_Food'),
+	('IMPROVEMENT_MISSION',			'Mission_Neighborhood_Production'),
+	('IMPROVEMENT_MISSION',			'Mission_Mbanza_Food'),
+	('IMPROVEMENT_MISSION',			'Mission_Mbanza_Production');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict)
 values
@@ -138,7 +147,12 @@ values
 	('Camp_Suguba_Gold', 						'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_SUGUBA'),
 	('Fishing_Boats_Harbor_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_HARBOR'),
 	('Fishing_Boats_Royal_Navy_Gold', 			'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_ROYAL_NAVY_DOCKYARD'),
-	('Fishing_Boats_Cothon_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COTHON');
+	('Fishing_Boats_Cothon_Gold', 				'Placeholder',	'YIELD_GOLD',		2,				'DISTRICT_COTHON'),
+	
+	('Mission_Neighborhood_Food',				'Placeholder',	'YIELD_FOOD',		1,				'DISTRICT_NEIGHBORHOOD'),
+	('Mission_Neighborhood_Production',			'Placeholder',	'YIELD_PRODUCTION',	1,				'DISTRICT_NEIGHBORHOOD'),
+	('Mission_Mbanza_Food',						'Placeholder',	'YIELD_FOOD',		1,				'DISTRICT_MBANZA'),
+	('Mission_Mbanza_Production',				'Placeholder',	'YIELD_PRODUCTION',	1,				'DISTRICT_MBANZA');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentRiver,	PrereqTech,				ObsoleteTech)
 values
@@ -176,6 +190,7 @@ insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqTech)
 values
 	('Terrace_ConstructionAdjacency',			'Placeholder',	'YIELD_PRODUCTION',	1,				2,				'IMPROVEMENT_TERRACE_FARM',	'TECH_CONSTRUCTION');
+
 -- Prereq Tech / Civic
 update Improvements set PrereqTech = 'TECH_POTTERY'					where ImprovementType = 'IMPROVEMENT_PLANTATION';
 update Improvements set PrereqTech = 'TECH_MINING'					where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
@@ -621,12 +636,6 @@ insert or replace into Improvements
 	(ImprovementType,			Name,								PrereqTech,				Description,								PlunderType,		PlunderAmount,	Icon,							TraitType,										Housing,	TilesRequired,	MovementChange)
 values
 	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_CONSTRUCTION',	'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				2);
-insert or replace into Improvement_YieldChanges
-	(ImprovementType,			YieldType,			YieldChange)
-values
-	('IMPROVEMENT_LAND_POLDER',	'YIELD_FOOD',		1),
-	('IMPROVEMENT_LAND_POLDER',	'YIELD_PRODUCTION',	1),
-	('IMPROVEMENT_LAND_POLDER',	'YIELD_GOLD',		0);
 insert or replace into Improvement_ValidFeatures
 	(ImprovementType,			FeatureType)
 values
@@ -677,6 +686,44 @@ select
 from Adjacency_YieldChanges where ID in (select YieldChangeId from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER');
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BUTTRESS', ObsoleteCivic = null where ID = 'Land_Polder_Polder_Food_Early' or ID = 'Land_Polder_Land_Polder_Food_Early';
 update Adjacency_YieldChanges set PrereqTech = 'TECH_BUTTRESS', PrereqCivic = null where ID = 'Land_Polder_Polder_Food_Late' or ID = 'Land_Polder_Land_Polder_Food_Late';
+
+-- Mission (Spain)
+update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EXPLORATION' where ImprovementType = 'IMPROVEMENT_MISSION' and PrereqCivic = 'CIVIC_CULTURAL_HERITAGE';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MISSION';
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierId)
+values
+	('IMPROVEMENT_MISSION',		'MISSION_HOLY_SITE_FAITH'),
+	('IMPROVEMENT_MISSION',		'MISSION_CAMPUS_SCIENCE'),
+	('IMPROVEMENT_MISSION',		'MISSION_HOLY_SITE_FAITH_FOREIGN'),
+	('IMPROVEMENT_MISSION',		'MISSION_CAMPUS_SCIENCE_FOREIGN');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,												OwnerRequirementSetId,									SubjectRequirementSetId,					SubjectStackLimit)
+values
+	('MISSION_HOLY_SITE_FAITH',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLOT_ADJACENT_TO_DISTRICT_HOLY_SITE_REQUIREMENTS',		null,										1),
+	('MISSION_CAMPUS_SCIENCE',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLOT_ADJACENT_TO_DISTRICT_CAMPUS_REQUIREMENTS',		null,										1),
+	('MISSION_HOLY_SITE_FAITH_FOREIGN',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLOT_ADJACENT_TO_DISTRICT_HOLY_SITE_REQUIREMENTS',		'CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	1),
+	('MISSION_CAMPUS_SCIENCE_FOREIGN',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'PLOT_ADJACENT_TO_DISTRICT_CAMPUS_REQUIREMENTS',		'CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	1);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('MISSION_HOLY_SITE_FAITH',				'YieldType',	'YIELD_FAITH'),
+	('MISSION_HOLY_SITE_FAITH',				'Amount',		0.2),
+	('MISSION_CAMPUS_SCIENCE',				'YieldType',	'YIELD_SCIENCE'),
+	('MISSION_CAMPUS_SCIENCE',				'Amount',		0.2),
+	('MISSION_HOLY_SITE_FAITH_FOREIGN',		'YieldType',	'YIELD_FAITH'),
+	('MISSION_HOLY_SITE_FAITH_FOREIGN',		'Amount',		0.2),
+	('MISSION_CAMPUS_SCIENCE_FOREIGN',		'YieldType',	'YIELD_SCIENCE'),
+	('MISSION_CAMPUS_SCIENCE_FOREIGN',		'Amount',		0.2);
+insert or replace into RequirementSets
+	(RequirementSetId,							RequirementSetType)
+values
+	('CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,							RequirementId)
+values
+	('CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
+	('CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	'REQUIRES_CITY_WAS_NOT_FOUNDED');
 
 -- Misc
 insert or replace into ImprovementModifiers
@@ -735,8 +782,6 @@ values
 -- 冰球场
 update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 --by 弱猹
---西班牙，传教团的提升
-UPDATE Improvement_BonusYieldChanges SET PrereqCivic="CIVIC_EXPLORATION" where ImprovementType="IMPROVEMENT_MISSION" and PrereqCivic="CIVIC_CULTURAL_HERITAGE";
 --土澳，内陆牧场的提升，
 UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_Outback_Production";
 --瑞典UI改为人文主义

@@ -107,6 +107,10 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'DistrictType', DistrictType from Districts;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType, 'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES' from Districts;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ADJACENT_TO_' || DistrictType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL' from Districts;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ADJACENT_TO_' || DistrictType || '_REQUIREMENTS', 'REQUIRES_PLOT_ADJACENT_TO_' || DistrictType from Districts;
 
 -- Improvements plots
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

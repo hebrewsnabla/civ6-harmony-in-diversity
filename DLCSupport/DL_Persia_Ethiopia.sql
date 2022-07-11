@@ -17,11 +17,11 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,			Value)
 values
 	('PAIRIDAEZA_DIPLOMATIC_QUATER_GOLD',			'YieldType',	'YIELD_GOLD'),
-	('PAIRIDAEZA_DIPLOMATIC_QUATER_GOLD',			'Amount',		1),
+	('PAIRIDAEZA_DIPLOMATIC_QUATER_GOLD',			'Amount',		2),
 	('PAIRIDAEZA_CONSULATE_GOLD',					'YieldType',	'YIELD_GOLD'),
-	('PAIRIDAEZA_CONSULATE_GOLD',					'Amount',		1),
+	('PAIRIDAEZA_CONSULATE_GOLD',					'Amount',		2),
 	('PAIRIDAEZA_CHANCERY_GOLD',					'YieldType',	'YIELD_GOLD'),
-	('PAIRIDAEZA_CHANCERY_GOLD',					'Amount',		1),
+	('PAIRIDAEZA_CHANCERY_GOLD',					'Amount',		2),
 	('PAIRIDAEZA_REGIONAL_COUNCIL_CENTER_GOLD',		'YieldType',	'YIELD_GOLD'),
-	('PAIRIDAEZA_REGIONAL_COUNCIL_CENTER_GOLD',		'Amount',		1);
+	('PAIRIDAEZA_REGIONAL_COUNCIL_CENTER_GOLD',		'Amount',		2);
 update Improvements set Description = 'LOC_IMPROVEMENT_PAIRIDAEZA_ETHIOPIA_DESCRIPTION' where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
