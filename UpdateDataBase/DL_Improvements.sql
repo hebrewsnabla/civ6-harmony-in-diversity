@@ -37,7 +37,8 @@ values
 	('IMPROVEMENT_LAND_POLDER',			'YIELD_PRODUCTION',		1),
 	('IMPROVEMENT_LAND_POLDER',			'YIELD_GOLD',			0),
 	('IMPROVEMENT_MISSION',				'YIELD_FOOD',			0),
-	('IMPROVEMENT_MISSION',				'YIELD_PRODUCTION',		0);
+	('IMPROVEMENT_MISSION',				'YIELD_PRODUCTION',		0),
+	('IMPROVEMENT_ICE_HOCKEY_RINK',		'YIELD_FOOD',			2);
 
 -- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
@@ -783,9 +784,9 @@ select
 	'IMPROVEMENT_OPEN_AIR_MUSEUM',		AttachModifierId
 from HD_OpenAirMuseumBonuses;
 insert or replace into Modifiers
-	(ModifierId,		ModifierType,								SubjectRequirementSetId,										SubjectStackLimit)
+	(ModifierId,		ModifierType,								SubjectRequirementSetId,			SubjectStackLimit)
 select
-	AttachModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'PLOT_ON_OR_ADJACENT_TO_' || ObjectType || '_REQUIREMENTS',		1
+	AttachModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'HD_CITY_HAS_' || ObjectType,		1
 from HD_OpenAirMuseumBonuses;
 insert or replace into ModifierArguments
 	(ModifierId,		Name,			Value)
@@ -807,6 +808,67 @@ insert or replace into ModifierArguments
 select
 	ModifierId,			'Amount',		1
 from HD_OpenAirMuseumBonuses;
+
+-- Ice Hockey Rink (Canada)
+update Improvements set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'ICEHOCKEYRINK_AMENITY';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK' and ModifierId = 'ICEHOCKEYRINK_CULTURE_STADIUM';
+insert or replace into ImprovementModifiers
+	(ImprovementType,					ModifierId)
+values
+	('IMPROVEMENT_ICE_HOCKEY_RINK',		'ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								SubjectRequirementSetId,								SubjectStackLimit)
+values
+	('ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',					1),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_IMPROVEMENT_ICE_HOCKEY_RINK_REQUIREMENTS',	null);
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH',		'ModifierId',	'ICE_HOCKEY_RINK_CITY_CULTURE'),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'YieldType',	'YIELD_CULTURE'),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'Amount',		1);
+create temporary table HD_IceHockeyRinkBonuses (
+	DistrictType text not null primary key,
+	AttachModifierId text,
+	ModifierId text
+);
+insert or replace into HD_IceHockeyRinkBonuses (DistrictType) select DistrictType from Districts where DistrictType != 'DISTRICT_WONDER' and TraitType is null;
+update HD_IceHockeyRinkBonuses set ModifierId = 'ICE_HOCKEY_RINK_' || DistrictType || '_PRODUCTION';
+update HD_IceHockeyRinkBonuses set AttachModifierId = ModifierId || '_ATTACH';
+insert or replace into ImprovementModifiers
+	(ImprovementType,					ModifierId)
+select
+	'IMPROVEMENT_ICE_HOCKEY_RINK',		AttachModifierId
+from HD_IceHockeyRinkBonuses;
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,									SubjectRequirementSetId,								SubjectStackLimit)
+select
+	AttachModifierId,		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS',		1
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	AttachModifierId,		'ModifierId',	ModifierId
+from HD_IceHockeyRinkBonuses;
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,							OwnerRequirementSetId,						SubjectRequirementSetId,								SubjectStackLimit)
+select
+	ModifierId,		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',		'PLOT_HAS_IMPROVEMENT_ICE_HOCKEY_RINK_REQUIREMENTS',	1
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	'YIELD_PRODUCTION'
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		1
+from HD_IceHockeyRinkBonuses;
+
 
 -- Misc
 insert or replace into ImprovementModifiers
@@ -861,11 +923,6 @@ insert or replace into GoodyHutSubTypes
 	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
 values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
-
--- 冰球场
-update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
---by 弱猹
---瑞典UI改为人文主义
 
 --移除雨林前移到采矿
 update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';

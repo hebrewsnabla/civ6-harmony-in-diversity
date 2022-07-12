@@ -378,25 +378,24 @@ function FranceWonderGreatPeoplePoint (x, y, buildingId, playerId, cityId, perce
 end
 Events.WonderCompleted.Add(FranceWonderGreatPeoplePoint);
 
-function FranceGreatPeopleActiveWonder (playerId, unitId, greatPersonClassId, greatPersonIndividualId)
-	if greatPersonClassId ~= WRITER_INDEX and greatPersonClassId ~= ARTIST_INDEX and greatPersonClassId ~= MUSICIAN_INDEX then
-		return;
-	end
+function FranceGreatPeopleActiveWonder (playerId, unitId, x, y, buildingId, greatWorkId)
 	local player = Players[playerId];
 	local playerConfig = PlayerConfigurations[playerId];
 	local civ = playerConfig:GetCivilizationTypeName();
 	if not CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_WONDER_TOURISM') then
 		return;
 	end
-	local unit = UnitManager.GetUnit(playerId, unitId);
-	local location = unit:GetLocation();
-	local plot = Map.GetPlot(location.x, location.y);
-	local districtId = plot:GetDistrictID();
-	if not (districtId > 0) then
+	local greatWorkInfo = GameInfo.GreatWorks[greatWorkId];
+	if greatWorkInfo.GreatPersonIndividualType == nil then
 		return;
 	end
-	local district = player:GetDistricts():FindID(districtId);
-	local city = district:GetCity();
+	local greatPersonInfo = GameInfo.GreatPersonIndividuals[greatWorkInfo.GreatPersonIndividualType];
+	if greatPersonInfo.GreatPersonClassType ~= 'GREAT_PERSON_CLASS_WRITER'
+			and greatPersonInfo.GreatPersonClassType ~= 'GREAT_PERSON_CLASS_ARTIST'
+			and greatPersonInfo.GreatPersonClassType ~= 'GREAT_PERSON_CLASS_MUSICIAN' then
+		return;
+	end
+	local city = CityManager.GetCityAt(x, y);
 	local current = city:GetBuildQueue():CurrentlyBuilding();
 	if not current then
 		return;
@@ -411,7 +410,7 @@ function FranceGreatPeopleActiveWonder (playerId, unitId, greatPersonClassId, gr
 	city:GetBuildQueue():AddProgress(amount);
 	Game.AddWorldViewText(0, "+" .. amount .. " [ICON_PRODUCTION]", location.x, location.y);
 end
-Events.UnitGreatPersonActivated.Add(FranceGreatPeopleActiveWonder);
+Events.GreatWorkCreated.Add(FranceGreatPeopleActiveWonder);
 
 -- 荷兰跳探索, by xiaoxiao
 local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;

@@ -243,6 +243,19 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_CITY_HAS_' || FeatureType, 'REQUIRES_CITY_HAS_' || FeatureType from Features;
 
+-- City Has Terrain
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'TerrainType', TerrainType from Terrains;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'Amount', 2 from Terrains;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE' from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_CITY_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_CITY_HAS_' || TerrainType, 'REQUIRES_CITY_HAS_' || TerrainType from Terrains;
+
 -- Player Has Features
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST' from Features;
@@ -561,6 +574,7 @@ values
 	('PLOT_HAS_BASIC_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',			'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL'),
 	('HD_IS_TUNDRA_SNOW_FOOD_IMPROVEMENTS_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
 	-- 
 	-- ('PLAYER_IS_SUZERAIN_AND_FOUND_RELIGION',						'REQUIREMENTSET_TEST_ALL'),
@@ -624,6 +638,7 @@ values
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_CAMP'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_FARM'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_PLANTATION'),
+	('PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',		'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_BASIC_PRODUCTION_IMPROVEMENTS'),
 	('HD_IS_TUNDRA_SNOW_FOOD_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
