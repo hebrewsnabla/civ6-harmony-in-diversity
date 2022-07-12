@@ -1269,8 +1269,12 @@
 	  <File>DLCSupport/DL_Babylon_Late.sql</File>
 	</UpdateDatabase>
     <UpdateDatabase id="DL_Australia_Late" criteria="DLC_Australia">
-      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <Properties><LoadOrder>17010</LoadOrder></Properties>
       <File>DLCSupport/DL_Australia_Late.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="DL_GranColombia_Late" criteria="DLC_GranColombia">
+      <Properties><LoadOrder>17010</LoadOrder></Properties>
+      <File>DLCSupport/DL_GranColombia_Late.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
@@ -1822,6 +1826,7 @@
     <File>DLCSupport/DL_Ethiopia.sql</File>
     <File>DLCSupport/DL_EthiopiaBuildingDefinations.sql</File>
     <File>DLCSupport/DL_GranColombia.sql</File>
+	<File>DLCSupport/DL_GranColombia_Late.sql</File>
     <File>DLCSupport/DL_Vietnam.sql</File>
     <File>DLCSupport/DL_Vietnam_Late.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
