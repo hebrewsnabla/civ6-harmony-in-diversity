@@ -979,10 +979,10 @@ values
 --------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
-update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
-update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
 
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_SCIENTIST_HAPPY' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENTIST_ECSTATIC' and Name = 'Amount';
@@ -1006,7 +1006,7 @@ values
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_OILPLANT_ENGINEER_POINT'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_NUCLEARPLANT_ENGINEER_POINT'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_CAMPUS_AMENITY'),
-	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_INDUSTRIAL_ZONE_AMENIYT'),
+	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_INDUSTRIAL_ZONE_AMENITY'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC'),
 -- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC'),
@@ -1039,7 +1039,7 @@ values
 -- 	('TRAIT_FACTORY_ENGINEER_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_FACTORY_ECSTATIC_REQUIREMENTS'),
 -- 	('TRAIT_COALPLANT_ENGINEER_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_PLANT_ECSTATIC_REQUIREMENTS'),
 	('TRAIT_CAMPUS_AMENITY',									'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',					'HD_CITY_HAS_CAMPUS_REQUIREMENTS'),
-	('TRAIT_INDUSTRIAL_ZONE_AMENIYT',							'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',					'HD_CITY_HAS_INDUSTRIAL_ZONE_REQUIREMENTS'),
+	('TRAIT_INDUSTRIAL_ZONE_AMENITY',							'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',					'HD_CITY_HAS_INDUSTRIAL_ZONE_REQUIREMENTS'),
 	('SCOTLAND_TERRITORY_COMBAT',								'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',							NULL),
 	('SCOTLAND_FRIENDLY_COMBAT',								'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',							'HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS');
 
@@ -1052,10 +1052,10 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_SCIENCE_JOYFUL',						'YieldType',					'YIELD_SCIENCE'),
 	('TRAIT_SCIENCE_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_SCIENCE_JOYFUL',						'Amount',						16),
+	('TRAIT_SCIENCE_JOYFUL',						'Amount',						12),
 	('TRAIT_PRODUCTION_JOYFUL',						'YieldType',					'YIELD_PRODUCTION'),
 	('TRAIT_PRODUCTION_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						16),
+	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						12),
 	('TRAIT_SCIENTIST_JOYFUL',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TRAIT_SCIENTIST_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
 	('TRAIT_SCIENTIST_JOYFUL',						'Amount',						4),
@@ -1064,7 +1064,7 @@ values
 	('TRAIT_ENGINEER_JOYFUL',						'Amount',						4),
 	-- 
 	('TRAIT_CAMPUS_AMENITY',						'Amount',						1),
-	('TRAIT_INDUSTRIAL_ZONE_AMENIYT',				'Amount',						1),
+	('TRAIT_INDUSTRIAL_ZONE_AMENITY',				'Amount',						1),
 	('SCOTLAND_TERRITORY_COMBAT',					'AbilityType',					'ABILITY_TERRITORY_COMBAT'),
 	('SCOTLAND_FRIENDLY_COMBAT',					'Amount',						4);
 
@@ -1125,12 +1125,6 @@ values
 	('HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS',	'PLAYER_IS_DEFENDER_REQUIREMENTS'),
 	('HD_UNIT_IN_FRIENDLY_TERRITORY_DEFENCE_REQUIREMENTS',	'UNIT_IN_OWNER_TERRITORY_REQUIREMENT');
 
--- ui
-update Improvements set PrereqCivic = 'CIVIC_GUILDS', Housing = 1 where ImprovementType = 'IMPROVEMENT_GOLF_COURSE'; --CIVIC_GAMES_RECREATION
-insert or replace into Improvement_Adjacencies (ImprovementType, YieldChangeId) values
-	('IMPROVEMENT_GOLF_COURSE',		'Golf_District_Culture');
--- update Improvements set OnePerCity = 0, where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
--- update Improvements set SameAdjacentValid = 0, where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
 ---------------------------------------------------------------------------------------------------------------------
 --SCYTHIA
 insert or replace into TraitModifiers

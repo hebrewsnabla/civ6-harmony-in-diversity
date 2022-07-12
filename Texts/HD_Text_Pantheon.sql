@@ -38,7 +38,7 @@ values
     ("LOC_BELIEF_TENGRI_NAME",                                    "Tengri"),
     ("LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "Pastures provide +1 [ICON_Production] Production. Holy Site districts provide +1 [ICON_Faith] Faith for each adjacent Pasture tile. Pastures in your cities with Holy Site district provide +1 [ICON_Faith] Faith. Cities having Pastures provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "Farm-able resources provide +1 [ICON_Food] Food and +1 [ICON_Production] Production."),
-    ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "Fishing Boats provide +1 [ICON_Science] Science, +1 [ICON_FAITH] Faith. Cities having Fishing Boats provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
+    ("LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "Fishing Boats provide +1 [ICON_Science] Science. Fishing Boats in your cities with Holy Site district provide +1 [ICON_Faith] Faith. Cities having Fishing Boats provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "City center receive +1 [ICON_Food] Food and +1 [ICON_Faith] Faith from each adjacent Coast tile. +1 [ICON_Housing] Housing and +2 [ICON_GreatProphet] Great Prophet point per turn for cities that adjacent to Coasts."),
     ("LOC_BELIEF_OCEAN_MOTHER_NAME",                              "Ocean Mother"),
     ("LOC_BELIEF_HD_DRUID_NAME",                                  "Druid"),
@@ -46,7 +46,7 @@ values
     ("LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "Mazu Belief"),
     ("LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "City Centers adjacent to Coasts provide +2 [ICON_Production] Production. Fishing Boats provide +2 [ICON_Gold] Gold for each adjacent Specialized Districts."), 
     ("LOC_BELIEF_FISHING_TRADITION_NAME",                         "Fishing Traidition"),
-    ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "Fishing Boats provide +1 [ICON_FOOD], +1 [ICON_Production] Production."), -- and +2 [ICON_Gold] Gold 
+    ("LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "Fishing Boats over Bonus resource provide +1 [ICON_FOOD], +1 [ICON_Production] Production."), -- and +2 [ICON_Gold] Gold 
     ("LOC_BELIEF_HD_GOD_KING_NAME",                               "God King"),
     ("LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "Palace provides +1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Culture] Culture, +1 [ICON_Science] Scientist, +1 [ICON_Faith] Faith and +1 [ICON_Gold] Gold. When chosen, receive a [ICON_CITIZEN] Citizen, +1 [ICON_Amenities] Amenity and +1 [ICON_HOUSING] Housing in your capital."),
     ("LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "+1 [ICON_Production] Production and +3 [ICON_Gold] Gold from improved Strategic resources. Properly improved Strategic resources provide an additional +1 per turn."),
@@ -110,7 +110,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_NAME",                                    "长生天"),
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "牧场+1 [ICON_Production] 生产力。圣地区域从每个相邻的牧场获得+1 [ICON_Faith] 信仰值，给本城的牧场 +1 [ICON_Faith] 信仰值。如城市中有牧场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "农场资源+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Science] 科技值和+1 [ICON_FAITH] 信仰值。如城市中有渔船，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION",                  "渔船+1 [ICON_Science] 科技值。有圣地的城市渔船+1 [ICON_FAITH] 信仰值。如城市中有渔船，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_DL_DESCRIPTION",                    "市中心相邻每个海岸单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。相邻海岸的市中心+1 [ICON_Housing] 住房，且城市每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_OCEAN_MOTHER_NAME",                              "海洋母亲"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_DRUID_NAME",                                  "德鲁伊"),
@@ -118,7 +118,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_NAME",                            "妈祖信仰"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_MAZU_BELIEF_DL_DESCRIPTION",                  "位于海边的城市+2 [ICON_Production] 生产力。渔船相邻每个专业化区域获得+2 [ICON_Gold] 金币。"), 
     ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_NAME",                         "捕鱼传统"),
-    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "渔船+1[ICON_FOOD] 食物和+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
+    ("zh_Hans_CN",  "LOC_BELIEF_FISHING_TRADITION_DL_DESCRIPTION",               "改良加成资源的渔船+1[ICON_FOOD] 食物和+1 [ICON_Production] 生产力。"), -- 和+2 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_NAME",                               "神王"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_GOD_KING_DL_DESCRIPTION",                     "宫殿+1 [ICON_Food] 食物、 +1 [ICON_Production] 生产力、 +1 [ICON_Culture] 文化值、 +1 [ICON_Science] 科技值、 +1 [ICON_Faith] 信仰值和 +1 [ICON_Gold] 金币。首都+1 [ICON_CITIZEN] 人口、+1 [ICON_Amenities] 宜居度和+1 [ICON_HOUSING] 住房。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GOD_OF_CRAFTSMEN_EXPANSION2_DESCRIPTION",        "改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。正确改良的战略资源每回合积累+1。"),

@@ -54,7 +54,6 @@ create temporary table TradingDomeTradeRouteYieldChanges (
 	YieldChange int not null,
 	TradeRouteType text not null,
 	PrereqTechType text not null,
-	AttachModifierId text,
 	ModifierId text,
 	primary key (ResourceType, YieldType, TradeRouteType, PrereqTechType)
 );
@@ -66,26 +65,15 @@ select
 	ResourceType,	YieldType,	YieldChange,	TradeRouteType,	PrereqTechType
 from TradingDomeResourceYieldChanges cross join T cross join P;
 update TradingDomeTradeRouteYieldChanges set ModifierId = 'TRADING_DOME_' || ResourceType || '_' || TradeRouteType || '_' || YieldType || '_' || PrereqTechType;
-update TradingDomeTradeRouteYieldChanges set AttachModifierId = ModifierId || '_ATTACH';
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)
 select
-	'IMPROVEMENT_TRADING_DOME',		AttachModifierId
+	'IMPROVEMENT_TRADING_DOME',		ModifierId
 from TradingDomeTradeRouteYieldChanges;
 insert or replace into Modifiers
-	(ModifierId,		ModifierType,										OwnerRequirementSetId,						SubjectRequirementSetId,							SubjectStackLimit)
+	(ModifierId,	ModifierType,															OwnerRequirementSetId,						SubjectRequirementSetId)
 select
-	AttachModifierId,	'MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',		ResourceType || '_IN_PLOT_REQUIREMENTS',	'PLOT_HAS_IMPROVEMENT_TRADING_DOME_REQUIREMENTS',	1
-from TradingDomeTradeRouteYieldChanges;
-insert or replace into ModifierArguments
-	(ModifierId,		Name,			Value)
-select
-	AttachModifierId,	'ModifierId',	ModifierId
-from TradingDomeTradeRouteYieldChanges;
-insert or replace into Modifiers
-	(ModifierId,	ModifierType,															SubjectRequirementSetId)
-select
-	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_' || TradeRouteType,	'PLAYER_HAS_' || PrereqTechType || '_REQUIREMENTS'
+	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_' || TradeRouteType,	ResourceType || '_IN_PLOT_REQUIREMENTS',	'PLAYER_HAS_' || PrereqTechType || '_REQUIREMENTS'
 from TradingDomeTradeRouteYieldChanges;
 insert or replace into ModifierArguments
 	(ModifierId,	Name,			Value)

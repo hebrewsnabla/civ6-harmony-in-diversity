@@ -52,14 +52,12 @@ values
 --波斯UA内商+1琴改为+2琴
 --波斯、马其顿、罗马、刚果、日本、格鲁吉亚、挪威增加铁关联（4级关联，在DL_StartBias里面修改）
 --城市中建造的首座波斯庭院改良设施可以提供+1点宜居度
-insert or replace into Improvement_Adjacencies 
-    (ImprovementType,				YieldChangeId)
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,				YieldType,		YieldChange)
 values
-    ('IMPROVEMENT_PAIRIDAEZA',		'Pairidaeza_CityCenterAdjacency_Food');
-insert or replace into Adjacency_YieldChanges
-    (ID,                                        Description,        YieldType,      YieldChange,    AdjacentDistrict)
-values
-    ('Pairidaeza_CityCenterAdjacency_Food',     'Placeholder',      'YIELD_FOOD',   1,              'DISTRICT_CITY_CENTER');
+	('IMPROVEMENT_PAIRIDAEZA',		'YIELD_FOOD',	0);
+update Adjacency_YieldChanges set YieldType = 'YIELD_FOOD' where YieldChangeId = 'Pairidaeza_CityCenterAdjacency';
+update Adjacency_YieldChanges set YieldChange = 2 where YieldChangeId = 'Pairidaeza_CommercialHubAdjacency';
 update Improvements set Appeal = 2 where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)

@@ -1268,6 +1268,10 @@
 	  <Properties><LoadOrder>17010</LoadOrder></Properties>
 	  <File>DLCSupport/DL_Babylon_Late.sql</File>
 	</UpdateDatabase>
+    <UpdateDatabase id="DL_Australia_Late" criteria="DLC_Australia">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/DL_Australia_Late.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>UpdateDataBase/DL_PostProcess.sql</File>
@@ -1805,6 +1809,7 @@
     <File>UpdateDataBase/DL_EarlySetup.sql</File>
     <!-- DLC Support -->
     <File>DLCSupport/DL_Australia.sql</File>
+    <File>DLCSupport/DL_Australia_Late.sql</File>
     <File>DLCSupport/DL_Aztec.sql</File>
     <File>DLCSupport/DL_Khmer.sql</File>
     <File>DLCSupport/DL_Nubia.sql</File>

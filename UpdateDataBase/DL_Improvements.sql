@@ -132,7 +132,8 @@ values
 	('IMPROVEMENT_MISSION',			'Mission_Neighborhood_Food'),
 	('IMPROVEMENT_MISSION',			'Mission_Neighborhood_Production'),
 	('IMPROVEMENT_MISSION',			'Mission_Mbanza_Food'),
-	('IMPROVEMENT_MISSION',			'Mission_Mbanza_Production');
+	('IMPROVEMENT_MISSION',			'Mission_Mbanza_Production'),
+	('IMPROVEMENT_GOLF_COURSE',		'Golf_District_Culture');
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict)
 values
@@ -487,7 +488,7 @@ update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = '
 -- Sphinx (Egypt)
 -- In order to adapt the wonder yield change made in UpdateDatabse/DL_Wonders.sql at LoadOrder 16010, Modifiers about adjacent wonders are written in UpdateDatabse/DL_PostProcess.sql, which is at LoadOrder 20000
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_SPHINX';
-delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_SPHINX';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_SPHINX' and ModifierId = 'SPHINX_WONDERADJACENCY_FAITH';
 insert or replace into ImprovementModifiers
 	(ImprovementType,		ModifierId)
 values
@@ -725,6 +726,36 @@ values
 	('CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
 	('CITY_ON_FOREIGN_CONTINENT_OR_CAPTURED',	'REQUIRES_CITY_WAS_NOT_FOUNDED');
 
+-- Golf Course (Scotland)
+update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION' where ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_CIVIC_URBANIZATION_REQUIREMENTS' where ModifierId = 'GOLFCOURSE_HOUSING_WITHGLOBLIZATION';
+update Modifiers set SubjectRequirementSetId = 'PLAYER_HAS_CIVIC_THE_ENLIGHTENMENT_REQUIREMENTS' where ModifierId = 'GOLFCOURSE_AMENITIES';
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_GOLF_COURSE',		'GOLD_COURSE_SCIENCE'),
+	('IMPROVEMENT_GOLF_COURSE',		'GOLD_COURSE_SCIENTIST'),
+	('IMPROVEMENT_GOLF_COURSE',		'GOLD_COURSE_PRODUCTION'),
+	('IMPROVEMENT_GOLF_COURSE',		'GOLD_COURSE_ENGINEER');
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,										OwnerRequirementSetId)
+values
+	('GOLD_COURSE_SCIENCE',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'PLOT_ADJACENT_TO_DISTRICT_CAMPUS_REQUIREMENTS'),
+	('GOLD_COURSE_SCIENTIST',	'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'PLOT_ADJACENT_TO_DISTRICT_CAMPUS_REQUIREMENTS'),
+	('GOLD_COURSE_PRODUCTION',	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE_REQUIREMENTS'),
+	('GOLD_COURSE_ENGINEER',	'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',	'PLOT_ADJACENT_TO_DISTRICT_INDUSTRIAL_ZONE_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,				Name,						Value)
+values
+	('GOLD_COURSE_SCIENCE',		'YieldType',				'YIELD_SCIENCE'),
+	('GOLD_COURSE_SCIENCE',		'Amount',					6),
+	('GOLD_COURSE_SCIENTIST',	'GreatPersonClassType',		'GREAT_PERSON_CLASS_SCIENTIST'),
+	('GOLD_COURSE_SCIENTIST',	'Amount',					2),
+	('GOLD_COURSE_PRODUCTION',	'YieldType',				'YIEELD_PRODUCTION'),
+	('GOLD_COURSE_PRODUCTION',	'Amount',					6),
+	('GOLD_COURSE_ENGINEER',	'GreatPersonClassType',		'GREAT_PERSON_CLASS_ENGINEER'),
+	('GOLD_COURSE_ENGINEER',	'Amount',					2);
+
 -- Misc
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -782,8 +813,6 @@ values
 -- 冰球场
 update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 --by 弱猹
---土澳，内陆牧场的提升，
-UPDATE Adjacency_YieldChanges SET PrereqTech="TECH_BANKING"   where ID="Outback_Outback_Production";
 --瑞典UI改为人文主义
 UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
 

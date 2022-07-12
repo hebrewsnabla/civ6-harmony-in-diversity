@@ -176,5 +176,5 @@ from SphinxWonderYields;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 select
-	'SPHINX_' || BuildingType || '_' || YieldType,		'Amount',		YieldChange
+	'SPHINX_' || BuildingType || '_' || YieldType,		'Amount',		YieldChange * 2
 from SphinxWonderYields;
