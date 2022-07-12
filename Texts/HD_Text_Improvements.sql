@@ -38,6 +38,9 @@ values
 	("LOC_IMPROVEMENT_POLDER_DESCRIPTION",						"Unlocks the Builder ability to construct a Coastal Polder, unique to Netherlands.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_Production] Production and +0.5 [ICON_Housing] Housing. +1 [ICON_FOOD] Food for every 2 adjacent Coastal Polder or Floodplain Polder tiles, or for every adjacent Coastal Polder or Floodplain Polder after progressing 'Naval Tradition' Civic. Extra +1 [ICON_FOOD] Food for every adjacent Coastal Polder or Floodplain Polder after researching 'Steam Power' Technology. +1 [ICON_PRODUCTION] Production for every 2 adjacent Coastal Polder or Floodplain Polder tiles, or for every adjacent Coastal Polder or Floodplain Polder after researching 'Mass Production' Technology. +2 [ICON_GOLD] for every adjacent Coastal Polder or Floodplain Polder after researching 'Civil Engineering' Technology. Must be placed on a Lake or Coast tile adjacent to passable land tile. Increases [ICON_Movement] Movement Cost by 2."),
 	("LOC_IMPROVEMENT_LAND_POLDER_NAME",						"Floodplain Polder"),
 	("LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",					"Unlocks the Builder ability to construct a Floodplain Polder, unique to Netherlands.[NEWLINE][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_Production] Production and +0.5 [ICON_Housing] Housing. +1 [ICON_FOOD] Food for every 2 adjacent Coastal Polder or Floodplain Polder tiles, or for every adjacent Coastal Polder or Floodplain Polder after researching 'Buttress' Technology. Extra +1 [ICON_FOOD] Food for every adjacent Coastal Polder or Floodplain Polder after researching 'Steam Power' Technology. +1 [ICON_PRODUCTION] Production for every 2 adjacent Coastal Polder or Floodplain Polder tiles, or for every adjacent Coastal Polder or Floodplain Polder after researching 'Mass Production' Technology. +2 [ICON_GOLD] for every adjacent Coastal Polder or Floodplain Polder after researching 'Civil Engineering' Technology. Must be placed on a Lake or Coast tile adjacent to passable land tile. Increases [ICON_Movement] Movement Cost by 2."),
+	("LOC_IMPROVEMENT_OPEN_AIR_MUSEUM_DESCRIPTION",				"Unlocks the Builder ability to construct an Open-Air Museum, unique to Sweden.[NEWLINE][NEWLINE]+1 [ICON_CULTURE] Culture for every type of Terrain your cities are on or adjacent to. +1 [ICON_SCIENCE] Science for every type of Feature your cities are on or adjacent to. One per city.[NEWLINE][NEWLINE]Types of Terrain include Grassland, Plains, Desert, Snow, Tundra and the corresponding Hills and Mountain, as well as Water and Ocean. Types of Feature include Floodplains on Grassland, Plains and Desert, Woods and Rainforest, Oasis, {LOC_MARSH_AND_SWAMP}, Reef{LOC_AND_KELP}, Geothermal Fissure, Volcano and Volcanic Soil, as well as ice."),
+	("LOC_MARSH_AND_SWAMP",										"Marsh"),
+	("LOC_AND_KELP",											""),
 	-- UI of Minors	
 	("LOC_IMPROVEMENT_MAHAVIHARA_DESCRIPTION",					"Unlocks the Builder ability to construct a Mahavihara.[NEWLINE][NEWLINE]+2 [ICON_SCIENCE] Science, +1 [Icon_Housing] Housing. +1 [ICON_Science] Science for every adjacent Campus or Holy Site district, which becomes +2 [ICON_Science] Science after progressing 'Divine Right' Civic. +1 [ICON_Science] Science for every adjacent Neighborhood. Must be built on flat terrain. Cannot be built adjacent to another Mahavihara."),
 	("LOC_IMPROVEMENT_TRADING_DOME_DESCRIPTION",				"Unlocks the Builder ability to construct a Trading Dome.[NEWLINE][NEWLINE]Provides the basic yield of all Luxury resource types improved by your Trading Dome. After researching 'Currency' Technology, your [ICON_TradeRoute] Trade Routes start from this city provide the basic yields of the Luxury resource improved by this Trading Dome, which is doubled after researching 'Economics' Technology. +2 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] if built on non-Floodplains Desert tile. Can only be built on land Luxury resource, and the city will gain use of that Resource. One per city."),
@@ -71,7 +74,7 @@ values
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_PASTURE_HD_DESCRIPTION",					"解锁建造者建造牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能在有效资源上建造。如果建在战略资源上，城市则可以利用该资源。"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_FARM_HD_DESCRIPTION",						"解锁建造者建造农场的能力。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物。若本城有水渠，则相邻淡水或水渠的农场+1 [ICON_Food] 食物。[NEWLINE][NEWLINE]只能建在草原或平原上。解锁“土木工程”市政后也能建造在草原丘陵或平原丘陵上。"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_CAMP_HD_DESCRIPTION",						"解锁建造者建造营地的能力。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物。每相邻1个商业中心单元格则+2 [ICON_Gold] 金币。[NEWLINE][NEWLINE]只能在有效资源上建造。解锁“弓箭”科技后也可建造在森林上。解锁“公会”市政后也可建造在雨林上。[NEWLINE][NEWLINE]如建在奢侈品资源上，城市则能利用该资源。"),
-	("zh_Hans_CN",	"LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",				"解锁建造者建造伐木场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能建在树林上。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。解锁“公会”市政后也能建造在雨林上。"), -- 研究“铸铜术”科技后，若沿河，额外+1 [ICON_Production] 生产力。
+	("zh_Hans_CN",	"LOC_IMPROVEMENT_LUMBER_MILL_HD_DESCRIPTION",				"解锁建造者建造伐木场的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]只能建在树林上。每相邻1个工业区（商业同业公会除外）单元格，额外+1 [ICON_Production] 生产力。解锁“公会”市政后也能建造在雨林上。"), 
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_FISHERY_HD_DESCRIPTION",					"解锁建造者建造渔场的能力。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物，+0.5 [ICON_Housing] 住房。每相邻1个海洋资源，则额外+1 [ICON_Food] 食物；必须建在海岸格位上。研究“科学理论”科技后，+1 [ICON_Housing] 住房。无法建在另一个渔场旁。"),
 	-- 文明特色改良
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_OUTBACK_STATION_DESCRIPTION",				"解锁建造者修建澳大利亚特色改良内陆牧场的能力。[NEWLINE][NEWLINE]+1 [ICON_PRODUCTION] 生产力、+0.5 [Icon_Housing] 住房。每相邻1个牧场+1 [ICON_Food] 食物，解锁“批量生产”科技后变为+2 [ICON_FOOD] 食物。解锁“封建主义”市政后每相邻1个牧场+1 [ICON_PRODUCTION] 生产力。牧场每相邻2个内陆牧场+1 [ICON_FOOD] 食物，解锁“重商主义”市政后额外+2 [ICON_GOLD] 金币。每相邻2个内陆牧场+1 [ICON_PRODUCTION] 生产力，解锁“机械”科技后变为每相邻1个内陆牧场。解锁“公会”市政后每相邻1个内陆牧场+1 [ICON_FOOD] 食物，解锁“蒸汽动力”科技后每相邻1个内陆牧场+1 [ICON_PRODUCTION] 生产力。给牧场额外产出的效果也会给相邻牧场的内陆牧场相同的加成。只能建在沙漠、沙漠丘陵、草原和平原单元格上。"),
@@ -97,6 +100,9 @@ values
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_POLDER_DESCRIPTION",						"解锁建造者建造荷兰特色改良滨海圩田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。每相邻2个滨海圩田或淤滩圩田+1 [ICON_FOOD] 食物，解锁“海军传统”市政后变为每相邻1个滨海圩田或淤滩圩田。解锁“蒸汽动力”科技后每相邻1个滨海圩田或淤滩圩田额外+1 [ICON_FOOD] 食物。每相邻2个滨海圩田或淤滩圩田+1 [ICON_PRODUCTION] 生产力，解锁“批量生产”科技后变为每相邻1个滨海圩田或淤滩圩田。解锁“土木工程”科技后每相邻1个滨海圩田或淤滩圩田+2 [ICON_GOLD] 金币。必须建在相邻可通行陆地单元格的海岸或湖泊上，可以建在礁石上。[ICON_Movement] 移动力消耗增加2点。"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_LAND_POLDER_NAME",							"淤滩圩田"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION",					"解锁建造者建造荷兰特色改良淤滩圩田的能力。[NEWLINE][NEWLINE]+1 [ICON_FOOD] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房。每相邻2个滨海圩田或淤滩圩田+1 [ICON_FOOD] 食物，解锁“扶壁”科技后变为每相邻1个滨海圩田或淤滩圩田。解锁“蒸汽动力”科技后每相邻1个滨海圩田或淤滩圩田额外+1 [ICON_FOOD] 食物。每相邻2个滨海圩田或淤滩圩田+1 [ICON_PRODUCTION] 生产力，解锁“批量生产”科技后变为每相邻1个滨海圩田或淤滩圩田。解锁“土木工程”科技后每相邻1个滨海圩田或淤滩圩田+2 [ICON_GOLD] 金币。必须建在相邻可通行陆地单元格的海岸或湖泊上，可以建在礁石上。[ICON_Movement] 移动力消耗增加2点。"),
+	("zh_Hans_CN",	"LOC_IMPROVEMENT_OPEN_AIR_MUSEUM_DESCRIPTION",				"解锁建造者建造瑞典特色改良生态博物馆的能力。[NEWLINE][NEWLINE]您的城市每位于或相邻一种地形便+1 [ICON_CULTURE] 文化值。您的城市每位于或相邻一种地貌或自然奇观便+1 [ICON_SCIENCE] 科技值。每个城市仅限建造一座。[NEWLINE][NEWLINE]地形包括草原、平原、沙漠、冻土、雪地和其上的丘陵和山脉，水域以及深海。地貌包括草原、平原和沙漠上的泛滥平原、森林和雨林、绿洲、{LOC_MARSH_AND_SWAMP}、礁石{LOC_AND_KELP}、地热裂缝、火山和火山土，以及冰。"),
+	("zh_Hans_CN",	"LOC_MARSH_AND_SWAMP",										"沼泽"),
+	("zh_Hans_CN",	"LOC_AND_KELP",												""),
 	-- 城邦改良	
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_MAHAVIHARA_DESCRIPTION",					"解锁建造者建造大寺的能力。[NEWLINE][NEWLINE]+2 [ICON_SCIENCE] 科技值、+1 [Icon_Housing] 住房。每相邻1个学院或圣地区域+1 [ICON_Science] 科技值，解锁“王权神授”市政后变为+2 [ICON_Science] 科技值。每相邻1个社区+1 [ICON_SCIENCE] 科技值。必须建在平坦地貌上。无法建在另一个大寺旁。"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_TRADING_DOME_DESCRIPTION",					"解锁建造者建造圆顶市集的能力。[NEWLINE][NEWLINE]获得等同于您的圆顶集市改良的每一种奢侈资源基础产出相同的产出。研究“货币”科技后，此城出发的 [ICON_TRADEROUTE] 贸易路线获得此圆顶集市所改良奢侈资源的基础产出，研究“经济”科技后翻倍。若建造在沙漠单元格（非泛滥平原），则+2 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。只能建造在陆地奢侈品资源上，且城市可以利用该资源。每个城市仅限建造一座。"),
@@ -125,3 +131,25 @@ insert or replace into LocalizedText
 select
 	"zh_Hans_CN",	"LOC_IMPROVEMENT_PAIRIDAEZA_DESCRIPTION",			"解锁建造者建造波斯特色改良波斯庭院的能力。[NEWLINE][NEWLINE]+1 [ICON_CULTURE] 文化值、+2 [ICON_GOLD] 金币。每相邻1个圣地或剧院广场+1 [ICON_CULTURE] 文化值。每相邻1个商业中心+2 [ICON_GOLD] 金币。每相邻1个市中心+1 [ICON_FOOD] 食物。您每拥有1个市政广场和市政广场建筑+1 [ICON_CULTURE] 文化值，每拥有一个外交区和外交区建筑+2 [ICON_GOLD] 金币。解锁“行政部门”市政后+1 [ICON_Culture] 文化值。为相邻单元格+2魅力。无法建在雪地、冻土、雪地丘陵或冻土丘陵上，也无法建在另一座波斯庭院旁。"
 where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+
+-- Suk's Ocean Mode & WetLands support
+insert or replace into EnglishText
+	(Tag,														Text)
+select
+	"LOC_MARSH_AND_SWAMP",										"Marsh and Swamp"
+where exists (select Tag from LocalizedText where Tag = 'LOC_RESOURCE_JNR_SWAMP_NAME');
+insert or replace into EnglishText
+	(Tag,														Text)
+select
+	"LOC_AND_KELP",												" and Kelp Forest"
+where exists (select Tag from LocalizedText where Tag = 'LOC_FEATURE_SUK_KELP_NAME');
+insert or replace into LocalizedText
+	(Language,		Tag,										Text)
+select
+	"zh_Hans_CN",	"LOC_MARSH_AND_SWAMP",						"草本沼泽和木本沼泽"
+where exists (select Tag from LocalizedText where Tag = 'LOC_RESOURCE_JNR_SWAMP_NAME');
+insert or replace into LocalizedText
+	(Language,		Tag,												Text)
+select
+	"zh_Hans_CN",	"LOC_AND_KELP",								"和海藻森林"
+where exists (select Tag from LocalizedText where Tag = 'LOC_FEATURE_SUK_KELP_NAME');

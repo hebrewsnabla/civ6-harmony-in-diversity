@@ -56,8 +56,8 @@ insert or replace into Improvement_YieldChanges
 	(ImprovementType,				YieldType,		YieldChange)
 values
 	('IMPROVEMENT_PAIRIDAEZA',		'YIELD_FOOD',	0);
-update Adjacency_YieldChanges set YieldType = 'YIELD_FOOD' where YieldChangeId = 'Pairidaeza_CityCenterAdjacency';
-update Adjacency_YieldChanges set YieldChange = 2 where YieldChangeId = 'Pairidaeza_CommercialHubAdjacency';
+update Adjacency_YieldChanges set YieldType = 'YIELD_FOOD' where ID = 'Pairidaeza_CityCenterAdjacency';
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Pairidaeza_CommercialHubAdjacency';
 update Improvements set Appeal = 2 where ImprovementType = 'IMPROVEMENT_PAIRIDAEZA';
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)

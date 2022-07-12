@@ -315,6 +315,24 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_PLOT_HAS_' || TerrainType, 'HD_REQUIRES_PLOT_HAS_' || TerrainType from Terrains;
 
+-- Plot Adjacent to Terrains
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType, 'TerrainType', TerrainType from Terrains;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType, 'REQUIREMENT_PLOT_ADJACENT_TERRAIN_TYPE_MATCHES' from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_ADJACENT_TO_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_ADJACENT_TO_' || TerrainType, 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_HAS_' || TerrainType from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType from Terrains;
+
 -- Plot Has Features & Natural Wonders
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
@@ -336,6 +354,13 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType from Features;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_HAS_' || FeatureType from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType from Features;
 
 -- civlization
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

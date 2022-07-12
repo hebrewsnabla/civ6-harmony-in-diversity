@@ -756,6 +756,58 @@ values
 	('GOLD_COURSE_ENGINEER',	'GreatPersonClassType',		'GREAT_PERSON_CLASS_ENGINEER'),
 	('GOLD_COURSE_ENGINEER',	'Amount',					2);
 
+-- Open-Air Museum (Sweden)
+update Improvements set PrereqCivic = 'CIVIC_HUMANISM' where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
+create temporary table HD_OpenAirMuseumBonuses (
+	ObjectType text not null primary key,
+	YieldType text not null,
+	AttachModifierId text,
+	ModifierId text
+);
+insert or replace into HD_OpenAirMuseumBonuses
+	(ObjectType,	YieldType)
+select
+	TerrainType,	'YIELD_CULTURE'
+from Terrains;
+insert or replace into HD_OpenAirMuseumBonuses
+	(ObjectType,	YieldType)
+select
+	FeatureType,	'YIELD_SCIENCE'
+from Features where FeatureType not in ('FEATURE_BURNING_FOREST', 'FEATURE_BURNT_FOREST', 'FEATURE_BURNING_JUNGLE', 'FEATURE_BURNT_JUNGLE');
+update HD_OpenAirMuseumBonuses set ModifierId = 'OPEN_AIR_MUSEUM_' || ObjectType || '_' || YieldType;
+update HD_OpenAirMuseumBonuses set AttachModifierId = ModifierId || '_ATTACH';
+insert or replace into ImprovementModifiers
+	(ImprovementType,		 			ModifierId)
+select
+	'IMPROVEMENT_OPEN_AIR_MUSEUM',		AttachModifierId
+from HD_OpenAirMuseumBonuses;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,								SubjectRequirementSetId,										SubjectStackLimit)
+select
+	AttachModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'PLOT_ON_OR_ADJACENT_TO_' || ObjectType || '_REQUIREMENTS',		1
+from HD_OpenAirMuseumBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	AttachModifierId,	'ModifierId',	ModifierId
+from HD_OpenAirMuseumBonuses;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,								SubjectRequirementSetId,								SubjectStackLimit)
+select
+	ModifierId,			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_IMPROVEMENT_OPEN_AIR_MUSEUM_REQUIREMENTS',	1
+from HD_OpenAirMuseumBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'YieldType',	YieldType
+from HD_OpenAirMuseumBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'Amount',		1
+from HD_OpenAirMuseumBonuses;
+
 -- Misc
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)
@@ -814,7 +866,6 @@ values
 update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 --by 弱猹
 --瑞典UI改为人文主义
-UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
 
 --移除雨林前移到采矿
 update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
