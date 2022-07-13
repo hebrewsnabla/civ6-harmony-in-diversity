@@ -1941,3 +1941,10 @@ insert or replace into ModifierArguments
 select
 	'HD_INN_ALLIANCE_' || ResourceType,		'Amount',	1
 from HD_INN_RESOURCES;
+
+-- Tourism Bomb
+/*
+insert or replace into
+	(BuildingType,		TourismBombValue)
+select
+*/	

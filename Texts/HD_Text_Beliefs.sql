@@ -47,7 +47,7 @@ values
     ("LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                  "All Districts (except the City Center) provide +2 [ICON_Production] Production in cities having a Holy Site district. Industrial Zone district buildings are 20% cheaper to purchase, and can be purchased with [ICON_Faith] Faith."),
     ("LOC_BELIEF_PRACTICAL_APPLICATION_NAME",                 "Practical Application"),
     ("LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "[ICON_Citizen] Citizens provide +3 [ICON_Gold] Gold in cities having a Holy Site district. Commercial Hub district buildings are 20% cheaper to purchase, and can be purchased with [ICON_Faith] Faith."),
-    ("LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "Settlers and Buildiers are 20% cheaper to purchase. May purchase buildings in Government Plaza district and Diplomatic Quarter district with [ICON_Faith] Faith."),
+    ("LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "Settlers and Buildiers are 20% cheaper to purchase. May purchase buildings in Government Plaza district and Diplomatic Quarter district with [ICON_Faith] Faith. Settlers and Buildiers trained in the city recieve +2 [ICON_MOVEMENT] Movement."),
     ("LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "+2 [ICON_Amenities] Amenity to cities if they have a Holy Site adjacent to a Mountain or a Forest. +1 appeal to all tiles if the city has a Holy Site."), -- So did City Center.
     ("LOC_BELIEF_ZEN_MEDITATION_VIETNAM_DESCRIPTION",         "+1 Appeal to all tiles of cities with a Holy Site district. +2 [ICON_Amenities] Amenity to cities having a Holy Site district adjacent to Mountains or Woods. Preserve district buildings are 20% cheaper to purchase, and can be purchased with [ICON_Faith] Faith."),
     ("LOC_BELIEF_INITIATION_RITES_NAME",                      "Initiation Rites"),
@@ -128,7 +128,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION",                  "拥有圣地的城市所有区域（市中心除外）+2 [ICON_Production] 生产力，购买工业区区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PRACTICAL_APPLICATION_NAME",                 "经世致用"),
     ("zh_Hans_CN",  "LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION",       "拥有圣地的城市中每 [ICON_Citizen] 人口提供+3 [ICON_Gold] 金币。购买商业中心区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "购买开拓者和建造者的费用降低20%。可以使用 [ICON_Faith] 信仰值购买市政广场和外交区内的建筑。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "购买开拓者和建造者的费用降低20%。可以使用 [ICON_Faith] 信仰值购买市政广场和外交区内的建筑。城市中生产的开拓者和建造者+2 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "若圣地相邻山脉或森林，+2 [ICON_Amenities] 宜居度。拥有圣地的城市所有单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_VIETNAM_DESCRIPTION",         "若圣地相邻山脉或森林，+2 [ICON_Amenities] 宜居度。拥有圣地的城市所有单元格+1魅力。购买保护区区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
     -- ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "购买圣地区域内建筑的费用降低10%且可以用 [ICON_Faith] 信仰值购买。建造圣地区域内的建筑时+30%建造速度。每个圣地区域内的建筑提供+5% [ICON_Faith] 信仰值。"),

@@ -39,8 +39,8 @@ values
 	('DISTRICT_HARBOR',					'HD_Harbor_City_Gold'),
 	('DISTRICT_HARBOR',					'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',				'District_Culture_City_Center'),
-	('DISTRICT_ENCAMPMENT',				'Strategic_Production2'),
 	('DISTRICT_AQUEDUCT',				'Aqueduct_self_food'),
+	('DISTRICT_ENCAMPMENT',				'HD_Strategic_Production'),
 	('DISTRICT_ENCAMPMENT',				'Government_Production'),
 	('DISTRICT_ENCAMPMENT',				'Aerodrome_Industrial_Production'),
 	('DISTRICT_ENCAMPMENT',				'Roman_Fort_Production'),
@@ -192,7 +192,7 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,				YieldChange,	AdjacentResourceClass)
 values
-	('Strategic_Production2',			'LOC_DISTRICT_STRATEGIC_PRODUCTION2',			'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC');
+	('HD_Strategic_Production',			'LOC_DISTRICT_STRATEGIC_PRODUCTION2',			'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC');
 
 -- MBZ
 insert or replace into Adjacency_YieldChanges
