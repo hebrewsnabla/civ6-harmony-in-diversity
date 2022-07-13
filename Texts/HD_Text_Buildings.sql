@@ -126,9 +126,9 @@ values
     ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "+5% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city. [NEWLINE] If the city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_FOOD] Food and [ICON_PRODUCTION] Production. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
     ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "+5% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city. [NEWLINE] If they city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_gold] Gold and 1.5 times as much [ICON_SCIENCE] Science and [ICON_CULTURE] Culture. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
     ("LOC_BUILDING_HD_TAVERN_NAME",                               "Tavern"),
-    ("LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "Every type of Brewing Resource provides +1 Great Person point to respective districts."),
+    ("LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "Every type of Brewing Resource provides +1 Great Person point to respective districts.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
     ("LOC_BUILDING_HD_INN_NAME",                                  "Inn"),
-    ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "Each type of improved Textile or Lumber resource provides +1 Influence point. +0.25 extra Alliance Point with all allies."),
+    ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "Each type of improved Textile or Lumber resource provides +1 Influence point. +0.25 extra Alliance Point with all allies.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
     -- Dam
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
@@ -262,9 +262,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_GOLD] 金币，产出1.5倍的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“购物商场”建筑获得加成）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_NAME",                               "酒楼"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "本城每拥有一种改良的酿酒资源，本城的区域为它们类型的 [ICON_GREATPERSON] 伟人点数+1。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "本城每拥有一种改良的酿酒资源，本城的区域为它们类型的 [ICON_GREATPERSON] 伟人点数+1。[NEWLINE][NEWLINE]酿酒资源包括："),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_NAME",                                  "客栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每用有一种改良的纺织或木材资源，影响力点数每回合+1，所有盟友的同盟点数每回合额外增加0.25点。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每用有一种改良的纺织或木材资源，影响力点数每回合+1，所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
@@ -308,3 +308,22 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "该城的保护区相邻湖泊或海岸单元格（包括水域或海岸类自然奇观），且拥有一级建筑。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "保护区拥有一级建筑，且相邻世界奇观或文明特色改良设施"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。");
+
+-- 社区一级建筑文本说明
+CREATE TEMPORARY TABLE 'HD_TAVERN_RESOURCES_TEXT' ('ResourceType' TEXT NOT NULL);
+insert or replace into HD_TAVERN_RESOURCES_TEXT (ResourceType) values
+	('RESOURCE_BANANAS'),('RESOURCE_DEER'),('RESOURCE_RICE'),('RESOURCE_WHEAT'),('RESOURCE_CITRUS'),('RESOURCE_WINE'),('RESOURCE_SUGAR'),('RESOURCE_HORSES'),('RESOURCE_MAIZE'),('RESOURCE_HONEY'),('RESOURCE_CVS_POMEGRANATES'),
+	('RESOURCE_P0K_MAPLE'),('RESOURCE_P0K_PLUMS'),('RESOURCE_LEU_P0K_QUINOA'),('RESOURCE_LEU_P0K_POTATOES'),('RESOURCE_BERRIES'),('RESOURCE_DATES'),('RESOURCE_BARLEY'),('RESOURCE_STRAWBERRY'),('RESOURCE_SORGHUM');
+
+CREATE TEMPORARY TABLE 'HD_INN_RESOURCES_TEXT' ('ResourceType' TEXT NOT NULL);
+insert or replace into HD_INN_RESOURCES_TEXT (ResourceType) values
+	('RESOURCE_DEER'),('RESOURCE_SHEEP'),('RESOURCE_COTTON'),('RESOURCE_FURS'),('RESOURCE_SILK'),('RESOURCE_DLV_BISON'),('RESOURCE_P0K_PAPYRUS'),('RESOURCE_LEU_P0K_LLAMAS'),('RESOURCE_SUK_CAMEL'),('RESOURCE_BAMBOO'),
+	('RESOURCE_SANDALWOOD'),('RESOURCE_OAK'),('RESOURCE_EBONY'),('RESOURCE_SAKURA'),('RESOURCE_PINE'),('RESOURCE_RUBBER'),('RESOURCE_CASHMERE'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_LION');
+
+update LocalizedText set Text = Text ||
+    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_TAVERN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Tag = "LOC_"||ResourceType||"_NAME"))
+    where Tag = "LOC_BUILDING_HD_TAVERN_DESCRIPTION";
+
+update LocalizedText set Text = Text ||
+    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_INN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Tag = "LOC_"||ResourceType||"_NAME"))
+    where Tag = "LOC_BUILDING_HD_INN_DESCRIPTION";

@@ -165,7 +165,7 @@ values
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,							RequirementId)
 values
-	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_CITY_HAS_IMPROVED_HORSES'),
+	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'HD_REQUIRES_CITY_HAS_IMPROVED_RESOURCE_HORSES'),
 	('HD_CITY_HAS_HORSE_OR_ADJACENT_TO_STABLE',	'REQUIRES_PLOT_IS_ADJACENT_TO_STABLE');
 insert or ignore into Requirements
 	(RequirementId,							RequirementType)

@@ -243,36 +243,6 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_CITY_HAS_' || FeatureType, 'REQUIRES_CITY_HAS_' || FeatureType from Features;
 
--- Player Has Features
-insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST' from Features;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'CollectionType', 'COLLECTION_PLAYER_PLOT_YIELDS' from Features;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'Count', 1 from Features;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'RequirementSetId', 'HD_PLOT_HAS_' || FeatureType from Features;
-
-insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
-	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
-insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
-	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIRES_PLAYER_HAS_' || FeatureType from Features;
-
--- Player Has Terrains
-insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST' from Terrains;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'CollectionType', 'COLLECTION_PLAYER_PLOT_YIELDS' from Terrains;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'Count', 1 from Terrains;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_PLAYER_HAS_' || TerrainType, 'RequirementSetId', 'HD_PLOT_HAS_' || TerrainType from Terrains;
-
-insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
-	select 'HD_PLAYER_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
-insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
-	select 'HD_PLAYER_HAS_' || TerrainType, 'REQUIRES_PLAYER_HAS_' || TerrainType from Terrains;
-
 -- 玩家有改良的资源
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
@@ -282,27 +252,6 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'REQUIREMENTSET_TEST_ALL' from Resources;
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
-
--- Map-Resources
-insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
-	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'REQUIREMENT_COLLECTION_COUNT_ATLEAST', 1 from Resources;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'CollectionType', 'COLLECTION_ALL_PLOT_YIELDS' from Resources;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'Count', 1 from Resources;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'RequirementSetId', 'HD_PLOT_HAS_' || ResourceType from Resources;
-
-insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
-	select 'HD_PLAYER_GOT_' || ResourceType, 'REQUIREMENTSET_TEST_ANY' from Resources;
-insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
-	select 'HD_PLAYER_GOT_' || ResourceType, 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources;
-insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
-	select 'HD_PLAYER_GOT_' || ResourceType, 'REQUIRES_MAP_NOT_HAS_' || ResourceType from Resources;
-insert or ignore into Requirements (RequirementId, RequirementType)
-	select 'HD_REQUIRES_PLAYER_GOT_' || ResourceType, 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Resources;
-insert or ignore into RequirementArguments (RequirementId, Name, Value)
-	select 'HD_REQUIRES_PLAYER_GOT_' || ResourceType, 'RequirementSetId', 'HD_PLAYER_GOT_' || ResourceType from Resources;
 
 -- Plot Has Terrains
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
