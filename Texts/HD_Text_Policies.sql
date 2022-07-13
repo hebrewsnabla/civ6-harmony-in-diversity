@@ -63,9 +63,10 @@ values
     ("LOC_POLICY_COLLECTIVIZATION_NAME",                                              "Highway"),
 
     ("LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "Non-Aligned Movement"),
-    ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Airs of the States"), -- Collect Ballads
+    ("LOC_POLICY_LITERARY_TRADITION_NAME",                                            "Airs of the States"),
     -- Golden age
-    ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+2 [ICON_Movement] Movement for all Builders and Settlers. Builders and Settlers are 20% cheaper to purchase with [ICON_GOLD] Gold. They are also 20% cheaper to purchase with [ICON_FAITH] Faith if purchase with [ICON_FAITH] Faith is allowed."),
+    ("LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "Monumentality Golden Age:[NEWLINE]+25% construction speed towards Wonders. +1 [ICON_CULTURE] Culture, +1 [ICON_FAITH] Faith to all Wonders. Cities with Wonder can build one more district than the [ICON_Citizen] Population limit allows. "),
+    ("LOC_MOMENT_CATEGORY_RELIGIOUS_BONUS_GOLDEN_AGE",                           	 "Exodus of the Evangelists Golden Age:[NEWLINE]+2 [ICON_MOVEMENT] Movement for all Missionaries, Apostles, and Inquisitors. Additionally, newly trained ones get +2 Charges. +6 [ICON_FAITH] for each city following your Religion.."),
     ("LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                               "Free Inquiry Golden Age:[NEWLINE][ICON_TECHBOOSTED] Eurekas provide an additional 10% of technology costs. Each different District and Building provides +1 [ICON_SCIENCE] Science to your capital."),
     ("LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "Pen, Brush, and Voice Golden Age:[NEWLINE][ICON_CivicBoosted] Inspirations provide an additional 10% of civic costs. Each city receives +2 [ICON_Culture] Culture for each specialty district "),
     ("LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "Heartbeat of Steam Golden Age:[NEWLINE]+10% [ICON_Production] Production toward Industrial era and later wonders. Campus district's [ICON_SCIENCE] Science adjacency bonus provides [ICON_PRODUCTION] Production as well. Industrial zone district's [ICON_PRODUCTION] Production adjacency bonus provides [ICON_SCIENCE] Science as well."),
@@ -286,7 +287,8 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_COLLECTIVE_ACTIVISM_NAME",                                           "不结盟运动"),
     ("zh_Hans_CN",  "LOC_POLICY_LITERARY_TRADITION_NAME",                                            "采风"),
     -- 着力点
-    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]所有建造者和开拓者+2 [ICON_Movement] 移动力。用 [ICON_GOLD] 金币购买建造者和开拓者的费用降低20%。若可用 [ICON_FAITH] 信仰值购买建造者或开拓者，则其购买费用也降低20%。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INFRASTRUCTURE_BONUS_GOLDEN_AGE",                           "“雄伟壮丽”黄金时代：[NEWLINE]建造奇观时+25建造速度。奇观+1 [ICON_CULTURE] 文化值，+1 [ICON_FAITH] 信仰值。有奇观的城市可无视 [ICON_CITIZEN] 人口数量限制再建造一个区域。"),
+    ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_RELIGIOUS_BONUS_GOLDEN_AGE",                           	 "“布道者的远行”黄金时代：[NEWLINE]所有传教士、使徒和审判官+2 [ICON_MOVEMENT] 移动力。此外，新生产的这些单位则+2使用次数。每有一座信奉您创立的宗教的外国城市便+6 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_SCIENTIFIC_BONUS_GOLDEN_AGE",                               "“自由探索”黄金时代：[NEWLINE][ICON_TECHBOOSTED]尤里卡额外提供（对应科技所需科技总量的）10%。每个不同的区域和建筑为首都提供 +1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_CULTURAL_BONUS_GOLDEN_AGE",                                 "“百花齐放”黄金时代：[NEWLINE][ICON_CivicBoosted]鼓舞额外提供10%的市政开销。城市每拥有1处特色区域，则+2 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_MOMENT_CATEGORY_INDUSTRIAL_BONUS_GOLDEN_AGE",                               "“滚滚蒸汽”黄金时代：[NEWLINE]建造后工业时代的奇观时+10% [ICON_Production] 生产力。学院区域的 [ICON_SCIENCE] 科技值相邻加成也可提供 [ICON_PRODUCTION] 生产力。工业区域的 [ICON_PRODUCTION] 生产力相邻加成也可提供 [ICON_SCIENCE] 科技值。"),

@@ -124,3 +124,10 @@ update Feature_AdjacentYields set YieldChange = 5 where FeatureType = 'FEATURE_P
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_EVEREST' and YieldType = 'YIELD_FAITH';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_DELICATE_ARCH' and YieldType = 'YIELD_GOLD';
 update Feature_AdjacentYields set YieldChange = 2 where FeatureType = 'FEATURE_PIOPIOTAHI' and YieldType = 'YIELD_GOLD';
+
+
+--移除雨林前移到采矿
+update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
+--种树前移到工会，越南到神秘主义
+update Features set AddCivic = 'CIVIC_GUILDS' where FeatureType = 'FEATURE_FOREST';
+update Technologies set Description = null where TechnologyType = 'TECH_SANITATION';

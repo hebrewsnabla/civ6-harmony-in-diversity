@@ -18,7 +18,7 @@ values
     ("LOC_DISTRICT_ENCAMPMENT_HD_DESCRIPTION",                        "A district in your city for military facilities.[NEWLINE]+10% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for Mines over bonus resources in this city. +1 [Icon_Science] Science for improved Strategic resources in the city. Properly improved Strategic resources in the city gain an additional +2 per turn. -1 Appeal to adjacent tiles."),
     ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +3 [ICON_Housing] Housing, +2 [ICON_Food] Food, and +2 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. +2 [ICON_Production] Production if adjacent to bonus resources; +4 [ICON_Gold] Gold if adjacent to luxury resources; +2 [Icon_Science] Science if adjacent to strategic resources. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith."),
     ("LOC_DISTRICT_AERODROME_HD_DESCRIPTION",                         "A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of [ICON_CITIZEN] population. +25% [Icon_Production] Production towards Air Units. -1 Appeal to adjacent tiles. "),
-    ("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",                "Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Only 1 can exist in your empire at a time. Grants the ability to construct an additional Spy."), --  if built next to the city center
+    ("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",                "Districts recieve +1 adjacency bonuses from being adjacent to Diplomatic Quater. Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Only 1 can exist in your empire at a time. Grants the ability to construct an additional Spy."), --  if built next to the city center
     ("LOC_DISTRICT_ACROPOLIS_HD_DESCRIPTION",                         "A district unique to Greece for cultural sites. Replaces the Theater Square district and cheaper to build. Awards 1 [ICON_Envoy] Envoy when completed.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture bonus for each adjacent district and an additional +2 [ICON_Culture] Culture bonus for adjacent City Center. +1 [ICON_CULTURE] Culture when built on tiles with Charming Appeal. +3 [ICON_CULTURE] Culture when built on tiles with Breathtaking Appeal. Can only be built on Hills. +1 Appeal to adjacent tiles."),
     ("LOC_DISTRICT_THEATER_HD_DESCRIPTION",                           "A district in your city for cultural sites. +1 [ICON_CULTURE] Culture when built on tiles with Charming Appeal. +3 [ICON_CULTURE] Culture when built on tiles with Breathtaking Appeal."),
     ("LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_HD_DESCRIPTION",       "A district placed out on a coastal tile dedicated to keeping your people happy by increasing [ICON_Amenities] Amenities. Cannot be built in a city with an Entertainment Complex."),
@@ -45,6 +45,12 @@ values
     ("LOC_MBANZA_BONUS",								                "+{1_num} [ICON_Production] Production from the adjacent Bonus {1_Num : plural 1?resource; other?resources;}."),
     ("LOC_MBANZA_LUXURY",								                "+{1_num} [ICON_GOLD] Gold from the adjacent Luxury {1_Num : plural 1?resource; other?resources;}."),
     ("LOC_MBANZA_STRATEGIC",								            "+{1_num} [ICON_SCIENCE] Science from the adjacent Strategic {1_Num : plural 1?resource; other?resources;}."),
+    ("LOC_DISTRICT_SUGUBA_PRODUCTION",								    "+{1_num} [ICON_PRODUCTION] Production from the adjacent Suguba {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_DIPLOMATIC_QUATER_GOLD",								    	"+{1_num} [ICON_GOLD] Gold from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_DIPLOMATIC_QUATER_FAITH",								    	"+{1_num} [ICON_FAITH] Faith from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_DIPLOMATIC_QUATER_SCIENCE",								    "+{1_num} [ICON_SCIENCE] Science from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_DIPLOMATIC_QUATER_CULTURE",								    "+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_DIPLOMATIC_QUATER_PRODUCTION",								"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
 -- 社区
     ("LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",                      "A district for urban activities. Gives Housing according to the tile’s appeal.[NEWLINE]Breathtaking: +5 [ICON_HOUSING] Housing.[NEWLINE]Charming: +4 [ICON_HOUSING] Housing.[NEWLINE]Average: +3 [ICON_HOUSING] Housing.[NEWLINE]Unappealing: +2 [ICON_HOUSING] Housing.[NEWLINE]Disgusting: +1 [ICON_HOUSING] Housing."),
     ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "A district unique to the Congo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith.");
@@ -69,7 +75,7 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_THANH_HD_DESCRIPTION",                             "越南特色区域，替代“军营”。每与1个区域相邻，则+2 [ICON_CULTURE] 文化值。研究完“飞行”科技后，将获得与 [ICON_CULTURE] 文化值产量相等的 [ICON_TOURISM] 旅游业绩。此区域不需要人口、建造花费更低、无法建在市中心周围，也并非专业化区域。[NEWLINE]每个城市只允许建造1个。对陆地军事单位+10%建造速度。为本城改良加成资源的矿山+1 [ICON_PRODUCTION] 生产力。本城改良的战略资源+1 [ICON_Science] 科技值，正确改良的战略每回合积累+2。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_ENCAMPMENT_HD_DESCRIPTION",                        "您城市里的军事机构区。[NEWLINE] 对陆地军事单位+10%建造速度。为本城改良加成资源的矿山+1 [ICON_PRODUCTION] 生产力。本城改良的战略资源+1 [ICON_Science] 科技值，正确改良的战略每回合积累+2。为相邻单元格-1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_AERODROME_HD_DESCRIPTION",                         "可用于建造和存放飞机的区域。不能建在丘陵上。建造不受人口限制。建造空中单位时，+25%建造速度。为相邻单元格-1魅力。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",                "通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。建成后奖励1名 [ICON_Envoy] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。可额外招募一名间谍。"), --如建在市中心旁，则
+    ("zh_Hans_CN",  "LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",                "使相邻区域获得的相邻加成+1。通过外交，外国文明的每个代表团或大使馆将为您的文明提供+1 [ICON_FAVOR] 外交支持。建成后奖励1名 [ICON_Envoy] 使者。敌方间谍将此区域和相邻区域当做目标时，其效果将降低2级。文明中一次仅限建造一座此区域。可额外招募一名间谍。"), --如建在市中心旁，则
     ("zh_Hans_CN",  "LOC_DISTRICT_ACROPOLIS_HD_DESCRIPTION",                         "希腊特色文化遗址区域，替代“剧院广场”，建造费用更低。建成后奖励1名 [ICON_Envoy] 使者。[NEWLINE][NEWLINE]每个相邻区域+1 [ICON_Culture] 文化值，每个相邻市中心额外+2 [ICON_Culture] 文化值。若位于拥有迷人魅力的单元格+1 [ICON_Culture] 文化值，惊艳单元格则+3 [ICON_Culture] 文化值。只能建在丘陵上。为相邻单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_THEATER_HD_DESCRIPTION",                           "您城市里的文化遗址区。若位于拥有迷人魅力的单元格+1 [ICON_Culture] 文化值，惊艳单元格则+3 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_HD_DESCRIPTION",       "建在海岸单元格上的区域，可增加 [ICON_Amenities] 宜居度，让人民生活幸福。无法建在拥有娱乐设施的城市中。"),
@@ -84,18 +90,24 @@ values
     ("zh_Hans_CN",  "LOC_DISTRICT_SEOWON_HD_DESCRIPTION",                            "朝鲜特色区域，替代“学院”。+4 [Icon_Science] 科技值。拥有更多的专家槽位。"),
 --相邻加成
     ("zh_Hans_CN",	"LOC_AQUEDUCT_SELF_FOOD",								            "+{1_num} [ICON_FOOD] 食物。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_AIRSTRIP",								"+{1_num} [ICON_Production] 生产力来自相邻飞机跑道改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MAORI_PA",								"+{1_num} [ICON_Production] 生产力来自相邻帕堡改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MISSILE_SILO",							"+{1_num} [ICON_Production] 生产力来自相邻导弹发射井改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MOUNTAIN_TUNNEL",						"+{1_num} [ICON_Production] 生产力来自相邻穿山隧道改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_FORT",									"+{1_num} [ICON_Production] 生产力来自相邻堡垒改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_ROMAN_FORT",							"+{1_num} [ICON_Production] 生产力来自相邻古罗马堡垒改良{1_Num : plural 1?单元格; other?单元格;}。"),
-    ("zh_Hans_CN",	"LOC_DISTRICT_STRATEGIC_PRODUCTION2",								"+{1_num} [ICON_PRODUCTION] 生产力来自相邻战略资源。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_AIRSTRIP",								"+{1_num} [ICON_Production] 生产力来自相邻的飞机跑道改良{1_Num : plural 1?单元格; other?单元格;}。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MAORI_PA",								"+{1_num} [ICON_Production] 生产力来自相邻的帕堡{1_Num : plural 1?单元格; other?单元格;}。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MISSILE_SILO",							"+{1_num} [ICON_Production] 生产力来自相邻的导弹发射井{1_Num : plural 1?单元格; other?单元格;}。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_MOUNTAIN_TUNNEL",						"+{1_num} [ICON_Production] 生产力来自相邻的穿山隧道{1_Num : plural 1?单元格; other?单元格;}。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_FORT",									"+{1_num} [ICON_Production] 生产力来自相邻的堡垒{1_Num : plural 1?单元格; other?单元格;}。"),
+	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_AFJACENCY_ROMAN_FORT",							"+{1_num} [ICON_Production] 生产力来自相邻的古罗马堡垒{1_Num : plural 1?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",	"LOC_DISTRICT_STRATEGIC_PRODUCTION2",								"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的战略资源。"),
     ("zh_Hans_CN",	"LOC_MBANZA_FOOD",								                    "+{1_num} [ICON_FOOD] 食物。"),
     ("zh_Hans_CN",	"LOC_MBANZA_GOLD",								                    "+{1_num} [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",	"LOC_MBANZA_BONUS",								                    "+{1_num} [ICON_PRODUCTION] 生产力来自相邻加成资源。"),
-    ("zh_Hans_CN",	"LOC_MBANZA_LUXURY",								                "+{1_num} [ICON_GOLD] 金币来自相邻奢侈品资源。"),
-    ("zh_Hans_CN",	"LOC_MBANZA_STRATEGIC",								                "+{1_num} [ICON_SCIENCE] 科技值来自相邻战略资源。"),
+    ("zh_Hans_CN",	"LOC_MBANZA_BONUS",								                    "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的加成资源。"),
+    ("zh_Hans_CN",	"LOC_MBANZA_LUXURY",								                "+{1_num} [ICON_GOLD] 金币来自相邻的奢侈品资源。"),
+    ("zh_Hans_CN",	"LOC_MBANZA_STRATEGIC",								                "+{1_num} [ICON_SCIENCE] 科技值来自相邻的战略资源。"),
+    ("zh_Hans_CN",	"LOC_DISTRICT_SUGUBA_PRODUCTION",								    "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的曼丁哥市场。"),
+	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_GOLD",								    	"+{1_num} [ICON_GOLD] 金币来自相邻的外交区。"),
+    ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_FAITH",								    	"+{1_num} [ICON_FAITH] 信仰值来自相邻的外交区。"),
+    ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_SCIENCE",								    "+{1_num} [ICON_SCIENCE] 科技值来自相邻的外交区。"),
+    ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_CULTURE",								    "+{1_num} [ICON_CULTURE] 文化值自相邻的外交区。"),
+    ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_PRODUCTION",									"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的外交区。"),
 -- 社区
     ("zh_Hans_CN",  "LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",                      "您城市里的市民活动区域。基于单元格的魅力提供住房，情况如下：[NEWLINE]惊艳的：+5 [ICON_HOUSING] 住房。[NEWLINE]迷人的：+4 [ICON_HOUSING] 住房。[NEWLINE]普通的：+3 [ICON_HOUSING] 住房。[NEWLINE]无吸引力的：+2 [ICON_HOUSING] 住房。[NEWLINE]令人厌恶的：+1 [ICON_HOUSING] 住房。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_Production] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。");

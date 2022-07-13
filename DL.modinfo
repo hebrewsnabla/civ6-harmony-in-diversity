@@ -1233,7 +1233,6 @@
       <File>UpdateDataBase/DL_Happiness.xml</File>
       <File>UpdateDataBase/DL_Happiness.sql</File>
       <File>UpdateDataBase/DL_Improvements.sql</File>
-      <File>UpdateDataBase/DL_Improvements.xml</File>
       <File>UpdateDataBase/DL_MajorCivs.sql</File>
       <File>UpdateDataBase/DL_Modifiers.sql</File>
       <File>UpdateDataBase/DL_Policies.sql</File>
@@ -1857,7 +1856,6 @@
     <File>UpdateDataBase/DL_Happiness.xml</File>
     <File>UpdateDataBase/DL_Happiness.sql</File>
     <File>UpdateDataBase/DL_Improvements.sql</File>
-    <File>UpdateDataBase/DL_Improvements.xml</File>
     <File>UpdateDataBase/DL_MajorCivs.sql</File>
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
