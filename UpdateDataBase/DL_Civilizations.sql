@@ -1389,7 +1389,6 @@ values
 	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'YieldType',	'YIELD_FOOD'),
 	('TRAIT_TUNDRA_SNOW_SOME_IMPROVEMENTS_FOOD',		'Amount',		2);
 
-update Improvements set OnePerCity = 0, SameAdjacentValid = 0 where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
 ------------------------------------------------------------------------------------------------
 -- Korea ability updated
 delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOVERNOR_TITLE_MODIFIER';

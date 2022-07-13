@@ -12,6 +12,7 @@ values
     ("LOC_UNIT_OBSERVATION_BALLOON_DESCRIPTION",          "Industrial era support unit. Grants +1 [ICON_Range] Range to Siege class units within 1 hex."),
     ("LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "Ancient era ranged Naval Raider."),
     ("LOC_UNIT_ANCIENT_SEADOG_NAME",                      "Oarlocked Rowboats"), -- Outrigger Boats
+    ("LOC_SEADOG_LESS_STRENGTH_DESCRIPTION",			  "-17 [ICON_STRENGTH] Strength when attacking districts."), -- Outrigger Boats
     -- Unique Units
     ("LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION",           "Norwegian unique Ancient era naval unit that replaces the Galley. Can pillage enemy coastal lands and capture civilians if adjacent using its coastal raiding ability. Formation units all inherit escort's [ICON_Movement] Movement speed. 4 [ICON_Movement] Movement while in coastal waters."),
     ("LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION",               "English unique Renaissance era naval unit that replaces the Privateer. Has a chance to capture defeated enemy ships."), -- Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range.
@@ -47,6 +48,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_OBSERVATION_BALLOON_DESCRIPTION",          "工业时代支援单位。为1单元格内的攻城类单位+1 [ICON_Range] 射程。"),
     ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_DESCRIPTION",               "远古时代的海军袭击者。"),
     ("zh_Hans_CN",  "LOC_UNIT_ANCIENT_SEADOG_NAME",                      "桨架划艇"),
+    ("zh_Hans_CN",  "LOC_SEADOG_LESS_STRENGTH_DESCRIPTION",			     "攻击区域防御时-17 [ICON_STRENGTH] 攻击力。"),
     -- 特色单位
     ("zh_Hans_CN",  "LOC_UNIT_NORWEGIAN_LONGSHIP_DESCRIPTION",           "取代桨帆船的挪威远古时代特色海军单位。通过海岸扫荡能力，可掠夺敌方海岸土地，并俘获附近的平民。能在中立领土上恢复。可使编队单位继承自己的移动力。位于海岸水域时， [ICON_Movement] 移动力为4。"),
     ("zh_Hans_CN",  "LOC_UNIT_ENGLISH_SEADOG_DESCRIPTION",               "文艺复兴时代英国特色海军单位，取代私掠船。击败敌方船只后有几率将其俘获。"),

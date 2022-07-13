@@ -434,7 +434,11 @@ update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE'
 update Units set PrereqTech = 'TECH_ROCKETRY' where UnitType = 'UNIT_BOMBER';
 ------------------------------------------------------------------------------------------------
 -- make a new unit - ancient seadog. by Five.
-insert or ignore into Types (Type, Kind) values ('UNIT_ANCIENT_SEADOG',    'KIND_UNIT');
+insert or ignore into Types
+	(Type,						Kind)
+values
+	('UNIT_ANCIENT_SEADOG',		'KIND_UNIT'),
+	('SEADOG_LESS_STRENGTH',	'KIND_ABILITY');
 insert or ignore into Units
     (UnitType,                  Name,                               Description,                    TraitType,  PrereqTech,     MandatoryObsoleteTech,
     BaseSightRange, BaseMoves,   Combat, RangedCombat,   Range,  Cost,   ZoneOfControl, PurchaseYield, Domain,
@@ -449,7 +453,9 @@ values
     ('UNIT_ANCIENT_SEADOG',    'CLASS_NAVAL_RAIDER'),
     ('UNIT_ANCIENT_SEADOG',    'CLASS_NAVAL_RANGED'),
     ('UNIT_ANCIENT_SEADOG',    'CLASS_STEALTH'),
-    ('UNIT_ANCIENT_SEADOG',    'CLASS_REVEAL_STEALTH');
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_REVEAL_STEALTH'),
+    ('UNIT_ANCIENT_SEADOG',    'CLASS_SEADOG'),
+    ('SEADOG_LESS_STRENGTH',   'CLASS_SEADOG');
 insert or ignore into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_ANCIENT_SEADOG', 'UNIT_DL_MEDIEVAL_PIRATE');
 insert or ignore into UnitUpgrades (Unit,  UpgradeUnit) values ('UNIT_ANCIENT_SEADOG', 'UNIT_PRIVATEER');
 insert or ignore into UnitReplaces (CivUniqueUnitType,  ReplacesUnitType) values ('UNIT_HD_BARBARIAN_GALLEY', 'UNIT_ANCIENT_SEADOG');
@@ -459,6 +465,27 @@ values
     ('UNIT_ANCIENT_SEADOG', 'UNITAI_COMBAT'),
     ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_RANGED'),
     ('UNIT_ANCIENT_SEADOG', 'UNITTYPE_NAVAL');
+insert or ignore into UnitAbilities
+    (UnitAbilityType,			Name,								Description)
+values
+	('SEADOG_LESS_STRENGTH',	'LOC_UNIT_ANCIENT_SEADOG_NAME',		'LOC_SEADOG_LESS_STRENGTH_DESCRIPTION');
+insert or ignore into UnitAbilityModifiers
+	(UnitAbilityType,			ModifierId)
+values
+	('SEADOG_LESS_STRENGTH',	'SEADOG_LESS_STRENGTH_ATTACKING_DISTRICT');
+insert or ignore into Modifiers
+	(ModifierId,									ModifierType,								SubjectRequirementSetId)
+values
+	('SEADOG_LESS_STRENGTH_ATTACKING_DISTRICT',		'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',		'SHELLS_REQUIREMENTS');
+insert or ignore into ModifierArguments
+	(ModifierId,									Name,		Value)
+values
+	('SEADOG_LESS_STRENGTH_ATTACKING_DISTRICT',		'Amount',	-17);
+insert or ignore into ModifierStrings
+	(ModifierId,									Context,	 Text)
+values
+	('SEADOG_LESS_STRENGTH_ATTACKING_DISTRICT',		'Preview',	'LOC_SEADOG_LESS_STRENGTH_DESCRIPTION');
+
 update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_COURSER';
 update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_HUNGARY_BLACK_ARMY';
 update Units set PrereqTech = 'TECH_STIRRUPS' where UnitType = 'UNIT_ETHIOPIAN_OROMO_CAVALRY';
@@ -469,4 +496,5 @@ select UnitType, 'CLASS_LAND_MILITARY' from Units where FormationClass = 'FORMAT
 insert or replace into Tags
     (Tag,                       Vocabulary)
 values
+   ('CLASS_SEADOG',				'ABILITY_CLASS'),
    ('CLASS_LAND_MILITARY',		'ABILITY_CLASS');

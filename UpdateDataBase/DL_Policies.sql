@@ -47,21 +47,47 @@ from FreeInquiryBuffedObjects;
 -- Pen, Brush, and Voice
 update ModifierArguments set Value = 2 where ModifierId = 'COMMEMORATION_CULTURAL_DISTRICTCULTURE' and Name = 'Amount';
 -- Monumentality
-delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE' and ModifierId = 'COMMEMORATION_INFRASTRUCTURE_GA_PURCHASE_CIVILIAN';
-update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_BUILDER_DISCOUNT_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 20 where ModifierId = 'COMMEMORATION_INFRASTRUCTURE_SETTLER_DISCOUNT_MODIFIER' and Name = 'Amount';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_INFRASTRUCTURE' and ModifierId != 'COMMEMORATION_INFRASTRUCTURE_QUEST';
 insert or replace into CommemorationModifiers
-	(CommemorationType, 				ModifierId)
+	(CommemorationType,					ModifierId)
 values
-	('COMMEMORATION_INFRASTRUCTURE', 	'COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD');
+	('COMMEMORATION_INFRASTRUCTURE',	'COMMEMORATION_WONDER_PRODUCTION'),
+	('COMMEMORATION_INFRASTRUCTURE',	'COMMEMORATION_WONDER_CULTURE'),
+	('COMMEMORATION_INFRASTRUCTURE',	'COMMEMORATION_WONDER_FAITH'),
+	('COMMEMORATION_INFRASTRUCTURE',	'COMMEMORATION_WONDER_EXTRA_DISTRICT');
 insert or replace into Modifiers
-	(ModifierId,												ModifierType,								SubjectRequirementSetId)
+	(ModifierId,								ModifierType,											OwnerRequirementSetId,		SubjectRequirementSetId)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',		'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',	'UNIT_IS_GOLDEN_AGE_SETTLER');
+	('COMMEMORATION_WONDER_PRODUCTION',			'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_PRODUCTION',		'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_WONDER_CULTURE',			'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE',	'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_WONDER_FAITH',				'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_YIELD_CHANGE',	'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_WONDER_EXTRA_DISTRICT',		'MODIFIER_PLAYER_CITIES_EXTRA_DISTRICT',				'PLAYER_HAS_GOLDEN_AGE',	'DL_CITY_HAS_WONDER_REQUIREMENTS');
 insert or replace into ModifierArguments
-	(ModifierId,												Name,		Value)
+	(ModifierId,								Name,												Value)
 values
-	('COMMEMORATION_INFRASTRUCTURE_GA_SETTLER_MOVEMENT_HD',		'Amount',	2);
+	('COMMEMORATION_WONDER_PRODUCTION',			'Amount',		25),
+	('COMMEMORATION_WONDER_CULTURE',			'YieldType',	'YIELD_CULTURE'),
+	('COMMEMORATION_WONDER_CULTURE',			'Amount',		1),
+	('COMMEMORATION_WONDER_FAITH',				'YieldType',	'YIELD_FAITH'),
+	('COMMEMORATION_WONDER_FAITH',				'Amount',		1),
+	('COMMEMORATION_WONDER_EXTRA_DISTRICT',		'Amount',		1);
+-- Exodus of the Evangelists
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_RELIGIOUS' and ModifierId = 'COMMEMORATION_RELIGIOUS_GA_GREAT_PROPHET_POINTS';
+insert or replace into CommemorationModifiers
+	(CommemorationType,					ModifierId)
+values
+	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,											OwnerRequirementSetId)
+values
+	('COMMEMORATION_RELIGIOUS',					'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,					Value)
+values
+	('COMMEMORATION_RELIGIOUS',					'BeliefYieldType',		'BELIEF_YIELD_PER_FOREIGN_CITY'),
+	('COMMEMORATION_RELIGIOUS',					'PerXItems',			1),
+	('COMMEMORATION_RELIGIOUS',					'YieldType',			'YIELD_FAITH'),
+	('COMMEMORATION_RELIGIOUS',					'Amount',				6);
 -- New Commemoration: Enlightened Despotism
 insert or replace into Types
 	(Type,								Kind)

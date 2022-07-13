@@ -228,3 +228,28 @@ GameEvents.OnCityPopulationChanged.Add(function(cityOwner, cityID, ChangeAmount)
         end
     end
 end)
+
+-- Archer for City State
+local CITY_STATE_ARCHER_TURN_KEY = 'CITY_STATE_ARCHER_TURN';
+function ArcherForCityState ()
+	if Game.GetCurrentGameTurn() == 1 then
+		local min = GlobalParameters.CITY_STATE_ARCHER_MIN_TURN;
+		local max = GlobalParameters.CITY_STATE_ARCHER_MAX_TURN;
+		if (min ~= nil) and (max ~= nil) and (min <= max) then
+			for _, player in pairs(Players) do
+				if (player ~= nil) and (player:GetInfluence() ~= nil) and player:GetInfluence():CanReceiveInfluence() then
+					player:SetProperty(CITY_STATE_ARCHER_TURN_KEY, math.random(min, max));
+				end
+			end
+		end
+	end
+	for _, player in pairs(Players) do
+		if (player ~= nil) and (player:GetInfluence() ~= nil) then
+			local turn = player:GetProperty(CITY_STATE_ARCHER_TURN_KEY);
+			if (turn ~= nil) and (turn == Game.GetCurrentGameTurn()) then
+				player:AttachModifierByID('CITY_STATE_GRANT_ARCHER');
+			end
+		end
+	end
+end
+Events.TurnBegin.Add(ArcherForCityState);

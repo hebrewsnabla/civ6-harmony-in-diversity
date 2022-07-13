@@ -243,6 +243,19 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_CITY_HAS_' || FeatureType, 'REQUIRES_CITY_HAS_' || FeatureType from Features;
 
+-- City Has Terrain
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'TerrainType', TerrainType from Terrains;
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'Amount', 2 from Terrains;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_CITY_HAS_' || TerrainType, 'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE' from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_CITY_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_CITY_HAS_' || TerrainType, 'REQUIRES_CITY_HAS_' || TerrainType from Terrains;
+
 -- 玩家有改良的资源
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;
@@ -263,6 +276,24 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_PLOT_HAS_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_PLOT_HAS_' || TerrainType, 'HD_REQUIRES_PLOT_HAS_' || TerrainType from Terrains;
+
+-- Plot Adjacent to Terrains
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType, 'TerrainType', TerrainType from Terrains;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType, 'REQUIREMENT_PLOT_ADJACENT_TERRAIN_TYPE_MATCHES' from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLOT_ADJACENT_TO_' || TerrainType, 'REQUIREMENTSET_TEST_ALL' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLOT_ADJACENT_TO_' || TerrainType, 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType from Terrains;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_HAS_' || TerrainType from Terrains;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || TerrainType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_ADJACENT_TO_' || TerrainType from Terrains;
 
 -- Plot Has Features & Natural Wonders
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -285,6 +316,13 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_PLOT_ADJACENT_TO_' || FeatureType, 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType from Features;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_HAS_' || FeatureType from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLOT_ON_OR_ADJACENT_TO_' || FeatureType || '_REQUIREMENTS', 'HD_REQUIRES_PLOT_ADJACENT_TO_' || FeatureType from Features;
 
 -- civlization
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
@@ -485,6 +523,7 @@ values
 	('PLOT_HAS_BASIC_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',			'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',							'REQUIREMENTSET_TEST_ALL'),
 	('HD_IS_TUNDRA_SNOW_FOOD_IMPROVEMENTS_REQUIREMENTS',			'REQUIREMENTSET_TEST_ALL'),
 	-- 
 	-- ('PLAYER_IS_SUZERAIN_AND_FOUND_RELIGION',						'REQUIREMENTSET_TEST_ALL'),
@@ -548,6 +587,7 @@ values
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_CAMP'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_FARM'),
 	('PLOT_HAS_BASIC_FOOD_IMPROVEMENTS_REQUIREMENTS',				'REQUIRES_PLOT_HAS_PLANTATION'),
+	('PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',		'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
 	('HD_IS_TUNDRA_SNOW_PRODUCTION_IMPROVEMENTS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_BASIC_PRODUCTION_IMPROVEMENTS'),
 	('HD_IS_TUNDRA_SNOW_FOOD_IMPROVEMENTS_REQUIREMENTS',			'REQUIRES_PLOT_IS_TUNDRA_OR_SNOW'),
@@ -703,7 +743,9 @@ values
 	('UNIT_IS_CIVILIAN_CLASS',    						'REQUIREMENTSET_TEST_ANY'),
 	('NOT_WONDER_IS_OR_ADJACENT_TO_COAST',    			'REQUIREMENTSET_TEST_ALL'),
 	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'REQUIREMENTSET_TEST_ALL'),
-    ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',           'REQUIREMENTSET_TEST_ALL');
+    ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',           'REQUIREMENTSET_TEST_ALL'),
+	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST',		'REQUIREMENTSET_TEST_ALL'),
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
@@ -741,7 +783,12 @@ values
 	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'REQUIRES_DISTRICT_IS_DISTRICT_WONDER'),
 	('WONDER_IS_OR_ADJACENT_TO_COAST',    				'REQUIRES_PLOT_HAS_COMPLETE_WONDER'),
     ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',             'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_WONDER'),
-    ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',             'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_CITY_CENTER');
+    ('HD_DISTRICTS_IS_NOT_WONDERS_OR_CITY_CENTER_REQUIREMENTS',             'HD_REQUIRES_DISTRICT_IS_NOT_DISTRICT_CITY_CENTER'),
+	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST', 'REQUIRES_DISTRICT_IS_NOT_CITY_CENTER'),
+	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST',	'PLOT_IS_OR_ADJACENT_TO_COAST_REQUIREMENTS'),
+	('NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST',	'REQUIRES_PLOT_DOES_NOT_HAVE_INCOMPLETE_WONDER'),
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
+	('PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS',	'HD_REQUIRES_PLAYER_HAS_TECH_STEAM_POWER');
 
 -- RequirementSets
 insert or ignore into RequirementSets

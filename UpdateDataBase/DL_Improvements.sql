@@ -37,7 +37,8 @@ values
 	('IMPROVEMENT_LAND_POLDER',			'YIELD_PRODUCTION',		1),
 	('IMPROVEMENT_LAND_POLDER',			'YIELD_GOLD',			0),
 	('IMPROVEMENT_MISSION',				'YIELD_FOOD',			0),
-	('IMPROVEMENT_MISSION',				'YIELD_PRODUCTION',		0);
+	('IMPROVEMENT_MISSION',				'YIELD_PRODUCTION',		0),
+	('IMPROVEMENT_ICE_HOCKEY_RINK',		'YIELD_FOOD',			2);
 
 -- Bonus Yield
 delete from Improvement_BonusYieldChanges where ImprovementType in (
@@ -93,7 +94,11 @@ values
 	(703,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_SCIENCE',		2,					null,							'TECH_REFINING');
 
 -- Adjacency Yield
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MAHAVIHARA';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' or ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
+	or (ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency')
+	or (ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency')
+	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River')
+	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly');
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
@@ -318,6 +323,69 @@ from Improvements where ImprovementType in (
 	'IMPROVEMENT_SEASTEAD'
 );
 
+-- Common Improvements
+-- Farm
+update Adjacency_YieldChanges set PrereqTech = 'TECH_BIOLOGY_HD' where ID = 'Farms_MechanizedAdjacency' or ID = 'Terrace_MechanizedAdjacency';
+update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BIOLOGY_HD' where ID = 'Farms_MedievalAdjacency' or ID = 'Terrace_MedievalAdjacency';
+
+-- Plantation
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierID)
+values
+	('IMPROVEMENT_PLANTATION',	'PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD'),
+	('IMPROVEMENT_PLANTATION',	'PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD');
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,								SubjectRequirementSetId)
+values
+	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM'),
+	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM');
+insert or replace into ModifierArguments
+	(ModifierId,											Name,		Value)
+values
+	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'YieldType',	'YIELD_GOLD'),
+	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'Amount',		2),
+	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'YieldType',	'YIELD_GOLD'),
+	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'Amount',		2);
+
+-- Mine
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierID)
+values
+	('IMPROVEMENT_MINE',		'MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION');
+insert or replace into Modifiers
+	(ModifierId,											ModifierType,								SubjectRequirementSetId)
+values
+	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP');
+
+insert or replace into ModifierArguments
+	(ModifierId,											Name,		Value)
+values
+	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'Amount',		1);
+
+-- Quarry
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierID)
+values
+	('IMPROVEMENT_QUARRY',		'QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION'),
+	('IMPROVEMENT_QUARRY',		'QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION');
+insert or replace into Modifiers
+	(ModifierId,													ModifierType)
+values
+	('QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_WONDER_ERA_PRODUCTION'),
+	('QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION',	'MODIFIER_SINGLE_CITY_ADJUST_WONDER_ERA_PRODUCTION');
+insert or replace into ModifierArguments
+	(ModifierId,													Name,			Value)
+values
+	('QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION',		'IsWonder',		1),
+	('QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION',		'Amount',		10),
+	('QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION',		'StartEra',		'ERA_ANCIENT'),
+	('QUARRY_ADJUST_ANCIENT_AND_CLASSICAL_WONDER_PRODUCTION',		'EndEra',		'ERA_CLASSICAL'),
+	('QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION',	'IsWonder',		1),
+	('QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION',	'Amount',		5),
+	('QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION',	'StartEra',		'ERA_MEDIEVAL'),
+	('QUARRY_ADJUST_MEDIEVAL_AND_RENAISSANCE_WONDER_PRODUCTION',	'EndEra',		'ERA_RENAISSANCE');
+
 -- City State UI
 -- Cahokia Mounds
 update Modifiers set SubjectRequirementSetId = null, SubjectStackLimit = 2 where ModifierId = 'MOUND_AMENITY_MAX_ONE';
@@ -425,7 +493,6 @@ update Adjacency_YieldChanges set YieldType = 'YIELD_SCIENCE', ObsoleteCivic = '
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MEKEWAP' and ModifierId = 'MEKEWAP_LUXURY_GOLD';
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
 update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency';
 
 -- Kurgan (Scythia)
 insert or replace into ImprovementModifiers
@@ -473,7 +540,6 @@ values
 	('IMPROVEMENT_TERRACE_FARM',	1);
 update Modifiers set SubjectRequirementSetId = 'PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW' where ModifierId = 'TERRACE_FARM_PRODUCTION_FRESH_WATER_NO_AQUEDUCT';
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID like 'Terrace_%MountainAdjacency';
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency';
 insert or replace into Improvement_ValidResources
 	(ImprovementType,				ResourceType)
 values
@@ -593,8 +659,6 @@ values
 
 -- Château (France)
 update Improvements set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', Housing = 1 where ImprovementType = 'IMPROVEMENT_CHATEAU';
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River';
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly';
 update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLate';
 
 -- Coastal Polder (Netherlands)
@@ -756,37 +820,116 @@ values
 	('GOLD_COURSE_ENGINEER',	'GreatPersonClassType',		'GREAT_PERSON_CLASS_ENGINEER'),
 	('GOLD_COURSE_ENGINEER',	'Amount',					2);
 
--- Misc
+-- Open-Air Museum (Sweden)
+update Improvements set PrereqCivic = 'CIVIC_HUMANISM' where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
+create temporary table HD_OpenAirMuseumBonuses (
+	ObjectType text not null primary key,
+	YieldType text not null,
+	AttachModifierId text,
+	ModifierId text
+);
+insert or replace into HD_OpenAirMuseumBonuses
+	(ObjectType,	YieldType)
+select
+	TerrainType,	'YIELD_CULTURE'
+from Terrains;
+insert or replace into HD_OpenAirMuseumBonuses
+	(ObjectType,	YieldType)
+select
+	FeatureType,	'YIELD_SCIENCE'
+from Features where FeatureType not in ('FEATURE_BURNING_FOREST', 'FEATURE_BURNT_FOREST', 'FEATURE_BURNING_JUNGLE', 'FEATURE_BURNT_JUNGLE');
+update HD_OpenAirMuseumBonuses set ModifierId = 'OPEN_AIR_MUSEUM_' || ObjectType || '_' || YieldType;
+update HD_OpenAirMuseumBonuses set AttachModifierId = ModifierId || '_ATTACH';
 insert or replace into ImprovementModifiers
-	(ImprovementType,			ModifierID)
-values
-	('IMPROVEMENT_PLANTATION',	'PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD'),
-	('IMPROVEMENT_PLANTATION',	'PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD'),
-	-- ('IMPROVEMENT_MINE',		'MINE_ON_HILL_PRODUCTION_MODIFIER'),
-	('IMPROVEMENT_MINE',		'MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION');
-	-- ('IMPROVEMENT_MINE',		'MINE_ADJACENT_TO_MOUNTAIN_APPRENTICESHIP_MODIFIER');
+	(ImprovementType,		 			ModifierId)
+select
+	'IMPROVEMENT_OPEN_AIR_MUSEUM',		AttachModifierId
+from HD_OpenAirMuseumBonuses;
 insert or replace into Modifiers
-	(ModifierId,											ModifierType,								SubjectRequirementSetId)
-values
-	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_IS_ADJACENT_TO_FRESH_WATER_NOT_AQUEDUCT_NO_FEUDALISM'),
-	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'IS_ADJACENT_TO_AQUEDUCT_NO_FEUDALISM'),
-	-- ('MINE_ADJACENT_TO_INDUSTRIAL_ZONE_MODIFIER',		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_INDUSTRIAL_ZONE'),
-	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_MOUNTAIN_NO_APPRENTICESHIP');
-	-- ('MINE_ADJACENT_TO_MOUNTAIN_APPRENTICESHIP_MODIFIER',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'HAS_APPRENTICESHIP_AND_PLOT_ADJACENT_TO_MOUNTAIN');
-
+	(ModifierId,		ModifierType,								SubjectRequirementSetId,			SubjectStackLimit)
+select
+	AttachModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'HD_CITY_HAS_' || ObjectType,		1
+from HD_OpenAirMuseumBonuses;
 insert or replace into ModifierArguments
-	(ModifierId,											Name,		Value)
+	(ModifierId,		Name,			Value)
+select
+	AttachModifierId,	'ModifierId',	ModifierId
+from HD_OpenAirMuseumBonuses;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,								SubjectRequirementSetId,								SubjectStackLimit)
+select
+	ModifierId,			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_IMPROVEMENT_OPEN_AIR_MUSEUM_REQUIREMENTS',	1
+from HD_OpenAirMuseumBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'YieldType',	YieldType
+from HD_OpenAirMuseumBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'Amount',		1
+from HD_OpenAirMuseumBonuses;
+
+-- Ice Hockey Rink (Canada)
+update Improvements set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'ICEHOCKEYRINK_AMENITY';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK' and ModifierId = 'ICEHOCKEYRINK_CULTURE_STADIUM';
+insert or replace into ImprovementModifiers
+	(ImprovementType,					ModifierId)
 values
-	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'YieldType',	'YIELD_GOLD'),
-	('PLANTATION_FRESH_WATER_NO_AQUEDUCT_FEUDALISM_GOLD',	'Amount',		2),
-	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'YieldType',	'YIELD_GOLD'),
-	('PLANTATION_AQUEDUCT_NO_FEUDALISM_GOLD',				'Amount',		2),
-	-- ('MINE_ADJACENT_TO_INDUSTRIAL_ZONE_MODIFIER',		'YieldType',	'YIELD_PRODUCTION'),
-	-- ('MINE_ADJACENT_TO_INDUSTRIAL_ZONE_MODIFIER',		'Amount',		1),
-	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
-	('MINE_ADJACENT_TO_MOUNTAIN_NO_APPRENTICE_PRODUCTION',	'Amount',		1);
-	-- ('MINE_ADJACENT_TO_MOUNTAIN_APPRENTICESHIP_MODIFIER',	'YieldType',	'YIELD_PRODUCTION'),
-	-- ('MINE_ADJACENT_TO_MOUNTAIN_APPRENTICESHIP_MODIFIER',	'Amount',		-1);
+	('IMPROVEMENT_ICE_HOCKEY_RINK',		'ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								SubjectRequirementSetId,								SubjectStackLimit)
+values
+	('ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',					1),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_IMPROVEMENT_ICE_HOCKEY_RINK_REQUIREMENTS',	null);
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('ICE_HOCKEY_RINK_CITY_CULTURE_ATTACH',		'ModifierId',	'ICE_HOCKEY_RINK_CITY_CULTURE'),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'YieldType',	'YIELD_CULTURE'),
+	('ICE_HOCKEY_RINK_CITY_CULTURE',			'Amount',		1);
+create temporary table HD_IceHockeyRinkBonuses (
+	DistrictType text not null primary key,
+	AttachModifierId text,
+	ModifierId text
+);
+insert or replace into HD_IceHockeyRinkBonuses (DistrictType) select DistrictType from Districts where DistrictType != 'DISTRICT_WONDER' and TraitType is null;
+update HD_IceHockeyRinkBonuses set ModifierId = 'ICE_HOCKEY_RINK_' || DistrictType || '_PRODUCTION';
+update HD_IceHockeyRinkBonuses set AttachModifierId = ModifierId || '_ATTACH';
+insert or replace into ImprovementModifiers
+	(ImprovementType,					ModifierId)
+select
+	'IMPROVEMENT_ICE_HOCKEY_RINK',		AttachModifierId
+from HD_IceHockeyRinkBonuses;
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,									SubjectRequirementSetId,								SubjectStackLimit)
+select
+	AttachModifierId,		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS',		1
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	AttachModifierId,		'ModifierId',	ModifierId
+from HD_IceHockeyRinkBonuses;
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,							OwnerRequirementSetId,						SubjectRequirementSetId,								SubjectStackLimit)
+select
+	ModifierId,		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_IS_TUNDRA_OR_SNOW_REQUIREMENTS',		'PLOT_HAS_IMPROVEMENT_ICE_HOCKEY_RINK_REQUIREMENTS',	1
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	'YIELD_PRODUCTION'
+from HD_IceHockeyRinkBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		1
+from HD_IceHockeyRinkBonuses;
 
 -- Remove snow barbarian camp.
 delete from Improvement_ValidTerrains where
@@ -809,16 +952,3 @@ insert or replace into GoodyHutSubTypes
 	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
 values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
-
--- 冰球场
-update Improvements set PrereqCivic = 'CIVIC_URBANIZATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
---by 弱猹
---瑞典UI改为人文主义
-UPDATE Improvements SET PrereqCivic="CIVIC_HUMANISM"  where ImprovementType="IMPROVEMENT_OPEN_AIR_MUSEUM";
-
---移除雨林前移到采矿
-update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
---种树前移到工会，越南到神秘主义
-update Features set AddCivic = 'CIVIC_GUILDS' where FeatureType = 'FEATURE_FOREST';
-
-update Technologies set Description = null where TechnologyType = 'TECH_SANITATION';

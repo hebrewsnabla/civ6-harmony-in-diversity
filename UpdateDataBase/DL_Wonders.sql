@@ -606,16 +606,16 @@ insert or replace into ModifierArguments
 values
 	('MEENAKSHI_BUILDER_PURCHASE',			'Tag',			'CLASS_BUILDER'),		
 	('MEENAKSHI_SETTLER_PURCHASE',			'Tag',			'CLASS_SETTLER');
-create temporary table Meenakshi_DistrictBonus (
+create temporary table HD_Meenakshi_DistrictBonus (
 	DistrictType text not null primary key
 );
-insert or replace into Meenakshi_DistrictBonus (DistrictType)
+insert or replace into HD_Meenakshi_DistrictBonus (DistrictType)
 select DistrictType from Districts where CitizenSlots > 0 and TraitType is null;
 insert or replace into Types
 	(Type,											Kind)
 select
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'KIND_BUILDING'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Buildings
 	(BuildingType, Name, Description, PrereqDistrict, Cost, MustPurchase, CitizenSlots)
 select
@@ -623,58 +623,71 @@ select
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType || '_NAME',
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType || '_DESCRIPTION',
 	DistrictType,
-	9999, 1, 1
-from Meenakshi_DistrictBonus;
+	0, 1, 1
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Buildings_XP2
 	(BuildingType,									Pillage)
 select
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	0
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
+insert or ignore into Types
+	(Type,										Kind)
+values
+	('BUILDING_MEENAKSHI_DUMMY_INTERNAL_ONLY',	'KIND_BUILDING');
+insert into Buildings
+	(BuildingType,								Cost,	Name,												InternalOnly)
+values
+	('BUILDING_MEENAKSHI_DUMMY_INTERNAL_ONLY',	0,		'LOC_BUILDING_MEENAKSHI_DUMMY_INTERNAL_ONLY_NAME',	1);
+insert or replace into BuildingPrereqs
+	(Building,										PrereqBuilding)
+select
+	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'BUILDING_MEENAKSHI_DUMMY_INTERNAL_ONLY'
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Building_CitizenYieldChanges
 	(BuildingType,									YieldType,		YieldChange)
 select
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'YIELD_FAITH',	1
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Building_CitizenYieldChanges
 	(BuildingType,									YieldType,			YieldChange)
 select
 	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType,	'YIELD_CULTURE',	1
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 select
 	'BUILDING_MEENAKSHI_TEMPLE',	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,									SubjectRequirementSetId)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH',	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_DISTRICT_HOLY_SITE_REQUIREMENTS'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT_ATTACH',	'ModifierId',	'MEENAKSHI_' || DistrictType || '_EXPERT'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,									SubjectRequirementSetId)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'REQUIRE_PLOT_ADJACENT_TO_OWNER'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT',			'ModifierId',	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,											OwnerRequirementSetId)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD',	'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 select
 	'MEENAKSHI_' || DistrictType || '_EXPERT_YIELD',	'BuildingType',	'BUILDING_MEENAKSHI_DUMMY_' || DistrictType
-from Meenakshi_DistrictBonus;
+from HD_Meenakshi_DistrictBonus;
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 values
@@ -820,11 +833,11 @@ insert or replace into ModifierArguments
 	(ModifierId,					Name,		Value)
 values
 	('MARACANA_CITIES_GPP_BOOST',	'Amount',	50);
-create temporary table Maracana_DistrictBonus (
+create temporary table HD_Maracana_DistrictBonus (
     'DistrictType' text not null primary key,
     'YieldType' text not null
 );
-insert or replace into Maracana_DistrictBonus
+insert or replace into HD_Maracana_DistrictBonus
 	(DistrictType,					YieldType)
 values
 	('DISTRICT_HOLY_SITE',			'YIELD_FAITH'),
@@ -838,7 +851,7 @@ insert or replace into Types
     (Type,                                      Kind)
 select
     'BUILDING_MARACANA_DUMMY_' || DistrictType, 'KIND_BUILDING'
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into Buildings 
     (BuildingType, Name, Description, PrereqDistrict, Cost, MustPurchase) 
 select
@@ -846,40 +859,53 @@ select
 	'BUILDING_MARACANA_DUMMY_' || DistrictType || '_NAME',
 	'BUILDING_MARACANA_DUMMY_' || DistrictType || '_DESCRIPTION',
 	DistrictType,
-	9999, 1
-from Maracana_DistrictBonus;
+	0, 1
+from HD_Maracana_DistrictBonus;
 insert or replace into Buildings_XP2
 	(BuildingType,									Pillage)
 select
 	'BUILDING_MARACANA_DUMMY_' || DistrictType,		0
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
+insert or ignore into Types
+	(Type,										Kind)
+values
+	('BUILDING_MARACANA_DUMMY_INTERNAL_ONLY',	'KIND_BUILDING');
+insert into Buildings
+	(BuildingType,								Cost,	Name,												InternalOnly)
+values
+	('BUILDING_MARACANA_DUMMY_INTERNAL_ONLY',	0,		'LOC_BUILDING_MARACANA_DUMMY_INTERNAL_ONLY_NAME',	1);
+insert or replace into BuildingPrereqs
+	(Building,										PrereqBuilding)
+select
+	'BUILDING_MARACANA_DUMMY_' || DistrictType,		'BUILDING_MARACANA_DUMMY_INTERNAL_ONLY'
+from HD_Maracana_DistrictBonus;
 insert or replace into Building_CitizenYieldChanges
 	(BuildingType,									YieldType,	YieldChange)
 select
 	'BUILDING_MARACANA_DUMMY_' || DistrictType,		YieldType,	4
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select
 	'BUILDING_ESTADIO_DO_MARACANA',		'MARACANA_' || DistrictType || '_EXPERT_ATTACH'
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,										SubjectRequirementSetId)
 select
 	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'HD_OBJECT_WITHIN_9_TILES'
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,				Value)
 select
 	'MARACANA_' || DistrictType || '_EXPERT_ATTACH', 	'ModifierId',		'MARACANA_' || DistrictType || '_EXPERT_YIELD'
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												OwnerRequirementSetId)
 select
 	'MARACANA_' || DistrictType || '_EXPERT_YIELD', 	'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
 insert or replace into ModifierArguments
 	(ModifierId,										Name,				Value)
 select
 	'MARACANA_' || DistrictType || '_EXPERT_YIELD', 	'BuildingType',		'BUILDING_MARACANA_DUMMY_' || DistrictType
-from Maracana_DistrictBonus;
+from HD_Maracana_DistrictBonus;
