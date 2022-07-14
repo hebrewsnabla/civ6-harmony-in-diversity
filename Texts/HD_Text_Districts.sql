@@ -52,7 +52,7 @@ values
     ("LOC_DIPLOMATIC_QUATER_CULTURE",								    "+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_DIPLOMATIC_QUATER_PRODUCTION",								"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
 	("LOC_NEIGHBORHOOD_FAITH",											"+{1_num} [ICON_FAITH] Faith from the adjacent Neighborhood {1_Num : plural 2?tile; other?tiles;}."),
-	("LOC_PRESERVE_FAITH",											    "+{1_num} [ICON_FAITH] Faith from the adjacent Preserve {1_Num : plural 2?tile; other?tiles;}."),
+	("LOC_PRESERVE_FAITH",											    "+{1_num} [ICON_FAITH] Faith from the adjacent Preserve {1_Num : plural 1?tile; other?tiles;}."),
 -- 社区
     ("LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",                      "A district for urban activities. Gives Housing according to the tile’s appeal.[NEWLINE]Breathtaking: +5 [ICON_HOUSING] Housing.[NEWLINE]Charming: +4 [ICON_HOUSING] Housing.[NEWLINE]Average: +3 [ICON_HOUSING] Housing.[NEWLINE]Unappealing: +2 [ICON_HOUSING] Housing.[NEWLINE]Disgusting: +1 [ICON_HOUSING] Housing."),
     ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "A district unique to the Congo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith.");

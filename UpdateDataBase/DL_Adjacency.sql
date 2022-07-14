@@ -193,7 +193,7 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,					YieldType,		YieldChange,	AdjacentDistrict)
 select
-	'Preserve_Faith',				'LOC_PRESERVE_FAITH',			'YIELD_FAITH',	2,				'DISTRICT_PRESERVE'
+	'Preserve_Faith',				'LOC_PRESERVE_FAITH',			'YIELD_FAITH',	1,				'DISTRICT_PRESERVE'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 
 -- Resource
