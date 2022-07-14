@@ -681,7 +681,7 @@ update ModifierArguments set Value = 2 where Name = 'Amount' and
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 
 delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
-
+update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_SIMULTANEUM';
 
 -- 陈又
 -- POLICY_RATIONALISM

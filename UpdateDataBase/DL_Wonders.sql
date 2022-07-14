@@ -58,54 +58,158 @@ update Buildings set Cost = 2000 where BuildingType = 'BUILDING_SYDNEY_OPERA_HOU
 update Buildings set Cost = 2000 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION';
 
 -- Adjust basic yield
-insert or replace into Building_YieldChanges
+with Building_YieldChanges_Pre
 	(BuildingType,								YieldType,			YieldChange)
-values
-	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		4),
+as (values
+	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		2),
 	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
 	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
 	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		1),
 	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_PRODUCTION',	1),
 	('BUILDING_PETRA',							'YIELD_FOOD',		1),
 	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
-	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		5),
+	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		6),
 	('BUILDING_TERRACOTTA_ARMY',				'YIELD_CULTURE',	2),
 	('BUILDING_HUEY_TEOCALLI',					'YIELD_FAITH',		2),
 	('BUILDING_APADANA',						'YIELD_CULTURE',	1),
-	('BUILDING_HALICARNASSUS_MAUSOLEUM',		'YIELD_CULTURE',	2),
+	('BUILDING_APADANA',						'YIELD_GOLD',		3),
+	('BUILDING_HALICARNASSUS_MAUSOLEUM',		'YIELD_PRODUCTION',	1),
+	('BUILDING_HALICARNASSUS_MAUSOLEUM',		'YIELD_CULTURE',	1),
+	('BUILDING_MAHABODHI_TEMPLE',				'YIELD_FAITH',		2),
+	('BUILDING_JEBEL_BARKAL',					'YIELD_PRODUCTION',	1),
+	('BUILDING_JEBEL_BARKAL',					'YIELD_FAITH',		1),
+	('BUILDING_COLOSSUS',						'YIELD_PRODUCTION',	1),
 	('BUILDING_ALHAMBRA',						'YIELD_PRODUCTION',	4),
 	('BUILDING_CHICHEN_ITZA',					'YIELD_CULTURE',	2),
 	('BUILDING_CHICHEN_ITZA',					'YIELD_FAITH',		2),
 	('BUILDING_ANGKOR_WAT',						'YIELD_FOOD',		2),
 	('BUILDING_ANGKOR_WAT',						'YIELD_FAITH',		2),
-	('BUILDING_KILWA_KISIWANI',					'YIELD_GOLD',		6),
-	('BUILDING_KOTOKU_IN',						'YIELD_FAITH',		5),
-	('BUILDING_MONT_ST_MICHEL',					'YIELD_FAITH',		5),
+	('BUILDING_KILWA_KISIWANI',					'YIELD_GOLD',		12),
+	('BUILDING_GREAT_ZIMBABWE',					'YIELD_GOLD',		12),
+	('BUILDING_MACHU_PICCHU',					'YIELD_FOOD',		2),
+	('BUILDING_MACHU_PICCHU',					'YIELD_PRODUCTION', 2),
+	('BUILDING_KOTOKU_IN',						'YIELD_CULTURE',	2),
+	('BUILDING_KOTOKU_IN',						'YIELD_FAITH',		2),
+	('BUILDING_MONT_ST_MICHEL',					'YIELD_FAITH',		4),
 	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_CULTURE',	2),
 	('BUILDING_MEENAKSHI_TEMPLE',				'YIELD_FAITH',		2),
 	('BUILDING_UNIVERSITY_SANKORE',				'YIELD_SCIENCE',	5),
-	('BUILDING_VENETIAN_ARSENAL',				'YIELD_PRODUCTION',	3),
-	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_GOLD',		8),
-	('BUILDING_ST_BASILS_CATHEDRAL',			'YIELD_FAITH',		6),
+	('BUILDING_VENETIAN_ARSENAL',				'YIELD_PRODUCTION',	4),
+	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_GOLD',		6),
+	('BUILDING_CASA_DE_CONTRATACION',			'YIELD_PRODUCTION',	2),
+	('BUILDING_FORBIDDEN_CITY',					'YIELD_CULTURE',	4),
+	('BUILDING_ST_BASILS_CATHEDRAL',			'YIELD_FAITH',		4),
 	('BUILDING_TAJ_MAHAL',						'YIELD_CULTURE',	2),
 	('BUILDING_TAJ_MAHAL',						'YIELD_FAITH',		2),
-	('BUILDING_POTALA_PALACE',					'YIELD_CULTURE',	3),
-	('BUILDING_POTALA_PALACE',					'YIELD_FAITH',		3),
+	('BUILDING_POTALA_PALACE',					'YIELD_CULTURE',	2),
+	('BUILDING_POTALA_PALACE',					'YIELD_FAITH',		2),
+	('BUILDING_TORRE_DE_BELEM',					'YIELD_GOLD',		12),
 	('BUILDING_RUHR_VALLEY',					'YIELD_PRODUCTION',	6),
+	('BUILDING_BIG_BEN',						'YIELD_PRODUCTION',	3),
+	('BUILDING_BIG_BEN',						'YIELD_GOLD',		9),
+	('BUILDING_ORSZAGHAZ',						'YIELD_CULTURE',	6),
 	('BUILDING_HERMITAGE',						'YIELD_CULTURE',	8),
 	('BUILDING_HERMITAGE',						'YIELD_FAITH',		8),
 	('BUILDING_BOLSHOI_THEATRE',				'YIELD_CULTURE',	6),
 	('BUILDING_OXFORD_UNIVERSITY',				'YIELD_SCIENCE',	6),
-	('BUILDING_STATUE_LIBERTY',					'YIELD_GOLD',		8),
-	('BUILDING_EIFFEL_TOWER',					'YIELD_CULTURE',	8),
-	('BUILDING_BROADWAY',						'YIELD_CULTURE',	5),
-	('BUILDING_BROADWAY',						'YIELD_GOLD',		5),
-	('BUILDING_CRISTO_REDENTOR',				'YIELD_FAITH',		4),
-	('BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION','YIELD_SCIENCE',	8),
-	('BUILDING_GOLDEN_GATE_BRIDGE',				'YIELD_GOLD',		12),
-	('BUILDING_BIOSPHERE',						'YIELD_FOOD',		3),
-	('BUILDING_BIOSPHERE',						'YIELD_PRODUCTION',	3),
-	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	3);
+	('BUILDING_STATUE_LIBERTY',					'YIELD_CULTURE',	2),
+	('BUILDING_STATUE_LIBERTY',					'YIELD_GOLD',		12),
+	('BUILDING_PANAMA_CANAL',					'YIELD_GOLD',		18),
+	('BUILDING_EIFFEL_TOWER',					'YIELD_CULTURE',	6),
+	('BUILDING_BROADWAY',						'YIELD_CULTURE',	6),
+	('BUILDING_CRISTO_REDENTOR',				'YIELD_FAITH',		8),
+	('BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION','YIELD_SCIENCE',	6),
+	('BUILDING_GOLDEN_GATE_BRIDGE',				'YIELD_GOLD',		18),
+	('BUILDING_BIOSPHERE',						'YIELD_FOOD',		2),
+	('BUILDING_BIOSPHERE',						'YIELD_PRODUCTION',	2),
+	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	2),
+	('BUILDING_SYDNEY_OPERA_HOUSE',				'YIELD_CULTURE',	6),
+
+	('BUILDING_ITSUKUSHIMA',					'YIELD_CULTURE',	1),
+	('BUILDING_BAMYAN',							'YIELD_FAITH',		1),
+	('BUILDING_BAMYAN',							'YIELD_GOLD',		3),
+	('BUILDING_BOROBUDUR',						'YIELD_CULTURE',	1),
+	('BUILDING_LEANING_TOWER',					'YIELD_SCIENCE',	2),
+	('BUILDING_LEANING_TOWER',					'YIELD_FAITH',		2),
+	('BUILDING_UFFIZI',							'YIELD_CULTURE',	2),
+	('BUILDING_UFFIZI',							'YIELD_GOLD',		6),
+	('BUILDING_SUK_WAT_ARUN',					'YIELD_CULTURE',	5),
+	('BUILDING_PORCELAIN_TOWER',				'YIELD_SCIENCE',	4),
+	('BUILDING_TOWER_BRIDGE',					'YIELD_PRODUCTION',	4),
+	('BUILDING_TOWER_BRIDGE',					'YIELD_GOLD',		6),
+	('WON_CL_EMPIRE_STATES',					'YIELD_PRODUCTION',	4),
+	('WON_CL_EMPIRE_STATES',					'YIELD_GOLD',		6),
+	('BUILDING_MOTHERLAND_CALLS',				'YIELD_PRODUCTION',	4),
+	('BUILDING_MOTHERLAND_CALLS',				'YIELD_CULTURE',	4),
+	('BUILDING_THREE_GORDES_DAM',				'YIELD_PRODUCTION',	4),
+	('BUILDING_THREE_GORDES_DAM',				'YIELD_FOOD',		4),
+	('BUILDING_BURJ_KHALIFA',					'YIELD_GOLD',		18),
+	('CL_BUILDING_CN_TOWER',					'YIELD_GOLD',		18),
+	('WON_CL_BUILDING_ARECIBO',					'YIELD_SCIENCE',	6))
+insert or replace into Building_YieldChanges
+	(BuildingType,	YieldType,	YieldChange)
+select
+	BuildingType,	YieldType,	YieldChange
+from Building_YieldChanges_Pre where BuildingType in (select BuildingType from Buildings);
+with Building_YieldChangesBonusWithPower_Pre
+	(BuildingType,								YieldType,			YieldChange)
+as (values
+	('BUILDING_EIFFEL_TOWER',					'YIELD_CULTURE',	2),
+	('BUILDING_TOWER_BRIDGE',					'YIELD_GOLD',		6),
+	('BUILDING_GOLDEN_GATE_BRIDGE',				'YIELD_GOLD',		6),
+	('BUILDING_BROADWAY',						'YIELD_CULTURE',	2),
+	('WON_CL_EMPIRE_STATES',					'YIELD_GOLD',		6),
+
+	('BUILDING_BURJ_KHALIFA',					'YIELD_GOLD',		12),
+	('BUILDING_BIOSPHERE',						'YIELD_SCIENCE',	4),
+	('CL_BUILDING_CN_TOWER',					'YIELD_CULTURE',	4),
+	('BUILDING_SYDNEY_OPERA_HOUSE',				'YIELD_CULTURE',	4),
+	('BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION','YIELD_SCIENCE',	4),
+	('WON_CL_BUILDING_ARECIBO',					'YIELD_SCIENCE',	4))
+insert or replace into Building_YieldChangesBonusWithPower
+	(BuildingType,	YieldType,	YieldChange)
+select
+	BuildingType,	YieldType,	YieldChange
+from Building_YieldChangesBonusWithPower_Pre where BuildingType in (select BuildingType from Buildings);
+insert or ignore into Buildings_XP2 (BuildingType) select BuildingType from Buildings where BuildingType in (
+	'NAT_WONDER_CL_THEMEPARK',
+	'NAT_WONDER_CL_THEMEPARK_INTERNAL',
+	'NAT_WON_CL_FINANCE',
+	'NAT_WON_CL_FINANCE_INTERNAL',
+	'BUILDING_EIFFEL_TOWER', 
+	'BUILDING_TOWER_BRIDGE',
+	'BUILDING_GOLDEN_GATE_BRIDGE',
+	'BUILDING_BROADWAY',
+	'WON_CL_EMPIRE_STATES',
+
+	'NAT_WON_CL_AIRPORT',
+	'NAT_WON_CL_AIRPORT_INTERNAL',
+	'BUILDING_BURJ_KHALIFA',
+	'BUILDING_BIOSPHERE',
+	'CL_BUILDING_CN_TOWER',
+	'BUILDING_SYDNEY_OPERA_HOUSE',
+	'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION',
+	'WON_CL_BUILDING_ARECIBO'
+);
+update Buildings_XP2 set RequiredPower = 3 where BuildingType in (
+	'NAT_WONDER_CL_THEMEPARK',
+	'NAT_WONDER_CL_THEMEPARK_INTERNAL',
+	'NAT_WON_CL_FINANCE',
+	'NAT_WON_CL_FINANCE_INTERNAL',
+	'BUILDING_EIFFEL_TOWER',
+	'BUILDING_TOWER_BRIDGE',
+	'BUILDING_GOLDEN_GATE_BRIDGE',
+	'BUILDING_BROADWAY',
+	'WON_CL_EMPIRE_STATES');
+update Buildings_XP2 set RequiredPower = 6 where BuildingType in (
+	'NAT_WON_CL_AIRPORT',
+	'NAT_WON_CL_AIRPORT_INTERNAL',
+	'BUILDING_BURJ_KHALIFA',
+	'BUILDING_BIOSPHERE',
+	'CL_BUILDING_CN_TOWER',
+	'BUILDING_SYDNEY_OPERA_HOUSE',
+	'BUILDING_AMUNDSEN_SCOTT_RESEARCH_STATION',
+	'WON_CL_BUILDING_ARECIBO');
 
 -- Enable Wonders on Mountain
 insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
@@ -136,7 +240,7 @@ values
 -- Oracle
 update ModifierArguments set Value = 6 where ModifierId like 'ORACLE_GREAT%POINTS' and Name = 'Amount';
 
--- Temple of Artemis does not affect empty camp.
+-- Temple of Artemis
 delete from ImprovementModifiers where (ImprovementType = 'IMPROVEMENT_PLANTATION' and ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
@@ -229,8 +333,22 @@ values
 
 -- Great Zimbabwe
 update Buildings set AdjacentResource = null, AdjacentImprovement = 'IMPROVEMENT_PASTURE', PrereqTech = 'TECH_APPRENTICESHIP' where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
-update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_DOMESTICBONUSRESOURCEGOLD' and Name = 'Amount';
-update ModifierArguments set Value = 3 where ModifierId = 'GREAT_ZIMBABWE_INTERNATIONALBONUSRESOURCEGOLD' and Name = 'Amount';
+delete from BuildingModifiers where BuildingType = 'BUILDING_GREAT_ZIMBABWE';
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_GREAT_ZIMBABWE',		'GREAT_ZIMBABWE_BONUS_GOLD_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,														SubjectRequirementSetId)
+values
+	('GREAT_ZIMBABWE_BONUS_GOLD_ATTACH',	'MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',						'GREAT_ZIMBABWE_REQUIREMENRS'),
+	('GREAT_ZIMBABWE_BONUS_GOLD',			'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	null);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('GREAT_ZIMBABWE_BONUS_GOLD_ATTACH',	'ModifierId',	'GREAT_ZIMBABWE_BONUS_GOLD'),
+	('GREAT_ZIMBABWE_BONUS_GOLD',			'YieldType',	'YIELD_GOLD'),
+	('GREAT_ZIMBABWE_BONUS_GOLD',			'Amount',		2);
 
 -- Broadway
 update ModifierArguments set Value = 30 where ModifierId = 'BROADWAY_ADDCULTUREYIELD' and Name = 'Amount';
@@ -393,7 +511,32 @@ values
 	('HANGING_GARDEN_ADDFOOD',		'Amount',		10);
 
 -- Jebel Barkal
-update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+update Buildings set RegionalRange = 0 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_MINE_PRODUCTION'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_MINE_FAITH'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_QUARRY_PRODUCTION'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_QUARRY_FAITH');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,								SubjectRequirementSetId)
+values
+	('ARTEMIS_MINE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_WITH_6_TILES'),
+	('ARTEMIS_MINE_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_WITH_6_TILES'),
+	('ARTEMIS_QUARRY_PRODUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_QUARRY_WITH_6_TILES'),
+	('ARTEMIS_QUARRY_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_QUARRY_WITH_6_TILES');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('ARTEMIS_MINE_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
+	('ARTEMIS_MINE_PRODUCTION',		'Amount',		1),
+	('ARTEMIS_MINE_FAITH',			'YieldType',	'YIELD_FAITH'),
+	('ARTEMIS_MINE_FAITH',			'Amount',		1),
+	('ARTEMIS_QUARRY_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('ARTEMIS_QUARRY_PRODUCTION',	'Amount',		1),
+	('ARTEMIS_QUARRY_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('ARTEMIS_QUARRY_FAITH',		'Amount',		1);
 
 -- Cristo Redentor
 insert or replace into BuildingModifiers
@@ -418,6 +561,7 @@ values
 
 -- Machu Picchu
 update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = null where BuildingType = 'BUILDING_MACHU_PICCHU';
+delete from Building_YieldChanges where BuildingType = 'BUILDING_MACHU_PICCHU' and YieldType = 'YIELD_GOLD';
 insert or replace into BuildingModifiers
 	(BuildingType,				ModifierId)
 values
@@ -825,7 +969,7 @@ update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_ESTADIO_DO
 insert into Building_YieldChangesBonusWithPower
 	(BuildingType,						YieldType,			YieldChange)
 values
-	('BUILDING_ESTADIO_DO_MARACANA',	'YIELD_CULTURE',	6);
+	('BUILDING_ESTADIO_DO_MARACANA',	'YIELD_GOLD',		12);
 insert into Buildings_XP2
 	(BuildingType,						RequiredPower,	EntertainmentBonusWithPower)
 values

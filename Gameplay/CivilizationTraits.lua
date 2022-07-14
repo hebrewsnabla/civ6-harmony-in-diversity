@@ -452,7 +452,6 @@ Events.ImprovementAddedToMap.Add(ImprovementAddedToMap);
 function CavalryKurganFaith (killedPlayerId, killedUnitId, playerId, unitId)
 	local player = Players[killedPlayerId];
 	local unit = UnitManager.GetUnit(killedPlayerId, killedUnitId);
-	local promotionNum = 0;
 	for row in GameInfo.UnitPromotions() do
 		if (row.PromotionClass == 'PROMOTION_CLASS_LIGHT_CAVALRY') or (row.PromotionClass == 'PROMOTION_CLASS_HEAVY_CAVALRY') then
 			if unit:GetExperience():HasPromotion(row.Index) then

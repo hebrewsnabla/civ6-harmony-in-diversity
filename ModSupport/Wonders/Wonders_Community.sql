@@ -1,39 +1,40 @@
-----------------------------------------------------------------------------------------------------------------
-------support some Comunity Wonder and update its effect (also unlock civ&tech and cost)------------------------
---(By xiaoyu)
-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+------support some Comunity Wonder and update its effect , unlock civ&tech and cost------
+-----------------------------------------------------------------------------------------
 
---BUILDING_ABU_SIMBEL
-UPDATE Buildings SET  ObsoleteEra = 'ERA_MEDIEVAL', PrereqTech = 'TECH_CALENDAR_HD', PrereqCivic = Null
-WHERE BuildingType = 'BUILDING_ABU_SIMBEL' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_ABU_SIMBEL');--xhh
-
+-- Abu Simbel
+update Buildings set ObsoleteEra = 'ERA_MEDIEVAL', PrereqTech = 'TECH_CALENDAR_HD', PrereqCivic = null where BuildingType = 'BUILDING_ABU_SIMBEL';
+delete from BuildingModifiers where BuildingType = 'BUILDING_ABU_SIMBEL' and ModifierId = 'ABU_SIMBEL_LOYALTY';
 insert or replace into Modifiers
-	(ModifierId,							ModifierType)
+	(ModifierId,							ModifierType,							SubjectRequirementSetId)
 values
-	('HD_ABU_GRANARY_ATTACH',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER'),
-	('HD_ABU_GRANARY_MODIFIER',				'MODIFIER_BUILDING_YIELD_CHANGE');
-
+	('ABU_SIMBEL_PLATATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_PLANTATION_WITH_5_TILES'),
+	('ABU_SIMBEL_FARM_FOOD',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_FARM_WITH_5_TILES'),
+	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_LUMBER_MILL_WITH_5_TILES');
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
-	('HD_ABU_GRANARY_ATTACH',				'ModifierId',		'HD_ABU_GRANARY_MODIFIER'),
-	('HD_ABU_GRANARY_MODIFIER',				'BuildingType',		'BUILDING_GRANARY'),
-	('HD_ABU_GRANARY_MODIFIER',				'YieldType',		'YIELD_FOOD'),
-	('HD_ABU_GRANARY_MODIFIER',				'Amount',			1);
-
-insert or replace into BuildingModifiers (BuildingType, ModifierId)
-select BuildingType,						'HD_ABU_GRANARY_ATTACH'
-from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL';
+	('ABU_SIMBEL_PLATATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('ABU_SIMBEL_PLATATION_FOOD',			'Amount',			1),
+	('ABU_SIMBEL_FARM_FOOD',				'YieldType',		'YIELD_FOOD'),
+	('ABU_SIMBEL_FARM_FOOD',				'Amount',			1),
+	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'YieldType',		'YIELD_FOOD'),
+	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'Amount',			1);
+with M (ModifierId) as (values
+	('ABU_SIMBEL_PLATATION_FOOD'),
+	('ABU_SIMBEL_FARM_FOOD'),
+	('ABU_SIMBEL_LUMBER_MILL_FOOD'))
+insert or replace into BuildingModifiers
+	(BuildingType,				ModifierId)
+select
+	'BUILDING_ABU_SIMBEL',		ModifierId
+from M where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL');
 
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
 UPDATE Buildings set ObsoleteEra = 'ERA_MODERN', PrereqTech = 'TECH_PHYSICS_HD', PrereqCivic = Null, PrereqDistrict = NULL, AdjacentDistrict = 'DISTRICT_HARBOR'
 WHERE BuildingType = 'BUILDING_LEANING_TOWER' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_LEANING_TOWER');
 delete from Building_YieldChanges where BuildingType = 'BUILDING_LEANING_TOWER';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_LEANING_TOWER', 'YIELD_SCIENCE', 4 from Buildings where BuildingType = 'BUILDING_LEANING_TOWER';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_LEANING_TOWER', 'YIELD_FAITH', 2 from Buildings where BuildingType = 'BUILDING_LEANING_TOWER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_TRAINED_UNIT_XP_MODIFIER';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_ENHANCEDLATETOURISM';
 delete from BuildingModifiers where ModifierId = 'LEANING_TOWER_HARBOR_DISTRICT_GOLD';
@@ -135,10 +136,6 @@ UPDATE Buildings SET ObsoleteEra = 'ERA_MODERN'
 WHERE BuildingType = 'BUILDING_UFFIZI' AND EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType ='BUILDING_UFFIZI');
 delete from BuildingModifiers where ModifierId = 'UFFIZI_ART_MUSEUM_CULTURE_MODIFIER';
 
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_UFFIZI', 'YIELD_CULTURE', 4 from Buildings where BuildingType = 'BUILDING_UFFIZI';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_UFFIZI', 'YIELD_GOLD', 4 from Buildings where BuildingType = 'BUILDING_UFFIZI';
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
 select	'BUILDING_UFFIZI', 'UFFIZI_CITY_GOLD'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_UFFIZI');
@@ -326,18 +323,8 @@ update Buildings set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where BuildingType
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_THEATER_COAST_CULTURE' and Name = 'TilesRequired';
 update ModifierArguments set Value = 1 where ModifierId = 'ITSUKUSHIMA_HOLY_SITE_COAST_FAITH' and Name = 'Amount';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ITSUKUSHIMA' and ModifierId = 'ITSUKUSHIMA_GRANT_MONUMENT';
-insert or replace into Building_YieldChanges (BuildingType,	YieldType,	YieldChange) select
-	'BUILDING_ITSUKUSHIMA',	'YIELD_CULTURE',	3
-where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ITSUKUSHIMA');
-
---BUILDING_BURJ_KHALIFA
-update Building_YieldChanges set YieldChange = 15 where BuildingType = 'BUILDING_BURJ_KHALIFA' and YieldType = 'YIELD_GOLD';
 
 --BUILDING_TOWER_BRIDGE
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_TOWER_BRIDGE', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_TOWER_BRIDGE', 'YIELD_GOLD', 4 from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE';
 delete from BuildingModifiers where BuildingType = 'BUILDING_TOWER_BRIDGE'
 	and (ModifierId = 'TOWER_BRIDGE_GRANT_COAL_PER_TURN' or ModifierId = 'TOWER_BRIDGE_CITIES_PRODUCTION' or ModifierId = 'TOWER_BRIDGE_CITIES_GOLD');
 
@@ -649,10 +636,6 @@ select
 where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 -- CL_BUILDING_CN_TOWER
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'CL_BUILDING_CN_TOWER', 'YIELD_GOLD', 6 from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'CL_BUILDING_CN_TOWER', 'YIELD_CULTURE', 4 from Buildings where BuildingType = 'CL_BUILDING_CN_TOWER';
 delete from BuildingModifiers where BuildingType = 'CL_BUILDING_CN_TOWER' and ModifierId != 'CL_GRANT_BROADCAST';
 -- update Buildings set AdjacentDistrict = NULL where BuildingType = 'CL_BUILDING_CN_TOWER';
 
@@ -787,18 +770,10 @@ update Building_GreatWorks set
 where BuildingType ='BUILDING_AL_STPETERSBASILICA' and GreatWorkSlotType = 'GREATWORKSLOT_CATHEDRAL';
 
 -- WON_CL_EMPIRE_STATES
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'WON_CL_EMPIRE_STATES', 'YIELD_GOLD', 8 from Buildings where BuildingType = 'WON_CL_EMPIRE_STATES';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'WON_CL_EMPIRE_STATES', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'WON_CL_EMPIRE_STATES';
 update Buildings set PrereqCivic = 'CIVIC_SUFFRAGE' where BuildingType = 'WON_CL_EMPIRE_STATES';
 update ModifierArguments set Value = 300 where ModifierId = 'EMPIRE_CITY_WONDER_TOURISM' and Name = 'ScalingFactor';
 
 -- 三峡大坝
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_THREE_GORDES_DAM', 'YIELD_FOOD', 4 from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM';
-insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
-select 'BUILDING_THREE_GORDES_DAM', 'YIELD_PRODUCTION', 4 from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM';
 insert or replace into BuildingModifiers (BuildingType, ModifierId) select
 	'BUILDING_THREE_GORDES_DAM', 'THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD'
 from Buildings where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM');
@@ -818,8 +793,9 @@ values
 	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
 	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'Amount',		1);
 
--- WON_CL_BUILDING_ARECIBO
-update Building_YieldChanges set YieldChange = 8 where BuildingType = 'WON_CL_BUILDING_ARECIBO' and YieldType = 'YIELD_SCIENCE';
+
+-- Buddhas of Bamyan
+delete from Building_YieldChanges where BuildingType = 'BUILDING_BAMYAN' and YieldType = 'YIELD_CULTURE';
 
 -- Cost adjust
 update Buildings set Cost = 180 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';

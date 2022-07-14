@@ -12,8 +12,8 @@ values
 	('NAT_WONDER_CL_COLLEGE',				'BUILDING_LIBRARY'),
 	('NAT_WONDER_CL_COLLEGE_INTERNAL',		'BUILDING_LIBRARY');
 	-- 修改本体产出
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
-update Building_YieldChanges set YieldChange = 6 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
+update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
+update Building_YieldChanges set YieldChange = 4 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
 update Building_GreatPersonPoints set PointsPerTurn = 6 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
 update Building_GreatPersonPoints set PointsPerTurn = 6 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
 	-- 修改特效
@@ -71,6 +71,13 @@ values
 	-- 修改本体产出
 delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC' and YieldType = 'YIELD_PRODUCTION';
 delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL' and YieldType = 'YIELD_PRODUCTION';
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,			YieldChange)
+values
+	('NAT_WONDER_CL_NATIONALEPIC',			'YIELD_CULTURE',	2),
+	('NAT_WONDER_CL_NATIONALEPIC',			'YIELD_FAITH',		2),
+	('NAT_WONDER_CL_NATIONALEPIC_INTERNAL',	'YIELD_CULTURE',	2),
+	('NAT_WONDER_CL_NATIONALEPIC_INTERNAL',	'YIELD_FAITH',		2);
 delete from Building_GreatWorks where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
 delete from Building_GreatWorks where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
 	-- 修改特效
@@ -338,10 +345,15 @@ values
 update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
 update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
 	-- 修改本体产出
-update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-update Building_YieldChanges set YieldType = 'YIELD_CULTURE' where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
-update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE'  where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE'  where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+insert or replace into Building_YieldChanges
+	(BuildingType,							YieldType,			YieldChange)
+values
+	('NAT_WONDER_CL_THEMEPARK',				'YIELD_CULTURE',	3),
+	('NAT_WONDER_CL_THEMEPARK',				'YIELD_GOLD',		9),
+	('NAT_WONDER_CL_THEMEPARK_INTERNAL',	'YIELD_CULTURE',	3),
+	('NAT_WONDER_CL_THEMEPARK_INTERNAL',	'YIELD_GOLD',		9);
+update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE', YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Building_YieldChangesBonusWithPower set YieldType = 'YIELD_CULTURE', YieldChange = 2 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
 
 	-- 修改特效
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_THEMEPARK'
