@@ -373,6 +373,7 @@ values
     ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'LeaderType',       'LEADER_MINOR_CIV_INDUSTRIAL'),
     ('REQUIRES_PLAYER_HAS_BUILDING_RCC_OR_WPH',	'RequirementSetId',	'PLAYER_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS');
 
+/*
 insert or replace into AllianceEffects
     (LevelRequirement,      AllianceType,             ModifierID)
 values
@@ -400,7 +401,7 @@ values
     (1,                     'ALLIANCE_RESEARCH',      'ALLIANCE_ADD_SCIENCE_TO_DESTINATION_TRADE_ROUTE_RCC'),
     (2,                     'ALLIANCE_RESEARCH',      'ALLIANCE_RESEARCH_AGREEMENT_RCC'),
     (3,                     'ALLIANCE_RESEARCH',      'ALLIANCE_SCIENCE_SHARING_FROM_ALLY_RCC');
-
+*/
 insert or replace into Modifiers
     (ModifierId,	                                        ModifierType,                                           SubjectRequirementSetId)
 values

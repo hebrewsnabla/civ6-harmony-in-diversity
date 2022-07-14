@@ -55,13 +55,11 @@ values
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER',			'MAGNUS_FASTER_BUILDING_CONSTRUCTION'),
 	-- ('GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS',		'SURPLUS_LOGISTICS_TRADE_ROUTE_PRODUCTION'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER',			'MAGNUS_ADJUST_CITY_YIELD'),
-	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',			'MAGNUS_PLACEHOLDER'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_FOOD_REGIONAL_STACKING'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_GOLD_REGIONAL_STACKING'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_SCIENCE_REGIONAL_STACKING'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_CULTURE_REGIONAL_STACKING'),
 	('GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION',	'VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING');
-
 insert or replace into Modifiers
 	(ModifierId,													ModifierType)
 values
@@ -77,8 +75,7 @@ values
 	('VERTICAL_INTEGRATION_GOLD_REGIONAL_STACKING',					'MODIFIER_CITY_ADJUST_ALLOWED_INCOMING_REGIONAL_STACKING'),
 	('VERTICAL_INTEGRATION_SCIENCE_REGIONAL_STACKING',				'MODIFIER_CITY_ADJUST_ALLOWED_INCOMING_REGIONAL_STACKING'),
 	('VERTICAL_INTEGRATION_CULTURE_REGIONAL_STACKING',				'MODIFIER_CITY_ADJUST_ALLOWED_INCOMING_REGIONAL_STACKING'),
-	('VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING',				'MODIFIER_CITY_ADJUST_ALLOWED_INCOMING_REGIONAL_STACKING');
-
+	('VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING',				'MODIFIER_CITY_ADJUST_ALLOWED_INCOMING_REGIONAL_STACKING');	
 insert or replace into ModifierArguments
 	(ModifierId,										Name,				Value)
 values
@@ -99,7 +96,84 @@ values
 	('VERTICAL_INTEGRATION_SCIENCE_REGIONAL_STACKING',	'YieldType',		'YIELD_SCIENCE'),
 	('VERTICAL_INTEGRATION_CULTURE_REGIONAL_STACKING',	'YieldType',		'YIELD_CULTURE'),
 	('VERTICAL_INTEGRATION_FAITH_REGIONAL_STACKING',	'YieldType',		'YIELD_FAITH');
-
+create temporary table HD_MagnusRegionalEffects (
+	DistrictType text not null,
+	YieldType text not null,
+	OwnerRequirementSetId text,
+	AttachModifierId text,
+	ModifierId text,
+	primary key (DistrictType, YieldType, OwnerRequirementSetId)
+);
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,				OwnerRequirementSetId,											YieldType)
+values
+	('DISTRICT_GOVERNMENT',		'NULL',															'YIELD_FOOD'),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_1_BUILDING_REQUIREMENTS',	'YIELD_FOOD'),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_2_BUILDING_REQUIREMENTS',	'YIELD_FOOD'),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_3_BUILDING_REQUIREMENTS',	'YIELD_FOOD');
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,						OwnerRequirementSetId,									YieldType)
+select
+	'DISTRICT_DIPLOMATIC_QUARTER',		'NULL',													'YIELD_CULTURE'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,						OwnerRequirementSetId,									YieldType)
+select
+	'DISTRICT_DIPLOMATIC_QUARTER',		'CITY_HAS_' || BuildingType || '_REQUIREMENTS',			'YIELD_CULTURE'
+from Buildings where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and TraitType is null;
+-- Culture / Science buffs are also given by Government Plaza when Diplomatic Quater is not enabled.
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,	OwnerRequirementSetId,	YieldType)
+select
+	DistrictType,	OwnerRequirementSetId,	'YIELD_CULTURE'
+from HD_MagnusRegionalEffects where YieldType = 'YIELD_FOOD' and not exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+-- Replace text
+update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION' where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST' and exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+-- Copy buffs
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,	OwnerRequirementSetId,	YieldType)
+select
+	DistrictType,	OwnerRequirementSetId,	'YIELD_PRODUCTION'
+from HD_MagnusRegionalEffects where YieldType = 'YIELD_FOOD';
+insert or replace into HD_MagnusRegionalEffects
+	(DistrictType,	OwnerRequirementSetId,	YieldType)
+select
+	DistrictType,	OwnerRequirementSetId,	'YIELD_SCIENCE'
+from HD_MagnusRegionalEffects where YieldType = 'YIELD_CULTURE';
+-- Name Modifiers
+update HD_MagnusRegionalEffects set ModifierId = 'MAGNUS_' || DistrictType || '_' || YieldType || '_' || OwnerRequirementSetId;
+update HD_MagnusRegionalEffects set AttachModifierId = ModifierId || '_ATTACH';
+update HD_MagnusRegionalEffects set OwnerRequirementSetId = null where OwnerRequirementSetId = 'NULL';
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,										ModifierId)
+select
+	'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST',		AttachModifierId
+from HD_MagnusRegionalEffects;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,								SubjectRequirementSetId)
+select
+	AttachModifierId,	'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
+from HD_MagnusRegionalEffects;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	AttachModifierId,	'ModifierId',	ModifierId
+from HD_MagnusRegionalEffects;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,										OwnerRequirementSetId,	SubjectRequirementSetId)
+select
+	ModifierId,			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	OwnerRequirementSetId,	'HD_OBJECT_WITHIN_8_TILES'
+from HD_MagnusRegionalEffects;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'YieldType',	YieldType
+from HD_MagnusRegionalEffects;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	ModifierId,			'Amount',		1
+from HD_MagnusRegionalEffects;
 -----------------------------------------------------------------------------------------------------------------------------------
 
 -- Reyna
@@ -626,6 +700,7 @@ values
 -- 市立公园：就职时一环全产出+1，可以修在泛滥平原上。
 delete from ImprovementModifiers where ModifierId = 'CITY_PARK_WATER_AMENITY';
 delete from ImprovementModifiers where ModifierId = 'CITY_PARK_GOVERNOR_CULTURE';
+update Improvements set PrereqCivic = null where ImprovementType = 'IMPROVEMENT_CITY_PARK';
 
 insert or replace into ImprovementModifiers
 	(ImprovementType,											ModifierID)

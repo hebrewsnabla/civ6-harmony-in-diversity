@@ -51,6 +51,8 @@ values
     ("LOC_DIPLOMATIC_QUATER_SCIENCE",								    "+{1_num} [ICON_SCIENCE] Science from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_DIPLOMATIC_QUATER_CULTURE",								    "+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_DIPLOMATIC_QUATER_PRODUCTION",								"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
+	("LOC_NEIGHBORHOOD_FAITH",											"+{1_num} [ICON_FAITH] Faith from the adjacent Neighborhood {1_Num : plural 2?tile; other?tiles;}."),
+	("LOC_PRESERVE_FAITH",											    "+{1_num} [ICON_FAITH] Faith from the adjacent Preserve {1_Num : plural 2?tile; other?tiles;}."),
 -- 社区
     ("LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",                      "A district for urban activities. Gives Housing according to the tile’s appeal.[NEWLINE]Breathtaking: +5 [ICON_HOUSING] Housing.[NEWLINE]Charming: +4 [ICON_HOUSING] Housing.[NEWLINE]Average: +3 [ICON_HOUSING] Housing.[NEWLINE]Unappealing: +2 [ICON_HOUSING] Housing.[NEWLINE]Disgusting: +1 [ICON_HOUSING] Housing."),
     ("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "A district unique to the Congo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith.");
@@ -108,6 +110,8 @@ values
     ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_SCIENCE",								    "+{1_num} [ICON_SCIENCE] 科技值来自相邻的外交区。"),
     ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_CULTURE",								    "+{1_num} [ICON_CULTURE] 文化值自相邻的外交区。"),
     ("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_PRODUCTION",									"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的外交区。"),
+	("zh_Hans_CN",	"LOC_NEIGHBORHOOD_FAITH",											"+{1_num} [ICON_FAITH] 信仰值来自相邻的社区。"),
+	("zh_Hans_CN",	"LOC_PRESERVE_FAITH",											    "+{1_num} [ICON_FAITH] 信仰值来自相邻的保护区。"),
 -- 社区
     ("zh_Hans_CN",  "LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",                      "您城市里的市民活动区域。基于单元格的魅力提供住房，情况如下：[NEWLINE]惊艳的：+5 [ICON_HOUSING] 住房。[NEWLINE]迷人的：+4 [ICON_HOUSING] 住房。[NEWLINE]普通的：+3 [ICON_HOUSING] 住房。[NEWLINE]无吸引力的：+2 [ICON_HOUSING] 住房。[NEWLINE]令人厌恶的：+1 [ICON_HOUSING] 住房。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_MBANZA_HD_DESCRIPTION",                            "刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_Production] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。");

@@ -1016,7 +1016,6 @@
     <UpdateDatabase id="HD_Governors" criteria="Expansion2">
       <Properties><LoadOrder>15606</LoadOrder></Properties>
       <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
-      <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
     </UpdateDatabase>
     <UpdateText id="HD_Governors_text" criteria="Expansion2">
       <Properties><LoadOrder>15606</LoadOrder></Properties>
@@ -1746,7 +1745,6 @@
     <File>SubMods/GovernorsDiversity/Governors_Interface.xml</File>
     <File>SubMods/GovernorsDiversity/Governors_Interface.lua</File>
     <File>SubMods/GovernorsDiversity/HD_Governors.sql</File>
-    <!-- <File>SubMods/GovernorsDiversity/GD_support.sql</File> -->
     <File>SubMods/GovernorsDiversity/HD_Text_Governors.sql</File>
     <!-- Medieval Pirate -->
     <File>SubMods/MedievalPirate/DL_Database.sql</File>
