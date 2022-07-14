@@ -35,12 +35,12 @@ values
 	('DISTRICT_COMMERCIAL_HUB',			'HD_Commercial_Canal_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',			'HD_Commercial_Luxury_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',			'District_Gold_Hansa'),
-	('DISTRICT_COMMERCIAL_HUB',			'District_Gold_City_Center'),
+	--('DISTRICT_COMMERCIAL_HUB',			'District_Gold_City_Center'),
 	('DISTRICT_HARBOR',					'HD_Harbor_City_Gold'),
 	('DISTRICT_HARBOR',					'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',				'District_Culture_City_Center'),
-	('DISTRICT_ENCAMPMENT',				'Strategic_Production2'),
 	('DISTRICT_AQUEDUCT',				'Aqueduct_self_food'),
+	('DISTRICT_ENCAMPMENT',				'HD_Strategic_Production'),
 	('DISTRICT_ENCAMPMENT',				'Government_Production'),
 	('DISTRICT_ENCAMPMENT',				'Aerodrome_Industrial_Production'),
 	('DISTRICT_ENCAMPMENT',				'Roman_Fort_Production'),
@@ -49,6 +49,9 @@ values
 	('DISTRICT_ENCAMPMENT',				'Mountain_Tunnel_Production'),
 	('DISTRICT_ENCAMPMENT',				'Missle_Silo_Production'),
 	('DISTRICT_ENCAMPMENT',				'Maori_Pa_Production'),
+	('DISTRICT_HOLY_SITE',				'Forest_Standard_Faith'),
+	('DISTRICT_HOLY_SITE',				'Neighborhood_Faith'),
+	('DISTRICT_HOLY_SITE',				'Mbanza_Faith'),
 	-- UD
 	('DISTRICT_BATH',					'Aqueduct_self_food'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'District_Gold_Industrial_Zone'),
@@ -75,6 +78,11 @@ insert or replace into District_Adjacencies
 select
 	'DISTRICT_ENCAMPMENT',				'Station_Production'
 where exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_LEU_STATION');
+insert or replace into District_Adjacencies
+	(DistrictType,						YieldChangeId)
+select
+	'DISTRICT_HOLY_SITE',				'Preserve_Faith'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 -- UD supports
 insert or ignore into District_Adjacencies 
 	(DistrictType,				YieldChangeId)
@@ -86,6 +94,9 @@ from (District_Adjacencies a inner join DistrictReplaces b on a.DistrictType = b
 delete from District_Adjacencies where DistrictType = 'DISTRICT_ACROPOLIS' and YieldChangeId = 'District_Culture_City_Center';
 delete from District_Adjacencies where DistrictType = 'DISTRICT_OPPIDUM' and YieldChangeId in
 	('Strategic_Production', 'HD_Mine_HalfProduction', 'HD_Quarry_HalfProduction', 'HD_Quarry_Production');
+delete from District_Adjacencies where DistrictType = 'DISTRICT_HOLY_SITE' and YieldChangeId = 'Forest_Faith';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_LAVRA' and YieldChangeId = 'Forest_Standard_Faith';
+update Adjacency_YieldChanges set YieldChange = 3 where ID = 'NaturalWonder_Faith';
 
 -- Adjacency definition
 -- Habor & Commercial
@@ -107,7 +118,7 @@ insert or replace into Adjacency_YieldChanges
 	(ID,									Description,					YieldType,	YieldChange,	TilesRequired,	AdjacentDistrict)
 values
 	('HD_Harbor_City_Gold',					'LOC_DISTRICT_CITY_CENTER_GOLD',			'YIELD_GOLD',		2,	1,	'DISTRICT_CITY_CENTER'),
-	('District_Gold_City_Center',			'LOC_DISTRICT_GOLD_CITY_CENTER',			'YIELD_GOLD',		1,	1,	'DISTRICT_CITY_CENTER'),
+	--('District_Gold_City_Center',			'LOC_DISTRICT_GOLD_CITY_CENTER',			'YIELD_GOLD',		1,	1,	'DISTRICT_CITY_CENTER'),
 	('District_Culture_Double_City_Center',	'LOC_DISTRICT_CULTURE_DOUBLE_CITY_CENTER',	'YIELD_CULTURE',	2,	1,	'DISTRICT_CITY_CENTER');
 
 insert or replace into Adjacency_YieldChanges
@@ -172,6 +183,19 @@ select
 from Districts where DistrictType = 'DISTRICT_HARBOR' or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
 
+-- Holy Site
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description,					YieldType,		YieldChange,	AdjacentFeature,	AdjacentDistrict)
+values
+	('Forest_Standard_Faith',		'LOC_DISTRICT_FOREST_FAITH',	'YIELD_FAITH',	1,				'FEATURE_FOREST',	null),
+	('Neighborhood_Faith',			'LOC_NEIGHBORHOOD_FAITH',		'YIELD_FAITH',	2,				null,				'DISTRICT_NEIGHBORHOOD'),
+	('Mbanza_Faith',				'LOC_NEIGHBORHOOD_FAITH',		'YIELD_FAITH',	2,				null,				'DISTRICT_MBANZA');
+insert or replace into Adjacency_YieldChanges
+	(ID,							Description,					YieldType,		YieldChange,	AdjacentDistrict)
+select
+	'Preserve_Faith',				'LOC_PRESERVE_FAITH',			'YIELD_FAITH',	1,				'DISTRICT_PRESERVE'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
+
 -- Resource
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,	YieldType, YieldChange, TilesRequired, PrereqTech, ObsoleteTech, AdjacentResource)
@@ -192,7 +216,7 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,				YieldChange,	AdjacentResourceClass)
 values
-	('Strategic_Production2',			'LOC_DISTRICT_STRATEGIC_PRODUCTION2',			'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC');
+	('HD_Strategic_Production',			'LOC_DISTRICT_STRATEGIC_PRODUCTION2',			'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC');
 
 -- MBZ
 insert or replace into Adjacency_YieldChanges

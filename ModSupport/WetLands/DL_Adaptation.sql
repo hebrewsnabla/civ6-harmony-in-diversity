@@ -299,3 +299,13 @@ insert or replace into Improvement_ValidResources
     (ImprovementType,               ResourceType,           MustRemoveFeature)
 values
     ('IMPROVEMENT_JNR_REED_HOME',   'RESOURCE_CRABS',       0);
+
+-- 圣地相邻加成
+insert or replace into District_Adjacencies
+	(DistrictType,						YieldChangeId)
+values
+	('DISTRICT_HOLY_SITE',				'Swamp_Faith');
+insert or replace into Adjacency_YieldChanges
+	(ID,				Description,			YieldType,		YieldChange,	AdjacentFeature)
+values
+	('Swamp_Faith',		'LOC_SWAMP_FAITH',		'YIELD_FAITH',	1,				'FEATURE_HD_SWAMP');

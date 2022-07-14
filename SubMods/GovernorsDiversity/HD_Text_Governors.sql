@@ -51,7 +51,8 @@ values
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "Please Ignore"),
     ("LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "This building requires {1_Building}."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "Elected Officer"),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "When the Governor Magnus estabilished in city, the General Service Office of the city can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "Each Government Plaza and Government Plaza building in this city provides +1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Government Plaza."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "Each Government Plaza and Government Plaza building in this city provides +1 [ICON_Food] Food and +1 [ICON_Production] Production to all cities within 8 tiles of the Government Plaza. Each Diplomatic Quater and Diplomatic Quater building in this city provides +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Diplomatic Quater."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "The city receives yields from all nearby District buildings with regional bonuses (not just from the first building of the same type)."),
     -- Liang
     ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "Rural Planning"),
@@ -148,7 +149,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "请忽略"),
     ("zh_Hans_CN",  "LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "该建筑需要{1_Building}。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "总务官"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "总督“马格努斯”就职的城市中的总务厅可为8个单元格之内的城市提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "就职的城市中的市政广场和每个市政广场建筑为市政广场8个单元格之内的城市提供+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "就职的城市中的每个市政广场和市政广场建筑为市政广场8个单元格内的城市提供+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。每个外交区和外交区建筑为外交区8个单元格内的城市提供 +1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "此城市可从附近所有拥有区域辐射效果的建筑中获得 [ICON_Food] 食物、 [ICON_Production] 生产力、 [ICON_Gold] 金币、 [ICON_FAITH] 信仰、 [ICON_Science] 科技值和 [ICON_Culture] 文化值，而不仅是从相同类型的建筑中首个建成的建筑处获得。"),
     -- 梁
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "乡村规划"),

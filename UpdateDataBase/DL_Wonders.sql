@@ -64,7 +64,8 @@ values
 	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		4),
 	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
 	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
-	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		6),
+	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		1),
+	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_PRODUCTION',	1),
 	('BUILDING_PETRA',							'YIELD_FOOD',		1),
 	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
 	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		5),
@@ -136,16 +137,24 @@ values
 update ModifierArguments set Value = 6 where ModifierId like 'ORACLE_GREAT%POINTS' and Name = 'Amount';
 
 -- Temple of Artemis does not affect empty camp.
-insert or replace into RequirementSets
-	(RequirementSetId,									RequirementSetType)
+delete from ImprovementModifiers where (ImprovementType = 'IMPROVEMENT_PLANTATION' and ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
 values
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'REQUIREMENTSET_TEST_ALL');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,									RequirementId)
+	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_PASTURE_FOOD'),
+	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_CAMP_FOOD');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,								SubjectRequirementSetId)
 values
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'PLOT_HAS_RESOURCE_REQUIREMENTS'),
-	('TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS',	'REQUIRES_PLOT_HAS_ARTEMIS_WITHIN_4');
-update Modifiers set SubjectRequirementSetId = 'TEMPLE_ARTEMIS_AND_HAS_RESOURCE_REQUIREMENTS' where ModifierId = 'TEMPLE_ARTEMIS_CAMP_AMENITY';
+	('ARTEMIS_PASTURE_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_PASTURE_WITH_4_TILES'),
+	('ARTEMIS_CAMP_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_CAMP_WITH_4_TILES');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('ARTEMIS_PASTURE_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('ARTEMIS_PASTURE_FOOD',		'Amount',		1),
+	('ARTEMIS_CAMP_FOOD',			'YieldType',	'YIELD_FOOD'),
+	('ARTEMIS_CAMP_FOOD',			'Amount',		1);
 
 -- Petra
 update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';

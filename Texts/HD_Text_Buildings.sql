@@ -74,7 +74,7 @@ values
     ("LOC_BUILDING_BANK_DESCRIPTION",                             "+5% [ICON_gold] Gold in this city."),
     ("LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "+5% [ICON_gold] Gold in this city. +5% [ICON_GOLD] Gold if the city is fully powered."),
     -- Harbor
-    ("LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food on all Coast and Lake tiles for this city. +1 [ICON_TradeRoute] Trade Route capacity."), -- each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls
+    ("LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "+25% combat experience for all naval units trained in this city. +1 [ICON_Food] Food to all Coast and Lake tiles in this city. +1 [ICON_GOLD] Gold to all Fishery tiles in this city. +1 [ICON_TradeRoute] Trade Route capacity."), -- each [ICON_Resource_Fish] Fish, [ICON_Resource_Crabs] Crabs, [ICON_Resource_Whales] Whales, [ICON_Resource_Pearls] Pearls
     ("LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION",              "+25% combat experience for all naval units trained in this city. Bonus [ICON_Production] Production equal to adjacency bonus of the Harbor district. +1 [ICON_Production] Production on all Coast and Lake tiles for this city. +25% [ICON_PRODUCTION] production towards all naval units."),
     ("LOC_BUILDING_SEAPORT_DESCRIPTION",                          "+25% combat experience for all naval units trained in this city. Allows Fleets and Armadas to be trained directly. Fleet and Armada training costs reduced by 25%. +2 [ICON_GOLD] Gold on all Coast tiles for this city. Bonus [ICON_FOOD] Food equal to adjacency bonus of the Harbor district.[NEWLINE]+10% accumulation rate for [ICON_GREATADMIRAL] Great Admiral Points. +3 [ICON_STRENGTH] Combat Strength for all navy units trained in this city."),
     -- Government
@@ -97,9 +97,9 @@ values
     ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "Receive one Spy and +1 Spy capacity. +1 [ICON_VISLIMITED] Visibility level on all other Civs. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. Your Spy units can choose from any possible promotion. +50% [ICON_PRODUCTION] toward Spies in all Cities. +3 Influence Points per turn. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "Regional Council Centre"),
-    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus from alliances."),
+    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn."),-- Double bonus from alliances.
     ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "World Parliament Headquarters"),
-    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "Building unique to America. +1 Wildcard Policy Slot. +3 Dipolomatic Victory Point. +50% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus from alliances. If you are the suzerain of at least 3 City States of the same type, all of your cities receive +10% of the respective yield."),
+    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "Building unique to America. +1 Wildcard Policy Slot. +3 Dipolomatic Victory Point. +50% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. If you are the suzerain of at least 3 City States of the same type, all of your cities receive +10% of the respective yield."),-- Double bonus from alliances.
     ("LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "American unique building: World Parliament Headquarters"),
     -- Entertainment Complex
     ("LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
@@ -130,10 +130,10 @@ values
     ("LOC_BUILDING_HD_INN_NAME",                                  "Inn"),
     ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "Each type of improved Textile or Lumber resource provides +1 Influence point. +0.25 extra Alliance Point with all allies.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
     -- Dam
-    ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
+    ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. ");
     -- Governor Building
-    ("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
-    ("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When the Governor Magnus with the Promotion ""General Services Officer"" is estabilished in this city, the General Service Office can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles (this city included). Can only construct when Governor Magnus with General Services Officer Title is established within 8 tiles.");
+    --("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
+    --("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When the Governor Magnus with the Promotion ""General Services Officer"" is estabilished in this city, the General Service Office can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles (this city included). Can only construct when Governor Magnus with General Services Officer Title is established within 8 tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -211,7 +211,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STOCK_EXCHANGE_DESCRIPTION",                   "本城 [ICON_GOLD] 金币+5%。通电后额外为本城+5% [ICON_GOLD] 金币。"),
     -- 港口
-    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有近海和湖泊单元格+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。"), -- [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠
+    ("zh_Hans_CN",  "LOC_BUILDING_LIGHTHOUSE_EXPANSION2_DESCRIPTION",            "此城生产的所有海军单位+25%战斗经验值。此城的所有近海和湖泊单元格+1 [ICON_Food] 食物。此城的所有渔场+1 [ICON_GOLD] 金币。+1 [ICON_TradeRoute] 贸易路线容量。"), -- [ICON_Resource_Fish] 鱼、 [ICON_Resource_Crabs] 螃蟹、 [ICON_Resource_Whales] 鲸鱼、 [ICON_Resource_Pearls] 珍珠
     ("zh_Hans_CN",  "LOC_BUILDING_SHIPYARD_EXPANSION2_DESCRIPTION",              "此城中生产的所有海军单位+25%战斗经验值。[ICON_Production] 生产力加成等于港口区域的相邻加成。此城所有海岸和湖泊单元格提供的 [ICON_PRODUCTION] 生产力+1。对所有海军单位+25% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEAPORT_DESCRIPTION",                          "此城中生产的所有海军单位+25%经验值。可直接生产舰队和无敌舰队。舰队和无敌舰队的生产费用降低25%。此城所有海岸单元格产出的 [ICON_GOLD] 金币+2。额外产出相当于港口相邻加成的 [ICON_FOOD] 食物。 [NEWLINE]玩家的 [ICON_GREATADMIRAL] 海军将领点数积累速度+10%，且所有训练的海军单位+3 [ICON_STRENGTH] 战斗力。"),
     -- 政府区
@@ -233,9 +233,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%。获得1名 [ICON_Envoy] 使者。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]获得一个间谍并+1间谍容量。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有间谍行动的成功率上升。间谍执行任务的时间缩短25%，您的间谍可以选择任何可用升级。所有城市训练间谍时+50% [ICON_PRODUCTION] 生产力。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "区域议会中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。"),--来自同盟的收益翻倍。
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "世界议会总部"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的收益翻倍。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),--来自同盟的收益翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "美国特色建筑：世界议会总部"),
     -- 娱乐区
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
@@ -268,8 +268,8 @@ values
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
-    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。"),
+    --("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
+    --("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。"),
     -- 保护区
     ("zh_Hans_CN",  "LOC_BUILDING_GROVE_NAME",                                   "古树林"),
     ("zh_Hans_CN",  "LOC_BUILDING_GROVE_DESCRIPTION",                            "相邻的森林、雨林、沼泽、绿洲单元格+1 [ICON_FOOD] 食物、+1 [ICON_CULTURE] 文化值，若这些单元格上有资源，则收益翻倍。相邻的陆地类自然奇观+2 [ICON_FOOD] 食物、+2 [ICON_CULTURE] 文化值。"),

@@ -6,6 +6,12 @@ insert or replace into Improvement_YieldChanges
 	(ImprovementType,					YieldType,		YieldChange)
 values
 	('IMPROVEMENT_OUTBACK_STATION',		'YIELD_FOOD',	0);
+insert or replace into Improvement_ValidTerrains
+	(ImprovementType,					TerrainType,				PrereqTech)
+values
+	('IMPROVEMENT_OUTBACK_STATION',		'TERRAIN_GRASS_HILLS',		'TECH_MACHINERY'),
+	('IMPROVEMENT_OUTBACK_STATION',		'TERRAIN_PLAINS_HILLS',		'TECH_MACHINERY'),
+	('IMPROVEMENT_OUTBACK_STATION',		'TERRAIN_DESERT_HILLS',		'TECH_MACHINERY');
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_PASTURE' and YieldChangeId = 'Pasture_Outback_Production';
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_MASS_PRODUCTION' where ID = 'Outback_Pasture_Food';
 update Adjacency_YieldChanges set PrereqTech = null, ObsoleteTech = 'TECH_MACHINERY' where ID = 'Outback_Outback_Production';
