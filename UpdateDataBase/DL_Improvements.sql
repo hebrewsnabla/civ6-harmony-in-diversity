@@ -94,7 +94,7 @@ values
 	(703,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_SCIENCE',		2,					null,							'TECH_REFINING');
 
 -- Adjacency Yield
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' or ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
 	or (ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River')
