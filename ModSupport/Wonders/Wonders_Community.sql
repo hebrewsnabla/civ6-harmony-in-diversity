@@ -726,14 +726,13 @@ from Building_GreatPersonPoints where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into Building_GreatWorks
 	(BuildingType,			GreatWorkSlotType,	NumSlots,	ThemingUniquePerson,	ThemingYieldMultiplier,	ThemingTourismMultiplier,	ThemingBonusDescription)
 select
-	BuildingType || '_HD', 	GreatWorkSlotType,	3,			1,						100,					100,						'LOC_BUILDING_THEMINGBONUS_YELLOW_CRANE_HD'
+	BuildingType || '_HD', 	GreatWorkSlotType,	2,			1,						100,					100,						'LOC_BUILDING_THEMINGBONUS_YELLOW_CRANE_HD'
 from Building_GreatWorks where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into Building_YieldChanges
 	(BuildingType,					YieldType,			YieldChange)
 select
 	BuildingType || '_HD',			'YIELD_CULTURE',	2
 from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
--- update Buildings set InternalOnly = 1
 delete from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into GlobalParameters (Name, Value) values ('YELLOW_CRANE_TOWER_POINT_PERCENTAGE', 15);
 insert or replace into BuildingModifiers
