@@ -94,7 +94,7 @@ values
 	(703,	'IMPROVEMENT_OFFSHORE_OIL_RIG',			'YIELD_SCIENCE',		2,					null,							'TECH_REFINING');
 
 -- Adjacency Yield
-delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MAHAVIHARA' or ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
 	or (ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River')
@@ -170,7 +170,7 @@ values
 	('Mahavihara_Seowon_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
 	('Mahavihara_Holy_Site_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
 	('Mahavihara_Lavra_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_NEIGHBORHOOD',	null,					null),
+	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
 	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
