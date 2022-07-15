@@ -170,7 +170,7 @@ values
 	('Mahavihara_Seowon_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
 	('Mahavihara_Holy_Site_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
 	('Mahavihara_Lavra_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_NEIGHBORHOOD',	null,					null),
+	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
 	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
