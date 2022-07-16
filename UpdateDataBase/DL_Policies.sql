@@ -72,22 +72,25 @@ values
 	('COMMEMORATION_WONDER_FAITH',				'Amount',		1),
 	('COMMEMORATION_WONDER_EXTRA_DISTRICT',		'Amount',		1);
 -- Exodus of the Evangelists
-delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_RELIGIOUS' and ModifierId = 'COMMEMORATION_RELIGIOUS_GA_GREAT_PROPHET_POINTS';
+delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_RELIGIOUS' and (ModifierId = 'COMMEMORATION_RELIGIOUS_GA_GREAT_PROPHET_POINTS' or ModifierId = 'COMMEMORATION_RELIGIOUS_GA_CHARGES');
 insert or replace into CommemorationModifiers
 	(CommemorationType,					ModifierId)
 values
-	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS');
+	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_FAITH'),
+	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_CHHARGE');
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,											OwnerRequirementSetId)
 values
-	('COMMEMORATION_RELIGIOUS',					'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE');
+	('COMMEMORATION_RELIGIOUS_FAITH',			'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE'),
+	('COMMEMORATION_RELIGIOUS_CHHARGE',			'MODIFIER_PLAYER_UNITS_RELIGIOUS_SPREADS',				'PLAYER_HAS_GOLDEN_AGE');
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
-	('COMMEMORATION_RELIGIOUS',					'BeliefYieldType',		'BELIEF_YIELD_PER_FOREIGN_CITY'),
-	('COMMEMORATION_RELIGIOUS',					'PerXItems',			1),
-	('COMMEMORATION_RELIGIOUS',					'YieldType',			'YIELD_FAITH'),
-	('COMMEMORATION_RELIGIOUS',					'Amount',				6);
+	('COMMEMORATION_RELIGIOUS_FAITH',			'BeliefYieldType',		'BELIEF_YIELD_PER_FOREIGN_CITY'),
+	('COMMEMORATION_RELIGIOUS_FAITH',			'PerXItems',			1),
+	('COMMEMORATION_RELIGIOUS_FAITH',			'YieldType',			'YIELD_FAITH'),
+	('COMMEMORATION_RELIGIOUS_FAITH',			'Amount',				6),
+	('COMMEMORATION_RELIGIOUS_CHHARGE',			'Amount',				2);
 -- New Commemoration: Enlightened Despotism
 insert or replace into Types
 	(Type,								Kind)
