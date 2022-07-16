@@ -11,9 +11,40 @@ local m_GovernorMerchantHash = GameInfo.Governors['GOVERNOR_THE_MERCHANT'].Hash
 local m_GovernorPromotion_MultinationalCorpID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Index
 local m_GovernorPromotion_MultinationalCorpHash = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'].Hash
 local m_CivicExploration = GameInfo.Civics['CIVIC_EXPLORATION'].Index
-
+local m_GovernorAmbassadorID = GameInfo.Governors['GOVERNOR_THE_AMBASSADOR'].Index
+local m_GovernorPromotion_TributumID = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR'].Index
 local m_LiangWonderGreatEngineerPercentage = GlobalParameters.LIANG_WONDER_GREAT_ENGINEER_PERCENTAGE
 local m_ReynaConvertPercentage = GlobalParameters.REYNA_CONVERT_PERCENTAGE
+
+function isMinor(player)
+    if player == nil then
+        return false
+    end
+    if player:IsMajor() or player:IsBarbarian() or player:IsFreeCities() then
+        return false
+    end
+    return true
+end
+
+function AmbassadorTributumEnvoy(playerID, eGovernor, ePromotion)
+    local player = Players[playerID]
+    -- print(playerID, ambassadorID, tributumID, 'e', eGovernor, ePromotion)
+    if player ~= nil then
+        if (m_GovernorAmbassadorID == eGovernor) and (m_GovernorPromotion_TributumID == ePromotion) then
+            local playersMetIDs = player:GetDiplomacy():GetPlayersMetIDs()
+            if playersMetIDs ~= nil then
+                for _, id in ipairs(playersMetIDs) do
+                    local other_player = Players[id]
+                    if isMinor(other_player) then
+                        -- Utils.SendEnvoy(playerID, id)
+                        GameEvents.SendEnvoytoCityState.Call(playerID, id)
+                    end
+                end
+            end
+        end
+    end
+end
+Events.GovernorPromoted.Add(AmbassadorTributumEnvoy);
 
 function WonderToGreatEngineerPoints(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)
     --print(iX, iY, buildingID, playerID, cityID, iPercentComplete, iUnknown)

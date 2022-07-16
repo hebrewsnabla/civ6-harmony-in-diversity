@@ -118,7 +118,7 @@ values
 	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE', 	'YieldType',    'YIELD_SCIENCE'),
 	('MINOR_CIV_HATTUSA_STRATEGIC_RESOURCE_SCIENCE', 	'Amount',    	1);
 
---Fez
+-- Fez
 delete from TraitModifiers where TraitType = 'MINOR_CIV_FEZ_TRAIT' and ModifierId = 'MINOR_CIV_FEZ_UNIQUE_INFLUENCE_BONUS';
 insert or replace into TraitAttachedModifiers
 	(TraitType,					ModifierId)
@@ -267,7 +267,7 @@ values
 	('MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0',		'YieldType',		'YIELD_CULTURE'),	
 	('MINOR_CIV_VILNIUS_UNIQUE_INFLUENCE_ALLIANCE_LEVEL_0',		'Amount',			50);
 
---Nan Madol
+-- Nan Madol
 update Modifiers set SubjectRequirementSetId = 'NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST' where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS';
 update ModifierArguments set Value = 1 where ModifierId = 'MINOR_CIV_NAN_MADOL_DISTRICTS_CULTURE_BONUS' and Name = 'Amount';
 
