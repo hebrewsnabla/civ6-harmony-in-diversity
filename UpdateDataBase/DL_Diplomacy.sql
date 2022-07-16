@@ -79,3 +79,32 @@ values
     ('STANDARD_DIPLOMATIC_SAME_RELIGION',			'SimpleModifierDescription',    'LOC_DIPLO_MODIFIER_INTOLERANT_SAME'),
 	('STANDARD_DIPLOMATIC_ENCROACHING_RELIGION',	'InitialValue',                 -4),
     ('STANDARD_DIPLOMATIC_ENCROACHING_RELIGION',	'SimpleModifierDescription',    'LOC_DIPLO_MODIFIER_INTOLERANT_ENCROACHING');
+*/
+
+insert or replace into AllianceEffects
+    (LevelRequirement,      AllianceType,             ModifierID)
+values
+	(1,                     'ALLIANCE_MILITARY',      'ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE'),
+    (1,                     'ALLIANCE_MILITARY',      'ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE');
+
+insert or replace into Modifiers
+    (ModifierId,	                                            ModifierType,                                           SubjectRequirementSetId)
+values
+	('ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE',       	'MODIFIER_ALLIANCE_TRADE_ROUTE_ADJUST_YIELD',           'ROUTE_BETWEEN_ALLIES_REQUIREMENTS'),
+    ('ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE',  	'MODIFIER_ALLIANCE_TRADE_ROUTE_ADJUST_YIELD',           'ROUTE_BETWEEN_ALLIES_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+    (ModifierId,	                                        	Name,	                Value)
+values
+	('ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE',           'Amount',               2),
+    ('ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE',         	'YieldType',            'YIELD_PRODUCTION'),
+    ('ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE',         	'AffectOrigin',         1),
+    ('ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE',    	'Amount',               1),
+    ('ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE',    	'YieldType',            'YIELD_PRODUCTION'),
+    ('ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE',    	'AffectDestination',    1);
+
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('ALLIANCE_ADD_PRODUCTION_TO_ORIGIN_TRADE_ROUTE',			'Summary',				'LOC_ALLIANCE_LV1_MILITARY_EFFECT_2'),
+	('ALLIANCE_ADD_PRODUCTION_TO_DESTINATION_TRADE_ROUTE',		'Summary',				'LOC_ALLIANCE_LV1_MILITARY_EFFECT_3');

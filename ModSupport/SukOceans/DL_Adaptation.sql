@@ -65,7 +65,8 @@ values  ('SUK_OCEANS_AQUARIUM_KELP_REQUIREMENTS',                   'REQUIRES_PL
 
 INSERT INTO Resource_ValidFeatures
         (ResourceType,				FeatureType)
-VALUES	('RESOURCE_SUK_ABALONE',	'FEATURE_REEF');
+select	ResourceType,	            'FEATURE_REEF'
+from Resources where ResourceType = 'RESOURCE_SUK_CAVIAR';
 
 -- 水族馆适配 xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_KELP_FOREST_SCIENCE';

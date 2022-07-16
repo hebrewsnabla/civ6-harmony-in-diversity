@@ -253,3 +253,70 @@ function ArcherForCityState ()
 	end
 end
 Events.TurnBegin.Add(ArcherForCityState);
+
+-- Record Resources on Map
+HD_MapResourcesArray = {};
+HD_MapResourcesNum = 0;
+
+function HDvIn(tbl, value)
+    if tbl == nil then
+        return false
+    end
+    for k, v in ipairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
+function RecordResourcesOnMap()
+    if (Game.GetCurrentGameTurn() == 1) then
+        HD_MapResourcesArray = {};
+        HD_MapResourcesNum = 0;
+        local iW, iH;
+	    iW, iH = Map.GetGridSize();
+        for x = 0, iW - 1 do
+            for y = 0, iH - 1 do
+                local i = y * iW + x;
+                local pPlot = Map.GetPlotByIndex(i);
+                if (pPlot ~= nil) then
+                    local iResourceType = pPlot:GetResourceType();
+                    if (iResourceType ~= nil and iResourceType ~= -1) then
+                        local iResource = GameInfo.Resources[iResourceType];
+                        if (iResource ~= nil and iResource.ResourceClassType ~= 'RESOURCECLASS_ARTIFACT') then
+                            
+                            if (HDvIn(HD_MapResourcesArray, iResource.ResourceType) == false) then
+                                HD_MapResourcesArray[HD_MapResourcesNum] = iResource.ResourceType;
+                                HD_MapResourcesNum = HD_MapResourcesNum + 1;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        -- for i = 0, HD_MapResourcesNum - 1 do
+        --     print(HD_MapResourcesArray[i])
+        -- end
+    end
+end
+Events.TurnBegin.Add(RecordResourcesOnMap)
+
+-- Preserve Tier 3
+local iProperty = "HD_MAP_HAS_"
+function PreserveEpoSetProperty(playerID, cityID, buildingID, plotID, bOriginalConstruction)
+    local m_Resource_Epo_table = GameInfo.Buildings['BUILDING_HD_RESOURCE_EPO']
+    local m_Species_Epo_table = GameInfo.Buildings['BUILDING_HD_SPECIES_EPO']
+    if (m_Resource_Epo_table ~= nil and m_Species_Epo_table ~= nil) then
+        local m_Resource_Epo = m_Resource_Epo_table.Index
+        local m_Species_Epo = m_Species_Epo_table.Index
+        if (playerID >= 0 and (buildingID == m_Resource_Epo or buildingID == m_Species_Epo)) then
+            local iPlot = Map.GetPlotByIndex(plotID)
+            for i = 0 , HD_MapResourcesNum - 1 do
+                local iPropertyKey = "" .. iProperty .. HD_MapResourcesArray[i] .. ""
+                iPlot:SetProperty(iPropertyKey, 1)
+            end
+        end
+    end
+end
+GameEvents.BuildingConstructed.Add(PreserveEpoSetProperty)

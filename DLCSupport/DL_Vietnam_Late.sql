@@ -115,8 +115,10 @@ values
     ('BUILDING_HD_CULTURE_HERITAGE_PRESERVE',   'HD_HERITAGE_PRESERVE_WONDER_BREATHTAKING_BONUS_2'),
     ('BUILDING_HD_CULTURE_HERITAGE_PRESERVE',   'HD_HERITAGE_PRESERVE_WONDER_TOURISM'),
 
-    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS'),
-    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS'),
+    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_1'),
+    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_1'),
+    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_2'),
+    ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_2'),
     ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_NATIONAL_PARK_TOURISM'),
     ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_GRANT_UNIT_NATURALIST'),
     ('BUILDING_HD_SCENIC_EPO',                  'HD_SCENIC_EPO_UNIT_NATURALIST_DISCOUNT');
@@ -179,8 +181,10 @@ values
     ('HD_HERITAGE_PRESERVE_WONDER_BREATHTAKING_BONUS_2',            'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',      'HD_PLOT_BREATHTAKING_WONDER',                      NULL),
     ('HD_HERITAGE_PRESERVE_WONDER_TOURISM',                         'MODIFIER_SINGLE_CITY_ADJUST_TOURISM',              NULL,                                               NULL),
 
-    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS',                'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER',          NULL),
-    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS',                 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','CITY_HAS_NATIONAL_PARK_REQUREMENTS',               NULL),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_1',              'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER',          NULL),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_1',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','CITY_HAS_NATIONAL_PARK_REQUREMENTS',               NULL),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_2',              'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER',          'HD_PLAYER_HAS_ALL_NATURAL_WONDER'),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_2',               'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER','CITY_HAS_NATIONAL_PARK_REQUREMENTS',               'HD_PLAYER_HAS_ALL_NATURAL_WONDER'),
     ('HD_SCENIC_EPO_NATIONAL_PARK_TOURISM',                         'MODIFIER_PLAYER_ADJUST_TOURISM_FROM_NATIONAL_PARKS',NULL,                                              NULL),
     ('HD_SCENIC_EPO_GRANT_UNIT_NATURALIST',                         'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',          NULL,                                               NULL),
     ('HD_SCENIC_EPO_UNIT_NATURALIST_DISCOUNT',                      'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST', NULL,                                               NULL);
@@ -277,10 +281,14 @@ values
     ('HD_HERITAGE_PRESERVE_WONDER_TOURISM',                         'BoostsWonders',1),
     ('HD_HERITAGE_PRESERVE_WONDER_TOURISM',                         'ScalingFactor',200),
 
-    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS',                'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
-    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS',                'Amount',       '5,5,5,5,5,5'),
-    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS',                 'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
-    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS',                 'Amount',       '5,5,5,5,5,5'),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_1',              'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_1',              'Amount',       '5,5,5,5,5,5'),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_1',               'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_1',               'Amount',       '5,5,5,5,5,5'),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_2',              'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+    ('HD_SCENIC_EPO_NATURAL_WONDER_ALL_YIELD_BONUS_2',              'Amount',       '10,10,10,10,10,10'),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_2',               'YieldType',    'YIELD_PRODUCTION, YIELD_FOOD, YIELD_SCIENCE, YIELD_CULTURE, YIELD_GOLD, YIELD_FAITH'),
+    ('HD_SCENIC_EPO_NATIONAL_PARK_ALL_YIELD_BONUS_2',               'Amount',       '10,10,10,10,10,10'),
     ('HD_SCENIC_EPO_NATIONAL_PARK_TOURISM',                         'Amount',       100),
     ('HD_SCENIC_EPO_GRANT_UNIT_NATURALIST',                         'UnitType',     'UNIT_NATURALIST'),
     ('HD_SCENIC_EPO_GRANT_UNIT_NATURALIST',                         'Amount',       1),
@@ -320,243 +328,199 @@ from Improvements where TraitType is not null and TraitType not in ('TRAIT_BARBA
 -------------------------------------------
 -- 三级建筑
     -- 地貌
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_1'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_1', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_1', 'YieldType', 'YIELD_CULTURE'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_1', 'Amount', 5
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_1'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_1', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_1', 'YieldType', 'YIELD_CULTURE'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_1', 'Amount', 5
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_1'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_1', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_1', 'YieldType', 'YIELD_SCIENCE'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_1', 'Amount', 5
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_1'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_1', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_1', 'YieldType', 'YIELD_SCIENCE'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_1', 'Amount', 5
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_2' from Terrains;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || TerrainType from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_2', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_2', 'YieldType', 'YIELD_CULTURE' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_2', 'Amount', 5 from Terrains;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_2'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType, 'HD_PLAYER_HAS_ALL_FEATURES'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_2', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_2', 'YieldType', 'YIELD_CULTURE'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_CULTURE_2', 'Amount', 10
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_2' from Terrains;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || TerrainType from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_2', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_2', 'YieldType', 'YIELD_SCIENCE' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_2', 'Amount', 5 from Terrains;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_2'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType, 'HD_PLAYER_HAS_ALL_FEATURES'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_2', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_2', 'YieldType', 'YIELD_SCIENCE'
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select 'HD_LANDFORM_EPO_' || FeatureType || '_SCIENCE_2', 'Amount', 10
+    from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_3'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_3', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType, 'HD_PLAYER_HAS_ALL_TERRAINS_FEATURES'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_3', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_3', 'YieldType', 'YIELD_CULTURE'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_CULTURE_3', 'Amount', 10
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+    -- 资源
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'YieldType', 'YIELD_SCIENCE'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'Amount', 5
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_3'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_3', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || FeatureType, 'HD_PLAYER_HAS_ALL_TERRAINS_FEATURES'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_3', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_3', 'YieldType', 'YIELD_SCIENCE'
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || FeatureType || '_SCIENCE_3', 'Amount', 10
---     from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'YieldType', 'YIELD_PRODUCTION'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'Amount', 5
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_4' from Terrains;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_4', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || TerrainType, 'HD_PLAYER_HAS_ALL_TERRAINS_FEATURES' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_4', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_4', 'YieldType', 'YIELD_CULTURE' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_CULTURE_4', 'Amount', 10 from Terrains;
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'YieldType', 'YIELD_SCIENCE'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'Amount', 10
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select 'BUILDING_HD_LANDFORM_EPO', 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_4' from Terrains;
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_4', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_' || TerrainType, 'HD_PLAYER_HAS_ALL_TERRAINS_FEATURES' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_4', 'BuildingType', 'BUILDING_HD_LANDFORM_EPO' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_4', 'YieldType', 'YIELD_SCIENCE' from Terrains;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select 'HD_LANDFORM_EPO' || TerrainType || '_SCIENCE_4', 'Amount', 10 from Terrains;
-
---     -- 资源
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'YieldType', 'YIELD_SCIENCE'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'Amount', 5
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
-
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'YieldType', 'YIELD_PRODUCTION'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'Amount', 5
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
-
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'YieldType', 'YIELD_SCIENCE'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'Amount', 10
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
-
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'YieldType', 'YIELD_PRODUCTION'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'Amount', 10
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'YieldType', 'YIELD_PRODUCTION'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'Amount', 10
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
 
 --     -- 物种
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'YieldType', 'YIELD_CULTURE'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'Amount', 5
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'YieldType', 'YIELD_CULTURE'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_1', 'Amount', 5
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'YieldType', 'YIELD_FOOD'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'Amount', 5
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'YieldType', 'YIELD_FOOD'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_1', 'Amount', 5
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'YieldType', 'YIELD_CULTURE'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'Amount', 10
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'YieldType', 'YIELD_CULTURE'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_CULTURE_2', 'Amount', 10
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
 
--- insert or replace into BuildingModifiers (BuildingType, ModifierId)
---     select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'YieldType', 'YIELD_FOOD'
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
---     select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'Amount', 10
---     from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into BuildingModifiers (BuildingType, ModifierId)
+    select distinct 'BUILDING_HD_SPECIES_EPO', 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'BuildingType', 'BUILDING_HD_SPECIES_EPO'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'YieldType', 'YIELD_FOOD'
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+    select distinct 'HD_SPECIES_EPO' || ResourceType || '_FOOD_2', 'Amount', 10
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
 
     -- 名胜
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
@@ -657,7 +621,8 @@ values
     ('HD_PLOT_CHARMING_WONDER',					                    'REQUIREMENTSET_TEST_ALL'),
     ('HD_PLOT_BREATHTAKING_WONDER',					                'REQUIREMENTSET_TEST_ALL'),
 
-    ('HD_PLAYER_HAS_ALL_TERRAINS_FEATURES',					        'REQUIREMENTSET_TEST_ALL'),
+    ('HD_PLAYER_HAS_ALL_FEATURES',					                'REQUIREMENTSET_TEST_ALL'),
+    ('HD_PLAYER_HAS_ALL_NATURAL_WONDER',					        'REQUIREMENTSET_TEST_ALL'),
     ('HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP',					    'REQUIREMENTSET_TEST_ALL'),
     ('HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP',					    'REQUIREMENTSET_TEST_ALL');
 
@@ -852,3 +817,27 @@ insert or ignore into RequirementSetRequirements
 select
     'HD_ADJACENT_UI_OR_WONDER',                                     'REQUIRES_PLOT_ADJACENT_TO_' || ImprovementType
 from Improvements where TraitType is not null and TraitType not in ('TRAIT_BARBARIAN','TRAIT_CIVILIZATION_NO_PLAYER') and TraitType not like 'MINOR_CIV_%_TRAIT';
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+    'HD_PLAYER_HAS_ALL_FEATURES',                                   'REQUIRES_PLAYER_HAS_' || FeatureType
+from Features where FeatureType not in ('FEATURE_BURNING_FOREST','FEATURE_BURNT_FOREST','FEATURE_BURNING_JUNGLE','FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+    'HD_PLAYER_HAS_ALL_NATURAL_WONDER',                             'REQUIRES_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS'
+from Features where NaturalWonder = 1;
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+    'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP',                        'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS'
+from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,												RequirementId)
+select
+    'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP',                        'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS'
+from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');

@@ -256,6 +256,57 @@ insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 	select 'HD_CITY_HAS_' || TerrainType, 'REQUIRES_CITY_HAS_' || TerrainType from Terrains;
 
+-- Player Has Feature
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'FeatureType', FeatureType from Features;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType, 'REQUIREMENT_PLAYER_HAS_FEATURE' from Features;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIREMENTSET_TEST_ALL' from Features;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || FeatureType, 'REQUIRES_PLAYER_HAS_' || FeatureType from Features;
+
+-- Map Not Has Feature
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 1;
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
+	select 'REQUIRES_MAP_NOT_HAS_' || FeatureType, 'REQUIREMENT_MAP_HAS_FEATURE', 1 from Features where NaturalWonder = 1;
+
+-- Player Has or Map Not Has Feature
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS', 'RequirementSetId', 'HD_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS' from Features where NaturalWonder = 1;
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS', 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Features where NaturalWonder = 1;
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS', 'REQUIREMENTSET_TEST_ANY' from Features where NaturalWonder = 1;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS', 'REQUIRES_PLAYER_HAS_' || FeatureType from Features where NaturalWonder = 1;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || FeatureType || '_OR_MAP_NOT_HAS', 'REQUIRES_MAP_NOT_HAS_' || FeatureType from Features where NaturalWonder = 1;
+
+-- Map Not Has Resource for Preserve Tier 3
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'PropertyName', 'HD_MAP_HAS_' || ResourceType from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'PropertyMinimum', 1 from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
+	select 'REQUIRES_MAP_NOT_HAS_' || ResourceType, 'REQUIREMENT_PLOT_PROPERTY_MATCHES', 1 from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+
+-- Player Has or Map Not Has Resource for Preserve Tier 3
+insert or ignore into RequirementArguments (RequirementId, Name, Value)
+	select 'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS', 'RequirementSetId', 'HD_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS' from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+insert or ignore into Requirements (RequirementId, RequirementType)
+	select 'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS', 'REQUIREMENT_REQUIREMENTSET_IS_MET' from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS', 'REQUIREMENTSET_TEST_ANY' from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS', 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS', 'REQUIRES_MAP_NOT_HAS_' || ResourceType from Resources where ResourceClassType != 'RESOURCECLASS_ARTIFACT';
+
 -- 玩家有改良的资源
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'HD_REQUIRES_PLAYER_HAS_IMPROVED_' || ResourceType, 'ResourceType', ResourceType from Resources;

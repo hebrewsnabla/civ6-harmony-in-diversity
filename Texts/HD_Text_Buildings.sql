@@ -4,7 +4,6 @@ insert or replace into EnglishText
     (Tag,                                                         Text)
 values
     -- City Center Buildings
-    --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
     ("LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "Provides +1 Loyalty per turn in this city. If the city already has maximum Loyalty, also provides an additional +1 [ICON_Culture] Culture. After Calendar is researched, provides an additional +1 [ICON_CULTURE] Culture."),
     ("LOC_BUILDING_WALLS_EARLY_NAME",                             "Simple Ancient Wall"),
     ("LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "A building unique to your original capital. A Simple Wall that provides 25 outer defense."),
@@ -97,9 +96,9 @@ values
     ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Encampments. Leveraging City States costs 20% less [ICON_Gold] Gold. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "Receive one Spy and +1 Spy capacity. +1 [ICON_VISLIMITED] Visibility level on all other Civs. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. Your Spy units can choose from any possible promotion. +50% [ICON_PRODUCTION] toward Spies in all Cities. +3 Influence Points per turn. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy. Gain +1 [ICON_ENVOY] Envoy."),
     ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "Regional Council Centre"),
-    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn."),-- Double bonus from alliances.
+    ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus of [ICON_TRADEROUTE] Trade Routes from alliances."),
     ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "World Parliament Headquarters"),
-    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "Building unique to America. +1 Wildcard Policy Slot. +3 Dipolomatic Victory Point. +50% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. If you are the suzerain of at least 3 City States of the same type, all of your cities receive +10% of the respective yield."),-- Double bonus from alliances.
+    ("LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "Building unique to America. +1 Wildcard Policy Slot. +3 Dipolomatic Victory Point. +50% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus of [ICON_TRADEROUTE] Trade Routes from alliances. If you are the suzerain of at least 3 City States of the same type, all of your cities receive +10% of the respective yield."),
     ("LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "American unique building: World Parliament Headquarters"),
     -- Entertainment Complex
     ("LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "Provides 1 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. "),
@@ -130,10 +129,48 @@ values
     ("LOC_BUILDING_HD_INN_NAME",                                  "Inn"),
     ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "Each type of improved Textile or Lumber resource provides +1 Influence point. +0.25 extra Alliance Point with all allies.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
     -- Dam
-    ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. ");
+    ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
     -- Governor Building
     --("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
     --("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When the Governor Magnus with the Promotion ""General Services Officer"" is estabilished in this city, the General Service Office can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles (this city included). Can only construct when Governor Magnus with General Services Officer Title is established within 8 tiles.");
+    -- 保护区
+    ("LOC_BUILDING_GROVE_NAME",                                   "Grove"),
+    ("LOC_BUILDING_GROVE_DESCRIPTION",                            "+1 [ICON_FOOD] Food and +1 [ICON_CULTURE] Culture to adjacent Forest, Rainforest, Marsh or Swamp, and Oasis tiles, doubled if these tiles contain Resources. +2 Food and +2 Culture to Adjacent land Natural Wonder tiles."),
+    ("LOC_BUILDING_HD_MONASTERY_NAME",                            "Monastery"),
+    ("LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "+1 [ICON_FAITH] Faith to adjacent Charming tiles, and additionally +1 [ICON_FAITH] Faith, +1 [ICON_FOOD] Food, and +1 [ICON_SCIENCE] Science to adjacent Breathtaking tiles. If the Preserve District is adjacent to a Mountain or a Mountain Natural Wonder, this bonus is doubled."),
+    ("LOC_BUILDING_HD_HOLYWATERS_NAME",                           "Holy Waters"),
+    ("LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "+1 [ICON_PRODUCTION] Production and +1 [ICON_FAITH] Faith to adjacent Lake or Coast tiles, doubled if these tiles contain Features or Resources. +2 [ICON_PRODUCTION] Production, +1 [ICON_FAITH] Faith, and +1 [ICON_SCIENCE] Science to adjacent Lake or Coast Natural Wonders."),
+    ("LOC_BUILDING_SANCTUARY_NAME",                               "Forest Conservation Department"),
+    ("LOC_BUILDING_SANCTUARY_DESCRIPTION",                        "+1 [ICON_FOOD] Food to all Forest tiles in this city. +1 [ICON_CULTURE] Culture to Resources on Charming Forest tiles in this city. +2 [ICON_CULTURE] Culture to Resrouces on Breathtaking Forest tiles in this city. +1 [ICON_FOOD] Food and +2 [ICON_CULTURE] Culture to Forest Natural Wonder tiles in this city.[NEWLINE][NEWLINE]Can only be built on or adjacent to Forest or Forest Natural Wonder tiles."),
+    ("LOC_BUILDING_HD_JUNGLE_PRESERVE_NAME",                      "Jungle Conservation Department"),
+    ("LOC_BUILDING_HD_JUNGLE_PRESERVE_DESCRIPTION",               "+1 [ICON_PRODUCTION] Production to all Rainforest tiles in this city. +1 [ICON_SCIENCE] Science to Resources on Charming Rainforest tiles in this city. +2 [ICON_SCIENCE] Science to Resources on Breathtaking Rainforest tiles in this city. +1 [ICON_PRODUCTION] Production and +2 [ICON_SCIENCE] Science to Rainforest Natural Wonder tiles in this city.[NEWLINE][NEWLINE]Can only be built on or adjacent to Rainforest or Rainforest Natural Wonder tiles."),
+    ("LOC_BUILDING_HD_WETLANDS_PRESERVE_NAME",                    "Wetlands Conservation"),
+    ("LOC_BUILDING_HD_WETLANDS_PRESERVE_DESCRIPTION",             "+1 [ICON_PRODUCTION] Production to all Floodplain, Marsh or Swamp, and Oasis tiles in this city. +1 [ICON_FOOD] Food to Resources on Charming Floodplain, Marsh or Swamp, and Oasis tiles. +1 [ICON_FOOD] Food and +1 [ICON_SCIENCE] Science to Resrouces on Breattaking Floodplain, Marsh or Swamp, and Oasis tiles in this city. +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_SCIENCE] Science to Wetland Natural Wonder tiles in this city.[NEWLINE][NEWLINE]Can only be built on or adjacent to Floodplain, Marsh, Swamp, Oasis tiles or Wetland Natural Wonder tiles."),
+    ("LOC_BUILDING_HD_WATER_PRESERVE_NAME",                       "Hydrology Conservation Department"),
+    ("LOC_BUILDING_HD_WATER_PRESERVE_DESCRIPTION",                "+1 [ICON_PRODUCTION] Production to all Coast and Lake tiles in this city. +1 [ICON_FOOD] Food to Features and +1 [ICON_CULTURE] Culture to Resources on Coast and Lake tiles. +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture to Lake and Coast Natural Wonder tiles.[NEWLINE][NEWLINE]Can only be built adjacent to Lake and Coast tiles, or Lake and Coast Natural Wonder tiles."),
+    ("LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_NAME",            "Cultural Heriate Conservation Department"),
+    ("LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_DESCRIPTION",     "+1 [ICON_CULTURE] Culture and +2 [ICON_GOLD] Gold to World Wonder or Civilization Unique Improvement tiles with Charming Appeal in this city, doubled if these tiles have Breathtaking Appeal. +100% Tourism generated from World Wonders and Civilization Unique Improvements in this city.[NEWLINE][NEWLINE]Can only be built on tiles adjacent to World Wonder or Civilization Unique Improvement tiles."),
+    ("LOC_BUILDING_HD_LANDFORM_EPO_NAME",                         "Landscape Ecology Protection Agency"),
+    ("LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +5 [ICON_SCIENCE] Science and +5 [ICON_CULTURE] Culture for every type of Feature within your empire (not including Natural Wonders). If you have every type of Feature inside your empire, this bonus is tripled. "),
+    ("LOC_BUILDING_HD_RESOURCE_EPO_NAME",                         "Non-renewable Resources Administration Agency"),
+    ("LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +5 [ICON_PRODUCTION] Production and +5 [ICON_SCIENCE] Science for every type of improved Minearl Resource within your empire. If you have every type of Mineral Resource inside your empire, this bonus is tripled."),
+    ("LOC_BUILDING_HD_SPECIES_EPO_NAME",                          "Species Diversity Conservation Agency"),
+    ("LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "Can only be built once in a civilization. +5 [ICON_FOOD] Food and +5 [ICON_CULTURE] Culture for every type of improved Biological Resource within your empire. If you have every type of Biological Resource inside your empire, this bouns is tripled."),
+    ("LOC_BUILDING_HD_SCENIC_EPO_NAME",                           "Natural Attractions Tourism Agency"),
+    ("LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "Can only be built once in a civilization. Triples the yield of Natural Wonders across your empire. +5% all yields in cities with a Natural Wonder or a National Park, tripled if you have every Natural Wonder inside your empire. Immediately gain a Naturalist. Naturalists are 50% cheaper to purchase with Faith."),
+
+    ("LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_NAME",                "A tier 1 building and proper adjacnecy"),
+    ("LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_DESCRIPTION",         "Preserve District has a tier 1 building and proper adjacnecy."),
+    ("LOC_BUILDING_HD_DUMMY_FOREST_PRESERVE_NAME",                "A tier 1 building and at or adjacent to Forest tiles"),
+    ("LOC_BUILDING_HD_DUMMY_FOREST_PRESERVE_DESCRIPTION",         "Preserve District has a tier 1 building and at or adjacent to Forest tiles."),
+    ("LOC_BUILDING_HD_DUMMY_JUNGLE_PRESERVE_NAME",                "A tier 1 building and at or adjacent to Jungle tiles"),
+    ("LOC_BUILDING_HD_DUMMY_JUNGLE_PRESERVE_DESCRIPTION",         "Preserve District has a tier 1 building and at or adjacent to Jungle tiles."),
+    ("LOC_BUILDING_HD_DUMMY_WETLANDS_PRESERVE_NAME",              "A tier 1 building and at or adjacent to Wetlands tiles"),
+    ("LOC_BUILDING_HD_DUMMY_WETLANDS_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and at or adjacent to Wetlands tiles."),
+    ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_NAME",                 "A tier 1 building and adjacent to Lake or Costal tiles"),
+    ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "Preserve District has a tier 1 building and adjacent to Lake or Costal tiles."),
+    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "A tier 1 building and adjacent to World Wonder or Unique Improvement"),
+    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and adjacent to World Wonder or Unique Improvement.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -141,7 +178,6 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                         Text)
 values
     -- 市中心建筑
-    --市中心改动（训练营，图腾，集市降价65->55）（图腾法典解锁）（工官，凯旋，测量额外产出+1->+2）（坎儿井住房变为基础产出）By Kekeya
     ("zh_Hans_CN",  "LOC_BUILDING_MONUMENT_EXPANSION1_DESCRIPTION",              "使此城每回合的忠诚度+1。如城市忠诚度已达最高，则额外+1 [ICON_Culture] 文化值。研究“历法”科技后，额外+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_NAME",                             "简易远古城墙"),
     ("zh_Hans_CN",  "LOC_BUILDING_WALLS_EARLY_DESCRIPTION",                      "只提供25点外部防御的简易城墙，无法建造，只会被赠送在原始首都。"),
@@ -233,9 +269,9 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。敌方间谍以此城市或拥有军营的城市为目标时，其效力降低一级。征兵花费的 [ICON_GOLD] 金币减少20%。获得1名 [ICON_Envoy] 使者。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。[NEWLINE]获得一个间谍并+1间谍容量。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有间谍行动的成功率上升。间谍执行任务的时间缩短25%，您的间谍可以选择任何可用升级。所有城市训练间谍时+50% [ICON_PRODUCTION] 生产力。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "区域议会中心"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。"),--来自同盟的收益翻倍。
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的 [ICON_TRADEROUTE] 贸易路线收益翻倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "世界议会总部"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),--来自同盟的收益翻倍。
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION", "美国特色建筑。+1通配符政策槽位。+3外交胜利点数。+50%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的 [ICON_TRADEROUTE] 贸易路线收益翻倍。对于每一类城邦，若你是其中至少3个的宗主国，所有城市此类城邦对应的产出+10%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",               "美国特色建筑：世界议会总部"),
     -- 娱乐区
     ("zh_Hans_CN",  "LOC_BUILDING_ARENA_EXPANSION1_DESCRIPTION",                 "拥有“保护地球”市政后提供1点 [ICON_TOURISM] 旅游业绩。"),
@@ -264,7 +300,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_NAME",                               "酒楼"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "本城每拥有一种改良的酿酒资源，本城的区域为它们类型的 [ICON_GREATPERSON] 伟人点数+1。[NEWLINE][NEWLINE]酿酒资源包括："),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_NAME",                                  "客栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每用有一种改良的纺织或木材资源，影响力点数每回合+1，所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每用有一种改良的纺织或木材资源，影响力点数每回合+1且所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑
@@ -288,13 +324,13 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_NAME",            "人文遗产保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_DESCRIPTION",     "本城位于迷人单元格的世界奇观和文明特色改良设施+1 [ICON_CULTURE] 文化值、+2 [ICON_GOLD] 金币；若位于惊艳单元格，则收益翻倍。本城的世界奇观和文明特色改良设施提供的 [ICON_TOURISM] 旅游业绩+100%。[NEWLINE][NEWLINE]只能建造在相邻世界奇观或文明特色改良设施的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_NAME",                         "地貌生态环保专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每拥有一种地形或地貌（不包括自然奇观），则获得+5 [ICON_SCIENCE] 科技值、+5 [ICON_CULTURE] 文化值；如果境内拥有全部的地形和地貌，则该收益翻三倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每拥有一种地貌（不包括自然奇观），则获得+5 [ICON_SCIENCE] 科技值、+5 [ICON_CULTURE] 文化值；如果境内拥有全部的地貌，则该收益翻三倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_RESOURCE_EPO_NAME",                         "不可再生资源管理专局"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每开发一种矿产资源，则获得+5 [ICON_PRODUCTION] 生产力、+5 [ICON_SCIENCE] 科技值；如果境内开发了世界上所有的矿产资源，则该收益翻三倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_SPECIES_EPO_NAME",                          "物种多样性维护专局"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "文明中一次仅限建造一座该建筑。境内每收集一种生物资源，则获得+5 [ICON_FOOD] 食物、+5 [ICON_CULTURE] 文化值；如果境内收集了世界上所有的生物资源，则该收益翻三倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_NAME",                           "自然名胜旅游专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "文明中一次仅限建造一座该建筑。境内的自然奇观提供的产出翻三倍。拥有自然奇观或国家公园的城市+5%所有产出。国家公园提供的 [ICON_TOURISM] 旅游业绩+100%。建成时获得1个自然学家。购买自然学家的费用降低50%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "文明中一次仅限建造一座该建筑。境内的自然奇观提供的产出翻三倍。拥有自然奇观或国家公园的城市+5%所有产出；如果境内拥有世界上所有的自然奇观，则该效果翻三倍。国家公园提供的 [ICON_TOURISM] 旅游业绩+100%。建成时获得1个自然学家。购买自然学家的费用降低50%。"),
 
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_NAME",                "保护区拥有一级建筑，且位于或相邻特定的单元格"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_DESCRIPTION",         "需要该城的保护区位于或相邻特定的地形或地貌单元格，且拥有一级建筑。"),
