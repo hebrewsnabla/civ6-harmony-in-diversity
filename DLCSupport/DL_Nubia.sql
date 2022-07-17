@@ -1,12 +1,6 @@
 -------------------------------------
 --			Nubia DLC			--
 -------------------------------------	
-insert or replace into StartBiasResources 
-	(CivilizationType,		ResourceType,		Tier)
-values
-	('CIVILIZATION_NUBIA',  'RESOURCE_GOLD',	3);
-update StartBiasResources set Tier = 3 where CivilizationType = 'CIVILIZATION_NUBIA';
-
 insert or replace into Improvement_ValidTerrains 
 	(ImprovementType,			TerrainType)
 values

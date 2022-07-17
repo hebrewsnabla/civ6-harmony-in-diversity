@@ -36,18 +36,6 @@ values
 -- values
 --	 ('PLOT_HAS_FARM_RESOURCE_REQUIREMENTS', 'REQUIRES_MAIZE_IN_PLOT');
 
---start bias(camp and pasture resources) for cree
-insert or replace into StartBiasResources
-	(CivilizationType,	  ResourceType,		   Tier)
-values
-	('CIVILIZATION_CREE',   'RESOURCE_HONEY',	   4);
-
-insert or replace into StartBiasResources
-	(CivilizationType,			  ResourceType,		   Tier)
-select
-	'CIVILIZATION_GRAN_COLOMBIA',   ResourceType,		   3
-from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION';
-
 insert or replace into Resource_ValidFeatures
 	(ResourceType,			  FeatureType)
 values

@@ -61,12 +61,6 @@ insert or replace into ModifierArguments
 values
     ('STATUE_OF_ZEUS_INFLUENCE_POINTS',             'Amount',       1);
 
-----start bias for Gaul
-insert or replace into StartBiasResources 
-    (CivilizationType,      ResourceType,           Tier)
-values
-    ('CIVILIZATION_GAUL',  'RESOURCE_GOLD',        2);
-
 insert or replace into Improvement_Adjacencies
     (ImprovementType,               YieldChangeId)
 values

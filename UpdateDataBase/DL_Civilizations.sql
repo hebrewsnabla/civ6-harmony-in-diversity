@@ -1582,7 +1582,6 @@ values
     ('CITY_HAS_BUILDING_RESEARCH_LAB',                  'REQUIRES_CITY_HAS_BUILDING_RESEARCH_LAB');
 
 delete from District_ValidTerrains where DistrictType = 'DISTRICT_SEOWON';
-delete from StartBiasTerrains where CivilizationType = 'CIVILIZATION_KOREA';
 
 ----------------------------------------------------------------------------------------------------------------------
 -- Qin
@@ -1843,8 +1842,6 @@ values
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_HILLS_PURCHASE');
 
 -- Netherlands
-update StartBiasRivers set Tier = 2 where CivilizationType = 'CIVILIZATION_NETHERLANDS';
-update StartBiasTerrains set Tier = 1 where CivilizationType = 'CIVILIZATION_NETHERLANDS' and TerrainType = 'TERRAIN_COAST';
 
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_CAMPUS_RIVER_ADJACENCY';
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_INDUSTRIAL_ZONE_RIVER_ADJACENCY';
