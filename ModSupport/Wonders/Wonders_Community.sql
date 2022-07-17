@@ -9,21 +9,17 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType,							SubjectRequirementSetId)
 values
 	('ABU_SIMBEL_PLATATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_PLANTATION_WITH_5_TILES'),
-	('ABU_SIMBEL_FARM_FOOD',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_FARM_WITH_5_TILES'),
-	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_LUMBER_MILL_WITH_5_TILES');
+	('ABU_SIMBEL_FARM_FOOD',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_FARM_WITH_5_TILES');
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
 	('ABU_SIMBEL_PLATATION_FOOD',			'YieldType',		'YIELD_FOOD'),
 	('ABU_SIMBEL_PLATATION_FOOD',			'Amount',			1),
 	('ABU_SIMBEL_FARM_FOOD',				'YieldType',		'YIELD_FOOD'),
-	('ABU_SIMBEL_FARM_FOOD',				'Amount',			1),
-	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'YieldType',		'YIELD_FOOD'),
-	('ABU_SIMBEL_LUMBER_MILL_FOOD',			'Amount',			1);
+	('ABU_SIMBEL_FARM_FOOD',				'Amount',			1);
 with M (ModifierId) as (values
 	('ABU_SIMBEL_PLATATION_FOOD'),
-	('ABU_SIMBEL_FARM_FOOD'),
-	('ABU_SIMBEL_LUMBER_MILL_FOOD'))
+	('ABU_SIMBEL_FARM_FOOD'))
 insert or replace into BuildingModifiers
 	(BuildingType,				ModifierId)
 select

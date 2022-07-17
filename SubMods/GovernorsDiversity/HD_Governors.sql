@@ -770,6 +770,45 @@ values
 -- fishery now available to all major civs without Liang
 update Improvements set TraitType = NULL, PrereqTech = 'TECH_SHIPBUILDING' where ImprovementType = 'IMPROVEMENT_FISHERY';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHERY';
+update Improvements
+set
+    Housing             = 1,
+    TilesRequired       = 2,
+    SameAdjacentValid   = 0,
+    AdjacentSeaResource = 0,
+    Workable            = 1
+where ImprovementType = 'IMPROVEMENT_FISHERY';
+
+insert or ignore into ImprovementModifiers
+	(ImprovementType,			ModifierId)
+values
+    ('IMPROVEMENT_FISHERY',		'FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY'),
+    ('IMPROVEMENT_FISHERY',		'FISHERY_EXTRA_GOLD_ON_FEATURE');
+insert or ignore into Modifiers
+	(ModifierID,									ModifierType,											SubjectRequirementSetId)
+values
+    ('FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY',		'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_HOUSING',		'PLAYER_HAS_SCIENTIFIC_THEORY_REQUIREMENTS'),
+	('FISHERY_EXTRA_GOLD_ON_FEATURE',				'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',				'PLOT_HAS_ANY_FEATURE');
+insert or ignore into ModifierArguments
+	(ModifierID,									Name,				Value)
+values
+    ('FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY',		'Amount',		1),
+    ('FISHERY_EXTRA_GOLD_ON_FEATURE',				'YieldType',	'YIELD_GOLD'),
+    ('FISHERY_EXTRA_GOLD_ON_FEATURE',				'Amount',		4);
+insert or replace into Improvement_BonusYieldChanges
+	(Id,	ImprovementType,			YieldType,				BonusYieldChange,	PrereqCivic,					PrereqTech)
+values
+	(710,	'IMPROVEMENT_FISHERY',		'YIELD_GOLD',			2,					'CIVIC_NAVAL_TRADITION',		null),
+	(711,	'IMPROVEMENT_FISHERY',		'YIELD_FOOD',			1,					null,							'TECH_CARTOGRAPHY'),
+	(712,	'IMPROVEMENT_FISHERY',		'YIELD_PRODUCTION',		1,					'CIVIC_COLONIALISM',			null),
+	(713,	'IMPROVEMENT_FISHERY',		'YIELD_GOLD',			2,					null,							'TECH_PLASTICS');
+insert or ignore into Improvement_Adjacencies (ImprovementType, YieldChangeId) values
+    ('IMPROVEMENT_FISHERY', 'Fishery_SeaResourceAdjacency');
+update Adjacency_YieldChanges set YieldType = 'YIELD_GOLD', YieldChange = 2 where ID = 'Fishery_SeaResourceAdjacency';
+insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) values
+    ('IMPROVEMENT_FISHERY', 'YIELD_FOOD',       2),
+    ('IMPROVEMENT_FISHERY', 'YIELD_PRODUCTION', 0),
+    ('IMPROVEMENT_FISHERY', 'YIELD_GOLD',		0);
 --bishop
 --level 0 GOVERNOR_PROMOTION_CARDINAL_BISHOP
 --LEVEL 1-0 GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR

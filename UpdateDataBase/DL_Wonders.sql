@@ -242,23 +242,32 @@ update ModifierArguments set Value = 6 where ModifierId like 'ORACLE_GREAT%POINT
 
 -- Temple of Artemis
 delete from ImprovementModifiers where (ImprovementType = 'IMPROVEMENT_PLANTATION' and ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_LUMBER_MILL',		'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
+update Modifiers set OwnerRequirementSetId = 'HD_PLOT_HAS_RESOURCE_LUMBER_MILL_REQUIREMENTS' where ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY';
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 values
 	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_PASTURE_FOOD'),
-	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_CAMP_FOOD');
+	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_CAMP_FOOD'),
+	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_LUMBER_MILL_FOOD');
 insert or replace into Modifiers
 	(ModifierId,					ModifierType,								SubjectRequirementSetId)
 values
 	('ARTEMIS_PASTURE_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_PASTURE_WITH_4_TILES'),
-	('ARTEMIS_CAMP_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_CAMP_WITH_4_TILES');
+	('ARTEMIS_CAMP_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_CAMP_WITH_4_TILES'),
+	('ARTEMIS_LUMBER_MILL_FOOD',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_LUMBER_MILL_WITH_4_TILES');
 insert or replace into ModifierArguments
 	(ModifierId,					Name,			Value)
 values
 	('ARTEMIS_PASTURE_FOOD',		'YieldType',	'YIELD_FOOD'),
 	('ARTEMIS_PASTURE_FOOD',		'Amount',		1),
 	('ARTEMIS_CAMP_FOOD',			'YieldType',	'YIELD_FOOD'),
-	('ARTEMIS_CAMP_FOOD',			'Amount',		1);
+	('ARTEMIS_CAMP_FOOD',			'Amount',		1),
+	('ARTEMIS_LUMBER_MILL_FOOD',	'YieldType',	'YIELD_FOOD'),
+	('ARTEMIS_LUMBER_MILL_FOOD',	'Amount',		1);
 
 -- Petra
 update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';

@@ -1614,7 +1614,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,										SubjectRequirementSetId)
 values
-	('WATERMILL_ADDFARMBONUSRESOURCEFOOD',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'FARM_BONUS_RESOURCE');
+	('WATERMILL_ADDFARMBONUSRESOURCEFOOD',		'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'HD_PLOT_HAS_FARM_OVER_BONUS_RESOURCES');
 
 insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value)

@@ -24,6 +24,7 @@ values
     ("LOC_BUILDING_TOTEMS_DESCRIPTION",                           "+2 [ICON_FAITH] Faith if the City Center is adjacent to Mountain, Woods or Rainforest.[NEWLINE][NEWLINE]May not be built in cities that already have a Fair."),
     ("LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "A building unique to Georgia. Lower [ICON_Production] Production cost and higher outer defenses than Renaissance Walls it replaces. Provides +5 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. Provides +4 [ICON_Faith] Faith. When in a Golden Age, +300% [ICON_TOURISM] Tourism and +300% [ICON_FAITH] Faith."),
     ("LOC_BUILDING_SEWER_DESCRIPTION",                            "+20% Growth rate in this city."),
+    ("LOC_BUILDING_WATER_MILL_DESCRIPTION",                       "Farm on bonus resource gain +1 [ICON_FOOD] Food. City must be adjacent to a River."),
     -- Campus
     ("LOC_BUILDING_LIBRARY_DESCRIPTION",                          "After Paper Making is researched, [ICON_Citizen] Citizens in this city provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "[ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science."),
@@ -198,6 +199,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_TOTEMS_DESCRIPTION",                           "如果市中心与山脉或森林或雨林相邻，则额外+2 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]无法建造在已有集市的城市中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                            "本城的余粮+20%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。"),
+    ("LOC_BUILDING_WATER_MILL_DESCRIPTION",                       				 "改良加成资源的农场 [ICON_FOOD] 食物+1。城市必须与河流相邻。"),
     -- 学院
     ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                          "研究造纸术科技后，城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。"),

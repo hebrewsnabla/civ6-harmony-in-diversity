@@ -16,27 +16,7 @@ values
 
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and ModifierId = 'SUK_FISHERY_FOOD';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and ModifierId = 'SUK_FISHERY_PRODUCTION';
-update Improvements
-set
-    Housing             = 1,
-    TilesRequired       = 2,
-    SameAdjacentValid   = 0,
-    AdjacentSeaResource = 0,
-    Workable            = 1
-where ImprovementType = "IMPROVEMENT_FISHERY";
 
-insert or ignore into ImprovementModifiers (ImprovementType, ModifierID) values
-    ('IMPROVEMENT_FISHERY', 'FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY');
-insert or ignore into Modifiers (ModifierID, ModifierType,SubjectRequirementSetId) values
-    ('FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY', 'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_HOUSING','PLAYER_HAS_SCIENTIFIC_THEORY_REQUIREMENTS');
-insert or ignore into ModifierArguments (ModifierID, Name,Value) values
-    ('FISHERY_HOUSING_WITH_SCIENTIFIC_THEORY', 'Amount',1);
-
-insert or ignore into Improvement_Adjacencies (ImprovementType, YieldChangeId) values
-    ('IMPROVEMENT_FISHERY', 'Fishery_SeaResourceAdjacency');
-insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) values
-    ('IMPROVEMENT_FISHERY', 'YIELD_FOOD',       1),
-    ('IMPROVEMENT_FISHERY', 'YIELD_PRODUCTION', 0);
 insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType) values
     ('IMPROVEMENT_FISHERY', 'FEATURE_SUK_KELP');
 
