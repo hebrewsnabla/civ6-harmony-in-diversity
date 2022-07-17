@@ -1323,6 +1323,14 @@
       <File>Gameplay/Temp_Interface.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
     </ImportFiles>
+	<!-- UI for civilopedia -->
+	<ReplaceUIScript id="DL_CivilopediaScreen">
+		<Properties>
+			<LoadOrder>16020</LoadOrder>
+			<LuaContext>CivilopediaPage_CityState</LuaContext>
+			<LuaReplace>CivilopediaPage_CityState.lua</LuaReplace>
+		</Properties>
+	</ReplaceUIScript>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
