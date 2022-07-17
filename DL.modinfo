@@ -849,6 +849,10 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>10000000</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Late.sql</File>
+    </UpdateDatabase>
     <UpdateText id="Resouceful2_support" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>17001</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
@@ -1319,6 +1323,14 @@
       <File>Gameplay/Temp_Interface.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
     </ImportFiles>
+	<!-- UI for civilopedia -->
+	<ReplaceUIScript id="DL_CivilopediaScreen">
+		<Properties>
+			<LoadOrder>16020</LoadOrder>
+			<LuaContext>CivilopediaPage_CityState</LuaContext>
+			<LuaReplace>CivilopediaPage_CityState.lua</LuaReplace>
+		</Properties>
+	</ReplaceUIScript>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1698,6 +1710,7 @@
     <!-- Resourceful2 -->
     <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
+	<File>ModSupport/Resourceful2/HD_Resourceful2_Late.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
     <!-- Removeable Districts -->
