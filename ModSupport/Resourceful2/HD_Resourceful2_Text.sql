@@ -21,7 +21,7 @@ values
     ("LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "Grants a free [ICON_GreatProphet] Great Prophet. [ICON_GreatProphet] Great Prophets may found a Religion on Stonehenge instead of a Holy Site. Must be adjacent to [ICON_RESOURCE_STONE] Andesite and on flat land."),
     ("LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "+2 [ICON_Production] Production towards Districts, Buildings and Wonders if this city owns Quarries, Mines or Lumber Mills over Luxury or Bonus resources.[NEWLINE][NEWLINE]May not be built in cities that already have a Karez or Boot Camp."),
     ("LOC_BELIEF_PAN_NAME",                                       "Pan"),
-    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "+1 [ICON_FAITH] Faith and +1 [ICON_CULTURE] Culture from Lumber Mills over Luxury and Bonus resources. +2 [ICON_GREATPROPHET] Great Prophet points per turn for cities having Lumber Mill over Luxury or Bonus resources."),
+    ("LOC_BELIEF_PAN_DL_DESCRIPTION",                             "+1 [ICON_FAITH] Faith and +1 [ICON_CULTURE] Culture from Lumber Mills over resource. +2 [ICON_GREATPROPHET] Great Prophet points per turn for cities having Lumber Mill over resource."),
     ("LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] Faith from the adjacent Lumber Mill {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "Heart of the Woods"),
     ("LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "Lumber Mills over Luxury and Bonus resources provide +1 [ICON_Food] Food and +1 [ICON_Science] Science.");
@@ -53,7 +53,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_STONEHENGE_DESCRIPTION",                       "免费获得1个 [ICON_GreatProphet] 大预言家。 [ICON_GreatProphet] 大预言家可在巨石阵（代替圣地）创立一个宗教。必须建在靠近 [ICON_RESOURCE_STONE] 安山岩的平坦地形上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_OFFICIAL_RUN_HANDCRAFT_DESCRIPTION",           "如果城市拥有改良奢侈或加成资源的矿山、采石场或伐木场，则额外建造区域、建筑和奇观时+2 [ICON_Production] 生产力。[NEWLINE][NEWLINE]无法建造在已有坎儿井或训练营的城市中。"),
     ("zh_Hans_CN",  "LOC_BELIEF_PAN_NAME",                                       "潘神"),
-    ("zh_Hans_CN",  "LOC_BELIEF_PAN_DL_DESCRIPTION",                             "所有改良奢侈和加成资源的伐木场+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有改良奢侈或加成资源的矿山，则每回合+2 [ICON_GREATPROPHET] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_PAN_DL_DESCRIPTION",                             "所有改良资源的伐木场+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有改良资源的伐木场，则每回合+2 [ICON_GREATPROPHET] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] 信仰值来自相邻森林{1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "森灵之心"),
     ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "采集奢侈品资源和加成资源的伐木场+1 [ICON_Food] 食物和 +1 [ICON_Science] 科技值。");

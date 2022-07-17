@@ -157,7 +157,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_KUMASI_BONUS",                     "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+1 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "军营从湖泊或近海单元格获得小相邻加成。相邻湖泊的军营提供等同于其相邻加成的 [ICON_FOOD] 食物。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "军营从湖泊或近海单元格获得少量相邻加成。相邻湖泊的军营提供等同于其相邻加成的 [ICON_FOOD] 食物。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "军营从湖泊或近海单元格获得小相邻加成。相邻湖泊的军营提供等同于其相邻加成的 [ICON_FOOD] 食物。"),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_NGAZARGAMU_COAST_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的近海或湖泊单元格。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BOLOGNA_DESCRIPTION",              "拥有建筑的区域使相应类型的 [ICON_GreatPerson] 伟人点数+3（拥有建筑的剧院广场区域提供 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家和 [ICON_GreatMusician] 大音乐家点数）。"),
