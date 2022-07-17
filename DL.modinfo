@@ -849,6 +849,10 @@
       <Properties><LoadOrder>15000</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="Resouceful2_support" criteria="Resouceful2_Expansion2">
+      <Properties><LoadOrder>10000000</LoadOrder></Properties>
+      <File>ModSupport/Resourceful2/HD_Resourceful2_Late.sql</File>
+    </UpdateDatabase>
     <UpdateText id="Resouceful2_support" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>17001</LoadOrder></Properties>
       <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
@@ -1698,6 +1702,7 @@
     <!-- Resourceful2 -->
     <File>ModSupport/Resourceful2/HD_Resourceful2.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Pre.sql</File>
+	<File>ModSupport/Resourceful2/HD_Resourceful2_Late.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Text.sql</File>
     <File>ModSupport/Resourceful2/HD_Resourceful2_Icons.sql</File>
     <!-- Removeable Districts -->
