@@ -123,7 +123,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGIOUS_CONVERT_DESCRIPTION",                "无法建造圣地区、获得大预言家，或创建宗教。从已成为多数刚果城市信仰的宗教中获得创始人信条加成。每次完成一个姆班赞或剧院广场区时获得一位（城市主流宗教的）使徒。首次建成姆班赞后，激活“神学”、“王权神授”和“归正会”市政 [ICON_CivicBoosted] 鼓舞。采用神权政体时，有姆班赞的城市每个人口产出1 [ICON_FAITH] 信仰。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NKISI_DESCRIPTION",                      "所有陆地单位无视森林和雨林对 [ICON_MOVEMENT] 移动力的减益。每个 [ICON_GreatWork_Relic] 遗物、[ICON_GreatWork_Artifact] 文物、[ICON_GreatWork_Portrait] 肖像、[ICON_GreatWork_Landscape] 风景、[ICON_GreatWork_Religious] 宗教和 [ICON_GreatWork_Sculpture] 雕塑艺术巨作中获得+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力、+6 [ICON_Gold] 金币和+3 [ICON_Faith] 信仰值；每个 [ICON_GreatWork_Writing] 巨著提供+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力、+3 [ICON_Gold] 金币和+2 [ICON_Faith] 信仰值。获得额外100% [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家和 [ICON_GreatMerchant] 大商人点数。宫殿有5个巨作槽位。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_NAME",                    		 "新月沃土"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                    "每个专业化区域给没有该区域的城市内每个专业化区域+1对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                    "每个专业化区域给没有该区域的城市提供对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）：这些城市每有一个专业化区域+1点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_NAME",                    	 		 "汉谟拉比法典"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_XP1_DESCRIPTION",                    "[ICON_TECHBOOSTED] 尤里卡提供科技的94%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "在淡水和海岸旁定居时不提供额外 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。"),
@@ -203,5 +203,5 @@ where exists (select Tag from LocalizedText where Tag = 'LOC_DISTRICT_DIPLOMATIC
 insert or replace into LocalizedText
     (Language,		Tag,                                            	Text)
 select
-	"zh_Hans_CN",	"LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",		"每个专业化区域给没有该区域的城市内每个专业化区域+1对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，外交区提供影响力点数，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）。"
+	"zh_Hans_CN",	"LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",		"每个专业化区域给没有该区域的城市提供对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，外交区提供影响力点数，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）：这些城市每有一个专业化区域+1点。"
 where exists (select Tag from LocalizedText where Tag = 'LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME');
