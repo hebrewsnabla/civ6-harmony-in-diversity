@@ -43,7 +43,7 @@ values
     ("LOC_CIVILIZATION_PALENQUE_BONUS",                   "City growth rate is 20% higher in cities with a Campus district."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
     ("LOC_LEADER_TRAIT_YEREVAN_DESCRIPTION",              "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
     --("LOC_CIVILIZATION_YEREVAN_CITY_BONUS",               "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
-    ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "+2 [ICON_PRODUCTION] for each Campus and Campus building. Your cities get +15% Production towards city projects."),
+    ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "+1 [ICON_PRODUCTION] for each Campus and Campus building. Your cities get +15% Production towards city projects."),
     --("LOC_CIVILIZATION_HONG_KONG_BONUS",                  "Your cities get +20% Production towards city projects."),
     ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
     --("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
@@ -198,7 +198,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_MOHENJO_DARO_BONUS",               "无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。剧院和水渠为城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_Culture] 文化值产出。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION",              "每个造船厂和码头向城市提供3点 [ICON_POWER] 电力。"), -- 通电建筑额外产出+4
     --("zh_Hans_CN",  "LOC_CIVILIZATION_CARDIFF_BONUS",                    "每个造船厂和码头向城市提供3点 [ICON_POWER] 电力。"), -- 通电建筑额外产出+4
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "每个学院和学院建筑+2 [ICON_PRODUCION] 生产力。城市建造项目时+15% [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "每个学院和学院建筑+1 [ICON_PRODUCION] 生产力。城市建造项目时+15% [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_BONUS",                  "城市建造项目时+20% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MEXICO_CITY_DESCRIPTION",          "工业区、娱乐中心、水上乐园的辐射距离+3格。"), -- 工业区为城市+1 [ICON_AMENITIES] 宜居度。娱乐中心提供+5 [ICON_Production] 生产力。
     --("zh_Hans_CN",  "LOC_CIVILIZATION_MEXICO_CITY_BONUS",                "工业区、娱乐中心、水上乐园的辐射距离+3格。"), -- 工业区为城市+1 [ICON_AMENITIES] 宜居度。娱乐中心提供+5 [ICON_Production] 生产力。

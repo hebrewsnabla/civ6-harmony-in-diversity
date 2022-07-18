@@ -452,7 +452,7 @@ insert or replace into	ModifierArguments
 	(ModifierId,									Name,			Value)
 values
 	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
-    ('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'Amount',		2);
+    ('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'Amount',		1);
 insert or replace into TraitAttachedModifiers
 	(TraitType,						ModifierId)
 select
@@ -476,7 +476,7 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
 insert or replace into ModifierArguments	
 	(ModifierId,												Name,				Value)
 select
-	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'Amount',			2
+	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'Amount',			1
 from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
