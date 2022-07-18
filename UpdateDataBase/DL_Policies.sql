@@ -1417,7 +1417,9 @@ values
 	('POLICY_FORTIFICATIONS',				'BASTIONS_OUTERDEFENSE'),
 	('POLICY_FORTIFICATIONS',				'BASTIONS_RANGEDSTRIKE'),
 	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1'),
-	('POLICY_MILITARY_RESEARCH',			'WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1');
+	('POLICY_MILITARY_RESEARCH',			'WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1'),
+	('POLICY_WEAPONS_MANAGEMENT_SERVICE',	'WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_2'),
+	('POLICY_MILITARY_RESEARCH',			'WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_2');
 
 -- insert or replace into Modifiers
 -- 	(ModifierId,						ModifierType)
@@ -1429,7 +1431,8 @@ values
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												SubjectRequirementSetId)
 values
-	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			'DISTRICT_IS_ENCAMPMENT');
+	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			'DISTRICT_IS_ENCAMPMENT'),
+	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_2',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			'DISTRICT_IS_ENCAMPMENT');
 
 insert or replace into ModifierArguments
 	(ModifierId,										Name, 				Value)
@@ -1443,7 +1446,9 @@ values
 	-- ('HISTORICAL_PROGRESS_CMP_SPEEDUP',	  				'DistrictType',		'DISTRICT_CAMPUS'),
 	-- ('HISTORICAL_PROGRESS_CMP_SPEEDUP',	 				'Amount',			30),
 	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1',	'YieldType',		'YIELD_PRODUCTION'),
-	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1',	'Amount',			100);
+	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_1',	'Amount',			100),
+	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_2',	'YieldType',		'YIELD_CULTURE'),
+	('WEAPONS_MANAGEMENT_SERVICE_ENCAMPMENT_DOUBLE_2',	'Amount',			100);
 --军事研究政策卡：删除造兵给瓶能力，替代且并入“军器监”政策。
 delete from PolicyModifiers where PolicyType = 'POLICY_MILITARY_RESEARCH' and ModifierId = 'HD_MILITARY_RESEARCH_UNIT_TRAIN_GRANT_SCIENCE_XHH';
 
@@ -1708,3 +1713,54 @@ update Modifiers set SubjectRequirementSetId = "HD_CITY_HAS_COMMERCIAL_TIER_3_BU
 
 update ModifierArguments set Value = 2 where ModifierId = 'TRIANGULARTRADE_TRADEROUTEFAITH' and Name = 'Amount';
 delete from PolicyModifiers where PolicyType = 'POLICY_SPORTS_MEDIA' and ModifierId = 'SPORTSMEDIA_STADIUMENTERTAINMENT';
+
+-- Third Alternative
+delete from PolicyModifiers where PolicyType = 'POLICY_THIRD_ALTERNATIVE';
+create temporary table HD_ThirdAlternativeBuffedBuildings (
+	BuildingType text not null,
+	YieldType text not null default 'YIELD_CULTURE',
+	Amount int not null default 2,
+	ModifierId text,
+	primary key (BuildingType, YieldType)
+);
+insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
+	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4 and IsUB = 0;
+insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
+	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4) and IsUB = 0;
+insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
+	where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and Tier = 3 and IsUB = 0;
+insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
+	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4 and IsUB = 0;
+insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
+	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4) and IsUB = 0;
+insert or replace into HD_ThirdAlternativeBuffedBuildings
+	(BuildingType,	YieldType,		Amount)
+select
+	BuildingType,	'YIELD_GOLD',	4
+from HD_ThirdAlternativeBuffedBuildings;
+update HD_ThirdAlternativeBuffedBuildings set ModifierId = 'THIRD_ALTERNATIVE_' || BuildingType || '_' || YieldType;
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_THIRD_ALTERNATIVE',		ModifierId
+from HD_ThirdAlternativeBuffedBuildings;
+insert or replace into Modifiers
+	(ModifierId,	ModifierType)
+select
+	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_ThirdAlternativeBuffedBuildings;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'BuildingType',	BuildingType
+from HD_ThirdAlternativeBuffedBuildings;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	YieldType
+from HD_ThirdAlternativeBuffedBuildings;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		Amount
+from HD_ThirdAlternativeBuffedBuildings;

@@ -28,6 +28,8 @@ values
 	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			1),
 	('IMPROVEMENT_MOAI',				'YIELD_CULTURE',		2),
 	
+	('IMPROVEMENT_ZIGGURAT',			'YIELD_SCIENCE',		0),
+	('IMPROVEMENT_ZIGGURAT',			'YIELD_FAITH',			2),
 	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2),
 	('IMPROVEMENT_MEKEWAP',				'YIELD_PRODUCTION',		0),
 	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1),
@@ -492,6 +494,47 @@ delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MEKEWAP' a
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
 update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
 
+-- Ziggurat (Sumeria)
+insert or replace into ImprovementModifiers
+	(ImprovementType,						ModifierID)
+values
+	('IMPROVEMENT_ZIGGURAT',				'ZIGGURAT_RIVERADJACENCY_FOOD');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'Amount',		1);
+insert or replace into ImprovementModifiers
+	(ImprovementType,			ModifierID)
+select
+	'IMPROVEMENT_ZIGGURAT',		'ZIGGURAT_' || EraType || '_SCIENCE'
+from Eras where EraType != 'ERA_ANCIENT';
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+select
+	'ZIGGURAT_' || EraType || '_SCIENCE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'ZIGGURAT_' || EraType
+from Eras where EraType != 'ERA_ANCIENT';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	'ZIGGURAT_' || EraType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE'
+from Eras where EraType != 'ERA_ANCIENT';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		1),
+	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		1),
+	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
+	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
+
 -- Kurgan (Scythia)
 insert or replace into ImprovementModifiers
 	(ImprovementType,		ModifierId)
@@ -499,11 +542,6 @@ values
 	('IMPROVEMENT_KURGAN',	'KURGAN_PASTURE_FAITH'),
 	('IMPROVEMENT_KURGAN',	'KURGAN_PURCHASE_LIGHT_CAVALRY'),
 	('IMPROVEMENT_KURGAN',	'KURGAN_PURCHASE_HEAVY_CAVALRY');
-insert or replace into GreatPersonIndividualActionModifiers
-	(GreatPersonIndividualType,		ModifierId,					AttachmentTargetType)
-select
-	GreatPersonIndividualType,		'KURGAN_GENERAL_FAITH',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
-from GreatPersonIndividuals where GreatPersonClassType = 'GREAT_PERSON_CLASS_GENERAL';
 insert or replace into Modifiers
 	(ModifierId,						ModifierType,										SubjectRequirementSetId)
 values
@@ -550,6 +588,11 @@ insert or replace into Improvement_ValidResources
 select
 	'IMPROVEMENT_TERRACE_FARM',		'RESOURCE_STRAWBERRY'
 where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_STRAWBERRY');
+insert or replace into Improvement_ValidResources
+	(ImprovementType,				ResourceType)
+select
+	'IMPROVEMENT_TERRACE_FARM',		'RESOURCE_LEU_P0K_LLAMAS'
+where exists (select ResourceType from Resources where ResourceType = 'RESOURCE_LEU_P0K_LLAMAS');
 update Improvements set Housing = 1, TilesRequired = 1 where ImprovementType = 'IMPROVEMENT_TERRACE_FARM';
 
 -- Sphinx (Egypt)

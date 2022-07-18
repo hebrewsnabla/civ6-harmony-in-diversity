@@ -449,15 +449,29 @@ end
 Events.ImprovementAddedToMap.Add(ImprovementAddedToMap);
 
 -- 斯基泰 骑兵死亡加鸽子
+local HOUSR_ARCHER_INDEX = GameInfo.Units['UNIT_SCYTHIAN_HORSE_ARCHER'].Index;
+local GREAT_GENERAL_INDEX = GameInfo.Units['UNIT_GREAT_GENERAL'].Index;
 function CavalryKurganFaith (killedPlayerId, killedUnitId, playerId, unitId)
 	local player = Players[killedPlayerId];
 	local unit = UnitManager.GetUnit(killedPlayerId, killedUnitId);
 	for row in GameInfo.UnitPromotions() do
-		if (row.PromotionClass == 'PROMOTION_CLASS_LIGHT_CAVALRY') or (row.PromotionClass == 'PROMOTION_CLASS_HEAVY_CAVALRY') then
-			if unit:GetExperience():HasPromotion(row.Index) then
+		if unit:GetExperience():HasPromotion(row.Index) then
+			if (row.PromotionClass == 'PROMOTION_CLASS_LIGHT_CAVALRY') or (row.PromotionClass == 'PROMOTION_CLASS_HEAVY_CAVALRY') then
+				player:AttachModifierByID('KURGAN_CAVALRY_FAITH');
+			end
+			if (row.PromotionClass == 'PROMOTION_CLASS_RANGED') and (unit:GetType() == HOUSR_ARCHER_INDEX) then
 				player:AttachModifierByID('KURGAN_CAVALRY_FAITH');
 			end
 		end
 	end
 end
 Events.UnitKilledInCombat.Add(CavalryKurganFaith);
+
+function GreatGeneralFaith (playerId, unitId)
+	local player = Players[playerId];
+	local unit = UnitManager.GetUnit(playerId, unitId);
+	if unit:GetType() == GREAT_GENERAL_INDEX then
+		player:AttachModifierByID('KURGAN_GENERAL_FAITH');
+	end
+end
+Events.UnitRemovedFromMap.Add(GreatGeneralFaith);

@@ -151,7 +151,7 @@ values
 insert or replace into EnglishText
     (Tag,                                                                     Text)
 values
-	("LOC_PROJECT_LAUNCH_MOON_LANDING_DESCRIPTION",							  "Space Race project which launches a large rocket to land a human on the moon. Marks the second step towards the Science Victory."),
+	("LOC_PROJECT_LAUNCH_MOON_LANDING_DESCRIPTION",							  "Space Race project which launches a large rocket to land a human on the moon. [ICON_CIVICBOOSTED] Inspirations provide +10% [ICON_CULTURE] Culture after finishing this Project (including [ICON_CIVICBOOSTED] Inspirations that are already triggered). Trigger the [ICON_CIVICBOOSTED] Inspiration of all Civics. Marks the second step towards the Science Victory."),
     ("LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "City project which increases the Loyalty Pressure that this city exerts on itself and other cities nearby.[NEWLINE][NEWLINE]While active, each of your [ICON_Citizen] Citizens here exerts +1 Loyalty pressure to this city. This pressure also affects other cities within 9 tiles, but is 10% less effective per tile. Once completed, instantly gain +20 Loyalty in this city.[NEWLINE][NEWLINE]Requires: Entertainment Complex district."),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "Judgement of Love"),
     ("LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "Judgement of Love"),
@@ -188,7 +188,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                    Text)
 values
-	("zh_Hans_CN",	"LOC_PROJECT_LAUNCH_MOON_LANDING_DESCRIPTION",							 "发射火箭让人类登陆月球的太空竞赛项目。标志着科技胜利的第二步。"),
+	("zh_Hans_CN",	"LOC_PROJECT_LAUNCH_MOON_LANDING_DESCRIPTION",							 "发射火箭让人类登陆月球的太空竞赛项目。完成此项目后，[ICON_CIVICBOOSTED] 鼓舞额外提供+10% [ICON_CULTURE] 文化值（包括已经获得的 [ICON_CIVICBOOSTED] 鼓舞）。所有市政获得 [ICON_CIVICBOOSTED] 鼓舞。标志着科技胜利的第二步。"),
     ("zh_Hans_CN",  "LOC_PROJECT_BREAD_AND_CIRCUSES_DESCRIPTION",                            "城市项目，可增加此城市对自身和对附近其他城市施加的忠诚度压力。[NEWLINE][NEWLINE]项目启动后，每位 [ICON_Citizen] 公民每回合对此城所施加的忠诚度压力+1。此忠诚度压力还将影响9个单元格以内的其他城市，但每远离1个单元格，效果减弱10%。项目完成后此城立即+20忠诚度。[NEWLINE][NEWLINE]需要先建成“娱乐设施”区域。"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_NAME",                                "爱之审判"),
     ("zh_Hans_CN",  "LOC_PROJECT_CIRCUSES_AND_BREAD_HD_SHORT_NAME",                          "爱之审判"),

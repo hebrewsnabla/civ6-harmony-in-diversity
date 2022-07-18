@@ -1,7 +1,108 @@
 -- ===========================================================================
 --	Civilopedia - City-State Page Layout
 -- ===========================================================================
-print('Loading DL_CityState lus');
+
+-- C15 --
+local tCityStateTypes = {}
+for row in GameInfo.CSE_ClassTypes() do
+	tCityStateTypes[row.Type] = {
+		idx = row.Index,
+		TypeName = Locale.Lookup(row.TypeName),
+		LeaderType = row.LeaderType,
+		SmallBonus = Locale.Lookup(row.SmallBonus),
+		MediumBonus = Locale.Lookup(row.MediumBonus),
+		LargeBonus = Locale.Lookup(row.LargeBonus),
+		LargestBonus = Locale.Lookup(row.LargestBonus),
+		BonusIcon = row.BonusIcon,
+		TypeIcon = row.TypeIcon}
+end
+-- xiaoxiao get text
+for row in GameInfo.HD_CityStateBuffedObjects() do
+	local typeString = string.sub(row.TraitType, 11, string.len(row.TraitType) - 6);
+	local type = tCityStateTypes[typeString];
+	type[row.Level] = type[row.Level] or {};
+	local objects = type[row.Level];
+	if row.IsDistrict == 1 then
+		local district = GameInfo.Districts[row.ObjectType];
+		if district then
+			table.insert(objects, {
+				prereqDistrict = row.ObjectType,
+				name = district.Name,
+				index = district.Index,
+				isDistrict = true
+			});
+		end
+	else
+		local building = GameInfo.Buildings[row.ObjectType];
+		if building then
+			table.insert(objects, {
+				prereqDistrict = building.PrereqDistrict,
+				name = building.Name,
+				index = building.Index,
+				isWorship = building.EnabledByReligion,
+				isDistrict = false
+			});
+		end
+	end
+end
+for k, v in pairs(tCityStateTypes) do
+	local s = {};
+	s["SMALL"]		= "";
+	s["MEDIUM"]		= "";
+	s["LARGE"]		= "";
+	s["LARGEST"]	= "";
+	for level, str in pairs(s) do
+		if v[level] ~= nil then
+			-- names with the following order: district -> buildings; City Center & Diplomatic Quarter -> Others
+			table.sort(v[level], function (o1, o2)
+				local d = o1.index - o2.index;
+				if o1.isDistrict then d = d - 1024; end
+				if o2.isDistrict then d = d + 1024; end
+				if o1.prereqDistrict == "DISTRICT_CITY_CENTER" or o1.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d - 512; end
+				if o2.prereqDistrict == "DISTRICT_CITY_CENTER" or o2.prereqDistrict == "DISTRICT_DIPLOMATIC_QUARTER" then d = d + 512; end
+				return d < 0;
+			end);
+			local names = {};
+			for _, object in ipairs(v[level]) do
+				local name = Locale.Lookup(object.name);
+				if object.isWorship then
+					name = Locale.Lookup('LOC_WORSHIP_BUILDINGS');
+				end
+				local contains = false;
+				for _, vName in ipairs(names) do
+					if name == vName then
+						contains = true;
+					end
+				end
+				if not contains then
+					table.insert(names, name);
+				end
+			end
+			-- generate string
+			for i, name in ipairs(names) do
+				s[level] = s[level] .. name;
+				if names[i + 2] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_COMMA");
+				elseif names[i + 1] ~= nil then
+					s[level] = s[level] .. Locale.Lookup("LOC_AND");
+				end
+			end
+		end
+	end
+	v.SmallBonus	= string.gsub(v.SmallBonus,		"*", s["SMALL"]);
+	v.MediumBonus	= string.gsub(v.MediumBonus,	"*", s["MEDIUM"]);
+	v.LargeBonus	= string.gsub(v.LargeBonus,		"*", s["LARGE"]);
+	v.LargestBonus	= string.gsub(v.LargestBonus,	"*", s["LARGEST"]);
+
+	v.BonusSummary =	Locale.Lookup("LOC_MINOR_CIV_SMALL_INFLUENCE_ENVOYS")	.. " " .. v.SmallBonus
+	.. "[NEWLINE]" ..	Locale.Lookup("LOC_MINOR_CIV_MEDIUM_INFLUENCE_ENVOYS")	.. " " .. v.MediumBonus
+	.. "[NEWLINE]" ..	Locale.Lookup("LOC_MINOR_CIV_LARGE_INFLUENCE_ENVOYS")	.. " " .. v.LargeBonus
+	.. "[NEWLINE]" ..	Locale.Lookup("LOC_MINOR_CIV_LARGEST_INFLUENCE_ENVOYS")	.. " " .. v.LargestBonus;
+	print(v.BonusSummary);
+end
+-- xiaoxiao end
+-- /C15 --
+
 PageLayouts["CityState" ] = function(page)
     local sectionId = page.SectionId;
     local pageId = page.PageId;
@@ -53,7 +154,9 @@ PageLayouts["CityState" ] = function(page)
 
 	-- City-State type.
 	-- Should be database-driven, but presently is not.
-	local types = {
+	-- SCOTLAD Y U NO CHANGE THIS!!! Smh
+	-- C15 --
+	--[[local types = {
 		["LEADER_MINOR_CIV_INDUSTRIAL"] = {"ICON_CITYSTATE_INDUSTRIAL", "LOC_CITY_STATES_TYPE_INDUSTRIAL", "COLOR_PLAYER_CITY_STATE_INDUSTRIAL_SECONDARY"},
 		["LEADER_MINOR_CIV_CULTURAL"] = {"ICON_CITYSTATE_CULTURE", "LOC_CITY_STATES_TYPE_CULTURAL", "COLOR_PLAYER_CITY_STATE_CULTURAL_SECONDARY"},
 		["LEADER_MINOR_CIV_TRADE"] = {"ICON_CITYSTATE_TRADE", "LOC_CITY_STATES_TYPE_TRADE", "COLOR_PLAYER_CITY_STATE_TRADE_SECONDARY"},
@@ -63,8 +166,17 @@ PageLayouts["CityState" ] = function(page)
 
 		-- KLUDGE - DLC 6 Scenario
 		["LEADER_MINOR_CIV_MARITIME"] = {"ICON_CITYSTATE_MARITIME", "LOC_CITY_STATES_SCENARIO_TYPE_MARITIME", "COLOR_PLAYER_CITY_STATE_MARITIME_SECONDARY"},
-	}
 
+		--CIVITAS MOD
+		["CVS_LEADER_MINOR_CIV_AGRICULTURAL"] = {"ICON_CVS_CITYSTATE_AGRICULTURAL", "LOC_CITY_STATES_TYPE_CVS_AGRICULTURAL", "CVS_COLOR_PLAYER_CITY_STATE_AGRICULTURAL_SECONDARY"},
+		["CVS_LEADER_MINOR_CIV_ARTISTIC"] = {"ICON_CVS_CITYSTATE_ARTISTIC", "LOC_CITY_STATES_TYPE_CVS_ARTISTIC", "CVS_COLOR_PLAYER_CITY_STATE_ARTISTIC_SECONDARY"},
+		["CVS_LEADER_MINOR_CIV_MARITIME"] = {"ICON_CVS_CITYSTATE_MARITIME", "LOC_CITY_STATES_TYPE_MARITIME", "CVS_COLOR_PLAYER_CITY_STATE_MARITIME_SECONDARY"},
+	}]]
+	local types = {}
+	for k, v in pairs(tCityStateTypes) do
+		types[v.LeaderType] = {v.TypeIcon, v.TypeName, v.SecondaryColor, v.BonusSummary}
+	end
+	-- /C15 --
 	local cityStateType;
 	for k, v in pairs(types) do
 		if(has_leader[k] == true) then
@@ -72,7 +184,6 @@ PageLayouts["CityState" ] = function(page)
 			break;
 		end
 	end
-			
 
     -- Unique Abilities
     -- We're considering a unique ability to be a trait which does 
@@ -172,13 +283,21 @@ PageLayouts["CityState" ] = function(page)
         end
     end);
 
-     -- Left Column
-     if(#unique_abilities > 0) then
+    -- Left Column
+    if(#unique_abilities > 0) then
         AddHeader("LOC_UI_PEDIA_UNIQUE_ABILITY");
-    
-        for _, item in ipairs(unique_abilities) do
-			AddHeaderBody(item.Name,  item.Description);
-        end
+	end
+	for _, item in ipairs(unique_abilities) do
+		local desc = Locale.Lookup(item.Description);
+		if (string.find(desc, '*') ~= nil) then
+			AddHeaderBody(item.Name, cityStateType[4]);
+		end
+    end
+    for _, item in ipairs(unique_abilities) do
+		local desc = Locale.Lookup(item.Description);
+		if (string.find(desc, '*') == nil) then
+			AddHeaderBody(item.Name, desc);
+		end
     end
 
     local chapters = GetPageChapters(page.PageLayoutId);
@@ -190,3 +309,4 @@ PageLayouts["CityState" ] = function(page)
 		AddChapter(chapter_header, chapter_body);
     end
 end
+

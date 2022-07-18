@@ -633,6 +633,10 @@
       <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>
       <File>UI/Replacement/SettlerInfluenceIconManager.lua</File>
     </ImportFiles>
+    <ImportFiles id="DL_Overwrite_Files_Import_Late" criteria="Expansion2">
+      <Properties><LoadOrder>100</LoadOrder></Properties>
+	  <File>UI/Civilopedia/CivilopediaPage_CityState.lua</File>
+    </ImportFiles>
     <ImportFiles id="CityStatesDiversity_BST_Import" criteria="Expansion2">
       <Properties><LoadOrder>5000</LoadOrder></Properties>
       <File>UI/Replacement/citystates.xml</File>
@@ -1324,13 +1328,12 @@
       <File>Gameplay/HD_StateUtils.lua</File>
     </ImportFiles>
 	<!-- UI for civilopedia -->
-	<ReplaceUIScript id="DL_CivilopediaScreen">
+	<ImportFiles id="DL_Civilopedia" criteria="Expansion2">
 		<Properties>
-			<LoadOrder>16020</LoadOrder>
-			<LuaContext>CivilopediaPage_CityState</LuaContext>
-			<LuaReplace>CivilopediaPage_CityState.lua</LuaReplace>
+		  <LoadOrder>16020</LoadOrder>
 		</Properties>
-	</ReplaceUIScript>
+		<File>UI/Replacement/HD_CivilopediaCityStateScreen.lua</File>
+	</ImportFiles>
     <!-- Texts and Tags -->
     <UpdateDatabase id="DL_Text_Tag" criteria="Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1627,6 +1630,7 @@
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
+    <File>UI/Civilopedia/CivilopediaPage_CityState.lua</File>
     <File>UI/Replacement/CitySupport.lua</File>
     <File>UI/Replacement/NotificationPanel_HD.lua</File>
     <File>UI/Replacement/GreatWorkShowcase_HD.lua</File>

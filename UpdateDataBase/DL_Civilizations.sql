@@ -236,11 +236,8 @@ select
 	'HD_ENGLAND_CITY_HAS_' || BuildingType,		'REQUIRES_CITY_HAS_' || BuildingType
 from HarborTier2Buildings;
 
--- Arab
+-- Arabia
 update ModifierArguments set Value = 4 where ModifierId = 'TRAIT_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION' and Name = 'Amount';
-
--- Babylon
-update ModifierArguments set Value = 60 where ModifierId = 'TRAIT_EUREKA_INCREASE';
 
 -- Maori
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA' and ModifierId = 'TRAIT_MAORI_PREVENT_HARVEST';
@@ -1167,41 +1164,6 @@ insert or replace into Tags
 	(Tag,					Vocabulary)
 values
 	('CLASS_WALL_ATTACK',	'ABILITY_CLASS');
-
-insert or replace into ImprovementModifiers
-	(ImprovementType,						ModifierID)
-values
-	('IMPROVEMENT_ZIGGURAT',				'ZIGGURAT_RIVERADJACENCY_FOOD');
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,								SubjectRequirementSetId)
-values
-	('ZIGGURAT_RIVERADJACENCY_FOOD',		'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-values
-	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FOOD'),
-	('ZIGGURAT_RIVERADJACENCY_FOOD',		'Amount',		1);
-
-insert or replace into ImprovementModifiers	(ImprovementType,	ModifierID)
-	select 'IMPROVEMENT_ZIGGURAT',	'ZIGGURAT_' || EraType || '_SCIENCE' from Eras where EraType != 'ERA_ANCIENT';
-
-insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
-	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',	'ZIGGURAT_' || EraType from Eras where EraType != 'ERA_ANCIENT';
-
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-	select 'ZIGGURAT_' || EraType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE'	from Eras where EraType != 'ERA_ANCIENT';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-values
-	('ZIGGURAT_ERA_CLASSICAL_SCIENCE',		'Amount',		1),
-	('ZIGGURAT_ERA_MEDIEVAL_SCIENCE',		'Amount',		1),
-	('ZIGGURAT_ERA_RENAISSANCE_SCIENCE',	'Amount',		1),
-	('ZIGGURAT_ERA_INDUSTRIAL_SCIENCE',		'Amount',		1),
-	('ZIGGURAT_ERA_MODERN_SCIENCE',			'Amount',		1),
-	('ZIGGURAT_ERA_ATOMIC_SCIENCE',			'Amount',		1),
-	('ZIGGURAT_ERA_INFORMATION_SCIENCE',	'Amount',		1),
-	('ZIGGURAT_ERA_FUTURE_SCIENCE',			'Amount',		1);
 
 ----------------------------------------------------------------------------------------------------------------------------------
 -- France

@@ -91,26 +91,28 @@ values
 	('TRAIT_PLANTATION_CULTURE_BOMB_HD',		'CaptureOwnedTerritory',	0);
 
 -- Hacienda (Gran Colombia)
-update Improvements set PrereqCivic = 'CIVIC_FEUDALISM' where ImprovementType = 'IMPROVEMENT_HACIENDA';
+update Improvements set PrereqCivic = null, PrereqTech = 'TECH_CALENDAR_HD' where ImprovementType = 'IMPROVEMENT_HACIENDA';
 delete from Improvement_YieldChanges where ImprovementType = 'IMPROVEMENT_HACIENDA' and YieldType = 'YIELD_GOLD';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_HACIENDA' and YieldChangeId = 'Hacienda_HaciendaAdjacency';
 update Adjacency_YieldChanges set ObsoleteCivic = null where ID = 'Plantation_HaciendaAdjacency';
 update Adjacency_YieldChanges set TilesRequired = 2, PrereqCivic = null, PrereqTech = 'TECH_BANKING', YieldType = 'YIELD_GOLD', YieldChange = 2 where ID = 'Plantation_AdvancedHaciendaAdjacency';   
 update Adjacency_YieldChanges set TilesRequired = 1, YieldType = 'YIELD_PRODUCTION', ObsoleteTech = null, ObsoleteCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_PlantationAdjacency';
 update Adjacency_YieldChanges set YieldChange = 2, YieldType = 'YIELD_PRODUCTION', PrereqTech = null, PrereqCivic = 'CIVIC_MERCANTILISM' where ID = 'Hacienda_MechanizedPlantationAdjacency';
-update Adjacency_YieldChanges set ObsoleteCivic = 'CIVIC_GUILDS' where ID = 'Hacienda_HaciendaAdjacency';
 update Adjacency_YieldChanges set PrereqCivic = 'CIVIC_GUILDS' where ID = 'Hacienda_AdvancedHaciendaAdjacency';
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			YieldChangeId)
 values
 	('IMPROVEMENT_HACIENDA',	'Hacienda_Plantation_Food'),
 	('IMPROVEMENT_HACIENDA',	'Hacienda_Hacienda_Food'),
-	('IMPROVEMENT_HACIENDA',	'Hacienda_Hacienda_Food_Late');
+	('IMPROVEMENT_HACIENDA',	'Hacienda_Hacienda_Food_Late'),
+	('IMPROVEMENT_HACIENDA',	'Hacienda_Hacienda_Food_Final');
 insert or replace into Adjacency_YieldChanges
-	(ID,								Description,	YieldType,			YieldChange,	AdjacentImprovement,		PrereqCivic,			ObsoleteCivic)
+	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqCivic,				ObsoleteCivic)
 values
-	('Hacienda_Plantation_Food',		'Placeholder',	'YIELD_FOOD',		1,				'IMPROVEMENT_PLANTATION',	null,					null),
-	('Hacienda_Hacienda_Food',			'Placeholder',	'YIELD_FOOD',		1,				'IMPROVEMENT_HACIENDA',		null,					'CIVIC_COLONIALISM'),
-	('Hacienda_Hacienda_Food_Late',		'Placeholder',	'YIELD_FOOD',		2,				'IMPROVEMENT_HACIENDA',		'CIVIC_COLONIALISM',	null);
+	('Hacienda_Plantation_Food',		'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_PLANTATION',	'CIVIC_FEUDALISM',			null),
+	('Hacienda_Hacienda_Food',			'Placeholder',	'YIELD_FOOD',		1,				2,				'IMPROVEMENT_HACIENDA',		null,						'CIVIC_MEDIEVAL_FAIRES'),
+	('Hacienda_Hacienda_Food_Late',		'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_HACIENDA',		'CIVIC_MEDIEVAL_FAIRES',	null),
+	('Hacienda_Hacienda_Food_Final',	'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_HACIENDA',		'CIVIC_COLONIALISM',		null);
 insert or replace into Improvement_ValidFeatures 
 	(ImprovementType,			FeatureType)
 values
