@@ -17,8 +17,8 @@ update HD_BuildingTiers set Tier = 0 where PrereqDistrict = 'DISTRICT_CITY_CENTE
 update HD_BuildingTiers set Tier = 2 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 1));
 update HD_BuildingTiers set Tier = 3 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 2));
 update HD_BuildingTiers set Tier = 4 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 3));
--- Worship buildings moves to Tier 4 with District Expansion enabled.
-update HD_BuildingTiers set Tier = 4 where BuildingType in (select BuildingType from Buildings where EnabledByReligion = 1) and exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and Tier = 3 and BuildingType not in (select BuildingType from Buildings where EnabledByReligion = 1));
+-- Hospitium and Garden moves to Tier 4 with District Expansion enabled.
+update HD_BuildingTiers set Tier = 4 where Tier = 3 and PrereqDistrict = 'DISTRICT_HOLY_SITE' and BuildingType not in (select BuildingType from Buildings where EnabledByReligion = 1);
 
 create table if not exists HD_DistrictPseudoYields (
 	DistrictType text not null primary key,

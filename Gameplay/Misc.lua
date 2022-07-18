@@ -320,3 +320,33 @@ function PreserveEpoSetProperty(playerID, cityID, buildingID, plotID, bOriginalC
     end
 end
 GameEvents.BuildingConstructed.Add(PreserveEpoSetProperty)
+
+-- Moon Landing
+local MOON_LANDING_INDEX = GameInfo.Projects['PROJECT_LAUNCH_MOON_LANDING'].Index;
+function MoonLandingBoost(playerId, cityId, projectId)
+	if projectId ~= MOON_LANDING_INDEX then
+		return;
+	end
+    local player = Players[playerId];
+	local playerCulture = player:GetCulture();
+	local boostPercent = 0;
+	for row in GameInfo.ModifierArguments() do
+		if (row.ModifierId == 'LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE') and (row.Name == 'Amount') then
+			boostPercent = row.Value;
+		end
+	end
+	print(boostPercent);
+	for row in GameInfo.Civics() do
+		if not playerCulture:HasCivic(row.Index) then
+			if playerCulture:HasBoostBeenTriggered(row.Index) then
+				local progress = Utils.GetCulturalProgress(playerId, row.Index);
+				local cost = playerCulture:GetCultureCost(row.Index);
+				playerCulture:SetCulturalProgress(row.Index, progress + cost * boostPercent / 100);
+			else
+				player:GetCulture():TriggerBoost(row.Index, 1);
+			end
+		end
+	end
+end
+
+Events.CityProjectCompleted.Add(MoonLandingBoost);

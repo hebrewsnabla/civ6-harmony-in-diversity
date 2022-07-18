@@ -892,8 +892,6 @@ values
 
 --三级政体建筑
 --删除原效果
---皇家学会
--- delete from BuildingModifiers where ModifierId = 'GOV_PROJECT_ABILITY';
 --作战部
 delete from BuildingModifiers where ModifierId = 'GOV_HEAL_AFTER_DEFEATING_UNIT';
 

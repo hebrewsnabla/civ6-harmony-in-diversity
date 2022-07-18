@@ -291,3 +291,10 @@ function ProjectEnemyCitiesChangeLoyalty(playerID, cityID, projectID)
 end
 
 Events.CityProjectCompleted.Add(ProjectEnemyCitiesChangeLoyalty)
+
+Utils.GetCulturalProgress = function (playerId, civicId)
+    local player = Players[playerId];
+	if player then
+		return player:GetCulture():GetCulturalProgress(civicId);
+	end
+end

@@ -43,15 +43,16 @@ values
     ("LOC_CIVILIZATION_PALENQUE_BONUS",                   "City growth rate is 20% higher in cities with a Campus district."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
     ("LOC_LEADER_TRAIT_YEREVAN_DESCRIPTION",              "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
     --("LOC_CIVILIZATION_YEREVAN_CITY_BONUS",               "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
-    ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "Your cities get +20% Production towards city projects."),
+    ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "+2 [ICON_PRODUCTION] for each Campus and Campus building. Your cities get +15% Production towards city projects."),
     --("LOC_CIVILIZATION_HONG_KONG_BONUS",                  "Your cities get +20% Production towards city projects."),
     ("LOC_LEADER_TRAIT_KUMASI_DESCRIPTION",               "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
     --("LOC_CIVILIZATION_KUMASI_BONUS",                     "Your [ICON_TradeRoute] Trade Routes to any city-state provide +1 [ICON_Culture] Culture for every specialty district in the origin city."), -- and +1 [ICON_Gold] Gold 
     ("LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. [ICON_TradeRoute]Trade Routes provide +3 [Icon_Faith] Faith."),
     --("LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "International and domestic [ICON_TradeRoute] Trade Routes receive +0.3 [ICON_FAITH] Faith for every follower in this city, of your founded or majority religion. [ICON_TradeRoute]Trade Routes provide +3 [Icon_Faith] Faith."),
-    ("LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "Encampment recieves a small adjacency bonus from Lake and Coast. Encampment adjacent to Lake provides [ICON_FOOD] Food equal to its adjacency bonus."),
+    ("LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "Encampment recieves a small adjacency bonus from Desert and Desert Hills. Encampment on or adjacent to Desert or Desert Hills provides [ICON_FOOD] Food equal to its [ICON_PRODUCTION] Production adjacency bonus."),
     --("LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "Encampment recieves a small adjacency bonus from Lake and Coast. Encampment adjacent to Lake provides [ICON_FOOD] Food equal to its adjacency bonus."),
-    ("LOC_MINOR_CIV_NGAZARGAMU_COAST_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] Production from adjacent Lake or Coast {1_Num : plural 2?Tiles; other?Tile;}."),
+    ("LOC_MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] Production from adjacent Desert {1_Num : plural 2?Tiles; other?Tile;}."),
+    ("LOC_MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] Production from adjacent Desert Hills {1_Num : plural 2?Tiles; other?Tile;}."),
     ("LOC_LEADER_TRAIT_BOLOGNA_DESCRIPTION",              "Your districts with a building provide +3 [ICON_GreatPerson] Great Person point of their type ([ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, and [ICON_GreatMusician] Great Musician for Theater Square districts with a building)."),
     --("LOC_CIVILIZATION_BOLOGNA_BONUS",                    "Your districts with a building provide +3 [ICON_GreatPerson] Great Person point of their type ([ICON_GreatWriter] Great Writer, [ICON_GreatArtist] Great Artist, and [ICON_GreatMusician] Great Musician for Theater Square districts with a building)."),
     ("LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "+5% [ICON_SCIENCE] Science in all cities for each different improved Strategic resource they have within 3 tiles."),
@@ -81,7 +82,7 @@ values
     --("LOC_CIVILIZATION_HUNZA_BONUS",                      "Your [ICON_TradeRoute] Trade Routes generate +1 [ICON_Gold] Gold for every 5 tiles they travel."),
     ("LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION",              "Your districts(except City center) and wonders on or next to Coast or Lake tiles provide +3 [ICON_Gold] Gold."),
    -- ("LOC_CIVILIZATION_JAKARTA_BONUS",                    "Your districts(except City center) and wonders on or next to Coast or Lake tiles provide +3 [ICON_Gold] Gold."),
-    ("LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION",               "Commercial Hub and Harbor recieve a standard adjacency bonus from Mine, Quarry and Reef."),
+    ("LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION",               "Your cities not on your original [ICON_CAPITAL] Capital's continent and your [ICON_CAPITAL] Capital gets +3 [ICON_GOLD] for each city on your original [ICON_CAPITAL] Capital's continent with a Commercial Hub. Your cities not on your original [ICON_CAPITAL] Capital's continent and your [ICON_CAPITAL] Capital gets +1 [ICON_PRODUCTION] for each city on your original [ICON_CAPITAL] Capital's continent with a Harbor."),
     --("LOC_CIVILIZATION_MUSCAT_BONUS",                     "Commercial Hub and Harbor recieve a standard adjacency bonus from Mine, Quarry and Reef."),
     ("LOC_MINOR_CIV_MUSCAT_MINE_DESCRIPTION",             "+{1_num} [ICON_GOLD] Gold from adjacent {1_Num : plural 2?Mines; other?Mine;}."),
     ("LOC_MINOR_CIV_MUSCAT_QUARRY_DESCRIPTION",           "+{1_num} [ICON_GOLD] Gold from adjacent {1_Num : plural 2?Quarries; other?Quarry;}."),
@@ -157,9 +158,10 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_KUMASI_BONUS",                     "您通往任何城邦的 [ICON_TradeRoute] 贸易路线都为起源城市的每个专业化区域+1 [ICON_Culture] 文化值。"), -- 和+1 [ICON_Gold] 金币
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CHINGUETTI_DESCRIPTION",           "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_CHINGUETTI_BONUS",                 "此城中每有1位您所创建（或主流）宗教的信徒，国际与国内 [ICON_TradeRoute] 贸易路线提供的 [ICON_FAITH] 信仰值便+0.3。所有商路+3 [ICON_FAITH] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "军营从湖泊或近海单元格获得少量相邻加成。相邻湖泊的军营提供等同于其相邻加成的 [ICON_FOOD] 食物。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_NGAZARGAMU_DESCRIPTION",           "军营从沙漠和沙漠丘陵获得少量相邻加成。位于或相邻沙漠或沙漠丘陵的军营提供等同于其相邻 [ICON_PRODUCTION] 生产力加成的 [ICON_FOOD] 食物。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_NGAZARGAMU_BONUS",                 "军营从湖泊或近海单元格获得小相邻加成。相邻湖泊的军营提供等同于其相邻加成的 [ICON_FOOD] 食物。"),
-    ("zh_Hans_CN",  "LOC_MINOR_CIV_NGAZARGAMU_COAST_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的近海或湖泊单元格。"),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的沙漠单元格。"),
+    ("zh_Hans_CN",  "LOC_MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_DESCRIPTION", "+{1_num} [ICON_PRODUCTION] 生产力来自相邻的沙漠丘陵单元格。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BOLOGNA_DESCRIPTION",              "拥有建筑的区域使相应类型的 [ICON_GreatPerson] 伟人点数+3（拥有建筑的剧院广场区域提供 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家和 [ICON_GreatMusician] 大音乐家点数）。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_BOLOGNA_BONUS",                    "拥有建筑的区域使相应类型的 [ICON_GreatPerson] 伟人点数+3（拥有建筑的剧院广场区域提供 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家和 [ICON_GreatMusician] 大音乐家点数）。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_TARUGA_DESCRIPTION",               "对于所有城市，其3个单元格内每拥有一种已改良的战略资源，便+5% [ICON_SCIENCE] 科技值。"),
@@ -185,7 +187,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HUNZA_BONUS",                      "您的 [ICON_TradeRoute] 贸易路线每经过5个单元格，其提供的 [ICON_Gold] 金币便+1。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_JAKARTA_DESCRIPTION",              "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+3 [ICON_Gold] 金币。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_JAKARTA_BONUS",                    "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+3 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION",               "商业中心和港口从矿山、采石场和礁石获得标准相邻加成。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MUSCAT_DESCRIPTION",               "与 [ICON_CAPITAL] 首都在同一大陆的城市中的每个商业中心为与 [ICON_CAPITAL] 首都不在同一大陆的城市和 [ICON_CAPITAL] 首都+3 [ICON_GOLD] 金币。与 [ICON_CAPITAL] 首都在同一大陆的城市中的每个港口为与 [ICON_CAPITAL] 首都不在同一大陆的城市和 [ICON_CAPITAL] 首都+1 [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_MUSCAT_BONUS",                     "商业中心和港口从矿山、采石场和礁石获得标准相邻加成。"),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_MUSCAT_MINE_DESCRIPTION",             "+{1_num} [ICON_GOLD] 金币来自相邻的矿山。"),
     ("zh_Hans_CN",  "LOC_MINOR_CIV_MUSCAT_QUARRY_DESCRIPTION",           "+{1_num} [ICON_GOLD] 金币来自相邻的采石场。"),
@@ -196,7 +198,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_MOHENJO_DARO_BONUS",               "无论您的城市是否相邻淡水，水源提供的基础 [ICON_Housing] 住房均与相邻淡水时相同。剧院和水渠为城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_Culture] 文化值产出。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_CARDIFF_DESCRIPTION",              "每个造船厂和码头向城市提供3点 [ICON_POWER] 电力。"), -- 通电建筑额外产出+4
     --("zh_Hans_CN",  "LOC_CIVILIZATION_CARDIFF_BONUS",                    "每个造船厂和码头向城市提供3点 [ICON_POWER] 电力。"), -- 通电建筑额外产出+4
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "城市建造项目时+20% [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "每个学院和学院建筑+2 [ICON_PRODUCION] 生产力。城市建造项目时+15% [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HONG_KONG_BONUS",                  "城市建造项目时+20% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MEXICO_CITY_DESCRIPTION",          "工业区、娱乐中心、水上乐园的辐射距离+3格。"), -- 工业区为城市+1 [ICON_AMENITIES] 宜居度。娱乐中心提供+5 [ICON_Production] 生产力。
     --("zh_Hans_CN",  "LOC_CIVILIZATION_MEXICO_CITY_BONUS",                "工业区、娱乐中心、水上乐园的辐射距离+3格。"), -- 工业区为城市+1 [ICON_AMENITIES] 宜居度。娱乐中心提供+5 [ICON_Production] 生产力。
@@ -216,7 +218,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_GENEVA_BONUS",                     "当您不与任何文明发生战争时，您的城市+10% [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_JOHANNESBURG_DESCRIPTION",         "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_JOHANNESBURG_BONUS",               "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BUENOS_AIRES_DESCRIPTION",         "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物，军营提供 [ICON_PRODUCTION] 生产力）。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BUENOS_AIRES_DESCRIPTION",         "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物）。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_BUENOS_AIRES_BONUS",               "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物，军营提供 [ICON_PRODUCTION] 生产力）。"),
 	("zh_Hans_CN",	"LOC_LEADER_TRAIT_LAHORE_DESCRIPTION",				"您的城市现在可以生产尼杭战士。[NEWLINE][NEWLINE]这种单位拥有独特的升级树，可以通过 [ICON_Faith] 信仰值购买。首次建造出兵营、兵工厂和军事学院时，其 [ICON_Strength] 战斗力将得到提升。");
 
@@ -378,111 +380,3 @@ values
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座*+4 [ICON_Gold] 市场。"),
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",             "每座*+6 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座*+8 [ICON_Gold] 金币。");
-
-/*
---------------------------------------------------------------------------------
--- Language: en_US
-insert or replace into EnglishText
-    (Tag,                                                       Text)
-values
-    ("LOC_CSE_SCIENTIFIC_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_SCIENCE] Science in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_SCIENCE] Science from every Library."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_SCIENCE] Science from every {LOC_BUILDING_CONSULATE_AND}University."),
-    ("LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_SCIENCE] Science from every {LOC_BUILDING_CHANCERY_AND}Research Lab."),
-    ("LOC_CSE_CULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",            "+1 [ICON_CULTURE] Culture in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+1 [ICON_CULTURE] Culture from every Amphitheater."),
-    ("LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",            "+2 [ICON_CULTURE] Culture from every {LOC_BUILDING_CONSULATE_COMMA}Art Museum and Artifact Museum."),
-    ("LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",          "+3 [ICON_CULTURE] Culture from every {LOC_BUILDING_CHANCERY_AND}Broadcast Center."),
-    ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",               "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",              "+2 [ICON_GOLD] Gold from every city has Market or Lighthouse."),
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",               "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}"), 
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",           "+4 [ICON_GOLD] Gold from every city has Bank or Shipyard."), 
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",      " +4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_NAME}."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",             "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}"),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",         "+6 [ICON_GOLD] Gold from every city has Stock Exchange or Seaport."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",    " +6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_NAME}."), 
-    ("LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS_ALT",           "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",          "+2 [ICON_GOLD] Gold from every Market."),
-    ("LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",           "+4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_AND}Bank."),
-    ("LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",         "+6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_AND}Stock Exchange."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",           "+1 [ICON_FAITH] Faith in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",          "+1 [ICON_FAITH] Faith from every Shrine."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",           "+2 [ICON_FAITH] Faith from every {LOC_BUILDING_CONSULATE_AND}Temple."),
-    ("LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",         "+3 [ICON_FAITH] Faith from every {LOC_BUILDING_CHANCERY_AND}Worship building."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_PRODUCTION] Production towards units in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_PRODUCTION] Production towards units from every Barracks and Stable."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_PRODUCTION] Production towards units from every {LOC_BUILDING_CONSULATE_AND}Armory."),
-    ("LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_PRODUCTION] Production towards units from every {LOC_BUILDING_CHANCERY_AND}Military Academy."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",          "+1 [ICON_PRODUCTION] Production towards districts and buildings in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",         "+1 [ICON_PRODUCTION] Production towards districts and buildings from every Workshop."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",          "+2 [ICON_PRODUCTION] Production towards districts and buildings from every {LOC_BUILDING_CONSULATE_AND}Factory."),
-    ("LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",        "+3 [ICON_PRODUCTION] Production towards districts and buildings from every {LOC_BUILDING_CHANCERY_AND}Power Plant."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",        "+1 [ICON_FOOD] Food in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",       "+1 [ICON_FOOD] Food from every Granary."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",        "+2 [ICON_FOOD] Food from every {LOC_BUILDING_CONSULATE_AND}Aqueduct."),
-    ("LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",      "+3 [ICON_FOOD] Food from every {LOC_BUILDING_CHANCERY_AND}Sewer."),
-    ("LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",            "+2 [ICON_GOLD] Gold in your [ICON_CAPITAL] Capital."),
-    ("LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",           "+2 [ICON_GOLD] Gold from every Lighthouse."),
-    ("LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",            "+4 [ICON_GOLD] Gold from every {LOC_BUILDING_CONSULATE_AND}Shipyard."),
-    ("LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",          "+6 [ICON_GOLD] Gold from every {LOC_BUILDING_CHANCERY_AND}Seaport.");
-
---------------------------------------------------------------------------------
--- Language: zh_Hans_CN
-insert or replace into LocalizedText
-    (Language,      Tag,                                                        Text)
-values
-    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_SMALL_INFLUENCE_BONUS",           "[ICON_Capital] 首都+1 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_MEDIUM_INFLUENCE_BONUS",          "每座图书馆+1 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_LARGE_INFLUENCE_BONUS",           "每座{LOC_BUILDING_CONSULATE_AND}大学+2 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_CSE_SCIENTIFIC_TRAIT_LARGEST_INFLUENCE_BONUS",         "每座{LOC_BUILDING_CHANCERY_AND}研究实验室+3 [ICON_Science] 科技值。"),
-    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",             "[ICON_Capital] 首都+1 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座古罗马剧场+1 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",             "每座{LOC_BUILDING_CONSULATE_COMMA}艺术博物馆和考古博物馆+2 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CSE_CULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座{LOC_BUILDING_CHANCERY_AND}广播中心+3 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_SMALL_INFLUENCE_BONUS",                "[ICON_Capital] 首都+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS",               "拥有市场或灯塔的城市+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",                "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW",            "拥有银行或造船厂的城市+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA",       "每座{LOC_BUILDING_CONSULATE_NAME}+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",              "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW",          "拥有证券交易所或码头的城市+6 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA",     "每座{LOC_BUILDING_CHANCERY_NAME}+6 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_MEDIUM_INFLUENCE_BONUS_ALT",           "每座市场+2 [ICON_Gold] 市场。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ALT",            "每座{LOC_BUILDING_CONSULATE_AND}银行+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ALT",          "每座{LOC_BUILDING_CHANCERY_AND}证券交易所+6 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_SMALL_INFLUENCE_BONUS",            "[ICON_Capital] 首都+1 [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_MEDIUM_INFLUENCE_BONUS",           "每座神社+1 [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_LARGE_INFLUENCE_BONUS",            "每座{LOC_BUILDING_CONSULATE_AND}寺庙+2 [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_CSE_RELIGIOUS_TRAIT_LARGEST_INFLUENCE_BONUS",          "每座{LOC_BUILDING_CHANCERY_AND}祭祀建筑+3 [ICON_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_SMALL_INFLUENCE_BONUS",         "训练单位时，[ICON_Capital] 首都+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_MEDIUM_INFLUENCE_BONUS",        "训练单位时，每座兵营和马厩+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_LARGE_INFLUENCE_BONUS",         "训练单位时，每座{LOC_BUILDING_CONSULATE_AND}兵工厂+2 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_MILITARISTIC_TRAIT_LARGEST_INFLUENCE_BONUS",       "训练单位时，每座{LOC_BUILDING_CHANCERY_AND}军事学院+3 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_SMALL_INFLUENCE_BONUS",           "建造区域与建筑时，[ICON_Capital] 首都+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_MEDIUM_INFLUENCE_BONUS",          "建造区域与建筑时，每座工作坊+1 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGE_INFLUENCE_BONUS",           "建造区域与建筑时，每座{LOC_BUILDING_CONSULATE_AND}工厂+2 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_INDUSTRIAL_TRAIT_LARGEST_INFLUENCE_BONUS",         "建造区域与建筑时，每座{LOC_BUILDING_CHANCERY_AND}发电厂+3 [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_SMALL_INFLUENCE_BONUS",         "[ICON_Capital] 首都+1 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_MEDIUM_INFLUENCE_BONUS",        "每座粮仓+1 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",         "每座{LOC_BUILDING_CONSULATE_AND}水渠+2 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",       "每座{LOC_BUILDING_CHANCERY_AND}下水道+3 [ICON_Food] 食物。"),
-    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",             "[ICON_Capital] 首都+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座灯塔+2 [ICON_Gold] 市场。"),
-    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",             "每座{LOC_BUILDING_CONSULATE_AND}造船厂+4 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座{LOC_BUILDING_CHANCERY_AND}码头+6 [ICON_Gold] 金币。");
-*/
-/*
-insert or replace into EnglishText (Tag,            Text) select
-    "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",    "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA}"
-where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
-insert or replace into EnglishText (Tag,            Text) select
-    "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",  "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA}"
-where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
-
-insert or replace into LocalizedText (Language,      Tag,           Text) select
-    "zh_Hans_CN",   "LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS",    "{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGE_INFLUENCE_BONUS_ETHIOPIA}"
-where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
-insert or replace into LocalizedText (Language,      Tag,           Text) select
-    "zh_Hans_CN",   "LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS",  "{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_RAW}{LOC_CSE_TRADE_TRAIT_LARGEST_INFLUENCE_BONUS_ETHIOPIA}"
-where exists (select Tag from EnglishText where Tag = "LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME");
-*/

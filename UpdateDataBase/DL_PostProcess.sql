@@ -178,3 +178,64 @@ insert or replace into ModifierArguments
 select
 	'SPHINX_' || BuildingType || '_' || YieldType,		'Amount',		YieldChange * 2
 from SphinxWonderYields;
+
+-- Royal Society
+delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_SCIENCE' and ModifierId = 'GOV_PROJECT_ABILITY';
+create temporary table HD_GovScienceBuildingYields (
+	BuildingType text not null primary key,
+	YieldType text not null,
+	Amount int,
+	ReplacesBuildingType text,
+	ReplacesAmount int,
+	ModifierId text
+);
+-- Initialize
+insert or replace into HD_GovScienceBuildingYields
+	(BuildingType,	YieldType)
+select
+	BuildingType,	'YIELD_PRODUCTION'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS';
+insert or replace into HD_GovScienceBuildingYields
+	(BuildingType,	YieldType)
+select
+	BuildingType,	'YIELD_SCIENCE'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE';
+update HD_GovScienceBuildingYields set Amount =	(select YieldChange from Building_YieldChanges
+	where BuildingType = HD_GovScienceBuildingYields.BuildingType and YieldType = 'YIELD_PRODUCTION') where YieldType = 'YIELD_SCIENCE';
+update HD_GovScienceBuildingYields set Amount =	(select YieldChange from Building_YieldChanges
+	where BuildingType = HD_GovScienceBuildingYields.BuildingType and YieldType = 'YIELD_SCIENCE') where YieldType = 'YIELD_PRODUCTION';
+-- UB support
+update HD_GovScienceBuildingYields set Amount = 0 where Amount is null;
+update HD_GovScienceBuildingYields set ReplacesBuildingType = (select ReplacesBuildingType from BuildingReplaces where CivUniqueBuildingType = BuildingType);
+with T(BuildingType, Amount) as (select BuildingType, Amount from HD_GovScienceBuildingYields)
+update HD_GovScienceBuildingYields set ReplacesAmount = (select Amount from T where T.BuildingType = ReplacesBuildingType);
+update HD_GovScienceBuildingYields set ReplacesAmount = 0 where ReplacesAmount is null;
+update HD_GovScienceBuildingYields set Amount = Amount - ReplacesAmount;
+delete from HD_GovScienceBuildingYields where Amount = 0;
+-- Modifiers
+update HD_GovScienceBuildingYields set ModifierId = 'GOV_SCIENCE_' || BuildingType || '_' || YieldType;
+insert or replace into BuildingModifiers
+	(BuildingType,				ModifierId)
+select
+	'BUILDING_GOV_SCIENCE',		ModifierId
+from HD_GovScienceBuildingYields;
+insert or replace into Modifiers
+	(ModifierId,	ModifierType)
+select
+	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_GovScienceBuildingYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'BuildingType',	BuildingType
+from HD_GovScienceBuildingYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	YieldType
+from HD_GovScienceBuildingYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		Amount
+from HD_GovScienceBuildingYields;

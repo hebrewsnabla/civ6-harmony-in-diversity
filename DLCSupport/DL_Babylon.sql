@@ -67,6 +67,103 @@ values
 	('MINOR_CIV_CHINGUETTI_FAITH',					 'YieldType',	'YIELD_FAITH'),
 	('MINOR_CIV_CHINGUETTI_FAITH',					 'Amount',	   3);
 
+-- Babylon
+update ModifierArguments set Value = 60 where ModifierId = 'TRAIT_EUREKA_INCREASE';
+delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_BABYLON' or TraitType = 'TRAIT_LEADER_HAMMURABI';
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+values
+	('TRAIT_LEADER_HAMMURABI',		'TRAIT_EUREKA_INCREASE'),
+	('TRAIT_LEADER_HAMMURABI',		'TRAIT_SCIENCE_DECREASE');
+create temporary table HD_BabylonDistrictBonuses (
+	DistrictType text not null primary key,
+	YieldType text not null,
+	AttachModifierId text,
+	DistrictAttachModifierId text,
+	ModifierId text
+);
+insert or replace into HD_BabylonDistrictBonuses
+	(DistrictType,	YieldType)
+select
+	DistrictType,	YieldType
+from HD_DistrictPseudoYields;
+insert or replace into HD_BabylonDistrictBonuses
+	(DistrictType,								YieldType)
+values
+	('DISTRICT_GOVERNMENT',						'YIELD_CULTURE'),
+	('DISTRICT_ENTERTAINMENT_COMPLEX',			'YIELD_GOLD'),
+	('DISTRICT_WATER_ENTERTAINMENT_COMPLEX',	'YIELD_GOLD');
+insert or replace into HD_BabylonDistrictBonuses
+	(DistrictType,								YieldType)
+select
+	'DISTRICT_DIPLOMATIC_QUARTER',				'INFLUENCE_POINT'
+where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+update HD_BabylonDistrictBonuses set ModifierId = 'TRAIT_BABYLON' || DistrictType || '_' || YieldType;
+update HD_BabylonDistrictBonuses set AttachModifierId = ModifierId || '_ATTACH';
+update HD_BabylonDistrictBonuses set DistrictAttachModifierId = ModifierId || '_DISTRICT_ATTACH';
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+select
+	'TRAIT_CIVILIZATION_BABYLON',	AttachModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,									SubjectRequirementSetId)
+select
+	AttachModifierId,		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
+from HD_BabylonDistrictBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	AttachModifierId,		'ModifierId',	DistrictAttachModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,								SubjectRequirementSetId)
+select
+	DistrictAttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_DOES_NOT_HAVE_' || DistrictType || '_REQUIREMENTS'
+from HD_BabylonDistrictBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	DistrictAttachModifierId,		'ModifierId',	ModifierId
+from HD_BabylonDistrictBonuses;
+-- non Diplomatic Quater
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,									SubjectRequirementSetId)
+select
+	ModifierId,		'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	YieldType
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		1
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+-- Diplomatic Quater
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,									SubjectRequirementSetId)
+select
+	ModifierId,		'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'ModifierId',	ModifierId || '_MODIFIER'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into Modifiers
+	(ModifierId,					ModifierType)
+select
+	ModifierId || '_MODIFIER',		'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select
+	ModifierId || '_MODIFIER',		'Amount',		1
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+
 -- Kenzo Tange
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_KENZO_TANGE';
 

@@ -220,7 +220,8 @@ values
     ("LOC_POLICY_MARTIAL_ELECTION_DESCRIPTION",                                       "+4 [ICON_GREATGENERAL] Great General points per turn. +2 [ICON_GREATGENERAL] Great General points per turn for every Barracks or Stable."),
     ("LOC_POLICY_GLADIATORIAL_GAME_NAME",                                             "Gladiatorial Game"),
     ("LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION",                                      "+30% construction speed toward Entertainment Complex and Water Park districts and buildings in these districts."),
-    ("LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "+4 [ICON_GOLD] Gold and +2 [ICON_FAITH] Faith from all [ICON_TRADEROUTE] Trade Routes.");
+    ("LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "+4 [ICON_GOLD] Gold and +2 [ICON_FAITH] Faith from all [ICON_TRADEROUTE] Trade Routes."),
+	("LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",								  "+2 [ICON_CULTURE] Culture and +4 [ICON_GOLD] Gold to all Campus, Encampment and Industrial Zone highest Tier buildings.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -442,4 +443,5 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_MARTIAL_ELECTION_DESCRIPTION",                                       "每回合+4 [ICON_GREATGENERAL] 大将军点数。每有一座兵营或马厩，每回合的 [ICON_GREATGENERAL] 大将军点数便+2。"),
     ("zh_Hans_CN",  "LOC_POLICY_GLADIATORIAL_GAME_NAME",                                             "角斗"),
     ("zh_Hans_CN",  "LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION",                                      "建造娱乐中心以及其中的建筑时+50%建造速度。"),
-    ("zh_Hans_CN",  "LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "所有 [ICON_TRADEROUTE] 贸易路线+4 [ICON_GOLD] 金币和+2 [ICON_FAITH] 信仰值。");
+    ("zh_Hans_CN",  "LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "所有 [ICON_TRADEROUTE] 贸易路线+4 [ICON_GOLD] 金币和+2 [ICON_FAITH] 信仰值。"),
+	("zh_Hans_CN",	"LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",									 "所有学院、军营和工业区最高等级的建筑+2 [ICON_CULTURE] 文化值、+4 [ICON_GOLD] 金币。");

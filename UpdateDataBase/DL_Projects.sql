@@ -103,7 +103,18 @@ update Projects set Cost = 600 where ProjectType = 'PROJECT_GRANT_RESOURCE_URANI
 
 -- Launch Moon Landing
 delete from ProjectCompletionModifiers where ProjectType = 'PROJECT_LAUNCH_MOON_LANDING' and ModifierId = 'PROJECT_COMPLETION_GRANT_CULTURE_BASED_ON_SCIENCE_RATE';
-
+insert or replace into ProjectCompletionModifiers
+	(ProjectType,						ModifierId)
+values
+	('PROJECT_LAUNCH_MOON_LANDING',		'LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE',	'MODIFIER_PLAYER_ADJUST_CIVIC_BOOST');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,		Value)
+values
+	('LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE',	'Amount',	10);
 -- -- 征发民夫 by xhh
 -- insert or replace into Types
 -- 	(Type,							Kind)

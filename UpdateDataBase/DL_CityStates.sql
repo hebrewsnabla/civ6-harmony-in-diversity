@@ -306,10 +306,10 @@ insert or replace into UnitAbilityModifiers
 values
 	('ABILITY_AKKAD_ESCORT_MOBILITY_SHARED_MOVEMENT',		'ESCORT_MOBILITY_SHARED_MOVEMENT');
 
---Bologna
+-- Bologna
 update ModifierArguments set Value = 3 where ModifierId like 'MINOR_CIV_BOLOGNA_GREAT_%_BONUS' and Name = 'Amount';
 
---Wolin
+-- Wolin
 update ModifierArguments set Value = 100 where ModifierId = 'WOLIN_GREAT_GENERAL_POINTS' and Name = 'Amount';
 update ModifierArguments set Value = 100 where ModifierId = 'WOLIN_GREAT_ADMIRAL_POINTS' and Name = 'Amount';
 
@@ -378,24 +378,32 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_NGAZARGAMU_TRAIT';
 insert or replace into TraitAttachedModifiers
 	(TraitType,                   	ModifierId)
 values
-	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY'),
-	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD');
+	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY'),
+	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_DESERT_HILL_ENCAMPMENT_ADJACENCY'),
+	('MINOR_CIV_NGAZARGAMU_TRAIT',	'MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_FOOD');
 insert or replace into Modifiers
-	(ModifierId,										ModifierType,														SubjectRequirementSetId)
+	(ModifierId,												ModifierType,														SubjectRequirementSetId)
 values
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',							null),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'ENCAMPMENT_ADJACENT_TO_LAKE');
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',							null),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY',							null),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_FOOD',				'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'ENCAMPMENT_ON_OR_ADJACENT_TO_DESERT');
 insert or replace into ModifierArguments
-	(ModifierId,										Name,					Value)
+	(ModifierId,												Name,					Value)
 values
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'DistrictType',			'DISTRICT_ENCAMPMENT'),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'TerrainType',			'TERRAIN_COAST'),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'YieldType',			'YIELD_PRODUCTION'),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'Description',			'LOC_MINOR_CIV_NGAZARGAMU_COAST_ENCAMPMENT_DESCRIPTION'),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'Amount',				1),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_ADJACENCY',	'TilesRequired',		2),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'YieldTypeToMirror',	'YIELD_PRODUCTION'),
-	('MINOR_CIV_NGAZARGAMU_LAKE_ENCAMPMENT_FOOD',		'YieldTypeToGrant',		'YIELD_FOOD');
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'DistrictType',			'DISTRICT_ENCAMPMENT'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'TerrainType',			'TERRAIN_DESERT'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'YieldType',			'YIELD_PRODUCTION'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'Description',			'LOC_MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_DESCRIPTION'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'Amount',				1),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_ADJACENCY',		'TilesRequired',		2),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'DistrictType',			'DISTRICT_ENCAMPMENT'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'TerrainType',			'TERRAIN_DESERT_HILLS'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'YieldType',			'YIELD_PRODUCTION'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'Description',			'LOC_MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_DESCRIPTION'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'Amount',				1),
+	('MINOR_CIV_NGAZARGAMU_DESERT_HILLS_ENCAMPMENT_ADJACENCY',	'TilesRequired',		2),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_FOOD',				'YieldTypeToMirror',	'YIELD_PRODUCTION'),
+	('MINOR_CIV_NGAZARGAMU_DESERT_ENCAMPMENT_FOOD',				'YieldTypeToGrant',		'YIELD_FOOD');
 
 -- Buenos Aires
 delete from TraitModifiers where TraitType = 'MINOR_CIV_BUENOS_AIRES_TRAIT';
@@ -429,6 +437,47 @@ insert or replace into ModifierArguments
 select distinct
 	'MINOR_CIV_BUENOS_AIRES_' || YieldType,		'Amount',		6
 from HD_DistrictPseudoYields;
+
+-- Baikonur
+update ModifierArguments set Value = 15 where ModifierId = 'MINOR_CIV_HONG_KONG_PROJECT_PRODUCTION_BONUS' and Name = 'Amount';
+insert or replace into TraitAttachedModifiers
+	(TraitType,							ModifierId)
+values
+	('MINOR_CIV_HONG_KONG_TRAIT',		'MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION');
+insert or replace into Modifiers	
+	(ModifierId,									ModifierType,										SubjectRequirementSetId)
+values
+	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_CAMPUS');	
+insert or replace into	ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
+    ('MINOR_CIV_HONG_KONG_CAMPUS_PRODUCTION',		'Amount',		2);
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+select
+	'MINOR_CIV_HONG_KONG_TRAIT',	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+insert or replace into Modifiers	
+	(ModifierId,												ModifierType)
+select
+	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+insert or replace into ModifierArguments	
+	(ModifierId,												Name,				Value)
+select
+	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'BuildingType',		BuildingType
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+insert or replace into ModifierArguments	
+	(ModifierId,												Name,				Value)
+select
+	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+insert or replace into ModifierArguments	
+	(ModifierId,												Name,				Value)
+select
+	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'Amount',			2
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
 insert or ignore into TraitModifiers
