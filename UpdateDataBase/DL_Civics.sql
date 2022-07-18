@@ -408,3 +408,18 @@ insert or replace into RequirementSetRequirements
     (RequirementSetId,						RequirementId) 
 values
 	('ROUTE_BETWEEN_ALLIES_REQUIREMENTS',					'REQUIRES_PLAYER_HAS_CIVIC_CIVIL_SERVICE');
+
+-- 未来市政鼓舞
+with C
+	(BoostID,	CivicType)
+as (values
+	(300,		'CIVIC_CULTURAL_HEGEMONY'),
+	(301,		'CIVIC_GLOBAL_WARMING_MITIGATION'),
+	(302,		'CIVIC_INFORMATION_WARFARE'),
+	(303,		'CIVIC_EXODUS_IMPERATIVE'),
+	(304,		'CIVIC_SMART_POWER_DOCTRINE')
+) insert or replace into Boosts
+	(BoostID,	CivicType,	Boost,	TriggerDescription,					TriggerLongDescription,						BoostClass)
+select
+	BoostID,	CivicType,	34,		'LOC_BOOST_TRIGGER_MOON_LANDING',	'LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING',	'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH'
+from C;

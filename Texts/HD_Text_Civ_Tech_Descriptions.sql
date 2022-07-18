@@ -177,7 +177,9 @@ values
     ("LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                                    "Build a Niter Mine and own a Caravel."),
     ("LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                                           "Gunpowder weapons proved so powerful that our navy was eager to use them."),
     ("LOC_BOOST_TRIGGER_RIFLING",                                                           "Own 2 Bombards."),
-    ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "Our old long-standing mortars were no longer adequate for combat needs in terms of accuracy, and we needed to spin out the shells.");
+    ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "Our old long-standing mortars were no longer adequate for combat needs in terms of accuracy, and we needed to spin out the shells."),
+	("LOC_BOOST_TRIGGER_MOON_LANDING",														"Launch Moon Landing."),
+	("LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",												"Launch Moon Landing.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -361,7 +363,9 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SQUARE_RIGGING",                                     "建造一座硝石矿，拥有一个轻快帆船。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SQUARE_RIGGING",                            "火药武器展现出了非凡威力，我们的海军迫不及待的想要运用它们。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_RIFLING",                                            "拥有2个射石炮。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "我们老久的臼炮在精度方面已经无法满足战斗需求，我们需要旋转出膛的炮弹。");
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "我们老久的臼炮在精度方面已经无法满足战斗需求，我们需要旋转出膛的炮弹。"),
+	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MOON_LANDING",										"启动登月计划。"),
+	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",								"启动登月计划。");
 
 --------------------------------------------------------------------------------
 -- Language: en_US

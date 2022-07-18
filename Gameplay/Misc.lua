@@ -343,7 +343,9 @@ function MoonLandingBoost(playerId, cityId, projectId)
 				local cost = playerCulture:GetCultureCost(row.Index);
 				playerCulture:SetCulturalProgress(row.Index, progress + cost * boostPercent / 100);
 			else
-				player:GetCulture():TriggerBoost(row.Index, 1);
+				if row.EraType == 'ERA_FUTURE' then
+					player:GetCulture():TriggerBoost(row.Index, 1);
+				end
 			end
 		end
 	end
