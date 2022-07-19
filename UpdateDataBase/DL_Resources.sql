@@ -123,3 +123,17 @@ update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate 
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';
 
 -- update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
+
+-- 泛滥螃蟹
+update Resources set Frequency = 4 where ResourceType = 'RESOURCE_CRABS';
+
+insert or replace into Resource_ValidFeatures
+	(ResourceType,				FeatureType)
+values
+    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_GRASSLAND'),
+    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_PLAINS');
+
+insert or replace into Improvement_ValidResources
+    (ImprovementType,      ResourceType,           MustRemoveFeature)
+values
+    ('IMPROVEMENT_CAMP',   'RESOURCE_CRABS',       0);

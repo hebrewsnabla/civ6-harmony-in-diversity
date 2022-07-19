@@ -286,20 +286,6 @@ select
     'TRIEU_FEATURE_REQUIREMENTS',                   'HD_REQUIRES_PLOT_HAS_FEATURE_HD_SWAMP'
 where exists (select CivilizationType from Civilizations where CivilizationType = 'CIVILIZATION_VIETNAM');
 
--- 泛滥螃蟹
-update Resources set Frequency = 4 where ResourceType = 'RESOURCE_CRABS';
-
-insert or replace into Resource_ValidFeatures
-	(ResourceType,				FeatureType)
-values
-    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_GRASSLAND'),
-    ('RESOURCE_CRABS',          'FEATURE_FLOODPLAINS_PLAINS');
-
-insert or replace into Improvement_ValidResources
-    (ImprovementType,               ResourceType,           MustRemoveFeature)
-values
-    ('IMPROVEMENT_JNR_REED_HOME',   'RESOURCE_CRABS',       0);
-
 -- 圣地相邻加成
 insert or replace into District_Adjacencies
 	(DistrictType,						YieldChangeId)
