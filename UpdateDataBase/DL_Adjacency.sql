@@ -181,7 +181,7 @@ from Districts where DistrictType = 'DISTRICT_HARBOR' or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
 
 -- Holy Site
-update Adjacency_YieldChanges set TilesRequired = 1 where YieldChangeId = 'Forest_Faith';
+update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Forest_Faith';
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,					YieldType,		YieldChange,	AdjacentFeature,	AdjacentDistrict)
 values
