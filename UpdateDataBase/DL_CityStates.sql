@@ -148,19 +148,6 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE';
 
 -- Anshan (Babylon)
 delete from TraitModifiers where TraitType = 'MINOR_CIV_BABYLON_TRAIT';
-insert or replace into TraitAttachedModifiers
-	(TraitType,						ModifierId)
-values
-	('MINOR_CIV_BABYLON_TRAIT',		'MINOR_CIV_BABYLON_HILL_CITY_SCIENCE');
-insert or replace into Modifiers
-	(ModifierId,								ModifierType,										SubjectRequirementSetId)
-values
-	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'PLOT_IS_HILLS');
-insert or replace into ModifierArguments
-	(ModifierId,								Name,			Value)
-values
-	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'YieldType',	'YIELD_SCIENCE'),
-	('MINOR_CIV_BABYLON_HILL_CITY_SCIENCE',		'Amount',		1);
 create temporary table HD_BabylonAdjacencies (TerrainType text not null primary key);
 insert or replace into HD_BabylonAdjacencies
 	(TerrainType)

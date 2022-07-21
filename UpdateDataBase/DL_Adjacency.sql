@@ -49,7 +49,6 @@ values
 	('DISTRICT_ENCAMPMENT',				'Mountain_Tunnel_Production'),
 	('DISTRICT_ENCAMPMENT',				'Missle_Silo_Production'),
 	('DISTRICT_ENCAMPMENT',				'Maori_Pa_Production'),
-	('DISTRICT_HOLY_SITE',				'Forest_Standard_Faith'),
 	('DISTRICT_HOLY_SITE',				'Neighborhood_Faith'),
 	('DISTRICT_HOLY_SITE',				'Mbanza_Faith'),
 	-- UD
@@ -94,8 +93,6 @@ from (District_Adjacencies a inner join DistrictReplaces b on a.DistrictType = b
 delete from District_Adjacencies where DistrictType = 'DISTRICT_ACROPOLIS' and YieldChangeId = 'District_Culture_City_Center';
 delete from District_Adjacencies where DistrictType = 'DISTRICT_OPPIDUM' and YieldChangeId in
 	('Strategic_Production', 'HD_Mine_HalfProduction', 'HD_Quarry_HalfProduction', 'HD_Quarry_Production');
-delete from District_Adjacencies where DistrictType = 'DISTRICT_HOLY_SITE' and YieldChangeId = 'Forest_Faith';
-delete from District_Adjacencies where DistrictType = 'DISTRICT_LAVRA' and YieldChangeId = 'Forest_Standard_Faith';
 update Adjacency_YieldChanges set YieldChange = 3 where ID = 'NaturalWonder_Faith';
 
 -- Adjacency definition
@@ -184,10 +181,10 @@ from Districts where DistrictType = 'DISTRICT_HARBOR' or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
 
 -- Holy Site
+update Adjacency_YieldChanges set TilesRequired = 1 where YieldChangeId = 'Forest_Faith';
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,					YieldType,		YieldChange,	AdjacentFeature,	AdjacentDistrict)
 values
-	('Forest_Standard_Faith',		'LOC_DISTRICT_FOREST_FAITH',	'YIELD_FAITH',	1,				'FEATURE_FOREST',	null),
 	('Neighborhood_Faith',			'LOC_NEIGHBORHOOD_FAITH',		'YIELD_FAITH',	2,				null,				'DISTRICT_NEIGHBORHOOD'),
 	('Mbanza_Faith',				'LOC_NEIGHBORHOOD_FAITH',		'YIELD_FAITH',	2,				null,				'DISTRICT_MBANZA');
 insert or replace into Adjacency_YieldChanges
