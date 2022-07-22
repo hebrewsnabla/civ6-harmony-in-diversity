@@ -359,9 +359,9 @@ insert or replace into HD_INN_RESOURCES_TEXT (ResourceType) values
 	('RESOURCE_SANDALWOOD'),('RESOURCE_OAK'),('RESOURCE_EBONY'),('RESOURCE_SAKURA'),('RESOURCE_PINE'),('RESOURCE_RUBBER'),('RESOURCE_CASHMERE'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_LION');
 
 update LocalizedText set Text = Text ||
-    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_TAVERN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Tag = "LOC_"||ResourceType||"_NAME"))
+    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_TAVERN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Language = 'en_US' and Tag = "LOC_"||ResourceType||"_NAME"))
     where Tag = "LOC_BUILDING_HD_TAVERN_DESCRIPTION";
 
 update LocalizedText set Text = Text ||
-    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_INN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Tag = "LOC_"||ResourceType||"_NAME"))
+    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_INN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Language = 'en_US' and Tag = "LOC_"||ResourceType||"_NAME"))
     where Tag = "LOC_BUILDING_HD_INN_DESCRIPTION";

@@ -332,31 +332,6 @@ insert or replace into UnitAbilityModifiers
 values
 	('ABILITY_RELIGIOUS_ALL_INCREASED_MOVEMENT',		'RELIGIOUS_ALL_INCREASED_MOVEMENT');
 
--- Johannesburg
-delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT';
-create temporary table JohannesburgResources (ResourceType text not null primary key);
-insert or replace into JohannesburgResources (ResourceType) select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_MINE' or ImprovementType = 'IMPROVEMENT_QUARRY';
-insert or replace into TraitAttachedModifiers
-    (TraitType,                   		ModifierId)
-select
-    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType
-from JohannesburgResources;
-insert or replace into Modifiers
-    (ModifierId,                                    ModifierType,                               		SubjectRequirementSetId)
-select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,    	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
-from JohannesburgResources;
-insert or replace into ModifierArguments
-    (ModifierId,                           		Name,           Value)
-select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'Amount',       1
-from JohannesburgResources;
-insert or replace into ModifierArguments
-    (ModifierId,                         		Name,           Value)
-select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'YieldType',    'YIELD_PRODUCTION'
-from JohannesburgResources;
-
 -- Geneva
 update ModifierArguments set Value = 10 where ModifierId = 'MINOR_CIV_GENEVA_SCIENCE_AT_PEACE_BONUS' and Name = 'Amount';
 

@@ -711,25 +711,3 @@ values
     ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'Experience',   0),
     ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'UnitType',     'UNIT_CUIRASSIER'),
     ('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',      'UniqueOverride',   1);
-
--- 古典提督航海家汉诺: 赠送一艘+2速的海军近战单位, 且所有与该单位编队的单位将继承该桨帆单位的移速
-insert or replace into Types (Type, Kind) values ('ABILITY_HANNO', 'KIND_ABILITY');
-insert or replace into TypeTags (Type, Tag) values ('ABILITY_HANNO', 'CLASS_NAVAL_MELEE');
-insert or replace into UnitAbilities
-    (UnitAbilityType,    Description,                        Inactive)
-values
-    ('ABILITY_HANNO',   'LOC_ABILITY_HANNO_DESCRIPTION',    1);
-insert or replace into UnitAbilityModifiers
-    (UnitAbilityType,   ModifierId)
-values
-    ('ABILITY_HANNO',   'HANNO_FREE_UNIT_MOVEMENT_BUFF'),
-    ('ABILITY_HANNO',   'ESCORT_MOBILITY_SHARED_MOVEMENT');
-update ModifierArguments set Value = 'HANNO_GRANT_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT' and Name = 'ModifierId';
-insert or replace into Modifiers
-    (ModifierId,            ModifierType,                           RunOnce,    Permanent)
-values
-    ('HANNO_GRANT_ABILITY', 'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',   1,          1);
-insert or replace into ModifierArguments
-    (ModifierId,            Name,           Value)
-values
-    ('HANNO_GRANT_ABILITY', 'AbilityType',  'ABILITY_HANNO');

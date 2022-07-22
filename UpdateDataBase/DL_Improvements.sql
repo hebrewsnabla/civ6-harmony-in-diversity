@@ -117,13 +117,6 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
 
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Early'),
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Late'),
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Holy_Site_Science_Late'),
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Lavra_Science_Late'),
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Neighborhood_Science'),
-	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Mbanza_Science'),
-	
 	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production'),
 	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_GrassMountainAdjacency_Late'),
@@ -164,15 +157,6 @@ insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentRiver,	PrereqTech,				ObsoleteTech)
 values
 	('Lumber_Mill_River_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'TECH_BRONZE_WORKING',	'TECH_MACHINERY');
-insert or replace into Adjacency_YieldChanges
-	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict,			PrereqCivic,			ObsoleteCivic)
-values
-	('Mahavihara_Seowon_Science_Early', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_SEOWON',			null,					'CIVIC_DIVINE_RIGHT'),
-	('Mahavihara_Seowon_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Holy_Site_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Lavra_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
-	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
 values

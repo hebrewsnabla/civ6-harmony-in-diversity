@@ -119,9 +119,13 @@ values
     ('IMPROVEMENT_JNR_REED_HOME',   'FEATURE_FLOODPLAINS'),
     ('IMPROVEMENT_BARBARIAN_CAMP',  'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_GOODY_HUT',       'FEATURE_HD_SWAMP'),
-    ('IMPROVEMENT_METEOR_GOODY',    'FEATURE_HD_SWAMP'),
     ('IMPROVEMENT_LAND_POLDER',     'FEATURE_HD_SWAMP'),
 	('IMPROVEMENT_GREAT_WALL',		'FEATURE_HD_SWAMP');
+insert or replace into Improvement_ValidFeatures
+    (ImprovementType,               FeatureType)
+select
+    'IMPROVEMENT_METEOR_GOODY',     'FEATURE_HD_SWAMP'
+where exists (select ImprovementType from Improvements where ImprovementType = 'IMPROVEMENT_METEOR_GOODY');
 
 insert or replace into Improvement_InvalidAdjacentFeatures
     (ImprovementType,               FeatureType)

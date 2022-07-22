@@ -28,12 +28,13 @@ update Technologies set Description = 'LOC_TECH_STEEL_HD_DESCRIPTION' where Tech
 update Technologies set Description = 'LOC_TECH_SCIENTIFIC_THEORY_HD_DESCRIPTION' where TechnologyType = 'TECH_SCIENTIFIC_THEORY';
 update Technologies set Description = null where TechnologyType ='TECH_REPLACEABLE_PARTS';
 update Technologies set Description = 'LOC_TECH_TELECOMMUNICATIONS_HD_DESCRIPTION' where TechnologyType ='TECH_TELECOMMUNICATIONS';
--- update Technologies set Description = 'LOC_TECH_CARTOGRAPHY_HD_DESCRIPTION' where TechnologyType ='TECH_CARTOGRAPHY';
+update Technologies set Description = 'LOC_TECH_CARTOGRAPHY_HD_DESCRIPTION' where TechnologyType ='TECH_CARTOGRAPHY';
 -- update Technologies set Description = 'LOC_TECH_INDUSTRIALIZATION_HD_DESCRIPTION' where TechnologyType ='TECH_INDUSTRIALIZATION';
 update Technologies set Description = 'LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION' where TechnologyType ='TECH_SYNTHETIC_MATERIALS';
 update Technologies set Description = 'LOC_TECH_ROBOTICS_HD_DESCRIPTION' where TechnologyType ='TECH_ROBOTICS';
 update Technologies set Description = 'LOC_TECH_CYBERNETICS_HD_DESCRIPTION' where TechnologyType ='TECH_CYBERNETICS';
 update Technologies set Description = 'LOC_TECH_SMART_MATERIALS_HD_DESCRIPTION' where TechnologyType ='TECH_SMART_MATERIALS';
+update Technologies set Description = 'LOC_TECH_PLASTICS_HD_DESCRIPTION' where TechnologyType ='TECH_PLASTICS';
 -- update Technologies set Description = 'LOC_TECH_PREDICTIVE_SYSTEMS_HD_DESCRIPTION' where TechnologyType ='TECH_PREDICTIVE_SYSTEMS';
 
 
@@ -51,7 +52,8 @@ update Civics set Description = 'LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION' where
 -- update Civics set Description = 'LOC_CIVIC_EXPLORATION_HD_DESCRIPTION' where CivicType ='CIVIC_EXPLORATION';
 update Civics set Description = NULL where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = 'LOC_CIVIC_FEUDALISM_HD_DESCRIPTION' where CivicType ='CIVIC_FEUDALISM';
-update Civics set Description = NULL where CivicType ='CIVIC_MERCANTILISM'; -- LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION
+update Civics set Description = 'LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION' where CivicType ='CIVIC_MERCANTILISM';
+update Civics set Description = 'LOC_CIVIC_NAVAL_TRADITION_HD_DESCRIPTION' where CivicType ='CIVIC_NAVAL_TRADITION';
 update Civics set Description = 'LOC_CIVIC_COLONIALISM_HD_DESCRIPTION' where CivicType ='CIVIC_COLONIALISM';
 update Civics set Description = 'LOC_CIVIC_NATIONALISM_HD_DESCRIPTION' where CivicType ='CIVIC_NATIONALISM';
 update Civics set Description = 'LOC_CIVIC_CIVIL_ENGINEERING_HD_DESCRIPTION' where CivicType ='CIVIC_CIVIL_ENGINEERING';

@@ -18,7 +18,7 @@ insert or replace into Technologies
 values
     ('TECH_CALENDAR_HD',            'LOC_TECH_CALENDAR_HD_NAME',             'LOC_TECH_CALENDAR_HD_DESCRIPTION',                 80,     'ERA_ANCIENT',      -1,         'ADVISOR_TECHNOLOGY'),
     ('TECH_PAPER_MAKING_HD',        'LOC_TECH_PAPER_MAKING_HD_NAME',         'LOC_TECH_PAPER_MAKING_HD_DESCRIPTION',             120,    'ERA_CLASSICAL',    -1,         'ADVISOR_TECHNOLOGY'),
-    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              Null,                                               300,    'ERA_MEDIEVAL',     -3,         'ADVISOR_CONQUEST'),
+    ('TECH_COMPASS_HD',             'LOC_TECH_COMPASS_HD_NAME',              'LOC_TECH_COMPASS_HD_DESCRIPTION',          		300,    'ERA_MEDIEVAL',     -3,         'ADVISOR_CONQUEST'),
     ('TECH_PHYSICS_HD',             'LOC_TECH_PHYSICS_HD_NAME',              Null,                                               730,    'ERA_RENAISSANCE',  -2,         'ADVISOR_TECHNOLOGY'),
     ('TECH_BIOLOGY_HD',             'LOC_TECH_BIOLOGY_HD_NAME',              'LOC_TECH_BIOLOGY_HD_DESCRIPTION',                  1250,   'ERA_MODERN',       1,          'ADVISOR_GENERIC'),
     ('TECH_CIVIL_ENGINEERING_HD',   'LOC_TECH_CIVIL_ENGINEERING_HD_NAME',    'LOC_TECH_CIVIL_ENGINEERING_HD_DESCRIPTION',        930,    'ERA_INDUSTRIAL',   1,          'ADVISOR_GENERIC');
