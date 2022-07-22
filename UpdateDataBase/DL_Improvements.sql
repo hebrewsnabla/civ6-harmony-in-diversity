@@ -28,8 +28,7 @@ values
 	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			1),
 	('IMPROVEMENT_MOAI',				'YIELD_CULTURE',		2),
 	
-	('IMPROVEMENT_ZIGGURAT',			'YIELD_SCIENCE',		0),
-	('IMPROVEMENT_ZIGGURAT',			'YIELD_FAITH',			2),
+	('IMPROVEMENT_ZIGGURAT',			'YIELD_SCIENCE',		2),
 	('IMPROVEMENT_MEKEWAP',				'YIELD_GOLD',			2),
 	('IMPROVEMENT_MEKEWAP',				'YIELD_PRODUCTION',		0),
 	('IMPROVEMENT_GREAT_WALL',			'YIELD_FOOD',			1),
@@ -495,6 +494,7 @@ update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKE
 update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
 
 -- Ziggurat (Sumeria)
+update ModifierArguments set Value = 'YIELD_FAITH' where ModifierId = 'ZIGGURAT_RIVERADJACENCY_FOOD' and Name = 'YieldType';
 insert or replace into ImprovementModifiers
 	(ImprovementType,						ModifierID)
 values
@@ -577,7 +577,7 @@ insert or replace into Improvements_XP2
 	(ImprovementType,				BuildOnAdjacentPlot)
 values
 	('IMPROVEMENT_TERRACE_FARM',	1);
-update Modifiers set SubjectRequirementSetId = 'PLOT_IS_FRESH_WATER_REQUIREMENTS_RAW' where ModifierId = 'TERRACE_FARM_PRODUCTION_FRESH_WATER_NO_AQUEDUCT';
+update Modifiers set SubjectRequirementSetId = 'PLOT_IS_FRESH_WATER_REQUIREMENTS' where ModifierId = 'TERRACE_FARM_PRODUCTION_FRESH_WATER_NO_AQUEDUCT';
 update Adjacency_YieldChanges set ObsoleteTech = 'TECH_ENGINEERING' where ID like 'Terrace_%MountainAdjacency';
 insert or replace into Improvement_ValidResources
 	(ImprovementType,				ResourceType)

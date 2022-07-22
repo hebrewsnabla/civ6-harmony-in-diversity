@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<IconTextureAtlases>
+		<Row Name="ATLAS_New_Buildings" IconSize="32" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_32.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="38" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_38.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="50" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_50.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="80" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_80.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="128" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_128.dds"/>
+        <Row Name="ATLAS_New_Buildings" IconSize="256" IconsPerRow="5" IconsPerColumn="5" Filename="New_Buildings_256.dds"/>
+    </IconTextureAtlases>
+	<IconDefinitions>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS" 		Atlas="ATLAS_New_Buildings" Index="3"/>
+        <Row Name="ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_FOW" 	Atlas="ATLAS_New_Buildings" Index="3"/>
+	</IconDefinitions>
+</GameData>

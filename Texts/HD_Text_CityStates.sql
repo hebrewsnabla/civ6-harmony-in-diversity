@@ -219,7 +219,7 @@ values
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_JOHANNESBURG_DESCRIPTION",         "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_JOHANNESBURG_BONUS",               "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BUENOS_AIRES_DESCRIPTION",         "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物）。"),
-    --("zh_Hans_CN",  "LOC_CIVILIZATION_BUENOS_AIRES_BONUS",               "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物，军营提供 [ICON_PRODUCTION] 生产力）。"),
+    --("zh_Hans_CN",  "LOC_CIVILIZATION_BUENOS_AIRES_BONUS",               "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物）。"),
 	("zh_Hans_CN",	"LOC_LEADER_TRAIT_LAHORE_DESCRIPTION",				"您的城市现在可以生产尼杭战士。[NEWLINE][NEWLINE]这种单位拥有独特的升级树，可以通过 [ICON_Faith] 信仰值购买。首次建造出兵营、兵工厂和军事学院时，其 [ICON_Strength] 战斗力将得到提升。");
 
 update LocalizedText set Text = "{LOC_LEADER_TRAIT" || substr(Tag, 17, length(Tag) - 21) || "DESCRIPTION}" where Tag like 'LOC_CIVILIZATION_%_BONUS';

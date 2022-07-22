@@ -8,6 +8,25 @@ values
     ('DISTRICT_THANH',  'GREAT_PERSON_CLASS_GENERAL',   1);
 
 update Districts set Appeal = 0 where DistrictType = 'DISTRICT_THANH';
+update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'THANH_TOURISM_CULTURE' and Name = 'YieldType';
+delete from District_Adjacencies where YieldChangeId = 'District_Culture_Major';
+insert or replace into District_Adjacencies
+	(DistrictType,			YieldChangeId)
+values
+	('DISTRICT_THANH',		'District_Production');
+insert or replace into DistrictModifiers
+	(DistrictType,			ModifierId)
+values
+	('DISTRICT_THANH',		'THANH_ENCAMPMENT_CULTURE');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,															SubjectRequirementSetId)
+values
+	('THANH_ENCAMPMENT_CULTURE',	'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_DISTRICT_ENCAMPMENT_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,					Value)
+values
+	('THANH_ENCAMPMENT_CULTURE',	'YieldTypeToMirror',	'YIELD_PRODUCTION'),
+	('THANH_ENCAMPMENT_CULTURE',	'YieldTypeToGrant',		'YIELD_CULTURE');
 -------------------------------------------------------------------------------------------------------------------------------
 -- Vietnan Civ
 

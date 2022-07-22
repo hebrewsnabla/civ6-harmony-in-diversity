@@ -461,6 +461,7 @@
     <UpdateIcons id="DL_FrontEnd_Icons">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
       <File>UI/Icons/HD_Icons.xml</File>
+      <File>UI/Icons/DL_Icons_Buildings_Frontend.xml</File>
     </UpdateIcons>
     <UpdateText id="SukOceans_mod_support_text">
       <Properties><LoadOrder>17000</LoadOrder></Properties>
@@ -496,6 +497,12 @@
       <File>Assets/CityStates/CivBaikonur_128.dds</File>
       <File>Assets/CityStates/CivBaikonur_200.dds</File>
       <File>Assets/CityStates/CivBaikonur_256.dds</File>
+      <File>Assets/Buildings/New_Buildings_32.dds</File>
+      <File>Assets/Buildings/New_Buildings_38.dds</File>
+      <File>Assets/Buildings/New_Buildings_50.dds</File>
+      <File>Assets/Buildings/New_Buildings_80.dds</File>
+      <File>Assets/Buildings/New_Buildings_128.dds</File>
+      <File>Assets/Buildings/New_Buildings_256.dds</File>
     </ImportFiles>
   </FrontEndActions>
   <InGameActions>
@@ -1664,6 +1671,7 @@
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
+	<File>UI/Icons/DL_Icons_Buildings_Frontend.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>

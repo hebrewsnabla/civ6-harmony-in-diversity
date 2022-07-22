@@ -52,7 +52,8 @@ values
     ('DISTRICT_HARBOR',             'YIELD_GOLD'),
     ('DISTRICT_COMMERCIAL_HUB',     'YIELD_GOLD'),
     ('DISTRICT_THEATER',            'YIELD_CULTURE'),
-    ('DISTRICT_INDUSTRIAL_ZONE',    'YIELD_PRODUCTION');
+    ('DISTRICT_INDUSTRIAL_ZONE',    'YIELD_PRODUCTION'),
+    ('DISTRICT_ENCAMPMENT',         'YIELD_PRODUCTION');
     
 update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Station_Production_From_Industry';
 delete from District_Adjacencies where YieldChangeId = 'Station_Production';
