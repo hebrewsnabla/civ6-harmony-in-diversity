@@ -69,6 +69,8 @@ delete from Types where Type = 'RESOURCE_MACKEREL';
 delete from Types where Type = 'RESOURCE_ALGAE';
 delete from Types where Type = 'RESOURCE_GOLD2';
 delete from Types where Type = 'RESOURCE_POTATO';
+delete from Types where Type = 'RESOURCE_HONEY2';
+delete from Types where Type = 'RESOURCE_MAIZE2';
 
 delete from Resource_YieldChanges where ResourceType in (select ResourceType from HDResourceful2_Basic);
 delete from Resource_ValidTerrains where ResourceType in (select ResourceType from HDResourceful2_Basic);

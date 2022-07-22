@@ -90,8 +90,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or ReplacesDistrictType = 'DISTRICT_DIPLOMATIC_QUARTER'
 );
 
-update Districts set Cost = 150 where DistrictType = 'DISTRICT_NEIGHBORHOOD';
-update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 0, Cost = 100 where DistrictType in 
+update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 0, Cost = 90 where DistrictType in 
 (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_NEIGHBORHOOD');
 
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_THANH';

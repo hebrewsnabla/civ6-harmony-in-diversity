@@ -23,6 +23,30 @@ values
 	('TRADING_DOME_DESERT_FOOD',				'Amount',		2),
 	('TRADING_DOME_DESERT_PRODUCTION',			'YieldType',	'YIELD_PRODUCTION'),
 	('TRADING_DOME_DESERT_PRODUCTION',			'Amount',		1);
+	
+-- 古典提督航海家汉诺: 赠送一艘+2速的海军近战单位, 且所有与该单位编队的单位将继承该桨帆单位的移速
+insert or replace into Types (Type, Kind) values ('ABILITY_HANNO', 'KIND_ABILITY');
+insert or replace into TypeTags (Type, Tag) values ('ABILITY_HANNO', 'CLASS_NAVAL_MELEE');
+insert or replace into UnitAbilities
+    (UnitAbilityType,    Description,                        Inactive)
+values
+    ('ABILITY_HANNO',   'LOC_ABILITY_HANNO_DESCRIPTION',    1);
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,   ModifierId)
+values
+    ('ABILITY_HANNO',   'HANNO_FREE_UNIT_MOVEMENT_BUFF'),
+    ('ABILITY_HANNO',   'ESCORT_MOBILITY_SHARED_MOVEMENT');
+update ModifierArguments set Value = 'HANNO_GRANT_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT' and Name = 'ModifierId';
+insert or replace into Modifiers
+    (ModifierId,            ModifierType,                           RunOnce,    Permanent)
+values
+    ('HANNO_GRANT_ABILITY', 'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',   1,          1);
+insert or replace into ModifierArguments
+    (ModifierId,            Name,           Value)
+values
+    ('HANNO_GRANT_ABILITY', 'AbilityType',  'ABILITY_HANNO');
+
+
 -- AYUTTHAYA
 -- delete from ModifierArguments where Value = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING';
 delete from TraitModifiers where TraitType = 'MINOR_CIV_AYUTTHAYA_TRAIT';
@@ -80,7 +104,10 @@ create temporary table HD_BabylonDistrictBonuses (
 	YieldType text not null,
 	AttachModifierId text,
 	DistrictAttachModifierId text,
-	ModifierId text
+	ModifierId text,
+	NegativeAttachModifierId text,
+	NegativeDistrictAttachModifierId text,
+	NegativeModifierId text
 );
 insert or replace into HD_BabylonDistrictBonuses
 	(DistrictType,	YieldType)
@@ -101,67 +128,130 @@ where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_
 update HD_BabylonDistrictBonuses set ModifierId = 'TRAIT_BABYLON' || DistrictType || '_' || YieldType;
 update HD_BabylonDistrictBonuses set AttachModifierId = ModifierId || '_ATTACH';
 update HD_BabylonDistrictBonuses set DistrictAttachModifierId = ModifierId || '_DISTRICT_ATTACH';
+update HD_BabylonDistrictBonuses set NegativeModifierId = ModifierId || '_NEGATIVE';
+update HD_BabylonDistrictBonuses set NegativeAttachModifierId = AttachModifierId || '_NEGATIVE';
+update HD_BabylonDistrictBonuses set NegativeDistrictAttachModifierId = DistrictAttachModifierId || '_NEGATIVE';
 insert or replace into TraitModifiers
-	(TraitType,						ModifierId)
+	(TraitType,								ModifierId)
 select
-	'TRAIT_CIVILIZATION_BABYLON',	AttachModifierId
+	'TRAIT_CIVILIZATION_BABYLON',			AttachModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+select
+	'TRAIT_CIVILIZATION_BABYLON',			NegativeAttachModifierId
 from HD_BabylonDistrictBonuses;
 insert or replace into Modifiers
-	(ModifierId,			ModifierType,									SubjectRequirementSetId)
+	(ModifierId,							ModifierType,									SubjectRequirementSetId)
 select
-	AttachModifierId,		'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
-from HD_BabylonDistrictBonuses;
-insert or replace into ModifierArguments
-	(ModifierId,			Name,			Value)
-select
-	AttachModifierId,		'ModifierId',	DistrictAttachModifierId
+	AttachModifierId,						'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
 from HD_BabylonDistrictBonuses;
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,								SubjectRequirementSetId)
+	(ModifierId,							ModifierType,									SubjectRequirementSetId)
 select
-	DistrictAttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_DOES_NOT_HAVE_' || DistrictType || '_REQUIREMENTS'
+	NegativeAttachModifierId,				'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',	'DISTRICT_IS_' || DistrictType || '_REQUIREMENTS'
 from HD_BabylonDistrictBonuses;
 insert or replace into ModifierArguments
-	(ModifierId,			Name,			Value)
+	(ModifierId,							Name,			Value)
 select
-	DistrictAttachModifierId,		'ModifierId',	ModifierId
+	AttachModifierId,						'ModifierId',	DistrictAttachModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	NegativeAttachModifierId,				'ModifierId',	NegativeDistrictAttachModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+select
+	DistrictAttachModifierId,				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	null
+from HD_BabylonDistrictBonuses;
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+select
+	NegativeDistrictAttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_' || DistrictType || '_REQUIREMENTS'
+from HD_BabylonDistrictBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	DistrictAttachModifierId,				'ModifierId',	ModifierId
+from HD_BabylonDistrictBonuses;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	NegativeDistrictAttachModifierId,		'ModifierId',	NegativeModifierId
 from HD_BabylonDistrictBonuses;
 -- non Diplomatic Quater
 insert or replace into Modifiers
-	(ModifierId,	ModifierType,									SubjectRequirementSetId)
+	(ModifierId,			ModifierType,									SubjectRequirementSetId)
 select
-	ModifierId,		'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
+	ModifierId,				'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,									SubjectRequirementSetId)
+select
+	NegativeModifierId,		'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
 from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
 insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
+	(ModifierId,			Name,			Value)
 select
-	ModifierId,		'YieldType',	YieldType
+	ModifierId,				'YieldType',	YieldType
 from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
 insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
+	(ModifierId,			Name,			Value)
 select
-	ModifierId,		'Amount',		1
+	NegativeModifierId,		'YieldType',	YieldType
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	ModifierId,				'Amount',		1
+from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	NegativeModifierId,		'Amount',		-1
 from HD_BabylonDistrictBonuses where YieldType != 'INFLUENCE_POINT';
 -- Diplomatic Quater
 insert or replace into Modifiers
-	(ModifierId,	ModifierType,									SubjectRequirementSetId)
+	(ModifierId,			ModifierType,									SubjectRequirementSetId)
 select
-	ModifierId,		'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
-from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
-insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
-select
-	ModifierId,		'ModifierId',	ModifierId || '_MODIFIER'
+	ModifierId,				'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
 from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
 insert or replace into Modifiers
-	(ModifierId,					ModifierType)
+	(ModifierId,			ModifierType,									SubjectRequirementSetId)
 select
-	ModifierId || '_MODIFIER',		'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN'
+	NegativeModifierId,		'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_SPECIALTY_DISTRICT_REQUIREMENTS'
 from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
 insert or replace into ModifierArguments
-	(ModifierId,					Name,			Value)
+	(ModifierId,			Name,			Value)
 select
-	ModifierId || '_MODIFIER',		'Amount',		1
+	ModifierId,				'ModifierId',	ModifierId || '_MODIFIER'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	NegativeModifierId,		'ModifierId',	NegativeModifierId || '_MODIFIER'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+select
+	ModifierId || '_MODIFIER',				'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+select
+	NegativeModifierId || '_MODIFIER',		'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN'
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	ModifierId || '_MODIFIER',				'Amount',		1
+from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	NegativeModifierId || '_MODIFIER',		'Amount',		-1
 from HD_BabylonDistrictBonuses where YieldType = 'INFLUENCE_POINT';
 
 -- Kenzo Tange
@@ -306,3 +396,73 @@ values
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'HappinessType',	'HAPPINESS_JOYFUL'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'YieldType',		'YIELD_FAITH'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'Amount',		   6);
+
+-- Mahavihara
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,				YieldChangeId)
+values
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Early'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Seowon_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Holy_Site_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Lavra_Science_Late'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Neighborhood_Science'),
+	('IMPROVEMENT_MAHAVIHARA',		'Mahavihara_Mbanza_Science');
+insert or replace into Adjacency_YieldChanges
+	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict,			PrereqCivic,			ObsoleteCivic)
+values
+	('Mahavihara_Seowon_Science_Early', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_SEOWON',			null,					'CIVIC_DIVINE_RIGHT'),
+	('Mahavihara_Seowon_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Holy_Site_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Lavra_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
+	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
+
+-- Modifiers in this table are attached to suzerain
+create temporary table if not exists TraitAttachedModifiers (
+    TraitType text not null,
+    ModifierId text not null,
+    primary key (TraitType, ModifierId)
+);
+
+-- Johannesburg
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT';
+create temporary table JohannesburgResources (ResourceType text not null primary key);
+insert or replace into JohannesburgResources (ResourceType) select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_MINE' or ImprovementType = 'IMPROVEMENT_QUARRY';
+insert or replace into TraitAttachedModifiers
+    (TraitType,                   		ModifierId)
+select
+    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType
+from JohannesburgResources;
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                               		SubjectRequirementSetId)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,    	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                           		Name,           Value)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'Amount',       1
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                         		Name,           Value)
+select
+    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'YieldType',    'YIELD_PRODUCTION'
+from JohannesburgResources;
+
+-- Attach modifiers in TraitAttachedModifiers to suzerain
+insert or ignore into TraitModifiers
+    (TraitType, ModifierId)
+select
+    TraitType,  ModifierId || '_ATTACH'
+from TraitAttachedModifiers;
+insert or ignore into Modifiers
+    (ModifierId,                ModifierType,                               SubjectRequirementSetId)
+select
+    ModifierId || '_ATTACH',    'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',     'PLAYER_IS_SUZERAIN'
+from TraitAttachedModifiers;
+insert or ignore into ModifierArguments
+    (ModifierId,                Name,           Value)
+select
+    ModifierId || '_ATTACH',    'ModifierId',   ModifierId
+from TraitAttachedModifiers;
+drop table TraitAttachedModifiers;

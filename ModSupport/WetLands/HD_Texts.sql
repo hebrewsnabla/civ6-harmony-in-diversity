@@ -12,8 +12,6 @@ values
     ("LOC_TECH_NANOTECHNOLOGY_DESCRIPTION",           "+1 [ICON_Production] Production from the Reed Home improvement."),
     ("LOC_CIVIC_GAMES_RECREATION_HD_DESCRIPTION",     "+1 [ICON_Science] Science from the Reed Home improvement."),
     ("LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION",   "+2 [ICON_Gold] Gold to Camps. +2 [ICON_Gold] Gold from the Oasis Garden improvement."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "+2 [ICON_Gold] Gold from the Oasis Garden improvement."),
-    
     ("LOC_FEATURE_HD_SWAMP_NAME",                     "Swamp"),
     ("LOC_BELIEF_JNR_JINJA_DL_DESCRIPTION",           "Allows construction of Jinja (+8 [ICON_Faith] Faith; +2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_PRODUCTION] Production for Rainforest tiles, +2 [ICON_CULTURE] Culture for Marsh tiles, and +2 [ICON_SCIENCE] Science for Swamp tiles in this city.)"),
     ("LOC_BUILDING_JNR_JINJA_DL_DESCRIPTION",         "+2 [ICON_FOOD] Food for Forest tiles, +2 [ICON_PRODUCTION] Production for Rainforest tiles, +2 [ICON_CULTURE] Culture for Marsh tiles, and +2 [ICON_SCIENCE] Science for Swamp tiles in this city."),
@@ -21,10 +19,11 @@ values
     ("LOC_BUILDING_ETEMENANKI_DESCRIPTION",           "+2 [ICON_SCIENCE] Science and +1 [ICON_PRODUCTION] Production to all Marsh tiles in your empire. +2 [ICON_CULTURE] Culture and +1 [ICON_PRODUCTION] Production to all Swamp tiles in your empire. +1 [ICON_SCIENCE] Science and +1 [ICON_PRODUCTION] Production on all Floodplains tiles for this city.[NEWLINE][NEWLINE]Must be built on Floodplains or Marsh or Swamp."),
     ("LOC_BUILDING_MONT_ST_MICHEL_DESCRIPTION",       "All Apostles you create gain the Martyr ability in addition to a second ability you chose normally. Must be built on Floodplains or Marsh or Swamp."),
     ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",    "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest, +2 [ICON_Science] Science in Marsh and +2 [ICON_Culture] Culture in Swamp. Woods can be planted with the Mysticism civic."),
-    ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",  "Faster [ICON_Movement] Movement in Marsh or Swamp tiles."),
+    ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",  "Ignore the extra [ICON_Movement] Movement cost from Marsh or Swamp."),
 	("LOC_IMPROVEMENT_GREAT_WALL_EXPANSION2_DESCRIPTION",		"Unlocks the Builder ability to construct the Great Wall, unique to China.[NEWLINE][NEWLINE]+1 [ICON_Food] Food, +2 [ICON_GOLD] Gold. Provides an increase to [ICON_Strength] Defense. Enemy military units get -2 [ICON_Strength] Strength for each adjacent Great Wall. +2 [ICON_Culture] Culture for each adjacent Great Wall. +2 [ICON_Gold] Gold for each adjacent Great Wall after researching 'Castles' Technology. Must be built in a line along the borders of your empire. Can be built on Mountain, Forest or Swamp tiles. Can only be pillaged (never destroyed) by natural disasters."),
 	("LOC_IMPROVEMENT_MOAI_DESCRIPTION",						"Unlocks the Builder ability to construct a Moai.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil. +1 [ICON_Culture] Culture if adjacent to Coast or Lake. +1 [ICON_Culture] Culture for every 2 adjacent Moai or for every adjacent Moai after progress 'Medieval Faires' Civic. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Cannot be built adjacent to Woods, Rainforest or Swamp tiles."),
-	("LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Swamp {1_Num : plural 1?tile; other?tiles;}.");
+	("LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Swamp {1_Num : plural 1?tile; other?tiles;}."),
+	("LOC_TECH_IRRIGATION_DESCRIPTION",					"+2 [ICON_GOLD] Gold from Plantations adjacent to fresh water or Aqueduct.[NEWLINE]Allows clearing of Marsh and Swamp, and harvesting of resources improved by Plantations. Allows Builders to build Farms on Plains Hills or Grassland Hills adjacent to fresh water or Aqueduct.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -43,7 +42,6 @@ values
     ("zh_Hans_CN",  "LOC_TECH_NANOTECHNOLOGY_DESCRIPTION",           "芦苇屋+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GAMES_RECREATION_HD_DESCRIPTION",     "芦苇屋+1 [ICON_Science] 科技值。"),
     ("zh_Hans_CN",  "LOC_TECH_SYNTHETIC_MATERIALS_HD_DESCRIPTION",   "营地+2 [ICON_Gold] 金币。绿洲花园+2 [ICON_Gold] 金币。"),
-    -- ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",         "绿洲花园+2 [ICON_Gold] 金币。"),
     
     ("zh_Hans_CN",  "LOC_FEATURE_MARSH_NAME",                        "草本沼泽"),
     ("zh_Hans_CN",  "LOC_FEATURE_HD_SWAMP_NAME",                     "木本沼泽"),

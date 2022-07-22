@@ -157,7 +157,7 @@ values
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles."),
-    ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                            "Faster [ICON_Movement] Movement in Marsh tiles.");
+    ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                            "Ignore the extra [ICON_Movement] Movement cost from Marsh.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -246,4 +246,4 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                    "将领卫队"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                         "在沼泽地形有更快的 [ICON_Movement] 移动力。");
+    ("zh_Hans_CN",  "LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                         "忽略沼泽带来的的额外 [ICON_Movement] 移动力消耗。");

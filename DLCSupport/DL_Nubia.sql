@@ -143,3 +143,31 @@ from Nubia_Resource1;
 insert or replace into ModifierArguments (ModifierId, Name, Value) select
 	'TRAIT_'||ResourceType||'_MINE_PRODUCTION_RATIO', 'Amount',  10
 from Nubia_Resource1;
+
+-- Jebel Barkal
+update Buildings set RegionalRange = 0 where BuildingType = 'BUILDING_JEBEL_BARKAL';
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_MINE_PRODUCTION'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_MINE_FAITH'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_QUARRY_PRODUCTION'),
+	('BUILDING_JEBEL_BARKAL',		'ARTEMIS_QUARRY_FAITH');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,								SubjectRequirementSetId)
+values
+	('ARTEMIS_MINE_PRODUCTION',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_WITH_6_TILES'),
+	('ARTEMIS_MINE_FAITH',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_MINE_WITH_6_TILES'),
+	('ARTEMIS_QUARRY_PRODUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_QUARRY_WITH_6_TILES'),
+	('ARTEMIS_QUARRY_FAITH',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_QUARRY_WITH_6_TILES');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('ARTEMIS_MINE_PRODUCTION',		'YieldType',	'YIELD_PRODUCTION'),
+	('ARTEMIS_MINE_PRODUCTION',		'Amount',		1),
+	('ARTEMIS_MINE_FAITH',			'YieldType',	'YIELD_FAITH'),
+	('ARTEMIS_MINE_FAITH',			'Amount',		1),
+	('ARTEMIS_QUARRY_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	('ARTEMIS_QUARRY_PRODUCTION',	'Amount',		1),
+	('ARTEMIS_QUARRY_FAITH',		'YieldType',	'YIELD_FAITH'),
+	('ARTEMIS_QUARRY_FAITH',		'Amount',		1);
