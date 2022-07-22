@@ -14,6 +14,11 @@
 	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="50"  IconsPerRow="1" IconsPerColumn="1" Filename="sacrifice_50.dds"/>
 	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="80"  IconsPerRow="1" IconsPerColumn="1" Filename="sacrifice_80.dds"/>
 	    <Row Name="ICON_ATLAS_HD_UNITACTIONS" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="sacrifice_256.dds"/>
+
+		<Row Name="ICON_ATLAS_HD_UNITACTIONS_NEW" IconSize="38"  IconsPerRow="3" IconsPerColumn="3" Filename="HD_Actions_38.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS_NEW" IconSize="50"  IconsPerRow="3" IconsPerColumn="3" Filename="HD_Actions_50.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS_NEW" IconSize="80"  IconsPerRow="3" IconsPerColumn="3" Filename="HD_Actions_80.dds"/>
+	    <Row Name="ICON_ATLAS_HD_UNITACTIONS_NEW" IconSize="256" IconsPerRow="3" IconsPerColumn="3" Filename="HD_Actions_256.dds"/>
     </IconTextureAtlases>
 	<IconDefinitions>
 		<Row Name="ICON_PROJECT_GRANT_RESOURCE_HORSES"  	Atlas="ICON_ATLAS_HD_RESOURCE_PROJECTS" Index="42"/>
@@ -38,8 +43,8 @@
 	</IconDefinitions>
 	<IconDefinitions>
 		<Row Name="ICON_UNITCOMMAND_AZTEC_SACRIFICE"  	Atlas="ICON_ATLAS_HD_UNITACTIONS" Index="0"/>
-		<Row Name="ICON_UNITCOMMAND_RECYCLE"		  	Atlas="ICON_ATLAS_HD_UNITACTIONS" Index="0"/>
-		<Row Name="ICON_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA"	Atlas="ICON_ATLAS_HD_UNITACTIONS" Index="0"/>
-		<Row Name="ICON_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN"	Atlas="ICON_ATLAS_HD_UNITACTIONS" Index="0"/>
+		<Row Name="ICON_UNITCOMMAND_RECYCLE"		  	Atlas="ICON_ATLAS_HD_UNITACTIONS_NEW" Index="0"/>
+		<Row Name="ICON_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA"	Atlas="ICON_ATLAS_HD_UNITACTIONS_NEW" Index="1"/>
+		<Row Name="ICON_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN"	Atlas="ICON_ATLAS_HD_UNITACTIONS_NEW" Index="2"/>
 	</IconDefinitions>
 </GameData>

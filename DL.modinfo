@@ -589,6 +589,10 @@
       <File>Assets/UnitActions/sacrifice_50.dds</File>
       <File>Assets/UnitActions/sacrifice_80.dds</File>
       <File>Assets/UnitActions/sacrifice_256.dds</File>
+      <File>Assets/UnitActions/HD_Actions_38.dds</File>
+      <File>Assets/UnitActions/HD_Actions_50.dds</File>
+      <File>Assets/UnitActions/HD_Actions_80.dds</File>
+      <File>Assets/UnitActions/HD_Actions_256.dds</File>
       <File>Assets/CityStates/CivBaikonur_22.dds</File>
       <File>Assets/CityStates/CivBaikonur_30.dds</File>
       <File>Assets/CityStates/CivBaikonur_32.dds</File>
@@ -2006,6 +2010,10 @@
     <File>Assets/UnitActions/sacrifice_50.dds</File>
     <File>Assets/UnitActions/sacrifice_80.dds</File>
     <File>Assets/UnitActions/sacrifice_256.dds</File>
+    <File>Assets/UnitActions/HD_Actions_38.dds</File>
+    <File>Assets/UnitActions/HD_Actions_50.dds</File>
+    <File>Assets/UnitActions/HD_Actions_80.dds</File>
+    <File>Assets/UnitActions/HD_Actions_256.dds</File>
     <File>Assets/CityStates/CivBaikonur_22.dds</File>
     <File>Assets/CityStates/CivBaikonur_30.dds</File>
     <File>Assets/CityStates/CivBaikonur_32.dds</File>
