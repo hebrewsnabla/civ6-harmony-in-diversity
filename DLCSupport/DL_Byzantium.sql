@@ -130,11 +130,6 @@ values
 
 -- 跑马场改动, by xiaoxiao
 -- update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 12 where DistrictType = 'DISTRICT_HIPPODROME';
-insert or replace into District_Adjacencies
-	(DistrictType,			YieldChangeId)
-values
-	('DISTRICT_HIPPODROME',	'HD_Holy_Site_Culture'),
-	('DISTRICT_HIPPODROME',	'HD_Encampment_Production');
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description, 	YieldType,			YieldChange,	AdjacentDistrict)
 values

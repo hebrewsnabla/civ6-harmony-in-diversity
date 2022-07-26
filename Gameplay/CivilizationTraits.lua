@@ -349,8 +349,8 @@ Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreated)
 function OnUnitGreatPersonCreatedBrazil(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
 	local player = Players[playerID]
 	local playerConfig = PlayerConfigurations[playerID]
-	local leader = playerConfig:GetLeaderTypeName()
-	if not LeaderHasTrait(leader, 'TRAIT_CIVILIZATION_STREET_CARNIVAL') then return end
+	local civ = playerConfig:GetCivilizationTypeName()
+	if not CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_STREET_CARNIVAL') then return end
 	for row in GameInfo.GreatPersonClasses() do
 		if row.Index == greatPersonClassID then
 			local classType = row.GreatPersonClassType

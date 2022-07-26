@@ -39,8 +39,8 @@ values
     --("LOC_CIVILIZATION_AUCKLAND_BONUS",                   "+1 [ICON_PRODUCTION] Production from shallow water tiles. Extra +1 [ICON_PRODUCTION] Production after researching 'Steam Power'."),
     ("LOC_LEADER_TRAIT_KANDY_DESCRIPTION",                "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
     --("LOC_CIVILIZATION_KANDY_BONUS",                      "Earn +100% [ICON_Faith] Faith from all [ICON_GreatWork_Relic] Relics."),
-    ("LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "City growth rate is 20% higher in cities with a Campus district."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
-    ("LOC_CIVILIZATION_PALENQUE_BONUS",                   "City growth rate is 20% higher in cities with a Campus district."), -- Campuses are granted [ICON_Food] Food equal to its adjacency bonus.
+    ("LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "City growth rate is 20% higher in cities with a Campus district."),
+    ("LOC_LEADER_TRAIT_PALENQUE_DESCRIPTION",             "{LOC_LEADER_TRAIT_MITLA_DESCRIPTION}"),
     ("LOC_LEADER_TRAIT_YEREVAN_DESCRIPTION",              "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
     --("LOC_CIVILIZATION_YEREVAN_CITY_BONUS",               "Your Apostle units can choose from any possible promotion instead of receiving a random promotion. +1 [ICON_Movement] Movement for your religious units."),
     ("LOC_LEADER_TRAIT_HONG_KONG_DESCRIPTION",            "+1 [ICON_PRODUCTION] for each Campus and Campus building. Your cities get +15% Production towards city projects."),
@@ -180,7 +180,7 @@ values
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HATTUSA_EXPANSION2_DESCRIPTION",   "每回合提供2份文明已解锁战略资源。改良后的战略资源+1 [ICON_SCIENCE] 科技值。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HATTUSA_BONUS_XP2",                "每回合提供2份文明已解锁战略资源。改良后的战略资源+1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "拥有学院的城市+20%余粮。"),
-    ("zh_Hans_CN",  "LOC_CIVILIZATION_PALENQUE_BONUS",                   "拥有学院的城市+20%余粮。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PALENQUE_DESCRIPTION",             "{LOC_LEADER_TRAIT_MITLA_DESCRIPTION}"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "拥有总督就职的城市购买建筑花费-15%。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_ANTIOCH_BONUS",                    "拥有总督就职的城市购买建筑花费-15%。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HUNZA_DESCRIPTION",                "您的 [ICON_TradeRoute] 贸易路线每经过5个单元格，其提供的 [ICON_Gold] 金币便+1。"),

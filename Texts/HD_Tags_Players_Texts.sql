@@ -30,6 +30,8 @@ update PlayerItems set Description = 'LOC_DISTRICT_SUGUBA_HD_DESCRIPTION'
     where Type = 'DISTRICT_SUGUBA' and Domain = 'Players:Expansion2_Players';
 update PlayerItems set Description = 'LOC_DISTRICT_SEOWON_HD_DESCRIPTION'
     where Type = 'DISTRICT_SEOWON' and Domain = 'Players:Expansion2_Players';
+update PlayerItems set Description = 'LOC_DISTRICT_THANH_HD_DESCRIPTION'
+    where Type = 'DISTRICT_THANH' and Domain = 'Players:Expansion2_Players';
 
 insert into PlayerItems
     (Domain,                        CivilizationType,              LeaderType,              Type,                       Icon,                               Name,                                   Description,                                    SortIndex)

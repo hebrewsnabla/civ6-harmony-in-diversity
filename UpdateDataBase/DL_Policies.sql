@@ -79,10 +79,10 @@ values
 	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_FAITH'),
 	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_CHHARGE');
 insert or replace into Modifiers
-	(ModifierId,								ModifierType,											OwnerRequirementSetId)
+	(ModifierId,								ModifierType,											OwnerRequirementSetId,		SubjectRequirementSetId)
 values
-	('COMMEMORATION_RELIGIOUS_FAITH',			'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE'),
-	('COMMEMORATION_RELIGIOUS_CHHARGE',			'MODIFIER_PLAYER_UNITS_RELIGIOUS_SPREADS',				'PLAYER_HAS_GOLDEN_AGE');
+	('COMMEMORATION_RELIGIOUS_FAITH',			'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE',	null),
+	('COMMEMORATION_RELIGIOUS_CHHARGE',			'MODIFIER_PLAYER_UNITS_RELIGIOUS_SPREADS',				'PLAYER_HAS_GOLDEN_AGE',	'UNIT_IS_RELIGIOUS');
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
@@ -509,8 +509,9 @@ update Policies_XP1 set MaximumGameEra = 'ERA_MEDIEVAL' where PolicyType = 'POLI
 -- Twilight Valor
 insert or replace into PolicyModifiers
 	(PolicyType,				ModifierId)
-values
-	('POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY');
+select
+	'POLICY_TWILIGHT_VALOR',	'LIMITANEI_GARRISONIDENTITY'
+where exists (select PolicyType from Policies where PolicyType = 'POLICY_TWILIGHT_VALOR');
 -- Isolationism
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_FODD' and Name = 'Amount';
 update ModifierArguments set Value = 3 where ModifierId = 'ISOLATIONISM_DOMESTIC_TRADE_ROUTE_PRODUCTION' and Name = 'Amount';

@@ -101,7 +101,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_DESERT_NAME",                     "沙之女神"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_DESERT_DL_DESCRIPTION",           "市中心相邻每个沙漠和沙漠丘陵单元格 +1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值，如城市中有沙漠或沙漠丘陵，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION",           "边界扩张速度提升15%，城市创建时获得额外4个单元格。生产移民时，+15%建造速度。 购买单元格的价格所需的 [ICON_GOLD] 金币-20%。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",             "圣地从冻土和冻土丘陵获得少量相邻加成。圣地给相邻的冻土单元格+1 [ICON_Faith] 信仰值、+1 [ICON_CULTURE] 文化值。未被劫掠过的圣地给相邻的冻土单元格+1 [ICON_Food] 食物。若圣地位于冻土或冻土丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION",             "圣地从冻土和冻土丘陵获得少量相邻加成。圣地给相邻的冻土单元格+1 [ICON_Food] 食物、+1 [ICON_CULTURE] 文化值。若圣地位于冻土或冻土丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION",                 "圣地从沙漠和沙漠丘陵获得标准相邻加成。未被劫掠过的圣地给相邻的沙漠单元格+1 [ICON_Food] 食物和+1 [ICON_Faith] 信仰值。若圣地位于沙漠或沙漠丘陵则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "圣地从雨林获得标准相邻加成。未被劫掠过的圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_VOODOO_NAME",                                    "伏都教"),

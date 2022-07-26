@@ -115,8 +115,6 @@ function m_HDUnitCommands.RECYCLE.CanUse(pUnit : object)
 	return formationClass == 'FORMATION_CLASS_LAND_COMBAT' or formationClass == 'FORMATION_CLASS_AIR' or formationClass == 'FORMATION_CLASS_NAVAL';
 end
 
-local NEIGHBORHOOD_INDEX = GameInfo.Districts['DISTRICT_NEIGHBORHOOD'].Index;
-local HARBOR_INDEX = GameInfo.Districts['DISTRICT_HARBOR'].Index;
 local RECYCLING_PLANT_INDEX;
 if GameInfo.Buildings['BUILDING_JNR_RECYCLING_PLANT'] ~= nil then
 	RECYCLING_PLANT_INDEX = GameInfo.Buildings['BUILDING_JNR_RECYCLING_PLANT'].Index;
@@ -139,10 +137,18 @@ function m_HDUnitCommands.RECYCLE.IsVisible(pUnit : object)
 	if district == nil then
 		return false;
 	end
-	if (formationClass == 'FORMATION_CLASS_LAND_COMBAT' or formationClass == 'FORMATION_CLASS_AIR') and district:GetType() ~= NEIGHBORHOOD_INDEX then
+	local districtInfo = GameInfo.Districts[district:GetType()];
+	local districtType = districtInfo.DistrictType;
+	for row in GameInfo.DistrictReplaces() do
+		if row.CivUniqueDistrictType == districtType then
+			districtType = row.ReplacesDistrictType;
+			break;
+		end
+	end
+	if (formationClass == 'FORMATION_CLASS_LAND_COMBAT' or formationClass == 'FORMATION_CLASS_AIR') and districtType ~= 'DISTRICT_NEIGHBORHOOD' then
 		return false;
 	end
-	if (formationClass == 'FORMATION_CLASS_NAVAL') and district:GetType() ~= HARBOR_INDEX then
+	if (formationClass == 'FORMATION_CLASS_NAVAL') and districtType ~= 'DISTRICT_HARBOR' then
 		return false;
 	end
 	local city = district:GetCity();
@@ -207,7 +213,7 @@ function m_HDUnitCommands.SACRIFICE_CHICHEN_ITZA.IsDisabled(pUnit : object)
 	local x = location.x;
 	local y = location.y;
 	local plot = Map.GetPlot(x, y);
-	return plot:GetWonderType() ~= CHICHEN_ITZA_INDEX;
+	return (plot:GetWonderType() ~= CHICHEN_ITZA_INDEX) or (pUnit:GetDamage() ~= 0);
 end
 
 -- 高德院的出家按钮, by xiaoxiao
