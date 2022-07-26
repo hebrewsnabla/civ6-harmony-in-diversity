@@ -6,8 +6,8 @@ values
 	("LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION",						 "A district in your city for religious worship. +10% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles."),
 	("LOC_DISTRICT_LAVRA_HD_DESCRIPTION",							 "A district unique to Russia for religious activity. Replaces the Holy Site district and cheaper to build.[NEWLINE][NEWLINE]The citizens working in this district also yield Great Writer, Artist and Musician points. Your city border grows by one tile each time a Great Person is expended in this city. +10% [ICON_Faith] Faith if there exists a third-tier worship building in the district. +1 Appeal to adjacent tiles."),
 	("LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION",					"A district in your city for industrial activity. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries over bonus resources in this city."), -- +1 [ICON_PRODUCTION] Production for Mines in this city. 
-	("LOC_DISTRICT_HANSA_HD_DESCRIPTION",							 "A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_Production] Production when adjacent to River. +2 [ICON_Production] Production bonus for each adjacent Harbor, Aqueduct, and Dam districts. +2 [ICON_Production] Production bonus for each adjacent Canal districts. +1 [ICON_Production] Production bonus for each adjacent Commercial Hub districts and Resources (doubles after researching Apprenticeship). +1 [ICON_Production] Production bonus for every two adjacent District tiles. +1 [Icon_Production] Production to adjacent Resources. Provides Major adjacency bonus to Commercial Hub Districts. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries over bonus resources in this city."), -- +1 [ICON_PRODUCTION] Production for Mines in this city. 
-	("LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",							"A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production. When the first Oppidum is constructed, the Metal Casting technology is unlocked.[NEWLINE][NEWLINE]+2 [ICON_Production] Production adjacency bonus from Quarries and Strategic resources. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries over bonus resources in this city."), -- +1 [ICON_PRODUCTION] Production for Mines in this city. 
+	("LOC_DISTRICT_HANSA_HD_DESCRIPTION",							 "A district unique to Germany for industrial activity. Replaces the Industrial Zone district and cheaper to build.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production when adjacent to River. +2 [ICON_PRODUCTION] Production bonus for each adjacent Harbor, Aqueduct, and Dam districts. +2 [ICON_PRODUCTION] Production bonus for each adjacent Canal districts. +1 [ICON_PRODUCTION] Production bonus for each adjacent Commercial Hub districts and Resources (doubles after researching Apprenticeship). +1 [ICON_PRODUCTION] Production bonus for every two adjacent District tiles. +1 [Icon_Production] Production to adjacent Resources. Provides Major adjacency bonus to Commercial Hub Districts. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries over bonus resources in this city."), -- +1 [ICON_PRODUCTION] Production for Mines in this city. 
+	("LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",							"A district unique to Gaul that is cheaper than the district it replaces, the Industrial Zone. The Oppidum district is defensible with a ranged attack. All [ICON_Citizen] citizens in this city provide +0.5 [ICON_PRODUCTION] Production. When the first Oppidum is constructed, the Metal Casting technology is unlocked.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Production adjacency bonus from Quarries and Strategic resources. -1 Appeal to adjacent tiles. +1 [ICON_PRODUCTION] Production for Quarries over bonus resources in this city."), -- +1 [ICON_PRODUCTION] Production for Mines in this city. 
 	("LOC_DISTRICT_AQUEDUCT_HD_DESCRIPTION",							"A district that provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. If built adjacent to a Geothermal Fissure, +1 [ICON_Amenities] Amenity. Prevents [ICON_Food] Food loss during Drought.[NEWLINE]Farms gain +1 [ICON_FOOD] Food. [NEWLINE] Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 30% of an Aqueduct's production. One per city."),
 	("LOC_DISTRICT_BATH_HD_DESCRIPTION",								"A district unique to Rome for city growth. Replaces the Aqueduct district and cheaper to build.[NEWLINE][NEWLINE]It provides this city with a source of fresh water from an adjacent River, Lake, Oasis, or Mountain. Cities that do not yet have existing fresh water receive up to 6 [ICON_Housing] Housing. Cities that already have existing fresh water will instead get +2 [ICON_Housing] Housing. If built adjacent to a Geothermal Fissure, +1 [ICON_Amenities] Amenity. In all cases the Bath provides an additional bonus of +2 [ICON_Housing] Housing and +1 [ICON_Amenities] Amenity. Prevents [ICON_Food] Food loss during Drought. Must be built adjacent to the City Center.[NEWLINE]Farms gain +1 [ICON_FOOD] Food. [NEWLINE]Must be built adjacent to the City Center. Military Engineers can spend a charge to complete 30% of an Aqueduct's production. One per city."),
 	("LOC_DISTRICT_HARBOR_HD_DESCRIPTION",							"A district for naval activity in your city. Also removes the [ICON_Movement] Movement penalty for embarking and disembarking to and from this tile. Must be built on Coast or Lake Terrain adjacent to land. +2 [ICON_HOUSING] Housing if this city is adjacent to a Coast or a Lake. Fishing Boats produce +1 [ICON_FOOD] Food in this city. +10% [ICON_PRODUCTION] production towards all naval units."),
@@ -16,7 +16,7 @@ values
 	("LOC_DISTRICT_IKANDA_HD_DESCRIPTION",							"A district unique to Zulu which replaces the Encampment. Provides +1 [ICON_Housing] Housing. Once the Civic or Technology prerequisite is met, Corps and Armies can be trained without Military Academy building. Culture bombs adjacent tiles when finished. -25% Corps and Army training cost. Buildings in the Ikanda provide +2 [ICON_GOLD] Gold and +1 [ICON_SCIENCE] Science.[NEWLINE]+30% [ICON_PRODUCTION] Production towards Land Military Units. Mines over bonus resources in this city provide +1 [ICON_PRODUCTION] Production.	Improved Strategic resources in the city provide +1 [Icon_Science] Science. Properly improved Strategic resources in the city gain an additional +2 per turn. -1 Appeal to adjacent tiles."),
 	("LOC_DISTRICT_THANH_HD_DESCRIPTION",							 "A district unique to Vietnam which replaces the Encampment. +1 [ICON_PRODUCTION] Production for every 2 adjacent District. Provides [ICON_CULTURE] Culture equal to its [ICON_PRODUCTION] Production adjacency bonus. After Flight is researched receive [ICON_TOURISM] Tourism equal to the [ICON_PRODUCTION] Production yield. This District does not require population, is cheaper to build, cannot be built adjacent to the city center, and is not a Specialty district.[NEWLINE]One per city. +10% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for Mines over bonus resources in this city. +1 [Icon_Science] Science for improved Strategic resources in the city. Properly improved Strategic resources in the city gain an additional +2 per turn."),
 	("LOC_DISTRICT_ENCAMPMENT_HD_DESCRIPTION",						"A district in your city for military facilities.[NEWLINE]+10% [ICON_PRODUCTION] Production towards Land Military Units. +1 [ICON_PRODUCTION] Production for Mines over bonus resources in this city. +1 [Icon_Science] Science for improved Strategic resources in the city. Properly improved Strategic resources in the city gain an additional +2 per turn. -1 Appeal to adjacent tiles."),
-	("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +3 [ICON_Housing] Housing, +2 [ICON_Food] Food, and +2 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. +2 [ICON_Production] Production if adjacent to bonus resources; +4 [ICON_Gold] Gold if adjacent to luxury resources; +2 [Icon_Science] Science if adjacent to strategic resources. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith."),
+	("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"A district unique to Kongo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier and cheaper to build. Provides +3 [ICON_Housing] Housing, +2 [ICON_Food] Food, and +2 [ICON_Gold] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. +2 [ICON_PRODUCTION] Production if adjacent to bonus resources; +4 [ICON_Gold] Gold if adjacent to luxury resources; +2 [Icon_Science] Science if adjacent to strategic resources. Allows the purchasing of Settlers and Builders using [ICON_Faith] Faith."),
 	("LOC_DISTRICT_AERODROME_HD_DESCRIPTION",						 "A district that allows you to build and store aircraft. Cannot be built on Hills. Can be built regardless of [ICON_CITIZEN] population. +25% [Icon_Production] Production towards Air Units. -1 Appeal to adjacent tiles. "),
 	("LOC_DISTRICT_DIPLOMATIC_QUARTER_HD_DESCRIPTION",				"Districts recieve +1 adjacency bonuses from being adjacent to Diplomatic Quater. Your civilization receives +1 [ICON_FAVOR] Diplomatic Favor for each Delegation or Embassy from a foreign civilization through diplomacy. Awards 1 [ICON_Envoy] Envoy when completed. Enemy Spies operate at 2 levels below normal when targeting this District and adjacent Districts. Only 1 can exist in your empire at a time. Grants the ability to construct an additional Spy."), --	if built next to the city center
 	("LOC_DISTRICT_ACROPOLIS_HD_DESCRIPTION",						 "A district unique to Greece for cultural sites. Replaces the Theater Square district and cheaper to build. Awards 1 [ICON_Envoy] Envoy when completed.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture bonus for each adjacent district and an additional +2 [ICON_Culture] Culture bonus for adjacent City Center. +1 [ICON_CULTURE] Culture when built on tiles with Charming Appeal. +3 [ICON_CULTURE] Culture when built on tiles with Breathtaking Appeal. Can only be built on Hills. +1 Appeal to adjacent tiles."),
@@ -29,7 +29,7 @@ values
 	("LOC_DISTRICT_COMMERCIAL_HUB_HD_DESCRIPTION",					"A district in your city specializing in finance and trade. +2 [ICON_Gold] Gold from all domestic [ICON_TradeRoute] Trade Routes. +1 [ICON_Culture] Culture and +1 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes. +1 [ICON_Food] Food to Pastures over bonus resources in this city."),
 	("LOC_DISTRICT_SUGUBA_HD_DESCRIPTION",							"A district unique to Mali specializing in finance and trade that replaces the Commercial Hub, gains major adjacency bonus when adjacent to Holy Site Districts. Enable purchasing Districts with [ICON_Gold] Gold in this city. Units, Buildings, and Districts are 20% cheaper to purchase with [ICON_GOLD] Gold and [ICON_FAITH] Faith in this City.[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold from all domestic [ICON_TradeRoute] Trade Routes originated from this city. +1 [ICON_Culture] Culture and +1 [ICON_Science] Science from all international [ICON_TradeRoute] Trade Routes originated from this city. +1 [ICON_Food] Food to Pastures over bonus resources in this city."), --[NEWLINE][NEWLINE]+2 [ICON_Gold] Gold bonus for each adjacent Holy Site. +2 [ICON_Gold] Gold bonus for each adjacent Harbor.
 	("LOC_DISTRICT_CANAL_HD_DESCRIPTION",							 "A district built on flat land to connect two bodies of water or a body of water to a City Center. +3 [ICON_Gold] Gold for adjacent tiles. Multiplier of	[ICON_Gold] Gold yield from districts at their destination [ICON_TradeRoute] Trade Routes passing through Canal is set to +100% (max. +100%). Canals may either go straight through the hex or bend by 60 degrees. However three-way Canal junctures are not allowed and Canals must have a full land tile on each side of the waterway they create. Military Engineers can spend a charge to complete 30% of a Canal's production."), -- [NEWLINE][NEWLINE]+1 [ICON_GreatWork_Product] Product Slot.
-	("LOC_DISTRICT_DAM_HD_DESCRIPTION",								"A district built on a Floodplains tile to improve the comfort of living along a River. +1 [ICON_Food] Food and +1 [ICON_Production] Production for adjacent Improvements. Prevents damage from flooding (though yields from flooding drop by 50%). Prevents [ICON_Food] Food loss during Drought. Only one may be built along each river's floodplain (whichever player completes one first) and the river must traverse at least two sides of the Dam hex. Military Engineers can spend a charge to complete 30% of a Dam's production."),
+	("LOC_DISTRICT_DAM_HD_DESCRIPTION",								"A district built on a Floodplains tile to improve the comfort of living along a River. +1 [ICON_Food] Food and +1 [ICON_PRODUCTION] Production for adjacent Improvements. Prevents damage from flooding (though yields from flooding drop by 50%). Prevents [ICON_Food] Food loss during Drought. Only one may be built along each river's floodplain (whichever player completes one first) and the river must traverse at least two sides of the Dam hex. Military Engineers can spend a charge to complete 30% of a Dam's production."),
 	("LOC_DISTRICT_SEOWON_HD_DESCRIPTION",							"A district unique to Korea. Replaces the Campus. +4 [Icon_Science] Science. Has more citizen slots."),
 -- 社区
 	("LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",						"A district for urban activities. Gives Housing according to the tile’s appeal.[NEWLINE]Breathtaking: +5 [ICON_HOUSING] Housing.[NEWLINE]Charming: +4 [ICON_HOUSING] Housing.[NEWLINE]Average: +3 [ICON_HOUSING] Housing.[NEWLINE]Unappealing: +2 [ICON_HOUSING] Housing.[NEWLINE]Disgusting: +1 [ICON_HOUSING] Housing."),
@@ -44,8 +44,8 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_HOLY_SITE_HD_DESCRIPTION",						 "您城市里的宗教祭祀区。若该区域内含有三级宗教建筑，则本城+10% [ICON_Faith] 信仰值。为相邻单元格+1魅力。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_LAVRA_HD_DESCRIPTION",							 "俄罗斯特色宗教活动区域，替代“圣地”，建造费用更低。[NEWLINE][NEWLINE]该区域内的专家也产出大作家、大艺术家、大音乐家点数。此城市每消耗一位伟人，城市边界则扩张一个单元格。若该区域内含有三级宗教建筑，则本城+10% [ICON_Faith] 信仰值。为相邻单元格+1魅力。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_INDUSTRIAL_ZONE_HD_DESCRIPTION",					"您城市里的工业活动区。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"), 
-	("zh_Hans_CN",	"LOC_DISTRICT_HANSA_HD_DESCRIPTION",							 "德国特色工业区域，替代“工业区”，建造费用更低。[NEWLINE][NEWLINE]相邻河流时获得+2 [ICON_Production] 生产力加成。可从每个相邻的港口、水渠和堤坝区域处获得+2 [ICON_Production] 生产力加成。可从每个相邻的运河区域处获得+3 [ICON_Production] 生产力加成。可从每个相邻的商业中心和资源处获得+1 [ICON_Production] 生产力加成（研究学徒后变为+2）。每两处相邻区域为其提供1点 [ICON_Production] 生产力加成。为相邻的资源+1 [ICON_Production] 生产力，为商业中心提供大量相邻加成。给相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"), 
-	("zh_Hans_CN",	"LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",							"高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。建成此区域后，即可解锁“金属铸造”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_Production] 生产力。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HANSA_HD_DESCRIPTION",							 "德国特色工业区域，替代“工业区”，建造费用更低。[NEWLINE][NEWLINE]相邻河流时获得+2 [ICON_PRODUCTION] 生产力加成。可从每个相邻的港口、水渠和堤坝区域处获得+2 [ICON_PRODUCTION] 生产力加成。可从每个相邻的运河区域处获得+3 [ICON_PRODUCTION] 生产力加成。可从每个相邻的商业中心和资源处获得+1 [ICON_PRODUCTION] 生产力加成（研究学徒后变为+2）。每两处相邻区域为其提供1点 [ICON_PRODUCTION] 生产力加成。为相邻的资源+1 [ICON_PRODUCTION] 生产力，为商业中心提供大量相邻加成。给相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"), 
+	("zh_Hans_CN",	"LOC_DISTRICT_OPPIDUM_HD_DESCRIPTION",							"高卢特色区域，替代“工业区”，建造花费更低。“奥皮杜姆”区域具有防御力且可执行远程攻击。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。建成此区域后，即可解锁“金属铸造”科技。[NEWLINE][NEWLINE]每与一个采石场改良设施或战略资源相邻，则+2 [ICON_PRODUCTION] 生产力。为相邻单元格-1魅力。[NEWLINE]为本城改良加成资源的采石场+1 [ICON_PRODUCTION] 生产力。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_AQUEDUCT_HD_DESCRIPTION",							"区域从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。没有淡水资源的城市最多获得6个 [ICON_Housing] 住房。相反，已有淡水资源的城市 [ICON_Housing] 住房数量+2；若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。[NEWLINE]本城的农场+1 [ICON_FOOD] 食物。[NEWLINE] 必须修建在与市中心相邻的单元格中。军事工程师可消耗1次使用次数来完成水渠30%的修建进度。每个城市只允许建造1个。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_BATH_HD_DESCRIPTION",								"促进城市发展的罗马特色区域。取代水渠，建造费用更低。[NEWLINE][NEWLINE]从相邻河流、湖泊、绿洲或山脉引水，为该城市提供淡水资源。尚未拥有淡水资源的城市最多获得6个 [ICON_Housing] 住房。已有淡水资源的城市则+2 [ICON_Housing] 住房。若与地热裂缝相邻，提供+1 [ICON_Amenities] 宜居度。在任何情况下，浴场都能额外提供+2 [ICON_Housing] 住房和+1 [ICON_Amenities] 宜居度。干旱时可防止 [ICON_Food] 食物损失。必须修建在与市中心相邻的单元格中。[NEWLINE]本城的农场+1 [ICON_FOOD] 食物。[NEWLINE] 军事工程师可消耗1次使用次数来完成浴场30%的修建进度。每个城市只允许建造1个。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_HARBOR_HD_DESCRIPTION",							"城市中的海军活动区域。同时取消从该单元格上下船的 [ICON_Movement] 移动力消耗。必须修建在和陆地相邻的海岸或湖泊单元格上。如此城与海岸或湖边相邻，则+2 [ICON_HOUSING] 住房。为本城的渔船 +1 [ICON_FOOD] 食物。建造海军单位加速10%。"),
@@ -66,74 +66,110 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_COMMERCIAL_HUB_HD_DESCRIPTION",					"城市中专注于金融和贸易的区域。本城出发的 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币。改良加成资源的牧场+1 [ICON_Food] 食物。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_SUGUBA_HD_DESCRIPTION",							"马里特色区域，专精于经济与贸易，替代“商业中心”，与圣地相邻获得大相邻加成。允许本城使用金币购买区域。使用 [ICON_GOLD] 金币和 [ICON_FAITH] 信仰值在此城中购买单位、建筑和区域时，费用减少20%。[NEWLINE][NEWLINE]本城出发的 [ICON_TradeRoute] 贸易路线+2 [ICON_Gold] 金币。改良加成资源的牧场+1 [ICON_Food] 食物。"), --[NEWLINE][NEWLINE]每相邻一个圣地获得+2 [ICON_Gold] 金币加成。每相邻一个港口获得+2 [ICON_Gold] 金币加成。
 	("zh_Hans_CN",	"LOC_DISTRICT_CANAL_HD_DESCRIPTION",							 "建在平原上的区域，连接两块水域单元格或将一块水域单元格与市中心连接。为相邻的单元格提供+3 [ICON_Gold] 金币。如 [ICON_TradeRoute] 贸易路线途径此处，其将从目的地的区域处获得成倍 [ICON_Gold] 金币。运河可笔直穿过单元格，也可在其中进行60度转向。无法建造三向连接运河，且运河在其所建水路的两侧皆必须含有一个完整的陆地单元格。军事工程师可消耗1次使用次数来完成运河30%的修建进度。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_DAM_HD_DESCRIPTION",								"建造在泛滥平原单元格上的区域，可改善此江河流域旁的民生质量（但来自洪水的产出减半）。为相邻的改良设施+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。其可防止江河泛滥带来的损害，还可在干旱时防止 [ICON_Food] 食物损失。每条江河的泛滥平原中仅能建造1个（有文明建成便视为已建造），且江河必须至少穿过堤坝格位的两个面。军事工程师可消耗1次使用次数来完成堤坝30%的修建进度。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DAM_HD_DESCRIPTION",								"建造在泛滥平原单元格上的区域，可改善此江河流域旁的民生质量（但来自洪水的产出减半）。为相邻的改良设施+1 [ICON_Food] 食物和+1 [ICON_PRODUCTION] 生产力。其可防止江河泛滥带来的损害，还可在干旱时防止 [ICON_Food] 食物损失。每条江河的泛滥平原中仅能建造1个（有文明建成便视为已建造），且江河必须至少穿过堤坝格位的两个面。军事工程师可消耗1次使用次数来完成堤坝30%的修建进度。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_SEOWON_HD_DESCRIPTION",							"朝鲜特色区域，替代“学院”。+4 [Icon_Science] 科技值。拥有更多的专家槽位。"),
 -- 社区
 	("zh_Hans_CN",	"LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",						"您城市里的市民活动区域。基于单元格的魅力提供住房，情况如下：[NEWLINE]惊艳的：+5 [ICON_HOUSING] 住房。[NEWLINE]迷人的：+4 [ICON_HOUSING] 住房。[NEWLINE]普通的：+3 [ICON_HOUSING] 住房。[NEWLINE]无吸引力的：+2 [ICON_HOUSING] 住房。[NEWLINE]令人厌恶的：+1 [ICON_HOUSING] 住房。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_Production] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。");
+	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_PRODUCTION] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。");
 
 insert or replace into EnglishText
-	(Tag,															Text)
+	(Tag,												Text)
 values
-	("LOC_DISTRICT_INDUSTRIAL_ZONE_GOLD",							"+{1_num} [ICON_GOLD] Gold from adjacent Industrial Zone {1_Num : plural 2?district; other?districts;}."),
-	("LOC_DISTRICT_HANSA_GOLD",										"+{1_num} [ICON_GOLD] Gold from adjacent Hansa {1_Num : plural 2?district; other?districts;}."),
-	("LOC_DISTRICT_CANAL_GOLD",										"+{1_num} [ICON_GOLD] Gold from adjacent Canal {1_Num : plural 3?district; other?districts;}."),
-	("LOC_DISTRICT_CITY_CENTER_GOLD",								"+{1_num} [ICON_GOLD] Gold from adjacent City Center {1_Num : plural 2?district; other?districts;}."),
-	("LOC_DISTRICT_CITY_CENTER_CULTURE",							"+{1_num} [ICON_CULTURE] Culture from adjacent City Center {1_Num : plural 2?district; other?districts;}."),
-	("LOC_DISTRICT_AERODROME_PRODUCTION",							"+{1_num} [ICON_PRODUCTION] Production from adjacent Aerodrome {1_Num : plural 2?district; other?districts;}."),
-	("LOC_DISTRICT_NEIGHBORHOOD_FAITH",								"+{1_num} [ICON_FAITH] Faith from the adjacent Neighborhood {1_Num : plural 2?tile; other?tiles;}."),
-	("LOC_DISTRICT_MBANZA_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Mbanza {1_Num : plural 2?tile; other?tiles;}."),
-	
-	("LOC_AQUEDUCT_SELF_FOOD",										"+{1_num} [ICON_FOOD] Food."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_AIRSTRIP",						"+{1_num} [ICON_Production] Production from the adjacent Airstrip improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_MAORI_PA",						"+{1_num} [ICON_Production] Production from the adjacent Pa improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_MISSILE_SILO",					"+{1_num} [ICON_Production] Production from the adjacent Missile Silo improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_MOUNTAIN_TUNNEL",					"+{1_num} [ICON_Production] Production from the adjacent Mountain Tunnel improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_FORT",							"+{1_num} [ICON_Production] Production from the adjacent Fort improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_HD_ENCAMPMENT_ADJACENCY_ROMAN_FORT",						"+{1_num} [ICON_Production] Production from the adjacent Roman Fort improvements {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DISTRICT_STRATEGIC_PRODUCTION2",								"+{1_num} [ICON_PRODUCTION] Production from the adjacent Strategic {1_Num : plural 1?resource; other?resources;}."),
-	("LOC_MBANZA_FOOD",													"+{1_num} [ICON_FOOD] Food."),
-	("LOC_MBANZA_GOLD",													"+{1_num} [ICON_GOLD] Gold."),
-	("LOC_MBANZA_BONUS",												"+{1_num} [ICON_Production] Production from the adjacent Bonus {1_Num : plural 1?resource; other?resources;}."),
-	("LOC_MBANZA_LUXURY",												"+{1_num} [ICON_GOLD] Gold from the adjacent Luxury {1_Num : plural 1?resource; other?resources;}."),
-	("LOC_MBANZA_STRATEGIC",											"+{1_num} [ICON_SCIENCE] Science from the adjacent Strategic {1_Num : plural 1?resource; other?resources;}."),
-	("LOC_DISTRICT_SUGUBA_PRODUCTION",									"+{1_num} [ICON_PRODUCTION] Production from the adjacent Suguba {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DIPLOMATIC_QUATER_GOLD",										"+{1_num} [ICON_GOLD] Gold from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DIPLOMATIC_QUATER_FAITH",										"+{1_num} [ICON_FAITH] Faith from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DIPLOMATIC_QUATER_SCIENCE",									"+{1_num} [ICON_SCIENCE] Science from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DIPLOMATIC_QUATER_CULTURE",									"+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_DIPLOMATIC_QUATER_PRODUCTION",								"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?tile; other?tiles;}."),
-	("LOC_PRESERVE_FAITH",												"+{1_num} [ICON_FAITH] Faith from the adjacent Preserve {1_Num : plural 1?tile; other?tiles;}.");
+	-- Adjacent to district
+	("LOC_DISTRICT_INDUSTRIAL_ZONE_GOLD",				"+{1_num} [ICON_GOLD] Gold from the adjacent Industrial Zone {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_HANSA_GOLD",							"+{1_num} [ICON_GOLD] Gold from the adjacent Hansa {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_CANAL_GOLD",							"+{1_num} [ICON_GOLD] Gold from the adjacent Canal {1_Num : plural 3?district; other?districts;}."),
+	("LOC_DISTRICT_CITY_CENTER_CULTURE",				"+{1_num} [ICON_CULTURE] Culture from the adjacent City Center {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_AERODROME_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Aerodrome {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_NEIGHBORHOOD_FAITH",					"+{1_num} [ICON_FAITH] Faith from the adjacent Neighborhood {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_MBANZA_FAITH",						"+{1_num} [ICON_FAITH] Faith from the adjacent Mbanza {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_PRESERVE_FAITH",						"+{1_num} [ICON_FAITH] Faith from the adjacent Preserve {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_HARBOR_INDUSTRIAL_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Harbor {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_ROYALDOCK_INDUSTRIAL_PRODUCTION",	"+{1_num} [ICON_PRODUCTION] Production from the adjacent RoyalDock {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_COTHON_INDUSTRIAL_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Cothon {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_HARBOR_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Harbor {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent RoyalDock {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_COTHON_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_SUGUBA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Suguba {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD",				"+{1_num} [ICON_GOLD] Gold from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH",			"+{1_num} [ICON_FAITH] Faith from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE",			"+{1_num} [ICON_SCIENCE] Science from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_DIPLOMATIC_QUATER_CULTURE",			"+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_DIPLOMATIC_QUATER_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
+	-- Adjacent to improvement
+	("LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_Production] Production from the adjacent Quarry {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_MINE_PRODUCTION",					"+{1_num} [ICON_Production] Production from the adjacent Mine {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Lumber Mill {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Quarry improvements."),
+	("LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Mine improvements."),
+	("LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",		"+{1_num} [ICON_Production] Production from the adjacent Lumber Mill improvements."),
+	("LOC_DISTRICT_OIL_WELL_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Oil Well {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_OFFSHORE_OIL_RIG_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Offshore Oil Rig {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_AIRSTRIP_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Airstrip {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_MAORI_PA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Pā {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_MISSILE_SILO_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Missile Silo {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_MOUNTAIN_TUNNEL_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Mountain Tunnel {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_FORT_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Fort {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_ROMAN_FORT_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Roman Fort {1_Num : plural 1?improvement; other?improvements;}."),
+	-- Adjacent to resource
+	("LOC_DISTRICT_SEARESOURCE_GOLD",					"+{1_num} [ICON_GOLD] Gold from the adjacent coastal {1_Num : plural 2?resource; other?resources;}."),
+	("LOC_DISTRICT_HD_STRATEGIC_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Strategic {1_Num : plural 2?resource; other?resources;}."),
+	("LOC_DISTRICT_BONUS_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Bonus {1_Num : plural 1?resource; other?resources;}."),
+	("LOC_DISTRICT_STRATEGIC_SCIENCE",					"+{1_num} [ICON_SCIENCE] Science from the adjacent Strategic {1_Num : plural 1?resource; other?resources;}."),
+	-- Misc
+	("LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] Food."),
+	("LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] Gold."),
+	("LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent river."),
+	-- plural replacement text
+	("LOC_DISTRICT_CANAL_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Canal {1_Num : plural 3?district; other?districts;}."),
+	("LOC_DISTRICT_LUXURY_GOLD",						"+{1_num} [ICON_GOLD] Gold from the adjacent Luxury {1_Num : plural 2?resource; other?resources;}."),
+	("LOC_DISTRICT_FOREST_FAITH",						"+{1_num} [ICON_Faith] Faith from the adjacent Woods {1_Num : plural 2?tile; other?tiles;}.");
 
 insert or replace into LocalizedText
-	(Language,		Tag,															 Text)
+	(Language,		Tag,												Text)
 values
-	("zh_Hans_CN",	"LOC_DISTRICT_INDUSTRIAL_GOLD",									"+{1_num} [ICON_GOLD] 金币来自相邻的工业区。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_HANSA_GOLD",										"+{1_num} [ICON_GOLD] 金币来自相邻的商业同业工会。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_CANAL_GOLD",										"+{1_num} [ICON_GOLD] 金币来自相邻的运河。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_CITY_CENTER_GOLD",								"+{1_num} [ICON_GOLD] 金币来自相邻的市中心。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_CITY_CENTER_CULTURE",								"+{1_num} [ICON_CULTURE] 文化值来自相邻的市中心。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_AERODROME_PRODUCTION",							"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的航空港。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_NEIGHBORHOOD_FAITH",								"+{1_num} [ICON_FAITH] 信仰值来自相邻的社区。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_FAITH",									"+{1_num} [ICON_FAITH] 信仰值来自相邻的姆班赞。"),
---相邻加成
-	("zh_Hans_CN",	"LOC_AQUEDUCT_SELF_FOOD",											"+{1_num} [ICON_FOOD] 食物。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_AIRSTRIP",								"+{1_num} [ICON_Production] 生产力来自相邻的飞机跑道改良{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_MAORI_PA",								"+{1_num} [ICON_Production] 生产力来自相邻的帕堡{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_MISSILE_SILO",							"+{1_num} [ICON_Production] 生产力来自相邻的导弹发射井{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_MOUNTAIN_TUNNEL",						"+{1_num} [ICON_Production] 生产力来自相邻的穿山隧道{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_FORT",									"+{1_num} [ICON_Production] 生产力来自相邻的堡垒{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_HD_ENCAMPMENT_ADJACENCY_ROMAN_FORT",							"+{1_num} [ICON_Production] 生产力来自相邻的古罗马堡垒{1_Num : plural 1?单元格; other?单元格;}。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_STRATEGIC_PRODUCTION2",								"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的战略资源。"),
-	("zh_Hans_CN",	"LOC_MBANZA_FOOD",													"+{1_num} [ICON_FOOD] 食物。"),
-	("zh_Hans_CN",	"LOC_MBANZA_GOLD",													"+{1_num} [ICON_GOLD] 金币。"),
-	("zh_Hans_CN",	"LOC_MBANZA_BONUS",													"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的加成资源。"),
-	("zh_Hans_CN",	"LOC_MBANZA_LUXURY",												"+{1_num} [ICON_GOLD] 金币来自相邻的奢侈品资源。"),
-	("zh_Hans_CN",	"LOC_MBANZA_STRATEGIC",												"+{1_num} [ICON_SCIENCE] 科技值来自相邻的战略资源。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_SUGUBA_PRODUCTION",									"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的曼丁哥市场。"),
-	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_GOLD",										"+{1_num} [ICON_GOLD] 金币来自相邻的外交区。"),
-	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_FAITH",										"+{1_num} [ICON_FAITH] 信仰值来自相邻的外交区。"),
-	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_SCIENCE",									"+{1_num} [ICON_SCIENCE] 科技值来自相邻的外交区。"),
-	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_CULTURE",									"+{1_num} [ICON_CULTURE] 文化值自相邻的外交区。"),
-	("zh_Hans_CN",	"LOC_DIPLOMATIC_QUATER_PRODUCTION",									"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的外交区。"),
-	("zh_Hans_CN",	"LOC_PRESERVE_FAITH",												"+{1_num} [ICON_FAITH] 信仰值来自相邻的保护区。"),
+	-- Adjacent to district
+	("zh_Hans_CN",	"LOC_DISTRICT_INDUSTRIAL_GOLD",						"+{1_num} [ICON_GOLD] 金币来自相邻的工业区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HANSA_GOLD",							"+{1_num} [ICON_GOLD] 金币来自相邻的商业同业工会。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_CANAL_GOLD",							"+{1_num} [ICON_GOLD] 金币来自相邻的运河。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_CITY_CENTER_CULTURE",					"+{1_num} [ICON_CULTURE] 文化值来自相邻的市中心。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_AERODROME_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的航空港。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_NEIGHBORHOOD_FAITH",					"+{1_num} [ICON_FAITH] 信仰值来自相邻的社区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_FAITH",						"+{1_num} [ICON_FAITH] 信仰值来自相邻的姆班赞。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_PRESERVE_FAITH",						"+{1_num} [ICON_FAITH] 信仰值来自相邻的保护区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HARBOR_INDUSTRIAL_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的港口。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_ROYALDOCK_INDUSTRIAL_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的皇家海军船坞。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_COTHON_INDUSTRIAL_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的U型港。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HARBOR_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的港口。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的皇家海军船坞。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_COTHON_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的U型港。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_SUGUBA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的曼丁哥市场。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD",				"+{1_num} [ICON_GOLD] 金币来自相邻的外交区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH",				"+{1_num} [ICON_FAITH] 信仰值来自相邻的外交区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE",			"+{1_num} [ICON_SCIENCE] 科技值来自相邻的外交区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_CULTURE",			"+{1_num} [ICON_CULTURE] 文化值自相邻的外交区。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的外交区。"),
+	-- Adjacent to improvement
+	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的采石场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的矿山。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",			"+{1_num} [ICON_Production] 生产力来自相邻的伐木场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_Production] 生产力来自相邻的采石场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_MINE_PRODUCTION",						"+{1_num} [ICON_Production] 生产力来自相邻的矿山。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的伐木场。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_OIL_WELL_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻油井。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_OFFSHORE_OIL_RIG_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻海上钻机平台。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_AIRSTRIP_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的飞机跑道。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_MAORI_PA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的帕堡。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_MISSILE_SILO_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的导弹发射井。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_MOUNTAIN_TUNNEL_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的穿山隧道。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_FORT_PRODUCTION",						"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的堡垒。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_ROMAN_FORT_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的古罗马堡垒。"),
+	-- Adjacent to resource
+	("zh_Hans_CN",	"LOC_DISTRICT_LUXURY_GOLD",							"+{1_num} [ICON_GOLD] 金币来自相邻的奢侈品资源。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HD_STRATEGIC_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的战略资源。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_BONUS_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的加成资源。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_STRATEGIC_SCIENCE",					"+{1_num} [ICON_SCIENCE] 科技值来自相邻的战略资源。"),
+	-- Misc
+	("zh_Hans_CN",	"LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] 食物。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] 金币。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的河流。");

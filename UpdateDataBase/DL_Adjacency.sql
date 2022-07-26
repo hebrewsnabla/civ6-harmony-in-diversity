@@ -1,32 +1,31 @@
 -- Remove Adjacencies
+-- Remove some adjacencies that will be added back right after, to make them better ordered in the game text.
 delete from District_Adjacencies where (DistrictType = 'DISTRICT_INDUSTRIAL_ZONE' or DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE')) and
 	(YieldChangeId = 'LumberMill_HalfProduction' or YieldChangeId = 'Minel_HalfProduction' or YieldChangeId = 'Quarry_Production');
 delete from District_Adjacencies where DistrictType = 'DISTRICT_HANSA' and
 	(YieldChangeId = 'Resource_Production' or YieldChangeId = 'Commerical_Hub_Production');
-delete from District_Adjacencies where (DistrictType = 'DISTRICT_HARBOR' or DistrictType in
-	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR')) and
-	(YieldChangeId = 'Harbor_City_Gold' or YieldChangeId = 'RoyalDock_City_Gold' or YieldChangeId = 'SeaResource_Gold');
+-- Remove a non-repetition UD support, which will be added back with the UD support sql afterwards
+delete from District_Adjacencies where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and YieldChangeId = 'RoyalDock_City_Gold';
+
 -- Add new Adjacencies
 with District_Adjacencies_Pre
 	(DistrictType,						YieldChangeId)
 as (values
-	('DISTRICT_INDUSTRIAL_ZONE',		'Oil_Industrial_Production'),
-	('DISTRICT_INDUSTRIAL_ZONE',		'Sea_Oil_Industrial_Production'),
-	('DISTRICT_INDUSTRIAL_ZONE',		'Aerodrome_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_Mine_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_Mine_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_Quarry_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_Quarry_Production'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_LumberMill_HalfProduction'),
 	('DISTRICT_INDUSTRIAL_ZONE',		'HD_LumberMill_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',		'Oil_Well_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',		'Offshore_Oil_Rig_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',		'Aerodrome_Production'),
 	('DISTRICT_COMMERCIAL_HUB',			'Canal_Gold'),
-	('DISTRICT_COMMERCIAL_HUB',			'HD_Commercial_Luxury_Gold'),
+	('DISTRICT_COMMERCIAL_HUB',			'Luxury_Gold'),
 	('DISTRICT_COMMERCIAL_HUB',			'Hansa_Gold'),
-	('DISTRICT_HARBOR',					'City_Center_Gold'),
-	('DISTRICT_HARBOR',					'HD_SeaResource_Gold'),
 	('DISTRICT_THEATER',				'District_Culture_City_Center'),
-	('DISTRICT_AQUEDUCT',				'Aqueduct_self_food'),
+	('DISTRICT_AQUEDUCT',				'Aqueduct_Self_Food'),
 	('DISTRICT_ENCAMPMENT',				'HD_Strategic_Production'),
 	('DISTRICT_ENCAMPMENT',				'Government_Production'),
 	('DISTRICT_ENCAMPMENT',				'Aerodrome_Production'),
@@ -39,12 +38,9 @@ as (values
 	('DISTRICT_HOLY_SITE',				'Neighborhood_Faith'),
 	('DISTRICT_HOLY_SITE',				'Mbanza_Faith'),
 
-	('DISTRICT_BATH',					'Aqueduct_self_food'),
+	('DISTRICT_BATH',					'Aqueduct_Self_Food'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'Industrial_Zone_Gold'),
 	('DISTRICT_ACROPOLIS',				'City_Center_Culture'),
-	('DISTRICT_HANSA',					'Oil_Industrial_Production'),
-	('DISTRICT_HANSA',					'Sea_Oil_Industrial_Production'),
-	('DISTRICT_HANSA',					'Aerodrome_Production'),
 	('DISTRICT_HANSA',					'River_Hansa_Production'),
 	('DISTRICT_HANSA',					'Bath_Production'),
 	('DISTRICT_HANSA',					'HD_Commerical_Hub_Production'),
@@ -53,11 +49,14 @@ as (values
 	('DISTRICT_HANSA',					'HD_Suguba_Production_Late'),
 	('DISTRICT_HANSA',					'HD_Resource_Production'),
 	('DISTRICT_HANSA',					'HD_Resource_Production_Late'),
-	('DISTRICT_MBANZA',					'MBANZA_FOOD'),
-	('DISTRICT_MBANZA',					'MBANZA_GOLD'),
-	('DISTRICT_MBANZA',					'MBANZA_BONUS'),
-	('DISTRICT_MBANZA',					'MBANZA_LUXURY'),
-	('DISTRICT_MBANZA',					'MBANZA_STRATEGIC'),
+	('DISTRICT_HANSA',					'Oil_Well_Production'),
+	('DISTRICT_HANSA',					'Offshore_Oil_Rig_Production'),
+	('DISTRICT_HANSA',					'Aerodrome_Production'),
+	('DISTRICT_MBANZA',					'Mbanza_Self_Food'),
+	('DISTRICT_MBANZA',					'Mbanza_Self_Gold'),
+	('DISTRICT_MBANZA',					'Bonus_Production'),
+	('DISTRICT_MBANZA',					'Luxury_Gold'),
+	('DISTRICT_MBANZA',					'Strategic_Science'),
 	('DISTRICT_HIPPODROME',				'HD_Holy_Site_Culture'),
 	('DISTRICT_HIPPODROME',				'HD_Encampment_Production'))
 insert or replace into District_Adjacencies
@@ -65,7 +64,7 @@ insert or replace into District_Adjacencies
 select
 	DistrictType,	YieldChangeId
 from District_Adjacencies_Pre where DistrictType in (select DistrictType from Districts);
-
+-- Harbor UD support
 insert or replace into District_Adjacencies
 	(DistrictType,					YieldChangeId)
 select
@@ -78,6 +77,23 @@ select
 	'DISTRICT_HANSA',					DistrictType || '_Hansa_Production'
 from Districts where (DistrictType = 'DISTRICT_HARBOR') or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
+-- DLC support
+with District_Adjacencies_Pre
+	(DistrictType,						YieldChangeId)
+as (values
+	('DISTRICT_COMMERCIAL_HUB',			'Diplomatic_Quater_Gold'),
+	('DISTRICT_HARBOR',					'Diplomatic_Quater_Gold'),
+	('DISTRICT_HOLY_SITE',				'Diplomatic_Quater_Faith'),
+	('DISTRICT_CAMPUS',					'Diplomatic_Quater_Science'),
+	('DISTRICT_THEATER',				'Diplomatic_Quater_Culture'),
+	('DISTRICT_ENCAMPMENT',				'Diplomatic_Quater_Production'),
+	('DISTRICT_INDUSTRIAL_ZONE',		'Diplomatic_Quater_Production'))
+insert or replace into District_Adjacencies
+	(DistrictType,	YieldChangeId)
+select
+	DistrictType,	YieldChangeId
+from District_Adjacencies_Pre where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+-- Mod support
 insert or replace into District_Adjacencies
 	(DistrictType,						YieldChangeId)
 select
@@ -88,28 +104,33 @@ insert or replace into District_Adjacencies
 select
 	'DISTRICT_HOLY_SITE',				'Preserve_Faith'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
--- UD supports
+-- UD support
 insert or ignore into District_Adjacencies 
 	(DistrictType,				YieldChangeId)
 select
 	b.CivUniqueDistrictType,	a.YieldChangeId 
 from (District_Adjacencies a inner join DistrictReplaces b on a.DistrictType = b.ReplacesDistrictType)
-	where b.CivUniqueDistrictType not in ('DISTRICT_OBSERVATORY', 'DISTRICT_SEOWON', 'DISTRICT_HANSA');
+	where b.CivUniqueDistrictType not in ('DISTRICT_OBSERVATORY', 'DISTRICT_SEOWON', 'DISTRICT_HANSA')
+	or a.YieldChangeId like 'Diplomatic_Quater_%';
 
 delete from District_Adjacencies where DistrictType = 'DISTRICT_ACROPOLIS' and YieldChangeId = 'District_Culture_City_Center';
 delete from District_Adjacencies where DistrictType = 'DISTRICT_OPPIDUM' and YieldChangeId in
-	('Strategic_Production', 'HD_Mine_HalfProduction', 'HD_Quarry_HalfProduction', 'HD_Quarry_Production');
+	('Strategic_Production', 'HD_Mine_HalfProduction', 'Quarry_HalfProduction', 'HD_Quarry_Production');
+
+-- Adjacency update
+update Adjacency_YieldChanges set YieldChange = 2 where ID = 'SeaResource_Gold';
 update Adjacency_YieldChanges set YieldChange = 3 where ID = 'NaturalWonder_Faith';
+update Adjacency_YieldChanges set YieldChange = 3 where ID = 'Canal_Production';
+update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Forest_Faith';
 
 -- Adjacency definition
--- Adjacent to district
+-- Adjacent to district (remember to support UD)
 insert or replace into Adjacency_YieldChanges
 	(ID,									Description,									YieldType,			YieldChange,	AdjacentDistrict)
 values
 	('Industrial_Zone_Gold',				'LOC_DISTRICT_INDUSTRIAL_ZONE_GOLD',			'YIELD_GOLD',		2,				'DISTRICT_INDUSTRIAL_ZONE'),
 	('Hansa_Gold',							'LOC_DISTRICT_HANSA_GOLD',						'YIELD_GOLD',		2,				'DISTRICT_HANSA'),
 	('Canal_Gold',							'LOC_DISTRICT_CANAL_GOLD',						'YIELD_GOLD',		3,				'DISTRICT_CANAL'),
-	('City_Center_Gold',					'LOC_DISTRICT_CITY_CENTER_GOLD',				'YIELD_GOLD',		2,				'DISTRICT_CITY_CENTER'),
 	('City_Center_Culture',					'LOC_DISTRICT_CITY_CENTER_CULTURE',				'YIELD_CULTURE',	2,				'DISTRICT_CITY_CENTER'),
 	('Aerodrome_Production',				'LOC_DISTRICT_AERODROME_PRODUCTION',			'YIELD_PRODUCTION', 2,				'DISTRICT_AERODROME'),
 	('Neighborhood_Faith',					'LOC_DISTRICT_NEIGHBORHOOD_FAITH',				'YIELD_FAITH',		2,				'DISTRICT_NEIGHBORHOOD'),
@@ -123,88 +144,79 @@ from Districts where DistrictType = 'DISTRICT_HARBOR' or (DistrictType in
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,											YieldType,			YieldChange,	AdjacentDistrict)
 select
-	DistrictType || '_Hansa_Production',		'LOC_' || DistrictType || '_INDUSTRIAL_PRODUCTION',		'YIELD_PRODUCTION',	2,				DistrictType
+	DistrictType || '_Hansa_Production',		'LOC_' || DistrictType || '_HANSA_PRODUCTION',			'YIELD_PRODUCTION',	2,				DistrictType
 from Districts where DistrictType = 'DISTRICT_HARBOR' or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
-
--- Harbor & Commercial
+-- Adjacent to improvement
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,								YieldType,			YieldChange,	AdjacentSeaResource)
+	(ID,								Description,								YieldType,				YieldChange,	AdjacentImprovement)
 values
-	('HD_SeaResource_Gold',					'LOC_DISTRICT_SEARESOURCE_GOLD',			'YIELD_GOLD',		2,				1);
+	('Oil_Well_Production',				'LOC_DISTRICT_OIL_WELL_PRODUCTION',			'YIELD_PRODUCTION',		1,				'IMPROVEMENT_OIL_WELL'),
+	('Offshore_Oil_Rig_Production',		'LOC_DISTRICT_OFFSHORE_OIL_RIG_PRODUCTION',	'YIELD_PRODUCTION',		1,				'IMPROVEMENT_OFFSHORE_OIL_RIG'),
+	('Roman_Fort_Production',			'LOC_DISTRICT_ROMAN_FORT_PRODUCTION',		'YIELD_PRODUCTION',		1,				'IMPROVEMENT_ROMAN_FORT'),
+	('Fort_Production',					'LOC_DISTRICT_FORT_PRODUCTION',				'YIELD_PRODUCTION',		1,				'IMPROVEMENT_FORT'),
+	('Airstrip_Production',				'LOC_DISTRICT_AIRSTRIP_PRODUCTION',			'YIELD_PRODUCTION',		1,				'IMPROVEMENT_AIRSTRIP'),
+	('Mountain_Tunnel_Production',		'LOC_DISTRICT_MOUNTAIN_TUNNEL_PRODUCTION',	'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MOUNTAIN_TUNNEL'),
+	('Missle_Silo_Production',			'LOC_DISTRICT_MISSILE_SILO_PRODUCTION',		'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MISSILE_SILO'),
+	('Maori_Pa_Production',				'LOC_DISTRICT_MAORI_PA_PRODUCTION',			'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MAORI_PA');
+-- Adjacent to resources class
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,								YieldType,			YieldChange,	AdjacentResourceClass)
+	(ID,								Description,								YieldType,				YieldChange,	AdjacentResourceClass)
 values
-	('HD_Commercial_Luxury_Gold',			'LOC_DISTRICT_LUXURY_GOLD',					'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY');
-
--- Aqueduct
+	('Luxury_Gold',						'LOC_DISTRICT_LUXURY_GOLD',					'YIELD_GOLD',			2,				'RESOURCECLASS_LUXURY'),
+	('HD_Strategic_Production',			'LOC_DISTRICT_HD_STRATEGIC_PRODUCTION',		'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC'),
+	('Bonus_Production',				'LOC_DISTRICT_BONUS_PRODUCTION',			'YIELD_PRODUCTION',		1,				'RESOURCECLASS_BONUS'),
+	('Strategic_Science',				'LOC_DISTRICT_STRATEGIC_SCIENCE',			'YIELD_SCIENCE',		1,				'RESOURCECLASS_STRATEGIC');
+-- Self (no adjacency requirements)
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,								YieldType,			YieldChange,	Self)
+	(ID,								Description,					YieldType,			YieldChange,	Self)
 values
-	('Aqueduct_self_food',					'LOC_AQUEDUCT_SELF_FOOD',					'YIELD_FOOD',		1,				1);
-
--- Industrial Zone
-update Adjacency_YieldChanges set YieldChange = 1, ObsoleteTech = 'TECH_APPRENTICESHIP' where ID = 'Commerical_Hub_Production';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Aqueduct_Production';
-update Adjacency_YieldChanges set YieldChange = 2 where ID = 'Dam_Production';
-update Adjacency_YieldChanges set YieldChange = 3 where ID = 'Canal_Production';
+	('Aqueduct_Self_Food',				'LOC_DISTRICT_SELF_FOOD',		'YIELD_FOOD',		1,				1),
+	('Mbanza_Self_Food',				'LOC_DISTRICT_SELF_FOOD',		'YIELD_FOOD',		2,				1),
+	('Mbanza_Self_Gold',				'LOC_DISTRICT_SELF_GOLD',		'YIELD_GOLD',		2,				1);
+-- With Prereq or Obsolete Tech
 insert or replace into Adjacency_YieldChanges
-	(ID,								Description,									YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,			PrereqTech,				ObsoleteTech)
+	(ID,								Description,									YieldType,				YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqTech,				ObsoleteTech)
 values
-	('Oil_Industrial_Production',		'LOC_DISTRICT_OIL_INDUSTRIAL_PRODUCTION',		'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_OIL_WELL',			null,					null),
-	('Sea_Oil_Industrial_Production',	'LOC_DISTRICT_SEAOIL_INDUSTRIAL_PRODUCTION',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_OFFSHORE_OIL_RIG',	null,					null),
-	('HD_Mine_HalfProduction',			'LOC_DISTRICT_MINE_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,				'IMPROVEMENT_MINE',				null,					'TECH_METAL_CASTING'),
-	('HD_Mine_Production',				'LOC_DISTRICT_MINE_PRODUCTION',					'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_MINE',				'TECH_METAL_CASTING',	null),
-	('HD_Quarry_HalfProduction',		'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,				'IMPROVEMENT_QUARRY',			null,					'TECH_APPRENTICESHIP'),
-	('HD_Quarry_Production',			'LOC_DISTRICT_QUARRY_PRODUCTION',				'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_QUARRY',			'TECH_APPRENTICESHIP',	null),
-	('HD_LumberMill_HalfProduction',	'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				2,				'IMPROVEMENT_LUMBER_MILL',		null,					'TECH_CONSTRUCTION'),
-	('HD_LumberMill_Production',		'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_LUMBER_MILL',		'TECH_CONSTRUCTION',	null);
+	('HD_Mine_HalfProduction',			'LOC_DISTRICT_MINE_HALF_PRODUCTION',			'YIELD_PRODUCTION',		1,				2,				'IMPROVEMENT_MINE',			null,					'TECH_METAL_CASTING'),
+	('HD_Mine_Production',				'LOC_DISTRICT_MINE_PRODUCTION',					'YIELD_PRODUCTION',		1,				1,				'IMPROVEMENT_MINE',			'TECH_METAL_CASTING',	null),
+	('HD_Quarry_HalfProduction',		'LOC_DISTRICT_QUARRY_HALF_PRODUCTION',			'YIELD_PRODUCTION',		1,				2,				'IMPROVEMENT_QUARRY',		null,					'TECH_APPRENTICESHIP'),
+	('HD_Quarry_Production',			'LOC_DISTRICT_QUARRY_PRODUCTION',				'YIELD_PRODUCTION',		1,				1,				'IMPROVEMENT_QUARRY',		'TECH_APPRENTICESHIP',	null),
+	('HD_LumberMill_HalfProduction',	'LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION',		'YIELD_PRODUCTION',		1,				2,				'IMPROVEMENT_LUMBER_MILL',	null,					'TECH_CONSTRUCTION'),
+	('HD_LumberMill_Production',		'LOC_DISTRICT_LUMBER_MILL_PRODUCTION',			'YIELD_PRODUCTION',		1,				1,				'IMPROVEMENT_LUMBER_MILL',	'TECH_CONSTRUCTION',	null);
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,									YieldType,			YieldChange,	AdjacentRiver,	AdjacentDistrict, 			PrereqTech,				ObsoleteTech)
+	(ID,									Description,								YieldType,				YieldChange,	AdjacentDistrict, 			PrereqTech,				ObsoleteTech)
 values
-	('River_Hansa_Production',				'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 			'YIELD_PRODUCTION', 2,				1,				null,						null,					null),
-	('HD_Commerical_Hub_Production',		'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',		'YIELD_PRODUCTION',	1,				0,				'DISTRICT_COMMERCIAL_HUB',	null,					'TECH_APPRENTICESHIP'),
-	('HD_Suguba_Production',				'LOC_DISTRICT_SUGUBA_PRODUCTION',				'YIELD_PRODUCTION',	1,				0,				'DISTRICT_SUGUBA',			null,					'TECH_APPRENTICESHIP'),
-	('HD_Commerical_Hub_Production_Late',	'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',		'YIELD_PRODUCTION',	2,				0,				'DISTRICT_COMMERCIAL_HUB',	'TECH_APPRENTICESHIP',	null),
-	('HD_Suguba_Production_Late', 			'LOC_DISTRICT_SUGUBA_PRODUCTION',				'YIELD_PRODUCTION',	2,				0,				'DISTRICT_SUGUBA',			'TECH_APPRENTICESHIP',	null);
+	('HD_Commerical_Hub_Production',		'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',	'YIELD_PRODUCTION',		1,				'DISTRICT_COMMERCIAL_HUB',	null,					'TECH_APPRENTICESHIP'),
+	('HD_Commerical_Hub_Production_Late',	'LOC_DISTRICT_COMMERCIAL_HUB_PRODUCTION',	'YIELD_PRODUCTION',		2,				'DISTRICT_COMMERCIAL_HUB',	'TECH_APPRENTICESHIP',	null),
+	('HD_Suguba_Production',				'LOC_DISTRICT_SUGUBA_PRODUCTION',			'YIELD_PRODUCTION',		1,				'DISTRICT_SUGUBA',			null,					'TECH_APPRENTICESHIP'),
+	('HD_Suguba_Production_Late', 			'LOC_DISTRICT_SUGUBA_PRODUCTION',			'YIELD_PRODUCTION',		2,				'DISTRICT_SUGUBA',			'TECH_APPRENTICESHIP',	null);
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,							YieldType,			YieldChange,	AdjacentResource,	PrereqTech,				ObsoleteTech)
+	(ID,									Description,								YieldType,				YieldChange,	AdjacentResource,	PrereqTech,				ObsoleteTech)
 values
-	('HD_Resource_Production',				'LOC_DISTRICT_RESOURCE_PRODUCTION',		'YIELD_PRODUCTION',	1,				1,					null,					'TECH_APPRENTICESHIP'),
-	('HD_Resource_Production_Late',			'LOC_DISTRICT_RESOURCE_PRODUCTION',		'YIELD_PRODUCTION',	2,				1,					'TECH_APPRENTICESHIP',	null);
-
--- Holy Site
-update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Forest_Faith';
+	('HD_Resource_Production',				'LOC_DISTRICT_RESOURCE_PRODUCTION',			'YIELD_PRODUCTION',		1,				1,					null,					'TECH_APPRENTICESHIP'),
+	('HD_Resource_Production_Late',			'LOC_DISTRICT_RESOURCE_PRODUCTION',			'YIELD_PRODUCTION',		2,				1,					'TECH_APPRENTICESHIP',	null);
+-- Misc
+insert or replace into Adjacency_YieldChanges
+	(ID,									Description,								YieldType,				YieldChange,	AdjacentRiver)
+values
+	('River_Hansa_Production',				'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 		'YIELD_PRODUCTION', 	2,				1);
+-- DLC Support
 insert or replace into Adjacency_YieldChanges
 	(ID,							Description,					YieldType,		YieldChange,	AdjacentDistrict)
 select
-	'Preserve_Faith',				'LOC_PRESERVE_FAITH',			'YIELD_FAITH',	1,				'DISTRICT_PRESERVE'
+	'Preserve_Faith',				'LOC_DISTRICT_PRESERVE_FAITH',			'YIELD_FAITH',	1,				'DISTRICT_PRESERVE'
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
-
--- Encampment
+with Adjacency_YieldChanges_Pre
+	(ID,								Description,									YieldType,			YieldChange,	AdjacentDistrict)
+as (values
+	('Diplomatic_Quater_Gold',			'LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD',			'YIELD_GOLD',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
+	('Diplomatic_Quater_Faith',			'LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH',			'YIELD_FAITH',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
+	('Diplomatic_Quater_Science',		'LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE',		'YIELD_SCIENCE',	1,				'DISTRICT_DIPLOMATIC_QUARTER'),
+	('Diplomatic_Quater_Culture',		'LOC_DISTRICT_DIPLOMATIC_QUATER_CULTURE',		'YIELD_CULTURE',	1,				'DISTRICT_DIPLOMATIC_QUARTER'),
+	('Diplomatic_Quater_Production',	'LOC_DISTRICT_DIPLOMATIC_QUATER_PRODUCTION',	'YIELD_PRODUCTION',	1,				'DISTRICT_DIPLOMATIC_QUARTER'))
 insert or replace into Adjacency_YieldChanges
-	(ID,								Description,									YieldType,				YieldChange,	AdjacentImprovement)
-values
-	('Roman_Fort_Production',			'LOC_HD_ENCAMPMENT_ADJACENCY_ROMAN_FORT',		'YIELD_PRODUCTION',		1,				'IMPROVEMENT_ROMAN_FORT'),
-	('Fort_Production',					'LOC_HD_ENCAMPMENT_ADJACENCY_FORT',				'YIELD_PRODUCTION',		1,				'IMPROVEMENT_FORT'),
-	('Airstrip_Production',				'LOC_HD_ENCAMPMENT_ADJACENCY_AIRSTRIP',			'YIELD_PRODUCTION',		1,				'IMPROVEMENT_AIRSTRIP'),
-	('Mountain_Tunnel_Production',		'LOC_HD_ENCAMPMENT_ADJACENCY_MOUNTAIN_TUNNEL',	'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MOUNTAIN_TUNNEL'),
-	('Missle_Silo_Production',			'LOC_HD_ENCAMPMENT_ADJACENCY_MISSILE_SILO',		'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MISSILE_SILO'),
-	('Maori_Pa_Production',				'LOC_HD_ENCAMPMENT_ADJACENCY_MAORI_PA',			'YIELD_PRODUCTION',		1,				'IMPROVEMENT_MAORI_PA');
-insert or replace into Adjacency_YieldChanges
-	(ID,								Description,									YieldType,				YieldChange,	AdjacentResourceClass)
-values
-	('HD_Strategic_Production',			'LOC_DISTRICT_STRATEGIC_PRODUCTION2',			'YIELD_PRODUCTION',		2,				'RESOURCECLASS_STRATEGIC');
-
--- Mbanza
-insert or replace into Adjacency_YieldChanges
-	(ID,				Description,				YieldType,				YieldChange,	Self)
-values
-	('MBANZA_FOOD',		'LOC_MBANZA_FOOD',			'YIELD_FOOD',			2,				1),
-	('MBANZA_GOLD',		'LOC_MBANZA_GOLD',			'YIELD_GOLD',			2,				1);
-insert or replace into Adjacency_YieldChanges
-	(ID,				Description,				YieldType,				YieldChange,	AdjacentResourceClass)
-values
-	('MBANZA_BONUS',	'LOC_MBANZA_BONUS',			'YIELD_PRODUCTION',		1,				'RESOURCECLASS_BONUS'),
-	('MBANZA_LUXURY',	'LOC_MBANZA_LUXURY',		'YIELD_GOLD',			2,				'RESOURCECLASS_LUXURY'),
-	('MBANZA_STRATEGIC','LOC_MBANZA_STRATEGIC',		'YIELD_SCIENCE',		1,				'RESOURCECLASS_STRATEGIC');
+	(ID,	Description,	YieldType,	YieldChange,	AdjacentDistrict)
+select
+	ID,		Description,	YieldType,	YieldChange,	AdjacentDistrict
+from Adjacency_YieldChanges_Pre where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');

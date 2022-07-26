@@ -205,3 +205,15 @@ insert or replace into LocalizedText
 select
 	"zh_Hans_CN",	"LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",		"每个专业化区域给没有该区域的城市提供对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，外交区提供影响力点数，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）：这些城市每有一个专业化区域+1点。"
 where exists (select Tag from LocalizedText where Tag = 'LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME');
+
+insert or replace into EnglishText
+    (Tag,                                             Text)
+select
+	"LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",    "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest, +2 [ICON_Science] Science in Marsh and +2 [ICON_Culture] Culture in Swamp. Woods can be planted with the Mysticism civic."
+where exists (select Tag from LocalizedText where Tag = 'LOC_MAP_WET_LAKES_NAME');
+
+insert or replace into LocalizedText
+    (Language,		Tag,                                            	Text)
+select
+	"zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在草本沼泽上提供+2 [ICON_Science] 科技值、建在木本沼泽上提供+2 [ICON_CULTURE] 文化值。拥有“神秘主义”市政后即可栽种树林。"
+where exists (select Tag from LocalizedText where Tag = 'LOC_DISTRICT_DIPLOMATIC_QUARTER_NAME');
