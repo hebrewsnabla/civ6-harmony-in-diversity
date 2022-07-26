@@ -468,26 +468,6 @@ insert or replace into ModifierArguments
 values
     ('CHANCERY_TIER2',      'Amount',   2);
 
--- 外交区相邻加成
--- Diplomatic Quater
-insert or replace into District_Adjacencies
-	(DistrictType,						YieldChangeId)
-values
-	('DISTRICT_COMMERCIAL_HUB',			'Diplomatic_Quater_Gold'),
-	('DISTRICT_HARBOR',					'Diplomatic_Quater_Gold'),
-	('DISTRICT_HOLY_SITE',				'Diplomatic_Quater_Faith'),
-	('DISTRICT_CAMPUS',					'Diplomatic_Quater_Science'),
-	('DISTRICT_THEATER',				'Diplomatic_Quater_Culture'),
-	('DISTRICT_ENCAMPMENT',				'Diplomatic_Quater_Production'),
-	('DISTRICT_INDUSTRIAL_ZONE',		'Diplomatic_Quater_Production');
-insert or replace into Adjacency_YieldChanges
-	(ID,								Description,						YieldType,			YieldChange,	AdjacentDistrict)
-values
-	('Diplomatic_Quater_Gold',			'LOC_DIPLOMATIC_QUATER_GOLD',		'YIELD_GOLD',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
-	('Diplomatic_Quater_Faith',			'LOC_DIPLOMATIC_QUATER_FAITH',		'YIELD_FAITH',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
-	('Diplomatic_Quater_Science',		'LOC_DIPLOMATIC_QUATER_SCIENCE',	'YIELD_SCIENCE',	1,				'DISTRICT_DIPLOMATIC_QUARTER'),
-	('Diplomatic_Quater_Culture',		'LOC_DIPLOMATIC_QUATER_CULTURE',	'YIELD_CULTURE',	1,				'DISTRICT_DIPLOMATIC_QUARTER'),
-	('Diplomatic_Quater_Production',	'LOC_DIPLOMATIC_QUATER_PRODUCTION',	'YIELD_PRODUCTION',	1,				'DISTRICT_DIPLOMATIC_QUARTER');
 ----------------------------------------------------------------------------------------------------
 -- Ethiopia citystate bonus for diplomacy buildings
 /*

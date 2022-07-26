@@ -55,10 +55,7 @@ values
 	("LOC_NAZCA_LINE_THEATER_ADJACENCY_DESCRIPTION",			"+{1_num} [ICON_CULTURE] Culture from adjacent Nazca Line {1_Num : plural 2?Tiles; other?Tile;}."),
 	("LOC_IMPROVEMENT_MOAI_DESCRIPTION",						"Unlocks the Builder ability to construct a Moai.[NEWLINE][NEWLINE]+2 [ICON_Culture] Culture. +2 [ICON_Culture] Culture if on or adjacent to a Volcanic Soil. +1 [ICON_Culture] Culture if adjacent to Coast or Lake. +1 [ICON_Culture] Culture for every 2 adjacent Moai or for every adjacent Moai after progress 'Medieval Faires' Civic. Can be built on Plains, Plains Hills, Grassland, Grassland Hills, or Volcanic Soil. Cannot be built adjacent to Woods or Rainforest tile."),
 	-- UI of Governor
-	("LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",					"+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles."),
-
-	-- To be moved
-	("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",				"All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] in Marsh. Woods can be planted with the Mysticism civic.");
+	("LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",					"+2 Appeal to adjacent tiles and +1 [ICON_Culture] Culture. Cannot be adjacent to another City Park. If the city park is in a city with a Surveyor Governor with the Parks and Recreation promotion, it provides +1 of all yields to all adjacent tiles.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -117,8 +114,7 @@ values
 	("zh_Hans_CN",	"LOC_NAZCA_LINE_THEATER_ADJACENCY_DESCRIPTION",				"+{1_num} [ICON_CULTURE] 文化值来自相邻的纳斯卡巨画。"),
 	("zh_Hans_CN",	"LOC_IMPROVEMENT_MOAI_DESCRIPTION",							"解锁建造者建造摩艾石像的能力。[NEWLINE][NEWLINE]+2 [ICON_Culture] 文化值。在火山土上或与其相邻时+2 [ICON_Culture] 文化值。相邻湖泊或近海时+1 [ICON_Culture] 文化值。每相邻2个摩艾石像+1 [ICON_Culture] 文化值，解锁“中世纪集市”后变为每相邻1个摩艾石像。获得等同于 [ICON_Culture] 文化值产出的 [ICON_Tourism] 旅游业绩。只可建在平原、平原丘陵、草原、草原丘陵或火山土单元格之上。无法建在与树林或雨林相邻的单元格上。"),
 	-- 总督改良
-	("zh_Hans_CN",	"LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",					"产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。"),
-	("zh_Hans_CN",	"LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION", 				"所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。"); 
+	("zh_Hans_CN",	"LOC_IMPROVEMENT_CITY_PARK_DESCRIPTION",					"产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。当“测量师”总督梁（必须拥有“公园与休憩”升级）在城市就职时，市立公园为相邻单元格提供+1所有产出。"); 
 
 -- Ethiopia DLC support
 insert or replace into EnglishText
