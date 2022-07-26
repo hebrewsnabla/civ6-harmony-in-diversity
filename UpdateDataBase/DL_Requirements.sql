@@ -656,7 +656,8 @@ values
 	('CITY_IS_CAPITAL_OR_ON_FOREIGN_CONTINENT',						'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_HAS_IMPROVED_RESOURCE_AND_ON_TUNDRA',					'REQUIREMENTSET_TEST_ALL'),
 	('PLOT_IS_FRESH_WATER_REQUIREMENTS',							'REQUIREMENTSET_TEST_ANY'),
-	('PLOT_HAS_MARSH_REQUIREMENTS',									'REQUIREMENTSET_TEST_ALL');
+	('PLOT_HAS_MARSH_REQUIREMENTS',									'REQUIREMENTSET_TEST_ALL'),
+	('HD_DISTRICT_IS_CITY_CENTER_OR_NEIGHBORHOOD',					'REQUIREMENTSET_TEST_ANY');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
@@ -787,7 +788,9 @@ values
 	('PLOT_IS_FRESH_WATER_REQUIREMENTS',							'REQUIRES_PLOT_IS_FRESH_WATER'),
 	('PLOT_IS_FRESH_WATER_REQUIREMENTS',							'REQUIRES_PLOT_ADJACENT_TO_RIVER'),
 	('PLOT_IS_FRESH_WATER_REQUIREMENTS',							'REQUIRES_PLOT_ADJACENT_TO_LAKE'),
-	('PLOT_HAS_MARSH_REQUIREMENTS',									'REQUIRES_PLOT_HAS_MARSH');
+	('PLOT_HAS_MARSH_REQUIREMENTS',									'REQUIRES_PLOT_HAS_MARSH'),
+	('HD_DISTRICT_IS_CITY_CENTER_OR_NEIGHBORHOOD',					'REQUIRES_DISTRICT_IS_DISTRICT_CITY_CENTER'),
+	('HD_DISTRICT_IS_CITY_CENTER_OR_NEIGHBORHOOD',					'REQUIRES_DISTRICT_IS_DISTRICT_NEIGHBORHOOD');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,						RequirementId)
@@ -1886,7 +1889,7 @@ from Districts;
 insert or ignore into RequirementSetRequirements
     (RequirementSetId,                                  RequirementId)
 select
-    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'REQUIRES_DISTRICT_IS_'  || DistrictType
+    'HD_DISTRICT_IS_' || DistrictType || '_ADJACENT',   'REQUIRES_DISTRICT_IS_' || DistrictType
 from Districts;
 
 -- Ayutthaya & Nan Madol bug fix

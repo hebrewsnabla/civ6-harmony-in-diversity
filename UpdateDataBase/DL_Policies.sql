@@ -1456,7 +1456,6 @@ insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
-	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
 	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
 
 insert or ignore into RequirementArguments
@@ -1464,8 +1463,6 @@ insert or ignore into RequirementArguments
 values
 	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'MinDistance',		1),
 	('REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER',		'MaxDistance',		1),
-	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'MinDistance',		2),
-	('REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER',		'MaxDistance',		2),
 	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'MinDistance',		3),
 	('REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER',		'MaxDistance',		3);
 
@@ -1485,215 +1482,57 @@ values
 	('DISTRICT_INDUSTRIAL_ZONE',	'YIELD_PRODUCTION'),
 	('DISTRICT_ENCAMPMENT',			'YIELD_PRODUCTION');
 
-insert or replace into PolicyModifiers
-	(PolicyType,					ModifierId)
-select
-	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH'
-from HD_DistrictBonus;
+insert or replace into PolicyModifiers (PolicyType, ModifierId)
+	select 'POLICY_PUBLIC_TRANSPORT', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH' from HD_DistrictBonus;
+insert or replace into PolicyModifiers (PolicyType, ModifierId)
+	select 'POLICY_PUBLIC_TRANSPORT', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH' from HD_DistrictBonus;
 
--- insert or replace into PolicyModifiers
--- 	(PolicyType,					ModifierId)
--- select
--- 	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1'
--- from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 'CITY_HAS_15_POPULATION' from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 'CITY_HAS_15_POPULATION' from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH', 'ModifierId', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH2' from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH','ModifierId', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH2' from HD_DistrictBonus;
 
-insert or replace into PolicyModifiers
-	(PolicyType,					ModifierId)
-select
-	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2'
-from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH2', 'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER', 'HD_DISTRICT_IS_CITY_CENTER_OR_NEIGHBORHOOD' from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH2', 'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER', 'HD_DISTRICT_IS_CITY_CENTER_OR_NEIGHBORHOOD' from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH2', 'ModifierId', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER' from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH2','ModifierId', 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER' from HD_DistrictBonus;
 
-insert or replace into PolicyModifiers
-	(PolicyType,					ModifierId)
-select
-	'POLICY_PUBLIC_TRANSPORT',		'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH'
-from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId, SubjectStackLimit)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER', 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE', 1 from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER', 'YieldType', YieldType from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER', 'Amount', 50 from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,								SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
-from HD_DistrictBonus;
+insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId, SubjectStackLimit)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER', 'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE', 1 from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER', 'YieldTypeToMirror',	YieldType from HD_DistrictBonus;
+insert or replace into ModifierArguments (ModifierId, Name, Value)
+	select 'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER', 'YieldTypeToGrant', 'YIELD_GOLD' from HD_DistrictBonus;
 
--- insert or replace into Modifiers
--- 	(ModifierId,														ModifierType,								SubjectRequirementSetId)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
--- from HD_DistrictBonus;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE', 'REQUIREMENTSET_TEST_ALL' from HD_DistrictBonus;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE', 'REQUIRES_DISTRICT_IS_' || DistrictType from HD_DistrictBonus;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE', 'REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER' from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,								SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
-from HD_DistrictBonus;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE', 'REQUIREMENTSET_TEST_ALL' from HD_DistrictBonus;
+insert or ignore into RequirementSetRequirements(RequirementSetId, RequirementId)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_DISTRICT_IS_' || DistrictType from HD_DistrictBonus;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE', 'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER' from HD_DistrictBonus;
 
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,								SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_15_POPULATION'
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_ATTACH',	 	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER'
-from HD_DistrictBonus;
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,														Name,			Value)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH1',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1'
--- from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_ATTACH2',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2'
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_ATTACH',	'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER'
-from HD_DistrictBonus;
-
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',						'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE'
-from HD_DistrictBonus;
-
--- insert or replace into Modifiers
--- 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
--- from HD_DistrictBonus;
-
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',							'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO'
-from HD_DistrictBonus;
-
--- insert or replace into Modifiers
--- 	(ModifierId,														ModifierType,															SubjectRequirementSetId)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'MODIFIER_PLAYER_DISTRICT_ADJUST_DISTRICT_AMENITY',						Null
--- from HD_DistrictBonus;
-
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2',	'MODIFIER_ADJUST_HOUSING_IN_DISTRICT',									Null
-from HD_DistrictBonus;
-
-insert or replace into Modifiers
-	(ModifierId,														ModifierType,															SubjectRequirementSetId)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',		'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE'
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'YieldType',			YieldType
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_ONE_MODIFIER',	'Amount',				50
-from HD_DistrictBonus;
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,														Name,			Value)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_1',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1'
--- from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,			Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_2',			'ModifierId',	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2'
-from HD_DistrictBonus;
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,														Name,					Value)
--- select
--- 	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER1',	'Amount',				1
--- from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_TWO_MODIFIER2',	'Amount',				1
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'YieldTypeToMirror',	YieldType
-from HD_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,														Name,					Value)
-select
-	'PUBLIC_TRANSPORT_' || DistrictType || '_AT_RADIUS_THREE_MODIFIER',	'YieldTypeToGrant',		'YIELD_GOLD'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIREMENTSET_TEST_ALL'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIREMENTSET_TEST_ALL'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIREMENTSET_TEST_ALL'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_DISTRICT_IS_' || DistrictType
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_ONE',		'REQUIRES_PLOT_AT_RADIUS_ONE_OF_OWNER'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_DISTRICT_IS_' || DistrictType
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_TWO',		'REQUIRES_PLOT_AT_RADIUS_TWO_OF_OWNER'
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_DISTRICT_IS_' || DistrictType
-from HD_DistrictBonus;
-
-insert or ignore into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-select
-	'HD_DISTRICT_IS_' || DistrictType || '_AT_RADIUS_THREE',	'REQUIRES_PLOT_AT_RADIUS_THREE_OF_OWNER'
-from HD_DistrictBonus;
 -- 隐修会
 -- update ModifierArguments set Value = 50 where ModifierId = 'MONASTICISM_HOLYSITE_SCIENCE' and Name = 'Amount';
 -- 敛财大亨
