@@ -470,7 +470,7 @@ Events.UnitKilledInCombat.Add(CavalryKurganFaith);
 function GreatGeneralFaith (playerId, unitId)
 	local player = Players[playerId];
 	local unit = UnitManager.GetUnit(playerId, unitId);
-	if unit:GetType() == GREAT_GENERAL_INDEX then
+	if (unit ~= nil) and (unit:GetType() == GREAT_GENERAL_INDEX) then
 		player:AttachModifierByID('KURGAN_GENERAL_FAITH');
 	end
 end

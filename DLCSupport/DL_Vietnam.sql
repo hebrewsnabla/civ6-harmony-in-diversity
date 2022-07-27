@@ -9,11 +9,6 @@ values
 
 update Districts set Appeal = 0 where DistrictType = 'DISTRICT_THANH';
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'THANH_TOURISM_CULTURE' and Name = 'YieldType';
-delete from District_Adjacencies where YieldChangeId = 'District_Culture_Major';
-insert or replace into District_Adjacencies
-	(DistrictType,			YieldChangeId)
-values
-	('DISTRICT_THANH',		'District_Production');
 insert or replace into DistrictModifiers
 	(DistrictType,			ModifierId)
 values

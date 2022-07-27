@@ -33,7 +33,8 @@ values
 	("LOC_DISTRICT_SEOWON_HD_DESCRIPTION",							"A district unique to Korea. Replaces the Campus. +4 [Icon_Science] Science. Has more citizen slots."),
 -- 社区
 	("LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",						"A district for urban activities. Gives Housing according to the tile’s appeal.[NEWLINE]Breathtaking: +5 [ICON_HOUSING] Housing.[NEWLINE]Charming: +4 [ICON_HOUSING] Housing.[NEWLINE]Average: +3 [ICON_HOUSING] Housing.[NEWLINE]Unappealing: +2 [ICON_HOUSING] Housing.[NEWLINE]Disgusting: +1 [ICON_HOUSING] Housing."),
-	("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"A district unique to the Congo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith.");
+	("LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"A district unique to the Congo that can only be constructed in Rainforest or Woods. Replaces the Neighborhood district but is available earlier. Provides +3 [ICON_HOUSING] Housing, +2 [ICON_FOOD] Food, and +2 [ICON_GOLD] Gold, regardless of Appeal. +1 [ICON_FOOD] Food and +1 Appeal to all adjacent tiles. Receives +1 [Icon_Production] Production from every Bonus Resource, +2 [Icon_Gold] Gold from every Luxury Resource and +1 [Icon_Science] Science from every Strategic Resource. Allows the purchasing of Settlers and Builders using [ICON_FAITH] Faith."),
+	("LOC_DISTRICT_OBSERVATORY_HD_DESCRIPTION",             "A district unique to the Maya for scientific endeavors. Replaces the Campus district and cheaper to build.[NEWLINE][NEWLINE]+1 [ICON_Science] Science for every adjacent Luxury Resource, which becomes +2 after researching 'Astronomy' Technology. +1 [ICON_Science] Science for every 2 adjacent Farms, or for every 1 adjacent farm after progressing 'Feudalism' Civic.");
 
 
 --------------------------------------------------------------------------------
@@ -70,8 +71,9 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_SEOWON_HD_DESCRIPTION",							"朝鲜特色区域，替代“学院”。+4 [Icon_Science] 科技值。拥有更多的专家槽位。"),
 -- 社区
 	("zh_Hans_CN",	"LOC_DISTRICT_NEIGHBORHOOD_HD_DESCRIPTION",						"您城市里的市民活动区域。基于单元格的魅力提供住房，情况如下：[NEWLINE]惊艳的：+5 [ICON_HOUSING] 住房。[NEWLINE]迷人的：+4 [ICON_HOUSING] 住房。[NEWLINE]普通的：+3 [ICON_HOUSING] 住房。[NEWLINE]无吸引力的：+2 [ICON_HOUSING] 住房。[NEWLINE]令人厌恶的：+1 [ICON_HOUSING] 住房。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_PRODUCTION] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。");
-
+	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_HD_DESCRIPTION",							"刚果特色区域，替代“社区”，可更早建造。只能建在雨林或树林里。无视魅力值，固定提供+3 [ICON_Housing] 住房、+2 [ICON_Food] 食物和+2 [ICON_Gold] 金币。为相邻的单元格提供 +1 [ICON_FOOD] 食物和+1魅力。从每个相邻的加成资源获得+1 [ICON_PRODUCTION] 生产力；从每个相邻的奢侈品资源获得+2 [ICON_Gold] 金币；从每个相邻的战略资源获得+1 [ICON_Science] 科技值。允许使用 [ICON_Faith] 信仰值购买开拓者和建造者。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_OBSERVATORY_HD_DESCRIPTION",              "玛雅特色科学研究区域。替代“学院”区域，且建造花费更低。[NEWLINE][NEWLINE]每相邻1个奢侈品相邻+1 [ICON_Science] 科技值，解锁“天文学”科技后变为+2 [ICON_Science] 科技值。每相邻2个农场+1 [ICON_Science] 科技值，解锁“封建主义”市政后变为每相邻1个农场。");
+    
 insert or replace into EnglishText
 	(Tag,												Text)
 values
@@ -91,18 +93,23 @@ values
 	("LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent RoyalDock {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_COTHON_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] Production from the adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_SUGUBA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Suguba {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_ENCAMPMENT_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Encampment {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_THANH_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Thành {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_IKANDA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Ikanda {1_Num : plural 1?district; other?districts;}."),
+	("LOC_DISTRICT_HOLY_SITE_FAITH",					"+{1_num} [ICON_CULTURE] Culture from the adjacent Holy Site {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_LAVRA_FAITH",						"+{1_num} [ICON_CULTURE] Culture from the adjacent Lavra {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD",				"+{1_num} [ICON_GOLD] Gold from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
 	("LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH",			"+{1_num} [ICON_FAITH] Faith from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
 	("LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE",			"+{1_num} [ICON_SCIENCE] Science from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
 	("LOC_DISTRICT_DIPLOMATIC_QUATER_CULTURE",			"+{1_num} [ICON_CULTURE] Culture from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
 	("LOC_DISTRICT_DIPLOMATIC_QUATER_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Diplomatic Quater {1_Num : plural 1?district; other?districts;}."),
 	-- Adjacent to improvement
-	("LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_Production] Production from the adjacent Quarry {1_Num : plural 1?improvement; other?improvements;}."),
-	("LOC_DISTRICT_MINE_PRODUCTION",					"+{1_num} [ICON_Production] Production from the adjacent Mine {1_Num : plural 1?improvement; other?improvements;}."),
-	("LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Lumber Mill {1_Num : plural 1?improvement; other?improvements;}."),
-	("LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Quarry improvements."),
-	("LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent Mine improvements."),
-	("LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",		"+{1_num} [ICON_Production] Production from the adjacent Lumber Mill improvements."),
+	("LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Quarry {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_MINE_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Mine {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Lumber Mill {1_Num : plural 1?improvement; other?improvements;}."),
+	("LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Quarry improvements."),
+	("LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Mine improvements."),
+	("LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Lumber Mill improvements."),
 	("LOC_DISTRICT_OIL_WELL_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Oil Well {1_Num : plural 1?improvement; other?improvements;}."),
 	("LOC_DISTRICT_OFFSHORE_OIL_RIG_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] Production from the adjacent Offshore Oil Rig {1_Num : plural 1?improvement; other?improvements;}."),
 	("LOC_DISTRICT_AIRSTRIP_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Airstrip {1_Num : plural 1?improvement; other?improvements;}."),
@@ -119,11 +126,13 @@ values
 	-- Misc
 	("LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] Food."),
 	("LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] Gold."),
-	("LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_Production] Production from the adjacent river."),
-	-- plural replacement text
+	("LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent river."),
+	("LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Swamp {1_Num : plural 1?tile; other?tiles;}."),
+    ("LOC_KELP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Kelp Forest {1_Num : plural 1?tile; other?tiles;}."),
+	-- plural replacement
 	("LOC_DISTRICT_CANAL_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] Production from the adjacent Canal {1_Num : plural 3?district; other?districts;}."),
 	("LOC_DISTRICT_LUXURY_GOLD",						"+{1_num} [ICON_GOLD] Gold from the adjacent Luxury {1_Num : plural 2?resource; other?resources;}."),
-	("LOC_DISTRICT_FOREST_FAITH",						"+{1_num} [ICON_Faith] Faith from the adjacent Woods {1_Num : plural 2?tile; other?tiles;}.");
+	("LOC_DISTRICT_FOREST_FAITH",						"+{1_num} [ICON_FAITH] Faith from the adjacent Woods {1_Num : plural 1?tile; other?tiles;}.");
 
 insert or replace into LocalizedText
 	(Language,		Tag,												Text)
@@ -144,18 +153,23 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_ROYALDOCK_HANSA_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的皇家海军船坞。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_COTHON_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的U型港。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_SUGUBA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的曼丁哥市场。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_ENCAMPMENT_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的军营。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_THANH_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的城池。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_IKANDA_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的伊坎达。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_HOLY_SITE_FAITH",						"+{1_num} [ICON_CULTURE] 文化值来自相邻的圣地。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_LAVRA_FAITH",							"+{1_num} [ICON_CULTURE] 文化值来自相邻的拉夫拉修道院。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD",				"+{1_num} [ICON_GOLD] 金币来自相邻的外交区。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH",				"+{1_num} [ICON_FAITH] 信仰值来自相邻的外交区。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE",			"+{1_num} [ICON_SCIENCE] 科技值来自相邻的外交区。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_CULTURE",			"+{1_num} [ICON_CULTURE] 文化值自相邻的外交区。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_DIPLOMATIC_QUATER_PRODUCTION",		"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的外交区。"),
 	-- Adjacent to improvement
-	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的采石场。"),
-	("zh_Hans_CN",  "LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的矿山。"),
-	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",			"+{1_num} [ICON_Production] 生产力来自相邻的伐木场。"),
-	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_Production] 生产力来自相邻的采石场。"),
-	("zh_Hans_CN",  "LOC_DISTRICT_MINE_PRODUCTION",						"+{1_num} [ICON_Production] 生产力来自相邻的矿山。"),
-	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的伐木场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_HALF_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的采石场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_MINE_HALF_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的矿山。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_HALF_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的伐木场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_QUARRY_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的采石场。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_MINE_PRODUCTION",						"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的矿山。"),
+	("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的伐木场。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_OIL_WELL_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻油井。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_OFFSHORE_OIL_RIG_PRODUCTION",			"+{1_num} [ICON_PRODUCTION] 生产力来自相邻海上钻机平台。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_AIRSTRIP_PRODUCTION",					"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的飞机跑道。"),
@@ -172,4 +186,6 @@ values
 	-- Misc
 	("zh_Hans_CN",	"LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] 食物。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] 金币。"),
-	("zh_Hans_CN",	"LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_Production] 生产力来自相邻的河流。");
+	("zh_Hans_CN",	"LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的河流。"),
+	("zh_Hans_CN",	"LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] 信仰值来自相邻的木本沼泽。"),
+	("zh_Hans_CN",	"LOC_KELP_FAITH",									"+{1_num} [ICON_FAITH] 信仰值来自相邻的海藻森林。");

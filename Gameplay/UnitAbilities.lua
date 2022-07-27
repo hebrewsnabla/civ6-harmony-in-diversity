@@ -49,6 +49,8 @@ function HDRecyclingPlantRecycle (playerId, unitId)
 	local y = location.y;
     Game.AddWorldViewText(0, '+' .. gold ..' [ICON_GOLD]', x, y);
 
+	UnitManager.Kill(unit);
+
     -- original version: provides production
     -- local production = costRate * cost / 100 + resourceCostMultiplier * resourceCost;
 	-- local district = CityManager.GetDistrictAt(x, y);
