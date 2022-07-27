@@ -1,4 +1,4 @@
--- Terrain Yields Adjustment
+-- Terrain yield
 delete from Terrain_YieldChanges;
 insert or replace into Terrain_YieldChanges
 	(TerrainType, 				YieldType, 			YieldChange)
@@ -20,7 +20,7 @@ values
 	('TERRAIN_COAST',			'YIELD_FOOD',		2),
 	('TERRAIN_COAST',			'YIELD_GOLD',		3),
 	('TERRAIN_OCEAN',			'YIELD_FOOD',		1);
--- Feature Yields Adjustment
+-- Feature yield
 insert or replace into Feature_YieldChanges
 	(FeatureType,		YieldType,			YieldChange)
 values
@@ -36,8 +36,7 @@ update Feature_YieldChanges set YieldChange = 3 where FeatureType = 'FEATURE_FLO
 update Feature_YieldChanges set YieldChange = 4 where FeatureType = 'FEATURE_OASIS' and YieldType = 'YIELD_FOOD';
 delete from Feature_YieldChanges where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
 delete from Feature_YieldChanges where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD';
-
--- Resource yields adjustment
+-- Resource yield
 insert or replace into Resource_YieldChanges  
 	(ResourceType,			YieldType,			YieldChange)
 values
@@ -59,10 +58,6 @@ values
 	('RESOURCE_TURTLES',	'YIELD_GOLD',		1),
 	('RESOURCE_SILVER',		'YIELD_PRODUCTION',	1),
 	('RESOURCE_ALUMINUM',	'YIELD_PRODUCTION',	1);
-
-
-
--- update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_SHEEP' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
@@ -81,7 +76,6 @@ update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_
 update Resource_YieldChanges set YieldChange = 2 where ResourceType = 'RESOURCE_TOBACCO' and YieldType = 'YIELD_FAITH';
 update Resource_YieldChanges set YieldChange = 1 where ResourceType = 'RESOURCE_COTTON' and YieldType = 'YIELD_GOLD';
 update Resource_YieldChanges set YieldChange = 3 where ResourceType = 'RESOURCE_CRABS' and YieldType = 'YIELD_GOLD';
-
 
 -- Natural Wonders.
 -- Need to provide yields to natural wonders in later game.

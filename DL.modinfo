@@ -456,7 +456,10 @@
       <File>Texts/HD_Text_Improvements.sql</File>
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
-      <!-- <File>Texts/HD_Text_Late.sql</File> -->
+    </UpdateText>
+    <UpdateText id="DL_FrontEnd_Text">
+      <Properties><LoadOrder>16021</LoadOrder></Properties>
+      <File>ModSupport/WetLands/HD_Texts.sql</File>
     </UpdateText>
     <UpdateIcons id="DL_FrontEnd_Icons">
       <Properties><LoadOrder>16020</LoadOrder></Properties>
@@ -1227,9 +1230,12 @@
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
     <!-- Main -->
+    <UpdateDatabase id="DL_StartBias_Early" criteria="Expansion2">
+		<Properties><LoadOrder>-1</LoadOrder></Properties>
+		<File>UpdateDataBase/DL_StartBias_Early.sql</File>
+	  </UpdateDatabase>
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
-      <File>UpdateDataBase/DL_Adjacency.sql</File>
       <File>UpdateDataBase/DL_AdjustYields.sql</File>
       <File>UpdateDataBase/DL_AI.sql</File>
       <File>UpdateDataBase/DL_Beliefs.sql</File>
@@ -1243,6 +1249,7 @@
       <File>UpdateDataBase/DL_Civilizations.sql</File>
       <File>UpdateDataBase/DL_Civilopedia.xml</File>
       <File>UpdateDataBase/DL_Diplomacy.sql</File>
+      <File>UpdateDataBase/DL_DistrictAdjacency.sql</File>
       <File>UpdateDataBase/DL_Districts.sql</File>
       <File>UpdateDataBase/DL_GlobalParameters.sql</File>
       <File>UpdateDataBase/DL_Goodyhuts.sql</File>
@@ -1259,6 +1266,7 @@
       <File>UpdateDataBase/DL_Relic_Creator.sql</File>
       <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
       <File>UpdateDataBase/DL_Resources.sql</File>
+	  <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_Technologies.sql</File>
       <File>UpdateDataBase/DL_TradeRoute.sql</File>
       <File>UpdateDataBase/DL_TypeTags.sql</File>
@@ -1267,7 +1275,6 @@
       <File>UpdateDataBase/DL_Units.sql</File>
       <File>UpdateDataBase/DL_UnitsAbilities.sql</File>
       <File>UpdateDataBase/DL_Wonders.sql</File>
-      <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_WonderTheming.sql</File>
       <File>UpdateDataBase/DL_ModifierString.sql</File>
     </UpdateDatabase>
@@ -1858,7 +1865,6 @@
     <File>DLCSupport/DL_Portugal.sql</File>
 	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
-    <File>UpdateDataBase/DL_Adjacency.sql</File>
     <File>UpdateDataBase/DL_AdjustYields.sql</File>
     <File>UpdateDataBase/DL_AI.sql</File>
     <File>UpdateDataBase/DL_Beliefs.sql</File>
@@ -1873,6 +1879,7 @@
     <File>UpdateDataBase/DL_Civilizations.sql</File>
     <File>UpdateDataBase/DL_Civilopedia.xml</File>
     <File>UpdateDataBase/DL_Diplomacy.sql</File>
+    <File>UpdateDataBase/DL_DistrictAdjacency.sql</File>
     <File>UpdateDataBase/DL_Districts.sql</File>
     <File>UpdateDataBase/DL_GreatPersonPointsDouble.sql</File>
     <File>UpdateDataBase/DL_GlobalParameters.sql</File>
@@ -1894,6 +1901,7 @@
     <File>UpdateDataBase/DL_Requirements.sql</File>
     <File>UpdateDataBase/DL_Resources.sql</File>
     <File>UpdateDataBase/DL_StartBias.sql</File>
+	<File>UpdateDataBase/DL_StartBias_Early.sql</File>
     <File>UpdateDataBase/DL_Technologies.sql</File>
     <File>UpdateDataBase/DL_Temp.sql</File>
     <File>UpdateDataBase/DL_TradeRoute.sql</File>

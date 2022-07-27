@@ -147,6 +147,7 @@ update Districts set Description = 'LOC_DISTRICT_SUGUBA_HD_DESCRIPTION' where Di
 update Districts set Description = 'LOC_DISTRICT_CANAL_HD_DESCRIPTION' where DistrictType = 'DISTRICT_CANAL';
 update Districts set Description = 'LOC_DISTRICT_DAM_HD_DESCRIPTION' where DistrictType = 'DISTRICT_DAM';
 update Districts set Description = 'LOC_DISTRICT_SEOWON_HD_DESCRIPTION' where DistrictType = 'DISTRICT_SEOWON';
+update Districts set Description = 'LOC_DISTRICT_OBSERVATORY_HD_DESCRIPTION' where DistrictType = 'DISTRICT_OBSERVATORY';
 update Districts set Description = 'LOC_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_HD_DESCRIPTION' where DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX';
 update Districts set Description = 'LOC_DISTRICT_THEATER_HD_DESCRIPTION' where DistrictType = 'DISTRICT_THEATER';
 

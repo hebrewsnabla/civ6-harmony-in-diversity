@@ -1357,7 +1357,6 @@ delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_CULTURE_PER_GOV
 delete from TraitModifiers where ModifierId = 'TRAIT_ADJUST_CITY_SCIENCE_PER_GOVERNOR_TITLE_MODIFIER';  
 delete from Adjacency_YieldChanges where ID = 'Mine_ScienceSeowonAdjacency';
 delete from Adjacency_YieldChanges where ID = 'Farm_FoodSeowonAdjacency';
-delete from District_Adjacencies where YieldChangeId = 'NegativeDistrict_Science';
 
 insert or replace into TraitModifiers (TraitType,   ModifierId)
 select  'TRAIT_LEADER_HWARANG', 'HWARANG_RESEARCHLAB_POP' || YieldType from Yields;

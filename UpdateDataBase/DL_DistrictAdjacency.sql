@@ -7,7 +7,11 @@ delete from District_Adjacencies where DistrictType = 'DISTRICT_HANSA' and
 	(YieldChangeId = 'Resource_Production' or YieldChangeId = 'Commerical_Hub_Production');
 -- Remove a non-repetition UD support, which will be added back with the UD support sql afterwards
 delete from District_Adjacencies where DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' and YieldChangeId = 'RoyalDock_City_Gold';
-
+-- Real remove
+delete from District_Adjacencies where DistrictType = 'DISTRICT_THANH' and YieldChangeId = 'District_Culture_Major';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_SEOWON' and YieldChangeId = 'NegativeDistrict_Science';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_OBSERVATORY' and YieldChangeId = 'Farm_Science';
+delete from District_Adjacencies where DistrictType = 'DISTRICT_OBSERVATORY' and YieldChangeId = 'Plantation_Science';
 -- Add new Adjacencies
 with District_Adjacencies_Pre
 	(DistrictType,						YieldChangeId)
@@ -57,14 +61,19 @@ as (values
 	('DISTRICT_MBANZA',					'Bonus_Production'),
 	('DISTRICT_MBANZA',					'Luxury_Gold'),
 	('DISTRICT_MBANZA',					'Strategic_Science'),
-	('DISTRICT_HIPPODROME',				'HD_Holy_Site_Culture'),
-	('DISTRICT_HIPPODROME',				'HD_Encampment_Production'))
+	('DISTRICT_HIPPODROME',				'Holy_Site_Culture'),
+	('DISTRICT_HIPPODROME',				'Lavra_Culture'),
+	('DISTRICT_THANH',					'District_Production'),
+	('DISTRICT_OBSERVATORY',			'Luxury_Science'),
+	('DISTRICT_OBSERVATORY',			'Luxury_Science_Late'),
+	('DISTRICT_OBSERVATORY',			'Farm_Science'),
+	('DISTRICT_OBSERVATORY',			'Farm_Science_Late'))
 insert or replace into District_Adjacencies
 	(DistrictType,	YieldChangeId)
 select
 	DistrictType,	YieldChangeId
 from District_Adjacencies_Pre where DistrictType in (select DistrictType from Districts);
--- Harbor UD support
+-- Adjacent to UD support
 insert or replace into District_Adjacencies
 	(DistrictType,					YieldChangeId)
 select
@@ -77,6 +86,12 @@ select
 	'DISTRICT_HANSA',					DistrictType || '_Hansa_Production'
 from Districts where (DistrictType = 'DISTRICT_HARBOR') or (DistrictType in
 	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_HARBOR'));
+insert or replace into District_Adjacencies
+	(DistrictType,						YieldChangeId)
+select
+	'DISTRICT_HIPPODROME',				DistrictType || '_Production'
+from Districts where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_HIPPODROME') and (DistrictType = 'DISTRICT_ENCAMPMENT' or DistrictType in
+	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'));
 -- DLC support
 with District_Adjacencies_Pre
 	(DistrictType,						YieldChangeId)
@@ -134,7 +149,15 @@ values
 	('City_Center_Culture',					'LOC_DISTRICT_CITY_CENTER_CULTURE',				'YIELD_CULTURE',	2,				'DISTRICT_CITY_CENTER'),
 	('Aerodrome_Production',				'LOC_DISTRICT_AERODROME_PRODUCTION',			'YIELD_PRODUCTION', 2,				'DISTRICT_AERODROME'),
 	('Neighborhood_Faith',					'LOC_DISTRICT_NEIGHBORHOOD_FAITH',				'YIELD_FAITH',		2,				'DISTRICT_NEIGHBORHOOD'),
-	('Mbanza_Faith',						'LOC_DISTRICT_MBANZA_FAITH',					'YIELD_FAITH',		2,				'DISTRICT_MBANZA');
+	('Mbanza_Faith',						'LOC_DISTRICT_MBANZA_FAITH',					'YIELD_FAITH',		2,				'DISTRICT_MBANZA'),
+	('Holy_Site_Culture',					'LOC_DISTRICT_HOLY_SITE_CULTURE',				'YIELD_CULTURE',	2,				'DISTRICT_HOLY_SITE'),
+	('Lavra_Culture',						'LOC_DISTRICT_LAVRA_CULTURE',					'YIELD_CULTURE',	2,				'DISTRICT_LAVRA');
+insert or replace into Adjacency_YieldChanges
+	(ID,									Description,									YieldType,			YieldChange,	AdjacentDistrict)
+select
+	DistrictType || '_Production',			'LOC_' || DistrictType || '_PRODUCTION',		'YIELD_PRODUCTION',	2,				DistrictType
+from Districts where (DistrictType = 'DISTRICT_ENCAMPMENT' or DistrictType in
+	(select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_ENCAMPMENT'));
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,											YieldType,			YieldChange,	AdjacentDistrict)
 select
@@ -174,7 +197,7 @@ values
 	('Aqueduct_Self_Food',				'LOC_DISTRICT_SELF_FOOD',		'YIELD_FOOD',		1,				1),
 	('Mbanza_Self_Food',				'LOC_DISTRICT_SELF_FOOD',		'YIELD_FOOD',		2,				1),
 	('Mbanza_Self_Gold',				'LOC_DISTRICT_SELF_GOLD',		'YIELD_GOLD',		2,				1);
--- With Prereq or Obsolete Tech
+-- With Prereq/Obsolete Tech/Civic
 insert or replace into Adjacency_YieldChanges
 	(ID,								Description,									YieldType,				YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqTech,				ObsoleteTech)
 values
@@ -196,20 +219,23 @@ insert or replace into Adjacency_YieldChanges
 values
 	('HD_Resource_Production',				'LOC_DISTRICT_RESOURCE_PRODUCTION',			'YIELD_PRODUCTION',		1,				1,					null,					'TECH_APPRENTICESHIP'),
 	('HD_Resource_Production_Late',			'LOC_DISTRICT_RESOURCE_PRODUCTION',			'YIELD_PRODUCTION',		2,				1,					'TECH_APPRENTICESHIP',	null);
+insert or replace into Adjacency_YieldChanges
+	(ID,						Description,                            YieldType,          YieldChange,    TilesRequired,  AdjacentImprovement,    AdjacentResourceClass,		PrereqTech,			ObsoleteTech,		PrereqCivic,		ObsoleteCivic)
+values
+	('Luxury_Science',			'LOC_DISTRICT_JNR_UC_Luxury_Science',   'YIELD_SCIENCE',    1,              1,              null,                   'RESOURCECLASS_LUXURY',		null,				'TECH_ASTRONOMY',	null,				null),
+	('Luxury_Science_Late',		'LOC_DISTRICT_JNR_UC_Luxury_Science',   'YIELD_SCIENCE',    2,              1,              null,                   'RESOURCECLASS_LUXURY',		'TECH_ASTRONOMY',	null,				null,				null),
+	('Farm_Science',			'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              2,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				null,				'CIVIC_FEUDALISM'),
+	('Farm_Science_Late',		'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              1,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				'CIVIC_FEUDALISM',	null);
 -- Misc
 insert or replace into Adjacency_YieldChanges
 	(ID,									Description,								YieldType,				YieldChange,	AdjacentRiver)
 values
 	('River_Hansa_Production',				'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 		'YIELD_PRODUCTION', 	2,				1);
 -- DLC Support
-insert or replace into Adjacency_YieldChanges
-	(ID,							Description,					YieldType,		YieldChange,	AdjacentDistrict)
-select
-	'Preserve_Faith',				'LOC_DISTRICT_PRESERVE_FAITH',			'YIELD_FAITH',	1,				'DISTRICT_PRESERVE'
-where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_PRESERVE');
 with Adjacency_YieldChanges_Pre
 	(ID,								Description,									YieldType,			YieldChange,	AdjacentDistrict)
 as (values
+	('Preserve_Faith',					'LOC_DISTRICT_PRESERVE_FAITH',					'YIELD_FAITH',		1,				'DISTRICT_PRESERVE'),
 	('Diplomatic_Quater_Gold',			'LOC_DISTRICT_DIPLOMATIC_QUATER_GOLD',			'YIELD_GOLD',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
 	('Diplomatic_Quater_Faith',			'LOC_DISTRICT_DIPLOMATIC_QUATER_FAITH',			'YIELD_FAITH',		1,				'DISTRICT_DIPLOMATIC_QUARTER'),
 	('Diplomatic_Quater_Science',		'LOC_DISTRICT_DIPLOMATIC_QUATER_SCIENCE',		'YIELD_SCIENCE',	1,				'DISTRICT_DIPLOMATIC_QUARTER'),
@@ -219,4 +245,4 @@ insert or replace into Adjacency_YieldChanges
 	(ID,	Description,	YieldType,	YieldChange,	AdjacentDistrict)
 select
 	ID,		Description,	YieldType,	YieldChange,	AdjacentDistrict
-from Adjacency_YieldChanges_Pre where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
+from Adjacency_YieldChanges_Pre where AdjacentDistrict in (select DistrictType from Districts);
