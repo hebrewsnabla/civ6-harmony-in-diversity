@@ -302,7 +302,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_NAME",                               "酒楼"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "本城每拥有一种改良的酿酒资源，本城的区域为它们类型的 [ICON_GREATPERSON] 伟人点数+1。[NEWLINE][NEWLINE]酿酒资源包括："),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_NAME",                                  "客栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每用有一种改良的纺织或木材资源，影响力点数每回合+1且所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每拥有一种改良的纺织或木材资源，影响力点数每回合+1且所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
     -- 总督建筑

@@ -12,20 +12,20 @@
   </Properties>
   <LocalizedText>
     <Text id="LOC_HARMONY_IN_DIVERSITY_NAME">
-      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v1.2</en_US>
-      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.2</zh_Hans_CN>
+      <en_US>[COLOR_Civ6LightBlue]Civ6 Plus: Harmony in Diversity[ENDCOLOR] v1.3</en_US>
+      <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.3</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.2.10 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.2.10。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.3 .</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.3。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
       <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.10 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。 这是一个超越迭起兴衰、风云变化等大型DLC的大型游戏性mod，对游戏内容进行了全面的修缮和平衡。欢迎加入和而不同交流2群：954041014，1群已满。[NEWLINE]当前版本为v1.2.10。 </zh_Hans_CN>
+      <zh_Hans_CN>文明6 Plus: 和而不同。这是一个国人团队制作开发的，超越迭起兴衰、风云变化等大型DLC的大型游戏性mod；在对原版游戏内容进行了全面的修缮和平衡的基础上，以丰富和拓展游戏内容为主要发展方向，以宣传中华元素、弘扬传统文化为主要设计理念，为热爱文明6的友好玩家们带来全新的游戏体验。欢迎加入和而不同交流1群：1142970145，2群：954041014，3群：627267075。[NEWLINE]当前版本为v1.3。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
-      <zh_Hans_CN>DeepLogic, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 小灰灰, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, wlhxzwa, 阿伟, 榖音, 奥伊米亚, 凯欧利, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, Yogomove, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
+      <zh_Hans_CN>DeepLogic, 小灰灰, 小小雨10101, 六亿神州尽舜尧, 傲娇的红莉栖, 利牙菠萝, 陈又, YT, wltk, 黑毛毛小魔仙, 柚子, Winged Hussar, o(╯□╰)o, 咸鱼喵, 笑笑, 时代的先驱, 五年, wlhxzwa, 阿伟, 榖音, 奥伊米亚, 凯欧利, 音痴痴c, 戴胜, Blood_Moon, Kekeya, 话心, 亚瑟, Yogomove, 美菲拉斯, xubwa, 镜花水月, 小河, 法拉墨, Vearmus, lp, Siv, 流浪de蒲公英</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <Dependencies>
