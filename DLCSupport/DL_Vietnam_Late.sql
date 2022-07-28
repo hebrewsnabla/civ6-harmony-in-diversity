@@ -395,67 +395,67 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
     -- 资源
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'YieldType', 'YIELD_SCIENCE'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_1', 'Amount', 5
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'YieldType', 'YIELD_PRODUCTION'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_1', 'Amount', 5
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'YieldType', 'YIELD_SCIENCE'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_SCIENCE_2', 'Amount', 10
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
     select distinct 'BUILDING_HD_RESOURCE_EPO', 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'MODIFIER_BUILDING_YIELD_CHANGE', 'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS', 'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'BuildingType', 'BUILDING_HD_RESOURCE_EPO'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'YieldType', 'YIELD_PRODUCTION'
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 insert or replace into ModifierArguments (ModifierId, Name, Value)
     select distinct 'HD_RESOURCE_EPO' || ResourceType || '_PRODUCTION_2', 'Amount', 10
-    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+    from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 
 --     -- 物种
 insert or replace into BuildingModifiers (BuildingType, ModifierId)
@@ -834,7 +834,7 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 select
     'HD_PLAYER_GOT_ALL_ORE_RESOURCE_ON_MAP',                        'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS'
-from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL');
+from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER';
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
