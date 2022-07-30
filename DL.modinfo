@@ -620,6 +620,15 @@
       <File>Assets/Wetlands/HD_Swamp_50.dds</File>
       <File>Assets/Wetlands/HD_Swamp_64.dds</File>
       <File>Assets/Wetlands/HD_Swamp_256.dds</File>
+      <File>Assets/Wetlands/HD_Peat_22.dds</File>
+      <File>Assets/Wetlands/HD_Peat_32.dds</File>
+      <File>Assets/Wetlands/HD_Peat_38.dds</File>
+      <File>Assets/Wetlands/HD_Peat_50.dds</File>
+      <File>Assets/Wetlands/HD_Peat_64.dds</File>
+      <File>Assets/Wetlands/HD_Peat_80.dds</File>
+      <File>Assets/Wetlands/HD_Peat_128.dds</File>
+      <File>Assets/Wetlands/HD_Peat_256.dds</File>
+      <File>Assets/Wetlands/HD_Peat_FOW_256.dds</File>
     </ImportFiles>
     <ImportFiles id="Resouceful2_Adapt_Import" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1266,7 +1275,7 @@
       <File>UpdateDataBase/DL_Relic_Creator.sql</File>
       <File>UpdateDataBase/DL_RemoveGameCostEscalation.sql</File>
       <File>UpdateDataBase/DL_Resources.sql</File>
-	  <File>UpdateDataBase/DL_StartBias.sql</File>
+	    <File>UpdateDataBase/DL_StartBias.sql</File>
       <File>UpdateDataBase/DL_Technologies.sql</File>
       <File>UpdateDataBase/DL_TradeRoute.sql</File>
       <File>UpdateDataBase/DL_TypeTags.sql</File>
@@ -2055,6 +2064,15 @@
     <File>Assets/Wetlands/HD_Swamp_50.dds</File>
     <File>Assets/Wetlands/HD_Swamp_64.dds</File>
     <File>Assets/Wetlands/HD_Swamp_256.dds</File>
+    <File>Assets/Wetlands/HD_Peat_22.dds</File>
+    <File>Assets/Wetlands/HD_Peat_32.dds</File>
+    <File>Assets/Wetlands/HD_Peat_38.dds</File>
+    <File>Assets/Wetlands/HD_Peat_50.dds</File>
+    <File>Assets/Wetlands/HD_Peat_64.dds</File>
+    <File>Assets/Wetlands/HD_Peat_80.dds</File>
+    <File>Assets/Wetlands/HD_Peat_128.dds</File>
+    <File>Assets/Wetlands/HD_Peat_256.dds</File>
+    <File>Assets/Wetlands/HD_Peat_FOW_256.dds</File>
     <!-- Platforms -->
     <File>Platforms/Windows/audio/HD_Banks.ini</File>
     <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
