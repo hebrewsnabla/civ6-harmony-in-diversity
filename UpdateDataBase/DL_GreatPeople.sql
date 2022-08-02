@@ -116,43 +116,68 @@ update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualT
 update ModifierArguments set Value = 1 where Name = 'Amount' and ModifierId = 'JNR_GREATPERSON_EUREKA_STRENGTH';
 
 update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_CITY_CENTER' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_LI_BING';
+update GreatPersonIndividuals set ActionRequiresCompletedDistrictType = 'DISTRICT_INDUSTRIAL_ZONE' where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN';
 
 insert or replace into GreatPersonIndividualActionModifiers
-    (GreatPersonIndividualType,             ModifierId,                                         AttachmentTargetType)
+    (GreatPersonIndividualType,                 ModifierId,                                         AttachmentTargetType)
 values
-    ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',  'GREATPERSON_1MEDIEVALTECHBOOST',               'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION',             'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING', 'JNR_GREATPERSON_DAM_SPEED_UP',                     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',    'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',  'JNR_GREATPERSON_TECH_MACHINERY',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+    ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',  'GREATPERSON_1MEDIEVALTECHBOOST',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',     'JNR_GREATPERSON_DAM_SPEED_UP',                     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',     'HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',      'HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',           'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',      'JNR_GREATPERSON_TECH_MACHINERY',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+
+insert or replace into GreatPersonIndividualActionModifiers
+    (GreatPersonIndividualType,                 ModifierId,                                         AttachmentTargetType)
+select
+    'GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',       'HD_GREATPERSON_'|| BuildingType ||'_PRODUCTION',   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 1;
+
+insert or replace into Modifiers
+    (ModifierId,                                        ModifierType,                                               SubjectRequirementSetId)
+values
+    ('HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',      'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                   'CITY_HAS_DISTRICT_DAM_REQUIREMENTS'),
+    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',        NULL),
+    ('HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',          'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       NULL),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',                NULL);
 
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType)
-values
-    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER'),
-    ('JNR_GREATPERSON_DAM_SPEED_UP',                    'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'MODIFIER_PLAYER_CITIES_RIVER_ADJACENCY'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST');
-
-update Modifiers set SubjectRequirementSetId = 'DISTRICT_IS_DAM' where ModifierId = 'JNR_GREATPERSON_DAM_RIVER_PRODUCTION';
+select
+    'HD_GREATPERSON_'|| BuildingType ||'_PRODUCTION',   'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 1;
 
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,               Value)
 values
-    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
+    ('HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',      'ModifierId',       'GREATPERSON_EXTRA_DISTRICT_CAPACITY'),
     ('JNR_GREATPERSON_DAM_SPEED_UP',                    'DistrictType',     'DISTRICT_DAM'),
     ('JNR_GREATPERSON_DAM_SPEED_UP',                    'Amount',           25),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'DistrictType',     'DISTRICT_INDUSTRIAL_ZONE'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'YieldType',        'YIELD_PRODUCTION'),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Amount',           1),
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Description',      'LOC_DISTRICT_RIVER_PRODUCTION'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'TechType',         'TECH_MACHINERY'),
-    ('JNR_GREATPERSON_TECH_MACHINERY',                  'GrantTechIfBoosted', 1);
+    ('HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',          'BuildingType',     'BUILDING_WORKSHOP'),
+    ('JNR_GREATPERSON_TECH_MACHINERY',                  'TechType',         'TECH_MACHINERY');
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+select
+    'HD_GREATPERSON_'|| BuildingType ||'_PRODUCTION',   'BuildingType',     BuildingType
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 1;
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+select
+    'HD_GREATPERSON_'|| BuildingType ||'_PRODUCTION',   'Amount',           1
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 1;
+
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+select
+    'HD_GREATPERSON_'|| BuildingType ||'_PRODUCTION',   'YieldType',        'YIELD_PRODUCTION'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 1;
 
 insert or replace into ModifierStrings
     (ModifierId,                                        Context,    Text)
 values
-    ('JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY',   'Summary',  'LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY'),
+    ('HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',          'Summary',  'LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING'),
     ('JNR_GREATPERSON_TECH_MACHINERY',                  'Summary',  'LOC_JNR_GREATPERSON_TECH_MACHINERY');
 -------------------------------------------------------------- End
 
@@ -214,7 +239,7 @@ values
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_MEDIEVAL_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_RENAISSANCE_WALLS'),
     ('GREATPERSON_REGIONAL_RANGE_BONUS',                'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
-    ('GREATPERSON_REGIONAL_RANGE_SCIENCE',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('GREATPERSON_REGIONAL_RANGE_SCIENCE',              'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
     ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_CAMPUS'),
     ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_INDUSTRIAL_ZONE'),
     ('GREATPERSON_NATIONAL_APPEAL',                     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_APPEAL',            0,1,    NULL),
@@ -232,7 +257,7 @@ insert or replace into ModifierArguments
     (ModifierId,                                        Name,                   Value)
 values
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'TechType',             'TECH_PRINTING'),
-    ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
+    -- ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'Amount',               1),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
