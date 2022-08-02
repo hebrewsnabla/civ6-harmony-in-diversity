@@ -931,10 +931,6 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     </AddGameplayScripts>
-    <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
-      <Properties><LoadOrder>15020</LoadOrder></Properties>
-      <File>ModSupport/ModCivilizations/Text.sql</File>
-    </UpdateText>
     <UpdateText id="Resources_mod_support_text" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/HD_Texts.sql</File>
@@ -1743,7 +1739,6 @@
     <File>ModSupport/ModCivilizations/Civilizations.sql</File>
     <File>ModSupport/ModCivilizations/Units.sql</File>
     <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
-    <File>ModSupport/ModCivilizations/Text.sql</File>
     <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>

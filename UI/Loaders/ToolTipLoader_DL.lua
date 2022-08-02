@@ -267,9 +267,21 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
 
     -------------------------------------------------------------
     -- Add Regional Effect
-    local range = building.RegionalRange
+	-- Wonder Regional Effect
+    local range = building.RegionalRange;
     if range ~= 0 and range < 10000 then
         table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE", range)); 
+    end
+	-- Building Regional Effect
+    range = 0;
+	for row in GameInfo.HD_BuildingRegionalYields() do
+		if row.BuildingType == building.BuildingType then
+			range = row.RegionalRange;
+			break;
+		end
+	end
+    if range ~= 0 and range < 10000 then
+        table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE_MODIFIER", range)); 
     end
     -------------------------------------------------------------
     
