@@ -730,7 +730,7 @@ values
 
 -- Meenakshi Temple
 update Buildings set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
-delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE';
+delete from BuildingModifiers where BuildingType = 'BUILDING_MEENAKSHI_TEMPLE' and ModifierId != 'MEENAKSHITEMPLE_FREE_GURU';
 update UnitAbilities set Inactive = 0 where UnitAbilityType = 'ABILITY_SAGE_COMBAT_AOE_RELIGIOUS' or UnitAbilityType = 'ABILITY_GUIDE_MOVEMENT_AOE_RELIGIOUS';
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)

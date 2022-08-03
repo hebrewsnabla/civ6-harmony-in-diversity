@@ -931,10 +931,6 @@
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     </AddGameplayScripts>
-    <UpdateText id="Civilizations_mod_support" criteria="Expansion2">
-      <Properties><LoadOrder>15020</LoadOrder></Properties>
-      <File>ModSupport/ModCivilizations/Text.sql</File>
-    </UpdateText>
     <UpdateText id="Resources_mod_support_text" criteria="Expansion2">
       <Properties><LoadOrder>15020</LoadOrder></Properties>
       <File>ModSupport/Resources/HD_Texts.sql</File>
@@ -1339,11 +1335,13 @@
         <LoadOrder>16018</LoadOrder>
       </Properties>
       <File>Gameplay/Temp_Interface.xml</File>
+      <File>Gameplay/RegionalYield.xml</File>
     </AddUserInterfaces>
     <ImportFiles id="DL_lua_Scripts" criteria="Expansion2">
       <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/Temp_Interface.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
+      <File>Gameplay/RegionalYield.lua</File>
     </ImportFiles>
 	<!-- UI for civilopedia -->
 	<ImportFiles id="DL_Civilopedia" criteria="Expansion2">
@@ -1645,6 +1643,8 @@
     <!-- <File>Gameplay/Governors_Interface.xml</File> -->
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
+	<File>Gameplay/RegionalYield.lua</File>
+	<File>Gameplay/RegionalYield.xml</File>
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
@@ -1743,7 +1743,6 @@
     <File>ModSupport/ModCivilizations/Civilizations.sql</File>
     <File>ModSupport/ModCivilizations/Units.sql</File>
     <File>ModSupport/ModCivilizations/STUUexpansion.sql</File>
-    <File>ModSupport/ModCivilizations/Text.sql</File>
     <File>ModSupport/ModCivilizations/ModCiv.lua</File>
     <!-- Better Chinese -->
     <File>SubMods/BetterChinese/Text/Australia_Translations_ConfigText.xml</File>
