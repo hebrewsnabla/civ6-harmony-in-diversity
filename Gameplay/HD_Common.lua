@@ -172,5 +172,12 @@ Utils.GrantRelic = function(playerID)
     end
 end
 
+Utils.GetBuildingLocation = function (playerId, cityId, buildingId)
+	local city = CityManager.GetCity(playerId, cityId);
+	if city ~= nil then
+		return city:GetBuildings():GetBuildingLocation(buildingId);
+	end
+end
+
 ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;

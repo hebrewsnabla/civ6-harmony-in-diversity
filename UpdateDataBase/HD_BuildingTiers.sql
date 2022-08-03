@@ -103,11 +103,11 @@ insert or replace into HD_CityStateBuffedObjects
 select
 	PrereqDistrict,	BuildingType,   Tier
 from HD_BuildingTiers where IsUB = 0;
-update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_SCIENTIFIC_TRAIT',		YieldType = 'YIELD_SCIENCE'		where PrereqDistrict = 'DISTRICT_CAMPUS';
-update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CULTURAL_TRAIT',		YieldType = 'YIELD_CULTURE'		where PrereqDistrict = 'DISTRICT_THEATER';
-update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_RELIGIOUS_TRAIT',		YieldType = 'YIELD_FAITH'		where PrereqDistrict = 'DISTRICT_HOLY_SITE';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_SCIENTIFIC_TRAIT',		YieldType = 'YIELD_SCIENCE'			where PrereqDistrict = 'DISTRICT_CAMPUS';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CULTURAL_TRAIT',		YieldType = 'YIELD_CULTURE'			where PrereqDistrict = 'DISTRICT_THEATER';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_RELIGIOUS_TRAIT',		YieldType = 'YIELD_FAITH'			where PrereqDistrict = 'DISTRICT_HOLY_SITE';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_TRADE_TRAIT',			YieldType = 'YIELD_GOLD'			where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB';
-update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_MILITARISTIC_TRAIT',	YieldType = 'UNIT_PRODUCTION'	where PrereqDistrict = 'DISTRICT_ENCAMPMENT';
+update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_MILITARISTIC_TRAIT',	YieldType = 'UNIT_PRODUCTION'		where PrereqDistrict = 'DISTRICT_ENCAMPMENT';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_INDUSTRIAL_TRAIT',		YieldType = 'BUILDING_PRODUCTION'   where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_MARITIME_TRAIT',	YieldType = 'YIELD_GOLD'			where PrereqDistrict = 'DISTRICT_HARBOR';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT',  YieldType = 'YIELD_FOOD', Amount = Amount + 1 where PrereqDistrict = 'DISTRICT_AQUEDUCT';
