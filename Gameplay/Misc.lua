@@ -352,3 +352,15 @@ function MoonLandingBoost(playerId, cityId, projectId)
 end
 
 Events.CityProjectCompleted.Add(MoonLandingBoost);
+
+-- James Watt
+local JAMES_WATT_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_JAMES_WATT'].Index;
+local JAMES_WATT_ACTIVATION_TIME_KEY = 'JAMES_WATT_ACTIVATION_TIME';
+function JamesWattCounter (playerId, unitId, greatPersonClassId, greatPersonIndividualId)
+	if greatPersonIndividualId == JAMES_WATT_INDEX then
+		local player = Players[playerId];
+		local watt = player:GetProperty(JAMES_WATT_ACTIVATION_TIME_KEY) or 0;
+		player:SetProperty(JAMES_WATT_ACTIVATION_TIME_KEY, watt + 1);
+	end
+end
+Events.UnitGreatPersonActivated.Add(JamesWattCounter);

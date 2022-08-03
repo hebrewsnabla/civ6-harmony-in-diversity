@@ -6,6 +6,7 @@ local VERTICAL_INTEGRATION_HASH = GameInfo.GovernorPromotions['GOVERNOR_PROMOTIO
 local CITY_CENTER_INDEX = GameInfo.Districts['DISTRICT_CITY_CENTER'].Index;
 local NEIGHBORHOOD_INDEX = GameInfo.Districts['DISTRICT_NEIGHBORHOOD'].Index;
 local MBANZA_INDEX = GameInfo.Districts['DISTRICT_MBANZA'].Index;
+local JAMES_WATT_ACTIVATION_TIME_KEY = 'JAMES_WATT_ACTIVATION_TIME';
 function RefreshRegionalYield (playerId)
 	local player = Players[playerId];
 
@@ -24,7 +25,7 @@ function RefreshRegionalYield (playerId)
 		buildingRange[buildingInfo.Index] = {
 			regionalRange = row.RegionalRange,
 			buildingType = row.BuildingType,
-			prereqDistrict = row.PrereqDistrict
+			prereqDistrict = buildingInfo.PrereqDistrict
 		};
 	end
 	-- Get Magnus Location
@@ -36,11 +37,29 @@ function RefreshRegionalYield (playerId)
 	end
 
 	-- Policy Cards
-	for row in GameInfo.HD_PolicyRegionalRange() do
-
+	for i = 0, player:GetCulture():GetNumPolicySlots() - 1 do
+		local policyIndex = player:GetCulture():GetSlotPolicy(i);
+		if policyIndex ~= nil and policyIndex ~= -1 then
+			local policyInfo = GameInfo.Policies[policyIndex];
+			for row in GameInfo.HD_PolicyRegionalRange() do
+				if row.PolicyType == policyInfo.PolicyType then
+					for _, info in pairs(buildingRange) do
+						if info.prereqDistrict == row.DistrictType then
+							info.regionalRange = info.regionalRange + row.RegionalRange;
+						end
+					end
+				end
+			end
+		end
 	end
 
-	-- todo: policy card & great engineer
+	-- James Watt
+	local watt = player:GetProperty(JAMES_WATT_ACTIVATION_TIME_KEY) or 0;
+	for _, info in pairs(buildingRange) do
+		if info.prereqDistrict == 'DISTRICT_INDUSTRIAL_ZONE' then
+			info.regionalRange = info.regionalRange + 3 * watt;
+		end
+	end
 
 	-- Check if city can recieve / give (to Magnus) bonus
 	for _, city in player:GetCities():Members() do
@@ -63,7 +82,9 @@ function RefreshRegionalYield (playerId)
 					end
 					if inRange then
 						if (not targetCity:GetBuildings():HasBuilding(index)) or city:GetBuildings():IsPillaged(index) then
-							cityCanRecieve[targetCity:GetID()][index] = 1;
+							if (magnusCity == nil) or (targetCity:GetID() ~= magnusCity) then
+								cityCanRecieve[targetCity:GetID()][index] = 1;
+							end
 						end
 						if (magnusCity ~= nil) and (targetCity:GetID() == magnusCity) then
 							cityCanGive[city:GetID()][index] = 1;
@@ -84,33 +105,52 @@ function RefreshRegionalYield (playerId)
 	end
 end
 
-function Initialize ()
-	Events.BuildingAddedToMap.Add(function (x, y, buildingId, playerId, misc2, misc3)
+local pendingRefresh = {};
+function RefreshRegionalYieldIfPending (playerId)
+	if (pendingRefresh[playerId] == nil) or (pendingRefresh[playerId] == 1) then
 		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 0;
+	end
+end
+function Initialize ()
+	Events.CityWorkerChanged.Add(function (playerId, cityId, x, y)
+		RefreshRegionalYieldIfPending(playerId);
+	end);
+	GameEvents.PlayerTurnStartComplete.Add(function (playerId, cityId, x, y)
+		RefreshRegionalYield(playerId);
+	end);
+	GameEvents.PlayerTurnStarted.Add(function (playerId, cityId, x, y)
+		RefreshRegionalYield(playerId);
+	end);
+	Events.BuildingAddedToMap.Add(function (x, y, buildingId, playerId, misc2, misc3)
+		pendingRefresh[playerId] = 1;
 	end);
 	GameEvents.BuildingPillageStateChanged.Add(function (playerId, cityId, buildingId, pillageState)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
 	Events.DistrictAddedToMap.Add(function (playerId, districtId, cityId, x, y, districtType, percentComplete)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
 	Events.DistrictRemovedFromMap.Add(function (playerId, districtId, cityId, x, y, districtType)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
 	Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
 	Events.GovernorEstablished.Add(function (cityOwner, cityId, governorOwner, governorId)
-		RefreshRegionalYield(governorOwner);
+		pendingRefresh[governorOwner] = 1;
 	end);
 	Events.GovernorPromoted.Add(function (playerId, governorId, promotionId)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
 	Events.GovernorChanged.Add(function (playerId, governorId)
-		RefreshRegionalYield(playerId);
+		pendingRefresh[playerId] = 1;
 	end);
-	GameEvents.PolicyChanged.Add(function (playerId, policyId, enacted)
-		RefreshRegionalYield(playerId);
+	Events.GovernmentPolicyChanged.Add(function (playerId, policyId)
+		pendingRefresh[playerId] = 1;
+	end);
+	Events.UnitGreatPersonActivated.Add(function (playerId, unitId, greatPersonClassId, greatPersonIndividualId)
+		pendingRefresh[playerId] = 1;
 	end);
 end
 

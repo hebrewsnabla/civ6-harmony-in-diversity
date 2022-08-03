@@ -230,7 +230,10 @@ delete from ModifierArguments where ModifierId like 'CITY_POLICY_DIPLOMATIC_MEET
 insert or replace into Building_ResourceCosts
 	(BuildingType,							ResourceType,			StartProductionCost,		PerTurnMaintenanceCost)
 values
-	('BUILDING_CITY_POLICY_FORGING_IRON',	'RESOURCE_IRON',		0,							3);
+	('BUILDING_CITY_POLICY_FREIGHT',		'RESOURCE_HORSES',		0,							3),
+	('BUILDING_CITY_POLICY_FORGING_IRON',	'RESOURCE_IRON',		0,							3),
+	('BUILDING_CITY_POLICY_JIMI',			'RESOURCE_HORSES',		0,							1),
+	('BUILDING_CITY_POLICY_JIMI',			'RESOURCE_IRON',		0,							1);
 ------【结束】------
 
 -- Enable Projects

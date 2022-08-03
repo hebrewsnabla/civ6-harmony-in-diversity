@@ -404,3 +404,253 @@ create table if not exists HD_PolicyRegionalRange (
 	RegionalRange int not null,
 	primary key (PolicyType, DistrictType)
 );
+insert or replace into HD_PolicyRegionalRange
+	(PolicyType,					DistrictType,								RegionalRange)
+values
+	('POLICY_RATIONALISM',			'DISTRICT_CAMPUS',							3),
+	('POLICY_FREE_MARKET',			'DISTRICT_COMMERCIAL_HUB',					3),
+	('POLICY_GRAND_OPERA',			'DISTRICT_THEATER',							3),
+	('POLICY_OVERALL_PLANNING',		'DISTRICT_INDUSTRIAL_ZONE',					3),
+	('POLICY_OVERALL_PLANNING',		'DISTRICT_ENTERTAINMENT_COMPLEX',			3),
+	('POLICY_OVERALL_PLANNING',		'DISTRICT_WATER_ENTERTAINMENT_COMPLEX',		3),
+	('POLICY_FIVE_YEAR_PLAN',		'DISTRICT_INDUSTRIAL_ZONE',					3),
+	('POLICY_SPORTS_MEDIA',			'DISTRICT_ENTERTAINMENT_COMPLEX',			3),
+	('POLICY_SPORTS_MEDIA',			'DISTRICT_WATER_ENTERTAINMENT_COMPLEX',		3);
+
+-- Mexico City
+delete from TraitModifiers where TraitType = 'MINOR_CIV_MEXICO_CITY_TRAIT' and ModifierId = 'MINOR_CIV_MEXICO_CITY_UNIQUE_INFLUENCE_BONUS';
+-- Modifiers in this table are attached to suzerain
+create temporary table if not exists TraitAttachedModifiers (
+	TraitType text not null,
+	ModifierId text not null,
+	primary key (TraitType, ModifierId)
+);
+-- Basic building yield
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+select
+	'MINOR_CIV_MEXICO_CITY_TRAIT',	ModifierId || '_MEXICO_BUILDING'
+from HD_BuildingRegionalYields;
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+select
+	ModifierId || '_MEXICO_BUILDING',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	ModifierId || '_MEXICO_BUILDING',		'BuildingType',	BuildingType
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	ModifierId || '_MEXICO_BUILDING',		'YieldType',	YieldType
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+select
+	ModifierId || '_MEXICO_BUILDING',		'Amount',		max(YieldChange / 2, 1)
+from HD_BuildingRegionalYields;
+-- Regional Modifiers
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+select
+	'MINOR_CIV_MEXICO_CITY_TRAIT',	ModifierId || '_MEXICO'
+from HD_BuildingRegionalYields;
+insert or replace into Modifiers
+	(ModifierId,
+	ModifierType,
+	OwnerRequirementSetId,
+	SubjectRequirementSetId)
+select
+	ModifierId || '_MEXICO',
+	case when YieldType = 'AMENITY' then 'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY' else 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE' end,
+	case when RequiresPower then 'CITY_IS_POWERED' else null end,
+	'CITY_CAN_RECIEVE_' || BuildingType || '_REGIONAL_BONUS_REQUIREMENTS'
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+select
+	ModifierId || '_MEXICO',	'YieldType',	YieldType
+from HD_BuildingRegionalYields where YieldType != 'AMENITY';
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+select
+	ModifierId || '_MEXICO',	'Amount',		max(YieldChange / 2, 1)
+from HD_BuildingRegionalYields;
+-- Magnus Adaption
+insert or replace into TraitAttachedModifiers
+	(TraitType,						ModifierId)
+select
+	'MINOR_CIV_MEXICO_CITY_TRAIT',	ModifierId || '_MEXICO_MAGNUS_ATTACH'
+from HD_BuildingRegionalYields;
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								SubjectRequirementSetId)
+select
+	ModifierId || '_MEXICO_MAGNUS_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_CAN_GIVE_' || BuildingType || '_REGIONAL_BONUS_TO_MAGNUS_REQUIREMENTS'
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select
+	ModifierId || '_MEXICO_MAGNUS_ATTACH',		'ModifierId',	ModifierId || '_MEXICO_MAGNUS'
+from HD_BuildingRegionalYields;
+insert or replace into Modifiers
+	(ModifierId,
+	ModifierType,
+	OwnerRequirementSetId,
+	SubjectRequirementSetId)
+select
+	ModifierId || '_MEXICO_MAGNUS',
+	case when YieldType = 'AMENITY' then 'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY' else 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE' end,
+	case when RequiresPower then 'CITY_IS_POWERED' else null end,
+	'CITY_HAS_VERTICAL_INTEGRATION_REQUIREMENTS'
+from HD_BuildingRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select
+	ModifierId || '_MEXICO_MAGNUS',	'YieldType',	YieldType
+from HD_BuildingRegionalYields where YieldType != 'AMENITY';
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+select
+	ModifierId || '_MEXICO_MAGNUS',	'Amount',		max(YieldChange / 2, 1)
+from HD_BuildingRegionalYields;
+-- Attach modifiers in TraitAttachedModifiers to suzerain
+insert or ignore into TraitModifiers
+	(TraitType, ModifierId)
+select
+	TraitType,  ModifierId || '_ATTACH'
+from TraitAttachedModifiers;
+insert or ignore into Modifiers
+	(ModifierId,				ModifierType,							SubjectRequirementSetId)
+select
+	ModifierId || '_ATTACH',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	'PLAYER_IS_SUZERAIN'
+from TraitAttachedModifiers;
+insert or ignore into ModifierArguments
+	(ModifierId,				Name,		Value)
+select
+	ModifierId || '_ATTACH',	'ModifierId',   ModifierId
+from TraitAttachedModifiers;
+drop table TraitAttachedModifiers;
+
+-- England & James Watt
+create temporary table HD_IndustialRegionalYields (
+	Owner text not null,
+	BuildingType text not null,
+	YieldType text not null,
+	YieldChange int not null,
+	ModifierId text,
+	RegionalModifierId text,
+	MagnusAttachModifierId text,
+	MagnusModifierId text,
+	primary key (Owner, BuildingType, YieldType)
+);
+with B(BuildingType) as (select BuildingType from HD_BuildingRegionalRange
+	where BuildingType in (select BuildingType from Buildings where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE')),
+	Y(Owner,	YieldType, 			YieldChange)
+as (values
+	('ENGLAND',	'YIELD_PRODUCTION',	4),
+	('ENGLAND',	'YIELD_SCIENCE',	2),
+	('WATT',	'YIELD_SCIENCE',	3))
+insert or replace into HD_IndustialRegionalYields
+	(Owner,	BuildingType,	YieldType,	YieldChange)
+select
+	Owner,	BuildingType,	YieldType,	YieldChange
+from B cross join Y;
+update HD_IndustialRegionalYields set ModifierId = Owner || '_' || BuildingType || '_' || YieldType;
+update HD_IndustialRegionalYields set RegionalModifierId = ModifierId || '_REGIONAL';
+update HD_IndustialRegionalYields set MagnusModifierId = ModifierId || '_MAGNUS';
+update HD_IndustialRegionalYields set MagnusAttachModifierId = MagnusModifierId || '_ATTACH';
+-- Basic building yield
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+select
+	'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		ModifierId
+from HD_IndustialRegionalYields where Owner = 'ENGLAND';
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId)
+select
+	'GREAT_PERSON_INDIVIDUAL_JAMES_WATT',			ModifierId
+from HD_IndustialRegionalYields where Owner = 'WATT';
+insert or replace into Modifiers
+	(ModifierId,	ModifierType)
+select
+	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'BuildingType',	BuildingType
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'YieldType',	YieldType
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,			Value)
+select
+	ModifierId,		'Amount',		YieldChange
+from HD_IndustialRegionalYields;
+-- Regional Modifiers
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+select
+	'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		RegionalModifierId
+from HD_IndustialRegionalYields where Owner = 'ENGLAND';
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId)
+select
+	'GREAT_PERSON_INDIVIDUAL_JAMES_WATT',			RegionalModifierId
+from HD_IndustialRegionalYields where Owner = 'WATT';
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,										SubjectRequirementSetId)
+select
+	RegionalModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_CAN_RECIEVE_' || BuildingType || '_REGIONAL_BONUS_REQUIREMENTS'
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	RegionalModifierId,		'YieldType',	YieldType
+from HD_IndustialRegionalYields where YieldType != 'AMENITY';
+insert or replace into ModifierArguments
+	(ModifierId,			Name,			Value)
+select
+	RegionalModifierId,		'Amount',		YieldChange
+from HD_IndustialRegionalYields;
+-- Magnus Adaption
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+select
+	'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		MagnusAttachModifierId
+from HD_IndustialRegionalYields where Owner = 'ENGLAND';
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId)
+select
+	'GREAT_PERSON_INDIVIDUAL_JAMES_WATT',			MagnusAttachModifierId
+from HD_IndustialRegionalYields where Owner = 'WATT';
+insert or replace into Modifiers
+	(ModifierId,				ModifierType,								SubjectRequirementSetId)
+select
+	MagnusAttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_CAN_GIVE_' || BuildingType || '_REGIONAL_BONUS_TO_MAGNUS_REQUIREMENTS'
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,				Name,			Value)
+select
+	MagnusAttachModifierId,		'ModifierId',	MagnusModifierId
+from HD_IndustialRegionalYields;
+insert or replace into Modifiers
+	(ModifierId,		ModifierType,										SubjectRequirementSetId)
+select
+	MagnusModifierId,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_VERTICAL_INTEGRATION_REQUIREMENTS'
+from HD_IndustialRegionalYields;
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	MagnusModifierId,	'YieldType',	YieldType
+from HD_IndustialRegionalYields where YieldType != 'AMENITY';
+insert or replace into ModifierArguments
+	(ModifierId,		Name,			Value)
+select
+	MagnusModifierId,	'Amount',		YieldChange
+from HD_IndustialRegionalYields;
