@@ -16,7 +16,7 @@ values
 insert into IconTextureAtlases
 	(Name,									Baseline,	IconSize,		IconsPerRow,		IconsPerColumn,			Filename)
 values
-	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		6,			22,				8,					1,						'Resourceful2_New_22.dds');
+	('ICON_ATLAS_RESOURCEFUL2_NEW_HD',		6,			22,				8,					2,						'Resourceful2_New_22.dds');
 
 -- update IconDefinitions set Atlas = 'ICON_ATLAS_RESOURCEFUL2_NEW_HD', "Index" = 0 where Name = 'ICON_RESOURCE_ALOE';
 -- update IconDefinitions set Atlas = 'ICON_ATLAS_RESOURCEFUL2_NEW_HD_FOW', "Index" = 0 where Name = 'ICON_RESOURCE_ALOE_FOW';
