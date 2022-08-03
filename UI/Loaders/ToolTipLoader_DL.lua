@@ -274,7 +274,7 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     end
 	-- Building Regional Effect
     range = 0;
-	for row in GameInfo.HD_BuildingRegionalYields() do
+	for row in GameInfo.HD_BuildingRegionalRange() do
 		if row.BuildingType == building.BuildingType then
 			range = row.RegionalRange;
 			break;

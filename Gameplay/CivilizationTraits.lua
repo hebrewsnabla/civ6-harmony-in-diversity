@@ -475,3 +475,12 @@ function GreatGeneralFaith (playerId, unitId)
 	end
 end
 Events.UnitRemovedFromMap.Add(GreatGeneralFaith);
+
+
+function SetPlotProperty (x, y, key, value)
+	local plot = Map.GetPlot(x, y);
+	if plot ~= nil then
+		plot:SetProperty(key, value);
+	end
+end
+GameEvents.SetPlotPropertySwitch.Add(SetPlotProperty);

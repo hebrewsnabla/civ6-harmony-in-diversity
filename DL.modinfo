@@ -1335,11 +1335,13 @@
         <LoadOrder>16018</LoadOrder>
       </Properties>
       <File>Gameplay/Temp_Interface.xml</File>
+      <File>Gameplay/RegionalYield.xml</File>
     </AddUserInterfaces>
     <ImportFiles id="DL_lua_Scripts" criteria="Expansion2">
       <Properties><LoadOrder>16017</LoadOrder></Properties>
       <File>Gameplay/Temp_Interface.lua</File>
       <File>Gameplay/HD_StateUtils.lua</File>
+      <File>Gameplay/RegionalYield.lua</File>
     </ImportFiles>
 	<!-- UI for civilopedia -->
 	<ImportFiles id="DL_Civilopedia" criteria="Expansion2">
@@ -1641,6 +1643,8 @@
     <!-- <File>Gameplay/Governors_Interface.xml</File> -->
     <File>Gameplay/Temp_Interface.lua</File>
     <File>Gameplay/Temp_Interface.xml</File>
+	<File>Gameplay/RegionalYield.lua</File>
+	<File>Gameplay/RegionalYield.xml</File>
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
