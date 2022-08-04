@@ -47,7 +47,10 @@ values
 	("LOC_DISTRICT_COTHON_HANSA_PRODUCTION",								  "+{1_num} [ICON_Production] Production from adjacent Cothon {1_Num : plural 2?district; other?districts;}."),
 	("LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",									"Every 10 turns (on Standard), you unlock a [ICON_TechBoosted] Eureka for a tech that your ally has researched or boosted, but you have not."),
 	("LOC_ALLIANCE_LV1_MILITARY_EFFECT_2",									"+2 [ICON_Production] Production from [ICON_TradeRoute] Trade Routes to your ally"),
-	("LOC_ALLIANCE_LV1_MILITARY_EFFECT_3",									"+1 [ICON_Production] Production from [ICON_TradeRoute] Trade Routes from your ally");
+	("LOC_ALLIANCE_LV1_MILITARY_EFFECT_3",									"+1 [ICON_Production] Production from [ICON_TradeRoute] Trade Routes from your ally"),
+	("LOC_TOOLTIP_COLLECTED",												"Collected: "),
+	("LOC_TOOLTIP_UNCOLLECTED",												"Uncollected: "),
+	("LOC_TOOLTIP_FULL_COLLECTED",											"All items collected.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -103,7 +106,10 @@ values
 	("zh_Hans_CN",  "LOC_DISTRICT_DESERT_HILLS_SCIENCE",									 "+{1_num} [ICON_Science] 科技值来自相邻的沙漠（丘陵）单元格。"),
 	("zh_Hans_CN",  "LOC_ALLIANCE_LV2_RESEARCH_EFFECT_1",									"每10回合（标准游戏速度下）解锁1个您盟友已研究或提升，而您尚未研究之科技的 [ICON_TechBoosted] 尤里卡"),
 	("zh_Hans_CN",  "LOC_ALLIANCE_LV1_MILITARY_EFFECT_2",									"从通往盟友城市的 [ICON_TradeRoute] 贸易路线处获得的 [ICON_Production] 生产力+2"),
-	("zh_Hans_CN",  "LOC_ALLIANCE_LV1_MILITARY_EFFECT_3",									"从源自盟友城市的 [ICON_TradeRoute] 贸易路线处获得的 [ICON_Production] 生产力+1");
+	("zh_Hans_CN",  "LOC_ALLIANCE_LV1_MILITARY_EFFECT_3",									"从源自盟友城市的 [ICON_TradeRoute] 贸易路线处获得的 [ICON_Production] 生产力+1"),
+	("zh_Hans_CN",  "LOC_TOOLTIP_COLLECTED",												"已收集："),
+	("zh_Hans_CN",  "LOC_TOOLTIP_UNCOLLECTED",												"未收集："),
+	("zh_Hans_CN",  "LOC_TOOLTIP_FULL_COLLECTED",											"已完成全收集。");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

@@ -9,6 +9,23 @@ MIMAR_SINAN_INVALID_DISTRICTS[CITY_CENTER_INDEX] = true;
 MIMAR_SINAN_INVALID_DISTRICTS[SPACE_PORT_INDEX] = true;
 MIMAR_SINAN_INVALID_DISTRICTS[DISTRICT_WONDER_INDEX] = true;
 
+local FEATURE_BURNING_FOREST_INDEX = -2;
+local FEATURE_BURNT_FOREST_INDEX = -2;
+local FEATURE_BURNING_JUNGLE_INDEX = -2;
+local FEATURE_BURNT_JUNGLE_INDEX = -2;
+if GameInfo.Features["FEATURE_BURNING_FOREST"] ~= nil then
+	FEATURE_BURNING_FOREST_INDEX = GameInfo.Features["FEATURE_BURNING_FOREST"].Index;
+end
+if GameInfo.Features["FEATURE_BURNT_FOREST"] ~= nil then
+	FEATURE_BURNING_FOREST_INDEX = GameInfo.Features["FEATURE_BURNT_FOREST"].Index;
+end
+if GameInfo.Features["FEATURE_BURNING_JUNGLE"] ~= nil then
+	FEATURE_BURNING_FOREST_INDEX = GameInfo.Features["FEATURE_BURNING_JUNGLE"].Index;
+end
+if GameInfo.Features["FEATURE_BURNT_JUNGLE"] ~= nil then
+	FEATURE_BURNING_FOREST_INDEX = GameInfo.Features["FEATURE_BURNT_JUNGLE"].Index;
+end
+
 -- Return table of plot index
 function HDGreatPersonGetActivationPlots(playerID, greatPersonIndividualID)
     local player = Players[playerID];
@@ -61,10 +78,10 @@ function HDGreatPersonGetActivationPlots(playerID, greatPersonIndividualID)
                         and plot:GetResourceType() == -1 --没有资源
                         and not plot:IsNaturalWonder() -- 没有自然奇观
                         and not plot:IsWater() -- 是陆地单元格
-                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNING_FOREST"].Index -- 没有燃烧的树林
-                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNT_FOREST"].Index -- 没有烧毁的的树林
-                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNING_JUNGLE"].Index -- 没有燃烧的雨林
-                        and plot:GetFeatureType() ~= GameInfo.Features["FEATURE_BURNT_JUNGLE"].Index -- 没有烧毁的雨林
+                        and plot:GetFeatureType() ~= FEATURE_BURNING_FOREST_INDEX -- 没有燃烧的树林
+                        and plot:GetFeatureType() ~= FEATURE_BURNT_FOREST_INDEX -- 没有烧毁的的树林
+                        and plot:GetFeatureType() ~= FEATURE_BURNING_JUNGLE_INDEX -- 没有燃烧的雨林
+                        and plot:GetFeatureType() ~= FEATURE_BURNT_JUNGLE_INDEX -- 没有烧毁的雨林
                         then
                             table.insert(activationPlots, plotIndex);
                         end

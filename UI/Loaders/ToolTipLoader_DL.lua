@@ -250,6 +250,41 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     if(not Locale.IsNilOrWhitespace(description)) then
         table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup(description));  
     end
+
+	-- xxcat: Preserve Tier 3 building collection progress
+	if city ~= nil then
+		local collected, uncollected = ExposedMembers.DLHD.Utils.GetCollectionProgress(playerId, building.Index);
+		if (collected ~= nil) and (uncollected ~= nil) then
+			if #collected > 0 then
+				local line = Locale.Lookup("LOC_TOOLTIP_COLLECTED");
+				for index, object in ipairs(collected) do
+					line = line .. Locale.Lookup(object.name);
+					if index ~= #collected then
+						line = line .. Locale.Lookup('LOC_COMMA');
+					else
+						line = line .. Locale.Lookup('LOC_PERIOD');
+					end
+				end
+				table.insert(toolTipLines, '[COLOR:ResScienceLabelCS]' .. line .. '[ENDCOLOR]');
+			end
+			if #uncollected > 0 then
+				local line = Locale.Lookup("LOC_TOOLTIP_UNCOLLECTED");
+				for index, object in ipairs(uncollected) do
+					line = line .. Locale.Lookup(object.name);
+					if index ~= #uncollected then
+						line = line .. Locale.Lookup('LOC_COMMA');
+					else
+						line = line .. Locale.Lookup('LOC_PERIOD');
+					end
+				end
+				table.insert(toolTipLines, '[COLOR:ResCultureLabelCS]' .. line .. '[ENDCOLOR]');
+			else
+				local line = Locale.Lookup("LOC_TOOLTIP_FULL_COLLECTED");
+				table.insert(toolTipLines, '[COLOR:ResFoodLabelCS]' .. line .. '[ENDCOLOR]');
+			end
+		end
+	end
+	-- xxcat end
     
     if playerId ~= nil and playerId ~= -1 then
         local kPlayerCulture:table = Players[playerId]:GetCulture();

@@ -841,3 +841,63 @@ insert or ignore into RequirementSetRequirements
 select
     'HD_PLAYER_GOT_ALL_BIO_RESOURCE_ON_MAP',                        'REQUIRES_PLAYER_HAS_' || ResourceType || '_OR_MAP_NOT_HAS'
 from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL');
+
+-- Dummy Modifiers for lua script to check the collection progress
+create table if not exists HD_PreserveCollectionProgress (
+	BuildingType text not null,
+	ObjectType text not null,
+	CollectedRequirementSetId text not null,
+	NotInMapRequirementSetId text,
+	NotInMapPropertyKey text,
+	ObjectName text not null,
+	CollectedModifierId text,
+	NotInMapModifierId text,
+	primary key (BuildingType, ObjectType)
+);
+-- 地貌
+insert or replace into HD_PreserveCollectionProgress
+	(BuildingType,					ObjectType,		ObjectName,	 CollectedRequirementSetId)
+select
+	'BUILDING_HD_LANDFORM_EPO',		FeatureType,	Name,		'HD_PLAYER_HAS_' || FeatureType
+from Features where FeatureType not in ('FEATURE_BURNING_FOREST', 'FEATURE_BURNT_FOREST', 'FEATURE_BURNING_JUNGLE', 'FEATURE_BURNT_JUNGLE') and NaturalWonder = 0;
+-- 资源
+insert or replace into HD_PreserveCollectionProgress
+	(BuildingType,					ObjectType,		ObjectName,	 CollectedRequirementSetId,										NotInMapPropertyKey)
+select
+	'BUILDING_HD_RESOURCE_EPO',		ResourceType,	Name,		'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_MAP_HAS_' || ResourceType
+from Resources where ResourceType in (select ResourceType from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_MINE','IMPROVEMENT_QUARRY','IMPROVEMENT_OIL_WELL') and ResourceType != 'RESOURCE_AMBER');
+-- 物种
+insert or replace into HD_PreserveCollectionProgress
+	(BuildingType,					ObjectType,		ObjectName,	 CollectedRequirementSetId,										NotInMapPropertyKey)
+select
+	'BUILDING_HD_SPECIES_EPO',		ResourceType,	Name,		'HD_PLAYER_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS',	'HD_MAP_HAS_' || ResourceType
+from Resources where ResourceType in (select ResourceType from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_FARM','IMPROVEMENT_FISHING_BOATS','IMPROVEMENT_PLANTATION','IMPROVEMENT_PASTURE','IMPROVEMENT_CAMP','IMPROVEMENT_LUMBER_MILL'));
+-- 奇观
+insert or replace into HD_PreserveCollectionProgress
+	(BuildingType,					ObjectType,		ObjectName,	 CollectedRequirementSetId,			NotInMapRequirementSetId)
+select
+	'BUILDING_HD_SCENIC_EPO',		FeatureType,	Name,		'HD_PLAYER_HAS_' || FeatureType,	'MAP_NOT_HAS_' || FeatureType || '_REQUIREMENTS'
+from Features where NaturalWonder = 1;
+-- Name Modifier
+update HD_PreserveCollectionProgress set CollectedModifierId = CollectedRequirementSetId || '_DUMMY_MODIFIER';
+update HD_PreserveCollectionProgress set NotInMapModifierId = NotInMapRequirementSetId || '_DUMMY_MODIFIER' where NotInMapRequirementSetId is not null;
+insert or ignore into TraitModifiers
+	(TraitType,					ModifierId)
+select
+	'TRAIT_LEADER_MAJOR_CIV', 	CollectedModifierId
+from HD_PreserveCollectionProgress;
+insert or ignore into Modifiers
+	(ModifierId,				ModifierType,			OwnerRequirementSetId)
+select
+	CollectedModifierId,		'MODIFIER_DO_NOTHING',	CollectedRequirementSetId
+from HD_PreserveCollectionProgress;
+insert or ignore into GameModifiers
+	(ModifierId)
+select
+	NotInMapModifierId
+from HD_PreserveCollectionProgress where NotInMapRequirementSetId is not null;
+insert or ignore into Modifiers
+	(ModifierId,				ModifierType,			OwnerRequirementSetId)
+select
+	NotInMapModifierId,			'MODIFIER_DO_NOTHING',	NotInMapRequirementSetId
+from HD_PreserveCollectionProgress where NotInMapRequirementSetId is not null;

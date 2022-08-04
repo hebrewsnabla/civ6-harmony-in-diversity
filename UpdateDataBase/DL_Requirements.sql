@@ -288,6 +288,10 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'REQUIRES_MAP_NOT_HAS_' || FeatureType, 'FeatureType', FeatureType from Features where NaturalWonder = 1;
 insert or ignore into Requirements (RequirementId, RequirementType, Inverse)
 	select 'REQUIRES_MAP_NOT_HAS_' || FeatureType, 'REQUIREMENT_MAP_HAS_FEATURE', 1 from Features where NaturalWonder = 1;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'MAP_NOT_HAS_' || FeatureType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Features where NaturalWonder = 1;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'MAP_NOT_HAS_' || FeatureType || '_REQUIREMENTS', 'REQUIRES_MAP_NOT_HAS_' || FeatureType from Features where NaturalWonder = 1;
 
 -- Player Has or Map Not Has Feature
 insert or ignore into RequirementArguments (RequirementId, Name, Value)
