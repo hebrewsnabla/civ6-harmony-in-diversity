@@ -179,5 +179,63 @@ Utils.GetBuildingLocation = function (playerId, cityId, buildingId)
 	end
 end
 
+local PRESERVE_NOT_ON_MAP_KEY = 'HD_PRESERVE_NOT_ON_MAP';
+Utils.GetCollectionProgress = function (playerId, buildingId)
+	local hasCollectable = false;
+	local collectable = {};
+	local notInMapModifiers = {};
+	local collected = {};
+	local uncollected = {};
+	local buildingInfo = GameInfo.Buildings[buildingId];
+	for row in GameInfo.HD_PreserveCollectionProgress() do
+		if row.BuildingType == buildingInfo.BuildingType then
+			hasCollectable = true;
+			collectable[row.CollectedModifierId] = {
+				objectType = row.ObjectType,
+				name = row.ObjectName,
+				collectedModifierId = row.CollectedModifierId,
+				notInMapModifierId = row.NotInMapModifierId,
+				notInMapPropertyKey = row.NotInMapPropertyKey
+			};
+			if row.NotInMapPropertyKey ~= nil then
+				local inMap = Game.GetProperty(row.NotInMapPropertyKey);
+				if inMap == nil then
+					collectable[row.CollectedModifierId] = nil;
+				end
+			end
+			if row.NotInMapModifierId ~= nil then
+				notInMapModifiers[row.NotInMapModifierId] = row.CollectedModifierId;
+			end
+		end
+	end
+	-- Modifier
+	if not hasCollectable then
+		return nil;
+	end
+	-- Remove not in Map
+	for _, modifier in ipairs(GameEffects.GetModifiers()) do
+		local modifierId = GameEffects.GetModifierDefinition(modifier).Id;
+		local active = GameEffects.GetModifierActive(modifier);
+		if active and (notInMapModifiers[modifierId] ~= nil) then
+			collectable[notInMapModifiers[modifierId]] = nil;
+		end
+	end
+	for _, modifier in ipairs(GameEffects.GetModifiers()) do
+		local modifierId = GameEffects.GetModifierDefinition(modifier).Id;
+		local owner = GameEffects.GetModifierOwner(modifier);
+		local ownerId = GameEffects.GetObjectsPlayerId(owner);
+		if (collectable[modifierId] ~= nil) and (ownerId ~= nil) and (playerId == ownerId) then
+			local active = GameEffects.GetModifierActive(modifier);
+			local object = collectable[modifierId];
+			if active then
+				table.insert(collected, object);
+			else
+				table.insert(uncollected, object);
+			end
+		end
+	end
+	return collected, uncollected;
+end
+
 ExposedMembers.DLHD = ExposedMembers.DLHD or {};
 ExposedMembers.DLHD.Utils = Utils;

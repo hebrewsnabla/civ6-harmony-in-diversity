@@ -270,12 +270,14 @@ insert or replace into EnglishText
     (Tag,                       Text)
 values
     ("LOC_COMMA",               ", "),
+    ("LOC_PERIOD",              "."),
     ("LOC_AND",                 " and "),
     ("LOC_WORSHIP_BUILDINGS",   "Worship Building");
 insert or replace into LocalizedText
     (Language,      Tag,                        Text)
 values
     ("zh_Hans_CN",  "LOC_COMMA",                "、"),
+    ("zh_Hans_CN",  "LOC_PERIOD",                "。"),
     ("zh_Hans_CN",  "LOC_AND",                  "和"),
     ("zh_Hans_CN",  "LOC_WORSHIP_BUILDINGS",    "祭祀建筑");
 
