@@ -123,7 +123,7 @@ insert or replace into GreatPersonIndividualActionModifiers
 values
     ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',  'GREATPERSON_1MEDIEVALTECHBOOST',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
     ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',     'JNR_GREATPERSON_DAM_SPEED_UP',                     'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
-    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',     'HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
+    ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',     'JNR_GREATPERSON_DAM_RIVER_PRODUCTION',             'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
     ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',      'HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',           'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
     ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',      'JNR_GREATPERSON_TECH_MACHINERY',                   'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
 
@@ -136,7 +136,7 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier
 insert or replace into Modifiers
     (ModifierId,                                        ModifierType,                                               SubjectRequirementSetId)
 values
-    ('HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',      'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                   'CITY_HAS_DISTRICT_DAM_REQUIREMENTS'),
+    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'DISTRICT_IS_DAM'),
     ('JNR_GREATPERSON_DAM_SPEED_UP',                    'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',        NULL),
     ('HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',          'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',       NULL),
     ('JNR_GREATPERSON_TECH_MACHINERY',                  'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',                NULL);
@@ -150,7 +150,7 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,               Value)
 values
-    ('HD_GREATPERSON_DAM_EXTRA_DISTRICT_CAPACITY',      'ModifierId',       'GREATPERSON_EXTRA_DISTRICT_CAPACITY'),
+    ('JNR_GREATPERSON_DAM_RIVER_PRODUCTION',            'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
     ('JNR_GREATPERSON_DAM_SPEED_UP',                    'DistrictType',     'DISTRICT_DAM'),
     ('JNR_GREATPERSON_DAM_SPEED_UP',                    'Amount',           25),
     ('HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING',          'BuildingType',     'BUILDING_WORKSHOP'),
@@ -257,7 +257,7 @@ insert or replace into ModifierArguments
     (ModifierId,                                        Name,                   Value)
 values
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'TechType',             'TECH_PRINTING'),
-    -- ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
+    ('GREAT_PERSON_HD_BOOST_OR_GRANT_PRINTING',         'GrantTechIfBoosted',   1),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_WALL_GEP',                'Amount',               1),
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
