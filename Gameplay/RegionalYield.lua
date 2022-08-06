@@ -81,12 +81,9 @@ function RefreshRegionalYield (playerId)
 						end
 					end
 					if inRange then
-						if (not targetCity:GetBuildings():HasBuilding(index)) or city:GetBuildings():IsPillaged(index) then
-							if (magnusCity == nil) or (targetCity:GetID() ~= magnusCity) then
-								cityCanRecieve[targetCity:GetID()][index] = 1;
-							end
-						end
-						if (magnusCity ~= nil) and (targetCity:GetID() == magnusCity) then
+						if (magnusCity == nil) or (targetCity:GetID() ~= magnusCity) then
+							cityCanRecieve[targetCity:GetID()][index] = 1;
+						else
 							cityCanGive[city:GetID()][index] = 1;
 						end
 					end

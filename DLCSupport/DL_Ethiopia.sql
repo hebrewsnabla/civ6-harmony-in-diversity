@@ -296,9 +296,9 @@ values
     ('HD_WPH_CS_ADD_WONDER_PRODUCTION',     'Amount',               10);
 
 insert or replace into DiplomaticVisibilitySources
-    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString)
+    (VisibilitySourceType,		Description,                ActionDescription,                  GossipString,					PrereqTech)
 values
-    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES');
+    ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES',	'TECH_MATHEMATICS');
 
 insert or ignore into RequirementSets
 	(RequirementSetId, 							            RequirementSetType)
@@ -454,19 +454,19 @@ values
 insert or replace into GovernmentModifiers
     (GovernmentType,            ModifierId)
 values
-    ('GOVERNMENT_AUTOCRACY',    'CHANCERY_TIER2');
+    ('GOVERNMENT_AUTOCRACY',    'REGIONAL_COUNCIL_CENTER_TIER3');
 insert or replace into PolicyModifiers
     (PolicyType,                ModifierId)
 values
-    ('POLICY_GOV_AUTOCRACY',    'CHANCERY_TIER2');
+    ('POLICY_GOV_AUTOCRACY',    'REGIONAL_COUNCIL_CENTER_TIER3');
 insert or replace into Modifiers
-    (ModifierId,        ModifierType,                                           SubjectRequirementSetId)
+    (ModifierId,       					ModifierType,                                           SubjectRequirementSetId)
 values
-    ('CHANCERY_TIER2',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE', 'CITY_HAS_BUILDING_HD_REGIONAL_COUNCIL_CENTER_REQUIREMENTS');
+    ('REGIONAL_COUNCIL_CENTER_TIER3',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_ALL_YIELDS_CHANGE', 'CITY_HAS_BUILDING_HD_REGIONAL_COUNCIL_CENTER_REQUIREMENTS');
 insert or replace into ModifierArguments
-    (ModifierId,            Name,       Value)
+    (ModifierId,           					Name,       Value)
 values
-    ('CHANCERY_TIER2',      'Amount',   2);
+    ('REGIONAL_COUNCIL_CENTER_TIER3',      'Amount',   2);
 
 ----------------------------------------------------------------------------------------------------
 -- Ethiopia citystate bonus for diplomacy buildings

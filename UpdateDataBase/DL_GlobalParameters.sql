@@ -13,7 +13,7 @@ update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPL
 update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 
 -- Map
-update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
+-- update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
 update GlobalParameters set Value = 3 where Name = 'STRATEGIC_RESOURCE_FERTILITY_STARTING_ERA_RANGE';
 
 -- the distance to netural wonders
