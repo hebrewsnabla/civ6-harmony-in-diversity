@@ -113,10 +113,10 @@ values
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",             "Archimedes"),
     ("LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                         "[ICON_TechBoosted] Eurekas provide 1% more progress."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                "Li Bing"),
-    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Can build Dam districts with Mathematics researched. +25% construction speed towards the Dam districts. Tiles next to a River yield +1 [ICON_PRODUCTION] Production for each Dam district in this City."),--Dams receive a [ICON_PRODUCTION] Production standard adjacency from districts
+    ("LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                  "Can build Dam districts with Mathematics researched. +25% construction speed towards the Dam districts. Tiles next to a River yield +1 [ICON_PRODUCTION] Production for each Dam district in this City."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                 "Ma Jun"),
-    ("LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",           "Standard adjacency bonus for Industrial Zones if next to a river."),
-    ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery. If it is already boosted, complete the tech instead."),
+    ("LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",                  "Instantly builds a Workshop in this district. Workshop provide +1 [ICON_PRODUCTION] Production."),
+    ("LOC_JNR_GREATPERSON_TECH_MACHINERY",                          "Triggers [ICON_TechBoosted] Eureka for Machinery."),
     ("LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                       "Grants 55 [ICON_Production] Production (on Standard Speed) towards wonder construction, doubled if the wonder is from the Ancient or Classical Era."),
     ("LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",   "Martine de Bertereau"),
     -- history
@@ -136,10 +136,10 @@ values
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",                  "阿基米德"),
     ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                              "[ICON_TechBoosted] 尤里卡提供的科技值额外+1%。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                     "李冰"),
-    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%，堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%。，堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                      "马钧"),
-    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_INDUSTRY_ZONE_RIVER_ADJACENCY",                "工业区若沿河可获得一份标准相邻加成。"),
-    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_TECH_MACHINERY",                               "为机械科技启动 [ICON_TechBoosted] 尤里卡。 若已被触发，则完成该科技。"),
+    ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",                       "立即在该区域建造1座工作坊。工作坊+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_TECH_MACHINERY",                               "为机械科技启动 [ICON_TechBoosted] 尤里卡。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                            "建造奇观时提供55点 [ICON_Production] 生产力，对于远古和古典时代的奇观加倍。"),
     -- ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE_JNR_UC",                         "此城所有与淡水源、水渠、堤坝以及运河相邻的单元格+1 [ICON_Production] 生产力。"), --JNR IZ EX
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",        "玛蒂娜·德·贝尔特罗"),
