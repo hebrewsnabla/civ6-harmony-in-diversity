@@ -304,7 +304,7 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
     -- Add Regional Effect
 	-- Wonder Regional Effect
     local range = building.RegionalRange;
-    if range ~= 0 and range < 10000 then
+    if building.IsWonder and range ~= 0 then
         table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE", range)); 
     end
 	-- Building Regional Effect
@@ -315,8 +315,31 @@ ToolTipHelper.GetBuildingToolTip = function(buildingHash, playerId, city)
 			break;
 		end
 	end
-    if range ~= 0 and range < 10000 then
-        table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE_MODIFIER", range)); 
+    if range ~= 0 then
+        table.insert(toolTipLines, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE_MODIFIER", range));
+		for row in GameInfo.HD_BuildingRegionalYields() do
+			if row.BuildingType == building.BuildingType then
+				local line = "";
+				if row.YieldType == 'AMENITY' then
+					local tooltip;
+					if row.RequiresPower then
+						tooltip = "LOC_TYPE_TRAIT_AMENITY_ENTERTAINMENT_POWER_ENHANCEMENT";
+					else
+						tooltip = "LOC_TYPE_TRAIT_AMENITY_ENTERTAINMENT";
+					end
+					table.insert(toolTipLines, "[ICON_Bullet] " .. Locale.Lookup(tooltip, row.YieldChange));
+				else
+					local yield = GameInfo.Yields[row.YieldType];
+					local tooltip;
+					if row.RequiresPower then
+						tooltip = "LOC_TYPE_TRAIT_YIELD_POWER_ENHANCEMENT";
+					else
+						tooltip = "LOC_TYPE_TRAIT_YIELD";
+					end
+					table.insert(toolTipLines, "[ICON_Bullet] " .. Locale.Lookup(tooltip, row.YieldChange, yield.IconString, yield.Name));
+				end
+			end
+		end
     end
     -------------------------------------------------------------
     

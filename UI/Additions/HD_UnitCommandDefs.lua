@@ -232,7 +232,8 @@ function m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.CanUse(pUnit : object)
 	if pUnit == nil then
 		return false;
 	end
-	return GameInfo.Units[pUnit:GetType()].FormationClass == "FORMATION_CLASS_CIVILIAN";
+	local unitInfo = GameInfo.Units[pUnit:GetType()];
+	return (unitInfo.FormationClass == "FORMATION_CLASS_CIVILIAN") and (unitInfo.ReligiousStrength == 0);
 end
 
 local KOTOKU_IN_INDEX = GameInfo.Buildings['BUILDING_KOTOKU_IN'].Index;

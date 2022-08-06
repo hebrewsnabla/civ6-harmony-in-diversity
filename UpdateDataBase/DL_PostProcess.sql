@@ -258,7 +258,9 @@ select
 	BuildingType,	RegionalRange
 from Buildings where RegionalRange > 0 and BuildingType in (select BuildingType from HD_BuildingTiers);
 -- Remove Regional Range from original database
-update Buildings set RegionalRange = 0 where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+update Buildings set RegionalRange = 0 where
+	BuildingType in (select BuildingType from HD_BuildingRegionalRange) and
+	BuildingType not in (select BuildingType from Buildings_XP2 where ResourceTypeConvertedToPower is not null);
 -- Record regional yields in HD_BuildingRegionalYields
 create table if not exists HD_BuildingRegionalYields (
 	BuildingType text not null,
@@ -273,25 +275,31 @@ insert or replace into HD_BuildingRegionalYields
 	(BuildingType,	YieldType,	YieldChange)
 select
 	BuildingType,	YieldType,	YieldChange
-from Building_YieldChanges where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+from Building_YieldChanges where YieldChange > 0 and BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+delete from Building_YieldChanges where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
 -- Building_YieldChangesBonusWithPower
 insert or replace into HD_BuildingRegionalYields
 	(BuildingType,	YieldType,	YieldChange,	RequiresPower)
 select
 	BuildingType,	YieldType,	YieldChange,	1
-from Building_YieldChangesBonusWithPower where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+from Building_YieldChangesBonusWithPower where YieldChange > 0 and BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+delete from Building_YieldChangesBonusWithPower where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
 -- Amenity without power
 insert or replace into HD_BuildingRegionalYields
 	(BuildingType,	YieldType,	YieldChange)
 select
 	BuildingType,	'AMENITY',	Entertainment
 from Buildings where Entertainment > 0 and BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+update Buildings set Entertainment = 0 where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
 -- Amenity with power
 insert or replace into HD_BuildingRegionalYields
 	(BuildingType,	YieldType,	YieldChange,					RequiresPower)
 select
 	BuildingType,	'AMENITY',	EntertainmentBonusWithPower,	1
-from Buildings_XP2 where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+from Buildings_XP2 where EntertainmentBonusWithPower > 0 and BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+update Buildings_XP2 set EntertainmentBonusWithPower = 0 where BuildingType in (select BuildingType from HD_BuildingRegionalRange);
+-- Remove Coal Power Plant
+delete from HD_BuildingRegionalRange where BuildingType not in (select BuildingType from HD_BuildingRegionalYields);
 -- Name Modifiers
 update HD_BuildingRegionalYields set ModifierId = BuildingType || '_RIGIONAL_' || YieldType;
 update HD_BuildingRegionalYields set ModifierId = ModifierId || '_WITH_POWER' where RequiresPower;
@@ -425,32 +433,6 @@ create temporary table if not exists TraitAttachedModifiers (
 	ModifierId text not null,
 	primary key (TraitType, ModifierId)
 );
--- Basic building yield
-insert or replace into TraitAttachedModifiers
-	(TraitType,						ModifierId)
-select
-	'MINOR_CIV_MEXICO_CITY_TRAIT',	ModifierId || '_MEXICO_BUILDING'
-from HD_BuildingRegionalYields;
-insert or replace into Modifiers
-	(ModifierId,							ModifierType)
-select
-	ModifierId || '_MEXICO_BUILDING',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
-from HD_BuildingRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-select
-	ModifierId || '_MEXICO_BUILDING',		'BuildingType',	BuildingType
-from HD_BuildingRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-select
-	ModifierId || '_MEXICO_BUILDING',		'YieldType',	YieldType
-from HD_BuildingRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,							Name,			Value)
-select
-	ModifierId || '_MEXICO_BUILDING',		'Amount',		max(YieldChange / 2, 1)
-from HD_BuildingRegionalYields;
 -- Regional Modifiers
 insert or replace into TraitAttachedModifiers
 	(TraitType,						ModifierId)
@@ -561,37 +543,6 @@ update HD_IndustialRegionalYields set ModifierId = Owner || '_' || BuildingType 
 update HD_IndustialRegionalYields set RegionalModifierId = ModifierId || '_REGIONAL';
 update HD_IndustialRegionalYields set MagnusModifierId = ModifierId || '_MAGNUS';
 update HD_IndustialRegionalYields set MagnusAttachModifierId = MagnusModifierId || '_ATTACH';
--- Basic building yield
-insert or replace into TraitModifiers
-	(TraitType,										ModifierId)
-select
-	'TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		ModifierId
-from HD_IndustialRegionalYields where Owner = 'ENGLAND';
-insert or replace into GreatPersonIndividualActionModifiers
-	(GreatPersonIndividualType,						ModifierId)
-select
-	'GREAT_PERSON_INDIVIDUAL_JAMES_WATT',			ModifierId
-from HD_IndustialRegionalYields where Owner = 'WATT';
-insert or replace into Modifiers
-	(ModifierId,	ModifierType)
-select
-	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
-from HD_IndustialRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
-select
-	ModifierId,		'BuildingType',	BuildingType
-from HD_IndustialRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
-select
-	ModifierId,		'YieldType',	YieldType
-from HD_IndustialRegionalYields;
-insert or replace into ModifierArguments
-	(ModifierId,	Name,			Value)
-select
-	ModifierId,		'Amount',		YieldChange
-from HD_IndustialRegionalYields;
 -- Regional Modifiers
 insert or replace into TraitModifiers
 	(TraitType,										ModifierId)
