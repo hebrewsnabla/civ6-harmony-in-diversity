@@ -22,3 +22,9 @@ update ConfigEnabledUniqueUnits set Enabled = 0 where Type = 'UNIT_SPANISH_JINET
 
 -- delete from UnitsToDelete;
 insert or replace into UnitsToDelete values ('UNIT_GERMAN_UBOAT');
+
+-- Civilizations Diversity Support
+update ConfigEnabledUniqueUnits set Enabled = 1	where Type = 'UNIT_EGYPTIAN_WAR_GALLEY'
+	and exists (select CivilizationType from Players where CivilizationType = 'CIVILIZATION_MER_HITTITES');
+update ConfigEnabledUniqueUnits set OwnerType = 'CIVILIZATION_MER_HITTITES' where Type = 'UNIT_EGYPTIAN_KHOPESH'
+	and exists (select CivilizationType from Players where CivilizationType = 'CIVILIZATION_MER_HITTITES');

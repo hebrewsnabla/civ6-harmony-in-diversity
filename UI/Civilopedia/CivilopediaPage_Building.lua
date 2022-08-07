@@ -218,6 +218,40 @@ PageLayouts["Building" ] = function(page)
     if(range ~= 0) then
         table.insert(stats, Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE", range));
     end
+	-- Building Regional Effect
+    range = 0;
+	for row in GameInfo.HD_BuildingRegionalRange() do
+		if row.BuildingType == building.BuildingType then
+			range = row.RegionalRange;
+			break;
+		end
+	end
+    if range ~= 0 then
+        table.insert(stats, "[NEWLINE]" .. Locale.Lookup("LOC_TOOLTIP_REGIONAL_EFFECT_RANGE_MODIFIER", range));
+		for row in GameInfo.HD_BuildingRegionalYields() do
+			if row.BuildingType == building.BuildingType then
+				local line = "";
+				if row.YieldType == 'AMENITY' then
+					local tooltip;
+					if row.RequiresPower then
+						tooltip = "LOC_TYPE_TRAIT_AMENITY_ENTERTAINMENT_POWER_ENHANCEMENT";
+					else
+						tooltip = "LOC_TYPE_TRAIT_AMENITY_ENTERTAINMENT";
+					end
+					table.insert(stats, "[ICON_Bullet] " .. Locale.Lookup(tooltip, row.YieldChange));
+				else
+					local yield = GameInfo.Yields[row.YieldType];
+					local tooltip;
+					if row.RequiresPower then
+						tooltip = "LOC_TYPE_TRAIT_YIELD_POWER_ENHANCEMENT";
+					else
+						tooltip = "LOC_TYPE_TRAIT_YIELD";
+					end
+					table.insert(stats, "[ICON_Bullet] " .. Locale.Lookup(tooltip, row.YieldChange, yield.IconString, yield.Name));
+				end
+			end
+		end
+    end
     -- ================================================================================
     -- End DL specific logic.
     -- ================================================================================

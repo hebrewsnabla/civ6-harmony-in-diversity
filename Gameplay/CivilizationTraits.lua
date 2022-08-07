@@ -1,19 +1,26 @@
 ----CivilizationandLeaderHasTrait
+ExposedMembers.DLHD = ExposedMembers.DLHD or {};
+ExposedMembers.DLHD.Utils = ExposedMembers.DLHD.Utils or {};
+Utils = ExposedMembers.DLHD.Utils;
 function CivilizationHasTrait(sCiv, sTrait)
 	for tRow in GameInfo.CivilizationTraits() do
 		if (tRow.CivilizationType == sCiv and tRow.TraitType == sTrait) then
-			return true
+			return true;
 		end
 	end
-	return false
+	return false;
 end
+Utils.CivilizationHasTrait = CivilizationHasTrait;
 
 function LeaderHasTrait(sLeader, sTrait)
 	for tRow in GameInfo.LeaderTraits() do
-		if (tRow.LeaderType == sLeader and tRow.TraitType == sTrait) then return true end
+		if (tRow.LeaderType == sLeader and tRow.TraitType == sTrait) then return
+			true;
+		end
 	end
-	return false
+	return false;
 end
+Utils.LeaderHasTrait = LeaderHasTrait;
 
 -- 老秦
 function ChinaBuilderScience(playerID, unitID, newCharges, oldCharges)
