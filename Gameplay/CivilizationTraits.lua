@@ -1,4 +1,6 @@
 ----CivilizationandLeaderHasTrait
+ExposedMembers.DLHD = ExposedMembers.DLHD or {};
+ExposedMembers.DLHD.Utils = ExposedMembers.DLHD.Utils or {};
 Utils = ExposedMembers.DLHD.Utils;
 function CivilizationHasTrait(sCiv, sTrait)
 	for tRow in GameInfo.CivilizationTraits() do
