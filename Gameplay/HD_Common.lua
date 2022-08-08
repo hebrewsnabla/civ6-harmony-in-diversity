@@ -1,7 +1,9 @@
 -- =======================================================================
 -- Common helper functions to be used by other files.
 -- =======================================================================
-Utils = {};
+ExposedMembers.DLHD = ExposedMembers.DLHD or {};
+ExposedMembers.DLHD.Utils = ExposedMembers.DLHD.Utils or {};
+Utils = ExposedMembers.DLHD.Utils;
 
 Utils.HasBuildingWithinCountry = function( playerID, buildingID )
     local player = Players[playerID]
@@ -181,6 +183,9 @@ end
 
 local PRESERVE_NOT_ON_MAP_KEY = 'HD_PRESERVE_NOT_ON_MAP';
 Utils.GetCollectionProgress = function (playerId, buildingId)
+	if GameInfo.HD_PreserveCollectionProgress == nil then
+		return nil;
+	end
 	local hasCollectable = false;
 	local collectable = {};
 	local notInMapModifiers = {};
@@ -236,6 +241,3 @@ Utils.GetCollectionProgress = function (playerId, buildingId)
 	end
 	return collected, uncollected;
 end
-
-ExposedMembers.DLHD = ExposedMembers.DLHD or {};
-ExposedMembers.DLHD.Utils = Utils;
