@@ -1,5 +1,10 @@
 local FREIGHT_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_FREIGHT'].Index;
+local FORGING_IRON_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_FORGING_IRON'].Index;
 local JIMI_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_JIMI'].Index;
+local EMPORIUM_INDEX;
+if GameInfo.Buildings['BUILDING_JNR_WAYSTATION'] ~= nil then
+	EMPORIUM_INDEX = GameInfo.Buildings['BUILDING_JNR_WAYSTATION'].Index;
+end
 function GetResourceCost (playerId)
 	local player = Players[playerId];
 	local costs = {};
@@ -7,13 +12,25 @@ function GetResourceCost (playerId)
 		if row.ResourceClassType == 'RESOURCECLASS_STRATEGIC' then
 			local sum = 0;
 			for _, city in player:GetCities():Members() do
-				if (row.ResourceType == 'RESOURCE_HORSES' or row.ResourceType == 'RESOURCE_IRON') and (city:GetBuildings():HasBuilding(JIMI_INDEX)) then
+				local buildings = city:GetBuildings();
+				if (row.ResourceType == 'RESOURCE_HORSES' or row.ResourceType == 'RESOURCE_IRON') and (buildings:HasBuilding(JIMI_INDEX)) then
 					sum = sum + 1;
 				end
-				if (row.ResourceType == 'RESOURCE_HORSES') and (city:GetBuildings():HasBuilding(FREIGHT_INDEX)) then
-					--local freight = ExposedMembers.DLHD.Utils.GetFreightAmount(playerId, city:GetID()) or 0;
-					local freight = 3;
-					sum = sum + freight;
+				if (row.ResourceType == 'RESOURCE_HORSES') and (buildings:HasBuilding(FREIGHT_INDEX)) then
+					local freight = ExposedMembers.DLHD.Utils.GetFreightAmount(playerId, city:GetID()) or 0;
+					if (EMPORIUM_INDEX ~= nil) and (buildings:HasBuilding('EMPORIUM_INDEX')) then
+						sum = sum + freight * 3;
+					else
+						sum = sum + freight * 2;
+					end
+				end
+				if (row.ResourceType == 'RESOURCE_IRON') and (buildings:HasBuilding(FORGING_IRON_INDEX)) then
+					for row in GameInfo.HD_BuildingRegionalRange() do
+						local info = GameInfo.Buildings[row.BuildingType];
+						if (buildings:HasBuilding(info.Index)) and (info.PrereqDistrict == 'DISTRICT_INDUSTRIAL_ZONE' or info.PrereqDistrict == 'DISTRICT_COMMERCIAL_HUB') then
+							sum = sum + row.RegionalRange;
+						end
+					end
 				end
 			end
 			table.insert(costs, {
@@ -36,19 +53,25 @@ function RefreshResourceCost (playerId, doReduce)
 	local cost = GetResourceCost(playerId);
 	for _, v in ipairs(cost) do
 		local amount = player:GetResources():GetResourceAmount(v.id);
+		if amount >= v.cost then
+			player:SetProperty(ENOUGH_RESOURCE_KEY .. v.type, 1);
+		else
+			player:SetProperty(ENOUGH_RESOURCE_KEY .. v.type, 0);
+		end
 		for _, city in player:GetCities():Members() do
 			local location = city:GetLocation();
 			local cityPlot = Map.GetPlot(location.x, location.y);
 			if amount >= v.cost then
-				if doReduce then
-					player:GetResources():ChangeResourceAmount(v.id, -v.cost);
-				end
 				cityPlot:SetProperty(ENOUGH_RESOURCE_KEY .. v.type, 1);
 			else
 				cityPlot:SetProperty(ENOUGH_RESOURCE_KEY .. v.type, 0);
 			end
 		end
+		if doReduce and (amount >= v.cost) and (v.cost > 0) then
+			player:GetResources():ChangeResourceAmount(v.id, -v.cost);
+		end
 	end
+	RefreshRegionalYield();
 end
 
 local sync = false;

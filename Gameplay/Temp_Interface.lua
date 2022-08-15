@@ -298,3 +298,19 @@ Utils.GetCulturalProgress = function (playerId, civicId)
 		return player:GetCulture():GetCulturalProgress(civicId);
 	end
 end
+
+Utils.GetFreightAmount = function (playerId, cityId)
+	local amount = 0;
+	local city = CityManager.GetCity(playerId, cityId);
+	for _, route in ipairs(city:GetTrade():GetOutgoingRoutes()) do
+		if route.DestinationCityPlayer ~= route.OriginCityPlayer then
+			amount = amount + 1;
+		end
+	end
+	for _, route in ipairs(city:GetTrade():GetIncomingRoutes()) do
+		if route.DestinationCityPlayer == route.OriginCityPlayer then
+			amount = amount + 1;
+		end
+	end
+	return amount;
+end
