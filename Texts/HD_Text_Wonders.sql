@@ -94,7 +94,7 @@ values
     ("BUILDING_MEENAKSHI_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",   "This Industrial Zone is next to a Holy Site, Meenakshi Temple gives it 1 extra citizen slot, and citizens working in this district provide +1 [Icon_Culture] Culture and +1 [Icon_Faith] Faith."),
     ("BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_NAME",             "[COLOR:ResFoodLabelCS]Specialists yield bonus[ENDCOLOR]"),
     ("BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_DESCRIPTION",      "This Neighboorhood is next to a Holy Site, Meenakshi Temple gives it 1 extra citizen slot, and citizens working in this district provide +1 [Icon_Culture] Culture and +1 [Icon_Faith] Faith."),
-    ("LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4 Diplomatic Victory point. Coastal Cities within 9 tiles receive +4 [ICON_CULTURE] Culture and +4 [ICON_AMENITIES] Amenities. [NEWLINE][NEWLINE]Must be built on a Coast tile, adjacent to land and a Harbor district.");--+1 influence point, for every 100 military strength points you have.
+    ("LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4 Diplomatic Victory point. Coastal Cities within 9 tiles receive +4 [ICON_CULTURE] Culture and +4 [ICON_AMENITIES] Amenities. Grant a Seaport in cities currently having a Harbor.[NEWLINE][NEWLINE]Must be built on a Coast tile, adjacent to land and a Harbor district.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -193,7 +193,7 @@ values
     ("zh_Hans_CN",  "BUILDING_MEENAKSHI_DUMMY_DISTRICT_INDUSTRIAL_ZONE_DESCRIPTION",   "该工业区相邻圣地，米纳克希神庙提供+1专家槽位，且专家额外+1 [Icon_Culture] 文化值，+1 [Icon_Faith] 信仰值。"),
     ("zh_Hans_CN",  "BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_NAME",             "[COLOR:ResFoodLabelCS]专家产出已提升[ENDCOLOR]"),
     ("zh_Hans_CN",  "BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_DESCRIPTION",      "该社区相邻圣地，米纳克希神庙提供+1专家槽位，且专家额外+1 [Icon_Culture] 文化值，+1 [Icon_Faith] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4外交胜利点数。为9个单元格以内的所有海岸城市市中心提供：+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得当前可在该区域中建造的、所需 [ICON_PRODUCTION] 生产力最低的建筑。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。");--每拥有100点军评，获得1点影响力。
+    ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4外交胜利点数。为9个单元格以内的所有海岸城市提供+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得海港。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。");--每拥有100点军评，获得1点影响力。
 
 -- National Wonders
 --------------------------------------------------------------------------------

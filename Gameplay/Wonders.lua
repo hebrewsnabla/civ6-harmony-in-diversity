@@ -73,6 +73,7 @@ GameEvents.BuildingConstructed.Add(PotalaPalaceIncreaseFaithAmount)
 --Events.WonderCompleted.Add(TajWonderGold);
 
 -- 自由女神像: 建成时送每个港口当前可以建造的最便宜建筑 by xiaoxiao
+/*
 function BuildingIsCheaper (a, b)
     if a.BuildingType == 'BUILDING_LIGHTHOUSE' then return true end
     if b.BuildingType == 'BUILDING_LIGHTHOUSE' then return false end
@@ -153,7 +154,7 @@ function StatueLibertyGrantBuilding (playerID, cityID, buildingID, plotID, bOrig
 end
 
 GameEvents.BuildingConstructed.Add(StatueLibertyGrantBuilding)
-
+*/
 -- 郑王庙: 招募伟人返还原始点数20%的信仰，每招募一名伟人+2影响力。
 local WAT_ARUN = GameInfo.Buildings['BUILDING_SUK_WAT_ARUN'];
 function UnitGreatPersonCreatedWatArun(playerId, unitId, greatPersonClassId, greatPersonIndividualId)
