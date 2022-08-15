@@ -18,7 +18,7 @@ function GetResourceCost (playerId)
 				end
 				if (row.ResourceType == 'RESOURCE_HORSES') and (buildings:HasBuilding(FREIGHT_INDEX)) then
 					local freight = ExposedMembers.DLHD.Utils.GetFreightAmount(playerId, city:GetID()) or 0;
-					if (EMPORIUM_INDEX ~= nil) and (buildings:HasBuilding('EMPORIUM_INDEX')) then
+					if (EMPORIUM_INDEX ~= nil) and (buildings:HasBuilding(EMPORIUM_INDEX)) then
 						sum = sum + freight * 3;
 					else
 						sum = sum + freight * 2;
