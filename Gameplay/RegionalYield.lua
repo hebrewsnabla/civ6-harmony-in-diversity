@@ -113,12 +113,8 @@ function Initialize ()
 	Events.CityWorkerChanged.Add(function (playerId, cityId, x, y)
 		RefreshRegionalYieldIfPending(playerId);
 	end);
-	GameEvents.PlayerTurnStartComplete.Add(function (playerId, cityId, x, y)
-		RefreshRegionalYield(playerId);
-	end);
-	GameEvents.PlayerTurnStarted.Add(function (playerId, cityId, x, y)
-		RefreshRegionalYield(playerId);
-	end);
+	GameEvents.PlayerTurnStartComplete.Add(RefreshRegionalYield);
+	GameEvents.PlayerTurnStarted.Add(RefreshRegionalYield);
 	Events.BuildingAddedToMap.Add(function (x, y, buildingId, playerId, misc2, misc3)
 		pendingRefresh[playerId] = 1;
 	end);

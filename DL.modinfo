@@ -1333,6 +1333,7 @@
       <File>Gameplay/GreatPersons.lua</File>
       <File>Gameplay/Misc.lua</File>
       <File>Gameplay/Religions.lua</File>
+      <File>Gameplay/ResourceCost.lua</File>
       <File>Gameplay/Temp_Gameplay.lua</File>
       <File>Gameplay/Wonders.lua</File>
       <File>Gameplay/UnitAbilities.lua</File>
@@ -1644,6 +1645,7 @@
     <File>Gameplay/GreatPersons.lua</File>
     <File>Gameplay/Misc.lua</File>
     <File>Gameplay/Religions.lua</File>
+	<File>Gameplay/ResourceCost.lua</File>
     <File>Gameplay/Temp_Gameplay.lua</File>
     <File>Gameplay/Wonders.lua</File>
     <File>Gameplay/UnitAbilities.lua</File>
