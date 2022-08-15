@@ -901,3 +901,5 @@ insert or ignore into Modifiers
 select
 	NotInMapModifierId,			'MODIFIER_DO_NOTHING',	NotInMapRequirementSetId
 from HD_PreserveCollectionProgress where NotInMapRequirementSetId is not null;
+
+update Buildings set InternalOnly = 1 where BuildingType = 'BUILDING_HD_RESOURCE_EPO' or BuildingType = 'BUILDING_HD_SPECIES_EPO';

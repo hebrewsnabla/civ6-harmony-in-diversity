@@ -187,6 +187,7 @@ update Improvements set PrereqTech = 'TECH_POTTERY'					where ImprovementType = 
 update Improvements set PrereqTech = 'TECH_MINING'					where ImprovementType = 'IMPROVEMENT_LUMBER_MILL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING'	where ImprovementType = 'IMPROVEMENT_FORT';
 update Improvements set PrereqTech = 'TECH_BIOLOGY_HD'				where ImprovementType = 'IMPROVEMENT_OIL_WELL';
+update Improvements set PrereqTech = 'TECH_SYNTHETIC_MATERIALS'		where ImprovementType = 'IMPROVEMENT_OFFSHORE_WIND_FARM';
 
 -- Valid Features
 insert or replace into Improvement_ValidFeatures
@@ -478,7 +479,6 @@ update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKE
 update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
 
 -- Ziggurat (Sumeria)
-update ModifierArguments set Value = 'YIELD_FAITH' where ModifierId = 'ZIGGURAT_RIVERADJACENCY_FOOD' and Name = 'YieldType';
 insert or replace into ImprovementModifiers
 	(ImprovementType,						ModifierID)
 values
@@ -490,7 +490,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
-	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('ZIGGURAT_RIVERADJACENCY_FOOD',		'YieldType',	'YIELD_FAITH'),
 	('ZIGGURAT_RIVERADJACENCY_FOOD',		'Amount',		1);
 insert or replace into ImprovementModifiers
 	(ImprovementType,			ModifierID)

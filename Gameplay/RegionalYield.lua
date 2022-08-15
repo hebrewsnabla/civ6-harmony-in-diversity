@@ -7,6 +7,8 @@ local CITY_CENTER_INDEX = GameInfo.Districts['DISTRICT_CITY_CENTER'].Index;
 local NEIGHBORHOOD_INDEX = GameInfo.Districts['DISTRICT_NEIGHBORHOOD'].Index;
 local MBANZA_INDEX = GameInfo.Districts['DISTRICT_MBANZA'].Index;
 local JAMES_WATT_ACTIVATION_TIME_KEY = 'JAMES_WATT_ACTIVATION_TIME';
+local FORGING_IRON_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_FORGING_IRON'].Index;
+local ENOUGH_IRON_KEY = 'PLAYER_HAS_ENOUGH_RESOURCE_IRON';
 function RefreshRegionalYield (playerId)
 	local player = Players[playerId];
 
@@ -67,7 +69,12 @@ function RefreshRegionalYield (playerId)
 			if city:GetBuildings():HasBuilding(index) and (not city:GetBuildings():IsPillaged(index)) then
 				local location = Map.GetPlotByIndex(Utils.GetBuildingLocation(playerId, city:GetID(), index));
 				local regionalRange = info.regionalRange;
-				-- todo: forging iron
+				
+				-- Forging iron
+				if (info.prereqDistrict == 'DISTRICT_INDUSTRIAL_ZONE' or info.prereqDistrict == 'DISTRICT_COMMERCIAL_HUB') and (city:GetBuildings():HasBuilding(FORGING_IRON_INDEX)) and (player:GetProperty(ENOUGH_IRON_KEY) == 1) then
+					regionalRange = regionalRange + 2;
+				end
+
 				for _, targetCity in player:GetCities():Members() do
 					local inRange = false;
 					for _, district in targetCity:GetDistricts():Members() do
@@ -110,15 +117,12 @@ function RefreshRegionalYieldIfPending (playerId)
 	end
 end
 function Initialize ()
+	Utils.RefreshRegionalYield = RefreshRegionalYield;
 	Events.CityWorkerChanged.Add(function (playerId, cityId, x, y)
 		RefreshRegionalYieldIfPending(playerId);
 	end);
-	GameEvents.PlayerTurnStartComplete.Add(function (playerId, cityId, x, y)
-		RefreshRegionalYield(playerId);
-	end);
-	GameEvents.PlayerTurnStarted.Add(function (playerId, cityId, x, y)
-		RefreshRegionalYield(playerId);
-	end);
+	GameEvents.PlayerTurnStartComplete.Add(RefreshRegionalYield);
+	GameEvents.PlayerTurnStarted.Add(RefreshRegionalYield);
 	Events.BuildingAddedToMap.Add(function (x, y, buildingId, playerId, misc2, misc3)
 		pendingRefresh[playerId] = 1;
 	end);

@@ -77,12 +77,12 @@ insert or replace into CommemorationModifiers
 	(CommemorationType,					ModifierId)
 values
 	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_FAITH'),
-	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_CHHARGE');
+	('COMMEMORATION_RELIGIOUS',			'COMMEMORATION_RELIGIOUS_CHARGE');
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,											OwnerRequirementSetId,		SubjectRequirementSetId)
 values
 	('COMMEMORATION_RELIGIOUS_FAITH',			'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD',		'PLAYER_HAS_GOLDEN_AGE',	null),
-	('COMMEMORATION_RELIGIOUS_CHHARGE',			'MODIFIER_PLAYER_UNITS_RELIGIOUS_SPREADS',				'PLAYER_HAS_GOLDEN_AGE',	'UNIT_IS_RELIGIOUS');
+	('COMMEMORATION_RELIGIOUS_CHARGE',			'MODIFIER_PLAYER_UNITS_RELIGIOUS_SPREADS',				'PLAYER_HAS_GOLDEN_AGE',	'UNIT_IS_RELIGIOUS');
 insert or replace into ModifierArguments
 	(ModifierId,								Name,					Value)
 values
@@ -90,7 +90,7 @@ values
 	('COMMEMORATION_RELIGIOUS_FAITH',			'PerXItems',			1),
 	('COMMEMORATION_RELIGIOUS_FAITH',			'YieldType',			'YIELD_FAITH'),
 	('COMMEMORATION_RELIGIOUS_FAITH',			'Amount',				6),
-	('COMMEMORATION_RELIGIOUS_CHHARGE',			'Amount',				2);
+	('COMMEMORATION_RELIGIOUS_CHARGE',			'Amount',				2);
 -- New Commemoration: Enlightened Despotism
 insert or replace into Types
 	(Type,								Kind)
