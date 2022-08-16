@@ -66,7 +66,7 @@ as (values
 	('DISTRICT_THANH',					'District_Production'),
 	('DISTRICT_OBSERVATORY',			'Luxury_Science'),
 	('DISTRICT_OBSERVATORY',			'Luxury_Science_Late'),
-	('DISTRICT_OBSERVATORY',			'Farm_Science'),
+	('DISTRICT_OBSERVATORY',			'Farm_Science_HD'),
 	('DISTRICT_OBSERVATORY',			'Farm_Science_Late'))
 insert or replace into District_Adjacencies
 	(DistrictType,	YieldChangeId)
@@ -224,7 +224,7 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Luxury_Science',			'LOC_DISTRICT_JNR_UC_Luxury_Science',   'YIELD_SCIENCE',    1,              1,              null,                   'RESOURCECLASS_LUXURY',		null,				'TECH_ASTRONOMY',	null,				null),
 	('Luxury_Science_Late',		'LOC_DISTRICT_JNR_UC_Luxury_Science',   'YIELD_SCIENCE',    2,              1,              null,                   'RESOURCECLASS_LUXURY',		'TECH_ASTRONOMY',	null,				null,				null),
-	('Farm_Science',			'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              2,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				null,				'CIVIC_FEUDALISM'),
+	('Farm_Science_HD',			'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              2,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				null,				'CIVIC_FEUDALISM'),
 	('Farm_Science_Late',		'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              1,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				'CIVIC_FEUDALISM',	null);
 -- Misc
 insert or replace into Adjacency_YieldChanges

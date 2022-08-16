@@ -372,6 +372,18 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="HD_HistoricalReligionsOff_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAME_HISTORICAL_RELIGIONS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>0</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="HD_HistoricalReligionsOn_XP2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+	  <ModInUse>2e6d1093-6689-4dd5-a47a-9539bc3f8a29</ModInUse>
+    </Criteria>
     <Criteria id="HD_TestingOption_XP2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1559,9 +1571,21 @@
       <File>Configs/Options/ForeverWar.sql</File>
     </UpdateDatabase>
     <ImportFiles id="RealStartLocation" criteria="HD_RealStartLocation_XP2">
-      <Properties><LoadOrder>20000</LoadOrder></Properties>
-      <File>Configs/Options/AssignStartingPlots.lua</File>
+		<Properties><LoadOrder>20000</LoadOrder></Properties>
+		<File>Configs/Options/AssignStartingPlots.lua</File>
     </ImportFiles>
+	<UpdateDatabase id="HistoricalReligionsOff" criteria="HD_HistoricalReligionsOff_XP2">
+	  <Properties><LoadOrder>-4</LoadOrder></Properties>
+	  <File>ModSupport/HistoricalReligions/Switch.sql</File>
+	</UpdateDatabase>
+	<UpdateIcons id="HistoricalReligionsOn" criteria="HD_HistoricalReligionsOn_XP2">
+	  <Properties><LoadOrder>20000</LoadOrder></Properties>
+	  <!--<File>ModSupport/HistoricalReligions/Icons.sql</File>-->
+	</UpdateIcons>
+	<UpdateText id="HistoricalReligionsOn" criteria="HD_HistoricalReligionsOn_XP2">
+	  <Properties><LoadOrder>20000</LoadOrder></Properties>
+	  <File>ModSupport/HistoricalReligions/Texts.sql</File>
+	</UpdateText>
     <UpdateDatabase id="TestingOption" criteria="HD_TestingOption_XP2">
       <Properties><LoadOrder>200000</LoadOrder></Properties>
       <File>Configs/Options/TestingOption.sql</File>
@@ -1656,6 +1680,7 @@
     <File>Gameplay/Temp_Interface.xml</File>
 	<File>Gameplay/RegionalYield.lua</File>
 	<File>Gameplay/RegionalYield.xml</File>
+	<File>UI/Replacement/HD_CivilopediaCityStateScreen.lua</File>
     <!-- UI Overwrites -->
     <File>UI/Civilopedia/CivilopediaPage_Building.lua</File>
     <File>UI/Civilopedia/CivilopediaPage_Unit.lua</File>
@@ -1703,6 +1728,9 @@
     <File>UI/Icons/HD_Icons_Units.xml</File>
     <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
     <!-- Mod Support -->
+	<File>ModSupport/HistoricalReligions/Switch.sql</File>
+	<File>ModSupport/HistoricalReligions/Icons.sql</File>
+	<File>ModSupport/HistoricalReligions/Texts.sql</File>
     <File>ModSupport/Worships/DL_Removes.sql</File>
     <File>ModSupport/Worships/DL_Adaptation.sql</File>
     <File>ModSupport/Worships/DL_Worships.sql</File>

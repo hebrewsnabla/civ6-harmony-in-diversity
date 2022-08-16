@@ -16,6 +16,8 @@ values
     ("LOC_GAME_FOREVER_WAR_DESCRIPTION",                    "The war will last forever once started."),
     ("LOC_GAME_REAL_START_LOCATIONS",                       "Better Starting Location"),
     ("LOC_GAME_REAL_START_LOCATIONS_DESCRIPTION",           "Gives a starting location that respects their civilization's start biases. Copied from Zegangani's mod Origin - Real Start Locations."),
+    ("LOC_GAME_HISTORICAL_RELIGIONS",                       "Historical Religions"),
+    ("LOC_GAME_HISTORICAL_RELIGIONS_DESCRIPTION",           "Adds additional historical religions. Requires Tomatekh's Historical Religions mod to function."),
     ("LOC_GAME_TESTING_OPTION",                             "[TEST ONLY] All free"),
     ("LOC_GAME_TESTING_OPTION_DESCRIPTION",                 "Testing only, all techs, civics, districts, buildings and units will cost only 1."),
     -- GameModes
@@ -66,6 +68,8 @@ values
     ("zh_Hans_CN",  "LOC_GAME_FOREVER_WAR_DESCRIPTION",                     "战争一旦开始就无法结束。"),
     ("zh_Hans_CN",  "LOC_GAME_REAL_START_LOCATIONS",                        "关联优先的出生点分配"),
     ("zh_Hans_CN",  "LOC_GAME_REAL_START_LOCATIONS_DESCRIPTION",            "以文明的关联优先的出生点分配方式。复制自Zegangani的模组Origin - Real Start Locations。"),
+    ("zh_Hans_CN",  "LOC_GAME_HISTORICAL_RELIGIONS",                        "历史上的宗教"),
+    ("zh_Hans_CN",  "LOC_GAME_HISTORICAL_RELIGIONS_DESCRIPTION",            "添加了更多历史上的宗教。需要Tomatekh的模组Tomatekh's Historical Religions以生效。"),
     ("zh_Hans_CN",  "LOC_GAME_TESTING_OPTION",                              "[测试用]全免费"),
     ("zh_Hans_CN",  "LOC_GAME_TESTING_OPTION_DESCRIPTION",                  "用于测试的选项，所有的科技、市政、区域、建筑和单位均为最低花费。"),
     -- GameModes
