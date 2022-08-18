@@ -82,6 +82,7 @@ values
 	("LOC_DISTRICT_HANSA_GOLD",							"+{1_num} [ICON_GOLD] Gold from the adjacent Hansa {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_CANAL_GOLD",							"+{1_num} [ICON_GOLD] Gold from the adjacent Canal {1_Num : plural 3?district; other?districts;}."),
 	("LOC_DISTRICT_CITY_CENTER_CULTURE",				"+{1_num} [ICON_CULTURE] Culture from the adjacent City Center {1_Num : plural 2?district; other?districts;}."),
+	("LOC_DISTRICT_CITY_CENTER_SCIENCE",				"+{1_num} [ICON_SCIENCE] Science from the adjacent City Center {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_AERODROME_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent Aerodrome {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_NEIGHBORHOOD_FAITH",					"+{1_num} [ICON_FAITH] Faith from the adjacent Neighborhood {1_Num : plural 2?district; other?districts;}."),
 	("LOC_DISTRICT_MBANZA_FAITH",						"+{1_num} [ICON_FAITH] Faith from the adjacent Mbanza {1_Num : plural 2?district; other?districts;}."),
@@ -127,6 +128,7 @@ values
 	("LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] Food."),
 	("LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] Gold."),
 	("LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] Production from the adjacent river."),
+	("LOC_DISTRICT_MARSH_SCIENCE",						"+{1_num} [ICON_SCIENCE] Science from the adjacent Marsh {1_Num : plural 1?tile; other?tiles;}."),
 	("LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Swamp {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_KELP_FAITH",									"+{1_num} [ICON_FAITH] Faith from the adjacent Kelp Forest {1_Num : plural 1?tile; other?tiles;}."),
 	-- plural replacement
@@ -142,6 +144,7 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_HANSA_GOLD",							"+{1_num} [ICON_GOLD] 金币来自相邻的商业同业工会。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_CANAL_GOLD",							"+{1_num} [ICON_GOLD] 金币来自相邻的运河。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_CITY_CENTER_CULTURE",					"+{1_num} [ICON_CULTURE] 文化值来自相邻的市中心。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_CITY_CENTER_SCIENCE",					"+{1_num} [ICON_SCIENCE] 科技值来自相邻的市中心。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_AERODROME_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的航空港。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_NEIGHBORHOOD_FAITH",					"+{1_num} [ICON_FAITH] 信仰值来自相邻的社区。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_MBANZA_FAITH",						"+{1_num} [ICON_FAITH] 信仰值来自相邻的姆班赞。"),
@@ -187,5 +190,6 @@ values
 	("zh_Hans_CN",	"LOC_DISTRICT_SELF_FOOD",							"+{1_num} [ICON_FOOD] 食物。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_SELF_GOLD",							"+{1_num} [ICON_GOLD] 金币。"),
 	("zh_Hans_CN",	"LOC_DISTRICT_RIVER_HANSA_PRODUCTION",				"+{1_num} [ICON_PRODUCTION] 生产力来自相邻的河流。"),
+	("zh_Hans_CN",	"LOC_DISTRICT_MARSH_SCIENCE",						"+{1_num} [ICON_SCIENCE] 科技值来自相邻的{LOC_FEATURE_MARSH_NAME}。"),
 	("zh_Hans_CN",	"LOC_SWAMP_FAITH",									"+{1_num} [ICON_FAITH] 信仰值来自相邻的木本沼泽。"),
 	("zh_Hans_CN",	"LOC_KELP_FAITH",									"+{1_num} [ICON_FAITH] 信仰值来自相邻的海藻森林。");

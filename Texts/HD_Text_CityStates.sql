@@ -379,6 +379,6 @@ values
     ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS",         "每座*+2 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS",       "每座*+3 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_SMALL_INFLUENCE_BONUS",             "每座*+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座*+4 [ICON_Gold] 市场。"),
+    ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_MEDIUM_INFLUENCE_BONUS",            "每座*+4 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGE_INFLUENCE_BONUS",             "每座*+6 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CSE_MARITIME_TRAIT_LARGEST_INFLUENCE_BONUS",           "每座*+8 [ICON_Gold] 金币。");

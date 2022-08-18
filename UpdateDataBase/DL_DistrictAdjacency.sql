@@ -41,6 +41,8 @@ as (values
 	('DISTRICT_ENCAMPMENT',				'Maori_Pa_Production'),
 	('DISTRICT_HOLY_SITE',				'Neighborhood_Faith'),
 	('DISTRICT_HOLY_SITE',				'Mbanza_Faith'),
+	('DISTRICT_CAMPUS',					'City_Center_Science'),
+	('DISTRICT_CAMPUS',					'Marsh_Science'),
 
 	('DISTRICT_BATH',					'Aqueduct_Self_Food'),
 	('DISTRICT_ROYAL_NAVY_DOCKYARD',	'Industrial_Zone_Gold'),
@@ -147,6 +149,7 @@ values
 	('Hansa_Gold',							'LOC_DISTRICT_HANSA_GOLD',						'YIELD_GOLD',		2,				'DISTRICT_HANSA'),
 	('Canal_Gold',							'LOC_DISTRICT_CANAL_GOLD',						'YIELD_GOLD',		3,				'DISTRICT_CANAL'),
 	('City_Center_Culture',					'LOC_DISTRICT_CITY_CENTER_CULTURE',				'YIELD_CULTURE',	2,				'DISTRICT_CITY_CENTER'),
+	('City_Center_Science',					'LOC_DISTRICT_CITY_CENTER_SCIENCE',				'YIELD_SCIENCE',	1,				'DISTRICT_CITY_CENTER'),
 	('Aerodrome_Production',				'LOC_DISTRICT_AERODROME_PRODUCTION',			'YIELD_PRODUCTION', 2,				'DISTRICT_AERODROME'),
 	('Neighborhood_Faith',					'LOC_DISTRICT_NEIGHBORHOOD_FAITH',				'YIELD_FAITH',		2,				'DISTRICT_NEIGHBORHOOD'),
 	('Mbanza_Faith',						'LOC_DISTRICT_MBANZA_FAITH',					'YIELD_FAITH',		2,				'DISTRICT_MBANZA'),
@@ -228,9 +231,10 @@ values
 	('Farm_Science_Late',		'LOC_DISTRICT_FARM_SCIENCE',            'YIELD_SCIENCE',    1,              1,              'IMPROVEMENT_FARM',     'NO_RESOURCECLASS',			null,				null,				'CIVIC_FEUDALISM',	null);
 -- Misc
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,								YieldType,				YieldChange,	AdjacentRiver)
+	(ID,									Description,								YieldType,				YieldChange,	AdjacentFeature,	AdjacentRiver)
 values
-	('River_Hansa_Production',				'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 		'YIELD_PRODUCTION', 	2,				1);
+	('River_Hansa_Production',				'LOC_DISTRICT_RIVER_HANSA_PRODUCTION', 		'YIELD_PRODUCTION', 	2,				null,				1),
+	('Marsh_Science',						'LOC_DISTRICT_MARSH_SCIENCE', 				'YIELD_SCIENCE', 		1,				'FEATURE_MARSH',	0);
 -- DLC Support
 with Adjacency_YieldChanges_Pre
 	(ID,								Description,									YieldType,			YieldChange,	AdjacentDistrict)
