@@ -405,6 +405,10 @@ insert or ignore into RequirementArguments (RequirementId, Name, Value)
 	select 'PLAYER_IS_' || CivilizationType, 'CivilizationType'	, CivilizationType from Civilizations;
 insert or ignore into Requirements (RequirementId, RequirementType)
 	select 'PLAYER_IS_' || CivilizationType, 'REQUIREMENT_PLAYER_TYPE_MATCHES' from Civilizations;
+insert or ignore into RequirementSets (RequirementSetId, RequirementSetType)
+	select 'PLAYER_IS_' || CivilizationType || '_REQUIREMENTS', 'REQUIREMENTSET_TEST_ANY' from Civilizations;
+insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
+	select 'PLAYER_IS_' || CivilizationType || '_REQUIREMENTS', 'PLAYER_IS_' || CivilizationType from Civilizations;
 
 -- City has X Pop
 insert or ignore into RequirementArguments (RequirementId, Name, Value)

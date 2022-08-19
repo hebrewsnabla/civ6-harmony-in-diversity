@@ -87,7 +87,7 @@ values
     ("LOC_CITY_POLICY_FREIGHT",                                       "Freight"),
     ("LOC_CITY_POLICY_FREIGHT_EFFECT",                                "Domestic [ICON_TRADEROUTE] Trade Route to this city comsumes 2 [ICON_RESOURCE_HORSES] Horses per turn to provide +1 [ICON_FOOD] Food and +1 [ICON_PRODUCTION] Production. International [ICON_TRADEROUTE] Trade Route from this city comsumes 2 [ICON_RESOURCE_HORSES] Horses per turn to provide +8 [ICON_GOLD] Gold."),
     ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "Theological Seminar"),
-    ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "Holy Site Project. Holy Site [ICON_CITIZEN] Specialist in this city provides -2 [ICON_FAITH] Faith, +1 [ICON_SCIENCE] Science and +1 [ICON_CULTURE] Culture. Religious spread from adjacent city pressure is 50% weaker."),
+    ("LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "Holy Site Project. Holy Site [ICON_CITIZEN] Specialist in this city provides -2 [ICON_FAITH] Faith, +1 [ICON_SCIENCE] Science and +1 [ICON_CULTURE] Culture. Religious spread to adjacent city pressure is 50% weaker."),
     ("LOC_CITY_POLICY_FORGING_IRON",                                  "Forging Iron"), -- Tool Production
     ("LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "Each Commercial Hub or Industrial Zone building in this city with regional effect costs [ICON_RESOURCE_IRON] equal to its basic regional range, to extend its regional range 2 tiles further.");
 
@@ -124,7 +124,7 @@ values
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT",                                       "货运"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FREIGHT_EFFECT",                                "以此城为终点的国内 [ICON_TRADEROUTE] 贸易路线每回合消耗2 [ICON_RESOURCE_HORSES] 马以获得+1 [ICON_FOOD] 食物和+1 [ICON_PRODUCTION] 生产力。以此城为起点的国际 [ICON_TRADEROUTE] 贸易路线每回合消耗2 [ICON_RESOURCE_HORSES] 马以获得+8 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_THEOLOGICAL_SEMINAR",                           "神学研讨"),
-    ("zh_Hans_CN",  "LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "此城的圣地专家额外产出1 [ICON_SCIENCE] 科技值、1 [ICON_CULTURE] 文化值，但少产出2 [ICON_FAITH] 信仰值。来自邻近城市宗教传播的压力减少50%。"),
+    ("zh_Hans_CN",  "LOC_CITY_POLICY_THEOLOGICAL_SEMINAR_EFFECT",                    "此城的圣地专家额外产出1 [ICON_SCIENCE] 科技值、1 [ICON_CULTURE] 文化值，但少产出2 [ICON_FAITH] 信仰值。此城向邻近城市传播的宗教压力减少50%。"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON",                                  "锻铁"),
     ("zh_Hans_CN",  "LOC_CITY_POLICY_FORGING_IRON_EFFECT",                           "此城拥有辐射效果的商业中心或工业区建筑每回合消耗等同于其基础辐射范围的 [ICON_RESOURCE_IRON] 铁以将其辐射范围延伸2个单元格。");
 

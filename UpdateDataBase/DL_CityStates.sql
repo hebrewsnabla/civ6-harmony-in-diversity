@@ -419,27 +419,27 @@ insert or replace into TraitAttachedModifiers
 	(TraitType,						ModifierId)
 select
 	'MINOR_CIV_HONG_KONG_TRAIT',	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION'
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and ReplacesOther = 0;
 insert or replace into Modifiers	
 	(ModifierId,												ModifierType)
 select
 	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and ReplacesOther = 0;
 insert or replace into ModifierArguments	
 	(ModifierId,												Name,				Value)
 select
 	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'BuildingType',		BuildingType
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and ReplacesOther = 0;
 insert or replace into ModifierArguments	
 	(ModifierId,												Name,				Value)
 select
 	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'YieldType',		'YIELD_PRODUCTION'
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and ReplacesOther = 0;
 insert or replace into ModifierArguments	
 	(ModifierId,												Name,				Value)
 select
 	'MINOR_CIV_HONG_KONG_' || BuildingType || '_PRODUCTION',	'Amount',			1
-from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and IsUB = 0;
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and ReplacesOther = 0;
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
 insert or ignore into TraitModifiers

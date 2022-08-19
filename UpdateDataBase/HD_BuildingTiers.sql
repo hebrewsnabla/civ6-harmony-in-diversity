@@ -3,16 +3,17 @@ create table if not exists HD_BuildingTiers (
 	BuildingType text not null primary key,
 	PrereqDistrict text not null,
 	Tier int not null default 1,
-	IsUB int not null default 0,
+	ReplacesOther int not null default 0,
 	Tag text
 );
 
 -- Initialize
 insert or replace into HD_BuildingTiers
-	(BuildingType,  PrereqDistrict,	IsUB)
+	(BuildingType,  PrereqDistrict)
 select
-	BuildingType,   PrereqDistrict,	TraitType is not null
+	BuildingType,   PrereqDistrict
 from Buildings where IsWonder = 0 and InternalOnly = 0 and PrereqDistrict is not null;
+update HD_BuildingTiers set ReplacesOther = 1 where BuildingType in (select CivUniqueBuildingType from BuildingReplaces);
 update HD_BuildingTiers set Tier = 0 where PrereqDistrict = 'DISTRICT_CITY_CENTER';
 update HD_BuildingTiers set Tier = 2 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 1));
 update HD_BuildingTiers set Tier = 3 where BuildingType in (select Building from BuildingPrereqs where PrereqBuilding in (select BuildingType from HD_BuildingTiers where Tier = 2));
@@ -102,7 +103,7 @@ insert or replace into HD_CityStateBuffedObjects
 	(PrereqDistrict,	ObjectType,	Amount)
 select
 	PrereqDistrict,	BuildingType,   Tier
-from HD_BuildingTiers where IsUB = 0;
+from HD_BuildingTiers where ReplacesOther = 0;
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_SCIENTIFIC_TRAIT',		YieldType = 'YIELD_SCIENCE'			where PrereqDistrict = 'DISTRICT_CAMPUS';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CULTURAL_TRAIT',		YieldType = 'YIELD_CULTURE'			where PrereqDistrict = 'DISTRICT_THEATER';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_RELIGIOUS_TRAIT',		YieldType = 'YIELD_FAITH'			where PrereqDistrict = 'DISTRICT_HOLY_SITE';
@@ -149,7 +150,7 @@ insert or replace into HD_CityStateBuffedObjects
 select
 	TraitType,  YieldType,  BuildingType,   Tier + 1
 from ((select distinct TraitType, YieldType from HD_CityStateBuffedObjects)
-left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and IsUB = 0));
+left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and ReplacesOther = 0));
 
 -- Palace
 insert or replace into HD_CityStateBuffedObjects

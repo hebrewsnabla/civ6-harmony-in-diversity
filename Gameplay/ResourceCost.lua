@@ -38,7 +38,6 @@ function GetResourceCost (playerId)
 				type = row.ResourceType,
 				cost = sum
 			});
-			print(row.ResourceType .. ': ' .. sum);
 		end
 	end
 	return costs;
@@ -71,7 +70,7 @@ function RefreshResourceCost (playerId, doReduce)
 			player:GetResources():ChangeResourceAmount(v.id, -v.cost);
 		end
 	end
-	RefreshRegionalYield();
+	ExposedMembers.DLHD.Utils.RefreshRegionalYield(playerId);
 end
 
 local sync = false;

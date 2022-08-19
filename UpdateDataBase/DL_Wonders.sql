@@ -929,32 +929,6 @@ insert or replace into ModifierArguments
     (ModifierId,                    	Name,        Value)
 values
     ('ORSZAGHAZ_INFLUENCE_TOKENS',  	'Amount',    2);
-create temporary table OrszaghazModifiers (
-	PolicyType text not null,
-	OldModifierId text not null,
-	NewModifierId text not null,
-	primary key (PolicyType, OldModifierId)
-);
-insert into OrszaghazModifiers
-    (PolicyType,	OldModifierId,		NewModifierId)
-select
-    PolicyType,		ModifierId,			'ORSZAGHAZ_GRANT_' || ModifierId
-from PolicyModifiers where PolicyType in (select PolicyType from Policies where GovernmentSlotType = 'SLOT_GREAT_PERSON' or GovernmentSlotType = 'SLOT_WILDCARD');
-insert or replace into Modifiers
-    (ModifierId,	ModifierType,									SubjectRequirementSetId)
-select
-    NewModifierId,	'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'CITY_HAS_BUILDING_ORSZAGHAZ_REQUIREMENTS'
-from OrszaghazModifiers;
-insert or replace into ModifierArguments
-    (ModifierId,	Name,			Value)
-select
-    NewModifierId,	'ModifierId',	OldModifierId
-from OrszaghazModifiers;
-insert or replace into PolicyModifiers
-    (PolicyType,	ModifierId)
-select
-    PolicyType,		NewModifierId
-from OrszaghazModifiers;
 
 -- Estádio do Maracanã
 update Buildings set RegionalRange = 9 where BuildingType = 'BUILDING_ESTADIO_DO_MARACANA';

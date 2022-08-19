@@ -1560,15 +1560,15 @@ create temporary table HD_ThirdAlternativeBuffedBuildings (
 	primary key (BuildingType, YieldType)
 );
 insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
-	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4 and IsUB = 0;
+	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4 and ReplacesOther = 0;
 insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
-	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4) and IsUB = 0;
+	where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' and Tier = 4) and ReplacesOther = 0;
 insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
-	where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and Tier = 3 and IsUB = 0;
+	where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and Tier = 3 and ReplacesOther = 0;
 insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
-	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4 and IsUB = 0;
+	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4 and ReplacesOther = 0;
 insert or replace into HD_ThirdAlternativeBuffedBuildings (BuildingType) select BuildingType from HD_BuildingTiers
-	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4) and IsUB = 0;
+	where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 3 and not exists (select BuildingType from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_INDUSTRIAL_ZONE' and Tier = 4) and ReplacesOther = 0;
 insert or replace into HD_ThirdAlternativeBuffedBuildings
 	(BuildingType,	YieldType,		Amount)
 select
