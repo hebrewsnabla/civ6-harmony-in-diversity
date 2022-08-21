@@ -213,7 +213,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入工业时代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
-    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "本城已改良地块+1 [ICON_Production] 生产力。"), -- 、采石场和伐木场 -- 为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "本城已改良单元格+1 [ICON_Production] 生产力。"), -- 、采石场和伐木场 -- 为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+5% [ICON_Production] 生产力。本城每个人口获得0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_COAL_POWER_PLANT_DL_DESCRIPTION",              "将任意数额的 [ICON_RESOURCE_COAL] 煤自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_COAL] 煤 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放大量二氧化碳。[NEWLINE]本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。"),

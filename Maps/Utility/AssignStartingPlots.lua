@@ -425,12 +425,20 @@ function AssignStartingPlots:__DLPreparePlotFertilities()
         end
         -- Trible weight for inner ring.
         local innerRingWeight = 3;
+		-- xiaoxiaocat: yield weight
+		local yieldWeight = {};
+		for row in GameInfo.Yields() do
+			yieldWeight[row.YieldType] = 1;
+		end
+		yieldWeight['YIELD_GOLD'] = 1 / 3;
+		yieldWeight['YIELD_FAITH'] = 2 / 3;
+		-- xiaoxiaocat: end
         for k, v in pairs(RingOnePlotYields) do
-            totalFertility = totalFertility + v * innerRingWeight;
+            totalFertility = totalFertility + yieldWeight[k] * v * innerRingWeight;
         end
         -- Sum of fertility for range-2 ring.
         for k, v in pairs(RingTwoPlotYields) do
-            totalFertility = totalFertility + v;
+            totalFertility = totalFertility + yieldWeight[k] * v;
         end
         -- Shortage of food of inner ring decreases score.
         if RingOnePlotYields['YIELD_FOOD'] <= popConsumFood * 3 then
@@ -1628,7 +1636,7 @@ function AssignStartingPlots:__StartBiasResources(playerIndex, tier, minor)
 
     --If more than 1 has this resource(s) within 3
     if(numResource  > 1) then
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             playerStart[k] = nil;
         end
@@ -1638,7 +1646,7 @@ function AssignStartingPlots:__StartBiasResources(playerIndex, tier, minor)
     elseif (numResource  == 1) then
         local startPlot = resourcePlots[1];
         
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             if(startPlot:GetIndex() == v:GetIndex()) then
                     playerStart[k] = startPlot;
@@ -1719,7 +1727,7 @@ function AssignStartingPlots:__StartBiasFeatures(playerIndex, tier, minor)
 
     --If more than 1 has this feature(s) within 3
     if(numFeature  > 1) then
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         local featureValue = table.fill(0, #featurePlots);
 
         for i, featurePlot in ipairs(featurePlots) do
@@ -1757,7 +1765,7 @@ function AssignStartingPlots:__StartBiasFeatures(playerIndex, tier, minor)
     elseif (numFeature  == 1) then
         local startPlot = featurePlots[1];
 
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             if(startPlot:GetIndex() == v:GetIndex()) then
                     playerStart[k] = startPlot;
@@ -1840,7 +1848,7 @@ function AssignStartingPlots:__StartBiasTerrains(playerIndex, tier, minor)
 
     --If more than 1 has this terrain(s) within 3
     if(numTerrain  > 1) then
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         local terrainValue = table.fill(0, #terrainPlots);
 
         for i, terrainPlot in ipairs(terrainPlots) do
@@ -1876,7 +1884,7 @@ function AssignStartingPlots:__StartBiasTerrains(playerIndex, tier, minor)
     elseif (numTerrain  == 1) then
         local startPlot = terrainPlots[1];
 
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             if(startPlot:GetIndex() == v:GetIndex()) then
                 playerStart[k] = startPlot;
@@ -1934,7 +1942,7 @@ function AssignStartingPlots:__StartBiasRivers(playerIndex, tier, minor)
 
     --If more than 1 has this river(s) within 3
     if(numRiver  > 1) then
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             playerStart[k] = nil;
         end
@@ -1944,7 +1952,7 @@ function AssignStartingPlots:__StartBiasRivers(playerIndex, tier, minor)
     elseif (numRiver  == 1) then
         local startPlot = riverPlots[1];
         
-        -- Remove all other starting plots from this civ’s list.
+        -- Remove all other starting plots from this civï¿½s list.
         for k, v in pairs(playerStart) do
             if(startPlot:GetIndex() == v:GetIndex()) then
                 playerStart[k] = startPlot;
@@ -1992,7 +2000,7 @@ function AssignStartingPlots:__StartBiasRivers(playerIndex, tier, minor)
         end 
 
         if(numRiver  > 1) then
-            -- Remove all other starting plots from this civ’s list.
+            -- Remove all other starting plots from this civï¿½s list.
             for k, v in pairs(playerStart) do
                 playerStart[k] = nil;
             end
@@ -2002,7 +2010,7 @@ function AssignStartingPlots:__StartBiasRivers(playerIndex, tier, minor)
         elseif (numRiver  == 1) then
             local startPlot = riverPlots[1];
         
-            -- Remove all other starting plots from this civ’s list.
+            -- Remove all other starting plots from this civï¿½s list.
             for k, v in pairs(playerStart) do
                 if(startPlot:GetIndex() == v:GetIndex()) then
                     playerStart[k] = startPlot;

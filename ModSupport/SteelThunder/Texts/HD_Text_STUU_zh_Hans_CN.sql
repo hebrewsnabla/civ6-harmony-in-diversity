@@ -574,7 +574,7 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_3",              ""),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_4",              ""),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_5",              ""),
-    ("zh_Hans_CN",  "LOC_ABILITY_INVISIBLE_ON_RAINFOREST_FOREST_MARSH_DESCRIPTION",                      "在雨林、沼泽和森林地块上时，对非相邻单位隐身。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_INVISIBLE_ON_RAINFOREST_FOREST_MARSH_DESCRIPTION",                      "在雨林、沼泽和森林单元格上时，对非相邻单位隐身。"),
     ("zh_Hans_CN",  "LOC_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_DESCRIPTION",                                    "取代骑士的葡萄牙特色中世纪重骑兵单位。攻击区域或区域内的单位时+5 [ICON_Strength] 战斗力。免除单位上下船和跨河时的 [ICON_Movement] 移动力及 [ICON_Strength] 战斗力惩罚。"),
     ("zh_Hans_CN",  "LOC_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_NAME",                                           "阿维斯骑士"),
     ("zh_Hans_CN",  "LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_1",        "作为一个修道的军事组织，该组织是模仿圣殿骑士团等军事组织而建立的，圣殿骑士团早在1128年就存在于葡萄牙，并在特鲁瓦会议那年得到了葡萄牙伯爵夫人特蕾莎的资助，确认了他们早期的章程。大约在1146年，葡萄牙出现了这样一个本土组织。第一任国王阿丰索将1166年从摩尔人手中夺取的埃武拉镇交给了它，骑士团最初被称为“埃武拉的圣玛丽亚修士”。贡萨洛-维加斯（Gonçalo Viegas）是第一位大团长。"),

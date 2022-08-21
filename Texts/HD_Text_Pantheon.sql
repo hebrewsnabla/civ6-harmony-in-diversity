@@ -94,7 +94,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION",                    "从圣地（大预言家）、学院（大科学家）、剧院广场（大作家）、工业区（大工程师）以及商业区（大商人）处获得的 [ICON_GreatPerson] 伟人点数+2。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION",                   "采石场+1 [ICON_Faith] 信仰值和+1 [ICON_Production] 生产力。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION",                 "采集奢侈和加成矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有采集奢侈或加成资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在迷人地块上，则每回合+2 [ICON_GreatProphet] 大预言家点数，惊艳则翻倍。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION",                   "魅力为惊艳的单元格提供的 [ICON_Faith] 信仰值+2。魅力为迷人的单元格提供的 [ICON_Faith] 信仰值+1。如城市市中心坐落在迷人单元格上，则每回合+2 [ICON_GreatProphet] 大预言家点数，惊艳则翻倍。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION",                 "地热裂缝和火山土单元格提供+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。每座拥有地热裂缝、火山土或火山（包括火山自然奇观）的城市提供+4 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_THE_PEOPLE_OF_POLAR_NAME",                       "极地子民"),
     ("zh_Hans_CN",  "LOC_BELIEF_THE_PEOPLE_OF_POLAR_DL_DESCRIPTION",             "冻土和冻土丘陵上改良资源的改良设施+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币。"),

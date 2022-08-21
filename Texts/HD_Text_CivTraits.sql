@@ -127,7 +127,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_NAME",                    	 		 "汉谟拉比法典"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_XP1_DESCRIPTION",                    "[ICON_TECHBOOSTED] 尤里卡提供科技的94%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "在淡水和海岸旁定居时不提供额外 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "揭示出生点6个单元格内的地块。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "揭示出生点6个单元格内的单元格。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRAJANS_COLUMN_DESCRIPTION",                   "所有城市建立时赠送纪念碑。[NEWLINE]建造市中心建筑时加速50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAORI_MANA_DESCRIPTION",                 "游戏初始便解锁“航海术”与“造船术”科技，同时拥有进入海洋单元格的能力。水运单位+2 [ICON_Movement] 移动力。未改良的树林与雨林提供+1 [ICON_PRODUCTION] 生产力。“行政部门”额外提供+1 [ICON_PRODUCTION] 生产力、“重商主义”额外提供+1 [ICON_PRODUCTION] 生产力、“保护地球”额外+1 [ICON_PRODUCTION] 生产力、“环境保护主义”额外提供+1 [ICON_PRODUCTION] 生产力。渔船提供+1 [ICON_FOOD] 食物，并向相邻单元格投放文化炸弹。无法获得 [ICON_GreatWriter] 大作家。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ITERU_EXPANSION2_DESCRIPTION",           "学院和剧院广场与河流相邻获得大量相邻加成。在相邻河流单元格建造区域与奇观时+15%建造速度。境内不会受到洪水的损害。每完成一个奇观，获得一个免费的建造者。"),
@@ -143,7 +143,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "劳动人民的智慧"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION",  "每当建造者减少一次使用次数，获得6点 [ICON_Science] 科技值。[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞额外提升（对应科技或人文所需的科技或文化总量的）10%。建成奇观时将获得奇观所处时代的一项随机 [ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞（如可用）。解锁“砌砖”科技的同时也解锁“运河”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION",                       "征集单位+2 [ICON_Movement] 移动力、+5 [ICON_Strength] 战斗力。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少50%。征集城邦军队时可在该城邦增加2名 [ICON_ENVOY] 使者。研究“城堡”科技后获得特色单位“黑军”。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION",                  "拥有“政治哲学”市政后，[ICON_TradeRoute] 贸易路线容量+1，获得一个 [ICON_Governor] 总督头衔。本国城市之间的路线+2 [ICON_Gold] 金币，+2 [ICON_Culture] 文化值。本国领土中的道路提升一个等级。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION",                  "拥有“政治哲学”市政后，+1 [ICON_TradeRoute] 贸易路线容量，获得一个 [ICON_Governor] 总督头衔。国内 [ICON_TRADEROUTE] 贸易路线+2 [ICON_Gold] 金币、+2 [ICON_Culture] 文化值。本国领土中的道路提升一个等级。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION",          "对主要文明宣布突袭战争后的10回合内+2 [ICON_Movement] 移动力。拥有驻扎单位的城市每回合的忠诚度+5。宣布突袭战争的 [ICON_STAT_GRIEVANCE] 不满和好战性与正式战争相同。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_BANNOCKBURN_DESCRIPTION",                      "国境内的单位防御时+4 [ICON_Strength] 战斗力。解锁防御战术市政后即可宣布解放战争。宣布解放战争后的10回合内+100% [ICON_Production] 生产力、+2 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION",     "幸福度为快乐的城市额外+6% [ICON_SCIENCE] 科技值、+6% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。喜悦的城市获得的上述加成将加倍，欣喜若狂的城市获得的上述加成将变为三倍。学院和工业区+1 [ICON_AMENITIES] 宜居度，且从其他区域获得标准的相邻加成取代少量相邻加成。"),
@@ -191,7 +191,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每次获得一位 [ICON_GreatPerson] 伟人可奖励50点 [ICON_Favor] 外交支持（标准速度下）。二级工业区建筑与二级学院建筑分别提供+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。若对局中存在该文明，则进入工业时代后将增加3项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。");
 
 insert or replace into EnglishText

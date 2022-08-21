@@ -7,7 +7,7 @@ values
     ("LOC_GREATPERSON_GALILEO_GALILEI_ACTIVE",                            "Gain +400 [ICON_Science] Science (on Standard speed) for each adjacent Mountain tile."),
     ("LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE",                              "Gain +3000 [ICON_SCIENCE] Science and +1000 [ICON_CULTURE] Culture (on Standard speed)."),
     ("LOC_GREATPERSON_DIPLO_VISIBILITY",                                  "+{Amount} {Amount : plural 1?level; other?levels;} of diplomatic visibility with all other civilizations. Enemy Spy level reduced by 1 in your lands."),
-    ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "Industrial Zone's regional buildings reach {Amount} {Amount : plural 1?tile; other?tiles;} farther, and provide +3 [ICON_Science] Science."), -- Instantly builds a Factory and Workshop in this district. Factories provide +3 [ICON_Production] Production.
+    ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "Industrial Zone's regional buildings reach 3 tiles farther, and provide +3 [ICON_Science] Science."),
     ("LOC_PIERO_DE_BARDI_GOLD",                                           "Gain +300 [ICON_Gold] Gold."),
     ("LOC_JAKOB_FUGGER_GOLD",                                             "Gain +400 [ICON_Gold] Gold."),
     ("LOC_JOHN_JACOB_ASTOR_GOLD",                                         "Gain +600 [ICON_Gold] Gold."),
@@ -136,7 +136,7 @@ values
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",                  "阿基米德"),
     ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                              "[ICON_TechBoosted] 尤里卡提供的科技值额外+1%。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                     "李冰"),
-    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%。，堤坝为所在城市的沿河地块+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%。，堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                      "马钧"),
     ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",                       "立即在该区域建造1座工作坊。工作坊+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_TECH_MACHINERY",                               "为机械科技启动 [ICON_TechBoosted] 尤里卡。"),

@@ -107,7 +107,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMABUTHO_DESCRIPTION",                                "军团和军队的 [ICON_STRENGTH] 基础战斗力额外+3。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_AMBIORIX_DESCRIPTION",                                "近战、抗骑兵和远程单位每与一个其他单位相邻（无论该单位属于哪个文明），便+1 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRIEU_DESCRIPTION",                                   "回合开始时，领土内在雨林、沼泽或树林地貌中的单位+1 [ICON_Movement] 移动力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                                   "揭示出生点6个单元格内的地块。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+3 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                                   "揭示出生点6个单元格内的单元格。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+3 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION",            "与同一个敌人交战时，如果他们与其盟友相邻，则共享掠夺奖励和战斗经验值。其同盟针对同一个敌人作战可获得同盟点数。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                                 "首都或派遣了总督的城市获得+2 [ICON_Amenities] 宜居度，+3 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_EL_ESCORIAL_EXPANSION2_DESCRIPTION",                  "审判官可额外进行一次“清除异教”操作。审判官能完全铲除其他宗教的势力。与信仰其他宗教的单位进行战斗时，战斗和宗教单位+3 [ICON_Strength] 战斗力。"),
