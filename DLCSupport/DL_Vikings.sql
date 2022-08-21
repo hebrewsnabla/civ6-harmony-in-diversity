@@ -29,7 +29,7 @@ values
 insert or replace into Adjacency_YieldChanges
     (ID,												Description,	YieldType,		YieldChange,	OtherDistrictAdjacent,	PrereqCivic)  
 values 
-    ('Monastery_DistrictAdjacency_Divine_Right_Late',	'Placeholder',	'YIELD_FAITH',	3,				1,						'CIVIC_DIVINE_RIGHT');
+    ('Monastery_DistrictAdjacency_Divine_Right_Late',	'Placeholder',	'YIELD_FAITH',	3,				1,						'CIVIC_REFORMED_CHURCH');
 
 -- Auckland
 update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_SHALLOW_WATER_AND_STEAM_POWER_REQUIREMENTS' where ModifierId = 'MINOR_CIV_AUCKLAND_SHALLOW_WATER_PRODUCTION_BONUS_INDUSTRIAL';
