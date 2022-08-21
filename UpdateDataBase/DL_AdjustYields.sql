@@ -18,7 +18,7 @@ values
 	('TERRAIN_DESERT_HILLS',	'YIELD_PRODUCTION',	1),
 	('TERRAIN_SNOW_HILLS',		'YIELD_PRODUCTION',	1),
 	('TERRAIN_COAST',			'YIELD_FOOD',		2),
-	('TERRAIN_COAST',			'YIELD_GOLD',		1),
+	('TERRAIN_COAST',			'YIELD_GOLD',		3),
 	('TERRAIN_OCEAN',			'YIELD_FOOD',		1);
 -- Feature yield
 insert or replace into Feature_YieldChanges

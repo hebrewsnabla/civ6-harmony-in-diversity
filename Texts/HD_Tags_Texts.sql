@@ -196,10 +196,9 @@ update Policies set Description = 'LOC_POLICY_LIGHTNING_WARFARE_HD_DESCRIPTION' 
 -- Units
 update Units set Description = 'LOC_UNIT_BUILDER_DL_DESCRIPTION' where UnitType = 'UNIT_BUILDER';
 
--- Unique Units
-
-
-
+-- City Names
+update CivilizationLeaders set CapitalName = 'LOC_CITY_XIANYANG' where CivilizationType = 'CIVILIZATION_CHINA' and LeaderType = 'LEADER_QIN';
+update CivilizationLeaders set CapitalName = 'LOC_CITY_DADU' where CivilizationType = 'CIVILIZATION_CHINA' and LeaderType = 'LEADER_KUBLAI_KHAN_CHINA';
 
 -- Late oprations
 UPDATE Buildings SET Description = "{" || Description || "}{LOC_EPSTWEAK_WONDER_WORDING_TOURISM}" WHERE IsWonder = 1;
