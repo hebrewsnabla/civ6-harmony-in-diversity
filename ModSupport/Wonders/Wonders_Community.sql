@@ -776,10 +776,10 @@ insert or replace into BuildingModifiers (BuildingType, ModifierId)	select
 	'BUILDING_THREE_GORDES_DAM', 'THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION'
 from Buildings where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_THREE_GORDES_DAM');
 insert or replace into Modifiers
-	(ModifierId,										ModifierType,									SubjectRequirementSetId)
+	(ModifierId,										ModifierType,							SubjectRequirementSetId)
 values
-	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER'),
-	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER');
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER'),
+	('THREE_GORDES_DAM_RIVER_IMPROVEMENT_PRODUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_IMPROVEMENT_ADJACENT_TO_RIVER');
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 values

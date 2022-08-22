@@ -217,8 +217,11 @@ select a.BuildingType,	b.TerrainType
 from Buildings a, Terrains b where
 	a.BuildingType in ('BUILDING_ORACLE', 'BUILDING_POTALA_PALACE', 'BUILDING_CRISTO_REDENTOR', 'BUILDING_NEUSCHWANSTEIN') and
 	b.TerrainType like 'TERRAIN_%_MOUNTAIN';
-insert or replace into Building_ValidTerrains (BuildingType,	TerrainType)
-values ('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
+insert or replace into Building_ValidTerrains
+	(BuildingType,		TerrainType)
+values
+	('BUILDING_PETRA',	'TERRAIN_DESERT_HILLS'),
+	('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 
 -- Adjust building effects
 -- Alhambra
@@ -271,7 +274,12 @@ values
 
 -- Petra
 update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD' where ModifierId = 'PETRA_YIELD_MODIFIER';
 update ModifierArguments set Value = '3,2,1' where ModifierId = 'PETRA_YIELD_MODIFIER' and Name = 'Amount';
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('PETRA_YIELD_MODIFIER_REQUIREMENTS',	'REQUIRES_OBJECT_WITHIN_5_TILES');
 
 -- St. Basil's Cathedral
 update ModifierArguments set Value = 2 where ModifierId = 'STBASILS_ADDFOOD_MODIFIER' and Name = 'Amount';
