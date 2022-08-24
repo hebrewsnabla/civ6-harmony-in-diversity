@@ -443,6 +443,12 @@ values
 -- Misc
 
 -- new Terrain class
+insert or ignore into Types
+	(Type,								Kind)
+values
+	('TERRAIN_CLASS_TUNDRA_OR_SNOW',	'KIND_TERRAIN_CLASS'),
+	('TERRAIN_CLASS_FLATTEN',			'KIND_TERRAIN_CLASS'),
+	('TERRAIN_CLASS_HILLS',				'KIND_TERRAIN_CLASS');
 insert or ignore into TerrainClasses
 	(TerrainClassType,					Name)
 values

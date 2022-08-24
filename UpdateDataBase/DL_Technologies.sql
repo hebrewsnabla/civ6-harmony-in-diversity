@@ -416,3 +416,9 @@ values
 -- values
 -- 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'YieldType',				'YIELD_GOLD'),
 -- 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'Amount',					3			);
+
+--移除雨林前移到采矿
+update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';
+--种树前移到工会，越南到神秘主义
+update Features set AddCivic = 'CIVIC_GUILDS' where FeatureType = 'FEATURE_FOREST';
+update Technologies set Description = null where TechnologyType = 'TECH_SANITATION';

@@ -41,7 +41,6 @@ insert or replace into Modifiers
 	(ModifierId,						ModifierType,								RunOnce,SubjectRequirementSetId)
 values
 	('KHALWA_SINGLE_CITY_APPEAL_BONUS',	'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',			0,NULL),
-	('UNLOCK_CONSERVATION_BOOST',		'MODIFIER_PLAYER_GRANT_SPECIFIC_CIVIC_BOOST',		1,NULL),
 	('NATURALIST_DISCOUNT',				'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',	0,NULL);
 
 insert or replace into ModifierArguments
@@ -49,8 +48,7 @@ insert or replace into ModifierArguments
 values
 	('KHALWA_SINGLE_CITY_APPEAL_BONUS',	'Amount',			1),
 	('NATURALIST_DISCOUNT',				'UnitType',			'UNIT_NATURALIST'),
-	('NATURALIST_DISCOUNT',				'Amount',			50),
-	('UNLOCK_CONSERVATION_BOOST',		'CivicType',		'CIVIC_CONSERVATION');
+	('NATURALIST_DISCOUNT',				'Amount',			50);
 
 -- 塔祠，神道教神社和羽蛇神庙
 insert or replace into BuildingModifiers

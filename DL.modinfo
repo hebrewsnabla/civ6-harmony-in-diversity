@@ -1253,10 +1253,10 @@
 	  </UpdateDatabase>
     <UpdateDatabase id="DL_Balance" criteria="Expansion2">
       <Properties><LoadOrder>16010</LoadOrder></Properties>
-      <File>UpdateDataBase/DL_AdjustYields.sql</File>
-      <File>UpdateDataBase/DL_AI.sql</File>
+      <File>UpdateDataBase/HD_AdjustYields.sql</File>
+      <File>UpdateDataBase/HD_AI.sql</File>
       <File>UpdateDataBase/DL_Beliefs.sql</File>
-      <File>UpdateDataBase/DL_Belief_Worships.sql</File>
+      <File>UpdateDataBase/HD_Belief_Worships.sql</File>
       <File>UpdateDataBase/DL_Boosts.sql</File>
       <File>UpdateDataBase/DL_Buildings.sql</File>
       <File>UpdateDataBase/DL_City_Yield.sql</File>
@@ -1903,10 +1903,10 @@
     <File>DLCSupport/DL_Portugal.sql</File>
 	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
-    <File>UpdateDataBase/DL_AdjustYields.sql</File>
-    <File>UpdateDataBase/DL_AI.sql</File>
+    <File>UpdateDataBase/HD_AdjustYields.sql</File>
+    <File>UpdateDataBase/HD_AI.sql</File>
     <File>UpdateDataBase/DL_Beliefs.sql</File>
-    <File>UpdateDataBase/DL_Belief_Worships.sql</File>
+    <File>UpdateDataBase/HD_Belief_Worships.sql</File>
     <File>UpdateDataBase/DL_Boosts.sql</File>
     <File>UpdateDataBase/DL_Buildings.sql</File>
     <File>UpdateDataBase/DL_BuildingDefinations.sql</File>

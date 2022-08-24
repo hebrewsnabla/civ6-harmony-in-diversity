@@ -123,6 +123,9 @@ function m_HDUnitCommands.RECYCLE.IsVisible(pUnit : object)
 	if pUnit == nil then
 		return;
 	end
+	if GlobalParameters.RECYCLING_PLANT_PRODUCTION_PERCENT == nil then
+		return false;
+	end
 	local formationClass = GameInfo.Units[pUnit:GetType()].FormationClass;
 	local playerID = pUnit:GetOwner();
 	local player = Players[playerID];

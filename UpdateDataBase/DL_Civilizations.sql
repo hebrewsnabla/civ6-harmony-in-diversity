@@ -2194,3 +2194,6 @@ values
 	('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION_HD',	'Amount',													2);
 
 update Technologies set Description = NULL where TechnologyType = 'TECH_CASTLES';
+
+-- Japan
+delete from ExcludedAdjacencies where TraitType = 'TRAIT_CIVILIZATION_ADJACENT_DISTRICTS';

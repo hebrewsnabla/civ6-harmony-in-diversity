@@ -1,13 +1,12 @@
--------------------------------------
---       Beliefs Adjustments       --
--------------------------------------
-
--- GODDESS_OF_THE_HUNT
-update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS' where ModifierId = 'GODDESS_OF_THE_HUNT_CAMP_FOOD_MODIFIER';
-update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS' where ModifierId = 'GODDESS_OF_THE_HUNT_CAMP_PRODUCTION_MODIFIER';
-update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
-
--- Relogion Beliefs.
+-- Removes
+delete from Beliefs where BeliefType = 'BELIEF_HOLY_WATERS';
+delete from Beliefs where BeliefType = 'BELIEF_GOD_OF_HEALING';
+delete from Beliefs where BeliefType = 'BELIEF_INITIATION_RITES';
+delete from Beliefs where BeliefType = 'BELIEF_RELIGIOUS_COLONIZATION';
+delete from Beliefs where BeliefClassType = 'BELIEF_CLASS_FOLLOWER';
+delete from Beliefs where BeliefClassType = 'BELIEF_CLASS_FOUNDER';
+update Beliefs set BeliefClassType = 'BELIEF_CLASS_FOUNDER' where BeliefType = 'BELIEF_JUST_WAR';
+-- New beliefs
 insert or replace into Types
 	(Type,								Kind)
 values
@@ -33,8 +32,6 @@ values
 	-- Follower
 	('BELIEF_RELIGIOUS_ART',			'KIND_BELIEF'),
 	('BELIEF_PRACTICAL_APPLICATION',	'KIND_BELIEF'),
-	-- ('BELIEF_CASTE_SYSTEM',				'KIND_BELIEF'),
-	-- ('BELIEF_THE_THIRD_TEMPLE',			'KIND_BELIEF'),
 	('BELIEF_MESSIAH',					'KIND_BELIEF'),
 	('BELIEF_ABBOT',					'KIND_BELIEF'),
 	-- Founder
@@ -46,41 +43,6 @@ values
 	('BELIEF_SCHOLASTICISM',			'KIND_BELIEF'),
 	('BELIEF_PIOUS_MERCHANTS',			'KIND_BELIEF'),
 	('BELIEF_MILLENNIALISM',			'KIND_BELIEF');
-
-delete from Beliefs where BeliefType = 'BELIEF_HOLY_WATERS';
-delete from Beliefs where BeliefType = 'BELIEF_GOD_OF_HEALING';
-delete from Beliefs where BeliefType = 'BELIEF_INITIATION_RITES';
-delete from Beliefs where BeliefType = 'BELIEF_RELIGIOUS_COLONIZATION';
-delete from Beliefs where BeliefClassType = 'BELIEF_CLASS_FOLLOWER';
-delete from Beliefs where BeliefClassType = 'BELIEF_CLASS_FOUNDER';
-update Beliefs set BeliefClassType = 'BELIEF_CLASS_FOUNDER' where BeliefType = 'BELIEF_JUST_WAR';
-
--- The Descriptions
-update Beliefs set Description = 'LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION' where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
-update Beliefs set Description = 'LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION' where BeliefType = 'BELIEF_DESERT_FOLKLORE';
-update Beliefs set Description = 'LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION' where BeliefType = 'BELIEF_SACRED_PATH';
-update Beliefs set Description = 'LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_EARTH_GODDESS';
-update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
-update Beliefs set Description = 'LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RELIGIOUS_IDOLS';
-update Beliefs set Description = 'LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION' where BeliefType = 'BELIEF_STONE_CIRCLES';
-update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
-update Beliefs set Description = 'LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION' where BeliefType = 'BELIEF_DIVINE_SPARK';
-update Beliefs set Description = 'LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RIVER_GODDESS';
-update Beliefs set Description = 'LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_WAR';
-update Beliefs set Description = 'LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
-update Beliefs set Description = 'LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION' where BeliefType = 'BELIEF_FERTILITY_RITES';
-update Beliefs set Description = 'LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION' where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
-update Beliefs set Description = 'LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
-update Beliefs set Description = 'LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY';
-update Beliefs set Description = 'LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION' where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
-update Beliefs set Description = 'LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
---
-update Beliefs set Description = 'LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION' where BeliefType = 'BELIEF_DEFENDER_OF_FAITH';
-update Beliefs set Description = 'LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION' where BeliefType = 'BELIEF_ITINERANT_PREACHERS';
-update Beliefs set Description = 'LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION' where BeliefType = 'BELIEF_SCRIPTURE';
-update Beliefs set Description = 'LOC_BELIEF_JUST_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_JUST_WAR';
--- update Beliefs set Description = 'LOC_BELIEF_HOLY_WATERS_DL_DESCRIPTION' where BeliefType = 'BELIEF_HOLY_WATERS';
-
 insert or replace into Beliefs
 	(BeliefType,						Name,										Description,											BeliefClassType)
 values
@@ -122,9 +84,7 @@ values
 	('BELIEF_ZEN_MEDITATION',			'LOC_BELIEF_ZEN_MEDITATION_NAME',			'LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION',				'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_RELIGIOUS_ART',			'LOC_BELIEF_RELIGIOUS_ART_NAME',			'LOC_BELIEF_RELIGIOUS_ART_DL_DESCRIPTION',				'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_WORK_ETHIC',				'LOC_BELIEF_WORK_ETHIC_NAME',				'LOC_BELIEF_WORK_ETHIC_DL_DESCRIPTION',					'BELIEF_CLASS_FOLLOWER'),
-	-- ('BELIEF_CASTE_SYSTEM',				'LOC_BELIEF_CASTE_SYSTEM_NAME',				'LOC_BELIEF_CASTE_SYSTEM_DL_DESCRIPTION',				'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_PRACTICAL_APPLICATION',	'LOC_BELIEF_PRACTICAL_APPLICATION_NAME',	'LOC_BELIEF_PRACTICAL_APPLICATION_DL_DESCRIPTION',		'BELIEF_CLASS_FOLLOWER'),
-	-- ('BELIEF_THE_THIRD_TEMPLE',			'LOC_BELIEF_THE_THIRD_TEMPLE_NAME',			'LOC_BELIEF_THE_THIRD_TEMPLE_DL_DESCRIPTION',			'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_RELIGIOUS_COLONIZATION',	'LOC_BELIEF_RELIGIOUS_COLONIZATION_NAME',	'LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION',		'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_MESSIAH',					'LOC_BELIEF_MESSIAH_NAME',					'LOC_BELIEF_MESSIAH_DL_DESCRIPTION',					'BELIEF_CLASS_FOLLOWER'),
 	('BELIEF_ABBOT',					'LOC_BELIEF_ABBOT_NAME',					'LOC_BELIEF_ABBOT_DL_DESCRIPTION',						'BELIEF_CLASS_FOLLOWER'),
@@ -141,6 +101,39 @@ values
 	('BELIEF_STEWARDSHIP',				'LOC_BELIEF_STEWARDSHIP_NAME',				'LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION',				'BELIEF_CLASS_FOUNDER'),
 	('BELIEF_SACRED_PLACES',			'LOC_BELIEF_SACRED_PLACES_NAME',			'LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION',				'BELIEF_CLASS_FOUNDER'),
 	('BELIEF_TO_THE_GLORY_OF_GOD',		'LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME',		'LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION',		'BELIEF_CLASS_FOUNDER');
+
+-- GODDESS_OF_THE_HUNT
+update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS' where ModifierId = 'GODDESS_OF_THE_HUNT_CAMP_FOOD_MODIFIER';
+update Modifiers set SubjectRequirementSetId = 'PLOT_HAS_CAMP_AND_RESOURCE_REQUIREMENTS' where ModifierId = 'GODDESS_OF_THE_HUNT_CAMP_PRODUCTION_MODIFIER';
+update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_THE_HUNT_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_THE_HUNT';
+
+-- Relogion Beliefs.
+
+
+-- The Descriptions
+update Beliefs set Description = 'LOC_BELIEF_DANCE_OF_THE_AURORA_DL_DESCRIPTION' where BeliefType = 'BELIEF_DANCE_OF_THE_AURORA';
+update Beliefs set Description = 'LOC_BELIEF_DESERT_FOLKLORE_DL_DESCRIPTION' where BeliefType = 'BELIEF_DESERT_FOLKLORE';
+update Beliefs set Description = 'LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION' where BeliefType = 'BELIEF_SACRED_PATH';
+update Beliefs set Description = 'LOC_BELIEF_EARTH_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_EARTH_GODDESS';
+update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_FIRE_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_FIRE';
+update Beliefs set Description = 'LOC_BELIEF_RELIGIOUS_IDOLS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RELIGIOUS_IDOLS';
+update Beliefs set Description = 'LOC_BELIEF_STONE_CIRCLES_DL_DESCRIPTION' where BeliefType = 'BELIEF_STONE_CIRCLES';
+update Beliefs set Description = 'LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION' where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS';
+update Beliefs set Description = 'LOC_BELIEF_DIVINE_SPARK_DL_DESCRIPTION' where BeliefType = 'BELIEF_DIVINE_SPARK';
+update Beliefs set Description = 'LOC_BELIEF_RIVER_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RIVER_GODDESS';
+update Beliefs set Description = 'LOC_BELIEF_GOD_OF_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_WAR';
+update Beliefs set Description = 'LOC_BELIEF_RELIGIOUS_SETTLEMENTS_DL_DESCRIPTION' where BeliefType = 'BELIEF_RELIGIOUS_SETTLEMENTS';
+update Beliefs set Description = 'LOC_BELIEF_FERTILITY_RITES_DL_DESCRIPTION' where BeliefType = 'BELIEF_FERTILITY_RITES';
+update Beliefs set Description = 'LOC_BELIEF_MONUMENT_TO_THE_GODS_DL_DESCRIPTION' where BeliefType = 'BELIEF_MONUMENT_TO_THE_GODS';
+update Beliefs set Description = 'LOC_BELIEF_CITY_PATRON_GODDESS_DL_DESCRIPTION' where BeliefType = 'BELIEF_CITY_PATRON_GODDESS';
+update Beliefs set Description = 'LOC_BELIEF_GOD_OF_THE_OPEN_SKY_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_THE_OPEN_SKY';
+update Beliefs set Description = 'LOC_BELIEF_LADY_OF_THE_REEDS_AND_MARSHES_DL_DESCRIPTION' where BeliefType = 'BELIEF_LADY_OF_THE_REEDS_AND_MARSHES';
+update Beliefs set Description = 'LOC_BELIEF_GOD_OF_THE_SEA_DL_DESCRIPTION' where BeliefType = 'BELIEF_GOD_OF_THE_SEA';
+--
+update Beliefs set Description = 'LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION' where BeliefType = 'BELIEF_DEFENDER_OF_FAITH';
+update Beliefs set Description = 'LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION' where BeliefType = 'BELIEF_ITINERANT_PREACHERS';
+update Beliefs set Description = 'LOC_BELIEF_SCRIPTURE_DL_DESCRIPTION' where BeliefType = 'BELIEF_SCRIPTURE';
+update Beliefs set Description = 'LOC_BELIEF_JUST_WAR_DL_DESCRIPTION' where BeliefType = 'BELIEF_JUST_WAR';
 
 delete from BeliefModifiers where BeliefType = 'BELIEF_GODDESS_OF_FESTIVALS'; -- and ModifierID = 'GODDESS_OF_FESTIVALS_PLANTATION_CULTURE';
 delete from BeliefModifiers where BeliefType = 'BELIEF_FERTILITY_RITES'; -- and ModifierID = 'FERTILITY_RITES_BUILDER';

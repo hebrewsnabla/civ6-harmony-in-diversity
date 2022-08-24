@@ -139,6 +139,8 @@ update Adjacency_YieldChanges set YieldChange = 2 where ID = 'SeaResource_Gold';
 update Adjacency_YieldChanges set YieldChange = 3 where ID = 'NaturalWonder_Faith';
 update Adjacency_YieldChanges set YieldChange = 3 where ID = 'Canal_Production';
 update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'Forest_Faith';
+update Adjacency_YieldChanges set YieldChange = 1 where ID = 'Harbor_City_Gold';
+update Adjacency_YieldChanges set TilesRequired = 1 where ID = 'District_Gold';
 
 -- Adjacency definition
 -- Adjacent to district (remember to support UD)
