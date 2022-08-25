@@ -92,7 +92,7 @@ insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "任意政体中额外增加一个经济政策槽位。占领其他文明的原始 [ICON_Capital] 首都时，获得该文明的特色能力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "为中世纪、文艺复兴时期和工业时代的奇观+20% [ICON_Production] 生产力。 所有奇观的 [ICON_Tourism] 旅游业绩+200%。完成奇观时，获得各等同于其所需生产力20%的 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家点数。在城市中激活 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家时，为该城市正在建造的奇观提供10% [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "为中世纪、文艺复兴时期和工业时代的奇观+20% [ICON_Production] 生产力。 所有奇观的 [ICON_Tourism] 旅游业绩+200%。完成奇观时，获得各等同于其 [ICON_PRODUCTION] 生产力花费20%的 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家点数。在城市中激活 [ICON_GREATWRITER] 大作家、 [ICON_GREATARTIST] 大艺术家、 [ICON_GREATMUSICIAN] 大音乐家时，为该城市正在建造的奇观提供10% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SURROUNDED_BY_GLORY_DESCRIPTION",              "作为宗主国时，每个下辖的城邦使您的 [ICON_Culture] 文化值+5%。建造卫城后，您向每个城邦派遣的第一个 [ICON_Envoy] 使者会被视为2个 [ICON_Envoy] 使者。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_THERMOPYLAE_DESCRIPTION",                      "战斗胜利后，获得等同于被击杀单位 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值（标准速度下）。槽位中每有一项军事政策，则+1 [ICON_Strength] 战斗力。建成卫城时获得一个抗骑兵单位。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EARLY_OCEAN_NAVIGATION_DESCRIPTION",     "伐木场提供额外+1 [ICON_Production] 生产力和+1 [Icon_Housing] 住房。在研究造船术后，单位获得进入海洋单元格的能力。海军近战单位可在中立领土上回复。单位忽略来自上船和下船的额外 [ICON_Movement] 移动力消耗。"),
