@@ -85,7 +85,7 @@ values
 	("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_HD_ALI_MUGHAYAT_SYAH_NAME",			  "阿里·穆哈亚·斯亚"),
 	("zh_Hans_CN",  "LOC_COLAEUS_SETTLER_PRODUCTION",									  "此城生产开拓者时+50%建造速度。"),
 	("zh_Hans_CN",  "LOC_COLAEUS_SETTLER_MOVEMENT_ATTACH",								  "有商业中心的城市生产的开拓者+1 [ICON_MOVEMENT] 移动力。"),
-	("zh_Hans_CN",  "LOC_MARCUS_LICINIUS_CRASSUS_SWORDSMAN",							  "获得两个铁剑。"),
+	("zh_Hans_CN",  "LOC_MARCUS_LICINIUS_CRASSUS_SWORDSMAN",							  "获得两个剑士。"),
 	("zh_Hans_CN",  "LOC_MARCUS_LICINIUS_CRASSUS_IRON",								  	  "每回合获得2点 [ICON_RESOURCE_IRON] 铁。"),
 	("zh_Hans_CN",  "LOC_ZHANG_QIAN_GRANT_TRADER",								 		  "获得一个商人。"),
 	("zh_Hans_CN",  "LOC_GREATPERSON_FREE_TRADER_UNIT",								 	  "获得一个商人。"),
