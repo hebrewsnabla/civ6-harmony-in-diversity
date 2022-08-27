@@ -84,7 +84,7 @@ insert or replace into HD_AIYieldScales
 	(EraType,	YieldType,	Extra)
 select
 	EraType,	YieldType,	Extra
-from (Eras cross joint Y) where EraType != 'ERA_ANCIENT';
+from (Eras cross join Y) where EraType != 'ERA_ANCIENT';
 update HD_AIYieldScales set ModifierId = 'HIGH_DIFFICULTY_' || YieldType || '_SCALING_AT_LEAST_' || EraType;
 insert or replace into TraitModifiers
 	(TraitType,					ModifierId)
