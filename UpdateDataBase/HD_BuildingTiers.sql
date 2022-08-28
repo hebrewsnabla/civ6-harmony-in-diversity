@@ -100,9 +100,9 @@ create table if not exists HD_CityStateBuffedObjects (
 -- City State buffed Buildings
 -- Initialize
 insert or replace into HD_CityStateBuffedObjects
-	(PrereqDistrict,	ObjectType,	Amount)
+	(PrereqDistrict,	ObjectType,		Amount)
 select
-	PrereqDistrict,	BuildingType,   Tier
+	PrereqDistrict,		BuildingType,   Tier
 from HD_BuildingTiers where ReplacesOther = 0;
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_SCIENTIFIC_TRAIT',		YieldType = 'YIELD_SCIENCE'			where PrereqDistrict = 'DISTRICT_CAMPUS';
 update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CULTURAL_TRAIT',		YieldType = 'YIELD_CULTURE'			where PrereqDistrict = 'DISTRICT_THEATER';
@@ -117,22 +117,22 @@ update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_CSE_AGRICULTURAL_TRA
 delete from HD_CityStateBuffedObjects where TraitType is null or YieldType is null or PrereqDistrict is null;
 -- Buffs District itself as Tier 4 with no Tier 4 building
 insert or replace into HD_CityStateBuffedObjects
-	(TraitType,		YieldType, ObjectType,	Amount, IsDistrict)
+	(TraitType,			YieldType,	ObjectType,		Amount,	IsDistrict)
 select
-	distinct TraitType, YieldType, PrereqDistrict,  4,	1
+	distinct TraitType, YieldType,	PrereqDistrict,	4,		1
 from HD_CityStateBuffedObjects a where not exists (select ObjectType from HD_CityStateBuffedObjects b where Amount = 4 and a.PrereqDistrict = b.PrereqDistrict);
 -- Industrial Zone bonus for District production
 insert or replace into HD_CityStateBuffedObjects
-	(TraitType, YieldType,			PrereqDistrict, ObjectType, Amount)
+	(TraitType, YieldType,				PrereqDistrict,	ObjectType,	Amount)
 select
-	TraitType,  'DISTRICT_PRODUCTION',  PrereqDistrict, ObjectType, Amount
+	TraitType,  'DISTRICT_PRODUCTION',  PrereqDistrict,	ObjectType,	Amount
 from HD_CityStateBuffedObjects where YieldType = 'BUILDING_PRODUCTION';
 -- Aqueduct & Neighborhood
 update HD_CityStateBuffedObjects set Amount = 2 where ObjectType = 'DISTRICT_AQUEDUCT';
 insert or replace into HD_CityStateBuffedObjects
-	(TraitType,							YieldType,			ObjectType,				Amount, IsDistrict)
+	(TraitType,								YieldType,			ObjectType,					Amount,	IsDistrict)
 values
-	('MINOR_CIV_CSE_AGRICULTURAL_TRAIT',	'YIELD_FOOD',		'DISTRICT_NEIGHBORHOOD',	2,	1);
+	('MINOR_CIV_CSE_AGRICULTURAL_TRAIT',	'YIELD_FOOD',		'DISTRICT_NEIGHBORHOOD',	2,		1);
 -- Agricultural City States buff Aqueduct as Tier 2, sewer as Tier 3 with district expansion not enabled.
 delete from HD_CityStateBuffedObjects where ObjectType = 'DISTRICT_AQUEDUCT' and not exists (select BuildingType from Buildings where BuildingType = 'BUILDING_SEWER' and PrereqDistrict = 'DISTRICT_CITY_CENTER');
 insert or replace into HD_CityStateBuffedObjects
@@ -146,17 +146,17 @@ update HD_CityStateBuffedObjects set TraitType = 'MINOR_CIV_TRADE_TRAIT' where T
 delete from HD_CityStateBuffedObjects where TraitType not in (select Type from Types);
 -- Diplomatic Quater buildings
 insert or replace into HD_CityStateBuffedObjects
-	(TraitType, YieldType,  ObjectType,	Amount)
+	(TraitType,	YieldType,	ObjectType,		Amount,		PrereqDistrict)
 select
-	TraitType,  YieldType,  BuildingType,   Tier + 1
+	TraitType,	YieldType,	BuildingType,	Tier + 1,	'DISTRICT_DIPLOMATIC_QUARTER'
 from ((select distinct TraitType, YieldType from HD_CityStateBuffedObjects)
-left outer join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and ReplacesOther = 0));
+cross join (select BuildingType, Tier from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and ReplacesOther = 0));
 
 -- Palace
 insert or replace into HD_CityStateBuffedObjects
-	(TraitType,		YieldType,  ObjectType,		Amount)
+	(TraitType,			YieldType,	ObjectType,			Amount)
 select
-	distinct TraitType, YieldType,  'BUILDING_PALACE',  1
+	distinct TraitType,	YieldType,	'BUILDING_PALACE',	1
 from HD_CityStateBuffedObjects;
 
 -- stores Influence Level
@@ -191,9 +191,9 @@ where IsYieldChange = 0;
 -- TraitModifiers
 insert or replace into TraitModifiers (TraitType, ModifierId) select TraitType, AttachId from HD_CityStateBuffedObjects;
 insert or replace into Modifiers
-	(ModifierId,	ModifierType,						SubjectRequirementSetId)
+	(ModifierId,	ModifierType,							SubjectRequirementSetId)
 select
-	AttachId,	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_' || Level || '_INFLUENCE'
+	AttachId,		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER', 'PLAYER_HAS_' || Level || '_INFLUENCE'
 from HD_CityStateBuffedObjects;
 insert or replace into ModifierArguments (ModifierId, Name, Value) select AttachId, 'ModifierId', ModifierId from HD_CityStateBuffedObjects;
 insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) select ModifierId, ModifierType, SubjectRequirementSetId from HD_CityStateBuffedObjects;

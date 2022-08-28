@@ -260,3 +260,202 @@ function m_HDUnitCommands.PRAVRAJYA_KOTOKU_IN.IsDisabled(pUnit : object)
 	local plot = Map.GetPlot(x, y);
 	return plot:GetWonderType() ~= KOTOKU_IN_INDEX;
 end
+
+-- 津巴布韦津巴布韦探路者 记录奢侈按钮, by xiaoxiao
+local PATHFINDER_RESOURCE_KEY = "PATHFINDER_RESOURCE";
+local PATHFINDER_TIME_KEY = "PATHFINDER_TIME";
+m_HDUnitCommands.PATHFINDER_RECORD = {};
+m_HDUnitCommands.PATHFINDER_RECORD.Properties = {};
+
+-- UI Data
+m_HDUnitCommands.PATHFINDER_RECORD.EventName = "HDPathfinderRecord";
+m_HDUnitCommands.PATHFINDER_RECORD.CategoryInUI = "SPECIFIC";
+m_HDUnitCommands.PATHFINDER_RECORD.Icon = "ICON_UNITCOMMAND_RECYCLE";
+m_HDUnitCommands.PATHFINDER_RECORD.DoNotDelete = true;
+m_HDUnitCommands.PATHFINDER_RECORD.GetToolTipString = function (unit)
+	-- basic
+	local s = Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_RECORD_NAME");
+	-- currently recording
+	if unit == nil then
+		return s;
+	end
+	local resourceId = unit:GetProperty(PATHFINDER_RESOURCE_KEY);
+	if resourceId ~= nil then
+		local resourceInfo = GameInfo.Resources[resourceId];
+		if resourceInfo ~= nil then
+			s = s .. "[NEWLINE]" .. Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_RECORD_RECORDING") .. " [ICON_" .. resourceInfo.ResourceType .. '] ' .. Locale.Lookup(resourceInfo.Name);
+		end
+	end
+	-- resource on plot
+	local location = unit:GetLocation();
+	local plot = Map.GetPlot(location.x, location.y);
+	local resourceId = plot:GetResourceType();
+	if resourceId ~= -1 then
+		local resourceInfo = GameInfo.Resources[resourceId];
+		if resourceInfo.ResourceClassType == 'RESOURCECLASS_LUXURY' then
+			s = s .. "[NEWLINE]" .. Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_RECORD_CURRENT") .. " [ICON_" .. resourceInfo.ResourceType .. '] ' .. Locale.Lookup(resourceInfo.Name);
+		end
+	end
+	return s;
+end
+m_HDUnitCommands.PATHFINDER_RECORD.DisabledToolTipString = Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_RECORD_DISABLED_TT");
+m_HDUnitCommands.PATHFINDER_RECORD.VisibleInUI = true;
+function m_HDUnitCommands.PATHFINDER_RECORD.CanUse(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	local unitInfo = GameInfo.Units[pUnit:GetType()];
+	if unitInfo == nil then
+		return false;
+	end
+	return unitInfo.UnitType == 'UNIT_ZIMBABWE_PATHFINDER';
+end
+
+function m_HDUnitCommands.PATHFINDER_RECORD.IsVisible(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	local times = pUnit:GetProperty(PATHFINDER_TIME_KEY) or 0;
+	return times < (GlobalParameters.PATHFINDER_ACTIVATION_CHARGE or 0);
+end
+
+function m_HDUnitCommands.PATHFINDER_RECORD.IsDisabled(pUnit : object)
+	if pUnit == nil then
+		return true;
+	end
+	local location = pUnit:GetLocation();
+	local plot = Map.GetPlot(location.x, location.y);
+	local resourceId = plot:GetResourceType();
+	if resourceId ~= -1 then
+		local resourceInfo = GameInfo.Resources[resourceId];
+		if resourceInfo.ResourceClassType == 'RESOURCECLASS_LUXURY' then
+			return false;
+		end
+	end
+	return true;
+end
+
+-- 津巴布韦津巴布韦探路者 种植奢侈按钮, by xiaoxiao
+m_HDUnitCommands.PATHFINDER_PLANT = {};
+m_HDUnitCommands.PATHFINDER_PLANT.Properties = {};
+
+-- UI Data
+m_HDUnitCommands.PATHFINDER_PLANT.EventName = "HDPathfinderPlant";
+m_HDUnitCommands.PATHFINDER_PLANT.CategoryInUI = "SPECIFIC";
+m_HDUnitCommands.PATHFINDER_PLANT.Icon = "ICON_UNITCOMMAND_PRAVRAJYA_KOTOKU_IN";
+m_HDUnitCommands.PATHFINDER_PLANT.DoNotDelete = true;
+m_HDUnitCommands.PATHFINDER_PLANT.GetToolTipString = function (unit)
+	-- basic
+	local s = Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_NAME");
+	if unit == nil then
+		return s;
+	end
+	-- remaining times
+	local times = (GlobalParameters.PATHFINDER_ACTIVATION_CHARGE or 0) - (unit:GetProperty(PATHFINDER_TIME_KEY) or 0);
+	s = s .. "[NEWLINE]" .. Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_CHARGES", times);
+	-- currently recording
+	local resourceId = unit:GetProperty(PATHFINDER_RESOURCE_KEY);
+	if resourceId ~= nil then
+		local resourceInfo = GameInfo.Resources[resourceId];
+		if resourceInfo ~= nil then
+			s = s .. "[NEWLINE]" .. Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_RECORDING") .. " [ICON_" .. resourceInfo.ResourceType .. '] ' .. Locale.Lookup(resourceInfo.Name);
+		end
+	end
+	return s;
+end
+
+local WATER_INDEX = GameInfo.Terrains['TERRAIN_COAST'].Index;
+m_HDUnitCommands.PATHFINDER_PLANT.GetDisabledToolTipString = function (unit)
+	if unit == nil then
+		return "";
+	end
+	local resourceId = unit:GetProperty(PATHFINDER_RESOURCE_KEY);
+	if resourceId == nil then
+		return Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_MUST_HAS_RECORD");
+	end
+	local resourceInfo = GameInfo.Resources[resourceId];
+	local onWater = false;
+	local onLand = resourceInfo.Frequency > 0;
+	for row in GameInfo.Resource_ValidTerrains() do
+		if row.ResourceType == resourceInfo.ResourceType then
+			if row.TerrainType == 'TERRAIN_COAST' then
+				onWater = true;
+			else
+				onLand = true;
+			end
+		end
+	end
+	local location = unit:GetLocation();
+	local plot = Map.GetPlot(location.x, location.y);
+	if plot:GetOwner() ~= unit:GetOwner() then
+		return Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_MUST_OWN");
+	end
+	if plot:GetDistrictType() ~= -1 then
+		return Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_MUST_HAVE_NO_DISTRICT");
+	end
+	local isWater = plot:GetTerrainType() == WATER_INDEX;
+	if isWater and (not onWater) then
+		return Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_MUST_ON_LAND");
+	end
+	if (not isWater) and (not onLand) then
+		return Locale.Lookup("LOC_UNITCOMMAND_PATHFINDER_PLANT_MUST_ON_WATER");
+	end
+	return "";
+end
+m_HDUnitCommands.PATHFINDER_PLANT.VisibleInUI = true;
+function m_HDUnitCommands.PATHFINDER_PLANT.CanUse(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	local unitInfo = GameInfo.Units[pUnit:GetType()];
+	if unitInfo == nil then
+		return false;
+	end
+	return unitInfo.UnitType == 'UNIT_ZIMBABWE_PATHFINDER';
+end
+
+function m_HDUnitCommands.PATHFINDER_PLANT.IsVisible(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	local times = pUnit:GetProperty(PATHFINDER_TIME_KEY) or 0;
+	return times < (GlobalParameters.PATHFINDER_ACTIVATION_CHARGE or 0);
+end
+
+function m_HDUnitCommands.PATHFINDER_PLANT.IsDisabled(pUnit : object)
+	if pUnit == nil then
+		return true;
+	end
+	local resourceId = pUnit:GetProperty(PATHFINDER_RESOURCE_KEY);
+	if resourceId == nil then
+		return true;
+	end
+	local resourceInfo = GameInfo.Resources[resourceId];
+	local onWater = false;
+	local onLand = resourceInfo.Frequency > 0;
+	for row in GameInfo.Resource_ValidTerrains() do
+		if row.ResourceType == resourceInfo.ResourceType then
+			if row.TerrainType == 'TERRAIN_COAST' then
+				onWater = true;
+			else
+				onLand = true;
+			end
+		end
+	end
+	local location = pUnit:GetLocation();
+	local plot = Map.GetPlot(location.x, location.y);
+	if plot:GetOwner() ~= pUnit:GetOwner() then
+		return true;
+	end
+	if plot:GetDistrictType() ~= -1 then
+		return true;
+	end
+	local isWater = plot:GetTerrainType() == WATER_INDEX;
+	if isWater and (not onWater) then
+		return true;
+	end
+	if (not isWater) and (not onLand) then
+		return true;
+	end
+	return false;
+end
