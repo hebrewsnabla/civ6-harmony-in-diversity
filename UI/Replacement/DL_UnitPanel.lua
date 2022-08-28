@@ -63,6 +63,14 @@ function GetUnitActionsTable(pUnit : object)
                     end
             
                     local sToolTipString : string = pCommandTable.ToolTipString or "Undefined Unit Command";
+					if pCommandTable.GetToolTipString ~= nil then
+						local noErr, ttp = pcall(pCommandTable.GetToolTipString, pUnit);
+						if noErr then
+							sToolTipString = ttp;
+						else
+							print(ttp);
+						end
+					end
 
                     local pCallback : ifunction = function()
                         local pSelectedUnit = UI.GetHeadSelectedUnit();
@@ -73,11 +81,22 @@ function GetUnitActionsTable(pUnit : object)
                         local tParameters = {};
                         tParameters[UnitCommandTypes.PARAM_NAME] = pCommandTable.EventName or "";
                         UnitManager.RequestCommand(pSelectedUnit, UnitCommandTypes.EXECUTE_SCRIPT, tParameters);
-                        UnitManager.RequestCommand(pSelectedUnit, UnitCommandTypes.DELETE);
+						if (pCommandTable.DoNotDelete == nil) or (pCommandTable.DoNotDelete ~= true) then
+	                        UnitManager.RequestCommand(pSelectedUnit, UnitCommandTypes.DELETE);
+						end
                     end
 
-                    if (bIsDisabled and pCommandTable.DisabledToolTipString ~= nil) then
-                        sToolTipString = sToolTipString .. "[NEWLINE][NEWLINE]" .. pCommandTable.DisabledToolTipString;
+					local sDisabledToolTipString : string = pCommandTable.DisabledToolTipString;
+					if pCommandTable.GetDisabledToolTipString ~= nil then
+						local noErr, ttp = pcall(pCommandTable.GetDisabledToolTipString, pUnit);
+						if noErr then
+							sDisabledToolTipString = ttp;
+						else
+							print(ttp);
+						end
+					end
+                    if (bIsDisabled and sDisabledToolTipString ~= nil) then
+                        sToolTipString = sToolTipString .. "[NEWLINE][NEWLINE]" .. sDisabledToolTipString;
                     end
 
                     AddActionToTable(pBaseActionsTable, pCommandTable, bIsDisabled, sToolTipString, UnitCommandTypes.EXECUTE_SCRIPT, pCallback);
