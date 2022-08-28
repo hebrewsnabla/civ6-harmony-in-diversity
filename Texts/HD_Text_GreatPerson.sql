@@ -8,6 +8,7 @@ values
     ("LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE",                              "Gain +3000 [ICON_SCIENCE] Science and +1000 [ICON_CULTURE] Culture (on Standard speed)."),
     ("LOC_GREATPERSON_DIPLO_VISIBILITY",                                  "+{Amount} {Amount : plural 1?level; other?levels;} of diplomatic visibility with all other civilizations. Enemy Spy level reduced by 1 in your lands."),
     ("LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "Industrial Zone's regional buildings reach 3 tiles farther, and provide +3 [ICON_Science] Science."),
+	("LOC_PIERO_DE_BARDI_GOLD",                                           "Gain 300 [ICON_Gold] Gold."),
 	-- Great Merchant
 	("LOC_GREAT_PERSON_INDIVIDUAL_HD_CROESUS_NAME",						  "Croesus"),
 	("LOC_GREAT_PERSON_INDIVIDUAL_HD_SANG_HONGYANG_NAME",			      "Sang Hongyang"),
@@ -79,6 +80,7 @@ values
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_GRANT_LOTSO_SCIENCE",                              "获得3000点 [ICON_SCIENCE] 科技值与1000点 [ICON_CULTURE] 文化值（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_DIPLO_VISIBILITY",                                  "所有文明的外交能见度+{Amount} {Amount : plural 1?级; other?级;}。在您的领土内，敌方间谍等级降低1级。"),
     ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE",                                 "工业区内地区性建筑延伸3个单元格且+3 [ICON_Science] 科技值。"), --立即在该区域建造工厂和工作坊。工厂+3 [ICON_Production] 生产力。
+	("zh_Hans_CN",  "LOC_PIERO_DE_BARDI_GOLD",                                           "获得 300 [ICON_Gold] 金币。"),
    	-- Great Merchant
 	("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_HD_CROESUS_NAME",						  "克罗索斯"),
 	("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_HD_SANG_HONGYANG_NAME",			      "桑弘羊"),
