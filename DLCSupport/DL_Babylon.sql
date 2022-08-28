@@ -36,6 +36,7 @@ insert or replace into UnitAbilityModifiers
 values
     ('ABILITY_HANNO',   'HANNO_FREE_UNIT_MOVEMENT_BUFF'),
     ('ABILITY_HANNO',   'ESCORT_MOBILITY_SHARED_MOVEMENT');
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_GRANT_ADVANCED_UNIT_OF_CLASS_IN_NEAREST_OWNER_CITY_AND_APPLY_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT';
 update ModifierArguments set Value = 'HANNO_GRANT_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT' and Name = 'ModifierId';
 insert or replace into Modifiers
     (ModifierId,            ModifierType,                           RunOnce,    Permanent)
