@@ -37,9 +37,9 @@ where exists (select FeatureType from Features where FeatureType = 'FEATURE_SUK_
 delete from Feature_YieldChanges where FeatureType = 'FEATURE_MARSH' and YieldType = 'YIELD_FOOD';
 delete from Feature_YieldChanges where FeatureType = 'FEATURE_REEF' and YieldType = 'YIELD_FOOD';
 -- Resource yield
-insert or replace into Resource_YieldChanges  
+with Resource_YieldChanges_Pre
 	(ResourceType,			YieldType,			YieldChange)
-values
+as (values
 	('RESOURCE_DEER',		'YIELD_FOOD',		1),
 	('RESOURCE_CATTLE',		'YIELD_PRODUCTION',	1),
 	('RESOURCE_COTTON',		'YIELD_PRODUCTION',	1),
@@ -71,15 +71,20 @@ values
 	('RESOURCE_TRUFFLES',	'YIELD_GOLD',		4),
 	('RESOURCE_TOBACCO',	'YIELD_FAITH',		2),
 	('RESOURCE_COTTON',		'YIELD_GOLD',		1),
-	('RESOURCE_CRABS',		'YIELD_GOLD',		3);
+	('RESOURCE_CRABS',		'YIELD_GOLD',		3))
+insert or replace into Resource_YieldChanges
+	(ResourceType,			YieldType,			YieldChange)
+select
+	ResourceType,			YieldType,			YieldChange
+from Resource_YieldChanges_Pre where ResourceType in (select ResourceType from Resources);
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_CATTLE' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DEER' and YieldType = 'YIELD_PRODUCTION';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_HORSES' and YieldType = 'YIELD_FOOD';
 delete from Resource_YieldChanges where ResourceType = 'RESOURCE_DYES' and YieldType = 'YIELD_FAITH';
 -- Natural Wonders yield
-insert or replace into Feature_YieldChanges  
+with Feature_YieldChanges_Pre
 	(FeatureType,					YieldType,			YieldChange)
-values
+as (values
 -- 4 tiles
 	('FEATURE_PANTANAL',			'YIELD_FOOD',		3),
 	('FEATURE_UBSUNUR_HOLLOW',		'YIELD_FAITH',		3),
@@ -103,13 +108,23 @@ values
 	('FEATURE_CRATER_LAKE',			'YIELD_SCIENCE',	2),
 	('FEATURE_CRATER_LAKE',			'YIELD_FAITH',		6),
 	('FEATURE_FOUNTAIN_OF_YOUTH',	'YIELD_SCIENCE',	6),
-	('FEATURE_FOUNTAIN_OF_YOUTH',	'YIELD_FAITH',		2);
+	('FEATURE_FOUNTAIN_OF_YOUTH',	'YIELD_FAITH',		2))
+insert or replace into Feature_YieldChanges
+	(FeatureType,					YieldType,			YieldChange)
+select
+	FeatureType,					YieldType,			YieldChange
+from Feature_YieldChanges_Pre;
 update ModifierArguments set Value = 1 where ModifierId = 'EYESAHARA_SCIENCE_ATOMIC' and Name = 'Amount';
 delete from Feature_AdjacentYields where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
-insert or replace into Feature_AdjacentYields  
+with Feature_AdjacentYields_Pre
 	(FeatureType,					YieldType,			YieldChange)
-values
+as (values
 	('FEATURE_PAITITI',				'YIELD_GOLD',		5),
 	('FEATURE_EVEREST',				'YIELD_FAITH',		2),
 	('FEATURE_DELICATE_ARCH',		'YIELD_GOLD',		2),
-	('FEATURE_PIOPIOTAHI',			'YIELD_GOLD',		2);
+	('FEATURE_PIOPIOTAHI',			'YIELD_GOLD',		2))
+insert or replace into Feature_AdjacentYields
+	(FeatureType,					YieldType,			YieldChange)
+select
+	FeatureType,					YieldType,			YieldChange
+from Feature_AdjacentYields_Pre;
