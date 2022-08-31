@@ -313,6 +313,8 @@ values
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'REQUIRES_CITY_HAS_DISTRICT_MBANZA'),
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'PLAYER_IS_CIVILIZATION_KONGO');
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
+update ModifierArguments set Value = 50 where Name = 'Amount' and
+	ModifierId in ('TRAIT_DOUBLE_MERCHANT_POINTS', 'TRAIT_DOUBLE_WRITER_POINTS', 'TRAIT_DOUBLE_MUSICIAN_POINTS', 'TRAIT_DOUBLE_ARTIST_POINTS');
 
 -- GreatWorks Yield
 delete from TraitModifiers where ModifierId like 'TRAIT_GREAT_WORK_%' and TraitType = 'TRAIT_CIVILIZATION_NKISI';
