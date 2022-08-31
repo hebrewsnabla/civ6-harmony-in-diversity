@@ -113,7 +113,7 @@ insert or replace into Feature_YieldChanges
 	(FeatureType,					YieldType,			YieldChange)
 select
 	FeatureType,					YieldType,			YieldChange
-from Feature_YieldChanges_Pre;
+from Feature_YieldChanges_Pre where FeatureType in (select FeatureType from Features);
 update ModifierArguments set Value = 1 where ModifierId = 'EYESAHARA_SCIENCE_ATOMIC' and Name = 'Amount';
 delete from Feature_AdjacentYields where FeatureType = 'FEATURE_PAITITI' and YieldType = 'YIELD_CULTURE';
 with Feature_AdjacentYields_Pre
@@ -127,4 +127,4 @@ insert or replace into Feature_AdjacentYields
 	(FeatureType,					YieldType,			YieldChange)
 select
 	FeatureType,					YieldType,			YieldChange
-from Feature_AdjacentYields_Pre;
+from Feature_AdjacentYields_Pre where FeatureType in (select FeatureType from Features);

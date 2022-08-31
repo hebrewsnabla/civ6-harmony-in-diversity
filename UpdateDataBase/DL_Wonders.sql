@@ -366,7 +366,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,														SubjectRequirementSetId)
 values
-	('GREAT_ZIMBABWE_BONUS_GOLD_ATTACH',	'MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',						'GREAT_ZIMBABWE_REQUIREMENRS'),
+	('GREAT_ZIMBABWE_BONUS_GOLD_ATTACH',	'MODIFIER_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',						'GREAT_ZIMBABWE_REQUIREMENTS'),
 	('GREAT_ZIMBABWE_BONUS_GOLD',			'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	null);
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
