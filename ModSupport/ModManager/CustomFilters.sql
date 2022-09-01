@@ -50,7 +50,12 @@ values
                                                  93e0f97a-a9cc-494d-8560-b3b6b9aabdf2,
                                                  72d77fd9-7d34-4539-97d9-f5c23de67814,
                                                  1047a269-38a8-4cee-b70a-a7681015eed7,
-                                                 cc42ab93-1a06-4095-b0a4-64ca2aab241a"),
+                                                 cc42ab93-1a06-4095-b0a4-64ca2aab241a,
+												 
+												 1c757aea-0da4-4934-8520-96a59f6157b9,
+												 5c5ed34e-f66b-41e4-aa7b-4546b298f2a0,
+												 b2a21d80-eee9-41da-87c0-c09e9ff78458
+												 "),
                                                 -- b5776b4b-93b1-409c-acee-09f829856eed,
     ("LOC_WONDERS_MODS_NAME",                   "World Wonders"),
     ("LOC_WONDERS_MODS_LIST",                   "5a5601c5-090c-4172-89fe-8f1da9e2b96d,
