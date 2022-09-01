@@ -498,3 +498,11 @@ insert or replace into Tags
 values
    ('CLASS_SEADOG',				'ABILITY_CLASS'),
    ('CLASS_LAND_MILITARY',		'ABILITY_CLASS');
+
+-- 启蒙会蛮族单位适配
+update Units set PrereqTech = null where UnitType = 'UNIT_HD_BARBARIAN_GALLEY' or UnitType = 'UNIT_HD_BARBARIAN_QUADRIREME';
+insert or replace into UnitUpgrades
+	(Unit,								UpgradeUnit)
+values
+	('UNIT_BARBARIAN_HORSE_ARCHER',		'UNIT_CROSSBOWMAN'),
+	('UNIT_BARBARIAN_HORSEMAN',			'UNIT_HORSEMAN');

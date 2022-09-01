@@ -122,6 +122,7 @@ update Units set Cost = 60, Maintenance = 2, BaseMoves = 2, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_EGYPTIAN_KHOPESH';
 delete from TypeTags where Type = 'ABILITY_PLUS_5_BONUS_VS_DAMAGED' and Tag = 'CLASS_EGYPTIAN_KHOPESH';
 insert or replace into TypeTags (Type, Tag) values ('ABILITY_HD_BATTLECRY', 'CLASS_EGYPTIAN_KHOPESH');
+update Units set Combat = 28, RangedCombat = 38, Cost = 80 where UnitType = 'UNIT_EGYPTIAN_WAR_GALLEY';
 -- -- 中国
 update Units set Cost = 90, Maintenance = 3, BaseMoves = 2, Range = 2, Combat = 32, RangedCombat = 37, StrategicResource = NULL where UnitType = 'UNIT_CHINESE_CHOKONU';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_CHINESE_CHOKONU';

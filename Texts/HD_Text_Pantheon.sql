@@ -68,7 +68,9 @@ values
     ("LOC_BELIEF_TALE_OF_DWALVES_NAME",                           "El Dorado"),
     ("LOC_BELIEF_TALE_OF_DWALVES_DESCRIPTION",                    "+1 [ICON_FOOD] Food and +1 [ICON_HOUSING] Housing from Mines over Luxury and Bonus resources. +2 [ICON_GOLD] Gold from all Mines."),
     ("LOC_BELIEF_MEGALITHIC_WORSHIP_NAME",                        "Tjukurpa"),
-    ("LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",                 "Quarries provide +1 [ICON_CULTURE] Culture and +3 [ICON_GOLD] Gold.");
+    ("LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",                 "Quarries provide +1 [ICON_CULTURE] Culture and +3 [ICON_GOLD] Gold."),
+    ("LOC_BELIEF_ILLUMINATORS_NAME",                        	  "Illuminators"),
+    ("LOC_BELIEF_ILLUMINATORS_DESCRIPTION",                	      "Gain 50 [ICON_FAITH] Faith when you clear a Barbarian Outpost. The unit that cleared the Barbarian Outpost heals +100 HP. Allows the construction of Barbarian Horseman, Barbarian Horse Archer and Primitive Quadrireme.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -140,4 +142,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_TALE_OF_DWALVES_NAME",                           "黄金国传说"),
     ("zh_Hans_CN",  "LOC_BELIEF_TALE_OF_DWALVES_DESCRIPTION",                    "改良奢侈和加成资源的矿山+1 [ICON_FOOD] 食物，+1 [ICON_HOUSING] 住房。所有矿山+2 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_MEGALITHIC_WORSHIP_NAME",                        "梦创时代"),
-    ("zh_Hans_CN",  "LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",                 "采石场+1 [ICON_CULTURE] 文化值，+3 [ICON_GOLD] 金币。");
+    ("zh_Hans_CN",  "LOC_BELIEF_MEGALITHIC_WORSHIP_DESCRIPTION",                 "采石场+1 [ICON_CULTURE] 文化值，+3 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ILLUMINATORS_NAME",                        		 "启蒙会"),
+    ("zh_Hans_CN",  "LOC_BELIEF_ILLUMINATORS_DESCRIPTION",                 		 "肃清蛮族哨站时获得50 [ICON_Faith] 信仰值。肃清蛮族哨站的单位回复100点生命值。允许建造蛮族骑手、蛮族弓骑手和原始四段帆船。");
