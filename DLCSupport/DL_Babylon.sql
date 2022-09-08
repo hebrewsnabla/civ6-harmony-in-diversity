@@ -113,18 +113,18 @@ create temporary table HD_BabylonDistrictBonuses (
 insert or replace into HD_BabylonDistrictBonuses
 	(DistrictType,	YieldType,	Amount)
 select
-	DistrictType,	YieldType,	2
+	DistrictType,	YieldType,	1
 from HD_DistrictPseudoYields;
 insert or replace into HD_BabylonDistrictBonuses
 	(DistrictType,								YieldType,			Amount)
 values
-	('DISTRICT_GOVERNMENT',						'YIELD_CULTURE',	2),
-	('DISTRICT_ENTERTAINMENT_COMPLEX',			'YIELD_GOLD',		2),
-	('DISTRICT_WATER_ENTERTAINMENT_COMPLEX',	'YIELD_GOLD',		2);
+	('DISTRICT_GOVERNMENT',						'YIELD_CULTURE',	1),
+	('DISTRICT_ENTERTAINMENT_COMPLEX',			'YIELD_GOLD',		1),
+	('DISTRICT_WATER_ENTERTAINMENT_COMPLEX',	'YIELD_GOLD',		1);
 insert or replace into HD_BabylonDistrictBonuses
 	(DistrictType,								YieldType,			Amount)
 select
-	'DISTRICT_DIPLOMATIC_QUARTER',				'INFLUENCE_POINT',	2
+	'DISTRICT_DIPLOMATIC_QUARTER',				'INFLUENCE_POINT',	1
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into HD_BabylonDistrictBonuses
 	(DistrictType,	YieldType,	Amount,		IsNegative)

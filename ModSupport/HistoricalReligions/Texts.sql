@@ -116,6 +116,7 @@ insert or replace into LocalizedText (Language, Tag, Text) values
 ("zh_Hans_CN", "LOC_RELIGION_9J_SIKHISM", "锡克教"),
 ("zh_Hans_CN", "LOC_RELIGION_9K_TAOISM", "道教"),
 ("zh_Hans_CN", "LOC_RELIGION_AYNI", "安第斯艾尼互助传统"),
+("zh_Hans_CN", "LOC_RELIGION_AYNI_ALT", "安第斯艾尼互助传统"),
 ("zh_Hans_CN", "LOC_RELIGION_MOHISM", "墨家思想"),
 ("zh_Hans_CN", "LOC_RELIGION_T1_SHENISM", "中国民俗信仰"),
 ("zh_Hans_CN", "LOC_RELIGION_Q7_LEGALISM", "法家思想"),
