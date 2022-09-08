@@ -260,7 +260,7 @@ insert or replace into NamedDesertCivilizations
 values
 	('NAMED_DESERT_GOBI',			'CIVILIZATION_CHINA'),
 	('NAMED_DESERT_TAKLAMAKAN',		'CIVILIZATION_CHINA');
-insert or replace into NamedDeserts
+insert or ignore into NamedDeserts
 	(NamedDesertType,				Name)
 values
 	('NAMED_DESERT_GOBI',			'LOC_NAMED_DESERT_GOBI_NAME'),
@@ -279,7 +279,7 @@ values
 	('NAMED_LAKE_POYANG_LAKE',		'CIVILIZATION_CHINA'),
 	('NAMED_LAKE_QINGHAI_LAKE',		'CIVILIZATION_CHINA'),
 	('NAMED_LAKE_WEST_LAKE',		'CIVILIZATION_CHINA');
-insert or replace into NamedLakes
+insert or ignore into NamedLakes
 	(NamedLakeType,					Name)
 values
 	('NAMED_LAKE_CHAO_LAKE',		'LOC_NAMED_LAKE_CHAO_LAKE_NAME'),
@@ -305,7 +305,7 @@ values
 	('NAMED_MOUNTAIN_PAMIRS',		'CIVILIZATION_CHINA'),
 	('NAMED_MOUNTAIN_QINLING',		'CIVILIZATION_CHINA'),
 	('NAMED_MOUNTAIN_TIEN_SHAN',	'CIVILIZATION_CHINA');
-insert or replace into NamedMountains
+insert or ignore into NamedMountains
 	(NamedMountainType,				Name)
 values
 	('NAMED_MOUNTAIN_HENGDUAN',		'LOC_NAMED_MOUNTAIN_HENGDUAN_NAME'),
@@ -334,7 +334,7 @@ values
 	('NAMED_RIVER_XIANGJIANG',		'CIVILIZATION_CHINA'),
 	('NAMED_RIVER_JISHUI',			'CIVILIZATION_CHINA'),
 	('NAMED_RIVER_SISHUI',			'CIVILIZATION_CHINA');
-insert or replace into NamedRivers
+insert or ignore into NamedRivers
 	(NamedRiverType,				Name)
 values
 	('NAMED_RIVER_AMUR',			'LOC_NAMED_RIVER_AMUR_NAME'),
@@ -359,7 +359,7 @@ values
 	('NAMED_SEA_GULF_OF_TONKIN',	'CIVILIZATION_CHINA'),
 	('NAMED_SEA_SOUTH_CHINA_SEA',	'CIVILIZATION_CHINA'),
 	('NAMED_SEA_YELLOW_SEA',		'CIVILIZATION_CHINA');
-insert or replace into NamedSeas
+insert or ignore into NamedSeas
 	(NamedSeaType,					Name)
 values
 	('NAMED_SEA_BO_HAI',			'LOC_NAMED_SEA_BO_HAI_NAME'),
@@ -373,7 +373,7 @@ insert or replace into NamedVolcanoCivilizations
 	(NamedVolcanoType,				CivilizationType)
 values
 	('NAMED_VOLCANO_PAEKTU',		'CIVILIZATION_CHINA');
-insert or replace into NamedVolcanoes
+insert or ignore into NamedVolcanoes
 	(NamedVolcanoType,				Name)
 values
 	('NAMED_VOLCANO_PAEKTU',		'LOC_NAMED_VOLCANO_PAEKTU_NAME');
