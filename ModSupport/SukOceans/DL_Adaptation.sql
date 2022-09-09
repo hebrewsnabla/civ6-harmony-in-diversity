@@ -51,17 +51,6 @@ from Resources where ResourceType = 'RESOURCE_SUK_CAVIAR';
 -- 水族馆适配 xhh
 delete from BuildingModifiers where ModifierId = 'AQUARIUM_KELP_FOREST_SCIENCE';
 
--- 海藻森林给圣地标准相邻加成
-insert or replace into Adjacency_YieldChanges
-    (ID,				Description,       	YieldType,      YieldChange,    AdjacentFeature)
-values
-    ('Kelp_Faith',		'LOC_KELP_FAITH',   'YIELD_FAITH',  1,              'FEATURE_SUK_KELP');
-
-insert or replace into District_Adjacencies
-    (DistrictType,                  YieldChangeId)
-values
-    ('DISTRICT_HOLY_SITE',          'Kelp_Faith');
-
 --------------------------------------------------------------------------------
 -- from multi mode
 update Features set RemoveTech = 'TECH_SAILING' where FeatureType = 'FEATURE_SUK_KELP';
