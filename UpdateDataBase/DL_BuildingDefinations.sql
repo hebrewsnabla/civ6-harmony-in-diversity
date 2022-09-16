@@ -51,10 +51,10 @@ values
 	('BUILDING_HD_INN',					'KIND_BUILDING');
 
 insert into Buildings
-	(BuildingType,			PrereqDistrict,				PrereqCivic,								Cost,	Maintenance,	CitizenSlots,	Housing,	Entertainment,		PurchaseYield,		AdvisorType,			Name,								Description)
+	(BuildingType,			PrereqDistrict,				PrereqCivic,								Cost,	Maintenance,	CitizenSlots,	Entertainment,		PurchaseYield,		AdvisorType,			Name,								Description)
 values
-	('BUILDING_HD_TAVERN',	'DISTRICT_NEIGHBORHOOD',	'CIVIC_MEDIEVAL_FAIRES',					185,	1,				1,				0,			1,					'YIELD_GOLD',		'ADVISOR_GENERIC',		'LOC_BUILDING_HD_TAVERN_NAME',		'LOC_BUILDING_HD_TAVERN_DESCRIPTION'),
-	('BUILDING_HD_INN',		'DISTRICT_NEIGHBORHOOD',	'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		185,	1,				1,				2,			0,					'YIELD_GOLD',		'ADVISOR_GENERIC',		'LOC_BUILDING_HD_INN_NAME',			'LOC_BUILDING_HD_INN_DESCRIPTION');
+	('BUILDING_HD_TAVERN',	'DISTRICT_NEIGHBORHOOD',	'CIVIC_MEDIEVAL_FAIRES',					120,	1,				1,				1,					'YIELD_GOLD',		'ADVISOR_GENERIC',		'LOC_BUILDING_HD_TAVERN_NAME',		null),
+	('BUILDING_HD_INN',		'DISTRICT_NEIGHBORHOOD',	'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		120,	1,				1,				0,					'YIELD_GOLD',		'ADVISOR_GENERIC',		'LOC_BUILDING_HD_INN_NAME',			'LOC_BUILDING_HD_INN_DESCRIPTION');
 
 insert or ignore into MutuallyExclusiveBuildings
 	(Building,							MutuallyExclusiveBuilding)

@@ -224,13 +224,6 @@ values
     ('GAMESPEED_ONLINE',    24,             15),
     ('GAMESPEED_ONLINE',    12,             110);
 
--- 医院
-insert or replace into GlobalParameters (Name, Value) values ('HOSPITAL_SCIENCE_PER_POP', 40);
-
--- Trading Post
--- update GlobalParameters set Value = 1 where Name = 'TRADING_POST_GOLD_IN_FOREIGN_CITY';
--- update GlobalParameters set Value = 0 where Name = 'TRADING_POST_GOLD_IN_OWN_CITY';
-
 -- Art move lock
 update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';
 --市中心改为3粮2锤

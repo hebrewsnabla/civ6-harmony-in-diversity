@@ -1634,8 +1634,7 @@ inner join Resources
 on Improvement_ValidResources.ResourceType = Resources.ResourceType
 where Resources.ResourceClassType = 'RESOURCECLASS_BONUS' and Improvement_ValidResources.ImprovementType = 'IMPROVEMENT_FARM';
 
--- 情报局改名贸易本埠: +1贸易路线容量, 全国每级商业和港口建筑为本城+4%的金币产出. 本国的国际商路从每个经过的贸易站获得+3金.
--- 原情报局能力给外交办
+
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 select
@@ -1646,51 +1645,18 @@ insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
     ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_CAPACITY'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_YIELD'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER1'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER2'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER3');
+    ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_YIELD');
 insert or replace into Modifiers
     (ModifierId,                                    ModifierType,                                                           SubjectRequirementSetId)
 values
     ('GOV_SPIES_TRADE_ROUTE_CAPACITY',              'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',                          null),
-    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY',    null),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER1'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER2'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER3');
+    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY',    null);
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,           Value)
 values
     ('GOV_SPIES_TRADE_ROUTE_CAPACITY',              'Amount',       1),
     ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'Amount',       3),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'Amount',       4);
-insert or ignore into RequirementSets
-    (RequirementSetId,                      RequirementSetType)
-values
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER1',          'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER2',          'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER3',          'REQUIREMENTSET_TEST_ANY');
+    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'Amount',       3);
 create temporary table GovSpiesBuffedBuildings (BuildingType text not null primary key);
 insert into GovSpiesBuffedBuildings (BuildingType) select BuildingType from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' or PrereqDistrict = 'DISTRICT_HARBOR') and BuildingType not like 'BUILDING_MARACANA_DUMMY_%' and IsWonder = 0 and InternalOnly = 0;
 insert or replace into BuildingModifiers
@@ -1701,7 +1667,7 @@ from GovSpiesBuffedBuildings;
 insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                                       SubjectRequirementSetId)
 select
-    'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'HD_CITY_HAS_' || BuildingType
+    'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
 from GovSpiesBuffedBuildings;
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,           Value)
@@ -1713,136 +1679,28 @@ insert or replace into ModifierArguments
 select
     'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',   'YieldType',    'YIELD_GOLD'
 from GovSpiesBuffedBuildings;
-insert or ignore into RequirementSets
-    (RequirementSetId,              RequirementSetType)
-select
-    'HD_CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL'
-from GovSpiesBuffedBuildings;
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,              RequirementId)
-select
-    'HD_CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType
-from GovSpiesBuffedBuildings;
-
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-    ('BUILDING_HD_TAVERN',        		'YIELD_FOOD',           2),
-    ('BUILDING_HD_INN',    				'YIELD_CULTURE',     	1),
-    ('BUILDING_HD_INN',    				'YIELD_GOLD',           2);
-
+    ('BUILDING_HD_TAVERN',        		'YIELD_CULTURE',        4),
+    ('BUILDING_HD_TAVERN',        		'YIELD_GOLD',           8),
+    ('BUILDING_HD_INN',    				'YIELD_FOOD',     		2),
+    ('BUILDING_HD_INN',    				'YIELD_PRODUCTION',     2),
+    ('BUILDING_HD_INN',    				'YIELD_GOLD',           8);
 insert or replace into Building_CitizenYieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-	('BUILDING_HD_TAVERN',				'YIELD_FOOD',			1),
-	('BUILDING_HD_INN',					'YIELD_GOLD',			2);
-
-insert or replace into Building_GreatPersonPoints
-	(BuildingType,							GreatPersonClassType,				PointsPerTurn)
-values
-	('BUILDING_HD_TAVERN',					'GREAT_PERSON_CLASS_WRITER',		2),
-	('BUILDING_HD_TAVERN',					'GREAT_PERSON_CLASS_ARTIST',		1),
-	('BUILDING_HD_INN',						'GREAT_PERSON_CLASS_MERCHANT',		2),
-	('BUILDING_HD_INN',						'GREAT_PERSON_CLASS_SCIENTIST',		1);
-
-CREATE TEMPORARY TABLE 'HD_TAVERN_RESOURCES' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_TAVERN_RESOURCES (ResourceType) select ResourceType from Resources where ResourceType in
-	('RESOURCE_BANANAS','RESOURCE_DEER','RESOURCE_RICE','RESOURCE_WHEAT','RESOURCE_CITRUS','RESOURCE_SUGAR','RESOURCE_WINE','RESOURCE_HORSES','RESOURCE_MAIZE','RESOURCE_HONEY','RESOURCE_CVS_POMEGRANATES',
-	'RESOURCE_P0K_MAPLE','RESOURCE_P0K_PLUMS','RESOURCE_LEU_P0K_QUINOA','RESOURCE_LEU_P0K_POTATOES','RESOURCE_BERRIES','RESOURCE_DATES','RESOURCE_BARLEY','RESOURCE_STRAWBERRY','RESOURCE_SORGHUM');
-
-CREATE TEMPORARY TABLE 'HD_INN_RESOURCES' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_INN_RESOURCES (ResourceType) select ResourceType from Resources where ResourceType in
-	('RESOURCE_DEER','RESOURCE_SHEEP','RESOURCE_COTTON','RESOURCE_FURS','RESOURCE_SILK','RESOURCE_DLV_BISON','RESOURCE_P0K_PAPYRUS','RESOURCE_LEU_P0K_LLAMAS','RESOURCE_SUK_CAMEL','RESOURCE_BAMBOO',
-	'RESOURCE_SANDALWOOD','RESOURCE_OAK','RESOURCE_EBONY','RESOURCE_SAKURA','RESOURCE_PINE','RESOURCE_RUBBER','RESOURCE_CASHMERE','RESOURCE_WOLF','RESOURCE_TIGER','RESOURCE_LION');
-
-CREATE TEMPORARY TABLE 'HD_TAVERN_DISTRICTS'(
-    'DistrictType' TEXT NOT NULL,
-    'GreatPersonClassType' TEXT NOT NULL
-);
-
-insert or replace into HD_TAVERN_DISTRICTS
-	(DistrictType,					GreatPersonClassType)
-values
-	('DISTRICT_HOLY_SITE',			'GREAT_PERSON_CLASS_PROPHET'),
-	('DISTRICT_CAMPUS',				'GREAT_PERSON_CLASS_SCIENTIST'),
-	('DISTRICT_HARBOR',				'GREAT_PERSON_CLASS_ADMIRAL'),
-	('DISTRICT_ENCAMPMENT',			'GREAT_PERSON_CLASS_GENERAL'),
-	('DISTRICT_COMMERCIAL_HUB',		'GREAT_PERSON_CLASS_MERCHANT'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_WRITER'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_ARTIST'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_MUSICIAN'),
-	('DISTRICT_INDUSTRIAL_ZONE',	'GREAT_PERSON_CLASS_ENGINEER');
-
--- 酒馆
+	('BUILDING_HD_TAVERN',				'YIELD_GOLD',			3),
+	('BUILDING_HD_INN',					'YIELD_GOLD',			3);
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_TAVERN',			'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
+values
+	('BUILDING_HD_INN',				'HD_INN_INFLUENCE_POINTS');
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,			OwnerRequirementSetId,      SubjectRequirementSetId)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',
-	'HD_CITY_HAS_IMPROVED_'|| a.ResourceType ||'_REQUIRMENTS',
-	'DISTRICT_IS_' || substr(b.DistrictType,10)
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
+	(ModifierId,					ModifierType)
+values
+	('HD_INN_INFLUENCE_POINTS',		'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN');
 insert or replace into ModifierArguments
 	(ModifierId,					Name,		Value)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'GreatPersonClassType',		b.GreatPersonClassType
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
-insert or replace into ModifierArguments
-	(ModifierId,					Name,		Value)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'Amount',		1
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
--- 客栈
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_INN',				'HD_INN_INFLUENCE_' || ResourceType
-from HD_INN_RESOURCES;
-
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_INN',				'HD_INN_ALLIANCE_' || ResourceType
-from HD_INN_RESOURCES;
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,											OwnerRequirementSetId)
-select
-	'HD_INN_INFLUENCE_' || ResourceType,	'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		'HD_CITY_HAS_IMPROVED_'|| ResourceType ||'_REQUIRMENTS'
-from HD_INN_RESOURCES;
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,											OwnerRequirementSetId)
-select
-	'HD_INN_ALLIANCE_' || ResourceType,		'MODIFIER_PLAYER_ADJUST_ALLIANCE_POINTS',				'HD_CITY_HAS_IMPROVED_'|| ResourceType ||'_REQUIRMENTS'
-from HD_INN_RESOURCES;
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,		Value)
-select
-	'HD_INN_INFLUENCE_' || ResourceType,	'Amount',	1
-from HD_INN_RESOURCES;
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,		Value)
-select
-	'HD_INN_ALLIANCE_' || ResourceType,		'Amount',	1
-from HD_INN_RESOURCES;
-
--- Tourism Bomb
-/*
-insert or replace into
-	(BuildingType,		TourismBombValue)
-select
-*/	
+values
+	('HD_INN_INFLUENCE_POINTS',		'Amount',	2);
