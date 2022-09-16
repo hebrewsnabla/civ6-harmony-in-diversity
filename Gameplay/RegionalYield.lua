@@ -116,8 +116,11 @@ function RefreshRegionalYieldIfPending (playerId)
 		pendingRefresh[playerId] = 0;
 	end
 end
+function pendRefresh (playerId)
+	pendingRefresh[playerId] = 1;
+end
 function Initialize ()
-	Utils.RefreshRegionalYield = RefreshRegionalYield;
+	Utils.RefreshRegionalYield = pendRefresh;
 	Events.CityWorkerChanged.Add(function (playerId, cityId, x, y)
 		RefreshRegionalYieldIfPending(playerId);
 	end);

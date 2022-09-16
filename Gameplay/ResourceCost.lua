@@ -86,18 +86,9 @@ function SyncRefreshResourceCost (playerId, doReduce)
 	sync = false;
 end
 
-function Initialize ()
-	Events.PlayerResourceChanged.Add(function (playerId, resourceTypeId)
-		SyncRefreshResourceCost(playerId, false);
-	end);
-	Events.BuildingAddedToMap.Add(function (x, y, buildingId, playerId, unknown1, unknown2)
-		SyncRefreshResourceCost(playerId, false);
-	end);
-	GameEvents.PlayerTurnStartComplete.Add(function (playerId)
-		SyncRefreshResourceCost(playerId, false);
-	end);
-	GameEvents.PlayerTurnStarted.Add(function (playerId)
-		SyncRefreshResourceCost(playerId, true);
-	end);
-end
-Initialize();
+GameEvents.PlayerTurnStartComplete.Add(function (playerId)
+	SyncRefreshResourceCost(playerId, false);
+end);
+GameEvents.PlayerTurnStarted.Add(function (playerId)
+	SyncRefreshResourceCost(playerId, true);
+end);
