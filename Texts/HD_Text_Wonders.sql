@@ -146,7 +146,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_COLOSSUS_DESCRIPTION",                     "+1 [ICON_TradeRoute] 贸易路线容量。获得1个商人单位。 本城拥有的每个渔船为从该城出发的国际商路+2 [ICON_GOLD] 金币[NEWLINE][NEWLINE]必须建在邻近陆地和港口的海岸上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。本城内每座奇观使玩家 [ICON_GREATENGINEER] 大工程师点数累积速度+5%。本城每座奇观+4 [ICON_CULTURE] 文化值，+4 [ICON_GOLD] 金币。全国奇观提供的 [ICON_TOURISM] 旅游业绩+100%。[NEWLINE][NEWLINE]必须建在河流旁。"),
     -- ("zh_Hans_CN",  "LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。所有世界奇观+8 [ICON_GOLD] 金币。完成世界奇观后返还等同于奇观所需产能80%的 [ICON_GOLD] 金币。[NEWLINE][NEWLINE]必须建在河流旁。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_TORRE_DE_BELEM_DESCRIPTION",               "目的地城市每有1处奢侈品资源，从此城起源的国际 [ICON_TradeRoute] 贸易路线便+2 [ICON_GOLD] 金币。建成时获得2个开拓者，所有开拓者+2 [ICON_Movement] 移动力。和首座城市不在同一个大陆上的城市+2初始 [ICON_Citizen] 人口。[NEWLINE][NEWLINE]必须建造在与港口区域相邻的海岸单元格上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_TORRE_DE_BELEM_DESCRIPTION",               "目的地城市每有1处奢侈品资源，从此城起源的国际 [ICON_TradeRoute] 贸易路线便+2 [ICON_GOLD] 金币。建成时获得2个开拓者，所有开拓者+2 [ICON_Movement] 移动力。和首座城市不在同一个大陆上的城市+2初始 [ICON_Citizen] 人口。[NEWLINE][NEWLINE]必须建在邻近陆地和港口的海岸上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_GLOBE_THEATRE",               "当展示来自不同作家的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_OXFORD_UNIVERSITY",           "当展示来自不同作家的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_SYDNEY_OPERA_HOUSE",          "当展示来自相同时代音乐家的作品时，主题加成翻倍。 "),
