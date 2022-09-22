@@ -299,7 +299,7 @@ UPDATE PseudoYields SET DefaultValue = 30 WHERE PseudoYieldType = 'PSEUDOYIELD_N
 -- UPDATE PseudoYields SET DefaultValue = 100 WHERE PseudoYieldType = 'PSEUDOYIELD_SPACE_RACE'; -- 100
 UPDATE PseudoYields SET DefaultValue = 1.25 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_NUMBER'; --	1 -- controls size of the army
 UPDATE PseudoYields SET DefaultValue = 0.13 WHERE PseudoYieldType = 'PSEUDOYIELD_STANDING_ARMY_VALUE'; --	0.1 -- controls size of the army
---UPDATE PseudoYields SET DefaultValue = 1 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --	1
+UPDATE PseudoYields SET DefaultValue = 0 WHERE PseudoYieldType = 'PSEUDOYIELD_TOURISM'; --	1
 
 -- Changed based on Real Strategy
 UPDATE PseudoYields SET DefaultValue = 1.4 WHERE PseudoYieldType = 'PSEUDOYIELD_UNIT_COMBAT'; -- 1.0, AI+ 1.4, RS 1.1 -- This is land combat units
