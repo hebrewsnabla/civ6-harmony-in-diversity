@@ -373,25 +373,68 @@ create temporary table if not exists TraitAttachedModifiers (
 delete from TraitModifiers where TraitType = 'MINOR_CIV_JOHANNESBURG_TRAIT';
 create temporary table JohannesburgResources (ResourceType text not null primary key);
 insert or replace into JohannesburgResources (ResourceType) select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_MINE' or ImprovementType = 'IMPROVEMENT_QUARRY';
+
 insert or replace into TraitAttachedModifiers
     (TraitType,                   		ModifierId)
 select
-    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType
+    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1'
 from JohannesburgResources;
 insert or replace into Modifiers
-    (ModifierId,                                    ModifierType,                               		SubjectRequirementSetId)
+    (ModifierId,                                                    ModifierType,                               		 SubjectRequirementSetId)
 select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,    	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	 'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                           		Name,           Value)
+    (ModifierId,                         		                    Name,          Value)
 select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'Amount',       1
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',	'YieldType',   'YIELD_PRODUCTION'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                         		Name,           Value)
+    (ModifierId,                           		                    Name,          Value)
 select
-    'MINOR_CIV_JOHANNESBURG_' || ResourceType,	'YieldType',    'YIELD_PRODUCTION'
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',	'Amount',      1
+from JohannesburgResources;
+
+insert or replace into TraitAttachedModifiers
+    (TraitType,                   		ModifierId)
+select
+    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2'
+from JohannesburgResources;
+insert or replace into Modifiers
+    (ModifierId,                                                    ModifierType,                               		    OwnerRequirementSetId,                          SubjectRequirementSetId)
+select
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	    'PLAYER_HAS_TECH_APPRENTICESHIP_REQUIREMENTS',  'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                         		                    Name,          Value)
+select
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',	'YieldType',   'YIELD_PRODUCTION'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                           		                    Name,          Value)
+select
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',	'Amount',      1
+from JohannesburgResources;
+
+insert or replace into TraitAttachedModifiers
+    (TraitType,                   		ModifierId)
+select
+    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE'
+from JohannesburgResources;
+insert or replace into Modifiers
+    (ModifierId,                                                        ModifierType,                               		    SubjectRequirementSetId)
+select
+	'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',	    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                         		                        Name,           Value)
+select
+	'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',        'YieldType',    'YIELD_GOLD'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+    (ModifierId,                           		                        Name,           Value)
+select
+    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',        'Amount',       3
 from JohannesburgResources;
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
