@@ -19,6 +19,7 @@ end
 include("FarmsOnFreshHills_Common");
 include("HD_GreatPeople_Common");
 include("HD_UnitCommandDefs");
+include("AnimeDiversity_UnitCommandDefs");
 include "Hanyuu_CommandDefs";               --  Mod Furude Rika Support
 
 -- Utils = ExposedMembers.DLHD.Utils;
