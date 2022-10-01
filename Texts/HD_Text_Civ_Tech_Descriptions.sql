@@ -30,7 +30,7 @@ values
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods and Rainforest, and harvesting of resources improved by Mines."),
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_POTTERY_DESCRIPTION",                                                        "Allows harvesting of resources improved by Farms."),
-    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows Builders and Traders to embark."),
+    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Fishing Boats. Allows Builders and Traders to embark."),
     ("LOC_TECH_IRRIGATION_DESCRIPTION",                                                     "+2 [ICON_GOLD] Gold from Plantations adjacent to fresh water or Aqueduct.[NEWLINE]Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allows Builders to build Farms on Plains Hills or Grassland Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests."), -- Camp improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food from Farms. [NEWLINE]+1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in cities with a Granary."),
@@ -38,7 +38,7 @@ values
     ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory always obtain roads for free."), -- Pasture improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_BRONZE_WORKING_DESCRIPTION",                                                 "Reveals [ICON_RESOURCE_IRON] Iron. Allows harvesting of resources improved by Lumber Mills."),
     ("LOC_TECH_MASONRY_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Quarries."),
-    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of resources improved by Fishing Boats. Allows all land units to embark."),
+    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        " Allows all land units to embark."),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "+1 [ICON_FOOD] Food from Plantations.[NEWLINE][ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     -- ("LOC_TECH_CURRENCY_HD_DESCRIPTION",                                                    "Provides +3 [ICON_GOLD] Gold to Commercial Hubs."),
     ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements provide +1 [ICON_Production] Production."),
@@ -217,7 +217,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                                       "允许砍伐树林、雨林和收获由矿山改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                             "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_POTTERY_DESCRIPTION",                                         "允许收获由农场改良的资源。"),
-    ("zh_Hans_CN",  "LOC_TECH_SAILING_HD_DESCRIPTION",                                      "允许建造者和商人上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_SAILING_HD_DESCRIPTION",                                      "允许收获由渔船改良的资源。允许建造者和商人上船。"),
     ("zh_Hans_CN",  "LOC_TECH_IRRIGATION_DESCRIPTION",                                      "相邻淡水或水渠的种植园+2 [ICON_GOLD] 金币。[NEWLINE]允许清理沼泽和收获由种植园改良的资源。允许在相邻淡水或水渠的平原和草原丘陵上修建农场。"),
     ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。"), -- 营地+1 [ICON_gold] 金币。
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
@@ -225,7 +225,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "所有境内改良设施自动获得道路。"), -- 牧场+1 [ICON_GOLD] 金币。
     ("zh_Hans_CN",  "LOC_TECH_BRONZE_WORKING_DESCRIPTION",                                  "显示 [ICON_RESOURCE_IRON] 铁资源。允许收获由伐木场改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",                                      "允许收获由采石场改良的资源。"),    
-    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获由渔船改良的资源。允许所有陆地单位上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许所有陆地单位上船。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "种植园+1 [ICON_FOOD] 食物。[NEWLINE]拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     -- ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
     ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                             "牧场+1 [ICON_Production] 生产力。"),

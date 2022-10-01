@@ -571,7 +571,7 @@ insert or replace into Modifiers (ModifierId, ModifierType) values
 insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER', 			'BuildingType', 'BUILDING_MONUMENT'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'DistrictType', 'DISTRICT_CITY_CENTER'),
-	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'Amount', 50);
+	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'Amount', 100);
 
 -- update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GOLD_FROM_DOMESTIC_TRADING_POSTS' and Name = 'Amount';
 

@@ -31,7 +31,7 @@ insert or replace into Resource_Harvests (ResourceType, YieldType, Amount, Prere
 	('RESOURCE_ANTIQUITY_SITE',	'YIELD_CULTURE',	40,		NULL),
 	('RESOURCE_SHIPWRECK',		'YIELD_CULTURE',	40,		NULL);
 
-update Resource_Harvests set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where ResourceType in
+update Resource_Harvests set PrereqTech = 'TECH_SAILING' where ResourceType in
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS');
 update Resource_Harvests set PrereqTech = 'TECH_IRRIGATION' where ResourceType in
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION');
