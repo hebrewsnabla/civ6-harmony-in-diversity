@@ -28,24 +28,24 @@ values
 insert or replace into Types (Type, Kind) values ('ABILITY_HANNO', 'KIND_ABILITY');
 insert or replace into TypeTags (Type, Tag) values ('ABILITY_HANNO', 'CLASS_NAVAL_MELEE');
 insert or replace into UnitAbilities
-    (UnitAbilityType,    Description,                        Inactive)
+	(UnitAbilityType,	Description,						Inactive)
 values
-    ('ABILITY_HANNO',   'LOC_ABILITY_HANNO_DESCRIPTION',    1);
+	('ABILITY_HANNO',	'LOC_ABILITY_HANNO_DESCRIPTION',	1);
 insert or replace into UnitAbilityModifiers
-    (UnitAbilityType,   ModifierId)
+	(UnitAbilityType,	ModifierId)
 values
-    ('ABILITY_HANNO',   'HANNO_FREE_UNIT_MOVEMENT_BUFF'),
-    ('ABILITY_HANNO',   'ESCORT_MOBILITY_SHARED_MOVEMENT');
+	('ABILITY_HANNO',	'HANNO_FREE_UNIT_MOVEMENT_BUFF'),
+	('ABILITY_HANNO',	'ESCORT_MOBILITY_SHARED_MOVEMENT');
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_GRANT_ADVANCED_UNIT_OF_CLASS_IN_NEAREST_OWNER_CITY_AND_APPLY_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT';
 update ModifierArguments set Value = 'HANNO_GRANT_ABILITY' where ModifierId = 'GREAT_PERSON_INDIVIDUAL_HANNO_THE_NAVIGATOR_FREE_UNIT' and Name = 'ModifierId';
 insert or replace into Modifiers
-    (ModifierId,            ModifierType,                           RunOnce,    Permanent)
+	(ModifierId,			ModifierType,							RunOnce,	Permanent)
 values
-    ('HANNO_GRANT_ABILITY', 'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',   1,          1);
+	('HANNO_GRANT_ABILITY', 'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',	1,			1);
 insert or replace into ModifierArguments
-    (ModifierId,            Name,           Value)
+	(ModifierId,			Name,			Value)
 values
-    ('HANNO_GRANT_ABILITY', 'AbilityType',  'ABILITY_HANNO');
+	('HANNO_GRANT_ABILITY', 'AbilityType',	'ABILITY_HANNO');
 
 
 -- AYUTTHAYA
@@ -54,43 +54,43 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_AYUTTHAYA_TRAIT';
 insert or replace into TraitModifiers
 	(TraitType,					 ModifierID)
 values
-	('MINOR_CIV_AYUTTHAYA_TRAIT',   'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE'),
-	('MINOR_CIV_AYUTTHAYA_TRAIT',   'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE');
+	('MINOR_CIV_AYUTTHAYA_TRAIT',	'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE'),
+	('MINOR_CIV_AYUTTHAYA_TRAIT',	'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE');
 
 insert or replace into Modifiers
-	(ModifierId,												ModifierType,										   SubjectRequirementSetId)
+	(ModifierId,												ModifierType,											SubjectRequirementSetId)
 values
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',				   'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				 'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',		  'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS'),
+	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',					'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				 'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'MINOR_3DISTRICTS_CULTURE_REQUIREMENTS'),
 	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				 'PLAYER_IS_SUZERAIN'),
-	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS');
+	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_REQUIREMENTS');
 
 insert or replace into ModifierArguments
-	(ModifierId,												Name,		   Value)
+	(ModifierId,												Name,			Value)
 values
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',				   'ModifierId',   'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',		  'YieldType',	'YIELD_CULTURE'),
-	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',		  'Amount',	   1),
-	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE',			'ModifierId',   'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER'),
-	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'YieldType',	'YIELD_CULTURE'),
-	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',   'Amount',	   1);
+	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE',					'ModifierId',	'MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER'),
+	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',			'YieldType',	'YIELD_CULTURE'),
+	('MINOR_CIV_AYUTTHAYA_DISTRICTS_CULTURE_MODIFIER',			'Amount',		1),
+	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE',			'ModifierId',	'MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER'),
+	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',	'YieldType',	'YIELD_CULTURE'),
+	('MINOR_CIV_AYUTTHAYA_RIVIER_DISTRICTS_CULTURE_MODIFIER',	'Amount',		1);
 
 -- Chinguetti
 update ModifierArguments set Value = 0.3 where ModifierId = 'MINOR_CIV_CHINGUETTI_FAITH_FOLLOWERS' and Name = 'Amount';
 insert or replace into TraitModifiers(TraitType,ModifierID)values
 	('MINOR_CIV_CHINGUETTI_TRAIT','MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2');
 insert or replace into Modifiers
-	(ModifierId,									   ModifierType,							   SubjectRequirementSetId)
+	(ModifierId,										ModifierType,								SubjectRequirementSetId)
 values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',   'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	 'PLAYER_IS_SUZERAIN'),
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	 'PLAYER_IS_SUZERAIN'),
 	('MINOR_CIV_CHINGUETTI_FAITH',					 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD', NULL);
 
 insert or replace into ModifierArguments
-	(ModifierId,									   Name,		   Value)
+	(ModifierId,										Name,			Value)
 values
-	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',   'ModifierId',   'MINOR_CIV_CHINGUETTI_FAITH'),
+	('MINOR_CIV_CHINGUETTI_UNIQUE_INFLUENCE_BONUS2',	'ModifierId',	'MINOR_CIV_CHINGUETTI_FAITH'),
 	('MINOR_CIV_CHINGUETTI_FAITH',					 'YieldType',	'YIELD_FAITH'),
-	('MINOR_CIV_CHINGUETTI_FAITH',					 'Amount',	   3);
+	('MINOR_CIV_CHINGUETTI_FAITH',					 'Amount',		3);
 
 -- Babylon
 update ModifierArguments set Value = 60 where ModifierId = 'TRAIT_EUREKA_INCREASE';
@@ -212,32 +212,32 @@ values
 	('GREAT_PERSON_INDIVIDUAL_KENZO_TANGE',			 'GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM');
 
 insert or replace into Modifiers
-	(ModifierId,													ModifierType,												   Runonce, Permanent)
+	(ModifierId,													ModifierType,													Runonce, Permanent)
 values
-	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',  'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
-	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',  'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
+	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
+	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
 	('GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
-	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',   1, 1),
+	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM','MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1),
 	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',	 'MODIFIER_PLAYER_DISTRICTS_ADJUST_TOURISM_ADJACENCY_YIELD_MOFIFIER',	1, 1);
 
 insert or replace into ModifierArguments
-	(ModifierId,														Name,				   Value)
+	(ModifierId,														Name,					Value)
 values
-	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',	  'Amount',			   100),
-	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',	  'YieldType',			'YIELD_SCIENCE'),
-	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',	  'Amount',			   100),
-	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',	  'YieldType',			'YIELD_CULTURE'),
-	('GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM',		'Amount',			   100),
+	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',		'Amount',				100),
+	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',		'YieldType',			'YIELD_SCIENCE'),
+	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',		'Amount',				100),
+	('GREATPERSON_NATIONAL_DISTRICT_CULTURE_ADJACENCY_AS_TOURISM',		'YieldType',			'YIELD_CULTURE'),
+	('GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM',		'Amount',				100),
 	('GREATPERSON_NATIONAL_DISTRICT_FAITH_ADJACENCY_AS_TOURISM',		'YieldType',			'YIELD_FAITH'),
-	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM',   'Amount',			   100),
-	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM',   'YieldType',			'YIELD_PRODUCTION'),
-	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',		 'Amount',			   100),
+	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM',	'Amount',				100),
+	('GREATPERSON_NATIONAL_DISTRICT_PRODUCTION_ADJACENCY_AS_TOURISM',	'YieldType',			'YIELD_PRODUCTION'),
+	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',		 'Amount',				100),
 	('GREATPERSON_NATIONAL_DISTRICT_GOLD_ADJACENCY_AS_TOURISM',		 'YieldType',			'YIELD_GOLD');
 
 insert or replace into ModifierStrings
 	(ModifierId,													Context,	Text)
 values
-	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',  'Summary',  'LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM');
+	('GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM',	'Summary',	'LOC_GREATPERSON_NATIONAL_DISTRICT_SCIENCE_ADJACENCY_AS_TOURISM');
 
 -- Bug fix for the new great scientist IBN_KHALDUN.
 update ModifierArguments set Value = 4
@@ -295,52 +295,52 @@ update GreatPersonIndividualActionModifiers set AttachmentTargetType = 'GREAT_PE
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN' and ModifierId like 'GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_%';
 
 insert or replace into Modifiers
-	(ModifierID,														ModifierType,							   RunOnce, Permanent)
+	(ModifierID,														ModifierType,								RunOnce, Permanent)
 values
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',	   'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',	  'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',	   'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',	   'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',		  'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',		 'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,  1);
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',		'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',		'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',		'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',	'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',			'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',		 'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD_BAB',	0,	1);
 
 insert or replace into ModifierArguments
-	(ModifierID,															Name,			   Value)
+	(ModifierID,															Name,				Value)
 values
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',		'HappinessType',	'HAPPINESS_DELIGHTED'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',		'YieldType',		'YIELD_SCIENCE'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',		'Amount',		   2),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_SCIENCE',		'Amount',			2),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',		'HappinessType',	'HAPPINESS_DELIGHTED'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',		'YieldType',		'YIELD_CULTURE'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',		'Amount',		   2),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_CULTURE',		'Amount',			2),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION',	 'HappinessType',	'HAPPINESS_DELIGHTED'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION',	 'YieldType',		'YIELD_PRODUCTION'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION',	 'Amount',		   2),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',		   'HappinessType',	'HAPPINESS_DELIGHTED'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',		   'YieldType',		'YIELD_GOLD'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',		   'Amount',		   2),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',		  'HappinessType',	'HAPPINESS_DELIGHTED'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',		  'YieldType',		'YIELD_FAITH'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',		  'Amount',		   2),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',		   'HappinessType',	'HAPPINESS_JOYFUL'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',		   'YieldType',		'YIELD_SCIENCE'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',		   'Amount',		   6),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',		   'HappinessType',	'HAPPINESS_JOYFUL'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',		   'YieldType',		'YIELD_CULTURE'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',		   'Amount',		   6),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_PRODUCTION',	 'Amount',			2),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',			'HappinessType',	'HAPPINESS_DELIGHTED'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',			'YieldType',		'YIELD_GOLD'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_GOLD',			'Amount',			2),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',			'HappinessType',	'HAPPINESS_DELIGHTED'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',			'YieldType',		'YIELD_FAITH'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_DELIGHTED_FAITH',			'Amount',			2),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',			'HappinessType',	'HAPPINESS_JOYFUL'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',			'YieldType',		'YIELD_SCIENCE'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_SCIENCE',			'Amount',			6),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',			'HappinessType',	'HAPPINESS_JOYFUL'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',			'YieldType',		'YIELD_CULTURE'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_CULTURE',			'Amount',			6),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',		'HappinessType',	'HAPPINESS_JOYFUL'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',		'YieldType',		'YIELD_PRODUCTION'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',		'Amount',		   6),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',			  'HappinessType',	'HAPPINESS_JOYFUL'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',			  'YieldType',		'YIELD_GOLD'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',			  'Amount',		   6),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_PRODUCTION',		'Amount',			6),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',				'HappinessType',	'HAPPINESS_JOYFUL'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',				'YieldType',		'YIELD_GOLD'),
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_GOLD',				'Amount',			6),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'HappinessType',	'HAPPINESS_JOYFUL'),
 	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'YieldType',		'YIELD_FAITH'),
-	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'Amount',		   6);
+	('GREAT_PERSON_INDIVIDUAL_IBN_KHALDUN_EMPIRE_JOYFUL_FAITH',			 'Amount',			6);
 
 -- Mahavihara
 insert or replace into Improvement_Adjacencies
@@ -355,18 +355,18 @@ values
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	AdjacentDistrict,			PrereqCivic,			ObsoleteCivic)
 values
-	('Mahavihara_Seowon_Science_Early', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_SEOWON',			null,					'CIVIC_DIVINE_RIGHT'),
-	('Mahavihara_Seowon_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Holy_Site_Science_Late', 		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Lavra_Science_Late', 			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
-	('Mahavihara_Neighborhood_Science', 		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
-	('Mahavihara_Mbanza_Science', 				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
+	('Mahavihara_Seowon_Science_Early',		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_SEOWON',			null,					'CIVIC_DIVINE_RIGHT'),
+	('Mahavihara_Seowon_Science_Late',			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_SEOWON',			'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Holy_Site_Science_Late',		'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_HOLY_SITE',		'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Lavra_Science_Late',			'Placeholder',	'YIELD_SCIENCE',	2,				'DISTRICT_LAVRA',			'CIVIC_DIVINE_RIGHT',	null),
+	('Mahavihara_Neighborhood_Science',		'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_NEIGHBORHOOD',	null,					null),
+	('Mahavihara_Mbanza_Science',				'Placeholder',	'YIELD_SCIENCE',	1,				'DISTRICT_MBANZA',			null,					null);
 
 -- Modifiers in this table are attached to suzerain
 create temporary table if not exists TraitAttachedModifiers (
-    TraitType text not null,
-    ModifierId text not null,
-    primary key (TraitType, ModifierId)
+	TraitType text not null,
+	ModifierId text not null,
+	primary key (TraitType, ModifierId)
 );
 
 -- Johannesburg
@@ -375,82 +375,81 @@ create temporary table JohannesburgResources (ResourceType text not null primary
 insert or replace into JohannesburgResources (ResourceType) select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_MINE' or ImprovementType = 'IMPROVEMENT_QUARRY';
 
 insert or replace into TraitAttachedModifiers
-    (TraitType,                   		ModifierId)
+	(TraitType,							ModifierId)
 select
-    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1'
+	'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE1'
 from JohannesburgResources;
 insert or replace into Modifiers
-    (ModifierId,                                                    ModifierType,                               		 SubjectRequirementSetId)
+	(ModifierId,														ModifierType,										 SubjectRequirementSetId)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	 'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE1',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	 'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                         		                    Name,          Value)
+	(ModifierId,														Name,			Value)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',	'YieldType',   'YIELD_PRODUCTION'
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE1',	'YieldType',	'YIELD_PRODUCTION'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                           		                    Name,          Value)
+	(ModifierId,														Name,			Value)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE1',	'Amount',      1
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE1',	'Amount',		1
+from JohannesburgResources;
+insert or replace into TraitAttachedModifiers
+	(TraitType,							ModifierId)
+select
+	'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE2'
+from JohannesburgResources;
+insert or replace into Modifiers
+	(ModifierId,														ModifierType,											OwnerRequirementSetId,							SubjectRequirementSetId)
+select
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE2',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'PLAYER_HAS_TECH_APPRENTICESHIP_REQUIREMENTS',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE2',	'YieldType',	'YIELD_PRODUCTION'
+from JohannesburgResources;
+insert or replace into ModifierArguments
+	(ModifierId,														Name,			Value)
+select
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_PRODUCTION_TIRE2',	'Amount',		1
 from JohannesburgResources;
 
 insert or replace into TraitAttachedModifiers
-    (TraitType,                   		ModifierId)
+	(TraitType,							ModifierId)
 select
-    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2'
+	'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_GOLD_PERCENTAGE'
 from JohannesburgResources;
 insert or replace into Modifiers
-    (ModifierId,                                                    ModifierType,                               		    OwnerRequirementSetId,                          SubjectRequirementSetId)
+	(ModifierId,														ModifierType,											SubjectRequirementSetId)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',   'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	    'PLAYER_HAS_TECH_APPRENTICESHIP_REQUIREMENTS',  'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_GOLD_PERCENTAGE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                         		                    Name,          Value)
+	(ModifierId,														Name,			Value)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',	'YieldType',   'YIELD_PRODUCTION'
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_GOLD_PERCENTAGE',	'YieldType',	'YIELD_GOLD'
 from JohannesburgResources;
 insert or replace into ModifierArguments
-    (ModifierId,                           		                    Name,          Value)
+	(ModifierId,														Name,			Value)
 select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_PRODUCTION_TIRE2',	'Amount',      1
-from JohannesburgResources;
-
-insert or replace into TraitAttachedModifiers
-    (TraitType,                   		ModifierId)
-select
-    'MINOR_CIV_JOHANNESBURG_TRAIT',		'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE'
-from JohannesburgResources;
-insert or replace into Modifiers
-    (ModifierId,                                                        ModifierType,                               		    SubjectRequirementSetId)
-select
-	'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',	    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_'||ResourceType||'_REQUIRMENTS'
-from JohannesburgResources;
-insert or replace into ModifierArguments
-    (ModifierId,                         		                        Name,           Value)
-select
-	'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',        'YieldType',    'YIELD_GOLD'
-from JohannesburgResources;
-insert or replace into ModifierArguments
-    (ModifierId,                           		                        Name,           Value)
-select
-    'MINOR_CIV_JOHANNESBURG_'||ResourceType||'_GOLD_PERCENTAGE',        'Amount',       3
+	'MINOR_CIV_JOHANNESBURG_' || ResourceType || '_GOLD_PERCENTAGE',	'Amount',		3
 from JohannesburgResources;
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
 insert or ignore into TraitModifiers
-    (TraitType, ModifierId)
+	(TraitType, ModifierId)
 select
-    TraitType,  ModifierId || '_ATTACH'
+	TraitType,	ModifierId || '_ATTACH'
 from TraitAttachedModifiers;
 insert or ignore into Modifiers
-    (ModifierId,                ModifierType,                               SubjectRequirementSetId)
+	(ModifierId,				ModifierType,								SubjectRequirementSetId)
 select
-    ModifierId || '_ATTACH',    'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',     'PLAYER_IS_SUZERAIN'
+	ModifierId || '_ATTACH',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	 'PLAYER_IS_SUZERAIN'
 from TraitAttachedModifiers;
 insert or ignore into ModifierArguments
-    (ModifierId,                Name,           Value)
+	(ModifierId,				Name,			Value)
 select
-    ModifierId || '_ATTACH',    'ModifierId',   ModifierId
+	ModifierId || '_ATTACH',	'ModifierId',	ModifierId
 from TraitAttachedModifiers;
 drop table TraitAttachedModifiers;

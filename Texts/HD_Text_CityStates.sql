@@ -216,7 +216,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_NAN_MADOL_BONUS",                  "您境内位于或与海岸湖泊单元格相邻的区域(市中心外)和奇观+1 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_GENEVA_DESCRIPTION",               "当您不与任何文明发生战争时，您的城市+10% [ICON_SCIENCE] 科技值。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_GENEVA_BONUS",                     "当您不与任何文明发生战争时，您的城市+10% [ICON_SCIENCE] 科技值。"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_JOHANNESBURG_DESCRIPTION",         "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力并为该城市+3% [ICON_GOLD] 金币。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_JOHANNESBURG_DESCRIPTION",         "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力、+3% [ICON_GOLD] 金币。研究“学徒”科技后额外+1 [ICON_PRODUCTION] 生产力。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_JOHANNESBURG_BONUS",               "城市中每种已改良的矿山或采石场资源为该城市+1 [ICON_PRODUCTION] 生产力。研究“学徒”后额外+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_BUENOS_AIRES_DESCRIPTION",         "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物）。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_BUENOS_AIRES_BONUS",               "每个相邻加成至少+6的区域为所在城市提供+6%对应产出（港口提供 [ICON_FOOD] 食物）。"),

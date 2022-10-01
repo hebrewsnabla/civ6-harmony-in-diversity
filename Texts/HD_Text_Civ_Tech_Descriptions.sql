@@ -30,7 +30,7 @@ values
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods and Rainforest, and harvesting of resources improved by Mines."),
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_POTTERY_DESCRIPTION",                                                        "Allows harvesting of resources improved by Farms."),
-    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Fishing Boats.Allows Builders and Traders to embark."),
+    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Fishing Boats. Allows Builders and Traders to embark."),
     ("LOC_TECH_IRRIGATION_DESCRIPTION",                                                     "+2 [ICON_GOLD] Gold from Plantations adjacent to fresh water or Aqueduct.[NEWLINE]Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allows Builders to build Farms on Plains Hills or Grassland Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests."), -- Camp improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food from Farms. [NEWLINE]+1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in cities with a Granary."),
