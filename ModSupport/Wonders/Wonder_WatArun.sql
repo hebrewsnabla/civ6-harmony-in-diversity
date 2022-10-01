@@ -7,7 +7,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
 insert or replace into GlobalParameters
     (Name,                          Value)
 values
-    ('WAT_ARUN_FAITH_PERCENTAGE',   75);
+    ('WAT_ARUN_FAITH_PERCENTAGE',   50);
 
 -- this modifier is used by lua instead of directly attached to Wat Arun
 insert or replace into Modifiers

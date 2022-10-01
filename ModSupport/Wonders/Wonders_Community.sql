@@ -731,21 +731,26 @@ select
 from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
 delete from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
 insert or replace into GlobalParameters (Name, Value) values ('YELLOW_CRANE_TOWER_POINT_PERCENTAGE', 15);
-insert or replace into BuildingModifiers
-	(BuildingType,	ModifierId)
-select
-	BuildingType,	'YELLOW_CRANE_WRITER_BOOST'
-from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE_HD';
 insert or replace into Modifiers
-	(ModifierId,					ModifierType)
-values
-	('YELLOW_CRANE_WRITER_BOOST',	'MODIFIER_PLAYER_GRANT_BOOST_WITH_GREAT_PERSON');
+	(ModifierId,										ModifierType)
+select
+	'YELLOW_CRANE_WRITER_' || EraType || '_BOOST',		'MODIFIER_PLAYER_GRANT_RANDOM_CIVIC_BOOST_BY_ERA'
+from Eras;
 insert or replace into ModifierArguments
-	(ModifierId,					Name,				Value)
-values
-	('YELLOW_CRANE_WRITER_BOOST',	'GreatPersonClass',	'GREAT_PERSON_CLASS_WRITER'),
-	('YELLOW_CRANE_WRITER_BOOST',	'OtherPlayers',		0),
-	('YELLOW_CRANE_WRITER_BOOST',	'TechBoost',		0);
+	(ModifierId,										Name,				Value)
+select
+	'YELLOW_CRANE_WRITER_' || EraType || '_BOOST',		'StartEraType',		EraType
+from Eras;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,				Value)
+select
+	'YELLOW_CRANE_WRITER_' || EraType || '_BOOST',		'EndEraType',		EraType
+from Eras;
+insert or replace into ModifierArguments
+	(ModifierId,										Name,				Value)
+select
+	'YELLOW_CRANE_WRITER_' || EraType || '_BOOST',		'Amount',			1
+from Eras;
 
 -- STPETERSBASILICA
 insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
