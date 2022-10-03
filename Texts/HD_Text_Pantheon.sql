@@ -149,5 +149,5 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_ILLUMINATORS_NAME",                        		 "启蒙会"),
     ("zh_Hans_CN",  "LOC_BELIEF_ILLUMINATORS_DESCRIPTION",                 		 "选择后在首都中获得1个有免费晋升的侦察单位。所有侦察单位+1 [ICON_Movement] 移动力。所有单位同蛮族战斗时+5 [ICON_STRENGTH] 战斗力。肃清蛮族哨站时获得50 [ICON_Faith] 信仰值。肃清蛮族哨站的单位回复100点生命值。允许建造蛮族骑手、蛮族弓骑手和原始四段帆船。"),
     ("zh_Hans_CN",  "LOC_ABILITY_STARLIGHT_NAVIGATER_DESCRIPTION",              "+1 [ICON_MOVEMENT] 移动力。被护送的单位将以同样的速度移动。"),
-    ("zh_Hans_CN",  "LOC_BELIEF_STARLIGHT_NAVIGATER_NAME",             		 	"星光指引者"),
+    ("zh_Hans_CN",  "LOC_BELIEF_STARLIGHT_NAVIGATER_NAME",             		 	"星光引导者"),
     ("zh_Hans_CN",  "LOC_BELIEF_STARLIGHT_NAVIGATER_DESCRIPTION",               "选择后在首都中获得1个桨架划艇。建造海军袭击者时+50%建造速度。海军袭击者+1 [ICON_MOVEMENT] 移动力。被海军袭击者被护送的单位将以同样的速度移动。");
