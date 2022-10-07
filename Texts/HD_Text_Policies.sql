@@ -142,6 +142,7 @@ values
     ("LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "Tributary Trade"),
     ("LOC_POLICY_SELF_DETERMINATION_NAME",                                            "National Self-determination"),
     ("LOC_POLICY_INSPIRATION_NAME",                                                   "Private Education"),
+    ("LOC_POLICY_MAGGIOR_CONSIGLIO_NAME",                                             "Maggior Consiglio"),
     ("LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "+5 [ICON_Gold] Gold and +1 [ICON_Amenities] Amenity for cities with a garrisoned unit."),
     ("LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "+2 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
     ("LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "+4 [ICON_Production] Production to all cities adjacent to coasts or lakes."),
@@ -191,7 +192,7 @@ values
     ("LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "+4 [ICON_Food] Food and +2 [ICON_Housing] in all cities having Encampments. +2 [ICON_Housing] Housing per level of Walls."),
     ("LOC_POLICY_DRILL_DESCRIPTION",                                                  "All units gain +50% combat experience."),
     ("LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "Commercial Hubs districts provide +1 Influence points per turn. [ICON_TradeRoute] Trade Routes to a city-state you are Suzerain of provide +3 [ICON_GOLD] Gold."),
-    ("LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "Commercial Hubs districts provide +2 Influence points per turn. [ICON_TradeRoute] Trade Routes to a city-state you are Suzerain of provide +5 [ICON_GOLD] Gold."),
+    ("LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "Commercial Hubs and Harbor districts provide +2 Influence points per turn. [ICON_TradeRoute] Trade Routes to a city-state you are Suzerain of provide +5 [ICON_GOLD] Gold."),
     ("LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "Military Academies, Seaports and Renaissance Walls generate +5 [ICON_SCIENCE] Science. +100% Encampment adjacency bonuses."),
     ("LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "+1 [ICON_Movement] movement if starting turn in friendly territory."),
     -- ("LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "Your international [ICON_TradeRoute] Trade Routes provide +1 [ICON_Gold] Gold per Luxury and Strategic resource improved at the destination, as well as +4 [ICON_Culture] Culture and +4 [ICON_Science] Science."),
@@ -221,7 +222,8 @@ values
     ("LOC_POLICY_GLADIATORIAL_GAME_NAME",                                             "Gladiatorial Game"),
     ("LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION",                                      "+30% construction speed toward Entertainment Complex and Water Park districts and buildings in these districts."),
     ("LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "+4 [ICON_GOLD] Gold and +2 [ICON_FAITH] Faith from all [ICON_TRADEROUTE] Trade Routes."),
-	("LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",								  "+2 [ICON_CULTURE] Culture and +4 [ICON_GOLD] Gold to all Campus, Encampment and Industrial Zone highest Tier buildings.");
+	("LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",								  "+2 [ICON_CULTURE] Culture and +4 [ICON_GOLD] Gold to all Campus, Encampment and Industrial Zone highest Tier buildings."),
+    ("LOC_POLICY_MAGGIOR_CONSIGLIO_DESCRIPTION",                                      "Harbor districts provide +1 Influence points per turn. [ICON_TradeRoute] Trade Routes to a city-state you are Suzerain of provide +3 [ICON_GOLD] Gold.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -365,6 +367,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_NAME",                                                 "朝贡贸易"),
     ("zh_Hans_CN",  "LOC_POLICY_SELF_DETERMINATION_NAME",                                            "民族自决"),
     ("zh_Hans_CN",  "LOC_POLICY_INSPIRATION_NAME",                                                   "私学"),
+    ("zh_Hans_CN",  "LOC_POLICY_MAGGIOR_CONSIGLIO_NAME",                                             "大议会"),
     ("zh_Hans_CN",  "LOC_POLICY_FREELANCERS_DESCRIPTION",                                            "拥有驻军单位的城市+5 [ICON_Gold] 金币，+1 [ICON_Amenities] 宜居度。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARITIME_INFRASTRUCTURE_DESCRIPTION",                                "位于海边或湖边的城市+2 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_SEABORNE_SUPPLY_DESCRIPTION",                                        "位于海边或湖边的城市+4 [ICON_Production] 生产力。"),
@@ -414,7 +417,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_CONSTRUCTION_CROPS_DESCRIPTION",                                     "所有拥有军营的城市+4 [ICON_Food] 食物和+2 [ICON_Housing] 住房。每个等级的城墙提供+2 [ICON_Housing] 住房。"),
     ("zh_Hans_CN",  "LOC_POLICY_DRILL_DESCRIPTION",                                                  "所有单位的战斗经验值+50%。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRIBUTE_TRADE_DESCRIPTION",                                          "所有商业区每回合提供+1影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+3 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "所有商业区每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+5 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_SELF_DETERMINATION_DESCRIPTION",                                     "所有商业区和港口每回合提供+2影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+5 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION",                           "军事学院、码头和文艺复兴城墙提供+5 [ICON_SCIENCE] 科技值。+100%军营相邻加成。"),
     ("zh_Hans_CN",  "LOC_POLICY_LOGISTICS_DESCRIPTION",                                              "在友好领土开启回合+1 [ICON_Movement] 移动力。"),
     -- ("zh_Hans_CN",  "LOC_POLICY_MARKET_ECONOMY_DESCRIPTION",                                         "您的国际 [ICON_TradeRoute] 贸易路线+4 [ICON_Culture] 文化值和+4 [ICON_Science] 科技值，同时目的地已开发的每个奢侈品资源和战略资源为其+1 [ICON_Gold] 金币。"),
@@ -444,4 +447,5 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_GLADIATORIAL_GAME_NAME",                                             "角斗"),
     ("zh_Hans_CN",  "LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION",                                      "建造娱乐中心以及其中的建筑时+50%建造速度。"),
     ("zh_Hans_CN",  "LOC_POLICY_TRIANGULAR_TRADE_DESCRIPTION",                                       "所有 [ICON_TRADEROUTE] 贸易路线+4 [ICON_GOLD] 金币和+2 [ICON_FAITH] 信仰值。"),
-	("zh_Hans_CN",	"LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",									 "所有学院、军营和工业区最高等级的建筑+2 [ICON_CULTURE] 文化值、+4 [ICON_GOLD] 金币。");
+	("zh_Hans_CN",	"LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2",									 "所有学院、军营和工业区最高等级的建筑+2 [ICON_CULTURE] 文化值、+4 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_POLICY_MAGGIOR_CONSIGLIO_DESCRIPTION",                                      "所有港口每回合提供+1影响力点数。通往宗主城邦的 [ICON_TradeRoute] 贸易路线+3 [ICON_GOLD] 金币。");
