@@ -96,10 +96,13 @@ values
 
 -- Adjacency Yield
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
-	or (ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly');
+delete from Adjacency_YieldChanges where ID in(
+    'Mekewap_FirstBonusAdjacency',
+    'Mekewap_SecondBonusAdjacency',
+    'Mekewap_ThirdBonusAdjacency');
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
@@ -117,8 +120,12 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
 
-	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production'),
-	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production_Tier1'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production_Tier2'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production_Tier1'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Strategic_Production_Tier2'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Bonus_Food_Tier1'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Bonus_Food_Tier2'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_GrassMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_PlainsMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_DesertMountainAdjacency_Late'),
@@ -158,13 +165,17 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Lumber_Mill_River_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'TECH_BRONZE_WORKING',	'TECH_MACHINERY');
 insert or replace into Adjacency_YieldChanges
-	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
+	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		        PrereqCivic,            ObsoleteTech,           ObsoleteCivic)
 values
-	('Mekewap_Luxury_Production', 				'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY',		null,			null),
-	('Mekewap_Strategic_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC',	null,			null),
-	('Chateau_Bonus_Gold', 						'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_BONUS',		null,			null),
-	('Chateau_Luxury_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY',		'TECH_CASTLES',	null),
-	('Chateau_Luxury_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY',		null,			'CIVIC_GUILDS');
+	('Mekewap_Luxury_Production_Tier1', 		'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY',		null,			        null,                   'TECH_MASS_PRODUCTION', null),
+	('Mekewap_Luxury_Production_Tier2', 		'Placeholder',	'YIELD_PRODUCTION',	2,				'RESOURCECLASS_LUXURY',		'TECH_MASS_PRODUCTION',	null,                   null,                   null),
+	('Mekewap_Strategic_Production_Tier1', 		'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC',	null,			        null,                   'TECH_MASS_PRODUCTION', null),
+	('Mekewap_Strategic_Production_Tier2', 		'Placeholder',	'YIELD_PRODUCTION',	2,				'RESOURCECLASS_STRATEGIC',	'TECH_MASS_PRODUCTION',	null,                   null,                   null),
+	('Mekewap_Bonus_Food_Tier1',                'PlaceHolder',  'YIELD_FOOD',       1,              'RESOURCECLASS_BONUS',      null,                   null,                   null,                   'CIVIC_CIVIL_SERVICE'),
+	('Mekewap_Bonus_Food_Tier2',                'PlaceHolder',  'YIELD_FOOD',       2,              'RESOURCECLASS_BONUS',      null,                   'CIVIC_CIVIL_SERVICE',  null,                   null),
+	('Chateau_Bonus_Gold', 						'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_BONUS',		null,			        null,                   null,                   null),
+	('Chateau_Luxury_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY',		'TECH_CASTLES',	        null,                   null,                   null),
+	('Chateau_Luxury_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY',		null,			        'CIVIC_GUILDS',         null,                   null);
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	OtherDistrictAdjacent,	PrereqCivic)
 values
@@ -476,7 +487,11 @@ update Adjacency_YieldChanges set YieldType = 'YIELD_SCIENCE', ObsoleteCivic = '
 -- Mekewap (Cree)
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MEKEWAP' and ModifierId = 'MEKEWAP_LUXURY_GOLD';
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
-update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,					YieldType,				YieldChange)
+values
+	('IMPROVEMENT_MEKEWAP',		        'YIELD_PRODUCTION',		1),
+	('IMPROVEMENT_MEKEWAP',		        'YIELD_GOLD',			2);
 
 -- Ziggurat (Sumeria)
 insert or replace into ImprovementModifiers
