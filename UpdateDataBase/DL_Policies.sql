@@ -330,7 +330,12 @@ values
 	('POLICY_MARTIAL_ELECTION',				'KIND_POLICY'),
 	('POLICY_GLADIATORIAL_GAME',			'KIND_POLICY'),
 	('POLICY_MINARET',						'KIND_POLICY'),
-	('POLICY_MAGGIOR_CONSIGLIO',            'KIND_POLICY');
+	('POLICY_MAGGIOR_CONSIGLIO',            'KIND_POLICY'),
+	('POLICY_BREEDING',            			'KIND_POLICY'),
+	('POLICY_FORGING',            			'KIND_POLICY'),
+	('POLICY_GUNPOWDER_RESEARCH',           'KIND_POLICY'),
+	('POLICY_ELECTROLYTIC_ALUMINIUM',       'KIND_POLICY'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',     'KIND_POLICY');
 insert or replace into Policies
 	(PolicyType,							Name,											Description,											PrereqCivic,								PrereqTech,					GovernmentSlotType)
 values	
@@ -384,7 +389,12 @@ values
 	('POLICY_MARTIAL_ELECTION',				'LOC_POLICY_MARTIAL_ELECTION_NAME',				'LOC_POLICY_MARTIAL_ELECTION_DESCRIPTION',				'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,			    		'SLOT_GREAT_PERSON'),
 	('POLICY_GLADIATORIAL_GAME',			'LOC_POLICY_GLADIATORIAL_GAME_NAME',			'LOC_POLICY_GLADIATORIAL_GAME_DESCRIPTION',				'CIVIC_GAMES_RECREATION',					null,			    		'SLOT_MILITARY'),
 	('POLICY_MINARET',						'LOC_POLICY_MINARET_NAME',						'LOC_POLICY_MINARET_DESCRIPTION',						'CIVIC_REFORMED_CHURCH',					null,			    		'SLOT_ECONOMIC'),
-    ('POLICY_MAGGIOR_CONSIGLIO',            'LOC_POLICY_MAGGIOR_CONSIGLIO_NAME',            'LOC_POLICY_MAGGIOR_CONSIGLIO_DESCRIPTION',             'CIVIC_EXPLORATION',                        null,                       'SLOT_DIPLOMATIC');
+    ('POLICY_MAGGIOR_CONSIGLIO',            'LOC_POLICY_MAGGIOR_CONSIGLIO_NAME',            'LOC_POLICY_MAGGIOR_CONSIGLIO_DESCRIPTION',             'CIVIC_EXPLORATION',                        null,                       'SLOT_DIPLOMATIC'),
+    ('POLICY_BREEDING',          			'LOC_POLICY_BREEDING_NAME',            			'LOC_POLICY_BREEDING_DESCRIPTION',             			'CIVIC_STATE_WORKFORCE',                    null,                       'SLOT_MILITARY'),
+    ('POLICY_FORGING',          			'LOC_POLICY_FORGING_NAME',            			'LOC_POLICY_FORGING_DESCRIPTION',             			'CIVIC_STATE_WORKFORCE',                    null,                       'SLOT_MILITARY'),
+    ('POLICY_GUNPOWDER_RESEARCH',          	'LOC_POLICY_GUNPOWDER_RESEARCH_NAME',           'LOC_POLICY_GUNPOWDER_RESEARCH_DESCRIPTION',            'CIVIC_GUILDS',               			    null,                       'SLOT_MILITARY'),
+    ('POLICY_ELECTROLYTIC_ALUMINIUM',       'LOC_POLICY_ELECTROLYTIC_ALUMINIUM_NAME',       'LOC_POLICY_ELECTROLYTIC_ALUMINIUM_DESCRIPTION',        'CIVIC_CONSERVATION',             		    null,                       'SLOT_MILITARY'),
+    ('POLICY_SUSTAINABLE_DEVELOPEMENT',     'LOC_POLICY_SUSTAINABLE_DEVELOPEMENT_NAME',     'LOC_POLICY_SUSTAINABLE_DEVELOPEMENT_DESCRIPTION',      'CIVIC_COLD_WAR',                  			null,                       'SLOT_MILITARY');
 -- Obsolete Policies
 delete from ObsoletePolicies where ObsoletePolicy is null or PolicyType in
 	(values	('POLICY_URBAN_PLANNING'), ('POLICY_RETAINERS'), ('POLICY_CARAVANSARIES'), ('POLICY_MILITARY_RESEARCH'), ('POLICY_REVELATION'));
@@ -443,7 +453,15 @@ values
 	('POLICY_TEXTBOOK',						'POLICY_NOBEL_PRIZE'),
 	('POLICY_LITERARY_TRADITION',			'POLICY_SCHOLAR_BUREAUCRAT'),
 	('POLICY_STRATEGOS',					'POLICY_MARTIAL_ELECTION'),
-	('POLICY_MARTIAL_ELECTION',				'POLICY_MILITARY_ORGANIZATION');
+	('POLICY_MARTIAL_ELECTION',				'POLICY_MILITARY_ORGANIZATION'),
+	-- Resource Policies
+	('POLICY_BREEDING',						'POLICY_EQUESTRIAN_ORDERS'),
+	('POLICY_FORGING',						'POLICY_EQUESTRIAN_ORDERS'),
+	('POLICY_EQUESTRIAN_ORDERS',			'POLICY_DRILL_MANUALS'),
+	('POLICY_GUNPOWDER_RESEARCH',			'POLICY_DRILL_MANUALS'),
+	('POLICY_DRILL_MANUALS',				'POLICY_SUSTAINABLE_DEVELOPEMENT'),
+	('POLICY_RESOURCE_MANAGEMENT',			'POLICY_SUSTAINABLE_DEVELOPEMENT'),
+	('POLICY_ELECTROLYTIC_ALUMINIUM',		'POLICY_SUSTAINABLE_DEVELOPEMENT');
 insert or replace into ObsoletePolicies
 	(PolicyType,							RequiresAvailableGreatPersonClass)
 values
@@ -475,12 +493,11 @@ update Policies set PrereqCivic = null, PrereqTech = 'TECH_SANITATION'			where P
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_ELECTRICITY'			where PolicyType = 'POLICY_ECONOMIC_UNION';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_CASTLES'				where PolicyType = 'POLICY_WALL_HOUSING';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_MILITARY_RESEARCH';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_RADIO'				where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBINED_ARMS'		where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_ROCKETRY'			where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_NUCLEAR_FISSION'		where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_RIFLING'				where PolicyType = 'POLICY_DRILL_MANUALS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CIVIL_ENGINEERING_HD'where PolicyType = 'POLICY_DRILL_MANUALS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_WISSELBANKEN';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_SIEGE_TACTICS'		where PolicyType = 'POLICY_BASTIONS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_LIMES';
@@ -496,6 +513,7 @@ update Policies set PrereqCivic = 'CIVIC_ETHICS_HD'					where PolicyType = 'POLI
 update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD'		where PolicyType = 'POLICY_AESTHETICS';
 update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS'			where PolicyType = 'POLICY_LOGISTICS';
 update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES'			where PolicyType = 'POLICY_TOWN_CHARTERS';
+update Policies set PrereqCivic = 'CIVIC_CONSERVATION' 				where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
 
 -- Governement Exclusive Policies
 delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
@@ -678,13 +696,29 @@ update ModifierArguments set Value = 3 where Name = 'Amount' and ModifierId = 'G
 update ModifierArguments set Value = 5 where ModifierId = 'COLONIALOFFICES_FOREIGNIDENTITY' and Name = 'Amount';
 
 -- Strategic Resource
-update ModifierArguments set Value = 2 where Name = 'Amount' and
+update ModifierArguments set Value = 3 where Name = 'Amount' and
 	(ModifierId = 'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'
 	or ModifierId = 'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'
 	or ModifierId = 'DRILL_MANUALS_ADDITIONAL_NITER_EXTRACTION'
 	or ModifierId = 'DRILL_MANUALS_ADDITIONAL_COAL_EXTRACTION'
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
+delete from PolicyModifiers where PolicyType = 'POLICY_RESOURCE_MANAGEMENT' and ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION';
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_BREEDING',					'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
+	('POLICY_FORGING',					'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
+	('POLICY_GUNPOWDER_RESEARCH',		'DRILL_MANUALS_ADDITIONAL_NITER_EXTRACTION'),
+	('POLICY_DRILL_MANUALS',			'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
+	('POLICY_DRILL_MANUALS',			'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
+	('POLICY_ELECTROLYTIC_ALUMINIUM',	'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'DRILL_MANUALS_ADDITIONAL_NITER_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'DRILL_MANUALS_ADDITIONAL_COAL_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'),
+	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 
 delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
 
