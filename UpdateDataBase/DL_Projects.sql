@@ -54,20 +54,6 @@ update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
 	or ProjectType = 'PROJECT_WATER_CARNIVAL'
 ;
 
--- update Project_GreatPersonPoints set Points = 10
---  where ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HOLY_SITE'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_CAMPUS'
--- ;
-
--- update Project_GreatPersonPoints set Points = 5
---  where ProjectType = 'PROJECT_CARNIVAL'
--- 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_THEATER'
--- 	or ProjectType = 'PROJECT_WATER_CARNIVAL'
--- ;
 
 -- TODO OCCULT project in Secret Societies MODE
 
@@ -115,32 +101,3 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
 	('LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE',	'Amount',	10);
--- -- 征发民夫 by xhh
--- insert or replace into Types
--- 	(Type,							Kind)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'KIND_PROJECT');
-
--- insert or replace into Projects
--- 	(ProjectType,					Name,									ShortName,										Description,									Cost,		CostProgressionModel,				CostProgressionParam1,		PrereqCivic)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'LOC_PROJECT_RECRUIT_WORKERS_HD_NAME',	'LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME',	"LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",	30,			'COST_PROGRESSION_GAME_PROGRESS',	600,						'CIVIC_DEFENSIVE_TACTICS');
-
--- insert or replace into ProjectCompletionModifiers
--- 	(ProjectType,					ModifierId)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH'),
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'HD_RECRUIT_WORKERS_POPU_DECREASE_XHH');
-
--- insert or replace into Modifiers
--- 	(ModifierId,										ModifierType,									RunOnce,	Permanent,		SubjectRequirementSetId)
--- values
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',		1,			1,				'CITY_HAS_2_POPULATION'),
--- 	('HD_RECRUIT_WORKERS_POPU_DECREASE_XHH',			'MODIFIER_PLAYER_CITIES_ADD_POPULATION',		1,			1,				'CITY_HAS_2_POPULATION');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,										Name,				Value)
--- values
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'UnitType',			'UNIT_BUILDER'),
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'Amount',			1),
--- 	('HD_RECRUIT_WORKERS_POPU_DECREASE_XHH',			'Amount',			-1);

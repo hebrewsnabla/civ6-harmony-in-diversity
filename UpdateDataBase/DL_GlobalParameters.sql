@@ -100,11 +100,7 @@ update GlobalParameters set Value = -20 where Name = 'BARBARIAN_BOLDNESS_PER_CAM
 -- free amenity
 update Buildings set Entertainment = 1 where BuildingType = 'BUILDING_PALACE';
 update GlobalParameters set Value = 1 where Name = 'CITY_AMENITIES_FOR_FREE';
--- update GlobalParameters set Value = 1 where Name = 'CITY_AMENITIES_FOR_FREE';
--- update GlobalParameters set Value = 1 where Name = 'CITY_POP_PER_AMENITY';
-
 -- district population require
--- update GlobalParameters set Value = 4 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
 update GlobalParameters set Value = 3 where Name = 'DISTRICT_POPULATION_REQUIRED_PER';
 -- update the City Growth Formula.
 update GlobalParameters set Value = 18 where Name = 'CITY_GROWTH_THRESHOLD';
@@ -129,23 +125,15 @@ update GlobalParameters set Value = 60 where Name = 'BARBARIAN_TECH_PERCENT';
 delete from Quests where QuestType = 'QUEST_SEND_TRADE_ROUTE';
 delete from Quests where QuestType = 'QUEST_CONVERT_CAPITAL_TO_RELIGION';
 
--- update BonusMinorStartingUnits set Quantity = 1 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty != 'DIFFICULTY_EMPEROR';
 update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_ANCIENT' and MinDifficulty = 'DIFFICULTY_EMPEROR';
 update BonusMinorStartingUnits set DifficultyDelta = 0.5 where Unit = 'UNIT_WARRIOR' and Era = 'ERA_CLASSICAL' and MinDifficulty = 'DIFFICULTY_EMPEROR';
 
 -- Loyalty pressure
--- update GlobalParameters set Value = 30 where Name = 'LOYALTY_PER_TURN_FROM_NEARBY_CITIZEN_PRESSURE_MAX_LOYALTY';
 
 -- minor civs
 updaTe GlobalParameters set Value = 50 where Name = 'IDENTITY_PER_TURN_FROM_CITY_STATES';
 
 -- Bug Fix
--- update ModifierArguments set Value = 60 where ModifierId = 'MINOR_CIV_AYUTTHAYA_CULTURE_COMPLETE_BUILDING' and Name = 'BuildingProductionPercent';
--- update ModifierArguments set Value = 24 where ModifierId = 'CARDINAL_CITADEL_OF_GOD_FAITH_FINISH_BUILDINGS' and Name = 'BuildingProductionPercent';
-
--- update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_GRANT_CULTURE_UNIT_TRAINED' and Name = 'UnitProductionPercent';
--- update ModifierArguments set Value = 24 where ModifierId = 'BASILIKOI_PAIDES_SCIENCE_TRAINED_UNIT' and Name = 'UnitProductionPercent';
-
 update BarbarianAttackForces set SiegeTag = 'CLASS_HEAVY_CAVALRY' where AttackForceType = 'HighDifficultyCavalryAttack';
 
 --allow to level 2 for beating barb

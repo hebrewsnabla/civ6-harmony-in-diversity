@@ -17,7 +17,6 @@ update Feature_Removes set Yield = 30 where FeatureType = 'FEATURE_SUK_KELP';
 -- Districts
 
 -- progression with number of previous copies
--- update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 5 where DistrictType = 'DISTRICT_CAMPUS';
 
 -- update cost progression model and cost
 -- specialized districts 
@@ -30,7 +29,6 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or DistrictType = 'DISTRICT_THEATER'				--剧院
 	or DistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or DistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
-	--or DistrictType = 'DISTRICT_HARBOR'					--港口
 ;
 
 -- unique districts
@@ -44,22 +42,7 @@ update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', 
 	or ReplacesDistrictType = 'DISTRICT_THEATER'				--剧院
 	or ReplacesDistrictType = 'DISTRICT_INDUSTRIAL_ZONE'		--工业
 	or ReplacesDistrictType = 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX' --水上娱乐
-	--or ReplacesDistrictType = 'DISTRICT_HARBOR'					--港口
 );
-
--- update Districts set CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES', CostProgressionParam1 = 12, Cost = 60 
---  where DistrictType = 'DISTRICT_LAVRA'					--拉夫拉（俄罗斯）
--- 	or DistrictType = 'DISTRICT_SEOWON'					--书院（朝鲜）
--- 	or DistrictType = 'DISTRICT_OBSERVATORY'			--天文台（玛雅）
--- 	or DistrictType = 'DISTRICT_IKANDA'					--伊坎达（祖鲁）
--- 	or DistrictType = 'DISTRICT_SUGUBA'					--曼丁哥（马里）
--- 	or DistrictType = 'DISTRICT_STREET_CARNIVAL'		--街头狂欢节（巴西）
--- 	or DistrictType = 'DISTRICT_HIPPODROME'				--跑马场（拜占庭）
--- 	or DistrictType = 'DISTRICT_ACROPOLIS'				--卫城（希腊）
--- 	or DistrictType = 'DISTRICT_HANSA'					--汉萨（德国）
--- 	or DistrictType = 'DISTRICT_OPPIDUM'				--奥皮杜姆（高卢）
--- 	or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL'	--科帕卡瓦纳（巴西）
--- ;
 
 --normal districts
 update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressionParam1 = 0
@@ -73,7 +56,6 @@ update Districts set CostProgressionModel = 'NO_COST_PROGRESSION', CostProgressi
 	or DistrictType = 'DISTRICT_DAM'					--大坝
 	or DistrictType = 'DISTRICT_THANH'					--城池（越南）
 	or DistrictType = 'DISTRICT_PRESERVE'				--保护区
---	or DistrictType = 'DISTRICT_HIPPODROME'				--跑马场(拜占庭)
 ;
 
 update Districts set Cost = 60 where DistrictType = 'DISTRICT_GOVERNMENT';
@@ -98,7 +80,3 @@ update Districts set Cost = 60 where DistrictType = 'DISTRICT_THANH';
 update Districts set Cost = 150 where DistrictType = 'DISTRICT_AERODROME';
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_CANAL';
 update Districts set Cost = 200 where DistrictType = 'DISTRICT_DAM';
-
--- 区域价格调整（搁置）
--- update Districts set Cost = 80 where Cost = 75;
--- update Districts set Cost = 64 where Cost = 60;

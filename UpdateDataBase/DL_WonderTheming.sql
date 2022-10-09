@@ -6,16 +6,6 @@
 --考古=同时代，不同国家
 --艺术=同类型，不同作者
 
---GREAT LIBRARY
---不同作者
--- update Building_GreatWorks set 
--- 	ThemingUniquePerson = 1 ,
--- 	ThemingSameObjectType = 1 ,
--- 	ThemingSameEras = 0 ,
--- 	ThemingTourismMultiplier = 100 ,
--- 	ThemingYieldMultiplier = 100
--- where BuildingType = 'BUILDING_GREAT_LIBRARY';
-
 --OXFORD_UNIVERSITY
 --不同作者
 update Building_GreatWorks set 
@@ -35,16 +25,6 @@ update Building_GreatWorks set
 	ThemingTourismMultiplier = 100 ,
 	ThemingYieldMultiplier = 100
 where BuildingType = 'BUILDING_GLOBE_THEATRE';
-
---APADANA
---同类型
--- update Building_GreatWorks set 
--- 	ThemingUniquePerson = 0 ,
--- 	ThemingSameObjectType = 1 ,
--- 	ThemingSameEras = 0 ,
--- 	ThemingTourismMultiplier = 100 ,
--- 	ThemingYieldMultiplier = 100
--- where BuildingType = 'BUILDING_APADANA';
 
 --GOV_CULTURE
 --同时代

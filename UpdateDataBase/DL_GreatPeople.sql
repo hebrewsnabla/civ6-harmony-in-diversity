@@ -12,7 +12,6 @@ INSERT OR IGNORE INTO Types
 VALUES  ('GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES',              'KIND_GREAT_PERSON_INDIVIDUAL'),
         ('GREAT_PERSON_INDIVIDUAL_JNR_LI_BING',                 'KIND_GREAT_PERSON_INDIVIDUAL'),
         ('GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN',                  'KIND_GREAT_PERSON_INDIVIDUAL');
-        -- ('GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU', 'KIND_GREAT_PERSON_INDIVIDUAL');
 --------------------------------------------------------------
 
 -- GreatPersonIndividuals
@@ -54,21 +53,9 @@ VALUES  (
         1,
         'DISTRICT_CITY_CENTER'
         );
-        -- (
-        -- 'GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU',
-        -- 'LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME',
-        -- 'GREAT_PERSON_CLASS_ENGINEER',
-        -- 'ERA_RENAISSANCE',
-        -- 'F',
-        -- 1,
-        -- 'DISTRICT_CITY_CENTER'
-        -- );
-
 UPDATE GreatPersonIndividuals SET EraType='ERA_CLASSICAL'   WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_IMHOTEP';
 
 UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC'              WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_IMHOTEP';
--- UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_LEONARDO_DA_VINCI_ACTIVE_JNR_UC' WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_LEONARDO_DA_VINCI';
--- UPDATE GreatPersonIndividuals SET ActionEffectTextOverride='LOC_GREATPERSON_JAMES_WATT_ACTIVE_JNR_UC'            WHERE GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_JAMES_WATT';
 --------------------------------------------------------------
 
 -- Modifiers
@@ -224,9 +211,6 @@ values
     ('GREAT_PERSON_INDIVIDUAL_JAMES_OF_ST_GEORGE',      'GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP'),
 	-- this Modifier is not removed with the Regional Range rewrite in DL_PostProcess.sql in order to make Power Plants provides power to more cities.
     ('GREAT_PERSON_INDIVIDUAL_JAMES_WATT',              'GREATPERSON_REGIONAL_RANGE_BONUS'),
-    --('GREAT_PERSON_INDIVIDUAL_JAMES_WATT',              'GREATPERSON_REGIONAL_RANGE_SCIENCE'),
---    ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_CAMPUS_SCIENCE_PRODUCTION'),
---    ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE'),
     ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_ELECTRICITY'),
     ('GREAT_PERSON_INDIVIDUAL_NIKOLA_TESLA',            'GREATPERSON_ELECTRICITY_ADD_PRODUCTION'),
     ('GREAT_PERSON_INDIVIDUAL_ALVAR_AALTO',             'GREATPERSON_NATIONAL_APPEAL'),
@@ -240,7 +224,6 @@ values
     ('GREAT_PERSON_INDIVIDUAL_CASTLE_GEP',              'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_MEDIEVAL_WALLS'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',     0,1,    'CITY_HAS_RENAISSANCE_WALLS'),
     ('GREATPERSON_REGIONAL_RANGE_BONUS',                'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_RANGE',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
-    --('GREATPERSON_REGIONAL_RANGE_SCIENCE',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',0,1,    'DISTRICT_IS_INDUSTRIAL_ZONE'),
     ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_CAMPUS'),
     ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS', 0,1, 'DISTRICT_IS_INDUSTRIAL_ZONE'),
     ('GREATPERSON_NATIONAL_APPEAL',                     'MODIFIER_PLAYER_CITIES_ADJUST_CITY_APPEAL',            0,1,    NULL),
@@ -266,8 +249,6 @@ values
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'GreatPersonClassType', 'GREAT_PERSON_CLASS_ENGINEER'),
     ('GREAT_PERSON_INDIVIDUAL_STAR_WALL_GEP',           'Amount',               1),
     ('GREATPERSON_REGIONAL_RANGE_BONUS',                'Amount',               3),
-    --('GREATPERSON_REGIONAL_RANGE_SCIENCE',              'YieldType',            'YIELD_SCIENCE'),
-    --('GREATPERSON_REGIONAL_RANGE_SCIENCE',              'Amount',               3),
     ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'YieldTypeToMirror',    'YIELD_SCIENCE'),
     ('GREATPERSON_CAMPUS_SCIENCE_PRODUCTION',           'YieldTypeToGrant',     'YIELD_PRODUCTION'),
     ('GREATPERSON_INDUSTRY_PRODUCTION_SCIENCE',         'YieldTypeToMirror',    'YIELD_PRODUCTION'),
@@ -338,7 +319,6 @@ values
     ('GREAT_PERSON_INDIVIDUAL_ALBERT_EINSTEIN',         'GREATPERSON_2MODERNATOMICTECHBOOST'),
     ('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',             'GREATPERSON_1MODERNATOMICTECHBOOST'),
     ('GREAT_PERSON_INDIVIDUAL_ALAN_TURING',             'GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS'),
-    -- ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS'),
     ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREAT_PERSON_HD_BOOST_OR_GRANT_CHEMISTRY'),
     ('GREAT_PERSON_INDIVIDUAL_DMITRI_MENDELEEV',        'GREATPERSON_REVEAL_ALUMINUM'),
     ('GREAT_PERSON_INDIVIDUAL_JAMES_YOUNG',             'GREAT_PERSON_HD_BOOST_OR_GRANT_REFINING'),
@@ -350,7 +330,6 @@ insert or replace into Modifiers
 values
     ('GREAT_PERSON_INDIVIDUAL_ARYABHATA_CAMPUS_AMENITY',    'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT',                1,  1),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                  'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
-    -- ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',             'MODIFIER_PLAYER_GRANT_RANDOM_TECHNOLOGY_BOOST_BY_ERA', 1,  1),
     ('GREATPERSON_REVEAL_ALUMINUM',                         'MODIFIER_PLAYER_GRANT_FREE_RESOURCE_VISIBILITY',       1,  1),
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',          'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_COMPUTERS',            'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',            1,  1),
@@ -376,9 +355,6 @@ values
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'Amount',               2),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'EndEraType',           'ERA_ATOMIC'),
     ('GREATPERSON_2MODERNATOMICTECHBOOST',                      'StartEraType',         'ERA_MODERN'),
-    -- ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'Amount',               1),
-    -- ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'EndEraType',           'ERA_MODERN'),
-    -- ('GREATPERSON_1INDUSTRIALMODERNTECHBOOSTS',                 'StartEraType',         'ERA_INDUSTRIAL'),
     ('GREATPERSON_REVEAL_ALUMINUM',                             'ResourceType',         'RESOURCE_ALUMINUM'),
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',              'TechType',             'TECH_MATHEMATICS'),
     ('GREAT_PERSON_HD_BOOST_OR_GRANT_MATHEMATICS',              'GrantTechIfBoosted',   1),
@@ -403,15 +379,6 @@ update ModifierArguments set Value = 3000 where ModifierId = 'GREAT_PERSON_GRANT
 
 --GREAT_PERSON_INDIVIDUAL_ABDUS_SALAM
 update ModifierArguments set Value = 'ERA_FUTURE' where ModifierId = 'GREATPERSON_ALLINFORMATIONTECHBOOSTS' and Name = 'EndEraType';
-
--- insert or replace into GreatWorks
---  (GreatWorkType, GreatWorkObjectType, GreatPersonIndividualType, Name, Audio, Image, Quote, Tourism, Eratype)
--- values
---  ('GREATWORK_NEWTON',    'GREATWORKOBJECT_WRITING',  'GREAT_PERSON_INDIVIDUAL_ISAAC_NEWTON', 'LOC_GREATWORK_NEWTON_NAME',    NULL,
---      NULL, 'LOC_GREATWORK_NEWTON_QUOTE', 3,  'ERA_RENAISSANCE');
-
--- insert or replace into GreatWorkModifiers (GreatWorkType, ModifierId)
--- values ('GREATWORK_NEWTON','PRODUCT_SCIENCE_YIELD_BONUS_TURTLES');
 
 -- todo: add a button for Newton
 -- and see if he is 30% sicence boost
@@ -617,16 +584,6 @@ update GreatPersonIndividualActionModifiers
 set ModifierId = 'GREATPERSON_CULTURE_BOMB_MIMAR_SINAN', AttachmentTargetType = 'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'
 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MIMAR_SINAN';
 
--- 使者调整
-    -- 【大将军】 安娜·恩津加
--- update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ANA_NZINGA';
-    -- 【大商人】 拉贾·托达·马尔 皮耶罗·迪·巴尔迪 【海军统帅】 特米斯托克力
--- update ModifierArguments set Value = 2 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_SMALL';
-    -- 【大商人】 雅各布·富格尔 约翰·雅各·阿斯特
--- update ModifierArguments set Value = 4 where ModifierId = 'GREATPERSON_INFLUENCE_TOKENS_MEDIUM';
-    -- 【大商人】 周达观
--- update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_ZHOU_DAGUAN';
-
 -- 新大作家
 insert or replace into Types
     (Type,                                          Kind)
@@ -643,12 +600,9 @@ values
 ------------------------------------------------------------------------------------------------
 --大军改动 by先驱
 
---布狄卡由一次改为两次(取消)
---update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_BOUDICA';
 --汉尼拔·巴卡由两次改为三次
 update GreatPersonIndividuals set ActionCharges = 3 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HANNIBAL_BARCA';
 --孙子新增能力：全国军事单位战斗经验+25%（效果还在大军上，能力写在书上）
---update GreatPersonIndividuals set ActionCharges = 1 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SUN_TZU';
 --埃塞尔弗莱德能力重做：完成1个兵营，对蛮子+3力。可以使用两次
 update GreatPersonIndividuals set ActionCharges = 2, ActionRequiresCompletedDistrictType = 'DISTRICT_ENCAMPMENT'
     where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_AETHELFLAED';
@@ -678,7 +632,6 @@ where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR';
 insert or replace into ModifierStrings
     (ModifierId,                                Context,        Text)
 values
---    ('GREATPERSON_SUN_ZTU_ACTIVE_1',            'Summary',      'LOC_GREATPERSON_SUN_ZTU_ACTIVE'),
     ('GREATPERSON_AETHELFLAED_ACTIVE_1',        'Summary',      'LOC_GREATPERSON_AETHELFLAED_ACTIVE'),
     ('GREATPERSON_EL_CID_ACTIVE',               'Summary',      'LOC_GREATPERSON_EL_CID_ACTIVE'),
     ('GREATPERSON_TIMUR_ACTIVE_1',              'Summary',      'LOC_GREATPERSON_TIMUR_ACTIVE'),
@@ -707,10 +660,6 @@ values
     ('GREAT_PERSON_INDIVIDUAL_NAPOLEON_BONAPARTE',  'GREATPERSON_NAPOLEON_BONAPARTE_ACTIVE_1',  'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_DOMAIN_MILITARY_IN_TILE'),
 --圣马丁能力重做：立即创建1个胸甲骑兵单位。
     ('GREAT_PERSON_INDIVIDUAL_SIMON_BOLIVAR',       'GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',       'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON');
---insert or replace into GreatWorkModifiers
---    (GreatWorkType,                 ModifierId)
---values
---   ('GREATWORK_SUN_TZU',           'GREATPERSON_SUN_ZTU_ACTIVE_1');
 insert or replace into Modifiers
     (ModifierId,                                ModifierType,                               RunOnce,   Permanent)
 values

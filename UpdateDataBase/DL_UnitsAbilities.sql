@@ -476,8 +476,3 @@ insert or replace into ModifierStrings
 	(ModifierId,										Context,	Text)
 values
 	('HD_BATTLECRY_BONUS',								'Preview',	'+{1_Amount} {LOC_HD_BATTLECRY_BONUS_PREVIEW_TEXT}');
-
--- Bug Fix
--- update ModifierArguments set Value = 1000 where ModifierId = 'HETAIROI_FREE_PROMOTION' and Name = 'Amount';
--- update ModifierArguments set Value = 1000 where ModifierId = 'CORBACI_FREE_PROMOTION' and Name = 'Amount';
--- update ModifierArguments set Value = 1000 where ModifierId = 'NAU_FREE_PROMOTION' and Name = 'Amount';

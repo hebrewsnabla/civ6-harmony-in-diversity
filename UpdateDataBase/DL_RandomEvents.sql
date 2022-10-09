@@ -2,15 +2,6 @@
 --     RandomEvents Adjustments    --
 -------------------------------------
 
--- delete from RandomEvent_Yields
---  where RandomEventType = 'RANDOM_EVENT_FLOOD_MODERATE'
--- 	or RandomEventType = 'RANDOM_EVENT_FLOOD_MAJOR'
--- 	or RandomEventType = 'RANDOM_EVENT_FLOOD_1000_YEAR'
--- 	or RandomEventType = 'RANDOM_EVENT_VOLCANO_GENTLE'
--- 	or RandomEventType = 'RANDOM_EVENT_VOLCANO_CATASTROPHIC'
--- 	or RandomEventType = 'RANDOM_EVENT_VOLCANO_MEGACOLOSSAL'
--- ;
-
 -- Forest/Jungle fire provide 1 food when forest/jungle grow back.
 update RandomEvent_Yields set Amount = 0 where FeatureType = 'FEATURE_BURNT_JUNGLE' and RandomEventType = 'RANDOM_EVENT_JUNGLE_FIRE';
 update RandomEvent_Yields set YieldType = 'YIELD_FOOD' where FeatureType = 'FEATURE_JUNGLE' and RandomEventType = 'RANDOM_EVENT_JUNGLE_FIRE';

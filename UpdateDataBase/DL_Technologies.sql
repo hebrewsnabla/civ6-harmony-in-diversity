@@ -43,10 +43,6 @@ values
 --------------------------------------------------------------------------------
 
 update Technologies set EmbarkAll = 1 where TechnologyType = 'TECH_CELESTIAL_NAVIGATION';
--- update Technologies set EmbarkAll = 0 where TechnologyType = 'TECH_SHIPBUILDING';
-
--- update Technologies set Cost = 300 where TechnologyType = 'TECH_CASTLES';
--- update Technologies set Cost = 390 where TechnologyType = 'TECH_MACHINERY';
 update ModifierArguments set Value = 20 where ModifierId = 'COMPUTERS_BOOST_ALL_TOURISM' and Name = 'Amount';
 
 insert or replace into Technologies_XP2 (TechnologyType, RandomPrereqs, HiddenUntilPrereqComplete)
@@ -60,13 +56,9 @@ update Projects set PrereqTech = 'TECH_ELECTRICITY' where ProjectType = 'PROJECT
 update Projects set PrereqTech = 'TECH_REFINING' where ProjectType = 'PROJECT_CONVERT_REACTOR_TO_OIL';
 
 update Buildings set PrereqTech = 'TECH_STEAM_POWER' where BuildingType = 'BUILDING_SEAPORT';
--- update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_RESEARCH_LAB';
 update Buildings set PrereqTech = 'TECH_ELECTRICITY' where BuildingType = 'BUILDING_COAL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_REFINING' where BuildingType = 'BUILDING_FOSSIL_FUEL_POWER_PLANT';
 update Buildings set PrereqTech = 'TECH_METAL_CASTING' where BuildingType = 'BUILDING_WORKSHOP';
--- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_STAR_FORT';
--- update Buildings set PrereqTech = 'TECH_MILITARY_TACTICS' where BuildingType = 'BUILDING_TSIKHE';
-
 update Resources set PrereqTech = 'TECH_CHEMISTRY' where ResourceType = 'RESOURCE_OIL';
 update Improvements set PrereqTech = 'TECH_MILITARY_ENGINEERING' where ImprovementType = 'IMPROVEMENT_FORT';
 
@@ -105,14 +97,11 @@ update Technologies set UITreeRow = 2 where TechnologyType = 'TECH_MILITARY_ENGI
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_CASTLES'; -- , Cost = 450
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_CARTOGRAPHY'; -- Cost = 550, EraType = 'ERA_MEDIEVAL'
 update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_MASS_PRODUCTION';
--- update Technologies set UITreeRow = -2 where TechnologyType = 'TECH_MASS_PRODUCTION';
 update Technologies set UITreeRow = 0, Cost = 730 where TechnologyType = 'TECH_BANKING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_GUNPOWDER';
 update Technologies set UITreeRow = 1 where TechnologyType = 'TECH_PRINTING'; -- Cost = 950
--- update Technologies set UITreeRow = 0 where TechnologyType = 'TECH_PRINTING';
 update Technologies set UITreeRow = -3 where TechnologyType = 'TECH_SQUARE_RIGGING';
 update Technologies set UITreeRow = -2, cost = 600 where TechnologyType = 'TECH_ASTRONOMY';
--- update Technologies set UITreeRow = -1 where TechnologyType = 'TECH_ASTRONOMY';
 update Technologies set UITreeRow = 2, Cost = 300, EraType = 'ERA_MEDIEVAL' where TechnologyType = 'TECH_METAL_CASTING';
 update Technologies set UITreeRow = 3 where TechnologyType = 'TECH_SIEGE_TACTICS';
 -- Industrial era
@@ -190,22 +179,18 @@ values
     ('TECH_APPRENTICESHIP',         'TECH_CURRENCY'),
     ('TECH_APPRENTICESHIP',         'TECH_ENGINEERING'),
     ('TECH_MACHINERY',              'TECH_ENGINEERING'),
-    -- ('TECH_MACHINERY',  'TECH_METAL_CASTING'),
     ('TECH_COMPASS_HD',             'TECH_CELESTIAL_NAVIGATION'),
-    -- ('TECH_COMPASS_HD',             'TECH_MATHEMATICS'),
     ('TECH_COMPASS_HD',             'TECH_SHIPBUILDING'),
     ('TECH_EDUCATION',              'TECH_MATHEMATICS'),
     ('TECH_EDUCATION',              'TECH_APPRENTICESHIP'),
     ('TECH_STIRRUPS',               'TECH_HORSEBACK_RIDING'),
     ('TECH_BUTTRESS',               'TECH_HORSEBACK_RIDING'),
     ('TECH_BUTTRESS',               'TECH_CONSTRUCTION'),
-    -- ('TECH_MILITARY_ENGINEERING',   'TECH_CASTLES'),
     ('TECH_CASTLES',                'TECH_BUTTRESS'),
     ('TECH_MILITARY_ENGINEERING',   'TECH_BUTTRESS'),
     ('TECH_MILITARY_ENGINEERING',   'TECH_METAL_CASTING'),
     --  Renaissance  ------------------------------------------------------
     ('TECH_CARTOGRAPHY',            'TECH_COMPASS_HD'),
-    -- ('TECH_MASS_PRODUCTION',    'TECH_COMPASS_HD'),
     ('TECH_MASS_PRODUCTION',        'TECH_EDUCATION'),
     ('TECH_PRINTING',               'TECH_MACHINERY'),
     ('TECH_PRINTING',               'TECH_MILITARY_ENGINEERING'),
@@ -218,10 +203,8 @@ values
     ('TECH_SQUARE_RIGGING',         'TECH_CARTOGRAPHY'),
     ('TECH_ASTRONOMY',              'TECH_EDUCATION'),
     ('TECH_ASTRONOMY',              'TECH_CELESTIAL_NAVIGATION'),
-    -- ('TECH_ASTRONOMY',              'TECH_COMPASS_HD'),
     ('TECH_PHYSICS_HD',             'TECH_ASTRONOMY'),
     ('TECH_PHYSICS_HD',             'TECH_MASS_PRODUCTION'),
-    -- ('TECH_MILITARY_TACTICS',   'TECH_METAL_CASTING'),
     ('TECH_MILITARY_TACTICS',       'TECH_MILITARY_ENGINEERING'),
     ('TECH_SIEGE_TACTICS',          'TECH_GUNPOWDER'),
     --  Industrial  -------------------------------------------------------
@@ -242,7 +225,6 @@ values
     ('TECH_RIFLING',                'TECH_SIEGE_TACTICS'),
     ('TECH_RIFLING',                'TECH_BALLISTICS'),
     ('TECH_CIVIL_ENGINEERING_HD',   'TECH_PRINTING'),
-    -- ('TECH_CIVIL_ENGINEERING_HD',   'TECH_MILITARY_TACTICS'),
     --  Modern  -----------------------------------------------------------
     ('TECH_FLIGHT',                 'TECH_STEAM_POWER'),
     ('TECH_REPLACEABLE_PARTS',      'TECH_RIFLING'),
@@ -251,7 +233,6 @@ values
     ('TECH_CHEMISTRY',              'TECH_SANITATION'),
     ('TECH_CHEMISTRY',              'TECH_ECONOMICS'),
     ('TECH_CHEMISTRY',              'TECH_SCIENTIFIC_THEORY'),
-    -- ('TECH_ELECTRICITY',    'TECH_INDUSTRIALIZATION'),
     ('TECH_ELECTRICITY',            'TECH_SCIENTIFIC_THEORY'),
     ('TECH_ELECTRICITY',            'TECH_STEAM_POWER'),
     ('TECH_RADIO',                  'TECH_FLIGHT'),
@@ -260,7 +241,6 @@ values
     ('TECH_REFINING',               'TECH_ELECTRICITY'),
     ('TECH_REFINING',               'TECH_BIOLOGY_HD'),
     ('TECH_BIOLOGY_HD',             'TECH_SANITATION'),
-    -- ('TECH_COMBUSTION',             'TECH_CHEMISTRY'),
     ('TECH_COMBUSTION',             'TECH_BIOLOGY_HD'),
     ('TECH_COMBUSTION',             'TECH_STEEL'),
     --  Atomic  -----------------------------------------------------------
@@ -285,7 +265,6 @@ values
     ('TECH_LASERS',                 'TECH_NUCLEAR_FISSION'),
     ('TECH_COMPOSITES',             'TECH_SYNTHETIC_MATERIALS'),
     ('TECH_STEALTH_TECHNOLOGY',     'TECH_SYNTHETIC_MATERIALS'),
-    -- ('TECH_ROBOTICS',               'TECH_COMPUTERS'),
     ('TECH_ROBOTICS',               'TECH_SATELLITES'),
     ('TECH_ROBOTICS',               'TECH_GUIDANCE_SYSTEMS'),
     ('TECH_ROBOTICS',               'TECH_LASERS'),
@@ -319,7 +298,6 @@ update Technologies set Cost = 4500 where Cost = 2600;
 update Technologies set Cost = 4000 where Cost = 2500;
 update TechnologyRandomCosts set Cost = 3700 where Cost = 2300;
 update TechnologyRandomCosts set Cost = 3600 where Cost = 2200;
--- update Technologies set Cost = 2700 where Cost = 2200;
 -- 
 update Technologies set Cost = 3100 where Cost = 2155;
 update Technologies set Cost = 3000 where Cost = 1850;
@@ -356,9 +334,8 @@ values
 	('TECH_TELECOMMUNICATIONS',					'TECH_TELECOMMUNICATIONS_RELIGIOUS_YIELD_BOOST'),
 	('TECH_TELECOMMUNICATIONS',					'TECH_TELECOMMUNICATIONS_ARTIFACTS_YIELD_BOOST'),
 	('TECH_STEAM_POWER',						'TRAIT_WATER_TRADE_ROUTE_RANGE'),
---    ('TECH_ASTRONOMY',                          'ASTRONOMY_ADJACENT_MOUNTAIN_CAMPUS_SCIENCE'),
-   ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE'),
-   ('TECH_SAILING',							'TECH_SAILING_TRADER_EMBARK');
+    ('TECH_CALENDAR_HD',                        'TECH_CALENDAR_HD_MONUMENT_CULTURE'),
+    ('TECH_SAILING',							'TECH_SAILING_TRADER_EMBARK');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType)
@@ -400,22 +377,6 @@ values
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'YieldType',                'YIELD_CULTURE'),
     ('TECH_CALENDAR_HD_MONUMENT_CULTURE',                       'Amount',                   1),
 	('TECH_SAILING_TRADER_EMBARK',								'UnitType',					'UNIT_TRADER');
-
--- -- 研究货币给商业地基（非相邻加成）+3金
--- insert or replace into TechnologyModifiers
--- 	(TechnologyType,													ModifierId)
--- values
--- 	('TECH_CURRENCY',														'TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST');
-
--- insert or replace into Modifiers
--- 	(ModifierId,										ModifierType,									SubjectRequirementSetId)
--- values
--- 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		'DISTRICT_IS_COMMERCIAL_HUB');
--- insert or replace into ModifierArguments
--- 	(ModifierId,													Name,					Value)
--- values
--- 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'YieldType',				'YIELD_GOLD'),
--- 	('TECH_CURRENCY_COMMERCIAL_HUB_YIELD_BOOST',					'Amount',					3			);
 
 --移除雨林前移到采矿
 update Features set RemoveTech = 'TECH_MINING' where FeatureType = 'FEATURE_JUNGLE';

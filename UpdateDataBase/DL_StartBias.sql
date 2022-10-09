@@ -111,7 +111,6 @@ values
 	('CIVILIZATION_INCA',				'RESOURCE_LEU_P0K_LLAMAS',			2),
 	('CIVILIZATION_INCA',				'RESOURCE_MAIZE',					2),
 	('CIVILIZATION_OTTOMAN',			'RESOURCE_IRON',					5),
---	('CIVILIZATION_OTTOMAN',			'RESOURCE_NITER',					5),
 	('CIVILIZATION_BYZANTIUM',			'RESOURCE_HORSES',					2);
 
 insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Tier)
