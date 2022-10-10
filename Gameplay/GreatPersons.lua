@@ -49,3 +49,14 @@ GameEvents.GreatPersonHandleActivation.Add(function(unitOwner, unitID, greatPers
         end
     end
 end)
+
+local MARCO_POLO_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_MARCO_POLO'].Index;
+local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;
+function MarcoPoloGreatPersonHandleActivation (unitOwner, unitId, greatPersonIndividualId)
+	if greatPersonIndividualId == MARCO_POLO_INDEX then
+		local player = Players[unitOwner];
+		player:GetCulture():TriggerBoost(EXPLORATION_INDEX);
+	end
+end
+
+GameEvents.GreatPersonHandleActivation.Add(MarcoPoloGreatPersonHandleActivation);
