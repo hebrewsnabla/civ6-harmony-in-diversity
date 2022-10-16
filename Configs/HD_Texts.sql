@@ -48,6 +48,7 @@ values
     ("LOC_MAP_TINY_LAKES_NAME",                             "Tiny Lakes"),
     ("LOC_MAP_TINY_LAKES_DESCRIPTION",                      "Many tiny lakes."),
     ("LOC_MAP_WET_LAKES_NAME",                              "Mangrove Continent"),
+    ("LOC_MAP_RIVERS_NAME",                              	"Rivers"),
     ("LOC_MAP_WET_LAKES_DESCRIPTION",                       "Endless marshes and swamps.");
 
 --------------------------------------------------------------------------------
@@ -105,6 +106,7 @@ values
     ("zh_Hans_CN",  "LOC_MAP_TINY_LAKES_NAME",                              "星罗棋布"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_LAKES_DESCRIPTION",                       "星罗棋布的湖泊。"),
     ("zh_Hans_CN",  "LOC_MAP_WET_LAKES_NAME",                               "红树林大陆"),
+    ("zh_Hans_CN",  "LOC_MAP_RIVERS_NAME",                              	"千河"),
     ("zh_Hans_CN",  "LOC_MAP_WET_LAKES_DESCRIPTION",                        "一望无际的湿地和沼泽。");
 
     -- ("zh_Hans_CN",  "LOC_WER_MOD_NOTE",                         "[NEWLINE][NEWLINE][COLOR_Red]来自mod“[ICON_Unit]Warfare Expanded Reloaded[ICON_Unit]”[ENDCOLOR]"),

@@ -297,9 +297,10 @@ function DoRiver(startPlot, thisFlowDirection, originalFlowDirection, riverID)
 	
 end
 
-function AddRivers()
+function AddRivers(riverSourceRangeDefaultOffset)
 	--GlobalParameters.RIVER_SEA_WATER_RANGE_DEFAULT or 
-	local riverSourceRangeDefault = GlobalParameters.RIVER_SOURCE_RANGE_DEFAULT or 4;
+	riverSourceRangeDefaultOffset = riverSourceRangeDefaultOffset or 0;
+	local riverSourceRangeDefault = (GlobalParameters.RIVER_SOURCE_RANGE_DEFAULT or 4) - riverSourceRangeDefaultOffset;
 	local seaWaterRangeDefault = 3;
 	local plotsPerRiverEdge = GlobalParameters.RIVER_PLOTS_PER_EDGE or 12;
 	
