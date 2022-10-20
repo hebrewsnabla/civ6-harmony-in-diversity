@@ -166,7 +166,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "[ICON_VisLimited] 外交能见度比遇到的其他文明高1级。[NEWLINE]解锁“城堡”科技后免费获得1个间谍（并增加1个间谍容量）。间谍和商人+2视野范围。所有间谍初始便可免费获得一次升级机会。"), -- （若已能升级则可在升级后再升级一次）
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成“军事传统”市政后解锁领土扩张战争借口。完成“军事训练”使者后在首都获得一个免费开拓者。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成“军事传统”市政后解锁领土扩张战争借口。完成“军事训练”市政后在首都获得一个免费开拓者。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME",                  "昭昭天命"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION","当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ALL_ROADS_TO_ROME_DESCRIPTION",          "所有您创建或攻占的城市一开始便拥有贸易站。如果位于您 [ICON_Capital] 首都的 [ICON_TradeRoute] 贸易路线范围内，城市自动建立一条通至罗马的路。您的国内 [ICON_TradeRoute] 贸易路线经过您的城市贸易站时额外+1 [ICON_Gold] 金币。"),
