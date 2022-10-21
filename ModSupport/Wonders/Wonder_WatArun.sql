@@ -7,7 +7,7 @@ delete from BuildingModifiers where BuildingType = 'BUILDING_SUK_WAT_ARUN';
 insert or replace into GlobalParameters
     (Name,                          Value)
 values
-    ('WAT_ARUN_FAITH_PERCENTAGE',   50);
+    ('WAT_ARUN_FAITH_PERCENTAGE',   0);
 
 -- this modifier is used by lua instead of directly attached to Wat Arun
 insert or replace into Modifiers
@@ -17,7 +17,7 @@ values
 insert or replace into ModifierArguments
     (ModifierId,            Name,       Value)
 values
-    ('WAT_ARUN_INFLUNCE',   'Amount',   1);
+    ('WAT_ARUN_INFLUNCE',   'Amount',   2);
 
 /*
 create temporary table WatArunBuildingTourisms (BuildingType text not null primary key, Tourism int);

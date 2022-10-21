@@ -6,25 +6,20 @@
 update Buildings set ObsoleteEra = 'ERA_MEDIEVAL', PrereqTech = 'TECH_CALENDAR_HD', PrereqCivic = null where BuildingType = 'BUILDING_ABU_SIMBEL';
 delete from BuildingModifiers where BuildingType = 'BUILDING_ABU_SIMBEL' and ModifierId = 'ABU_SIMBEL_LOYALTY';
 insert or replace into Modifiers
-	(ModifierId,							ModifierType,							SubjectRequirementSetId)
+	(ModifierId,					ModifierType)
 values
-	('ABU_SIMBEL_PLATATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_PLANTATION_WITH_5_TILES'),
-	('ABU_SIMBEL_FARM_FOOD',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RESOURCE_FARM_WITH_5_TILES');
+	('ABU_SIMBEL_GRANARY_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE');
 insert or replace into ModifierArguments
-	(ModifierId,							Name,				Value)
+	(ModifierId,					Name,				Value)
 values
-	('ABU_SIMBEL_PLATATION_FOOD',			'YieldType',		'YIELD_FOOD'),
-	('ABU_SIMBEL_PLATATION_FOOD',			'Amount',			1),
-	('ABU_SIMBEL_FARM_FOOD',				'YieldType',		'YIELD_FOOD'),
-	('ABU_SIMBEL_FARM_FOOD',				'Amount',			1);
-with M (ModifierId) as (values
-	('ABU_SIMBEL_PLATATION_FOOD'),
-	('ABU_SIMBEL_FARM_FOOD'))
+	('ABU_SIMBEL_GRANARY_FOOD',		'BuildingType',		'BUILDING_GRANARY'),
+	('ABU_SIMBEL_GRANARY_FOOD',		'YieldType',		'YIELD_FOOD'),
+	('ABU_SIMBEL_GRANARY_FOOD',		'Amount',			1);
 insert or replace into BuildingModifiers
 	(BuildingType,				ModifierId)
 select
-	'BUILDING_ABU_SIMBEL',		ModifierId
-from M where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL');
+	'BUILDING_ABU_SIMBEL',		'ABU_SIMBEL_GRANARY_FOOD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_ABU_SIMBEL');
 
 ----------------------------------------------------------------------------------------------------------------
 --BUILDING_LEANING_TOWER----------------------------------------------------------------------------------------
@@ -264,54 +259,7 @@ update GreatWorks set EraType = 'ERA_RENAISSANCE'	where GreatWorkType = 'GREATWO
 -------------------------------------------------------------------------------------------------------------
 -------P0K_BUILDING_TEMPLE_POSEIDON--------------------------------------------------------------------------
 update Buildings set ObsoleteEra = 'ERA_MEDIEVAL' where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON';
-
-insert or replace into DistrictModifiers (DistrictType, ModifierId) select
-	'DISTRICT_HARBOR',				'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-insert or replace into DistrictModifiers (DistrictType, ModifierId) select
-	'DISTRICT_ROYAL_NAVY_DOCKYARD',	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-insert or replace into DistrictModifiers (DistrictType, ModifierId) select
-	'DISTRICT_COTHON',				'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-
-insert or replace into Modifiers(ModifierId, ModifierType,	SubjectRequirementSetId) select
-	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY', 'MODIFIER_ADJUST_AMENITIES_IN_DISTRICT', 'P0K_TEMPLE_POSEIDON_REQUIREMENTS'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-
-insert or replace into ModifierArguments (ModifierId, Name,	Value) select 
-	'P0K_TEMPLE_POSEIDON_HARBOR_AMENITY', 'Amount', 1
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-
-insert or replace into BuildingModifiers
-	(BuildingType,						ModifierId)
-select
-	'P0K_BUILDING_TEMPLE_POSEIDON',		'POSEIDON_FISHING_BOATS_FOOD'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-insert or replace into BuildingModifiers
-	(BuildingType,						ModifierId)
-select
-	'P0K_BUILDING_TEMPLE_POSEIDON',		'POSEIDON_HARBOR_FOOD'
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
-insert or replace into Modifiers
-	(ModifierId,						ModifierType,										SubjectRequirementSetId)
-values
-	('POSEIDON_FISHING_BOATS_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_FISHING_BOATS_WITH_4_TILES'),
-	('POSEIDON_HARBOR_FOOD',			'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_HARBOR_WITHIN_4_TILES');
-insert or replace into ModifierArguments
-	(ModifierId,						Name,			Value)
-values
-	('POSEIDON_FISHING_BOATS_FOOD',		'YieldType',	'YIELD_FOOD'),
-	('POSEIDON_FISHING_BOATS_FOOD',		'Amount',		1),
-	('POSEIDON_HARBOR_FOOD',			'YieldType',	'YIELD_FOOD'),
-	('POSEIDON_HARBOR_FOOD',			'Amount',		1);
-
-update Building_YieldChanges set YieldChange = 1 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' and YieldType = 'YIELD_FOOD';
-insert or replace into Building_YieldChanges
-	(BuildingType,								YieldType,			YieldChange)
-select
-	'P0K_BUILDING_TEMPLE_POSEIDON',			'YIELD_PRODUCTION',		1
-where exists (select BuildingType from Buildings where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON');
+update Building_YieldChanges set YieldChange = 6 where BuildingType = 'P0K_BUILDING_TEMPLE_POSEIDON' and YieldType = 'YIELD_FOOD';
 ------------------------------------------------------------------------------------------------------------------
 
 --BUILDING_ITSUKUSHIMA
