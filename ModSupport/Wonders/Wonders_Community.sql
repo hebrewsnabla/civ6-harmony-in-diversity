@@ -677,7 +677,7 @@ insert or replace into Building_YieldChanges
 select
 	BuildingType || '_HD',			'YIELD_CULTURE',	2
 from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
-delete from Buildings where BuildingType = 'BUILDING_YELLOW_CRANE';
+delete from Types where Type = 'BUILDING_YELLOW_CRANE';
 insert or replace into GlobalParameters (Name, Value) values ('YELLOW_CRANE_TOWER_POINT_PERCENTAGE', 15);
 insert or replace into Modifiers
 	(ModifierId,										ModifierType)
