@@ -179,7 +179,7 @@ version 1.3.3
 [敦·霹雳]：处于 [ICON_GLORY_GOLDEN_AGE] 黄金或英雄时代时，每位 [ICON_CITIZEN] 市民+0.3 [ICON_CULTURE] 文化值，所有战斗单位+3 [ICON_STRENGTH] 战斗力。每个市政广场和市政广场建筑+3 [ICON_PRODUCTION] 生产力、+2影响力点数。
 [拜里米苏拉]：建立在海岸或者湖泊3个单元格内的城市+1 [ICON_CITIZEN] 人口、+1 [ICON_AMENITIES] 宜居度。
 [柯莱欧司]：效果改为此城生产开拓者时+25%建造速度。开拓者+1 [ICON_MOVEMENT] 移动力。
-[马库斯·李锡尼·克拉苏]：激活次数改为2，效果改为获得100 [ICON_GOLD] 金币，获得一个剑士。
+[马库斯·李锡尼·克拉苏]：激活次数改为2，效果改为获得100 [ICON_GOLD] 金币，获得一个剑士。每回合提供1点 [ICON_RESOURCE_IRON] 铁。
 [克罗索斯]：新增大商人克罗索斯。立即在该区域建造1座市场。[NEWLINE]所有市场+2 [ICON_GOLD] 金币。
 [桑弘羊]：新增大商人桑弘羊。立即在该区域建造1座铸币厂。[NEWLINE]铸币厂额外辐射1 [ICON_CULTURE] 文化值。
 [浴场]：移除本城的余粮+5%。
