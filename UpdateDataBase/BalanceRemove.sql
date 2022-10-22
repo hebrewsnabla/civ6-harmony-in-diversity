@@ -5,7 +5,8 @@ delete from Types where Type in (
 	'DISTRICT_PRESERVE',
 	'BUILDING_JNR_WAYSTATION',	
 	'BUILDING_JNR_TOOLING_SHOP',
-	'BUILDING_JNR_ALTAR'
+	'BUILDING_JNR_ALTAR',
+	'BUILDING_JNR_TARGET_RANGE'
 );
 delete from RequirementSetRequirements where RequirementId in (
 	'REQUIRES_CITY_HAS_BUILDING_CITY_POLICY_FORGING_IRON',

@@ -468,7 +468,7 @@ update GreatPersonIndividuals set ActionRequiresOwnedTile = 1, ActionRequiresVis
 	where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_COLAEUS';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_COLAEUS';
 -- Marcus Licinius Crassus
-update GreatPersonIndividuals set ActionCharges = 2, ActionRequiresUnownedTile = 0, ActionRequiresOwnedTile = 0, ActionRequiresAdjacentOwnedTile = 0, ActionRequiresCompletedDistrictType = NULL, ActionRequiresNoMilitaryUnit = 1, ActionEffectTileHighlighting = 0
+update GreatPersonIndividuals set ActionCharges = 2, ActionRequiresUnownedTile = 0, ActionRequiresOwnedTile = 0, ActionRequiresAdjacentOwnedTile = 0, ActionRequiresCompletedDistrictType = null, ActionRequiresNoMilitaryUnit = 1, ActionEffectTileHighlighting = 0
 	where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MARCUS_LICINIUS_CRASSUS';
 update ModifierArguments set Value = 100 where ModifierId = 'GREATPERSON_GOLD_TINY' and Name = 'Amount';
 delete from GreatPersonIndividualActionModifiers where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_MARCUS_LICINIUS_CRASSUS' and ModifierId = 'GREATPERSON_GRANT_PLOT';
@@ -523,6 +523,7 @@ values
 	('GREAT_PERSON_INDIVIDUAL_COLAEUS',					'COLAEUS_SETTLER_PRODUCTION',				'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
 	('GREAT_PERSON_INDIVIDUAL_COLAEUS',					'COLAEUS_SETTLER_MOVEMENT_ATTACH',			'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
 	('GREAT_PERSON_INDIVIDUAL_MARCUS_LICINIUS_CRASSUS',	'MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_UNIT_GREATPERSON'),
+	('GREAT_PERSON_INDIVIDUAL_MARCUS_LICINIUS_CRASSUS',	'MARCUS_LICINIUS_CRASSUS_IRON',				'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER'),
 	('GREAT_PERSON_INDIVIDUAL_ZHANG_QIAN',				'ZHANG_QIAN_GRANT_TRADER',					'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
 	('GREAT_PERSON_INDIVIDUAL_HD_CROESUS',				'CROESUS_MARKET',							'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
 	('GREAT_PERSON_INDIVIDUAL_MARCO_POLO',				'MARCO_POLO_DO_NOTHING',					'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_DISTRICT_IN_TILE'),
@@ -559,6 +560,7 @@ values
 	('COLAEUS_SETTLER_MOVEMENT_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',							0,			1,			null),
 	('COLAEUS_SETTLER_MOVEMENT',				'MODIFIER_HD_CITY_TRAINED_UNITS_ADJUST_MOVEMENT',					0,			0,			'UNIT_IS_UNIT_SETTLER_REQUIREMENTS'),
 	('MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',					1,			1,			null),
+	('MARCUS_LICINIUS_CRASSUS_IRON',			'MODIFIER_SINGLE_CITY_ADJUST_FREE_RESOURCE_EXTRACTION',				0,			1,			null),
 	('ZHANG_QIAN_GRANT_TRADER',					'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',							1,			1,			null),
 	('CROESUS_MARKET',							'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',				1,			1,			null),
 	('SANG_HONGYANG_MINT',						'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',				1,			1,			null),
@@ -612,6 +614,8 @@ values
 	('MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'UnitType',			'UNIT_SWORDSMAN'),
 	('MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'Experience',		0),
 	('MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'UniqueOverride',	1),
+	('MARCUS_LICINIUS_CRASSUS_IRON',			'ResourceType',		'RESOURCE_IRON'),
+	('MARCUS_LICINIUS_CRASSUS_IRON',			'Amount',			2),
 	('ZHANG_QIAN_GRANT_TRADER',					'UnitType',			'UNIT_TRADER'),
 	('ZHANG_QIAN_GRANT_TRADER',					'Amount',			1),
 	('CROESUS_MARKET',							'BuildingType',		'BUILDING_MARKET'),
@@ -645,6 +649,7 @@ values
 	('COLAEUS_SETTLER_PRODUCTION',				'Summary',		'LOC_COLAEUS_SETTLER_PRODUCTION'),
 	('COLAEUS_SETTLER_MOVEMENT_ATTACH',			'Summary',		'LOC_COLAEUS_SETTLER_MOVEMENT_ATTACH'),
 	('MARCUS_LICINIUS_CRASSUS_SWORDSMAN',		'Summary',		'LOC_MARCUS_LICINIUS_CRASSUS_SWORDSMAN'),
+	('MARCUS_LICINIUS_CRASSUS_IRON',			'Summary',		'LOC_MARCUS_LICINIUS_CRASSUS_IRON'),
 	('ZHANG_QIAN_GRANT_TRADER',					'Summary',		'LOC_ZHANG_QIAN_GRANT_TRADER'),
 	('GREATPERSON_FREE_TRADER_UNIT',			'Summary',		'LOC_GREATPERSON_FREE_TRADER_UNIT'),
 	('MARCO_POLO_DO_NOTHING',					'Summary',		'LOC_MARCO_POLO_NOTHING'),
@@ -683,7 +688,7 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and Tier 
 insert or replace into ModifierArguments
 	(ModifierId,										Name,				Value)
 select
-	'CROESUS_' || BuildingType || '_GOLD',				'Amount',			2
+	'CROESUS_' || BuildingType || '_GOLD',				'Amount',			3
 from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and Tier = 1 and ReplacesOther = 0;
 ------------------------------------------------------------
 -- great admiral
