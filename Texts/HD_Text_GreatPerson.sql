@@ -16,11 +16,7 @@ values
 	("LOC_COLAEUS_SETTLER_PRODUCTION",									  "+25% production spped towards Settlers in this city."),
 	("LOC_COLAEUS_SETTLER_MOVEMENT_ATTACH",								  "+1 [ICON_MOVEMENT] Movement for Settlers."),
 	("LOC_MARCUS_LICINIUS_CRASSUS_SWORDSMAN",							  "Grants 1 Swordsman units."),
-<<<<<<< HEAD
-    ("LOC_MARCUS_LICINIUS_CRASSUS_IRON",                                  "Grants 1 [ICON_RESOURCE_IRON] Iron per Turn"),
-=======
 	("LOC_MARCUS_LICINIUS_CRASSUS_IRON",								  "Grants 1 [ICON_RESOURCE_IRON] Iron per turn."),
->>>>>>> xiaoxiao
 	("LOC_ZHANG_QIAN_GRANT_TRADER",								 		  "Grants a free Trader."),
 	("LOC_GREATPERSON_FREE_TRADER_UNIT",								  "Grants a free Trader."),
 	("LOC_GREATPERSON_HAVE_A_FREE_TRADE_ROUTE",							  "Increases [ICON_TRADEROUTE] Trade Route capacity by 1."),
