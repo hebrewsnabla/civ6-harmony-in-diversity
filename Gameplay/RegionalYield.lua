@@ -7,7 +7,7 @@ local CITY_CENTER_INDEX = GameInfo.Districts['DISTRICT_CITY_CENTER'].Index;
 local NEIGHBORHOOD_INDEX = GameInfo.Districts['DISTRICT_NEIGHBORHOOD'].Index;
 local MBANZA_INDEX = GameInfo.Districts['DISTRICT_MBANZA'].Index;
 local JAMES_WATT_ACTIVATION_TIME_KEY = 'JAMES_WATT_ACTIVATION_TIME';
-local FORGING_IRON_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_FORGING_IRON'].Index;
+--local FORGING_IRON_INDEX = GameInfo.Buildings['BUILDING_CITY_POLICY_FORGING_IRON'].Index;
 local ENOUGH_IRON_KEY = 'PLAYER_HAS_ENOUGH_RESOURCE_IRON';
 function RefreshRegionalYield (playerId)
 	local player = Players[playerId];

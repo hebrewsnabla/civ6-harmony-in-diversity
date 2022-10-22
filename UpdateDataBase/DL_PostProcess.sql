@@ -278,7 +278,8 @@ from HD_OrszaghazModifiers;
 -- Record regional range in HD_BuildingRegionalRange
 create table if not exists HD_BuildingRegionalRange (
 	BuildingType text not null primary key,
-	RegionalRange int not null
+	RegionalRange int not null,
+	foreign key (BuildingType) references Buildings (BuildingType) on update cascade on delete cascade
 );
 insert or replace into HD_BuildingRegionalRange
 	(BuildingType,	RegionalRange)
@@ -296,7 +297,8 @@ create table if not exists HD_BuildingRegionalYields (
 	YieldChange int not null,
 	RequiresPower boolean not null default 0,
 	ModifierId text,
-	primary key (BuildingType, YieldType, RequiresPower)
+	primary key (BuildingType, YieldType, RequiresPower),
+	foreign key (BuildingType) references Buildings (BuildingType) on update cascade on delete cascade
 );
 -- Building_YieldChanges
 insert or replace into HD_BuildingRegionalYields
