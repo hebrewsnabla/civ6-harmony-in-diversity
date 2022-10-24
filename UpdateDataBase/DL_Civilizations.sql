@@ -1639,7 +1639,10 @@ values
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4);
 --    ('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',  		'Amount',       1),
 --    ('PHOENICIA_WRITING_INFLUENCE_TOKEN',  				'Amount',       1);
-	
+insert or ignore into TypeTags
+	(Type,								Tag)
+values
+	('ABILITY_MEDITERRANEAN_COLONIES',	'CLASS_SETTLER');
 -- UD
 insert or replace into DistrictModifiers 
 	(DistrictType,				ModifierId)
