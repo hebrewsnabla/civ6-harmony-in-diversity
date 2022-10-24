@@ -70,7 +70,8 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION",            "苏美尔远古时代特色单位。比其他所有初始单位更强大。对战抗骑兵单位时，无减益。如果该单位从开阔地形开始回合， [ICON_Movement] 移动力为4。对城墙造成全额伤害。"),
     ("zh_Hans_CN",  "LOC_UNIT_CREE_OKIHTCITAW_DESCRIPTION",              "远古时代的克里特色单位，替代侦察兵。拥有更高战斗力的侦察单位，且比侦察兵多1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_UNIT_POLISH_HUSSAR_EXPANSION2_DESCRIPTION",     "波兰文艺复兴特色单位。伤害点数高于敌方的状况下，会将防守的敌方单位推至后方的单元格。无法后退的防守单位会遭受额外伤害。受伤后的 [ICON_Strength] 战斗力减益减少50%。"),
-	("zh_Hans_CN",	"LOC_UNIT_BRAZILIAN_MINAS_GERAES_DESCRIPTION",		"工业时代的巴西特色单位，取代战舰，强于战舰。");
+	("zh_Hans_CN",	"LOC_UNIT_BRAZILIAN_MINAS_GERAES_DESCRIPTION",		 "工业时代的巴西特色单位，取代战舰，强于战舰。"),
+    ("zh_Hans_CN",	"LOC_ABILITY_IGNORE_TERRAIN_COST_DESCRIPTION",       "森林、丛林、丘陵和沼泽只消耗1个 [ICON_Movement] 移动力。");
 
 -- Units information updates
 --------------------------------------------------------------------------------
