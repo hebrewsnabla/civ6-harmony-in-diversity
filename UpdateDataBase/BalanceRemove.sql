@@ -3,8 +3,6 @@ delete from Types where Type in
 	(select BuildingType from Buildings where PrereqDistrict = 'DISTRICT_PRESERVE');
 delete from Types where Type in (
 	'DISTRICT_PRESERVE',
-	'BUILDING_JNR_WAYSTATION',	
-	'BUILDING_JNR_TOOLING_SHOP',
 	'BUILDING_JNR_ALTAR',
 	'BUILDING_JNR_TARGET_RANGE'
 );
