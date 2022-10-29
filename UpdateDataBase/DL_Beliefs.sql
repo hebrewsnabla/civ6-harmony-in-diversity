@@ -1217,12 +1217,7 @@ values
 	-- ('BELIEF_PRACTICAL_APPLICATION',	'PRACTICAL_APPLICATION_FOLLOWER_GOLD'),
 	('BELIEF_PRACTICAL_APPLICATION',	'PRACTICAL_APPLICATION_GOLD_BUILDINGS'),
 	('BELIEF_MESSIAH',					'MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS'),
---	('BELIEF_MESSIAH',					'MESSIAH_HOLYSITE_BUILDING_PRODUCTION'),
-	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST'),
-	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST'),
-	('BELIEF_MESSIAH',					'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST'),
---	('BELIEF_MESSIAH',					'MESSIAH_SHRINE_PURCHASE_DISCOUNT'),
---	('BELIEF_MESSIAH',					'MESSIAH_TEMPLE_PURCHASE_DISCOUNT'),
+	('BELIEF_MESSIAH',					'MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_DISTRICT_FAITH'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_HOLYSITE_BONUS'),
 	('BELIEF_HOLY_WATERS',				'HOLY_WATERS_FAITH_PURCHASE_HORBOR_BUILDINGS'),
@@ -1236,6 +1231,86 @@ values
 	('BELIEF_RELIGIOUS_COLONIZATION',	'RELIGIOUS_COLONIZATION_GOVERNMENT_BUILDINGS'),
 	-- ('BELIEF_RELIGIOUS_COLONIZATION',	'RELIGIOUS_COLONIZATION_SETTLER_PURCHASE'),
 	('BELIEF_RELIGIOUS_COLONIZATION',	'RELIGIOUS_COLONIZATION_SETTLER_DISCOUNT');
+
+insert or replace into BeliefModifiers
+	(BeliefType,						ModifierID)
+select
+	'BELIEF_MESSIAH',					'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into BeliefModifiers
+	(BeliefType,						ModifierID)
+select
+	'BELIEF_MESSIAH',					'MESSIAH_' || BuildingType || '_FAITH'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													SubjectRequirementSetId)
+select
+	'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													SubjectRequirementSetId)
+select
+	'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',					NULL
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													SubjectRequirementSetId)
+select
+	'MESSIAH_' || BuildingType || '_FAITH',							'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,													SubjectRequirementSetId)
+select
+	'MESSIAH_' || BuildingType || '_FAITH_MODIFIER',				'MODIFIER_BUILDING_YIELD_CHANGE',								NULL
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,												Name,					Value)
+select
+	'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT',			'ModifierId',			'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT_MODIFIER'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT_MODIFIER',	'BuildingType',			BuildingType
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'MESSIAH_PURCHASE_' || BuildingType || '_DISCOUNT_MODIFIER',	'Amount',				20
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CITY_CENTER' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,												Name,					Value)
+select
+	'MESSIAH_' || BuildingType || '_FAITH',						'ModifierId',			'MESSIAH_' || BuildingType || '_FAITH_MODIFIER'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'MESSIAH_' || BuildingType || '_FAITH_MODIFIER',				'BuildingType',			BuildingType
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'MESSIAH_' || BuildingType || '_FAITH_MODIFIER',				'YieldType',			'YIELD_FAITH'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,					Value)
+select
+	'MESSIAH_' || BuildingType || '_FAITH_MODIFIER',				'Amount',				4
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE' and ReplacesOther = 0;
+
+
 update ModifierArguments set value = 4 where ModifierID = 'DIVINE_INSPIRATION_WONDER_FAITH_MODIFIER' and Name = 'Amount';
 insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
 select ModifierId,	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_FOLLOWS_RELIGION_REQUIREMENTS' from BeliefModifiers
@@ -1243,44 +1318,6 @@ where BeliefType = 'BELIEF_RELIGIOUS_COMMUNITY' and ModifierId != 'RELIGIOUS_COM
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select ModifierId,	'ModifierId',	ModifierId || '_MODIFIER' from BeliefModifiers
 where BeliefType = 'BELIEF_RELIGIOUS_COMMUNITY' and ModifierId != 'RELIGIOUS_COMMUNITY_TRADER_PURCHASE' and ModifierId != 'RELIGIOUS_COMMUNITY_TRADER_DISCOUNT';
-
-insert or replace into BeliefModifiers	(BeliefType,	ModifierID)
-select 'BELIEF_MESSIAH',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_FOLLOWS_RELIGION_REQUIREMENTS' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-insert or replace into Modifiers	(ModifierId,	ModifierType)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'ModifierId',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'BuildingType',	BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_FAITH';
-
-insert or replace into BeliefModifiers	(BeliefType,	ModifierID)
-select 'BELIEF_MESSIAH',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
-insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',	'CITY_FOLLOWS_RELIGION_REQUIREMENTS' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
-insert or replace into Modifiers	(ModifierId,	ModifierType)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType,	'ModifierId',	'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER' from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'BuildingType',	BuildingType from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
-insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
-select 'MESSIAH_PURCHASE_DISCOUNT_' || BuildingType || '_MODIFIER',	'Amount',	20 from Buildings 
-where PrereqDistrict = 'DISTRICT_HOLY_SITE' and PurchaseYield = 'YIELD_GOLD';
 
 insert or replace into Modifiers
 	(ModifierId,												ModifierType,													SubjectRequirementSetId)
@@ -1333,18 +1370,8 @@ values
 	('PRACTICAL_APPLICATION_GOLD_BUILDINGS_MODIFIER',			'MODIFIER_CITY_ENABLE_BUILDING_FAITH_PURCHASE',					NULL),
 	('MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
 	('MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS_MODIFIER',		'MODIFIER_CITY_ENABLE_BUILDING_FAITH_PURCHASE',					NULL),
-	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION',					'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION',				NULL),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST',					'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				'BUILDING_IS_SHRINE'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST',					'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				'BUILDING_IS_TEMPLE_XP2'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST',				'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',				'BUILDING_IS_TIER3_HOLY_SITE'),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',					NULL),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT',						'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'MODIFIER_CITY_ADJUST_BUILDING_PURCHASE_COST',					NULL),
+	('MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
+	('MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS_MODIFIER',	'MODIFIER_CITY_ENABLE_BUILDING_FAITH_PURCHASE',					NULL),
 	('HOLY_WATERS_DISTRICT_FAITH',								'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',						'CITY_FOLLOWS_RELIGION_AND_HOLYSITE_REQUIREMENTS'),
 	('HOLY_WATERS_DISTRICT_FAITH_MODIFIER',						'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',					'NON_WONDER_NON_CITYCENTER_PLOT_IS_OR_ADJACENT_TO_COAST'),
 	('HOLY_WATERS_HOLYSITE_BONUS',								'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',							'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
@@ -1459,24 +1486,8 @@ values
 	('PRACTICAL_APPLICATION_GOLD_BUILDINGS_MODIFIER',			'DistrictType',			'DISTRICT_COMMERCIAL_HUB'),
 	('MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS',				'ModifierId',			'MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS_MODIFIER'),
 	('MESSIAH_FAITH_PURCHASE_HOLYSITE_BUILDINGS_MODIFIER',		'DistrictType',			'DISTRICT_HOLY_SITE'),
-	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION',					'ModifierId',			'MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER'),
-	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER',			'DistrictType',			'DISTRICT_HOLY_SITE'),
-	('MESSIAH_HOLYSITE_BUILDING_PRODUCTION_MODIFIER',			'Amount',				30),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_SHRINE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST',					'ModifierId',			'MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_TEMPLE_FAITH_PERCENTAGE_BOOST_MODIFIER',			'Amount',				8),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST',				'ModifierId',			'MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'YieldType',			'YIELD_FAITH'),
-	('MESSIAH_RELIGIOUS_FAITH_PERCENTAGE_BOOST_MODIFIER',		'Amount',				8),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT',						'ModifierId',			'MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER'),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'BuildingType',			'BUILDING_SHRINE'),
-	('MESSIAH_SHRINE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				20),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT',						'ModifierId',			'MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER'),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'BuildingType',			'BUILDING_TEMPLE'),
-	('MESSIAH_TEMPLE_PURCHASE_DISCOUNT_MODIFIER',				'Amount',				20),
+	('MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS',			'ModifierId',			'MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS_MODIFIER'),
+	('MESSIAH_FAITH_PURCHASE_CITY_CENTER_BUILDINGS_MODIFIER',	'DistrictType',			'DISTRICT_CITY_CENTER'),
 	('HOLY_WATERS_DISTRICT_FAITH',								'ModifierId',			'HOLY_WATERS_DISTRICT_FAITH_MODIFIER'),
 	('HOLY_WATERS_DISTRICT_FAITH_MODIFIER',						'YieldType',			'YIELD_FAITH'),
 	('HOLY_WATERS_DISTRICT_FAITH_MODIFIER',						'Amount',				4),
