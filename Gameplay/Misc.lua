@@ -330,3 +330,15 @@ function JamesWattCounter (playerId, unitId, greatPersonClassId, greatPersonIndi
 	end
 end
 Events.UnitGreatPersonActivated.Add(JamesWattCounter);
+
+-- Reyna
+local REYNA_CULTURE_KEY = 'REYNA_CULTURE_';
+GameEvents.ReynaChangeCurrentCulturalProgress.Add(function (playerId, amount)
+	local player = Players[playerId];
+	local turn = Game.GetCurrentGameTurn();
+	local key = REYNA_CULTURE_KEY .. turn;
+	if player:GetProperty(key) == nil then
+		player:SetProperty(key, 1);
+		player:GetCulture():ChangeCurrentCulturalProgress(amount);
+	end
+end);

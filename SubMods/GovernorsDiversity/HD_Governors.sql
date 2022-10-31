@@ -182,6 +182,10 @@ from HD_MagnusRegionalEffects;
 -- 土地征用
 delete from GovernorPromotionModifiers where ModifierId = 'LAND_ACQUISITION_FASTER_PLOT_ANNEXING';
 delete from GovernorPromotionModifiers where ModifierId = 'FOREIGN_EXCHANGE_GOLD_FROM_FOREIGN_TRADE_PASSING_THROUGH';
+-- 林业管理
+delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT';
+-- 市舶榷务
+delete from GovernorPromotionModifiers where GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR';
 -- 发包人
 delete from GovernorPromotionModifiers where ModifierId = 'CONTRACTOR_ENABLE_DISTRICT_PURCHASE';
 -- 移除再生资源补贴升级
@@ -233,8 +237,12 @@ insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,								ModifierId)
 values
 -- 地产商人
-	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REAL_ESTATE_DEVELOPER_DISTRICT'),
-	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REAL_ESTATE_DEVELOPER_IMPROVEMENT'),
+	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_POPULATION_GOLD'),
+	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_TRADEROUTE'),
+-- 港务局长
+	('GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER',		'REYNA_EXTRA_DISTRICT'),
+-- 市舶榷务
+	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',		'REYNA_CHEAPER_BUILDING_PURCHASE'),
 -- 金融中心
 	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_MARKET_PERCENTAGE_BOOST'),
 	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_BANK_PERCENTAGE_BOOST'),
@@ -244,11 +252,15 @@ values
 	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_SEAPORT_PERCENTAGE_BOOST');
 
 insert or replace into Modifiers
-	(ModifierId,										ModifierType,										SubjectRequirementSetId)
+	(ModifierId,										ModifierType,													SubjectRequirementSetId)
 values
 -- 地产商人
-	('REAL_ESTATE_DEVELOPER_DISTRICT',					'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',		Null),
-	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_IS_IMPROVED'),
+	('REYNA_POPULATION_GOLD',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		null),
+	('REYNA_TRADEROUTE',								'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',					null),
+-- 港务局长
+	('REYNA_EXTRA_DISTRICT',							'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT',							'CITY_HAS_COMMERCIAL_AND_HARBOR'),
+-- 市舶榷务
+	('REYNA_CHEAPER_BUILDING_PURCHASE',					'MODIFIER_SINGLE_CITY_ADJUST_ALL_BUILDINGS_PURCHASE_COST',		null),
 -- 金融中心
 	('REYNA_MARKET',									'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
 	('REYNA_BANK',										'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
@@ -267,10 +279,13 @@ insert or replace into ModifierArguments
 	(ModifierId,										Name,												Value)
 values
 -- 地产商人
-	('REAL_ESTATE_DEVELOPER_DISTRICT',					'YieldType',										'YIELD_GOLD'),
-	('REAL_ESTATE_DEVELOPER_DISTRICT',					'Amount',											2),
-	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'YieldType',										'YIELD_GOLD'),
-	('REAL_ESTATE_DEVELOPER_IMPROVEMENT',				'Amount',											2),
+	('REYNA_POPULATION_GOLD',							'YieldType',										'YIELD_GOLD'),
+	('REYNA_POPULATION_GOLD',							'Amount',											1),
+	('REYNA_TRADEROUTE',								'Amount',											1),
+-- 港务局长
+	('REYNA_EXTRA_DISTRICT',							'Amount',											1),
+-- 市舶榷务
+	('REYNA_CHEAPER_BUILDING_PURCHASE',					'Amount',											15),
 -- 金融中心
 	('REYNA_MARKET',									'ModifierId',										'REYNA_MARKET_PERCENTAGE_BOOST'),
 	('REYNA_BANK',										'ModifierId',										'REYNA_BANK_PERCENTAGE_BOOST'),
@@ -290,33 +305,6 @@ values
 	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'Amount',											8),
 	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
 	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'Amount',											8);
-
--- 调整效果
--- 税务员
-update ModifierArguments set Value = 4 where ModifierId = 'TAX_COLLECTOR_ADJUST_CITIZEN_GPT' and Name = 'Amount';
-insert or replace into GovernorPromotionModifiers
-	(GovernorPromotionType,							ModifierId)
-VALUES
-	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',	'TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS'),
-	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',	'TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS');
-insert or replace into Modifiers
-	(ModifierId,											ModifierType,														SubjectRequirementSetId)
-VALUES
-	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_COMMERCIAL_HUB'),
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'MODIFIER_SINGLE_CITY_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'DISTRICT_IS_HARBOR');
-insert or replace into ModifierArguments			
-	(ModifierId,											Name,						Value)
-VALUES
-	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'YieldTypeToMirror',		'YIELD_GOLD'),
-	('TAX_COLLECTOR_COMMERCIAL_HUB_ADJUST_CULTURE_BONUS',	'YieldTypeToGrant',			'YIELD_CULTURE'),
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'YieldTypeToMirror',		'YIELD_GOLD'),
-	('TAX_COLLECTOR_HARBOR_ADJUST_CULTURE_BONUS',			'YieldTypeToGrant',			'YIELD_CULTURE');
--- 港务局长
-update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_COMMERCIAL_HUB_ADJACENCY' and Name = 'Amount';
-update ModifierArguments set Value = 100 where ModifierId = 'HARBORMASTER_BONUS_HARBOR_ADJACENCY' and Name = 'Amount';
-
--- 林业管理
-update ModifierArguments set Value = 4 where ModifierId = 'FORESTRY_MANAGEMENT_FEATURE_NO_IMPROVEMENT_GOLD' and Name = 'Amount';
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'
