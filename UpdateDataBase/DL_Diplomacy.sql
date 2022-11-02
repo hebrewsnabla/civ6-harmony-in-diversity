@@ -10,12 +10,12 @@ update DiplomaticActions set InitiatorPrereqCivic = 'CIVIC_COLONIALISM' where Di
 update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_JOINT_WAR';
 update DiplomaticActions set InitiatorPrereqCivic = NULL where DiplomaticActionType = 'DIPLOACTION_THIRD_PARTY_WAR';
 
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_FRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_NEUTRAL' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_UNFRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
-update DiplomaticStateActions set Cost = 30 where StateType = 'DIPLO_STATE_DENOUNCED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_FRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_NEUTRAL' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_UNFRIENDLY' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
+update DiplomaticStateActions set Cost = 15 where StateType = 'DIPLO_STATE_DENOUNCED' and DiplomaticActionType = 'DIPLOACTION_PROPOSE_TRADE';
 
 -- update DiplomaticStateActions set Cost = 0 where StateType = 'DIPLO_STATE_ALLIED' and DiplomaticActionType = 'DIPLOACTION_OPEN_BORDERS';
 -- update DiplomaticStateActions set Cost = -20 where StateType = 'DIPLO_STATE_DECLARED_FRIEND' and DiplomaticActionType = 'DIPLOACTION_OPEN_BORDERS';
