@@ -88,11 +88,11 @@ values
     ("LOC_UNIT_PRIVATEER_DESCRIPTION",                                          "Renaissance era Naval Raider unit."), -- ranged naval unit with the ability to coastal raid. Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range."),
     ("LOC_UNIT_SUBMARINE_DESCRIPTION",                                          "Modern era Naval Raider unit."), -- ranged naval unit with the ability to coastal raid. Can only be seen by other Naval Raiders unless adjacent to it. Reveals Naval Raiders within sight range."),
     ("LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION",                                  "Highly advanced Information era Naval Raider unit that can be armed with nuclear weapons."),
-    ("LOC_UNIT_CATAPULT_DESCRIPTION",                                           "Classical era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
-    ("LOC_UNIT_BOMBARD_DESCRIPTION",                                            "Renaissance era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
-    ("LOC_UNIT_ARTILLERY_DESCRIPTION",                                          "Modern era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
-    ("LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION",                                   "Information era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
-    ("LOC_UNIT_TREBUCHET_DESCRIPTION",                                          "Medieval era siege unit, ideal for attacking cities. Cannot move and attack on the same turn unless player has Military Training Civic."),
+    ("LOC_UNIT_CATAPULT_DESCRIPTION",                                           "Classical era siege unit, ideal for attacking cities. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn near a light cavalry unit. Cannot move and attack on the same turn unless player has Military Training Civic."),
+    ("LOC_UNIT_BOMBARD_DESCRIPTION",                                            "Renaissance era siege unit, ideal for attacking cities. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn near a light cavalry unit. Cannot move and attack on the same turn unless player has Military Training Civic."),
+    ("LOC_UNIT_ARTILLERY_DESCRIPTION",                                          "Modern era siege unit, ideal for attacking cities. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn near a light cavalry unit. Cannot move and attack on the same turn unless player has Military Training Civic."),
+    ("LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION",                                   "Information era siege unit, ideal for attacking cities. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn near a light cavalry unit. Cannot move and attack on the same turn unless player has Military Training Civic."),
+    ("LOC_UNIT_TREBUCHET_DESCRIPTION",                                          "Medieval era siege unit, ideal for attacking cities. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn near a light cavalry unit. Cannot move and attack on the same turn unless player has Military Training Civic."),
     ("LOC_PROMOTION_HELMSMAN_DESCRIPTION",                                      "+1 [ICON_Movement] Movement, and +1 sight range.");
 
 --------------------------------------------------------------------------------
@@ -108,9 +108,9 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_PRIVATEER_DESCRIPTION",                                       "文艺复兴时代的海军袭击者。"),
     ("zh_Hans_CN",  "LOC_UNIT_SUBMARINE_DESCRIPTION",                                       "现代海军袭击者。"),
     ("zh_Hans_CN",  "LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION",                               "高度发达的信息时代海军袭击者，能配备核武器。"),
-    ("zh_Hans_CN",  "LOC_UNIT_CATAPULT_DESCRIPTION",                                        "古典时代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
-    ("zh_Hans_CN",  "LOC_UNIT_BOMBARD_DESCRIPTION",                                         "文艺复兴时代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ARTILLERY_DESCRIPTION",                                       "现代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
-    ("zh_Hans_CN",  "LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION",                                "信息时代攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
-    ("zh_Hans_CN",  "LOC_UNIT_TREBUCHET_DESCRIPTION",                                       "中世纪攻城单位，适合对城市发起攻击。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
+    ("zh_Hans_CN",  "LOC_UNIT_CATAPULT_DESCRIPTION",                                        "古典时代攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
+    ("zh_Hans_CN",  "LOC_UNIT_BOMBARD_DESCRIPTION",                                         "文艺复兴时代攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ARTILLERY_DESCRIPTION",                                       "现代攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
+    ("zh_Hans_CN",  "LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION",                                "信息时代攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
+    ("zh_Hans_CN",  "LOC_UNIT_TREBUCHET_DESCRIPTION",                                       "中世纪攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_HELMSMAN_DESCRIPTION",                                   "+1 [ICON_Movement] 移动力，+1视野范围。");
