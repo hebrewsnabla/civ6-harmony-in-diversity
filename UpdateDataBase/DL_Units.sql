@@ -481,3 +481,35 @@ insert or replace into UnitUpgrades
 values
 	('UNIT_BARBARIAN_HORSE_ARCHER',		'UNIT_CROSSBOWMAN'),
 	('UNIT_BARBARIAN_HORSEMAN',			'UNIT_HORSEMAN');
+
+--Spear thrower
+insert or ignore into Types
+	(Type,						Kind)
+values
+	('UNIT_ANCIENT_SIEGE',      'KIND_UNIT');
+insert or ignore into Units
+	(UnitType,				Name,							Description,							TraitType,	PrereqTech,		MandatoryObsoleteTech,
+	BaseSightRange,	BaseMoves,   Combat,	Bombard,   		Range,  Cost,   ZoneOfControl, PurchaseYield, Domain,
+	FormationClass,						PromotionClass,					PseudoYieldType,					AdvisorType)
+values
+	('UNIT_ANCIENT_SIEGE',	'LOC_UNIT_ANCIENT_SIEGE_NAME',	'LOC_UNIT_ANCIENT_SIEGE_DESCRIPTION',	NULL,		'TECH_MASONRY',	'TECH_CONSTRUCTION',
+    2,				2,			15,			25,				2,		55,		0,				'YIELD_GOLD',  'DOMAIN_LAND',
+    'FORMATION_CLASS_LAND_COMBAT',		'PROMOTION_CLASS_SIEGE',		NULL,								'ADVISOR_CONQUEST');
+insert or ignore into TypeTags
+	(Type,  Tag)
+values
+	('UNIT_ANCIENT_SIEGE',	'CLASS_SIEGE'),
+	('UNIT_ANCIENT_SIEGE',	'CLASS_SIEGE_SETUP'),
+	('UNIT_ANCIENT_SIEGE',	'CLASS_FORWARD_OBSERVER');
+insert or ignore into UnitUpgrades
+	(Unit,  				UpgradeUnit)
+values
+	('UNIT_ANCIENT_SIEGE',	'UNIT_CATAPULT');
+insert or ignore into UnitAiInfos
+	(UnitType,				AiType)
+values
+	('UNIT_ANCIENT_SIEGE',	'UNITAI_COMBAT'),
+	('UNIT_ANCIENT_SIEGE',	'UNITTYPE_RANGED'),
+	('UNIT_ANCIENT_SIEGE',	'UNITTYPE_SIEGE'),
+	('UNIT_ANCIENT_SIEGE',	'UNITTYPE_SIEGE_ALL'),
+	('UNIT_ANCIENT_SIEGE',	'UNITTYPE_LAND_COMBAT');
