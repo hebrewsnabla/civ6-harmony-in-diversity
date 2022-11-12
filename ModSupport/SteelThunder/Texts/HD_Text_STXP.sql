@@ -14,7 +14,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_UNIT_TREBUCHET_NAME",                                               "投石机"),
+    ("zh_Hans_CN",  "LOC_UNIT_TREBUCHET_NAME",                                               "配重投石机"),
     ("zh_Hans_CN",  "LOC_UNIT_GALLEASS_DESCRIPTION",                                         "中世纪海军远程单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_MACHINE_GUN_DESCRIPTION",                                      "原子能时代远程单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_MORTAR_DESCRIPTION",                                           "现代远程单位。"),

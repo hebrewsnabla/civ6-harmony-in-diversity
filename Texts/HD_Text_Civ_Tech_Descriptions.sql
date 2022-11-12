@@ -332,8 +332,8 @@ values
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",                                  "拥有3个线列步兵。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REPLACEABLE_PARTS",  ""), -- 您的武器制造商已厌倦了手工制作数量如此庞大的步枪。或许建立标准化对此有帮助？
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个投石机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个配重投石机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在配重投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMBUSTION_LEU_MO",                                  "建造2座火车站。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMBUSTION_LEU_MO",                         "蒸汽机车穿梭于忙碌的火车站之间，我们还能让他跑得更快吗？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_ELECTRICITY_HD",                                     "建造1座堤坝。"),
