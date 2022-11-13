@@ -1030,8 +1030,5 @@ select
 from HD_Maracana_DistrictBonus;
 
 -- Free tech / civic Wonder
--- Remove modifier, cheat when testing
--- Plan to choose tech / civic by lua afterwards
-delete from BuildingModifiers where BuildingType = 'BUILDING_OXFORD_UNIVERSITY' and ModifierId = 'OXFORD_UNIVERSITY_FREE_TECHS';
-delete from BuildingModifiers where BuildingType = 'BUILDING_BOLSHOI_THEATRE' and ModifierId = 'BOLSHOI_THEATRE_FREE_CIVICS';
-delete from BuildingModifiers where BuildingType = 'WON_CL_BUILDING_ARECIBO' and ModifierId = 'ARECIBO_FREE_TECHS';
+-- Player can choose awarded tech manually
+update Modifiers set OwnerRequirementSetId = 'PLAYER_IS_AI' where ModifierId in ('OXFORD_UNIVERSITY_FREE_TECHS', 'BOLSHOI_THEATRE_FREE_CIVICS', 'ARECIBO_FREE_TECHS');

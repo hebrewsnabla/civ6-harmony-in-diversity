@@ -705,6 +705,10 @@
       <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
       <File>UI/Replacement/DL_UnitPanel.lua</File>
       <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+      <File>UI/Replacement/TechTreeNode.xml</File>
+      <File>UI/Replacement/DL_TechTree.lua</File>
+      <File>UI/Replacement/CivicsTree.xml</File>
+      <File>UI/Replacement/DL_CivicsTree.lua</File>
       <File>UI/Additions/HD_UnitCommandDefs.lua</File>
       <File>UI/Additions/HD_GreatPeople_Common.lua</File>
       <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
@@ -778,6 +782,20 @@
         <LoadOrder>150000</LoadOrder>
         <LuaContext>TechCivicCompletedPopup</LuaContext>
         <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="DL_TechTree" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>TechTree</LuaContext>
+        <LuaReplace>UI/Replacement/DL_TechTree.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="DL_CivicsTree" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>CivicsTree</LuaContext>
+        <LuaReplace>UI/Replacement/DL_CivicsTree.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <!-- Mod Support -->
@@ -1704,6 +1722,10 @@
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>
     <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+	<File>UI/Replacement/TechTreeNode.xml</File>
+    <File>UI/Replacement/DL_TechTree.lua</File>
+	<File>UI/Replacement/CivicsTree.xml</File>
+    <File>UI/Replacement/DL_CivicsTree.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
