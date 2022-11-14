@@ -16,7 +16,7 @@ values
     ("LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 Wildcard policy slot. Themed when displaying Great Works of the same type.[NEWLINE][NEWLINE]Must be built on flat land adjacent to the City Center."),
     ("LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY",              "Theming bonus doubling output when displaying objects of the same kind."),
     ("LOC_BUILDING_PETRA_DESCRIPTION",                        "+3 [ICON_Food] Food, +2 [ICON_Gold] Gold, and +1 [ICON_Production] Production to all non-Floodplains Desert tiles within 5 tiles. Must be built on Desert tiles (including Mountain and Floodplains)."),
-    ("LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "+100% [ICON_Tourism] Religious Tourism from this city. +2 [ICON_Food] Food, +1 [ICON_Production] Production, and +1 [ICON_Culture] Culture on all Tundra tiles for this city. Must be built adjacent to a City Center."),
+    ("LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "+100% [ICON_Tourism] Religious Tourism from this city. +2 [ICON_Food] Food, +1 [ICON_Production] Production, and +1 [ICON_Culture] Culture on all Tundra tiles within 6 tiles. Must be built adjacent to a City Center."),
     ("LOC_BUILDING_CHICHEN_ITZA_DESCRIPTION",                 "Your Cities yield +10% [ICON_Faith] Faith in [ICON_GLORY_GOLDEN_AGE] Golden Age, and +10% [ICON_Production] Production otherwise. +2 [ICON_CULTURE] Culture, +2 [ICON_FAITH] Faith for Holy Site, Campus, Theater Square and Entertainment Complex districts adjacent to Rainforest in your empire. Undamaged Land Combat units can be sacrificed on this tile, which gives Chichen Itza [ICON_CULTURE] Culture and [ICON_FAITH] Faith yield both equal to 10% of its base [ICON_STRENGTH] combat strength (rounded down and at least 1). Unit of a single type can only be sacrificed once. Must be built on Rainforest."),
     ("LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_NAME",           "Sacrifice"),
     ("LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_DESCRIPTION",    "Give Chichen Itza [ICON_CULTURE] Culture and [ICON_FAITH] Faith yield both equal to 10% of this unit's base [ICON_STRENGTH] combat strength (rounded down and at least 1)."),
@@ -43,7 +43,7 @@ values
     ("LOC_BUILDING_HANGING_GARDENS_DESCRIPTION",              "+10% [ICON_FOOD] Food in all cities. Must be built next to a River."),
     ("LOC_BUILDING_JEBEL_BARKAL_EXPANSION2_DESCRIPTION",      "Awards 6 [ICON_RESOURCE_IRON] Iron per turn. +1 [ICON_PRODUCTION] Production and +1 [ICON_FAITH] Faith to all Mine and Quarry improvements within 6 tiles. [NEWLINE][NEWLINE]Must be built on Desert (Hills) terrain."),
     ("LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION",              "[ICON_Tourism] Tourism output from [ICON_GreatWork_Relic] Relics and Holy Cities is not diminished by other civilizations who have researched The Enlightenment civic. +100% [ICON_Tourism] Tourism from Seaside Resorts across your civilization. Patronage of Great People costs 25% less [ICON_Faith] Faith. [NEWLINE][NEWLINE] Must be built on Hills."),
-    ("LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                "+1 [ICON_Amenities] Amenity from entertainment for each Lake tile within one tile of Huey Teocalli. +2 [ICON_Food] Food and +1 [ICON_Production] Production for each Lake tile in your empire. Must be built on a Lake tile adjacent to land."),
+    ("LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                "+1 [ICON_Amenities] Amenity from entertainment for each Lake tile within one tile of Huey Teocalli. +1 [ICON_Food] Food and +1 [ICON_Production] Production for each Lake tile and plot adjacent to lake in your empire. Must be built on a Lake tile adjacent to land."),
     ("LOC_BUILDING_MACHU_PICCHU_DESCRIPTION",                 "Mountain tiles provide a standard adjacency bonus to Commercial Hub, Theater Square, and Industrial Zone districts in all cities. All Districts (Wonders not included) adjacent to Mountain tiles provide +2 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Must be built on a Mountain tile that does not contain a Volcano."),
     ("LOC_BUILDING_COLOSSUS_DESCRIPTION",                     "+1 [ICON_TradeRoute] Trade Route capacity. Grants a Trader unit. International trade routes from this City provide +2 [ICON_GOLD] Gold for each Fishing Boat owned by this City. [NEWLINE][NEWLINE]Must be built on the Coast, adjacent to land and a Harbor district."),
     ("LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "+1 Era Score from Historic Moment earned after this wonder is complete if that Moment is usually worth 2 or more Era Score. Your civilizaiton gets +5% [ICON_GREATENGINEER] Great Engineer Points for each wonder in this city. Each Wonder in this city provides +4 [ICON_CULTURE] Culture, +4 [ICON_GOLD] Gold. Wonders in your civilizaiton provides +100% [ICON_TOURISM] Tourism.[NEWLINE][NEWLINE]Must be built next to a River."),
@@ -97,7 +97,8 @@ values
     ("BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_DESCRIPTION",      "This Neighboorhood is next to a Holy Site, Meenakshi Temple gives it 1 extra citizen slot, and citizens working in this district provide +1 [Icon_Culture] Culture and +1 [Icon_Faith] Faith."),
     ("LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4 Diplomatic Victory point. Coastal Cities within 9 tiles receive +4 [ICON_CULTURE] Culture and +4 [ICON_AMENITIES] Amenities. Grant a Seaport in cities currently having a Harbor.[NEWLINE][NEWLINE]Must be built on a Coast tile, adjacent to land and a Harbor district."),
 	("LOC_BUILDING_BOLSHOI_THEATRE_DESCRIPTION",              			"Awards 2 freely-chosen free civics when completed (to choose the Civic to be awarded, please click on the Civic icon on the Civic tree).[NEWLINE]Must be built on flat land adjacent to a Theater Square district."),
-	("LOC_UNCLOCK_FREE_CIVIC",            					  			"Unlock this Civic.[NEWLINE]Can be used {1_Amount} more {1_Num : plural 1?time; other?times;}");
+	("LOC_UNCLOCK_FREE_CIVIC",            					  			"Unlock this Civic.[NEWLINE]Can be used {1_Amount} more {1_Num : plural 1?time; other?times;}"),
+    ("LOC_BUILDING_EIFFEL_TOWER_DESCRIPTION",                           "All tiles in your civilization gain +2 Appeal and +25% [ICON_TOURISM] Tourism across your empire. Must be built on flat land adjacent to the City Center.");
     
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -118,7 +119,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_FORBIDDEN_CITY_DESCRIPTION",               "+1 通配符政策槽位。当展示来自相同类型的作品时获得主题加成。[NEWLINE][NEWLINE]必须建在靠近市中心的平地上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_THEMINGBONUS_FORBIDDEN_CITY",              "当展示来自相同类型的作品时，主题加成翻倍。 "),
     ("zh_Hans_CN",  "LOC_BUILDING_PETRA_DESCRIPTION",                        "5个单元格内的所有沙漠单元格（非泛滥平原）+3 [ICON_Food] 食物，+2 [ICON_Gold] 金币，+1 [ICON_Production] 生产力。必须建在沙漠单元格（包括山脉和泛滥平原）。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "此城市产出的 [ICON_Tourism] 宗教旅游业绩+100%。此城市所有冻土单元格产出的 [ICON_Food] 食物+2、[ICON_Production] 生产力+1、[ICON_Culture] 文化值+1。必须建在市中心旁。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_ST_BASILS_CATHEDRAL_DESCRIPTION",          "此城市产出的 [ICON_Tourism] 宗教旅游业绩+100%。6个单元格内的所有冻土单元格产出的 [ICON_Food] 食物+2、[ICON_Production] 生产力+1、[ICON_Culture] 文化值+1。必须建在市中心旁。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHICHEN_ITZA_DESCRIPTION",                 "处于 [ICON_GLORY_GOLDEN_AGE] 黄金时代时，所有城市+10% [ICON_Faith] 信仰，处于 [ICON_GLORY_NORMAL_AGE] 非黄金时代时，所有城市+10% [ICON_Production] 生产力。您帝国内每个相邻雨林的圣地、学院、剧院广场和娱乐中心+2 [ICON_CULTURE] 文化值，+2 [ICON_FAITH] 信仰值。未受伤的陆地战斗单位可以在此单元格上被献祭，将会给奇琴伊察等同于其基础 [ICON_STRENGTH] 战斗力10%（向下取整且至少为1）的 [ICON_CULTURE] 文化值和 [ICON_FAITH] 信仰产出。每种单位只能献祭一次。必须建在雨林上。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_NAME",           "献祭"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_SACRIFICE_CHICHEN_ITZA_DESCRIPTION",    "给奇琴伊察等同于该单位基础 [ICON_STRENGTH] 战斗力10%（向下取整且至少为1）的 [ICON_CULTURE] 文化值和 [ICON_FAITH] 信仰产出。"),
@@ -145,7 +146,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HANGING_GARDENS_DESCRIPTION",              "所有城市+10% [ICON_FOOD] 食物。必须建在河流旁边。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JEBEL_BARKAL_EXPANSION2_DESCRIPTION",      "每回合奖励6点 [ICON_RESOURCE_IRON] 铁。6个单元格内的矿山和采石场+1 [ICON_PRODUCTION] 生产力、+1 [ICON_FAITH] 信仰值。[NEWLINE][NEWLINE]必须建在沙漠（丘陵）地貌上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CRISTO_REDENTOR_DESCRIPTION",              "[ICON_GreatWork_Relic] 遗物和圣城的 [ICON_Tourism] 旅游业绩产值不会被其他研究了“启蒙运动”市政的文明削弱。您文明中“海滨度假区”产出的 [ICON_Tourism] 旅游业绩+100%。伟人赞助消耗的 [ICON_Faith] 信仰值减少25%。[NEWLINE][NEWLINE] 必须建在丘陵上。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                "在休伊神庙一个单元格以内的每个湖泊单元格为城市+1 [ICON_Amenities] 宜居度。为您帝国内的每个湖泊单元格+2 [ICON_Food] 食物、+1 [ICON_Production] 生产力。必须建在靠近陆地的湖泊单元格上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION",                "在休伊神庙一个单元格以内的每个湖泊单元格为城市+1 [ICON_Amenities] 宜居度。为您帝国内的每个湖泊单元格和相邻湖泊的单元格+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力。必须建在靠近陆地的湖泊单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MACHU_PICCHU_DESCRIPTION",                 "山脉单元格为所有城市的商业中心、剧院广场及工业区提供标准的相邻加成。所有靠山的区域（不包含奇观）+2 [ICON_FOOD] 食物。[NEWLINE][NEWLINE]必须修建在无火山的山脉单元格中。"),
     ("zh_Hans_CN",  "LOC_BUILDING_COLOSSUS_DESCRIPTION",                     "+1 [ICON_TradeRoute] 贸易路线容量。获得1个商人单位。 本城拥有的每个渔船为从该城出发的国际商路+2 [ICON_GOLD] 金币[NEWLINE][NEWLINE]必须建在邻近陆地和港口的海岸上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TAJ_MAHAL_DESCRIPTION",                    "此奇观建成后，提供2点或以上时代得分的历史时刻所提供的时代得分+1。本城内每座奇观使玩家 [ICON_GREATENGINEER] 大工程师点数累积速度+5%。本城每座奇观+4 [ICON_CULTURE] 文化值，+4 [ICON_GOLD] 金币。全国奇观提供的 [ICON_TOURISM] 旅游业绩+100%。[NEWLINE][NEWLINE]必须建在河流旁。"),
@@ -199,7 +200,8 @@ values
     ("zh_Hans_CN",  "BUILDING_MEENAKSHI_DUMMY_DISTRICT_NEIGHBORHOOD_DESCRIPTION",      "该社区相邻圣地，米纳克希神庙提供+1专家槽位，且专家额外+1 [Icon_Culture] 文化值，+1 [Icon_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STATUE_LIBERTY_EXPANSION2_DESCRIPTION",              "+4外交胜利点数。为9个单元格以内的所有海岸城市提供+4 [ICON_CULTURE] 文化值和+4 [ICON_AMENITIES] 宜居度。当前所有拥有港口的城市获得海港。[NEWLINE][NEWLINE]必须建造在与港口相邻且靠近陆地的海岸单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BOLSHOI_THEATRE_DESCRIPTION",              			"完成时，奖励2项当前可以研究的市政（点击市政树上的市政图标来选择被奖励的市政）。[NEWLINE]必须建在邻近剧院广场的平坦地形上。"),
-    ("zh_Hans_CN",  "LOC_UNCLOCK_FREE_CIVIC",              								"立刻完成该市政。[NEWLINE]还可以使用{1_Amount}次。");
+    ("zh_Hans_CN",  "LOC_UNCLOCK_FREE_CIVIC",              								"立刻完成该市政。[NEWLINE]还可以使用{1_Amount}次。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_EIFFEL_TOWER_DESCRIPTION",                            "您的文明所有单元格可+2魅力，全境内+25% [ICON_TOURISM] 旅游业绩。必须建在邻近市中心的平坦地形上。");
 
 -- National Wonders
 --------------------------------------------------------------------------------

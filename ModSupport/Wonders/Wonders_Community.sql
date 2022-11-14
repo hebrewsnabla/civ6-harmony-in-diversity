@@ -310,7 +310,7 @@ from TOWER_BRIDGE_DistrictBonus;
 insert or replace into Modifiers
 	(ModifierId,											ModifierType,												OwnerRequirementSetId)
 select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'
+	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'TOWER_BRIDGE_REQUIREMENTS'
 from TOWER_BRIDGE_DistrictBonus;
 
 insert or replace into ModifierArguments
@@ -325,41 +325,6 @@ select
 	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD1', 	'Amount',			4
 from TOWER_BRIDGE_DistrictBonus;
 
-insert or replace into BuildingModifiers
-	(BuildingType,						ModifierId)
-select
-	'BUILDING_TOWER_BRIDGE',			'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2'
-from TOWER_BRIDGE_DistrictBonus where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_TOWER_BRIDGE');
-
-insert or replace into Modifiers
-	(ModifierId,											ModifierType,										SubjectRequirementSetId)
-select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2', 'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		'DISTRICT_IS_' || substr(DistrictType, 10)
-from TOWER_BRIDGE_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,											Name,				Value)
-select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_ATTACH2', 'ModifierId',		'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2'
-from TOWER_BRIDGE_DistrictBonus;
-
-insert or replace into Modifiers
-	(ModifierId,											ModifierType,												OwnerRequirementSetId)
-select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',			'PLOT_IS_OR_ADJACENT_TO_COAST'
-from TOWER_BRIDGE_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,											Name,				Value)
-select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'YieldType',		YieldType
-from TOWER_BRIDGE_DistrictBonus;
-
-insert or replace into ModifierArguments
-	(ModifierId,											Name,				Value)
-select
-	'TOWER_BRIDGE_' || DistrictType || '_DISTRICT_YIELD2', 	'Amount',			4
-from TOWER_BRIDGE_DistrictBonus;
 
 --BUILDING_BRANDENBURG_GATE
 insert or replace into Building_YieldChanges (BuildingType, YieldType, YieldChange)
@@ -526,8 +491,8 @@ where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KI
 insert or replace into Modifiers 
 	(ModifierId,							ModifierType,														SubjectRequirementSetId) 
 values
-	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'KINKAKU_ENCAMPMENT_REQUIREMENT'),
-	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'KINKAKU_HOLY_SITE_REQUIREMENT');
+	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
+	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS');
 
 insert or replace into ModifierArguments 
 	(ModifierId,							Name,					Value) 
