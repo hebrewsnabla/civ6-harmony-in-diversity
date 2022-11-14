@@ -55,11 +55,11 @@ values
 	('AT_LEAST_EMPEROR_DIFFICULTY_AI_EXTRA_HOUSING',		'Amount',	1),
 	('AT_LEAST_DEITY_DIFFICULTY_AI_EXTRA_HOUSING',			'Amount',	1);
 -- Yield scale
--- Production Scale: 85 + 15n
+-- Production Scale: 60 + 15n
 -- Science & Culture Scale: 40 + 10n
 -- Gold & Faith Scale: 25 + 10n
 -- Basic value
-update ModifierArguments set Extra = 17	where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
+update ModifierArguments set Extra = 12	where ModifierId = 'HIGH_DIFFICULTY_PRODUCTION_SCALING' and Name = 'Amount';
 update ModifierArguments set Extra = 8 where ModifierId = 'HIGH_DIFFICULTY_SCIENCE_SCALING' and Name = 'Amount';
 update ModifierArguments set Extra = 8 where ModifierId = 'HIGH_DIFFICULTY_CULTURE_SCALING' and Name = 'Amount';
 update ModifierArguments set Extra = 5 where ModifierId = 'HIGH_DIFFICULTY_GOLD_SCALING' and Name = 'Amount';
@@ -106,6 +106,55 @@ insert or replace into ModifierArguments
 select
 	ModifierId,		'Amount',	'LinearScaleFromDefaultHandicap',	0,		Extra
 from HD_AIYieldScales;
+
+-- AI great person points buff
+create temporary table HD_AIGreatPersonPoints (
+	ObjectType text not null,
+	GreatPersonClassType text not null,
+	EraType text not null default 'ERA_CLASSICAL',
+	ModifierId text,
+	primary key (ObjectType, GreatPersonClassType, EraType)
+);
+insert or replace into HD_AIGreatPersonPoints
+	(ObjectType,					GreatPersonClassType)
+values
+	('DISTRICT_COMMERCIAL_HUB',		'GREAT_PERSON_CLASS_MERCHANT'),
+	('DISTRICT_HARBOR',				'GREAT_PERSON_CLASS_ADMIRAL'),
+	('DISTRICT_HOLY_SITE',			'GREAT_PERSON_CLASS_PROPHET'),
+	('DISTRICT_CAMPUS',				'GREAT_PERSON_CLASS_SCIENTIST'),
+	('DISTRICT_ENCAMPMENT',			'GREAT_PERSON_CLASS_GENERAL'),
+	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_WRITER'),
+	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_ARTIST'),
+	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_MUSICIAN'),
+	('DISTRICT_INDUSTRIAL_ZONE',	'GREAT_PERSON_CLASS_ENGINEER');
+insert or replace into HD_AIGreatPersonPoints
+	(ObjectType,					GreatPersonClassType)
+select
+	BuildingType,					GreatPersonClassType
+from (HD_BuildingTiers b inner join HD_AIGreatPersonPoints a on b.PrereqDistrict = a.ObjectType) where ReplacesOther = 0;
+insert or replace into HD_AIGreatPersonPoints
+	(ObjectType,					GreatPersonClassType,	EraType)
+select
+	ObjectType,						GreatPersonClassType,	e.EraType
+from (Eras e cross join HD_AIGreatPersonPoints a) where ChronologyIndex > 1;
+update HD_AIGreatPersonPoints set ModifierId = 'HD_AI_' || ObjectType || '_' || GreatPersonClassType || '_' || EraType;
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+select
+	'TRAIT_LEADER_MAJOR_CIV',	ModifierId
+from HD_AIGreatPersonPoints;
+insert or replace into Modifiers
+	(ModifierId,	ModifierType,											OwnerRequirementSetId,									SubjectRequirementSetId)
+select
+	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType,	'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
+from HD_AIGreatPersonPoints;
+insert or replace into ModifierArguments
+	(ModifierId,	Name,						Value)
+select
+	ModifierId,		'GreatPersonClassType',		GreatPersonClassType
+from HD_AIGreatPersonPoints union all select
+	ModifierId,		'Amount',					1
+from HD_AIGreatPersonPoints;
 
 -- xiaoxiaocat: changes below are not reorganized
 -- AiFavoredItems

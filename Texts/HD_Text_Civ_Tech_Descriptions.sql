@@ -117,6 +117,7 @@ values
     ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
     ("LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION",                                             "Naval Raider units gain ability:  Coastal Raid costs no [ICON_MOVEMENT] Movement."),
     ("LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                                              "Recon units gain the ability: {LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("LOC_CIVIC_COLD_WAR_DESCRIPTION",                                              		"Each [ICON_ENVOY] Envoy you send to a city-state counts as two, if its Suzerain has a different government than you. Grants the ability to construct an additional Spy."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",                                                    "Kill 2 Barbarians."),
@@ -305,6 +306,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "全境内+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                               "侦察单位获得能力：{LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("zh_Hans_CN",  "LOC_CIVIC_COLD_WAR_DESCRIPTION",                               		"如果城邦的宗主国和您的政体不同，您向城邦派遣的每个 [ICON_ENVOY] 使者都被视为两个使者。可额外招募一名间谍。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),

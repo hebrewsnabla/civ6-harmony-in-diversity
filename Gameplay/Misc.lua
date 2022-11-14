@@ -343,6 +343,17 @@ GameEvents.ReynaChangeCurrentCulturalProgress.Add(function (playerId, amount)
 	end
 end);
 
+-- Religious Settlements
+local RELIGIOUS_SETTLEMENTS_INDEX = GameInfo.Beliefs['BELIEF_RELIGIOUS_SETTLEMENTS'].Index;
+local GREAT_PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
+Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
+	local player = Players[playerId];
+	local pantheon = player:GetReligion():GetPantheon();
+	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+	end
+end);
+
 -- Free Tech
 local FREE_TECH_KEY = 'HD_FREE_TECH';
 GameEvents.HD_FreeTechSwitch.Add(function (playerId, techId)

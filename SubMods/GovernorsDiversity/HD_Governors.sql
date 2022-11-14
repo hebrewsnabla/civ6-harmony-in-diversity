@@ -100,46 +100,49 @@ values
 create temporary table HD_MagnusRegionalEffects (
 	DistrictType text not null,
 	YieldType text not null,
+	Amount int,
 	OwnerRequirementSetId text,
 	AttachModifierId text,
 	ModifierId text,
 	primary key (DistrictType, YieldType, OwnerRequirementSetId)
 );
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,				OwnerRequirementSetId,											YieldType)
+	(DistrictType,				OwnerRequirementSetId,											YieldType,			Amount)
 values
-	('DISTRICT_GOVERNMENT',		'NULL',															'YIELD_FOOD'),
-	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_1_BUILDING_REQUIREMENTS',	'YIELD_FOOD'),
-	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_2_BUILDING_REQUIREMENTS',	'YIELD_FOOD'),
-	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_3_BUILDING_REQUIREMENTS',	'YIELD_FOOD');
+	('DISTRICT_GOVERNMENT',		'NULL',															'YIELD_FOOD',		1),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_1_BUILDING_REQUIREMENTS',	'YIELD_FOOD',		1),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_2_BUILDING_REQUIREMENTS',	'YIELD_FOOD',		2),
+	('DISTRICT_GOVERNMENT',		'CITY_HAS_DISTRICT_GOVERNMENT_TIER_3_BUILDING_REQUIREMENTS',	'YIELD_FOOD',		4);
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,						OwnerRequirementSetId,									YieldType)
+	(DistrictType,						OwnerRequirementSetId,									YieldType,			Amount)
 select
-	'DISTRICT_DIPLOMATIC_QUARTER',		'NULL',													'YIELD_CULTURE'
+	'DISTRICT_DIPLOMATIC_QUARTER',		'NULL',													'YIELD_CULTURE',	1
 where exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,						OwnerRequirementSetId,									YieldType)
+	(DistrictType,						OwnerRequirementSetId,									YieldType,			Amount)
 select
-	'DISTRICT_DIPLOMATIC_QUARTER',		'CITY_HAS_' || BuildingType || '_REQUIREMENTS',			'YIELD_CULTURE'
+	'DISTRICT_DIPLOMATIC_QUARTER',		'CITY_HAS_' || BuildingType || '_REQUIREMENTS',			'YIELD_CULTURE',	1
 from Buildings where PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER' and TraitType is null;
+update HD_MagnusRegionalEffects set Amount = 2 where OwnerRequirementSetId = 'CITY_HAS_BUILDING_CHANCERY_REQUIREMENTS';
+update HD_MagnusRegionalEffects set Amount = 4 where OwnerRequirementSetId = 'CITY_HAS_BUILDING_HD_REGIONAL_COUNCIL_CENTER_REQUIREMENTS';
 -- Culture / Science buffs are also given by Government Plaza when Diplomatic Quater is not enabled.
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,	OwnerRequirementSetId,	YieldType)
+	(DistrictType,	OwnerRequirementSetId,	YieldType,			Amount)
 select
-	DistrictType,	OwnerRequirementSetId,	'YIELD_CULTURE'
+	DistrictType,	OwnerRequirementSetId,	'YIELD_CULTURE',	Amount
 from HD_MagnusRegionalEffects where YieldType = 'YIELD_FOOD' and not exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 -- Replace text
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION' where GovernorPromotionType = 'GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST' and exists (select DistrictType from Districts where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER');
 -- Copy buffs
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,	OwnerRequirementSetId,	YieldType)
+	(DistrictType,	OwnerRequirementSetId,	YieldType,				Amount)
 select
-	DistrictType,	OwnerRequirementSetId,	'YIELD_PRODUCTION'
+	DistrictType,	OwnerRequirementSetId,	'YIELD_PRODUCTION',		Amount
 from HD_MagnusRegionalEffects where YieldType = 'YIELD_FOOD';
 insert or replace into HD_MagnusRegionalEffects
-	(DistrictType,	OwnerRequirementSetId,	YieldType)
+	(DistrictType,	OwnerRequirementSetId,	YieldType,				Amount)
 select
-	DistrictType,	OwnerRequirementSetId,	'YIELD_SCIENCE'
+	DistrictType,	OwnerRequirementSetId,	'YIELD_SCIENCE',		Amount
 from HD_MagnusRegionalEffects where YieldType = 'YIELD_CULTURE';
 -- Name Modifiers
 update HD_MagnusRegionalEffects set ModifierId = 'MAGNUS_' || DistrictType || '_' || YieldType || '_' || OwnerRequirementSetId;
@@ -173,7 +176,7 @@ from HD_MagnusRegionalEffects;
 insert or replace into ModifierArguments
 	(ModifierId,		Name,			Value)
 select
-	ModifierId,			'Amount',		1
+	ModifierId,			'Amount',		Amount
 from HD_MagnusRegionalEffects;
 -----------------------------------------------------------------------------------------------------------------------------------
 

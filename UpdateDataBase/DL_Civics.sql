@@ -423,3 +423,9 @@ as (values
 select
 	BoostID,	CivicType,	34,		'LOC_BOOST_TRIGGER_MOON_LANDING',	'LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING',	'BOOST_TRIGGER_NONE_LATE_GAME_CRITICAL_TECH'
 from C;
+
+-- 遏制直接给冷战
+insert or replace into CivicModifiers
+	(CivicType,				ModifierId)
+values
+	('CIVIC_COLD_WAR',		'CONTAINMENT_DUPLICATETOKENWHENRIVALGOVERNMENT');
