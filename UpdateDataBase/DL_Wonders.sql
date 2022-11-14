@@ -1032,3 +1032,41 @@ from HD_Maracana_DistrictBonus;
 -- Free tech / civic Wonder
 -- Player can choose awarded tech manually
 update Modifiers set OwnerRequirementSetId = 'PLAYER_IS_AI' where ModifierId in ('OXFORD_UNIVERSITY_FREE_TECHS', 'BOLSHOI_THEATRE_FREE_CIVICS', 'ARECIBO_FREE_TECHS');
+--version1.3.3
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+--休伊神庙
+	('BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_FOOD_HD'),
+	('BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_PRODUCTION_HD'),
+--圣瓦西里主教座堂
+	('BUILDING_ST_BASILS_CATHEDRAL',	'ST_BASILS_CATHEDRAL_YIELD_MODIFIER'),
+--埃菲尔铁塔
+	('BUILDING_EIFFEL_TOWER',			'EIFFEL_TOWER_ADDTOURISM');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId)
+values
+--休伊神庙
+	('HUEY_COAST_FOOD_HD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
+	('HUEY_COAST_PRODUCTION_HD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS'),
+--埃菲尔铁塔
+	('EIFFEL_TOWER_ADDTOURISM',				'MODIFIER_PLAYER_ADJUST_TOURISM',					NULL);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,					value)
+values
+--休伊神庙
+	('HUEY_COAST_FOOD_HD',					'YieldType',			'YIELD_FOOD'),
+	('HUEY_COAST_FOOD_HD',					'Amount',				1),
+	('HUEY_COAST_PRODUCTION_HD',			'YieldType',			'YIELD_PRODUCTION'),
+	('HUEY_COAST_PRODUCTION_HD',			'Amount',				1),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'YieldType',			'YIELD_FOOD,YIELD_CULTURE,YIELD_PRODUCTION'),
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'Amount',				'2,1,1'),
+--埃菲尔铁塔
+	('EIFFEL_TOWER_ADDTOURISM',				'Amount',				15);
+update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER';
+update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_PRODUCTION_MODIFIER';
+--圣瓦西里主教座堂
+delete from BuildingModifiers where ModifierId = 'STBASILS_ADDPRODUCTION' or ModifierId = 'STBASILS_ADDFOOD' or ModifierId = 'STBASILS_ADDCULTURE';

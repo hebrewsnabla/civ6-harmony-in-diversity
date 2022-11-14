@@ -28,4 +28,3 @@ update Units set Cost = 65 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 -- Wonder
 -- Huey Lake +1 Gold
 update Buildings set PrereqTech = 'TECH_ENGINEERING' where BuildingType = 'BUILDING_HUEY_TEOCALLI';
-update ModifierArguments set Value = 2 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER' and Name = 'Amount';

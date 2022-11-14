@@ -1965,3 +1965,33 @@ values
 	('REQUIRES_PLOT_HAS_WONDER',						'DistrictType',		'DISTRICT_WONDER'),
 	('REQUIRES_PLOT_HAS_WONDER',						'MinRange',			'0'),
 	('REQUIRES_PLOT_HAS_WONDER',						'MaxRange',			'0');
+
+insert or ignore into RequirementSets
+	(RequirementSetId,										RequirementSetType)
+values
+--沿湖
+	('ADJACENT_TO_LAKE_REQUIREMENTS',						'REQUIREMENTSET_TEST_ALL'),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL'),
+--伦敦塔桥
+	('TOWER_BRIDGE_REQUIREMENTS',							'REQUIREMENTSET_TEST_ANY');
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+values
+--沿湖
+	('ADJACENT_TO_LAKE_REQUIREMENTS',						'REQUIRES_PLOT_ADJACENT_TO_LAKE'),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS',		'REQUIRES_OBJECT_WITHIN_6_TILES'),
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS',		'REQUIRES_PLOT_HAS_ANYTUNDRA'),
+--伦敦塔桥
+	('TOWER_BRIDGE_REQUIREMENTS',							'REQUIRES_PLOT_IS_COAST'),
+	('TOWER_BRIDGE_REQUIREMENTS',							'REQUIRES_PLOT_IS_ADJACENT_TO_COAST'),
+	('TOWER_BRIDGE_REQUIREMENTS',							'REQUIRES_PLOT_ADJACENT_TO_RIVER');
+insert or ignore into Requirements
+	(RequirementId,											RequirementType)
+values
+	('REQUIRES_PLOT_HAS_ANYTUNDRA',							'REQUIREMENT_REQUIREMENTSET_IS_MET');
+insert or ignore into RequirementArguments
+	(RequirementId,											Name,				value)
+values
+	('REQUIRES_PLOT_HAS_ANYTUNDRA',							'RequirementSetId',	'PLOT_HAS_ANYTUNDRA_REQUIREMENTS');
