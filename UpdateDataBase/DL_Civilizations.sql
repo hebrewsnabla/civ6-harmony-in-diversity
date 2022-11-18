@@ -2202,3 +2202,31 @@ update Technologies set Description = NULL where TechnologyType = 'TECH_CASTLES'
 
 -- Japan
 delete from ExcludedAdjacencies where TraitType = 'TRAIT_CIVILIZATION_ADJACENT_DISTRICTS';
+
+-- Temp Roman
+delete from TraitModifiers where TraitType = 'TRAJANS_COLUMN_TRAIT';
+insert or replace into TraitModifiers
+	(TraitType,					ModifierId)
+values
+	('TRAJANS_COLUMN_TRAIT',	'TRAJANS_COLUMN_BABARIAN_GOLD'),
+	('TRAJANS_COLUMN_TRAIT',	'TRAJANS_COLUMN_CITY_GOLD_ATTACH'),
+	('TRAJANS_COLUMN_TRAIT',	'TRAJANS_COLUMN_CAPITAL_GOLD_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								SubjectRequirementSetId,					RunOnce)
+values
+	('TRAJANS_COLUMN_BABARIAN_GOLD',			'MODIFIER_PLAYER_ADJUST_GOLD_DISPERSAL',	null,										0),
+	('TRAJANS_COLUMN_CITY_GOLD_ATTACH',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	null,										0),
+	('TRAJANS_COLUMN_CITY_GOLD',				'MODIFIER_PLAYER_GRANT_YIELD',				null,										1),
+	('TRAJANS_COLUMN_CAPITAL_GOLD_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_BUILDING_PALACE_REQUIREMENTS',	0),
+	('TRAJANS_COLUMN_CAPITAL_GOLD',				'MODIFIER_PLAYER_GRANT_YIELD',				null,										1);
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('TRAJANS_COLUMN_BABARIAN_GOLD',			'Amount',		100),
+	('TRAJANS_COLUMN_BABARIAN_GOLD',			'Improvement',	'IMPROVEMENT_BARBARIAN_CAMP'),
+	('TRAJANS_COLUMN_CITY_GOLD_ATTACH',			'ModifierId',	'TRAJANS_COLUMN_CITY_GOLD'),
+	('TRAJANS_COLUMN_CITY_GOLD',				'YieldType',	'YIELD_GOLD'),
+	('TRAJANS_COLUMN_CITY_GOLD',				'Amount',		200),
+	('TRAJANS_COLUMN_CAPITAL_GOLD_ATTACH',		'ModifierId',	'TRAJANS_COLUMN_CAPITAL_GOLD'),
+	('TRAJANS_COLUMN_CAPITAL_GOLD',				'YieldType',	'YIELD_GOLD'),
+	('TRAJANS_COLUMN_CAPITAL_GOLD',				'Amount',		100);
