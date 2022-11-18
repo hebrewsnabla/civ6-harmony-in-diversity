@@ -140,4 +140,17 @@
 		<Row QueryId="WildModePlayerInfoOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_WILD" Operator="Equals" ConfigurationValue="1"/>
 		<Row QueryId="WildModePlayerItemOverrides" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_WILD" Operator="Equals" ConfigurationValue="1"/>
 	</QueryCriteria> -->
+	<!-- Riligious Arm Mode -->
+	<Parameters>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_RiligiousArm" Name="LOC_GAMEMODE_RILIGIOUS_ARM_NAME" Description="LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RILIGIOUS_ARM" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="200"/>
+	</Parameters>
+	<ParameterCriteria>
+		<Row ParameterId="GameMode_RiligiousArm" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>
+	</ParameterCriteria>
+	<ParameterDependencies>
+		<Row ParameterID="GameMode_RiligiousArm" ConfigurationGroup="Game" ConfigurationId="WORLD_BUILDER" Operator="NotEquals" ConfigurationValue="1"/>
+	</ParameterDependencies>
+	<GameModeItems>
+		<Row GameModeType="GAMEMODE_RILIGIOUS_ARM" Name="LOC_GAMEMODE_RILIGIOUS_ARM_NAME" Description="LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION" Portrait="GAMEMODE_TREE_RANDOMIZER_NEUTRAL" Background="GAMEMODE_TREE_RANDOMIZER_BACKGROUND" Icon="ICON_GAMEMODE_RILIGIOUS_ARM" SortIndex="10"/>
+	</GameModeItems>
 </GameData>
