@@ -226,6 +226,14 @@
         <Value>1</Value>
       </ConfigurationValueMatches>
     </Criteria>
+    <Criteria id="Religious_Arm_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_RILIGIOUS_ARM</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
     <Criteria id="AITest_Mode_Expansion2">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
@@ -1510,6 +1518,26 @@
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Religious Arm Mode -->
+    <UpdateDatabase id="ReligiousArm_Database" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ReligiousArm_Text" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
+    </UpdateText>
+    <ImportFiles id="ReligiousArm_Import" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties>
+        <LoadOrder>19001</LoadOrder>
+        <LuaContext>UnitPromotionPopup</LuaContext>
+        <LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1659,6 +1687,10 @@
       <!-- Dev Test Mode -->
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
+	<!-- Religious Arm Mode -->
+	<File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
