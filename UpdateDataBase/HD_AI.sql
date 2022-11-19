@@ -111,7 +111,7 @@ from HD_AIYieldScales;
 create temporary table HD_AIGreatPersonPoints (
 	ObjectType text not null,
 	GreatPersonClassType text not null,
-	EraType text not null default 'ERA_CLASSICAL',
+--	EraType text not null default 'ERA_CLASSICAL',
 	ModifierId text,
 	primary key (ObjectType, GreatPersonClassType, EraType)
 );
@@ -132,21 +132,36 @@ insert or replace into HD_AIGreatPersonPoints
 select
 	BuildingType,					GreatPersonClassType
 from (HD_BuildingTiers b inner join HD_AIGreatPersonPoints a on b.PrereqDistrict = a.ObjectType) where ReplacesOther = 0;
-insert or replace into HD_AIGreatPersonPoints
-	(ObjectType,					GreatPersonClassType,	EraType)
+--insert or replace into HD_AIGreatPersonPoints
+--	(ObjectType,					GreatPersonClassType,	EraType)
+--select
+--	ObjectType,						GreatPersonClassType,	e.EraType
+--from (Eras e cross join HD_AIGreatPersonPoints a) where ChronologyIndex > 1;
+update HD_AIGreatPersonPoints set ModifierId = 'HD_AI_' || ObjectType || '_' || GreatPersonClassType;-- || '_' || EraType;
+--insert or replace into TraitModifiers
+--	(TraitType,					ModifierId)
+--select
+--	'TRAIT_LEADER_MAJOR_CIV',	ModifierId
+--from HD_AIGreatPersonPoints;
+--insert or replace into Modifiers
+--	(ModifierId,	ModifierType,											OwnerRequirementSetId,									SubjectRequirementSetId)
+--select
+--	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType,	'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
+--from HD_AIGreatPersonPoints;
+insert or replace into BuildingModifiers
+	(BuildingType,		ModifierId)
 select
-	ObjectType,						GreatPersonClassType,	e.EraType
-from (Eras e cross join HD_AIGreatPersonPoints a) where ChronologyIndex > 1;
-update HD_AIGreatPersonPoints set ModifierId = 'HD_AI_' || ObjectType || '_' || GreatPersonClassType || '_' || EraType;
-insert or replace into TraitModifiers
-	(TraitType,					ModifierId)
+	ObjectType,			ModifierId
+from HD_AIGreatPersonPoints where ObjectType in (select BuildingType from Buildings);
+insert or replace into DistrictModifiers
+	(DistrictType,		ModifierId)
 select
-	'TRAIT_LEADER_MAJOR_CIV',	ModifierId
-from HD_AIGreatPersonPoints;
+	ObjectType,			ModifierId
+from HD_AIGreatPersonPoints where ObjectType in (select DistrictType from Districts);
 insert or replace into Modifiers
-	(ModifierId,	ModifierType,											OwnerRequirementSetId,									SubjectRequirementSetId)
+	(ModifierId,	ModifierType,											OwnerRequirementSetId)
 select
-	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType,	'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
+	ModifierId,		'MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT',		'PLAYER_IS_HIGH_DIFFICULTY_AI'
 from HD_AIGreatPersonPoints;
 insert or replace into ModifierArguments
 	(ModifierId,	Name,						Value)
