@@ -335,12 +335,12 @@ create temporary table HD_REYNA(
 	primary key (BuildingType, ModifierType)
 );
 insert or replace into HD_REYNA
-	(BuildingType,	ModifierType,													GovernorPromotionType)
+	(BuildingType,	ModifierType,															GovernorPromotionType)
 select
-	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',			'GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR'
+	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR'
 from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT' union all
 select
-	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_TO_OTHERS',	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
+	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
 from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT';
 update HD_REYNA set ModifierId = 'REYNA_' || BuildingType || '_' || ModifierType;
 update HD_REYNA set AttachModifierId = ModifierId || '_ATTACH';
@@ -372,13 +372,13 @@ select
 from HD_REYNA union all
 select
 	ModifierId,				'Amount',				2
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_YIELD_MODIFIER' union all
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' union all
 select
 	ModifierId,				'Amount',				1
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_TO_OTHERS' union all
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL' union all
 select
 	ModifierId,				'Domestic',				0
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_TO_OTHERS';
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL';
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'
