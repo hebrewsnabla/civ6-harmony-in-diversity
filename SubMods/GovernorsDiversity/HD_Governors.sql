@@ -239,48 +239,40 @@ values
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,								ModifierId)
 values
+-- 林业管理
+	('GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',	'REYNA_UNIT_DISCOUNT'),
+	('GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',	'REYNA_UNIT_EXTRA_DISCOUNT'),
 -- 地产商人
 	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_POPULATION_GOLD'),
 	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_TRADEROUTE'),
 -- 港务局长
 	('GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER',		'REYNA_EXTRA_DISTRICT'),
 -- 市舶榷务
-	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',		'REYNA_CHEAPER_BUILDING_PURCHASE'),
--- 金融中心
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_MARKET_PERCENTAGE_BOOST'),
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_BANK_PERCENTAGE_BOOST'),
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST'),
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_LIGHTHOUSE_PERCENTAGE_BOOST'),
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_SHIPYARD_PERCENTAGE_BOOST'),
-	('GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR',			'REYNA_SEAPORT_PERCENTAGE_BOOST');
+	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',		'REYNA_CHEAPER_BUILDING_PURCHASE');
+
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,													SubjectRequirementSetId)
 values
+-- 林业管理
+	('REYNA_UNIT_DISCOUNT',								'MODIFIER_SINGLE_CITY_ADJUST_ALL_UNITS_PURCHASE_COST',			NULL),
+	('REYNA_UNIT_EXTRA_DISCOUNT',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',				NULL),
 -- 地产商人
 	('REYNA_POPULATION_GOLD',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		null),
 	('REYNA_TRADEROUTE',								'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',					null),
 -- 港务局长
 	('REYNA_EXTRA_DISTRICT',							'MODIFIER_SINGLE_CITY_EXTRA_DISTRICT',							'CITY_HAS_COMMERCIAL_AND_HARBOR'),
 -- 市舶榷务
-	('REYNA_CHEAPER_BUILDING_PURCHASE',					'MODIFIER_SINGLE_CITY_ADJUST_ALL_BUILDINGS_PURCHASE_COST',		null),
--- 金融中心
-	('REYNA_MARKET',									'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_BANK',										'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_STOCK',										'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_LIGHTHOUSE',								'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_SHIPYARD',									'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_SEAPORT',									'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',				Null),
-	('REYNA_MARKET_PERCENTAGE_BOOST',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_MARKET'),
-	('REYNA_BANK_PERCENTAGE_BOOST',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_BANK'),
-	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_STOCK_EXCHANGE'),
-	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_LIGHTHOUSE'),
-	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_SHIPYARD'),
-	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',	'BUILDING_IS_SEAPORT');
+	('REYNA_CHEAPER_BUILDING_PURCHASE',					'MODIFIER_SINGLE_CITY_ADJUST_ALL_BUILDINGS_PURCHASE_COST',		null);
 
 insert or replace into ModifierArguments
 	(ModifierId,										Name,												Value)
 values
+-- 林业管理
+	('REYNA_UNIT_DISCOUNT',								'Amount',											20),
+	('REYNA_UNIT_DISCOUNT',								'IncludeCivilian',									1),
+	('REYNA_UNIT_EXTRA_DISCOUNT',						'UnitType',											'UNIT_TRADER'),
+	('REYNA_UNIT_EXTRA_DISCOUNT',						'Amount',											20),
 -- 地产商人
 	('REYNA_POPULATION_GOLD',							'YieldType',										'YIELD_GOLD'),
 	('REYNA_POPULATION_GOLD',							'Amount',											1),
@@ -288,26 +280,105 @@ values
 -- 港务局长
 	('REYNA_EXTRA_DISTRICT',							'Amount',											1),
 -- 市舶榷务
-	('REYNA_CHEAPER_BUILDING_PURCHASE',					'Amount',											15),
--- 金融中心
-	('REYNA_MARKET',									'ModifierId',										'REYNA_MARKET_PERCENTAGE_BOOST'),
-	('REYNA_BANK',										'ModifierId',										'REYNA_BANK_PERCENTAGE_BOOST'),
-	('REYNA_STOCK',										'ModifierId',										'REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST'),
-	('REYNA_LIGHTHOUSE',								'ModifierId',										'REYNA_LIGHTHOUSE_PERCENTAGE_BOOST'),
-	('REYNA_SHIPYARD',									'ModifierId',										'REYNA_SHIPYARD_PERCENTAGE_BOOST'),
-	('REYNA_SEAPORT',									'ModifierId',										'REYNA_SEAPORT_PERCENTAGE_BOOST'),
-	('REYNA_MARKET_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_MARKET_PERCENTAGE_BOOST',					'Amount',											8),
-	('REYNA_BANK_PERCENTAGE_BOOST',						'YieldType',										'YIELD_GOLD'),
-	('REYNA_BANK_PERCENTAGE_BOOST',						'Amount',											8),
-	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'YieldType',										'YIELD_GOLD'),
-	('REYNA_STOCK_EXCHANGE_PERCENTAGE_BOOST',			'Amount',											8),
-	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'YieldType',										'YIELD_GOLD'),
-	('REYNA_LIGHTHOUSE_PERCENTAGE_BOOST',				'Amount',											8),
-	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_SHIPYARD_PERCENTAGE_BOOST',					'Amount',											8),
-	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'YieldType',										'YIELD_GOLD'),
-	('REYNA_SEAPORT_PERCENTAGE_BOOST',					'Amount',											8);
+	('REYNA_CHEAPER_BUILDING_PURCHASE',					'Amount',											15);
+-- 林业管理公司模式
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,								ModifierId)
+select
+	'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',	'REYNA_UNIT_EXTRA_DISCOUNT1'
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_INVESTOR');
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,								ModifierId)
+select
+	'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',	'REYNA_UNIT_EXTRA_DISCOUNT2'
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,													SubjectRequirementSetId)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT1',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',				NULL
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_INVESTOR');
+insert or replace into Modifiers
+	(ModifierId,										ModifierType,													SubjectRequirementSetId)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT2',						'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST',				NULL
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,												Value)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT1',						'UnitType',											'UNIT_LEU_INVESTOR'
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_INVESTOR');
+insert or replace into ModifierArguments
+	(ModifierId,										Name,												Value)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT1',						'Amount',											20
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_INVESTOR');
+
+insert or replace into ModifierArguments
+	(ModifierId,										Name,												Value)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT2',						'UnitType',											'UNIT_LEU_TYCOON'
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+insert or replace into ModifierArguments
+	(ModifierId,										Name,												Value)
+select
+	'REYNA_UNIT_EXTRA_DISCOUNT2',						'Amount',											20
+where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
+--跨国公司 金融中心
+create temporary table HD_REYNA(
+	BuildingType text not null,
+	ModifierType text not null,
+	GovernorPromotionType text not null,
+	ModifierId text,
+	AttachModifierId text,
+	primary key (BuildingType, ModifierType)
+);
+insert or replace into HD_REYNA
+	(BuildingType,	ModifierType,															GovernorPromotionType)
+select
+	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR'
+from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT' union all
+select
+	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
+from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT';
+update HD_REYNA set ModifierId = 'REYNA_' || BuildingType || '_' || ModifierType;
+update HD_REYNA set AttachModifierId = ModifierId || '_ATTACH';
+
+insert or replace into GovernorPromotionModifiers
+	(GovernorPromotionType,		ModifierId)
+select
+	GovernorPromotionType,		AttachModifierId
+from HD_REYNA;
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,								SubjectRequirementSetId)
+select
+	AttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
+from HD_REYNA;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,					Value)
+select
+	AttachModifierId,		'ModifierId',			ModifierId
+from HD_REYNA;
+insert or replace into Modifiers
+	(ModifierId,			ModifierType,			SubjectRequirementSetId)
+select
+	ModifierId,				ModifierType,			'CITY_HAS_REYNA_4'
+from HD_REYNA;
+insert or replace into ModifierArguments
+	(ModifierId,			Name,					Value)
+select
+	ModifierId,				'YieldType',			'YIELD_GOLD'
+from HD_REYNA union all
+select
+	ModifierId,				'Amount',				2
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' union all
+select
+	ModifierId,				'Amount',				1
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL' union all
+select
+	ModifierId,				'Domestic',				0
+from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL';
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'

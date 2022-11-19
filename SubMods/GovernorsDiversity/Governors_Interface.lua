@@ -156,6 +156,7 @@ function OnGovernorUpdatedCheckReyna(playerID, governorID, promotionID)
 end
 
 -- Reyna R1
+/*
 local FORESTRY_MANAGEMENT_INDEX = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT'].Index;
 function ReynaCalled (playerId, cityId, unitTypeId)
 	local city = CityManager.GetCity(playerId, cityId);
@@ -196,3 +197,4 @@ Events.GovernorPromoted.Add(OnGovernorUpdatedCheckReyna)
 Events.TradeRouteActivityChanged.Add(UpdateReynaTradeRoutesYield)
 Events.CityWorkerChanged.Add(UpdateReynaTradeRoutesYield);
 Events.PlayerTurnDeactivated.Add(UpdateReynaTradeRoutesYield);
+*/
