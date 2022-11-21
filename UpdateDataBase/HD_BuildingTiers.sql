@@ -167,8 +167,8 @@ update HD_CityStateBuffedObjects set Level = 'LARGEST'	where Amount = 4;
 delete from HD_CityStateBuffedObjects where Level is null;
 -- Agricultural City States adjusts
 update HD_CityStateBuffedObjects set Amount = Amount - 1 where Amount > 1 and YieldType = 'YIELD_FOOD';
--- double gold yield
-update HD_CityStateBuffedObjects set Amount = Amount * 2 where YieldType = 'YIELD_GOLD';
+-- triple gold yield
+update HD_CityStateBuffedObjects set Amount = Amount * 3 where YieldType = 'YIELD_GOLD';
 
 -- Modifier Info
 update HD_CityStateBuffedObjects set

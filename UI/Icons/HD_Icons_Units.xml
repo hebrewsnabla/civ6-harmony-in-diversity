@@ -49,5 +49,9 @@
     
     <Row Name="ICON_UNIT_ANCIENT_SEADOG"         Atlas="ICON_ATLAS_UNITS" Index="26"/>
     <Row Name="ICON_UNIT_ANCIENT_SEADOG_FOW"         Atlas="ICON_ATLAS_UNITS_FOW" Index="26"/> 
+    <!-- create ancient_siege unit. -->
+    <Row Name="ICON_UNIT_ANCIENT_SIEGE"                 Atlas="ICON_ATLAS_UNITS" Index="39"/>
+    <Row Name="ICON_UNIT_ANCIENT_SIEGE_FOW"             Atlas="ICON_ATLAS_UNITS_FOW" Index="39"/>
+    <Row Name="ICON_UNIT_ANCIENT_SIEGE_PORTRAIT"        Atlas="ICON_ATLAS_UNIT_PORTRAITS"   Index="37"/>
   </IconDefinitions>
 </GameInfo>

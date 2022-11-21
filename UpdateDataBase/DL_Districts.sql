@@ -260,7 +260,7 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType, 'DistrictType', DistrictType from Districts;
 
 -- MBANZA
-update Districts set PrereqCivic = 'CIVIC_STATE_WORKFORCE', Cost = 90, Appeal = 1, Housing = 3 where DistrictType = 'DISTRICT_MBANZA';
+update Districts set PrereqCivic = 'CIVIC_STATE_WORKFORCE', Cost = 60, Appeal = 1, Housing = 3 where DistrictType = 'DISTRICT_MBANZA';
 
 delete from DistrictModifiers where ModifierId in ('MBANZA_FOOD','MBANZA_GOLD') and DistrictType = 'DISTRICT_MBANZA';
 

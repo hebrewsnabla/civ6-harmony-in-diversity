@@ -117,6 +117,7 @@ values
     ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
     ("LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION",                                             "Naval Raider units gain ability:  Coastal Raid costs no [ICON_MOVEMENT] Movement."),
     ("LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                                              "Recon units gain the ability: {LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("LOC_CIVIC_COLD_WAR_DESCRIPTION",                                              		"Each [ICON_ENVOY] Envoy you send to a city-state counts as two, if its Suzerain has a different government than you. Grants the ability to construct an additional Spy."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",                                                    "Kill 2 Barbarians."),
@@ -305,6 +306,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "全境内+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                               "侦察单位获得能力：{LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("zh_Hans_CN",  "LOC_CIVIC_COLD_WAR_DESCRIPTION",                               		"如果城邦的宗主国和您的政体不同，您向城邦派遣的每个 [ICON_ENVOY] 使者都被视为两个使者。可额外招募一名间谍。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
@@ -332,8 +334,8 @@ values
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",                                  "拥有3个线列步兵。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REPLACEABLE_PARTS",  ""), -- 您的武器制造商已厌倦了手工制作数量如此庞大的步枪。或许建立标准化对此有帮助？
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个投石机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个配重投石机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在配重投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMBUSTION_LEU_MO",                                  "建造2座火车站。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMBUSTION_LEU_MO",                         "蒸汽机车穿梭于忙碌的火车站之间，我们还能让他跑得更快吗？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_ELECTRICITY_HD",                                     "建造1座堤坝。"),

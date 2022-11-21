@@ -4,6 +4,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 
 -- 秦始皇
+-- update TraitModifiers set TraitType = 'TRAIT_CIVILIZATION_DYNASTIC_CYCLE' where ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
 delete from TraitModifiers where TraitType = 'FIRST_EMPEROR_TRAIT' and ModifierId = 'TRAIT_CANAL_UNLOCK_MASONRY';
 
 insert or replace into TraitModifiers
@@ -53,17 +54,30 @@ values
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ARCHAEOLOGY_SLOTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ART_SLOTS'),
 	('TRAIT_LEADER_ELEANOR_LOYALTY',	'AUTO_THEME_AT_LEAST_6_SLOTS');
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ARCHAEOLOGY_SLOTS1'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'DOUBLE_ART_SLOTS1'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_SUPPORT_TWO_ARCHAEOLOGISTS'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM'),
+	--('TRAIT_LEADER_ELEANOR_LOYALTY',	'TRAIT_AUTO_THEME_ART_MUSEUM');
+
 insert or replace into Modifiers
 	(ModifierId,					ModifierType)
 values
 	('ELEANOR_ALLOW_PROJECT',		'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'),
 	('DOUBLE_ARCHAEOLOGY_SLOTS',	'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
 	('DOUBLE_ART_SLOTS',			'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	--('DOUBLE_ARCHAEOLOGY_SLOTS1',	'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
+	--('DOUBLE_ART_SLOTS1',			'MODIFIER_PLAYER_CAPTURED_CITY_ADJUST_EXTRA_GREAT_WORK_SLOTS'),
 	('AUTO_THEME_AT_LEAST_6_SLOTS',	'MODIFIER_PLAYER_ADJUST_AUTO_THEME_BUILDINGS_WITH_X_SLOTS');
+	--('TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING'),
+	--('TRAIT_AUTO_THEME_ART_MUSEUM',	'MODIFIER_PLAYER_ADJUST_AUTO_THEMED_BUILDING');
+
 insert or replace into ModifierArguments
 	(ModifierId,								Name,				 	Value)
 values
 	('ELEANOR_ALLOW_PROJECT',     				'ProjectType',			'PROJECT_CIRCUSES_AND_BREAD'),
+	--('TRAIT_DOUBLE_ARCHAEOLOGY_SLOTS_MODIFIER',	'ModifierId',			'DOUBLE_ARCHAEOLOGY_SLOTS'),
+	--('TRAIT_DOUBLE_ART_SLOTS_MODIFIER',			'ModifierId',			'DOUBLE_ART_SLOTS'),
 	('DOUBLE_ARCHAEOLOGY_SLOTS',				'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
 	('DOUBLE_ARCHAEOLOGY_SLOTS',				'GreatWorkSlotType',	'GREATWORKSLOT_ARTIFACT'),
 	('DOUBLE_ARCHAEOLOGY_SLOTS',				'Amount',				3),
@@ -80,6 +94,21 @@ values
 	('DOUBLE_ART_SLOTS1',						'Amount',				3),
 	('TRAIT_AUTO_THEME_ARCHAEOLOGY_MUSEUM',		'BuildingType',			'BUILDING_MUSEUM_ARTIFACT'),
 	('TRAIT_AUTO_THEME_ART_MUSEUM',				'BuildingType',			'BUILDING_MUSEUM_ART');*/
+
+-- Victoria
+-- insert or replace into TraitModifiers (TraitType,	ModifierId)
+-- values
+-- 	('TRAIT_LEADER_PAX_BRITANNICA',		'TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER');
+
+-- insert or replace into Modifiers
+-- 	(ModifierId,									ModifierType)
+-- values
+-- 	('TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER',	'MODIFIER_PLAYER_ADJUST_SETTLE_FOREIGN_CONTINENT_UNIT_CLASS');
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,									Name,				 		Value)
+-- values
+-- 	('TRAIT_FOREIGN_CONTINENT_MILITARY_ENGINEER',	'UnitPromotionClassType',	'PROMOTION_CLASS_SUPPORT');
 
 -- 维多利亚: 招提督送同时代ylk, 这里只定义lua用到的Modifier, by xiaoxiao
 insert or replace into Modifiers
@@ -116,18 +145,30 @@ delete from TraitModifiers where
 
 insert or replace into TraitModifiers (TraitType,		ModifierId)
 values
+	-- ('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_REVEAL_IRON'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_IRON_PRODUCTION'),
 	('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_COAL_PRODUCTION');
+	--('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION');
+	-- ('TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION',		'TRAIT_SHIPYARD_INDISTRIALIZATION');
 
 insert or replace into Modifiers
 	(ModifierId,										ModifierType)
 values
 	('TRAIT_REVEAL_IRON',								'MODIFIER_PLAYER_GRANT_FREE_RESOURCE_VISIBILITY');
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER');
+
 insert or replace into Modifiers
 	(ModifierId,										ModifierType,												SubjectRequirementSetId)
 values
 	('TRAIT_IRON_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'HAS_IMPROVED_IRON'),
 	('TRAIT_COAL_PRODUCTION',							'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'HAS_IMPROVED_COAL');
+	--('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_EXTRA_REGIONAL_YIELD',	'DISTRICT_IS_INDUSTRIAL_ZONE');
+
+-- insert or replace into Modifiers
+	-- (ModifierId,										ModifierType,									-- SubjectRequirementSetId,	RunOnce,	Permanent)
+-- values
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'MODIFIER_PLAYER_GRANT_SPECIFIC_TECH_BOOST',	'BUILDING_IS_SHIPYARD',			1,		1);
+-- REQUIRES_PLAYER_CAN_SEE_IRON
 insert or replace into ModifierArguments
 	(ModifierId,										Name,			Value)
 values
@@ -136,6 +177,12 @@ values
 	('TRAIT_IRON_PRODUCTION',							'Amount',		1),
 	('TRAIT_COAL_PRODUCTION',							'YieldType',	'YIELD_PRODUCTION'),
 	('TRAIT_COAL_PRODUCTION',							'Amount',		1);
+	--('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'YieldType',	'YIELD_PRODUCTION'),
+	--('TRAIT_INDUSTRIAL_ZONE_MORE_REGIONAL_PRODUCTION',	'Amount',		4);
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION',				'ModifierId',	'TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER'),
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'TechType',		'TECH_INDUSTRIALIZATION'),
+	-- ('TRAIT_SHIPYARD_INDISTRIALIZATION_MODIFIER',		'GrantTechIfBoosted',	1);
+
 -- 2级港口建筑给工业化ulk, by xiaoxiao
 create temporary table HarborTier2Buildings (BuildingType text);
 insert or replace into HarborTier2Buildings (BuildingType) values ('BUILDING_SHIPYARD');
@@ -266,6 +313,8 @@ values
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'REQUIRES_CITY_HAS_DISTRICT_MBANZA'),
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'PLAYER_IS_CIVILIZATION_KONGO');
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
+update ModifierArguments set Value = 50 where Name = 'Amount' and
+	ModifierId in ('TRAIT_DOUBLE_MERCHANT_POINTS', 'TRAIT_DOUBLE_WRITER_POINTS', 'TRAIT_DOUBLE_MUSICIAN_POINTS', 'TRAIT_DOUBLE_ARTIST_POINTS');
 
 -- GreatWorks Yield
 delete from TraitModifiers where ModifierId like 'TRAIT_GREAT_WORK_%' and TraitType = 'TRAIT_CIVILIZATION_NKISI';
@@ -398,7 +447,13 @@ insert or replace into TraitModifiers
 	(TraitType, 							ModifierId) 
 values
 	('TRAIT_CIVILIZATION_UNIT_MALI_MANDEKALU_CAVALRY',	'MALI_MANDEKALU_CAVALRY_DISCOUNT'),
+	-- ('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN'),
+	-- ('TRAIT_LEADER_SAHEL_MERCHANTS', 		'DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN'),
 	('TRAIT_LEADER_SAHEL_MERCHANTS', 		'INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN');
+	-- ('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'TRAIT_BONUS_MINE_GOLD'),
+--	('TRAIT_CIVILIZATION_MALI_GOLD_DESERT',	'HD_LUXURY_MINE_GOLD');
+	-- ('TRAIT_LEADER_SAHEL_MERCHANTS',		'MALI_ALLOW_PROJECT');
+
 insert or replace into Modifiers 
 	(ModifierId, 											ModifierType) 
 values
@@ -406,6 +461,7 @@ values
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_ORIGIN', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
 	('DOMESTIC_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_DOMESTIC'),
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_TERRAIN_INTERNATIONAL');
+	-- ('MALI_ALLOW_PROJECT',									'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE');
 
 insert or replace into Modifiers 
 	(ModifierId, 				ModifierType,							SubjectRequirementSetId) 
@@ -431,13 +487,78 @@ values
 	('INTERNATIONAL_TRADE_ROUTE_GOLD_DESERT_HILLS_ORIGIN',	'Amount',		1),
 	('HD_LUXURY_MINE_GOLD',									'YieldType',	'YIELD_GOLD'),
 	('HD_LUXURY_MINE_GOLD',									'Amount',		2);
+	-- ('MALI_ALLOW_PROJECT',     								'ProjectType',	'PROJECT_ENDLESS_MONEY');
+--每个奢侈矿为本城国际商路+1食物。
+-- insert or replace into ImprovementModifiers
+-- 	(ImprovementType,						ModifierID)
+-- values
+-- 	('IMPROVEMENT_MINE',					'MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD');
+
+-- insert or replace into Modifiers
+-- 	(ModifierId,											ModifierType,															OwnerRequirementSetId,					SubjectRequirementSetId)
+-- values
+-- 	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',		'PLOT_HAS_LUXURY_MINE_REQUIREMENTS',	'MALI_REQUIREMENTS');
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,											Name,			Value)
+-- values
+-- 	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'YieldType',	'YIELD_FOOD'),
+-- 	('MALI_DESERT_HILLS_INTERNATIONAL_TRADE_ROUTE_FOOD',	'Amount',		1);
+
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId,						RequirementSetType)
+-- values
+-- 	('MALI_REQUIREMENTS',					'REQUIREMENTSET_TEST_ALL'),
+-- 	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
+
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId,						RequirementId)
+-- values
+-- 	('MALI_REQUIREMENTS',					'PLAYER_IS_CIVILIZATION_MALI'),
+-- 	('MALI_DESERT_HILLS_REQUIREMENTS',		'REQUIRES_PLOT_HAS_DESERT_HILLS');
+
+-- insert or replace into TraitModifiers (TraitType, ModifierId) 
+-- select 'TRAIT_CIVILIZATION_MALI_GOLD_DESERT', 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType from Improvement_ValidResources 
+-- where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
+
+-- insert or replace into Modifiers (ModifierId,  		ModifierType,											SubjectRequirementSetId)
+-- select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'HD_CITY_HAS_IMPROVED_' || ResourceType || '_REQUIRMENTS' from Improvement_ValidResources 
+-- where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
+
+-- insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
+-- select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,		'YieldType',    'YIELD_GOLD' from Improvement_ValidResources 
+-- where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
+
+-- insert or replace into ModifierArguments	(ModifierId,	Name,			Value)
+-- select 'BONUS_LUXURY_GOLD_PERCENTAGE' || ResourceType,		'Amount',       10	from Improvement_ValidResources 
+-- where ImprovementType = 'IMPROVEMENT_MINE' and ResourceType not in (select ResourceType from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC' or ResourceClassType = 'RESOURCECLASS_BONUS');
+
 -- ud
+-- update Districts set Entertainment = 1 where DistrictType = 'DISTRICT_SUGUBA';
 insert or replace into DistrictModifiers(DistrictType,ModifierId)values
 	('DISTRICT_SUGUBA','SUGUBA_ALLOW_PURCHASE_DISTRICT');
 insert or replace into Modifiers(ModifierID,ModifierType)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','MODIFIER_CITY_ADJUST_CAN_PURCHASE_DISTRICTS');
 insert or replace into ModifierArguments(ModifierID, Name, Value)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','CanPurchase',1);
+
+--additonal SUGUBA project
+-- insert or replace into Types
+-- 	(Type,								Kind)
+-- values
+-- 	('PROJECT_ENDLESS_MONEY',			'KIND_PROJECT');
+
+-- insert or replace into Projects 
+-- 	(ProjectType,				Name,										ShortName,								Description,	
+-- 	Cost,	CostProgressionModel,				CostProgressionParam1,	PrereqDistrict,	UnlocksFromEffect)
+-- values 
+-- 	('PROJECT_ENDLESS_MONEY',	'LOC_PROJECT_ENDLESS_MONEY_HD_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_SHORT_NAME',	'LOC_PROJECT_ENDLESS_MONEY_HD_DESCRIPTION',
+-- 	40,		'COST_PROGRESSION_GAME_PROGRESS',	1100,					'DISTRICT_SUGUBA',	1);
+
+-- insert or replace into Project_YieldConversions
+-- 	(ProjectType,				YieldType,		PercentOfProductionRate)
+-- values 
+-- 	('PROJECT_ENDLESS_MONEY',	'YIELD_GOLD',	250);
 ------------------------------------------------------------------------------------------------------------------
 -- Rome
 delete from TraitModifiers where TraitType = 'TRAJANS_COLUMN_TRAIT' and ModifierId = 'TRAIT_ADJUST_NON_CAPITAL_FREE_CHEAPEST_BUILDING';
@@ -451,6 +572,14 @@ insert or replace into ModifierArguments (ModifierId, Name, Value) values
 	('TRAIT_GRANT_BUILDING_MONUMENT_MODIFIER', 			'BuildingType', 'BUILDING_MONUMENT'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'DistrictType', 'DISTRICT_CITY_CENTER'),
 	('TRAIT_ADJUST_CITY_CENTER_BUILDINGS_PRODUCTION', 	'Amount', 100);
+
+-- update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_GOLD_FROM_DOMESTIC_TRADING_POSTS' and Name = 'Amount';
+
+---------------------------------------------------------------------------------------------------------------------------
+-- Ethiopia
+-- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_SCIENCE_HILLS' and Name = 'Amount';
+-- update ModifierArguments set Value = 10 where ModifierId = 'TRAIT_FAITH_INTO_CULTURE_HILLS' and Name = 'Amount';
+
 --------------------------------------------------------------------------------------------------------------------
 --Egypt
 --学院剧院相邻河边大加成
@@ -560,6 +689,7 @@ insert or replace into Improvement_ValidFeatures (ImprovementType, FeatureType) 
 -- Resume ability (April Update)
 insert or replace into TraitModifiers (TraitType, ModifierId) values
 	('TRAIT_LEADER_RELIGION_CITY_STATES',	'TRAIT_PROTECTORATE_WAR_FAITH');
+-- delete from TraitModifiers where TraitType = 'TRAIT_LEADER_RELIGION_CITY_STATES' and ModifierId = 'TRAIT_LEADER_FAITH_KILLS';
 update ModifierArguments set Value = 100 where ModifierId = 'TRAIT_LEADER_FAITH_KILLS' and Name = 'PercentDefeatedStrength';
 
 --UB ajustment for BUILDING_TSIKHE
@@ -595,10 +725,14 @@ where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NUL
 insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
 select BuildingType || '_TAMAR_FAITH',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_' || BuildingType || '_REQUIREMENTS' from Buildings
 where  BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+-- insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+-- select BuildingType || '_TAMAR_CULTURE',	'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_CULTURE',	'YieldType',	'YIELD_CULTURE'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_CULTURE',	'Amount',    	1				from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
+-- insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+-- select BuildingType || '_TAMAR_FAITH',		'BuildingType',	BuildingType	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
 select BuildingType || '_TAMAR_FAITH',		'YieldType',	'YIELD_FAITH'	from Buildings	where BuildingType != 'BUILDING_STAR_FORT' and OuterDefenseHitPoints is not NULL;
 insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
@@ -674,6 +808,7 @@ values
 insert or replace into TraitModifiers
 	(TraitType,						ModifierId)
 values
+	-- ('TRAIT_CIVILIZATION_GREAT_MOUNTAINS',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
 	('TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN',	'TRAIT_ALL_LAND_UNITS_IGNORE_HILLS');
 
 insert or replace into Modifiers
@@ -731,6 +866,7 @@ insert or replace into TraitModifiers
 	(TraitType,							ModifierId)
 values
 	('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_GREAT_PERSON_DISCOUNT'),
+	-- ('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_CAN_PURCHASE_HOLYSITE_BUILDING'),
 	('TRAIT_LEADER_GRAND_EMBASSY',		'TRAIT_CAN_PURCHASE_INDUSTRIAL_BUILDING'),
 	('TRAIT_CIVILIZATION_MOTHER_RUSSIA','TRAIT_TUNDRA_DISTRICT_FOOD');
 
@@ -860,8 +996,24 @@ values
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_PRODUCTION_JOYFUL'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_SCIENTIST_JOYFUL'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_ENGINEER_JOYFUL'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_LIBRARY_SCIENTIST_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_UNIVERSITY_SCIENTIST_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_RESEARCHLAB_SCIENTIST_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_WORKSHOP_ENGINEER_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_FACTORY_ENGINEER_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_COALPLANT_ENGINEER_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_OILPLANT_ENGINEER_POINT'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_NUCLEARPLANT_ENGINEER_POINT'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_CAMPUS_AMENITY'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_INDUSTRIAL_ZONE_AMENITY'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_WORKSHOP_ENGINEER_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_FACTORY_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_COALPLANT_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_OILPLANT_SCIENTIST_POINT_ECSTATIC'),
+-- 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_NUCLEARPLANT_SCIENTIST_POINT_ECSTATIC'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_ADJACENT_DISTRICTS_CAMPUS_ADJACENCYSCIENCE'),
 	('TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT',		'TRAIT_ADJACENT_DISTRICTS_INDUSTRIALZONE_ADJACENCYPRODUCTION'),
 	('TRAIT_LEADER_BANNOCKBURN',						'SCOTLAND_TERRITORY_COMBAT');
@@ -873,6 +1025,18 @@ values
 	('TRAIT_PRODUCTION_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_YIELD',				NULL),
 	('TRAIT_SCIENTIST_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_CAMPUS_HAPPY_REQUIREMENTS'),
 	('TRAIT_ENGINEER_JOYFUL',									'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_INDUSTRIAL_ZONE_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT',							'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_LIBRARY_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT',						'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_UNIVERSITY_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT',						'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_RESEARCHLAB_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT',							'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_WORKSHOP_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT',							'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_FACTORY_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_COALPLANT_ENGINEER_POINT',							'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_PLANT_HAPPY_REQUIREMENTS'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_LIBRARY_ECSTATIC_REQUIREMENTS'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC',				'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_UNIVERSITY_ECSTATIC_REQUIREMENTS'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC',				'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_RESEARCHLAB_ECSTATIC_REQUIREMENTS'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_WORKSHOP_ECSTATIC_REQUIREMENTS'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_FACTORY_ECSTATIC_REQUIREMENTS'),
+-- 	('TRAIT_COALPLANT_ENGINEER_POINT_ECSTATIC',					'MODIFIER_PLAYER_CITIES_ADJUST_HAPPINESS_GREAT_PERSON',			'PLAYER_HAS_PLANT_ECSTATIC_REQUIREMENTS'),
 	('TRAIT_CAMPUS_AMENITY',									'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',					'HD_CITY_HAS_CAMPUS_REQUIREMENTS'),
 	('TRAIT_INDUSTRIAL_ZONE_AMENITY',							'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',					'HD_CITY_HAS_INDUSTRIAL_ZONE_REQUIREMENTS'),
 	('SCOTLAND_TERRITORY_COMBAT',								'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',							NULL),
@@ -907,6 +1071,42 @@ insert or replace into ModifierStrings
 	(ModifierId,									Context,	Text)
 values
 	('SCOTLAND_FRIENDLY_COMBAT',					'Preview',	'+{1_Amount} {LOC_TRAIT_LEADER_BANNOCKBURN_NAME}');
+
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT',				'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT',				'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT',				'Amount',						2),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT',			'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT',			'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT',			'Amount',						2),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT',			'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT',			'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT',			'Amount',						2),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT',				'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT',				'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT',				'Amount',						2),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT'					'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT'					'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT'					'Amount',						2),
+-- 	('TRAIT_PLANT_ENGINEER_POINT',					'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_PLANT_ENGINEER_POINT',					'HappinessType',				'HAPPINESS_HAPPY'),
+-- 	('TRAIT_PLANT_ENGINEER_POINT',					'Amount',						2),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC',		'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC',		'HappinessType',				'HAPPINESS_ECSTATIC'),
+-- 	('TRAIT_LIBRARY_SCIENTIST_POINT_ECSTATIC',		'Amount',						4),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC',	'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC',	'HappinessType',				'HAPPINESS_ECSTATIC'),
+-- 	('TRAIT_UNIVERSITY_SCIENTIST_POINT_ECSTATIC',	'Amount',						4),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC',	'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC',	'HappinessType',				'HAPPINESS_ECSTATIC'),
+-- 	('TRAIT_RESEARCHLAB_SCIENTIST_POINT_ECSTATIC',	'Amount',						4),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT_ECSTATIC',		'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT_ECSTATIC',		'HappinessType',				'HAPPINESS_ECSTATIC'),
+-- 	('TRAIT_WORKSHOP_ENGINEER_POINT_ECSTATIC',		'Amount',						4),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT_ECSTATIC'		'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT_ECSTATIC'		'HappinessType',				'HAPPINESS_ECSTATIC'),
+-- 	('TRAIT_FACTORY_ENGINEER_POINT_ECSTATIC'		'Amount',						4),
+-- 	('TRAIT_PLANT_ENGINEER_POINT_ECSTATIC',			'GreatPersonClassType',			'GREAT_PERSON_CLASS_ENGINEER'),
+-- 	('TRAIT_PLANT_ENGINEER_POINT_ECSTATIC',			'HappinessType',				'HAPPINESS_ECSTATIC');
 
 insert or ignore into Requirements
 	(RequirementId,							RequirementType)
@@ -975,37 +1175,6 @@ insert or replace into GlobalParameters
 values
 	('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',	20),
 	('FRANCE_GREATPEOPLE_WONDER_PERCENTAGE',	10);
-----------------------------------------------------------------------------------------------------------------------------------	
---Catherine de medici (alt)
-delete from TraitModifiers where TraitType = 'LEADER_CATHERINE_DE_MEDICI_ALT' and ModifierId = 'TRAIT_LEADER_CULTURAL_MAJOR_CIV';
-delete from TraitModifiers where TraitType = 'LEADER_CATHERINE_DE_MEDICI_ALT' and ModifierId = 'TRAIT_LEADER_MAGNIFICENCES';
-insert or replace into TraitModifiers
-	(TraitType,							ModifierId)
-value
-	('LEADER_CATHERINE_DE_MEDICI_ALT',	'THEATER_CULTURE_TIER1'),
-	('LEADER_CATHERINE_DE_MEDICI_ALT',	'THEATER_GOLD_TIER1'),
-	('LEADER_CATHERINE_DE_MEDICI_ALT',	'THEATER_CULTURE_TIER2'),
-	('LEADER_CATHERINE_DE_MEDICI_ALT',	'THEATER_GOLD_TIER2');
-
-insert or replace into Modifiers
-	(ModifierId,				ModifierType,									SubjectRequirementSetId)
-values
-	('THEATER_CULTURE_TIER1',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'ST_BASILS_THEATER_MODIFIER_REQUIREMENT_CULTURE'),
-	('THEATER_CULTURE_TIER2',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'ST_BASILS_THEATER_MODIFIER_REQUIREMENT_CULTURE_EX'),
-	('THEATER_GOLD_TIER1',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'ST_BASILS_THEATER_MODIFIER_REQUIREMENT_GOLD'),
-	('THEATER_GOLD_TIER2',		'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'ST_BASILS_THEATER_MODIFIER_REQUIREMENT_GOLD_EX');
-
-insert or replace into ModifierArguments
-	(ModifierId,				Name,			Value)
-values
-	('THEATER_CULTURE_TIER1',	'YieldType',	'YIELD_CULTURE'),
-	('THEATER_CULTURE_TIER1',	'Amount',		1),
-	('THEATER_CULTURE_TIER2',	'YieldType',	'YIELD_CULTURE'),
-	('THEATER_CULTURE_TIER2',	'Amount',		1),
-	('THEATER_GOLD_TIER1',		'YieldType',	'YIELD_GOLD'),
-	('THEATER_GOLD_TIER1',		'Amount',		1),
-	('THEATER_GOLD_TIER2',		'YieldType',	'YIELD_GOLD'),
-	('THEATER_GOLD_TIER2',		'Amount',		1);
 -----------------------------------------------------------------------------------------------------------------------------
 --India
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -1110,6 +1279,8 @@ insert or replace into TraitModifiers
 	(TraitType,										ModifierId)
 values
 	('TRAIT_LEADER_HOLY_ROMAN_EMPEROR',				'HD_HOLY_ROMAN_DOUBLE_INFLUENCE_POINTS');
+	-- ('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_SCIENCE_BONUS_WITH_SPECILTY_DISTRICT'),
+	-- ('TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES',		'HD_CULTURE_BONUS_WITH_SPECILTY_DISTRICT');
 
 insert or replace into Modifiers
 	(ModifierId,									ModifierType,										SubjectRequirementSetId)
@@ -1432,7 +1603,11 @@ insert or replace into TraitModifiers
 	(TraitType,										ModifierId)
 values
 	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_CULTURE'),
+	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD'),
 	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE');
+	-- ('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD'),
+--	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN'),
+--	('TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES',	'PHOENICIA_WRITING_INFLUENCE_TOKEN');
 
 insert or replace into Modifiers
     (ModifierId,                            			ModifierType)
@@ -1441,6 +1616,15 @@ values
     ('PHOENICIA_INTERNATIONAL_TRADE_ROUTE_GOLD',		'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',  			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_ORIGIN_YIELD_FOR_SUZERAIN_ROUTE');
+
+--insert or replace into Modifiers
+--    (ModifierId,                            			ModifierType,								SubjectRequirementSetId)
+--values
+--	('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',			'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_TECH_WRITING'),
+--	('PHOENICIA_WRITING_INFLUENCE_TOKEN',				'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',	'HD_PLAYER_HAS_CIVIC_FOREIGN_TRADE');
+
+--update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN';
+--update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'PHOENICIA_WRITING_INFLUENCE_TOKEN';
 
 insert or replace into ModifierArguments
     (ModifierId,                            			Name,           Value)
@@ -1453,7 +1637,12 @@ values
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_CULTURE',   		'Amount',       4),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'YieldType',    'YIELD_GOLD'),
     ('PHOENICIA_SUZERAIN_TRADE_ROUTE_GOLD',				'Amount',       4);
-	
+--    ('PHOENICIA_FOREIGN_TRADE_INFLUENCE_TOKEN',  		'Amount',       1),
+--    ('PHOENICIA_WRITING_INFLUENCE_TOKEN',  				'Amount',       1);
+insert or ignore into TypeTags
+	(Type,								Tag)
+values
+	('ABILITY_MEDITERRANEAN_COLONIES',	'CLASS_SETTLER');
 -- UD
 insert or replace into DistrictModifiers 
 	(DistrictType,				ModifierId)
@@ -1535,6 +1724,7 @@ values
 
 --------------------------------------------------------------------------
 --Catherine De Medici
+-- delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
@@ -1549,6 +1739,50 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
 	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
+
+------------------------------------------------------------------------------------------------
+-- Ikanda bug in captured cities 
+-- delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
+
+--insert into DistrictModifiers	(DistrictType,	ModifierId)
+--select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_GOLD' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert into DistrictModifiers	(DistrictType,	ModifierId)
+--select	'DISTRICT_IKANDA',	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into Modifiers	(ModifierId,	ModifierType,	SubjectRequirementSetId)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',	'CITY_HAS_' || BuildingType from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'YieldType',	'YIELD_GOLD' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_GOLD',	'Amount',	2 from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'YieldType',	'YIELD_SCIENCE' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into ModifierArguments	(ModifierId,	Name,	Value)
+--select	'TRAIT_IKANDA_' || BuildingType || '_SCIENCE',	'Amount',	1 from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into RequirementSets	(RequirementSetId,	RequirementSetType)
+--select	'CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL' from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
+
+--insert or replace into RequirementSetRequirements	(RequirementSetId,	RequirementId)
+--select	'CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType	from Buildings 
+--where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and BuildingType != 'BUILDING_BASILIKOI_PAIDES' and BuildingType != 'BUILDING_ORDU';
 
 ------------------------------------------------------------------------------------------------
 -- America
@@ -1590,6 +1824,8 @@ delete from TraitModifiers where TraitType = 'TRAIT_RADIO_ORANJE';
 insert or replace into TraitModifiers
 	(TraitType, 								ModifierId)
 values
+    -- ('TRAIT_RADIO_ORANJE',                   'TRAIT_TRADER_SPEEDUP'),
+    -- ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',    'TRAIT_BOOST_BUILDING_SHIPYARD');
     ('TRAIT_RADIO_ORANJE',   					'TRAIT_SHIPYARD_TRADE_ROUTE'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_DISTRICT_PRODUCTION'),
     ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_DAM_RIVER_PRODUCTION'),
@@ -1597,12 +1833,16 @@ values
 	('TRAIT_RADIO_ORANJE',						'TRAIT_INCOMING_TRADE_GAIN_SCIENCE'),
 	('TRAIT_RADIO_ORANJE',						'TRAIT_INTERNATIONAL_TRADE_GAIN_SCIENCE_DARK'),
 	('TRAIT_RADIO_ORANJE',						'TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK');
+--	('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION'), -- 建造后水域+1锤
+--    ('TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'HD_CONSTRUCTION_BOOST'); -- 开局送建造ylk;
 
 insert or replace into Modifiers
 	(ModifierId, 										ModifierType, 													SubjectRequirementSetId)
 values
+    -- ('TRAIT_TRADER_SPEEDUP',                 		'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         		NULL),
     ('TRAIT_SHIPYARD_TRADE_ROUTE',          			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',               		NULL),
     ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',          		'BUILDING_IS_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION',    		NULL),
     ('TRAIT_HARBOR_DISTRICT_PRODUCTION',    			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION_MODIFIER',   'CITY_HAS_HARBOR_REQUIREMENTS'),
     ('TRAIT_DAM_RIVER_PRODUCTION',        			    'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'DISTRICT_IS_DAM'),
 	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							'HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION'),
@@ -1618,8 +1858,12 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,								Name,				Value)
 values
+    -- ('TRAIT_TRADER_SPEEDUP',                 'UnitType',     	'UNIT_TRADER'),
+    -- ('TRAIT_TRADER_SPEEDUP',                 'Amount',       	50),
     ('TRAIT_SHIPYARD_TRADE_ROUTE',          	'ModifierId',   	'TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER'),
     ('TRAIT_SHIPYARD_TRADE_ROUTE_MODIFIER', 	'Amount',       	1),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'BuildingType', 	'BUILDING_SHIPYARD'),
+    -- ('TRAIT_BOOST_BUILDING_SHIPYARD',        'Amount',       	50);
     ('TRAIT_HARBOR_DISTRICT_PRODUCTION', 		'Amount',       	20),
     ('TRAIT_DAM_RIVER_PRODUCTION',         	    'ModifierId',       'HYDROELECTRIC_DAM_ADD_RIVER_PRODUCTION'),
 	('HD_COAST_OR_OCEAN_PRODUCTION_AFTER_CONSTRUCTION',	'YieldType',		'YIELD_PRODUCTION'),
@@ -1636,6 +1880,29 @@ values
 	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK',		'YieldType',		'YIELD_SCIENCE'),
 	('TRAIT_INCOMING_TRADE_GAIN_SCIENCE_DARK',		'Amount',			2);
 
+-- insert or replace into TraitModifiers
+-- 	(TraitType, 								ModifierId)
+-- select
+-- 	'TRAIT_CIVILIZATION_GROTE_RIVIEREN',		'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER'
+-- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+-- insert or replace into Modifiers
+-- 	(ModifierId,																ModifierType,											SubjectRequirementSetId)
+-- select
+-- 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PURCHASE_COST',	NULL
+-- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,																Name,					Value)
+-- select
+-- 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'BuildingType',			BuildingType
+-- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
+
+-- insert or replace into ModifierArguments
+-- 	(ModifierId,																Name,					Value)
+-- select
+-- 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				15
+-- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
 insert or replace into RequirementSets
 	(RequirementSetId,											RequirementSetType)
 values
@@ -1658,6 +1925,82 @@ insert or replace into RequirementArguments
 	(RequirementId,								Name,					Value)
 values
 	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'RequirementSetId',		'HD_PLOT_IS_COAST_OR_OCEAN');
+
+-- -- From Others
+-- insert or replace into DistrictModifiers (DistrictType, ModifierId)
+-- select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS',
+--     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',
+--     'NETHERLANDS_REQUIREMENTS'
+--     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'YieldType', YieldType
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'Amount', YieldChangeAsInternationalDestination
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- -- For International
+-- insert or replace into DistrictModifiers (DistrictType, ModifierId)
+-- select DistrictType, DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL',
+--     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',
+--     'NETHERLANDS_REQUIREMENTS'
+--     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'YieldType', YieldType
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+-- insert or replace into ModifierArguments (ModifierId, Name, Value)
+-- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'Amount', YieldChangeAsInternationalDestination
+-- from District_TradeRouteYields
+-- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+
+-- The trade route extra yields should be Leader Ability by design,
+-- but the requirement REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT failed.
+-- So we have to use REQUIREMENT_PLAYER_TYPE_MATCHES and it is actually tied to Civlization.
+-- Requirement
+
+-- insert or replace into Requirements (RequirementId, RequirementType) values
+--     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'REQUIREMENT_PLAYER_TYPE_MATCHES');
+
+-- insert or replace into RequirementArguments (RequirementId, Name, Value) values
+--     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'CivilizationType', 'CIVILIZATION_NETHERLANDS');
+
+-- insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
+--     ('NETHERLANDS_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
+
+-- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
+--     ('NETHERLANDS_REQUIREMENTS', 'REQUIRES_PLAYER_IS_NETHERLANDS');
+
+-- insert or replace into Requirements (RequirementId, RequirementType) values
+--     ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT');
+
+-- insert or replace into RequirementArguments (RequirementId, Name, Value) values
+--     ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'TraitType', 'TRAIT_RADIO_ORANJE');
+--     -- ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'TraitType', 'TRAIT_CIVILIZATION_GROTE_RIVIEREN');
+
+-- insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
+--     ('RADIO_ORANJE_TRAIT_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
+
+-- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
+--     ('RADIO_ORANJE_TRAIT_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT');
 
 -- Norway
 insert or replace into TraitModifiers
@@ -1775,12 +2118,14 @@ insert or replace into Modifiers
 	(ModifierId,							ModifierType, 										SubjectRequirementSetId)
 values
 	('HD_ZULU_GARRISON_CULTURE',		 	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',	'CITY_HAS_GARRISON_UNIT_REQUIERMENT'),
+	-- ('HD_ZULU_GARRISON_CULTURE_MODIFIER', 	'MODIFIER_SINGLE_CITY_ADJUST_YIELD_CHANGE',			null),
 	('HD_IKANDA_CULTURE_BOMB', 				'MODIFIER_ALL_PLAYERS_ADD_CULTURE_BOMB_TRIGGER',	null),
 	('HD_IKANDA_SCIENCE', 					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA'),
 	('HD_IKANDA_PRODUCTION', 				'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'HD_DISTRICT_IS_IKANDA');
 insert or replace into ModifierArguments
 	(ModifierId, 							Name, 			Value)
 values
+	-- ('HD_ZULU_GARRISON_CULTURE',		 	'ModifierId',	'HD_ZULU_GARRISON_CULTURE_MODIFIER'),
 	('HD_ZULU_GARRISON_CULTURE', 			'YieldType', 	'YIELD_CULTURE'),
 	('HD_ZULU_GARRISON_CULTURE', 			'Amount', 		1),
 	('HD_IKANDA_CULTURE_BOMB', 				'DistrictType',	'DISTRICT_IKANDA'),

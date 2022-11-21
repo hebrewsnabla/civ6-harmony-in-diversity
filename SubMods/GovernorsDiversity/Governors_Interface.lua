@@ -82,8 +82,8 @@ function UpdateReynaTradeRoutesYield(playerID)
     local governors = player:GetGovernors();
     local governor = governors:GetGovernor(m_GovernorMerchantHash);
 
-    -- Enable when player has Exploration Civic
-    if governor and player:GetCulture():HasCivic(m_CivicExploration) then
+    -- -- Enable when player has Exploration Civic
+    if governor then --and player:GetCulture():HasCivic(m_CivicExploration) then
         -- Update Reya current city yield if needed.
         local currentCity:table = governor:GetAssignedCity();
         if currentCity and governor:HasPromotion(m_GovernorPromotion_MultinationalCorpHash) and governor:IsEstablished() then
@@ -105,10 +105,10 @@ function UpdateReynaTradeRoutesYield(playerID)
                     for _, yieldInfo in ipairs(route.OriginYields) do
                         if (yieldInfo.Amount > 0) then 
                             local yieldDetails = GameInfo.Yields[yieldInfo.YieldIndex];
-                            if (yieldDetails.YieldType == 'YIELD_GOLD') then
+                            if (yieldDetails.YieldType ~= 'YIELD_GOLD') then
                                 -- Round amount to integer.
                                 local roundedValue = math.floor(yieldInfo.Amount * m_ReynaConvertPercentage / 100.0 + 0.5);
-                                totalYields[yieldDetails.YieldType] = totalYields[yieldDetails.YieldType] + roundedValue;
+                                totalYields['YIELD_GOLD'] = totalYields['YIELD_GOLD'] + roundedValue;
                             end
                         end
                     end
@@ -155,10 +155,45 @@ function OnGovernorUpdatedCheckReyna(playerID, governorID, promotionID)
     end
 end
 
-Events.GovernorAssigned.Add(OnGovernorAssignedCheckReyna)
-Events.GovernorChanged.Add(OnGovernorUpdatedCheckReyna)
-Events.GovernorPromoted.Add(OnGovernorUpdatedCheckReyna)
+-- Reyna R1
 
-Events.TradeRouteActivityChanged.Add(UpdateReynaTradeRoutesYield)
-Events.CityWorkerChanged.Add(UpdateReynaTradeRoutesYield);
-Events.PlayerTurnDeactivated.Add(UpdateReynaTradeRoutesYield);
+--local FORESTRY_MANAGEMENT_INDEX = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT'].Index;
+--function ReynaCalled (playerId, cityId, unitTypeId)
+--	local city = CityManager.GetCity(playerId, cityId);
+--	local governor = city:GetAssignedGovernor();
+--	if not governor then
+--		return;
+--	end
+--	if not governor:HasPromotion(FORESTRY_MANAGEMENT_INDEX) then
+--		return;
+--	end
+--	local unit = GameInfo.Units[unitTypeId];
+--	local unitType = unit.UnitType;
+--	if (unitType == 'UNIT_TRADER') or (unitType == 'UNIT_LEU_TYCOON') or (unitType == 'UNIT_LEU_INVESTOR') then
+--		local cost = city:GetBuildQueue():GetUnitCost(unit.Index);
+--		if (unit.CostProgressionModel == 'COST_PROGRESSION_PREVIOUS_COPIES') then
+--			cost = cost - unit.CostProgressionParam1;
+--		end
+--		GameEvents.ReynaChangeCurrentCulturalProgress.Call(playerId, cost);
+--	end
+--end
+--function ReynaCityProductionCompleted (playerId, cityId, constructionType, objectType, cancelled)
+--	if constructionType == 0 then
+--		ReynaCalled(playerId, cityId, objectType);
+--	end
+--end
+--Events.CityProductionCompleted.Add(ReynaCityProductionCompleted);
+--function ReynaCityMadePurchase (playerId, cityId, x, y, purchaseType, objectType)
+--	if purchaseType == EventSubTypes.UNIT then
+--		ReynaCalled(playerId, cityId, objectType);
+--	end
+--end
+--Events.CityMadePurchase.Add(ReynaCityMadePurchase);
+--
+--Events.GovernorAssigned.Add(OnGovernorAssignedCheckReyna)
+--Events.GovernorChanged.Add(OnGovernorUpdatedCheckReyna)
+--Events.GovernorPromoted.Add(OnGovernorUpdatedCheckReyna)
+--
+--Events.TradeRouteActivityChanged.Add(UpdateReynaTradeRoutesYield)
+--Events.CityWorkerChanged.Add(UpdateReynaTradeRoutesYield);
+--Events.PlayerTurnDeactivated.Add(UpdateReynaTradeRoutesYield);

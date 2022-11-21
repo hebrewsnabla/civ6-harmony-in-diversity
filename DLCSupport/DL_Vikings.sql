@@ -59,7 +59,39 @@ values
 	('MINOR_CIV_MUSCAT_HARBOR_MODIFIER',		'Amount',			1);
 
 -- Mitla
-update ModifierArguments set value = 20 where ModifierId = 'MINOR_CIV_PALENQUE_CAMPUS_GROWTH_BONUS' and Name = 'Amount';
+update ModifierArguments set value = 10 where ModifierId = 'MINOR_CIV_PALENQUE_CAMPUS_GROWTH_BONUS' and Name = 'Amount';
+insert or replace into TraitAttachedModifiers
+    (TraitType,						ModifierId)
+values
+    ('MINOR_CIV_PALENQUE_TRAIT',	'MINOR_CIV_PALENQUE_CAMPUS_FOOD');
+insert or replace into Modifiers
+    (ModifierId,                            	ModifierType,										SubjectRequirementSetId)
+values
+    ('MINOR_CIV_PALENQUE_CAMPUS_FOOD',      	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'DISTRICT_IS_DISTRICT_CAMPUS_REQUIREMENTS');
+insert or replace into ModifierArguments
+    (ModifierId,                            	Name,				Value)
+values
+	('MINOR_CIV_PALENQUE_CAMPUS_FOOD',	    	'YieldType',		'YIELD_FOOD'),
+	('MINOR_CIV_PALENQUE_CAMPUS_FOOD',	    	'Amount',			1);
+insert or replace into TraitAttachedModifiers
+    (TraitType,						ModifierId)
+select
+    'MINOR_CIV_PALENQUE_TRAIT',		'MINOR_CIV_PALENQUE_' || BuildingType || '_FOOD'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS';
+insert or replace into Modifiers
+    (ModifierId,                            			ModifierType)
+select
+	'MINOR_CIV_PALENQUE_' || BuildingType || '_FOOD',	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS';
+insert or replace into ModifierArguments
+    (ModifierId,                            			Name,				Value)
+select
+	'MINOR_CIV_PALENQUE_' || BuildingType || '_FOOD',	'BuildingType',		BuildingType
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' union all select
+	'MINOR_CIV_PALENQUE_' || BuildingType || '_FOOD',	'YieldType',		'YIELD_FOOD'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS' union all select
+	'MINOR_CIV_PALENQUE_' || BuildingType || '_FOOD',	'Amount',			1
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_CAMPUS';
 
 -- Attach modifiers in TraitAttachedModifiers to suzerain
 insert or ignore into TraitModifiers

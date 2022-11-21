@@ -25,6 +25,8 @@ values
     ("LOC_GAMEMODE_MILITARY_DESCRIPTION",                   "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains the military adjustments."),
     ("LOC_GAMEMODE_DEVTEST_NAME",                           "Testing Dev Mode"),
     ("LOC_GAMEMODE_DEVTEST_DESCRIPTION",                    "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains the Dev adjustments."),
+    ("LOC_GAMEMODE_RILIGIOUS_ARM_NAME",                     "Religious Arm Mode"),
+    ("LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION",              "Adds several regigious armed unit. [COLOR_Red]Still in inner testing, please do not enable[ENDCOLOR]."),
     ("LOC_GAMEMODE_AITEST_NAME",                            "Testing AI Mode"),
     ("LOC_GAMEMODE_AITEST_DESCRIPTION",                     "[COLOR_Red]Inner Testing Usage Only, please do not enable[ENDCOLOR]. Mode for Testing, current testing mode contains the AI adjustments."),
     ("LOC_GAMEMODE_MPTEST_NAME",                            "Multi Player Mode"),
@@ -48,6 +50,7 @@ values
     ("LOC_MAP_TINY_LAKES_NAME",                             "Tiny Lakes"),
     ("LOC_MAP_TINY_LAKES_DESCRIPTION",                      "Many tiny lakes."),
     ("LOC_MAP_WET_LAKES_NAME",                              "Mangrove Continent"),
+    ("LOC_MAP_RIVERS_NAME",                              	"Rivers"),
     ("LOC_MAP_WET_LAKES_DESCRIPTION",                       "Endless marshes and swamps.");
 
 --------------------------------------------------------------------------------
@@ -77,6 +80,8 @@ values
     ("zh_Hans_CN",  "LOC_GAMEMODE_MILITARY_DESCRIPTION",                    "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中调整了军事。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_DEVTEST_NAME",                            "测试开发模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_DEVTEST_DESCRIPTION",                     "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式包含了开发中内容。"),
+	("zh_Hans_CN",  "LOC_GAMEMODE_RILIGIOUS_ARM_NAME",                      "宗教武装模式"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION",               "添加了若干宗教武装单位。[COLOR_Red]仍在测试中，请勿开启。[ENDCOLOR]"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_AITEST_NAME",                             "测试AI模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_AITEST_DESCRIPTION",                      "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中调整了AI。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_NAME",                             "联机模式"),
@@ -105,6 +110,7 @@ values
     ("zh_Hans_CN",  "LOC_MAP_TINY_LAKES_NAME",                              "星罗棋布"),
     ("zh_Hans_CN",  "LOC_MAP_TINY_LAKES_DESCRIPTION",                       "星罗棋布的湖泊。"),
     ("zh_Hans_CN",  "LOC_MAP_WET_LAKES_NAME",                               "红树林大陆"),
+    ("zh_Hans_CN",  "LOC_MAP_RIVERS_NAME",                              	"千河"),
     ("zh_Hans_CN",  "LOC_MAP_WET_LAKES_DESCRIPTION",                        "一望无际的湿地和沼泽。");
 
     -- ("zh_Hans_CN",  "LOC_WER_MOD_NOTE",                         "[NEWLINE][NEWLINE][COLOR_Red]来自mod“[ICON_Unit]Warfare Expanded Reloaded[ICON_Unit]”[ENDCOLOR]"),

@@ -330,3 +330,66 @@ function JamesWattCounter (playerId, unitId, greatPersonClassId, greatPersonIndi
 	end
 end
 Events.UnitGreatPersonActivated.Add(JamesWattCounter);
+
+-- Reyna
+local REYNA_CULTURE_KEY = 'REYNA_CULTURE_';
+GameEvents.ReynaChangeCurrentCulturalProgress.Add(function (playerId, amount)
+	local player = Players[playerId];
+	local turn = Game.GetCurrentGameTurn();
+	local key = REYNA_CULTURE_KEY .. turn;
+	if player:GetProperty(key) == nil then
+		player:SetProperty(key, 1);
+		player:GetCulture():ChangeCurrentCulturalProgress(amount);
+	end
+end);
+
+-- Religious Settlements
+local RELIGIOUS_SETTLEMENTS_INDEX = GameInfo.Beliefs['BELIEF_RELIGIOUS_SETTLEMENTS'].Index;
+local GREAT_PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
+Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
+	local player = Players[playerId];
+	local pantheon = player:GetReligion():GetPantheon();
+	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+	end
+end);
+
+-- Free Tech
+local FREE_TECH_KEY = 'HD_FREE_TECH';
+GameEvents.HD_FreeTechSwitch.Add(function (playerId, techId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_TECH_KEY) or 0;
+	local playerTech = player:GetTechs();
+	
+	player:SetProperty(FREE_TECH_KEY, remains - 1);
+	playerTech:SetResearchProgress(techId, playerTech:GetResearchCost(techId));
+end);
+Events.WonderCompleted.Add(function (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+	local player = Players[playerId];
+	local buildingInfo = GameInfo.Buildings[buildingId];
+	local remains = player:GetProperty(FREE_TECH_KEY) or 0;
+	if buildingInfo.BuildingType == 'BUILDING_OXFORD_UNIVERSITY' then
+		player:SetProperty(FREE_TECH_KEY, remains + 2);
+	elseif buildingInfo.BuildingType == 'WON_CL_BUILDING_ARECIBO' then
+		player:SetProperty(FREE_TECH_KEY, remains + 1);
+	end
+end);
+
+-- Free Civic
+local FREE_CIVIC_KEY = 'HD_FREE_CIVIC';
+GameEvents.HD_FreeCivicSwitch.Add(function (playerId, civicId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_CIVIC_KEY) or 0;
+	local playerCulture = player:GetCulture();
+
+	player:SetProperty(FREE_CIVIC_KEY, remains - 1);
+	playerCulture:SetCulturalProgress(civicId, playerCulture:GetCultureCost(civicId));
+end);
+Events.WonderCompleted.Add(function (x, y, buildingId, playerId, cityId, percentComplete, unknown)
+	local player = Players[playerId];
+	local buildingInfo = GameInfo.Buildings[buildingId];
+	local remains = player:GetProperty(FREE_CIVIC_KEY) or 0;
+	if buildingInfo.BuildingType == 'BUILDING_BOLSHOI_THEATRE' then
+		player:SetProperty(FREE_CIVIC_KEY, remains + 2);
+	end
+end);
