@@ -223,6 +223,7 @@ values
 	('BUILDING_WORKSHOP',			'YIELD_PRODUCTION',	3),
 	('BUILDING_FACTORY',			'YIELD_PRODUCTION',	6),
 	-- Campus
+	('BUILDING_LIBRARY',			'YIELD_SCIENCE',	3),
 	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	4),
 	('BUILDING_MADRASA',			'YIELD_SCIENCE',	5),
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
@@ -387,7 +388,7 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 -- Campus
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';

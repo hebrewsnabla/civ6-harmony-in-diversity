@@ -30,9 +30,9 @@ select
     'COMMEMORATION_SCIENTIFIC', 'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE'
 from FreeInquiryBuffedObjects;
 insert or replace into Modifiers
-    (ModifierId,                                              ModifierType,                                               OwnerRequirementSetId)
+    (ModifierId,                                              ModifierType,													OwnerRequirementSetId)
 select
-    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'MODIFIER_PLAYER_CAPITAL_CITY_ADJUST_CITY_YIELD_CHANGE',    'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType
+    'COMMEMORATION_SCIENTIFIC_' || ObjectType || '_SCIENCE',  'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE',    					'PLAYER_HAS_GOLDEN_AGE_AND_' || ObjectType
 from FreeInquiryBuffedObjects;
 insert or replace into ModifierArguments
     (ModifierId,                                              Name,           Value)

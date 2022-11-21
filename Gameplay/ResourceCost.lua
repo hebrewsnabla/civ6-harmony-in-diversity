@@ -9,10 +9,10 @@ function GetResourceCost (playerId)
 			for _, city in player:GetCities():Members() do
 				local buildings = city:GetBuildings();
 				if (row.ResourceType == 'RESOURCE_HORSES') and (WAYSTATION ~= nil) and (buildings:HasBuilding(WAYSTATION.Index)) then
-					sum = sum + 3;
+					sum = sum + 2;
 				end
 				if (row.ResourceType == 'RESOURCE_IRON') and (TOOLING_SHOP ~= nil) and (buildings:HasBuilding(TOOLING_SHOP.Index)) then
-					sum = sum + 3;
+					sum = sum + 2;
 				end
 			end
 			table.insert(costs, {
