@@ -1523,6 +1523,7 @@
 		<Properties><LoadOrder>19000</LoadOrder></Properties>
 		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
 		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm.lua</File>
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_38.dds</File>
@@ -1543,12 +1544,19 @@
       <File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
     </UpdateIcons>
     <ReplaceUIScript id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
-      <Properties>
-        <LoadOrder>19001</LoadOrder>
-        <LuaContext>UnitPromotionPopup</LuaContext>
-        <LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
-      </Properties>
-    </ReplaceUIScript>
+		<Properties>
+			<LoadOrder>19001</LoadOrder>
+			<LuaContext>UnitPromotionPopup</LuaContext>
+			<LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
+		</Properties>
+	</ReplaceUIScript>
+	<AddUserInterfaces>
+		<Properties>
+			<LoadOrder>19001</LoadOrder>
+			<Context>InGame</Context>
+		  </Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm.xml</File>
+	</AddUserInterfaces>
 	<AddGameplayScripts id="ReligiousArm_Lua" criteria="Religious_Arm_Mode_Expansion2">
 		<Properties><LoadOrder>19001</LoadOrder></Properties>
 		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
@@ -1708,6 +1716,8 @@
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm.xml</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm.lua</File>
 	<File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
 	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
 	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>

@@ -156,45 +156,44 @@ function OnGovernorUpdatedCheckReyna(playerID, governorID, promotionID)
 end
 
 -- Reyna R1
-/*
-local FORESTRY_MANAGEMENT_INDEX = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT'].Index;
-function ReynaCalled (playerId, cityId, unitTypeId)
-	local city = CityManager.GetCity(playerId, cityId);
-	local governor = city:GetAssignedGovernor();
-	if not governor then
-		return;
-	end
-	if not governor:HasPromotion(FORESTRY_MANAGEMENT_INDEX) then
-		return;
-	end
-	local unit = GameInfo.Units[unitTypeId];
-	local unitType = unit.UnitType;
-	if (unitType == 'UNIT_TRADER') or (unitType == 'UNIT_LEU_TYCOON') or (unitType == 'UNIT_LEU_INVESTOR') then
-		local cost = city:GetBuildQueue():GetUnitCost(unit.Index);
-		if (unit.CostProgressionModel == 'COST_PROGRESSION_PREVIOUS_COPIES') then
-			cost = cost - unit.CostProgressionParam1;
-		end
-		GameEvents.ReynaChangeCurrentCulturalProgress.Call(playerId, cost);
-	end
-end
-function ReynaCityProductionCompleted (playerId, cityId, constructionType, objectType, cancelled)
-	if constructionType == 0 then
-		ReynaCalled(playerId, cityId, objectType);
-	end
-end
-Events.CityProductionCompleted.Add(ReynaCityProductionCompleted);
-function ReynaCityMadePurchase (playerId, cityId, x, y, purchaseType, objectType)
-	if purchaseType == EventSubTypes.UNIT then
-		ReynaCalled(playerId, cityId, objectType);
-	end
-end
-Events.CityMadePurchase.Add(ReynaCityMadePurchase);
 
-Events.GovernorAssigned.Add(OnGovernorAssignedCheckReyna)
-Events.GovernorChanged.Add(OnGovernorUpdatedCheckReyna)
-Events.GovernorPromoted.Add(OnGovernorUpdatedCheckReyna)
-
-Events.TradeRouteActivityChanged.Add(UpdateReynaTradeRoutesYield)
-Events.CityWorkerChanged.Add(UpdateReynaTradeRoutesYield);
-Events.PlayerTurnDeactivated.Add(UpdateReynaTradeRoutesYield);
-*/
+--local FORESTRY_MANAGEMENT_INDEX = GameInfo.GovernorPromotions['GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT'].Index;
+--function ReynaCalled (playerId, cityId, unitTypeId)
+--	local city = CityManager.GetCity(playerId, cityId);
+--	local governor = city:GetAssignedGovernor();
+--	if not governor then
+--		return;
+--	end
+--	if not governor:HasPromotion(FORESTRY_MANAGEMENT_INDEX) then
+--		return;
+--	end
+--	local unit = GameInfo.Units[unitTypeId];
+--	local unitType = unit.UnitType;
+--	if (unitType == 'UNIT_TRADER') or (unitType == 'UNIT_LEU_TYCOON') or (unitType == 'UNIT_LEU_INVESTOR') then
+--		local cost = city:GetBuildQueue():GetUnitCost(unit.Index);
+--		if (unit.CostProgressionModel == 'COST_PROGRESSION_PREVIOUS_COPIES') then
+--			cost = cost - unit.CostProgressionParam1;
+--		end
+--		GameEvents.ReynaChangeCurrentCulturalProgress.Call(playerId, cost);
+--	end
+--end
+--function ReynaCityProductionCompleted (playerId, cityId, constructionType, objectType, cancelled)
+--	if constructionType == 0 then
+--		ReynaCalled(playerId, cityId, objectType);
+--	end
+--end
+--Events.CityProductionCompleted.Add(ReynaCityProductionCompleted);
+--function ReynaCityMadePurchase (playerId, cityId, x, y, purchaseType, objectType)
+--	if purchaseType == EventSubTypes.UNIT then
+--		ReynaCalled(playerId, cityId, objectType);
+--	end
+--end
+--Events.CityMadePurchase.Add(ReynaCityMadePurchase);
+--
+--Events.GovernorAssigned.Add(OnGovernorAssignedCheckReyna)
+--Events.GovernorChanged.Add(OnGovernorUpdatedCheckReyna)
+--Events.GovernorPromoted.Add(OnGovernorUpdatedCheckReyna)
+--
+--Events.TradeRouteActivityChanged.Add(UpdateReynaTradeRoutesYield)
+--Events.CityWorkerChanged.Add(UpdateReynaTradeRoutesYield);
+--Events.PlayerTurnDeactivated.Add(UpdateReynaTradeRoutesYield);

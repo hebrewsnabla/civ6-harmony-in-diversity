@@ -315,7 +315,6 @@ values
 insert or replace into GlobalParameters
 	(Name,											Value)
 values
-	('RELIGIOUS_ARM_NRYANA_COST',					0.3),
 	('RELIGIOUS_ARM_UNIVERSAL_RESTORATION_COST',	2.0),
 	('RELIGIOUS_ARM_PUNCITIVE_LAND_COST',			0.5),
 	('RELIGIOUS_ARM_PROMISED_LAND_COST',			0.5),
