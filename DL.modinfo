@@ -1519,18 +1519,29 @@
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
     <!-- Religious Arm Mode -->
+    <ImportFiles id="ReligiousArm_Import" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties><LoadOrder>19000</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_38.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_50.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
+    </ImportFiles>
     <UpdateDatabase id="ReligiousArm_Database" criteria="Religious_Arm_Mode_Expansion2">
-      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/ReligiousArmMode/Database.sql</File>
     </UpdateDatabase>
     <UpdateText id="ReligiousArm_Text" criteria="Religious_Arm_Mode_Expansion2">
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
     </UpdateText>
-    <ImportFiles id="ReligiousArm_Import" criteria="Religious_Arm_Mode_Expansion2">
-      <Properties><LoadOrder>19000</LoadOrder></Properties>
-      <File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
-    </ImportFiles>
+    <UpdateIcons id="ReligiousArm_Icons" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
+    </UpdateIcons>
     <ReplaceUIScript id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
       <Properties>
         <LoadOrder>19001</LoadOrder>
@@ -1538,6 +1549,10 @@
         <LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
+	<AddGameplayScripts id="ReligiousArm_Lua" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties><LoadOrder>19001</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
+	</AddGameplayScripts>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1691,6 +1706,15 @@
 	<File>GameModeSupport/ReligiousArmMode/Database.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_38.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_50.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
