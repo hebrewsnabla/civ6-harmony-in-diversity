@@ -113,7 +113,7 @@ create temporary table HD_AIGreatPersonPoints (
 	GreatPersonClassType text not null,
 --	EraType text not null default 'ERA_CLASSICAL',
 	ModifierId text,
-	primary key (ObjectType, GreatPersonClassType, EraType)
+	primary key (ObjectType, GreatPersonClassType)
 );
 insert or replace into HD_AIGreatPersonPoints
 	(ObjectType,					GreatPersonClassType)

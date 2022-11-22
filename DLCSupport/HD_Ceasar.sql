@@ -1,0 +1,2 @@
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_CAESAR' and ModifierId in ('TRAIT_CAESAR_GOLD_CAPTURED_CITY_STEEL', 'BARBARIAN_CAMP_GOLD_CAPTURED_CITY_STEEL');
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER' where ModifierId = 'TRAIT_CAESAR_GOLD_CAPTURED_CITY';

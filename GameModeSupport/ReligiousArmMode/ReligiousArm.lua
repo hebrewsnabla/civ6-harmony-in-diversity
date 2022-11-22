@@ -1,3 +1,4 @@
+include("SupportFunctions");
 function GetCost(unit, percent)
 	if unit == nil then
 		return 0;
@@ -45,3 +46,6 @@ LuaEvents.WorldInput_WBSelectPlot.Add(function (plotId, plotEdge, boolParam)
 	end
 	UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
 end);
+print('reload');
+print(LuaEvents);
+print(LuaEvents.WorldInput_WBSelectPlot);
