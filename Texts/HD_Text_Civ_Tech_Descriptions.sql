@@ -104,7 +104,7 @@ values
     ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                                          "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "+2 [ICON_GOLD] Gold from Plantations."),
+    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignores Zones of Control. [NEWLINE]+2 [ICON_GOLD] Gold from Plantations."),
 	("LOC_CIVIC_NAVAL_TRADITION_HD_DESCRIPTION",											"+2 [ICON_GOLD] Gold from Fisheries."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "+1 [ICON_Production] Production from Camps."),
@@ -295,7 +295,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "种植园+2 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦查单位获得能力：忽略控制区。[NEWLINE]种植园+2 [ICON_GOLD] 金币。"),
 	("zh_Hans_CN",  "LOC_CIVIC_NAVAL_TRADITION_HD_DESCRIPTION",								"渔场+2 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地+1 [ICON_Food] 食物。"), -- +1 [ICON_Production] 生产力和
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "渔场+1 [ICON_PRODUCTION] 生产力。[NEWLINE]从每个宗主城邦获得+1 [ICON_Favor] 外交支持。[NEWLINE]允许两个完全相同的单位组成一个舰队。[NEWLINE]现在可用一个新的战争借口替战争辩护：殖民战争。"),

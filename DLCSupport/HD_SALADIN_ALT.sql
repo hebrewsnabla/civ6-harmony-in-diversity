@@ -1,0 +1,46 @@
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+values
+	('TRAIT_LEADER_SALADIN_ALT',	'SALADIN_ALT_EXTRA_MOVEMENT'),
+	('TRAIT_LEADER_SALADIN_ALT',	'SALADIN_ALT_IGNORE_ZOC');
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,						ModifierId)
+values
+	('ABILITY_SALADIN_ALT_EXTRA_MOVEMENT',	'HD_SALADIN_ALT_EXTRA_MOVEMENT');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								SubjectRequirementSetId)
+values
+	('SALADIN_ALT_EXTRA_MOVEMENT',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',		'CITY_FOLLOWS_RELIGION_REQUIREMENTS'),
+	('SALADIN_ALT_EXTRA_MOVEMENT_MODIFIER',	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',	'SALADIN_ALT_RELIGION_REQUIREMENTS'),
+	('SALADIN_ALT_EXTRA_MOVEMENT_ABILITY',	'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',		NULL),
+	('HD_SALADIN_ALT_EXTRA_MOVEMENT',		'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',		NULL),
+	('SALADIN_ALT_IGNORE_ZOC',				'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',	'UNIT_IS_RELIGIOUS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,				Value)
+values
+	('SALADIN_ALT_EXTRA_MOVEMENT',			'ModifierId',		'SALADIN_ALT_EXTRA_MOVEMENT_MODIFIER'),
+	('SALADIN_ALT_EXTRA_MOVEMENT_MODIFIER',	'ModifierId',		'SALADIN_ALT_EXTRA_MOVEMENT_ABILITY'),
+	('SALADIN_ALT_EXTRA_MOVEMENT_ABILITY',	'AbilityType',		'ABILITY_SALADIN_ALT_EXTRA_MOVEMENT'),
+	('HD_SALADIN_ALT_EXTRA_MOVEMENT',		'Amount',			1),
+	('SALADIN_ALT_IGNORE_ZOC',				'ModifierId',		'HD_IGNORE_ZOC');
+
+insert or replace into RequirementSetRequirements
+	(RequirementSetId,						RequirementId)
+values
+	('SALADIN_ALT_RELIGION_REQUIREMENTS',	'REQUIRES_UNIT_NEAR_RELIGIOUS_CITY1'),
+	('SALADIN_ALT_RELIGION_REQUIREMENTS',	'REQUIRES_UNIT_NEAR_RELIGIOUS_CITY2');
+insert or replace into RequirementSets
+	(RequirementSetId,						RequirementSetType)
+values
+	('SALADIN_ALT_RELIGION_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY');
+insert or replace into Requirements
+	(RequirementId,							RequirementType)
+values
+	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY1',	'REQUIREMENT_NEAR_RELIGIOUS_CITY'),
+	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY2',	'REQUIREMENT_NEAR_RELIGIOUS_CITY');
+insert or replace into RequirementArguments
+	(RequirementId,							Name,				Value)
+values
+	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY1',	'FriendlyCity',		1),
+	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY2',	'FriendlyCity',		0);
