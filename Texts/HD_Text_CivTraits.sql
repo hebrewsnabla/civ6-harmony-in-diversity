@@ -86,7 +86,8 @@ values
     ("LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE",                            "+{1_num} [ICON_FAITH] Faith from the adjacent Pasture {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB",                       "+{1_num} [ICON_GOLD] Gold from the adjacent Pasture {1_Num : plural 1?tile; other?tiles;}."),
     ("LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",              "+1 [ICON_CULTURE] Culture in cities with a garrisoned unit. Cities with a garrisoned unit get +3 Loyalty per turn, or +5 if it is a Corps or Army. Conquering a city with a unit will upgrade it into a Corps or Army, if the proper Civics are unlocked."),
-    ("LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",              			  "+200 [ICON_GOLD] Gold when you build or conquer a city. +100 [ICON_GOLD] Gold when you clear a Barbarian Outpost.");
+    ("LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",              			  "+200 [ICON_GOLD] Gold when you build or conquer a city. +100 [ICON_GOLD] Gold when you clear a Barbarian Outpost."),
+    ("LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",                "Industrial Zones give +2 [ICON_Amenities] Amenities, and +3 Loyalty per turn. Receive a free Melee unit after constructing Industrial Zones and their buildings. The free unit does not require resources when created or to maintain and receives +5 [ICON_Strength] Combat Strength.");
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -179,7 +180,8 @@ values
     ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE",                           "+{1_num} [ICON_FAITH] 信仰来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB",                      "+{1_num} [ICON_GOLD] 金币来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",             "拥有驻军单位的城市 +1 [ICON_CULTURE] 文化值。拥有驻军单位的城市每回合忠诚度+3；如驻扎有军团或军队，则+5。解锁相应的市政或科技后，用单位占领城市则可将其升级为军团或军队。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度，并每回合提供的忠诚度+3。建造工业区和其建筑后获得1个免费近战单位。免费单位的生成或维护不需要资源，并且+5 [ICON_Strength] 战斗力。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

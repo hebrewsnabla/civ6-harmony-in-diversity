@@ -219,3 +219,7 @@ version1.3.4
 [工具铺]：特效改为消耗2[铁]产生3[锤]。
 [工商会馆]：此城出发的国内 [ICON_TRADEROUTE] 贸易路线+2 [ICON_FOOD] 食物和+2 [ICON_PRODUCTION] 生产力，解锁科技“工业化”后给以本城为目的地的国内 [ICON_TRADEROUTE] 贸易路线提供相同加成。
 [自由探索]：改为为文明提供而非首都。
+[林肯]：移除了林肯种植园减少忠诚度的能力，修复了林肯的文本错误。
+[育种]：效果重做为军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马。
+[锻造]：军营区域每回合产出1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_IRON] 铁。
+[骑士阶级]：军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马和1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马和 2 [ICON_RESOURCE_IRON] 铁。
