@@ -88,8 +88,8 @@ values
     ("LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",              "+1 [ICON_CULTURE] Culture in cities with a garrisoned unit. Cities with a garrisoned unit get +3 Loyalty per turn, or +5 if it is a Corps or Army. Conquering a city with a unit will upgrade it into a Corps or Army, if the proper Civics are unlocked."),
     ("LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",              			  "+200 [ICON_GOLD] Gold when you build or conquer a city. +100 [ICON_GOLD] Gold when you clear a Barbarian Outpost. When you conquer a city, all units within 3 tiles permanetly gets +1 [ICON_STRENGTH] Combat Strength."),
     ("LOC_CAESAR_STRENGTH_MODIFIER",              			  		  "+{1_Amount} Strength from conquered city."),
-    ("LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",                "Industrial Zones give +2 [ICON_Amenities] Amenities, and +3 Loyalty per turn. Receive a free Melee unit after constructing Industrial Zones and their buildings. The free unit does not require resources when created or to maintain and receives +5 [ICON_Strength] Combat Strength.");
-
+    ("LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",                "Industrial Zones give +2 [ICON_Amenities] Amenities, and +3 Loyalty per turn. Receive a free Melee unit after constructing Industrial Zones and their buildings. The free unit does not require resources when created or to maintain and receives +5 [ICON_Strength] Combat Strength."),
+    ("LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                      "+100% Flanking and Support Bonus to all Combat and Religious units. Unit gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn within the borders of cities that follow your Religion. Religious units can ignore Zone of Control.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -183,7 +183,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",             "拥有驻军单位的城市 +1 [ICON_CULTURE] 文化值。拥有驻军单位的城市每回合忠诚度+3；如驻扎有军团或军队，则+5。解锁相应的市政或科技后，用单位占领城市则可将其升级为军团或军队。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。征服一个城市后，所有3个单元格内的单位永久获得+1 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CAESAR_STRENGTH_MODIFIER",      			     		  "+{1_Amount}力来自已征服的城市。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度，并每回合提供的忠诚度+3。建造工业区和其建筑后获得1个免费近战单位。免费单位的生成或维护不需要资源，并且+5 [ICON_Strength] 战斗力。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度，并每回合提供的忠诚度+3。建造工业区和其建筑后获得1个免费近战单位。免费单位的生成或维护不需要资源，并且+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在与你的创建的宗教相同宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

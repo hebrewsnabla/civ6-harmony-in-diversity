@@ -174,7 +174,7 @@ values
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_NAME",                  "阿基米德"),
     ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_EUREKA_STRENGTH",                              "[ICON_TechBoosted] 尤里卡提供的科技值额外+1%。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_LI_BING_NAME",                     "李冰"),
-    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%。，堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_DAM_UNLOCK_MATHEMATICS",                       "解锁科技“数学”即可建造堤坝。建造堤坝时加速25%。堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MA_JUN_NAME",                      "马钧"),
     ("zh_Hans_CN",  "LOC_HD_GREATPERSON_GRANT_IZ_TIER1_BUILDING",                       "立即在该区域建造1座工作坊。工作坊+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_JNR_GREATPERSON_TECH_MACHINERY",                               "为机械科技启动 [ICON_TechBoosted] 尤里卡。"),
