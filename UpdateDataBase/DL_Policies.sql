@@ -239,7 +239,7 @@ values
 	('MONARCHY_GOLD_BONUS',					'Amount',													10),
 	('MONARCHY_UNITPRODUCTION_BONUS',		'Amount',													20);
 -- Theocracy
-update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
+--update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
 update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
 insert or replace into GovernmentModifiers
 	(GovernmentType,			ModifierID)
