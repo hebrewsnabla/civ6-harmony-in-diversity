@@ -44,3 +44,23 @@ insert or replace into RequirementArguments
 values
 	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY1',	'FriendlyCity',		1),
 	('REQUIRES_UNIT_NEAR_RELIGIOUS_CITY2',	'FriendlyCity',		0);
+--林肯
+delete from TraitModifiers where ModifierId = 'TRAIT_LINCOLN_INDUSTRIAL_ZONE_FREE_MELEE_UNIT' or ModifierId = 'TRAIT_LINCOLN_INDUSTRIAL_ZONE_LOYALTY';
+insert or replace into TraitModifiers
+	(TraitType,						ModifierId)
+values
+	('TRAIT_LEADER_LINCOLN',		'TRAIT_LINCOLN_INDUSTRIAL_ZONE_FREE_BUILDER');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,											SubjectRequirementSetId)
+values
+	('TRAIT_LINCOLN_INDUSTRIAL_ZONE_FREE_BUILDER',	'MODIFIER_PLAYER_DISTRICT_CREATE_UNIT',					NULL),
+	('HD_LIBERATION_LINCOLN',						'MODIFIER_CITY_DISTRICTS_ATTACH_MODIFIER',				'DISTRICT_IS_INDUSTRIAL_ZONE'),
+	('HD_LIBERATION_LINCOLN_MODIFIER',				'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',	NULL);
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('TRAIT_LINCOLN_INDUSTRIAL_ZONE_FREE_BUILDER',	'DistrictType',		'DISTRICT_INDUSTRIAL_ZONE'),
+	('TRAIT_LINCOLN_INDUSTRIAL_ZONE_FREE_BUILDER',	'UnitType',			'UNIT_BUILDER'),
+	('HD_LIBERATION_LINCOLN',						'ModifierId',		'HD_LIBERATION_LINCOLN_MODIFIER'),
+	('HD_LIBERATION_LINCOLN_MODIFIER',				'Amount',			1),
+	('HD_LIBERATION_LINCOLN_MODIFIER',				'YieldType',		'YIELD_PRODUCTION');

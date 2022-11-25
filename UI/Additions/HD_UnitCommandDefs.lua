@@ -459,3 +459,48 @@ function m_HDUnitCommands.PATHFINDER_PLANT.IsDisabled(pUnit : object)
 	end
 	return false;
 end
+
+-- 林肯的解放按钮, by 先驱
+m_HDUnitCommands.LIBERATION_LINCOLN = {};
+m_HDUnitCommands.LIBERATION_LINCOLN.Properties = {};
+
+-- UI Data
+m_HDUnitCommands.LIBERATION_LINCOLN.EventName = "HD_LIBERATION_LINCOLN";
+m_HDUnitCommands.LIBERATION_LINCOLN.CategoryInUI = "SPECIFIC";
+m_HDUnitCommands.LIBERATION_LINCOLN.Icon = "ICON_UNITCOMMAND_LIBERATION_LINCOLN";
+m_HDUnitCommands.LIBERATION_LINCOLN.ToolTipString = Locale.Lookup("LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME") .. "[NEWLINE][NEWLINE]" .. 
+										Locale.Lookup("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION");
+m_HDUnitCommands.LIBERATION_LINCOLN.DisabledToolTipString = Locale.Lookup("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT");
+m_HDUnitCommands.LIBERATION_LINCOLN.VisibleInUI = true;
+function m_HDUnitCommands.LIBERATION_LINCOLN.CanUse(pUnit : object)
+	if pUnit == nil then
+		return false;
+	end
+	local unitInfo = GameInfo.Units[pUnit:GetType()];
+	return unitInfo.UnitType == "UNIT_BUILDER";
+end
+
+function m_HDUnitCommands.LIBERATION_LINCOLN.IsVisible(pUnit : object)
+	local ownerId = pUnit:GetOwner();
+	local pPlayerConfig = PlayerConfigurations[ownerId];
+    local sLeader = pPlayerConfig:GetLeaderTypeName()
+    return LeaderHasTrait(sLeader, 'TRAIT_LEADER_LINCOLN');
+end
+
+-- ===========================================================================
+function m_HDUnitCommands.LIBERATION_LINCOLN.IsDisabled(pUnit : object)
+	if pUnit == nil then
+		return true;
+	end
+	if pUnit:GetMovesRemaining() == 0 then
+		return true;
+	end
+	local location = pUnit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local plot = Map.GetPlot(x, y);
+	local districtInfo = GameInfo.Districts['DISTRICT_INDUSTRIAL_ZONE'];
+	return districtInfo.Index ~= plot:GetDistrictType();
+--	local districtInfo = GameInfo.Districts[plot:GetDistrictType()];
+--	return districtInfo.DistrictType ~= 'DISTRICT_INDUSTRIAL_ZONE';
+end
