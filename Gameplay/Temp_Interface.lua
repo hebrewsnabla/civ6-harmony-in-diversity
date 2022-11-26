@@ -329,6 +329,6 @@ function HD_LIBERATION_LINCOLN (playerId, unitId)
     local city = district:GetCity();
     local cityId = city:GetID();
     GameEvents.AttachModifierSwitch.Call(playerId, cityId, 'HD_LIBERATION_LINCOLN');
-    print('HD');
+    GameEvents.AttachModifierSwitch.Call(playerId, cityId, 'HD_LIBERATION_LINCOLN_POPULATION');
 end
 GameEvents.HD_LIBERATION_LINCOLN.Add(HD_LIBERATION_LINCOLN);
