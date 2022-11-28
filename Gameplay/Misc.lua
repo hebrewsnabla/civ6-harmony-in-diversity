@@ -393,3 +393,36 @@ Events.WonderCompleted.Add(function (x, y, buildingId, playerId, cityId, percent
 		player:SetProperty(FREE_CIVIC_KEY, remains + 2);
 	end
 end);
+
+-- Horses and Iron within 6 tiles
+local PALACE_INDEX = GameInfo.Buildings['BUILDING_PALACE'].Index;
+function StrategicCityAddedToMap (playerId, cityId, x, y)
+	local city = CityManager.GetCity(playerId, cityId);
+	if city:GetBuildings():HasBuilding(PALACE_INDEX) then
+		for row in GameInfo.HD_GuaranteedStrategicResources() do
+			local resourceInfo = GameInfo.Resources[row.ResourceType];
+			local plots = Map.GetNeighborPlots(x, y, row.Distance);
+			local hasResource = false;
+			local availablePlots = {};
+			for _, plot in ipairs(plots) do
+				if plot:GetResourceType() == resourceInfo.Index then
+					hasResource = true;
+					break;
+				end
+				if ResourceBuilder.CanHaveResource(plot, resourceInfo.Index) then
+					local distance = Map.GetPlotDistance(x, y, plot:GetX(), plot:GetY());
+					local adjResources = ResourceBuilder.GetAdjacentResourceCount(pPlot);
+					local s = distance * 60 - adjResources * 10 + TerrainBuilder.GetRandomNumber(10, "Guaranteed Strategic Resource Adjust")
+					table.insert(availablePlots, {plotId = plot:GetIndex(), score = s});
+				end
+			end
+			if (not hasResource) and (#availablePlots > 0) then
+				table.sort(availablePlots, function(a, b) return a.score > b.score; end);
+				local plotId = availablePlots[1].plotId;
+				local plot = Map.GetPlotByIndex(plotId);
+				ResourceBuilder.SetResourceType(plot, resourceInfo.Index, 1);
+			end
+		end
+	end
+end
+Events.CityAddedToMap.Add(StrategicCityAddedToMap);

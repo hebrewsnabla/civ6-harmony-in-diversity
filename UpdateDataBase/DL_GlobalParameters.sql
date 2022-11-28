@@ -229,3 +229,20 @@ update GlobalParameters set Value = 0 where Name = 'GREATWORK_ART_LOCK_TIME';
 --市中心改为3粮2锤
 update GlobalParameters set Value = 2 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
 update GlobalParameters set Value = 1 where Name = 'GOVERNMENT_ALLOW_EMPTY_POLICY_SLOTS';
+
+-- 刷战略
+create table HD_GuaranteedStrategicResources (
+	ResourceType text not null primary key,
+	Distance int not null,
+	foreign key (ResourceType) references Resources (ResourceType) on delete cascade on update cascade
+);
+insert or replace into HD_GuaranteedStrategicResources
+	(ResourceType,			Distance)
+values
+	('RESOURCE_HORSES',		6),
+	('RESOURCE_IRON',		6),
+	('RESOURCE_NITER',		9),
+	('RESOURCE_ALUMINUM',	12),
+	('RESOURCE_COAL',		12),
+	('RESOURCE_OIL',		12),
+	('RESOURCE_URANIUM',	12);

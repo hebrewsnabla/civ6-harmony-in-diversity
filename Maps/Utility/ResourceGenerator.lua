@@ -212,18 +212,38 @@ function ResourceGenerator:__GetLuxuryResources()
 	local cur_index = 0;
 	for i, cont in ipairs(self.continentInfo) do
 		local num = cont.numLuxuries
+		-- place luxuries with high requirements first
+		local luxuries = {};
 		for j = 1, num do
-			self:__PlaceLuxuryResources(self.aLuxuryIds[cur_index + j], i)
+			local lux = self.aLuxuryIds[cur_index + j];
+			local numPossiblePlots = 0;
+			for i, plot in ipairs(cont.plots) do
+				local pPlot = Map.GetPlotByIndex(plot)
+				if (pPlot~=nil and pPlot:IsWater() == false) then
+					if (ResourceBuilder.CanHaveResource(pPlot, lux)) then
+						numPossiblePlots = numPossiblePlots + 1;
+					end
+				end
+			end
+			table.insert(luxuries, {luxIndex = self.aLuxuryIds[cur_index + j], score = - numPossiblePlots});
 		end
-		cur_index = cur_index + num
+		table.sort(luxuries, function(a, b) return a.score > b.score; end);
+		local extra = 0;
+		for j = 1, num do
+			local remains = self:__PlaceLuxuryResources(luxuries[j].luxIndex, i, extra);
+			if j < num then
+				extra = math.floor(extra + remains / (num - j));
+			end
+		end
+		cur_index = cur_index + num;
 	end
 end
 
 -- ------------------------------------------------------------------------------
-function ResourceGenerator:__PlaceLuxuryResources(chosenLuxID, continentID)
+function ResourceGenerator:__PlaceLuxuryResources(chosenLuxID, continentID, extra)
 	local cont = self.continentInfo[continentID]
 	local possiblePlots = {};
-	local numToPlace = self.iTargetPercentage / 100 * cont.num * self.iLuxuryPercentage / 100 / cont.numLuxuries;
+	local numToPlace = self.iTargetPercentage / 100 * cont.num * self.iLuxuryPercentage / 100 / cont.numLuxuries + extra;
 	for i, plot in ipairs(cont.plots) do
 		local pPlot = Map.GetPlotByIndex(plot)
 		if (pPlot~=nil and pPlot:IsWater() == false) then
@@ -240,14 +260,18 @@ function ResourceGenerator:__PlaceLuxuryResources(chosenLuxID, continentID)
 	end
 	table.sort(possiblePlots, function(a, b) return a.score > b.score; end)
 	local numPossiblePlots = #possiblePlots
-	print('num to place', numToPlace, 'possible plots', numPossiblePlots)
-	for i = 1, numToPlace do
-		if i > numPossiblePlots then
-			break
+	local placed = 0;
+	for i = 1, numPossiblePlots do
+		local pPlot = Map.GetPlotByIndex(possiblePlots[i].plotID);
+		if ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 0 then
+			ResourceBuilder.SetResourceType(pPlot, self.eResourceType[chosenLuxID], 1);
+			placed = placed + 1;
 		end
-		local pPlot = Map.GetPlotByIndex(possiblePlots[i].plotID)
-		ResourceBuilder.SetResourceType(pPlot, self.eResourceType[chosenLuxID], 1)
+		if placed >= numToPlace then
+			break;
+		end
 	end
+	return numToPlace - placed;
 end
 -- HD rewrite end
 
