@@ -27,7 +27,7 @@ values
 	('BUILDING_FAIR',					'LOC_BUILDING_FAIR_NAME', 					55,			'LOC_BUILDING_FAIR_DESCRIPTION',
 	null,								'CIVIC_FOREIGN_TRADE',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			null),
 	('BUILDING_TOTEMS',					'LOC_BUILDING_TOTEMS_NAME', 				55,			'LOC_BUILDING_TOTEMS_DESCRIPTION',
-	null,								'CIVIC_CRAFTSMANSHIP',						'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			null);
+	'TECH_ASTROLOGY',					NULL,										'DISTRICT_CITY_CENTER',	'YIELD_GOLD',			null);
 
 insert or replace into MutuallyExclusiveBuildings
 	(Building,								MutuallyExclusiveBuilding)
