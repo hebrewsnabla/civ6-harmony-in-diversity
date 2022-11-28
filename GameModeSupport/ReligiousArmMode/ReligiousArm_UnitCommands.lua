@@ -7,6 +7,7 @@ function GetCost(unit, percent)
 	return math.ceil(percent * unitInfo.Combat);
 end
 m_HDUnitCommands = m_HDUnitCommands or {};
+
 m_HDUnitCommands.RELIGIOUS_ARM_UNIVERSAL_RESTORATION = {
 	EventName = 'HD_ReligiousArm_UniversalRestoration',
 	CategoryInUI = 'SPECIFIC',
@@ -26,7 +27,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_UNIVERSAL_RESTORATION.CanUse(unit)
 		return false;
 	end
 	local unitInfo = GameInfo.Units[unit:GetType()];
-	return true;-- unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
+	return unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_UNIVERSAL_RESTORATION.IsVisible(unit)
 	if unit == nil then
@@ -36,7 +37,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_UNIVERSAL_RESTORATION.IsVisible(unit)
 	if promotionInfo == nil then
 		return false;
 	end
-	return true;--unit:GetExperience():HasPromotion(promotionInfo.Index);
+	return unit:GetExperience():HasPromotion(promotionInfo.Index);
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_UNIVERSAL_RESTORATION.IsDisabled(unit)
 	if unit == nil then
@@ -70,7 +71,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_PUNCITIVE_LAND.CanUse(unit)
 		return false;
 	end
 	local unitInfo = GameInfo.Units[unit:GetType()];
-	return true;-- unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
+	return unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_PUNCITIVE_LAND.IsVisible(unit)
 	if unit == nil then
@@ -80,7 +81,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_PUNCITIVE_LAND.IsVisible(unit)
 	if promotionInfo == nil then
 		return false;
 	end
-	return true;--unit:GetExperience():HasPromotion(promotionInfo.Index);
+	return unit:GetExperience():HasPromotion(promotionInfo.Index);
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_PUNCITIVE_LAND.IsDisabled(unit)
 	if unit == nil then
@@ -114,7 +115,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_PROMISED_LAND.CanUse(unit)
 		return false;
 	end
 	local unitInfo = GameInfo.Units[unit:GetType()];
-	return true;-- unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
+	return unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_PROMISED_LAND.IsVisible(unit)
 	if unit == nil then
@@ -124,7 +125,7 @@ function m_HDUnitCommands.RELIGIOUS_ARM_PROMISED_LAND.IsVisible(unit)
 	if promotionInfo == nil then
 		return false;
 	end
-	return true;--unit:GetExperience():HasPromotion(promotionInfo.Index);
+	return unit:GetExperience():HasPromotion(promotionInfo.Index);
 end
 function m_HDUnitCommands.RELIGIOUS_ARM_PROMISED_LAND.IsDisabled(unit)
 	if unit == nil then
@@ -136,5 +137,116 @@ function m_HDUnitCommands.RELIGIOUS_ARM_PROMISED_LAND.IsDisabled(unit)
 	end
 	local turn = Game.GetCurrentGameTurn();
 	return (player:GetReligion():GetFaithBalance() < GetCost(unit, GlobalParameters.RELIGIOUS_ARM_PROMISED_LAND_COST))
-		or (player:GetResources():GetResourceAmount(GameInfo.Resources['RESOURCE_HORSES'].Index) < 5);
+		or (player:GetResources():GetResourceAmount(GameInfo.Resources['RESOURCE_HORSES'].Index) < 5)
+		or (unit:GetMovesRemaining() == 0);
+end
+
+function GetRouteTypeForPlayer(player)
+	local route = nil;
+	local era = GameInfo.Eras[player:GetEra()];
+	for routeType in GameInfo.Routes() do 
+		if route == nil then
+			route = routeType;
+		else
+			local prereq_era = GameInfo.Eras[routeType.PrereqEra];
+			if prereq_era and era.ChronologyIndex >= prereq_era.ChronologyIndex  then
+				route =  routeType;
+			end
+		end
+	end
+	return route.Index;
+end
+function CompareRoutes(a, b)
+	return GameInfo.Routes[a].MovementCost < GameInfo.Routes[b].MovementCost;
+end
+m_HDUnitCommands.RELIGIOUS_ARM_HD_PILGRIM = {
+	EventName = 'HD_ReligiousArm_Pilgrim',
+	CategoryInUI = 'SPECIFIC',
+	Icon = 'ICON_UNITCOMMAND_RELIGIOUS_ARM_HD_PILGRIM',
+	DisabledToolTipString = Locale.Lookup('LOC_UNITCOMMAND_RELIGIOUS_ARM_HD_PILGRIM_DISABLED_TT'),
+	VisibleInUI = true,
+	DoNotDelete = true
+};
+function m_HDUnitCommands.RELIGIOUS_ARM_HD_PILGRIM.GetToolTipString(unit)
+	local cost = GlobalParameters.RELIGIOUS_ARM_HD_PILGRIM_COST or 0;
+	local unitInfo = GameInfo.Units[unit:GetType()];
+	return Locale.Lookup('LOC_PROMOTION_HD_PILGRIM_NAME') .. '[NEWLINE][NEWLINE]' .. 
+		Locale.Lookup('LOC_UNITCOMMAND_RELIGIOUS_ARM_HD_PILGRIM_DESCRIPTION', cost, unitInfo.Combat);
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_HD_PILGRIM.CanUse(unit)
+	if unit == nil then
+		return false;
+	end
+	local unitInfo = GameInfo.Units[unit:GetType()];
+	return unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_HD_PILGRIM.IsVisible(unit)
+	if unit == nil then
+		return false;
+	end
+	local promotionInfo = GameInfo.UnitPromotions['PROMOTION_HD_PILGRIM'];
+	if promotionInfo == nil then
+		return false;
+	end
+	return unit:GetExperience():HasPromotion(promotionInfo.Index);
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_HD_PILGRIM.IsDisabled(unit)
+	if unit == nil then
+		return false;
+	end
+	local player = Players[unit:GetOwner()];
+	if player == nil then
+		return false;
+	end
+	local location = unit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local plot = Map.GetPlot(x, y);
+	local currentRouteType = plot:GetRouteType();
+	local playerRouteType = GetRouteTypeForPlayer(player);
+	local canBuild = (currentRouteType == RouteTypes.NONE) or CompareRoutes(playerRouteType, currentRouteType);
+	return (player:GetReligion():GetFaithBalance() < (GlobalParameters.RELIGIOUS_ARM_HD_PILGRIM_COST or 0)) or (not canBuild);
+end
+
+m_HDUnitCommands.RELIGIOUS_ARM_MIND_OVER_MATTER = {
+	EventName = 'HD_ReligiousArm_MindOverMatter',
+	CategoryInUI = 'SPECIFIC',
+	Icon = 'ICON_UNITCOMMAND_RELIGIOUS_ARM_MIND_OVER_MATTER',
+	DisabledToolTipString = Locale.Lookup('LOC_UNITCOMMAND_RELIGIOUS_ARM_MIND_OVER_MATTER_DISABLED_TT'),
+	VisibleInUI = true,
+	DoNotDelete = true
+};
+function m_HDUnitCommands.RELIGIOUS_ARM_MIND_OVER_MATTER.GetToolTipString(unit)
+	local cost = GetCost(unit, GlobalParameters.RELIGIOUS_ARM_MIND_OVER_MATTER_COST);
+	local unitInfo = GameInfo.Units[unit:GetType()];
+	return Locale.Lookup('LOC_PROMOTION_MIND_OVER_MATTER_NAME') .. '[NEWLINE][NEWLINE]' .. 
+		Locale.Lookup('LOC_UNITCOMMAND_RELIGIOUS_ARM_MIND_OVER_MATTER_DESCRIPTION', cost, unitInfo.Combat);
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_MIND_OVER_MATTER.CanUse(unit)
+	if unit == nil then
+		return false;
+	end
+	local unitInfo = GameInfo.Units[unit:GetType()];
+	return unitInfo.PromotionClass == 'PROMOTION_CLASS_MONK';
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_MIND_OVER_MATTER.IsVisible(unit)
+	if unit == nil then
+		return false;
+	end
+	local promotionInfo = GameInfo.UnitPromotions['PROMOTION_MIND_OVER_MATTER'];
+	if promotionInfo == nil then
+		return false;
+	end
+	return unit:GetExperience():HasPromotion(promotionInfo.Index);
+end
+function m_HDUnitCommands.RELIGIOUS_ARM_MIND_OVER_MATTER.IsDisabled(unit)
+	if unit == nil then
+		return false;
+	end
+	local player = Players[unit:GetOwner()];
+	if player == nil then
+		return false;
+	end
+	return (player:GetReligion():GetFaithBalance() < GetCost(unit, GlobalParameters.RELIGIOUS_ARM_MIND_OVER_MATTER_COST))
+		or (unit:GetMovesRemaining() == 0);
 end
