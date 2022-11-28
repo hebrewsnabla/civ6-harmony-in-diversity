@@ -397,6 +397,10 @@ end);
 -- Horses and Iron within 6 tiles
 local PALACE_INDEX = GameInfo.Buildings['BUILDING_PALACE'].Index;
 function StrategicCityAddedToMap (playerId, cityId, x, y)
+	local player = Players[playerId];
+	if not player:IsMajor() then
+		return;
+	end
 	local city = CityManager.GetCity(playerId, cityId);
 	if city:GetBuildings():HasBuilding(PALACE_INDEX) then
 		for row in GameInfo.HD_GuaranteedStrategicResources() do
