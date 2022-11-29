@@ -4,6 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                     Text)
 values
     ("LOC_DISTRICT_FEATURE_PLANTATION_FAITH",                 "+{1_num} [ICON_Faith] Faith from the adjacent Plantation {1_Num : plural 2?tile; other?tiles;}."),
+    ("LOC_DISTRICT_UTAKI_GOLD",                               "+{1_num} [ICON_Gold] Gold from the adjacent Coast and Lake {1_Num : plural 2?tile; other?tiles;}"),
     ("LOC_DISTRICT_FEATURE_MOUNTAIN_FAITH",                   "+{1_num} [ICON_Faith] Faith from the adjacent Mountain {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_DISTRICT_REEF_SCIENCE",                             "+{1_num} [ICON_Science] Science from the adjacent Reef {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_DISTRICT_SUK_KELP_SCIENCE",                         "+{1_num} [ICON_Science] Science from the adjacent Kelp {1_Num : plural 2?tile; other?tiles;}."),
@@ -86,11 +87,12 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_REEF_SCIENCE",                     "+{1_num} [ICON_Science] 科技值来自相邻礁石 {1_Num : plural 2?单元格; other?单元格;}."),
-    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_SUK_KELP_SCIENCE",                 "+{1_num} [ICON_Science] 科技值来自相邻海藻森林 {1_Num : plural 2?单元格; other?单元格;}."),
+    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_REEF_SCIENCE",                     "+{1_num} [ICON_Science] 科技值来自相邻礁石 {1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_UTAKI_GOLD",                               "+{1_num} [ICON_Gold] 金币来自相邻海岸和湖泊{1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_SUK_KELP_SCIENCE",                 "+{1_num} [ICON_Science] 科技值来自相邻海藻森林 {1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_PLANTATION_FAITH",                         "+{1_num} [ICON_Faith] 信仰值来自相邻种植园{1_Num : plural 2?单元格; other?单元格;}。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_FAITH",                           "+{1_num} [ICON_Faith] 信仰值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}."),
-    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_SCIENCE",                         "+{1_num} [ICON_Science] 科技值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}."),
+    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_FAITH",                           "+{1_num} [ICON_Faith] 信仰值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_SCIENCE",                         "+{1_num} [ICON_Science] 科技值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_PASTURE_FAITH",                            "+{1_num} [ICON_Faith] 信仰值来自相邻牧场{1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_TUNDRA_FOOD",                              "+{1_num} [ICON_Food] 食物来自相邻冻土{1_Num : plural 1?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_TUNDRA_HILLS_FOOD",                        "+{1_num} [ICON_Food] 食物来自相邻冻土丘陵{1_Num : plural 1?单元格; other?单元格;}。"),

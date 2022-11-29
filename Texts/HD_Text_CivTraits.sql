@@ -121,7 +121,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION",        "游戏初始便解锁畜牧业科技。牧场+1 [ICON_PRODUCTION] 生产力。开发 [ICON_RESOURCE_HORSES] 马资源的牧场每回合额外+3 [ICON_RESOURCE_HORSES] 马资源积累。每次您训练一个轻骑兵或萨卡弓骑手，都可以再获得一个轻骑兵或萨卡弓骑手。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。"), -- 拥有专业化区域的城市+1 [ICON_Science] 科技值和 +1 [ICON_Culture] 文化值。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准相邻加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则直接完成军事工程学科技。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成堡垒后对相邻单元格施放文化炸弹，使相邻的单元格+1 [ICON_Production] 生产力和+1 [ICON_Culture] 文化值。拥有寺庙的城市可以训练或购买军事工程师。军事工程师使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"), --相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
