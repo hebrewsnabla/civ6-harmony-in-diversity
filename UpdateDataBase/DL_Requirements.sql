@@ -2012,6 +2012,7 @@ insert or ignore into RequirementArguments
 values
 	('REQUIRES_PLOT_HAS_ANYTUNDRA',							'RequirementSetId',	'PLOT_HAS_ANYTUNDRA_REQUIREMENTS');
 --御岳
+/*
 insert or ignore into RequirementSets
 	(RequirementSetId,										RequirementSetType)
 values
@@ -2020,4 +2021,13 @@ insert or ignore into RequirementSetRequirements
 	(RequirementSetId,										RequirementId)
 values
 	('PLOT_HAS_SHALLOW_WATER_AND_ADJACENT_TO_HARBOR',		'REQUIRES_PLOT_HAS_SHALLOW_WATER'),
-	('PLOT_HAS_SHALLOW_WATER_AND_ADJACENT_TO_HARBOR',		'REQUIRES_SUK_SWAHILI_PLOT_ADJACENT_TO_HARBOR');
+	('PLOT_HAS_SHALLOW_WATER_AND_ADJACENT_TO_HARBOR',		'REQUIRES_PLOT_ADJACENT_TO_HARBOR');
+insert or ignore into Requirements
+	(RequirementId,											RequirementType)
+values
+	('REQUIRES_PLOT_ADJACENT_TO_HARBOR',					'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES');
+insert or ignore into RequirementArguments
+	(RequirementId,											Name,				Value)
+values
+	('REQUIRES_PLOT_ADJACENT_TO_HARBOR',					'DistrictType',		'DISTRICT_HARBOR');
+*/
