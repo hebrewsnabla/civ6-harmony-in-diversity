@@ -314,3 +314,21 @@ Utils.GetFreightAmount = function (playerId, cityId)
 	end
 	return amount;
 end
+
+--林肯解放
+--HD_LIBERATION_LINCOLN
+function HD_LIBERATION_LINCOLN (playerId, unitId)
+    local player = Players[playerId];
+	local unit = UnitManager.GetUnit(playerId, unitId);
+	local location = unit:GetLocation();
+	local x = location.x;
+	local y = location.y;
+	local plot = Map.GetPlot(x, y);
+	local districtId = plot:GetDistrictID();
+    local district = player:GetDistricts():FindID(districtId);
+    local city = district:GetCity();
+    local cityId = city:GetID();
+    GameEvents.AttachModifierSwitch.Call(playerId, cityId, 'HD_LIBERATION_LINCOLN');
+    GameEvents.AttachModifierSwitch.Call(playerId, cityId, 'HD_LIBERATION_LINCOLN_POPULATION');
+end
+GameEvents.HD_LIBERATION_LINCOLN.Add(HD_LIBERATION_LINCOLN);

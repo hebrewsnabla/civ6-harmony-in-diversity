@@ -64,10 +64,52 @@ GameEvents.HD_ReligiousArm_PromisedLandTeleportSwitch.Add(function (playerId, un
 	local unit = UnitManager.GetUnit(playerId, unitId);
 	local cost = GetCost(unit, GlobalParameters.RELIGIOUS_ARM_PUNCITIVE_LAND_COST);
 	local player = Players[playerId];
+	if player:GetProperty(PROMISED_LAND_PENDING_KEY) ~= nil then
+		player:SetProperty(PROMISED_LAND_PENDING_KEY, nil);
+		player:GetReligion():ChangeFaithBalance(-cost);
+		player:GetResources():ChangeResourceAmount(HORSES_INDEX, -5);
+		local remaining = unit:GetMovesRemaining();
+		UnitManager.PlaceUnit(unit, x, y);
+		UnitManager.ChangeMovesRemaining(unit, remaining - distance);
+	end
+end);
 
-	player:SetProperty(PROMISED_LAND_PENDING_KEY, null);
-	player:GetReligion():ChangeFaithBalance(-cost);
-	player:GetResources():ChangeResourceAmount(HORSES_INDEX, -5);
-	UnitManager.PlaceUnit(unit, x, y);
-	UnitManager.ChangeMovesRemaining(unit, -distance);
+function GetRouteTypeForPlayer(player)
+	local route = nil;
+	local era = GameInfo.Eras[player:GetEra()];
+	for routeType in GameInfo.Routes() do 
+		if route == nil then
+			route = routeType;
+		else
+			local prereq_era = GameInfo.Eras[routeType.PrereqEra];
+			if prereq_era and era.ChronologyIndex >= prereq_era.ChronologyIndex  then
+				route =  routeType;
+			end
+		end
+	end
+	return route.Index;
+end
+GameEvents.HD_ReligiousArm_Pilgrim.Add(function (playerId, unitId)
+	local unit = UnitManager.GetUnit(playerId, unitId);
+	local cost = GlobalParameters.RELIGIOUS_ARM_HD_PILGRIM_COST or 0;
+	local player = Players[playerId];
+	if player:GetReligion():GetFaithBalance() >= cost then
+		local route = GetRouteTypeForPlayer(player);
+		local location = unit:GetLocation();
+		local x = location.x;
+		local y = location.y;
+		local plot = Map.GetPlot(x, y);
+		player:GetReligion():ChangeFaithBalance(-cost);
+		RouteBuilder.SetRouteType(plot, route);
+	end
+end);
+
+GameEvents.HD_ReligiousArm_MindOverMatter.Add(function (playerId, unitId)
+	local unit = UnitManager.GetUnit(playerId, unitId);
+	local cost = GetCost(unit, GlobalParameters.RELIGIOUS_ARM_HD_PILGRIM_COST);
+	local player = Players[playerId];
+	if player:GetReligion():GetFaithBalance() >= cost then
+		player:GetReligion():ChangeFaithBalance(-cost);
+		UnitManager.RestoreUnitAttacks(unit);
+	end
 end);

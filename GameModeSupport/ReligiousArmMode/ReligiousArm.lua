@@ -1,3 +1,4 @@
+include("SupportFunctions");
 function GetCost(unit, percent)
 	if unit == nil then
 		return 0;
@@ -22,12 +23,12 @@ ExposedMembers.GameEvents.HD_ReligiousArm_PromisedLand.Add(function (playerId, u
 		end
 		UILens.SetLayerHexesArea(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"), Game.GetLocalPlayer(), {}, activationPlots);
 		UILens.ToggleLayerOn(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
+		UI.SetInterfaceMode(InterfaceModeTypes.WB_SELECT_PLOT);
 	end
 end);
 
 local PROMISED_LAND_PENDING_KEY = 'PROMISED_LAND_PENDING';
-LuaEvents.WorldInput_WBSelectPlot.Add(function (plotId, plotEdge, boolParam)
-	print('select');
+function ReligiousArmSelectPlot(plotId, plotEdge, boolParam)
 	if UILens.IsLayerOn(UILens.CreateLensLayerHash("Hex_Coloring_Great_People")) then
 		UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
 	end
@@ -35,13 +36,15 @@ LuaEvents.WorldInput_WBSelectPlot.Add(function (plotId, plotEdge, boolParam)
 	local player = Players[localPlayerId];
 	local pending = player:GetProperty(PROMISED_LAND_PENDING_KEY);
 	if pending then
-		local unit = UnitManager.GetUnit(playerId, pending);
+		local unit = UnitManager.GetUnit(localPlayerId, pending);
 		local location = unit:GetLocation();
 		local target = Map.GetPlotByIndex(plotId);
 		local distance = Map.GetPlotDistance(location.x, location.y, target:GetX(), target:GetY());
 		if distance <= unit:GetMovesRemaining() then
-			ExposedMembers.GameEvents.HD_ReligiousArm_PromisedLandTeleportSwitch.Call(playerId, unitId, target:GetX(), target:GetY(), distance);
+			ExposedMembers.GameEvents.HD_ReligiousArm_PromisedLandTeleportSwitch.Call(localPlayerId, pending, target:GetX(), target:GetY(), distance);
 		end
 	end
 	UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
-end);
+	UI.SetInterfaceMode(InterfaceModeTypes.SELECTION);
+end
+LuaEvents.WorldInput_WBSelectPlot.Add(ReligiousArmSelectPlot);

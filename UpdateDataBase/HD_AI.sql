@@ -113,14 +113,14 @@ create temporary table HD_AIGreatPersonPoints (
 	GreatPersonClassType text not null,
 --	EraType text not null default 'ERA_CLASSICAL',
 	ModifierId text,
-	primary key (ObjectType, GreatPersonClassType, EraType)
+	primary key (ObjectType, GreatPersonClassType)
 );
 insert or replace into HD_AIGreatPersonPoints
 	(ObjectType,					GreatPersonClassType)
 values
 	('DISTRICT_COMMERCIAL_HUB',		'GREAT_PERSON_CLASS_MERCHANT'),
 	('DISTRICT_HARBOR',				'GREAT_PERSON_CLASS_ADMIRAL'),
-	('DISTRICT_HOLY_SITE',			'GREAT_PERSON_CLASS_PROPHET'),
+--	('DISTRICT_HOLY_SITE',			'GREAT_PERSON_CLASS_PROPHET'),
 	('DISTRICT_CAMPUS',				'GREAT_PERSON_CLASS_SCIENTIST'),
 	('DISTRICT_ENCAMPMENT',			'GREAT_PERSON_CLASS_GENERAL'),
 	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_WRITER'),

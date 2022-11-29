@@ -239,7 +239,7 @@ values
 	('MONARCHY_GOLD_BONUS',					'Amount',													10),
 	('MONARCHY_UNITPRODUCTION_BONUS',		'Amount',													20);
 -- Theocracy
-update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
+--update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE';
 update ModifierArguments set Value = 1 where ModifierID = 'THEOCRACY_RELIGIOUS_PEOPLE' and Name = 'Amount';
 insert or replace into GovernmentModifiers
 	(GovernmentType,			ModifierID)
@@ -515,7 +515,7 @@ update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBINED_ARMS'		where
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_ROCKETRY'			where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_NUCLEAR_FISSION'		where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_CIVIL_ENGINEERING_HD'where PolicyType = 'POLICY_DRILL_MANUALS';
+update Policies set PrereqCivic = NULL, PrereqTech = 'TECH_CIVIL_ENGINEERING_HD' where PolicyType = 'POLICY_DRILL_MANUALS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_WISSELBANKEN';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_SIEGE_TACTICS'		where PolicyType = 'POLICY_BASTIONS';
 update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_LIMES';
@@ -722,12 +722,18 @@ update ModifierArguments set Value = 3 where Name = 'Amount' and
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'
 	or ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 delete from PolicyModifiers where PolicyType = 'POLICY_RESOURCE_MANAGEMENT' and ModifierId = 'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION';
+delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
+delete from PolicyModifiers where PolicyType = 'POLICY_EQUESTRIAN_ORDERS' and (ModifierId = 'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION' or ModifierId = 'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION');
 insert or replace into PolicyModifiers
 	(PolicyType,						ModifierId)
 values
-	('POLICY_BREEDING',					'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
-	('POLICY_FORGING',					'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
+	('POLICY_BREEDING',					'ENCAMPMENT_HORSES'),
+	('POLICY_FORGING',					'ENCAMPMENT_IRON'),
+--	('POLICY_BREEDING',					'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
+--	('POLICY_FORGING',					'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
 	('POLICY_GUNPOWDER_RESEARCH',		'DRILL_MANUALS_ADDITIONAL_NITER_EXTRACTION'),
+	('POLICY_EQUESTRIAN_ORDERS',		'ENCAMPMENT_HORSES'),
+	('POLICY_EQUESTRIAN_ORDERS',		'ENCAMPMENT_IRON'),
 	('POLICY_DRILL_MANUALS',			'EQUESTRIAN_ORDERS_ADDITIONAL_HORSES_EXTRACTION'),
 	('POLICY_DRILL_MANUALS',			'EQUESTRIAN_ORDERS_ADDITIONAL_IRON_EXTRACTION'),
 	('POLICY_ELECTROLYTIC_ALUMINIUM',	'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'),
@@ -738,7 +744,74 @@ values
 	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'RESOURCE_MANAGEMENT_ADDITIONAL_ALUMINUM_EXTRACTION'),
 	('POLICY_SUSTAINABLE_DEVELOPEMENT',	'RESOURCE_MANAGEMENT_ADDITIONAL_OIL_EXTRACTION');
 
-delete from PolicyModifiers where PolicyType = 'POLICY_SIMULTANEUM';
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,												SubjectRequirementSetId)
+values
+	('ENCAMPMENT_HORSES',				'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_HAS_ENCAMPMENT'),
+	('ENCAMPMENT_IRON',					'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'CITY_HAS_ENCAMPMENT'),
+	('ENCAMPMENT_HORSES_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_FREE_RESOURCE_EXTRACTION',		NULL),
+	('ENCAMPMENT_IRON_MODIFIER',		'MODIFIER_SINGLE_CITY_ADJUST_FREE_RESOURCE_EXTRACTION',		NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,						Name,					Value)
+values
+	('ENCAMPMENT_HORSES',				'ModifierId',			'ENCAMPMENT_HORSES_MODIFIER'),
+	('ENCAMPMENT_IRON',					'ModifierId',			'ENCAMPMENT_IRON_MODIFIER'),
+	('ENCAMPMENT_HORSES_MODIFIER',		'ResourceType',			'RESOURCE_HORSES'),
+	('ENCAMPMENT_HORSES_MODIFIER',		'Amount',				1),
+	('ENCAMPMENT_IRON_MODIFIER',		'ResourceType',			'RESOURCE_IRON'),
+	('ENCAMPMENT_IRON_MODIFIER',		'Amount',				1);
+
+--战略卡改动
+create temporary table HD_STRATEGIC_CARD(
+	BuildingType text not null,
+	ModifierType text not null default MODIFIER_SINGLE_CITY_ADJUST_FREE_RESOURCE_EXTRACTION,
+	ResourceType text not null,
+	ModifierId text,
+	primary key (BuildingType, ModifierType, ResourceType)
+);
+insert or replace into HD_STRATEGIC_CARD
+	(BuildingType,	ResourceType,		ModifierId)
+select
+	BuildingType,	'RESOURCE_HORSES',	BuildingType || '_HORSES'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and ReplacesOther = 0 union all
+select
+	BuildingType,	'RESOURCE_IRON',	BuildingType || '_IRON'
+from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and ReplacesOther = 0;
+
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+select
+	'POLICY_BREEDING',					ModifierId
+from HD_STRATEGIC_CARD where ResourceType = 'RESOURCE_HORSES' union all
+select
+	'POLICY_FORGING',					ModifierId
+from HD_STRATEGIC_CARD where ResourceType = 'RESOURCE_IRON' union all
+select
+	'POLICY_DRILL_MANUALS',				ModifierId
+from HD_STRATEGIC_CARD;
+
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,									SubjectRequirementSetId)
+select
+	ModifierId,							'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',		'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
+from HD_STRATEGIC_CARD union all
+select
+	ModifierId || '_MODIFIER',			ModifierType,									NULL
+from HD_STRATEGIC_CARD;
+
+insert or replace into ModifierArguments
+	(ModifierId,						Name,				Value)
+select
+	ModifierId,							'ModifierId',		ModifierId || '_MODIFIER'
+from HD_STRATEGIC_CARD union all
+select
+	ModifierId || '_MODIFIER',			'ResourceType',		ResourceType
+from HD_STRATEGIC_CARD union all
+select
+	ModifierId || '_MODIFIER',			'Amount',			2
+from HD_STRATEGIC_CARD;
+
 
 -- 陈又
 -- POLICY_RATIONALISM
