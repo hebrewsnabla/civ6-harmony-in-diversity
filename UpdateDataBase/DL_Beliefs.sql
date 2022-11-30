@@ -2564,7 +2564,7 @@ insert or ignore into RequirementArguments
 values
 	('REQUIRES_PLOT_HAS_FISHING_BOATS',       		'ImprovementType',		'IMPROVEMENT_FISHING_BOATS');
 
---Pantheon 御岳（Utaki）：海岸和湖泊单元格可为港口提供少量相邻加成。相邻市中心的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
+--Pantheon 御岳（Utaki）：海岸和湖泊单元格可为港口提供标准相邻加成。相邻市中心的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
 insert or replace into Types
 	(Type,								Kind)
 values
@@ -2599,7 +2599,7 @@ values
 	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'TerrainType',		'TERRAIN_COAST'),
 	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'YieldType',		'YIELD_GOLD'),
 	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'Amount',			1),
-	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'TilesRequired',	2),
+	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'TilesRequired',	1),
 	('BELIEF_HD_UTAKI_HARBOR_ADJACENCY',							'Description',		'LOC_DISTRICT_UTAKI_GOLD'),
 	('BELIEF_HD_UTAKI_HARBOR_FOOD_ADJACENCY_ATTACH',				'ModifierId',		'BELIEF_HD_UTAKI_HARBOR_FOOD_ADJACENCY'),
 	('BELIEF_HD_UTAKI_HARBOR_PRODUCTION_ADJACENCY_ATTACH',			'ModifierId',		'BELIEF_HD_UTAKI_HARBOR_PRODUCTION_ADJACENCY'),

@@ -228,4 +228,4 @@ version1.3.4
 [育种]：效果重做为军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马。
 [锻造]：军营区域每回合产出1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_IRON] 铁。
 [骑士阶级]：军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马和1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马和 2 [ICON_RESOURCE_IRON] 铁。
-[御岳]：海岸和湖泊单元格可为港口提供少量相邻加成。相邻港口的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
+[御岳]：海岸和湖泊单元格可为港口提供标准相邻加成。相邻港口的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
