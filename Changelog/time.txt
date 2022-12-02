@@ -229,3 +229,13 @@ version1.3.4
 [锻造]：军营区域每回合产出1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_IRON] 铁。
 [骑士阶级]：军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马和1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马和 2 [ICON_RESOURCE_IRON] 铁。
 [御岳]：海岸和湖泊单元格可为港口提供标准相邻加成。相邻港口的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
+[太阳神]：删除。
+[节庆女神]：种植园+1 [ICON_Science] 科技值和+1 [ICON_FAITH] 信仰值。圣地区域从每个相邻的种植园获得+1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[宗教偶像]：改良资源的矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有改良资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[黄金国传说]：改良资源的矿山+1 [ICON_FOOD] 食物，+1 [ICON_HOUSING] 住房。所有矿山+2 [ICON_GOLD] 金币。
+[工匠之神]：改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。忽略科技要求显示  [ICON_RESOURCE_HORSES] 马资源和 [ICON_RESOURCE_IRON] 铁资源。正确改良的战略资源每回合积累+1。
+[梦创时代]：采石场+1 [ICON_PRODUCTION] 生产力，+3 [ICON_GOLD] 金币。
+[石圈]：采石场+1 [ICON_Faith] 信仰值和+1 [ICON_CULTURE] 文化值。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[主神纪念碑]：选择后即可在首都中获得一个免费的纪念碑。拥有纪念碑的城市增加10% [ICON_CULTURE] 文化值。可以使用 [ICON_FAITH] 信仰值购买纪念碑。
+[锻造之神]：为远古、古典和中世纪军事单位+50% [ICON_PRODUCTION] 生产力。生产单位所需战略资源花费减少40%。
+[尚武精神]：删除。

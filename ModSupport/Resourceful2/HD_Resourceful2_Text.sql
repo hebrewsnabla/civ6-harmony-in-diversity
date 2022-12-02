@@ -56,7 +56,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PAN_DL_DESCRIPTION",                             "所有改良资源的伐木场+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有改良资源的伐木场，则每回合+2 [ICON_GREATPROPHET] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_LUMBER_MILL_FAITH",                            "+{1_num} [ICON_Faith] 信仰值来自相邻森林{1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_NAME",                        "森灵之心"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "采集奢侈品资源和加成资源的伐木场+1 [ICON_Food] 食物和 +1 [ICON_Science] 科技值。");
+    ("zh_Hans_CN",  "LOC_BELIEF_HEART_OF_THE_WOODS_DL_DESCRIPTION",              "改良奢侈品资源和加成资源的伐木场+1 [ICON_Food] 食物和 +1 [ICON_Science] 科技值。");
 
 --------------------------------------------------------------------------------
 update LocalizedText set Text = Text || " +1 [ICON_Production] Production to Lumber Mills over bonus resources in this city." where Language = 'en_US' and
