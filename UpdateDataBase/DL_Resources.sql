@@ -122,8 +122,6 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_NITER';
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';
 
--- update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
-
 -- 泛滥螃蟹
 update Resources set Frequency = 4 where ResourceType = 'RESOURCE_CRABS';
 

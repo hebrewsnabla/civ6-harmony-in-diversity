@@ -6,8 +6,6 @@
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
-	-- ('TRAIT_LEADER_MAJOR_CIV',				'MACHIAVELLIANISM_OFFENSIVESPYTIME'),
-	-- ('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_FREE_ANCIENT_WALL_IN_CAPITAL'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_SUZERAIN_FAVOR_UNTIL_COLONIALISM'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_FOREST'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_JUNGLE'),
@@ -21,14 +19,6 @@ values
 -- 剧院享受魅力加成
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_CHARMING_THEATER_DISTRICT'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_BREATHTAKING_THEATER_DISTRICT');
--- 贸易站鼓舞/尤里卡
-	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_CIVIC_BOOST'),
-	--('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_TRADING_POST_TECH_BOOST');
-
--- insert or replace into Modifiers
--- 	(ModifierId,								ModifierType,							RunOnce,	Permanent)
--- values
--- 	('TRAIT_FREE_ANCIENT_WALL_IN_CAPITAL',		'MODIFIER_GRANT_BUILDING_IN_CAPITAL',	0,			0);
 
 -- Use insert or ignore to support the missing DLC case.
 insert or ignore into Modifiers
@@ -66,7 +56,6 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value)
 values
-	-- ('TRAIT_FREE_ANCIENT_WALL_IN_CAPITAL',		'BuildingType',	'BUILDING_WALLS'),
 	('TRAIT_SUZERAIN_FAVOR_UNTIL_COLONIALISM',	'Amount',		-100),
 	('TRAIT_PRESERVE_VALID_FOREST',				'DistrictType',	'DISTRICT_PRESERVE'),
 	('TRAIT_PRESERVE_VALID_FOREST',				'FeatureType',	'FEATURE_FOREST'),
@@ -133,43 +122,12 @@ values
 	(39,	'-2',					'-2'),
 	(40,	'-2',					'-2');
 
---insert or replace into TraitModifiers (TraitType, ModifierId)
---	select 'TRAIT_LEADER_MAJOR_CIV', 'AT_LEAST_IMMORTAL_HUMAN_' || Pop || '_POPULATION_MAINTENANCE'
---from PopulationMaintenance where Pop < 31;
---insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---	select 'AT_LEAST_IMMORTAL_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'MODIFIER_PLAYER_CITIES_ADJUST_PLAYER_YIELD_CHANGE',
---			'PLAYER_IS_AT_LEAST_IMMORTAL_DIFFICULTY_HUMAN', 'CITY_HAS_' || Pop || '_POPULATION'
---from PopulationMaintenance where Pop < 31;
---insert or replace into ModifierArguments (ModifierId, Name, Value)
---	select 'AT_LEAST_IMMORTAL_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'YieldType', 'YIELD_GOLD'
---from PopulationMaintenance where Pop < 31;
---insert or replace into ModifierArguments (ModifierId, Name, Value)
---	select 'AT_LEAST_IMMORTAL_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'Amount', ImmortalMaintenance
---from PopulationMaintenance where Pop < 31;
-
---insert or replace into TraitModifiers (TraitType, ModifierId)
---	select 'TRAIT_LEADER_MAJOR_CIV', 'AT_LEAST_DEITY_HUMAN_' || Pop || '_POPULATION_MAINTENANCE'
---from PopulationMaintenance where Pop < 31;
---insert or replace into Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId)
---	select 'AT_LEAST_DEITY_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'MODIFIER_PLAYER_CITIES_ADJUST_PLAYER_YIELD_CHANGE',
---			'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN', 'CITY_HAS_' || Pop || '_POPULATION'
---from PopulationMaintenance where Pop < 31;
---insert or replace into ModifierArguments (ModifierId, Name, Value)
---	select 'AT_LEAST_DEITY_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'YieldType', 'YIELD_GOLD'
---from PopulationMaintenance where Pop < 31;
---insert or replace into ModifierArguments (ModifierId, Name, Value)
---	select 'AT_LEAST_DEITY_HUMAN_' || Pop || '_POPULATION_MAINTENANCE', 'Amount', DeityMaintenance
---from PopulationMaintenance where Pop < 31;
 
 insert or replace into TraitModifiers (TraitType,	ModifierId) values
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_IMMORTAL_HUMAN_STARTING_GOLD'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_IMMORTAL_HUMAN_CITY_MAINTENANCE'),
-	--('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_IMMORTAL_HUMAN_31_POP_REVERSE_MAINTENANCE'),
-	--('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_IMMORTAL_HUMAN_31_POP_PER_POP_MAINTENANCE'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_HUMAN_STARTING_GOLD'),
 	('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_HUMAN_CITY_MAINTENANCE');
-	--('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_HUMAN_31_POP_REVERSE_MAINTENANCE'),
-	--('TRAIT_LEADER_MAJOR_CIV',						'AT_LEAST_DEITY_HUMAN_31_POP_PER_POP_MAINTENANCE');
 
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,												
@@ -179,18 +137,10 @@ values
 	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',		NULL),
 	('AT_LEAST_IMMORTAL_HUMAN_CITY_MAINTENANCE',					'MODIFIER_PLAYER_CITIES_ADJUST_PLAYER_YIELD_CHANGE',
 	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN',					NULL),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_REVERSE_MAINTENANCE',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',
-	--'PLAYER_IS_AT_LEAST_IMMORTAL_DIFFICULTY_HUMAN',					'CITY_HAS_31_POPULATION'),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_PER_POP_MAINTENANCE',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',
-	--'PLAYER_IS_AT_LEAST_IMMORTAL_DIFFICULTY_HUMAN',					'CITY_HAS_31_POPULATION'),
 	('AT_LEAST_DEITY_HUMAN_STARTING_GOLD',							'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE',
 	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN_AND_HAS_CITY',		NULL),
 	('AT_LEAST_DEITY_HUMAN_CITY_MAINTENANCE',						'MODIFIER_PLAYER_CITIES_ADJUST_PLAYER_YIELD_CHANGE',
 	'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN',					NULL);
-	--('AT_LEAST_DEITY_HUMAN_31_POP_REVERSE_MAINTENANCE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',
-	--'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN',					'CITY_HAS_31_POPULATION'),
-	--('AT_LEAST_DEITY_HUMAN_31_POP_PER_POP_MAINTENANCE',				'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',
-	--'PLAYER_IS_AT_LEAST_DEITY_DIFFICULTY_HUMAN',					'CITY_HAS_31_POPULATION');
 
 insert or replace into ModifierArguments
 	(ModifierId,											Name,			Value)
@@ -199,15 +149,7 @@ values
 	('AT_LEAST_IMMORTAL_HUMAN_STARTING_GOLD',				'Amount',		1),
 	('AT_LEAST_IMMORTAL_HUMAN_CITY_MAINTENANCE',			'YieldType',	'YIELD_GOLD'),
 	('AT_LEAST_IMMORTAL_HUMAN_CITY_MAINTENANCE',			'Amount',		-1),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_REVERSE_MAINTENANCE',	'YieldType',	'YIELD_GOLD'),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_REVERSE_MAINTENANCE',	'Amount',		60),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_PER_POP_MAINTENANCE',	'YieldType',	'YIELD_GOLD'),
-	--('AT_LEAST_IMMORTAL_HUMAN_31_POP_PER_POP_MAINTENANCE',	'Amount',		-2),
 	('AT_LEAST_DEITY_HUMAN_STARTING_GOLD',					'YieldType',	'YIELD_GOLD'),
 	('AT_LEAST_DEITY_HUMAN_STARTING_GOLD',					'Amount',		1),
 	('AT_LEAST_DEITY_HUMAN_CITY_MAINTENANCE',				'YieldType',	'YIELD_GOLD'),
 	('AT_LEAST_DEITY_HUMAN_CITY_MAINTENANCE',				'Amount',		-1);
-	--('AT_LEAST_DEITY_HUMAN_31_POP_REVERSE_MAINTENANCE',		'YieldType',	'YIELD_GOLD'),
-	--('AT_LEAST_DEITY_HUMAN_31_POP_REVERSE_MAINTENANCE',		'Amount',		60),
-	--('AT_LEAST_DEITY_HUMAN_31_POP_PER_POP_MAINTENANCE',		'YieldType',	'YIELD_GOLD'),
-	--('AT_LEAST_DEITY_HUMAN_31_POP_PER_POP_MAINTENANCE',		'Amount',		-2);

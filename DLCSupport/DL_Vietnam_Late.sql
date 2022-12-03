@@ -54,8 +54,8 @@ delete from Adjacent_AppealYieldChanges where DistrictType = 'DISTRICT_PRESERVE'
 insert or replace into DistrictModifiers
     (DistrictType,          ModifierId)
 values
-    ('DISTRICT_PRESERVE',   'HD_PRESERVE_ADD_FOOD_1'),
-    ('DISTRICT_PRESERVE',   'HD_PRESERVE_ADD_FOOD_2'),
+--    ('DISTRICT_PRESERVE',   'HD_PRESERVE_ADD_FOOD_1'),
+--    ('DISTRICT_PRESERVE',   'HD_PRESERVE_ADD_FOOD_2'),
     ('DISTRICT_PRESERVE',   'HD_PRESERVE_FEATURE_FLOODPLAINS_APPEAL'),
     ('DISTRICT_PRESERVE',   'HD_PRESERVE_FEATURE_JUNGLE_APPEAL'),
     ('DISTRICT_PRESERVE',   'HD_PRESERVE_FEATURE_MARSH_APPEAL'),
@@ -72,15 +72,15 @@ insert or replace into BuildingModifiers
     (BuildingType,                              ModifierId)
 values
     ('BUILDING_GROVE',                          'HD_GROVE_PLOT_BONUS_1'),
-    ('BUILDING_GROVE',                          'HD_GROVE_PLOT_BONUS_2'),
-    ('BUILDING_GROVE',                          'HD_GROVE_PLOT_BONUS_3'),
+--    ('BUILDING_GROVE',                          'HD_GROVE_PLOT_BONUS_2'),
+--    ('BUILDING_GROVE',                          'HD_GROVE_PLOT_BONUS_3'),
     ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_CHARMING_BONUS_1'),
-    ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_CHARMING_BONUS_2'),
+--    ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_CHARMING_BONUS_2'),
     ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1'),
-    ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2'),
+--    ('BUILDING_HD_MONASTERY',                   'HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2'),
     ('BUILDING_HD_HOLYWATERS',                  'HD_HOLYWATERS_PLOT_BONUS_1'),
-    ('BUILDING_HD_HOLYWATERS',                  'HD_HOLYWATERS_PLOT_BONUS_2'),
-    ('BUILDING_HD_HOLYWATERS',                  'HD_HOLYWATERS_PLOT_BONUS_3'),
+--    ('BUILDING_HD_HOLYWATERS',                  'HD_HOLYWATERS_PLOT_BONUS_2'),
+--    ('BUILDING_HD_HOLYWATERS',                  'HD_HOLYWATERS_PLOT_BONUS_3'),
 
     ('BUILDING_SANCTUARY',                      'HD_SANCTUARY_PLOT_FOREST_BONUS'),
     ('BUILDING_SANCTUARY',                      'HD_SANCTUARY_PLOT_CHARMING_BONUS'),
@@ -126,8 +126,8 @@ values
 insert or replace into Modifiers
 	(ModifierId,													ModifierType,										SubjectRequirementSetId,                            OwnerRequirementSetId)
 values
-    ('HD_PRESERVE_ADD_FOOD_1',                                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_RESOURCE_OR_FEATURE',         NULL),
-    ('HD_PRESERVE_ADD_FOOD_2',                                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_RESOURCE_OR_FEATURE',         'HD_ADJACENT_TO_NATURAL_WONDER'),
+--    ('HD_PRESERVE_ADD_FOOD_1',                                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_RESOURCE_OR_FEATURE',         NULL),
+--    ('HD_PRESERVE_ADD_FOOD_2',                                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_RESOURCE_OR_FEATURE',         'HD_ADJACENT_TO_NATURAL_WONDER'),
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_APPEAL',                      'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',     NULL,                                               NULL),
     ('HD_PRESERVE_FEATURE_JUNGLE_APPEAL',                           'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',     NULL,                                               NULL),
     ('HD_PRESERVE_FEATURE_MARSH_APPEAL',                            'MODIFIER_CITY_ADJUST_FEATURE_APPEAL_MODIFIER',     NULL,                                               NULL),
@@ -141,17 +141,17 @@ values
     ('HD_PRESERVE_GRANT_DUMMY_HERITAGE',                            'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE','HD_CITY_HAS_PRESERVE_TIER1',                      'HD_ADJACENT_UI_OR_WONDER'),
 
     ('HD_GROVE_PLOT_BONUS_1',                                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_GROVE_FEATURE',               NULL),
-    ('HD_GROVE_PLOT_BONUS_2',                                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_GROVE_FEATURE_RESOURCE',      NULL),
-    ('HD_GROVE_PLOT_BONUS_3',                                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_GROVE_NATURAL_WONDER',        NULL),
+--    ('HD_GROVE_PLOT_BONUS_2',                                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_GROVE_FEATURE_RESOURCE',      NULL),
+--    ('HD_GROVE_PLOT_BONUS_3',                                       'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_HAS_GROVE_NATURAL_WONDER',        NULL),
     
     ('HD_MONASTERY_PLOT_CHARMING_BONUS_1',                          'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_CHARMING',                        NULL),
-    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_CHARMING',                        'HD_PLOT_ADJACENT_TO_MOUNTAIN_NATURAL_WONDERS'),
+--    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_CHARMING',                        'HD_PLOT_ADJACENT_TO_MOUNTAIN_NATURAL_WONDERS'),
     ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1',                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_BREATHTAKING',                    NULL),
-    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_BREATHTAKING',                    'HD_PLOT_ADJACENT_TO_MOUNTAIN_NATURAL_WONDERS'),
+--    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_BREATHTAKING',                    'HD_PLOT_ADJACENT_TO_MOUNTAIN_NATURAL_WONDERS'),
     
     ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_WATER',                           NULL),
-    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_WATER_FEATURE_RESOURCE',          NULL),
-    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_SEA_NATURAL_WONDER_ONLAND',       NULL),
+--    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_WATER_FEATURE_RESOURCE',          NULL),
+--    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',                'HD_ADJACENT_PLOT_SEA_NATURAL_WONDER_ONLAND',       NULL),
 
     ('HD_SANCTUARY_PLOT_FOREST_BONUS',                              'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'HD_PLOT_HAS_FOREST_REQUIREMENTS',                  NULL),
     ('HD_SANCTUARY_PLOT_CHARMING_BONUS',                            'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',      'HD_PLOT_HAS_CHARMING_FOREST_RESOURCE',             NULL),
@@ -192,10 +192,10 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,										            Name,			Value)
 values
-    ('HD_PRESERVE_ADD_FOOD_1',                                      'YieldType',    'YIELD_FOOD'),
-    ('HD_PRESERVE_ADD_FOOD_1',                                      'Amount',       1),
-    ('HD_PRESERVE_ADD_FOOD_2',                                      'YieldType',    'YIELD_FOOD'),
-    ('HD_PRESERVE_ADD_FOOD_2',                                      'Amount',       1),
+--    ('HD_PRESERVE_ADD_FOOD_1',                                      'YieldType',    'YIELD_FOOD'),
+--    ('HD_PRESERVE_ADD_FOOD_1',                                      'Amount',       1),
+--    ('HD_PRESERVE_ADD_FOOD_2',                                      'YieldType',    'YIELD_FOOD'),
+--    ('HD_PRESERVE_ADD_FOOD_2',                                      'Amount',       1),
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_APPEAL',                      'FeatureType',  'FEATURE_FLOODPLAINS'),
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_APPEAL',                      'Amount',       1),
     ('HD_PRESERVE_FEATURE_JUNGLE_APPEAL',                           'FeatureType',  'FEATURE_JUNGLE'),
@@ -207,28 +207,28 @@ values
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_PLAINS_APPEAL',               'FeatureType',  'FEATURE_FLOODPLAINS_PLAINS'),
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_PLAINS_APPEAL',               'Amount',       1),
     
-    ('HD_GROVE_PLOT_BONUS_1',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
+    ('HD_GROVE_PLOT_BONUS_1',                                       'YieldType',    'YIELD_FOOD,YIELD_GOOD'),
     ('HD_GROVE_PLOT_BONUS_1',                                       'Amount',       '1,1'),
-    ('HD_GROVE_PLOT_BONUS_2',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
-    ('HD_GROVE_PLOT_BONUS_2',                                       'Amount',       '1,1'),
-    ('HD_GROVE_PLOT_BONUS_3',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
-    ('HD_GROVE_PLOT_BONUS_3',                                       'Amount',       '2,2'),
+--    ('HD_GROVE_PLOT_BONUS_2',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
+--    ('HD_GROVE_PLOT_BONUS_2',                                       'Amount',       '1,1'),
+--    ('HD_GROVE_PLOT_BONUS_3',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
+--    ('HD_GROVE_PLOT_BONUS_3',                                       'Amount',       '2,2'),
     
-    ('HD_MONASTERY_PLOT_CHARMING_BONUS_1',                          'YieldType',    'YIELD_FAITH'),
+    ('HD_MONASTERY_PLOT_CHARMING_BONUS_1',                          'YieldType',    'YIELD_CULTURE'),
     ('HD_MONASTERY_PLOT_CHARMING_BONUS_1',                          'Amount',       '1'),
-    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'YieldType',    'YIELD_FAITH'),
-    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'Amount',       '1'),
-    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1',                      'YieldType',    'YIELD_FOOD,YIELD_SCIENCE'),
-    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1',                      'Amount',       '1,1'),
-    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'YieldType',    'YIELD_FOOD,YIELD_SCIENCE'),
-    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'Amount',       '1,1'),
+--    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'YieldType',    'YIELD_FAITH'),
+--    ('HD_MONASTERY_PLOT_CHARMING_BONUS_2',                          'Amount',       '1'),
+    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1',                      'YieldType',    'YIELD_SCIENCE'),
+    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_1',                      'Amount',       '1'),
+--    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'YieldType',    'YIELD_FOOD,YIELD_SCIENCE'),
+--    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'Amount',       '1,1'),
     
-    ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_FAITH'),
+    ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_GOOD'),
     ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'Amount',       '1,1'),
-    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_SCIENCE'),
-    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'Amount',       '1,1'),
-    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_SCIENCE,YIELD_FAITH'),
-    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'Amount',       '2,1,1'),
+--    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_SCIENCE'),
+--    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'Amount',       '1,1'),
+--    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_SCIENCE,YIELD_FAITH'),
+--    ('HD_HOLYWATERS_PLOT_BONUS_3',                                  'Amount',       '2,1,1'),
 
     ('HD_SANCTUARY_PLOT_FOREST_BONUS',                              'YieldType',    'YIELD_FOOD'),
     ('HD_SANCTUARY_PLOT_FOREST_BONUS',                              'Amount',       1),

@@ -62,7 +62,7 @@ values
     ("LOC_BELIEF_HD_WOLF_GOD_NAME",                               "Lupercal"),
     ("LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "Camps over Luxury and Bonus resources provide +1 [ICON_CULTURE] Culture. Camps in cities with Holy Site districts provide +1 [ICON_Faith] Faith. Cities having Camps over Luxury or Bonus resources provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_BELIEF_HD_SUN_GOD_NAME",                                "Apollo"),
-    ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Farms over resources provide +1 [ICON_SCIENCE] Science. Farms in cities with Holy Site districts provide +1 [ICON_FAITH] Faith. Cities having Farm over resource provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
+    ("LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "Farms over resources and Plantations provide +1 [ICON_FOOD] Food. Farms in cities with Holy Site districts provide +1 [ICON_FAITH] Faith. Cities having Farm over resource provide +2 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_BELIEF_SPARTA_SPIRIT_NAME",                             "Militarism"),
     ("LOC_BELIEF_SPARTA_SPIRIT_DESCRIPTION",                      "+50% [ICON_PRODUCTION] Production toward Ancient, Classical and Medieval military units. Receive 40% discount on Strategic resource costs for units."),
     ("LOC_BELIEF_TALE_OF_DWALVES_NAME",                           "El Dorado"),
@@ -111,7 +111,11 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PATH_DL_DESCRIPTION",                     "圣地从雨林获得标准相邻加成。未被劫掠过的圣地给相邻的雨林单元格+1 [ICON_Culture] 文化。若圣地相邻雨林则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_VOODOO_NAME",                                    "伏都教"),
     ("zh_Hans_CN",  "LOC_BELIEF_VOODOO_DL_DESCRIPTION",                          "市中心相邻每个雨林单元格+1 [ICON_Production] 生产力。每2个雨林单元格+1 [ICON_Culture] 文化值。"),
+<<<<<<< HEAD
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "种植园+1 [ICON_Science] 科技值和+1 [ICON_FAITH] 信仰值。圣地区域从每个相邻的种植园获得+1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+=======
+    ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_FESTIVALS_DL_DESCRIPTION",            "种植园+1 [ICON_SCIENCE] 科技值。圣地区域从每个相邻的种植园获得+1 [ICON_Faith] 信仰值，给本城的种植园 +1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+>>>>>>> fox
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_NAME",                                    "长生天"),
     ("zh_Hans_CN",  "LOC_BELIEF_TENGRI_DL_DESCRIPTION",                          "牧场+1 [ICON_Production] 生产力。圣地区域从每个相邻的牧场获得+1 [ICON_Faith] 信仰值，给本城的牧场 +1 [ICON_Faith] 信仰值。如城市中有牧场，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_GODDESS_OF_THE_HARVEST_DL_DESCRIPTION",          "改良资源的农场+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。"),
@@ -139,7 +143,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_NAME",                               "牧狼神"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_WOLF_GOD_DL_DESCRIPTION",                     "改良奢侈品资源和加成资源的营地+1 [ICON_Culture] 文化值。圣地区域给所在城市的营地+1 [ICON_Faith] 信仰值。如城市拥有改良奢侈或加成资源的营地，则每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_NAME",                                "太阳神"),
-    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "改良资源的农场+1 [ICON_SCIENCE] 科技值。圣地给所在城市的农场+1 [ICON_FAITH] 信仰值。拥有改良资源的农场的城市每回合+2 [ICON_GreatProphet] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_HD_SUN_GOD_DL_DESCRIPTION",                      "改良资源的农场和种植园+1 [ICON_FOOD] 食物。圣地给所在城市的农场+1 [ICON_FAITH] 信仰值。拥有改良资源的农场的城市每回合+2 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_BELIEF_SPARTA_SPIRIT_NAME",                             "尚武精神"),
     ("zh_Hans_CN",  "LOC_BELIEF_SPARTA_SPIRIT_DESCRIPTION",                      "为远古、古典和中世纪军事单位+50% [ICON_PRODUCTION] 生产力。生产单位所需战略资源花费减少40%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TALE_OF_DWALVES_NAME",                           "黄金国传说"),

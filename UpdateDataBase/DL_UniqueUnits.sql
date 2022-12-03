@@ -109,7 +109,6 @@ update Units set Cost = 260, Maintenance = 5, BaseMoves = 4, Range = 0, Combat =
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_POLISH_HUSSAR';
 ------ UNIT_POLISH_CHOSEN_INFANTRY
 -- 阿兹特克
--- delete from TypeTags where Type = 'UNIT_AZTEC_EAGLE_WARRIOR' and Tag = 'CLASS_CAPTURE_WORKER';
 update Units set Cost = 45, Maintenance = 0, BaseMoves = 2, Range = 0, Combat = 28, RangedCombat = 0 where UnitType = 'UNIT_AZTEC_EAGLE_WARRIOR';
 ------ UNIT_AZTEC_JAGUAR
 delete from UnitReplaces where CivUniqueUnitType = 'UNIT_AZTEC_EAGLE_WARRIOR'
@@ -151,8 +150,6 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_IRON'
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 4, Range = 0, Combat = 40, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSES', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_MACEDONIAN_HETAIROI';
 delete from UnitReplaces where CivUniqueUnitType = 'UNIT_MACEDONIAN_HETAIROI';
--- insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MACEDONIAN_HETAIROI', 'UNIT_ARMORED_HORSEMAN'
---     where exists (select UnitType from Units where UnitType = 'UNIT_ARMORED_HORSEMAN');
 ------ UNIT_MACEDONIAN_PEZHETAIROS
 -- 波斯
 update Units set Cost = 70, Maintenance = 2, BaseMoves = 2, Range = 2, Combat = 35, RangedCombat = 28, StrategicResource = 'RESOURCE_IRON' where UnitType = 'UNIT_PERSIAN_IMMORTAL';
@@ -182,7 +179,6 @@ insert or replace into TypeTags (Type, Tag) values ('UNIT_MONGOLIAN_KESHIG', 'CL
 update Units set Cost = 140, Maintenance = 4, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0 where UnitType = 'UNIT_MAPUCHE_MALON_RAIDER';
 insert or replace into UnitReplaces (CivUniqueUnitType, ReplacesUnitType) select 'UNIT_MAPUCHE_MALON_RAIDER', 'UNIT_STRADIOT'
     where exists (select UnitType from Units where UnitType = 'UNIT_STRADIOT');
--- update ModifierStrings set 'Text' = 'LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT' where ModifierId = 'MALON_RAIDER_TERRITORY_COMBAT_BONUS'
 insert or replace into ModifierStrings (ModifierId,     Context,    Text)
 values ('MALON_RAIDER_TERRITORY_COMBAT_BONUS',          'Preview',  '+{1_Amount} {LOC_MALON_RAIDER_TERRITORY_COMBAT_BONUS_PREVIEW_TEXT}');
 ------ UNIT_MAPUCHE_GUERILLA
@@ -225,7 +221,6 @@ update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_HORSE
 update Units set Cost = 100, Maintenance = 3, BaseMoves = 3, Range = 1, Combat = 41, RangedCombat = 40, StrategicResource = NULL where UnitType = 'UNIT_INCA_WARAKAQ';
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_INCA_WARAKAQ';
 -- maybe not add melee to encourage the ranged attack.
--- insert or ignore into UnitAIInfos (UnitType, AiType) values ('UNIT_INCA_WARAKAQ', 'UNITTYPE_MELEE');
 ------ UNIT_INCA_CHASQUI
 -- 马里
 update Units set Cost = 130, Maintenance = 3, BaseMoves = 4, Range = 0, Combat = 56, RangedCombat = 0, StrategicResource = 'RESOURCE_HORSES' where UnitType = 'UNIT_MALI_MANDEKALU_CAVALRY';
@@ -245,11 +240,8 @@ update Units set Cost = 55, Maintenance = 1, BaseMoves = 4, Range = 0, Combat = 
 update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_PHOENICIA_BIREME';
 ------ UNIT_PHOENICIA_NUMIDIAN_CAVALRY
 -- 瑞典
--- update Units set Cost = 140, Maintenance = 4, BaseMoves = 3, Range = 0, Combat = 52, RangedCombat = 0, StrategicResource = NULL where UnitType = 'UNIT_SWEDEN_CAROLEAN';
--- update Units_XP2 set ResourceCost = 0, ResourceMaintenanceType = NULL, ResourceMaintenanceAmount = 0 where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set PrereqTech = 'TECH_MILITARY_SCIENCE', PromotionClass = 'PROMOTION_CLASS_MELEE' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 update Units set Cost = 210, Maintenance = 5, BaseMoves = 3, Range = 0, Combat = 65, RangedCombat = 0, StrategicResource = 'RESOURCE_NITER' where UnitType = 'UNIT_SWEDEN_CAROLEAN';
--- update Units_XP2 set ResourceCost = 5, ResourceMaintenanceType = 'RESOURCE_NITER', ResourceMaintenanceAmount = 1 where UnitType = 'UNIT_SWEDEN_CAROLEAN';
 insert or replace into Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) values
     ('UNIT_SWEDEN_CAROLEAN', 5, 'RESOURCE_NITER', 1);
 update TypeTags set Tag = 'CLASS_MELEE' where Type = 'UNIT_SWEDEN_CAROLEAN' and Tag = 'CLASS_ANTI_CAVALRY';
