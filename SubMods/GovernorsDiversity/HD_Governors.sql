@@ -244,11 +244,11 @@ values
 	('GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',	'REYNA_UNIT_EXTRA_DISCOUNT'),
 -- 地产商人
 	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_POPULATION_GOLD'),
-	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_TRADEROUTE'),
+--	('GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION',	'REYNA_TRADEROUTE'),
 -- 港务局长
 	('GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER',		'REYNA_EXTRA_DISTRICT'),
 -- 市舶榷务
-	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',		'REYNA_CHEAPER_BUILDING_PURCHASE');
+	('GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR',		'REYNA_TRADEROUTE');
 
 
 insert or replace into Modifiers
@@ -275,8 +275,8 @@ values
 	('REYNA_UNIT_EXTRA_DISCOUNT',						'Amount',											20),
 -- 地产商人
 	('REYNA_POPULATION_GOLD',							'YieldType',										'YIELD_GOLD'),
-	('REYNA_POPULATION_GOLD',							'Amount',											1),
-	('REYNA_TRADEROUTE',								'Amount',											1),
+	('REYNA_POPULATION_GOLD',							'Amount',											3),
+	('REYNA_TRADEROUTE',								'Amount',											3),
 -- 港务局长
 	('REYNA_EXTRA_DISTRICT',							'Amount',											1),
 -- 市舶榷务
@@ -331,39 +331,27 @@ create temporary table HD_REYNA(
 	ModifierType text not null,
 	GovernorPromotionType text not null,
 	ModifierId text,
-	AttachModifierId text,
 	primary key (BuildingType, ModifierType)
 );
 insert or replace into HD_REYNA
 	(BuildingType,	ModifierType,															GovernorPromotionType)
 select
-	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',					'GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR'
-from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT' union all
+	BuildingType,	'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',						'GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR'
+from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or (PrereqDistrict = 'DISTRICT_HARBOR' and TraitType is NULL) union all
 select
-	BuildingType,	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',	'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
-from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or BuildingType = 'BUILDING_JNR_LIGHTHOUSE_TRADE' or BuildingType = 'BUILDING_JNR_FREEPORT';
+	BuildingType,	'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',		'GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP'
+from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' and TraitType is NULL) or (PrereqDistrict = 'DISTRICT_HARBOR' and TraitType is NULL);
 update HD_REYNA set ModifierId = 'REYNA_' || BuildingType || '_' || ModifierType;
-update HD_REYNA set AttachModifierId = ModifierId || '_ATTACH';
 
 insert or replace into GovernorPromotionModifiers
 	(GovernorPromotionType,		ModifierId)
 select
-	GovernorPromotionType,		AttachModifierId
-from HD_REYNA;
-insert or replace into Modifiers
-	(ModifierId,			ModifierType,								SubjectRequirementSetId)
-select
-	AttachModifierId,		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
-from HD_REYNA;
-insert or replace into ModifierArguments
-	(ModifierId,			Name,					Value)
-select
-	AttachModifierId,		'ModifierId',			ModifierId
+	GovernorPromotionType,		ModifierId
 from HD_REYNA;
 insert or replace into Modifiers
 	(ModifierId,			ModifierType,			SubjectRequirementSetId)
 select
-	ModifierId,				ModifierType,			'CITY_HAS_REYNA_4'
+	ModifierId,				ModifierType,			'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
 from HD_REYNA;
 insert or replace into ModifierArguments
 	(ModifierId,			Name,					Value)
@@ -371,14 +359,11 @@ select
 	ModifierId,				'YieldType',			'YIELD_GOLD'
 from HD_REYNA union all
 select
-	ModifierId,				'Amount',				2
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER' union all
+	ModifierId,				'Amount',				8
+from HD_REYNA where ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER' union all
 select
-	ModifierId,				'Amount',				1
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL' union all
-select
-	ModifierId,				'Domestic',				0
-from HD_REYNA where ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL';
+	ModifierId,				'Amount',				6
+from HD_REYNA where ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL';
 
 -- 公司模式 跨国公司
 update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP'

@@ -208,9 +208,10 @@ version1.3.4
 [埃菲尔铁塔]：新增全境内+25% [ICON_TOURISM] 旅游业绩。
 [布拉格]：移除解锁“学徒”科技后额外+1 [ICON_PRODUCTION] 生产力。
 [瑞纳]：部分重做
+[地产商人]：此城每 [ICON_CITIZEN] 人口产出3 [ICON_GOLD] 金币。
 [林业管理]：改为在此城中购买单位时-20%花费，购买商人时额外-20%花费。
-[金融中心]：改为全国每个商业中心建筑、贸易码头和商港给本城+2% [ICON_Gold] 金币。
-[跨国公司]：全国每个商业中心建筑、贸易码头和商港给从本城出发的国际 [ICON_TRADEROUTE] 贸易路线+1 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。
+[金融中心]：城市中每有一座商业中心建筑和港口建筑，[ICON_GOLD] 金币产出便+8%。
+[跨国公司]：城市中每有一座商业中心建筑和港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。
 [大庄园]：移除来自种植园的额外产出。
 [内陆牧场]：移除来自牧场的额外产出。
 [图书馆]：造价降低为90[锤]，基础产出提升为3[瓶]。
@@ -227,4 +228,14 @@ version1.3.4
 [育种]：效果重做为军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马。
 [锻造]：军营区域每回合产出1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_IRON] 铁。
 [骑士阶级]：军营区域每回合产出1 [ICON_RESOURCE_HORSES] 马和1 [ICON_RESOURCE_IRON] 铁，每个军营建筑每回合产出 2 [ICON_RESOURCE_HORSES] 马和 2 [ICON_RESOURCE_IRON] 铁。
-[御岳]：海岸和湖泊单元格可为港口提供少量相邻加成。相邻港口的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
+[御岳]：海岸和湖泊单元格可为港口提供标准相邻加成。相邻港口的近海和湖泊单元格+1 [ICON_FOOD] 食物，+1 [ICON_PRODUCTION] 生产力。
+[太阳神]：删除。
+[节庆女神]：种植园+1 [ICON_Science] 科技值和+1 [ICON_FAITH] 信仰值。圣地区域从每个相邻的种植园获得+1 [ICON_Faith] 信仰值。如城市中有种植园，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[宗教偶像]：改良资源的矿山+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。如城市拥有改良资源的矿山，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[黄金国传说]：改良资源的矿山+1 [ICON_FOOD] 食物，+1 [ICON_HOUSING] 住房。所有矿山+2 [ICON_GOLD] 金币。
+[工匠之神]：改良后的战略资源+1 [ICON_Production] 生产力和+3 [ICON_Gold] 金币。忽略科技要求显示  [ICON_RESOURCE_HORSES] 马资源和 [ICON_RESOURCE_IRON] 铁资源。正确改良的战略资源每回合积累+1。
+[梦创时代]：采石场+1 [ICON_PRODUCTION] 生产力，+3 [ICON_GOLD] 金币。
+[石圈]：采石场+1 [ICON_Faith] 信仰值和+1 [ICON_CULTURE] 文化值。如城市中有采石场，则每回合+2 [ICON_GreatProphet] 大预言家点数。
+[主神纪念碑]：选择后即可在首都中获得一个免费的纪念碑。拥有纪念碑的城市增加10% [ICON_CULTURE] 文化值。可以使用 [ICON_FAITH] 信仰值购买纪念碑。
+[锻造之神]：为远古、古典和中世纪军事单位+50% [ICON_PRODUCTION] 生产力。生产单位所需战略资源花费减少40%。
+[尚武精神]：删除。

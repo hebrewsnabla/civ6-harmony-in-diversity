@@ -1233,7 +1233,7 @@ values
 	('PLOT_HAS_TUNDRA_OR_TUNDRA_HILL_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_HAS_DESERT_OR_DESERT_HILL_REQUIREMENTS',				'REQUIREMENTSET_TEST_ANY'),
 	('GODDESS_OF_FIRE_CITY_HAS_VOLCANO',						'REQUIREMENTSET_TEST_ANY'),
-	('RELIGIOUS_IDOLS_CITY_HAS_LUXURY_OR_BONUS_MINE',			'REQUIREMENTSET_TEST_ANY'),
+	('RELIGIOUS_IDOLS_CITY_HAS_MINE',							'REQUIREMENTSET_TEST_ANY'),
 	('STONE_CIRCLES_CITY_HAS_QUARRY',							'REQUIREMENTSET_TEST_ANY'),
 	('ONE_WITH_NATURE_CITY_HAS_NATURAL_WONDER',					'REQUIREMENTSET_TEST_ANY'),
 	('HOLYSITE_PLANTATION_REQUIREMENTS',						'REQUIREMENTSET_TEST_ALL'),
@@ -1268,10 +1268,10 @@ values
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,									RequirementId)
 select
-	'RELIGIOUS_IDOLS_CITY_HAS_LUXURY_OR_BONUS_MINE',	'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
+	'RELIGIOUS_IDOLS_CITY_HAS_MINE',					'HD_REQUIRES_CITY_HAS_IMPROVED_' || r.ResourceType
 from Resources r, Improvement_ValidResources i
 where r.ResourceType = i.ResourceType and i.ImprovementType = 'IMPROVEMENT_MINE'
-	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS');
+	and (r.ResourceClassType = 'RESOURCECLASS_LUXURY' or r.ResourceClassType = 'RESOURCECLASS_BONUS' or r.ResourceClassType = 'RESOURCECLASS_STRATEGIC');
 insert or ignore into RequirementSetRequirements (RequirementSetId, RequirementId)
 select	'STONE_CIRCLES_CITY_HAS_QUARRY', 'HD_REQUIRES_CITY_HAS_IMPROVED_' || ResourceType
 from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_QUARRY';
