@@ -788,7 +788,7 @@ select
 	'POLICY_FORGING',					ModifierId
 from HD_STRATEGIC_CARD where ResourceType = 'RESOURCE_IRON' union all
 select
-	'POLICY_DRILL_MANUALS',				ModifierId
+	'POLICY_EQUESTRIAN_ORDERS',			ModifierId
 from HD_STRATEGIC_CARD;
 
 insert or replace into Modifiers
