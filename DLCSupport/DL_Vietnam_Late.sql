@@ -207,7 +207,7 @@ values
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_PLAINS_APPEAL',               'FeatureType',  'FEATURE_FLOODPLAINS_PLAINS'),
     ('HD_PRESERVE_FEATURE_FLOODPLAINS_PLAINS_APPEAL',               'Amount',       1),
     
-    ('HD_GROVE_PLOT_BONUS_1',                                       'YieldType',    'YIELD_FOOD,YIELD_GOOD'),
+    ('HD_GROVE_PLOT_BONUS_1',                                       'YieldType',    'YIELD_FOOD,YIELD_GOLD'),
     ('HD_GROVE_PLOT_BONUS_1',                                       'Amount',       '1,1'),
 --    ('HD_GROVE_PLOT_BONUS_2',                                       'YieldType',    'YIELD_FOOD,YIELD_CULTURE'),
 --    ('HD_GROVE_PLOT_BONUS_2',                                       'Amount',       '1,1'),
@@ -223,7 +223,7 @@ values
 --    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'YieldType',    'YIELD_FOOD,YIELD_SCIENCE'),
 --    ('HD_MONASTERY_PLOT_BREATHTAKING_BONUS_2',                      'Amount',       '1,1'),
     
-    ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_GOOD'),
+    ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_GOLD'),
     ('HD_HOLYWATERS_PLOT_BONUS_1',                                  'Amount',       '1,1'),
 --    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'YieldType',    'YIELD_PRODUCTION,YIELD_SCIENCE'),
 --    ('HD_HOLYWATERS_PLOT_BONUS_2',                                  'Amount',       '1,1'),
