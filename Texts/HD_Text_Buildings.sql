@@ -299,9 +299,9 @@ values
     -- 保护区
     ("zh_Hans_CN",  "LOC_BUILDING_GROVE_NAME",                                   "古树林"),
     ("zh_Hans_CN",  "LOC_BUILDING_GROVE_DESCRIPTION",                            "相邻的森林、雨林、沼泽、绿洲单元格+1 [ICON_FOOD] 食物、+1 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_NAME",                            "隐修地"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_NAME",                            "神谕碑"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "相邻的迷人单元格+1 [ICON_CULTURE] 文化值。相邻的惊艳单元格+1 [ICON_SCIENCE] 科技值。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_NAME",                           "圣水域"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_NAME",                           "观海石"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "相邻的湖泊或海岸单元格+1 [ICON_PRODUCTION] 生产力、+1 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_NAME",                               "森林保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_DESCRIPTION",                        "本城的森林单元格+1 [ICON_FOOD] 食物，迷人森林单元格上的资源+1 [ICON_CULTURE] 文化值，惊艳森林单元格上的资源+2 [ICON_CULTURE] 文化值。本城的森林类自然奇观+1 [ICON_FOOD] 食物、+2 [ICON_CULTURE] 文化值。[NEWLINE][NEWLINE]只能建造在森林或相邻森林（包括森林类自然奇观）的单元格上。"),

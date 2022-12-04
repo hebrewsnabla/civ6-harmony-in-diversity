@@ -491,8 +491,8 @@ where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KI
 insert or replace into Modifiers 
 	(ModifierId,							ModifierType,														SubjectRequirementSetId) 
 values
-	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS'),
-	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_3_BUILDING_REQUIREMENTS');
+	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_2_BUILDING_REQUIREMENTS'),
+	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS',	'HD_CITY_HAS_RELIGIOUS_TIER_2_BUILDING_REQUIREMENTS');
 
 insert or replace into ModifierArguments 
 	(ModifierId,							Name,					Value) 
@@ -501,48 +501,6 @@ values
 	('KINKAKU_RANGE_ENCAMPMENT_FAITH',		'YieldTypeToGrant',		'YIELD_FAITH'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION', 	'YieldTypeToMirror',	'YIELD_FAITH'),
 	('KINKAKU_RANGE_HOLYSITE_PRODUCTION',	'YieldTypeToGrant',		'YIELD_PRODUCTION');
-
-insert or ignore into RequirementSets
-	(RequirementSetId, RequirementSetType)
-values
-	('KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL'),
-	('KINKAKU_HOLY_SITE_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL');
-
-insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'HD_KINKAKU_PLOT_WITHIN_6_REQ'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_ENCAMPMENT_REQUIREMENT',	'REQUIRES_DISTRICT_IS_ENCAMPMENT'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-
-insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'HD_KINKAKU_PLOT_WITHIN_6_REQ'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or ignore into RequirementSetRequirements (RequirementSetId,	RequirementId)
-select 'KINKAKU_HOLY_SITE_REQUIREMENT',		'REQUIRES_DISTRICT_IS_HOLY_SITE'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-
-insert or ignore into Requirements
-	(RequirementId,						RequirementType)
-select
-	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'REQUIREMENT_PLOT_ADJACENT_BUILDING_TYPE_MATCHES'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-
-insert or ignore into RequirementArguments 
-	(RequirementId,						Name,				Value)
-select
-	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'BuildingType',		'WON_CL_KINKAKU'
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or ignore into RequirementArguments 
-	(RequirementId,						Name,				Value)
-select
-	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MaxRange',			6
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
-insert or ignore into RequirementArguments 
-	(RequirementId,						Name,				Value)
-select
-	'HD_KINKAKU_PLOT_WITHIN_6_REQ',		'MinRange',			0
-where exists (select BuildingType from Buildings where BuildingType = 'WON_CL_KINKAKU');
 
 -- CL_BUILDING_CN_TOWER
 delete from BuildingModifiers where BuildingType = 'CL_BUILDING_CN_TOWER' and ModifierId != 'CL_GRANT_BROADCAST';

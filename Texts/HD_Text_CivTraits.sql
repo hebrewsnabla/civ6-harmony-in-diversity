@@ -165,7 +165,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_TREASURE_FLEET_EXPANSION2_DESCRIPTION",  "解锁“探索”和“重商主义”后（而非“民族主义”和“殖民主义”）即可组建舰队和无敌舰队。[ICON_TradeRoute] 贸易路线+3 [ICON_Gold] 金币、+2 [ICON_Faith] 信仰值、+1 [ICON_Production] 生产力。如 [ICON_TradeRoute] 贸易路线横跨多个大陆，则这些数值将乘以3倍。如城市处于非原始首都所在大陆，其建成时将获得1名建造者，建造区域时+25% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_TA_SETI_DESCRIPTION",                    "生产远程单位时+30% [ICON_Production] 生产力。所有远程单位战斗经验值+50%。加成和奢侈资源矿产提供+2 [ICON_gold] 金币，战略资源矿产提供+1 [ICON_Production] 生产力。城市中每一种改良的加成和奢侈矿产资源为城市+10% [ICON_gold] 金币。城市中每一种改良的战略矿产资源为城市+10% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KANDAKE_OF_MEROE_DESCRIPTION",                 "所有城市建造区域时+20%建造速度，市中心相邻努比亚金字塔时此加成提高至40%。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_NAME",                      "荣冠战争"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_NAME",                      "鲜花战争"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_DESCRIPTION",               "所有近战类型的单位有几率把其他文明的军事单位转化为建造者并俘获。允许将建造者进行活人献祭，将移除目标单位，且其每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和 10点 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_NAME",                  "太阳纪"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "使用建造者劳动力来推进20%的区域建设进程。其领土中的奢侈品资源为额外2座城市提供1点 [ICON_Amenities] 宜居度。阿兹特克国土内每种改良的奢侈品资源将为军事单位+1 [ICON_Strength] 战斗力。"),

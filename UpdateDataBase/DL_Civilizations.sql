@@ -613,39 +613,39 @@ update ModifierArguments set value = 4 where ModifierId ='TRAIT_INCOMING_TRADE_O
 update ModifierArguments set value = 2 where ModifierId ='TRAIT_ALLIANCE_POINTS_FROM_TRADE' and Name = 'Amount';
 
 -- 埃及区域奇观加速适配大浴场
-insert or replace into Requirements
-	(RequirementId,									RequirementType,					Inverse)
-values
-	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'REQUIREMENT_PLAYER_HAS_BUILDING',	1);
-insert or replace into RequirementArguments
-	(RequirementId,									Name,				Value)
-values
-	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'BuildingType',		'BUILDING_GREAT_BATH');
-insert or replace into RequirementSets
-	(RequirementSetId,									RequirementSetType)
-values
-	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY');
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,									RequirementId)
-values
-	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH');
-update Modifiers set SubjectRequirementSetId = 'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS'
-	where ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_WONDER' or ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_DISTRICT';
-insert or replace into TraitModifiers
-	(TraitType,								ModifierId)
-values
-	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FASTER_BUILDTIME_WONDER'),
-	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FASTER_BUILDTIME_DISTRICT');
-insert or replace into Modifiers 
-	(ModifierId, 						ModifierType,												SubjectRequirementSetId)
-values
-	('TRAIT_FASTER_BUILDTIME_WONDER',	'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_PRODUCTION',			'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS'),
-	('TRAIT_FASTER_BUILDTIME_DISTRICT',	'MODIFIER_PLAYER_CITIES_ADJUST_ALL_DISTRICTS_PRODUCTION',	'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS');
-insert or replace into ModifierArguments
-	(ModifierId, 						Name,		Value)
-values
-	('TRAIT_FASTER_BUILDTIME_WONDER',	'Amount',	15),
-	('TRAIT_FASTER_BUILDTIME_DISTRICT',	'Amount',	15);
+-- insert or replace into Requirements
+-- 	(RequirementId,									RequirementType,					Inverse)
+-- values
+-- 	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'REQUIREMENT_PLAYER_HAS_BUILDING',	1);
+-- insert or replace into RequirementArguments
+-- 	(RequirementId,									Name,				Value)
+-- values
+-- 	('REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH',	'BuildingType',		'BUILDING_GREAT_BATH');
+-- insert or replace into RequirementSets
+-- 	(RequirementSetId,									RequirementSetType)
+-- values
+-- 	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIREMENTSET_TEST_ANY');
+-- insert or replace into RequirementSetRequirements
+-- 	(RequirementSetId,									RequirementId)
+-- values
+-- 	('PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	'REQUIRES_PLAYER_DOES_NOT_HAVE_GREAT_BATH');
+-- update Modifiers set SubjectRequirementSetId = 'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS'
+-- 	where ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_WONDER' or ModifierId = 'TRAIT_RIVER_FASTER_BUILDTIME_DISTRICT';
+-- insert or replace into TraitModifiers
+-- 	(TraitType,								ModifierId)
+-- values
+-- 	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FASTER_BUILDTIME_WONDER'),
+-- 	('TRAIT_CIVILIZATION_ITERU',			'TRAIT_FASTER_BUILDTIME_DISTRICT');
+-- insert or replace into Modifiers 
+-- 	(ModifierId, 						ModifierType,												SubjectRequirementSetId)
+-- values
+-- 	('TRAIT_FASTER_BUILDTIME_WONDER',	'MODIFIER_PLAYER_CITIES_ADJUST_WONDER_PRODUCTION',			'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS'),
+-- 	('TRAIT_FASTER_BUILDTIME_DISTRICT',	'MODIFIER_PLAYER_CITIES_ADJUST_ALL_DISTRICTS_PRODUCTION',	'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS');
+-- insert or replace into ModifierArguments
+-- 	(ModifierId, 						Name,		Value)
+-- values
+-- 	('TRAIT_FASTER_BUILDTIME_WONDER',	'Amount',	15),
+-- 	('TRAIT_FASTER_BUILDTIME_DISTRICT',	'Amount',	15);
 
 
 ---------------------------------------------------------------------------------------------------------------------------
