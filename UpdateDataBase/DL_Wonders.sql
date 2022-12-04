@@ -1034,15 +1034,23 @@ from HD_Maracana_DistrictBonus;
 update Modifiers set OwnerRequirementSetId = 'PLAYER_IS_AI' where ModifierId in ('OXFORD_UNIVERSITY_FREE_TECHS', 'BOLSHOI_THEATRE_FREE_CIVICS', 'ARECIBO_FREE_TECHS');
 --version1.3.3
 insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
+	(BuildingType,						ModifierId)
 values
---休伊神庙
-	('BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_FOOD_HD'),
-	('BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_PRODUCTION_HD'),
 --圣瓦西里主教座堂
 	('BUILDING_ST_BASILS_CATHEDRAL',	'ST_BASILS_CATHEDRAL_YIELD_MODIFIER'),
 --埃菲尔铁塔
 	('BUILDING_EIFFEL_TOWER',			'EIFFEL_TOWER_ADDTOURISM');
+--休伊神庙
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_FOOD_HD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_PRODUCTION_HD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId)
 values
