@@ -1570,7 +1570,7 @@
 			<LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
 		</Properties>
 	</ReplaceUIScript>
-	<AddUserInterfaces>
+	<AddUserInterfaces id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
 		<Properties>
 			<LoadOrder>19001</LoadOrder>
 			<Context>InGame</Context>
