@@ -277,7 +277,7 @@ function PreserveEpoSetProperty(playerID, districtID, cityID, iX, iY, districtTy
 		calculateResourceOnMap();
 		HD_MapResourcesArray = Game.GetProperty(PRESERVE_MAP_HAS_KEY);
 	end
-	if (playerID >= 0) and (PRESERVE_INDEX ~= nil) and (districtID == PRESERVE_INDEX) then
+	if (playerID >= 0) and (PRESERVE_INDEX ~= nil) and (districtType == PRESERVE_INDEX) then
 		local iPlot = Map.GetPlot(iX, iY);
 		for resourceType, _ in pairs(HD_MapResourcesArray) do
 			local iPropertyKey = "" .. iProperty .. resourceType;

@@ -225,11 +225,13 @@ Utils.GetCollectionProgress = function (playerId, buildingId)
 			collectable[notInMapModifiers[modifierId]] = nil;
 		end
 	end
+	local processed = {};
 	for _, modifier in ipairs(GameEffects.GetModifiers()) do
 		local modifierId = GameEffects.GetModifierDefinition(modifier).Id;
 		local owner = GameEffects.GetModifierOwner(modifier);
 		local ownerId = GameEffects.GetObjectsPlayerId(owner);
-		if (collectable[modifierId] ~= nil) and (ownerId ~= nil) and (playerId == ownerId) then
+		if (collectable[modifierId] ~= nil) and (ownerId ~= nil) and (playerId == ownerId) and (processed[modifierId] == nil) then
+			processed[modifierId] = 1;
 			local active = GameEffects.GetModifierActive(modifier);
 			local object = collectable[modifierId];
 			if active then
