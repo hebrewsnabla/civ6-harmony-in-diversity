@@ -225,67 +225,67 @@ end
 Events.TurnBegin.Add(ArcherForCityState);
 
 -- Record Resources on Map
---local PRESERVE_MAP_HAS_KEY = 'HD_PRESERVE_MAP_HAS';
---local iProperty = "HD_MAP_HAS_"
---function HDvIn(tbl, value)
---    if tbl == nil then
---        return false
---    end
---    for k, v in ipairs(tbl) do
---        if v == value then
---            return true
---        end
---    end
---    return false
---end
---
---
---function calculateResourceOnMap ()
---	HD_MapResourcesArray = {};
---	local iW, iH;
---	iW, iH = Map.GetGridSize();
---	for x = 0, iW - 1 do
---		for y = 0, iH - 1 do
---			local i = y * iW + x;
---			local pPlot = Map.GetPlotByIndex(i);
---			if (pPlot ~= nil) then
---				local iResourceType = pPlot:GetResourceType();
---				if (iResourceType ~= nil and iResourceType ~= -1) then
---					local iResource = GameInfo.Resources[iResourceType];
---					if (iResource ~= nil and iResource.ResourceClassType ~= 'RESOURCECLASS_ARTIFACT') then
---						HD_MapResourcesArray[iResource.ResourceType] = 1;
---					end
---				end
---			end
---		end
---	end
---	Game.SetProperty(PRESERVE_MAP_HAS_KEY, HD_MapResourcesArray);
---	for resourceType, _ in pairs(HD_MapResourcesArray) do
---		local iPropertyKey = "" .. iProperty .. resourceType .. ""
---		Game.SetProperty(iPropertyKey, 1);
---	end
---end
---
+local PRESERVE_MAP_HAS_KEY = 'HD_PRESERVE_MAP_HAS';
+local iProperty = "HD_MAP_HAS_"
+function HDvIn(tbl, value)
+    if tbl == nil then
+        return false
+    end
+    for k, v in ipairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
+
+function calculateResourceOnMap ()
+	HD_MapResourcesArray = {};
+	local iW, iH;
+	iW, iH = Map.GetGridSize();
+	for x = 0, iW - 1 do
+		for y = 0, iH - 1 do
+			local i = y * iW + x;
+			local pPlot = Map.GetPlotByIndex(i);
+			if (pPlot ~= nil) then
+				local iResourceType = pPlot:GetResourceType();
+				if (iResourceType ~= nil and iResourceType ~= -1) then
+					local iResource = GameInfo.Resources[iResourceType];
+					if (iResource ~= nil and iResource.ResourceClassType ~= 'RESOURCECLASS_ARTIFACT') then
+						HD_MapResourcesArray[iResource.ResourceType] = 1;
+					end
+				end
+			end
+		end
+	end
+	Game.SetProperty(PRESERVE_MAP_HAS_KEY, HD_MapResourcesArray);
+	for resourceType, _ in pairs(HD_MapResourcesArray) do
+		local iPropertyKey = "" .. iProperty .. resourceType .. ""
+		Game.SetProperty(iPropertyKey, 1);
+	end
+end
+
 -- Preserve Tier 3
---local PRESERVE_INDEX;
---if GameInfo.Districts['DISTRICT_PRESERVE'] ~= nil then
---	PRESERVE_INDEX = GameInfo.Districts['DISTRICT_PRESERVE'].Index;
---end
---function PreserveEpoSetProperty(playerID, districtID, cityID, iX, iY, districtType, percentComplete)
---	local HD_MapResourcesArray = Game.GetProperty(PRESERVE_MAP_HAS_KEY);
---	if HD_MapResourcesArray == nil then
---		calculateResourceOnMap();
---		HD_MapResourcesArray = Game.GetProperty(PRESERVE_MAP_HAS_KEY);
---	end
---	if (playerID >= 0) and (PRESERVE_INDEX ~= nil) and (districtID == PRESERVE_INDEX) then
---		local iPlot = Map.GetPlot(iX, iY);
---		for resourceType, _ in pairs(HD_MapResourcesArray) do
---			local iPropertyKey = "" .. iProperty .. resourceType;
---			iPlot:SetProperty(iPropertyKey, 1);
---		end
---	end
---end
---Events.DistrictAddedToMap.Add(PreserveEpoSetProperty)
+local PRESERVE_INDEX;
+if GameInfo.Districts['DISTRICT_PRESERVE'] ~= nil then
+	PRESERVE_INDEX = GameInfo.Districts['DISTRICT_PRESERVE'].Index;
+end
+function PreserveEpoSetProperty(playerID, districtID, cityID, iX, iY, districtType, percentComplete)
+	local HD_MapResourcesArray = Game.GetProperty(PRESERVE_MAP_HAS_KEY);
+	if HD_MapResourcesArray == nil then
+		calculateResourceOnMap();
+		HD_MapResourcesArray = Game.GetProperty(PRESERVE_MAP_HAS_KEY);
+	end
+	if (playerID >= 0) and (PRESERVE_INDEX ~= nil) and (districtType == PRESERVE_INDEX) then
+		local iPlot = Map.GetPlot(iX, iY);
+		for resourceType, _ in pairs(HD_MapResourcesArray) do
+			local iPropertyKey = "" .. iProperty .. resourceType;
+			iPlot:SetProperty(iPropertyKey, 1);
+		end
+	end
+end
+Events.DistrictAddedToMap.Add(PreserveEpoSetProperty)
 
 -- Moon Landing
 local MOON_LANDING_INDEX = GameInfo.Projects['PROJECT_LAUNCH_MOON_LANDING'].Index;
@@ -346,11 +346,32 @@ end);
 -- Religious Settlements
 local RELIGIOUS_SETTLEMENTS_INDEX = GameInfo.Beliefs['BELIEF_RELIGIOUS_SETTLEMENTS'].Index;
 local GREAT_PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
-Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
+-- Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
+-- 	local player = Players[playerId];
+-- 	local pantheon = player:GetReligion():GetPantheon();
+-- 	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+-- 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+-- 	end
+-- end);
+local SETTLER_INDEX = GameInfo.Units['UNIT_SETTLER'].Index;
+Events.CityProductionCompleted.Add(function (playerId, cityId, type, unitId, cancelled)
+	if unitId == nil then
+		return;
+	end
 	local player = Players[playerId];
+	local unit = UnitManager.GetUnit(playerId, unitId);
 	local pantheon = player:GetReligion():GetPantheon();
-	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+	if (pantheon == RELIGIOUS_SETTLEMENTS_INDEX) and (unit:GetType() == SETTLER_INDEX) then
 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+	end
+end);
+Events.CityMadePurchase.Add(function (playerId, cityId, x, y, purchaseType, objectType)
+	if (purchaseType == EventSubTypes.UNIT) and (objectType == SETTLER_INDEX) then
+		local player = Players[playerId];
+		local pantheon = player:GetReligion():GetPantheon();
+		if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+			player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+		end
 	end
 end);
 

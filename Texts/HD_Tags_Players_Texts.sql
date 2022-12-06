@@ -53,3 +53,8 @@ insert into PlayerItems
 select
     "Players:Expansion2_Players",  "CIVILIZATION_AMERICA",   	   "LEADER_T_ROOSEVELT_ROUGHRIDER",    "BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",  "ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION",      31
 where exists (select CivilizationType from Players where CivilizationType = 'CIVILIZATION_ETHIOPIA');
+insert into PlayerItems
+    (Domain,                        CivilizationType,              LeaderType,              Type,                       Icon,                               Name,                                   Description,                                    SortIndex)
+select
+    "Players:Expansion2_Players",  "CIVILIZATION_AMERICA",   	   "LEADER_ABRAHAM_LINCOLN",    "BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",  "ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION",      31
+where exists (select CivilizationType from Players where CivilizationType = 'CIVILIZATION_ETHIOPIA') and exists (select LeaderType from Players where LeaderType = 'LEADER_ABRAHAM_LINCOLN');
