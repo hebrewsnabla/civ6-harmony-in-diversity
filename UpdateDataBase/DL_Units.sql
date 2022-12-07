@@ -65,9 +65,28 @@ update Units set
 	Cost = 200
 where UnitType = 'UNIT_SPY';
 
+----------------------------------------------
+--SPY 间谍出击任务成功率调整
+
 delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
-update UnitOperations set BaseProbability = 14 where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
-update UnitOperations set BaseProbability = 16 where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
+update UnitOperations set Turns = 10           		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
+update UnitOperations set BaseProbability = 11 		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
+update UnitOperations set Turns = 4            		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
+update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
+update UnitOperations set BaseProbability = 14 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+update UnitOperations set BaseProbability = 11 		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
+update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
+update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
+update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
@@ -498,6 +517,13 @@ insert or replace into Tags
 values
    ('CLASS_SEADOG',				'ABILITY_CLASS'),
    ('CLASS_LAND_MILITARY',		'ABILITY_CLASS');
+
+---------------------------------------------------------------------------------
+--间谍维护费降低
+
+update Units set Maintenance = 1 where UnitType = 'UNIT_SPY';
+
+---------------------------------------------------------------------------------
 
 -- 启蒙会蛮族单位适配
 update Units set PrereqTech = null where UnitType = 'UNIT_HD_BARBARIAN_GALLEY' or UnitType = 'UNIT_HD_BARBARIAN_QUADRIREME';
