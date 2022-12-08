@@ -84,6 +84,8 @@ update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPER
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
+--间谍移动到其他文明的城市所需时间减少2T
+update UnitOperations set Turns = 1            		where OperationType = 'UNITOPERATION_SPY_TRAVEL_NEW_CITY';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
 update Units set ObsoleteCivic = null where UnitType = 'UNIT_SIEGE_TOWER';	
