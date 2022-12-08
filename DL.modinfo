@@ -16,12 +16,12 @@
       <zh_Hans_CN>[COLOR_Civ6LightBlue]文明6 Plus: 和而不同[ENDCOLOR] v1.3</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_TEASER">
-      <en_US>Create a brand new Civ6. Current Version v1.3 .</en_US>
-      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.3。</zh_Hans_CN>
+      <en_US>Create a brand new Civ6. Current Version v1.3.3.</en_US>
+      <zh_Hans_CN>创造一个全新的文明6。当前版本为v1.3.3。</zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_DESCRIPTION">
-      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.2.10 .</en_US>
-      <zh_Hans_CN>文明6 Plus: 和而不同。这是一个国人团队制作开发的，超越迭起兴衰、风云变化等大型DLC的大型游戏性mod；在对原版游戏内容进行了全面的修缮和平衡的基础上，以丰富和拓展游戏内容为主要发展方向，以宣传中华元素、弘扬传统文化为主要设计理念，为热爱文明6的友好玩家们带来全新的游戏体验。欢迎加入和而不同交流1群：1142970145，2群：954041014，3群：627267075。[NEWLINE]当前版本为v1.3。 </zh_Hans_CN>
+      <en_US>Civ6 Plus: Harmony in Diversity. This is a large-scale Gameplay Mod (surpass the Rise and Fall, Gathering Storm DLCs). Current version is v1.3.3.</en_US>
+      <zh_Hans_CN>文明6 Plus: 和而不同。这是一个国人团队制作开发的，超越迭起兴衰、风云变化等大型DLC的大型游戏性mod；在对原版游戏内容进行了全面的修缮和平衡的基础上，以丰富和拓展游戏内容为主要发展方向，以宣传中华元素、弘扬传统文化为主要设计理念，为热爱文明6的友好玩家们带来全新的游戏体验。[NEWLINE]当前版本为v1.3.3。 </zh_Hans_CN>
     </Text>
     <Text id="LOC_HARMONY_IN_DIVERSITY_AUTHORS">
       <en_US>The Harmony in Diversity Production Group</en_US>
@@ -101,6 +101,14 @@
     <Criteria id="DLC_Portugal">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>FFDF4E79-DEE2-47BB-919B-F5739106627A</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Caesar">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>9ED63236-617C-45A6-BB70-8CB6B0BE8ED2</ModInUse>
+    </Criteria>
+    <Criteria id="DLC_Saladin_Alt">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>7A66DB58-B354-4061-8C80-95B638DD6F6C</ModInUse>
     </Criteria>
     <Criteria id="DLC_Persia_Ethiopia">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
@@ -222,6 +230,14 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ConfigurationValueMatches>
         <ConfigurationId>GAMEMODE_DEVTEST</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="Religious_Arm_Mode_Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_RILIGIOUS_ARM</ConfigurationId>
         <Group>Game</Group>
         <Value>1</Value>
       </ConfigurationValueMatches>
@@ -604,6 +620,10 @@
       <File>Assets/UnitActions/sacrifice_50.dds</File>
       <File>Assets/UnitActions/sacrifice_80.dds</File>
       <File>Assets/UnitActions/sacrifice_256.dds</File>
+      <File>Assets/UnitActions/Lincon_38.dds</File>
+      <File>Assets/UnitActions/Lincon_50.dds</File>
+      <File>Assets/UnitActions/Lincon_80.dds</File>
+      <File>Assets/UnitActions/Lincon_256.dds</File>
       <File>Assets/UnitActions/HD_Actions_38.dds</File>
       <File>Assets/UnitActions/HD_Actions_50.dds</File>
       <File>Assets/UnitActions/HD_Actions_80.dds</File>
@@ -705,6 +725,10 @@
       <File>UI/Replacement/DL_WorldViewIconsManager.lua</File>
       <File>UI/Replacement/DL_UnitPanel.lua</File>
       <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+      <File>UI/Replacement/TechTreeNode.xml</File>
+      <File>UI/Replacement/DL_TechTree.lua</File>
+      <File>UI/Replacement/CivicsTree.xml</File>
+      <File>UI/Replacement/DL_CivicsTree.lua</File>
       <File>UI/Additions/HD_UnitCommandDefs.lua</File>
       <File>UI/Additions/HD_GreatPeople_Common.lua</File>
       <File>UI/Additions/FarmsOnFreshHills_Common.lua</File>
@@ -778,6 +802,20 @@
         <LoadOrder>150000</LoadOrder>
         <LuaContext>TechCivicCompletedPopup</LuaContext>
         <LuaReplace>UI/Replacement/DL_TechCivicCompletedPopup.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="DL_TechTree" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>TechTree</LuaContext>
+        <LuaReplace>UI/Replacement/DL_TechTree.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="DL_CivicsTree" criteria="Expansion2">
+      <Properties>
+        <LoadOrder>150000</LoadOrder>
+        <LuaContext>CivicsTree</LuaContext>
+        <LuaReplace>UI/Replacement/DL_CivicsTree.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
     <!-- Mod Support -->
@@ -995,7 +1033,7 @@
     <!-- CityPolicies -->
     <UpdateDatabase id="CityPolicies" criteria="Expansion2">
       <Properties><LoadOrder>15601</LoadOrder></Properties>
-      <File>SubMods/CityPolicies/CityPolicies.sql</File>
+      <!--<File>SubMods/CityPolicies/CityPolicies.sql</File>-->
     </UpdateDatabase>
     <UpdateText id="CityPolicies_Texts" criteria="Expansion2">
       <Properties><LoadOrder>15602</LoadOrder></Properties>
@@ -1153,6 +1191,7 @@
       <File>Maps/Tiny_Islands.lua</File>
       <File>Maps/Tiny_Lakes.lua</File>
       <File>Maps/Wet_Lakes.lua</File>
+	  <File>Maps/Rivers.lua</File>
     </ImportFiles>
     <UpdateDatabase id="HD_Ingame_setup" criteria="Civitas_CityStates_Conflict_Expansion2">
       <Properties><LoadOrder>16000</LoadOrder></Properties>
@@ -1230,6 +1269,14 @@
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/DL_Portugal.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="HD_Ceasar" criteria="DLC_Caesar">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/HD_Ceasar.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="HD_SALADIN_ALT" criteria="DLC_Saladin_Alt">
+      <Properties><LoadOrder>16005</LoadOrder></Properties>
+      <File>DLCSupport/HD_SALADIN_ALT.sql</File>
+    </UpdateDatabase>
     <!-- Main -->
     <UpdateDatabase id="DL_StartBias_Early" criteria="Expansion2">
 		<Properties><LoadOrder>-1</LoadOrder></Properties>
@@ -1304,6 +1351,10 @@
     <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>UpdateDataBase/DL_PostProcess.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="HD_Temp_Remove" criteria="Expansion2">
+      <Properties><LoadOrder>40000</LoadOrder></Properties>
+      <File>UpdateDataBase/BalanceRemove.sql</File>
     </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16016</LoadOrder></Properties>
@@ -1487,6 +1538,49 @@
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
     </UpdateText>
+    <!-- Religious Arm Mode -->
+    <ImportFiles id="ReligiousArm_Import" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties><LoadOrder>19000</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm.lua</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_38.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_50.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
+		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
+    </ImportFiles>
+    <UpdateDatabase id="ReligiousArm_Database" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ReligiousArm_Text" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
+    </UpdateText>
+    <UpdateIcons id="ReligiousArm_Icons" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>19001</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
+    </UpdateIcons>
+    <ReplaceUIScript id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties>
+			<LoadOrder>19001</LoadOrder>
+			<LuaContext>UnitPromotionPopup</LuaContext>
+			<LuaReplace>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</LuaReplace>
+		</Properties>
+	</ReplaceUIScript>
+	<AddUserInterfaces id="ReligiousArm_UI" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties>
+			<LoadOrder>19001</LoadOrder>
+			<Context>InGame</Context>
+		  </Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm.xml</File>
+	</AddUserInterfaces>
+	<AddGameplayScripts id="ReligiousArm_Lua" criteria="Religious_Arm_Mode_Expansion2">
+		<Properties><LoadOrder>19001</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
+	</AddGameplayScripts>
     <!-- Military -->
     <UpdateDatabase id="Testing_upd" criteria="Military_Mode_Expansion2">
       <Properties><LoadOrder>18100</LoadOrder></Properties>
@@ -1636,6 +1730,21 @@
       <!-- Dev Test Mode -->
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
+	<!-- Religious Arm Mode -->
+	<File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitCommands.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm.xml</File>
+	<File>GameModeSupport/ReligiousArmMode/ReligiousArm.lua</File>
+	<File>GameModeSupport/ReligiousArmMode/Icons.xml</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_22.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_32.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_38.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_50.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
+	<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
       <!-- Wild Mode -->
     <!-- <File>GameModeSupport/WildMode/DL_GameCapabilities.sql</File>
     <File>GameModeSupport/WildMode/HD_Wild.sql</File>
@@ -1699,6 +1808,10 @@
     <File>UI/Replacement/DL_ProductionPanel.lua</File>
     <File>UI/Replacement/DL_SelectedUnit.lua</File>
     <File>UI/Replacement/DL_TechCivicCompletedPopup.lua</File>
+	<File>UI/Replacement/TechTreeNode.xml</File>
+    <File>UI/Replacement/DL_TechTree.lua</File>
+	<File>UI/Replacement/CivicsTree.xml</File>
+    <File>UI/Replacement/DL_CivicsTree.lua</File>
     <File>UI/Icons/DL_Icons_Fixing.sql</File>
     <File>UI/Icons/DL_Icons_Beliefs.xml</File>
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
@@ -1830,6 +1943,7 @@
     <File>Maps/Tiny_Islands.lua</File>
     <File>Maps/Tiny_Lakes.lua</File>
     <File>Maps/Wet_Lakes.lua</File>
+    <File>Maps/Rivers.lua</File>
     <!-- Game Scripts -->
     <File>ThirdParty/CityRoads/Modified_CityRoads.lua</File>
     <!-- <File>ThirdParty/CityRoads/AOM_CityRoads.lua</File> -->
@@ -1880,6 +1994,8 @@
     <File>DLCSupport/DL_Vietnam.sql</File>
     <File>DLCSupport/DL_Vietnam_Late.sql</File>
     <File>DLCSupport/DL_Portugal.sql</File>
+	<File>DLCSupport/HD_Ceasar.sql</File>
+  <File>DLCSupport/HD_SALADIN_ALT.sql</File>
 	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/HD_AdjustYields.sql</File>
@@ -1890,7 +2006,7 @@
     <File>UpdateDataBase/DL_Buildings.sql</File>
     <File>UpdateDataBase/DL_BuildingDefinations.sql</File>
     <File>UpdateDataBase/DL_City_Yield.sql</File>
-    <File>UpdateDataBase/DL_CityPolicies.sql</File>
+	<File>UpdateDataBase/DL_CityPolicies.sql</File>
     <File>UpdateDataBase/DL_CityStates.sql</File>
     <File>UpdateDataBase/DL_Civics.sql</File>
     <File>UpdateDataBase/DL_Civilizations.sql</File>
@@ -1911,6 +2027,7 @@
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
     <File>UpdateDataBase/DL_PostProcess.sql</File>
+	<File>UpdateDataBase/BalanceRemove.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
     <File>UpdateDataBase/DL_Relic_Creator.sql</File>
@@ -2035,6 +2152,10 @@
     <File>Assets/UnitActions/sacrifice_50.dds</File>
     <File>Assets/UnitActions/sacrifice_80.dds</File>
     <File>Assets/UnitActions/sacrifice_256.dds</File>
+    <File>Assets/UnitActions/Lincon_38.dds</File>
+    <File>Assets/UnitActions/Lincon_50.dds</File>
+    <File>Assets/UnitActions/Lincon_80.dds</File>
+    <File>Assets/UnitActions/Lincon_256.dds</File>
     <File>Assets/UnitActions/HD_Actions_38.dds</File>
     <File>Assets/UnitActions/HD_Actions_50.dds</File>
     <File>Assets/UnitActions/HD_Actions_80.dds</File>

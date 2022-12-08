@@ -77,62 +77,12 @@ values
 	-- Neighbourhood
 	('BUILDING_FOOD_MARKET',				'YIELD_FOOD',		1),
 	('BUILDING_SHOPPING_MALL',				'YIELD_GOLD',		3);
-	-- Diplomatic Quarter
-	-- ('BUILDING_CONSULATE',					'YIELD_CULTURE',	1),
-	-- ('BUILDING_CONSULATE',					'YIELD_SCIENCE',	1),
-	-- ('BUILDING_CONSULATE',					'YIELD_GOLD',		-1),
-	-- ('BUILDING_CHANCERY',					'YIELD_CULTURE',	2),
-	-- ('BUILDING_CHANCERY',					'YIELD_SCIENCE',	2),
-	-- ('BUILDING_CHANCERY',					'YIELD_GOLD',		-2),
-	-- Government Plaza
-	-- ('BUILDING_GOV_TALL',					'YIELD_CULTURE',	1),
-	-- ('BUILDING_GOV_TALL',					'YIELD_SCIENCE',	1),
-	-- ('BUILDING_GOV_TALL',					'YIELD_GOLD',		-1),
-	-- ('BUILDING_GOV_WIDE',					'YIELD_CULTURE',	1),
-	-- ('BUILDING_GOV_WIDE',					'YIELD_SCIENCE',	1),
-	-- ('BUILDING_GOV_WIDE',					'YIELD_GOLD',		-1),
-	-- ('BUILDING_GOV_CONQUEST',				'YIELD_CULTURE',	1),
-	-- ('BUILDING_GOV_CONQUEST',				'YIELD_SCIENCE',	1),
-	-- ('BUILDING_GOV_CONQUEST',				'YIELD_GOLD',		-1),
-	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_CITYSTATES',				'YIELD_GOLD',		-2),
-	-- ('BUILDING_GOV_SPIES',					'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_SPIES',					'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_SPIES',					'YIELD_GOLD',		-2),
-	-- ('BUILDING_GOV_FAITH',					'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_FAITH',					'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_FAITH',					'YIELD_GOLD',		-2),
-	-- ('BUILDING_GOV_MILITARY',				'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_MILITARY',				'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_MILITARY',				'YIELD_GOLD',		-2),
-	-- ('BUILDING_GOV_CULTURE',					'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_CULTURE',					'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_CULTURE',					'YIELD_GOLD',		-2),
-	-- ('BUILDING_GOV_SCIENCE',					'YIELD_CULTURE',	2),
-	-- ('BUILDING_GOV_SCIENCE',					'YIELD_SCIENCE',	2),
-	-- ('BUILDING_GOV_SCIENCE',					'YIELD_GOLD',		-2),
-	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',			'YIELD_CULTURE',	2),
-	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',			'YIELD_SCIENCE',	2),
-	-- ('BUILDING_QUEENS_BIBLIOTHEQUE',			'YIELD_GOLD',		-2);
 delete from Building_CitizenYieldChanges where BuildingType = 'BUILDING_SEAPORT' and YieldType = 'YIELD_FOOD';
 
 -- Citizen Slot
 update Buildings set CitizenSlots = 1 where
 	   BuildingType = 'BUILDING_FOOD_MARKET'
 	or BuildingType = 'BUILDING_SHOPPING_MALL';
-	-- or BuildingType = 'BUILDING_GOV_TALL'
-	-- or BuildingType = 'BUILDING_GOV_WIDE'
-	-- or BuildingType = 'BUILDING_GOV_CONQUEST'
-	-- or BuildingType = 'BUILDING_GOV_CITYSTATES'
-	-- or BuildingType = 'BUILDING_GOV_SPIES'
-	-- or BuildingType = 'BUILDING_GOV_FAITH'
-	-- or BuildingType = 'BUILDING_GOV_MILITARY'
-	-- or BuildingType = 'BUILDING_GOV_CULTURE'
-	-- or BuildingType = 'BUILDING_GOV_SCIENCE'
-	-- or BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE'
-	-- or BuildingType = 'BUILDING_CHANCERY'
-	-- or BuildingType = 'BUILDING_CONSULATE'
 
 -- Prereq Tech & Civic
 update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CIVIL_ENGINEERING' where BuildingType = 'BUILDING_FERRIS_WHEEL';
@@ -150,7 +100,6 @@ where BuildingType = 'BUILDING_UNIVERSITY'
 	or BuildingType = 'BUILDING_AMPHITHEATER'
 	or BuildingType = 'BUILDING_ARENA'
 	or BuildingType = 'BUILDING_TLACHTLI';
-	-- or BuildingType = 'BUILDING_MARAE'
 update Buildings set RegionalRange = 6
 where BuildingType = 'BUILDING_RESEARCH_LAB'
 	or BuildingType = 'BUILDING_MUSEUM_ART'
@@ -181,7 +130,6 @@ where BuildingType = 'BUILDING_CASTLE'
 	or BuildingType = 'BUILDING_TSIKHE'
 	or BuildingType = 'BUILDING_GRANARY'
 	or BuildingType = 'BUILDING_WATER_MILL';
-	-- or  BuildingType = 'BUILDING_WALLS' 
 update Buildings set Housing = 2
 where BuildingType = 'BUILDING_LIGHTHOUSE';
 
@@ -223,6 +171,7 @@ values
 	('BUILDING_WORKSHOP',			'YIELD_PRODUCTION',	3),
 	('BUILDING_FACTORY',			'YIELD_PRODUCTION',	6),
 	-- Campus
+	('BUILDING_LIBRARY',			'YIELD_SCIENCE',	3),
 	('BUILDING_UNIVERSITY',			'YIELD_SCIENCE',	4),
 	('BUILDING_MADRASA',			'YIELD_SCIENCE',	5),
 	('BUILDING_RESEARCH_LAB',		'YIELD_SCIENCE',	4),
@@ -276,8 +225,6 @@ values
 	('BUILDING_STOCK_EXCHANGE',				'STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST'),
 	('BUILDING_STOCK_EXCHANGE',				'POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST'),
 	-- Holy site
---	('BUILDING_TEMPLE',						'TEMPLE_FAITH_PERCENTAGE_BOOST'),
---	('BUILDING_STAVE_CHURCH',				'TEMPLE_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_CATHEDRAL',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_GURDWARA',					'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
 	('BUILDING_MEETING_HOUSE',				'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST'),
@@ -387,7 +334,7 @@ update Buildings set Maintenance = 2,	Cost = 300	where BuildingType = 'BUILDING_
 update Buildings set Maintenance = 2,	Cost = 260	where BuildingType = 'BUILDING_TSIKHE';
 update Buildings set Maintenance = 5,	Cost = 200	where BuildingType = 'BUILDING_SEWER';
 -- Campus
-update Buildings set Maintenance = 1,	Cost = 100	where BuildingType = 'BUILDING_LIBRARY';
+update Buildings set Maintenance = 1,	Cost = 90	where BuildingType = 'BUILDING_LIBRARY';
 update Buildings set Maintenance = 4,	Cost = 275	where BuildingType = 'BUILDING_UNIVERSITY';
 update Buildings set Maintenance = 4,	Cost = 250	where BuildingType = 'BUILDING_MADRASA';
 update Buildings set Maintenance = 10,	Cost = 600	where BuildingType = 'BUILDING_RESEARCH_LAB';
@@ -615,10 +562,8 @@ values
 	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_ADJACENCY'),
 	('BUILDING_MADRASA',			'MADRASA_ADD_DESERT_HILLS_ADJACENCY'),
 	('BUILDING_MADRASA',			'FEUDALISM_ADD_RAINFOREST_ADJACENCY'),
-	-- ('BUILDING_MADRASA',			'UNIVERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE'),
 	('BUILDING_MADRASA',			'UNIVERSITY_ADD_POPULATION_SCIENCE'),
 	('BUILDING_UNIVERSITY',			'FEUDALISM_ADD_RAINFOREST_ADJACENCY'),
-	-- ('BUILDING_UNIVERSITY',			'UNIVkERSITY_ADD_ADJACENT_RAINFOREST_SCIENCE');
 	('BUILDING_UNIVERSITY',			'UNIVERSITY_ADD_POPULATION_SCIENCE');
 
 insert into Modifiers
@@ -672,7 +617,6 @@ values
 	('BUILDING_GOV_CONQUEST',		'GOV_CONQUEST_DOUBLEPILLAGEIMPROVE'),
 --军阀宝座锤军事单位加速
 	('BUILDING_GOV_CONQUEST',	    'GOV_CONQUEST_MILITARY_UNIT_PRODUCTION');
-	-- ('BUILDING_GOV_CONQUEST',	    'GOV_CONQUEST_GDR_PRODUCTION');
 
 insert or replace into Modifiers
 	(ModifierId,								ModifierType)
@@ -686,8 +630,6 @@ values
 	('GOV_CONQUEST_DOUBLEPILLAGEIMPROVE',		'MODIFIER_PLAYER_ADJUST_IMPROVEMENT_PILLAGE'),
 --军阀宝座锤军事单位加速
 	('GOV_CONQUEST_MILITARY_UNIT_PRODUCTION',	'MODIFIER_SINGLE_CITY_ADJUST_MILITARY_UNITS_PRODUCTION');
-	-- ('GOV_CONQUEST_NAVAL_UNIT_PRODUCTION',	'MODIFIER_CITY_ADJUST_UNIT_DOMAIN_PRODUCTION'),
-	-- ('GOV_CONQUEST_GDR_PRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION');
 
 insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value)
@@ -721,38 +663,22 @@ insert or ignore into RequirementSetRequirements
 values
 	('GOV_GH_REQUIREMENT',					'REQUIRES_CITY_HAS_GOVERNOR'),
 	('GOV_GH_REQUIREMENT',					'REQUIRES_PLOT_IS_OWNER_CAPITAL_CONTINENT');
-	--('GOV_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
-	--('GOV_G_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_IS_NOT_OWNER_CAPITAL_CONTINENT'),
-	--('GOV_G_NONHOMECONTINENT_REQUIREMENT',	'REQUIRES_CITY_HAS_GOVERNOR');
 insert or ignore into RequirementSets
 	(RequirementSetId,						RequirementSetType)
 values
 	('GOV_GH_REQUIREMENT',					'REQUIREMENTSET_TEST_ALL');
-	--('GOV_NONHOMECONTINENT_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL'),
-	--('GOV_G_NONHOMECONTINENT_REQUIREMENT',	'REQUIREMENTSET_TEST_ALL');
 
 --新增效果
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
 --中书省
-	-- ('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_EXTRA_GOVERNOR_POINT'),
---MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA
 	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD'),
 	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD_G'),
-	--('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_LOSE'),
-	--('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_LOSE_G'),
 --情报局
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
 	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION');
-	-- ('BUILDING_GOV_SPIES',                  'GOV_SPIES_ADD_VISIBILITY');
-
--- insert or replace into Modifiers
--- 	(ModifierId,							ModifierType,															RunOnce)
--- values
--- 	('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'MODIFIER_PLAYER_ADJUST_GOVERNOR_POINTS',								1);
-
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,															SubjectRequirementSetId)
 values
@@ -760,69 +686,29 @@ values
 --所有城市加产
 	('GOV_CITYSTATES_CITY_YIELD',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'THE_HOME_CONTINENT_NEW_REQUIREMENT'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'GOV_GH_REQUIREMENT'),
---外大陆减产
-	--('GOV_CITYSTATES_CITY_LOSE',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA',	'GOV_NONHOMECONTINENT_REQUIREMENT'),
-	--('GOV_CITYSTATES_CITY_LOSE_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER_GRANCOLOMBIA_MAYA',	'GOV_G_NONHOMECONTINENT_REQUIREMENT'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
 	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null),
 	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',				NULL);
-	-- ('GOV_SPIES_ADD_VISIBILITY',            'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',									NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
 values
 --中书省
-	-- ('GOV_CITYSTATES_EXTRA_GOVERNOR_POINT',	'Delta',			1),
 	('GOV_CITYSTATES_CITY_YIELD',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
 	('GOV_CITYSTATES_CITY_YIELD',			'Amount',			'7, 7, 7'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'Amount',			'7, 7, 7'),
-	--('GOV_CITYSTATES_CITY_LOSE',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	--('GOV_CITYSTATES_CITY_LOSE',			'Amount',			'-4, -4, -4'),
-	--('GOV_CITYSTATES_CITY_LOSE_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	--('GOV_CITYSTATES_CITY_LOSE_G',			'Amount',			'-8, -8, -8'),
 --情报局
 	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
 	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
 	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50),
 	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY');
-	-- ('GOV_SPIES_ADD_VISIBILITY',            'Amount',           1),
-    -- ('GOV_SPIES_ADD_VISIBILITY',            'Source',           'SOURCE_GOV_SPIES'),
-   	-- ('GOV_SPIES_ADD_VISIBILITY',            'SourceType',       'DIPLO_SOURCE_ALL_NAMES');
-
--- insert or replace into DiplomaticVisibilitySources
---     (VisibilitySourceType,		Description,                ActionDescription,                  GossipString,                  	 PrereqTech)
--- values
---     ('SOURCE_GOV_SPIES',		'LOC_VIZSOURCE_GOV_SPIES',	'LOC_VIZSOURCE_ACTION_GOV_SPIES',   'LOC_GOSSIP_SOURCE_GOV_SPIES',   'TECH_MATHEMATICS');
 
 --主教座堂
 --移除信仰加成
--- update Building_YieldChanges set YieldChange = 0 where BuildingType = 'BUILDING_GOV_FAITH';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_GOV_FAITH';
 --宗教单位加力前置
--- insert or replace into Types
--- 	(Type,											Kind)
--- values
--- 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH',			'KIND_ABILITY');
--- insert or replace into TypeTags
--- 	(Type,											Tag)
--- values
--- 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH',			'CLASS_RELIGIOUS_ALL');
--- insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
--- 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH',
--- 	'LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_NAME',
--- 	'LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_DESCRIPTION',
--- 	1);
--- insert or replace into UnitAbilityModifiers
--- 	(UnitAbilityType,								ModifierId)
--- 	values
--- 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH',			'ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER');
--- insert or replace into Modifiers
--- 	(ModifierId,									ModifierType)
--- values
--- 	('ABILITY_GOV_FAITH_COMBAT_STRENGTH_MODIFIER',	'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH');
-
 insert or replace into BuildingModifiers
 	(BuildingType,									ModifierId)
 values
@@ -836,8 +722,6 @@ values
 -- 外国信教城市瓶琴
 	('BUILDING_GOV_FAITH',							'GOV_FAITH_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION'),
 	('BUILDING_GOV_FAITH',							'GOV_FAITH_CULTURE_PER_FOREIGN_CITY_FOLLOWING_RELIGION'),
---建成建筑返还信仰
-	-- ('BUILDING_GOV_FAITH',							'GOV_FAITH_FINISH_BUILDINGS'),
 --宗教单位加力
 	('BUILDING_GOV_FAITH',							'GOV_FAITH_COMBAT_BUFF');
 
@@ -854,8 +738,6 @@ values
 -- 外国信教城市瓶琴
 	('GOV_FAITH_SCIENCE_PER_FOREIGN_CITY_FOLLOWING_RELIGION', 'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD'),
 	('GOV_FAITH_CULTURE_PER_FOREIGN_CITY_FOLLOWING_RELIGION', 'MODIFIER_PLAYER_RELIGION_ADD_PLAYER_BELIEF_YIELD'),
---建成建筑返还信仰
-	-- ('GOV_FAITH_FINISH_BUILDINGS',					'MODIFIER_PLAYER_CITIES_GRANT_YIELD_PER_BUILDING_COST'),
 --宗教单位加力
 	('GOV_FAITH_COMBAT_BUFF',						'MODIFIER_PLAYER_UNITS_GRANT_ABILITY');
 
@@ -883,10 +765,6 @@ values
 	('GOV_FAITH_CULTURE_PER_FOREIGN_CITY_FOLLOWING_RELIGION', 'YieldType',			'YIELD_CULTURE'),
 	('GOV_FAITH_CULTURE_PER_FOREIGN_CITY_FOLLOWING_RELIGION', 'Amount',				2),
 	('GOV_FAITH_CULTURE_PER_FOREIGN_CITY_FOLLOWING_RELIGION', 'PerXItems',			1),
---建成建筑返还信仰
-	-- ('GOV_FAITH_FINISH_BUILDINGS',					'YieldType',					'YIELD_FAITH'),
-	-- ('GOV_FAITH_FINISH_BUILDINGS',					'BuildingProductionPercent',	30),
-	-- ('GOV_FAITH_FINISH_BUILDINGS',					'IncludeWonder',				0),
 --宗教单位加力
 	('GOV_FAITH_COMBAT_BUFF',						'AbilityType',					'ABILITY_GOV_FAITH_COMBAT_STRENGTH');
 
@@ -897,69 +775,6 @@ delete from BuildingModifiers where ModifierId = 'GOV_HEAL_AFTER_DEFEATING_UNIT'
 
 --作战部
 --新增效果
--- insert or replace into Types
--- 	(Type,												Kind)
--- values
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'KIND_ABILITY'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'KIND_ABILITY');
--- insert or replace into TypeTags
--- 	(Type,												Tag)
--- values
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_RECON'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_MELEE'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_RANGED'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_SIEGE'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_HEAVY_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_LIGHT_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_RANGED_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_ANTI_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_HEAVY_CHARIOT'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_LIGHT_CHARIOT'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_NAVAL_MELEE'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_NAVAL_RANGED'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_NAVAL_RAIDER'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'CLASS_AIRCRAFT'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_RECON'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_MELEE'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_RANGED'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_SIEGE'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_HEAVY_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_LIGHT_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_RANGED_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_ANTI_CAVALRY'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_HEAVY_CHARIOT'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_LIGHT_CHARIOT'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_NAVAL_MELEE'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_NAVAL_RANGED'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_NAVAL_RAIDER'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'CLASS_AIRCRAFT');
--- insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) values
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',
--- 	'LOC_ABILITY_GOV_MILITARY_MOVEMENT_NAME',
--- 	'LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION',
--- 	1),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',
--- 	'LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_NAME',
--- 	'LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION',
--- 	1);
--- insert or replace into UnitAbilityModifiers
--- 	(UnitAbilityType,									ModifierId)
--- values
--- 	('ABILITY_GOV_MILITARY_MOVEMENT',					'ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH',			'ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER');
--- insert or replace into Modifiers
--- 	(ModifierId,										ModifierType)
--- values
--- 	('ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER',			'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT'),
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER',	'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH');
-
--- insert or replace into ModifierStrings
--- 	(ModifierId,										Context,	Text)
--- values
--- 	('ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER',	'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT}'),
--- 	('ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER',			'Preview',	'+{1_Amount} {LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT}');
-
-
 insert or replace into BuildingModifiers
 	(BuildingType,										ModifierId)
 values
@@ -1056,7 +871,6 @@ values
  	('BUILDING_NILOMETER_HD',										'NILOMETER_SCIENCE'),
  	('BUILDING_TRIUMPHAL_ARCH',										'TRIUMPHAL_ARCH_CULTURE'),
  	('BUILDING_KAREZ',												'KAREZ_FOOD'),
- 	--('BUILDING_KAREZ',												'KAREZ_HOUSING'),
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'HANDCRAFT_BUILDING_PRODUCTION'),
  	('BUILDING_OFFICIAL_RUN_HANDCRAFT',								'HANDCRAFT_DISTRICT_PRODUCTION'),
  	('BUILDING_BOOTCAMP',											'BOOTCAMP_UNIT_PRODUCTION'),
@@ -1069,7 +883,6 @@ values
 	('NILOMETER_SCIENCE',					'MODIFIER_BUILDING_YIELD_CHANGE',						'PLOT_FLOODPLAINS_REQUIREMENTS'),
  	('TRIUMPHAL_ARCH_CULTURE',				'MODIFIER_BUILDING_YIELD_CHANGE',						'DL_CITY_HAS_WONDER_REQUIREMENTS'),
  	('KAREZ_FOOD',							'MODIFIER_BUILDING_YIELD_CHANGE',						'PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN'),
- 	--('KAREZ_HOUSING',						'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING',			'PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN'),
  	('HANDCRAFT_BUILDING_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
  	('HANDCRAFT_DISTRICT_PRODUCTION',		'MODIFIER_SINGLE_CITY_ADJUST_DISTRICT_PRODUCTION_CHANGE', 'OFFICIAL_RUN_HANDCRAFT_REQUIREMENT'),
  	('BOOTCAMP_UNIT_PRODUCTION',			'MODIFIER_SINGLE_CITY_ADJUST_UNIT_PRODUCTION_CHANGE',	'BOOTCAMP_REQUIREMENT'),
@@ -1088,7 +901,6 @@ values
 	('KAREZ_FOOD',							'BuildingType',										'BUILDING_KAREZ'),
 	('KAREZ_FOOD',							'YieldType',										'YIELD_FOOD'),
 	('KAREZ_FOOD',							'Amount',											1),
-	-- ('KAREZ_HOUSING',						'Amount',											1),
 	('HANDCRAFT_BUILDING_PRODUCTION',		'Amount',											2),
 	('HANDCRAFT_DISTRICT_PRODUCTION',		'Amount',											2),
 	('BOOTCAMP_UNIT_PRODUCTION',			'Amount',											2),
@@ -1122,7 +934,6 @@ update Buildings set Cost = 360 where BuildingType = 'BUILDING_FACTORY';
 update Buildings_XP2 set RequiredPower = 0 where BuildingType = 'BUILDING_FACTORY';
 
 delete from Building_YieldChangesBonusWithPower where BuildingType = 'BUILDING_FACTORY';
--- update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_FACTORY' and YieldType = 'YIELD_PRODUCTION';
 
 update Building_YieldChangesBonusWithPower set YieldChange = 3 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and YieldType = 'YIELD_PRODUCTION';
 update Building_YieldChanges set YieldChange = 6 where BuildingType = 'BUILDING_ELECTRONICS_FACTORY' and YieldType = 'YIELD_PRODUCTION';
@@ -1634,8 +1445,7 @@ inner join Resources
 on Improvement_ValidResources.ResourceType = Resources.ResourceType
 where Resources.ResourceClassType = 'RESOURCECLASS_BONUS' and Improvement_ValidResources.ImprovementType = 'IMPROVEMENT_FARM';
 
--- 情报局改名贸易本埠: +1贸易路线容量, 全国每级商业和港口建筑为本城+4%的金币产出. 本国的国际商路从每个经过的贸易站获得+3金.
--- 原情报局能力给外交办
+
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 select
@@ -1646,51 +1456,18 @@ insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)
 values
     ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_CAPACITY'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_YIELD'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER1'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER2'),
-    ('BUILDING_GOV_SPIES',  'GOV_SPIES_GOLD_FROM_HARBOR_TIER3');
+    ('BUILDING_GOV_SPIES',  'GOV_SPIES_TRADE_ROUTE_YIELD');
 insert or replace into Modifiers
     (ModifierId,                                    ModifierType,                                                           SubjectRequirementSetId)
 values
     ('GOV_SPIES_TRADE_ROUTE_CAPACITY',              'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',                          null),
-    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY',    null),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER1'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER2'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_MODIFIER',                      'HD_PLAYER_HAS_HARBOR_TIER3');
+    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_PER_POST_IN_FOREIGN_CITY',    null);
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,           Value)
 values
     ('GOV_SPIES_TRADE_ROUTE_CAPACITY',              'Amount',       1),
     ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'Amount',       3),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER1',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER2',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_COMMERCIAL_HUB_TIER3',    'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER1',            'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER2',            'Amount',       4),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'YieldType',    'YIELD_GOLD'),
-    ('GOV_SPIES_GOLD_FROM_HARBOR_TIER3',            'Amount',       4);
-insert or ignore into RequirementSets
-    (RequirementSetId,                      RequirementSetType)
-values
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER1',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER2',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_COMMERCIAL_HUB_TIER3',  'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER1',          'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER2',          'REQUIREMENTSET_TEST_ANY'),
-    ('HD_PLAYER_HAS_HARBOR_TIER3',          'REQUIREMENTSET_TEST_ANY');
+    ('GOV_SPIES_TRADE_ROUTE_YIELD',                 'Amount',       3);
 create temporary table GovSpiesBuffedBuildings (BuildingType text not null primary key);
 insert into GovSpiesBuffedBuildings (BuildingType) select BuildingType from Buildings where (PrereqDistrict = 'DISTRICT_COMMERCIAL_HUB' or PrereqDistrict = 'DISTRICT_HARBOR') and BuildingType not like 'BUILDING_MARACANA_DUMMY_%' and IsWonder = 0 and InternalOnly = 0;
 insert or replace into BuildingModifiers
@@ -1701,7 +1478,7 @@ from GovSpiesBuffedBuildings;
 insert or replace into Modifiers
     (ModifierId,                                                ModifierType,                                       SubjectRequirementSetId)
 select
-    'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'HD_CITY_HAS_' || BuildingType
+    'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'CITY_HAS_' || BuildingType || '_REQUIREMENTS'
 from GovSpiesBuffedBuildings;
 insert or replace into ModifierArguments
     (ModifierId,                                                Name,           Value)
@@ -1713,136 +1490,28 @@ insert or replace into ModifierArguments
 select
     'GOV_SPIES_' || BuildingType || '_GRANT_GOLD_PERCENTAGE',   'YieldType',    'YIELD_GOLD'
 from GovSpiesBuffedBuildings;
-insert or ignore into RequirementSets
-    (RequirementSetId,              RequirementSetType)
-select
-    'HD_CITY_HAS_' || BuildingType, 'REQUIREMENTSET_TEST_ALL'
-from GovSpiesBuffedBuildings;
-insert or ignore into RequirementSetRequirements
-    (RequirementSetId,              RequirementId)
-select
-    'HD_CITY_HAS_' || BuildingType, 'REQUIRES_CITY_HAS_' || BuildingType
-from GovSpiesBuffedBuildings;
-
 insert or replace into Building_YieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-    ('BUILDING_HD_TAVERN',        		'YIELD_FOOD',           2),
-    ('BUILDING_HD_INN',    				'YIELD_CULTURE',     	1),
-    ('BUILDING_HD_INN',    				'YIELD_GOLD',           2);
-
+    ('BUILDING_HD_TAVERN',        		'YIELD_CULTURE',        4),
+    ('BUILDING_HD_TAVERN',        		'YIELD_GOLD',           8),
+    ('BUILDING_HD_INN',    				'YIELD_FOOD',     		2),
+    ('BUILDING_HD_INN',    				'YIELD_PRODUCTION',     2),
+    ('BUILDING_HD_INN',    				'YIELD_GOLD',           8);
 insert or replace into Building_CitizenYieldChanges
 	(BuildingType,						YieldType,				YieldChange)
 values
-	('BUILDING_HD_TAVERN',				'YIELD_FOOD',			1),
-	('BUILDING_HD_INN',					'YIELD_GOLD',			2);
-
-insert or replace into Building_GreatPersonPoints
-	(BuildingType,							GreatPersonClassType,				PointsPerTurn)
-values
-	('BUILDING_HD_TAVERN',					'GREAT_PERSON_CLASS_WRITER',		2),
-	('BUILDING_HD_TAVERN',					'GREAT_PERSON_CLASS_ARTIST',		1),
-	('BUILDING_HD_INN',						'GREAT_PERSON_CLASS_MERCHANT',		2),
-	('BUILDING_HD_INN',						'GREAT_PERSON_CLASS_SCIENTIST',		1);
-
-CREATE TEMPORARY TABLE 'HD_TAVERN_RESOURCES' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_TAVERN_RESOURCES (ResourceType) select ResourceType from Resources where ResourceType in
-	('RESOURCE_BANANAS','RESOURCE_DEER','RESOURCE_RICE','RESOURCE_WHEAT','RESOURCE_CITRUS','RESOURCE_SUGAR','RESOURCE_WINE','RESOURCE_HORSES','RESOURCE_MAIZE','RESOURCE_HONEY','RESOURCE_CVS_POMEGRANATES',
-	'RESOURCE_P0K_MAPLE','RESOURCE_P0K_PLUMS','RESOURCE_LEU_P0K_QUINOA','RESOURCE_LEU_P0K_POTATOES','RESOURCE_BERRIES','RESOURCE_DATES','RESOURCE_BARLEY','RESOURCE_STRAWBERRY','RESOURCE_SORGHUM');
-
-CREATE TEMPORARY TABLE 'HD_INN_RESOURCES' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_INN_RESOURCES (ResourceType) select ResourceType from Resources where ResourceType in
-	('RESOURCE_DEER','RESOURCE_SHEEP','RESOURCE_COTTON','RESOURCE_FURS','RESOURCE_SILK','RESOURCE_DLV_BISON','RESOURCE_P0K_PAPYRUS','RESOURCE_LEU_P0K_LLAMAS','RESOURCE_SUK_CAMEL','RESOURCE_BAMBOO',
-	'RESOURCE_SANDALWOOD','RESOURCE_OAK','RESOURCE_EBONY','RESOURCE_SAKURA','RESOURCE_PINE','RESOURCE_RUBBER','RESOURCE_CASHMERE','RESOURCE_WOLF','RESOURCE_TIGER','RESOURCE_LION');
-
-CREATE TEMPORARY TABLE 'HD_TAVERN_DISTRICTS'(
-    'DistrictType' TEXT NOT NULL,
-    'GreatPersonClassType' TEXT NOT NULL
-);
-
-insert or replace into HD_TAVERN_DISTRICTS
-	(DistrictType,					GreatPersonClassType)
-values
-	('DISTRICT_HOLY_SITE',			'GREAT_PERSON_CLASS_PROPHET'),
-	('DISTRICT_CAMPUS',				'GREAT_PERSON_CLASS_SCIENTIST'),
-	('DISTRICT_HARBOR',				'GREAT_PERSON_CLASS_ADMIRAL'),
-	('DISTRICT_ENCAMPMENT',			'GREAT_PERSON_CLASS_GENERAL'),
-	('DISTRICT_COMMERCIAL_HUB',		'GREAT_PERSON_CLASS_MERCHANT'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_WRITER'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_ARTIST'),
-	('DISTRICT_THEATER',			'GREAT_PERSON_CLASS_MUSICIAN'),
-	('DISTRICT_INDUSTRIAL_ZONE',	'GREAT_PERSON_CLASS_ENGINEER');
-
--- 酒馆
+	('BUILDING_HD_TAVERN',				'YIELD_GOLD',			3),
+	('BUILDING_HD_INN',					'YIELD_GOLD',			3);
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_TAVERN',			'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
+values
+	('BUILDING_HD_INN',				'HD_INN_INFLUENCE_POINTS');
 insert or replace into Modifiers
-	(ModifierId,					ModifierType,			OwnerRequirementSetId,      SubjectRequirementSetId)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'MODIFIER_SINGLE_CITY_DISTRICTS_ADJUST_GREAT_PERSON_POINTS',
-	'HD_CITY_HAS_IMPROVED_'|| a.ResourceType ||'_REQUIRMENTS',
-	'DISTRICT_IS_' || substr(b.DistrictType,10)
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
+	(ModifierId,					ModifierType)
+values
+	('HD_INN_INFLUENCE_POINTS',		'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN');
 insert or replace into ModifierArguments
 	(ModifierId,					Name,		Value)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'GreatPersonClassType',		b.GreatPersonClassType
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
-insert or replace into ModifierArguments
-	(ModifierId,					Name,		Value)
-select
-	'HD_TAVERN_' || b.DistrictType || '_' || b.GreatPersonClassType || '_' || a.ResourceType,
-	'Amount',		1
-from HD_TAVERN_RESOURCES a, HD_TAVERN_DISTRICTS b;
-
--- 客栈
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_INN',				'HD_INN_INFLUENCE_' || ResourceType
-from HD_INN_RESOURCES;
-
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-select
-	'BUILDING_HD_INN',				'HD_INN_ALLIANCE_' || ResourceType
-from HD_INN_RESOURCES;
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,											OwnerRequirementSetId)
-select
-	'HD_INN_INFLUENCE_' || ResourceType,	'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN',		'HD_CITY_HAS_IMPROVED_'|| ResourceType ||'_REQUIRMENTS'
-from HD_INN_RESOURCES;
-
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,											OwnerRequirementSetId)
-select
-	'HD_INN_ALLIANCE_' || ResourceType,		'MODIFIER_PLAYER_ADJUST_ALLIANCE_POINTS',				'HD_CITY_HAS_IMPROVED_'|| ResourceType ||'_REQUIRMENTS'
-from HD_INN_RESOURCES;
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,		Value)
-select
-	'HD_INN_INFLUENCE_' || ResourceType,	'Amount',	1
-from HD_INN_RESOURCES;
-
-insert or replace into ModifierArguments
-	(ModifierId,							Name,		Value)
-select
-	'HD_INN_ALLIANCE_' || ResourceType,		'Amount',	1
-from HD_INN_RESOURCES;
-
--- Tourism Bomb
-/*
-insert or replace into
-	(BuildingType,		TourismBombValue)
-select
-*/	
+values
+	('HD_INN_INFLUENCE_POINTS',		'Amount',	2);

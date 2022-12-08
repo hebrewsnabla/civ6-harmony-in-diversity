@@ -55,8 +55,14 @@ values
 												 
 												 1c757aea-0da4-4934-8520-96a59f6157b9,
 												 5c5ed34e-f66b-41e4-aa7b-4546b298f2a0,
-												 b2a21d80-eee9-41da-87c0-c09e9ff78458
-												 "),
+												 b2a21d80-eee9-41da-87c0-c09e9ff78458,
+												 1684ab00-5795-49be-b200-82d1e1f2df9e,
+												 b77c610e-e9f8-4373-8e54-16db48639ae4,
+												 3e43d019-c7e2-4cfd-8694-e18caa0a2018,
+												 c4c04b4d-6ff5-4057-a26c-c1b27e950fe7,
+												 d3cbeba5-2100-475d-8c47-74573c80d406,
+												 ff430ab5-54c1-4dae-8f94-6d4c55cfefa5
+												"),
                                                 -- b5776b4b-93b1-409c-acee-09f829856eed,
     ("LOC_WONDERS_MODS_NAME",                   "World Wonders"),
     ("LOC_WONDERS_MODS_LIST",                   "5a5601c5-090c-4172-89fe-8f1da9e2b96d,
@@ -164,7 +170,8 @@ values
                                                  aa162e00-b301-425f-8666-af258a8f16e8,
                                                  ceebba6a-2185-4b6d-80cf-a24fdf803cb7,
                                                  632a4fa1-e907-4426-815b-8424aeb81bb0,
-                                                 97ff0be1-268e-4acc-adda-5c2a820b6521"),
+                                                 97ff0be1-268e-4acc-adda-5c2a820b6521,
+												 17bd9dd4-01f7-4c42-acb0-b703c9ad85c9"),
     ("LOC_FF16_NUMOF_CUSTOM_FILTERS",           "9"),
     ("LOC_FF16_CUSTOM_FILTER_1",                "{LOC_HD_CORE_MODS_NAME};{LOC_HD_CORE_MODS_LIST}"),
     ("LOC_FF16_CUSTOM_FILTER_2",                "{LOC_HD_RECOMMENDED_MODS_NAME};{LOC_HD_RECOMMENDED_MODS_LIST}"),

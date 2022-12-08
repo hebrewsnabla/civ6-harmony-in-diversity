@@ -3,8 +3,7 @@
 -------------------------------------
 
 -- Projects
--- update Projects set CostProgressionModel = 'NO_PROGRESSION_MODEL', CostProgressionParam1 = 0
-update Projects set CostProgressionParam1 = 1100 -- was 600
+update Projects set CostProgressionParam1 = 1100
  where ProjectType = 'PROJECT_CARNIVAL'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'
@@ -33,16 +32,10 @@ update Projects set Cost = 40
 ;
 
 update Projects set CostProgressionParam1 = 800, Cost = 80 where ProjectType = 'PROJECT_COURT_FESTIVAL';
-
--- update Projects set CostProgressionModel = 'NO_PROGRESSION_MODEL', CostProgressionParam1 = 0, Cost = 200
-update Projects set CostProgressionParam1 = 300, Cost = 100
-	where ProjectType = 'PROJECT_COTHON_CAPITAL_MOVE';
-
--- TODO OCCULT project in Secret Societies MODE
+update Projects set CostProgressionParam1 = 300, Cost = 100	where ProjectType = 'PROJECT_COTHON_CAPITAL_MOVE';
 
 -- Project Great Points
--- update Project_GreatPersonPoints set PointProgressionModel = 'NO_PROGRESSION_MODEL', PointProgressionParam1 = 0
-update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
+update Project_GreatPersonPoints set PointProgressionParam1 = 900
  where ProjectType = 'PROJECT_CARNIVAL'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_HARBOR'
@@ -53,6 +46,9 @@ update Project_GreatPersonPoints set PointProgressionParam1 = 900 -- was 500
 	or ProjectType = 'PROJECT_ENHANCE_DISTRICT_THEATER'
 	or ProjectType = 'PROJECT_WATER_CARNIVAL'
 ;
+
+delete from Project_GreatPersonPoints where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+update Project_YieldConversions set PercentOfProductionRate = PercentOfProductionRate * 2 where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
 
 -- update Project_GreatPersonPoints set Points = 10
 --  where ProjectType = 'PROJECT_ENHANCE_DISTRICT_ENCAMPMENT'
@@ -115,32 +111,3 @@ insert or replace into ModifierArguments
 	(ModifierId,									Name,		Value)
 values
 	('LAUNCH_MOON_LANDING_CIVIC_BOOST_PRECENTAGE',	'Amount',	10);
--- -- 征发民夫 by xhh
--- insert or replace into Types
--- 	(Type,							Kind)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'KIND_PROJECT');
-
--- insert or replace into Projects
--- 	(ProjectType,					Name,									ShortName,										Description,									Cost,		CostProgressionModel,				CostProgressionParam1,		PrereqCivic)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'LOC_PROJECT_RECRUIT_WORKERS_HD_NAME',	'LOC_PROJECT_RECRUIT_WORKERS_HD_SHORT_NAME',	"LOC_PROJECT_RECRUIT_WORKERS_HD_DESCRIPTION",	30,			'COST_PROGRESSION_GAME_PROGRESS',	600,						'CIVIC_DEFENSIVE_TACTICS');
-
--- insert or replace into ProjectCompletionModifiers
--- 	(ProjectType,					ModifierId)
--- values
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH'),
--- 	('PROJECT_RECRUIT_WORKERS_HD',	'HD_RECRUIT_WORKERS_POPU_DECREASE_XHH');
-
--- insert or replace into Modifiers
--- 	(ModifierId,										ModifierType,									RunOnce,	Permanent,		SubjectRequirementSetId)
--- values
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',		1,			1,				'CITY_HAS_2_POPULATION'),
--- 	('HD_RECRUIT_WORKERS_POPU_DECREASE_XHH',			'MODIFIER_PLAYER_CITIES_ADD_POPULATION',		1,			1,				'CITY_HAS_2_POPULATION');
-
--- insert or replace into ModifierArguments
--- 	(ModifierId,										Name,				Value)
--- values
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'UnitType',			'UNIT_BUILDER'),
--- 	('HD_RECRUIT_WORKERS_GRANT_BUILDER_XHH',			'Amount',			1),
--- 	('HD_RECRUIT_WORKERS_POPU_DECREASE_XHH',			'Amount',			-1);

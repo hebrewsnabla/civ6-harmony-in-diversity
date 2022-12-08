@@ -61,11 +61,10 @@ update Buildings set Cost = 2000 where BuildingType = 'BUILDING_AMUNDSEN_SCOTT_R
 with Building_YieldChanges_Pre
 	(BuildingType,								YieldType,			YieldChange)
 as (values
-	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		2),
+	('BUILDING_HANGING_GARDENS',				'YIELD_FOOD', 		4),
 	('BUILDING_GREAT_BATH',						'YIELD_FOOD',		1),
 	('BUILDING_GREAT_BATH',						'YIELD_FAITH',		1),
-	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		1),
-	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_PRODUCTION',	1),
+	('BUILDING_TEMPLE_ARTEMIS',					'YIELD_FOOD',		6),
 	('BUILDING_PETRA',							'YIELD_FOOD',		1),
 	('BUILDING_PETRA',							'YIELD_PRODUCTION',	1),
 	('BUILDING_GREAT_LIGHTHOUSE',				'YIELD_GOLD',		6),
@@ -224,6 +223,28 @@ values
 	('BUILDING_PETRA',	'TERRAIN_DESERT_MOUNTAIN');
 
 -- Adjust building effects
+-- Great Bath
+insert or replace into BuildingModifiers
+	(BuildingType,					ModifierId)
+values
+	('BUILDING_GREAT_BATH',			'GREAT_BATH_RIVER_FOOD'),
+	('BUILDING_GREAT_BATH',			'GREAT_BATH_RIVER_CULTURE'),
+	('BUILDING_GREAT_BATH',			'GREAT_BATH_RIVER_AMENITY');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,											SubjectRequirementSetId)
+values
+	('GREAT_BATH_RIVER_FOOD',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),
+	('GREAT_BATH_RIVER_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',		'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'),
+	('GREAT_BATH_RIVER_AMENITY',	'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,			Value)
+values
+	('GREAT_BATH_RIVER_FOOD',		'YieldType',	'YIELD_FOOD'),
+	('GREAT_BATH_RIVER_FOOD',		'Amount',		2),
+	('GREAT_BATH_RIVER_CULTURE',	'YieldType',	'YIELD_CULTURE'),
+	('GREAT_BATH_RIVER_CULTURE',	'Amount',		1),
+	('GREAT_BATH_RIVER_AMENITY',	'Amount',		1);
+
 -- Alhambra
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
@@ -242,35 +263,6 @@ values
 
 -- Oracle
 update ModifierArguments set Value = 6 where ModifierId like 'ORACLE_GREAT%POINTS' and Name = 'Amount';
-
--- Temple of Artemis
-delete from ImprovementModifiers where (ImprovementType = 'IMPROVEMENT_PLANTATION' and ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
-insert or replace into ImprovementModifiers
-	(ImprovementType,				ModifierId)
-values
-	('IMPROVEMENT_LUMBER_MILL',		'TEMPLE_ARTEMIS_PLANTATION_AMENITY');
-update Modifiers set OwnerRequirementSetId = 'HD_PLOT_HAS_RESOURCE_LUMBER_MILL_REQUIREMENTS' where ModifierId = 'TEMPLE_ARTEMIS_PLANTATION_AMENITY';
-insert or replace into BuildingModifiers
-	(BuildingType,					ModifierId)
-values
-	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_PASTURE_FOOD'),
-	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_CAMP_FOOD'),
-	('BUILDING_TEMPLE_ARTEMIS',		'ARTEMIS_LUMBER_MILL_FOOD');
-insert or replace into Modifiers
-	(ModifierId,					ModifierType,								SubjectRequirementSetId)
-values
-	('ARTEMIS_PASTURE_FOOD',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_PASTURE_WITH_4_TILES'),
-	('ARTEMIS_CAMP_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_CAMP_WITH_4_TILES'),
-	('ARTEMIS_LUMBER_MILL_FOOD',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',		'PLOT_HAS_RESOURCE_LUMBER_MILL_WITH_4_TILES');
-insert or replace into ModifierArguments
-	(ModifierId,					Name,			Value)
-values
-	('ARTEMIS_PASTURE_FOOD',		'YieldType',	'YIELD_FOOD'),
-	('ARTEMIS_PASTURE_FOOD',		'Amount',		1),
-	('ARTEMIS_CAMP_FOOD',			'YieldType',	'YIELD_FOOD'),
-	('ARTEMIS_CAMP_FOOD',			'Amount',		1),
-	('ARTEMIS_LUMBER_MILL_FOOD',	'YieldType',	'YIELD_FOOD'),
-	('ARTEMIS_LUMBER_MILL_FOOD',	'Amount',		1);
 
 -- Petra
 update Buildings set PrereqTech = 'TECH_CURRENCY' where BuildingType = 'BUILDING_PETRA';
@@ -1036,3 +1028,53 @@ insert or replace into ModifierArguments
 select
 	'MARACANA_' || DistrictType || '_EXPERT_YIELD', 	'BuildingType',		'BUILDING_MARACANA_DUMMY_' || DistrictType
 from HD_Maracana_DistrictBonus;
+
+-- Free tech / civic Wonder
+-- Player can choose awarded tech manually
+update Modifiers set OwnerRequirementSetId = 'PLAYER_IS_AI' where ModifierId in ('OXFORD_UNIVERSITY_FREE_TECHS', 'BOLSHOI_THEATRE_FREE_CIVICS', 'ARECIBO_FREE_TECHS');
+--version1.3.3
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+values
+--圣瓦西里主教座堂
+	('BUILDING_ST_BASILS_CATHEDRAL',	'ST_BASILS_CATHEDRAL_YIELD_MODIFIER'),
+--埃菲尔铁塔
+	('BUILDING_EIFFEL_TOWER',			'EIFFEL_TOWER_ADDTOURISM');
+--休伊神庙
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_FOOD_HD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+select
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_PRODUCTION_HD'
+where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId)
+values
+--休伊神庙
+	('HUEY_COAST_FOOD_HD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
+	('HUEY_COAST_PRODUCTION_HD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS'),
+--埃菲尔铁塔
+	('EIFFEL_TOWER_ADDTOURISM',				'MODIFIER_PLAYER_ADJUST_TOURISM',					NULL);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,					value)
+values
+--休伊神庙
+	('HUEY_COAST_FOOD_HD',					'YieldType',			'YIELD_FOOD'),
+	('HUEY_COAST_FOOD_HD',					'Amount',				1),
+	('HUEY_COAST_PRODUCTION_HD',			'YieldType',			'YIELD_PRODUCTION'),
+	('HUEY_COAST_PRODUCTION_HD',			'Amount',				1),
+--圣瓦西里主教座堂
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'YieldType',			'YIELD_FOOD,YIELD_CULTURE,YIELD_PRODUCTION'),
+	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'Amount',				'2,1,1'),
+--埃菲尔铁塔
+	('EIFFEL_TOWER_ADDTOURISM',				'Amount',				15);
+update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER';
+update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_PRODUCTION_MODIFIER';
+--圣瓦西里主教座堂
+delete from BuildingModifiers where ModifierId = 'STBASILS_ADDPRODUCTION' or ModifierId = 'STBASILS_ADDFOOD' or ModifierId = 'STBASILS_ADDCULTURE';

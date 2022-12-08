@@ -491,3 +491,9 @@ function SetPlotProperty (x, y, key, value)
 	end
 end
 GameEvents.SetPlotPropertySwitch.Add(SetPlotProperty);
+
+function AttachModifier (playerId, cityId, modifierId)
+	local city = CityManager.GetCity(playerId, cityId);
+	city:AttachModifierByID(modifierId);
+end
+GameEvents.AttachModifierSwitch.Add(AttachModifier);

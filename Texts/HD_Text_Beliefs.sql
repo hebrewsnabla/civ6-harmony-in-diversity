@@ -4,6 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                     Text)
 values
     ("LOC_DISTRICT_FEATURE_PLANTATION_FAITH",                 "+{1_num} [ICON_Faith] Faith from the adjacent Plantation {1_Num : plural 2?tile; other?tiles;}."),
+    ("LOC_DISTRICT_UTAKI_GOLD",                               "+{1_num} [ICON_Gold] Gold from the adjacent Coast and Lake {1_Num : plural 2?tile; other?tiles;}"),
     ("LOC_DISTRICT_FEATURE_MOUNTAIN_FAITH",                   "+{1_num} [ICON_Faith] Faith from the adjacent Mountain {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_DISTRICT_REEF_SCIENCE",                             "+{1_num} [ICON_Science] Science from the adjacent Reef {1_Num : plural 2?tile; other?tiles;}."),
     ("LOC_DISTRICT_SUK_KELP_SCIENCE",                         "+{1_num} [ICON_Science] Science from the adjacent Kelp {1_Num : plural 2?tile; other?tiles;}."),
@@ -36,7 +37,7 @@ values
     ("LOC_BELIEF_CHORAL_MUSIC_DL_DESCRIPTION",                "All Holy Site buildings provide +4 [ICON_CULTURE] Culture.  +1% [ICON_CULTURE] Culture for every follower of this Religion. "),
     ("LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "All Holy Site buildings provide +0.5 [ICON_SCIENCE] Science for each [ICON_CITIZEN] citizen in this city. Campus district buildings are 20% cheaper to purchase. May purchase Campus district buildings with [ICON_FAITH] Faith. "),
     ("LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "All Holy Site buildings provide +1 [ICON_SCIENCE] Science for international [ICON_TradeRoute] Trade Routes, and +1 [ICON_SCIENCE] Science for both sides of international [ICON_TradeRoute] Trade Routes to this city. May purchase trader units with [ICON_Faith] Faith. Traders are 20% cheaper to purchase. "),
-    ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "All Holy Site buildings provide +8% [ICON_Faith] Faith to the city. Holy Site district buildings are 20% cheaper to purchase. May purchase Holy Site district buildings with [ICON_Faith] Faith."),
+    ("LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "All Holy Site buildings provide +4 [ICON_Faith] Faith. City Center buildings are 20% cheaper to purchase. May purchase City Center buildings and Holy Site district buildings with [ICON_Faith] Faith."),
     ("LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "All Holy Site buildings provide +1 [ICON_Production] Production to all adjacent tiles. Holy Site district provides +2 [ICON_Production] Production."), -- 
 
     ("LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "All world wonders provide +4 [ICON_Faith] Faith. Each time you complete a Wonder, gain [ICON_Faith] Faith equal to 33% its production cost."),
@@ -86,11 +87,12 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                     Text)
 values
-    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_REEF_SCIENCE",                     "+{1_num} [ICON_Science] 科技值来自相邻礁石 {1_Num : plural 2?单元格; other?单元格;}."),
-    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_SUK_KELP_SCIENCE",                 "+{1_num} [ICON_Science] 科技值来自相邻海藻森林 {1_Num : plural 2?单元格; other?单元格;}."),
+    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_REEF_SCIENCE",                     "+{1_num} [ICON_Science] 科技值来自相邻礁石 {1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_UTAKI_GOLD",                               "+{1_num} [ICON_Gold] 金币来自相邻海岸和湖泊{1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_FEATURE_SUK_KELP_SCIENCE",                 "+{1_num} [ICON_Science] 科技值来自相邻海藻森林 {1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_PLANTATION_FAITH",                         "+{1_num} [ICON_Faith] 信仰值来自相邻种植园{1_Num : plural 2?单元格; other?单元格;}。"),
-    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_FAITH",                           "+{1_num} [ICON_Faith] 信仰值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}."),
-    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_SCIENCE",                         "+{1_num} [ICON_Science] 科技值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}."),
+    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_FAITH",                           "+{1_num} [ICON_Faith] 信仰值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_DISTRICT_MOUNTAIN_SCIENCE",                         "+{1_num} [ICON_Science] 科技值来自相邻山脉 {1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_PASTURE_FAITH",                            "+{1_num} [ICON_Faith] 信仰值来自相邻牧场{1_Num : plural 2?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_TUNDRA_FOOD",                              "+{1_num} [ICON_Food] 食物来自相邻冻土{1_Num : plural 1?单元格; other?单元格;}。"),
     ("zh_Hans_CN",  "LOC_DISTRICT_TUNDRA_HILLS_FOOD",                        "+{1_num} [ICON_Food] 食物来自相邻冻土丘陵{1_Num : plural 1?单元格; other?单元格;}。"),
@@ -119,7 +121,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_JESUIT_EDUCATION_DL_DESCRIPTION",            "所有圣地建筑为每人口提供0.5 [ICON_SCIENCE] 科技值。购买学院区域内建筑的费用降低20%且可以用 [ICON_FAITH] 信仰值购买。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COMMUNITY_DL_DESCRIPTION",         "所有圣地建筑为此城出发的国际 [ICON_TradeRoute] 贸易路线+1 [ICON_Science] 科技值，使每条通往此城的国际 [ICON_TradeRoute] 贸易路线为双方+1 [ICON_Science] 科技值。可用 [ICON_Faith] 信仰值购买商人，购买商人的费用降低20%。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ABBOT_DL_DESCRIPTION",                       "所有圣地建筑为相邻的单元格提供+1 [ICON_Production] 生产力。圣地+2 [ICON_Production] 生产力"),
-    ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "所有圣地建筑提供+8% [ICON_Faith] 信仰值。购买圣地区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "所有圣地建筑提供+4 [ICON_Faith] 信仰值。购买市中心内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。圣地区域内建筑可以用 [ICON_FAITH] 信仰值购买。"),
     
     ("zh_Hans_CN",  "LOC_BELIEF_DIVINE_INSPIRATION_DL_DESCRIPTION",          "所有世界奇观+4 [ICON_Faith] 信仰值。完成世界奇观后返还等同于奇观所需产能33%的 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_RELIQUARIES_DL_DESCRIPTION",                 "[ICON_GreatWork_Relic] 遗物能产出3倍的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩。"),
@@ -131,7 +133,6 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_RELIGIOUS_COLONIZATION_DL_DESCRIPTION",      "购买开拓者和建造者的费用降低20%。可以使用 [ICON_Faith] 信仰值购买市政广场和外交区内的建筑。城市中生产的开拓者和建造者+2 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_DL_DESCRIPTION",              "若圣地相邻山脉或森林，+2 [ICON_Amenities] 宜居度。拥有圣地的城市所有单元格+1魅力。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ZEN_MEDITATION_VIETNAM_DESCRIPTION",         "若圣地相邻山脉或森林，+2 [ICON_Amenities] 宜居度。拥有圣地的城市所有单元格+1魅力。购买保护区区域内建筑的费用降低20%且可以用 [ICON_Faith] 信仰值购买。"),
-    -- ("zh_Hans_CN",  "LOC_BELIEF_MESSIAH_DL_DESCRIPTION",                     "购买圣地区域内建筑的费用降低10%且可以用 [ICON_Faith] 信仰值购买。建造圣地区域内的建筑时+30%建造速度。每个圣地区域内的建筑提供+5% [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_INITIATION_RITES_NAME",                      "入会仪式"),
     ("zh_Hans_CN",  "LOC_BELIEF_INITIATION_RITES_DL_DESCRIPTION",            "利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供50点 [ICON_Gold] 金币（标准速度下）。"),
     ("zh_Hans_CN",  "LOC_BELIEF_ITINERANT_PREACHERS_DL_DESCRIPTION",         "宗教传播距离增加30%。利用宗教单位使城市首次改变信仰时，该城市每拥有1点 [ICON_Citizen] 人口，则提供15点 [ICON_Culture] 文化值（标准速度下）。"),

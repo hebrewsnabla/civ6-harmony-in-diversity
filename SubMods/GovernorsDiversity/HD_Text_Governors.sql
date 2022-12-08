@@ -6,15 +6,15 @@ values
     -- Reyna
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_NAME",                        "Trade Supervisorate"),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME",                     "Real Estate Developer"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "The city receives +2 [ICON_Gold] Gold from each District, and receives +2 [ICON_Gold] Gold from each improved tile."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "Commercial Hub and Harbor Districts receive +100% adjacency bonuses in the city."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "The city receives +4 [ICON_Gold] Gold from each unimproved feature. Tiles adjacent to unimproved features of this city receive +1 Appeal."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "[ICON_Citizen] Citizens in the city provide +4 [ICON_GOLD] Gold. Commercial Hub and Harbor districts in this city provide [ICON_Culture] Culture as their [ICON_Gold] Gold adjacency bonus."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "[ICON_CITIZEN] Citizens in this city provide +3 [ICON_GOLD] Gold."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "+100% adjacency bonuses to Commercial Hub and Harbor districts in the city. This city can built one more district than the [ICON_CITIZEN] population limit allows if having both a Commercial Hub and a Harbor."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "-20% cost when purchasing units in this city. Extra -20% cost when purchasing a Trader unit in this city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "+3 [ICON_TRADEROUTE] Trade Route capacity. "),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "Financial Centre"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "City generates +8% [ICON_Gold] Gold for each building in its Commercial and Harbor districts."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "City generates +8% [ICON_GOLD] Gold for each building in its Commercial and Harbor districts."),
     ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "Multinational Corporations"),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "+100% [ICON_Gold] Gold yield for international [ICON_TradeRoute] Trade Routes starting from the city when player has the 'Exploration' Civic."),
-    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "International [ICON_TradeRoute] Trade Routes from this City provide +100% [ICON_Gold] Gold after finishing the 'Exploration' civic. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "Each building in its Commercial and Harbor districts provides +6 [ICON_GOLD] Gold for international [ICON_TRADEROUTE] Trade Routes in this city."),
+    ("LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "Each building in its Commercial and Harbor districts provides +6 [ICON_GOLD] Gold for international [ICON_TRADEROUTE] Trade Routes in this city. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."),
     -- Victor
     ("LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "Establishes in 2 turns. The city cannot be put under siege. +5 [ICON_STRENGTH] City Defense. +30% Production speed toward Encampment districts, Harbor districts, and buildings for these districts."), -- Your other cities within 9 tiles gain +4 Loyalty per turn towards your civilization. 
     ("LOC_GOVERNOR_PROMOTION_GARRISON_COMMANDER_DESCRIPTION",                     "Units defending within the city's territory get +5 [ICON_Strength] Combat Strength. The city gains an additional [ICON_Ranged] Ranged Strike per turn. +100% building speed toward defensive buildings."),
@@ -51,8 +51,8 @@ values
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "Please Ignore"),
     ("LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "This building requires {1_Building}."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "Elected Officer"),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "Each Government Plaza and Government Plaza building in this city provides +1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Government Plaza."),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "Each Government Plaza and Government Plaza building in this city provides +1 [ICON_Food] Food and +1 [ICON_Production] Production to all cities within 8 tiles of the Government Plaza. Each Diplomatic Quater and Diplomatic Quater building in this city provides +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Diplomatic Quater."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "Government Plaza in this city provides +1 [ICON_Food] Food, +1 [ICON_Production] Production, +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Government Plaza. This bonus is doubled for each building in the Government Plaza."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "Government Plaza in this city provides +1 [ICON_Food] Food and +1 [ICON_Production] Production to all cities within 8 tiles of the Government Plaza. Diplomatic Quater in this city provides +1 [ICON_Science] Science and +1 [ICON_Culture] Culture to all cities within 8 tiles of the Diplomatic Quater. These bonuses is doubled for each building in the corresponding district."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "The city receives the Regional effects bonuses from all nearby buildings (not just from the first one)."),
     -- Liang
     ("LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "Rural Planning"),
@@ -103,15 +103,15 @@ values
     -- 瑞纳
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_NAME",                        "市舶榷务"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_NAME",                     "地产商人"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "城市中每个区域+2 [ICON_Gold] 金币。城市中每个改良设施+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "城市中商业中心和港口的相邻加成+100%。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "城市中每个未改良地貌+4 [ICON_Gold] 金币，与未改良地貌相邻的单元格可获得+1魅力。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "城市中每位 [ICON_Citizen] 公民每回合可带来4 [ICON_Gold] 金币的收入。此城的商业和港口区域也提供与其 [ICON_GOLD] 金币相邻加成相同的 [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_LAND_ACQUISITION_DESCRIPTION",              "此城每 [ICON_CITIZEN] 人口产出3 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER_DESCRIPTION",                  "此城的商业中心和港口的相邻加成+100%。如果此城有商业中心和港口，可以无视 [ICON_CITIZEN] 人口数量限制额外建造一个区域。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "在此城中购买单位时-20%花费，购买商人时额外-20%花费。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "+3 [ICON_TRADEROUTE] 贸易路线容量。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_Gold] 金币产出便+8%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_GOLD] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+100%。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "研究探索市政后，从此城开始的国际 [ICON_TradeRoute] 贸易路线的 [ICON_Gold] 金币收益+100%。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "城市中每有一座商业中心建筑和港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "城市中每有一座商业中心建筑和港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     -- 维克多
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_REDOUBT_DESCRIPTION",                                "2回合就职。就职城市无法被围攻，城市防御+5 [ICON_STRENGTH] 战斗力。建造军营、港口和这些区域中的建筑时加速30%。"), -- 您在9个单元格内的其他城市每回合获得对您文明的4点忠诚度
@@ -149,8 +149,8 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_NO_MAGNUS_DESCRIPTION",                                  "请忽略"),
     ("zh_Hans_CN",  "LOC_BUILDING_CONSTRUCT_REQUIRES_BUILDING_WITHOUT_SUFFIX",                   "该建筑需要{1_Building}。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_NAME",                "总务官"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "就职的城市中的市政广场和每个市政广场建筑为市政广场8个单元格之内的城市提供+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "就职的城市中的每个市政广场和市政广场建筑为市政广场8个单元格内的城市提供+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。每个外交区和外交区建筑为外交区8个单元格内的城市提供 +1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_DESCRIPTION",         "就职的城市中的市政广场为市政广场8个单元格内的城市提供+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。市政广场中每有一个建筑，该加成便翻一次倍。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_INDUSTRIALIST_VIETNAM_DESCRIPTION", "就职的城市中的市政广场为市政广场8个单元格内的城市提供+1 [ICON_Food] 食物和+1 [ICON_Production] 生产力。外交区为外交区8个单元格内的城市提供 +1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。这些区域中每有一个建筑，该区域提供的加成便翻一次倍。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_VERTICAL_INTEGRATION_DESCRIPTION",  "此城从附近所有建筑获得辐射加成，而不是仅限首个建筑。"),
     -- 梁
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AQUACULTURE_NAME",                                   "乡村规划"),
@@ -192,3 +192,46 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_KHASS_ODA_BASHI_DESCRIPTION",                        "在外国 [ICON_Capital] 首都就职时，此文明对您的 [ICON_STAT_GRIEVANCE] 不满每回合多降低5点，此文明的任何城市皆无法对您的城市施加忠诚度压力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_GRAND_VISIER_DESCRIPTION",                           "与本方及本方盟友的交战方作战时+5 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CAPOU_AGHA_DESCRIPTION",                             "城市建造任意军事单位时+20%建造速度，训练文艺复兴及之后时代的近战和攻城单位时可以额外获得一个相同的单位。");
+
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                         Text)
+select
+    "zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "在此城中购买单位时-20%花费，购买商人、大亨或投资人时额外-20%花费。"
+where exists (select Tag from LocalizedText where Tag = "LOC_UNIT_LEU_TYCOON_NAME");
+insert or replace into EnglishText
+  	(Tag,                                                                         Text)
+select
+    "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "-20% cost when purchasing units in this city. Extra -20% cost when purchasing a Trader, Tycoon or Investor unit in this city."
+where exists (select Tag from LocalizedText where Tag = "LOC_UNIT_LEU_TYCOON_NAME");
+
+--insert or replace into LocalizedText
+--    (Language,      Tag,                                                                         Text)
+--select
+--    "zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "全国每个商业中心建筑、贸易码头和商港给本城+2% [ICON_Gold] 金币。"
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");
+--insert or replace into EnglishText
+--    (Tag,                                                                         Text)
+--select
+--    "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                     "Each Commercial Hub buildings, Trade Port and Entrepot in your empire provides +2% [ICON_Gold] Gold to this city."
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");
+--
+--insert or replace into LocalizedText
+--    (Language,      Tag,                                                                         Text)
+--select
+--    "zh_Hans_CN",   "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "全国每个商业中心建筑、贸易码头和商港给从本城出发的国际 [ICON_TRADEROUTE] 贸易路线+1 [ICON_GOLD] 金币。"
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");
+--insert or replace into LocalizedText
+--    (Language,      Tag,                                                                         Text)
+--select
+--    "zh_Hans_CN",   "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "全国每个商业中心建筑、贸易码头和商港给从本城出发的国际 [ICON_TRADEROUTE] 贸易路线+1 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。"
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");
+--insert or replace into EnglishText
+--    (Tag,                                                                         Text)
+--select
+--    "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",             "Each Commercial Hub building, Trade Port and Entrepot in your empire provides +1 [ICON_GOLD] Gold for international [ICON_TRADEROUTE] Trade Routes starting from this city."
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");
+--insert or replace into EnglishText
+--    (Tag,                                                                         Text)
+--select
+--    "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",        "Each Commercial Hub building, Trade Port and Entrepot in your empire provides +1 [ICON_GOLD] Gold for international [ICON_TRADEROUTE] Trade Routes starting from this city. [ICON_Greatwork_Product] Product provide +100% [ICON_Tourism] Tourism in this City after finishing the 'Capitalism' Civic."
+--where exists (select Tag from LocalizedText where Tag = "LOC_BUILDING_JNR_MINT_NAME");

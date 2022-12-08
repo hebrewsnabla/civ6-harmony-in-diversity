@@ -96,10 +96,13 @@ values
 
 -- Adjacency Yield
 delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK'
-	or (ImprovementType = 'IMPROVEMENT_MEKEWAP' and YieldChangeId = 'Mekewap_FirstBonusAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_TERRACE_FARM' and YieldChangeId = 'Terrace_AqueductAdjacency')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_River')
 	or (ImprovementType = 'IMPROVEMENT_CHATEAU' and YieldChangeId = 'Chateau_WonderEarly');
+delete from Adjacency_YieldChanges where ID in(
+    'Mekewap_FirstBonusAdjacency',
+    'Mekewap_SecondBonusAdjacency',
+    'Mekewap_ThirdBonusAdjacency');
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,				YieldChangeId)
 values
@@ -117,8 +120,12 @@ values
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Royal_Navy_Gold'),
 	('IMPROVEMENT_FISHING_BOATS',	'Fishing_Boats_Cothon_Gold'),
 
-	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production'),
-	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production_Tier1'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Luxury_Production_Tier2'),
+	('IMPROVEMENT_MEKEWAP',			'Mekewap_Strategic_Production_Tier1'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Strategic_Production_Tier2'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Bonus_Food_Tier1'),
+	('IMPROVEMENT_MEKEWAP',		    'Mekewap_Bonus_Food_Tier2'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_GrassMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_PlainsMountainAdjacency_Late'),
 	('IMPROVEMENT_TERRACE_FARM',	'Terrace_DesertMountainAdjacency_Late'),
@@ -158,13 +165,17 @@ insert or replace into Adjacency_YieldChanges
 values
 	('Lumber_Mill_River_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'TECH_BRONZE_WORKING',	'TECH_MACHINERY');
 insert or replace into Adjacency_YieldChanges
-	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		PrereqCivic)
+	(ID,										Description,	YieldType,			YieldChange,	AdjacentResourceClass,		PrereqTech,		        PrereqCivic,            ObsoleteTech,           ObsoleteCivic)
 values
-	('Mekewap_Luxury_Production', 				'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY',		null,			null),
-	('Mekewap_Strategic_Production', 			'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC',	null,			null),
-	('Chateau_Bonus_Gold', 						'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_BONUS',		null,			null),
-	('Chateau_Luxury_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY',		'TECH_CASTLES',	null),
-	('Chateau_Luxury_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY',		null,			'CIVIC_GUILDS');
+	('Mekewap_Luxury_Production_Tier1', 		'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_LUXURY',		null,			        null,                   'TECH_MASS_PRODUCTION', null),
+	('Mekewap_Luxury_Production_Tier2', 		'Placeholder',	'YIELD_PRODUCTION',	2,				'RESOURCECLASS_LUXURY',		'TECH_MASS_PRODUCTION',	null,                   null,                   null),
+	('Mekewap_Strategic_Production_Tier1', 		'Placeholder',	'YIELD_PRODUCTION',	1,				'RESOURCECLASS_STRATEGIC',	null,			        null,                   'TECH_MASS_PRODUCTION', null),
+	('Mekewap_Strategic_Production_Tier2', 		'Placeholder',	'YIELD_PRODUCTION',	2,				'RESOURCECLASS_STRATEGIC',	'TECH_MASS_PRODUCTION',	null,                   null,                   null),
+	('Mekewap_Bonus_Food_Tier1',                'PlaceHolder',  'YIELD_FOOD',       1,              'RESOURCECLASS_BONUS',      null,                   null,                   null,                   'CIVIC_CIVIL_SERVICE'),
+	('Mekewap_Bonus_Food_Tier2',                'PlaceHolder',  'YIELD_FOOD',       2,              'RESOURCECLASS_BONUS',      null,                   'CIVIC_CIVIL_SERVICE',  null,                   null),
+	('Chateau_Bonus_Gold', 						'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_BONUS',		null,			        null,                   null,                   null),
+	('Chateau_Luxury_Culture', 					'Placeholder',	'YIELD_CULTURE',	1,				'RESOURCECLASS_LUXURY',		'TECH_CASTLES',	        null,                   null,                   null),
+	('Chateau_Luxury_Gold', 					'Placeholder',	'YIELD_GOLD',		2,				'RESOURCECLASS_LUXURY',		null,			        'CIVIC_GUILDS',         null,                   null);
 insert or replace into Adjacency_YieldChanges
 	(ID,										Description,	YieldType,			YieldChange,	OtherDistrictAdjacent,	PrereqCivic)
 values
@@ -213,7 +224,6 @@ with I(ImprovementType) as (select ImprovementType from Improvements where Impro
 	'IMPROVEMENT_MOAI',
 	'IMPROVEMENT_OPEN_AIR_MUSEUM',
 	'IMPROVEMENT_MAHAVIHARA', 
-	'IMPROVEMENT_TRADING_DOME',
 	'IMPROVEMENT_BATEY',
 	'IMPROVEMENT_HACIENDA',
 	'IMPROVEMENT_PAIRIDAEZA',
@@ -237,8 +247,7 @@ update Improvements set Description = '{' || Description || '}{LOC_IMPROVEMENT_B
 	'IMPROVEMENT_MEKEWAP',
 	'IMPROVEMENT_MOAI',
 	'IMPROVEMENT_OPEN_AIR_MUSEUM',
-	'IMPROVEMENT_MAHAVIHARA', 
-	'IMPROVEMENT_TRADING_DOME',
+	'IMPROVEMENT_MAHAVIHARA',
 	'IMPROVEMENT_BATEY',
 	'IMPROVEMENT_HACIENDA',
 	'IMPROVEMENT_PAIRIDAEZA',
@@ -476,7 +485,11 @@ update Adjacency_YieldChanges set YieldType = 'YIELD_SCIENCE', ObsoleteCivic = '
 -- Mekewap (Cree)
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MEKEWAP' and ModifierId = 'MEKEWAP_LUXURY_GOLD';
 update ModifierArguments set Value = 'YIELD_PRODUCTION' where ModifierId = 'MEKEWAP_LUXURY_GOLD' and Name = 'YieldType';
-update Adjacency_YieldChanges set PrereqCivic = null where ID = 'Mekewap_SecondBonusAdjacency';
+insert or replace into Improvement_YieldChanges
+	(ImprovementType,					YieldType,				YieldChange)
+values
+	('IMPROVEMENT_MEKEWAP',		        'YIELD_PRODUCTION',		1),
+	('IMPROVEMENT_MEKEWAP',		        'YIELD_GOLD',			2);
 
 -- Ziggurat (Sumeria)
 insert or replace into ImprovementModifiers
@@ -587,25 +600,25 @@ insert or replace into ImprovementModifiers
 	(ImprovementType,		ModifierId)
 values
 	('IMPROVEMENT_SPHINX',	'SPHINX_FARM_FOOD'),
-	('IMPROVEMENT_SPHINX',	'SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT'),
-	('IMPROVEMENT_SPHINX',	'SPHINX_RIVER_FASTER_BUILDTIME_WONDER'),
+--	('IMPROVEMENT_SPHINX',	'SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT'),
+--	('IMPROVEMENT_SPHINX',	'SPHINX_RIVER_FASTER_BUILDTIME_WONDER'),
 	('IMPROVEMENT_SPHINX',	'SPHINX_FASTER_BUILDTIME_DISTRICT'),
 	('IMPROVEMENT_SPHINX',	'SPHINX_FASTER_BUILDTIME_WONDER');
 insert or replace into Modifiers
 	(ModifierId,								ModifierType,												OwnerRequirementSetId,							SubjectRequirementSetId,						SubjectStackLimit)
 values
 	('SPHINX_FARM_FOOD',						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						null,											'PLOT_HAS_IMPROVEMENT_FARM_AND_ADJACENT_TO_OWNER_REQUIREMENTS',			null),
-	('SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_DISTRICT_PRODUCTION',	'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
-	('SPHINX_RIVER_FASTER_BUILDTIME_WONDER',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_WONDER_PRODUCTION',		'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
-	('SPHINX_FASTER_BUILDTIME_DISTRICT',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS',	1),
-	('SPHINX_FASTER_BUILDTIME_WONDER',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_HAS_BUILDING_GREAT_BATH_REQUIREMENTS',	1);
+--	('SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_DISTRICT_PRODUCTION',	'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
+--	('SPHINX_RIVER_FASTER_BUILDTIME_WONDER',	'MODIFIER_SINGLE_CITY_ADJUST_RIVER_WONDER_PRODUCTION',		'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	'PLAYER_DOES_NOT_HAVE_GREAT_BATH_REQUIREMENTS',	1),
+	('SPHINX_FASTER_BUILDTIME_DISTRICT',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	null,											1),
+	('SPHINX_FASTER_BUILDTIME_WONDER',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						'PLOT_IS_FLOODPLIANS_ADJACENT_TO_CITY_CENTER',	null,											1);
 insert or replace into ModifierArguments
 	(ModifierId,								Name,			Value)
 values
 	('SPHINX_FARM_FOOD',						'YieldType',	'YIELD_FOOD'),
 	('SPHINX_FARM_FOOD',						'Amount',		1),
-	('SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT',	'Amount',		15),
-	('SPHINX_RIVER_FASTER_BUILDTIME_WONDER',	'Amount',		15),
+--	('SPHINX_RIVER_FASTER_BUILDTIME_DISTRICT',	'Amount',		15),
+--	('SPHINX_RIVER_FASTER_BUILDTIME_WONDER',	'Amount',		15),
 	('SPHINX_FASTER_BUILDTIME_DISTRICT',		'Amount',		15),
 	('SPHINX_FASTER_BUILDTIME_WONDER',			'Amount',		15);
 insert or replace into RequirementSets
@@ -980,3 +993,5 @@ insert or replace into GoodyHutSubTypes
 	(GoodyHut,					SubTypeGoodyHut,		Description,										Weight, ModifierID)
 values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
+--删除林肯种植园debuff
+delete from ImprovementModifiers where ModifierId = 'PLANTATION_NEGATIVE_LOYALTY';

@@ -47,7 +47,6 @@ values
     -- Holy Site
     ("LOC_BUILDING_SHRINE_DESCRIPTION",                           "Allows the purchasing of Builders using [ICON_Faith] Faith. Allows the purchasing of Missionaries (can only be purchased with [ICON_Faith] Faith)."),
     ("LOC_BUILDING_TEMPLE_DESCRIPTION",                           "Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith)."),
-    -- ("LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "A building unique to Khmer. +6 [ICON_FAITH] Faith. Replaces the Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). [ICON_CITIZEN] Citizens in this is provide +0.5 [ICON_Culture] Culture. Once Flight is researched, receive +10 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 10 or higher, and +20 [ICON_Tourism] Tourism if the city [ICON_CITIZEN] population is 20 or higher. +5% [ICON_Faith] Faith in this city."),
     ("LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "A building unique to Khmer. Replaces the Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). [ICON_CITIZEN] Citizens in this is provide +0.5 [ICON_Culture] Culture."),
     ("LOC_BUILDING_STAVE_CHURCH_DESCRIPTION",                     "A building unique to Norway. Replaces Temple. Allows the purchasing of Settlers using [ICON_Faith] Faith. Allows the purchasing of Apostles, Gurus, Inquisitors, and with the proper belief, Warrior Monks (these units can only be purchased with [ICON_Faith] Faith). Holy Site districts get an additional standard adjacency bonus from Woods. +1 [ICON_PRODUCTION] Production to each coast Resource tile in this city. +1 [ICON_Food] Food to each Forest tile in this city."), --+1 [ICON_TradeRoute] Trade Route capacity. 
     ("LOC_BUILDING_MOSQUE_DL_DESCRIPTION",                        "Missionary and Apostles created here have +1 spread. All Religious units created in this city receive +3 [ICON_Religion] Religious Strength in Theological Combat."),
@@ -68,7 +67,6 @@ values
     ("LOC_BUILDING_MILITARY_ACADEMY_EXPANSION2_DESCRIPTION",      "+25% combat experience for all land units trained in this city.[NEWLINE]Allows Corps and Armies to be trained directly. Corps and Army training costs reduced 25%. [NEWLINE][NEWLINE]+1 [ICON_Production] Production to all [ICON_Resource_Aluminum] Aluminum and [ICON_Resource_Uranium] Uranium in this city. +10% accumulation rate for [ICON_GREATGENERAL] Great General Points across the nation. +3 [ICON_STRENGTH] Combat Strength for all land units trained in this city."),
     -- Commercial Hub
     ("LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION",                "+1 [ICON_TradeRoute] Trade Route capacity."),
-    --("LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "A building unique to Poland. International [ICON_TradeRoute] Trade Routes from this city gain +2 [ICON_Production] Production. Domestic [ICON_TradeRoute] Trade Routes gain +4 [ICON_Gold] Gold. +1 [ICON_TradeRoute] Trade Route capacity. +2 [ICON_gold] Gold and +1 [Icon_production] Production to all luxuary within this city."),
     ("LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "A building unique to Poland. International [ICON_TradeRoute] Trade Routes from this city gain +2 [ICON_Production] Production. Domestic [ICON_TradeRoute] Trade Routes gain +4 [ICON_Gold] Gold. +1 [ICON_TradeRoute] Trade Route capacity. +2 [ICON_gold] Gold to all Districts in this city."),
     ("LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "A building unique to the Ottomans. Accumulate 1 extra Strategic resource for every different type of Strategic resource this city has improved. +1 [ICON_AMENITIES] Amenity for every Luxury resource this city has improved. +5% [ICON_gold] Gold yield in this city."),
     ("LOC_BUILDING_BANK_DESCRIPTION",                             "+5% [ICON_gold] Gold in this city."),
@@ -126,21 +124,17 @@ values
     ("LOC_BUILDING_FOOD_MARKET_DESCRIPTION_CORP",                 "+5% growth rate in the city. If the city has sufficient [ICON_Power] Power, +5% growth rate in the city. [NEWLINE] If the city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_FOOD] Food and [ICON_PRODUCTION] Production. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
     ("LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "+5% [ICON_gold] Gold in the city. If the city has sufficient [ICON_Power] Power, +5% [ICON_gold] in the city. [NEWLINE] If they city has sufficient [ICON_Power] Power, all [ICON_GreatWork_Product] Products in the city yields twice as much [ICON_gold] Gold and 1.5 times as much [ICON_SCIENCE] Science and [ICON_CULTURE] Culture. This bonus is extended to city centers within a six-tile radius from the Shopping Mall, as long as they do not have the same bonus from another Shopping Mall."),
     ("LOC_BUILDING_HD_TAVERN_NAME",                               "Tavern"),
-    ("LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "Every type of Brewing Resource provides +1 Great Person point to respective districts.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
     ("LOC_BUILDING_HD_INN_NAME",                                  "Inn"),
-    ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "Each type of improved Textile or Lumber resource provides +1 Influence point. +0.25 extra Alliance Point with all allies.[NEWLINE][NEWLINE]Corresponding Resource includes: "),
+    ("LOC_BUILDING_HD_INN_DESCRIPTION",                           "+2 Influence points."),
     -- Dam
     ("LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "Provides the city +6 [ICON_Power] Power from renewable water sources. +1 [ICON_Production] Production to all tiles that are adjacent to river in this city. "),
-    -- Governor Building
-    --("LOC_BUILDING_GENERAL_SERVICE_NAME",                         "General Services Office"),
-    --("LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "When the Governor Magnus with the Promotion ""General Services Officer"" is estabilished in this city, the General Service Office can provide +4 [ICON_Food] Food, +4 [ICON_Production] Production, +4 [ICON_Science] Science and +4 [ICON_Culture] Culture to the cities within 8 tiles (this city included). Can only construct when Governor Magnus with General Services Officer Title is established within 8 tiles.");
     -- 保护区
     ("LOC_BUILDING_GROVE_NAME",                                   "Grove"),
-    ("LOC_BUILDING_GROVE_DESCRIPTION",                            "+1 [ICON_FOOD] Food and +1 [ICON_CULTURE] Culture to adjacent Forest, Rainforest, Marsh or Swamp, and Oasis tiles, doubled if these tiles contain Resources. +2 Food and +2 Culture to Adjacent land Natural Wonder tiles."),
+    ("LOC_BUILDING_GROVE_DESCRIPTION",                            "+1 [ICON_FOOD] Food and +1 [ICON_GOLD] Gold to adjacent Forest, Rainforest, Marsh or Swamp. "),
     ("LOC_BUILDING_HD_MONASTERY_NAME",                            "Monastery"),
-    ("LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "+1 [ICON_FAITH] Faith to adjacent Charming tiles, and additionally +1 [ICON_FAITH] Faith, +1 [ICON_FOOD] Food, and +1 [ICON_SCIENCE] Science to adjacent Breathtaking tiles. If the Preserve District is adjacent to a Mountain or a Mountain Natural Wonder, this bonus is doubled."),
+    ("LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "+1 [ICON_CULTURE] Culture to adjacent Charming tiles, and additionally +1 [ICON_SCIENCE] Science to adjacent Breathtaking tiles. "),
     ("LOC_BUILDING_HD_HOLYWATERS_NAME",                           "Holy Waters"),
-    ("LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "+1 [ICON_PRODUCTION] Production and +1 [ICON_FAITH] Faith to adjacent Lake or Coast tiles, doubled if these tiles contain Features or Resources. +2 [ICON_PRODUCTION] Production, +1 [ICON_FAITH] Faith, and +1 [ICON_SCIENCE] Science to adjacent Lake or Coast Natural Wonders."),
+    ("LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "+1 [ICON_PRODUCTION] Production and +1 [ICON_GOLD] Gold to adjacent Lake or Coast tiles. "),
     ("LOC_BUILDING_SANCTUARY_NAME",                               "Forest Conservation Department"),
     ("LOC_BUILDING_SANCTUARY_DESCRIPTION",                        "+1 [ICON_FOOD] Food to all Forest tiles in this city. +1 [ICON_CULTURE] Culture to Resources on Charming Forest tiles in this city. +2 [ICON_CULTURE] Culture to Resrouces on Breathtaking Forest tiles in this city. +1 [ICON_FOOD] Food and +2 [ICON_CULTURE] Culture to Forest Natural Wonder tiles in this city.[NEWLINE][NEWLINE]Can only be built on or adjacent to Forest or Forest Natural Wonder tiles."),
     ("LOC_BUILDING_HD_JUNGLE_PRESERVE_NAME",                      "Jungle Conservation Department"),
@@ -152,13 +146,13 @@ values
     ("LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_NAME",            "Cultural Heriate Conservation Department"),
     ("LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_DESCRIPTION",     "+1 [ICON_CULTURE] Culture and +2 [ICON_GOLD] Gold to World Wonder or Civilization Unique Improvement tiles with Charming Appeal in this city, doubled if these tiles have Breathtaking Appeal. +100% Tourism generated from World Wonders and Civilization Unique Improvements in this city.[NEWLINE][NEWLINE]Can only be built on tiles adjacent to World Wonder or Civilization Unique Improvement tiles."),
     ("LOC_BUILDING_HD_LANDFORM_EPO_NAME",                         "Landscape Ecology Protection Agency"),
-    ("LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +5 [ICON_SCIENCE] Science and +5 [ICON_CULTURE] Culture for every type of Feature within your empire (not including Natural Wonders). If you have every type of Feature inside your empire, this bonus is tripled. "),
+    ("LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +3 [ICON_SCIENCE] Science and +3 [ICON_CULTURE] Culture for every type of Feature within your empire (not including Natural Wonders). If you have every type of Feature inside your empire, this bonus is quadrupled. "),
     ("LOC_BUILDING_HD_RESOURCE_EPO_NAME",                         "Non-renewable Resources Administration Agency"),
-    ("LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +5 [ICON_PRODUCTION] Production and +5 [ICON_SCIENCE] Science for every type of improved Minearl Resource within your empire. If you have every type of Mineral Resource inside your empire, this bonus is tripled."),
+    ("LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "Can only be built once in a civilization. +2 [ICON_PRODUCTION] Production and +2 [ICON_SCIENCE] Science for every type of improved Minearl Resource within your empire. If you have every type of Mineral Resource inside your empire, this bonus is quadrupled."),
     ("LOC_BUILDING_HD_SPECIES_EPO_NAME",                          "Species Diversity Conservation Agency"),
-    ("LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "Can only be built once in a civilization. +5 [ICON_FOOD] Food and +5 [ICON_CULTURE] Culture for every type of improved Biological Resource within your empire. If you have every type of Biological Resource inside your empire, this bouns is tripled."),
+    ("LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "Can only be built once in a civilization. +2 [ICON_GOLD] Gold and +2 [ICON_CULTURE] Culture for every type of improved Biological Resource within your empire. If you have every type of Biological Resource inside your empire, this bouns is quadrupled."),
     ("LOC_BUILDING_HD_SCENIC_EPO_NAME",                           "Natural Attractions Tourism Agency"),
-    ("LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "Can only be built once in a civilization. Triples the yield of Natural Wonders across your empire. +5% all yields in cities with a Natural Wonder or a National Park, tripled if you have every Natural Wonder inside your empire. Immediately gain a Naturalist. Naturalists are 50% cheaper to purchase with Faith."),
+    ("LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "Can only be built once in a civilization. Triples the yield of Natural Wonders across your empire. +5% all yields in cities with a Natural Wonder or a National Park, quadrupled if you have every Natural Wonder inside your empire. Immediately gain a Naturalist. Naturalists are 50% cheaper to purchase with Faith."),
 
     ("LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_NAME",                "A tier 1 building and proper adjacnecy"),
     ("LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_DESCRIPTION",         "Preserve District has a tier 1 building and proper adjacnecy."),
@@ -213,7 +207,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入工业时代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
-    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "本城已改良单元格+1 [ICON_Production] 生产力。"), -- 、采石场和伐木场 -- 为本城的矿山+1 [ICON_PRODUCTION] 生产力。本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。
+    ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "本城已改良单元格+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_ELECTRONICS_FACTORY_EXPANSION2_DESCRIPTION",   "日本特色建筑。研究“电力”科技后为此城市提供+4 [ICON_Culture] 文化值。为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_Production] 生产力，本城建造区域、建筑和奇观+5% [ICON_Production] 生产力。本城每个人口获得0.5 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_COAL_POWER_PLANT_DL_DESCRIPTION",              "将任意数额的 [ICON_RESOURCE_COAL] 煤自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供其所需电力：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_COAL] 煤 [ICON_PowerRight] 4点 [ICON_Power] 电力[NEWLINE][ICON_Bullet]会向大气层排放大量二氧化碳。[NEWLINE]本城建造区域、建筑和奇观+10% [ICON_Production] 生产力。"),
@@ -222,7 +216,6 @@ values
     -- 圣地
     ("zh_Hans_CN",  "LOC_BUILDING_SHRINE_DESCRIPTION",                           "允许使用 [ICON_Faith] 信仰值购买建造者。允许购买传教士（只能使用 [ICON_Faith] 信仰值进行购买）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TEMPLE_DESCRIPTION",                           "允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。本城的 [ICON_Faith] 信仰值+5%。"),
-    -- ("zh_Hans_CN",  "LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "+6 [ICON_FAITH] 信仰值。高棉特色建筑。替代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。研究完“飞行”之后，如城市拥有10点或以上的 [ICON_CITIZEN] 人口，则+10 [ICON_Tourism] 旅游业绩；如城市拥有20点或以上的 [ICON_CITIZEN] 人口，则+20 [ICON_Tourism] 旅游业绩。本城的 [ICON_Faith] 信仰值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_PRASAT_EXPANSION2_DESCRIPTION",                "高棉特色建筑。替代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。此城中每有1点 [ICON_CITIZEN] 人口，便+0.5 [ICON_Culture] 文化值。本城的 [ICON_Faith] 信仰值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_STAVE_CHURCH_DESCRIPTION",                     "挪威特色建筑。取代寺庙。允许使用 [ICON_Faith] 信仰值购买开拓者。允许购买使徒、上师、审判官，拥有特定信仰还可购买武僧（这些宗教单位只能通过 [ICON_Faith] 信仰值购买）。圣地可从树林获得额外的标准相邻加成。城市中每个森林单元格+1 [ICON_Food] 食物，每个海岸资源单元格+1 [ICON_PRODUCTION] 生产力。本城的 [ICON_Faith] 信仰值+5%。"), --+1 [ICON_TradeRoute] 贸易路线容量。
     ("zh_Hans_CN",  "LOC_BUILDING_MOSQUE_DL_DESCRIPTION",                        "此处创建的传教士和使徒+1传教次数。所有从本城创建的宗教单位在宗教战争中+3力。"),
@@ -243,7 +236,6 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MILITARY_ACADEMY_EXPANSION2_DESCRIPTION",      "该城市中训练的所有陆地单位+25%战斗经验值。[NEWLINE]可直接训练军团和军队。军团和军队的训练费用降低25%。为本城的 [ICON_Resource_Aluminum] 铝、 [ICON_Resource_Uranium] 铀资源+1 [ICON_Production] 生产力。玩家的 [ICON_GREATGENERAL] 大将军点数积累速度+10%，且所有训练的陆地单位+3 [ICON_STRENGTH] 战斗力。"),
     -- 商业
     ("zh_Hans_CN",  "LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION",                "+1 [ICON_TradeRoute] 贸易路线容量。"),
-    --("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "波兰特色建筑。从此城开始的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Production] 生产力；国内 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。+1 [ICON_TradeRoute] 贸易路线容量。本城的奢侈资源+2 [ICON_gold] 金币和+1 [Icon_production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SUKIENNICE_EXPANSION1_DESCRIPTION",            "波兰特色建筑。从此城开始的国际 [ICON_TradeRoute] 贸易路线+2 [ICON_Production] 生产力；国内 [ICON_TradeRoute] 贸易路线+4 [ICON_Gold] 金币。+1 [ICON_TradeRoute] 贸易路线容量。本城的所有区域+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BANK_DESCRIPTION",                             "本城 [ICON_GOLD] 金币产出+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_GRAND_BAZAAR_DESCRIPTION",                     "奥斯曼特色建筑。城市中改良的每种不同战略资源均可额外增加1点。城市改良的每个奢侈品资源均可提供1点 [ICON_AMENITIES] 宜居度。本城 [ICON_GOLD] 金币产出+5%。"),
@@ -300,21 +292,17 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION",                    "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SHOPPING_MALL_DESCRIPTION_CORP",               "本城 [ICON_gold] 金币产出+5%，若 [Icon_Power] 供电充足，则 [ICON_gold] 金币产出额外+5%。[NEWLINE]若此城 [Icon_Power] 供电充足，则城市中 [ICON_GreatWork_Product] 产品产出2倍的 [ICON_GOLD] 金币，产出1.5倍的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值；该加成效果延伸到6个单元格内的所有城市（前提是其尚未从其他的“购物商场”建筑获得加成）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_NAME",                               "酒楼"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_TAVERN_DESCRIPTION",                        "本城每拥有一种改良的酿酒资源，本城的区域为它们类型的 [ICON_GREATPERSON] 伟人点数+1。[NEWLINE][NEWLINE]酿酒资源包括："),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_NAME",                                  "客栈"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "本城每拥有一种改良的纺织或木材资源，影响力点数每回合+1且所有盟友的同盟点数每回合额外增加0.25点。[NEWLINE][NEWLINE]纺织或木材资源包括："),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_INN_DESCRIPTION",                           "+2影响力点数。"),
     -- 堤坝
     ("zh_Hans_CN",  "LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION",                "可再生水力发电向城市提供+6点 [ICON_Power] 电力。本城所有的沿河单元格+1 [ICON_Production] 生产力。"),
-    -- 总督建筑
-    --("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_NAME",                         "总务厅"),
-    --("zh_Hans_CN",  "LOC_BUILDING_GENERAL_SERVICE_DESCRIPTION",                  "总督“马格努斯”（必须拥有“总务官”升级）在此城市就职时，总务厅为8个单元格之内的城市（包括该城市）提供+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力、+4 [ICON_Science] 科技值和+4 [ICON_Culture] 文化值。只有当拥有总务官头衔的总督马格努斯在8个单元格以内的城市就职时方可建造。"),
     -- 保护区
     ("zh_Hans_CN",  "LOC_BUILDING_GROVE_NAME",                                   "古树林"),
-    ("zh_Hans_CN",  "LOC_BUILDING_GROVE_DESCRIPTION",                            "相邻的森林、雨林、沼泽、绿洲单元格+1 [ICON_FOOD] 食物、+1 [ICON_CULTURE] 文化值，若这些单元格上有资源，则收益翻倍。相邻的陆地类自然奇观+2 [ICON_FOOD] 食物、+2 [ICON_CULTURE] 文化值。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_NAME",                            "隐修地"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "相邻的迷人单元格+1 [ICON_FAITH] 信仰值。相邻的惊艳单元格+1 [ICON_FOOD] 食物、+1 [ICON_FAITH] 信仰值、+1 [ICON_SCIENCE] 科技值。若保护区相邻山脉单元格（包括山脉类自然奇观），则该收益翻倍。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_NAME",                           "圣水域"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "相邻的湖泊或海岸单元格+1 [ICON_PRODUCTION] 生产力、+1 [ICON_FAITH] 信仰值。若这些单元格上有地貌或资源，则额外+1 [ICON_PRODUCTION] 生产力、+1 [ICON_SCIENCE] 科技值。相邻的水域或海岸类自然奇观+2 [ICON_PRODUCTION] 生产力、+1 [ICON_FAITH] 信仰值、+1 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_GROVE_DESCRIPTION",                            "相邻的森林、雨林、沼泽、绿洲单元格+1 [ICON_FOOD] 食物、+1 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_NAME",                            "神谕碑"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_MONASTERY_DESCRIPTION",                     "相邻的迷人单元格+1 [ICON_CULTURE] 文化值。相邻的惊艳单元格+1 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_NAME",                           "观海石"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_HOLYWATERS_DESCRIPTION",                    "相邻的湖泊或海岸单元格+1 [ICON_PRODUCTION] 生产力、+1 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_NAME",                               "森林保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_DESCRIPTION",                        "本城的森林单元格+1 [ICON_FOOD] 食物，迷人森林单元格上的资源+1 [ICON_CULTURE] 文化值，惊艳森林单元格上的资源+2 [ICON_CULTURE] 文化值。本城的森林类自然奇观+1 [ICON_FOOD] 食物、+2 [ICON_CULTURE] 文化值。[NEWLINE][NEWLINE]只能建造在森林或相邻森林（包括森林类自然奇观）的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_JUNGLE_PRESERVE_NAME",                      "雨林保护部"),
@@ -326,13 +314,13 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_NAME",            "人文遗产保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_CULTURE_HERITAGE_PRESERVE_DESCRIPTION",     "本城位于迷人单元格的世界奇观和文明特色改良设施+1 [ICON_CULTURE] 文化值、+2 [ICON_GOLD] 金币；若位于惊艳单元格，则收益翻倍。本城的世界奇观和文明特色改良设施提供的 [ICON_TOURISM] 旅游业绩+100%。[NEWLINE][NEWLINE]只能建造在相邻世界奇观或文明特色改良设施的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_NAME",                         "地貌生态环保专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每拥有一种地貌（不包括自然奇观），则获得+5 [ICON_SCIENCE] 科技值、+5 [ICON_CULTURE] 文化值；如果境内拥有全部的地貌，则该收益翻三倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_LANDFORM_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每拥有一种地貌（不包括自然奇观），则获得+3 [ICON_SCIENCE] 科技值、+3 [ICON_CULTURE] 文化值；如果境内拥有全部的地貌，则该收益变为4倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_RESOURCE_EPO_NAME",                         "不可再生资源管理专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每开发一种矿产资源，则获得+5 [ICON_PRODUCTION] 生产力、+5 [ICON_SCIENCE] 科技值；如果境内开发了世界上所有的矿产资源，则该收益翻三倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_RESOURCE_EPO_DESCRIPTION",                  "文明中一次仅限建造一座该建筑。境内每开发一种矿产资源，则获得+2 [ICON_PRODUCTION] 生产力、+2 [ICON_SCIENCE] 科技值；如果境内开发了世界上所有的矿产资源，则该收益变为4倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_SPECIES_EPO_NAME",                          "物种多样性维护专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "文明中一次仅限建造一座该建筑。境内每收集一种生物资源，则获得+5 [ICON_FOOD] 食物、+5 [ICON_CULTURE] 文化值；如果境内收集了世界上所有的生物资源，则该收益翻三倍。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_SPECIES_EPO_DESCRIPTION",                   "文明中一次仅限建造一座该建筑。境内每收集一种生物资源，则获得+2 [ICON_GOLD] 金币、+2 [ICON_CULTURE] 文化值；如果境内收集了世界上所有的生物资源，则该收益变为4倍。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_NAME",                           "自然名胜旅游专局"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "文明中一次仅限建造一座该建筑。境内的自然奇观提供的产出翻三倍。拥有自然奇观或国家公园的城市+5%所有产出；如果境内拥有世界上所有的自然奇观，则该效果翻三倍。国家公园提供的 [ICON_TOURISM] 旅游业绩+100%。建成时获得1个自然学家。购买自然学家的费用降低50%。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_SCENIC_EPO_DESCRIPTION",                    "文明中一次仅限建造一座该建筑。境内的自然奇观提供的产出翻三倍。拥有自然奇观或国家公园的城市+5%所有产出；如果境内拥有世界上所有的自然奇观，则该效果变为4倍。国家公园提供的 [ICON_TOURISM] 旅游业绩+100%。建成时获得1个自然学家。购买自然学家的费用降低50%。"),
 
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_NAME",                "保护区拥有一级建筑，且位于或相邻特定的单元格"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_PREREQ_PRESERVE_DESCRIPTION",         "需要该城的保护区位于或相邻特定的地形或地貌单元格，且拥有一级建筑。"),
@@ -346,22 +334,3 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "该城的保护区相邻湖泊或海岸单元格（包括水域或海岸类自然奇观），且拥有一级建筑。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "保护区拥有一级建筑，且相邻世界奇观或文明特色改良设施"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。");
-
--- 社区一级建筑文本说明
-CREATE TEMPORARY TABLE 'HD_TAVERN_RESOURCES_TEXT' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_TAVERN_RESOURCES_TEXT (ResourceType) values
-	('RESOURCE_BANANAS'),('RESOURCE_DEER'),('RESOURCE_RICE'),('RESOURCE_WHEAT'),('RESOURCE_CITRUS'),('RESOURCE_WINE'),('RESOURCE_SUGAR'),('RESOURCE_HORSES'),('RESOURCE_MAIZE'),('RESOURCE_HONEY'),('RESOURCE_CVS_POMEGRANATES'),
-	('RESOURCE_P0K_MAPLE'),('RESOURCE_P0K_PLUMS'),('RESOURCE_LEU_P0K_QUINOA'),('RESOURCE_LEU_P0K_POTATOES'),('RESOURCE_BERRIES'),('RESOURCE_DATES'),('RESOURCE_BARLEY'),('RESOURCE_STRAWBERRY'),('RESOURCE_SORGHUM');
-
-CREATE TEMPORARY TABLE 'HD_INN_RESOURCES_TEXT' ('ResourceType' TEXT NOT NULL);
-insert or replace into HD_INN_RESOURCES_TEXT (ResourceType) values
-	('RESOURCE_DEER'),('RESOURCE_SHEEP'),('RESOURCE_COTTON'),('RESOURCE_FURS'),('RESOURCE_SILK'),('RESOURCE_DLV_BISON'),('RESOURCE_P0K_PAPYRUS'),('RESOURCE_LEU_P0K_LLAMAS'),('RESOURCE_SUK_CAMEL'),('RESOURCE_BAMBOO'),
-	('RESOURCE_SANDALWOOD'),('RESOURCE_OAK'),('RESOURCE_EBONY'),('RESOURCE_SAKURA'),('RESOURCE_PINE'),('RESOURCE_RUBBER'),('RESOURCE_CASHMERE'),('RESOURCE_WOLF'),('RESOURCE_TIGER'),('RESOURCE_LION');
-
-update LocalizedText set Text = Text ||
-    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_TAVERN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Language = 'en_US' and Tag = "LOC_"||ResourceType||"_NAME"))
-    where Tag = "LOC_BUILDING_HD_TAVERN_DESCRIPTION";
-
-update LocalizedText set Text = Text ||
-    (select GROUP_CONCAT("[ICON_"||ResourceType||"] {LOC_"||ResourceType||"_NAME} ","") FROM HD_INN_RESOURCES_TEXT where exists(select Tag from LocalizedText where Language = 'en_US' and Tag = "LOC_"||ResourceType||"_NAME"))
-    where Tag = "LOC_BUILDING_HD_INN_DESCRIPTION";

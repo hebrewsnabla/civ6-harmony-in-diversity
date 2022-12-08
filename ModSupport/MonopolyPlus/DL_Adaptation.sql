@@ -145,23 +145,3 @@ insert or ignore into Unit_BuildingPrereqs
         (Unit,                      PrereqBuilding)
 select  'UNIT_LEU_TYCOON',          BuildingType
 from Buildings where BuildingType = 'BUILDING_JNR_MANUFACTURY';
-
--- By YT, +1 Charge for Tycoon
-update GovernorPromotions set Description = 'LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_ALT_DESCRIPTION' where
-    GovernorPromotionType = 'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT';
-insert or replace into GovernorPromotionModifiers
-	(GovernorPromotionType,									ModifierId)
-select
-	'GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT',		'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE'
-where exists (select UnitType from Units where UnitType = 'UNIT_LEU_TYCOON');
-insert or replace into Modifiers
-	(ModifierId,												ModifierType,								Permanent,			SubjectRequirementSetId)
-VALUES
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',		0,					NULL),
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'MODIFIER_SINGLE_CITY_BUILDER_CHARGES',		1,					'LEU_UNIT_IS_TYCOON');
-
-insert or replace into ModifierArguments
-	(ModifierId,											Name,						Value)
-VALUES
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE',			'ModifierId',				'FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER'),
-	('FORESTRY_MANAGEMENT_ADDITIONAL_TYCOON_CHARGE_MODIFIER',	'Amount',					1);

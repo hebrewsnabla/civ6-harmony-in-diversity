@@ -136,8 +136,8 @@ values
 -- insert or replace into ModifierArguments (ModifierId,   Name,   Value)
 -- select 'HD_DEITY_AI_FREE_STRATEGIC_' || ResourceType,   'Amount', 5
 -- from Resources where ResourceClassType = 'RESOURCECLASS_STRATEGIC';
-update ModifierArguments set Value = 5 where ModifierId like 'HD_DEITY_AI_FREE_STRATEGIC_%' and Name = 'Amount';
-
+update ModifierArguments set Value = 1 where ModifierId like 'HD_DEITY_AI_FREE_STRATEGIC_%' and Name = 'Amount';
+update ModifierArguments set Value = 2 where ModifierId = 'HD_DEITY_AI_FREE_STRATEGIC_RESOURCE_IRON' and Name = 'Amount';
 -- For high difficulty AI.
 -- grant ai animal husbandry
 -- grant city states production bonus to help protect themselves

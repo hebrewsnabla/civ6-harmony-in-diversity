@@ -30,7 +30,7 @@ values
     ("LOC_TECH_MINING_HD_DESCRIPTION",                                                      "Allows chopping of Woods and Rainforest, and harvesting of resources improved by Mines."),
     ("LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                                            "Allows harvesting of resources improved by Pastures and Camps."),
     ("LOC_TECH_POTTERY_DESCRIPTION",                                                        "Allows harvesting of resources improved by Farms."),
-    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows Builders and Traders to embark."),
+    ("LOC_TECH_SAILING_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Fishing Boats. Allows Builders and Traders to embark."),
     ("LOC_TECH_IRRIGATION_DESCRIPTION",                                                     "+2 [ICON_GOLD] Gold from Plantations adjacent to fresh water or Aqueduct.[NEWLINE]Allows clearing of Marsh, and harvesting of resources improved by Plantations. Allows Builders to build Farms on Plains Hills or Grassland Hills adjacent to fresh water or Aqueduct."),
     ("LOC_TECH_ARCHERY_HD_DESCRIPTION",                                                     "Allows Camps to be built on Forests."), -- Camp improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_CALENDAR_HD_DESCRIPTION",                                                    "+1 [ICON_Food] Food from Farms. [NEWLINE]+1 [ICON_CULTURE] Culture for Monuments.[NEWLINE][ICON_Food] Food consumption of [ICON_Citizen] citizens is reduced by 0.5 in cities with a Granary."),
@@ -38,7 +38,7 @@ values
     ("LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                                   "All improvements inside your territory always obtain roads for free."), -- Pasture improvements receive +1 [ICON_GOLD] Gold.
     ("LOC_TECH_BRONZE_WORKING_DESCRIPTION",                                                 "Reveals [ICON_RESOURCE_IRON] Iron. Allows harvesting of resources improved by Lumber Mills."),
     ("LOC_TECH_MASONRY_HD_DESCRIPTION",                                                     "Allows harvesting of resources improved by Quarries."),
-    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        "Allows harvesting of resources improved by Fishing Boats. Allows all land units to embark."),
+    ("LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                                        " Allows all land units to embark."),
     ("LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                                "+1 [ICON_FOOD] Food from Plantations.[NEWLINE][ICON_Citizen] Citizens in cities with a Library provide +0.3 [ICON_SCIENCE] Science."),
     -- ("LOC_TECH_CURRENCY_HD_DESCRIPTION",                                                    "Provides +3 [ICON_GOLD] Gold to Commercial Hubs."),
     ("LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                                            "Pasture improvements provide +1 [ICON_Production] Production."),
@@ -104,7 +104,7 @@ values
     ("LOC_CIVIC_MILITARY_TRAINING_HD_DESCRIPTION",                                          "Heavy Cavalry units gain the ability: +5 [ICON_Strength] Combat Strength when attacking wounded units. [NEWLINE]Siege units gain the ability: Can attack after moving."), -- +5 [ICON_Strength] Combat Strength when fighting on flat tiles without Woods, Jungle, or Marsh.
     -- ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                             "Light Cavalry units gain the ability: Pillaging Improvements and Districts provides extra 25 [ICON_Faith] Faith."),
     ("LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                                "Light Cavalry units gain the ability: +1 [ICON_Movement] Movement if starting in enemy's territory."),
-    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "+2 [ICON_GOLD] Gold from Plantations."),
+    ("LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                               "Recon units gain the ability: Ignores Zones of Control. [NEWLINE]+2 [ICON_GOLD] Gold from Plantations."),
 	("LOC_CIVIC_NAVAL_TRADITION_HD_DESCRIPTION",											"+2 [ICON_GOLD] Gold from Fisheries."),
     ("LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                                              "Established [ICON_GOVERNOR] Governors with at least 2 Promotions provide +1 [ICON_Amenities] Amenity and +3 [ICON_Housing] Housing."),
     ("LOC_CIVIC_MEDIEVAL_FAIRES_HD_DESCRIPTION",                                            "+1 [ICON_Production] Production from Camps."),
@@ -117,6 +117,7 @@ values
     ("LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION",                                               "+50% [ICON_Production] Production to nuclear program projects, Nuclear Devices and Nuclear Power Plant."),
     ("LOC_CIVIC_SCORCHED_EARTH_HD_DESCRIPTION",                                             "Naval Raider units gain ability:  Coastal Raid costs no [ICON_MOVEMENT] Movement."),
     ("LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                                              "Recon units gain the ability: {LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("LOC_CIVIC_COLD_WAR_DESCRIPTION",                                              		"Each [ICON_ENVOY] Envoy you send to a city-state counts as two, if its Suzerain has a different government than you. Grants the ability to construct an additional Spy."),
     -- Boosts
     ("LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                                   "Build 2 Lumber Mills."),
     ("LOC_BOOST_TRIGGER_BRONZE_WORKING",                                                    "Kill 2 Barbarians."),
@@ -217,7 +218,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_MINING_HD_DESCRIPTION",                                       "允许砍伐树林、雨林和收获由矿山改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_ANIMAL_HUSBANDRY_HD_DESCRIPTION",                             "允许收获由牧场或营地改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_POTTERY_DESCRIPTION",                                         "允许收获由农场改良的资源。"),
-    ("zh_Hans_CN",  "LOC_TECH_SAILING_HD_DESCRIPTION",                                      "允许建造者和商人上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_SAILING_HD_DESCRIPTION",                                      "允许收获由渔船改良的资源。允许建造者和商人上船。"),
     ("zh_Hans_CN",  "LOC_TECH_IRRIGATION_DESCRIPTION",                                      "相邻淡水或水渠的种植园+2 [ICON_GOLD] 金币。[NEWLINE]允许清理沼泽和收获由种植园改良的资源。允许在相邻淡水或水渠的平原和草原丘陵上修建农场。"),
     ("zh_Hans_CN",  "LOC_TECH_ARCHERY_HD_DESCRIPTION",                                      "允许在树林上建造营地。"), -- 营地+1 [ICON_gold] 金币。
     ("zh_Hans_CN",  "LOC_TECH_CALENDAR_HD_DESCRIPTION",                                     "农场+1 [ICON_Food] 食物。[NEWLINE]纪念碑额外 +1 [ICON_CULTURE] 文化值。[NEWLINE]拥有粮仓的城市，每 [ICON_Citizen] 市民消耗的 [ICON_Food] 食物减少0.5。"),
@@ -225,7 +226,7 @@ values
     ("zh_Hans_CN",  "LOC_TECH_THE_WHEEL_HD_DESCRIPTION",                                    "所有境内改良设施自动获得道路。"), -- 牧场+1 [ICON_GOLD] 金币。
     ("zh_Hans_CN",  "LOC_TECH_BRONZE_WORKING_DESCRIPTION",                                  "显示 [ICON_RESOURCE_IRON] 铁资源。允许收获由伐木场改良的资源。"),
     ("zh_Hans_CN",  "LOC_TECH_MASONRY_HD_DESCRIPTION",                                      "允许收获由采石场改良的资源。"),    
-    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许收获由渔船改良的资源。允许所有陆地单位上船。"),
+    ("zh_Hans_CN",  "LOC_TECH_CELESTIAL_NAVIGATION_HD_DESCRIPTION",                         "允许所有陆地单位上船。"),
     ("zh_Hans_CN",  "LOC_TECH_PAPER_MAKING_HD_DESCRIPTION",                                 "种植园+1 [ICON_FOOD] 食物。[NEWLINE]拥有图书馆的城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     -- ("zh_Hans_CN",  "LOC_TECH_CURRENCY_HD_DESCRIPTION",                                     "商业中心+3 [ICON_Gold] 金币产出。"),
     ("zh_Hans_CN",  "LOC_TECH_HORSEBACK_RIDING_HD_DESCRIPTION",                             "牧场+1 [ICON_Production] 生产力。"),
@@ -294,7 +295,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：在敌方领土内开始回合时+1 [ICON_Movement] 移动力。"),
     -- ("zh_Hans_CN",  "LOC_CIVIC_MERCENARIES_HD_DESCRIPTION",                                 "轻骑兵单位获得能力：劫掠区域和改良后额外获得25 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CIVIL_SERVICE_HD_DESCRIPTION",                               "拥有至少2项升级的 [ICON_GOVERNOR] 总督就职后将提供+1 [ICON_Amenities] 宜居度、+3 [ICON_Housing] 住房。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "种植园+2 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MERCANTILISM_HD_DESCRIPTION",                                "侦查单位获得能力：忽略控制区。[NEWLINE]种植园+2 [ICON_GOLD] 金币。"),
 	("zh_Hans_CN",  "LOC_CIVIC_NAVAL_TRADITION_HD_DESCRIPTION",								"渔场+2 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_EVOLUTION_THEORY_HD_DESCRIPTION",                            "营地+1 [ICON_Food] 食物。"), -- +1 [ICON_Production] 生产力和
     ("zh_Hans_CN",  "LOC_CIVIC_COLONIALISM_HD_DESCRIPTION",                                 "渔场+1 [ICON_PRODUCTION] 生产力。[NEWLINE]从每个宗主城邦获得+1 [ICON_Favor] 外交支持。[NEWLINE]允许两个完全相同的单位组成一个舰队。[NEWLINE]现在可用一个新的战争借口替战争辩护：殖民战争。"),
@@ -305,6 +306,7 @@ values
     ("zh_Hans_CN",  "LOC_CIVIC_ENVIRONMENTALISM_HD_DESCRIPTION",                            "全境内+20% [ICON_Tourism] 旅游业绩。"),
     ("zh_Hans_CN",  "LOC_CIVIC_GLOBALIZATION_HD_DESCRIPTION",                               "种植园+2 [ICON_gold] 金币。"),
     ("zh_Hans_CN",  "LOC_CIVIC_CRAFTSMANSHIP_HD_DESCRIPTION",                               "侦察单位获得能力：{LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION}"),
+    ("zh_Hans_CN",  "LOC_CIVIC_COLD_WAR_DESCRIPTION",                               		"如果城邦的宗主国和您的政体不同，您向城邦派遣的每个 [ICON_ENVOY] 使者都被视为两个使者。可额外招募一名间谍。"),
     -- Boosts
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_FEUDALISM",                                          "建造5个农场。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MASS_PRODUCTION",                                    "建造2座伐木场。"),
@@ -332,8 +334,8 @@ values
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MILITARY_TACTICS",   "初步的防御战术是不足以抵御强大的敌人的，我们需要更丰富的战术"), -- 您的枪兵很厉害，但如今您的对手实力变强了，行动也更快了。您或许需要一个更长的武器？
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_REPLACEABLE_PARTS",                                  "拥有3个线列步兵。"),
     -- ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_REPLACEABLE_PARTS",  ""), -- 您的武器制造商已厌倦了手工制作数量如此庞大的步枪。或许建立标准化对此有帮助？
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个投石机。"),
-    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_SIEGE_TACTICS",                                      "拥有2个配重投石机。"),
+    ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_SIEGE_TACTICS",                             "在配重投石机出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！"), -- 在射石炮出现后，您意识到城堡并非固若金汤——您需要更坚固的防御措施！
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_COMBUSTION_LEU_MO",                                  "建造2座火车站。"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_COMBUSTION_LEU_MO",                         "蒸汽机车穿梭于忙碌的火车站之间，我们还能让他跑得更快吗？"),
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_ELECTRICITY_HD",                                     "建造1座堤坝。"),

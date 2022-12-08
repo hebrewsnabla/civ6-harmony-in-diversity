@@ -31,7 +31,7 @@ insert or replace into Resource_Harvests (ResourceType, YieldType, Amount, Prere
 	('RESOURCE_ANTIQUITY_SITE',	'YIELD_CULTURE',	40,		NULL),
 	('RESOURCE_SHIPWRECK',		'YIELD_CULTURE',	40,		NULL);
 
-update Resource_Harvests set PrereqTech = 'TECH_CELESTIAL_NAVIGATION' where ResourceType in
+update Resource_Harvests set PrereqTech = 'TECH_SAILING' where ResourceType in
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FISHING_BOATS');
 update Resource_Harvests set PrereqTech = 'TECH_IRRIGATION' where ResourceType in
 	(select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION');
@@ -121,8 +121,6 @@ update Improvement_ValidResources set MustRemoveFeature = 0 where ImprovementTyp
 --硝石和铝产量多+1 （Resource_Consumption）
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_NITER';
 update Resource_Consumption set ImprovedExtractionRate = ImprovedExtractionRate +1 where ResourceType = 'RESOURCE_ALUMINUM';
-
--- update Technologies set Description = 'LOC_TECH_MACHINERY_HD_ALT_DESCRIPTION' where TechnologyType ='TECH_MACHINERY';
 
 -- 泛滥螃蟹
 update Resources set Frequency = 4 where ResourceType = 'RESOURCE_CRABS';

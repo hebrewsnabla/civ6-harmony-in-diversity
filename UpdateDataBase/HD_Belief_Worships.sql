@@ -2,19 +2,19 @@
 insert or replace into Building_YieldChanges
 	(BuildingType,				YieldType,			YieldChange)
 values
-	('BUILDING_CATHEDRAL',		'YIELD_FAITH',		2),
-	('BUILDING_GURDWARA',		'YIELD_FAITH',		2),
+	('BUILDING_CATHEDRAL',		'YIELD_FAITH',		8),
+	('BUILDING_GURDWARA',		'YIELD_FAITH',		8),
 	('BUILDING_GURDWARA',		'YIELD_FOOD',		3),
-	('BUILDING_MEETING_HOUSE',	'YIELD_FAITH',		2),
+	('BUILDING_MEETING_HOUSE',	'YIELD_FAITH',		8),
 	('BUILDING_MEETING_HOUSE',	'YIELD_PRODUCTION',	3),
-	('BUILDING_MOSQUE',			'YIELD_FAITH',		2),
-	('BUILDING_PAGODA',			'YIELD_FAITH',		2),
+	('BUILDING_MOSQUE',			'YIELD_FAITH',		8),
+	('BUILDING_PAGODA',			'YIELD_FAITH',		8),
 	('BUILDING_PAGODA',			'YIELD_CULTURE',	3),
-	('BUILDING_SYNAGOGUE',		'YIELD_FAITH',		5),
-	('BUILDING_WAT',			'YIELD_FAITH',		2),
+	('BUILDING_SYNAGOGUE',		'YIELD_FAITH',		12),
+	('BUILDING_WAT',			'YIELD_FAITH',		8),
 	('BUILDING_WAT',			'YIELD_SCIENCE',	3),
-	('BUILDING_STUPA',			'YIELD_FAITH',		2),
-	('BUILDING_DAR_E_MEHR',		'YIELD_FAITH',		2);
+	('BUILDING_STUPA',			'YIELD_FAITH',		8),
+	('BUILDING_DAR_E_MEHR',		'YIELD_FAITH',		8);
 update Buildings set Housing = 2 where BuildingType = 'BUILDING_GURDWARA';
 update Buildings set Entertainment = 2 where BuildingType = 'BUILDING_STUPA';
 update Building_YieldsPerEra set YieldChange = 2 where BuildingType = 'BUILDING_DAR_E_MEHR';

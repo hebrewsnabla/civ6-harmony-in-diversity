@@ -3,7 +3,7 @@
 insert or replace into LocalizedText
     (Language,      Tag,                                                                                 Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "玩家可以使用平时  [ICON_Faith] 信仰值消耗的1/10 来购买他们宗教的祭祀建筑。这种祭祀建筑为阿拉伯城市的 [ICON_Science] 科技值、 [ICON_Faith] 信仰值、 [ICON_Culture] 文化值增加10%产量。研究“马镫”科技后获得特色单位“奴隶兵”。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "玩家可以使用平时  [ICON_Faith] 信仰值消耗的1/10 来购买他们宗教的祭祀建筑。这种祭祀建筑为阿拉伯城市的 [ICON_Science] 科技值、 [ICON_Faith] 信仰值、 [ICON_Culture] 文化值增加10%产量。"),
     ("zh_Hans_CN",  "LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION",                                     "阿兹特克古典时代特色近战单位。无视丘陵的移动力惩罚。为相邻的美洲虎勇士提供+3 [ICON_Strength] 战斗力（可叠加）。"),
     ("zh_Hans_CN",  "LOC_STRENGTH_FOR_EAGLE_MODIFIER_PREVIEW_TEXT",                                      "来自相邻美洲虎勇士"),
     ("zh_Hans_CN",  "LOC_STRENGTH_FOR_JAGUAR_MODIFIER_PREVIEW_TEXT",                                     "来自相邻雄鹰战士"),

@@ -3,7 +3,7 @@
 insert or replace into EnglishText
     (Tag,                                                                                 Text)
 values
-    ("LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "The Worship building for Arabia's Religion is 90% cheaper to purchase with [ICON_Faith] Faith. Arabian cities with that building gain +10%  [ICON_Science] Science, [ICON_Faith] Faith, and [ICON_Culture] Culture. Gain the Mamluk unique unit when the Stirrups technology is researched."),
+    ("LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_STUU_DESCRIPTION",                          "The Worship building for Arabia's Religion is 90% cheaper to purchase with [ICON_Faith] Faith. Arabian cities with that building gain +10%  [ICON_Science] Science, [ICON_Faith] Faith, and [ICON_Culture] Culture."),
     ("LOC_UNIT_AZTEC_EAGLE_WARRIOR_STUU_DESCRIPTION",                                     "Aztec unique Classical Era Melee unit. Ignores terrain movement cost in Hills. Grant +3 [ICON_Strength] Combat Strength for adjacent Jaguar Warrior (Can stack)."),
     ("LOC_STRENGTH_FOR_EAGLE_MODIFIER_PREVIEW_TEXT",                                      "from adjacent Jaguar"),
     ("LOC_STRENGTH_FOR_JAGUAR_MODIFIER_PREVIEW_TEXT",                                     "from adjacent Eagle Warrior"),

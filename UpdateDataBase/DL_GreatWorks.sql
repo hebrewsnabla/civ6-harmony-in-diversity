@@ -3,20 +3,9 @@
 -------------------------------------
 
 -- Fail to add new great work slot type (not able to add through Building_GreatWorks, but may through add slot modifier, still have other issues).
--- insert or ignore into GreatWorkSlotTypes (GreatWorkSlotType) values ('GREATWORKSLOT_AESTHETICS');
--- insert or ignore into GreatWork_ValidSubTypes
--- 	(GreatWorkSlotType, 			GreatWorkObjectType)
--- values
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_SCULPTURE'),
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_PORTRAIT'),
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_LANDSCAPE'),
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_RELIGIOUS'),
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_WRITING'),
--- 	('GREATWORKSLOT_AESTHETICS',	'GREATWORKOBJECT_MUSIC');
 
 update GreatWorks set Tourism = 3 where GreatWorkObjectType = 'GREATWORKOBJECT_WRITING';
 update GreatWorks set Tourism = 6 where GreatWorkObjectType = 'GREATWORKOBJECT_MUSIC';
--- update GreatWorks set Tourism = 10 where GreatWorkObjectType = 'GREATWORKOBJECT_RELIC';
 
 update GreatWorks set Tourism = 4 where GreatWorkObjectType = 'GREATWORKOBJECT_ARTIFACT';
 update GreatWorks set Tourism = 4
@@ -25,8 +14,6 @@ update GreatWorks set Tourism = 4
 	or GreatWorkObjectType = 'GREATWORKOBJECT_LANDSCAPE'
 	or GreatWorkObjectType = 'GREATWORKOBJECT_PORTRAIT';
 
--- replace into GreatWork_YieldChanges (GreatWorkType, YieldType, YieldChange)
--- 	select GreatWorkType, 'YIELD_CULTURE', '3' from GreatWorks where GreatWorkObjectType = 'GREATWORKOBJECT_WRITING';
 replace into GreatWork_YieldChanges (GreatWorkType, YieldType, YieldChange)
 	select GreatWorkType, 'YIELD_CULTURE', 3 from GreatWorks where GreatWorkObjectType = 'GREATWORKOBJECT_WRITING';
 replace into GreatWork_YieldChanges (GreatWorkType, YieldType, YieldChange)

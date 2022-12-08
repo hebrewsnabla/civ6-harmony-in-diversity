@@ -101,6 +101,20 @@ function OnYellowCraneGreatWriterActived(playerID, unitID, greatpersonclassID)
   
   Events.UnitGreatPersonActivated.Add(OnYellowCraneGreatWriterActived);
 
+-- 黄鹤楼: 招募大作家触发对应时代鼓舞
+local YELLOW_CRANE = GameInfo.Buildings['BUILDING_YELLOW_CRANE_HD'];
+local WRITER_INDEX = GameInfo.GreatPersonClasses["GREAT_PERSON_CLASS_WRITER"].Index;
+function YellowCraneUnitGreatPersonCreated(playerId, unitId, greatPersonClassId, greatPersonIndividualId)
+	local player = Players[playerId];
+    if (greatPersonClassId == WRITER_INDEX) and (PlayerHasWonder (player, YELLOW_CRANE.Index)) then
+        local greatPerson = GameInfo.GreatPersonIndividuals[greatPersonIndividualId];
+        player:AttachModifierByID('YELLOW_CRANE_WRITER_' .. greatPerson.EraType .. '_BOOST');
+    end
+end
+if YELLOW_CRANE ~= nil then
+    Events.UnitGreatPersonCreated.Add(YellowCraneUnitGreatPersonCreated);
+end
+
 -- local PROP_KEY_HAS_PLAYER_TURN_ACTIVATED = 'DLHasPlayerTurnActivated'
 -- local PROP_KEY_HAS_ALHAMBRA_GRANTED = 'DLHasAlhambraGranted'
 -- local PROP_KEY_HAS_BIG_BEN_GRANTED = 'DLHasBigBenGranted'
