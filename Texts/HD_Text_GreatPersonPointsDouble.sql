@@ -19,8 +19,14 @@ values
     ("LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",                                 "+4 [ICON_GreatScientist] Great Scientist points per turn for every University and +8 [ICON_GreatScientist] Great Scientist points per turn for every Research Lab. +4 [ICON_GreatEngineer] Great Engineer points per turn for every Factory and +8 [ICON_GreatEngineer] Great Engineer points per turn for every Power Plant."),
     ("LOC_POLICY_REVELATION_DESCRIPTION",                                             "+4 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_POLICY_STRATEGOS_DESCRIPTION",                                              "+4 [ICON_GreatGeneral] Great General points per turn."),
-    ("LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "+8 [ICON_GreatMusician] Great Musician points per turn. +8 [ICON_GreatMusician] Great Musician points per turn for every Broadcast Center.");
-
+    ("LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "+8 [ICON_GreatMusician] Great Musician points per turn. +8 [ICON_GreatMusician] Great Musician points per turn for every Broadcast Center."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "District-based project which provides this city with full [ICON_POWER] Power while active."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "District-based project which provides [ICON_CULTURE] Culture every turn."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "District-based project which provides [ICON_GOLD] Gold every turn."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "District-based project which provides [ICON_SCIENCE] Science every turn."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "District-based project which provides [ICON_FAITH] Faith and +100% Religious Pressure every turn."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "District-based project which provides [ICON_GOLD] Gold every turn."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "District-based project which provides a large amount of [ICON_GOLD] Gold every turn.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -42,5 +48,12 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_SCIENCE_FOUNDATIONS_DL_DESCRIPTION",                                 "每有一所大学，每回合的 [ICON_GreatScientist] 大科学家点数便+4；每有一所研究实验室，每回合的 [ICON_GreatScientist] 大科学家点数便+8。每有一座工厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+4；每有一座发电厂，每回合的 [ICON_GreatEngineer] 大工程师点数便+8。"),
     ("zh_Hans_CN",  "LOC_POLICY_REVELATION_DESCRIPTION",                                             "每回合+4 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_POLICY_STRATEGOS_DESCRIPTION",                                              "每回合+4 [ICON_GreatGeneral] 大将军点数。"),
-    ("zh_Hans_CN",  "LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "每回合的 [ICON_GreatMusician] 大音乐家点数+8。每有一座广播中心，每回合的 [ICON_GreatMusician] 大音乐家点数便+8。");
+    ("zh_Hans_CN",  "LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "每回合的 [ICON_GreatMusician] 大音乐家点数+8。每有一座广播中心，每回合的 [ICON_GreatMusician] 大音乐家点数便+8。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "基于区域的项目，启动后可向此城市提供完整 [ICON_POWER] 电力供给。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "基于区域的项目，每回合提供 [ICON_Culture] 文化值。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "基于区域的项目，每回合提供 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "基于区域的项目，每回合提供 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "基于区域的项目，每回合提供 [ICON_FAITH] 信仰值、+100%宗教压力。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "基于区域的项目，每回合提供 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "基于区域的项目，每回合提供大量 [ICON_GOLD] 金币。");
 
