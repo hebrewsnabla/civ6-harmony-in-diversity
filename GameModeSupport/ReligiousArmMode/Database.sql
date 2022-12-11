@@ -326,7 +326,8 @@ insert or replace into RequirementSets
 values
 	('OPPONENT_IS_MELEE_OR_ANTC_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'REQUIREMENTSET_TEST_ANY'),
-	('SET_UNIT_OF_RELIGION', 						'REQUIREMENTSET_TEST_ANY');
+	('SET_UNIT_OF_RELIGION', 						'REQUIREMENTSET_TEST_ANY'),
+	('SET_UNIT_OF_RELIGION_ARM',					'REQUIREMENTSET_TEST_ALL');
 
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
@@ -336,7 +337,8 @@ values
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_MONK'),
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER'),
 	('SET_UNIT_OF_RELIGION', 						'REQ_UNIT_OF_RELIGION'),
-	('SET_UNIT_OF_RELIGION', 						'REQ_UNIT_OF_RELIGION_ARM');
+	('SET_UNIT_OF_RELIGION', 						'REQ_UNIT_OF_RELIGION_ARM'),
+	('SET_UNIT_OF_RELIGION_ARM',					'REQ_UNIT_OF_RELIGION_ARM');
 
 
 insert or ignore into Requirements
@@ -389,9 +391,11 @@ insert into ModifierArguments (ModifierId, Name, Value) values
 insert into Types
         (Type,                                                  Kind)
 values  ('ABILITY_RELIGIION_START_MOVE',                    'KIND_ABILITY'  ),
+
 		('UNIT_JAPANESE_SOHEI',								'KIND_UNIT'),
 		('UNIT_ELEANOR_TEMPLAR',							'KIND_UNIT'),
 		('UNIT_INDONESIAN_KRIS_SWORDSMAN',					'KIND_UNIT');
+
 
         
 insert into Tags
@@ -404,6 +408,7 @@ INSERT OR IGNORE INTO TypeTags
         (Type,                                                  Tag)
 values  ('ABILITY_RELIGIION_START_MOVE',            'CLASS_RELIGION_ARM'       ),
 		('ABILITY_RELIGIION_START_MOVE',            'CLASS_RELIGIOUS_ALL'       ),
+		('ABILITY_JUST_WAR_STRENGTH',				'CLASS_RELIGION_ARM'		),
 
 
         ('UNIT_WARRIOR_MONK',                       'CLASS_RELIGION_ARM'       ),
@@ -477,12 +482,11 @@ values
 	('BELIEF_SILKH_SWORD_BAPTISM',	'KIND_BELIEF'),
 	('BELIEF_SHAOLIN_TEMPLE',		'KIND_BELIEF');
 
-
 insert or ignore into BeliefsSortIndex
 	(BeliefType,				SortIndex)
 values
 	('BELIEF_FRATERNITY',			'148'),		--兄弟会
-	('BELIEF_SILKH_SWORD_BAPTISM',	'149'),		--剑礼
+	('BELIEF_SILKH_SWORD_BAPTISM',	'149'),		 --剑礼
 	('BELIEF_SHAOLIN_TEMPLE',		'219'	);	--少林寺
 
 
@@ -500,9 +504,10 @@ values
 	('BELIEF_FRATERNITY',				'2X_SUPPORT_STRENGTH_ATTACH_1'),
 	('BELIEF_FRATERNITY',				'2X_FLANKING_STRENGTH_ATTACH_1'),
 	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_IMPROVEMENT_FAITH'),
-	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH');
+	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH'),
+	('BELIEF_SILKH_SWORD_BAPTISM',		'JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF');
 
-
+update Modifiers set SubjectRequirementSetId = 'SET_UNIT_OF_RELIGION_ARM' where ModifierId = 'ABILITY_JUST_WAR_STRENGTH';
 
 insert or ignore into Modifiers
 	(ModifierId,					ModifierType,											OwnerRequirementSetId,				SubjectRequirementSetId)
@@ -524,3 +529,17 @@ values
 	('2X_FLANKING_STRENGTH',		'Percent',		'100'),
 	('2X_SUPPORT_STRENGTH_ATTACH_1','ModifierId',	'2X_SUPPORT_STRENGTH_ATTACH'),
 	('2X_FLANKING_STRENGTH_ATTACH_1','ModifierId',	'2X_FLANKING_STRENGTH_ATTACH');
+
+
+-- 剑礼，下城所有单位回血
+insert or ignore into BeliefModifiers (BeliefType, ModifierId) values 
+('BELIEF_SILKH_SWORD_BAPTISM', 'CONQUER_CITY_UNITS_HEAL_ATTACH');
+
+insert or ignore into Modifiers (ModifierId, ModifierType, RunOnce, Permanent, NewOnly, OwnerRequirementSetId, SubjectRequirementSetId) values 
+('CONQUER_CITY_UNITS_HEAL_ATTACH', 'MODIFIER_PLAYER_CAPTURED_CITY_ATTACH_MODIFIER', 0, 1, 0, NULL, NULL),
+('CONQUER_CITY_UNITS_HEAL', 		'MODIFIER_PLAYER_UNITS_ADJUST_DAMAGE', 			1, 1, 0, NULL, NULL);
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) values 
+('CONQUER_CITY_UNITS_HEAL_ATTACH', 		'ModifierId', 'CONQUER_CITY_UNITS_HEAL'),
+('CONQUER_CITY_UNITS_HEAL', 			'Amount', 			'-15');
+
