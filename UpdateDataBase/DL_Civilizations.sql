@@ -1724,24 +1724,71 @@ values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
 
 --------------------------------------------------------------------------
---Catherine De Medici
+--Catherine De Medici 黑王后额外视野
 -- delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
-	('FLYING_SQUADRON_TRAIT',				'SPY_AND_TRADER_BONUS_SIGHT');
+	('FLYING_SQUADRON_TRAIT',				'SPY_AND_RECON_BONUS_SIGHT');
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,								Permanent)
 values
-	('SPY_AND_TRADER_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+	('SPY_AND_RECON_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
-	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
+	('SPY_AND_RECON_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_RECON_BONUS_SIGHT');
+--
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',				'CIVILIAN_BONUS_SIGHT');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								Permanent)
+values
+	('CIVILIAN_BONUS_SIGHT',				'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('CIVILIAN_BONUS_SIGHT',				'AbilityType',	'ABILITY_CIVILIAN_BONUS_SIGHT');	
 
 ------------------------------------------------------------------------------------------------
+--Catherine De Medici 黑王后额外间谍
+
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_DEFENSIVE_TACTICS_ADD_SPY');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								OwnerRequirementSetId,									SubjectRequirementSetId)
+values
+	('TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY',	'MODIFIER_PLAYER_GRANT_SPY',				'PLAYER_HAS_CIVIC_POLITICAL_PHILOSOPHY_REQUIREMENTS',	NULL),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',		'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',	'PLAYER_HAS_CIVIC_POLITICAL_PHILOSOPHY_REQUIREMENTS',	NULL),
+	('TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY',	'MODIFIER_PLAYER_GRANT_SPY',				'PLAYER_HAS_CIVIC_DEFENSIVE_TACTICS_REQUIREMENTS',		NULL),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',			'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',	'PLAYER_HAS_CIVIC_DEFENSIVE_TACTICS_REQUIREMENTS',		NULL);
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY';
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,					Value)
+values
+	('TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY',		'Amount',				1),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',			'UnitType',				'UNIT_SPY'),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',			'Amount',				1),
+	('TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY',		'Amount',				1),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',				'UnitType',				'UNIT_SPY'),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',				'Amount',				1);
+
+
+------------------------------------------------------------------------------------------------------------
 -- Ikanda bug in captured cities 
 -- delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
 

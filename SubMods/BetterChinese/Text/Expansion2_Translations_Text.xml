@@ -485,7 +485,7 @@
 			<Text>瑞典特色建筑。该建筑包含2个 [ICON_GreatWork_WRITING] 著作槽位、2个 [ICON_GreatWork_MUSIC] 音乐槽位和2个 [ICON_GreatWork_Landscape] 艺术巨作槽位。[NEWLINE]奖励1个 [Icon_Governor] 总督头衔。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVT_INHERENT_BONUS_CLASSREP_XP1" Language="zh_Hans_CN">
-			<Text>你的每个拥有专业化区域的城市+1 [ICON_Housing] 住房、+1 [ICON_Amenities] 宜居度。</Text>
+			<Text>你的每个拥有专业化区域的城市+1 [ICON_Housing] 住房、+1 [ICON_Amenities] 宜居度、+1 [ICON_SCIENCE] 科技值和+1 [ICON_CULTURE] 文化值。</Text>
 		</Replace>
 		<Replace Tag="LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>此城市对相邻城市释放的宗教压力强度加倍。此城市中每有一座专业化区域，则+2 [ICON_Faith] 信仰值。</Text>

@@ -451,6 +451,7 @@ values
     ('ALLIANCE_ADD_SCIENCE_TO_DESTINATION_TRADE_ROUTE_RCC', 'AffectDestination',    1);
 
 -- 适配独裁
+/*
 insert or replace into GovernmentModifiers
     (GovernmentType,            ModifierId)
 values
@@ -467,6 +468,7 @@ insert or replace into ModifierArguments
     (ModifierId,           					Name,       Value)
 values
     ('REGIONAL_COUNCIL_CENTER_TIER3',      'Amount',   2);
+*/
 
 ----------------------------------------------------------------------------------------------------
 -- Ethiopia citystate bonus for diplomacy buildings

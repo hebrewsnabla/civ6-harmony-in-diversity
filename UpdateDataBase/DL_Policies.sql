@@ -195,13 +195,88 @@ values
 	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',		2),
 	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',		2);
 -- Autocracy
-update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in (
+delete from GovernmentModifiers where ModifierId in (
 	'AUTOCRACY_CAPITAL',
 	'AUTOCRACY_TIER1',
 	'AUTOCRACY_TIER2',
 	'AUTOCRACY_TIER3',
 	'CONSULATE_TIER1',
 	'CHANCERY_TIER2');
+delete from PolicyModifiers where ModifierId in (
+	'AUTOCRACY_CAPITAL',
+	'AUTOCRACY_TIER1',
+	'AUTOCRACY_TIER2',
+	'AUTOCRACY_TIER3',
+	'CONSULATE_TIER1',
+	'CHANCERY_TIER2');
+create temporary table AUTOCRACY_HD
+	(BuildingType text not null,
+	ModifierId text not null,
+	YieldType text not null,
+	primary key(ModifierId));
+
+insert or replace into AUTOCRACY_HD
+	(BuildingType,				ModifierId,						YieldType)
+select
+	BuildingType,				BuildingType || '_FOOD',		'YIELD_FOOD'
+from HD_BuildingTiers where BuildingType = 'BUILDING_PALACE' or ((PrereqDistrict = 'DISTRICT_GOVERNMENT' or PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER') and ReplacesOther = 0) union all
+select
+	BuildingType,				BuildingType || '_PRODUCTION',	'YIELD_PRODUCTION'
+from HD_BuildingTiers where BuildingType = 'BUILDING_PALACE' or ((PrereqDistrict = 'DISTRICT_GOVERNMENT' or PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER') and ReplacesOther = 0);
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,				ModifierId)
+select
+	'GOVERNMENT_AUTOCRACY',			ModifierId
+from AUTOCRACY_HD;
+
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_GOV_AUTOCRACY',			ModifierId
+from AUTOCRACY_HD;
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,												SubjectRequirementSetId)
+select
+	ModifierId,						'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		NULL
+from AUTOCRACY_HD;
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,					Value)
+select
+	ModifierId,						'BuildingType',			BuildingType
+from AUTOCRACY_HD union all
+select
+	ModifierId,						'Amount',				3
+from AUTOCRACY_HD union all
+select
+	ModifierId,						'YieldType',			YieldType
+from AUTOCRACY_HD;
+
+--CLASSICAL_REPUBLIC
+insert or replace into GovernmentModifiers
+	(GovernmentType,					ModifierId)
+values
+	('GOVERNMENT_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_CULTURE'),
+	('GOVERNMENT_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_SCIENCE');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_GOV_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_CULTURE'),
+	('POLICY_GOV_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_SCIENCE');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,												SubjectRequirementSetId)
+values
+	('CLASSICAL_REPUBLIC_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_1_SPECIALTY_DISTRICT'),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_1_SPECIALTY_DISTRICT');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,					Value)
+values
+	('CLASSICAL_REPUBLIC_CULTURE',	'YieldType',			'YIELD_CULTURE'),
+	('CLASSICAL_REPUBLIC_CULTURE',	'Amount',				1),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'YieldType',			'YIELD_SCIENCE'),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'Amount',				1);
 -- Monarchy
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId in (

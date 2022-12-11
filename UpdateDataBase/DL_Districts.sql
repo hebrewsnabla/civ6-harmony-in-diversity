@@ -63,6 +63,8 @@ update Districts set CitizenSlots = 4 where DistrictType in
 ----------------------------------------
 -- Expert yield
 update District_CitizenYieldChanges set YieldChange = 2 where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_FOOD';
+update District_CitizenYieldChanges set YieldChange = 6 where YieldType = 'YIELD_GOLD' and
+	(DistrictType = 'DISTRICT_COMMERCIAL_HUB' or DistrictType in (select CivUniqueDistrictType from DistrictReplaces where ReplacesDistrictType = 'DISTRICT_COMMERCIAL_HUB'));
 delete from District_CitizenYieldChanges where DistrictType = 'DISTRICT_HARBOR' and YieldType = 'YIELD_GOLD';
 
 delete from District_CitizenYieldChanges where (DistrictType = 'DISTRICT_ENCAMPMENT' or DistrictType = 'DISTRICT_IKANDA' or DistrictType = 'DISTRICT_THANH') and YieldType = 'YIELD_GOLD';
