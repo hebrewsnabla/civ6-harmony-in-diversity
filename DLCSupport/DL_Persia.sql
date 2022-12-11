@@ -10,13 +10,13 @@ values
 	('BUILDING_APADANA',					'APADANA_AWARD_ONE_INFLUENCE_TOKEN');
 
 insert or replace into Modifiers
-	(ModifierId,                        			ModifierType,												SubjectRequirementSetId)
+	(ModifierId,									ModifierType,												SubjectRequirementSetId)
 values
-	('APADANA_AWARD_ONE_INFLUENCE_TOKEN',       	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DISTRICT_IS_DISTRICT_WONDER_REQUIREMENTS'),
+	('APADANA_AWARD_ONE_INFLUENCE_TOKEN',       	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'PLOT_HAS_COMPLETE_WONDER'),
 	('APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER',	'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',					NULL);
 
 insert or replace into ModifierArguments
-	(ModifierId,                        				Name,           Value)
+	(ModifierId,										Name,			Value)
 values
 	('APADANA_AWARD_ONE_INFLUENCE_TOKEN',				'ModifierId',	'APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER'),
 	('APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER',		'Amount',		1);
