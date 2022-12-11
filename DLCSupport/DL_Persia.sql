@@ -3,23 +3,24 @@
 -------------------------------------
 
 -- Apadana
---insert or replace into BuildingModifiers
---    (BuildingType,                      ModifierId)
---values
---    ('BUILDING_APADANA',                'APADANA_TRIBUTARY_CULTURE');
+delete from BuildingModifiers where ModifierId = 'APADANA_AWARD_TWO_INFLUENCE_TOKEN';
+insert or replace into BuildingModifiers
+	(BuildingType,							ModifierId)
+values
+	('BUILDING_APADANA',					'APADANA_AWARD_ONE_INFLUENCE_TOKEN');
 
---insert or replace into Modifiers
---    (ModifierId,                        ModifierType)
---values
---    ('APADANA_TRIBUTARY_CULTURE',       'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE_PER_TRIBUTARY');
+insert or replace into Modifiers
+	(ModifierId,                        			ModifierType,												SubjectRequirementSetId)
+values
+	('APADANA_AWARD_ONE_INFLUENCE_TOKEN',       	'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'DISTRICT_IS_DISTRICT_WONDER_REQUIREMENTS'),
+	('APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER',	'MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN',					NULL);
 
---insert or replace into ModifierArguments
---    (ModifierId,                        Name,           Value)
---values
---    ('APADANA_TRIBUTARY_CULTURE',       'YieldType',    'YIELD_CULTURE'),
---    ('APADANA_TRIBUTARY_CULTURE',       'Amount',       2);
+insert or replace into ModifierArguments
+	(ModifierId,                        				Name,           Value)
+values
+	('APADANA_AWARD_ONE_INFLUENCE_TOKEN',				'ModifierId',	'APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER'),
+	('APADANA_AWARD_ONE_INFLUENCE_TOKEN_MODIFIER',		'Amount',		1);
 
--- 
 insert or replace into Building_CitizenYieldChanges
     (BuildingType,                          YieldType,          YieldChange)
 values
