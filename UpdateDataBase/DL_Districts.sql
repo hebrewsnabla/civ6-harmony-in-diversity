@@ -253,7 +253,7 @@ values
 	('DAM_ADJACENT_FARM_FOOD',							'YieldType',	'YIELD_FOOD,YIELD_PRODUCTION'),
 	('DAM_ADJACENT_FARM_FOOD',							'Amount',		'1,1');
 
-update ModifierArguments set Value = 30 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION' and Name = 'Amount';
 
 -- Culture bombs [for Great Eng]
 insert or replace into Modifiers (ModifierId, ModifierType, RunOnce, Permanent)

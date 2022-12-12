@@ -49,7 +49,7 @@ values
     ("LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "Receive [ICON_SCIENCE] Science and [ICON_CULTURE] Culture equal to 15% of your [ICON_FAITH] Faith generation in cities founded on Hills. Units receive +4 [ICON_STRENGTH] Combat Strength on Hills."),
     ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] Science in Marsh. Woods can be planted with the Mysticism civic."),
     ("LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "Mines provide a minor adjacency bonus for all districts, a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture. Specialty districts do not receive a minor adjacency bonus for being adjacent to another district."),
-    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION",        "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
+    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
     ("LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Inspiration. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal. Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking. International [ICON_Traderoute] Trade Routes provide +2 [ICON_Culture] culture; this bonus is tripled when the destination is a City-State you are the Suzerain of."),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "The Greatest Emperor Ever"),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "When building Ancient and Classical wonders, you may spend Builder charges to complete 15% of the original wonder cost. Builders receive an additional charge and +1 [ICON_Movement] Movement."),
@@ -147,8 +147,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值15%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。专业化区域与其他区域相邻时不会获得少量相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION",        "在城市中完成特色项目后，可将原始 [ICON_Capital] 首都迁至任意拥有U型港的城市（必须为本方建立）。每个外交区建筑、外交区、市政广场建筑与市政广场区域+1 [ICON_TradeRoute] 贸易路线容量。在拥有市政广场或外交区的城市中建造区域时+50% [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始便激活“写作”科技 [ICON_TechBoosted] 尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 鼓舞。腓尼基建造的海岸城市若与 [ICON_Capital] 首都在同一大陆，则其忠诚度为100%。开拓者上船后，[ICON_Movement] 移动力与视野范围各+2。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。在 [ICON_Capital] 首都所在大陆的海岸城市，忠诚度固定为100%。建成市政广场或市政广场建筑、外交区或外交区建筑+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市在建造区域时+50% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始时获得“写作”科技 [ICON_TechBoosted] 的尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 的鼓舞。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力，上船后+2[ICON_Movement] 移动力和视野。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "建造远古和古典奇观时，可消耗建造者次数来加速奇观原始建造进程的15%。建造者获得+1使用次数和+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "劳动人民的智慧"),
@@ -212,6 +212,22 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。");
+
+--腓尼基文本更改
+insert or replace into LocalizedText
+    (Language,      Tag,                                                    Text)
+select
+    "zh_Hans_CN",   "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",        "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。在 [ICON_Capital] 首都所在大陆的海岸城市，其忠诚度固定为100%。建成市政广场或市政广场建筑、外交区或外交区建筑+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市在建造区域时+50% [ICON_Production] 生产力。"
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+insert or replace into EnglishText
+    (Tag,                                                  Text)
+select
+    "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",       "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+--------------------------------------------------------------------------------
+--试验田
+
+-------------------------
 
 insert or replace into EnglishText
     (Tag,                                                  		Text)
