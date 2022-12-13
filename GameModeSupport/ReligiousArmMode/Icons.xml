@@ -27,6 +27,8 @@
    		<Row Name="ICON_BELIEF_FRATERNITY"                  Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
     	<Row Name="ICON_BELIEF_SILKH_SWORD_BAPTISM"        	Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="24"/>
      	<Row Name="ICON_BELIEF_SHAOLIN_TEMPLE"              Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="22"/>
+     	<Row Name="ICON_BUILDING_SHAOLIN_TEMPLE"          	Atlas="ICON_ATLAS_BUILDINGS" Index="46"/>
+
 
 	</IconDefinitions>
 </GameData>

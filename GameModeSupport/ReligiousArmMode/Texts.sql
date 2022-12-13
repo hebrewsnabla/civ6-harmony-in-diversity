@@ -161,6 +161,9 @@ values
 
 	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_NAME",					"Shaolin Temple"),
 	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_NAME",					"少林寺"),
-	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"Making"),
-	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"咕咕咕");
-	
+	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"Unlock Shaolin Temple, a sacrificial building, +8 Faith, +50% construction speed of religious armed units.When completed, a religious armed unit with once Promotion will be presented."),
+	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"解锁祭祀建筑少林寺，+8[ICON_FAITH]信仰值，+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位"),
+	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",					"Shaolin Temple"),
+	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",					"少林寺"),
+	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",			"+8[ICON_FAITH] Faith value, this city +50% religious armed unit construction speed. When completed, a religious armed unit with once Promotion will be presented."),
+	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",			"+8[ICON_FAITH]信仰值，此城+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位。");
