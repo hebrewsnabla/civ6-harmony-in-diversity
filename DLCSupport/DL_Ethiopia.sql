@@ -58,7 +58,7 @@ update Policies set Description = 'LOC_POLICY_CHARISMATIC_LEADER_ETHIOPIA_DESCRI
 update Policies set Description = 'LOC_POLICY_DIPLOMATIC_LEAGUE_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 update Policies set Description = 'LOC_POLICY_GUNBOAT_DIPLOMACY_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_GUNBOAT_DIPLOMACY';
 
-
+--外交区建筑提升政策卡收益
 insert or replace into PolicyModifiers  
     (PolicyType,                    ModifierId)
 values 
@@ -104,6 +104,77 @@ values
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_DELEGATION_FAVOR';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_EMBASSY_FAVOR';
+-----------------------------------------------------------------------
+--领事馆/外交办间谍改动
+insert or replace into BuildingModifiers
+    (BuildingType,                          ModifierId)
+values
+    ('BUILDING_CHANCERY',                  'CHANCERY_OFFENSIVESPYTIME'),
+    ('BUILDING_CHANCERY',                  'CHANCERY_SPYPRODUCTION'),
+    ('BUILDING_CONSULATE',                 'CONSULATE_SPYPRODUCTION'),
+    ('BUILDING_CONSULATE',                 'CONSULATE_SPY_UNLIMITED_PROMOTION');
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                                           SubjectRequirementSetId)
+values
+    ('CHANCERY_OFFENSIVESPYTIME',          'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',            'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS'),
+    ('CHANCERY_SPYPRODUCTION',             'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION',                        Null),
+    ('CONSULATE_SPYPRODUCTION',            'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',                         'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS'),
+    ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',               'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,               Value)
+values  
+    ('CHANCERY_OFFENSIVESPYTIME',          'ReductionPercent', 25),
+    ('CHANCERY_SPYPRODUCTION',             'UnitType',         'UNIT_SPY'),
+    ('CHANCERY_SPYPRODUCTION',             'Amount',           50),
+    ('CONSULATE_SPYPRODUCTION',            'UnitType',         'UNIT_SPY'),
+    ('CONSULATE_SPYPRODUCTION',            'Amount',           50),
+    ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'UnitType',         'UNIT_SPY');
+
+--所有城市新手间谍升级探员
+  
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
+values
+    ('BUILDING_CHANCERY',           'CHANCERY_GRANT_SPY_FREE_PROMOTION');
+
+insert or replace into Modifiers    
+    (ModifierId,                                      ModifierType,                                            SubjectRequirementSetId, Permanent)
+values
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION',             'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                NULL,                    0),
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER',    'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',  NULL,                    1);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                           Name,                     Value)
+values
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION',                  'ModifierId',             'CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER'),
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER',         'AbilityType',            'ABILITY_CHANCERY_FERR_PROMOTION');
+
+--间谍身上的免费升级能力设置和tag说明
+
+insert or replace into Types
+    (Type,                                                      Kind)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                         'KIND_ABILITY');
+
+insert or replace into TypeTags
+    (Type,                                                      Tag)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                         'CLASS_SPY');
+
+insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) 
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',
+    'LOC_ABILITY_CHANCERY_FERR_PROMOTION_NAME',
+    'LOC_ABILITY_CHANCERY_FERR_PROMOTION_DESCRIPTION',
+    1);
+
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,                                       ModifierId)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                     'HETAIROI_FREE_PROMOTION');
+-----------------------------------------------------------------------
+--外交区地基间谍容量
 
 insert into DistrictModifiers
     (DistrictType,                      ModifierId)
@@ -223,7 +294,6 @@ values
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_TOKENS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_ALLIANCE_POINTS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_DIPLOMATIC_VISIBLE'),
-
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_DIPLOMATIC_SLOT'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_INFLUENCE_BONUS'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_DIPLOMATIC_VICTOR_POINTS'),

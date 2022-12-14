@@ -49,8 +49,8 @@ values
     ("LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "Receive [ICON_SCIENCE] Science and [ICON_CULTURE] Culture equal to 15% of your [ICON_FAITH] Faith generation in cities founded on Hills. Units receive +4 [ICON_STRENGTH] Combat Strength on Hills."),
     ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] Science in Marsh. Woods can be planted with the Mysticism civic."),
     ("LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "Mines provide a minor adjacency bonus for all districts, a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture. Specialty districts do not receive a minor adjacency bonus for being adjacent to another district."),
-    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
-    ("LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Inspiration. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal. Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking. International [ICON_Traderoute] Trade Routes provide +2 [ICON_Culture] culture; this bonus is tripled when the destination is a City-State you are the Suzerain of."),
+    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal.Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
+    ("LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Inspiration.  Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking. International [ICON_Traderoute] Trade Routes provide +2 [ICON_Culture] culture; this bonus is tripled when the destination is a City-State you are the Suzerain of."),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "The Greatest Emperor Ever"),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "When building Ancient and Classical wonders, you may spend Builder charges to complete 15% of the original wonder cost. Builders receive an additional charge and +1 [ICON_Movement] Movement."),
     ("LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "Wisdom of Working People"),
@@ -147,7 +147,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值15%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。专业化区域与其他区域相邻时不会获得少量相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。在 [ICON_Capital] 首都所在大陆的海岸城市，忠诚度固定为100%。建成市政广场或市政广场建筑、外交区或外交区建筑+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市在建造区域时+50% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。与 [ICON_Capital] 首都在同一大陆的海岸城市忠诚度固定为100。建成市政广场或市政广场建筑、外交区或外交区建筑时皆+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市建造区域时+50% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始时获得“写作”科技 [ICON_TechBoosted] 的尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 的鼓舞。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力，上船后+2[ICON_Movement] 移动力和视野。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "建造远古和古典奇观时，可消耗建造者次数来加速奇观原始建造进程的15%。建造者获得+1使用次数和+1 [ICON_Movement] 移动力。"),
@@ -189,7 +189,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。征服一个城市后，所有3个单元格内的单位永久获得+1 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CAESAR_STRENGTH_MODIFIER",      			     		  "+{1_Amount}力来自已征服的城市。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度。建造工业区后获得一个免费的建造者。允许在工业区解放建造者，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在与你的创建的宗教相同宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在信仰你宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                      "解放"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",               "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。");
@@ -217,17 +217,15 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                    Text)
 select
-    "zh_Hans_CN",   "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",        "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。在 [ICON_Capital] 首都所在大陆的海岸城市，其忠诚度固定为100%。建成市政广场或市政广场建筑、外交区或外交区建筑+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市在建造区域时+50% [ICON_Production] 生产力。"
+    "zh_Hans_CN",   "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",        "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。与 [ICON_Capital] 首都在同一大陆的海岸城市忠诚度固定为100。建成市政广场或市政广场建筑、外交区或外交区建筑时皆+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市建造区域时+50% [ICON_Production] 生产力。"
 where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
 insert or replace into EnglishText
     (Tag,                                                  Text)
 select
-    "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",       "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."
+    "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",       "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal.Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."
 where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
 --------------------------------------------------------------------------------
---试验田
 
--------------------------
 
 insert or replace into EnglishText
     (Tag,                                                  		Text)

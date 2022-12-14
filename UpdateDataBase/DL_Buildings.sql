@@ -688,22 +688,22 @@ insert or replace into BuildingModifiers
 values
 --中书省
 	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD'),
-	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD_G'),
+	('BUILDING_GOV_CITYSTATES',				'GOV_CITYSTATES_CITY_YIELD_G');
 --情报局
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
-	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION');
+--	('BUILDING_GOV_SPIES',					'GOV_SPIES_OFFENSIVESPYTIME'),
+--	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPYPRODUCTION'),
+--	('BUILDING_GOV_SPIES',					'GOV_SPIES_SPY_UNLIMITED_PROMOTION');
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,															SubjectRequirementSetId)
 values
 --中书省
 --所有城市加产
 	('GOV_CITYSTATES_CITY_YIELD',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'THE_HOME_CONTINENT_NEW_REQUIREMENT'),
-	('GOV_CITYSTATES_CITY_YIELD_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'GOV_GH_REQUIREMENT'),
+	('GOV_CITYSTATES_CITY_YIELD_G',			'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',	'GOV_GH_REQUIREMENT');
 --情报局
-	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
-	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null),
-	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',				NULL);
+--	('GOV_SPIES_OFFENSIVESPYTIME',			'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',			Null),
+--	('GOV_SPIES_SPYPRODUCTION',				'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',							Null),
+--	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',   'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',				NULL);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,				Value)
@@ -712,12 +712,12 @@ values
 	('GOV_CITYSTATES_CITY_YIELD',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
 	('GOV_CITYSTATES_CITY_YIELD',			'Amount',			'7, 7, 7'),
 	('GOV_CITYSTATES_CITY_YIELD_G',			'YieldType',		'YIELD_FOOD, YIELD_PRODUCTION, YIELD_GOLD'),
-	('GOV_CITYSTATES_CITY_YIELD_G',			'Amount',			'7, 7, 7'),
+	('GOV_CITYSTATES_CITY_YIELD_G',			'Amount',			'7, 7, 7');
 --情报局
-	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
-	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY'),
-	('GOV_SPIES_SPYPRODUCTION',				'Amount',			50),
-	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY');
+--	('GOV_SPIES_OFFENSIVESPYTIME',			'ReductionPercent',	25),
+--	('GOV_SPIES_SPYPRODUCTION',				'UnitType',			'UNIT_SPY');
+--	('GOV_SPIES_SPYPRODUCTION',				'Amount',			100),
+--	('GOV_SPIES_SPY_UNLIMITED_PROMOTION',	'UnitType',			'UNIT_SPY');
 
 --主教座堂
 --移除信仰加成
@@ -1460,11 +1460,7 @@ on Improvement_ValidResources.ResourceType = Resources.ResourceType
 where Resources.ResourceClassType = 'RESOURCECLASS_BONUS' and Improvement_ValidResources.ImprovementType = 'IMPROVEMENT_FARM';
 
 
-insert or replace into BuildingModifiers
-    (BuildingType,          ModifierId)
-select
-    'BUILDING_CHANCERY',    ModifierId
-from BuildingModifiers where BuildingType = 'BUILDING_GOV_SPIES' and exists (select BuildingType from Buildings where BuildingType = 'BUILDING_CHANCERY');
+--删除情报局原效果，赋予贸易本埠形态效果
 delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_SPIES';
 insert or replace into BuildingModifiers
     (BuildingType,          ModifierId)

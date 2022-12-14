@@ -58,8 +58,8 @@ values
 
 update Units set
 	CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES',
-	CostProgressionParam1 = 25,
-	Cost = 200
+	CostProgressionParam1 = 20,
+	Cost = 120
 where UnitType = 'UNIT_SPY';
 
 ----------------------------------------------
