@@ -131,7 +131,8 @@ values
     ('CONSULATE_SPYPRODUCTION',            'Amount',           50),
     ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'UnitType',         'UNIT_SPY');
 
---所有城市新手间谍升级探员
+
+--外交办所有城市新手间谍升级探员
   
 insert or replace into BuildingModifiers
     (BuildingType,                  ModifierId)
@@ -150,7 +151,7 @@ values
     ('CHANCERY_GRANT_SPY_FREE_PROMOTION',                  'ModifierId',             'CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER'),
     ('CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER',         'AbilityType',            'ABILITY_CHANCERY_FERR_PROMOTION');
 
---间谍身上的免费升级能力设置和tag说明
+--间谍身上的外交办免费升级能力设置和tag说明
 
 insert or replace into Types
     (Type,                                                      Kind)
@@ -173,6 +174,27 @@ insert or replace into UnitAbilityModifiers
     (UnitAbilityType,                                       ModifierId)
 values
     ('ABILITY_CHANCERY_FERR_PROMOTION',                     'HETAIROI_FREE_PROMOTION');
+
+--外交办额外间谍容量，本城赠送间谍
+insert or replace into BuildingModifiers
+    (BuildingType,                              ModifierId)
+values
+    ('BUILDING_CHANCERY',                       'CHANCERY_SPY_CAPACITY'),
+    ('BUILDING_CHANCERY',                       'CHANCERY_ADD_SPY');
+insert or replace into Modifiers
+    (ModifierId,                        ModifierType,                               OwnerRequirementSetId,                              SubjectRequirementSetId)
+values
+    ('CHANCERY_SPY_CAPACITY',     'MODIFIER_PLAYER_GRANT_SPY',                'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
+    ('CHANCERY_ADD_SPY',          'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',  'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL);
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_ADD_SPY';
+insert or replace into ModifierArguments
+    (ModifierId,                        Name,                   Value)
+values
+    ('CHANCERY_SPY_CAPACITY',           'Amount',               1),
+    ('CHANCERY_ADD_SPY',                'UnitType',             'UNIT_SPY'),
+    ('CHANCERY_ADD_SPY',                'Amount',               1);
 -----------------------------------------------------------------------
 --外交区地基间谍容量
 
@@ -443,7 +465,28 @@ values
     ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'LeaderType',       'LEADER_MINOR_CIV_INDUSTRIAL'),
     ('REQUIRES_PLAYER_HAS_BUILDING_RCC_OR_WPH',	'RequirementSetId',	'PLAYER_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS');
 
+-----------------------------------------------------------------------
+--外交办/区域议会中心的间谍进攻/防守全局加成
+insert or replace into BuildingModifiers 
+    (BuildingType,                                  ModifierId) 
+values
+    ('BUILDING_CHANCERY',                           'CHANCERY_OFFENSE'),
+    ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_REGIONAL_COUNCIL_CENTER_DEFENSE');
 
+insert or replace into Modifiers    
+    (ModifierId,                                    ModifierType,                       SubjectRequirementSetId,    Permanent)
+values
+    ('CHANCERY_OFFENSE',                            'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',          'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0);
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+values
+    ('CHANCERY_OFFENSE',                                'Offense',          1),
+    ('CHANCERY_OFFENSE',                                'Amount',           1),
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Offense',          0),
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Amount',           3);
+
+-----------------------------------------------------------------------
 insert or replace into AllianceEffects
     (LevelRequirement,      AllianceType,             ModifierID)
 values
