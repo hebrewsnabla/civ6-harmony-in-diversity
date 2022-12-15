@@ -114,26 +114,21 @@ GameEvents.HD_ReligiousArm_MindOverMatter.Add(function (playerId, unitId)
 	end
 end);
 
-
-
-
-
 -- BELIEF_SHAOLIN_TEMPLE 剑礼
-
 function UnitExtraHeal( playerID : number, unitID : number )
-        local pPlayer = Players[ playerID ];
-        local pUnit = pPlayer:GetUnits():FindID(unitID);
-        local eOwner  = pUnit:GetOwner();  ---这个不能少 = player 就不行
-        local religions = Game.GetReligion():GetReligions();
-        for _, religion in ipairs(religions) do
-            if (religion.Founder == eOwner) then
-                for _, beliefIndex in ipairs(religion.Beliefs) do
-                    if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_SILKH_SWORD_BAPTISM" then
-                        pUnit:ChangeDamage(-15);
-                    end
-                end
-            end
-        end
+	local pPlayer = Players[ playerID ];
+	local pUnit = pPlayer:GetUnits():FindID(unitID);
+	local eOwner  = pUnit:GetOwner();  ---这个不能少 = player 就不行
+	local religions = Game.GetReligion():GetReligions();
+	for _, religion in ipairs(religions) do
+		if (religion.Founder == eOwner) then
+			for _, beliefIndex in ipairs(religion.Beliefs) do
+				if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_SILKH_SWORD_BAPTISM" then
+					pUnit:ChangeDamage(-15);
+				end
+			end
+		end
+	end
 
 end
 Events.UnitPromoted.Add(UnitExtraHeal);
@@ -142,32 +137,24 @@ function OtherReligiousUnitbeKilled(killedPlayerId, killedUnitId, playerId, unit
 	local bekilledunit = UnitManager.GetUnit(killedPlayerId, killedUnitId);
 	local other = bekilledunit:GetOwner();
 	local player = Players[playerId];
-	local killingUnit = player:GetUnits():FindID(unitId);    
+	local killingUnit = player:GetUnits():FindID(unitId);	
 	local owner = killingUnit:GetOwner();
 	local religions = Game.GetReligion():GetReligions();
-			for _, religion in ipairs(religions) do
-            	if (religion.Founder == owner) then
-                	for _, beliefIndex in ipairs(religion.Beliefs) do
-                    	if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_SILKH_SWORD_BAPTISM" then
-                    		local otherplayer = Players[killedPlayerId];
-							local Religion = player:GetReligion();
-							local otherReligion = otherplayer:GetReligion();
-							-- if (otherReligion:GetReligionInMajorityOfCities() ~= nil) then
-							if not otherplayer:IsBarbarian()  then
-								if(Religion:GetReligionInMajorityOfCities() ~= otherReligion:GetReligionInMajorityOfCities())then
-                    	 		killingUnit:ChangeDamage(-15);
-                    	 		 		
-                    			end
-                    		end
-                		end
-            		end
-       			end
-    		end
-
-
+	for _, religion in ipairs(religions) do
+		if (religion.Founder == owner) then
+			for _, beliefIndex in ipairs(religion.Beliefs) do
+				if GameInfo.Beliefs[beliefIndex].BeliefType == "BELIEF_SILKH_SWORD_BAPTISM" then
+					local otherplayer = Players[killedPlayerId];
+					local Religion = player:GetReligion();
+					local otherReligion = otherplayer:GetReligion();
+					if not otherplayer:IsBarbarian() then
+						if(Religion:GetReligionInMajorityOfCities() ~= otherReligion:GetReligionInMajorityOfCities()) then
+				 			killingUnit:ChangeDamage(-15);
+						end
+					end
+				end
+			end
+		end
+	end
 end
 Events.UnitKilledInCombat.Add(OtherReligiousUnitbeKilled);
-
-
-
-
