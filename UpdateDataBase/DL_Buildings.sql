@@ -420,6 +420,8 @@ update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'LIGHTHOU
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_GOV_TALL' and ModifierId = 'GOV_TALL_LOYALTY_DEBUFF';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_AMENITY_BUFF';
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY' where ModifierId = 'GOV_TALL_AMENITY_BUFF';
+update ModifierArguments set Value = 1 where ModifierId = 'GOV_TALL_AMENITY_BUFF';
 update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'GOV_TALL_HOUSING_BUFF';
 
 delete from BuildingModifiers where BuildingType = 'BUILDING_LIGHTHOUSE' and ModifierId = 'LIGHTHOUSE_COASTAL_CITY_HOUSING';
