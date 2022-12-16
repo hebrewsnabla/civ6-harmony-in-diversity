@@ -131,7 +131,7 @@ values
     ('CONSULATE_SPYPRODUCTION',            'Amount',           50),
     ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'UnitType',         'UNIT_SPY');
 
-
+   
 --外交办所有城市新手间谍升级探员
   
 insert or replace into BuildingModifiers
@@ -175,26 +175,29 @@ insert or replace into UnitAbilityModifiers
 values
     ('ABILITY_CHANCERY_FERR_PROMOTION',                     'HETAIROI_FREE_PROMOTION');
 
---外交办额外间谍容量，本城赠送间谍
+--外交办额外间谍容量，本城赠送1个1级间谍
 insert or replace into BuildingModifiers
     (BuildingType,                              ModifierId)
 values
     ('BUILDING_CHANCERY',                       'CHANCERY_SPY_CAPACITY'),
-    ('BUILDING_CHANCERY',                       'CHANCERY_ADD_SPY');
+    ('BUILDING_CHANCERY',                       'CHANCERY_ADD_SPY_WITH_PROMOTION');
 insert or replace into Modifiers
-    (ModifierId,                        ModifierType,                               OwnerRequirementSetId,                              SubjectRequirementSetId)
+    (ModifierId,                            ModifierType,                                         OwnerRequirementSetId,                              SubjectRequirementSetId)
 values
-    ('CHANCERY_SPY_CAPACITY',     'MODIFIER_PLAYER_GRANT_SPY',                'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
-    ('CHANCERY_ADD_SPY',          'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',  'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL);
+    ('CHANCERY_SPY_CAPACITY',              'MODIFIER_PLAYER_GRANT_SPY',                           'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
+--  ('CHANCERY_ADD_SPY_WITH_PROMOTION',    'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',             'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION',    'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER', NULL,                                               NULL);
 
 update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_SPY_CAPACITY';
-update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_ADD_SPY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_ADD_SPY_WITH_PROMOTION';
 insert or replace into ModifierArguments
-    (ModifierId,                        Name,                   Value)
+    (ModifierId,                        Name,                       Value)
 values
-    ('CHANCERY_SPY_CAPACITY',           'Amount',               1),
-    ('CHANCERY_ADD_SPY',                'UnitType',             'UNIT_SPY'),
-    ('CHANCERY_ADD_SPY',                'Amount',               1);
+    ('CHANCERY_SPY_CAPACITY',           'Amount',                   1),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'UnitPromotionClassType',   'PROMOTION_CLASS_SPY'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'ModifierId',               'HETAIROI_FREE_PROMOTION'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'UnitType',                 'UNIT_SPY'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'Amount',                   1);
 -----------------------------------------------------------------------
 --外交区地基间谍容量
 

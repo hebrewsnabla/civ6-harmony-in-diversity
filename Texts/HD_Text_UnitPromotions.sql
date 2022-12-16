@@ -156,6 +156,9 @@ values
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                                 "Auto Solicitation"),
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
+    ("LOC_PROMOTION_SPY_PATHFINDER_NAME",                                       "Pathfinder"),    
+    ("LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                                "All your units within 6 tiles of Pathfinder gain +1 [ICON_MOVEMENT] movement."), 
+    ("LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION",                                 "+1 movement from your Pathfinder."),   
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles."),
     ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                            "Ignore the extra [ICON_Movement] Movement cost from Marsh.");
 
@@ -245,5 +248,8 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_NAME",                              "自动索敌"),
     ("zh_Hans_CN",  "LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                       "每回合+1额外攻击。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                    "将领卫队"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_PATHFINDER_NAME",                                    "向导"),
+    ("zh_Hans_CN",  "LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION",                              "+1移动力，来自向导的指引。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                             "就位时，向导周围6个单元格内的友方单位在开始回合时+1移动力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                         "忽略沼泽带来的的额外 [ICON_Movement] 移动力消耗。");

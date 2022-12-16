@@ -928,3 +928,64 @@ update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLIN
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
 
+--SPY-删除游击队领袖、火箭专家、隐秘行动、掩饰和王牌驾驶员等5个间谍升级
+
+--SPY-普及王牌驾驶员给玩家的间谍
+
+--SPY-新间谍升级-向导/吐丝结网/阴影观察者
+insert or replace into Types
+    (Type,                                          Kind)
+values
+    ('PROMOTION_SPY_PATHFINDER',                    'KIND_PROMOTION');
+insert or replace into UnitPromotions
+    (UnitPromotionType,             Name,                                Description,                                   PromotionClass,             Level,  Column)
+values
+    ('PROMOTION_SPY_PATHFINDER',    'LOC_PROMOTION_SPY_PATHFINDER_NAME', 'LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION',    'PROMOTION_CLASS_SPY',      1,   NULL);
+
+
+insert or replace into UnitPromotionModifiers
+    (UnitPromotionType,                             ModifierId)
+values
+    ('PROMOTION_SPY_PATHFINDER',                    'HD_SPY_PATHFINDER');
+
+--SPY-间谍向导相关的的范围加速代码
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                            Permanent, SubjectRequirementSetId)
+values
+    ('HD_SPY_PATHFINDER',                           'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',   null,      'HD_AOE_REQUIRES_SPY_PATHFINDER'),
+    ('HD_SPY_PATHFINDER_MOVEMENT',                  'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',  0,          NULL);
+insert or replace into ModifierArguments
+    (ModifierId,                                 Name,               Value)
+values
+    ('HD_SPY_PATHFINDER',                        'AbilityType',      'ABILITY_SPY_PATHFINDER_MOVEMENT'),
+    ('HD_SPY_PATHFINDER_MOVEMENT',               'Amount',           1);
+
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                   ModifierId)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'HD_SPY_PATHFINDER_MOVEMENT');
+
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'KIND_ABILITY');
+
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'CLASS_ALL_UNITS');
+
+insert or replace into UnitAbilities
+    (UnitAbilityType,                      Name,                                Description,                                   inactive,   Permanent)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',    'LOC_SPY_PATHFINDER_MOVEMENT_NAME',  'LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION',     1,          0);
+
+insert or replace into ModifierStrings
+    (ModifierId,                                Context,        Text)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',        'Preview',      '+{1_Amount} {LOC_HD_SPY_PATHFINDER_MOVEMENT_PREVIEW_TEXT}');
+
+--SPY-吐丝结网-王牌间谍发展下线
+
+--SPY-阴影观察者-间谍视野+2并发现隐形单位，视野无视树林雨林阻隔

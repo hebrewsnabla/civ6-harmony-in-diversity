@@ -1796,6 +1796,7 @@ values
 --新增reqs9环沿海
 --新增本体的港口一级和二级判定
 --新增判定相邻重骑兵一环
+--新增判定SPY-间谍向导升级6环内单位
 insert or ignore into Requirements
 	(RequirementId,													RequirementType)
 values
@@ -1803,7 +1804,8 @@ values
 	('STATUE_OF_LIBERTY_COASTAL',									'REQUIREMENT_PLOT_IS_COASTAL_LAND'),
 	('REQUIRES_CITY_HAS_BUILDING_LIGHTHOUSE_BASIC',					'REQUIREMENT_CITY_HAS_BUILDING'),
 	('REQUIRES_CITY_HAS_BUILDING_SHIPYARD_BASIC',					'REQUIREMENT_CITY_HAS_BUILDING'),
-	('AOE_REQUIRES_GENERAL_GUARD',									'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
+	('AOE_REQUIRES_GENERAL_GUARD',									'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'),
+	('AOE_REQUIRES_SPY_PATHFINDER',									'REQUIREMENT_PLOT_ADJACENT_TO_OWNER');
 insert or ignore into RequirementArguments
 	(RequirementId,													Name,					Value)
 values
@@ -1813,14 +1815,17 @@ values
 	('REQUIRES_CITY_HAS_BUILDING_LIGHTHOUSE_BASIC',					'BuildingType',			'BUILDING_LIGHTHOUSE'),
 	('REQUIRES_CITY_HAS_BUILDING_SHIPYARD_BASIC',					'BuildingType',			'BUILDING_SHIPYARD'),
 	('AOE_REQUIRES_GENERAL_GUARD',									'MinRange',				0),
-	('AOE_REQUIRES_GENERAL_GUARD',									'MaxRange',				1);
+	('AOE_REQUIRES_GENERAL_GUARD',									'MaxRange',				1),
+	('AOE_REQUIRES_SPY_PATHFINDER',									'MinDistance',			0),
+	('AOE_REQUIRES_SPY_PATHFINDER',									'MaxDistance',			6);
 insert or ignore into RequirementSets
 	(RequirementSetId,												RequirementSetType)
 values
 	('STATUE_OF_LIBERTY_WITHIN_9_REQUIREMENTS',						'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_HAS_HARBOR_TIER_1_BUILDING_REQUIREMENTS_BASIC',		'REQUIREMENTSET_TEST_ALL'),
 	('HD_CITY_HAS_HARBOR_TIER_2_BUILDING_REQUIREMENTS_BASIC',		'REQUIREMENTSET_TEST_ALL'),
-	('HD_AOE_REQUIRES_GENERAL_GUARD',								'REQUIREMENTSET_TEST_ALL');
+	('HD_AOE_REQUIRES_GENERAL_GUARD',								'REQUIREMENTSET_TEST_ALL'),
+	('HD_AOE_REQUIRES_SPY_PATHFINDER',								'REQUIREMENTSET_TEST_ALL');
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,												RequirementId)
 values
@@ -1828,7 +1833,8 @@ values
 	('STATUE_OF_LIBERTY_WITHIN_9_REQUIREMENTS',						'STATUE_OF_LIBERTY_COASTAL'),
 	('HD_CITY_HAS_HARBOR_TIER_1_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_LIGHTHOUSE_BASIC'),
 	('HD_CITY_HAS_HARBOR_TIER_2_BUILDING_REQUIREMENTS_BASIC',		'REQUIRES_CITY_HAS_BUILDING_SHIPYARD_BASIC'),
-	('HD_AOE_REQUIRES_GENERAL_GUARD',								'AOE_REQUIRES_GENERAL_GUARD');
+	('HD_AOE_REQUIRES_GENERAL_GUARD',								'AOE_REQUIRES_GENERAL_GUARD'),
+	('HD_AOE_REQUIRES_SPY_PATHFINDER',								'AOE_REQUIRES_SPY_PATHFINDER');
 
 -- Great Bath:	Update "plot adjacent to river"	to "plot adjacent to river	or player has Great Bath"
 -- 				Update "plot is fresh water"	to "plot is fresh water 	or player has Great Bath"
