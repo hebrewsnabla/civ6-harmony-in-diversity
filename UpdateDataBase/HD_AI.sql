@@ -111,7 +111,6 @@ from HD_AIYieldScales;
 create temporary table HD_AIGreatPersonPoints (
 	ObjectType text not null,
 	GreatPersonClassType text not null,
---	EraType text not null default 'ERA_CLASSICAL',
 	ModifierId text,
 	primary key (ObjectType, GreatPersonClassType)
 );
@@ -132,22 +131,7 @@ insert or replace into HD_AIGreatPersonPoints
 select
 	BuildingType,					GreatPersonClassType
 from (HD_BuildingTiers b inner join HD_AIGreatPersonPoints a on b.PrereqDistrict = a.ObjectType) where ReplacesOther = 0;
---insert or replace into HD_AIGreatPersonPoints
---	(ObjectType,					GreatPersonClassType,	EraType)
---select
---	ObjectType,						GreatPersonClassType,	e.EraType
---from (Eras e cross join HD_AIGreatPersonPoints a) where ChronologyIndex > 1;
-update HD_AIGreatPersonPoints set ModifierId = 'HD_AI_' || ObjectType || '_' || GreatPersonClassType;-- || '_' || EraType;
---insert or replace into TraitModifiers
---	(TraitType,					ModifierId)
---select
---	'TRAIT_LEADER_MAJOR_CIV',	ModifierId
---from HD_AIGreatPersonPoints;
---insert or replace into Modifiers
---	(ModifierId,	ModifierType,											OwnerRequirementSetId,									SubjectRequirementSetId)
---select
---	ModifierId,		'MODIFIER_PLAYER_CITIES_ADJUST_GREAT_PERSON_POINT',		'PLAYER_IS_HIGH_DIFFICULTY_AI_AT_LEAST_' || EraType,	'CITY_HAS_' || ObjectType || '_REQUIREMENTS'
---from HD_AIGreatPersonPoints;
+update HD_AIGreatPersonPoints set ModifierId = 'HD_AI_' || ObjectType || '_' || GreatPersonClassType;
 insert or replace into BuildingModifiers
 	(BuildingType,		ModifierId)
 select
@@ -170,6 +154,17 @@ select
 from HD_AIGreatPersonPoints union all select
 	ModifierId,		'Amount',					1
 from HD_AIGreatPersonPoints;
+
+-- adjust district priority
+update Yields set DefaultValue = 0.333 where YieldType = 'YIELD_GOLD';
+update Yields set DefaultValue = 0.667 where YieldType = 'YIELD_FAITH';
+insert or replace into AiFavoredItems
+	(ListType,				Item,			Favored,	Value) 
+values
+	('DefaultYieldBias',	'YIELD_FOOD',	1,			10);
+update AiFavoredItems set Value = 0 WHERE ListType = 'DefaultYieldBias';
+update AiFavoredItems set Value = 0 WHERE ListType = 'ClassicalYields';
+update PseudoYields set DefaultValue = 1 where PseudoYieldType like 'PSEUDOYIELD_GPP_%' and PseudoYieldType != 'PSEUDOYIELD_GPP_SCIENTIST';
 
 -- xiaoxiaocat: changes below are not reorganized
 -- AiFavoredItems
@@ -215,6 +210,20 @@ values
 	('DLAdjustBuildings',		'BUILDING_GOV_FAITH',					1,			0),
 	('DLAdjustBuildings',		'BUILDING_GOV_SPIES',					1,			0),
 	('DLAdjustDistricts',		'DISTRICT_GOVERNMENT',					1,			0),
+	('DLAdjustDistricts',		'DISTRICT_INDUSTRIAL_ZONE',				1,			1000),
+    ('DLAdjustTechs',			'TECH_CALENDAR_HD',						1,			0),
+    ('DLAdjustTechs',			'TECH_IRON_WORKING',					1,			0),
+    ('DLAdjustTechs',			'TECH_CURRENCY',						1,			0),
+    ('DLAdjustTechs',			'TECH_EDUCATION',						1,			0),
+    ('DLAdjustTechs',			'TECH_CIVIL_ENGINEERING_HD',			1,			0),
+    ('DLAdjustTechs',			'TECH_COMPUTERS',						1,			0),
+    ('DLAdjustCivics',			'CIVIC_FOREIGN_TRADE',					1,			0),
+    ('DLAdjustCivics',			'CIVIC_DRAMA_POETRY',					1,			0),
+    ('DLAdjustCivics',			'CIVIC_CIVIL_SERVICE',					1,			0),
+    ('DLAdjustCivics',			'CIVIC_HISTORICAL_PHILOSOPHY_HD',		1,			0),
+    ('DLAdjustCivics',			'CIVIC_URBANIZATION',					1,			0),
+    ('DLAdjustCivics',			'CIVIC_IDEOLOGY',						1,			0),
+    ('DLAdjustCivics',			'CIVIC_GLOBALIZATION',					1,			0),
 	('DLFewerWaronCityStates',	'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	0,			0),
 	('AgressiveDiplomacy',		'DIPLOACTION_DECLARE_WAR_MINOR_CIV',	1,			0);
 
@@ -322,10 +331,6 @@ UPDATE PlotEvalConditions SET PoorValue = -6, GoodValue =	6 WHERE ConditionType 
 UPDATE PlotEvalConditions SET PoorValue =	1, GoodValue =	3 WHERE ConditionType = 'Resource Class'; -- PoorValue="2" GoodValue="6"
 UPDATE PlotEvalConditions SET PoorValue = -4, GoodValue = 15 WHERE ConditionType = 'Foreign Continent'; -- PoorValue="-2" GoodValue="50"
 
--- --------------------------------------------------------------
--- -- Yield biases
-insert or replace into AiFavoredItems (ListType, Item, Favored, Value) values ('DefaultYieldBias', 'YIELD_FOOD', 1, 10); -- new
-UPDATE AiFavoredItems SET Value = 0 WHERE ListType = 'DefaultYieldBias' AND Item = 'YIELD_GOLD';	-- 20, RS:0
 --------------------------------------------------------------
 -- See also [MOD] Real Strategy
 insert or replace into PseudoYields
