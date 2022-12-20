@@ -34,7 +34,7 @@ values
 	("LOC_ZHOU_DAGUAN_TOKENS",				  			 				  "Gain 5 [ICON_ENVOY] Envoys."),
 	("LOC_JOHN_JACOB_ASTOR_GOLD",				  			 			  "Gain 600 [ICON_GOLD] Gold."),
 	("LOC_GREATPERSON_GIOVANNI_DE_MEDICI_ACTIVE_HD",                      "{LOC_GREATPERSON_GIOVANNI_DE_MEDICI_ACTIVE} 25% cheaper to purchase Theater Square buildings."),
-    
+    ("LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG",                             "Triggers [ICON_TECHBOOSTED] Eureka for Engineering. Awards 1 freely-chosen free classical technology when completed (to choose the Technology to be awarded, please click on the Technology icon on the Tech tree). "),
     ("LOC_ARYABHATA_CAMPUS_AMENITY",                                      "Chosen Campus provide +2 [ICON_AMENITIES] Amenities."),
     ("LOC_GREATPERSON_ALAN_TURING_ACTIVE",                                "Triggers the [ICON_TechBoosted] Eureka moment for Computers and 1 random technology from the Modern and Atomic era. If Computers is already boosted, instead complete the tech."),
     ("LOC_GREATPERSON_DMITRI_MENDELEEV_ACTIVE",                           "Reveals [ICON_RESOURCE_ALUMINUM] Aluminum without the normal technology requirement. Triggers the [ICON_TechBoosted] Eureka moment for Chemistry. If Chemistry is already boosted, instead complete the tech."),
@@ -185,6 +185,7 @@ values
     ("zh_Hans_CN",  "LOC_GREATPERSON_IMHOTEP_ACTIVE_JNR_UC",                            "建造奇观时提供55点 [ICON_Production] 生产力，对于远古和古典时代的奇观加倍。"),
     -- ("zh_Hans_CN",  "LOC_GREATPERSON_JAMES_WATT_ACTIVE_JNR_UC",                         "此城所有与淡水源、水渠、堤坝以及运河相邻的单元格+1 [ICON_Production] 生产力。"), --JNR IZ EX
     ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_JNR_MARTINE_DE_BERTEREAU_NAME",        "玛蒂娜·德·贝尔特罗"),
+    ("zh_Hans_CN",  "LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG",                            "触发“工程”的 [ICON_TECHBOOSTED] 尤里卡。奖励1项当前可以研究的古典科技（点击科技树上的科技图标来选择被奖励的科技）。"),
     -- history
     ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_1", "阿基米德（公元前287年—公元前212年），伟大的古希腊哲学家、百科式科学家、数学家、物理学家、力学家，静态力学和流体静力学的奠基人，并且享有“力学之父”的美称，阿基米德和高斯、牛顿并列为世界三大数学家。 阿基米德曾说过：“给我一个支点，我就能撬起整个地球。”"),
     ("zh_Hans_CN",  "LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JNR_ARCHIMEDES_CHAPTER_HISTORY_PARA_2", "阿基米德确立了静力学和流体静力学的基本原理。给出许多求几何图形重心，包括由一抛物线和其网平行弦线所围成图形的重心的方法。阿基米德证明物体在液体中所受浮力等于它所排开液体的重量，这一结果后被称为阿基米德原理。他还给出正抛物旋转体浮在液体中平衡稳定的判据。阿基米德发明的机械有引水用的水螺旋，能牵动满载大船的杠杆滑轮机械，能说明日食，月食现象的地球-月球-太阳运行模型。但他认为机械发明比纯数学低级，因而没写这方面的著作。阿基米德还采用不断分割法求椭球体、旋转抛物体等的体积，这种方法已具有积分计算的雏形。"),
