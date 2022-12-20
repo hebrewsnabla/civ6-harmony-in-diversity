@@ -941,3 +941,14 @@ values
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'Experience',	0),
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'UnitType',		'UNIT_CUIRASSIER'),
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'UniqueOverride',	1);
+
+--宾根
+update ModifierArguments set Value = 100 where ModifierId = 'GREATPERSON_FAITH' and Name = 'Amount';
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HILDEGARD_OF_BINGEN';
+--张衡
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CEL_NAV' or ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS';
+delete from ModifierArguments where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING' and Name = 'GrantTechIfBoosted';
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING',		'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG');
