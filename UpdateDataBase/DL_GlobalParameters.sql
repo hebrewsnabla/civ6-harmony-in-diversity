@@ -11,6 +11,21 @@ update GlobalParameters set Value = 8 where Name = 'PLOT_INFLUENCE_MAX_ACQUIRE_D
 update GlobalParameters set Value = 3 where Name = 'CITY_FOOD_CONSUMPTION_PER_POPULATION';
 update GlobalParameters set Value = 3 where Name = 'YIELD_FOOD_CITY_TERRAIN_REPLACE';
 update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAIN_REPLACE';
+    
+--SPY间谍收集情报源效果和持续时间优化、文化成为主流后的任务缩短时间削弱
+update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_BONUS_GAIN_SOURCES';
+update GlobalParameters set Value = 5 where Name = 'ESPIONAGE_GAIN_SOURCES_DURATION_MULTIPLIER';
+update GlobalParameters set Value = 15 where Name = 'ESPIONAGE_MISSION_LENGTH_REDUCTION_CULTURAL_DOMINANCE';
+--SPY间谍手动逃跑相关参数优化更易逃脱
+update GlobalParameters set Value = 30 where Name = 'ESPIONAGE_ESCAPE_BASE_CHANCE';
+update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_LEVEL_BOOST';
+update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_COUNTERSPY_LEVEL_MODIFIER';
+update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_POLICE_CORRECT_MODIFIER';
+--SPY间谍捏造丑闻（杀使者）收益提升至
+update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_FABRICATE_SCANDAL_BASE_ENVOYS_REMOVED';
+update GlobalParameters set Value = 2 where Name = 'ESPIONAGE_FABRICATE_SCANDAL_LEVEL_ENVOYS_REMOVED';
+--SPY间谍暗杀总督持续时间降低至
+update GlobalParameters set Value = 1 where Name = 'ESPIONAGE_NEUTRALIZE_GOVERNOR_BASE_TURNS';
 
 -- Map
 -- update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';

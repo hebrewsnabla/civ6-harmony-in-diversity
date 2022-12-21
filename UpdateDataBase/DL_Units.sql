@@ -64,27 +64,51 @@ where UnitType = 'UNIT_SPY';
 
 ----------------------------------------------
 --SPY 间谍出击任务成功率调整
-
+--删除招募叛军
 delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
+--获取情报源，在全局参数处改动了持续时间和加成
+update UnitOperations set Turns = 4           		where OperationType = 'UNITOPERATION_SPY_GAIN_SOURCES';
+--捏造丑闻
 update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
 update UnitOperations set Turns = 10           		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
+--煽动骚乱
 update UnitOperations set BaseProbability = 11 		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set Turns = 4            		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
-update UnitOperations set BaseProbability = 14 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
-update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
-update UnitOperations set BaseProbability = 11 		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
+--抽取资金
+update UnitOperations set BaseProbability = 15 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';	
+update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+--陷害总督
+update UnitOperations set BaseProbability = 19 		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+update UnitOperations set Turns = 10           		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';	
+update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+--窃取科技提升
+update UnitOperations set BaseProbability = 10 		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
+update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
+--盗取巨作
 update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
-update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';	
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
---间谍移动到其他文明的城市所需时间减少3T
+update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
+--破坏火箭研究
+update UnitOperations set BaseProbability = 19 		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';	
+update UnitOperations set Turns = 16            	where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+--SPY MOVE -间谍移动到其他文明的城市所需时间减少3T
 update UnitOperations set Turns = 0            		where OperationType = 'UNITOPERATION_SPY_TRAVEL_NEW_CITY';
 
 -- Worrior monk and nihang can have siege_tower and Battering_ram bonus
