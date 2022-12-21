@@ -93,7 +93,8 @@ values
     ("LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                      "+100% Flanking and Support Bonus to all Combat and Religious units. Unit gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn within the borders of cities that follow your Religion. Religious units can ignore Zone of Control."),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                       "Liberate"),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",                "Liberate this unit to give +2 [ICON_PRODUCTION] Production adjacency bonus to this Industrial Zone, and gain 1 [ICON_CITIZEN] citizen if you first do it in a city."),
-    ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "Must be located in the Industrial Zone, and have [ICON_MOVEMENT] Movement left.");
+    ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "Must be located in the Industrial Zone, and have [ICON_MOVEMENT] Movement left."),
+    ("LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                     "Gain a copy of all available commemoration effects in each Era.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -192,7 +193,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在信仰你宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                      "解放"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",               "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。");
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                    "在每个时代额外获得所有着力点加成。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

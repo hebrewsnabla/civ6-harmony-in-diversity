@@ -110,6 +110,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>7A66DB58-B354-4061-8C80-95B638DD6F6C</ModInUse>
     </Criteria>
+    <Criteria id="DLC_Suleiman_Alt">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>F48213B4-56F5-45DD-92F7-AC78E49BDA49</ModInUse>
+    </Criteria>
     <Criteria id="DLC_Persia_Ethiopia">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>E2749E9A-8056-45CD-901B-C368C8E83DEB</ModInUse>
@@ -1277,6 +1281,10 @@
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/HD_SALADIN_ALT.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_SULEIMAN_ALT" criteria="DLC_Suleiman_Alt">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>DLCSupport/DL_SULEIMAN_ALT.sql</File>
+    </UpdateDatabase>
     <!-- Main -->
     <UpdateDatabase id="DL_StartBias_Early" criteria="Expansion2">
 		<Properties><LoadOrder>-1</LoadOrder></Properties>
@@ -1996,6 +2004,7 @@
     <File>DLCSupport/DL_Portugal.sql</File>
 	<File>DLCSupport/HD_Ceasar.sql</File>
   <File>DLCSupport/HD_SALADIN_ALT.sql</File>
+  <File>DLCSupport/DL_SULEIMAN_ALT.sql</File>
 	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/HD_AdjustYields.sql</File>
