@@ -1729,33 +1729,33 @@ values
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
-	('FLYING_SQUADRON_TRAIT',				'SPY_AND_RECON_BONUS_SIGHT');
+	('FLYING_SQUADRON_TRAIT',				'SPY_BONUS_SIGHT');
 
 insert or replace into Modifiers
-	(ModifierId,							ModifierType,								Permanent)
+	(ModifierId,							ModifierType,					Permanent)
 values
-	('SPY_AND_RECON_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+	('SPY_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
-	('SPY_AND_RECON_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_RECON_BONUS_SIGHT');
+	('SPY_BONUS_SIGHT',			 			'AbilityType',	'ABILITY_SPY_BONUS_SIGHT');
 --
 
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
-	('FLYING_SQUADRON_TRAIT',				'CIVILIAN_BONUS_SIGHT');
+	('FLYING_SQUADRON_TRAIT',				'CIVILIAN_AND_RECON_BONUS_SIGHT');
 
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,								Permanent)
 values
-	('CIVILIAN_BONUS_SIGHT',				'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+	('CIVILIAN_AND_RECON_BONUS_SIGHT',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
-	('CIVILIAN_BONUS_SIGHT',				'AbilityType',	'ABILITY_CIVILIAN_BONUS_SIGHT');	
+	('CIVILIAN_AND_RECON_BONUS_SIGHT',	    'AbilityType',	'ABILITY_CIVILIAN_AND_RECON_BONUS_SIGHT');	
 
 ------------------------------------------------------------------------------------------------
 --Catherine De Medici 黑王后额外间谍
