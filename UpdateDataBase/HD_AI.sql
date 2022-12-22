@@ -161,8 +161,9 @@ update Yields set DefaultValue = 0.667 where YieldType = 'YIELD_FAITH';
 insert or replace into AiFavoredItems
 	(ListType,				Item,			Favored,	Value) 
 values
-	('DefaultYieldBias',	'YIELD_FOOD',	1,			10);
+	('DefaultYieldBias',	'YIELD_FOOD',	1,			0);
 update AiFavoredItems set Value = 0 WHERE ListType = 'DefaultYieldBias';
+update AiFavoredItems set Value = 50 WHERE ListType = 'DefaultYieldBias' and (Item = 'YIELD_GOLD' or Item = 'YIELD_FAITH');
 update AiFavoredItems set Value = 0 WHERE ListType = 'ClassicalYields';
 update PseudoYields set DefaultValue = 1 where PseudoYieldType like 'PSEUDOYIELD_GPP_%' and PseudoYieldType != 'PSEUDOYIELD_GPP_SCIENTIST';
 
