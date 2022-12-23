@@ -146,9 +146,24 @@ values
 	("en_US",		"LOC_BELIEF_SILKH_SWORD_BAPTISM_NAME",				"Silkh Sword Baptism"),
 	("zh_Hans_CN",	"LOC_BELIEF_SILKH_SWORD_BAPTISM_NAME",				"剑礼"),
 	("en_US",		"LOC_BELIEF_SILKH_SWORD_BAPTISM_DESCRIPTION",		"+5[ICON_Strength]strength when the armed unit and religious unit are located in the same cell.When all units kill pagan units, descend into the city and upgrade, they recover an additional 15 [ICON_Damaged]health."),
-	("zh_Hans_CN",	"LOC_BELIEF_SILKH_SWORD_BAPTISM_DESCRIPTION",		"宗教武装单位和宗教单位位于同一单元格时+5[ICON_Strength]力。所有单位击杀异教单位、下城和升级时回复额外15[ICON_Damaged]生命。(还没写)"),
+	("zh_Hans_CN",	"LOC_BELIEF_SILKH_SWORD_BAPTISM_DESCRIPTION",		"宗教武装单位和宗教单位位于同一单元格时+5[ICON_Strength]力。单位击杀异教单位、升级时回复额外15[ICON_Damaged]生命，下城时所有单位回复15[ICON_Damaged]生命。"),
+	("en_US",		"LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION", "Silkh Sword Baptism : ReligionArm units gain +5 [ICON_Strength] Combat Strength when their tile have a religious unit."),
+	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION",  "剑礼：同一单元格内的宗教武装单位+5 [ICON_Strength] 战斗力。"),
+	("en_US",		"LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",         "Silkh Sword Baptism : +5 [ICON_Strength] Combat Strength"),
+	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",          "剑礼：+5 [ICON_Strength] 战斗力，此单位须为宗教武装。"),
+	("en_US",		"LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",         "Combat Strength from Silkh Sword Baptism Belief"),
+	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",          "来自剑礼信条"),
+	("en_US",		"LOC_PEDIA_RELIGIONS_PAGE_RELIGION_SIKHISM_CHAPTER_HISTORY_PARA_2",   "Sikhs are known for their generosity towards others, as one of the primary tenets of their religion is the idea that all people are created equal, regardless of religion, race, or sex. In differing from other major religions, Sikhism supports that belief that acts of good in service to others are more important than any form of ritual.
+																							[NEWLINE]Silkh Sword Baptism rite of passage in Sikh religion,Similar to Christian baptism, Sikhs use water stirred by double-edged swords to bathe believers."),
+	("zh_Hans_CN",  "LOC_PEDIA_RELIGIONS_PAGE_RELIGION_SIKHISM_CHAPTER_HISTORY_PARA_2",     "锡克教徒因对他人慷慨而众所周知，他们宗教的首要信条之一是无论宗教、种族或性别，人人生而平等。不同于其他主流宗教，锡克教支持这一观点：为他人服务的行为比任何形式的仪式更重要。
+																							[NEWLINE]剑礼是锡克教的成人礼仪式，类似于基督教洗礼，锡克教徒使用双锋剑搅匀的水为信徒沐浴。"),
+
+
 	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_NAME",					"Shaolin Temple"),
 	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_NAME",					"少林寺"),
-	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"Making"),
-	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"咕咕咕");
-	
+	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"Unlock Shaolin Temple, a sacrificial building, +8 Faith, +50% construction speed of religious armed units.When completed, a religious armed unit with once Promotion will be presented."),
+	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",				"解锁祭祀建筑少林寺，+8[ICON_FAITH]信仰值，+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位"),
+	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",					"Shaolin Temple"),
+	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",					"少林寺"),
+	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",			"+8[ICON_FAITH] Faith value, this city +50% religious armed unit construction speed. When completed, a religious armed unit with once Promotion will be presented."),
+	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",			"+8[ICON_FAITH]信仰值，此城+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位。");

@@ -110,7 +110,7 @@ insert or replace into BeliefModifiers
 select
 	BeliefType,							'RELIGION_ALLOW_' || UnitType
 from (Beliefs cross join HD_ReligiousArmUnits) where BeliefClassType = 'BELIEF_CLASS_FOLLOWER' and UnitType != 'UNIT_WARRIOR_MONK';
--- Unit Abilities
+-- Common Unit Abilities
 insert or replace into Types
 	(Type,								Kind)
 values
@@ -320,14 +320,109 @@ values
 	('RELIGIOUS_ARM_PROMISED_LAND_COST',			0.5),
 	('RELIGIOUS_ARM_MIND_OVER_MATTER_COST',			2.0),
 	('RELIGIOUS_ARM_HD_PILGRIM_COST',				10);
-	
-insert or replace into RequirementSets
+-- Beliefs
+insert or replace into Types 
+	(Type,								Kind) 
+values
+	('ABILITY_RELIGIION_START_MOVE',	'KIND_ABILITY'),
+	('BELIEF_FRATERNITY',				'KIND_BELIEF'),
+	('BELIEF_SILKH_SWORD_BAPTISM',		'KIND_BELIEF'),
+	('BELIEF_SHAOLIN_TEMPLE',			'KIND_BELIEF'),
+	('BUILDING_SHAOLIN_TEMPLE',			'KIND_BUILDING');
+insert or ignore into BeliefsSortIndex
+	(BeliefType,						SortIndex)
+values
+	('BELIEF_FRATERNITY',				148),
+	('BELIEF_SILKH_SWORD_BAPTISM',		149),
+	('BELIEF_SHAOLIN_TEMPLE',			219);
+insert or replace into Beliefs
+	(BeliefType,						Name,									Description,									BeliefClassType)
+values
+	('BELIEF_FRATERNITY',				'LOC_BELIEF_FRATERNITY_NAME',			'LOC_BELIEF_FRATERNITY_DESCRIPTION',			'BELIEF_CLASS_FOUNDER'),
+	('BELIEF_SILKH_SWORD_BAPTISM',		'LOC_BELIEF_SILKH_SWORD_BAPTISM_NAME',	'LOC_BELIEF_SILKH_SWORD_BAPTISM_DESCRIPTION',	'BELIEF_CLASS_FOUNDER'),
+	('BELIEF_SHAOLIN_TEMPLE',			'LOC_BELIEF_SHAOLIN_TEMPLE_NAME',		'LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION',		'BELIEF_CLASS_WORSHIP');
+-- Warrior Monks
+insert or replace into District_BuildChargeProductions
+	(DistrictType,				UnitType,				PercentProductionPerCharge)
+values
+	('DISTRICT_HOLY_SITE',		'UNIT_WARRIOR_MONK',	'20');
+update Units set BuildCharges = 1 where UnitType = 'UNIT_WARRIOR_MONK';
+-- Crusade (BELIEF_JUST_WAR)
+delete from BeliefModifiers where BeliefType = 'BELIEF_JUST_WAR' and ModifierID = 'JUST_WAR_COMBAT_BONUS';
+update ModifierArguments set Value = 50 where ModifierId = 'JUST_WAR_FAITH_PILLAGE_IMPROVEMENT_FAITH_MODIFIER' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH_MODIFIER' and Name = 'Amount';
+insert or replace into BeliefModifiers
+	(BeliefType,			ModifierId)
+values 
+	('BELIEF_JUST_WAR',		'MODIFIER_RELIGIOUS_START_MOVE_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,									SubjectRequirementSetId)
+values 
+	('MODIFIER_RELIGIOUS_START_MOVE_ATTACH',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',			'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
+	('MODIFIER_RELIGIOUS_START_MOVE',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',			null),
+	('MODIFIER_RELIGIION_START_MOVE',			'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',			'PLOT_IS_FLAT_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,				Value)
+values
+	('MODIFIER_RELIGIOUS_START_MOVE_ATTACH',	'ModifierId',		'MODIFIER_RELIGIOUS_START_MOVE'),
+	('MODIFIER_RELIGIOUS_START_MOVE',			'AbilityType',		'ABILITY_RELIGIION_START_MOVE');
+insert or replace into TypeTags
+	(Type,								Tag)
+values
+	('ABILITY_RELIGIION_START_MOVE',	'CLASS_WARRIOR_MONK'),
+	('ABILITY_RELIGIION_START_MOVE',	'CLASS_RELIGIOUS_ALL');
+insert or replace into UnitAbilities
+	(UnitAbilityType,					Name,											Description,									Inactive)											
+values  
+	('ABILITY_RELIGIION_START_MOVE',	'LOC_ABILITY_RELIGIION_START_MOVE_NAME',		'LOC_ABILITY_RELIGIION_START_MOVE_DESCRIPTION',  1);
+insert or replace into UnitAbilityModifiers
+	(UnitAbilityType,					ModifierId)
+values  
+	('ABILITY_RELIGIION_START_MOVE',	'MODIFIER_RELIGIION_START_MOVE');
+-- Fraterity
+update Modifiers set SubjectRequirementSetId = 'UNIT_IS_RELIGIOUS_ARM' where ModifierId = 'ABILITY_JUST_WAR_STRENGTH';
+insert or replace into BeliefModifiers 
+	(BeliefType,						ModifierId)
+values
+	('BELIEF_FRATERNITY',				'2X_SUPPORT_STRENGTH_ATTACH_1'),
+	('BELIEF_FRATERNITY',				'2X_FLANKING_STRENGTH_ATTACH_1'),
+	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_IMPROVEMENT_FAITH'),
+	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH'),
+	('BELIEF_SILKH_SWORD_BAPTISM',		'JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF'),
+	('BELIEF_SHAOLIN_TEMPLE',			'SHAOLIN_TEMPLE_ALLOW');
+insert or ignore into Modifiers
+	(ModifierId,								ModifierType,											SubjectRequirementSetId)
+values
+	('2X_SUPPORT_STRENGTH_ATTACH_1',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
+	('2X_FLANKING_STRENGTH_ATTACH_1',			'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
+	('2X_SUPPORT_STRENGTH_ATTACH',				'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',				'UNIT_IS_RELIGION_OR_RELIGIOUS_ARM'),
+	('2X_FLANKING_STRENGTH_ATTACH',				'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',				'UNIT_IS_RELIGION_OR_RELIGIOUS_ARM'),
+	('2X_SUPPORT_STRENGTH',						'MODIFIER_PLAYER_UNIT_ADJUST_SUPPORT_BONUS_MODIFIER',	null),
+	('2X_FLANKING_STRENGTH',					'MODIFIER_PLAYER_UNIT_ADJUST_FLANKING_BONUS_MODIFIER',	null),
+	('SHAOLIN_TEMPLE_ALLOW',					'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BUILDING',		null);
+
+
+insert or ignore into ModifierArguments
+	(ModifierId,								Name,			Value)
+values
+	('2X_SUPPORT_STRENGTH_ATTACH',				'ModifierId',	'2X_SUPPORT_STRENGTH'),
+	('2X_FLANKING_STRENGTH_ATTACH',				'ModifierId',	'2X_FLANKING_STRENGTH'),
+	('2X_SUPPORT_STRENGTH',						'Percent',		'100'),
+	('2X_FLANKING_STRENGTH',					'Percent',		'100'),
+	('2X_SUPPORT_STRENGTH_ATTACH_1',			'ModifierId',	'2X_SUPPORT_STRENGTH_ATTACH'),
+	('2X_FLANKING_STRENGTH_ATTACH_1',			'ModifierId',	'2X_FLANKING_STRENGTH_ATTACH'),
+	('SHAOLIN_TEMPLE_ALLOW',					'BuildingType',	'BUILDING_SHAOLIN_TEMPLE');
+
+
+-- Requirements
+insert or ignore into RequirementSets
 	(RequirementSetId,								RequirementSetType)
 values
 	('OPPONENT_IS_MELEE_OR_ANTC_REQUIREMENTS',		'REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'REQUIREMENTSET_TEST_ANY'),
-	('SET_UNIT_OF_RELIGION', 						'REQUIREMENTSET_TEST_ANY');
-
+	('PLOT_IS_FLAT_REQUIREMENTS',					'REQUIREMENTSET_TEST_ANY'),
+	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIREMENTSET_TEST_ANY'),
+	('UNIT_IS_RELIGIOUS_ARM',						'REQUIREMENTSET_TEST_ALL');
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
@@ -335,114 +430,90 @@ values
 	('OPPONENT_IS_MELEE_OR_ANTC_REQUIREMENTS',		'REQUIRES_OPPONENT_IS_ANTC'),
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'HD_REQUIRES_UNIT_IS_PROMOTION_CLASS_MONK'),
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'ADJACENT_TO_OWNER'),
-	('SET_UNIT_OF_RELIGION', 						'REQ_UNIT_OF_RELIGION'),
-	('SET_UNIT_OF_RELIGION', 						'REQ_UNIT_OF_RELIGION_ARM');
-
-
+	('PLOT_IS_FLAT_REQUIREMENTS',					'REQUIRES_PLOT_IS_FLAT'),
+	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIRES_UNIT_IS_RELIGIOUS_ALL'),
+	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIRES_UNIT_IS_RELIGIOUS_ARM'),
+	('UNIT_IS_RELIGIOUS_ARM',						'REQUIRES_UNIT_IS_RELIGIOUS_ARM');
 insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_OPPONENT_IS_MELEE',					'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES'),
 	('REQUIRES_OPPONENT_IS_ANTC',					'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES'),
-	('REQ_UNIT_OF_RELIGION', 						'REQUIREMENT_UNIT_TAG_MATCHES'),
-	('REQ_UNIT_OF_RELIGION_ARM', 					'REQUIREMENT_UNIT_TAG_MATCHES'); 
-
-
+	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',				'REQUIREMENT_UNIT_TAG_MATCHES');
 insert or ignore into RequirementArguments
 	(RequirementId,								Name,						Value)
 values
 	('REQUIRES_OPPONENT_IS_MELEE',				'UnitPromotionClass',		'PROMOTION_CLASS_MELEE'),
 	('REQUIRES_OPPONENT_IS_ANTC',				'UnitPromotionClass',		'PROMOTION_CLASS_ANTI_CAVALRY'),
-	('REQ_UNIT_OF_RELIGION', 					'Tag', 						'CLASS_RELIGIOUS_ALL'),
-	('REQ_UNIT_OF_RELIGION_ARM', 				'Tag', 						'CLASS_RELIGION_ARM');
+	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',			'Tag',						'CLASS_WARRIOR_MONK');
 
 
+insert or ignore into Types
+		(Type,												Kind)
+values  ('ABILITY_RELIGIION_START_MOVE',					'KIND_ABILITY'  ),
+		('ABILITY_HAVE_ONCE_PROMOTION_FREE',				'KIND_ABILITY'),
 
-
--- Beliefs
--- 武僧
-insert into District_BuildChargeProductions
-    (DistrictType,              UnitType,           PercentProductionPerCharge)
-values
-    ('DISTRICT_HOLY_SITE',           'UNIT_WARRIOR_MONK',    '20');
-
-update Units set BuildCharges = 1 where UnitType = 'UNIT_WARRIOR_MONK';
-
--- 十字军:宗教和宗教武装单位平坦+1速,劫掠50鸽
-delete from BeliefModifiers where BeliefType = 'BELIEF_JUST_WAR' and ModifierID = 'JUST_WAR_COMBAT_BONUS';
-update ModifierArguments set Value = 50 where ModifierId = 'JUST_WAR_FAITH_PILLAGE_IMPROVEMENT_FAITH_MODIFIER' and Name = 'Amount';
-update ModifierArguments set Value = 50 where ModifierId = 'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH_MODIFIER' and Name = 'Amount';
-
-insert into BeliefModifiers (BeliefType, ModifierId) values 
-('BELIEF_JUST_WAR', 'MODIFIER_RELIGIOUS_START_MOVE_ATTACH_1');
-
-insert into Modifiers (ModifierId, ModifierType, RunOnce, Permanent, NewOnly, OwnerRequirementSetId, SubjectRequirementSetId) values 
-('MODIFIER_RELIGIOUS_START_MOVE_ATTACH_2', 'MODIFIER_PLAYER_UNITS_GRANT_ABILITY', 0, 0, 0, NULL, 'SET_UNIT_OF_RELIGION'),
-('MODIFIER_RELIGIOUS_START_MOVE_ATTACH_1','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',0, 0, 0, NULL,'PLAYER_FOUNDED_RELIGION_REQUIREMENTS');
-
-insert into ModifierArguments (ModifierId, Name, Value) values 
-('MODIFIER_RELIGIOUS_START_MOVE_ATTACH_2', 'AbilityType', 'ABILITY_RELIGIION_START_MOVE'),
-('MODIFIER_RELIGIOUS_START_MOVE_ATTACH_1','ModifierId','MODIFIER_RELIGIOUS_START_MOVE_ATTACH_2');
-
-
-
-insert into Types
-        (Type,                                                  Kind)
-values  ('ABILITY_RELIGIION_START_MOVE',                    'KIND_ABILITY'  ),
 		('UNIT_JAPANESE_SOHEI',								'KIND_UNIT'),
 		('UNIT_ELEANOR_TEMPLAR',							'KIND_UNIT'),
-		('UNIT_INDONESIAN_KRIS_SWORDSMAN',					'KIND_UNIT');
+		('UNIT_INDONESIAN_KRIS_SWORDSMAN',					'KIND_UNIT'),
+		('UNIT_NORWEGIAN_ULFHEDNAR',						'KIND_UNIT');
 
-        
-insert into Tags
-        (Tag,                           Vocabulary)
+
+
+		
+insert or replace into Tags
+		(Tag,						Vocabulary)
 values  
-        ('CLASS_RELIGION_ARM',      	'ABILITY_CLASS');
+		('CLASS_RELIGION_ARM',		'ABILITY_CLASS');
 
 
 INSERT OR IGNORE INTO TypeTags
-        (Type,                                                  Tag)
-values  ('ABILITY_RELIGIION_START_MOVE',            'CLASS_RELIGION_ARM'       ),
-		('ABILITY_RELIGIION_START_MOVE',            'CLASS_RELIGIOUS_ALL'       ),
+		(Type,												Tag)
+values  ('ABILITY_RELIGIION_START_MOVE',			'CLASS_RELIGION_ARM'	),
+		('ABILITY_RELIGIION_START_MOVE',			'CLASS_RELIGIOUS_ALL'	),
+		('ABILITY_JUST_WAR_STRENGTH',				'CLASS_RELIGION_ARM'		),
+		('ABILITY_HAVE_ONCE_PROMOTION_FREE',		'CLASS_RELIGION_ARM'		),
 
 
-        ('UNIT_WARRIOR_MONK',                       'CLASS_RELIGION_ARM'       ),
-        ('UNIT_HD_ARMED_BELIEVER',                  'CLASS_RELIGION_ARM'        ),
-        ('UNIT_HD_EXPEDITIONARY',                   'CLASS_RELIGION_ARM'        ),
-        ('UNIT_HD_THEOCRATIC_GUARDIAN',            'CLASS_RELIGION_ARM'         ),
-        ('UNIT_HD_RESISTANCE_ARMY',                'CLASS_RELIGION_ARM'         ),
-        ('UNIT_HD_REVOLUTIONARY_GUARDIAN',         'CLASS_RELIGION_ARM'         ),
-        ('UNIT_HD_DEUX_EX_MACHINA',                 'CLASS_RELIGION_ARM'        ),
-        ('UNIT_LAHORE_NIHANG',                     'CLASS_RELIGION_ARM'         ),
-        ('UNIT_JAPANESE_SOHEI',                     'CLASS_RELIGION_ARM'        ),
-        ('UNIT_ELEANOR_TEMPLAR',                    'CLASS_RELIGION_ARM'        ),
-        ('UNIT_INDONESIAN_KRIS_SWORDSMAN',         'CLASS_RELIGION_ARM'         );
-       
-insert into UnitAbilities
-        (UnitAbilityType,                                   Name,                                                       Description,Inactive)                                               
+		('UNIT_WARRIOR_MONK',					'CLASS_RELIGION_ARM'	),
+		('UNIT_HD_ARMED_BELIEVER',				'CLASS_RELIGION_ARM'		),
+		('UNIT_HD_EXPEDITIONARY',				'CLASS_RELIGION_ARM'		),
+		('UNIT_HD_THEOCRATIC_GUARDIAN',			'CLASS_RELIGION_ARM'		),
+		('UNIT_HD_RESISTANCE_ARMY',				'CLASS_RELIGION_ARM'		),
+		('UNIT_HD_REVOLUTIONARY_GUARDIAN',		'CLASS_RELIGION_ARM'		),
+		('UNIT_HD_DEUX_EX_MACHINA',				'CLASS_RELIGION_ARM'		),
+		('UNIT_LAHORE_NIHANG',					'CLASS_RELIGION_ARM'		),
+		('UNIT_JAPANESE_SOHEI',					'CLASS_RELIGION_ARM'		),
+		('UNIT_ELEANOR_TEMPLAR',					'CLASS_RELIGION_ARM'		),
+		('UNIT_INDONESIAN_KRIS_SWORDSMAN',		'CLASS_RELIGION_ARM'		),
+		('UNIT_NORWEGIAN_ULFHEDNAR',				'CLASS_RELIGION_ARM'		);
+	
+insert or replace into UnitAbilities
+		(UnitAbilityType,								Name,													Description,Inactive)											
 values  
-        ('ABILITY_RELIGIION_START_MOVE',     'LOC_ABILITY_RELIGIION_START_MOVE_NAME',         'LOC_ABILITY_RELIGIION_START_MOVE_DESCRIPTION',  1);
-        
-insert into UnitAbilityModifiers
-        (UnitAbilityType,                                   ModifierId)
+		('ABILITY_RELIGIION_START_MOVE',	'LOC_ABILITY_RELIGIION_START_MOVE_NAME',		'LOC_ABILITY_RELIGIION_START_MOVE_DESCRIPTION',  1);
+
+		
+insert or ignore into UnitAbilityModifiers
+		(UnitAbilityType,								ModifierId)
 values  
-        ('ABILITY_RELIGIION_START_MOVE',     	'MODIFIER_RELIGIION_START_MOVE');
+		('ABILITY_RELIGIION_START_MOVE',		'MODIFIER_RELIGIION_START_MOVE');
 
 
-insert into Modifiers 
+insert or ignore into Modifiers 
 	(ModifierId, ModifierType, RunOnce, Permanent, NewOnly, OwnerRequirementSetId, SubjectRequirementSetId) 
 values 
-	('MODIFIER_RELIGIION_START_MOVE', 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT', 0, 0, 0, NULL, 'SET_TER_NOT_HILL');
+	('MODIFIER_RELIGIION_START_MOVE',	'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',		0, 0, 0, NULL, 'SET_TER_NOT_HILL');
 
-insert into ModifierArguments (ModifierId, Name, Value) VALUES 
-('MODIFIER_RELIGIION_START_MOVE', 	'Amount', 		'1');
+insert or ignore into ModifierArguments (ModifierId, Name, Value) VALUES 
+('MODIFIER_RELIGIION_START_MOVE',	'Amount',		'1');
 
 -- RequirementSets
 
-insert into RequirementSets (RequirementSetId, RequirementSetType) VALUES 
+insert or replace into RequirementSets (RequirementSetId, RequirementSetType) VALUES 
 ('SET_TER_NOT_HILL', 'REQUIREMENTSET_TEST_ALL');
 
-insert into RequirementSetRequirements (RequirementSetId, RequirementId) VALUES 
+insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) VALUES 
 ('SET_TER_NOT_HILL', 'REQ_TER_NOT_HILL1'), 
 ('SET_TER_NOT_HILL', 'REQ_TER_NOT_HILL2'), 
 ('SET_TER_NOT_HILL', 'REQ_TER_NOT_HILL3'), 
@@ -452,7 +523,7 @@ insert into RequirementSetRequirements (RequirementSetId, RequirementId) VALUES
 
 -- Requirements
 
-insert into Requirements (RequirementId, RequirementType, Inverse) VALUES 
+insert or replace into Requirements (RequirementId, RequirementType, Inverse) VALUES 
 ('REQ_TER_NOT_HILL1', 'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES', 1), 
 ('REQ_TER_NOT_HILL2', 'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES', 1), 
 ('REQ_TER_NOT_HILL3', 'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES', 1), 
@@ -460,67 +531,75 @@ insert into Requirements (RequirementId, RequirementType, Inverse) VALUES
 ('REQ_TER_NOT_HILL5', 'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES', 1),
 ('REQ_TER_NOT_WATER', 'REQUIREMENT_PLOT_TERRAIN_CLASS_MATCHES',1);
 
-insert into RequirementArguments (RequirementId, Name, Value) VALUES 
+insert or replace into RequirementArguments (RequirementId, Name, Value) VALUES 
 ('REQ_TER_NOT_HILL1', 'TerrainType', 'TERRAIN_GRASS_HILLS'), 
 ('REQ_TER_NOT_HILL2', 'TerrainType', 'TERRAIN_PLAINS_HILLS'), 
 ('REQ_TER_NOT_HILL3', 'TerrainType', 'TERRAIN_DESERT_HILLS'), 
 ('REQ_TER_NOT_HILL4', 'TerrainType', 'TERRAIN_TUNDRA_HILLS'), 
 ('REQ_TER_NOT_HILL5', 'TerrainType', 'TERRAIN_SNOW_HILLS'),
 ('REQ_TER_NOT_WATER', 'TerrainClass','TERRAIN_CLASS_WATER');
-    
+	
 
 -- 兄弟会
-insert into Types 
-	(Type,							Kind) 
+
+
+
+-- 剑礼，下城所有单位回血
+insert or ignore into BeliefModifiers (BeliefType, ModifierId) values 
+('BELIEF_SILKH_SWORD_BAPTISM',	'CONQUER_CITY_UNITS_HEAL_ATTACH');
+
+
+insert or ignore into Modifiers (ModifierId, ModifierType, RunOnce, Permanent, NewOnly, OwnerRequirementSetId, SubjectRequirementSetId) values 
+('CONQUER_CITY_UNITS_HEAL_ATTACH', 'MODIFIER_PLAYER_CAPTURED_CITY_ATTACH_MODIFIER', 0, 1, 0, NULL, NULL),
+('CONQUER_CITY_UNITS_HEAL',		'MODIFIER_PLAYER_UNITS_ADJUST_DAMAGE',			1, 1, 0, NULL, NULL);
+
+insert or ignore into ModifierArguments (ModifierId, Name, Value) values 
+('CONQUER_CITY_UNITS_HEAL_ATTACH',		'ModifierId',			'CONQUER_CITY_UNITS_HEAL'),
+('CONQUER_CITY_UNITS_HEAL',			'Amount',						'-15');
+
+
+
+
+insert or ignore into Buildings
+	(BuildingType,Name,Description,PrereqDistrict,PurchaseYield,Cost,CitizenSlots,EnabledByReligion,Maintenance)
 values
-	('BELIEF_FRATERNITY',			'KIND_BELIEF'),
-	('BELIEF_SILKH_SWORD_BAPTISM',	'KIND_BELIEF'),
-	('BELIEF_SHAOLIN_TEMPLE',		'KIND_BELIEF');
+	('BUILDING_SHAOLIN_TEMPLE','LOC_BUILDING_SHAOLIN_TEMPLE_NAME','LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION','DISTRICT_HOLY_SITE','YIELD_FAITH','220','1',1,'4');
+	-- ('BUILDING_JNR_MONASTERY','LOC_BUILDING_JNR_MONASTERY_NAME','LOC_BUILDING_JNR_MONASTERY_DESCRIPTION','DISTRICT_HOLY_SITE','YIELD_FAITH','220','1',0,'4');
 
-
-insert or ignore into BeliefsSortIndex
-	(BeliefType,				SortIndex)
+insert or ignore into Building_YieldChanges
+	(BuildingType,				YieldType,		YieldChange)
 values
-	('BELIEF_FRATERNITY',			'148'),		--兄弟会
-	('BELIEF_SILKH_SWORD_BAPTISM',	'149'),		--剑礼
-	('BELIEF_SHAOLIN_TEMPLE',		'219'	);	--少林寺
+	('BUILDING_SHAOLIN_TEMPLE','YIELD_FAITH',		'8');
 
 
 
-insert into Beliefs
-	(BeliefType,					Name,									Description,									BeliefClassType)
+insert or ignore into BuildingPrereqs (Building,PrereqBuilding) values
+	('BUILDING_SHAOLIN_TEMPLE','BUILDING_TEMPLE');
+	-- ('BUILDING_SHAOLIN_TEMPLE','BUILDING_JNR_MONASTERY');	
+
+
+
+insert or ignore into BuildingModifiers
+	(BuildingType,						ModifierId)
 values
-	('BELIEF_FRATERNITY',			'LOC_BELIEF_FRATERNITY_NAME',			'LOC_BELIEF_FRATERNITY_DESCRIPTION',			'BELIEF_CLASS_FOUNDER'),
-	('BELIEF_SILKH_SWORD_BAPTISM',	'LOC_BELIEF_SILKH_SWORD_BAPTISM_NAME',	'LOC_BELIEF_SILKH_SWORD_BAPTISM_DESCRIPTION',	'BELIEF_CLASS_FOUNDER'),
-	('BELIEF_SHAOLIN_TEMPLE',		'LOC_BELIEF_SHAOLIN_TEMPLE_NAME',		'LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION',		'BELIEF_CLASS_WORSHIP');
+	('BUILDING_SHAOLIN_TEMPLE',			'KOTOKU_IN_GRANTS_1_EXPMONKS'),
+	('BUILDING_SHAOLIN_TEMPLE',			'KOTOKU_IN_GRANTS_MONKS_FREE_PROMOTION');
 
-insert or ignore into BeliefModifiers 
-	(BeliefType,						ModifierId)
-values
-	('BELIEF_FRATERNITY',				'2X_SUPPORT_STRENGTH_ATTACH_1'),
-	('BELIEF_FRATERNITY',				'2X_FLANKING_STRENGTH_ATTACH_1'),
-	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_IMPROVEMENT_FAITH'),
-	('BELIEF_FRATERNITY',				'JUST_WAR_FAITH_PILLAGE_DISTRICT_FAITH');
-
-
+insert or ignore into BuildingModifiers
+	(BuildingType,					ModifierId)
+select 'BUILDING_SHAOLIN_TEMPLE',UnitType || '_PRODUCTION_MODIFIER_IN_CITY'  from HD_ReligiousArmUnits;
 
 insert or ignore into Modifiers
-	(ModifierId,					ModifierType,											OwnerRequirementSetId,				SubjectRequirementSetId)
-values
-	('2X_SUPPORT_STRENGTH_ATTACH',	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',				NULl,							'SET_UNIT_OF_RELIGION'				),
-	('2X_FLANKING_STRENGTH_ATTACH',	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',				NULL,							'SET_UNIT_OF_RELIGION'				),
-	('2X_SUPPORT_STRENGTH',			'MODIFIER_PLAYER_UNIT_ADJUST_SUPPORT_BONUS_MODIFIER',	NULL,								NULL),
-	('2X_FLANKING_STRENGTH',		'MODIFIER_PLAYER_UNIT_ADJUST_FLANKING_BONUS_MODIFIER',	NULL,								NULL),
-	('2X_SUPPORT_STRENGTH_ATTACH_1','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',					NULL,							'PLAYER_FOUNDED_RELIGION_REQUIREMENTS'),
-	('2X_FLANKING_STRENGTH_ATTACH_1','MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',				NULL,							'PLAYER_FOUNDED_RELIGION_REQUIREMENTS');
+	(ModifierId,									ModifierType)
+select UnitType || '_PRODUCTION_MODIFIER_IN_CITY',	'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION'  from HD_ReligiousArmUnits;
+
+insert or ignore into ModifierArguments 
+	(ModifierId,									Name,		Value)
+select	UnitType || '_PRODUCTION_MODIFIER_IN_CITY','Amount',	'50'  from HD_ReligiousArmUnits;
 
 
-insert or ignore into ModifierArguments
-	(ModifierId,					Name,			Value)
-values
-	('2X_SUPPORT_STRENGTH_ATTACH',	'ModifierId',	'2X_SUPPORT_STRENGTH'),
-	('2X_FLANKING_STRENGTH_ATTACH',	'ModifierId',	'2X_FLANKING_STRENGTH'),
-	('2X_SUPPORT_STRENGTH',			'Percent',		'100'),
-	('2X_FLANKING_STRENGTH',		'Percent',		'100'),
-	('2X_SUPPORT_STRENGTH_ATTACH_1','ModifierId',	'2X_SUPPORT_STRENGTH_ATTACH'),
-	('2X_FLANKING_STRENGTH_ATTACH_1','ModifierId',	'2X_FLANKING_STRENGTH_ATTACH');
+insert or ignore into ModifierArguments 
+	(ModifierId,									Name,		Value)
+select	UnitType || '_PRODUCTION_MODIFIER_IN_CITY','UnitType',	UnitType  from HD_ReligiousArmUnits;
+
+
