@@ -228,7 +228,18 @@ select
 where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
 --------------------------------------------------------------------------------
 
-
+--美国文本更改
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                     Text)
+select
+    "zh_Hans_CN",   "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",        "当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。建成外交区或外交区建筑时皆+1间谍容量。"
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+insert or replace into EnglishText
+    (Tag,                                                                   Text)
+select
+    "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",       "All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.Gains +1 spy capacity after building Diplomatic Quarter or any Diplomatic Quarter building."),
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+--------------------------------------------------------------------------------
 insert or replace into EnglishText
     (Tag,                                                  		Text)
 select

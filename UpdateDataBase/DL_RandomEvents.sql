@@ -8,7 +8,7 @@ update RandomEvent_Yields set YieldType = 'YIELD_FOOD' where FeatureType = 'FEAT
 update RandomEvent_Yields set Amount = 0 where FeatureType = 'FEATURE_BURNT_FOREST' and RandomEventType = 'RANDOM_EVENT_FOREST_FIRE';
 update RandomEvent_Yields set YieldType = 'YIELD_FOOD' where FeatureType = 'FEATURE_FOREST' and RandomEventType = 'RANDOM_EVENT_FOREST_FIRE';
 
-update RandomEvent_Yields set Percentage = Percentage + 15 
+update RandomEvent_Yields set Percentage = Percentage -10
  where RandomEventType = 'RANDOM_EVENT_FLOOD_MODERATE'
 	or RandomEventType = 'RANDOM_EVENT_FLOOD_MAJOR'
 	or RandomEventType = 'RANDOM_EVENT_FLOOD_1000_YEAR'
@@ -19,7 +19,7 @@ update RandomEvent_Yields set Percentage = Percentage + 15
 	or RandomEventType = 'RANDOM_EVENT_HURRICANE_CAT_5'
 ;
 
-update RandomEvent_Yields set Percentage = Percentage + 10
+update RandomEvent_Yields set Percentage = Percentage -5
  where RandomEventType = 'RANDOM_EVENT_BLIZZARD_SIGNIFICANT'
 	or RandomEventType = 'RANDOM_EVENT_BLIZZARD_CRIPPLING'
 	or RandomEventType = 'RANDOM_EVENT_DUST_STORM_GRADIENT'

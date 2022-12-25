@@ -198,6 +198,7 @@ values
     ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'ModifierId',               'HETAIROI_FREE_PROMOTION'),
     ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'UnitType',                 'UNIT_SPY'),
     ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'Amount',                   1);
+
 -----------------------------------------------------------------------
 --外交区地基间谍容量
 
@@ -469,23 +470,31 @@ values
     ('REQUIRES_PLAYER_HAS_BUILDING_RCC_OR_WPH',	'RequirementSetId',	'PLAYER_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS');
 
 -----------------------------------------------------------------------
---外交办/区域议会中心的间谍进攻/防守全局加成
+--外交办/区域议会中心/世界议会总部的间谍进攻/防守全局加成
 insert or replace into BuildingModifiers 
     (BuildingType,                                  ModifierId) 
 values
     ('BUILDING_CHANCERY',                           'CHANCERY_OFFENSE'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_REGIONAL_COUNCIL_CENTER_DEFENSE');
 
 insert or replace into Modifiers    
     (ModifierId,                                    ModifierType,                       SubjectRequirementSetId,    Permanent)
 values
     ('CHANCERY_OFFENSE',                            'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',    'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',    'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
     ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',          'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0);
 insert or replace into ModifierArguments
     (ModifierId,                                        Name,               Value)
 values
     ('CHANCERY_OFFENSE',                                'Offense',          1),
     ('CHANCERY_OFFENSE',                                'Amount',           1),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',        'Offense',          1),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',        'Amount',           3),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',        'Offense',          0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',        'Amount',           3), 
     ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Offense',          0),
     ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Amount',           3);
 
@@ -648,3 +657,32 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 select ModifierId||'_CHANCERY', 'CityStatesOnly', 1
 from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;
 */
+-----------------------------------------------------------------------
+--美国间谍容量
+insert or replace into TraitModifiers 
+    (TraitType,                               ModifierId)          
+values           
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY'),                    
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY'),                        
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY'),
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY');
+
+insert or replace into Modifiers
+    (ModifierId,                                                                   ModifierType,                       OwnerRequirementSetId)
+values
+    ('HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY',                         'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS'),
+    ('HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY',                          'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS'),             
+    ('HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY',  'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_REQUIREMENTS'), 
+    ('HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY',                'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_DISTRICT_DIPLOMATIC_QUARTER_REQUIREMENTS');
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY';
+insert or replace into ModifierArguments
+    (ModifierId,                                                                    Name,            Value)
+values
+    ('HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY',                         'Amount',        1),
+    ('HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY',                          'Amount',        1),
+    ('HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY',  'Amount',        1),
+    ('HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY',                'Amount',        1);
