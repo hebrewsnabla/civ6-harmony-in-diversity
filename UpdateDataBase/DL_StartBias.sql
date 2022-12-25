@@ -101,6 +101,8 @@ values
 	('CIVILIZATION_MACEDON',			'RESOURCE_COPPER',					3),
 	('CIVILIZATION_MACEDON',			'RESOURCE_LEAD',					3),
 	('CIVILIZATION_PERSIA',				'RESOURCE_IRON',					2),
+	('CIVILIZATION_CREE',				'RESOURCE_FISH',					3),	
+	('CIVILIZATION_CREE',				'RESOURCE_MAIZE',					4),	
 	('CIVILIZATION_MAPUCHE',			'RESOURCE_LEU_P0K_POTATOES',		3),
 	('CIVILIZATION_MAPUCHE',			'RESOURCE_SHEEP',					3),
 	('CIVILIZATION_MAPUCHE',			'RESOURCE_SUK_CHEESE',				3),
@@ -131,8 +133,9 @@ insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Ti
 	from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PASTURE';
 
 insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Tier)
-	select 'CIVILIZATION_CREE', ResourceType, 3
-	from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_CAMP';
+	select 'CIVILIZATION_CREE', ResourceType, 2
+	from Improvement_ValidResources where ImprovementType in ('IMPROVEMENT_CAMP','IMPROVEMENT_PASTURE');
+
 
 insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Tier)
 	select 'CIVILIZATION_GEORGIA', ResourceType, 3
@@ -150,6 +153,7 @@ insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Ti
 insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Tier)
 	select 'CIVILIZATION_GRAN_COLOMBIA', ResourceType, 2
 	from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_PLANTATION';
+
 
 insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Tier)
 	select 'CIVILIZATION_MAYA', ResourceType, 2

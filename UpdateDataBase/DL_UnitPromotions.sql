@@ -1047,7 +1047,7 @@ values
 insert or replace into Modifiers
     (ModifierId,               ModifierType,                                           RunOnce,    Permanent,  SubjectRequirementSetId)
 values
-    ('HD_SPY_SPIN_WEB',        'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',      1,          1,    NULL);
+    ('HD_SPY_SPIN_WEB',        'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',      1,          1,          NULL);
 
 insert or replace into ModifierArguments
     (ModifierId,                                    Name,               Value)  

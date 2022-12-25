@@ -1133,7 +1133,7 @@ values
 	('AMANI_FAITH_PURCHASE_SPY_DISCOUNT',				'UnitType',					'UNIT_SPY'),
 	('AMANI_FAITH_PURCHASE_SPY_DISCOUNT',				'Amount',					25),
 	('AMANI_GRANT_SPY_FREE_PROMOTION',					'ModifierId',				'AMANI_GRANT_SPY_FREE_PROMOTION_MODIFIER'),
-	('AMANI_SPY_CAPACITY',								'Amount',					1),
+	('AMANI_SPY_CAPACITY',								'Amount',					2),
 	('AMANI_GRANT_SPY_FREE_PROMOTION_MODIFIER',			'AbilityType',				'ABILITY_AMANI_FERR_PROMOTION'),
 	('AMANI_DEFFENSE',									'Offense',					0),
 	('AMANI_DEFFENSE',									'Amount',					1),

@@ -68,7 +68,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city provide +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement across your nation when the 'Urbanization Civic' is unlocked."),
     ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement in this city. Provides +1 [ICON_Culture] Culture, and adjacent tiles receive +2 Appeal. Cannot be placed adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."), -- (unlocked by Games and Recreation civic) 
     -- Amani
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+1 Spy capacity. [ICON_FAITH] Faith can be used to recruit Spy if established in your city, with 25% discount. Spys trained in the city start with a free promotion."),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2 Spy capacity. [ICON_FAITH] Faith can be used to recruit Spy if established in your city, with 25% discount. Spys trained in the city start with a free promotion."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME",                           "Local Informants "),
     ("LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "Disguise"),
@@ -110,10 +110,10 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_DESCRIPTION",           "在此城中购买单位时-20%花费，购买商人时额外-20%花费。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_TAX_COLLECTOR_DESCRIPTION",                 "+3 [ICON_TRADEROUTE] 贸易路线容量。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_NAME",                           "金融中心"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑和港口建筑，[ICON_GOLD] 金币产出便+8%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_CONTRACTOR_DESCRIPTION",                    "城市中每有一座商业中心建筑或港口建筑，[ICON_GOLD] 金币产出便+8%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_NAME",                   "跨国公司"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "城市中每有一座商业中心建筑和港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "城市中每有一座商业中心建筑和港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION",            "城市中每有一座商业中心建筑或港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_MULTINATIONAL_CORP_DESCRIPTION_CORP",       "城市中每有一座商业中心建筑或港口建筑，从此城开始的国际 [ICON_TRADEROUTE] 贸易路线 +6 [ICON_GOLD] 金币。研究资本主义市政后此城的 [ICON_GreatWork_Product] 产品提供的 [ICON_Tourism] 旅游业绩+100%。"),
     ("zh_Hans_CN",  "LOC_CITY_GOLD_FROM_POPULATION",                                             "{Value : number +#.#;-#.#}来自额外税收"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_MERCHANT_FORESTRY_MANAGEMENT_NAME",                  "财政大臣"),
     -- 维克多
@@ -167,7 +167,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。解锁“城市化”后可在全国修建“市立公园”。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"), -- （由游戏与娱乐市政解锁）
     -- 阿玛尼
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+1间谍容量。在我方城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2间谍容量。在我方城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少25%。此城中生产的间谍可免费升级为探员。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME",                           "本地线人"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "伪装"),
