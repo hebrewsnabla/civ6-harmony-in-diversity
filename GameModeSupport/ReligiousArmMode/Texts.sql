@@ -133,8 +133,12 @@ values
 	("zh_Hans_CN",	"LOC_UNIT_HD_REVOLUTIONARY_GUARDIAN_DESCRIPTION",					"现代宗教武装单位。消耗6 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
 	("en_US",		"LOC_UNIT_HD_DEUX_EX_MACHINA_DESCRIPTION",							"Information Era Religious Arm Unit. Cost 15 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
 	("zh_Hans_CN",	"LOC_UNIT_HD_DEUX_EX_MACHINA_DESCRIPTION",							"信息时代宗教武装单位。消耗15 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
-	("en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple."),
-	("zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以推进圣地区域20%的建造进度。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。"),
+	("en_US",		"LOC_UNIT_BATTERING_RAM_EXPANSION2_DESCRIPTION",					"Ancient era support unit. When adjacent to a city, attacking melee, anti-cavalry and Religious Arm units do full damage to the city's Walls. Does not affect cities with Medieval or Renaissance Walls. Ineffective against Urban Defenses."),
+	("zh_Hans_CN",	"LOC_UNIT_BATTERING_RAM_EXPANSION2_DESCRIPTION",					"远古时代支援单位。与城市相邻时，近战，抗骑兵和宗教武装单位发起进攻可对城墙输出全额伤害。对拥有中世纪或文艺复兴城墙的城市无效。对现代城市防御无效。"),
+	("en_US",		"LOC_UNIT_SIEGE_TOWER_EXPANSION2_DESCRIPTION",						"Medieval era support unit. When adjacent to a city, attacking melee, anti-cavalry and Religious Arm units ignore Walls and immediately assault the city. Does not affect cities with Renaissance Walls. Ineffective against Urban Defenses."),
+	("zh_Hans_CN",	"LOC_UNIT_SIEGE_TOWER_EXPANSION2_DESCRIPTION",						"中世纪支援单位。与城市相邻时，近战、抗骑兵和宗教武装单位可无视城墙直接对城市发起进攻。对拥有文艺复兴城墙的城市无效。对现代城市防御无效。"),
+	("en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to be removed and complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple. Cost 3 [ICON_FAITH] Faith to maintain."),
+	("zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以移除该单位来推进圣地区域20%的建造进度。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。消耗3 [ICON_FAITH] 信仰维护费。"),
 	("en_US",		"LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",					"Culture Bomb adjacent tiles when completing a Holy Site. Holy Site provides [ICON_FAITH] Faith equal to its [ICON_FAITH] Faith adjacency bonus. Unlocks the Religious Arm Unit 'Warrior Monk', which has one build charge to complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple."),
 	("zh_Hans_CN",	"LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",					"建成圣地后对相邻单元格施放文化炸弹。圣地区域的 [ICON_FAITH] 信仰值相邻加成提供额外等量的 [ICON_FAITH] 信仰值。解锁宗教武装单位“武僧”，拥有一点劳动力，可以推进圣地区域20%的建造进度。只能在有寺庙的城市通过 [ICON_FAITH] 信仰购买。"),
 	("en_US",		"LOC_BELIEF_JUST_WAR_DL_DESCRIPTION",								"+50 [ICON_Faith] Faith when pillaging District or Improvement. Religous Arm units and Religious units gain +1 [ICON_Movement] Movement if they begin a turn on a flat tile."),
@@ -153,8 +157,8 @@ values
 	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF_DESCRIPTION",		"为同一单元格的宗教武装单位+5 [ICON_Strength] 战斗力。"),
 	("en_US",		"LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",						"Religious Arm unit gets +5 [ICON_Strength] Combat Strength when in the same tile with a Religious unit."),
 	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_DESCRIPTION",						"宗教武装单位与宗教单位位于同一单元格+5 [ICON_Strength] 战斗力。"),
-	("en_US",		"LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",						" Strength from Silkh Sword Baptism Belief"),
-	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",						"力来自剑礼信条"),
+	("en_US",		"LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",						" Strength from Silkh Sword Baptism"),
+	("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",						"力来自剑礼"),
 	("en_US",		"LOC_PEDIA_RELIGIONS_PAGE_RELIGION_SIKHISM_CHAPTER_HISTORY_PARA_2",	"Sikhs are known for their generosity towards others, as one of the primary tenets of their religion is the idea that all people are created equal, regardless of religion, race, or sex. In differing from other major religions, Sikhism supports that belief that acts of good in service to others are more important than any form of ritual.[NEWLINE]Silkh Sword Baptism rite of passage in Sikh religion,Similar to Christian baptism, Sikhs use water stirred by double-edged swords to bathe believers."),
 	("zh_Hans_CN",  "LOC_PEDIA_RELIGIONS_PAGE_RELIGION_SIKHISM_CHAPTER_HISTORY_PARA_2",	"锡克教徒因对他人慷慨而众所周知，他们宗教的首要信条之一是无论宗教、种族或性别，人人生而平等。不同于其他主流宗教，锡克教支持这一观点：为他人服务的行为比任何形式的仪式更重要。[NEWLINE]剑礼是锡克教的成人礼仪式，类似于基督教洗礼，锡克教徒使用双锋剑搅匀的水为信徒沐浴。"),
 	("en_US",		"LOC_BELIEF_SHAOLIN_TEMPLE_NAME",									"Shaolin Temple"),
@@ -163,18 +167,48 @@ values
 	("zh_Hans_CN",	"LOC_BELIEF_SHAOLIN_TEMPLE_DESCRIPTION",							"允许建造少林寺（+8 [ICON_FAITH] 信仰值，+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位）。"),
 	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",									"Shaolin Temple"),
 	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_NAME",									"少林寺"),
-	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",							"+8 [ICON_FAITH] Faith, +50% construction speed of Religious Arm units. When completed, grant a free Religious Arm unit with one Promotion"),
-	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",							"+8 [ICON_FAITH] 信仰值，+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位");
+	("en_US",		"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",							"+50% construction speed of Religious Arm units. When completed, grant a free Religious Arm unit with one Promotion."),
+	("zh_Hans_CN",	"LOC_BUILDING_SHAOLIN_TEMPLE_DESCRIPTION",							"+50%宗教武装单位建造速度。建成时赠送一个拥有一次升级的宗教武装单位。"),
+	("en_US",		"LOC_BELIEF_MOSQUE_DL_DESCRIPTION",									"Allows construction of Mosques (+8 [ICON_FAITH] Faith, Missionary and Apostles created in this city gets +1 spread charge, all Religious Arm units get +1 [ICON_STRENGTH] Combat Strength)."),
+	("zh_Hans_CN",	"LOC_BELIEF_MOSQUE_DL_DESCRIPTION",									"允许建造清真寺（+8 [ICON_FAITH] 信仰值，此城创建的传教士和使徒+1传教次数，所有宗教武装单位+1 [ICON_STRENGTH] 战斗力）。"),
+	("en_US",		"LOC_BUILDING_MOSQUE_DL_DESCRIPTION",								"Missionary and Apostles created in this city gets +1 spread charge. All Religious Arm units get +1 [ICON_STRENGTH] Combat Strength."),
+	("zh_Hans_CN",	"LOC_BUILDING_MOSQUE_DL_DESCRIPTION",								"此城创建的传教士和使徒+1传教次数。所有宗教武装单位+1 [ICON_STRENGTH] 战斗力。"),
+	("en_US",		"LOC_MOSQUE_RELIGIOUS_ARM_STRENGTH",								"+{1_Amount} Strength from Mosque"),
+	("zh_Hans_CN",	"LOC_MOSQUE_RELIGIOUS_ARM_STRENGTH",								"+{1_Amount}力来自清真寺"),
+	("en_US",		"LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",						"When within borders of cities that follow this Religion, Combat and Religious units gain +1 [ICON_MOVEMENT] Movement in case of friendly cities, or +5 [ICON_STRENGTH] Combat Strength otherwise."),
+	("zh_Hans_CN",	"LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",						"战斗单位和宗教单位处于信奉该宗教的城市境内时，若为友方城市则+1 [ICON_MOVEMENT] 移动力，否则+5 [ICON_STRENGTH] 战斗力。"),
+	("en_US",		"LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION",						"+{1_Amount} Strength from Defender of Faith"),
+	("zh_Hans_CN",	"LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION",						"+{1_Amount}力来自信仰护卫者"),
+	("en_US",		"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"Upon combat victories, add +100 Religious Pressure to cities within 6 tiles. Upon conquering a city, gain 100 [ICON_FAITH] for each [ICON_CITIZEN] citizen in that city."),
+	("zh_Hans_CN",	"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"战斗胜利后，对6个单元格内的城市施加100宗教压力。占领一座城市后，其中每有一个 [ICON_CITIZEN] 人口便获得100 [ICON_FAITH] 信仰值。"),
+	("en_US",		"LOC_UNIT_NORWEGIAN_ULFHEDNAR_DESCRIPTION",							"Norwegian unique ancient era Religious Arm unit. Can be trained or purchased without a major religion. +50% Experience for adjacent units.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("zh_Hans_CN",	"LOC_UNIT_NORWEGIAN_ULFHEDNAR_DESCRIPTION",							"挪威远古时代特色宗教武装单位，不需要主流宗教就可以训练或购买。为相邻单位提供+50%经验值。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("en_US",		"LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION",								"Japanese unique Religious Arm that replaces the Expeditionary. May be purchased with [ICON_GOLD] Gold. Cost 3 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("zh_Hans_CN",	"LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION",								"日本特色宗教武装单位，取代远征军。可以用 [ICON_GOLD] 金币购买。消耗3 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("en_US",		"LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",								"Unique Medieval Riligious Arm unit for Eleanor of Aquitaine. +5 [ICON_STRENGTH] Combat Strength when opponent is of another religion. +5 [ICON_STRENGTH] Combat Strength when adjacent to a Holy Site District. Blocks the first non-lethal attack each turn. Cost 3 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("zh_Hans_CN",	"LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION",								"阿基坦埃莉诺中世纪特色宗教武装单位。对抗异教徒时+5 [ICON_STRENGTH] 战斗力，相邻圣地时+5 [ICON_STRENGTH] 战斗力。格挡每回合受到的第一次非致命攻击。消耗3 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("en_US",		"LOC_UNIT_INDONESIAN_KRIS_SWORDSMAN_DESCRIPTION",					"Indonesian unique Riligious Arm unit that replaces the Armed Believer. May be purchased with [ICON_GOLD] Gold. Cost 2 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("zh_Hans_CN",	"LOC_UNIT_INDONESIAN_KRIS_SWORDSMAN_DESCRIPTION",					"印度尼西亚特色宗教武装单位，取代武装教徒。可以用 [ICON_GOLD] 金币购买。消耗2 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("en_US",		"LOC_UNIT_LAHORE_NIHANG_DESCRIPTION",								"Lahore City-State unique Riligious Arm unit. +2 [ICON_STRENGTH] Combat Strength if there is a Barracks in your empire, extra +2 if there is an Armory, extra +2 if there is a Military Academy. Cost 2 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("zh_Hans_CN",	"LOC_UNIT_LAHORE_NIHANG_DESCRIPTION",								"拉合尔城邦特色宗教武装单位。如果国内有兵营则+2 [ICON_STRENGTH] 战斗力，如果有兵工厂则额外+2，如果有军事学院再额外+2。消耗2 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
+	("en_US",		"LOC_LEADER_TRAIT_LAHORE_DESCRIPTION",								"Unlocks the Lahore City-State unique Riligious Arm unit Nihang. +15 [ICON_STRENGTH] Combat Strength for all Nihang units."),
+	("zh_Hans_CN",	"LOC_LEADER_TRAIT_LAHORE_DESCRIPTION",								"解锁拉合尔城邦特色宗教武装单位尼杭战士。所有尼杭战士+15 [ICON_STRENGTH] 战斗力。"),
+	("en_US",		"LOC_MINOR_CIV_LAHORE_NIHANG_STRENGTH",								"+{1_Amount} Strength from being the Suzerain of Lahore"),
+	("zh_Hans_CN",	"LOC_MINOR_CIV_LAHORE_NIHANG_STRENGTH",								"+{1_Amount}力来自拉合尔宗主国"),
+	("en_US",		"LOC_LEADER_TRAIT_JERUSALEM_DESCRIPTION_EXPANSION",					"Upon conquering a city with Religious Arm unit or with Religious Arm unit adjacent to the city center, your majority religion becomes the dominant religion in that city."),
+	("zh_Hans_CN",	"LOC_LEADER_TRAIT_JERUSALEM_DESCRIPTION_EXPANSION",					"用宗教武装单位攻占城市或攻占城市时有宗教武装单位与城市中心相邻，您的主流宗教成为该城市的主流宗教。"),
+	("en_US",		"LOC_IMPROVEMENT_MONASTERY_EXPANSION2_DESCRIPTION",					"Unlocks the Builder ability to construct a Monastery.[NEWLINE][NEWLINE]+2 [ICON_FAITH] Faith, +1 [ICON_HOUSING] Housing. +2 [ICON_GOLD] Gold for every adjacent District. Religious Arm unit trained in cities with a Monastery gain +50% experience."),
+	("zh_Hans_CN",	"LOC_IMPROVEMENT_MONASTERY_EXPANSION2_DESCRIPTION",					"解锁建造者建造修道院的能力。[NEWLINE][NEWLINE]+2 [ICON_FAITH] 信仰值，+1 [ICON_HOUSING] 住房。每相邻1个区域+2 [ICON_GOLD] 金币。有修道院的城市训练的宗教武装单位+50%经验。");
 
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
 select
-	"en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple or Church."
+	"en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to be removed and complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple or Church. Cost 3 [ICON_FAITH] Faith to maintain."
 where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_MONASTERY_NAME');
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
 select
-	"zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以推进圣地区域20%的建造进度。只能在有寺庙或教堂的城市通过 [ICON_FAITH] 信仰购买。"
+	"zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以移除该单位来推进圣地区域20%的建造进度。只能在有寺庙或教堂的城市通过 [ICON_FAITH] 信仰购买。消耗3 [ICON_FAITH] 信仰维护费。"
 where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_MONASTERY_NAME');
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
@@ -186,3 +220,13 @@ insert or replace into LocalizedText
 select
 	"zh_Hans_CN",	"LOC_BELIEF_WARRIOR_MONKS_EXPANSION2_DESCRIPTION",					"建成圣地后对相邻单元格施放文化炸弹。圣地区域的 [ICON_FAITH] 信仰值相邻加成提供额外等量的 [ICON_FAITH] 信仰值。解锁宗教武装单位“武僧”，拥有一点劳动力，可以推进圣地区域20%的建造进度。只能在有寺庙或教堂的城市通过 [ICON_FAITH] 信仰购买。"
 where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_MONASTERY_NAME');
+insert or replace into LocalizedText
+	(Language,		Tag,																Text)
+select
+	"en_US",		"LOC_UNIT_LAHORE_NIHANG_DESCRIPTION",								"Lahore City-State unique Riligious Arm unit. +2 [ICON_STRENGTH] Combat Strength if there is a Barracks or Frontier Juncture in your empire, extra +2 if there is an Armory, Supply Depot or Conscription Service, extra +2 if there is a Military Academy, Military Science Academy or Military Propaganda Agency. Cost 2 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"
+where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_TARGET_RANGE_NAME');
+insert or replace into LocalizedText
+	(Language,		Tag,																Text)
+select
+	"zh_Hans_CN",	"LOC_UNIT_LAHORE_NIHANG_DESCRIPTION",								"拉合尔城邦特色宗教武装单位。如果国内有兵营或边关则+2 [ICON_STRENGTH] 战斗力，如果有兵工厂、补给站或募兵所则额外+2，如果有军事学院、军事研究院或军事政治处再额外+2。消耗2 [ICON_FAITH] 信仰维护费。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"
+where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_TARGET_RANGE_NAME');

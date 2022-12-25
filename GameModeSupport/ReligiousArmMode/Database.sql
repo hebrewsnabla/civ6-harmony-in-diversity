@@ -29,7 +29,7 @@ values
 	-- Old Units
 	('UNIT_WARRIOR_MONK',				2,			36,		70,		null,				null,						0,				3,					null,				0,							null,						0,							null,						'UNIT_HD_EXPEDITIONARY',			0),
 	('UNIT_NORWEGIAN_ULFHEDNAR',		2,			25,		35,		null,				'CIVIC_MYSTICISM',			1,				0,					null,				0,							null,						0,							null,						'UNIT_HD_ARMED_BELIEVER',			0),
-	('UNIT_JAPANESE_SOHEI',				2,			44,		90,		null,				'CIVIC_THEOLOGY',			3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							'UNIT_HD_EXPEDITIONARY',	'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
+	('UNIT_JAPANESE_SOHEI',				2,			44,		95,		null,				'CIVIC_DIVINE_RIGHT',		3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			2,							'UNIT_HD_EXPEDITIONARY',	'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
 	('UNIT_ELEANOR_TEMPLAR',			2,			45,		100,	'TECH_CASTLES',		null,						3,				3,					null,				0,							'RESOURCE_IRON',			2,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
 	('UNIT_INDONESIAN_KRIS_SWORDSMAN',	2,			35,		60,		null,				'CIVIC_THEOLOGY',			2,				2,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							'UNIT_HD_ARMED_BELIEVER',	'UNIT_HD_EXPEDITIONARY',			0),
 	('UNIT_LAHORE_NIHANG',				2,			20,		75,		null,				null,						0,				2,					null,				0,							null,						0,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		0);
@@ -99,17 +99,17 @@ insert or replace into Modifiers
 	(ModifierId,						ModifierType)
 select
 	'RELIGION_ALLOW_' || UnitType,		'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_UNIT'
-from HD_ReligiousArmUnits where UnitType != 'UNIT_WARRIOR_MONK';
+from HD_ReligiousArmUnits where UnitType != 'UNIT_WARRIOR_MONK' and UnitType != 'UNIT_NORWEGIAN_ULFHEDNAR';
 insert or replace into ModifierArguments
 	(ModifierId,						Name,			Value)
 select
 	'RELIGION_ALLOW_' || UnitType,		'UnitType',		UnitType
-from HD_ReligiousArmUnits where UnitType != 'UNIT_WARRIOR_MONK';
+from HD_ReligiousArmUnits where UnitType != 'UNIT_WARRIOR_MONK' and UnitType != 'UNIT_NORWEGIAN_ULFHEDNAR';
 insert or replace into BeliefModifiers
 	(BeliefType,						ModifierId)
 select
 	BeliefType,							'RELIGION_ALLOW_' || UnitType
-from (Beliefs cross join HD_ReligiousArmUnits) where BeliefClassType = 'BELIEF_CLASS_FOLLOWER' and UnitType != 'UNIT_WARRIOR_MONK';
+from (Beliefs cross join HD_ReligiousArmUnits) where BeliefClassType = 'BELIEF_CLASS_FOLLOWER' and UnitType != 'UNIT_WARRIOR_MONK' and UnitType != 'UNIT_NORWEGIAN_ULFHEDNAR';
 -- Common Unit Abilities
 insert or replace into Types
 	(Type,								Kind)
@@ -212,6 +212,7 @@ select distinct
 from HD_ReligiousArmUnits where FaithMaintenance > 0 union all select distinct
 	'RELIGOUS_ARM_' || FaithMaintenance || '_FAITH_MAINTENANCE',	'Amount',		-FaithMaintenance
 from HD_ReligiousArmUnits where FaithMaintenance > 0;
+
 -- Unit Promotions
 delete from Types where Type in (select UnitPromotionType from UnitPromotions where PromotionClass = 'PROMOTION_CLASS_MONK');
 insert or replace into Types
@@ -320,6 +321,7 @@ values
 	('RELIGIOUS_ARM_PROMISED_LAND_COST',			0.5),
 	('RELIGIOUS_ARM_MIND_OVER_MATTER_COST',			2.0),
 	('RELIGIOUS_ARM_HD_PILGRIM_COST',				10);
+
 -- Beliefs
 insert or replace into Types 
 	(Type,									Kind) 
@@ -332,8 +334,8 @@ values
 insert or ignore into BeliefsSortIndex
 	(BeliefType,						SortIndex)
 values
-	('BELIEF_FRATERNITY',				148),
-	('BELIEF_SILKH_SWORD_BAPTISM',		149),
+	('BELIEF_FRATERNITY',				134),
+	('BELIEF_SILKH_SWORD_BAPTISM',		135),
 	('BELIEF_SHAOLIN_TEMPLE',			219);
 insert or replace into Beliefs
 	(BeliefType,						Name,									Description,									BeliefClassType)
@@ -435,6 +437,10 @@ values
 	('CONQUER_CITY_UNITS_HEAL_ATTACH_1',	'ModifierId',			'CONQUER_CITY_UNITS_HEAL_ATTACH'),
 	('CONQUER_CITY_UNITS_HEAL_ATTACH',		'ModifierId',			'CONQUER_CITY_UNITS_HEAL'),
 	('CONQUER_CITY_UNITS_HEAL',				'Amount',				-15);
+insert or replace into GlobalParameters
+	(Name,									Value)
+values
+	('SILKH_SWORD_BAPTISM_HEAL_AMOUNT',		15);
 -- Shaolin Temple
 insert or replace into BeliefModifiers 
 	(BeliefType,						ModifierId)
@@ -443,7 +449,8 @@ values
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 values
-	('BUILDING_SHAOLIN_TEMPLE',			'SHAOLIN_TEMPLE_GRANTS_1_EXPMONKS');
+	('BUILDING_SHAOLIN_TEMPLE',			'SHAOLIN_TEMPLE_GRANTS_1_EXPMONKS'),
+	('BUILDING_SHAOLIN_TEMPLE',			'RELIGIOUS_BUILDING_FAITH_PERCENTAGE_BOOST');
 insert or replace into Modifiers
 	(ModifierId,								ModifierType)
 values
@@ -474,6 +481,183 @@ select
 from HD_ReligiousArmUnits union all select
 	'SHAOLIN_TEMPLE_' || UnitType || '_PRODUCTION',		'UnitType',		UnitType
 from HD_ReligiousArmUnits;
+-- Mosque
+delete from BuildingModifiers where BuildingType = 'BUILDING_MOSQUE' and ModifierId = 'MOSQUE_TRAINED_STRENGTH_MODIFIER';
+insert or replace into BuildingModifiers
+	(BuildingType,						ModifierId)
+values
+	('BUILDING_MOSQUE',					'MOSQUE_RELIGIOUS_ARM_STRENGTH_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,										SubjectRequirementSetId)
+values
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH_ATTACH',	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',			'UNIT_IS_RELIGIOUS_ARM'),
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH',			'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',		null);
+insert or replace into ModifierArguments
+	(ModifierId,								Name,				Value)
+values
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH_ATTACH',	'ModifierId',		'MOSQUE_RELIGIOUS_ARM_STRENGTH'),
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH',			'Amount',			1);
+insert or replace into ModifierStrings
+	(ModifierId,								Context,			Text)
+values
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH',			'Preview',			'LOC_MOSQUE_RELIGIOUS_ARM_STRENGTH');
+-- Defender of Faith
+delete from RequirementSetRequirements where RequirementSetId = 'DEFENDER_OF_FAITH_REQUIREMENTS' and RequirementId = 'REQUIRES_NON_RELIGIOUS_UNIT';
+update Modifiers set SubjectRequirementSetId = 'DEFENDER_OF_FAITH_FOREIGN_REQUIREMENTS' where ModifierId = 'DEFENDER_OF_FAITH_COMBAT_BONUS';
+insert or replace into BeliefModifiers
+	(BeliefType,					ModifierId)
+values
+	('BELIEF_DEFENDER_OF_FAITH',	'DEFENDER_OF_FAITH_MOVEMENT_BONUS');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,									SubjectRequirementSetId)
+values
+	('DEFENDER_OF_FAITH_MOVEMENT_BONUS',			'MODIFIER_ALL_UNITS_ATTACH_MODIFIER',			'DEFENDER_OF_FAITH_REQUIREMENTS'),
+	('DEFENDER_OF_FAITH_MOVEMENT_BONUS_MODIFIER',	'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',			null);
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('DEFENDER_OF_FAITH_MOVEMENT_BONUS',			'ModifierId',		'DEFENDER_OF_FAITH_MOVEMENT_BONUS_MODIFIER'),
+	('DEFENDER_OF_FAITH_MOVEMENT_BONUS_MODIFIER',	'Amount',			1);
+-- Capellani
+delete from BeliefModifiers where BeliefType = 'BELIEF_CAPELLANI' and ModifierId = 'JUST_WAR_RELIGIOUS_ALL_COMBAT_BUFF';
+insert or replace into GlobalParameters
+	(Name,									Value)
+values
+	('CAPELLANI_PRESSURE',					100),
+	('CAPELLANI_FAITH_PER_POPULATION',		100);
+
+-- Unique Units
+-- Ulfhedinn
+update Units set EnabledByReligion = 0 where UnitType = 'UNIT_NORWEGIAN_ULFHEDNAR';
+delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS' and ModifierId = 'RECEIVE_NORWEGIAN_ULFHEDNAR_MOVEMENT_BONUS_ATTACH';
+delete from TypeTags where Type = 'ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS';
+insert or replace into TypeTags
+	(Type,												Tag)
+values
+	('ABILITY_RECEIVE_NORWEGIAN_ULFHEDNAR_BONUS',		'CLASS_ALL_UNITS');
+-- Sohei
+update Units set PurchaseYield = 'YIELD_GOLD' where UnitType = 'UNIT_JAPANESE_SOHEI';
+insert or replace into TraitModifiers
+	(TraitType,											ModifierId)
+values
+	('TRAIT_CIVILIZATION_UNIT_JAPANESE_SOHEI',			'SOHEI_FAITH_PURCHASE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('SOHEI_FAITH_PURCHASE',						'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('SOHEI_FAITH_PURCHASE',						'Tag',				'CLASS_JAPANESE_SOHEI');
+insert or replace into Tags
+	(Tag,							Vocabulary)
+values
+	('CLASS_JAPANESE_SOHEI',		'ABILITY_CLASS');
+insert or replace into TypeTags
+	(Type,							Tag)
+values
+	('UNIT_JAPANESE_SOHEI',			'CLASS_JAPANESE_SOHEI');
+-- Templar
+insert or replace into TypeTags
+	(Type,							Tag)
+values
+	('UNIT_ELEANOR_TEMPLAR',		'CLASS_ELEANOR_TEMPLAR');
+-- Kris Warrior
+update Units set PurchaseYield = 'YIELD_GOLD' where UnitType = 'UNIT_INDONESIAN_KRIS_SWORDSMAN';
+insert or replace into TraitModifiers
+	(TraitType,												ModifierId)
+values
+	('TRAIT_CIVILIZATION_UNIT_INDONESIAN_KRIS_SWORDSMAN',	'KRIS_SWORDSMAN_FAITH_PURCHASE');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('KRIS_SWORDSMAN_FAITH_PURCHASE',				'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('KRIS_SWORDSMAN_FAITH_PURCHASE',				'Tag',				'CLASS_INDONESIAN_KRIS_SWORDSMAN');
+insert or replace into Tags
+	(Tag,									Vocabulary)
+values
+	('CLASS_INDONESIAN_KRIS_SWORDSMAN',		'ABILITY_CLASS');
+insert or replace into TypeTags
+	(Type,									Tag)
+values
+	('UNIT_INDONESIAN_KRIS_SWORDSMAN',		'CLASS_INDONESIAN_KRIS_SWORDSMAN');
+
+-- City States
+-- Modifiers in this table are attached to suzerain
+create temporary table if not exists TraitAttachedModifiers (
+	TraitType text not null,
+	ModifierId text not null,
+	primary key (TraitType, ModifierId)
+);
+-- Lahore
+update Units set MustPurchase = 0 where UnitType = 'UNIT_LAHORE_NIHANG';
+delete from Types where Type in (select UnitPromotionType from UnitPromotions where PromotionClass = 'PROMOTION_CLASS_NIHANG');
+delete from Types where Type = 'PROMOTION_CLASS_NIHANG';
+delete from BuildingModifiers where ModifierId like 'LAHORE_NIHANG_%_ADD_PURCHASE_COST';
+update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in ('NIHANG_ARMORY_STRENGTH', 'NIHANG_BARRACKS_STRENGTH', 'NIHANG_ACADEMY_STRENGTH');
+update UnitAbilities set Description = null where UnitAbilityType in ('ABILITY_NIHANG_ARMORY_STRENGTH', 'ABILITY_NIHANG_ARMORY_STRENGTH', 'ABILITY_NIHANG_ACADEMY_STRENGTH');
+insert or replace into TraitAttachedModifiers
+	(TraitType,								ModifierId)
+values
+	('MINOR_CIV_LAHORE_NIHANG_TRAIT',		'MINOR_CIV_LAHORE_NIHANG_STRENGTH');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,										SubjectRequirementSetId)
+values
+	('MINOR_CIV_LAHORE_NIHANG_STRENGTH',			'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',		'UNIT_IS_UNIT_LAHORE_NIHANG_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('MINOR_CIV_LAHORE_NIHANG_STRENGTH',			'Amount',			15);
+insert or replace into ModifierStrings
+	(ModifierId,								Context,			Text)
+values
+	('MINOR_CIV_LAHORE_NIHANG_STRENGTH',		'Preview',			'LOC_MINOR_CIV_LAHORE_NIHANG_STRENGTH');
+insert or replace into TypeTags
+	(Type,									Tag)
+values
+	('UNIT_LAHORE_NIHANG',					'CLASS_LAHORE_NIHANG');
+-- Jerusalem
+delete from TraitModifiers where TraitType = 'MINOR_CIV_JERUSALEM_TRAIT';
+-- Monastery (Armagh)
+update Improvements set OnePerCity = 0, SameAdjacentValid = 1, PlunderType = 'PLUNDER_FAITH', PlunderAmount = 50 where ImprovementType = 'IMPROVEMENT_MONASTERY';
+update Adjacency_YieldChanges set YieldType = 'YIELD_FAITH', ObsoleteCivic = null where ID = 'Monastery_DistrictAdjacency';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_MONASTERY' and YieldChangeId = 'Monastery_DistrictAdjacency_Divine_Right_Late';
+delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_MONASTERY';
+insert or replace into ImprovementModifiers
+	(ImprovementType,				ModifierId)
+values
+	('IMPROVEMENT_MONASTERY',		'MONASTERY_RELIGIOUS_ARM_EXPERIENCE_ATTACH');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,												SubjectRequirementSetId,	SubjectStackLimit)
+values
+	('MONASTERY_RELIGIOUS_ARM_EXPERIENCE_ATTACH',	'MODIFIER_CITY_TRAINED_UNITS_ATTACH_MODIFIER',				'UNIT_IS_RELIGIOUS_ARM',	1),
+	('MONASTERY_RELIGIOUS_ARM_EXPERIENCE',			'MODIFIER_PLAYER_UNIT_ADJUST_UNIT_EXPERIENCE_MODIFIER',		null,						null);
+insert or replace into ModifierArguments
+	(ModifierId,									Name,				Value)
+values
+	('MONASTERY_RELIGIOUS_ARM_EXPERIENCE_ATTACH',	'ModifierId',		'MONASTERY_RELIGIOUS_ARM_EXPERIENCE'),
+	('MONASTERY_RELIGIOUS_ARM_EXPERIENCE_ATTACH',	'Amount',			50);
+
+-- Attach modifiers in TraitAttachedModifiers to suzerain
+insert or ignore into TraitModifiers
+	(TraitType, ModifierId)
+select
+	TraitType,  ModifierId || '_ATTACH'
+from TraitAttachedModifiers;
+insert or ignore into Modifiers
+	(ModifierId,				ModifierType,							SubjectRequirementSetId)
+select
+	ModifierId || '_ATTACH',	'MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER',	'PLAYER_IS_SUZERAIN'
+from TraitAttachedModifiers;
+insert or ignore into ModifierArguments
+	(ModifierId,				Name,			Value)
+select
+	ModifierId || '_ATTACH',	'ModifierId',	ModifierId
+from TraitAttachedModifiers;
+drop table TraitAttachedModifiers;
 
 -- Requirements
 insert or ignore into RequirementSets
@@ -483,7 +667,8 @@ values
 	('UNIT_IS_RELIGIOUS_ARM_ADJACENT_TO_OWNER',		'REQUIREMENTSET_TEST_ANY'),
 	('PLOT_IS_FLAT_REQUIREMENTS',					'REQUIREMENTSET_TEST_ANY'),
 	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIREMENTSET_TEST_ANY'),
-	('UNIT_IS_RELIGIOUS_ARM',						'REQUIREMENTSET_TEST_ALL');
+	('UNIT_IS_RELIGIOUS_ARM',						'REQUIREMENTSET_TEST_ALL'),
+	('DEFENDER_OF_FAITH_FOREIGN_REQUIREMENTS',		'REQUIREMENTSET_TEST_ALL');
 insert or ignore into RequirementSetRequirements
 	(RequirementSetId,								RequirementId)
 values
@@ -494,16 +679,21 @@ values
 	('PLOT_IS_FLAT_REQUIREMENTS',					'REQUIRES_PLOT_IS_FLAT'),
 	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIRES_UNIT_IS_RELIGIOUS_ALL'),
 	('UNIT_IS_RELIGION_OR_RELIGIOUS_ARM',			'REQUIRES_UNIT_IS_RELIGIOUS_ARM'),
-	('UNIT_IS_RELIGIOUS_ARM',						'REQUIRES_UNIT_IS_RELIGIOUS_ARM');
+	('UNIT_IS_RELIGIOUS_ARM',						'REQUIRES_UNIT_IS_RELIGIOUS_ARM'),
+	('DEFENDER_OF_FAITH_FOREIGN_REQUIREMENTS',		'REQUIRES_NON_SUPPORT_UNIT'),
+	('DEFENDER_OF_FAITH_FOREIGN_REQUIREMENTS',		'REQUIRES_PLAYER_FOUNDED_RELIGION'),
+	('DEFENDER_OF_FAITH_FOREIGN_REQUIREMENTS',		'REQUIRES_UNIT_NEAR_FOREIGN_RELIGIOUS_CITY');
 insert or ignore into Requirements
 	(RequirementId,									RequirementType)
 values
 	('REQUIRES_OPPONENT_IS_MELEE',					'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES'),
 	('REQUIRES_OPPONENT_IS_ANTC',					'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES'),
-	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',				'REQUIREMENT_UNIT_TAG_MATCHES');
+	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',				'REQUIREMENT_UNIT_TAG_MATCHES'),
+	('REQUIRES_UNIT_NEAR_FOREIGN_RELIGIOUS_CITY',	'REQUIREMENT_NEAR_RELIGIOUS_CITY');
 insert or ignore into RequirementArguments
-	(RequirementId,								Name,						Value)
+	(RequirementId,									Name,						Value)
 values
-	('REQUIRES_OPPONENT_IS_MELEE',				'UnitPromotionClass',		'PROMOTION_CLASS_MELEE'),
-	('REQUIRES_OPPONENT_IS_ANTC',				'UnitPromotionClass',		'PROMOTION_CLASS_ANTI_CAVALRY'),
-	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',			'Tag',						'CLASS_WARRIOR_MONK');
+	('REQUIRES_OPPONENT_IS_MELEE',					'UnitPromotionClass',		'PROMOTION_CLASS_MELEE'),
+	('REQUIRES_OPPONENT_IS_ANTC',					'UnitPromotionClass',		'PROMOTION_CLASS_ANTI_CAVALRY'),
+	('REQUIRES_UNIT_IS_RELIGIOUS_ARM',				'Tag',						'CLASS_WARRIOR_MONK'),
+	('REQUIRES_UNIT_NEAR_FOREIGN_RELIGIOUS_CITY',	'FriendlyCity',				0);
