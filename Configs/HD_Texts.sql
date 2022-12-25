@@ -82,7 +82,7 @@ values
     ("zh_Hans_CN",  "LOC_GAMEMODE_DEVTEST_NAME",                            "测试开发模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_DEVTEST_DESCRIPTION",                     "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式包含了开发中内容。"),
 	("zh_Hans_CN",  "LOC_GAMEMODE_RILIGIOUS_ARM_NAME",                      "宗教武装模式"),
-    ("zh_Hans_CN",  "LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION",               "添加了若干宗教武装单位。[COLOR_Red]仍在测试中，请勿开启。[ENDCOLOR]"),
+    ("zh_Hans_CN",  "LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION",               "添加了新单位类型：宗教武装单位，添加和改动了一些单位、信条和城邦。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_AITEST_NAME",                             "测试AI模式"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_AITEST_DESCRIPTION",                      "[COLOR_Red]内部测试专用，请勿开启[ENDCOLOR]。用于测试的模式，当前测试模式中调整了AI。"),
     ("zh_Hans_CN",  "LOC_GAMEMODE_MPTEST_NAME",                             "联机模式"),

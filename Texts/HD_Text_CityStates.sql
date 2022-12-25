@@ -76,7 +76,7 @@ values
     -- ("LOC_CIVILIZATION_BRUSSELS_BONUS",                   "Your cities get +25% [ICON_Production] Production towards Wonders."), -- Each World Wonder +2 [ICON_Production] Production for your city.
     ("LOC_LEADER_TRAIT_MEXICO_CITY_DESCRIPTION",          "Your building with Regional effect provides extra yields equal to half (rounded down and at least 1) of its basic yields, which can be extended with its Regional effect."),
     --("LOC_CIVILIZATION_MEXICO_CITY_BONUS",                "Regional effects from your Industrial Zone, Water Park and Entertainment Complex districts reach 3 tiles farther."), -- Industrial Zone +1 [ICON_AMENITIES] Amenity。Entertainment Complex +5 [ICON_Production] Production.
-    ("LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "-15% cost when purchasing buildings in Cities with established governor."),
+    ("LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "[ICON_CITIZEN] Citizens in Cities with established governor provide +2 [ICON_GOLD] Gold."),
     --("LOC_CIVILIZATION_ANTIOCH_BONUS",                    "-15% cost when purchasing buildings in Cities with established governor."),
     ("LOC_LEADER_TRAIT_HUNZA_DESCRIPTION",                "Your [ICON_TradeRoute] Trade Routes generate +1 [ICON_Gold] Gold for every 5 tiles they travel."),
     --("LOC_CIVILIZATION_HUNZA_BONUS",                      "Your [ICON_TradeRoute] Trade Routes generate +1 [ICON_Gold] Gold for every 5 tiles they travel."),
@@ -181,7 +181,7 @@ values
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HATTUSA_BONUS_XP2",                "每回合提供2份文明已解锁战略资源。改良后的战略资源+1 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_MITLA_DESCRIPTION",                "学院和学院建筑+1 [ICON_FOOD] 食物。拥有学院的城市+10%余粮。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_PALENQUE_DESCRIPTION",             "{LOC_LEADER_TRAIT_MITLA_DESCRIPTION}"),
-    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "拥有总督就职的城市购买建筑花费-15%。"),
+    ("zh_Hans_CN",  "LOC_LEADER_TRAIT_ANTIOCH_DESCRIPTION",              "拥有总督就职的城市每 [ICON_CITIZEN] 人口产出2 [ICON_GOLD] 金币。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_ANTIOCH_BONUS",                    "拥有总督就职的城市购买建筑花费-15%。"),
     ("zh_Hans_CN",  "LOC_LEADER_TRAIT_HUNZA_DESCRIPTION",                "您的 [ICON_TradeRoute] 贸易路线每经过5个单元格，其提供的 [ICON_Gold] 金币便+1。"),
     --("zh_Hans_CN",  "LOC_CIVILIZATION_HUNZA_BONUS",                      "您的 [ICON_TradeRoute] 贸易路线每经过5个单元格，其提供的 [ICON_Gold] 金币便+1。"),

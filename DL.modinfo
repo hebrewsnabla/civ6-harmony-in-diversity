@@ -539,6 +539,16 @@
       <File>Assets/Buildings/New_Buildings_128.dds</File>
       <File>Assets/Buildings/New_Buildings_256.dds</File>
     </ImportFiles>
+    <!-- Religious Arm Mode -->
+    <UpdateText id="ReligiousArmMode_FrontendText">
+		<Properties><LoadOrder>16010</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ConfigText.sql</File>
+	</UpdateText>
+    <UpdateDatabase id="ReligiousArmMode_Config">
+		<Properties><LoadOrder>16010</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/Config.sql</File>
+	</UpdateDatabase>
+
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
@@ -1559,6 +1569,10 @@
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
     </ImportFiles>
+    <UpdateDatabase id="ReligiousArm_DatabaseEarly" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>100</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/DatabaseEarly.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="ReligiousArm_Database" criteria="Religious_Arm_Mode_Expansion2">
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/ReligiousArmMode/Database.sql</File>
@@ -1739,7 +1753,10 @@
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
 	<!-- Religious Arm Mode -->
+	<File>GameModeSupport/ReligiousArmMode/Config.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/DatabaseEarly.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/ConfigText.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
