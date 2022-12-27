@@ -491,7 +491,7 @@ insert or replace into Modifiers
 	(ModifierId,								ModifierType,										SubjectRequirementSetId)
 values
 	('MOSQUE_RELIGIOUS_ARM_STRENGTH_ATTACH',	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',			'UNIT_IS_RELIGIOUS_ARM'),
-	('MOSQUE_RELIGIOUS_ARM_STRENGTH',			'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH',		null);
+	('MOSQUE_RELIGIOUS_ARM_STRENGTH',			'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',				null);
 insert or replace into ModifierArguments
 	(ModifierId,								Name,				Value)
 values

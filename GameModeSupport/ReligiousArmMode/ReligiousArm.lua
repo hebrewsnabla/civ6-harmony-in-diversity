@@ -29,20 +29,21 @@ end);
 
 local PROMISED_LAND_PENDING_KEY = 'PROMISED_LAND_PENDING';
 function ReligiousArmSelectPlot(plotId, plotEdge, boolParam)
-	if UILens.IsLayerOn(UILens.CreateLensLayerHash("Hex_Coloring_Great_People")) then
-		UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
-	end
 	local localPlayerId = Game.GetLocalPlayer();
 	local player = Players[localPlayerId];
 	local pending = player:GetProperty(PROMISED_LAND_PENDING_KEY);
-	if pending then
-		local unit = UnitManager.GetUnit(localPlayerId, pending);
-		local location = unit:GetLocation();
-		local target = Map.GetPlotByIndex(plotId);
-		local distance = Map.GetPlotDistance(location.x, location.y, target:GetX(), target:GetY());
-		if distance <= unit:GetMovesRemaining() then
-			ExposedMembers.GameEvents.HD_ReligiousArm_PromisedLandTeleportSwitch.Call(localPlayerId, pending, target:GetX(), target:GetY(), distance);
-		end
+	if not pending then
+		return;
+	end
+	if UILens.IsLayerOn(UILens.CreateLensLayerHash("Hex_Coloring_Great_People")) then
+		UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
+	end
+	local unit = UnitManager.GetUnit(localPlayerId, pending);
+	local location = unit:GetLocation();
+	local target = Map.GetPlotByIndex(plotId);
+	local distance = Map.GetPlotDistance(location.x, location.y, target:GetX(), target:GetY());
+	if distance <= unit:GetMovesRemaining() then
+		ExposedMembers.GameEvents.HD_ReligiousArm_PromisedLandTeleportSwitch.Call(localPlayerId, pending, target:GetX(), target:GetY(), distance);
 	end
 	UILens.ToggleLayerOff(UILens.CreateLensLayerHash("Hex_Coloring_Great_People"));
 	UI.SetInterfaceMode(InterfaceModeTypes.SELECTION);
