@@ -1370,10 +1370,6 @@
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>UpdateDataBase/DL_PostProcess.sql</File>
     </UpdateDatabase>
-    <UpdateDatabase id="HD_Temp_Remove" criteria="Expansion2">
-      <Properties><LoadOrder>40000</LoadOrder></Properties>
-      <File>UpdateDataBase/BalanceRemove.sql</File>
-    </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16016</LoadOrder></Properties>
       <File>UI/Icons/DL_Icons_Beliefs.xml</File>
@@ -2053,7 +2049,6 @@
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
     <File>UpdateDataBase/DL_PostProcess.sql</File>
-	<File>UpdateDataBase/BalanceRemove.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
     <File>UpdateDataBase/DL_Relic_Creator.sql</File>
