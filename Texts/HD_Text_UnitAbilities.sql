@@ -139,7 +139,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_MODIFIER_PREVIEW_TEXT",        "来自作战部"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_MODIFIER_PREVIEW_TEXT",               "来自作战部"),
     ("zh_Hans_CN",  "LOC_HD_UNOBSTRUCTED_VIEW_DESCRIPTION",                                  "没被地形阻碍的视野范围。"),
-    ("zh_Hans_CN",  "LOC_HD_SEE_HIDDEN_DESCRIPTION",                                         "可以发现隐形单位"),
+    ("zh_Hans_CN",  "LOC_HD_SEE_HIDDEN_DESCRIPTION",                                         "可以发现隐形单位。"),
     ("zh_Hans_CN",  "LOC_SPY_OBSERVER_SPYGLASS_SIGHT_DESCRIPTION",                           "望远镜：+2视野。"),
     ("zh_Hans_CN",  "LOC_HD_SPY_PATHFINDER_MOVEMENT_PREVIEW_TEXT",                           "来自向导"),    
     ("zh_Hans_CN",  "LOC_ABILITY_JUST_WAR_STRENGTH_PREVIEW_TEXT",                            "来自随军牧师信条"),

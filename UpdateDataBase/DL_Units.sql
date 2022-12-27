@@ -55,23 +55,25 @@ insert or replace into ModifierArguments
 values
 	('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'UnitType',	    'UNIT_MILITARY_ENGINEER'),
     ('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'Amount',	    20);*/
-
+--SPY间谍价格和涨价方式-暂时参考了HD使徒和传教士-但它显得不那么耐用
 update Units set
 	CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES',
-	CostProgressionParam1 = 20,
-	Cost = 120
+	CostProgressionParam1 = 10,
+	Cost = 80
 where UnitType = 'UNIT_SPY';
 
 ----------------------------------------------
 --SPY 间谍出击任务成功率调整
 --删除招募叛军
 delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
---获取情报源，在全局参数处改动了持续时间和加成
-update UnitOperations set Turns = 4           		where OperationType = 'UNITOPERATION_SPY_GAIN_SOURCES';
+--获取情报源，在全局参数表改动了持续时间
+update UnitOperations set Turns = 2           		where OperationType = 'UNITOPERATION_SPY_GAIN_SOURCES';
+--建立情报站（外交能见度）从8T改4T
+update UnitOperations set Turns = 4           		where OperationType = 'UNITOPERATION_SPY_LISTENING_POST';
 --捏造丑闻
 update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
-update UnitOperations set Turns = 10           		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
+update UnitOperations set Turns = 8           		where OperationType = 'UNITOPERATION_SPY_FABRICATE_SCANDAL';
 --煽动骚乱
 update UnitOperations set BaseProbability = 11 		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
@@ -79,7 +81,7 @@ update UnitOperations set Turns = 4            		where OperationType = 'UNITOPER
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
 --抽取资金
-update UnitOperations set BaseProbability = 15 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';	
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
@@ -87,13 +89,25 @@ update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITO
 --陷害总督
 update UnitOperations set BaseProbability = 19 		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
-update UnitOperations set Turns = 10           		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';	
+update UnitOperations set Turns = 8           		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';	
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
+--破坏生产
+update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';	
+update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
+update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';	
+--破坏堤坝
+update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
+update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
+update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
+update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
+update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
 --窃取科技提升
 update UnitOperations set BaseProbability = 10 		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
-update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
+update UnitOperations set Turns = 4            		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_STEAL_TECH_BOOST';	
 --盗取巨作
@@ -106,7 +120,7 @@ update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITO
 update UnitOperations set BaseProbability = 19 		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';	
 update UnitOperations set Turns = 16            	where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
-update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+update UnitOperations set EnemyProbChange = 6  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
 --SPY MOVE -间谍移动到其他文明的城市所需时间减少3T
 update UnitOperations set Turns = 0            		where OperationType = 'UNITOPERATION_SPY_TRAVEL_NEW_CITY';

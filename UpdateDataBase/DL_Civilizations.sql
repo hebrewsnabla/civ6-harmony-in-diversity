@@ -1722,6 +1722,8 @@ insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
+--------------------------------------------------------------------------
+--Catherine De Medici alt 寻欢作乐额外文化
 
 --------------------------------------------------------------------------
 --Catherine De Medici 黑王后额外视野

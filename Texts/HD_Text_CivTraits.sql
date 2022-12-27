@@ -124,8 +124,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。"), -- 拥有专业化区域的城市+1 [ICON_Science] 科技值和 +1 [ICON_Culture] 文化值。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准相邻加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则直接完成军事工程学科技。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成堡垒后对相邻单元格施放文化炸弹，使相邻的单元格+1 [ICON_Production] 生产力和+1 [ICON_Culture] 文化值。拥有寺庙的城市可以训练或购买军事工程师。军事工程师使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"), --相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市遭到波兰文化炸弹攻击失去单元格，此城将自动信仰你的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则完成该科技。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。堡垒对相邻单元格施放文化炸弹，并使相邻单元格+1 [ICON_Production] 生产力和+1 [ICON_Culture] 文化值。拥有寺庙的城市可训练军事工程师。军事工程师+2劳动力且可以用 [ICON_FAITH] 信仰值购买。"), --相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_NAME",                           "祖国之父"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "您的每个巨作使9个单元格内的外国城市-2忠诚度。外国城市转变为自由城市前，如对您的忠诚度最高，则直接加入您的文明。您建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。可在拥有剧院广场区域的任意城市中开展“爱之审判”项目。"), --埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。[NEWLINE]可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。埃莉诺建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。
@@ -159,8 +159,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION",          "对主要文明宣布突袭战争后的10回合内+2 [ICON_Movement] 移动力。拥有驻扎单位的城市每回合的忠诚度+5。宣布突袭战争的 [ICON_STAT_GRIEVANCE] 不满和好战性与正式战争相同。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_BANNOCKBURN_DESCRIPTION",                      "国境内的单位防御时+4 [ICON_Strength] 战斗力。解锁后勤补给市政后即可宣布解放战争。宣布解放战争后的10回合内+100% [ICON_Production] 生产力、+2 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION",     "幸福度为快乐的城市额外+6% [ICON_SCIENCE] 科技值、+6% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。喜悦的城市获得的上述加成将加倍，欣喜若狂的城市获得的上述加成将变为三倍。学院和工业区+1 [ICON_AMENITIES] 宜居度，且从其他区域获得标准的相邻加成取代少量相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION",             "宣布保卫城邦战争后的10回合内+100% [ICON_FAITH] 信仰值。如城邦的主流宗教与本方相同，则派遣至其处的每名 [ICON_ENVOY] 使者将视为2名（必须拥有1个主流宗教）。战斗胜利后，获得等同于被击杀单位战斗力100%的 [ICON_FAITH] 信仰值（标准速度下）。每级城墙+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS_DESCRIPTION",          "在黄金或英雄时代初期设置着力点时，除原有加成外还将获得提高时代得分的普通时代加成。进入黄金或英雄时代后，可以使用黑暗时代政策。首次进入黄金或英雄时代时获得一个永久的通配符政策槽位。建造防御性建筑时+100% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION",             "派遣使者到主流宗教与你相同的城邦时，每名 [ICON_ENVOY] 使者将视为2名。战斗胜利时，获得被击杀单位战斗力100%的 [ICON_FAITH] 信仰值。宣布保卫城邦战争后的10回合内+100% [ICON_FAITH] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS_DESCRIPTION",          "首次进入黄金或英雄时代时获得一个永久的通配符政策槽位。进入黄金或英雄时代后，可以使用黑暗时代政策。黄金和英雄时代着力点额外获得普通时代的得分加成。所有城墙+100% [ICON_Production] 建造速度。每级城墙+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",            "公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。山脉单元格购买费用降低50%。水渠给所在城市的梯田农场+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION",             "所有陆地单位无视丘陵对 [ICON_MOVEMENT] 移动力的减益。起始城市中的每座山脉单元格为国内 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。解锁“对外贸易”市政后可获得印加路网改良设施。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION",                     "雨林单元格为学院、商业中心、圣地和剧院广场区域提供+1相邻加成，并为相邻的单元格提供+1魅力（而非通常的-1。）伐木场为相邻工业区提供+1相邻加成。若相邻工业区，雨林单元格 +1 [ICON_PRODUCTION] 生产力。建造在雨林的伐木场 +2 [ICON_CULTURE] 文化。所有区域（除市中心外）不移除雨林。若市中心相邻雨林，+1 [Icon_Faith] 信仰值。"),
@@ -173,6 +173,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_NAME",                  "太阳纪"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "使用建造者劳动力来推进20%的区域建设进程。其领土中的奢侈品资源为额外2座城市提供1点 [ICON_Amenities] 宜居度。阿兹特克国土内每种改良的奢侈品资源将为军事单位+1 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "“城堡”科技、“政治哲学”和“后勤补给”市政各获得1个免费间谍。所有间谍初始便拥有1次免费升级。平民单位和侦察单位+1视野，间谍+3视野。[ICON_VISLIMITED] 外交能见度比遇到的其他文明高1级。"), -- （若已能升级则可在升级后再升级一次）
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MAGNIFICENCES_DESCRIPTION",                    "与剧院广场区域或城堡庄园相邻的改良奢侈品资源提供的 [ICON_CULTURE] 文化值+2。可在拥有剧院广场区域的任意城市中开展“宫廷盛会”项目。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成“军事传统”市政后解锁领土扩张战争借口。完成“军事训练”市政后在首都获得一个免费开拓者。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
