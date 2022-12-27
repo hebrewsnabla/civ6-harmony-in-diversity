@@ -1,5 +1,6 @@
 local TOOLING_SHOP = GameInfo.Buildings['BUILDING_JNR_TOOLING_SHOP'];
 local WAYSTATION = GameInfo.Buildings['BUILDING_JNR_WAYSTATION'];
+local TARGET_RANGE = GameInfo.Buildings['BUILDING_JNR_TARGET_RANGE'];
 function GetResourceCost (playerId)
 	local player = Players[playerId];
 	local costs = {};
@@ -12,6 +13,12 @@ function GetResourceCost (playerId)
 					sum = sum + 2;
 				end
 				if (row.ResourceType == 'RESOURCE_IRON') and (TOOLING_SHOP ~= nil) and (buildings:HasBuilding(TOOLING_SHOP.Index)) then
+					sum = sum + 2;
+				end
+				if (row.ResourceType == 'RESOURCE_HORSES') and (TARGET_RANGE ~= nil) and (buildings:HasBuilding(TARGET_RANGE.Index)) then
+					sum = sum + 2;
+				end
+				if (row.ResourceType == 'RESOURCE_IRON') and (TARGET_RANGE ~= nil) and (buildings:HasBuilding(TARGET_RANGE.Index)) then
 					sum = sum + 2;
 				end
 			end

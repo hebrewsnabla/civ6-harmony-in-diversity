@@ -94,7 +94,11 @@ values
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                       "Liberate"),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",                "Liberate this unit to give +2 [ICON_PRODUCTION] Production adjacency bonus to this Industrial Zone, and gain 1 [ICON_CITIZEN] citizen if you first do it in a city."),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "Must be located in the Industrial Zone, and have [ICON_MOVEMENT] Movement left."),
-    ("LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                     "Gain a copy of all available commemoration effects in each Era.");
+    ("LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                     "Gain a copy of all available commemoration effects in each Era."),
+    ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                     "People of the Earth"),
+    ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "All Districts (Wonders not included) adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith, and Improved tiles adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn adjacent to Mountain tiles."),
+    ("LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",              "+5 [ICON_STRENGTH] Combat Strength when fighting Free Cities or civilizations that are in a Golden or Heroic Age. Cities with an Established [ICON_GOVERNOR] Governor provide +50% experience in combat towards all units trained in this city."),
+    ("LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",                "Gains +50% experience in combat.(Swift Hawk)");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -194,7 +198,11 @@ values
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                      "解放"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",               "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                    "在每个时代额外获得所有着力点加成。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                    "在每个时代额外获得所有着力点加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                    "大地的子民"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",             "所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",             "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",               "获得的战斗经验值+50%。（迅捷之鹰）");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
