@@ -106,6 +106,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_GALLEY_NAME",                                    "原始桨帆船"),
     ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_GALLEY_DESCRIPTION",                             "远古时代蛮族部落的海上侦察单位。"),
+    ("zh_Hans_CN",  "LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION",                             "中世纪格鲁吉亚特色单位，替代披甲战士。在丘陵时+7 [ICON_STRENGTH] 战斗力。无视丘陵对 [ICON_MOVEMENT] 移动力的减益。")，
     ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_QUADRIREME_NAME",                                "原始四段帆船"),
     ("zh_Hans_CN",  "LOC_UNIT_HD_BARBARIAN_QUADRIREME_DESCRIPTION",                         "远古时代蛮族部落的海上远程单位。"),
     ("zh_Hans_CN",  "LOC_UNIT_DL_MEDIEVAL_PIRATE_DESCRIPTION",                              "中世纪时代海军袭击者。"),
@@ -120,8 +121,7 @@ values
     ("zh_Hans_CN",  "LOC_UNIT_TREBUCHET_DESCRIPTION",                                       "中世纪攻城单位，适合对城市发起攻击。如果相邻轻骑兵单位开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。无法在一回合内移动并攻击（除非玩家已拥有军事训练市政）。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_HELMSMAN_DESCRIPTION",                                   "+1 [ICON_Movement] 移动力，+1视野范围。");
 --------------------------------------------------------------------------------
-insert or replace into LocalizedText
+    insert or replace into LocalizedText
     (Language,      Tag,                                                Text)
 values
-    ("zh_Hans_CN",  "LOC_UNIT_GEORGIAN_KHEVSURETI_NAME",                "克黑苏战士")，
-    ("zh_Hans_CN",  "LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION",         "中世纪格鲁吉亚特色单位，替代披甲战士。在丘陵时+7 [ICON_STRENGTH] 战斗力。无视丘陵对 [ICON_MOVEMENT] 移动力的减益。");
+    ("zh_Hans_CN",  "LOC_UNIT_GEORGIAN_KHEVSURETI_NAME",                "克黑苏战士");

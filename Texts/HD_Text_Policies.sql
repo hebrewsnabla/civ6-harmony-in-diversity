@@ -318,7 +318,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "所有近战攻击单位+5 [ICON_Strength] 战斗力。拥有驻军单位的城市每回合的忠诚度+5。[NEWLINE]但无法在本国领土外进行治疗。"),
     ("zh_Hans_CN",  "LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "国内贸易路线提供+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。[NEWLINE]但无法生产或购买开拓者和建造者，也无法建立新城市。"),
     ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "奇观误国"),
-    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+20% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少50%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+25% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少25%。"),
     -- 政体
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "所有宫殿、市政广场建筑、外交区建筑提供+3 [ICON_FOOD] 食物和+3 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "所有宫殿、市政广场建筑提供+3 [ICON_FOOD] 食物和+3 [ICON_PRODUCTION] 生产力。"),
