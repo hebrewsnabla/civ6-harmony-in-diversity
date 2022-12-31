@@ -37,3 +37,18 @@ insert or ignore into RequirementSetRequirements
 select distinct
 	MinimumGameEra || '_' || MaximumGameEra,		'REQUIRES_ERA_IS_' || EraType
 from (HD_SULEIMAN s cross join Eras e) where (select ChronologyIndex from Eras er where er.EraType = MinimumGameEra) <= e.ChronologyIndex and (select ChronologyIndex from Eras er where er.EraType = MaximumGameEra) >= e.ChronologyIndex;
+
+-- Nader Shah
+delete from TraitModifiers where TraitType = 'TRAIT_LEADER_NADER_SHAH';
+insert or replace into TraitModifiers
+	(TraitType,							ModifierId)
+values
+	('TRAIT_LEADER_NADER_SHAH',			'NADER_SHAH_TRADEROUTE_CAPACITY');
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,											SubjectRequirementSetId)
+values
+	('NADER_SHAH_TRADEROUTE_CAPACITY',	'MODIFIER_PLAYER_CITIES_ADJUST_TRADE_ROUTE_CAPACITY',	'CITY_WAS_NOT_FOUNDED');
+insert or replace into ModifierArguments
+	(ModifierId,						Name,		Value)
+values
+	('NADER_SHAH_TRADEROUTE_CAPACITY',	'Amount',	1);

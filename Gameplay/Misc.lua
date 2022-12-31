@@ -346,34 +346,34 @@ end);
 -- Religious Settlements
 local RELIGIOUS_SETTLEMENTS_INDEX = GameInfo.Beliefs['BELIEF_RELIGIOUS_SETTLEMENTS'].Index;
 local GREAT_PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
--- Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
--- 	local player = Players[playerId];
--- 	local pantheon = player:GetReligion():GetPantheon();
--- 	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
--- 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
--- 	end
--- end);
-local SETTLER_INDEX = GameInfo.Units['UNIT_SETTLER'].Index;
-Events.CityProductionCompleted.Add(function (playerId, cityId, type, unitId, cancelled)
-	if unitId == nil then
-		return;
-	end
+GameEvents.CityBuilt.Add(function (playerId, cityId, x, y)
 	local player = Players[playerId];
-	local unit = UnitManager.GetUnit(playerId, unitId);
 	local pantheon = player:GetReligion():GetPantheon();
-	if (pantheon == RELIGIOUS_SETTLEMENTS_INDEX) and (unit:GetType() == SETTLER_INDEX) then
+	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
 	end
 end);
-Events.CityMadePurchase.Add(function (playerId, cityId, x, y, purchaseType, objectType)
-	if (purchaseType == EventSubTypes.UNIT) and (objectType == SETTLER_INDEX) then
-		local player = Players[playerId];
-		local pantheon = player:GetReligion():GetPantheon();
-		if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
-			player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
-		end
-	end
-end);
+-- local SETTLER_INDEX = GameInfo.Units['UNIT_SETTLER'].Index;
+-- Events.CityProductionCompleted.Add(function (playerId, cityId, type, unitId, cancelled)
+-- 	if unitId == nil then
+-- 		return;
+-- 	end
+-- 	local player = Players[playerId];
+-- 	local unit = UnitManager.GetUnit(playerId, unitId);
+-- 	local pantheon = player:GetReligion():GetPantheon();
+-- 	if (pantheon == RELIGIOUS_SETTLEMENTS_INDEX) and (unit:GetType() == SETTLER_INDEX) then
+-- 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+-- 	end
+-- end);
+-- Events.CityMadePurchase.Add(function (playerId, cityId, x, y, purchaseType, objectType)
+-- 	if (purchaseType == EventSubTypes.UNIT) and (objectType == SETTLER_INDEX) then
+-- 		local player = Players[playerId];
+-- 		local pantheon = player:GetReligion():GetPantheon();
+-- 		if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+-- 			player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+-- 		end
+-- 	end
+-- end);
 
 -- Free Tech
 local FREE_TECH_KEY = 'HD_FREE_TECH';
