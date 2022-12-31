@@ -68,7 +68,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "All improvements and National parks in the city provide +200% extra [ICON_TOURISM] Tourism. Allows you to construct the City Park improvement across your nation when the 'Urbanization Civic' is unlocked."),
     ("LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "Can construct the City Park improvement in this city. Provides +1 [ICON_Culture] Culture, and adjacent tiles receive +2 Appeal. Cannot be placed adjacent to another City Park. When Liang is established in the city, City Parks provide +1 of all yields to all adjacent tiles."), -- (unlocked by Games and Recreation civic) 
     -- Amani
-    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2 Spy capacity. [ICON_FAITH] Faith can be used to recruit Spy if established in your city, with 50% discount. Spys trained in the city start with a free promotion."),
+    ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2 Spy capacity. If established in your city, can use [ICON_FAITH] Faith to purchase Spy and -50% purchase cost when purchasing Spy in the city. Spys trained in the city start with a free promotion."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "Can be assigned to a city-state, where she acts as 2 [ICON_Envoy] Envoys. Can also be assigned to other Civ' s [ICON_CAPITAL] Capital."),
     ("LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME",                           "Alamut"),
     ("LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "Disguise"),
@@ -167,7 +167,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_WATER_WORKS_DESCRIPTION",                            "本城所有改良设施和国家公园+200% [ICON_TOURISM] 旅游业绩。解锁“城市化”后可在全国修建“市立公园”。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_PARKS_RECREATION_DESCRIPTION",                       "可在城市中修建特色改良设施“市立公园”。产出1 [ICON_Culture] 文化值，为相邻单元格+2魅力。无法建在另一个市立公园旁。总督梁在此城市就职时，市立公园为每个相邻单元格提供+1所有产出。"), -- （由游戏与娱乐市政解锁）
     -- 阿玛尼
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2间谍容量。在我方城市就职时可在该城花费 [ICON_FAITH] 信仰招募间谍，花费减少50%。此城中生产的间谍可免费升级为探员。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_DESCRIPTION",                    "+2间谍容量。在我方城市就职时，在此城中可使用 [ICON_FAITH] 信仰购买间谍且购买间谍的花费减少50%，此城生产的间谍可免费升级为探员。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_MESSENGER_DESCRIPTION",                   "在我方城市就职时，影响力点数每回合+5。可派遣至城邦，效力等同于2名 [ICON_Envoy] 使者。也可被派到其他文明的 [ICON_CAPITAL] 首都。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_EMISSARY_NAME",                           "鹰巢"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "伪装"),

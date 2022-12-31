@@ -92,7 +92,7 @@ values
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] Movement from War Department."),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] Movement from War Department."),
     -- Diplomatic Quarter
-    ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy. Leveraging City States costs 20% less [ICON_Gold] Gold. Your Spy units can choose from any possible promotion."),
+    ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy. Leveraging City States costs 20% less [ICON_Gold] Gold. +50% construction speed towards Spy in this city. Your Spy units can choose from any possible promotion."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy. +1 [ICON_VISLIMITED] Visibility level on all other Civs. +50% [ICON_PRODUCTION] toward Spies in all Cities. Receive one Spy and +1 Spy capacity. Spys start with a free promotion. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy."),
     ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "Regional Council Centre"),
     ("LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "+2 Envoy when completed.  +1 Dipolomatic Policy Slot. +1 Dipolomatic Victory Point.+25% Influence points. +1 Diplomatic visibility towards all civilizations. Accumulates 2 extra Alliance Points per turn. Double bonus of [ICON_TRADEROUTE] Trade Routes from alliances.Enemy Spy level reduced by 3 in your lands"),
@@ -260,8 +260,8 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] 移动力来自作战部。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] 战斗力来自作战部。"),
     -- 外交区
-    ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。获得1名 [ICON_ENVOY] 使者。征兵花费的 [ICON_GOLD] 金币减少20%。此城市训练间谍时+50% [ICON_PRODUCTION] 生产力。您的间谍可以选择任何可用升级。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有城市训练间谍时+50% [ICON_PRODUCTION] 生产力。获得一个间谍并+1间谍容量。所有间谍初始便拥有1次免费升级，出击时+1级成功率，执行任务的时间缩短25%。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。获得1名 [ICON_ENVOY] 使者。征兵花费的 [ICON_GOLD] 金币减少20%。此城市训练间谍时+50%建造速度。您的间谍可以选择任何可用升级。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有城市训练间谍时+50%建造速度。获得一个间谍并+1间谍容量。所有间谍初始便拥有1次免费升级，出击时+1级成功率，执行任务的时间缩短25%。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_NAME",              "区域议会中心"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_REGIONAL_COUNCIL_CENTER_DESCRIPTION",       "建成后+2 [ICON_ENVOY] 使者。+1外交政策槽位。+1外交胜利点数。+25%影响力点数。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有盟友的同盟点数每回合额外增加2点。来自同盟的 [ICON_TRADEROUTE] 贸易路线收益翻倍。领土内的敌方间谍下降3级。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",        "世界议会总部"),

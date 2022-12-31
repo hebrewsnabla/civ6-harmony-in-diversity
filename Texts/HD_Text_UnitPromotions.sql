@@ -159,7 +159,9 @@ values
     ("LOC_PROMOTION_AUTO_SOLICITATION_HD_DESCRIPTION",                          "+1 additional attack per turn."),
     ("LOC_PROMOTION_REACTIVE_ARMOR_NAME",                                       "General Guard"),
     ("LOC_PROMOTION_SPY_PATHFINDER_NAME",                                       "Pathfinder"),    
-    ("LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                                "All your units within 6 tiles of Pathfinder gain +1 [ICON_MOVEMENT] movement."), 
+    ("LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                                "All units within 6 tiles gain +1 [ICON_MOVEMENT] movement."), 
+    ("LOC_PROMOTION_SPY_OBSERVER_NAME",                                         "Observer"),
+    ("LOC_PROMOTION_SPY_OBSERVER_DESCRIPTION",                                  "+2 Sight Range, can see through terrain and features and reveal invisible units."),
     ("LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION",                                 "+1 [ICON_Movement] movement from your Pathfinder."),   
     ("LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                                "+2 [ICON_STRENGTH] Combat Strength to all land units within 1 tiles."),
     ("LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                            "Ignore the extra [ICON_Movement] Movement cost from Marsh.");
@@ -256,7 +258,7 @@ values
     ("zh_Hans_CN",  "LOC_PROMOTION_SPY_PATHFINDER_NAME",                                    "向导"),
     ("zh_Hans_CN",  "LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION",                              "+1 [ICON_Movement] 移动力，来自向导的指引。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_SPY_OBSERVER_NAME",                                      "观察者"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_OBSERVER_DESCRIPTION",                               "视野+2且不受地形和地貌阻挡，能发现隐形单位。"),
-    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                             "就位时，向导周围6个单元格内的友方单位在开始回合时+1移动力。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_OBSERVER_DESCRIPTION",                               "+2视野范围，视野穿过地形和地貌，且能够发现隐形单位。"),
+    ("zh_Hans_CN",  "LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION",                             "就位后，6个单元格内的友方单位+1 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_PROMOTION_REACTIVE_ARMOR_DESCRIPTION",                             "在一个单元格以内，为所有陆地单位+2 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_ABILITY_SCOUNT_IGNORE_ALL_HD_DESCRIPTION",                         "忽略沼泽带来的的额外 [ICON_Movement] 移动力消耗。");
