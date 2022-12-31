@@ -253,14 +253,32 @@ values
 	('DAM_ADJACENT_FARM_FOOD',							'YieldType',	'YIELD_FOOD,YIELD_PRODUCTION'),
 	('DAM_ADJACENT_FARM_FOOD',							'Amount',		'1,1');
 
-update ModifierArguments set Value = 30 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION' and Name = 'Amount';
+update ModifierArguments set Value = 50 where ModifierId = 'COTHON_NAVAL_UNIT_PRODUCTION' and Name = 'Amount';
 
 -- Culture bombs [for Great Eng]
 insert or replace into Modifiers (ModifierId, ModifierType, RunOnce, Permanent)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType , 'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', 1, 1 from Districts;
 insert or replace into ModifierArguments (ModifierId, Name, Value)
 select 'CULTURE_BOMB_TRIGGER_' || DistrictType, 'DistrictType', DistrictType from Districts;
+-------------------------------------------------------------------
+--SPY MOVE----------间谍移动路径时间调整
+update Districts set TravelTime = 3 where DistrictType = 'DISTRICT_CITY_CENTER';
+update Districts set TravelTime = 2 where DistrictType = 'DISTRICT_HARBOR' 
+	or DistrictType = 'DISTRICT_ROYAL_NAVY_DOCKYARD' 
+	or DistrictType = 'DISTRICT_COTHON';
+update Districts set TravelTime = 2 where DistrictType = 'DISTRICT_COMMERCIAL_HUB' 
+	or DistrictType = 'DISTRICT_SUGUBA' 
+	or DistrictType = 'DISTRICT_WATER_STREET_CARNIVAL';
+update Districts set TravelTime = 2 where DistrictType = 'DISTRICT_CAMPUS' 
+	or DistrictType = 'DISTRICT_OBSERVATORY' 
+	or DistrictType = 'DISTRICT_SEOWON';
+update Districts set TravelTime = 2 where DistrictType = 'DISTRICT_THEATER' 
+	or DistrictType = 'DISTRICT_ACROPOLIS';
+update Districts set TravelTime = 1 where DistrictType = 'DISTRICT_CANAL';
 
+
+
+-------------------------------------------------------------------
 -- MBANZA
 update Districts set PrereqCivic = 'CIVIC_STATE_WORKFORCE', Cost = 60, Appeal = 1, Housing = 3 where DistrictType = 'DISTRICT_MBANZA';
 

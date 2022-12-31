@@ -31,8 +31,8 @@ update Projects set Cost = 40
 	or ProjectType = 'PROJECT_WATER_BREAD_AND_CIRCUSES'
 ;
 
-update Projects set CostProgressionParam1 = 800, Cost = 80 where ProjectType = 'PROJECT_COURT_FESTIVAL';
-update Projects set CostProgressionParam1 = 300, Cost = 100	where ProjectType = 'PROJECT_COTHON_CAPITAL_MOVE';
+update Projects set CostProgressionParam1 = 800, Cost = 50 where ProjectType = 'PROJECT_COURT_FESTIVAL';
+update Projects set CostProgressionParam1 = 200, Cost = 50	where ProjectType = 'PROJECT_COTHON_CAPITAL_MOVE';
 
 -- Project Great Points
 update Project_GreatPersonPoints set PointProgressionParam1 = 900
