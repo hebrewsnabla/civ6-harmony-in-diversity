@@ -15,6 +15,7 @@ end
 
 local FREE_TECH_KEY = 'HD_FREE_TECH';
 local FREE_TECH_KEY_ZH = 'HD_FREE_TECH_ZH';
+local FREE_TECH_KEY_HP = 'HD_FREE_TECH_HP';
 PopulateNode_Base = PopulateNode;
 function PopulateNode (uiNode, playerTechData)
 	PopulateNode_Base(uiNode, playerTechData);
@@ -25,22 +26,28 @@ function PopulateNode (uiNode, playerTechData)
 		local localPlayerId = Game.GetLocalPlayer();
 		local player = Players[localPlayerId];
 		local remains_ZH = player:GetProperty(FREE_TECH_KEY_ZH) or 0;
+		local remains_HP = player:GetProperty(FREE_TECH_KEY_HP) or 0;
 		local remains = player:GetProperty(FREE_TECH_KEY) or 0;
 		if (remains_ZH) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) and (GameInfo.Technologies[item.Index].EraType == 'ERA_CLASSICAL') then
 			ExposedMembers.GameEvents.HD_FreeTechSwitchZH.Call(localPlayerId, item.Index);
 		elseif (remains) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) then
 			ExposedMembers.GameEvents.HD_FreeTechSwitch.Call(localPlayerId, item.Index);
+		elseif (remains_HP) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) then
+			ExposedMembers.GameEvents.HD_FreeTechSwitchHP.Call(localPlayerId, item.Index);
 		end
 	end);
 	uiNode.IconButton:RegisterMouseEnterCallback(function()
 		local localPlayerId = Game.GetLocalPlayer();
 		local player = Players[localPlayerId];
 		local remains_ZH = player:GetProperty(FREE_TECH_KEY_ZH) or 0;
+		local remains_HP = player:GetProperty(FREE_TECH_KEY_HP) or 0;
 		local remains = player:GetProperty(FREE_TECH_KEY) or 0;
 		if (remains_ZH) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) and (GameInfo.Technologies[item.Index].EraType == 'ERA_CLASSICAL') then
 			uiNode.NodeButton:SetToolTipString(Locale.Lookup("LOC_UNCLOCK_FREE_TECH", remains_ZH));
 		elseif (remains) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) then
 			uiNode.NodeButton:SetToolTipString(Locale.Lookup("LOC_UNCLOCK_FREE_TECH", remains));
+		elseif (remains_HP) > 0 and (status ~= ITEM_STATUS.RESEARCHED) and (status ~= ITEM_STATUS.UNREVEALED) and player:GetTechs():CanResearch(item.Index) then
+			uiNode.NodeButton:SetToolTipString(Locale.Lookup("LOC_UNCLOCK_FREE_TECH", remains_HP));
 		end
 	end);
 	uiNode.IconButton:RegisterMouseExitCallback(function()
