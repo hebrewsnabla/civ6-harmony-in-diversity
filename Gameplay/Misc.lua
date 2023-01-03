@@ -472,3 +472,23 @@ GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPer
 		player:SetProperty(FREE_TECH_KEY_ZH, remains + 1);
 	end
 end);
+
+-- Free Tech霍普
+local FREE_TECH_KEY_HP = 'HD_FREE_TECH_HP';
+GameEvents.HD_FreeTechSwitchHP.Add(function (playerId, techId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_TECH_KEY_HP) or 0;
+	local playerTech = player:GetTechs();
+	
+	player:SetProperty(FREE_TECH_KEY_HP, remains - 1);
+	playerTech:SetResearchProgress(techId, playerTech:GetResearchCost(techId));
+end);
+
+GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPersonIndividualId)
+	local player = Players[unitOwner];
+	local HOPPER_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_GRACE_HOPPER'].Index;
+	local remains = player:GetProperty(FREE_TECH_KEY_HP) or 0;
+	if greatPersonIndividualId == HOPPER_INDEX then
+		player:SetProperty(FREE_TECH_KEY_HP, remains + 2);
+	end
+end);

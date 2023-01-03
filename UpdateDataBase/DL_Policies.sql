@@ -492,6 +492,7 @@ values
 delete from ObsoletePolicies where ObsoletePolicy is null or PolicyType in
 	(values	('POLICY_URBAN_PLANNING'), ('POLICY_RETAINERS'), ('POLICY_CARAVANSARIES'), ('POLICY_MILITARY_RESEARCH'), ('POLICY_REVELATION'));
 update ObsoletePolicies set RequiresAvailableGreatPersonClass = null;
+delete from ObsoletePolicies where PolicyType = 'POLICY_BASTIONS' and ObsoletePolicy = 'POLICY_PUBLIC_WORKS';
 insert or replace into ObsoletePolicies
 	(PolicyType,							ObsoletePolicy)
 values

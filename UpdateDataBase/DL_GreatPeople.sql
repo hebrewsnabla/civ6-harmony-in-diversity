@@ -952,3 +952,18 @@ insert or replace into ModifierStrings
 	(ModifierId,												Context,				Text)
 values
 	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING',		'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG');
+--霍普
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GRACE_HOPPER_ACTIVE';
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId,								AttachmentTargetType)
+values
+	('GREAT_PERSON_INDIVIDUAL_GRACE_HOPPER',		'GREATPERSON_GRACE_HOPPER_ACTIVE_HD',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('GREATPERSON_GRACE_HOPPER_ACTIVE_HD',			'MODIFIER_DO_NOTHING');
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('GREATPERSON_GRACE_HOPPER_ACTIVE_HD',						'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_HOPPER');
+delete from GreatPersonIndividuals where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEU_BRIAN_EPSTEIN';
