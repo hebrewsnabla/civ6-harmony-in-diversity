@@ -703,7 +703,7 @@ update Improvements set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', Housing = 1
 update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLate';
 
 -- Coastal Polder (Netherlands)
-update Improvements set ValidAdjacentTerrainAmount = 1, PrereqTech = 'TECH_SHIPBUILDING', PrereqCivic = null where ImprovementType = 'IMPROVEMENT_POLDER';
+update Improvements set ValidAdjacentTerrainAmount = 1, PrereqTech = 'TECH_SAILING', PrereqCivic = null where ImprovementType = 'IMPROVEMENT_POLDER';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_POLDER';
 insert or replace into Improvement_ValidFeatures
 	(ImprovementType,			FeatureType)
@@ -741,7 +741,7 @@ values
 insert or replace into Improvements
 	(ImprovementType,			Name,								PrereqTech,				Description,								PlunderType,		PlunderAmount,	Icon,							TraitType,										Housing,	TilesRequired,	MovementChange)
 values
-	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_CONSTRUCTION',	'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				2);
+	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_IRRIGATION',		'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				2);
 insert or replace into Improvement_ValidFeatures
 	(ImprovementType,			FeatureType)
 values
@@ -753,7 +753,7 @@ insert or replace into Improvement_ValidResources
 	(ImprovementType,			ResourceType)
 select
 	'IMPROVEMENT_LAND_POLDER',	ResourceType
-from Resources where ResourceType in ('RESOURCE_SUGAR','RESOURCE_SAFFRON','RESOURCE_P0K_PAPYRUS');
+from Resources where ResourceType in (select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM' or ImprovementType = 'IMPROVEMENT_PLANTATION');
 insert or replace into Improvement_ValidBuildUnits
 	(ImprovementType,			UnitType)
 values
