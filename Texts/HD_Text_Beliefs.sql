@@ -26,7 +26,7 @@ values
     ("LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                  "+4 [ICON_Faith] Faith for each city following this Religion."),
     ("LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION",                 "+2 [ICON_Science] Science for each city following this Religion."),
     -- ("LOC_PROMOTION_JUST_WAR_DESCRIPTION",                    "+{1_Value} from Papal Primary"),
-    ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +150 Religious Pressure. City-State leveraging costs 20% less. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
+    ("LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "[ICON_ENVOY] Envoys spread +250 Religious Pressure. City-State leveraging costs 20% less. City-States you are Suzerain of provide +2 [ICON_FAITH] Faith and +4 [ICON_GOLD] Gold."),
     ("LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "+3 [ICON_SCIENCE] Science, [ICON_CULTURE] Culture, [ICON_GOLD] Gold, and [ICON_FAITH] Faith for each city following this Religion that has a World Wonder."),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "To the Glory of God"),
     ("LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "-25% [ICON_faith] Faith cost when you patronize a great person. Grant a [ICON_GreatWork_Relic] relic when a great person is fully activated or retired, then grant a [ICON_GreatWork_Relic] relic for every three great people are fully activated or retired."), -- Each time you recruit a great person, gain 50 [ICON_FAVOR] Diplomatic Favor. 
@@ -109,7 +109,7 @@ values
     ("zh_Hans_CN",  "LOC_BELIEF_PILGRIMAGE_DL_DESCRIPTION",                  "每有1个信奉该宗教的城市便+4 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_STEWARDSHIP_DL_DESCRIPTION",                 "每有1个信奉该宗教的城市便+2 [ICON_Science] 科技值。"),
     -- ("zh_Hans_CN",  "LOC_PROMOTION_JUST_WAR_DESCRIPTION",                    "+{1_Value}教皇权威"),
-    ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加150点宗教压力。征兵费用减少20%。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_PAPAL_PRIMACY_DL_DESCRIPTION",               "将一个 [ICON_ENVOY]使者派遣至城邦后，将对该城邦施加250点宗教压力。征兵费用减少20%。每个宗主的城邦提供+2 [ICON_FAITH] 信仰和+4 [ICON_GOLD] 金币。"),
     ("zh_Hans_CN",  "LOC_BELIEF_SACRED_PLACES_DL_DESCRIPTION",               "信仰此宗教且拥有世界奇观的每座城市+3 [ICON_SCIENCE] 科技值、[ICON_CULTURE] 文化值、[ICON_GOLD] 金币和 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_NAME",                   "荣神益人"),
     ("zh_Hans_CN",  "LOC_BELIEF_TO_THE_GLORY_OF_GOD_DL_DESCRIPTION",         "招募伟人-25% [ICON_faith] 信仰值花费。 有一个伟人完全激活或隐退后，获得一个 [ICON_GreatWork_Relic] 遗物，之后每有三位伟人完全激活或隐退后获得一个 [ICON_GreatWork_Relic] 遗物。"), -- 每次招募伟人时，获得50 [ICON_FAVOR] 外交支持。
