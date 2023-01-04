@@ -346,34 +346,34 @@ end);
 -- Religious Settlements
 local RELIGIOUS_SETTLEMENTS_INDEX = GameInfo.Beliefs['BELIEF_RELIGIOUS_SETTLEMENTS'].Index;
 local GREAT_PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
--- Events.CityAddedToMap.Add(function (playerId, cityId, x, y)
--- 	local player = Players[playerId];
--- 	local pantheon = player:GetReligion():GetPantheon();
--- 	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
--- 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
--- 	end
--- end);
-local SETTLER_INDEX = GameInfo.Units['UNIT_SETTLER'].Index;
-Events.CityProductionCompleted.Add(function (playerId, cityId, type, unitId, cancelled)
-	if unitId == nil then
-		return;
-	end
+GameEvents.CityBuilt.Add(function (playerId, cityId, x, y)
 	local player = Players[playerId];
-	local unit = UnitManager.GetUnit(playerId, unitId);
 	local pantheon = player:GetReligion():GetPantheon();
-	if (pantheon == RELIGIOUS_SETTLEMENTS_INDEX) and (unit:GetType() == SETTLER_INDEX) then
+	if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
 	end
 end);
-Events.CityMadePurchase.Add(function (playerId, cityId, x, y, purchaseType, objectType)
-	if (purchaseType == EventSubTypes.UNIT) and (objectType == SETTLER_INDEX) then
-		local player = Players[playerId];
-		local pantheon = player:GetReligion():GetPantheon();
-		if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
-			player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
-		end
-	end
-end);
+-- local SETTLER_INDEX = GameInfo.Units['UNIT_SETTLER'].Index;
+-- Events.CityProductionCompleted.Add(function (playerId, cityId, type, unitId, cancelled)
+-- 	if unitId == nil then
+-- 		return;
+-- 	end
+-- 	local player = Players[playerId];
+-- 	local unit = UnitManager.GetUnit(playerId, unitId);
+-- 	local pantheon = player:GetReligion():GetPantheon();
+-- 	if (pantheon == RELIGIOUS_SETTLEMENTS_INDEX) and (unit:GetType() == SETTLER_INDEX) then
+-- 		player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+-- 	end
+-- end);
+-- Events.CityMadePurchase.Add(function (playerId, cityId, x, y, purchaseType, objectType)
+-- 	if (purchaseType == EventSubTypes.UNIT) and (objectType == SETTLER_INDEX) then
+-- 		local player = Players[playerId];
+-- 		local pantheon = player:GetReligion():GetPantheon();
+-- 		if pantheon == RELIGIOUS_SETTLEMENTS_INDEX then
+-- 			player:GetGreatPeoplePoints():ChangePointsTotal(GREAT_PROPHET_INDEX, 30);
+-- 		end
+-- 	end
+-- end);
 
 -- Free Tech
 local FREE_TECH_KEY = 'HD_FREE_TECH';
@@ -451,3 +451,44 @@ function StrategicCityAddedToMap (playerId, cityId, x, y)
 	end
 end
 Events.CityAddedToMap.Add(StrategicCityAddedToMap);
+
+
+-- Free Tech张衡
+local FREE_TECH_KEY_ZH = 'HD_FREE_TECH_ZH';
+GameEvents.HD_FreeTechSwitchZH.Add(function (playerId, techId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_TECH_KEY_ZH) or 0;
+	local playerTech = player:GetTechs();
+	
+	player:SetProperty(FREE_TECH_KEY_ZH, remains - 1);
+	playerTech:SetResearchProgress(techId, playerTech:GetResearchCost(techId));
+end);
+
+GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPersonIndividualId)
+	local player = Players[unitOwner];
+	local ZHANGHENG_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_ZHANG_HENG'].Index;
+	local remains = player:GetProperty(FREE_TECH_KEY_ZH) or 0;
+	if greatPersonIndividualId == ZHANGHENG_INDEX then
+		player:SetProperty(FREE_TECH_KEY_ZH, remains + 1);
+	end
+end);
+
+-- Free Tech霍普
+local FREE_TECH_KEY_HP = 'HD_FREE_TECH_HP';
+GameEvents.HD_FreeTechSwitchHP.Add(function (playerId, techId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_TECH_KEY_HP) or 0;
+	local playerTech = player:GetTechs();
+	
+	player:SetProperty(FREE_TECH_KEY_HP, remains - 1);
+	playerTech:SetResearchProgress(techId, playerTech:GetResearchCost(techId));
+end);
+
+GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPersonIndividualId)
+	local player = Players[unitOwner];
+	local HOPPER_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_GRACE_HOPPER'].Index;
+	local remains = player:GetProperty(FREE_TECH_KEY_HP) or 0;
+	if greatPersonIndividualId == HOPPER_INDEX then
+		player:SetProperty(FREE_TECH_KEY_HP, remains + 2);
+	end
+end);

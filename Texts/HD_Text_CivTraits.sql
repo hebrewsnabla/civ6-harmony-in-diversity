@@ -37,6 +37,7 @@ values
     ("LOC_TRAIT_CIVILIZATION_BABYLON_NAME",                    		  "Fertile Crescent"),
 	("LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                    "Your Specialty districts provide +1 of the corresponding yield (Harbor provides [ICON_FOOD] Food, Government Plaza provides [ICON_CULTURE] Culture, Entertainment Complex and Water Park provides [ICON_GOLD] Gold) to every Specialty district in cities without the corresponding district."),
     ("LOC_TRAIT_LEADER_HAMMURABI_NAME",                    	  		  "The Code of Hammurabi"),
+    ("LOC_TRAIT_LEADER_FLYING_SQUADRON_NAME",                         "Château de Chenonceau"),
 	("LOC_TRAIT_LEADER_HAMMURABI_XP1_DESCRIPTION",                    "[ICON_TECHBOOSTED] Eurekas provide 94% of the [ICON_SCIENCE] Science for technologies. -50% [ICON_SCIENCE] Science per turn."),
     ("LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "Settling adjacent to Fresh Water and Coast does not provide extra [ICON_HOUSING] Housing. Instead each Farm provides an additional +1 [ICON_HOUSING] Housing, +1 [ICON_Production] Production for every adjacent Observatory, and +1 [ICON_GOLD] Gold. +1 [ICON_AMENITIES] Amenity for every Luxury resource adjacent to the City Center."),
     ("LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "Reveal plots within 6 tiles of the starting plot. Cities within 6 tiles of the [ICON_Capital] Capital gain +10% to all yields, and when founded receive a builder. Non capital cities within 9 tiles and outside 6 tiles of the [ICON_Capital] Capital yields remain usual. Other non capital cities receive -15% to all yields. +5 [ICON_Strength] Combat Strength to units within 6 tiles of the [ICON_Capital] Capital."),
@@ -48,8 +49,8 @@ values
     ("LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "Receive [ICON_SCIENCE] Science and [ICON_CULTURE] Culture equal to 15% of your [ICON_FAITH] Faith generation in cities founded on Hills. Units receive +4 [ICON_STRENGTH] Combat Strength on Hills."),
     ("LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "All Districts (except City Centers) do not remove Forest, Rainforest and Marsh. Receive the following yields for every building and Districts itself on these features: +2 [ICON_Production] Production in Forest, +2 [ICON_Food] Food in Rainforest and +2 [ICON_Science] Science in Marsh. Woods can be planted with the Mysticism civic."),
     ("LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "Mines provide a minor adjacency bonus for all districts, a Culture Bomb of unowned territory, and receive +1 [ICON_CULTURE] Culture. Specialty districts do not receive a minor adjacency bonus for being adjacent to another district."),
-    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION",        "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
-    ("LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Inspiration. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal. Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking. International [ICON_Traderoute] Trade Routes provide +2 [ICON_Culture] culture; this bonus is tripled when the destination is a City-State you are the Suzerain of."),
+    ("LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal.Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."),
+    ("LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "Begin the game with the Writing technology [ICON_TechBoosted] Eureka and Foreign Trade [ICON_CivicBoosted] Inspiration.  Settlers gain +2 [ICON_Movement] Movement and +2 sight range while embarked. Settlers ignore additional [ICON_Movement] Movement costs from embarking and disembarking. International [ICON_Traderoute] Trade Routes provide +2 [ICON_Culture] culture; this bonus is tripled when the destination is a City-State you are the Suzerain of."),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "The Greatest Emperor Ever"),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "When building Ancient and Classical wonders, you may spend Builder charges to complete 15% of the original wonder cost. Builders receive an additional charge and +1 [ICON_Movement] Movement."),
     ("LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "Wisdom of Working People"),
@@ -71,7 +72,7 @@ values
     ("LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_NAME",                      "Guerra Florida"),
     ("LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_DESCRIPTION",               "All Melee units have a chance to capture other civilization's military units by turning them into Builders. Enable Sacrificing the builders, which removes the unit and gains +10 [ICON_Culture] Culture and +10 [ICON_Faith] Faith for each builder charge the unit has."),
     ("LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "Spend Builder charges to complete 20% of the original District cost. Luxury resources provide [ICON_Amenities] Amenity to 2 extra cities. When attacking, military units receive +1 [ICON_Strength] Combat Strength for each different Luxury resource improved across the Nation."),
-    ("LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "Gain 1 level of [ICON_VisLimited] Diplomatic Visibility greater than normal with every civilization that they've met. Receives a free Spy (and extra spy capacity) with the Castles technology. +2 sight range for spies and traders. All spies start with a free promotion."), -- (if already have, can promote again after the first promotion)
+    ("LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "Receives a free Spy (and extra spy capacity) upon unlocking the Castles technology, Political Philosophy civic, or Supply civic. +1 sight range for Trader, Settler, Builder units and Recon units, +3 sight range for spies. All spies start with a free promotion. Gain 1 level of [ICON_VISLIMITED] Diplomatic Visibility greater than normal with every civilization that they've met."), -- (if already have, can promote again after the first promotion)
     ("LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "ALL cities have +15% growth rate, 15% [ICON_Faith] Faith and +1 [ICON_Amenities] Amenity when you are at peace with all other major civilizations. +5 [ICON_Faith] Faith for each civilization (including India) they have met that has founded a Religion and is not currently at war. Opposing civilizations receive double the war weariness for fighting against Gandhi."),
     ("LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "Receives Follower Belief bonuses in a city from each Religion that has at least 1 Follower. Cities gain an [ICON_Amenities] Amenity for every Religion with at least 1 Follower. Missionaries have +2 spreads. +100% Religious pressure from your [ICON_TradeRoute] Trade Routes. +0.5 [ICON_Food] Food per Population for cities with Stepwell."),
     ("LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "Can declare a War of Territorial Expansion after progressing the 'Military Tradition' Civic. Receive a Setter in your capital after progressing the 'Military Training' Civic. +2 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength for the first 10 turns after declaring a War of Territorial Expansion."),
@@ -92,7 +93,14 @@ values
     ("LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                      "+100% Flanking and Support Bonus to all Combat and Religious units. Unit gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn within the borders of cities that follow your Religion. Religious units can ignore Zone of Control."),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                       "Liberate"),
     ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",                "Liberate this unit to give +2 [ICON_PRODUCTION] Production adjacency bonus to this Industrial Zone, and gain 1 [ICON_CITIZEN] citizen if you first do it in a city."),
-    ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "Must be located in the Industrial Zone, and have [ICON_MOVEMENT] Movement left.");
+    ("LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "Must be located in the Industrial Zone, and have [ICON_MOVEMENT] Movement left."),
+    ("LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                     "Gain a copy of all available commemoration effects in each Era."),
+    ("LOC_TRAIT_LEADER_NADER_SHAH_DESCRIPTION",                       "+7 [ICON_STRENGTH] Combat Strength when attacking units or cities with full Health. Upon conquering a city, destroy all its Districts and Buildings and grant yield based on the District type or the required District Type equal to the base [ICON_PRODUCTION] Production cost: Campus, Encampment and Industrial Zone provide [ICON_SCIENCE] Science, Holy Site, Theater Square, Entertainment Complex and Water Park provide [ICON_CULTURE] Culture, others provide 4 times [ICON_GOLD] Gold."),
+    ("LOC_ABILITY_NADER_SHAH_COMBAT_DESCRIPTION",                       "+7 [ICON_Strength] Combat Strength when attacking units or cities with full Health. (Nader Shah)"),
+    ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                     "People of the Earth"),
+    ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "All Districts (Wonders not included) adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith, and Improved tiles adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn adjacent to Mountain tiles."),
+    ("LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",              "+5 [ICON_STRENGTH] Combat Strength when fighting Free Cities or civilizations that are in a Golden or Heroic Age. Cities with an Established [ICON_GOVERNOR] Governor provide +50% experience in combat towards all units trained in this city."),
+    ("LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",                "Gains +50% experience in combat.(Swift Hawk)");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -122,8 +130,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION",       "每座城市都能建造比平常多一个区域（无视 [ICON_Citizen] 人口数量限制）。"), -- 拥有专业化区域的城市+1 [ICON_Science] 科技值和 +1 [ICON_Culture] 文化值。
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HOLY_ROMAN_EMPEROR_DESCRIPTION",               "额外的军事政策槽位。获得影响力点数翻倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDONESIA_NUSANTARA_DESCRIPTION",        "海岸和湖泊单元格可为圣地、学院、工业区和剧院广场提供标准相邻加成。与海岸或湖泊单元格相邻的娱乐中心额外+1 [ICON_AMENITIES] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市在波兰文化炸弹的攻击下失去单元格，则波兰的主流宗教将成为此城的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则直接完成军事工程学科技。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。在友好领土内建成堡垒后对相邻单元格施放文化炸弹，使相邻的单元格+1 [ICON_Production] 生产力和+1 [ICON_Culture] 文化值。拥有寺庙的城市可以训练或购买军事工程师。军事工程师使用次数+2且可以用 [ICON_FAITH] 信仰值购买。"), --相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LITHUANIAN_UNION_DESCRIPTION",                 "圣地和圣地中建筑+30%建造速度并+2 [ICON_FAITH] 信仰值。如城市遭到波兰文化炸弹攻击失去单元格，此城将自动信仰你的主流宗教。每次完成寺庙后，触发军事工程学尤里卡，若军事工程学尤里卡已触发，则完成该科技。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_LIBERTY_DESCRIPTION",             "当前政体的所有军事政策槽位均转为通配符槽位。堡垒对相邻单元格施放文化炸弹，并使相邻单元格+1 [ICON_Production] 生产力和+1 [ICON_Culture] 文化值。拥有寺庙的城市可训练军事工程师。军事工程师+2劳动力且可以用 [ICON_FAITH] 信仰值购买。"), --相邻堡垒的单元格+2 [ICON_Production] 生产力和+2 [ICON_Culture] 文化值
     -- ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度公司"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_NAME",                           "祖国之父"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "您的每个巨作使9个单元格内的外国城市-2忠诚度。外国城市转变为自由城市前，如对您的忠诚度最高，则直接加入您的文明。您建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。可在拥有剧院广场区域的任意城市中开展“爱之审判”项目。"), --埃莉诺的城市中每个巨作可使9个单元格内的外国城市每回合减少2点忠诚度。城市因失去忠诚度而离开另一文明后，如其每回合对埃莉诺的忠诚度最高，则会跳过成为自由城市阶段直接加入埃莉诺的文明。[NEWLINE]可在拥有剧院广场区域的任意城市中开展“马戏与面包”项目。埃莉诺建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。
@@ -134,6 +142,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_NAME",                    		 "新月沃土"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_DESCRIPTION",                    "每个专业化区域给没有该区域的城市提供对应产出（港口提供 [ICON_FOOD] 食物，市政广场提供 [ICON_CULTURE] 文化值，娱乐中心和水上乐园提供 [ICON_GOLD] 金币）：这些城市每有一个专业化区域+1点。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_NAME",                    	 		 "汉谟拉比法典"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_NAME",                         "舍农索城堡"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_XP1_DESCRIPTION",                    "[ICON_TECHBOOSTED] 尤里卡提供科技的94%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "在淡水和海岸旁定居时不提供额外 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "揭示出生点6个单元格内的单元格。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。"),
@@ -145,8 +154,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MENELIK_DESCRIPTION",                          "获得等同于建在丘陵上的城市所产生 [ICON_FAITH] 信仰值15%的 [ICON_SCIENCE] 科技值和 [ICON_CULTURE] 文化值。单位在丘陵上时+4 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。专业化区域与其他区域相邻时不会获得少量相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION",        "在城市中完成特色项目后，可将原始 [ICON_Capital] 首都迁至任意拥有U型港的城市（必须为本方建立）。每个外交区建筑、外交区、市政广场建筑与市政广场区域+1 [ICON_TradeRoute] 贸易路线容量。在拥有市政广场或外交区的城市中建造区域时+50% [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始便激活“写作”科技 [ICON_TechBoosted] 尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 鼓舞。腓尼基建造的海岸城市若与 [ICON_Capital] 首都在同一大陆，则其忠诚度为100%。开拓者上船后，[ICON_Movement] 移动力与视野范围各+2。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。与 [ICON_Capital] 首都在同一大陆的海岸城市忠诚度固定为100。建成市政广场或市政广场建筑、外交区或外交区建筑时皆+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市建造区域时+50% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始时获得“写作”科技 [ICON_TechBoosted] 的尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 的鼓舞。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力，上船后+2[ICON_Movement] 移动力和视野。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "建造远古和古典奇观时，可消耗建造者次数来加速奇观原始建造进程的15%。建造者获得+1使用次数和+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "劳动人民的智慧"),
@@ -156,8 +165,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION",          "对主要文明宣布突袭战争后的10回合内+2 [ICON_Movement] 移动力。拥有驻扎单位的城市每回合的忠诚度+5。宣布突袭战争的 [ICON_STAT_GRIEVANCE] 不满和好战性与正式战争相同。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_BANNOCKBURN_DESCRIPTION",                      "国境内的单位防御时+4 [ICON_Strength] 战斗力。解锁后勤补给市政后即可宣布解放战争。宣布解放战争后的10回合内+100% [ICON_Production] 生产力、+2 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION",     "幸福度为快乐的城市额外+6% [ICON_SCIENCE] 科技值、+6% [ICON_PRODUCTION] 生产力。快乐的城市中每个学院+2 [ICON_GreatScientist] 大科学家点数、每个工业区+2 [ICON_GreatEngineer] 大工程师点数。喜悦的城市获得的上述加成将加倍，欣喜若狂的城市获得的上述加成将变为三倍。学院和工业区+1 [ICON_AMENITIES] 宜居度，且从其他区域获得标准的相邻加成取代少量相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION",             "宣布保卫城邦战争后的10回合内+100% [ICON_FAITH] 信仰值。如城邦的主流宗教与本方相同，则派遣至其处的每名 [ICON_ENVOY] 使者将视为2名（必须拥有1个主流宗教）。战斗胜利后，获得等同于被击杀单位战斗力100%的 [ICON_FAITH] 信仰值（标准速度下）。每级城墙+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS_DESCRIPTION",          "在黄金或英雄时代初期设置着力点时，除原有加成外还将获得提高时代得分的普通时代加成。进入黄金或英雄时代后，可以使用黑暗时代政策。首次进入黄金或英雄时代时获得一个永久的通配符政策槽位。建造防御性建筑时+100% [ICON_Production] 生产力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION",             "派遣使者到主流宗教与你相同的城邦时，每名 [ICON_ENVOY] 使者将视为2名。战斗胜利时，获得被击杀单位战斗力100%的 [ICON_FAITH] 信仰值。宣布保卫城邦战争后的10回合内+100% [ICON_FAITH] 信仰值。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS_DESCRIPTION",          "首次进入黄金或英雄时代时获得一个永久的通配符政策槽位。进入黄金或英雄时代后，可以使用黑暗时代政策。黄金和英雄时代着力点额外获得普通时代的得分加成。所有城墙+100% [ICON_Production] 建造速度。每级城墙+1 [ICON_CULTURE] 文化值和+1 [ICON_FAITH] 信仰值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GREAT_MOUNTAINS_DESCRIPTION",            "公民可在山脉单元格上工作。山脉单元格提供+3 [ICON_PRODUCTION] 生产力。山脉单元格购买费用降低50%。水渠给所在城市的梯田农场+1 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_PACHACUTI_QHAPAQ_NAN_DESCRIPTION",             "所有陆地单位无视丘陵对 [ICON_MOVEMENT] 移动力的减益。起始城市中的每座山脉单元格为国内 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。解锁“对外贸易”市政后可获得印加路网改良设施。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_AMAZON_DESCRIPTION",                     "雨林单元格为学院、商业中心、圣地和剧院广场区域提供+1相邻加成，并为相邻的单元格提供+1魅力（而非通常的-1。）伐木场为相邻工业区提供+1相邻加成。若相邻工业区，雨林单元格 +1 [ICON_PRODUCTION] 生产力。建造在雨林的伐木场 +2 [ICON_CULTURE] 文化。所有区域（除市中心外）不移除雨林。若市中心相邻雨林，+1 [Icon_Faith] 信仰值。"),
@@ -169,7 +178,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GIFTS_FOR_TLATOANI_DESCRIPTION",               "所有近战类型的单位有几率把其他文明的军事单位转化为建造者并俘获。允许将建造者进行活人献祭，将移除目标单位，且其每有一次剩余劳动力获得10点 [ICON_Culture] 文化值和 10点 [ICON_Faith] 信仰值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_NAME",                  "太阳纪"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_LEGEND_FIVE_SUNS_DESCRIPTION",           "使用建造者劳动力来推进20%的区域建设进程。其领土中的奢侈品资源为额外2座城市提供1点 [ICON_Amenities] 宜居度。阿兹特克国土内每种改良的奢侈品资源将为军事单位+1 [ICON_Strength] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "[ICON_VisLimited] 外交能见度比遇到的其他文明高1级。[NEWLINE]解锁“城堡”科技后免费获得1个间谍（并增加1个间谍容量）。间谍和商人+2视野范围。所有间谍初始便可免费获得一次升级机会。"), -- （若已能升级则可在升级后再升级一次）
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION",                  "解锁“城堡”科技、“政治哲学”和“后勤补给”市政各获得1个免费间谍容量和1个免费间谍。所有间谍初始便拥有1次免费升级。商人、开拓者、建造者和侦察单位+1视野范围，间谍+3视野范围。[ICON_VISLIMITED] 外交能见度比遇到的其他文明高1级。"), -- （若已能升级则可在升级后再升级一次）
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MAGNIFICENCES_DESCRIPTION",                    "与剧院广场区域或城堡庄园相邻的改良奢侈品资源提供的 [ICON_CULTURE] 文化值+2。可在拥有剧院广场区域的任意城市中开展“宫廷盛会”项目。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION",                       "与主要文明处于和平时所有城市+15%余粮，15% [ICON_Faith]信仰且+1点 [ICON_AMENITIES] 宜居度。所遇到的文明（包括印度）已创建了宗教且不在战争状态，均会+5信仰值 [ICON_Faith] 。与甘地交战的文明获得双倍厌战情绪。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DHARMA_EXPANSION2_DESCRIPTION",          "从城市中的每个宗教（其须拥有至少1个信徒）获得信徒信仰加成。城市从每个宗教（须有至少1个信徒）获得1点 [ICON_Amenities] 宜居度。传教士的传播次数+2。来自 [ICON_TradeRoute] 贸易路线的宗教压力+100%。拥有梯井的城市每人口+0.5食物 [ICON_Food] 。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ARTHASHASTRA_DESCRIPTION",                     "完成“军事传统”市政后解锁领土扩张战争借口。完成“军事训练”市政后在首都获得一个免费开拓者。宣布领土扩张战争后的10回合内所有单位+2[ICON_MOVEMENT]移动力，+5[ICON_STRENGTH]战斗力。"),
@@ -187,10 +197,17 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。征服一个城市后，所有3个单元格内的单位永久获得+1 [ICON_STRENGTH] 战斗力。"),
     ("zh_Hans_CN",  "LOC_CAESAR_STRENGTH_MODIFIER",      			     		  "+{1_Amount}力来自已征服的城市。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度。建造工业区后获得一个免费的建造者。允许在工业区解放建造者，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在与你的创建的宗教相同宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在信仰你宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                      "解放"),
     ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",               "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。");
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                    "在每个时代额外获得所有着力点加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_NADER_SHAH_DESCRIPTION",                      "进攻满生命值的单位或城市时+7 [ICON_STRENGTH] 战斗力。占领城市时摧毁其所有区域和建筑，并根据区域类型或建筑的前置区域类型获得等同于其基础 [ICON_PRODUCTION] 生产力消耗的产出：学院、军营和工业区提供 [ICON_SCIENCE] 科技值，圣地，剧院广场，娱乐中心和水上乐园提供 [ICON_CULTURE] 文化值，其余区域提供4倍 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_NADER_SHAH_COMBAT_DESCRIPTION",                      "进攻满生命值的单位或城市时+7 [ICON_Strength] 战斗力。（纳迪尔沙阿）"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                    "大地的子民"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",             "所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",             "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",               "获得的战斗经验值+50%。（迅捷之鹰）");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
@@ -211,6 +228,31 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建造港口及建筑和商业及建筑时+30% [ICON_Production] 生产力。港口及建筑为滨海圩田提供1 [ICON_Production] 生产力和2 [ICON_GOLD] 金币，商业及建筑为淤滩圩田提供1 [ICON_Production] 生产力和2 [ICON_GOLD] 金币。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。");
 
+--腓尼基文本更改
+insert or replace into LocalizedText
+    (Language,      Tag,                                                    Text)
+select
+    "zh_Hans_CN",   "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",        "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。与 [ICON_Capital] 首都在同一大陆的海岸城市忠诚度固定为100。建成市政广场或市政广场建筑、外交区或外交区建筑时皆+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市建造区域时+50% [ICON_Production] 生产力。"
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+insert or replace into EnglishText
+    (Tag,                                                  Text)
+select
+    "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",       "Cities (founded by you) with a Cothon gain the unique Move Capital project, which moves the Phoenician [ICON_Capital] Capital to that city. Coastal cities founded by Phoenicia and located on the same continent as the Phoenician [ICON_Capital] Capital are 100% Loyal.Gains +1 [ICON_TradeRoute] Trade Route capacity after building the Government Plaza or any Government Plaza building, Diplomatic Quarter or any Diplomatic Quarter building. +50% [ICON_Production] Production towards [ICON_District] Districts in the city with Government Plaza or Diplomatic Quarter."
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+--------------------------------------------------------------------------------
+
+--美国文本更改
+insert or replace into LocalizedText
+    (Language,      Tag,                                                                     Text)
+select
+    "zh_Hans_CN",   "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",        "当前政体的所有外交政策槽均转为通配符槽位。其政体中每个通配符政策槽位每回合提供+1 [ICON_Favor] 外交支持。平原、平原丘陵、草原、草原丘陵单元格的购买费用降低50%。建成外交区或外交区建筑时皆+1间谍容量。"
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+insert or replace into EnglishText
+    (Tag,                                                                   Text)
+select
+    "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",       "All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.Gains +1 spy capacity after building Diplomatic Quarter or any Diplomatic Quarter building."),
+where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
+--------------------------------------------------------------------------------
 insert or replace into EnglishText
     (Tag,                                                  		Text)
 select

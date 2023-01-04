@@ -110,6 +110,10 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>7A66DB58-B354-4061-8C80-95B638DD6F6C</ModInUse>
     </Criteria>
+    <Criteria id="DLC_Suleiman_Alt">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>F48213B4-56F5-45DD-92F7-AC78E49BDA49</ModInUse>
+    </Criteria>
     <Criteria id="DLC_Persia_Ethiopia">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
       <ModInUse>E2749E9A-8056-45CD-901B-C368C8E83DEB</ModInUse>
@@ -535,6 +539,16 @@
       <File>Assets/Buildings/New_Buildings_128.dds</File>
       <File>Assets/Buildings/New_Buildings_256.dds</File>
     </ImportFiles>
+    <!-- Religious Arm Mode -->
+    <UpdateText id="ReligiousArmMode_FrontendText">
+		<Properties><LoadOrder>16010</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/ConfigText.sql</File>
+	</UpdateText>
+    <UpdateDatabase id="ReligiousArmMode_Config">
+		<Properties><LoadOrder>16010</LoadOrder></Properties>
+		<File>GameModeSupport/ReligiousArmMode/Config.sql</File>
+	</UpdateDatabase>
+
   </FrontEndActions>
   <InGameActions>
     <UpdateAudio id="HD_Audio" criteria="Expansion2">
@@ -1277,6 +1291,10 @@
       <Properties><LoadOrder>16005</LoadOrder></Properties>
       <File>DLCSupport/HD_SALADIN_ALT.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="DL_SULEIMAN_ALT" criteria="DLC_Suleiman_Alt">
+      <Properties><LoadOrder>20000</LoadOrder></Properties>
+      <File>DLCSupport/DL_SULEIMAN_ALT.sql</File>
+    </UpdateDatabase>
     <!-- Main -->
     <UpdateDatabase id="DL_StartBias_Early" criteria="Expansion2">
 		<Properties><LoadOrder>-1</LoadOrder></Properties>
@@ -1351,10 +1369,6 @@
     <UpdateDatabase id="DL_Main_Late" criteria="Expansion2">
       <Properties><LoadOrder>20000</LoadOrder></Properties>
       <File>UpdateDataBase/DL_PostProcess.sql</File>
-    </UpdateDatabase>
-    <UpdateDatabase id="HD_Temp_Remove" criteria="Expansion2">
-      <Properties><LoadOrder>40000</LoadOrder></Properties>
-      <File>UpdateDataBase/BalanceRemove.sql</File>
     </UpdateDatabase>
     <UpdateIcons id="DL_Icons" criteria="Expansion2">
       <Properties><LoadOrder>16016</LoadOrder></Properties>
@@ -1551,6 +1565,10 @@
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_80.dds</File>
 		<File>GameModeSupport/ReligiousArmMode/Assests/ReligiousArm_256.dds</File>
     </ImportFiles>
+    <UpdateDatabase id="ReligiousArm_DatabaseEarly" criteria="Religious_Arm_Mode_Expansion2">
+      <Properties><LoadOrder>100</LoadOrder></Properties>
+      <File>GameModeSupport/ReligiousArmMode/DatabaseEarly.sql</File>
+    </UpdateDatabase>
     <UpdateDatabase id="ReligiousArm_Database" criteria="Religious_Arm_Mode_Expansion2">
       <Properties><LoadOrder>19001</LoadOrder></Properties>
       <File>GameModeSupport/ReligiousArmMode/Database.sql</File>
@@ -1731,7 +1749,10 @@
     <File>GameModeSupport/TestDevMode/HD_Dev.sql</File>
     <File>GameModeSupport/TestDevMode/HD_Texts.sql</File>
 	<!-- Religious Arm Mode -->
+	<File>GameModeSupport/ReligiousArmMode/Config.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/DatabaseEarly.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/Database.sql</File>
+	<File>GameModeSupport/ReligiousArmMode/ConfigText.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/Texts.sql</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_UnitPromotionPopup.lua</File>
 	<File>GameModeSupport/ReligiousArmMode/ReligiousArm_Script.lua</File>
@@ -1996,6 +2017,7 @@
     <File>DLCSupport/DL_Portugal.sql</File>
 	<File>DLCSupport/HD_Ceasar.sql</File>
   <File>DLCSupport/HD_SALADIN_ALT.sql</File>
+  <File>DLCSupport/DL_SULEIMAN_ALT.sql</File>
 	<File>DLCSupport/DL_Persia_Ethiopia.sql</File>
     <!-- Update database -->
     <File>UpdateDataBase/HD_AdjustYields.sql</File>
@@ -2027,7 +2049,6 @@
     <File>UpdateDataBase/DL_Modifiers.sql</File>
     <File>UpdateDataBase/DL_Policies.sql</File>
     <File>UpdateDataBase/DL_PostProcess.sql</File>
-	<File>UpdateDataBase/BalanceRemove.sql</File>
     <File>UpdateDataBase/DL_Projects.sql</File>
     <File>UpdateDataBase/DL_RandomEvents.sql</File>
     <File>UpdateDataBase/DL_Relic_Creator.sql</File>

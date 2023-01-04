@@ -475,6 +475,20 @@ values
     -- ('PROMOTION_HOLD_THE_LINE',     'PROMOTION_LOGISTICS_SUPPLY'),
     ('PROMOTION_SPRINT_HD',         'PROMOTION_LOGISTICS_SUPPLY'),
     ('PROMOTION_SPRINT_HD',         'PROMOTION_CHOKE_POINTS'),
+    --spy
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_TECHNOLOGIST'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_CAT_BURGLAR'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_DEMOLITIONS'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_CON_ARTIST'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_SEDUCTION'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_LINGUIST'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_QUARTERMASTER'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_SMEAR_CAMPAIGN'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_LICENSE_TO_KILL'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_SATCHEL_CHARGES'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_SURVEILLANCE'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_OBSERVER'),
+    -- ('PROMOTION_SPY_SPIN_WEB',      'PROMOTION_SPY_PATHFINDER'),
     --naval melee
     ('PROMOTION_CREEPING_ATTACK',   'PROMOTION_HELMSMAN'),
     ('PROMOTION_AUXILIARY_SHIPS',   'PROMOTION_CREEPING_ATTACK'),
@@ -927,4 +941,117 @@ update UnitPromotions set Column = 3 where UnitPromotionType = 'PROMOTION_PREPAR
 update UnitPromotions set Column = 1 where UnitPromotionType = 'PROMOTION_ROLLING_BARRAGE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_BOMBARDMENT' where UnitPromotion = 'PROMOTION_PREPARATORY_FIRE';
 update UnitPromotionPrereqs set PrereqUnitPromotion = 'PROMOTION_LINE_OF_BATTLE' where UnitPromotion = 'PROMOTION_ROLLING_BARRAGE';
+--------------------------------------------------------------------------------------------------------------
+--SPY-删除游击队领袖、火箭专家、隐秘行动、掩饰和王牌驾驶员等5个间谍升级
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SPY_GUERILLA_LEADER';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SPY_ROCKET_SCIENTIST';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SPY_DISGUISE';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SPY_COVERT_ACTION';
+delete from UnitPromotions where UnitPromotionType = 'PROMOTION_SPY_ACE_DRIVER';
+--SPY-普及王牌驾驶员给玩家的间谍
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                         RunOnce, Permanent, SubjectRequirementSetId)
+values
+    ('HD_SPY_ACE_DRIVER',                           'MODIFIER_PLAYER_UNIT_GRANT_ABILITY', 1,       0,         'PLAYER_IS_HUMAN');
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,           Value)
+values
+    ('HD_SPY_ACE_DRIVER',                   'AbilityType',  'ABILITY_HD_SPY_ACE_DRIVER');
 
+--SPY-新间谍升级-向导/吐丝结网/观察者
+insert or replace into Types
+    (Type,                                          Kind)
+values
+    ('PROMOTION_SPY_PATHFINDER',                    'KIND_PROMOTION'),
+    --('PROMOTION_SPY_SPIN_WEB',                      'KIND_PROMOTION'),
+    ('PROMOTION_SPY_OBSERVER',                      'KIND_PROMOTION');
+insert or replace into UnitPromotions
+    (UnitPromotionType,           Name,                                Description,                                 PromotionClass,    Level,  Column)
+values
+    ('PROMOTION_SPY_PATHFINDER',  'LOC_PROMOTION_SPY_PATHFINDER_NAME', 'LOC_PROMOTION_SPY_PATHFINDER_DESCRIPTION',  'PROMOTION_CLASS_SPY', 1,  NULL),
+    --('PROMOTION_SPY_SPIN_WEB',    'LOC_PROMOTION_SPY_SPIN_WEB_NAME',   'LOC_PROMOTION_SPY_SPIN_WEB_DESCRIPTION',    'PROMOTION_CLASS_SPY', 2,  NULL),
+    ('PROMOTION_SPY_OBSERVER',    'LOC_PROMOTION_SPY_OBSERVER_NAME',   'LOC_PROMOTION_SPY_OBSERVER_DESCRIPTION',    'PROMOTION_CLASS_SPY', 1,  NULL);
+insert or replace into UnitPromotionModifiers
+    (UnitPromotionType,                             ModifierId)
+values
+    ('PROMOTION_SPY_PATHFINDER',                    'HD_SPY_PATHFINDER'),
+    --('PROMOTION_SPY_SPIN_WEB',                      'HD_SPY_SPIN_WEB'),
+    ('PROMOTION_SPY_OBSERVER',                      'HD_SPY_OBSERVER_UNOBSTRUCTED'),
+    ('PROMOTION_SPY_OBSERVER',                      'HD_SPY_OBSERVER_HD_SEE_HIDDEN'),
+    ('PROMOTION_SPY_OBSERVER',                      'HD_SPY_OBSERVER_SPYGLASS_SIGHT');
+--------------------------------------------------------------------------------------------------------------
+--SPY-间谍向导相关的的范围加速代码，观察者的视野代码
+
+insert or replace into Modifiers
+    (ModifierId,                                    ModifierType,                                       Permanent,      SubjectRequirementSetId)
+values
+    ('HD_SPY_PATHFINDER',                           'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',              null,           'HD_AOE_REQUIRES_SPY_PATHFINDER'),
+    ('HD_SPY_PATHFINDER_MOVEMENT',                  'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',             0,              NULL),
+    ('HD_SPY_OBSERVER_UNOBSTRUCTED',                'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',               1,              NULL),
+    ('HD_SPY_OBSERVER_HD_SEE_HIDDEN',               'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',               1,              NULL),    
+    ('HD_SPY_OBSERVER_SPYGLASS_SIGHT',              'MODIFIER_PLAYER_UNIT_GRANT_ABILITY',               1,              NULL),
+    ('HD_UNOBSTRUCTED_VIEW',                        'MODIFIER_PLAYER_UNIT_ADJUST_SEE_THROUGH_FEATURES', 1,              NULL),    
+    ('HD_UNOBSTRUCTED_VIEW_TERRAIN',                'MODIFIER_PLAYER_UNIT_ADJUST_SEE_THROUGH_TERRAIN',  1,              NULL),
+    ('HD_UNIT_SEE_HIDDEN',                          'MODIFIER_PLAYER_UNIT_ADJUST_SEE_HIDDEN',           1,              NULL);
+insert or replace into ModifierArguments
+    (ModifierId,                                 Name,               Value)
+values
+    ('HD_SPY_PATHFINDER',                        'AbilityType',      'ABILITY_SPY_PATHFINDER_MOVEMENT'),
+    ('HD_SPY_OBSERVER_UNOBSTRUCTED',             'AbilityType',      'ABILITY_HD_UNOBSTRUCTED_VIEW'),
+    ('HD_SPY_OBSERVER_HD_SEE_HIDDEN',            'AbilityType',      'ABILITY_HD_SEE_HIDDEN'),
+    ('HD_UNOBSTRUCTED_VIEW',                     'CanSee',           1),
+    ('HD_UNOBSTRUCTED_VIEW_TERRAIN',             'CanSee',           1),
+    ('HD_UNIT_SEE_HIDDEN',                       'SeeHidden',        1),
+    ('HD_SPY_OBSERVER_SPYGLASS_SIGHT',           'AbilityType',      'ABILITY_SPY_OBSERVER_SPYGLASS_SIGHT'),
+    ('HD_SPY_PATHFINDER_MOVEMENT',               'Amount',           1);
+
+insert or ignore into UnitAbilityModifiers
+    (UnitAbilityType,                                   ModifierId)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'HD_SPY_PATHFINDER_MOVEMENT'),
+    ('ABILITY_HD_UNOBSTRUCTED_VIEW',                    'HD_UNOBSTRUCTED_VIEW'),
+    ('ABILITY_HD_UNOBSTRUCTED_VIEW',                    'HD_UNOBSTRUCTED_VIEW_TERRAIN'),
+    ('ABILITY_HD_SEE_HIDDEN',                           'HD_UNIT_SEE_HIDDEN'),
+    ('ABILITY_SPY_OBSERVER_SPYGLASS_SIGHT',             'HD_SPY_OBSERVER_ADJUST_SIGHT');
+
+
+
+insert or replace into Types
+    (Type,                                              Kind)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'KIND_ABILITY'),
+    ('ABILITY_HD_UNOBSTRUCTED_VIEW',                    'KIND_ABILITY'),
+    ('ABILITY_HD_SEE_HIDDEN',                           'KIND_ABILITY'),
+    ('ABILITY_SPY_OBSERVER_SPYGLASS_SIGHT',             'KIND_ABILITY');
+
+insert or replace into TypeTags
+    (Type,                                              Tag)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',                 'CLASS_ALL_UNITS'),
+    ('ABILITY_HD_UNOBSTRUCTED_VIEW',                    'CLASS_SPY'),
+    ('ABILITY_HD_SEE_HIDDEN',                           'CLASS_SPY'),
+    ('ABILITY_SPY_OBSERVER_SPYGLASS_SIGHT',             'CLASS_SPY');    
+insert or replace into UnitAbilities
+    (UnitAbilityType,                        Name,                                   Description,                                   inactive,   Permanent)
+values
+    ('ABILITY_SPY_PATHFINDER_MOVEMENT',     'LOC_SPY_PATHFINDER_MOVEMENT_NAME',      'LOC_SPY_PATHFINDER_MOVEMENT_DESCRIPTION',     1,          0),
+    ('ABILITY_HD_UNOBSTRUCTED_VIEW',        'LOC_HD_UNOBSTRUCTED_VIEW_NAME',         'LOC_HD_UNOBSTRUCTED_VIEW_DESCRIPTION',        1,          1),
+    ('ABILITY_HD_SEE_HIDDEN',               'LOC_HD_SEE_HIDDEN_NAME',                'LOC_HD_SEE_HIDDEN_DESCRIPTION',               1,          1),
+    ('ABILITY_SPY_OBSERVER_SPYGLASS_SIGHT', 'LOC_SPY_OBSERVER_SPYGLASS_SIGHT_NAME',  'LOC_SPY_OBSERVER_SPYGLASS_SIGHT_DESCRIPTION', 1,          1);
+insert or replace into ModifierStrings
+    (ModifierId,                          Context,        Text)
+values
+    ('HD_SPY_PATHFINDER_MOVEMENT',        'Preview',      '+{1_Amount} {LOC_HD_SPY_PATHFINDER_MOVEMENT_PREVIEW_TEXT}');
+--------------------------------------------------------------------------------------------------------------
+--SPY-吐丝结网-王牌间谍发展下线
+insert or replace into Modifiers
+    (ModifierId,               ModifierType,                                           RunOnce,    Permanent,  SubjectRequirementSetId)
+values
+    ('HD_SPY_SPIN_WEB',        'MODIFIER_PLAYER_UNIT_GRANT_UNIT_WITH_EXPERIENCE',      1,          1,          NULL);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,               Value)  
+values
+    ('HD_SPY_SPIN_WEB',                             'UnitType',          'UNIT_SPY');
+--写其他限制失败，暂且作为2级技能
+--------------------------------------------------------------------------------------------------------------

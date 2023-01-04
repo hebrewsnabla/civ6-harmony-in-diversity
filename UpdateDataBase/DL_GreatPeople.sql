@@ -661,7 +661,7 @@ values
 	('JAKOB_FUGGER_INDUSTRIAL_ADJACENCY',		'Summary',		'LOC_JAKOB_FUGGER_INDUSTRIAL_ADJACENCY'),
 	('ZHOU_DAGUAN_TOKENS',						'Summary',		'LOC_ZHOU_DAGUAN_TOKENS'),
 	('JOHN_JACOB_ASTOR_GOLD',					'Summary',		'LOC_JOHN_JACOB_ASTOR_GOLD'),
-	('MARY_KATHERINE_DEFENSE',					'Summary',		'LOC_MARY_KATHERINE_DEFENSE'),
+--	('MARY_KATHERINE_DEFENSE',					'Summary',		'LOC_MARY_KATHERINE_DEFENSE'),
 	('GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2',	'Summary',		'LOC_GREATPERSON_EXTRA_TRADE_ROUTE_CAPACITY2');
 
 --克罗索斯
@@ -941,3 +941,29 @@ values
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'Experience',	0),
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'UnitType',		'UNIT_CUIRASSIER'),
 	('GREATPERSON_SIMON_BOLIVAR_ACTIVE_1',		'UniqueOverride',	1);
+
+--宾根
+update ModifierArguments set Value = 100 where ModifierId = 'GREATPERSON_FAITH' and Name = 'Amount';
+update GreatPersonIndividuals set ActionCharges = 2 where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_HILDEGARD_OF_BINGEN';
+--张衡
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CEL_NAV' or ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS';
+delete from ModifierArguments where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING' and Name = 'GrantTechIfBoosted';
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING',		'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG');
+--霍普
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREATPERSON_GRACE_HOPPER_ACTIVE';
+insert or replace into GreatPersonIndividualActionModifiers
+	(GreatPersonIndividualType,						ModifierId,								AttachmentTargetType)
+values
+	('GREAT_PERSON_INDIVIDUAL_GRACE_HOPPER',		'GREATPERSON_GRACE_HOPPER_ACTIVE_HD',	'GREAT_PERSON_ACTION_ATTACHMENT_TARGET_PLAYER');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('GREATPERSON_GRACE_HOPPER_ACTIVE_HD',			'MODIFIER_DO_NOTHING');
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('GREATPERSON_GRACE_HOPPER_ACTIVE_HD',						'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_HOPPER');
+delete from GreatPersonIndividuals where GreatPersonIndividualType = 'GREAT_PERSON_INDIVIDUAL_LEU_BRIAN_EPSTEIN';

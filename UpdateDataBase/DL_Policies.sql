@@ -195,13 +195,88 @@ values
 	('GOVERNMENT_DEMOCRACY',			'SLOT_DIPLOMATIC',		2),
 	('GOVERNMENT_DEMOCRACY',			'SLOT_WILDCARD',		2);
 -- Autocracy
-update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId in (
+delete from GovernmentModifiers where ModifierId in (
 	'AUTOCRACY_CAPITAL',
 	'AUTOCRACY_TIER1',
 	'AUTOCRACY_TIER2',
 	'AUTOCRACY_TIER3',
 	'CONSULATE_TIER1',
 	'CHANCERY_TIER2');
+delete from PolicyModifiers where ModifierId in (
+	'AUTOCRACY_CAPITAL',
+	'AUTOCRACY_TIER1',
+	'AUTOCRACY_TIER2',
+	'AUTOCRACY_TIER3',
+	'CONSULATE_TIER1',
+	'CHANCERY_TIER2');
+create temporary table AUTOCRACY_HD
+	(BuildingType text not null,
+	ModifierId text not null,
+	YieldType text not null,
+	primary key(ModifierId));
+
+insert or replace into AUTOCRACY_HD
+	(BuildingType,				ModifierId,						YieldType)
+select
+	BuildingType,				BuildingType || '_FOOD',		'YIELD_FOOD'
+from HD_BuildingTiers where BuildingType = 'BUILDING_PALACE' or ((PrereqDistrict = 'DISTRICT_GOVERNMENT' or PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER') and ReplacesOther = 0) union all
+select
+	BuildingType,				BuildingType || '_PRODUCTION',	'YIELD_PRODUCTION'
+from HD_BuildingTiers where BuildingType = 'BUILDING_PALACE' or ((PrereqDistrict = 'DISTRICT_GOVERNMENT' or PrereqDistrict = 'DISTRICT_DIPLOMATIC_QUARTER') and ReplacesOther = 0);
+
+insert or replace into GovernmentModifiers
+	(GovernmentType,				ModifierId)
+select
+	'GOVERNMENT_AUTOCRACY',			ModifierId
+from AUTOCRACY_HD;
+
+insert or replace into PolicyModifiers
+	(PolicyType,					ModifierId)
+select
+	'POLICY_GOV_AUTOCRACY',			ModifierId
+from AUTOCRACY_HD;
+
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,												SubjectRequirementSetId)
+select
+	ModifierId,						'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		NULL
+from AUTOCRACY_HD;
+
+insert or replace into ModifierArguments
+	(ModifierId,					Name,					Value)
+select
+	ModifierId,						'BuildingType',			BuildingType
+from AUTOCRACY_HD union all
+select
+	ModifierId,						'Amount',				3
+from AUTOCRACY_HD union all
+select
+	ModifierId,						'YieldType',			YieldType
+from AUTOCRACY_HD;
+
+--CLASSICAL_REPUBLIC
+insert or replace into GovernmentModifiers
+	(GovernmentType,					ModifierId)
+values
+	('GOVERNMENT_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_CULTURE'),
+	('GOVERNMENT_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_SCIENCE');
+insert or replace into PolicyModifiers
+	(PolicyType,						ModifierId)
+values
+	('POLICY_GOV_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_CULTURE'),
+	('POLICY_GOV_CLASSICAL_REPUBLIC',	'CLASSICAL_REPUBLIC_SCIENCE');
+insert or replace into Modifiers
+	(ModifierId,					ModifierType,												SubjectRequirementSetId)
+values
+	('CLASSICAL_REPUBLIC_CULTURE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_1_SPECIALTY_DISTRICT'),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE',			'CITY_HAS_1_SPECIALTY_DISTRICT');
+insert or replace into ModifierArguments
+	(ModifierId,					Name,					Value)
+values
+	('CLASSICAL_REPUBLIC_CULTURE',	'YieldType',			'YIELD_CULTURE'),
+	('CLASSICAL_REPUBLIC_CULTURE',	'Amount',				1),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'YieldType',			'YIELD_SCIENCE'),
+	('CLASSICAL_REPUBLIC_SCIENCE',	'Amount',				1);
 -- Monarchy
 update Governments set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where GovernmentType = 'GOVERNMENT_MONARCHY';
 delete from GovernmentModifiers where GovernmentType = 'GOVERNMENT_MONARCHY' and ModifierId in (
@@ -417,6 +492,7 @@ values
 delete from ObsoletePolicies where ObsoletePolicy is null or PolicyType in
 	(values	('POLICY_URBAN_PLANNING'), ('POLICY_RETAINERS'), ('POLICY_CARAVANSARIES'), ('POLICY_MILITARY_RESEARCH'), ('POLICY_REVELATION'));
 update ObsoletePolicies set RequiresAvailableGreatPersonClass = null;
+delete from ObsoletePolicies where PolicyType = 'POLICY_BASTIONS' and ObsoletePolicy = 'POLICY_PUBLIC_WORKS';
 insert or replace into ObsoletePolicies
 	(PolicyType,							ObsoletePolicy)
 values
@@ -1225,12 +1301,12 @@ values
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY',								'ModifierId',					'WRESTING_AND_MANEUVERS_ARENA_AMENITY_MODIFIER'),
 	('WRESTING_AND_MANEUVERS_ARENA_AMENITY_MODIFIER',						'Amount',										2),
 	('WALLS_EARLY_HOUSING',													'Amount',						2),
-	('ANCIENTRENAISSANCEWONDER',											'Amount',						15),
+	('ANCIENTRENAISSANCEWONDER',											'Amount',						25),
 	('ANCIENTRENAISSANCEWONDER',											'IsWonder',						1),
 	('ANCIENTRENAISSANCEWONDER',											'StartEra',						'ERA_ANCIENT'),
 	('ANCIENTRENAISSANCEWONDER',											'EndEra',						'ERA_RENAISSANCE'),
 	('POLICY_WONDER_LESS_GOLD',												'YieldType',					'YIELD_GOLD'),
-	('POLICY_WONDER_LESS_GOLD',												'Amount',						-50),
+	('POLICY_WONDER_LESS_GOLD',												'Amount',						-25),
 	('DRILL_EXPERIENCE',													'Amount',						50),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS',										'ModifierId',					'COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER'),
 	('COMMERCIAL_HUB_INFLUENCEPOINTS_MODIFIER',								'Amount',						1),

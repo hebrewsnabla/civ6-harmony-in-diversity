@@ -142,7 +142,7 @@
 	</QueryCriteria> -->
 	<!-- Riligious Arm Mode -->
 	<Parameters>
-		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Riligious_Arm" Name="LOC_GAMEMODE_RILIGIOUS_ARM_NAME" Description="LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RILIGIOUS_ARM" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="200"/>
+		<Row Key1="Ruleset" Key2="RULESET_EXPANSION_2" ParameterId="GameMode_Riligious_Arm" Name="LOC_GAMEMODE_RILIGIOUS_ARM_NAME" Description="LOC_GAMEMODE_RILIGIOUS_ARM_DESCRIPTION" Domain="bool" DefaultValue="1" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RILIGIOUS_ARM" NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="200"/>
 	</Parameters>
 	<ParameterCriteria>
 		<Row ParameterId="GameMode_Riligious_Arm" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_RANDOM" Operator="NotEquals" ConfigurationValue="1"/>

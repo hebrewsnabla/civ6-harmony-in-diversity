@@ -41,15 +41,16 @@ delete from TraitModifiers where TraitType = 'MINOR_CIV_ANTIOCH_TRAIT' and Modif
 insert or replace into TraitAttachedModifiers 
 	(TraitType,									ModifierId)
 values
-	('MINOR_CIV_ANTIOCH_TRAIT',					'MINOR_CIV_ANTIOCH_GOVERNOR_DISCOUNT');
+	('MINOR_CIV_ANTIOCH_TRAIT',					'MINOR_CIV_ANTIOCH_GOVERNOR_POP_GOLD');
 insert or replace into	Modifiers
 	(ModifierId,								ModifierType,													SubjectRequirementSetId)
 values
-	('MINOR_CIV_ANTIOCH_GOVERNOR_DISCOUNT',		'MODIFIER_PLAYER_CITIES_ADJUST_ALL_BUILDINGS_PURCHASE_COST',	'CITY_HAS_GOVERNOR_REQUIREMENTS');
+	('MINOR_CIV_ANTIOCH_GOVERNOR_POP_GOLD',		'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION',		'CITY_HAS_GOVERNOR_REQUIREMENTS');
 insert or replace into	ModifierArguments
 	(ModifierId, 								Name,			Value)
 values
-	('MINOR_CIV_ANTIOCH_GOVERNOR_DISCOUNT',		'Amount',		15);
+	('MINOR_CIV_ANTIOCH_GOVERNOR_POP_GOLD',		'Amount',		2),
+	('MINOR_CIV_ANTIOCH_GOVERNOR_POP_GOLD',		'YieldType',	'YIELD_GOLD');
 
 -- Bandar Brunei (Jakarta)
 delete from TraitModifiers where TraitType = 'MINOR_CIV_JAKARTA_TRAIT';

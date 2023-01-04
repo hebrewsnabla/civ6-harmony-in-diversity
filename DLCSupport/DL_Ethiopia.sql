@@ -57,8 +57,8 @@ insert or ignore into RequirementSets(RequirementSetId, RequirementSetType)value
 update Policies set Description = 'LOC_POLICY_CHARISMATIC_LEADER_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_CHARISMATIC_LEADER';
 update Policies set Description = 'LOC_POLICY_DIPLOMATIC_LEAGUE_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_DIPLOMATIC_LEAGUE';
 update Policies set Description = 'LOC_POLICY_GUNBOAT_DIPLOMACY_ETHIOPIA_DESCRIPTION' where PolicyType = 'POLICY_GUNBOAT_DIPLOMACY';
-update Traits set Description = 'LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_ETHIOPIA_DESCRIPTION' where TraitType = 'TRAIT_LEADER_FOUNDER_CARTHAGE';
 
+--外交区建筑提升政策卡收益
 insert or replace into PolicyModifiers  
     (PolicyType,                    ModifierId)
 values 
@@ -104,6 +104,103 @@ values
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_AWARD_ONE_INFLUENCE_TOKEN';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_DELEGATION_FAVOR';
 -- delete from DistrictModifiers where DistrictType = 'DISTRICT_DIPLOMATIC_QUARTER' and ModifierId = 'DIPLOMATIC_QUARTER_EMBASSY_FAVOR';
+-----------------------------------------------------------------------
+--领事馆/外交办间谍改动
+insert or replace into BuildingModifiers
+    (BuildingType,                          ModifierId)
+values
+    ('BUILDING_CHANCERY',                  'CHANCERY_OFFENSIVESPYTIME'),
+    ('BUILDING_CHANCERY',                  'CHANCERY_SPYPRODUCTION'),
+    ('BUILDING_CONSULATE',                 'CONSULATE_SPYPRODUCTION'),
+    ('BUILDING_CONSULATE',                 'CONSULATE_SPY_UNLIMITED_PROMOTION');
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                                           SubjectRequirementSetId)
+values
+    ('CHANCERY_OFFENSIVESPYTIME',          'MODIFIER_PLAYER_UNITS_ADJUST_SPY_OFFENSIVE_OPERATION_TIME',            'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS'),
+    ('CHANCERY_SPYPRODUCTION',             'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION',                        Null),
+    ('CONSULATE_SPYPRODUCTION',            'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',                         'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS'),
+    ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'MODIFIER_PLAYER_UNIT_GRANT_UNLIMITED_PROMOTION_CHOICES',               'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+    (ModifierId,                            Name,               Value)
+values  
+    ('CHANCERY_OFFENSIVESPYTIME',          'ReductionPercent', 25),
+    ('CHANCERY_SPYPRODUCTION',             'UnitType',         'UNIT_SPY'),
+    ('CHANCERY_SPYPRODUCTION',             'Amount',           50),
+    ('CONSULATE_SPYPRODUCTION',            'UnitType',         'UNIT_SPY'),
+    ('CONSULATE_SPYPRODUCTION',            'Amount',           50),
+    ('CONSULATE_SPY_UNLIMITED_PROMOTION',  'UnitType',         'UNIT_SPY');
+
+   
+--外交办所有城市新手间谍升级探员
+  
+insert or replace into BuildingModifiers
+    (BuildingType,                  ModifierId)
+values
+    ('BUILDING_CHANCERY',           'CHANCERY_GRANT_SPY_FREE_PROMOTION');
+
+insert or replace into Modifiers    
+    (ModifierId,                                      ModifierType,                                            SubjectRequirementSetId, Permanent)
+values
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION',             'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',                NULL,                    0),
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER',    'MODIFIER_SINGLE_CITY_GRANT_ABILITY_FOR_TRAINED_UNITS',  NULL,                    1);
+
+insert or replace into ModifierArguments
+    (ModifierId,                                           Name,                     Value)
+values
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION',                  'ModifierId',             'CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER'),
+    ('CHANCERY_GRANT_SPY_FREE_PROMOTION_MODIFIER',         'AbilityType',            'ABILITY_CHANCERY_FERR_PROMOTION');
+
+--间谍身上的外交办免费升级能力设置和tag说明
+
+insert or replace into Types
+    (Type,                                                      Kind)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                         'KIND_ABILITY');
+
+insert or replace into TypeTags
+    (Type,                                                      Tag)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                         'CLASS_SPY');
+
+insert or replace into UnitAbilities (UnitAbilityType, Name, Description, Inactive) 
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',
+    'LOC_ABILITY_CHANCERY_FERR_PROMOTION_NAME',
+    'LOC_ABILITY_CHANCERY_FERR_PROMOTION_DESCRIPTION',
+    1);
+
+insert or replace into UnitAbilityModifiers
+    (UnitAbilityType,                                       ModifierId)
+values
+    ('ABILITY_CHANCERY_FERR_PROMOTION',                     'HETAIROI_FREE_PROMOTION');
+
+--外交办额外间谍容量，本城赠送1个1级间谍
+insert or replace into BuildingModifiers
+    (BuildingType,                              ModifierId)
+values
+    ('BUILDING_CHANCERY',                       'CHANCERY_SPY_CAPACITY'),
+    ('BUILDING_CHANCERY',                       'CHANCERY_ADD_SPY_WITH_PROMOTION');
+insert or replace into Modifiers
+    (ModifierId,                            ModifierType,                                         OwnerRequirementSetId,                              SubjectRequirementSetId)
+values
+    ('CHANCERY_SPY_CAPACITY',              'MODIFIER_PLAYER_GRANT_SPY',                           'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
+--  ('CHANCERY_ADD_SPY_WITH_PROMOTION',    'MODIFIER_SINGLE_CITY_GRANT_UNIT_IN_CITY',             'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS',        NULL),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION',    'MODIFIER_PLAYER_GRANT_UNIT_OF_ABILITY_WITH_MODIFIER', NULL,                                               NULL);
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'CHANCERY_ADD_SPY_WITH_PROMOTION';
+insert or replace into ModifierArguments
+    (ModifierId,                        Name,                       Value)
+values
+    ('CHANCERY_SPY_CAPACITY',           'Amount',                   1),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'UnitPromotionClassType',   'PROMOTION_CLASS_SPY'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'ModifierId',               'HETAIROI_FREE_PROMOTION'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'UnitType',                 'UNIT_SPY'),
+    ('CHANCERY_ADD_SPY_WITH_PROMOTION', 'Amount',                   1);
+
+-----------------------------------------------------------------------
+--外交区地基间谍容量
 
 insert into DistrictModifiers
     (DistrictType,                      ModifierId)
@@ -223,7 +320,6 @@ values
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_TOKENS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_ALLIANCE_POINTS'),
     ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_RCC_DIPLOMATIC_VISIBLE'),
-
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_RCC_DIPLOMATIC_SLOT'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_INFLUENCE_BONUS'),
     ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WPH_DIPLOMATIC_VICTOR_POINTS'),
@@ -373,7 +469,36 @@ values
     ('HD_INDUSTRIAL_SUZERAIN_3_LEADER',         'LeaderType',       'LEADER_MINOR_CIV_INDUSTRIAL'),
     ('REQUIRES_PLAYER_HAS_BUILDING_RCC_OR_WPH',	'RequirementSetId',	'PLAYER_HAS_BUILDING_RCC_OR_WPH_REQUIREMENTS');
 
+-----------------------------------------------------------------------
+--外交办/区域议会中心/世界议会总部的间谍进攻/防守全局加成
+insert or replace into BuildingModifiers 
+    (BuildingType,                                  ModifierId) 
+values
+    ('BUILDING_CHANCERY',                           'CHANCERY_OFFENSE'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE'),
+    ('BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS',   'HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE'),
+    ('BUILDING_HD_REGIONAL_COUNCIL_CENTER',         'HD_REGIONAL_COUNCIL_CENTER_DEFENSE');
 
+insert or replace into Modifiers    
+    (ModifierId,                                    ModifierType,                       SubjectRequirementSetId,    Permanent)
+values
+    ('CHANCERY_OFFENSE',                            'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',    'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',    'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0),
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',          'MODIFIER_PLAYER_ADJUST_SPY_BONUS',                     NULL,   0);
+insert or replace into ModifierArguments
+    (ModifierId,                                        Name,               Value)
+values
+    ('CHANCERY_OFFENSE',                                'Offense',          1),
+    ('CHANCERY_OFFENSE',                                'Amount',           1),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',        'Offense',          1),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_OFFENSE',        'Amount',           3),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',        'Offense',          0),
+    ('HD_WORLD_PARLIAMENT_HEADQUARTERS_DEFENSE',        'Amount',           3), 
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Offense',          0),
+    ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Amount',           3);
+
+-----------------------------------------------------------------------
 insert or replace into AllianceEffects
     (LevelRequirement,      AllianceType,             ModifierID)
 values
@@ -451,6 +576,7 @@ values
     ('ALLIANCE_ADD_SCIENCE_TO_DESTINATION_TRADE_ROUTE_RCC', 'AffectDestination',    1);
 
 -- 适配独裁
+/*
 insert or replace into GovernmentModifiers
     (GovernmentType,            ModifierId)
 values
@@ -467,6 +593,7 @@ insert or replace into ModifierArguments
     (ModifierId,           					Name,       Value)
 values
     ('REGIONAL_COUNCIL_CENTER_TIER3',      'Amount',   2);
+*/
 
 ----------------------------------------------------------------------------------------------------
 -- Ethiopia citystate bonus for diplomacy buildings
@@ -530,3 +657,32 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 select ModifierId||'_CHANCERY', 'CityStatesOnly', 1
 from CityStateInfluenceBonus_HD where Level = 'LARGEST' and IsYieldChange = 1;
 */
+-----------------------------------------------------------------------
+--美国间谍容量
+insert or replace into TraitModifiers 
+    (TraitType,                               ModifierId)          
+values           
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY'),                    
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY'),                        
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY'),
+    ('TRAIT_CIVILIZATION_FOUNDING_FATHERS',   'HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY');
+
+insert or replace into Modifiers
+    (ModifierId,                                                                   ModifierType,                       OwnerRequirementSetId)
+values
+    ('HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY',                         'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_CONSULATE_REQUIREMENTS'),
+    ('HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY',                          'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_CHANCERY_REQUIREMENTS'),             
+    ('HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY',  'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_REQUIREMENTS'), 
+    ('HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY',                'MODIFIER_PLAYER_GRANT_SPY',      'PLAYER_HAS_DISTRICT_DIPLOMATIC_QUARTER_REQUIREMENTS');
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY';
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY';
+insert or replace into ModifierArguments
+    (ModifierId,                                                                    Name,            Value)
+values
+    ('HD_FOUNDING_FATHERS_BUILDING_CONSULATE_SPY_CAPACITY',                         'Amount',        1),
+    ('HD_FOUNDING_FATHERS_BUILDING_CHANCERY_SPY_CAPACITY',                          'Amount',        1),
+    ('HD_FOUNDING_FATHERS_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_SPY_CAPACITY',  'Amount',        1),
+    ('HD_FOUNDING_FATHERS_DISTRICT_DIPLOMATIC_QUARTER_SPY_CAPACITY',                'Amount',        1);

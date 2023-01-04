@@ -1722,26 +1722,75 @@ insert or replace into RequirementSets
     (RequirementSetId,                  RequirementSetType)
 values
     ('DISTRICT_IS_DISTRICT_ACROPOLIS',	'REQUIREMENTSET_TEST_ALL');
+--------------------------------------------------------------------------
+--Catherine De Medici alt 寻欢作乐额外文化
 
 --------------------------------------------------------------------------
---Catherine De Medici
+--Catherine De Medici 黑王后额外视野
 -- delete from TraitModifiers where TraitType = 'FLYING_SQUADRON_TRAIT' and ModifierId = 'UNIQUE_LEADER_SPIES_START_PROMOTED';
 insert or replace into TraitModifiers
 	(TraitType,								ModifierId)
 values
-	('FLYING_SQUADRON_TRAIT',				'SPY_AND_TRADER_BONUS_SIGHT');
+	('FLYING_SQUADRON_TRAIT',				'SPY_BONUS_SIGHT');
 
 insert or replace into Modifiers
-	(ModifierId,							ModifierType,								Permanent)
+	(ModifierId,							ModifierType,					Permanent)
 values
-	('SPY_AND_TRADER_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+	('SPY_BONUS_SIGHT',			'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
 
 insert or replace into ModifierArguments
 	(ModifierId,							Name,			Value)
 values
-	('SPY_AND_TRADER_BONUS_SIGHT',			'AbilityType',	'ABILITY_SPY_AND_TRADER_BONUS_SIGHT');
+	('SPY_BONUS_SIGHT',			 			'AbilityType',	'ABILITY_SPY_BONUS_SIGHT');
+--
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',				'CIVILIAN_AND_RECON_BONUS_SIGHT');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,								Permanent)
+values
+	('CIVILIAN_AND_RECON_BONUS_SIGHT',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1);
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,			Value)
+values
+	('CIVILIAN_AND_RECON_BONUS_SIGHT',	    'AbilityType',	'ABILITY_CIVILIAN_AND_RECON_BONUS_SIGHT');	
 
 ------------------------------------------------------------------------------------------------
+--Catherine De Medici 黑王后额外间谍
+
+insert or replace into TraitModifiers
+	(TraitType,										ModifierId)
+values
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY'),
+	('FLYING_SQUADRON_TRAIT',						'TRAIT_DEFENSIVE_TACTICS_ADD_SPY');
+insert or replace into Modifiers
+	(ModifierId,								ModifierType,								OwnerRequirementSetId,									SubjectRequirementSetId)
+values
+	('TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY',	'MODIFIER_PLAYER_GRANT_SPY',				'PLAYER_HAS_CIVIC_POLITICAL_PHILOSOPHY_REQUIREMENTS',	NULL),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',		'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',	'PLAYER_HAS_CIVIC_POLITICAL_PHILOSOPHY_REQUIREMENTS',	NULL),
+	('TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY',	'MODIFIER_PLAYER_GRANT_SPY',				'PLAYER_HAS_CIVIC_DEFENSIVE_TACTICS_REQUIREMENTS',		NULL),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',			'MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL',	'PLAYER_HAS_CIVIC_DEFENSIVE_TACTICS_REQUIREMENTS',		NULL);
+
+update Modifiers set RunOnce = 1, Permanent = 1 where ModifierId = 'TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY';
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,					Value)
+values
+	('TRAIT_POLITICAL_PHILOSOPHY_SPY_CAPACITY',		'Amount',				1),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',			'UnitType',				'UNIT_SPY'),
+	('TRAIT_POLITICAL_PHILOSOPHY_ADD_SPY',			'Amount',				1),
+	('TRAIT_DEFENSIVE_TACTICS_SPY_CAPACITY',		'Amount',				1),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',				'UnitType',				'UNIT_SPY'),
+	('TRAIT_DEFENSIVE_TACTICS_ADD_SPY',				'Amount',				1);
+
+
+------------------------------------------------------------------------------------------------------------
 -- Ikanda bug in captured cities 
 -- delete from TraitModifiers where ModifierId like 'TRAIT_IKANDA_%';
 
@@ -2269,3 +2318,53 @@ insert or replace into CivilizationTraits
 	(CivilizationType,					TraitType)
 values 
 	('CIVILIZATION_ARABIA',				'TRAIT_CIVILIZATION_UNIT_ARABIAN_MAMLUK');
+
+--马普切
+--ua所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。
+--la与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。
+update ModifierArguments set Value = 5 where ModifierId = 'TRAIT_TOQUI_COMBAT_BONUS_VS_GOLDEN_AGE_CIV';
+delete from TraitModifiers where ModifierId = 'TRAIT_DIMINISH_LOYALTY_IN_ENEMY_CITY';
+update ModifierArguments set Value = 50 where ModifierId = 'TOQUI_GOVERNOR_UNIT_EXPERIENCE';
+delete from TraitModifiers where ModifierId in(
+	'TOQUI_CULTURE_FROM_GOVERNOR',
+	'TOQUI_CULTURE_GOVERNOR_NOT_FOUNDED',
+	'TOQUI_DOMESTIC_LOYALTY',
+	'TOQUI_FOREIGN_LOYALTY',
+	'TOQUI_PRODUCTION_FROM_GOVERNOR',
+	'TOQUI_PRODUCTION_GOVERNOR_NOT_FOUNDED',
+	'TRAIT_TOQUI_UNIT_EXPERIENCE_FROM_GOVERNOR',
+	'TRAIT_TOQUI_UNIT_EXPERIENCE_FROM_GOVERNOR_NOT_FOUNDED'
+);
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_MAPUCHE_TOQUI',	'TOQUI_DISTRICT_FOOD'),
+	('TRAIT_CIVILIZATION_MAPUCHE_TOQUI',	'TOQUI_DISTRICT_FAITH'),
+	('TRAIT_CIVILIZATION_MAPUCHE_TOQUI',	'TOQUI_PLOT_FOOD'),
+	('TRAIT_CIVILIZATION_MAPUCHE_TOQUI',	'TOQUI_PLOT_FAITH'),
+	('TRAIT_CIVILIZATION_MAPUCHE_TOQUI',	'TOQUI_MOUNTAIN_MOVEMENT'),
+	('TRAIT_LEADER_LAUTARO_ABILITY',		'TRAIT_TOQUI_UNIT_EXPERIENCE_FROM_GOVERNOR');
+
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId)
+values
+	('TOQUI_DISTRICT_FOOD',					'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS'),
+	('TOQUI_DISTRICT_FAITH',				'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_ADJACENT_TO_MOUNTAIN_IS_NOT_WONDER_REQUIREMENTS'),
+	('TOQUI_PLOT_FOOD',						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_ADJACENT_TO_MOUNTAIN_IS_IMPROVED_REQUIREMENTS'),
+	('TOQUI_PLOT_FAITH',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_ADJACENT_TO_MOUNTAIN_IS_IMPROVED_REQUIREMENTS'),
+	('TOQUI_MOUNTAIN_MOVEMENT',				'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',			'PLOT_ADJACENT_TO_MOUNTAIN_REQUIREMENTS');
+
+insert or replace into ModifierArguments
+	(ModifierId,							Name,						Value)
+values
+	('TOQUI_DISTRICT_FOOD',					'Amount',					1),
+	('TOQUI_DISTRICT_FOOD',					'YieldType',				'YIELD_FOOD'),
+	('TOQUI_DISTRICT_FAITH',				'Amount',					1),
+	('TOQUI_DISTRICT_FAITH',				'YieldType',				'YIELD_FAITH'),
+	('TOQUI_PLOT_FOOD',						'Amount',					1),
+	('TOQUI_PLOT_FOOD',						'YieldType',				'YIELD_FOOD'),
+	('TOQUI_PLOT_FAITH',					'Amount',					1),
+	('TOQUI_PLOT_FAITH',					'YieldType',				'YIELD_FAITH'),
+	('TOQUI_MOUNTAIN_MOVEMENT',				'Amount',					1);
+
