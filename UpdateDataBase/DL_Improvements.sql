@@ -722,8 +722,8 @@ update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLa
 		(ImprovementType,			YieldType,				YieldChange)
 	values
 		('IMPROVEMENT_POLDER',		'YIELD_FOOD',			1),
-		('IMPROVEMENT_POLDER',		'YIELD_PRODUCTION',		0),
-		('IMPROVEMENT_POLDER',		'YIELD_GOLD',			2);
+		('IMPROVEMENT_POLDER',		'YIELD_PRODUCTION',		1),
+		('IMPROVEMENT_POLDER',		'YIELD_GOLD',			0);
 
 
 	-- feature
@@ -803,8 +803,8 @@ update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLa
 		(ImprovementType,				YieldType,				YieldChange)
 	values
 		('IMPROVEMENT_LAND_POLDER',		'YIELD_FOOD',			1),
-		('IMPROVEMENT_LAND_POLDER',		'YIELD_PRODUCTION',		0),
-		('IMPROVEMENT_LAND_POLDER',		'YIELD_GOLD',			2);
+		('IMPROVEMENT_LAND_POLDER',		'YIELD_PRODUCTION',		1),
+		('IMPROVEMENT_LAND_POLDER',		'YIELD_GOLD',			0);
 
 
 	--feature
