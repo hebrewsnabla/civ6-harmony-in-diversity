@@ -462,7 +462,7 @@ function CavalryKurganFaith (killedPlayerId, killedUnitId, playerId, unitId)
 	local player = Players[killedPlayerId];
 	local unit = UnitManager.GetUnit(killedPlayerId, killedUnitId);
 	for row in GameInfo.UnitPromotions() do
-		if unit:GetExperience():HasPromotion(row.Index) then
+		if (row ~= nil) and (unit ~= nil) and (unit:GetExperience() ~= nil) and (unit:GetExperience():HasPromotion(row.Index)) then
 			if (row.PromotionClass == 'PROMOTION_CLASS_LIGHT_CAVALRY') or (row.PromotionClass == 'PROMOTION_CLASS_HEAVY_CAVALRY') then
 				player:AttachModifierByID('KURGAN_CAVALRY_FAITH');
 			end
@@ -497,3 +497,37 @@ function AttachModifier (playerId, cityId, modifierId)
 	city:AttachModifierByID(modifierId);
 end
 GameEvents.AttachModifierSwitch.Add(AttachModifier);
+
+function PersiaGrantYield (player, prereqDistrict, amount)
+	if (prereqDistrict == 'DISTRICT_CAMPUS') or (prereqDistrict == 'DISTRICT_INDUSTRIAL_ZONE') or (PrereqDistrict == 'DISTRICT_ENCAMPMENT') then
+		player:GetTechs():ChangeCurrentResearchProgress(amount);
+	elseif (prereqDistrict == 'DISTRICT_HOLY_SITE') or (prereqDistrict == 'DISTRICT_THEATER') or (PrereqDistrict == 'DISTRICT_ENTERTAINMENT_COMPLEX') or (prereqDistrict == 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX') then
+		player:GetCulture():ChangeCurrentCulturalProgress(amount);
+	else
+		player:GetTreasury():ChangeGoldBalance(4 * amount);
+	end
+end
+function PersiaCityConquered (newPlayerId, oldPlayerId, newCityId, x, y)
+	local playerConfig = PlayerConfigurations[newPlayerId];
+	local leader = playerConfig:GetLeaderTypeName()
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_NADER_SHAH') then
+		return;
+	end
+	local player = Players[newPlayerId];
+	local city = CityManager.GetCity(newPlayerId, newCityId);
+	local cityBuildings = city:GetBuildings();
+	for row in GameInfo.Buildings() do
+		if cityBuildings:HasBuilding(row.Index) then
+			cityBuildings:RemoveBuilding(row.Index);
+			PersiaGrantYield(player, row.PrereqDistrict, row.Cost);
+		end
+	end
+	local cityDistricts = city:GetDistricts();
+	for row in GameInfo.Districts() do
+		if cityDistricts:HasDistrict(row.Index) and (row.DistrictType ~= 'DISTRICT_WONDER') and (row.DistrictType ~= 'DISTRICT_CITY_CENTER') then
+			cityDistricts:RemoveDistrict(row.Index);
+			PersiaGrantYield(player, row.DistrictType, row.Cost);
+		end
+	end
+end
+GameEvents.CityConquered.Add(PersiaCityConquered);
