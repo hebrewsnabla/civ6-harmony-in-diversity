@@ -635,33 +635,77 @@ values
 update Improvements set MinimumAppeal = 2 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IMPROVEMENT_CHEMAMULL';
 
--- Stepwell (India)
-update Improvement_BonusYieldChanges set PrereqCivic = null, PrereqTech = 'TECH_SANITATION' where ImprovementType = 'IMPROVEMENT_STEPWELL' and YieldType = 'YIELD_FOOD';
-delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_STEPWELL' and ModifierId = 'STEPWELL_FARMADJACENCY_FOOD';
-insert or replace into ImprovementModifiers
-	(ImprovementType,				ModifierId)
-values
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_ADD_CITY_POPULATION_FOOD'),
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_AMENITY_MAX_ONE'),
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_FARM_FOOD'),
-	('IMPROVEMENT_STEPWELL',		'STEPWELL_PLANTATION_FOOD');
-insert or replace into Modifiers
-	(ModifierId,							ModifierType,										SubjectRequirementSetId,												SubjectStackLimit)
-values
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				null,																	1),
-	('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	null,																	1),
-	('STEPWELL_FARM_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_FARM_AND_ADJACENT_TO_OWNER_REQUIREMENTS',			null),
-	('STEPWELL_PLANTATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_PLANTATION_AND_ADJACENT_TO_OWNER_REQUIREMENTS',	null);
-insert or replace into ModifierArguments
-	(ModifierId,									Name,				Value)
-values
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
-	('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
-	('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1),
-	('STEPWELL_FARM_FOOD',							'YieldType',		'YIELD_FOOD'),
-	('STEPWELL_FARM_FOOD',							'Amount',			1),
-	('STEPWELL_PLANTATION_FOOD',					'YieldType',		'YIELD_FOOD'),
-	('STEPWELL_PLANTATION_FOOD',					'Amount',			1);
+-- Stepwell (India) (fox)
+    --pre    
+    delete from Improvement_BonusYieldChanges   
+        where 
+            ImprovementType = 'IMPROVEMENT_STEPWELL'; 
+
+    delete from ImprovementModifiers 
+        where 
+            ImprovementType = 'IMPROVEMENT_STEPWELL'; 
+
+
+    --base yieldchange
+    insert or replace into Improvement_YieldChanges
+        (ImprovementType,	        YieldType,	            YieldChange)
+    values    
+        ('IMPROVEMENT_STEPWELL',    'YIELD_FOOD',	        1),
+        ('IMPROVEMENT_STEPWELL',    'YIELD_PRODUCTION',	    1),
+        ('IMPROVEMENT_STEPWELL',    'YIELD_FAITH',	        0);
+
+
+    --bonus yieldchange
+    insert or replace into Improvement_BonusYieldChanges
+        (ImprovementType,	        YieldType,	            BonusYieldChange,		PrereqCivic)
+    values
+		('IMPROVEMENT_STEPWELL',    'YIELD_FOOD',	        1,						'CIVIC_FEUDALISM'),
+        ('IMPROVEMENT_STEPWELL',    'YIELD_PRODUCTION',	    1,						'CIVIC_DIVINE_RIGHT'),
+        ('IMPROVEMENT_STEPWELL',    'YIELD_FAITH',	        2,						'CIVIC_REFORMED_CHURCH');
+
+	
+	--modifier
+	insert or replace into ImprovementModifiers
+		(ImprovementType,			ModifierId)
+	values
+		('IMPROVEMENT_STEPWELL',	'STEPWELL_ADD_CITY_POPULATION_FOOD'),
+		('IMPROVEMENT_STEPWELL',	'STEPWELL_AMENITY_MAX_ONE'),
+		('IMPROVEMENT_STEPWELL',	'STEPWELL_FARM_FOOD'),
+		('IMPROVEMENT_STEPWELL',	'STEPWELL_PLANTATION_FOOD');
+
+	insert or replace into Modifiers
+		(ModifierId,							ModifierType,										SubjectRequirementSetId,												SubjectStackLimit)
+	values
+		('STEPWELL_ADD_CITY_POPULATION_FOOD',	'MODIFIER_CITY_OWNER_ADJUST_POP_YIELD',				null,																	1),
+		('STEPWELL_AMENITY_MAX_ONE',			'MODIFIER_CITY_OWNER_ADJUST_IMPROVEMENT_AMENITY',	null,																	1),
+		('STEPWELL_FARM_FOOD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_FARM_AND_ADJACENT_TO_OWNER_REQUIREMENTS',			null),
+		('STEPWELL_PLANTATION_FOOD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'PLOT_HAS_IMPROVEMENT_PLANTATION_AND_ADJACENT_TO_OWNER_REQUIREMENTS',	null);
+
+	insert or replace into ModifierArguments
+		(ModifierId,									Name,				Value)
+	values
+		('STEPWELL_ADD_CITY_POPULATION_FOOD',			'YieldType',		'YIELD_FOOD'),
+		('STEPWELL_ADD_CITY_POPULATION_FOOD',			'Amount',			0.5),
+		('STEPWELL_AMENITY_MAX_ONE',					'Amount',			1),
+		('STEPWELL_FARM_FOOD',							'YieldType',		'YIELD_FOOD'),
+		('STEPWELL_FARM_FOOD',							'Amount',			1),
+		('STEPWELL_PLANTATION_FOOD',					'YieldType',		'YIELD_FOOD'),
+		('STEPWELL_PLANTATION_FOOD',					'Amount',			1);
+
+	
+	--adjacency
+	insert or replace into Improvement_Adjacencies
+		(ImprovementType,				YieldChangeId)
+	values
+		('IMPROVEMENT_STEPWELL',		'STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER1'),
+		('IMPROVEMENT_STEPWELL',		'STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER2');
+
+	insert or replace into Adjacency_YieldChanges
+		(ID,											Description,		YieldType,			YieldChange,	AdjacentDistrict,		PrereqCivic,		ObsoleteCivic)
+	values
+		('STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER1',	'Placeholder',		'YIELD_FAITH',		2,				'DISTRICT_HOLY_SITE',	Null,				'CIVIC_THEOLOGY'),
+		('STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER2',	'Placeholder',		'YIELD_FAITH',		4,				'DISTRICT_HOLY_SITE',	'CIVIC_THEOLOGY',	Null);
+
 
 -- Great Wall (China)
 update Improvements_XP2 set BuildOnAdjacentPlot = 1 where ImprovementType = 'IMPROVEMENT_GREAT_WALL';

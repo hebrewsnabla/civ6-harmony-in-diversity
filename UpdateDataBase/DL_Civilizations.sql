@@ -1948,13 +1948,13 @@ values
     insert or replace into ModifierArguments
 	    (ModifierId,					            				Name,				Value)
     values
-	--  ('POLDER_HARBOR_ATTACH',	                				'ModifierId',		'POLDER_PRODUCTION'),
+	  	--('POLDER_HARBOR_ATTACH',	                				'ModifierId',		'POLDER_PRODUCTION'),
         ('POLDER_HARBOR_TIER_1_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
 	    ('POLDER_HARBOR_TIER_2_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
         ('POLDER_HARBOR_TIER_3_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
 	    ('POLDER_PRODUCTION',			            				'YieldType',		'YIELD_PRODUCTION,YIELD_GOLD'),
 	    ('POLDER_PRODUCTION',			            				'Amount',			'1,2'),
-	--	('LAND_POLDER_COMMERCIAL_HUB_ATTACH',	                	'ModifierId',		'LAND_POLDER_PRODUCTION'),
+		--('LAND_POLDER_COMMERCIAL_HUB_ATTACH',	                	'ModifierId',		'LAND_POLDER_PRODUCTION'),
         ('LAND_POLDER_COMMERCIAL_HUB_TIER_1_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
 	    ('LAND_POLDER_COMMERCIAL_HUB_TIER_2_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
         ('LAND_POLDER_COMMERCIAL_HUB_TIER_3_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
