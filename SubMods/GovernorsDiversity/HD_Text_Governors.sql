@@ -31,7 +31,7 @@ values
     ("LOC_GOVERNOR_PROMOTION_COMMANDER_DESCRIPTION",                              "+5 [ICON_Strength] Combat Strength for units within 9 tiles."),
     ("LOC_VICTOR_COMMANDER_STRENGTH_BUFF_PREVIEW_TEXT",                           "from Commander"),
     -- Bishop
-    ("LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "Establishes in 3 turns. +100% Religious Pressure from the city. [ICON_Citizen] Citizens in the city produce +1 [ICON_FAITH] Faith."),
+    ("LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "Establishes in 3 turns. +100% Religious Pressure from the city. [ICON_Citizen] Citizens in the city produce +2 [ICON_FAITH] Faith."),
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME",                     "Sayyid"),
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION",              "Apostle, Missionary, Guru and Inquistor trained in the city have +1 [ICON_MOVEMENT] Movement and +1 Charge. Warrior Monk trained in the city have +1 [ICON_MOVEMENT] Movement."),
     ("LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME",                   "Justice by Faith"),
@@ -130,7 +130,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_COMMANDER_DESCRIPTION",                              "9个单元格内的单位+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_VICTOR_COMMANDER_STRENGTH_BUFF_PREVIEW_TEXT",                           "来自指挥官"),
     -- 主教
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "此城对相邻城市释放的宗教压力强度加倍。每个公民产出1 [ICON_FAITH] 信仰。就职需要3回合。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION",                        "此城对相邻城市释放的宗教压力强度加倍。每个公民产出2 [ICON_FAITH] 信仰。就职需要3回合。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_NAME",                     "赛义德"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_GRAND_INQUISITOR_DESCRIPTION",              "此城训练的使徒、传教士、上师、审判+1 [ICON_MOVEMENT] 移动力，+1使用次数。此城训练的武僧+1 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_CARDINAL_LAYING_ON_OF_HANDS_NAME",                   "因信称义"),
