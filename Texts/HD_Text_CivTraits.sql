@@ -100,7 +100,11 @@ values
     ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                     "People of the Earth"),
     ("LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "All Districts (Wonders not included) adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith, and Improved tiles adjacent to Mountain tiles provide +1 [ICON_FOOD] Food and +1 [ICON_FAITH] Faith. Gains 1 bonus [ICON_MOVEMENT] Movement if it begins a turn adjacent to Mountain tiles."),
     ("LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",              "+5 [ICON_STRENGTH] Combat Strength when fighting Free Cities or civilizations that are in a Golden or Heroic Age. Cities with an Established [ICON_GOVERNOR] Governor provide +50% experience in combat towards all units trained in this city."),
-    ("LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",                "Gains +50% experience in combat.(Swift Hawk)");
+    ("LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",                "Gains +50% experience in combat.(Swift Hawk)"),
+    ("LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY",  "The Taika Era Reforms ability gives large adjacency bonuses to Japan’s districts. Tokugawa’s ability also greatly increases Domestic [ICON_TradeRoute] Trade Route’s yields for every district. But be aware that International [ICON_TradeRoute] Trade Routes are much weaker. The Electronics Factory will help him towards a Culture or Science Victory."),
+    ("LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",                "Taika Era Reforms"),
+    ("LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                             "Kamakura Bakufu"),
+    ("LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "International [ICON_TradeRoute] Trade Routes receive -25% Yield and [ICON_Tourism] Tourism, but Domestic [ICON_TradeRoute] Trade Routes provide +1 [ICON_Culture] Culture, +1  [ICON_Science] Science, and +2  [ICON_Gold] Gold for every Specialty District at the Destination.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -207,7 +211,12 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                    "大地的子民"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",             "所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",             "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",               "获得的战斗经验值+50%。（迅捷之鹰）");
+    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",               "获得的战斗经验值+50%。（迅捷之鹰）"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                         "东印度之家"),
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY", "“大化改新”能力可以为日本区域带来大量相邻加成。德川家康的特色能力是提高了每个区域从国内 [ICON_TradeRoute] 贸易路线获得的收益。但要注意，国际 [ICON_TradeRoute] 贸易路线较为孱弱。“电子厂”将帮助他迈向文化或科技胜利。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",               "大化改新"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                            "镰仓幕府"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                     "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

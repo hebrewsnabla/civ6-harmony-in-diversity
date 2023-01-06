@@ -47,7 +47,7 @@ update Project_GreatPersonPoints set PointProgressionParam1 = 900
 	or ProjectType = 'PROJECT_WATER_CARNIVAL'
 ;
 
-delete from Project_GreatPersonPoints where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+update Projects set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
 update Project_YieldConversions set PercentOfProductionRate = PercentOfProductionRate * 2 where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
 
 -- update Project_GreatPersonPoints set Points = 10

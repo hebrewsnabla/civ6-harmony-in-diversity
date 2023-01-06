@@ -20,13 +20,13 @@ values
     ("LOC_POLICY_REVELATION_DESCRIPTION",                                             "+4 [ICON_GreatProphet] Great Prophet points per turn."),
     ("LOC_POLICY_STRATEGOS_DESCRIPTION",                                              "+4 [ICON_GreatGeneral] Great General points per turn."),
     ("LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "+8 [ICON_GreatMusician] Great Musician points per turn. +8 [ICON_GreatMusician] Great Musician points per turn for every Broadcast Center."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "District-based project which provides this city with full [ICON_POWER] Power while active."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "District-based project which provides [ICON_CULTURE] Culture every turn."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "District-based project which provides [ICON_GOLD] Gold every turn."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "District-based project which provides [ICON_SCIENCE] Science every turn."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "District-based project which provides [ICON_FAITH] Faith and +100% Religious Pressure every turn."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "District-based project which provides [ICON_GOLD] Gold every turn."),
-    ("LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "District-based project which provides a large amount of [ICON_GOLD] Gold every turn.");
+    ("LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "Unlock after Historical Philosophy. District-based project which provides this city with full [ICON_POWER] Power while active. It also provides [ICON_GREATENGINEER] Great Engineer points once finished."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "Unlock after Historical Philosophy. District-based project which provides [ICON_CULTURE] Culture every turn. It also provides a small amount of [ICON_GREATWRITER] Great Writer, [ICON_GREATARTIST] Great Artist, and [ICON_GREATMUSICIAN] Great Musician points once finished."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "Unlock after Historical Philosophy. District-based project which provides [ICON_GOLD] Gold every turn. It also provides [ICON_GREATGENERAL] Great General points once finished."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "Unlock after Historical Philosophy. District-based project which provides [ICON_SCIENCE] Science every turn. It also provides [ICON_GREATSCIENTIST] Great Scientist points once finished."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "Unlock after Historical Philosophy. District-based project which provides [ICON_FAITH] Faith and +100% Religious Pressure every turn. Awards [ICON_GREATPROPHET] Great Prophet points once finished. "),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "Unlock after Historical Philosophy. District-based project which provides [ICON_GOLD] Gold every turn. It also provides [ICON_GREATADMIRAL] Great Admiral points once finished."),
+    ("LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "Unlock after Historical Philosophy. District-based project which provides a large amount of [ICON_GOLD] Gold every turn. It also provides [ICON_GREATMERCHANT] Great Merchant points once finished.");
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -49,11 +49,11 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_REVELATION_DESCRIPTION",                                             "每回合+4 [ICON_GreatProphet] 大预言家点数。"),
     ("zh_Hans_CN",  "LOC_POLICY_STRATEGOS_DESCRIPTION",                                              "每回合+4 [ICON_GreatGeneral] 大将军点数。"),
     ("zh_Hans_CN",  "LOC_POLICY_SYMPHONIES_DESCRIPTION_XP2",                                         "每回合的 [ICON_GreatMusician] 大音乐家点数+8。每有一座广播中心，每回合的 [ICON_GreatMusician] 大音乐家点数便+8。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "基于区域的项目，启动后可向此城市提供完整 [ICON_POWER] 电力供给。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "基于区域的项目，每回合提供 [ICON_Culture] 文化值。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "基于区域的项目，每回合提供 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "基于区域的项目，每回合提供 [ICON_SCIENCE] 科技值。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "基于区域的项目，每回合提供 [ICON_FAITH] 信仰值、+100%宗教压力。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "基于区域的项目，每回合提供 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "基于区域的项目，每回合提供大量 [ICON_GOLD] 金币。");
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION",           "基于区域的项目，“历史哲学”解锁，启动后可向此城市提供完整 [ICON_POWER] 电力供给。完成时可提供 [ICON_GREATENGINEER] 大工程师点数"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION",                              "基于区域的项目，“历史哲学”解锁，每回合提供 [ICON_Culture] 文化值。完成后提供少量 [ICON_GREATWRITER] 大作家、[ICON_GREATARTIST] 大艺术家和 [ICON_GREATMUSICIAN] 大音乐家点数。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_ENCAMPMENT_DESCRIPTION",                           "基于区域的项目，“历史哲学”解锁，每回合提供 [ICON_GOLD] 金币。完成后提供 [ICON_GREATGENERAL] 大将军点数。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION",                               "基于区域的项目，“历史哲学”解锁，每回合提供 [ICON_SCIENCE] 科技值。完成后提供 [ICON_GREATSCIENTIST] 大科学家点数。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_EXPANSION2_DESCRIPTION",                 "基于区域的项目，“历史哲学”解锁，每回合提供 [ICON_FAITH] 信仰值、+100%宗教压力。完成后奖励 [ICON_GREATPROPHET] 大预言家点数。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_HARBOR_DESCRIPTION",                               "基于区域的项目，“历史哲学”解锁，每回合提供 [ICON_GOLD] 金币。完成后提供 [ICON_GREATADMIRAL] 海军统帅点数。"),
+    ("zh_Hans_CN",  "LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION",                       "基于区域的项目，“历史哲学”解锁，每回合提供大量 [ICON_GOLD] 金币。完成后提供 [ICON_GREATMERCHANT] 大商人点数。");
 
