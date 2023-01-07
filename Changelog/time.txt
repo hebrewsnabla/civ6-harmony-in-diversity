@@ -258,7 +258,7 @@ end order
 [棱堡]：取消被公共工程取代。
 [阿帕达纳宫]：每建成1个奇观便获得1个 [ICON_ENVOY] 使者。
 [大津巴布韦]：新增 +1 [ICON_TRADEROUTE] 贸易路线容量。获得1个商人单位。 
-[谒见厅]：所有城市+1 [ICON_AMENITIES] 宜居度、+2 [ICON_HOUSING] 住房、+15%人口增长速度。本城建造奇观、区域和建筑时+30% [锤] 生产力，可以无视 [ICON_CITIZEN] 人口限制额外建造1个区域。奖励1个 [ICON_GOVERNOR] 总督头衔。
+[谒见厅]：所有城市+1 [ICON_AMENITIES] 宜居度、+2 [ICON_HOUSING] 住房、+15%人口增长速度。本城建造奇观、区域和建筑时加速30%，可以无视 [ICON_CITIZEN] 人口限制额外建造1个区域。奖励1个 [ICON_GOVERNOR] 总督头衔。
 [化工厂]：增加基础产出2[锤]。
 [祭坛]：所在城市每位 [ICON_CITIZEN] 公民 +0.5 [ICON_FAITH] 信仰。允许购买传教士（只能使用 [ICON_FAITH] 信仰值进行购买）。
 [边关]：每回合消耗2 [ICON_RESOURCE_HORSES] 马和2 [ICON_RESOURCE_IRON] 铁额外提供4点影响力点数。
