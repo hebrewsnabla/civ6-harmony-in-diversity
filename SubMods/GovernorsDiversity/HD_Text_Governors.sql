@@ -44,9 +44,9 @@ values
     -- Magnus
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "+20% Growth in the city. Domestic [ICON_TradeRoute] Trade Routes ending here provide +4 [ICON_Food] Food to their starting city."), 
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME",                "Ground Breaker"),
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "+50% construction speed when constructing Districts and buildings in the city. Allow the city to build one more district than the [ICON_Citizen] Population limit allows."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "+30% construction speed when constructing Districts and buildings in the city. Allow the city to build one more district than the [ICON_Citizen] Population limit allows."),
     ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "Agricultural Overseer"), -- Quan'Nong
-    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION",       "+15% [ICON_Food] Food and +15% [ICON_Production] Production in the city."),
+    ("LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION",       "+25% [ICON_Food] Food and +25% [ICON_Production] Production in the city."),
     ("LOC_BUILDING_DUMMY_MAGNUS_NAME",                                            "Elected Officer Magnus"),
     ("LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION",                                     "Created when Governor Magnus with the Elected Officer title establishes within 9 tiles."),
     ("LOC_BUILDING_DUMMY_NO_MAGNUS_NAME",                                         "PlaceHolder"),
@@ -143,9 +143,9 @@ values
     -- 老马
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_SURPLUS_LOGISTICS_DESCRIPTION",     "城市的 [ICON_Food] 增长+20%。以此处为终点的 [ICON_TradeRoute] 贸易路线（属于玩家）为起源城市+4 [ICON_Food] 食物。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_NAME",                "大兴土木"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "在城市中建造区域和建筑时加速50%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_GROUNDBREAKER_DESCRIPTION",         "在城市中建造区域和建筑时加速30%。该城市可无视 [ICON_Citizen] 人口数量限制再建造一个区域。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_NAME",              "督农制"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION",       "城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+15%。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_RESOURCE_MANAGER_BLACK_MARKETEER_DESCRIPTION",       "城市的 [ICON_Food] 食物和 [ICON_Production] 生产力+25%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_MAGNUS_NAME",                                            "总务官马格努斯"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_MAGNUS_DESCRIPTION",                                     "当拥有总务官头衔的马格努斯总督在9环内就职时会自动创建。"),
     ("zh_Hans_CN",  "LOC_BUILDING_DUMMY_NO_MAGNUS_NAME",                                         "请忽略"),
