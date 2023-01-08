@@ -150,7 +150,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FLYING_SQUADRON_NAME",                         "舍农索城堡"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HAMMURABI_XP1_DESCRIPTION",                    "[ICON_TECHBOOSTED] 尤里卡提供科技的94%的 [ICON_SCIENCE] 科技值。每回合的 [ICON_SCIENCE] 科技值-50%。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAYAB_DESCRIPTION",                      "在淡水和海岸旁定居时不提供额外 [ICON_HOUSING] 住房。但农场提供额外+1 [ICON_HOUSING] 住房和+1 [ICON_GOLD] 金币，且每与一座天文台相邻则+1 [ICON_Production] 生产力。每有一个奢侈品与市中心相邻，则+1 [ICON_AMENITIES] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "揭示出生点6个单元格内的单元格。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_MUTAL_DESCRIPTION",                            "揭示出生点6个单元格内的单元格。[ICON_Capital] 首都6个单元格范围内城市所有产出+10%，且建成时将获得1名建造者。[ICON_Capital] 首都9个单元格范围内6个单元格外的非首都城市所有产出不变。其他非首都城市所有产出-15%。[ICON_Capital] 首都6个单元格范围内的单位+5 [ICON_Strength] 战斗力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TRAJANS_COLUMN_DESCRIPTION",                   "所有城市建立时赠送纪念碑。[NEWLINE]建造市中心建筑时+100%建造速度。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAORI_MANA_DESCRIPTION",                 "游戏初始便解锁“航海术”与“造船术”科技，同时拥有进入海洋单元格的能力。水运单位+2 [ICON_Movement] 移动力。未改良的树林与雨林提供+1 [ICON_PRODUCTION] 生产力。“行政部门”额外提供+1 [ICON_PRODUCTION] 生产力、“重商主义”额外提供+1 [ICON_PRODUCTION] 生产力、“保护地球”额外+1 [ICON_PRODUCTION] 生产力、“环境保护主义”额外提供+1 [ICON_PRODUCTION] 生产力。渔船提供+1 [ICON_FOOD] 食物，并向相邻单元格投放文化炸弹。无法获得 [ICON_GreatWriter] 大作家。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ITERU_EXPANSION2_DESCRIPTION",           "学院和剧院广场与河流相邻获得大量相邻加成。在相邻河流单元格建造区域与奇观时+15%建造速度。境内不会受到洪水的损害。每完成一个奇观，获得一个免费的建造者。"),
