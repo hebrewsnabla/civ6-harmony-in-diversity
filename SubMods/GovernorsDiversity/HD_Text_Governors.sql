@@ -173,7 +173,7 @@ values
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_NAME",                              "伪装"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_LOCAL_INFORMANTS_DESCRIPTION",                       "就职时使我方间谍出击时+2级成功率，执行任务的时间缩短25%。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_DESCRIPTION",            "立即给每个已相遇城邦+1 [ICON_Envoy] 使者。每个宗主的城邦提供+1 [ICON_SCIENCE] 科技，+1 [ICON_CULTURE] 文化，+1 [ICON_FAITH] 信仰和+1 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "就职时使我方间谍出击时+2级成功率，领土内的敌方间谍等级下降2级。派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。"),
+    ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_PUPPETEER_DESCRIPTION",                   "就职时使我方间谍出击时+2级成功率，领土内的敌方间谍下降2级。派遣到城邦后使当地的 [ICON_Envoy] 使者数量加倍。"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_FOREIGN_INVESTOR_NAME",                   "朝贡"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_NAME",                          "外国投资者"),
     ("zh_Hans_CN",  "LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION",                   "就职时使所有宗主的城邦其单位+4 [ICON_Strength] 战斗力（包括征召单位），征兵花费 [ICON_GOLD] 金币-20%。派遣至城邦时，效力等同于3名 [ICON_Envoy] 使者，可获得其奢侈和战略（宗主时翻倍）。"),

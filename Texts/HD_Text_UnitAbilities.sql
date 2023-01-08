@@ -26,7 +26,7 @@ values
     ("LOC_ABILITY_INCA_IGNORE_HILLS_DESCRIPTION",                             "Qhapaq Ñan: ignore [ICON_MOVEMENT] movement penalty from Hills."),
     ("LOC_ABILITY_KONGO_IGNORE_WOODS_DESCRIPTION",                            "Nkisi: Ignore [ICON_MOVEMENT] movement penalty from Forest and Jungle."),
     ("LOC_ABILITY_CIVILIAN_AND_RECON_BONUS_SIGHT_DESCRIPTION",                "Château de Chenonceau: +1 sight range form the Black Queen's intelligence support."),
-    ("LOC_ABILITY_SPY_BONUS_SIGHT_DESCRIPTION",                               "Château de Chenonceau: +3 sight range form the Black Queen's intelligence support."),
+    ("LOC_ABILITY_SPY_BONUS_SIGHT_DESCRIPTION",                               "Château de Chenonceau: +2 sight range form the Black Queen's careful training."),
     ("LOC_ABILITY_AMANI_FERR_PROMOTION_DESCRIPTION",                          "Local Informants:1 free promotion from Amani."),
     ("LOC_ABILITY_CHANCERY_FERR_PROMOTION_DESCRIPTION",                       "Watch Your Step: 1 free promotion from chancery."),
     ("LOC_ABILITY_MILLITARY_ENGINEER_IGNORE_TERRAIN_DESCRIPTION",             "Ignore [ICON_MOVEMENT] movement penalty from all Terrians, Features and Rivers."),
