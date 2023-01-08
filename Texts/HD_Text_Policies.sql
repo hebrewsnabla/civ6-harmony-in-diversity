@@ -81,7 +81,7 @@ values
     ("LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "+5 [ICON_Strength] Combat Strength for all melee attack units. +5 Loyalty per turn for cities with a garrisoned unit.[NEWLINE]BUT: Units cannot heal outside your territory."),
     ("LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "Domestic routes provide +3 [ICON_Food] Food and +3 [ICON_Production] Production.[NEWLINE]BUT: Can't train or buy Settlers nor settle new cities. Can't train or buy Builders."),
     ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "Wonder-Obsession"),
-    ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "+20% [ICON_Production] Production toward Renaissance, Medieval, Classical, and Ancient wonders.[NEWLINE]BUT: Your cities yield -50% [ICON_GOLD] Gold."),
+    ("LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "+20% construction speed towards Renaissance, Medieval, Classical, and Ancient wonders.[NEWLINE]BUT: Your cities yield -50% [ICON_GOLD] Gold."),
     -- Govs: TODO: swap the inherent and accumulate
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "All Palace, Government Plaza buildings and Diplomatic Quarter buildings provide +3 [ICON_FOOD] Food and +3 [ICON_PRODUCTION] Production."),
     ("LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "All Palace and Government Plaza buildings provide +3 [ICON_FOOD] Food and +3 [ICON_PRODUCTION] Production."),
@@ -318,7 +318,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_TWILIGHT_VALOR_DESCRIPTION",                                         "所有近战攻击单位+5 [ICON_Strength] 战斗力。拥有驻军单位的城市每回合的忠诚度+5。[NEWLINE]但无法在本国领土外进行治疗。"),
     ("zh_Hans_CN",  "LOC_POLICY_ISOLATIONISM_DESCRIPTION",                                           "国内贸易路线提供+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。[NEWLINE]但无法生产或购买开拓者和建造者，也无法建立新城市。"),
     ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_NAME",                                       "奇观误国"),
-    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "建造远古、古典、中世纪和文艺复兴时代的奇观时+25% [ICON_Production] 生产力。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少25%。"),
+    ("zh_Hans_CN",  "LOC_POLICY_WONDERS_MISLEAD_COUNTRY_DESCRIPTION",                                "为远古、古典、中世纪和文艺复兴时代的奇观+25%建造速度。[NEWLINE]但所有城市的 [ICON_GOLD] 金币产出减少25%。"),
     -- 政体
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_ETHIOPIA",                                    "所有宫殿、市政广场建筑、外交区建筑提供+3 [ICON_FOOD] 食物和+3 [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_GOVT_INHERENT_BONUS_AUTOCRACY_XP1",                                         "所有宫殿、市政广场建筑提供+3 [ICON_FOOD] 食物和+3 [ICON_PRODUCTION] 生产力。"),
@@ -464,6 +464,7 @@ values
     ("zh_Hans_CN",  "LOC_POLICY_HD_FIVE_YEAR_PLAN_DESCRIPTION",                                      "建造区域时+30% [ICON_PRODUCTION] 生产力。"),
     ("zh_Hans_CN",  "LOC_POLICY_HOUSEHOOD_REGISTRATION_NAME",                                        "编户齐民"),
     ("zh_Hans_CN",  "LOC_POLICY_HOUSEHOOD_REGISTRATION_DESCRIPTION",                                 "修建蓄水池和社区以及其中建筑时+50%建造速度。"),
+    ("zh_Hans_CN",  "LOC_POLICY_CRYPTOGRAPHY_DESCRIPTION",                                           "我方间谍出击时+1级成功率，领土内的敌方间谍下降2级。"),    
     ("zh_Hans_CN",  "LOC_POLICY_HAJJ_NAME",                                                          "朝觐"),
     ("zh_Hans_CN",  "LOC_POLICY_HAJJ_DESCRIPTION",                                                   "作为宗主国，从每个下属城邦获得+1 [ICON_Science] 科技值和+1 [ICON_Culture] 文化值。"),
     ("zh_Hans_CN",  "LOC_POLICY_MARTIAL_ELECTION_NAME",                                              "武举"),

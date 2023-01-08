@@ -498,7 +498,11 @@ values
     ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Offense',          0),
     ('HD_REGIONAL_COUNCIL_CENTER_DEFENSE',              'Amount',           3);
 
+
+
+
 -----------------------------------------------------------------------
+
 insert or replace into AllianceEffects
     (LevelRequirement,      AllianceType,             ModifierID)
 values

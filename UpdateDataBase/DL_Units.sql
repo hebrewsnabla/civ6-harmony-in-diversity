@@ -56,14 +56,30 @@ values
 	('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'UnitType',	    'UNIT_MILITARY_ENGINEER'),
     ('ARMORY_MILITARY_ENGINEER_PURCHASE_GOLD_DISCOUNT',	'Amount',	    20);*/
 --SPY间谍价格和涨价方式-暂时参考了HD使徒和传教士-但它显得不那么耐用
+-----------------------------------------------------------------------
 update Units set
 	CostProgressionModel = 'COST_PROGRESSION_PREVIOUS_COPIES',
 	CostProgressionParam1 = 10,
 	Cost = 80
 where UnitType = 'UNIT_SPY';
+-----------------------------------------------------------------------
+--爱护玩家-SPY间谍玩家专属防守全局加成6级
+insert or replace into BuildingModifiers 
+    (BuildingType,                                  ModifierId) 
+values
+    ('BUILDING_PALACE',                             'HD_SPY_LOVE_AND_PEACE');
 
+insert or replace into Modifiers    
+    (ModifierId,                                    ModifierType,                       SubjectRequirementSetId,   Permanent)
+values
+    ('HD_SPY_LOVE_AND_PEACE',                       'MODIFIER_PLAYER_ADJUST_SPY_BONUS',       'PLAYER_IS_HUMAN',   1);
+insert or replace into ModifierArguments
+    (ModifierId,                                    Name,               Value)
+values
+    ('HD_SPY_LOVE_AND_PEACE',                       'Offense',          0),
+    ('HD_SPY_LOVE_AND_PEACE',                       'Amount',           6);
 ----------------------------------------------
---SPY 间谍出击任务成功率调整
+--SPY 间谍出击任务成功率，T数调整，其他相关内容多在DL_GlobalParameters全局参数表
 --删除招募叛军
 delete from UnitOperations where OperationType = 'UNITOPERATION_SPY_RECRUIT_PARTISANS';
 --获取情报源，在全局参数表改动了持续时间
@@ -81,7 +97,7 @@ update UnitOperations set Turns = 4            		where OperationType = 'UNITOPER
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_FOMENT_UNREST';	
 --抽取资金
-update UnitOperations set BaseProbability = 13 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
+update UnitOperations set BaseProbability = 14 		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';	
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SIPHON_FUNDS';
@@ -93,13 +109,13 @@ update UnitOperations set Turns = 8           		where OperationType = 'UNITOPERA
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_NEUTRALIZE_GOVERNOR';
 --破坏生产
-update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
+update UnitOperations set BaseProbability = 17 		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';	
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_SABOTAGE_PRODUCTION';	
 --破坏堤坝
-update UnitOperations set BaseProbability = 16 		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
+update UnitOperations set BaseProbability = 18 		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
 update UnitOperations set Turns = 6            		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
 update UnitOperations set EnemyProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_BREACH_DAM';
@@ -117,7 +133,7 @@ update UnitOperations set Turns = 6            		where OperationType = 'UNITOPER
 update UnitOperations set EnemyProbChange = 0  		where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
 update UnitOperations set EnemylevelProbChange = 5  where OperationType = 'UNITOPERATION_SPY_GREAT_WORK_HEIST';
 --破坏火箭研究
-update UnitOperations set BaseProbability = 19 		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
+update UnitOperations set BaseProbability = 20 		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
 update UnitOperations set LevelProbChange = 3  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';	
 update UnitOperations set Turns = 16            	where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
 update UnitOperations set EnemyProbChange = 6  		where OperationType = 'UNITOPERATION_SPY_DISRUPT_ROCKETRY';
