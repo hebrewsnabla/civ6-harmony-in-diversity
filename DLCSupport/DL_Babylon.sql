@@ -453,3 +453,10 @@ select
 	ModifierId || '_ATTACH',	'ModifierId',	ModifierId
 from TraitAttachedModifiers;
 drop table TraitAttachedModifiers;
+--张衡
+delete from GreatPersonIndividualActionModifiers where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_CEL_NAV' or ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_MATHEMATICS';
+delete from ModifierArguments where ModifierId = 'GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING' and Name = 'GrantTechIfBoosted';
+insert or replace into ModifierStrings
+	(ModifierId,												Context,				Text)
+values
+	('GREAT_PERSON_INDIVIDUAL_BOOST_OR_GRANT_ENGINEERING',		'Summary',				'LOC_GREAT_PERSON_INDIVIDUAL_ZHANGHENG');
