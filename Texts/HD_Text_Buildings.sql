@@ -165,7 +165,8 @@ values
     ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_NAME",                 "A tier 1 building and adjacent to Lake or Costal tiles"),
     ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "Preserve District has a tier 1 building and adjacent to Lake or Costal tiles."),
     ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "A tier 1 building and adjacent to World Wonder or Unique Improvement"),
-    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and adjacent to World Wonder or Unique Improvement.");
+    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and adjacent to World Wonder or Unique Improvement."),
+    ("LOC_BUILDING_FLOOD_BARRIER_NAME",                           "Seawall");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -333,4 +334,5 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_NAME",                 "保护区拥有一级建筑，且相邻湖泊或海岸"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "该城的保护区相邻湖泊或海岸单元格（包括水域或海岸类自然奇观），且拥有一级建筑。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "保护区拥有一级建筑，且相邻世界奇观或文明特色改良设施"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。");
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FLOOD_BARRIER_NAME",                           "拦海堤");

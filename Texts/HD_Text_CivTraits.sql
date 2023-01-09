@@ -225,7 +225,7 @@ insert or replace into EnglishText
 values
     ("LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "Sweden gains 50 [ICON_Favor] Diplomatic Favor when earning a Great Person (on Standard Speed). Sweden receives +2 [ICON_GreatEngineer] Great Engineer point from Level 2 Industrial Zone buildings and +2 [ICON_GreatScientist] Great Scientist point from Level 2 Campus buildings. Having Sweden in the game adds three unique World Congress competitions starting in the Industrial Era."),
     ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "The Country of Windmills"),
-    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +20% [ICON_Production] Production toward Districts in cities with a Harbor district. +50% construction speed toward the Dam district, Shipyard and Flood Barrier buildings. Tiles next to a River provide +1 [ICON_PRODUCTION] Production for each Dam district owned by the City."),--When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank).
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Culture Bomb adjacent tiles when completing a Harbor. +20% [ICON_Production] Production toward Districts in cities with a Harbor district. +50% construction speed toward the Dam district, Shipyard and Seawall buildings. Tiles next to a River provide +1 [ICON_PRODUCTION] Production for each Dam district owned by the City."),--When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank).
     ("LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "Shipyard provides +1 [ICON_TradeRoute] Trade Route capacity. Each international [ICON_TradeRoute] Trade Route to or from your city provide +2 [ICON_SCIENCE] Science for you, doubled if you are in Dark Ages.");
 
 --------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每次获得一位 [ICON_GreatPerson] 伟人可奖励50点 [ICON_Favor] 外交支持（标准速度下）。二级工业区建筑与二级学院建筑分别提供+2 [ICON_GreatEngineer] 大工程师点数与+2 [ICON_GreatScientist] 大科学家点数。若对局中存在该文明，则进入工业时代后将增加3项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦洪坝建筑时加速50%。堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "建成港口后可对相邻单元格施放文化炸弹。在拥有港口的城市中建造区域时+20% [ICON_Production] 生产力。建造堤坝区域和拦海堤建筑时加速50%。堤坝为所在城市的沿河单元格+1 [ICON_Production] 生产力。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。");
 
 --腓尼基文本更改

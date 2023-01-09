@@ -356,7 +356,7 @@
 			<Text>仅能由军事工程师建造。建造不消耗次数但需消耗1点 [ICON_RESOURCE_IRON] 铁和1点 [ICON_RESOURCE_COAL] 煤。可大幅提高单位沿铁路单元格前进的 [ICON_Movement] 移动力。如 [ICON_TradeRoute] 贸易路线途径此处，其因目的地修建的区域获得的 [ICON_Gold] 金币将增加。</Text>
 		</Replace>
 		<Replace Tag="LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>中世纪支援单位。需要“兵工厂”才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠或拦洪坝20%的建造进度。</Text>
+			<Text>中世纪支援单位。需要“兵工厂”才能生产。能建造道路、堡垒、飞机跑道、导弹发射井和穿山隧道改良设施。其建造次数可用于加快运河、堤坝、水渠或拦海堤20%的建造进度。</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_GREAT_TURKISH_BOMBARD_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>攻击区域防御时+5 [ICON_Strength] 战斗力。（达达尼尔射石炮）</Text>
