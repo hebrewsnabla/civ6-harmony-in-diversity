@@ -53,3 +53,5 @@ update ModifierArguments set Value = 7 where ModifierId = 'NADER_SHAH_COMBAT_BUF
 -- 	(ModifierId,						Name,		Value)
 -- values
 -- 	('NADER_SHAH_TRADEROUTE_CAPACITY',	'Amount',	1);
+--LEADER_TOKUGAWA
+delete from TraitModifiers where ModifierId = 'TOKUGAWA_TOURISM_DISTRICTS' or ModifierId = 'TRAIT_TOKUGAWA_LOYALTY_NEAR_CAPITAL';

@@ -563,7 +563,7 @@ cat bug修复
 修复了[外交办]提供的外交能见度失效的bug。
 end cat
 
-version 1.3.4
+version 1.3.5
 order -9999
 cat 宗教武装模式
 subcat 新单位类型：宗教武装
@@ -622,12 +622,14 @@ subcat 配套城邦
 end subcat
 end cat
 end order
+
+version 1.3.4
 cat AI调整
 王子以上难度AI加成所有区域和建筑+1对应伟人点不再排除圣地。
 提高了AI对除了大科学家以外所有伟人的价值判定。
 平衡了AI对产出的判定，提高了AI建造工业区的倾向。
 end cat
-cat bug修复
+cat 文本和bug修复
 修复了[宗教移民]读取存档会额外赠送[大仙]点数的bug。
 修复了Cheat Map Editor等需要点击地图的模组不能正常生效的bug。
 end cat

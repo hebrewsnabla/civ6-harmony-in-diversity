@@ -867,7 +867,7 @@ insert or replace into Improvement_YieldChanges (ImprovementType, YieldType, Yie
 --LEVEL 3-2 GOVERNOR_PROMOTION_CARDINAL_DIVINE_ARCHITECT
 
 update Governors set TransitionStrength = 150 where GovernorType = 'GOVERNOR_THE_CARDINAL';
-
+update ModifierArguments set Value = 2 where ModifierId = 'BISHOP_FAITH_POP' and Name = 'Amount';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_BISHOP_FAITH_DISTRICT';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_PRESSURE';
 delete from GovernorPromotionModifiers where ModifierId = 'CARDINAL_CITADEL_OF_GOD_COMBAT';

@@ -421,3 +421,20 @@ insert or replace into CivicModifiers
 	(CivicType,				ModifierId)
 values
 	('CIVIC_COLD_WAR',		'CONTAINMENT_DUPLICATETOKENWHENRIVALGOVERNMENT');
+--区域项目
+update Projects set UnlocksFromEffect = 1 where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+insert or replace into CivicModifiers
+	(CivicType,								ModifierId)
+select
+	'CIVIC_HISTORICAL_PHILOSOPHY_HD',		ProjectType || '_MODIFIER'
+from Projects where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+insert or replace into Modifiers
+	(ModifierId,							ModifierType)
+select
+	ProjectType || '_MODIFIER',				'MODIFIER_PLAYER_ALLOW_PROJECT_CATHERINE'
+from Projects where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+insert or replace into ModifierArguments
+	(ModifierId,							Name,					Value)
+select
+	ProjectType || '_MODIFIER',				'ProjectType',			ProjectType
+from Projects where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';

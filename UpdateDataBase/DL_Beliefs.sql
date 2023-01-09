@@ -1632,8 +1632,8 @@ values
 	('BELIEF_CANONIZATION_OF_SAINTS',	'CANONIZATION_OF_SAINTS_FAITH_POPULATION'),
 	('BELIEF_CANONIZATION_OF_SAINTS',	'CANONIZATION_OF_SAINTS_GP_RELIGIOUS_PRESSURE');
 	-- Worship
-
-update ModifierArguments set Value = 150 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
+--随着教皇权威变强化，改压力150→250
+update ModifierArguments set Value = 250 where ModifierId = 'PAPAL_PRIMACY_PRESSURE_ON_ADOPTION' and Name = 'Amount';
 
 -- x yield per follower
 update ModifierArguments set Value = 3 where ModifierId = 'TITHE_GOLD_FOLLOWER_MODIFIER' and Name = 'Amount';

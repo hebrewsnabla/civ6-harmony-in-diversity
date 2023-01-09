@@ -16,20 +16,21 @@ update GlobalParameters set Value = 1 where Name = 'YIELD_PRODUCTION_CITY_TERRAI
 --update GlobalParameters set Value = 2 where Name = 'ESPIONAGE_BONUS_GAIN_SOURCES';
 update GlobalParameters set Value = 6 where Name = 'ESPIONAGE_GAIN_SOURCES_DURATION_MULTIPLIER';
 update GlobalParameters set Value = 15 where Name = 'ESPIONAGE_MISSION_LENGTH_REDUCTION_CULTURAL_DOMINANCE';
---SPY间谍手动逃跑相关参数优化更易逃脱-但不能减少伤亡
-update GlobalParameters set Value = 40 where Name = 'ESPIONAGE_ESCAPE_BASE_CHANCE';
+--SPY间谍手动逃跑相关参数优化更易逃脱-但死亡率还是很高
+update GlobalParameters set Value = 50 where Name = 'ESPIONAGE_ESCAPE_BASE_CHANCE';
 update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_LEVEL_BOOST';
-update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_COUNTERSPY_LEVEL_MODIFIER';
-update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_ESCAPE_POLICE_CORRECT_MODIFIER';
---SPY间谍捏造丑闻（杀使者）收益提升至基础5名使者，每再升1级+2
+update GlobalParameters set Value = 5 where Name = 'ESPIONAGE_ESCAPE_COUNTERSPY_LEVEL_MODIFIER';
+update GlobalParameters set Value = 1 where Name = 'ESPIONAGE_ESCAPE_POLICE_CORRECT_MODIFIER';
+--SPY间谍捏造丑闻（杀使者）收益提升至基础5名使者，每1个升级+2
 update GlobalParameters set Value = 3 where Name = 'ESPIONAGE_FABRICATE_SCANDAL_BASE_ENVOYS_REMOVED';
 update GlobalParameters set Value = 2 where Name = 'ESPIONAGE_FABRICATE_SCANDAL_LEVEL_ENVOYS_REMOVED';
---SPY间谍暗杀总督持续时间降低至
-update GlobalParameters set Value = 2 where Name = 'ESPIONAGE_NEUTRALIZE_GOVERNOR_BASE_TURNS';
---间谍煽动骚乱的效果调整
-update GlobalParameters set Value = 50 where Name = 'ESPIONAGE_FOMENT_UNREST_LEVEL_IDENTITY_CHANGE';
+--SPY间谍暗杀总督持续时间4T，每1个升级+1（改这里不生效）
+--update GlobalParameters set Value = 4 where Name = 'ESPIONAGE_NEUTRALIZE_GOVERNOR_BASE_TURNS';
+--SPY间谍煽动骚乱的效果调整至55点忠诚，每1个升级+15
+update GlobalParameters set Value = 0 where Name = 'ESPIONAGE_FOMENT_UNREST_LEVEL_IDENTITY_CHANGE';
 update GlobalParameters set Value = -15 where Name = 'ESPIONAGE_FOMENT_UNREST_LEVEL_LOYALTY_CHANGE';
-update GlobalParameters set Value = 50 where Name = 'ESPIONAGE_FOMENT_UNREST_BASE_IDENTITY_CHANGE';
+update GlobalParameters set Value = 0 where Name = 'ESPIONAGE_FOMENT_UNREST_BASE_IDENTITY_CHANGE';
+update GlobalParameters set Value = -40 where Name = 'ESPIONAGE_FOMENT_UNREST_BASE_LOYALTY_CHANGE';
 -- Map
 -- update GlobalParameters set Value = 8 where Name = 'ICE_TILES_PERCENT';
 update GlobalParameters set Value = 3 where Name = 'STRATEGIC_RESOURCE_FERTILITY_STARTING_ERA_RANGE';
