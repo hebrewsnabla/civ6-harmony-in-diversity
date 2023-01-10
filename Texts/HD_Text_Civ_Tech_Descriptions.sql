@@ -185,7 +185,8 @@ values
     ("LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                                  "Our old long-standing mortars were no longer adequate for combat needs in terms of accuracy, and we needed to spin out the shells."),
 	("LOC_BOOST_TRIGGER_MOON_LANDING",														"Launch Moon Landing."),
 	("LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",												"Launch Moon Landing."),
-    ("LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                                  "Allows forming three identical units into an Army or Armada. ");
+    ("LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                                  "Allows forming three identical units into an Army or Armada."),
+    ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                                      "Unlocks the great people projects in specialty district.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -377,7 +378,8 @@ values
     ("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_RIFLING",                                   "我们老久的臼炮在精度方面已经无法满足战斗需求，我们需要旋转出膛的炮弹。"),
 	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MOON_LANDING",										"启动登月计划。"),
 	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",								"启动登月计划。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                   "允许3个相同单位组成一支军队或无敌舰队。");
+    ("zh_Hans_CN",  "LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                   "允许3个相同单位组成一支军队或无敌舰队。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                       "解锁专业化区域的伟人点城市项目。");
 
 --------------------------------------------------------------------------------
 -- Language: en_US

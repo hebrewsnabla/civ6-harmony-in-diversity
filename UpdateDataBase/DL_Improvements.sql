@@ -25,7 +25,7 @@ values
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_PRODUCTION',		3),
 	('IMPROVEMENT_OFFSHORE_OIL_RIG',	'YIELD_SCIENCE',		1),
 	
-	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			1),
+	('IMPROVEMENT_COLOSSAL_HEAD',		'YIELD_FAITH',			2),
 	('IMPROVEMENT_MOAI',				'YIELD_CULTURE',		2),
 	
 	('IMPROVEMENT_ZIGGURAT',			'YIELD_SCIENCE',		2),
@@ -638,6 +638,33 @@ update Improvements set YieldFromAppealPercent = 100 where ImprovementType = 'IM
 -- Stepwell (India)
 update Improvement_BonusYieldChanges set PrereqCivic = null, PrereqTech = 'TECH_SANITATION' where ImprovementType = 'IMPROVEMENT_STEPWELL' and YieldType = 'YIELD_FOOD';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_STEPWELL' and ModifierId = 'STEPWELL_FARMADJACENCY_FOOD';
+update Improvement_YieldChanges set YieldChange = 2 where ImprovementType = 'IMPROVEMENT_STEPWELL' and YieldType = 'YIELD_FOOD';
+delete from ImprovementModifiers where ModifierId = 'STEPWELL_HOLYSITEADJACENCY_FAITH' or ModifierId = 'STEPWELL_HOUSING_WITHTECH';
+delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_STEPWELL';
+--adjacency
+insert or replace into Improvement_Adjacencies
+	(ImprovementType,				YieldChangeId)
+values
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER1'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER2'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_FARM_ADJACENCY_FAITH_TIER1'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_FARM_ADJACENCY_FAITH_TIER2'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_PLANTATION_ADJACENCY_FAITH_TIER1'),
+	('IMPROVEMENT_STEPWELL',		'STEPWELL_PLANTATION_ADJACENCY_FAITH_TIER2');
+
+insert or replace into Adjacency_YieldChanges
+	(ID,											Description,		YieldType,			YieldChange,	AdjacentDistrict,		PrereqCivic,			ObsoleteCivic)
+values
+	('STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER1',	'Placeholder',		'YIELD_FAITH',		2,				'DISTRICT_HOLY_SITE',	NULL,					'CIVIC_DIVINE_RIGHT'),
+	('STEPWELL_HOLY_SITE_ADJACENCY_FAITH_TIER2',	'Placeholder',		'YIELD_FAITH',		4,				'DISTRICT_HOLY_SITE',	'CIVIC_DIVINE_RIGHT',	NULL);
+
+insert or replace into Adjacency_YieldChanges
+	(ID,											Description,		YieldType,			YieldChange,	AdjacentImprovement,			PrereqCivic,				ObsoleteCivic)
+values
+	('STEPWELL_FARM_ADJACENCY_FAITH_TIER1',			'Placeholder',		'YIELD_FAITH',		1,				'IMPROVEMENT_FARM',				NULL,						'CIVIC_REFORMED_CHURCH'),
+	('STEPWELL_FARM_ADJACENCY_FAITH_TIER2',			'Placeholder',		'YIELD_FAITH',		2,				'IMPROVEMENT_FARM',				'CIVIC_REFORMED_CHURCH',	NULL),
+	('STEPWELL_PLANTATION_ADJACENCY_FAITH_TIER1',	'Placeholder',		'YIELD_FAITH',		1,				'IMPROVEMENT_PLANTATION',		NULL,						'CIVIC_REFORMED_CHURCH'),
+	('STEPWELL_PLANTATION_ADJACENCY_FAITH_TIER2',	'Placeholder',		'YIELD_FAITH',		2,				'IMPROVEMENT_PLANTATION',		'CIVIC_REFORMED_CHURCH',	NULL);
 insert or replace into ImprovementModifiers
 	(ImprovementType,				ModifierId)
 values
@@ -995,3 +1022,9 @@ values
 	('DUMMY_GOODY_BUILDIER',	'DUMMY_GRANT_BUILDER',	'LOC_GOODYHUT_SURVIVORS_GRANT_UNIT_DESCRIPTION',	100,	'GOODY_SURVIVORS_GRANT_BUILDER');
 --删除林肯种植园debuff
 delete from ImprovementModifiers where ModifierId = 'PLANTATION_NEGATIVE_LOYALTY';
+--巨神头像
+update Adjacency_YieldChanges set TilesRequired = 1, ObsoleteCivic = NULL where ID = 'ColossalHead_FaithForestEarly';
+update Adjacency_YieldChanges set TilesRequired = 1, ObsoleteCivic = NULL where ID = 'ColossalHead_FaithJungleEarly';
+delete from Improvement_Adjacencies where YieldChangeId = 'ColossalHead_FaithForestLate' or YieldChangeId = 'ColossalHead_FaithJungleLate';
+--摩艾石像
+delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';

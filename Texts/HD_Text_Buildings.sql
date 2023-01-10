@@ -35,7 +35,7 @@ values
     ("LOC_BUILDING_MARAE_DESCRIPTION",                            "A building unique to the Māori. +2 [ICON_CULTURE] Culture and +2 [ICON_FAITH] Faith to all of this city's tiles with a passable feature or natural wonder. +1 [ICON_CULTURE] Culture for every three coast or lake tiles in this city. After Flight is researched, receive +1 [ICON_TOURISM] Tourism to all of this city's tiles with a feature or natural wonder. Has no Great Work slots."),
     ("LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "Holds [ICON_GreatWork_Artifact] Artifacts. May not be built in a Theater Square district that already has an Art Museum. +5% [ICON_CULTURE] Culture in this city."),
     ("LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "Holds [ICON_GreatWork_Landscape] Great Works of Art. May not be built in a Theater Square district that already has an Archaeological Museum. +5% [ICON_CULTURE] Culture in this city."),
-    ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city towards other civilizations in the Industrial era. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
+    ("LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "A building unique to America. +100% [ICON_Tourism] Tourism pressure from this city. +5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] culture if this city is fully powered."),
     ("LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "+5% [ICON_CULTURE] Culture in this city. +5% [ICON_CULTURE] Culture if this city is fully powered. "),
     -- Industrial Zone
     ("LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "Improved tiles in the City have +1 [ICON_Production] Production"), -- , Quarries and Lumber Mills -- Mines in this city gain +1 [ICON_PRODUCTION] Production. +5% [ICON_Production] Production towards wonders, districts and buildings in this city.
@@ -206,7 +206,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION",                  "可存放 [ICON_GreatWork_Artifact] 文物。如果在剧院广场区域已经有一座艺术博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_MUSEUM_ART_DESCRIPTION",                       "可存放 [ICON_GreatWork_Landscape] 艺术巨作。如果在剧院广场区域已经有一座考古博物馆则无法修建。[NEWLINE]本城 [ICON_CULTURE] 文化值+5%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_BROADCAST_CENTER_DESCRIPTION",                 "本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。对进入工业时代的文明，本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FILM_STUDIO_EXPANSION2_DESCRIPTION",           "美国特色建筑。本城+100% [ICON_Tourism] 旅游业绩。本城 [ICON_CULTURE] 文化值+5%，通电后额外为本城+5% [ICON_CULTURE] 文化值。"),
     -- 工业
     ("zh_Hans_CN",  "LOC_BUILDING_WORKSHOP_DESCRIPTION",                         "本城已改良单元格+1 [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_BUILDING_FACTORY_DL_DESCRIPTION",                       "为本城的 [ICON_RESOURCE_COAL] 煤资源+1 [ICON_PRODUCTION] 生产力，本城建造区域、建筑和奇观+5% [ICON_PRODUCTION] 生产力。本城每位 [ICON_Citizen] 公民+0.5 [ICON_PRODUCTION] 生产力。"),

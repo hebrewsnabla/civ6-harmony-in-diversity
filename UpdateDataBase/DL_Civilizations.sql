@@ -2274,7 +2274,22 @@ insert or replace into CivilizationTraits
 	(CivilizationType,					TraitType)
 values 
 	('CIVILIZATION_ARABIA',				'TRAIT_CIVILIZATION_UNIT_ARABIAN_MAMLUK');
-
+--萨拉丁增加攻占的城市
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_LAST_PROPHET',		'TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED');
+insert or replace into Modifiers
+	(ModifierId,									ModifierType,								SubjectRequirementSetId)
+values
+	('TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED',			'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',	'CITY_NOT_FOUNDED'),
+	('TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED_MODIFIER',	'MODIFIER_PLAYER_ADJUST_YIELD_CHANGE',		NULL);
+insert or replace into ModifierArguments
+	(ModifierId,									Name,			Value)
+values
+	('TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED',			'ModifierId',	'TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED_MODIFIER'),
+	('TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED_MODIFIER',	'Amount',		4),
+	('TRAIT_SCIENCE_PER_CITY_NOT_FOUNDED_MODIFIER',	'YieldType',	'YIELD_SCIENCE');
 --马普切
 --ua所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。
 --la与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。
@@ -2323,4 +2338,5 @@ values
 	('TOQUI_PLOT_FAITH',					'Amount',					1),
 	('TOQUI_PLOT_FAITH',					'YieldType',				'YIELD_FAITH'),
 	('TOQUI_MOUNTAIN_MOVEMENT',				'Amount',					1);
-
+--印度
+update ModifierArguments set Value = 1500 where ModifierId = 'TRAIT_ORIGIN_DESTINATION_RELIGIOUS_PRESSURE' and Name = 'Amount';
