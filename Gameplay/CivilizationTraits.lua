@@ -531,3 +531,27 @@ function PersiaCityConquered (newPlayerId, oldPlayerId, newCityId, x, y)
 	end
 end
 GameEvents.CityConquered.Add(PersiaCityConquered);
+
+function MacedonActiveWonder (newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
+	local player = Players[newPlayerID];
+	local playerConfig = PlayerConfigurations[newPlayerID];
+	local leader = playerConfig:GetLeaderTypeName();
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_TO_WORLDS_END') then
+		return;
+	end
+	for _,city in player:GetCities():Members() do
+		local current = city:GetBuildQueue():CurrentlyBuilding();
+		if current then
+			local buildingInfo = GameInfo.Buildings[current];
+			if buildingInfo then
+				if buildingInfo.IsWonder then
+					local cost = buildingInfo.Cost;
+					local rate = GlobalParameters.ALEXANDER_WONDER_PERCENTAGE or 0;
+					local amount = cost * rate / 100;
+					city:GetBuildQueue():AddProgress(amount);
+				end
+			end
+		end
+	end
+end
+GameEvents.CityConquered.Add(MacedonActiveWonder);

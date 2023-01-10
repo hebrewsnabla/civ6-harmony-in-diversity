@@ -1174,7 +1174,8 @@ insert or replace into GlobalParameters
 	(Name,										Value)
 values
 	('FRANCE_WONDER_GREATPEOPLE_PERCENTAGE',	20),
-	('FRANCE_GREATPEOPLE_WONDER_PERCENTAGE',	10);
+	('FRANCE_GREATPEOPLE_WONDER_PERCENTAGE',	10),
+	('ALEXANDER_WONDER_PERCENTAGE',				10);
 
 ----------------------------------------------------------------------------------------------------------------------------------
 --India

@@ -4,7 +4,7 @@ insert or replace into EnglishText
     (Tag,                                                             Text)
 values
     ("LOC_TRAIT_LEADER_KUBLAI_DESCRIPTION",                           "One extra Economic policy slot in any government. Upon conquering another Civilization's Original [ICON_Capital] Capital city, receive its Civilization Trait."),
-    ("LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "+20% [ICON_Production] Production toward Medieval, Renaissance, and Industrial era wonders. [ICON_Tourism] Tourism from wonders of any era is +200%. Each time you complete a Wonder, gain [ICON_GREATWRITER] Great Writer, [ICON_GREATARTIST] Great Artist and [ICON_GREATMUSICIAN] Great Musician Points each equals to 20% of its production cost. Each time you active a Great Work in a city, complete 20% of the original Wonder cost towards the Wonder that is currently building."),
+    ("LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION",             "+20% [ICON_Production] Production toward Medieval, Renaissance, and Industrial era wonders. [ICON_Tourism] Tourism from wonders of any era is +200%. Each time you complete a Wonder, gain [ICON_GREATWRITER] Great Writer, [ICON_GREATARTIST] Great Artist and [ICON_GREATMUSICIAN] Great Musician Points each equals to 20% of its production cost. Each time you active a Great Work in a city, complete 10% of the original Wonder cost towards the Wonder that is currently building."),
     ("LOC_TRAIT_LEADER_SURROUNDED_BY_GLORY_DESCRIPTION",              "+5% [ICON_Culture] Culture per city-state you are the Suzerain of. After building an Acropolis District, the first [ICON_Envoy] Envoy you send to each city-state counts as two [ICON_Envoy] Envoys."),
     ("LOC_TRAIT_LEADER_THERMOPYLAE_DESCRIPTION",                      "Combat victories provide [ICON_Culture] Culture equal to 50% of the [ICON_Strength] Combat Strength of the defeated unit. (on Standard Speed) +1 [ICON_Strength] Combat Strength for every Military Policy slotted. Receive a free anti-cavalry unit when the Acropolis district is constructed."),
     ("LOC_TRAIT_CIVILIZATION_EARLY_OCEAN_NAVIGATION_DESCRIPTION",     "+1 [ICON_Production] Production and +1 [ICON_Housing] Housing to Lumber Mills. Units gain the ability to enter Ocean tiles after researching the Shipbuilding technology. Naval melee units heal in neutral territory. Units ignore additional [ICON_Movement] Movement costs from embarking and disembarking."),
@@ -104,7 +104,8 @@ values
     ("LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY",  "The Taika Era Reforms ability gives large adjacency bonuses to Japan’s districts. Tokugawa’s ability also greatly increases Domestic [ICON_TradeRoute] Trade Route’s yields for every district. But be aware that International [ICON_TradeRoute] Trade Routes are much weaker. The Electronics Factory will help him towards a Culture or Science Victory."),
     ("LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",                "Taika Era Reforms"),
     ("LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                             "Kamakura Bakufu"),
-    ("LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "International [ICON_TradeRoute] Trade Routes receive -25% Yield and [ICON_Tourism] Tourism, but Domestic [ICON_TradeRoute] Trade Routes provide +1 [ICON_Culture] Culture, +1  [ICON_Science] Science, and +2  [ICON_Gold] Gold for every Specialty District at the Destination.");
+    ("LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "International [ICON_TradeRoute] Trade Routes receive -25% Yield and [ICON_Tourism] Tourism, but Domestic [ICON_TradeRoute] Trade Routes provide +1 [ICON_Culture] Culture, +1  [ICON_Science] Science, and +2  [ICON_Gold] Gold for every Specialty District at the Destination."),
+    ("LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                    "Cities do not incur war weariness. All units gain +15 experience upon conquering or finishing a Wonder. Upon conquering a city, complete 10% of the original Wonder cost towards the Wonder that is currently building in all your cities.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -217,7 +218,8 @@ values
     ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY", "“大化改新”能力可以为日本区域带来大量相邻加成。德川家康的特色能力是提高了每个区域从国内 [ICON_TradeRoute] 贸易路线获得的收益。但要注意，国际 [ICON_TradeRoute] 贸易路线较为孱弱。“电子厂”将帮助他迈向文化或科技胜利。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",               "大化改新"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                            "镰仓幕府"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                     "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                     "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                   "城市不会产生厌战情绪。每占领一个奇观或建成奇观时，所有单位获得15点经验值。占领城市时，为所有城市正在建造的奇观推进10%的建造进程。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
