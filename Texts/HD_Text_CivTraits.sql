@@ -235,7 +235,7 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每获得一点时代分，额外获得1点[ICON_GREATSCIENTIST] 大科学家点数、[ICON_GREATMERCHANT] 大商人点数、[ICON_GREATENGINEER] 大工程师点数、[ICON_GREATWRITER] 大作家点数、[ICON_GREATARTIST] 大艺术家点数和 [ICON_GREATMUSICIAN] 大音乐家点数，你每拥有一个对应的专业化区域，就令对应 [ICON_GREATPERSON] 伟人点数+2。其他文明招募这些类型的[ICON_GREATPERSON] 伟人时，为你提供额外金币。（金币量为100n，n为伟人所属时代）用 [ICON_GOLD] 金币招募[ICON_GREATPERSON] 伟人时所需的费用-10%。，进入工业时代后增加三项特色世界议会竞赛。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每获得一点时代分，额外获得1点[ICON_GREATSCIENTIST] 大科学家点数、[ICON_GREATMERCHANT] 大商人点数、[ICON_GREATENGINEER] 大工程师点数、[ICON_GREATWRITER] 大作家点数、[ICON_GREATARTIST] 大艺术家点数和 [ICON_GREATMUSICIAN] 大音乐家点数，你每拥有一个对应的专业化区域，就令对应 [ICON_GREATPERSON] 伟人点数+2。其他文明招募这些类型的[ICON_GREATPERSON] 伟人时，为你提供额外金币。用 [ICON_GOLD] 金币招募[ICON_GREATPERSON] 伟人时所需的费用-10%。，进入工业时代后增加三项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "每次完成灯塔后，触发探索鼓舞，若探索鼓舞已触发，则直接完成探索市政。建造堤坝区域和拦海堤建筑时加速50%。所有商业中心建筑为本城的淤滩圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币，所有港口建筑为本城的滨海圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。");
