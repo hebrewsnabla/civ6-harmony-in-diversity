@@ -1537,3 +1537,11 @@ insert or replace into ModifierArguments
 	(ModifierId,					Name,		Value)
 values
 	('HD_INN_INFLUENCE_POINTS',		'Amount',	2);
+--瑞典ub
+delete from MutuallyExclusiveBuildings where Building = 'BUILDING_QUEENS_BIBLIOTHEQUE' or MutuallyExclusiveBuilding = 'BUILDING_QUEENS_BIBLIOTHEQUE';
+delete from BuildingPrereqs where PrereqBuilding = 'BUILDING_QUEENS_BIBLIOTHEQUE';
+delete from Building_GreatWorks where BuildingType = 'BUILDING_QUEENS_BIBLIOTHEQUE';
+insert or replace into Building_GreatWorks
+	(BuildingType,						GreatWorkSlotType,				NumSlots)
+values
+	('BUILDING_QUEENS_BIBLIOTHEQUE',	'GREATWORKSLOT_PALACE',			6);

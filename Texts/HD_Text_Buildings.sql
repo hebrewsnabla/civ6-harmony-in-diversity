@@ -25,6 +25,7 @@ values
     ("LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "A building unique to Georgia. Lower [ICON_Production] Production cost and higher outer defenses than Renaissance Walls it replaces. Provides +5 [ICON_TOURISM] Tourism after advancing to the Conservation Civic. Provides +4 [ICON_Faith] Faith. When in a Golden Age, +300% [ICON_TOURISM] Tourism and +300% [ICON_FAITH] Faith."),
     ("LOC_BUILDING_SEWER_DESCRIPTION",                            "+20% Growth rate in this city."),
     ("LOC_BUILDING_WATER_MILL_DESCRIPTION",                       "Farm on bonus resource gain +1 [ICON_FOOD] Food. City must be adjacent to a River."),
+    ("LOC_BUILDING_FLOOD_BARRIER_NAME",                           "Seawall"),
     -- Campus
     ("LOC_BUILDING_LIBRARY_DESCRIPTION",                          "After Paper Making is researched, [ICON_Citizen] Citizens in this city provide +0.3 [ICON_SCIENCE] Science."),
     ("LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "[ICON_CITIZEN] Citizens in this city provide +0.5 [ICON_SCIENCE] Science."),
@@ -91,6 +92,7 @@ values
     ("LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_DESCRIPTION",         "+5 [ICON_Religion] Religious Combat Strength from Episcopal Church."),
     ("LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] Movement from War Department."),
     ("LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] Movement from War Department."),
+    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "A building unique to Sweden. Provides 6 slots for any Great Work. [NEWLINE]Awards +1 [ICON_GOVERNOR] Governor Title."),
     -- Diplomatic Quarter
     ("LOC_BUILDING_CONSULATE_DESCRIPTION",                        "+2 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy. Leveraging City States costs 20% less [ICON_Gold] Gold. +50% construction speed towards Spy in this city. Your Spy units can choose from any possible promotion."),
     ("LOC_BUILDING_CHANCERY_DESCRIPTION",                         "+3 Influence Points per turn. Gain +1 [ICON_ENVOY] Envoy. +1 [ICON_VISLIMITED] Visibility level on all other Civs. +50% [ICON_PRODUCTION] toward Spies in all Cities. Receive one Spy and +1 Spy capacity. Spys start with a free promotion. All Spy Operations have a higher chance of success. Spy mission time reduces by 25%. When this civilization captures or kills an enemy Spy, receive 50 [ICON_SCIENCE] Science for every level of the enemy Spy."),
@@ -165,8 +167,7 @@ values
     ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_NAME",                 "A tier 1 building and adjacent to Lake or Costal tiles"),
     ("LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "Preserve District has a tier 1 building and adjacent to Lake or Costal tiles."),
     ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "A tier 1 building and adjacent to World Wonder or Unique Improvement"),
-    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and adjacent to World Wonder or Unique Improvement."),
-    ("LOC_BUILDING_FLOOD_BARRIER_NAME",                           "Seawall");
+    ("LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "Preserve District has a tier 1 building and adjacent to World Wonder or Unique Improvement.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -195,6 +196,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_SEWER_DESCRIPTION",                            "本城的余粮+20%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_TSIKHE_DESCRIPTION_XP2",                       "格鲁吉亚特色建筑。[ICON_Production] 生产力花费低于比文艺复兴城墙，并拥有更强的外部防御力。获得“保护地球”市政后提供+5点 [ICON_TOURISM] 旅游业绩。提供+4 [ICON_Faith] 信仰值。进入黄金时代后 [ICON_TOURISM] 旅游业绩与 [ICON_FAITH] 信仰值均+300%。"),
     ("zh_Hans_CN",  "LOC_BUILDING_WATER_MILL_DESCRIPTION",                       "改良加成资源的农场 [ICON_FOOD] 食物+1。城市必须与河流相邻。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_FLOOD_BARRIER_NAME",                           "拦海堤"),
     -- 学院
     ("zh_Hans_CN",  "LOC_BUILDING_LIBRARY_DESCRIPTION",                          "研究造纸术科技后，城市中每位 [ICON_Citizen] 公民 +0.3 [ICON_SCIENCE] 科技值产出。"),
     ("zh_Hans_CN",  "LOC_BUILDING_UNIVERSITY_DESCRIPTION",                       "每位 [ICON_CITIZEN] 市民+0.5 [ICON_Science] 科技值。"),
@@ -260,6 +262,7 @@ values
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_FAITH_COMBAT_STRENGTH_DESCRIPTION",         "+5 [ICON_Religion] 宗教力量来自主教座堂。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_MOVEMENT_DESCRIPTION",             "+1 [ICON_Movement] 移动力来自作战部。"),
     ("zh_Hans_CN",  "LOC_ABILITY_GOV_MILITARY_COMBAT_STRENGTH_DESCRIPTION",      "+3 [ICON_Strength] 战斗力来自作战部。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_QUEENS_BIBLIOTHEQUE_DESCRIPTION",              "瑞典特色建筑。提供任意6个巨作槽位。[NEWLINE]奖励1个 [ICON_GOVERNOR] 总督头衔。"),
     -- 外交区
     ("zh_Hans_CN",  "LOC_BUILDING_CONSULATE_DESCRIPTION",                        "每回合影响力点数+2。获得1名 [ICON_ENVOY] 使者。征兵花费的 [ICON_GOLD] 金币减少20%。此城市训练间谍时+50%建造速度。您的间谍可以选择任何可用升级。"),
     ("zh_Hans_CN",  "LOC_BUILDING_CHANCERY_DESCRIPTION",                         "每回合影响力点数+3。获得1名 [ICON_ENVOY] 使者。对所有文明+1 [ICON_VISLIMITED] 外交能见度。所有城市训练间谍时+50%建造速度。获得一个间谍并+1间谍容量。所有间谍初始便拥有1次免费升级，出击时+1级成功率，执行任务的时间缩短25%。此文明俘获或杀死敌方间谍时，敌方间谍每拥有一级升级，文明便获得50点 [ICON_SCIENCE] 科技值。"),
@@ -334,5 +337,4 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_NAME",                 "保护区拥有一级建筑，且相邻湖泊或海岸"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_WATER_PRESERVE_DESCRIPTION",          "该城的保护区相邻湖泊或海岸单元格（包括水域或海岸类自然奇观），且拥有一级建筑。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_NAME",              "保护区拥有一级建筑，且相邻世界奇观或文明特色改良设施"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。"),
-    ("zh_Hans_CN",  "LOC_BUILDING_FLOOD_BARRIER_NAME",                           "拦海堤");
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_DUMMY_HERITAGE_PRESERVE_DESCRIPTION",       "该城的保护区相邻世界奇观、文明特色改良设施，且拥有一级建筑。");
