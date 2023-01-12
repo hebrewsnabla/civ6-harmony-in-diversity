@@ -171,3 +171,27 @@ values
 	('ARTEMIS_QUARRY_PRODUCTION',	'Amount',		1),
 	('ARTEMIS_QUARRY_FAITH',		'YieldType',	'YIELD_FAITH'),
 	('ARTEMIS_QUARRY_FAITH',		'Amount',		1);
+--努比亚
+update ModifierArguments set Value = 100 where Name = 'Amount' and ModifierId in (
+	'TRAIT_ANCIENT_RANGED_UNIT_PRODUCTION',
+	'TRAIT_ATOMIC_RANGED_UNIT_PRODUCTION',
+	'TRAIT_CLASSICAL_RANGED_UNIT_PRODUCTION',
+	'TRAIT_INDUSTRIAL_RANGED_UNIT_PRODUCTION',
+	'TRAIT_INFORMATION_RANGED_UNIT_PRODUCTION',
+	'TRAIT_MEDIEVAL_RANGED_UNIT_PRODUCTION',
+	'TRAIT_MODERN_RANGED_UNIT_PRODUCTION'
+);
+update ModifierArguments set Value = 25 where ModifierId = 'TRAIT_BASE_DISTRICT_PRODUCTION_MODIFIER' or ModifierId = 'TRAIT_PYRAMID_DISTRICT_PRODUCTION_MODIFIER';
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_TA_SETI',			'TRAIT_TECH_ARCHERY');
+insert or replace into Modifiers
+	(ModifierId,							ModifierType,										SubjectRequirementSetId)
+values
+	('TRAIT_TECH_ARCHERY',					'MODIFIER_PLAYER_GRANT_SPECIFIC_TECHNOLOGY',		NULL);
+insert or replace into ModifierArguments
+	(ModifierId,							Name,						Value)
+values
+	('TRAIT_TECH_ARCHERY',					'TechType',					'TECH_ARCHERY');
+update Improvements set PrereqTech = NULL, PrereqCivic = 'CIVIC_CRAFTSMANSHIP' where ImprovementType = 'IMPROVEMENT_PYRAMID';

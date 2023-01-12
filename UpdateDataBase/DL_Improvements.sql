@@ -730,28 +730,14 @@ update Improvements set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD', Housing = 1
 update Adjacency_YieldChanges set PrereqTech = null where ID = 'Chateau_WonderLate';
 
 -- Coastal Polder (Netherlands)
-update Improvements set ValidAdjacentTerrainAmount = 1, PrereqTech = 'TECH_SHIPBUILDING', PrereqCivic = null where ImprovementType = 'IMPROVEMENT_POLDER';
+update Improvements set MovementChange = 1, ValidAdjacentTerrainAmount = 1, PrereqTech = 'TECH_SAILING', PrereqCivic = null where ImprovementType = 'IMPROVEMENT_POLDER';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_POLDER';
+delete from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';
 insert or replace into Improvement_ValidFeatures
 	(ImprovementType,			FeatureType)
 values
 	('IMPROVEMENT_POLDER',		'FEATURE_REEF');
-update Adjacency_YieldChanges set TilesRequired = 2, ObsoleteTech = null, ObsoleteCivic = 'CIVIC_NAVAL_TRADITION' where ID = 'Polder_Polder_Food_Early';
-update Adjacency_YieldChanges set YieldChange = 1, PrereqTech = null, PrereqCivic = 'CIVIC_NAVAL_TRADITION' where ID = 'Polder_Polder_Food_Late';
-update Adjacency_YieldChanges set TilesRequired = 2, PrereqTech = null, ObsoleteTech = 'TECH_MASS_PRODUCTION' where ID = 'Polder_Polder_Production';
-insert or replace into Improvement_Adjacencies
-	(ImprovementType,			YieldChangeId)
-values
-	('IMPROVEMENT_POLDER',		'Polder_Polder_Food_Final'),
-	('IMPROVEMENT_POLDER',		'Polder_Polder_Production_Late'),
-	('IMPROVEMENT_POLDER',		'Polder_Polder_Gold');
-insert or replace into Adjacency_YieldChanges
-	(ID,								Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,		PrereqTech,						ObsoleteTech)
-values
-	('Polder_Polder_Food_Final',		'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_POLDER',		'TECH_STEAM_POWER',				null),
-	('Polder_Polder_Production_Late',	'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_POLDER',		'TECH_MASS_PRODUCTION',			null),
-	('Polder_Polder_Gold',				'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_POLDER',		'TECH_CIVIL_ENGINEERING_HD',	null);
--- Floodplain Polder (Netherlands)
+
 insert or ignore into Types
 	(Type,											Kind)
 values
@@ -768,7 +754,7 @@ values
 insert or replace into Improvements
 	(ImprovementType,			Name,								PrereqTech,				Description,								PlunderType,		PlunderAmount,	Icon,							TraitType,										Housing,	TilesRequired,	MovementChange)
 values
-	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_CONSTRUCTION',	'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				2);
+	('IMPROVEMENT_LAND_POLDER',	'LOC_IMPROVEMENT_LAND_POLDER_NAME',	'TECH_IRRIGATION',		'LOC_IMPROVEMENT_LAND_POLDER_DESCRIPTION',	'PLUNDER_FAITH',	25,				'ICON_IMPROVEMENT_LAND_POLDER',	'TRAIT_CIVILIZATION_IMPROVEMENT_LAND_POLDER',	1,			2,				1);
 insert or replace into Improvement_ValidFeatures
 	(ImprovementType,			FeatureType)
 values
@@ -776,11 +762,12 @@ values
 	('IMPROVEMENT_LAND_POLDER',	'FEATURE_FLOODPLAINS_GRASSLAND'),
 	('IMPROVEMENT_LAND_POLDER',	'FEATURE_FLOODPLAINS_PLAINS'),
 	('IMPROVEMENT_LAND_POLDER',	'FEATURE_MARSH');
+--resource
 insert or replace into Improvement_ValidResources
 	(ImprovementType,			ResourceType)
 select
 	'IMPROVEMENT_LAND_POLDER',	ResourceType
-from Resources where ResourceType in ('RESOURCE_SUGAR','RESOURCE_SAFFRON','RESOURCE_P0K_PAPYRUS');
+from Resources where ResourceType in (select ResourceType from Improvement_ValidResources where ImprovementType = 'IMPROVEMENT_FARM' or ImprovementType = 'IMPROVEMENT_PLANTATION');
 insert or replace into Improvement_ValidBuildUnits
 	(ImprovementType,			UnitType)
 values
@@ -789,36 +776,57 @@ insert or replace into MomentIllustrations
 	(MomentIllustrationType,						MomentDataType,					GameDataType,					Texture)
 values
 	('MOMENT_ILLUSTRATION_UNIQUE_IMPROVEMENT',		'MOMENT_DATA_IMPROVEMENT',		'IMPROVEMENT_LAND_POLDER',		'Moment_Infrastructure_Netherlands.dds');
+-- adjacency
 insert or replace into Improvement_Adjacencies
 	(ImprovementType,			YieldChangeId)
 values
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Food_Early'),
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Food_Late'),
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Food_Final'),
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Production'),
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Production_Late'),
-	('IMPROVEMENT_POLDER',		'Polder_Land_Polder_Gold');
+	('IMPROVEMENT_POLDER',		'P_POLDER_PRODUCTION_TIRE1'),
+	('IMPROVEMENT_POLDER',		'P_POLDER_PRODUCTION_TIRE2'),
+	('IMPROVEMENT_POLDER',		'P_POLDER_FOOD_TIRE1'),
+	('IMPROVEMENT_POLDER',		'P_POLDER_FOOD_TIRE2'),
+	('IMPROVEMENT_POLDER',		'P_LAND_POLDER_PRODUCTION_TIRE1'),
+	('IMPROVEMENT_POLDER',		'P_LAND_POLDER_PRODUCTION_TIRE2'),
+	('IMPROVEMENT_POLDER',		'P_LAND_POLDER_FOOD_TIRE1'),
+	('IMPROVEMENT_POLDER',		'P_LAND_POLDER_FOOD_TIRE2');
+
+-- yieldchange
 insert or replace into Adjacency_YieldChanges
-	(ID,									Description,	YieldType,			YieldChange,	TilesRequired,	AdjacentImprovement,			PrereqTech,						ObsoleteTech,			PrereqCivic,				ObsoleteCivic)
+	(ID, 								Description,		YieldType, 				YieldChange, 	TilesRequired, 		AdjacentImprovement, 		PrereqTech, 				ObsoleteTech,				PrereqCivic,				ObsoleteCivic)
 values
-	('Polder_Land_Polder_Food_Early',		'Placeholder',	'YIELD_FOOD',		1,				2,				'IMPROVEMENT_LAND_POLDER',		null,							null,					null,						'CIVIC_NAVAL_TRADITION'),
-	('Polder_Land_Polder_Food_Late',		'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_LAND_POLDER',		null,							null,					'CIVIC_NAVAL_TRADITION',	null),
-	('Polder_Land_Polder_Food_Final',		'Placeholder',	'YIELD_FOOD',		1,				1,				'IMPROVEMENT_LAND_POLDER',		'TECH_STEAM_POWER',				null,					null,						null),
-	('Polder_Land_Polder_Production',		'Placeholder',	'YIELD_PRODUCTION',	1,				2,				'IMPROVEMENT_LAND_POLDER',		null,							'TECH_MASS_PRODUCTION',	null,						null),
-	('Polder_Land_Polder_Production_Late',	'Placeholder',	'YIELD_PRODUCTION',	1,				1,				'IMPROVEMENT_LAND_POLDER',		'TECH_MASS_PRODUCTION',			null,					null,						null),
-	('Polder_Land_Polder_Gold',				'Placeholder',	'YIELD_GOLD',		2,				1,				'IMPROVEMENT_LAND_POLDER',		'TECH_CIVIL_ENGINEERING_HD',	null,					null,						null);
+	('P_POLDER_PRODUCTION_TIRE1',		'Placeholder',		'YIELD_PRODUCTION',		1,				2,					'IMPROVEMENT_POLDER',		'TECH_SHIPBUILDING',		'TECH_MASS_PRODUCTION',		NULL,						NULL),
+	('P_POLDER_PRODUCTION_TIRE2',		'Placeholder',		'YIELD_PRODUCTION',		1,				1,					'IMPROVEMENT_POLDER',		'TECH_MASS_PRODUCTION',		NULL,						NULL,						NULL),
+	('P_POLDER_FOOD_TIRE1',				'Placeholder',		'YIELD_FOOD',			1,				2,					'IMPROVEMENT_POLDER',		NULL,						NULL,						NULL,						'CIVIC_FEUDALISM'),
+	('P_POLDER_FOOD_TIRE2',				'Placeholder',		'YIELD_FOOD',			1,				1,					'IMPROVEMENT_POLDER',		NULL,						NULL,						'CIVIC_FEUDALISM',			NULL),
+	('P_LAND_POLDER_PRODUCTION_TIRE1',	'Placeholder',		'YIELD_PRODUCTION',		1,				2,					'IMPROVEMENT_LAND_POLDER',	'TECH_SHIPBUILDING',		'TECH_MASS_PRODUCTION',		NULL,						NULL),
+	('P_LAND_POLDER_PRODUCTION_TIRE2',	'Placeholder',		'YIELD_PRODUCTION',		1,				1,					'IMPROVEMENT_LAND_POLDER',	'TECH_MASS_PRODUCTION',		NULL,						NULL,						NULL),
+	('P_LAND_POLDER_FOOD_TIRE1',		'Placeholder',		'YIELD_FOOD',			1,				2,					'IMPROVEMENT_LAND_POLDER',	NULL,						NULL,						NULL,						'CIVIC_FEUDALISM'),
+	('P_LAND_POLDER_FOOD_TIRE2',		'Placeholder',		'YIELD_FOOD',			1,				1,					'IMPROVEMENT_LAND_POLDER',	NULL,						NULL,						'CIVIC_FEUDALISM',			NULL);
+	
+-- adjacency
 insert or replace into Improvement_Adjacencies
-	(ImprovementType,			YieldChangeId)
-select
-	'IMPROVEMENT_LAND_POLDER',	'Land_' || YieldChangeId
-from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER';
+	(ImprovementType,				YieldChangeId)
+values
+	('IMPROVEMENT_LAND_POLDER',		'LP_POLDER_PRODUCTION_TIRE1'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_POLDER_PRODUCTION_TIRE2'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_POLDER_FOOD_TIRE1'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_POLDER_FOOD_TIRE2'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_LAND_POLDER_PRODUCTION_TIRE1'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_LAND_POLDER_PRODUCTION_TIRE2'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_LAND_POLDER_FOOD_TIRE1'),
+	('IMPROVEMENT_LAND_POLDER',		'LP_LAND_POLDER_FOOD_TIRE2');
+
+-- yieldchange
 insert or replace into Adjacency_YieldChanges
-	(ID,			Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement,	PrereqTech,		ObsoleteTech,	PrereqCivic,	ObsoleteCivic)
-select
-	'Land_' || ID,	Description,	YieldType,	YieldChange,	TilesRequired,	AdjacentImprovement,	PrereqTech,		ObsoleteTech,	PrereqCivic,	ObsoleteCivic
-from Adjacency_YieldChanges where ID in (select YieldChangeId from Improvement_Adjacencies where ImprovementType = 'IMPROVEMENT_POLDER');
-update Adjacency_YieldChanges set ObsoleteTech = 'TECH_BUTTRESS', ObsoleteCivic = null where ID = 'Land_Polder_Polder_Food_Early' or ID = 'Land_Polder_Land_Polder_Food_Early';
-update Adjacency_YieldChanges set PrereqTech = 'TECH_BUTTRESS', PrereqCivic = null where ID = 'Land_Polder_Polder_Food_Late' or ID = 'Land_Polder_Land_Polder_Food_Late';
+	(ID, 								Description,		YieldType, 				YieldChange, 	TilesRequired, 		AdjacentImprovement, 		PrereqTech, 				ObsoleteTech,				PrereqCivic,				ObsoleteCivic)
+values
+	('LP_POLDER_PRODUCTION_TIRE1',		'Placeholder',		'YIELD_PRODUCTION',		1,				2,					'IMPROVEMENT_POLDER',		'TECH_CONSTRUCTION',		'TECH_MASS_PRODUCTION',		NULL,						NULL),
+	('LP_POLDER_PRODUCTION_TIRE2',		'Placeholder',		'YIELD_PRODUCTION',		1,				1,					'IMPROVEMENT_POLDER',		'TECH_MASS_PRODUCTION',		NULL,						NULL,						NULL),
+	('LP_POLDER_FOOD_TIRE1',			'Placeholder',		'YIELD_FOOD',			1,				2,					'IMPROVEMENT_POLDER',		NULL,						NULL,						NULL,						'CIVIC_FEUDALISM'),
+	('LP_POLDER_FOOD_TIRE2',			'Placeholder',		'YIELD_FOOD',			1,				1,					'IMPROVEMENT_POLDER',		NULL,						NULL,						'CIVIC_FEUDALISM',			NULL),
+	('LP_LAND_POLDER_PRODUCTION_TIRE1',	'Placeholder',		'YIELD_PRODUCTION',		1,				2,					'IMPROVEMENT_LAND_POLDER',	'TECH_CONSTRUCTION',		'TECH_MASS_PRODUCTION',		NULL,						NULL),
+	('LP_LAND_POLDER_PRODUCTION_TIRE2',	'Placeholder',		'YIELD_PRODUCTION',		1,				1,					'IMPROVEMENT_LAND_POLDER',	'TECH_MASS_PRODUCTION',		NULL,						NULL,						NULL),
+	('LP_LAND_POLDER_FOOD_TIRE1',		'Placeholder',		'YIELD_FOOD',			1,				2,					'IMPROVEMENT_LAND_POLDER',	NULL,						NULL,						NULL,						'CIVIC_FEUDALISM'),
+	('LP_LAND_POLDER_FOOD_TIRE2',		'Placeholder',		'YIELD_FOOD',			1,				1,					'IMPROVEMENT_LAND_POLDER',	NULL,						NULL,						'CIVIC_FEUDALISM',			NULL);
 
 -- Mission (Spain)
 update Improvement_BonusYieldChanges set PrereqCivic = 'CIVIC_EXPLORATION' where ImprovementType = 'IMPROVEMENT_MISSION' and PrereqCivic = 'CIVIC_CULTURAL_HERITAGE';

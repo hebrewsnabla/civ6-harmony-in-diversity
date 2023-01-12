@@ -2,10 +2,10 @@
 
 -- 国立大学 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD', cost = 750 where BuildingType = 'NAT_WONDER_CL_COLLEGE_INTERNAL';
 	-- 修改建造条件
-update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_COLLEGE';
+update Modifiers set OwnerRequirementSetId = NULL where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_COLLEGE';
 insert or replace into BuildingPrereqs
 	(Building,								PrereqBuilding)
 values
@@ -53,10 +53,10 @@ values
 
 -- 民族史诗 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', cost = 1000 where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
 	-- 修改建造条件
-update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_NATIONALEPIC';
+update Modifiers set OwnerRequirementSetId = NULL where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_NATIONALEPIC';
 
 update Buildings set AdjacentDistrict = 'DISTRICT_THEATER' where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC';
 update Buildings set AdjacentDistrict = 'DISTRICT_THEATER' where BuildingType = 'NAT_WONDER_CL_NATIONALEPIC_INTERNAL';
@@ -123,8 +123,8 @@ from Yields;
 
 -- 大本营 ------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL';
-update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = Null, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
+update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = NULL, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL';
+update Buildings set PrereqTech = 'TECH_MILITARY_ENGINEERING', PrereqCivic = NULL, cost = 750 where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL';
 	-- 修改本体产出
 delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL' and YieldType = 'YIELD_SCIENCE';
 delete from Building_YieldChanges where BuildingType = 'NAT_WONDER_CL_CITADEL_INTERNAL' and YieldType = 'YIELD_SCIENCE';
@@ -136,7 +136,7 @@ update Building_GreatPersonPoints set PointsPerTurn = 6 where BuildingType = 'NA
 	-- 修改特效
 		-- 移除堡垒产出
 delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_CITADEL' and ModifierId = 'CL_NAT_WONDER_ATTACH_FORT_YIELD_MODIFIER';
---update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ATTACH_FORT_YIELD_MODIFIER';
+--update Modifiers set OwnerRequirementSetId = NULL where ModifierId = 'CL_NAT_WONDER_ATTACH_FORT_YIELD_MODIFIER';
 --delete from ModifierArguments where ModifierId = 'CL_NAT_WONDER_ADJUST_FORT_YIELD';
 --insert or replace into ModifierArguments
 --	(ModifierId,							Name,					Value)
@@ -144,7 +144,7 @@ delete from BuildingModifiers where BuildingType = 'NAT_WONDER_CL_CITADEL' and M
 --	('CL_NAT_WONDER_ADJUST_FORT_YIELD',		'YieldType',			'YIELD_PRODUCTION,YIELD_CULTURE'),
 --	('CL_NAT_WONDER_ADJUST_FORT_YIELD',		'Amount',				'2,2');
 		-- 单位加力
-update Modifiers set SubjectRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_CITADEL_GRANT_ABILITY';
+update Modifiers set SubjectRequirementSetId = NULL where ModifierId = 'CL_NAT_WONDER_CITADEL_GRANT_ABILITY';
 update Modifiers set SubjectRequirementSetId = 'HD_UNIT_IN_OWNER_TERRITORY_REQUIREMENTS' where ModifierId = 'CL_NAT_WONDER_ADJUST_UNIT_COMBAT_STRENGTH';
 delete from UnitAbilityModifiers where UnitAbilityType = 'ABILITY_NAT_WONDER_CL_CITADEL' and ModifierId = 'CL_NAT_WONDER_ADJUST_UNIT_MOVEMENT';
 update UnitAbilities set Description = 'LOC_ABILITY_NAT_WONDER_CL_CITADEL_DESCRIPTION_HD' where UnitAbilityType = 'ABILITY_NAT_WONDER_CL_CITADEL';
@@ -197,14 +197,14 @@ from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is nul
 insert or replace into Modifiers
 	(ModifierId,														ModifierType,												RunOnce,	Permanent,	SubjectRequirementSetId)
 values
-	('HD_NAT_CITADEL_GRANT_WALLS',										'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		1,			1,			Null),
-	('HD_NAT_CITADEL_GRANT_CASTLE',										'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		1,			1,			Null),
+	('HD_NAT_CITADEL_GRANT_WALLS',										'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		1,			1,			NULL),
+	('HD_NAT_CITADEL_GRANT_CASTLE',										'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		1,			1,			NULL),
 	('HD_NAT_CITADEL_ENCAMPMENT_ADJACENCY',								'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			0,			0,			'DISTRICT_IS_DISTRICT_ENCAMPMENT_REQUIREMENTS'),
 	('HD_NAT_CITADEL_ENCAMPMENT_ADJACENCY_CULTURE',						'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_MODIFIER',			0,			0,			'DISTRICT_IS_DISTRICT_ENCAMPMENT_REQUIREMENTS'),
 	('HD_NAT_CITADEL_MILITARY_ENGINEER_CHARGE',							'MODIFIER_PLAYER_UNITS_ADJUST_BUILDER_CHARGES',				0,			1,			'UNIT_IS_UNIT_MILITARY_ENGINEER_REQUIREMENTS'),
 	('HD_NAT_CITADEL_MILITARY_ENGINEER_MOVEMENT',						'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT',					0,			1,			'UNIT_IS_UNIT_MILITARY_ENGINEER_REQUIREMENTS');
-	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_PRODUCTION_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				0,			0,			Null),
-	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_CULTURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					0,			0,			Null),
+	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_PRODUCTION_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',				0,			0,			NULL),
+	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_CULTURE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					0,			0,			NULL),
 	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_PRODUCTION',			'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',				0,			0,			'DISTRICT_IS_ENCAMPMENT'),
 	--('HD_NAT_CITADEL_ADJUST_ENCAMPMENT_DISTRICT_CULTURE',				'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_CHANGE',				0,			0,			'DISTRICT_IS_ENCAMPMENT');
 
@@ -276,8 +276,8 @@ from Buildings where PrereqDistrict = 'DISTRICT_ENCAMPMENT' and TraitType is nul
 
 -- 圣殿 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_THEOLOGY', cost = 420 where BuildingType = 'NAT_WONDER_CL_TEMPLE_INTERNAL';
 	-- 修改建造条件
 update RequirementArguments set Value = 5 where RequirementId = 'REQ_CL_PLAYER_HAS_X_CITIES_WITH_RELIGION' and Name = 'Count';
 	-- 修改特效
@@ -322,8 +322,8 @@ values
 
 -- 国家主题公园 ------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
-update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = Null, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK';
+update Buildings set PrereqTech = 'TECH_BIOLOGY_HD', PrereqCivic = NULL, cost = 1800, RegionalRange = 9 where BuildingType = 'NAT_WONDER_CL_THEMEPARK_INTERNAL';
 	-- 修改本体产出
 insert or replace into Building_YieldChanges
 	(BuildingType,							YieldType,			YieldChange)

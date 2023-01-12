@@ -38,7 +38,7 @@ values
 
     (311,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_BUTTRESS',            NULL),
     -- (312,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  NULL,                       'CIVIC_MERCANTILISM'),
-    (313,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BIOLOGY_HD',          Null),
+    (313,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_CULTURE',     1,                  'TECH_BIOLOGY_HD',          NULL),
     (314,  'IMPROVEMENT_JNR_OASIS_FARM',   'YIELD_GOLD',        2,                  'TECH_SYNTHETIC_MATERIALS', NULL);
 
 update Technologies set Description = 'LOC_TECH_BIOLOGY_HD_DESCRIPTION' where TechnologyType = 'TECH_BIOLOGY_HD';
@@ -87,7 +87,7 @@ insert or replace into ImprovementModifiers (ImprovementType, ModifierID) values
 insert or replace into Modifiers
     (ModifierId,                    ModifierType,                                           SubjectRequirementSetId)
 values
-    ('JNR_OASIS_FARM_AMENITY',      'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_AMENITY',      Null);
+    ('JNR_OASIS_FARM_AMENITY',      'MODIFIER_SINGLE_CITY_ADJUST_IMPROVEMENT_AMENITY',      NULL);
 
 insert or replace into ModifierArguments
     (ModifierId,                    Name,            Value)
@@ -198,7 +198,7 @@ values
     ('LADY_OF_THE_SWAMP_CULTURE',			'MODIFIER_ALL_CITIES_ATTACH_MODIFIER',				                'CITY_FOLLOWS_PANTHEON_REQUIREMENTS'),
 	('LADY_OF_THE_SWAMP_CULTURE_MODIFIER',	'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		                'HD_PLOT_HAS_SWAMP_REQUIREMENTS'),
     ('TRAIT_SWAMP_CULTIRE',	                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',		            'HD_PLOT_HAS_SWAMP_REQUIREMENTS'),
-    ('TRAIT_SWAMP_BUILDINGS_CULTIRE',       'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',      Null);
+    ('TRAIT_SWAMP_BUILDINGS_CULTIRE',       'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_FEATURE_YIELD_CHANGE',      NULL);
 
 insert or ignore into ModifierArguments
 	(ModifierId,							Name,				Value)
