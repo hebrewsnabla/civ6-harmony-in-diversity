@@ -2356,4 +2356,19 @@ values
 update ModifierArguments set Value = 1500 where ModifierId = 'TRAIT_ORIGIN_DESTINATION_RELIGIOUS_PRESSURE' and Name = 'Amount';
 --阿兹特克
 update ModifierArguments set Value = 30 where ModifierId = 'TRAIT_BUILDER_DISTRICT_PERCENT';
---荷兰
+--瑞典
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+values
+	('TRAIT_CIVILIZATION_NOBEL_PRIZE',		'TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD');
+
+insert or replace into Modifiers
+	(ModifierId,									ModifierType)
+values
+	('TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD',	'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_PATRONAGE_DISCOUNT_PERCENT');
+
+insert or replace into ModifierArguments
+	(ModifierId,									Name,						Value)
+values
+	('TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD',	'Amount',					8),
+	('TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD',	'YieldType',				'YIELD_GOLD');

@@ -531,7 +531,7 @@ function PersiaCityConquered (newPlayerId, oldPlayerId, newCityId, x, y)
 	end
 end
 GameEvents.CityConquered.Add(PersiaCityConquered);
-
+--马其顿
 function MacedonActiveWonder (newPlayerID, oldPlayerID, newCityID, iCityX, iCityY)
 	local player = Players[newPlayerID];
 	local playerConfig = PlayerConfigurations[newPlayerID];
@@ -555,3 +555,94 @@ function MacedonActiveWonder (newPlayerID, oldPlayerID, newCityID, iCityX, iCity
 	end
 end
 GameEvents.CityConquered.Add(MacedonActiveWonder);
+
+--瑞典时代分伟人点
+local SCIENTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_SCIENTIST'].Index;
+local MERCHANT_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MERCHANT'].Index;
+local ENGINEER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index;
+function SwedenPlayerEraScoreChanged(playerID, amountAwarded)
+	local player = Players[playerID];
+	local playerConfig = PlayerConfigurations[playerID];
+	local sCiv = playerConfig:GetCivilizationTypeName();
+	local sSweden = 'TRAIT_CIVILIZATION_NOBEL_PRIZE';
+	local sCAMPUS = 0;
+	local sCOMMERCIAL = 0;
+	local sINDUSTRIAL = 0;
+	local sTHEATER = 0;
+	if (not CivilizationHasTrait(sCiv, sSweden)) then
+		return;
+	end
+	for _,city in player:GetCities():Members() do
+		local cityDistricts = city:GetDistricts();
+		for row in GameInfo.Districts() do
+			if cityDistricts:HasDistrict(row.Index) and (row.DistrictType == 'DISTRICT_CAMPUS') then
+				sCAMPUS = sCAMPUS + 1;
+			end
+			if cityDistricts:HasDistrict(row.Index) and (row.DistrictType == 'DISTRICT_COMMERCIAL_HUB') then
+				sCOMMERCIAL = sCOMMERCIAL + 1;
+			end
+			if cityDistricts:HasDistrict(row.Index) and (row.DistrictType == 'DISTRICT_INDUSTRIAL_ZONE') then
+				sINDUSTRIAL = sINDUSTRIAL + 1;
+			end
+			if cityDistricts:HasDistrict(row.Index) and (row.DistrictType == 'DISTRICT_THEATER') then
+				sTHEATER = sTHEATER + 1;
+			end
+		end
+	end
+	player:GetGreatPeoplePoints():ChangePointsTotal(SCIENTIST_INDEX, amountAwarded * (2 * sCAMPUS + 1));
+	player:GetGreatPeoplePoints():ChangePointsTotal(MERCHANT_INDEX, amountAwarded * (2 * sCOMMERCIAL + 1));
+	player:GetGreatPeoplePoints():ChangePointsTotal(ENGINEER_INDEX, amountAwarded * (2 * sINDUSTRIAL + 1));
+	player:GetGreatPeoplePoints():ChangePointsTotal(WRITER_INDEX, amountAwarded * (2 * sTHEATER + 1));
+	player:GetGreatPeoplePoints():ChangePointsTotal(ARTIST_INDEX, amountAwarded * (2 * sTHEATER + 1));
+	player:GetGreatPeoplePoints():ChangePointsTotal(MUSICIAN_INDEX, amountAwarded * (2 * sTHEATER + 1));
+end
+
+Events.PlayerEraScoreChanged.Add(SwedenPlayerEraScoreChanged);
+
+--瑞典伟人金
+function SwedenGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+	local era = nil;
+	local amount = 0;
+	for sPlayerID, player in ipairs(Players) do
+		local playerConfig = PlayerConfigurations[sPlayerID];
+		local sCiv = playerConfig:GetCivilizationTypeName();
+		if CivilizationHasTrait(sCiv, 'TRAIT_CIVILIZATION_NOBEL_PRIZE') then
+			for row in GameInfo.GreatPersonIndividuals() do
+				if row.Index == greatPersonIndividualID and (row.GreatPersonClassType == 'GREAT_PERSON_CLASS_SCIENTIST' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_MERCHANT' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_ENGINEER' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_WRITER' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_ARTIST' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_MUSICIAN') then
+					era = row.EraType;
+					if era == 'ERA_ANCIENT' then
+						amount = 1;
+					end
+					if era == 'ERA_CLASSICAL' then
+						amount = 2;
+					end
+					if era == 'ERA_MEDIEVAL' then
+						amount = 3;
+					end
+					if era == 'ERA_RENAISSANCE' then
+						amount = 4;
+					end
+					if era == 'ERA_INDUSTRIAL' then
+						amount = 5;
+					end
+					if era == 'ERA_MODERN' then
+						amount = 6;
+					end
+					if era == 'ERA_ATOMIC' then
+						amount = 7;
+					end
+					if era == 'ERA_INFORMATION' then
+						amount = 8;
+					end
+					if era == 'ERA_FUTURE' then
+						amount = 9;
+					end
+					break
+				end
+			end
+			player:GetTreasury():ChangeGoldBalance(100 * amount);
+		end
+	end
+end
+
+Events.UnitGreatPersonCreated.Add(SwedenGreatPersonCreated)

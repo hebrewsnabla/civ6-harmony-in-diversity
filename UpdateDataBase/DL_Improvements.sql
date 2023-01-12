@@ -897,7 +897,7 @@ values
 	('GOLD_COURSE_ENGINEER',	'Amount',					2);
 
 -- Open-Air Museum (Sweden)
-update Improvements set PrereqCivic = 'CIVIC_HUMANISM' where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
+update Improvements set PrereqCivic = 'CIVIC_MYSTICISM' where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_OPEN_AIR_MUSEUM';
 create temporary table HD_OpenAirMuseumBonuses (
 	ObjectType text not null primary key,
