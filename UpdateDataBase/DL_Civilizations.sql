@@ -978,10 +978,10 @@ values
 --------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
-update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
-update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
 
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_SCIENTIST_HAPPY' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENTIST_ECSTATIC' and Name = 'Amount';
@@ -1051,10 +1051,10 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_SCIENCE_JOYFUL',						'YieldType',					'YIELD_SCIENCE'),
 	('TRAIT_SCIENCE_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_SCIENCE_JOYFUL',						'Amount',						12),
+	('TRAIT_SCIENCE_JOYFUL',						'Amount',						16),
 	('TRAIT_PRODUCTION_JOYFUL',						'YieldType',					'YIELD_PRODUCTION'),
 	('TRAIT_PRODUCTION_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						12),
+	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						16),
 	('TRAIT_SCIENTIST_JOYFUL',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TRAIT_SCIENTIST_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
 	('TRAIT_SCIENTIST_JOYFUL',						'Amount',						4),
