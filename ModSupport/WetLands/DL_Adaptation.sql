@@ -294,3 +294,10 @@ insert or replace into Adjacency_YieldChanges
 	(ID,				Description,			YieldType,		YieldChange,	AdjacentFeature)
 values
 	('Swamp_Faith',		'LOC_SWAMP_FAITH',		'YIELD_FAITH',	1,				'FEATURE_HD_SWAMP');
+--独石教堂相邻
+insert or replace into Adjacency_YieldChanges
+	(ID,										Description,				YieldType,					YieldChange,				TilesRequired,			AdjacentResourceClass)
+values
+	('LuxuryAdjacency_Faith',					'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_LUXURY'),
+	('StrategicAdjacency_Faith',				'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_STRATEGIC'),
+	('BounsAdjacency_Faith',					'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_BONUS');

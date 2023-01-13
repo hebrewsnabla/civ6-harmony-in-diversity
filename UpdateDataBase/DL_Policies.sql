@@ -93,7 +93,7 @@ values
 	('COMMEMORATION_RELIGIOUS_CHARGE',			'Amount',				2);
 -- Hic Sunt Dracones
 delete from CommemorationModifiers where CommemorationType = 'COMMEMORATION_EXPLORATION' and ModifierId = 'COMMEMORATION_EXPLORATION_GA_FOREIGNIDENTITY';
-update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADD_POPULATION', NewOnly = 1 where ModifierId = 'COMMEMORATION_EXPLORATION_GA_NEW_CITY_POPULATION';
+update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADD_POPULATION', NewOnly = 1, Permanent = 1 where ModifierId = 'COMMEMORATION_EXPLORATION_GA_NEW_CITY_POPULATION';
 insert or replace into CommemorationModifiers
 	(CommemorationType,					ModifierId)
 values

@@ -721,7 +721,6 @@ values
 
 -- Terracotta Army
 update Buildings set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS', PrereqTech = NULL where BuildingType = 'BUILDING_TERRACOTTA_ARMY';
-update ModifierArguments set Value = 30 where ModifierId = 'TERRACOTTA_ARMY_LEVEL_UP_UNITS' and Name = 'Amount';
 insert or replace into BuildingModifiers
 	(BuildingType, 					ModifierId)
 values

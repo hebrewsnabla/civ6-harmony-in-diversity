@@ -29,6 +29,13 @@ insert or replace into ModifierArguments
 values
 	('DUSHI_BUILDER_PURCHASE',						'Tag',			'CLASS_BUILDER'),
 	('DUSHI_SETTLER_PURCHASE',						'Tag',			'CLASS_SETTLER');
+--独石教堂相邻
+insert or replace into Improvement_Adjacencies
+    (ImprovementType,                               YieldChangeId)
+values
+    ('IMPROVEMENT_ROCK_HEWN_CHURCH',                'LuxuryAdjacency_Faith'),
+    ('IMPROVEMENT_ROCK_HEWN_CHURCH',                'StrategicAdjacency_Faith'),
+    ('IMPROVEMENT_ROCK_HEWN_CHURCH',                'BounsAdjacency_Faith');
 -- insert or replace into PolicyModifiers
 --     (PolicyType,    ModifierId)
 -- values

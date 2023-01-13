@@ -1203,6 +1203,7 @@ update Building_YieldChanges set YieldChange = 10 where BuildingType = 'BUILDING
 update Building_YieldChanges set YieldChange = 12 where BuildingType = 'BUILDING_PRASAT';
 
 -- 木板教堂
+delete from BuildingModifiers where ModifierId = 'STAVECHURCH_SEARESOURCE_PRODUCTION';
 insert or replace into BuildingModifiers
 	(BuildingType,					ModifierId)
 values
