@@ -165,7 +165,7 @@ values
 update AiFavoredItems set Value = 0 WHERE ListType = 'DefaultYieldBias';
 update AiFavoredItems set Value = 50 WHERE ListType = 'DefaultYieldBias' and (Item = 'YIELD_GOLD' or Item = 'YIELD_FAITH');
 update AiFavoredItems set Value = 0 WHERE ListType = 'ClassicalYields';
-update PseudoYields set DefaultValue = 1 where PseudoYieldType like 'PSEUDOYIELD_GPP_%' and PseudoYieldType != 'PSEUDOYIELD_GPP_SCIENTIST';
+update PseudoYields set DefaultValue = 1 where PseudoYieldType like 'PSEUDOYIELD_GPP_%' and PseudoYieldType != 'PSEUDOYIELD_GPP_SCIENTIST' and PseudoYieldType != 'PSEUDOYIELD_GPP_ARTIST' and PseudoYieldType != 'PSEUDOYIELD_GPP_MUSICIAN';
 
 -- xiaoxiaocat: changes below are not reorganized
 -- AiFavoredItems

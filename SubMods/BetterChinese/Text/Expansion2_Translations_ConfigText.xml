@@ -41,7 +41,7 @@
 			<Text>在市中心河对岸且相邻市中心的单元格修建区域与建筑时+50%建造速度。</Text>
 		</Replace>
 		<Replace Tag="LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>与河流相邻时，学院、剧院广场和工业区将获得大量加成。建成港口后可对相邻单元格施放文化炸弹。建造堤坝和拦洪坝时+50%建造速度。</Text>
+			<Text>与河流相邻时，学院、剧院广场和工业区将获得大量加成。建成港口后可对相邻单元格施放文化炸弹。建造堤坝和拦海堤时+50%建造速度。</Text>
 		</Replace>
 		<Replace Tag="LOC_TRAIT_CIVILIZATION_GREAT_TURKISH_BOMBARD_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>生产攻城单位时50%建造速度。攻击区域防御时，所有攻城单位+5 [ICON_Strength] 战斗力。征服城市不会造成 [ICON_Citizen] 人口损失。非奥斯曼建立的城市+1 [ICON_AMENITIES] 宜居度，每回合+4忠诚度。</Text>

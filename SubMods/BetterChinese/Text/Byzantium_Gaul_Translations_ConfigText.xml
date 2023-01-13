@@ -14,7 +14,7 @@
 			<Text>每有一座圣城皈依您的宗教，便+3 [ICON_Strength] 战斗力；主要文明的单位被击杀后，每击杀一个敌方文明或城邦单位，拜占庭创立的宗教都将传播到6格以内的城市（天授规矩）</Text>
 		</Replace>
 		<Replace Tag="LOC_UNIT_BYZANTINE_TAGMA_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>巴兹尔二世的特色中世纪单位，替代骑士。与靖抚骑兵相邻的陆地单位+4 [ICON_Strength] 战斗力或 [ICON_RELIGION] 宗教战斗力（该加成不会叠加）。</Text>
+			<Text>巴兹尔二世的特色中世纪单位，替代骑士。与甲胄骑兵相邻的陆地单位+4 [ICON_Strength] 战斗力或 [ICON_RELIGION] 宗教战斗力（该加成不会叠加）。</Text>
 		</Replace>
 		<Replace Tag="LOC_DISTRICT_HIPPODROME_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>拜占庭特色区域。替代“娱乐设施”区域，提供+3 [ICON_Amenities] 宜居度，且建造花费更低。建成跑马场及其中的建筑时，将获得1个重骑兵单位。</Text>
@@ -26,13 +26,13 @@
 			<Text>跑马场区域赠送的单位每回合不消耗战略资源。</Text>
 		</Replace>
 		<Replace Tag="LOC_TRAIT_LEADER_BASIL_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>攻击信仰宗教与拜占庭主流宗教相同的城市时，骑兵将对城市外围防御造成全额伤害。解锁“王权神授”市政后将获得特色单位“靖抚骑兵”。</Text>
+			<Text>攻击信仰宗教与拜占庭主流宗教相同的城市时，骑兵将对城市外围防御造成全额伤害。解锁“王权神授”市政后将获得特色单位“甲胄骑兵”。</Text>
 		</Replace>
 		<Replace Tag="LOC_UNIT_BYZANTINE_DROMON_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>拜占庭特色古典时代单位，替代四段帆船。拥有更远的射程，对抗其它单位时+10 [ICON_Strength] 战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_TAGMA_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>与靖抚骑兵相邻的陆地单位+4 [ICON_Strength] 战斗力或 [ICON_RELIGION] 宗教战斗力。</Text>
+			<Text>与甲胄骑兵相邻的陆地单位+4 [ICON_Strength] 战斗力或 [ICON_RELIGION] 宗教战斗力。</Text>
 		</Replace>
 		<Replace Tag="LOC_ABILITY_ENABLE_WALL_ATTACK_SAME_RELIGION_DESCRIPTION" Language="zh_Hans_CN">
 			<Text>进攻所信仰宗教与拜占庭相同之城市时，对城墙造成全额伤害（生于紫色）</Text>

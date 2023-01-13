@@ -117,3 +117,23 @@ INSERT OR REPLACE INTO ModifierArguments (ModifierId, Name, Value) VALUES
 
 update Modifiers set ModifierType = 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
 update Modifiers set SubjectRequirementSetId = 'CITY_HAS_GARRISON_UNIT_REQUIERMENT' where ModifierId = 'TRAIT_ADDITIONAL_MARTIAL_LAW';
+
+--马其顿UA
+--城市不会产生厌战情绪。此玩家占领拥有世界奇观的城市或建成世界奇观时，目前所有单位获得15点经验值。占领城市时，为所有城市正在建造的奇观推进10%的建造进程。
+delete from TraitModifiers where ModifierId = 'TRAIT_TOWORLDSEND_HEAL_ON_WONDER_CAPTURE';
+insert or replace into TraitModifiers
+	(TraitType,												ModifierId)
+values
+	('TRAIT_LEADER_TO_WORLDS_END',							'TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE');
+
+insert or replace into Modifiers
+	(ModifierId,													ModifierType,										RunOnce,	Permanent,		SubjectRequirementSetId)
+values
+	('TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE',				'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',		0,			0,				'PLOT_HAS_COMPLETE_WONDER'),
+	('TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE_MODIFIER',		'MODIFIER_PLAYER_UNITS_ADJUST_GRANT_EXPERIENCE',	1,			1,				NULL);
+
+insert or replace into ModifierArguments
+	(ModifierId,													Name,							Value)
+values
+	('TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE',				'ModifierId',					'TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE_MODIFIER'),
+	('TRAIT_TOWORLDSEND_EXPERIENCE_ON_WONDER_CAPTURE_MODIFIER',		'Amount',						15);

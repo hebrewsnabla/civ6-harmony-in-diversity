@@ -320,7 +320,7 @@ values
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'YieldType',	'YIELD_GOLD'),
 	('POWERED_STOCK_EXCHANGE_GOLD_PERCENTAGE_BOOST',		'Amount',		5);
 
-update ModifierArguments set Value = 'ERA_INDUSTRIAL' where ModifierId = 'FILMSTUDIO_ENHANCEDLATETOURISM' and Name = 'MinimumEra';
+update ModifierArguments set Value = 'ERA_ANCIENT' where ModifierId = 'FILMSTUDIO_ENHANCEDLATETOURISM' and Name = 'MinimumEra';
 
 -- Maintainance and Cost
 -- City Center
