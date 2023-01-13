@@ -45,7 +45,8 @@ update Eras_XP2 set TradeRouteMinimumEndTurnChange = 0;
 
 -- Change from 2 to 1. Only full sea trade route gets 100% more gold, only need half of the route before.
 -- back to 1.5, double when at least 2/3 is sea.
-update GlobalParameters set Value = 1.5 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
+--系数小数点无效
+update GlobalParameters set Value = 1 where Name = 'TRADE_ROUTE_TRANSPORTATION_EFFICIENCY_SCORE_WATER_TILE';
 
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_ALLIANCE_TIME_LIMIT';
 update GlobalParameters set Value = 15 where Name = 'DIPLOMACY_DECLARED_FRIENDSHIP_TIME_LIMIT';
@@ -174,8 +175,8 @@ values
     ('DEVINE_INSPIRATION_WONDER_FAITH_PERCENTAGE',      33),
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
-    ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             15),
-    ('CHINA_WORKER_SCIENCE_PER_CHARGE',                 6),
+    ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             10),
+    ('CHINA_WORKER_SCIENCE_PER_CHARGE',                 0),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
     ('HD_CITY_ROADS_REQUIRE_WHEEL',                     1),

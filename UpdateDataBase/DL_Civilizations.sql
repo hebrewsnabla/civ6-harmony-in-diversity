@@ -541,7 +541,11 @@ insert or replace into Modifiers(ModifierID,ModifierType)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','MODIFIER_CITY_ADJUST_CAN_PURCHASE_DISTRICTS');
 insert or replace into ModifierArguments(ModifierID, Name, Value)values
 	('SUGUBA_ALLOW_PURCHASE_DISTRICT','CanPurchase',1);
-
+update ModifierArguments set Value = 15 where Name = 'Amount' and ModifierId in(
+	'SUGUBA_CHEAPER_BUILDING_PURCHASE',
+	'SUGUBA_CHEAPER_DISTRICT_PURCHASE',
+	'SUGUBA_CHEAPER_UNIT_PURCHASE'
+);
 --additonal SUGUBA project
 -- insert or replace into Types
 -- 	(Type,								Kind)
