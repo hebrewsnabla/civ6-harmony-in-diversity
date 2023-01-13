@@ -46,3 +46,4 @@ values
     ('TORRE_DE_BELEM_SETTLERS_MOVEMENT',    'Amount',   2),
     ('TORRE_DE_BELEM_GRANT_SETTLERS',       'UnitType', 'UNIT_SETTLER'),
     ('TORRE_DE_BELEM_GRANT_SETTLERS',       'Amount',   2);
+update ModifierArguments set Value = '25, 25, 25, 25, 25, 25' where ModifierId = 'TRAIT_INTERNATIONAL_TRADE_GAIN_ALL_YIELDS' and Name = 'Amount';

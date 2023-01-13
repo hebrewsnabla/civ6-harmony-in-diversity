@@ -86,8 +86,8 @@ insert or replace into ModifierArguments (ModifierId, Name, Value)
 
 -- 金融中心 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE';
-update Buildings set PrereqTech = Null, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE_INTERNAL';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE';
+update Buildings set PrereqTech = NULL, PrereqCivic = 'CIVIC_CAPITALISM', cost = 1800 where BuildingType = 'NAT_WON_CL_FINANCE_INTERNAL';
 update Building_YieldChanges set YieldChange = 8 where BuildingType = 'NAT_WON_CL_FINANCE' and YieldType = 'YIELD_GOLD';
 
 insert or replace into Building_YieldChanges
@@ -203,8 +203,8 @@ values
 
 -- 国际机场 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	-- 修改解锁条件和造价
-update Buildings set cost = 2000, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT';
-update Buildings set cost = 2000, AdjacentDistrict = Null where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
+update Buildings set cost = 2000, AdjacentDistrict = NULL where BuildingType = 'NAT_WON_CL_AIRPORT';
+update Buildings set cost = 2000, AdjacentDistrict = NULL where BuildingType = 'NAT_WON_CL_AIRPORT_INTERNAL';
 insert or replace into Building_YieldChanges
 	(BuildingType,							YieldType,			YieldChange)
 values
@@ -216,7 +216,7 @@ values
 	('NAT_WON_CL_AIRPORT',					'YIELD_GOLD',		6),
 	('NAT_WON_CL_AIRPORT_INTERNAL',			'YIELD_GOLD',		6);
 	-- 修改建造条件
-update Modifiers set OwnerRequirementSetId = Null where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_AIRPORT';
+update Modifiers set OwnerRequirementSetId = NULL where ModifierId = 'CL_NAT_WONDER_ALLOW_BUILDING_AIRPORT';
 	-- 修改特效
 delete from BuildingModifiers where BuildingType = 'NAT_WON_CL_AIRPORT' and ModifierId != 'TRAIT_FREE_BUILDER_AFTER_FININSHING_WONDER';
 
@@ -231,8 +231,8 @@ values
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,									SubjectRequirementSetId)
 values
-	('HD_NAT_AIRPORT_3_TRADE',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',	Null),
-	('HD_NAT_AIRPORT_DIPLO',				'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',			Null),
+	('HD_NAT_AIRPORT_3_TRADE',				'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',	NULL),
+	('HD_NAT_AIRPORT_DIPLO',				'MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY',			NULL),
 	('HD_NAT_AIRPORT_LUMBERMILL_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_HAS_AIRPORT_OR_NATAIRPORT'),
 	('HD_NAT_AIRPORT_PLANTATION_TOURISM',	'MODIFIER_PLAYER_CITIES_ADJUST_TOURISM',		'HD_CITY_HAS_AIRPORT_OR_NATAIRPORT');
 

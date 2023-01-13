@@ -463,7 +463,7 @@ values
 	('POLICY_COMPILE',						'LOC_POLICY_COMPILE_NAME',						'LOC_POLICY_COMPILE_DESCRIPTION',						null,										'TECH_PAPER_MAKING_HD',		'SLOT_GREAT_PERSON'),
 	('POLICY_SUPPLY_LINES',					'LOC_POLICY_SUPPLY_LINES_NAME',					'LOC_POLICY_SUPPLY_LINES_DESCRIPTION',					null,										'TECH_MILITARY_TACTICS',	'SLOT_MILITARY'),
 	('POLICY_SCHOLAR_BUREAUCRAT',			'LOC_POLICY_SCHOLAR_BUREAUCRAT_NAME',			'LOC_POLICY_SCHOLAR_BUREAUCRAT_DESCRIPTION',			'CIVIC_IMPERIAL_EXAMINATION_SYSTEM_HD',		null,						'SLOT_GREAT_PERSON'),
-	('POLICY_NEW_ROUTE',					'LOC_POLICY_NEW_ROUTE_NAME',					'LOC_POLICY_NEW_ROUTE_DESCRIPTION',						'CIVIC_MERCANTILISM',						Null,						'SLOT_ECONOMIC'),
+	('POLICY_NEW_ROUTE',					'LOC_POLICY_NEW_ROUTE_NAME',					'LOC_POLICY_NEW_ROUTE_DESCRIPTION',						'CIVIC_MERCANTILISM',						NULL,						'SLOT_ECONOMIC'),
 	('POLICY_WATER_TRANSPORT',				'LOC_POLICY_WATER_TRANSPORT_NAME',				'LOC_POLICY_WATER_TRANSPORT_DESCRIPTION',				'CIVIC_MERCANTILISM',						null,						'SLOT_ECONOMIC'),
 	('POLICY_TEXTBOOK',						'LOC_POLICY_TEXTBOOK_NAME',						'LOC_POLICY_TEXTBOOK_DESCRIPTION',						null,										'TECH_PRINTING',			'SLOT_GREAT_PERSON'),
 	('POLICY_SUPERPOWER',					'LOC_POLICY_SUPERPOWER_NAME',					'LOC_POLICY_SUPERPOWER_DESCRIPTION',					'CIVIC_COLD_WAR',							null,						'SLOT_DIPLOMATIC'),
@@ -578,36 +578,36 @@ values
 -- Policy Prereqs
 --update Policies set PrereqCivic = null, PrereqTech = 'TECH_THE_WHEEL'			where PolicyType = 'POLICY_WAREHOUSE';
 --update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASS_PRODUCTION'		where PolicyType = 'POLICY_SAFETY_BOX';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_INSULAE';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_APPRENTICESHIP'		where PolicyType = 'POLICY_MEDINA_QUARTER';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_BUTTRESS'			where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_CARTOGRAPHY'			where PolicyType = 'POLICY_TRIANGULAR_TRADE';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_FREE_MARKET';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_SANITATION'			where PolicyType = 'POLICY_EXPROPRIATION';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_ELECTRICITY'			where PolicyType = 'POLICY_ECONOMIC_UNION';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_CASTLES'				where PolicyType = 'POLICY_WALL_HOUSING';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_MILITARY_RESEARCH';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBINED_ARMS'		where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_ROCKETRY'			where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'	where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_NUCLEAR_FISSION'		where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
-update Policies set PrereqCivic = NULL, PrereqTech = 'TECH_CIVIL_ENGINEERING_HD' where PolicyType = 'POLICY_DRILL_MANUALS';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'				where PolicyType = 'POLICY_WISSELBANKEN';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_SIEGE_TACTICS'		where PolicyType = 'POLICY_BASTIONS';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'				where PolicyType = 'POLICY_LIMES';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBUSTION'			where PolicyType = 'POLICY_COLLECTIVIZATION';
-update Policies set PrereqCivic = null, PrereqTech = 'TECH_WRITING' 			where PolicyType = 'POLICY_INSPIRATION';
-update Policies set PrereqCivic = 'CIVIC_URBANIZATION'				where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
-update Policies set PrereqCivic = 'CIVIC_MOBILIZATION'				where PolicyType = 'POLICY_FORCE_MODERNIZATION';
-update Policies set PrereqCivic = 'CIVIC_CAPITALISM'				where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
-update Policies set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD'			where PolicyType = 'POLICY_GRAND_OPERA';
-update Policies set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD'		where PolicyType = 'POLICY_COLONIAL_OFFICES';
-update Policies set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD'	where PolicyType = 'POLICY_INVENTION';
-update Policies set PrereqCivic = 'CIVIC_ETHICS_HD'					where PolicyType = 'POLICY_NATIONAL_IDENTITY';
-update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD'		where PolicyType = 'POLICY_AESTHETICS';
-update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS'			where PolicyType = 'POLICY_LOGISTICS';
-update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES'			where PolicyType = 'POLICY_TOWN_CHARTERS';
-update Policies set PrereqCivic = 'CIVIC_CONSERVATION' 				where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'						where PolicyType = 'POLICY_INSULAE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_APPRENTICESHIP'				where PolicyType = 'POLICY_MEDINA_QUARTER';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_BUTTRESS'					where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CARTOGRAPHY'					where PolicyType = 'POLICY_TRIANGULAR_TRADE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_BANKING'						where PolicyType = 'POLICY_FREE_MARKET';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_SANITATION'					where PolicyType = 'POLICY_EXPROPRIATION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_ELECTRICITY'					where PolicyType = 'POLICY_ECONOMIC_UNION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CASTLES'						where PolicyType = 'POLICY_WALL_HOUSING';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'			where PolicyType = 'POLICY_MILITARY_RESEARCH';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBINED_ARMS'				where PolicyType = 'POLICY_INTERNATIONAL_WATERS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_ROCKETRY'					where PolicyType = 'POLICY_STRATEGIC_AIR_FORCE';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MILITARY_SCIENCE'			where PolicyType = 'POLICY_CONSTRUCTION_CROPS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_NUCLEAR_FISSION'				where PolicyType = 'POLICY_SECOND_STRIKE_CAPABILITY';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_CIVIL_ENGINEERING_HD' 		where PolicyType = 'POLICY_DRILL_MANUALS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_SIEGE_TACTICS'				where PolicyType = 'POLICY_BASTIONS';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_MASONRY'						where PolicyType = 'POLICY_LIMES';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_COMBUSTION'					where PolicyType = 'POLICY_COLLECTIVIZATION';
+update Policies set PrereqCivic = null, PrereqTech = 'TECH_WRITING' 					where PolicyType = 'POLICY_INSPIRATION';
+update Policies set PrereqCivic = 'CIVIC_EXPLORATION',				PrereqTech = NULL	where PolicyType = 'POLICY_WISSELBANKEN';
+update Policies set PrereqCivic = 'CIVIC_URBANIZATION', 			PrereqTech = NULL	where PolicyType = 'POLICY_PUBLIC_TRANSPORT';
+update Policies set PrereqCivic = 'CIVIC_MOBILIZATION', 			PrereqTech = NULL	where PolicyType = 'POLICY_FORCE_MODERNIZATION';
+update Policies set PrereqCivic = 'CIVIC_CAPITALISM', 				PrereqTech = NULL	where PolicyType = 'POLICY_FIVE_YEAR_PLAN';
+update Policies set PrereqCivic = 'CIVIC_SOCIAL_SCIENCE_HD'	,		PrereqTech = NULL	where PolicyType = 'POLICY_GRAND_OPERA';
+update Policies set PrereqCivic = 'CIVIC_EVOLUTION_THEORY_HD',		PrereqTech = NULL	where PolicyType = 'POLICY_COLONIAL_OFFICES';
+update Policies set PrereqCivic = 'CIVIC_HISTORICAL_PHILOSOPHY_HD', PrereqTech = NULL	where PolicyType = 'POLICY_INVENTION';
+update Policies set PrereqCivic = 'CIVIC_ETHICS_HD'	,				PrereqTech = NULL	where PolicyType = 'POLICY_NATIONAL_IDENTITY';
+update Policies set PrereqCivic = 'CIVIC_LITERARY_TRADITION_HD',	PrereqTech = NULL	where PolicyType = 'POLICY_AESTHETICS';
+update Policies set PrereqCivic = 'CIVIC_DEFENSIVE_TACTICS',		PrereqTech = NULL	where PolicyType = 'POLICY_LOGISTICS';
+update Policies set PrereqCivic = 'CIVIC_MEDIEVAL_FAIRES',			PrereqTech = NULL	where PolicyType = 'POLICY_TOWN_CHARTERS';
+update Policies set PrereqCivic = 'CIVIC_CONSERVATION',				PrereqTech = NULL	where PolicyType = 'POLICY_RESOURCE_MANAGEMENT';
 
 -- Governement Exclusive Policies
 delete from Policy_GovernmentExclusives_XP2 where PolicyType = 'POLICY_COLLECTIVIZATION';
@@ -700,7 +700,7 @@ update Policies set PrereqCivic = 'CIVIC_MILITARY_TRADITION' where PolicyType = 
 update Policies set PrereqCivic = 'CIVIC_STATE_WORKFORCE' where PolicyType = 'POLICY_INSULAE';
 -- 
 -- update Policies set PrereqCivic = 'CIVIC_DIVINE_RIGHT' where PolicyType = 'POLICY_MEDINA_QUARTER';
-update Policies set PrereqCivic = Null, PrereqTech = 'TECH_CURRENCY' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
+update Policies set PrereqCivic = NULL, PrereqTech = 'TECH_CURRENCY' where PolicyType = 'POLICY_TRADE_CONFEDERATION';
 -- update Policies set PrereqCivic = 'CIVIC_FEUDALISM' where PolicyType = 'POLICY_CIVIL_PRESTIGE';
 update Policies set PrereqCivic = 'CIVIC_MERCENARIES' where PolicyType = 'POLICY_RETAINERS';
 -- update Policies set PrereqCivic = 'CIVIC_CIVIL_SERVICE' where PolicyType = 'POLICY_GOTHIC_ARCHITECTURE';
