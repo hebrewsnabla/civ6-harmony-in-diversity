@@ -2376,3 +2376,35 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD',	'Amount',					8),
 	('TRAIT_NOBEL_PRIZE_GREAT_PERSON_DISCOUNT_HD',	'YieldType',				'YIELD_GOLD');
+--毛利
+delete from TraitModifiers where ModifierId in (
+	'BUILDER_PRESETTLEMENT',
+	'TRAIT_MAORI_FISHING_BOAT_FOOD'
+); 
+delete from TraitModifiers where ModifierId like 'TRAIT_MAORI_PRODUCTION_%';
+delete from ExcludedGreatPersonClasses where TraitType = 'TRAIT_CIVILIZATION_MAORI_MANA';
+insert or replace into TraitModifiers
+	(TraitType,							ModifierId)
+values
+	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_WOODS'),
+	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_SWAMP'),
+	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_RAINFOREST'),
+	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_MARSH');
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,							SubjectRequirementSetId)
+values
+	('TRAIT_MAORI_WOODS',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_WOODS_TECH_ASTROLOGY_REQUIREMENTS'),
+	('TRAIT_MAORI_SWAMP',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_SWAMP_TECH_ASTROLOGY_REQUIREMENTS'),
+	('TRAIT_MAORI_RAINFOREST',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RAINFOREST_TECH_ASTROLOGY_REQUIREMENTS'),
+	('TRAIT_MAORI_MARSH',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_MARSH_TECH_ASTROLOGY_REQUIREMENTS');
+insert or replace into ModifierArguments
+	(ModifierId,						Name,				Value)
+values
+	('TRAIT_MAORI_WOODS',				'YieldType',		'YIELD_FOOD'),
+	('TRAIT_MAORI_WOODS',				'Amount',			1),
+	('TRAIT_MAORI_SWAMP',				'YieldType',		'YIELD_FOOD'),
+	('TRAIT_MAORI_SWAMP',				'Amount',			1),
+	('TRAIT_MAORI_RAINFOREST',			'YieldType',		'YIELD_PRODUCTION'),
+	('TRAIT_MAORI_RAINFOREST',			'Amount',			1),
+	('TRAIT_MAORI_MARSH',				'YieldType',		'YIELD_PRODUCTION'),
+	('TRAIT_MAORI_MARSH',				'Amount',			1);
