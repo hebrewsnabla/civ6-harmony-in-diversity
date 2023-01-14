@@ -901,6 +901,10 @@ values
 			where 
 				ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
 
+		delete from ImprovementModifiers
+			where 
+				ImprovementType = 'IMPROVEMENT_GOLF_COURSE';
+
 	-- base yieldchange
 	insert or replace into Improvement_YieldChanges
 		(ImprovementType,				YieldType,				YieldChange)
