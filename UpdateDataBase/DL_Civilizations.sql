@@ -982,10 +982,10 @@ values
 --------------------------------------------------------------------------------------------------------------------------
 --Scotland
 --Happy city recives an additional 10% science and 10% production.
-update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
-update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
-update ModifierArguments set Value = 18 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_SCIENCE_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 8 where ModifierId = 'TRAIT_PRODUCTION_HAPPY'and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_SCIENCE_ECSTATIC' and Name = 'Amount';
+update ModifierArguments set Value = 24 where ModifierId = 'TRAIT_PRODUCTION_ECSTATIC' and Name = 'Amount';
 
 update ModifierArguments set Value = 2 where ModifierId = 'TRAIT_SCIENTIST_HAPPY' and Name = 'Amount';
 update ModifierArguments set Value = 6 where ModifierId = 'TRAIT_SCIENTIST_ECSTATIC' and Name = 'Amount';
@@ -1055,10 +1055,10 @@ insert or replace into ModifierArguments
 values
 	('TRAIT_SCIENCE_JOYFUL',						'YieldType',					'YIELD_SCIENCE'),
 	('TRAIT_SCIENCE_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_SCIENCE_JOYFUL',						'Amount',						12),
+	('TRAIT_SCIENCE_JOYFUL',						'Amount',						16),
 	('TRAIT_PRODUCTION_JOYFUL',						'YieldType',					'YIELD_PRODUCTION'),
 	('TRAIT_PRODUCTION_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
-	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						12),
+	('TRAIT_PRODUCTION_JOYFUL',						'Amount',						16),
 	('TRAIT_SCIENTIST_JOYFUL',						'GreatPersonClassType',			'GREAT_PERSON_CLASS_SCIENTIST'),
 	('TRAIT_SCIENTIST_JOYFUL',						'HappinessType',				'HAPPINESS_JOYFUL'),
 	('TRAIT_SCIENTIST_JOYFUL',						'Amount',						4),
@@ -1869,7 +1869,7 @@ values
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_PURCHASE'),
 	('TRAIT_CIVILIZATION_FOUNDING_FATHERS',	'HD_AMERICA_GRASS_HILLS_PURCHASE');
 
--- Netherlands
+-- Netherlands la
 
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_CAMPUS_RIVER_ADJACENCY';
 delete from TraitModifiers where TraitType = 'TRAIT_CIVILIZATION_GROTE_RIVIEREN' and ModifierId = 'TRAIT_INDUSTRIAL_ZONE_RIVER_ADJACENCY';
@@ -1962,109 +1962,57 @@ values
 -- 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'BuildingType',			BuildingType
 -- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
 
--- insert or replace into ModifierArguments
--- 	(ModifierId,																Name,					Value)
--- select
--- 	'TRAIT_HARBOR_' || BuildingType || '_PURCHASE_CHEAPER_MODIFIER',			'Amount',				15
--- from Buildings where PrereqDistrict = 'DISTRICT_HARBOR';
-insert or replace into RequirementSets
-	(RequirementSetId,											RequirementSetType)
-values
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIREMENTSET_TEST_ALL'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIREMENTSET_TEST_ANY');
 
-insert or replace into RequirementSetRequirements
-	(RequirementSetId,											RequirementId)
-values
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN'),
-	('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'HD_REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_COAST'),
-	('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_OCEAN');
+    insert or replace into ModifierArguments
+	    (ModifierId,					            				Name,				Value)
+    values
+	  	--('POLDER_HARBOR_ATTACH',	                				'ModifierId',		'POLDER_PRODUCTION'),
+        ('POLDER_HARBOR_TIER_1_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
+	    ('POLDER_HARBOR_TIER_2_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
+        ('POLDER_HARBOR_TIER_3_BUILDING_ATTACH',					'ModifierId',		'POLDER_PRODUCTION'),
+	    ('POLDER_PRODUCTION',			            				'YieldType',		'YIELD_PRODUCTION,YIELD_GOLD'),
+	    ('POLDER_PRODUCTION',			            				'Amount',			'1,2'),
+		--('LAND_POLDER_COMMERCIAL_HUB_ATTACH',	                	'ModifierId',		'LAND_POLDER_PRODUCTION'),
+        ('LAND_POLDER_COMMERCIAL_HUB_TIER_1_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
+	    ('LAND_POLDER_COMMERCIAL_HUB_TIER_2_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
+        ('LAND_POLDER_COMMERCIAL_HUB_TIER_3_BUILDING_ATTACH',		'ModifierId',		'LAND_POLDER_PRODUCTION'),
+	    ('LAND_POLDER_PRODUCTION',			            			'YieldType',		'YIELD_PRODUCTION,YIELD_GOLD'),
+	    ('LAND_POLDER_PRODUCTION',			            			'Amount',			'1,2');
+		--
+		--('NETHERLANDS_HARBOR_PRODUCTION',                     	'DistrictType',     'DISTRICT_HARBOR'),
+    	--('NETHERLANDS_HARBOR_PRODUCTION',                     	'Amount',           30),
+    	--('NETHERLANDS_HARBOR_BUILDING_PRODUCTION',           		'DistrictType',     'DISTRICT_HARBOR'),
+   	 	--('NETHERLANDS_HARBOR_BUILDING_PRODUCTION',            	'Amount',           30),
+		--('NETHERLANDS_COMMERCIAL_HUB_PRODUCTION',                 'DistrictType',     'DISTRICT_COMMERCIAL_HUB'),
+    	--('NETHERLANDS_COMMERCIAL_HUB_PRODUCTION',                 'Amount',           30),
+    	--('NETHERLANDS_COMMERCIAL_HUB_BUILDING_PRODUCTION',        'DistrictType',     'DISTRICT_COMMERCIAL_HUB'),
+   	 	--('NETHERLANDS_COMMERCIAL_HUB_BUILDING_PRODUCTION',        'Amount',           30);
 
-insert or replace into Requirements
-	(RequirementId,								RequirementType)
-VALUES
-	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'REQUIREMENT_REQUIREMENTSET_IS_MET');
-insert or replace into RequirementArguments
-	(RequirementId,								Name,					Value)
-values
-	('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'RequirementSetId',		'HD_PLOT_IS_COAST_OR_OCEAN');
+	
+	insert or replace into RequirementSets
+		(RequirementSetId,											RequirementSetType)
+	values
+		('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIREMENTSET_TEST_ALL'),
+		('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIREMENTSET_TEST_ANY');
 
--- -- From Others
--- insert or replace into DistrictModifiers (DistrictType, ModifierId)
--- select DistrictType, DistrictType || '_' || YieldType || '_FROM_OTHERS'
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+	insert or replace into RequirementSetRequirements
+		(RequirementSetId,											RequirementId)
+	values
+		('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN'),
+		('HD_PLOT_IS_COAST_OR_OCEAN_AND_PLAYER_HAS_CONSTRUCTION',	'HD_REQUIRES_PLAYER_HAS_TECH_CONSTRUCTION'),
+		('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_COAST'),
+		('HD_PLOT_IS_COAST_OR_OCEAN',								'REQUIRES_TERRAIN_OCEAN');
 
--- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
--- select DistrictType || '_' || YieldType || '_FROM_OTHERS',
---     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',
---     'NETHERLANDS_REQUIREMENTS'
---     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
 
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
--- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'YieldType', YieldType
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
--- select DistrictType || '_' || YieldType || '_FROM_OTHERS', 'Amount', YieldChangeAsInternationalDestination
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
+	insert or replace into Requirements
+		(RequirementId,								RequirementType)
+	VALUES
+		('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'REQUIREMENT_REQUIREMENTSET_IS_MET');
+	insert or replace into RequirementArguments
+		(RequirementId,								Name,					Value)
+	values
+		('REQUIRES_HD_PLOT_IS_COAST_OR_OCEAN',		'RequirementSetId',		'HD_PLOT_IS_COAST_OR_OCEAN');
 
--- -- For International
--- insert or replace into DistrictModifiers (DistrictType, ModifierId)
--- select DistrictType, DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL'
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
-
--- insert or replace into Modifiers (ModifierId, ModifierType, SubjectRequirementSetId)
--- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL',
---     'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL',
---     'NETHERLANDS_REQUIREMENTS'
---     -- NULL -- 'RADIO_ORANJE_TRAIT_REQUIREMENTS'
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
-
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
--- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'YieldType', YieldType
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
--- insert or replace into ModifierArguments (ModifierId, Name, Value)
--- select DistrictType || '_' || YieldType || '_FOR_INTERNATIONAL', 'Amount', YieldChangeAsInternationalDestination
--- from District_TradeRouteYields
--- where DistrictType != 'DISTRICT_CITY_CENTER' and YieldChangeAsInternationalDestination != 0;
-
--- The trade route extra yields should be Leader Ability by design,
--- but the requirement REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT failed.
--- So we have to use REQUIREMENT_PLAYER_TYPE_MATCHES and it is actually tied to Civlization.
--- Requirement
-
--- insert or replace into Requirements (RequirementId, RequirementType) values
---     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'REQUIREMENT_PLAYER_TYPE_MATCHES');
-
--- insert or replace into RequirementArguments (RequirementId, Name, Value) values
---     ('REQUIRES_PLAYER_IS_NETHERLANDS', 'CivilizationType', 'CIVILIZATION_NETHERLANDS');
-
--- insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
---     ('NETHERLANDS_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
-
--- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
---     ('NETHERLANDS_REQUIREMENTS', 'REQUIRES_PLAYER_IS_NETHERLANDS');
-
--- insert or replace into Requirements (RequirementId, RequirementType) values
---     ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'REQUIREMENT_PLAYER_HAS_CIVILIZATION_OR_LEADER_TRAIT');
-
--- insert or replace into RequirementArguments (RequirementId, Name, Value) values
---     ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'TraitType', 'TRAIT_RADIO_ORANJE');
---     -- ('REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT', 'TraitType', 'TRAIT_CIVILIZATION_GROTE_RIVIEREN');
-
--- insert or replace into RequirementSets (RequirementSetId, RequirementSetType) values
---     ('RADIO_ORANJE_TRAIT_REQUIREMENTS', 'REQUIREMENTSET_TEST_ALL');
-
--- insert or replace into RequirementSetRequirements (RequirementSetId, RequirementId) values
---     ('RADIO_ORANJE_TRAIT_REQUIREMENTS', 'REQUIRES_PLAYER_HAS_RADIO_ORANJE_TRAIT');
 
 -- Norway
 insert or replace into TraitModifiers
