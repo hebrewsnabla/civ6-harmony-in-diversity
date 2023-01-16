@@ -142,7 +142,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GRAND_EMBASSY_NAME",                           "祖国之父"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ELEANOR_LOYALTY_DESCRIPTION",                  "您建立的城市中，考古博物馆和艺术博物馆获得3个额外槽位，填满时自动获得主题化。每个已放置的巨作使9个单元格内的外国城市-2忠诚度。外国城市转变为自由城市前，若对您的忠诚度最高，可直接效忠您。拥有剧院广场的城市可开展“爱之审判”项目。"), 
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_INDUSTRIAL_REVOLUTION_DESCRIPTION",      "已改良的 [ICON_Resource_Iron] 铁与 [ICON_Resource_Coal] 煤+1 [ICON_Production] 生产力且每回合产量额外增加2点。建造工业区和这个区域中的建筑时+25%建造速度。工业区的辐射建筑的 [ICON_Production] 生产力辐射额外+4，[ICON_SCIENCE] 科技值辐射额外+2。每次完成造船厂后，触发工业化尤里卡，若工业化尤里卡已触发，则直接完成工业化科技。"), --无视科技需求即揭示 [ICON_Resource_Iron] 铁资源，
-	("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PAX_BRITANNICA_EXPANSION2_DESCRIPTION",      "在新大陆（非首都所在大陆）建造首座城市时免费获得1个近战单位与1条 [ICON_TRADEROUTE] 贸易路线容量。建造“皇家海军船坞”后，获得可生产的最强海军单位。招募 [ICON_GREATGENERAL] 海军统帅时，获得一个对应时代的 [ICON_TECHBOOSTED] 尤里卡。研究“军事学”科技后，获得特色单位“红衫军”。"),
+	("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PAX_BRITANNICA_EXPANSION2_DESCRIPTION",  "在新大陆（非首都所在大陆）建造首座城市时免费获得1个近战单位与1条 [ICON_TRADEROUTE] 贸易路线容量。建造“皇家海军船坞”后，获得可生产的最强海军单位。招募 [ICON_GREATGENERAL] 海军统帅时，获得一个对应时代的 [ICON_TECHBOOSTED] 尤里卡。研究“军事学”科技后，获得特色单位“红衫军”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RELIGIOUS_CONVERT_DESCRIPTION",                "无法获得大预言家，或创建宗教。首次建成姆班赞后，激活“神学”、“王权神授”和“归正会”市政 [ICON_CivicBoosted] 鼓舞。获得额外50% [ICON_GREATWRITER] 大作家、[ICON_GREATARTIST] 大艺术家、[ICON_GREATMUSICIAN] 大音乐家和 [ICON_GREATMERCHANT] 大商人点数。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NKISI_DESCRIPTION",                      "所有陆地单位无视森林和雨林对 [ICON_MOVEMENT] 移动力的减益。每个 [ICON_GreatWork_Relic] 遗物、[ICON_GreatWork_Artifact] 文物、[ICON_GreatWork_Portrait] 肖像、[ICON_GreatWork_Landscape] 风景、[ICON_GreatWork_Religious] 宗教、 [ICON_GreatWork_Sculpture] 雕塑艺术和 [ICON_GREATWORK_MUSIC] 音乐巨作中获得+4 [ICON_Food] 食物、+4 [ICON_Production] 生产力；每个 [ICON_GreatWork_Writing] 巨著提供+2 [ICON_Food] 食物、+2 [ICON_Production] 生产力。宫殿有5个巨作槽位。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_BABYLON_NAME",                    		 "新月沃土"),
@@ -195,31 +195,31 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_CREE_TRADE_GAIN_TILES_DESCRIPTION",      "拥有制陶术科技后，+1 [ICON_TradeRoute] 贸易路线容量，获得1个免费商人。拥有国家劳动力市政后，+1 [ICON_TradeRoute] 贸易路线容量，获得1个免费商人。商人首次进入克里城市3个单元格内的无主单元格后，这些单元格将划入克里领土中。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_DIVINE_WIND_EXPANSION2_DESCRIPTION",           "陆地单位处于相邻海岸的陆地单元格时+5 [ICON_Strength] 战斗力；浅水单元格上的海军单位+5 [ICON_Strength] 战斗力。建造港口、圣地和剧院广场+50% [ICON_Production] 生产力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_DESCRIPTION",         "区域与区域相邻时额外获得标准相邻加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MONGOLIAN_ORTOO_DESCRIPTION",           "创建 [ICON_TRADEROUTE] 贸易路线后， [ICON_TRADINGPOST] 贸易站将立刻出现在目标城市。您的 [ICON_TRADEROUTE] 贸易路线每经过一个您的 [ICON_TRADINGPOST] 贸易站便+1 [ICON_SCIENCE] 科技值。每在一个文明的任意城市中拥有1座您的 [ICON_TRADINGPOST] 贸易站后，您对其的 [ICON_VISLIMITED] 外交能见度则上升1级。您从 [ICON_VISLIMITED] 外交能见度获得的 [ICON_STRENGTH] 战斗力加成翻倍。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GENGHIS_KHAN_ABILITY_DESCRIPTION",            "牧场给商业中心提供大量相邻加成。所有骑兵类单位 [ICON_STRENGTH] 战斗力+3，击败敌方骑兵类单位后有几率将其俘获。战斗胜利后，获得等同于被击杀单位 [ICON_STRENGTH] 战斗力50%的 [ICON_SCIENCE] 科技值（标准速度下）。"),
-    ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE",                           "+{1_num} [ICON_FAITH] 信仰来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
-    ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB",                      "+{1_num} [ICON_GOLD] 金币来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",             "拥有驻军单位的城市 +1 [ICON_CULTURE] 文化值。拥有驻军单位的城市每回合忠诚度+3；如驻扎有军团或军队，则+5。解锁相应的市政或科技后，用单位占领城市则可将其升级为军团或军队。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			       "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。征服一个城市后，所有3个单元格内的单位永久获得+1 [ICON_STRENGTH] 战斗力。"),
-    ("zh_Hans_CN",  "LOC_CAESAR_STRENGTH_MODIFIER",      			     		  "+{1_Amount}力来自已征服的城市。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",               "工业区+2 [ICON_Amenities] 宜居度。建造工业区后获得一个免费的建造者。允许在工业区解放建造者，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                     "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在信仰你宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                      "解放"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",               "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
-    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",               "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                    "在每个时代额外获得所有着力点加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_NADER_SHAH_DESCRIPTION",                      "进攻满生命值的单位或城市时+7 [ICON_STRENGTH] 战斗力。占领城市时摧毁其所有区域和建筑，并根据区域类型或建筑的前置区域类型获得等同于其基础 [ICON_PRODUCTION] 生产力消耗的产出：学院、军营和工业区提供 [ICON_SCIENCE] 科技值，圣地，剧院广场，娱乐中心和水上乐园提供 [ICON_CULTURE] 文化值，其余区域提供4倍 [ICON_GOLD] 金币。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_NADER_SHAH_COMBAT_DESCRIPTION",                      "进攻满生命值的单位或城市时+7 [ICON_Strength] 战斗力。（纳迪尔沙阿）"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                    "大地的子民"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",             "所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",             "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。"),
-    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",               "获得的战斗经验值+50%。（迅捷之鹰）"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                         "东印度之家"),
-    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY", "“大化改新”能力可以为日本区域带来大量相邻加成。德川家康的特色能力是提高了每个区域从国内 [ICON_TradeRoute] 贸易路线获得的收益。但要注意，国际 [ICON_TradeRoute] 贸易路线较为孱弱。“电子厂”将帮助他迈向文化或科技胜利。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",               "大化改新"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                            "镰仓幕府"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                     "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                   "城市不会产生厌战情绪。每占领一个奇观或建成奇观时，所有单位获得15点经验值。占领城市时，为所有城市正在建造的奇观推进10%的建造进程。");
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MONGOLIAN_ORTOO_DESCRIPTION",            "创建 [ICON_TRADEROUTE] 贸易路线后， [ICON_TRADINGPOST] 贸易站将立刻出现在目标城市。您的 [ICON_TRADEROUTE] 贸易路线每经过一个您的 [ICON_TRADINGPOST] 贸易站便+1 [ICON_SCIENCE] 科技值。每在一个文明的任意城市中拥有1座您的 [ICON_TRADINGPOST] 贸易站后，您对其的 [ICON_VISLIMITED] 外交能见度则上升1级。您从 [ICON_VISLIMITED] 外交能见度获得的 [ICON_STRENGTH] 战斗力加成翻倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_GENGHIS_KHAN_ABILITY_DESCRIPTION",             "牧场给商业中心提供大量相邻加成。所有骑兵类单位 [ICON_STRENGTH] 战斗力+3，击败敌方骑兵类单位后有几率将其俘获。战斗胜利后，获得等同于被击杀单位 [ICON_STRENGTH] 战斗力50%的 [ICON_SCIENCE] 科技值（标准速度下）。"),
+    ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_HOLY_SITE",                            "+{1_num} [ICON_FAITH] 信仰来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_GENGHIS_KHAN_PASTURE_COMMERCIAL_HUB",                       "+{1_num} [ICON_GOLD] 金币来自相邻牧场{1_Num : plural 1?单元格; other?单元格;}。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ZULU_ISIBONGO_DESCRIPTION",              "拥有驻军单位的城市 +1 [ICON_CULTURE] 文化值。拥有驻军单位的城市每回合忠诚度+3；如驻扎有军团或军队，则+5。解锁相应的市政或科技后，用单位占领城市则可将其升级为军团或军队。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CAESAR_DESCRIPTION",      			         "建立或征服城市时+200 [ICON_GOLD] 金币。清除蛮族哨站时+100 [ICON_GOLD] 金币。征服一个城市后，所有3个单元格内的单位永久获得+1 [ICON_STRENGTH] 战斗力。"),
+    ("zh_Hans_CN",  "LOC_CAESAR_STRENGTH_MODIFIER",      			     		     "+{1_Amount}力来自已征服的城市。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LINCOLN_EXPANSION_DESCRIPTION",                "工业区+2 [ICON_Amenities] 宜居度。建造工业区后获得一个免费的建造者。允许在工业区解放建造者，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SALADIN_ALT_DESCRIPTION",                      "为所有战斗和宗教单位+100%夹击和支援加成。所有单位在信仰你宗教的城市开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。宗教单位无视区域控制效果。"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_NAME",                       "解放"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DESCRIPTION",                "解放此单位，为该工业区提供+2 [ICON_PRODUCTION] 生产力相邻加成，如果在本城第一次进行解放，+1 [ICON_CITIZEN] 人口。"),
+    ("zh_Hans_CN",  "LOC_UNITCOMMAND_LIBERATION_LINCOLN_DISABLED_TT",                "必须位于工业区，且有剩余 [ICON_MOVEMENT] 移动力。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION",                     "在每个时代额外获得所有着力点加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_NADER_SHAH_DESCRIPTION",                       "进攻满生命值的单位或城市时+7 [ICON_STRENGTH] 战斗力。占领城市时摧毁其所有区域和建筑，并根据区域类型或建筑的前置区域类型获得等同于其基础 [ICON_PRODUCTION] 生产力消耗的产出：学院、军营和工业区提供 [ICON_SCIENCE] 科技值，圣地，剧院广场，娱乐中心和水上乐园提供 [ICON_CULTURE] 文化值，其余区域提供4倍 [ICON_GOLD] 金币。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_NADER_SHAH_COMBAT_DESCRIPTION",                     "进攻满生命值的单位或城市时+7 [ICON_Strength] 战斗力。（纳迪尔沙阿）"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_NAME",                     "大地的子民"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MAPUCHE_TOQUI_DESCRIPTION",              "所有靠山的区域（不包含奇观）+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值，相邻山脉单元格的改良设施+1 [ICON_FOOD] 食物和+1 [ICON_FAITH] 信仰值。单位如果相邻山脉单元格开始一个回合，会获得1 [ICON_MOVEMENT] 移动力加成。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT",              "与自由城市或处在黄金/英雄时代中的文明作战时+5 [ICON_STRENGTH] 战斗力。[ICON_GOVERNOR] 总督就职城市中生产的所有单位的战斗经验值+50%。"),
+    ("zh_Hans_CN",  "LOC_ABILITY_TOQUI_XP_FROM_GOVERNOR_DESCRIPTION",                "获得的战斗经验值+50%。（迅捷之鹰）"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_NAME",                          "东印度之家"),
+    ("zh_Hans_CN",  "LOC_PEDIA_LEADERS_PAGE_LEADER_TOKUGAWA_CHAPTER_DETAILED_BODY",  "“大化改新”能力可以为日本区域带来大量相邻加成。德川家康的特色能力是提高了每个区域从国内 [ICON_TradeRoute] 贸易路线获得的收益。但要注意，国际 [ICON_TradeRoute] 贸易路线较为孱弱。“电子厂”将帮助他迈向文化或科技胜利。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_ADJACENT_DISTRICTS_NAME",                "大化改新"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_DIVINE_WIND_NAME",                             "镰仓幕府"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                    "城市不会产生厌战情绪。每占领一个奇观或建成奇观时，所有单位获得15点经验值。占领城市时，为所有城市正在建造的奇观推进10%的建造进程。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
@@ -227,7 +227,7 @@ insert or replace into EnglishText
 values
     ("LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "Earn extra 1[ICON_GREATSCIENTIST] Great Scientist point, [ICON_GREATENGINEER] Great Engineer point, [ICON_GREATMERCHANT] Great Merchant point, [ICON_GREATWRITER] Great Writer point, [ICON_GREATARTIST] Great Artist point and [ICON_GREATMUSICIAN] Great Musician point for each era score earned. For every specialty district you have, you get an extra +2 bonus to that corresponding [ICON_GREATPERSON] Great Person point. Receive extra 50% of its [ICON_GreatPerson] Great Person point cost [ICON_GOLD] Gold after any player recruits a [ICON_GREATPERSON] Great Person. [ICON_GREATPERSON] Great People patronage cost -10% [ICON_GOLD] Gold. Having Sweden in the game adds three unique World Congress competitions starting in the Industrial Era."),
     ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "The Country of Windmills"),
-    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Grant boost [ICON_CIVICBOOSTED] to 'Exploration' each time a Lighthouse is built (complete 'Exploration' if already boosted). +50% construction speed toward the Dam district, Shipyard and Seawall buildings. All Harbor buildings provide +1 [ICON_PRODUCTION] Production and +2 [ICON_GOLD] Gold to Floodplain Polder in this city, and all Commercial Hub buildings provide +1 [ICON_PRODUCTION] Production and +2 [ICON_GOLD] Gold to Coastal Polder in this city,"),--When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank).
+    ("LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "Grant boost [ICON_CIVICBOOSTED] to 'Exploration' each time a  Harbor building is built (complete 'Exploration' if already boosted). +50% construction speed toward the Dam district, Shipyard and Seawall buildings. All Harbor buildings provide +1 [ICON_PRODUCTION] Production and +2 [ICON_GOLD] Gold to Floodplain Polder in this city, and all Commercial Hub buildings provide +1 [ICON_PRODUCTION] Production and +2 [ICON_GOLD] Gold to Coastal Polder in this city,"),--When completing naval units (rather than purchasing or gaining them for free) in cities with a Shipyard, gains [ICON_Gold] Gold equal to the unit’s cost (doubles when the city also has a Bank).
     ("LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "Shipyard provides +1 [ICON_TradeRoute] Trade Route capacity. Each international [ICON_TradeRoute] Trade Route to or from your city provide +2 [ICON_SCIENCE] Science for you, doubled if you are in Dark Ages."),
     ("LOC_TRAIT_CIVILIZATION_PORTUGAL_DESCRIPTION",                   "International [ICON_TRADEROUTE] Trade Routes must originate from a coastal city and can only reach cities on the coast or with a Harbor, but receive +25% towards all yields. Trader units have +50% range over water, and can embark as soon as they are unlocked."),
     ("LOC_TRAIT_LEADER_KUPES_VOYAGE_DESCRIPTION",                     "Begin the game in an Ocean tile. Gain +1 [ICON_CITIZEN] Population when settling your first city. The Palace receives +3 [ICON_HOUSING] Housing and +1 [ICON_AMENITIES] Amenity. +2 [ICON_SCIENCE] Science and +2 [ICON_CULTURE] Culture per turn before you settle your first city.");
@@ -239,7 +239,7 @@ insert or replace into LocalizedText
 values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION_JNR_UC",         "每获得一点时代分，额外获得1点[ICON_GREATSCIENTIST] 大科学家点数、[ICON_GREATMERCHANT] 大商人点数、[ICON_GREATENGINEER] 大工程师点数、[ICON_GREATWRITER] 大作家点数、[ICON_GREATARTIST] 大艺术家点数和 [ICON_GREATMUSICIAN] 大音乐家点数，你每拥有一个对应的专业化区域，就令对应 [ICON_GREATPERSON] 伟人点数+2。有文明招募这些类型的[ICON_GREATPERSON] 伟人时，为你提供其基础 [ICON_GREATPERSON] 伟人点消耗的50%等额 [ICON_GOLD] 金币。用 [ICON_GOLD] 金币招募[ICON_GREATPERSON] 伟人时所需的费用-10%。，进入工业时代后增加三项特色世界议会竞赛。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_NAME",                    "风车之国"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "每次完成灯塔后，触发探索鼓舞，若探索鼓舞已触发，则直接完成探索市政。建造堤坝区域和拦海堤建筑时加速50%。所有商业中心建筑为本城的淤滩圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币，所有港口建筑为本城的滨海圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GROTE_RIVIEREN_EXPANSION2_DESCRIPTION",  "每次完成港口建筑后，触发“探索”鼓舞，若探索鼓舞已触发，则直接完成“探索”市政。建造堤坝区域和拦海堤建筑时加速50%。所有商业中心建筑为本城的淤滩圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币，所有港口建筑为本城的滨海圩田+1 [ICON_PRODUCTION] 生产力、+2 [ICON_GOLD] 金币。"),--在拥有造船厂的城市生产出海军单位时（而非购买或赠送得到），获得等同于该单位成本的 [ICON_Gold] 金币，若该城市还拥有银行，则该效果翻倍。
     ("zh_Hans_CN",  "LOC_TRAIT_RADIO_ORANJE_DESCRIPTION",                            "造船厂提供+1 [ICON_TradeRoute] 贸易路线容量。您通往其他文明的 [ICON_TRADEROUTE] 贸易路线为荷兰+2 [ICON_SCIENCE] 科技值。其他文明通往荷兰的 [ICON_TRADEROUTE] 贸易路线能为荷兰+2 [ICON_SCIENCE] 科技值。如您处于黑暗时代，则这些数值将乘以2倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_PORTUGAL_DESCRIPTION",                   "国际 [ICON_TRADEROUTE] 贸易路线必须起源于海岸城市，并只能通往处于海岸上或拥有港口的城市，但所有产出+25%。商人单位在水域中的行动范围+50%，且解锁之后可立即在水域中行动。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_KUPES_VOYAGE_DESCRIPTION",                     "游戏开始时位于海洋单元格中。建立首座城市时+1 [ICON_CITIZEN] 人口。宫殿额外+3 [ICON_HOUSING] 住房与+1 [ICON_AMENITIES] 宜居度。建立首座城市前每回合获得+2 [ICON_SCIENCE] 科技值与+2 [ICON_CULTURE] 文化值。");

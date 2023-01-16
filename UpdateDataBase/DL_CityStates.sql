@@ -149,50 +149,21 @@ from HD_BuildingTiers where PrereqDistrict = 'DISTRICT_HOLY_SITE';
 
 -- Anshan (Babylon)
 delete from TraitModifiers where TraitType = 'MINOR_CIV_BABYLON_TRAIT';
-create temporary table HD_BabylonAdjacencies (TerrainType text not null primary key);
-insert or replace into HD_BabylonAdjacencies
-	(TerrainType)
-values
-	('TERRAIN_GRASS_HILLS'),
-	('TERRAIN_PLAINS_HILLS'),
-	('TERRAIN_DESERT_HILLS'),
-	('TERRAIN_TUNDRA_HILLS'),
-	('TERRAIN_SNOW_HILLS');
 insert or replace into TraitAttachedModifiers
 	(TraitType,						ModifierId)
-select
-	'MINOR_CIV_BABYLON_TRAIT',		'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY'
-from HD_BabylonAdjacencies;
+values
+	('MINOR_CIV_BABYLON_TRAIT',		'MINOR_CIV_BABYLON_CAMPUS_SCIENCE');
 insert or replace into Modifiers
-	(ModifierId,													ModifierType)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'MODIFIER_PLAYER_CITIES_TERRAIN_ADJACENCY'
-from HD_BabylonAdjacencies;
+	(ModifierId,													ModifierType,										SubjectRequirementSetId)
+values
+	('MINOR_CIV_BABYLON_CAMPUS_SCIENCE',							'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',	'PLOT_IS_HILLS_OR_ADJACENT_TO_MOUNTAIN_AND_CAMPUS');
+
 insert or replace into ModifierArguments
 	(ModifierId,													Name,				Value)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'DistrictType',		'DISTRICT_CAMPUS'
-from HD_BabylonAdjacencies;
-insert or replace into ModifierArguments
-	(ModifierId,													Name,				Value)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'TerrainType',		TerrainType
-from HD_BabylonAdjacencies;
-insert or replace into ModifierArguments
-	(ModifierId,													Name,				Value)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'YieldType',		'YIELD_SCIENCE'
-from HD_BabylonAdjacencies;
-insert or replace into ModifierArguments
-	(ModifierId,													Name,				Value)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'Amount',			1
-from HD_BabylonAdjacencies;
-insert or replace into ModifierArguments
-	(ModifierId,													Name,				Value)
-select
-	'MINOR_CIV_BABYLON_' || TerrainType || '_CAMPUS_ADJACENCY',		'Description',		'LOC_MINOR_CIV_BABYLON_HILLS_CAMPUS_ADJACENCY_DESCRIPTION'
-from HD_BabylonAdjacencies;
+values
+	('MINOR_CIV_BABYLON_CAMPUS_SCIENCE',							'YieldType',		'YIELD_SCIENCE'),
+	('MINOR_CIV_BABYLON_CAMPUS_SCIENCE',							'Amount',			3);
+
 
 -- Cardiff
 update ModifierArguments set Value = 0 where ModifierId = 'MINOR_CIV_CARDIFF_POWER_LIGHTHOUSE' and Name = 'Amount';

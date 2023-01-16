@@ -421,15 +421,15 @@ Events.GreatWorkCreated.Add(FranceGreatPeopleActiveWonder);
 
 -- 荷兰跳探索, by xiaoxiao
 local EXPLORATION_INDEX = GameInfo.Civics['CIVIC_EXPLORATION'].Index;
-function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, unknown2)
+function NetherlandsBuildingAddedToMap (playerID, cityID, buildingID, plotID, bOriginalConstruction)
 	if GlobalParameters.NETHERLANDS_EXPLORATION ~= 1 then
 		return;
 	end
-	local player = Players[playerId];
-	local playerConfig = PlayerConfigurations[playerId];
+	local player = Players[playerID];
+	local playerConfig = PlayerConfigurations[playerID];
 	local civ = playerConfig:GetCivilizationTypeName();
 	if CivilizationHasTrait(civ, 'TRAIT_CIVILIZATION_GROTE_RIVIEREN') then
-		local building = GameInfo.Buildings[buildingId];
+		local building = GameInfo.Buildings[buildingID];
 		if building.PrereqDistrict == 'DISTRICT_HARBOR' then
 			if not player:GetCulture():HasBoostBeenTriggered(EXPLORATION_INDEX) then
 				player:GetCulture():TriggerBoost(EXPLORATION_INDEX, 1);
@@ -440,7 +440,7 @@ function NetherlandsBuildingAddedToMap (x, y, buildingId, playerId, unknown1, un
 		end
 	end
 end
-Events.BuildingAddedToMap.Add(NetherlandsBuildingAddedToMap);
+GameEvents.BuildingConstructed.Add(NetherlandsBuildingAddedToMap);
 
 -- 印加梯田触发尤里卡和鼓舞
 local TERRACE_FARM_INDEX = GameInfo.Improvements['IMPROVEMENT_TERRACE_FARM'].Index;
@@ -497,6 +497,7 @@ function AttachModifier (playerId, cityId, modifierId)
 	city:AttachModifierByID(modifierId);
 end
 GameEvents.AttachModifierSwitch.Add(AttachModifier);
+--波斯
 
 function PersiaGrantYield (player, prereqDistrict, amount)
 	if (prereqDistrict == 'DISTRICT_CAMPUS') or (prereqDistrict == 'DISTRICT_INDUSTRIAL_ZONE') or (PrereqDistrict == 'DISTRICT_ENCAMPMENT') then
@@ -518,8 +519,10 @@ function PersiaCityConquered (newPlayerId, oldPlayerId, newCityId, x, y)
 	local cityBuildings = city:GetBuildings();
 	for row in GameInfo.Buildings() do
 		if cityBuildings:HasBuilding(row.Index) then
-			cityBuildings:RemoveBuilding(row.Index);
-			PersiaGrantYield(player, row.PrereqDistrict, row.Cost);
+			if (row.PrereqDistrict ~= nil) and (row.Cost ~= 0) and (row.Cost ~= 1) and (row.Cost ~= 9999)then
+				cityBuildings:RemoveBuilding(row.Index);
+				PersiaGrantYield(player, row.PrereqDistrict, row.Cost);
+			end
 		end
 	end
 	local cityDistricts = city:GetDistricts();
