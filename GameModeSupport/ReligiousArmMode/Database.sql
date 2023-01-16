@@ -20,18 +20,18 @@ insert or replace into HD_ReligiousArmUnits
 	(UnitType,							BaseMoves,	Combat,	Cost,	PrereqTech,			PrereqCivic,				Maintenance,	FaithMaintenance,	StrategicResource,	StrategicResourceAmount,	ResourceMaintenanceType,	ResourceMaintenanceAmount,	Replaces,					Upgrades,							IsNew)
 values
 	-- New Units
-	('UNIT_HD_ARMED_BELIEVER',			2,			32,		65,		null,				'CIVIC_THEOLOGY',			2,				2,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							null,						'UNIT_HD_EXPEDITIONARY',			1),
-	('UNIT_HD_EXPEDITIONARY',			2,			40,		95,		null,				'CIVIC_DIVINE_RIGHT',		3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			2,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		1),
-	('UNIT_HD_THEOCRATIC_GUARDIAN',		2,			51,		145,	null,				'CIVIC_REFORMED_CHURCH',	4,				4,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			1,							null,						'UNIT_HD_RESISTANCE_ARMY',			1),
-	('UNIT_HD_RESISTANCE_ARMY',			3,			62,		210,	null,				'CIVIC_NATIONALISM',		5,				5,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			1,							null,						'UNIT_HD_REVOLUTIONARY_GUARDIAN',	1),
-	('UNIT_HD_REVOLUTIONARY_GUARDIAN',	3,			72,		305,	null,				'CIVIC_IDEOLOGY',			6,				6,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			2,							null,						'UNIT_HD_DEUX_EX_MACHINA',			1),
+	('UNIT_HD_ARMED_BELIEVER',			2,			35,		60,		null,				'CIVIC_THEOLOGY',			2,				2,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							null,						'UNIT_HD_EXPEDITIONARY',			1),
+	('UNIT_HD_EXPEDITIONARY',			3,			45,		90,		null,				'CIVIC_DIVINE_RIGHT',		3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		1),
+	('UNIT_HD_THEOCRATIC_GUARDIAN',		3,			55,		140,	null,				'CIVIC_REFORMED_CHURCH',	4,				4,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			1,							null,						'UNIT_HD_RESISTANCE_ARMY',			1),
+	('UNIT_HD_RESISTANCE_ARMY',			3,			65,		210,	null,				'CIVIC_NATIONALISM',		5,				5,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			1,							null,						'UNIT_HD_REVOLUTIONARY_GUARDIAN',	1),
+	('UNIT_HD_REVOLUTIONARY_GUARDIAN',	4,			75,		310,	null,				'CIVIC_IDEOLOGY',			6,				6,					'RESOURCE_NITER',	5,							'RESOURCE_NITER',			2,							null,						'UNIT_HD_DEUX_EX_MACHINA',			1),
 	('UNIT_HD_DEUX_EX_MACHINA',			5,			120,	1500,	'TECH_ROBOTICS',	null,						15,				15,					'RESOURCE_URANIUM',	5,							'RESOURCE_URANIUM',			2,							null,						null,								1),
 	-- Old Units
-	('UNIT_WARRIOR_MONK',				2,			36,		70,		null,				null,						0,				3,					null,				0,							null,						0,							null,						'UNIT_HD_EXPEDITIONARY',			0),
+	('UNIT_WARRIOR_MONK',				3,			38,		60,		null,				null,						0,				3,					null,				0,							null,						0,							null,						'UNIT_HD_EXPEDITIONARY',			0),
 	('UNIT_NORWEGIAN_ULFHEDNAR',		2,			25,		35,		null,				'CIVIC_MYSTICISM',			1,				0,					null,				0,							null,						0,							null,						'UNIT_HD_ARMED_BELIEVER',			0),
-	('UNIT_JAPANESE_SOHEI',				2,			44,		95,		null,				'CIVIC_DIVINE_RIGHT',		3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			2,							'UNIT_HD_EXPEDITIONARY',	'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
-	('UNIT_ELEANOR_TEMPLAR',			2,			45,		100,	'TECH_CASTLES',		null,						3,				3,					null,				0,							'RESOURCE_IRON',			2,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
-	('UNIT_INDONESIAN_KRIS_SWORDSMAN',	2,			35,		60,		null,				'CIVIC_THEOLOGY',			2,				2,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							'UNIT_HD_ARMED_BELIEVER',	'UNIT_HD_EXPEDITIONARY',			0),
+	('UNIT_JAPANESE_SOHEI',				3,			48,		90,		null,				'CIVIC_DIVINE_RIGHT',		3,				3,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							'UNIT_HD_EXPEDITIONARY',	'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
+	('UNIT_ELEANOR_TEMPLAR',			3,			50,		100,	'TECH_CASTLES',		null,						3,				3,					null,				0,							'RESOURCE_IRON',			1,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		0),
+	('UNIT_INDONESIAN_KRIS_SWORDSMAN',	3,			38,		60,		null,				'CIVIC_THEOLOGY',			2,				2,					'RESOURCE_IRON',	5,							'RESOURCE_IRON',			1,							'UNIT_HD_ARMED_BELIEVER',	'UNIT_HD_EXPEDITIONARY',			0),
 	('UNIT_LAHORE_NIHANG',				2,			20,		75,		null,				null,						0,				2,					null,				0,							null,						0,							null,						'UNIT_HD_THEOCRATIC_GUARDIAN',		0);
 delete from HD_ReligiousArmUnits where (not IsNew) and (UnitType not in (select UnitType from Units));
 -- Types

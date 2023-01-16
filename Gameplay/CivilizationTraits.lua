@@ -611,36 +611,36 @@ function SwedenGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPer
 				if row.Index == greatPersonIndividualID and (row.GreatPersonClassType == 'GREAT_PERSON_CLASS_SCIENTIST' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_MERCHANT' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_ENGINEER' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_WRITER' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_ARTIST' or row.GreatPersonClassType == 'GREAT_PERSON_CLASS_MUSICIAN') then
 					era = row.EraType;
 					if era == 'ERA_ANCIENT' then
-						amount = 1;
+						amount = 0;
 					end
 					if era == 'ERA_CLASSICAL' then
-						amount = 2;
+						amount = 60;
 					end
 					if era == 'ERA_MEDIEVAL' then
-						amount = 3;
+						amount = 120;
 					end
 					if era == 'ERA_RENAISSANCE' then
-						amount = 4;
+						amount = 240;
 					end
 					if era == 'ERA_INDUSTRIAL' then
-						amount = 5;
+						amount = 420;
 					end
 					if era == 'ERA_MODERN' then
-						amount = 6;
+						amount = 660;
 					end
 					if era == 'ERA_ATOMIC' then
-						amount = 7;
+						amount = 960;
 					end
 					if era == 'ERA_INFORMATION' then
-						amount = 8;
+						amount = 1320;
 					end
 					if era == 'ERA_FUTURE' then
-						amount = 9;
+						amount = 9999;
 					end
 					break
 				end
 			end
-			player:GetTreasury():ChangeGoldBalance(100 * amount);
+			player:GetTreasury():ChangeGoldBalance(amount);
 		end
 	end
 end
