@@ -676,6 +676,7 @@ function RoughRiderCityConquered(playerID, iX, iY)
 	local pPlayer = Players[playerID];
 	local pCity = CityManager.GetCityAt(iX, iY);
 	local originalOwnerID = pCity:GetOriginalOwner();
+	local count = 0;
 	if originalOwnerID ~= playerID and originalOwnerID ~= nil then
 		for citystateID, player in ipairs(Players) do
 			if (player ~= nil) and (player:GetInfluence() ~= nil) and player:GetInfluence():CanReceiveInfluence() then
@@ -686,9 +687,11 @@ function RoughRiderCityConquered(playerID, iX, iY)
 				if player:GetInfluence():GetSuzerain() == originalOwnerID then
 					print(playerID);
 					print(player:GetInfluence():GetSuzerain());
-					while not (player:GetInfluence():GetSuzerain() == playerID) do
+					while ((count ~= 20) and (player:GetInfluence():GetSuzerain() ~= playerID)) do
 						pPlayer:GetInfluence():GiveFreeTokenToPlayer(citystateID);
+						count = count + 1;
 					end
+					count = 0;
 				end
 			end
 		end
