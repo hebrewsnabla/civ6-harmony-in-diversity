@@ -648,4 +648,50 @@ function SwedenGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPer
 	end
 end
 
-Events.UnitGreatPersonCreated.Add(SwedenGreatPersonCreated)
+Events.UnitGreatPersonCreated.Add(SwedenGreatPersonCreated);
+
+--武美使者
+function RoughRiderTradeRouteActivityChanged(PlayerID, OriginPlayerID, OriginCityID, TargetPlayerID, TargetCityID)
+	local playerConfig = PlayerConfigurations[PlayerID];
+	local player = Players[PlayerID];
+	local leader = playerConfig:GetLeaderTypeName();
+	local targetPlayer = Players[TargetPlayerID];
+	local ROOSEVELT_CACHE_KEY = 'ROOSEVELT_CACHE';
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_ROOSEVELT_COROLLARY') then
+		return;
+	end
+	if not targetPlayer:GetInfluence():CanReceiveInfluence() then
+		return;
+	end
+	if targetPlayer:GetProperty(ROOSEVELT_CACHE_KEY) == 1 then
+		targetPlayer:SetProperty(ROOSEVELT_CACHE_KEY,0);
+		return;
+	end
+	player:GetInfluence():GiveFreeTokenToPlayer(TargetPlayerID);
+	targetPlayer:SetProperty(ROOSEVELT_CACHE_KEY,1);
+end
+Events.TradeRouteActivityChanged.Add(RoughRiderTradeRouteActivityChanged);
+--武美攻占首都
+function RoughRiderCityConquered(playerID, iX, iY)
+	local pPlayer = Players[playerID];
+	local pCity = CityManager.GetCityAt(iX, iY);
+	local originalOwnerID = pCity:GetOriginalOwner();
+	if originalOwnerID ~= playerID and originalOwnerID ~= nil then
+		for citystateID, player in ipairs(Players) do
+			if (player ~= nil) and (player:GetInfluence() ~= nil) and player:GetInfluence():CanReceiveInfluence() then
+				local citystateConfig = PlayerConfigurations[citystateID];
+				print(player:GetInfluence():GetSuzerain());
+				print(originalOwnerID);
+				print(citystateConfig:GetLeaderTypeName());
+				if player:GetInfluence():GetSuzerain() == originalOwnerID then
+					print(playerID);
+					print(player:GetInfluence():GetSuzerain());
+					while not (player:GetInfluence():GetSuzerain() == playerID) do
+						pPlayer:GetInfluence():GiveFreeTokenToPlayer(citystateID);
+					end
+				end
+			end
+		end
+	end
+end
+GameEvents.RoughRiderCityConqueredSwitch.Add(RoughRiderCityConquered);

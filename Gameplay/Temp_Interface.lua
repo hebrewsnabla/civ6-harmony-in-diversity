@@ -332,3 +332,20 @@ function HD_LIBERATION_LINCOLN (playerId, unitId)
     GameEvents.AttachModifierSwitch.Call(playerId, cityId, 'HD_LIBERATION_LINCOLN_POPULATION');
 end
 GameEvents.HD_LIBERATION_LINCOLN.Add(HD_LIBERATION_LINCOLN);
+
+function RoughRiderOnConquerOriginalCapital( playerID, cityID, iX, iY )
+    local pPlayer = Players[playerID];
+	local pPlayerConfig = PlayerConfigurations[playerID];
+	local sLeader = pPlayerConfig:GetLeaderTypeName();
+	local sRoosevelt = 'TRAIT_LEADER_ROOSEVELT_COROLLARY';
+    local pCity = CityManager.GetCity(playerID, cityID);
+    if pPlayer ~= nil and Utils.LeaderHasTrait(sLeader, sRoosevelt) then
+        if pCity ~= nil then
+			if pCity:IsOriginalCapital() then  -- unable to be used in Gameplay
+			    GameEvents.RoughRiderCityConqueredSwitch.Call( playerID, iX, iY )
+			end
+		end
+    end
+end
+
+Events.CityAddedToMap.Add(RoughRiderOnConquerOriginalCapital);
