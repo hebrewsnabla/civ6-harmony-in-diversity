@@ -1056,8 +1056,8 @@ from HD_OpenAirMuseumBonuses;
 
 -- Ice Hockey Rink (Canada)
 update Improvements set PrereqCivic = 'CIVIC_GAMES_RECREATION' where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
+update Improvement_YieldChanges set YieldChange = 0 where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK' and YieldType = 'YIELD_FOOD';
 delete from Improvement_BonusYieldChanges where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK';
-update ModifierArguments set Value = 2 where Name = 'Amount' and ModifierId = 'ICEHOCKEYRINK_AMENITY';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK' and ModifierId = 'ICEHOCKEYRINK_CULTURE_STADIUM';
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_ICE_HOCKEY_RINK' and ModifierId = 'ICEHOCKEYRINK_AMENITY';
 insert or replace into ImprovementModifiers
@@ -1080,7 +1080,7 @@ create temporary table HD_IceHockeyRinkBonuses (
 	AttachModifierId text,
 	ModifierId text
 );
-insert or replace into HD_IceHockeyRinkBonuses (DistrictType) select DistrictType from Districts where DistrictType != 'DISTRICT_WONDER' and TraitType is null;
+insert or replace into HD_IceHockeyRinkBonuses (DistrictType) select DistrictType from Districts where RequiresPopulation = 1 and TraitType is null;
 update HD_IceHockeyRinkBonuses set ModifierId = 'ICE_HOCKEY_RINK_' || DistrictType || '_PRODUCTION';
 update HD_IceHockeyRinkBonuses set AttachModifierId = ModifierId || '_ATTACH';
 insert or replace into ImprovementModifiers
