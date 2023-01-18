@@ -347,7 +347,7 @@ values
 insert or replace into District_BuildChargeProductions
 	(DistrictType,				UnitType,				PercentProductionPerCharge)
 values
-	('DISTRICT_HOLY_SITE',		'UNIT_WARRIOR_MONK',	'20');
+	('DISTRICT_HOLY_SITE',		'UNIT_WARRIOR_MONK',	'100');
 update Units set BuildCharges = 1 where UnitType = 'UNIT_WARRIOR_MONK';
 -- Crusade (BELIEF_JUST_WAR)
 delete from BeliefModifiers where BeliefType = 'BELIEF_JUST_WAR' and ModifierID = 'JUST_WAR_COMBAT_BONUS';
@@ -523,8 +523,8 @@ delete from BeliefModifiers where BeliefType = 'BELIEF_CAPELLANI' and ModifierId
 insert or replace into GlobalParameters
 	(Name,									Value)
 values
-	('CAPELLANI_PRESSURE',					100),
-	('CAPELLANI_FAITH_PER_POPULATION',		100);
+	('CAPELLANI_PRESSURE',					150),
+	('CAPELLANI_FAITH_PER_POPULATION',		30);
 
 -- Unique Units
 -- Ulfhedinn

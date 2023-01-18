@@ -179,8 +179,8 @@ values
 	("zh_Hans_CN",	"LOC_BELIEF_DEFENDER_OF_FAITH_DL_DESCRIPTION",						"战斗单位和宗教单位处于信奉该宗教的城市境内时，若为友方城市则+1 [ICON_MOVEMENT] 移动力，否则+5 [ICON_STRENGTH] 战斗力。"),
 	("en_US",		"LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION",						"+{1_Amount} Strength from Defender of Faith"),
 	("zh_Hans_CN",	"LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION",						"+{1_Amount}力来自信仰护卫者"),
-	("en_US",		"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"Upon combat victories, add +100 Religious Pressure to cities within 6 tiles. Upon conquering a city, gain 100 [ICON_FAITH] for each [ICON_CITIZEN] citizen in that city."),
-	("zh_Hans_CN",	"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"战斗胜利后，对6个单元格内的城市施加100宗教压力。占领一座城市后，其中每有一个 [ICON_CITIZEN] 人口便获得100 [ICON_FAITH] 信仰值。"),
+	("en_US",		"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"Upon combat victories, add +150 Religious Pressure to cities within 6 tiles. Upon conquering a city, gain 30 [ICON_FAITH] for each [ICON_CITIZEN] citizen in that city."),
+	("zh_Hans_CN",	"LOC_BELIEF_CAPELLANI_DL_DESCRIPTION",								"战斗胜利后，对6个单元格内的城市施加150宗教压力。占领一座城市后，其中每有一个 [ICON_CITIZEN] 人口便获得30 [ICON_FAITH] 信仰值。"),
 	("en_US",		"LOC_UNIT_NORWEGIAN_ULFHEDNAR_DESCRIPTION",							"Norwegian unique ancient era Religious Arm unit. Can be trained or purchased without a major religion. +50% Experience for adjacent units.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
 	("zh_Hans_CN",	"LOC_UNIT_NORWEGIAN_ULFHEDNAR_DESCRIPTION",							"挪威远古时代特色宗教武装单位，不需要主流宗教就可以训练或购买。为相邻单位提供+50%经验值。{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
 	("en_US",		"LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION",								"Japanese unique Religious Arm that replaces the Expeditionary. May be purchased with [ICON_GOLD] Gold. Cost 3 [ICON_FAITH] Faith to maintain.{LOC_UNIT_HD_RELIGIOUS_ARM_COMMON}"),
@@ -203,12 +203,12 @@ values
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
 select
-	"en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to be removed and complete 20% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple or Church. Cost 3 [ICON_FAITH] Faith to maintain."
+	"en_US",		"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"Religious Arm Unit. Have one build charge to be removed and complete 100% of a Holy Site district. Can only be purchased with [ICON_FAITH] Faith in cities with a Temple or Church. Cost 3 [ICON_FAITH] Faith to maintain."
 where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_MONASTERY_NAME');
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
 select
-	"zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以移除该单位来推进圣地区域20%的建造进度。只能在有寺庙或教堂的城市通过 [ICON_FAITH] 信仰购买。消耗3 [ICON_FAITH] 信仰维护费。"
+	"zh_Hans_CN",	"LOC_UNIT_WARRIOR_MONK_DESCRIPTION",								"宗教武装单位，拥有一点劳动力，可以移除该单位来推进圣地区域100%的建造进度。只能在有寺庙或教堂的城市通过 [ICON_FAITH] 信仰购买。消耗3 [ICON_FAITH] 信仰维护费。"
 where exists (select Text from LocalizedText where Tag = 'LOC_BUILDING_JNR_MONASTERY_NAME');
 insert or replace into LocalizedText
 	(Language,		Tag,																Text)
