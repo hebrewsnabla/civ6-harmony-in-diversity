@@ -161,7 +161,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_VIETNAM_DESCRIPTION",                    "所有区域（除市中心外）不移除树林、雨林、沼泽地貌。建在这些区域中的建筑以及区域本体和奇观将获得以下收益：建在树林上提供+2 [ICON_Production] 生产力、建在雨林上提供+2 [ICON_Food] 食物、建在沼泽上提供+2 [ICON_Science] 科技值。拥有“神秘主义”市政后即可栽种树林。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_GAUL_DESCRIPTION",                       "矿山为所有区域提供少量相邻加成、对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。专业化区域与其他区域相邻时不会获得少量相邻加成。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FOUNDER_CARTHAGE_DESCRIPTION",                 "由你建立的拥有U型港的城市，可进行“迁都”项目将原始 [ICON_Capital] 首都更改。与 [ICON_Capital] 首都在同一大陆的海岸城市忠诚度固定为100。建成市政广场或市政广场建筑、外交区或外交区建筑时皆+1 [ICON_TradeRoute] 贸易路线容量。拥有市政广场或外交区的城市建造区域时+50% [ICON_Production] 生产力。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始时获得“写作”科技 [ICON_TechBoosted] 的尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 的鼓舞。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力，上船后+2[ICON_Movement] 移动力和视野。国际 [ICON_TradeRoute] 贸易路线+2 [ICON_CULTURE] 文化，若目的地为你宗主的城邦则该加成变为3倍。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MEDITERRANEAN_COLONIES_DESCRIPTION",     "游戏开始时获得“写作”科技 [ICON_TechBoosted] 的尤里卡和“对外贸易”市政 [ICON_CivicBoosted] 的鼓舞。开拓者上船和下船无需额外花费 [ICON_Movement] 移动力，上船后+2[ICON_Movement] 移动力和视野。国际 [ICON_TradeRoute] 贸易路线+1 [ICON_CULTURE] 文化，+2 [ICON_gold] 金币，若目的地为你宗主的城邦则该加成变为3倍。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "建造远古和古典奇观时，可消耗建造者次数来加速奇观原始建造进程的15%。建造者获得+1使用次数和+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "劳动人民的智慧"),
