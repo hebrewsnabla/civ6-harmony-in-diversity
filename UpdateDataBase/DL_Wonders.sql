@@ -1050,19 +1050,19 @@ values
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select
-	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_FOOD_HD'
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_FOOD_HD'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
 insert or replace into BuildingModifiers
 	(BuildingType,						ModifierId)
 select
-	'BUILDING_HUEY_TEOCALLI',			'HUEY_COAST_PRODUCTION_HD'
+	'BUILDING_HUEY_TEOCALLI',			'HUEY_PRODUCTION_HD'
 where exists (select BuildingType from Buildings where BuildingType = 'BUILDING_HUEY_TEOCALLI');
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId)
 values
 --休伊神庙
-	('HUEY_COAST_FOOD_HD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
-	('HUEY_COAST_PRODUCTION_HD',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_REQUIREMENTS'),
+	('HUEY_FOOD_HD',						'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_OR_LAKE_REQUIREMENTS'),
+	('HUEY_PRODUCTION_HD',					'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ADJACENT_TO_LAKE_OR_LAKE_REQUIREMENTS'),
 --圣瓦西里主教座堂
 	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				'ST_BASILS_CATHEDRAL_YIELD_MODIFIER_REQUIREMENTS'),
 --埃菲尔铁塔
@@ -1071,16 +1071,15 @@ insert or replace into ModifierArguments
 	(ModifierId,							Name,					value)
 values
 --休伊神庙
-	('HUEY_COAST_FOOD_HD',					'YieldType',			'YIELD_FOOD'),
-	('HUEY_COAST_FOOD_HD',					'Amount',				1),
-	('HUEY_COAST_PRODUCTION_HD',			'YieldType',			'YIELD_PRODUCTION'),
-	('HUEY_COAST_PRODUCTION_HD',			'Amount',				1),
+	('HUEY_FOOD_HD',						'YieldType',			'YIELD_FOOD'),
+	('HUEY_FOOD_HD',						'Amount',				1),
+	('HUEY_PRODUCTION_HD',					'YieldType',			'YIELD_PRODUCTION'),
+	('HUEY_PRODUCTION_HD',					'Amount',				1),
 --圣瓦西里主教座堂
 	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'YieldType',			'YIELD_FOOD,YIELD_CULTURE,YIELD_PRODUCTION'),
 	('ST_BASILS_CATHEDRAL_YIELD_MODIFIER',	'Amount',				'2,1,1'),
 --埃菲尔铁塔
 	('EIFFEL_TOWER_ADDTOURISM',				'Amount',				15);
-update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_FOOD_MODIFIER';
-update ModifierArguments set value = 1 where ModifierId = 'HUEY_LAKE_PRODUCTION_MODIFIER';
+delete from BuildingModifiers where ModifierId = 'HUEY_LAKE_FOOD' or ModifierId = 'HUEY_LAKE_PRODUCTION';
 --圣瓦西里主教座堂
 delete from BuildingModifiers where ModifierId = 'STBASILS_ADDPRODUCTION' or ModifierId = 'STBASILS_ADDFOOD' or ModifierId = 'STBASILS_ADDCULTURE';
