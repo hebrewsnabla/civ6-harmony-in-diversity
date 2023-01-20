@@ -344,6 +344,9 @@ version 1.3.5
 起源城市的每个专业化区域为通往城邦的 [ICON_TRADEROUTE] 贸易路线+1 [ICON_SCIENCE] 科技值和+2 [ICON_GOLD] 金币。
 攻占一个文明的原始首都后，如果该文明仍然存在，对其宗主的城邦派遣足够数量的 [ICON_ENVOY] 使者，直至成为这些城邦的宗主国。
 解锁“膛线”科技后获得特色单位“莽骑兵”。
+[朱棣]：重做为：首次与每个主要文明或城邦建立 [ICON_TRADEROUTE] 贸易路线时获得1 [ICON_ENVOY] 使者。
+每与一个主要文明或城邦建立过 [ICON_TRADEROUTE] 贸易路线，便令你的所有 [ICON_TRADEROUTE] 贸易路线+2 [ICON_GOLD] 金币。
+有一个伟人完全激活或隐退后，获得+1 [ICON_TRADEROUTE] 贸易路线容量，之后每有三位伟人完全激活或隐退后获得+1 [ICON_TRADEROUTE] 贸易路线容量。
 
 [安善]：重做为位于丘陵之上或靠近山脉的学院+3 [ICON_SCIENCE] 科技值。
 
