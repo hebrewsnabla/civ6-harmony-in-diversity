@@ -696,7 +696,8 @@ function JudyTradeRouteActivityChanged(PlayerID, OriginPlayerID, OriginCityID, T
 		return;
 	end
 	player:AttachModifierByID('JUDY_TRADE_ENVOY');
-	player:AttachModifierByID('JUDY_TRADE_GOLD');
+	player:AttachModifierByID('JUDY_TRADE_GOLD_INTERNATIONAL');
+	player:AttachModifierByID('JUDY_TRADE_GOLD_DOMESTIC');
 	targetPlayer:SetProperty(JUDY_CACHE_KEY,1);
 end
 Events.TradeRouteActivityChanged.Add(JudyTradeRouteActivityChanged);
