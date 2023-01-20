@@ -330,7 +330,7 @@ values
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,	    'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- def
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_SCIENCE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_CULTURE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
-    ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 0.4,		'YIELD_GOLD', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1    
+    ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 0.4,	'YIELD_GOLD', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'),     
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_FAITH',	'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
     --对新资源的重视程度（3环内资源），分通用/加成/奢侈/战略
     ('StandardSettlePlot', 'New Resources',    		0, 		 3, 	NULL, '   LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
