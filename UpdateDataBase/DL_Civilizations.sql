@@ -312,9 +312,6 @@ values
     ('CITY_HAS_HOLY_SITE_OR_MBANZA',    'REQUIRES_CITY_HAS_DISTRICT_MBANZA_FIXED'),
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'REQUIRES_CITY_HAS_DISTRICT_MBANZA'),
     ('CITY_HAS_DISTRICT_MBANZA_FIXED',  'PLAYER_IS_CIVILIZATION_KONGO');
---update Modifiers set SubjectRequirementSetId = 'CITY_HAS_HOLY_SITE_OR_MBANZA' where ModifierId = 'THEOCRACY_RELIGIOUS_PEOPLE';
-update ModifierArguments set Value = 50 where Name = 'Amount' and
-	ModifierId in ('TRAIT_DOUBLE_MERCHANT_POINTS', 'TRAIT_DOUBLE_WRITER_POINTS', 'TRAIT_DOUBLE_MUSICIAN_POINTS', 'TRAIT_DOUBLE_ARTIST_POINTS');
 
 -- GreatWorks Yield
 delete from TraitModifiers where ModifierId like 'TRAIT_GREAT_WORK_%' and TraitType = 'TRAIT_CIVILIZATION_NKISI';
@@ -428,18 +425,6 @@ values
 	('TRAIT_NKISI_GREAT_WORK_PRODUCTION_GREATWORKOBJECT_WRITING',	'YieldChange',			2),
 	('TRAIT_NKISI_GREAT_WORK_GOLD_GREATWORKOBJECT_WRITING',			'YieldChange',			3),
 	('TRAIT_NKISI_GREAT_WORK_FAITH_GREATWORKOBJECT_WRITING',		'YieldChange',			2);
-
--- GPP Double
-insert or replace into TraitModifiers (TraitType, ModifierId) values
-	('TRAIT_CIVILIZATION_NKISI', 'TRAIT_DOUBLE_WRITER_POINTS');
-update ModifierArguments set Value = 100 where
-	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
-update ModifierArguments set Value = 100 where
-	ModifierId = 'TRAIT_DOUBLE_ARTIST_POINTS' and Name = 'Amount';
-update ModifierArguments set Value = 100 where
-	ModifierId = 'TRAIT_DOUBLE_MUSICIAN_POINTS' and Name = 'Amount';
-update ModifierArguments set Value = 100 where
-	ModifierId = 'TRAIT_DOUBLE_MERCHANT_POINTS' and Name = 'Amount';
 
 ------------------------------------------------------------------------------------------------------------------
 -- Mali
@@ -2234,6 +2219,14 @@ values
 	('TRAIT_LEADER_RELIGIOUS_CONVERT',	'TRAIT_DOUBLE_MUSICIAN_POINTS'),
 	('TRAIT_LEADER_RELIGIOUS_CONVERT',	'TRAIT_DOUBLE_MERCHANT_POINTS'),
 	('TRAIT_LEADER_RELIGIOUS_CONVERT',	'TRAIT_DOUBLE_WRITER_POINTS');
+update ModifierArguments set Value = 50 where
+	ModifierId = 'TRAIT_DOUBLE_WRITER_POINTS' and Name = 'Amount';
+update ModifierArguments set Value = 50 where
+	ModifierId = 'TRAIT_DOUBLE_ARTIST_POINTS' and Name = 'Amount';
+update ModifierArguments set Value = 50 where
+	ModifierId = 'TRAIT_DOUBLE_MUSICIAN_POINTS' and Name = 'Amount';
+update ModifierArguments set Value = 50 where
+	ModifierId = 'TRAIT_DOUBLE_MERCHANT_POINTS' and Name = 'Amount';
 --萨拉丁LU变UU
 delete from LeaderTraits where LeaderType = 'LEADER_SALADIN' and TraitType = 'TRAIT_CIVILIZATION_UNIT_ARABIAN_MAMLUK';
 insert or replace into CivilizationTraits
