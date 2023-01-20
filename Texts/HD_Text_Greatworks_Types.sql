@@ -45,7 +45,7 @@ values
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_INFORMATION",         "Music of Information era"),
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_MEDIEVAL",            "Music of Medieval era"),
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_ATOMIC",              "Music of Atomic era"),
-    ("LOC_GREATWORK_SUN_TZU_NAME",                        "The Art of War[NEWLINE]All combat units gain +25% experience when attacking.");
+    ("LOC_GREATWORK_SUN_TZU_NAME",                        "The Art of War[NEWLINE]All combat units gain +25% experience when attacking.(Requires a move of the masterpiece to take effect)");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -94,5 +94,5 @@ values
     ("zh_Hans_CN",  "LOC_GREATWORKOBJECT_MUSIC_ERA_INFORMATION",         "信息时代的音乐"),
     ("zh_Hans_CN",  "LOC_GREATWORKOBJECT_MUSIC_ERA_MEDIEVAL",            "中世纪的音乐"),
     ("zh_Hans_CN",  "LOC_GREATWORKOBJECT_MUSIC_ERA_ATOMIC",              "原子能时代的音乐"),
-    ("zh_Hans_CN",  "LOC_GREATWORK_SUN_TZU_NAME",                        "《 孙子兵法 》[NEWLINE]所有战斗单位的攻击经验+25%。");
+    ("zh_Hans_CN",  "LOC_GREATWORK_SUN_TZU_NAME",                        "《 孙子兵法 》[NEWLINE]所有战斗单位的攻击经验+25%。（需要移动展示槽位后生效）[NEWLINE]");
 

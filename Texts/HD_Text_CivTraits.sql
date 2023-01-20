@@ -266,7 +266,7 @@ where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOP
 insert or replace into EnglishText
     (Tag,                                                                   Text)
 select
-    "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",       "All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.Gains +1 spy capacity after building Diplomatic Quarter or any Diplomatic Quarter building."),
+    "LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION",       "All Diplomatic policy slots in the current government are converted to Wildcard slots. +1 [ICON_Favor] Diplomatic Favor per turn for every Wildcard slot in their government. Reduces the purchase cost of tiles in Grass, Grass Hills, Plains and Plains Hills by 50%.Gains +1 spy capacity after building Diplomatic Quarter or any Diplomatic Quarter building."
 where exists (select Tag from LocalizedText where Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME');
 --------------------------------------------------------------------------------
 insert or replace into EnglishText
