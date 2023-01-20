@@ -107,7 +107,9 @@ values
     ("LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "International [ICON_TradeRoute] Trade Routes receive -25% Yield and [ICON_Tourism] Tourism, but Domestic [ICON_TradeRoute] Trade Routes provide +1 [ICON_Culture] Culture, +1  [ICON_Science] Science, and +2  [ICON_Gold] Gold for every Specialty District at the Destination."),
     ("LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                    "Cities do not incur war weariness. All units gain +15 experience upon conquering or finishing a Wonder. Upon conquering a city, complete 10% of the original Wonder cost towards the Wonder that is currently building in all your cities."),
     ("LOC_TRAIT_LEADER_YONGLE_XP_DESCRIPTION",                        "Gain 1 [ICON_ENVOY] envoy when you establish a [ICON_TRADEROUTE] trade route with each major civilization or City-State the first time. For every major civilization or City-State you have established [ICON_TRADEROUTE] trade route with, add +2 [ICON_GOLD] gold to all [ICON_TRADEROUTE] trade routes. Grant +1 [ICON_TRADEROUTE] Trade Route capacity when a great person is fully activated or retired, then grant +1 [ICON_TRADEROUTE] Trade Route for every three great people are fully activated or retired."),
-    ("LOC_TRAIT_LEADER_YONGLE_NAME",                                  "Flourishment Age of Yongle");
+    ("LOC_TRAIT_LEADER_YONGLE_NAME",                                  "Flourishment Age of Yongle"),
+    ("LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "Gathering Fenghuang in Shangyang Palace"),
+    ("LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "+50% [ICON_GREATPERSON] Great People points generated per turn in your [ICON_CAPITAL] Capital, up to 100% after progressing 'Imperial Examination System' Civic. When you recruit a [ICON_GREATPERSON] Great Person, add +2 corresponding type output to all corresponding type areas in your country. (Gain [ICON_PRODUCTION] Production for [ICON_GREATGENERAL] Great General and [ICON_FOOD] Food for [ICON_GREATADMIRAL] Great Admiral.)");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -223,7 +225,9 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TOKUGAWA_XP_DESCRIPTION",                      "国际 [ICON_TradeRoute] 贸易路线的产出和旅游业绩-25%；目的地城市中每有一个特色区域，国内 [ICON_TradeRoute] 贸易路线便提供+1 [ICON_Culture] 文化值、+1 [ICON_Science] 科技值和+2 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_TO_WORLDS_END_DESCRIPTION",                    "城市不会产生厌战情绪。每占领一个奇观或建成奇观时，所有单位获得15点经验值。占领城市时，为所有城市正在建造的奇观推进10%的建造进程。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_YONGLE_XP_DESCRIPTION",                        "首次与每个主要文明或城邦建立 [ICON_TRADEROUTE] 贸易路线时获得1 [ICON_ENVOY] 使者。每与一个主要文明或城邦建立过 [ICON_TRADEROUTE] 贸易路线，便令你的所有 [ICON_TRADEROUTE] 贸易路线+2 [ICON_GOLD] 金币。有一个伟人完全激活或隐退后，获得+1 [ICON_TRADEROUTE] 贸易路线容量，之后每有三位伟人完全激活或隐退后获得+1 [ICON_TRADEROUTE] 贸易路线容量。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_YONGLE_NAME",                                  "永乐盛世");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_YONGLE_NAME",                                  "永乐盛世"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "凤集上阳宫"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。（ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

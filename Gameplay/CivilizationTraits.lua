@@ -21,7 +21,16 @@ function LeaderHasTrait(sLeader, sTrait)
 	return false;
 end
 Utils.LeaderHasTrait = LeaderHasTrait;
-
+--伟人
+local WRITER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index;
+local ARTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ARTIST'].Index;
+local MUSICIAN_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MUSICIAN'].Index;
+local SCIENTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_SCIENTIST'].Index;
+local MERCHANT_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MERCHANT'].Index;
+local ENGINEER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index;
+local PROPHET_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_PROPHET'].Index;
+local ADMIRAL_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ADMIRAL'].Index;
+local GENERAL_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_GENERAL'].Index;
 -- 老秦
 function ChinaBuilderScience(playerID, unitID, newCharges, oldCharges)
 	-- print(playerID, unitID, newCharges, oldCharges)
@@ -368,9 +377,6 @@ end
 Events.UnitGreatPersonCreated.Add(OnUnitGreatPersonCreatedBrazil)
 
 -- 法国UA改动, by xiaoxiao
-local WRITER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_WRITER'].Index;
-local ARTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ARTIST'].Index;
-local MUSICIAN_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MUSICIAN'].Index;
 function FranceWonderGreatPeoplePoint (x, y, buildingId, playerId, cityId, percentComplete, unknown)
 	local player = Players[playerId];
 	local playerConfig = PlayerConfigurations[playerId];
@@ -560,9 +566,6 @@ end
 GameEvents.CityConquered.Add(MacedonActiveWonder);
 
 --瑞典时代分伟人点
-local SCIENTIST_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_SCIENTIST'].Index;
-local MERCHANT_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_MERCHANT'].Index;
-local ENGINEER_INDEX = GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_ENGINEER'].Index;
 function SwedenPlayerEraScoreChanged(playerID, amountAwarded)
 	local player = Players[playerID];
 	local playerConfig = PlayerConfigurations[playerID];
@@ -711,7 +714,7 @@ function JudyGreatPersonActivated(unitOwner, unitID)
 		return;
 	end
 	if (unit ~= nil) and (unit:GetGreatPerson() ~= nil) and (unit:GetX() < 0) and (unit:GetY() < 0) then
-		local PROP_KEY_NUMBER_USED_GREAT_PEOPLE_JUDY = 'NumberOfUsedGreatPeopleJudy'
+		local PROP_KEY_NUMBER_USED_GREAT_PEOPLE_JUDY = 'NumberOfUsedGreatPeopleJudy';
 		local amount = player:GetProperty(PROP_KEY_NUMBER_USED_GREAT_PEOPLE_JUDY);
 		if amount == nil then
 			amount = 0;
@@ -726,5 +729,22 @@ function JudyGreatPersonActivated(unitOwner, unitID)
 		player:SetProperty(PROP_KEY_NUMBER_USED_GREAT_PEOPLE_JUDY, amount);
 	end
 end
+Events.UnitGreatPersonActivated.Add(JudyGreatPersonActivated);
 
-Events.UnitGreatPersonActivated.Add(JudyGreatPersonActivated)
+--武则天
+function WztUnitGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPersonIndividualID)
+	local playerConfig = PlayerConfigurations[playerID];
+	local player = Players[playerID];
+	local leader = playerConfig:GetLeaderTypeName();
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_WU_ZETIAN') then
+		return;
+	end
+	for row in GameInfo.GreatPersonClasses() do
+		if row.Index == greatPersonClassID then
+			local classType = row.GreatPersonClassType
+			player:AttachModifierByID('WU_ZETIAN_' .. classType)
+		end
+	end
+
+end
+Events.UnitGreatPersonCreated.Add(WztUnitGreatPersonCreated);
