@@ -22,7 +22,7 @@ changelog 每一行作为一个句子，允许空行，`//` 后为注释。在�
 
 均会在最终专栏/百科更新中显示为
 
-> [哈瓦那](http://civ6hd.wiki/zh_Hans_CN/citystates/cse_maritime/CIVILIZATION_CSE_HAVANA.html)：新增沿海惊艳额外+1![](http://civ6hd.wiki/icons/ICON_CULTURE.png)文化值。
+> [哈瓦那](http://civ6hd.com/zh_Hans_CN/citystates/cse_maritime/CIVILIZATION_CSE_HAVANA.html)：新增沿海惊艳额外+1![](http://civ6hd.com/icons/ICON_CULTURE.png)文化值。
 
 ### 预览changelog
 
