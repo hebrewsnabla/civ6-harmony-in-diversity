@@ -319,7 +319,7 @@ values
     ('StandardSettlePlot', 'Cultural Pressure', 	1, 		 -6, 	NULL, 		NULL), -- -6 似乎是忠诚度压力，但写两行意义不明，需要咨询LTD
     ('StandardSettlePlot', 'Foreign Continent', 	0, 		 2, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- 改为有优先级但不高
     --附近友方城市加分，疑似VALUE=每远离我方城市一环加多少分
-    ('StandardSettlePlot', 'Nearest Friendly City', 0,  	 3, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4 
+    ('StandardSettlePlot', 'Nearest Friendly City', 0,  	 -1, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4 
     --去除淡水喜好，但是淡水价值仍然很高（这样改比Favored=1更优的地方是不会导致没淡水就不想坐地）
     ('StandardSettlePlot', 'Fresh Water', 			0, 		 20, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
     --去除海城喜好，但是海水价值仍然较高（这样改比Favored=1更优的地方是不会导致没海水就不想坐地）
@@ -352,13 +352,13 @@ UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue = 2 WHERE ConditionType 
 --内环产出（粮锤瓶琴鸽）高则很高分，但内环产出低也很高分，降低不坐内环产出低的地点的可能性
 UPDATE PlotEvalConditions SET PoorValue = 12, GoodValue = 18 WHERE ConditionType = 'Inner Ring Yield'; -- PoorValue="18" GoodValue="26", RS:12~18
 --城市产出预估（3环裸地锤？)高则很高分，但锤子低也很高分，降低不坐锤子低的地点的可能性
-UPDATE PlotEvalConditions SET PoorValue = 10, GoodValue = 20 WHERE ConditionType = 'Total Yield'; -- PoorValue="30" GoodValue="50"
+UPDATE PlotEvalConditions SET PoorValue = 5, GoodValue = 25 WHERE ConditionType = 'Total Yield'; -- PoorValue="30" GoodValue="50"
 --有咸水住房评价中等，无咸水住房微微减分数
 UPDATE PlotEvalConditions SET PoorValue = -1, GoodValue =	8 WHERE ConditionType = 'Coastal'; -- PoorValue="-1" GoodValue="12", RS:-1~8
 --少量增加了城点圈资源地貌的评分，但是没有也不怎么介意（大概）
-UPDATE PlotEvalConditions SET PoorValue = -1,  GoodValue =	4 WHERE ConditionType = 'Specific Resource'; -- PoorValue="-1" GoodValue="6"
+UPDATE PlotEvalConditions SET PoorValue = -1,  GoodValue =	2 WHERE ConditionType = 'Specific Resource'; -- PoorValue="-1" GoodValue="6"
 UPDATE PlotEvalConditions SET PoorValue = -6,  GoodValue =	6 WHERE ConditionType = 'Specific Feature'; -- PoorValue="-5" GoodValue="5"
-UPDATE PlotEvalConditions SET PoorValue = 1, GoodValue =	4 WHERE ConditionType = 'Resource Class'; -- PoorValue="2" GoodValue="6"
+UPDATE PlotEvalConditions SET PoorValue = 1, GoodValue =	6 WHERE ConditionType = 'Resource Class'; -- PoorValue="2" GoodValue="6"
 --新大陆城点的X值超过20
 UPDATE PlotEvalConditions SET PoorValue = 0, GoodValue = 20 WHERE ConditionType = 'Foreign Continent'; -- PoorValue="-2" GoodValue="50"
 
@@ -381,7 +381,7 @@ values
 -- 改变单位的爱好程度，分别是战斗单位、狗（还是自动探索功能的单位？）、宗教单位、开拓者、商人的价值程度，改太高可能导致一直都在出。
     ('PSEUDOYIELD_UNIT_COMBAT',             1.4),
     ('PSEUDOYIELD_UNIT_EXPLORER',           1.1),
-    ('PSEUDOYIELD_UNIT_RELIGIOUS',          8.0),
+    ('PSEUDOYIELD_UNIT_RELIGIOUS',          50.0),
     ('PSEUDOYIELD_UNIT_SETTLER',            2.5),
     ('PSEUDOYIELD_UNIT_TRADE',              4.0),
 --改变对黄金得分点、总督、奇观、区域、间谍、外交支持的默认价值
