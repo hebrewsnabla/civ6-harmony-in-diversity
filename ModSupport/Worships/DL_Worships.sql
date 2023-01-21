@@ -279,3 +279,9 @@ values
 	('SOBOR_RELIC_FAITH',		'ScalingFactor',		200),
 	('SOBOR_RELIC_TOURISM',		'GreatWorkObjectType',	'GREATWORKOBJECT_RELIC'),
 	('SOBOR_RELIC_TOURISM',		'ScalingFactor',		200);
+
+insert or ignore into RequirementSetRequirements
+	(RequirementSetId,										RequirementId)
+select
+	'BUILDING_IS_TIER3_HOLY_SITE',							'REQUIRES_CITY_HAS_' || BuildingType
+from Buildings where PrereqDistrict = 'DISTRICT_HOLY_SITE' and cost = 220;

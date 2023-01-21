@@ -45,7 +45,7 @@ values
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_INFORMATION",         "Music of Information era"),
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_MEDIEVAL",            "Music of Medieval era"),
     ("LOC_GREATWORKOBJECT_MUSIC_ERA_ATOMIC",              "Music of Atomic era"),
-    ("LOC_GREATWORK_SUN_TZU_NAME",                        "The Art of War[NEWLINE]All combat units gain +25% experience when attacking.(Requires a move of the masterpiece to take effect)");
+    ("LOC_GREATWORK_SUN_TZU_NAME",                        "The Art of War[NEWLINE]All combat units gain +25% experience when attacking.(Requires a move of the masterpiece to take effect)[NEWLINE]");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN

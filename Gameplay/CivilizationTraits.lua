@@ -741,10 +741,148 @@ function WztUnitGreatPersonCreated(playerID, unitID, greatPersonClassID, greatPe
 	end
 	for row in GameInfo.GreatPersonClasses() do
 		if row.Index == greatPersonClassID then
-			local classType = row.GreatPersonClassType
-			player:AttachModifierByID('WU_ZETIAN_' .. classType)
+			local classType = row.GreatPersonClassType;
+			player:AttachModifierByID('WU_ZETIAN_' .. classType);
 		end
 	end
 
 end
 Events.UnitGreatPersonCreated.Add(WztUnitGreatPersonCreated);
+
+--客卿招募
+-- Defines
+local KeqingPlayersNum = nil;
+local KeqingPlayersMap = nil;
+
+local KeqingAbility	= "TRAIT_LEADER_UNIT_KEQING";
+local KeqingLoc	= "HD_KeqingLocation";
+local KeqingList = "HD_KeqingList";
+local KeqingGovTierKey = "HD_KeqingTier";
+
+local KeqingPersonClass = GameInfo.GreatPersonClasses["GREAT_PERSON_CLASS_KEQING"].Index;
+local KeqingPersonClassHash	= GameInfo.GreatPersonClasses["GREAT_PERSON_CLASS_KEQING"].Hash;
+function GetPlayersWithTrait(sTrait)
+	local tValid = {};
+	iLength = 0;
+
+	for _, iPlayer in pairs(PlayerManager.GetWasEverAliveIDs()) do
+		local leaderType = PlayerConfigurations[iPlayer]:GetLeaderTypeName();
+		for trait in GameInfo.LeaderTraits() do
+			if trait.LeaderType == leaderType and trait.TraitType == sTrait then
+				tValid[iPlayer] = Players[iPlayer];
+				iLength = iLength + 1;
+			end
+		end
+		if not tValid[iPlayer] then
+			local civType = PlayerConfigurations[iPlayer]:GetCivilizationTypeName();
+			for trait in GameInfo.CivilizationTraits() do
+				if trait.CivilizationType == civType and trait.TraitType == sTrait then
+					tValid[iPlayer] = Players[iPlayer];
+					iLength = iLength + 1;
+				end
+			end
+		end
+	end
+	return tValid, iLength
+end
+-- GrantKeqing
+function InitKeqing()
+	local tKeqing = {};
+	KeqingPlayersMap, KeqingPlayersNum = GetPlayersWithTrait(KeqingAbility);
+	if (KeqingPlayersNum < 1) then
+		return
+	end
+	for tRow in GameInfo.GreatPersonIndividuals() do
+		if tRow.GreatPersonClassType == "GREAT_PERSON_CLASS_KEQING" then
+			table.insert(tKeqing, tRow.Index);
+		end
+	end
+
+	for iPlayer, pPlayer in pairs(KeqingPlayersMap) do
+		local tList = pPlayer:GetProperty(KeqingList);
+		if (not tList) or (#tList < 1) then
+			pPlayer:SetProperty(KeqingList, tKeqing);
+		end
+	end
+end
+InitKeqing();
+function GrantKeqing(iPlayer)
+	local pPlayer = Players[iPlayer];
+	local tList = pPlayer:GetProperty(KeqingList);
+	if #tList < 1 then
+		-- Reset the list if the player has run out of Lawspeakers somehow
+		return;
+	end
+
+	iRandom = Game.GetRandNum(#tList, "Random Keqing for Player " .. iPlayer) + 1
+
+	local iEra = Game.GetEras():GetCurrentEra();
+
+	Game.GetGreatPeople():GrantPerson(tList[iRandom], KeqingPersonClass, iEra, 0, iPlayer, false);
+
+	table.remove(tList, iRandom);
+
+	pPlayer:SetProperty(KeqingList, tList);
+end
+--完成政府区建筑送伟人
+function QinBuildingConstructed(iPlayer, iCity, iBuildingType, iPlot, bOriginalConstruction)
+	local playerConfig = PlayerConfigurations[iPlayer];
+	local player = Players[iPlayer];
+	local leader = playerConfig:GetLeaderTypeName();
+	local amount = player:GetProperty(PROP_KEY_NUMBER_CIVIC);
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_QIN') then
+		return;
+	end
+
+	local tBuilding = GameInfo.Buildings[iBuildingType];
+	if not tBuilding then 
+		return;
+	end
+	print('QinBuilding');
+	if tBuilding.PrereqDistrict == "DISTRICT_GOVERNMENT" then
+		GrantKeqing(iPlayer);
+		print('QinBuilding_finish');
+	end
+end
+GameEvents.BuildingConstructed.Add(QinBuildingConstructed);
+
+--武秦4市政送伟人
+function QinCivicCompleted(playerID, iCivic, bCancelled)
+	local playerConfig = PlayerConfigurations[playerID];
+	local player = Players[playerID];
+	local leader = playerConfig:GetLeaderTypeName();
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_QIN') then
+		return;
+	end
+	if (iCivic ~= nil) then
+		local PROP_KEY_NUMBER_CIVIC = 'NumberOfCivic';
+		local amount = player:GetProperty(PROP_KEY_NUMBER_CIVIC);
+		if amount == nil then
+			amount = 0;
+		end
+		amount = amount + 1;
+		if amount == 4 then
+			GrantKeqing(playerID);
+			print('QinCivic');
+			amount = 0;
+		end
+		player:SetProperty(PROP_KEY_NUMBER_CIVIC, amount);
+	end
+end
+Events.CivicCompleted.Add(QinCivicCompleted);
+--政府区地基送伟人
+function QinDistrictConstructed(iPlayer, iDistrictType, iX, iY)
+	local playerConfig = PlayerConfigurations[iPlayer];
+	local player = Players[iPlayer];
+	local leader = playerConfig:GetLeaderTypeName();
+	if not LeaderHasTrait(leader, 'TRAIT_LEADER_QIN') then
+		return;
+	end
+	print('QinGoverment');
+	local sDistrict = GameInfo.Districts[iDistrictType].DistrictType;
+	if sDistrict == "DISTRICT_GOVERNMENT" then
+		GrantKeqing(iPlayer);
+		print('QinGoverment_finish');
+	end
+end
+GameEvents.OnDistrictConstructed.Add(QinDistrictConstructed);

@@ -492,3 +492,25 @@ GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPer
 		player:SetProperty(FREE_TECH_KEY_HP, remains + 2);
 	end
 end);
+
+-- Free Civic李斯
+local FREE_CIVIC_KEY_LISI = 'HD_FREE_CIVIC_LISI';
+GameEvents.HD_FreeCivicSwitch.Add(function (playerId, civicId)
+	local player = Players[playerId];
+	local remains = player:GetProperty(FREE_CIVIC_KEY_LISI) or 0;
+	local playerCulture = player:GetCulture();
+	print('FREE_CIVIC_KEY');
+	print(remains);
+	player:SetProperty(FREE_CIVIC_KEY_LISI, remains - 1);
+	playerCulture:SetCulturalProgress(civicId, playerCulture:GetCultureCost(civicId));
+end);
+GameEvents.GreatPersonHandleActivation.Add(function (unitOwner, unitId, greatPersonIndividualId)
+	local player = Players[unitOwner];
+	local LISI_INDEX = GameInfo.GreatPersonIndividuals['GREAT_PERSON_INDIVIDUAL_LISI'].Index;
+	local remains = player:GetProperty(FREE_CIVIC_KEY_LISI) or 0;
+	if greatPersonIndividualId == LISI_INDEX then
+		print('FREE_CIVIC_KEY_LISI');
+		print(remains);
+		player:SetProperty(FREE_CIVIC_KEY_LISI, remains + 1);
+	end
+end);

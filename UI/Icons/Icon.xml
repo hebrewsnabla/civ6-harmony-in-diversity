@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<IconTextureAtlases>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_256.dds"/>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_80.dds"/>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_50.dds"/>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="38" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_38.dds"/>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_32.dds"/>
+		<Row Name="ATLAS_UNIT_KEQING" IconSize="22" IconsPerRow="1" IconsPerColumn="1" Filename="UNIT_KEQING_22.dds"/>
+	</IconTextureAtlases>
+	<IconDefinitions>
+		<Row Name="ICON_UNIT_KEQING" Atlas="ATLAS_UNIT_KEQING" Index="0"/>
+		<Row Name="ICON_UNIT_KEQING_PORTRAIT"                Atlas="ICON_ATLAS_UNIT_PORTRAITS"   Index="8"/>
+	</IconDefinitions>
+</GameData>

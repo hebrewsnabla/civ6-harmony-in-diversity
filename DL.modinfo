@@ -679,6 +679,13 @@
       <File>Assets/Wetlands/HD_Peat_128.dds</File>
       <File>Assets/Wetlands/HD_Peat_256.dds</File>
       <File>Assets/Wetlands/HD_Peat_FOW_256.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_22.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_32.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_38.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_50.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_80.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_256.dds</File>
+      <File>Assets/GreatPeople/UNIT_KEQING_MONMENT.dds</File>
     </ImportFiles>
     <ImportFiles id="Resouceful2_Adapt_Import" criteria="Resouceful2_Expansion2">
       <Properties><LoadOrder>1</LoadOrder></Properties>
@@ -1390,6 +1397,7 @@
       <File>UI/Icons/HD_Icons_Techs_Civics.sql</File>
       <File>UI/Icons/HD_Icons_Units.xml</File>
       <File>UI/Icons/HD_Icons_STUUexpansion.xml</File>
+      <File>UI/Icons/Icon.xml</File>
     </UpdateIcons>
     <!-- Gameplay-->
     <AddGameplayScripts id="DL_Scripts_Gameplay" criteria="Expansion2">
@@ -1846,6 +1854,7 @@
     <File>UI/Icons/DL_Icons_Buildings.xml</File>
 	<File>UI/Icons/DL_Icons_Buildings_Frontend.xml</File>
     <File>UI/Icons/DL_Icons_Policies.xml</File>
+    <File>UI/Icons/Icon.xml</File>
     <File>UI/Icons/DL_Icons_Projects.xml</File>
     <File>UI/Icons/HD_Icons.xml</File>
     <File>UI/Icons/HD_Icons_GreatPeople.sql</File>
@@ -2232,6 +2241,13 @@
     <File>Assets/Wetlands/HD_Peat_128.dds</File>
     <File>Assets/Wetlands/HD_Peat_256.dds</File>
     <File>Assets/Wetlands/HD_Peat_FOW_256.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_22.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_32.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_38.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_50.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_80.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_256.dds</File>
+    <File>Assets/GreatPeople/UNIT_KEQING_MONMENT.dds</File>
     <!-- Platforms -->
     <File>Platforms/Windows/audio/HD_Banks.ini</File>
     <File>Platforms/Windows/audio/SoundbanksInfo.xml</File>
