@@ -220,7 +220,7 @@ values
 	('DLAdjustBuildings',		'BUILDING_GOV_SPIES',					1,			0),
 	('DLAdjustDistricts',		'DISTRICT_GOVERNMENT',					1,			0),
 	('DLAdjustDistricts',		'DISTRICT_INDUSTRIAL_ZONE',				1,			1000),--1000可能导致数据溢出不生效，需要改个小一点的比如50测试
-    ('DLAdjustTechs',			'TECH_CALENDAR_HD',						1,			20),
+    ('DLAdjustTechs',			'TECH_CALENDAR_HD',						1,			0),
     ('DLAdjustTechs',			'TECH_IRON_WORKING',					1,			0),
     ('DLAdjustTechs',			'TECH_CURRENCY',						1,			0),
     ('DLAdjustTechs',			'TECH_EDUCATION',						1,			0),
@@ -300,7 +300,7 @@ values
 	('DLAdjustCivics',			'CIVIC_STATE_WORKFORCE',				1,			0),
 	('DLAdjustCivics',			'CIVIC_EARLY_EMPIRE',					1,			0),
 	('DLAdjustCivics',			'CIVIC_POLITICAL_PHILOSOPHY',			1,			0),
-	('DLMedievalDistricts',		'DISTRICT_AQUEDUCT',					1,			20);
+	('DLMedievalDistricts',		'DISTRICT_AQUEDUCT',					0,			3);
 
 -- [Real Strategy]（工坊一个AI调整MOD，此处是抄它对某些领袖的调整）
 update AiFavoredItems set Favored = 0, Value = 40 where ListType = 'SettleAllContinents' and Item = 'Foreign Continent'; -- 大英, down from 120 (!)
@@ -309,20 +309,21 @@ update AiFavoredItems set Value = 50 where ListType = 'LastVikingKingNavalPrefer
 
 --------------------------------------------------------------
 -- Changed based on [MOD] Real Strategy
---先删除了原版的AI移民偏好（不确定删干净了没有），赋予新的智能（不确定加对了没有）
+--先删除了原版的AI移民偏好（不确定删干净了没有），赋予新的顾问智能（不确定加对了没有）
+--AI专用坐地顾问如何给出推荐坐城点，AI看到视野里存在好的坐城点可能会更热衷训练和命令开拓者前往，并拉出一支护送军队。
 delete from AiFavoredItems where ListType = 'StandardSettlePlot';
 insert or replace into AiFavoredItems
     (ListType, 				Item, 					Favored, Value, StringVal,  TooltipString)
 values
     ('StandardSettlePlot', 'Cultural Pressure', 	0, 		 1, 	NULL, 		NULL), -- 1
     ('StandardSettlePlot', 'Cultural Pressure', 	1, 		 -6, 	NULL, 		NULL), -- -6 似乎是忠诚度压力，但写两行意义不明，需要咨询LTD
-    ('StandardSettlePlot', 'Foreign Continent', 	0, 		 6, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- -外大陆坐地无倾向且优先级降低（精分）→改为有优先级
-    --附近友方城市加分，如改为负分会使得有远点“好”城点视野的情况下不坐近点。
-    ('StandardSettlePlot', 'Nearest Friendly City', 0,  	 50, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4 
+    ('StandardSettlePlot', 'Foreign Continent', 	0, 		 2, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_FOREIGN_CONTINENT'), -- 改为有优先级但不高
+    --附近友方城市加分，疑似VALUE=每远离我方城市一环加多少分
+    ('StandardSettlePlot', 'Nearest Friendly City', 0,  	 3, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_NEAREST_CITY'), -- -10, be careful - expansion gives +3, naval +2/4 
     --去除淡水喜好，但是淡水价值仍然很高（这样改比Favored=1更优的地方是不会导致没淡水就不想坐地）
     ('StandardSettlePlot', 'Fresh Water', 			0, 		 20, 	NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_FRESH_WATER'), -- def
     --去除海城喜好，但是海水价值仍然较高（这样改比Favored=1更优的地方是不会导致没海水就不想坐地）
-    ('StandardSettlePlot', 'Coastal', 				0, 		 8,     NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_COAST'), -- 12
+    ('StandardSettlePlot', 'Coastal', 				0, 		 15,     NULL, 		'LOC_SETTLEMENT_RECOMMENDATION_COAST'), -- 12
     --城市产出预估，可能是3环内总锤子产出，重视程度一般
     ('StandardSettlePlot', 'Total Yield', 			0, 		 1, 	'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_TOTAL_YIELD'), -- 2
     --内环（市中心和靠近市中心的产出），粮锤瓶琴鸽合计5项，重视程度一般，但是金币缺失（可能已导致坐地有非奢侈1环金币地块就产生排斥感，最好改回来金币，但具体改多少需要测试）
@@ -330,24 +331,24 @@ values
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,	    'YIELD_PRODUCTION', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- def
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_SCIENCE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_CULTURE', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
-    ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 0.4,	'YIELD_GOLD', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'),     
+    --('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,	'YIELD_GOLD', 'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'),  --原版没有这条   
     ('StandardSettlePlot', 'Inner Ring Yield', 		0, 		 1,		'YIELD_FAITH',	'LOC_SETTLEMENT_RECOMMENDATION_INNER_YIELD'), -- 1
     --对新资源的重视程度（3环内资源），分通用/加成/奢侈/战略
-    ('StandardSettlePlot', 'New Resources',    		0, 		 3, 	NULL, '   LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
+    ('StandardSettlePlot', 'New Resources',    		0, 		 2, 	NULL, '   LOC_SETTLEMENT_RECOMMENDATION_NEW_RESOURCES'), -- 4, RS:6
     ('StandardSettlePlot', 'Resource Class', 		0, 		 2, 	'RESOURCECLASS_BONUS',	 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- new, RS:2
-    ('StandardSettlePlot', 'Resource Class', 		0, 		 5,     'RESOURCECLASS_LUXURY',	'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2
-    ('StandardSettlePlot', 'Resource Class', 		0, 		 3,     'RESOURCECLASS_STRATEGIC', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2, RS:4
+    ('StandardSettlePlot', 'Resource Class', 		0, 		 2,     'RESOURCECLASS_LUXURY',	'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2
+    ('StandardSettlePlot', 'Resource Class', 		0, 		 2,     'RESOURCECLASS_STRATEGIC', 'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- 2, RS:4
     --特地增强了AI圈马铁硝石的重视程度，降低了坐有冰的城的情况
     ('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_HORSES', 'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 3
     ('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_IRON',	'LOC_SETTLEMENT_RECOMMENDATION_RESOURCES'), -- 5, RS:4
     ('StandardSettlePlot', 'Specific Resource', 0, 2, 'RESOURCE_NITER',	'LOC_SETTLEMENT_RECOMMENDATION_STRATEGIC_RESOURCES'), -- def
     ('StandardSettlePlot', 'Specific Feature', 0, -5, 'FEATURE_ICE', 'LOC_SETTLEMENT_RECOMMENDATION_FEATURES');
 --------------------------------------------------------------
--- Updates to Settlement recommendations AI专用坐地顾问如何给出推荐坐城点，AI看到视野里存在好的坐城点可能会更热衷训练和命令开拓者前往，并拉出一支护送军队。
---附近无友方城市不减评分，有友方城市加一定分数--希望AI坐地快一点
-UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue = 10 WHERE ConditionType = 'Nearest Friendly City'; -- PoorValue="-50" GoodValue="-20"
---无新资源不减任何分数，有新资源加一定分数
-UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue = 10 WHERE ConditionType = 'New Resources'; -- PoorValue="0" GoodValue="4"
+-- Updates to Settlement recommendations 给AI修饰一些穷/差和富/好的概念，以及两者之间的普通区间
+--如果城点处于友方城市7环以内，AI无可无不可，超过7环会觉得不好。
+UPDATE PlotEvalConditions SET PoorValue = -70,  GoodValue = -20 WHERE ConditionType = 'Nearest Friendly City'; -- PoorValue="-50" GoodValue="-20"
+--无新资源为差，1新资源为普通，2新资源为好
+UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue = 2 WHERE ConditionType = 'New Resources'; -- PoorValue="0" GoodValue="4"
 --内环产出（粮锤瓶琴鸽）高则很高分，但内环产出低也很高分，降低不坐内环产出低的地点的可能性
 UPDATE PlotEvalConditions SET PoorValue = 12, GoodValue = 18 WHERE ConditionType = 'Inner Ring Yield'; -- PoorValue="18" GoodValue="26", RS:12~18
 --城市产出预估（3环裸地锤？)高则很高分，但锤子低也很高分，降低不坐锤子低的地点的可能性
@@ -355,11 +356,11 @@ UPDATE PlotEvalConditions SET PoorValue = 10, GoodValue = 20 WHERE ConditionType
 --有咸水住房评价中等，无咸水住房微微减分数
 UPDATE PlotEvalConditions SET PoorValue = -1, GoodValue =	8 WHERE ConditionType = 'Coastal'; -- PoorValue="-1" GoodValue="12", RS:-1~8
 --少量增加了城点圈资源地貌的评分，但是没有也不怎么介意（大概）
-UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue =	8 WHERE ConditionType = 'Specific Resource'; -- PoorValue="-1" GoodValue="6"
-UPDATE PlotEvalConditions SET PoorValue = 0,  GoodValue =	0 WHERE ConditionType = 'Specific Feature'; -- PoorValue="-5" GoodValue="5"
-UPDATE PlotEvalConditions SET PoorValue = -2, GoodValue =	8 WHERE ConditionType = 'Resource Class'; -- PoorValue="2" GoodValue="6"
---稍微增加了新大陆的城点的推荐分数，不减没有新大陆属性的城点的推荐分数
-UPDATE PlotEvalConditions SET PoorValue = 0, GoodValue = 4 WHERE ConditionType = 'Foreign Continent'; -- PoorValue="-2" GoodValue="50"
+UPDATE PlotEvalConditions SET PoorValue = -1,  GoodValue =	4 WHERE ConditionType = 'Specific Resource'; -- PoorValue="-1" GoodValue="6"
+UPDATE PlotEvalConditions SET PoorValue = -6,  GoodValue =	6 WHERE ConditionType = 'Specific Feature'; -- PoorValue="-5" GoodValue="5"
+UPDATE PlotEvalConditions SET PoorValue = 1, GoodValue =	4 WHERE ConditionType = 'Resource Class'; -- PoorValue="2" GoodValue="6"
+--新大陆城点的X值超过20
+UPDATE PlotEvalConditions SET PoorValue = 0, GoodValue = 20 WHERE ConditionType = 'Foreign Continent'; -- PoorValue="-2" GoodValue="50"
 
 --------------------------------------------------------------
 -- See also [MOD] Real Strategy   一些零碎的AI价值调整，对于某些对象有多少价值（赋予虚拟价值）乘算到实际价值
