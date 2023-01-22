@@ -1143,3 +1143,10 @@ update Adjacency_YieldChanges set TilesRequired = 1, ObsoleteCivic = NULL where 
 delete from Improvement_Adjacencies where YieldChangeId = 'ColossalHead_FaithForestLate' or YieldChangeId = 'ColossalHead_FaithJungleLate';
 --摩艾石像
 delete from Improvement_InvalidAdjacentFeatures where ImprovementType = 'IMPROVEMENT_MOAI';
+--独石教堂相邻
+insert or replace into Adjacency_YieldChanges
+	(ID,										Description,				YieldType,					YieldChange,				TilesRequired,			AdjacentResourceClass)
+values
+	('LuxuryAdjacency_Faith',					'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_LUXURY'),
+	('StrategicAdjacency_Faith',				'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_STRATEGIC'),
+	('BounsAdjacency_Faith',					'Placeholder',				'YIELD_FAITH',				1,							1,						'RESOURCECLASS_BONUS');

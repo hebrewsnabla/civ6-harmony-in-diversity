@@ -2328,27 +2328,47 @@ insert or replace into TraitModifiers
 	(TraitType,							ModifierId)
 values
 	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_WOODS'),
-	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_SWAMP'),
+--	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_SWAMP'),
 	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_RAINFOREST'),
 	('TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_MARSH');
+insert or replace into TraitModifiers
+	(TraitType,							ModifierId)
+select
+	'TRAIT_CIVILIZATION_MAORI_MANA',	'TRAIT_MAORI_SWAMP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 insert or replace into Modifiers
 	(ModifierId,						ModifierType,							SubjectRequirementSetId)
 values
 	('TRAIT_MAORI_WOODS',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_WOODS_TECH_ASTROLOGY_REQUIREMENTS'),
-	('TRAIT_MAORI_SWAMP',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_SWAMP_TECH_ASTROLOGY_REQUIREMENTS'),
+--	('TRAIT_MAORI_SWAMP',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_SWAMP_TECH_ASTROLOGY_REQUIREMENTS'),
 	('TRAIT_MAORI_RAINFOREST',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_RAINFOREST_TECH_ASTROLOGY_REQUIREMENTS'),
 	('TRAIT_MAORI_MARSH',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_MARSH_TECH_ASTROLOGY_REQUIREMENTS');
+insert or replace into Modifiers
+	(ModifierId,						ModifierType,							SubjectRequirementSetId)
+select
+	'TRAIT_MAORI_SWAMP',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',	'PLOT_HAS_SWAMP_TECH_ASTROLOGY_REQUIREMENTS'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 insert or replace into ModifierArguments
 	(ModifierId,						Name,				Value)
 values
 	('TRAIT_MAORI_WOODS',				'YieldType',		'YIELD_FOOD'),
 	('TRAIT_MAORI_WOODS',				'Amount',			1),
-	('TRAIT_MAORI_SWAMP',				'YieldType',		'YIELD_FOOD'),
-	('TRAIT_MAORI_SWAMP',				'Amount',			1),
+--	('TRAIT_MAORI_SWAMP',				'YieldType',		'YIELD_FOOD'),
+--	('TRAIT_MAORI_SWAMP',				'Amount',			1),
 	('TRAIT_MAORI_RAINFOREST',			'YieldType',		'YIELD_PRODUCTION'),
 	('TRAIT_MAORI_RAINFOREST',			'Amount',			1),
 	('TRAIT_MAORI_MARSH',				'YieldType',		'YIELD_PRODUCTION'),
 	('TRAIT_MAORI_MARSH',				'Amount',			1);
+insert or replace into ModifierArguments
+	(ModifierId,						Name,				Value)
+select
+	'TRAIT_MAORI_SWAMP',				'YieldType',		'YIELD_FOOD'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
+insert or replace into ModifierArguments
+	(ModifierId,						Name,				Value)
+select
+	'TRAIT_MAORI_SWAMP',				'Amount',			1
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 --武美
 delete from TraitModifiers where ModifierId = 'TRAIT_ROOSEVELT_COROLLARY_TRADE_ROUTE_TOKEN';
 insert or replace into TraitModifiers

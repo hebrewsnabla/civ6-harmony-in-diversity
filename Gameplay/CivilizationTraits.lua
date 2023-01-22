@@ -861,7 +861,7 @@ function QinCivicCompleted(playerID, iCivic, bCancelled)
 			amount = 0;
 		end
 		amount = amount + 1;
-		if amount == 4 then
+		if amount == 3 then
 			GrantKeqing(playerID);
 			print('QinCivic');
 			amount = 0;

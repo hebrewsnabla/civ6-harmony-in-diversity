@@ -111,7 +111,7 @@ values
     ("LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "Gathering Fenghuang in Shangyang Palace"),
     ("LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "+50% [ICON_GREATPERSON] Great People points generated per turn in your [ICON_CAPITAL] Capital, up to 100% after progressing 'Imperial Examination System' Civic. When you recruit a [ICON_GREATPERSON] Great Person, add +2 corresponding type output to all corresponding type areas in your country. (Gain [ICON_PRODUCTION] Production for [ICON_GREATGENERAL] Great General and [ICON_FOOD] Food for [ICON_GREATADMIRAL] Great Admiral.)"),
     ("LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "Sweep Across the Six States"),
-    ("LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "Earn a Keqing after building the Government Plaza or any Government Plaza building, or after progressing every four civic.");
+    ("LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "Earn a Keqing after building the Government Plaza or any Government Plaza building, or after progressing every three civic.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -231,7 +231,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "凤集上阳宫"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。（ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "横扫六合"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "建成市政广场或市政广场建筑，以及每完成四个市政研究后，获得一个客卿。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "建成市政广场或市政广场建筑，以及每完成三个市政研究后，获得一个客卿。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText
