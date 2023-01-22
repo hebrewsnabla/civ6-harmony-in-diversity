@@ -54,7 +54,7 @@ values
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "The Greatest Emperor Ever"),
     ("LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "When building Ancient and Classical wonders, you may spend Builder charges to complete 15% of the original wonder cost. Builders receive an additional charge and +1 [ICON_Movement] Movement."),
     ("LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "Wisdom of Working People"),
-    ("LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION",  "[ICON_TechBoosted] Eurekas and [ICON_CivicBoosted] Inspirations provide 10% more of technologies and civics. When completing a wonder, receive a random [ICON_TechBoosted] Eureka and [ICON_CivicBoosted] Inspiration from the era of the wonder, if available. Canals are unlocked with the Masonry technology."),
+    ("LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION",  "+3 [ICON_SCIENCE] Science when you use a Builder's charge. [ICON_TechBoosted] Eurekas and [ICON_CivicBoosted] Inspirations provide 10% more of technologies and civics. When completing a wonder, receive a random [ICON_TechBoosted] Eureka and [ICON_CivicBoosted] Inspiration from the era of the wonder, if available. Canals are unlocked with the Masonry technology."),
     ("LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION",                       "Levied units gain an ability giving them +2 [ICON_Movement] Movement and +5 [ICON_Strength] Combat Strength. It costs 50% less [ICON_GOLD] Gold and resources to upgrade Levied units. If you Levy troops from a City-State, receive 2 [ICON_ENVOY] Envoys in that City-State. Gain the Black Army unique unit when the 'Castles' technology is researched."),
     ("LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION",                  "+1 [ICON_TradeRoute] Trade Route capacity and receive 1 [ICON_Governor] Governor title with Political Philosophy civic. Receive +2 [ICON_Gold] Gold and +2 [ICON_Culture] Culture for routes between your own cities. Roads built in your territory are one level more advanced than usual."),
     ("LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION",          "+2 [ICON_Movement] Movement for the first 10 turns after declaring a Surprise War on a major civilization. +5 Loyalty per turn in cities with a garrisoned unit. Declaring a Surprise War only counts as a Formal War for the purposes of [ICON_STAT_GRIEVANCE] Grievances and Warmongering."),
@@ -109,7 +109,9 @@ values
     ("LOC_TRAIT_LEADER_YONGLE_XP_DESCRIPTION",                        "Gain 1 [ICON_ENVOY] envoy when you establish a [ICON_TRADEROUTE] trade route with each major civilization or City-State the first time. For every major civilization or City-State you have established [ICON_TRADEROUTE] trade route with, add +2 [ICON_GOLD] gold to all [ICON_TRADEROUTE] trade routes. Grant +1 [ICON_TRADEROUTE] Trade Route capacity when a great person is fully activated or retired, then grant +1 [ICON_TRADEROUTE] Trade Route for every three great people are fully activated or retired."),
     ("LOC_TRAIT_LEADER_YONGLE_NAME",                                  "Flourishment Age of Yongle"),
     ("LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "Gathering Fenghuang in Shangyang Palace"),
-    ("LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "+50% [ICON_GREATPERSON] Great People points generated per turn in your [ICON_CAPITAL] Capital, up to 100% after progressing 'Imperial Examination System' Civic. When you recruit a [ICON_GREATPERSON] Great Person, add +2 corresponding type output to all corresponding type areas in your country. (Gain [ICON_PRODUCTION] Production for [ICON_GREATGENERAL] Great General and [ICON_FOOD] Food for [ICON_GREATADMIRAL] Great Admiral.)");
+    ("LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "+50% [ICON_GREATPERSON] Great People points generated per turn in your [ICON_CAPITAL] Capital, up to 100% after progressing 'Imperial Examination System' Civic. When you recruit a [ICON_GREATPERSON] Great Person, add +2 corresponding type output to all corresponding type areas in your country. (Gain [ICON_PRODUCTION] Production for [ICON_GREATGENERAL] Great General and [ICON_FOOD] Food for [ICON_GREATADMIRAL] Great Admiral.)"),
+    ("LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "Sweep Across the Six States"),
+    ("LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "Earn a Keqing after building the Government Plaza or any Government Plaza building, or after progressing every three civic.");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -169,7 +171,7 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME",                           "千古一帝"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FIRST_EMPEROR_EXPANSION2_DESCRIPTION",         "建造远古和古典奇观时，可消耗建造者次数来加速奇观原始建造进程的15%。建造者获得+1使用次数和+1 [ICON_Movement] 移动力。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME",                    "劳动人民的智慧"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION",  "[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞额外提升（对应科技或人文所需的科技或文化总量的）10%。建成奇观时将获得奇观所处时代的一项随机 [ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞（如可用）。解锁“砌砖”科技的同时也解锁“运河”。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_EXPANSION2_DESCRIPTION",  "每当建造者减少一次使用次数，获得3点 [ICON_SCIENCE] 科技值。[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞额外提升（对应科技或人文所需的科技或文化总量的）10%。建成奇观时将获得奇观所处时代的一项随机 [ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞（如可用）。解锁“砌砖”科技的同时也解锁“运河”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION",                       "征集单位+2 [ICON_Movement] 移动力、+5 [ICON_Strength] 战斗力。升级征集单位所花费的 [ICON_GOLD] 金币和资源减少50%。征集城邦军队时可在该城邦增加2名 [ICON_ENVOY] 使者。研究“城堡”科技后获得特色单位“黑军”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_SATRAPIES_DESCRIPTION",                  "拥有“政治哲学”市政后，+1 [ICON_TradeRoute] 贸易路线容量，获得一个 [ICON_Governor] 总督头衔。国内 [ICON_TRADEROUTE] 贸易路线+2 [ICON_Gold] 金币、+2 [ICON_Culture] 文化值。本国领土中的道路提升一个等级。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_FALL_BABYLON_EXPANSION2_DESCRIPTION",          "对主要文明宣布突袭战争后的10回合内+2 [ICON_Movement] 移动力。拥有驻扎单位的城市每回合的忠诚度+5。宣布突袭战争的 [ICON_STAT_GRIEVANCE] 不满和好战性与正式战争相同。"),
@@ -227,7 +229,9 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_YONGLE_XP_DESCRIPTION",                        "首次与每个主要文明或城邦建立 [ICON_TRADEROUTE] 贸易路线时获得1 [ICON_ENVOY] 使者。每与一个主要文明或城邦建立过 [ICON_TRADEROUTE] 贸易路线，便令你的所有 [ICON_TRADEROUTE] 贸易路线+2 [ICON_GOLD] 金币。有一个伟人完全激活或隐退后，获得+1 [ICON_TRADEROUTE] 贸易路线容量，之后每有三位伟人完全激活或隐退后获得+1 [ICON_TRADEROUTE] 贸易路线容量。"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_YONGLE_NAME",                                  "永乐盛世"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "凤集上阳宫"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。（ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。（ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "横扫六合"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "建成市政广场或市政广场建筑，以及每完成三个市政研究后，获得一个客卿。");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

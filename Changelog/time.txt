@@ -325,7 +325,7 @@ version 1.3.5
 [瑞典]：每获得一点时代分，额外获得1点[ICON_GREATSCIENTIST] 大科学家点数、[ICON_GREATMERCHANT] 大商人点数、[ICON_GREATENGINEER] 大工程师点数、[ICON_GREATWRITER] 大作家点数、[ICON_GREATARTIST] 大艺术家点数和 [ICON_GREATMUSICIAN] 大音乐家点数，你每拥有一个对应的专业化区域，就令对应 [ICON_GREATPERSON] 伟人点数+2。
 有文明招募这些类型的[ICON_GREATPERSON] 伟人时，为你提供额外金币。（金币量为100n，n为伟人所属时代）
 用 [ICON_GOLD] 金币招募[ICON_GREATPERSON] 伟人时所需的费用-10%。，进入工业时代后增加三项特色世界议会竞赛。
-[中国]：删除每当建造者减少一次使用次数，获得6点 [ICON_SCIENCE] 科技值。
+[中国]：每当建造者减少一次使用次数，获得3点 [ICON_SCIENCE] 科技值。
 [葡萄牙]：国际 [ICON_TRADEROUTE] 贸易路线额外产出降低为25%。
 [挪威]：移除伐木场额外住房。新增渔船提供+1 [ICON_PRODUCTION] 生产力，所有远古和古典时期的海军单位+1 [ICON_MOVEMENT] 移动力。
 [毛利]：移除未改良的树林与雨林提供+1 [ICON_PRODUCTION] 生产力。“行政部门”额外提供+1 [ICON_PRODUCTION] 生产力、“重商主义”额外提供+1 [ICON_PRODUCTION] 生产力、“保护地球”额外+1 [ICON_PRODUCTION] 生产力、“环境保护主义”额外提供+1 [ICON_PRODUCTION] 生产力。
@@ -350,6 +350,7 @@ version 1.3.5
 [武则天]：重做为：首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。
 你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。
 （ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）
+[秦始皇（大一统）]：重做为：建成市政广场或市政广场建筑，以及每完成三个市政研究后，获得一个客卿。
 
 [安善]：重做为位于丘陵之上或靠近山脉的学院+3 [ICON_SCIENCE] 科技值。
 
@@ -361,3 +362,18 @@ version 1.3.5
 
 [AI]：降低AI对于大艺术家和大音乐家的倾向。
 [bug修复]：修复了一些错误的文本。修复了部分异常bug。
+
+[客卿]：仅限秦始皇使用的特殊伟人。每个皆拥有特色能力，包括被动效果和“隐退”技能。
+被动效果：在两个单元格以内，为所有陆地单位+1 [ICON_MOVEMENT] 移动力。
+[蒙恬]：为长城改良单元格+1 [ICON_CULTURE] 文化值。
+[蒙毅]：提供1个 [ICON_GOVERNOR] 总督头衔或新招募1名 [ICON_GOVERNOR] 总督。
+[王翦]：所有陆地单位无视丘陵对 [ICON_MOVEMENT] 移动力的减益。
+[王贲]：攻击区域防御时，所有陆地单位+3 [ICON_STRENGTH] 战斗力。
+[韩非]：可产生巨作《韩非子》[NEWLINE]此城生产开拓者时+25%建造速度。[NEWLINE]（需要移动展示槽位后生效）
+[章邯]：与自由城市或蛮族单位作战时+5 [ICON_STRENGTH] 战斗力。
+[甘罗]：获得3位 [ICON_ENVOY] 使者，宫殿+3影响力。
+[蒙武]：所有陆地单位在敌方领土开始回合时+1 [ICON_MOVEMENT] 移动力。
+[李斯]：奖励一项当前可以研究的市政。（点击市政树上的市政图标来选择被奖励的市政。）
+[吕不韦]：增加1 [ICON_TRADEROUTE] 条贸易路线容量。获得一个商人。宫殿+1 [ICON_AMENITIES] 宜居度。
+[赵佗]：获得一个开拓者。
+[尉缭]：可产生巨作《尉缭子》[NEWLINE]为所有战斗和宗教单位+50%夹击加成。[NEWLINE]（需要移动展示槽位后生效）

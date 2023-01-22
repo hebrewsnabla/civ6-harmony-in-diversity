@@ -78,9 +78,13 @@ values
 	('CIVILIZATION_MALI',				'FEATURE_FLOODPLAINS',				2),
 	('CIVILIZATION_VIETNAM',			'FEATURE_JUNGLE',					1),
 	('CIVILIZATION_VIETNAM',			'FEATURE_FOREST',					1),
-	('CIVILIZATION_VIETNAM',			'FEATURE_MARSH',					1),
-	('CIVILIZATION_VIETNAM',			'FEATURE_HD_SWAMP',					1);
-
+	('CIVILIZATION_VIETNAM',			'FEATURE_MARSH',					1);
+--	('CIVILIZATION_VIETNAM',			'FEATURE_HD_SWAMP',					1);
+insert into HD_StartBiasFeatures
+    (CivilizationType,					FeatureType,                       	Tier)
+select
+	'CIVILIZATION_VIETNAM',				'FEATURE_HD_SWAMP',					1
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 insert into HD_StartBiasResources
     (CivilizationType,					ResourceType,                      	Tier)
 values

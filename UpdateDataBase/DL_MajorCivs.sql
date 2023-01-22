@@ -10,7 +10,7 @@ values
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_FOREST'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_JUNGLE'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_MARSH'),
-	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_SWAMP'),
+--	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_SWAMP'),
 -- 伟人赞助折扣
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT'),
@@ -19,6 +19,12 @@ values
 -- 剧院享受魅力加成
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_CHARMING_THEATER_DISTRICT'),
 	('TRAIT_LEADER_MAJOR_CIV',				'TRAIT_BREATHTAKING_THEATER_DISTRICT');
+
+insert or replace into TraitModifiers
+	(TraitType,								ModifierId)
+select
+	'TRAIT_LEADER_MAJOR_CIV',				'TRAIT_PRESERVE_VALID_SWAMP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 
 -- Use insert or ignore to support the missing DLC case.
 insert or ignore into Modifiers
@@ -63,14 +69,23 @@ values
 	('TRAIT_PRESERVE_VALID_JUNGLE',				'FeatureType',	'FEATURE_JUNGLE'),
 	('TRAIT_PRESERVE_VALID_MARSH',				'DistrictType',	'DISTRICT_PRESERVE'),
 	('TRAIT_PRESERVE_VALID_MARSH',				'FeatureType',	'FEATURE_MARSH'),
-	('TRAIT_PRESERVE_VALID_SWAMP',				'DistrictType',	'DISTRICT_PRESERVE'),
-	('TRAIT_PRESERVE_VALID_SWAMP',				'FeatureType',	'FEATURE_HD_SWAMP'),
+--	('TRAIT_PRESERVE_VALID_SWAMP',				'DistrictType',	'DISTRICT_PRESERVE'),
+--	('TRAIT_PRESERVE_VALID_SWAMP',				'FeatureType',	'FEATURE_HD_SWAMP'),
 	('TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT',	'YieldType',	'YIELD_FAITH'),
 	('TRAIT_PATRONAGE_DISCOUNT_FAITH_PERCENT',	'Amount',		20),
 	('TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT',	'YieldType',	'YIELD_GOLD'),
 	('TRAIT_PATRONAGE_DISCOUNT_GOLD_PERCENT',	'Amount',		20);
 update ModifierArguments set Value = 20 where ModifierId = 'ORACLE_PATRONAGE_FAITH_DISCOUNT' and Name = 'Amount';
-
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select
+	'TRAIT_PRESERVE_VALID_SWAMP',				'DistrictType',	'DISTRICT_PRESERVE'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
+insert or replace into ModifierArguments
+	(ModifierId,								Name,			Value)
+select
+	'TRAIT_PRESERVE_VALID_SWAMP',				'FeatureType',	'FEATURE_HD_SWAMP'
+where exists (select FeatureType from Features where FeatureType = 'FEATURE_HD_SWAMP');
 create table 'PopulationMaintenance'(
 	'Pop' Int NOT NULL,
 	'ImmortalMaintenance' TEXT NOT NULL,

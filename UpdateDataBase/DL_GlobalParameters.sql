@@ -176,7 +176,7 @@ values
     ('MAGNUS_GENERAL_SERVICES_OFFICE_EFFECT_DISTANCE',  8),
     ('GOLD_FOR_EVERY_ERA_SCORE',                        5),
     ('MALI_EXTRA_GOLD_FOR_EVERY_ERA_SCORE',             10),
-    ('CHINA_WORKER_SCIENCE_PER_CHARGE',                 0),
+    ('CHINA_WORKER_SCIENCE_PER_CHARGE',                 3),
     ('TURNS_BEFORE_DESTROY_AFTER_PILLAGE',              5),
     ('OCCUPATION_GOLD_PER_POP',                         30),
     ('HD_CITY_ROADS_REQUIRE_WHEEL',                     1),
