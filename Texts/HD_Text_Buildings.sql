@@ -310,7 +310,7 @@ values
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_NAME",                               "森林保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_SANCTUARY_DESCRIPTION",                        "本城的森林单元格+1 [ICON_FOOD] 食物，迷人森林单元格+2 [ICON_GOLD] 金币，惊艳森林单元格额外+1 [ICON_CULTURE] 文化值。[NEWLINE][NEWLINE]只能建造在森林或相邻森林（包括森林类自然奇观）的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_JUNGLE_PRESERVE_NAME",                      "雨林保护部"),
-    ("zh_Hans_CN",  "LOC_BUILDING_HD_JUNGLE_PRESERVE_DESCRIPTION",               "本城的雨林单元格+1 [ICON_PRODUCTION] 生产力，迷人雨林单元格+2 [ICON_GOLD] 金币，惊艳雨林单元格额外+2 [ICON_SCIENCE] 科技值。本城的雨林单元格为周围单元格+1魅力。[NEWLINE][NEWLINE]只能建造在雨林或相邻雨林（包括雨林类自然奇观）的单元格上。"),
+    ("zh_Hans_CN",  "LOC_BUILDING_HD_JUNGLE_PRESERVE_DESCRIPTION",               "本城的雨林单元格+1 [ICON_PRODUCTION] 生产力，迷人雨林单元格+2 [ICON_GOLD] 金币，惊艳雨林单元格额外+1 [ICON_SCIENCE] 科技值。本城的雨林单元格为周围单元格+1魅力。[NEWLINE][NEWLINE]只能建造在雨林或相邻雨林（包括雨林类自然奇观）的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WETLANDS_PRESERVE_NAME",                    "湿地保护部"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WETLANDS_PRESERVE_DESCRIPTION",             "本城的湿地单元格（包括沼泽、泛滥平原和绿洲单元格）+1 [ICON_PRODUCTION] 生产力，迷人湿地单元格+2 [ICON_GOLD] 金币，惊艳湿地单元格额外+1 [ICON_SCIENCE] 科技值。本城的沼泽和泛滥单元格为周围单元格+1魅力。[NEWLINE][NEWLINE]只能建造在湿地或相邻湿地（包括沼泽、泛滥平原、绿洲单元格、湿地类自然奇观）的单元格上。"),
     ("zh_Hans_CN",  "LOC_BUILDING_HD_WATER_PRESERVE_NAME",                       "水文保护部"),
