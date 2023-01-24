@@ -22,6 +22,8 @@
         <Row Name="ICON_GREATWORK_ZHUANG_ZHOU_2"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
         <Row Name="ICON_GREATWORK_SI_MA_QIAN_1"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
         <Row Name="ICON_GREATWORK_SI_MA_QIAN_2"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
+        <Row Name="ICON_GREATWORK_HANFEI"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
+        <Row Name="ICON_GREATWORK_WEILIAO"             Atlas="ICON_ATLAS_GREATWORKS"           Index="0"/>
         <Row Name="ICON_IMPROVEMENT_LAND_POLDER" Atlas="ICON_ATLAS_EXPANSION_1_IMPROVEMENTS" Index="2"/>
     </IconDefinitions>
 </GameData>

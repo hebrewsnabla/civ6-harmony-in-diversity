@@ -111,7 +111,7 @@ values
     ("LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "Gathering Fenghuang in Shangyang Palace"),
     ("LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "+50% [ICON_GREATPERSON] Great People points generated per turn in your [ICON_CAPITAL] Capital, up to 100% after progressing 'Imperial Examination System' Civic. When you recruit a [ICON_GREATPERSON] Great Person, add +2 corresponding type output to all corresponding type areas in your country. (Gain [ICON_PRODUCTION] Production for [ICON_GREATGENERAL] Great General and [ICON_FOOD] Food for [ICON_GREATADMIRAL] Great Admiral.)"),
     ("LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "Sweep Across the Six States"),
-    ("LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "Earn a Keqing after building the Government Plaza or any Government Plaza building, or after progressing every three civic.");
+    ("LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "Earn a Keqing after building the Government Plaza or any Government Plaza building, or after progressing every three civic. +50% production speed toward Ancient, Classical Melee units. ");
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
 insert or replace into LocalizedText
@@ -126,8 +126,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_ROUGH_RIDER_DESCRIPTION",  "在首都所在大陆上时单位+5 [ICON_Strength] 战斗力。通往城邦的[ICON_TRADEROUTE] 贸易路线将向该城邦派遣1位 [ICON_ENVOY] 使者。起源城市的每个专业化区域为通往城邦的 [ICON_TRADEROUTE] 贸易路线+1 [ICON_SCIENCE] 科技值和+2 [ICON_GOLD] 金币。攻占一个文明的原始首都后，如果该文明仍然存在，对其宗主的城邦派遣足够数量的 [ICON_ENVOY] 使者，直至成为这些城邦的宗主国。解锁“膛线”科技后获得特色单位“莽骑兵”。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_EJERCITO_PATRIOTA_DESCRIPTION",          "所有单位+1 [ICON_Movement] 移动力。升级单位不会结束其回合。种植园对无主领土施放文化炸弹，并+1 [ICON_CULTURE] 文化值。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_NAME",                    "集贤殿"),
-    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "首都每次建造完成书院区域或书院中的建筑时获得一个总督点。"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每个人口额外1点全部产出。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_THREE_KINGDOMS_DESCRIPTION",             "[ICON_CAPITAL] 首都每次建成书院区域和书院区域建筑时获得一个 [ICON_GOVERNOR] 总督头衔。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_HWARANG_DESCRIPTION",                          "[ICON_CAPITAL] 首都或派遣了总督的城市获得+3 [ICON_Amenities] 宜居度，+5 [Icon_Housing] 住房和+20忠诚度。非首都且未派遣总督的城市-2 [ICON_Amenities] 宜居度，-8忠诚度，-50%全部产出。 有书院的城市建造区域和建筑+25% [Icon_Production] 生产力；有图书馆的城市+15% [ICON_Food] 食物和 [Icon_production] 生产力；有大学的城市，所有区域对应产出类型的相邻加成+100%；有实验室的城市所有产出+10%且每位 [ICON_CITIZEN] 公民额外1点全部产出。"),
     ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_NAME",                            "最惠条款"),
     ("zh_Hans_CN",  "LOC_LEADER_POUNDMAKER_ABILITY_DESCRIPTION",                     "所有同盟类型均可以共享视野。[NEWLINE]目的地城市中的每个渔船、营地或牧场可为你的 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。[NEWLINE]你的城市作为 [ICON_TradeRoute] 贸易路线目的地时，此城中的每个渔船、营地或牧场可为你提供+1 [ICON_Gold] 金币。"),
     ("zh_Hans_CN",  "LOC_TRAIT_CIVILIZATION_MALI_GOLD_DESERT_DESCRIPTION",           "每个相邻沙漠或沙漠丘陵单元格为市中心提供+1 [ICON_FAITH] 信仰值与+1 [ICON_FOOD] 食物。矿山-1 [ICON_PRODUCTION] 生产力，但+4 [ICON_GOLD] 金币，可用 [ICON_Faith] 信仰值购买商业中心区域建筑。建造建筑或生产单位时-30% [ICON_PRODUCTION] 生产力。"), --每一种改良的奢侈矿产资源为城市+10% [ICON_Gold] 金币，城市中的每个奢侈品资源矿产为国际 [ICON_TradeRoute] 贸易路线提供+1 [ICON_FOOD] 食物。
@@ -231,7 +231,8 @@ values
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_NAME",                               "凤集上阳宫"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_WU_ZETIAN_DESCRIPTION",                        "首都每回合产出的 [ICON_GREATPERSON] 伟人点+50%，研究科举制市政后增至+100%。你每招募一个 [ICON_GREATPERSON] 伟人，便为全国所有对应类型区域+2对应类型产出。（ [ICON_GREATGENERAL] 大将军提供 [ICON_PRODUCTION] 生产力，[ICON_GREATADMIRAL] 海军统帅提供 [ICON_FOOD] 食物。）"),
     ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_NAME",                                 "横扫六合"),
-    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "建成市政广场或市政广场建筑，以及每完成三个市政研究后，获得一个客卿。");
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_QIN_ALT_DESCRIPTION",                          "建成市政广场或市政广场建筑，以及每完成三个市政研究后，获得一个客卿。生产远古和古典近战单位加速+50%。"),
+    ("zh_Hans_CN",  "LOC_TRAIT_LEADER_CITADEL_CIVILIZATION_NAME",                    "文明堡垒");
 --------------------------------------------------------------------------------
 -- Language: en_US
 insert or replace into EnglishText

@@ -50,11 +50,11 @@ values
 	('NATURALIST_DISCOUNT',				'UnitType',			'UNIT_NATURALIST'),
 	('NATURALIST_DISCOUNT',				'Amount',			50);
 
--- 塔祠，神道教神社和羽蛇神庙
+-- 禅邸，神道教神社和羽蛇神庙
 insert or replace into BuildingModifiers
 	(BuildingType,							ModifierId)
 values
--- 塔祠
+-- 禅邸
 	('BUILDING_JNR_CANDI',					'CANDI_CULTURE'),
 	('BUILDING_JNR_CANDI',					'CANDI_FAITH'),
 	-- ('BUILDING_JNR_CANDI',					'CANDI_APPEAL'),
@@ -73,7 +73,7 @@ values
 insert or replace into Modifiers
 	(ModifierId,							ModifierType,										SubjectRequirementSetId,		SubjectStackLimit)
 values
--- 塔祠
+-- 禅邸
 	('CANDI_CULTURE',						'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_IS_LAND_ADJACENT_TO_COAST',	NULL),
 	('CANDI_FAITH',							'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD',		'PLOT_IS_LAND_ADJACENT_TO_COAST',	NULL),
 	-- ('CANDI_APPEAL',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_APPEAL',			'PLOT_IS_ADJACENT_TO_COAST',	NULL),
@@ -93,7 +93,7 @@ values
 insert or replace into ModifierArguments
 	(ModifierId,							Name,												Value)
 values
--- 塔祠
+-- 禅邸
 	('CANDI_CULTURE',						'YieldType',										'YIELD_CULTURE'),
 	('CANDI_CULTURE',						'Amount',											2),
 	('CANDI_FAITH',							'YieldType',										'YIELD_FAITH'),

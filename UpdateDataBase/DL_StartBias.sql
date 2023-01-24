@@ -93,7 +93,7 @@ values
 	('CIVILIZATION_BRAZIL',				'RESOURCE_RUBBER',					2),
 	('CIVILIZATION_BRAZIL',				'RESOURCE_EBONY',					2),
 	('CIVILIZATION_CHINA',				'RESOURCE_STONE',					3),
-	('CIVILIZATION_CHINA',				'RESOURCE_BAMBOO',					3),
+--	('CIVILIZATION_CHINA',				'RESOURCE_BAMBOO',					3),
 	('CIVILIZATION_ENGLAND',			'RESOURCE_IRON',					2),
 	('CIVILIZATION_ENGLAND',			'RESOURCE_COAL',					5),
 	('CIVILIZATION_NORWAY',				'RESOURCE_OAK',						2),
@@ -171,7 +171,7 @@ insert or replace into HD_StartBiasResources (CivilizationType, ResourceType, Ti
 insert into HD_StartBiasRivers
     (CivilizationType,					Tier)
 values
-	('CIVILIZATION_CHINA',				3),
+--	('CIVILIZATION_CHINA',				3),
 	('CIVILIZATION_FRANCE',				3),
 	('CIVILIZATION_GERMANY',			2),
 	('CIVILIZATION_INDIA',				3),

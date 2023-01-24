@@ -2982,7 +2982,7 @@ update BeliefsSortIndex set SortIndex =	212 where BeliefType = 'BELIEF_JNR_TZACU
 update BeliefsSortIndex set SortIndex =	213 where BeliefType = 'BELIEF_JNR_MBARI';--商路
 update BeliefsSortIndex set SortIndex =	214 where BeliefType = 'BELIEF_JNR_MANDIR';--印度
 update BeliefsSortIndex set SortIndex =	215 where BeliefType = 'BELIEF_JNR_JINJA';--神道
-update BeliefsSortIndex set SortIndex =	216 where BeliefType = 'BELIEF_JNR_CANDI';--塔祠
+update BeliefsSortIndex set SortIndex =	216 where BeliefType = 'BELIEF_JNR_CANDI';--禅邸
 update BeliefsSortIndex set SortIndex =	217 where BeliefType = 'BELIEF_JNR_DAOGUAN';--道观
 update BeliefsSortIndex set SortIndex =	218 where BeliefType = 'BELIEF_JNR_KHALWAT';--隐修
 

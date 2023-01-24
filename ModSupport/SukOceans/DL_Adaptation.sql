@@ -11,7 +11,7 @@ update Resource_YieldChanges set YieldChange = 4 where ResourceType = 'RESOURCE_
 insert or replace into Resource_YieldChanges
     (ResourceType,              YieldType,              YieldChange)
 values
-    ('RESOURCE_SUK_CORAL',      'YIELD_GOLD',           2),
+    ('RESOURCE_SUK_CORAL',      'YIELD_GOLD',           1),
     ('RESOURCE_SUK_LOBSTER',    'YIELD_GOLD',           1);
 
 delete from ImprovementModifiers where ImprovementType = 'IMPROVEMENT_FISHING_BOATS' and ModifierId = 'SUK_FISHERY_FOOD';

@@ -156,7 +156,8 @@ values
 ------------------------------------------------------------------------------------------------------------
 
 update Civics set Description = 'LOC_CIVIC_NUCLEAR_PROGRAM_DESCRIPTION' where CivicType = 'CIVIC_NUCLEAR_PROGRAM';
-
+update Civics set Description = 'LOC_CIVIC_MYSTICISM_DESCRIPTION' where CivicType = 'CIVIC_MYSTICISM';
+update Civics set Description = 'LOC_CIVIC_CAPITALISM_DESCRIPTION' where CivicType = 'CIVIC_CAPITALISM';
 insert or replace into Civics_XP2 (CivicType, RandomPrereqs, HiddenUntilPrereqComplete)
 select CivicType, 0, 0 from Civics where EraType = 'ERA_FUTURE';
 
@@ -438,3 +439,8 @@ insert or replace into ModifierArguments
 select
 	ProjectType || '_MODIFIER',				'ProjectType',			ProjectType
 from Projects where ProjectType like 'PROJECT_ENHANCE_DISTRICT_%';
+insert or replace into CivicModifiers
+	(CivicType,								ModifierId)
+values
+	('CIVIC_MYSTICISM',						'PROJECT_ENHANCE_DISTRICT_HOLY_SITE_MODIFIER');
+delete from CivicModifiers where CivicType = 'CIVIC_HISTORICAL_PHILOSOPHY_HD' and ModifierId = 'PROJECT_ENHANCE_DISTRICT_HOLY_SITE_MODIFIER';

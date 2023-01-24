@@ -186,7 +186,9 @@ values
 	("LOC_BOOST_TRIGGER_MOON_LANDING",														"Launch Moon Landing."),
 	("LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",												"Launch Moon Landing."),
     ("LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                                  "Allows forming three identical units into an Army or Armada."),
-    ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                                      "Unlocks the great people projects in specialty district.");
+    ("LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                                      "Unlocks the great people projects in specialty district."),
+    ("LOC_CIVIC_MYSTICISM_DESCRIPTION",                                                     "Unlocks Holy Site Prayers project."),
+    ("LOC_CIVIC_CAPITALISM_DESCRIPTION",                                                    "Receive [ICON_TOURISM] Tourism from some of the improvements that provide [ICON_GOLD] Gold. Amount of [ICON_TOURISM] Tourism generated is equivalent to these yields.");
 
 --------------------------------------------------------------------------------
 -- Language: zh_Hans_CN
@@ -379,7 +381,9 @@ values
 	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_MOON_LANDING",										"启动登月计划。"),
 	("zh_Hans_CN",  "LOC_BOOST_TRIGGER_LONGDESC_MOON_LANDING",								"启动登月计划。"),
     ("zh_Hans_CN",  "LOC_CIVIC_MOBILIZATION_DESCRIPTION",                                   "允许3个相同单位组成一支军队或无敌舰队。"),
-    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                       "解锁专业化区域的伟人点城市项目。");
+    ("zh_Hans_CN",  "LOC_CIVIC_HISTORICAL_PHILOSOPHY_HD_DESCRIPTION",                       "解锁专业化区域的伟人点城市项目。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_MYSTICISM_DESCRIPTION",                                      "解锁圣地祷告者城市项目。"),
+    ("zh_Hans_CN",  "LOC_CIVIC_CAPITALISM_DESCRIPTION",                                     "为部分提供 [ICON_GOLD] 金币的改良设施提供等于其产出的 [ICON_TOURISM] 旅游业绩加成");
 
 --------------------------------------------------------------------------------
 -- Language: en_US

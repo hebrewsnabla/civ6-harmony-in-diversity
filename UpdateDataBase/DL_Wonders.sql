@@ -369,7 +369,7 @@ insert or replace into ModifierArguments
 values
 	('GREAT_ZIMBABWE_BONUS_GOLD_ATTACH',	'ModifierId',	'GREAT_ZIMBABWE_BONUS_GOLD'),
 	('GREAT_ZIMBABWE_BONUS_GOLD',			'YieldType',	'YIELD_GOLD'),
-	('GREAT_ZIMBABWE_BONUS_GOLD',			'Amount',		2),
+	('GREAT_ZIMBABWE_BONUS_GOLD',			'Amount',		3),
 	('GREAT_ZIMBABWE_TRADEROUTE',			'Amount',		1),
 	('GREAT_ZIMBABWE_TRADER',				'Amount',		1),
 	('GREAT_ZIMBABWE_TRADER',				'UnitType',		'UNIT_TRADER');

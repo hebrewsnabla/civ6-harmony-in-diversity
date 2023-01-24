@@ -27,9 +27,9 @@ values
 insert or replace into LocalizedText
     (Language,      Tag,                                             Text)
 values
-    ("zh_Hans_CN",  "LOC_BELIEF_JNR_CANDI_NAME",                     "塔祠"),
-    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CANDI_NAME",                   "塔祠"),
-    ("zh_Hans_CN",  "LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION",           "允许建造塔祠（+8 [ICON_Faith] 信仰值；与湖泊或者海岸单元格相邻的单元格+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化）。"),
+    ("zh_Hans_CN",  "LOC_BELIEF_JNR_CANDI_NAME",                     "禅邸"),
+    ("zh_Hans_CN",  "LOC_BUILDING_JNR_CANDI_NAME",                   "禅邸"),
+    ("zh_Hans_CN",  "LOC_BELIEF_JNR_CANDI_DL_DESCRIPTION",           "允许建造禅邸（+8 [ICON_Faith] 信仰值；与湖泊或者海岸单元格相邻的单元格+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化）。"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_CANDI_DL_DESCRIPTION",         "与湖泊或者海岸单元格相邻的陆地单元格+2 [ICON_Faith] 信仰, +2 [ICON_CULTURE] 文化。"),
     ("zh_Hans_CN",  "LOC_BELIEF_JNR_KHALWAT_NAME",                   "隐修会"),
     ("zh_Hans_CN",  "LOC_BUILDING_JNR_KHALWAT_NAME",                 "隐修会"),
