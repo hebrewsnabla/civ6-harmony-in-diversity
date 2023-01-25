@@ -556,7 +556,7 @@ values
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',                 NULL),
     --naval raider
-    ('BOARDING_ACTION_ATTACK_BONUS',                                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'ATTACK_NAVAL_REQUIREMENTS'),
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'HD_UNIT_ATTACKING_REQUIREMENTS'),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'MODIFIER_PLAYER_UNIT_ADJUST_PLUNDER_YIELDS',           'JUST_WAR_PLOT_UNIT_REQUIREMENTS'),
     ('WOLFPACK_ADJACENT_BONUS',                                     'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER',                 'WOLFPACK_ADJACENT_REQUIREMENTS');
 
@@ -576,8 +576,8 @@ values
     --naval ranged
     ('BULB_BOW_BONUS_WATER_MOVEMENT',                               'Amount',       1),
      --naval raider
-     --跳帮：主动攻击海军单位+7力
-    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       7),
+     --跳帮：攻击时加5力
+    ('BOARDING_ACTION_ATTACK_BONUS',                                'Amount',       5),
     ('TRADE_ROUTE_PLUNDER_BONUS',                                   'Amount',       100),
     ('WOLFPACK_ADJACENT_BONUS',                                     'ModifierId',   'HD_WOLFPACK_ADJACENT_BONUS');
 
