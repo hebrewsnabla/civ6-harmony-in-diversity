@@ -492,15 +492,17 @@
       <File>Texts/HD_Text_Improvements.sql</File>
       <File>Texts/HD_Text_NaturalWonders.sql</File>
       <File>Texts/HD_Text_Units.sql</File>
+      <File>Texts/HD_Text_GreatPerson.sql</File>
     </UpdateText>
     <UpdateText id="DL_FrontEnd_Text">
       <Properties><LoadOrder>16021</LoadOrder></Properties>
       <File>ModSupport/WetLands/HD_Texts.sql</File>
     </UpdateText>
     <UpdateIcons id="DL_FrontEnd_Icons">
-      <Properties><LoadOrder>16020</LoadOrder></Properties>
+      <Properties><LoadOrder>16019</LoadOrder></Properties>
       <File>UI/Icons/HD_Icons.xml</File>
       <File>UI/Icons/DL_Icons_Buildings_Frontend.xml</File>
+      <File>UI/Icons/Icon.xml</File>
     </UpdateIcons>
     <UpdateText id="SukOceans_mod_support_text">
       <Properties><LoadOrder>17000</LoadOrder></Properties>

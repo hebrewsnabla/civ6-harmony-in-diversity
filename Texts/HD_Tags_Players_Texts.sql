@@ -58,3 +58,8 @@ insert into PlayerItems
 select
     "Players:Expansion2_Players",  "CIVILIZATION_AMERICA",   	   "LEADER_ABRAHAM_LINCOLN",    "BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",  "ICON_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_NAME",     "LOC_BUILDING_HD_WORLD_PARLIAMENT_HEADQUARTERS_DESCRIPTION",      31
 where exists (select CivilizationType from Players where CivilizationType = 'CIVILIZATION_ETHIOPIA') and exists (select LeaderType from Players where LeaderType = 'LEADER_ABRAHAM_LINCOLN');
+insert into PlayerItems
+    (Domain,                        CivilizationType,              LeaderType,              Type,                       Icon,                               Name,                                   Description,                                    SortIndex)
+select
+    "Players:Expansion2_Players",   "CIVILIZATION_CHINA",          "LEADER_QIN_ALT",        "UNIT_KEQING",              "ICON_UNIT_KEQING",                 "LOC_UNIT_KEQING_NAME",                 "LOC_UNIT_KEQING_DESCRIPTION",                  31
+where exists (select LeaderType from Players where LeaderType = 'LEADER_QIN_ALT');

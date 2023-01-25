@@ -554,7 +554,7 @@ insert or replace into ModifierArguments
 values
 	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD', 	'YieldType',	'YIELD_GOLD'),
 	('COLOSSUS_TRADE_ROUTE_FISHINGBOAT_GOLD',	'Amount',		2);
-
+update Buildings set MustBeAdjacentLand = 0 where BuildingType = 'BUILDING_STATUE_LIBERTY' or BuildingType = 'BUILDING_COLOSSUS';
 -- Machu Picchu
 update Buildings set PrereqTech = 'TECH_APPRENTICESHIP', PrereqCivic = null where BuildingType = 'BUILDING_MACHU_PICCHU';
 delete from Building_YieldChanges where BuildingType = 'BUILDING_MACHU_PICCHU' and YieldType = 'YIELD_GOLD';

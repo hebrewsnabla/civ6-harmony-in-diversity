@@ -287,8 +287,8 @@ values
     ("LOC_MENGWU_MOVEMENT",                                      "All land units gain +1 [ICON_MOVEMENT] Movement if starting in enemy's territory."),
     ("LOC_LISI_TEXT",                                            "Awards 1 freely-chosen free civics.(to choose the Civic to be awarded, please click on the Civic icon on the Civic tree.)"),
     ("LOC_LVBUWE_TEXT",                                          "Increases [ICON_TRADEROUTE] Trade Route capacity by 1. Grants a free Trader. Palace+1 [ICON_AMENITIES] Amenity."),
-    ("LOC_ZHAOTUO_TEXT",                                         "Grants a Settler."),
-    ("LOC_GREATWORK_HANFEI_NAME",                                "Han Fei Zi[NEWLINE]+25% production spped towards Settlers in this city.[NEWLINE](Requires a move of the masterpiece to take effect)"),
+    ("LOC_ZHAOTUO_TEXT",                                         "Settlers and Builders receive +1 [ICON_MOVEMENT] Movement."),
+    ("LOC_GREATWORK_HANFEI_NAME",                                "Han Fei Zi[NEWLINE]+25% production speed towards Settlers and Builders in this city.[NEWLINE](Requires a move of the masterpiece to take effect)"),
     ("LOC_GREATWORK_WEILIAO_NAME",                               "Wei Liao Zi[NEWLINE]+50% Flanking Bonus to all Combat and Religious units.[NEWLINE](Requires a move of the masterpiece to take effect)"),
     ("LOC_GREATWORK_HANFEI_QUOTE",                               "In a country ruled by a wise ruler, the classics written in books are abolished, and laws are used as the content of education."),
     ("LOC_GREATWORK_WEILIAO_QUOTE",                              "Proficiency in warfare is based on a clear mind and keen vision, and mastering the combat initiative is dependent on a deep understanding of the laws of war.");
@@ -324,8 +324,8 @@ values
     ("zh_Hans_CN",  "LOC_MENGWU_MOVEMENT",                                               "所有陆地单位在敌方领土开始回合时+1 [ICON_MOVEMENT] 移动力。"),
     ("zh_Hans_CN",  "LOC_LISI_TEXT",                                                     "奖励一项当前可以研究的市政。（点击市政树上的市政图标来选择被奖励的市政。）"),
     ("zh_Hans_CN",  "LOC_LVBUWE_TEXT",                                                   "增加1 [ICON_TRADEROUTE] 条贸易路线容量。获得一个商人。宫殿+1 [ICON_AMENITIES] 宜居度。"),
-    ("zh_Hans_CN",  "LOC_ZHAOTUO_TEXT",                                                  "获得一个开拓者。"),
-    ("zh_Hans_CN",  "LOC_GREATWORK_HANFEI_NAME",                                         "《韩非子》[NEWLINE]此城生产开拓者时+25%建造速度。[NEWLINE]（需要移动展示槽位后生效）"),
+    ("zh_Hans_CN",  "LOC_ZHAOTUO_TEXT",                                                  "开拓者和建造者获得+1 [ICON_MOVEMENT] 移动力。"),
+    ("zh_Hans_CN",  "LOC_GREATWORK_HANFEI_NAME",                                         "《韩非子》[NEWLINE]此城生产开拓者和建造者时+25%建造速度。[NEWLINE]（需要移动展示槽位后生效）"),
     ("zh_Hans_CN",  "LOC_GREATWORK_WEILIAO_NAME",                                        "《尉缭子》[NEWLINE]为所有战斗和宗教单位+50%夹击加成。[NEWLINE]（需要移动展示槽位后生效）"),
     ("zh_Hans_CN",  "LOC_GREATWORK_HANFEI_QUOTE",                                        "明主之国，无书简之文，以法为教。"),
     ("zh_Hans_CN",  "LOC_GREATWORK_WEILIAO_QUOTE",                                       "夫精诚在乎神明，战权在乎道之所极。");
